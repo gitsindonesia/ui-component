@@ -1,6 +1,6 @@
 {
-  "name": "@frontend/components",
-  "version": "0.0.3-alpha.13+a387361",
+  "name": "@frontend/ui",
+  "version": "0.0.1",
   "scripts": {
     "ui:dev": "vite",
     "ui:build": "vite build",
@@ -33,6 +33,6 @@
   "main": "index.js",
   "gitHead": "a3873617b764442416da0687a66a7ba20638c7cb",
   "publishConfig": {
-    "@frontend:registry": "https://git.gits.id/api/v4/projects/1336/packages/npm/"
+    "@frontend:registry": "https://git.gits.id/api/v4/projects/1360/packages/npm/"
   }
 }
