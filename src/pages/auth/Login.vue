@@ -87,9 +87,10 @@ const onSubmit = handleSubmit((values) => {
           for="email"
           class="mb-2 block font-medium"
           :class="errors.email ? 'text-error' : ''"
-          >Email</label
         >
-        <VInputGroup
+          Email
+        </label>
+        <v-input-group
           id="email"
           v-model="email"
           placeholder="Email"
@@ -106,15 +107,16 @@ const onSubmit = handleSubmit((values) => {
               :class="errors.email ? 'text-error' : 'text-[#DFE0E0]'"
             />
           </template>
-        </VInputGroup>
+        </v-input-group>
 
         <label
           for="password"
           class="mb-2 block font-medium"
           :class="errors.email ? 'text-error' : ''"
-          >Password</label
         >
-        <VInputGroup
+          Password
+        </label>
+        <v-input-group
           id="password"
           v-model="password"
           placeholder="Password"
@@ -132,7 +134,7 @@ const onSubmit = handleSubmit((values) => {
               :class="errors.password ? 'text-error' : 'text-[#DFE0E0]'"
             />
           </template>
-        </VInputGroup>
+        </v-input-group>
 
         <div class="mb-4 flex justify-between items-center">
           <v-checkbox v-model="remember" label="Remember me" />
