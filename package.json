@@ -30,7 +30,7 @@
     "tailwindcss": "^2.1.1",
     "vite": "^2.1.2"
   },
-  "main": "index.js",
+  "main": "index.ts",
   "gitHead": "a3873617b764442416da0687a66a7ba20638c7cb",
   "publishConfig": {
     "@frontend:registry": "https://git.gits.id/api/v4/projects/1360/packages/npm/"
