@@ -84,8 +84,8 @@ const onChange = (event) => {
 
 const classes = computed(() =>
   error.value
-    ? 'text-error-500 focus:ring-error-500'
-    : 'text-primary-500 focus:ring-primary-500',
+    ? 'text-error-600 focus:ring-error-600'
+    : 'text-primary-600 focus:ring-primary-600',
 );
 
 const getValue = (item) => {
@@ -112,7 +112,7 @@ const {class: sizeClass} = useTextSize(size.value);
       v-if="label"
       :for="name"
       class="font-bold mb-2 block"
-      :class="error ? 'text-error-500' : 'text-gray-700'"
+      :class="error ? 'text-error-600' : 'text-gray-700'"
     >
       {{ label }}
     </label>
@@ -148,7 +148,7 @@ const {class: sizeClass} = useTextSize(size.value);
         </slot>
       </label>
     </div>
-    <ErrorMessage class="text-error-500 text-sm mt-2 block" :name="name" />
+    <ErrorMessage class="text-error-600 text-sm mt-2 block" :name="name" />
   </div>
 </template>
 

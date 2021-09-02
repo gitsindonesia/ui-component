@@ -119,7 +119,7 @@ const emitPage = (page) => {
         :class="{
           'rounded-l-md': !pagino.showFirst,
           'cursor-not-allowed text-gray-300': cantPrev,
-          'text-gray-500 hover:bg-gray-50': !cantPrev,
+          'text-gray-600 hover:bg-gray-50': !cantPrev,
         }"
         @click.prevent="pagino.previous()"
       >
@@ -157,7 +157,7 @@ const emitPage = (page) => {
         :class="{
           'rounded-r-md': !pagino.showLast,
           'cursor-not-allowed text-gray-300': cantNext,
-          'text-gray-500 hover:bg-gray-50': !cantNext,
+          'text-gray-600 hover:bg-gray-50': !cantNext,
         }"
         @click.prevent="pagino.next()"
       >
@@ -194,7 +194,7 @@ const emitPage = (page) => {
         "
         :class="{
           'cursor-not-allowed text-gray-300': isFirstPage,
-          'text-gray-500 hover:bg-gray-50': !isFirstPage,
+          'text-gray-600 hover:bg-gray-50': !isFirstPage,
         }"
         @click.prevent="pagino.first()"
       >
@@ -229,7 +229,7 @@ const emitPage = (page) => {
         "
         :class="{
           'cursor-not-allowed text-gray-300': isLastPage,
-          'text-gray-500 hover:bg-gray-50': !isLastPage,
+          'text-gray-600 hover:bg-gray-50': !isLastPage,
         }"
         @click.prevent="pagino.last()"
       >

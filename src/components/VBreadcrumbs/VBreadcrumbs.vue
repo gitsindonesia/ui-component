@@ -19,7 +19,7 @@ const props = defineProps({
     <template v-for="(item, index) in props.items" :key="index">
       <router-link
         :to="item.to"
-        class="text-sm text-gray-800 font-medium hover:text-primary-500"
+        class="text-sm text-gray-800 font-medium hover:text-primary-600"
       >
         {{ item.title }}
       </router-link>

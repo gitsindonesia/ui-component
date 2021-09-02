@@ -29,17 +29,17 @@ const emit = defineEmits(['dismissed', 'update:modelValue']);
 const classes = computed(() => {
   switch (color.value) {
     case 'primary':
-      return 'border-primary-500 bg-primary-500 bg-opacity-20 text-primary-500';
+      return 'border-primary-600 bg-primary-100 text-primary-600';
     case 'secondary':
-      return 'border-secondary-500 bg-secondary-500 bg-opacity-20 text-secondary-500';
+      return 'border-secondary-600 bg-secondary-100 text-secondary-600';
     case 'error':
-      return 'border-error-500 bg-error-500 bg-opacity-20 text-error-500';
+      return 'border-error-600 bg-error-100 text-error-600';
     case 'info':
-      return 'border-info-500 bg-info-500 bg-opacity-20 text-info-500';
+      return 'border-info-600 bg-info-100 text-info-600';
     case 'warning':
-      return 'border-warning-500 bg-warning-500 bg-opacity-20 text-warning-500';
+      return 'border-warning-600 bg-warning-100 text-warning-600';
     case 'success':
-      return 'border-success-500 bg-success-500 bg-opacity-20 text-success-500';
+      return 'border-success-600 bg-success-100 text-success-600';
     default:
       return '';
   }
@@ -48,7 +48,7 @@ const classes = computed(() => {
 const iconClasses = computed(() => {
   switch (color.value) {
     case 'primary':
-      return 'text-lime-500';
+      return 'text-lime-600';
     case 'secondary':
       return 'text-secondary';
     case 'error':

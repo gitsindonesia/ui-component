@@ -45,8 +45,8 @@ CustomActiveClass.args = {
   hideSlider: true,
   items: createItems(10, {
     defaultClass: '!rounded-lg',
-    inactiveClass: 'hover:bg-success-50 hover:!text-success-500',
-    activeClass: 'bg-success-50 rounded-t text-success-500 font-bold',
+    inactiveClass: 'hover:bg-success-50 hover:!text-success-600',
+    activeClass: 'bg-success-50 rounded-t text-success-600 font-bold',
   }),
 };
 

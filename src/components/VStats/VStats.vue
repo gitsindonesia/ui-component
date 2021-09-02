@@ -37,17 +37,17 @@ const {title, icon, value, color, from, progressColor, progress, up, down} =
 const colorClass = computed(() => {
   switch (color.value) {
     case 'primary':
-      return 'bg-primary-500';
+      return 'bg-primary-600';
     case 'secondary':
-      return 'bg-secondary-500';
+      return 'bg-secondary-600';
     case 'info':
-      return 'bg-info-500';
+      return 'bg-info-600';
     case 'warning':
-      return 'bg-warning-500';
+      return 'bg-warning-600';
     case 'error':
-      return 'bg-error-500';
+      return 'bg-error-600';
     case 'success':
-      return 'bg-success-500';
+      return 'bg-success-600';
     default:
       return 'bg-gray-400';
   }
@@ -88,12 +88,12 @@ const badgeColor = computed(() => {
       </slot>
     </div>
     <div class="w-full">
-      <div class="font-normal text-gray-500 mb-1 truncate">{{ title }}</div>
+      <div class="font-normal text-gray-600 mb-1 truncate">{{ title }}</div>
       <div class="flex flex-col sm:flex-row gap-2 items-baseline">
         <div class="font-semibold text-2xl text-gray-800">
           {{ value }}
         </div>
-        <div class="flex-grow text-sm text-gray-500">
+        <div class="flex-grow text-sm text-gray-600">
           <span v-if="from">from {{ from }}</span>
         </div>
         <div v-if="progress" class="w-auto text-xs">

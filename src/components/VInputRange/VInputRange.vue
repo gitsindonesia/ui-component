@@ -121,7 +121,7 @@ onMounted(() => {
               rounded-md
               bg-gradient-to-r
               from-blue-400
-              to-blue-500
+              to-blue-600
               h-[2px]
             "
             :style="'right:' + maxthumb + '%; left:' + minthumb + '%'"
@@ -150,7 +150,7 @@ onMounted(() => {
               h-4
               top-0
               right-0
-              bg-blue-500
+              bg-blue-600
               rounded-full
               -mt-2
             "

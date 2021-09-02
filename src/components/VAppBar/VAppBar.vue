@@ -148,7 +148,7 @@ const userRole = computed(() => user.value?.role);
         <!--          <div class="p-2 bg-gray-50">-->
         <!--            <a-->
         <!--              href="#"-->
-        <!--              class="flow-root px-4 py-3 transition duration-150 ease-in-out rounded-md hover:bg-lime-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"-->
+        <!--              class="flow-root px-4 py-3 transition duration-150 ease-in-out rounded-md hover:bg-lime-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-600 focus-visible:ring-opacity-50"-->
         <!--              @click="logout"-->
         <!--            >-->
         <!--              <span class="flex items-center">-->

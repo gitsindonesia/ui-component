@@ -39,17 +39,17 @@ const colorClass = computed(() => {
   switch (color.value) {
     case 'primary':
     default:
-      return 'text-primary-500 focus:ring-primary-500';
+      return 'text-primary-600 focus:ring-primary-600';
     case 'secondary':
-      return 'text-secondary-500 focus:ring-secondary-500';
+      return 'text-secondary-600 focus:ring-secondary-600';
     case 'info':
-      return 'text-info-500 focus:ring-info-500';
+      return 'text-info-600 focus:ring-info-600';
     case 'success':
-      return 'text-success-500 focus:ring-success-500';
+      return 'text-success-600 focus:ring-success-600';
     case 'warning':
-      return 'text-warning-500 focus:ring-warning-500';
+      return 'text-warning-600 focus:ring-warning-600';
     case 'error':
-      return 'text-error-500 focus:ring-error-500';
+      return 'text-error-600 focus:ring-error-600';
   }
 });
 

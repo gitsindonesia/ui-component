@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {  computed, toRefs} from 'vue';
+import {computed, toRefs} from 'vue';
 import {Popover, PopoverButton, PopoverPanel} from '@headlessui/vue';
 import type {PropType} from 'vue';
 import type {DropdownItem} from './VDropdown';
@@ -87,7 +87,7 @@ const placementClass = computed(() => (props.right ? 'right-0' : 'left-0'));
                   hover:bg-primary hover:bg-opacity-10
                   focus:outline-none
                   focus-visible:ring
-                  focus-visible:ring-orange-500
+                  focus-visible:ring-orange-600
                   focus-visible:ring-opacity-50
                 "
               >
@@ -111,7 +111,7 @@ const placementClass = computed(() => (props.right ? 'right-0' : 'left-0'));
                   <p class="text-sm font-bold text-gray-900">
                     {{ item.name }}
                   </p>
-                  <p class="text-sm text-gray-500">
+                  <p class="text-sm text-gray-600">
                     {{ item.description }}
                   </p>
                 </div>

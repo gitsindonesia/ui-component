@@ -101,7 +101,7 @@ const userFirstName = computed(() => user.value?.name?.split(' ')?.[0]);
                   <span>{{ menu.text }}</span>
                   <ChevronDownIcon class="w-5 h-5" />
                 </DisclosureButton>
-                <DisclosurePanel class="px-4 pb-2 text-gray-500">
+                <DisclosurePanel class="px-4 pb-2 text-gray-600">
                   <router-link
                     v-for="child in menu.children"
                     :key="child.text"
@@ -208,7 +208,7 @@ const userFirstName = computed(() => user.value?.name?.split(' ')?.[0]);
               duration-300
               font-semibold
               mx-4
-              hover:text-primary-500
+              hover:text-primary-600
             "
           >
             {{ menu.text }}

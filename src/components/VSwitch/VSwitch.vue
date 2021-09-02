@@ -23,12 +23,12 @@ const emit = defineEmits(['update:modelValue']);
 const {modelValue, label} = toRefs(props);
 
 const colors: Record<Colors, string> = {
-  primary: 'bg-primary-500',
-  secondary: 'bg-secondary-500',
-  info: 'bg-info-500',
-  warning: 'bg-warning-500',
-  success: 'bg-success-500',
-  error: 'bg-error-500',
+  primary: 'bg-primary-600',
+  secondary: 'bg-secondary-600',
+  info: 'bg-info-600',
+  warning: 'bg-warning-600',
+  success: 'bg-success-600',
+  error: 'bg-error-600',
   default: '',
 };
 

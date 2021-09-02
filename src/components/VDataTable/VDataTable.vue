@@ -158,7 +158,7 @@ const computedHeaders = computed(() =>
 const getThClass = (header: VDataTableHeader) => {
   const isActive = header.sorting && sortBy.value === header.value;
   return [
-    isActive ? 'text-primary' : 'text-gray-500',
+    isActive ? 'text-primary' : 'text-gray-600',
     {
       [`text-${header.align}`]: !!header.align,
     },
@@ -226,7 +226,7 @@ watch(page, (val) => {
               class="
                 text-left text-xs
                 font-medium
-                text-gray-500
+                text-gray-600
                 uppercase
                 tracking-wider
               "
@@ -266,7 +266,7 @@ watch(page, (val) => {
               <tr>
                 <td
                   :colspan="headers.length"
-                  class="text-center text-gray-500 text-sm whitespace-nowrap"
+                  class="text-center text-gray-600 text-sm whitespace-nowrap"
                   :class="[paddingClass]"
                 >
                   {{ noDataText }}
@@ -279,7 +279,7 @@ watch(page, (val) => {
               <tr>
                 <td
                   :colspan="headers.length"
-                  class="text-center text-gray-500 text-sm whitespace-nowrap"
+                  class="text-center text-gray-600 text-sm whitespace-nowrap"
                   :class="[paddingClass]"
                 >
                   {{ loadingText }}

@@ -1,5 +1,5 @@
 <script setup>
-import {  computed} from 'vue';
+import {computed} from 'vue';
 
 const props = defineProps({
   xLarge: {
@@ -43,19 +43,19 @@ const sizeClass = computed(() => {
 const colorClass = computed(() => {
   switch (props.color) {
     case 'primary':
-      return 'text-primary-500';
+      return 'text-primary-600';
     case 'info':
-      return 'text-info-500';
+      return 'text-info-600';
     case 'warning':
-      return 'text-warning-500';
+      return 'text-warning-600';
     case 'error':
-      return 'text-error-500';
+      return 'text-error-600';
     case 'success':
-      return 'text-success-500';
+      return 'text-success-600';
     case 'white':
-      return 'text-white-500';
+      return 'text-white-600';
     default:
-      return props.color || 'text-gray-500';
+      return props.color || 'text-gray-600';
   }
 });
 </script>

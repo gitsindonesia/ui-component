@@ -41,15 +41,15 @@ const colorClass = computed(() => {
 
   switch (props.color) {
     case 'primary':
-      return 'bg-primary-500 text-white';
+      return 'bg-primary-600 text-white';
     case 'error':
-      return 'bg-error-500 text-white';
+      return 'bg-error-600 text-white';
     case 'info':
-      return 'bg-info-500 text-white';
+      return 'bg-info-600 text-white';
     case 'warning':
-      return 'bg-warning-500 text-white';
+      return 'bg-warning-600 text-white';
     case 'success':
-      return 'bg-success-500 text-white';
+      return 'bg-success-600 text-white';
     default:
       return 'bg-gray-300 text-gray-900';
   }

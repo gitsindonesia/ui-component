@@ -114,7 +114,7 @@ watch(search, (val) => {
             focus-visible:ring-white
             focus-visible:ring-offset-orange-300
             focus-visible:ring-offset-2
-            focus-visible:border-indigo-500
+            focus-visible:border-indigo-600
             sm:text-sm
           "
           :class="[btnClass]"

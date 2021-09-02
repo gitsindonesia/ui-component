@@ -104,14 +104,14 @@ const onBlur = () => emit('blur');
       transition
       duration-300
       rounded-md
-      text-gray-500
+      text-gray-600
     "
     :class="[
       text
         ? 'focus:border-none focus:ring-0'
-        : 'border focus-within:text-primary-500 focus-within:border-primary-500 focus-within:ring-primary-500 focus-within:ring-1',
+        : 'border focus-within:text-primary-600 focus-within:border-primary-600 focus-within:ring-primary-600 focus-within:ring-1',
       error
-        ? 'border-error-500 focus-within:text-error-500 focus-within:border-error-500 focus-within:ring-error-500 focus-within:ring-1'
+        ? 'border-error-600 focus-within:text-error-600 focus-within:border-error-600 focus-within:ring-error-600 focus-within:ring-1'
         : '',
     ]"
   >
