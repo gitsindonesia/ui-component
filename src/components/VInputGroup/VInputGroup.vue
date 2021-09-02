@@ -121,7 +121,7 @@ const onBlur = () => emit('blur');
       </div>
     </div>
     <div :class="errorClass">
-      <ErrorMessage class="text-error text-sm" :name="name" />
+      <ErrorMessage class="text-error-600 text-sm" :name="name" />
     </div>
   </div>
 </template>
