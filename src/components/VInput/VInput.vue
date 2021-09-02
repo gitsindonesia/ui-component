@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import {ref, toRefs, computed, watch, onMounted} from 'vue';
+import {ref, toRefs, computed, watch} from 'vue';
 import {ErrorMessage} from 'vee-validate';
 import {useHeight, useInputClasses, useTextSize} from '../../utils';
-import type {Sizes} from '../../utils';
 import {SearchIcon} from '@heroicons/vue/solid';
 
 const props = defineProps({
@@ -77,7 +76,7 @@ const {
 
 const emit = defineEmits(['input:modelValue', 'blur']);
 
-const value = ref(props.value || props.modelValue);
+const inputValue = ref(props.value || props.modelValue);
 
 const {class: sizeClass} = useTextSize(size.value);
 const {class: heightClass} = useHeight(size.value);
@@ -86,11 +85,11 @@ const inputClass = computed(() => useInputClasses(error.value));
 const classes = computed(() => [inputClass.value, sizeClass.value]);
 
 watch(modelValue, (val) => {
-  value.value = val;
+  inputValue.value = val;
 });
 
 watch(externalValue, (val) => {
-  value.value = val;
+  inputValue.value = val;
 });
 
 const onBlur = () => emit('blur');
@@ -120,7 +119,7 @@ const onBlur = () => emit('blur');
       <SearchIcon v-if="prependIcon === 'search'" class="w-5 h-5 ml-3" />
     </slot>
     <input
-      v-model="value"
+      v-model="inputValue"
       class="
         w-full
         block
@@ -145,7 +144,7 @@ const onBlur = () => emit('blur');
 
   <ErrorMessage
     v-if="errorMessages.length"
-    class="text-error text-sm"
+    class="text-error-600 text-sm"
     :name="name"
   />
 </template>
