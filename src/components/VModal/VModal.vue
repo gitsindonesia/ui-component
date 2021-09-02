@@ -1,0 +1,164 @@
+<script setup lang="ts">
+import {ref, toRefs, watch} from 'vue';
+import {
+  TransitionRoot,
+  TransitionChild,
+  Dialog,
+  DialogOverlay,
+  DialogTitle,
+} from '@headlessui/vue';
+
+interface Props {
+  modelValue?: boolean;
+  title?: string;
+  confirm?: boolean;
+  confirmColor?: string;
+  confirmProps?: {};
+  confirmText?: string;
+  closeText?: string;
+  closeProps?: {};
+  headerClass?: string;
+  bodyClass?: string;
+  footerClass?: string;
+  loading?: boolean;
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  modelValue: false,
+  title: '',
+  confirm: false,
+  confirmColor: 'primary',
+  confirmProps: () => ({}),
+  confirmText: 'Confirm',
+  closeText: 'Close',
+  closeProps: () => ({}),
+  headerClass: '',
+  bodyClass: '',
+  footerClass: '',
+  boolean: false,
+});
+
+const emit = defineEmits(['update:modelValue', 'confirm', 'close', 'open']);
+
+const {
+  modelValue,
+  title,
+  confirm,
+  confirmColor,
+  confirmProps,
+  confirmText,
+  closeText,
+  closeProps,
+  loading,
+} = toRefs(props);
+
+const isOpen = ref(modelValue.value);
+
+watch(modelValue, (val) => (isOpen.value = val));
+
+watch(isOpen, (val) => emit('update:modelValue', val));
+
+function closeModal() {
+  isOpen.value = false;
+  emit('update:modelValue', false);
+  emit('close');
+}
+
+function openModal() {
+  isOpen.value = true;
+  emit('update:modelValue', true);
+  emit('open');
+}
+
+const onConfirm = () => {
+  emit('confirm', {
+    open: openModal,
+    close: closeModal,
+  });
+};
+</script>
+
+<template>
+  <slot name="activator" :open="openModal" />
+  <TransitionRoot appear :show="isOpen" as="template">
+    <Dialog as="div" @close="closeModal">
+      <div class="fixed inset-0 z-30 overflow-y-auto">
+        <div class="min-h-screen px-4 text-center">
+          <TransitionChild
+            as="template"
+            enter="duration-300 ease-out"
+            enter-from="opacity-0"
+            enter-to="opacity-100"
+            leave="duration-200 ease-in"
+            leave-from="opacity-100"
+            leave-to="opacity-0"
+          >
+            <DialogOverlay class="fixed bg-black bg-opacity-50 inset-0" />
+          </TransitionChild>
+
+          <span class="inline-block h-screen align-middle" aria-hidden="true">
+            &#8203;
+          </span>
+
+          <TransitionChild
+            as="template"
+            enter="duration-300 ease-out"
+            enter-from="opacity-0 scale-95"
+            enter-to="opacity-100 scale-100"
+            leave="duration-200 ease-in"
+            leave-from="opacity-100 scale-100"
+            leave-to="opacity-0 scale-95"
+          >
+            <div
+              class="
+                inline-block
+                w-full
+                max-w-md
+                p-6
+                my-8
+                overflow-hidden
+                text-left
+                align-middle
+                transition-all
+                transform
+                bg-white
+                shadow-xl
+                rounded-lg
+              "
+            >
+              <DialogTitle
+                as="h3"
+                class="text-lg font-medium leading-6 text-gray-900"
+                :class="headerClass"
+              >
+                <slot name="header">
+                  {{ title }}
+                </slot>
+              </DialogTitle>
+              <div class="mt-4 text-gray-600" :class="bodyClass">
+                <slot />
+              </div>
+
+              <div class="mt-6 flex justify-end gap-2" :class="footerClass">
+                <slot name="footer">
+                  <v-btn
+                    v-if="confirm"
+                    :color="confirmColor"
+                    :loading="loading"
+                    v-bind="confirmProps"
+                    @click="onConfirm"
+                  >
+                    {{ confirmText }}
+                  </v-btn>
+                  <v-btn v-bind="closeProps" @click="closeModal">
+                    {{ closeText }}
+                  </v-btn>
+                </slot>
+              </div>
+            </div>
+          </TransitionChild>
+        </div>
+      </div>
+    </Dialog>
+  </TransitionRoot>
+</template>

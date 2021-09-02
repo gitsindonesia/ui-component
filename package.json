@@ -1,0 +1,38 @@
+{
+  "name": "@frontend/components",
+  "version": "0.0.3-alpha.13+a387361",
+  "scripts": {
+    "ui:dev": "vite",
+    "ui:build": "vite build",
+    "ui:serve": "vite preview",
+    "ui:build:css": "npx tailwindcss-cli@latest build ./src/index.css -o ./gitsui.css",
+    "ui:prepublishOnly": "cross-env NODE_ENV=production npm run build:css",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+  },
+  "dependencies": {
+    "@heroicons/vue": "^1.0.0",
+    "@popperjs/core": "^2.9.2",
+    "lodash": "^4.17.21",
+    "pagino": "^1.4.0",
+    "vue": "^3.0.5",
+    "vue-router": "^4.0.4"
+  },
+  "devDependencies": {
+    "@headlessui/vue": "dev",
+    "@tailwindcss/forms": "^0.2.1",
+    "@tailwindcss/postcss7-compat": "^2.0.4",
+    "@vitejs/plugin-vue": "^1.1.5",
+    "@vue/compiler-sfc": "^3.0.5",
+    "autoprefixer": "^9.8.6",
+    "cross-env": "^7.0.3",
+    "postcss": "^7.0.35",
+    "simple-syntax-highlighter": "^2.0.4",
+    "tailwindcss": "^2.1.1",
+    "vite": "^2.1.2"
+  },
+  "main": "index.js",
+  "gitHead": "a3873617b764442416da0687a66a7ba20638c7cb",
+  "publishConfig": {
+    "@frontend:registry": "https://git.gits.id/api/v4/projects/1336/packages/npm/"
+  }
+}

@@ -1,0 +1,37 @@
+declare module 'vue' {
+  export interface GlobalComponents {
+    VAlert: typeof import('../src/components/VAlert/VAlert.vue')['default']
+    VBtn: typeof import('../src/components/VBtn/VBtn.vue')['default']
+    VAppBar: typeof import('../src/components/VAppBar/VAppBar.vue')['default']
+    VBadge: typeof import('../src/components/VBadge/VBadge.vue')['default']
+    VBreadcrumbs: typeof import('../src/components/VBreadcrumbs/VBreadcrumbs.vue')['default']
+    VCard: typeof import('../src/components/VCard/VCard.vue')['default']
+    VCheckbox: typeof import('../src/components/VCheckbox/VCheckbox.vue')['default']
+    VContainer: typeof import('../src/components/VContainer/VContainer.vue')['default']
+    VDataTable: typeof import('../src/components/VDataTable/VDataTable.vue')['default']
+    VDataTablePagination: typeof import('../src/components/VDataTablePagination/VDataTablePagination.vue')['default']
+    VDropdown: typeof import('../src/components/VDropdown/VDropdown.vue')['default']
+    VFormGroup: typeof import('../src/components/VFormGroup/VFormGroup.vue')['default']
+    VFormSelect: typeof import('../src/components/VFormSelect/VFormSelect.vue')['default']
+    VInput: typeof import('../src/components/VInput/VInput.vue')['default']
+    VInputGroup: typeof import('../src/components/VInputGroup/VInputGroup.vue')['default']
+    VInputRange: typeof import('../src/components/VInputRange/VInputRange.vue')['default']
+    VLogo: typeof import('../src/components/VLogo/VLogo.vue')['default']
+    VMenu: typeof import('../src/components/VMenu/VMenu.vue')['default']
+    VMenus: typeof import('../src/components/VMenus/VMenus.vue')['default']
+    VModal: typeof import('../src/components/VModal/VModal.vue')['default']
+    VNavbar: typeof import('../src/components/VNavbar/VNavbar.vue')['default']
+    VNavDrawer: typeof import('../src/components/VNavDrawer/VNavDrawer.vue')['default']
+    VPagination: typeof import('../src/components/VPagination/VPagination.vue')['default']
+    VProgressBar: typeof import('../src/components/VProgressBar/VProgressBar.vue')['default']
+    VRadio: typeof import('../src/components/VRadio/VRadio.vue')['default']
+    VRadioGroup: typeof import('../src/components/VRadioGroup/VRadioGroup.vue')['default']
+    VSelect: typeof import('../src/components/VSelect/VSelect.vue')['default']
+    VSwitch: typeof import('../src/components/VSwitch/VSwitch.vue')['default']
+    VTabs: typeof import('../src/components/VTabs/VTabs.vue')['default']
+    VTextarea: typeof import('../src/components/VTextarea/VTextarea.vue')['default']
+    VTooltip: typeof import('../src/components/VTooltip/VTooltip.vue')['default']
+  }
+}
+
+export { }

@@ -1,0 +1,100 @@
+<script setup lang="ts">
+import {computed, watch, ref, toRefs} from 'vue';
+import {ErrorMessage} from 'vee-validate';
+import {useInputClasses, useTextSize} from '../../utils';
+
+const props = defineProps({
+  modelValue: {
+    type: String,
+    default: '',
+  },
+  value: {
+    type: String,
+    default: '',
+  },
+  name: {
+    type: String,
+    default: '',
+  },
+  error: {
+    type: Boolean,
+    default: false,
+  },
+  errorMessages: {
+    type: Array,
+    default: () => [],
+  },
+  readonly: {
+    type: Boolean,
+    default: false,
+  },
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
+  size: {
+    type: String,
+    default: '',
+  },
+  cols: {
+    type: [String, Number],
+    default: '',
+  },
+  rows: {
+    type: [String, Number],
+    default: '',
+  },
+});
+
+const {
+  modelValue,
+  error,
+  errorMessages,
+  value: externalValue,
+  readonly,
+  disabled,
+  size,
+  rows,
+  cols,
+} = toRefs(props);
+
+const emit = defineEmits(['input:modelValue', 'blur']);
+
+const value = ref(props.value || props.modelValue);
+
+const {class: sizeClass} = useTextSize(size.value);
+const inputClass = computed(() => useInputClasses(error.value));
+
+const classes = computed(() => [inputClass.value, sizeClass.value]);
+
+watch(modelValue, (val) => {
+  value.value = val;
+});
+
+watch(externalValue, (val) => {
+  value.value = val;
+});
+
+const onBlur = () => emit('blur');
+</script>
+
+<template>
+  <textarea
+    v-model="value"
+    class="block w-full"
+    :class="classes"
+    :readonly="readonly"
+    :disabled="disabled"
+    :cols="cols"
+    :rows="rows"
+    v-bind="$attrs"
+    @blur="onBlur"
+  />
+  <ErrorMessage
+    v-if="errorMessages.length"
+    class="text-error text-sm"
+    :name="name"
+  />
+</template>
+
+<style scoped></style>
