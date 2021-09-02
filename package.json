@@ -18,14 +18,14 @@
     "vue-router": "^4.0.4"
   },
   "devDependencies": {
-    "@headlessui/vue": "dev",
-    "@tailwindcss/forms": "^0.2.1",
+    "@headlessui/vue": "1.4.1",
+    "@tailwindcss/forms": "^0.3.3",
     "@tailwindcss/postcss7-compat": "^2.0.4",
     "@vitejs/plugin-vue": "^1.1.5",
     "@vue/compiler-sfc": "^3.0.5",
-    "autoprefixer": "^9.8.6",
+    "autoprefixer": "^10.3.3",
     "cross-env": "^7.0.3",
-    "postcss": "^7.0.35",
+    "postcss": "^8.3.6",
     "simple-syntax-highlighter": "^2.0.4",
     "tailwindcss": "^2.1.1",
     "vite": "^2.1.2"
