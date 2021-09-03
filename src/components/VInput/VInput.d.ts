@@ -1,3 +1,5 @@
+import {Sizes} from '../../utils';
+
 export type VInputProps = {
   value: string | number;
   modelValue: string | number;

@@ -40,7 +40,7 @@ import Auth from './src/pages/auth/Auth.vue';
 import ForgotPassword from './src/pages/auth/ForgotPassword.vue';
 import Login from './src/pages/auth/Login.vue';
 import ResetPassword from './src/pages/auth/ResetPassword.vue';
-import { App } from 'vue';
+import {App} from 'vue';
 
 export default {
   install: (app: App, options = {}) => {
@@ -124,3 +124,5 @@ export {
   Login,
   ResetPassword,
 };
+
+export * from './types';
