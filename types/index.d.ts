@@ -8,3 +8,4 @@ export * from '../src/components/VDropdown/VDropdown';
 export * from '../src/components/VInput/VInput';
 export * from '../src/components/VNavbar/VNavbar';
 export * from '../src/components/VTabs/VTabs';
+export * from '../src/components/VModal/VModal';
