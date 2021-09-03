@@ -5,7 +5,7 @@ import VInput from '../../components/VInput/VInput.vue';
 import VBtn from '../../components/VBtn/VBtn.vue';
 import VInputGroup from '../../components/VInputGroup/VInputGroup.vue';
 import {useForm, useField} from 'vee-validate';
-// import {string, object, ref as YupRef} from 'yup';
+import * as zod from 'zod';
 
 const props = defineProps({
   title: {
@@ -40,9 +40,10 @@ watch(
   {immediate: true},
 );
 
-const schema = object({
-  password: string().required().min(8).label('Password'),
-  passwordConfirmation: string()
+const schema = zod.object({
+  password: zod.string().required().min(8).label('Password'),
+  passwordConfirmation: zod
+    .string()
     .required()
     .oneOf([YupRef('password'), null], 'Passwords must match')
     .label('Password Confirmation'),
