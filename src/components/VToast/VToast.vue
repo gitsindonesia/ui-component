@@ -16,7 +16,7 @@ export default {
 </script>
 
 <script setup lang="ts">
-import {computed, onMounted, onUnmounted, ref, toRefs, watch} from 'vue';
+import {computed, onUnmounted, ref, toRefs, watch} from 'vue';
 import {
   TransitionRoot,
   TransitionChild,
@@ -27,7 +27,6 @@ import {
 import {
   XIcon,
   CheckIcon,
-  CheckCircleIcon,
   ExclamationIcon,
   QuestionMarkCircleIcon,
 } from '@heroicons/vue/outline';
@@ -54,24 +53,56 @@ interface Props {
   color?: string;
 }
 
-const props = withDefaults(defineProps<Props>(), {
-  modelValue: false,
-  title: '',
-  confirm: false,
-  confirmColor: 'primary',
-  confirmProps: () => ({}),
-  confirmText: 'Confirm',
-  closeText: 'Close',
-  closeProps: () => ({}),
-  headerClass: '',
-  bodyClass: '',
-  actionsClass: '',
-  placement: 'bottom',
-  actions: false,
-  timeout: 0,
-  hideXIcon: false,
-  overlay: false,
-  color: 'white',
+// const props = withDefaults(defineProps<Props>(), {
+//   modelValue: false,
+//   title: '',
+//   confirm: false,
+//   confirmColor: 'primary',
+//   confirmProps: () => ({}),
+//   confirmText: 'Confirm',
+//   closeText: 'Close',
+//   closeProps: () => ({}),
+//   headerClass: '',
+//   bodyClass: '',
+//   actionsClass: '',
+//   placement: 'bottom',
+//   actions: false,
+//   timeout: 0,
+//   hideXIcon: false,
+//   overlay: false,
+//   color: 'white',
+// });
+
+const props = defineProps({
+  modelValue: {type: Boolean, default: false},
+  title: {type: String, default: ''},
+  confirm: {type: Boolean, default: false},
+  confirmColor: {type: String, default: 'primary'},
+  confirmProps: {
+    type: Object,
+    default: () => ({}),
+  },
+  confirmText: {
+    type: String,
+    default: 'Confirm',
+  },
+  closeText: {
+    type: String,
+    default: 'Close',
+  },
+  closeProps: {
+    type: Object,
+    default: () => ({}),
+  },
+  headerClass: {type: String, default: ''},
+  bodyClass: {type: String, default: ''},
+  actionsClass: {type: String, default: ''},
+  placement: {type: String, default: 'bottom'},
+  actions: {type: Boolean, default: false},
+  timeout: {type: Number, default: 0},
+  hideXIcon: {type: Boolean, default: false},
+  overlay: {type: Boolean, default: false},
+  color: {type: String, default: 'white'},
 });
 
 const emit = defineEmits(['update:modelValue', 'confirm', 'close', 'open']);
@@ -194,6 +225,14 @@ watch(
     if (timeout.value) {
       setTimer();
     }
+  },
+  {immediate: true},
+);
+
+watch(
+  modelValue,
+  (val) => {
+    isOpen.value = val;
   },
   {immediate: true},
 );

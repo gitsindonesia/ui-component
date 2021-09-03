@@ -125,4 +125,4 @@ export {
   ResetPassword,
 };
 
-export * from './types';
+export * from './src/components/VToast/module';
