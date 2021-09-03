@@ -5,8 +5,9 @@ import VInput from '../../components/VInput/VInput.vue';
 import VBtn from '../../components/VBtn/VBtn.vue';
 import VCheckbox from '../../components/VCheckbox/VCheckbox.vue';
 import VInputGroup from '../../components/VInputGroup/VInputGroup.vue';
-import {useForm, useField} from 'vee-validate';
-import {string, object} from 'yup';
+import * as zod from 'zod';
+import {toFormValidator} from '@vee-validate/zod';
+import {useField, useForm} from 'vee-validate';
 
 const props = defineProps({
   message: {
@@ -48,13 +49,12 @@ watch(
   },
   {immediate: true},
 );
-
-// Define a validation schema
-const schema = object({
-  email: string().required().label('Email'),
-  password: string().required().label('Password'),
-  // remember: undefined,
-});
+const schema = toFormValidator(
+  zod.object({
+    email: zod.string().nonempty().email(),
+    password: zod.string().nonempty(),
+  }),
+);
 
 // Create a form context with the validation schema
 const {errors, handleSubmit} = useForm({
