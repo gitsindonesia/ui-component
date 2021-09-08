@@ -1,8 +1,9 @@
 *
-!src/components/**/*
-!src/layouts/*
+!src/**/*
+!types/**/*
 !gitsui.css
 !index.js
+!index.ts
 !package.json
 !app.config.js
 !index-esm.mjs
