@@ -85,8 +85,6 @@ const {
   loading,
 } = toRefs(props);
 
-console.log(props);
-
 // refs
 const target = ref(null);
 const isOpen = ref(false);

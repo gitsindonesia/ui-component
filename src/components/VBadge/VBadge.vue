@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import {computed} from 'vue';
+import {computed, toRefs} from 'vue';
+import {XIcon} from '@heroicons/vue/outline';
 
 const props = defineProps({
   color: {
@@ -30,9 +31,15 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  dismissable: {
+    type: Boolean,
+    default: false,
+  },
 });
 
-const emit = defineEmits([]);
+const {dismissable} = toRefs(props);
+
+const emit = defineEmits(['dismiss']);
 
 const colorClass = computed(() => {
   if (props.bgColor) {
@@ -88,11 +95,32 @@ const circleClass = computed(() => {
     ? 'inline-flex items-center justify-center rounded-full ' + size
     : '';
 });
+
+const onDismiss = () => {
+  emit('dismiss');
+};
 </script>
 
 <template>
-  <span :class="[colorClass, roundedClass, sizeClass, circleClass]">
+  <span
+    class="flex items-center gap-2"
+    :class="[colorClass, roundedClass, sizeClass, circleClass]"
+  >
     <slot />
+    <button
+      v-if="dismissable"
+      class="
+        bg-transparent
+        rounded-sm
+        hover:bg-primary-400
+        active:bg-primary-300
+        !p-0
+      "
+      type="button"
+      @click="onDismiss"
+    >
+      <XIcon class="text-white h-4 w-4" />
+    </button>
   </span>
 </template>
 
