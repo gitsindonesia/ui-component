@@ -32,12 +32,6 @@ module.exports = {
     extend: {
       colors: {
         black: '#333333',
-        white: colors.white,
-        gray: colors.trueGray,
-        indigo: colors.indigo,
-        red: colors.rose,
-        yellow: colors.amber,
-        blue: colors.blue,
         primary: primary,
         secondary: secondary,
         info: colors.sky,
