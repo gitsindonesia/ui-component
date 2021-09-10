@@ -1,25 +1,20 @@
 import MyDropdown from './VDropdown.vue';
 import {Story, Meta} from '@storybook/vue3';
 
+const items = Array.from({length: 5}).map((v, k) => ({
+  text: `Item ${k + 1}`,
+  value: k + 1,
+  onClick: () => {
+    alert('You clicked me!');
+  },
+}));
+
 export default {
   title: 'Components/Dropdown',
   component: MyDropdown,
   argTypes: {},
   args: {
-    items: [
-      {
-        name: 'Item 1',
-        description: 'Description',
-      },
-      {
-        name: 'Item 2',
-        description: 'Description',
-      },
-      {
-        name: 'Item No Desc',
-        // description: 'Description',
-      },
-    ],
+    items,
     right: false,
     label: 'Menu',
   },
@@ -42,4 +37,13 @@ Default.args = {};
 export const Right = Template.bind({});
 Right.args = {
   right: true,
+};
+
+export const CustomButtonProps = Template.bind({});
+CustomButtonProps.args = {
+  right: true,
+  btnProps: {
+    text: true,
+    color: 'primary',
+  },
 };
