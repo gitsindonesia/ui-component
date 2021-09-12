@@ -10,8 +10,8 @@ export interface ToastState {
 export const toastModule = <R>(): Module<ToastState, R> => ({
   namespaced: true,
   state: () => ({
-    show: true,
-    message: 'hello',
+    show: false,
+    message: '',
     options: {
       color: 'black',
       timeout: 3000,
