@@ -34,9 +34,39 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  usernameText: {
+    type: String,
+    default: 'Email',
+  },
+  passwordText: {
+    type: String,
+    default: 'Password',
+  },
+  forgotPasswordText: {
+    type: String,
+    default: 'Forgot Password',
+  },
+  loginText: {
+    type: String,
+    default: 'Login',
+  },
+  hideRememberMe: {
+    type: Boolean,
+    default: false,
+  },
 });
 
-const {message, title, subtitle, register} = toRefs(props);
+const {
+  message,
+  title,
+  subtitle,
+  register,
+  usernameText,
+  passwordText,
+  forgotPasswordText,
+  loginText,
+  hideRememberMe,
+} = toRefs(props);
 
 const emit = defineEmits(['submit', 'loginSSO']);
 
@@ -88,12 +118,12 @@ const onSubmit = handleSubmit((values) => {
           class="mb-2 block font-medium"
           :class="errors.email ? 'text-error' : ''"
         >
-          Email
+          {{ usernameText }}
         </label>
         <v-input-group
           id="email"
           v-model="email"
-          placeholder="Email"
+          :placeholder="usernameText"
           name="email"
           prepend
           :error="!!errors.email"
@@ -114,12 +144,12 @@ const onSubmit = handleSubmit((values) => {
           class="mb-2 block font-medium"
           :class="errors.email ? 'text-error' : ''"
         >
-          Password
+          {{ passwordText }}
         </label>
         <v-input-group
           id="password"
           v-model="password"
-          placeholder="Password"
+          :placeholder="passwordText"
           type="password"
           name="password"
           prepend
@@ -137,10 +167,25 @@ const onSubmit = handleSubmit((values) => {
         </v-input-group>
 
         <div class="mb-4 flex justify-between items-center">
-          <v-checkbox v-model="remember" label="Remember me" />
-          <VBtn color="primary" text dense small :to="passwordPath" class="px-0"
-            >Forgot Password</VBtn
-          >
+          <div class="w-6/12">
+            <v-checkbox
+              v-if="!hideRememberMe"
+              v-model="remember"
+              label="Remember me"
+            />
+          </div>
+          <slot name="forgotPassword">
+            <VBtn
+              color="primary"
+              text
+              dense
+              small
+              :to="passwordPath"
+              class="px-0"
+            >
+              {{ forgotPasswordText }}
+            </VBtn>
+          </slot>
         </div>
 
         <VBtn
@@ -150,8 +195,9 @@ const onSubmit = handleSubmit((values) => {
           uppercase
           :disabled="loading"
           :loading="loading"
-          >Login</VBtn
         >
+          {{ loginText }}
+        </VBtn>
       </div>
       <slot v-if="register" name="register">
         <div class="mt-4">

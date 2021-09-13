@@ -1,30 +1,54 @@
 <script setup lang="ts">
-import { toRefs} from 'vue';
+import {toRefs} from 'vue';
 
 const props = defineProps({
   image: {
     type: String,
     default: 'authentication',
   },
+  formOnLeft: {
+    type: Boolean,
+    default: false,
+  },
+  imageWrapperClass: {
+    type: String,
+    default: '',
+  },
+  formWrapperClass: {
+    type: String,
+    default: '',
+  },
+  defaultImageWrapperClass: {
+    type: String,
+    default:
+      'w-full lg:w-6/12 xl:w-7/12 flex items-center justify-center px-12 pt-10 xl:p-0',
+  },
+  defaultFormWrapperClass: {
+    type: String,
+    default:
+      'w-full lg:w-6/12 xl:w-5/12 flex items-center justify-center p-4 xl:p-0',
+  },
 });
 
-const {image} = toRefs(props);
+const {
+  image,
+  formOnLeft,
+  imageWrapperClass,
+  formWrapperClass,
+  defaultImageWrapperClass,
+  defaultFormWrapperClass,
+} = toRefs(props);
 </script>
 
 <template>
   <div class="flex flex-col lg:flex-row sm:min-h-screen">
     <div
-      class="
-        w-full
-        lg:w-6/12
-        xl:w-7/12
-        flex
-        items-center
-        justify-center
-        px-12
-        pt-10
-        xl:p-0
-      "
+      class=""
+      :class="[
+        defaultImageWrapperClass,
+        formOnLeft ? 'order-2' : 'order-1',
+        imageWrapperClass,
+      ]"
     >
       <slot name="image">
         <img
@@ -45,16 +69,11 @@ const {image} = toRefs(props);
       </slot>
     </div>
     <div
-      class="
-        w-full
-        lg:w-6/12
-        xl:w-5/12
-        flex
-        items-center
-        justify-center
-        p-4
-        xl:p-0
-      "
+      :class="[
+        defaultFormWrapperClass,
+        formOnLeft ? 'order-1' : 'order-2',
+        formWrapperClass,
+      ]"
     >
       <slot />
     </div>
