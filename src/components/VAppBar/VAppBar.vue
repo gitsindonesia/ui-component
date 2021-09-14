@@ -24,11 +24,15 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  hideToggle: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const emit = defineEmits(['toggleMenu', 'update:modelValue']);
 
-const {mini, fixed, drawer, dark} = toRefs(props);
+const {mini, fixed, drawer, dark, hideToggle} = toRefs(props);
 
 const toggleMenu = () => emit('toggleMenu');
 </script>
@@ -42,7 +46,7 @@ const toggleMenu = () => emit('toggleMenu');
       fixed ? 'fixed w-full' : 'relative',
     ]"
   >
-    <slot name="toggle" :toggle="toggleMenu">
+    <slot v-if="!hideToggle" name="toggle" :toggle="toggleMenu">
       <v-btn
         text
         icon
