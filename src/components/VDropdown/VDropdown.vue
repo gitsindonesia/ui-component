@@ -19,13 +19,70 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  text: {
+    type: Boolean,
+    default: false,
+  },
+  size: {
+    type: String,
+    default: '',
+  },
+  color: {
+    type: String,
+    default: '',
+  },
+  outlined: {
+    type: Boolean,
+    default: false,
+  },
+  rounded: {
+    type: Boolean,
+    default: false,
+  },
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
+  tile: {
+    type: Boolean,
+    default: false,
+  },
+  icon: {
+    type: Boolean,
+    default: false,
+  },
+  block: {
+    type: Boolean,
+    default: false,
+  },
+  solid: {
+    type: Boolean,
+    default: false,
+  },
+  noRing: {
+    type: Boolean,
+    default: false,
+  },
+  loading: {
+    type: Boolean,
+    default: false,
+  },
+  loadingText: {
+    type: String,
+    default: '',
+  },
   btnProps: {
     type: Object,
     default: () => ({}),
   },
 });
 
-const {label, items, right, btnProps} = toRefs(props);
+const {label, items, right, btnProps, ...rest} = toRefs(props);
+
+const restBtnProps = Object.fromEntries(
+  Object.keys(rest).map((key) => [key, rest[key].value]),
+);
+// console.log(rest, restBtnProps);
 
 const emit = defineEmits(['update:modelValue']);
 </script>
@@ -35,7 +92,7 @@ const emit = defineEmits(['update:modelValue']);
     <Menu as="div" class="relative inline-block text-left">
       <div>
         <MenuButton as="template">
-          <v-btn v-bind="btnProps">
+          <v-btn v-bind="{...restBtnProps, ...btnProps}">
             {{ label }}
             <ChevronDownIcon class="w-5 h-5 ml-2 -mr-1" aria-hidden="true" />
           </v-btn>

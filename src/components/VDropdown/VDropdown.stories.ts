@@ -42,8 +42,6 @@ Right.args = {
 export const CustomButtonProps = Template.bind({});
 CustomButtonProps.args = {
   right: true,
-  btnProps: {
-    text: true,
-    color: 'primary',
-  },
+  outlined: true,
+  color: 'secondary',
 };
