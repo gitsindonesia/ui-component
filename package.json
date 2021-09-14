@@ -16,7 +16,9 @@
     "pagino": "^1.4.0",
     "vee-validate": "^4.4.10",
     "vue": "^3.0.5",
-    "vue-router": "^4.0.4"
+    "vue-router": "^4.0.4",
+    "@ckeditor/ckeditor5-build-classic": "^29.2.0",
+    "@ckeditor/ckeditor5-vue": "^2.0.1"
   },
   "devDependencies": {
     "@headlessui/vue": "1.4.1",
