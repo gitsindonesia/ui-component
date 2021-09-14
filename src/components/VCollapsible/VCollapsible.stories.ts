@@ -1,0 +1,72 @@
+import {ref} from 'vue';
+import MyCollapsible from './VCollapsible.vue';
+
+export default {
+  title: 'Components/Collapsible',
+  component: MyCollapsible,
+  args: {
+    modelValue: false,
+    title: 'Title',
+    headerClass: 'font-bold',
+    activeClass: '',
+    inactiveClass: '',
+    wrapperClass: 'mb-5',
+    activatorClass: '',
+    panelClass: 'px-4 pb-4',
+  },
+};
+
+const Template = (args) => ({
+  // Components used in your story `template` are defined in the `components` object
+  components: {MyCollapsible},
+  // The story's `args` need to be mapped into the template through the `setup()` method
+  setup() {
+    const isOpen = ref(false);
+
+    return {args, isOpen};
+  },
+  // And then the `args` are bound to your component with `v-bind="args"`
+  template: `<MyCollapsible v-model="isOpen" v-bind='args'>
+    Anim eiusmod ea nostrud do incididunt consequat duis adipisicing reprehenderit nisi. Minim mollit eiusmod incididunt fugiat ipsum velit ut consequat est consectetur adipisicing. Nulla duis anim velit magna aute nisi elit nulla deserunt. Fugiat consequat ut magna eiusmod sit incididunt qui. Incididunt velit fugiat sunt sint amet magna est laborum excepteur. Aute aliqua nisi est nulla voluptate enim qui amet labore et consectetur. Est pariatur qui amet cupidatat magna est adipisicing quis ea ea.
+  </MyCollapsible>
+  `,
+});
+
+export const Default = Template.bind({});
+Default.args = {};
+
+export const AutoOpen = Template.bind({});
+AutoOpen.args = {
+  modelValue: true,
+};
+
+export const CustomClasses = Template.bind({});
+CustomClasses.args = {
+  headerClass: '',
+  activeClass: 'font-bold text-red-500 bg-red-200 rounded-t-lg',
+  inactiveClass: 'text-red-500 bg-red-50',
+  wrapperClass: 'rounded-lg',
+  activatorClass: 'hover:bg-red-200 hover:text-red-500',
+  panelClass: 'border p-4 rounded-b-lg',
+};
+
+export const Group = (args) => ({
+  // Components used in your story `template` are defined in the `components` object
+  components: {MyCollapsible},
+  // The story's `args` need to be mapped into the template through the `setup()` method
+  setup() {
+    return {args};
+  },
+  // And then the `args` are bound to your component with `v-bind="args"`
+  template: `<MyCollapsible v-for="i in 5" :key="i" v-bind='args'>
+    Anim eiusmod ea nostrud do incididunt consequat duis adipisicing reprehenderit nisi. Minim mollit eiusmod incididunt fugiat ipsum velit ut consequat est consectetur adipisicing. Nulla duis anim velit magna aute nisi elit nulla deserunt. Fugiat consequat ut magna eiusmod sit incididunt qui. Incididunt velit fugiat sunt sint amet magna est laborum excepteur. Aute aliqua nisi est nulla voluptate enim qui amet labore et consectetur. Est pariatur qui amet cupidatat magna est adipisicing quis ea ea.
+  </MyCollapsible>`,
+});
+
+// export const Collapsible = (args) => ({
+//   components: {MyCollapsible},
+//   setup() {
+//     return {args};
+//   },
+//   template: `<div class="container mx-auto"><MyCollapsible v-bind="args" /></div>`,
+// });
