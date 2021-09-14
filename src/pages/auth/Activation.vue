@@ -6,6 +6,7 @@ import VBtn from '../../components/VBtn/VBtn.vue';
 import VInputGroup from '../../components/VInputGroup/VInputGroup.vue';
 import {useForm, useField} from 'vee-validate';
 import * as zod from 'zod';
+import {toFormValidator} from '@vee-validate/zod';
 
 const props = defineProps({
   title: {
@@ -40,14 +41,17 @@ watch(
   {immediate: true},
 );
 
-const schema = zod.object({
-  password: zod.string().required().min(8).label('Password'),
-  passwordConfirmation: zod
-    .string()
-    .required()
-    .oneOf([YupRef('password'), null], 'Passwords must match')
-    .label('Password Confirmation'),
-});
+const schema = toFormValidator(
+  zod
+    .object({
+      password: zod.string(),
+      passwordConfirmation: zod.string(),
+    })
+    .refine((data) => data.password === data.passwordConfirmation, {
+      message: "Passwords don't match",
+      path: ['passwordConfirmation'], // path of error
+    }),
+);
 
 const {errors, handleSubmit} = useForm({
   validationSchema: schema,
