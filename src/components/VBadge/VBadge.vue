@@ -103,7 +103,7 @@ const onDismiss = () => {
 
 <template>
   <span
-    class="flex items-center gap-2"
+    class="inline-flex items-center gap-2"
     :class="[colorClass, roundedClass, sizeClass, circleClass]"
   >
     <slot />
