@@ -8,16 +8,9 @@ export default {
   argTypes: {},
   args: {
     mini: false,
-    menus: [],
-    notifications: [
-      {
-        name: 'Lorem',
-        description: 'ipsum',
-      },
-    ],
-    notificationCount: 10,
     fixed: false,
     user: null,
+    dark: false,
   },
 } as Meta;
 
@@ -29,21 +22,29 @@ const Template: Story<{}> = (args) => ({
     return {args};
   },
   // And then the `args` are bound to your component with `v-bind="args"`
-  template: `<MyAppBar v-bind="args"/>`,
+  template: `<MyAppBar v-bind="args">Hello</MyAppBar>`,
 });
 
 export const Default = Template.bind({});
 Default.args = {};
 
-export const LoggedIn = Template.bind({});
-LoggedIn.args = {
-  user: {
-    name: 'Admin',
-    role: 'Super Admin',
-  },
+export const Fixed = Template.bind({});
+Fixed.args = {
+  fixed: true,
 };
 
 export const Mini = Template.bind({});
 Mini.args = {
   mini: true,
+};
+
+export const Dark = Template.bind({});
+Dark.args = {
+  dark: true,
+};
+
+export const Custom = Template.bind({});
+Custom.args = {
+  dark: true,
+  class: 'rounded-lg',
 };
