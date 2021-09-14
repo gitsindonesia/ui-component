@@ -1,3 +1,4 @@
+import {App} from 'vue';
 import VAlert from './src/components/VAlert/VAlert.vue';
 import VBtn from './src/components/VBtn/VBtn.vue';
 import VAppBar from './src/components/VAppBar/VAppBar.vue';
@@ -40,9 +41,12 @@ import Auth from './src/pages/auth/Auth.vue';
 import ForgotPassword from './src/pages/auth/ForgotPassword.vue';
 import Login from './src/pages/auth/Login.vue';
 import ResetPassword from './src/pages/auth/ResetPassword.vue';
-import {App} from 'vue';
+import VEditor from './src/components/VEditor/VEditor.vue';
+import VFileUpload from './src/components/VFileUpload/VFileUpload.vue';
+import VCollapse from './src/components/VCollapsible/VCollapse.vue';
+import VCollapsible from './src/components/VCollapsible/VCollapsible.vue';
 
-export default {
+const plugin = {
   install: (app: App, options = {}) => {
     app.component('VAlert', VAlert);
     app.component('VBtn', VBtn);
@@ -77,6 +81,9 @@ export default {
     app.component('VToast', VToast);
     app.component('VSpinner', VSpinner);
     app.component('VStats', VStats);
+    app.component('VFileUpload', VFileUpload);
+    app.component('VCollapse', VCollapse);
+    app.component('VCollapsible', VCollapsible);
   },
 };
 
@@ -123,6 +130,11 @@ export {
   ForgotPassword,
   Login,
   ResetPassword,
+  VEditor,
+  VCollapse,
+  VCollapsible,
+  VFileUpload,
 };
 
 export * from './src/components/VToast/module';
+export default plugin;
