@@ -13,6 +13,7 @@
     "@heroicons/vue": "^1.0.0",
     "@popperjs/core": "^2.9.2",
     "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21",
     "pagino": "^1.4.0",
     "vee-validate": "^4.4.10",
     "vue": "^3.0.5",
