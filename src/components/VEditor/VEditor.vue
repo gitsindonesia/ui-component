@@ -1,22 +1,8 @@
-<template>
-  <div>
-    <ckeditor v-model="content" :editor="editor" :config="editorConfig" />
-
-    <ErrorMessage
-      v-if="errorMessages.length"
-      class="text-error text-sm"
-      :name="name"
-    />
-  </div>
-</template>
-
 <script setup lang="ts">
-import {ref, toRefs, watch, onMounted} from 'vue';
+import {ref, toRefs, watch} from 'vue';
 import {ErrorMessage} from 'vee-validate';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import CKEditor from '@ckeditor/ckeditor5-vue';
-
-const ckeditor = CKEditor.component;
+import {component as ckeditor} from '@ckeditor/ckeditor5-vue';
 
 const props = defineProps({
   modelValue: {
@@ -99,6 +85,18 @@ watch(content, (value) => {
   emit('input', value);
 });
 </script>
+
+<template>
+  <div>
+    <ckeditor v-model="content" :editor="editor" :config="editorConfig" />
+
+    <ErrorMessage
+      v-if="errorMessages.length"
+      class="text-error text-sm"
+      :name="name"
+    />
+  </div>
+</template>
 
 <style>
 .ck-editor__editable {
