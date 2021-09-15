@@ -41,7 +41,7 @@ import Auth from './src/pages/auth/Auth.vue';
 import ForgotPassword from './src/pages/auth/ForgotPassword.vue';
 import Login from './src/pages/auth/Login.vue';
 import ResetPassword from './src/pages/auth/ResetPassword.vue';
-import VEditor from './src/components/VEditor/VEditor.vue';
+// import VEditor from './src/components/VEditor/VEditor.vue';
 import VFileUpload from './src/components/VFileUpload/VFileUpload.vue';
 import VCollapse from './src/components/VCollapsible/VCollapse.vue';
 import VCollapsible from './src/components/VCollapsible/VCollapsible.vue';
@@ -130,7 +130,7 @@ export {
   ForgotPassword,
   Login,
   ResetPassword,
-  VEditor,
+  // VEditor,
   VCollapse,
   VCollapsible,
   VFileUpload,
