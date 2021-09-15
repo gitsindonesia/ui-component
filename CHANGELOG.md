@@ -1,3 +1,12 @@
+## [0.0.2-alpha.8](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.2-alpha.7...v0.0.2-alpha.8) (2021-09-15)
+
+
+### Bug Fixes
+
+* **v-editor:** fix ckeditor import ([7b4b826](https://git.gits.id/frontend/starter/vue-3/starter/commits/7b4b82608974871317681e1bc4ddcf12409e26f6))
+
+
+
 ## [0.0.2-alpha.7](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.2-alpha.6...v0.0.2-alpha.7) (2021-09-15)
 
 
