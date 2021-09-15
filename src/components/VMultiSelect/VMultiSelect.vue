@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import {computed, ref, toRefs, onBeforeUpdate, watch, nextTick} from 'vue';
 import {CheckIcon, ChevronDownIcon, XIcon} from '@heroicons/vue/solid';
 import VBadge from '../VBadge/VBadge.vue';
