@@ -31,9 +31,14 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  hideToggle: {
+    type: Boolean,
+    default: false,
+  },
 });
 
-const {modelValue, mini, menus, logoProps, dark, color} = toRefs(props);
+const {modelValue, mini, menus, logoProps, dark, color, hideToggle} =
+  toRefs(props);
 
 const emit = defineEmits(['update:modelValue', 'update:mini']);
 
@@ -73,7 +78,7 @@ const bgColor = computed(() =>
       z-20
       min-h-screen
       shadow-md
-      p-4
+      p-2
       transition-all
       duration-300
       flex flex-col
@@ -82,11 +87,12 @@ const bgColor = computed(() =>
       bgColor,
       mini
         ? 'w-10/12 sm:w-[85px]'
-        : 'transform -translate-x-full sm:transform-none sm:w-[250px]',
+        : 'transform -translate-x-full sm:transform-none sm:w-[260px]',
     ]"
   >
     <div class="hidden sm:block">
       <v-btn
+        v-if="!hideToggle"
         size="sm"
         icon
         rounded
