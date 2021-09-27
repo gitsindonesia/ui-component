@@ -207,7 +207,7 @@ const transitionProps = computed(() => {
 function setTimer() {
   clearTimeout(timer.value);
   timer.value = setTimeout(() => {
-    isOpen.value = false;
+    closeModal();
   }, timeout.value);
 }
 
