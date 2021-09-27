@@ -52,13 +52,21 @@ const colorClass = computed(() => {
   }
 });
 
-watch(value, (val) => {
-  emit('update:modelValue', val);
-});
+watch(
+  value,
+  (val) => {
+    emit('update:modelValue', val);
+  },
+  {immediate: true},
+);
 
-watch(modelValue, (val) => {
-  value.value = val;
-});
+watch(
+  modelValue,
+  (val) => {
+    value.value = val;
+  },
+  {immediate: true},
+);
 </script>
 
 <template>
@@ -68,6 +76,7 @@ watch(modelValue, (val) => {
       v-model="value"
       type="radio"
       :name="name"
+      :value="value"
       class="transition duration-300"
       :class="[inputClass, colorClass]"
     />
