@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/vue3';
+import {Meta, Story} from '@storybook/vue3';
 import MyDataTable from './VDataTable.vue';
 
 const items = [...Array(30)].map((item, index) => ({
@@ -41,7 +41,7 @@ const Template: Story = (args) => ({
   },
   // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
-    return { args };
+    return {args};
   },
   // And then the `args` are bound to your component with `v-bind="args"`
   template: `<my-component v-bind="args">{{ args.label }}</my-component>`,
@@ -52,15 +52,15 @@ Default.args = {};
 
 export const Striped = Template.bind({});
 Striped.args = {
-  striped: true
+  striped: true,
 };
 
 export const Hover = Template.bind({});
 Hover.args = {
-  hover: true
+  hover: true,
 };
 
 export const Dense = Template.bind({});
 Dense.args = {
-  dense: true
+  dense: true,
 };

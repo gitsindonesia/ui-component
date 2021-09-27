@@ -8,14 +8,26 @@ import type {
   VDataTableProps,
 } from './VDataTable';
 import {SortAscendingIcon, SortDescendingIcon} from '@heroicons/vue/solid';
+import VSpinner from '../VSpinner/VSpinner.vue';
+import VCheckbox from '../VCheckbox/VCheckbox.vue';
+// import get from 'lodash/get';
+import {get} from '../../utils';
 
 const props = defineProps({
+  modelValue: {
+    type: Array,
+    default: () => [],
+  },
+  value: {
+    type: Array,
+    default: () => [],
+  },
   headers: {
     type: Array as PropType<VDataTableHeader[]>,
     default: () => [],
   },
   items: {
-    type: Array,
+    type: Array as PropType<VDataTableItem[]>,
     default: () => [],
   },
   itemsPerPage: {
@@ -76,6 +88,30 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  hideFooter: {
+    type: Boolean,
+    default: false,
+  },
+  totalItems: {
+    type: Number,
+    default: 0,
+  },
+  page: {
+    type: Number,
+    default: 1,
+  },
+  mustSort: {
+    type: Boolean,
+    default: false,
+  },
+  noShadow: {
+    type: Boolean,
+    default: false,
+  },
+  selectable: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const emit = defineEmits([
@@ -83,8 +119,14 @@ const emit = defineEmits([
   'sort',
   'update:sortBy',
   'update:sortDirection',
+  'update:page',
   'update:itemsPerPage',
+  'update:pagination',
   'page:change',
+  'itemsPerPage:change',
+  'pagination:change',
+  'update:modelValue',
+  'update:value',
 ]);
 
 const {
@@ -102,9 +144,15 @@ const {
   striped,
   dense,
   headers,
+  totalItems,
+  page: paginationPage,
+  mustSort,
+  selectable,
+  modelValue,
+  value,
 } = toRefs(props);
 
-const page = ref<number>(1);
+const page = ref<number>(props.page);
 const perPage = ref(itemsPerPage.value);
 const offset = computed(() => (page.value - 1) * Number(perPage.value));
 
@@ -158,7 +206,9 @@ const computedHeaders = computed(() =>
 const getThClass = (header: VDataTableHeader) => {
   const isActive = header.sorting && sortBy.value === header.value;
   return [
-    isActive ? 'text-primary' : 'text-gray-600',
+    isActive
+      ? 'text-primary-500 hover:text-primary-600'
+      : 'text-gray-600 hover:text-primary-500',
     {
       [`text-${header.align}`]: !!header.align,
     },
@@ -175,12 +225,20 @@ const handleSort = (header: VDataTableHeader) => {
   if (!header) return;
 
   let direction = '';
-  if (sortDirection.value === '') {
-    direction = 'asc';
-  } else if (sortDirection.value === 'asc') {
-    direction = 'desc';
-  } else if (sortDirection.value === 'desc') {
-    direction = '';
+  if (mustSort.value) {
+    if (sortDirection.value === 'asc') {
+      direction = 'desc';
+    } else {
+      direction = 'asc';
+    }
+  } else {
+    if (sortDirection.value === '') {
+      direction = 'asc';
+    } else if (sortDirection.value === 'asc') {
+      direction = 'desc';
+    } else if (sortDirection.value === 'desc') {
+      direction = '';
+    }
   }
 
   header.sorting = direction;
@@ -199,9 +257,105 @@ const onPerPageChange = (perPage: {text: string; value: number}) => {
 
 const paddingClass = computed(() => (dense.value ? 'px-4 py-2' : 'px-6 py-3'));
 
+const onPaginationChange = (params = {}) => {
+  emit('pagination:change', {
+    page: page.value,
+    itemsPerPage: perPage.value,
+    ...params,
+  });
+};
+
 watch(page, (val) => {
   emit('page:change', val);
+  onPaginationChange({page: val});
 });
+
+watch(perPage, (val) => {
+  emit('itemsPerPage:change', val);
+  onPaginationChange({itemsPerPage: val});
+});
+
+watch(paginationPage, (val) => {
+  page.value = val;
+});
+
+const selected = ref<any>([]);
+
+const selectAll = computed({
+  // get: () =>
+  //   items.value.every(function (item) {
+  //     return item.selected;
+  //   }),
+  // set: (val) => {
+  //   items.value.forEach(function (item) {
+  //     item.selected = val;
+  //   });
+  // },
+  get() {
+    return items.value.length
+      ? selected.value.length == items.value.length
+      : false;
+  },
+  set(value) {
+    const selectedItems: any = [];
+
+    if (value) {
+      items.value.forEach(function (item) {
+        selectedItems.push(item);
+      });
+    }
+
+    selected.value = selectedItems;
+  },
+});
+
+// watch(
+//   modelValue,
+//   (val) => {
+//     val.forEach(function (item: any) {
+//       const index = items.value.findIndex((s) => s.id === item.id);
+//       if (index > -1) {
+//         items.value[index].selected = true;
+//       }
+//     });
+//     console.log({val});
+//   },
+//   {deep: true},
+// );
+
+// watch(
+//   items,
+//   (val) => {
+//     emit('update:modelValue', val);
+//   },
+//   {deep: true},
+// );
+
+watch(
+  selected,
+  (val) => {
+    emit('update:modelValue', val);
+  },
+  {deep: true},
+);
+
+watch(
+  modelValue,
+  (val) => {
+    console.log(val);
+    selected.value = val;
+  },
+  {deep: true},
+);
+
+watch(
+  value,
+  (val) => {
+    console.log({val});
+    selected.value = val;
+  },
+  {deep: true},
+);
 </script>
 
 <template>
@@ -209,11 +363,11 @@ watch(page, (val) => {
     class="
       w-full
       flex flex-col
-      shadow
       border-b border-gray-200
       rounded-md
       sm:rounded-lg
     "
+    :class="[!noShadow ? 'shadow' : '']"
   >
     <div class="overflow-x-auto rounded-t-md">
       <table class="w-full divide-y divide-gray-200">
@@ -223,16 +377,16 @@ watch(page, (val) => {
               v-for="header in computedHeaders"
               :key="header.value"
               scope="col"
-              class="
-                text-left text-xs
-                font-medium
-                text-gray-600
-                uppercase
-                tracking-wider
-              "
+              class="text-left text-xs font-medium uppercase tracking-wider"
               :class="[getThClass(header), paddingClass]"
             >
-              <slot :name="`header.${header.value}`">
+              <slot
+                v-if="selectable && header.value === 'selected'"
+                name="header.selectable"
+              >
+                <v-checkbox v-model="selectAll" />
+              </slot>
+              <slot v-else :name="`header.${header.value}`">
                 <a
                   v-if="!disableSorting && header.sortable"
                   href="#"
@@ -243,11 +397,11 @@ watch(page, (val) => {
                   {{ header.text }}
                   <SortDescendingIcon
                     v-if="header.sorting === 'desc'"
-                    class="h4 w-4"
+                    class="ml-2 h4 w-4"
                   />
                   <SortAscendingIcon
                     v-if="header.sorting === 'asc'"
-                    class="h4 w-4"
+                    class="ml-2 h4 w-4"
                   />
                 </a>
                 <span v-else>
@@ -282,6 +436,8 @@ watch(page, (val) => {
                   class="text-center text-gray-600 text-sm whitespace-nowrap"
                   :class="[paddingClass]"
                 >
+                  <v-spinner color="primary" class="mr-1" />
+
                   {{ loadingText }}
                 </td>
               </tr>
@@ -302,8 +458,19 @@ watch(page, (val) => {
               class="whitespace-nowrap text-sm text-gray-900"
               :class="[getTdClass(header), paddingClass]"
             >
-              <slot :name="`item.${header.value}`" :item="item">
-                {{ item[header.value] }}
+              <slot
+                v-if="selectable && header.value === 'selected'"
+                name="item.selected"
+              >
+                <v-checkbox v-model="selected" :value="item" />
+              </slot>
+              <slot
+                v-else
+                :name="`item.${header.value}`"
+                :item="item"
+                :index="index"
+              >
+                {{ get(item, header.value) }}
               </slot>
             </td>
           </tr>
@@ -311,13 +478,15 @@ watch(page, (val) => {
       </table>
     </div>
 
-    <VDataTablePagination
-      v-model="page"
-      class="rounded-b-md"
-      :total-items="items.length"
-      v-model:itemsPerPage="perPage"
-      v-bind="pagination"
-    />
+    <slot v-if="!hideFooter" name="footer">
+      <VDataTablePagination
+        v-model="page"
+        class="rounded-b-md"
+        :total-items="serverSide ? totalItems : items.length"
+        v-model:itemsPerPage="perPage"
+        v-bind="pagination"
+      />
+    </slot>
   </div>
 </template>
 

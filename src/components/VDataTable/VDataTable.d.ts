@@ -1,11 +1,17 @@
 import type {PropType} from 'vue';
 
 export interface VDataTableItem {
-  [key: string]: string;
+  selected?: boolean;
+  [key: string]: any;
 }
 
 export interface VDataTableHeader {
-  [key: string]: string;
+  [key: string]: any;
+}
+
+export interface VDataTableSortEvent {
+  sortBy: string;
+  direction: 'asc' | 'desc' | '';
 }
 
 export interface VDataTableProps {
