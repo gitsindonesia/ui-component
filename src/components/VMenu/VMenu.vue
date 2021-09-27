@@ -60,20 +60,26 @@ const openClass = (isOpen: boolean) => {
         :class="[textColor]"
       >
         <div
-          class="py-3 w-full flex px-4 gap-x-4 rounded"
+          class="py-3 w-full flex px-2 gap-x-2 rounded"
           :class="[openClass(open)]"
         >
           <img v-if="menu.img" :src="menu.img" alt="img icon" class="w-5 h-5" />
           <span v-else-if="menu.svg" v-html="menu.svg" />
-          <component
-            :is="menu.icon"
-            v-else-if="menu.icon"
-            class="w-5 h-5"
-            :class="open ? '' : ''"
-          />
+          <template v-else-if="menu.icon">
+            <template v-if="typeof menu.icon === 'string'">
+              <v-icon :name="menu.icon" />
+            </template>
+            <component
+              :is="menu.icon"
+              v-else
+              class="w-5 h-5"
+              :class="open ? '' : ''"
+            />
+          </template>
 
           <span
-            class="text-sm flex-grow text-left"
+            :title="menu.text"
+            class="text-sm flex-grow text-left truncate"
             :class="{'sm:hidden': mini}"
           >
             {{ menu.text }}
@@ -102,16 +108,15 @@ const openClass = (isOpen: boolean) => {
           class="
             group
             sub-menu
-            gap-x-4
+            gap-x-2
             w-full
-            px-4
+            px-2
             py-3
             rounded
             flex
             items-center
             text-sm
             relative
-            mb-1
           "
           :class="[textColor]"
         >
@@ -166,11 +171,11 @@ const openClass = (isOpen: boolean) => {
         transition
         duration-300
         w-full
-        px-4
+        px-2
         py-3
         rounded
         flex
-        gap-x-4
+        gap-x-2
         items-center
         text-sm
         mb-1

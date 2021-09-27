@@ -17,6 +17,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  btnClass: {
+    type: String,
+    default: '',
+  },
 });
 
 const emit = defineEmits([]);
@@ -37,9 +41,10 @@ const placementClass = computed(() => (props.right ? 'right-0' : 'left-0'));
           justify-center
           items-center
           w-full
-          py-2
+          py-1
           focus:outline-none
         "
+        :class="btnClass"
       >
         <slot />
         <slot name="icon">
