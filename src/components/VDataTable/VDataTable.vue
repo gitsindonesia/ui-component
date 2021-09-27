@@ -281,16 +281,7 @@ watch(paginationPage, (val) => {
 
 const selected = ref<any>([]);
 
-const selectAll = computed({
-  // get: () =>
-  //   items.value.every(function (item) {
-  //     return item.selected;
-  //   }),
-  // set: (val) => {
-  //   items.value.forEach(function (item) {
-  //     item.selected = val;
-  //   });
-  // },
+const selectAll = computed<boolean>({
   get() {
     return items.value.length
       ? selected.value.length == items.value.length
@@ -462,7 +453,7 @@ watch(
                 v-if="selectable && header.value === 'selected'"
                 name="item.selected"
               >
-                <v-checkbox v-model="selected" :value="item" />
+                <v-checkbox v-model="selected" />
               </slot>
               <slot
                 v-else

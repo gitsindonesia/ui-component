@@ -52,7 +52,7 @@ const toggleMenu = () => emit('toggleMenu');
         icon
         dense
         rounded
-        :color="[dark ? 'white' : '']"
+        :color="dark ? 'white' : ''"
         class="hover:bg-transparent hover:text-primary-2 mr-2"
         @click="toggleMenu"
       >

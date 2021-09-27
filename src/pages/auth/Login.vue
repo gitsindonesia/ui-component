@@ -92,9 +92,10 @@ const {errors, handleSubmit} = useForm({
 });
 
 // No need to define rules for fields
-const {value: email, errorMessage: emailError} = useField('email');
-const {value: password, errorMessage: passwordError} = useField('password');
-const {value: remember} = useField('remember');
+const {value: email, errorMessage: emailError} = useField<string>('email');
+const {value: password, errorMessage: passwordError} =
+  useField<string>('password');
+const {value: remember} = useField<boolean>('remember');
 
 const onSubmit = handleSubmit((values) => {
   emit('submit', values);

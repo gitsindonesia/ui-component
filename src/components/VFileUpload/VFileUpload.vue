@@ -124,19 +124,19 @@ const sizeClass = computed(() =>
   props.full ? 'w-full' : 'w-[180px] h-[180px]',
 );
 
-const file = ref(null);
-const fileRef = ref(null);
-const previewURL = ref(null);
+const file = ref<File | null>(null);
+const fileRef = ref<HTMLDivElement | null>(null);
+const previewURL = ref<string>('');
 const hasInitialValue = ref(false);
 
 const acceptedTypes = computed(() => (image.value ? 'image/*' : accept.value));
 
 const pickFile = () => {
-  fileRef.value.click();
+  fileRef.value?.click();
 };
 
-const onFileChanged = (event) => {
-  previewURL.value = null;
+const onFileChanged = (event: any) => {
+  previewURL.value = '';
 
   const fileTarget = event.target.files[0];
 
@@ -158,13 +158,13 @@ const onFileChanged = (event) => {
 
 const removeFile = () => {
   file.value = null;
-  previewURL.value = null;
+  previewURL.value = '';
   hasInitialValue.value = false;
 
   emit('removed');
 };
 
-const setInitialValue = (val) => {
+const setInitialValue = (val: any) => {
   hasInitialValue.value = true;
 
   if (image.value && val?.file) {
@@ -255,7 +255,7 @@ const disabledClass = computed(() => {
         h-[180px]
       "
       :class="[sizeClass, {'rounded-10': rounded}]"
-      :style="{'background-image': image ? `url(${previewURL})` : 'none'}"
+      :style="{backgroundImage: image ? `url(${previewURL})` : 'none'}"
       @click="pickFile"
     >
       <div v-if="hasFile" class="px-2 text-center">

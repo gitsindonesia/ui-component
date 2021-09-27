@@ -37,12 +37,12 @@ const props = defineProps({
     default: '',
   },
   cols: {
-    type: [String, Number],
-    default: '',
+    type: Number,
+    default: undefined,
   },
   rows: {
-    type: [String, Number],
-    default: '',
+    type: Number,
+    default: undefined,
   },
 });
 

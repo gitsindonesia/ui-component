@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {computed, ref, toRefs, watch} from 'vue';
+import {computed, ref, toRefs, watch, PropType} from 'vue';
 import {
   UserCircleIcon,
   ChevronUpIcon,
@@ -11,7 +11,7 @@ import {Disclosure, DisclosureButton, DisclosurePanel} from '@headlessui/vue';
 import VMenus from '../VMenus/VMenus.vue';
 import VLogo from '../VLogo/VLogo.vue';
 import {Menu, MenuButton, MenuItems, MenuItem} from '@headlessui/vue';
-import type {VNavbarProps} from './VNavbar';
+import type {VNavbarMenuItem, VNavbarProps} from './VNavbar';
 
 const props = defineProps({
   modelValue: {
@@ -23,7 +23,7 @@ const props = defineProps({
     default: null,
   },
   menus: {
-    type: Array,
+    type: Array as PropType<VNavbarMenuItem[]>,
     default: () => [],
   },
   loginPath: {

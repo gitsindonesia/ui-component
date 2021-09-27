@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import {toRefs} from 'vue';
+import {toRefs, PropType} from 'vue';
 import {Menu, MenuButton, MenuItems, MenuItem} from '@headlessui/vue';
+import type {DropdownItem} from './VDropdown';
 
 const props = defineProps({
   item: {
-    type: Object as DropdownItem,
+    type: Object as PropType<Partial<DropdownItem>>,
     default: () => ({}),
   },
   active: {
@@ -15,6 +16,14 @@ const props = defineProps({
 
 const {item, active} = toRefs(props);
 const {icon, text, ...rest} = item.value;
+
+defineExpose({
+  rest,
+  icon,
+  text,
+  item,
+  active,
+});
 </script>
 
 <template>

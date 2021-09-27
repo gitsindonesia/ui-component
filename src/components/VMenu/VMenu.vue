@@ -28,7 +28,7 @@ const emit = defineEmits([]);
 
 const {menu, mini, dark} = toRefs(props);
 
-const panel = ref(null);
+const panel = ref<HTMLDivElement | null>(null);
 
 const menuItemColor = computed(() => {
   return dark.value ? '#404040' : '#f5f5f5';
@@ -98,7 +98,7 @@ const openClass = (isOpen: boolean) => {
         ref="panel"
         static
         class="mt-2 duration-300 relative overflow-hidden transition-all h-auto"
-        :style="{maxHeight: open ? `${panel.el.scrollHeight}px` : 0}"
+        :style="{maxHeight: open ? `${(panel as any)?.el?.scrollHeight}px` : 0}"
       >
         <router-link
           v-for="(child, j) in menu.children"

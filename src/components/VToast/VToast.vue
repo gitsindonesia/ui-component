@@ -103,6 +103,7 @@ const props = defineProps({
   hideXIcon: {type: Boolean, default: false},
   overlay: {type: Boolean, default: false},
   color: {type: String, default: 'white'},
+  type: {type: String, default: ''},
 });
 
 const emit = defineEmits(['update:modelValue', 'confirm', 'close', 'open']);
@@ -126,7 +127,7 @@ const {
 } = toRefs(props);
 
 const isOpen = ref(modelValue.value);
-const timer = ref(null);
+const timer = ref<any>(null);
 
 function closeModal() {
   isOpen.value = false;

@@ -57,7 +57,7 @@ const perPageItems = ref<PerPageItem[]>(
   })),
 );
 
-const perPage = ref<PerPageItem | null>({
+const perPage = ref<Record<string, any> | undefined>({
   text: itemsPerPage.value.toString(),
   value: itemsPerPage.value,
 });

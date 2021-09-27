@@ -28,7 +28,7 @@ const props = defineProps({
     default: '',
   },
   value: {
-    type: String,
+    type: [String, Number],
     default: '',
   },
 });
@@ -45,7 +45,7 @@ const {
 
 const emit = defineEmits(['update:modelValue']);
 
-const value = ref(props.modelValue);
+const innerValue = ref(props.modelValue);
 
 const colorClass = computed(() => {
   switch (color.value) {
@@ -67,19 +67,19 @@ const colorClass = computed(() => {
 
 const {class: sizeClass} = useTextSize(size.value);
 
-watch(value, (val) => {
+watch(innerValue, (val) => {
   emit('update:modelValue', val);
 });
 
 watch(modelValue, (val) => {
-  value.value = val;
+  innerValue.value = val;
 });
 </script>
 
 <template>
   <label class="flex items-center gap-2 select-none" :class="[sizeClass]">
     <input
-      v-model="value"
+      v-model="innerValue"
       type="checkbox"
       :value="checkboxValue"
       class="
@@ -94,5 +94,3 @@ watch(modelValue, (val) => {
     {{ label }}
   </label>
 </template>
-
-<style scoped></style>

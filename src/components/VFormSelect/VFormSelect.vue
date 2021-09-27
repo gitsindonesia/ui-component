@@ -1,7 +1,8 @@
 <script setup inherit-attrs="false" lang="ts">
-import {ref, toRefs, watch, computed} from 'vue';
+import {ref, toRefs, PropType, watch, computed} from 'vue';
 import {ErrorMessage} from 'vee-validate';
 import {useInputClasses, useTextSize} from '../../utils';
+import type {VFormSelectItem} from './VFormSelect';
 
 const props = defineProps({
   modelValue: {
@@ -13,7 +14,7 @@ const props = defineProps({
     default: '',
   },
   items: {
-    type: Array,
+    type: Array as PropType<VFormSelectItem[]>,
     default: () => [],
   },
   itemText: {

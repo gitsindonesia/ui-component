@@ -3,8 +3,8 @@ import {ref, toRefs, watch, computed} from 'vue';
 
 const props = defineProps({
   modelValue: {
-    type: Boolean,
-    default: false,
+    type: String,
+    default: '',
   },
   label: {
     type: String,
@@ -32,7 +32,7 @@ const {modelValue, label, inputClass, color, name, id} = toRefs(props);
 
 const emit = defineEmits(['update:modelValue']);
 
-const value = ref(props.modelValue);
+const value = ref<string | number | string[] | undefined>(props.modelValue);
 
 const colorClass = computed(() => {
   switch (color.value) {

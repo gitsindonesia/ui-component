@@ -79,8 +79,10 @@ const props = defineProps({
 
 const {label, items, right, btnProps, ...rest} = toRefs(props);
 
+type RestProps = Record<string, any>;
+
 const restBtnProps = Object.fromEntries(
-  Object.keys(rest).map((key) => [key, rest[key].value]),
+  Object.keys(rest).map((key) => [key, (rest as RestProps)[key].value]),
 );
 // console.log(rest, restBtnProps);
 

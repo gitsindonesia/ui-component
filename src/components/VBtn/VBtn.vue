@@ -220,7 +220,7 @@ const classes = computed(() => {
 });
 
 const attrs = computed(() => {
-  const attrs: Record<string, string> = {};
+  const attrs: Record<string, any> | string = {};
   if (props.to) {
     attrs.to = props.to;
   } else if (props.href) {
