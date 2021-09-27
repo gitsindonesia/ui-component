@@ -20,6 +20,7 @@ interface Props {
   headerClass?: string;
   bodyClass?: string;
   footerClass?: string;
+  modalClass?: string;
   loading?: boolean;
 }
 
@@ -35,6 +36,7 @@ const props = withDefaults(defineProps<Props>(), {
   headerClass: '',
   bodyClass: '',
   footerClass: '',
+  modalClass: '',
   boolean: false,
 });
 
@@ -125,6 +127,7 @@ const onConfirm = () => {
                 shadow-xl
                 rounded-lg
               "
+              :class="modalClass"
             >
               <DialogTitle
                 as="h3"
