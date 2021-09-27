@@ -23,6 +23,14 @@ export const toastModule = <R>(): Module<ToastState, R> => ({
       state.show = true;
       state.options = {...state.options, ...options};
     },
+    reset(state) {
+      state.show = false;
+      state.message = '';
+      state.options = {
+        color: 'black',
+        timeout: 3000,
+      };
+    },
   },
   getters: {
     message: (state) => state.message,
