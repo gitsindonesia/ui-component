@@ -4,6 +4,11 @@ import {ErrorMessage} from 'vee-validate';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import {component as ckeditor} from '@ckeditor/ckeditor5-vue';
 
+import {QuillEditor} from '@vueup/vue-quill';
+import '@vueup/vue-quill/dist/vue-quill.snow.css';
+
+import VTextarea from '../VTextarea/VTextarea.vue';
+
 const props = defineProps({
   modelValue: {
     type: String,
@@ -25,6 +30,11 @@ const props = defineProps({
     type: Array,
     default: () => [],
   },
+  theme: {
+    type: String,
+    default: 'quill',
+    validator: (v: string) => ['quill', 'ckeditor', 'textarea'].includes(v),
+  },
 });
 
 const emit = defineEmits([
@@ -35,10 +45,10 @@ const emit = defineEmits([
   'blur',
 ]);
 
-const {value, modelValue, name, error, errorMessages} = toRefs(props);
+const {value, modelValue, name, errorMessages} = toRefs(props);
 
 const content = ref(value.value || modelValue.value);
-const editor = ref(ClassicEditor);
+const classicEditor = ref(ClassicEditor);
 const editorConfig = {
   toolbar: [
     'heading',
@@ -88,8 +98,19 @@ watch(content, (value) => {
 
 <template>
   <div>
-    <ckeditor v-model="content" :editor="editor" :config="editorConfig" />
-
+    <template v-if="theme === 'ckeditor'">
+      <ckeditor
+        v-model="content"
+        :editor="classicEditor"
+        :config="editorConfig"
+      />
+    </template>
+    <template v-else-if="theme === 'quill'">
+      <QuillEditor v-model:content="content" theme="snow" />
+    </template>
+    <template v-else>
+      <v-textarea v-model="content" />
+    </template>
     <ErrorMessage
       v-if="errorMessages.length"
       class="text-error text-sm"
