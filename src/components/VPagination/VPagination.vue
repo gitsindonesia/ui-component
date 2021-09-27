@@ -1,5 +1,5 @@
 <script setup>
-import {computed, ref, toRefs} from 'vue';
+import {computed, ref, toRefs, watch} from 'vue';
 import Pagino from 'pagino';
 
 const props = defineProps({
@@ -41,7 +41,8 @@ const props = defineProps({
   },
   activeClass: {
     type: String,
-    default: 'text-primary !font-bold',
+    default:
+      'bg-primary-500 border-primary-500 hover:!bg-primary-600 text-white !font-bold',
   },
   defaultClass: {
     type: String,
@@ -94,6 +95,22 @@ const defaultClasses = computed(() => defaultClass.value);
 const emitPage = (page) => {
   emit('update:modelValue', page);
 };
+
+watch(
+  page,
+  (val) => {
+    emitPage(val);
+  },
+  {immediate: true},
+);
+
+watch(
+  modelValue,
+  (val) => {
+    page.value = val;
+  },
+  {immediate: true},
+);
 </script>
 
 <template>
