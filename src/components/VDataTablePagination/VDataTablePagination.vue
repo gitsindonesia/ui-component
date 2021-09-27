@@ -66,6 +66,14 @@ watch(perPage, (val) => {
   emit('update:itemsPerPage', val?.value);
   emit('update:perPage', val);
 });
+
+watch(
+  modelValue,
+  (val) => {
+    page.value = val;
+  },
+  {immediate: true},
+);
 </script>
 
 <template>
