@@ -8,6 +8,10 @@ import debounce from 'lodash/debounce';
 import {onClickOutside} from '@vueuse/core';
 
 const props = defineProps({
+  value: {
+    type: Array,
+    default: () => [],
+  },
   modelValue: {
     type: Array,
     default: () => [],
@@ -72,6 +76,7 @@ const emit = defineEmits([
 const {
   maxBadge,
   items,
+  value,
   modelValue,
   placeholder,
   id,
@@ -259,6 +264,14 @@ watch(
 );
 
 watch(
+  value,
+  (val) => {
+    selected.value = val;
+  },
+  {immediate: true, deep: true},
+);
+
+watch(
   selected,
   (val) => {
     emit('update:modelValue', val);
@@ -384,6 +397,7 @@ watch(
               focus:outline-none
               sm:text-sm
               px-0
+              z-10
             "
           >
             <div v-if="loading" class="pl-6 pr-4 py-2 text-gray-600">
