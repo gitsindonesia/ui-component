@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {computed, ref, toRefs, watch} from 'vue';
+import {computed, PropType, ref, toRefs, watch} from 'vue';
 import {
   Listbox,
   ListboxLabel,
@@ -10,19 +10,26 @@ import {
 import {CheckIcon, ChevronDownIcon} from '@heroicons/vue/solid';
 import {getBgColor, getTextColor} from '../../utils';
 import VInput from '../VInput/VInput.vue';
+import {ErrorMessage} from 'vee-validate';
 
 interface SelectItem {
   text: string;
   value: any;
+
+  [x: string]: any;
 }
 
 const props = defineProps({
+  value: {
+    type: Object,
+    default: null,
+  },
   modelValue: {
     type: Object,
     default: null,
   },
   items: {
-    type: Array,
+    type: Array as PropType<SelectItem[]>,
     default: () => [],
   },
   color: {
@@ -49,6 +56,26 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  itemText: {
+    type: String,
+    default: 'text',
+  },
+  itemValue: {
+    type: String,
+    default: 'value',
+  },
+  name: {
+    type: String,
+    default: '',
+  },
+  error: {
+    type: Boolean,
+    default: false,
+  },
+  errorMessages: {
+    type: Array,
+    default: () => [],
+  },
 });
 
 const {
@@ -60,6 +87,9 @@ const {
   hideCheckIcon,
   btnClass,
   top,
+  itemText,
+  itemValue,
+  value,
 } = toRefs(props);
 
 const emit = defineEmits(['update:modelValue', 'search']);
@@ -83,6 +113,10 @@ watch(selectedItem, (item) => {
 });
 
 watch(modelValue, (val) => {
+  selectedItem.value = val;
+});
+
+watch(value, (val) => {
   selectedItem.value = val;
 });
 
@@ -117,10 +151,10 @@ watch(search, (val) => {
             focus-visible:border-indigo-600
             sm:text-sm
           "
-          :class="[btnClass]"
+          :class="[btnClass, error ? 'border-error-600' : '']"
         >
           <span class="block truncate">
-            {{ selectedItem?.text || placeholder }}
+            {{ selectedItem?.[itemText] || placeholder }}
           </span>
           <span
             class="
@@ -157,6 +191,7 @@ watch(search, (val) => {
               ring-1 ring-black ring-opacity-5
               focus:outline-none
               sm:text-sm
+              z-10
             "
             :class="top ? 'bottom-10' : ''"
           >
@@ -189,8 +224,9 @@ watch(search, (val) => {
                     selected ? 'font-medium ' : 'font-normal',
                     'block truncate',
                   ]"
-                  >{{ item.text }}</span
                 >
+                  {{ item?.[itemText] }}
+                </span>
                 <span
                   v-if="selected && !hideCheckIcon"
                   class="absolute inset-y-0 left-0 flex items-center pl-3"
@@ -204,5 +240,11 @@ watch(search, (val) => {
         </transition>
       </div>
     </Listbox>
+
+    <ErrorMessage
+      v-if="errorMessages.length"
+      class="text-error-600 text-sm"
+      :name="name"
+    />
   </div>
 </template>
