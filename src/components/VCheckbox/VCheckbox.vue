@@ -27,9 +27,21 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  value: {
+    type: String,
+    default: '',
+  },
 });
 
-const {modelValue, label, inputClass, color, disabled, size} = toRefs(props);
+const {
+  modelValue,
+  label,
+  inputClass,
+  color,
+  disabled,
+  size,
+  value: checkboxValue,
+} = toRefs(props);
 
 const emit = defineEmits(['update:modelValue']);
 
@@ -69,6 +81,7 @@ watch(modelValue, (val) => {
     <input
       v-model="value"
       type="checkbox"
+      :value="checkboxValue"
       class="
         rounded
         transition
