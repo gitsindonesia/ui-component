@@ -93,8 +93,12 @@ const emit = defineEmits(['update:modelValue']);
       <div>
         <MenuButton as="template">
           <v-btn v-bind="{...restBtnProps, ...btnProps}">
-            {{ label }}
-            <ChevronDownIcon class="w-5 h-5 ml-2 -mr-1" aria-hidden="true" />
+            <slot name="label">
+              {{ label }}
+            </slot>
+            <slot name="icon">
+              <ChevronDownIcon class="w-5 h-5 ml-2 -mr-1" aria-hidden="true" />
+            </slot>
           </v-btn>
         </MenuButton>
       </div>
