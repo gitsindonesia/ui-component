@@ -3,6 +3,7 @@ import {ref, toRefs, computed, watch} from 'vue';
 import VInput from '../VInput/VInput.vue';
 import {ErrorMessage} from 'vee-validate';
 import {inputErrorClasses} from '../../utils';
+import {EyeOffIcon, EyeIcon} from '@heroicons/vue/outline';
 
 const props = defineProps({
   modelValue: {
@@ -60,11 +61,13 @@ const {
   name,
   errorClass,
   modelValue,
+  type,
 } = toRefs(props);
 
 const emit = defineEmits(['update:modelValue', 'blur']);
 
 const value = ref(props.modelValue);
+const showPassword = ref(false);
 
 watch(value, (val) => {
   emit('update:modelValue', val);
@@ -82,6 +85,11 @@ watch(modelValue, (val) => {
 });
 
 const onBlur = () => emit('blur');
+
+const isPassword = computed(() => type.value === 'password');
+const inputType = computed(() =>
+  isPassword.value ? (showPassword.value ? 'text' : 'password') : type.value,
+);
 </script>
 
 <template>
@@ -98,7 +106,7 @@ const onBlur = () => emit('blur');
         v-model="value"
         class="mb-0"
         :placeholder="placeholder"
-        :type="type"
+        :type="inputType"
         :class="inputClass"
         :name="name"
         :error="error"
@@ -106,7 +114,7 @@ const onBlur = () => emit('blur');
         @blur="onBlur"
       />
       <div
-        v-if="append"
+        v-if="append || isPassword"
         class="
           absolute
           right-0
@@ -117,10 +125,31 @@ const onBlur = () => emit('blur');
           justify-center
         "
       >
-        <slot name="append"></slot>
+        <slot name="append">
+          <v-btn
+            v-if="isPassword"
+            class="mr-1"
+            no-ring
+            text
+            icon
+            @click="showPassword = !showPassword"
+          >
+            <EyeOffIcon
+              v-if="showPassword"
+              class="w-5 h-5"
+              :class="error ? 'text-error-500' : 'text-[#DFE0E0]'"
+            />
+            <EyeIcon
+              v-else
+              class="w-5 h-5"
+              :class="error ? 'text-error-500' : 'text-[#DFE0E0]'"
+            />
+          </v-btn>
+        </slot>
       </div>
     </div>
     <div :class="errorClass">
+      <slot name="hint" />
       <ErrorMessage class="text-error-600 text-sm" :name="name" />
     </div>
   </div>
