@@ -8,6 +8,8 @@ export default {
 import {computed, ref, toRefs} from 'vue';
 import {Disclosure, DisclosureButton, DisclosurePanel} from '@headlessui/vue';
 import {ChevronRightIcon} from '@heroicons/vue/outline';
+import VMenuTooltip from './VMenuTooltip.vue';
+import VMenuItem from './VMenuItem.vue';
 
 const props = defineProps({
   menu: {
@@ -62,7 +64,16 @@ const scrollHeight = computed(() => (panel as any).value?.el?.scrollHeight);
         :class="[textColor]"
       >
         <div
-          class="py-3 w-full flex px-2 gap-x-2 rounded"
+          class="
+            py-3
+            w-full
+            flex
+            justify-center
+            items-center
+            px-2
+            gap-x-2
+            rounded
+          "
           :class="[openClass(open)]"
         >
           <img v-if="menu.img" :src="menu.img" alt="img icon" class="w-5 h-5" />
@@ -94,73 +105,25 @@ const scrollHeight = computed(() => (panel as any).value?.el?.scrollHeight);
               mini ? 'inline sm:hidden' : '',
             ]"
           />
+
+          <v-menu-tooltip :show="mini">
+            {{ menu.text }}
+          </v-menu-tooltip>
         </div>
       </DisclosureButton>
       <DisclosurePanel
         ref="panel"
         static
-        class="mt-2 duration-300 relative overflow-hidden transition-all h-auto"
+        class="mt-2 duration-300 overflow-hidden transition-all h-auto"
         :style="{maxHeight: open ? `${scrollHeight}px` : 0}"
       >
-        <router-link
+        <v-menu-item
           v-for="(child, j) in menu.children"
           :key="j"
-          :to="child.to"
-          exact
-          class="
-            group
-            sub-menu
-            gap-x-2
-            w-full
-            px-2
-            py-3
-            rounded
-            flex
-            items-center
-            text-sm
-            relative
-          "
-          :class="[textColor]"
-        >
-          <span class="px-1">
-            <svg
-              width="12"
-              height="12"
-              viewBox="0 0 12 12"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle
-                cx="6"
-                cy="6"
-                r="5"
-                stroke="currentColor"
-                stroke-width="2"
-              />
-            </svg>
-          </span>
-
-          <span :class="{'sm:hidden': mini}"> {{ child.text }}</span>
-          <span
-            v-if="mini"
-            class="
-              menu-tooltip
-              hidden
-              shadow
-              absolute
-              bg-gray-200
-              text-gray-700
-              px-4
-              py-3
-              min-w-[200px]
-              rounded
-              left-14
-              sm:group-hover:block
-            "
-          >
-            {{ child.text }}
-          </span>
-        </router-link>
+          :item="child"
+          :mini="mini"
+          :text-color="textColor"
+        />
       </DisclosurePanel>
     </Disclosure>
     <router-link
@@ -178,6 +141,7 @@ const scrollHeight = computed(() => (panel as any).value?.el?.scrollHeight);
         rounded
         flex
         gap-x-2
+        justify-center
         items-center
         text-sm
         mb-1
@@ -188,25 +152,10 @@ const scrollHeight = computed(() => (panel as any).value?.el?.scrollHeight);
       <img v-if="menu.img" :src="menu.img" alt="img icon" class="w-5 h-5" />
       <component :is="menu.icon" v-else-if="menu.icon" class="w-5 h-5" />
       <span :class="{'sm:hidden': mini}"> {{ menu.text }}</span>
-      <span
-        v-if="mini"
-        class="
-          menu-tooltip
-          hidden
-          sm:group-hover:block
-          shadow
-          absolute
-          bg-gray-100
-          text-gray-700
-          px-4
-          py-3
-          min-w-[200px]
-          rounded
-          left-14
-        "
-      >
+
+      <v-menu-tooltip :show="mini">
         {{ menu.text }}
-      </span>
+      </v-menu-tooltip>
     </router-link>
   </template>
 </template>
