@@ -36,6 +36,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  btnToggleClass: {
+    type: String,
+    default: '',
+  },
 });
 
 const {modelValue, mini, menus, logoProps, dark, color, hideToggle} =
@@ -92,18 +96,23 @@ const bgColor = computed(() =>
     ]"
   >
     <div class="hidden sm:block">
-      <v-btn
-        v-if="!hideToggle"
-        size="sm"
-        icon
-        rounded
-        no-ring
-        class="absolute -right-4"
-        color="primary"
-        @click="toggleMenu"
-      >
-        <ChevronLeftIcon class="w-5 h-5" :class="[mini ? 'rotate-180' : '']" />
-      </v-btn>
+      <slot v-if="!hideToggle" name="toggle" :on="{click: toggleMenu}">
+        <v-btn
+          size="sm"
+          icon
+          rounded
+          no-ring
+          class="absolute -right-4"
+          :class="btnToggleClass"
+          color="primary"
+          @click="toggleMenu"
+        >
+          <ChevronLeftIcon
+            class="w-5 h-5"
+            :class="[mini ? 'rotate-180' : '']"
+          />
+        </v-btn>
+      </slot>
       <slot v-if="mini" name="logo.mini" />
       <slot v-else name="logo">
         <v-logo :white="dark" v-bind="logoProps" />
