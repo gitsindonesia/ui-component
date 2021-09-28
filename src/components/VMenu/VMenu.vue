@@ -98,7 +98,7 @@ const openClass = (isOpen: boolean) => {
         ref="panel"
         static
         class="mt-2 duration-300 relative overflow-hidden transition-all h-auto"
-        :style="{maxHeight: open ? `${(panel as any)?.el?.scrollHeight}px` : 0}"
+        :style="{maxHeight: open ? `${panel?.el?.scrollHeight}px` : 0}"
       >
         <router-link
           v-for="(child, j) in menu.children"
