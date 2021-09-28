@@ -24,6 +24,22 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  color: {
+    type: String,
+    default: '',
+  },
+  bgColor: {
+    type: String,
+    default: '',
+  },
+  darkColor: {
+    type: String,
+    default: '',
+  },
+  darkBgColor: {
+    type: String,
+    default: '',
+  },
 });
 
 const emit = defineEmits([]);
@@ -33,10 +49,10 @@ const {menu, mini, dark} = toRefs(props);
 const panel = ref<HTMLDivElement | null>(null);
 
 const menuItemColor = computed(() => {
-  return dark.value ? '#404040' : '#f5f5f5';
+  return dark.value ? props.darkColor : props.color;
 });
 const menuItemBgColor = computed(() => {
-  return dark.value ? '#404040' : '#f5f5f5';
+  return dark.value ? props.darkBgColor : props.bgColor;
 });
 
 const textColor = computed(() =>
@@ -64,17 +80,8 @@ const scrollHeight = computed(() => (panel as any).value?.el?.scrollHeight);
         :class="[textColor]"
       >
         <div
-          class="
-            py-3
-            w-full
-            flex
-            justify-center
-            items-center
-            px-2
-            gap-x-2
-            rounded
-          "
-          :class="[openClass(open)]"
+          class="py-3 w-full flex items-center px-2 gap-x-2 rounded"
+          :class="[openClass(open), mini ? 'justify-center' : '']"
         >
           <img v-if="menu.img" :src="menu.img" alt="img icon" class="w-5 h-5" />
           <span v-else-if="menu.svg" v-html="menu.svg" />
@@ -141,13 +148,12 @@ const scrollHeight = computed(() => (panel as any).value?.el?.scrollHeight);
         rounded
         flex
         gap-x-2
-        justify-center
         items-center
         text-sm
         mb-1
         relative
       "
-      :class="[textColor]"
+      :class="[textColor, mini ? 'justify-center' : '']"
     >
       <img v-if="menu.img" :src="menu.img" alt="img icon" class="w-5 h-5" />
       <component :is="menu.icon" v-else-if="menu.icon" class="w-5 h-5" />

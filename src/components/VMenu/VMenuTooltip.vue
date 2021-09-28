@@ -15,6 +15,7 @@ const emit = defineEmits(['update:show']);
 
 <template>
   <span
+    v-if="show"
     class="
       menu-tooltip
       hidden

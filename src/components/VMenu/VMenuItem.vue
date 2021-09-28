@@ -1,5 +1,4 @@
 <script setup>
-// import {toRefs} from 'vue';
 import VMenuTooltip from './VMenuTooltip.vue';
 
 const props = defineProps({
@@ -16,10 +15,6 @@ const props = defineProps({
     default: '',
   },
 });
-
-// const {item} = toRefs(props);
-
-// const emit = defineEmits(['update:item']);
 </script>
 
 <template>
@@ -35,11 +30,10 @@ const props = defineProps({
       py-3
       rounded
       flex
-      justify-center
       items-center
       text-sm
     "
-    :class="[textColor]"
+    :class="[textColor, mini ? 'justify-center' : '']"
   >
     <span class="px-1">
       <svg
