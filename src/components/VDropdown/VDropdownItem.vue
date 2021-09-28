@@ -16,14 +16,6 @@ const props = defineProps({
 
 const {item, active} = toRefs(props);
 const {icon, text, ...rest} = item.value;
-
-defineExpose({
-  rest,
-  icon,
-  text,
-  item,
-  active,
-});
 </script>
 
 <template>
@@ -36,7 +28,7 @@ defineExpose({
   >
     <vue-feather
       v-if="icon"
-      :name="icon"
+      :type="icon"
       class="w-5 h-5 mr-2"
       :class="active ? 'text-white' : 'text-primary-400'"
     />

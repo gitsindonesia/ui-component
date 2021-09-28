@@ -1,3 +1,9 @@
+<script lang="ts">
+export default {
+  inheritAttrs: false,
+};
+</script>
+
 <script setup lang="ts">
 import {Menu, MenuButton, MenuItems, MenuItem} from '@headlessui/vue';
 import {ChevronDownIcon, UserIcon} from '@heroicons/vue/solid';
@@ -14,6 +20,10 @@ const props = defineProps({
   items: {
     type: Array as PropType<DropdownItem[]>,
     default: () => [],
+  },
+  top: {
+    type: Boolean,
+    default: false,
   },
   right: {
     type: Boolean,
@@ -75,6 +85,14 @@ const props = defineProps({
     type: Object,
     default: () => ({}),
   },
+  widthClass: {
+    type: String,
+    default: 'w-56',
+  },
+  dividerClass: {
+    type: String,
+    default: '',
+  },
 });
 
 const {label, items, right, btnProps, ...rest} = toRefs(props);
@@ -90,55 +108,61 @@ const emit = defineEmits(['update:modelValue']);
 </script>
 
 <template>
-  <div class="">
-    <Menu as="div" class="relative inline-block text-left">
-      <div>
-        <MenuButton as="template">
-          <v-btn v-bind="{...restBtnProps, ...btnProps}">
+  <Menu as="div" class="relative inline-block text-left">
+    <div>
+      <MenuButton as="template">
+        <v-btn v-bind="{...restBtnProps, ...btnProps}">
+          <slot name="btn" :label="label">
             <slot name="label">
               {{ label }}
             </slot>
             <slot name="icon">
               <ChevronDownIcon class="w-5 h-5 ml-2 -mr-1" aria-hidden="true" />
             </slot>
-          </v-btn>
-        </MenuButton>
-      </div>
+          </slot>
+        </v-btn>
+      </MenuButton>
+    </div>
 
-      <transition
-        enter-active-class="transition duration-100 ease-out"
-        enter-from-class="transform scale-95 opacity-0"
-        enter-to-class="transform scale-100 opacity-100"
-        leave-active-class="transition duration-75 ease-in"
-        leave-from-class="transform scale-100 opacity-100"
-        leave-to-class="transform scale-95 opacity-0"
+    <transition
+      enter-active-class="transition duration-100 ease-out"
+      enter-from-class="transform scale-95 opacity-0"
+      enter-to-class="transform scale-100 opacity-100"
+      leave-active-class="transition duration-75 ease-in"
+      leave-from-class="transform scale-100 opacity-100"
+      leave-to-class="transform scale-95 opacity-0"
+    >
+      <MenuItems
+        class="
+          absolute
+          mt-2
+          bg-white
+          divide-y divide-gray-100
+          rounded-md
+          shadow-lg
+          ring-1 ring-black ring-opacity-5
+          focus:outline-none
+          z-10
+        "
+        :class="[
+          widthClass,
+          right ? 'right-0' : 'left-0',
+          top ? 'bottom-12' : 'top-0',
+        ]"
       >
-        <MenuItems
-          class="
-            absolute
-            w-56
-            mt-2
-            origin-top-right
-            bg-white
-            divide-y divide-gray-100
-            rounded-md
-            shadow-lg
-            ring-1 ring-black ring-opacity-5
-            focus:outline-none
-          "
-          :class="right ? 'right-0' : 'left-0'"
-        >
-          <div class="px-1 py-1">
-            <MenuItem
-              v-for="(item, index) in items"
-              :key="index"
-              v-slot="{active}"
-            >
+        <div class="px-1 py-1">
+          <template v-for="(item, index) in items" :key="index">
+            <div
+              v-if="item.divider"
+              class="border-b my-1 -mx-1"
+              :class="dividerClass"
+            ></div>
+            <MenuItem v-else v-slot="{active}">
               <v-dropdown-item :item="item" :active="active" />
             </MenuItem>
-          </div>
-        </MenuItems>
-      </transition>
-    </Menu>
-  </div>
+          </template>
+        </div>
+      </MenuItems>
+    </transition>
+  </Menu>
 </template>
