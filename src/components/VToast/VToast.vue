@@ -50,6 +50,8 @@ interface Props {
   type?: ToastTypes;
   hideXIcon?: boolean;
   overlay?: boolean;
+  loading?: boolean;
+  persistent?: boolean;
   color?: string;
 }
 
@@ -104,6 +106,8 @@ const props = defineProps({
   overlay: {type: Boolean, default: false},
   color: {type: String, default: 'white'},
   type: {type: String, default: ''},
+  loading: {type: Boolean, default: false},
+  persistent: {type: Boolean, default: false},
 });
 
 const emit = defineEmits(['update:modelValue', 'confirm', 'close', 'open']);
@@ -124,12 +128,17 @@ const {
   hideXIcon,
   overlay,
   color,
+  loading,
+  persistent,
 } = toRefs(props);
 
 const isOpen = ref(modelValue.value);
 const timer = ref<any>(null);
+const internalLoading = ref<boolean>(loading.value);
 
 function closeModal() {
+  if (loading.value && persistent.value) return;
+
   isOpen.value = false;
   emit('update:modelValue', false);
   emit('close');
@@ -141,11 +150,23 @@ function openModal() {
   emit('open');
 }
 
+const startLoading = () => {
+  internalLoading.value = true;
+};
+
+const finishLoading = () => {
+  internalLoading.value = false;
+};
+
 const onConfirm = () => {
-  emit('confirm', {
+  const payload = {
     open: openModal,
     close: closeModal,
-  });
+    startLoading,
+    finishLoading,
+  };
+
+  emit('confirm', payload);
 };
 
 const placementClass = computed(() => {
@@ -234,6 +255,14 @@ watch(
   modelValue,
   (val) => {
     isOpen.value = val;
+  },
+  {immediate: true},
+);
+
+watch(
+  loading,
+  (val) => {
+    internalLoading.value = val;
   },
   {immediate: true},
 );
@@ -376,12 +405,17 @@ const iconColorClass = computed(() => {
                       <v-btn
                         v-if="confirm"
                         :color="confirmColor"
+                        :loading="internalLoading"
                         v-bind="confirmProps"
                         @click="onConfirm"
                       >
                         {{ confirmText }}
                       </v-btn>
-                      <v-btn v-bind="closeProps" @click="closeModal">
+                      <v-btn
+                        v-bind="closeProps"
+                        :disabled="loading"
+                        @click="closeModal"
+                      >
                         {{ closeText }}
                       </v-btn>
                     </slot>

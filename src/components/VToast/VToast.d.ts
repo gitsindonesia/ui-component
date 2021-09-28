@@ -9,6 +9,13 @@ export type ToastPlacement =
   | 'bottom-start'
   | 'bottom-end';
 
+export type VToastEvent = {
+  open: () => void;
+  close: () => void;
+  startLoading: () => void;
+  finishLoading: () => void;
+};
+
 export type VToastProps = {
   modelValue?: boolean;
   title?: string;
@@ -28,4 +35,7 @@ export type VToastProps = {
   hideXIcon?: boolean;
   overlay?: boolean;
   color?: string;
+  loading?: boolean;
+  persistent?: boolean;
+  onConfirm?: (VToastEvent) => void;
 };

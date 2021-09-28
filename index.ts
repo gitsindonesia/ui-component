@@ -136,5 +136,6 @@ export {
   VFileUpload,
 };
 
-export * from './src/components/VToast/module';
+export * from './src/components/VToast';
+export * from './src/utils';
 export default plugin;
