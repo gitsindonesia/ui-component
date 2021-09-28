@@ -32,7 +32,7 @@ const props = defineProps({
   },
   theme: {
     type: String,
-    default: 'quill',
+    default: 'ckeditor',
     validator: (v: string) => ['quill', 'ckeditor', 'textarea'].includes(v),
   },
 });
@@ -113,14 +113,15 @@ watch(content, (value) => {
     </template>
     <ErrorMessage
       v-if="errorMessages.length"
-      class="text-error text-sm"
+      class="text-error-600 mt-1 text-sm"
       :name="name"
     />
   </div>
 </template>
 
 <style>
-.ck-editor__editable {
+.ck-editor__editable,
+.ql-editor {
   min-height: 300px;
 }
 ul,
