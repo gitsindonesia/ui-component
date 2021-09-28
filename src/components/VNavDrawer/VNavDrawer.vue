@@ -5,7 +5,7 @@ import VMenu from '../VMenu/VMenu.vue';
 import VLogo from '../VLogo/VLogo.vue';
 import {ChevronLeftIcon} from '@heroicons/vue/solid';
 import {getBgColor} from '../../utils';
-import {VNavbarMenuItem} from '@frontend/ui/types';
+import {VNavbarMenuItem} from '../../../types';
 
 const props = defineProps({
   modelValue: {
