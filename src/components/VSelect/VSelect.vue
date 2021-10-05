@@ -21,11 +21,11 @@ interface SelectItem {
 
 const props = defineProps({
   value: {
-    type: Object,
+    type: [Object, String, Number, Boolean],
     default: null,
   },
   modelValue: {
-    type: Object,
+    type: [Object, String, Number, Boolean],
     default: null,
   },
   items: {
@@ -108,17 +108,40 @@ const filteredItems = computed(() => {
   }
 });
 
+type Val = string | number | boolean | Record<string, any>;
+
+const setValue = (val: Val) => {
+  if (['string', 'number', 'boolean'].includes(typeof val)) {
+    const itemVal = filteredItems.value.find((item) => {
+      return item[itemValue.value] == val;
+    });
+    if (itemVal) {
+      selectedItem.value = itemVal;
+    }
+  } else {
+    selectedItem.value = val;
+  }
+};
+
 watch(selectedItem, (item) => {
   emit('update:modelValue', item);
 });
 
-watch(modelValue, (val) => {
-  selectedItem.value = val;
-});
+watch(
+  modelValue,
+  (val) => {
+    setValue(val);
+  },
+  {immediate: true},
+);
 
-watch(value, (val) => {
-  selectedItem.value = val;
-});
+watch(
+  value,
+  (val) => {
+    setValue(val);
+  },
+  {immediate: true},
+);
 
 watch(search, (val) => {
   emit('search', val);
