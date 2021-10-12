@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.2-alpha.14](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.2-alpha.13...v0.0.2-alpha.14) (2021-10-12)
+
+
+### Features
+
+* upgrade deps, fix dev and update build ([82debf1](https://git.gits.id/frontend/starter/vue-3/starter/commit/82debf13d9cbac3634b47e7c3c0218ece41d80f5))
+
 ### [0.0.2-alpha.13](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.2-alpha.12...v0.0.2-alpha.13) (2021-10-06)
 
 
