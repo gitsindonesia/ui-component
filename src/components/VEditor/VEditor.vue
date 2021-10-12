@@ -4,9 +4,6 @@ import {ErrorMessage} from 'vee-validate';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import {component as ckeditor} from '@ckeditor/ckeditor5-vue';
 
-import {QuillEditor} from '@vueup/vue-quill';
-import '@vueup/vue-quill/dist/vue-quill.snow.css';
-
 import VTextarea from '../VTextarea/VTextarea.vue';
 
 const props = defineProps({
@@ -105,9 +102,6 @@ watch(content, (value) => {
         :config="editorConfig"
       />
     </template>
-    <template v-else-if="theme === 'quill'">
-      <QuillEditor v-model:content="content" theme="snow" />
-    </template>
     <template v-else>
       <v-textarea v-model="content" />
     </template>
@@ -119,7 +113,7 @@ watch(content, (value) => {
   </div>
 </template>
 
-<style>
+<style scoped>
 .ck-editor__editable,
 .ql-editor {
   min-height: 300px;
