@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.2-alpha.15](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.2-alpha.14...v0.0.2-alpha.15) (2021-10-12)
+
+
+### Features
+
+* **v-editor:** remove support for quill ([78525f8](https://git.gits.id/frontend/starter/vue-3/starter/commit/78525f821bf4448b5d28a273daeaaa64e8d63874))
+
 ### [0.0.2-alpha.14](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.2-alpha.13...v0.0.2-alpha.14) (2021-10-12)
 
 
