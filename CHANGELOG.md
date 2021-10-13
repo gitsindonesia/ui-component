@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.2-alpha.16](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/compare/v0.0.2-alpha.15...v0.0.2-alpha.16) (2021-10-13)
+
+
+### Features
+
+* **login:** replace zod with yup and improved dynamic username field ([d4de398](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/commit/d4de3988a3853fda3a0af88c39422dccfffe45c8))
+
+
+### Bug Fixes
+
+* shims vue ([d7db2ec](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/commit/d7db2ec3db3f8ac896732798d85a0805eb69d996))
+
 ### [0.0.2-alpha.15](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.2-alpha.14...v0.0.2-alpha.15) (2021-10-12)
 
 
