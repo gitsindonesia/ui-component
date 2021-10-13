@@ -20,7 +20,8 @@
     "vue": "^3.0.5",
     "vue-router": "^4.0.4",
     "@ckeditor/ckeditor5-build-classic": "^30.0.0",
-    "@ckeditor/ckeditor5-vue": "^2.0.1"
+    "@ckeditor/ckeditor5-vue": "^2.0.1",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@headlessui/vue": "1.4.1",
