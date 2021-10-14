@@ -7,7 +7,7 @@ import {
   ListboxOptions,
   ListboxOption,
 } from '@headlessui/vue';
-import {CheckIcon, ChevronDownIcon} from '@heroicons/vue/solid';
+import {CheckIcon, ChevronDownIcon, XIcon} from '@heroicons/vue/solid';
 import {getBgColor, getTextColor} from '../../utils';
 import VInput from '../VInput/VInput.vue';
 import {ErrorMessage} from 'vee-validate';
@@ -76,6 +76,26 @@ const props = defineProps({
     type: Array,
     default: () => [],
   },
+  returnObject: {
+    type: Boolean,
+    default: false,
+  },
+  clearable: {
+    type: Boolean,
+    default: false,
+  },
+  clearText: {
+    type: String,
+    default: 'Clear',
+  },
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
+  readonly: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const {
@@ -90,14 +110,17 @@ const {
   itemText,
   itemValue,
   value,
+  returnObject,
 } = toRefs(props);
 
-const emit = defineEmits(['update:modelValue', 'search']);
+const emit = defineEmits(['update:modelValue', 'update:value', 'search']);
 
 const bgColor = getBgColor(color.value);
 const textColor = getTextColor(color.value);
 
-const selectedItem = ref(modelValue.value);
+type Val = string | number | boolean | Record<string, any> | null;
+
+const selectedItem = ref<Val>(modelValue.value || value.value);
 const search = ref('');
 
 const filteredItems = computed(() => {
@@ -108,23 +131,31 @@ const filteredItems = computed(() => {
   }
 });
 
-type Val = string | number | boolean | Record<string, any>;
-
 const setValue = (val: Val) => {
-  if (['string', 'number', 'boolean'].includes(typeof val)) {
-    const itemVal = filteredItems.value.find((item) => {
-      return item[itemValue.value] == val;
-    });
-    if (itemVal) {
-      selectedItem.value = itemVal;
-    }
-  } else {
+  if (returnObject.value) {
     selectedItem.value = val;
+  } else {
+    const newVal = val || modelValue.value || value.value;
+
+    if (['string', 'number', 'boolean'].includes(typeof newVal)) {
+      const itemVal = filteredItems.value.find((item) => {
+        return item[itemValue.value] === newVal;
+      });
+      if (itemVal) {
+        selectedItem.value = itemVal;
+      }
+    } else {
+      selectedItem.value = val;
+    }
   }
 };
 
 watch(selectedItem, (item) => {
-  emit('update:modelValue', item);
+  const val = returnObject.value
+    ? item
+    : (item as SelectItem)?.[itemValue.value];
+  emit('update:modelValue', val);
+  emit('update:value', val);
 });
 
 watch(
@@ -146,6 +177,14 @@ watch(
 watch(search, (val) => {
   emit('search', val);
 });
+
+const label = computed(() => {
+  return (
+    (selectedItem.value as SelectItem)?.[itemText.value] || placeholder.value
+  );
+});
+
+const clear = () => (selectedItem.value = null);
 </script>
 
 <template>
@@ -158,38 +197,43 @@ watch(search, (val) => {
             relative
             w-full
             py-2
-            pl-3
-            pr-10
+            px-4
+            h-10
             text-left
             bg-white
-            rounded-lg
+            rounded-md
             shadow-sm
             cursor-default
             focus:outline-none
             focus-visible:ring-2
             focus-visible:ring-opacity-75
             focus-visible:ring-white
-            focus-visible:ring-offset-orange-300
+            focus-visible:ring-offset-primary-300
             focus-visible:ring-offset-2
-            focus-visible:border-indigo-600
+            focus-visible:border-primary-600
             sm:text-sm
+            flex
+            items-center
+            gap-1
           "
           :class="[btnClass, error ? 'border-error-600' : '']"
+          :disabled="disabled"
         >
-          <span class="block truncate">
-            {{ selectedItem?.[itemText] || placeholder }}
-          </span>
-          <span
-            class="
-              absolute
-              inset-y-0
-              right-0
-              flex
-              items-center
-              pr-2
-              pointer-events-none
-            "
-          >
+          <div class="block flex-grow w-full truncate mr-2">
+            {{ label }}
+          </div>
+          <v-tooltip v-if="selectedItem && clearable">
+            <template #activator="{on}">
+              <span v-on="on" @click="clear" class="w-auto cursor-pointer">
+                <XIcon
+                  class="w-5 h-5 text-gray-400 hover:text-gray-500"
+                  aria-hidden="true"
+                />
+              </span>
+            </template>
+            <span> {{ clearText }} </span>
+          </v-tooltip>
+          <span class="w-auto">
             <ChevronDownIcon class="w-5 h-5 text-gray-400" aria-hidden="true" />
           </span>
         </ListboxButton>
@@ -228,9 +272,9 @@ watch(search, (val) => {
               No results
             </div>
             <ListboxOption
-              v-for="item in filteredItems"
+              v-for="(item, index) in filteredItems"
               v-slot="{active, selected}"
-              :key="item.text"
+              :key="index"
               :value="item"
               as="template"
             >
@@ -244,7 +288,7 @@ watch(search, (val) => {
               >
                 <span
                   :class="[
-                    selected ? 'font-medium ' : 'font-normal',
+                    selected ? 'font-medium' : 'font-normal',
                     'block truncate',
                   ]"
                 >
