@@ -6,6 +6,10 @@ export interface VDataTableItem {
 }
 
 export interface VDataTableHeader {
+  text?: string;
+  value?: string;
+  align?: string;
+  sortable?: false;
   [key: string]: any;
 }
 
