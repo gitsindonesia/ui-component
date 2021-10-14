@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.2-alpha.17](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/compare/v0.0.2-alpha.16...v0.0.2-alpha.17) (2021-10-14)
+
+
+### Features
+
+* add yup as dep ([f17816f](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/commit/f17816f033a4b4048dc8ccefb851c50f47d8dfda))
+* update v-file-upload, v-radio-group and v-select ([66faffe](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/commit/66faffec6caa8f5fd7a144376f44df4b712b584c))
+
 ### [0.0.2-alpha.16](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/compare/v0.0.2-alpha.15...v0.0.2-alpha.16) (2021-10-13)
 
 
