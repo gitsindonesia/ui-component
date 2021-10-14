@@ -7,7 +7,7 @@ import type {
   VDataTableItem,
   VDataTableProps,
 } from './VDataTable';
-import {SortAscendingIcon, SortDescendingIcon} from '@heroicons/vue/solid';
+import {ChevronDownIcon, ChevronUpIcon} from '@heroicons/vue/solid';
 import VSpinner from '../VSpinner/VSpinner.vue';
 import VCheckbox from '../VCheckbox/VCheckbox.vue';
 // import get from 'lodash/get';
@@ -62,7 +62,7 @@ const props = defineProps({
   },
   noDataText: {
     type: String,
-    default: 'No Data',
+    default: 'Data tidak ditemukan',
   },
   serverSide: {
     type: Boolean,
@@ -281,7 +281,7 @@ watch(paginationPage, (val) => {
 
 const selected = ref<any>([]);
 
-const selectAll = computed<boolean>({
+const selectAll = computed({
   get() {
     return items.value.length
       ? selected.value.length == items.value.length
@@ -300,64 +300,41 @@ const selectAll = computed<boolean>({
   },
 });
 
-// watch(
-//   modelValue,
-//   (val) => {
-//     val.forEach(function (item: any) {
-//       const index = items.value.findIndex((s) => s.id === item.id);
-//       if (index > -1) {
-//         items.value[index].selected = true;
-//       }
-//     });
-//     console.log({val});
-//   },
-//   {deep: true},
-// );
-
-// watch(
-//   items,
-//   (val) => {
-//     emit('update:modelValue', val);
-//   },
-//   {deep: true},
-// );
-
 watch(
   selected,
   (val) => {
     emit('update:modelValue', val);
   },
-  {deep: true},
+  {deep: true, immediate: true},
 );
 
 watch(
   modelValue,
   (val) => {
-    console.log(val);
     selected.value = val;
   },
-  {deep: true},
+  {deep: true, immediate: true},
 );
 
-watch(
-  value,
-  (val) => {
-    console.log({val});
-    selected.value = val;
-  },
-  {deep: true},
+// watch(
+//   value,
+//   (val) => {
+//     selected.value = val;
+//   },
+//   {deep: true, immediate: true},
+// );
+
+const start = computed(() =>
+  totalItems.value > 0 ? (page.value - 1) * itemsPerPage.value + 1 : 1,
+);
+const end = computed(() =>
+  totalItems.value > 0 ? start.value + itemsPerPage.value - 1 : null,
 );
 </script>
 
 <template>
   <div
-    class="
-      w-full
-      flex flex-col
-      border-b border-gray-200
-      rounded-md
-      sm:rounded-lg
-    "
+    class="w-full flex flex-col border-gray-200 rounded sm:rounded-lg"
     :class="[!noShadow ? 'shadow' : '']"
   >
     <div class="overflow-x-auto rounded-t-md">
@@ -368,7 +345,7 @@ watch(
               v-for="header in computedHeaders"
               :key="header.value"
               scope="col"
-              class="text-left text-xs font-medium uppercase tracking-wider"
+              class="text-left py-3 text-sm font-bold uppercase tracking-wider"
               :class="[getThClass(header), paddingClass]"
             >
               <slot
@@ -381,18 +358,20 @@ watch(
                 <a
                   v-if="!disableSorting && header.sortable"
                   href="#"
-                  class="flex items-center"
+                  class="flex justify-between items-center truncate"
                   :class="[header.align ? `justify-${header.align}` : '']"
                   @click.prevent="handleSort(header)"
                 >
-                  {{ header.text }}
-                  <SortDescendingIcon
+                  <span>
+                    {{ header.text }}
+                  </span>
+                  <ChevronDownIcon
                     v-if="header.sorting === 'desc'"
-                    class="ml-2 h4 w-4"
+                    class="ml-2 h-5 w-5"
                   />
-                  <SortAscendingIcon
+                  <ChevronUpIcon
                     v-if="header.sorting === 'asc'"
-                    class="ml-2 h4 w-4"
+                    class="ml-2 h-5 w-5"
                   />
                 </a>
                 <span v-else>
@@ -453,7 +432,10 @@ watch(
                 v-if="selectable && header.value === 'selected'"
                 name="item.selected"
               >
-                <v-checkbox v-model="selected" />
+                <v-checkbox v-model="selected" :value="item" />
+              </slot>
+              <slot v-else-if="header.value === 'index'" name="item.index">
+                {{ start + index }}
               </slot>
               <slot
                 v-else
