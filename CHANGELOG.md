@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.2-alpha.18](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/compare/v0.0.2-alpha.17...v0.0.2-alpha.18) (2021-10-14)
+
+
+### Features
+
+* update data-table types ([f107e25](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/commit/f107e2553b8c6b8fd5dd9a3e46acc8b57a774c50))
+* update v-data-table and v-data-table-pagination ([8474b7e](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/commit/8474b7edd64a77c233bc3e672dfd643b1a29845d))
+
 ### [0.0.2-alpha.17](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/compare/v0.0.2-alpha.16...v0.0.2-alpha.17) (2021-10-14)
 
 
