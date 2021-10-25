@@ -246,7 +246,7 @@ const handleSort = (header: VDataTableHeader) => {
   emit('update:sortBy', header.value);
   emit('update:sortDirection', direction);
   emit('sort', {
-    sortBy: sortBy.value,
+    sortBy: header.value,
     direction: direction,
   });
 };
