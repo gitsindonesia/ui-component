@@ -45,9 +45,10 @@ const props = defineProps({
 const {modelValue, mini, menus, logoProps, dark, color, hideToggle} =
   toRefs(props);
 
-const emit = defineEmits(['update:modelValue', 'update:mini']);
+const emit = defineEmits(['update:modelValue', 'update:mini', 'toggle:click']);
 
 const toggleMenu = () => {
+  emit('toggle:click');
   emit('update:mini', !mini.value);
 };
 
