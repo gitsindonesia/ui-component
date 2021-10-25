@@ -153,7 +153,7 @@ const scrollHeight = computed(() => (panel as any).value?.el?.scrollHeight);
         mb-1
         relative
       "
-      :class="[textColor, mini ? 'justify-center' : '']"
+      :class="[textColor, mini ? 'justify-start sm:justify-center' : '']"
     >
       <img v-if="menu.img" :src="menu.img" alt="img icon" class="w-5 h-5" />
       <component :is="menu.icon" v-else-if="menu.icon" class="w-5 h-5" />
