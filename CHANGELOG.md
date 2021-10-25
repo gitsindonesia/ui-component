@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.2](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/compare/v0.0.2-alpha.18...v0.0.2) (2021-10-25)
+
+
+### Features
+
+* **v-app-bar:** new `default-hidden` prop ([5789648](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/commit/57896487342a619371d63ca91276af9b193a241f))
+* **v-dropdown:** new props: `hideLabel` and `wrapperClass` ([e958a81](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/commit/e958a81529425ae68214288e3ae45cfaa0e5ac8a))
+* **v-menu:** fix responsive menu ([2cb871f](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/commit/2cb871fdee4d35c8a04d5012f830d141b13be035))
+* **v-nav-drawer:** new emit event: `toggle:click` ([4594a5e](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/commit/4594a5efb71b0de968d1fe4ac4b586afb144e438))
+
+
+### Bug Fixes
+
+* **v-data-table:** fix sortBy value on handleSort event ([be0af0a](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/commit/be0af0a78b8e77e46741d1af847a7580dbb8eb06))
+
 ### [0.0.2-alpha.18](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/compare/v0.0.2-alpha.17...v0.0.2-alpha.18) (2021-10-14)
 
 
