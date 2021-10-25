@@ -93,6 +93,14 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  hideLabel: {
+    type: Boolean,
+    default: false,
+  },
+  wrapperClass: {
+    type: String,
+    default: '',
+  },
 });
 
 const {label, items, right, btnProps, ...rest} = toRefs(props);
@@ -108,12 +116,12 @@ const emit = defineEmits(['update:modelValue']);
 </script>
 
 <template>
-  <Menu as="div" class="relative inline-block text-left">
+  <Menu as="div" class="relative inline-block text-left" :class="wrapperClass">
     <div>
       <MenuButton as="template">
         <v-btn v-bind="{...restBtnProps, ...btnProps}">
           <slot name="btn" :label="label">
-            <slot name="label">
+            <slot v-if="!hideLabel" name="label">
               {{ label }}
             </slot>
             <slot name="icon">
@@ -147,7 +155,7 @@ const emit = defineEmits(['update:modelValue']);
         :class="[
           widthClass,
           right ? 'right-0' : 'left-0',
-          top ? 'bottom-12' : 'top-0',
+          top ? 'bottom-12' : 'top-8',
         ]"
       >
         <div class="px-1 py-1">
