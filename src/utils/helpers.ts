@@ -1,7 +1,3 @@
-import dayjs from 'dayjs';
-
-export const TZ = 'Asia/Jakarta';
-
 export const get = (obj: any, path: any, defaultValue = undefined) => {
   const travel = (regexp: any) =>
     String.prototype.split
@@ -16,15 +12,6 @@ export const get = (obj: any, path: any, defaultValue = undefined) => {
 };
 
 export const stripTags = (str: string) => str?.replace(/(<([^>]+)>)/gi, '');
-
-export const localDate = (str: string, locale = 'id') => {
-  return dayjs.tz(str, TZ).format('DD/MM/YYYY HH:mm:ss');
-};
-
-export const normalizeDate = (str: string) => {
-  const date = str?.replace('T', ' ').replace('.000+00:00', '');
-  return dayjs(date).tz(TZ).toDate();
-};
 
 export const toFormData = <T extends Record<string, any>>(values: T) => {
   const data = new FormData();

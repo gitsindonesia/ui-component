@@ -37,11 +37,11 @@ const props = defineProps({
     default: '',
   },
   cols: {
-    type: Number,
+    type: [String, Number],
     default: undefined,
   },
   rows: {
-    type: Number,
+    type: [String, Number],
     default: undefined,
   },
 });

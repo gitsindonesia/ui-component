@@ -1,3 +1,73 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [0.0.2](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/compare/v0.0.2-alpha.18...v0.0.2) (2021-10-25)
+
+
+### Features
+
+* **v-app-bar:** new `default-hidden` prop ([5789648](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/commit/57896487342a619371d63ca91276af9b193a241f))
+* **v-dropdown:** new props: `hideLabel` and `wrapperClass` ([e958a81](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/commit/e958a81529425ae68214288e3ae45cfaa0e5ac8a))
+* **v-menu:** fix responsive menu ([2cb871f](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/commit/2cb871fdee4d35c8a04d5012f830d141b13be035))
+* **v-nav-drawer:** new emit event: `toggle:click` ([4594a5e](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/commit/4594a5efb71b0de968d1fe4ac4b586afb144e438))
+
+
+### Bug Fixes
+
+* **v-data-table:** fix sortBy value on handleSort event ([be0af0a](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/commit/be0af0a78b8e77e46741d1af847a7580dbb8eb06))
+
+### [0.0.2-alpha.18](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/compare/v0.0.2-alpha.17...v0.0.2-alpha.18) (2021-10-14)
+
+
+### Features
+
+* update data-table types ([f107e25](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/commit/f107e2553b8c6b8fd5dd9a3e46acc8b57a774c50))
+* update v-data-table and v-data-table-pagination ([8474b7e](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/commit/8474b7edd64a77c233bc3e672dfd643b1a29845d))
+
+### [0.0.2-alpha.17](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/compare/v0.0.2-alpha.16...v0.0.2-alpha.17) (2021-10-14)
+
+
+### Features
+
+* add yup as dep ([f17816f](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/commit/f17816f033a4b4048dc8ccefb851c50f47d8dfda))
+* update v-file-upload, v-radio-group and v-select ([66faffe](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/commit/66faffec6caa8f5fd7a144376f44df4b712b584c))
+
+### [0.0.2-alpha.16](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/compare/v0.0.2-alpha.15...v0.0.2-alpha.16) (2021-10-13)
+
+
+### Features
+
+* **login:** replace zod with yup and improved dynamic username field ([d4de398](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/commit/d4de3988a3853fda3a0af88c39422dccfffe45c8))
+
+
+### Bug Fixes
+
+* shims vue ([d7db2ec](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/commit/d7db2ec3db3f8ac896732798d85a0805eb69d996))
+
+### [0.0.2-alpha.15](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.2-alpha.14...v0.0.2-alpha.15) (2021-10-12)
+
+
+### Features
+
+* **v-editor:** remove support for quill ([78525f8](https://git.gits.id/frontend/starter/vue-3/starter/commit/78525f821bf4448b5d28a273daeaaa64e8d63874))
+
+### [0.0.2-alpha.14](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.2-alpha.13...v0.0.2-alpha.14) (2021-10-12)
+
+
+### Features
+
+* upgrade deps, fix dev and update build ([82debf1](https://git.gits.id/frontend/starter/vue-3/starter/commit/82debf13d9cbac3634b47e7c3c0218ece41d80f5))
+
+### [0.0.2-alpha.13](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.2-alpha.12...v0.0.2-alpha.13) (2021-10-06)
+
+
+### Features
+
+* moved date helpers to starter ([39b43f9](https://git.gits.id/frontend/starter/vue-3/starter/commit/39b43f9101e0c4cfd1875aa503dc32e1089d2ba6))
+
+### [0.0.2-alpha.12](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.2-alpha.11...v0.0.2-alpha.12) (2021-10-05)
+
 ## [0.0.2-alpha.8](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.2-alpha.7...v0.0.2-alpha.8) (2021-09-15)
 
 
@@ -51,6 +121,3 @@
 
 
 ## 0.0.1 (2021-09-02)
-
-
-

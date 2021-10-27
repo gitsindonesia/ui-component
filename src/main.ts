@@ -3,7 +3,7 @@ import App from './App.vue';
 import router from './router';
 import './index.css';
 import 'simple-syntax-highlighter/dist/sshpre.css';
-import gitsUi from './plugin';
+import gitsUi from '../index';
 
 const app = createApp(App);
 

@@ -1,15 +1,19 @@
-<script setup>
-import {ref, computed, toRefs, watch} from 'vue';
+<script setup lang="ts">
+import {ref, computed, toRefs, watch, PropType} from 'vue';
 import {ErrorMessage} from 'vee-validate';
 import {useTextSize} from '../../utils';
 
+type Value = string | number | object | boolean | Record<string, any>;
+
+type RadioItem = Record<string, any>;
+
 const props = defineProps({
   modelValue: {
-    type: [String, Number, Object],
+    type: [String, Number, Object, Boolean] as PropType<Value>,
     default: null,
   },
   value: {
-    type: [String, Number, Object],
+    type: [String, Number, Object, Boolean] as PropType<Value>,
     default: null,
   },
   label: {
@@ -37,7 +41,7 @@ const props = defineProps({
     default: false,
   },
   items: {
-    type: Array,
+    type: Array as PropType<RadioItem[]>,
     default: () => [],
   },
   itemText: {
@@ -78,7 +82,7 @@ const emit = defineEmits([
 
 const selected = ref(value.value || modelValue.value);
 
-const onChange = (event) => {
+const onChange = (event: any) => {
   emit('change', event);
 };
 
@@ -88,11 +92,11 @@ const classes = computed(() =>
     : 'text-primary-600 focus:ring-primary-600',
 );
 
-const getValue = (item) => {
+const getValue = (item: RadioItem) => {
   return typeof item === 'object' ? item?.[itemValue.value] : item;
 };
 
-const getText = (item) => {
+const getText = (item: RadioItem) => {
   return typeof item === 'object' ? item?.[itemText.value] : item;
 };
 
@@ -104,6 +108,26 @@ watch(selected, (value) => {
 });
 
 const {class: sizeClass} = useTextSize(size.value);
+
+const setInnerValue = (val: Value) => {
+  selected.value = val;
+};
+
+watch(
+  modelValue,
+  (val) => {
+    setInnerValue(val);
+  },
+  {immediate: true},
+);
+
+watch(
+  value,
+  (val) => {
+    setInnerValue(val);
+  },
+  {immediate: true},
+);
 </script>
 
 <template>

@@ -1,13 +1,12 @@
 <script setup lang="ts">
-import {ref, toRefs, watch} from 'vue';
+import {computed, ref, toRefs, watch} from 'vue';
 import {UserIcon, LockClosedIcon} from '@heroicons/vue/outline';
 import VInput from '../../components/VInput/VInput.vue';
 import VBtn from '../../components/VBtn/VBtn.vue';
 import VCheckbox from '../../components/VCheckbox/VCheckbox.vue';
 import VInputGroup from '../../components/VInputGroup/VInputGroup.vue';
-import * as zod from 'zod';
-import {toFormValidator} from '@vee-validate/zod';
 import {useField, useForm} from 'vee-validate';
+import {object, string} from 'yup';
 
 const props = defineProps({
   message: {
@@ -54,6 +53,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  email: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const {
@@ -79,12 +82,18 @@ watch(
   },
   {immediate: true},
 );
-const schema = toFormValidator(
-  zod.object({
-    email: zod.string().nonempty().email(),
-    password: zod.string().nonempty(),
-  }),
-);
+const schema = computed(() => {
+  let usernameRules = string().required();
+  if (props.email) {
+    usernameRules = usernameRules.email();
+  }
+  usernameRules = usernameRules.label(props.usernameText);
+
+  return object({
+    email: usernameRules,
+    password: string().required().label(props.passwordText),
+  });
+});
 
 // Create a form context with the validation schema
 const {errors, handleSubmit} = useForm({
@@ -108,9 +117,9 @@ const onSubmit = handleSubmit((values) => {
     <h1 class="font-extrabold text-4xl mb-2">{{ title }}</h1>
     <div class="text-gray-600">{{ subtitle }}</div>
 
-    <v-alert v-model="isError" color="error" class="mt-5" icon dismissable>{{
-      message
-    }}</v-alert>
+    <v-alert v-model="isError" color="error" class="mt-5" icon dismissable>
+      {{ message }}
+    </v-alert>
 
     <form @submit.prevent="onSubmit">
       <div class="mt-8">

@@ -28,6 +28,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  defaultHidden: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const emit = defineEmits(['toggleMenu', 'update:modelValue']);
@@ -43,7 +47,7 @@ const toggleMenu = () => emit('toggleMenu');
     :class="[
       dark ? 'bg-black' : 'bg-white',
       mini ? 'v-app-bar-mini' : drawer ? 'v-app-bar-drawer' : '',
-      fixed ? 'fixed w-full' : 'relative',
+      defaultHidden ? 'flex sm:hidden' : fixed ? 'fixed w-full' : 'relative',
     ]"
   >
     <slot v-if="!hideToggle" name="toggle" :toggle="toggleMenu">
@@ -71,7 +75,7 @@ const toggleMenu = () => emit('toggleMenu');
       shadow-md
       px-4
       py-3
-      flex flex-initial
+      flex-initial
       items-center
       justify-between
       z-20

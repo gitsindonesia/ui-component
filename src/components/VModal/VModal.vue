@@ -1,3 +1,9 @@
+<script lang="ts">
+export default {
+  // inheritAttrs: false
+};
+</script>
+
 <script setup lang="ts">
 import {ref, toRefs, watch} from 'vue';
 import {
@@ -22,6 +28,8 @@ interface Props {
   footerClass?: string;
   modalClass?: string;
   loading?: boolean;
+  hideHeader?: boolean;
+  hideFooter?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -38,6 +46,8 @@ const props = withDefaults(defineProps<Props>(), {
   footerClass: '',
   modalClass: '',
   boolean: false,
+  hideHeader: false,
+  hideFooter: false,
 });
 
 const emit = defineEmits(['update:modelValue', 'confirm', 'close', 'open']);
@@ -130,6 +140,7 @@ const onConfirm = () => {
               :class="modalClass"
             >
               <DialogTitle
+                v-if="!hideHeader"
                 as="h3"
                 class="text-lg font-medium leading-6 text-gray-900"
                 :class="headerClass"
@@ -142,8 +153,17 @@ const onConfirm = () => {
                 <slot />
               </div>
 
-              <div class="mt-6 flex justify-end gap-2" :class="footerClass">
-                <slot name="footer">
+              <div
+                v-if="!hideFooter"
+                class="mt-6 flex justify-end gap-2"
+                :class="footerClass"
+              >
+                <slot
+                  name="footer"
+                  :loading="loading"
+                  :confirm-props="confirmProps"
+                  :on-confirm="onConfirm"
+                >
                   <v-btn
                     v-if="confirm"
                     :color="confirmColor"

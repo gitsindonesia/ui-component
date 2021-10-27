@@ -88,6 +88,27 @@ const props = defineProps({
     type: String,
     default: 'View File',
   },
+  loading: {
+    type: Boolean,
+    default: false,
+  },
+  loadingText: {
+    type: String,
+    default: 'Uploading...',
+  },
+  theme: {
+    type: String,
+    default: '',
+    validator: (v: string) => ['button', 'image', '', 'default'].includes(v),
+  },
+  multiple: {
+    type: Boolean,
+    default: false,
+  },
+  hidePlaceholder: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const emit = defineEmits([
@@ -107,7 +128,6 @@ const {
   modelValue,
   accept,
   inputProps,
-  error,
   errorMessages,
   name,
   placeholder,
@@ -118,27 +138,34 @@ const {
   changeText,
   removeText,
   viewFileText,
+  theme,
+  multiple,
 } = toRefs(props);
 
 const sizeClass = computed(() =>
-  props.full ? 'w-full' : 'w-[180px] h-[180px]',
+  props.full ? 'w-full' : 'w-full sm:w-[180px] h-[180px]',
 );
 
-const file = ref<File | null>(null);
-const fileRef = ref<HTMLDivElement | null>(null);
-const previewURL = ref<string>('');
+const file = ref(null);
+const fileRef = ref<HTMLInputElement | null>(null);
+const previewURL = ref<string | null>(null);
 const hasInitialValue = ref(false);
 
 const acceptedTypes = computed(() => (image.value ? 'image/*' : accept.value));
+
+const inputAttrs = computed(() => ({
+  ...inputProps.value,
+  multiple: multiple.value,
+}));
 
 const pickFile = () => {
   fileRef.value?.click();
 };
 
 const onFileChanged = (event: any) => {
-  previewURL.value = '';
+  previewURL.value = null;
 
-  const fileTarget = event.target.files[0];
+  const fileTarget = event.target?.files[0];
 
   if (fileTarget) {
     file.value = fileTarget;
@@ -158,16 +185,16 @@ const onFileChanged = (event: any) => {
 
 const removeFile = () => {
   file.value = null;
-  previewURL.value = '';
+  previewURL.value = null;
   hasInitialValue.value = false;
 
   emit('removed');
 };
 
 const setInitialValue = (val: any) => {
-  hasInitialValue.value = true;
-
   if (image.value && val?.file) {
+    hasInitialValue.value = true;
+
     previewURL.value = val?.file;
   }
 };
@@ -182,13 +209,21 @@ const fileURL = computed(
   () => (file.value || value.value || modelValue.value || {file: ''}).file,
 );
 
-watch(value, (val) => {
-  setInitialValue(val);
-});
+watch(
+  value,
+  (val) => {
+    setInitialValue(val);
+  },
+  {immediate: true},
+);
 
-watch(modelValue, (val) => {
-  setInitialValue(val);
-});
+watch(
+  modelValue,
+  (val) => {
+    setInitialValue(val);
+  },
+  {immediate: true},
+);
 
 const disabledClass = computed(() => {
   return disabled.value || readonly.value
@@ -198,7 +233,7 @@ const disabledClass = computed(() => {
 </script>
 
 <template>
-  <template v-if="button">
+  <template v-if="theme === 'button'">
     <div v-if="hasFile" class="flex gap-2 items-center">
       <div
         class="border rounded-10 px-4 py-2 truncate text-center"
@@ -233,12 +268,12 @@ const disabledClass = computed(() => {
       </slot>
       {{ browseText }}
     </VBtn>
-    <div v-if="!hasFile" class="text-sm mt-1 text-gray-500">
+    <div v-if="!hasFile && !hidePlaceholder" class="text-sm mt-1 text-gray-500">
       {{ placeholder }}
     </div>
   </template>
 
-  <div v-else-if="image">
+  <div v-else-if="theme === 'image'">
     <div
       class="
         transition
@@ -253,24 +288,30 @@ const disabledClass = computed(() => {
         py-10
         bg-no-repeat bg-contain bg-center
         h-[180px]
+        max-w-full
       "
       :class="[sizeClass, {'rounded-10': rounded}]"
-      :style="{backgroundImage: image ? `url(${previewURL})` : 'none'}"
+      :style="{
+        'background-image': image && !loading ? `url(${previewURL})` : 'none',
+      }"
       @click="pickFile"
     >
-      <div v-if="hasFile" class="px-2 text-center">
+      <v-spinner v-if="loading" color="primary" large />
+      <div v-else-if="hasFile" class="px-2 text-center">
         {{ image ? '' : fileName }}
       </div>
       <template v-else>
         <CameraIcon class="w-10 h-10 text-gray-500 mb-1" />
-        <div class="uppercase text-gray-500">{{ browseText }}</div>
+        <div class="uppercase text-gray-500">
+          {{ loading ? loadingText : browseText }}
+        </div>
       </template>
     </div>
   </div>
   <div v-else>
     <v-input
       :model-value="fileName"
-      :placeholder="placeholder"
+      :placeholder="!hidePlaceholder ? placeholder : ''"
       readonly
       @click="pickFile"
     >
@@ -309,14 +350,14 @@ const disabledClass = computed(() => {
     type="file"
     :readonly="readonly"
     :accept="acceptedTypes"
-    v-bind="inputProps"
+    v-bind="inputAttrs"
     @change="onFileChanged"
   />
 
   <div
-    v-if="hasFile && !readonly && (image || button)"
+    v-if="hasFile && !readonly && (image || button) && !loading"
     class="flex w-full mt-3 justify-center items-center gap-y-2 gap-x-2"
-    :class="[full || button ? 'flex-row' : 'w-[180px] flex-col']"
+    :class="[full || button ? 'flex-row' : 'w-full sm:w-[180px] flex-col']"
   >
     <div>
       <slot name="prepend" />
@@ -347,7 +388,7 @@ const disabledClass = computed(() => {
     </div>
   </div>
 
-  <div v-if="placeholder" class="text-xs mt-2 text-black">
+  <div v-if="placeholder && !hidePlaceholder" class="text-xs mt-2 text-black">
     {{ placeholder }}
   </div>
 

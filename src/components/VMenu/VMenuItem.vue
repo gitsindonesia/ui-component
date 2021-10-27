@@ -33,7 +33,7 @@ const props = defineProps({
       items-center
       text-sm
     "
-    :class="[textColor, mini ? 'justify-center' : '']"
+    :class="[textColor, mini ? 'justify-start sm:justify-center' : '']"
   >
     <span class="px-1">
       <svg
