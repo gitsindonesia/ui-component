@@ -196,6 +196,8 @@ const setInitialValue = (val: any) => {
     hasInitialValue.value = true;
 
     previewURL.value = val?.file;
+  } else {
+    removeFile();
   }
 };
 
