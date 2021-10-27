@@ -92,7 +92,7 @@ const onBlur = () => emit('blur');
   />
   <ErrorMessage
     v-if="errorMessages.length"
-    class="text-error text-sm"
+    class="text-error-600 text-sm"
     :name="name"
   />
 </template>
