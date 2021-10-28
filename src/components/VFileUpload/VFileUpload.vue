@@ -274,23 +274,79 @@ const disabledClass = computed(() => {
   return disabled.value || readonly.value ? 'disabled-input' : '';
 });
 
+//generates random id;
+let guid = () => {
+  let s4 = () => {
+    return Math.floor((1 + Math.random()) * 0x10000)
+      .toString(16)
+      .substring(1);
+  };
+  return (
+    s4() +
+    s4() +
+    '-' +
+    s4() +
+    '-' +
+    s4() +
+    '-' +
+    s4() +
+    '-' +
+    s4() +
+    s4() +
+    s4()
+  );
+};
+
+const dropzoneId = computed(() => guid());
+
+const dragInactiveClass = 'border-gray-300';
+const dragClass = 'border-primary-600';
+
+const isDropZoneTarget = (event: any) => {
+  return Array.from(event.target.classList).includes(dropzoneId.value);
+};
+
 const onDrop = (e: any) => {
   e.preventDefault();
-  handleFiles(e.dataTransfer.files);
+
+  e.target.classList.remove(dragClass);
+  e.target.classList.add(dragInactiveClass);
+
+  if (isDropZoneTarget(e)) {
+    handleFiles(e.dataTransfer.files);
+  }
 };
 
 const onDragOver = (e: any) => {
   e.preventDefault();
 };
 
+const onDragEnter = (event: any) => {
+  if (isDropZoneTarget(event)) {
+    event.target.classList.remove(dragInactiveClass);
+    event.target.classList.add(dragClass);
+  }
+};
+
+const onDragLeave = (event: any) => {
+  if (isDropZoneTarget(event)) {
+    event.target.classList.remove(dragClass);
+    event.target.classList.add(dragInactiveClass);
+  }
+};
+
 onMounted(() => {
   document.addEventListener('dragover', onDragOver, false);
   document.addEventListener('drop', onDrop);
+  document.addEventListener('dragenter', onDragEnter, false);
+  document.addEventListener('dragleave', onDragLeave, false);
 });
 
 onUnmounted(() => {
   document.removeEventListener('dragover', onDragOver, false);
   document.removeEventListener('drop', onDrop);
+  document.removeEventListener('dragenter', onDragEnter, false);
+  document.removeEventListener('dragleave', onDragLeave, false);
 });
 </script>
 
@@ -415,6 +471,7 @@ onUnmounted(() => {
         border-2 border-gray-300 border-dashed
         rounded-md
       "
+      :class="dropzoneId"
     >
       <div v-if="hasFile" class="space-y-3 text-center">
         <slot
