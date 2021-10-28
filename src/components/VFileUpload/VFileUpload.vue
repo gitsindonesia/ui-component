@@ -192,10 +192,10 @@ const removeFile = () => {
 };
 
 const setInitialValue = (val: any) => {
-  if (image.value && val?.file) {
+  if (image.value && val) {
     hasInitialValue.value = true;
 
-    previewURL.value = val?.file;
+    previewURL.value = URL.createObjectURL(file.value);
   } else {
     removeFile();
   }
