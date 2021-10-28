@@ -5,7 +5,15 @@ export default {
 </script>
 
 <script setup lang="ts">
-import {ref, toRefs, computed, watch, PropType} from 'vue';
+import {
+  ref,
+  toRefs,
+  computed,
+  watch,
+  PropType,
+  onMounted,
+  onUnmounted,
+} from 'vue';
 import {CameraIcon, PlusIcon, TrashIcon} from '@heroicons/vue/solid';
 import VBtn from '../VBtn/VBtn.vue';
 import VInput from '../VInput/VInput.vue';
@@ -175,11 +183,7 @@ const pickFile = () => {
   fileRef.value?.click();
 };
 
-const onFileChanged = (event: any) => {
-  previewURL.value = null;
-
-  const files = event.target?.files;
-
+const handleFiles = (files: FileList) => {
   if (multiple.value) {
     innerValue.value = files;
 
@@ -199,6 +203,14 @@ const onFileChanged = (event: any) => {
     emit('update:modelValue', firstFile);
     emit('update:value', firstFile);
   }
+};
+
+const onFileChanged = (event: any) => {
+  previewURL.value = null;
+
+  const files = event.target?.files;
+
+  handleFiles(files);
 };
 
 const removeFile = () => {
@@ -260,6 +272,25 @@ watch(
 
 const disabledClass = computed(() => {
   return disabled.value || readonly.value ? 'disabled-input' : '';
+});
+
+const onDrop = (e: any) => {
+  e.preventDefault();
+  handleFiles(e.dataTransfer.files);
+};
+
+const onDragOver = (e: any) => {
+  e.preventDefault();
+};
+
+onMounted(() => {
+  document.addEventListener('dragover', onDragOver, false);
+  document.addEventListener('drop', onDrop);
+});
+
+onUnmounted(() => {
+  document.removeEventListener('dragover', onDragOver, false);
+  document.removeEventListener('drop', onDrop);
 });
 </script>
 
@@ -397,12 +428,13 @@ const disabledClass = computed(() => {
               v-if="mage || preview"
               class="
                 w-60
-                h-60
+                h-40
                 flex
                 bg-gray-50 bg-contain
                 mx-auto
                 mt-2
                 rounded-lg
+                bg-no-repeat bg-center
               "
               :class="previewClass"
               :style="{
