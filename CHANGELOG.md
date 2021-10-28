@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.5...v0.0.6) (2021-10-28)
+
+
+### Features
+
+* **v-file-upload:** fixed ui for theme=image ([573b793](https://git.gits.id/frontend/starter/vue-3/starter/commit/573b7931f56ad7dc908a77025329bf60fb3b3d03))
+* **v-file-upload:** improved dropzone ([fd6c28f](https://git.gits.id/frontend/starter/vue-3/starter/commit/fd6c28f5755cf4e3b86e30601bb4c4acfc3616b9))
+
 ### [0.0.5](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.4...v0.0.5) (2021-10-28)
 
 
