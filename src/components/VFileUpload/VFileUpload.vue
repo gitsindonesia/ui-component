@@ -461,7 +461,7 @@ onUnmounted(() => {
     </div>
   </div>
 
-  <template v-if="theme === 'dropzone'">
+  <template v-else-if="theme === 'dropzone'">
     <div
       class="
         flex
