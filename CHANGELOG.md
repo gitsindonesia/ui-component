@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.3...v0.0.4) (2021-10-28)
+
+
+### Features
+
+* **v-file-input:** reworked and fixed bug file input no cleared on remove ([6edc5dc](https://git.gits.id/frontend/starter/vue-3/starter/commit/6edc5dcc7a59b0895aa2d5f90025ba384066dd0b))
+* **v-file-upload:** new `dropzone` theme ([c276e02](https://git.gits.id/frontend/starter/vue-3/starter/commit/c276e02946556c146342c3aa71057979d0af4a91))
+
+
+### Bug Fixes
+
+* **file upload:** jika v-model null maka file dihapus ([854d2d9](https://git.gits.id/frontend/starter/vue-3/starter/commit/854d2d9e7d230c6bd712490134db52d8efb6db62))
+* issue upload file ([363e8a1](https://git.gits.id/frontend/starter/vue-3/starter/commit/363e8a15577b7400d7679542ecfc984f73f5cd73))
+
 ### [0.0.3](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.2...v0.0.3) (2021-10-28)
 
 
