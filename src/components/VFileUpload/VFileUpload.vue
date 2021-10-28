@@ -236,6 +236,12 @@ const setInitialValue = (val: any) => {
     hasInitialValue.value = true;
     previewURL.value = URL.createObjectURL(innerValue.value);
   }
+
+  if (!val) {
+    innerValue.value = null;
+    previewURL.value = null;
+    hasInitialValue.value = false;
+  }
 };
 
 const hasFile = computed(() => {
@@ -255,7 +261,6 @@ const fileURL = computed(
 watch(
   value,
   (val) => {
-    console.log('value', val);
     setInitialValue(val);
   },
   {immediate: true},
@@ -264,7 +269,6 @@ watch(
 watch(
   modelValue,
   (val) => {
-    console.log('modelValue', val);
     setInitialValue(val);
   },
   {immediate: true},
