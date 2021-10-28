@@ -106,7 +106,8 @@ const props = defineProps({
   theme: {
     type: String,
     default: '',
-    validator: (v: string) => ['button', 'image', '', 'default'].includes(v),
+    validator: (v: string) =>
+      ['button', 'image', '', 'default', 'dropzone'].includes(v),
   },
   multiple: {
     type: Boolean,
@@ -115,6 +116,22 @@ const props = defineProps({
   hidePlaceholder: {
     type: Boolean,
     default: false,
+  },
+  uploadText: {
+    type: String,
+    default: 'Upload a file',
+  },
+  dragText: {
+    type: String,
+    default: 'or drag and drop',
+  },
+  preview: {
+    type: Boolean,
+    default: false,
+  },
+  previewClass: {
+    type: String,
+    default: '',
   },
 });
 
@@ -174,8 +191,8 @@ const onFileChanged = (event: any) => {
 
     innerValue.value = firstFile;
 
-    if (image.value && firstFile) {
-      previewURL.value = URL.createObjectURL(firstFile.value);
+    if (firstFile && (image.value || props.preview)) {
+      previewURL.value = URL.createObjectURL(firstFile);
     }
 
     emit('change', firstFile);
@@ -357,6 +374,133 @@ const disabledClass = computed(() => {
     </div>
   </div>
 
+  <template v-if="theme === 'dropzone'">
+    <div
+      class="
+        flex
+        justify-center
+        items-center
+        p-6
+        border-2 border-gray-300 border-dashed
+        rounded-md
+      "
+    >
+      <div v-if="hasFile" class="space-y-3 text-center">
+        <slot
+          name="dropzone.preview"
+          :value="innerValue"
+          :file-name="fileName"
+          :has-file="hasFile"
+        >
+          <div class="space-y-5">
+            <div
+              v-if="mage || preview"
+              class="
+                w-60
+                h-60
+                flex
+                bg-gray-50 bg-contain
+                mx-auto
+                mt-2
+                rounded-lg
+              "
+              :class="previewClass"
+              :style="{
+                backgroundImage: !loading ? `url(${previewURL})` : 'none',
+              }"
+            ></div>
+            <div class="text-gray-600 text-sm">
+              {{ fileName }}
+            </div>
+          </div>
+        </slot>
+
+        <div class="space-x-3">
+          <label
+            for="file-upload"
+            class="
+              relative
+              cursor-pointer
+              bg-white
+              rounded-md
+              font-medium
+              text-primary-600
+              hover:text-primary-500
+              focus-within:outline-none
+              focus-within:ring-2
+              focus-within:ring-offset-2
+              focus-within:ring-primary-500
+            "
+            @click="pickFile"
+          >
+            <span>{{ changeText }} </span>
+          </label>
+
+          <label
+            class="
+              relative
+              cursor-pointer
+              bg-white
+              rounded-md
+              font-medium
+              text-error-600
+              hover:text-error-500
+              focus-within:outline-none
+              focus-within:ring-2
+              focus-within:ring-offset-2
+              focus-within:ring-error-500
+            "
+            @click="removeFile"
+          >
+            <span>{{ removeText }} </span>
+          </label>
+        </div>
+      </div>
+
+      <div v-else class="space-y-1 text-center">
+        <slot name="dropzone.image">
+          <svg
+            class="mx-auto h-12 w-12 text-gray-400"
+            stroke="currentColor"
+            fill="none"
+            viewBox="0 0 48 48"
+            aria-hidden="true"
+          >
+            <path
+              d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </slot>
+        <div class="flex text-sm text-gray-600">
+          <label
+            for="file-upload"
+            class="
+              relative
+              cursor-pointer
+              bg-white
+              rounded-md
+              font-medium
+              text-primary-600
+              hover:text-primary-500
+              focus-within:outline-none
+              focus-within:ring-2
+              focus-within:ring-offset-2
+              focus-within:ring-primary-500
+            "
+            @click="pickFile"
+          >
+            <span>{{ uploadText }} </span>
+          </label>
+          <p class="pl-1">{{ dragText }}</p>
+        </div>
+        <p class="text-xs text-gray-500">{{ hint }}</p>
+      </div>
+    </div>
+  </template>
+
   <div v-else>
     <v-input
       :model-value="fileName"
@@ -409,7 +553,7 @@ const disabledClass = computed(() => {
     :class="[full || button ? 'flex-row' : 'w-full sm:w-[180px] flex-col']"
   >
     <div>
-      <slot name="prepend" />
+      <sot name="prepend" />
     </div>
     <div class="flex gap-2">
       <VBtn
