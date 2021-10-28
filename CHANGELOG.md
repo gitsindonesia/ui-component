@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.2...v0.0.3) (2021-10-28)
+
+
+### Bug Fixes
+
+* color error message textarea ([f1ce0b9](https://git.gits.id/frontend/starter/vue-3/starter/commit/f1ce0b9690681d3b34d19a9685c96c57ade44d0e))
+
 ### [0.0.2](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/compare/v0.0.2-alpha.18...v0.0.2) (2021-10-25)
 
 
