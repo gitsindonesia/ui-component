@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.4...v0.0.5) (2021-10-28)
+
+
+### Features
+
+* handle drag and drop ([2d6c33c](https://git.gits.id/frontend/starter/vue-3/starter/commit/2d6c33c37a470fc3e20e173d785774ebc153e575))
+
 ### [0.0.4](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.3...v0.0.4) (2021-10-28)
 
 
