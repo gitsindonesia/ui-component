@@ -646,7 +646,7 @@ onUnmounted(() => {
     :class="[full || button ? 'flex-row' : 'w-full sm:w-[180px] flex-col']"
   >
     <div>
-      <sot name="prepend" />
+      <slot name="prepend" />
     </div>
     <div class="flex gap-2">
       <VBtn
