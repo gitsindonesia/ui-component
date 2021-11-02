@@ -71,6 +71,10 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  newTab: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const {disabled, ring, block, solid, noRing, loading, loadingText} =
@@ -252,6 +256,8 @@ const spinnerColor = computed(() => {
     :is="computedComponent"
     class="btn"
     :class="classes"
+    :rel="newTab ? 'noopener' : ''"
+    :target="newTab ? '_blank' : ''"
     :disabled="disabled || loading"
     v-bind="{...attrs, ...$attrs}"
   >
