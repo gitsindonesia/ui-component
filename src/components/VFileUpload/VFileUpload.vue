@@ -472,33 +472,28 @@ onUnmounted(() => {
 
   <template v-else-if="theme === 'dropzone'">
     <div
-      class="
-        flex
-        justify-center
-        items-center
-        p-6
-        border-2 border-gray-300 border-dashed
-        rounded-md
-      "
-      :class="dropzoneId"
+      class="flex justify-center items-center p-4 rounded-md"
+      :class="[
+        dropzoneId,
+        readonly ? 'border' : 'border-2 border-gray-300 border-dashed',
+      ]"
     >
-      <div v-if="hasFile" class="space-y-3 text-center">
+      <div v-if="hasFile" class="text-center flex flex-col gap-4">
         <slot
           name="dropzone.preview"
           :value="innerValue"
           :file-name="fileName"
           :has-file="hasFile"
         >
-          <div class="space-y-5">
+          <div class="flex flex-col gap-4">
             <div
-              v-if="mage || preview"
+              v-if="image || preview"
               class="
                 w-60
                 h-40
                 flex
-                bg-gray-50 bg-contain
+                bg-contain bg-gray-100
                 mx-auto
-                mt-2
                 rounded-lg
                 bg-no-repeat bg-center
               "
@@ -507,13 +502,13 @@ onUnmounted(() => {
                 backgroundImage: !loading ? `url(${previewURL})` : 'none',
               }"
             ></div>
-            <div class="text-gray-600 text-sm">
+            <div v-if="fileName" class="text-gray-500 text-sm">
               {{ fileName }}
             </div>
           </div>
         </slot>
 
-        <div class="space-x-3">
+        <div v-if="!readonly && !disabled" class="space-x-3">
           <label
             for="file-upload"
             class="
