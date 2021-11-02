@@ -20,7 +20,7 @@ import VInput from '../VInput/VInput.vue';
 import {ErrorMessage} from 'vee-validate';
 import {AnyMessageParams} from 'yup/lib/types';
 
-type FileValue = File | FileList | File[] | Record<string, any> | null;
+type FileValue = File | FileList | File[] | Record<string, any> | string | null;
 
 const props = defineProps({
   value: {
@@ -227,6 +227,11 @@ const removeFile = () => {
 const setInitialValue = (val: any) => {
   const isFile = val instanceof File;
   const isFileList = val instanceof FileList;
+
+  if (typeof val === 'string') {
+    hasInitialValue.value = true;
+    previewURL.value = val;
+  }
 
   if (isFile || isFileList) {
     innerValue.value = val;
