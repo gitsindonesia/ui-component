@@ -244,7 +244,7 @@ watch(
   (val) => {
     emit('update:modelValue', val);
 
-    if (timeout.value) {
+    if (timeout.value > 0) {
       setTimer();
     }
   },
