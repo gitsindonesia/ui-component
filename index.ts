@@ -1,4 +1,4 @@
-import {App} from 'vue';
+import {App, defineAsyncComponent} from 'vue';
 import VAlert from './src/components/VAlert/VAlert.vue';
 import VBtn from './src/components/VBtn/VBtn.vue';
 import VAppBar from './src/components/VAppBar/VAppBar.vue';
@@ -41,10 +41,14 @@ import Auth from './src/pages/auth/Auth.vue';
 import ForgotPassword from './src/pages/auth/ForgotPassword.vue';
 import Login from './src/pages/auth/Login.vue';
 import ResetPassword from './src/pages/auth/ResetPassword.vue';
-// import VEditor from './src/components/VEditor/VEditor.vue';
 import VFileUpload from './src/components/VFileUpload/VFileUpload.vue';
 import VCollapse from './src/components/VCollapsible/VCollapse.vue';
 import VCollapsible from './src/components/VCollapsible/VCollapsible.vue';
+import VMultiSelect from './src/components/VMultiSelect/VMultiSelect.vue';
+
+const VEditor = defineAsyncComponent(
+  () => import('./src/components/VEditor/VEditor.vue'),
+);
 
 const plugin = {
   install: (app: App, options = {}) => {
@@ -84,6 +88,7 @@ const plugin = {
     app.component('VFileUpload', VFileUpload);
     app.component('VCollapse', VCollapse);
     app.component('VCollapsible', VCollapsible);
+    app.component('VMultiSelect', VMultiSelect);
   },
 };
 
@@ -130,7 +135,7 @@ export {
   ForgotPassword,
   Login,
   ResetPassword,
-  // VEditor,
+  VEditor,
   VCollapse,
   VCollapsible,
   VFileUpload,

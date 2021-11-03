@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import {ref, toRefs, watch} from 'vue';
+import {defineAsyncComponent, ref, toRefs, watch} from 'vue';
 import {ErrorMessage} from 'vee-validate';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import {component as ckeditor} from '@ckeditor/ckeditor5-vue';
 
-import VTextarea from '../VTextarea/VTextarea.vue';
+const VTextarea = defineAsyncComponent(
+  () => import('../VTextarea/VTextarea.vue'),
+);
 
 const props = defineProps({
   modelValue: {
@@ -114,8 +116,8 @@ watch(content, (value) => {
 </template>
 
 <style scoped>
-.ck-editor__editable,
-.ql-editor {
+::v-deep(.ck-editor__editable),
+::v-deep(.ql-editor) {
   min-height: 300px;
 }
 ul,
