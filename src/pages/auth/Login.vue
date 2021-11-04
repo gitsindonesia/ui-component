@@ -5,7 +5,7 @@ import VInput from '../../components/VInput/VInput.vue';
 import VBtn from '../../components/VBtn/VBtn.vue';
 import VCheckbox from '../../components/VCheckbox/VCheckbox.vue';
 import VInputGroup from '../../components/VInputGroup/VInputGroup.vue';
-import {useField, useForm} from 'vee-validate';
+import {Form, Field} from 'vee-validate';
 import {object, string} from 'yup';
 
 const props = defineProps({
@@ -113,7 +113,6 @@ const onSubmit = (values) => {
             </label>
             <v-input-group
               id="email"
-              v-model="email"
               :placeholder="usernameText"
               name="email"
               prepend
@@ -121,7 +120,7 @@ const onSubmit = (values) => {
               :error-messages="[errors.email]"
               error-class="min-h-[20px]"
               class="mb-2"
-              v-bin="field"
+              v-bind="field"
             >
               <template #prepend>
                 <UserIcon
@@ -142,7 +141,6 @@ const onSubmit = (values) => {
             </label>
             <v-input-group
               id="password"
-              v-model="password"
               :placeholder="passwordText"
               type="password"
               name="password"
