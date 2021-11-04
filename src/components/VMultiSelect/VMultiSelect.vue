@@ -1,3 +1,9 @@
+<script lang="ts">
+export default {
+  inheritAttrs: false,
+};
+</script>
+
 <script setup lang="ts">
 import {
   computed,
@@ -12,8 +18,7 @@ import {CheckIcon, ChevronDownIcon, XIcon} from '@heroicons/vue/solid';
 import VBadge from '../VBadge/VBadge.vue';
 import VInput from '../VInput/VInput.vue';
 import VTooltip from '../VTooltip/VTooltip.vue';
-import debounce from 'lodash/debounce';
-import {onClickOutside} from '@vueuse/core';
+import {onClickOutside, useDebounceFn} from '@vueuse/core';
 
 type VMultiSelectItem = {
   text: string;
@@ -176,7 +181,7 @@ const deselect = (item: VMultiSelectItem) => {
   }
 };
 
-const handleSearch = debounce((event) => {
+const handleSearch = useDebounceFn((event) => {
   isOpen.value = true;
   search.value = event.target.value;
   focus.value = 0;
