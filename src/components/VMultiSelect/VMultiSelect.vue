@@ -1,5 +1,13 @@
 <script setup lang="ts">
-import {computed, ref, toRefs, onBeforeUpdate, watch, nextTick} from 'vue';
+import {
+  computed,
+  ref,
+  toRefs,
+  onBeforeUpdate,
+  watch,
+  nextTick,
+  PropType,
+} from 'vue';
 import {CheckIcon, ChevronDownIcon, XIcon} from '@heroicons/vue/solid';
 import VBadge from '../VBadge/VBadge.vue';
 import VInput from '../VInput/VInput.vue';
@@ -7,17 +15,24 @@ import VTooltip from '../VTooltip/VTooltip.vue';
 import debounce from 'lodash/debounce';
 import {onClickOutside} from '@vueuse/core';
 
+type VMultiSelectItem = {
+  text: string;
+  value: any;
+
+  [x: string]: any;
+};
+
 const props = defineProps({
   value: {
-    type: Array,
+    type: Array as PropType<VMultiSelectItem[]>,
     default: () => [],
   },
   modelValue: {
-    type: Array,
+    type: Array as PropType<VMultiSelectItem[]>,
     default: () => [],
   },
   items: {
-    type: Array,
+    type: Array as PropType<VMultiSelectItem[]>,
     default: () => [],
   },
   itemText: {
@@ -53,7 +68,7 @@ const props = defineProps({
     default: '',
   },
   inputProps: {
-    type: Object,
+    type: Object as PropType<Record<string, any>>,
     default: () => ({}),
   },
   selectAll: {
@@ -96,14 +111,14 @@ const isOpen = ref(false);
 const search = ref('');
 const selected = ref(modelValue.value);
 const listBoxValue = ref(null);
-const focus = ref(null);
-const refItems = ref([]);
-const dropdown = ref(null);
+const focus = ref(-1);
+const refItems = ref<HTMLDivElement[]>([]);
+const dropdown = ref<HTMLDivElement | null>(null);
 
-const matchBy = (item, key) =>
+const matchBy = (item: VMultiSelectItem, key: string) =>
   String(item?.[key])?.toLowerCase()?.includes(search.value.toLowerCase());
 
-const searchItem = (item) => {
+const searchItem = (item: VMultiSelectItem) => {
   const searchVal = search.value;
 
   if (!searchVal) return true;
@@ -120,7 +135,7 @@ const badges = computed(() =>
 );
 
 // methods
-const setRefItem = (el, index) => {
+const setRefItem = (el: any, index: number) => {
   if (el) refItems.value[index] = el;
 };
 
@@ -128,7 +143,7 @@ onBeforeUpdate(() => {
   refItems.value = [];
 });
 
-const handleSelect = (item) => {
+const handleSelect = (item: VMultiSelectItem) => {
   const index = findIndex(item);
   if (index > -1) {
     selected.value.splice(index, 1);
@@ -138,23 +153,23 @@ const handleSelect = (item) => {
   emit('selected', selected);
 };
 
-const findIndex = (item) =>
+const findIndex = (item: VMultiSelectItem) =>
   selected.value.findIndex(
     (sItem) => sItem[itemValue.value] === item?.[itemValue.value],
   );
 
-const hasItem = (item) => findIndex(item) > -1;
+const hasItem = (item: VMultiSelectItem) => findIndex(item) > -1;
 
-const isSelected = (item, index) => {
+const isSelected = (item: VMultiSelectItem, index: number) => {
   return item.selected || hasItem(item);
 };
 
 const clearSelected = () => {
   selected.value = [];
-  focus.value = null;
+  focus.value = -1;
 };
 
-const deselect = (item) => {
+const deselect = (item: VMultiSelectItem) => {
   const index = findIndex(item);
   if (index > -1) {
     selected.value.splice(index, 1);
@@ -224,7 +239,7 @@ const onUp = () => {
   if (focus.value === null) {
     focus.value = 0;
   } else if (focus.value === 0) {
-    focus.value = null;
+    focus.value = -1;
   } else {
     focus.value--;
   }
@@ -232,7 +247,7 @@ const onUp = () => {
   focusItem();
 };
 
-const onTab = (e) => {
+const onTab = (e: KeyboardEvent) => {
   if (e.shiftKey) {
     onUp();
   } else {
@@ -248,9 +263,9 @@ const focusItem = () => {
   nextTick(() => {
     const index = focus.value;
     const target = refItems.value[index];
-    const top = target?.offsetTop - (dropdown.value.offsetHeight - 100);
+    const top = target?.offsetTop - (dropdown.value!.offsetHeight - 100);
 
-    dropdown.value.scrollTo({top, behavior: 'smooth'});
+    dropdown.value?.scrollTo({top, behavior: 'smooth'});
   });
 };
 

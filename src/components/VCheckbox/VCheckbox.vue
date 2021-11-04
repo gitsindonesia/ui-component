@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import {ref, toRefs, watch, computed} from 'vue';
+import {ref, toRefs, watch, computed, PropType} from 'vue';
 import {useTextSize} from '../../utils';
+import {VDataTableItem} from '../VDataTable/VDataTable';
 
 const props = defineProps({
   modelValue: {
@@ -28,7 +29,7 @@ const props = defineProps({
     default: '',
   },
   value: {
-    type: [String, Number],
+    type: [String, Number] as PropType<string | number | VDataTableItem>,
     default: '',
   },
 });

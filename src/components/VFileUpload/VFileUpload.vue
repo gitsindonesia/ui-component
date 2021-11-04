@@ -20,7 +20,7 @@ import VInput from '../VInput/VInput.vue';
 import {ErrorMessage} from 'vee-validate';
 import {AnyMessageParams} from 'yup/lib/types';
 
-type FileValue = File | FileList | File[] | Record<string, any> | string | null;
+type FileValue = File | FileList | File[] | Record<string, any> | null;
 
 const props = defineProps({
   value: {

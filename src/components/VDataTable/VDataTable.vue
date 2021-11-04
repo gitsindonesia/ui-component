@@ -183,7 +183,7 @@ const paginatedItems = computed(() => {
       return [...defaultSearchBy.value, searchBy.value]
         .flat()
         .some((key) =>
-          String(item[key])
+          String(item[key!])
             .toLowerCase()
             .includes(search.value.toLocaleLowerCase()),
         );
@@ -281,7 +281,7 @@ watch(paginationPage, (val) => {
 
 const selected = ref<any>([]);
 
-const selectAll = computed({
+const selectAll = computed<boolean>({
   get() {
     return items.value.length
       ? selected.value.length == items.value.length
