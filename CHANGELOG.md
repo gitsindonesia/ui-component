@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.8](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.7...v0.0.8) (2021-11-04)
+
+
+### Features
+
+* register v-editor as async component ([0d38a1e](https://git.gits.id/frontend/starter/vue-3/starter/commit/0d38a1e6e81a84d3331d0a83390372dfce66bd83))
+* **v-breadcrumbs:** added custom slots: `title.index` and `item.index` ([4250a9e](https://git.gits.id/frontend/starter/vue-3/starter/commit/4250a9eee36d4b82dff96213c25af736e1aa9cc4))
+* **v-btn:** new `newTab` prop for targeting new tab ([861879b](https://git.gits.id/frontend/starter/vue-3/starter/commit/861879b3e018ffbc1f83d1c428e3e41e63a8f6f4))
+* **v-file-upload:** allow string as initial value ([e9ca735](https://git.gits.id/frontend/starter/vue-3/starter/commit/e9ca735d81e81370a594fc7c6b3156d85027a508))
+* **v-file-upload:** update ui for handling readonly state on dropzone theme ([98938c8](https://git.gits.id/frontend/starter/vue-3/starter/commit/98938c830097d303d62bd8db840ab6a073cc38e7))
+
+
+### Bug Fixes
+
+* fix some typings ([dd52a8b](https://git.gits.id/frontend/starter/vue-3/starter/commit/dd52a8b4b67b20fc6f5add5c5389bdcf4b6b7969))
+* prepend slot ([f4cc3b2](https://git.gits.id/frontend/starter/vue-3/starter/commit/f4cc3b239d2c90711c962d013bbdd9ecc33185f9))
+* timeout logic ([5695e95](https://git.gits.id/frontend/starter/vue-3/starter/commit/5695e952275ff89ef3246b2df6bedea0ebde6139))
+* typings ([c0a8f4d](https://git.gits.id/frontend/starter/vue-3/starter/commit/c0a8f4d40d1f291fbf5a5d500d15bae7634858a8))
+
 ### [0.0.7](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.6...v0.0.7) (2021-10-28)
 
 
