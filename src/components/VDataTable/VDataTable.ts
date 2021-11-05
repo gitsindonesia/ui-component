@@ -1,4 +1,3 @@
-import type {PropType} from 'vue';
 import {VPagination} from '../VPagination/VPagination';
 
 export interface VDataTableItem {

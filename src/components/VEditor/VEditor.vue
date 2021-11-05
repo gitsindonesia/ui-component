@@ -1,5 +1,11 @@
+<script lang="ts">
+export default {
+  inheritAttrs: false,
+};
+</script>
+
 <script setup lang="ts">
-import {defineAsyncComponent, ref, toRefs, watch} from 'vue';
+import {defineAsyncComponent, PropType, ref, toRefs, watch} from 'vue';
 import {ErrorMessage} from 'vee-validate';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import {component as ckeditor} from '@ckeditor/ckeditor5-vue';
@@ -11,11 +17,11 @@ const VTextarea = defineAsyncComponent(
 const props = defineProps({
   modelValue: {
     type: String,
-    default: null,
+    default: '',
   },
   value: {
     type: String,
-    default: null,
+    default: '',
   },
   name: {
     type: String,
@@ -26,13 +32,17 @@ const props = defineProps({
     default: false,
   },
   errorMessages: {
-    type: Array,
+    type: Array as PropType<string[]>,
     default: () => [],
   },
   theme: {
     type: String,
     default: 'ckeditor',
     validator: (v: string) => ['quill', 'ckeditor', 'textarea'].includes(v),
+  },
+  readonly: {
+    type: Boolean,
+    default: false,
   },
 });
 

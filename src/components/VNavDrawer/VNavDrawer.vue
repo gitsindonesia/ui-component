@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { computed, PropType, toRefs } from 'vue';
-import { XIcon } from '@heroicons/vue/outline';
+import {computed, PropType, toRefs} from 'vue';
+import {XIcon} from '@heroicons/vue/outline';
 import VMenu from '../VMenu/VMenu.vue';
 import VLogo from '../VLogo/VLogo.vue';
-import { ChevronLeftIcon } from '@heroicons/vue/solid';
-import { getBgColor } from '../../utils';
-import { VNavbarMenuItem } from '../../../types';
+import {ChevronLeftIcon} from '@heroicons/vue/solid';
+import {getBgColor} from '../../utils';
+import {VNavbarMenuItem} from '../VNavbar/VNavbar';
 
 const props = defineProps({
   modelValue: {
@@ -42,7 +42,7 @@ const props = defineProps({
   },
 });
 
-const { modelValue, mini, menus, logoProps, dark, color, hideToggle } =
+const {modelValue, mini, menus, logoProps, dark, color, hideToggle} =
   toRefs(props);
 
 const emit = defineEmits(['update:modelValue', 'update:mini', 'toggle:click']);
@@ -77,7 +77,19 @@ const bgColor = computed(() =>
   </transition>
 
   <div
-    class="fixed top-0 left-0 z-20 h-screen min-h-screen shadow-md p-2 transition-all duration-300 flex flex-col"
+    class="
+      fixed
+      top-0
+      left-0
+      z-20
+      h-screen
+      min-h-screen
+      shadow-md
+      p-2
+      transition-all
+      duration-300
+      flex flex-col
+    "
     :class="[
       bgColor,
       mini
@@ -86,7 +98,7 @@ const bgColor = computed(() =>
     ]"
   >
     <div class="hidden sm:block">
-      <slot v-if="!hideToggle" name="toggle" :on="{  click: toggleMenu  }">
+      <slot v-if="!hideToggle" name="toggle" :on="{click: toggleMenu}">
         <v-btn
           size="sm"
           icon
@@ -97,7 +109,10 @@ const bgColor = computed(() =>
           color="primary"
           @click="toggleMenu"
         >
-          <ChevronLeftIcon class="w-5 h-5" :class="[mini ? 'rotate-180' : '']" />
+          <ChevronLeftIcon
+            class="w-5 h-5"
+            :class="[mini ? 'rotate-180' : '']"
+          />
         </v-btn>
       </slot>
       <slot v-if="mini" name="logo.mini" />

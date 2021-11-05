@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {toRefs, watch, computed, ref, inject} from 'vue';
 import {Switch, SwitchGroup, SwitchLabel} from '@headlessui/vue';
-import type {Colors} from '../../../types';
+import type {Colors} from '../../types';
 
 const props = defineProps({
   modelValue: {

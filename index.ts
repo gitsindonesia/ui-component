@@ -143,4 +143,15 @@ export {
 
 export * from './src/components/VToast';
 export * from './src/utils';
+export * from './src/components/VAppBar/VAppBar';
+export * from './src/components/VBadge/VBadge';
+export * from './src/components/VBreadcrumbs/VBreadcrumbs';
+export * from './src/components/VBtn/VBtn';
+export * from './src/components/VDataTable/VDataTable';
+export * from './src/components/VDropdown/VDropdown';
+export * from './src/components/VInput/VInput';
+export * from './src/components/VNavbar/VNavbar';
+export * from './src/components/VTabs/VTabs';
+export * from './src/components/VToast/VToast';
+export * from './src/components/VModal/VModal';
 export default plugin;
