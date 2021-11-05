@@ -1,6 +1,7 @@
 import VTabs from './VTabs.vue';
 import VCard from '../VCard/VCard.vue';
 import { ref } from 'vue';
+import { Story } from '@storybook/vue3';
 
 function createItems(len = 20, additionalItem = {}) {
   return [...Array(20)].map((v, k) => ({
@@ -25,7 +26,7 @@ export default {
   },
 };
 
-const Template = (args) => ({
+const Template: Story<{}> = (args) => ({
   // Components used in your story `template` are defined in the `components` object
   components: { VTabs },
   // The story's `args` need to be mapped into the template through the `setup()` method
@@ -65,7 +66,7 @@ Vertical.args = {
   vertical: true,
 };
 
-export const TabsWithCard = (args) => ({
+export const TabsWithCard: Story<{}> = (args) => ({
   components: { VTabs, VCard },
   setup() {
     const tab = ref(0);

@@ -1,7 +1,7 @@
 import MyToast from './VToast.vue';
 import VBtn from '../VBtn/VBtn.vue';
 import { themeColors } from '../../utils/colors';
-import { Meta, Story } from '@storybook/vue3';
+import {  Story } from '@storybook/vue3';
 
 export default {
   title: 'Components/Toast',
@@ -49,9 +49,9 @@ export default {
     hideXIcon: false,
     overlay: false
   },
-} as Meta;
+};
 
-const Template: Story = (args) => ({
+const Template: Story<{}> = (args) => ({
   // Components used in your story `template` are defined in the `components` object
   components: {
     'v-btn': VBtn,

@@ -1,4 +1,4 @@
-import {Colors} from '../../../types';
+import {Colors} from '../../types';
 import {Sizes} from '../../utils';
 
 export type VBtnProps = {
@@ -12,4 +12,5 @@ export type VBtnProps = {
   size: Sizes;
   tile: boolean;
   icon: boolean;
+  loading: boolean
 };

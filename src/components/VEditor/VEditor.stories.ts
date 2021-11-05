@@ -1,3 +1,4 @@
+import { Story } from '@storybook/vue3';
 import MyEditor from './VEditor.vue';
 
 export default {
@@ -14,7 +15,7 @@ export default {
   },
 };
 
-const Template = (args) => ({
+const Template: Story<{}> = (args) => ({
   // Components used in your story `template` are defined in the `components` object
   components: {MyEditor},
   // The story's `args` need to be mapped into the template through the `setup()` method

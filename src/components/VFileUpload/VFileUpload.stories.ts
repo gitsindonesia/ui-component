@@ -1,3 +1,4 @@
+import { Story } from '@storybook/vue3';
 import MyFileUpload from './VFileUpload.vue';
 
 export default {
@@ -21,7 +22,7 @@ export default {
   },
 };
 
-const Template = (args) => ({
+const Template: Story<{}> = (args) => ({
   // Components used in your story `template` are defined in the `components` object
   components: {
     'my-component': MyFileUpload,

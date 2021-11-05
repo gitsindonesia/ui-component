@@ -9,8 +9,8 @@ export default defineConfig({
     target: 'esnext',
     lib: {
       entry: resolve(__dirname, 'index.ts'),
-      name: 'GitUi',
-      formats: ['es', 'umd', 'iife'],
+      name: 'GitsUi',
+      formats: ['es'],
     },
     rollupOptions: {
       plugins: [

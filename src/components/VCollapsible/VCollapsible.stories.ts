@@ -1,3 +1,4 @@
+import { Story } from '@storybook/vue3';
 import {ref} from 'vue';
 import MyCollapsible from './VCollapsible.vue';
 
@@ -16,7 +17,7 @@ export default {
   },
 };
 
-const Template = (args) => ({
+const Template: Story<{}> = (args) => ({
   // Components used in your story `template` are defined in the `components` object
   components: {MyCollapsible},
   // The story's `args` need to be mapped into the template through the `setup()` method
@@ -50,7 +51,7 @@ CustomClasses.args = {
   panelClass: 'border p-4 rounded-b-lg',
 };
 
-export const Group = (args) => ({
+export const Group: Story<{}> = (args) => ({
   // Components used in your story `template` are defined in the `components` object
   components: {MyCollapsible},
   // The story's `args` need to be mapped into the template through the `setup()` method
