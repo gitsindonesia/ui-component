@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.10](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/compare/v0.0.9...v0.0.10) (2021-11-05)
+
+
+### Bug Fixes
+
+* curated publish files ([826db70](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/commit/826db7056e7e6dc69dded4373064f39159ae8702))
+* improved types ([733c6f8](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/commit/733c6f8db6aa7ca3e8c7a717935bea1ef461a61c))
+* improved types ([1121f4b](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/commit/1121f4b02dcfa57863320ea29d6828a15a788fcf))
+* v-slot ([bf92f18](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/commit/bf92f1891cec3b685189e02d291a47234c227072))
+
 ### [0.0.9](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/compare/v0.0.8...v0.0.9) (2021-11-05)
 
 
