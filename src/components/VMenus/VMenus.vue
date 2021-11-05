@@ -100,9 +100,11 @@ const placementClass = computed(() => (props.right ? 'right-0' : 'left-0'));
               <span class="flex-none">
                 {{ item.text }}
               </span>
-              <slot v-if="rightIcon" name="right-icon">
-                <ChevronRightIcon class="w-6 h-6" />
-              </slot>
+              <template v-if="rightIcon">
+                <slot name="right-icon">
+                  <ChevronRightIcon class="w-6 h-6" />
+                </slot>
+              </template>
             </VBtn>
           </MenuItem>
           <slot name="append" />

@@ -261,10 +261,12 @@ const spinnerColor = computed(() => {
     :disabled="disabled || loading"
     v-bind="{...attrs, ...$attrs}"
   >
-    <slot v-if="loading" name="loading">
-      <v-spinner :color="spinnerColor" />
-      <span v-if="loadingText" class="ml-2">{{ loadingText }}</span>
-    </slot>
+    <template v-if="loading">
+      <slot name="loading">
+        <v-spinner :color="spinnerColor" />
+        <span v-if="loadingText" class="ml-2">{{ loadingText }}</span>
+      </slot>
+    </template>
     <slot v-else />
   </component>
 </template>

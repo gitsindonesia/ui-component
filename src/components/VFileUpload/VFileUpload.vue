@@ -406,12 +406,17 @@ onUnmounted(() => {
         :disabled="readonly || disabled"
         @click="pickFile"
       >
-        <slot v-if="!hasFile" name="icon.plus">
-          <PlusIcon class="w-5 h-5 mr-2" />
-        </slot>
-        <slot v-if="hasFile" name="icon.plus">
-          <PlusIcon class="w-5 h-5 mr-2" />
-        </slot>
+        <template v-if="!hasFile">
+          <slot name="icon.plus">
+            <PlusIcon class="w-5 h-5 mr-2" />
+          </slot>
+        </template>
+        <template v-if="hasFile">
+          <slot name="icon.plus">
+            <PlusIcon class="w-5 h-5 mr-2" />
+          </slot>
+        </template>
+
         {{ hasFile ? changeText : browseText }}
       </VBtn>
 

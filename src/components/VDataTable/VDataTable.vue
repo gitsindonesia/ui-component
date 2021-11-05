@@ -451,15 +451,17 @@ const end = computed(() =>
       </table>
     </div>
 
-    <slot v-if="!hideFooter" name="footer">
-      <VDataTablePagination
-        v-model="page"
-        class="rounded-b-md"
-        :total-items="serverSide ? totalItems : items.length"
-        v-model:itemsPerPage="perPage"
-        v-bind="pagination"
-      />
-    </slot>
+    <template v-if="!hideFooter">
+      <slot name="footer">
+        <VDataTablePagination
+          v-model="page"
+          class="rounded-b-md"
+          :total-items="serverSide ? totalItems : items.length"
+          v-model:itemsPerPage="perPage"
+          v-bind="pagination"
+        />
+      </slot>
+    </template>
   </div>
 </template>
 

@@ -5,6 +5,9 @@ import {resolve} from 'path';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
+  esbuild: {
+    exclude: ['./src/**/**.stories.ts'],
+  },
   build: {
     target: 'esnext',
     lib: {
@@ -17,7 +20,10 @@ export default defineConfig({
         {
           name: 'remove-collection-handlers',
           transform(code, id) {
-            if (id.endsWith('reactivity.esm-bundler.js')) {
+            if (
+              id.endsWith('reactivity.esm-bundler.js') ||
+              id.endsWith('runtime-core.esm-bundler.js')
+            ) {
               return code
                 .replace(`mutableCollectionHandlers,`, `null,`)
                 .replace(`readonlyCollectionHandlers,`, `null,`);

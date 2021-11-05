@@ -198,12 +198,14 @@ const onSubmit = (values) => {
             {{ loginText }}
           </VBtn>
         </div>
-        <slot v-if="register" name="register">
-          <div class="mt-4">
-            Already have an account?
-            <v-btn text color="primary" :to="register">Register</v-btn>
-          </div>
-        </slot>
+        <template v-if="register">
+          <slot name="register">
+            <div class="mt-4">
+              Already have an account?
+              <v-btn text color="primary" :to="register">Register</v-btn>
+            </div>
+          </slot>
+        </template>
         <slot name="extra" />
       </form>
     </Form>

@@ -98,24 +98,28 @@ const bgColor = computed(() =>
     ]"
   >
     <div class="hidden sm:block">
-      <slot v-if="!hideToggle" name="toggle" :on="{click: toggleMenu}">
-        <v-btn
-          size="sm"
-          icon
-          rounded
-          no-ring
-          class="absolute -right-4"
-          :class="btnToggleClass"
-          color="primary"
-          @click="toggleMenu"
-        >
-          <ChevronLeftIcon
-            class="w-5 h-5"
-            :class="[mini ? 'rotate-180' : '']"
-          />
-        </v-btn>
-      </slot>
-      <slot v-if="mini" name="logo.mini" />
+      <template v-if="!hideToggle">
+        <slot name="toggle" :on="{click: toggleMenu}">
+          <v-btn
+            size="sm"
+            icon
+            rounded
+            no-ring
+            class="absolute -right-4"
+            :class="btnToggleClass"
+            color="primary"
+            @click="toggleMenu"
+          >
+            <ChevronLeftIcon
+              class="w-5 h-5"
+              :class="[mini ? 'rotate-180' : '']"
+            />
+          </v-btn>
+        </slot>
+      </template>
+      <template v-if="mini">
+        <slot name="logo.mini" />
+      </template>
       <slot v-else name="logo">
         <v-logo :white="dark" v-bind="logoProps" />
       </slot>
