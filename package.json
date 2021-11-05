@@ -6,7 +6,7 @@
     "serve": "vite preview",
     "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
     "build:css": "npx --no-install tailwindcss-cli@latest build ./src/index.css -o ./gitsui.css",
-    "prepublishOnly": "cross-env NODE_ENV=production npm run build:css",
+    "prepublishOnly": "npm run build",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "release": "standard-version",
     "build-storybook": "build-storybook",
@@ -50,5 +50,12 @@
   },
   "main": "index.ts",
   "module": "index.ts",
-  "types": "./dist/types/index.d.ts"
+  "types": "./dist/types/index.d.ts",
+  "files": [
+    "dist",
+    "public",
+    "src",
+    "index.ts",
+    "preset.js"
+  ]
 }
