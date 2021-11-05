@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.9](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/compare/v0.0.8...v0.0.9) (2021-11-05)
+
+
+### Bug Fixes
+
+* login page ([b9382de](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/commit/b9382de3cc28a45eb5ab94cd3694e8dcc4635919))
+* search bug caused by inherit attrs ([61d7146](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/commit/61d714605037c5b66542fc1be296e383816536e5))
+
 ### [0.0.8](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.7...v0.0.8) (2021-11-04)
 
 
