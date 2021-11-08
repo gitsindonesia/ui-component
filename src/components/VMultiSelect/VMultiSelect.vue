@@ -16,9 +16,9 @@ import {
 } from 'vue';
 import {CheckIcon, ChevronDownIcon, XIcon} from '@heroicons/vue/solid';
 import VBadge from '../VBadge/VBadge.vue';
-import VInput from '../VInput/VInput.vue';
 import VTooltip from '../VTooltip/VTooltip.vue';
 import {onClickOutside, useDebounceFn} from '@vueuse/core';
+import {ErrorMessage} from 'vee-validate';
 
 type VMultiSelectItem = {
   text: string;
@@ -84,6 +84,14 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  error: {
+    type: Boolean,
+    default: false,
+  },
+  errorMessages: {
+    type: Array,
+    default: () => [],
+  },
 });
 
 const emit = defineEmits([
@@ -115,7 +123,6 @@ const target = ref(null);
 const isOpen = ref(false);
 const search = ref('');
 const selected = ref(modelValue.value);
-const listBoxValue = ref(null);
 const focus = ref(-1);
 const refItems = ref<HTMLDivElement[]>([]);
 const dropdown = ref<HTMLDivElement | null>(null);
@@ -316,20 +323,18 @@ watch(
             text-left
             bg-white
             rounded-lg
-            border border-gray-300
+            border 
             cursor-default
             focus:outline-none
-            focus-visible:ring-2
-            focus-visible:ring-opacity-75
-            focus-visible:ring-white
-            focus-visible:ring-offset-gray-300
-            focus-visible:ring-offset-2
-            focus-visible:border-primary-500
             sm:text-sm
             gap-y-1
             flex flex-wrap
             items-center
+            focus-visible:ring-2
+            focus-visible:ring-opacity-75
+            focus-visible:ring-offset-2
           "
+          :class="[error ? 'v-multi-select-error' : 'v-multi-select-normal']"
           @click="(e) => e.preventDefault()"
         >
           <div v-if="selected.length" class="flex items-center gap-2 flex-wrap">
@@ -512,4 +517,19 @@ watch(
       </div>
     </div>
   </div>
+  <ErrorMessage
+    v-if="errorMessages.length"
+    class="text-error-600 text-sm"
+    :name="name"
+  />
 </template>
+
+<style scoped>
+.v-multi-select-error {
+  @apply border-error-600 focus-visible:ring-white focus-visible:ring-offset-error-300 focus-visible:border-error-500;
+}
+
+.v-multi-select-normal {
+  @apply border-gray-300 focus-visible:ring-white focus-visible:ring-offset-gray-300 focus-visible:border-primary-500;
+}
+</style>
