@@ -360,7 +360,7 @@ watch(
             class="
               border-none
               px-1
-              py-2
+              py-1
               focus:outline-none focus:!ring-0 focus:!border-none
               text-sm
               flex-grow
