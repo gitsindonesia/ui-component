@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.11](https://git.gits.id/prodia/doctor/doctor-cms/compare/v0.0.10...v0.0.11) (2021-11-11)
+
+
+### Features
+
+* unregister VEditor as global export ([3cdca38](https://git.gits.id/prodia/doctor/doctor-cms/commit/3cdca38f2a569b0e69e635d4eda533a80fdfe989))
+* **v-multi-select:** add error state ([c4a6ecd](https://git.gits.id/prodia/doctor/doctor-cms/commit/c4a6ecd37f6654543ade055a561115dfe2b4763d))
+
+
+### Bug Fixes
+
+* default improved input classes ([20b9864](https://git.gits.id/prodia/doctor/doctor-cms/commit/20b98648a4e866bb5021b93b484e9c6255f5a01c))
+
 ### [0.0.10](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/compare/v0.0.9...v0.0.10) (2021-11-05)
 
 
