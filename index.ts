@@ -46,9 +46,9 @@ import VCollapse from './src/components/VCollapsible/VCollapse.vue';
 import VCollapsible from './src/components/VCollapsible/VCollapsible.vue';
 import VMultiSelect from './src/components/VMultiSelect/VMultiSelect.vue';
 
-const VEditor = defineAsyncComponent(
-  () => import('./src/components/VEditor/VEditor.vue'),
-);
+// const VEditor = defineAsyncComponent(
+//   () => import('./src/components/VEditor/VEditor.vue'),
+// );
 
 const plugin = {
   install: (app: App, options = {}) => {
@@ -135,7 +135,7 @@ export {
   ForgotPassword,
   Login,
   ResetPassword,
-  VEditor,
+  // VEditor,
   VCollapse,
   VCollapsible,
   VFileUpload,
