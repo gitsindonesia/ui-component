@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.12](https://git.gits.id/prodia/doctor/doctor-cms/compare/v0.0.11...v0.0.12) (2021-11-12)
+
+
+### Features
+
+* disable v-editor storybook for now ([9d2bff3](https://git.gits.id/prodia/doctor/doctor-cms/commit/9d2bff30fedc91eb1310df7a570f96ac73d8796a))
+
+
+### Bug Fixes
+
+* types ([cadf8dc](https://git.gits.id/prodia/doctor/doctor-cms/commit/cadf8dcb19b43cbef5c7213749949e35bf7f7500))
+* unregister prepublishOnly command ([0e1bf0d](https://git.gits.id/prodia/doctor/doctor-cms/commit/0e1bf0d7147363ce26edef95a923e68fc377d98c))
+
 ### [0.0.11](https://git.gits.id/prodia/doctor/doctor-cms/compare/v0.0.10...v0.0.11) (2021-11-11)
 
 
