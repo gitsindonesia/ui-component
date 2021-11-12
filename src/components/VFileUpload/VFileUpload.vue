@@ -458,7 +458,7 @@ onUnmounted(() => {
       "
       :class="[sizeClass, {'rounded-10': rounded}]"
       :style="{
-        'background-image': image && !loading ? `url(${previewURL})` : 'none',
+        backgroundImage: image && !loading ? `url(${previewURL})` : 'none',
       }"
       @click="pickFile"
     >
