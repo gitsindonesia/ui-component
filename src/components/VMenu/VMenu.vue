@@ -40,11 +40,15 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  isParentActive: {
+    type: Boolean,
+    default: false
+  }
 });
 
 const emit = defineEmits([]);
 
-const {menu, mini, dark} = toRefs(props);
+const {menu, mini, dark, isParentActive} = toRefs(props);
 
 const panel = ref<HTMLDivElement | null>(null);
 
@@ -63,9 +67,9 @@ const textColor = computed(() =>
 
 const openClass = (isOpen: boolean) => {
   if (dark.value) {
-    return isOpen ? 'text-primary-600 bg-gray-700' : '';
+    return isOpen && isParentActive.value ? 'text-grey-600 bg-grey-700' : isOpen ? 'text-primary-600 bg-gray-700' : '';
   }
-  return isOpen ? 'text-primary-600 bg-gray-100' : '';
+  return isOpen && isParentActive.value ? 'text-grey-600 bg-grey-700' : isOpen ? 'text-primary-600' : '';
 };
 
 const scrollHeight = computed(() => (panel as any).value?.el?.scrollHeight);
