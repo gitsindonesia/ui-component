@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.13](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.12...v0.0.13) (2021-11-16)
+
+
+### Bug Fixes
+
+* nav drawer add prop for parent menu ([4f4419b](https://git.gits.id/frontend/starter/vue-3/starter/commit/4f4419bc45f65f50fea0e0de55ac88417dfad0a7))
+* navdrawer props ([89bc9af](https://git.gits.id/frontend/starter/vue-3/starter/commit/89bc9affb44c4bb0fd6d2128ec241a93f274daca))
+* remove console ([05cbb67](https://git.gits.id/frontend/starter/vue-3/starter/commit/05cbb6755bd8f22f672e2fe1c4e97d2de4433421))
+
 ### [0.0.12](https://git.gits.id/prodia/doctor/doctor-cms/compare/v0.0.11...v0.0.12) (2021-11-12)
 
 
