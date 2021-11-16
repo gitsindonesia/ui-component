@@ -66,7 +66,6 @@ const textColor = computed(() =>
 );
 
 const openClass = (isOpen: boolean) => {
-  console.log(classMenuParent.value)
   if (dark.value) {
     return isOpen ?  `${classMenuParent.value}` : '';
   }
