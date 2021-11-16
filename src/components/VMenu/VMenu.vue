@@ -40,11 +40,15 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  classMenuParent: {
+    type: String,
+    default: 'text-primary-600 bg-grey-700'
+  }
 });
 
 const emit = defineEmits([]);
 
-const {menu, mini, dark} = toRefs(props);
+const {menu, mini, dark, classMenuParent} = toRefs(props);
 
 const panel = ref<HTMLDivElement | null>(null);
 
@@ -63,9 +67,9 @@ const textColor = computed(() =>
 
 const openClass = (isOpen: boolean) => {
   if (dark.value) {
-    return isOpen ? 'text-primary-600 bg-gray-700' : '';
+    return isOpen ?  `${classMenuParent.value}` : '';
   }
-  return isOpen ? 'text-primary-600 bg-gray-100' : '';
+  return isOpen ? `${classMenuParent.value}` : '';
 };
 
 const scrollHeight = computed(() => (panel as any).value?.el?.scrollHeight);

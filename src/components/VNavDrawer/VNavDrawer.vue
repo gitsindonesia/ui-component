@@ -40,9 +40,13 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  classMenuParent: {
+    type: String,
+    default: 'text-primary-600 bg-gray-700'
+  }
 });
 
-const {modelValue, mini, menus, logoProps, dark, color, hideToggle} =
+const {modelValue, mini, menus, logoProps, dark, color, hideToggle, classMenuParent} =
   toRefs(props);
 
 const emit = defineEmits(['update:modelValue', 'update:mini', 'toggle:click']);
@@ -136,6 +140,7 @@ const bgColor = computed(() =>
     <div class="mt-5 flex-grow overflow-auto">
       <v-menu
         v-for="(menu, i) in menus"
+        :classMenuParent="classMenuParent"
         :key="i"
         :menu="menu"
         :mini="mini"
