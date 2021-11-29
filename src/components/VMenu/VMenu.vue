@@ -10,6 +10,7 @@ import {Disclosure, DisclosureButton, DisclosurePanel} from '@headlessui/vue';
 import {ChevronRightIcon} from '@heroicons/vue/outline';
 import VMenuTooltip from './VMenuTooltip.vue';
 import VMenuItem from './VMenuItem.vue';
+import { useRouter } from 'vue-router';
 
 const props = defineProps({
   menu: {
@@ -46,6 +47,7 @@ const props = defineProps({
   }
 });
 
+const router = useRouter();
 const emit = defineEmits([]);
 
 const {menu, mini, dark, classMenuParent} = toRefs(props);
@@ -73,6 +75,14 @@ const openClass = (isOpen: boolean) => {
 };
 
 const scrollHeight = computed(() => (panel as any).value?.el?.scrollHeight);
+
+const isActive = (path: any) => {
+  const currentPath = router.currentRoute.value.path;
+  const currentRoute = currentPath.split('/');
+  const route = path.to.split('/');
+  return route[2] === currentRoute[2];
+}
+
 </script>
 
 <template>
@@ -133,7 +143,7 @@ const scrollHeight = computed(() => (panel as any).value?.el?.scrollHeight);
           :key="j"
           :item="child"
           :mini="mini"
-          :text-color="textColor"
+          :text-color="isActive(child) ? 'text-primary-600' : textColor"
         />
       </DisclosurePanel>
     </Disclosure>
@@ -157,7 +167,7 @@ const scrollHeight = computed(() => (panel as any).value?.el?.scrollHeight);
         mb-1
         relative
       "
-      :class="[textColor, mini ? 'justify-start sm:justify-center' : '']"
+      :class="[isActive(menu) ? 'text-primary-600' : textColor, mini ? 'justify-start sm:justify-center' : '']"
     >
       <img v-if="menu.img" :src="menu.img" alt="img icon" class="w-5 h-5" />
       <component :is="menu.icon" v-else-if="menu.icon" class="w-5 h-5" />
