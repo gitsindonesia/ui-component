@@ -239,7 +239,7 @@ const setInitialValue = (val: any) => {
 
   if (image.value && val) {
     hasInitialValue.value = true;
-    previewURL.value = URL.createObjectURL(innerValue.value);
+    previewURL.value = URL.createObjectURL(innerValue.value as any);
   }
 
   if (!val) {
