@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.14](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.13...v0.0.14) (2021-11-30)
+
 ### [0.0.13](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.12...v0.0.13) (2021-11-16)
 
 
