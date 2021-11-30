@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.15](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.14...v0.0.15) (2021-11-30)
+
+
+### Features
+
+* add custom menu active ([8547932](https://git.gits.id/frontend/starter/vue-3/starter/commit/8547932cd9195a2def6540f3aa467a0535928105))
+* add error message required login form ([12809b2](https://git.gits.id/frontend/starter/vue-3/starter/commit/12809b26f5e2fb0dd3117a5ac945294193e64bbe))
+
+
+### Bug Fixes
+
+* child menu style agak menjorok ke dalam ([98e45d9](https://git.gits.id/frontend/starter/vue-3/starter/commit/98e45d902f868f7f8d19029318a09a10ef17dddd))
+
 ### [0.0.14](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.13...v0.0.14) (2021-11-30)
 
 ### [0.0.13](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.12...v0.0.13) (2021-11-16)
