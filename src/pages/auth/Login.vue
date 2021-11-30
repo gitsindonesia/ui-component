@@ -100,7 +100,7 @@ const onSubmit = (values) => {
       {{ message }}
     </v-alert>
 
-    <Form v-slot="{handleSubmit}">
+    <Form v-slot="{handleSubmit}" :validation-schema="schema">
       <form @submit.prevent="handleSubmit(onSubmit)">
         <div class="mt-8">
           <Field v-slot="{errors, field}" name="email">

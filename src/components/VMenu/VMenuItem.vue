@@ -26,7 +26,7 @@ const props = defineProps({
       sub-menu
       gap-x-2
       w-full
-      px-2
+      px-5
       py-3
       rounded
       flex
