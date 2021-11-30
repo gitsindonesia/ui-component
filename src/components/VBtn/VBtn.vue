@@ -75,6 +75,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  shadow: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const {disabled, ring, block, solid, noRing, loading, loadingText} =
@@ -162,19 +166,19 @@ const colorClass = computed(() => {
   } else {
     switch (props.color) {
       case 'primary':
-        return 'text-white shadow border-primary-600 bg-primary-600 hover:bg-primary-700 hover:border-primary-700';
+        return 'text-white border-primary-600 bg-primary-600 hover:bg-primary-700 hover:border-primary-700';
       case 'secondary':
-        return 'text-white shadow border-secondary-600 bg-secondary-600 hover:border-secondary-700 hover:bg-secondary-700';
+        return 'text-white border-secondary-600 bg-secondary-600 hover:border-secondary-700 hover:bg-secondary-700';
       case 'info':
-        return 'text-white shadow border-info-600 bg-info-600 hover:border-info-700 hover:bg-info-700';
+        return 'text-white border-info-600 bg-info-600 hover:border-info-700 hover:bg-info-700';
       case 'warning':
-        return 'text-white shadow border-warning-600 bg-warning-600 hover:border-warning-700 hover:bg-warning-700';
+        return 'text-white border-warning-600 bg-warning-600 hover:border-warning-700 hover:bg-warning-700';
       case 'error':
-        return 'text-white shadow border-error-600 bg-error-600 hover:border-error-700 hover:bg-error-700 focus:ring-error-600';
+        return 'text-white border-error-600 bg-error-600 hover:border-error-700 hover:bg-error-700 focus:ring-error-600';
       case 'success':
-        return 'text-white shadow border-success-600 bg-success-600 hover:border-success-700 hover:bg-success-700';
+        return 'text-white border-success-600 bg-success-600 hover:border-success-700 hover:bg-success-700';
       default:
-        return 'text-gray-800 hover:text-gray-900 hover:bg-gray-50 shadow bg-white border-gray-300 focus:border-gray-400 hover:border-gray-400';
+        return 'text-gray-800 hover:text-gray-900 hover:bg-gray-50 bg-white border-gray-300 focus:border-gray-400 hover:border-gray-400';
     }
   }
 });
@@ -213,12 +217,13 @@ const classes = computed(() => {
     sizeClass.value,
     !noRing.value ? ringClass.value : '',
     !props.text ? borderClass : '',
-    props.solid ? 'font-extrabold' : 'font-bold',
+    props.solid ? 'font-bold' : 'font-semibold',
     {
       'rounded-full': props.rounded,
       'rounded-none': props.tile,
       rounded: !props.rounded && !props.tile,
       'w-full': props.block,
+      'shadow': props.shadow,
     },
   ];
 });
