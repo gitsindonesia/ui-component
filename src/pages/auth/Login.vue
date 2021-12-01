@@ -57,6 +57,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  autocomplateForm: {
+    type: String,
+    default: 'on',
+  },
 });
 
 const {
@@ -69,6 +73,7 @@ const {
   forgotPasswordText,
   loginText,
   hideRememberMe,
+  autocomplateForm,
 } = toRefs(props);
 
 const emit = defineEmits(['submit', 'loginSSO']);
@@ -121,7 +126,7 @@ const onSubmit = handleSubmit((values) => {
       {{ message }}
     </v-alert>
 
-    <form @submit.prevent="onSubmit">
+    <form @submit.prevent="onSubmit" :autocomplete="autocomplateForm">
       <div class="mt-8">
         <label
           for="email"
@@ -136,6 +141,7 @@ const onSubmit = handleSubmit((values) => {
           :placeholder="usernameText"
           name="email"
           prepend
+          :autocomplete="autocomplateForm"
           :error="!!errors.email"
           :error-messages="[errors.email]"
           error-class="min-h-[20px]"
@@ -162,6 +168,7 @@ const onSubmit = handleSubmit((values) => {
           :placeholder="passwordText"
           type="password"
           name="password"
+          :autocomplete="autocomplateForm"
           prepend
           :error="!!errors.password"
           :error-messages="[errors.password]"
