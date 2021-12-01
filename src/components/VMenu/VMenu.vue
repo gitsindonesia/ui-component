@@ -90,7 +90,7 @@ const isActive = (path: any) => {
       <DisclosureButton
         v-slot="{open}"
         class="focus:outline-none w-full transition duration-300 rounded group"
-        :class="[isActive(child) ? 'text-primary-600' : textColor]"
+        :class="[isActive(menu) ? 'text-primary-600' : textColor]"
       >
         <div
           class="py-3 w-full flex items-center px-2 gap-x-2 rounded"
@@ -151,7 +151,7 @@ const isActive = (path: any) => {
       :to="menu.to"
       exact
       class="group menu-item transition duration-300 w-full px-2 py-3 rounded flex gap-x-2 items-center text-sm mb-1 relative"
-      :class="[mini ? 'justify-start sm:justify-center' : '']"
+      :class="[isActive(menu) ? 'text-primary-600' : textColor, mini ? 'justify-start sm:justify-center' : '']"
     >
       <img v-if="menu.img" :src="menu.img" alt="img icon" class="w-5 h-5" />
       <component :is="menu.icon" v-else-if="menu.icon" class="w-5 h-5" />
