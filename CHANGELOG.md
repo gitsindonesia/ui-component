@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.19](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.18...v0.0.19) (2021-12-01)
+
+
+### Features
+
+* **login:** add autocompale on off ([fd96602](https://git.gits.id/frontend/starter/vue-3/starter/commit/fd96602fce1c67ca715a3ef06f25055c683a6593))
+
+
+### Bug Fixes
+
+* **conflix:** login ([3ebf7da](https://git.gits.id/frontend/starter/vue-3/starter/commit/3ebf7dadc633637c5e02fb0483aa9220c6292c17))
+* **login atuh:** typo ([0876929](https://git.gits.id/frontend/starter/vue-3/starter/commit/0876929c156d5d2fc9e3c9ebf4b540f6872f258e))
+
+### [0.0.18](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.0.17...v0.0.18) (2021-12-01)
+
+
+### Bug Fixes
+
+* disable active state for now ([77415c0](https://git.gits.id/frontend/starter/vue-3/ui/commit/77415c0f3d4f4393704d240f36c1dfd296a213cd))
+* padding sidebar ([dbc4d2e](https://git.gits.id/frontend/starter/vue-3/ui/commit/dbc4d2ef603f89032167c108370a944e53afa1d7))
+
 ### [0.0.17](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.16...v0.0.17) (2021-12-01)
 
 
