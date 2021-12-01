@@ -57,24 +57,9 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-  autocompleteForm: {
-    type: String,
-    default: 'on',
-  },
 });
 
-const {
-  message,
-  title,
-  subtitle,
-  register,
-  usernameText,
-  passwordText,
-  forgotPasswordText,
-  loginText,
-  hideRememberMe,
-  autocompleteForm,
-} = toRefs(props);
+const {message} = toRefs(props);
 
 const emit = defineEmits(['submit', 'loginSSO']);
 
@@ -115,79 +100,14 @@ const onSubmit = (values) => {
       {{ message }}
     </v-alert>
 
-    <form @submit.prevent="onSubmit" :autocomplete="autocompleteForm">
-      <div class="mt-8">
-        <label
-          for="email"
-          class="mb-2 block font-medium"
-          :class="errors.email ? 'text-error' : ''"
-        >
-          {{ usernameText }}
-        </label>
-        <v-input-group
-          id="email"
-          v-model="email"
-          :placeholder="usernameText"
-          name="email"
-          prepend
-          :autocomplete="autocompleteForm"
-          :error="!!errors.email"
-          :error-messages="[errors.email]"
-          error-class="min-h-[20px]"
-          class="mb-2"
-        >
-          <template #prepend>
-            <UserIcon
-              class="w-5 h-5"
-              :class="errors.email ? 'text-error' : 'text-[#DFE0E0]'"
-            />
-          </template>
-        </v-input-group>
-
-        <label
-          for="password"
-          class="mb-2 block font-medium"
-          :class="errors.email ? 'text-error' : ''"
-        >
-          {{ passwordText }}
-        </label>
-        <v-input-group
-          id="password"
-          v-model="password"
-          :placeholder="passwordText"
-          type="password"
-          name="password"
-          :autocomplete="autocompleteForm"
-          prepend
-          :error="!!errors.password"
-          :error-messages="[errors.password]"
-          error-class="min-h-[20px]"
-          class="mb-2"
-        >
-          <template #prepend>
-            <LockClosedIcon
-              class="w-5 h-5"
-              :class="errors.password ? 'text-error' : 'text-[#DFE0E0]'"
-            />
-          </template>
-        </v-input-group>
-
-        <div class="mb-4 flex justify-between items-center">
-          <div class="w-6/12">
-            <v-checkbox
-              v-if="!hideRememberMe"
-              v-model="remember"
-              label="Remember me"
-            />
-          </div>
-          <slot name="forgotPassword">
-            <VBtn
-              color="primary"
-              text
-              dense
-              small
-              :to="passwordPath"
-              class="px-0"
+    <Form v-slot="{handleSubmit}" :validation-schema="schema">
+      <form @submit.prevent="handleSubmit(onSubmit)">
+        <div class="mt-8">
+          <Field v-slot="{errors, field}" name="email">
+            <label
+              for="email"
+              class="mb-2 block font-medium"
+              :class="errors.email ? 'text-error' : ''"
             >
               {{ usernameText }}
             </label>
