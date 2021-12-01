@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.18](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.0.17...v0.0.18) (2021-12-01)
+
+
+### Bug Fixes
+
+* disable active state for now ([77415c0](https://git.gits.id/frontend/starter/vue-3/ui/commit/77415c0f3d4f4393704d240f36c1dfd296a213cd))
+* padding sidebar ([dbc4d2e](https://git.gits.id/frontend/starter/vue-3/ui/commit/dbc4d2ef603f89032167c108370a944e53afa1d7))
+
 ### [0.0.17](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.16...v0.0.17) (2021-12-01)
 
 
