@@ -89,7 +89,9 @@ const bgColor = computed(() =>
       h-screen
       min-h-screen
       shadow-md
-      p-2
+      py-2
+      pl-2
+      pr-0
       transition-all
       duration-300
       flex flex-col
