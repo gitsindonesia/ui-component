@@ -10,7 +10,7 @@ import {Disclosure, DisclosureButton, DisclosurePanel} from '@headlessui/vue';
 import {ChevronRightIcon} from '@heroicons/vue/outline';
 import VMenuTooltip from './VMenuTooltip.vue';
 import VMenuItem from './VMenuItem.vue';
-import { useRouter } from 'vue-router';
+import {useRouter} from 'vue-router';
 
 const props = defineProps({
   menu: {
@@ -43,8 +43,8 @@ const props = defineProps({
   },
   classMenuParent: {
     type: String,
-    default: 'text-primary-600 bg-grey-700'
-  }
+    default: 'text-primary-600 bg-grey-700',
+  },
 });
 
 const router = useRouter();
@@ -69,7 +69,7 @@ const textColor = computed(() =>
 
 const openClass = (isOpen: boolean) => {
   if (dark.value) {
-    return isOpen ?  `${classMenuParent.value}` : '';
+    return isOpen ? `${classMenuParent.value}` : '';
   }
   return isOpen ? `${classMenuParent.value}` : '';
 };
@@ -81,8 +81,7 @@ const isActive = (path: any) => {
   const currentRoute = currentPath.split('/');
   const route = path.to.split('/');
   return route[2] === currentRoute[2];
-}
-
+};
 </script>
 
 <template>
@@ -151,23 +150,8 @@ const isActive = (path: any) => {
       v-else
       :to="menu.to"
       exact
-      class="
-        group
-        menu-item
-        transition
-        duration-300
-        w-full
-        px-2
-        py-3
-        rounded
-        flex
-        gap-x-2
-        items-center
-        text-sm
-        mb-1
-        relative
-      "
-      :class="[isActive(menu) ? 'text-primary-600' : textColor, mini ? 'justify-start sm:justify-center' : '']"
+      class="group menu-item transition duration-300 w-full px-2 py-3 rounded flex gap-x-2 items-center text-sm mb-1 relative"
+      :class="[mini ? 'justify-start sm:justify-center' : '']"
     >
       <img v-if="menu.img" :src="menu.img" alt="img icon" class="w-5 h-5" />
       <component :is="menu.icon" v-else-if="menu.icon" class="w-5 h-5" />
@@ -181,6 +165,7 @@ const isActive = (path: any) => {
 </template>
 
 <style scoped>
+/**
 .menu-item.router-link-active,
 .menu-item.router-link-active.router-link-exact-active,
 .menu-item.router-link-active.router-link-exact-active .menu-tooltip {
@@ -195,4 +180,5 @@ const isActive = (path: any) => {
 .sub-menu.router-link-active.router-link-exact-active svg circle {
   @apply text-primary-600;
 }
+**/
 </style>
