@@ -10,6 +10,7 @@ import {Disclosure, DisclosureButton, DisclosurePanel} from '@headlessui/vue';
 import {ChevronRightIcon} from '@heroicons/vue/outline';
 import VMenuTooltip from './VMenuTooltip.vue';
 import VMenuItem from './VMenuItem.vue';
+import {useRouter} from 'vue-router';
 
 const props = defineProps({
   menu: {
@@ -40,11 +41,16 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  classMenuParent: {
+    type: String,
+    default: 'text-primary-600 bg-grey-700',
+  },
 });
 
+const router = useRouter();
 const emit = defineEmits([]);
 
-const {menu, mini, dark} = toRefs(props);
+const {menu, mini, dark, classMenuParent} = toRefs(props);
 
 const panel = ref<HTMLDivElement | null>(null);
 
@@ -63,12 +69,19 @@ const textColor = computed(() =>
 
 const openClass = (isOpen: boolean) => {
   if (dark.value) {
-    return isOpen ? 'text-primary-600 bg-gray-700' : '';
+    return isOpen ? `${classMenuParent.value}` : '';
   }
-  return isOpen ? 'text-primary-600 bg-gray-100' : '';
+  return isOpen ? `${classMenuParent.value}` : '';
 };
 
 const scrollHeight = computed(() => (panel as any).value?.el?.scrollHeight);
+
+const isActive = (path: any) => {
+  const currentPath = router.currentRoute.value.path;
+  const currentRoute = currentPath.split('/');
+  const route = path.to.split('/');
+  return route[2] === currentRoute[2];
+};
 </script>
 
 <template>
@@ -129,7 +142,7 @@ const scrollHeight = computed(() => (panel as any).value?.el?.scrollHeight);
           :key="j"
           :item="child"
           :mini="mini"
-          :text-color="textColor"
+          :text-color="isActive(child) ? 'text-primary-600' : textColor"
         />
       </DisclosurePanel>
     </Disclosure>
@@ -137,23 +150,8 @@ const scrollHeight = computed(() => (panel as any).value?.el?.scrollHeight);
       v-else
       :to="menu.to"
       exact
-      class="
-        group
-        menu-item
-        transition
-        duration-300
-        w-full
-        px-2
-        py-3
-        rounded
-        flex
-        gap-x-2
-        items-center
-        text-sm
-        mb-1
-        relative
-      "
-      :class="[textColor, mini ? 'justify-start sm:justify-center' : '']"
+      class="group menu-item transition duration-300 w-full px-2 py-3 rounded flex gap-x-2 items-center text-sm mb-1 relative"
+      :class="[mini ? 'justify-start sm:justify-center' : '']"
     >
       <img v-if="menu.img" :src="menu.img" alt="img icon" class="w-5 h-5" />
       <component :is="menu.icon" v-else-if="menu.icon" class="w-5 h-5" />
@@ -167,6 +165,7 @@ const scrollHeight = computed(() => (panel as any).value?.el?.scrollHeight);
 </template>
 
 <style scoped>
+/**
 .menu-item.router-link-active,
 .menu-item.router-link-active.router-link-exact-active,
 .menu-item.router-link-active.router-link-exact-active .menu-tooltip {
@@ -181,4 +180,5 @@ const scrollHeight = computed(() => (panel as any).value?.el?.scrollHeight);
 .sub-menu.router-link-active.router-link-exact-active svg circle {
   @apply text-primary-600;
 }
+**/
 </style>

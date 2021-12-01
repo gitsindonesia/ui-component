@@ -1,5 +1,4 @@
 import VBreadcrumbs from './VBreadcrumbs.vue';
-import {themeColors} from '../../utils/colors';
 import {Meta, Story} from '@storybook/vue3';
 
 export default {

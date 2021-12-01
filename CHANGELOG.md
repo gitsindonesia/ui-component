@@ -2,6 +2,156 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.18](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.0.17...v0.0.18) (2021-12-01)
+
+
+### Bug Fixes
+
+* disable active state for now ([77415c0](https://git.gits.id/frontend/starter/vue-3/ui/commit/77415c0f3d4f4393704d240f36c1dfd296a213cd))
+* padding sidebar ([dbc4d2e](https://git.gits.id/frontend/starter/vue-3/ui/commit/dbc4d2ef603f89032167c108370a944e53afa1d7))
+
+### [0.0.17](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.16...v0.0.17) (2021-12-01)
+
+
+### Features
+
+* **v-btn:** move shadow to `prop` and decrease font weight level ([087074b](https://git.gits.id/frontend/starter/vue-3/starter/commit/087074b4e9eda8c4017045c238fe47afaa8fff88))
+
+
+### Bug Fixes
+
+* child menu style agak menjorok ke dalam ([2a9d23a](https://git.gits.id/frontend/starter/vue-3/starter/commit/2a9d23a95c69d3f8576982dc8303b2557b489b6d))
+
+### [0.0.16](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.15...v0.0.16) (2021-11-30)
+
+
+### Bug Fixes
+
+* error file upload ([90644ce](https://git.gits.id/frontend/starter/vue-3/starter/commit/90644ce4d373b93e52fd49aac3191c1e7b180777))
+
+### [0.0.15](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.14...v0.0.15) (2021-11-30)
+
+
+### Features
+
+* add custom menu active ([8547932](https://git.gits.id/frontend/starter/vue-3/starter/commit/8547932cd9195a2def6540f3aa467a0535928105))
+* add error message required login form ([12809b2](https://git.gits.id/frontend/starter/vue-3/starter/commit/12809b26f5e2fb0dd3117a5ac945294193e64bbe))
+
+
+### Bug Fixes
+
+* child menu style agak menjorok ke dalam ([98e45d9](https://git.gits.id/frontend/starter/vue-3/starter/commit/98e45d902f868f7f8d19029318a09a10ef17dddd))
+
+### [0.0.14](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.13...v0.0.14) (2021-11-30)
+
+### [0.0.13](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.12...v0.0.13) (2021-11-16)
+
+
+### Bug Fixes
+
+* nav drawer add prop for parent menu ([4f4419b](https://git.gits.id/frontend/starter/vue-3/starter/commit/4f4419bc45f65f50fea0e0de55ac88417dfad0a7))
+* navdrawer props ([89bc9af](https://git.gits.id/frontend/starter/vue-3/starter/commit/89bc9affb44c4bb0fd6d2128ec241a93f274daca))
+* remove console ([05cbb67](https://git.gits.id/frontend/starter/vue-3/starter/commit/05cbb6755bd8f22f672e2fe1c4e97d2de4433421))
+
+### [0.0.12](https://git.gits.id/prodia/doctor/doctor-cms/compare/v0.0.11...v0.0.12) (2021-11-12)
+
+
+### Features
+
+* disable v-editor storybook for now ([9d2bff3](https://git.gits.id/prodia/doctor/doctor-cms/commit/9d2bff30fedc91eb1310df7a570f96ac73d8796a))
+
+
+### Bug Fixes
+
+* types ([cadf8dc](https://git.gits.id/prodia/doctor/doctor-cms/commit/cadf8dcb19b43cbef5c7213749949e35bf7f7500))
+* unregister prepublishOnly command ([0e1bf0d](https://git.gits.id/prodia/doctor/doctor-cms/commit/0e1bf0d7147363ce26edef95a923e68fc377d98c))
+
+### [0.0.11](https://git.gits.id/prodia/doctor/doctor-cms/compare/v0.0.10...v0.0.11) (2021-11-11)
+
+
+### Features
+
+* unregister VEditor as global export ([3cdca38](https://git.gits.id/prodia/doctor/doctor-cms/commit/3cdca38f2a569b0e69e635d4eda533a80fdfe989))
+* **v-multi-select:** add error state ([c4a6ecd](https://git.gits.id/prodia/doctor/doctor-cms/commit/c4a6ecd37f6654543ade055a561115dfe2b4763d))
+
+
+### Bug Fixes
+
+* default improved input classes ([20b9864](https://git.gits.id/prodia/doctor/doctor-cms/commit/20b98648a4e866bb5021b93b484e9c6255f5a01c))
+
+### [0.0.10](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/compare/v0.0.9...v0.0.10) (2021-11-05)
+
+
+### Bug Fixes
+
+* curated publish files ([826db70](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/commit/826db7056e7e6dc69dded4373064f39159ae8702))
+* improved types ([733c6f8](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/commit/733c6f8db6aa7ca3e8c7a717935bea1ef461a61c))
+* improved types ([1121f4b](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/commit/1121f4b02dcfa57863320ea29d6828a15a788fcf))
+* v-slot ([bf92f18](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/commit/bf92f1891cec3b685189e02d291a47234c227072))
+
+### [0.0.9](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/compare/v0.0.8...v0.0.9) (2021-11-05)
+
+
+### Bug Fixes
+
+* login page ([b9382de](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/commit/b9382de3cc28a45eb5ab94cd3694e8dcc4635919))
+* search bug caused by inherit attrs ([61d7146](https://gitlab.com/wartek-id/belajar-id/belajar.id-cms/commit/61d714605037c5b66542fc1be296e383816536e5))
+
+### [0.0.8](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.7...v0.0.8) (2021-11-04)
+
+
+### Features
+
+* register v-editor as async component ([0d38a1e](https://git.gits.id/frontend/starter/vue-3/starter/commit/0d38a1e6e81a84d3331d0a83390372dfce66bd83))
+* **v-breadcrumbs:** added custom slots: `title.index` and `item.index` ([4250a9e](https://git.gits.id/frontend/starter/vue-3/starter/commit/4250a9eee36d4b82dff96213c25af736e1aa9cc4))
+* **v-btn:** new `newTab` prop for targeting new tab ([861879b](https://git.gits.id/frontend/starter/vue-3/starter/commit/861879b3e018ffbc1f83d1c428e3e41e63a8f6f4))
+* **v-file-upload:** allow string as initial value ([e9ca735](https://git.gits.id/frontend/starter/vue-3/starter/commit/e9ca735d81e81370a594fc7c6b3156d85027a508))
+* **v-file-upload:** update ui for handling readonly state on dropzone theme ([98938c8](https://git.gits.id/frontend/starter/vue-3/starter/commit/98938c830097d303d62bd8db840ab6a073cc38e7))
+
+
+### Bug Fixes
+
+* fix some typings ([dd52a8b](https://git.gits.id/frontend/starter/vue-3/starter/commit/dd52a8b4b67b20fc6f5add5c5389bdcf4b6b7969))
+* prepend slot ([f4cc3b2](https://git.gits.id/frontend/starter/vue-3/starter/commit/f4cc3b239d2c90711c962d013bbdd9ecc33185f9))
+* timeout logic ([5695e95](https://git.gits.id/frontend/starter/vue-3/starter/commit/5695e952275ff89ef3246b2df6bedea0ebde6139))
+* typings ([c0a8f4d](https://git.gits.id/frontend/starter/vue-3/starter/commit/c0a8f4d40d1f291fbf5a5d500d15bae7634858a8))
+
+### [0.0.7](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.6...v0.0.7) (2021-10-28)
+
+
+### Bug Fixes
+
+* set value null ([d88d3ea](https://git.gits.id/frontend/starter/vue-3/starter/commit/d88d3ea75eca2e301a64f34de3b7d68752c24209))
+
+### [0.0.6](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.5...v0.0.6) (2021-10-28)
+
+
+### Features
+
+* **v-file-upload:** fixed ui for theme=image ([573b793](https://git.gits.id/frontend/starter/vue-3/starter/commit/573b7931f56ad7dc908a77025329bf60fb3b3d03))
+* **v-file-upload:** improved dropzone ([fd6c28f](https://git.gits.id/frontend/starter/vue-3/starter/commit/fd6c28f5755cf4e3b86e30601bb4c4acfc3616b9))
+
+### [0.0.5](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.4...v0.0.5) (2021-10-28)
+
+
+### Features
+
+* handle drag and drop ([2d6c33c](https://git.gits.id/frontend/starter/vue-3/starter/commit/2d6c33c37a470fc3e20e173d785774ebc153e575))
+
+### [0.0.4](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.3...v0.0.4) (2021-10-28)
+
+
+### Features
+
+* **v-file-input:** reworked and fixed bug file input no cleared on remove ([6edc5dc](https://git.gits.id/frontend/starter/vue-3/starter/commit/6edc5dcc7a59b0895aa2d5f90025ba384066dd0b))
+* **v-file-upload:** new `dropzone` theme ([c276e02](https://git.gits.id/frontend/starter/vue-3/starter/commit/c276e02946556c146342c3aa71057979d0af4a91))
+
+
+### Bug Fixes
+
+* **file upload:** jika v-model null maka file dihapus ([854d2d9](https://git.gits.id/frontend/starter/vue-3/starter/commit/854d2d9e7d230c6bd712490134db52d8efb6db62))
+* issue upload file ([363e8a1](https://git.gits.id/frontend/starter/vue-3/starter/commit/363e8a15577b7400d7679542ecfc984f73f5cd73))
+
 ### [0.0.3](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.2...v0.0.3) (2021-10-28)
 
 

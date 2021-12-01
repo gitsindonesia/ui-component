@@ -1,4 +1,4 @@
-import type {PropType} from 'vue';
+import {VPagination} from '../VPagination/VPagination';
 
 export interface VDataTableItem {
   selected?: boolean;
@@ -21,7 +21,6 @@ export interface VDataTableSortEvent {
 export interface VDataTableProps {
   items: VDataTableItem[];
   headers: VDataTableHeader[];
-  itemsPerPage: number;
   disableSorting: boolean;
   pagination: VPagination;
   loading: boolean;

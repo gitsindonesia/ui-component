@@ -50,19 +50,21 @@ const toggleMenu = () => emit('toggleMenu');
       defaultHidden ? 'flex sm:hidden' : fixed ? 'fixed w-full' : 'relative',
     ]"
   >
-    <slot v-if="!hideToggle" name="toggle" :toggle="toggleMenu">
-      <v-btn
-        text
-        icon
-        dense
-        rounded
-        :color="dark ? 'white' : ''"
-        class="hover:bg-transparent hover:text-primary-2 mr-2"
-        @click="toggleMenu"
-      >
-        <MenuIcon class="w-6 h-6" />
-      </v-btn>
-    </slot>
+    <template v-if="!hideToggle">
+      <slot name="toggle" :toggle="toggleMenu">
+        <v-btn
+          text
+          icon
+          dense
+          rounded
+          :color="dark ? 'white' : ''"
+          class="hover:bg-transparent hover:text-primary-2 mr-2"
+          @click="toggleMenu"
+        >
+          <MenuIcon class="w-6 h-6" />
+        </v-btn>
+      </slot>
+    </template>
     <div class="flex-grow">
       <slot />
     </div>

@@ -3,7 +3,7 @@ import {computed, ref, toRefs} from 'vue';
 import VCard from '../VCard/VCard.vue';
 import VBadge from '../VBadge/VBadge.vue';
 import VueFeather from 'vue-feather';
-import {Colors} from '../../../types';
+import {Colors} from '../../types';
 
 interface Props {
   title?: string;

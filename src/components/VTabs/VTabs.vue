@@ -192,13 +192,15 @@ const sliderColor = computed(() => getBgColor(color.value));
 
 <template>
   <div :class="[defaultWrapperClass, wrapperClass]">
-    <slot v-if="showArrows" name="previous">
-      <div>
-        <v-btn icon text small no-ring @click="previous">
-          <ChevronLeftIcon class="w-full h-full" />
-        </v-btn>
-      </div>
-    </slot>
+    <template v-if="showArrows">
+      <slot name="previous">
+        <div>
+          <v-btn icon text small no-ring @click="previous">
+            <ChevronLeftIcon class="w-full h-full" />
+          </v-btn>
+        </div>
+      </slot>
+    </template>
     <slot name="prepend" />
     <div
       ref="tabContent"
@@ -248,13 +250,15 @@ const sliderColor = computed(() => getBgColor(color.value));
       />
     </div>
     <slot name="append" />
-    <slot v-if="showArrows" name="next">
-      <div>
-        <v-btn icon text small no-ring @click="next">
-          <ChevronRightIcon class="w-full h-full" />
-        </v-btn>
-      </div>
-    </slot>
+    <template v-if="showArrows">
+      <slot name="next">
+        <div>
+          <v-btn icon text small no-ring @click="next">
+            <ChevronRightIcon class="w-full h-full" />
+          </v-btn>
+        </div>
+      </slot>
+    </template>
   </div>
 </template>
 

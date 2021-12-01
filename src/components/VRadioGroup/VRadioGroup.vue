@@ -149,7 +149,7 @@ watch(
         gap-x-8
       "
     >
-      <label v-for="item in items" :key="item">
+      <label v-for="(item, index) in items" :key="index">
         <input
           v-model="selected"
           :name="name"

@@ -1,23 +1,43 @@
+<script lang="ts">
+export default {
+  inheritAttrs: false,
+};
+</script>
+
 <script setup lang="ts">
-import {computed, ref, toRefs, onBeforeUpdate, watch, nextTick} from 'vue';
+import {
+  computed,
+  ref,
+  toRefs,
+  onBeforeUpdate,
+  watch,
+  nextTick,
+  PropType,
+} from 'vue';
 import {CheckIcon, ChevronDownIcon, XIcon} from '@heroicons/vue/solid';
 import VBadge from '../VBadge/VBadge.vue';
-import VInput from '../VInput/VInput.vue';
 import VTooltip from '../VTooltip/VTooltip.vue';
-import debounce from 'lodash/debounce';
-import {onClickOutside} from '@vueuse/core';
+import {onClickOutside, useDebounceFn} from '@vueuse/core';
+import {ErrorMessage} from 'vee-validate';
+
+type VMultiSelectItem = {
+  text: string;
+  value: any;
+
+  [x: string]: any;
+};
 
 const props = defineProps({
   value: {
-    type: Array,
+    type: Array as PropType<VMultiSelectItem[]>,
     default: () => [],
   },
   modelValue: {
-    type: Array,
+    type: Array as PropType<VMultiSelectItem[]>,
     default: () => [],
   },
   items: {
-    type: Array,
+    type: Array as PropType<VMultiSelectItem[]>,
     default: () => [],
   },
   itemText: {
@@ -53,7 +73,7 @@ const props = defineProps({
     default: '',
   },
   inputProps: {
-    type: Object,
+    type: Object as PropType<Record<string, any>>,
     default: () => ({}),
   },
   selectAll: {
@@ -63,6 +83,14 @@ const props = defineProps({
   loading: {
     type: Boolean,
     default: false,
+  },
+  error: {
+    type: Boolean,
+    default: false,
+  },
+  errorMessages: {
+    type: Array,
+    default: () => [],
   },
 });
 
@@ -95,15 +123,14 @@ const target = ref(null);
 const isOpen = ref(false);
 const search = ref('');
 const selected = ref(modelValue.value);
-const listBoxValue = ref(null);
-const focus = ref(null);
-const refItems = ref([]);
-const dropdown = ref(null);
+const focus = ref(-1);
+const refItems = ref<HTMLDivElement[]>([]);
+const dropdown = ref<HTMLDivElement | null>(null);
 
-const matchBy = (item, key) =>
+const matchBy = (item: VMultiSelectItem, key: string) =>
   String(item?.[key])?.toLowerCase()?.includes(search.value.toLowerCase());
 
-const searchItem = (item) => {
+const searchItem = (item: VMultiSelectItem) => {
   const searchVal = search.value;
 
   if (!searchVal) return true;
@@ -120,7 +147,7 @@ const badges = computed(() =>
 );
 
 // methods
-const setRefItem = (el, index) => {
+const setRefItem = (el: any, index: number) => {
   if (el) refItems.value[index] = el;
 };
 
@@ -128,7 +155,7 @@ onBeforeUpdate(() => {
   refItems.value = [];
 });
 
-const handleSelect = (item) => {
+const handleSelect = (item: VMultiSelectItem) => {
   const index = findIndex(item);
   if (index > -1) {
     selected.value.splice(index, 1);
@@ -138,30 +165,30 @@ const handleSelect = (item) => {
   emit('selected', selected);
 };
 
-const findIndex = (item) =>
+const findIndex = (item: VMultiSelectItem) =>
   selected.value.findIndex(
     (sItem) => sItem[itemValue.value] === item?.[itemValue.value],
   );
 
-const hasItem = (item) => findIndex(item) > -1;
+const hasItem = (item: VMultiSelectItem) => findIndex(item) > -1;
 
-const isSelected = (item, index) => {
+const isSelected = (item: VMultiSelectItem, index: number) => {
   return item.selected || hasItem(item);
 };
 
 const clearSelected = () => {
   selected.value = [];
-  focus.value = null;
+  focus.value = -1;
 };
 
-const deselect = (item) => {
+const deselect = (item: VMultiSelectItem) => {
   const index = findIndex(item);
   if (index > -1) {
     selected.value.splice(index, 1);
   }
 };
 
-const handleSearch = debounce((event) => {
+const handleSearch = useDebounceFn((event) => {
   isOpen.value = true;
   search.value = event.target.value;
   focus.value = 0;
@@ -224,7 +251,7 @@ const onUp = () => {
   if (focus.value === null) {
     focus.value = 0;
   } else if (focus.value === 0) {
-    focus.value = null;
+    focus.value = -1;
   } else {
     focus.value--;
   }
@@ -232,7 +259,7 @@ const onUp = () => {
   focusItem();
 };
 
-const onTab = (e) => {
+const onTab = (e: KeyboardEvent) => {
   if (e.shiftKey) {
     onUp();
   } else {
@@ -248,9 +275,9 @@ const focusItem = () => {
   nextTick(() => {
     const index = focus.value;
     const target = refItems.value[index];
-    const top = target?.offsetTop - (dropdown.value.offsetHeight - 100);
+    const top = target?.offsetTop - (dropdown.value!.offsetHeight - 100);
 
-    dropdown.value.scrollTo({top, behavior: 'smooth'});
+    dropdown.value?.scrollTo({top, behavior: 'smooth'});
   });
 };
 
@@ -296,20 +323,18 @@ watch(
             text-left
             bg-white
             rounded-lg
-            border border-gray-300
+            border 
             cursor-default
             focus:outline-none
-            focus-visible:ring-2
-            focus-visible:ring-opacity-75
-            focus-visible:ring-white
-            focus-visible:ring-offset-gray-300
-            focus-visible:ring-offset-2
-            focus-visible:border-primary-500
             sm:text-sm
             gap-y-1
             flex flex-wrap
             items-center
+            focus-visible:ring-2
+            focus-visible:ring-opacity-75
+            focus-visible:ring-offset-2
           "
+          :class="[error ? 'v-multi-select-error' : 'v-multi-select-normal']"
           @click="(e) => e.preventDefault()"
         >
           <div v-if="selected.length" class="flex items-center gap-2 flex-wrap">
@@ -335,7 +360,7 @@ watch(
             class="
               border-none
               px-1
-              py-2
+              py-1
               focus:outline-none focus:!ring-0 focus:!border-none
               text-sm
               flex-grow
@@ -492,4 +517,19 @@ watch(
       </div>
     </div>
   </div>
+  <ErrorMessage
+    v-if="errorMessages.length"
+    class="text-error-600 text-sm"
+    :name="name"
+  />
 </template>
+
+<style scoped>
+.v-multi-select-error {
+  @apply border-error-600 focus-visible:ring-white focus-visible:ring-offset-error-300 focus-visible:border-error-500;
+}
+
+.v-multi-select-normal {
+  @apply border-gray-300 focus-visible:ring-white focus-visible:ring-offset-gray-300 focus-visible:border-primary-500;
+}
+</style>

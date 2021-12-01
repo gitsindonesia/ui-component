@@ -5,19 +5,25 @@ import {resolve} from 'path';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
+  esbuild: {
+    exclude: ['./src/**/**.stories.ts'],
+  },
   build: {
     target: 'esnext',
     lib: {
       entry: resolve(__dirname, 'index.ts'),
-      name: 'GitUi',
-      formats: ['es', 'umd', 'iife'],
+      name: 'GitsUi',
+      formats: ['es'],
     },
     rollupOptions: {
       plugins: [
         {
           name: 'remove-collection-handlers',
           transform(code, id) {
-            if (id.endsWith('reactivity.esm-bundler.js')) {
+            if (
+              id.endsWith('reactivity.esm-bundler.js') ||
+              id.endsWith('runtime-core.esm-bundler.js')
+            ) {
               return code
                 .replace(`mutableCollectionHandlers,`, `null,`)
                 .replace(`readonlyCollectionHandlers,`, `null,`);

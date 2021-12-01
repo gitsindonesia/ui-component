@@ -37,5 +37,5 @@ export type VToastProps = {
   color?: string;
   loading?: boolean;
   persistent?: boolean;
-  onConfirm?: (VToastEvent) => void;
+  onConfirm?: (e: VToastEvent) => void;
 };

@@ -1,11 +1,11 @@
-<script setup lang="ts">
+<script setup>
 import {computed, ref, toRefs, watch} from 'vue';
 import {UserIcon, LockClosedIcon} from '@heroicons/vue/outline';
 import VInput from '../../components/VInput/VInput.vue';
 import VBtn from '../../components/VBtn/VBtn.vue';
 import VCheckbox from '../../components/VCheckbox/VCheckbox.vue';
 import VInputGroup from '../../components/VInputGroup/VInputGroup.vue';
-import {useField, useForm} from 'vee-validate';
+import {Form, Field} from 'vee-validate';
 import {object, string} from 'yup';
 
 const props = defineProps({
@@ -100,20 +100,9 @@ const schema = computed(() => {
   });
 });
 
-// Create a form context with the validation schema
-const {errors, handleSubmit} = useForm({
-  validationSchema: schema,
-});
-
-// No need to define rules for fields
-const {value: email, errorMessage: emailError} = useField<string>('email');
-const {value: password, errorMessage: passwordError} =
-  useField<string>('password');
-const {value: remember} = useField<boolean>('remember');
-
-const onSubmit = handleSubmit((values) => {
+const onSubmit = (values) => {
   emit('submit', values);
-});
+};
 </script>
 
 <template>
@@ -200,35 +189,106 @@ const onSubmit = handleSubmit((values) => {
               :to="passwordPath"
               class="px-0"
             >
-              {{ forgotPasswordText }}
-            </VBtn>
-          </slot>
-        </div>
+              {{ usernameText }}
+            </label>
+            <v-input-group
+              id="email"
+              :placeholder="usernameText"
+              name="email"
+              prepend
+              :error="!!errors.email"
+              :error-messages="[errors.email]"
+              error-class="min-h-[20px]"
+              class="mb-2"
+              v-bind="field"
+            >
+              <template #prepend>
+                <UserIcon
+                  class="w-5 h-5"
+                  :class="errors.email ? 'text-error' : 'text-[#DFE0E0]'"
+                />
+              </template>
+            </v-input-group>
+          </Field>
 
-        <VBtn
-          type="submit"
-          color="primary"
-          block
-          uppercase
-          :disabled="loading"
-          :loading="loading"
-        >
-          {{ loginText }}
-        </VBtn>
-      </div>
-      <slot v-if="register" name="register">
-        <div class="mt-4">
-          Already have an account?
-          <v-btn text color="primary" :to="register">Register</v-btn>
+          <Field v-slot="{errors, field}" name="password">
+            <label
+              for="password"
+              class="mb-2 block font-medium"
+              :class="errors.email ? 'text-error' : ''"
+            >
+              {{ passwordText }}
+            </label>
+            <v-input-group
+              id="password"
+              :placeholder="passwordText"
+              type="password"
+              name="password"
+              prepend
+              :error="!!errors.password"
+              :error-messages="[errors.password]"
+              error-class="min-h-[20px]"
+              class="mb-2"
+              v-bind="field"
+            >
+              <template #prepend>
+                <LockClosedIcon
+                  class="w-5 h-5"
+                  :class="errors.password ? 'text-error' : 'text-[#DFE0E0]'"
+                />
+              </template>
+            </v-input-group>
+          </Field>
+
+          <Field v-slot="{errors, field}" name="remember">
+            <div class="mb-4 flex justify-between items-center">
+              <div class="w-6/12">
+                <v-checkbox
+                  v-if="!hideRememberMe"
+                  v-model="remember"
+                  label="Remember me"
+                  v-bind="field"
+                  :error-messages="errors"
+                  :error="errors.length > 0"
+                />
+              </div>
+              <slot name="forgotPassword">
+                <VBtn
+                  color="primary"
+                  text
+                  dense
+                  small
+                  :to="passwordPath"
+                  class="px-0"
+                >
+                  {{ forgotPasswordText }}
+                </VBtn>
+              </slot>
+            </div>
+          </Field>
+
+          <VBtn
+            type="submit"
+            color="primary"
+            block
+            uppercase
+            :disabled="loading"
+            :loading="loading"
+          >
+            {{ loginText }}
+          </VBtn>
         </div>
-        <!-- <div class="flex mt-5 w-full items-center gap-x-4 relative">
-          <div class="h-2 flex-grow border-b"></div>
-          <div class="flex-none pt-2 text-sm font-medium">OR</div>
-          <div class="h-2 flex-grow border-b"></div>
-        </div>-->
-      </slot>
-      <slot name="extra" />
-    </form>
+        <template v-if="register">
+          <slot name="register">
+            <div class="mt-4">
+              Already have an account?
+              <v-btn text color="primary" :to="register">Register</v-btn>
+            </div>
+          </slot>
+        </template>
+        <slot name="extra" />
+      </form>
+    </Form>
   </div>
 </template>
 

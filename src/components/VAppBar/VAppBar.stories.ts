@@ -1,5 +1,4 @@
 import MyAppBar from './VAppBar.vue';
-import {UserIcon, HomeIcon, FlagIcon} from '@heroicons/vue/solid';
 import {Story, Meta} from '@storybook/vue3';
 
 export default {

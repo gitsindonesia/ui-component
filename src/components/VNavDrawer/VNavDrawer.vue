@@ -5,7 +5,7 @@ import VMenu from '../VMenu/VMenu.vue';
 import VLogo from '../VLogo/VLogo.vue';
 import {ChevronLeftIcon} from '@heroicons/vue/solid';
 import {getBgColor} from '../../utils';
-import {VNavbarMenuItem} from '../../../types';
+import {VNavbarMenuItem} from '../VNavbar/VNavbar';
 
 const props = defineProps({
   modelValue: {
@@ -40,9 +40,13 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  classMenuParent: {
+    type: String,
+    default: 'text-primary-600 bg-gray-700'
+  }
 });
 
-const {modelValue, mini, menus, logoProps, dark, color, hideToggle} =
+const {modelValue, mini, menus, logoProps, dark, color, hideToggle, classMenuParent} =
   toRefs(props);
 
 const emit = defineEmits(['update:modelValue', 'update:mini', 'toggle:click']);
@@ -82,9 +86,12 @@ const bgColor = computed(() =>
       top-0
       left-0
       z-20
+      h-screen
       min-h-screen
       shadow-md
-      p-2
+      py-2
+      pl-2
+      pr-0
       transition-all
       duration-300
       flex flex-col
@@ -97,24 +104,28 @@ const bgColor = computed(() =>
     ]"
   >
     <div class="hidden sm:block">
-      <slot v-if="!hideToggle" name="toggle" :on="{click: toggleMenu}">
-        <v-btn
-          size="sm"
-          icon
-          rounded
-          no-ring
-          class="absolute -right-4"
-          :class="btnToggleClass"
-          color="primary"
-          @click="toggleMenu"
-        >
-          <ChevronLeftIcon
-            class="w-5 h-5"
-            :class="[mini ? 'rotate-180' : '']"
-          />
-        </v-btn>
-      </slot>
-      <slot v-if="mini" name="logo.mini" />
+      <template v-if="!hideToggle">
+        <slot name="toggle" :on="{click: toggleMenu}">
+          <v-btn
+            size="sm"
+            icon
+            rounded
+            no-ring
+            class="absolute -right-4"
+            :class="btnToggleClass"
+            color="primary"
+            @click="toggleMenu"
+          >
+            <ChevronLeftIcon
+              class="w-5 h-5"
+              :class="[mini ? 'rotate-180' : '']"
+            />
+          </v-btn>
+        </slot>
+      </template>
+      <template v-if="mini">
+        <slot name="logo.mini" />
+      </template>
       <slot v-else name="logo">
         <v-logo :white="dark" v-bind="logoProps" />
       </slot>
@@ -128,9 +139,10 @@ const bgColor = computed(() =>
       </v-btn>
     </div>
 
-    <div class="mt-5 flex-grow">
+    <div class="mt-5 flex-grow overflow-auto">
       <v-menu
         v-for="(menu, i) in menus"
+        :classMenuParent="classMenuParent"
         :key="i"
         :menu="menu"
         :mini="mini"
@@ -145,3 +157,4 @@ const bgColor = computed(() =>
 </template>
 
 <style scoped></style>
+

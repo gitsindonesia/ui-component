@@ -1,19 +1,27 @@
+<script lang="ts">
+export default {
+  inheritAttrs: false,
+};
+</script>
+
 <script setup lang="ts">
-import {ref, toRefs, watch} from 'vue';
+import {defineAsyncComponent, PropType, ref, toRefs, watch} from 'vue';
 import {ErrorMessage} from 'vee-validate';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import {component as ckeditor} from '@ckeditor/ckeditor5-vue';
 
-import VTextarea from '../VTextarea/VTextarea.vue';
+const VTextarea = defineAsyncComponent(
+  () => import('../VTextarea/VTextarea.vue'),
+);
 
 const props = defineProps({
   modelValue: {
     type: String,
-    default: null,
+    default: '',
   },
   value: {
     type: String,
-    default: null,
+    default: '',
   },
   name: {
     type: String,
@@ -24,13 +32,17 @@ const props = defineProps({
     default: false,
   },
   errorMessages: {
-    type: Array,
+    type: Array as PropType<string[]>,
     default: () => [],
   },
   theme: {
     type: String,
     default: 'ckeditor',
     validator: (v: string) => ['quill', 'ckeditor', 'textarea'].includes(v),
+  },
+  readonly: {
+    type: Boolean,
+    default: false,
   },
 });
 
@@ -114,8 +126,8 @@ watch(content, (value) => {
 </template>
 
 <style scoped>
-.ck-editor__editable,
-.ql-editor {
+::v-deep(.ck-editor__editable),
+::v-deep(.ql-editor) {
   min-height: 300px;
 }
 ul,
