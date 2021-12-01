@@ -26,8 +26,9 @@ const props = defineProps({
       sub-menu
       gap-x-2
       w-full
-      px-5
-      py-3
+      pl-5
+      px-2
+      py-2
       rounded
       flex
       items-center
