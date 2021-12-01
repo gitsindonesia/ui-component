@@ -90,7 +90,7 @@ const isActive = (path: any) => {
       <DisclosureButton
         v-slot="{open}"
         class="focus:outline-none w-full transition duration-300 rounded group"
-        :class="[textColor]"
+        :class="[isActive(child) ? 'text-primary-600' : textColor]"
       >
         <div
           class="py-3 w-full flex items-center px-2 gap-x-2 rounded"
