@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.17](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.16...v0.0.17) (2021-12-01)
+
+
+### Features
+
+* **v-btn:** move shadow to `prop` and decrease font weight level ([087074b](https://git.gits.id/frontend/starter/vue-3/starter/commit/087074b4e9eda8c4017045c238fe47afaa8fff88))
+
+
+### Bug Fixes
+
+* child menu style agak menjorok ke dalam ([2a9d23a](https://git.gits.id/frontend/starter/vue-3/starter/commit/2a9d23a95c69d3f8576982dc8303b2557b489b6d))
+
+### [0.0.16](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.15...v0.0.16) (2021-11-30)
+
+
+### Bug Fixes
+
+* error file upload ([90644ce](https://git.gits.id/frontend/starter/vue-3/starter/commit/90644ce4d373b93e52fd49aac3191c1e7b180777))
+
 ### [0.0.15](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.14...v0.0.15) (2021-11-30)
 
 
