@@ -57,6 +57,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  autocomplete: {
+    type: String,
+    default: 'on',
+  },
 });
 
 const {message} = toRefs(props);
@@ -100,7 +104,11 @@ const onSubmit = (values) => {
       {{ message }}
     </v-alert>
 
-    <Form v-slot="{handleSubmit}" :validation-schema="schema">
+    <Form
+      v-slot="{handleSubmit}"
+      :validation-schema="schema"
+      :autocomplete="autocomplete"
+    >
       <form @submit.prevent="handleSubmit(onSubmit)">
         <div class="mt-8">
           <Field v-slot="{errors, field}" name="email">
@@ -120,6 +128,7 @@ const onSubmit = (values) => {
               :error-messages="[errors.email]"
               error-class="min-h-[20px]"
               class="mb-2"
+              :autocomplete="autocomplete"
               v-bind="field"
             >
               <template #prepend>
@@ -149,6 +158,7 @@ const onSubmit = (values) => {
               :error-messages="[errors.password]"
               error-class="min-h-[20px]"
               class="mb-2"
+              :autocomplete="autocomplete"
               v-bind="field"
             >
               <template #prepend>
