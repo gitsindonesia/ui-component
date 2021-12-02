@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.23](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.0.22...v0.0.23) (2021-12-02)
+
+
+### Bug Fixes
+
+* error isActive ([f749242](https://git.gits.id/frontend/starter/vue-3/ui/commit/f74924280488ac6c0e19d41ce542f2a4d0824b70))
+* **login:** autocomplate form login ([e7cdfe4](https://git.gits.id/frontend/starter/vue-3/ui/commit/e7cdfe41be60649d06248a20c99c4627803250a8))
+
 ### [0.0.22](https://git.gits.id/prodia/doctor/doctor-cms/compare/v0.0.21...v0.0.22) (2021-12-01)
 
 ### [0.0.21](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.20...v0.0.21) (2021-12-01)
