@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.22](https://git.gits.id/prodia/doctor/doctor-cms/compare/v0.0.21...v0.0.22) (2021-12-01)
+
+### [0.0.21](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.20...v0.0.21) (2021-12-01)
+
+### [0.0.20](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.0.18...v0.0.20) (2021-12-01)
+
+
+### Features
+
+* **login:** add autocompale on off ([fd96602](https://git.gits.id/frontend/starter/vue-3/ui/commit/fd96602fce1c67ca715a3ef06f25055c683a6593))
+
+
+### Bug Fixes
+
+* add truncate & fix active class ([8217530](https://git.gits.id/frontend/starter/vue-3/ui/commit/82175307f35c067a3d703d41aa2504cba78a9894))
+* **conflix:** login ([3ebf7da](https://git.gits.id/frontend/starter/vue-3/ui/commit/3ebf7dadc633637c5e02fb0483aa9220c6292c17))
+* **login atuh:** typo ([0876929](https://git.gits.id/frontend/starter/vue-3/ui/commit/0876929c156d5d2fc9e3c9ebf4b540f6872f258e))
+
+### [0.0.19](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.18...v0.0.19) (2021-12-01)
+
+
+### Features
+
+* **login:** add autocompale on off ([fd96602](https://git.gits.id/frontend/starter/vue-3/starter/commit/fd96602fce1c67ca715a3ef06f25055c683a6593))
+
+
+### Bug Fixes
+
+* **conflix:** login ([3ebf7da](https://git.gits.id/frontend/starter/vue-3/starter/commit/3ebf7dadc633637c5e02fb0483aa9220c6292c17))
+* **login atuh:** typo ([0876929](https://git.gits.id/frontend/starter/vue-3/starter/commit/0876929c156d5d2fc9e3c9ebf4b540f6872f258e))
+
 ### [0.0.18](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.0.17...v0.0.18) (2021-12-01)
 
 

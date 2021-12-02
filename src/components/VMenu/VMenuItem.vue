@@ -33,6 +33,7 @@ const props = defineProps({
       flex
       items-center
       text-sm
+      truncate
     "
     :class="[textColor, mini ? 'justify-start sm:justify-center' : '']"
   >
