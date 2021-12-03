@@ -143,6 +143,8 @@ export {
 
 export * from './src/components/VToast';
 export * from './src/utils';
+export * from './src/types';
+export * from './src/services';
 export * from './src/components/VAppBar/VAppBar';
 export * from './src/components/VBadge/VBadge';
 export * from './src/components/VBreadcrumbs/VBreadcrumbs';
