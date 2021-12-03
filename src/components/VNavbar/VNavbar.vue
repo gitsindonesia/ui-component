@@ -34,6 +34,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  imgClass: {
+    type: String,
+    default: 'h-7',
+  },
 });
 
 const {menus, modelValue, user, loginPath} = toRefs(props);
@@ -71,7 +75,7 @@ const userFirstName = computed(() => user.value?.name?.split(' ')?.[0]);
           <MenuIcon class="w-6 h-6" />
         </v-btn>
         <slot name="logo">
-          <v-logo />
+          <v-logo :img-class="imgClass" />
         </slot>
         <div></div>
       </div>
@@ -161,7 +165,7 @@ const userFirstName = computed(() => user.value?.name?.split(' ')?.[0]);
       class="container mx-auto hidden sm:flex gap-x-4 items-center px-4 2xl:px-0"
     >
       <slot name="logo">
-        <v-logo />
+        <v-logo :img-class="imgClass" />
       </slot>
 
       <nav class="ml-4 flex items-center flex-grow">
