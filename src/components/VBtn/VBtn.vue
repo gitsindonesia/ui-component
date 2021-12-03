@@ -5,11 +5,12 @@ import VSpinner from '../VSpinner/VSpinner.vue';
 const props = defineProps({
   size: {
     type: String,
-    default: '',
+    default: 'md',
+    validator: (v: string) => ['xs', 'sm', 'md', 'lg', 'xl'].includes(v),
   },
   color: {
     type: String,
-    default: '',
+    default: 'default',
   },
   to: {
     type: [String, Object],
@@ -81,8 +82,7 @@ const props = defineProps({
   },
 });
 
-const {disabled, ring, block, solid, noRing, loading, loadingText} =
-  toRefs(props);
+const {disabled, noRing, loading, loadingText} = toRefs(props);
 
 const computedComponent = computed(() => {
   if (props.to) {
@@ -94,136 +94,51 @@ const computedComponent = computed(() => {
   }
 });
 
-const sizeClass = computed(() => {
-  if (props.icon) {
-    switch (props.size) {
-      case 'xs':
-        return 'text-xs p-[6px] w-[30px] h-[30px]';
-      case 'sm':
-        return 'text-sm p-[6px] w-[36] h-[36]';
-      case 'lg':
-        return 'text-base p-2 w-[50px] h-[50px]';
-      case 'xl':
-        return 'text-lg p-2 w-[60px] h-[60px]';
-      case 'md':
-      case 'base':
-      default:
-        return 'text-xs p-2 w-[40px] h-[40px]';
-    }
-  } else {
-    switch (props.size) {
-      case 'xs':
-        return 'text-xs px-2 py-1 h-[30px]';
-      case 'sm':
-        return 'text-sm px-3 py-1 h-9';
-      case 'lg':
-        return 'text-base px-6 py-3 h-[50px]';
-      case 'xl':
-        return 'text-lg px-8 py-4 h-[60px]';
-      case 'md':
-      case 'base':
-      default:
-        return 'text-sm px-4 py-2 h-10';
-    }
-  }
-});
-
-const colorClass = computed(() => {
-  if (props.text) {
-    switch (props.color) {
-      case 'primary':
-        return 'text-primary-600';
-      case 'secondary':
-        return 'text-secondary-600';
-      case 'info':
-        return 'text-info-600';
-      case 'warning':
-        return 'text-warning-600';
-      case 'error':
-        return 'text-error-600';
-      case 'success':
-        return 'text-success-600';
-      default:
-        return 'text-gray-800';
-    }
-  } else if (props.outlined) {
-    switch (props.color) {
-      case 'primary':
-        return 'text-primary-600 border-primary-600 hover:bg-primary-600 hover:bg-opacity-20 disabled:bg-opacity-50 disabled:border-opacity-50 disabled:bg-opacity-50 disabled:text-opacity-50 hover:disabled:bg-transparent';
-      case 'secondary':
-        return 'text-secondary-600 border-secondary-600 hover:bg-secondary-600 hover:bg-opacity-20 disabled:bg-opacity-50 disabled:border-opacity-50 disabled:bg-opacity-50 disabled:text-opacity-50 hover:disabled:bg-transparent';
-      case 'info':
-        return 'text-info-600 border-info-600 hover:bg-info-600 hover:bg-opacity-20 disabled:bg-opacity-50 disabled:border-opacity-50 disabled:bg-opacity-50 disabled:text-opacity-50 hover:disabled:bg-transparent';
-      case 'warning':
-        return 'text-warning-600 border-warning-600 hover:bg-warning-600 hover:bg-opacity-20 disabled:bg-opacity-50 disabled:border-opacity-50 disabled:bg-opacity-50 disabled:text-opacity-50 hover:disabled:bg-transparent';
-      case 'error':
-        return 'text-error-600 border-error-600 hover:bg-error-600 hover:bg-opacity-20 disabled:bg-opacity-50 disabled:border-opacity-50 disabled:bg-opacity-50 disabled:text-opacity-50 hover:disabled:bg-transparent';
-      case 'success':
-        return 'text-success-600 border-success-600 hover:bg-success-600 hover:bg-opacity-20 disabled:bg-opacity-50 disabled:border-opacity-50 disabled:bg-opacity-50 disabled:text-opacity-50 hover:disabled:bg-transparent';
-      default:
-        return 'text-gray-600 border-gray-600 hover:bg-gray-400 hover:bg-opacity-20 disabled:bg-opacity-50 disabled:border-opacity-50 disabled:bg-opacity-50 disabled:text-opacity-50 hover:disabled:bg-transparent';
-    }
-  } else {
-    switch (props.color) {
-      case 'primary':
-        return 'text-white border-primary-600 bg-primary-600 hover:bg-primary-700 hover:border-primary-700';
-      case 'secondary':
-        return 'text-white border-secondary-600 bg-secondary-600 hover:border-secondary-700 hover:bg-secondary-700';
-      case 'info':
-        return 'text-white border-info-600 bg-info-600 hover:border-info-700 hover:bg-info-700';
-      case 'warning':
-        return 'text-white border-warning-600 bg-warning-600 hover:border-warning-700 hover:bg-warning-700';
-      case 'error':
-        return 'text-white border-error-600 bg-error-600 hover:border-error-700 hover:bg-error-700 focus:ring-error-600';
-      case 'success':
-        return 'text-white border-success-600 bg-success-600 hover:border-success-700 hover:bg-success-700';
-      default:
-        return 'text-gray-800 hover:text-gray-900 hover:bg-gray-50 bg-white border-gray-300 focus:border-gray-400 hover:border-gray-400';
-    }
-  }
-});
-
 const disabledClass = computed(() =>
   loading
     ? ''
     : 'disabled:cursor-not-allowed disabled:text-gray-400 disabled:bg-gray-200 disabled:border-gray-200 disabled:shadow-none',
 );
 
-const ringClass = computed(() => {
-  switch (props.color) {
-    case 'primary':
-      return 'focus:ring focus:ring-offset-2 focus:ring-primary-600 focus:ring-opacity-50';
-    case 'secondary':
-      return 'focus:ring focus:ring-offset-2 focus:ring-secondary-600 focus:ring-opacity-50';
-    case 'info':
-      return 'focus:ring focus:ring-offset-2 focus:ring-info-600 focus:ring-opacity-50';
-    case 'warning':
-      return 'focus:ring focus:ring-offset-2 focus:ring-warning-600 focus:ring-opacity-50';
-    case 'error':
-      return 'focus:ring focus:ring-offset-2 focus:ring-error-600 focus:ring-opacity-50';
-    case 'success':
-      return 'focus:ring focus:ring-offset-2 focus:ring-success-600 focus:ring-opacity-50';
-    default:
-      return 'focus:ring focus:ring-offset-2 focus:ring-gray-400 focus:ring-opacity-50';
-  }
-});
+// const ringClass = computed(() => {
+//   switch (props.color) {
+//     case 'primary':
+//       return 'focus:ring focus:ring-offset-2 focus:ring-primary-500 focus:ring-opacity-50';
+//     case 'secondary':
+//       return 'focus:ring focus:ring-offset-2 focus:ring-secondary-500 focus:ring-opacity-50';
+//     case 'info':
+//       return 'focus:ring focus:ring-offset-2 focus:ring-info-500 focus:ring-opacity-50';
+//     case 'warning':
+//       return 'focus:ring focus:ring-offset-2 focus:ring-warning-500 focus:ring-opacity-50';
+//     case 'error':
+//       return 'focus:ring focus:ring-offset-2 focus:ring-error-500 focus:ring-opacity-50';
+//     case 'success':
+//       return 'focus:ring focus:ring-offset-2 focus:ring-success-500 focus:ring-opacity-50';
+//     default:
+//       return 'focus:ring focus:ring-offset-2 focus:ring-gray-400 focus:ring-opacity-50';
+//   }
+// });
 
 const classes = computed(() => {
   const borderClass = props.solid ? 'border-2' : 'border';
 
   return [
     disabledClass.value,
-    colorClass.value,
-    sizeClass.value,
-    !noRing.value ? ringClass.value : '',
+    // colorClass.value,
+    // sizeClass.value,
+    !noRing.value ? 'btn--ring' : '',
     !props.text ? borderClass : '',
     props.solid ? 'font-bold' : 'font-semibold',
+    `btn--${props.color}`,
+    `btn--${props.size}`,
     {
+      'btn--outlined': props.outlined,
+      'btn--text': props.text,
       'rounded-full': props.rounded,
       'rounded-none': props.tile,
       rounded: !props.rounded && !props.tile,
       'w-full': props.block,
-      'shadow': props.shadow,
+      shadow: props.shadow,
     },
   ];
 });
@@ -276,14 +191,154 @@ const spinnerColor = computed(() => {
   </component>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .btn {
-  @apply transition duration-500 cursor-pointer inline-flex items-center justify-center;
+  @apply transition duration-300 cursor-pointer inline-flex items-center justify-center
+    focus:outline-none font-semibold px-4 py-2 text-sm;
 }
-.btn:focus {
-  @apply outline-none;
+.btn--xs {
+  @apply px-1.5 py-0.5;
 }
-.btn:active {
-  @apply bg-opacity-80;
+
+.btn--sm {
+  @apply px-2 py-1;
+}
+
+.btn--md {
+}
+
+.btn--lg {
+  @apply px-5 py-3;
+}
+
+.btn--xl {
+  @apply px-6 py-4;
+}
+
+.btn--ring {
+  @apply focus:ring focus:ring-offset-2 focus:ring-opacity-50;
+}
+
+/** variants */
+
+.btn--default:not(.btn--outlined):not(.btn--text) {
+  @apply border-gray-800 text-gray-800
+    hover:text-gray-900 hover:border-gray-900 active:text-gray-600 active:border-gray-600;
+}
+
+.btn--dark:not(.btn--outlined):not(.btn--text) {
+  @apply border-gray-800 bg-gray-800 text-white
+    hover:bg-gray-900 hover:border-gray-900 active:text-gray-200 active:border-gray-200;
+}
+
+.btn--primary:not(.btn--outlined):not(.btn--text) {
+  @apply border-primary-500 bg-primary-500 text-white
+    hover:bg-primary-600 hover:border-primary-600
+    active:bg-primary-700 active:border-primary-700;
+}
+
+.btn--secondary:not(.btn--outlined):not(.btn--text) {
+  @apply border-secondary-500 bg-secondary-500 text-white
+    hover:bg-secondary-600 hover:border-secondary-600
+    active:bg-secondary-700 active:border-secondary-700;
+}
+
+.btn--info:not(.btn--outlined):not(.btn--text) {
+  @apply border-info-500 bg-info-500 text-white
+    hover:bg-info-600 hover:border-info-600
+    active:bg-info-700 active:border-info-700;
+}
+
+.btn--success:not(.btn--outlined):not(.btn--text) {
+  @apply border-success-500 bg-success-500 text-white
+    hover:bg-success-600 hover:border-success-600
+    active:bg-success-700 active:border-success-700;
+}
+
+.btn--warning:not(.btn--outlined):not(.btn--text) {
+  @apply border-warning-500 bg-warning-500 text-white
+    hover:bg-warning-600 hover:border-warning-600
+    active:bg-warning-700 active:border-warning-700;
+}
+
+.btn--error:not(.btn--outlined):not(.btn--text) {
+  @apply border-error-500 bg-error-500 text-white
+    hover:bg-error-600 hover:border-error-600
+    active:bg-error-700 active:border-error-700;
+}
+
+/** outlined */
+.btn--outlined {
+  @apply bg-transparent;
+}
+
+.btn--default.btn--outlined {
+  @apply border-gray-800 text-gray-800
+    hover:bg-gray-900 hover:text-white hover:border-gray-900 active:text-gray-300 active:border-gray-300;
+}
+.btn--dark.btn--outlined {
+  @apply border-gray-800 text-gray-800 hover:text-white
+    hover:bg-gray-900 hover:border-gray-900 active:text-gray-200 active:border-gray-200;
+}
+.btn--primary.btn--outlined {
+  @apply border-primary-500 text-primary-500
+    hover:bg-primary-600 hover:text-white hover:border-primary-600
+    active:text-primary-100;
+}
+
+.btn--secondary.btn--outlined {
+  @apply border-secondary-500 text-secondary-500
+    hover:bg-secondary-600 hover:text-white hover:border-secondary-600
+    active:text-secondary-100;
+}
+.btn--info.btn--outlined {
+  @apply border-info-500 text-info-500
+    hover:bg-info-600 hover:text-white hover:border-info-600
+    active:text-info-100;
+}
+.btn--warning.btn--outlined {
+  @apply border-warning-500 text-warning-500
+    hover:bg-warning-600 hover:text-white hover:border-warning-600
+    active:text-warning-100;
+}
+.btn--success.btn--outlined {
+  @apply border-success-500 text-success-500
+    hover:bg-success-600 hover:text-white hover:border-success-600
+    active:text-success-100;
+}
+.btn--error.btn--outlined {
+  @apply border-error-500 text-error-500
+    hover:bg-error-600 hover:text-white hover:border-error-600
+    active:text-error-100;
+}
+
+/** text */
+.btn--text {
+  @apply bg-transparent border-none;
+}
+
+.btn--default.btn--text {
+  @apply text-gray-800 hover:text-gray-900 active:text-gray-700;
+}
+.btn--dark.btn--text {
+  @apply text-gray-800 hover:text-gray-900 active:text-gray-700;
+}
+.btn--primary.btn--text {
+  @apply text-primary-500 hover:text-primary-600 active:text-primary-400;
+}
+.btn--secondary.btn--text {
+  @apply text-secondary-500 hover:text-secondary-600 active:text-secondary-400;
+}
+.btn--info.btn--text {
+  @apply text-info-500 hover:text-info-600 active:text-info-400;
+}
+.btn--warning.btn--text {
+  @apply text-warning-500 hover:text-warning-600 active:text-warning-400;
+}
+.btn--success.btn--text {
+  @apply text-success-500 hover:text-success-600 active:text-success-400;
+}
+.btn--error.btn--text {
+  @apply text-error-500 hover:text-error-600 active:text-error-400;
 }
 </style>

@@ -11,9 +11,10 @@ const themeColors = [
   'success',
   'warning',
   'error',
+  'dark',
 ];
 
-const sizes = ['xs', 'sm', 'default', 'lg', 'xl'];
+const sizes = ['xs', 'sm', 'md', 'lg', 'xl'];
 
 export default {
   component: Button,
@@ -51,14 +52,13 @@ export default {
 
 //👇 We create a “template” of how args map to rendering
 const Template: Story<VBtnProps> = (args) => ({
-  components: {Button, HomeIcon},
+  components: {Button},
   setup() {
     return {args, colors: themeColors};
   },
-  template: `<div class="space-x-2">
+  template: `<div class="space-x-2 space-y-2">
     <Button v-for="color in colors" :key="color" v-bind="args" :color="color">
-      <HomeIcon v-if="args.icon" class="w-6 h-6"/>
-      <span v-else>{{ args.label || color }}</span>
+      <span>{{ args.label || color }}</span>
     </Button>
   </div>
   `,
@@ -234,19 +234,32 @@ Loading.parameters = {
   },
 };
 
-export const Icon = Template.bind({});
-Icon.args = {
-  color: 'primary',
-  icon: true,
-  rounded: true,
-};
-Icon.parameters = {
+export const Shadow = Template.bind({});
+Shadow.args = {color: 'primary', shadow: true};
+Shadow.parameters = {
   docs: {
     source: {
-      code: '<v-btn color="primary" icon rounded><HomeIcon class="w-6 h-6"/></v-btn>',
+      code: '<v-btn color="primary" shadow>Button</v-btn>',
     },
   },
 };
+
+export const Icon: Story<VBtnProps> = (args) => ({
+  components: {Button, HomeIcon},
+  setup() {
+    return {args, sizes, themeColors};
+  },
+  template: `<div v-for="color in themeColors" :key="color" class="mb-6">
+  <div>
+    <div class="font-bold text-lg mb-2">{{color}}</div>
+    <div class="flex items-end gap-2">
+      <Button v-for="size in sizes" :key="size" v-bind="args" :color="color" :size="size" icon>
+        <HomeIcon class="w-6 h-6"/>
+      </Button>
+    </div>
+  </div>
+  </div>`,
+});
 
 export const Sizes: Story<VBtnProps> = (args) => ({
   components: {Button},
@@ -255,11 +268,11 @@ export const Sizes: Story<VBtnProps> = (args) => ({
   },
   template: `<div v-for="color in themeColors" :key="color" class="mb-6">
   <div>
-    <div class="font-bold text-xl mb-2">{{color}}</div>
-    <div class="flex items-end">
-      <Button v-for="size in sizes" :key="size" v-bind="args" :color="color" class="mr-2" :size="size">${
-        args.label || 'Button'
-      }</Button>
+    <div class="font-bold text-lg mb-2">{{color}}</div>
+    <div class="flex items-end gap-2">
+      <Button v-for="size in sizes" :key="size" v-bind="args" :color="color" :size="size">
+        {{ size }}
+      </Button>
     </div>
   </div>
   </div>`,
