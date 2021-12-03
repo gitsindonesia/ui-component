@@ -5,14 +5,10 @@ export default {
 </script>
 
 <script setup lang="ts">
-import {defineAsyncComponent, PropType, ref, toRefs, watch} from 'vue';
+import {PropType, ref, toRefs, watch} from 'vue';
 import {ErrorMessage} from 'vee-validate';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import {component as ckeditor} from '@ckeditor/ckeditor5-vue';
-
-const VTextarea = defineAsyncComponent(
-  () => import('../VTextarea/VTextarea.vue'),
-);
 
 const props = defineProps({
   modelValue: {
@@ -34,11 +30,6 @@ const props = defineProps({
   errorMessages: {
     type: Array as PropType<string[]>,
     default: () => [],
-  },
-  theme: {
-    type: String,
-    default: 'ckeditor',
-    validator: (v: string) => ['quill', 'ckeditor', 'textarea'].includes(v),
   },
   readonly: {
     type: Boolean,
@@ -107,16 +98,11 @@ watch(content, (value) => {
 
 <template>
   <div>
-    <template v-if="theme === 'ckeditor'">
-      <ckeditor
-        v-model="content"
-        :editor="classicEditor"
-        :config="editorConfig"
-      />
-    </template>
-    <template v-else>
-      <v-textarea v-model="content" />
-    </template>
+    <ckeditor
+      v-model="content"
+      :editor="classicEditor"
+      :config="editorConfig"
+    />
     <ErrorMessage
       v-if="errorMessages.length"
       class="text-error-600 mt-1 text-sm"
