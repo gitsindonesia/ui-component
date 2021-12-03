@@ -34,16 +34,7 @@ const placementClass = computed(() => (props.right ? 'right-0' : 'left-0'));
   <Menu as="div" class="relative inline-block mx-4 text-left">
     <div>
       <MenuButton
-        class="
-          inline-flex
-          font-bold
-          text-gray-700
-          justify-center
-          items-center
-          w-full
-          py-1
-          focus:outline-none
-        "
+        class="inline-flex font-semibold text-gray-700 justify-center items-center w-full py-1 focus:outline-none text-sm"
         :class="btnClass"
       >
         <slot />
@@ -62,18 +53,7 @@ const placementClass = computed(() => (props.right ? 'right-0' : 'left-0'));
       leave-to-class="transform scale-95 opacity-0"
     >
       <MenuItems
-        class="
-          absolute
-          z-10
-          w-56
-          mt-2
-          bg-white
-          divide-y divide-gray-100
-          rounded-md
-          shadow-lg
-          ring-1 ring-black ring-opacity-5
-          focus:outline-none
-        "
+        class="absolute z-10 w-56 mt-2 bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
         :class="placementClass"
       >
         <div :class="['arrow', {right: right}]"></div>
@@ -85,17 +65,7 @@ const placementClass = computed(() => (props.right ? 'right-0' : 'left-0'));
               text
               no-ring
               :color="active ? 'primary' : ''"
-              class="
-                !items-center
-                !justify-between
-                font-bold
-                hover:text-primary
-                !pl-3
-                !pr-1
-                !py-2
-                w-full
-                focus:outline-none
-              "
+              class="!items-center !justify-between text-sm font-semibold hover:text-primary !pl-3 !pr-1 !py-2 w-full focus:outline-none"
             >
               <span class="flex-none">
                 {{ item.text }}
