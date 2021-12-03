@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.25](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.24...v0.0.25) (2021-12-03)
+
+
+### Features
+
+* change default color preset ([7a40d0b](https://git.gits.id/frontend/starter/vue-3/starter/commit/7a40d0b2c6f92ec2516eeb0f71d096cc7ae77d9d))
+* improved navdrawer and v-menus ([022d94b](https://git.gits.id/frontend/starter/vue-3/starter/commit/022d94ba961b115d1fbc772febd45ac6b4741247))
+* integrate storybook ([df04b7a](https://git.gits.id/frontend/starter/vue-3/starter/commit/df04b7a8ab0e8b246993362b260e8f591d2c4c7c))
+* move services and types to core ui ([58d3113](https://git.gits.id/frontend/starter/vue-3/starter/commit/58d3113348e4aed119d35cb05753e6a3711edf11))
+* register component as async component for improving bundle size ([b45033b](https://git.gits.id/frontend/starter/vue-3/starter/commit/b45033b5b813b435df0b59872a957d48ebf91bff))
+* update button stories ([d7a7449](https://git.gits.id/frontend/starter/vue-3/starter/commit/d7a7449b9aeccdecb90cd27d91959437106e583a))
+* **v-btn:** improved button design system ([df7ba05](https://git.gits.id/frontend/starter/vue-3/starter/commit/df7ba05bedd75d2e54f234e4bfa4c48fc246429b))
+
+
+### Bug Fixes
+
+* set default logo height ([a9b59b4](https://git.gits.id/frontend/starter/vue-3/starter/commit/a9b59b4405bf85cd488065fc17003fe016dacb76))
+
 ### [0.0.24](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.0.23...v0.0.24) (2021-12-02)
 
 
