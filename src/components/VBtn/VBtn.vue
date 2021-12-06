@@ -191,7 +191,7 @@ const spinnerColor = computed(() => {
   </component>
 </template>
 
-<style scoped lang="scss">
+<style scoped>
 .btn {
   @apply transition duration-300 cursor-pointer inline-flex items-center justify-center
     focus:outline-none font-semibold px-4 py-2 text-sm;
