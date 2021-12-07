@@ -367,7 +367,7 @@ watch(
             "
             autofill="false"
             autocomplete="off"
-            :placeholder="placeholder"
+            :placeholder="value.length < 1 ? placeholder : ''"
             :name="name"
             v-bind="inputProps"
             @input="handleSearch"
