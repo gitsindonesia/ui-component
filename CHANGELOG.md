@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.26](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.0.25...v0.0.26) (2021-12-07)
+
+
+### Bug Fixes
+
+* missing deps and drop sass ([251c068](https://git.gits.id/frontend/starter/vue-3/ui/commit/251c0684a6a08e96e856230f523bdc0ca11cddd2))
+* remove place holder when item selected ([9615b81](https://git.gits.id/frontend/starter/vue-3/ui/commit/9615b8141550940c838ab25d5c4888cd6f0d8a5a))
+
 ### [0.0.25](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.24...v0.0.25) (2021-12-03)
 
 
