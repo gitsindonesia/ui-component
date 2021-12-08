@@ -23,7 +23,6 @@ export default {
     maxBadge: 0,
     delay: 500,
     id: '',
-    name: '',
     inputProps: {},
     selectAll: false,
     loading: false,
