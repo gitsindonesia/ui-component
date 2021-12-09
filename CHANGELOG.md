@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.27](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.0.26...v0.0.27) (2021-12-09)
+
+
+### Bug Fixes
+
+* bug sonarcube ([c704eed](https://git.gits.id/frontend/starter/vue-3/ui/commit/c704eed8cdc6fd450ce81814bfedd41eda35940f))
+* vuex version ([6524175](https://git.gits.id/frontend/starter/vue-3/ui/commit/6524175ddf0c02447e858004289b8d53e5f76663))
+
 ### [0.0.26](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.0.25...v0.0.26) (2021-12-07)
 
 
