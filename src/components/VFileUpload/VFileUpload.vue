@@ -217,6 +217,7 @@ const removeFile = () => {
   innerValue.value = null;
   previewURL.value = null;
   hasInitialValue.value = false;
+  fileRef.value = null;
 
   emit('change', null);
   emit('update:modelValue', null);
