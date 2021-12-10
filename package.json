@@ -1,6 +1,6 @@
 {
   "name": "@frontend/ui",
-  "version": "0.0.23",
+  "version": "0.0.27",
   "scripts": {
     "dev": "vite",
     "serve": "vite preview",
@@ -10,6 +10,7 @@
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "release": "standard-version",
     "build-storybook": "build-storybook",
+    "storybook": "start-storybook -p 6006",
     "sb": "npm run storybook"
   },
   "dependencies": {
@@ -17,16 +18,29 @@
     "@ckeditor/ckeditor5-vue": "^2.0.1",
     "@heroicons/vue": "^1.0.4",
     "@popperjs/core": "^2.10.2",
+    "@vee-validate/zod": "^4.5.6",
+    "@vueuse/core": "^7.1.2",
+    "axios": "^0.24.0",
+    "feather-icons": "^4.28.0",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
     "pagino": "^1.4.1",
     "vee-validate": "^4.4.10",
     "vue": "^3.0.5",
+    "vue-feather": "^1.1.1",
+    "vue-remix-icons": "^1.1.1",
     "vue-router": "^4.0.4",
-    "yup": "^0.32.11"
+    "vuex": "^4.0.2",
+    "yup": "^0.32.11",
+    "zod": "^3.11.6"
   },
   "devDependencies": {
+    "@babel/core": "^7.16.0",
     "@headlessui/vue": "1.4.1",
+    "@storybook/addon-actions": "^6.4.5",
+    "@storybook/addon-essentials": "^6.4.5",
+    "@storybook/addon-links": "^6.4.5",
+    "@storybook/vue3": "^6.4.5",
     "@tailwindcss/aspect-ratio": "^0.3.0",
     "@tailwindcss/forms": "^0.3.4",
     "@tailwindcss/line-clamp": "^0.2.2",
@@ -35,14 +49,17 @@
     "@vitejs/plugin-vue": "^1.9.3",
     "@vue/compiler-sfc": "^3.2.20",
     "autoprefixer": "^10.3.7",
+    "babel-loader": "^8.2.3",
     "cross-env": "^7.0.3",
     "postcss": "^8.3.9",
     "simple-syntax-highlighter": "^2.0.4",
     "standard-version": "^9.3.1",
+    "storybook-builder-vite": "^0.1.10",
     "tailwindcss": "^2.2.16",
     "tailwindcss-cli": "^0.1.2",
     "typescript": "^4.4.3",
-    "vite": "^2.6.7"
+    "vite": "^2.6.7",
+    "vue-loader": "^16.8.3"
   },
   "gitHead": "a3873617b764442416da0687a66a7ba20638c7cb",
   "publishConfig": {

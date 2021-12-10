@@ -30,6 +30,14 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  dense: {
+    type: Boolean,
+    default: false,
+  },
+  imgClass: {
+    type: String,
+    default: 'h-7',
+  },
 });
 
 const {menus, modelValue, user, loginPath} = toRefs(props);
@@ -59,7 +67,7 @@ const userFirstName = computed(() => user.value?.name?.split(' ')?.[0]);
 </script>
 
 <template>
-  <div class="py-4 shadow-md">
+  <div class="shadow-md" :class="[dense ? 'py-1' : 'py-2']">
     <!--    mobile -->
     <div class="container mx-auto sm:hidden">
       <div class="flex w-full items-center px-4 justify-between">
@@ -67,7 +75,7 @@ const userFirstName = computed(() => user.value?.name?.split(' ')?.[0]);
           <MenuIcon class="w-6 h-6" />
         </v-btn>
         <slot name="logo">
-          <v-logo />
+          <v-logo :img-class="imgClass" />
         </slot>
         <div></div>
       </div>
@@ -85,18 +93,7 @@ const userFirstName = computed(() => user.value?.name?.split(' ')?.[0]);
             <template v-for="menu in menus" :key="menu.text">
               <Disclosure v-if="menu.children">
                 <DisclosureButton
-                  class="
-                    flex
-                    items-center
-                    justify-between
-                    w-full
-                    text-left
-                    font-semibold
-                    py-2
-                    px-4
-                    text-gray-700
-                    focus:outline-none
-                  "
+                  class="flex items-center justify-between w-full text-left font-semibold py-2 px-4 text-gray-700 focus:outline-none"
                 >
                   <span>{{ menu.text }}</span>
                   <ChevronDownIcon class="w-5 h-5" />
@@ -125,21 +122,7 @@ const userFirstName = computed(() => user.value?.name?.split(' ')?.[0]);
             <div class="mt-2">
               <Disclosure v-if="user">
                 <DisclosureButton
-                  class="
-                    flex
-                    items-center
-                    justify-between
-                    w-full
-                    px-4
-                    py-2
-                    text-left
-                    font-semibold
-                    block
-                    py-2
-                    px-4
-                    text-gray-700
-                    focus:outline-none
-                  "
+                  class="flex items-center justify-between w-full px-4 py-2 text-left font-semibold block py-2 px-4 text-gray-700 focus:outline-none"
                 >
                   <span class="inline-flex items-center">
                     <UserCircleIcon class="w-[30px] inline h-[30px] mr-2" />
@@ -179,23 +162,13 @@ const userFirstName = computed(() => user.value?.name?.split(' ')?.[0]);
 
     <!--    desktop -->
     <div
-      class="
-        container
-        mx-auto
-        hidden
-        sm:flex
-        gap-x-4
-        items-center
-        px-4
-        2xl:px-0
-      "
+      class="container mx-auto hidden sm:flex gap-x-4 items-center px-4 2xl:px-0"
     >
       <slot name="logo">
-        <v-logo />
+        <v-logo :img-class="imgClass" />
       </slot>
-      <div class="sm:hidden md:block lg:flex-grow"></div>
 
-      <nav class="ml-4 flex items-center">
+      <nav class="ml-4 flex items-center flex-grow">
         <template v-for="menu in menus" :key="menu.text">
           <v-menus v-if="menu.children" :items="menu.children">
             {{ menu.text }}
@@ -203,28 +176,22 @@ const userFirstName = computed(() => user.value?.name?.split(' ')?.[0]);
           <router-link
             v-else
             :to="menu.to"
-            class="
-              transition
-              duration-300
-              font-semibold
-              mx-4
-              hover:text-primary-600
-            "
+            class="transition duration-300 font-semibold mx-4 hover:text-primary-600 text-sm"
           >
             {{ menu.text }}
           </router-link>
         </template>
       </nav>
 
-      <Menu v-if="user" as="div" class="relative inline-block text-left">
+      <Menu v-if="user" as="div" class="relative inline-block text-left mt-1">
         <v-menus right>
           <template #append>
-            <div class="px-1 py-1">
+            <div class="p-0.5">
               <MenuItem v-slot="{active}" @click.prevent="logout">
                 <button
                   :class="[
-                    active ? 'bg-lime-50 text-primary' : 'text-gray-700',
-                    'group flex rounded-md items-center w-full px-3 py-2 font-semibold',
+                    active ? 'bg-primary-50 text-primary-500' : 'text-gray-700',
+                    'group flex rounded-md items-center w-full px-3 py-2 font-semibold text-sm',
                   ]"
                 >
                   Logout
@@ -234,10 +201,10 @@ const userFirstName = computed(() => user.value?.name?.split(' ')?.[0]);
           </template>
 
           <template #icon>
-            <ChevronDownIcon class="w-5 h-5" />
+            <ChevronDownIcon class="ml-2 w-5 h-5" />
           </template>
 
-          <UserCircleIcon class="w-[30px] h-[30px] mr-2" />
+          <UserCircleIcon class="w-[30px] h-[30px] mr-2 text-sm" />
           {{ userFirstName }}
         </v-menus>
       </Menu>

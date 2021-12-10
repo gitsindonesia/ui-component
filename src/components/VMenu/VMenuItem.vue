@@ -14,6 +14,10 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  dark: {
+    type: Boolean,
+    default: false,
+  },
 });
 </script>
 
@@ -21,20 +25,7 @@ const props = defineProps({
   <router-link
     :to="item.to"
     exact
-    class="
-      group
-      sub-menu
-      gap-x-2
-      w-full
-      pl-5
-      px-2
-      py-2
-      rounded
-      flex
-      items-center
-      text-sm
-      truncate
-    "
+    class="group sub-menu gap-x-2 w-full pl-5 px-2 py-3 rounded flex items-center text-sm truncate"
     :class="[textColor, mini ? 'justify-start sm:justify-center' : '']"
   >
     <span class="px-1">

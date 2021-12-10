@@ -1,54 +1,140 @@
 import {App, defineAsyncComponent} from 'vue';
-import VAlert from './src/components/VAlert/VAlert.vue';
-import VBtn from './src/components/VBtn/VBtn.vue';
-import VAppBar from './src/components/VAppBar/VAppBar.vue';
-import VBadge from './src/components/VBadge/VBadge.vue';
-import VBreadcrumbs from './src/components/VBreadcrumbs/VBreadcrumbs.vue';
-import VCard from './src/components/VCard/VCard.vue';
-import VCheckbox from './src/components/VCheckbox/VCheckbox.vue';
-import VDataTable from './src/components/VDataTable/VDataTable.vue';
-import VDataTablePagination from './src/components/VDataTablePagination/VDataTablePagination.vue';
-import VDropdown from './src/components/VDropdown/VDropdown.vue';
-import VFormSelect from './src/components/VFormSelect/VFormSelect.vue';
-import VInput from './src/components/VInput/VInput.vue';
-import VInputGroup from './src/components/VInputGroup/VInputGroup.vue';
-import VInputRange from './src/components/VInputRange/VInputRange.vue';
-import VModal from './src/components/VModal/VModal.vue';
-import VPagination from './src/components/VPagination/VPagination.vue';
-import VProgressBar from './src/components/VProgressBar/VProgressBar.vue';
-import VRadio from './src/components/VRadio/VRadio.vue';
-import VRadioGroup from './src/components/VRadioGroup/VRadioGroup.vue';
-import VSelect from './src/components/VSelect/VSelect.vue';
-import VSwitch from './src/components/VSwitch/VSwitch.vue';
-import VTabs from './src/components/VTabs/VTabs.vue';
-import VTextarea from './src/components/VTextarea/VTextarea.vue';
-import VTooltip from './src/components/VTooltip/VTooltip.vue';
-import VFormGroup from './src/components/VFormGroup/VFormGroup.vue';
-import VNavbar from './src/components/VNavbar/VNavbar.vue';
-import VNavDrawer from './src/components/VNavDrawer/VNavDrawer.vue';
-import VMenu from './src/components/VMenu/VMenu.vue';
-import VMenus from './src/components/VMenus/VMenus.vue';
-import VContainer from './src/components/VContainer/VContainer.vue';
-import VLogo from './src/components/VLogo/VLogo.vue';
-import VToast from './src/components/VToast/VToast.vue';
-import VSpinner from './src/components/VSpinner/VSpinner.vue';
-import VStats from './src/components/VStats/VStats.vue';
-import AuthLayout from './src/layouts/Auth.vue';
-import BaseLayout from './src/layouts/Base.vue';
-import DefaultLayout from './src/layouts/Default.vue';
-import Activation from './src/pages/auth/Activation.vue';
-import Auth from './src/pages/auth/Auth.vue';
-import ForgotPassword from './src/pages/auth/ForgotPassword.vue';
-import Login from './src/pages/auth/Login.vue';
-import ResetPassword from './src/pages/auth/ResetPassword.vue';
-import VFileUpload from './src/components/VFileUpload/VFileUpload.vue';
-import VCollapse from './src/components/VCollapsible/VCollapse.vue';
-import VCollapsible from './src/components/VCollapsible/VCollapsible.vue';
-import VMultiSelect from './src/components/VMultiSelect/VMultiSelect.vue';
 
-// const VEditor = defineAsyncComponent(
-//   () => import('./src/components/VEditor/VEditor.vue'),
-// );
+const VAlert = defineAsyncComponent(
+  () => import('./src/components/VAlert/VAlert.vue'),
+);
+const VBtn = defineAsyncComponent(
+  () => import('./src/components/VBtn/VBtn.vue'),
+);
+const VAppBar = defineAsyncComponent(
+  () => import('./src/components/VAppBar/VAppBar.vue'),
+);
+const VBadge = defineAsyncComponent(
+  () => import('./src/components/VBadge/VBadge.vue'),
+);
+const VBreadcrumbs = defineAsyncComponent(
+  () => import('./src/components/VBreadcrumbs/VBreadcrumbs.vue'),
+);
+const VCard = defineAsyncComponent(
+  () => import('./src/components/VCard/VCard.vue'),
+);
+const VCheckbox = defineAsyncComponent(
+  () => import('./src/components/VCheckbox/VCheckbox.vue'),
+);
+const VDataTable = defineAsyncComponent(
+  () => import('./src/components/VDataTable/VDataTable.vue'),
+);
+const VDataTablePagination = defineAsyncComponent(
+  () =>
+    import('./src/components/VDataTablePagination/VDataTablePagination.vue'),
+);
+const VDropdown = defineAsyncComponent(
+  () => import('./src/components/VDropdown/VDropdown.vue'),
+);
+const VFormSelect = defineAsyncComponent(
+  () => import('./src/components/VFormSelect/VFormSelect.vue'),
+);
+const VInput = defineAsyncComponent(
+  () => import('./src/components/VInput/VInput.vue'),
+);
+const VInputGroup = defineAsyncComponent(
+  () => import('./src/components/VInputGroup/VInputGroup.vue'),
+);
+const VInputRange = defineAsyncComponent(
+  () => import('./src/components/VInputRange/VInputRange.vue'),
+);
+const VModal = defineAsyncComponent(
+  () => import('./src/components/VModal/VModal.vue'),
+);
+const VPagination = defineAsyncComponent(
+  () => import('./src/components/VPagination/VPagination.vue'),
+);
+const VProgressBar = defineAsyncComponent(
+  () => import('./src/components/VProgressBar/VProgressBar.vue'),
+);
+const VRadio = defineAsyncComponent(
+  () => import('./src/components/VRadio/VRadio.vue'),
+);
+const VRadioGroup = defineAsyncComponent(
+  () => import('./src/components/VRadioGroup/VRadioGroup.vue'),
+);
+const VSelect = defineAsyncComponent(
+  () => import('./src/components/VSelect/VSelect.vue'),
+);
+const VSwitch = defineAsyncComponent(
+  () => import('./src/components/VSwitch/VSwitch.vue'),
+);
+const VTabs = defineAsyncComponent(
+  () => import('./src/components/VTabs/VTabs.vue'),
+);
+const VTextarea = defineAsyncComponent(
+  () => import('./src/components/VTextarea/VTextarea.vue'),
+);
+const VTooltip = defineAsyncComponent(
+  () => import('./src/components/VTooltip/VTooltip.vue'),
+);
+const VFormGroup = defineAsyncComponent(
+  () => import('./src/components/VFormGroup/VFormGroup.vue'),
+);
+const VNavbar = defineAsyncComponent(
+  () => import('./src/components/VNavbar/VNavbar.vue'),
+);
+const VNavDrawer = defineAsyncComponent(
+  () => import('./src/components/VNavDrawer/VNavDrawer.vue'),
+);
+const VMenu = defineAsyncComponent(
+  () => import('./src/components/VMenu/VMenu.vue'),
+);
+const VMenus = defineAsyncComponent(
+  () => import('./src/components/VMenus/VMenus.vue'),
+);
+const VContainer = defineAsyncComponent(
+  () => import('./src/components/VContainer/VContainer.vue'),
+);
+const VLogo = defineAsyncComponent(
+  () => import('./src/components/VLogo/VLogo.vue'),
+);
+const VToast = defineAsyncComponent(
+  () => import('./src/components/VToast/VToast.vue'),
+);
+const VSpinner = defineAsyncComponent(
+  () => import('./src/components/VSpinner/VSpinner.vue'),
+);
+const VStats = defineAsyncComponent(
+  () => import('./src/components/VStats/VStats.vue'),
+);
+const AuthLayout = defineAsyncComponent(() => import('./src/layouts/Auth.vue'));
+const BaseLayout = defineAsyncComponent(() => import('./src/layouts/Base.vue'));
+const DefaultLayout = defineAsyncComponent(
+  () => import('./src/layouts/Default.vue'),
+);
+const Activation = defineAsyncComponent(
+  () => import('./src/pages/auth/Activation.vue'),
+);
+const Auth = defineAsyncComponent(() => import('./src/pages/auth/Auth.vue'));
+const ForgotPassword = defineAsyncComponent(
+  () => import('./src/pages/auth/ForgotPassword.vue'),
+);
+const Login = defineAsyncComponent(() => import('./src/pages/auth/Login.vue'));
+const ResetPassword = defineAsyncComponent(
+  () => import('./src/pages/auth/ResetPassword.vue'),
+);
+const VFileUpload = defineAsyncComponent(
+  () => import('./src/components/VFileUpload/VFileUpload.vue'),
+);
+const VCollapse = defineAsyncComponent(
+  () => import('./src/components/VCollapsible/VCollapse.vue'),
+);
+const VCollapsible = defineAsyncComponent(
+  () => import('./src/components/VCollapsible/VCollapsible.vue'),
+);
+const VMultiSelect = defineAsyncComponent(
+  () => import('./src/components/VMultiSelect/VMultiSelect.vue'),
+);
+
+const VEditor = defineAsyncComponent(
+  () => import('./src/components/VEditor/VEditor.vue'),
+);
 
 const plugin = {
   install: (app: App, options = {}) => {
@@ -135,7 +221,7 @@ export {
   ForgotPassword,
   Login,
   ResetPassword,
-  // VEditor,
+  VEditor,
   VCollapse,
   VCollapsible,
   VFileUpload,
@@ -143,6 +229,8 @@ export {
 
 export * from './src/components/VToast';
 export * from './src/utils';
+export * from './src/types';
+export * from './src/services';
 export * from './src/components/VAppBar/VAppBar';
 export * from './src/components/VBadge/VBadge';
 export * from './src/components/VBreadcrumbs/VBreadcrumbs';

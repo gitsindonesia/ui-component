@@ -42,11 +42,11 @@ const props = defineProps({
   },
   classMenuParent: {
     type: String,
-    default: 'text-primary-600 bg-gray-700'
-  }
+    default: '',
+  },
 });
 
-const {modelValue, mini, menus, logoProps, dark, color, hideToggle, classMenuParent} =
+const {mini, menus, logoProps, dark, color, hideToggle, classMenuParent} =
   toRefs(props);
 
 const emit = defineEmits(['update:modelValue', 'update:mini', 'toggle:click']);
@@ -57,7 +57,7 @@ const toggleMenu = () => {
 };
 
 const bgColor = computed(() =>
-  getBgColor(color.value, dark.value ? 'bg-gray-800' : 'bg-white'),
+  getBgColor(color.value, dark.value ? 'bg-gray-900' : 'bg-white'),
 );
 </script>
 
@@ -81,21 +81,7 @@ const bgColor = computed(() =>
   </transition>
 
   <div
-    class="
-      fixed
-      top-0
-      left-0
-      z-20
-      h-screen
-      min-h-screen
-      shadow-md
-      py-2
-      pl-2
-      pr-0
-      transition-all
-      duration-300
-      flex flex-col
-    "
+    class="fixed top-0 left-0 z-20 h-screen min-h-screen shadow-md py-2 px-2 transition-all duration-300 flex flex-col"
     :class="[
       bgColor,
       mini
@@ -139,7 +125,7 @@ const bgColor = computed(() =>
       </v-btn>
     </div>
 
-    <div class="mt-5 flex-grow overflow-auto">
+    <div class="mt-5 flex-grow overflow-auto space-y-1">
       <v-menu
         v-for="(menu, i) in menus"
         :classMenuParent="classMenuParent"

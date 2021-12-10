@@ -1,6 +1,7 @@
-import { Meta, Story } from '@storybook/vue3';
+import {Meta, Story} from '@storybook/vue3';
 import Button from './VBtn.vue';
-import { VBtnProps } from './VBtn';
+import {VBtnProps} from './VBtn';
+import {HomeIcon} from '@heroicons/vue/outline';
 
 const themeColors = [
   'default',
@@ -10,9 +11,10 @@ const themeColors = [
   'success',
   'warning',
   'error',
+  'dark',
 ];
 
-const sizes = ['xs', 'sm', 'default', 'lg', 'xl'];
+const sizes = ['xs', 'sm', 'md', 'lg', 'xl'];
 
 export default {
   component: Button,
@@ -50,11 +52,16 @@ export default {
 
 //👇 We create a “template” of how args map to rendering
 const Template: Story<VBtnProps> = (args) => ({
-  components: { Button },
+  components: {Button},
   setup() {
-    return { args };
+    return {args, colors: themeColors};
   },
-  template: `<Button v-bind="args">${args.label || 'Button'}</Button>`,
+  template: `<div class="space-x-2 space-y-2">
+    <Button v-for="color in colors" :key="color" v-bind="args" :color="color">
+      <span>{{ args.label || color }}</span>
+    </Button>
+  </div>
+  `,
 });
 
 export const Default = Template.bind({});
@@ -67,68 +74,68 @@ Default.parameters = {
   },
 };
 
-export const Primary = Template.bind({});
-Primary.args = { color: 'primary' };
-Primary.parameters = {
-  docs: {
-    source: {
-      code: '<v-btn color="primary">Button</v-btn>',
-    },
-  },
-};
+// export const Primary = Template.bind({});
+// Primary.args = {color: 'primary'};
+// Primary.parameters = {
+//   docs: {
+//     source: {
+//       code: '<v-btn color="primary">Button</v-btn>',
+//     },
+//   },
+// };
 
-export const Secondary = Template.bind({});
-Secondary.args = { color: 'secondary' };
-Secondary.parameters = {
-  docs: {
-    source: {
-      code: '<v-btn color="secondary">Button</v-btn>',
-    },
-  },
-};
+// export const Secondary = Template.bind({});
+// Secondary.args = {color: 'secondary'};
+// Secondary.parameters = {
+//   docs: {
+//     source: {
+//       code: '<v-btn color="secondary">Button</v-btn>',
+//     },
+//   },
+// };
 
-export const Info = Template.bind({});
-Info.args = { color: 'info' };
-Info.parameters = {
-  docs: {
-    source: {
-      code: '<v-btn color="info">Button</v-btn>',
-    },
-  },
-};
+// export const Info = Template.bind({});
+// Info.args = {color: 'info'};
+// Info.parameters = {
+//   docs: {
+//     source: {
+//       code: '<v-btn color="info">Button</v-btn>',
+//     },
+//   },
+// };
 
-export const Success = Template.bind({});
-Success.args = { color: 'success' };
-Success.parameters = {
-  docs: {
-    source: {
-      code: '<v-btn color="success">Button</v-btn>',
-    },
-  },
-};
+// export const Success = Template.bind({});
+// Success.args = {color: 'success'};
+// Success.parameters = {
+//   docs: {
+//     source: {
+//       code: '<v-btn color="success">Button</v-btn>',
+//     },
+//   },
+// };
 
-export const Error = Template.bind({});
-Error.args = { color: 'error' };
-Error.parameters = {
-  docs: {
-    source: {
-      code: '<v-btn color="error">Button</v-btn>',
-    },
-  },
-};
+// export const Error = Template.bind({});
+// Error.args = {color: 'error'};
+// Error.parameters = {
+//   docs: {
+//     source: {
+//       code: '<v-btn color="error">Button</v-btn>',
+//     },
+//   },
+// };
 
-export const Warning = Template.bind({});
-Warning.args = { color: 'warning' };
-Warning.parameters = {
-  docs: {
-    source: {
-      code: '<v-btn color="warning">Button</v-btn>',
-    },
-  },
-};
+// export const Warning = Template.bind({});
+// Warning.args = {color: 'warning'};
+// Warning.parameters = {
+//   docs: {
+//     source: {
+//       code: '<v-btn color="warning">Button</v-btn>',
+//     },
+//   },
+// };
 
 export const Outlined = Template.bind({});
-Outlined.args = { color: 'primary', outlined: true };
+Outlined.args = {color: 'primary', outlined: true};
 Outlined.parameters = {
   docs: {
     source: {
@@ -138,7 +145,7 @@ Outlined.parameters = {
 };
 
 export const Text = Template.bind({});
-Text.args = { color: 'primary', text: true };
+Text.args = {color: 'primary', text: true};
 Text.parameters = {
   docs: {
     source: {
@@ -148,7 +155,7 @@ Text.parameters = {
 };
 
 export const Rounded = Template.bind({});
-Rounded.args = { color: 'primary', rounded: true };
+Rounded.args = {color: 'primary', rounded: true};
 Rounded.parameters = {
   docs: {
     source: {
@@ -158,7 +165,7 @@ Rounded.parameters = {
 };
 
 export const Tile = Template.bind({});
-Tile.args = { color: 'primary', tile: true };
+Tile.args = {color: 'primary', tile: true};
 Tile.parameters = {
   docs: {
     source: {
@@ -168,7 +175,7 @@ Tile.parameters = {
 };
 
 export const ExtraSmall = Template.bind({});
-ExtraSmall.args = { color: 'primary', size: 'xs' };
+ExtraSmall.args = {color: 'primary', size: 'xs'};
 ExtraSmall.parameters = {
   docs: {
     source: {
@@ -178,7 +185,7 @@ ExtraSmall.parameters = {
 };
 
 export const Small = Template.bind({});
-Small.args = { color: 'primary', size: 'sm' };
+Small.args = {color: 'primary', size: 'sm'};
 Small.parameters = {
   docs: {
     source: {
@@ -188,7 +195,7 @@ Small.parameters = {
 };
 
 export const Large = Template.bind({});
-Large.args = { color: 'primary', size: 'lg' };
+Large.args = {color: 'primary', size: 'lg'};
 Large.parameters = {
   docs: {
     source: {
@@ -198,7 +205,7 @@ Large.parameters = {
 };
 
 export const ExtraLarge = Template.bind({});
-ExtraLarge.args = { color: 'primary', size: 'xl' };
+ExtraLarge.args = {color: 'primary', size: 'xl'};
 ExtraLarge.parameters = {
   docs: {
     source: {
@@ -208,7 +215,7 @@ ExtraLarge.parameters = {
 };
 
 export const Disabled = Template.bind({});
-Disabled.args = { color: 'primary', disabled: true };
+Disabled.args = {color: 'primary', disabled: true};
 Disabled.parameters = {
   docs: {
     source: {
@@ -218,7 +225,7 @@ Disabled.parameters = {
 };
 
 export const Loading = Template.bind({});
-Loading.args = { color: 'primary', loading: true };
+Loading.args = {color: 'primary', loading: true};
 Loading.parameters = {
   docs: {
     source: {
@@ -227,34 +234,45 @@ Loading.parameters = {
   },
 };
 
-export const Icon = Template.bind({});
-Icon.args = {
-  color: 'primary',
-  icon: true,
-  rounded: true,
-  label: `<svg xmlns="http://www.w3.org/2000/svg" class="h-full w-full" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-</svg>`,
-};
-Icon.parameters = {
+export const Shadow = Template.bind({});
+Shadow.args = {color: 'primary', shadow: true};
+Shadow.parameters = {
   docs: {
     source: {
-      code: '<v-btn color="primary" icon rounded><IconComponent/></v-btn>',
+      code: '<v-btn color="primary" shadow>Button</v-btn>',
     },
   },
 };
 
-
-export const Sizes: Story<VBtnProps> = (args) => ({
-  components: { Button },
+export const Icon: Story<VBtnProps> = (args) => ({
+  components: {Button, HomeIcon},
   setup() {
-    return { args, sizes, themeColors };
+    return {args, sizes, themeColors};
   },
   template: `<div v-for="color in themeColors" :key="color" class="mb-6">
   <div>
-    <div class="font-bold text-xl mb-2">{{color}}</div>
-    <div class="flex items-end">
-      <Button v-for="size in sizes" :key="size" v-bind="args" :color="color" class="mr-2" :size="size">${args.label || 'Button'}</Button>
+    <div class="font-bold text-lg mb-2">{{color}}</div>
+    <div class="flex items-end gap-2">
+      <Button v-for="size in sizes" :key="size" v-bind="args" :color="color" :size="size" icon>
+        <HomeIcon class="w-6 h-6"/>
+      </Button>
+    </div>
+  </div>
+  </div>`,
+});
+
+export const Sizes: Story<VBtnProps> = (args) => ({
+  components: {Button},
+  setup() {
+    return {args, sizes, themeColors};
+  },
+  template: `<div v-for="color in themeColors" :key="color" class="mb-6">
+  <div>
+    <div class="font-bold text-lg mb-2">{{color}}</div>
+    <div class="flex items-end gap-2">
+      <Button v-for="size in sizes" :key="size" v-bind="args" :color="color" :size="size">
+        {{ size }}
+      </Button>
     </div>
   </div>
   </div>`,

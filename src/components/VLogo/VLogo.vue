@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {toRefs,  computed} from 'vue';
+import {toRefs, computed} from 'vue';
 
 const props = defineProps({
   white: {
@@ -9,6 +9,10 @@ const props = defineProps({
   to: {
     type: String,
     default: '/',
+  },
+  imgClass: {
+    type: String,
+    default: '',
   },
 });
 
@@ -21,13 +25,13 @@ const tag = computed(() => (to.value ? 'router-link' : 'a'));
   <component :is="tag" :to="to">
     <img
       v-if="white"
-      class="max-w-full mx-auto h-10"
+      :class="imgClass"
       alt="Logo"
       src="../../../public/logo-white.png"
     />
     <img
       v-else
-      class="max-w-full mx-auto h-10"
+      :class="imgClass"
       alt="Logo"
       src="../../../public/logo-base.png"
     />

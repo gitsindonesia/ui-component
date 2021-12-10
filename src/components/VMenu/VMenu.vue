@@ -63,7 +63,7 @@ const menuItemBgColor = computed(() => {
 
 const textColor = computed(() =>
   dark.value
-    ? 'text-gray-400 hover:bg-gray-600'
+    ? 'text-gray-500 hover:bg-gray-800 hover:text-gray-200'
     : 'text-gray-700 hover:bg-gray-100',
 );
 
@@ -89,7 +89,7 @@ const isActive = (path: any) => {
     <Disclosure v-if="menu.children" v-slot="{open}">
       <DisclosureButton
         v-slot="{open}"
-        class="focus:outline-none w-full transition duration-300 rounded group"
+        class="focus:outline-none w-full transition duration-300 rounded group text-sm"
         :class="[textColor]"
       >
         <div
@@ -134,7 +134,7 @@ const isActive = (path: any) => {
       <DisclosurePanel
         ref="panel"
         static
-        class="mt-2 duration-300 overflow-hidden transition-all h-auto"
+        class="duration-300 overflow-hidden transition-all h-auto"
         :style="{maxHeight: open ? `${scrollHeight}px` : 0}"
       >
         <v-menu-item
@@ -142,7 +142,10 @@ const isActive = (path: any) => {
           :key="j"
           :item="child"
           :mini="mini"
-          :text-color="isActive(child) ? 'text-primary-600' : textColor"
+          :dark="dark"
+          :text-color="
+            isActive(child) ? 'text-primary-600 hover:bg-gray-100' : textColor
+          "
         />
       </DisclosurePanel>
     </Disclosure>
@@ -150,8 +153,11 @@ const isActive = (path: any) => {
       v-else
       :to="menu.to"
       exact
-      class="group menu-item transition duration-300 w-full px-2 py-3 rounded flex gap-x-2 items-center text-sm mb-1 relative"
-      :class="[isActive(menu) ? 'text-primary-600' : textColor, mini ? 'justify-start sm:justify-center' : '']"
+      class="group menu-item transition duration-300 w-full px-2.5 py-3 rounded flex w-full gap-x-2 items-center text-sm relative"
+      :class="[
+        isActive(menu) ? 'text-primary-600 hover:bg-gray-100' : textColor,
+        mini ? 'justify-start sm:justify-center' : '',
+      ]"
     >
       <img v-if="menu.img" :src="menu.img" alt="img icon" class="w-5 h-5" />
       <component :is="menu.icon" v-else-if="menu.icon" class="w-5 h-5" />

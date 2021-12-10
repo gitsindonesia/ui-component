@@ -35,9 +35,9 @@ module.exports = {
         primary: primary,
         secondary: secondary,
         info: colors.sky,
-        success: colors.green,
-        warning: colors.orange,
-        error: colors.red,
+        success: colors.emerald,
+        warning: colors.yellow,
+        error: colors.rose,
       },
       fontFamily: {
         // display: ['Poppins', 'Arial', 'sans-serif'],
