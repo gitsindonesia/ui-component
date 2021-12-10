@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {computed, toRefs} from 'vue';
+import { computed, toRefs } from 'vue';
 import VSpinner from '../VSpinner/VSpinner.vue';
 
 const props = defineProps({
@@ -82,7 +82,7 @@ const props = defineProps({
   },
 });
 
-const {disabled, noRing, loading, loadingText} = toRefs(props);
+const { disabled, noRing, loading, loadingText } = toRefs(props);
 
 const computedComponent = computed(() => {
   if (props.to) {
@@ -134,6 +134,7 @@ const classes = computed(() => {
     {
       'btn--outlined': props.outlined,
       'btn--text': props.text,
+      'btn--icon': props.icon,
       'rounded-full': props.rounded,
       'rounded-none': props.tile,
       rounded: !props.rounded && !props.tile,
@@ -179,7 +180,7 @@ const spinnerColor = computed(() => {
     :rel="newTab ? 'noopener' : ''"
     :target="newTab ? '_blank' : ''"
     :disabled="disabled || loading"
-    v-bind="{...attrs, ...$attrs}"
+    v-bind="{ ...attrs, ...$attrs }"
   >
     <template v-if="loading">
       <slot name="loading">
@@ -217,6 +218,31 @@ const spinnerColor = computed(() => {
 
 .btn--ring {
   @apply focus:ring focus:ring-offset-2 focus:ring-opacity-50;
+}
+
+/** button icons **/
+.btn--icon {
+  @apply p-0;
+}
+
+.btn--icon.btn--xs {
+  @apply w-[30px] h-[30px];
+}
+
+.btn--icon.btn--sm {
+  @apply w-[36px] h-[36px];
+}
+
+.btn--icon.btn--md {
+  @apply w-[40px] h-[40px];
+}
+
+.btn--icon.btn--lg {
+  @apply w-[50px] h-[50px];
+}
+
+.btn--icon.btn--xl {
+  @apply w-[60px] h-[60px];
 }
 
 /** variants */
