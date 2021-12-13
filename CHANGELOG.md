@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.28](https://git.gits.id/prodia/doctor/doctor-cms/compare/v0.0.27...v0.0.28) (2021-12-13)
+
+
+### Features
+
+* **v-btn:** update button icons styles ([5dfbd16](https://git.gits.id/prodia/doctor/doctor-cms/commit/5dfbd16fa425900b21c52396187168c19efe0ada))
+* **VBtn:** extract btn styles into file ([48f3d4a](https://git.gits.id/prodia/doctor/doctor-cms/commit/48f3d4a59848731e435603bc20a6556ebac388b0))
+
 ### [0.0.27](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.0.26...v0.0.27) (2021-12-09)
 
 
