@@ -10,6 +10,7 @@ export interface VDataTableHeader {
   value?: string;
   align?: string;
   sortable?: false;
+  class?: string;
   [key: string]: any;
 }
 
@@ -29,6 +30,7 @@ export interface VDataTableProps {
   loadingText: string;
   noDataText: string;
   serverSide: boolean;
+  footerColor: string;
   sortBy: string;
   sortDirection: string;
   itemsPerPage: number;

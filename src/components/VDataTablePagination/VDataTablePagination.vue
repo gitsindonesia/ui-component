@@ -29,6 +29,10 @@ const props = defineProps({
     type: String,
     default: 'Showing',
   },
+  backgroundColor: {
+    type: String,
+    default: '',
+  },
   dataText: {
     type: String,
     default: 'data',
@@ -102,6 +106,7 @@ watch(
 
 <template>
   <div
+    :class="backgroundColor"
     class="
       w-full
       px-6
