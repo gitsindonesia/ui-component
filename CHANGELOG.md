@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.30](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.0.29...v0.0.30) (2021-12-13)
+
+
+### Bug Fixes
+
+* fix vue-feather deps mismatch ([f5c0307](https://git.gits.id/frontend/starter/vue-3/ui/commit/f5c0307849dc54db5083007d525c13bce9d22980))
+
 ### [0.0.29](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.0.28...v0.0.29) (2021-12-13)
 
 
