@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.29](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.0.28...v0.0.29) (2021-12-13)
+
+
+### Bug Fixes
+
+* **login:** autocomplate ([e07554c](https://git.gits.id/frontend/starter/vue-3/ui/commit/e07554cbab44017595569f97b57f5ddb9e24a703))
+* revert v-btn ([28e1ed0](https://git.gits.id/frontend/starter/vue-3/ui/commit/28e1ed076e38601c4e28c16576e3eff67a3a63c8))
+
 ### [0.0.28](https://git.gits.id/prodia/doctor/doctor-cms/compare/v0.0.27...v0.0.28) (2021-12-13)
 
 
