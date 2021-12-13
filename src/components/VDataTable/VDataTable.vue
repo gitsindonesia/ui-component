@@ -64,6 +64,10 @@ const props = defineProps({
     type: String,
     default: 'Data tidak ditemukan',
   },
+  footerColor: {
+    type: String,
+    default: '',
+  },
   serverSide: {
     type: Boolean,
     default: false,
@@ -143,6 +147,7 @@ const {
   hover,
   striped,
   dense,
+  footerColor,
   headers,
   totalItems,
   page: paginationPage,
@@ -346,7 +351,7 @@ const end = computed(() =>
               :key="header.value"
               scope="col"
               class="text-left py-3 text-sm font-bold uppercase tracking-wider"
-              :class="[getThClass(header), paddingClass]"
+              :class="[getThClass(header), paddingClass, header.class]"
             >
               <slot
                 v-if="selectable && header.value === 'selected'"
@@ -455,6 +460,7 @@ const end = computed(() =>
       <slot name="footer">
         <VDataTablePagination
           v-model="page"
+          :background-color="footerColor ? footerColor : ''"
           class="rounded-b-md"
           :total-items="serverSide ? totalItems : items.length"
           v-model:itemsPerPage="perPage"
