@@ -59,7 +59,7 @@ const props = defineProps({
   },
   autocomplete: {
     type: String,
-    default: 'on',
+    default: 'off',
   },
 });
 
@@ -128,7 +128,7 @@ const onSubmit = (values) => {
               :error-messages="[errors.email]"
               error-class="min-h-[20px]"
               class="mb-2"
-              :autocomplete="autocomplete"
+              :input-props="{autocomplete}"
               v-bind="field"
             >
               <template #prepend>
@@ -158,7 +158,7 @@ const onSubmit = (values) => {
               :error-messages="[errors.password]"
               error-class="min-h-[20px]"
               class="mb-2"
-              :autocomplete="autocomplete"
+              :input-props="{autocomplete}"
               v-bind="field"
             >
               <template #prepend>
