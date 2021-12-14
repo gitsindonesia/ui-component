@@ -276,6 +276,7 @@ const spinnerColor = computed(() => {
   </component>
 </template>
 
+<style src="./VBtn.styles.css"></style>
 <style scoped>
 .btn {
   @apply transition duration-500 cursor-pointer inline-flex items-center justify-center;
