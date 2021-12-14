@@ -143,6 +143,8 @@ const colorClass = computed(() => {
         return 'text-error-600';
       case 'success':
         return 'text-success-600';
+      case 'gray-light':
+        return 'text-gray-400';
       default:
         return 'text-gray-800';
     }
@@ -223,7 +225,7 @@ const classes = computed(() => {
       'rounded-none': props.tile,
       rounded: !props.rounded && !props.tile,
       'w-full': props.block,
-      'shadow': props.shadow,
+      shadow: props.shadow,
     },
   ];
 });
