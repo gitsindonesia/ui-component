@@ -259,7 +259,7 @@ const spinnerColor = computed(() => {
 <template>
   <component
     :is="computedComponent"
-    class="btn"
+    class="btn inline-flex"
     :class="classes"
     :rel="newTab ? 'noopener' : ''"
     :target="newTab ? '_blank' : ''"
@@ -276,7 +276,6 @@ const spinnerColor = computed(() => {
   </component>
 </template>
 
-<style src="./VBtn.styles.css"></style>
 <style scoped>
 .btn {
   @apply transition duration-500 cursor-pointer inline-flex items-center justify-center;
