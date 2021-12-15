@@ -2,6 +2,41 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.31](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.0.20...v0.0.31) (2021-12-15)
+
+
+### Features
+
+* add btn styles into file ([d6a1d77](https://git.gits.id/frontend/starter/vue-3/ui/commit/d6a1d7780fef4376b5c862efc32beae777c90802))
+* add class inline-flex ([da8f8d6](https://git.gits.id/frontend/starter/vue-3/ui/commit/da8f8d682612b2e20be1edcef5f36b307cfe1e98))
+* **breadcrumbs:** add new colors ([f878f81](https://git.gits.id/frontend/starter/vue-3/ui/commit/f878f81cfa31a3af6cf78cec44b8f08e29ceebf9))
+* change default color preset ([7a40d0b](https://git.gits.id/frontend/starter/vue-3/ui/commit/7a40d0b2c6f92ec2516eeb0f71d096cc7ae77d9d))
+* improved navdrawer and v-menus ([022d94b](https://git.gits.id/frontend/starter/vue-3/ui/commit/022d94ba961b115d1fbc772febd45ac6b4741247))
+* integrate storybook ([df04b7a](https://git.gits.id/frontend/starter/vue-3/ui/commit/df04b7a8ab0e8b246993362b260e8f591d2c4c7c))
+* move services and types to core ui ([58d3113](https://git.gits.id/frontend/starter/vue-3/ui/commit/58d3113348e4aed119d35cb05753e6a3711edf11))
+* register component as async component for improving bundle size ([b45033b](https://git.gits.id/frontend/starter/vue-3/ui/commit/b45033b5b813b435df0b59872a957d48ebf91bff))
+* update button stories ([d7a7449](https://git.gits.id/frontend/starter/vue-3/ui/commit/d7a7449b9aeccdecb90cd27d91959437106e583a))
+* **v-btn:** improved button design system ([df7ba05](https://git.gits.id/frontend/starter/vue-3/ui/commit/df7ba05bedd75d2e54f234e4bfa4c48fc246429b))
+* **v-btn:** update button icons styles ([5dfbd16](https://git.gits.id/frontend/starter/vue-3/ui/commit/5dfbd16fa425900b21c52396187168c19efe0ada))
+* **VBtn:** extract btn styles into file ([48f3d4a](https://git.gits.id/frontend/starter/vue-3/ui/commit/48f3d4a59848731e435603bc20a6556ebac388b0))
+* **vdatatable:** add props color and style ([57552bc](https://git.gits.id/frontend/starter/vue-3/ui/commit/57552bc54567a3d39a6272466de6ed632565161f))
+
+
+### Bug Fixes
+
+* bug sonarcube ([c704eed](https://git.gits.id/frontend/starter/vue-3/ui/commit/c704eed8cdc6fd450ce81814bfedd41eda35940f))
+* error isActive ([f749242](https://git.gits.id/frontend/starter/vue-3/ui/commit/f74924280488ac6c0e19d41ce542f2a4d0824b70))
+* error split undefined ([6984f73](https://git.gits.id/frontend/starter/vue-3/ui/commit/6984f73c7afc0e320653985250432d80de87bfab))
+* fix vue-feather deps mismatch ([f5c0307](https://git.gits.id/frontend/starter/vue-3/ui/commit/f5c0307849dc54db5083007d525c13bce9d22980))
+* **login:** autocomplate ([e07554c](https://git.gits.id/frontend/starter/vue-3/ui/commit/e07554cbab44017595569f97b57f5ddb9e24a703))
+* **login:** autocomplate form login ([e7cdfe4](https://git.gits.id/frontend/starter/vue-3/ui/commit/e7cdfe41be60649d06248a20c99c4627803250a8))
+* missing deps and drop sass ([251c068](https://git.gits.id/frontend/starter/vue-3/ui/commit/251c0684a6a08e96e856230f523bdc0ca11cddd2))
+* remove place holder when item selected ([9615b81](https://git.gits.id/frontend/starter/vue-3/ui/commit/9615b8141550940c838ab25d5c4888cd6f0d8a5a))
+* revert v-btn ([28e1ed0](https://git.gits.id/frontend/starter/vue-3/ui/commit/28e1ed076e38601c4e28c16576e3eff67a3a63c8))
+* set default logo height ([a9b59b4](https://git.gits.id/frontend/starter/vue-3/ui/commit/a9b59b4405bf85cd488065fc17003fe016dacb76))
+* **vbreadcrumbs:** add props ([cf63984](https://git.gits.id/frontend/starter/vue-3/ui/commit/cf6398426c4f7cafec282d489bc8d0524352dc86))
+* vuex version ([6524175](https://git.gits.id/frontend/starter/vue-3/ui/commit/6524175ddf0c02447e858004289b8d53e5f76663))
+
 ### [0.0.30](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.0.29...v0.0.30) (2021-12-13)
 
 
