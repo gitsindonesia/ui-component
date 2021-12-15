@@ -217,7 +217,7 @@ const onInputClick = () => {
   isOpen.value = true;
 };
 
-onClickOutside(target, () => {
+onClickOutside(target.value, () => {
   emit('click:outside');
   isOpen.value = false;
 });
@@ -323,7 +323,7 @@ watch(
             text-left
             bg-white
             rounded-lg
-            border 
+            border
             cursor-default
             focus:outline-none
             sm:text-sm
