@@ -44,6 +44,10 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  toggleColor: {
+    type: String,
+    default: 'primary',
+  },
 });
 
 const {mini, menus, logoProps, dark, color, hideToggle, classMenuParent} =
@@ -99,7 +103,7 @@ const bgColor = computed(() =>
             no-ring
             class="absolute -right-4"
             :class="btnToggleClass"
-            color="primary"
+            :color="toggleColor"
             @click="toggleMenu"
           >
             <ChevronLeftIcon

@@ -363,8 +363,8 @@ const end = computed(() =>
                 <a
                   v-if="!disableSorting && header.sortable"
                   href="#"
-                  class="flex justify-between items-center truncate"
-                  :class="[header.align ? `justify-${header.align}` : '']"
+                  class="flex items-center truncate"
+                  :class="[header.align ? `justify-${header.align}` : 'justify-between']"
                   @click.prevent="handleSort(header)"
                 >
                   <span>

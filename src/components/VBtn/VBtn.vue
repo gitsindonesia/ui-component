@@ -143,6 +143,8 @@ const colorClass = computed(() => {
         return 'text-error-600';
       case 'success':
         return 'text-success-600';
+      case 'gray-light':
+        return 'text-gray-3';
       default:
         return 'text-gray-800';
     }
@@ -160,6 +162,8 @@ const colorClass = computed(() => {
         return 'text-error-600 border-error-600 hover:bg-error-600 hover:bg-opacity-20 disabled:bg-opacity-50 disabled:border-opacity-50 disabled:bg-opacity-50 disabled:text-opacity-50 hover:disabled:bg-transparent';
       case 'success':
         return 'text-success-600 border-success-600 hover:bg-success-600 hover:bg-opacity-20 disabled:bg-opacity-50 disabled:border-opacity-50 disabled:bg-opacity-50 disabled:text-opacity-50 hover:disabled:bg-transparent';
+      case 'gray-light':
+        return 'text-gray-3 border-gray-3 hover:bg-gray-300 hover:bg-opacity-20 disabled:bg-opacity-50 disabled:border-opacity-50 disabled:bg-opacity-50 disabled:text-opacity-50 hover:disabled:bg-transparent';
       default:
         return 'text-gray-600 border-gray-600 hover:bg-gray-400 hover:bg-opacity-20 disabled:bg-opacity-50 disabled:border-opacity-50 disabled:bg-opacity-50 disabled:text-opacity-50 hover:disabled:bg-transparent';
     }
@@ -177,6 +181,8 @@ const colorClass = computed(() => {
         return 'text-white border-error-600 bg-error-600 hover:border-error-700 hover:bg-error-700 focus:ring-error-600';
       case 'success':
         return 'text-white border-success-600 bg-success-600 hover:border-success-700 hover:bg-success-700';
+      case 'gray-light':
+        return 'text-gray-3 hover:text-gray-200 hover:bg-gray-50 bg-white border-gray-300 focus:border-gray-400 hover:border-gray-400';
       default:
         return 'text-gray-800 hover:text-gray-900 hover:bg-gray-50 bg-white border-gray-300 focus:border-gray-400 hover:border-gray-400';
     }

@@ -42,7 +42,7 @@ const props = defineProps({
   activeClass: {
     type: String,
     default:
-      'bg-primary-500 border-primary-500 hover:!bg-primary-600 text-white !font-bold',
+      'bg-primary-600 border-primary-600 hover:!bg-primary-700 text-white !font-bold',
   },
   defaultClass: {
     type: String,
