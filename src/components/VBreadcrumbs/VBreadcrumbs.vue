@@ -14,7 +14,11 @@ const props = defineProps({
   customClass: {
     type: String,
     default: ''
-  }
+  },
+  activeColor: {
+    type: String,
+    default: '!text-primary-600',
+  },
 });
 </script>
 
@@ -25,8 +29,8 @@ const props = defineProps({
         <router-link
           :to="item.to"
           :class="[customClass]"
-          exact-active-class="!text-primary-600"
           class="font-medium hover:text-primary-700"
+          :exact-active-class="props.activeColor"
         >
           <slot :name="`title.${index}`">
             {{ item.title }}

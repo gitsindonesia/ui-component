@@ -229,7 +229,7 @@ const classes = computed(() => {
       'rounded-none': props.tile,
       rounded: !props.rounded && !props.tile,
       'w-full': props.block,
-      'shadow': props.shadow,
+      shadow: props.shadow,
     },
   ];
 });
@@ -265,7 +265,7 @@ const spinnerColor = computed(() => {
 <template>
   <component
     :is="computedComponent"
-    class="btn"
+    class="btn inline-flex"
     :class="classes"
     :rel="newTab ? 'noopener' : ''"
     :target="newTab ? '_blank' : ''"
