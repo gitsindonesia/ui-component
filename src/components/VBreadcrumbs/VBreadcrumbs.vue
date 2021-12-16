@@ -11,9 +11,13 @@ const props = defineProps({
     type: String,
     default: '/',
   },
+  customClass: {
+    type: String,
+    default: ''
+  },
   activeColor: {
     type: String,
-    default: 'text-primary-400',
+    default: '!text-primary-600',
   },
 });
 </script>
@@ -24,8 +28,9 @@ const props = defineProps({
       <slot :name="`item.${index}`">
         <router-link
           :to="item.to"
+          :class="[customClass]"
+          class="font-medium hover:text-primary-700"
           :exact-active-class="props.activeColor"
-          class="text-gray-400 hover:text-primary-600"
         >
           <slot :name="`title.${index}`">
             {{ item.title }}
@@ -33,7 +38,7 @@ const props = defineProps({
         </router-link>
         <template v-if="index + 1 < props.items.length">
           <slot name="divider">
-            <span class="text-sm text-gray-400 font-medium mx-2">
+            <span class="text-sm text-gray-400 font-medium mx-0">
               {{ props.divider }}
             </span>
           </slot>
