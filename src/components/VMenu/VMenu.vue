@@ -184,7 +184,9 @@ const isActive = (path: any) => {
         relative
       "
       :class="[
-        isActive(menu) ? 'text-primary-600 hover:bg-gray-100' : textColor,
+        isActive(menu)
+          ? `${menuItemColor} text-white fill-white hover:bg-gray-300`
+          : textColor,
         mini ? 'justify-start sm:justify-center' : '',
       ]"
     >
