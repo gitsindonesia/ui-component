@@ -112,7 +112,7 @@ const isActive = (path: any) => {
           <span v-else-if="menu.svg" v-html="menu.svg" />
           <template v-else-if="menu.icon">
             <template v-if="typeof menu.icon === 'string'">
-              <v-icon :name="menu.icon" class="text-gray-600" />
+              <v-icon :name="menu.icon" />
             </template>
             <component
               :is="menu.icon"
