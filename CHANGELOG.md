@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.33](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.0.32...v0.0.33) (2021-12-16)
+
+
+### Features
+
+* add some props for adjustment ui ([c50ce33](https://git.gits.id/frontend/starter/vue-3/ui/commit/c50ce331be510ddc4c0e517cd2a0aafc16200bb3))
+
+
+### Bug Fixes
+
+* conflict ([298acd0](https://git.gits.id/frontend/starter/vue-3/ui/commit/298acd0f36375f7251f2558c1263d08687b9d34a))
+
 ### [0.0.32](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.0.31...v0.0.32) (2021-12-15)
 
 ### [0.0.31](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.0.20...v0.0.31) (2021-12-15)
