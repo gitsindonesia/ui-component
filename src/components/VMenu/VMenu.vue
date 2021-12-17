@@ -112,7 +112,7 @@ const isActive = (path: any) => {
           <span v-else-if="menu.svg" v-html="menu.svg" />
           <template v-else-if="menu.icon">
             <template v-if="typeof menu.icon === 'string'">
-              <v-icon :name="menu.icon" />
+              <v-icon :name="menu.icon" class="text-gray-600" />
             </template>
             <component
               :is="menu.icon"
@@ -157,7 +157,7 @@ const isActive = (path: any) => {
           :dark="dark"
           :text-color="
             isActive(child)
-              ? `${menuItemColor} text-white fill-white hover:bg-gray-300`
+              ? `${menuItemColor} text-white fill-white hover:bg-primary-700`
               : textColor
           "
         />
