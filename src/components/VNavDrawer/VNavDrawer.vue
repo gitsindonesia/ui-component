@@ -48,6 +48,10 @@ const props = defineProps({
     type: String,
     default: 'primary',
   },
+  expandColor: {
+    type: String,
+    default: '',
+  },
 });
 
 const {mini, menus, logoProps, dark, color, hideToggle, classMenuParent} =
@@ -85,7 +89,20 @@ const bgColor = computed(() =>
   </transition>
 
   <div
-    class="fixed top-0 left-0 z-20 h-screen min-h-screen shadow-md py-2 px-2 transition-all duration-300 flex flex-col"
+    class="
+      fixed
+      top-0
+      left-0
+      z-20
+      h-screen
+      min-h-screen
+      shadow-md
+      py-2
+      px-2
+      transition-all
+      duration-300
+      flex flex-col
+    "
     :class="[
       bgColor,
       mini
@@ -137,6 +154,7 @@ const bgColor = computed(() =>
         :menu="menu"
         :mini="mini"
         :dark="dark"
+        :bg-color="expandColor"
         :color="color"
       />
     </div>

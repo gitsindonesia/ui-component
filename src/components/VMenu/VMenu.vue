@@ -89,12 +89,24 @@ const isActive = (path: any) => {
     <Disclosure v-if="menu.children" v-slot="{open}">
       <DisclosureButton
         v-slot="{open}"
-        class="focus:outline-none w-full transition duration-300 rounded group text-sm"
+        class="
+          focus:outline-none
+          w-full
+          transition
+          duration-300
+          rounded
+          group
+          text-sm
+        "
         :class="[textColor]"
       >
         <div
           class="py-3 w-full flex items-center px-2 gap-x-2 rounded"
-          :class="[openClass(open), mini ? 'justify-center' : '']"
+          :class="[
+            openClass(open),
+            mini ? 'justify-center' : '',
+            open ? menuItemBgColor : '',
+          ]"
         >
           <img v-if="menu.img" :src="menu.img" alt="img icon" class="w-5 h-5" />
           <span v-else-if="menu.svg" v-html="menu.svg" />
@@ -144,7 +156,9 @@ const isActive = (path: any) => {
           :mini="mini"
           :dark="dark"
           :text-color="
-            isActive(child) ? 'text-primary-600 hover:bg-gray-100' : textColor
+            isActive(child)
+              ? `${menuItemColor} text-white fill-white hover:bg-gray-300`
+              : textColor
           "
         />
       </DisclosurePanel>
@@ -153,7 +167,22 @@ const isActive = (path: any) => {
       v-else
       :to="menu.to"
       exact
-      class="group menu-item transition duration-300 w-full px-2.5 py-3 rounded flex w-full gap-x-2 items-center text-sm relative"
+      class="
+        group
+        menu-item
+        transition
+        duration-300
+        w-full
+        px-2.5
+        py-3
+        rounded
+        flex
+        w-full
+        gap-x-2
+        items-center
+        text-sm
+        relative
+      "
       :class="[
         isActive(menu) ? 'text-primary-600 hover:bg-gray-100' : textColor,
         mini ? 'justify-start sm:justify-center' : '',
@@ -171,6 +200,9 @@ const isActive = (path: any) => {
 </template>
 
 <style scoped>
+.fill-white {
+  fill: #fff;
+}
 /**
 .menu-item.router-link-active,
 .menu-item.router-link-active.router-link-exact-active,
