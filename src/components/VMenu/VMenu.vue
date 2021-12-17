@@ -49,6 +49,7 @@ const props = defineProps({
 
 const router = useRouter();
 const emit = defineEmits([]);
+const elements = ref<any>([]);
 
 const {menu, mini, dark, classMenuParent} = toRefs(props);
 
@@ -82,11 +83,23 @@ const isActive = (path: any) => {
   const route = path.to.split('/');
   return route[2] === currentRoute[2];
 };
+const hideOther = (id: any) => {
+  const items = elements.value.filter((elm: any) => {
+    return elm.getAttribute('data-id') !== id.toString();
+  });
+  items.forEach((elm: any) => elm.click());
+};
+
+const doClose = (close: any) => {
+  console.log(close);
+  console.log('a');
+  close();
+};
 </script>
 
 <template>
   <template v-if="menu">
-    <Disclosure v-if="menu.children" v-slot="{open}">
+    <Disclosure v-if="menu.children" v-slot="{open, close}">
       <DisclosureButton
         v-slot="{open}"
         class="
@@ -162,6 +175,14 @@ const isActive = (path: any) => {
           "
         />
       </DisclosurePanel>
+      <button
+        :ref="(el) => (elements[menu.text] = el)"
+        :data-id="menu.to"
+        @click="doClose(close)"
+      >
+        s
+      </button>
+      <div @show="hideOther(menu.to)" v-show="false">a</div>
     </Disclosure>
     <router-link
       v-else
