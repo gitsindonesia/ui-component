@@ -157,7 +157,7 @@ const isActive = (path: any) => {
           :dark="dark"
           :text-color="
             isActive(child)
-              ? `${menuItemColor} text-white fill-white hover:bg-gray-300`
+              ? `${menuItemColor} text-white fill-white hover:bg-primary-700`
               : textColor
           "
         />
