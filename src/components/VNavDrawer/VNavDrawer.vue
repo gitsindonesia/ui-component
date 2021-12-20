@@ -156,7 +156,8 @@ const bgColor = computed(() =>
         :dark="dark"
         :bg-color="expandColor"
         :color="color"
-      />
+      >
+      </v-menu>
     </div>
     <div class="append flex flex-col justify-center">
       <slot name="append" />
