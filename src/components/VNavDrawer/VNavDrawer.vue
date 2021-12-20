@@ -89,20 +89,7 @@ const bgColor = computed(() =>
   </transition>
 
   <div
-    class="
-      fixed
-      top-0
-      left-0
-      z-20
-      h-screen
-      min-h-screen
-      shadow-md
-      py-2
-      px-2
-      transition-all
-      duration-300
-      flex flex-col
-    "
+    class="fixed top-0 left-0 z-20 h-screen min-h-screen shadow-md py-2 px-2 transition-all duration-300 flex flex-col"
     :class="[
       bgColor,
       mini
@@ -147,16 +134,18 @@ const bgColor = computed(() =>
     </div>
 
     <div class="mt-5 flex-grow overflow-auto space-y-1">
-      <v-menu
-        v-for="(menu, i) in menus"
-        :classMenuParent="classMenuParent"
-        :key="i"
-        :menu="menu"
-        :mini="mini"
-        :dark="dark"
-        :bg-color="expandColor"
-        :color="color"
-      />
+      <slot>
+        <v-menu
+          v-for="(menu, i) in menus"
+          :classMenuParent="classMenuParent"
+          :key="i"
+          :menu="menu"
+          :mini="mini"
+          :dark="dark"
+          :bg-color="expandColor"
+          :color="color"
+        />
+      </slot>
     </div>
     <div class="append flex flex-col justify-center">
       <slot name="append" />
@@ -165,4 +154,3 @@ const bgColor = computed(() =>
 </template>
 
 <style scoped></style>
-
