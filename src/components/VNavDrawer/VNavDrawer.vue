@@ -169,4 +169,3 @@ const bgColor = computed(() =>
 </template>
 
 <style scoped></style>
-

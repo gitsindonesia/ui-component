@@ -1,42 +1,3 @@
-<template>
-  <div>
-    <div
-      class="
-        py-3
-        w-full
-        flex
-        justify-between
-        items-center
-        px-4
-        gap-x-4
-        transition
-        duration-300
-        group
-        cursor-pointer
-        font-bold
-      "
-      :class="[activatorClass, isOpen ? activeClass : inactiveClass]"
-      @click="toggle"
-    >
-      <slot name="header">
-        {{ title }}
-      </slot>
-
-      <slot name="icon">
-        <ChevronDownIcon
-          class="w-5 h-5"
-          :class="[isOpen ? 'transform rotate-180' : '']"
-        />
-      </slot>
-    </div>
-    <v-collapse :show="isOpen">
-      <div :class="panelClass">
-        <slot />
-      </div>
-    </v-collapse>
-  </div>
-</template>
-
 <script setup lang="ts">
 import {ref, watch, toRefs} from 'vue';
 import {ChevronDownIcon} from '@heroicons/vue/outline';
@@ -83,19 +44,15 @@ const props = defineProps({
 
 const {
   modelValue,
-  defaultOpen,
   title,
-  headerClass,
   activeClass,
-  wrapperClass,
   inactiveClass,
   activatorClass,
   panelClass,
 } = toRefs(props);
 
-const emit = defineEmits(['update:modelValue']);
+const emit = defineEmits(['update:modelValue', 'change']);
 
-const panel = ref(null);
 const isOpen = ref(modelValue.value);
 
 const toggle = () => (isOpen.value = !isOpen.value);
@@ -103,6 +60,7 @@ const toggle = () => (isOpen.value = !isOpen.value);
 watch(
   modelValue,
   (value) => {
+    console.log({value});
     isOpen.value = value;
   },
   {immediate: true},
@@ -110,7 +68,34 @@ watch(
 
 watch(isOpen, (value) => {
   emit('update:modelValue', value);
+  emit('change', value);
 });
 </script>
 
 <style scoped></style>
+
+<template>
+  <div>
+    <div
+      class="py-3 w-full flex justify-between items-center px-4 gap-x-4 transition duration-300 group cursor-pointer font-bold"
+      :class="[activatorClass, isOpen ? activeClass : inactiveClass]"
+      @click="toggle"
+    >
+      <slot name="header">
+        {{ title }}
+      </slot>
+
+      <slot name="icon">
+        <ChevronDownIcon
+          class="w-5 h-5"
+          :class="[isOpen ? 'transform rotate-180' : '']"
+        />
+      </slot>
+    </div>
+    <v-collapse :show="isOpen">
+      <div :class="panelClass">
+        <slot />
+      </div>
+    </v-collapse>
+  </div>
+</template>

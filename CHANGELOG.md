@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.0](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.0.34...v0.1.0) (2021-12-21)
+
+
+### Features
+
+* ignore storybook-static folder ([670c642](https://git.gits.id/frontend/starter/vue-3/ui/commit/670c64269c9d4a251ba4faff1e4e5d9b9ab0cac5))
+* **VCollapsibleGroup:** new `VCollapsibleGroup` component ([324e7da](https://git.gits.id/frontend/starter/vue-3/ui/commit/324e7dace75bc03e8a28efa11d50986b9caa8181))
+
+### [0.0.34](https://git.gits.id/prodia/doctor/doctor-cms/compare/v0.0.33...v0.0.34) (2021-12-20)
+
+
+### Features
+
+* **nav-drawer:** add default slot ([4fa5d5f](https://git.gits.id/prodia/doctor/doctor-cms/commit/4fa5d5fad8b8be4f593a415dc219feed869c52c2))
+* **vmenu:** background color ([a85d1ab](https://git.gits.id/prodia/doctor/doctor-cms/commit/a85d1abe1ddc036eb7ca6133ec05af393e3566a8))
+
+
+### Bug Fixes
+
+* click outside menu select ([6d5dc86](https://git.gits.id/prodia/doctor/doctor-cms/commit/6d5dc862010072817dca31b7ab9b32645a309363))
+* hover primary color ([1eca80f](https://git.gits.id/prodia/doctor/doctor-cms/commit/1eca80f4fc4fb300b1ab7b38883fc3fb5473fe7e))
+* hover primary color ([3474d9b](https://git.gits.id/prodia/doctor/doctor-cms/commit/3474d9b768b1c25a4444123f1840fe54e3a4390a))
+
 ### [0.0.33](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.0.32...v0.0.33) (2021-12-16)
 
 
