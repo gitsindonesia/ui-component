@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.0](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.0.34...v0.1.0) (2021-12-21)
+
+
+### Features
+
+* ignore storybook-static folder ([670c642](https://git.gits.id/frontend/starter/vue-3/ui/commit/670c64269c9d4a251ba4faff1e4e5d9b9ab0cac5))
+* **VCollapsibleGroup:** new `VCollapsibleGroup` component ([324e7da](https://git.gits.id/frontend/starter/vue-3/ui/commit/324e7dace75bc03e8a28efa11d50986b9caa8181))
+
 ### [0.0.34](https://git.gits.id/prodia/doctor/doctor-cms/compare/v0.0.33...v0.0.34) (2021-12-20)
 
 
