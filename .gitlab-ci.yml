@@ -1,5 +1,6 @@
 stages:
     - analyze
+    - release
 
 analyze:sonar:
   stage: analyze
@@ -20,3 +21,23 @@ analyze:sonar:
     - main
   tags:
     - nginx-proxy-sonar
+
+.release:
+  stage: release
+  only:
+    - main
+  variables:
+    GITLAB_AUTH_TOKEN: $CI_JOB_TOKEN
+  tags:
+    - gits-dev-mars
+  when: manual
+
+release:patch:
+  extends: .release
+  script:
+    - npm run release -- --release-as patch
+    
+release:minor:
+  extends: .release
+  script:
+    - npm run release -- --release-as minor
