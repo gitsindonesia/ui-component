@@ -1,3 +1,6 @@
+
+image: node:14.17.5-alpine
+
 stages:
     - analyze
     - release
