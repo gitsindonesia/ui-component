@@ -11,6 +11,7 @@ import {ChevronRightIcon} from '@heroicons/vue/outline';
 import VMenuTooltip from './VMenuTooltip.vue';
 import VMenuItem from './VMenuItem.vue';
 import {useRouter} from 'vue-router';
+import {number} from 'yup/lib/locale';
 
 const props = defineProps({
   menu: {
@@ -48,7 +49,6 @@ const props = defineProps({
 });
 
 const router = useRouter();
-const emit = defineEmits([]);
 
 const {menu, mini, dark, classMenuParent} = toRefs(props);
 
@@ -184,7 +184,9 @@ const isActive = (path: any) => {
         relative
       "
       :class="[
-        isActive(menu) ? 'text-primary-600 hover:bg-gray-100' : textColor,
+        isActive(menu)
+          ? `${menuItemColor} text-white fill-white hover:bg-gray-300`
+          : textColor,
         mini ? 'justify-start sm:justify-center' : '',
       ]"
     >
