@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.1.0...v0.1.1) (2021-12-23)
+
+
+### Features
+
+* add release ci ([fc8af9b](https://git.gits.id/frontend/starter/vue-3/ui/commit/fc8af9bf8b454d6fb1f2f3224f90a3b25969bd59))
+* **vnavdrawer:** add slot menus ([2bafd7b](https://git.gits.id/frontend/starter/vue-3/ui/commit/2bafd7bac2031d58c10b595f259df42e43b5d238))
+
+
+### Bug Fixes
+
+* **vbtn:** wordwarp button ([c7f8d05](https://git.gits.id/frontend/starter/vue-3/ui/commit/c7f8d052de316ebadf0518ee35c0e4a741fa3f9f))
+* **vmenu:** add sigle menus style ([fd9a82d](https://git.gits.id/frontend/starter/vue-3/ui/commit/fd9a82d83735beb8dba5011b1cfc51d16a256d82))
+* **vmenu:** remove accordion ([f9bbc54](https://git.gits.id/frontend/starter/vue-3/ui/commit/f9bbc541538112a6e54fa144a9a1cf01231a30bd))
+
 ## [0.1.0](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.0.34...v0.1.0) (2021-12-21)
 
 
