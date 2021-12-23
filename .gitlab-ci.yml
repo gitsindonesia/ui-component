@@ -36,8 +36,11 @@ release:patch:
   extends: .release
   script:
     - npm run release -- --release-as patch
+    - git push --follow-tags origin main && npm publish
     
 release:minor:
   extends: .release
   script:
     - npm run release -- --release-as minor
+    - git push --follow-tags origin main && npm publish
+
