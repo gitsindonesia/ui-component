@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.0.32...v0.1.2) (2021-12-24)
+
+
+### Features
+
+* add publish script ([b896640](https://git.gits.id/frontend/starter/vue-3/ui/commit/b896640b97b6056c86ac9a05474a35a81ab0fc95))
+* add release ci ([fc8af9b](https://git.gits.id/frontend/starter/vue-3/ui/commit/fc8af9bf8b454d6fb1f2f3224f90a3b25969bd59))
+* add some props for adjustment ui ([c50ce33](https://git.gits.id/frontend/starter/vue-3/ui/commit/c50ce331be510ddc4c0e517cd2a0aafc16200bb3))
+* ignore storybook-static folder ([670c642](https://git.gits.id/frontend/starter/vue-3/ui/commit/670c64269c9d4a251ba4faff1e4e5d9b9ab0cac5))
+* **nav-drawer:** add default slot ([4fa5d5f](https://git.gits.id/frontend/starter/vue-3/ui/commit/4fa5d5fad8b8be4f593a415dc219feed869c52c2))
+* **VCollapsibleGroup:** new `VCollapsibleGroup` component ([324e7da](https://git.gits.id/frontend/starter/vue-3/ui/commit/324e7dace75bc03e8a28efa11d50986b9caa8181))
+* **vmenu:** background color ([a85d1ab](https://git.gits.id/frontend/starter/vue-3/ui/commit/a85d1abe1ddc036eb7ca6133ec05af393e3566a8))
+* **vnavdrawer:** add slot menus ([2bafd7b](https://git.gits.id/frontend/starter/vue-3/ui/commit/2bafd7bac2031d58c10b595f259df42e43b5d238))
+
+
+### Bug Fixes
+
+* click outside menu select ([6d5dc86](https://git.gits.id/frontend/starter/vue-3/ui/commit/6d5dc862010072817dca31b7ab9b32645a309363))
+* conflict ([298acd0](https://git.gits.id/frontend/starter/vue-3/ui/commit/298acd0f36375f7251f2558c1263d08687b9d34a))
+* hover primary color ([1eca80f](https://git.gits.id/frontend/starter/vue-3/ui/commit/1eca80f4fc4fb300b1ab7b38883fc3fb5473fe7e))
+* hover primary color ([3474d9b](https://git.gits.id/frontend/starter/vue-3/ui/commit/3474d9b768b1c25a4444123f1840fe54e3a4390a))
+* style button ([877890a](https://git.gits.id/frontend/starter/vue-3/ui/commit/877890a6b84530c222ed6b628b3771f3d746cf4f))
+* **vbtn:** wordwarp button ([c7f8d05](https://git.gits.id/frontend/starter/vue-3/ui/commit/c7f8d052de316ebadf0518ee35c0e4a741fa3f9f))
+* **vmenu:** add sigle menus style ([fd9a82d](https://git.gits.id/frontend/starter/vue-3/ui/commit/fd9a82d83735beb8dba5011b1cfc51d16a256d82))
+* **vmenu:** remove accordion ([f9bbc54](https://git.gits.id/frontend/starter/vue-3/ui/commit/f9bbc541538112a6e54fa144a9a1cf01231a30bd))
+
 ### [0.1.1](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.1.0...v0.1.1) (2021-12-23)
 
 
