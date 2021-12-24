@@ -265,7 +265,7 @@ const spinnerColor = computed(() => {
 <template>
   <component
     :is="computedComponent"
-    class="btn whitespace-nowrap"
+    class="btn inline-flex items-center justify-center"
     :class="classes"
     :rel="newTab ? 'noopener' : ''"
     :target="newTab ? '_blank' : ''"
