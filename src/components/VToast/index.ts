@@ -1,3 +1,2 @@
-export * from './composition';
-export * from './module';
+export * from './toast.store';
 export * from './VToast';
