@@ -1,39 +1,43 @@
 import {defineStore} from 'pinia';
 import type {VToastProps} from './VToast';
 
-export interface ToastState {
-  show: boolean;
-  message: string;
-  options: VToastProps;
-}
-
-export const useToast = defineStore<'toast', ToastState>('toast', {
+export const useToast = defineStore('toast', {
   state: () => ({
-    show: false,
+    isOpen: false,
     message: '',
     options: {
       color: 'black',
       timeout: 3000,
     },
   }),
-  getters: {
-    message: (state) => state.message,
-    show: (state) => state.show,
-    options: (state) => state.options,
-  },
+  getters: {},
   actions: {
-    show({message, options}: {message: string; options: VToastProps}) {
+    show(message: string, options?: Partial<VToastProps>) {
       this.message = message;
-      this.show = true;
+      this.isOpen = true;
       this.options = {...this.options, ...options};
     },
-    reset() {
-      this.show = false;
-      this.message = '';
-      this.options = {
-        color: 'black',
-        timeout: 3000,
-      };
+    confirm(message: string, options?: Partial<VToastProps>) {
+      return this.show(message, {
+        type: 'question',
+        actions: true,
+        confirm: true,
+        placement: 'center',
+        hideXIcon: true,
+        overlay: true,
+        timeout: 0,
+        color: '',
+        persistent: true,
+        ...options,
+      });
+    },
+    confirmDelete(message: string, options?: Partial<VToastProps>) {
+      return this.confirm(message, {
+        confirmColor: 'error',
+        confirmText: 'Delete',
+        closeText: 'Cancel',
+        ...options,
+      });
     },
   },
 });
