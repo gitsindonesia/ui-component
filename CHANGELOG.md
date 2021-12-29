@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.5](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.1.2...v0.1.5) (2021-12-29)
+
+
+### Features
+
+* revert toastModule ([892c75a](https://git.gits.id/frontend/starter/vue-3/ui/commit/892c75aeffc4ac7b20fc477db6fd01288a8831ce))
+* **v-toast:** added back confirm and confirmDelete actions ([aa99665](https://git.gits.id/frontend/starter/vue-3/ui/commit/aa9966584362f1e664707df4325302dd38a181a1))
+
+
+### Bug Fixes
+
+* validasi placeholder v-multi-select ([0707be1](https://git.gits.id/frontend/starter/vue-3/ui/commit/0707be16695c6389d19ee09fbaf897b03f45a3f7))
+* validasi preview url ([dc018a9](https://git.gits.id/frontend/starter/vue-3/ui/commit/dc018a969c81378b3113723bf57c146ab9f20f45))
+
 ### [0.1.4](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.1.3...v0.1.4) (2021-12-29)
 
 
