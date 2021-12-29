@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.1.2...v0.1.3) (2021-12-29)
+
+
+### Features
+
+* **v-toast:** added back confirm and confirmDelete actions ([aa99665](https://git.gits.id/frontend/starter/vue-3/ui/commit/aa9966584362f1e664707df4325302dd38a181a1))
+
+
+### Bug Fixes
+
+* validasi preview url ([dc018a9](https://git.gits.id/frontend/starter/vue-3/ui/commit/dc018a969c81378b3113723bf57c146ab9f20f45))
+
 ### [0.1.2](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.0.32...v0.1.2) (2021-12-24)
 
 
