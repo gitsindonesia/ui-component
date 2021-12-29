@@ -1,7 +1,7 @@
 import {defineStore} from 'pinia';
 import type {VToastProps} from './VToast';
 
-export const useToast = defineStore('toast', {
+export const useToastStore = defineStore('toast', {
   state: () => ({
     isOpen: false,
     message: '',
