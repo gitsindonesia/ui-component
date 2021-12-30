@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.6](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.1.5...v0.1.6) (2021-12-30)
+
+
+### Bug Fixes
+
+* disabled class vbtn ([8785346](https://git.gits.id/frontend/starter/vue-3/ui/commit/8785346ec1c71e715b7288ae67e15ff40582013b))
+* item not found ketika itemsPerPage change ([9ef48e8](https://git.gits.id/frontend/starter/vue-3/ui/commit/9ef48e8902da5e602e12776f6c1ca01d54bd0f59))
+
 ### [0.1.5](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.1.2...v0.1.5) (2021-12-29)
 
 
