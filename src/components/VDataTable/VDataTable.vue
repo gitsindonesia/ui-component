@@ -278,6 +278,7 @@ watch(page, (val) => {
 watch(perPage, (val) => {
   emit('itemsPerPage:change', val);
   onPaginationChange({itemsPerPage: val});
+  page.value = 1;
 });
 
 watch(paginationPage, (val) => {
