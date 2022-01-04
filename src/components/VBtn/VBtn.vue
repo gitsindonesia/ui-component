@@ -190,7 +190,7 @@ const colorClass = computed(() => {
 });
 
 const disabledClass = computed(() =>
-  loading
+  !disabled
     ? ''
     : 'disabled:cursor-not-allowed disabled:text-gray-400 disabled:bg-gray-200 disabled:border-gray-200 disabled:shadow-none',
 );
