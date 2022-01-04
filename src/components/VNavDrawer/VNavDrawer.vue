@@ -52,16 +52,35 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  expandHover: {
+    type: Boolean,
+    default: false,
+  },
+  isExpandHover: {
+    type: Boolean,
+    default: false,
+  }
 });
 
-const {mini, menus, logoProps, dark, color, hideToggle, classMenuParent} =
+const {mini, menus, logoProps, dark, color, hideToggle, classMenuParent, expandHover, isExpandHover} =
   toRefs(props);
 
-const emit = defineEmits(['update:modelValue', 'update:mini', 'toggle:click']);
+const emit = defineEmits(['update:modelValue', 'update:mini', 'toggle:click', 'update:expandHover']);
 
 const toggleMenu = () => {
   emit('toggle:click');
   emit('update:mini', !mini.value);
+};
+
+const mouseOver = () => {
+  if (isExpandHover.value) {
+    emit('update:expandHover', true);
+  }
+};
+const mouseOverLeave = () => {
+  if (isExpandHover.value) {
+    emit('update:expandHover', false);
+  }
 };
 
 const bgColor = computed(() =>
@@ -89,6 +108,8 @@ const bgColor = computed(() =>
   </transition>
 
   <div
+    @mouseover="mouseOver"
+    @mouseleave="mouseOverLeave"
     class="
       fixed
       top-0
@@ -108,6 +129,7 @@ const bgColor = computed(() =>
       mini
         ? 'w-10/12 sm:w-[85px]'
         : 'transform -translate-x-full sm:transform-none sm:w-[260px]',
+      expandHover ? 'hover:sm:w-[260px]' : '',
     ]"
   >
     <div class="hidden sm:block">
@@ -130,7 +152,7 @@ const bgColor = computed(() =>
           </v-btn>
         </slot>
       </template>
-      <template v-if="mini">
+      <template v-if="mini && !expandHover">
         <slot name="logo.mini" />
       </template>
       <slot v-else name="logo">
@@ -154,6 +176,7 @@ const bgColor = computed(() =>
           :key="i"
           :menu="menu"
           :mini="mini"
+          :expandHover="expandHover"
           :dark="dark"
           :bg-color="expandColor"
           :color="color"
