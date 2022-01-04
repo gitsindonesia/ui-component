@@ -22,6 +22,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  expandHover: {
+    type: Boolean,
+    default: false,
+  },
   dark: {
     type: Boolean,
     default: false,
@@ -50,7 +54,7 @@ const props = defineProps({
 
 const router = useRouter();
 
-const {menu, mini, dark, classMenuParent} = toRefs(props);
+const {menu, mini, dark, classMenuParent, expandHover} = toRefs(props);
 
 const panel = ref<HTMLDivElement | null>(null);
 
@@ -104,7 +108,7 @@ const isActive = (path: any) => {
           class="py-3 w-full flex items-center px-2 gap-x-2 rounded"
           :class="[
             openClass(open),
-            mini ? 'justify-center' : '',
+            mini && !expandHover ? 'justify-center' : '',
             open ? menuItemBgColor : '',
           ]"
         >
@@ -125,7 +129,7 @@ const isActive = (path: any) => {
           <span
             :title="menu.text"
             class="text-sm flex-grow text-left truncate"
-            :class="{'sm:hidden': mini}"
+            :class="{'sm:hidden': mini && !expandHover}"
           >
             {{ menu.text }}
           </span>
@@ -134,11 +138,11 @@ const isActive = (path: any) => {
             class="w-5 h-5"
             :class="[
               open ? 'transform rotate-90' : '',
-              mini ? 'inline sm:hidden' : '',
+              mini && !expandHover ? 'inline sm:hidden' : '',
             ]"
           />
 
-          <v-menu-tooltip :show="mini">
+          <v-menu-tooltip :show="mini && !expandHover">
             {{ menu.text }}
           </v-menu-tooltip>
         </div>
@@ -154,6 +158,7 @@ const isActive = (path: any) => {
           :key="j"
           :item="child"
           :mini="mini"
+          :expandHover="expandHover"
           :dark="dark"
           :text-color="
             isActive(child)
@@ -187,14 +192,16 @@ const isActive = (path: any) => {
         isActive(menu)
           ? `${menuItemColor} text-white fill-white hover:bg-gray-300`
           : textColor,
-        mini ? 'justify-start sm:justify-center' : '',
+        mini && !expandHover ? 'justify-start sm:justify-center' : '',
       ]"
     >
       <img v-if="menu.img" :src="menu.img" alt="img icon" class="w-5 h-5" />
       <component :is="menu.icon" v-else-if="menu.icon" class="w-5 h-5" />
-      <span :class="{'sm:hidden': mini}"> {{ menu.text }}</span>
+      <span :class="{'sm:hidden': mini && !expandHover}">
+       {{ menu.text }}
+      </span>
 
-      <v-menu-tooltip :show="mini">
+      <v-menu-tooltip :show="mini && !expandHover">
         {{ menu.text }}
       </v-menu-tooltip>
     </router-link>

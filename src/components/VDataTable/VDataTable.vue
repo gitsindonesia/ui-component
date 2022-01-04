@@ -210,6 +210,7 @@ const computedHeaders = computed(() =>
 
 const getThClass = (header: VDataTableHeader) => {
   const isActive = header.sorting && sortBy.value === header.value;
+  const positionFreeze = header.positionFreeze === 'right' ? 'right-0' : 'left-0';
   return [
     isActive
       ? 'text-primary-500 hover:text-primary-600'
@@ -217,13 +218,18 @@ const getThClass = (header: VDataTableHeader) => {
     {
       [`text-${header.align}`]: !!header.align,
     },
+    header.freeze ? `sticky ${positionFreeze} bg-gray-50 drop-shadow-lg` : '', 
   ];
 };
 
 const getTdClass = (header: VDataTableHeader) => {
-  return {
-    [`text-${header.align}`]: !!header.align,
-  };
+  const positionFreeze = header.positionFreeze === 'right' ? 'right-0' : 'left-0';
+  return [
+    {
+      [`text-${header.align}`]: !!header.align,
+    },
+    header.freeze ? `sticky ${positionFreeze} bg-white drop-shadow-lg` : '',
+  ];
 };
 
 const handleSort = (header: VDataTableHeader) => {
