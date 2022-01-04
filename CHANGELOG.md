@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.7](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.1.6...v0.1.7) (2022-01-04)
+
+
+### Features
+
+* add expand hover when sidebar mini ([b6371ef](https://git.gits.id/frontend/starter/vue-3/ui/commit/b6371efd2057299836ff52eceb77f51fce8a61f7))
+* add freeze table ([10a191f](https://git.gits.id/frontend/starter/vue-3/ui/commit/10a191fb715558bcaa0efc84e920375d4d37641f))
+
 ### [0.1.6](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.1.5...v0.1.6) (2021-12-30)
 
 
