@@ -141,6 +141,14 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  customSize: {
+    type: String,
+    default: 'w-full sm:w-[180px] h-[180px]',
+  },
+  customLayout: {
+    type: String,
+    default: '',
+  },
 });
 
 const emit = defineEmits([
@@ -161,11 +169,10 @@ const {
   readonly,
   disabled,
   multiple,
+  customSize,
 } = toRefs(props);
 
-const sizeClass = computed(() =>
-  props.full ? 'w-full' : 'w-full sm:w-[180px] h-[180px]',
-);
+const sizeClass = computed(() => (props.full ? 'w-full' : customSize.value));
 
 const innerValue = ref<FileValue>(null);
 const fileRef = ref<HTMLInputElement | null>(null);
@@ -361,343 +368,344 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div v-if="theme === 'button'" class="flex gap-2">
-    <div v-if="hasFile" class="flex gap-2 items-center">
+  <div :class="customLayout">
+    <div v-if="theme === 'button'" class="flex gap-2">
+      <div v-if="hasFile" class="flex gap-2 items-center">
+        <div
+          class="
+            px-4
+            py-2
+            truncate
+            text-center
+            border
+            rounded
+            hover:border-gray-400
+          "
+          :class="[disabledClass]"
+          @click="pickFile"
+        >
+          {{ fileName }}
+        </div>
+        <v-btn
+          v-if="readonly"
+          :href="fileURL"
+          target="_blank"
+          tag="a"
+          class="whitespace-nowrap"
+          small
+          color="primary"
+        >
+          {{ viewFileText }}
+        </v-btn>
+
+        <div
+          v-if="!hasFile && !hidePlaceholder"
+          class="text-sm mt-1 text-gray-500"
+        >
+          {{ placeholder }}
+        </div>
+      </div>
+      <div class="flex gap-2 items-center">
+        <VBtn
+          uppercase
+          outlined
+          type="button"
+          color="primary"
+          class="line-clamp"
+          :disabled="readonly || disabled"
+          @click="pickFile"
+        >
+          <template v-if="!hasFile">
+            <slot name="icon.plus">
+              <PlusIcon class="w-5 h-5 mr-2" />
+            </slot>
+          </template>
+          <template v-if="hasFile">
+            <slot name="icon.plus">
+              <PlusIcon class="w-5 h-5 mr-2" />
+            </slot>
+          </template>
+
+          {{ hasFile ? changeText : browseText }}
+        </VBtn>
+
+        <VBtn
+          v-if="hasFile"
+          small
+          dense
+          outlined
+          type="button"
+          color="error"
+          class="space-x-2"
+          :disabled="readonly || disabled"
+          @click="removeFile"
+        >
+          <slot name="icon.trash">
+            <TrashIcon class="w-5 h-5" />
+          </slot>
+          <span>{{ removeText }}</span>
+        </VBtn>
+      </div>
+    </div>
+
+    <div v-else-if="theme === 'image'">
       <div
         class="
-          px-4
-          py-2
-          truncate
-          text-center
+          transition
+          duration-300
           border
-          rounded
-          hover:border-gray-400
+          cursor-pointer
+          hover:bg-lime-50 hover:border-primary-600
+          flex flex-col
+          items-center
+          justify-center
+          border-gray-200
+          py-10
+          bg-no-repeat bg-contain bg-center
+          max-w-full
         "
-        :class="[disabledClass]"
+        :class="[sizeClass, {'rounded-10': rounded}]"
+        :style="{
+          backgroundImage: image && !loading ? `url(${previewURL})` : 'none',
+        }"
         @click="pickFile"
       >
-        {{ fileName }}
-      </div>
-      <v-btn
-        v-if="readonly"
-        :href="fileURL"
-        target="_blank"
-        tag="a"
-        class="whitespace-nowrap"
-        small
-        color="primary"
-      >
-        {{ viewFileText }}
-      </v-btn>
-
-      <div
-        v-if="!hasFile && !hidePlaceholder"
-        class="text-sm mt-1 text-gray-500"
-      >
-        {{ placeholder }}
-      </div>
-    </div>
-    <div class="flex gap-2 items-center">
-      <VBtn
-        uppercase
-        outlined
-        type="button"
-        color="primary"
-        class="line-clamp"
-        :disabled="readonly || disabled"
-        @click="pickFile"
-      >
-        <template v-if="!hasFile">
-          <slot name="icon.plus">
-            <PlusIcon class="w-5 h-5 mr-2" />
-          </slot>
-        </template>
-        <template v-if="hasFile">
-          <slot name="icon.plus">
-            <PlusIcon class="w-5 h-5 mr-2" />
-          </slot>
-        </template>
-
-        {{ hasFile ? changeText : browseText }}
-      </VBtn>
-
-      <VBtn
-        v-if="hasFile"
-        small
-        dense
-        outlined
-        type="button"
-        color="error"
-        class="space-x-2"
-        :disabled="readonly || disabled"
-        @click="removeFile"
-      >
-        <slot name="icon.trash">
-          <TrashIcon class="w-5 h-5" />
-        </slot>
-        <span>{{ removeText }}</span>
-      </VBtn>
-    </div>
-  </div>
-
-  <div v-else-if="theme === 'image'">
-    <div
-      class="
-        transition
-        duration-300
-        border
-        cursor-pointer
-        hover:bg-lime-50 hover:border-primary-600
-        flex flex-col
-        items-center
-        justify-center
-        border-gray-200
-        py-10
-        bg-no-repeat bg-contain bg-center
-        h-[180px]
-        max-w-full
-      "
-      :class="[sizeClass, {'rounded-10': rounded}]"
-      :style="{
-        backgroundImage: image && !loading ? `url(${previewURL})` : 'none',
-      }"
-      @click="pickFile"
-    >
-      <v-spinner v-if="loading" color="primary" large />
-      <div v-else-if="hasFile" class="px-2 text-center">
-        {{ image ? '' : fileName }}
-      </div>
-      <template v-else>
-        <CameraIcon class="w-10 h-10 text-gray-500 mb-1" />
-        <div class="uppercase text-gray-500">
-          {{ loading ? loadingText : browseText }}
+        <v-spinner v-if="loading" color="primary" large />
+        <div v-else-if="hasFile" class="px-2 text-center">
+          {{ image ? '' : fileName }}
         </div>
-      </template>
-    </div>
-  </div>
-
-  <template v-else-if="theme === 'dropzone'">
-    <div
-      class="flex justify-center items-center p-4 rounded-md"
-      :class="[
-        dropzoneId,
-        readonly ? 'border' : 'border-2 border-gray-300 border-dashed',
-      ]"
-    >
-      <div v-if="hasFile" class="text-center flex flex-col gap-4">
-        <slot
-          name="dropzone.preview"
-          :value="innerValue"
-          :file-name="fileName"
-          :has-file="hasFile"
-        >
-          <div class="flex flex-col gap-4">
-            <div
-              v-if="image || preview"
-              class="
-                w-60
-                h-40
-                flex
-                bg-contain bg-gray-100
-                mx-auto
-                rounded-lg
-                bg-no-repeat bg-center
-              "
-              :class="previewClass"
-              :style="{
-                backgroundImage: !loading ? `url(${previewURL})` : 'none',
-              }"
-            ></div>
-            <div v-if="fileName" class="text-gray-500 text-sm">
-              {{ fileName }}
-            </div>
+        <template v-else>
+          <CameraIcon class="w-10 h-10 text-gray-500 mb-1" />
+          <div class="uppercase text-gray-500">
+            {{ loading ? loadingText : browseText }}
           </div>
-        </slot>
-
-        <div v-if="!readonly && !disabled" class="space-x-3">
-          <label
-            for="file-upload"
-            class="
-              relative
-              cursor-pointer
-              bg-white
-              rounded-md
-              font-medium
-              text-primary-600
-              hover:text-primary-500
-              focus-within:outline-none
-              focus-within:ring-2
-              focus-within:ring-offset-2
-              focus-within:ring-primary-500
-            "
-            @click="pickFile"
-          >
-            <span>{{ changeText }} </span>
-          </label>
-
-          <label
-            class="
-              relative
-              cursor-pointer
-              bg-white
-              rounded-md
-              font-medium
-              text-error-600
-              hover:text-error-500
-              focus-within:outline-none
-              focus-within:ring-2
-              focus-within:ring-offset-2
-              focus-within:ring-error-500
-            "
-            @click="removeFile"
-          >
-            <span>{{ removeText }} </span>
-          </label>
-        </div>
-      </div>
-
-      <div v-else class="space-y-1 text-center">
-        <slot name="dropzone.image">
-          <svg
-            class="mx-auto h-12 w-12 text-gray-400"
-            stroke="currentColor"
-            fill="none"
-            viewBox="0 0 48 48"
-            aria-hidden="true"
-          >
-            <path
-              d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </slot>
-        <div class="flex text-sm text-gray-600">
-          <label
-            for="file-upload"
-            class="
-              relative
-              cursor-pointer
-              bg-white
-              rounded-md
-              font-medium
-              text-primary-600
-              hover:text-primary-500
-              focus-within:outline-none
-              focus-within:ring-2
-              focus-within:ring-offset-2
-              focus-within:ring-primary-500
-            "
-            @click="pickFile"
-          >
-            <span>{{ uploadText }} </span>
-          </label>
-          <p class="pl-1">{{ dragText }}</p>
-        </div>
-        <p class="text-xs text-gray-500">{{ hint }}</p>
+        </template>
       </div>
     </div>
-  </template>
 
-  <div v-else>
-    <v-input
-      :model-value="fileName"
-      :placeholder="!hidePlaceholder ? placeholder : ''"
-      readonly
-      @click="pickFile"
-    >
-      <template #append>
-        <div class="p-0.5 flex gap-1">
-          <VBtn
-            :disabled="readonly || disabled"
-            small
-            dense
-            type="button"
-            @click="pickFile"
+    <template v-else-if="theme === 'dropzone'">
+      <div
+        class="flex justify-center items-center p-4 rounded-md"
+        :class="[
+          dropzoneId,
+          readonly ? 'border' : 'border-2 border-gray-300 border-dashed',
+        ]"
+      >
+        <div v-if="hasFile" class="text-center flex flex-col gap-4">
+          <slot
+            name="dropzone.preview"
+            :value="innerValue"
+            :file-name="fileName"
+            :has-file="hasFile"
           >
-            {{ hasFile ? changeText : browseText }}
-          </VBtn>
-          <VBtn
-            v-if="hasFile"
-            small
-            dense
-            type="button"
-            color="error"
-            outlined
-            :disabled="readonly || disabled"
-            @click="removeFile"
-          >
-            {{ removeText }}
-          </VBtn>
+            <div class="flex flex-col gap-4">
+              <div
+                v-if="image || preview"
+                class="
+                  w-60
+                  h-40
+                  flex
+                  bg-contain bg-gray-100
+                  mx-auto
+                  rounded-lg
+                  bg-no-repeat bg-center
+                "
+                :class="previewClass"
+                :style="{
+                  backgroundImage: !loading ? `url(${previewURL})` : 'none',
+                }"
+              ></div>
+              <div v-if="fileName" class="text-gray-500 text-sm">
+                {{ fileName }}
+              </div>
+            </div>
+          </slot>
+
+          <div v-if="!readonly && !disabled" class="space-x-3">
+            <label
+              for="file-upload"
+              class="
+                relative
+                cursor-pointer
+                bg-white
+                rounded-md
+                font-medium
+                text-primary-600
+                hover:text-primary-500
+                focus-within:outline-none
+                focus-within:ring-2
+                focus-within:ring-offset-2
+                focus-within:ring-primary-500
+              "
+              @click="pickFile"
+            >
+              <span>{{ changeText }} </span>
+            </label>
+
+            <label
+              class="
+                relative
+                cursor-pointer
+                bg-white
+                rounded-md
+                font-medium
+                text-error-600
+                hover:text-error-500
+                focus-within:outline-none
+                focus-within:ring-2
+                focus-within:ring-offset-2
+                focus-within:ring-error-500
+              "
+              @click="removeFile"
+            >
+              <span>{{ removeText }} </span>
+            </label>
+          </div>
         </div>
-      </template>
-    </v-input>
-  </div>
 
-  <input
-    :id="id"
-    ref="fileRef"
-    style="display: none"
-    type="file"
-    :readonly="readonly"
-    :accept="acceptedTypes"
-    v-bind="inputAttrs"
-    @change="onFileChanged"
-  />
+        <div v-else class="space-y-1 text-center">
+          <slot name="dropzone.image">
+            <svg
+              class="mx-auto h-12 w-12 text-gray-400"
+              stroke="currentColor"
+              fill="none"
+              viewBox="0 0 48 48"
+              aria-hidden="true"
+            >
+              <path
+                d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </slot>
+          <div class="flex text-sm text-gray-600">
+            <label
+              for="file-upload"
+              class="
+                relative
+                cursor-pointer
+                bg-white
+                rounded-md
+                font-medium
+                text-primary-600
+                hover:text-primary-500
+                focus-within:outline-none
+                focus-within:ring-2
+                focus-within:ring-offset-2
+                focus-within:ring-primary-500
+              "
+              @click="pickFile"
+            >
+              <span>{{ uploadText }} </span>
+            </label>
+            <p class="pl-1">{{ dragText }}</p>
+          </div>
+          <p class="text-xs text-gray-500">{{ hint }}</p>
+        </div>
+      </div>
+    </template>
 
-  <div
-    v-if="hasFile && !readonly && (image || button) && !loading"
-    class="flex w-full mt-3 justify-center items-center gap-y-2 gap-x-2"
-    :class="[full || button ? 'flex-row' : 'w-full sm:w-[180px] flex-col']"
-  >
-    <div>
-      <slot name="prepend" />
-    </div>
-    <div class="flex gap-2">
-      <VBtn
-        :disabled="readonly || disabled"
-        small
-        dense
-        type="button"
+    <div v-else>
+      <v-input
+        :model-value="fileName"
+        :placeholder="!hidePlaceholder ? placeholder : ''"
+        readonly
         @click="pickFile"
       >
-        {{ changeText }}
-      </VBtn>
-      <VBtn
-        small
-        dense
-        type="button"
-        color="error"
-        :disabled="readonly || disabled"
-        @click="removeFile"
-      >
-        {{ removeText }}
-      </VBtn>
+        <template #append>
+          <div class="p-0.5 flex gap-1">
+            <VBtn
+              :disabled="readonly || disabled"
+              small
+              dense
+              type="button"
+              @click="pickFile"
+            >
+              {{ hasFile ? changeText : browseText }}
+            </VBtn>
+            <VBtn
+              v-if="hasFile"
+              small
+              dense
+              type="button"
+              color="error"
+              outlined
+              :disabled="readonly || disabled"
+              @click="removeFile"
+            >
+              {{ removeText }}
+            </VBtn>
+          </div>
+        </template>
+      </v-input>
     </div>
-    <div>
-      <slot name="append" />
-    </div>
-  </div>
 
-  <slot name="hint">
-    <div v-if="hint" class="text-xs mt-2 text-black">
-      {{ hint }}
-    </div>
-  </slot>
-
-  <slot
-    name="error"
-    :error="error"
-    :error-messages="errorMessages"
-    :name="name"
-  >
-    <ErrorMessage
-      v-if="errorMessages.length"
-      class="text-error-500 text-sm"
-      :name="name"
+    <input
+      :id="id"
+      ref="fileRef"
+      style="display: none"
+      type="file"
+      :readonly="readonly"
+      :accept="acceptedTypes"
+      v-bind="inputAttrs"
+      @change="onFileChanged"
     />
-  </slot>
+
+    <div
+      v-if="hasFile && !readonly && (image || button) && !loading"
+      class="flex w-full mt-3 justify-center items-center gap-y-2 gap-x-2"
+      :class="[full || button ? 'flex-row' : 'w-full sm:w-[180px] flex-col']"
+    >
+      <div>
+        <slot name="prepend" />
+      </div>
+      <div class="flex gap-2">
+        <VBtn
+          :disabled="readonly || disabled"
+          small
+          dense
+          type="button"
+          @click="pickFile"
+        >
+          {{ changeText }}
+        </VBtn>
+        <VBtn
+          small
+          dense
+          type="button"
+          color="error"
+          :disabled="readonly || disabled"
+          @click="removeFile"
+        >
+          {{ removeText }}
+        </VBtn>
+      </div>
+      <div>
+        <slot name="append" />
+      </div>
+    </div>
+
+    <slot name="hint">
+      <div v-if="hint" class="text-xs mt-2 text-black">
+        {{ hint }}
+      </div>
+    </slot>
+
+    <slot
+      name="error"
+      :error="error"
+      :error-messages="errorMessages"
+      :name="name"
+    >
+      <ErrorMessage
+        v-if="errorMessages.length"
+        class="text-error-500 text-sm"
+        :name="name"
+      />
+    </slot>
+  </div>
 </template>
 
 <style scoped>
