@@ -11,7 +11,6 @@ import {ChevronRightIcon} from '@heroicons/vue/outline';
 import VMenuTooltip from './VMenuTooltip.vue';
 import VMenuItem from './VMenuItem.vue';
 import {useRouter} from 'vue-router';
-import {number} from 'yup/lib/locale';
 
 const props = defineProps({
   menu: {
@@ -67,7 +66,7 @@ const menuItemBgColor = computed(() => {
 
 const textColor = computed(() =>
   dark.value
-    ? 'text-gray-500 hover:bg-gray-800 hover:text-gray-200'
+    ? 'text-gray-400 hover:bg-gray-800 hover:text-gray-200'
     : 'text-gray-700 hover:bg-gray-100',
 );
 
@@ -78,7 +77,10 @@ const openClass = (isOpen: boolean) => {
   return isOpen ? `${classMenuParent.value}` : '';
 };
 
-const scrollHeight = computed(() => (panel as any).value?.el?.scrollHeight);
+const getScrollHeight = () => {
+  const scrollHeight = (panel as any).value?.el?.scrollHeight;
+  return `${scrollHeight}px`;
+};
 
 const isActive = (path: any) => {
   const currentPath = router.currentRoute.value.path;
@@ -93,15 +95,7 @@ const isActive = (path: any) => {
     <Disclosure v-if="menu.children" v-slot="{open}">
       <DisclosureButton
         v-slot="{open}"
-        class="
-          focus:outline-none
-          w-full
-          transition
-          duration-300
-          rounded
-          group
-          text-sm
-        "
+        class="focus:outline-none w-full transition duration-300 rounded group text-sm"
         :class="[textColor]"
       >
         <div
@@ -151,7 +145,7 @@ const isActive = (path: any) => {
         ref="panel"
         static
         class="duration-300 overflow-hidden transition-all h-auto"
-        :style="{maxHeight: open ? `${scrollHeight}px` : 0}"
+        :style="{maxHeight: open ? getScrollHeight() : 0}"
       >
         <v-menu-item
           v-for="(child, j) in menu.children"
@@ -160,11 +154,7 @@ const isActive = (path: any) => {
           :mini="mini"
           :expandHover="expandHover"
           :dark="dark"
-          :text-color="
-            isActive(child)
-              ? `${menuItemColor} text-white fill-white hover:bg-primary-700`
-              : textColor
-          "
+          :text-color="isActive(child) ? menuItemColor : textColor"
         />
       </DisclosurePanel>
     </Disclosure>
@@ -172,33 +162,17 @@ const isActive = (path: any) => {
       v-else
       :to="menu.to"
       exact
-      class="
-        group
-        menu-item
-        transition
-        duration-300
-        w-full
-        px-2.5
-        py-3
-        rounded
-        flex
-        w-full
-        gap-x-2
-        items-center
-        text-sm
-        relative
-      "
+      class="group menu-item transition duration-300 w-full px-2.5 py-3 rounded flex w-full gap-x-2 items-center text-sm relative"
       :class="[
-        isActive(menu)
-          ? `${menuItemColor} text-white fill-white hover:bg-gray-300`
-          : textColor,
+        dark ? 'hover:bg-gray-800' : 'hover:bg-gray-100',
+        isActive(menu) ? menuItemColor : textColor,
         mini && !expandHover ? 'justify-start sm:justify-center' : '',
       ]"
     >
       <img v-if="menu.img" :src="menu.img" alt="img icon" class="w-5 h-5" />
       <component :is="menu.icon" v-else-if="menu.icon" class="w-5 h-5" />
       <span :class="{'sm:hidden': mini && !expandHover}">
-       {{ menu.text }}
+        {{ menu.text }}
       </span>
 
       <v-menu-tooltip :show="mini && !expandHover">
