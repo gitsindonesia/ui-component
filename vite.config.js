@@ -36,13 +36,13 @@ export default defineConfig({
   optimizeDeps: {
     include: [
       'vue-remix-icons',
-      '@heroicons/vue',
       'vee-validate',
       '@headlessui/vue',
       'pagino',
       '@popperjs/core',
       'vue-feather',
       'vue-router',
+      'yup',
     ],
   },
 });
