@@ -359,6 +359,7 @@ const end = computed(() =>
               scope="col"
               class="text-left py-3 text-sm font-bold uppercase tracking-wider"
               :class="[getThClass(header), paddingClass, header.class]"
+              :width="header.width"
             >
               <slot
                 v-if="selectable && header.value === 'selected'"
