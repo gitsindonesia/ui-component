@@ -149,6 +149,10 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  hideRemove: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const emit = defineEmits([
@@ -170,6 +174,7 @@ const {
   disabled,
   multiple,
   customSize,
+  hideRemove,
 } = toRefs(props);
 
 const sizeClass = computed(() => (props.full ? 'w-full' : customSize.value));
@@ -430,7 +435,7 @@ onUnmounted(() => {
         </VBtn>
 
         <VBtn
-          v-if="hasFile"
+          v-if="hasFile && !hideRemove"
           small
           dense
           outlined
@@ -543,6 +548,7 @@ onUnmounted(() => {
             </label>
 
             <label
+              v-if="!hideRemove"
               class="
                 relative
                 cursor-pointer
@@ -626,7 +632,7 @@ onUnmounted(() => {
               {{ hasFile ? changeText : browseText }}
             </VBtn>
             <VBtn
-              v-if="hasFile"
+              v-if="hasFile && !hideRemove"
               small
               dense
               type="button"
@@ -672,6 +678,7 @@ onUnmounted(() => {
           {{ changeText }}
         </VBtn>
         <VBtn
+          v-if="!hideRemove"
           small
           dense
           type="button"
