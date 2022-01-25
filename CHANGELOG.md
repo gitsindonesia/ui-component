@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.10](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.1.9...v0.1.10) (2022-01-13)
+
+
+### Features
+
+* add hide button remove, feat: add width header ([1075bd1](https://git.gits.id/frontend/starter/vue-3/ui/commit/1075bd16fbbe61b2852ee3a3bfa48e1f4c6a5d04))
+* integrate unplugin-icons ([dd4adc6](https://git.gits.id/frontend/starter/vue-3/ui/commit/dd4adc65b90a6ae743d1e976d802bb5a543cb376))
+
 ### [0.1.9](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.1.8...v0.1.9) (2022-01-11)
 
 
