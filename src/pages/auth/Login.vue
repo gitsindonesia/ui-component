@@ -57,6 +57,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
   autocomplete: {
     type: String,
     default: 'off',
@@ -202,7 +206,7 @@ const onSubmit = (values) => {
             color="primary"
             block
             uppercase
-            :disabled="loading"
+            :disabled="loading || disabled"
             :loading="loading"
           >
             {{ loginText }}
