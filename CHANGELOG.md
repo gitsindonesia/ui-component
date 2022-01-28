@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.12](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.1.11...v0.1.12) (2022-01-28)
+
+
+### Features
+
+* **navbar:** add `small` prop ([bb36160](https://git.gits.id/frontend/starter/vue-3/ui/commit/bb3616041273c0bbec421542f4cf16b691590af3))
+* **v-menu:** add `small` prop ([0ed31e4](https://git.gits.id/frontend/starter/vue-3/ui/commit/0ed31e46de8a4f12cffbc54b2879abdc2fad48d6))
+* **v-nav-drawer:** new small prop ([fd74c23](https://git.gits.id/frontend/starter/vue-3/ui/commit/fd74c23818b14bf1b6a2d812e4743a834364ef21))
+
+
+### Bug Fixes
+
+* **vselect:** bug include ([d43986f](https://git.gits.id/frontend/starter/vue-3/ui/commit/d43986fb75395055d298a25b18cc8a39baf61ba3))
+
 ### [0.1.11](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.1.10...v0.1.11) (2022-01-25)
 
 
