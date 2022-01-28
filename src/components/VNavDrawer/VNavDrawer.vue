@@ -1,14 +1,18 @@
 <script setup lang="ts">
-import {computed, PropType, toRefs} from 'vue';
-import {XIcon} from '@heroicons/vue/outline';
-import VMenu from '../VMenu/VMenu.vue';
-import VLogo from '../VLogo/VLogo.vue';
-import {ChevronLeftIcon} from '@heroicons/vue/solid';
-import {getBgColor} from '../../utils';
-import {VNavbarMenuItem} from '../VNavbar/VNavbar';
+import { computed, PropType, toRefs } from "vue";
+import { XIcon } from "@heroicons/vue/outline";
+import VMenu from "../VMenu/VMenu.vue";
+import VLogo from "../VLogo/VLogo.vue";
+import { ChevronLeftIcon } from "@heroicons/vue/solid";
+import { getBgColor } from "../../utils";
+import { VNavbarMenuItem } from "../VNavbar/VNavbar";
 
 const props = defineProps({
   modelValue: {
+    type: Boolean,
+    default: false,
+  },
+  small: {
     type: Boolean,
     default: false,
   },
@@ -30,7 +34,7 @@ const props = defineProps({
   },
   color: {
     type: String,
-    default: '',
+    default: "",
   },
   hideToggle: {
     type: Boolean,
@@ -38,19 +42,19 @@ const props = defineProps({
   },
   btnToggleClass: {
     type: String,
-    default: '',
+    default: "",
   },
   classMenuParent: {
     type: String,
-    default: '',
+    default: "",
   },
   toggleColor: {
     type: String,
-    default: 'primary',
+    default: "primary",
   },
   expandColor: {
     type: String,
-    default: '',
+    default: "",
   },
   expandHover: {
     type: Boolean,
@@ -59,32 +63,46 @@ const props = defineProps({
   isExpandHover: {
     type: Boolean,
     default: false,
-  }
+  },
 });
 
-const {mini, menus, logoProps, dark, color, hideToggle, classMenuParent, expandHover, isExpandHover} =
-  toRefs(props);
+const {
+  mini,
+  menus,
+  logoProps,
+  dark,
+  color,
+  hideToggle,
+  classMenuParent,
+  expandHover,
+  isExpandHover,
+} = toRefs(props);
 
-const emit = defineEmits(['update:modelValue', 'update:mini', 'toggle:click', 'update:expandHover']);
+const emit = defineEmits([
+  "update:modelValue",
+  "update:mini",
+  "toggle:click",
+  "update:expandHover",
+]);
 
 const toggleMenu = () => {
-  emit('toggle:click');
-  emit('update:mini', !mini.value);
+  emit("toggle:click");
+  emit("update:mini", !mini.value);
 };
 
 const mouseOver = () => {
   if (isExpandHover.value) {
-    emit('update:expandHover', true);
+    emit("update:expandHover", true);
   }
 };
 const mouseOverLeave = () => {
   if (isExpandHover.value) {
-    emit('update:expandHover', false);
+    emit("update:expandHover", false);
   }
 };
 
 const bgColor = computed(() =>
-  getBgColor(color.value, dark.value ? 'bg-gray-900' : 'bg-white'),
+  getBgColor(color.value, dark.value ? "bg-gray-900" : "bg-white")
 );
 </script>
 
@@ -110,20 +128,7 @@ const bgColor = computed(() =>
   <div
     @mouseover="mouseOver"
     @mouseleave="mouseOverLeave"
-    class="
-      fixed
-      top-0
-      left-0
-      z-20
-      h-screen
-      min-h-screen
-      shadow-md
-      py-2
-      px-2
-      transition-all
-      duration-300
-      flex flex-col
-    "
+    class="fixed top-0 left-0 z-20 h-screen min-h-screen shadow-md py-2 px-2 transition-all duration-300 flex flex-col"
     :class="[
       bgColor,
       mini
@@ -134,7 +139,7 @@ const bgColor = computed(() =>
   >
     <div class="hidden sm:block">
       <template v-if="!hideToggle">
-        <slot name="toggle" :on="{click: toggleMenu}">
+        <slot name="toggle" :on="{ click: toggleMenu }">
           <v-btn
             size="sm"
             icon
@@ -145,10 +150,7 @@ const bgColor = computed(() =>
             :color="toggleColor"
             @click="toggleMenu"
           >
-            <ChevronLeftIcon
-              class="w-5 h-5"
-              :class="[mini ? 'rotate-180' : '']"
-            />
+            <ChevronLeftIcon class="w-5 h-5" :class="[mini ? 'rotate-180' : '']" />
           </v-btn>
         </slot>
       </template>
@@ -180,6 +182,7 @@ const bgColor = computed(() =>
           :dark="dark"
           :bg-color="expandColor"
           :color="color"
+          :small="small"
         >
         </v-menu>
       </slot>
