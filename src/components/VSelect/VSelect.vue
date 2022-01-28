@@ -125,7 +125,13 @@ const search = ref('');
 
 const filteredItems = computed(() => {
   if (searchable.value) {
-    return items.value.filter((item) => item.text.includes(search.value));
+    const query = search.value.toLowerCase();
+    return items.value.filter((item) => {
+      return (
+        item[itemText.value]?.toLowerCase()?.includes(query) ||
+        item[itemValue.value]?.toLowerCase()?.includes(query)
+      );
+    });
   } else {
     return items.value;
   }
@@ -192,35 +198,14 @@ const clear = () => (selectedItem.value = null);
     <Listbox v-model="selectedItem">
       <div class="relative">
         <ListboxButton
-          class="
-            border
-            relative
-            w-full
-            py-2
-            px-4
-            h-10
-            text-left
-            bg-white
-            rounded-md
-            shadow-sm
-            cursor-default
-            focus:outline-none
-            focus-visible:ring-2
-            focus-visible:ring-opacity-75
-            focus-visible:ring-white
-            focus-visible:ring-offset-primary-300
-            focus-visible:ring-offset-2
-            focus-visible:border-primary-600
-            sm:text-sm
-            flex
-            items-center
-            gap-1
-          "
+          class="border relative w-full py-2 px-4 h-10 text-left bg-white rounded-md shadow-sm cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-primary-300 focus-visible:ring-offset-2 focus-visible:border-primary-600 sm:text-sm flex items-center gap-1"
           :class="[btnClass, error ? 'border-error-600' : '']"
           :disabled="disabled"
         >
           <div class="block flex-grow w-full truncate mr-2">
-            {{ label }}
+            <slot name="selected" :item="selectedItem">
+              {{ label }}
+            </slot>
           </div>
           <v-tooltip v-if="selectedItem && clearable">
             <template #activator="{on}">
@@ -244,22 +229,7 @@ const clear = () => (selectedItem.value = null);
           leave-to-class="opacity-0"
         >
           <ListboxOptions
-            class="
-              absolute
-              w-full
-              py-1
-              mt-1
-              overflow-auto
-              text-base
-              bg-white
-              rounded-md
-              shadow-lg
-              max-h-60
-              ring-1 ring-black ring-opacity-5
-              focus:outline-none
-              sm:text-sm
-              z-10
-            "
+            class="absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm z-10"
             :class="top ? 'bottom-10' : ''"
           >
             <div v-if="searchable" class="px-2 border-b py-2">
@@ -269,7 +239,7 @@ const clear = () => (selectedItem.value = null);
               v-if="searchable && !filteredItems.length"
               class="px-4 pb-2 pt-3"
             >
-              No results
+              <slot name="empty"> No results </slot>
             </div>
             <ListboxOption
               v-for="(item, index) in filteredItems"
@@ -292,14 +262,18 @@ const clear = () => (selectedItem.value = null);
                     'block truncate',
                   ]"
                 >
-                  {{ item?.[itemText] }}
+                  <slot name="item" :item="item">
+                    {{ item?.[itemText] }}
+                  </slot>
                 </span>
                 <span
                   v-if="selected && !hideCheckIcon"
                   class="absolute inset-y-0 left-0 flex items-center pl-3"
                   :class="[active ? 'text-white' : 'text-gray-900']"
                 >
-                  <CheckIcon class="w-5 h-5" aria-hidden="true" />
+                  <slot name="icon">
+                    <CheckIcon class="w-5 h-5" aria-hidden="true" />
+                  </slot>
                 </span>
               </li>
             </ListboxOption>
