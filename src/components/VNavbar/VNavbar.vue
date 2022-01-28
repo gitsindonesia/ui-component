@@ -1,20 +1,20 @@
 <script setup lang="ts">
-import {computed, ref, toRefs, watch, PropType} from 'vue';
-import {
-  UserCircleIcon,
-  ChevronUpIcon,
-  ChevronDownIcon,
-} from '@heroicons/vue/solid';
-import {MenuIcon} from '@heroicons/vue/outline';
-import VBtn from '../VBtn/VBtn.vue';
-import {Disclosure, DisclosureButton, DisclosurePanel} from '@headlessui/vue';
-import VMenus from '../VMenus/VMenus.vue';
-import VLogo from '../VLogo/VLogo.vue';
-import {Menu, MenuButton, MenuItems, MenuItem} from '@headlessui/vue';
-import type {VNavbarMenuItem, VNavbarProps} from './VNavbar';
+import { computed, ref, toRefs, watch, PropType } from "vue";
+import { UserCircleIcon, ChevronUpIcon, ChevronDownIcon } from "@heroicons/vue/solid";
+import { MenuIcon } from "@heroicons/vue/outline";
+import VBtn from "../VBtn/VBtn.vue";
+import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
+import VMenus from "../VMenus/VMenus.vue";
+import VLogo from "../VLogo/VLogo.vue";
+import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
+import type { VNavbarMenuItem, VNavbarProps } from "./VNavbar";
 
 const props = defineProps({
   modelValue: {
+    type: Boolean,
+    default: false,
+  },
+  small: {
     type: Boolean,
     default: false,
   },
@@ -28,7 +28,7 @@ const props = defineProps({
   },
   loginPath: {
     type: String,
-    default: '',
+    default: "",
   },
   dense: {
     type: Boolean,
@@ -36,13 +36,13 @@ const props = defineProps({
   },
   imgClass: {
     type: String,
-    default: 'h-7',
+    default: "h-7",
   },
 });
 
-const {menus, modelValue, user, loginPath} = toRefs(props);
+const { menus, modelValue, user, loginPath } = toRefs(props);
 
-const emit = defineEmits(['update:modelValue', 'logout']);
+const emit = defineEmits(["update:modelValue", "logout"]);
 
 const isOpen = ref(props.modelValue);
 
@@ -51,19 +51,19 @@ watch(
   (value) => {
     isOpen.value = value;
   },
-  {immediate: true},
+  { immediate: true }
 );
 
 const toggleMenu = () => {
   isOpen.value = !isOpen.value;
-  emit('update:modelValue', isOpen.value);
+  emit("update:modelValue", isOpen.value);
 };
 
 const logout = () => {
-  emit('logout');
+  emit("logout");
 };
 
-const userFirstName = computed(() => user.value?.name?.split(' ')?.[0]);
+const userFirstName = computed(() => user.value?.name?.split(" ")?.[0]);
 </script>
 
 <template>
@@ -110,11 +110,7 @@ const userFirstName = computed(() => user.value?.name?.split(' ')?.[0]);
                 </DisclosurePanel>
               </Disclosure>
 
-              <router-link
-                v-else
-                :to="menu.to"
-                class="font-bold block py-2 px-4"
-              >
+              <router-link v-else :to="menu.to" class="font-semibold block py-2 px-4">
                 {{ menu.text }}
               </router-link>
             </template>
@@ -131,26 +127,13 @@ const userFirstName = computed(() => user.value?.name?.split(' ')?.[0]);
                   <ChevronDownIcon class="w-5 h-5" />
                 </DisclosureButton>
                 <DisclosurePanel class="px-4 pt-2">
-                  <VBtn
-                    color="primary"
-                    outlined
-                    dense
-                    block
-                    @click.prevent="logout"
-                  >
+                  <VBtn color="primary" outlined dense block @click.prevent="logout">
                     Logout
                   </VBtn>
                 </DisclosurePanel>
               </Disclosure>
               <div v-else class="px-4">
-                <VBtn
-                  :to="loginPath"
-                  color="primary"
-                  rounded
-                  block
-                  outlined
-                  dense
-                  solid
+                <VBtn :to="loginPath" color="primary" rounded block outlined dense solid
                   >Login</VBtn
                 >
               </div>
@@ -161,9 +144,7 @@ const userFirstName = computed(() => user.value?.name?.split(' ')?.[0]);
     </div>
 
     <!--    desktop -->
-    <div
-      class="container mx-auto hidden sm:flex gap-x-4 items-center px-4 2xl:px-0"
-    >
+    <div class="container mx-auto hidden sm:flex gap-x-4 items-center px-4 2xl:px-0">
       <slot name="logo">
         <v-logo :img-class="imgClass" />
       </slot>
@@ -176,7 +157,8 @@ const userFirstName = computed(() => user.value?.name?.split(' ')?.[0]);
           <router-link
             v-else
             :to="menu.to"
-            class="transition duration-300 font-semibold mx-4 hover:text-primary-600 text-sm"
+            class="transition duration-300 font-semibold mx-4 hover:text-primary-600"
+            :class="[small ? 'text-sm' : '']"
           >
             {{ menu.text }}
           </router-link>
@@ -187,11 +169,12 @@ const userFirstName = computed(() => user.value?.name?.split(' ')?.[0]);
         <v-menus right>
           <template #append>
             <div class="p-0.5">
-              <MenuItem v-slot="{active}" @click.prevent="logout">
+              <MenuItem v-slot="{ active }" @click.prevent="logout">
                 <button
                   :class="[
                     active ? 'bg-primary-50 text-primary-500' : 'text-gray-700',
-                    'group flex rounded-md items-center w-full px-3 py-2 font-semibold text-sm',
+                    'group flex rounded-md items-center w-full px-3 py-2 font-semibold',
+                    small ? 'text-sm' : '',
                   ]"
                 >
                   Logout
@@ -204,7 +187,10 @@ const userFirstName = computed(() => user.value?.name?.split(' ')?.[0]);
             <ChevronDownIcon class="ml-2 w-5 h-5" />
           </template>
 
-          <UserCircleIcon class="w-[30px] h-[30px] mr-2 text-sm" />
+          <UserCircleIcon
+            class="w-[30px] h-[30px] mr-2"
+            :class="[small ? 'text-sm' : '']"
+          />
           {{ userFirstName }}
         </v-menus>
       </Menu>
