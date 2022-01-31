@@ -4,8 +4,8 @@
 
 The official Vue 3 Starter for GITS Indonesia projects.
 
-- [Table of Contents](#vue-3-starter)
-  - [Tech Stacks](#tech-stacks)
+- [GITS UI Components](#gits-ui-components)
+  - [Tech Stack](#tech-stack)
   - [Folder Structure](#folder-structure)
   - [Local Development](#local-development)
   - [Deployment](#deployment)
@@ -13,14 +13,16 @@ The official Vue 3 Starter for GITS Indonesia projects.
   - [Design](#design)
   - [License](#license)
 
-## Tech Stacks
+## Tech Stack
 
 - [Vite.js](https://vitejs.dev/) - Next Generation Frontend Tooling
 - [Vue.js](https://vuejs.org/) - The Progressive JavaScript Framework.
 - [Vue Router](https://next.router.vuejs.org/) - The official router for Vue.js.
-- [TailwindCSS](https://tailwindcss.com/) - A utility-first CSS framework.
-- [TailwindForms](https://github.com/tailwindlabs/tailwindcss-forms) - A plugin that provides a basic reset for form styles that makes form elements easy to override with utilities.
-- [HeadlessUI](https://headlessui.dev/) - Completely unstyled, fully accessible UI components, designed to integrate beautifully with Tailwind CSS.
+- [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework.
+- Tailwind Plugins:
+  - [Tailwind Forms](https://github.com/tailwindlabs/tailwindcss-forms) - A plugin that provides a basic reset for form styles that makes form elements easy to override with utilities.
+- Icons:
+  - [Headless UI](https://headlessui.dev/) - Completely unstyled, fully accessible UI components, designed to integrate beautifully with Tailwind CSS.
 
 ## Folder Structure
 
@@ -29,17 +31,20 @@ The official Vue 3 Starter for GITS Indonesia projects.
 ├── dist                    # Compiled files
 ├── public                  # Public assets
 ├── src                     # Source of application codes
-│   ├── api                 # API mapping
 │   ├── assets              # Dynamic assets managed by webpack
 │   └── components          # Reusable Vue Components
 │   └── composables         # Composable Function
 │   └── plugins             # Vue plugins
-│   └── router              # Routing
-│   └── store               # Vuex
-│   └── utils               # App utilities
+│   └── layouts             # Vue layouts components
+│   └── router              # Vue Router
+│   └── services            # Service Layer
+│   └── stories             # Storybook's stories
+│   └── types               # Global typescript types
+│   └── utils               # Utilities
 │   └── views               # Vue page components
-├── tests                   # Unit tests
-├── .env                    # Environment variable
+├── test                    # Unit tests
+├── index.ts                # Main entry point
+├── preset.js               # Default tailwind preset
 └── README.md
 ```
 
@@ -49,15 +54,13 @@ The official Vue 3 Starter for GITS Indonesia projects.
   ```bash
   npm install
   ```
-- Create/copy environment file:
-  ```bash
-  cp .env.example .env
-  ```
 - Run the development server:
   ```bash
-  npm run dev
+  npm run sb
+  # OR
+  npm run storybook
   ```
-- Open `http://localhost:3000` in the browser
+- Open `http://localhost:6006` in the browser
 
 Learn more about development with Vite.js [here](https://vitejs.dev/).
 
