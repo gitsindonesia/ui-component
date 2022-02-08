@@ -80,6 +80,7 @@ const on = ref({
     id="tooltip"
     ref="tooltip"
     role="tooltip"
+    :class="[`text-${color}`, `bg-${bgColor}`]"
     :style="{display: show ? 'block' : 'none'}"
   >
     <slot />
