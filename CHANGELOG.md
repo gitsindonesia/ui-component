@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.15](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.1.14...v0.1.15) (2022-02-08)
+
+
+### Features
+
+* update v-tooltip ([08c173c](https://git.gits.id/frontend/starter/vue-3/ui/commit/08c173cd5e5b05f9f7b97c01847d3b9a6aa02193))
+
 ### [0.1.14](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.1.13...v0.1.14) (2022-02-08)
 
 
