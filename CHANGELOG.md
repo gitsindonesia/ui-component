@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.14](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.1.13...v0.1.14) (2022-02-08)
+
+
+### Features
+
+* **v-tooltip:** removed `scoped` ([61204ca](https://git.gits.id/frontend/starter/vue-3/ui/commit/61204cabba4e527241475d7c23a5d7af7ee7419a))
+
 ### [0.1.13](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.1.12...v0.1.13) (2022-02-08)
 
 
