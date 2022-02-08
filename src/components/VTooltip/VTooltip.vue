@@ -88,7 +88,7 @@ const on = ref({
   </span>
 </template>
 
-<style scoped>
+<style>
 #tooltip {
   display: inline-block;
   background: v-bind(bgColor);
