@@ -51,6 +51,7 @@ export default defineConfig({
       'vue-feather',
       'vue-router',
       'yup',
+      '@base2/pretty-print-object'
     ],
   },
 });
