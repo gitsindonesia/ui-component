@@ -128,6 +128,9 @@ const VCollapse = defineAsyncComponent(
 const VCollapsible = defineAsyncComponent(
   () => import('./src/components/VCollapsible/VCollapsible.vue'),
 );
+const VCollapsibleGroup = defineAsyncComponent(
+  () => import('./src/components/VCollapsible/VCollapsibleGroup.vue'),
+);
 const VMultiSelect = defineAsyncComponent(
   () => import('./src/components/VMultiSelect/VMultiSelect.vue'),
 );
@@ -174,6 +177,7 @@ const plugin = {
     app.component('VFileUpload', VFileUpload);
     app.component('VCollapse', VCollapse);
     app.component('VCollapsible', VCollapsible);
+    app.component('VCollapsibleGroup', VCollapsibleGroup);
     app.component('VMultiSelect', VMultiSelect);
   },
 };
@@ -224,6 +228,7 @@ export {
   VEditor,
   VCollapse,
   VCollapsible,
+  VCollapsibleGroup,
   VFileUpload,
 };
 

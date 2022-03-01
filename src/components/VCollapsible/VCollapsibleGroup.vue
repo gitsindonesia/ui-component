@@ -37,7 +37,6 @@ watch(
 
 const onChange = (isOpen: boolean, item: CollapsibleItem, idx: number) => {
   emit('item:change', {isOpen, item});
-
   if (accordion.value) {
     items.value.forEach((item, key: number) => {
       if (key === idx) {
@@ -53,14 +52,18 @@ const onChange = (isOpen: boolean, item: CollapsibleItem, idx: number) => {
 <template>
   <div ref="root">
     <slot>
+      <slot name="header">
+      </slot>
       <VCollapsible
         v-for="(item, idx) in groupItems"
         v-model="item.isOpen"
         v-bind="item"
         @change="onChange($event, item, idx)"
       >
-        <slot :name="`item.${idx}`" :item="item">
-          {{ item.content }}
+        <slot name="items" :row="item" :index="idx">
+          <slot :name="`item.${idx}`" :item="item">
+            {{ item.content }}
+          </slot>
         </slot>
       </VCollapsible>
     </slot>
