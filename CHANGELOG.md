@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.16](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.1.15...v0.1.16) (2022-03-01)
+
+
+### Bug Fixes
+
+* **collapsible:** register collapsible and counter text area ([cfa3c08](https://git.gits.id/frontend/starter/vue-3/ui/commit/cfa3c08042264466709ea674191950735977ef2d))
+
 ### [0.1.15](https://git.gits.id/frontend/starter/vue-3/ui/compare/v0.1.14...v0.1.15) (2022-02-08)
 
 
