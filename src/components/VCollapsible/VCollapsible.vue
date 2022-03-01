@@ -60,7 +60,6 @@ const toggle = () => (isOpen.value = !isOpen.value);
 watch(
   modelValue,
   (value) => {
-    console.log({value});
     isOpen.value = value;
   },
   {immediate: true},

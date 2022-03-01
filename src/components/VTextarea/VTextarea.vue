@@ -32,6 +32,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  counter: {
+    type: Boolean,
+    default: false,
+  },
   size: {
     type: String,
     default: '',
@@ -90,11 +94,16 @@ const onBlur = () => emit('blur');
     v-bind="$attrs"
     @blur="onBlur"
   />
-  <ErrorMessage
-    v-if="errorMessages.length"
-    class="text-error-600 text-sm"
-    :name="name"
-  />
+  <div class="flex p-0 relative">
+    <ErrorMessage
+      v-if="errorMessages.length"
+      class="text-error-600 text-sm"
+      :name="name"
+    />
+    <div v-if="counter" class="absolute right-0 ">
+      {{ value.length }}
+    </div>
+  </div>
 </template>
 
 <style scoped></style>
