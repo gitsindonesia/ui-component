@@ -224,6 +224,16 @@ Disabled.parameters = {
   },
 };
 
+export const OutlinedDisabled = Template.bind({});
+OutlinedDisabled.args = {color: 'primary', disabled: true, outlined: true};
+OutlinedDisabled.parameters = {
+  docs: {
+    source: {
+      code: '<v-btn color="primary" disabled outlined>Button</v-btn>',
+    },
+  },
+};
+
 export const Loading = Template.bind({});
 Loading.args = {color: 'primary', loading: true};
 Loading.parameters = {
