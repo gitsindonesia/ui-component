@@ -1,5 +1,5 @@
 import VAlert from './VAlert.vue';
-import {themeColors} from '../../utils/colors';
+import {themeColors} from '../../src/utils/colors';
 import {Meta, Story} from '@storybook/vue3';
 
 export default {

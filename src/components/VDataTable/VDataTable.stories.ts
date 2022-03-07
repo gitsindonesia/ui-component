@@ -31,6 +31,7 @@ export default {
     striped: false,
     hover: false,
     dense: false,
+    loading: false,
   },
 } as Meta;
 
@@ -63,4 +64,9 @@ Hover.args = {
 export const Dense = Template.bind({});
 Dense.args = {
   dense: true,
+};
+
+export const Loading = Template.bind({});
+Loading.args = {
+  loading: true,
 };

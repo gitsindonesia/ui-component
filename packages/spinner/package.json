@@ -1,0 +1,21 @@
+{
+  "name": "@gits/spinner",
+  "version": "0.0.0",
+  "description": "GITS Spinner Component",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "spinner",
+    "loader",
+    "loading",
+    "ui-component",
+    "ui"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@gits/utils": "*"
+  }
+}

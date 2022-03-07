@@ -1,7 +1,7 @@
 const plugin = require('tailwindcss/plugin')
-const colors = require('../../theme/colors')
+const colors = require('@gits/tailwind-config/colors')
 
-const vBtnPlugin = plugin(function({ addUtilities, addComponents, theme, ...rest }) {
+const vBtnPlugin = plugin(function({ addUtilities, addComponents }) {
   addUtilities({
     '.btn-rounded': {
       borderRadius: '9999px',

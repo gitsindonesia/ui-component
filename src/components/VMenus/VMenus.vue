@@ -2,7 +2,7 @@
 import {ref, toRefs, computed} from 'vue';
 import {ChevronDownIcon, ChevronRightIcon} from '@heroicons/vue/solid';
 import {Menu, MenuButton, MenuItems, MenuItem} from '@headlessui/vue';
-import VBtn from '../VBtn/VBtn.vue';
+import VBtn from '@gits/button';
 
 const props = defineProps({
   items: {

@@ -1,0 +1,23 @@
+{
+  "name": "@gits/button",
+  "version": "0.0.0",
+  "description": "GITS Button Component",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "button",
+    "btn",
+    "ui-component",
+    "ui"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@gits/spinner": "*"
+  },
+  "devDependencies": {
+    "@gits/tailwind-config": "*"
+  }
+}

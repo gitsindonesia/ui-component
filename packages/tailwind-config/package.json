@@ -1,0 +1,19 @@
+{
+  "name": "@gits/tailwind-config",
+  "version": "0.0.0",
+  "description": "GITS Tailwind Config",
+  "main": "config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tailwind",
+    "tailwind-config"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.0.23",
+    "@gits/button": "*"
+  }
+}

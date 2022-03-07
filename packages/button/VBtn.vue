@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, toRefs } from "vue";
-import VSpinner from "../VSpinner/VSpinner.vue";
+import VSpinner from "@gits/spinner";
 
 const props = defineProps({
   size: {
@@ -236,6 +236,7 @@ const classes = computed(() => {
       "w-full": props.block,
       shadow: props.shadow,
       "btn-icon": props.icon,
+      "btn-loading": props.loading,
     },
   ];
 });

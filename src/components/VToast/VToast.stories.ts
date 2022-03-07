@@ -1,7 +1,7 @@
 import MyToast from './VToast.vue';
-import VBtn from '../VBtn/VBtn.vue';
-import { themeColors } from '../../utils/colors';
-import {  Story } from '@storybook/vue3';
+import VBtn from '@gits/button';
+import {themeColors} from '../../utils/colors';
+import {Story} from '@storybook/vue3';
 
 export default {
   title: 'Components/Toast',
@@ -9,11 +9,11 @@ export default {
   argTypes: {
     color: {
       type: 'select',
-      options: ['black', ...themeColors]
+      options: ['black', ...themeColors],
     },
     type: {
       type: 'select',
-      options: ['success', 'error', 'warning', 'question']
+      options: ['success', 'error', 'warning', 'question'],
     },
     placement: {
       type: 'select',
@@ -25,8 +25,8 @@ export default {
         'bottom',
         'bottom-start',
         'bottom-end',
-      ]
-    }
+      ],
+    },
   },
   args: {
     modelValue: true,
@@ -47,7 +47,7 @@ export default {
     message: 'Lorem ipsum dolor',
     type: '',
     hideXIcon: false,
-    overlay: false
+    overlay: false,
   },
 };
 
@@ -59,7 +59,7 @@ const Template: Story<{}> = (args) => ({
   },
   // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
-    return { args };
+    return {args};
   },
   // And then the `args` are bound to your component with `v-bind="args"`
   template: `
@@ -72,7 +72,7 @@ Default.args = {};
 
 export const Icon = Template.bind({});
 Icon.args = {
-  type: 'success'
+  type: 'success',
 };
 
 export const Title = Template.bind({});
@@ -84,7 +84,7 @@ export const Actions = Template.bind({});
 Actions.args = {
   title: 'Confirmation',
   actions: true,
-  confirm: true
+  confirm: true,
 };
 
 export const Custom = Template.bind({});
@@ -98,5 +98,5 @@ Custom.args = {
   closeText: 'Cancel',
   placement: 'center',
   hideXIcon: true,
-  overlay: true
+  overlay: true,
 };

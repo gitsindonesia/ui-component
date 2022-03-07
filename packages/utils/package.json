@@ -1,0 +1,16 @@
+{
+  "name": "@gits/utils",
+  "version": "0.0.0",
+  "description": "GITS Utilities",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "utils",
+    "utilities"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {}
+}

@@ -1,5 +1,5 @@
 import MyTooltip from './VTooltip.vue';
-import VBtn from '../VBtn/VBtn.vue';
+import VBtn from '@gits/button';
 import {Meta, Story} from '@storybook/vue3';
 
 const placements = [

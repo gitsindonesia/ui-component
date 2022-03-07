@@ -1,11 +1,14 @@
 import {App, defineAsyncComponent} from 'vue';
+import VBtn from '@gits/button';
+import VAlert from '@gits/alert';
+import VSpinner from '@gits/spinner';
 
-const VAlert = defineAsyncComponent(
-  () => import('./src/components/VAlert/VAlert.vue'),
-);
-const VBtn = defineAsyncComponent(
-  () => import('./src/components/VBtn/VBtn.vue'),
-);
+// const VAlert = defineAsyncComponent(
+//   () => import('./src/components/VAlert/VAlert.vue'),
+// );
+// const VBtn = defineAsyncComponent(
+//   () => import('./src/components/VBtn/VBtn.vue'),
+// );
 const VAppBar = defineAsyncComponent(
   () => import('./src/components/VAppBar/VAppBar.vue'),
 );
@@ -97,9 +100,9 @@ const VLogo = defineAsyncComponent(
 const VToast = defineAsyncComponent(
   () => import('./src/components/VToast/VToast.vue'),
 );
-const VSpinner = defineAsyncComponent(
-  () => import('./src/components/VSpinner/VSpinner.vue'),
-);
+// const VSpinner = defineAsyncComponent(
+//   () => import('./src/components/VSpinner/VSpinner.vue'),
+// );
 const VStats = defineAsyncComponent(
   () => import('./src/components/VStats/VStats.vue'),
 );
@@ -239,7 +242,6 @@ export * from './src/services';
 export * from './src/components/VAppBar/VAppBar';
 export * from './src/components/VBadge/VBadge';
 export * from './src/components/VBreadcrumbs/VBreadcrumbs';
-export * from './src/components/VBtn/VBtn';
 export * from './src/components/VDataTable/VDataTable';
 export * from './src/components/VDropdown/VDropdown';
 export * from './src/components/VInput/VInput';

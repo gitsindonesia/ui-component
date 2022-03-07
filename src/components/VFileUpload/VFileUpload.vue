@@ -15,7 +15,7 @@ import {
   onUnmounted,
 } from 'vue';
 import {CameraIcon, PlusIcon, TrashIcon} from '@heroicons/vue/solid';
-import VBtn from '../VBtn/VBtn.vue';
+import VBtn from '@gits/button';
 import VInput from '../VInput/VInput.vue';
 import {ErrorMessage} from 'vee-validate';
 import {AnyMessageParams} from 'yup/lib/types';

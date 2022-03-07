@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from "vue";
 import SshPre from "simple-syntax-highlighter";
-// import VBtn from "@gits/button";
 import Docs from "./Docs.vue";
 
 const breadcrumbs = ref([
@@ -33,6 +32,7 @@ const breadcrumbs = ref([
       <v-btn color="warning"> Warning </v-btn>
       <v-btn color="success"> Success </v-btn>
       <v-btn color="error"> Error </v-btn>
+      <v-btn color="dark"> Dark </v-btn>
     </template>
 
     <template #code>
@@ -50,17 +50,19 @@ const breadcrumbs = ref([
 
   <Docs title="Sizing">
     <template #preview>
-      <v-btn size="xs" color="primary"> v-btn </v-btn>
-      <v-btn size="sm" color="primary"> v-btn </v-btn>
-      <v-btn size="md" color="primary"> v-btn </v-btn>
-      <v-btn size="lg" color="primary"> v-btn </v-btn>
-      <v-btn size="xl" color="primary"> v-btn </v-btn>
+      <v-btn size="xs" color="primary"> xs </v-btn>
+      <v-btn size="sm" color="primary"> sm </v-btn>
+      <v-btn size="md" color="primary"> md </v-btn>
+      <v-btn size="lg" color="primary"> lg </v-btn>
+      <v-btn size="xl" color="primary"> lg </v-btn>
     </template>
     <template #code>
       <pre>
-&lt;v-btn size="xs" color="primary"&gt; v-btn &lt;/v-btn&gt;
-&lt;v-btn size="md" color="primary"&gt; v-btn &lt;/v-btn&gt;
-&lt;v-btn size="lg" color="primary"&gt; v-btn &lt;/v-btn&gt;</pre
+&lt;v-btn size=&quot;xs&quot; color=&quot;primary&quot;&gt; xs &lt;/v-btn&gt;
+&lt;v-btn size=&quot;sm&quot; color=&quot;primary&quot;&gt; sm &lt;/v-btn&gt;
+&lt;v-btn size=&quot;md&quot; color=&quot;primary&quot;&gt; md &lt;/v-btn&gt;
+&lt;v-btn size=&quot;lg&quot; color=&quot;primary&quot;&gt; lg &lt;/v-btn&gt;
+&lt;v-btn size=&quot;xl&quot; color=&quot;primary&quot;&gt; lg &lt;/v-btn&gt;</pre
       >
     </template>
   </Docs>
@@ -153,6 +155,50 @@ const breadcrumbs = ref([
 &lt;v-btn icon color=&quot;warning&quot;&gt; Warning &lt;/v-btn&gt;
 &lt;v-btn icon color=&quot;success&quot;&gt; Success &lt;/v-btn&gt;
 &lt;v-btn icon color=&quot;error&quot;&gt; Error &lt;/v-btn&gt;</pre
+      >
+    </template>
+  </Docs>
+  <Docs title="Loading">
+    <template #preview>
+      <v-btn loading> Default </v-btn>
+      <v-btn loading color="primary"> Primary </v-btn>
+      <v-btn loading color="secondary"> Secondary </v-btn>
+      <v-btn loading color="info"> Info </v-btn>
+      <v-btn loading color="warning"> Warning </v-btn>
+      <v-btn loading color="success"> Success </v-btn>
+      <v-btn loading color="error"> Error </v-btn>
+    </template>
+    <template #code>
+      <pre>
+&lt;v-btn loading&gt; Default &lt;/v-btn&gt;
+&lt;v-btn loading color=&quot;primary&quot;&gt; Primary &lt;/v-btn&gt;
+&lt;v-btn loading color=&quot;secondary&quot;&gt; Secondary &lt;/v-btn&gt;
+&lt;v-btn loading color=&quot;info&quot;&gt; Info &lt;/v-btn&gt;
+&lt;v-btn loading color=&quot;warning&quot;&gt; Warning &lt;/v-btn&gt;
+&lt;v-btn loading color=&quot;success&quot;&gt; Success &lt;/v-btn&gt;
+&lt;v-btn loading color=&quot;error&quot;&gt; Error &lt;/v-btn&gt;</pre
+      >
+    </template>
+  </Docs>
+  <Docs title="Disabled">
+    <template #preview>
+      <v-btn disabled> Default </v-btn>
+      <v-btn disabled color="primary"> Primary </v-btn>
+      <v-btn disabled color="secondary"> Secondary </v-btn>
+      <v-btn disabled color="info"> Info </v-btn>
+      <v-btn disabled color="warning"> Warning </v-btn>
+      <v-btn disabled color="success"> Success </v-btn>
+      <v-btn disabled color="error"> Error </v-btn>
+    </template>
+    <template #code>
+      <pre>
+&lt;v-btn disabled&gt; Default &lt;/v-btn&gt;
+&lt;v-btn disabled color=&quot;primary&quot;&gt; Primary &lt;/v-btn&gt;
+&lt;v-btn disabled color=&quot;secondary&quot;&gt; Secondary &lt;/v-btn&gt;
+&lt;v-btn disabled color=&quot;info&quot;&gt; Info &lt;/v-btn&gt;
+&lt;v-btn disabled color=&quot;warning&quot;&gt; Warning &lt;/v-btn&gt;
+&lt;v-btn disabled color=&quot;success&quot;&gt; Success &lt;/v-btn&gt;
+&lt;v-btn disabled color=&quot;error&quot;&gt; Error &lt;/v-btn&gt;</pre
       >
     </template>
   </Docs>
