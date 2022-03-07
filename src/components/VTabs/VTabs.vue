@@ -11,7 +11,7 @@ import {
 import {ChevronLeftIcon, ChevronRightIcon} from '@heroicons/vue/outline';
 import VTab from './VTab.vue';
 import {getBgColor} from '../../utils';
-import VBtn from '@gits/button';
+import VBtn from '@gits-id/button';
 
 const props = defineProps({
   modelValue: {

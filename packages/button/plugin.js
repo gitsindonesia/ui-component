@@ -1,5 +1,5 @@
 const plugin = require('tailwindcss/plugin')
-const colors = require('@gits/tailwind-config/colors')
+const colors = require('@gits-id/tailwind-config/colors')
 
 const vBtnPlugin = plugin(function({ addUtilities, addComponents }) {
   addUtilities({

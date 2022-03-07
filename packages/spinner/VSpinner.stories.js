@@ -1,5 +1,5 @@
 import VSpinner from './VSpinner.vue';
-import {themeColors} from '@gits/utils';
+import {themeColors} from '@gits-id/utils';
 
 export default {
   title: 'Components/Spinner',

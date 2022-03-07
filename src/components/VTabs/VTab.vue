@@ -1,7 +1,7 @@
 <script setup>
 import {ref, toRefs} from 'vue';
 import {TrashIcon} from '@heroicons/vue/outline';
-import VBtn from '@gits/button';
+import VBtn from '@gits-id/button';
 
 const props = defineProps({
   item: {

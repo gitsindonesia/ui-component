@@ -1,5 +1,5 @@
 {
-  "name": "@gits/utils",
+  "name": "@gits-id/utils",
   "version": "0.0.0",
   "description": "GITS Utilities",
   "main": "index.ts",

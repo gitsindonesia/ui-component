@@ -2,7 +2,7 @@
 import { computed, ref, toRefs, watch, PropType } from "vue";
 import { UserCircleIcon, ChevronUpIcon, ChevronDownIcon } from "@heroicons/vue/solid";
 import { MenuIcon } from "@heroicons/vue/outline";
-import VBtn from "@gits/button";
+import VBtn from "@gits-id/button";
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
 import VMenus from "../VMenus/VMenus.vue";
 import VLogo from "../VLogo/VLogo.vue";

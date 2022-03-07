@@ -8,7 +8,7 @@ import type {
   VDataTableProps,
 } from './VDataTable';
 import {ChevronDownIcon, ChevronUpIcon} from '@heroicons/vue/solid';
-import VSpinner from '@gits/spinner';
+import VSpinner from '@gits-id/spinner';
 import VCheckbox from '../VCheckbox/VCheckbox.vue';
 // import get from 'lodash/get';
 import {get} from '../../utils';

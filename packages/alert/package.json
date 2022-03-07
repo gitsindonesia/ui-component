@@ -1,5 +1,5 @@
 {
-  "name": "@gits/alert",
+  "name": "@gits-id/alert",
   "version": "0.0.0",
   "description": "GITS Alert Component",
   "main": "index.ts",
@@ -14,6 +14,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gits/button": "*"
+    "@gits-id/button": "*"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "@gits/button",
+  "name": "@gits-id/button",
   "version": "0.0.0",
   "description": "GITS Button Component",
   "main": "index.ts",
@@ -15,9 +15,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gits/spinner": "*"
+    "@gits-id/spinner": "*"
   },
   "devDependencies": {
-    "@gits/tailwind-config": "*"
+    "@gits-id/tailwind-config": "*"
   }
 }

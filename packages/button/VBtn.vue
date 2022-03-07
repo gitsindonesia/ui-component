@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, toRefs } from "vue";
-import VSpinner from "@gits/spinner";
+import VSpinner from "@gits-id/spinner";
 
 const props = defineProps({
   size: {

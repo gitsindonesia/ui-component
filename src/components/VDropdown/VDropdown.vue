@@ -8,7 +8,7 @@ export default {
 import {Menu, MenuButton, MenuItems, MenuItem} from '@headlessui/vue';
 import {ChevronDownIcon, UserIcon} from '@heroicons/vue/solid';
 import {PropType, toRefs} from 'vue';
-import VBtn from '@gits/button';
+import VBtn from '@gits-id/button';
 import {DropdownItem} from './VDropdown';
 import VDropdownItem from './VDropdownItem.vue';
 

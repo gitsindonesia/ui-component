@@ -1,5 +1,5 @@
 import MyInputGroup from './VInputGroup.vue';
-import VBtn from '@gits/button';
+import VBtn from '@gits-id/button';
 import {Meta, Story} from '@storybook/vue3';
 
 export default {

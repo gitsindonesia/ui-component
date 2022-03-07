@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {MenuIcon} from '@heroicons/vue/outline';
 import {toRefs} from 'vue';
-import VBtn from '@gits/button';
+import VBtn from '@gits-id/button';
 
 const props = defineProps({
   modelValue: {

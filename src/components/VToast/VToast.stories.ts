@@ -1,5 +1,5 @@
 import MyToast from './VToast.vue';
-import VBtn from '@gits/button';
+import VBtn from '@gits-id/button';
 import {themeColors} from '../../utils/colors';
 import {Story} from '@storybook/vue3';
 

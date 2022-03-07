@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed, toRefs } from "vue";
 import { XIcon, ExclamationIcon, CheckCircleIcon } from "@heroicons/vue/solid";
-import VBtn from "@gits/button";
+import VBtn from "@gits-id/button";
 
 const props = defineProps({
   modelValue: {

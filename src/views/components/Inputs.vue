@@ -218,7 +218,7 @@ const search = ref('');
   <!--const items = ref([...Array(30)].map((v, index) => ({-->
   <!--  id: index + 1,-->
   <!--  name: `User ${index + 1}`,-->
-  <!--  email: `user+${index + 1}@gits.id`,-->
+  <!--  email: `user+${index + 1}@gits-id.id`,-->
   <!--  phone: `6288899900${index}`-->
   <!--})))-->
 

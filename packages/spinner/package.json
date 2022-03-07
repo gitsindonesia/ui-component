@@ -1,5 +1,5 @@
 {
-  "name": "@gits/spinner",
+  "name": "@gits-id/spinner",
   "version": "0.0.0",
   "description": "GITS Spinner Component",
   "main": "index.ts",
@@ -16,6 +16,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@gits/utils": "*"
+    "@gits-id/utils": "*"
   }
 }

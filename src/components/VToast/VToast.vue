@@ -30,7 +30,7 @@ import {
   ExclamationIcon,
   QuestionMarkCircleIcon,
 } from '@heroicons/vue/outline';
-import VBtn from '@gits/button';
+import VBtn from '@gits-id/button';
 
 interface Props {
   modelValue?: boolean;

@@ -1,5 +1,5 @@
 {
-  "name": "@gits/tailwind-config",
+  "name": "@gits-id/tailwind-config",
   "version": "0.0.0",
   "description": "GITS Tailwind Config",
   "main": "config.js",
@@ -14,6 +14,6 @@
   "license": "ISC",
   "devDependencies": {
     "tailwindcss": "^3.0.23",
-    "@gits/button": "*"
+    "@gits-id/button": "*"
   }
 }
