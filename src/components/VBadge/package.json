@@ -1,0 +1,19 @@
+{
+  "name": "@gits-id/badge",
+  "version": "0.0.0",
+  "description": "GITS Badge Component",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "badge",
+    "gits",
+    "ui-component"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.0.23"
+  }
+}

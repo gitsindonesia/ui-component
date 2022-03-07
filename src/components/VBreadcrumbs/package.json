@@ -1,0 +1,19 @@
+{
+  "name": "@gits-id/breadcrumbs",
+  "version": "0.0.0",
+  "description": "GITS Breadcrumbs Component",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "breadcrumbs",
+    "gits",
+    "ui-component"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.0.23"
+  }
+}

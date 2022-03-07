@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import {MenuIcon} from '@heroicons/vue/outline';
-import {toRefs} from 'vue';
-import VBtn from '@gits-id/button';
+import { MenuIcon } from "@heroicons/vue/outline";
+import { toRefs } from "vue";
+import VBtn from "@gits-id/button";
 
 const props = defineProps({
   modelValue: {
@@ -34,11 +34,11 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits(['toggleMenu', 'update:modelValue']);
+const emit = defineEmits(["toggleMenu", "update:modelValue"]);
 
-const {mini, fixed, drawer, dark, hideToggle} = toRefs(props);
+const { mini, fixed, drawer, dark, hideToggle } = toRefs(props);
 
-const toggleMenu = () => emit('toggleMenu');
+const toggleMenu = () => emit("toggleMenu");
 </script>
 
 <template>

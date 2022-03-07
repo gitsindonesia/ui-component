@@ -1,0 +1,20 @@
+{
+  "name": "@gits-id/app-bar",
+  "version": "0.0.0",
+  "description": "GITS AppBar Component",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "app-bar",
+    "nav-bar",
+    "tailwind-config"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.0.23",
+    "@gits-id/button": "*"
+  }
+}
