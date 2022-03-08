@@ -508,7 +508,7 @@ importers:
 
   packages/spinner:
     specifiers:
-      '@gits-id/utils': '*'
+      '@gits-id/utils': workspace:*
     devDependencies:
       '@gits-id/utils': link:../utils
 
