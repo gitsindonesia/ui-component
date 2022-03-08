@@ -16,6 +16,7 @@
   "dependencies": {
     "vue": "^3.2.31",
     "@gits-id/utils": "workspace:*",
+    "@gits-id/button": "workspace:*",
     "@gits-id/card": "workspace:*"
   },
   "devDependencies": {

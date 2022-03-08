@@ -219,6 +219,7 @@ importers:
 
   packages/file-input:
     specifiers:
+      '@gits-id/button': workspace:*
       '@gits-id/input': workspace:*
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
@@ -226,6 +227,7 @@ importers:
       vee-validate: ^4.5.9
       vue: ^3.2.31
     dependencies:
+      '@gits-id/button': link:../button
       '@gits-id/input': link:../input
       vue: 3.2.31
     devDependencies:
@@ -392,6 +394,7 @@ importers:
 
   packages/navbar:
     specifiers:
+      '@gits-id/button': workspace:*
       '@gits-id/logo': workspace:*
       '@gits-id/menus': workspace:*
       '@headlessui/vue': ^1.5.0
@@ -400,6 +403,7 @@ importers:
       vee-validate: ^4.5.9
       vue: ^3.2.31
     dependencies:
+      '@gits-id/button': link:../button
       '@gits-id/logo': link:../logo
       '@gits-id/menus': link:../menus
       vue: 3.2.31
@@ -567,6 +571,7 @@ importers:
 
   packages/tabs:
     specifiers:
+      '@gits-id/button': workspace:*
       '@gits-id/card': workspace:*
       '@gits-id/utils': workspace:*
       '@headlessui/vue': ^1.5.0
@@ -575,6 +580,7 @@ importers:
       vee-validate: ^4.5.9
       vue: ^3.2.31
     dependencies:
+      '@gits-id/button': link:../button
       '@gits-id/card': link:../card
       '@gits-id/utils': link:../utils
       vue: 3.2.31
@@ -611,6 +617,7 @@ importers:
 
   packages/toast:
     specifiers:
+      '@gits-id/button': workspace:*
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
       pinia: ^2.0.11
@@ -619,6 +626,7 @@ importers:
       vue: ^3.2.31
       vuex: ^4.0.2
     dependencies:
+      '@gits-id/button': link:../button
       pinia: 2.0.11_typescript@4.5.5+vue@3.2.31
       vue: 3.2.31
       vuex: 4.0.2_vue@3.2.31
