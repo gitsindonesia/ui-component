@@ -1,149 +1,57 @@
-import {App, defineAsyncComponent} from 'vue';
-import VBtn from '@gits/button';
-import VAlert from '@gits/alert';
-import VSpinner from '@gits/spinner';
-
-// const VAlert = defineAsyncComponent(
-//   () => import('./src/components/VAlert/VAlert.vue'),
-// );
-// const VBtn = defineAsyncComponent(
-//   () => import('./src/components/VBtn/VBtn.vue'),
-// );
-const VAppBar = defineAsyncComponent(
-  () => import('./src/components/VAppBar/VAppBar.vue'),
-);
-const VBadge = defineAsyncComponent(
-  () => import('./src/components/VBadge/VBadge.vue'),
-);
-const VBreadcrumbs = defineAsyncComponent(
-  () => import('./src/components/VBreadcrumbs/VBreadcrumbs.vue'),
-);
-const VCard = defineAsyncComponent(
-  () => import('./src/components/VCard/VCard.vue'),
-);
-const VCheckbox = defineAsyncComponent(
-  () => import('./src/components/VCheckbox/VCheckbox.vue'),
-);
-const VDataTable = defineAsyncComponent(
-  () => import('./src/components/VDataTable/VDataTable.vue'),
-);
-const VDataTablePagination = defineAsyncComponent(
-  () =>
-    import('./src/components/VDataTablePagination/VDataTablePagination.vue'),
-);
-const VDropdown = defineAsyncComponent(
-  () => import('./src/components/VDropdown/VDropdown.vue'),
-);
-const VFormSelect = defineAsyncComponent(
-  () => import('./src/components/VFormSelect/VFormSelect.vue'),
-);
-const VInput = defineAsyncComponent(
-  () => import('./src/components/VInput/VInput.vue'),
-);
-const VInputGroup = defineAsyncComponent(
-  () => import('./src/components/VInputGroup/VInputGroup.vue'),
-);
-const VInputRange = defineAsyncComponent(
-  () => import('./src/components/VInputRange/VInputRange.vue'),
-);
-const VModal = defineAsyncComponent(
-  () => import('./src/components/VModal/VModal.vue'),
-);
-const VPagination = defineAsyncComponent(
-  () => import('./src/components/VPagination/VPagination.vue'),
-);
-const VProgressBar = defineAsyncComponent(
-  () => import('./src/components/VProgressBar/VProgressBar.vue'),
-);
-const VRadio = defineAsyncComponent(
-  () => import('./src/components/VRadio/VRadio.vue'),
-);
-const VRadioGroup = defineAsyncComponent(
-  () => import('./src/components/VRadioGroup/VRadioGroup.vue'),
-);
-const VSelect = defineAsyncComponent(
-  () => import('./src/components/VSelect/VSelect.vue'),
-);
-const VSwitch = defineAsyncComponent(
-  () => import('./src/components/VSwitch/VSwitch.vue'),
-);
-const VTabs = defineAsyncComponent(
-  () => import('./src/components/VTabs/VTabs.vue'),
-);
-const VTextarea = defineAsyncComponent(
-  () => import('./src/components/VTextarea/VTextarea.vue'),
-);
-const VTooltip = defineAsyncComponent(
-  () => import('./src/components/VTooltip/VTooltip.vue'),
-);
-const VFormGroup = defineAsyncComponent(
-  () => import('./src/components/VFormGroup/VFormGroup.vue'),
-);
-const VNavbar = defineAsyncComponent(
-  () => import('./src/components/VNavbar/VNavbar.vue'),
-);
-const VNavDrawer = defineAsyncComponent(
-  () => import('./src/components/VNavDrawer/VNavDrawer.vue'),
-);
-const VMenu = defineAsyncComponent(
-  () => import('./src/components/VMenu/VMenu.vue'),
-);
-const VMenus = defineAsyncComponent(
-  () => import('./src/components/VMenus/VMenus.vue'),
-);
-const VContainer = defineAsyncComponent(
-  () => import('./src/components/VContainer/VContainer.vue'),
-);
-const VLogo = defineAsyncComponent(
-  () => import('./src/components/VLogo/VLogo.vue'),
-);
-const VToast = defineAsyncComponent(
-  () => import('./src/components/VToast/VToast.vue'),
-);
-// const VSpinner = defineAsyncComponent(
-//   () => import('./src/components/VSpinner/VSpinner.vue'),
-// );
-const VStats = defineAsyncComponent(
-  () => import('./src/components/VStats/VStats.vue'),
-);
-const AuthLayout = defineAsyncComponent(() => import('./src/layouts/Auth.vue'));
-const BaseLayout = defineAsyncComponent(() => import('./src/layouts/Base.vue'));
-const DefaultLayout = defineAsyncComponent(
-  () => import('./src/layouts/Default.vue'),
-);
-const Activation = defineAsyncComponent(
-  () => import('./src/pages/auth/Activation.vue'),
-);
-const Auth = defineAsyncComponent(() => import('./src/pages/auth/Auth.vue'));
-const ForgotPassword = defineAsyncComponent(
-  () => import('./src/pages/auth/ForgotPassword.vue'),
-);
-const Login = defineAsyncComponent(() => import('./src/pages/auth/Login.vue'));
-const ResetPassword = defineAsyncComponent(
-  () => import('./src/pages/auth/ResetPassword.vue'),
-);
-const VFileUpload = defineAsyncComponent(
-  () => import('./src/components/VFileUpload/VFileUpload.vue'),
-);
-const VCollapse = defineAsyncComponent(
-  () => import('./src/components/VCollapsible/VCollapse.vue'),
-);
-const VCollapsible = defineAsyncComponent(
-  () => import('./src/components/VCollapsible/VCollapsible.vue'),
-);
-const VCollapsibleGroup = defineAsyncComponent(
-  () => import('./src/components/VCollapsible/VCollapsibleGroup.vue'),
-);
-const VMultiSelect = defineAsyncComponent(
-  () => import('./src/components/VMultiSelect/VMultiSelect.vue'),
-);
-
-const VEditor = defineAsyncComponent(
-  () => import('./src/components/VEditor/VEditor.vue'),
-);
+import {App} from 'vue';
+import VBtn from './packages/button';
+import VAlert from './packages/alert';
+import VSpinner from './packages/spinner';
+import VAppBar from './packages/app-bar';
+import VBadge from './packages/badge';
+import VBreadcrumbs from './packages/breadcrumbs';
+import VCard from './packages/card';
+import VCheckbox from './packages/checkbox';
+import {VDataTable, VDataTablePagination} from './packages/table';
+import VDropdown from './packages/dropdown';
+import VFormSelect from './packages/form-select';
+import {VInput, VInputGroup, VInputRange} from './packages/input';
+import VModal from './packages/modal';
+import VPagination from './packages/pagination';
+import VProgressBar from './packages/progress';
+import {VRadio, VRadioGroup} from './packages/radio';
+import VSelect from './packages/select';
+import VSwitch from './packages/switch';
+import VTabs from './packages/tabs';
+import VTextarea from './packages/textarea';
+import VTooltip from './packages/tooltip';
+import VFormGroup from './packages/form-group';
+import VNavbar from './packages/navbar';
+import VNavDrawer from './packages/nav-drawer';
+import VMenu from './packages/menu';
+import VMenus from './packages/menus';
+import VContainer from './packages/container';
+import VLogo from './packages/logo';
+import VToast from './packages/toast';
+import VStats from './packages/stats';
+import VFileUpload from './packages/file-input';
+import {
+  VCollapsible,
+  VCollapse,
+  VCollapsibleGroup,
+} from './packages/collapsible';
+import VMultiSelect from './packages/multi-select';
+import VEditor from './packages/editor';
+import {
+  Auth as AuthLayout,
+  Base as BaseLayout,
+  Default as DefaultLayout,
+} from './packages/layouts';
+import {
+  Activation,
+  Auth,
+  ForgotPassword,
+  Login,
+  ResetPassword,
+} from './packages/pages';
 
 const plugin = {
-  install: (app: App, options = {}) => {
+  install: (app: App) => {
     app.component('VAlert', VAlert);
     app.component('VBtn', VBtn);
     app.component('VAppBar', VAppBar);
@@ -235,18 +143,18 @@ export {
   VFileUpload,
 };
 
-export * from './src/components/VToast';
-export * from './src/utils';
-export * from './src/types';
-export * from './src/services';
-export * from './src/components/VAppBar/types';
-export * from './src/components/VBadge/types';
-export * from './src/components/VBreadcrumbs/types';
-export * from './src/components/VDataTable/VDataTable';
-export * from './src/components/VDropdown/VDropdown';
-export * from './src/components/VInput/VInput';
-export * from './src/components/VNavbar/VNavbar';
-export * from './src/components/VTabs/VTabs';
-export * from './src/components/VToast/VToast';
-export * from './src/components/VModal/VModal';
+export * from './packages/utils';
+export * from './packages/types';
+export * from './packages/services';
+export * from './packages/app-bar/types';
+export * from './packages/toast/types';
+export * from './packages/badge/types';
+export * from './packages/breadcrumbs/types';
+export * from './packages/table/types';
+export * from './packages/dropdown/types';
+export * from './packages/input/types';
+export * from './packages/navbar/types';
+export * from './packages/tabs/types';
+export * from './packages/toast/types';
+export * from './packages/modal/types';
 export default plugin;

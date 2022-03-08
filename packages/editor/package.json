@@ -1,0 +1,28 @@
+{
+  "name": "@gits-id/editor",
+  "version": "0.0.0",
+  "description": "GITS Rich Text Editor Component",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "editor",
+    "wysiwyg",
+    "gits",
+    "ui-component"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^3.2.31",
+    "@ckeditor/ckeditor5-build-classic": "^32.0.0",
+    "@ckeditor/ckeditor5-vue": "^2.0.1"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.0.23",
+    "@heroicons/vue": "^1.0.6",
+    "@headlessui/vue": "^1.5.0",
+    "vee-validate": "^4.5.9"
+  }
+}

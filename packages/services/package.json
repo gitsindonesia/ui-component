@@ -1,0 +1,19 @@
+{
+  "name": "@gits-id/services",
+  "version": "0.0.0",
+  "description": "GITS Services",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "services",
+    "ui-component",
+    "ui"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@gits-id/button": "*"
+  }
+}

@@ -1,4 +1,4 @@
-import DefaultLayout from '../layouts/Default.vue';
+import DefaultLayout from '../../packages/layouts/Default.vue';
 import Alerts from '../views/components/Alerts.vue';
 import Labels from '../views/components/Labels.vue';
 import Tabs from '../views/components/Tabs.vue';

@@ -1,0 +1,27 @@
+{
+  "name": "@gits-id/table",
+  "version": "0.0.0",
+  "description": "GITS Table Component",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "data-table",
+    "gits",
+    "ui-component"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@gits-id/spinner": "workspace:*",
+    "@gits-id/checkbox": "workspace:*",
+    "@gits-id/pagination": "workspace:*",
+    "@gits-id/utils": "workspace:*",
+    "@gits-id/select": "workspace:*"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.0.23",
+    "@heroicons/vue": "^1.0.6"
+  }
+}

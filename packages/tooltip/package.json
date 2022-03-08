@@ -1,0 +1,26 @@
+{
+  "name": "@gits-id/tooltip",
+  "version": "0.0.0",
+  "description": "GITS Tooltip Component",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tooltip",
+    "gits",
+    "ui-component"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^3.2.31",
+    "@popperjs/core": "^2.11.2"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.0.23",
+    "@heroicons/vue": "^1.0.6",
+    "@headlessui/vue": "^1.5.0",
+    "vee-validate": "^4.5.9"
+  }
+}

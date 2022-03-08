@@ -1,0 +1,22 @@
+{
+  "name": "@gits-id/logo",
+  "version": "0.0.0",
+  "description": "GITS Logo Component",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "logo",
+    "gits",
+    "ui-component"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^3.2.31"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.0.23"
+  }
+}

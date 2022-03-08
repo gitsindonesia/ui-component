@@ -5,9 +5,13 @@ importers:
   .:
     specifiers:
       '@babel/core': ^7.17.5
+      '@base2/pretty-print-object': ^1.0.1
       '@changesets/cli': ^2.21.1
       '@ckeditor/ckeditor5-build-classic': ^30.0.0
       '@ckeditor/ckeditor5-vue': ^2.0.1
+      '@emotion/core': ^11.0.0
+      '@emotion/is-prop-valid': ^1.1.2
+      '@emotion/styled': ^11.8.1
       '@gits-id/alert': workspace:*
       '@gits-id/button': workspace:*
       '@gits-id/spinner': workspace:*
@@ -18,8 +22,12 @@ importers:
       '@mdx-js/react': ^1.6.22
       '@popperjs/core': ^2.11.2
       '@storybook/addon-actions': ^6.4.19
+      '@storybook/addon-docs': ^6.4.19
       '@storybook/addon-essentials': ^6.4.19
       '@storybook/addon-links': ^6.4.19
+      '@storybook/addons': ^6.4.19
+      '@storybook/channel-postmessage': ^6.4.19
+      '@storybook/channel-websocket': ^6.4.19
       '@storybook/core-common': ^6.4.19
       '@storybook/vue3': ^6.4.19
       '@tailwindcss/aspect-ratio': ^0.4.0
@@ -79,7 +87,11 @@ importers:
       yup: 0.32.11
     devDependencies:
       '@babel/core': 7.17.5
+      '@base2/pretty-print-object': 1.0.1
       '@changesets/cli': 2.21.1
+      '@emotion/core': 11.0.0
+      '@emotion/is-prop-valid': 1.1.2
+      '@emotion/styled': 11.8.1_@babel+core@7.17.5+react@17.0.2
       '@gits-id/alert': link:packages/alert
       '@gits-id/button': link:packages/button
       '@gits-id/spinner': link:packages/spinner
@@ -88,8 +100,12 @@ importers:
       '@iconify-json/heroicons-solid': 1.1.1
       '@mdx-js/react': 1.6.22_react@17.0.2
       '@storybook/addon-actions': 6.4.19_react-dom@17.0.2+react@17.0.2
+      '@storybook/addon-docs': 6.4.19_504b6dbbf6cc9486ae3f7aa393aaa723
       '@storybook/addon-essentials': 6.4.19_4fa22f505f4d5331af08a0ac11bb3321
       '@storybook/addon-links': 6.4.19_react-dom@17.0.2+react@17.0.2
+      '@storybook/addons': 6.4.19_react-dom@17.0.2+react@17.0.2
+      '@storybook/channel-postmessage': 6.4.19
+      '@storybook/channel-websocket': 6.4.19
       '@storybook/core-common': 6.4.19_3a6359ff0dae16692fd6f0778ea71593
       '@storybook/vue3': 6.4.19_e0b34c30d76cb68c0841214443a4dc14
       '@tailwindcss/aspect-ratio': 0.4.0_tailwindcss@3.0.23
@@ -115,9 +131,29 @@ importers:
 
   packages/alert:
     specifiers:
-      '@gits-id/button': '*'
+      '@gits-id/button': workspace:*
     dependencies:
       '@gits-id/button': link:../button
+
+  packages/app-bar:
+    specifiers:
+      '@gits-id/button': workspace:*
+      tailwindcss: ^3.0.23
+    devDependencies:
+      '@gits-id/button': link:../button
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
+
+  packages/badge:
+    specifiers:
+      tailwindcss: ^3.0.23
+    devDependencies:
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
+
+  packages/breadcrumbs:
+    specifiers:
+      tailwindcss: ^3.0.23
+    devDependencies:
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
 
   packages/button:
     specifiers:
@@ -128,11 +164,433 @@ importers:
     devDependencies:
       '@gits-id/tailwind-config': link:../tailwind-config
 
+  packages/card:
+    specifiers:
+      tailwindcss: ^3.0.23
+    devDependencies:
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
+
+  packages/checkbox:
+    specifiers:
+      '@gits-id/utils': workspace:*
+      tailwindcss: ^3.0.23
+    dependencies:
+      '@gits-id/utils': link:../utils
+    devDependencies:
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
+
+  packages/collapsible:
+    specifiers:
+      '@heroicons/vue': ^1.0.6
+    devDependencies:
+      '@heroicons/vue': 1.0.6_vue@3.2.31
+
+  packages/container:
+    specifiers:
+      tailwindcss: ^3.0.23
+    devDependencies:
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
+
+  packages/dropdown:
+    specifiers:
+      '@gits-id/button': workspace:*
+      '@headlessui/vue': ^1.5.0
+      '@heroicons/vue': ^1.0.6
+      tailwindcss: ^3.0.23
+      vue: ^3.2.31
+    dependencies:
+      '@gits-id/button': link:../button
+      vue: 3.2.31
+    devDependencies:
+      '@headlessui/vue': 1.5.0_vue@3.2.31
+      '@heroicons/vue': 1.0.6_vue@3.2.31
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
+
+  packages/editor:
+    specifiers:
+      '@ckeditor/ckeditor5-build-classic': ^32.0.0
+      '@ckeditor/ckeditor5-vue': ^2.0.1
+      '@headlessui/vue': ^1.5.0
+      '@heroicons/vue': ^1.0.6
+      tailwindcss: ^3.0.23
+      vee-validate: ^4.5.9
+      vue: ^3.2.31
+    dependencies:
+      '@ckeditor/ckeditor5-build-classic': 32.0.0
+      '@ckeditor/ckeditor5-vue': 2.0.1
+      vue: 3.2.31
+    devDependencies:
+      '@headlessui/vue': 1.5.0_vue@3.2.31
+      '@heroicons/vue': 1.0.6_vue@3.2.31
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
+      vee-validate: 4.5.9_vue@3.2.31
+
+  packages/file-input:
+    specifiers:
+      '@gits-id/input': workspace:*
+      '@headlessui/vue': ^1.5.0
+      '@heroicons/vue': ^1.0.6
+      tailwindcss: ^3.0.23
+      vee-validate: ^4.5.9
+      vue: ^3.2.31
+    dependencies:
+      '@gits-id/input': link:../input
+      vue: 3.2.31
+    devDependencies:
+      '@headlessui/vue': 1.5.0_vue@3.2.31
+      '@heroicons/vue': 1.0.6_vue@3.2.31
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
+      vee-validate: 4.5.9_vue@3.2.31
+
+  packages/form-group:
+    specifiers:
+      tailwindcss: ^3.0.23
+      vue: ^3.2.31
+    dependencies:
+      vue: 3.2.31
+    devDependencies:
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
+
+  packages/form-select:
+    specifiers:
+      '@gits-id/input': workspace:*
+      '@gits-id/utils': workspace:*
+      tailwindcss: ^3.0.23
+      vee-validate: ^4.5.9
+      vue: ^3.2.31
+    dependencies:
+      '@gits-id/input': link:../input
+      '@gits-id/utils': link:../utils
+      vue: 3.2.31
+    devDependencies:
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
+      vee-validate: 4.5.9_vue@3.2.31
+
+  packages/input:
+    specifiers:
+      '@gits-id/utils': workspace:*
+      '@headlessui/vue': ^1.5.0
+      '@heroicons/vue': ^1.0.6
+      tailwindcss: ^3.0.23
+      vee-validate: ^4.5.9
+      vue: ^3.2.31
+    dependencies:
+      '@gits-id/utils': link:../utils
+      vue: 3.2.31
+    devDependencies:
+      '@headlessui/vue': 1.5.0_vue@3.2.31
+      '@heroicons/vue': 1.0.6_vue@3.2.31
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
+      vee-validate: 4.5.9_vue@3.2.31
+
+  packages/layouts:
+    specifiers:
+      '@headlessui/vue': ^1.5.0
+      '@heroicons/vue': ^1.0.6
+      tailwindcss: ^3.0.23
+      vee-validate: ^4.5.9
+      vue: ^3.2.31
+    dependencies:
+      vue: 3.2.31
+    devDependencies:
+      '@headlessui/vue': 1.5.0_vue@3.2.31
+      '@heroicons/vue': 1.0.6_vue@3.2.31
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
+      vee-validate: 4.5.9_vue@3.2.31
+
+  packages/logo:
+    specifiers:
+      tailwindcss: ^3.0.23
+      vue: ^3.2.31
+    dependencies:
+      vue: 3.2.31
+    devDependencies:
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
+
+  packages/menu:
+    specifiers:
+      '@headlessui/vue': ^1.5.0
+      '@heroicons/vue': ^1.0.6
+      tailwindcss: ^3.0.23
+      vee-validate: ^4.5.9
+      vue: ^3.2.31
+      vue-router: ^4.0.13
+    dependencies:
+      vue: 3.2.31
+      vue-router: 4.0.13_vue@3.2.31
+    devDependencies:
+      '@headlessui/vue': 1.5.0_vue@3.2.31
+      '@heroicons/vue': 1.0.6_vue@3.2.31
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
+      vee-validate: 4.5.9_vue@3.2.31
+
+  packages/menus:
+    specifiers:
+      '@gits-id/button': workspace:*
+      '@headlessui/vue': ^1.5.0
+      '@heroicons/vue': ^1.0.6
+      tailwindcss: ^3.0.23
+      vee-validate: ^4.5.9
+      vue: ^3.2.31
+    dependencies:
+      '@gits-id/button': link:../button
+      vue: 3.2.31
+    devDependencies:
+      '@headlessui/vue': 1.5.0_vue@3.2.31
+      '@heroicons/vue': 1.0.6_vue@3.2.31
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
+      vee-validate: 4.5.9_vue@3.2.31
+
+  packages/modal:
+    specifiers:
+      '@headlessui/vue': ^1.5.0
+      '@heroicons/vue': ^1.0.6
+      tailwindcss: ^3.0.23
+      vee-validate: ^4.5.9
+      vue: ^3.2.31
+    dependencies:
+      vue: 3.2.31
+    devDependencies:
+      '@headlessui/vue': 1.5.0_vue@3.2.31
+      '@heroicons/vue': 1.0.6_vue@3.2.31
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
+      vee-validate: 4.5.9_vue@3.2.31
+
+  packages/multi-select:
+    specifiers:
+      '@gits-id/badge': workspace:*
+      '@gits-id/tooltip': workspace:*
+      '@headlessui/vue': ^1.5.0
+      '@heroicons/vue': ^1.0.6
+      tailwindcss: ^3.0.23
+      vee-validate: ^4.5.9
+      vue: ^3.2.31
+    dependencies:
+      '@gits-id/badge': link:../badge
+      '@gits-id/tooltip': link:../tooltip
+      vue: 3.2.31
+    devDependencies:
+      '@headlessui/vue': 1.5.0_vue@3.2.31
+      '@heroicons/vue': 1.0.6_vue@3.2.31
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
+      vee-validate: 4.5.9_vue@3.2.31
+
+  packages/nav-drawer:
+    specifiers:
+      '@gits-id/logo': workspace:*
+      '@gits-id/menu': workspace:*
+      '@gits-id/navbar': workspace:*
+      '@gits-id/utils': workspace:*
+      '@headlessui/vue': ^1.5.0
+      '@heroicons/vue': ^1.0.6
+      tailwindcss: ^3.0.23
+      vee-validate: ^4.5.9
+      vue: ^3.2.31
+    dependencies:
+      '@gits-id/logo': link:../logo
+      '@gits-id/menu': link:../menu
+      '@gits-id/navbar': link:../navbar
+      '@gits-id/utils': link:../utils
+      vue: 3.2.31
+    devDependencies:
+      '@headlessui/vue': 1.5.0_vue@3.2.31
+      '@heroicons/vue': 1.0.6_vue@3.2.31
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
+      vee-validate: 4.5.9_vue@3.2.31
+
+  packages/navbar:
+    specifiers:
+      '@gits-id/logo': workspace:*
+      '@gits-id/menus': workspace:*
+      '@headlessui/vue': ^1.5.0
+      '@heroicons/vue': ^1.0.6
+      tailwindcss: ^3.0.23
+      vee-validate: ^4.5.9
+      vue: ^3.2.31
+    dependencies:
+      '@gits-id/logo': link:../logo
+      '@gits-id/menus': link:../menus
+      vue: 3.2.31
+    devDependencies:
+      '@headlessui/vue': 1.5.0_vue@3.2.31
+      '@heroicons/vue': 1.0.6_vue@3.2.31
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
+      vee-validate: 4.5.9_vue@3.2.31
+
+  packages/pages:
+    specifiers:
+      '@gits-id/button': workspace:*
+      '@gits-id/checkbox': workspace:*
+      '@gits-id/input': workspace:*
+      '@headlessui/vue': ^1.5.0
+      '@heroicons/vue': ^1.0.6
+      tailwindcss: ^3.0.23
+      vee-validate: ^4.5.9
+      vue: ^3.2.31
+    dependencies:
+      '@gits-id/button': link:../button
+      '@gits-id/checkbox': link:../checkbox
+      '@gits-id/input': link:../input
+      vue: 3.2.31
+    devDependencies:
+      '@headlessui/vue': 1.5.0_vue@3.2.31
+      '@heroicons/vue': 1.0.6_vue@3.2.31
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
+      vee-validate: 4.5.9_vue@3.2.31
+
+  packages/pagination:
+    specifiers:
+      '@headlessui/vue': ^1.5.0
+      '@heroicons/vue': ^1.0.6
+      pagino: ^1.4.1
+      tailwindcss: ^3.0.23
+      vee-validate: ^4.5.9
+      vue: ^3.2.31
+    dependencies:
+      pagino: 1.4.1
+      vue: 3.2.31
+    devDependencies:
+      '@headlessui/vue': 1.5.0_vue@3.2.31
+      '@heroicons/vue': 1.0.6_vue@3.2.31
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
+      vee-validate: 4.5.9_vue@3.2.31
+
+  packages/progress:
+    specifiers:
+      '@gits-id/utils': workspace:*
+      '@headlessui/vue': ^1.5.0
+      '@heroicons/vue': ^1.0.6
+      tailwindcss: ^3.0.23
+      vee-validate: ^4.5.9
+      vue: ^3.2.31
+    dependencies:
+      '@gits-id/utils': link:../utils
+      vue: 3.2.31
+    devDependencies:
+      '@headlessui/vue': 1.5.0_vue@3.2.31
+      '@heroicons/vue': 1.0.6_vue@3.2.31
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
+      vee-validate: 4.5.9_vue@3.2.31
+
+  packages/radio:
+    specifiers:
+      '@gits-id/utils': workspace:*
+      '@headlessui/vue': ^1.5.0
+      '@heroicons/vue': ^1.0.6
+      tailwindcss: ^3.0.23
+      vee-validate: ^4.5.9
+      vue: ^3.2.31
+    dependencies:
+      '@gits-id/utils': link:../utils
+      vue: 3.2.31
+    devDependencies:
+      '@headlessui/vue': 1.5.0_vue@3.2.31
+      '@heroicons/vue': 1.0.6_vue@3.2.31
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
+      vee-validate: 4.5.9_vue@3.2.31
+
+  packages/select:
+    specifiers:
+      '@gits-id/input': workspace:*
+      '@gits-id/utils': workspace:*
+      '@headlessui/vue': ^1.5.0
+      '@heroicons/vue': ^1.0.6
+      tailwindcss: ^3.0.23
+      vee-validate: ^4.5.9
+      vue: ^3.2.31
+    dependencies:
+      '@gits-id/input': link:../input
+      '@gits-id/utils': link:../utils
+      vue: 3.2.31
+    devDependencies:
+      '@headlessui/vue': 1.5.0_vue@3.2.31
+      '@heroicons/vue': 1.0.6_vue@3.2.31
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
+      vee-validate: 4.5.9_vue@3.2.31
+
+  packages/services:
+    specifiers:
+      '@gits-id/button': '*'
+    dependencies:
+      '@gits-id/button': link:../button
+
   packages/spinner:
     specifiers:
       '@gits-id/utils': '*'
     devDependencies:
       '@gits-id/utils': link:../utils
+
+  packages/stats:
+    specifiers:
+      '@gits-id/badge': workspace:*
+      '@gits-id/card': workspace:*
+      '@headlessui/vue': ^1.5.0
+      '@heroicons/vue': ^1.0.6
+      tailwindcss: ^3.0.23
+      vee-validate: ^4.5.9
+      vue: ^3.2.31
+    dependencies:
+      '@gits-id/badge': link:../badge
+      '@gits-id/card': link:../card
+      vue: 3.2.31
+    devDependencies:
+      '@headlessui/vue': 1.5.0_vue@3.2.31
+      '@heroicons/vue': 1.0.6_vue@3.2.31
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
+      vee-validate: 4.5.9_vue@3.2.31
+
+  packages/switch:
+    specifiers:
+      '@headlessui/vue': ^1.5.0
+      '@heroicons/vue': ^1.0.6
+      tailwindcss: ^3.0.23
+      vee-validate: ^4.5.9
+      vue: ^3.2.31
+    dependencies:
+      vue: 3.2.31
+    devDependencies:
+      '@headlessui/vue': 1.5.0_vue@3.2.31
+      '@heroicons/vue': 1.0.6_vue@3.2.31
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
+      vee-validate: 4.5.9_vue@3.2.31
+
+  packages/table:
+    specifiers:
+      '@gits-id/checkbox': workspace:*
+      '@gits-id/pagination': workspace:*
+      '@gits-id/select': workspace:*
+      '@gits-id/spinner': workspace:*
+      '@gits-id/utils': workspace:*
+      '@heroicons/vue': ^1.0.6
+      tailwindcss: ^3.0.23
+    dependencies:
+      '@gits-id/checkbox': link:../checkbox
+      '@gits-id/pagination': link:../pagination
+      '@gits-id/select': link:../select
+      '@gits-id/spinner': link:../spinner
+      '@gits-id/utils': link:../utils
+    devDependencies:
+      '@heroicons/vue': 1.0.6_vue@3.2.31
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
+
+  packages/tabs:
+    specifiers:
+      '@gits-id/card': workspace:*
+      '@gits-id/utils': workspace:*
+      '@headlessui/vue': ^1.5.0
+      '@heroicons/vue': ^1.0.6
+      tailwindcss: ^3.0.23
+      vee-validate: ^4.5.9
+      vue: ^3.2.31
+    dependencies:
+      '@gits-id/card': link:../card
+      '@gits-id/utils': link:../utils
+      vue: 3.2.31
+    devDependencies:
+      '@headlessui/vue': 1.5.0_vue@3.2.31
+      '@heroicons/vue': 1.0.6_vue@3.2.31
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
+      vee-validate: 4.5.9_vue@3.2.31
 
   packages/tailwind-config:
     specifiers:
@@ -142,40 +600,64 @@ importers:
       '@gits-id/button': link:../button
       tailwindcss: 3.0.23_autoprefixer@10.4.2
 
-  packages/utils:
+  packages/textarea:
+    specifiers:
+      '@gits-id/utils': workspace:*
+      '@headlessui/vue': ^1.5.0
+      '@heroicons/vue': ^1.0.6
+      tailwindcss: ^3.0.23
+      vee-validate: ^4.5.9
+      vue: ^3.2.31
+    dependencies:
+      '@gits-id/utils': link:../utils
+      vue: 3.2.31
+    devDependencies:
+      '@headlessui/vue': 1.5.0_vue@3.2.31
+      '@heroicons/vue': 1.0.6_vue@3.2.31
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
+      vee-validate: 4.5.9_vue@3.2.31
+
+  packages/toast:
+    specifiers:
+      '@headlessui/vue': ^1.5.0
+      '@heroicons/vue': ^1.0.6
+      pinia: ^2.0.11
+      tailwindcss: ^3.0.23
+      vee-validate: ^4.5.9
+      vue: ^3.2.31
+      vuex: ^4.0.2
+    dependencies:
+      pinia: 2.0.11_typescript@4.5.5+vue@3.2.31
+      vue: 3.2.31
+      vuex: 4.0.2_vue@3.2.31
+    devDependencies:
+      '@headlessui/vue': 1.5.0_vue@3.2.31
+      '@heroicons/vue': 1.0.6_vue@3.2.31
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
+      vee-validate: 4.5.9_vue@3.2.31
+
+  packages/tooltip:
+    specifiers:
+      '@headlessui/vue': ^1.5.0
+      '@heroicons/vue': ^1.0.6
+      '@popperjs/core': ^2.11.2
+      tailwindcss: ^3.0.23
+      vee-validate: ^4.5.9
+      vue: ^3.2.31
+    dependencies:
+      '@popperjs/core': 2.11.2
+      vue: 3.2.31
+    devDependencies:
+      '@headlessui/vue': 1.5.0_vue@3.2.31
+      '@heroicons/vue': 1.0.6_vue@3.2.31
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
+      vee-validate: 4.5.9_vue@3.2.31
+
+  packages/types:
     specifiers: {}
 
-  src/components/VAppBar:
-    specifiers:
-      '@gits-id/button': '*'
-      tailwindcss: ^3.0.23
-    devDependencies:
-      '@gits-id/button': link:../../../packages/button
-      tailwindcss: 3.0.23_autoprefixer@10.4.2
-
-  src/components/VBadge:
-    specifiers:
-      tailwindcss: ^3.0.23
-    devDependencies:
-      tailwindcss: 3.0.23_autoprefixer@10.4.2
-
-  src/components/VBreadcrumbs:
-    specifiers:
-      tailwindcss: ^3.0.23
-    devDependencies:
-      tailwindcss: 3.0.23_autoprefixer@10.4.2
-
-  src/components/VCard:
-    specifiers:
-      tailwindcss: ^3.0.23
-    devDependencies:
-      tailwindcss: 3.0.23_autoprefixer@10.4.2
-
-  src/components/VCheckbox:
-    specifiers:
-      tailwindcss: ^3.0.23
-    devDependencies:
-      tailwindcss: 3.0.23_autoprefixer@10.4.2
+  packages/utils:
+    specifiers: {}
 
 packages:
 
@@ -1823,11 +2305,25 @@ packages:
       ckeditor5: 30.0.0
     dev: false
 
+  /@ckeditor/ckeditor5-adapter-ckfinder/32.0.0:
+    resolution: {integrity: sha512-DCK4CPW4M4pEJW/zC6yo8zGGGDXfjsEQRGkTiF4QjHODh3QYBc6O0Oy4mzCuEIobkyMfcUAqEh3UQQVgEM8B+Q==}
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
+    dependencies:
+      ckeditor5: 32.0.0
+    dev: false
+
   /@ckeditor/ckeditor5-autoformat/30.0.0:
     resolution: {integrity: sha512-OkEiov3vaaW291fg3tBjusngTJYvkDC5TGvkqc/z+zOTHSG1oseaPRz5uD/glxsSNXfEPSTkcZhIQB2Rc1ljHg==}
     engines: {node: '>=12.0.0', npm: '>=5.7.1'}
     dependencies:
       ckeditor5: 30.0.0
+    dev: false
+
+  /@ckeditor/ckeditor5-autoformat/32.0.0:
+    resolution: {integrity: sha512-9zg1Rm/ak+zflH+p3zUjxZgK0iPAhDA+/vElBXQSVANATYqNxa4gszM/PDIl71tMpy6Yc+De9/eTFiazxsR9zA==}
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
+    dependencies:
+      ckeditor5: 32.0.0
     dev: false
 
   /@ckeditor/ckeditor5-basic-styles/30.0.0:
@@ -1837,11 +2333,25 @@ packages:
       ckeditor5: 30.0.0
     dev: false
 
+  /@ckeditor/ckeditor5-basic-styles/32.0.0:
+    resolution: {integrity: sha512-Y3YzhHkCIbh1XqMGJKMOWnKtoLY7AbwquBI4rC1i2bGbO5iAlwfyiLeikstMM8ft2PbWFsXDeVPa3kRnBBQwDQ==}
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
+    dependencies:
+      ckeditor5: 32.0.0
+    dev: false
+
   /@ckeditor/ckeditor5-block-quote/30.0.0:
     resolution: {integrity: sha512-4Xth4i6YIF15/icoNMMmif8Bbn8YrXHxF1Xof22DR44luUQqvk8WzwXOLUYvMPMGFEpKNlUYl3rYxrEfhhAC9w==}
     engines: {node: '>=12.0.0', npm: '>=5.7.1'}
     dependencies:
       ckeditor5: 30.0.0
+    dev: false
+
+  /@ckeditor/ckeditor5-block-quote/32.0.0:
+    resolution: {integrity: sha512-A+htu5dwy5+lcbdwwFIBntcqVdD87ELyDIfOsrW4KUNOFpE1nnlFE2TPlYl5+kKWkhFcYPU/dVl9Ebnj/bb0ng==}
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
+    dependencies:
+      ckeditor5: 32.0.0
     dev: false
 
   /@ckeditor/ckeditor5-build-classic/30.0.0:
@@ -1869,11 +2379,43 @@ packages:
       '@ckeditor/ckeditor5-typing': 30.0.0
     dev: false
 
+  /@ckeditor/ckeditor5-build-classic/32.0.0:
+    resolution: {integrity: sha512-BUYJAuV6PRdswv7f98zMg787TxYMZGRLKYJN8jxSqNtEpPo62LYyvwCXRneWAdM6en5y6oVGxdPrjvqHRRxX5w==}
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
+    dependencies:
+      '@ckeditor/ckeditor5-adapter-ckfinder': 32.0.0
+      '@ckeditor/ckeditor5-autoformat': 32.0.0
+      '@ckeditor/ckeditor5-basic-styles': 32.0.0
+      '@ckeditor/ckeditor5-block-quote': 32.0.0
+      '@ckeditor/ckeditor5-ckfinder': 32.0.0
+      '@ckeditor/ckeditor5-cloud-services': 32.0.0
+      '@ckeditor/ckeditor5-easy-image': 32.0.0
+      '@ckeditor/ckeditor5-editor-classic': 32.0.0
+      '@ckeditor/ckeditor5-essentials': 32.0.0
+      '@ckeditor/ckeditor5-heading': 32.0.0
+      '@ckeditor/ckeditor5-image': 32.0.0
+      '@ckeditor/ckeditor5-indent': 32.0.0
+      '@ckeditor/ckeditor5-link': 32.0.0
+      '@ckeditor/ckeditor5-list': 32.0.0
+      '@ckeditor/ckeditor5-media-embed': 32.0.0
+      '@ckeditor/ckeditor5-paragraph': 32.0.0
+      '@ckeditor/ckeditor5-paste-from-office': 32.0.0
+      '@ckeditor/ckeditor5-table': 32.0.0
+      '@ckeditor/ckeditor5-typing': 32.0.0
+    dev: false
+
   /@ckeditor/ckeditor5-ckfinder/30.0.0:
     resolution: {integrity: sha512-OROvB4lrUy3QyA8ZkV+S/d5TD1DbyyJ6WCPEJv3GDNWLhOvcBFZpxSL0z3DHCQOJQE+a4rr8cjjToxdnZW5/yQ==}
     engines: {node: '>=12.0.0', npm: '>=5.7.1'}
     dependencies:
       ckeditor5: 30.0.0
+    dev: false
+
+  /@ckeditor/ckeditor5-ckfinder/32.0.0:
+    resolution: {integrity: sha512-1XOr+S26Gt2CNZxnIzxURwCpZXGnNW56ZTPqHa2NHLgemm+KYs3+iR8/AQj9HCW5za+ZFmj0I5Ztqq9Pssya1w==}
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
+    dependencies:
+      ckeditor5: 32.0.0
     dev: false
 
   /@ckeditor/ckeditor5-clipboard/30.0.0:
@@ -1887,11 +2429,29 @@ packages:
       lodash-es: 4.17.21
     dev: false
 
+  /@ckeditor/ckeditor5-clipboard/32.0.0:
+    resolution: {integrity: sha512-Irk+XMCaG6lEBHh4ffPVfP66CEfOIGokADM0w7Z11xrPGqz1UCWrdu2CGoEaEDWw3+7c5/IjDh9jmZ5xG8TZmQ==}
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
+    dependencies:
+      '@ckeditor/ckeditor5-core': 32.0.0
+      '@ckeditor/ckeditor5-engine': 32.0.0
+      '@ckeditor/ckeditor5-utils': 32.0.0
+      '@ckeditor/ckeditor5-widget': 32.0.0
+      lodash-es: 4.17.21
+    dev: false
+
   /@ckeditor/ckeditor5-cloud-services/30.0.0:
     resolution: {integrity: sha512-eTCnhQGA+aLkIqqfWyqwjrbaF00kKQTrzj+NZsLFtblRe8MZ8ZrneDhWyMxJ96m7Gqq6FpBN/GVZOWZm3p06OA==}
     engines: {node: '>=12.0.0', npm: '>=5.7.1'}
     dependencies:
       ckeditor5: 30.0.0
+    dev: false
+
+  /@ckeditor/ckeditor5-cloud-services/32.0.0:
+    resolution: {integrity: sha512-hpbZP4Ue9glkK35+6/Tv+Zw6S/gWA7qNhuUWFEQ22kClKpiEH+2SOnQrTWBRrHVMLRm3GXIfq9sIvv3Ndi0a2w==}
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
+    dependencies:
+      ckeditor5: 32.0.0
     dev: false
 
   /@ckeditor/ckeditor5-core/30.0.0:
@@ -1904,11 +2464,28 @@ packages:
       lodash-es: 4.17.21
     dev: false
 
+  /@ckeditor/ckeditor5-core/32.0.0:
+    resolution: {integrity: sha512-Vf13S2EQ/R7ULFHt13Is6lOunq3tWROqNsE9oclSuzL0kTWoYuzu3JFyEnyMwDMRisl3CDpU7/Bp5VJ76BsRsA==}
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
+    dependencies:
+      '@ckeditor/ckeditor5-engine': 32.0.0
+      '@ckeditor/ckeditor5-ui': 32.0.0
+      '@ckeditor/ckeditor5-utils': 32.0.0
+      lodash-es: 4.17.21
+    dev: false
+
   /@ckeditor/ckeditor5-easy-image/30.0.0:
     resolution: {integrity: sha512-DN61WygBsUYwLbCsogHj7gUs+tFk51kZ1C3+f7o/eVSr/11aQ7KhLvcnXQ7b5rQnhiBqJCJoXb9A9WL1Xg3dxQ==}
     engines: {node: '>=12.0.0', npm: '>=5.7.1'}
     dependencies:
       ckeditor5: 30.0.0
+    dev: false
+
+  /@ckeditor/ckeditor5-easy-image/32.0.0:
+    resolution: {integrity: sha512-PLt4xRGs9eTl0zaDHqBiw1m5EngOFDFMdsCb3au7XBDDZ7Q7UhXIbGvA6waAUHniJaZLCVppU7J+knTlmsZfRQ==}
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
+    dependencies:
+      ckeditor5: 32.0.0
     dev: false
 
   /@ckeditor/ckeditor5-editor-classic/30.0.0:
@@ -1919,11 +2496,27 @@ packages:
       lodash-es: 4.17.21
     dev: false
 
+  /@ckeditor/ckeditor5-editor-classic/32.0.0:
+    resolution: {integrity: sha512-6idKBOId/sOnZ1gY5b5z34/RGSj5YsH+BgaNad04AtjKr4IVTJPrPZUhF83761nccFC9kRZTrXb9TcEWHsSHAg==}
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
+    dependencies:
+      ckeditor5: 32.0.0
+      lodash-es: 4.17.21
+    dev: false
+
   /@ckeditor/ckeditor5-engine/30.0.0:
     resolution: {integrity: sha512-k8Uev+IbNXcO/ihWlDmRL+xiUV4MvJVtZLA8+UdLp8hiuGW9THw0ODYDvmCe88JG7QkiwfPhtLejKu0hMrJD9Q==}
     engines: {node: '>=12.0.0', npm: '>=5.7.1'}
     dependencies:
       '@ckeditor/ckeditor5-utils': 30.0.0
+      lodash-es: 4.17.21
+    dev: false
+
+  /@ckeditor/ckeditor5-engine/32.0.0:
+    resolution: {integrity: sha512-UuAEnGBdib0hVhCIJByLQ8tKDjdOJkJF/aKsAQth9an95Z7TJ8oqUqhwhUQWtsULu0ugaqb/95t7FUFA+3BJqw==}
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
+    dependencies:
+      '@ckeditor/ckeditor5-utils': 32.0.0
       lodash-es: 4.17.21
     dev: false
 
@@ -1936,6 +2529,15 @@ packages:
       '@ckeditor/ckeditor5-utils': 30.0.0
     dev: false
 
+  /@ckeditor/ckeditor5-enter/32.0.0:
+    resolution: {integrity: sha512-1V0M9wyTWZmLJ07eqb7ZICEQTDzi2NwsKaTpAavOlMG04+L4q5Ha9H0EXxgZtKjN4iq0cQEv6sog06xDkRrTDw==}
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
+    dependencies:
+      '@ckeditor/ckeditor5-core': 32.0.0
+      '@ckeditor/ckeditor5-engine': 32.0.0
+      '@ckeditor/ckeditor5-utils': 32.0.0
+    dev: false
+
   /@ckeditor/ckeditor5-essentials/30.0.0:
     resolution: {integrity: sha512-Va3SMa8AB+KR3TU+teNJY1SxvZvQEVQEtNOr8CGcHWe0j7c9nQJaJdwJLfOCKYH5jjiKQixNrdnmN+14BxSwPw==}
     engines: {node: '>=12.0.0', npm: '>=5.7.1'}
@@ -1943,11 +2545,25 @@ packages:
       ckeditor5: 30.0.0
     dev: false
 
+  /@ckeditor/ckeditor5-essentials/32.0.0:
+    resolution: {integrity: sha512-haHmUIdvz0ykMBM4YOyNFBbh6Ymku19yoPyX8xMIzMVbniI+DtB1k0fGZu7OqUNjjf5jPZJlz5sW+KHzzySVXg==}
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
+    dependencies:
+      ckeditor5: 32.0.0
+    dev: false
+
   /@ckeditor/ckeditor5-heading/30.0.0:
     resolution: {integrity: sha512-G7h9Zeu+rfHlA90t4VSzRsci12SapGHNZXAZqmcnOFizkCVG1lNE3DZso7YhHF2FrBDan0O3XRPfp0VUB2TTFg==}
     engines: {node: '>=12.0.0', npm: '>=5.7.1'}
     dependencies:
       ckeditor5: 30.0.0
+    dev: false
+
+  /@ckeditor/ckeditor5-heading/32.0.0:
+    resolution: {integrity: sha512-XxB1yDP3aU1ePYAUE2XiQ/yjHkSdrRllVsihBtDKh5DTcoKxZHafmVEZXBiJaLrv5OPNmfvXyR+eC6yet35sMA==}
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
+    dependencies:
+      ckeditor5: 32.0.0
     dev: false
 
   /@ckeditor/ckeditor5-image/30.0.0:
@@ -1959,11 +2575,27 @@ packages:
       lodash-es: 4.17.21
     dev: false
 
+  /@ckeditor/ckeditor5-image/32.0.0:
+    resolution: {integrity: sha512-sBdFbWH5YdmnvEIQsEY4Xj4kkHcSmLgFDjgtAQdjqdQi3GZI81kMYIepPNELtUtpEqNd0WyS3ReWYHMlbjOpfw==}
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
+    dependencies:
+      '@ckeditor/ckeditor5-ui': 32.0.0
+      ckeditor5: 32.0.0
+      lodash-es: 4.17.21
+    dev: false
+
   /@ckeditor/ckeditor5-indent/30.0.0:
     resolution: {integrity: sha512-czzpwtiH15qZYBuH2xhz24V0hy9Jxnq8uhhRlYajiUbj0cf8ePAceomP/jNH20j9L4DWopuoPNlHprO0LtGioQ==}
     engines: {node: '>=12.0.0', npm: '>=5.7.1'}
     dependencies:
       ckeditor5: 30.0.0
+    dev: false
+
+  /@ckeditor/ckeditor5-indent/32.0.0:
+    resolution: {integrity: sha512-I1zHBv1kRCRUyOevKzSpVyd/Df1IdmYeKsVYmEKvDCUQMp126DEdOjlxCbSkq66gFJ1VLUlV+lev5BXg0w2NRA==}
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
+    dependencies:
+      ckeditor5: 32.0.0
     dev: false
 
   /@ckeditor/ckeditor5-link/30.0.0:
@@ -1975,11 +2607,28 @@ packages:
       lodash-es: 4.17.21
     dev: false
 
+  /@ckeditor/ckeditor5-link/32.0.0:
+    resolution: {integrity: sha512-xJHLp+SZn/fzcDHFU80IOEkZ6aBWSAMgJyp2pDMFOJMz2eWTKwNNh6XJW18f4ELHVWaCMVNgdp/DuSZxxUGxfg==}
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
+    dependencies:
+      '@ckeditor/ckeditor5-ui': 32.0.0
+      ckeditor5: 32.0.0
+      lodash-es: 4.17.21
+    dev: false
+
   /@ckeditor/ckeditor5-list/30.0.0:
     resolution: {integrity: sha512-1pqXn8xAa8bCMaJsBzgCR6yev2Xk+Bz0cf9PO2CjxGhLAbHpHRXl8kGjGnPP4aRLh0ecf8zNc7HmuD7BxHPzsw==}
     engines: {node: '>=12.0.0', npm: '>=5.7.1'}
     dependencies:
       ckeditor5: 30.0.0
+    dev: false
+
+  /@ckeditor/ckeditor5-list/32.0.0:
+    resolution: {integrity: sha512-xjIfi142oso1H5m89BKB7uaOsWzMUb14BGzO9poTvSQjIpavBRYPTrin2qb0euuEY2XvUjVJF7GqPJ4zJdPDzA==}
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
+    dependencies:
+      '@ckeditor/ckeditor5-ui': 32.0.0
+      ckeditor5: 32.0.0
     dev: false
 
   /@ckeditor/ckeditor5-media-embed/30.0.0:
@@ -1988,6 +2637,14 @@ packages:
     dependencies:
       '@ckeditor/ckeditor5-ui': 30.0.0
       ckeditor5: 30.0.0
+    dev: false
+
+  /@ckeditor/ckeditor5-media-embed/32.0.0:
+    resolution: {integrity: sha512-GoCaEqAW0Pu2mPOBKzNxdpqD2beM5KmxhaIANOR8xR404cYSMgXM6g5bL6eQPRRwtzqw60/qTj2k9QGIqg30xw==}
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
+    dependencies:
+      '@ckeditor/ckeditor5-ui': 32.0.0
+      ckeditor5: 32.0.0
     dev: false
 
   /@ckeditor/ckeditor5-paragraph/30.0.0:
@@ -1999,11 +2656,27 @@ packages:
       '@ckeditor/ckeditor5-utils': 30.0.0
     dev: false
 
+  /@ckeditor/ckeditor5-paragraph/32.0.0:
+    resolution: {integrity: sha512-GRpMOb0pjZHvUtyTrX9jlH7gQ5n1/33ljX3Ty31Lyovz4KPfR3YNzyjNAVHb/fOk72zoPFUrhpd/NLum836DNA==}
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
+    dependencies:
+      '@ckeditor/ckeditor5-core': 32.0.0
+      '@ckeditor/ckeditor5-ui': 32.0.0
+      '@ckeditor/ckeditor5-utils': 32.0.0
+    dev: false
+
   /@ckeditor/ckeditor5-paste-from-office/30.0.0:
     resolution: {integrity: sha512-rDRpzajBp+s0m5Pf0sXG73u8moGQcno8hhUJ9li7EROmxsM4EVeKAao2W3MEu9hNIvu63Jps2JD7YSmOTjMAoA==}
     engines: {node: '>=12.0.0', npm: '>=5.7.1'}
     dependencies:
       ckeditor5: 30.0.0
+    dev: false
+
+  /@ckeditor/ckeditor5-paste-from-office/32.0.0:
+    resolution: {integrity: sha512-dX/vfBwp0e7938Y1j0lEyqfClsEInnQHG/MD4gz9AVcCixVxl12F2uL52WMm/nSVrVax5zcUSOz1QV9/0UG/mg==}
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
+    dependencies:
+      ckeditor5: 32.0.0
     dev: false
 
   /@ckeditor/ckeditor5-select-all/30.0.0:
@@ -2015,11 +2688,28 @@ packages:
       '@ckeditor/ckeditor5-utils': 30.0.0
     dev: false
 
+  /@ckeditor/ckeditor5-select-all/32.0.0:
+    resolution: {integrity: sha512-HmkR1hivslj9N+x3KAf0hghIpTafxmGqV2nit8iE0WE4YCcBw0cubJHbDsdiFmniIQXrbsBgI7RUnXs4nXdaCg==}
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
+    dependencies:
+      '@ckeditor/ckeditor5-core': 32.0.0
+      '@ckeditor/ckeditor5-ui': 32.0.0
+      '@ckeditor/ckeditor5-utils': 32.0.0
+    dev: false
+
   /@ckeditor/ckeditor5-table/30.0.0:
     resolution: {integrity: sha512-B4/h6YV3ZD7GJFlL51zyQ+wrv1T9KMsNHCWafYPey/OGTCW66L5018XlsjM2Lc3LWweHHotlS4uJq7Ys4zlcnA==}
     engines: {node: '>=12.0.0', npm: '>=5.7.1'}
     dependencies:
       ckeditor5: 30.0.0
+      lodash-es: 4.17.21
+    dev: false
+
+  /@ckeditor/ckeditor5-table/32.0.0:
+    resolution: {integrity: sha512-pWNeDCKMcNp/XpRU/hqu1K7rmzrDB++WIPzG5KDwkQQ83iwlbTqrfa7xsLLVX6bz6g2/fy2B3Ipt5BIndhlhjQ==}
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
+    dependencies:
+      ckeditor5: 32.0.0
       lodash-es: 4.17.21
     dev: false
 
@@ -2033,12 +2723,31 @@ packages:
       lodash-es: 4.17.21
     dev: false
 
+  /@ckeditor/ckeditor5-typing/32.0.0:
+    resolution: {integrity: sha512-MkbFfgvwMgU4P5/2LZa473w2XA4DQmb7N+3VzqMQfn2y7YdsRk8tt54GxilwL0bTE/AiSqcR6f+LcnHFGj/coQ==}
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
+    dependencies:
+      '@ckeditor/ckeditor5-core': 32.0.0
+      '@ckeditor/ckeditor5-engine': 32.0.0
+      '@ckeditor/ckeditor5-utils': 32.0.0
+      lodash-es: 4.17.21
+    dev: false
+
   /@ckeditor/ckeditor5-ui/30.0.0:
     resolution: {integrity: sha512-skd4h4XoVtOAlmbQWQwCPyRxkjOdxhtvXKdL1T/5ATCMcd2/Hea5YRkcRvEmtCn1/xdEYBLLFniG0rcAiuybSA==}
     engines: {node: '>=12.0.0', npm: '>=5.7.1'}
     dependencies:
       '@ckeditor/ckeditor5-core': 30.0.0
       '@ckeditor/ckeditor5-utils': 30.0.0
+      lodash-es: 4.17.21
+    dev: false
+
+  /@ckeditor/ckeditor5-ui/32.0.0:
+    resolution: {integrity: sha512-tkn5Y0ZYkhby8iFnAAZMLyh9zub/okOhzR2IJvS6T95J/w1z2HpJO/yNkdSrU43qXQtmp77o0UQ53PU4PvIp0Q==}
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
+    dependencies:
+      '@ckeditor/ckeditor5-core': 32.0.0
+      '@ckeditor/ckeditor5-utils': 32.0.0
       lodash-es: 4.17.21
     dev: false
 
@@ -2051,6 +2760,15 @@ packages:
       '@ckeditor/ckeditor5-ui': 30.0.0
     dev: false
 
+  /@ckeditor/ckeditor5-undo/32.0.0:
+    resolution: {integrity: sha512-4diY4FcmX3Wbi0Gr0U1HsswwJ3HIjdRJV9x4zEm7rXz1PbH+IIQKPIJQSoyd1dSkE2F4DslUhfIGsZH5vzmQ8w==}
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
+    dependencies:
+      '@ckeditor/ckeditor5-core': 32.0.0
+      '@ckeditor/ckeditor5-engine': 32.0.0
+      '@ckeditor/ckeditor5-ui': 32.0.0
+    dev: false
+
   /@ckeditor/ckeditor5-upload/30.0.0:
     resolution: {integrity: sha512-2s8ZHOpVMHyiCFGy0gwD9DqSbuXW1UjvETIw3nmAd8O6AYi4jhBRuibHRKuumZTU1lskaOjG8UprQkIQBcGi7Q==}
     engines: {node: '>=12.0.0', npm: '>=5.7.1'}
@@ -2060,9 +2778,25 @@ packages:
       '@ckeditor/ckeditor5-utils': 30.0.0
     dev: false
 
+  /@ckeditor/ckeditor5-upload/32.0.0:
+    resolution: {integrity: sha512-MSzZqB65zzrvwUOjzdUvuNp7syY5ZGZG3qdQeJBQNAS9G14f5WdzH4tKGK2j4dDX3KGhoCA1RJagpCmwDXqRWw==}
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
+    dependencies:
+      '@ckeditor/ckeditor5-core': 32.0.0
+      '@ckeditor/ckeditor5-ui': 32.0.0
+      '@ckeditor/ckeditor5-utils': 32.0.0
+    dev: false
+
   /@ckeditor/ckeditor5-utils/30.0.0:
     resolution: {integrity: sha512-pq4lJdkK/XPwD3ZdSWU/ZRklSMjmfAphp7vRiB0g1PBvsDfcZ4qqJgn6BKHyvx/K21+dMM5r6rFkxFBQnEy/Jg==}
     engines: {node: '>=12.0.0', npm: '>=5.7.1'}
+    dependencies:
+      lodash-es: 4.17.21
+    dev: false
+
+  /@ckeditor/ckeditor5-utils/32.0.0:
+    resolution: {integrity: sha512-4O0TW/oeFRGbB+mrXMhx47zEzASdDz87ftiJiI9jcB+S6Pq5+aSqCNc0ZVQBKaj2URNGqFkkT6Kp6eEEsMBVWA==}
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
     dependencies:
       lodash-es: 4.17.21
     dev: false
@@ -2085,6 +2819,19 @@ packages:
       lodash-es: 4.17.21
     dev: false
 
+  /@ckeditor/ckeditor5-widget/32.0.0:
+    resolution: {integrity: sha512-YcF5iVtMwYC8/3sxv00Du/9bvdhx6br0gJdxfjkiNP1/7GY+WSwjhZSNJZhT30xp+iLHt4tGIUUQqFHIk3Ui6Q==}
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
+    dependencies:
+      '@ckeditor/ckeditor5-core': 32.0.0
+      '@ckeditor/ckeditor5-engine': 32.0.0
+      '@ckeditor/ckeditor5-enter': 32.0.0
+      '@ckeditor/ckeditor5-typing': 32.0.0
+      '@ckeditor/ckeditor5-ui': 32.0.0
+      '@ckeditor/ckeditor5-utils': 32.0.0
+      lodash-es: 4.17.21
+    dev: false
+
   /@cnakazawa/watch/1.0.4:
     resolution: {integrity: sha512-v9kIhKwjeZThiWrLmj0y17CWoyddASLj9O2yvbZkbvw/N3rWOYy9zkV66ursAoVr0mV15bL8g0c4QZUE6cdDoQ==}
     engines: {node: '>=0.1.95'}
@@ -2097,6 +2844,26 @@ packages:
   /@discoveryjs/json-ext/0.5.6:
     resolution: {integrity: sha512-ws57AidsDvREKrZKYffXddNkyaF14iHNHm8VQnZH6t99E8gczjNN0GpvcGny0imC80yQ0tHz1xVUKk/KFQSUyA==}
     engines: {node: '>=10.0.0'}
+    dev: true
+
+  /@emotion/babel-plugin/11.7.2_@babel+core@7.17.5:
+    resolution: {integrity: sha512-6mGSCWi9UzXut/ZAN6lGFu33wGR3SJisNl3c0tvlmb8XChH1b2SUvxvnOh7hvLpqyRdHHU9AiazV3Cwbk5SXKQ==}
+    peerDependencies:
+      '@babel/core': ^7.0.0
+    dependencies:
+      '@babel/core': 7.17.5
+      '@babel/helper-module-imports': 7.16.7
+      '@babel/plugin-syntax-jsx': 7.16.7_@babel+core@7.17.5
+      '@babel/runtime': 7.17.2
+      '@emotion/hash': 0.8.0
+      '@emotion/memoize': 0.7.5
+      '@emotion/serialize': 1.0.2
+      babel-plugin-macros: 2.8.0
+      convert-source-map: 1.8.0
+      escape-string-regexp: 4.0.0
+      find-root: 1.1.0
+      source-map: 0.5.7
+      stylis: 4.0.13
     dev: true
 
   /@emotion/cache/10.0.29:
@@ -2136,6 +2903,10 @@ packages:
       react: 17.0.2
     dev: true
 
+  /@emotion/core/11.0.0:
+    resolution: {integrity: sha512-w4sE3AmHmyG6RDKf6mIbtHpgJUSJ2uGvPQb8VXFL7hFjMPibE8IiehG8cMX3Ztm4svfCQV6KqusQbeIOkurBcA==}
+    dev: true
+
   /@emotion/css/10.0.27:
     resolution: {integrity: sha512-6wZjsvYeBhyZQYNrGoR5yPMYbMBNEnanDrqmsqS1mzDm1cOTu12shvl2j4QHNS36UaTE0USIJawCH9C8oW34Zw==}
     dependencies:
@@ -2154,8 +2925,18 @@ packages:
       '@emotion/memoize': 0.7.4
     dev: true
 
+  /@emotion/is-prop-valid/1.1.2:
+    resolution: {integrity: sha512-3QnhqeL+WW88YjYbQL5gUIkthuMw7a0NGbZ7wfFVk2kg/CK5w8w5FFa0RzWjyY1+sujN0NWbtSHH6OJmWHtJpQ==}
+    dependencies:
+      '@emotion/memoize': 0.7.4
+    dev: true
+
   /@emotion/memoize/0.7.4:
     resolution: {integrity: sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==}
+    dev: true
+
+  /@emotion/memoize/0.7.5:
+    resolution: {integrity: sha512-igX9a37DR2ZPGYtV6suZ6whr8pTFtyHL3K/oLUotxpSVO2ASaprmAe2Dkq7tBo7CRY7MMDrAa9nuQP9/YG8FxQ==}
     dev: true
 
   /@emotion/serialize/0.11.16:
@@ -2166,6 +2947,16 @@ packages:
       '@emotion/unitless': 0.7.5
       '@emotion/utils': 0.11.3
       csstype: 2.6.19
+    dev: true
+
+  /@emotion/serialize/1.0.2:
+    resolution: {integrity: sha512-95MgNJ9+/ajxU7QIAruiOAdYNjxZX7G2mhgrtDWswA21VviYIRP1R5QilZ/bDY42xiKsaktP4egJb3QdYQZi1A==}
+    dependencies:
+      '@emotion/hash': 0.8.0
+      '@emotion/memoize': 0.7.4
+      '@emotion/unitless': 0.7.5
+      '@emotion/utils': 1.1.0
+      csstype: 3.0.10
     dev: true
 
   /@emotion/sheet/0.9.4:
@@ -2224,6 +3015,28 @@ packages:
       react: 16.14.0
     dev: true
 
+  /@emotion/styled/11.8.1_@babel+core@7.17.5+react@17.0.2:
+    resolution: {integrity: sha512-OghEVAYBZMpEquHZwuelXcRjRJQOVayvbmNR0zr174NHdmMgrNkLC6TljKC5h9lZLkN5WGrdUcrKlOJ4phhoTQ==}
+    peerDependencies:
+      '@babel/core': ^7.0.0
+      '@emotion/react': ^11.0.0-rc.0
+      '@types/react': '*'
+      react: '>=16.8.0'
+    peerDependenciesMeta:
+      '@babel/core':
+        optional: true
+      '@types/react':
+        optional: true
+    dependencies:
+      '@babel/core': 7.17.5
+      '@babel/runtime': 7.17.2
+      '@emotion/babel-plugin': 11.7.2_@babel+core@7.17.5
+      '@emotion/is-prop-valid': 1.1.2
+      '@emotion/serialize': 1.0.2
+      '@emotion/utils': 1.1.0
+      react: 17.0.2
+    dev: true
+
   /@emotion/stylis/0.8.5:
     resolution: {integrity: sha512-h6KtPihKFn3T9fuIrwvXXUOwlx3rfUvfZIcP5a6rh8Y7zjE3O06hT5Ss4S/YI1AYhuZ1kjaE/5EaOOI2NqSylQ==}
     dev: true
@@ -2234,6 +3047,10 @@ packages:
 
   /@emotion/utils/0.11.3:
     resolution: {integrity: sha512-0o4l6pZC+hI88+bzuaX/6BgOvQVhbt2PfmxauVaYOGgbsAw14wdKyvMCZXnsnsHys94iadcF+RG/wZyx6+ZZBw==}
+    dev: true
+
+  /@emotion/utils/1.1.0:
+    resolution: {integrity: sha512-iRLa/Y4Rs5H/f2nimczYmS5kFJEbpiVvgN3XVfZ022IYhuNA1IRSHEizcof88LtCTXtl9S2Cxt32KgaXEu72JQ==}
     dev: true
 
   /@emotion/weak-memoize/0.2.5:
@@ -2253,6 +3070,15 @@ packages:
       vue: 3.2.31
     dev: true
 
+  /@headlessui/vue/1.5.0_vue@3.2.31:
+    resolution: {integrity: sha512-jAp6XYpqdEv32xhszaj5ejvjaX5qhu20sCbxu7lplePEfZL+4ffabivJBBTZAiPWczqAXmnZWNWG5DOyqjRa4w==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      vue: 3.2.31
+    dev: true
+
   /@heroicons/vue/1.0.5_vue@3.2.31:
     resolution: {integrity: sha512-idWtp20Fjr7mqnD7EdGDUDi83oWHnx3SwyuQY6GZyF33OApzpBOLxz7xa4t6rPOddGz9tI5RGnndLk+ake7ijQ==}
     peerDependencies:
@@ -2260,6 +3086,14 @@ packages:
     dependencies:
       vue: 3.2.31
     dev: false
+
+  /@heroicons/vue/1.0.6_vue@3.2.31:
+    resolution: {integrity: sha512-ng2YcCQrdoQWEFpw+ipFl2rZo8mZ56v0T5+MyfQQvNqfKChwgP6DMloZLW+rl17GEcHkE3H82UTAMKBKZr4+WA==}
+    peerDependencies:
+      vue: '>= 3'
+    dependencies:
+      vue: 3.2.31
+    dev: true
 
   /@hutson/parse-repository-url/3.0.2:
     resolution: {integrity: sha512-H9XAx3hc0BQHY6l+IFSWHDySypcXsvsuLhgYLUGywmJ5pswRVQJUHpOsobnLYp2ZUaUlKiKDrgWWhosOwAEM8Q==}
@@ -4450,7 +5284,7 @@ packages:
   /@types/node-fetch/2.6.1:
     resolution: {integrity: sha512-oMqjURCaxoSIsHSr1E47QHzbmzNR5rK8McHuNb11BOM9cHcIK3Avy0s/b2JlXHoQGTYS3NsvWzV1M0iK7l0wbA==}
     dependencies:
-      '@types/node': 14.18.12
+      '@types/node': 17.0.19
       form-data: 3.0.1
     dev: true
 
@@ -4548,7 +5382,7 @@ packages:
   /@types/webpack-sources/3.2.0:
     resolution: {integrity: sha512-Ft7YH3lEVRQ6ls8k4Ff1oB4jN6oy/XmU6tQISKdhfh+1mR+viZFphS6WL0IrtDOzvefmJg5a0s7ZQoRXwqTEFg==}
     dependencies:
-      '@types/node': 14.18.12
+      '@types/node': 17.0.19
       '@types/source-list-map': 0.1.2
       source-map: 0.7.3
     dev: true
@@ -4556,7 +5390,7 @@ packages:
   /@types/webpack/4.41.32:
     resolution: {integrity: sha512-cb+0ioil/7oz5//7tZUSwbrSAN/NWHrQylz5cW8G0dWTcF/g+/dSdMlKVZspBYuMAN1+WnwHrkxiRrLcwd0Heg==}
     dependencies:
-      '@types/node': 14.18.12
+      '@types/node': 17.0.19
       '@types/tapable': 1.0.8
       '@types/uglify-js': 3.13.1
       '@types/webpack-sources': 3.2.0
@@ -4635,7 +5469,6 @@ packages:
 
   /@vue/devtools-api/6.0.12:
     resolution: {integrity: sha512-iO/4FIezHKXhiDBdKySCvJVh8/mZPxHpiQrTy+PXVqJZgpTPTdHy4q8GXulaY+UKEagdkBb0onxNQZ0LNiqVhw==}
-    dev: false
 
   /@vue/reactivity-transform/3.2.31:
     resolution: {integrity: sha512-uS4l4z/W7wXdI+Va5pgVxBJ345wyGFKvpPYtdSgvfJfX/x2Ymm6ophQlXXB6acqGHtXuBqNyyO3zVp9b1r0MOA==}
@@ -5919,6 +6752,24 @@ packages:
       '@ckeditor/ckeditor5-upload': 30.0.0
       '@ckeditor/ckeditor5-utils': 30.0.0
       '@ckeditor/ckeditor5-widget': 30.0.0
+    dev: false
+
+  /ckeditor5/32.0.0:
+    resolution: {integrity: sha512-PehBSDwclMcZcVIRFZRUv6BSEdQCK+9kUbnWdcAOtM9LJL8aWCwCTg6VZTq6+aDEzoz6BfkjO1eF3ZtQVJT97w==}
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
+    dependencies:
+      '@ckeditor/ckeditor5-clipboard': 32.0.0
+      '@ckeditor/ckeditor5-core': 32.0.0
+      '@ckeditor/ckeditor5-engine': 32.0.0
+      '@ckeditor/ckeditor5-enter': 32.0.0
+      '@ckeditor/ckeditor5-paragraph': 32.0.0
+      '@ckeditor/ckeditor5-select-all': 32.0.0
+      '@ckeditor/ckeditor5-typing': 32.0.0
+      '@ckeditor/ckeditor5-ui': 32.0.0
+      '@ckeditor/ckeditor5-undo': 32.0.0
+      '@ckeditor/ckeditor5-upload': 32.0.0
+      '@ckeditor/ckeditor5-utils': 32.0.0
+      '@ckeditor/ckeditor5-widget': 32.0.0
     dev: false
 
   /class-utils/0.3.6:
@@ -7457,6 +8308,11 @@ packages:
   /escape-string-regexp/1.0.5:
     resolution: {integrity: sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=}
     engines: {node: '>=0.8.0'}
+
+  /escape-string-regexp/4.0.0:
+    resolution: {integrity: sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==}
+    engines: {node: '>=10'}
+    dev: true
 
   /escodegen/2.0.0:
     resolution: {integrity: sha512-mmHKys/C8BFUGI+MAWNcSYoORYLMdPzjrknd2Vc+bUsjN5bXcr8EhrNB+UTqfL1y3I9c4fw2ihgtMPQLBRiQxw==}
@@ -9198,7 +10054,7 @@ packages:
     resolution: {integrity: sha512-KWYVV1c4i+jbMpaBC+U++4Va0cp8OisU185o73T1vo99hqi7w8tSJfUXYswwqqrjzwxa6KpRK54WhPvwf5w6PQ==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 14.18.12
+      '@types/node': 17.0.19
       merge-stream: 2.0.0
       supports-color: 7.2.0
     dev: true
@@ -12524,6 +13380,10 @@ packages:
       inline-style-parser: 0.1.1
     dev: true
 
+  /stylis/4.0.13:
+    resolution: {integrity: sha512-xGPXiFVl4YED9Jh7Euv2V220mriG9u4B2TA6Ybjc1catrstKD2PpIdU3U0RKpkVBC2EhmL/F0sPCr9vrFTNRag==}
+    dev: true
+
   /supports-color/5.5.0:
     resolution: {integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==}
     engines: {node: '>=4'}
@@ -13388,7 +14248,6 @@ packages:
     dependencies:
       '@vue/devtools-api': 6.0.12
       vue: 3.2.31
-    dev: false
 
   /vfile-location/3.2.0:
     resolution: {integrity: sha512-aLEIZKv/oxuCDZ8lkJGhuhztf/BW4M+iHdCwglA/eWc+vtuRFJj8EtgceYFX4LRjOhCAAiNHsKGssC6onJ+jbA==}
@@ -13550,6 +14409,15 @@ packages:
     resolution: {integrity: sha512-CPXvfqe+mZLB1kBWssssTiWg4EQERyqJZes7USiqfW9B5N2x+nHlnsM1D3b5CaJ6qgCvMmYJnz+G0iWjNCvXrg==}
     peerDependencies:
       vue: ^3.0.0
+    dependencies:
+      '@vue/devtools-api': 6.0.12
+      vue: 3.2.31
+    dev: false
+
+  /vue-router/4.0.13_vue@3.2.31:
+    resolution: {integrity: sha512-LmXrC+BkDRLak+d5xTMgUYraT3Nj0H/vCbP+7usGvIl9Viqd1UP6AsP0i69pSbn9O0dXK/xCdp4yPw21HqV9Jw==}
+    peerDependencies:
+      vue: ^3.2.0
     dependencies:
       '@vue/devtools-api': 6.0.12
       vue: 3.2.31

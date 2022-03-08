@@ -1,5 +1,5 @@
 import {Colors} from '../../types';
-import {Sizes} from '../../utils';
+import {Sizes} from '@gits-id/utils';
 
 export type VBtnProps = {
   label?: string;
@@ -12,5 +12,5 @@ export type VBtnProps = {
   size: Sizes;
   tile: boolean;
   icon: boolean;
-  loading: boolean
+  loading: boolean;
 };

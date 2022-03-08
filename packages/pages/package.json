@@ -1,0 +1,28 @@
+{
+  "name": "@gits-id/pages",
+  "version": "0.0.0",
+  "description": "GITS Pages Component",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pages",
+    "gits",
+    "ui-component"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^3.2.31",
+    "@gits-id/checkbox": "workspace:*",
+    "@gits-id/button": "workspace:*",
+    "@gits-id/input": "workspace:*"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.0.23",
+    "@heroicons/vue": "^1.0.6",
+    "@headlessui/vue": "^1.5.0",
+    "vee-validate": "^4.5.9"
+  }
+}
