@@ -15,9 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "vue": "^3.2.31",
-    "@gits-id/button": "workspace:*"
-  },
-  "devDependencies": {
+    "@gits-id/button": "*",
     "tailwindcss": "^3.0.23",
     "@heroicons/vue": "^1.0.6",
     "@headlessui/vue": "^1.5.0"

@@ -15,9 +15,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gits-id/spinner": "*"
-  },
-  "devDependencies": {
+    "@gits-id/spinner": "*",
     "@gits-id/tailwind-config": "*"
-  }
+  },
+  "devDependencies": {}
 }

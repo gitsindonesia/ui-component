@@ -15,8 +15,8 @@
   "license": "ISC",
   "dependencies": {
     "vue": "^3.2.31",
-    "@gits-id/utils": "workspace:*",
-    "@gits-id/input": "workspace:*"
+    "@gits-id/utils": "*",
+    "@gits-id/input": "*"
   },
   "devDependencies": {
     "tailwindcss": "^3.0.23",

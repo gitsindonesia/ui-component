@@ -14,11 +14,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gits-id/spinner": "workspace:*",
-    "@gits-id/checkbox": "workspace:*",
-    "@gits-id/pagination": "workspace:*",
-    "@gits-id/utils": "workspace:*",
-    "@gits-id/select": "workspace:*"
+    "@gits-id/spinner": "*",
+    "@gits-id/checkbox": "*",
+    "@gits-id/pagination": "*",
+    "@gits-id/utils": "*",
+    "@gits-id/select": "*"
   },
   "devDependencies": {
     "tailwindcss": "^3.0.23",

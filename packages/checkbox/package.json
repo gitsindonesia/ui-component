@@ -14,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gits-id/utils": "workspace:*"
+    "@gits-id/utils": "*"
   },
   "devDependencies": {
     "tailwindcss": "^3.0.23"
