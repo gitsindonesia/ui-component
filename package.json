@@ -41,10 +41,6 @@
     "@emotion/core": "^11.0.0",
     "@emotion/is-prop-valid": "^1.1.2",
     "@emotion/styled": "^11.8.1",
-    "@gits-id/alert": "workspace:*",
-    "@gits-id/button": "workspace:*",
-    "@gits-id/spinner": "workspace:*",
-    "@gits-id/tailwind-config": "workspace:*",
     "@headlessui/vue": "1.4.1",
     "@iconify-json/heroicons-solid": "^1.1.1",
     "@mdx-js/react": "^1.6.22",
@@ -87,5 +83,8 @@
     "src",
     "index.ts",
     "preset.js"
+  ],
+  "workspaces": [
+    "packages"
   ]
 }

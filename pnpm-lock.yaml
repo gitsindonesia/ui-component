@@ -12,10 +12,6 @@ importers:
       '@emotion/core': ^11.0.0
       '@emotion/is-prop-valid': ^1.1.2
       '@emotion/styled': ^11.8.1
-      '@gits-id/alert': workspace:*
-      '@gits-id/button': workspace:*
-      '@gits-id/spinner': workspace:*
-      '@gits-id/tailwind-config': workspace:*
       '@headlessui/vue': 1.4.1
       '@heroicons/vue': ^1.0.5
       '@iconify-json/heroicons-solid': ^1.1.1
@@ -92,10 +88,6 @@ importers:
       '@emotion/core': 11.0.0
       '@emotion/is-prop-valid': 1.1.2
       '@emotion/styled': 11.8.1_@babel+core@7.17.5+react@17.0.2
-      '@gits-id/alert': link:packages/alert
-      '@gits-id/button': link:packages/button
-      '@gits-id/spinner': link:packages/spinner
-      '@gits-id/tailwind-config': link:packages/tailwind-config
       '@headlessui/vue': 1.4.1_vue@3.2.31
       '@iconify-json/heroicons-solid': 1.1.1
       '@mdx-js/react': 1.6.22_react@17.0.2

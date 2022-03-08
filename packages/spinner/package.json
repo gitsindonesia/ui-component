@@ -16,6 +16,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@gits-id/utils": "*"
+    "@gits-id/utils": "workspace:*"
   }
 }
