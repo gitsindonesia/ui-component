@@ -22,7 +22,7 @@ importers:
       '@storybook/core-common': ^6.4.3
       '@storybook/vue3': ^6.4.19
       '@tailwindcss/aspect-ratio': ^0.4.0
-      '@tailwindcss/forms': ^0.4.0
+      '@tailwindcss/forms': ^0.5.0
       '@tailwindcss/line-clamp': ^0.3.1
       '@tailwindcss/typography': ^0.5.2
       '@vitejs/plugin-vue': ^1.10.2
@@ -81,7 +81,7 @@ importers:
       '@storybook/core-common': 6.4.19_react@17.0.2+typescript@4.5.5
       '@storybook/vue3': 6.4.19_e0b34c30d76cb68c0841214443a4dc14
       '@tailwindcss/aspect-ratio': 0.4.0_tailwindcss@3.0.23
-      '@tailwindcss/forms': 0.4.0_tailwindcss@3.0.23
+      '@tailwindcss/forms': 0.5.0_tailwindcss@3.0.23
       '@tailwindcss/line-clamp': 0.3.1_tailwindcss@3.0.23
       '@tailwindcss/typography': 0.5.2_tailwindcss@3.0.23
       '@vitejs/plugin-vue': 1.10.2_vite@2.8.4
@@ -249,7 +249,7 @@ importers:
       jsdom: 19.0.0
       postcss: 8.4.8
       prettier: 2.5.1
-      storybook-builder-vite: 0.1.17_da45e788257c9b57b8bf401ecd08a981
+      storybook-builder-vite: 0.1.17_4069a1d5f52561263d308a0041624e7a
       tailwindcss: 3.0.23_autoprefixer@10.4.2
       typescript: 4.5.5
       vite: 2.8.4
@@ -716,11 +716,19 @@ importers:
       '@gits-id/button': ^0.0.0
       '@gits-id/theme': ^0.0.0
       '@gits-id/utils': ^0.0.0
+      '@tailwindcss/aspect-ratio': ^0.4.0
+      '@tailwindcss/forms': ^0.5.0
+      '@tailwindcss/line-clamp': ^0.3.1
+      '@tailwindcss/typography': ^0.5.2
       tailwindcss: ^3.0.23
     dependencies:
       '@gits-id/button': link:../button
       '@gits-id/theme': link:../theme
       '@gits-id/utils': link:../utils
+      '@tailwindcss/aspect-ratio': 0.4.0_tailwindcss@3.0.23
+      '@tailwindcss/forms': 0.5.0_tailwindcss@3.0.23
+      '@tailwindcss/line-clamp': 0.3.1_tailwindcss@3.0.23
+      '@tailwindcss/typography': 0.5.2_tailwindcss@3.0.23
       tailwindcss: 3.0.23_autoprefixer@10.4.2
 
   packages/textarea:
@@ -6909,16 +6917,14 @@ packages:
       tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
     dependencies:
       tailwindcss: 3.0.23_autoprefixer@10.4.2
-    dev: true
 
-  /@tailwindcss/forms/0.4.0_tailwindcss@3.0.23:
-    resolution: {integrity: sha512-DeaQBx6EgEeuZPQACvC+mKneJsD8am1uiJugjgQK1+/Vt+Ai0GpFBC2T2fqnUad71WgOxyrZPE6BG1VaI6YqfQ==}
+  /@tailwindcss/forms/0.5.0_tailwindcss@3.0.23:
+    resolution: {integrity: sha512-KzWugryEBFkmoaYcBE18rs6gthWCFHHO7cAZm2/hv3hwD67AzwP7udSCa22E7R1+CEJL/FfhYsJWrc0b1aeSzw==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || >= 3.0.0-alpha.1'
     dependencies:
       mini-svg-data-uri: 1.4.3
       tailwindcss: 3.0.23_autoprefixer@10.4.2
-    dev: true
 
   /@tailwindcss/line-clamp/0.3.1_tailwindcss@3.0.23:
     resolution: {integrity: sha512-pNr0T8LAc3TUx/gxCfQZRe9NB2dPEo/cedPHzUGIPxqDMhgjwNm6jYxww4W5l0zAsAddxr+XfZcqttGiFDgrGg==}
@@ -6926,7 +6932,6 @@ packages:
       tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
     dependencies:
       tailwindcss: 3.0.23_autoprefixer@10.4.2
-    dev: true
 
   /@tailwindcss/typography/0.5.2_tailwindcss@3.0.23:
     resolution: {integrity: sha512-coq8DBABRPFcVhVIk6IbKyyHUt7YTEC/C992tatFB+yEx5WGBQrCgsSFjxHUr8AWXphWckadVJbominEduYBqw==}
@@ -6937,7 +6942,6 @@ packages:
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       tailwindcss: 3.0.23_autoprefixer@10.4.2
-    dev: true
 
   /@tootallnate/once/1.1.2:
     resolution: {integrity: sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==}
@@ -13520,7 +13524,6 @@ packages:
 
   /lodash.castarray/4.4.0:
     resolution: {integrity: sha1-wCUTUV4wna3dTCTGDP3c9ZdtkRU=}
-    dev: true
 
   /lodash.debounce/4.0.8:
     resolution: {integrity: sha1-gteb/zCmfEAF/9XiUVMArZyk168=}
@@ -13532,11 +13535,9 @@ packages:
 
   /lodash.isplainobject/4.0.6:
     resolution: {integrity: sha1-fFJqUtibRcRcxpC4gWO+BJf1UMs=}
-    dev: true
 
   /lodash.merge/4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
-    dev: true
 
   /lodash.startcase/4.4.0:
     resolution: {integrity: sha1-lDbjTtJgk+1/+uGTYUQ1CRXZrdg=}
@@ -13959,7 +13960,6 @@ packages:
   /mini-svg-data-uri/1.4.3:
     resolution: {integrity: sha512-gSfqpMRC8IxghvMcxzzmMnWpXAChSA+vy4cia33RgerMS8Fex95akUyQZPbxJJmeBGiGmK7n/1OpUX8ksRjIdA==}
     hasBin: true
-    dev: true
 
   /minimalistic-assert/1.0.1:
     resolution: {integrity: sha512-UtJcAD4yEaGtjPezWuO9wC4nwUnVH/8/Im3yEHQP4b67cXlD/Qr9hdITCU1xDbSEXg2XKNaP8jsReV7vQd00/A==}
@@ -17168,7 +17168,7 @@ packages:
     resolution: {integrity: sha512-iJtHSGmNgAUx0b/MCS6ASGxb//hGrHHRgzvN+K5bvkBTN7A9RTpPSf1WSp+nPGvWCJ1jRnvY7MKnuqfoi3OEqg==}
     dev: true
 
-  /storybook-builder-vite/0.1.17_da45e788257c9b57b8bf401ecd08a981:
+  /storybook-builder-vite/0.1.17_4069a1d5f52561263d308a0041624e7a:
     resolution: {integrity: sha512-VnZYEEJ/PHF8Q4T0F3TIMlE/KZ3ZBYfv7UrVg2NxIjoYUPz0IP/KwoNMFV+meLAcl6ih7fyb+M+ADJCW7WI6gg==}
     peerDependencies:
       '@storybook/core-common': ^6.4.3
@@ -17176,6 +17176,7 @@ packages:
     dependencies:
       '@joshwooding/vite-plugin-react-docgen-typescript': 0.0.2_typescript@4.5.5+vite@2.8.4
       '@mdx-js/mdx': 1.6.22
+      '@storybook/core-common': 6.4.19_react@17.0.2+typescript@4.5.5
       '@storybook/csf-tools': 6.4.19
       '@storybook/source-loader': 6.4.19_react@17.0.2
       '@vitejs/plugin-react': 1.2.0

@@ -43,15 +43,16 @@ export default defineConfig({
   },
   optimizeDeps: {
     include: [
-      'vue-remix-icons',
-      'vee-validate',
-      '@headlessui/vue',
-      'pagino',
-      '@popperjs/core',
-      'vue-feather',
-      'vue-router',
+      // 'vue-remix-icons',
+      // 'vee-validate',
+      // '@headlessui/vue',
+      // 'pagino',
+      // '@popperjs/core',
+      // 'vue-feather',
+      // 'vue-router',
       'yup',
-      '@base2/pretty-print-object'
+      // '@base2/pretty-print-object',
+      'fast-deep-equal'
     ],
   },
 });
