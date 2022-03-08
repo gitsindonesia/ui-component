@@ -101,6 +101,79 @@ importers:
       vite: 2.8.4
       vue-loader: 16.8.3
 
+  apps/demo:
+    specifiers:
+      '@babel/core': ^7.17.5
+      '@gits-id/tailwind-config': ^0.0.0
+      '@gits-id/ui': '*'
+      '@gits-id/utils': ^0.0.0
+      '@rushstack/eslint-patch': ^1.1.0
+      '@storybook/addon-actions': ^6.4.19
+      '@storybook/addon-essentials': ^6.4.19
+      '@storybook/addon-links': ^6.4.19
+      '@storybook/vue3': ^6.4.19
+      '@types/jsdom': ^16.2.14
+      '@types/node': ^16.11.25
+      '@vitejs/plugin-vue': ^2.2.2
+      '@vitejs/plugin-vue-jsx': ^1.3.7
+      '@vue/eslint-config-prettier': ^7.0.0
+      '@vue/eslint-config-typescript': ^10.0.0
+      '@vue/test-utils': ^2.0.0-rc.18
+      '@vue/tsconfig': ^0.1.3
+      autoprefixer: ^10.4.2
+      babel-loader: ^8.2.3
+      eslint: ^8.5.0
+      eslint-plugin-vue: ^8.2.0
+      jsdom: ^19.0.0
+      pinia: ^2.0.11
+      postcss: ^8.4.8
+      prettier: ^2.5.1
+      storybook-builder-vite: ^0.1.17
+      tailwindcss: ^3.0.23
+      typescript: ~4.5.5
+      vite: ^2.8.4
+      vitest: ^0.5.0
+      vue: ^3.2.31
+      vue-loader: ^16.8.3
+      vue-router: ^4.0.12
+      vue-tsc: ^0.31.4
+    dependencies:
+      '@gits-id/ui': link:../../packages/ui
+      pinia: 2.0.11_typescript@4.5.5+vue@3.2.31
+      vue: 3.2.31
+      vue-router: 4.0.13_vue@3.2.31
+    devDependencies:
+      '@babel/core': 7.17.5
+      '@gits-id/tailwind-config': link:../../packages/tailwind-config
+      '@gits-id/utils': link:../../packages/utils
+      '@rushstack/eslint-patch': 1.1.0
+      '@storybook/addon-actions': 6.4.19_react@17.0.2
+      '@storybook/addon-essentials': 6.4.19_2349a2dce5ce3035b7bbbd0e471cfda5
+      '@storybook/addon-links': 6.4.19_react@17.0.2
+      '@storybook/vue3': 6.4.19_1f878c4eedd2b5647e14d1d705ca12aa
+      '@types/jsdom': 16.2.14
+      '@types/node': 16.11.26
+      '@vitejs/plugin-vue': 2.2.4_vite@2.8.4+vue@3.2.31
+      '@vitejs/plugin-vue-jsx': 1.3.8
+      '@vue/eslint-config-prettier': 7.0.0_eslint@8.10.0+prettier@2.5.1
+      '@vue/eslint-config-typescript': 10.0.0_6bae48b99b40de9ce3e67c9c629a2961
+      '@vue/test-utils': 2.0.0-rc.18_vue@3.2.31
+      '@vue/tsconfig': 0.1.3_@types+node@16.11.26
+      autoprefixer: 10.4.2_postcss@8.4.8
+      babel-loader: 8.2.3_@babel+core@7.17.5
+      eslint: 8.10.0
+      eslint-plugin-vue: 8.5.0_eslint@8.10.0
+      jsdom: 19.0.0
+      postcss: 8.4.8
+      prettier: 2.5.1
+      storybook-builder-vite: 0.1.18_4069a1d5f52561263d308a0041624e7a
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
+      typescript: 4.5.5
+      vite: 2.8.4
+      vitest: 0.5.9_jsdom@19.0.0
+      vue-loader: 16.8.3
+      vue-tsc: 0.31.4_typescript@4.5.5
+
   packages/alert:
     specifiers:
       '@gits-id/button': '*'
@@ -181,81 +254,6 @@ importers:
     devDependencies:
       '@gits-id/utils': link:../utils
       tailwindcss: 3.0.23_autoprefixer@10.4.2
-
-  packages/demo:
-    specifiers:
-      '@babel/core': ^7.17.5
-      '@gits-id/button': '*'
-      '@gits-id/tailwind-config': ^0.0.0
-      '@gits-id/ui': '*'
-      '@gits-id/utils': ^0.0.0
-      '@rushstack/eslint-patch': ^1.1.0
-      '@storybook/addon-actions': ^6.4.19
-      '@storybook/addon-essentials': ^6.4.19
-      '@storybook/addon-links': ^6.4.19
-      '@storybook/vue3': ^6.4.19
-      '@types/jsdom': ^16.2.14
-      '@types/node': ^16.11.25
-      '@vitejs/plugin-vue': ^2.2.2
-      '@vitejs/plugin-vue-jsx': ^1.3.7
-      '@vue/eslint-config-prettier': ^7.0.0
-      '@vue/eslint-config-typescript': ^10.0.0
-      '@vue/test-utils': ^2.0.0-rc.18
-      '@vue/tsconfig': ^0.1.3
-      autoprefixer: ^10.4.2
-      babel-loader: ^8.2.3
-      eslint: ^8.5.0
-      eslint-plugin-vue: ^8.2.0
-      jsdom: ^19.0.0
-      pinia: ^2.0.11
-      postcss: ^8.4.8
-      prettier: ^2.5.1
-      storybook-builder-vite: ^0.1.17
-      tailwindcss: ^3.0.23
-      typescript: ~4.5.5
-      vite: ^2.8.4
-      vitest: ^0.5.0
-      vue: ^3.2.31
-      vue-loader: ^16.8.3
-      vue-router: ^4.0.12
-      vue-tsc: ^0.31.4
-    dependencies:
-      '@gits-id/button': link:../button
-      '@gits-id/ui': link:../ui
-      pinia: 2.0.11_typescript@4.5.5+vue@3.2.31
-      vue: 3.2.31
-      vue-router: 4.0.13_vue@3.2.31
-    devDependencies:
-      '@babel/core': 7.17.5
-      '@gits-id/tailwind-config': link:../tailwind-config
-      '@gits-id/utils': link:../utils
-      '@rushstack/eslint-patch': 1.1.0
-      '@storybook/addon-actions': 6.4.19_react@17.0.2
-      '@storybook/addon-essentials': 6.4.19_2349a2dce5ce3035b7bbbd0e471cfda5
-      '@storybook/addon-links': 6.4.19_react@17.0.2
-      '@storybook/vue3': 6.4.19_1f878c4eedd2b5647e14d1d705ca12aa
-      '@types/jsdom': 16.2.14
-      '@types/node': 16.11.26
-      '@vitejs/plugin-vue': 2.2.4_vite@2.8.4+vue@3.2.31
-      '@vitejs/plugin-vue-jsx': 1.3.8
-      '@vue/eslint-config-prettier': 7.0.0_eslint@8.10.0+prettier@2.5.1
-      '@vue/eslint-config-typescript': 10.0.0_6bae48b99b40de9ce3e67c9c629a2961
-      '@vue/test-utils': 2.0.0-rc.18_vue@3.2.31
-      '@vue/tsconfig': 0.1.3_@types+node@16.11.26
-      autoprefixer: 10.4.2_postcss@8.4.8
-      babel-loader: 8.2.3_@babel+core@7.17.5
-      eslint: 8.10.0
-      eslint-plugin-vue: 8.5.0_eslint@8.10.0
-      jsdom: 19.0.0
-      postcss: 8.4.8
-      prettier: 2.5.1
-      storybook-builder-vite: 0.1.17_4069a1d5f52561263d308a0041624e7a
-      tailwindcss: 3.0.23_autoprefixer@10.4.2
-      typescript: 4.5.5
-      vite: 2.8.4
-      vitest: 0.5.9_jsdom@19.0.0
-      vue-loader: 16.8.3
-      vue-tsc: 0.31.4_typescript@4.5.5
 
   packages/dropdown:
     specifiers:
@@ -17166,31 +17164,6 @@ packages:
 
   /store2/2.13.1:
     resolution: {integrity: sha512-iJtHSGmNgAUx0b/MCS6ASGxb//hGrHHRgzvN+K5bvkBTN7A9RTpPSf1WSp+nPGvWCJ1jRnvY7MKnuqfoi3OEqg==}
-    dev: true
-
-  /storybook-builder-vite/0.1.17_4069a1d5f52561263d308a0041624e7a:
-    resolution: {integrity: sha512-VnZYEEJ/PHF8Q4T0F3TIMlE/KZ3ZBYfv7UrVg2NxIjoYUPz0IP/KwoNMFV+meLAcl6ih7fyb+M+ADJCW7WI6gg==}
-    peerDependencies:
-      '@storybook/core-common': ^6.4.3
-      vite: '>=2.6.7'
-    dependencies:
-      '@joshwooding/vite-plugin-react-docgen-typescript': 0.0.2_typescript@4.5.5+vite@2.8.4
-      '@mdx-js/mdx': 1.6.22
-      '@storybook/core-common': 6.4.19_react@17.0.2+typescript@4.5.5
-      '@storybook/csf-tools': 6.4.19
-      '@storybook/source-loader': 6.4.19_react@17.0.2
-      '@vitejs/plugin-react': 1.2.0
-      es-module-lexer: 0.9.3
-      glob: 7.2.0
-      glob-promise: 4.2.2_glob@7.2.0
-      slash: 3.0.0
-      vite: 2.8.4
-      vite-plugin-mdx: 3.5.10_@mdx-js+mdx@1.6.22+vite@2.8.4
-    transitivePeerDependencies:
-      - react
-      - react-dom
-      - supports-color
-      - typescript
     dev: true
 
   /storybook-builder-vite/0.1.18_4069a1d5f52561263d308a0041624e7a:
