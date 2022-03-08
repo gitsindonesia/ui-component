@@ -28,11 +28,11 @@ const secondary = {
   '900': '#682600'
 }
 
-module.exports = Object.assign(colors, {
+module.exports = {
   primary,
   secondary,
   info: colors.sky,
   success: colors.emerald,
   warning: colors.yellow,
   error: colors.rose,
-})
+}

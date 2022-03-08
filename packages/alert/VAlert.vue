@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ref, computed, toRefs } from "vue";
-import { XIcon, ExclamationIcon, CheckCircleIcon } from "@heroicons/vue/solid";
-import VBtn from "@gits-id/button";
+import {computed, toRefs} from 'vue';
+import {XIcon, ExclamationIcon, CheckCircleIcon} from '@heroicons/vue/solid';
+import VBtn from '@gits-id/button';
 
 const props = defineProps({
   modelValue: {
@@ -10,11 +10,11 @@ const props = defineProps({
   },
   color: {
     type: String,
-    default: "",
+    default: '',
   },
   icon: {
     type: String,
-    default: "",
+    default: '',
   },
   dismissable: {
     type: Boolean,
@@ -22,51 +22,51 @@ const props = defineProps({
   },
 });
 
-const { color } = toRefs(props);
+const {color} = toRefs(props);
 
-const emit = defineEmits(["dismissed", "update:modelValue"]);
+const emit = defineEmits(['dismissed', 'update:modelValue']);
 
 const classes = computed(() => {
   switch (color.value) {
-    case "primary":
-      return "border-primary-600 bg-primary-100 text-primary-600";
-    case "secondary":
-      return "border-secondary-600 bg-secondary-100 text-secondary-600";
-    case "error":
-      return "border-error-600 bg-error-100 text-error-600";
-    case "info":
-      return "border-info-600 bg-info-100 text-info-600";
-    case "warning":
-      return "border-warning-600 bg-warning-100 text-warning-600";
-    case "success":
-      return "border-success-600 bg-success-100 text-success-600";
+    case 'primary':
+      return 'border-primary-500 bg-primary-100 text-primary-500';
+    case 'secondary':
+      return 'border-secondary-500 bg-secondary-100 text-secondary-500';
+    case 'error':
+      return 'border-error-500 bg-error-100 text-error-500';
+    case 'info':
+      return 'border-info-500 bg-info-100 text-info-500';
+    case 'warning':
+      return 'border-warning-500 bg-warning-100 text-warning-500';
+    case 'success':
+      return 'border-success-500 bg-success-100 text-success-500';
     default:
-      return "";
+      return '';
   }
 });
 
 const iconClasses = computed(() => {
   switch (color.value) {
-    case "primary":
-      return "text-lime-600";
-    case "secondary":
-      return "text-secondary";
-    case "error":
-      return "text-error";
-    case "info":
-      return "text-info";
-    case "warning":
-      return "text-warning";
-    case "success":
-      return "text-success";
+    case 'primary':
+      return 'text-primary-500';
+    case 'secondary':
+      return 'text-secondary-500';
+    case 'error':
+      return 'text-error-500';
+    case 'info':
+      return 'text-info-500';
+    case 'warning':
+      return 'text-warning-500';
+    case 'success':
+      return 'text-success-500';
     default:
-      return "";
+      return '';
   }
 });
 
 const dismiss = () => {
-  emit("dismissed");
-  emit("update:modelValue", false);
+  emit('dismissed');
+  emit('update:modelValue', false);
 };
 </script>
 

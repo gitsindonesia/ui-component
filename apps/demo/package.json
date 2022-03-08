@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@gits-id/button": "*",
+    "@gits-id/theme": "*",
     "@gits-id/ui": "*",
     "pinia": "^2.0.11",
     "vue": "^3.2.31",

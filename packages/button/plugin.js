@@ -1,5 +1,6 @@
 const plugin = require('tailwindcss/plugin')
-const colors = require('@gits-id/theme')
+const themeColors = require('@gits-id/theme')
+const colors = require('tailwindcss/colors')
 
 const vBtnPlugin = plugin(function({ addUtilities, addComponents }) {
   addUtilities({
@@ -92,85 +93,85 @@ const vBtnPlugin = plugin(function({ addUtilities, addComponents }) {
     // primary
     '.btn-primary': {
       color: '#fff',
-      backgroundColor: colors.primary[500],
-      borderColor: colors.primary[500],
+      backgroundColor: themeColors.primary[500],
+      borderColor: themeColors.primary[500],
       '&:hover': {
-        borderColor: colors.primary[600],
-        backgroundColor: colors.primary[600],
+        borderColor: themeColors.primary[600],
+        backgroundColor: themeColors.primary[600],
       },
       '&:active': {
-        borderColor: colors.primary[400],
-        backgroundColor: colors.primary[400],
+        borderColor: themeColors.primary[400],
+        backgroundColor: themeColors.primary[400],
       },
     },
     // secondary
     '.btn-secondary': {
       color: '#fff',
-      backgroundColor: colors.secondary[500],
-      borderColor: colors.secondary[500],
+      backgroundColor: themeColors.secondary[500],
+      borderColor: themeColors.secondary[500],
       '&:hover': {
-        borderColor: colors.secondary[600],
-        backgroundColor: colors.secondary[600],
+        borderColor: themeColors.secondary[600],
+        backgroundColor: themeColors.secondary[600],
       },
       '&:active': {
-        borderColor: colors.secondary[400],
-        backgroundColor: colors.secondary[400],
+        borderColor: themeColors.secondary[400],
+        backgroundColor: themeColors.secondary[400],
       },
     },
     // info
     '.btn-info': {
       color: '#fff',
-      backgroundColor: colors.info[500],
-      borderColor: colors.info[500],
+      backgroundColor: themeColors.info[500],
+      borderColor: themeColors.info[500],
       '&:hover': {
-        borderColor: colors.info[600],
-        backgroundColor: colors.info[600],
+        borderColor: themeColors.info[600],
+        backgroundColor: themeColors.info[600],
       },
       '&:active': {
-        borderColor: colors.info[400],
-        backgroundColor: colors.info[400],
+        borderColor: themeColors.info[400],
+        backgroundColor: themeColors.info[400],
       },
     },
     // warning
     '.btn-warning': {
       color: '#fff',
-      backgroundColor: colors.warning[500],
-      borderColor: colors.warning[500],
+      backgroundColor: themeColors.warning[500],
+      borderColor: themeColors.warning[500],
       '&:hover': {
-        borderColor: colors.warning[600],
-        backgroundColor: colors.warning[600],
+        borderColor: themeColors.warning[600],
+        backgroundColor: themeColors.warning[600],
       },
       '&:active': {
-        borderColor: colors.warning[400],
-        backgroundColor: colors.warning[400],
+        borderColor: themeColors.warning[400],
+        backgroundColor: themeColors.warning[400],
       },
     },
     // error
     '.btn-error': {
       color: '#fff',
-      backgroundColor: colors.error[500],
-      borderColor: colors.error[500],
+      backgroundColor: themeColors.error[500],
+      borderColor: themeColors.error[500],
       '&:hover': {
-        borderColor: colors.error[600],
-        backgroundColor: colors.error[600],
+        borderColor: themeColors.error[600],
+        backgroundColor: themeColors.error[600],
       },
       '&:active': {
-        borderColor: colors.error[400],
-        backgroundColor: colors.error[400],
+        borderColor: themeColors.error[400],
+        backgroundColor: themeColors.error[400],
       },
     },
     // success
     '.btn-success': {
       color: '#fff',
-      backgroundColor: colors.success[500],
-      borderColor: colors.success[500],
+      backgroundColor: themeColors.success[500],
+      borderColor: themeColors.success[500],
       '&:hover': {
-        borderColor: colors.success[600],
-        backgroundColor: colors.success[600],
+        borderColor: themeColors.success[600],
+        backgroundColor: themeColors.success[600],
       },
       '&:active': {
-        borderColor: colors.success[400],
-        backgroundColor: colors.success[400],
+        borderColor: themeColors.success[400],
+        backgroundColor: themeColors.success[400],
       },
     },
     // dark
@@ -191,86 +192,86 @@ const vBtnPlugin = plugin(function({ addUtilities, addComponents }) {
     // OUTLINED
     // primary
     '.btn-outlined-primary': {
-      color: colors.primary[500],
-      borderColor: colors.primary[500],
+      color: themeColors.primary[500],
+      borderColor: themeColors.primary[500],
       '&:hover': {
         color: colors.white,
-        borderColor: colors.primary[500],
-        backgroundColor: colors.primary[500],
+        borderColor: themeColors.primary[500],
+        backgroundColor: themeColors.primary[500],
       },
       '&:active': {
-        borderColor: colors.primary[400],
-        backgroundColor: colors.primary[400],
+        borderColor: themeColors.primary[400],
+        backgroundColor: themeColors.primary[400],
       },
     },
     // secondary
     '.btn-outlined-secondary': {
-      color: colors.secondary[500],
-      borderColor: colors.secondary[500],
+      color: themeColors.secondary[500],
+      borderColor: themeColors.secondary[500],
       '&:hover': {
         color: colors.white,
-        borderColor: colors.secondary[500],
-        backgroundColor: colors.secondary[500],
+        borderColor: themeColors.secondary[500],
+        backgroundColor: themeColors.secondary[500],
       },
       '&:active': {
-        borderColor: colors.secondary[400],
-        backgroundColor: colors.secondary[400],
+        borderColor: themeColors.secondary[400],
+        backgroundColor: themeColors.secondary[400],
       },
     },
     // info
     '.btn-outlined-info': {
-      color: colors.info[500],
-      borderColor: colors.info[500],
+      color: themeColors.info[500],
+      borderColor: themeColors.info[500],
       '&:hover': {
         color: colors.white,
-        borderColor: colors.info[500],
-        backgroundColor: colors.info[500],
+        borderColor: themeColors.info[500],
+        backgroundColor: themeColors.info[500],
       },
       '&:active': {
-        borderColor: colors.info[400],
-        backgroundColor: colors.info[400],
+        borderColor: themeColors.info[400],
+        backgroundColor: themeColors.info[400],
       },
     },
     // warning
     '.btn-outlined-warning': {
-      color: colors.warning[500],
-      borderColor: colors.warning[500],
+      color: themeColors.warning[500],
+      borderColor: themeColors.warning[500],
       '&:hover': {
         color: colors.white,
-        borderColor: colors.warning[500],
-        backgroundColor: colors.warning[500],
+        borderColor: themeColors.warning[500],
+        backgroundColor: themeColors.warning[500],
       },
       '&:active': {
-        borderColor: colors.warning[400],
-        backgroundColor: colors.warning[400],
+        borderColor: themeColors.warning[400],
+        backgroundColor: themeColors.warning[400],
       },
     },
     // success
     '.btn-outlined-success': {
-      color: colors.success[500],
-      borderColor: colors.success[500],
+      color: themeColors.success[500],
+      borderColor: themeColors.success[500],
       '&:hover': {
         color: colors.white,
-        borderColor: colors.success[500],
-        backgroundColor: colors.success[500],
+        borderColor: themeColors.success[500],
+        backgroundColor: themeColors.success[500],
       },
       '&:active': {
-        borderColor: colors.success[400],
-        backgroundColor: colors.success[400],
+        borderColor: themeColors.success[400],
+        backgroundColor: themeColors.success[400],
       },
     },
     // error
     '.btn-outlined-error': {
-      color: colors.error[500],
-      borderColor: colors.error[500],
+      color: themeColors.error[500],
+      borderColor: themeColors.error[500],
       '&:hover': {
         color: colors.white,
-        borderColor: colors.error[500],
-        backgroundColor: colors.error[500],
+        borderColor: themeColors.error[500],
+        backgroundColor: themeColors.error[500],
       },
       '&:active': {
-        borderColor: colors.error[400],
-        backgroundColor: colors.error[400],
+        borderColor: themeColors.error[400],
+        backgroundColor: themeColors.error[400],
       },
     },
     // dark
@@ -291,62 +292,62 @@ const vBtnPlugin = plugin(function({ addUtilities, addComponents }) {
     // TEXT
     // primary
     '.btn-text-primary': {
-      color: colors.primary[500],
+      color: themeColors.primary[500],
       '&:hover': {
-        color: colors.primary[600],
+        color: themeColors.primary[600],
       },
       '&:active': {
-        color: colors.primary[400],
+        color: themeColors.primary[400],
       },
     },
     // secondary
     '.btn-text-secondary': {
-      color: colors.secondary[500],
+      color: themeColors.secondary[500],
       '&:hover': {
-        color: colors.secondary[600],
+        color: themeColors.secondary[600],
       },
       '&:active': {
-        color: colors.secondary[400],
+        color: themeColors.secondary[400],
       },
     },
     // info
     '.btn-text-info': {
-      color: colors.info[500],
+      color: themeColors.info[500],
       '&:hover': {
-        color: colors.info[600],
+        color: themeColors.info[600],
       },
       '&:active': {
-        color: colors.info[400],
+        color: themeColors.info[400],
       },
     },
     // warning
     '.btn-text-warning': {
-      color: colors.warning[500],
+      color: themeColors.warning[500],
       '&:hover': {
-        color: colors.warning[600],
+        color: themeColors.warning[600],
       },
       '&:active': {
-        color: colors.warning[400],
+        color: themeColors.warning[400],
       },
     },
     // success
     '.btn-text-success': {
-      color: colors.success[500],
+      color: themeColors.success[500],
       '&:hover': {
-        color: colors.success[600],
+        color: themeColors.success[600],
       },
       '&:active': {
-        color: colors.success[400],
+        color: themeColors.success[400],
       },
     },
     // error
     '.btn-text-error': {
-      color: colors.error[500],
+      color: themeColors.error[500],
       '&:hover': {
-        color: colors.error[600],
+        color: themeColors.error[600],
       },
       '&:active': {
-        color: colors.error[400],
+        color: themeColors.error[400],
       },
     },
     // dark
