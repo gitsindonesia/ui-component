@@ -7,3 +7,5 @@ gitsui.css
 .firebase/
 storybook-static
 lerna-debug.log
+.turbo
+build/**

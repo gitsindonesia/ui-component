@@ -14,7 +14,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gits-id/button": "*"
+    "@gits-id/button": "*",
+    "axios": "^0.26.0"
   },
   "devDependencies": {
     "@gits-id/utils": "^0.0.0"

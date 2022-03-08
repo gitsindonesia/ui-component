@@ -8,7 +8,7 @@ module.exports = {
     "@storybook/addon-essentials"
   ],
   "framework": "@storybook/vue3",
-  "core": {
-    "builder": "storybook-builder-vite"
-  }
+  core: {
+    builder: 'storybook-builder-vite',
+  },
 }
