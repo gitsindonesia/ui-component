@@ -1,54 +1,50 @@
 import {App} from 'vue';
-import VBtn from './packages/button';
-import VAlert from './packages/alert';
-import VSpinner from './packages/spinner';
-import VAppBar from './packages/app-bar';
-import VBadge from './packages/badge';
-import VBreadcrumbs from './packages/breadcrumbs';
-import VCard from './packages/card';
-import VCheckbox from './packages/checkbox';
-import {VDataTable, VDataTablePagination} from './packages/table';
-import VDropdown from './packages/dropdown';
-import VFormSelect from './packages/form-select';
-import {VInput, VInputGroup, VInputRange} from './packages/input';
-import VModal from './packages/modal';
-import VPagination from './packages/pagination';
-import VProgressBar from './packages/progress';
-import {VRadio, VRadioGroup} from './packages/radio';
-import VSelect from './packages/select';
-import VSwitch from './packages/switch';
-import VTabs from './packages/tabs';
-import VTextarea from './packages/textarea';
-import VTooltip from './packages/tooltip';
-import VFormGroup from './packages/form-group';
-import VNavbar from './packages/navbar';
-import VNavDrawer from './packages/nav-drawer';
-import VMenu from './packages/menu';
-import VMenus from './packages/menus';
-import VContainer from './packages/container';
-import VLogo from './packages/logo';
-import VToast from './packages/toast';
-import VStats from './packages/stats';
-import VFileUpload from './packages/file-input';
-import {
-  VCollapsible,
-  VCollapse,
-  VCollapsibleGroup,
-} from './packages/collapsible';
-import VMultiSelect from './packages/multi-select';
-import VEditor from './packages/editor';
+import VBtn from '@gits-id/button';
+import VAlert from '@gits-id/alert';
+import VSpinner from '@gits-id/spinner';
+import VAppBar from '@gits-id/app-bar';
+import VBadge from '@gits-id/badge';
+import VBreadcrumbs from '@gits-id/breadcrumbs';
+import VCard from '@gits-id/card';
+import VCheckbox from '@gits-id/checkbox';
+import {VDataTable, VDataTablePagination} from '@gits-id/table';
+import VDropdown from '@gits-id/dropdown';
+import VFormSelect from '@gits-id/form-select';
+import {VInput, VInputGroup, VInputRange} from '@gits-id/input';
+import VModal from '@gits-id/modal';
+import VPagination from '@gits-id/pagination';
+import VProgressBar from '@gits-id/progress-bar';
+import {VRadio, VRadioGroup} from '@gits-id/radio';
+import VSelect from '@gits-id/select';
+import VSwitch from '@gits-id/switch';
+import VTabs from '@gits-id/tabs';
+import VTextarea from '@gits-id/textarea';
+import VTooltip from '@gits-id/tooltip';
+import VFormGroup from '@gits-id/form-group';
+import VNavbar from '@gits-id/navbar';
+import VNavDrawer from '@gits-id/nav-drawer';
+import VMenu from '@gits-id/menu';
+import VMenus from '@gits-id/menus';
+import VContainer from '@gits-id/container';
+import VLogo from '@gits-id/logo';
+import VToast from '@gits-id/toast';
+import VStats from '@gits-id/stats';
+import VFileUpload from '@gits-id/file-input';
+import {VCollapsible, VCollapse, VCollapsibleGroup} from '@gits-id/collapsible';
+import VMultiSelect from '@gits-id/multi-select';
+import VEditor from '@gits-id/editor';
 import {
   Auth as AuthLayout,
   Base as BaseLayout,
   Default as DefaultLayout,
-} from './packages/layouts';
+} from '@gits-id/layouts';
 import {
   Activation,
   Auth,
   ForgotPassword,
   Login,
   ResetPassword,
-} from './packages/pages';
+} from '@gits-id/pages';
 
 const plugin = {
   install: (app: App) => {
@@ -143,18 +139,18 @@ export {
   VFileUpload,
 };
 
-export * from './packages/utils';
-export * from './packages/types';
-export * from './packages/services';
-export * from './packages/app-bar/types';
-export * from './packages/toast/types';
-export * from './packages/badge/types';
-export * from './packages/breadcrumbs/types';
-export * from './packages/table/types';
-export * from './packages/dropdown/types';
-export * from './packages/input/types';
-export * from './packages/navbar/types';
-export * from './packages/tabs/types';
-export * from './packages/toast/types';
-export * from './packages/modal/types';
+export * from '@gits-id/utils';
+export * from '@gits-id/types';
+export * from '@gits-id/services';
+export * from '@gits-id/app-bar/types';
+export * from '@gits-id/toast/types';
+export * from '@gits-id/badge/types';
+export * from '@gits-id/breadcrumbs/types';
+export * from '@gits-id/table/types';
+export * from '@gits-id/dropdown/types';
+export * from '@gits-id/input/types';
+export * from '@gits-id/navbar/types';
+export * from '@gits-id/tabs/types';
+export * from '@gits-id/toast/types';
+export * from '@gits-id/modal/types';
 export default plugin;
