@@ -14,16 +14,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "vue": "^3.2.31",
-    "@gits-id/menu": "*",
     "@gits-id/logo": "*",
+    "@gits-id/menu": "*",
+    "@gits-id/navbar": "*",
     "@gits-id/utils": "*",
-    "@gits-id/navbar": "*"
+    "vue": "^3.2.31"
   },
   "devDependencies": {
-    "tailwindcss": "^3.0.23",
-    "@heroicons/vue": "^1.0.6",
+    "@gits-id/utils": "^0.0.0",
     "@headlessui/vue": "^1.5.0",
+    "@heroicons/vue": "^1.0.6",
+    "tailwindcss": "^3.0.23",
     "vee-validate": "^4.5.9"
   }
 }

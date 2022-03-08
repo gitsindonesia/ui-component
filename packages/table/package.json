@@ -14,14 +14,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gits-id/spinner": "*",
     "@gits-id/checkbox": "*",
     "@gits-id/pagination": "*",
-    "@gits-id/utils": "*",
-    "@gits-id/select": "*"
+    "@gits-id/select": "*",
+    "@gits-id/spinner": "*",
+    "@gits-id/utils": "*"
   },
   "devDependencies": {
-    "tailwindcss": "^3.0.23",
-    "@heroicons/vue": "^1.0.6"
+    "@gits-id/utils": "^0.0.0",
+    "@heroicons/vue": "^1.0.6",
+    "tailwindcss": "^3.0.23"
   }
 }

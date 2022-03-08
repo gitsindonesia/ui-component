@@ -41,9 +41,8 @@
     "@gits-id/textarea": "*",
     "@gits-id/toast": "*",
     "@gits-id/tooltip": "*",
-    "@gits-id/utils": "*",
-    "@gits-id/types": "*"
+    "@gits-id/types": "*",
+    "@gits-id/utils": "*"
   },
-  "devDependencies": {},
   "main": "index.ts"
 }

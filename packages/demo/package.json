@@ -10,14 +10,15 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "@gits-id/ui": "*",
     "@gits-id/button": "*",
+    "@gits-id/ui": "*",
     "pinia": "^2.0.11",
     "vue": "^3.2.31",
     "vue-router": "^4.0.12"
   },
   "devDependencies": {
     "@gits-id/tailwind-config": "^0.0.0",
+    "@gits-id/utils": "^0.0.0",
     "@rushstack/eslint-patch": "^1.1.0",
     "@types/jsdom": "^16.2.14",
     "@types/node": "^16.11.25",

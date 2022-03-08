@@ -14,14 +14,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "vue": "^3.2.31",
     "@gits-id/badge": "*",
-    "@gits-id/tooltip": "*"
+    "@gits-id/tooltip": "*",
+    "vue": "^3.2.31",
+    "@vueuse/core": "^7.7.1"
   },
   "devDependencies": {
-    "tailwindcss": "^3.0.23",
-    "@heroicons/vue": "^1.0.6",
+    "@gits-id/utils": "^0.0.0",
     "@headlessui/vue": "^1.5.0",
+    "@heroicons/vue": "^1.0.6",
+    "tailwindcss": "^3.0.23",
     "vee-validate": "^4.5.9"
   }
 }

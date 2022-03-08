@@ -1,4 +1,4 @@
-const colors = require('./colors');
+const colors = require('@gits-id/theme');
 
 module.exports = {
   theme: {

@@ -18,5 +18,8 @@
     "@gits-id/spinner": "*",
     "@gits-id/tailwind-config": "*"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@gits-id/utils": "^0.0.0",
+    "@gits-id/theme": "^0.0.0"
+  }
 }

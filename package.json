@@ -10,18 +10,8 @@
     "demo": "lerna run dev --scope @gits-id/demo"
   },
   "dependencies": {
-    "@ckeditor/ckeditor5-build-classic": "^30.0.0",
-    "@ckeditor/ckeditor5-vue": "^2.0.1",
-    "@heroicons/vue": "^1.0.5",
-    "@popperjs/core": "^2.11.2",
-    "@vueuse/core": "^7.6.2",
-    "axios": "^0.24.0",
+    "@vueuse/core": "^7.7.1",
     "feather-icons": "^4.28.0",
-    "lodash": "^4.17.21",
-    "lodash-es": "^4.17.21",
-    "pagino": "^1.4.1",
-    "pinia": "^2.0.11",
-    "tailwindcss": "^3.0.23",
     "vee-validate": "^4.5.9",
     "vue": "^3.2.31",
     "vue-feather": "^2.0.0",
@@ -32,12 +22,9 @@
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",
-    "@base2/pretty-print-object": "^1.0.1",
     "@changesets/cli": "^2.21.1",
-    "@emotion/core": "^11.0.0",
-    "@emotion/is-prop-valid": "^1.1.2",
-    "@emotion/styled": "^11.8.1",
     "@headlessui/vue": "1.4.1",
+    "@heroicons/vue": "^1.0.6",
     "@iconify-json/heroicons-solid": "^1.1.1",
     "@mdx-js/react": "^1.6.22",
     "@storybook/addon-actions": "^6.4.19",
@@ -45,9 +32,6 @@
     "@storybook/addon-essentials": "^6.4.19",
     "@storybook/addon-links": "^6.4.19",
     "@storybook/addons": "^6.4.19",
-    "@storybook/channel-postmessage": "^6.4.19",
-    "@storybook/channel-websocket": "^6.4.19",
-    "@storybook/core-common": "^6.4.19",
     "@storybook/vue3": "^6.4.19",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/forms": "^0.4.0",
@@ -59,17 +43,14 @@
     "babel-loader": "^8.2.3",
     "cross-env": "^7.0.3",
     "lerna": "^4.0.0",
-    "postcss": "^8.4.6",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "simple-syntax-highlighter": "^2.2.0",
+    "postcss": "^8.4.8",
     "standard-version": "^9.3.2",
     "storybook-builder-vite": "^0.1.17",
+    "tailwindcss": "^3.0.23",
     "tailwindcss-cli": "^0.1.2",
     "typescript": "^4.5.5",
     "unplugin-icons": "^0.13.2",
-    "vite": "^2.8.4",
-    "vue-loader": "^16.8.3"
+    "vite": "^2.8.4"
   },
   "main": "index.ts",
   "module": "index.ts",
@@ -83,5 +64,6 @@
   ],
   "workspaces": [
     "packages"
-  ]
+  ],
+  "private": true
 }

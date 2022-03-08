@@ -15,5 +15,8 @@
   "license": "ISC",
   "dependencies": {
     "@gits-id/button": "*"
+  },
+  "devDependencies": {
+    "@gits-id/utils": "^0.0.0"
   }
 }

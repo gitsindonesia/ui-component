@@ -14,10 +14,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "vue": "^3.2.31",
     "@gits-id/button": "*",
-    "tailwindcss": "^3.0.23",
+    "@headlessui/vue": "^1.5.0",
     "@heroicons/vue": "^1.0.6",
-    "@headlessui/vue": "^1.5.0"
+    "tailwindcss": "^3.0.23",
+    "vue": "^3.2.31",
+    "vue-feather": "^2.0.0",
+    "feather-icons": "^4.28.0"
+  },
+  "devDependencies": {
+    "@gits-id/utils": "^0.0.0"
   }
 }
