@@ -86,6 +86,7 @@ const plugin = {
     app.component('VCollapsible', VCollapsible);
     app.component('VCollapsibleGroup', VCollapsibleGroup);
     app.component('VMultiSelect', VMultiSelect);
+    app.component('VLogo', VLogo);
   },
 };
 

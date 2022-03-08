@@ -24,7 +24,7 @@ const tag = computed(() => (to.value ? "router-link" : "a"));
 <template>
   <component :is="tag" :to="to">
     <img v-if="white" :class="imgClass" alt="Logo White" src="./assets/logo-white.png" />
-    <img v-else :class="imgClass" alt="Logo Base" src="./assets/public/logo-base.png" />
+    <img v-else :class="imgClass" alt="Logo Base" src="./assets/logo-base.png" />
   </component>
 </template>
 

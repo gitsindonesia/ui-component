@@ -77,9 +77,9 @@ const toggleMenu = () => emit("toggleMenu");
       shadow-md
       px-4
       py-3
-      flex-initial
+      flex
       items-center
-      justify-between
+      gap-2
       z-20
       transition-all
       duration-300;

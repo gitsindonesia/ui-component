@@ -37,7 +37,7 @@ const { fillHeight, noButton, noImage, title, description } = toRefs(props);
       <slot name="image" :noImage="noImage">
         <img
           v-if="!noImage"
-          src="../../public/not-found.svg"
+          src="./assets/not-found.svg"
           alt="Not Found"
           class="w-56 mx-auto mb-5"
         />

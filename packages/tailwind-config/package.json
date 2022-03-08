@@ -12,6 +12,7 @@
   ],
   "author": "",
   "license": "ISC",
+  "dependencies": {},
   "devDependencies": {
     "tailwindcss": "^3.0.23"
   }

@@ -1,17 +1,13 @@
 {
-  "name": "@gits-id/ui",
+  "name": "@gits-id/components",
   "version": "0.1.16",
   "scripts": {
-    "dev": "vite",
-    "serve": "vite preview",
-    "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
-    "build:css": "npx --no-install tailwindcss-cli@latest build ./src/index.css -o ./gitsui.css",
-    "old:prepublishOnly": "npm run build",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "release": "standard-version",
     "build-storybook": "build-storybook",
     "storybook": "start-storybook -p 6006",
-    "sb": "npm run storybook"
+    "sb": "npm run storybook",
+    "demo": "lerna run dev --scope @gits-id/demo"
   },
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^30.0.0",
