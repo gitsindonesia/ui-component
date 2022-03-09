@@ -1,9 +1,8 @@
-import {Colors} from '../../types';
-import {Sizes} from '@gits-id/utils';
+import type {Sizes} from '@gits-id/utils';
 
 export type VBtnProps = {
   label?: string;
-  color: Colors;
+  color: string;
   outlined: boolean;
   rounded: boolean;
   ring: boolean;

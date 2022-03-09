@@ -1,6 +1,6 @@
 import {Meta, Story} from '@storybook/vue3';
 import Button from './VBtn.vue';
-import {VBtnProps} from './VBtn';
+import {VBtnProps} from './types';
 import {HomeIcon} from '@heroicons/vue/outline';
 
 const themeColors = [

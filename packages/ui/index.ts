@@ -1,5 +1,5 @@
 import {App} from 'vue';
-import VBtn from '@gits-id/button';
+import VBtn from '@gits-id/button/src/types';
 import VAlert from '@gits-id/alert';
 import VSpinner from '@gits-id/spinner';
 import VAppBar from '@gits-id/app-bar';
@@ -143,8 +143,8 @@ export {
 export * from '@gits-id/utils';
 export * from '@gits-id/types';
 export * from '@gits-id/services';
+export * from '@gits-id/toast';
 export * from '@gits-id/app-bar/types';
-export * from '@gits-id/toast/types';
 export * from '@gits-id/badge/types';
 export * from '@gits-id/breadcrumbs/types';
 export * from '@gits-id/table/types';

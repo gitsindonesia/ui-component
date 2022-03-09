@@ -12,5 +12,7 @@
   ],
   "author": "",
   "license": "ISC",
-  "devDependencies": {}
+  "dependencies": {
+    "vue": "^3.2.31"
+  }
 }
