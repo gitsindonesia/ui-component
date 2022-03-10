@@ -4,6 +4,6 @@ module.exports = {
   ],
   presets: [require('@gits-id/tailwind-config/preset')],
   plugins: [
-    require('./src/plugin')
+    require('@gits-id/tailwind-components/button')
   ]
 };

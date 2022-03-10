@@ -2,7 +2,15 @@
 import {ref} from 'vue';
 import VBtn from '@gits-id/button/src/VBtn.vue';
 
-const colors = ['primary', 'secondary', 'info', 'warning', 'error', 'dark'];
+const colors = [
+  'default',
+  'primary',
+  'secondary',
+  'info',
+  'warning',
+  'error',
+  'dark',
+];
 const rounded = ref(false);
 </script>
 
@@ -13,7 +21,13 @@ const rounded = ref(false);
       Rounded
     </label>
   </div>
+
   <div class="space-y-2">
+    <div class="space-x-2">
+      <button v-for="color in colors" :key="color" :class="`btn btn-${color}`">
+        {{ color }}
+      </button>
+    </div>
     <div class="space-x-2">
       <VBtn v-for="color in colors" :key="color" :color="color">
         {{ color }}

@@ -1,5 +1,5 @@
 import {App} from 'vue';
-import VBtn from '@gits-id/button/src/types';
+import VBtn from '@gits-id/button';
 import VAlert from '@gits-id/alert';
 import VSpinner from '@gits-id/spinner';
 import VAppBar from '@gits-id/app-bar';
