@@ -42,7 +42,4 @@ module.exports = {
     './packages/tooltip/*.{vue,js,ts,jsx,tsx}',
   ],
   presets: [require('./packages/tailwind-config/preset')],
-  plugins: [
-    require('./packages/tailwind-components/button')
-  ]
 };
