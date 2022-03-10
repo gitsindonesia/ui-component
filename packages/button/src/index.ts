@@ -1,5 +1,5 @@
 import VBtn from './VBtn.vue';
-import '@gits-id/tailwind-config/tailwind.css';
+import './tailwind.css';
 
 export {VBtn};
 export * from './types';
