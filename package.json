@@ -6,8 +6,8 @@
     "release": "standard-version",
     "build-storybook": "build-storybook",
     "storybook": "start-storybook -p 6006",
-    "sb": "npm run storybook",
-    "demo": "lerna run dev --scope @gits-id/demo"
+    "sb": "pnpm run storybook",
+    "play": "lerna run dev --scope playground"
   },
   "dependencies": {
     "@vueuse/core": "^7.7.1",
@@ -84,5 +84,10 @@
     "src",
     "index.ts",
     "preset.js"
-  ]
+  ],
+  "workspaces": [
+    "packages",
+    "apps"
+  ],
+  "private": true
 }

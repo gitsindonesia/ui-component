@@ -1,51 +1,6 @@
 const plugin = require('tailwindcss/plugin')
 
-const buttonPlugin = plugin(function({ addUtilities, addComponents, theme }) {
-  // addUtilities({
-  //   '.btn-rounded': {
-  //     borderRadius: '9999px',
-  //   },
-  //   '.btn-tile': {
-  //     borderRadius: '0px',
-  //   },
-  //   '.btn-outlined': {
-  //     borderStyle: 'solid',
-  //     borderWidth: '1px',
-  //     backgroundColor: 'transparent',
-  //   },
-  //   '.btn-icon': {
-  //     // padding: '.5rem !important',
-  //     // borderRadius: '9999px'
-  //   },
-  //   '.btn-text': {
-  //     border: 'none',
-  //     backgroundColor: 'transparent',
-  //     '&:hover': {
-  //       backgroundColor: 'transparent',
-  //     }
-  //   },
-  //   '.btn-xs': {
-  //     padding: '.25rem .5rem',
-  //     fontSize: '0.75rem'
-  //   },
-  //   '.btn-sm': {
-  //     padding: '.35rem .7rem',
-  //     fontSize: '0.875rem'
-  //   },
-  //   '.btn-md': {
-  //     padding: '.5rem 1rem',
-  //     fontSize: '1rem'
-  //   },
-  //   '.btn-lg': {
-  //     padding: '.6rem 1.2rem',
-  //     fontSize: '1.25rem'
-  //   },
-  //   '.btn-xl': {
-  //     padding: '.7rem 1.4rem',
-  //     fontSize: '2rem'
-  //   },
-  // })
-
+const buttonPlugin = plugin(function({ addComponents, theme }) {
   addComponents({
     '.btn': {
       padding: '.5rem 1rem',
@@ -73,48 +28,6 @@ const buttonPlugin = plugin(function({ addUtilities, addComponents, theme }) {
         borderColor: theme('colors.gray.300'),
         color: theme('colors.gray.400'),
       }
-    },
-    '.btn-rounded': {
-      borderRadius: '9999px',
-    },
-    '.btn-tile': {
-      borderRadius: '0px',
-    },
-    '.btn-outlined': {
-      borderStyle: 'solid',
-      borderWidth: '1px',
-      backgroundColor: 'transparent',
-    },
-    '.btn-icon': {
-      // padding: '.5rem !important',
-      // borderRadius: '9999px'
-    },
-    '.btn-text': {
-      border: 'none',
-      backgroundColor: 'transparent',
-      '&:hover': {
-        backgroundColor: 'transparent',
-      }
-    },
-    '.btn-xs': {
-      padding: '.25rem .5rem',
-      fontSize: '0.75rem'
-    },
-    '.btn-sm': {
-      padding: '.35rem .7rem',
-      fontSize: '0.875rem'
-    },
-    '.btn-md': {
-      padding: '.5rem 1rem',
-      fontSize: '1rem'
-    },
-    '.btn-lg': {
-      padding: '.6rem 1.2rem',
-      fontSize: '1.25rem'
-    },
-    '.btn-xl': {
-      padding: '.7rem 1.4rem',
-      fontSize: '2rem'
     },
     '.btn-default': {
       backgroundColor: 'white',
@@ -399,6 +312,50 @@ const buttonPlugin = plugin(function({ addUtilities, addComponents, theme }) {
       '&:active': {
         color: theme('colors.gray.700'),
       },
+    },
+
+    // variants
+    '.btn-rounded': {
+      borderRadius: '9999px',
+    },
+    '.btn-tile': {
+      borderRadius: '0px',
+    },
+    '.btn-outlined': {
+      borderStyle: 'solid',
+      borderWidth: '1px',
+      backgroundColor: 'transparent',
+    },
+    '.btn-icon': {
+      // padding: '.5rem !important',
+      // borderRadius: '9999px'
+    },
+    '.btn-text': {
+      border: 'none',
+      backgroundColor: 'transparent',
+      '&:hover': {
+        backgroundColor: 'transparent',
+      }
+    },
+    '.btn-xs': {
+      padding: '.25rem .5rem',
+      fontSize: '0.75rem'
+    },
+    '.btn-sm': {
+      padding: '.35rem .7rem',
+      fontSize: '0.875rem'
+    },
+    '.btn-md': {
+      padding: '.5rem 1rem',
+      fontSize: '1rem'
+    },
+    '.btn-lg': {
+      padding: '.6rem 1.2rem',
+      fontSize: '1.25rem'
+    },
+    '.btn-xl': {
+      padding: '.7rem 1.4rem',
+      fontSize: '2rem'
     },
   })
 })
