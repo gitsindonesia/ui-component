@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type {VBreadcrumbItem} from './VBreadcrumbs';
+import type {VBreadcrumbItem} from './types';
 import type {PropType} from 'vue';
 
 const props = defineProps({
@@ -13,7 +13,7 @@ const props = defineProps({
   },
   customClass: {
     type: String,
-    default: ''
+    default: '',
   },
   activeColor: {
     type: String,
