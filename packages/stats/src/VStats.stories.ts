@@ -1,19 +1,29 @@
-import MySwitch from './VSwitch.vue';
+import MyStats from '../src/VStats.vue';
+import {themeColors} from '@gits-id/utils/colors';
 import {Meta, Story} from '@storybook/vue3';
 
 export default {
-  title: 'Components/Switch',
-  component: MySwitch,
+  title: 'Components/Stats',
+  component: MyStats,
+  argTypes: {
+    color: {
+      control: 'select',
+      options: themeColors,
+    },
+  },
   args: {
     modelValue: true,
-    label: 'Label',
+    title: 'Avg. Click Rate',
+    value: '24.59%',
+    icon: 'user',
+    color: 'primary',
   },
 } as Meta;
 
 const Template: Story = (args) => ({
   // Components used in your story `template` are defined in the `components` object
   components: {
-    'my-component': MySwitch,
+    'my-component': MyStats,
   },
   // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
@@ -25,6 +35,25 @@ const Template: Story = (args) => ({
 
 export const Default = Template.bind({});
 Default.args = {};
+
+export const NoIcon = Template.bind({});
+NoIcon.args = {
+  icon: '',
+};
+
+export const ProgressUp = Template.bind({});
+ProgressUp.args = {
+  from: '10.5%',
+  progress: '5.5%',
+  up: true,
+};
+
+export const ProgressDown = Template.bind({});
+ProgressDown.args = {
+  from: '10.5%',
+  progress: '5.5%',
+  down: true,
+};
 
 export const Success = Template.bind({});
 Success.args = {

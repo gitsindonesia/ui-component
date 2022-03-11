@@ -1,6 +1,6 @@
 import {Story, Meta} from '@storybook/vue3';
 import {sizes} from '@gits-id/utils/sizes';
-import type {VFormSelectProps} from './VFormSelect';
+import type {VFormSelectProps} from './types';
 import MySelect from './VFormSelect.vue';
 
 const items = [...Array(5)].map((item, index) => ({

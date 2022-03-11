@@ -2,7 +2,7 @@
   "name": "@gits-id/spinner",
   "version": "0.0.0",
   "description": "GITS Spinner Component",
-  "main": "index.ts",
+  "main": "src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

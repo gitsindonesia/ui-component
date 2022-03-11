@@ -2,7 +2,7 @@
   "name": "@gits-id/nav-drawer",
   "version": "0.0.0",
   "description": "GITS Navigation Drawer Component",
-  "main": "index.ts",
+  "main": "src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

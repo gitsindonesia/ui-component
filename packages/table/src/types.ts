@@ -1,4 +1,4 @@
-import {VPagination} from '../pagination/types';
+import {VPagination} from '../../pagination/src/types';
 
 export interface VDataTableItem {
   selected?: boolean;

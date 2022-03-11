@@ -1,4 +1,4 @@
-import VProgressBar from './VProgressBar.vue';
+import VProgressBar from '../src/VProgressBar.vue';
 import {themeColors} from '@gits-id/utils/colors';
 import {Meta, Story} from '@storybook/vue3';
 

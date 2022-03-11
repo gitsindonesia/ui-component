@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ref, toRefs, watch, computed, PropType } from "vue";
-import { useTextSize } from "@gits-id/utils";
-import { VDataTableItem } from "../VDataTable/types";
+import {ref, toRefs, watch, computed, PropType} from 'vue';
+import {useTextSize} from '@gits-id/utils';
+import {VDataTableItem} from '@gits-id/table/VDataTable/types';
 
 const props = defineProps({
   modelValue: {
@@ -10,15 +10,15 @@ const props = defineProps({
   },
   label: {
     type: String,
-    default: "",
+    default: '',
   },
   inputClass: {
     type: String,
-    default: "",
+    default: '',
   },
   color: {
     type: String,
-    default: "primary",
+    default: 'primary',
   },
   disabled: {
     type: Boolean,
@@ -26,11 +26,11 @@ const props = defineProps({
   },
   size: {
     type: String,
-    default: "",
+    default: '',
   },
   value: {
     type: [String, Number] as PropType<string | number | VDataTableItem>,
-    default: "",
+    default: '',
   },
 });
 
@@ -44,32 +44,32 @@ const {
   value: checkboxValue,
 } = toRefs(props);
 
-const emit = defineEmits(["update:modelValue"]);
+const emit = defineEmits(['update:modelValue']);
 
 const innerValue = ref(props.modelValue);
 
 const colorClass = computed(() => {
   switch (color.value) {
-    case "primary":
+    case 'primary':
     default:
-      return "text-primary-600 focus:ring-primary-600";
-    case "secondary":
-      return "text-secondary-600 focus:ring-secondary-600";
-    case "info":
-      return "text-info-600 focus:ring-info-600";
-    case "success":
-      return "text-success-600 focus:ring-success-600";
-    case "warning":
-      return "text-warning-600 focus:ring-warning-600";
-    case "error":
-      return "text-error-600 focus:ring-error-600";
+      return 'text-primary-600 focus:ring-primary-600';
+    case 'secondary':
+      return 'text-secondary-600 focus:ring-secondary-600';
+    case 'info':
+      return 'text-info-600 focus:ring-info-600';
+    case 'success':
+      return 'text-success-600 focus:ring-success-600';
+    case 'warning':
+      return 'text-warning-600 focus:ring-warning-600';
+    case 'error':
+      return 'text-error-600 focus:ring-error-600';
   }
 });
 
-const { class: sizeClass } = useTextSize(size.value);
+const {class: sizeClass} = useTextSize(size.value);
 
 watch(innerValue, (val) => {
-  emit("update:modelValue", val);
+  emit('update:modelValue', val);
 });
 
 watch(modelValue, (val) => {

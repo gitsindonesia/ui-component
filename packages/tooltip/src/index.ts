@@ -1,4 +1,4 @@
-import VTooltip from './VTooltip.vue';
+import VTooltip from '../src/VTooltip.vue';
 
 // export * from './types';
 export {VTooltip};
