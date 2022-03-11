@@ -161,6 +161,7 @@ importers:
       pinia: ^2.0.11
       postcss: ^8.4.8
       prettier: ^2.5.1
+      prism-themes: ^1.9.0
       storybook-builder-vite: ^0.1.17
       tailwindcss: ^3.0.23
       typescript: ~4.5.5
@@ -168,6 +169,7 @@ importers:
       vitest: ^0.5.0
       vue: ^3.2.31
       vue-loader: ^16.8.3
+      vue-prism-component: ^2.0.0
       vue-router: ^4.0.12
       vue-tsc: ^0.31.4
     dependencies:
@@ -175,7 +177,9 @@ importers:
       '@gits-id/theme': link:../../packages/theme
       '@gits-id/ui': link:../../packages/ui
       pinia: 2.0.11_typescript@4.5.5+vue@3.2.31
+      prism-themes: 1.9.0
       vue: 3.2.31
+      vue-prism-component: 2.0.0
       vue-router: 4.0.13_vue@3.2.31
     devDependencies:
       '@babel/core': 7.17.5
@@ -16723,6 +16727,10 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
+  /prism-themes/1.9.0:
+    resolution: {integrity: sha512-tX2AYsehKDw1EORwBps+WhBFKc2kxfoFpQAjxBndbZKr4fRmMkv47XN0BghC/K1qwodB1otbe4oF23vUTFDokw==}
+    dev: false
+
   /prismjs/1.27.0:
     resolution: {integrity: sha512-t13BGPUlFDR7wRB5kQDG4jjl7XeuH6jbJGt11JHPL96qwsEHNX2+68tFXqc1/k+/jALsbSWJKUOT/hcYAZ5LkA==}
     engines: {node: '>=6'}
@@ -20341,6 +20349,10 @@ packages:
       loader-utils: 2.0.2
       webpack: 5.70.0
     dev: true
+
+  /vue-prism-component/2.0.0:
+    resolution: {integrity: sha512-1ofrL+GCZOv4HqtX5W3EgkhSAgadSeuD8FDTXbwhLy8kS+28RCR8t2S5VTeM9U/peAaXLBpSgRt3J25ao8KTeg==}
+    dev: false
 
   /vue-remix-icons/1.1.1:
     resolution: {integrity: sha512-+L0VE44WtpnGkD933E2L58K2yvNAOwk0iaCdRRXDulncv3ko0oVMYIJM+S0JxM1QieIqjfxfMX22OSZQJSfBtA==}

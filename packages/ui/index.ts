@@ -8,7 +8,7 @@ import VBreadcrumbs from '@gits-id/breadcrumbs';
 import VCard from '@gits-id/card';
 import VCheckbox from '@gits-id/checkbox';
 import {VDataTable, VDataTablePagination} from '@gits-id/table';
-import VDropdown from '@gits-id/dropdown';
+import {VDropdown, VDropdownItem} from '@gits-id/dropdown';
 import VFormSelect from '@gits-id/form-select';
 import {VInput, VInputGroup, VInputRange} from '@gits-id/input';
 import VModal from '@gits-id/modal';
@@ -58,6 +58,7 @@ const plugin = {
     app.component('VDataTable', VDataTable);
     app.component('VDataTablePagination', VDataTablePagination);
     app.component('VDropdown', VDropdown);
+    app.component('VDropdownItem', VDropdownItem);
     app.component('VFormSelect', VFormSelect);
     app.component('VInput', VInput);
     app.component('VInputGroup', VInputGroup);

@@ -30,15 +30,6 @@ const breadcrumbs = ref([
       <v-breadcrumbs :items="breadcrumbs" />
     </template>
   </Docs>
-
-  <Docs
-    title="Custom Divider"
-    :code="`<v-breadcrumbs divider=&quot;-&quot; :items=&quot;breadcrumbs&quot; />`"
-  >
-    <template #preview>
-      <v-breadcrumbs divider="-" :items="breadcrumbs" />
-    </template>
-  </Docs>
 </template>
 
 <style scoped></style>

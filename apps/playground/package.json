@@ -17,13 +17,15 @@
     "@gits-id/theme": "*",
     "@gits-id/ui": "*",
     "pinia": "^2.0.11",
+    "prism-themes": "^1.9.0",
     "vue": "^3.2.31",
+    "vue-prism-component": "^2.0.0",
     "vue-router": "^4.0.12"
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",
-    "@gits-id/tailwind-config": "^0.0.0",
     "@gits-id/tailwind-components": "^0.0.0",
+    "@gits-id/tailwind-config": "^0.0.0",
     "@gits-id/utils": "^0.0.0",
     "@rushstack/eslint-patch": "^1.1.0",
     "@storybook/addon-actions": "^6.4.19",

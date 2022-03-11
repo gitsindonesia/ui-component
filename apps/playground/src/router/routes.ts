@@ -1,6 +1,5 @@
-import DefaultLayout from '../../packages/layouts/Default.vue';
 import Alerts from '../views/components/Alerts.vue';
-import Labels from '../views/components/Labels.vue';
+import Badges from '../views/components/Badges.vue';
 import Tabs from '../views/components/Tabs.vue';
 import Breadcrumbs from '../views/components/Breadcrumbs.vue';
 import Buttons from '../views/components/Buttons.vue';
@@ -15,13 +14,14 @@ import Switch from '../views/components/Switch.vue';
 import Textareas from '../views/components/Textareas.vue';
 import Progressbar from '../views/components/Progressbars.vue';
 import Tooltip from '../views/components/Tooltips.vue';
-import NotFound from '../views/errors/NotFound.vue';
 import Home from '../views/Home.vue';
+import type {RouteRecordRaw} from 'vue-router';
+// import NotFound from '../views/errors/NotFound.vue';
 
-export default [
+export default <RouteRecordRaw[]>[
   {
     path: '/',
-    component: DefaultLayout,
+    component: () => import('@/components/HomeLayout.vue'),
     children: [
       {
         path: '',
@@ -31,15 +31,15 @@ export default [
   },
   {
     path: '/components',
-    component: DefaultLayout,
+    component: () => import('@/components/ComponentLayout.vue'),
     children: [
       {
         path: 'alerts',
         component: Alerts,
       },
       {
-        path: 'labels',
-        component: Labels,
+        path: 'badges',
+        component: Badges,
       },
       {
         path: 'breadcrumbs',
@@ -97,10 +97,14 @@ export default [
         path: 'Tooltips',
         component: Tooltip,
       },
+      {
+        path: 'switches',
+        component: () => import('@/views/components/Switch.vue'),
+      },
     ],
   },
-  {
-    path: '/:pathMatch(.*)*',
-    component: NotFound,
-  },
+  // {
+  //   path: '/:pathMatch(.*)*',
+  //   component: NotFound,
+  // },
 ];

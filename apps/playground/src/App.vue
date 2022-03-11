@@ -1,44 +1,38 @@
 <script setup lang="ts">
-import {ref} from 'vue';
-import {RouterLink, RouterView} from 'vue-router';
-
-const comps = ['v-alert', 'v-app-bar', 'v-badge', 'v-breadcrumbs', 'v-btn'];
-
-const menus = ref(
-  comps.map((comp) => ({
-    text: comp,
-    to: `/components/${comp}`,
-  })),
-);
+import {menus} from './menus';
 </script>
 
 <template>
   <v-app-bar class="" hide-toggle>
-    <div class="container mx-auto flex gap-8 items-center">
+    <div class="container mx-auto flex gap-3 items-center">
       <v-logo img-class="h-8" />
 
-      <div class="inline flex-grow flex justify-start">
-        <router-link to="/">Home</router-link>
-      </div>
+      <span class="font-semibold text-primary-500">UI Component</span>
     </div>
   </v-app-bar>
 
-  <div class="container mx-auto mt-5">
+  <div class="container mx-auto mt-5 static">
     <div class="flex">
-      <div class="w-full sm:w-2/12">
-        <div class="text-gray-500 text-sm p-2">Components</div>
-        <router-link
-          v-for="(menu, idx) in menus"
-          :key="idx"
-          :to="menu.to"
-          exact
-          exact-active-class="bg-primary-50 text-primary-500"
-          class="hover:bg-primary-50 hover:text-primary-500 px-2 py-1 rounded block transition duration-300"
-        >
-          {{ menu.text }}
-        </router-link>
+      <div class="w-full sm:w-3/12 sticky top-0">
+        <template v-for="(menu, idx) in menus" :key="idx">
+          <div class="text-gray-500 text-sm p-2">{{ menu.title }}</div>
+          <div
+            v-for="(child, idx) in menu.children"
+            :key="idx"
+            class="block py-0.5"
+          >
+            <router-link
+              :to="child.to"
+              exact
+              exact-active-class="bg-primary-50 text-primary-500"
+              class="hover:bg-primary-50 hover:text-primary-500 px-2 py-1 rounded transition duration-300"
+            >
+              {{ child.title }}
+            </router-link>
+          </div>
+        </template>
       </div>
-      <div class="w-full sm:w-10/12 p-4">
+      <div class="w-full sm:w-9/12 p-4">
         <RouterView />
       </div>
     </div>
