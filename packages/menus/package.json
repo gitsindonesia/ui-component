@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/menus",
-  "version": "0.0.0",
+  "version": "0.1.17-alpha.0",
   "description": "GITS Menus Component",
   "main": "src/index.ts",
   "scripts": {
@@ -14,11 +14,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gits-id/button": "*",
+    "@gits-id/button": "^0.1.17-alpha.0",
     "vue": "^3.2.31"
   },
   "devDependencies": {
-    "@gits-id/utils": "^0.0.0",
+    "@gits-id/utils": "^0.1.17-alpha.0",
     "@headlessui/vue": "^1.5.0",
     "@heroicons/vue": "^1.0.6",
     "tailwindcss": "^3.0.23",

@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/tailwind-components",
-  "version": "0.0.0",
+  "version": "0.1.17-alpha.0",
   "description": "GITS Tailwind Plugin",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,6 +14,5 @@
   "license": "ISC",
   "dependencies": {
     "vue": "^3.2.31"
-  },
-  "devDependencies": {}
+  }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/select",
-  "version": "0.0.0",
+  "version": "0.1.17-alpha.0",
   "description": "GITS Select Component",
   "main": "src/index.ts",
   "scripts": {
@@ -14,8 +14,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gits-id/input": "*",
-    "@gits-id/utils": "*",
+    "@gits-id/input": "^0.1.17-alpha.0",
+    "@gits-id/utils": "^0.1.17-alpha.0",
     "vue": "^3.2.31"
   },
   "devDependencies": {

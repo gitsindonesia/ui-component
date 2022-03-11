@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/radio",
-  "version": "0.0.0",
+  "version": "0.1.17-alpha.0",
   "description": "GITS Radio Component",
   "main": "src/index.ts",
   "scripts": {
@@ -15,7 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gits-id/utils": "*",
+    "@gits-id/utils": "^0.1.17-alpha.0",
     "vue": "^3.2.31"
   },
   "devDependencies": {

@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/services",
-  "version": "0.0.0",
+  "version": "0.1.17-alpha.0",
   "description": "GITS Services",
   "main": "index.ts",
   "scripts": {
@@ -14,10 +14,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gits-id/button": "*",
+    "@gits-id/button": "^0.1.17-alpha.0",
     "axios": "^0.26.0"
   },
   "devDependencies": {
-    "@gits-id/utils": "^0.0.0"
+    "@gits-id/utils": "^0.1.17-alpha.0"
   }
 }
