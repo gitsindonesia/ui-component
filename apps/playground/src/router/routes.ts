@@ -1,22 +1,4 @@
-import Alerts from '../views/components/Alerts.vue';
-import Badges from '../views/components/Badges.vue';
-import Tabs from '../views/components/Tabs.vue';
-import Breadcrumbs from '../views/components/Breadcrumbs.vue';
-import Buttons from '../views/components/Buttons.vue';
-import Dropdowns from '../views/components/Dropdowns.vue';
-import DataTables from '../views/components/DataTables.vue';
-import Inputs from '../views/components/Inputs.vue';
-import Radios from '../views/components/Radios.vue';
-import Modals from '../views/components/Modals.vue';
-import Paginations from '../views/components/Paginations.vue';
-import Selects from '../views/components/Selects.vue';
-import Switch from '../views/components/Switch.vue';
-import Textareas from '../views/components/Textareas.vue';
-import Progressbar from '../views/components/Progressbars.vue';
-import Tooltip from '../views/components/Tooltips.vue';
-import Home from '../views/Home.vue';
 import type {RouteRecordRaw} from 'vue-router';
-// import NotFound from '../views/errors/NotFound.vue';
 
 export default <RouteRecordRaw[]>[
   {
@@ -25,7 +7,7 @@ export default <RouteRecordRaw[]>[
     children: [
       {
         path: '',
-        component: Home,
+        component: () => import('@/views/components/Home.vue'),
       },
     ],
   },
@@ -35,67 +17,63 @@ export default <RouteRecordRaw[]>[
     children: [
       {
         path: 'alerts',
-        component: Alerts,
+        component: () => import('@/views/components/Alerts.vue'),
       },
       {
         path: 'badges',
-        component: Badges,
+        component: () => import('@/views/components/Badges.vue'),
       },
       {
         path: 'breadcrumbs',
-        component: Breadcrumbs,
+        component: () => import('@/views/components/Breadcrumbs.vue'),
       },
       {
         path: 'buttons',
-        component: Buttons,
+        component: () => import('@/views/components/Buttons.vue'),
       },
       {
         path: 'tables',
-        component: DataTables,
+        component: () => import('@/views/components/DataTables.vue'),
       },
       {
         path: 'inputs',
-        component: Inputs,
+        component: () => import('@/views/components/Inputs.vue'),
       },
       {
         path: 'radios',
-        component: Radios,
+        component: () => import('@/views/components/Radios.vue'),
       },
       {
         path: 'modals',
-        component: Modals,
+        component: () => import('@/views/components/Modals.vue'),
       },
       {
         path: 'paginations',
-        component: Paginations,
+        component: () => import('@/views/components/Paginations.vue'),
       },
       {
         path: 'selects',
-        component: Selects,
+        component: () => import('@/views/components/Selects.vue'),
       },
       {
         path: 'textareas',
-        component: Textareas,
+        component: () => import('@/views/components/Textareas.vue'),
       },
       {
         path: 'dropdowns',
-        component: Dropdowns,
-      },
-      {
-        path: 'v-switch',
-        component: Switch,
+        component: () => import('@/views/components/Dropdowns.vue'),
       },
       {
         path: 'tabs',
-        component: Tabs,
+        component: () => import('@/views/components/Tabs.vue'),
       },
       {
-        path: 'Progressbars',
-        component: Progressbar,
+        path: 'progressbars',
+        component: () => import('@/views/components/Progressbars.vue'),
       },
       {
-        path: 'Tooltips',
-        component: Tooltip,
+        path: 'tooltips',
+        component: () => import('@/views/components/Tooltips.vue'),
       },
       {
         path: 'switches',
