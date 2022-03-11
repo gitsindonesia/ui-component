@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import {ref, toRefs, watch, computed, PropType} from 'vue';
 import {useTextSize} from '@gits-id/utils';
-import {VDataTableItem} from '@gits-id/table/VDataTable/types';
+
+interface VDataTableItem {
+  selected?: boolean;
+  [key: string]: any;
+}
 
 const props = defineProps({
   modelValue: {
