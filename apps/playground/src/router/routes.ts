@@ -7,7 +7,7 @@ export default <RouteRecordRaw[]>[
     children: [
       {
         path: '',
-        component: () => import('@/views/components/Home.vue'),
+        component: () => import('@/views/Home.vue'),
       },
     ],
   },
