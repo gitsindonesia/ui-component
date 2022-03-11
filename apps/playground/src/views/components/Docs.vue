@@ -58,8 +58,7 @@ const selected = ref(props.selected);
           <slot name="preview"></slot>
         </div>
         <div class="border-t">
-          <div class="flex justify-between sm:items-center">
-            <div class="border-b py-3 px-4 font-medium text-gray-600"></div>
+          <div class="flex justify-end sm:items-center">
             <v-tabs v-if="!hideTabs" :items="items" v-model="selected"></v-tabs>
           </div>
 
