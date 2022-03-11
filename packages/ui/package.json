@@ -38,6 +38,7 @@
     "@gits-id/table": "^0.1.17-alpha.0",
     "@gits-id/tabs": "^0.1.17-alpha.0",
     "@gits-id/tailwind-config": "^0.1.17-alpha.0",
+    "@gits-id/tailwind-components": "^0.1.17-alpha.0",
     "@gits-id/textarea": "^0.1.17-alpha.0",
     "@gits-id/toast": "^0.1.17-alpha.0",
     "@gits-id/tooltip": "^0.1.17-alpha.0",
