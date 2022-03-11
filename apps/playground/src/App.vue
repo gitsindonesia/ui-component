@@ -14,10 +14,12 @@ const menus = ref(
 
 <template>
   <v-app-bar class="" hide-toggle>
-    <v-logo img-class="h-8 inline mr-4" />
+    <div class="container mx-auto flex gap-8 items-center">
+      <v-logo img-class="h-8" />
 
-    <div class="inline">
-      <router-link to="/">Home</router-link>
+      <div class="inline flex-grow flex justify-start">
+        <router-link to="/">Home</router-link>
+      </div>
     </div>
   </v-app-bar>
 
