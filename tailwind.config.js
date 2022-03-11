@@ -6,7 +6,7 @@ module.exports = {
     './packages/app-bar/*.{vue,js,ts,jsx,tsx}',
     './packages/badge/*.{vue,js,ts,jsx,tsx}',
     './packages/breadcrumbs/*.{vue,js,ts,jsx,tsx}',
-    './packages/button/*.{vue,js,ts,jsx,tsx}',
+    './packages/button/src/**/*.{vue,js,ts,jsx,tsx}',
     './packages/card/*.{vue,js,ts,jsx,tsx}',
     './packages/checkbox/*.{vue,js,ts,jsx,tsx}',
     './packages/collapsible/*.{vue,js,ts,jsx,tsx}',

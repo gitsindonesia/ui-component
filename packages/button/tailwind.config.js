@@ -1,6 +1,6 @@
 module.exports = {
   content: [
-    './VBtn.vue',
+    './src/**/*.{vue,js,ts,jsx,tsx}',
   ],
   presets: [require('@gits-id/tailwind-config/preset')],
 };
