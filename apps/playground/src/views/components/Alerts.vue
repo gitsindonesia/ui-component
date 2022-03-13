@@ -2,6 +2,7 @@
 import {ref} from 'vue';
 import Docs from './Docs.vue';
 import DocsTitle from './DocsTitle.vue';
+import DocsTable from './DocsTable.vue';
 import {RiInformationFill, RiCloseCircleFill} from 'vue-remix-icons';
 
 const breadcrumbs = ref([
@@ -241,31 +242,7 @@ const propItems = [
     </template>
   </Docs>
 
-  <Docs title="Props">
-    <v-data-table
-      :headers="propHeaders"
-      :items="propItems"
-      hide-footer
-      no-shadow
-      class="mb-1"
-    >
-      <template #item.prop="{item}">
-        <code v-text="item.prop"></code>
-      </template>
-      <template #item.type="{item}">
-        <code v-text="item.type"></code>
-      </template>
-      <template #item.required="{item}">
-        <code v-text="item.required"></code>
-      </template>
-      <template #item.default="{item}">
-        <code v-text="item.default"></code>
-      </template>
-      <template #item.description="{item}">
-        <div v-html="item.description"></div>
-      </template>
-    </v-data-table>
-  </Docs>
+  <DocsTable title="Props" :headers="propHeaders" :items="propItems" />
 </template>
 
 <style scoped></style>
