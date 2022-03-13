@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {computed, toRefs} from 'vue';
+import {computed, toRefs, ref, watch} from 'vue';
 import {XIcon, ExclamationIcon, CheckCircleIcon} from '@heroicons/vue/solid';
 
 const props = defineProps({
@@ -21,9 +21,19 @@ const props = defineProps({
   },
 });
 
-const {color} = toRefs(props);
+const {color, modelValue} = toRefs(props);
 
 const emit = defineEmits(['dismissed', 'update:modelValue']);
+
+const isOpen = ref(modelValue.value);
+
+watch(modelValue, (val) => {
+  isOpen.value = val;
+});
+
+watch(isOpen, (val) => {
+  emit('update:modelValue', val);
+});
 
 const classes = computed(() => {
   switch (color.value) {
@@ -64,8 +74,8 @@ const iconClasses = computed(() => {
 });
 
 const dismiss = () => {
+  isOpen.value = false;
   emit('dismissed');
-  emit('update:modelValue', false);
 };
 </script>
 
@@ -79,7 +89,7 @@ const dismiss = () => {
     leave-to-class="opacity-0 scale-95"
   >
     <div
-      v-if="props.modelValue"
+      v-if="isOpen"
       class="px-4 py-3 border rounded flex w-full items-center"
       :class="classes"
     >
