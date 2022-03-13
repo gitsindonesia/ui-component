@@ -25,7 +25,8 @@ const breadcrumbs = ref([
 
   <Docs
     title="Default"
-    :code="`<v-alert color=&quot;primary&quot;>primary</v-alert>
+    :code="`<v-alert color=&quot;default&quot;>default</v-alert>
+<v-alert color=&quot;primary&quot;>primary</v-alert>
 <v-alert color=&quot;secondary&quot;>secondary</v-alert>
 <v-alert color=&quot;error&quot;>error</v-alert>
 <v-alert color=&quot;warning&quot;>warning</v-alert>
@@ -34,6 +35,7 @@ const breadcrumbs = ref([
 `"
   >
     <template #preview>
+      <v-alert>default</v-alert>
       <v-alert color="primary">primary</v-alert>
       <v-alert color="secondary">secondary</v-alert>
       <v-alert color="error">error</v-alert>
@@ -45,7 +47,8 @@ const breadcrumbs = ref([
 
   <Docs
     title="Outlined"
-    :code="`<v-alert outlined color=&quot;primary&quot;>primary</v-alert>
+    :code="`<v-alert outlined color=&quot;default&quot;>default</v-alert>
+<v-alert outlined color=&quot;primary&quot;>primary</v-alert>
 <v-alert outlined color=&quot;secondary&quot;>secondary</v-alert>
 <v-alert outlined color=&quot;error&quot;>error</v-alert>
 <v-alert outlined color=&quot;warning&quot;>warning</v-alert>
@@ -54,12 +57,35 @@ const breadcrumbs = ref([
 `"
   >
     <template #preview>
+      <v-alert outlined color="default">default</v-alert>
       <v-alert outlined color="primary">primary</v-alert>
       <v-alert outlined color="secondary">secondary</v-alert>
       <v-alert outlined color="error">error</v-alert>
       <v-alert outlined color="warning">warning</v-alert>
       <v-alert outlined color="success">success</v-alert>
       <v-alert outlined color="dark">dark</v-alert>
+    </template>
+  </Docs>
+
+  <Docs
+    title="Solid"
+    :code="`<v-alert solid color=&quot;default&quot;>default</v-alert>
+<v-alert solid color=&quot;primary&quot;>primary</v-alert>
+<v-alert solid color=&quot;secondary&quot;>secondary</v-alert>
+<v-alert solid color=&quot;error&quot;>error</v-alert>
+<v-alert solid color=&quot;warning&quot;>warning</v-alert>
+<v-alert solid color=&quot;success&quot;>success</v-alert>
+<v-alert solid color=&quot;dark&quot;>dark</v-alert>
+`"
+  >
+    <template #preview>
+      <v-alert solid color="default">default</v-alert>
+      <v-alert solid color="primary">primary</v-alert>
+      <v-alert solid color="secondary">secondary</v-alert>
+      <v-alert solid color="error">error</v-alert>
+      <v-alert solid color="warning">warning</v-alert>
+      <v-alert solid color="success">success</v-alert>
+      <v-alert solid color="dark">dark</v-alert>
     </template>
   </Docs>
 

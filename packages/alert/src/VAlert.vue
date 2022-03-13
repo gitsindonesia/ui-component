@@ -9,13 +9,21 @@ const props = defineProps({
   },
   color: {
     type: String,
-    default: '',
+    default: 'default',
   },
   icon: {
     type: String,
     default: '',
   },
   dismissable: {
+    type: Boolean,
+    default: false,
+  },
+  outlined: {
+    type: Boolean,
+    default: false,
+  },
+  solid: {
     type: Boolean,
     default: false,
   },
@@ -36,22 +44,43 @@ watch(isOpen, (val) => {
 });
 
 const classes = computed(() => {
-  switch (color.value) {
-    case 'primary':
-      return 'border-primary-500 bg-primary-100 text-primary-500';
-    case 'secondary':
-      return 'border-secondary-500 bg-secondary-100 text-secondary-500';
-    case 'error':
-      return 'border-error-500 bg-error-100 text-error-500';
-    case 'info':
-      return 'border-info-500 bg-info-100 text-info-500';
-    case 'warning':
-      return 'border-warning-500 bg-warning-100 text-warning-500';
-    case 'success':
-      return 'border-success-500 bg-success-100 text-success-500';
-    default:
-      return '';
+  let colors: Record<string, string> = {};
+  if (props.outlined) {
+    colors = {
+      primary: 'border-primary-500 bg-transparent text-primary-500',
+      secondary: 'border-secondary-500 bg-transparent text-secondary-500',
+      error: 'border-error-500 bg-transparent text-error-500',
+      info: 'border-info-500 bg-transparent text-info-500',
+      warning: 'border-warning-500 bg-transparent text-warning-500',
+      success: 'border-success-500 bg-transparent text-success-500',
+      dark: 'border-gray-900 bg-transparent text-gray-900',
+      default: 'border-gray-500',
+    };
+  } else if (props.solid) {
+    colors = {
+      primary: 'border-primary-500 bg-primary-500 text-white',
+      secondary: 'border-secondary-500 bg-secondary-500 text-white',
+      error: 'border-error-500 bg-error-500 text-white',
+      info: 'border-info-500 bg-info-500 text-white',
+      warning: 'border-warning-500 bg-warning-500 text-white',
+      success: 'border-success-500 bg-success-500 text-white',
+      dark: 'border-gray-900 bg-gray-900 text-white',
+      default: 'border-gray-500 bg-white',
+    };
+  } else {
+    colors = {
+      primary: 'border-primary-500 bg-primary-100 text-primary-500',
+      secondary: 'border-secondary-500 bg-secondary-100 text-secondary-500',
+      error: 'border-error-500 bg-error-100 text-error-500',
+      info: 'border-info-500 bg-info-100 text-info-500',
+      warning: 'border-warning-500 bg-warning-100 text-warning-500',
+      success: 'border-success-500 bg-success-100 text-success-500',
+      dark: 'border-gray-900 bg-gray-900 text-white',
+      default: 'border-gray-500',
+    };
   }
+
+  return colors[color.value];
 });
 
 const iconClasses = computed(() => {
