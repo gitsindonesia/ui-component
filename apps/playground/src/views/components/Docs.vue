@@ -52,7 +52,7 @@ const selected = ref(props.selected);
     <div class="rounded-b-md">
       <div class="flex flex-col">
         <div
-          class="w-full py-6 px-4 flex items-center flex-wrap gap-2 overflow-x-auto"
+          class="w-full py-6 px-4 flex items-center flex-wrap gap-2"
           v-if="$slots.preview"
         >
           <slot name="preview"></slot>
