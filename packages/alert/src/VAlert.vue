@@ -102,9 +102,13 @@ const dismiss = () => {
       </div>
       <div class="flex-grow"></div>
       <div v-if="props.dismissable" class="pl-4 flex items-center">
-        <button class="focus:outline-none" @click="dismiss">
-          <XIcon class="w-5 h-5" />
-        </button>
+        <slot name="x-button" :dismiss="dismiss">
+          <button class="focus:outline-none" @click="dismiss">
+            <slot name="x-icon">
+              <XIcon class="w-5 h-5" />
+            </slot>
+          </button>
+        </slot>
       </div>
     </div>
   </transition>
