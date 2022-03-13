@@ -53,41 +53,47 @@ const selected = ref(props.selected);
       {{ title }}
     </div>
     <div class="rounded-b-md">
-      <div class="flex flex-col">
-        <div
-          class="w-full py-6 px-4 flex items-center flex-wrap gap-2"
-          v-if="$slots.preview"
-        >
-          <slot name="preview"></slot>
-        </div>
-        <div class="border-t">
-          <div class="flex justify-end sm:items-center">
-            <v-tabs v-if="!hideTabs" :items="items" v-model="selected"></v-tabs>
+      <slot>
+        <div class="flex flex-col">
+          <div
+            class="w-full py-6 px-4 flex items-center flex-wrap gap-2"
+            v-if="$slots.preview"
+          >
+            <slot name="preview"></slot>
           </div>
+          <div class="border-t">
+            <div class="flex justify-end sm:items-center">
+              <v-tabs
+                v-if="!hideTabs"
+                :items="items"
+                v-model="selected"
+              ></v-tabs>
+            </div>
 
-          <prism
-            v-if="selected === 0"
-            :language="lang || language"
-            class="w-full !my-0"
-          >
-            {{ code }}
-          </prism>
-          <prism
-            v-else-if="selected === 1"
-            :language="scriptLang"
-            class="w-full !my-0"
-          >
-            {{ script }}
-          </prism>
-          <prism
-            v-else-if="selected === 2"
-            :language="styleLang"
-            class="w-full !my-0"
-          >
-            {{ style }}
-          </prism>
+            <prism
+              v-if="selected === 0"
+              :language="lang || language"
+              class="w-full !my-0 !rounded-b"
+            >
+              {{ code }}
+            </prism>
+            <prism
+              v-else-if="selected === 1"
+              :language="scriptLang"
+              class="w-full !my-0 !rounded-b"
+            >
+              {{ script }}
+            </prism>
+            <prism
+              v-else-if="selected === 2"
+              :language="styleLang"
+              class="w-full !my-0 !rounded-b"
+            >
+              {{ style }}
+            </prism>
+          </div>
         </div>
-      </div>
+      </slot>
     </div>
   </div>
 </template>
