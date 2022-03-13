@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import 'prismjs';
+import 'prismjs/plugins/toolbar/prism-toolbar';
+import 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard';
 import 'prism-themes/themes/prism-material-dark.css';
+import 'prismjs/plugins/toolbar/prism-toolbar.css';
 import Prism from 'vue-prism-component';
 import {ref, withDefaults} from 'vue';
 
