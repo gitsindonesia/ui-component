@@ -18,6 +18,86 @@ const breadcrumbs = ref([
     title: 'v-alert',
   },
 ]);
+
+const propHeaders = [
+  {
+    text: 'Name',
+    value: 'prop',
+    sortable: false,
+  },
+  {
+    text: 'Type',
+    value: 'type',
+    sortable: false,
+  },
+  {
+    text: 'Required',
+    value: 'required',
+    sortable: false,
+  },
+  {
+    text: 'Default',
+    value: 'default',
+    sortable: false,
+  },
+  {
+    text: 'Description',
+    value: 'description',
+    sortable: false,
+  },
+];
+
+const propItems = [
+  {
+    prop: 'modelValue',
+    type: 'boolean',
+    required: 'false',
+    default: 'false',
+    description: 'Model Value for v-model',
+  },
+  {
+    prop: 'color',
+    type: 'string',
+    required: 'false',
+    default: 'default',
+    description: `Alert color.
+      <br/>Default: <code>default</code>,
+      <code class="text-primary">primary</code>,
+      <code class="text-secondary">secondary</code>,
+      <code class="text-info-500">info</code>,
+      <code class="text-warning-500">warning</code>,
+      <code class="text-error-500">error</code>,
+      <code class="text-gray-900">dark</code>.`,
+  },
+  {
+    prop: 'icon',
+    type: 'string',
+    required: 'false',
+    default: '',
+    description: 'Icon name',
+  },
+  {
+    prop: 'dismissable',
+    type: 'boolean',
+    required: 'false',
+    default: 'false',
+    description: 'Make alert dismissable',
+  },
+  {
+    prop: 'outlined',
+    type: 'boolean',
+    required: 'false',
+    default: 'false',
+    description: 'Outlined styles',
+  },
+  {
+    prop: 'solid',
+    type: 'boolean',
+    required: 'false',
+    default: 'false',
+    description: 'Solid styles',
+  },
+];
 </script>
 
 <template>
@@ -159,6 +239,32 @@ const breadcrumbs = ref([
         Change a few things up and try submitting again.
       </v-alert>
     </template>
+  </Docs>
+
+  <Docs title="Props">
+    <v-data-table
+      :headers="propHeaders"
+      :items="propItems"
+      hide-footer
+      no-shadow
+      class="mb-1"
+    >
+      <template #item.prop="{item}">
+        <code v-text="item.prop"></code>
+      </template>
+      <template #item.type="{item}">
+        <code v-text="item.type"></code>
+      </template>
+      <template #item.required="{item}">
+        <code v-text="item.required"></code>
+      </template>
+      <template #item.default="{item}">
+        <code v-text="item.default"></code>
+      </template>
+      <template #item.description="{item}">
+        <div v-html="item.description"></div>
+      </template>
+    </v-data-table>
   </Docs>
 </template>
 
