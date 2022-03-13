@@ -13,9 +13,7 @@
   ],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@gits-id/button": "^0.1.17-alpha.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@gits-id/utils": "^0.1.17-alpha.0"
   }
