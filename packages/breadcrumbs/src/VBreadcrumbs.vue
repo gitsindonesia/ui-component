@@ -17,7 +17,7 @@ const props = defineProps({
   },
   activeColor: {
     type: String,
-    default: '!text-primary-600',
+    default: '!text-primary-500',
   },
 });
 </script>

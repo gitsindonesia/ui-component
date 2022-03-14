@@ -6,15 +6,15 @@ import DocsTable from './DocsTable.vue';
 
 const breadcrumbs = ref([
   {
-    to: '/cms',
+    to: '/',
     title: 'Dashboard',
   },
   {
-    to: '/cms/components',
+    to: '/components',
     title: 'Components',
   },
   {
-    to: '/cms/components/badges',
+    to: '/components/badges',
     title: 'v-badge',
   },
 ]);
