@@ -27,6 +27,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  border: {
+    type: String,
+    default: '',
+  },
 });
 
 const {color, modelValue} = toRefs(props);
@@ -57,16 +61,29 @@ const classes = computed(() => {
       default: 'border-gray-500',
     };
   } else if (props.solid) {
-    colors = {
-      primary: 'border-primary-500 bg-primary-500 text-white',
-      secondary: 'border-secondary-500 bg-secondary-500 text-white',
-      error: 'border-error-500 bg-error-500 text-white',
-      info: 'border-info-500 bg-info-500 text-white',
-      warning: 'border-warning-500 bg-warning-500 text-white',
-      success: 'border-success-500 bg-success-500 text-white',
-      dark: 'border-gray-900 bg-gray-900 text-white',
-      default: 'border-gray-500 bg-white',
-    };
+    if (props.border) {
+      colors = {
+        primary: 'border-primary-400 bg-primary-500 text-white',
+        secondary: 'border-secondary-400 bg-secondary-500 text-white',
+        error: 'border-error-400 bg-error-500 text-white',
+        info: 'border-info-400 bg-info-500 text-white',
+        warning: 'border-warning-400 bg-warning-500 text-white',
+        success: 'border-success-400 bg-success-500 text-white',
+        dark: 'border-gray-500 bg-gray-900 text-white',
+        default: 'border-gray-500 bg-white',
+      };
+    } else {
+      colors = {
+        primary: 'border-primary-500 bg-primary-500 text-white',
+        secondary: 'border-secondary-500 bg-secondary-500 text-white',
+        error: 'border-error-500 bg-error-500 text-white',
+        info: 'border-info-500 bg-info-500 text-white',
+        warning: 'border-warning-500 bg-warning-500 text-white',
+        success: 'border-success-500 bg-success-500 text-white',
+        dark: 'border-gray-900 bg-gray-900 text-white',
+        default: 'border-gray-500 bg-white',
+      };
+    }
   } else {
     colors = {
       primary: 'border-primary-500 bg-primary-100 text-primary-500',
@@ -80,7 +97,14 @@ const classes = computed(() => {
     };
   }
 
-  return colors[color.value];
+  const borderClasses = {
+    top: 'border-t-8',
+    left: 'border-l-8',
+    right: 'border-r-8',
+    bottom: 'border-b-8',
+  };
+
+  return [colors[color.value], props.border ? borderClasses[props.border] : ''];
 });
 
 const iconClasses = computed(() => {
@@ -119,7 +143,7 @@ const dismiss = () => {
   >
     <div
       v-if="isOpen"
-      class="px-4 py-3 border rounded flex w-full items-center"
+      class="px-4 py-3 border rounded-md flex w-full items-center"
       :class="classes"
     >
       <div>

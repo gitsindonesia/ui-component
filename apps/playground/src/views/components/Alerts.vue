@@ -16,7 +16,7 @@ const breadcrumbs = ref([
   },
   {
     to: '/cms/components/alerts',
-    title: 'v-alert',
+    title: 'Alerts',
   },
 ]);
 
@@ -167,6 +167,28 @@ const propItems = [
       <v-alert solid color="warning">warning</v-alert>
       <v-alert solid color="success">success</v-alert>
       <v-alert solid color="dark">dark</v-alert>
+    </template>
+  </Docs>
+
+  <Docs
+    title="Border"
+    :code="`<v-alert solid color=&quot;default&quot;>default</v-alert>
+<v-alert solid color=&quot;primary&quot;>primary</v-alert>
+<v-alert solid color=&quot;secondary&quot;>secondary</v-alert>
+<v-alert solid color=&quot;error&quot;>error</v-alert>
+<v-alert solid color=&quot;warning&quot;>warning</v-alert>
+<v-alert solid color=&quot;success&quot;>success</v-alert>
+<v-alert solid color=&quot;dark&quot;>dark</v-alert>
+`"
+  >
+    <template #preview>
+      <v-alert border="top" color="default">default</v-alert>
+      <v-alert border="left" color="primary">primary</v-alert>
+      <v-alert border="right" color="secondary">secondary</v-alert>
+      <v-alert border="bottom" color="info">info</v-alert>
+      <v-alert border="left" color="warning">warning</v-alert>
+      <v-alert border="left" color="error">error</v-alert>
+      <v-alert border="left" color="dark">dark</v-alert>
     </template>
   </Docs>
 
