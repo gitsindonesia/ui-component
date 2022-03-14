@@ -98,6 +98,14 @@ const propItems = [
     default: 'false',
     description: 'Solid styles',
   },
+  {
+    prop: 'border',
+    type: 'string',
+    required: 'false',
+    default: '',
+    description:
+      'Add border accent to alert.<br>Options: top, left, right & bottom',
+  },
 ];
 </script>
 
