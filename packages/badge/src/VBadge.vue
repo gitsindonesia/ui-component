@@ -48,17 +48,19 @@ const colorClass = computed(() => {
 
   switch (props.color) {
     case 'primary':
-      return 'bg-primary-600 text-white';
+      return 'bg-primary-500 text-white';
+    case 'secondary':
+      return 'bg-secondary-500 text-white';
     case 'error':
-      return 'bg-error-600 text-white';
+      return 'bg-error-500 text-white';
     case 'info':
-      return 'bg-info-600 text-white';
+      return 'bg-info-500 text-white';
     case 'warning':
-      return 'bg-warning-600 text-white';
+      return 'bg-warning-500 text-white';
     case 'success':
-      return 'bg-success-600 text-white';
+      return 'bg-success-500 text-white';
     default:
-      return 'bg-gray-300 text-gray-900';
+      return 'bg-gray-200 text-gray-900';
   }
 });
 
@@ -66,7 +68,7 @@ const sizeClass = computed(() => {
   if (props.small) {
     return 'px-2 py-1 text-xs';
   } else if (props.large) {
-    return 'px-3 py-2 text-lg';
+    return 'px-4 py-2 text-lg';
   } else {
     return 'px-2 py-1 text-sm';
   }
@@ -75,7 +77,7 @@ const sizeClass = computed(() => {
 const roundedClass = computed(() => {
   let rounded = 'rounded-md';
   if (props.small) {
-    rounded = 'rounded';
+    rounded = 'rounded-md';
   } else if (props.large) {
     rounded = 'rounded-lg';
   }
@@ -96,6 +98,20 @@ const circleClass = computed(() => {
     : '';
 });
 
+const dismissableColor = computed(() => {
+  const colors = {
+    default: 'hover:bg-gray-400 active:bg-gray-300 hover:text-white',
+    primary: 'hover:bg-primary-400 active:bg-primary-300',
+    secondary: 'hover:bg-secondary-400 active:bg-secondary-300',
+    info: 'hover:bg-info-400 active:bg-info-300',
+    warning: 'hover:bg-warning-400 active:bg-warning-300',
+    success: 'hover:bg-success-400 active:bg-success-300',
+    error: 'hover:bg-error-400 active:bg-error-300',
+  };
+
+  return colors[props.color || 'default'];
+});
+
 const onDismiss = () => {
   emit('dismiss');
 };
@@ -109,17 +125,12 @@ const onDismiss = () => {
     <slot />
     <button
       v-if="dismissable"
-      class="
-        bg-transparent
-        rounded-sm
-        hover:bg-primary-400
-        active:bg-primary-300
-        !p-0
-      "
+      class="bg-transparent rounded-sm !p-0"
+      :class="[dismissableColor]"
       type="button"
       @click="onDismiss"
     >
-      <XIcon class="text-white h-4 w-4" />
+      <XIcon class="h-4 w-4" />
     </button>
   </span>
 </template>
