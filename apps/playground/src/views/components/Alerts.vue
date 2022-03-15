@@ -7,15 +7,11 @@ import {RiInformationFill, RiCloseCircleFill} from 'vue-remix-icons';
 
 const breadcrumbs = ref([
   {
-    to: '/cms',
-    title: 'Dashboard',
-  },
-  {
-    to: '/cms/components',
+    to: '/components',
     title: 'Components',
   },
   {
-    to: '/cms/components/alerts',
+    to: '/components/alerts',
     title: 'Alerts',
   },
 ]);
@@ -114,6 +110,7 @@ const propItems = [
 
   <Docs
     title="Default"
+    preview-class="space-y-2"
     :code="`<v-alert color=&quot;default&quot;>default</v-alert>
 <v-alert color=&quot;primary&quot;>primary</v-alert>
 <v-alert color=&quot;secondary&quot;>secondary</v-alert>
@@ -136,6 +133,7 @@ const propItems = [
 
   <Docs
     title="Outlined"
+    preview-class="space-y-2"
     :code="`<v-alert outlined color=&quot;default&quot;>default</v-alert>
 <v-alert outlined color=&quot;primary&quot;>primary</v-alert>
 <v-alert outlined color=&quot;secondary&quot;>secondary</v-alert>
@@ -158,6 +156,7 @@ const propItems = [
 
   <Docs
     title="Solid"
+    preview-class="space-y-2"
     :code="`<v-alert solid color=&quot;default&quot;>default</v-alert>
 <v-alert solid color=&quot;primary&quot;>primary</v-alert>
 <v-alert solid color=&quot;secondary&quot;>secondary</v-alert>
@@ -180,6 +179,7 @@ const propItems = [
 
   <Docs
     title="Border"
+    preview-class="space-y-2"
     :code="`<v-alert solid color=&quot;default&quot;>default</v-alert>
 <v-alert solid color=&quot;primary&quot;>primary</v-alert>
 <v-alert solid color=&quot;secondary&quot;>secondary</v-alert>
@@ -202,6 +202,7 @@ const propItems = [
 
   <Docs
     title="Dismissable"
+    preview-class="space-y-2"
     :code="`<v-alert dismissable color=&quot;primary&quot;>primary</v-alert>
 <v-alert dismissable color=&quot;secondary&quot;>secondary</v-alert>
 <v-alert dismissable color=&quot;error&quot;>error</v-alert>
@@ -222,6 +223,7 @@ const propItems = [
 
   <Docs
     title="Icon Slots"
+    preview-class="space-y-2"
     :code="`<v-alert color=&quot;primary&quot; dismissable>
   <template #icon>
     <RiInformationFill class=&quot;fill-current w-6 h-6 mr-2&quot; />
@@ -249,6 +251,7 @@ const propItems = [
 
   <Docs
     title="Custom Close Button"
+    preview-class="space-y-2"
     :code="`<v-alert icon=&quot;error&quot; color=&quot;error&quot; dismissable>
   <template #x-button=&quot;{dismiss}&quot;>
     <v-btn text class=&quot;px-2&quot; @click=&quot;dismiss&quot;>

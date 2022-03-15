@@ -19,6 +19,7 @@ const props = withDefaults(
     style?: string;
     selected?: number;
     hideTabs?: boolean;
+    previewClass?: string;
   }>(),
   {
     scriptLang: 'javascript',
@@ -55,7 +56,11 @@ const selected = ref(props.selected);
     <div class="rounded-b-md">
       <slot>
         <div class="flex flex-col">
-          <div class="w-full py-6 px-4" v-if="$slots.preview">
+          <div
+            v-if="$slots.preview"
+            class="w-full py-6 px-4"
+            :class="previewClass"
+          >
             <slot name="preview"></slot>
           </div>
           <div class="border-t">
