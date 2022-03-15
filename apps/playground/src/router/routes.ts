@@ -79,6 +79,10 @@ export default <RouteRecordRaw[]>[
         path: 'switches',
         component: () => import('@/views/components/Switch.vue'),
       },
+      {
+        path: 'card',
+        component: () => import('@/views/components/Card.vue'),
+      },
     ],
   },
   // {

@@ -23,6 +23,7 @@ const componentSubMenus = [
   componentRoute('Progressbar', '/components/progressbars'),
   componentRoute('Tooltip', '/components/tooltips'),
   componentRoute('Bagdes', '/components/badges'),
+  componentRoute('Card', '/components/card'),
 ];
 
 const getComponentChildren = () => {
