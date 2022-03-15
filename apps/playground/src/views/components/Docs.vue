@@ -28,6 +28,7 @@ const props = withDefaults(
     boolean: true,
     script: '//',
     style: '/**/',
+    previewClass: 'space-x-1 space-y-1',
   },
 );
 
