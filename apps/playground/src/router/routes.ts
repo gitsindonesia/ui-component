@@ -83,6 +83,10 @@ export default <RouteRecordRaw[]>[
         path: 'card',
         component: () => import('@/views/components/Card.vue'),
       },
+      {
+        path: 'checkbox',
+        component: () => import('@/views/components/Checkbox.vue'),
+      },
     ],
   },
   // {

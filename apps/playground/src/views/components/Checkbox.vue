@@ -17,6 +17,20 @@ const breadcrumbs = ref([
 
 const propItems = [
   {
+    prop: 'modelValue',
+    type: 'boolean',
+    required: 'false',
+    default: 'false',
+    description: 'Model value',
+  },
+  {
+    prop: 'value',
+    type: 'boolean',
+    required: 'false',
+    default: 'false',
+    description: 'VeeValidate value',
+  },
+  {
     prop: 'color',
     type: 'string',
     required: 'false',
@@ -31,66 +45,38 @@ const propItems = [
       <code class="text-gray-900">dark</code>.`,
   },
   {
-    prop: 'rounded',
+    prop: 'inputClass',
     type: 'string',
     required: 'false',
     default: '',
-    description: 'Rounded style',
+    description: 'Custom Input Class',
   },
   {
-    prop: 'small',
+    prop: 'disabled',
     type: 'boolean',
     required: 'false',
     default: 'false',
-    description: 'Small size',
+    description: 'Disabled attribute',
   },
   {
-    prop: 'large',
-    type: 'boolean',
-    required: 'false',
-    default: 'false',
-    description: 'Large size',
-  },
-  {
-    prop: 'circle',
-    type: 'boolean',
-    required: 'false',
-    default: 'false',
-    description: 'Circle styles',
-  },
-  {
-    prop: 'dismissable',
-    type: 'boolean',
-    required: 'false',
-    default: 'false',
-    description: 'Add x button to badge',
-  },
-  {
-    prop: 'bgColor',
+    prop: 'size',
     type: 'string',
     required: 'false',
     default: '',
-    description: 'Custom background color',
-  },
-  {
-    prop: 'textColor',
-    type: 'string',
-    required: 'false',
-    default: '',
-    description: 'Custom text color',
+    description: 'Checkbox size',
   },
 ];
 </script>
 
 <template>
-  <DocsTitle :breadcrumbs="breadcrumbs">Breadcrumbs</DocsTitle>
+  <DocsTitle :breadcrumbs="breadcrumbs">Checkbox</DocsTitle>
 
   <Docs
     title="Default"
-    :code="`<v-breadcrumbs :items=&quot;breadcrumbs&quot; />`"
+    :code="`<v-checkbox label=&quot;I agree with ToC&quot; />`"
   >
     <template #preview>
-      <v-breadcrumbs :items="breadcrumbs" />
+      <v-checkbox label="I agree with ToC" />
     </template>
   </Docs>
 

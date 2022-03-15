@@ -24,6 +24,7 @@ const componentSubMenus = [
   componentRoute('Tooltip', '/components/tooltips'),
   componentRoute('Bagdes', '/components/badges'),
   componentRoute('Card', '/components/card'),
+  componentRoute('Checkbox', '/components/checkbox'),
 ];
 
 const getComponentChildren = () => {
