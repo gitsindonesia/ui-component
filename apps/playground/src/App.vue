@@ -20,7 +20,9 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="flex h-16 p-2 sm:px-4 items-center gap-2 border-b">
+  <div
+    class="flex h-16 p-2 sm:px-4 items-center gap-2 border-b z-20 fixed sm:relative bg-white w-full shadow-md sm:shadow-none"
+  >
     <div class="flex sm:hidden">
       <v-btn icon text class="p-2" @click="isOpen = !isOpen">
         <XIcon v-if="isOpen" class="w-6 h-6" />
@@ -33,11 +35,11 @@ onUnmounted(() => {
     </div>
     <div class="flex w-10 sm:hidden"></div>
   </div>
-  <main class="flex flex-col h-screen">
+  <main class="flex flex-col sm:h-screen">
     <div class="flex flex-col sm:flex-row flex-1 overflow-hidden">
       <div class="w-full sm:w-3/12 sm:p-4 p-0">
         <div
-          class="z-10 sm:z-0 fixed sm:relative sm:top-0 top-[80px] h-[calc(100vh-70px)] w-full bg-white sm:bg-transparent px-4 sm:px-0"
+          class="z-10 sm:z-0 fixed sm:relative sm:top-0 top-[60px] h-[calc(100vh-70px)] w-full bg-white sm:bg-transparent px-4 sm:px-0"
           :class="isOpen ? 'block' : 'hidden sm:block'"
         >
           <template v-for="(menu, idx) in menus" :key="idx">
@@ -60,7 +62,7 @@ onUnmounted(() => {
           </template>
         </div>
       </div>
-      <div class="flex flex-1 flex-col">
+      <div class="flex flex-1 flex-col w-full sm:w-9/12">
         <div class="flex-1 overflow-y-auto paragraph p-4">
           <router-view />
         </div>
