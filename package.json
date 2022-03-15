@@ -7,8 +7,8 @@
     "build-storybook": "build-storybook",
     "storybook": "start-storybook -p 6006",
     "sb": "pnpm run storybook",
-    "dev": "lerna run dev --scope playground",
-    "build": "lerna run build --scope playground --stream"
+    "dev": "lerna run dev --scope @gits-id/playground",
+    "build": "lerna run build --scope @gits-id/playground --stream"
   },
   "dependencies": {
     "@vueuse/core": "^7.7.1",
