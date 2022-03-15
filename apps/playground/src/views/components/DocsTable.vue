@@ -54,6 +54,7 @@ const search = ref('');
       v-model:search="search"
       hide-footer
       no-shadow
+      hover
       class="mb-1 border-t !rounded-none"
     >
       <template #item.prop="{item}">

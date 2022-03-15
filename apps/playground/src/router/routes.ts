@@ -87,6 +87,10 @@ export default <RouteRecordRaw[]>[
         path: 'checkbox',
         component: () => import('@/views/components/Checkbox.vue'),
       },
+      {
+        path: 'collapsible',
+        component: () => import('@/views/components/Collapsible.vue'),
+      },
     ],
   },
   // {

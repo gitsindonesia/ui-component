@@ -25,6 +25,7 @@ const componentSubMenus = [
   componentRoute('Bagdes', '/components/badges'),
   componentRoute('Card', '/components/card'),
   componentRoute('Checkbox', '/components/checkbox'),
+  componentRoute('Collapsible', '/components/collapsible'),
 ];
 
 const getComponentChildren = () => {
