@@ -39,7 +39,7 @@ onUnmounted(() => {
     <div class="flex flex-col sm:flex-row flex-1 overflow-hidden">
       <div class="w-full sm:w-3/12 sm:p-4 p-0">
         <div
-          class="z-10 sm:z-0 fixed sm:relative sm:top-0 top-[60px] h-[calc(100vh-70px)] w-full bg-white sm:bg-transparent px-4 sm:px-0"
+          class="z-10 sm:z-0 fixed sm:relative sm:top-0 top-[60px] h-[calc(100vh-70px)] w-full bg-white sm:bg-transparent p-4 sm:p-0"
           :class="isOpen ? 'block' : 'hidden sm:block'"
         >
           <template v-for="(menu, idx) in menus" :key="idx">
