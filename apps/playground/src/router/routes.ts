@@ -91,6 +91,10 @@ export default <RouteRecordRaw[]>[
         path: 'collapsible',
         component: () => import('@/views/components/Collapsible.vue'),
       },
+      {
+        path: 'forms',
+        component: () => import('@/views/components/Forms.vue'),
+      },
     ],
   },
   // {
