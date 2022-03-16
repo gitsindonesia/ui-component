@@ -30,6 +30,7 @@ const componentSubMenus = [
   componentRoute('AppBar', '/components/app-bar'),
   componentRoute('Container', '/components/container'),
   componentRoute('Editor', '/components/editor'),
+  componentRoute('File Input', '/components/file-input'),
 ];
 
 const getComponentChildren = () => {

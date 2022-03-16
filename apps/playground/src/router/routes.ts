@@ -107,6 +107,10 @@ export default <RouteRecordRaw[]>[
         path: 'editor',
         component: () => import('@/views/components/Editor.vue'),
       },
+      {
+        path: 'file-input',
+        component: () => import('@/views/components/FileInput.vue'),
+      },
     ],
   },
   // {
