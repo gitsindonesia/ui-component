@@ -103,6 +103,10 @@ export default <RouteRecordRaw[]>[
         path: 'container',
         component: () => import('@/views/components/Container.vue'),
       },
+      {
+        path: 'editor',
+        component: () => import('@/views/components/Editor.vue'),
+      },
     ],
   },
   // {
