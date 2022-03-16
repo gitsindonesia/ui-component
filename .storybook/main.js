@@ -14,6 +14,7 @@ module.exports = {
   },
   async viteFinal(config, {configType}) {
     config.resolve.dedupe = ["@storybook/client-api"]
+    config.optimizeDeps.include = [...config.optimizeDeps.include, 'hoist-non-react-statics', 'fast-deep-equal', 'lodash']
     return config
 },
 }

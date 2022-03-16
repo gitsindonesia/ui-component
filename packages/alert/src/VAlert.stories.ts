@@ -1,6 +1,7 @@
 import VAlert from './VAlert.vue';
 import {themeColors} from '@gits-id/utils/colors';
 import {Meta, Story} from '@storybook/vue3';
+import {RiInformationFill, RiCloseCircleLine} from 'vue-remix-icons';
 
 export default {
   title: 'Components/Alert',
@@ -17,7 +18,10 @@ export default {
     modelValue: '',
     label: 'Alert text',
     dismissable: false,
+    solid: false,
+    outlined: false,
     icon: '',
+    border: '',
   },
 } as Meta;
 
@@ -28,48 +32,62 @@ const Template: Story = (args) => ({
   },
   // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
-    return {args};
+    return {args, themeColors};
   },
   // And then the `args` are bound to your component with `v-bind="args"`
-  template: `<my-component v-bind="args">{{ args.label }}</my-component>`,
+  template: `
+<div class="space-y-2">
+  <my-component v-for="color in themeColors" :key="color" v-bind="args" :color="color">{{ args.label }}</my-component>
+</div>
+`,
 });
 
 export const Default = Template.bind({});
 Default.args = {};
 
-export const Success = Template.bind({});
-Success.args = {
-  color: 'primary',
-};
-
-export const Primary = Template.bind({});
-Primary.args = {
-  color: 'primary',
-};
-
-export const Error = Template.bind({});
-Error.args = {
-  color: 'error',
-};
-
-export const Info = Template.bind({});
-Info.args = {
-  color: 'info',
-};
-
-export const Warning = Template.bind({});
-Warning.args = {
-  color: 'warning',
+export const Solid = Template.bind({});
+Solid.args = {
+  solid: true,
 };
 
 export const Dismissable = Template.bind({});
 Dismissable.args = {
   dismissable: true,
-  color: 'primary',
 };
 
 export const Icon = Template.bind({});
 Icon.args = {
-  color: 'primary',
   icon: 'success',
+};
+
+export const CustomSlots = () => ({
+  components: {VAlert, RiCloseCircleLine, RiInformationFill},
+  template: `
+<v-alert color="error" dismissable>
+  <template #icon>
+    <RiInformationFill class="fill-current w-6 h-6 mr-2" />
+  </template>
+  <template #x-icon>
+    <RiCloseCircleLine class="fill-current w-6 h-6 text-error-500" />
+  </template>
+
+  Change a few things up and try submitting again.
+</v-alert>
+  `,
+});
+CustomSlots.parameters = {
+  docs: {
+    source: {
+      code: `<v-alert color="error" dismissable>
+      <template #icon>
+        <RiInformationFill class="fill-current w-6 h-6 mr-2" />
+      </template>
+      <template #x-icon>
+        <RiCloseCircleLine class="fill-current w-6 h-6 text-error-500" />
+      </template>
+    
+      Change a few things up and try submitting again.
+    </v-alert>`,
+    },
+  },
 };
