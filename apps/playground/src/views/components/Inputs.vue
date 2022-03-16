@@ -72,6 +72,15 @@ const propItems = [
   </Docs>
 
   <Docs
+    title="Error State"
+    :code="`<v-input placeholder=&quot;Search...&quot; error />`"
+  >
+    <template #preview>
+      <v-input placeholder="Search..." error />
+    </template>
+  </Docs>
+
+  <Docs
     title="Append & Prepend Slots"
     :code="`<div class=&quot;space-y-2&quot;>
   <v-input placeholder=&quot;Search...&quot;>
