@@ -111,6 +111,10 @@ export default <RouteRecordRaw[]>[
         path: 'file-input',
         component: () => import('@/views/components/FileInput.vue'),
       },
+      {
+        path: 'form-select',
+        component: () => import('@/views/components/FormSelect.vue'),
+      },
     ],
   },
   // {
