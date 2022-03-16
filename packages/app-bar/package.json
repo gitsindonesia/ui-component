@@ -13,6 +13,9 @@
   ],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "@heroicons/vue": "^1.0.6"
+  },
   "devDependencies": {
     "@gits-id/button": "^0.1.17-alpha.0",
     "@gits-id/utils": "^0.1.17-alpha.0",

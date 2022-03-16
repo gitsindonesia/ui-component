@@ -43,7 +43,8 @@
     "@gits-id/toast": "^0.1.17-alpha.0",
     "@gits-id/tooltip": "^0.1.17-alpha.0",
     "@gits-id/types": "^0.1.17-alpha.0",
-    "@gits-id/utils": "^0.1.17-alpha.0"
+    "@gits-id/utils": "^0.1.17-alpha.0",
+    "vue-remix-icons": "^1.1.1"
   },
   "main": "index.ts"
 }

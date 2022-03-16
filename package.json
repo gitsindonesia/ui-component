@@ -7,7 +7,7 @@
     "build-storybook": "build-storybook",
     "storybook": "start-storybook -p 6006",
     "sb": "pnpm run storybook",
-    "dev": "lerna run dev --scope @gits-id/playground",
+    "dev": "lerna run dev --scope @gits-id/playground --stream",
     "build": "lerna run build --scope @gits-id/playground --stream"
   },
   "dependencies": {
@@ -87,8 +87,8 @@
     "preset.js"
   ],
   "workspaces": [
-    "packages",
-    "apps"
+    "packages/*",
+    "apps/*"
   ],
   "private": true
 }

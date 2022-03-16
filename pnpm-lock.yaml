@@ -134,7 +134,7 @@ importers:
   apps/playground:
     specifiers:
       '@babel/core': ^7.17.5
-      '@gits-id/tailwind-config': workspace:^0.1.17-alpha.0
+      '@gits-id/tailwind-config': ^0.1.17-alpha.0
       '@gits-id/ui': ^0.1.17-alpha.0
       '@rushstack/eslint-patch': ^1.1.0
       '@storybook/addon-actions': ^6.4.19
@@ -211,6 +211,9 @@ importers:
   packages/alert:
     specifiers:
       '@gits-id/utils': ^0.1.17-alpha.0
+      '@heroicons/vue': ^1.0.6
+    dependencies:
+      '@heroicons/vue': 1.0.6_vue@3.2.31
     devDependencies:
       '@gits-id/utils': link:../utils
 
@@ -218,7 +221,10 @@ importers:
     specifiers:
       '@gits-id/button': ^0.1.17-alpha.0
       '@gits-id/utils': ^0.1.17-alpha.0
+      '@heroicons/vue': ^1.0.6
       tailwindcss: ^3.0.23
+    dependencies:
+      '@heroicons/vue': 1.0.6_vue@3.2.31
     devDependencies:
       '@gits-id/button': link:../button
       '@gits-id/utils': link:../utils
@@ -576,11 +582,13 @@ importers:
       tailwindcss: ^3.0.23
       vee-validate: ^4.5.9
       vue: ^3.2.31
+      yup: ^0.32.11
     dependencies:
       '@gits-id/button': link:../button
       '@gits-id/checkbox': link:../checkbox
       '@gits-id/input': link:../input
       vue: 3.2.31
+      yup: 0.32.11
     devDependencies:
       '@gits-id/utils': link:../utils
       '@headlessui/vue': 1.5.0_vue@3.2.31
@@ -901,6 +909,7 @@ importers:
       '@gits-id/tooltip': ^0.1.17-alpha.0
       '@gits-id/types': ^0.1.17-alpha.0
       '@gits-id/utils': ^0.1.17-alpha.0
+      vue-remix-icons: ^1.1.1
     dependencies:
       '@gits-id/alert': link:../alert
       '@gits-id/app-bar': link:../app-bar
@@ -943,6 +952,7 @@ importers:
       '@gits-id/tooltip': link:../tooltip
       '@gits-id/types': link:../types
       '@gits-id/utils': link:../utils
+      vue-remix-icons: 1.1.1
 
   packages/utils:
     specifiers:

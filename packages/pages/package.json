@@ -17,7 +17,8 @@
     "@gits-id/button": "^0.1.17-alpha.0",
     "@gits-id/checkbox": "^0.1.17-alpha.0",
     "@gits-id/input": "^0.1.17-alpha.0",
-    "vue": "^3.2.31"
+    "vue": "^3.2.31",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@gits-id/utils": "^0.1.17-alpha.0",
