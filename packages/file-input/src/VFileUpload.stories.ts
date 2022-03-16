@@ -1,4 +1,4 @@
-import { Story } from '@storybook/vue3';
+import {Story} from '@storybook/vue3';
 import MyFileUpload from './VFileUpload.vue';
 
 export default {
@@ -40,7 +40,7 @@ Default.args = {};
 
 export const Button = Template.bind({});
 Button.args = {
-  button: true,
+  theme: 'button',
 };
 
 export const Full = Template.bind({});
@@ -55,5 +55,10 @@ Rounded.args = {
 
 export const Image = Template.bind({});
 Image.args = {
-  image: true,
+  theme: 'image',
+};
+
+export const Dropzone = Template.bind({});
+Dropzone.args = {
+  theme: 'dropzone',
 };
