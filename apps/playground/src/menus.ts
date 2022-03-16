@@ -27,6 +27,7 @@ const componentSubMenus = [
   componentRoute('Checkbox', '/components/checkbox'),
   componentRoute('Collapsible', '/components/collapsible'),
   componentRoute('Forms', '/components/forms'),
+  componentRoute('AppBar', '/components/app-bar'),
 ];
 
 const getComponentChildren = () => {
