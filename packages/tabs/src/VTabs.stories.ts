@@ -47,7 +47,7 @@ CustomActiveClass.args = {
   items: createItems(10, {
     defaultClass: '!rounded-lg',
     inactiveClass: 'hover:bg-success-50 hover:!text-success-600',
-    activeClass: 'bg-success-50 rounded-t text-success-600 font-bold',
+    activeClass: 'bg-success-50 rounded-t text-success-600 font-semibold',
   }),
 };
 

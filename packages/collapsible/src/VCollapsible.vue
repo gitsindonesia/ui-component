@@ -18,7 +18,7 @@ const props = defineProps({
   },
   headerClass: {
     type: String,
-    default: 'font-bold',
+    default: 'font-semibold',
   },
   activeClass: {
     type: String,
@@ -76,7 +76,7 @@ watch(isOpen, (value) => {
 <template>
   <div>
     <div
-      class="py-3 w-full flex justify-between items-center px-4 gap-x-4 transition duration-300 group cursor-pointer font-bold"
+      class="py-3 w-full flex justify-between items-center px-4 gap-x-4 transition duration-300 group cursor-pointer font-semibold"
       :class="[activatorClass, isOpen ? activeClass : inactiveClass]"
       @click="toggle"
     >

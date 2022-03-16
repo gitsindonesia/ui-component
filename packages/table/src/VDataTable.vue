@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { computed, watch, ref, toRefs } from "vue";
-import type { PropType } from "vue";
-import VDataTablePagination from "./VDataTablePagination.vue";
-import type { VDataTableHeader, VDataTableItem } from "./types";
-import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/vue/solid";
-import VSpinner from "@gits-id/spinner";
-import VCheckbox from "@gits-id/checkbox";
+import {computed, watch, ref, toRefs} from 'vue';
+import type {PropType} from 'vue';
+import VDataTablePagination from './VDataTablePagination.vue';
+import type {VDataTableHeader, VDataTableItem} from './types';
+import {ChevronDownIcon, ChevronUpIcon} from '@heroicons/vue/solid';
+import VSpinner from '@gits-id/spinner';
+import VCheckbox from '@gits-id/checkbox';
 // import get from 'lodash/get';
-import { get } from "@gits-id/utils";
+import {get} from '@gits-id/utils';
 
 const props = defineProps({
   modelValue: {
@@ -46,23 +46,23 @@ const props = defineProps({
   },
   search: {
     type: String,
-    default: "",
+    default: '',
   },
   searchBy: {
     type: [String, Array] as PropType<string | string[]>,
-    default: "",
+    default: '',
   },
   loadingText: {
     type: String,
-    default: "Loading...",
+    default: 'Loading...',
   },
   noDataText: {
     type: String,
-    default: "Data tidak ditemukan",
+    default: 'Data tidak ditemukan',
   },
   footerColor: {
     type: String,
-    default: "",
+    default: '',
   },
   serverSide: {
     type: Boolean,
@@ -70,11 +70,11 @@ const props = defineProps({
   },
   sortBy: {
     type: String,
-    default: "",
+    default: '',
   },
   sortDirection: {
     type: String,
-    default: "",
+    default: '',
   },
   hover: {
     type: Boolean,
@@ -115,18 +115,18 @@ const props = defineProps({
 });
 
 const emit = defineEmits([
-  "update:search",
-  "sort",
-  "update:sortBy",
-  "update:sortDirection",
-  "update:page",
-  "update:itemsPerPage",
-  "update:pagination",
-  "page:change",
-  "itemsPerPage:change",
-  "pagination:change",
-  "update:modelValue",
-  "update:value",
+  'update:search',
+  'sort',
+  'update:sortBy',
+  'update:sortDirection',
+  'update:page',
+  'update:itemsPerPage',
+  'update:pagination',
+  'page:change',
+  'itemsPerPage:change',
+  'pagination:change',
+  'update:modelValue',
+  'update:value',
 ]);
 
 const {
@@ -169,11 +169,12 @@ const paginatedItems = computed(() => {
     clonedItems.sort((a, b) => {
       const aValue = +a[sortBy.value];
       const bValue = +b[sortBy.value];
-      if (!isNaN(aValue) && !isNaN(bValue)) return Number(aValue) - Number(bValue);
+      if (!isNaN(aValue) && !isNaN(bValue))
+        return Number(aValue) - Number(bValue);
 
       return String(aValue).localeCompare(String(bValue));
     });
-    if (sortDirection.value === "desc") {
+    if (sortDirection.value === 'desc') {
       clonedItems.reverse();
     }
   }
@@ -183,7 +184,9 @@ const paginatedItems = computed(() => {
       return [...defaultSearchBy.value, searchBy.value]
         .flat()
         .some((key) =>
-          String(item[key!]).toLowerCase().includes(search.value.toLocaleLowerCase())
+          String(item[key!])
+            .toLowerCase()
+            .includes(search.value.toLocaleLowerCase()),
         );
     });
   }
@@ -195,74 +198,76 @@ const computedHeaders = computed(() =>
     (header) =>
       ({
         ...header,
-        sortable: header.hasOwnProperty("sortable") ? header.sortable : true,
-        sorting: "asc",
-      } as VDataTableHeader)
-  )
+        sortable: header.hasOwnProperty('sortable') ? header.sortable : true,
+        sorting: 'asc',
+      } as VDataTableHeader),
+  ),
 );
 
 const getThClass = (header: VDataTableHeader) => {
   const isActive = header.sorting && sortBy.value === header.value;
-  const positionFreeze = header.positionFreeze === "right" ? "right-0" : "left-0";
+  const positionFreeze =
+    header.positionFreeze === 'right' ? 'right-0' : 'left-0';
   return [
     isActive
-      ? "text-primary-500 hover:text-primary-600"
-      : "text-gray-600 hover:text-primary-500",
+      ? 'text-primary-500 hover:text-primary-600'
+      : 'text-gray-600 hover:text-primary-500',
     {
       [`text-${header.align}`]: !!header.align,
     },
-    header.freeze ? `sticky ${positionFreeze} bg-gray-50 drop-shadow-lg` : "",
+    header.freeze ? `sticky ${positionFreeze} bg-gray-50 drop-shadow-lg` : '',
   ];
 };
 
 const getTdClass = (header: VDataTableHeader) => {
-  const positionFreeze = header.positionFreeze === "right" ? "right-0" : "left-0";
+  const positionFreeze =
+    header.positionFreeze === 'right' ? 'right-0' : 'left-0';
   return [
     {
       [`text-${header.align}`]: !!header.align,
     },
-    header.freeze ? `sticky ${positionFreeze} bg-white drop-shadow-lg` : "",
+    header.freeze ? `sticky ${positionFreeze} bg-white drop-shadow-lg` : '',
   ];
 };
 
 const handleSort = (header: VDataTableHeader) => {
   if (!header) return;
 
-  let direction = "";
+  let direction = '';
   if (mustSort.value) {
-    if (sortDirection.value === "asc") {
-      direction = "desc";
+    if (sortDirection.value === 'asc') {
+      direction = 'desc';
     } else {
-      direction = "asc";
+      direction = 'asc';
     }
   } else {
-    if (sortDirection.value === "") {
-      direction = "asc";
-    } else if (sortDirection.value === "asc") {
-      direction = "desc";
-    } else if (sortDirection.value === "desc") {
-      direction = "";
+    if (sortDirection.value === '') {
+      direction = 'asc';
+    } else if (sortDirection.value === 'asc') {
+      direction = 'desc';
+    } else if (sortDirection.value === 'desc') {
+      direction = '';
     }
   }
 
   header.sorting = direction;
 
-  emit("update:sortBy", header.value);
-  emit("update:sortDirection", direction);
-  emit("sort", {
+  emit('update:sortBy', header.value);
+  emit('update:sortDirection', direction);
+  emit('sort', {
     sortBy: header.value,
     direction: direction,
   });
 };
 
-const onPerPageChange = (perPage: { text: string; value: number }) => {
-  emit("update:itemsPerPage", perPage.value);
+const onPerPageChange = (perPage: {text: string; value: number}) => {
+  emit('update:itemsPerPage', perPage.value);
 };
 
-const paddingClass = computed(() => (dense.value ? "px-4 py-2" : "px-6 py-3"));
+const paddingClass = computed(() => (dense.value ? 'px-4 py-2' : 'px-6 py-3'));
 
 const onPaginationChange = (params = {}) => {
-  emit("pagination:change", {
+  emit('pagination:change', {
     page: page.value,
     itemsPerPage: perPage.value,
     ...params,
@@ -270,13 +275,13 @@ const onPaginationChange = (params = {}) => {
 };
 
 watch(page, (val) => {
-  emit("page:change", val);
-  onPaginationChange({ page: val });
+  emit('page:change', val);
+  onPaginationChange({page: val});
 });
 
 watch(perPage, (val) => {
-  emit("itemsPerPage:change", val);
-  onPaginationChange({ itemsPerPage: val });
+  emit('itemsPerPage:change', val);
+  onPaginationChange({itemsPerPage: val});
   page.value = 1;
 });
 
@@ -288,7 +293,9 @@ const selected = ref<any>([]);
 
 const selectAll = computed<boolean>({
   get() {
-    return items.value.length ? selected.value.length == items.value.length : false;
+    return items.value.length
+      ? selected.value.length == items.value.length
+      : false;
   },
   set(value) {
     const selectedItems: any = [];
@@ -306,9 +313,9 @@ const selectAll = computed<boolean>({
 watch(
   selected,
   (val) => {
-    emit("update:modelValue", val);
+    emit('update:modelValue', val);
   },
-  { deep: true, immediate: true }
+  {deep: true, immediate: true},
 );
 
 watch(
@@ -316,7 +323,7 @@ watch(
   (val) => {
     selected.value = val;
   },
-  { deep: true, immediate: true }
+  {deep: true, immediate: true},
 );
 
 // watch(
@@ -328,10 +335,10 @@ watch(
 // );
 
 const start = computed(() =>
-  totalItems.value > 0 ? (page.value - 1) * itemsPerPage.value + 1 : 1
+  totalItems.value > 0 ? (page.value - 1) * itemsPerPage.value + 1 : 1,
 );
 const end = computed(() =>
-  totalItems.value > 0 ? start.value + itemsPerPage.value - 1 : null
+  totalItems.value > 0 ? start.value + itemsPerPage.value - 1 : null,
 );
 </script>
 
@@ -348,7 +355,7 @@ const end = computed(() =>
               v-for="header in computedHeaders"
               :key="header.value"
               scope="col"
-              class="text-left py-3 text-sm font-bold uppercase tracking-wider"
+              class="text-left py-3 text-sm font-semibold uppercase tracking-wider"
               :class="[getThClass(header), paddingClass, header.class]"
               :width="header.width"
             >
@@ -363,7 +370,11 @@ const end = computed(() =>
                   v-if="!disableSorting && header.sortable"
                   href="#"
                   class="flex items-center truncate"
-                  :class="[header.align ? `justify-${header.align}` : 'justify-between']"
+                  :class="[
+                    header.align
+                      ? `justify-${header.align}`
+                      : 'justify-between',
+                  ]"
                   @click.prevent="handleSort(header)"
                 >
                   <span>
@@ -373,7 +384,10 @@ const end = computed(() =>
                     v-if="header.sorting === 'desc'"
                     class="ml-2 h-5 w-5"
                   />
-                  <ChevronUpIcon v-if="header.sorting === 'asc'" class="ml-2 h-5 w-5" />
+                  <ChevronUpIcon
+                    v-if="header.sorting === 'asc'"
+                    class="ml-2 h-5 w-5"
+                  />
                 </a>
                 <span v-else>
                   {{ header.text }}
@@ -382,7 +396,10 @@ const end = computed(() =>
             </th>
           </tr>
         </thead>
-        <tbody class="bg-white" :class="[striped ? '' : 'divide-y divide-gray-200']">
+        <tbody
+          class="bg-white"
+          :class="[striped ? '' : 'divide-y divide-gray-200']"
+        >
           <template v-if="paginatedItems.length < 1 && !loading">
             <slot name="empty">
               <tr>
@@ -426,13 +443,21 @@ const end = computed(() =>
               class="whitespace-nowrap text-sm text-gray-900"
               :class="[getTdClass(header), paddingClass]"
             >
-              <slot v-if="selectable && header.value === 'selected'" name="item.selected">
+              <slot
+                v-if="selectable && header.value === 'selected'"
+                name="item.selected"
+              >
                 <v-checkbox v-model="selected" :value="item" />
               </slot>
               <slot v-else-if="header.value === 'index'" name="item.index">
                 {{ start + index }}
               </slot>
-              <slot v-else :name="`item.${header.value}`" :item="item" :index="index">
+              <slot
+                v-else
+                :name="`item.${header.value}`"
+                :item="item"
+                :index="index"
+              >
                 {{ get(item, header.value) }}
               </slot>
             </td>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { toRefs } from "vue";
-import VBtn from "@gits-id/button";
+import {toRefs} from 'vue';
+import VBtn from '@gits-id/button';
 
 const props = defineProps({
   fillHeight: {
@@ -17,15 +17,15 @@ const props = defineProps({
   },
   title: {
     type: String,
-    default: "404 Page Not Found",
+    default: '404 Page Not Found',
   },
   description: {
     type: String,
-    default: "Sorry, the page you are looking is not found",
+    default: 'Sorry, the page you are looking is not found',
   },
 });
 
-const { fillHeight, noButton, noImage, title, description } = toRefs(props);
+const {fillHeight, noButton, noImage, title, description} = toRefs(props);
 </script>
 
 <template>
@@ -42,7 +42,7 @@ const { fillHeight, noButton, noImage, title, description } = toRefs(props);
           class="w-56 mx-auto mb-5"
         />
       </slot>
-      <div class="font-bold text-2xl mb-2 text-gray-700">
+      <div class="font-semibold text-2xl mb-2 text-gray-700">
         {{ title }}
       </div>
       <div class="mb-6 text-gray-600">

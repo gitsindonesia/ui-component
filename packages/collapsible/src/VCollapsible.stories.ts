@@ -10,7 +10,7 @@ export default {
   args: {
     modelValue: false,
     title: 'Title',
-    headerClass: 'font-bold',
+    headerClass: 'font-semibold',
     activeClass: '',
     inactiveClass: '',
     wrapperClass: 'mb-5',
@@ -46,7 +46,7 @@ AutoOpen.args = {
 export const CustomClasses = Template.bind({});
 CustomClasses.args = {
   headerClass: '',
-  activeClass: 'font-bold text-red-500 bg-red-200 rounded-t-lg',
+  activeClass: 'font-semibold text-red-500 bg-red-200 rounded-t-lg',
   inactiveClass: 'text-red-500 bg-red-50',
   wrapperClass: 'rounded-lg',
   activatorClass: 'hover:bg-red-200 hover:text-red-500',

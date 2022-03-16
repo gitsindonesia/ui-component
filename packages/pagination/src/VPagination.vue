@@ -42,7 +42,7 @@ const props = defineProps({
   activeClass: {
     type: String,
     default:
-      'bg-primary-600 border-primary-600 hover:!bg-primary-700 text-white !font-bold',
+      'bg-primary-600 border-primary-600 hover:!bg-primary-700 text-white !font-semibold',
   },
   defaultClass: {
     type: String,
@@ -122,17 +122,7 @@ watch(
       <button
         v-if="item === 'previous'"
         :disabled="cantPrev"
-        class="
-          relative
-          inline-flex
-          items-center
-          px-2
-          py-2
-          border border-gray-300
-          bg-white
-          text-sm
-          font-medium
-        "
+        class="relative inline-flex items-center px-2 py-2 border border-gray-300 bg-white text-sm font-medium"
         :class="{
           'rounded-l-md': !pagino.showFirst,
           'cursor-not-allowed text-gray-300': cantPrev,
@@ -160,17 +150,7 @@ watch(
       <button
         v-else-if="item === 'next'"
         :disabled="cantNext"
-        class="
-          relative
-          inline-flex
-          items-center
-          px-2
-          py-2
-          border border-gray-300
-          bg-white
-          text-sm
-          font-medium
-        "
+        class="relative inline-flex items-center px-2 py-2 border border-gray-300 bg-white text-sm font-medium"
         :class="{
           'rounded-r-md': !pagino.showLast,
           'cursor-not-allowed text-gray-300': cantNext,
@@ -197,18 +177,7 @@ watch(
       <button
         v-else-if="item === 'first'"
         :disabled="isFirstPage"
-        class="
-          relative
-          inline-flex
-          items-center
-          px-2
-          py-2
-          rounded-l-md
-          border border-gray-300
-          bg-white
-          text-sm
-          font-medium
-        "
+        class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium"
         :class="{
           'cursor-not-allowed text-gray-300': isFirstPage,
           'text-gray-600 hover:bg-gray-50': !isFirstPage,
@@ -232,18 +201,7 @@ watch(
       <button
         v-else-if="item === 'last'"
         :disabled="isLastPage"
-        class="
-          relative
-          inline-flex
-          items-center
-          px-2
-          py-2
-          rounded-r-md
-          border border-gray-300
-          bg-white
-          text-sm
-          font-medium
-        "
+        class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium"
         :class="{
           'cursor-not-allowed text-gray-300': isLastPage,
           'text-gray-600 hover:bg-gray-50': !isLastPage,
@@ -271,35 +229,14 @@ watch(
       </button>
       <span
         v-else-if="item === 'start-ellipsis' || item === 'end-ellipsis'"
-        class="
-          relative
-          inline-flex
-          items-center
-          px-4
-          py-2
-          border border-gray-300
-          bg-white
-          text-sm
-          font-medium
-          text-gray-700
-        "
+        class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700"
       >
         ...
       </span>
       <a
         v-else-if="!simple"
         href="#"
-        class="
-          relative
-          inline-flex
-          items-center
-          px-4
-          py-2
-          border border-gray-300
-          text-sm
-          font-medium
-          hover:bg-gray-50
-        "
+        class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium hover:bg-gray-50"
         :class="pagino.page === item ? activeClasses : defaultClasses"
         @click.prevent="pagino.setPage(item)"
       >
@@ -307,17 +244,7 @@ watch(
       </a>
       <span
         v-else-if="simple && pagino.page === item"
-        class="
-          relative
-          inline-flex
-          items-center
-          px-4
-          py-2
-          border border-gray-300
-          text-sm
-          font-medium
-          hover:bg-gray-50
-        "
+        class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium hover:bg-gray-50"
       >
         {{ item }}
       </span>

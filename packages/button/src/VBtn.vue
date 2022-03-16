@@ -226,7 +226,7 @@ const classes = computed(() => {
     // sizeClass.value,
     // !noRing.value ? ringClass.value : "",
     // !props.text ? borderClass : "",
-    // props.solid ? "font-bold" : "font-semibold",
+    // props.solid ? "font-semibold" : "font-semibold",
     {
       'btn-outlined': props.outlined,
       [`btn-outlined-${props.color}`]: props.outlined,

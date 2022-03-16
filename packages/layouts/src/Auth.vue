@@ -1,12 +1,12 @@
 <script setup>
-import { onMounted, onUnmounted } from "vue";
+import {onMounted, onUnmounted} from 'vue';
 
 onMounted(() => {
-  document.body.className = "body-auth";
+  document.body.className = 'body-auth';
 });
 
 onUnmounted(() => {
-  document.body.className = "";
+  document.body.className = '';
 });
 </script>
 
@@ -15,7 +15,10 @@ onUnmounted(() => {
     <header class="px-4 py-2 md:px-8 md:py-6 flex-none">
       <div class="flex flex-row justify-between mx-auto">
         <div class="flex-none">
-          <router-link to="/cms/auth/login" class="font-bold text-2xl text-white">
+          <router-link
+            to="/cms/auth/login"
+            class="font-semibold text-2xl text-white"
+          >
             GITS Indonesia
           </router-link>
         </div>
@@ -1106,7 +1109,10 @@ onUnmounted(() => {
                   in2="BackgroundImageFix"
                   result="shape"
                 />
-                <feGaussianBlur stdDeviation="12.8615" result="effect1_foregroundBlur" />
+                <feGaussianBlur
+                  stdDeviation="12.8615"
+                  result="effect1_foregroundBlur"
+                />
               </filter>
               <filter
                 id="filter1_f"
@@ -1124,7 +1130,10 @@ onUnmounted(() => {
                   in2="BackgroundImageFix"
                   result="shape"
                 />
-                <feGaussianBlur stdDeviation="12.8615" result="effect1_foregroundBlur" />
+                <feGaussianBlur
+                  stdDeviation="12.8615"
+                  result="effect1_foregroundBlur"
+                />
               </filter>
               <filter
                 id="filter2_f"
@@ -1142,7 +1151,10 @@ onUnmounted(() => {
                   in2="BackgroundImageFix"
                   result="shape"
                 />
-                <feGaussianBlur stdDeviation="12.8615" result="effect1_foregroundBlur" />
+                <feGaussianBlur
+                  stdDeviation="12.8615"
+                  result="effect1_foregroundBlur"
+                />
               </filter>
               <filter
                 id="filter3_f"
@@ -1160,7 +1172,10 @@ onUnmounted(() => {
                   in2="BackgroundImageFix"
                   result="shape"
                 />
-                <feGaussianBlur stdDeviation="12.8615" result="effect1_foregroundBlur" />
+                <feGaussianBlur
+                  stdDeviation="12.8615"
+                  result="effect1_foregroundBlur"
+                />
               </filter>
               <filter
                 id="filter4_f"
@@ -1178,7 +1193,10 @@ onUnmounted(() => {
                   in2="BackgroundImageFix"
                   result="shape"
                 />
-                <feGaussianBlur stdDeviation="2.33846" result="effect1_foregroundBlur" />
+                <feGaussianBlur
+                  stdDeviation="2.33846"
+                  result="effect1_foregroundBlur"
+                />
               </filter>
               <filter
                 id="filter5_f"
@@ -1196,7 +1214,10 @@ onUnmounted(() => {
                   in2="BackgroundImageFix"
                   result="shape"
                 />
-                <feGaussianBlur stdDeviation="2.33846" result="effect1_foregroundBlur" />
+                <feGaussianBlur
+                  stdDeviation="2.33846"
+                  result="effect1_foregroundBlur"
+                />
               </filter>
               <filter
                 id="filter6_f"
@@ -1214,7 +1235,10 @@ onUnmounted(() => {
                   in2="BackgroundImageFix"
                   result="shape"
                 />
-                <feGaussianBlur stdDeviation="2.33846" result="effect1_foregroundBlur" />
+                <feGaussianBlur
+                  stdDeviation="2.33846"
+                  result="effect1_foregroundBlur"
+                />
               </filter>
               <filter
                 id="filter7_f"
@@ -1232,7 +1256,10 @@ onUnmounted(() => {
                   in2="BackgroundImageFix"
                   result="shape"
                 />
-                <feGaussianBlur stdDeviation="2.33846" result="effect1_foregroundBlur" />
+                <feGaussianBlur
+                  stdDeviation="2.33846"
+                  result="effect1_foregroundBlur"
+                />
               </filter>
               <filter
                 id="filter8_f"
@@ -1250,7 +1277,10 @@ onUnmounted(() => {
                   in2="BackgroundImageFix"
                   result="shape"
                 />
-                <feGaussianBlur stdDeviation="2.33846" result="effect1_foregroundBlur" />
+                <feGaussianBlur
+                  stdDeviation="2.33846"
+                  result="effect1_foregroundBlur"
+                />
               </filter>
               <filter
                 id="filter9_f"
@@ -1268,7 +1298,10 @@ onUnmounted(() => {
                   in2="BackgroundImageFix"
                   result="shape"
                 />
-                <feGaussianBlur stdDeviation="2.33846" result="effect1_foregroundBlur" />
+                <feGaussianBlur
+                  stdDeviation="2.33846"
+                  result="effect1_foregroundBlur"
+                />
               </filter>
               <filter
                 id="filter10_f"
@@ -1286,7 +1319,10 @@ onUnmounted(() => {
                   in2="BackgroundImageFix"
                   result="shape"
                 />
-                <feGaussianBlur stdDeviation="2.33846" result="effect1_foregroundBlur" />
+                <feGaussianBlur
+                  stdDeviation="2.33846"
+                  result="effect1_foregroundBlur"
+                />
               </filter>
               <filter
                 id="filter11_f"
@@ -1304,7 +1340,10 @@ onUnmounted(() => {
                   in2="BackgroundImageFix"
                   result="shape"
                 />
-                <feGaussianBlur stdDeviation="7.01538" result="effect1_foregroundBlur" />
+                <feGaussianBlur
+                  stdDeviation="7.01538"
+                  result="effect1_foregroundBlur"
+                />
               </filter>
               <filter
                 id="filter12_f"
@@ -1322,7 +1361,10 @@ onUnmounted(() => {
                   in2="BackgroundImageFix"
                   result="shape"
                 />
-                <feGaussianBlur stdDeviation="7.01538" result="effect1_foregroundBlur" />
+                <feGaussianBlur
+                  stdDeviation="7.01538"
+                  result="effect1_foregroundBlur"
+                />
               </filter>
               <filter
                 id="filter13_f"
@@ -1340,7 +1382,10 @@ onUnmounted(() => {
                   in2="BackgroundImageFix"
                   result="shape"
                 />
-                <feGaussianBlur stdDeviation="7.01538" result="effect1_foregroundBlur" />
+                <feGaussianBlur
+                  stdDeviation="7.01538"
+                  result="effect1_foregroundBlur"
+                />
               </filter>
               <filter
                 id="filter14_f"
@@ -1358,7 +1403,10 @@ onUnmounted(() => {
                   in2="BackgroundImageFix"
                   result="shape"
                 />
-                <feGaussianBlur stdDeviation="7.01538" result="effect1_foregroundBlur" />
+                <feGaussianBlur
+                  stdDeviation="7.01538"
+                  result="effect1_foregroundBlur"
+                />
               </filter>
               <filter
                 id="filter15_f"
@@ -1376,7 +1424,10 @@ onUnmounted(() => {
                   in2="BackgroundImageFix"
                   result="shape"
                 />
-                <feGaussianBlur stdDeviation="7.01538" result="effect1_foregroundBlur" />
+                <feGaussianBlur
+                  stdDeviation="7.01538"
+                  result="effect1_foregroundBlur"
+                />
               </filter>
               <filter
                 id="filter16_f"
@@ -1394,7 +1445,10 @@ onUnmounted(() => {
                   in2="BackgroundImageFix"
                   result="shape"
                 />
-                <feGaussianBlur stdDeviation="2.33846" result="effect1_foregroundBlur" />
+                <feGaussianBlur
+                  stdDeviation="2.33846"
+                  result="effect1_foregroundBlur"
+                />
               </filter>
               <filter
                 id="filter17_f"
@@ -1412,7 +1466,10 @@ onUnmounted(() => {
                   in2="BackgroundImageFix"
                   result="shape"
                 />
-                <feGaussianBlur stdDeviation="2.33846" result="effect1_foregroundBlur" />
+                <feGaussianBlur
+                  stdDeviation="2.33846"
+                  result="effect1_foregroundBlur"
+                />
               </filter>
               <filter
                 id="filter18_f"
@@ -1430,7 +1487,10 @@ onUnmounted(() => {
                   in2="BackgroundImageFix"
                   result="shape"
                 />
-                <feGaussianBlur stdDeviation="2.33846" result="effect1_foregroundBlur" />
+                <feGaussianBlur
+                  stdDeviation="2.33846"
+                  result="effect1_foregroundBlur"
+                />
               </filter>
               <filter
                 id="filter19_f"
@@ -1448,7 +1508,10 @@ onUnmounted(() => {
                   in2="BackgroundImageFix"
                   result="shape"
                 />
-                <feGaussianBlur stdDeviation="2.33846" result="effect1_foregroundBlur" />
+                <feGaussianBlur
+                  stdDeviation="2.33846"
+                  result="effect1_foregroundBlur"
+                />
               </filter>
               <filter
                 id="filter20_f"
@@ -1466,7 +1529,10 @@ onUnmounted(() => {
                   in2="BackgroundImageFix"
                   result="shape"
                 />
-                <feGaussianBlur stdDeviation="2.33846" result="effect1_foregroundBlur" />
+                <feGaussianBlur
+                  stdDeviation="2.33846"
+                  result="effect1_foregroundBlur"
+                />
               </filter>
               <filter
                 id="filter21_f"
@@ -1484,7 +1550,10 @@ onUnmounted(() => {
                   in2="BackgroundImageFix"
                   result="shape"
                 />
-                <feGaussianBlur stdDeviation="6.78639" result="effect1_foregroundBlur" />
+                <feGaussianBlur
+                  stdDeviation="6.78639"
+                  result="effect1_foregroundBlur"
+                />
               </filter>
               <filter
                 id="filter22_f"
@@ -1502,7 +1571,10 @@ onUnmounted(() => {
                   in2="BackgroundImageFix"
                   result="shape"
                 />
-                <feGaussianBlur stdDeviation="6.78639" result="effect1_foregroundBlur" />
+                <feGaussianBlur
+                  stdDeviation="6.78639"
+                  result="effect1_foregroundBlur"
+                />
               </filter>
               <radialGradient
                 id="paint0_radial"
@@ -1955,7 +2027,11 @@ onUnmounted(() => {
               >
                 <stop stop-color="#84FFFF" />
                 <stop offset="0.0001" stop-color="#84FFFF" />
-                <stop offset="0.416667" stop-color="#6BFFFF" stop-opacity="0.583392" />
+                <stop
+                  offset="0.416667"
+                  stop-color="#6BFFFF"
+                  stop-opacity="0.583392"
+                />
                 <stop offset="1" stop-color="#49FFFF" stop-opacity="0.4" />
               </linearGradient>
               <linearGradient
@@ -2667,8 +2743,12 @@ onUnmounted(() => {
     </div>
 
     <footer class="flex-none px-4 py-2 md:px-8 md:py-6">
-      <div class="flex flex-col md:flex-row items-center justify-between mx-auto">
-        <div class="flex-none text-gray-50 text-sm">Developed by GITS Indonesia</div>
+      <div
+        class="flex flex-col md:flex-row items-center justify-between mx-auto"
+      >
+        <div class="flex-none text-gray-50 text-sm">
+          Developed by GITS Indonesia
+        </div>
         <div class="flex-none text-gray-50 text-sm">
           Copyright &copy; {{ new Date().getFullYear() }}
         </div>

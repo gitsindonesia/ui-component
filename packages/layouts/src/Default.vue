@@ -35,23 +35,12 @@ window.addEventListener('resize', resizeHandler);
 <template>
   <div class="flex flex-row h-screen bg-blue-800">
     <div
-      class="
-        bg-blue-800
-        z-10
-        h-screen
-        top-0
-        left-0
-        py-2
-        flex-none flex flex-col
-        justify-between
-        transition-all
-        duration-300
-      "
+      class="bg-blue-800 z-10 h-screen top-0 left-0 py-2 flex-none flex flex-col justify-between transition-all duration-300"
       :class="isCollapsed ? 'collapsed' : 'normal'"
     >
       <div class="flex-grow">
         <div
-          class="text-xl flex items-center font-bold mb-4 px-6 relative"
+          class="text-xl flex items-center font-semibold mb-4 px-6 relative"
           :class="isCollapsed ? 'justify-center' : 'justify-between'"
         >
           <div class="flex-none">
@@ -92,13 +81,7 @@ window.addEventListener('resize', resizeHandler);
       </div>
     </div>
     <div
-      class="
-        flex-grow
-        bg-gray-200
-        rounded-tl-xl rounded-bl-xl
-        min-h-screen
-        overflow-y-auto
-      "
+      class="flex-grow bg-gray-200 rounded-tl-xl rounded-bl-xl min-h-screen overflow-y-auto"
     >
       <div class="flex justify-between mb-4">
         <button

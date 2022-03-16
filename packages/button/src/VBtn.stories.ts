@@ -261,7 +261,7 @@ export const Icon: Story<VBtnProps> = (args) => ({
   },
   template: `<div v-for="color in themeColors" :key="color" class="mb-6">
   <div>
-    <div class="font-bold text-lg mb-2">{{color}}</div>
+    <div class="font-semibold text-lg mb-2">{{color}}</div>
     <div class="flex items-end gap-2">
       <Button v-for="size in sizes" :key="size" v-bind="args" :color="color" :size="size" icon>
         <HomeIcon class="w-6 h-6"/>
@@ -278,7 +278,7 @@ export const Sizes: Story<VBtnProps> = (args) => ({
   },
   template: `<div v-for="color in themeColors" :key="color" class="mb-6">
   <div>
-    <div class="font-bold text-lg mb-2">{{color}}</div>
+    <div class="font-semibold text-lg mb-2">{{color}}</div>
     <div class="flex items-end gap-2">
       <Button v-for="size in sizes" :key="size" v-bind="args" :color="color" :size="size">
         {{ size }}

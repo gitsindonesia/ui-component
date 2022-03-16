@@ -1,14 +1,14 @@
 <script lang="ts">
-export type ToastTypes = "success" | "error" | "warning" | "question";
+export type ToastTypes = 'success' | 'error' | 'warning' | 'question';
 
 export type ToastPlacement =
-  | "center"
-  | "top"
-  | "top-start"
-  | "top-end"
-  | "bottom"
-  | "bottom-start"
-  | "bottom-end";
+  | 'center'
+  | 'top'
+  | 'top-start'
+  | 'top-end'
+  | 'bottom'
+  | 'bottom-start'
+  | 'bottom-end';
 
 export default {
   inheritAttrs: false,
@@ -16,21 +16,21 @@ export default {
 </script>
 
 <script setup lang="ts">
-import { computed, onUnmounted, ref, toRefs, watch } from "vue";
+import {computed, onUnmounted, ref, toRefs, watch} from 'vue';
 import {
   TransitionRoot,
   TransitionChild,
   Dialog,
   DialogOverlay,
   DialogTitle,
-} from "@headlessui/vue";
+} from '@headlessui/vue';
 import {
   XIcon,
   CheckIcon,
   ExclamationIcon,
   QuestionMarkCircleIcon,
-} from "@heroicons/vue/outline";
-import VBtn from "@gits-id/button";
+} from '@heroicons/vue/outline';
+import VBtn from '@gits-id/button';
 
 interface Props {
   modelValue?: boolean;
@@ -76,41 +76,41 @@ interface Props {
 // });
 
 const props = defineProps({
-  modelValue: { type: Boolean, default: false },
-  title: { type: String, default: "" },
-  confirm: { type: Boolean, default: false },
-  confirmColor: { type: String, default: "primary" },
+  modelValue: {type: Boolean, default: false},
+  title: {type: String, default: ''},
+  confirm: {type: Boolean, default: false},
+  confirmColor: {type: String, default: 'primary'},
   confirmProps: {
     type: Object,
     default: () => ({}),
   },
   confirmText: {
     type: String,
-    default: "Confirm",
+    default: 'Confirm',
   },
   closeText: {
     type: String,
-    default: "Close",
+    default: 'Close',
   },
   closeProps: {
     type: Object,
     default: () => ({}),
   },
-  headerClass: { type: String, default: "" },
-  bodyClass: { type: String, default: "" },
-  actionsClass: { type: String, default: "" },
-  placement: { type: String, default: "bottom" },
-  actions: { type: Boolean, default: false },
-  timeout: { type: Number, default: 0 },
-  hideXIcon: { type: Boolean, default: false },
-  overlay: { type: Boolean, default: false },
-  color: { type: String, default: "white" },
-  type: { type: String, default: "" },
-  loading: { type: Boolean, default: false },
-  persistent: { type: Boolean, default: false },
+  headerClass: {type: String, default: ''},
+  bodyClass: {type: String, default: ''},
+  actionsClass: {type: String, default: ''},
+  placement: {type: String, default: 'bottom'},
+  actions: {type: Boolean, default: false},
+  timeout: {type: Number, default: 0},
+  hideXIcon: {type: Boolean, default: false},
+  overlay: {type: Boolean, default: false},
+  color: {type: String, default: 'white'},
+  type: {type: String, default: ''},
+  loading: {type: Boolean, default: false},
+  persistent: {type: Boolean, default: false},
 });
 
-const emit = defineEmits(["update:modelValue", "confirm", "close", "open"]);
+const emit = defineEmits(['update:modelValue', 'confirm', 'close', 'open']);
 
 const {
   modelValue,
@@ -140,14 +140,14 @@ function closeModal() {
   if (loading.value && persistent.value) return;
 
   isOpen.value = false;
-  emit("update:modelValue", false);
-  emit("close");
+  emit('update:modelValue', false);
+  emit('close');
 }
 
 function openModal() {
   isOpen.value = true;
-  emit("update:modelValue", true);
-  emit("open");
+  emit('update:modelValue', true);
+  emit('open');
 }
 
 const startLoading = () => {
@@ -166,25 +166,25 @@ const onConfirm = () => {
     finishLoading,
   };
 
-  emit("confirm", payload);
+  emit('confirm', payload);
 };
 
 const placementClass = computed(() => {
   switch (placement.value) {
-    case "top":
-      return "top-4 left-1/2 transform -translate-x-1/2";
-    case "top-start":
-      return "top-4 left-4";
-    case "top-end":
-      return "top-4 right-4";
-    case "bottom":
-      return "bottom-4 left-1/2 transform -translate-x-1/2";
-    case "bottom-start":
-      return "bottom-4 left-4";
-    case "bottom-end":
-      return "bottom-4 right-4";
-    case "center":
-      return "top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2";
+    case 'top':
+      return 'top-4 left-1/2 transform -translate-x-1/2';
+    case 'top-start':
+      return 'top-4 left-4';
+    case 'top-end':
+      return 'top-4 right-4';
+    case 'bottom':
+      return 'bottom-4 left-1/2 transform -translate-x-1/2';
+    case 'bottom-start':
+      return 'bottom-4 left-4';
+    case 'bottom-end':
+      return 'bottom-4 right-4';
+    case 'center':
+      return 'top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2';
     default:
       return placement;
   }
@@ -192,36 +192,36 @@ const placementClass = computed(() => {
 
 const transitionProps = computed(() => {
   switch (placement.value) {
-    case "top":
-    case "top-start":
-    case "top-end":
+    case 'top':
+    case 'top-start':
+    case 'top-end':
       return {
-        enter: "duration-300 ease-out",
-        enterFrom: "opacity-0 -translate-y-full",
-        enterTo: "opacity-100",
-        leave: "duration-200 ease-in",
-        leaveFrom: "opacity-100",
-        leaveTo: "opacity-0 -translate-y-full",
+        enter: 'duration-300 ease-out',
+        enterFrom: 'opacity-0 -translate-y-full',
+        enterTo: 'opacity-100',
+        leave: 'duration-200 ease-in',
+        leaveFrom: 'opacity-100',
+        leaveTo: 'opacity-0 -translate-y-full',
       };
-    case "bottom":
-    case "bottom-start":
-    case "bottom-end":
+    case 'bottom':
+    case 'bottom-start':
+    case 'bottom-end':
       return {
-        enter: "duration-300 ease-out",
-        enterFrom: "opacity-0 translate-y-full",
-        enterTo: "opacity-100",
-        leave: "duration-200 ease-in",
-        leaveFrom: "opacity-100",
-        leaveTo: "opacity-0 translate-y-full",
+        enter: 'duration-300 ease-out',
+        enterFrom: 'opacity-0 translate-y-full',
+        enterTo: 'opacity-100',
+        leave: 'duration-200 ease-in',
+        leaveFrom: 'opacity-100',
+        leaveTo: 'opacity-0 translate-y-full',
       };
     default:
       return {
-        enter: "duration-300 ease-out",
-        enterFrom: "opacity-0 scale-95",
-        enterTo: "opacity-100 scale-100",
-        leave: "duration-200 ease-in",
-        leaveFrom: "opacity-100 scale-100",
-        leaveTo: "opacity-0 scale-95",
+        enter: 'duration-300 ease-out',
+        enterFrom: 'opacity-0 scale-95',
+        enterTo: 'opacity-100 scale-100',
+        leave: 'duration-200 ease-in',
+        leaveFrom: 'opacity-100 scale-100',
+        leaveTo: 'opacity-0 scale-95',
       };
   }
 });
@@ -242,13 +242,13 @@ watch(modelValue, (val) => (isOpen.value = val));
 watch(
   isOpen,
   (val) => {
-    emit("update:modelValue", val);
+    emit('update:modelValue', val);
 
     if (timeout.value > 0) {
       setTimer();
     }
   },
-  { immediate: true }
+  {immediate: true},
 );
 
 watch(
@@ -256,7 +256,7 @@ watch(
   (val) => {
     isOpen.value = val;
   },
-  { immediate: true }
+  {immediate: true},
 );
 
 watch(
@@ -264,52 +264,52 @@ watch(
   (val) => {
     internalLoading.value = val;
   },
-  { immediate: true }
+  {immediate: true},
 );
 
 const colorClass = computed(() => {
   switch (color.value) {
-    case "primary":
-      return "bg-primary";
-    case "secondary":
-      return "bg-secondary";
-    case "warning":
-      return "bg-warning";
-    case "info":
-      return "bg-info";
-    case "error":
-      return "bg-error";
-    case "black":
-      return "bg-black";
+    case 'primary':
+      return 'bg-primary';
+    case 'secondary':
+      return 'bg-secondary';
+    case 'warning':
+      return 'bg-warning';
+    case 'info':
+      return 'bg-info';
+    case 'error':
+      return 'bg-error';
+    case 'black':
+      return 'bg-black';
     default:
-      return "bg-white";
+      return 'bg-white';
   }
 });
 
 const textColorClass = computed(() => {
   switch (color.value) {
-    case "primary":
-    case "secondary":
-    case "warning":
-    case "info":
-    case "error":
-    case "black":
-      return "text-white";
+    case 'primary':
+    case 'secondary':
+    case 'warning':
+    case 'info':
+    case 'error':
+    case 'black':
+      return 'text-white';
     default:
-      return "";
+      return '';
   }
 });
 
 const iconColorClass = computed(() => {
   switch (color.value) {
-    case "primary":
-    case "secondary":
-    case "info":
-    case "warning":
-    case "error":
-      return "text-white";
+    case 'primary':
+    case 'secondary':
+    case 'info':
+    case 'warning':
+    case 'error':
+      return 'text-white';
     default:
-      return "";
+      return '';
   }
 });
 </script>
@@ -342,7 +342,10 @@ const iconColorClass = computed(() => {
               class="inline-block w-full max-w-sm p-4 overflow-hidden text-left transition-all transform shadow-xl rounded-lg border absolute"
               :class="[placementClass, colorClass]"
             >
-              <div class="flex gap-4" :class="title ? 'items-start' : 'items-center'">
+              <div
+                class="flex gap-4"
+                :class="title ? 'items-start' : 'items-center'"
+              >
                 <slot name="media">
                   <CheckIcon
                     v-if="type === 'success'"
@@ -369,7 +372,7 @@ const iconColorClass = computed(() => {
                   <DialogTitle
                     v-if="title"
                     as="h3"
-                    class="font-bold leading-6 mb-1"
+                    class="font-semibold leading-6 mb-1"
                     :class="[headerClass, textColorClass]"
                   >
                     <slot name="header">
@@ -395,7 +398,11 @@ const iconColorClass = computed(() => {
                       >
                         {{ confirmText }}
                       </v-btn>
-                      <v-btn v-bind="closeProps" :disabled="loading" @click="closeModal">
+                      <v-btn
+                        v-bind="closeProps"
+                        :disabled="loading"
+                        @click="closeModal"
+                      >
                         {{ closeText }}
                       </v-btn>
                     </slot>
