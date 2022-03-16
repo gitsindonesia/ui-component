@@ -2,7 +2,8 @@ import VInput from './VInput.vue';
 // import {themeColors} from '../utils/colors';
 import {sizes} from '@gits-id/utils/sizes';
 import {Meta, Story} from '@storybook/vue3';
-import type {VInputProps} from './VInput';
+import type {VInputProps} from './types';
+import {RiSearchLine} from 'vue-remix-icons';
 
 export default {
   title: 'Components/Form/Input',
@@ -63,10 +64,24 @@ Error.args = {
   errorMessages: ['Field is required'],
 };
 
-// export const Input = (args) => ({
-//   components: {VInput},
-//   setup() {
-//     return {args};
-//   },
-//   template: `<div class="container mx-auto"><VInput v-bind="args" /></div>`,
-// });
+export const Slots: Story<VInputProps> = (args) => ({
+  components: {VInput, RiSearchLine},
+  setup() {
+    return {args};
+  },
+  template: `
+<div class="space-y-2">
+  <v-input placeholder="Search...">
+    <template #prepend>
+      <RiSearchLine class="fill-current ml-3 w-6 h-6" />
+    </template>
+  </v-input>
+
+  <v-input placeholder="Search...">
+    <template #append>
+      <RiSearchLine class="fill-current mr-3 w-6 h-6" />
+    </template>
+  </v-input>
+</div>
+  `,
+});
