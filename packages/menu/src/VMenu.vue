@@ -5,12 +5,12 @@ export default {
 </script>
 
 <script setup lang="ts">
-import { computed, ref, toRefs } from "vue";
-import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
-import { ChevronRightIcon } from "@heroicons/vue/outline";
-import VMenuTooltip from "./VMenuTooltip.vue";
-import VMenuItem from "./VMenuItem.vue";
-import { useRouter } from "vue-router";
+import {computed, ref, toRefs} from 'vue';
+import {Disclosure, DisclosureButton, DisclosurePanel} from '@headlessui/vue';
+import {ChevronRightIcon} from '@heroicons/vue/outline';
+import VMenuTooltip from './VMenuTooltip.vue';
+import VMenuItem from './VMenuItem.vue';
+import {useRouter} from 'vue-router';
 
 const props = defineProps({
   menu: {
@@ -31,23 +31,23 @@ const props = defineProps({
   },
   color: {
     type: String,
-    default: "",
+    default: '',
   },
   bgColor: {
     type: String,
-    default: "",
+    default: '',
   },
   darkColor: {
     type: String,
-    default: "",
+    default: '',
   },
   darkBgColor: {
     type: String,
-    default: "",
+    default: '',
   },
   classMenuParent: {
     type: String,
-    default: "text-primary-600 bg-grey-700",
+    default: 'text-primary-500 bg-gray-700',
   },
   small: {
     type: Boolean,
@@ -57,7 +57,7 @@ const props = defineProps({
 
 const router = useRouter();
 
-const { menu, mini, dark, classMenuParent, expandHover } = toRefs(props);
+const {menu, mini, dark, classMenuParent, expandHover} = toRefs(props);
 
 const panel = ref<HTMLDivElement | null>(null);
 
@@ -70,15 +70,15 @@ const menuItemBgColor = computed(() => {
 
 const textColor = computed(() =>
   dark.value
-    ? "text-gray-400 hover:bg-gray-800 hover:text-gray-200"
-    : "text-gray-700 hover:bg-gray-100"
+    ? 'text-gray-400 hover:bg-gray-800 hover:text-gray-200'
+    : 'text-gray-700 hover:bg-gray-100',
 );
 
 const openClass = (isOpen: boolean) => {
   if (dark.value) {
-    return isOpen ? `${classMenuParent.value}` : "";
+    return isOpen ? `${classMenuParent.value}` : '';
   }
-  return isOpen ? `${classMenuParent.value}` : "";
+  return isOpen ? `${classMenuParent.value}` : '';
 };
 
 const getScrollHeight = () => {
@@ -88,17 +88,17 @@ const getScrollHeight = () => {
 
 const isActive = (path: any) => {
   const currentPath = router.currentRoute.value.path;
-  const currentRoute = currentPath.split("/");
-  const route = path.to.split("/");
+  const currentRoute = currentPath.split('/');
+  const route = path.to.split('/');
   return route[2] === currentRoute[2];
 };
 </script>
 
 <template>
   <template v-if="menu">
-    <Disclosure v-if="menu.children" v-slot="{ open }">
+    <Disclosure v-if="menu.children" v-slot="{open}">
       <DisclosureButton
-        v-slot="{ open }"
+        v-slot="{open}"
         class="focus:outline-none w-full transition duration-300 rounded group"
         :class="[textColor, small ? 'text-sm' : '']"
       >
@@ -114,15 +114,22 @@ const isActive = (path: any) => {
           <span v-else-if="menu.svg" v-html="menu.svg" />
           <template v-else-if="menu.icon">
             <template v-if="typeof menu.icon === 'string'">
-              <v-icon :name="menu.icon" />
+              <slot name="icon" :menu="menu">
+                <v-icon :name="menu.icon" />
+              </slot>
             </template>
-            <component :is="menu.icon" v-else class="w-5 h-5" :class="open ? '' : ''" />
+            <component
+              :is="menu.icon"
+              v-else
+              class="w-5 h-5"
+              :class="open ? '' : ''"
+            />
           </template>
 
           <span
             :title="menu.text"
             class="flex-grow text-left truncate"
-            :class="{ 'sm:hidden': mini && !expandHover, 'text-sm': small }"
+            :class="{'sm:hidden': mini && !expandHover, 'text-sm': small}"
           >
             {{ menu.text }}
           </span>
@@ -144,7 +151,7 @@ const isActive = (path: any) => {
         ref="panel"
         static
         class="duration-300 overflow-hidden transition-all h-auto"
-        :style="{ maxHeight: open ? getScrollHeight() : 0 }"
+        :style="{maxHeight: open ? getScrollHeight() : 0}"
       >
         <v-menu-item
           v-for="(child, j) in menu.children"
@@ -171,7 +178,7 @@ const isActive = (path: any) => {
     >
       <img v-if="menu.img" :src="menu.img" alt="img icon" class="w-5 h-5" />
       <component :is="menu.icon" v-else-if="menu.icon" class="w-5 h-5" />
-      <span :class="{ 'sm:hidden': mini && !expandHover }">
+      <span :class="{'sm:hidden': mini && !expandHover}">
         {{ menu.text }}
       </span>
 

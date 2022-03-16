@@ -1,5 +1,5 @@
 <script setup>
-import VMenuTooltip from "./VMenuTooltip.vue";
+import VMenuTooltip from './VMenuTooltip.vue';
 
 const props = defineProps({
   item: {
@@ -12,7 +12,7 @@ const props = defineProps({
   },
   textColor: {
     type: String,
-    default: "",
+    default: '',
   },
   dark: {
     type: Boolean,
@@ -30,7 +30,10 @@ const props = defineProps({
     :to="item.to"
     exact
     class="group sub-menu gap-x-2 w-full pl-5 px-2 py-3 rounded flex items-center text-sm truncate"
-    :class="[textColor, mini && !expandHover ? 'justify-start sm:justify-center' : '']"
+    :class="[
+      textColor,
+      mini && !expandHover ? 'justify-start sm:justify-center' : '',
+    ]"
   >
     <span class="px-1">
       <svg
@@ -44,7 +47,7 @@ const props = defineProps({
       </svg>
     </span>
 
-    <span :class="{ 'sm:hidden': mini && !expandHover }"> {{ item.text }}</span>
+    <span :class="{'sm:hidden': mini && !expandHover}"> {{ item.text }}</span>
     <v-menu-tooltip :show="mini && !expandHover">
       {{ item.text }}
     </v-menu-tooltip>

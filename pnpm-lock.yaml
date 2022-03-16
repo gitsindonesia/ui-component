@@ -50,6 +50,7 @@ importers:
       stable: ^0.1.8
       standard-version: ^9.3.2
       storybook-builder-vite: ^0.1.18
+      storybook-vue3-router: ^2.2.1
       synchronous-promise: ^2.0.15
       tailwindcss: ^3.0.23
       tailwindcss-cli: ^0.1.2
@@ -122,6 +123,7 @@ importers:
       stable: 0.1.8
       standard-version: 9.3.2
       storybook-builder-vite: 0.1.18_11818f00327bff2eeb4f9980924c2ff0
+      storybook-vue3-router: 2.2.1_7a42c5e1f8dc20225a771954d18aa5ba
       synchronous-promise: 2.0.15
       tailwindcss: 3.0.23_autoprefixer@10.4.2
       tailwindcss-cli: 0.1.2
@@ -19058,6 +19060,24 @@ packages:
       - typescript
     dev: true
 
+  /storybook-vue3-router/2.2.1_7a42c5e1f8dc20225a771954d18aa5ba:
+    resolution: {integrity: sha512-ODAPqGwU9XIMrnudWs6k6rJ0RJAeOGfy1o3vzII2hyMGRPScldA4IlPK4LEFEzdih+B801Yt+MbZ6Lu23FvQFg==}
+    peerDependencies:
+      '@storybook/addons': ^6.3.6
+      '@storybook/vue3': 6.x
+      vue: 3.x
+    peerDependenciesMeta:
+      vue:
+        optional: true
+      vue-router:
+        optional: true
+    dependencies:
+      '@storybook/addons': 6.4.19_react-dom@17.0.2+react@17.0.2
+      '@storybook/vue3': 6.4.19_1f491e7330e0cdd9d3497f78de650ab4
+      vue: 3.2.31
+      vue-router: 4.0.13_vue@3.2.31
+    dev: true
+
   /stream-browserify/2.0.2:
     resolution: {integrity: sha512-nX6hmklHs/gr2FuxYDltq8fJA1GDlxKQCz8O/IM4atRqBH8OORmBNgfvW5gG10GT/qQ9u0CzIvr2X5Pkt6ntqg==}
     dependencies:
@@ -20770,7 +20790,6 @@ packages:
     dependencies:
       '@vue/devtools-api': 6.0.12
       vue: 3.2.31
-    dev: false
 
   /vue-tsc/0.31.4_typescript@4.5.5:
     resolution: {integrity: sha512-8RnKGmQRo/0rbXkyZmKCOdT62fNWyEaMdS/BDAPE+saGNAniUZsjpOSOjAiLwsQc5qgeI9/mY1W3o4tX7H/7MA==}
