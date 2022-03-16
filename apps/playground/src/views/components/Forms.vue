@@ -40,6 +40,12 @@ const breadcrumbs = ref([
   <v-form-group id=&quot;password&quot; label=&quot;Password&quot;>
     <v-input id=&quot;password&quot; type=&quot;password&quot; placeholder=&quot;Password&quot; />
   </v-form-group>
+  <v-form-group id=&quot;avatar&quot; label=&quot;Avatar&quot;>
+    <v-file-upload id=&quot;avatar&quot; placeholder=&quot;Select File&quot; />
+  </v-form-group>
+  <v-form-group id=&quot;bio&quot; label=&quot;Bio&quot;>
+    <v-textarea id=&quot;bio&quot; placeholder=&quot;Enter your bio&quot; />
+  </v-form-group>
   <v-form-group>
     <v-checkbox label=&quot;I agree with ToC&quot; />
   </v-form-group>
@@ -68,6 +74,12 @@ const breadcrumbs = ref([
         </v-form-group>
         <v-form-group id="password" label="Password">
           <v-input id="password" type="password" placeholder="Password" />
+        </v-form-group>
+        <v-form-group id="avatar" label="Avatar">
+          <v-file-upload id="avatar" placeholder="Select File" />
+        </v-form-group>
+        <v-form-group id="bio" label="Bio">
+          <v-textarea id="bio" placeholder="Enter your bio" />
         </v-form-group>
         <v-form-group>
           <v-checkbox label="I agree with ToC" />
