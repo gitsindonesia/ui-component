@@ -5,12 +5,20 @@ export default {
 </script>
 
 <script setup lang="ts">
-import { computed, ref, toRefs, onBeforeUpdate, watch, nextTick, PropType } from "vue";
-import { CheckIcon, ChevronDownIcon, XIcon } from "@heroicons/vue/solid";
-import VBadge from "@gits-id/badge";
-import VTooltip from "@gits-id/tooltip";
-import { onClickOutside, useDebounceFn } from "@vueuse/core";
-import { ErrorMessage } from "vee-validate";
+import {
+  computed,
+  ref,
+  toRefs,
+  onBeforeUpdate,
+  watch,
+  nextTick,
+  PropType,
+} from 'vue';
+import {CheckIcon, ChevronDownIcon, XIcon} from '@heroicons/vue/solid';
+import VBadge from '@gits-id/badge';
+import VTooltip from '@gits-id/tooltip';
+import {onClickOutside, useDebounceFn} from '@vueuse/core';
+import {ErrorMessage} from 'vee-validate';
 
 type VMultiSelectItem = {
   text: string;
@@ -34,15 +42,15 @@ const props = defineProps({
   },
   itemText: {
     type: String,
-    default: "text",
+    default: 'text',
   },
   itemValue: {
     type: String,
-    default: "value",
+    default: 'value',
   },
   searchBy: {
     type: String,
-    default: "text",
+    default: 'text',
   },
   maxBadge: {
     type: Number,
@@ -50,7 +58,7 @@ const props = defineProps({
   },
   placeholder: {
     type: String,
-    default: "Search...",
+    default: 'Search...',
   },
   delay: {
     type: Number,
@@ -58,11 +66,11 @@ const props = defineProps({
   },
   id: {
     type: String,
-    default: "",
+    default: '',
   },
   name: {
     type: String,
-    default: "",
+    default: '',
   },
   inputProps: {
     type: Object as PropType<Record<string, any>>,
@@ -86,7 +94,12 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits(["click:outside", "update:modelValue", "search", "selected"]);
+const emit = defineEmits([
+  'click:outside',
+  'update:modelValue',
+  'search',
+  'selected',
+]);
 
 const {
   maxBadge,
@@ -108,7 +121,7 @@ const {
 // refs
 const target = ref(null);
 const isOpen = ref(false);
-const search = ref("");
+const search = ref('');
 const selected = ref(modelValue.value);
 const focus = ref(-1);
 const refItems = ref<HTMLDivElement[]>([]);
@@ -130,7 +143,7 @@ const searchItem = (item: VMultiSelectItem) => {
 // computed
 const filteredItems = computed(() => items.value.filter(searchItem));
 const badges = computed(() =>
-  maxBadge.value > 0 ? selected.value.slice(0, maxBadge.value) : selected.value
+  maxBadge.value > 0 ? selected.value.slice(0, maxBadge.value) : selected.value,
 );
 
 // methods
@@ -149,11 +162,13 @@ const handleSelect = (item: VMultiSelectItem) => {
   } else {
     selected.value.push(item);
   }
-  emit("selected", selected);
+  emit('selected', selected);
 };
 
 const findIndex = (item: VMultiSelectItem) =>
-  selected.value.findIndex((sItem) => sItem[itemValue.value] === item?.[itemValue.value]);
+  selected.value.findIndex(
+    (sItem) => sItem[itemValue.value] === item?.[itemValue.value],
+  );
 
 const hasItem = (item: VMultiSelectItem) => findIndex(item) > -1;
 
@@ -178,10 +193,12 @@ const handleSearch = useDebounceFn((event) => {
   search.value = event.target.value;
   focus.value = 0;
 
-  emit("search", search);
+  emit('search', search);
 }, delay.value);
 
-const isAllSelected = computed(() => selected.value.length === items.value.length);
+const isAllSelected = computed(
+  () => selected.value.length === items.value.length,
+);
 
 const toggleSelectAll = () => {
   if (isAllSelected.value) {
@@ -201,7 +218,7 @@ const onInputClick = () => {
 };
 
 onClickOutside(target, () => {
-  emit("click:outside");
+  emit('click:outside');
   isOpen.value = false;
 });
 
@@ -260,7 +277,7 @@ const focusItem = () => {
     const target = refItems.value[index];
     const top = target?.offsetTop - (dropdown.value!.offsetHeight - 100);
 
-    dropdown.value?.scrollTo({ top, behavior: "smooth" });
+    dropdown.value?.scrollTo({top, behavior: 'smooth'});
   });
 };
 
@@ -270,7 +287,7 @@ watch(
   (val) => {
     selected.value = val;
   },
-  { immediate: true, deep: true }
+  {immediate: true, deep: true},
 );
 
 watch(
@@ -278,15 +295,15 @@ watch(
   (val) => {
     selected.value = val;
   },
-  { immediate: true, deep: true }
+  {immediate: true, deep: true},
 );
 
 watch(
   selected,
   (val) => {
-    emit("update:modelValue", val);
+    emit('update:modelValue', val);
   },
-  { deep: true }
+  {deep: true},
 );
 </script>
 
@@ -337,7 +354,7 @@ watch(
 
           <span class="absolute inset-y-0 right-0 flex items-center pr-2">
             <v-tooltip v-if="selected.length > 1">
-              <template #activator="{ on }">
+              <template #activator="{on}">
                 <v-badge
                   outlined
                   circle
@@ -365,7 +382,9 @@ watch(
             ref="dropdown"
             class="absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm px-0 z-10"
           >
-            <div v-if="loading" class="pl-6 pr-4 py-2 text-gray-600">Loading...</div>
+            <div v-if="loading" class="pl-6 pr-4 py-2 text-gray-600">
+              Loading...
+            </div>
             <template v-else-if="filteredItems.length">
               <template v-if="selectAll">
                 <div
@@ -378,11 +397,11 @@ watch(
                       'block truncate',
                     ]"
                   >
-                    {{ isAllSelected ? "Deselect All" : "Select All" }}
+                    {{ isAllSelected ? 'Deselect All' : 'Select All' }}
                   </span>
                   <span
                     v-if="isAllSelected"
-                    class="absolute inset-y-0 left-0 flex items-center pl-3 text-primary-2"
+                    class="absolute inset-y-0 left-0 flex items-center pl-3 text-primary-500"
                   >
                     <CheckIcon class="w-5 h-5" aria-hidden="true" />
                   </span>
@@ -400,7 +419,9 @@ watch(
                 <div
                   class="bg-white hover:text-primary-500 hover:bg-primary-100"
                   :class="[
-                    focus === index ? 'text-primary-500 bg-primary-100' : 'text-gray-900',
+                    focus === index
+                      ? 'text-primary-500 bg-primary-100'
+                      : 'text-gray-900',
                     'cursor-default select-none relative py-2 pl-10 pr-4',
                   ]"
                 >
@@ -427,7 +448,11 @@ watch(
       </div>
     </div>
   </div>
-  <ErrorMessage v-if="errorMessages.length" class="text-error-600 text-sm" :name="name" />
+  <ErrorMessage
+    v-if="errorMessages.length"
+    class="text-error-600 text-sm"
+    :name="name"
+  />
 </template>
 
 <style scoped>
