@@ -115,6 +115,10 @@ export default <RouteRecordRaw[]>[
         path: 'form-select',
         component: () => import('@/views/components/FormSelect.vue'),
       },
+      {
+        path: 'logo',
+        component: () => import('@/views/components/Logo.vue'),
+      },
     ],
   },
   // {

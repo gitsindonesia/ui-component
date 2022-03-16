@@ -17,80 +17,56 @@ const breadcrumbs = ref([
 
 const propItems = [
   {
-    prop: 'color',
-    type: 'string',
-    required: 'false',
-    default: 'default',
-    description: `Alert color.
-      <br/>Default: <code>default</code>,
-      <code class="text-primary">primary</code>,
-      <code class="text-secondary">secondary</code>,
-      <code class="text-info-500">info</code>,
-      <code class="text-warning-500">warning</code>,
-      <code class="text-error-500">error</code>,
-      <code class="text-gray-900">dark</code>.`,
-  },
-  {
-    prop: 'rounded',
+    prop: 'modelValue',
     type: 'string',
     required: 'false',
     default: '',
-    description: 'Rounded style',
+    description: 'Model value',
   },
   {
-    prop: 'small',
-    type: 'boolean',
-    required: 'false',
-    default: 'false',
-    description: 'Small size',
-  },
-  {
-    prop: 'large',
-    type: 'boolean',
-    required: 'false',
-    default: 'false',
-    description: 'Large size',
-  },
-  {
-    prop: 'circle',
-    type: 'boolean',
-    required: 'false',
-    default: 'false',
-    description: 'Circle styles',
-  },
-  {
-    prop: 'dismissable',
-    type: 'boolean',
-    required: 'false',
-    default: 'false',
-    description: 'Add x button to badge',
-  },
-  {
-    prop: 'bgColor',
+    prop: 'value',
     type: 'string',
     required: 'false',
     default: '',
-    description: 'Custom background color',
+    description: 'Vee-validate value',
   },
   {
-    prop: 'textColor',
+    prop: 'name',
     type: 'string',
     required: 'false',
     default: '',
-    description: 'Custom text color',
+    description: 'Name',
+  },
+  {
+    prop: 'error',
+    type: 'boolean',
+    required: 'false',
+    default: 'false',
+    description: 'Error',
+  },
+  {
+    prop: 'error-messages',
+    type: 'array',
+    required: 'false',
+    default: 'false',
+    description: 'Error messages',
+  },
+  {
+    prop: 'readonly',
+    type: 'boolean',
+    required: 'false',
+    default: 'false',
+    description: 'Readonly',
   },
 ];
 </script>
 
 <template>
-  <DocsTitle :breadcrumbs="breadcrumbs">Breadcrumbs</DocsTitle>
+  <DocsTitle :breadcrumbs="breadcrumbs">Component</DocsTitle>
 
-  <Docs
-    title="Default"
-    :code="`<v-breadcrumbs :items=&quot;breadcrumbs&quot; />`"
-  >
+  <Docs title="Default" :code="`<v-component />`">
     <template #preview>
-      <v-breadcrumbs :items="breadcrumbs" />
+      <v-component />
     </template>
   </Docs>
 

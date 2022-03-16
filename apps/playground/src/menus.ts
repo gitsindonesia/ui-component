@@ -32,6 +32,7 @@ const componentSubMenus = [
   componentRoute('Editor', '/components/editor'),
   componentRoute('File Input', '/components/file-input'),
   componentRoute('Form Select', '/components/form-select'),
+  componentRoute('Logo', '/components/logo'),
 ];
 
 const getComponentChildren = () => {
