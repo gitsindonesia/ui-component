@@ -1,25 +1,25 @@
 <script setup lang="ts">
-import { ref, toRefs, computed, watch } from "vue";
-import { ErrorMessage } from "vee-validate";
-import { useHeight, useInputClasses, useTextSize } from "@gits-id/utils";
-import { SearchIcon } from "@heroicons/vue/solid";
+import {ref, toRefs, computed, watch} from 'vue';
+import {ErrorMessage} from 'vee-validate';
+import {useHeight, useInputClasses, useTextSize} from '@gits-id/utils';
+import {SearchIcon} from '@heroicons/vue/solid';
 
 const props = defineProps({
   value: {
     type: [String, Number],
-    default: "",
+    default: '',
   },
   modelValue: {
     type: [String, Number],
-    default: "",
+    default: '',
   },
   type: {
     type: String,
-    default: "text",
+    default: 'text',
   },
   name: {
     type: String,
-    default: "",
+    default: '',
   },
   error: {
     type: Boolean,
@@ -39,19 +39,19 @@ const props = defineProps({
   },
   size: {
     type: String,
-    default: "",
+    default: '',
   },
   placeholder: {
     type: String,
-    default: "",
+    default: '',
   },
   prependIcon: {
     type: String,
-    default: "",
+    default: '',
   },
   appendIcon: {
     type: String,
-    default: "",
+    default: '',
   },
   text: {
     type: Boolean,
@@ -74,12 +74,12 @@ const {
   text,
 } = toRefs(props);
 
-const emit = defineEmits(["input:modelValue", "blur"]);
+const emit = defineEmits(['input:modelValue', 'blur']);
 
 const inputValue = ref(props.value || props.modelValue);
 
-const { class: sizeClass } = useTextSize(size.value);
-const { class: heightClass } = useHeight(size.value);
+const {class: sizeClass} = useTextSize(size.value);
+const {class: heightClass} = useHeight(size.value);
 const inputClass = computed(() => useInputClasses(error.value));
 
 const classes = computed(() => [inputClass.value, sizeClass.value]);
@@ -92,18 +92,18 @@ watch(externalValue, (val) => {
   inputValue.value = val;
 });
 
-const onBlur = () => emit("blur");
+const onBlur = () => emit('blur');
 </script>
 
 <template>
   <div
-    class="flex w-full items-center transition duration-300 rounded-md text-gray-600"
+    class="flex w-full items-center transition duration-300 rounded-md text-gray-500"
     :class="[
       text
         ? 'focus:border-none focus:ring-0'
-        : 'border focus-within:text-primary-600 focus-within:border-primary-600 focus-within:ring-primary-600 focus-within:ring-1',
+        : 'border focus-within:text-primary-500 focus-within:border-primary-500 focus-within:ring-primary-500 focus-within:ring-1',
       error
-        ? 'border-error-600 focus-within:text-error-600 focus-within:border-error-600 focus-within:ring-error-600 focus-within:ring-1'
+        ? 'border-error-500 focus-within:text-error-500 focus-within:border-error-500 focus-within:ring-error-500 focus-within:ring-1'
         : '',
     ]"
   >
@@ -126,7 +126,11 @@ const onBlur = () => emit("blur");
     </slot>
   </div>
 
-  <ErrorMessage v-if="errorMessages.length" class="text-error-600 text-sm" :name="name" />
+  <ErrorMessage
+    v-if="errorMessages.length"
+    class="text-error-500 text-sm"
+    :name="name"
+  />
 </template>
 
 <style scoped></style>
