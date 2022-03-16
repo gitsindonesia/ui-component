@@ -28,6 +28,7 @@ const componentSubMenus = [
   componentRoute('Collapsible', '/components/collapsible'),
   componentRoute('Forms', '/components/forms'),
   componentRoute('AppBar', '/components/app-bar'),
+  componentRoute('Container', '/components/container'),
 ];
 
 const getComponentChildren = () => {

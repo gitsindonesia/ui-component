@@ -99,6 +99,10 @@ export default <RouteRecordRaw[]>[
         path: 'app-bar',
         component: () => import('@/views/components/AppBar.vue'),
       },
+      {
+        path: 'container',
+        component: () => import('@/views/components/Container.vue'),
+      },
     ],
   },
   // {
