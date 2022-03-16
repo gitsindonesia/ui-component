@@ -16,6 +16,7 @@
   "dependencies": {
     "@gits-id/button": "^0.1.17-alpha.0",
     "@gits-id/input": "^0.1.17-alpha.0",
+    "@gits-id/spinner": "^0.1.17-alpha.0",
     "vue": "^3.2.31"
   },
   "devDependencies": {

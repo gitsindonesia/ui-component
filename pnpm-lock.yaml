@@ -137,7 +137,7 @@ importers:
     specifiers:
       '@babel/core': ^7.17.5
       '@gits-id/tailwind-config': ^0.1.17-alpha.0
-      '@gits-id/ui': ^0.1.17-alpha.0
+      '@gits-id/ui': ^0.1.17-alpha.55+9616f31
       '@rushstack/eslint-patch': ^1.1.0
       '@storybook/addon-actions': ^6.4.19
       '@storybook/addon-essentials': ^6.4.19
@@ -173,7 +173,7 @@ importers:
       vue-tsc: ^0.31.4
     dependencies:
       '@gits-id/tailwind-config': link:../../packages/tailwind-config
-      '@gits-id/ui': link:../../packages/ui
+      '@gits-id/ui': 0.1.17-alpha.55_901e7a627f905ae9ba08e287cceaa28b
       pinia: 2.0.11_typescript@4.5.5+vue@3.2.31
       prism-themes: 1.9.0
       prismjs: 1.27.0
@@ -359,6 +359,7 @@ importers:
     specifiers:
       '@gits-id/button': ^0.1.17-alpha.0
       '@gits-id/input': ^0.1.17-alpha.0
+      '@gits-id/spinner': ^0.1.17-alpha.0
       '@gits-id/utils': ^0.1.17-alpha.0
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
@@ -368,6 +369,7 @@ importers:
     dependencies:
       '@gits-id/button': link:../button
       '@gits-id/input': link:../input
+      '@gits-id/spinner': link:../spinner
       vue: 3.2.31
     devDependencies:
       '@gits-id/utils': link:../utils
@@ -870,7 +872,7 @@ importers:
 
   packages/ui:
     specifiers:
-      '@gits-id/alert': ^0.1.17-alpha.0
+      '@gits-id/alert': ^0.1.17-alpha.55+9616f31
       '@gits-id/app-bar': ^0.1.17-alpha.0
       '@gits-id/badge': ^0.1.17-alpha.0
       '@gits-id/breadcrumbs': ^0.1.17-alpha.0
@@ -913,7 +915,7 @@ importers:
       '@gits-id/utils': ^0.1.17-alpha.0
       vue-remix-icons: ^1.1.1
     dependencies:
-      '@gits-id/alert': link:../alert
+      '@gits-id/alert': 0.1.17-alpha.55_vue@3.2.31
       '@gits-id/app-bar': link:../app-bar
       '@gits-id/badge': link:../badge
       '@gits-id/breadcrumbs': link:../breadcrumbs
@@ -3084,6 +3086,407 @@ packages:
   /@gar/promisify/1.1.3:
     resolution: {integrity: sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==}
     dev: true
+
+  /@gits-id/alert/0.1.17-alpha.55_vue@3.2.31:
+    resolution: {integrity: sha512-X5QaonwMeAD48tTZlgasrKHdxL9epwZ+mRjZqTj08GD0FBUqKQmYId7yskGodpyGHqKfW3y2fgr4ab46dpHG4A==}
+    dependencies:
+      '@heroicons/vue': 1.0.6_vue@3.2.31
+    transitivePeerDependencies:
+      - vue
+    dev: false
+
+  /@gits-id/app-bar/0.1.17-alpha.0:
+    resolution: {integrity: sha512-ZkV3E3ByZZKtrs6We+fYZd7ArIoNGMXToC36nO6KJYnNmIpFqQK0zaM9gprS6UaWN+/DHJo3iaFABz75YYgmwQ==}
+    dev: false
+
+  /@gits-id/badge/0.1.17-alpha.0_vue@3.2.31:
+    resolution: {integrity: sha512-J5rWGBiVDisj57EQEt88sZTtjgz6czlm5BzlDlo5O38YfPLu8KJPtVtKrHPewSQg/JBu0BsLSPlH/+vny8dppw==}
+    dependencies:
+      '@heroicons/vue': 1.0.6_vue@3.2.31
+    transitivePeerDependencies:
+      - vue
+    dev: false
+
+  /@gits-id/breadcrumbs/0.1.17-alpha.0:
+    resolution: {integrity: sha512-LXvSv/Pbcm5b/EJ2pqpKnAkYgBvPcuwclamwqrK5NChWzIZ5HVzTIt44KDozPEl+Ug2skJ3UoTQIhDxR6EVWQA==}
+    dev: false
+
+  /@gits-id/button/0.1.17-alpha.0_autoprefixer@10.4.2:
+    resolution: {integrity: sha512-1w1IX8waljn3D/ycHVuh9cCmgBDsRGlyDeIK11vUEkxKf70XrGknnO2KKBkSZehCG7phVugfN2fAtyBYJ98N7Q==}
+    dependencies:
+      '@gits-id/spinner': 0.1.17-alpha.0
+      '@gits-id/theme': 0.1.17-alpha.0_autoprefixer@10.4.2
+      '@gits-id/utils': 0.1.17-alpha.0
+    transitivePeerDependencies:
+      - autoprefixer
+      - ts-node
+    dev: false
+
+  /@gits-id/card/0.1.17-alpha.0:
+    resolution: {integrity: sha512-oO39c2BDx3roTPUuRxZO/Wl17dSVWchQLwuBz4kYBagOucrJ1e0tMmMNYOp3Pnu44x7xW9/Ppwcfr3F9D2YG4Q==}
+    dev: false
+
+  /@gits-id/checkbox/0.1.17-alpha.0:
+    resolution: {integrity: sha512-WkGBnJC1cpOd39Nj8Nj/fsRJPSIMQt+jMpUTf5lciZa8GfhLgMoQNLqrr1G1Xtx0HNKXgsxHEI+8y844K/1rmg==}
+    dependencies:
+      '@gits-id/utils': 0.1.17-alpha.0
+    dev: false
+
+  /@gits-id/collapsible/0.1.17-alpha.0:
+    resolution: {integrity: sha512-04Ny1wyKVcqf7sv9QXSxRi0S/UzmmdzkqmVlAs5A+WW0huXTAXREevrsSl1ktQGmRWZCASnabc3fJSoGmj4GAQ==}
+    dev: false
+
+  /@gits-id/container/0.1.17-alpha.0:
+    resolution: {integrity: sha512-bBkVPz2o6BEqBiK+p85LF5LZHbJye/1lB4DTrfppDrfwWBsQhO7nW5ro0YeTU4Va/6qjevL77sbHfeW1cNT7Qw==}
+    dev: false
+
+  /@gits-id/dropdown/0.1.17-alpha.0_autoprefixer@10.4.2:
+    resolution: {integrity: sha512-BU4yKEM9Z1MD9yMW3N0NAv320vVBElxtdTSYreLnyOMcGnwXAIl4mg8q2fp0EU+LJ5KiQwqmWV8cXxX5zlIXpg==}
+    dependencies:
+      '@gits-id/button': 0.1.17-alpha.0_autoprefixer@10.4.2
+      '@headlessui/vue': 1.5.0_vue@3.2.31
+      '@heroicons/vue': 1.0.6_vue@3.2.31
+      feather-icons: 4.28.0
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
+      vue: 3.2.31
+      vue-feather: 2.0.0_feather-icons@4.28.0+vue@3.2.31
+    transitivePeerDependencies:
+      - autoprefixer
+      - ts-node
+    dev: false
+
+  /@gits-id/editor/0.1.17-alpha.0:
+    resolution: {integrity: sha512-fWWZYpA81Sk4qAm4GO3D/6bwkLmptsi3nv55936ZMKTWvx6sRfvVNELYk/bIK/rrmLc/TFN4m1KfipLhJzNxAQ==}
+    dependencies:
+      '@ckeditor/ckeditor5-build-classic': 32.0.0
+      '@ckeditor/ckeditor5-vue': 2.0.1
+      vue: 3.2.31
+    dev: false
+
+  /@gits-id/file-input/0.1.17-alpha.0_autoprefixer@10.4.2:
+    resolution: {integrity: sha512-VIVg8JK1ytjQnw71nM15cTBMmFNDiQU4fyjrA0S91bOuW6iQC9dPhoyl4FlVIJN7OVQiSYxV/P83pBvRqQlH3Q==}
+    dependencies:
+      '@gits-id/button': 0.1.17-alpha.0_autoprefixer@10.4.2
+      '@gits-id/input': 0.1.17-alpha.0
+      vue: 3.2.31
+    transitivePeerDependencies:
+      - autoprefixer
+      - ts-node
+    dev: false
+
+  /@gits-id/form-group/0.1.17-alpha.0:
+    resolution: {integrity: sha512-gyEC2GwO4vzJA5R/c8MD2W3YmjvGoJADkSBkudVmIzTL2yJnxOzeAgZbVefnTxJVPUnNX/49LRJ3/twcXTm7AA==}
+    dependencies:
+      vue: 3.2.31
+    dev: false
+
+  /@gits-id/form-select/0.1.17-alpha.0:
+    resolution: {integrity: sha512-lgrVS4E2woheYWxi+gEtckrwZ55IprzrN2ccPBEBtIAl4q8muHYHK8oqud7diBd7irjaYmyJ6yVz2TKumYyzrw==}
+    dependencies:
+      '@gits-id/input': 0.1.17-alpha.0
+      '@gits-id/utils': 0.1.17-alpha.0
+      vue: 3.2.31
+    dev: false
+
+  /@gits-id/input/0.1.17-alpha.0:
+    resolution: {integrity: sha512-Rwn/Tb37VmlEuqaeIuLSxW+W/ajExEMuLwGnrnCX3DPhUYolBNiXscioj5yf/Kwn/K0c54hqUgy2+CZjJhvykQ==}
+    dependencies:
+      '@gits-id/utils': 0.1.17-alpha.0
+      vue: 3.2.31
+    dev: false
+
+  /@gits-id/layouts/0.1.17-alpha.0:
+    resolution: {integrity: sha512-uriJT5/O/H34L96Yp9NBar7UhPUgDoaGZWCF2Py9AQSrvRFKTTBAS4rgUw7hNzEwPTJqaCe1giYlsLtfhL5I0Q==}
+    dependencies:
+      vue: 3.2.31
+    dev: false
+
+  /@gits-id/logo/0.1.17-alpha.0:
+    resolution: {integrity: sha512-V0kMNLxhdzsx0gnEn6uYPDyT3LRwF+hrdn+MYp+W4PSHQdOGOjgOMaz9WYfARBnJYyN5Q/RzDRvno7W3Wqvu2A==}
+    dependencies:
+      vue: 3.2.31
+    dev: false
+
+  /@gits-id/menu/0.1.17-alpha.0:
+    resolution: {integrity: sha512-1oG9cdMHuGJf9x9IaNEfQYfRuhNrt4C7uYY3Jyh6qCrdclIb0GhbbkfrssTSjlBC1UA4ADe/CxQAJe3h0kgfaw==}
+    dependencies:
+      vue: 3.2.31
+      vue-router: 4.0.13_vue@3.2.31
+    dev: false
+
+  /@gits-id/menus/0.1.17-alpha.0_autoprefixer@10.4.2:
+    resolution: {integrity: sha512-wfOtXNxbgNSopYAT//5qNAYO2ljIWYBxEm/txr+3qBd10cWXaSBlu+8CJP1uBqgSfki9pHf65ZvwroaHfRJxJQ==}
+    dependencies:
+      '@gits-id/button': 0.1.17-alpha.0_autoprefixer@10.4.2
+      vue: 3.2.31
+    transitivePeerDependencies:
+      - autoprefixer
+      - ts-node
+    dev: false
+
+  /@gits-id/modal/0.1.17-alpha.0:
+    resolution: {integrity: sha512-xKnqe0757P1IO2uPZXiO2ugPE4wZ62SgQvDgcUbYW8i6sVqptaLt6Q02Fw1+hluY+D+mHp56+ppGEuwRRli9hw==}
+    dependencies:
+      vue: 3.2.31
+    dev: false
+
+  /@gits-id/multi-select/0.1.17-alpha.0:
+    resolution: {integrity: sha512-Y+qm0dtrH15WjoXCLmrPwdU8xKOjACOwGcf9uEkUAfET6ND8anadYiQmeGQ3WsxVzDe7TsvFDGNu9L/ZWb7q7Q==}
+    dependencies:
+      '@gits-id/badge': 0.1.17-alpha.0_vue@3.2.31
+      '@gits-id/tooltip': 0.1.17-alpha.0
+      '@vueuse/core': 7.7.1_vue@3.2.31
+      vue: 3.2.31
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+    dev: false
+
+  /@gits-id/nav-drawer/0.1.17-alpha.0_autoprefixer@10.4.2:
+    resolution: {integrity: sha512-Q9nC0gAgWA8xe6GlEiIJMNa7U5alRxxjSGFFobljQSTrie6+iz86lKbn6EVnTOHpMzJFPtxR8JSezG1sAKxMbg==}
+    dependencies:
+      '@gits-id/logo': 0.1.17-alpha.0
+      '@gits-id/menu': 0.1.17-alpha.0
+      '@gits-id/navbar': 0.1.17-alpha.0_autoprefixer@10.4.2
+      '@gits-id/utils': 0.1.17-alpha.0
+      vue: 3.2.31
+    transitivePeerDependencies:
+      - autoprefixer
+      - ts-node
+    dev: false
+
+  /@gits-id/navbar/0.1.17-alpha.0_autoprefixer@10.4.2:
+    resolution: {integrity: sha512-KRRIl+89dhISTCn4wzvDPYA1Zzvp2C1vIbv2Jy//MP59rVCF4e+gLZ/8su3wOqm2fv8tV1H1LlaccgOpOh4LSw==}
+    dependencies:
+      '@gits-id/button': 0.1.17-alpha.0_autoprefixer@10.4.2
+      '@gits-id/logo': 0.1.17-alpha.0
+      '@gits-id/menus': 0.1.17-alpha.0_autoprefixer@10.4.2
+      vue: 3.2.31
+    transitivePeerDependencies:
+      - autoprefixer
+      - ts-node
+    dev: false
+
+  /@gits-id/pages/0.1.17-alpha.0_autoprefixer@10.4.2:
+    resolution: {integrity: sha512-4CYPhHzjQdNbcgpTgUq7Ev9hOo0WT4MmCW4MAqD4q7eeRM3y2uUHxxIQnVrc2asoPxWEwaC7XRJRafwjhDjZdg==}
+    dependencies:
+      '@gits-id/button': 0.1.17-alpha.0_autoprefixer@10.4.2
+      '@gits-id/checkbox': 0.1.17-alpha.0
+      '@gits-id/input': 0.1.17-alpha.0
+      vue: 3.2.31
+    transitivePeerDependencies:
+      - autoprefixer
+      - ts-node
+    dev: false
+
+  /@gits-id/pagination/0.1.17-alpha.0:
+    resolution: {integrity: sha512-91B6D50hLH98gqBPudPpWds2Lc+kCgy10o3/Xjsgytl3ckgW/gtdPUqX2C7Kdhso7oxvZ4NXh3hDxI9kUkzs6Q==}
+    dependencies:
+      pagino: 1.4.1
+      vue: 3.2.31
+    dev: false
+
+  /@gits-id/progress-bar/0.1.17-alpha.0:
+    resolution: {integrity: sha512-X5kFulwCOTeSkcskX/1RThODPegOZJIvZvLNPyNNkF1gUEHq0HoOtue53duwMe6p0Q4CQHQR6rZG4Lyyt7iIBg==}
+    dependencies:
+      '@gits-id/utils': 0.1.17-alpha.0
+      vue: 3.2.31
+    dev: false
+
+  /@gits-id/radio/0.1.17-alpha.0:
+    resolution: {integrity: sha512-z20cr7Zrsc/3uCoKi75UxaCYOpvGIsWMb3wVZlCSm1Qj/8ma63rX0zleGKO1epyaM6IwRZKiudPqG6dhlE88vQ==}
+    dependencies:
+      '@gits-id/utils': 0.1.17-alpha.0
+      vue: 3.2.31
+    dev: false
+
+  /@gits-id/select/0.1.17-alpha.0:
+    resolution: {integrity: sha512-c837/qxUmM8UZAGgSwi9SqVe6fzzAoevmSzgU9Ql+/aeCZgDIFK7lVOrVVUL5Ah5mnm6oMtPNpxgFwwORIJJlg==}
+    dependencies:
+      '@gits-id/input': 0.1.17-alpha.0
+      '@gits-id/utils': 0.1.17-alpha.0
+      vue: 3.2.31
+    dev: false
+
+  /@gits-id/services/0.1.17-alpha.0_autoprefixer@10.4.2:
+    resolution: {integrity: sha512-2R5I7gjCy7UGqz+VcqizANSnIynOvFYtTfH3ph5aXNTIWwFQ4Fi1lxxH6dO0RLM+WWBc5WsFjcaue0VxDueKuw==}
+    dependencies:
+      '@gits-id/button': 0.1.17-alpha.0_autoprefixer@10.4.2
+      axios: 0.26.0
+    transitivePeerDependencies:
+      - autoprefixer
+      - debug
+      - ts-node
+    dev: false
+
+  /@gits-id/spinner/0.1.17-alpha.0:
+    resolution: {integrity: sha512-GmT2FwYcQsV2Rm/gY72h59MuqU8zgua2CpjzSUfmRsvQn0jZ789OF8Yc5IHkeiTSmifmnuXjPWT0/iFTAjgE6Q==}
+    dev: false
+
+  /@gits-id/stats/0.1.17-alpha.0:
+    resolution: {integrity: sha512-UWdlIpJvMlGi0ehl+NcbpJ/OcJzZbbhzDhWh1F59nldOhlru30uUBGJxRe+3Ix3hQcFxQMv9GfvDrRSh/m3ftQ==}
+    dependencies:
+      '@gits-id/badge': 0.1.17-alpha.0_vue@3.2.31
+      '@gits-id/card': 0.1.17-alpha.0
+      feather-icons: 4.28.0
+      vue: 3.2.31
+      vue-feather: 2.0.0_feather-icons@4.28.0+vue@3.2.31
+    dev: false
+
+  /@gits-id/switch/0.1.17-alpha.0:
+    resolution: {integrity: sha512-+sYc86FA74/O0YpVra1ehKJ7yiKQEMivrwt+/uj+BsqTr9a0J4yLzzg1bhr0ffYEjRL4MVNCoxp17e/M8tVNog==}
+    dependencies:
+      vue: 3.2.31
+    dev: false
+
+  /@gits-id/table/0.1.17-alpha.0:
+    resolution: {integrity: sha512-U8R48P6FdQxzvKrZlD/zh0uSaE1x2AxLgQp3c3Swc1QlBqSzllmWl7EC+9ui1AkIMAHXJIpiy2F4wNg4LbHojg==}
+    dependencies:
+      '@gits-id/checkbox': 0.1.17-alpha.0
+      '@gits-id/pagination': 0.1.17-alpha.0
+      '@gits-id/select': 0.1.17-alpha.0
+      '@gits-id/spinner': 0.1.17-alpha.0
+      '@gits-id/utils': 0.1.17-alpha.0
+    dev: false
+
+  /@gits-id/tabs/0.1.17-alpha.0_autoprefixer@10.4.2:
+    resolution: {integrity: sha512-htkL6MFtgqcrsGq08Ahyqe71tyZTR9LohzDlydcECSv/0GAjdUeCE+gpEbgwDUM/4dzG3Z+IgcTEXaU6Q3xqPw==}
+    dependencies:
+      '@gits-id/button': 0.1.17-alpha.0_autoprefixer@10.4.2
+      '@gits-id/card': 0.1.17-alpha.0
+      '@gits-id/utils': 0.1.17-alpha.0
+      vue: 3.2.31
+    transitivePeerDependencies:
+      - autoprefixer
+      - ts-node
+    dev: false
+
+  /@gits-id/tailwind-components/0.1.17-alpha.0:
+    resolution: {integrity: sha512-3xILpUCcEnttBjFZoDLS8zoolO1guoDvGC93W6Wagc7IcL73WaEHpc0NZFe8GgVvBgZ3aGZDH/8puhizTicwkg==}
+    dependencies:
+      vue: 3.2.31
+    dev: false
+
+  /@gits-id/tailwind-config/0.1.17-alpha.0_autoprefixer@10.4.2:
+    resolution: {integrity: sha512-2fNkvS7pT14Nn2j/2oBLJ3Ns884sfSo/KaIXIuTvzgxHKLTCLCl6+0ChJXfZTvXDcalK0naMsEDyslJ1xa/F9g==}
+    dependencies:
+      '@gits-id/tailwind-components': 0.1.17-alpha.0
+      '@gits-id/theme': 0.1.17-alpha.0_autoprefixer@10.4.2
+      '@gits-id/utils': 0.1.17-alpha.0
+      '@tailwindcss/aspect-ratio': 0.4.0_tailwindcss@3.0.23
+      '@tailwindcss/forms': 0.5.0_tailwindcss@3.0.23
+      '@tailwindcss/line-clamp': 0.3.1_tailwindcss@3.0.23
+      '@tailwindcss/typography': 0.5.2_tailwindcss@3.0.23
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
+    transitivePeerDependencies:
+      - autoprefixer
+      - ts-node
+    dev: false
+
+  /@gits-id/textarea/0.1.17-alpha.0:
+    resolution: {integrity: sha512-78Ru26Ksl9EJVirJdwwPl9xgMa7eoHvCBhx4trDq0kR0WNgsB/KiG9ZCzBuqBVvXfMlvZoMaGCoOdT8F1m7GPg==}
+    dependencies:
+      '@gits-id/utils': 0.1.17-alpha.0
+      vee-validate: 4.5.9_vue@3.2.31
+      vue: 3.2.31
+    dev: false
+
+  /@gits-id/theme/0.1.17-alpha.0_autoprefixer@10.4.2:
+    resolution: {integrity: sha512-wXJsubq1jcv/pHDNaHx+a4uzzUakcHxm0M8NKBWtd0y5yxnPVsSnaBL2hRu+wELKnlpu5zKQDTDK6QxOFDHZig==}
+    dependencies:
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
+    transitivePeerDependencies:
+      - autoprefixer
+      - ts-node
+    dev: false
+
+  /@gits-id/toast/0.1.17-alpha.0_3d6c258031c4dd1843b9c429a96b06e6:
+    resolution: {integrity: sha512-MYJLHK2tc2IZ5NukypHPOVAv/vEZMVELtWWXxrm0lhy+S6jc4+zS+rU2/Xy4VwFaXlMukc1bEQWNio+Oed5CUw==}
+    dependencies:
+      '@gits-id/button': 0.1.17-alpha.0_autoprefixer@10.4.2
+      pinia: 2.0.11_typescript@4.5.5+vue@3.2.31
+      vee-validate: 4.5.9_vue@3.2.31
+      vue: 3.2.31
+      vuex: 4.0.2_vue@3.2.31
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - autoprefixer
+      - ts-node
+      - typescript
+    dev: false
+
+  /@gits-id/tooltip/0.1.17-alpha.0:
+    resolution: {integrity: sha512-BOzONYa7TXADmUZp9JRokF5jjEjhfTyvjl4uR1TEH3J9KXkgR5UNuW8lZABcFaaG4GvIvaAaZIeX5Eb+xJZtXw==}
+    dependencies:
+      '@popperjs/core': 2.11.2
+      vee-validate: 4.5.9_vue@3.2.31
+      vue: 3.2.31
+    dev: false
+
+  /@gits-id/types/0.1.17-alpha.0:
+    resolution: {integrity: sha512-J6QJgjzo2Tnx3MEq2tdNNX40vE5XAtNJpm9TSNBmdo/D0UC8/97vdml+PuwQq4LBQdshy7k74eSFaXZQrOYimw==}
+    dependencies:
+      vue: 3.2.31
+    dev: false
+
+  /@gits-id/ui/0.1.17-alpha.55_901e7a627f905ae9ba08e287cceaa28b:
+    resolution: {integrity: sha512-L6ZeYmQNJVvSjHc8VfIo7iFzEYuFZ0UfMYH5Yb9ErgDxI6ofbUSIMjBV3JMbpcykRxMn1azptLfHSRD00eV5ng==}
+    dependencies:
+      '@gits-id/alert': 0.1.17-alpha.55_vue@3.2.31
+      '@gits-id/app-bar': 0.1.17-alpha.0
+      '@gits-id/badge': 0.1.17-alpha.0_vue@3.2.31
+      '@gits-id/breadcrumbs': 0.1.17-alpha.0
+      '@gits-id/button': 0.1.17-alpha.0_autoprefixer@10.4.2
+      '@gits-id/card': 0.1.17-alpha.0
+      '@gits-id/checkbox': 0.1.17-alpha.0
+      '@gits-id/collapsible': 0.1.17-alpha.0
+      '@gits-id/container': 0.1.17-alpha.0
+      '@gits-id/dropdown': 0.1.17-alpha.0_autoprefixer@10.4.2
+      '@gits-id/editor': 0.1.17-alpha.0
+      '@gits-id/file-input': 0.1.17-alpha.0_autoprefixer@10.4.2
+      '@gits-id/form-group': 0.1.17-alpha.0
+      '@gits-id/form-select': 0.1.17-alpha.0
+      '@gits-id/input': 0.1.17-alpha.0
+      '@gits-id/layouts': 0.1.17-alpha.0
+      '@gits-id/logo': 0.1.17-alpha.0
+      '@gits-id/menu': 0.1.17-alpha.0
+      '@gits-id/menus': 0.1.17-alpha.0_autoprefixer@10.4.2
+      '@gits-id/modal': 0.1.17-alpha.0
+      '@gits-id/multi-select': 0.1.17-alpha.0
+      '@gits-id/nav-drawer': 0.1.17-alpha.0_autoprefixer@10.4.2
+      '@gits-id/navbar': 0.1.17-alpha.0_autoprefixer@10.4.2
+      '@gits-id/pages': 0.1.17-alpha.0_autoprefixer@10.4.2
+      '@gits-id/pagination': 0.1.17-alpha.0
+      '@gits-id/progress-bar': 0.1.17-alpha.0
+      '@gits-id/radio': 0.1.17-alpha.0
+      '@gits-id/select': 0.1.17-alpha.0
+      '@gits-id/services': 0.1.17-alpha.0_autoprefixer@10.4.2
+      '@gits-id/spinner': 0.1.17-alpha.0
+      '@gits-id/stats': 0.1.17-alpha.0
+      '@gits-id/switch': 0.1.17-alpha.0
+      '@gits-id/table': 0.1.17-alpha.0
+      '@gits-id/tabs': 0.1.17-alpha.0_autoprefixer@10.4.2
+      '@gits-id/tailwind-components': 0.1.17-alpha.0
+      '@gits-id/tailwind-config': 0.1.17-alpha.0_autoprefixer@10.4.2
+      '@gits-id/textarea': 0.1.17-alpha.0
+      '@gits-id/toast': 0.1.17-alpha.0_3d6c258031c4dd1843b9c429a96b06e6
+      '@gits-id/tooltip': 0.1.17-alpha.0
+      '@gits-id/types': 0.1.17-alpha.0
+      '@gits-id/utils': 0.1.17-alpha.0
+      vue-remix-icons: 1.1.1
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - autoprefixer
+      - debug
+      - ts-node
+      - typescript
+      - vue
+    dev: false
+
+  /@gits-id/utils/0.1.17-alpha.0:
+    resolution: {integrity: sha512-Z4XQnRzYbwYCHFhFzBuJK3ErS1B2FORZ82p8QRrNVb4vfG5mpUoFrLw1fIcD1SWNPwDNQJvYFgV1YipN812OaA==}
+    dependencies:
+      vue: 3.2.31
+    dev: false
 
   /@headlessui/vue/1.4.1_vue@3.2.31:
     resolution: {integrity: sha512-yLgpqxJGdGw+ylouZfxxuXXBqCWRZq+Jh1jb23cXQIuAngbisN5BlSO8pPpvKOvk6hXr8dx9bPohSn45cbIIHw==}

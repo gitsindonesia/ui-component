@@ -17,6 +17,7 @@ import {
 import {CameraIcon, PlusIcon, TrashIcon} from '@heroicons/vue/solid';
 import VBtn from '@gits-id/button';
 import VInput from '@gits-id/input';
+import VSpinner from '@gits-id/spinner';
 import {ErrorMessage} from 'vee-validate';
 
 type FileValue = File | FileList | File[] | Record<string, any> | null;
