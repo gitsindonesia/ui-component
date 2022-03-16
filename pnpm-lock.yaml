@@ -171,6 +171,7 @@ importers:
       vue: ^3.2.31
       vue-loader: ^16.8.3
       vue-prism-component: ^2.0.0
+      vue-remix-icons: ^1.1.1
       vue-router: ^4.0.12
       vue-tsc: ^0.31.4
     dependencies:
@@ -181,6 +182,7 @@ importers:
       prismjs: 1.27.0
       vue: 3.2.31
       vue-prism-component: 2.0.0
+      vue-remix-icons: 1.1.1
       vue-router: 4.0.13_vue@3.2.31
     devDependencies:
       '@babel/core': 7.17.5
