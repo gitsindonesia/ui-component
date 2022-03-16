@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ref, computed, toRefs, watch, PropType } from "vue";
-import { ErrorMessage } from "vee-validate";
-import { useTextSize } from "@gits-id/utils";
+import {ref, computed, toRefs, watch, PropType} from 'vue';
+import {ErrorMessage} from 'vee-validate';
+import {useTextSize} from '@gits-id/utils';
 
 type Value = string | number | object | boolean | Record<string, any>;
 
@@ -18,11 +18,11 @@ const props = defineProps({
   },
   label: {
     type: String,
-    default: "",
+    default: '',
   },
   name: {
     type: String,
-    default: "",
+    default: '',
   },
   error: {
     type: Boolean,
@@ -46,15 +46,19 @@ const props = defineProps({
   },
   itemText: {
     type: String,
-    default: "text",
+    default: 'text',
   },
   itemValue: {
     type: String,
-    default: "value",
+    default: 'value',
   },
   size: {
     type: String,
-    default: "",
+    default: '',
+  },
+  inline: {
+    type: Boolean,
+    default: false,
   },
 });
 
@@ -70,44 +74,45 @@ const {
   itemValue,
   itemText,
   size,
+  inline,
 } = toRefs(props);
 
 const emit = defineEmits([
-  "update:modelValue",
-  "update:value",
-  "input",
-  "change",
-  "blur",
+  'update:modelValue',
+  'update:value',
+  'input',
+  'change',
+  'blur',
 ]);
 
 const selected = ref(value.value || modelValue.value);
 
 const onChange = (event: any) => {
-  emit("change", event);
+  emit('change', event);
 };
 
 const classes = computed(() =>
   error.value
-    ? "text-error-600 focus:ring-error-600"
-    : "text-primary-600 focus:ring-primary-600"
+    ? 'text-error-600 focus:ring-error-600'
+    : 'text-primary-600 focus:ring-primary-600',
 );
 
 const getValue = (item: RadioItem) => {
-  return typeof item === "object" ? item?.[itemValue.value] : item;
+  return typeof item === 'object' ? item?.[itemValue.value] : item;
 };
 
 const getText = (item: RadioItem) => {
-  return typeof item === "object" ? item?.[itemText.value] : item;
+  return typeof item === 'object' ? item?.[itemText.value] : item;
 };
 
 watch(selected, (value) => {
-  emit("update:modelValue", value);
-  emit("update:value", value);
-  emit("input", value);
-  emit("change", value);
+  emit('update:modelValue', value);
+  emit('update:value', value);
+  emit('input', value);
+  emit('change', value);
 });
 
-const { class: sizeClass } = useTextSize(size.value);
+const {class: sizeClass} = useTextSize(size.value);
 
 const setInnerValue = (val: Value) => {
   selected.value = val;
@@ -118,7 +123,7 @@ watch(
   (val) => {
     setInnerValue(val);
   },
-  { immediate: true }
+  {immediate: true},
 );
 
 watch(
@@ -126,7 +131,7 @@ watch(
   (val) => {
     setInnerValue(val);
   },
-  { immediate: true }
+  {immediate: true},
 );
 </script>
 
@@ -135,12 +140,15 @@ watch(
     <label
       v-if="label"
       :for="name"
-      class="font-bold mb-2 block"
-      :class="error ? 'text-error-600' : 'text-gray-700'"
+      class="font-semibold mb-1 block"
+      :class="error ? 'text-error-500' : 'text-gray-700'"
     >
       {{ label }}
     </label>
-    <div class="flex flex-col sm:flex-row sm:items-center gap-y-2 sm:gap-y-0 gap-x-8">
+    <div
+      class="flex gap-y-2 sm:gap-y-0 gap-x-8"
+      :class="[inline ? 'flex-row' : 'flex-col']"
+    >
       <label v-for="(item, index) in items" :key="index">
         <input
           v-model="selected"

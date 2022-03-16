@@ -17,28 +17,49 @@ export default {
     errorMessages: [],
     name: '',
     label: 'Select',
+    inline: false,
   },
 } as Meta;
 
-// const Template = (args) => ({
-//   // Components used in your story `template` are defined in the `components` object
-//   components: {VRadioGroup},
-//   // The story's `args` need to be mapped into the template through the `setup()` method
-//   setup() {
-//     return {args};
-//   },
-//   // And then the `args` are bound to your component with `v-bind="args"`
-//   template: `<V-RadioGroup v-bind='args'/>`,
-// });
-//
-// export const Default = Template.bind({});
-// Default.args = {};
-
-export const RadioGroup: Story = (args) => ({
+const Template: Story = (args) => ({
+  // Components used in your story `template` are defined in the `components` object
   components: {VRadioGroup},
+  // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
     return {args};
   },
-  template: '<VRadioGroup v-bind="args" />',
+  // And then the `args` are bound to your component with `v-bind="args"`
+  template: `<V-RadioGroup v-bind='args'/>`,
 });
-RadioGroup.storyName = 'RadioGroup';
+
+export const Default = Template.bind({});
+Default.args = {};
+
+export const Inline = Template.bind({});
+Inline.args = {
+  inline: true,
+};
+
+export const Error = Template.bind({});
+Error.args = {
+  error: true,
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  disabled: true,
+};
+
+export const NoLabel = Template.bind({});
+NoLabel.args = {
+  label: '',
+};
+
+// export const RadioGroup: Story = (args) => ({
+//   components: {VRadioGroup},
+//   setup() {
+//     return {args};
+//   },
+//   template: '<VRadioGroup v-bind="args" />',
+// });
+// RadioGroup.storyName = 'RadioGroup';
