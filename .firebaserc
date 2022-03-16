@@ -1,5 +1,17 @@
 {
   "projects": {
     "default": "gits-components"
+  },
+  "targets": {
+    "gits-ui": {
+      "hosting": {
+        "playground": [
+          "gits-components"
+        ],
+        "ui": [
+          "gits-ui"
+        ]
+      }
+    }
   }
 }
