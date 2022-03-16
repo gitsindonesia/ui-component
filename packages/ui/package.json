@@ -1,9 +1,9 @@
 {
   "name": "@gits-id/ui",
-  "version": "0.1.17-alpha.0",
+  "version": "0.1.17-alpha.55+9616f31",
   "scripts": {},
   "dependencies": {
-    "@gits-id/alert": "^0.1.17-alpha.0",
+    "@gits-id/alert": "^0.1.17-alpha.55+9616f31",
     "@gits-id/app-bar": "^0.1.17-alpha.0",
     "@gits-id/badge": "^0.1.17-alpha.0",
     "@gits-id/breadcrumbs": "^0.1.17-alpha.0",
@@ -37,8 +37,8 @@
     "@gits-id/switch": "^0.1.17-alpha.0",
     "@gits-id/table": "^0.1.17-alpha.0",
     "@gits-id/tabs": "^0.1.17-alpha.0",
-    "@gits-id/tailwind-config": "^0.1.17-alpha.0",
     "@gits-id/tailwind-components": "^0.1.17-alpha.0",
+    "@gits-id/tailwind-config": "^0.1.17-alpha.0",
     "@gits-id/textarea": "^0.1.17-alpha.0",
     "@gits-id/toast": "^0.1.17-alpha.0",
     "@gits-id/tooltip": "^0.1.17-alpha.0",
@@ -46,5 +46,6 @@
     "@gits-id/utils": "^0.1.17-alpha.0",
     "vue-remix-icons": "^1.1.1"
   },
-  "main": "index.ts"
+  "main": "index.ts",
+  "gitHead": "9616f31f0d2d461f4fa9273b40ab9edc8130a724"
 }
