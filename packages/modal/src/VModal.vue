@@ -5,14 +5,15 @@ export default {
 </script>
 
 <script setup lang="ts">
-import { ref, toRefs, watch } from "vue";
+import {ref, toRefs, watch} from 'vue';
 import {
   TransitionRoot,
   TransitionChild,
   Dialog,
   DialogOverlay,
   DialogTitle,
-} from "@headlessui/vue";
+} from '@headlessui/vue';
+import VBtn from '@gits-id/button';
 
 interface Props {
   modelValue?: boolean;
@@ -34,23 +35,23 @@ interface Props {
 
 const props = withDefaults(defineProps<Props>(), {
   modelValue: false,
-  title: "",
+  title: '',
   confirm: false,
-  confirmColor: "primary",
+  confirmColor: 'primary',
   confirmProps: () => ({}),
-  confirmText: "Confirm",
-  closeText: "Close",
+  confirmText: 'Confirm',
+  closeText: 'Close',
   closeProps: () => ({}),
-  headerClass: "",
-  bodyClass: "",
-  footerClass: "",
-  modalClass: "",
+  headerClass: '',
+  bodyClass: '',
+  footerClass: '',
+  modalClass: '',
   boolean: false,
   hideHeader: false,
   hideFooter: false,
 });
 
-const emit = defineEmits(["update:modelValue", "confirm", "close", "open"]);
+const emit = defineEmits(['update:modelValue', 'confirm', 'close', 'open']);
 
 const {
   modelValue,
@@ -68,22 +69,22 @@ const isOpen = ref(modelValue.value);
 
 watch(modelValue, (val) => (isOpen.value = val));
 
-watch(isOpen, (val) => emit("update:modelValue", val));
+watch(isOpen, (val) => emit('update:modelValue', val));
 
 function closeModal() {
   isOpen.value = false;
-  emit("update:modelValue", false);
-  emit("close");
+  emit('update:modelValue', false);
+  emit('close');
 }
 
 function openModal() {
   isOpen.value = true;
-  emit("update:modelValue", true);
-  emit("open");
+  emit('update:modelValue', true);
+  emit('open');
 }
 
 const onConfirm = () => {
-  emit("confirm", {
+  emit('confirm', {
     open: openModal,
     close: closeModal,
   });

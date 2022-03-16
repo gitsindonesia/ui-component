@@ -493,6 +493,7 @@ importers:
 
   packages/modal:
     specifiers:
+      '@gits-id/button': ^0.1.17-alpha.0
       '@gits-id/utils': ^0.1.17-alpha.0
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
@@ -500,6 +501,7 @@ importers:
       vee-validate: ^4.5.9
       vue: ^3.2.31
     dependencies:
+      '@gits-id/button': link:../button
       vue: 3.2.31
     devDependencies:
       '@gits-id/utils': link:../utils
