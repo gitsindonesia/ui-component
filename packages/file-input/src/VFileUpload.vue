@@ -5,11 +5,19 @@ export default {
 </script>
 
 <script setup lang="ts">
-import { ref, toRefs, computed, watch, PropType, onMounted, onUnmounted } from "vue";
-import { CameraIcon, PlusIcon, TrashIcon } from "@heroicons/vue/solid";
-import VBtn from "@gits-id/button";
-import VInput from "@gits-id/input";
-import { ErrorMessage } from "vee-validate";
+import {
+  ref,
+  toRefs,
+  computed,
+  watch,
+  PropType,
+  onMounted,
+  onUnmounted,
+} from 'vue';
+import {CameraIcon, PlusIcon, TrashIcon} from '@heroicons/vue/solid';
+import VBtn from '@gits-id/button';
+import VInput from '@gits-id/input';
+import {ErrorMessage} from 'vee-validate';
 
 type FileValue = File | FileList | File[] | Record<string, any> | null;
 
@@ -40,7 +48,7 @@ const props = defineProps({
   },
   accept: {
     type: String,
-    default: "",
+    default: '',
   },
   inputProps: {
     type: Object,
@@ -48,7 +56,7 @@ const props = defineProps({
   },
   name: {
     type: String,
-    default: "",
+    default: '',
   },
   error: {
     type: Boolean,
@@ -60,15 +68,15 @@ const props = defineProps({
   },
   placeholder: {
     type: String,
-    default: "Browse file...",
+    default: 'Browse file...',
   },
   hint: {
     type: String,
-    default: "",
+    default: '',
   },
   id: {
     type: String,
-    default: "",
+    default: '',
   },
   readonly: {
     type: Boolean,
@@ -80,19 +88,19 @@ const props = defineProps({
   },
   browseText: {
     type: String,
-    default: "Browse",
+    default: 'Browse',
   },
   changeText: {
     type: String,
-    default: "Change",
+    default: 'Change',
   },
   removeText: {
     type: String,
-    default: "Remove",
+    default: 'Remove',
   },
   viewFileText: {
     type: String,
-    default: "View File",
+    default: 'View File',
   },
   loading: {
     type: Boolean,
@@ -100,12 +108,13 @@ const props = defineProps({
   },
   loadingText: {
     type: String,
-    default: "Uploading...",
+    default: 'Uploading...',
   },
   theme: {
     type: String,
-    default: "",
-    validator: (v: string) => ["button", "image", "", "default", "dropzone"].includes(v),
+    default: '',
+    validator: (v: string) =>
+      ['button', 'image', '', 'default', 'dropzone'].includes(v),
   },
   multiple: {
     type: Boolean,
@@ -117,11 +126,11 @@ const props = defineProps({
   },
   uploadText: {
     type: String,
-    default: "Upload a file",
+    default: 'Upload a file',
   },
   dragText: {
     type: String,
-    default: "or drag and drop",
+    default: 'or drag and drop',
   },
   preview: {
     type: Boolean,
@@ -129,15 +138,15 @@ const props = defineProps({
   },
   previewClass: {
     type: String,
-    default: "",
+    default: '',
   },
   customSize: {
     type: String,
-    default: "w-full sm:w-[180px] h-[180px]",
+    default: 'w-full sm:w-[180px] h-[180px]',
   },
   customLayout: {
     type: String,
-    default: "",
+    default: '',
   },
   hideRemove: {
     type: Boolean,
@@ -146,12 +155,12 @@ const props = defineProps({
 });
 
 const emit = defineEmits([
-  "input",
-  "removed",
-  "update:modelValue",
-  "update:value",
-  "change",
-  "blur",
+  'input',
+  'removed',
+  'update:modelValue',
+  'update:value',
+  'change',
+  'blur',
 ]);
 
 const {
@@ -167,14 +176,14 @@ const {
   hideRemove,
 } = toRefs(props);
 
-const sizeClass = computed(() => (props.full ? "w-full" : customSize.value));
+const sizeClass = computed(() => (props.full ? 'w-full' : customSize.value));
 
 const innerValue = ref<FileValue>(null);
 const fileRef = ref<HTMLInputElement | null>(null);
 const previewURL = ref<string | null>(null);
 const hasInitialValue = ref(false);
 
-const acceptedTypes = computed(() => (image.value ? "image/*" : accept.value));
+const acceptedTypes = computed(() => (image.value ? 'image/*' : accept.value));
 
 const inputAttrs = computed(() => ({
   ...inputProps.value,
@@ -189,9 +198,9 @@ const handleFiles = (files: FileList) => {
   if (multiple.value) {
     innerValue.value = files;
 
-    emit("change", files);
-    emit("update:modelValue", files);
-    emit("update:value", files);
+    emit('change', files);
+    emit('update:modelValue', files);
+    emit('update:value', files);
   } else {
     const firstFile = files[0];
 
@@ -201,9 +210,9 @@ const handleFiles = (files: FileList) => {
       previewURL.value = URL.createObjectURL(firstFile);
     }
 
-    emit("change", firstFile);
-    emit("update:modelValue", firstFile);
-    emit("update:value", firstFile);
+    emit('change', firstFile);
+    emit('update:modelValue', firstFile);
+    emit('update:value', firstFile);
   }
 };
 
@@ -221,17 +230,17 @@ const removeFile = () => {
   hasInitialValue.value = false;
   fileRef.value = null;
 
-  emit("change", null);
-  emit("update:modelValue", null);
-  emit("update:value", null);
-  emit("removed");
+  emit('change', null);
+  emit('update:modelValue', null);
+  emit('update:value', null);
+  emit('removed');
 };
 
 const setInitialValue = (val: any) => {
   const isFile = val instanceof File;
   const isFileList = val instanceof FileList;
 
-  if (typeof val === "string") {
+  if (typeof val === 'string') {
     hasInitialValue.value = true;
     previewURL.value = val;
   }
@@ -257,11 +266,13 @@ const hasFile = computed(() => {
 });
 
 const fileName = computed(
-  () => (innerValue.value || value.value || modelValue.value || { name: "" }).name
+  () =>
+    (innerValue.value || value.value || modelValue.value || {name: ''}).name,
 );
 
 const fileURL = computed(
-  () => (innerValue.value || value.value || modelValue.value || { file: "" }).file
+  () =>
+    (innerValue.value || value.value || modelValue.value || {file: ''}).file,
 );
 
 watch(
@@ -269,7 +280,7 @@ watch(
   (val) => {
     setInitialValue(val);
   },
-  { immediate: true }
+  {immediate: true},
 );
 
 watch(
@@ -277,11 +288,11 @@ watch(
   (val) => {
     setInitialValue(val);
   },
-  { immediate: true }
+  {immediate: true},
 );
 
 const disabledClass = computed(() => {
-  return disabled.value || readonly.value ? "disabled-input" : "";
+  return disabled.value || readonly.value ? 'disabled-input' : '';
 });
 
 //generates random id;
@@ -291,13 +302,26 @@ let guid = () => {
       .toString(16)
       .substring(1);
   };
-  return s4() + s4() + "-" + s4() + "-" + s4() + "-" + s4() + "-" + s4() + s4() + s4();
+  return (
+    s4() +
+    s4() +
+    '-' +
+    s4() +
+    '-' +
+    s4() +
+    '-' +
+    s4() +
+    '-' +
+    s4() +
+    s4() +
+    s4()
+  );
 };
 
 const dropzoneId = computed(() => guid());
 
-const dragInactiveClass = "border-gray-300";
-const dragClass = "border-primary-600";
+const dragInactiveClass = 'border-gray-300';
+const dragClass = 'border-primary-600';
 
 const isDropZoneTarget = (event: any) => {
   return Array.from(event.target.classList).includes(dropzoneId.value);
@@ -333,17 +357,17 @@ const onDragLeave = (event: any) => {
 };
 
 onMounted(() => {
-  document.addEventListener("dragover", onDragOver, false);
-  document.addEventListener("drop", onDrop);
-  document.addEventListener("dragenter", onDragEnter, false);
-  document.addEventListener("dragleave", onDragLeave, false);
+  document.addEventListener('dragover', onDragOver, false);
+  document.addEventListener('drop', onDrop);
+  document.addEventListener('dragenter', onDragEnter, false);
+  document.addEventListener('dragleave', onDragLeave, false);
 });
 
 onUnmounted(() => {
-  document.removeEventListener("dragover", onDragOver, false);
-  document.removeEventListener("drop", onDrop);
-  document.removeEventListener("dragenter", onDragEnter, false);
-  document.removeEventListener("dragleave", onDragLeave, false);
+  document.removeEventListener('dragover', onDragOver, false);
+  document.removeEventListener('drop', onDrop);
+  document.removeEventListener('dragenter', onDragEnter, false);
+  document.removeEventListener('dragleave', onDragLeave, false);
 });
 </script>
 
@@ -370,7 +394,10 @@ onUnmounted(() => {
           {{ viewFileText }}
         </v-btn>
 
-        <div v-if="!hasFile && !hidePlaceholder" class="text-sm mt-1 text-gray-500">
+        <div
+          v-if="!hasFile && !hidePlaceholder"
+          class="text-sm mt-1 text-gray-500"
+        >
           {{ placeholder }}
         </div>
       </div>
@@ -419,8 +446,8 @@ onUnmounted(() => {
 
     <div v-else-if="theme === 'image'">
       <div
-        class="transition duration-300 border cursor-pointer hover:bg-lime-50 hover:border-primary-600 flex flex-col items-center justify-center border-gray-200 py-10 bg-no-repeat bg-contain bg-center max-w-full"
-        :class="[sizeClass, { 'rounded-10': rounded }]"
+        class="transition duration-300 border cursor-pointer hover:bg-primary-50 hover:border-primary-600 flex flex-col items-center justify-center border-gray-200 py-10 bg-no-repeat bg-contain bg-center max-w-full"
+        :class="[sizeClass, {'rounded-10': rounded}]"
         :style="{
           backgroundImage: image && !loading ? `url(${previewURL})` : 'none',
         }"
@@ -428,7 +455,7 @@ onUnmounted(() => {
       >
         <v-spinner v-if="loading" color="primary" large />
         <div v-else-if="hasFile" class="px-2 text-center">
-          {{ image ? "" : fileName }}
+          {{ image ? '' : fileName }}
         </div>
         <template v-else>
           <CameraIcon class="w-10 h-10 text-gray-500 mb-1" />
@@ -607,7 +634,12 @@ onUnmounted(() => {
       </div>
     </slot>
 
-    <slot name="error" :error="error" :error-messages="errorMessages" :name="name">
+    <slot
+      name="error"
+      :error="error"
+      :error-messages="errorMessages"
+      :name="name"
+    >
       <ErrorMessage
         v-if="errorMessages.length"
         class="text-error-500 text-sm"
