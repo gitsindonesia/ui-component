@@ -27,7 +27,6 @@
   "devDependencies": {
     "@babel/core": "^7.17.5",
     "@base2/pretty-print-object": "^1.0.1",
-    "@changesets/cli": "^2.21.1",
     "@headlessui/vue": "1.4.1",
     "@heroicons/vue": "^1.0.6",
     "@iconify-json/heroicons-solid": "^1.1.1",
