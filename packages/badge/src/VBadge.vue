@@ -5,7 +5,7 @@ import {XIcon} from '@heroicons/vue/outline';
 const props = defineProps({
   color: {
     type: String,
-    default: '',
+    default: 'default',
   },
   rounded: {
     type: Boolean,
@@ -35,6 +35,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  outlined: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const {dismissable} = toRefs(props);
@@ -46,22 +50,34 @@ const colorClass = computed(() => {
     return `${props.bgColor} ${props.textColor}`;
   }
 
-  switch (props.color) {
-    case 'primary':
-      return 'bg-primary-500 text-white';
-    case 'secondary':
-      return 'bg-secondary-500 text-white';
-    case 'error':
-      return 'bg-error-500 text-white';
-    case 'info':
-      return 'bg-info-500 text-white';
-    case 'warning':
-      return 'bg-warning-500 text-white';
-    case 'success':
-      return 'bg-success-500 text-white';
-    default:
-      return 'bg-gray-200 text-gray-900';
+  let colors: Record<string, string>;
+
+  if (props.outlined) {
+    colors = {
+      default: 'bg-transparent border border-gray-800 text-gray-800',
+      primary: 'bg-transparent border border-primary-500 text-primary-500',
+      secondary:
+        'bg-transparent border border-secondary-500 text-secondary-500',
+      info: 'bg-transparent border border-info-500 text-info-500',
+      warning: 'bg-transparent border border-warning-500 text-warning-500',
+      error: 'bg-transparent border border-error-500 text-error-500',
+      success: 'bg-transparent border border-success-500 text-success-500',
+      dark: 'bg-transparent border border-gray-900 text-gray-900',
+    };
+  } else {
+    colors = {
+      default: 'bg-gray-200 text-gray-800',
+      primary: 'bg-primary-500 text-white',
+      secondary: 'bg-secondary-500 text-white',
+      info: 'bg-info-500 text-white',
+      warning: 'bg-warning-500 text-white',
+      error: 'bg-error-500 text-white',
+      success: 'bg-success-500 text-white',
+      dark: 'bg-gray-900 text-white',
+    };
   }
+
+  return colors[props.color];
 });
 
 const sizeClass = computed(() => {
@@ -99,7 +115,7 @@ const circleClass = computed(() => {
 });
 
 const dismissableColor = computed(() => {
-  const colors = {
+  const colors: Record<string, string> = {
     default: 'hover:bg-gray-400 active:bg-gray-300 hover:text-white',
     primary: 'hover:bg-primary-400 active:bg-primary-300',
     secondary: 'hover:bg-secondary-400 active:bg-secondary-300',
@@ -109,7 +125,7 @@ const dismissableColor = computed(() => {
     error: 'hover:bg-error-400 active:bg-error-300',
   };
 
-  return colors[props.color || 'default'];
+  return colors[props.color];
 });
 
 const onDismiss = () => {

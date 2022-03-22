@@ -1,97 +1,78 @@
-import MyBadge from './VBadge.vue';
+import VBadge from './VBadge.vue';
 import {themeColors} from '@gits-id/utils/colors';
-import type {VBadgeProps} from './VBadge';
+import type {VBadgeProps} from './types';
 import {Story, Meta} from '@storybook/vue3';
 
 export default {
   title: 'Components/Badge',
-  component: MyBadge,
+  component: VBadge,
   argTypes: {
     color: {
       control: {type: 'select', options: themeColors},
     },
   },
   args: {
-    label: 'Badge text',
+    label: '',
     dismissable: false,
     icon: false,
+    outlined: false,
   },
 } as Meta;
 
 const Template: Story<VBadgeProps> = (args) => ({
   // Components used in your story `template` are defined in the `components` object
   components: {
-    'my-component': MyBadge,
+    VBadge,
   },
   // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
-    return {args};
+    return {args, themeColors};
   },
   // And then the `args` are bound to your component with `v-bind="args"`
-  template: `<my-component v-bind="args">{{ args.label }}</my-component>`,
+  template: `
+<div class="flex flex-row flex-wrap gap-2">
+  <VBadge v-for="color in themeColors" :key="color" v-bind="args" :color="color">{{ args.label || color }}</VBadge>
+</div>
+  `,
 });
 
-export const Default = Template.bind({});
-Default.args = {};
-
-export const Primary = Template.bind({});
-Primary.args = {
-  color: 'primary',
-};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  color: 'secondary',
-};
-
-export const Info = Template.bind({});
-Info.args = {
-  color: 'info',
-};
-
-export const Warning = Template.bind({});
-Warning.args = {
-  color: 'warning',
-};
-
-export const Success = Template.bind({});
-Success.args = {
-  color: 'success',
-};
-
-export const Error = Template.bind({});
-Error.args = {
-  color: 'error',
-};
+export const Variants = Template.bind({});
+Variants.args = {};
 
 export const Rounded = Template.bind({});
 Rounded.args = {
   rounded: true,
-  color: 'success',
 };
 
 export const Circle = Template.bind({});
 Circle.args = {
   circle: true,
   label: 20,
-  color: 'error',
 };
 
 export const Large = Template.bind({});
 Large.args = {
-  color: 'success',
   large: true,
 };
 
 export const Small = Template.bind({});
 Small.args = {
-  color: 'success',
   small: true,
 };
 
-export const CustomColor = Template.bind({});
-CustomColor.args = {
-  bgColor: 'bg-white',
-  textColor: 'text-info',
-  class: 'border border-info',
+export const Dismissable = Template.bind({});
+Dismissable.args = {
+  dismissable: true,
 };
+
+export const Outlined = Template.bind({});
+Outlined.args = {
+  outlined: true,
+};
+
+// export const CustomColor = Template.bind({});
+// CustomColor.args = {
+//   bgColor: 'bg-white',
+//   textColor: 'text-info-500',
+//   class: 'border border-info-500',
+// };

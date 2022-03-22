@@ -8,4 +8,6 @@ export type VBadgeProps = {
   circle: boolean;
   label: string | number;
   class: string;
+  dismissable: boolean;
+  outlined: boolean;
 };
