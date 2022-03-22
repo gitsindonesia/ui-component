@@ -1,4 +1,4 @@
-import { computed } from 'vue';
+import {computed} from 'vue';
 
 export type Sizes = 'xs' | 'sm' | 'default' | 'lg' | 'xl' | '' | string;
 
@@ -23,7 +23,7 @@ export const useTextSize = (size: string) => {
     }
   });
 
-  return { class: className, size };
+  return {class: className, size};
 };
 
 export const useHeight = (size: string) => {
@@ -37,10 +37,13 @@ export const useHeight = (size: string) => {
         return 'h-[50px]';
       case 'xl':
         return 'h-[60px]';
+      case 'default':
+      case 'md':
+      case 'base':
       default:
         return 'h-[40px]';
     }
   });
 
-  return { class: className, size };
+  return {class: className, size};
 };

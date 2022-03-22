@@ -1,10 +1,16 @@
 <script setup lang="ts">
-import { computed, PropType, ref, toRefs, watch } from "vue";
-import { Listbox, ListboxButton, ListboxOptions, ListboxOption } from "@headlessui/vue";
-import { CheckIcon, ChevronDownIcon, XIcon } from "@heroicons/vue/solid";
-import { getBgColor, getTextColor } from "@gits-id/utils";
-import VInput from "@gits-id/input";
-import { ErrorMessage } from "vee-validate";
+import {computed, PropType, ref, toRefs, watch} from 'vue';
+import {
+  Listbox,
+  ListboxButton,
+  ListboxOptions,
+  ListboxOption,
+} from '@headlessui/vue';
+import {CheckIcon, ChevronDownIcon, XIcon} from '@heroicons/vue/solid';
+import {getBgColor, getTextColor} from '@gits-id/utils';
+import VInput from '@gits-id/input';
+import VTooltip from '@gits-id/tooltip';
+import {ErrorMessage} from 'vee-validate';
 
 interface SelectItem {
   text: string;
@@ -28,11 +34,11 @@ const props = defineProps({
   },
   color: {
     type: String,
-    default: "primary",
+    default: 'primary',
   },
   placeholder: {
     type: String,
-    default: "Select",
+    default: 'Select',
   },
   searchable: {
     type: Boolean,
@@ -44,7 +50,7 @@ const props = defineProps({
   },
   btnClass: {
     type: String,
-    default: "",
+    default: '',
   },
   top: {
     type: Boolean,
@@ -52,15 +58,15 @@ const props = defineProps({
   },
   itemText: {
     type: String,
-    default: "text",
+    default: 'text',
   },
   itemValue: {
     type: String,
-    default: "value",
+    default: 'value',
   },
   name: {
     type: String,
-    default: "",
+    default: '',
   },
   error: {
     type: Boolean,
@@ -80,7 +86,7 @@ const props = defineProps({
   },
   clearText: {
     type: String,
-    default: "Clear",
+    default: 'Clear',
   },
   disabled: {
     type: Boolean,
@@ -107,7 +113,7 @@ const {
   returnObject,
 } = toRefs(props);
 
-const emit = defineEmits(["update:modelValue", "update:value", "search"]);
+const emit = defineEmits(['update:modelValue', 'update:value', 'search']);
 
 const bgColor = getBgColor(color.value);
 const textColor = getTextColor(color.value);
@@ -115,7 +121,7 @@ const textColor = getTextColor(color.value);
 type Val = string | number | boolean | Record<string, any> | null;
 
 const selectedItem = ref<Val>(modelValue.value || value.value);
-const search = ref("");
+const search = ref('');
 
 const filteredItems = computed(() => {
   if (searchable.value) {
@@ -137,7 +143,7 @@ const setValue = (val: Val) => {
   } else {
     const newVal = val || modelValue.value || value.value;
 
-    if (["string", "number", "boolean"].includes(typeof newVal)) {
+    if (['string', 'number', 'boolean'].includes(typeof newVal)) {
       const itemVal = filteredItems.value.find((item) => {
         return item[itemValue.value] === newVal;
       });
@@ -151,9 +157,11 @@ const setValue = (val: Val) => {
 };
 
 watch(selectedItem, (item) => {
-  const val = returnObject.value ? item : (item as SelectItem)?.[itemValue.value];
-  emit("update:modelValue", val);
-  emit("update:value", val);
+  const val = returnObject.value
+    ? item
+    : (item as SelectItem)?.[itemValue.value];
+  emit('update:modelValue', val);
+  emit('update:value', val);
 });
 
 watch(
@@ -161,7 +169,7 @@ watch(
   (val) => {
     setValue(val);
   },
-  { immediate: true }
+  {immediate: true},
 );
 
 watch(
@@ -169,15 +177,17 @@ watch(
   (val) => {
     setValue(val);
   },
-  { immediate: true }
+  {immediate: true},
 );
 
 watch(search, (val) => {
-  emit("search", val);
+  emit('search', val);
 });
 
 const label = computed(() => {
-  return (selectedItem.value as SelectItem)?.[itemText.value] || placeholder.value;
+  return (
+    (selectedItem.value as SelectItem)?.[itemText.value] || placeholder.value
+  );
 });
 
 const clear = () => (selectedItem.value = null);
@@ -198,7 +208,7 @@ const clear = () => (selectedItem.value = null);
             </slot>
           </div>
           <v-tooltip v-if="selectedItem && clearable">
-            <template #activator="{ on }">
+            <template #activator="{on}">
               <span v-on="on" @click="clear" class="w-auto cursor-pointer">
                 <XIcon
                   class="w-5 h-5 text-gray-400 hover:text-gray-500"
@@ -225,12 +235,15 @@ const clear = () => (selectedItem.value = null);
             <div v-if="searchable" class="px-2 border-b py-2">
               <v-input v-model="search" size="sm" placeholder="Search..." />
             </div>
-            <div v-if="searchable && !filteredItems.length" class="px-4 pb-2 pt-3">
+            <div
+              v-if="searchable && !filteredItems.length"
+              class="px-4 pb-2 pt-3"
+            >
               <slot name="empty"> No results </slot>
             </div>
             <ListboxOption
               v-for="(item, index) in filteredItems"
-              v-slot="{ active, selected }"
+              v-slot="{active, selected}"
               :key="index"
               :value="item"
               as="template"
@@ -244,7 +257,10 @@ const clear = () => (selectedItem.value = null);
                 ]"
               >
                 <span
-                  :class="[selected ? 'font-medium' : 'font-normal', 'block truncate']"
+                  :class="[
+                    selected ? 'font-medium' : 'font-normal',
+                    'block truncate',
+                  ]"
                 >
                   <slot name="item" :item="item">
                     {{ item?.[itemText] }}
