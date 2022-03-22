@@ -15,7 +15,7 @@ export default {
     width: 70,
     modelValue: '',
     label: 'ProgressBar',
-    color: 'primary',
+    color: 'default',
     size: '',
   },
 } as Meta;
@@ -25,11 +25,13 @@ const Template: Story = (args) => ({
   components: {VProgressBar},
   // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
-    return {args};
+    return {args, themeColors};
   },
   // And then the `args` are bound to your component with `v-bind="args"`
-  template: `<VProgressBar v-bind='args' />`,
+  template: `
+    <VProgressBar v-for="color in themeColors" :key="color" v-bind='args' :color="color" />
+  `,
 });
 
-export const ProgressBar = Template.bind({});
-ProgressBar.args = {};
+export const Variants = Template.bind({});
+Variants.args = {};
