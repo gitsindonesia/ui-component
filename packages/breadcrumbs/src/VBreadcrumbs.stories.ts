@@ -1,5 +1,7 @@
 import VBreadcrumbs from './VBreadcrumbs.vue';
 import {Meta, Story} from '@storybook/vue3';
+import {RiArrowRightSLine} from 'vue-remix-icons';
+import vueRouter from 'storybook-vue3-router';
 
 export default {
   title: 'Components/Breadcrumbs',
@@ -25,6 +27,11 @@ const Template: Story = (args) => ({
   template: `<VBreadcrumbs v-bind='args'/>`,
 });
 
+Template.decorators = [
+  /* this is the basic setup with no params passed to the decorator */
+  vueRouter(),
+];
+
 export const Default = Template.bind({});
 Default.args = {};
 
@@ -33,10 +40,21 @@ CustomDivider.args = {
   divider: '-',
 };
 
-// export const Breadcrumbs = (args) => ({
-//   components: {VBreadcrumbs},
-//   setup() {
-//     return {args};
-//   },
-//   template: `<div class="container mx-auto"><VBreadcrumbs v-bind="args" /></div>`,
-// });
+export const CustomDividerSlots: Story = (args) => ({
+  components: {VBreadcrumbs, RiArrowRightSLine},
+  setup() {
+    return {args};
+  },
+  template: `<div class="container mx-auto">
+  <v-breadcrumbs v-bind="args">
+    <template #divider>
+      <RiArrowRightSLine class="fill-current w-5 h-5 text-gray-500" />
+    </template>
+  </v-breadcrumbs>
+</div>`,
+});
+
+CustomDividerSlots.decorators = [
+  /* this is the basic setup with no params passed to the decorator */
+  vueRouter(),
+];
