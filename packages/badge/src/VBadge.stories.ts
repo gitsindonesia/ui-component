@@ -76,3 +76,23 @@ Outlined.args = {
 //   textColor: 'text-info-500',
 //   class: 'border border-info-500',
 // };
+
+const SingleTemplate: Story<VBadgeProps> = (args) => ({
+  // Components used in your story `template` are defined in the `components` object
+  components: {
+    VBadge,
+  },
+  // The story's `args` need to be mapped into the template through the `setup()` method
+  setup() {
+    return {args};
+  },
+  // And then the `args` are bound to your component with `v-bind="args"`
+  template: `<VBadge v-bind="args">{{ args.label || 'Text' }}</VBadge>`,
+});
+
+export const CustomClass = SingleTemplate.bind({});
+CustomClass.args = {
+  bgColor: 'bg-teal-500',
+  textColor: 'text-white',
+  class: 'uppercase text-sm',
+};
