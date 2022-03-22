@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import {ref, toRefs, computed, watch} from 'vue';
 import {ErrorMessage} from 'vee-validate';
-import {useHeight, useInputClasses, useTextSize} from '@gits-id/utils';
+import {
+  inputDisabledClasses,
+  useHeight,
+  useInputClasses,
+  useTextSize,
+} from '@gits-id/utils';
 import {SearchIcon} from '@heroicons/vue/solid';
 
 const props = defineProps({
@@ -106,7 +111,7 @@ const sizeClass = computed(() => {
 });
 
 const inputClasses = computed(() => {
-  return [sizeClass.value];
+  return [sizeClass.value, inputDisabledClasses];
 });
 
 const wrapperColorClasses = computed(() => {
