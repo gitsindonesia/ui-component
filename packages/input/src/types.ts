@@ -10,4 +10,6 @@ export type VInputProps = {
   readonly: boolean;
   disabled: boolean;
   size: Sizes;
+  noShadow?: boolean;
+  text?: boolean;
 };

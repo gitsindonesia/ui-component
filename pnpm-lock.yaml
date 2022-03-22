@@ -660,6 +660,7 @@ importers:
   packages/select:
     specifiers:
       '@gits-id/input': ^0.1.17-alpha.0
+      '@gits-id/tooltip': ^0.1.17-alpha.0
       '@gits-id/utils': ^0.1.17-alpha.0
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
@@ -668,6 +669,7 @@ importers:
       vue: ^3.2.31
     dependencies:
       '@gits-id/input': link:../input
+      '@gits-id/tooltip': link:../tooltip
       '@gits-id/utils': link:../utils
       vue: 3.2.31
     devDependencies:
