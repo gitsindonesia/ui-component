@@ -3,16 +3,12 @@ import {ref} from 'vue';
 
 const breadcrumbs = ref([
   {
-    to: '/cms',
-    title: 'Dashboard',
-  },
-  {
-    to: '/cms/components',
+    to: '/components',
     title: 'Components',
   },
   {
-    to: '/cms/components/buttons',
-    title: 'v-btns',
+    to: '/components/buttons',
+    title: 'Buttons',
   },
 ]);
 </script>
