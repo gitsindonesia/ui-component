@@ -51,6 +51,7 @@
     "unplugin-vue-components": "^0.18.4",
     "vite": "^2.8.6",
     "vite-plugin-pages": "^0.22.0",
+    "vite-plugin-vue-layouts": "^0.6.0",
     "vitest": "^0.5.9",
     "vue-loader": "^16.8.3",
     "vue-tsc": "^0.31.4"

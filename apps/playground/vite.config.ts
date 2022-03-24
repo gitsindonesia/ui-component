@@ -5,6 +5,7 @@ import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import Pages from 'vite-plugin-pages';
 import Components from 'unplugin-vue-components/vite';
+import Layouts from 'vite-plugin-vue-layouts';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -15,6 +16,7 @@ export default defineConfig({
     Components({
       /* options */
     }),
+    Layouts(),
   ],
   resolve: {
     alias: {
