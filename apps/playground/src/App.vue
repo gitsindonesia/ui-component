@@ -6,6 +6,6 @@
 
 <style>
 body {
-  @apply pt-16;
+  @apply pt-16 sm:pt-0;
 }
 </style>
