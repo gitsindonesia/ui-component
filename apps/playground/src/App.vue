@@ -4,4 +4,8 @@
   <router-view />
 </template>
 
-<style></style>
+<style>
+body {
+  @apply pt-16;
+}
+</style>
