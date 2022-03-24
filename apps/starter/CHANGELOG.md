@@ -1,0 +1,132 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [0.1.0](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.2-alpha.2...v0.1.0) (2022-01-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove scripts
+* replace vuex with pinia on vue-auth
+
+### Features
+
+* add counter and todo-list example ([5c74f18](https://git.gits.id/frontend/starter/vue-3/starter/commit/5c74f18e972b453b5f8c98bd2822778604aa7974))
+* add custom tailwind preset ([d4ad7c1](https://git.gits.id/frontend/starter/vue-3/starter/commit/d4ad7c1086be250e3e1a541ff8703235af98b151))
+* add date helpers ([e7043c1](https://git.gits.id/frontend/starter/vue-3/starter/commit/e7043c1127d197be284360c4cb9cf546ca303008))
+* add more file upload example ([72aeb09](https://git.gits.id/frontend/starter/vue-3/starter/commit/72aeb0903f1877222d2747aa1ac1985cf44f3565))
+* add new modular example ([4067a82](https://git.gits.id/frontend/starter/vue-3/starter/commit/4067a82fc6ec364889eae5bb771a832a120ea518))
+* add unplugin-icons & iconify ([51ed7ed](https://git.gits.id/frontend/starter/vue-3/starter/commit/51ed7ed351804d44c39180083566693e7a431aaa))
+* add volar plugin and fix types ([05b5d0f](https://git.gits.id/frontend/starter/vue-3/starter/commit/05b5d0fcffe176424942eb21df96d5eb4ee8a28a))
+* added upload file input example ([f4bf645](https://git.gits.id/frontend/starter/vue-3/starter/commit/f4bf645e9207a0f979d11e514e6a498c8eedb2cc))
+* change default auth storage to secoreLs ([184ea29](https://git.gits.id/frontend/starter/vue-3/starter/commit/184ea2968b8a57113a209e65867e7ab8bc7a49e0))
+* change homepage ([d4c764b](https://git.gits.id/frontend/starter/vue-3/starter/commit/d4c764b0a5e610c573d85f9ca37c749c5c157962))
+* fix build and use vuex for now ([77c3cf9](https://git.gits.id/frontend/starter/vue-3/starter/commit/77c3cf99b9f8fbc744cdb82b38c3ebca5b13acb7))
+* **hygen:** add hygen ([da4536a](https://git.gits.id/frontend/starter/vue-3/starter/commit/da4536a1cf64796fdeaad29e1d963b278b583e58))
+* implement refresh token ([f34e22c](https://git.gits.id/frontend/starter/vue-3/starter/commit/f34e22cce690a505dde598d1da1adcd94395ac3d))
+* improved declarations for auto import components ([a1b4a13](https://git.gits.id/frontend/starter/vue-3/starter/commit/a1b4a13ffda76594f94a42600b8bed2d969d9616))
+* improved folder structure ([76feb93](https://git.gits.id/frontend/starter/vue-3/starter/commit/76feb9317ef68d50853242c7c746e571fe3e8e9a))
+* improved form example ([bb25ff4](https://git.gits.id/frontend/starter/vue-3/starter/commit/bb25ff40dd0007bf21943b8d74fdc72927652a74))
+* integrate pinia and added `useAuth` store ([fbf067a](https://git.gits.id/frontend/starter/vue-3/starter/commit/fbf067ad90751795c4a778b254cd8119b2fb72d1))
+* **menus:** validate menus ([69209e9](https://git.gits.id/frontend/starter/vue-3/starter/commit/69209e94e83d08322d284225ef4141d99ce06b61))
+* move blog to modules/blog ([ff7c533](https://git.gits.id/frontend/starter/vue-3/starter/commit/ff7c5333f2cc0ba0886829685c0f0a6dfab8e37f))
+* moved services and types to `@frontend/ui` ([72c270e](https://git.gits.id/frontend/starter/vue-3/starter/commit/72c270e86064494c6611f1917d4a2212b9c058fc))
+* new `@modules/` alias ([098d2f0](https://git.gits.id/frontend/starter/vue-3/starter/commit/098d2f049cdaf04e78d36688073956a08a11d50b))
+* new menus system and new module's system ([d32176d](https://git.gits.id/frontend/starter/vue-3/starter/commit/d32176dc9356e75328620750b7a5dd55d139ebdd))
+* new v-icon component ([6793429](https://git.gits.id/frontend/starter/vue-3/starter/commit/67934292d137334a76a861b5dbf15b5ed1eaff25))
+* remove default storybook ([55bbfd8](https://git.gits.id/frontend/starter/vue-3/starter/commit/55bbfd84e90efc5ef31c1177d5ba2e7bbf75250e))
+* remove default storybook example ([b842f5a](https://git.gits.id/frontend/starter/vue-3/starter/commit/b842f5a7a52c8718bd46844df28559a8284d3f6a))
+* replace vuex with pinia on vue-auth ([896b31f](https://git.gits.id/frontend/starter/vue-3/starter/commit/896b31f6b183f72976f75ee14f6d0ee636a8da72))
+* reset default timezone to UTC ([cd02df3](https://git.gits.id/frontend/starter/vue-3/starter/commit/cd02df38b71a4167f019cbd96702eb9564579ec5))
+* revert vuex modules with pinia ([b8f41c0](https://git.gits.id/frontend/starter/vue-3/starter/commit/b8f41c0d4836995d245c177f19bcfe0960ffc1ff))
+* **shop:** a little slicing for ui shop ([52ba49f](https://git.gits.id/frontend/starter/vue-3/starter/commit/52ba49fe8e2efcb77549cda0f63b74638b566ee8))
+* **shop:** new base layout and new `shop` menus ([cac2b8b](https://git.gits.id/frontend/starter/vue-3/starter/commit/cac2b8bc4a40617713b91791f2ec4f982c10de57))
+* simplify the directory structure ([36edcc4](https://git.gits.id/frontend/starter/vue-3/starter/commit/36edcc473a43165cb1a0d480396f7e7c7d044fb2))
+* ui ([558c108](https://git.gits.id/frontend/starter/vue-3/starter/commit/558c108c84701346d1657812f6d5a133d3b67aaa))
+* ui ([5385cca](https://git.gits.id/frontend/starter/vue-3/starter/commit/5385cca6f129f61838dd9f97821922fc5cc767aa))
+* update auth system ([c000540](https://git.gits.id/frontend/starter/vue-3/starter/commit/c000540bc7a7eaaaf391ba5672d50c984ae16ef1))
+* update axios interceptors ([59a294f](https://git.gits.id/frontend/starter/vue-3/starter/commit/59a294f794d7b0968a185658ef3b4eaafe3fbc8e))
+* update firebase ([5d999a3](https://git.gits.id/frontend/starter/vue-3/starter/commit/5d999a3a14bd16a45ba47b50c12ec56c5d0e645c))
+* update gitlab ci ([886f5a9](https://git.gits.id/frontend/starter/vue-3/starter/commit/886f5a9b6732d45bb7db83e6fa5d6d1e0d5dad64))
+* update gitlab ci ([0815e13](https://git.gits.id/frontend/starter/vue-3/starter/commit/0815e132c8f319665ea2b89fe7f340b5862dae04))
+* update ui ([13a9d32](https://git.gits.id/frontend/starter/vue-3/starter/commit/13a9d322b9731549e18faf5b0d60084ebe95681c))
+* update ui ([049a73a](https://git.gits.id/frontend/starter/vue-3/starter/commit/049a73af79320426b38e08f022640470662f30ba))
+* update ui ([f79b917](https://git.gits.id/frontend/starter/vue-3/starter/commit/f79b917f087c0de1f7513cdba8a4d5465c698a67))
+* update ui and add unplugin-icons and use dark sidebar ([9cbbb13](https://git.gits.id/frontend/starter/vue-3/starter/commit/9cbbb13454c14a81ccd4b812653356a14987a30d))
+* update ui and lock files ([a369cf9](https://git.gits.id/frontend/starter/vue-3/starter/commit/a369cf9727e5d839b29cafe31d28ecc2e4130641))
+* upgrade auth ([2dc861c](https://git.gits.id/frontend/starter/vue-3/starter/commit/2dc861c4caa89d8966b940af9d226cf81973a353))
+* upgrade auth ([40bffc8](https://git.gits.id/frontend/starter/vue-3/starter/commit/40bffc81b8f78e70737902b64aa523b55182ae33))
+* upgrade auth deps ([588721e](https://git.gits.id/frontend/starter/vue-3/starter/commit/588721ee47d38159d27a15cbf75027caecd01f26))
+* upgrade deps ([5f60a70](https://git.gits.id/frontend/starter/vue-3/starter/commit/5f60a70c03b354696a98c1bc26d12e450c1d7d39))
+* upgrade deps, chunk VEditor, more ([dfd5fc8](https://git.gits.id/frontend/starter/vue-3/starter/commit/dfd5fc83bcf3b68db031a3f42fc6089c55685732))
+* upgrade tailwind to v3 ([246e9ed](https://git.gits.id/frontend/starter/vue-3/starter/commit/246e9ed3c2f1c0f63765136b88cab6d871fe840d))
+* upgrade ui ([9fe67e5](https://git.gits.id/frontend/starter/vue-3/starter/commit/9fe67e54612cee760ff1a8622d48acf1fb3c2ef0))
+* upgrade vue-auth ([836abb0](https://git.gits.id/frontend/starter/vue-3/starter/commit/836abb0aa91e511a6553ae611181d799468c5d0b))
+* use published packages ([a663ade](https://git.gits.id/frontend/starter/vue-3/starter/commit/a663ade7dbbd94ceb59ba690ce8a531d4174d242))
+
+
+### Bug Fixes
+
+* build ([7c2cb4a](https://git.gits.id/frontend/starter/vue-3/starter/commit/7c2cb4a20981529af0c673bf86b4ed75c7bcfa2f))
+* build ([1c96b92](https://git.gits.id/frontend/starter/vue-3/starter/commit/1c96b9292beba079607383163f4df138753495ae))
+* change api base url ([70ff170](https://git.gits.id/frontend/starter/vue-3/starter/commit/70ff1701180bd25dbdc61f625ef74a7b8bee04b9))
+* change max age token to 15 minutes ([c0e2cd9](https://git.gits.id/frontend/starter/vue-3/starter/commit/c0e2cd9f4c118c8f5baa83cd4622a5f1a29e258a))
+* change runner ([dbc9b47](https://git.gits.id/frontend/starter/vue-3/starter/commit/dbc9b477b2fe2e9657af26036c26110bbf7512d4))
+* enable submodule ci ([932ed65](https://git.gits.id/frontend/starter/vue-3/starter/commit/932ed6508f4c4030750e359f220d02eaf6494abd))
+* firebase project ([412afa3](https://git.gits.id/frontend/starter/vue-3/starter/commit/412afa3ec471e3555bb5ee22d925ffa805355070))
+* hide menu example ([587c277](https://git.gits.id/frontend/starter/vue-3/starter/commit/587c277e78e3df1bc9a3e42724caedffdca03577))
+* improved navbar button styles ([273dff8](https://git.gits.id/frontend/starter/vue-3/starter/commit/273dff841c447a52bf3da4e2a15b004ac960147c))
+* link ([3f84d89](https://git.gits.id/frontend/starter/vue-3/starter/commit/3f84d89f2e5ea59ece615ef6be25aa682171a1c0))
+* lock dependencies ([ef10869](https://git.gits.id/frontend/starter/vue-3/starter/commit/ef10869f82a19afc401b041c4740b362e6166243))
+* lock file ([b7122a7](https://git.gits.id/frontend/starter/vue-3/starter/commit/b7122a7e57a75a6e5eb9d52b926a1ac4766e0ddb))
+* login and refresh token flow ([104fb7b](https://git.gits.id/frontend/starter/vue-3/starter/commit/104fb7b444884b8471190f614ac3967a256e6054))
+* post editor component ([6e8130a](https://git.gits.id/frontend/starter/vue-3/starter/commit/6e8130aa8d27667feaa9d6d44676cc0de9d57deb))
+* remove unused `authStorage` ([c0d3e55](https://git.gits.id/frontend/starter/vue-3/starter/commit/c0d3e55e08f4195ced5363238bef9d7a252cd2d5))
+* set gitlab runner ([b49e4bb](https://git.gits.id/frontend/starter/vue-3/starter/commit/b49e4bb7c5501bf4fb91d1e4879455fd8e3ba5bb))
+* shims vue ([bcbc204](https://git.gits.id/frontend/starter/vue-3/starter/commit/bcbc20498e31e05a0b9fb4ebf60ba1e0f12ed90b))
+* storybook ([af57bf1](https://git.gits.id/frontend/starter/vue-3/starter/commit/af57bf1e9ecee37d2ca672cf10614d8647c1ec10))
+* storybook and types ([ef7e655](https://git.gits.id/frontend/starter/vue-3/starter/commit/ef7e6554b445ff9348fdac6882891a0f729062db))
+* toast ([d25cba6](https://git.gits.id/frontend/starter/vue-3/starter/commit/d25cba686d6107e5c37e939c59edd815812016eb))
+* types ([2df65be](https://git.gits.id/frontend/starter/vue-3/starter/commit/2df65be2e376c4d368f1b97c690db30b4a77f571))
+* types ([16eb0b7](https://git.gits.id/frontend/starter/vue-3/starter/commit/16eb0b72413d5058457f9775279de4af1fef7057))
+* types ([879e90c](https://git.gits.id/frontend/starter/vue-3/starter/commit/879e90c829cc2f2bfdf907e71422307b26e25f3a))
+* types ([a0b2530](https://git.gits.id/frontend/starter/vue-3/starter/commit/a0b2530f86c6cc0fb1c042da8a62d419feba8cee))
+* typing ([997613e](https://git.gits.id/frontend/starter/vue-3/starter/commit/997613e671a460162639ac831a65d1281a8295a2))
+* update axios interceptors definition ([ad16215](https://git.gits.id/frontend/starter/vue-3/starter/commit/ad16215fae37dbed7bee5262c46ffa5d0680220f))
+* update submodules ([d7ff3a6](https://git.gits.id/frontend/starter/vue-3/starter/commit/d7ff3a6dfd8df90c5ed8dee52e6a17c9ab7e87e4))
+* upgrade ui ([8e4ed05](https://git.gits.id/frontend/starter/vue-3/starter/commit/8e4ed056c4223fd48d13ca3d35ea554564cf6c4c))
+* upgrade ui ([58966ae](https://git.gits.id/frontend/starter/vue-3/starter/commit/58966aed75b40c252248e5d209324bb8767c572d))
+* upgrade vue-auth and ui ([ee48445](https://git.gits.id/frontend/starter/vue-3/starter/commit/ee484459fbba5b39b5e224e5efbdf0fb85d81dc9))
+* upgrade vue-auth@0.1.1 and fix types ([afcbe75](https://git.gits.id/frontend/starter/vue-3/starter/commit/afcbe7568e01f0b055663285145df5df85686ad7))
+* useBlog path ([23ca733](https://git.gits.id/frontend/starter/vue-3/starter/commit/23ca733091759d32545ac91f2792ecb129f675b9))
+* vue typing ([d19c3cb](https://git.gits.id/frontend/starter/vue-3/starter/commit/d19c3cba197d07a4b11e490be117e64b9383d0f9))
+
+
+* remove scripts ([1a8df24](https://git.gits.id/frontend/starter/vue-3/starter/commit/1a8df247f0d66ff19b0783f284376310916be4da))
+
+### [0.0.2-alpha.2](https://git.gits.id/frontend/starter/vue-3/starter/compare/v0.0.2-alpha.1...v0.0.2-alpha.2) (2021-10-05)
+
+
+### Features
+
+* add tab in form example ([c8fd832](https://git.gits.id/frontend/starter/vue-3/starter/commit/c8fd83229d4f84553c2528954ddd46810cc1005a))
+* add v-select example on modal form ([70865bd](https://git.gits.id/frontend/starter/vue-3/starter/commit/70865bdf16fe2c481e91f3db14b9919132310592))
+* add yup ([336c84a](https://git.gits.id/frontend/starter/vue-3/starter/commit/336c84aa0b7e031d6ebb22f018d4f4f9af5f8e09))
+* added dockerfile ([5c6a904](https://git.gits.id/frontend/starter/vue-3/starter/commit/5c6a904632fcab500a57932ae4e2d63787e01f52))
+* added form in modal example ([4d40d7e](https://git.gits.id/frontend/starter/vue-3/starter/commit/4d40d7e40a85f3bfe16458d0777e7ba7e4d6a4fb))
+* added gitlab ci ([05c215a](https://git.gits.id/frontend/starter/vue-3/starter/commit/05c215aacd3b00f58208590b0b4595835815b656))
+* added head tag manager using useHead ([eec35ce](https://git.gits.id/frontend/starter/vue-3/starter/commit/eec35ce0df590223d30dff1fbee9b9547539191e))
+* added initial values example ([989b2e4](https://git.gits.id/frontend/starter/vue-3/starter/commit/989b2e48d11cd12f2551d7af123a42f3298558be))
+* added layout vuex module for handling mini state ([614af6b](https://git.gits.id/frontend/starter/vue-3/starter/commit/614af6bfe2149f747db1d5efdab4fb024c5079be))
+* **auth:** upgrade vue-auth ([2ae3188](https://git.gits.id/frontend/starter/vue-3/starter/commit/2ae31880948a8178729bb0ead175365bb59c0133))
+* enable real login ([8826047](https://git.gits.id/frontend/starter/vue-3/starter/commit/8826047fa2b28a1fa6226572b32137c84f3c2b10))
+* fix toggle sidebar ([8206002](https://git.gits.id/frontend/starter/vue-3/starter/commit/82060025657a5b05d55beada3733efaccba47ded))
+* moved cms menus to src/menus.ts ([f5a24d8](https://git.gits.id/frontend/starter/vue-3/starter/commit/f5a24d8df5a0e97747cd33a18f7df23257137c3a))
+* new crud for posts ([be7f007](https://git.gits.id/frontend/starter/vue-3/starter/commit/be7f007b80c8a1507b1551bba2f450b54750b2e0))
+* new useCrud composition function ([63b4a24](https://git.gits.id/frontend/starter/vue-3/starter/commit/63b4a24a8eee1392b624fd70f407c2b24727f43c))
+* simulate login and logout for now ([ab5ed4e](https://git.gits.id/frontend/starter/vue-3/starter/commit/ab5ed4e7a024a2c877f8feb525662a6760c839da))
+* update ui and fixed storybook ([78bbf97](https://git.gits.id/frontend/starter/vue-3/starter/commit/78bbf9708b91758b2c5cfd2eaaf8f2121e434c86))
+* vue i18n ([e03eb4b](https://git.gits.id/frontend/starter/vue-3/starter/commit/e03eb4b6406a7d960110bff6f047a4aa85070cd8))
+
+## 0.0.1 (2021-09-02)

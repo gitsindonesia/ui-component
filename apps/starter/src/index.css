@@ -1,0 +1,16 @@
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #28a0f6;
+}
+
+#nprogress .bar {
+  background: var(--color-primary);
+}
+
+body {
+  /* @apply text-sm; */
+}

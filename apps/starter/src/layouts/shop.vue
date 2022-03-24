@@ -1,0 +1,3 @@
+<template>
+  <shop-layout />
+</template>

@@ -1,0 +1,6 @@
+node_modules
+.gitlab
+.vscode
+components.d.ts
+packages
+dist

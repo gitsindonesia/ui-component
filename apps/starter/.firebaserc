@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "gits-starter"
+  },
+  "targets": {
+    "gits-starter": {
+      "hosting": {
+        "starter": [
+          "gits-starter"
+        ]
+      }
+    }
+  }
+}
