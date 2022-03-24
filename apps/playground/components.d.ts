@@ -4,7 +4,13 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    AppFooter: typeof import('./src/components/AppFooter.vue')['default']
+    AppHeader: typeof import('./src/components/AppHeader.vue')['default']
+    AppMain: typeof import('./src/components/AppMain.vue')['default']
+    AppMenus: typeof import('./src/components/AppMenus.vue')['default']
+    BurgerMenu: typeof import('./src/components/BurgerMenu.vue')['default']
     ComponentLayout: typeof import('./src/components/ComponentLayout.vue')['default']
+    HamurgerMenu: typeof import('./src/components/HamurgerMenu.vue')['default']
     HomeLayout: typeof import('./src/components/HomeLayout.vue')['default']
   }
 }

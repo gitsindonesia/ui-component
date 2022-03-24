@@ -1,3 +1,4 @@
 <template>
-  <router-view />
+  <AppHeader />
+  <AppMain />
 </template>
