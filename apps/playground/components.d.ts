@@ -12,6 +12,7 @@ declare module 'vue' {
     Docs: typeof import('./src/components/Docs.vue')['default']
     DocsTable: typeof import('./src/components/DocsTable.vue')['default']
     DocsTitle: typeof import('./src/components/DocsTitle.vue')['default']
+    HamburgerMenu: typeof import('./src/components/HamburgerMenu.vue')['default']
     HamurgerMenu: typeof import('./src/components/HamurgerMenu.vue')['default']
   }
 }
