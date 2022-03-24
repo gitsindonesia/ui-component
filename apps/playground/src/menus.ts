@@ -8,35 +8,38 @@ const componentRoute = (title: string, to: string) => ({
 
 const componentSubMenus = [
   componentRoute('Alerts', '/components/alerts'),
+  componentRoute('AppBar', '/components/app-bar'),
+  componentRoute('Bagdes', '/components/badges'),
   componentRoute('Breadcrumbs', '/components/breadcrumbs'),
   componentRoute('Buttons', '/components/buttons'),
+  componentRoute('Card', '/components/card'),
   componentRoute('Data Table', '/components/tables'),
-  componentRoute('Radio', '/components/Radios'),
-  componentRoute('Input', '/components/inputs'),
   componentRoute('Modal', '/components/modals'),
   componentRoute('Pagination', '/components/paginations'),
-  componentRoute('Select', '/components/selects'),
-  componentRoute('Textarea', '/components/textareas'),
   componentRoute('Dropdown', '/components/dropdowns'),
-  componentRoute('Switch', '/components/switch'),
   componentRoute('Tabs', '/components/tabs'),
   componentRoute('ProgressBar', '/components/progress-bars'),
   componentRoute('Tooltip', '/components/tooltips'),
-  componentRoute('Bagdes', '/components/badges'),
-  componentRoute('Card', '/components/card'),
-  componentRoute('Checkbox', '/components/checkbox'),
   componentRoute('Collapsible', '/components/collapsible'),
-  componentRoute('Forms', '/components/forms'),
-  componentRoute('AppBar', '/components/app-bar'),
   componentRoute('Container', '/components/container'),
+  componentRoute('Logo', '/components/logo'),
+  componentRoute('Switch', '/components/switch'),
+];
+
+const formChildren = [
+  componentRoute('Radio', '/components/Radios'),
+  componentRoute('Input', '/components/inputs'),
+  componentRoute('Select', '/components/selects'),
+  componentRoute('Textarea', '/components/textareas'),
+  componentRoute('Forms', '/components/forms'),
   componentRoute('Editor', '/components/editor'),
   componentRoute('File Input', '/components/file-input'),
   componentRoute('Form Select', '/components/form-select'),
-  componentRoute('Logo', '/components/logo'),
+  componentRoute('Checkbox', '/components/checkbox'),
 ];
 
-const getComponentChildren = () => {
-  componentSubMenus.sort((a, b) => {
+const getSortedChildren = (items: any[]) => {
+  items.sort((a, b) => {
     if (a.title < b.title) {
       return -1;
     }
@@ -45,12 +48,16 @@ const getComponentChildren = () => {
     }
     return 0;
   });
-  return componentSubMenus;
+  return items;
 };
 
 export const menus = [
   {
+    title: 'Forms',
+    children: getSortedChildren(formChildren),
+  },
+  {
     title: 'Components',
-    children: getComponentChildren(),
+    children: getSortedChildren(componentSubMenus),
   },
 ];

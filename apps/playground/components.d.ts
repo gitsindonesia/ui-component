@@ -7,6 +7,7 @@ declare module 'vue' {
     AppFooter: typeof import('./src/components/AppFooter.vue')['default']
     AppHeader: typeof import('./src/components/AppHeader.vue')['default']
     AppMain: typeof import('./src/components/AppMain.vue')['default']
+    AppMenu: typeof import('./src/components/AppMenu.vue')['default']
     AppMenus: typeof import('./src/components/AppMenus.vue')['default']
     BurgerMenu: typeof import('./src/components/BurgerMenu.vue')['default']
     ComponentLayout: typeof import('./src/components/ComponentLayout.vue')['default']
