@@ -7,8 +7,8 @@
     "build-storybook": "build-storybook",
     "storybook": "start-storybook -p 6006",
     "sb": "pnpm run storybook",
-    "dev": "lerna run dev --scope @gits-id/starter --stream",
-    "build": "lerna run build --scope @gits-id/starter --stream",
+    "dev": "lerna run dev --scope @gits-id/playground --stream",
+    "build": "lerna run build --scope @gits-id/playground --stream",
     "deploy:ui": "firebase deploy --only hosting:ui",
     "deploy:playground": "firebase deploy --only hosting:playground"
   },
