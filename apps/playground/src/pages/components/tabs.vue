@@ -5,16 +5,12 @@ import DocsTitle from './DocsTitle.vue';
 
 const breadcrumbs = ref([
   {
-    to: '/cms',
-    title: 'Dashboard',
-  },
-  {
-    to: '/cms/components',
+    to: '/components',
     title: 'Components',
   },
   {
-    to: '/cms/components/breadcrumbs',
-    title: 'v-breadcrumbs',
+    to: '/components/tabs',
+    title: 'Tabs',
   },
 ]);
 

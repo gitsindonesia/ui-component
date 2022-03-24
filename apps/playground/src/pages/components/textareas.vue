@@ -1,7 +1,5 @@
 <script setup>
 import {ref} from 'vue';
-import Docs from './Docs.vue';
-import DocsTitle from './DocsTitle.vue';
 
 const breadcrumbs = ref([
   {
