@@ -1,5 +1,6 @@
 import {createRouter, createWebHistory} from 'vue-router';
-import routes from './routes';
+// import routes from './routes';
+import routes from '~pages';
 
 // console.log(routes);
 
