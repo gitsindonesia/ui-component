@@ -143,6 +143,7 @@ export {
 };
 
 export * from '@gits-id/utils';
+export * from '@gits-id/pages';
 export * from '@gits-id/types';
 export * from '@gits-id/services';
 export * from '@gits-id/toast';
