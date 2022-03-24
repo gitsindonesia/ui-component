@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/alert",
-  "version": "0.1.17-alpha.55+9616f31",
+  "version": "0.1.17-next.0",
   "description": "GITS Alert Component",
   "main": "src/index.ts",
   "scripts": {
@@ -17,7 +17,7 @@
     "@heroicons/vue": "^1.0.6"
   },
   "devDependencies": {
-    "@gits-id/utils": "^0.1.17-alpha.0"
+    "@gits-id/utils": "^0.1.17-next.0"
   },
   "gitHead": "9616f31f0d2d461f4fa9273b40ab9edc8130a724"
 }

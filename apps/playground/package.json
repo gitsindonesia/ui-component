@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/playground",
-  "version": "0.1.17-alpha.55+9616f31",
+  "version": "0.1.17-next.0",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",

@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/dropdown",
-  "version": "0.1.17-alpha.0",
+  "version": "0.1.17-next.0",
   "description": "GITS Dropdown Component",
   "main": "src/index.ts",
   "scripts": {
@@ -14,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gits-id/button": "^0.1.17-alpha.0",
+    "@gits-id/button": "^0.1.17-next.0",
     "@headlessui/vue": "^1.5.0",
     "@heroicons/vue": "^1.0.6",
     "feather-icons": "^4.28.0",
@@ -23,6 +23,6 @@
     "vue-feather": "^2.0.0"
   },
   "devDependencies": {
-    "@gits-id/utils": "^0.1.17-alpha.0"
+    "@gits-id/utils": "^0.1.17-next.0"
   }
 }

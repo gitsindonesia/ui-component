@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/tabs",
-  "version": "0.1.17-alpha.0",
+  "version": "0.1.17-next.0",
   "description": "GITS Tabs Component",
   "main": "src/index.ts",
   "scripts": {
@@ -14,9 +14,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gits-id/button": "^0.1.17-alpha.0",
-    "@gits-id/card": "^0.1.17-alpha.0",
-    "@gits-id/utils": "^0.1.17-alpha.0",
+    "@gits-id/button": "^0.1.17-next.0",
+    "@gits-id/card": "^0.1.17-next.0",
+    "@gits-id/utils": "^0.1.17-next.0",
     "vue": "^3.2.31"
   },
   "devDependencies": {

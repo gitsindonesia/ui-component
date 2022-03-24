@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/navbar",
-  "version": "0.1.17-alpha.0",
+  "version": "0.1.17-next.0",
   "description": "GITS Navbar Component",
   "main": "src/index.ts",
   "scripts": {
@@ -14,13 +14,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gits-id/button": "^0.1.17-alpha.0",
-    "@gits-id/logo": "^0.1.17-alpha.0",
-    "@gits-id/menus": "^0.1.17-alpha.0",
+    "@gits-id/button": "^0.1.17-next.0",
+    "@gits-id/logo": "^0.1.17-next.0",
+    "@gits-id/menus": "^0.1.17-next.0",
     "vue": "^3.2.31"
   },
   "devDependencies": {
-    "@gits-id/utils": "^0.1.17-alpha.0",
+    "@gits-id/utils": "^0.1.17-next.0",
     "@headlessui/vue": "^1.5.0",
     "@heroicons/vue": "^1.0.6",
     "tailwindcss": "^3.0.23",

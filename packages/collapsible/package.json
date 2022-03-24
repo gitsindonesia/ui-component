@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/collapsible",
-  "version": "0.1.17-alpha.0",
+  "version": "0.1.17-next.0",
   "description": "GITS Collapsible Component",
   "main": "src/index.ts",
   "scripts": {
@@ -14,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@gits-id/utils": "^0.1.17-alpha.0",
+    "@gits-id/utils": "^0.1.17-next.0",
     "@heroicons/vue": "^1.0.6"
   }
 }
