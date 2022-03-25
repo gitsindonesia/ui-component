@@ -97,7 +97,7 @@ const classes = computed(() => {
     };
   }
 
-  const borderClasses = {
+  const borderClasses: Record<string, any> = {
     top: 'border-t-8',
     left: 'border-l-8',
     right: 'border-r-8',
