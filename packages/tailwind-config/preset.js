@@ -30,6 +30,7 @@ module.exports = {
     require('@tailwindcss/forms'),
     require('@tailwindcss/aspect-ratio'),
     require('@tailwindcss/line-clamp'),
-    require('@gits-id/tailwind-components/button')
+    require('@gits-id/tailwind-components/button'),
+    require('@gits-id/tailwind-components/alert')
   ],
 };
