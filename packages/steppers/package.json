@@ -1,0 +1,24 @@
+{
+  "name": "@gits-id/stepper",
+  "version": "0.1.17-next.0",
+  "description": "GITS Stepper Component",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "stepper",
+    "gits",
+    "ui-component"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^3.2.31",
+    "tailwindcss": "^3.0.23"
+  },
+  "devDependencies": {
+    "vitest": "^0.7.10",
+    "@vue/test-utils": "^2.0.0-rc.17"
+  }
+}
