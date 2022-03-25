@@ -36,7 +36,7 @@ export default {
     ring: false,
     disabled: false,
     text: false,
-    size: '',
+    size: 'md',
     tile: false,
     icon: false,
     loading: false,
@@ -73,66 +73,6 @@ Default.parameters = {
     },
   },
 };
-
-// export const Primary = Template.bind({});
-// Primary.args = {color: 'primary'};
-// Primary.parameters = {
-//   docs: {
-//     source: {
-//       code: '<v-btn color="primary">Button</v-btn>',
-//     },
-//   },
-// };
-
-// export const Secondary = Template.bind({});
-// Secondary.args = {color: 'secondary'};
-// Secondary.parameters = {
-//   docs: {
-//     source: {
-//       code: '<v-btn color="secondary">Button</v-btn>',
-//     },
-//   },
-// };
-
-// export const Info = Template.bind({});
-// Info.args = {color: 'info'};
-// Info.parameters = {
-//   docs: {
-//     source: {
-//       code: '<v-btn color="info">Button</v-btn>',
-//     },
-//   },
-// };
-
-// export const Success = Template.bind({});
-// Success.args = {color: 'success'};
-// Success.parameters = {
-//   docs: {
-//     source: {
-//       code: '<v-btn color="success">Button</v-btn>',
-//     },
-//   },
-// };
-
-// export const Error = Template.bind({});
-// Error.args = {color: 'error'};
-// Error.parameters = {
-//   docs: {
-//     source: {
-//       code: '<v-btn color="error">Button</v-btn>',
-//     },
-//   },
-// };
-
-// export const Warning = Template.bind({});
-// Warning.args = {color: 'warning'};
-// Warning.parameters = {
-//   docs: {
-//     source: {
-//       code: '<v-btn color="warning">Button</v-btn>',
-//     },
-//   },
-// };
 
 export const Outlined = Template.bind({});
 Outlined.args = {color: 'primary', outlined: true};
@@ -244,12 +184,32 @@ Loading.parameters = {
   },
 };
 
+export const Block = Template.bind({});
+Block.args = {color: 'primary', block: true};
+Block.parameters = {
+  docs: {
+    source: {
+      code: '<v-btn color="primary" block>Button</v-btn>',
+    },
+  },
+};
+
 export const Shadow = Template.bind({});
 Shadow.args = {color: 'primary', shadow: true};
 Shadow.parameters = {
   docs: {
     source: {
       code: '<v-btn color="primary" shadow>Button</v-btn>',
+    },
+  },
+};
+
+export const NoRingEffect = Template.bind({});
+NoRingEffect.args = {color: 'primary', noRing: true};
+NoRingEffect.parameters = {
+  docs: {
+    source: {
+      code: '<v-btn color="primary" no-ring>Button</v-btn>',
     },
   },
 };
@@ -263,7 +223,7 @@ export const Icon: Story<VBtnProps> = (args) => ({
   <div>
     <div class="font-semibold text-lg mb-2">{{color}}</div>
     <div class="flex items-end gap-2">
-      <Button v-for="size in sizes" :key="size" v-bind="args" :color="color" :size="size" icon>
+      <Button v-for="size in sizes" :key="size" v-bind="args" :color="color" :size="size" icon rounded>
         <HomeIcon class="w-6 h-6"/>
       </Button>
     </div>

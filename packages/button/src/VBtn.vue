@@ -5,11 +5,12 @@ import VSpinner from '@gits-id/spinner';
 const props = defineProps({
   size: {
     type: String,
-    default: '',
+    default: 'md',
+    validator: (v: string) => ['xs', 'sm', 'md', 'lg', 'xl'].includes(v),
   },
   color: {
     type: String,
-    default: '',
+    default: 'default',
   },
   to: {
     type: [String, Object],
@@ -81,8 +82,7 @@ const props = defineProps({
   },
 });
 
-const {disabled, ring, block, solid, noRing, loading, loadingText} =
-  toRefs(props);
+const {disabled, loading, loadingText} = toRefs(props);
 
 const computedComponent = computed(() => {
   if (props.to) {
@@ -92,154 +92,6 @@ const computedComponent = computed(() => {
   } else {
     return 'button';
   }
-});
-
-const sizeClass = computed(() => {
-  if (props.icon) {
-    switch (props.size) {
-      case 'xs':
-        return 'text-xs p-[6px] w-[30px] h-[30px]';
-      case 'sm':
-        return 'text-sm p-[6px] w-[36] h-[36]';
-      case 'lg':
-        return 'text-base p-2 w-[50px] h-[50px]';
-      case 'xl':
-        return 'text-lg p-2 w-[60px] h-[60px]';
-      case 'md':
-      case 'base':
-      default:
-        return 'text-xs p-2 w-[40px] h-[40px]';
-    }
-  } else {
-    switch (props.size) {
-      case 'xs':
-        return 'text-xs px-2 py-1 h-[30px]';
-      case 'sm':
-        return 'text-sm px-3 py-1 h-9';
-      case 'lg':
-        return 'text-base px-6 py-3 h-[50px]';
-      case 'xl':
-        return 'text-lg px-8 py-4 h-[60px]';
-      case 'md':
-      case 'base':
-      default:
-        return 'text-sm px-4 py-2 h-10';
-    }
-  }
-});
-
-const colorClass = computed(() => {
-  if (props.text) {
-    switch (props.color) {
-      case 'primary':
-        return 'text-primary-600';
-      case 'secondary':
-        return 'text-secondary-600';
-      case 'info':
-        return 'text-info-600';
-      case 'warning':
-        return 'text-warning-600';
-      case 'error':
-        return 'text-error-600';
-      case 'success':
-        return 'text-success-600';
-      case 'gray-light':
-        return 'text-gray-3';
-      default:
-        return 'text-gray-800';
-    }
-  } else if (props.outlined) {
-    switch (props.color) {
-      case 'primary':
-        return 'text-primary-600 border-primary-600 hover:bg-primary-600 hover:bg-opacity-20 disabled:bg-opacity-50 disabled:border-opacity-50 disabled:bg-opacity-50 disabled:text-opacity-50 hover:disabled:bg-transparent';
-      case 'secondary':
-        return 'text-secondary-600 border-secondary-600 hover:bg-secondary-600 hover:bg-opacity-20 disabled:bg-opacity-50 disabled:border-opacity-50 disabled:bg-opacity-50 disabled:text-opacity-50 hover:disabled:bg-transparent';
-      case 'info':
-        return 'text-info-600 border-info-600 hover:bg-info-600 hover:bg-opacity-20 disabled:bg-opacity-50 disabled:border-opacity-50 disabled:bg-opacity-50 disabled:text-opacity-50 hover:disabled:bg-transparent';
-      case 'warning':
-        return 'text-warning-600 border-warning-600 hover:bg-warning-600 hover:bg-opacity-20 disabled:bg-opacity-50 disabled:border-opacity-50 disabled:bg-opacity-50 disabled:text-opacity-50 hover:disabled:bg-transparent';
-      case 'error':
-        return 'text-error-600 border-error-600 hover:bg-error-600 hover:bg-opacity-20 disabled:bg-opacity-50 disabled:border-opacity-50 disabled:bg-opacity-50 disabled:text-opacity-50 hover:disabled:bg-transparent';
-      case 'success':
-        return 'text-success-600 border-success-600 hover:bg-success-600 hover:bg-opacity-20 disabled:bg-opacity-50 disabled:border-opacity-50 disabled:bg-opacity-50 disabled:text-opacity-50 hover:disabled:bg-transparent';
-      case 'gray-light':
-        return 'text-gray-3 border-gray-3 hover:bg-gray-300 hover:bg-opacity-20 disabled:bg-opacity-50 disabled:border-opacity-50 disabled:bg-opacity-50 disabled:text-opacity-50 hover:disabled:bg-transparent';
-      default:
-        return 'text-gray-600 border-gray-600 hover:bg-gray-400 hover:bg-opacity-20 disabled:bg-opacity-50 disabled:border-opacity-50 disabled:bg-opacity-50 disabled:text-opacity-50 hover:disabled:bg-transparent';
-    }
-  } else {
-    switch (props.color) {
-      case 'primary':
-        return 'text-white border-primary-600 bg-primary-600 hover:bg-primary-700 hover:border-primary-700';
-      case 'secondary':
-        return 'text-white border-secondary-600 bg-secondary-600 hover:border-secondary-700 hover:bg-secondary-700';
-      case 'info':
-        return 'text-white border-info-600 bg-info-600 hover:border-info-700 hover:bg-info-700';
-      case 'warning':
-        return 'text-white border-warning-600 bg-warning-600 hover:border-warning-700 hover:bg-warning-700';
-      case 'error':
-        return 'text-white border-error-600 bg-error-600 hover:border-error-700 hover:bg-error-700 focus:ring-error-600';
-      case 'success':
-        return 'text-white border-success-600 bg-success-600 hover:border-success-700 hover:bg-success-700';
-      case 'gray-light':
-        return 'text-gray-3 hover:text-gray-200 hover:bg-gray-50 bg-white border-gray-300 focus:border-gray-400 hover:border-gray-400';
-      default:
-        return 'text-gray-800 hover:text-gray-900 hover:bg-gray-50 bg-white border-gray-300 focus:border-gray-400 hover:border-gray-400';
-    }
-  }
-});
-
-const disabledClass = computed(() =>
-  !disabled
-    ? ''
-    : 'disabled:cursor-not-allowed disabled:text-gray-400 disabled:bg-gray-200 disabled:border-gray-200 disabled:shadow-none',
-);
-
-const ringClass = computed(() => {
-  switch (props.color) {
-    case 'primary':
-      return 'focus:ring focus:ring-offset-2 focus:ring-primary-600 focus:ring-opacity-50';
-    case 'secondary':
-      return 'focus:ring focus:ring-offset-2 focus:ring-secondary-600 focus:ring-opacity-50';
-    case 'info':
-      return 'focus:ring focus:ring-offset-2 focus:ring-info-600 focus:ring-opacity-50';
-    case 'warning':
-      return 'focus:ring focus:ring-offset-2 focus:ring-warning-600 focus:ring-opacity-50';
-    case 'error':
-      return 'focus:ring focus:ring-offset-2 focus:ring-error-600 focus:ring-opacity-50';
-    case 'success':
-      return 'focus:ring focus:ring-offset-2 focus:ring-success-600 focus:ring-opacity-50';
-    default:
-      return 'focus:ring focus:ring-offset-2 focus:ring-gray-400 focus:ring-opacity-50';
-  }
-});
-
-const classes = computed(() => {
-  // const borderClass = props.solid ? "border-2" : "border";
-
-  return [
-    'btn',
-    `btn-${props.color || 'default'}`,
-    `btn-${props.size || 'md'}`,
-    // disabledClass.value,
-    // colorClass.value,
-    // sizeClass.value,
-    // !noRing.value ? ringClass.value : "",
-    // !props.text ? borderClass : "",
-    // props.solid ? "font-semibold" : "font-semibold",
-    {
-      'btn-outlined': props.outlined,
-      [`btn-outlined-${props.color}`]: props.outlined,
-      'btn-text': props.text,
-      [`btn-text-${props.color}`]: props.text,
-      'btn-rounded': props.rounded && !props.tile,
-      'btn-tile': props.tile && !props.rounded,
-      'w-full': props.block,
-      shadow: props.shadow,
-      'btn-icon': props.icon,
-      'btn-loading': props.loading,
-    },
-  ];
 });
 
 const attrs = computed(() => {
@@ -268,6 +120,116 @@ const spinnerColor = computed(() => {
       return props.color;
   }
 });
+
+const defaultVariants: Record<string, any> = {
+  default:
+    'border-gray-500 text-gray-800 bg-white hover:bg-gray-100 active:bg-gray-50 active:border-gray-600 active:text-gray-600',
+  primary:
+    'border-primary-500 bg-primary-500 text-white hover:bg-primary-600 hover:border-primary-600 active:bg-primary-400 active:border-primary-400',
+  secondary:
+    'border-secondary-500 bg-secondary-500 text-white hover:bg-secondary-600 hover:border-secondary-600 active:bg-secondary-400 active:border-secondary-400',
+  info: 'border-info-500 bg-info-500 text-white hover:bg-info-600 hover:border-info-600 active:bg-info-400 active:border-info-400',
+  warning:
+    'border-warning-500 bg-warning-500 text-white hover:bg-warning-600 hover:border-warning-600 active:bg-warning-400 active:border-warning-400',
+  success:
+    'border-success-500 bg-success-500 text-white hover:bg-success-600 hover:border-success-600 active:bg-success-400 active:border-success-400',
+  error:
+    'border-error-500 bg-error-500 text-white hover:bg-error-600 hover:border-error-600 active:bg-error-400 active:border-error-400',
+  dark: 'border-gray-800 bg-gray-800 text-white hover:bg-gray-900 hover:border-gray-900 active:bg-gray-700 active:border-gray-700',
+};
+
+const outlinedVariants: Record<string, any> = {
+  default:
+    'border-gray-500 text-gray-800 hover:bg-gray-700 hover:border-gray-700 hover:text-white active:bg-gray-50 active:border-gray-600 active:text-gray-600',
+  primary:
+    'border-primary-500 bg-transparent text-primary-500 hover:bg-primary-600 hover:border-primary-600 hover:text-white active:bg-primary-400 active:border-primary-400',
+  secondary:
+    'border-secondary-500 bg-transparent text-secondary-500 hover:bg-secondary-600 hover:border-secondary-600 hover:text-white active:bg-secondary-400 active:border-secondary-400',
+  info: 'border-info-500 bg-transparent text-info-500 hover:bg-info-600 hover:border-info-600 hover:text-white active:bg-info-400 active:border-info-400',
+  warning:
+    'border-warning-500 bg-transparent text-warning-500 hover:bg-warning-600 hover:border-warning-600 hover:text-white active:bg-warning-400 active:border-warning-400',
+  success:
+    'border-success-500 bg-transparent text-success-500 hover:bg-success-600 hover:border-success-600 hover:text-white active:bg-success-400 active:border-success-400',
+  error:
+    'border-error-500 bg-transparent text-error-500 hover:bg-error-600 hover:border-error-600 hover:text-white active:bg-error-400 active:border-error-400',
+  dark: 'border-gray-800 bg-transparent text-gray-800 hover:bg-gray-900 hover:border-gray-900 hover:text-white active:bg-gray-700 active:border-gray-700',
+};
+
+const textVariants: Record<string, any> = {
+  default:
+    'border-transparent bg-transparent text-gray-800 hover:text-gray-900 active:text-gray-600',
+  primary:
+    'border-transparent bg-transparent text-primary-500 hover:text-primary-600 active:text-primary-400',
+  secondary:
+    'border-transparent bg-transparent text-secondary-500 hover:text-secondary-600 active:text-secondary-400',
+  info: 'border-transparent bg-transparent text-info-500 hover:text-info-600 active:text-info-400',
+  warning:
+    'border-transparent bg-transparent text-warning-500 hover:text-warning-600 active:text-warning-400',
+  success:
+    'border-transparent bg-transparent text-success-500 hover:text-success-600 active:text-success-400',
+  error:
+    'border-transparent bg-transparent text-error-500 hover:text-error-600 active:text-error-400',
+  dark: 'border-transparent bg-transparent text-gray-800 hover:text-gray-900 active:text-gray-600',
+};
+
+const sizeVariants: Record<string, any> = {
+  xs: 'px-1.5 py-1 text-xs',
+  sm: 'px-2 py-1.5 text-sm',
+  md: 'px-4 py-2 text-base',
+  lg: 'px-5 py-3 text-lg',
+  xl: 'px-8 py-4 text-xl',
+};
+
+const ringVariants: Record<string, any> = {
+  default: '',
+  primary: 'focus:ring-primary-300',
+  secondary: 'focus:ring-secondary-300',
+  info: 'focus:ring-info-300',
+  warning: 'focus:ring-warning-300',
+  success: 'focus:ring-success-300',
+  error: 'focus:ring-error-300',
+  dark: 'focus:ring-gray-300',
+};
+
+const colorClass = computed(() => {
+  let color = defaultVariants[props.color];
+  if (props.outlined) {
+    color = outlinedVariants[props.color];
+  } else if (props.text) {
+    color = textVariants[props.color];
+  }
+  return color;
+});
+
+const disabledClass = computed(() => {
+  let classes =
+    'disabled:cursor-not-allowed disabled:shadow-none disabled:text-gray-400';
+  if (props.outlined) {
+    classes +=
+      ' disabled:border-gray-300 disabled:hover:bg-transparent disabled:hover:text-gray-400';
+  } else {
+    classes += ' disabled:bg-gray-300 disabled:border-gray-300';
+  }
+
+  return classes;
+});
+
+const classes = computed(() => {
+  return [
+    'inline-flex justify-center items-center border rounded-md font-semibold transition duration-300',
+    disabledClass.value,
+    colorClass.value,
+    sizeVariants[props.size],
+    {
+      'focus:ring focus:ring-offset-2 focus:outline-none': !props.noRing,
+      [ringVariants[props.color]]: !props.noRing,
+      'rounded-full': props.rounded,
+      'rounded-none': props.tile,
+      shadow: props.shadow,
+      'w-full': props.block,
+    },
+  ];
+});
 </script>
 
 <template>
@@ -289,14 +251,4 @@ const spinnerColor = computed(() => {
   </component>
 </template>
 
-<style scoped>
-/* .btn {
-  @apply transition duration-500 cursor-pointer inline-flex items-center justify-center;
-}
-.btn:focus {
-  @apply outline-none;
-}
-.btn:active {
-  @apply bg-opacity-80;
-} */
-</style>
+<style scoped></style>
