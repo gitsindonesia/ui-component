@@ -8,19 +8,19 @@ const props = defineProps({
   },
   defaultWrapperClass: {
     type: String,
-    default: 'rounded-md border shadow bg-white flex flex-col',
+    default: 'rounded-md bg-white flex flex-col',
   },
   defaultHeaderClass: {
     type: String,
-    default: 'font-semibold flex px-6 py-4',
+    default: 'font-semibold flex px-4 py-2',
   },
   defaultFooterClass: {
     type: String,
-    default: 'px-6 py-4',
+    default: 'px-4 py-2 flex',
   },
   defaultBodyClass: {
     type: String,
-    default: 'px-6',
+    default: 'px-4 py-2 flex',
   },
   wrapperClass: {
     type: String,
@@ -46,34 +46,43 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  bordered: {
+    type: Boolean,
+    default: false,
+  },
+  flat: {
+    type: Boolean,
+    default: false,
+  },
   to: {
     type: String,
     default: '',
   },
 });
 
-const {
-  title,
-  bodyClass,
-  wrapperClass,
-  headerClass,
-  footerClass,
-  defaultWrapperClass,
-  defaultHeaderClass,
-  defaultFooterClass,
-  defaultBodyClass,
-  hideHeader,
-  hideFooter,
-  to,
-} = toRefs(props);
+const {to} = toRefs(props);
 
 const tag = computed(() => (to.value ? 'router-link' : 'div'));
 </script>
 
 <template>
-  <component :is="tag" :to="to" :class="[defaultWrapperClass, wrapperClass]">
+  <component
+    :is="tag"
+    :to="to"
+    :class="[
+      defaultWrapperClass,
+      wrapperClass,
+      {
+        border: bordered,
+        shadow: !flat,
+      },
+    ]"
+  >
     <slot name="image" />
-    <div v-if="!hideHeader" :class="[defaultHeaderClass, headerClass]">
+    <div
+      v-if="!hideHeader"
+      :class="[defaultHeaderClass, headerClass, bordered ? 'border-b' : '']"
+    >
       <slot name="header">
         <div>{{ title }}</div>
       </slot>
@@ -81,7 +90,10 @@ const tag = computed(() => (to.value ? 'router-link' : 'div'));
     <div :class="[defaultBodyClass, bodyClass]">
       <slot />
     </div>
-    <div v-if="!hideFooter" :class="[defaultFooterClass, footerClass]">
+    <div
+      v-if="!hideFooter"
+      :class="[defaultFooterClass, footerClass, bordered ? 'border-t' : '']"
+    >
       <slot name="footer" />
     </div>
   </component>
