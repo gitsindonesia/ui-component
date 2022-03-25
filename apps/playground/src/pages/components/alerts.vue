@@ -105,6 +105,49 @@ const propItems = [
 <template>
   <DocsTitle :breadcrumbs="breadcrumbs">Alert</DocsTitle>
 
+  <Docs title="Utility Class">
+    <template #preview>
+      <div class="alert alert-default">default</div>
+      <div class="alert alert-primary">primary</div>
+      <div class="alert alert-secondary">secondary</div>
+      <div class="alert alert-info">info</div>
+      <div class="alert alert-warning">warning</div>
+      <div class="alert alert-success">success</div>
+      <div class="alert alert-error">error</div>
+      <div class="alert alert-dark">dark</div>
+
+      <div>outlined</div>
+      <div class="alert alert-outlined alert-outlined-default">default</div>
+      <div class="alert alert-outlined alert-outlined-primary">primary</div>
+      <div class="alert alert-outlined alert-outlined-secondary">secondary</div>
+      <div class="alert alert-outlined alert-outlined-info">info</div>
+      <div class="alert alert-outlined alert-outlined-warning">warning</div>
+      <div class="alert alert-outlined alert-outlined-success">success</div>
+      <div class="alert alert-outlined alert-outlined-error">error</div>
+      <div class="alert alert-outlined alert-outlined-dark">dark</div>
+
+      <div>solid</div>
+      <div class="alert alert-solid alert-solid-default">default</div>
+      <div class="alert alert-solid alert-solid-primary">primary</div>
+      <div class="alert alert-solid alert-solid-secondary">secondary</div>
+      <div class="alert alert-solid alert-solid-info">info</div>
+      <div class="alert alert-solid alert-solid-warning">warning</div>
+      <div class="alert alert-solid alert-solid-success">success</div>
+      <div class="alert alert-solid alert-solid-error">error</div>
+      <div class="alert alert-solid alert-solid-dark">dark</div>
+
+      <div>border</div>
+      <div class="alert border-t-8 alert-default">default</div>
+      <div class="alert border-t-8 alert-primary">primary</div>
+      <div class="alert border-t-8 alert-secondary">secondary</div>
+      <div class="alert border-t-8 alert-info">info</div>
+      <div class="alert border-t-8 alert-warning">warning</div>
+      <div class="alert border-t-8 alert-success">success</div>
+      <div class="alert border-t-8 alert-error">error</div>
+      <div class="alert border-t-8 alert-dark">dark</div>
+    </template>
+  </Docs>
+
   <Docs
     title="Default"
     preview-class="space-y-2"
