@@ -217,19 +217,35 @@ NoRingEffect.parameters = {
 export const Icon: Story<VBtnProps> = (args) => ({
   components: {Button, HomeIcon},
   setup() {
-    return {args, sizes, themeColors};
+    return {
+      args,
+      sizes,
+      themeColors,
+      sizeClass: {
+        xs: 'w-4 h-4',
+        sm: 'w-5 h-5',
+        md: 'w-6 h-6',
+        lg: 'w-10 h-10',
+        xl: 'w-12 h-12',
+      },
+    };
   },
-  template: `<div v-for="color in themeColors" :key="color" class="mb-6">
-  <div>
-    <div class="font-semibold text-lg mb-2">{{color}}</div>
-    <div class="flex items-end gap-2">
-      <Button v-for="size in sizes" :key="size" v-bind="args" :color="color" :size="size" icon rounded>
-        <HomeIcon class="w-6 h-6"/>
-      </Button>
-    </div>
-  </div>
-  </div>`,
+  template: `
+<div class="flex items-end gap-2">
+  <Button v-for="size in sizes" :key="size" v-bind="args" color="primary" :size="size" icon>
+    <HomeIcon class="w-full"/>
+  </Button>
+</div>`,
 });
+
+export const RoundedIcon = Icon.bind({});
+RoundedIcon.args = {rounded: true};
+
+export const OutlinedIcon = Icon.bind({});
+OutlinedIcon.args = {outlined: true};
+
+export const TextIcon = Icon.bind({});
+TextIcon.args = {text: true};
 
 export const Sizes: Story<VBtnProps> = (args) => ({
   components: {Button},

@@ -235,12 +235,33 @@ const disabledClass = computed(() => {
     : classes;
 });
 
+const iconClass = computed(() => {
+  const iconSizes: Record<string, any> = {
+    xs: 'w-[26px] h-[26px]',
+    sm: 'w-[34px] h-[34px]',
+    md: 'w-[42px] h-[42px]',
+    lg: 'w-[54px] h-[54px]',
+    xl: 'w-[62px] h-[62px]',
+  };
+
+  const iconPadding: Record<string, any> = {
+    xs: 'px-1',
+    sm: 'px-1.5',
+    md: 'px-2',
+    lg: 'px-2.5',
+    xl: 'px-3',
+  };
+  return [
+    iconSizes[props.size],
+    props.text ? 'p-0' : iconPadding[props.size],
+  ].join(' ');
+});
+
 const classes = computed(() => {
   return [
     'inline-flex justify-center items-center border rounded-md font-semibold transition duration-300',
     disabledClass.value,
     colorClass.value,
-    sizeVariants[props.size],
     {
       'focus:ring focus:ring-offset-2 focus:outline-none': !props.noRing,
       [ringVariants[props.color]]: !props.noRing,
@@ -249,6 +270,8 @@ const classes = computed(() => {
       shadow: props.shadow,
       'w-full': props.block,
       'btn-loading': props.loading,
+      [sizeVariants[props.size]]: !props.icon,
+      [iconClass.value]: props.icon,
     },
   ];
 });
