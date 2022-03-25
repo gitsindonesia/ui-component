@@ -55,4 +55,8 @@ export default defineConfig({
       'fast-deep-equal'
     ],
   },
+  test: {
+    globals: true,
+    environment: 'happy-dom',
+  },
 });
