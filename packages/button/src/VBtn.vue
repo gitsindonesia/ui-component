@@ -211,7 +211,28 @@ const disabledClass = computed(() => {
     classes += ' disabled:bg-gray-300 disabled:border-gray-300';
   }
 
-  return classes;
+  const disabledHoverVariants: Record<string, any> = {
+    default: 'disabled:hover:bg-transparent disabled:active:bg-transparent',
+    primary:
+      'disabled:hover:bg-primary-500 disabled:hover:border-primary-500 disabled:active:bg-primary-500',
+    secondary:
+      'disabled:hover:bg-secondary-500 disabled:hover:border-secondary-500 disabled:active:bg-secondary-500',
+    info: 'disabled:hover:bg-info-500 disabled:hover:border-info-500 disabled:active:bg-info-500',
+    warning:
+      'disabled:hover:bg-warning-500 disabled:hover:border-warning-500 disabled:active:bg-warning-500',
+    error:
+      'disabled:hover:bg-error-500 disabled:hover:border-error-500 disabled:active:bg-error-500',
+    success:
+      'disabled:hover:bg-success-500 disabled:hover:border-success-500 disabled:active:bg-success-500',
+    dark: 'disabled:hover:bg-gray-800 disabled:hover:border-gray-800 disabled:active:bg-gray-800',
+  };
+
+  return props.loading
+    ? [
+        'disabled:cursor-not-allowed disabled:shadow-none',
+        disabledHoverVariants[props.color],
+      ]
+    : classes;
 });
 
 const classes = computed(() => {
@@ -227,6 +248,7 @@ const classes = computed(() => {
       'rounded-none': props.tile,
       shadow: props.shadow,
       'w-full': props.block,
+      'btn-loading': props.loading,
     },
   ];
 });
