@@ -105,7 +105,7 @@ const propItems = [
 <template>
   <DocsTitle :breadcrumbs="breadcrumbs">Alert</DocsTitle>
 
-  <Docs title="Utility Class">
+  <!-- <Docs title="Utility Class">
     <template #preview>
       <div class="alert alert-default">default</div>
       <div class="alert alert-primary">primary</div>
@@ -146,7 +146,7 @@ const propItems = [
       <div class="alert border-t-8 alert-error">error</div>
       <div class="alert border-t-8 alert-dark">dark</div>
     </template>
-  </Docs>
+  </Docs> -->
 
   <Docs
     title="Default"
