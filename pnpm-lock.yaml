@@ -144,9 +144,9 @@ importers:
       '@babel/core': ^7.17.8
       '@ckeditor/ckeditor5-build-classic': ^32.0.0
       '@ckeditor/ckeditor5-vue': ^2.0.1
-      '@gits-id/button': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/tailwind-config': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/ui': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/button': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/tailwind-config': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/ui': ^0.1.17-alpha.33+1c8786c
       '@rushstack/eslint-patch': ^1.1.1
       '@storybook/addon-actions': ^6.4.19
       '@storybook/addon-essentials': ^6.4.19
@@ -232,7 +232,7 @@ importers:
 
   packages/alert:
     specifiers:
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@heroicons/vue': ^1.0.6
       autoprefixer: ^10.4.2
       postcss: ^8.4.8
@@ -251,9 +251,9 @@ importers:
 
   packages/app-bar:
     specifiers:
-      '@gits-id/button': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/tailwind-config': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/button': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/tailwind-config': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@heroicons/vue': ^1.0.6
       '@vue/test-utils': ^2.0.0-rc.17
       tailwindcss: ^3.0.23
@@ -270,8 +270,8 @@ importers:
 
   packages/badge:
     specifiers:
-      '@gits-id/tailwind-config': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/tailwind-config': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@heroicons/vue': ^1.0.6
       '@vue/test-utils': ^2.0.0-rc.17
       tailwindcss: ^3.0.23
@@ -287,7 +287,7 @@ importers:
 
   packages/breadcrumbs:
     specifiers:
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@vue/test-utils': ^2.0.0-rc.17
       tailwindcss: ^3.0.23
       vitest: ^0.7.10
@@ -299,11 +299,11 @@ importers:
 
   packages/button:
     specifiers:
-      '@gits-id/spinner': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/tailwind-components': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/tailwind-config': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/theme': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/spinner': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/tailwind-components': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/tailwind-config': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/theme': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@vitejs/plugin-vue': ^2.2.4
       '@vue/test-utils': ^2.0.0-rc.17
       autoprefixer: ^10.4.2
@@ -332,8 +332,8 @@ importers:
 
   packages/card:
     specifiers:
-      '@gits-id/button': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/button': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@vitejs/plugin-vue': ^2.2.4
       '@vue/test-utils': ^2.0.0-rc.17
       autoprefixer: ^10.4.2
@@ -358,7 +358,7 @@ importers:
 
   packages/checkbox:
     specifiers:
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@vue/test-utils': ^2.0.0-rc.17
       tailwindcss: ^3.0.23
       vitest: ^0.7.10
@@ -371,7 +371,7 @@ importers:
 
   packages/collapsible:
     specifiers:
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@heroicons/vue': ^1.0.6
       '@vue/test-utils': ^2.0.0-rc.17
       vitest: ^0.7.10
@@ -383,7 +383,7 @@ importers:
 
   packages/container:
     specifiers:
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@vue/test-utils': ^2.0.0-rc.17
       tailwindcss: ^3.0.23
       vitest: ^0.7.10
@@ -395,9 +395,9 @@ importers:
 
   packages/dropdown:
     specifiers:
-      '@gits-id/button': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/tailwind-config': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/button': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/tailwind-config': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
       '@vue/test-utils': ^2.0.0-rc.17
@@ -424,8 +424,8 @@ importers:
     specifiers:
       '@ckeditor/ckeditor5-build-classic': ^32.0.0
       '@ckeditor/ckeditor5-vue': ^2.0.1
-      '@gits-id/tailwind-config': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/tailwind-config': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
       '@vue/test-utils': ^2.0.0-rc.17
@@ -449,11 +449,11 @@ importers:
 
   packages/file-input:
     specifiers:
-      '@gits-id/button': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/input': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/spinner': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/tailwind-config': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/button': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/input': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/spinner': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/tailwind-config': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
       '@vue/test-utils': ^2.0.0-rc.17
@@ -478,8 +478,8 @@ importers:
 
   packages/form-group:
     specifiers:
-      '@gits-id/tailwind-config': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/tailwind-config': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@vue/test-utils': ^2.0.0-rc.17
       tailwindcss: ^3.0.23
       vitest: ^0.7.10
@@ -495,9 +495,9 @@ importers:
 
   packages/form-select:
     specifiers:
-      '@gits-id/input': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/tailwind-config': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/input': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/tailwind-config': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@vue/test-utils': ^2.0.0-rc.17
       tailwindcss: ^3.0.23
       vee-validate: ^4.5.9
@@ -516,9 +516,9 @@ importers:
 
   packages/input:
     specifiers:
-      '@gits-id/button': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/tailwind-config': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/button': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/tailwind-config': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
       '@vue/test-utils': ^2.0.0-rc.17
@@ -541,8 +541,8 @@ importers:
 
   packages/layouts:
     specifiers:
-      '@gits-id/tailwind-config': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/tailwind-config': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
       '@vue/test-utils': ^2.0.0-rc.17
@@ -564,8 +564,8 @@ importers:
 
   packages/logo:
     specifiers:
-      '@gits-id/tailwind-config': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/tailwind-config': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@vue/test-utils': ^2.0.0-rc.17
       tailwindcss: ^3.0.23
       vitest: ^0.7.10
@@ -581,8 +581,8 @@ importers:
 
   packages/menu:
     specifiers:
-      '@gits-id/tailwind-config': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/tailwind-config': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
       '@vue/test-utils': ^2.0.0-rc.17
@@ -606,9 +606,9 @@ importers:
 
   packages/menus:
     specifiers:
-      '@gits-id/button': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/tailwind-config': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/button': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/tailwind-config': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
       '@vue/test-utils': ^2.0.0-rc.17
@@ -631,9 +631,9 @@ importers:
 
   packages/modal:
     specifiers:
-      '@gits-id/button': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/tailwind-config': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/button': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/tailwind-config': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
       '@vue/test-utils': ^2.0.0-rc.17
@@ -656,10 +656,10 @@ importers:
 
   packages/multi-select:
     specifiers:
-      '@gits-id/badge': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/tailwind-config': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/tooltip': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/badge': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/tailwind-config': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/tooltip': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
       '@vue/test-utils': ^2.0.0-rc.17
@@ -685,11 +685,11 @@ importers:
 
   packages/nav-drawer:
     specifiers:
-      '@gits-id/logo': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/menu': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/navbar': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/tailwind-config': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/logo': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/menu': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/navbar': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/tailwind-config': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
       '@vue/test-utils': ^2.0.0-rc.17
@@ -714,11 +714,11 @@ importers:
 
   packages/navbar:
     specifiers:
-      '@gits-id/button': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/logo': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/menus': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/tailwind-config': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/button': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/logo': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/menus': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/tailwind-config': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
       '@vue/test-utils': ^2.0.0-rc.17
@@ -743,11 +743,11 @@ importers:
 
   packages/pages:
     specifiers:
-      '@gits-id/button': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/checkbox': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/input': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/tailwind-config': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/button': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/checkbox': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/input': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/tailwind-config': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
       '@vue/test-utils': ^2.0.0-rc.17
@@ -774,8 +774,8 @@ importers:
 
   packages/pagination:
     specifiers:
-      '@gits-id/tailwind-config': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/tailwind-config': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
       '@vue/test-utils': ^2.0.0-rc.17
@@ -799,8 +799,8 @@ importers:
 
   packages/progress:
     specifiers:
-      '@gits-id/tailwind-config': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/tailwind-config': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
       '@vue/test-utils': ^2.0.0-rc.17
@@ -822,8 +822,8 @@ importers:
 
   packages/radio:
     specifiers:
-      '@gits-id/tailwind-config': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/tailwind-config': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
       '@vue/test-utils': ^2.0.0-rc.17
@@ -845,10 +845,10 @@ importers:
 
   packages/select:
     specifiers:
-      '@gits-id/input': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/tailwind-config': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/tooltip': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/input': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/tailwind-config': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/tooltip': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
       '@vue/test-utils': ^2.0.0-rc.17
@@ -872,9 +872,9 @@ importers:
 
   packages/services:
     specifiers:
-      '@gits-id/button': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/tailwind-config': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/button': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/tailwind-config': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@vue/test-utils': ^2.0.0-rc.17
       axios: ^0.26.0
       vitest: ^0.7.10
@@ -889,8 +889,8 @@ importers:
 
   packages/spinner:
     specifiers:
-      '@gits-id/tailwind-config': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/tailwind-config': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@vue/test-utils': ^2.0.0-rc.17
       vitest: ^0.7.10
     devDependencies:
@@ -901,10 +901,10 @@ importers:
 
   packages/stats:
     specifiers:
-      '@gits-id/badge': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/card': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/tailwind-config': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/badge': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/card': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/tailwind-config': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
       '@vue/test-utils': ^2.0.0-rc.17
@@ -932,7 +932,7 @@ importers:
 
   packages/steppers:
     specifiers:
-      '@gits-id/tailwind-config': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/tailwind-config': ^0.1.17-alpha.33+1c8786c
       '@vue/compiler-dom': ^3.2.31
       '@vue/test-utils': ^2.0.0-rc.17
       tailwindcss: ^3.0.23
@@ -949,9 +949,9 @@ importers:
 
   packages/switch:
     specifiers:
-      '@gits-id/tailwind-config': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/types': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/tailwind-config': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/types': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
       '@vue/test-utils': ^2.0.0-rc.17
@@ -974,12 +974,12 @@ importers:
 
   packages/table:
     specifiers:
-      '@gits-id/checkbox': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/pagination': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/select': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/spinner': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/tailwind-config': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/checkbox': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/pagination': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/select': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/spinner': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/tailwind-config': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@heroicons/vue': ^1.0.6
       '@vue/test-utils': ^2.0.0-rc.17
       tailwindcss: ^3.0.23
@@ -999,10 +999,10 @@ importers:
 
   packages/tabs:
     specifiers:
-      '@gits-id/button': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/card': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/tailwind-config': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/button': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/card': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/tailwind-config': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
       '@vue/test-utils': ^2.0.0-rc.17
@@ -1029,9 +1029,9 @@ importers:
 
   packages/tailwind-config:
     specifiers:
-      '@gits-id/tailwind-components': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/theme': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/tailwind-components': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/theme': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@tailwindcss/aspect-ratio': ^0.4.0
       '@tailwindcss/forms': ^0.5.0
       '@tailwindcss/line-clamp': ^0.3.1
@@ -1049,8 +1049,8 @@ importers:
 
   packages/textarea:
     specifiers:
-      '@gits-id/tailwind-config': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/tailwind-config': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
       '@vue/test-utils': ^2.0.0-rc.17
@@ -1078,9 +1078,9 @@ importers:
 
   packages/toast:
     specifiers:
-      '@gits-id/button': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/tailwind-config': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/button': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/tailwind-config': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
       '@vue/test-utils': ^2.0.0-rc.17
@@ -1107,9 +1107,9 @@ importers:
 
   packages/tooltip:
     specifiers:
-      '@gits-id/button': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/tailwind-config': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/button': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/tailwind-config': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
       '@popperjs/core': ^2.11.2
@@ -1140,48 +1140,48 @@ importers:
 
   packages/ui:
     specifiers:
-      '@gits-id/alert': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/app-bar': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/badge': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/breadcrumbs': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/button': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/card': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/checkbox': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/collapsible': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/container': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/dropdown': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/editor': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/file-input': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/form-group': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/form-select': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/input': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/layouts': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/logo': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/menu': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/menus': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/modal': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/multi-select': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/nav-drawer': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/navbar': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/pages': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/pagination': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/progress-bar': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/radio': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/select': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/services': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/spinner': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/stats': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/switch': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/table': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/tabs': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/tailwind-components': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/tailwind-config': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/textarea': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/alert': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/app-bar': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/badge': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/breadcrumbs': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/button': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/card': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/checkbox': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/collapsible': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/container': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/dropdown': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/editor': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/file-input': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/form-group': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/form-select': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/input': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/layouts': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/logo': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/menu': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/menus': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/modal': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/multi-select': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/nav-drawer': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/navbar': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/pages': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/pagination': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/progress-bar': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/radio': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/select': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/services': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/spinner': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/stats': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/switch': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/table': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/tabs': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/tailwind-components': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/tailwind-config': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/textarea': ^0.1.17-alpha.33+1c8786c
       '@gits-id/theme': '*'
-      '@gits-id/toast': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/tooltip': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/types': ^0.1.17-alpha.32+4a1b6a4
-      '@gits-id/utils': ^0.1.17-alpha.32+4a1b6a4
+      '@gits-id/toast': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/tooltip': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/types': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/utils': ^0.1.17-alpha.33+1c8786c
       '@vue/test-utils': ^2.0.0-rc.17
       vitest: ^0.7.10
       vue-remix-icons: ^1.1.1

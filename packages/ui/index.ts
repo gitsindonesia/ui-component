@@ -45,7 +45,6 @@ import {
   Login,
   ResetPassword,
 } from '@gits-id/pages';
-import './style.css';
 
 const plugin = {
   install: (app: App) => {

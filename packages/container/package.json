@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/container",
-  "version": "0.1.17-alpha.32+4a1b6a4",
+  "version": "0.1.17-alpha.33+1c8786c",
   "description": "GITS Container Component",
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,7 +15,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@gits-id/utils": "^0.1.17-alpha.32+4a1b6a4",
+    "@gits-id/utils": "^0.1.17-alpha.33+1c8786c",
     "@vue/test-utils": "^2.0.0-rc.17",
     "tailwindcss": "^3.0.23",
     "vitest": "^0.7.10"
@@ -25,5 +25,5 @@
   "jsdelivr": "dist/breadcrumbs.iife.js",
   "module": "./dist/breadcrumbs.es.js",
   "types": "./dist/types/index.d.ts",
-  "gitHead": "4a1b6a4a542fd8bd952d23549ac5389fe8917e38"
+  "gitHead": "1c8786cbf03a24b464264d95d0d3a90812476412"
 }

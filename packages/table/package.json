@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/table",
-  "version": "0.1.17-alpha.32+4a1b6a4",
+  "version": "0.1.17-alpha.33+1c8786c",
   "description": "GITS Table Component",
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,14 +15,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gits-id/checkbox": "^0.1.17-alpha.32+4a1b6a4",
-    "@gits-id/pagination": "^0.1.17-alpha.32+4a1b6a4",
-    "@gits-id/select": "^0.1.17-alpha.32+4a1b6a4",
-    "@gits-id/spinner": "^0.1.17-alpha.32+4a1b6a4",
-    "@gits-id/utils": "^0.1.17-alpha.32+4a1b6a4"
+    "@gits-id/checkbox": "^0.1.17-alpha.33+1c8786c",
+    "@gits-id/pagination": "^0.1.17-alpha.33+1c8786c",
+    "@gits-id/select": "^0.1.17-alpha.33+1c8786c",
+    "@gits-id/spinner": "^0.1.17-alpha.33+1c8786c",
+    "@gits-id/utils": "^0.1.17-alpha.33+1c8786c"
   },
   "devDependencies": {
-    "@gits-id/tailwind-config": "^0.1.17-alpha.32+4a1b6a4",
+    "@gits-id/tailwind-config": "^0.1.17-alpha.33+1c8786c",
     "@gits-id/utils": "^0.0.0",
     "@heroicons/vue": "^1.0.6",
     "@vue/test-utils": "^2.0.0-rc.17",
@@ -34,5 +34,5 @@
   "jsdelivr": "dist/table.iife.js",
   "module": "./dist/table.es.js",
   "types": "./dist/types/index.d.ts",
-  "gitHead": "4a1b6a4a542fd8bd952d23549ac5389fe8917e38"
+  "gitHead": "1c8786cbf03a24b464264d95d0d3a90812476412"
 }
