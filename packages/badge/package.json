@@ -24,9 +24,9 @@
     "vitest": "^0.7.10",
     "@vue/test-utils": "^2.0.0-rc.17"
   },
-  "main": "dist/app-bar.umd.js",
-  "unpkg": "dist/app-bar.iife.js",
-  "jsdelivr": "dist/app-bar.iife.js",
-  "module": "./dist/app-bar.es.js",
+  "main": "dist/badge.umd.js",
+  "unpkg": "dist/badge.iife.js",
+  "jsdelivr": "dist/badge.iife.js",
+  "module": "./dist/badge.es.js",
   "types": "./dist/types/index.d.ts"
 }
