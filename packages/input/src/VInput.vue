@@ -1,12 +1,7 @@
 <script setup lang="ts">
 import {ref, toRefs, computed, watch} from 'vue';
 import {ErrorMessage} from 'vee-validate';
-import {
-  inputDisabledClasses,
-  useHeight,
-  useInputClasses,
-  useTextSize,
-} from '@gits-id/utils';
+import {inputDisabledClasses} from '@gits-id/utils';
 import {SearchIcon} from '@heroicons/vue/solid';
 
 const props = defineProps({
