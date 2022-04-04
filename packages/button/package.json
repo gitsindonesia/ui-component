@@ -29,7 +29,9 @@
     "tailwindcss": "^3.0.23",
     "typescript": "^4.6.2",
     "vite": "^2.8.6",
-    "vue": "^3.2.31"
+    "vue": "^3.2.31",
+    "vitest": "^0.7.10",
+    "@vue/test-utils": "^2.0.0-rc.17"
   },
   "main": "dist/button.umd.js",
   "unpkg": "dist/button.iife.js",
