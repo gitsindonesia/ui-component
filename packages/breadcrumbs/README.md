@@ -33,7 +33,7 @@ import Breadcrumbs from '@gits-id/breadcrumbs';
 </script>
 
 <template>
-  <Breadcrumbs color="primary">Text</Breadcrumbs>
+  <Breadcrumbs />
 </template>
 ```
 
