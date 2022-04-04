@@ -2,13 +2,14 @@
   "name": "@gits-id/editor",
   "version": "0.1.17-next.0",
   "description": "GITS Rich Text Editor Component",
-  "main": "src/index.ts",
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
+    "vue",
+    "ckeditor",
     "editor",
     "wysiwyg",
     "gits",
@@ -28,5 +29,10 @@
     "@heroicons/vue": "^1.0.6",
     "tailwindcss": "^3.0.23",
     "vee-validate": "^4.5.9"
-  }
+  },
+  "main": "dist/button.umd.js",
+  "unpkg": "dist/button.iife.js",
+  "jsdelivr": "dist/button.iife.js",
+  "module": "./dist/button.es.js",
+  "types": "./dist/types/index.d.ts"
 }
