@@ -23,9 +23,9 @@
     "vitest": "^0.7.10",
     "@vue/test-utils": "^2.0.0-rc.17"
   },
-  "main": "dist/breadcrumbs.umd.js",
-  "unpkg": "dist/breadcrumbs.iife.js",
-  "jsdelivr": "dist/breadcrumbs.iife.js",
-  "module": "./dist/breadcrumbs.es.js",
+  "main": "dist/checkbox.umd.js",
+  "unpkg": "dist/checkbox.iife.js",
+  "jsdelivr": "dist/checkbox.iife.js",
+  "module": "./dist/checkbox.es.js",
   "types": "./dist/types/index.d.ts"
 }
