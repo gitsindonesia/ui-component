@@ -2,9 +2,10 @@
   "name": "@gits-id/dropdown",
   "version": "0.1.17-next.0",
   "description": "GITS Dropdown Component",
-  "main": "src/index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
+    "prepublishOnly": "npm run build",
+    "test": "vitest"
   },
   "keywords": [
     "dropdown",
@@ -23,6 +24,14 @@
     "vue-feather": "^2.0.0"
   },
   "devDependencies": {
-    "@gits-id/utils": "^0.1.17-next.0"
-  }
+    "@gits-id/utils": "^0.1.17-next.0",
+    "@gits-id/tailwind-config": "^0.1.17-next.0",
+    "vitest": "^0.7.10",
+    "@vue/test-utils": "^2.0.0-rc.17"
+  },
+  "main": "dist/breadcrumbs.umd.js",
+  "unpkg": "dist/breadcrumbs.iife.js",
+  "jsdelivr": "dist/breadcrumbs.iife.js",
+  "module": "./dist/breadcrumbs.es.js",
+  "types": "./dist/types/index.d.ts"
 }
