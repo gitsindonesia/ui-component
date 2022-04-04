@@ -144,9 +144,7 @@ importers:
       '@babel/core': ^7.17.8
       '@ckeditor/ckeditor5-build-classic': ^32.0.0
       '@ckeditor/ckeditor5-vue': ^2.0.1
-      '@gits-id/button': ^0.1.17-alpha.33+1c8786c
-      '@gits-id/tailwind-config': ^0.1.17-alpha.33+1c8786c
-      '@gits-id/ui': ^0.1.17-alpha.33+1c8786c
+      '@gits-id/ui': ^0.1.17-alpha.34
       '@rushstack/eslint-patch': ^1.1.1
       '@storybook/addon-actions': ^6.4.19
       '@storybook/addon-essentials': ^6.4.19
@@ -187,8 +185,6 @@ importers:
     dependencies:
       '@ckeditor/ckeditor5-build-classic': 32.0.0
       '@ckeditor/ckeditor5-vue': 2.0.1
-      '@gits-id/button': 0.1.17-next.0_autoprefixer@10.4.4
-      '@gits-id/tailwind-config': 0.1.17-next.0_autoprefixer@10.4.4
       '@gits-id/ui': 0.1.17-next.0_bd4cb859d5ca8809b848295145bcf56c
       pinia: 2.0.12_typescript@4.5.5+vue@3.2.31
       prism-themes: 1.9.0
@@ -315,10 +311,10 @@ importers:
       vue: ^3.2.31
     dependencies:
       '@gits-id/spinner': 0.1.17-next.0
-      '@gits-id/theme': link:../theme
+      '@gits-id/theme': 0.1.17-alpha.34_autoprefixer@10.4.2
       '@gits-id/utils': 0.1.17-next.0
     devDependencies:
-      '@gits-id/tailwind-components': link:../tailwind-components
+      '@gits-id/tailwind-components': 0.1.17-alpha.34
       '@gits-id/tailwind-config': 0.1.17-next.0_autoprefixer@10.4.2
       '@vitejs/plugin-vue': 2.2.4_vite@2.8.6+vue@3.2.31
       '@vue/test-utils': 2.0.0-rc.17_vue@3.2.31
@@ -963,7 +959,7 @@ importers:
       vue: 3.2.31
     devDependencies:
       '@gits-id/tailwind-config': 0.1.17-next.0_autoprefixer@10.4.4
-      '@gits-id/types': link:../types
+      '@gits-id/types': 0.1.17-alpha.34
       '@gits-id/utils': 0.1.17-next.0
       '@headlessui/vue': 1.5.0_vue@3.2.31
       '@heroicons/vue': 1.0.6_vue@3.2.31
@@ -1038,8 +1034,8 @@ importers:
       '@tailwindcss/typography': ^0.5.2
       tailwindcss: ^3.0.23
     dependencies:
-      '@gits-id/tailwind-components': link:../tailwind-components
-      '@gits-id/theme': link:../theme
+      '@gits-id/tailwind-components': 0.1.17-alpha.34
+      '@gits-id/theme': 0.1.17-alpha.34_autoprefixer@10.4.4
       '@gits-id/utils': 0.1.17-next.0
       '@tailwindcss/aspect-ratio': 0.4.0_tailwindcss@3.0.23
       '@tailwindcss/forms': 0.5.0_tailwindcss@3.0.23
@@ -1220,13 +1216,13 @@ importers:
       '@gits-id/switch': 0.1.17-next.0
       '@gits-id/table': 0.1.17-next.0
       '@gits-id/tabs': 0.1.17-next.0_autoprefixer@10.4.4
-      '@gits-id/tailwind-components': link:../tailwind-components
+      '@gits-id/tailwind-components': 0.1.17-alpha.34
       '@gits-id/tailwind-config': 0.1.17-next.0_autoprefixer@10.4.4
       '@gits-id/textarea': 0.1.17-next.0
       '@gits-id/theme': link:../theme
       '@gits-id/toast': 0.1.17-next.0_50cd69dbee61b5f39543bcfa06fc4fcc
       '@gits-id/tooltip': 0.1.17-next.0
-      '@gits-id/types': link:../types
+      '@gits-id/types': 0.1.17-alpha.34
       '@gits-id/utils': 0.1.17-next.0
       '@vue/test-utils': 2.0.0-rc.17_vue@3.2.31
       vitest: 0.7.10_happy-dom@2.50.0
@@ -3210,7 +3206,7 @@ packages:
     resolution: {integrity: sha512-bIA97rMLLDKT/e+9Mr3JVk5oPrtXqKTDZ73BbNoSS6R/vkvo62UbxE1VR3VCxn6YTQ8xBv92y8qswlHYdN/Tcg==}
     dependencies:
       '@gits-id/spinner': 0.1.17-next.0
-      '@gits-id/theme': 0.1.17-alpha.0_autoprefixer@10.4.4
+      '@gits-id/theme': 0.1.17-alpha.34_autoprefixer@10.4.4
       '@gits-id/utils': 0.1.17-next.0
     transitivePeerDependencies:
       - autoprefixer
@@ -3460,16 +3456,14 @@ packages:
       - ts-node
     dev: false
 
-  /@gits-id/tailwind-components/0.1.17-alpha.0:
-    resolution: {integrity: sha512-3xILpUCcEnttBjFZoDLS8zoolO1guoDvGC93W6Wagc7IcL73WaEHpc0NZFe8GgVvBgZ3aGZDH/8puhizTicwkg==}
-    dependencies:
-      vue: 3.2.31
+  /@gits-id/tailwind-components/0.1.17-alpha.34:
+    resolution: {integrity: sha512-OtiEVk3Zvl2wjfMf0qaP+EpL1K4F8bN1JbpbXy0uYG2OS9eYQvc10lX3nTqQqlSGo2yHJqhDxXMLwQT5p/LNuQ==}
 
   /@gits-id/tailwind-config/0.1.17-next.0_autoprefixer@10.4.2:
     resolution: {integrity: sha512-17aAaReyqJM0ouGmZ3AAPHsP7jECn2ncOyNADfM50fbZZ3j7eWJ0lwiCgzJS2vN5sVGkYD4A4TqlqRyv5dneAA==}
     dependencies:
-      '@gits-id/tailwind-components': 0.1.17-alpha.0
-      '@gits-id/theme': 0.1.17-alpha.0_autoprefixer@10.4.2
+      '@gits-id/tailwind-components': 0.1.17-alpha.34
+      '@gits-id/theme': 0.1.17-alpha.34_autoprefixer@10.4.2
       '@gits-id/utils': 0.1.17-next.0
       '@tailwindcss/aspect-ratio': 0.4.0_tailwindcss@3.0.23
       '@tailwindcss/forms': 0.5.0_tailwindcss@3.0.23
@@ -3484,8 +3478,8 @@ packages:
   /@gits-id/tailwind-config/0.1.17-next.0_autoprefixer@10.4.4:
     resolution: {integrity: sha512-17aAaReyqJM0ouGmZ3AAPHsP7jECn2ncOyNADfM50fbZZ3j7eWJ0lwiCgzJS2vN5sVGkYD4A4TqlqRyv5dneAA==}
     dependencies:
-      '@gits-id/tailwind-components': 0.1.17-alpha.0
-      '@gits-id/theme': 0.1.17-alpha.0_autoprefixer@10.4.4
+      '@gits-id/tailwind-components': 0.1.17-alpha.34
+      '@gits-id/theme': 0.1.17-alpha.34_autoprefixer@10.4.4
       '@gits-id/utils': 0.1.17-next.0
       '@tailwindcss/aspect-ratio': 0.4.0_tailwindcss@3.0.23
       '@tailwindcss/forms': 0.5.0_tailwindcss@3.0.23
@@ -3504,17 +3498,16 @@ packages:
       vue: 3.2.31
     dev: false
 
-  /@gits-id/theme/0.1.17-alpha.0_autoprefixer@10.4.2:
-    resolution: {integrity: sha512-wXJsubq1jcv/pHDNaHx+a4uzzUakcHxm0M8NKBWtd0y5yxnPVsSnaBL2hRu+wELKnlpu5zKQDTDK6QxOFDHZig==}
+  /@gits-id/theme/0.1.17-alpha.34_autoprefixer@10.4.2:
+    resolution: {integrity: sha512-/nZ43ASqsETLPeoj2POT4qJDATYNMfTPjkvKdqkO09cac9SfdqoJO3tpsTXGgYqhjt2JQZJrP8sbOIYemC1/jg==}
     dependencies:
       tailwindcss: 3.0.23_autoprefixer@10.4.2
     transitivePeerDependencies:
       - autoprefixer
       - ts-node
-    dev: true
 
-  /@gits-id/theme/0.1.17-alpha.0_autoprefixer@10.4.4:
-    resolution: {integrity: sha512-wXJsubq1jcv/pHDNaHx+a4uzzUakcHxm0M8NKBWtd0y5yxnPVsSnaBL2hRu+wELKnlpu5zKQDTDK6QxOFDHZig==}
+  /@gits-id/theme/0.1.17-alpha.34_autoprefixer@10.4.4:
+    resolution: {integrity: sha512-/nZ43ASqsETLPeoj2POT4qJDATYNMfTPjkvKdqkO09cac9SfdqoJO3tpsTXGgYqhjt2JQZJrP8sbOIYemC1/jg==}
     dependencies:
       tailwindcss: 3.0.23_autoprefixer@10.4.4
     transitivePeerDependencies:
@@ -3559,11 +3552,10 @@ packages:
       vue: 3.2.31
     dev: false
 
-  /@gits-id/types/0.1.17-alpha.0:
-    resolution: {integrity: sha512-J6QJgjzo2Tnx3MEq2tdNNX40vE5XAtNJpm9TSNBmdo/D0UC8/97vdml+PuwQq4LBQdshy7k74eSFaXZQrOYimw==}
+  /@gits-id/types/0.1.17-alpha.34:
+    resolution: {integrity: sha512-zdmmK9dQokKfP47tkfn64HTiR+3oPIey2M68TXbUTYt/u6JPWAYwO+iEvKyHWd97jBZTz5s485WdjbwlRVqwqA==}
     dependencies:
       vue: 3.2.31
-    dev: false
 
   /@gits-id/ui/0.1.17-next.0_bd4cb859d5ca8809b848295145bcf56c:
     resolution: {integrity: sha512-hZMzKS38FSsuwAwq8YrplNlRXb/6jz9jIKOuolBcbdgbEuoVc7jb0mNKZ667AVflH5C9bMVO+4SQEdTPhv+Ktw==}
@@ -3602,12 +3594,12 @@ packages:
       '@gits-id/switch': 0.1.17-next.0
       '@gits-id/table': 0.1.17-next.0
       '@gits-id/tabs': 0.1.17-next.0_autoprefixer@10.4.4
-      '@gits-id/tailwind-components': 0.1.17-alpha.0
+      '@gits-id/tailwind-components': 0.1.17-alpha.34
       '@gits-id/tailwind-config': 0.1.17-next.0_autoprefixer@10.4.4
       '@gits-id/textarea': 0.1.17-next.0
       '@gits-id/toast': 0.1.17-next.0_eafd0e2cd1f4eecb4e8742c26941edb3
       '@gits-id/tooltip': 0.1.17-next.0
-      '@gits-id/types': 0.1.17-alpha.0
+      '@gits-id/types': 0.1.17-alpha.34
       '@gits-id/utils': 0.1.17-next.0
       vue-remix-icons: 1.1.1
     transitivePeerDependencies:
@@ -19501,7 +19493,6 @@ packages:
       resolve: 1.22.0
     transitivePeerDependencies:
       - ts-node
-    dev: true
 
   /tailwindcss/3.0.23_autoprefixer@10.4.4:
     resolution: {integrity: sha512-+OZOV9ubyQ6oI2BXEhzw4HrqvgcARY38xv3zKcjnWtMIZstEsXdI9xftd1iB7+RbOnj2HOEzkA0OyB5BaSxPQA==}

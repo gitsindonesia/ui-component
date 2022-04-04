@@ -6,7 +6,7 @@ import GitsUi from '@gits-id/ui';
 import './index.css';
 
 // gits ui styles
-// import '@gits-id/ui/style.css';
+import '@gits-id/ui/style.css';
 
 const app = createApp(App);
 

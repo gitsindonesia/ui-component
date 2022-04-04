@@ -22,7 +22,17 @@ pnpm i @gits-id/ui
 
 ## Usage
 
-Coming Soon.
+```ts
+// main.ts
+
+import GitsUi from '@gits-id/ui';
+// gits ui styles
+import '@gits-id/ui/style.css';
+
+const app = createApp(App);
+
+app.use(GitsUi); // use plugin
+```
 
 ## Documentation
 
