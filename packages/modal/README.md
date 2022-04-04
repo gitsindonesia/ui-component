@@ -1,25 +1,25 @@
-# GITS Breadcrumbs Component
+# GITS VModal Component
 
-> Reusable Breadcrumbs Component
+> Reusable VModal Component
 
 ## Installation
 
 npm
 
 ```
-npm i @gits-id/breadcrumbs
+npm i @gits-id/modal
 ```
 
 yarn
 
 ```
-yarn add @gits-id/breadcrumbs
+yarn add @gits-id/modal
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/breadcrumbs
+pnpm i @gits-id/modal
 ```
 
 ## Usage
@@ -27,19 +27,19 @@ pnpm i @gits-id/breadcrumbs
 ```vue
 <script setup lang="ts">
 // import styles
-import '@gits-id/breadcrumbs/dist/style.css';
+import '@gits-id/modal/dist/style.css';
 // import component
-import Breadcrumbs from '@gits-id/breadcrumbs';
+import VModal from '@gits-id/modal';
 </script>
 
 <template>
-  <Breadcrumbs />
+  <VModal />
 </template>
 ```
 
 ## Documentation
 
-View `Breadcrumbs` documentation [here](https://gits-ui.web.app/?path=/story/components-breadcrumbs--default).
+View `VModal` documentation [here](https://gits-ui.web.app/?path=/story/components-modal--default).
 
 ## Licence
 

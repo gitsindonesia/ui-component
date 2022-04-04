@@ -4,9 +4,7 @@ import {resolve} from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    vue(),
-  ],
+  plugins: [vue()],
   esbuild: {
     exclude: ['./src/**/**.stories.ts'],
   },
@@ -14,22 +12,29 @@ export default defineConfig({
     target: 'esnext',
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'Badge',
+      name: 'VToast',
       formats: ['es', 'cjs', 'iife', 'umd'],
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
-      external: ['vue', '@heroicons/vue/outline'],
+      external: [
+        'vue',
+        '@heroicons/vue/outline',
+        '@headlessui/vue',
+        '@gits-id/button',
+        'pinia',
+        'vuex'
+      ],
       output: {
         // Provide global variables to use in the UMD build
         // for externalized deps
         globals: {
-          vue: 'Vue'
-        }
+          vue: 'Vue',
+        },
       },
       resolve: {
-        dedupe: "vue"
+        dedupe: 'vue',
       },
     },
   },

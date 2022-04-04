@@ -1,25 +1,25 @@
-# GITS Breadcrumbs Component
+# GITS VTextarea Component
 
-> Reusable Breadcrumbs Component
+> Reusable VTextarea Component
 
 ## Installation
 
 npm
 
 ```
-npm i @gits-id/breadcrumbs
+npm i @gits-id/textarea
 ```
 
 yarn
 
 ```
-yarn add @gits-id/breadcrumbs
+yarn add @gits-id/textarea
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/breadcrumbs
+pnpm i @gits-id/textarea
 ```
 
 ## Usage
@@ -27,19 +27,19 @@ pnpm i @gits-id/breadcrumbs
 ```vue
 <script setup lang="ts">
 // import styles
-import '@gits-id/breadcrumbs/dist/style.css';
+import '@gits-id/textarea/dist/style.css';
 // import component
-import Breadcrumbs from '@gits-id/breadcrumbs';
+import VTextarea from '@gits-id/textarea';
 </script>
 
 <template>
-  <Breadcrumbs />
+  <VTextarea />
 </template>
 ```
 
 ## Documentation
 
-View `Breadcrumbs` documentation [here](https://gits-ui.web.app/?path=/story/components-breadcrumbs--default).
+View `VTextarea` documentation [here](https://gits-ui.web.app/?path=/story/components-textarea--default).
 
 ## Licence
 

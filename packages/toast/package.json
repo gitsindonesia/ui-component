@@ -2,9 +2,10 @@
   "name": "@gits-id/toast",
   "version": "0.1.17-next.0",
   "description": "GITS Toast Component",
-  "main": "src/index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
+    "prepublishOnly": "npm run build",
+    "test": "vitest"
   },
   "keywords": [
     "toast",
@@ -24,6 +25,14 @@
     "@gits-id/utils": "^0.1.17-next.0",
     "@headlessui/vue": "^1.5.0",
     "@heroicons/vue": "^1.0.6",
-    "tailwindcss": "^3.0.23"
-  }
+    "tailwindcss": "^3.0.23",
+    "@gits-id/tailwind-config": "^0.1.17-next.0",
+    "vitest": "^0.7.10",
+    "@vue/test-utils": "^2.0.0-rc.17"
+  },
+  "main": "dist/toast.umd.js",
+  "unpkg": "dist/toast.iife.js",
+  "jsdelivr": "dist/toast.iife.js",
+  "module": "./dist/toast.es.js",
+  "types": "./dist/types/index.d.ts"
 }

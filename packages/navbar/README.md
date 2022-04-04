@@ -1,25 +1,25 @@
-# GITS Breadcrumbs Component
+# GITS Navbar Component
 
-> Reusable Breadcrumbs Component
+> Reusable Navbar Component
 
 ## Installation
 
 npm
 
 ```
-npm i @gits-id/breadcrumbs
+npm i @gits-id/navbar
 ```
 
 yarn
 
 ```
-yarn add @gits-id/breadcrumbs
+yarn add @gits-id/navbar
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/breadcrumbs
+pnpm i @gits-id/navbar
 ```
 
 ## Usage
@@ -27,19 +27,19 @@ pnpm i @gits-id/breadcrumbs
 ```vue
 <script setup lang="ts">
 // import styles
-import '@gits-id/breadcrumbs/dist/style.css';
+import '@gits-id/navbar/dist/style.css';
 // import component
-import Breadcrumbs from '@gits-id/breadcrumbs';
+import Navbar from '@gits-id/navbar';
 </script>
 
 <template>
-  <Breadcrumbs />
+  <Navbar />
 </template>
 ```
 
 ## Documentation
 
-View `Breadcrumbs` documentation [here](https://gits-ui.web.app/?path=/story/components-breadcrumbs--default).
+View `Navbar` documentation [here](https://gits-ui.web.app/?path=/story/components-navbar--default).
 
 ## Licence
 

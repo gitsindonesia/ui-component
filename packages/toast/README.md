@@ -1,25 +1,25 @@
-# GITS Breadcrumbs Component
+# GITS Toast Component
 
-> Reusable Breadcrumbs Component
+> Reusable Toast Component
 
 ## Installation
 
 npm
 
 ```
-npm i @gits-id/breadcrumbs
+npm i @gits-id/toast
 ```
 
 yarn
 
 ```
-yarn add @gits-id/breadcrumbs
+yarn add @gits-id/toast
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/breadcrumbs
+pnpm i @gits-id/toast
 ```
 
 ## Usage
@@ -27,19 +27,19 @@ pnpm i @gits-id/breadcrumbs
 ```vue
 <script setup lang="ts">
 // import styles
-import '@gits-id/breadcrumbs/dist/style.css';
+import '@gits-id/toast/dist/style.css';
 // import component
-import Breadcrumbs from '@gits-id/breadcrumbs';
+import Toast from '@gits-id/toast';
 </script>
 
 <template>
-  <Breadcrumbs />
+  <Toast />
 </template>
 ```
 
 ## Documentation
 
-View `Breadcrumbs` documentation [here](https://gits-ui.web.app/?path=/story/components-breadcrumbs--default).
+View `Toast` documentation [here](https://gits-ui.web.app/?path=/story/components-toast--default).
 
 ## Licence
 

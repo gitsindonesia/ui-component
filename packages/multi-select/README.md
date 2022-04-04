@@ -1,25 +1,25 @@
-# GITS Breadcrumbs Component
+# GITS VMultiSelect Component
 
-> Reusable Breadcrumbs Component
+> Reusable VMultiSelect Component
 
 ## Installation
 
 npm
 
 ```
-npm i @gits-id/breadcrumbs
+npm i @gits-id/multi-select
 ```
 
 yarn
 
 ```
-yarn add @gits-id/breadcrumbs
+yarn add @gits-id/multi-select
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/breadcrumbs
+pnpm i @gits-id/multi-select
 ```
 
 ## Usage
@@ -27,19 +27,19 @@ pnpm i @gits-id/breadcrumbs
 ```vue
 <script setup lang="ts">
 // import styles
-import '@gits-id/breadcrumbs/dist/style.css';
+import '@gits-id/multi-select/dist/style.css';
 // import component
-import Breadcrumbs from '@gits-id/breadcrumbs';
+import VMultiSelect from '@gits-id/multi-select';
 </script>
 
 <template>
-  <Breadcrumbs />
+  <VMultiSelect />
 </template>
 ```
 
 ## Documentation
 
-View `Breadcrumbs` documentation [here](https://gits-ui.web.app/?path=/story/components-breadcrumbs--default).
+View `VMultiSelect` documentation [here](https://gits-ui.web.app/?path=/story/components-multi-select--default).
 
 ## Licence
 

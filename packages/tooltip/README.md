@@ -1,25 +1,25 @@
-# GITS Breadcrumbs Component
+# GITS Tooltip Component
 
-> Reusable Breadcrumbs Component
+> Reusable Tooltip Component
 
 ## Installation
 
 npm
 
 ```
-npm i @gits-id/breadcrumbs
+npm i @gits-id/tooltip
 ```
 
 yarn
 
 ```
-yarn add @gits-id/breadcrumbs
+yarn add @gits-id/tooltip
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/breadcrumbs
+pnpm i @gits-id/tooltip
 ```
 
 ## Usage
@@ -27,19 +27,19 @@ pnpm i @gits-id/breadcrumbs
 ```vue
 <script setup lang="ts">
 // import styles
-import '@gits-id/breadcrumbs/dist/style.css';
+import '@gits-id/tooltip/dist/style.css';
 // import component
-import Breadcrumbs from '@gits-id/breadcrumbs';
+import Tooltip from '@gits-id/tooltip';
 </script>
 
 <template>
-  <Breadcrumbs />
+  <Tooltip />
 </template>
 ```
 
 ## Documentation
 
-View `Breadcrumbs` documentation [here](https://gits-ui.web.app/?path=/story/components-breadcrumbs--default).
+View `Tooltip` documentation [here](https://gits-ui.web.app/?path=/story/components-tooltip--default).
 
 ## Licence
 

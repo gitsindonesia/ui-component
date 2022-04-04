@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { computed, PropType, toRefs } from "vue";
-import { XIcon } from "@heroicons/vue/outline";
-import VMenu from "@gits-id/menu";
-import VLogo from "@gits-id/logo";
-import { ChevronLeftIcon } from "@heroicons/vue/solid";
-import { getBgColor } from "@gits-id/utils";
-import type { VNavbarMenuItem } from "@gits-id/navbar/types";
+import {computed, PropType, toRefs} from 'vue';
+import {XIcon} from '@heroicons/vue/outline';
+import VMenu from '@gits-id/menu';
+import VLogo from '@gits-id/logo';
+import {ChevronLeftIcon} from '@heroicons/vue/solid';
+import {getBgColor} from '@gits-id/utils';
+import type {VNavbarMenuItem} from '@gits-id/navbar/dist/types';
 
 const props = defineProps({
   modelValue: {
@@ -34,7 +34,7 @@ const props = defineProps({
   },
   color: {
     type: String,
-    default: "",
+    default: '',
   },
   hideToggle: {
     type: Boolean,
@@ -42,19 +42,19 @@ const props = defineProps({
   },
   btnToggleClass: {
     type: String,
-    default: "",
+    default: '',
   },
   classMenuParent: {
     type: String,
-    default: "",
+    default: '',
   },
   toggleColor: {
     type: String,
-    default: "primary",
+    default: 'primary',
   },
   expandColor: {
     type: String,
-    default: "",
+    default: '',
   },
   expandHover: {
     type: Boolean,
@@ -79,30 +79,30 @@ const {
 } = toRefs(props);
 
 const emit = defineEmits([
-  "update:modelValue",
-  "update:mini",
-  "toggle:click",
-  "update:expandHover",
+  'update:modelValue',
+  'update:mini',
+  'toggle:click',
+  'update:expandHover',
 ]);
 
 const toggleMenu = () => {
-  emit("toggle:click");
-  emit("update:mini", !mini.value);
+  emit('toggle:click');
+  emit('update:mini', !mini.value);
 };
 
 const mouseOver = () => {
   if (isExpandHover.value) {
-    emit("update:expandHover", true);
+    emit('update:expandHover', true);
   }
 };
 const mouseOverLeave = () => {
   if (isExpandHover.value) {
-    emit("update:expandHover", false);
+    emit('update:expandHover', false);
   }
 };
 
 const bgColor = computed(() =>
-  getBgColor(color.value, dark.value ? "bg-gray-900" : "bg-white")
+  getBgColor(color.value, dark.value ? 'bg-gray-900' : 'bg-white'),
 );
 </script>
 
@@ -139,7 +139,7 @@ const bgColor = computed(() =>
   >
     <div class="hidden sm:block">
       <template v-if="!hideToggle">
-        <slot name="toggle" :on="{ click: toggleMenu }">
+        <slot name="toggle" :on="{click: toggleMenu}">
           <v-btn
             size="sm"
             icon
@@ -150,7 +150,10 @@ const bgColor = computed(() =>
             :color="toggleColor"
             @click="toggleMenu"
           >
-            <ChevronLeftIcon class="w-5 h-5" :class="[mini ? 'rotate-180' : '']" />
+            <ChevronLeftIcon
+              class="w-5 h-5"
+              :class="[mini ? 'rotate-180' : '']"
+            />
           </v-btn>
         </slot>
       </template>

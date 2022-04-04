@@ -48,6 +48,7 @@
     "@gits-id/tooltip": "^0.1.17-next.0",
     "@gits-id/types": "^0.1.17-alpha.0",
     "@gits-id/utils": "^0.1.17-next.0",
+    "@gits-id/theme": "*",
     "vue-remix-icons": "^1.1.1",
     "vitest": "^0.7.10",
     "@vue/test-utils": "^2.0.0-rc.17"

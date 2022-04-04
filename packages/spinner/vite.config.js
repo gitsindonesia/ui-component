@@ -14,7 +14,7 @@ export default defineConfig({
     target: 'esnext',
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'Badge',
+      name: 'VSpinner',
       formats: ['es', 'cjs', 'iife', 'umd'],
     },
     rollupOptions: {

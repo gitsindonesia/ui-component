@@ -66,7 +66,8 @@ export default defineConfig({
         '@gits-id/utils',
         'vee-validate',
         'vue-router',
-        'pinia'
+        'pinia',
+        'vuex'
       ],
       output: {
         // Provide global variables to use in the UMD build

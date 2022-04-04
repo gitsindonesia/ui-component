@@ -3,7 +3,9 @@
   "version": "0.1.17-alpha.0",
   "description": "GITS Tailwind Plugin",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
+    "prepublishOnly": "npm run build",
+    "test": "vitest"
   },
   "keywords": [
     "gits",

@@ -1,25 +1,25 @@
-# GITS Breadcrumbs Component
+# GITS Steppers Component
 
-> Reusable Breadcrumbs Component
+> Reusable Steppers Component
 
 ## Installation
 
 npm
 
 ```
-npm i @gits-id/breadcrumbs
+npm i @gits-id/steppers
 ```
 
 yarn
 
 ```
-yarn add @gits-id/breadcrumbs
+yarn add @gits-id/steppers
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/breadcrumbs
+pnpm i @gits-id/steppers
 ```
 
 ## Usage
@@ -27,19 +27,19 @@ pnpm i @gits-id/breadcrumbs
 ```vue
 <script setup lang="ts">
 // import styles
-import '@gits-id/breadcrumbs/dist/style.css';
+import '@gits-id/steppers/dist/style.css';
 // import component
-import Breadcrumbs from '@gits-id/breadcrumbs';
+import Steppers from '@gits-id/steppers';
 </script>
 
 <template>
-  <Breadcrumbs />
+  <Steppers />
 </template>
 ```
 
 ## Documentation
 
-View `Breadcrumbs` documentation [here](https://gits-ui.web.app/?path=/story/components-breadcrumbs--default).
+View `Steppers` documentation [here](https://gits-ui.web.app/?path=/story/components-steppers--default).
 
 ## Licence
 

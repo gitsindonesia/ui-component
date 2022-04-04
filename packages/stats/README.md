@@ -1,25 +1,25 @@
-# GITS Breadcrumbs Component
+# GITS Stats Component
 
-> Reusable Breadcrumbs Component
+> Reusable Stats Component
 
 ## Installation
 
 npm
 
 ```
-npm i @gits-id/breadcrumbs
+npm i @gits-id/stats
 ```
 
 yarn
 
 ```
-yarn add @gits-id/breadcrumbs
+yarn add @gits-id/stats
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/breadcrumbs
+pnpm i @gits-id/stats
 ```
 
 ## Usage
@@ -27,19 +27,19 @@ pnpm i @gits-id/breadcrumbs
 ```vue
 <script setup lang="ts">
 // import styles
-import '@gits-id/breadcrumbs/dist/style.css';
+import '@gits-id/stats/dist/style.css';
 // import component
-import Breadcrumbs from '@gits-id/breadcrumbs';
+import Stats from '@gits-id/stats';
 </script>
 
 <template>
-  <Breadcrumbs />
+  <Stats />
 </template>
 ```
 
 ## Documentation
 
-View `Breadcrumbs` documentation [here](https://gits-ui.web.app/?path=/story/components-breadcrumbs--default).
+View `Stats` documentation [here](https://gits-ui.web.app/?path=/story/components-stats--default).
 
 ## Licence
 

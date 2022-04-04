@@ -14,13 +14,18 @@ export default defineConfig({
     target: 'esnext',
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'Badge',
+      name: 'VModal',
       formats: ['es', 'cjs', 'iife', 'umd'],
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
-      external: ['vue', '@heroicons/vue/outline'],
+      external: [
+        'vue',
+        '@heroicons/vue/outline',
+        '@headlessui/vue',
+        '@gits-id/button',
+      ],
       output: {
         // Provide global variables to use in the UMD build
         // for externalized deps

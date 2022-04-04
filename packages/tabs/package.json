@@ -2,9 +2,10 @@
   "name": "@gits-id/tabs",
   "version": "0.1.17-next.0",
   "description": "GITS Tabs Component",
-  "main": "src/index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
+    "prepublishOnly": "npm run build",
+    "test": "vitest"
   },
   "keywords": [
     "tabs",
@@ -24,6 +25,14 @@
     "@headlessui/vue": "^1.5.0",
     "@heroicons/vue": "^1.0.6",
     "tailwindcss": "^3.0.23",
-    "vee-validate": "^4.5.9"
-  }
+    "vee-validate": "^4.5.9",
+    "@gits-id/tailwind-config": "^0.1.17-next.0",
+    "vitest": "^0.7.10",
+    "@vue/test-utils": "^2.0.0-rc.17"
+  },
+  "main": "dist/tabs.umd.js",
+  "unpkg": "dist/tabs.iife.js",
+  "jsdelivr": "dist/tabs.iife.js",
+  "module": "./dist/tabs.es.js",
+  "types": "./dist/types/index.d.ts"
 }

@@ -29,7 +29,7 @@ import VContainer from '@gits-id/container';
 import VLogo from '@gits-id/logo';
 import VToast from '@gits-id/toast';
 import VStats from '@gits-id/stats';
-import VFileUpload from '@gits-id/file-input/src';
+import VFileUpload from '@gits-id/file-input';
 import {VCollapsible, VCollapse, VCollapsibleGroup} from '@gits-id/collapsible';
 import VMultiSelect from '@gits-id/multi-select';
 import VEditor from '@gits-id/editor';

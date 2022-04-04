@@ -1,25 +1,25 @@
-# GITS Breadcrumbs Component
+# GITS Progress Component
 
-> Reusable Breadcrumbs Component
+> Reusable Progress Component
 
 ## Installation
 
 npm
 
 ```
-npm i @gits-id/breadcrumbs
+npm i @gits-id/progress
 ```
 
 yarn
 
 ```
-yarn add @gits-id/breadcrumbs
+yarn add @gits-id/progress
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/breadcrumbs
+pnpm i @gits-id/progress
 ```
 
 ## Usage
@@ -27,19 +27,19 @@ pnpm i @gits-id/breadcrumbs
 ```vue
 <script setup lang="ts">
 // import styles
-import '@gits-id/breadcrumbs/dist/style.css';
+import '@gits-id/progress/dist/style.css';
 // import component
-import Breadcrumbs from '@gits-id/breadcrumbs';
+import Progress from '@gits-id/progress';
 </script>
 
 <template>
-  <Breadcrumbs />
+  <Progress />
 </template>
 ```
 
 ## Documentation
 
-View `Breadcrumbs` documentation [here](https://gits-ui.web.app/?path=/story/components-breadcrumbs--default).
+View `Progress` documentation [here](https://gits-ui.web.app/?path=/story/components-progress--default).
 
 ## Licence
 

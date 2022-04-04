@@ -1,25 +1,25 @@
-# GITS Breadcrumbs Component
+# GITS Spinner Component
 
-> Reusable Breadcrumbs Component
+> Reusable Spinner Component
 
 ## Installation
 
 npm
 
 ```
-npm i @gits-id/breadcrumbs
+npm i @gits-id/spinner
 ```
 
 yarn
 
 ```
-yarn add @gits-id/breadcrumbs
+yarn add @gits-id/spinner
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/breadcrumbs
+pnpm i @gits-id/spinner
 ```
 
 ## Usage
@@ -27,19 +27,19 @@ pnpm i @gits-id/breadcrumbs
 ```vue
 <script setup lang="ts">
 // import styles
-import '@gits-id/breadcrumbs/dist/style.css';
+import '@gits-id/spinner/dist/style.css';
 // import component
-import Breadcrumbs from '@gits-id/breadcrumbs';
+import Spinner from '@gits-id/spinner';
 </script>
 
 <template>
-  <Breadcrumbs />
+  <Spinner />
 </template>
 ```
 
 ## Documentation
 
-View `Breadcrumbs` documentation [here](https://gits-ui.web.app/?path=/story/components-breadcrumbs--default).
+View `Spinner` documentation [here](https://gits-ui.web.app/?path=/story/components-spinner--default).
 
 ## Licence
 

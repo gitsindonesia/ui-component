@@ -632,32 +632,41 @@ importers:
   packages/modal:
     specifiers:
       '@gits-id/button': ^0.1.17-next.0
+      '@gits-id/tailwind-config': ^0.1.17-next.0
       '@gits-id/utils': ^0.1.17-next.0
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
+      '@vue/test-utils': ^2.0.0-rc.17
       tailwindcss: ^3.0.23
       vee-validate: ^4.5.9
+      vitest: ^0.7.10
       vue: ^3.2.31
     dependencies:
       '@gits-id/button': link:../button
       vue: 3.2.31
     devDependencies:
+      '@gits-id/tailwind-config': link:../tailwind-config
       '@gits-id/utils': link:../utils
       '@headlessui/vue': 1.5.0_vue@3.2.31
       '@heroicons/vue': 1.0.6_vue@3.2.31
+      '@vue/test-utils': 2.0.0-rc.17_vue@3.2.31
       tailwindcss: 3.0.23_autoprefixer@10.4.4
       vee-validate: 4.5.9_vue@3.2.31
+      vitest: 0.7.10_happy-dom@2.50.0
 
   packages/multi-select:
     specifiers:
       '@gits-id/badge': ^0.1.17-next.0
+      '@gits-id/tailwind-config': ^0.1.17-next.0
       '@gits-id/tooltip': ^0.1.17-next.0
       '@gits-id/utils': ^0.1.17-next.0
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
+      '@vue/test-utils': ^2.0.0-rc.17
       '@vueuse/core': ^7.7.1
       tailwindcss: ^3.0.23
       vee-validate: ^4.5.9
+      vitest: ^0.7.10
       vue: ^3.2.31
     dependencies:
       '@gits-id/badge': link:../badge
@@ -665,22 +674,28 @@ importers:
       '@vueuse/core': 7.7.1_vue@3.2.31
       vue: 3.2.31
     devDependencies:
+      '@gits-id/tailwind-config': link:../tailwind-config
       '@gits-id/utils': link:../utils
       '@headlessui/vue': 1.5.0_vue@3.2.31
       '@heroicons/vue': 1.0.6_vue@3.2.31
+      '@vue/test-utils': 2.0.0-rc.17_vue@3.2.31
       tailwindcss: 3.0.23_autoprefixer@10.4.4
       vee-validate: 4.5.9_vue@3.2.31
+      vitest: 0.7.10_happy-dom@2.50.0
 
   packages/nav-drawer:
     specifiers:
       '@gits-id/logo': ^0.1.17-next.0
       '@gits-id/menu': ^0.1.17-next.0
       '@gits-id/navbar': ^0.1.17-next.0
+      '@gits-id/tailwind-config': ^0.1.17-next.0
       '@gits-id/utils': ^0.1.17-next.0
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
+      '@vue/test-utils': ^2.0.0-rc.17
       tailwindcss: ^3.0.23
       vee-validate: ^4.5.9
+      vitest: ^0.7.10
       vue: ^3.2.31
     dependencies:
       '@gits-id/logo': link:../logo
@@ -689,21 +704,27 @@ importers:
       '@gits-id/utils': link:../utils
       vue: 3.2.31
     devDependencies:
+      '@gits-id/tailwind-config': link:../tailwind-config
       '@headlessui/vue': 1.5.0_vue@3.2.31
       '@heroicons/vue': 1.0.6_vue@3.2.31
+      '@vue/test-utils': 2.0.0-rc.17_vue@3.2.31
       tailwindcss: 3.0.23_autoprefixer@10.4.4
       vee-validate: 4.5.9_vue@3.2.31
+      vitest: 0.7.10_happy-dom@2.50.0
 
   packages/navbar:
     specifiers:
       '@gits-id/button': ^0.1.17-next.0
       '@gits-id/logo': ^0.1.17-next.0
       '@gits-id/menus': ^0.1.17-next.0
+      '@gits-id/tailwind-config': ^0.1.17-next.0
       '@gits-id/utils': ^0.1.17-next.0
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
+      '@vue/test-utils': ^2.0.0-rc.17
       tailwindcss: ^3.0.23
       vee-validate: ^4.5.9
+      vitest: ^0.7.10
       vue: ^3.2.31
     dependencies:
       '@gits-id/button': link:../button
@@ -711,22 +732,28 @@ importers:
       '@gits-id/menus': link:../menus
       vue: 3.2.31
     devDependencies:
+      '@gits-id/tailwind-config': link:../tailwind-config
       '@gits-id/utils': link:../utils
       '@headlessui/vue': 1.5.0_vue@3.2.31
       '@heroicons/vue': 1.0.6_vue@3.2.31
+      '@vue/test-utils': 2.0.0-rc.17_vue@3.2.31
       tailwindcss: 3.0.23_autoprefixer@10.4.4
       vee-validate: 4.5.9_vue@3.2.31
+      vitest: 0.7.10_happy-dom@2.50.0
 
   packages/pages:
     specifiers:
       '@gits-id/button': ^0.1.17-next.0
       '@gits-id/checkbox': ^0.1.17-next.0
       '@gits-id/input': ^0.1.17-next.0
+      '@gits-id/tailwind-config': ^0.1.17-next.0
       '@gits-id/utils': ^0.1.17-next.0
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
+      '@vue/test-utils': ^2.0.0-rc.17
       tailwindcss: ^3.0.23
       vee-validate: ^4.5.9
+      vitest: ^0.7.10
       vue: ^3.2.31
       yup: ^0.32.11
     dependencies:
@@ -736,74 +763,98 @@ importers:
       vue: 3.2.31
       yup: 0.32.11
     devDependencies:
+      '@gits-id/tailwind-config': link:../tailwind-config
       '@gits-id/utils': link:../utils
       '@headlessui/vue': 1.5.0_vue@3.2.31
       '@heroicons/vue': 1.0.6_vue@3.2.31
+      '@vue/test-utils': 2.0.0-rc.17_vue@3.2.31
       tailwindcss: 3.0.23_autoprefixer@10.4.4
       vee-validate: 4.5.9_vue@3.2.31
+      vitest: 0.7.10_happy-dom@2.50.0
 
   packages/pagination:
     specifiers:
+      '@gits-id/tailwind-config': ^0.1.17-next.0
       '@gits-id/utils': ^0.1.17-next.0
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
+      '@vue/test-utils': ^2.0.0-rc.17
       pagino: ^1.4.1
       tailwindcss: ^3.0.23
       vee-validate: ^4.5.9
+      vitest: ^0.7.10
       vue: ^3.2.31
     dependencies:
       pagino: 1.4.1
       vue: 3.2.31
     devDependencies:
+      '@gits-id/tailwind-config': link:../tailwind-config
       '@gits-id/utils': link:../utils
       '@headlessui/vue': 1.5.0_vue@3.2.31
       '@heroicons/vue': 1.0.6_vue@3.2.31
+      '@vue/test-utils': 2.0.0-rc.17_vue@3.2.31
       tailwindcss: 3.0.23_autoprefixer@10.4.4
       vee-validate: 4.5.9_vue@3.2.31
+      vitest: 0.7.10_happy-dom@2.50.0
 
   packages/progress:
     specifiers:
+      '@gits-id/tailwind-config': ^0.1.17-next.0
       '@gits-id/utils': ^0.1.17-next.0
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
+      '@vue/test-utils': ^2.0.0-rc.17
       tailwindcss: ^3.0.23
       vee-validate: ^4.5.9
+      vitest: ^0.7.10
       vue: ^3.2.31
     dependencies:
       '@gits-id/utils': link:../utils
       vue: 3.2.31
     devDependencies:
+      '@gits-id/tailwind-config': link:../tailwind-config
       '@headlessui/vue': 1.5.0_vue@3.2.31
       '@heroicons/vue': 1.0.6_vue@3.2.31
+      '@vue/test-utils': 2.0.0-rc.17_vue@3.2.31
       tailwindcss: 3.0.23_autoprefixer@10.4.4
       vee-validate: 4.5.9_vue@3.2.31
+      vitest: 0.7.10_happy-dom@2.50.0
 
   packages/radio:
     specifiers:
+      '@gits-id/tailwind-config': ^0.1.17-next.0
       '@gits-id/utils': ^0.1.17-next.0
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
+      '@vue/test-utils': ^2.0.0-rc.17
       tailwindcss: ^3.0.23
       vee-validate: ^4.5.9
+      vitest: ^0.7.10
       vue: ^3.2.31
     dependencies:
       '@gits-id/utils': link:../utils
       vue: 3.2.31
     devDependencies:
+      '@gits-id/tailwind-config': link:../tailwind-config
       '@headlessui/vue': 1.5.0_vue@3.2.31
       '@heroicons/vue': 1.0.6_vue@3.2.31
+      '@vue/test-utils': 2.0.0-rc.17_vue@3.2.31
       tailwindcss: 3.0.23_autoprefixer@10.4.4
       vee-validate: 4.5.9_vue@3.2.31
+      vitest: 0.7.10_happy-dom@2.50.0
 
   packages/select:
     specifiers:
       '@gits-id/input': ^0.1.17-next.0
+      '@gits-id/tailwind-config': ^0.1.17-next.0
       '@gits-id/tooltip': ^0.1.17-next.0
       '@gits-id/utils': ^0.1.17-next.0
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
+      '@vue/test-utils': ^2.0.0-rc.17
       tailwindcss: ^3.0.23
       vee-validate: ^4.5.9
+      vitest: ^0.7.10
       vue: ^3.2.31
     dependencies:
       '@gits-id/input': link:../input
@@ -811,40 +862,56 @@ importers:
       '@gits-id/utils': link:../utils
       vue: 3.2.31
     devDependencies:
+      '@gits-id/tailwind-config': link:../tailwind-config
       '@headlessui/vue': 1.5.0_vue@3.2.31
       '@heroicons/vue': 1.0.6_vue@3.2.31
+      '@vue/test-utils': 2.0.0-rc.17_vue@3.2.31
       tailwindcss: 3.0.23_autoprefixer@10.4.4
       vee-validate: 4.5.9_vue@3.2.31
+      vitest: 0.7.10_happy-dom@2.50.0
 
   packages/services:
     specifiers:
       '@gits-id/button': ^0.1.17-next.0
+      '@gits-id/tailwind-config': ^0.1.17-next.0
       '@gits-id/utils': ^0.1.17-next.0
+      '@vue/test-utils': ^2.0.0-rc.17
       axios: ^0.26.0
+      vitest: ^0.7.10
     dependencies:
       '@gits-id/button': link:../button
       axios: 0.26.0
     devDependencies:
+      '@gits-id/tailwind-config': link:../tailwind-config
       '@gits-id/utils': link:../utils
+      '@vue/test-utils': 2.0.0-rc.17_vue@3.2.31
+      vitest: 0.7.10_happy-dom@2.50.0
 
   packages/spinner:
     specifiers:
+      '@gits-id/tailwind-config': ^0.1.17-next.0
       '@gits-id/utils': ^0.1.17-next.0
       '@vue/test-utils': ^2.0.0-rc.17
+      vitest: ^0.7.10
     devDependencies:
+      '@gits-id/tailwind-config': link:../tailwind-config
       '@gits-id/utils': link:../utils
       '@vue/test-utils': 2.0.0-rc.17_vue@3.2.31
+      vitest: 0.7.10_happy-dom@2.50.0
 
   packages/stats:
     specifiers:
       '@gits-id/badge': ^0.1.17-next.0
       '@gits-id/card': ^0.1.17-next.0
+      '@gits-id/tailwind-config': ^0.1.17-next.0
       '@gits-id/utils': ^0.1.17-next.0
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
+      '@vue/test-utils': ^2.0.0-rc.17
       feather-icons: ^4.28.0
       tailwindcss: ^3.0.23
       vee-validate: ^4.5.9
+      vitest: ^0.7.10
       vue: ^3.2.31
       vue-feather: ^2.0.0
     dependencies:
@@ -854,14 +921,18 @@ importers:
       vue: 3.2.31
       vue-feather: 2.0.0_feather-icons@4.28.0+vue@3.2.31
     devDependencies:
+      '@gits-id/tailwind-config': link:../tailwind-config
       '@gits-id/utils': link:../utils
       '@headlessui/vue': 1.5.0_vue@3.2.31
       '@heroicons/vue': 1.0.6_vue@3.2.31
+      '@vue/test-utils': 2.0.0-rc.17_vue@3.2.31
       tailwindcss: 3.0.23_autoprefixer@10.4.4
       vee-validate: 4.5.9_vue@3.2.31
+      vitest: 0.7.10_happy-dom@2.50.0
 
   packages/steppers:
     specifiers:
+      '@gits-id/tailwind-config': ^0.1.17-next.0
       '@vue/compiler-dom': ^3.2.31
       '@vue/test-utils': ^2.0.0-rc.17
       tailwindcss: ^3.0.23
@@ -871,26 +942,35 @@ importers:
       tailwindcss: 3.0.23_autoprefixer@10.4.4
       vue: 3.2.31
     devDependencies:
+      '@gits-id/tailwind-config': link:../tailwind-config
       '@vue/compiler-dom': 3.2.31
       '@vue/test-utils': 2.0.0-rc.18_vue@3.2.31
       vitest: 0.7.10_happy-dom@2.50.0
 
   packages/switch:
     specifiers:
+      '@gits-id/tailwind-config': ^0.1.17-next.0
+      '@gits-id/types': ^0.1.17-alpha.0
       '@gits-id/utils': ^0.1.17-next.0
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
+      '@vue/test-utils': ^2.0.0-rc.17
       tailwindcss: ^3.0.23
       vee-validate: ^4.5.9
+      vitest: ^0.7.10
       vue: ^3.2.31
     dependencies:
       vue: 3.2.31
     devDependencies:
+      '@gits-id/tailwind-config': link:../tailwind-config
+      '@gits-id/types': link:../types
       '@gits-id/utils': link:../utils
       '@headlessui/vue': 1.5.0_vue@3.2.31
       '@heroicons/vue': 1.0.6_vue@3.2.31
+      '@vue/test-utils': 2.0.0-rc.17_vue@3.2.31
       tailwindcss: 3.0.23_autoprefixer@10.4.4
       vee-validate: 4.5.9_vue@3.2.31
+      vitest: 0.7.10_happy-dom@2.50.0
 
   packages/table:
     specifiers:
@@ -898,9 +978,12 @@ importers:
       '@gits-id/pagination': ^0.1.17-next.0
       '@gits-id/select': ^0.1.17-next.0
       '@gits-id/spinner': ^0.1.17-next.0
+      '@gits-id/tailwind-config': ^0.1.17-next.0
       '@gits-id/utils': ^0.1.17-next.0
       '@heroicons/vue': ^1.0.6
+      '@vue/test-utils': ^2.0.0-rc.17
       tailwindcss: ^3.0.23
+      vitest: ^0.7.10
     dependencies:
       '@gits-id/checkbox': link:../checkbox
       '@gits-id/pagination': link:../pagination
@@ -908,18 +991,24 @@ importers:
       '@gits-id/spinner': link:../spinner
       '@gits-id/utils': link:../utils
     devDependencies:
+      '@gits-id/tailwind-config': link:../tailwind-config
       '@heroicons/vue': 1.0.6_vue@3.2.31
+      '@vue/test-utils': 2.0.0-rc.17_vue@3.2.31
       tailwindcss: 3.0.23_autoprefixer@10.4.4
+      vitest: 0.7.10_happy-dom@2.50.0
 
   packages/tabs:
     specifiers:
       '@gits-id/button': ^0.1.17-next.0
       '@gits-id/card': ^0.1.17-next.0
+      '@gits-id/tailwind-config': ^0.1.17-next.0
       '@gits-id/utils': ^0.1.17-next.0
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
+      '@vue/test-utils': ^2.0.0-rc.17
       tailwindcss: ^3.0.23
       vee-validate: ^4.5.9
+      vitest: ^0.7.10
       vue: ^3.2.31
     dependencies:
       '@gits-id/button': link:../button
@@ -927,10 +1016,13 @@ importers:
       '@gits-id/utils': link:../utils
       vue: 3.2.31
     devDependencies:
+      '@gits-id/tailwind-config': link:../tailwind-config
       '@headlessui/vue': 1.5.0_vue@3.2.31
       '@heroicons/vue': 1.0.6_vue@3.2.31
+      '@vue/test-utils': 2.0.0-rc.17_vue@3.2.31
       tailwindcss: 3.0.23_autoprefixer@10.4.4
       vee-validate: 4.5.9_vue@3.2.31
+      vitest: 0.7.10_happy-dom@2.50.0
 
   packages/tailwind-components:
     specifiers:
@@ -960,20 +1052,26 @@ importers:
 
   packages/textarea:
     specifiers:
+      '@gits-id/tailwind-config': ^0.1.17-next.0
       '@gits-id/utils': ^0.1.17-next.0
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
+      '@vue/test-utils': ^2.0.0-rc.17
       tailwindcss: ^3.0.23
       vee-validate: ^4.5.9
+      vitest: ^0.7.10
       vue: ^3.2.31
     dependencies:
       '@gits-id/utils': link:../utils
       vee-validate: 4.5.9_vue@3.2.31
       vue: 3.2.31
     devDependencies:
+      '@gits-id/tailwind-config': link:../tailwind-config
       '@headlessui/vue': 1.5.0_vue@3.2.31
       '@heroicons/vue': 1.0.6_vue@3.2.31
+      '@vue/test-utils': 2.0.0-rc.17_vue@3.2.31
       tailwindcss: 3.0.23_autoprefixer@10.4.4
+      vitest: 0.7.10_happy-dom@2.50.0
 
   packages/theme:
     specifiers:
@@ -984,12 +1082,15 @@ importers:
   packages/toast:
     specifiers:
       '@gits-id/button': ^0.1.17-next.0
+      '@gits-id/tailwind-config': ^0.1.17-next.0
       '@gits-id/utils': ^0.1.17-next.0
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
+      '@vue/test-utils': ^2.0.0-rc.17
       pinia: ^2.0.11
       tailwindcss: ^3.0.23
       vee-validate: ^4.5.9
+      vitest: ^0.7.10
       vue: ^3.2.31
       vuex: ^4.0.2
     dependencies:
@@ -999,20 +1100,26 @@ importers:
       vue: 3.2.31
       vuex: 4.0.2_vue@3.2.31
     devDependencies:
+      '@gits-id/tailwind-config': link:../tailwind-config
       '@gits-id/utils': link:../utils
       '@headlessui/vue': 1.5.0_vue@3.2.31
       '@heroicons/vue': 1.0.6_vue@3.2.31
+      '@vue/test-utils': 2.0.0-rc.17_vue@3.2.31
       tailwindcss: 3.0.23_autoprefixer@10.4.4
+      vitest: 0.7.10_happy-dom@2.50.0
 
   packages/tooltip:
     specifiers:
       '@gits-id/button': ^0.1.17-next.0
+      '@gits-id/tailwind-config': ^0.1.17-next.0
       '@gits-id/utils': ^0.1.17-next.0
       '@headlessui/vue': ^1.5.0
       '@heroicons/vue': ^1.0.6
       '@popperjs/core': ^2.11.2
+      '@vue/test-utils': ^2.0.0-rc.17
       tailwindcss: ^3.0.23
       vee-validate: ^4.5.9
+      vitest: ^0.7.10
       vue: ^3.2.31
     dependencies:
       '@popperjs/core': 2.11.2
@@ -1020,10 +1127,13 @@ importers:
       vue: 3.2.31
     devDependencies:
       '@gits-id/button': link:../button
+      '@gits-id/tailwind-config': link:../tailwind-config
       '@gits-id/utils': link:../utils
       '@headlessui/vue': 1.5.0_vue@3.2.31
       '@heroicons/vue': 1.0.6_vue@3.2.31
+      '@vue/test-utils': 2.0.0-rc.17_vue@3.2.31
       tailwindcss: 3.0.23_autoprefixer@10.4.4
+      vitest: 0.7.10_happy-dom@2.50.0
 
   packages/types:
     specifiers:
@@ -1070,6 +1180,7 @@ importers:
       '@gits-id/tailwind-components': ^0.1.17-alpha.0
       '@gits-id/tailwind-config': ^0.1.17-next.0
       '@gits-id/textarea': ^0.1.17-next.0
+      '@gits-id/theme': '*'
       '@gits-id/toast': ^0.1.17-next.0
       '@gits-id/tooltip': ^0.1.17-next.0
       '@gits-id/types': ^0.1.17-alpha.0
@@ -1115,6 +1226,7 @@ importers:
       '@gits-id/tailwind-components': link:../tailwind-components
       '@gits-id/tailwind-config': link:../tailwind-config
       '@gits-id/textarea': link:../textarea
+      '@gits-id/theme': link:../theme
       '@gits-id/toast': link:../toast
       '@gits-id/tooltip': link:../tooltip
       '@gits-id/types': link:../types

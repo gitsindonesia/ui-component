@@ -2,9 +2,10 @@
   "name": "@gits-id/services",
   "version": "0.1.17-next.0",
   "description": "GITS Services",
-  "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "vite build && tsc --emitDeclarationOnly",
+    "prepublishOnly": "npm run build",
+    "test": "vitest"
   },
   "keywords": [
     "services",
@@ -18,6 +19,14 @@
     "axios": "^0.26.0"
   },
   "devDependencies": {
-    "@gits-id/utils": "^0.1.17-next.0"
-  }
+    "@gits-id/utils": "^0.1.17-next.0",
+    "@gits-id/tailwind-config": "^0.1.17-next.0",
+    "vitest": "^0.7.10",
+    "@vue/test-utils": "^2.0.0-rc.17"
+  },
+  "main": "dist/services.umd.js",
+  "unpkg": "dist/services.iife.js",
+  "jsdelivr": "dist/services.iife.js",
+  "module": "./dist/services.es.js",
+  "types": "./dist/types/index.d.ts"
 }

@@ -1,25 +1,25 @@
-# GITS Breadcrumbs Component
+# GITS VRadio Component
 
-> Reusable Breadcrumbs Component
+> Reusable VRadio Component
 
 ## Installation
 
 npm
 
 ```
-npm i @gits-id/breadcrumbs
+npm i @gits-id/radio
 ```
 
 yarn
 
 ```
-yarn add @gits-id/breadcrumbs
+yarn add @gits-id/radio
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/breadcrumbs
+pnpm i @gits-id/radio
 ```
 
 ## Usage
@@ -27,19 +27,19 @@ pnpm i @gits-id/breadcrumbs
 ```vue
 <script setup lang="ts">
 // import styles
-import '@gits-id/breadcrumbs/dist/style.css';
+import '@gits-id/radio/dist/style.css';
 // import component
-import Breadcrumbs from '@gits-id/breadcrumbs';
+import VRadio from '@gits-id/radio';
 </script>
 
 <template>
-  <Breadcrumbs />
+  <VRadio />
 </template>
 ```
 
 ## Documentation
 
-View `Breadcrumbs` documentation [here](https://gits-ui.web.app/?path=/story/components-breadcrumbs--default).
+View `VRadio` documentation [here](https://gits-ui.web.app/?path=/story/components-radio--default).
 
 ## Licence
 

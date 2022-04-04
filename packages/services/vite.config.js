@@ -13,14 +13,14 @@ export default defineConfig({
   build: {
     target: 'esnext',
     lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
-      name: 'Badge',
+      entry: resolve(__dirname, 'index.ts'),
+      name: 'VServices',
       formats: ['es', 'cjs', 'iife', 'umd'],
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
-      external: ['vue', '@heroicons/vue/outline'],
+      external: ['vue', '@heroicons/vue/outline', 'axios'],
       output: {
         // Provide global variables to use in the UMD build
         // for externalized deps

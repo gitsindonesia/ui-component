@@ -1,25 +1,25 @@
-# GITS Breadcrumbs Component
+# GITS Select Component
 
-> Reusable Breadcrumbs Component
+> Reusable Select Component
 
 ## Installation
 
 npm
 
 ```
-npm i @gits-id/breadcrumbs
+npm i @gits-id/select
 ```
 
 yarn
 
 ```
-yarn add @gits-id/breadcrumbs
+yarn add @gits-id/select
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/breadcrumbs
+pnpm i @gits-id/select
 ```
 
 ## Usage
@@ -27,19 +27,19 @@ pnpm i @gits-id/breadcrumbs
 ```vue
 <script setup lang="ts">
 // import styles
-import '@gits-id/breadcrumbs/dist/style.css';
+import '@gits-id/select/dist/style.css';
 // import component
-import Breadcrumbs from '@gits-id/breadcrumbs';
+import Select from '@gits-id/select';
 </script>
 
 <template>
-  <Breadcrumbs />
+  <Select />
 </template>
 ```
 
 ## Documentation
 
-View `Breadcrumbs` documentation [here](https://gits-ui.web.app/?path=/story/components-breadcrumbs--default).
+View `Select` documentation [here](https://gits-ui.web.app/?path=/story/components-select--default).
 
 ## Licence
 
