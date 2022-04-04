@@ -26,3 +26,8 @@ const Template: Story<{}> = (args) => ({
 
 export const Default = Template.bind({});
 Default.args = {};
+
+export const InitialValue = Template.bind({});
+InitialValue.args = {
+  modelValue: '<p>Hello World</p>',
+};

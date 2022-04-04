@@ -28,6 +28,8 @@ pnpm i @gits-id/editor
 <script setup lang="ts">
 import {ref} from 'vue';
 import VEditor from '@gits-id/editor';
+// import editor styles
+import '@gits-id/editor/dist/style.css';
 
 const content = ref('');
 </script>
