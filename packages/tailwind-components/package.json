@@ -1,12 +1,8 @@
 {
   "name": "@gits-id/tailwind-components",
-  "version": "0.1.17-alpha.0",
+  "version": "0.1.17-alpha.32+4a1b6a4",
   "description": "GITS Tailwind Plugin",
-  "scripts": {
-    "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
-    "prepublishOnly": "npm run build",
-    "test": "vitest"
-  },
+  "scripts": {},
   "keywords": [
     "gits",
     "tailwind-plugin",
@@ -14,7 +10,7 @@
   ],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "vue": "^3.2.31"
-  }
+  "dependencies": {},
+  "gitHead": "4a1b6a4a542fd8bd952d23549ac5389fe8917e38",
+  "main": "index.js"
 }

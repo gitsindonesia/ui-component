@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/playground",
-  "version": "0.1.17-next.0",
+  "version": "0.1.17-alpha.32+4a1b6a4",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
@@ -14,9 +14,9 @@
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^32.0.0",
     "@ckeditor/ckeditor5-vue": "^2.0.1",
-    "@gits-id/ui": "^0.1.17-alpha.84",
-    "@gits-id/tailwind-config": "^0.1.17-alpha.84",
-    "@gits-id/button": "^0.1.17-alpha.84",
+    "@gits-id/button": "^0.1.17-alpha.32+4a1b6a4",
+    "@gits-id/tailwind-config": "^0.1.17-alpha.32+4a1b6a4",
+    "@gits-id/ui": "^0.1.17-alpha.32+4a1b6a4",
     "pinia": "^2.0.12",
     "prism-themes": "^1.9.0",
     "prismjs": "^1.27.0",
@@ -58,5 +58,5 @@
     "vue-loader": "^16.8.3",
     "vue-tsc": "^0.31.4"
   },
-  "gitHead": "9616f31f0d2d461f4fa9273b40ab9edc8130a724"
+  "gitHead": "4a1b6a4a542fd8bd952d23549ac5389fe8917e38"
 }

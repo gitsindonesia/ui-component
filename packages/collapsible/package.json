@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/collapsible",
-  "version": "0.1.17-next.0",
+  "version": "0.1.17-alpha.32+4a1b6a4",
   "description": "GITS Collapsible Component",
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,14 +15,15 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@gits-id/utils": "^0.1.17-next.0",
+    "@gits-id/utils": "^0.1.17-alpha.32+4a1b6a4",
     "@heroicons/vue": "^1.0.6",
-    "vitest": "^0.7.10",
-    "@vue/test-utils": "^2.0.0-rc.17"
+    "@vue/test-utils": "^2.0.0-rc.17",
+    "vitest": "^0.7.10"
   },
   "main": "dist/collapsible.umd.js",
   "unpkg": "dist/collapsible.iife.js",
   "jsdelivr": "dist/collapsible.iife.js",
   "module": "./dist/collapsible.es.js",
-  "types": "./dist/types/index.d.ts"
+  "types": "./dist/types/index.d.ts",
+  "gitHead": "4a1b6a4a542fd8bd952d23549ac5389fe8917e38"
 }

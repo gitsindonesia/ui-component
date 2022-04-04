@@ -1,13 +1,9 @@
 {
   "name": "@gits-id/theme",
-  "version": "0.1.17-alpha.0",
+  "version": "0.1.17-alpha.32+4a1b6a4",
   "description": "GITS Default Tailwind Colors",
   "main": "colors.js",
-  "scripts": {
-    "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
-    "prepublishOnly": "npm run build",
-    "test": "vitest"
-  },
+  "scripts": {},
   "keywords": [
     "theme",
     "tailwind-theme"
@@ -16,5 +12,6 @@
   "license": "ISC",
   "dependencies": {
     "tailwindcss": "^3.0.23"
-  }
+  },
+  "gitHead": "4a1b6a4a542fd8bd952d23549ac5389fe8917e38"
 }
