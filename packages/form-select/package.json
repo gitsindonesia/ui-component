@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/form-select",
-  "version": "0.1.17-alpha.33+1c8786c",
+  "version": "0.1.17-next.1",
   "description": "GITS Form Select Component",
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,12 +15,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gits-id/input": "^0.1.17-alpha.33+1c8786c",
-    "@gits-id/utils": "^0.1.17-alpha.33+1c8786c",
+    "@gits-id/input": "^0.1.17-next.1",
+    "@gits-id/utils": "^0.1.17-next.1",
     "vue": "^3.2.31"
   },
   "devDependencies": {
-    "@gits-id/tailwind-config": "^0.1.17-alpha.33+1c8786c",
+    "@gits-id/tailwind-config": "^0.1.17-next.1",
     "@gits-id/utils": "^0.0.0",
     "@vue/test-utils": "^2.0.0-rc.17",
     "tailwindcss": "^3.0.23",

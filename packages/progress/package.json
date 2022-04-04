@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/progress-bar",
-  "version": "0.1.17-alpha.33+1c8786c",
+  "version": "0.1.17-next.1",
   "description": "GITS Progress Bar Component",
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,11 +15,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gits-id/utils": "^0.1.17-alpha.33+1c8786c",
+    "@gits-id/utils": "^0.1.17-next.1",
     "vue": "^3.2.31"
   },
   "devDependencies": {
-    "@gits-id/tailwind-config": "^0.1.17-alpha.33+1c8786c",
+    "@gits-id/tailwind-config": "^0.1.17-next.1",
     "@gits-id/utils": "^0.0.0",
     "@headlessui/vue": "^1.5.0",
     "@heroicons/vue": "^1.0.6",

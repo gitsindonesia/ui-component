@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/table",
-  "version": "0.1.17-alpha.33+1c8786c",
+  "version": "0.1.17-next.1",
   "description": "GITS Table Component",
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,14 +15,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gits-id/checkbox": "^0.1.17-alpha.33+1c8786c",
-    "@gits-id/pagination": "^0.1.17-alpha.33+1c8786c",
-    "@gits-id/select": "^0.1.17-alpha.33+1c8786c",
-    "@gits-id/spinner": "^0.1.17-alpha.33+1c8786c",
-    "@gits-id/utils": "^0.1.17-alpha.33+1c8786c"
+    "@gits-id/checkbox": "^0.1.17-next.1",
+    "@gits-id/pagination": "^0.1.17-next.1",
+    "@gits-id/select": "^0.1.17-next.1",
+    "@gits-id/spinner": "^0.1.17-next.1",
+    "@gits-id/utils": "^0.1.17-next.1"
   },
   "devDependencies": {
-    "@gits-id/tailwind-config": "^0.1.17-alpha.33+1c8786c",
+    "@gits-id/tailwind-config": "^0.1.17-next.1",
     "@gits-id/utils": "^0.0.0",
     "@heroicons/vue": "^1.0.6",
     "@vue/test-utils": "^2.0.0-rc.17",
