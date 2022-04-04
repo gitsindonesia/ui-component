@@ -2,9 +2,10 @@
   "name": "@gits-id/badge",
   "version": "0.1.17-next.0",
   "description": "GITS Badge Component",
-  "main": "src/index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
+    "prepublishOnly": "npm run build",
+    "test": "vitest"
   },
   "keywords": [
     "badge",
@@ -18,6 +19,14 @@
   },
   "devDependencies": {
     "@gits-id/utils": "^0.1.17-next.0",
-    "tailwindcss": "^3.0.23"
-  }
+    "@gits-id/tailwind-config": "^0.1.17-next.0",
+    "tailwindcss": "^3.0.23",
+    "vitest": "^0.7.10",
+    "@vue/test-utils": "^2.0.0-rc.17"
+  },
+  "main": "dist/app-bar.umd.js",
+  "unpkg": "dist/app-bar.iife.js",
+  "jsdelivr": "dist/app-bar.iife.js",
+  "module": "./dist/app-bar.es.js",
+  "types": "./dist/types/index.d.ts"
 }
