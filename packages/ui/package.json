@@ -53,10 +53,9 @@
     "vitest": "^0.7.10",
     "vue-remix-icons": "^1.1.1"
   },
-  "main": "dist/menu.umd.js",
-  "unpkg": "dist/menu.iife.js",
-  "jsdelivr": "dist/menu.iife.js",
-  "module": "./dist/menu.es.js",
-  "types": "./dist/types/index.d.ts",
+  "main": "dist/ui.umd.js",
+  "unpkg": "dist/ui.iife.js",
+  "jsdelivr": "dist/ui.iife.js",
+  "module": "./dist/ui.es.js",
   "gitHead": "1c8786cbf03a24b464264d95d0d3a90812476412"
 }
