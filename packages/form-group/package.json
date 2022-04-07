@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/form-group",
-  "version": "0.1.17-next.1",
+  "version": "0.1.17-next.3",
   "description": "GITS Form Group Component",
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
