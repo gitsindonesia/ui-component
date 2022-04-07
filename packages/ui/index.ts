@@ -154,6 +154,5 @@ export * from '@gits-id/dropdown/src/types';
 export * from '@gits-id/input/src/types';
 export * from '@gits-id/navbar/src/types';
 export * from '@gits-id/tabs/src/types';
-export * from '@gits-id/toast/src/types';
 export * from '@gits-id/modal/src/types';
 export default plugin;
