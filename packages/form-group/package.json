@@ -24,10 +24,10 @@
     "tailwindcss": "^3.0.23",
     "vitest": "^0.7.10"
   },
-  "main": "dist/file-group.umd.js",
-  "unpkg": "dist/file-group.iife.js",
-  "jsdelivr": "dist/file-group.iife.js",
-  "module": "./dist/file-group.es.js",
+  "main": "dist/form-group.umd.js",
+  "unpkg": "dist/form-group.iife.js",
+  "jsdelivr": "dist/form-group.iife.js",
+  "module": "./dist/form-group.es.js",
   "types": "./dist/types/index.d.ts",
   "gitHead": "1c8786cbf03a24b464264d95d0d3a90812476412"
 }

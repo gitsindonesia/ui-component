@@ -29,10 +29,10 @@
     "@vue/test-utils": "^2.0.0-rc.17",
     "vitest": "^0.7.10"
   },
-  "main": "dist/breadcrumbs.umd.js",
-  "unpkg": "dist/breadcrumbs.iife.js",
-  "jsdelivr": "dist/breadcrumbs.iife.js",
-  "module": "./dist/breadcrumbs.es.js",
+  "main": "dist/dropdown.umd.js",
+  "unpkg": "dist/dropdown.iife.js",
+  "jsdelivr": "dist/dropdown.iife.js",
+  "module": "./dist/dropdown.es.js",
   "types": "./dist/types/index.d.ts",
   "gitHead": "1c8786cbf03a24b464264d95d0d3a90812476412"
 }

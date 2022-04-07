@@ -27,10 +27,10 @@
     "vee-validate": "^4.5.9",
     "vitest": "^0.7.10"
   },
-  "main": "dist/file-select.umd.js",
-  "unpkg": "dist/file-select.iife.js",
-  "jsdelivr": "dist/file-select.iife.js",
-  "module": "./dist/file-select.es.js",
+  "main": "dist/form-select.umd.js",
+  "unpkg": "dist/form-select.iife.js",
+  "jsdelivr": "dist/form-select.iife.js",
+  "module": "./dist/form-select.es.js",
   "types": "./dist/types/index.d.ts",
   "gitHead": "1c8786cbf03a24b464264d95d0d3a90812476412"
 }
