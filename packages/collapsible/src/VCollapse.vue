@@ -1,6 +1,6 @@
 <template>
   <div :class="{'navbar-collapse': navbar}">
-    <slot />
+    <slot :open="visible" />
   </div>
 </template>
 
