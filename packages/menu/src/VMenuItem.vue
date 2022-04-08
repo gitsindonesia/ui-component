@@ -38,9 +38,8 @@ const props = defineProps({
       sub-menu
       gap-x-2
       w-full
-      pl-4
       px-2
-      py-3
+      py-2
       rounded
       flex
       items-center
@@ -49,6 +48,7 @@ const props = defineProps({
     "
     :class="[
       textColor,
+      mini ? 'py-4' : '',
       mini
         ? !expandHover
           ? 'justify-center'

@@ -1,7 +1,7 @@
 import {Meta, Story} from '@storybook/vue3';
 import VMenu from './VMenu.vue';
 import vueRouter from 'storybook-vue3-router';
-import {RiHomeFill} from 'vue-remix-icons'
+import {RiHomeFill} from 'vue-remix-icons';
 
 export default {
   title: 'Components/Menu',
@@ -46,7 +46,7 @@ const Template: Story = (args) => ({
   },
   // And then the `args` are bound to your component with `v-bind="args"`
   template: `
-  <div :class="args.mini ? 'w-14' : ''">
+  <div :class="args.mini ? 'w-12' : ''">
     <VMenu v-bind="args">{{ args.label }}</VMenu>
   </div>
   `,
@@ -68,3 +68,12 @@ Mini.args = {mini: true};
 
 export const Dark = Template.bind({});
 Dark.args = {dark: true};
+
+export const Single = Template.bind({});
+Single.args = {
+  menu: {
+    text: 'Text',
+    to: '/',
+    icon: RiHomeFill,
+  },
+};

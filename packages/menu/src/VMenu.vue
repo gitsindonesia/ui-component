@@ -97,16 +97,17 @@ const isActive = (path: any) => {
   <template v-if="menu">
     <VCollapsible
       v-if="menu.children"
-      activator-class="font-normal hover:bg-gray-100 rounded"
+      activator-class="font-normal hover:bg-gray-100 rounded !p-2"
       panel-class=""
       header-class=""
+      :hide-icon="mini"
     >
       <template #header="{isOpen: open}">
         <div
           class="flex items-center gap-x-2 rounded"
           :class="[
             openClass(open),
-            mini && !expandHover ? 'justify-center' : '',
+            mini ? (!expandHover ? 'justify-center' : '') : '',
             open ? menuItemBgColor : '',
           ]"
         >
@@ -232,8 +233,8 @@ const isActive = (path: any) => {
         transition
         duration-300
         w-full
-        px-2.5
-        py-3
+        px-2
+        py-2
         rounded
         flex
         w-full
