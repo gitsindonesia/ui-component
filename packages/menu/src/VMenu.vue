@@ -97,14 +97,14 @@ const isActive = (path: any) => {
   <template v-if="menu">
     <VCollapsible
       v-if="menu.children"
-      activator-class="font-normal hover:bg-gray-100 rounded !p-2"
+      activator-class="font-normal hover:bg-gray-100 rounded !p-2 !py-3"
       panel-class=""
       header-class=""
       :hide-icon="mini"
     >
       <template #header="{isOpen: open}">
         <div
-          class="flex items-center gap-x-2 rounded"
+          class="flex items-center gap-x-3 rounded"
           :class="[
             openClass(open),
             mini ? (!expandHover ? 'justify-center' : '') : '',
@@ -156,73 +156,6 @@ const isActive = (path: any) => {
         />
       </div>
     </VCollapsible>
-    <!-- <Disclosure v-if="menu.children" v-slot="{open}">
-      <DisclosureButton
-        v-slot="{open}"
-        class="focus:outline-none w-full transition duration-300 rounded group"
-        :class="[textColor, small ? 'text-sm' : '']"
-      >
-        <div
-          class="py-3 w-full flex items-center px-2 gap-x-2 rounded"
-          :class="[
-            openClass(open),
-            mini && !expandHover ? 'justify-center' : '',
-            open ? menuItemBgColor : '',
-          ]"
-        >
-          <img v-if="menu.img" :src="menu.img" alt="img icon" class="w-5 h-5" />
-          <span v-else-if="menu.svg" v-html="menu.svg" />
-          <template v-else-if="menu.icon">
-            <template v-if="typeof menu.icon === 'string'">
-              <slot name="icon" :menu="menu">
-                <v-icon :name="menu.icon" />
-              </slot>
-            </template>
-            <component
-              :is="menu.icon"
-              v-else
-              class="w-5 h-5"
-              :class="open ? '' : ''"
-            />
-          </template>
-
-          <span
-            :title="menu.text"
-            class="flex-grow text-left truncate"
-            :class="{'sm:hidden': mini && !expandHover, 'text-sm': small}"
-          >
-            {{ menu.text }}
-          </span>
-
-          <ChevronRightIcon
-            class="w-5 h-5"
-            :class="[
-              open ? 'transform rotate-90' : '',
-              mini && !expandHover ? 'inline sm:hidden' : '',
-            ]"
-          />
-
-          <v-menu-tooltip :show="mini && !expandHover">
-            {{ menu.text }}
-          </v-menu-tooltip>
-        </div>
-      </DisclosureButton>
-      <DisclosurePanel
-        ref="panel"
-        class="duration-300 overflow-hidden transition-all h-auto"
-        :style="{maxHeight: open ? getScrollHeight() : 0}"
-      >
-        <v-menu-item
-          v-for="(child, j) in menu.children"
-          :key="j"
-          :item="child"
-          :mini="mini"
-          :expandHover="expandHover"
-          :dark="dark"
-          :text-color="isActive(child) ? menuItemColor : textColor"
-        />
-      </DisclosurePanel>
-    </Disclosure> -->
     <router-link
       v-else
       :to="menu.to"
@@ -234,11 +167,11 @@ const isActive = (path: any) => {
         duration-300
         w-full
         px-2
-        py-2
+        py-3
         rounded
         flex
         w-full
-        gap-x-2
+        gap-x-4
         items-center
         relative
       "

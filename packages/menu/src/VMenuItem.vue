@@ -36,10 +36,10 @@ const props = defineProps({
     class="
       group
       sub-menu
-      gap-x-2
+      gap-x-3
       w-full
       px-2
-      py-2
+      py-2.5
       rounded
       flex
       items-center
