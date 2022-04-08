@@ -2,42 +2,51 @@
 
 ![GITS.ID](https://gits.id/wp-content/uploads/2020/09/Logo-Main.png)
 
-The official UI Component for GITS Indonesia projects.
-
-- [GITS UI Component](#gits-ui-component)
-  - [Major Dependencies](#major-dependencies)
-  - [Local Development](#local-development)
-  - [Deployment](#deployment)
-  - [License](#license)
+The official UI Component for GITS Indonesia.
 
 ## Major Dependencies
 
-- [Vue.js](https://vuejs.org/) - The Progressive JavaScript Framework.
-- [Vue Router](https://next.router.vuejs.org/) - The official router for Vue.js.
-- [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework.
-- [Headless UI](https://headlessui.dev/) - Completely unstyled, fully accessible UI components, designed to integrate beautifully with Tailwind CSS.
+- [Lerna](https://lerna.js.org/)
+- [Vue.js](https://vuejs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Headless UI](https://headlessui.dev/)
+- [Heroicons](https://heroicons.com/)
+- [Vue Remix Icons](https://www.npmjs.com/package/vue-remix-icons)
 
-## Local Development
+## Setup
 
-- Install dependencies via `pnpm` by running:
+- Install [lerna](https://lerna.js.org/) and [yarn](https://yarnpkg.com/) globally:
   ```bash
-  pnpm i
+  npm i -g lerna yarn
   ```
-- Run the development server:
+- Bootstap all packages:
+  ```
+  lerna bootstrap
+  ```
+- Run storybook:
+
   ```bash
-  pnpm sb
-  # OR
-  pnpm storybook
+  yarn sb
   ```
-- Open `http://localhost:6006` in the browser
 
-Learn more about development with Vite.js [here](https://vitejs.dev/).
+## Commands
 
-## Deployment
+| Command     | Description                   |
+| ----------- | ----------------------------- |
+| `storybook` | Run storybook                 |
+| `sb`        | Alias for `storybook` command |
+| `dev`       | Run playground                |
+| `build`     | Build playground              |
+| `test`      | Run test via `vitest`         |
 
-When it is time to deploy your app for production, simply run the `pnpm build` command. By default, it uses <root>/index.html as the build entry point, and produces an application bundle that is suitable to be served over a static hosting service.
+## Lerna Commands
 
-Learn for about building for production [here](https://vitejs.dev/guide/build.html).
+| Command     | Description            |
+| ----------- | ---------------------- |
+| `bootstrap` | Bootstrap all packages |
+| `publish`   | Publish packages       |
+
+Visit [lerna documentation](https://github.com/lerna/lerna) for all other commands.
 
 ## License
 
