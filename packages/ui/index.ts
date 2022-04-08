@@ -1,4 +1,4 @@
-import {App} from 'vue';
+import type {App} from 'vue';
 import VBtn from '@gits-id/button';
 import VAlert from '@gits-id/alert';
 import VSpinner from '@gits-id/spinner';
