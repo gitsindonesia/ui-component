@@ -25,5 +25,5 @@
   "jsdelivr": "dist/collapsible.iife.js",
   "module": "./dist/collapsible.es.js",
   "types": "./dist/types/index.d.ts",
-  "gitHead": "1c8786cbf03a24b464264d95d0d3a90812476412"
+  "gitHead": "ab2187381450ab566a97afdfad2b380dfcb80ecc"
 }
