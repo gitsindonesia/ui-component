@@ -76,18 +76,31 @@ watch(isOpen, (value) => {
 <template>
   <div>
     <div
-      class="py-3 w-full flex justify-between items-center px-4 gap-x-4 transition duration-300 group cursor-pointer font-semibold"
+      class="
+        py-3
+        w-full
+        flex
+        justify-between
+        items-center
+        px-4
+        gap-x-4
+        transition
+        duration-300
+        group
+        cursor-pointer
+        font-semibold
+      "
       :class="[activatorClass, isOpen ? activeClass : inactiveClass]"
       @click="toggle"
     >
-      <slot name="header">
+      <slot name="header" :is-open="isOpen">
         {{ title }}
       </slot>
 
       <slot name="icon">
         <ChevronDownIcon
-          class="w-5 h-5"
-          :class="[isOpen ? 'transform rotate-180' : '']"
+          class="w-5 h-5 transform transition duration-300"
+          :class="[isOpen ? 'rotate-180' : '']"
         />
       </slot>
     </div>
