@@ -44,6 +44,7 @@ import {
   ForgotPassword,
   Login,
   ResetPassword,
+  NotFound
 } from '@gits-id/pages';
 
 const plugin = {
@@ -134,6 +135,7 @@ export {
   ForgotPassword,
   Login,
   ResetPassword,
+  NotFound,
   VEditor,
   VCollapse,
   VCollapsible,
