@@ -6,11 +6,10 @@ export default {
 
 <script setup lang="ts">
 import {computed, ref, toRefs} from 'vue';
-import {Disclosure, DisclosureButton, DisclosurePanel} from '@headlessui/vue';
-import {ChevronRightIcon} from '@heroicons/vue/outline';
 import VMenuTooltip from './VMenuTooltip.vue';
 import VMenuItem from './VMenuItem.vue';
 import {useRouter} from 'vue-router';
+import {VCollapsible} from '@gits-id/collapsible';
 
 const props = defineProps({
   menu: {
@@ -96,7 +95,67 @@ const isActive = (path: any) => {
 
 <template>
   <template v-if="menu">
-    <Disclosure v-if="menu.children" v-slot="{open}">
+    <VCollapsible
+      v-if="menu.children"
+      activator-class="font-normal hover:bg-gray-100 rounded"
+      panel-class=""
+      header-class=""
+    >
+      <template #header="{isOpen: open}">
+        <div
+          class="flex items-center gap-x-2 rounded"
+          :class="[
+            openClass(open),
+            mini && !expandHover ? 'justify-center' : '',
+            open ? menuItemBgColor : '',
+          ]"
+        >
+          <div class="menu-icon w-6">
+            <img
+              v-if="menu.img"
+              :src="menu.img"
+              alt="img icon"
+              class="w-5 h-5"
+            />
+            <span v-else-if="menu.svg" v-html="menu.svg" />
+            <template v-else-if="menu.icon">
+              <template v-if="typeof menu.icon === 'string'">
+                <slot name="icon" :menu="menu">
+                  <v-icon :name="menu.icon" />
+                </slot>
+              </template>
+              <component :is="menu.icon" v-else class="w-5 h-5" />
+            </template>
+          </div>
+
+          <span
+            :title="menu.text"
+            class="flex-grow text-left truncate"
+            :class="{'sm:hidden': mini && !expandHover, 'text-sm': small}"
+          >
+            {{ menu.text }}
+          </span>
+
+          <v-menu-tooltip :show="mini && !expandHover">
+            {{ menu.text }}
+          </v-menu-tooltip>
+        </div>
+      </template>
+
+      <div>
+        <v-menu-item
+          v-for="(child, j) in menu.children"
+          :key="j"
+          :item="child"
+          :mini="mini"
+          :expandHover="expandHover"
+          :dark="dark"
+          :small="child.small || small"
+          :text-color="isActive(child) ? menuItemColor : textColor"
+        />
+      </div>
+    </VCollapsible>
+    <!-- <Disclosure v-if="menu.children" v-slot="{open}">
       <DisclosureButton
         v-slot="{open}"
         class="focus:outline-none w-full transition duration-300 rounded group"
@@ -149,7 +208,6 @@ const isActive = (path: any) => {
       </DisclosureButton>
       <DisclosurePanel
         ref="panel"
-        static
         class="duration-300 overflow-hidden transition-all h-auto"
         :style="{maxHeight: open ? getScrollHeight() : 0}"
       >
@@ -163,12 +221,26 @@ const isActive = (path: any) => {
           :text-color="isActive(child) ? menuItemColor : textColor"
         />
       </DisclosurePanel>
-    </Disclosure>
+    </Disclosure> -->
     <router-link
       v-else
       :to="menu.to"
       exact
-      class="group menu-item transition duration-300 w-full px-2.5 py-3 rounded flex w-full gap-x-2 items-center relative"
+      class="
+        group
+        menu-item
+        transition
+        duration-300
+        w-full
+        px-2.5
+        py-3
+        rounded
+        flex
+        w-full
+        gap-x-2
+        items-center
+        relative
+      "
       :class="[
         small ? 'text-sm' : '',
         dark ? 'hover:bg-gray-800' : 'hover:bg-gray-100',

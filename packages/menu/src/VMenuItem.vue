@@ -22,6 +22,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  small: {
+    type: Boolean,
+    default: false,
+  },
 });
 </script>
 
@@ -29,13 +33,30 @@ const props = defineProps({
   <router-link
     :to="item.to"
     exact
-    class="group sub-menu gap-x-2 w-full pl-5 px-2 py-3 rounded flex items-center text-sm truncate"
+    class="
+      group
+      sub-menu
+      gap-x-2
+      w-full
+      pl-4
+      px-2
+      py-3
+      rounded
+      flex
+      items-center
+      truncate
+      hover:bg-gray-100
+    "
     :class="[
       textColor,
-      mini && !expandHover ? 'justify-start sm:justify-center' : '',
+      mini
+        ? !expandHover
+          ? 'justify-center'
+          : 'justify-start sm:justify-center'
+        : '',
     ]"
   >
-    <span class="px-1">
+    <span class="w-6" :class="mini ? '' : 'px-1'">
       <svg
         width="12"
         height="12"
@@ -47,7 +68,10 @@ const props = defineProps({
       </svg>
     </span>
 
-    <span :class="{'sm:hidden': mini && !expandHover}"> {{ item.text }}</span>
+    <span :class="{'sm:hidden': mini && !expandHover, 'text-sm': small}">
+      {{ item.text }}
+    </span>
+
     <v-menu-tooltip :show="mini && !expandHover">
       {{ item.text }}
     </v-menu-tooltip>
