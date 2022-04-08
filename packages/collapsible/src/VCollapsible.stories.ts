@@ -1,6 +1,6 @@
 import {Story} from '@storybook/vue3';
 import {ref} from 'vue';
-import MyCollapse from './VCollapse.vue';
+// import MyCollapse from './VCollapse.vue';
 import MyCollapsible from './VCollapsible.vue';
 import MyCollapsibleGroup from './VCollapsibleGroup.vue';
 
@@ -9,6 +9,7 @@ export default {
   component: MyCollapsible,
   args: {
     modelValue: false,
+    hideIcon: false,
     title: 'Title',
     headerClass: 'font-semibold',
     activeClass: '',
@@ -43,6 +44,11 @@ AutoOpen.args = {
   modelValue: true,
 };
 
+export const HideIcon = Template.bind({});
+HideIcon.args = {
+  hideIcon: true,
+};
+
 export const CustomClasses = Template.bind({});
 CustomClasses.args = {
   headerClass: '',
@@ -66,7 +72,7 @@ CustomClasses.args = {
 //   </MyCollapsible>`,
 // });
 
-export const Accordion = (args) => ({
+export const Accordion: Story = (args) => ({
   components: {MyCollapsibleGroup, MyCollapsible},
   setup() {
     const items = Array.from({length: 5}, (v, k) => ({

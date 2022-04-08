@@ -40,6 +40,10 @@ const props = defineProps({
     type: String,
     default: 'px-4 pb-4',
   },
+  hideIcon: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const {
@@ -99,6 +103,7 @@ watch(isOpen, (value) => {
 
       <slot name="icon">
         <ChevronDownIcon
+          v-if="!hideIcon"
           class="w-5 h-5 transform transition duration-300"
           :class="[isOpen ? 'rotate-180' : '']"
         />
