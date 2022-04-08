@@ -95,10 +95,10 @@ const inputValue = ref(props.value || props.modelValue);
 
 const sizeClass = computed(() => {
   const sizes: Record<string, string> = {
-    xs: 'text-xs',
+    xs: 'text-sm',
     sm: 'text-sm',
-    default: 'text-sm',
-    md: 'text-sm',
+    default: 'text-base',
+    md: 'text-base',
     lg: 'text-lg',
     xl: 'text-xl',
   };
