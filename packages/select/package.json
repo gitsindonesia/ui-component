@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/select",
-  "version": "0.1.17-next.7",
+  "version": "0.1.17-next.8",
   "description": "GITS Select Component",
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,7 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gits-id/input": "^0.1.17-next.7",
+    "@gits-id/input": "^0.1.17-next.8",
     "@gits-id/tooltip": "^0.1.17-next.3",
     "@gits-id/utils": "^0.1.17-next.1",
     "vue": "^3.2.31"

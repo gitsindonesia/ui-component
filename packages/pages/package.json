@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/pages",
-  "version": "0.1.17-next.7",
+  "version": "0.1.17-next.8",
   "description": "GITS Pages Component",
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -17,7 +17,7 @@
   "dependencies": {
     "@gits-id/button": "^0.1.17-next.1",
     "@gits-id/checkbox": "^0.1.17-next.1",
-    "@gits-id/input": "^0.1.17-next.7",
+    "@gits-id/input": "^0.1.17-next.8",
     "vue": "^3.2.31",
     "yup": "^0.32.11"
   },
