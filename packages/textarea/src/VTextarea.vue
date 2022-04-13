@@ -36,6 +36,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  shadow: {
+    type: Boolean,
+    default: false,
+  },
   size: {
     type: String,
     default: "",
@@ -69,7 +73,7 @@ const value = ref(props.value || props.modelValue);
 const { class: sizeClass } = useTextSize(size.value);
 const inputClass = computed(() => useInputClasses(error.value));
 
-const classes = computed(() => [inputClass.value, sizeClass.value]);
+const classes = computed(() => [inputClass.value, sizeClass.value, {shadow: props.shadow}]);
 
 watch(modelValue, (val) => {
   value.value = val;
