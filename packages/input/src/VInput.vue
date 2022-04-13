@@ -61,7 +61,7 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-  noShadow: {
+  shadow: {
     type: Boolean,
     default: false,
   },
@@ -147,7 +147,7 @@ const onBlur = () => emit('blur');
 <template>
   <div
     class="flex w-full gap-2 items-center transition duration-300 rounded-md border border-gray-300 text-gray-500"
-    :class="[wrapperClasses, noShadow ? '' : 'shadow-sm']"
+    :class="[wrapperClasses, {shadow}]"
   >
     <slot name="prepend">
       <SearchIcon v-if="prependIcon === 'search'" class="w-5 h-5 ml-3" />
@@ -182,7 +182,8 @@ const onBlur = () => emit('blur');
 
 <style scoped>
 .v-input-field {
-  @apply text-gray-800 w-full block transition duration-300 border-none rounded-md focus:outline-none focus:border-none focus:ring-transparent focus:ring-0 focus:shadow-none;
+  @apply text-gray-800 w-full block transition duration-300 border-none rounded-md
+    focus:outline-none focus:border-none focus:ring-transparent focus:ring-0 focus:shadow-none;
 }
 .v-input-field.has-error {
   @apply text-error-500;
@@ -194,28 +195,30 @@ const onBlur = () => emit('blur');
   @apply px-0 pr-4;
 }
 .input-has-error {
-  @apply border-error-500 focus-within:text-error-500 focus-within:border-error-500 focus-within:ring-error-500 focus-within:ring-1;
+  @apply border-error-500 focus-within:text-error-500 focus-within:border-error-500
+    focus-within:ring-error-500 focus-within:ring focus-within:ring-opacity-50
+    placeholder:text-error-500;
 }
 .input-default,
 .input-primary {
-  @apply focus-within:border-primary-500 focus-within:ring-primary-500 focus-within:ring-1;
+  @apply focus-within:border-primary-500 focus-within:ring-primary-500 focus-within:ring focus-within:ring-opacity-50;
 }
 .input-secondary {
-  @apply focus-within:border-secondary-500 focus-within:ring-secondary-500 focus-within:ring-1;
+  @apply focus-within:border-secondary-500 focus-within:ring-secondary-500 focus-within:ring focus-within:ring-opacity-50;
 }
 .input-info {
-  @apply focus-within:border-info-500 focus-within:ring-info-500 focus-within:ring-1;
+  @apply focus-within:border-info-500 focus-within:ring-info-500 focus-within:ring focus-within:ring-opacity-50;
 }
 .input-warning {
-  @apply focus-within:border-warning-500 focus-within:ring-warning-500 focus-within:ring-1;
+  @apply focus-within:border-warning-500 focus-within:ring-warning-500 focus-within:ring focus-within:ring-opacity-50;
 }
 .input-success {
-  @apply focus-within:border-success-500 focus-within:ring-success-500 focus-within:ring-1;
+  @apply focus-within:border-success-500 focus-within:ring-success-500 focus-within:ring focus-within:ring-opacity-50;
 }
 .input-error {
-  @apply focus-within:border-error-500 focus-within:ring-error-500 focus-within:ring-1;
+  @apply focus-within:border-error-500 focus-within:ring-error-500 focus-within:ring focus-within:ring-opacity-50;
 }
 .input-dark {
-  @apply focus-within:border-gray-500 focus-within:ring-gray-500 focus-within:ring-1;
+  @apply focus-within:border-gray-500 focus-within:ring-gray-500 focus-within:ring focus-within:ring-opacity-50;
 }
 </style>

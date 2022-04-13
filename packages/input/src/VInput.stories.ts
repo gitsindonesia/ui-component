@@ -30,7 +30,7 @@ export default {
     readonly: false,
     disabled: false,
     size: 'default',
-    noShadow: false,
+    shadow: false,
     text: false,
   },
 } as Meta;
@@ -45,6 +45,26 @@ const Template: Story<VInputProps> = (args) => ({
   // And then the `args` are bound to your component with `v-bind="args"`
   template: `
   <VInput v-bind='args'/>
+`,
+});
+
+export const Variants: Story<VInputProps> = (args) => ({
+  // Components used in your story `template` are defined in the `components` object
+  components: {VInput},
+  // The story's `args` need to be mapped into the template through the `setup()` method
+  setup() {
+    return {args, themeColors};
+  },
+  // And then the `args` are bound to your component with `v-bind="args"`
+  template: `
+    <div class='space-y-2'>
+      <template v-for='color in themeColors' :key='color'>
+        <div class='mb-2'>
+          <label :for='color'>{{ color }}</label>
+          <VInput :id='color' :color='color' v-bind='args'/>
+        </div>
+      </template>
+    </div>
 `,
 });
 
@@ -67,9 +87,9 @@ Disabled.args = {
   disabled: true,
 };
 
-export const NoShadow = Template.bind({});
-NoShadow.args = {
-  noShadow: true,
+export const Shadow = Template.bind({});
+Shadow.args = {
+  shadow: true,
 };
 
 export const Text = Template.bind({});
