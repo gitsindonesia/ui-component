@@ -9,7 +9,7 @@ export const inputErrorClasses =
 
 export const useInputClasses = (error = false) => {
   let className = [
-    'transition duration-300 border shadow-sm rounded-md text-gray-800 focus:border-primary-500 focus:ring-primary-500',
+    'transition duration-300 border rounded-md text-gray-800 focus:border-primary-500 focus:ring-primary-500 focus:ring focus:ring-opacity-50',
     inputDisabledClasses,
   ];
 
