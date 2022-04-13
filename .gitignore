@@ -10,3 +10,4 @@ lerna-debug.log
 .turbo
 build/**
 yarn-error.log
+.idea
