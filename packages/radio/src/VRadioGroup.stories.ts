@@ -34,25 +34,60 @@ const Template: Story = (args) => ({
 
 export const Default = Template.bind({});
 Default.args = {};
+Default.parameters = {
+  docs: {
+    source: {
+      code: '<v-radio-group :items="items" />',
+    },
+  },
+};
 
 export const Inline = Template.bind({});
 Inline.args = {
   inline: true,
+};
+Inline.parameters = {
+  docs: {
+    source: {
+      code: '<v-radio-group :items="items" inline />',
+    },
+  },
 };
 
 export const Error = Template.bind({});
 Error.args = {
   error: true,
 };
+Error.parameters = {
+  docs: {
+    source: {
+      code: '<v-radio-group :items="items" error />',
+    },
+  },
+};
 
 export const Disabled = Template.bind({});
 Disabled.args = {
   disabled: true,
 };
+Disabled.parameters = {
+  docs: {
+    source: {
+      code: '<v-radio-group :items="items" disabled />',
+    },
+  },
+};
 
 export const NoLabel = Template.bind({});
 NoLabel.args = {
   label: '',
+};
+NoLabel.parameters = {
+  docs: {
+    source: {
+      code: '<v-radio-group :items="items" label="" />',
+    },
+  },
 };
 
 // export const RadioGroup: Story = (args) => ({
