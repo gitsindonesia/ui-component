@@ -1,9 +1,3 @@
-<script lang="ts">
-export default {
-  inheritAttrs: false,
-};
-</script>
-
 <script setup lang="ts">
 import {
   ref,
@@ -377,7 +371,15 @@ onUnmounted(() => {
     <div v-if="theme === 'button'" class="flex gap-2">
       <div v-if="hasFile" class="flex gap-2 items-center">
         <div
-          class="px-4 py-2 truncate text-center border rounded hover:border-gray-400"
+          class="
+            px-4
+            py-2
+            truncate
+            text-center
+            border
+            rounded
+            hover:border-gray-400
+          "
           :class="[disabledClass]"
           @click="pickFile"
         >
@@ -447,7 +449,21 @@ onUnmounted(() => {
 
     <div v-else-if="theme === 'image'">
       <div
-        class="transition duration-300 border cursor-pointer hover:bg-primary-50 hover:border-primary-600 flex flex-col items-center justify-center border-gray-200 py-10 bg-no-repeat bg-contain bg-center max-w-full"
+        class="
+          transition
+          duration-300
+          border
+          cursor-pointer
+          hover:bg-primary-50
+          hover:border-primary-600
+          flex flex-col
+          items-center
+          justify-center
+          border-gray-200
+          py-10
+          bg-no-repeat bg-contain bg-center
+          max-w-full
+        "
         :class="[sizeClass, {'rounded-10': rounded}]"
         :style="{
           backgroundImage: image && !loading ? `url(${previewURL})` : 'none',
@@ -485,7 +501,15 @@ onUnmounted(() => {
             <div class="flex flex-col gap-4">
               <div
                 v-if="image || preview"
-                class="w-60 h-40 flex bg-contain bg-gray-100 mx-auto rounded-lg bg-no-repeat bg-center"
+                class="
+                  w-60
+                  h-40
+                  flex
+                  bg-contain bg-gray-100
+                  mx-auto
+                  rounded-lg
+                  bg-no-repeat bg-center
+                "
                 :class="previewClass"
                 :style="{
                   backgroundImage: !loading ? `url(${previewURL})` : 'none',
@@ -500,7 +524,19 @@ onUnmounted(() => {
           <div v-if="!readonly && !disabled" class="space-x-3">
             <label
               for="file-upload"
-              class="relative cursor-pointer bg-white rounded-md font-medium text-primary-600 hover:text-primary-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-primary-500"
+              class="
+                relative
+                cursor-pointer
+                bg-white
+                rounded-md
+                font-medium
+                text-primary-600
+                hover:text-primary-500
+                focus-within:outline-none
+                focus-within:ring-2
+                focus-within:ring-offset-2
+                focus-within:ring-primary-500
+              "
               @click="pickFile"
             >
               <span>{{ changeText }} </span>
@@ -508,7 +544,19 @@ onUnmounted(() => {
 
             <label
               v-if="!hideRemove"
-              class="relative cursor-pointer bg-white rounded-md font-medium text-error-600 hover:text-error-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-error-500"
+              class="
+                relative
+                cursor-pointer
+                bg-white
+                rounded-md
+                font-medium
+                text-error-600
+                hover:text-error-500
+                focus-within:outline-none
+                focus-within:ring-2
+                focus-within:ring-offset-2
+                focus-within:ring-error-500
+              "
               @click="removeFile"
             >
               <span>{{ removeText }} </span>
@@ -536,7 +584,19 @@ onUnmounted(() => {
           <div class="flex text-sm text-gray-600">
             <label
               for="file-upload"
-              class="relative cursor-pointer bg-white rounded-md font-medium text-primary-600 hover:text-primary-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-primary-500"
+              class="
+                relative
+                cursor-pointer
+                bg-white
+                rounded-md
+                font-medium
+                text-primary-600
+                hover:text-primary-500
+                focus-within:outline-none
+                focus-within:ring-2
+                focus-within:ring-offset-2
+                focus-within:ring-primary-500
+              "
               @click="pickFile"
             >
               <span>{{ uploadText }} </span>
@@ -553,6 +613,14 @@ onUnmounted(() => {
         :model-value="fileName"
         :placeholder="!hidePlaceholder ? placeholder : ''"
         readonly
+        class="
+          border-none
+          w-full
+          focus:border-none
+          focus:outline-none
+          focus:ring-0
+          hover:text-gray-700
+        "
         @click="pickFile"
       >
         <template #append>
