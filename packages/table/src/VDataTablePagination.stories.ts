@@ -1,10 +1,10 @@
-import MyDataTablePagination from './VDataTablePagination.vue';
+import VDataTablePagination from './VDataTablePagination.vue';
 import {themeColors} from '@gits-id/utils/colors';
 import {Meta, Story} from '@storybook/vue3';
 
 export default {
   title: 'Components/DataTablePagination',
-  component: MyDataTablePagination,
+  component: VDataTablePagination,
   argTypes: {
     color: {
       control: {type: 'select', options: themeColors},
@@ -21,34 +21,58 @@ export default {
 } as Meta;
 
 const Template: Story = (args) => ({
-  // Components used in your story `template` are defined in the `components` object
   components: {
-    'my-component': MyDataTablePagination,
+    VDataTablePagination,
   },
-  // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
     return {args};
   },
-  // And then the `args` are bound to your component with `v-bind="args"`
-  template: `<my-component v-bind="args">{{ args.label }}</my-component>`,
+  template: `<v-data-table-pagination v-bind="args" />`,
 });
 
 export const Default = Template.bind({});
 Default.args = {};
+Default.parameters = {
+  docs: {
+    source: {
+      code: `<v-data-table-pagination :total-items="30" :items-per-page="10" />`,
+    },
+  },
+};
 
 export const Small = Template.bind({});
 Small.args = {
   small: true,
+};
+Small.parameters = {
+  docs: {
+    source: {
+      code: `<v-data-table-pagination :total-items="30" :items-per-page="10" small />`,
+    },
+  },
 };
 
 export const Large = Template.bind({});
 Large.args = {
   large: true,
 };
+Large.parameters = {
+  docs: {
+    source: {
+      code: `<v-data-table-pagination :total-items="30" :items-per-page="10" large />`,
+    },
+  },
+};
 
 export const HideFirstAndLast = Template.bind({});
 HideFirstAndLast.args = {
-  large: true,
   showFirst: false,
   showLast: false,
+};
+HideFirstAndLast.parameters = {
+  docs: {
+    source: {
+      code: `<v-data-table-pagination :total-items="30" :items-per-page="10" :show-first="false" :show-last="false" />`,
+    },
+  },
 };
