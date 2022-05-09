@@ -47,20 +47,48 @@ const Template: Story = (args) => ({
 
 export const Default = Template.bind({});
 Default.args = {};
+Default.parameters = {
+  docs: {
+    source: {
+      code: '<v-textarea />',
+    },
+  },
+};
 
 export const Readonly = Template.bind({});
 Readonly.args = {
   readonly: true,
   value: 'Text',
 };
+Readonly.parameters = {
+  docs: {
+    source: {
+      code: '<v-textarea readonly value="Text" />',
+    },
+  },
+};
 
 export const Disabled = Template.bind({});
 Disabled.args = {
   disabled: true,
+};
+Disabled.parameters = {
+  docs: {
+    source: {
+      code: '<v-textarea disabled />',
+    },
+  },
 };
 
 export const Error = Template.bind({});
 Error.args = {
   error: true,
   errorMessages: ['Field is required'],
+};
+Error.parameters = {
+  docs: {
+    source: {
+      code: `<v-textarea error :error-messages="['Field is required']" />`,
+    },
+  },
 };
