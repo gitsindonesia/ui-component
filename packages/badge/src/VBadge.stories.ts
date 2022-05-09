@@ -38,10 +38,32 @@ const Template: Story<VBadgeProps> = (args) => ({
 
 export const Variants = Template.bind({});
 Variants.args = {};
+Variants.parameters = {
+  docs: {
+    source: {
+      code: `<v-badge> text </v-badge>
+<v-badge color="primary"> text </v-badge>
+<v-badge color="secondary"> text </v-badge>
+<v-badge color="info"> text </v-badge>
+<v-badge color="warning"> text </v-badge>
+<v-badge color="success"> text </v-badge>
+<v-badge color="error"> text </v-badge>
+<v-badge color="dark"> text </v-badge>
+      `,
+    },
+  },
+};
 
 export const Rounded = Template.bind({});
 Rounded.args = {
   rounded: true,
+};
+Rounded.parameters = {
+  docs: {
+    source: {
+      code: `<v-badge rounded> text </v-badge>`,
+    },
+  },
 };
 
 export const Circle = Template.bind({});
@@ -49,25 +71,60 @@ Circle.args = {
   circle: true,
   label: 20,
 };
+Circle.parameters = {
+  docs: {
+    source: {
+      code: `<v-badge circle> 20 </v-badge>`,
+    },
+  },
+};
 
 export const Large = Template.bind({});
 Large.args = {
   large: true,
+};
+Large.parameters = {
+  docs: {
+    source: {
+      code: `<v-badge large> text </v-badge>`,
+    },
+  },
 };
 
 export const Small = Template.bind({});
 Small.args = {
   small: true,
 };
+Small.parameters = {
+  docs: {
+    source: {
+      code: `<v-badge small> text </v-badge>`,
+    },
+  },
+};
 
 export const Dismissable = Template.bind({});
 Dismissable.args = {
   dismissable: true,
 };
+Dismissable.parameters = {
+  docs: {
+    source: {
+      code: `<v-badge dismissable> text </v-badge>`,
+    },
+  },
+};
 
 export const Outlined = Template.bind({});
 Outlined.args = {
   outlined: true,
+};
+Outlined.parameters = {
+  docs: {
+    source: {
+      code: `<v-badge outlined> text </v-badge>`,
+    },
+  },
 };
 
 // export const CustomColor = Template.bind({});
@@ -95,4 +152,12 @@ CustomClass.args = {
   bgColor: 'bg-teal-500',
   textColor: 'text-white',
   class: 'uppercase text-sm',
+};
+
+CustomClass.parameters = {
+  docs: {
+    source: {
+      code: `<v-badge bg-color="bg-teal-500" text-color="text-white" class="uppercase text-sm"> text </v-badge>`,
+    },
+  },
 };
