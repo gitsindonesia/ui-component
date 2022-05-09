@@ -35,3 +35,19 @@ const Template: Story = (args) => ({
 
 export const Variants = Template.bind({});
 Variants.args = {};
+Variants.parameters = {
+  docs: {
+    source: {
+      code: `
+<v-progress-bar color="default" :width="70" />
+<v-progress-bar color="primary" :width="70" />
+<v-progress-bar color="secondary" :width="70" />
+<v-progress-bar color="info" :width="70" />
+<v-progress-bar color="warning" :width="70" />
+<v-progress-bar color="success" :width="70" />
+<v-progress-bar color="error" :width="70" />
+<v-progress-bar color="dark" :width="70" />
+      `,
+    },
+  },
+};
