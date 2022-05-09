@@ -37,6 +37,13 @@ const Template: Story = (args) => ({
 
 export const Checkbox = Template.bind({});
 Checkbox.args = {};
+Checkbox.parameters = {
+  docs: {
+    source: {
+      code: `<v-checkbox label="Checkbox" />`,
+    },
+  },
+};
 
 // export const Checkbox = (args) => ({
 //   components: {MyCheckbox},
