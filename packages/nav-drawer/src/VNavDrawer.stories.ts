@@ -122,7 +122,7 @@ export default {
         icon: RiPhoneLine,
         hover: false,
       },
-    ]
+    ],
   },
 } as Meta;
 
@@ -133,3 +133,10 @@ export const SideMenu: Story = (args) => ({
   },
   template: '<MyNavbarDrawer v-bind="args" />',
 });
+SideMenu.parameters = {
+  docs: {
+    source: {
+      code: '<v-nav-drawer :menus="menus" />',
+    },
+  },
+};
