@@ -33,3 +33,10 @@ export const InputRange: Story = (args) => ({
   },
   template: '<MyInputRange v-bind="args" />',
 });
+InputRange.parameters = {
+  docs: {
+    source: {
+      code: '<v-input-range />',
+    },
+  },
+};
