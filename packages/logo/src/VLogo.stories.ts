@@ -27,11 +27,32 @@ const Template: Story = (args) => ({
 
 export const Default = Template.bind({});
 Default.args = {};
+Default.parameters = {
+  docs: {
+    source: {
+      code: '<v-logo />',
+    },
+  },
+};
 
 export const White = Template.bind({});
 White.args = {white: true};
+White.parameters = {
+  docs: {
+    source: {
+      code: '<v-logo white />',
+    },
+  },
+};
 
 export const CustomClass = Template.bind({});
 CustomClass.args = {
   imgClass: 'h-10',
+};
+CustomClass.parameters = {
+  docs: {
+    source: {
+      code: '<v-editor img-class="h-10" />',
+    },
+  },
 };
