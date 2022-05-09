@@ -98,7 +98,7 @@ export const CustomSlots: Story = (args) => ({
 CustomSlots.parameters = {
   docs: {
     source: {
-      code: `<v-card v-bind='args' header-class="items-center" footer-class="gap-2">
+      code: `<v-card header-class="items-center" footer-class="gap-2">
   <template #header>
     <div>My Header</div>
   </template>
