@@ -14,20 +14,31 @@ export default {
 };
 
 const Template: Story<{}> = (args) => ({
-  // Components used in your story `template` are defined in the `components` object
   components: {VEditor},
-  // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
     return {args};
   },
-  // And then the `args` are bound to your component with `v-bind="args"`
   template: `<VEditor v-bind='args'/>`,
 });
 
 export const Default = Template.bind({});
 Default.args = {};
+Default.parameters = {
+  docs: {
+    source: {
+      code: '<v-editor />',
+    },
+  },
+};
 
 export const InitialValue = Template.bind({});
 InitialValue.args = {
   modelValue: '<p>Hello World</p>',
+};
+InitialValue.parameters = {
+  docs: {
+    source: {
+      code: '<v-editor model-value="<p>Hello World</p>" />',
+    },
+  },
 };
