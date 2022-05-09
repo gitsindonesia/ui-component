@@ -27,19 +27,22 @@ export default {
 };
 
 const Template: Story<{}> = (args) => ({
-  // Components used in your story `template` are defined in the `components` object
   components: {VTabs},
-  // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
-    const tab = ref(0);
-    return {args, tab};
+    return {args};
   },
-  // And then the `args` are bound to your component with `v-bind="args"`
   template: `<v-tabs v-bind='args'/>`,
 });
 
 export const Default = Template.bind({});
 Default.args = {};
+Default.parameters = {
+  docs: {
+    source: {
+      code: `<v-tabs :items="items" />`,
+    },
+  },
+};
 
 export const CustomActiveClass = Template.bind({});
 CustomActiveClass.args = {
@@ -50,20 +53,55 @@ CustomActiveClass.args = {
     activeClass: 'bg-success-50 rounded-t text-success-600 font-semibold',
   }),
 };
+CustomActiveClass.parameters = {
+  docs: {
+    source: {
+      code: `<v-tabs
+  :items="createItems(10, {
+    defaultClass: '!rounded-lg',
+    inactiveClass: 'hover:bg-success-50 hover:!text-success-600',
+    activeClass: 'bg-success-50 rounded-t text-success-600 font-semibold',
+  })"
+  hide-slider
+/>`,
+    },
+  },
+};
 
 export const ShowArrows = Template.bind({});
 ShowArrows.args = {
   showArrows: true,
+};
+ShowArrows.parameters = {
+  docs: {
+    source: {
+      code: `<v-tabs :items="items" show-arrows />`,
+    },
+  },
 };
 
 export const CenterActive = Template.bind({});
 CenterActive.args = {
   centerActive: true,
 };
+CenterActive.parameters = {
+  docs: {
+    source: {
+      code: `<v-tabs :items="items" center-active />`,
+    },
+  },
+};
 
 export const Vertical = Template.bind({});
 Vertical.args = {
   vertical: true,
+};
+Vertical.parameters = {
+  docs: {
+    source: {
+      code: `<v-tabs :items="items" vertical />`,
+    },
+  },
 };
 
 export const TabsWithCard: Story<{}> = (args) => ({
@@ -77,3 +115,15 @@ export const TabsWithCard: Story<{}> = (args) => ({
     <div class="px-4 py-2">Tab Content {{ tab }}</div>
   </VCard>`,
 });
+TabsWithCard.parameters = {
+  docs: {
+    source: {
+      code: `
+<VCard body-class="!p-0" hide-header hide-footer>
+  <VTabs v-model="tab" v-bind="args"/>
+  <div class="px-4 py-2">Tab Content {{ tab }}</div>
+</VCard>
+      `,
+    },
+  },
+};
