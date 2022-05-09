@@ -38,15 +38,36 @@ const Template: Story<{}> = (args) => ({
 
 export const Default = Template.bind({});
 Default.args = {};
+Default.parameters = {
+  docs: {
+    source: {
+      code: `<v-collapsible :items="items" />`,
+    },
+  },
+};
 
 export const AutoOpen = Template.bind({});
 AutoOpen.args = {
   modelValue: true,
 };
+AutoOpen.parameters = {
+  docs: {
+    source: {
+      code: `<v-collapsible :model-value="true" :items="items" />`,
+    },
+  },
+};
 
 export const HideIcon = Template.bind({});
 HideIcon.args = {
   hideIcon: true,
+};
+HideIcon.parameters = {
+  docs: {
+    source: {
+      code: `<v-collapsible hide-icon :items="items" />`,
+    },
+  },
 };
 
 export const CustomClasses = Template.bind({});
@@ -57,6 +78,21 @@ CustomClasses.args = {
   wrapperClass: 'rounded-lg',
   activatorClass: 'hover:bg-red-200 hover:text-red-500',
   panelClass: 'border p-4 rounded-b-lg',
+};
+CustomClasses.parameters = {
+  docs: {
+    source: {
+      code: `<v-collapsible
+  :items="items"
+  header-class="",
+  active-class="font-semibold text-red-500 bg-red-200 rounded-t-lg",
+  inactive-class="text-red-500 bg-red-50",
+  wrapper-class="rounded-lg",
+  activator-class="hover:bg-red-200 hover:text-red-500",
+  panel-class="border p-4 rounded-b-lg",
+/>`,
+    },
+  },
 };
 
 // export const Group: Story<{}> = (args) => ({
@@ -91,3 +127,10 @@ export const Accordion: Story = (args) => ({
     </MyCollapsibleGroup>
   `,
 });
+Accordion.parameters = {
+  docs: {
+    source: {
+      code: `<v-collapsible accordion :items="items" />`,
+    },
+  },
+};
