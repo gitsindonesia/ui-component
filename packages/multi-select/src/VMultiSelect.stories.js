@@ -1,4 +1,4 @@
-import MyMultiSelect from './VMultiSelect.vue';
+import VMultiSelect from './VMultiSelect.vue';
 
 const items = [...Array(200)].map((item, index) => ({
   value: index + 1,
@@ -7,7 +7,7 @@ const items = [...Array(200)].map((item, index) => ({
 
 export default {
   title: 'Components/MultiSelect',
-  component: MyMultiSelect,
+  component: VMultiSelect,
   argTypes: {},
   args: {
     items,
@@ -30,28 +30,46 @@ export default {
 };
 
 const Template = (args) => ({
-  // Components used in your story `template` are defined in the `components` object
   components: {
-    'my-component': MyMultiSelect,
+    VMultiSelect,
   },
-  // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
     return {args};
   },
-  // And then the `args` are bound to your component with `v-bind="args"`
-  template: `<my-component v-bind="args">{{ args.label }}</my-component>`,
+  template: `<v-multi-select v-bind="args" />`,
 });
 
 export const Default = Template.bind({});
 Default.args = {};
+Default.parameters = {
+  docs: {
+    source: {
+      code: '<v-multi-select :items="items" />',
+    },
+  },
+};
 
 export const Clearable = Template.bind({});
 Clearable.args = {
   clearable: true,
+};
+Clearable.parameters = {
+  docs: {
+    source: {
+      code: '<v-multi-select :items="items" clearable />',
+    },
+  },
 };
 
 export const MaxBadge = Template.bind({});
 MaxBadge.args = {
   clearable: true,
   maxBadge: 3,
+};
+MaxBadge.parameters = {
+  docs: {
+    source: {
+      code: '<v-multi-select :items="items" :max-badge="3" />',
+    },
+  },
 };
