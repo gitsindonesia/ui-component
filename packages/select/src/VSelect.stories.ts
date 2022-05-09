@@ -34,15 +34,12 @@ export default {
 } as Meta;
 
 const Template: Story<VSelectProps> = (args) => ({
-  // Components used in your story `template` are defined in the `components` object
   components: {
     VSelect,
   },
-  // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
     return {args};
   },
-  // And then the `args` are bound to your component with `v-bind="args"`
   template: `<v-select v-bind="args" />`,
 });
 

@@ -18,41 +18,73 @@ export default {
 };
 
 const Template = (args) => ({
-  // Components used in your story `template` are defined in the `components` object
   components: {
-    'my-component': VSpinner,
+    VSpinner,
   },
-  // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
     return {args};
   },
-  // And then the `args` are bound to your component with `v-bind="args"`
-  template: `<my-component v-bind="args">{{ args.label }}</my-component>`,
+  template: `<v-spinner v-bind="args" />`,
 });
 
 export const Default = Template.bind({});
 Default.args = {};
+Default.parameters = {
+  docs: {
+    source: {
+      code: '<v-spinner color="primary" />',
+    },
+  },
+};
 
 export const XSmall = Template.bind({});
 XSmall.args = {
   xSmall: true,
 };
 XSmall.storyName = 'Extra Small';
+XSmall.parameters = {
+  docs: {
+    source: {
+      code: '<v-spinner color="primary" x-small />',
+    },
+  },
+};
 
 export const Small = Template.bind({});
 Small.args = {
   small: true,
 };
 Small.storyName = 'Small';
+Small.parameters = {
+  docs: {
+    source: {
+      code: '<v-spinner color="primary" small />',
+    },
+  },
+};
 
 export const Large = Template.bind({});
 Large.args = {
   large: true,
 };
 Large.storyName = 'Large';
+Large.parameters = {
+  docs: {
+    source: {
+      code: '<v-spinner color="primary" large />',
+    },
+  },
+};
 
 export const XLarge = Template.bind({});
 XLarge.args = {
   xLarge: true,
 };
 XLarge.storyName = 'Extra Large';
+XLarge.parameters = {
+  docs: {
+    source: {
+      code: '<v-spinner color="primary" x-large />',
+    },
+  },
+};
