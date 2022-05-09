@@ -31,12 +31,33 @@ const Template: Story = (args) => ({
 
 export const Default = Template.bind({});
 Default.args = {};
+Default.parameters = {
+  docs: {
+    source: {
+      code: '<v-navbar />',
+    },
+  },
+};
 
 export const Small = Template.bind({});
 Small.args = {small: true};
+Small.parameters = {
+  docs: {
+    source: {
+      code: '<v-navbar small />',
+    },
+  },
+};
 
 export const User = Template.bind({});
 User.args = {user: {name: 'Admin'}};
+User.parameters = {
+  docs: {
+    source: {
+      code: '<v-navbar :user="user" />',
+    },
+  },
+};
 
 export const WithMenus = Template.bind({});
 WithMenus.args = {
@@ -60,4 +81,11 @@ WithMenus.args = {
       ],
     },
   ],
+};
+WithMenus.parameters = {
+  docs: {
+    source: {
+      code: '<v-navbar :menus="menus" />',
+    },
+  },
 };
