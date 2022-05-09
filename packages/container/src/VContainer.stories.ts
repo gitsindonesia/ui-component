@@ -26,9 +26,30 @@ const Template: Story = (args) => ({
 
 export const Default = Template.bind({});
 Default.args = {};
+Default.parameters = {
+  docs: {
+    source: {
+      code: `<v-container> Content </v-container>`,
+    },
+  },
+};
 
 export const Mini = Template.bind({});
 Mini.args = {mini: true};
+Mini.parameters = {
+  docs: {
+    source: {
+      code: `<v-container mini> Content </v-container>`,
+    },
+  },
+};
 
 export const Fixed = Template.bind({});
-Fixed.args = {mini: true};
+Fixed.args = {fixed: true};
+Fixed.parameters = {
+  docs: {
+    source: {
+      code: `<v-container fixed> Content </v-container>`,
+    },
+  },
+};
