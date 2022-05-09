@@ -54,6 +54,13 @@ const Template: Story = (args) => ({
 
 export const Default = Template.bind({});
 Default.args = {};
+Default.parameters = {
+  docs: {
+    source: {
+      code: '<v-menu :menu="menu" />',
+    },
+  },
+};
 
 Default.decorators = [
   /* this is the basic setup with no params passed to the decorator */
@@ -62,12 +69,33 @@ Default.decorators = [
 
 export const Small = Template.bind({});
 Small.args = {small: true};
+Small.parameters = {
+  docs: {
+    source: {
+      code: '<v-menu :menu="menu" small />',
+    },
+  },
+};
 
 export const Mini = Template.bind({});
 Mini.args = {mini: true};
+Mini.parameters = {
+  docs: {
+    source: {
+      code: '<v-menu :menu="menu" mini />',
+    },
+  },
+};
 
 export const Dark = Template.bind({});
 Dark.args = {dark: true};
+Dark.parameters = {
+  docs: {
+    source: {
+      code: '<v-menu :menu="menu" dark />',
+    },
+  },
+};
 
 export const Single = Template.bind({});
 Single.args = {
@@ -75,5 +103,16 @@ Single.args = {
     text: 'Text',
     to: '/',
     icon: RiHomeFill,
+  },
+};
+Single.parameters = {
+  docs: {
+    source: {
+      code: `<v-menu :menu="{
+  text: 'Text',
+  to: '/',
+  icon: RiHomeFill,
+}" />`,
+    },
   },
 };
