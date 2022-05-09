@@ -1,9 +1,9 @@
 import {Story} from '@storybook/vue3';
-import MyFileUpload from './VFileUpload.vue';
+import VFileUpload from './VFileUpload.vue';
 
 export default {
   title: 'Components/Form/FileUpload',
-  component: MyFileUpload,
+  component: VFileUpload,
   argTypes: {},
   args: {
     button: false,
@@ -25,40 +25,71 @@ export default {
 const Template: Story<{}> = (args) => ({
   // Components used in your story `template` are defined in the `components` object
   components: {
-    'my-component': MyFileUpload,
+    VFileUpload,
   },
   // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
     return {args};
   },
   // And then the `args` are bound to your component with `v-bind="args"`
-  template: `<my-component v-bind="args" />`,
+  template: `<v-file-upload v-bind="args" />`,
 });
 
 export const Default = Template.bind({});
 Default.args = {};
+Default.parameters = {
+  docs: {
+    source: {
+      code: '<v-file-upload />',
+    },
+  },
+};
 
 export const Button = Template.bind({});
 Button.args = {
   theme: 'button',
 };
-
-export const Full = Template.bind({});
-Full.args = {
-  full: true,
-};
-
-export const Rounded = Template.bind({});
-Rounded.args = {
-  rounded: true,
+Button.parameters = {
+  docs: {
+    source: {
+      code: '<v-file-upload theme="button" />',
+    },
+  },
 };
 
 export const Image = Template.bind({});
 Image.args = {
   theme: 'image',
 };
+Image.parameters = {
+  docs: {
+    source: {
+      code: '<v-file-upload theme="image" />',
+    },
+  },
+};
+
+export const ImageFull = Template.bind({});
+ImageFull.args = {
+  theme: 'image',
+  full: true,
+};
+ImageFull.parameters = {
+  docs: {
+    source: {
+      code: '<v-file-upload theme="image" full />',
+    },
+  },
+};
 
 export const Dropzone = Template.bind({});
 Dropzone.args = {
   theme: 'dropzone',
+};
+Dropzone.parameters = {
+  docs: {
+    source: {
+      code: '<v-file-upload theme="dropzone" />',
+    },
+  },
 };
