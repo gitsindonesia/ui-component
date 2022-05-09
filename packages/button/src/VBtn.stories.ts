@@ -69,7 +69,15 @@ Default.args = {};
 Default.parameters = {
   docs: {
     source: {
-      code: '<v-btn>Button</v-btn>',
+      code: `<v-btn>Button</v-btn>
+<v-btn color="primary">Button</v-btn>
+<v-btn color="secondary">Button</v-btn>
+<v-btn color="info">Button</v-btn>
+<v-btn color="warning">Button</v-btn>
+<v-btn color="success">Button</v-btn>
+<v-btn color="error">Button</v-btn>
+<v-btn color="dark">Button</v-btn>
+      `,
     },
   },
 };
@@ -237,15 +245,53 @@ export const Icon: Story<VBtnProps> = (args) => ({
   </Button>
 </div>`,
 });
+Icon.parameters = {
+  docs: {
+    source: {
+      code: `
+<v-btn color="primary" icon>
+  <HomeIcon class="w-full"/>
+</v-btn>
+      `,
+    },
+  },
+};
 
 export const RoundedIcon = Icon.bind({});
 RoundedIcon.args = {rounded: true};
+RoundedIcon.parameters = {
+  docs: {
+    source: {
+      code: `
+<v-btn rounded icon> Button </v-btn>
+      `,
+    },
+  },
+};
 
 export const OutlinedIcon = Icon.bind({});
 OutlinedIcon.args = {outlined: true};
+OutlinedIcon.parameters = {
+  docs: {
+    source: {
+      code: `
+<v-btn outlined icon> Button </v-btn>
+      `,
+    },
+  },
+};
 
 export const TextIcon = Icon.bind({});
 TextIcon.args = {text: true};
+TextIcon.parameters = {
+  docs: {
+    source: {
+      code: `
+<v-btn text icon> Button </v-btn>
+      `,
+    },
+  },
+};
 
 export const Sizes: Story<VBtnProps> = (args) => ({
   components: {Button},
@@ -263,3 +309,16 @@ export const Sizes: Story<VBtnProps> = (args) => ({
   </div>
   </div>`,
 });
+Sizes.parameters = {
+  docs: {
+    source: {
+      code: `
+<v-btn size="xs"> Button </v-btn>
+<v-btn size="sm"> Button </v-btn>
+<v-btn size="md"> Button </v-btn>
+<v-btn size="lg"> Button </v-btn>
+<v-btn size="xl"> Button </v-btn>
+      `,
+    },
+  },
+};
