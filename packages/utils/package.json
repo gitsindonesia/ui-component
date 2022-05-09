@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/utils",
-  "version": "0.1.17-next.10",
+  "version": "0.2.0",
   "description": "GITS Utilities",
   "main": "index.ts",
   "scripts": {},
