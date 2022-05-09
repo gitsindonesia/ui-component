@@ -50,6 +50,20 @@ Template.decorators = [
 
 export const Default = Template.bind({});
 Default.args = {};
+Default.parameters = {
+  docs: {
+    source: {
+      code: '<v-menus :items="items" />',
+    },
+  },
+};
 
 export const Right = Template.bind({});
 Right.args = {right: true};
+Right.parameters = {
+  docs: {
+    source: {
+      code: '<v-menus :items="items" right />',
+    },
+  },
+};
