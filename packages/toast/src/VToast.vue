@@ -32,28 +32,28 @@ import {
 } from '@heroicons/vue/outline';
 import VBtn from '@gits-id/button';
 
-interface Props {
-  modelValue?: boolean;
-  title?: string;
-  confirm?: boolean;
-  confirmColor?: string;
-  confirmProps?: {};
-  confirmText?: string;
-  closeText?: string;
-  closeProps?: {};
-  headerClass?: string;
-  bodyClass?: string;
-  actionsClass?: string;
-  placement?: ToastPlacement;
-  actions?: boolean;
-  timeout?: number;
-  type?: ToastTypes;
-  hideXIcon?: boolean;
-  overlay?: boolean;
-  loading?: boolean;
-  persistent?: boolean;
-  color?: string;
-}
+// interface Props {
+//   modelValue?: boolean;
+//   title?: string;
+//   confirm?: boolean;
+//   confirmColor?: string;
+//   confirmProps?: {};
+//   confirmText?: string;
+//   closeText?: string;
+//   closeProps?: {};
+//   headerClass?: string;
+//   bodyClass?: string;
+//   actionsClass?: string;
+//   placement?: ToastPlacement;
+//   actions?: boolean;
+//   timeout?: number;
+//   type?: ToastTypes;
+//   hideXIcon?: boolean;
+//   overlay?: boolean;
+//   loading?: boolean;
+//   persistent?: boolean;
+//   color?: string;
+// }
 
 // const props = withDefaults(defineProps<Props>(), {
 //   modelValue: false,

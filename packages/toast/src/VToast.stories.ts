@@ -1,11 +1,12 @@
-import MyToast from './VToast.vue';
+import VToast from './VToast.vue';
 import VBtn from '@gits-id/button';
 import {themeColors} from '@gits-id/utils/colors';
 import {Story} from '@storybook/vue3';
+import {ref} from 'vue';
 
 export default {
   title: 'Components/Toast',
-  component: MyToast,
+  component: VToast,
   argTypes: {
     color: {
       type: 'select',
@@ -29,7 +30,7 @@ export default {
     },
   },
   args: {
-    modelValue: true,
+    modelValue: false,
     title: '',
     color: '',
     confirm: false,
@@ -52,18 +53,17 @@ export default {
 };
 
 const Template: Story<{}> = (args) => ({
-  // Components used in your story `template` are defined in the `components` object
   components: {
-    'v-btn': VBtn,
-    'my-component': MyToast,
+    VBtn,
+    VToast,
   },
-  // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
-    return {args};
+    const isOpen = ref(false);
+    return {args, isOpen};
   },
-  // And then the `args` are bound to your component with `v-bind="args"`
   template: `
-  <my-component v-bind="args">{{ args.message }}</my-component>
+    <v-btn @click="isOpen = true">Open Toast</v-btn>
+    <v-toast v-bind="args" v-model="isOpen">{{ args.message }}</v-toast>
   `,
 });
 
@@ -99,4 +99,8 @@ Custom.args = {
   placement: 'center',
   hideXIcon: true,
   overlay: true,
+  onConfirm: (e: any) => {
+    alert('Confirmed!');
+    e.close();
+  },
 };
