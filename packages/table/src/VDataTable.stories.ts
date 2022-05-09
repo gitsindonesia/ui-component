@@ -1,5 +1,5 @@
 import {Meta, Story} from '@storybook/vue3';
-import MyDataTable from './VDataTable.vue';
+import VDataTable from './VDataTable.vue';
 
 const items = [...Array(30)].map((item, index) => ({
   index,
@@ -9,7 +9,7 @@ const items = [...Array(30)].map((item, index) => ({
 
 export default {
   title: 'Components/DataTable',
-  component: MyDataTable,
+  component: VDataTable,
   argTypes: {},
   args: {
     itemsPerPage: 10,
@@ -36,37 +36,81 @@ export default {
 } as Meta;
 
 const Template: Story = (args) => ({
-  // Components used in your story `template` are defined in the `components` object
   components: {
-    'my-component': MyDataTable,
+    VDataTable,
   },
-  // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
     return {args};
   },
-  // And then the `args` are bound to your component with `v-bind="args"`
-  template: `<my-component v-bind="args">{{ args.label }}</my-component>`,
+  template: `<v-data-table v-bind="args" />`,
 });
 
 export const Default = Template.bind({});
 Default.args = {};
+Default.parameters = {
+  docs: {
+    source: {
+      code: `<v-data-table :headers="headers" :items="items" />`,
+    },
+  },
+};
 
 export const Striped = Template.bind({});
 Striped.args = {
   striped: true,
+};
+Striped.parameters = {
+  docs: {
+    source: {
+      code: `<v-data-table :headers="headers" :items="items" striped />`,
+    },
+  },
 };
 
 export const Hover = Template.bind({});
 Hover.args = {
   hover: true,
 };
+Hover.parameters = {
+  docs: {
+    source: {
+      code: `<v-data-table :headers="headers" :items="items" hover />`,
+    },
+  },
+};
 
 export const Dense = Template.bind({});
 Dense.args = {
   dense: true,
 };
+Dense.parameters = {
+  docs: {
+    source: {
+      code: `<v-data-table :headers="headers" :items="items" dense />`,
+    },
+  },
+};
 
 export const Loading = Template.bind({});
 Loading.args = {
   loading: true,
+};
+Loading.parameters = {
+  docs: {
+    source: {
+      code: `<v-data-table :headers="headers" :items="items" loading />`,
+    },
+  },
+};
+
+export const Empty = Template.bind({});
+Empty.args = {
+  items: [],
+};
+Empty.parameters = {
+  docs: {
+    source: {
+      code: `<v-data-table :headers="headers" :items="[]" />`,
+    },
+  },
 };
