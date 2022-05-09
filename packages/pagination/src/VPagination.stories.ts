@@ -36,12 +36,40 @@ const Template: Story = (args) => ({
 
 export const Default = Template.bind({});
 Default.args = {};
+Default.parameters = {
+  docs: {
+    source: {
+      code: '<v-pagination :total-items="30" :items-per-page="10" />',
+    },
+  },
+};
 
 export const Small = Template.bind({});
 Small.args = {small: true};
+Small.parameters = {
+  docs: {
+    source: {
+      code: '<v-pagination :total-items="30" :items-per-page="10" small />',
+    },
+  },
+};
 
 export const Large = Template.bind({});
 Large.args = {large: true};
+Large.parameters = {
+  docs: {
+    source: {
+      code: '<v-pagination :total-items="30" :items-per-page="10" large />',
+    },
+  },
+};
 
 export const Simple = Template.bind({});
 Simple.args = {simple: true};
+Simple.parameters = {
+  docs: {
+    source: {
+      code: '<v-pagination :total-items="30" :items-per-page="10" simple />',
+    },
+  },
+};
