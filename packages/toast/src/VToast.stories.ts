@@ -69,15 +69,48 @@ const Template: Story<{}> = (args) => ({
 
 export const Default = Template.bind({});
 Default.args = {};
+Default.parameters = {
+  docs: {
+    source: {
+      code: `
+<v-btn @click="isOpen = true"> Open Toast </v-btn>
+
+<v-toast v-model="isOpen" message="Lorem ipsum" />
+      `,
+    },
+  },
+};
 
 export const Icon = Template.bind({});
 Icon.args = {
   type: 'success',
 };
+Icon.parameters = {
+  docs: {
+    source: {
+      code: `
+<v-btn @click="isOpen = true"> Open Toast </v-btn>
+
+<v-toast v-model="isOpen" message="Lorem ipsum" type="success" />
+      `,
+    },
+  },
+};
 
 export const Title = Template.bind({});
 Title.args = {
   title: 'Notification',
+};
+Title.parameters = {
+  docs: {
+    source: {
+      code: `
+<v-btn @click="isOpen = true"> Open Toast </v-btn>
+
+<v-toast v-model="isOpen" message="Lorem ipsum" title="Notification" />
+      `,
+    },
+  },
 };
 
 export const Actions = Template.bind({});
@@ -85,6 +118,17 @@ Actions.args = {
   title: 'Confirmation',
   actions: true,
   confirm: true,
+};
+Actions.parameters = {
+  docs: {
+    source: {
+      code: `
+<v-btn @click="isOpen = true"> Open Toast </v-btn>
+
+<v-toast v-model="isOpen" message="Lorem ipsum" title="Confirmation" actions confirm />
+      `,
+    },
+  },
 };
 
 export const Custom = Template.bind({});
@@ -102,5 +146,34 @@ Custom.args = {
   onConfirm: (e: any) => {
     alert('Confirmed!');
     e.close();
+  },
+};
+Custom.parameters = {
+  docs: {
+    source: {
+      code: `
+<v-btn @click="isOpen = true"> Open Toast </v-btn>
+
+<v-toast
+  v-model="isOpen"
+  message="Lorem ipsum"
+  title="Confirmation"
+  type="question"
+  actions
+  confirm
+  confirm-color="error"
+  confirm-text="Delete"
+  close-text="Cancel"
+  placement="center"
+  hide-x-icon
+  overlay
+  @confirm="(e: any) => {
+    alert("Confirmed!");
+    e.close();
+  }
+  "
+/>
+      `,
+    },
   },
 };
