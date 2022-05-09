@@ -34,10 +34,24 @@ Template.decorators = [
 
 export const Default = Template.bind({});
 Default.args = {};
+Default.parameters = {
+  docs: {
+    source: {
+      code: `<v-breadcrumbs :items="items"/>`,
+    },
+  },
+};
 
 export const CustomDivider = Template.bind({});
 CustomDivider.args = {
   divider: '-',
+};
+CustomDivider.parameters = {
+  docs: {
+    source: {
+      code: `<v-breadcrumbs :items="items" divider="-"/>`,
+    },
+  },
 };
 
 export const CustomDividerSlots: Story = (args) => ({
@@ -53,6 +67,19 @@ export const CustomDividerSlots: Story = (args) => ({
   </v-breadcrumbs>
 </div>`,
 });
+CustomDividerSlots.parameters = {
+  docs: {
+    source: {
+      code: `
+<v-breadcrumbs :items="items">
+  <template #divider>
+    <RiArrowRightSLine class="fill-current w-5 h-5 text-gray-500" />
+  </template>
+</v-breadcrumbs>
+`,
+    },
+  },
+};
 
 CustomDividerSlots.decorators = [
   /* this is the basic setup with no params passed to the decorator */
