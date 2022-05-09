@@ -1,7 +1,7 @@
 import {Story, Meta} from '@storybook/vue3';
 import {themeColors} from '@gits-id/utils';
-import type {VSelectProps} from './VSelect';
-import MySelect from './VSelect.vue';
+import type {VSelectProps} from './types';
+import VSelect from './VSelect.vue';
 
 const items = [...Array(5)].map((item, index) => ({
   value: index,
@@ -10,7 +10,7 @@ const items = [...Array(5)].map((item, index) => ({
 
 export default {
   title: 'Components/Select',
-  component: MySelect,
+  component: VSelect,
   argTypes: {
     color: {
       control: 'select',
@@ -36,25 +36,46 @@ export default {
 const Template: Story<VSelectProps> = (args) => ({
   // Components used in your story `template` are defined in the `components` object
   components: {
-    'my-component': MySelect,
+    VSelect,
   },
   // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
     return {args};
   },
   // And then the `args` are bound to your component with `v-bind="args"`
-  template: `<my-component v-bind="args">{{ args.label }}</my-component>`,
+  template: `<v-select v-bind="args" />`,
 });
 
 export const Select = Template.bind({});
 Select.args = {};
+Select.parameters = {
+  docs: {
+    source: {
+      code: '<v-select :items="items" />',
+    },
+  },
+};
 
 export const Searchable = Template.bind({});
 Searchable.args = {
   searchable: true,
 };
+Searchable.parameters = {
+  docs: {
+    source: {
+      code: '<v-select :items="items" searchable />',
+    },
+  },
+};
 
 export const NoCheckIcon = Template.bind({});
 NoCheckIcon.args = {
   hideCheckIcon: true,
+};
+NoCheckIcon.parameters = {
+  docs: {
+    source: {
+      code: '<v-select :items="items" no-check-icon />',
+    },
+  },
 };
