@@ -23,3 +23,10 @@ const Template: Story<{}> = (args) => ({
 
 export const Default = Template.bind({});
 Default.args = {};
+Default.parameters = {
+  docs: {
+    source: {
+      code: '<v-form-group label="Label"> Content </v-form-group>',
+    },
+  },
+};
