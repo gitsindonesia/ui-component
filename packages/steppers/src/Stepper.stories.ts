@@ -20,15 +20,12 @@ export default {
 };
 
 const Template: Story = (args) => ({
-  // Components used in your story `template` are defined in the `components` object
   components: {
     VStepper,
   },
-  // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
     return {args};
   },
-  // And then the `args` are bound to your component with `v-bind="args"`
   template: `<VStepper v-bind="args">{{ args.label }}</VStepper>`,
 });
 
@@ -39,18 +36,46 @@ Template.decorators = [
 
 export const Default = Template.bind({});
 Default.args = {};
+Default.parameters = {
+  docs: {
+    source: {
+      code: `<v-steppers :items="items" />`,
+    },
+  },
+};
 
 export const DisableRouteActive = Template.bind({});
 DisableRouteActive.args = {
   disableRouteActive: true,
+};
+DisableRouteActive.parameters = {
+  docs: {
+    source: {
+      code: `<v-steppers :items="items" disable-route-active />`,
+    },
+  },
 };
 
 export const Linkable = Template.bind({});
 Linkable.args = {
   linkable: true,
 };
+Linkable.parameters = {
+  docs: {
+    source: {
+      code: `<v-steppers :items="items" linkable />`,
+    },
+  },
+};
 
 export const Vertical = Template.bind({});
 Vertical.args = {
   vertical: true,
+};
+Vertical.parameters = {
+  docs: {
+    source: {
+      code: `<v-steppers :items="items" vertical />`,
+    },
+  },
 };

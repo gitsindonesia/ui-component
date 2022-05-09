@@ -73,7 +73,7 @@ Default.args = {};
 Default.parameters = {
   docs: {
     source: {
-      code: '<v-input />',
+      code: `<v-input />`,
     },
   },
 };
