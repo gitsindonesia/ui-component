@@ -4,8 +4,8 @@ export const inputDisabledClasses =
 export const inputClasses =
   'border shadow-sm rounded-md text-gray-800 ' + inputDisabledClasses;
 
-export const inputErrorClasses =
-  'border-error-500 placeholder-error-500 text-error-500 focus-visible:ring-error-500 focus-visible:border-error-500 ring-error-500 focus:border-error-500 focus:ring-error-500';
+export const inputErrorClasses = `border-error-500 placeholder-error-500 text-error-500
+  focus-visible:ring-error-500/30 focus-visible:border-error-500 ring-error-500 focus:border-error-500 focus:ring-error-500`;
 
 export const useInputClasses = (error = false) => {
   let className = [
