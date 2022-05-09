@@ -61,13 +61,55 @@ Template.decorators = [
 
 export const Default = Template.bind({});
 Default.args = {};
+Default.parameters = {
+  docs: {
+    source: {
+      code: `
+<v-modal v-model="isOpen">
+  <template #activator="{open}">
+    <v-btn @click="open">Click Me</v-btn>
+  </template>
+  Hello World
+</v-modal>
+      `,
+    },
+  },
+};
 
 export const Confirm = Template.bind({});
 Confirm.args = {
   confirm: true,
 };
+Confirm.parameters = {
+  docs: {
+    source: {
+      code: `
+<v-modal v-model="isOpen" confirm>
+  <template #activator="{open}">
+    <v-btn @click="open">Click Me</v-btn>
+  </template>
+  Hello World
+</v-modal>
+      `,
+    },
+  },
+};
 
 export const HideHeader = Template.bind({});
 HideHeader.args = {
   HideHeader: true,
+};
+HideHeader.parameters = {
+  docs: {
+    source: {
+      code: `
+<v-modal v-model="isOpen" hide-header>
+  <template #activator="{open}">
+    <v-btn @click="open">Click Me</v-btn>
+  </template>
+  Hello World
+</v-modal>
+      `,
+    },
+  },
 };
