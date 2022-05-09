@@ -44,20 +44,56 @@ const Template: Story = (args) => ({
 
 export const Default = Template.bind({});
 Default.args = {};
+Default.parameters = {
+  docs: {
+    source: {
+      code: `<v-alert>Alert text</v-alert>
+<v-alert color="primary">Alert text</v-alert>
+<v-alert color="secondary">Alert text</v-alert>
+<v-alert color="info">Alert text</v-alert>
+<v-alert color="warning">Alert text</v-alert>
+<v-alert color="success">Alert text</v-alert>
+<v-alert color="error">Alert text</v-alert>
+<v-alert color="dark">Alert text</v-alert>
+      `,
+    },
+  },
+};
 
 export const Solid = Template.bind({});
 Solid.args = {
   solid: true,
+};
+Solid.parameters = {
+  docs: {
+    source: {
+      code: `<v-alert solid>Alert text</v-alert>`,
+    },
+  },
 };
 
 export const Dismissable = Template.bind({});
 Dismissable.args = {
   dismissable: true,
 };
+Dismissable.parameters = {
+  docs: {
+    source: {
+      code: `<v-alert dismissable>Alert text</v-alert>`,
+    },
+  },
+};
 
 export const Icon = Template.bind({});
 Icon.args = {
   icon: 'success',
+};
+Icon.parameters = {
+  docs: {
+    source: {
+      code: `<v-alert icon="success">Alert text</v-alert>`,
+    },
+  },
 };
 
 export const CustomSlots = () => ({
@@ -79,15 +115,15 @@ CustomSlots.parameters = {
   docs: {
     source: {
       code: `<v-alert color="error" dismissable>
-      <template #icon>
-        <RiInformationFill class="fill-current w-6 h-6 mr-2" />
-      </template>
-      <template #x-icon>
-        <RiCloseCircleLine class="fill-current w-6 h-6 text-error-500" />
-      </template>
-    
-      Change a few things up and try submitting again.
-    </v-alert>`,
+  <template #icon>
+    <RiInformationFill class="fill-current w-6 h-6 mr-2" />
+  </template>
+  <template #x-icon>
+    <RiCloseCircleLine class="fill-current w-6 h-6 text-error-500" />
+  </template>
+
+  Change a few things up and try submitting again.
+</v-alert>`,
     },
   },
 };
