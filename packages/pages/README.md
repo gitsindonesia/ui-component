@@ -26,11 +26,24 @@ pnpm i @gits-id/pages
 
 ```vue
 <script setup lang="ts">
-import Pages from '@gits-id/pages';
+import {
+  // Base Template
+  Auth,
+  // Pages Components
+  Activation,
+  ForgotPassword,
+  Login,
+  ResetPassword,
+  // NotFound component no requires Auth as its parent
+  NotFound,
+} from '@gits-id/pages';
 </script>
 
 <template>
-  <Pages />
+  <Auth>
+    <!-- use pages component as child of Auth component -->
+    <Activation />
+  </Auth>
 </template>
 ```
 
