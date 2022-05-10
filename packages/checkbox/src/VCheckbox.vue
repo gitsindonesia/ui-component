@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import {ref, toRefs, watch, computed, PropType} from 'vue';
 import {useTextSize} from '@gits-id/utils';
+import {useField} from 'vee-validate';
 
 interface VDataTableItem {
   selected?: boolean;
@@ -36,6 +37,10 @@ const props = defineProps({
     type: [String, Number] as PropType<string | number | VDataTableItem>,
     default: '',
   },
+  name: {
+    type: String,
+    default: '',
+  },
 });
 
 const {
@@ -49,8 +54,6 @@ const {
 } = toRefs(props);
 
 const emit = defineEmits(['update:modelValue']);
-
-const innerValue = ref(props.modelValue);
 
 const colorClass = computed(() => {
   switch (color.value) {
@@ -72,25 +75,31 @@ const colorClass = computed(() => {
 
 const {class: sizeClass} = useTextSize(size.value);
 
-watch(innerValue, (val) => {
-  emit('update:modelValue', val);
-});
-
-watch(modelValue, (val) => {
-  innerValue.value = val;
+const {value: innerValue, errorMessage} = useField(props.name, props.rules, {
+  initialValue: props.modelValue || props.value,
 });
 </script>
 
 <template>
-  <label class="flex items-center gap-2 select-none" :class="[sizeClass]">
+  <label class="flex items-center gap-2">
     <input
+      :id="name"
       v-model="innerValue"
       type="checkbox"
       :value="checkboxValue"
-      class="rounded transition duration-300 disabled:border-gray-400 disabled:bg-gray-400 disabled:hover:bg-gray-300"
+      class="
+        rounded
+        transition
+        duration-300
+        disabled:border-gray-400
+        disabled:bg-gray-400
+        disabled:hover:bg-gray-300
+      "
       :disabled="disabled"
       :class="[inputClass, colorClass]"
     />
-    {{ label }}
+    <span class="select-none" :for="name" :class="[sizeClass]">
+      {{ label }}
+    </span>
   </label>
 </template>
