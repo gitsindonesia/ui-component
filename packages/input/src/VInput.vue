@@ -110,20 +110,20 @@ const inputVariantClass = computed(() => {
   } else {
     const variants: Record<string, string> = {
       default:
-        'border-gray-300 focus:ring-primary-500 focus:ring-opacity-50 focus:border-primary-500',
-      blue: 'border-gray-300 focus:ring-blue-500 focus:ring-opacity-50 focus:border-blue-500',
+        'border-gray-400 focus:ring-primary-500 focus:ring-opacity-50 focus:border-primary-500',
+      blue: 'border-gray-400 focus:ring-blue-500 focus:ring-opacity-50 focus:border-blue-500',
       primary:
-        'border-gray-300 focus:ring-primary-500 focus:ring-opacity-50 focus:border-primary-500',
+        'border-gray-400 focus:ring-primary-500 focus:ring-opacity-50 focus:border-primary-500',
       secondary:
-        'border-gray-300 focus:ring-secondary-500 focus:ring-opacity-50 focus:border-secondary-500',
-      info: 'border-gray-300 focus:ring-info-500 focus:ring-opacity-50 focus:border-info-500',
+        'border-gray-400 focus:ring-secondary-500 focus:ring-opacity-50 focus:border-secondary-500',
+      info: 'border-gray-400 focus:ring-info-500 focus:ring-opacity-50 focus:border-info-500',
       warning:
-        'border-gray-300 focus:ring-warning-500 focus:ring-opacity-50 focus:border-warning-500',
+        'border-gray-400 focus:ring-warning-500 focus:ring-opacity-50 focus:border-warning-500',
       success:
-        'border-gray-300 focus:ring-success-500 focus:ring-opacity-50 focus:border-success-500',
+        'border-gray-400 focus:ring-success-500 focus:ring-opacity-50 focus:border-success-500',
       error:
-        'border-gray-300 focus:ring-error-500 focus:ring-opacity-50 focus:border-error-500',
-      dark: 'border-gray-300 focus:ring-gray-500 focus:ring-opacity-50 focus:border-gray-500',
+        'border-gray-400 focus:ring-error-500 focus:ring-opacity-50 focus:border-error-500',
+      dark: 'border-gray-400 focus:ring-gray-500 focus:ring-opacity-50 focus:border-gray-500',
     };
     return variants[props.color];
   }
