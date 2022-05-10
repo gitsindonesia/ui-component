@@ -9,14 +9,15 @@ export const inputErrorClasses = `border-error-500 text-error-500
 
 export const useInputClasses = (error = false) => {
   let className = [
-    'transition duration-300 border rounded-md text-gray-800 focus:border-primary-500 focus:ring-primary-500 focus:ring focus:ring-opacity-50',
+    'transition duration-300 border rounded-md text-gray-800',
+    'focus:border-primary-500 focus:ring-primary-500 focus:ring focus:ring-opacity-50',
     inputDisabledClasses,
   ];
 
   if (error) {
     className.push(inputErrorClasses);
   } else {
-    className.push('border-gray-300');
+    className.push('border-gray-400');
   }
 
   return className.join(' ');
