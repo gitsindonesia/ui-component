@@ -41,6 +41,6 @@ import VRadio from '@gits-id/radio';
 
 View `VRadio` documentation [here](https://gits-ui.web.app/?path=/story/components-radio--default).
 
-## Licence
+## License
 
-ISC
+MIT

@@ -41,6 +41,6 @@ import Breadcrumbs from '@gits-id/breadcrumbs';
 
 View `Breadcrumbs` documentation [here](https://gits-ui.web.app/?path=/story/components-breadcrumbs--default).
 
-## Licence
+## License
 
-ISC
+MIT

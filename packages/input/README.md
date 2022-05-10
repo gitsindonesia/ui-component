@@ -41,6 +41,6 @@ import VLayouts from '@gits-id/layouts';
 
 View `VLayouts` documentation [here](https://gits-ui.web.app/?path=/story/components-layouts--default).
 
-## Licence
+## License
 
-ISC
+MIT

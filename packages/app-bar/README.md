@@ -1,6 +1,6 @@
 # GITS AppBar Component
 
-> Reusable Application Bar Component
+> Application Bar Component
 
 ## Installation
 
@@ -26,14 +26,11 @@ pnpm i @gits-id/app-bar
 
 ```vue
 <script setup lang="ts">
-// import styles
-import '@gits-id/app-bar/dist/style.css';
-// import component
 import AppBar from '@gits-id/app-bar';
 </script>
 
 <template>
-  <AppBar></AppBar>
+  <AppBar />
 </template>
 ```
 
@@ -41,6 +38,6 @@ import AppBar from '@gits-id/app-bar';
 
 View `AppBar` documentation [here](https://gits-ui.web.app/?path=/story/components-app-bar--default).
 
-## Licence
+## License
 
-ISC
+MIT

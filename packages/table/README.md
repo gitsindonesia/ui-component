@@ -41,6 +41,6 @@ import Table from '@gits-id/table';
 
 View `Table` documentation [here](https://gits-ui.web.app/?path=/story/components-table--default).
 
-## Licence
+## License
 
-ISC
+MIT

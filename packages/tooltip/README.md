@@ -41,6 +41,6 @@ import Tooltip from '@gits-id/tooltip';
 
 View `Tooltip` documentation [here](https://gits-ui.web.app/?path=/story/components-tooltip--default).
 
-## Licence
+## License
 
-ISC
+MIT

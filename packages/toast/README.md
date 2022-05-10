@@ -41,6 +41,6 @@ import Toast from '@gits-id/toast';
 
 View `Toast` documentation [here](https://gits-ui.web.app/?path=/story/components-toast--default).
 
-## Licence
+## License
 
-ISC
+MIT

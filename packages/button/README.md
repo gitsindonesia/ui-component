@@ -1,6 +1,6 @@
 # GITS Button Component
 
-> Reusable Button Component
+> Button Component
 
 ## Installation
 
@@ -24,13 +24,6 @@ pnpm i @gits-id/button
 
 ## Usage
 
-Import button styles in your `main.ts`:
-
-```js
-// main.ts
-import '@gits-id/button/dist/style.css';
-```
-
 ```html
 <script setup lang="ts">
   import Button from '@gits-id/button';
@@ -43,6 +36,6 @@ import '@gits-id/button/dist/style.css';
 
 View `Button` documentation [here](https://gits-ui.web.app/?path=/story/components-button--default).
 
-## Licence
+## License
 
-ISC
+MIT

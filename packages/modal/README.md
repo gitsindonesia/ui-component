@@ -41,6 +41,6 @@ import VModal from '@gits-id/modal';
 
 View `VModal` documentation [here](https://gits-ui.web.app/?path=/story/components-modal--default).
 
-## Licence
+## License
 
-ISC
+MIT

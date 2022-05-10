@@ -1,6 +1,6 @@
 # GITS Alert Component
 
-> Reusable Alert Component
+> Alert Component
 
 ## Installation
 
@@ -24,12 +24,7 @@ pnpm i @gits-id/alert
 
 ## Usage
 
-Import button styles in your `main.ts`:
-
-```js
-// main.ts
-import '@gits-id/alert/dist/style.css';
-```
+Import `Alert` to your component:
 
 ```vue
 <script setup lang="ts">
@@ -37,7 +32,7 @@ import Alert from '@gits-id/alert';
 </script>
 
 <template>
-  <Alert color="primary">Click Me</Alert>
+  <Alert color="primary">Lorem ipsum</Alert>
 </template>
 ```
 
@@ -45,6 +40,6 @@ import Alert from '@gits-id/alert';
 
 View `Alert` documentation [here](https://gits-ui.web.app/?path=/story/components-alert--default).
 
-## Licence
+## License
 
-ISC
+MIT

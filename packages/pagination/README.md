@@ -41,6 +41,6 @@ import Pagination from '@gits-id/pagination';
 
 View `Pagination` documentation [here](https://gits-ui.web.app/?path=/story/components-pagination--default).
 
-## Licence
+## License
 
-ISC
+MIT

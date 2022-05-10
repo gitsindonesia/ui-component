@@ -41,6 +41,6 @@ import Select from '@gits-id/select';
 
 View `Select` documentation [here](https://gits-ui.web.app/?path=/story/components-select--default).
 
-## Licence
+## License
 
-ISC
+MIT

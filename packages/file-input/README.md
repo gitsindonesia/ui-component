@@ -41,6 +41,6 @@ import VFileInput from '@gits-id/file-input';
 
 View `VFileInput` documentation [here](https://gits-ui.web.app/?path=/story/components-file-input--default).
 
-## Licence
+## License
 
-ISC
+MIT

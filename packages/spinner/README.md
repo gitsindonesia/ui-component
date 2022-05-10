@@ -41,6 +41,6 @@ import Spinner from '@gits-id/spinner';
 
 View `Spinner` documentation [here](https://gits-ui.web.app/?path=/story/components-spinner--default).
 
-## Licence
+## License
 
-ISC
+MIT

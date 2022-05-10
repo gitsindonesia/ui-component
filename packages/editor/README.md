@@ -41,6 +41,6 @@ const content = ref('');
 
 View `VEditor` documentation [here](https://gits-ui.web.app/?path=/story/components-editor--default).
 
-## Licence
+## License
 
-ISC
+MIT

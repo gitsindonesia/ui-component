@@ -1,6 +1,6 @@
 # GITS Badge Component
 
-> Reusable Badge Component
+> Badge Component
 
 ## Installation
 
@@ -26,14 +26,11 @@ pnpm i @gits-id/badge
 
 ```vue
 <script setup lang="ts">
-// import styles
-import '@gits-id/badge/dist/style.css';
-// import component
 import Badge from '@gits-id/badge';
 </script>
 
 <template>
-  <Badge color="primary">Text</Badge>
+  <Badge color="primary"> Text </Badge>
 </template>
 ```
 
@@ -41,6 +38,6 @@ import Badge from '@gits-id/badge';
 
 View `Badge` documentation [here](https://gits-ui.web.app/?path=/story/components-badge--default).
 
-## Licence
+## License
 
-ISC
+MIT

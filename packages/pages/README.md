@@ -41,6 +41,6 @@ import Pages from '@gits-id/pages';
 
 View `Pages` documentation [here](https://gits-ui.web.app/?path=/story/components-pages--default).
 
-## Licence
+## License
 
-ISC
+MIT

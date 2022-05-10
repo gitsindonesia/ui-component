@@ -41,6 +41,6 @@ import VMenus from '@gits-id/menus';
 
 View `VMenus` documentation [here](https://gits-ui.web.app/?path=/story/components-menus--default).
 
-## Licence
+## License
 
-ISC
+MIT

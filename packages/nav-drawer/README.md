@@ -41,6 +41,6 @@ import VNavDrawer from '@gits-id/nav-drawer';
 
 View `VNavDrawer` documentation [here](https://gits-ui.web.app/?path=/story/components-nav-drawer--default).
 
-## Licence
+## License
 
-ISC
+MIT

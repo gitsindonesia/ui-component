@@ -1,6 +1,6 @@
 # GITS Checkbox Component
 
-> Reusable Checkbox Component
+> Checkbox Component
 
 ## Installation
 
@@ -27,9 +27,6 @@ pnpm i @gits-id/checkbox
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
-// import styles
-import '@gits-id/checkbox/dist/style.css';
-// import component
 import VCheckbox from '@gits-id/checkbox';
 
 const checkboxValue = ref(false);
@@ -44,6 +41,6 @@ const checkboxValue = ref(false);
 
 View `VCheckbox` documentation [here](https://gits-ui.web.app/?path=/story/components-checkbox--default).
 
-## Licence
+## License
 
-ISC
+MIT

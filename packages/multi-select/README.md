@@ -41,6 +41,6 @@ import VMultiSelect from '@gits-id/multi-select';
 
 View `VMultiSelect` documentation [here](https://gits-ui.web.app/?path=/story/components-multi-select--default).
 
-## Licence
+## License
 
-ISC
+MIT

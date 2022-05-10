@@ -41,6 +41,6 @@ import Switch from '@gits-id/switch';
 
 View `Switch` documentation [here](https://gits-ui.web.app/?path=/story/components-switch--default).
 
-## Licence
+## License
 
-ISC
+MIT

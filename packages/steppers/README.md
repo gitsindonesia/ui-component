@@ -41,6 +41,6 @@ import Steppers from '@gits-id/steppers';
 
 View `Steppers` documentation [here](https://gits-ui.web.app/?path=/story/components-steppers--default).
 
-## Licence
+## License
 
-ISC
+MIT

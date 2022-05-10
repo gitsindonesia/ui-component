@@ -22,6 +22,6 @@ pnpm
 pnpm i @gits-id/utils
 ```
 
-## Licence
+## License
 
-ISC
+MIT

@@ -38,6 +38,6 @@ import Card from '@gits-id/card';
 
 View `Card` documentation [here](https://gits-ui.web.app/?path=/story/components-card--default).
 
-## Licence
+## License
 
-ISC
+MIT

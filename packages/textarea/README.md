@@ -41,6 +41,6 @@ import VTextarea from '@gits-id/textarea';
 
 View `VTextarea` documentation [here](https://gits-ui.web.app/?path=/story/components-textarea--default).
 
-## Licence
+## License
 
-ISC
+MIT

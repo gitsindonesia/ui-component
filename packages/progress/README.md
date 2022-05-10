@@ -41,6 +41,6 @@ import Progress from '@gits-id/progress';
 
 View `Progress` documentation [here](https://gits-ui.web.app/?path=/story/components-progress--default).
 
-## Licence
+## License
 
-ISC
+MIT

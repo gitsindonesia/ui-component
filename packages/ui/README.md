@@ -38,6 +38,6 @@ app.use(GitsUi); // use plugin
 
 View `UI Component` documentation [here](https://gits-ui.web.app).
 
-## Licence
+## License
 
-ISC
+MIT

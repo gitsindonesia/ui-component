@@ -41,6 +41,6 @@ import Tabs from '@gits-id/tabs';
 
 View `Tabs` documentation [here](https://gits-ui.web.app/?path=/story/components-tabs--default).
 
-## Licence
+## License
 
-ISC
+MIT

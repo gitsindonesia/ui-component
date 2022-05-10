@@ -41,6 +41,6 @@ import VFormGroup from '@gits-id/form-group';
 
 View `VFormGroup` documentation [here](https://gits-ui.web.app/?path=/story/components-form-group--default).
 
-## Licence
+## License
 
-ISC
+MIT

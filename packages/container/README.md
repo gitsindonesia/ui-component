@@ -41,6 +41,6 @@ import VContainer from '@gits-id/container';
 
 View `VContainer` documentation [here](https://gits-ui.web.app/?path=/story/components-container--default).
 
-## Licence
+## License
 
-ISC
+MIT

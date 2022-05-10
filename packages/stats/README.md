@@ -41,6 +41,6 @@ import Stats from '@gits-id/stats';
 
 View `Stats` documentation [here](https://gits-ui.web.app/?path=/story/components-stats--default).
 
-## Licence
+## License
 
-ISC
+MIT

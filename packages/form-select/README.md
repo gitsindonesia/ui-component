@@ -41,6 +41,6 @@ import VFormSelect from '@gits-id/form-select';
 
 View `VFormSelect` documentation [here](https://gits-ui.web.app/?path=/story/components-form-select--default).
 
-## Licence
+## License
 
-ISC
+MIT

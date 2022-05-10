@@ -41,6 +41,6 @@ import Services from '@gits-id/services';
 
 View `Services` documentation [here](https://gits-ui.web.app/?path=/story/components-services--default).
 
-## Licence
+## License
 
-ISC
+MIT

@@ -41,6 +41,6 @@ import Dropdown from '@gits-id/dropdown';
 
 View `Dropdown` documentation [here](https://gits-ui.web.app/?path=/story/components-dropdown--default).
 
-## Licence
+## License
 
-ISC
+MIT

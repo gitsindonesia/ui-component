@@ -41,6 +41,6 @@ import Navbar from '@gits-id/navbar';
 
 View `Navbar` documentation [here](https://gits-ui.web.app/?path=/story/components-navbar--default).
 
-## Licence
+## License
 
-ISC
+MIT

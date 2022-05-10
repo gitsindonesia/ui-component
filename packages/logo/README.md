@@ -41,6 +41,6 @@ import VLogo from '@gits-id/logo';
 
 View `VLogo` documentation [here](https://gits-ui.web.app/?path=/story/components-logo--default).
 
-## Licence
+## License
 
-ISC
+MIT
