@@ -1,6 +1,6 @@
 # GITS Form Select Component
 
-> Reusable Form Select Component
+Form Select Component.
 
 ## Installation
 
@@ -26,20 +26,17 @@ pnpm i @gits-id/form-select
 
 ```vue
 <script setup lang="ts">
-// import styles
-import '@gits-id/form-select/dist/style.css';
-// import component
-import VFormSelect from '@gits-id/form-select';
+import FormSelect from '@gits-id/form-select';
 </script>
 
 <template>
-  <VFormSelect />
+  <FormSelect />
 </template>
 ```
 
 ## Documentation
 
-View `VFormSelect` documentation [here](https://gits-ui.web.app/?path=/story/components-form-select--default).
+View `FormSelect` documentation [here](https://gits-ui.web.app/?path=/story/components-form-select--default).
 
 ## License
 

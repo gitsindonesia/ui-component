@@ -1,6 +1,6 @@
-# GITS VNavDrawer Component
+# GITS Navigation Drawer Component
 
-> Reusable VNavDrawer Component
+> Reusable Navigation Drawer Component
 
 ## Installation
 
@@ -26,9 +26,6 @@ pnpm i @gits-id/nav-drawer
 
 ```vue
 <script setup lang="ts">
-// import styles
-import '@gits-id/nav-drawer/dist/style.css';
-// import component
 import VNavDrawer from '@gits-id/nav-drawer';
 </script>
 

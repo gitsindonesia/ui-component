@@ -26,9 +26,6 @@ pnpm i @gits-id/toast
 
 ```vue
 <script setup lang="ts">
-// import styles
-import '@gits-id/toast/dist/style.css';
-// import component
 import Toast from '@gits-id/toast';
 </script>
 

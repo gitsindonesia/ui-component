@@ -26,9 +26,6 @@ pnpm i @gits-id/navbar
 
 ```vue
 <script setup lang="ts">
-// import styles
-import '@gits-id/navbar/dist/style.css';
-// import component
 import Navbar from '@gits-id/navbar';
 </script>
 

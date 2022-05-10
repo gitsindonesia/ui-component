@@ -26,9 +26,6 @@ pnpm i @gits-id/stats
 
 ```vue
 <script setup lang="ts">
-// import styles
-import '@gits-id/stats/dist/style.css';
-// import component
 import Stats from '@gits-id/stats';
 </script>
 

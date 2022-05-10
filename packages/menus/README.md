@@ -1,6 +1,6 @@
-# GITS VMenus Component
+# GITS Menus Component
 
-> Reusable VMenus Component
+> Reusable Menus Component
 
 ## Installation
 
@@ -29,17 +29,17 @@ pnpm i @gits-id/menus
 // import styles
 import '@gits-id/menus/dist/style.css';
 // import component
-import VMenus from '@gits-id/menus';
+import Menus from '@gits-id/menus';
 </script>
 
 <template>
-  <VMenus />
+  <Menus />
 </template>
 ```
 
 ## Documentation
 
-View `VMenus` documentation [here](https://gits-ui.web.app/?path=/story/components-menus--default).
+View `Menus` documentation [here](https://gits-ui.web.app/?path=/story/components-menus--default).
 
 ## License
 

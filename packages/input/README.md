@@ -1,45 +1,42 @@
-# GITS Layouts Component
+# GITS Input Component
 
-> Reusable Layouts Component
+Input Component.
 
 ## Installation
 
 npm
 
 ```
-npm i @gits-id/layouts
+npm i @gits-id/input
 ```
 
 yarn
 
 ```
-yarn add @gits-id/layouts
+yarn add @gits-id/input
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/layouts
+pnpm i @gits-id/input
 ```
 
 ## Usage
 
 ```vue
 <script setup lang="ts">
-// import styles
-import '@gits-id/layouts/dist/style.css';
-// import component
-import VLayouts from '@gits-id/layouts';
+import VInput from '@gits-id/input';
 </script>
 
 <template>
-  <VLayouts />
+  <VInput />
 </template>
 ```
 
 ## Documentation
 
-View `VLayouts` documentation [here](https://gits-ui.web.app/?path=/story/components-layouts--default).
+View `VInput` documentation [here](https://gits-ui.web.app/?path=/story/components-input--default).
 
 ## License
 

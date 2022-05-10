@@ -26,9 +26,6 @@ pnpm i @gits-id/spinner
 
 ```vue
 <script setup lang="ts">
-// import styles
-import '@gits-id/spinner/dist/style.css';
-// import component
 import Spinner from '@gits-id/spinner';
 </script>
 

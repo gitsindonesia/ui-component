@@ -26,9 +26,6 @@ pnpm i @gits-id/switch
 
 ```vue
 <script setup lang="ts">
-// import styles
-import '@gits-id/switch/dist/style.css';
-// import component
 import Switch from '@gits-id/switch';
 </script>
 

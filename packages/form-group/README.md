@@ -1,6 +1,6 @@
 # GITS Form Group Component
 
-> Reusable Form Group Component
+Form Group Component.
 
 ## Installation
 
@@ -26,20 +26,17 @@ pnpm i @gits-id/form-group
 
 ```vue
 <script setup lang="ts">
-// import styles
-import '@gits-id/form-group/dist/style.css';
-// import component
-import VFormGroup from '@gits-id/form-group';
+import FormGroup from '@gits-id/form-group';
 </script>
 
 <template>
-  <VFormGroup />
+  <FormGroup />
 </template>
 ```
 
 ## Documentation
 
-View `VFormGroup` documentation [here](https://gits-ui.web.app/?path=/story/components-form-group--default).
+View `FormGroup` documentation [here](https://gits-ui.web.app/?path=/story/components-form-group--default).
 
 ## License
 

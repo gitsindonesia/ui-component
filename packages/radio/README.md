@@ -26,9 +26,6 @@ pnpm i @gits-id/radio
 
 ```vue
 <script setup lang="ts">
-// import styles
-import '@gits-id/radio/dist/style.css';
-// import component
 import VRadio from '@gits-id/radio';
 </script>
 

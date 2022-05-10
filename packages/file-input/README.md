@@ -1,6 +1,6 @@
 # GITS File Input Component
 
-> Reusable File Input Component
+File Input Component.
 
 ## Installation
 
@@ -26,20 +26,17 @@ pnpm i @gits-id/file-input
 
 ```vue
 <script setup lang="ts">
-// import styles
-import '@gits-id/file-input/dist/style.css';
-// import component
-import VFileInput from '@gits-id/file-input';
+import FileInput from '@gits-id/file-input';
 </script>
 
 <template>
-  <VFileInput />
+  <FileInput />
 </template>
 ```
 
 ## Documentation
 
-View `VFileInput` documentation [here](https://gits-ui.web.app/?path=/story/components-file-input--default).
+View `FileInput` documentation [here](https://gits-ui.web.app/?path=/story/components-file-input--default).
 
 ## License
 

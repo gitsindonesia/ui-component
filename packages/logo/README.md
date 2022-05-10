@@ -26,9 +26,6 @@ pnpm i @gits-id/logo
 
 ```vue
 <script setup lang="ts">
-// import styles
-import '@gits-id/logo/dist/style.css';
-// import component
 import VLogo from '@gits-id/logo';
 </script>
 

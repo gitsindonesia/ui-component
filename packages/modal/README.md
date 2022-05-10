@@ -1,6 +1,6 @@
-# GITS VModal Component
+# GITS Modal Component
 
-> Reusable VModal Component
+> Reusable Modal Component
 
 ## Installation
 
@@ -26,20 +26,17 @@ pnpm i @gits-id/modal
 
 ```vue
 <script setup lang="ts">
-// import styles
-import '@gits-id/modal/dist/style.css';
-// import component
-import VModal from '@gits-id/modal';
+import Modal from '@gits-id/modal';
 </script>
 
 <template>
-  <VModal />
+  <Modal />
 </template>
 ```
 
 ## Documentation
 
-View `VModal` documentation [here](https://gits-ui.web.app/?path=/story/components-modal--default).
+View `Modal` documentation [here](https://gits-ui.web.app/?path=/story/components-modal--default).
 
 ## License
 

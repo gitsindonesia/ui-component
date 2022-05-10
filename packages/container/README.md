@@ -1,6 +1,6 @@
 # GITS Container Component
 
-> Reusable Container Component
+Container Component.
 
 ## Installation
 
@@ -26,20 +26,17 @@ pnpm i @gits-id/container
 
 ```vue
 <script setup lang="ts">
-// import styles
-import '@gits-id/container/dist/style.css';
-// import component
-import VContainer from '@gits-id/container';
+import Container from '@gits-id/container';
 </script>
 
 <template>
-  <VContainer>Text</VContainer>
+  <Container>Text</Container>
 </template>
 ```
 
 ## Documentation
 
-View `VContainer` documentation [here](https://gits-ui.web.app/?path=/story/components-container--default).
+View `Container` documentation [here](https://gits-ui.web.app/?path=/story/components-container--default).
 
 ## License
 

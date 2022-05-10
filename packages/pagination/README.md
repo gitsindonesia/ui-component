@@ -26,9 +26,6 @@ pnpm i @gits-id/pagination
 
 ```vue
 <script setup lang="ts">
-// import styles
-import '@gits-id/pagination/dist/style.css';
-// import component
 import Pagination from '@gits-id/pagination';
 </script>
 

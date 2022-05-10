@@ -26,9 +26,6 @@ pnpm i @gits-id/textarea
 
 ```vue
 <script setup lang="ts">
-// import styles
-import '@gits-id/textarea/dist/style.css';
-// import component
 import VTextarea from '@gits-id/textarea';
 </script>
 

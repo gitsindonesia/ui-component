@@ -1,6 +1,6 @@
 # GITS Dropdown Component
 
-> Reusable Dropdown Component
+Dropdown Component.
 
 ## Installation
 
@@ -26,9 +26,6 @@ pnpm i @gits-id/dropdown
 
 ```vue
 <script setup lang="ts">
-// import styles
-import '@gits-id/dropdown/dist/style.css';
-// import component
 import Dropdown from '@gits-id/dropdown';
 </script>
 

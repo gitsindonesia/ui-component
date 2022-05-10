@@ -1,6 +1,6 @@
-# GITS VMenu Component
+# GITS Menu Component
 
-> Reusable VMenu Component
+> Reusable Menu Component
 
 ## Installation
 

@@ -1,6 +1,6 @@
 # GITS Editor Component
 
-> Based on Vue 3 CKEditor
+Rich Text Editor Based on Vue 3 CKEditor
 
 ## Installation
 
@@ -27,19 +27,19 @@ pnpm i @gits-id/editor
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
-import VEditor from '@gits-id/editor';
-// import editor styles
-import '@gits-id/editor/dist/style.css';
+import Editor from '@gits-id/editor';
 
 const content = ref('');
 </script>
 
-<v-editor v-model="content"></v-editor>
+<template>
+  <Editor v-model="content" />
+</template>
 ```
 
 ## Documentation
 
-View `VEditor` documentation [here](https://gits-ui.web.app/?path=/story/components-editor--default).
+View `Editor` documentation [here](https://gits-ui.web.app/?path=/story/components-editor--default).
 
 ## License
 

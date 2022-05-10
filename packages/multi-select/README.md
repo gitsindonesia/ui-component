@@ -1,6 +1,6 @@
-# GITS VMultiSelect Component
+# GITS Multi Select Component
 
-> Reusable VMultiSelect Component
+> Reusable Multi Select Component
 
 ## Installation
 

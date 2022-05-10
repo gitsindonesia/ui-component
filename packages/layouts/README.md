@@ -1,45 +1,45 @@
-# GITS Breadcrumbs Component
+# GITS Layouts Component
 
-> Reusable Breadcrumbs Component
+Layouts Component.
 
 ## Installation
 
 npm
 
 ```
-npm i @gits-id/breadcrumbs
+npm i @gits-id/layouts
 ```
 
 yarn
 
 ```
-yarn add @gits-id/breadcrumbs
+yarn add @gits-id/layouts
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/breadcrumbs
+pnpm i @gits-id/layouts
 ```
 
 ## Usage
 
 ```vue
 <script setup lang="ts">
-// import styles
-import '@gits-id/breadcrumbs/dist/style.css';
-// import component
-import Breadcrumbs from '@gits-id/breadcrumbs';
+import {Auth, Base, Default, SidebarMenu} from '@gits-id/layouts';
 </script>
 
 <template>
-  <Breadcrumbs />
+  <Auth />
+  <Base />
+  <Default />
+  <SidebarMenu />
 </template>
 ```
 
 ## Documentation
 
-View `Breadcrumbs` documentation [here](https://gits-ui.web.app/?path=/story/components-breadcrumbs--default).
+View `Layouts` documentation [here](https://gits-ui.web.app/?path=/story/components-layouts--default).
 
 ## License
 
