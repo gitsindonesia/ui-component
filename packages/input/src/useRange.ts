@@ -1,62 +1,66 @@
 import {ref} from 'vue';
 
-export function useRange(minValue = 0, maxValue = 100, stepValue = 1) {
+export function useRange(
+  initialMinValue = 0,
+  initialMaxValue = 100,
+  stepValue = 1,
+) {
   const step = ref<number>(stepValue);
-  const minprice = ref<number>(minValue);
-  const maxprice = ref<number>(maxValue);
-  const min = ref<number>(minValue);
-  const max = ref<number>(maxValue);
-  const minthumb = ref<number>(0);
-  const maxthumb = ref<number>(0);
+  const minValue = ref<number>(initialMinValue);
+  const maxValue = ref<number>(initialMaxValue);
+  const min = ref<number>(initialMinValue);
+  const max = ref<number>(initialMaxValue);
+  const minThumb = ref<number>(0);
+  const maxThumb = ref<number>(0);
 
   function validation() {
-    if (/^\d*$/.test(String(minprice.value))) {
-      // if (minprice.value > max.value) {
-      //   minprice.value = 9500;
+    if (/^\d*$/.test(String(minValue.value))) {
+      // if (minValue.value > max.value) {
+      //   minValue.value = 9500;
       // }
-      if (minprice.value < min.value) {
-        minprice.value = min.value;
+      if (minValue.value < min.value) {
+        minValue.value = min.value;
       }
     } else {
-      minprice.value = 0;
+      minValue.value = 0;
     }
-    if (/^\d*$/.test(String(maxprice.value))) {
-      if (maxprice.value > max.value) {
-        maxprice.value = max.value;
+    if (/^\d*$/.test(String(maxValue.value))) {
+      if (maxValue.value > max.value) {
+        maxValue.value = max.value;
       }
-      // if (maxprice.value < min.value) {
-      //   maxprice.value = 200;
+      // if (maxValue.value < min.value) {
+      //   maxValue.value = 200;
       // }
     }
     //  else {
-    //   maxprice.value = 10000;
+    //   maxValue.value = 10000;
     // }
   }
 
-  function mintrigger() {
+  function minTrigger() {
     validation();
-    minprice.value = Math.min(minprice.value, maxprice.value);
-    const left = ((minprice.value - min.value) / (max.value - min.value)) * 100;
-    minthumb.value = left;
+    minValue.value = Math.min(minValue.value, maxValue.value);
+    const left = ((minValue.value - min.value) / (max.value - min.value)) * 100;
+    minThumb.value = left;
   }
 
-  function maxtrigger() {
+  function maxTrigger() {
     validation();
-    maxprice.value = Math.max(maxprice.value, minprice.value);
+    maxValue.value = Math.max(maxValue.value, minValue.value);
     const right =
-      100 - ((maxprice.value - min.value) / (max.value - min.value)) * 100;
-    maxthumb.value = right;
+      100 - ((maxValue.value - min.value) / (max.value - min.value)) * 100;
+    maxThumb.value = right;
   }
 
   return {
-    minprice,
-    maxprice,
+    minValue,
+    maxValue,
     min,
     max,
-    minthumb,
-    maxthumb,
-    mintrigger,
-    maxtrigger,
+    minThumb,
+    maxThumb,
+    minTrigger,
+    maxTrigger,
     validation,
     step,
   };

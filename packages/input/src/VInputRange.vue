@@ -1,11 +1,11 @@
 <script setup>
-import { ref, toRefs, onMounted } from "vue";
-import { useRange } from "./useRange";
+import {ref, toRefs, onMounted} from 'vue';
+import {useRange} from './useRange';
 
 const props = defineProps({
   modelValue: {
     type: String,
-    default: "",
+    default: '',
   },
   min: {
     type: Number,
@@ -25,28 +25,28 @@ const props = defineProps({
   },
 });
 
-const { modelValue, showInput } = toRefs(props);
+const {modelValue, showInput} = toRefs(props);
 
-const emit = defineEmits(["update:modelValue"]);
+const emit = defineEmits(['update:modelValue']);
 
 const value = ref(modelValue.value);
 
 const {
-  minprice,
-  maxprice,
+  minValue,
+  maxValue,
   min,
   max,
-  minthumb,
-  maxthumb,
+  minThumb,
+  maxThumb,
   step,
-  mintrigger,
-  maxtrigger,
+  minTrigger,
+  maxTrigger,
   validation,
 } = useRange(props.min, props.max, props.step);
 
 onMounted(() => {
-  mintrigger();
-  maxtrigger();
+  minTrigger();
+  maxTrigger();
 });
 </script>
 
@@ -55,72 +55,157 @@ onMounted(() => {
     <div class="relative w-full">
       <div>
         <div class="flex justify-between mb-3">
-          <label class="text-gray-700 text-sm" for="min">{{ minprice }} </label>
-          <label class="text-gray-700 text-sm" for="max">{{ maxprice }} </label>
+          <label class="text-gray-700 text-sm" for="min">{{ minValue }} </label>
+          <label class="text-gray-700 text-sm" for="max">{{ maxValue }} </label>
         </div>
 
         <input
-          v-model="minprice"
+          v-model="minValue"
           type="range"
           :step="step"
           :min="min"
           :max="max"
-          class="absolute pointer-events-none appearance-none z-20 h-2 w-full opacity-0 cursor-pointer"
-          @input="mintrigger"
+          class="
+            absolute
+            pointer-events-none
+            appearance-none
+            z-20
+            h-2
+            w-full
+            opacity-0
+            cursor-pointer
+          "
+          @input="minTrigger"
         />
 
         <input
-          v-model="maxprice"
+          v-model="maxValue"
           type="range"
           :step="step"
           :min="min"
           :max="max"
-          class="absolute pointer-events-none appearance-none z-20 h-2 w-full opacity-0 cursor-pointer"
-          @input="maxtrigger"
+          class="
+            absolute
+            pointer-events-none
+            appearance-none
+            z-20
+            h-2
+            w-full
+            opacity-0
+            cursor-pointer
+          "
+          @input="maxTrigger"
         />
 
         <div class="relative z-10 h-2">
           <div
-            class="absolute z-10 left-0 right-0 bottom-0 top-0 rounded-md bg-gray-700 h-[2px]"
+            class="
+              absolute
+              z-10
+              left-0
+              right-0
+              bottom-0
+              top-0
+              rounded-md
+              bg-gray-700
+              h-[2px]
+            "
           ></div>
 
           <div
-            class="absolute z-20 top-0 bottom-0 rounded-md bg-gradient-to-r from-blue-400 to-blue-600 h-[2px]"
-            :style="'right:' + maxthumb + '%; left:' + minthumb + '%'"
+            class="
+              absolute
+              z-20
+              top-0
+              bottom-0
+              rounded-md
+              bg-gradient-to-r
+              from-blue-400
+              to-blue-600
+              h-[2px]
+            "
+            :style="'right:' + maxThumb + '%; left:' + minThumb + '%'"
           ></div>
 
           <div
-            class="absolute z-30 w-4 h-4 top-0 left-0 bg-blue-400 rounded-full -mt-2"
-            :style="'left: ' + minthumb + '%'"
+            class="
+              absolute
+              z-30
+              w-4
+              h-4
+              top-0
+              left-0
+              bg-blue-400
+              rounded-full
+              -mt-2
+            "
+            :style="'left: ' + minThumb + '%'"
           ></div>
 
           <div
-            class="absolute z-30 w-4 h-4 top-0 right-0 bg-blue-600 rounded-full -mt-2"
-            :style="'right: ' + maxthumb + '%'"
+            class="
+              absolute
+              z-30
+              w-4
+              h-4
+              top-0
+              right-0
+              bg-blue-600
+              rounded-full
+              -mt-2
+            "
+            :style="'right: ' + maxThumb + '%'"
           ></div>
         </div>
       </div>
 
       <div
         v-if="showInput"
-        class="flex items-center justify-between pt-5 space-x-4 text-sm text-gray-700"
+        class="
+          flex
+          items-center
+          justify-between
+          pt-5
+          space-x-4
+          text-sm text-gray-700
+        "
       >
         <div>
           <input
-            v-model="minprice"
+            v-model="minValue"
             type="text"
             maxlength="5"
-            class="w-24 px-3 py-2 text-center border border-gray-200 rounded-lg bg-gray-50 focus:border-yellow-400 focus:outline-none"
-            @input="mintrigger"
+            class="
+              w-24
+              px-3
+              py-2
+              text-center
+              border border-gray-200
+              rounded-lg
+              bg-gray-50
+              focus:border-yellow-400
+              focus:outline-none
+            "
+            @input="minTrigger"
           />
         </div>
         <div>
           <input
-            v-model="maxprice"
+            v-model="maxValue"
             type="text"
             maxlength="5"
-            class="w-24 px-3 py-2 text-center border border-gray-200 rounded-lg bg-gray-50 focus:border-yellow-400 focus:outline-none"
-            @input="maxtrigger"
+            class="
+              w-24
+              px-3
+              py-2
+              text-center
+              border border-gray-200
+              rounded-lg
+              bg-gray-50
+              focus:border-yellow-400
+              focus:outline-none
+            "
+            @input="maxTrigger"
           />
         </div>
       </div>
@@ -129,7 +214,7 @@ onMounted(() => {
 </template>
 
 <style scoped>
-input[type="range"]::-webkit-slider-thumb {
+input[type='range']::-webkit-slider-thumb {
   @apply w-6 h-6 appearance-none pointer-events-auto;
 }
 </style>
