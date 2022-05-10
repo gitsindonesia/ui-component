@@ -41,10 +41,13 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  rules: {
+    type: String,
+    default: '',
+  },
 });
 
 const {
-  modelValue,
   label,
   inputClass,
   color,
@@ -102,4 +105,8 @@ const {value: innerValue, errorMessage} = useField(props.name, props.rules, {
       {{ label }}
     </span>
   </label>
+
+  <div v-if="errorMessage" class="text-error-500 text-sm">
+    {{ errorMessage }}
+  </div>
 </template>
