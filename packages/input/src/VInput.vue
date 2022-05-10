@@ -122,7 +122,7 @@ const sizeClass = computed(() => {
 
 const inputVariantClass = computed(() => {
   if (props.error) {
-    return 'border-error-500 focus:ring-error-500 focus:ring-opacity-50 focus:border-error-500';
+    return 'border-error-500 focus:ring-error-500 focus:ring-opacity-50 focus:border-error-500 placeholder:text-error-500';
   } else {
     const variants: Record<string, string> = {
       default:
