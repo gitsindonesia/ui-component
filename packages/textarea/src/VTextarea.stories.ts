@@ -1,6 +1,9 @@
 import {Meta, Story} from '@storybook/vue3';
 import {sizes} from '@gits-id/utils';
 import VTextarea from './VTextarea.vue';
+import VBtn from '@gits-id/button';
+import {object, string} from 'yup';
+import {useForm} from 'vee-validate';
 
 export default {
   title: 'Components/Form/Textarea',
@@ -92,3 +95,29 @@ Error.parameters = {
     },
   },
 };
+
+export const Validation: Story<{}> = (args) => ({
+  components: {VTextarea, VBtn},
+  setup() {
+    const schema = object({
+      message: string().required().label('Message'),
+    });
+
+    const {handleSubmit, resetForm} = useForm({
+      validationSchema: schema,
+    });
+
+    const onSubmit = handleSubmit((values) => {
+      alert(JSON.stringify(values));
+    });
+
+    return {onSubmit, resetForm};
+  },
+  template: `
+    <form @submit="onSubmit" class="border-none">
+      <v-textarea name="message" label="Message" placeholder="Enter your message" />
+      <v-btn type="submit">Submit</v-btn>
+      <v-btn type="button" text @click="resetForm">Reset</v-btn>
+    </form>
+`,
+});

@@ -1,20 +1,20 @@
 <script setup lang="ts">
-import { computed, watch, ref, toRefs } from "vue";
-import { ErrorMessage } from "vee-validate";
-import { useInputClasses, useTextSize } from "@gits-id/utils";
+import {computed, toRefs} from 'vue';
+import {useInputClasses, useTextSize} from '@gits-id/utils';
+import {useField} from 'vee-validate';
 
 const props = defineProps({
   modelValue: {
     type: String,
-    default: "",
+    default: '',
   },
   value: {
     type: String,
-    default: "",
+    default: '',
   },
   name: {
     type: String,
-    default: "",
+    default: '',
   },
   error: {
     type: Boolean,
@@ -42,7 +42,7 @@ const props = defineProps({
   },
   size: {
     type: String,
-    default: "",
+    default: '',
   },
   cols: {
     type: [String, Number],
@@ -52,60 +52,59 @@ const props = defineProps({
     type: [String, Number],
     default: undefined,
   },
+  label: {
+    type: String,
+    default: '',
+  },
+  rules: {
+    type: String,
+    default: '',
+  },
 });
 
-const {
-  modelValue,
-  error,
-  errorMessages,
-  value: externalValue,
-  readonly,
-  disabled,
-  size,
-  rows,
-  cols,
-} = toRefs(props);
+const {error, size} = toRefs(props);
 
-const emit = defineEmits(["input:modelValue", "blur"]);
+defineEmits(['input:modelValue']);
 
-const value = ref(props.value || props.modelValue);
-
-const { class: sizeClass } = useTextSize(size.value);
-const inputClass = computed(() => useInputClasses(error.value));
-
-const classes = computed(() => [inputClass.value, sizeClass.value, {shadow: props.shadow}]);
-
-watch(modelValue, (val) => {
-  value.value = val;
+const {value, errorMessage} = useField(props.name, props.rules, {
+  initialValue: props.modelValue || props.value,
 });
 
-watch(externalValue, (val) => {
-  value.value = val;
-});
+const {class: sizeClass} = useTextSize(size.value);
+const inputClass = computed(() =>
+  useInputClasses(error.value || !!errorMessage.value),
+);
 
-const onBlur = () => emit("blur");
+const classes = computed(() => [
+  inputClass.value,
+  sizeClass.value,
+  {shadow: props.shadow},
+]);
 </script>
 
 <template>
-  <textarea
-    v-model="value"
-    class="block w-full"
-    :class="classes"
-    :readonly="readonly"
-    :disabled="disabled"
-    :cols="cols"
-    :rows="rows"
-    v-bind="$attrs"
-    @blur="onBlur"
-  />
-  <div class="flex p-0 relative">
-    <ErrorMessage
-      v-if="errorMessages.length"
-      class="text-error-600 text-sm"
-      :name="name"
+  <div class="mb-4">
+    <label v-if="label" :for="name" class="mb-1 block">{{ label }}</label>
+    <textarea
+      :id="name"
+      v-model="value"
+      class="block w-full"
+      :class="classes"
+      :readonly="readonly"
+      :disabled="disabled"
+      :cols="cols"
+      :rows="rows"
+      v-bind="$attrs"
     />
-    <div v-if="counter" class="absolute right-0">
-      {{ value.length }}
+    <div class="flex p-0 relative">
+      <div
+        v-if="errorMessage"
+        class="text-error-600 text-sm mt-1"
+        v-text="errorMessage"
+      />
+      <div v-if="counter" class="absolute right-0">
+        {{ value.length }}
+      </div>
     </div>
   </div>
 </template>
