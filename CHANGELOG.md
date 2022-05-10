@@ -1,23 +1,42 @@
-# Change Log
+## [0.2.2](https://github.com/gitsindonesia/ui-component/compare/v0.2.3...v0.2.2) (2022-05-10)
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+
+## [0.2.3](https://github.com/gitsindonesia/ui-component/compare/v0.2.2...v0.2.3) (2022-05-10)
+
+
+### Bug Fixes
+
+* change input error styles to border and text ([9d4b02a](https://github.com/gitsindonesia/ui-component/commit/9d4b02a80640b2be9495e8f4cb979c517651c508))
+* **v-file-upload:** fix v-file-upload styles ([f3e453f](https://github.com/gitsindonesia/ui-component/commit/f3e453fa3040591261dd8b3c92d1a4a7a54d7ce2))
+
+
+### Features
+
+* **v-checkbox:** add useField for checkbox ([275e38d](https://github.com/gitsindonesia/ui-component/commit/275e38dea91d97ca6faa99342b2fffdbb2e27cf4))
+* **v-input:** check error state from vee-validate errorMessage ([f4d6494](https://github.com/gitsindonesia/ui-component/commit/f4d64941bb2e3175a89722fdaeac076e1c27dbdf))
+* **v-input:** integrate vee-validate to v-input ([6434d8a](https://github.com/gitsindonesia/ui-component/commit/6434d8aaf384d7ceb7f35ad773145408e91992fd))
+* **v-input:** update input error style ([6901a89](https://github.com/gitsindonesia/ui-component/commit/6901a8944818c59e1c307dbf94cd16cea1101cd7))
+* **v-input:** use `id` or `name` for label `for` ([3003dfe](https://github.com/gitsindonesia/ui-component/commit/3003dfe117f2901141be314dcf3abf36cd5816fb))
+* **v-textarea:** integrate vee-validate validation to v-textarea ([d302cdf](https://github.com/gitsindonesia/ui-component/commit/d302cdf00bdfaa6a4a8e0b04d42fddefafcb288c))
+
+
 
 ## [0.2.2](https://github.com/gitsindonesia/ui-component/compare/v0.2.1...v0.2.2) (2022-05-10)
 
-**Note:** Version bump only for package @gits-id/components
 
 
+## [0.2.1](https://github.com/gitsindonesia/ui-component/compare/v0.2.0...v0.2.1) (2022-05-10)
 
 
+### Bug Fixes
 
-# Changelog
+* **v-input:** (wip) fix input style ([becc14b](https://github.com/gitsindonesia/ui-component/commit/becc14ba032ad0026e748de093cccffb99f08e02))
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.1.17](https://github.com/gitsindonesia/ui-component/compare/v0.2.1...v0.1.17) (2022-05-10)
+### Features
 
-## [0.1.16](https://github.com/gitsindonesia/ui-component/compare/v0.2.0...v0.1.16) (2022-05-09)
+* **v-input:** reworked v-input ([07376e7](https://github.com/gitsindonesia/ui-component/commit/07376e78c9f63830af46116d892c4570281d4ac2))
 
 
 
@@ -941,3 +960,6 @@ All notable changes to this project will be documented in this file. See [standa
 
 
 ## 0.0.1 (2021-09-02)
+
+
+
