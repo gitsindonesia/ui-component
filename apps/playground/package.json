@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/playground",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
@@ -14,8 +14,8 @@
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^32.0.0",
     "@ckeditor/ckeditor5-vue": "^2.0.1",
-    "@gits-id/tailwind-config": "^0.2.2",
-    "@gits-id/ui": "^0.2.2",
+    "@gits-id/tailwind-config": "^0.2.3",
+    "@gits-id/ui": "^0.2.3",
     "pinia": "^2.0.12",
     "prism-themes": "^1.9.0",
     "prismjs": "^1.27.0",
