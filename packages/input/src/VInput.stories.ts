@@ -5,6 +5,9 @@ import type {VInputProps} from './types';
 import {RiSearchLine} from 'vue-remix-icons';
 import {themeColors} from '@gits-id/utils';
 import VBtn from '@gits-id/button';
+import {useForm} from 'vee-validate';
+import {object, string} from 'yup';
+import VBtn from '@gits-id/button';
 
 export default {
   title: 'Components/Form/Input',
@@ -368,3 +371,39 @@ Sizes.parameters = {
     },
   },
 };
+
+export const Validation: Story<VInputProps> = (args) => ({
+  components: {VInput, VBtn},
+  setup() {
+    const schema = object({
+      name: string().required().label('Name'),
+      email: string().required().email().label('Email'),
+    });
+
+    const {handleSubmit, resetForm} = useForm({
+      validationSchema: schema,
+    });
+
+    const onSubmit = handleSubmit((values) => {
+      alert(JSON.stringify(values));
+    });
+
+    return {onSubmit, resetForm};
+  },
+  template: `
+    <form @submit="onSubmit" class="border-none">
+      <v-input name="name" label="Name" placeholder="Your Name" />
+      <v-input name="email" label="Email" placeholder="Your Email" />
+      <v-btn type="submit">Submit</v-btn>
+      <v-btn type="button" text @click="resetForm">Reset</v-btn>
+    </form>
+`,
+});
+// Validation.parameters = {
+//   docs: {
+//     source: {
+//       code: `
+//       `,
+//     },
+//   },
+// };
