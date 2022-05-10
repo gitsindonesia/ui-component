@@ -1,6 +1,19 @@
-import {test, expect} from 'vitest'
+import {test, expect} from 'vitest';
 import {mount} from '@vue/test-utils';
 import Stepper from '../src/Stepper.vue';
+import {createRouter, createWebHistory} from 'vue-router';
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes: [
+    {
+      path: '',
+      component: {
+        template: 'Hello World',
+      },
+    },
+  ],
+});
 
 test('mount component', async () => {
   expect(Stepper).toBeTruthy();
@@ -16,6 +29,9 @@ test('mount component', async () => {
           title: 'Step 2',
         },
       ],
+    },
+    global: {
+      plugins: [router],
     },
   });
 
