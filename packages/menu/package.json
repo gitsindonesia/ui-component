@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/menu",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "GITS Menu Component",
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",

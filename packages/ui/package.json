@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/ui",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly",
     "prepublishOnly": "npm run build",
@@ -24,11 +24,11 @@
     "@gits-id/input": "^0.2.4",
     "@gits-id/layouts": "^0.2.4",
     "@gits-id/logo": "^0.2.4",
-    "@gits-id/menu": "^0.2.4",
+    "@gits-id/menu": "^0.2.5",
     "@gits-id/menus": "^0.2.4",
     "@gits-id/modal": "^0.2.4",
     "@gits-id/multi-select": "^0.2.4",
-    "@gits-id/nav-drawer": "^0.2.4",
+    "@gits-id/nav-drawer": "^0.2.5",
     "@gits-id/navbar": "^0.2.4",
     "@gits-id/pages": "^0.2.4",
     "@gits-id/pagination": "^0.2.4",
