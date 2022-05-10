@@ -1,16 +1,17 @@
 <script setup>
-import { computed, ref, toRefs, watch } from "vue";
-import { UserIcon, LockClosedIcon } from "@heroicons/vue/outline";
-import { VInput, VInputGroup } from "@gits-id/input";
-import VBtn from "@gits-id/button";
-import VCheckbox from "@gits-id/checkbox";
-import { Form, Field } from "vee-validate";
-import { object, string } from "yup";
+import {computed, ref, toRefs, watch} from 'vue';
+import {UserIcon, LockClosedIcon} from '@heroicons/vue/outline';
+import {VInput, VInputGroup} from '@gits-id/input';
+import VBtn from '@gits-id/button';
+import VCheckbox from '@gits-id/checkbox';
+import {Form, Field, useForm} from 'vee-validate';
+import {object, string} from 'yup';
+import VAlert from '@gits-id/alert';
 
 const props = defineProps({
   message: {
     type: String,
-    default: "",
+    default: '',
   },
   loading: {
     type: Boolean,
@@ -18,35 +19,35 @@ const props = defineProps({
   },
   title: {
     type: String,
-    default: "Login Account",
+    default: 'Login Account',
   },
   subtitle: {
     type: String,
-    default: "Please enter your credentials",
+    default: 'Please enter your credentials',
   },
   passwordPath: {
     type: String,
-    default: "/auth/password/forgot",
+    default: '/auth/password/forgot',
   },
   register: {
     type: String,
-    default: "",
+    default: '',
   },
   usernameText: {
     type: String,
-    default: "Email",
+    default: 'Email',
   },
   passwordText: {
     type: String,
-    default: "Password",
+    default: 'Password',
   },
   forgotPasswordText: {
     type: String,
-    default: "Forgot Password",
+    default: 'Forgot Password',
   },
   loginText: {
     type: String,
-    default: "Login",
+    default: 'Login',
   },
   hideRememberMe: {
     type: Boolean,
@@ -62,13 +63,13 @@ const props = defineProps({
   },
   autocomplete: {
     type: String,
-    default: "off",
+    default: 'off',
   },
 });
 
-const { message } = toRefs(props);
+const {message} = toRefs(props);
 
-const emit = defineEmits(["submit", "loginSSO"]);
+const emit = defineEmits(['submit', 'loginSSO']);
 
 const isError = ref(false);
 
@@ -77,7 +78,7 @@ watch(
   () => {
     isError.value = !!props.message;
   },
-  { immediate: true }
+  {immediate: true},
 );
 const schema = computed(() => {
   let usernameRules = string().required();
@@ -92,9 +93,13 @@ const schema = computed(() => {
   });
 });
 
-const onSubmit = (values) => {
-  emit("submit", values);
-};
+const {handleSubmit, errors} = useForm({
+  validationSchema: schema,
+});
+
+const onSubmit = handleSubmit((values) => {
+  emit('submit', values);
+});
 </script>
 
 <template>
@@ -107,114 +112,81 @@ const onSubmit = (values) => {
       {{ message }}
     </v-alert>
 
-    <Form
-      v-slot="{ handleSubmit }"
-      :validation-schema="schema"
-      :autocomplete="autocomplete"
-    >
-      <form @submit.prevent="handleSubmit(onSubmit)">
-        <div class="mt-8">
-          <Field v-slot="{ errors, field }" name="email">
-            <label
-              for="email"
-              class="mb-2 block font-medium"
-              :class="errors.email ? 'text-error' : ''"
-            >
-              {{ usernameText }}
-            </label>
-            <v-input-group
-              id="email"
-              :placeholder="usernameText"
-              name="email"
-              prepend
-              :error="!!errors.email"
-              :error-messages="[errors.email]"
-              error-class="min-h-[20px]"
-              class="mb-2"
-              :input-props="{ autocomplete }"
-              v-bind="field"
-            >
-              <template #prepend>
-                <UserIcon
-                  class="w-5 h-5"
-                  :class="errors.email ? 'text-error' : 'text-[#DFE0E0]'"
-                />
-              </template>
-            </v-input-group>
-          </Field>
+    <form @submit.prevent="onSubmit">
+      <div class="mt-8">
+        <VInput
+          id="username"
+          name="email"
+          :label="usernameText"
+          :placeholder="usernameText"
+          :autocomplete="autocomplete"
+        >
+          <template #prepend>
+            <UserIcon
+              class="w-5 h-5 m-3"
+              :class="errors.email ? 'text-error' : 'text-gray-300'"
+            />
+          </template>
+        </VInput>
 
-          <Field v-slot="{ errors, field }" name="password">
-            <label
-              for="password"
-              class="mb-2 block font-medium"
-              :class="errors.email ? 'text-error' : ''"
-            >
-              {{ passwordText }}
-            </label>
-            <v-input-group
-              id="password"
-              :placeholder="passwordText"
-              type="password"
-              name="password"
-              prepend
-              :error="!!errors.password"
-              :error-messages="[errors.password]"
-              error-class="min-h-[20px]"
-              class="mb-2"
-              :input-props="{ autocomplete }"
-              v-bind="field"
-            >
-              <template #prepend>
-                <LockClosedIcon
-                  class="w-5 h-5"
-                  :class="errors.password ? 'text-error' : 'text-[#DFE0E0]'"
-                />
-              </template>
-            </v-input-group>
-          </Field>
+        <VInput
+          id="password"
+          name="password"
+          type="password"
+          :label="passwordText"
+          :placeholder="passwordText"
+        >
+          <template #prepend>
+            <LockClosedIcon
+              class="w-5 h-5 ml-3"
+              :class="errors.password ? 'text-error' : 'text-gray-300'"
+            />
+          </template>
+        </VInput>
 
-          <Field v-slot="{ errors, field }" name="remember">
-            <div class="mb-4 flex justify-between items-center">
-              <div class="w-6/12">
-                <v-checkbox
-                  v-if="!hideRememberMe"
-                  v-model="remember"
-                  label="Remember me"
-                  v-bind="field"
-                  :error-messages="errors"
-                  :error="errors.length > 0"
-                />
-              </div>
-              <slot name="forgotPassword">
-                <VBtn color="primary" text dense small :to="passwordPath" class="px-0">
-                  {{ forgotPasswordText }}
-                </VBtn>
-              </slot>
-            </div>
-          </Field>
-
-          <VBtn
-            type="submit"
-            color="primary"
-            block
-            uppercase
-            :disabled="loading || disabled"
-            :loading="loading"
-          >
-            {{ loginText }}
-          </VBtn>
-        </div>
-        <template v-if="register">
-          <slot name="register">
-            <div class="mt-4">
-              Already have an account?
-              <v-btn text color="primary" :to="register">Register</v-btn>
-            </div>
+        <div class="mb-4 flex justify-between items-center">
+          <div class="w-6/12">
+            <v-checkbox
+              v-if="!hideRememberMe"
+              label="Remember me"
+              name="remember_me"
+            />
+          </div>
+          <slot name="forgotPassword">
+            <VBtn
+              color="primary"
+              text
+              dense
+              small
+              :to="passwordPath"
+              class="p-0"
+            >
+              {{ forgotPasswordText }}
+            </VBtn>
           </slot>
-        </template>
-        <slot name="extra" />
-      </form>
-    </Form>
+        </div>
+
+        <VBtn
+          type="submit"
+          color="primary"
+          block
+          uppercase
+          :disabled="loading || disabled"
+          :loading="loading"
+        >
+          {{ loginText }}
+        </VBtn>
+      </div>
+      <template v-if="register">
+        <slot name="register">
+          <div class="mt-4">
+            Already have an account?
+            <v-btn text color="primary" :to="register">Register</v-btn>
+          </div>
+        </slot>
+      </template>
+      <slot name="extra" />
+    </form>
   </div>
 </template>
 

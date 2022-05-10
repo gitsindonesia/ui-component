@@ -1,8 +1,10 @@
 <script setup>
-import { toRefs } from "vue";
-import { LockClosedIcon } from "@heroicons/vue/outline";
-import VBtn from "@gits-id/button";
-import { VInputGroup } from "@gits-id/input";
+import {toRefs} from 'vue';
+import {LockClosedIcon} from '@heroicons/vue/outline';
+import VBtn from '@gits-id/button';
+import {VInput} from '@gits-id/input';
+import {string, object, ref as YupRef} from 'yup';
+import {useForm} from 'vee-validate';
 
 const props = defineProps({
   modelValue: {
@@ -11,21 +13,60 @@ const props = defineProps({
   },
   title: {
     type: String,
-    default: "Reset Password",
+    default: 'Reset Password',
   },
   subtitle: {
     type: String,
-    default: "Create a new and secure password for your account",
+    default: 'Create a new and secure password for your account',
+  },
+  passwordMatchError: {
+    type: String,
+    default: 'Tidak sesuai dengan kata sandi baru',
+  },
+  passwordFormatError: {
+    type: String,
+    default: 'Kata Sandi harus berisi 8 karakter dan minimal ada 1 angka',
+  },
+  passwordConfirmationText: {
+    type: String,
+    default: 'Konfirmasi Kata Sandi Baru',
+  },
+  passwordText: {
+    type: String,
+    default: 'Kata Sandi Baru',
+  },
+  submitText: {
+    type: String,
+    default: 'Reset Password',
   },
 });
 
-const { title, subtitle } = toRefs(props);
+const {title, subtitle} = toRefs(props);
 
-const emit = defineEmits(["submit"]);
+const emit = defineEmits(['submit']);
 
-const onSubmit = () => {
-  emit("submit");
-};
+const schema = object({
+  password: string()
+    .required()
+    .min(8)
+    .matches(
+      /[^\w\d]*(([0-9]+.*[A-Za-z]+.*)|[A-Za-z]+.*([0-9]+.*))/i,
+      props.passwordFormatError,
+    )
+    .label(props.passwordText),
+  passwordConfirmation: string()
+    .required()
+    .oneOf([YupRef('password'), null], props.passwordMatchError)
+    .label(props.passwordConfirmationText),
+});
+
+const {handleSubmit, errors} = useForm({
+  validationSchema: schema,
+});
+
+const onSubmit = handleSubmit((values) => {
+  emit('submit', values);
+});
 </script>
 
 <template>
@@ -37,35 +78,41 @@ const onSubmit = () => {
     <div class="text-gray-600">
       {{ subtitle }}
     </div>
-    <form @submit.prevent="onSubmit">
+    <form @submit="onSubmit">
       <div class="mt-10">
-        <label for="password" class="mb-2 block"> Password Baru </label>
-        <VInputGroup
+        <VInput
           id="password"
-          class="mb-4"
-          placeholder="Password Baru"
+          name="password"
           type="password"
-          prepend
+          :label="passwordText"
+          :placeholder="passwordText"
         >
           <template #prepend>
-            <LockClosedIcon class="w-5 h-5 text-[#DFE0E0]" />
+            <LockClosedIcon
+              class="w-5 h-5 ml-3"
+              :class="errors.password ? 'text-error' : 'text-gray-300'"
+            />
           </template>
-        </VInputGroup>
+        </VInput>
 
-        <label for="password" class="mb-2 block"> Konfirmasi Password Baru </label>
-        <VInputGroup
-          id="password"
-          class="mb-4"
-          placeholder="Konfirmasi Password Baru"
+        <VInput
+          id="passwordConfirmation"
+          name="passwordConfirmation"
           type="password"
-          prepend
+          :label="passwordConfirmationText"
+          :placeholder="passwordConfirmationText"
         >
           <template #prepend>
-            <LockClosedIcon class="w-5 h-5 text-[#DFE0E0]" />
+            <LockClosedIcon
+              class="w-5 h-5 ml-3"
+              :class="
+                errors.passwordConfirmation ? 'text-error' : 'text-gray-300'
+              "
+            />
           </template>
-        </VInputGroup>
+        </VInput>
 
-        <VBtn color="primary" block> Reset Password </VBtn>
+        <VBtn color="primary" type="submit" block> {{ submitText }} </VBtn>
       </div>
     </form>
   </div>

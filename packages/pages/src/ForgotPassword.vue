@@ -1,8 +1,10 @@
 <script setup>
-import { toRefs } from "vue";
-import { UserIcon } from "@heroicons/vue/outline";
-import VBtn from "@gits-id/button";
-import { VInputGroup } from "@gits-id/input";
+import {toRefs} from 'vue';
+import {AtSymbolIcon} from '@heroicons/vue/outline';
+import VBtn from '@gits-id/button';
+import {VInput} from '@gits-id/input';
+import {useForm} from 'vee-validate';
+import {string} from 'yup';
 
 const props = defineProps({
   modelValue: {
@@ -11,21 +13,35 @@ const props = defineProps({
   },
   title: {
     type: String,
-    default: "Forgot Password",
+    default: 'Forgot Password',
   },
   subtitle: {
     type: String,
     default: "We'll send you a reset password link to your email",
   },
+  emailText: {
+    type: String,
+    default: 'Email',
+  },
+  schema: {
+    type: Object,
+    default: () => ({
+      email: string().required().email().label('Email'),
+    }),
+  },
 });
 
-const { title, subtitle } = toRefs(props);
+const {title, subtitle} = toRefs(props);
 
-const emit = defineEmits(["submit"]);
+const emit = defineEmits(['submit']);
 
-const onSubmit = () => {
-  emit("submit");
-};
+const {handleSubmit, errors} = useForm({
+  validationSchema: props.schema,
+});
+
+const onSubmit = handleSubmit((values) => {
+  emit('submit', values);
+});
 </script>
 
 <template>
@@ -39,12 +55,20 @@ const onSubmit = () => {
     </div>
     <form @submit.prevent="onSubmit">
       <div class="mt-10">
-        <label for="email" class="mb-2 block"> Email </label>
-        <VInputGroup id="email" class="mb-4" placeholder="Email" prepend>
+        <VInput
+          id="email"
+          name="email"
+          type="email"
+          :label="emailText"
+          :placeholder="emailText"
+        >
           <template #prepend>
-            <UserIcon class="w-5 h-5 text-[#DFE0E0]" />
+            <AtSymbolIcon
+              class="w-5 h-5 ml-3"
+              :class="errors.email ? 'text-error' : 'text-gray-300'"
+            />
           </template>
-        </VInputGroup>
+        </VInput>
 
         <VBtn type="submit" color="primary" block uppercase> Submit </VBtn>
       </div>
