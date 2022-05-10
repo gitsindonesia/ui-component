@@ -100,9 +100,13 @@ const sizeClass = computed(() => {
   return sizes[props.size];
 });
 
+const {value: inputValue, errorMessage} = useField(props.name, props.rules, {
+  initialValue: props.modelValue || props.value,
+});
+
 const inputVariantClass = computed(() => {
-  if (props.error) {
-    return 'border-error-500 focus:ring-error-500 focus:ring-opacity-50 focus:border-error-500 placeholder:text-error-500';
+  if (props.error || errorMessage.value) {
+    return 'border-error-500 focus:ring-error-500 focus:ring-opacity-50 focus:border-error-500';
   } else {
     const variants: Record<string, string> = {
       default:
@@ -123,10 +127,6 @@ const inputVariantClass = computed(() => {
     };
     return variants[props.color];
   }
-});
-
-const {value: inputValue, errorMessage} = useField(props.name, props.rules, {
-  initialValue: props.modelValue || props.value,
 });
 </script>
 
