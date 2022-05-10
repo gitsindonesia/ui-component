@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/tailwind-config",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "GITS Tailwind Config",
   "main": "config.js",
   "scripts": {},
@@ -11,8 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gits-id/tailwind-components": "^0.1.17-next.1",
-    "@gits-id/theme": "^0.1.17-next.1",
+    "@gits-id/tailwind-components": "^0.2.4",
+    "@gits-id/theme": "^0.2.4",
     "@gits-id/utils": "^0.2.3",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/forms": "^0.5.0",

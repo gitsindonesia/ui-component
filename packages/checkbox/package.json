@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/checkbox",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "GITS Checkbox Component",
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
