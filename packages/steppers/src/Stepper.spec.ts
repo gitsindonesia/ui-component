@@ -1,3 +1,4 @@
+import {test, expect} from 'vitest'
 import {mount} from '@vue/test-utils';
 import Stepper from '../src/Stepper.vue';
 
@@ -6,6 +7,7 @@ test('mount component', async () => {
 
   const wrapper = mount(Stepper, {
     props: {
+      modelValue: 0,
       items: [
         {
           title: 'Step 1',
