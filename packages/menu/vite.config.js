@@ -26,6 +26,7 @@ export default defineConfig({
         '@heroicons/vue/solid',
         '@headlessui/vue',
         'vue-router',
+        '@gits-id/collapsible'
       ],
       output: {
         // Provide global variables to use in the UMD build
