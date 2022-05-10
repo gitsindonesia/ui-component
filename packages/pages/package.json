@@ -18,6 +18,7 @@
     "@gits-id/button": "^0.2.2",
     "@gits-id/checkbox": "^0.2.2",
     "@gits-id/input": "^0.2.2",
+    "@gits-id/alert": "^0.2.2",
     "vue": "^3.2.31",
     "yup": "^0.32.11"
   },
