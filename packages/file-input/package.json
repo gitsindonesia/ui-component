@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/file-input",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "GITS File Input Component",
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -16,7 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "@gits-id/button": "^0.2.0",
-    "@gits-id/input": "^0.2.0",
+    "@gits-id/input": "^0.2.1",
     "@gits-id/spinner": "^0.2.0",
     "vue": "^3.2.31"
   },

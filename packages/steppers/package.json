@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/stepper",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "GITS Stepper Component",
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",

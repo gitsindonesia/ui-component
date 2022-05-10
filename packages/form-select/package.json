@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/form-select",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "GITS Form Select Component",
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,7 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gits-id/input": "^0.2.0",
+    "@gits-id/input": "^0.2.1",
     "@gits-id/utils": "^0.2.0",
     "vue": "^3.2.31"
   },
