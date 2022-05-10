@@ -1,4 +1,5 @@
 import {Meta, Story} from '@storybook/vue3';
+import {ref} from 'vue';
 import VInputRange from './VInputRange.vue';
 
 export default {
@@ -6,22 +7,41 @@ export default {
   component: VInputRange,
   argTypes: {},
   args: {
-    modelValue: '',
+    modelValue: 1,
+    showInput: false,
   },
 } as Meta;
 
-export const InputRange: Story = (args) => ({
+export const Default: Story = (args) => ({
   components: {VInputRange},
   setup() {
-    return {args};
+    const val = ref('');
+    return {args, val};
   },
-  template: '<VInputRange v-bind="args" />',
+  template: '<VInputRange v-model="val" v-bind="args" />',
 });
-InputRange.parameters = {
+Default.parameters = {
   docs: {
     source: {
       code: '<v-input-range />',
     },
   },
 };
-InputRange.storyName = 'InputRange';
+
+export const WithInput: Story = (args) => ({
+  components: {VInputRange},
+  setup() {
+    return {args};
+  },
+  template: '<VInputRange v-bind="args" />',
+});
+WithInput.args = {
+  showInput: true,
+};
+WithInput.parameters = {
+  docs: {
+    source: {
+      code: '<v-input-range show-input />',
+    },
+  },
+};

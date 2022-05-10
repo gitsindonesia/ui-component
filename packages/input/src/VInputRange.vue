@@ -1,6 +1,7 @@
 <script setup>
 import {ref, toRefs, onMounted} from 'vue';
 import {useRange} from './useRange';
+import {useInputClasses} from '@gits-id/utils';
 
 const props = defineProps({
   modelValue: {
@@ -30,6 +31,8 @@ const {modelValue, showInput} = toRefs(props);
 const emit = defineEmits(['update:modelValue']);
 
 const value = ref(modelValue.value);
+
+const inputClass = useInputClasses();
 
 const {
   minValue,
@@ -107,8 +110,8 @@ onMounted(() => {
               bottom-0
               top-0
               rounded-md
-              bg-gray-700
-              h-[2px]
+              bg-gray-400
+              h-1
             "
           ></div>
 
@@ -120,9 +123,9 @@ onMounted(() => {
               bottom-0
               rounded-md
               bg-gradient-to-r
-              from-blue-400
-              to-blue-600
-              h-[2px]
+              from-primary-400
+              to-primary-600
+              h-1
             "
             :style="'right:' + maxThumb + '%; left:' + minThumb + '%'"
           ></div>
@@ -135,9 +138,9 @@ onMounted(() => {
               h-4
               top-0
               left-0
-              bg-blue-400
+              bg-primary-400
               rounded-full
-              -mt-2
+              -mt-1.5
             "
             :style="'left: ' + minThumb + '%'"
           ></div>
@@ -150,9 +153,9 @@ onMounted(() => {
               h-4
               top-0
               right-0
-              bg-blue-600
+              bg-primary-600
               rounded-full
-              -mt-2
+              -mt-1.5
             "
             :style="'right: ' + maxThumb + '%'"
           ></div>
@@ -175,17 +178,7 @@ onMounted(() => {
             v-model="minValue"
             type="text"
             maxlength="5"
-            class="
-              w-24
-              px-3
-              py-2
-              text-center
-              border border-gray-200
-              rounded-lg
-              bg-gray-50
-              focus:border-yellow-400
-              focus:outline-none
-            "
+            :class="inputClass"
             @input="minTrigger"
           />
         </div>
@@ -194,17 +187,7 @@ onMounted(() => {
             v-model="maxValue"
             type="text"
             maxlength="5"
-            class="
-              w-24
-              px-3
-              py-2
-              text-center
-              border border-gray-200
-              rounded-lg
-              bg-gray-50
-              focus:border-yellow-400
-              focus:outline-none
-            "
+            :class="inputClass"
             @input="maxTrigger"
           />
         </div>
