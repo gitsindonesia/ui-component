@@ -2,7 +2,7 @@ import {Story} from '@storybook/vue3';
 import Auth from './Auth.vue';
 
 export default {
-  title: 'Pages/Activation',
+  title: 'Pages/Auth',
   component: Auth,
   argTypes: {},
   args: {},
