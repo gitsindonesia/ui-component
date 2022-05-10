@@ -613,34 +613,23 @@ onUnmounted(() => {
         :model-value="fileName"
         :placeholder="!hidePlaceholder ? placeholder : ''"
         readonly
-        class="
-          border-none
-          w-full
-          focus:border-none
-          focus:outline-none
-          focus:ring-0
-          hover:text-gray-700
-        "
         @click="pickFile"
       >
         <template #append>
-          <div class="p-0.5 flex gap-1">
+          <div class="mr-1 space-x-1">
             <VBtn
               :disabled="readonly || disabled"
-              small
-              dense
               type="button"
+              size="sm"
               @click="pickFile"
             >
               {{ hasFile ? changeText : browseText }}
             </VBtn>
             <VBtn
               v-if="hasFile && !hideRemove"
-              small
-              dense
               type="button"
+              size="sm"
               color="error"
-              outlined
               :disabled="readonly || disabled"
               @click="removeFile"
             >
