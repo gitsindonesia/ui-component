@@ -203,7 +203,7 @@ const inputVariantClass = computed(() => {
       </slot>
     </div>
 
-    <div v-if="errorMessage" class="text-error-500 text-sm" :name="name">
+    <div v-if="errorMessage" class="text-error-500 text-sm">
       {{ errorMessage }}
     </div>
   </div>
