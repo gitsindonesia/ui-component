@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {ref, toRefs, computed, watch} from 'vue';
+import {ref, toRefs, computed, watch, useSlots} from 'vue';
 import {ErrorMessage} from 'vee-validate';
 import {inputDisabledClasses} from '@gits-id/utils';
 import {SearchIcon} from '@heroicons/vue/solid';
@@ -105,8 +105,17 @@ const sizeClass = computed(() => {
   return sizes[props.size];
 });
 
+const slots = useSlots();
+
 const inputClasses = computed(() => {
-  return [sizeClass.value, inputDisabledClasses];
+  return [
+    'border-none rounded-lg focus:ring-0 focus:border-none w-full',
+    'disabled:text-gray-300 disabled:placeholder:text-gray-300 disabled:cursor-not-allowed',
+    sizeClass.value,
+    error ? 'has-error' : '',
+    slots.prepend ? 'input-prepend' : '',
+    slots.append ? 'input-append' : '',
+  ];
 });
 
 const wrapperColorClasses = computed(() => {
@@ -115,8 +124,10 @@ const wrapperColorClasses = computed(() => {
     colorClass = 'input-has-error';
   } else {
     const colors: Record<string, string> = {
-      default: 'input-default',
-      primary: 'input-primary',
+      default:
+        'focus-within:ring focus-within:ring-blue-500/30 focus-within:border focus-within:border-blue-500',
+      primary:
+        'focus-within:ring focus-within:ring-blue-500/30 focus-within:border focus-within:border-blue-500',
       secondary: 'input-secondary',
       info: 'input-info',
       warning: 'input-warning',
@@ -146,7 +157,17 @@ const onBlur = () => emit('blur');
 
 <template>
   <div
-    class="flex w-full gap-2 items-center transition duration-300 rounded-md border border-gray-300 text-gray-500"
+    class="
+      flex
+      w-full
+      gap-2
+      items-center
+      transition
+      duration-300
+      rounded-md
+      border border-gray-300
+      text-gray-500
+    "
     :class="[wrapperClasses, {shadow}]"
   >
     <slot name="prepend">
@@ -154,13 +175,7 @@ const onBlur = () => emit('blur');
     </slot>
     <input
       v-model="inputValue"
-      class="v-input-field"
-      :class="[
-        inputClasses,
-        error ? 'has-error' : '',
-        $slots.prepend ? 'input-prepend' : '',
-        $slots.append ? 'input-append' : '',
-      ]"
+      :class="inputClasses"
       :type="type"
       :readonly="readonly"
       :disabled="disabled"
@@ -179,46 +194,3 @@ const onBlur = () => emit('blur');
     :name="name"
   />
 </template>
-
-<style scoped>
-.v-input-field {
-  @apply text-gray-800 w-full block transition duration-300 border-none rounded-md
-    focus:outline-none focus:border-none focus:ring-transparent focus:ring-0 focus:shadow-none;
-}
-.v-input-field.has-error {
-  @apply text-error-500;
-}
-.input-append {
-  @apply px-0 pl-4;
-}
-.input-prepend {
-  @apply px-0 pr-4;
-}
-.input-has-error {
-  @apply border-error-500 focus-within:text-error-500 focus-within:border-error-500
-    focus-within:ring-error-500 focus-within:ring focus-within:ring-opacity-50
-    placeholder:text-error-500;
-}
-.input-default,
-.input-primary {
-  @apply focus-within:border-primary-500 focus-within:ring-primary-500 focus-within:ring focus-within:ring-opacity-50;
-}
-.input-secondary {
-  @apply focus-within:border-secondary-500 focus-within:ring-secondary-500 focus-within:ring focus-within:ring-opacity-50;
-}
-.input-info {
-  @apply focus-within:border-info-500 focus-within:ring-info-500 focus-within:ring focus-within:ring-opacity-50;
-}
-.input-warning {
-  @apply focus-within:border-warning-500 focus-within:ring-warning-500 focus-within:ring focus-within:ring-opacity-50;
-}
-.input-success {
-  @apply focus-within:border-success-500 focus-within:ring-success-500 focus-within:ring focus-within:ring-opacity-50;
-}
-.input-error {
-  @apply focus-within:border-error-500 focus-within:ring-error-500 focus-within:ring focus-within:ring-opacity-50;
-}
-.input-dark {
-  @apply focus-within:border-gray-500 focus-within:ring-gray-500 focus-within:ring focus-within:ring-opacity-50;
-}
-</style>
