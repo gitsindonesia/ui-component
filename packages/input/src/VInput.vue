@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import {ref, toRefs, computed, watch, useSlots} from 'vue';
-import {ErrorMessage} from 'vee-validate';
+import {toRefs, computed} from 'vue';
 import {SearchIcon} from '@heroicons/vue/solid';
 import {useField} from 'vee-validate';
 
@@ -84,21 +83,10 @@ const props = defineProps({
   },
 });
 
-const {
-  type,
-  modelValue,
-  errorMessages,
-  value: externalValue,
-  readonly,
-  disabled,
-  placeholder,
-  prependIcon,
-  appendIcon,
-} = toRefs(props);
+const {type, readonly, disabled, placeholder, prependIcon, appendIcon} =
+  toRefs(props);
 
 defineEmits(['input:modelValue', 'blur', 'change']);
-
-// const inputValue = ref(props.value || props.modelValue);
 
 const sizeClass = computed(() => {
   const sizes: Record<string, string> = {
@@ -111,14 +99,6 @@ const sizeClass = computed(() => {
   };
   return sizes[props.size];
 });
-
-// watch(modelValue, (val) => {
-//   inputValue.value = val;
-// });
-
-// watch(externalValue, (val) => {
-//   inputValue.value = val;
-// });
 
 const inputVariantClass = computed(() => {
   if (props.error) {
