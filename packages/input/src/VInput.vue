@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import {ref, toRefs, computed, watch, useSlots} from 'vue';
 import {ErrorMessage} from 'vee-validate';
-import {inputDisabledClasses} from '@gits-id/utils';
 import {SearchIcon} from '@heroicons/vue/solid';
 
 const props = defineProps({
@@ -55,7 +54,7 @@ const props = defineProps({
   },
   color: {
     type: String,
-    default: 'primary',
+    default: 'default',
   },
   text: {
     type: Boolean,
@@ -79,7 +78,6 @@ const props = defineProps({
 const {
   type,
   modelValue,
-  error,
   errorMessages,
   value: externalValue,
   readonly,
@@ -89,13 +87,13 @@ const {
   appendIcon,
 } = toRefs(props);
 
-const emit = defineEmits(['input:modelValue', 'blur']);
+defineEmits(['input:modelValue', 'blur', 'change']);
 
 const inputValue = ref(props.value || props.modelValue);
 
 const sizeClass = computed(() => {
   const sizes: Record<string, string> = {
-    xs: 'text-sm',
+    xs: 'text-xs',
     sm: 'text-sm',
     default: 'text-base',
     md: 'text-base',
@@ -103,45 +101,6 @@ const sizeClass = computed(() => {
     xl: 'text-xl',
   };
   return sizes[props.size];
-});
-
-const slots = useSlots();
-
-const inputClasses = computed(() => {
-  return [
-    'border-none rounded-lg focus:ring-0 focus:border-none w-full',
-    'disabled:text-gray-300 disabled:placeholder:text-gray-300 disabled:cursor-not-allowed',
-    sizeClass.value,
-    error ? 'has-error' : '',
-    slots.prepend ? 'input-prepend' : '',
-    slots.append ? 'input-append' : '',
-  ];
-});
-
-const wrapperColorClasses = computed(() => {
-  let colorClass = '';
-  if (error.value) {
-    colorClass = 'input-has-error';
-  } else {
-    const colors: Record<string, string> = {
-      default:
-        'focus-within:ring focus-within:ring-blue-500/30 focus-within:border focus-within:border-blue-500',
-      primary:
-        'focus-within:ring focus-within:ring-blue-500/30 focus-within:border focus-within:border-blue-500',
-      secondary: 'input-secondary',
-      info: 'input-info',
-      warning: 'input-warning',
-      error: 'input-error',
-      success: 'input-success',
-      dark: 'input-dark',
-    };
-    colorClass = colors[props.color];
-  }
-  return colorClass;
-});
-
-const wrapperClasses = computed(() => {
-  return [wrapperColorClasses.value];
 });
 
 watch(modelValue, (val) => {
@@ -152,39 +111,91 @@ watch(externalValue, (val) => {
   inputValue.value = val;
 });
 
-const onBlur = () => emit('blur');
+const inputVariantClass = computed(() => {
+  if (props.error) {
+    return 'border-error-500 focus:ring-error-500 focus:ring-opacity-50 focus:border-error-500';
+  } else {
+    const variants: Record<string, string> = {
+      default:
+        'border-gray-300 focus:ring-primary-500 focus:ring-opacity-50 focus:border-primary-500',
+      blue: 'border-gray-300 focus:ring-blue-500 focus:ring-opacity-50 focus:border-blue-500',
+      primary:
+        'border-gray-300 focus:ring-primary-500 focus:ring-opacity-50 focus:border-primary-500',
+      secondary:
+        'border-gray-300 focus:ring-secondary-500 focus:ring-opacity-50 focus:border-secondary-500',
+      info: 'border-gray-300 focus:ring-info-500 focus:ring-opacity-50 focus:border-info-500',
+      warning:
+        'border-gray-300 focus:ring-warning-500 focus:ring-opacity-50 focus:border-warning-500',
+      success:
+        'border-gray-300 focus:ring-success-500 focus:ring-opacity-50 focus:border-success-500',
+      error:
+        'border-gray-300 focus:ring-error-500 focus:ring-opacity-50 focus:border-error-500',
+      dark: 'border-gray-300 focus:ring-gray-500 focus:ring-opacity-50 focus:border-gray-500',
+    };
+    return variants[props.color];
+  }
+});
 </script>
 
 <template>
-  <div
-    class="
-      flex
-      w-full
-      gap-2
-      items-center
-      transition
-      duration-300
-      rounded-md
-      border border-gray-300
-      text-gray-500
-    "
-    :class="[wrapperClasses, {shadow}]"
-  >
-    <slot name="prepend">
-      <SearchIcon v-if="prependIcon === 'search'" class="w-5 h-5 ml-3" />
+  <div v-if="text" v-bind="$attrs">{{ inputValue }}</div>
+  <div v-else class="relative w-full flex gap-2 items-center">
+    <slot name="prepend.outer">
+      <div
+        class="
+          absolute
+          inset-y-0
+          left-0
+          h-full
+          flex
+          items-center
+          pr-2
+          text-gray-500
+        "
+      >
+        <slot name="prepend">
+          <SearchIcon v-if="prependIcon === 'search'" class="w-5 h-5 ml-3" />
+        </slot>
+      </div>
     </slot>
     <input
       v-model="inputValue"
-      :class="inputClasses"
-      :type="type"
-      :readonly="readonly"
-      :disabled="disabled"
+      class="
+        w-full
+        border
+        px-3
+        py-2
+        focus:outline-none
+        rounded-md
+        transition
+        duration-300
+        disabled:cursor-not-allowed
+        focus:ring-2
+      "
+      :class="[{shadow, 'pl-10': $slots.prepend}, sizeClass, inputVariantClass]"
       :placeholder="placeholder"
+      :type="type"
+      :disabled="disabled"
+      :readonly="readonly"
       v-bind="$attrs"
-      @blur="onBlur"
     />
-    <slot name="append">
-      <SearchIcon v-if="appendIcon === 'search'" class="w-5 h-5 mr-3" />
+    <slot name="append.outer">
+      <div
+        class="
+          absolute
+          inset-y-0
+          right-0
+          h-full
+          flex
+          items-center
+          pl-2
+          text-gray-500
+        "
+      >
+        <slot name="append">
+          <SearchIcon v-if="appendIcon === 'search'" class="w-5 h-5 mr-3" />
+        </slot>
+      </div>
     </slot>
   </div>
 

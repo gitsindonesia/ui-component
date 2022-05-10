@@ -4,6 +4,7 @@ import {Meta, Story} from '@storybook/vue3';
 import type {VInputProps} from './types';
 import {RiSearchLine} from 'vue-remix-icons';
 import {themeColors} from '@gits-id/utils';
+import VBtn from '@gits-id/button';
 
 export default {
   title: 'Components/Form/Input',
@@ -61,12 +62,29 @@ export const Variants: Story<VInputProps> = (args) => ({
       <template v-for='color in themeColors' :key='color'>
         <div class='mb-2'>
           <label :for='color'>{{ color }}</label>
-          <VInput :id='color' :color='color' v-bind='args'/>
+          <VInput :id='color' v-bind='args' :color='color'/>
         </div>
       </template>
     </div>
 `,
 });
+Variants.parameters = {
+  docs: {
+    source: {
+      code: `
+<v-input color="default" />
+<v-input color="primary" />
+<v-input color="secondary" />
+<v-input color="info" />
+<v-input color="warning" />
+<v-input color="success" />
+<v-input color="error" />
+<v-input color="dark" />
+<v-input color="blue" />
+      `,
+    },
+  },
+};
 
 export const Default = Template.bind({});
 Default.args = {};
@@ -94,6 +112,7 @@ Email.parameters = {
 export const Readonly = Template.bind({});
 Readonly.args = {
   readonly: true,
+  modelValue: 'sometext',
 };
 Readonly.parameters = {
   docs: {
@@ -130,6 +149,8 @@ Shadow.parameters = {
 export const Text = Template.bind({});
 Text.args = {
   text: true,
+  modelValue: 'Lorem ipsum',
+  class: 'text-sm font-semibold',
 };
 Text.parameters = {
   docs: {
@@ -153,21 +174,84 @@ Error.parameters = {
 };
 
 export const Slots: Story<VInputProps> = (args) => ({
-  components: {VInput, RiSearchLine},
+  components: {VInput, RiSearchLine, VBtn},
   setup() {
     return {args};
   },
   template: `
-<div class="space-y-2 border-none">
+<h3 class="font-semibold text-xl mb-3 mt-5">Icon</h3>
+<div class="space-y-1 border-none">
+  <v-input placeholder="Search...">
+    <template #prepend.outer>
+      <RiSearchLine class="fill-current mr-1 w-5 h-5" />
+    </template>
+  </v-input>
+
+  <v-input placeholder="Search...">
+    <template #append.outer>
+      <RiSearchLine class="fill-current mr-3 w-5 h-5" />
+    </template>
+  </v-input>
+
   <v-input placeholder="Search...">
     <template #prepend>
-      <RiSearchLine class="fill-current ml-2 -mr-2 w-5 h-5" />
+      <RiSearchLine class="fill-current ml-3 w-5 h-5" />
     </template>
   </v-input>
 
   <v-input placeholder="Search...">
     <template #append>
       <RiSearchLine class="fill-current mr-3 w-5 h-5" />
+    </template>
+  </v-input>
+
+  <h3 class="font-semibold text-xl mb-3 mt-5">Text</h3>
+  <v-input placeholder="Search...">
+    <template #prepend.outer>
+      Text
+    </template>
+  </v-input>
+
+  <v-input placeholder="Search...">
+    <template #append.outer>
+      Text
+    </template>
+  </v-input>
+
+  <v-input placeholder="username" class="pl-40">
+    <template #prepend>
+      <span class="ml-3 text-gray-700 font-medium">https://gits.id/user/</span>
+    </template>
+  </v-input>
+
+  <v-input placeholder="username">
+    <template #append>
+      <span class="mr-3">@gits.id</span>
+    </template>
+  </v-input>
+
+  <h3 class="font-semibold text-xl mb-3 mt-5">Button</h3>
+  <v-input placeholder="Type...">
+    <template #prepend.outer>
+      <v-btn>Search</v-btn>
+    </template>
+  </v-input>
+
+  <v-input placeholder="Type...">
+    <template #append.outer>
+      <v-btn>Search</v-btn>
+    </template>
+  </v-input>
+
+  <v-input placeholder="No File Selected" class="pl-20">
+    <template #prepend>
+      <v-btn text>Browse</v-btn>
+    </template>
+  </v-input>
+
+  <v-input placeholder="No File Selected">
+    <template #append>
+      <v-btn text>Browse</v-btn>
     </template>
   </v-input>
 </div>
@@ -177,17 +261,82 @@ Slots.parameters = {
   docs: {
     source: {
       code: `
-<v-input placeholder="Search...">
-  <template #prepend>
-    <RiSearchLine class="fill-current ml-2 -mr-2 w-5 h-5" />
-  </template>
-</v-input>
+<h3 class="font-semibold text-xl mb-3 mt-5">Icon</h3>
+<div class="space-y-1 border-none">
+  <v-input placeholder="Search...">
+    <template #prepend.outer>
+      <RiSearchLine class="fill-current mr-1 w-5 h-5" />
+    </template>
+  </v-input>
 
-<v-input placeholder="Search...">
-  <template #append>
-    <RiSearchLine class="fill-current mr-3 w-5 h-5" />
-  </template>
-</v-input>
+  <v-input placeholder="Search...">
+    <template #append.outer>
+      <RiSearchLine class="fill-current mr-3 w-5 h-5" />
+    </template>
+  </v-input>
+
+  <v-input placeholder="Search...">
+    <template #prepend>
+      <RiSearchLine class="fill-current ml-3 w-5 h-5" />
+    </template>
+  </v-input>
+
+  <v-input placeholder="Search...">
+    <template #append>
+      <RiSearchLine class="fill-current mr-3 w-5 h-5" />
+    </template>
+  </v-input>
+
+  <h3 class="font-semibold text-xl mb-3 mt-5">Text</h3>
+  <v-input placeholder="Search...">
+    <template #prepend.outer>
+      Text
+    </template>
+  </v-input>
+
+  <v-input placeholder="Search...">
+    <template #append.outer>
+      Text
+    </template>
+  </v-input>
+
+  <v-input placeholder="username" class="pl-40">
+    <template #prepend>
+      <span class="ml-3 text-gray-700 font-medium">https://gits.id/user/</span>
+    </template>
+  </v-input>
+
+  <v-input placeholder="username">
+    <template #append>
+      <span class="mr-3">@gits.id</span>
+    </template>
+  </v-input>
+
+  <h3 class="font-semibold text-xl mb-3 mt-5">Button</h3>
+  <v-input placeholder="Type...">
+    <template #prepend.outer>
+      <v-btn>Search</v-btn>
+    </template>
+  </v-input>
+
+  <v-input placeholder="Type...">
+    <template #append.outer>
+      <v-btn>Search</v-btn>
+    </template>
+  </v-input>
+
+  <v-input placeholder="No File Selected" class="pl-20">
+    <template #prepend>
+      <v-btn text>Browse</v-btn>
+    </template>
+  </v-input>
+
+  <v-input placeholder="No File Selected">
+    <template #append>
+      <v-btn text>Browse</v-btn>
+    </template>
+  </v-input>
+</div>
       `,
     },
   },

@@ -14,6 +14,7 @@ module.exports = {
     './packages/dropdown/src/*.{vue,js,ts,jsx,tsx}',
     './packages/editor/src/*.{vue,js,ts,jsx,tsx}',
     './packages/file-input/src/*.{vue,js,ts,jsx,tsx}',
+    './packages/input/src/*.{vue,js,ts,jsx,tsx}',
     './packages/form-group/src/*.{vue,js,ts,jsx,tsx}',
     './packages/form-select/src/*.{vue,js,ts,jsx,tsx}',
     './packages/layouts/src/*.{vue,js,ts,jsx,tsx}',
