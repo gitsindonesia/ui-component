@@ -81,6 +81,10 @@ const props = defineProps({
     type: [Object, String],
     default: null,
   },
+  id: {
+    type: String,
+    default: '',
+  },
 });
 
 const {type, readonly, disabled, placeholder, prependIcon, appendIcon} =
@@ -132,7 +136,7 @@ const inputVariantClass = computed(() => {
 
 <template>
   <div class="mb-4">
-    <label v-if="label" :for="name" class="mb-1 block">{{ label }}</label>
+    <label v-if="label" :for="id || name" class="mb-1 block">{{ label }}</label>
     <div v-if="text" v-bind="$attrs">{{ inputValue }}</div>
     <div v-else class="relative w-full flex gap-2 items-center">
       <slot name="prepend.outer">
@@ -154,7 +158,7 @@ const inputVariantClass = computed(() => {
         </div>
       </slot>
       <input
-        :id="name"
+        :id="id || name"
         v-model="inputValue"
         class="
           w-full

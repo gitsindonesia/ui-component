@@ -99,6 +99,19 @@ Default.parameters = {
   },
 };
 
+export const Label = Template.bind({});
+Label.args = {
+  label: 'Name',
+  id: 'name',
+};
+Label.parameters = {
+  docs: {
+    source: {
+      code: `<v-input label="Name" id="name" />`,
+    },
+  },
+};
+
 export const Email = Template.bind({});
 Email.args = {
   type: 'email',
