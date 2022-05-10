@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/components",
-  "version": "0.1.17",
+  "version": "0.2.2",
   "scripts": {
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "release": "standard-version",
