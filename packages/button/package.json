@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/button",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "GITS Button Component",
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -16,13 +16,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gits-id/spinner": "^0.2.4",
-    "@gits-id/theme": "^0.2.4",
-    "@gits-id/utils": "^0.2.3"
+    "@gits-id/spinner": "^0.3.0",
+    "@gits-id/theme": "^0.3.0",
+    "@gits-id/utils": "^0.3.0"
   },
   "devDependencies": {
-    "@gits-id/tailwind-components": "^0.2.4",
-    "@gits-id/tailwind-config": "^0.2.4",
+    "@gits-id/tailwind-components": "^0.3.0",
+    "@gits-id/tailwind-config": "^0.3.0",
     "@vitejs/plugin-vue": "^2.2.4",
     "@vue/test-utils": "^2.0.0-rc.17",
     "autoprefixer": "^10.4.2",

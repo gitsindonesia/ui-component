@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/collapsible",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "GITS Collapsible Component",
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,7 +15,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@gits-id/utils": "^0.2.3",
+    "@gits-id/utils": "^0.3.0",
     "@heroicons/vue": "^1.0.6",
     "@vue/test-utils": "^2.0.0-rc.17",
     "vitest": "^0.7.10"

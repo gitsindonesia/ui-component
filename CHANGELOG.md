@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/gitsindonesia/ui-component/compare/v0.2.6...v0.3.0) (2022-05-11)
+
+
+### Bug Fixes
+
+* **v-input:** fix extra padding ([20d8702](https://github.com/gitsindonesia/ui-component/commit/20d8702d55eb4a2f7906c8d5514c822b871c6ded))
+
+
+### Features
+
+* **autocomplete:** clearable autocomplete ([bdfecb9](https://github.com/gitsindonesia/ui-component/commit/bdfecb942997df72a0e02a3e4213b445f9f279a1))
+* **autocomplete:** new `autocomplete` component ([aa26812](https://github.com/gitsindonesia/ui-component/commit/aa2681207bcca34fa0b42c9849b45362cc3c99f9))
+* **dropdown:** reworked dropdown component ([6c2b934](https://github.com/gitsindonesia/ui-component/commit/6c2b9344bc77970124a5d421344b2ae050a85f76))
+* **pages:** apply some margin ([5d0006c](https://github.com/gitsindonesia/ui-component/commit/5d0006ce3d47219620e72fb8c88b54cda9d032c5))
+* **v-input:** new `wrapper-class` and `input-class` prop ([ea5b5da](https://github.com/gitsindonesia/ui-component/commit/ea5b5dad2e45012612466f2bc89b932d8ddcdd86))
+
+
+
+
+
 ## [0.2.6](https://github.com/gitsindonesia/ui-component/compare/v0.2.5...v0.2.6) (2022-05-11)
 
 

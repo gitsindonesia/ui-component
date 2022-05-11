@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/gitsindonesia/ui-component/compare/v0.2.6...v0.3.0) (2022-05-11)
+
+
+### Features
+
+* **pages:** apply some margin ([5d0006c](https://github.com/gitsindonesia/ui-component/commit/5d0006ce3d47219620e72fb8c88b54cda9d032c5))
+
+
+
+
+
 ## [0.2.4](https://github.com/gitsindonesia/ui-component/compare/v0.2.3...v0.2.4) (2022-05-10)
 
 
