@@ -28,7 +28,7 @@ export const HeroSections: Story = (args) => ({
           consequatur quisquam praesentium placeat doloribus?
         </p>
         <div class="space-x-4">
-          <v-btn color="primary" size="lg" shadow @click="scrollToFeature">
+          <v-btn color="primary" size="lg" shadow>
             Get started
           </v-btn>
           <v-btn
@@ -48,4 +48,3 @@ export const HeroSections: Story = (args) => ({
   </section>
   `,
 });
-// HeroSections.storyName = 'HeroSections';
