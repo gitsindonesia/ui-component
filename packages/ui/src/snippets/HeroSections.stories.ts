@@ -14,9 +14,9 @@ export const HeroSections: Story = (args) => ({
   },
   template: `
   <section
-    class="sm:h-96 grid items-center py-8 sm:py-20 px-4 xl:px-0 bg-primary-50/50"
+    class="sm:h-[30rem] grid items-center py-8 sm:py-20 px-4 xl:px-0 bg-primary-50/50"
   >
-    <div class="container mx-auto">
+    <div class="container mx-auto flex items-center justify-between gap-4">
       <div class="w-full sm:w-7/12">
         <h1 class="text-4xl font-semibold mb-3 text-gray-800">
           Welcome to <span class="text-primary">GITS Starter</span>
@@ -43,6 +43,9 @@ export const HeroSections: Story = (args) => ({
             Learn more
           </v-btn>
         </div>
+      </div>
+      <div class="w-full sm:w-4/12">
+        <img src="https://mofin.id/wp-content/uploads/sites/6/2022/01/illustration.png" alt="hero illustration" class="max-w-full"/>
       </div>
     </div>
   </section>
