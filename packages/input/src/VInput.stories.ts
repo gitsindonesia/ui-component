@@ -209,7 +209,7 @@ export const Slots: Story<VInputProps> = (args) => ({
     </template>
   </v-input>
 
-  <v-input placeholder="Search...">
+  <v-input placeholder="Search..." class="pl-10">
     <template #prepend>
       <RiSearchLine class="fill-current ml-3 w-5 h-5" />
     </template>
@@ -291,15 +291,15 @@ Slots.parameters = {
     </template>
   </v-input>
 
-  <v-input placeholder="Search...">
+  <v-input placeholder="Search..." input-class="pl-10">
     <template #prepend>
-      <RiSearchLine class="fill-current ml-3 w-5 h-5" />
+      <RiSearchLine class="fill-current w-5 h-5" />
     </template>
   </v-input>
 
   <v-input placeholder="Search...">
     <template #append>
-      <RiSearchLine class="fill-current mr-3 w-5 h-5" />
+      <RiSearchLine class="fill-current w-5 h-5" />
     </template>
   </v-input>
 

@@ -186,12 +186,7 @@ const inputVariantClass = computed(() => {
           disabled:cursor-not-allowed
           focus:ring-2
         "
-        :class="[
-          {shadow, 'pl-10': $slots.prepend},
-          sizeClass,
-          inputVariantClass,
-          inputClass,
-        ]"
+        :class="[{shadow}, sizeClass, inputVariantClass, inputClass]"
         :placeholder="placeholder"
         :type="type"
         :disabled="disabled"
