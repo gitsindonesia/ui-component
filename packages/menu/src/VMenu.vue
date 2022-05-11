@@ -170,7 +170,6 @@ const isActive = (path: any) => {
         py-3
         rounded
         flex
-        w-full
         gap-x-4
         items-center
         relative
