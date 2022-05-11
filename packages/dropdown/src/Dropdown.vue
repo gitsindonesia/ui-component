@@ -2,7 +2,6 @@
 import {Menu, MenuButton, MenuItems} from '@headlessui/vue';
 import type {DropdownItemProps} from './types';
 import DropdownItem from './DropdownItem.vue';
-// import IconArrowDown from '~icons/ri/arrow-down-s-line';
 import {RiArrowDownSLine as IconArrowDown} from 'vue-remix-icons';
 
 const props = withDefaults(
