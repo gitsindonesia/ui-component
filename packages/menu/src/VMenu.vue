@@ -8,8 +8,8 @@ export default {
 import {computed, ref, toRefs} from 'vue';
 import VMenuTooltip from './VMenuTooltip.vue';
 import VMenuItem from './VMenuItem.vue';
-import {useRouter} from 'vue-router';
 import {VCollapsible} from '@gits-id/collapsible';
+import {useRoute} from 'vue-router';
 
 const props = defineProps({
   menu: {
@@ -54,8 +54,6 @@ const props = defineProps({
   },
 });
 
-const router = useRouter();
-
 const {menu, mini, dark, classMenuParent, expandHover} = toRefs(props);
 
 const panel = ref<HTMLDivElement | null>(null);
@@ -85,11 +83,13 @@ const getScrollHeight = () => {
   return `${scrollHeight}px`;
 };
 
+const route = useRoute();
+
 const isActive = (path: any) => {
-  const currentPath = router.currentRoute.value.path;
-  const currentRoute = currentPath.split('/');
-  const route = path.to.split('/');
-  return route[2] === currentRoute[2];
+  const currentPath = route?.path;
+  const currentRoute = currentPath?.split('/');
+  const parts = path?.to?.split('/');
+  return parts?.[2] === currentRoute?.[2];
 };
 </script>
 
