@@ -117,6 +117,7 @@ const onSubmit = handleSubmit((values) => {
         <VInput
           id="username"
           name="email"
+          class="pl-10"
           wrapper-class="mb-4"
           :label="usernameText"
           :placeholder="usernameText"
@@ -133,6 +134,7 @@ const onSubmit = handleSubmit((values) => {
         <VInput
           id="password"
           name="password"
+          class="pl-10"
           type="password"
           :label="passwordText"
           :placeholder="passwordText"

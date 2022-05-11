@@ -85,6 +85,7 @@ const onSubmit = handleSubmit((values) => {
           name="password"
           type="password"
           wrapper-class="mb-4"
+          class="pl-10"
           :label="passwordText"
           :placeholder="passwordText"
         >
@@ -100,6 +101,8 @@ const onSubmit = handleSubmit((values) => {
           id="passwordConfirmation"
           name="passwordConfirmation"
           type="password"
+          class="pl-10"
+          wrapper-class="mb-4"
           :label="passwordConfirmationText"
           :placeholder="passwordConfirmationText"
         >

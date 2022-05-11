@@ -60,6 +60,7 @@ const onSubmit = handleSubmit((values) => {
           name="email"
           type="email"
           wrapper-class="mb-4"
+          class="pl-10"
           :label="emailText"
           :placeholder="emailText"
         >
