@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/pages",
-  "version": "0.3.0",
+  "version": "0.3.2",
   "description": "GITS Pages Component",
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",

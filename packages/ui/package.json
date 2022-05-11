@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/ui",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly",
     "prepublishOnly": "npm run build",
@@ -30,7 +30,7 @@
     "@gits-id/multi-select": "^0.3.0",
     "@gits-id/nav-drawer": "^0.3.0",
     "@gits-id/navbar": "^0.3.0",
-    "@gits-id/pages": "^0.3.0",
+    "@gits-id/pages": "^0.3.2",
     "@gits-id/pagination": "^0.3.0",
     "@gits-id/progress-bar": "^0.3.0",
     "@gits-id/radio": "^0.3.0",
