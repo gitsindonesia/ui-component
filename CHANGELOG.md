@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/gitsindonesia/ui-component/compare/v0.3.0...v0.3.1) (2022-05-11)
+
+
+### Bug Fixes
+
+* **ui:** fix dropdown import/export ([36dc771](https://github.com/gitsindonesia/ui-component/commit/36dc7713709552069e7a53ab6f068b8d8e58e69f))
+
+
+
+
+
 # [0.3.0](https://github.com/gitsindonesia/ui-component/compare/v0.2.6...v0.3.0) (2022-05-11)
 
 
