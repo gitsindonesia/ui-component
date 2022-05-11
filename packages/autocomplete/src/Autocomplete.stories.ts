@@ -33,3 +33,8 @@ const Template = (args) => ({
 
 export const Default = Template.bind({});
 Default.args = {};
+
+export const Clearable = Template.bind({});
+Clearable.args = {
+  clearable: true,
+};

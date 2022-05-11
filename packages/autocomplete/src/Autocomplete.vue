@@ -33,6 +33,7 @@ type Props = {
   clearable?: boolean;
   notFoundText?: string;
   noDataText?: string;
+  clearable?: boolean;
 };
 
 const props = withDefaults(defineProps<Props>(), {
@@ -45,6 +46,7 @@ const props = withDefaults(defineProps<Props>(), {
   items: () => [],
   noDataText: 'No data.',
   notFoundText: 'Nothing found.',
+  clearable: false,
 });
 
 const emit = defineEmits(['update:modelValue', 'update:query']);
@@ -66,9 +68,10 @@ watch(selected, (val) => {
 watch(query, (val) => {
   emit('update:query', val);
 
-  if (val === '') {
-    selected.value = '';
-  }
+  // if (val === '') {
+  // console.log({val});
+  // selected.value = '';
+  // }
 });
 
 const filteredItems = computed(() =>
@@ -131,13 +134,13 @@ const clear = () => {
         />
         <div class="absolute inset-y-0 right-0 flex items-center pr-4">
           <button
-            v-if="clearable"
+            v-if="clearable && selected"
             type="button"
             class="
               mr-1
               text-gray-400
               hover:text-gray-700
-              hover:bg-gray-200
+              hover:bg-gray-100
               rounded-full
               p-1
               transition
@@ -145,7 +148,10 @@ const clear = () => {
             "
             @click="clear"
           >
-            <XIcon class="w-6 h-6" aria-hidden="true" />
+            <XIcon
+              class="w-6 h-6 fill-current text-gray-500"
+              aria-hidden="true"
+            />
           </button>
           <ComboboxButton>
             <ChevronDownIcon
