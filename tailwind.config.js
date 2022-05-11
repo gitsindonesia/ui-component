@@ -42,6 +42,7 @@ module.exports = {
     './packages/tooltip/src/*.{vue,js,ts,jsx,tsx}',
     './packages/utils/*.{vue,js,ts,jsx,tsx}',
     './packages/autocomplete/src/*.{vue,js,ts,jsx,tsx}',
+    './packages/ui/src/**/*.{vue,js,ts,jsx,tsx}',
   ],
   presets: [require('./packages/tailwind-config/preset')],
 };
