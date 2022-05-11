@@ -59,6 +59,7 @@ const onSubmit = handleSubmit((values) => {
           id="email"
           name="email"
           type="email"
+          wrapper-class="mb-4"
           :label="emailText"
           :placeholder="emailText"
         >

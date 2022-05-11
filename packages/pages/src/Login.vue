@@ -117,6 +117,7 @@ const onSubmit = handleSubmit((values) => {
         <VInput
           id="username"
           name="email"
+          wrapper-class="mb-4"
           :label="usernameText"
           :placeholder="usernameText"
           :autocomplete="autocomplete"
