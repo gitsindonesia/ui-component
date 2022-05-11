@@ -1,8 +1,10 @@
 import type {Story} from '@storybook/vue3';
 import Dropdown from './Dropdown.vue';
 import DropdownItem from './DropdownItem.vue';
+import DropdownButton from './DropdownButton.vue';
 import type {DropdownItemProps} from './types';
 import {RiCalendarFill} from 'vue-remix-icons';
+import Button from '@gits-id/button';
 
 const icons = ['calendar', 'attachment', 'download', 'clock', 'document'];
 
@@ -81,6 +83,29 @@ export const Slots: Story = (args, {argTypes}) => ({
   template: `
     <div class="flex justify-center">
       <Dropdown v-bind="args">
+        <DropdownItem text="Calendar" icon="calendar"/>
+        <DropdownItem text="Files" icon="document" />
+        <DropdownItem divider/>
+        <DropdownItem text="Timer" icon="clock"/>
+      </Dropdown>
+    </div>
+  `,
+});
+
+export const CustomActivator: Story = (args, {argTypes}) => ({
+  components: {Dropdown, DropdownItem, DropdownButton},
+  setup() {
+    return {args, argTypes, Button};
+  },
+  template: `
+    <div class="flex justify-center">
+      <Dropdown v-bind="args">
+        <template #activator>
+          <DropdownButton :as="Button" color="error" outlined>
+            My Button
+          </DropdownButton>
+        </template>
+
         <DropdownItem text="Calendar" icon="calendar"/>
         <DropdownItem text="Files" icon="document" />
         <DropdownItem divider/>
