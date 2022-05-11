@@ -8,7 +8,11 @@ import VBreadcrumbs from '@gits-id/breadcrumbs';
 import VCard from '@gits-id/card';
 import VCheckbox from '@gits-id/checkbox';
 import {VDataTable, VDataTablePagination} from '@gits-id/table';
-import {VDropdown, VDropdownItem} from '@gits-id/dropdown';
+import {
+  Dropdown as VDropdown,
+  DropdownItem as VDropdownItem,
+  DropdownButton,
+} from '@gits-id/dropdown';
 import VFormSelect from '@gits-id/form-select';
 import {VInput, VInputGroup, VInputRange} from '@gits-id/input';
 import VModal from '@gits-id/modal';
@@ -44,7 +48,7 @@ import {
   ForgotPassword,
   Login,
   ResetPassword,
-  NotFound
+  NotFound,
 } from '@gits-id/pages';
 
 const plugin = {
@@ -141,6 +145,7 @@ export {
   VCollapsible,
   VCollapsibleGroup,
   VFileUpload,
+  DropdownButton,
 };
 
 export * from '@gits-id/utils';
@@ -157,4 +162,5 @@ export * from '@gits-id/input/src/types';
 export * from '@gits-id/navbar/src/types';
 export * from '@gits-id/tabs/src/types';
 export * from '@gits-id/modal/src/types';
+export * from '@gits-id/dropdown/src/types';
 export default plugin;
