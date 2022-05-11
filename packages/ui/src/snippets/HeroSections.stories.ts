@@ -16,7 +16,7 @@ export const HeroSections: Story = (args) => ({
   <section
     class="sm:h-[30rem] grid items-center py-8 sm:py-20 px-4 xl:px-0 bg-primary-50/50"
   >
-    <div class="container mx-auto flex items-center justify-between gap-4">
+    <div class="container mx-auto flex flex-col-reverse sm:flex-row items-center justify-between gap-y-10 sm:gap-4">
       <div class="w-full sm:w-7/12">
         <h1 class="text-4xl font-semibold mb-3 text-gray-800">
           Welcome to <span class="text-primary">GITS Starter</span>
@@ -27,7 +27,7 @@ export const HeroSections: Story = (args) => ({
           optio sed suscipit, ipsa dignissimos, repudiandae exercitationem
           consequatur quisquam praesentium placeat doloribus?
         </p>
-        <div class="space-x-4">
+        <div class="sm:space-x-4 space-y-4">
           <v-btn color="primary" size="lg" shadow>
             Get started
           </v-btn>
