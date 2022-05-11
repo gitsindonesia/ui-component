@@ -1,5 +1,4 @@
 import {Meta, Story} from '@storybook/vue3';
-import VBtn from '@gits-id/button';
 import {Ri4kFill} from 'vue-remix-icons';
 
 export default {
@@ -9,7 +8,7 @@ export default {
 } as Meta;
 
 export const FeatureSections: Story = (args) => ({
-  components: {VBtn, Ri4kFill},
+  components: {Ri4kFill},
   setup() {
     return {args};
   },
