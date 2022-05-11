@@ -405,10 +405,12 @@ export const Validation: Story<VInputProps> = (args) => ({
   },
   template: `
     <form @submit="onSubmit" class="border-none">
-      <v-input name="name" label="Name" placeholder="Your Name" />
-      <v-input name="email" label="Email" placeholder="Your Email" />
-      <v-btn type="submit">Submit</v-btn>
-      <v-btn type="button" text @click="resetForm">Reset</v-btn>
+      <v-input wrapper-class="mb-2" name="name" label="Name" placeholder="Your Name" />
+      <v-input wrapper-class="mb-2" name="email" label="Email" placeholder="Your Email" />
+      <div class="mt-4">
+        <v-btn type="submit">Submit</v-btn>
+        <v-btn type="button" text @click="resetForm">Reset</v-btn>
+      </div>
     </form>
 `,
 });

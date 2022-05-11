@@ -1,3 +1,9 @@
+<script lang="ts">
+export default {
+  inheritAttrs: false,
+};
+</script>
+
 <script setup lang="ts">
 import {toRefs, computed} from 'vue';
 import {SearchIcon} from '@heroicons/vue/solid';
@@ -85,6 +91,14 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  inputClass: {
+    type: String,
+    default: '',
+  },
+  wrapperClass: {
+    type: String,
+    default: '',
+  },
 });
 
 const {type, readonly, disabled, placeholder, prependIcon, appendIcon} =
@@ -135,7 +149,7 @@ const inputVariantClass = computed(() => {
 </script>
 
 <template>
-  <div class="mb-4">
+  <div :class="wrapperClass">
     <label v-if="label" :for="id || name" class="mb-1 block">{{ label }}</label>
     <div v-if="text" v-bind="$attrs">{{ inputValue }}</div>
     <div v-else class="relative w-full flex gap-2 items-center">
@@ -176,6 +190,7 @@ const inputVariantClass = computed(() => {
           {shadow, 'pl-10': $slots.prepend},
           sizeClass,
           inputVariantClass,
+          inputClass,
         ]"
         :placeholder="placeholder"
         :type="type"
