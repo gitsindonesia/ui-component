@@ -5,10 +5,18 @@ stages:
   - analyze
   - release
 
+# And to cache them as well.
+cache:
+  paths:
+    - node_modules/
+    - .yarn
+
 test:
   stage: test
+  before_script:
+    - yarn config set cache-folder .yarn
+    - yarn global add lerna
   script:
-    - npm i -g lerna yarn
     - lerna bootstrap
     - yarn coverage
   only:
