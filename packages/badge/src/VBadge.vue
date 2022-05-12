@@ -93,7 +93,7 @@ const sizeClass = computed(() => {
 const roundedClass = computed(() => {
   let rounded = 'rounded-md';
   if (props.small) {
-    rounded = 'rounded-md';
+    rounded = 'rounded';
   } else if (props.large) {
     rounded = 'rounded-lg';
   }
