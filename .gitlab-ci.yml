@@ -15,9 +15,9 @@ test:
   stage: test
   before_script:
     - yarn config set cache-folder .yarn
-    - yarn global add lerna
   script:
     - lerna bootstrap
+    - lerna run build
     - yarn coverage
   only:
     - main
