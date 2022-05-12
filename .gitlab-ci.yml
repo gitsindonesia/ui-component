@@ -10,16 +10,18 @@ analyze:sonar:
     SONAR_USER_HOME: '${CI_PROJECT_DIR}/.sonar'
     GIT_DEPTH: 0
   image:
-    name: sonarsource/sonar-scanner-cli:4.5
+    name: sonarsource/sonar-scanner-cli:4.7
     entrypoint: ['']
   cache:
     key: '${CI_JOB_NAME}'
     paths:
       - .sonar/cache
   script:
-    - npm i -g yarn lerna
-    - lerna bootstrap
-    - yarn coverage
+    # - npm i -g yarn lerna
+    # - lerna bootstrap
+    # - yarn coverage
+    - npm i
+    - npm coverage
     # - sonar-scanner -Dsonar.projectKey=$CI_PROJECT_NAME -Dsonar.sources=. -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_USER -Dsonar.password=$SONAR_PASSWORD
     - sonar-scanner -Dsonar.projectKey=$CI_PROJECT_NAME -Dsonar.sources=src -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_USER -Dsonar.password=$SONAR_PASSWORD -Dsonar.exclusions=**/express/routers/**,**/rabbit-rpc/routers/**,**/mocks/**,**/*.stories.ts,**/*.stories.js -Dsonar.cpd.exclusions=**/router/**,**/utils/menu.ts -Dsonar.test.inclusions=**/*.test.js,**/*.test.ts,**/*.spec.js,**/*.spec.ts -Dsonar.javascript.coveragePlugin=lcov -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info -Dsonar.testExecutionReportPaths=coverage/test-reporter.xml
   allow_failure: false
