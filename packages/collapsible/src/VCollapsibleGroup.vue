@@ -2,19 +2,19 @@
 import {ref, toRefs, watch} from 'vue';
 import VCollapsible from './VCollapsible.vue';
 
-interface CollapsibleItem {
+type CollapsibleItem = {
   title: string;
   content: string;
   isOpen?: boolean;
 
   [x: string]: any;
-}
+};
 
-interface Props {
+type Props = {
   modelValue?: boolean;
   accordion?: boolean;
   items?: CollapsibleItem[];
-}
+};
 
 const props = withDefaults(defineProps<Props>(), {
   modelValue: false,
@@ -43,16 +43,15 @@ watch(
 const onChange = (isOpen: boolean, item: CollapsibleItem, idx: number) => {
   emit('item:change', {isOpen, item});
   if (accordion.value) {
-    items.value.forEach((item, key: number) => {
+    items.value.forEach((currentItem, key: number) => {
       if (key === idx) {
-        item.isOpen = isOpen;
+        currentItem.isOpen = isOpen;
       } else {
-        item.isOpen = false;
+        currentItem.isOpen = false;
       }
     });
   }
 };
-const onEventItems = (item: CollapsibleItem, idx: number) => {};
 </script>
 
 <template>

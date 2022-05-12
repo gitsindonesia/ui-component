@@ -1,6 +1,5 @@
 import {Story} from '@storybook/vue3';
 import {ref} from 'vue';
-// import MyCollapse from './VCollapse.vue';
 import MyCollapsible from './VCollapsible.vue';
 import MyCollapsibleGroup from './VCollapsibleGroup.vue';
 
@@ -21,15 +20,12 @@ export default {
 };
 
 const Template: Story<{}> = (args) => ({
-  // Components used in your story `template` are defined in the `components` object
   components: {MyCollapsible},
-  // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
     const isOpen = ref(false);
 
     return {args, isOpen};
   },
-  // And then the `args` are bound to your component with `v-bind="args"`
   template: `<MyCollapsible v-model="isOpen" v-bind='args'>
     Anim eiusmod ea nostrud do incididunt consequat duis adipisicing reprehenderit nisi. Minim mollit eiusmod incididunt fugiat ipsum velit ut consequat est consectetur adipisicing. Nulla duis anim velit magna aute nisi elit nulla deserunt. Fugiat consequat ut magna eiusmod sit incididunt qui. Incididunt velit fugiat sunt sint amet magna est laborum excepteur. Aute aliqua nisi est nulla voluptate enim qui amet labore et consectetur. Est pariatur qui amet cupidatat magna est adipisicing quis ea ea.
   </MyCollapsible>
@@ -94,19 +90,6 @@ CustomClasses.parameters = {
     },
   },
 };
-
-// export const Group: Story<{}> = (args) => ({
-//   // Components used in your story `template` are defined in the `components` object
-//   components: {MyCollapsible},
-//   // The story's `args` need to be mapped into the template through the `setup()` method
-//   setup() {
-//     return {args};
-//   },
-//   // And then the `args` are bound to your component with `v-bind="args"`
-//   template: `<MyCollapsible v-for="i in 5" :key="i" v-bind='args'>
-//     Anim eiusmod ea nostrud do incididunt consequat duis adipisicing reprehenderit nisi. Minim mollit eiusmod incididunt fugiat ipsum velit ut consequat est consectetur adipisicing. Nulla duis anim velit magna aute nisi elit nulla deserunt. Fugiat consequat ut magna eiusmod sit incididunt qui. Incididunt velit fugiat sunt sint amet magna est laborum excepteur. Aute aliqua nisi est nulla voluptate enim qui amet labore et consectetur. Est pariatur qui amet cupidatat magna est adipisicing quis ea ea.
-//   </MyCollapsible>`,
-// });
 
 export const Accordion: Story = (args) => ({
   components: {MyCollapsibleGroup, MyCollapsible},

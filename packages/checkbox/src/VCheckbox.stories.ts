@@ -25,13 +25,10 @@ export default {
 } as Meta;
 
 const Template: Story = (args) => ({
-  // Components used in your story `template` are defined in the `components` object
   components: {MyCheckbox},
-  // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
     return {args};
   },
-  // And then the `args` are bound to your component with `v-bind="args"`
   template: `<MyCheckbox v-bind='args'>${args.label}</MyCheckbox>`,
 });
 
@@ -44,11 +41,3 @@ Checkbox.parameters = {
     },
   },
 };
-
-// export const Checkbox = (args) => ({
-//   components: {MyCheckbox},
-//   setup() {
-//     return {args};
-//   },
-//   template: `<div class="container mx-auto"><MyCheckbox v-bind="args" /></div>`,
-// });

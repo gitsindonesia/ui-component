@@ -3,15 +3,11 @@ import Dropdown from './Dropdown.vue';
 import DropdownItem from './DropdownItem.vue';
 import DropdownButton from './DropdownButton.vue';
 import type {DropdownItemProps} from './types';
-import {RiCalendarFill} from 'vue-remix-icons';
 import Button from '@gits-id/button';
-
-const icons = ['calendar', 'attachment', 'download', 'clock', 'document'];
 
 const genItems = (length = 5): DropdownItemProps[] =>
   Array.from({length}, (_, v) => ({
     text: `Item ${v + 1}`,
-    // icon: icons[Math.floor(Math.random() * icons.length)],
   }));
 
 const items = [...genItems(2), {divider: true}, ...genItems(3)];

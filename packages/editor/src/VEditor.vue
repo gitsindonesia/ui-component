@@ -112,8 +112,8 @@ watch(content, (value) => {
 </template>
 
 <style scoped>
-::v-deep(.ck-editor__editable),
-::v-deep(.ql-editor) {
+:deep(.ck-editor__editable),
+:deep(.ql-editor) {
   min-height: 300px;
 }
 ul,

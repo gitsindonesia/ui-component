@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import {ref, toRefs, watch, computed, PropType} from 'vue';
+import {toRefs, computed, PropType} from 'vue';
 import {useTextSize} from '@gits-id/utils';
 import {useField} from 'vee-validate';
 
-interface VDataTableItem {
+type VDataTableItem = {
   selected?: boolean;
   [key: string]: any;
-}
+};
 
 const props = defineProps({
   modelValue: {
@@ -47,6 +47,8 @@ const props = defineProps({
   },
 });
 
+defineEmits(['update:modelValue']);
+
 const {
   label,
   inputClass,
@@ -56,13 +58,8 @@ const {
   value: checkboxValue,
 } = toRefs(props);
 
-const emit = defineEmits(['update:modelValue']);
-
 const colorClass = computed(() => {
   switch (color.value) {
-    case 'primary':
-    default:
-      return 'text-primary-600 focus:ring-primary-600';
     case 'secondary':
       return 'text-secondary-600 focus:ring-secondary-600';
     case 'info':
@@ -73,6 +70,9 @@ const colorClass = computed(() => {
       return 'text-warning-600 focus:ring-warning-600';
     case 'error':
       return 'text-error-600 focus:ring-error-600';
+    case 'primary':
+    default:
+      return 'text-primary-600 focus:ring-primary-600';
   }
 });
 
