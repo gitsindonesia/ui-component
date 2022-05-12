@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { toRefs } from "vue";
+import {toRefs} from 'vue';
 
 const props = defineProps({
   image: {
     type: String,
-    default: "authentication",
+    default: 'authentication',
   },
   formOnLeft: {
     type: Boolean,
@@ -12,20 +12,21 @@ const props = defineProps({
   },
   imageWrapperClass: {
     type: String,
-    default: "",
+    default: '',
   },
   formWrapperClass: {
     type: String,
-    default: "",
+    default: '',
   },
   defaultImageWrapperClass: {
     type: String,
     default:
-      "w-full lg:w-6/12 xl:w-7/12 flex items-center justify-center px-12 pt-10 xl:p-0",
+      'w-full lg:w-6/12 xl:w-7/12 flex items-center justify-center px-12 pt-10 xl:p-0',
   },
   defaultFormWrapperClass: {
     type: String,
-    default: "w-full lg:w-6/12 xl:w-5/12 flex items-center justify-center p-4 xl:p-0",
+    default:
+      'w-full lg:w-6/12 xl:w-5/12 flex items-center justify-center p-4 xl:p-0',
   },
 });
 
@@ -78,5 +79,3 @@ const {
     </div>
   </div>
 </template>
-
-<style scoped></style>

@@ -295,5 +295,3 @@ const classes = computed(() => {
     <slot v-else />
   </component>
 </template>
-
-<style scoped></style>

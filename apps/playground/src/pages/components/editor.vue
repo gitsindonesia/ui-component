@@ -131,5 +131,3 @@ const content = ref('');
 
   <DocsTable title="Props" :items="propItems" />
 </template>
-
-<style scoped></style>

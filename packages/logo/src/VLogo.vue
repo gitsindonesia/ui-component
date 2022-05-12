@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { toRefs, computed } from "vue";
+import {toRefs, computed} from 'vue';
 
 const props = defineProps({
   white: {
@@ -8,24 +8,32 @@ const props = defineProps({
   },
   to: {
     type: String,
-    default: "/",
+    default: '/',
   },
   imgClass: {
     type: String,
-    default: "",
+    default: '',
   },
 });
 
-const { white, to } = toRefs(props);
+const {white, to} = toRefs(props);
 
-const tag = computed(() => (to.value ? "router-link" : "a"));
+const tag = computed(() => (to.value ? 'router-link' : 'a'));
 </script>
 
 <template>
   <component :is="tag" :to="to">
-    <img v-if="white" :class="imgClass" alt="Logo White" src="./assets/logo-white.png" />
-    <img v-else :class="imgClass" alt="Logo Base" src="./assets/logo-base.png" />
+    <img
+      v-if="white"
+      :class="imgClass"
+      alt="Logo White"
+      src="./assets/logo-white.png"
+    />
+    <img
+      v-else
+      :class="imgClass"
+      alt="Logo Base"
+      src="./assets/logo-base.png"
+    />
   </component>
 </template>
-
-<style scoped></style>

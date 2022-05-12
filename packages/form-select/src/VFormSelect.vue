@@ -1,17 +1,17 @@
 <script setup inherit-attrs="false" lang="ts">
-import { ref, toRefs, PropType, watch, computed } from "vue";
-import { ErrorMessage } from "vee-validate";
-import { useInputClasses, useTextSize } from "@gits-id/utils";
-import type { VFormSelectItem } from "./types";
+import {ref, toRefs, PropType, watch, computed} from 'vue';
+import {ErrorMessage} from 'vee-validate';
+import {useInputClasses, useTextSize} from '@gits-id/utils';
+import type {VFormSelectItem} from './types';
 
 const props = defineProps({
   modelValue: {
     type: String,
-    default: "",
+    default: '',
   },
   value: {
     type: String,
-    default: "",
+    default: '',
   },
   items: {
     type: Array as PropType<VFormSelectItem[]>,
@@ -19,15 +19,15 @@ const props = defineProps({
   },
   itemText: {
     type: String,
-    default: "text",
+    default: 'text',
   },
   itemValue: {
     type: String,
-    default: "value",
+    default: 'value',
   },
   name: {
     type: String,
-    default: "",
+    default: '',
   },
   error: {
     type: Boolean,
@@ -39,7 +39,7 @@ const props = defineProps({
   },
   size: {
     type: String,
-    default: "",
+    default: '',
   },
   disabled: {
     type: Boolean,
@@ -47,7 +47,7 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits(["update:modelValue"]);
+const emit = defineEmits(['update:modelValue']);
 
 const {
   modelValue,
@@ -62,7 +62,7 @@ const {
 
 const inputValue = ref(modelValue.value);
 
-const { class: sizeClass } = useTextSize(props.size);
+const {class: sizeClass} = useTextSize(props.size);
 const inputClass = computed(() => useInputClasses(error.value));
 
 const classes = computed(() => {
@@ -70,7 +70,7 @@ const classes = computed(() => {
 });
 
 watch(inputValue, (val) => {
-  emit("update:modelValue", val);
+  emit('update:modelValue', val);
 });
 
 watch(
@@ -78,7 +78,7 @@ watch(
   (val) => {
     inputValue.value = val;
   },
-  { immediate: true }
+  {immediate: true},
 );
 
 watch(value, (val) => {
@@ -86,11 +86,11 @@ watch(value, (val) => {
 });
 
 const getValue = (option: string | Record<string, any>) => {
-  return typeof option === "string" ? option : option[itemValue.value];
+  return typeof option === 'string' ? option : option[itemValue.value];
 };
 
 const getText = (option: string | Record<string, any>) => {
-  return typeof option === "string" ? option : option[itemText.value];
+  return typeof option === 'string' ? option : option[itemText.value];
 };
 </script>
 
@@ -111,7 +111,9 @@ const getText = (option: string | Record<string, any>) => {
       {{ getText(option) }}
     </option>
   </select>
-  <ErrorMessage v-if="errorMessages.length" class="text-error text-sm" :name="name" />
+  <ErrorMessage
+    v-if="errorMessages.length"
+    class="text-error text-sm"
+    :name="name"
+  />
 </template>
-
-<style scoped></style>

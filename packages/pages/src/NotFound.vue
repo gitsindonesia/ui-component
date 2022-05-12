@@ -52,5 +52,3 @@ const {fillHeight, noButton, noImage, title, description} = toRefs(props);
     </div>
   </div>
 </template>
-
-<style scoped></style>

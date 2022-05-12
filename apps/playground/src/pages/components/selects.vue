@@ -184,5 +184,3 @@ const props = defineProps({
   >
   </Docs>
 </template>
-
-<style scoped></style>

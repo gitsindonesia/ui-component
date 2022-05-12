@@ -128,7 +128,20 @@ const bgColor = computed(() =>
   <div
     @mouseover="mouseOver"
     @mouseleave="mouseOverLeave"
-    class="fixed top-0 left-0 z-20 h-screen min-h-screen shadow-md py-2 px-2 transition-all duration-300 flex flex-col"
+    class="
+      fixed
+      top-0
+      left-0
+      z-20
+      h-screen
+      min-h-screen
+      shadow-md
+      py-2
+      px-2
+      transition-all
+      duration-300
+      flex flex-col
+    "
     :class="[
       bgColor,
       mini
@@ -196,5 +209,3 @@ const bgColor = computed(() =>
     </div>
   </div>
 </template>
-
-<style scoped></style>

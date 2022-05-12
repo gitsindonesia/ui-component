@@ -76,5 +76,3 @@ const items = Array.from({length: 30}, (v, k) => ({
     </template>
   </Docs>
 </template>
-
-<style scoped></style>

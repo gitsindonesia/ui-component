@@ -58,5 +58,3 @@ const items = ref([
     </template>
   </Docs>
 </template>
-
-<style scoped></style>

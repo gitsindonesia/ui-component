@@ -74,5 +74,3 @@ if (!disableRouteActive.value) {
     </template>
   </div>
 </template>
-
-<style scoped></style>

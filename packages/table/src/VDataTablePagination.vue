@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { computed, PropType, ref, toRefs, watch } from "vue";
-import Pagination from "@gits-id/pagination";
-import VSelect from "@gits-id/select";
+import {computed, PropType, ref, toRefs, watch} from 'vue';
+import Pagination from '@gits-id/pagination';
+import VSelect from '@gits-id/select';
 
 interface PerPageItem {
   text: string;
@@ -27,41 +27,42 @@ const props = defineProps({
   },
   showingText: {
     type: String,
-    default: "Showing",
+    default: 'Showing',
   },
   backgroundColor: {
     type: String,
-    default: "",
+    default: '',
   },
   dataText: {
     type: String,
-    default: "data",
+    default: 'data',
   },
   fromText: {
     type: String,
-    default: "from",
+    default: 'from',
   },
 });
 
 const emit = defineEmits([
-  "update:modelValue",
-  "update:itemsPerPage",
-  "update:perPage",
-  "update:itemsPerPageOptions",
+  'update:modelValue',
+  'update:itemsPerPage',
+  'update:perPage',
+  'update:itemsPerPageOptions',
 ]);
 
-const { modelValue, totalItems, itemsPerPage, itemsPerPageOptions } = toRefs(props);
+const {modelValue, totalItems, itemsPerPage, itemsPerPageOptions} =
+  toRefs(props);
 const page = ref(modelValue.value);
 
 const start = computed(() =>
-  totalItems.value > 0 ? (page.value - 1) * itemsPerPage.value + 1 : 1
+  totalItems.value > 0 ? (page.value - 1) * itemsPerPage.value + 1 : 1,
 );
 const end = computed(() =>
-  totalItems.value > 0 ? start.value + itemsPerPage.value - 1 : null
+  totalItems.value > 0 ? start.value + itemsPerPage.value - 1 : null,
 );
 
 const emitPage = (page: number) => {
-  emit("update:modelValue", page);
+  emit('update:modelValue', page);
 };
 
 watch(
@@ -69,21 +70,21 @@ watch(
   (newVal) => {
     emitPage(newVal);
   },
-  { immediate: true }
+  {immediate: true},
 );
 
 const perPageItems = computed(() =>
   itemsPerPageOptions.value.map((v) => ({
     text: v.toString(),
     value: v,
-  }))
+  })),
 );
 
 const itemsPerPageValue = ref<string | number>(itemsPerPage.value);
 
 watch(itemsPerPageValue, (val) => {
-  emit("update:itemsPerPage", val);
-  emit("update:perPage", val);
+  emit('update:itemsPerPage', val);
+  emit('update:perPage', val);
 });
 
 watch(
@@ -91,7 +92,7 @@ watch(
   (val) => {
     itemsPerPageValue.value = val;
   },
-  { immediate: true }
+  {immediate: true},
 );
 
 watch(
@@ -99,14 +100,24 @@ watch(
   (val) => {
     page.value = val;
   },
-  { immediate: true }
+  {immediate: true},
 );
 </script>
 
 <template>
   <div
     :class="backgroundColor"
-    class="w-full px-6 py-3 border-t flex flex-row items-center gap-4 justify-center sm:justify-between"
+    class="
+      w-full
+      px-6
+      py-3
+      border-t
+      flex flex-row
+      items-center
+      gap-4
+      justify-center
+      sm:justify-between
+    "
   >
     <v-select
       v-model="itemsPerPageValue"
@@ -117,7 +128,17 @@ watch(
       top
     />
 
-    <p class="w-auto hidden sm:flex gap-1 items-center text-sm text-gray-700 order-2">
+    <p
+      class="
+        w-auto
+        hidden
+        sm:flex
+        gap-1
+        items-center
+        text-sm text-gray-700
+        order-2
+      "
+    >
       <span class="hidden sm:inline"> {{ showingText }} </span>
       <span class="font-semibold">{{ start }}</span>
       <span>-</span>
@@ -137,5 +158,3 @@ watch(
     </div>
   </div>
 </template>
-
-<style scoped></style>

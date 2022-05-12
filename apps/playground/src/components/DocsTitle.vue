@@ -13,5 +13,3 @@ defineProps<{
     <v-breadcrumbs :items="breadcrumbs" />
   </div>
 </template>
-
-<style scoped></style>

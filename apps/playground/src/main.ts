@@ -5,9 +5,6 @@ import router from './router';
 import GitsUi from '@gits-id/ui';
 import './index.css';
 
-// gits ui styles
-import '@gits-id/ui/style.css';
-
 const app = createApp(App);
 
 app.use(createPinia());

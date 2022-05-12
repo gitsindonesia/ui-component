@@ -1,63 +1,63 @@
 <script setup lang="ts">
-import { ref, toRefs, watch, computed } from "vue";
+import {ref, toRefs, watch, computed} from 'vue';
 
 const props = defineProps({
   modelValue: {
     type: String,
-    default: "",
+    default: '',
   },
   label: {
     type: String,
-    default: "",
+    default: '',
   },
   inputClass: {
     type: String,
-    default: "",
+    default: '',
   },
   color: {
     type: String,
-    default: "primary",
+    default: 'primary',
   },
   name: {
     type: String,
-    default: "",
+    default: '',
   },
   id: {
     type: String,
-    default: "",
+    default: '',
   },
 });
 
-const { modelValue, label, inputClass, color, name, id } = toRefs(props);
+const {modelValue, label, inputClass, color, name, id} = toRefs(props);
 
-const emit = defineEmits(["update:modelValue"]);
+const emit = defineEmits(['update:modelValue']);
 
 const value = ref<string | number | string[] | undefined>(props.modelValue);
 
 const colorClass = computed(() => {
   switch (color.value) {
-    case "primary":
+    case 'primary':
     default:
-      return "text-primary focus:ring-primary";
-    case "secondary":
-      return "text-secondary focus:ring-secondary";
-    case "info":
-      return "text-info focus:ring-info";
-    case "success":
-      return "text-success focus:ring-success";
-    case "warning":
-      return "text-warning focus:ring-warning";
-    case "error":
-      return "text-error focus:ring-error";
+      return 'text-primary focus:ring-primary';
+    case 'secondary':
+      return 'text-secondary focus:ring-secondary';
+    case 'info':
+      return 'text-info focus:ring-info';
+    case 'success':
+      return 'text-success focus:ring-success';
+    case 'warning':
+      return 'text-warning focus:ring-warning';
+    case 'error':
+      return 'text-error focus:ring-error';
   }
 });
 
 watch(
   value,
   (val) => {
-    emit("update:modelValue", val);
+    emit('update:modelValue', val);
   },
-  { immediate: true }
+  {immediate: true},
 );
 
 watch(
@@ -65,7 +65,7 @@ watch(
   (val) => {
     value.value = val;
   },
-  { immediate: true }
+  {immediate: true},
 );
 </script>
 
@@ -83,5 +83,3 @@ watch(
     {{ label }}
   </label>
 </template>
-
-<style scoped></style>

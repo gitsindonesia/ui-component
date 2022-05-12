@@ -1,25 +1,25 @@
 <script setup lang="ts">
-import { ref, toRefs, computed, watch } from "vue";
-import VInput from "./VInput.vue";
-import { ErrorMessage } from "vee-validate";
-import { EyeOffIcon, EyeIcon } from "@heroicons/vue/outline";
+import {ref, toRefs, computed, watch} from 'vue';
+import VInput from './VInput.vue';
+import {ErrorMessage} from 'vee-validate';
+import {EyeOffIcon, EyeIcon} from '@heroicons/vue/outline';
 
 const props = defineProps({
   modelValue: {
     type: String,
-    default: "",
+    default: '',
   },
   id: {
     type: String,
-    default: "",
+    default: '',
   },
   placeholder: {
     type: String,
-    default: "",
+    default: '',
   },
   type: {
     type: String,
-    default: "text",
+    default: 'text',
   },
   prepend: {
     type: Boolean,
@@ -35,7 +35,7 @@ const props = defineProps({
   },
   name: {
     type: String,
-    default: "",
+    default: '',
   },
   error: {
     type: Boolean,
@@ -47,7 +47,7 @@ const props = defineProps({
   },
   errorClass: {
     type: String,
-    default: "",
+    default: '',
   },
 });
 
@@ -63,31 +63,31 @@ const {
   type,
 } = toRefs(props);
 
-const emit = defineEmits(["update:modelValue", "blur"]);
+const emit = defineEmits(['update:modelValue', 'blur']);
 
 const value = ref(props.modelValue);
 const showPassword = ref(false);
 
 watch(value, (val) => {
-  emit("update:modelValue", val);
+  emit('update:modelValue', val);
 });
 
 const inputClass = computed(() => {
   let classes = [];
-  if (prepend.value) classes.push("pl-12");
-  if (append.value) classes.push("pr-12");
-  return classes.join(" ");
+  if (prepend.value) classes.push('pl-12');
+  if (append.value) classes.push('pr-12');
+  return classes.join(' ');
 });
 
 watch(modelValue, (val) => {
   value.value = val;
 });
 
-const onBlur = () => emit("blur");
+const onBlur = () => emit('blur');
 
-const isPassword = computed(() => type.value === "password");
+const isPassword = computed(() => type.value === 'password');
 const inputType = computed(() =>
-  isPassword.value ? (showPassword.value ? "text" : "password") : type.value
+  isPassword.value ? (showPassword.value ? 'text' : 'password') : type.value,
 );
 </script>
 
@@ -114,7 +114,15 @@ const inputType = computed(() =>
       />
       <div
         v-if="append || isPassword"
-        class="absolute right-0 inset-y-0 rounded-[4px] flex items-center justify-center"
+        class="
+          absolute
+          right-0
+          inset-y-0
+          rounded-[4px]
+          flex
+          items-center
+          justify-center
+        "
       >
         <slot name="append">
           <v-btn
@@ -145,5 +153,3 @@ const inputType = computed(() =>
     </div>
   </div>
 </template>
-
-<style scoped></style>

@@ -176,5 +176,3 @@ const dismiss = () => {
     </div>
   </transition>
 </template>
-
-<style scoped></style>

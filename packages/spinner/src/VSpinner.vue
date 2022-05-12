@@ -83,5 +83,3 @@ const colorClass = computed(() => {
     />
   </svg>
 </template>
-
-<style scoped></style>

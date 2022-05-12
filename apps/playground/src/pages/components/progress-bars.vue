@@ -41,5 +41,3 @@ const model = ref(80);
     </template>
   </Docs>
 </template>
-
-<style scoped></style>

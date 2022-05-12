@@ -355,7 +355,14 @@ const end = computed(() =>
               v-for="header in computedHeaders"
               :key="header.value"
               scope="col"
-              class="text-left py-3 text-sm font-semibold uppercase tracking-wider"
+              class="
+                text-left
+                py-3
+                text-sm
+                font-semibold
+                uppercase
+                tracking-wider
+              "
               :class="[getThClass(header), paddingClass, header.class]"
               :width="header.width"
             >
@@ -480,5 +487,3 @@ const end = computed(() =>
     </template>
   </div>
 </template>
-
-<style scoped></style>

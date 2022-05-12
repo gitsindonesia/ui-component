@@ -118,5 +118,3 @@ const propItems = [
 
   <DocsTable title="Props" :items="propItems" />
 </template>
-
-<style scoped></style>

@@ -75,8 +75,6 @@ watch(isOpen, (value) => {
 });
 </script>
 
-<style scoped></style>
-
 <template>
   <div>
     <div

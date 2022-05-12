@@ -77,5 +77,3 @@ const props = defineProps({
     </v-menu-tooltip>
   </router-link>
 </template>
-
-<style scoped></style>

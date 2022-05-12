@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { toRefs} from 'vue';
+import {toRefs} from 'vue';
 
 const props = defineProps({
   mini: {
@@ -27,5 +27,3 @@ const {mini, fixed} = toRefs(props);
     <slot />
   </div>
 </template>
-
-<style scoped></style>

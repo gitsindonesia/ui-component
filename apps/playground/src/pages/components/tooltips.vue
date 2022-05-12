@@ -89,5 +89,3 @@ const breadcrumbs = ref([
   >
   </Docs>
 </template>
-
-<style scoped></style>

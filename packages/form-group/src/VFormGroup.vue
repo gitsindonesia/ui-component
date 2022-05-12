@@ -42,5 +42,3 @@ const emit = defineEmits(['update:label']);
     </div>
   </div>
 </template>
-
-<style scoped></style>

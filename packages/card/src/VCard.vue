@@ -98,5 +98,3 @@ const tag = computed(() => (to.value ? 'router-link' : 'div'));
     </div>
   </component>
 </template>
-
-<style scoped></style>

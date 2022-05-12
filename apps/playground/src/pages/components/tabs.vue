@@ -132,5 +132,3 @@ const selected = ref(1);"
   >
   </Docs>
 </template>
-
-<style scoped></style>

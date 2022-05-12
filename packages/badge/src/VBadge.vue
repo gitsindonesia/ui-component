@@ -150,5 +150,3 @@ const onDismiss = () => {
     </button>
   </span>
 </template>
-
-<style scoped></style>

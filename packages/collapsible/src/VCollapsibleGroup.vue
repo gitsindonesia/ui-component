@@ -24,7 +24,12 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 const {accordion, items} = toRefs(props);
-const emit = defineEmits(['update:modelValue', 'update:items', 'item:change', 'onClickItems']);
+const emit = defineEmits([
+  'update:modelValue',
+  'update:items',
+  'item:change',
+  'onClickItems',
+]);
 const groupItems = ref(items.value);
 
 watch(
@@ -47,24 +52,21 @@ const onChange = (isOpen: boolean, item: CollapsibleItem, idx: number) => {
     });
   }
 };
-const onEventItems = (item: CollapsibleItem, idx: number) => { 
-}
+const onEventItems = (item: CollapsibleItem, idx: number) => {};
 </script>
 
 <template>
   <div ref="root">
     <slot>
-      <slot name="group:header" >
-      </slot>
+      <slot name="group:header"> </slot>
       <VCollapsible
         v-for="(item, idx) in groupItems"
         v-model="item.isOpen"
         v-bind="item"
         @change="onChange($event, item, idx)"
       >
-        <template #header >
-          <slot name="item:header"  :item="item" :index="idx">
-          </slot>
+        <template #header>
+          <slot name="item:header" :item="item" :index="idx"> </slot>
         </template>
         <slot name="items" :row="item" :index="idx">
           <slot :name="`item.${idx}`" :item="item">
@@ -75,5 +77,3 @@ const onEventItems = (item: CollapsibleItem, idx: number) => {
     </slot>
   </div>
 </template>
-
-<style scoped></style>

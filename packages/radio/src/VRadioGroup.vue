@@ -155,7 +155,13 @@ watch(
           :name="name"
           type="radio"
           :value="getValue(item)"
-          class="mr-2 transition duration-300 disabled:cursor-not-allowed disabled:border-gray-300"
+          class="
+            mr-2
+            transition
+            duration-300
+            disabled:cursor-not-allowed
+            disabled:border-gray-300
+          "
           :class="classes"
           :disabled="disabled"
           @change="onChange"
@@ -170,5 +176,3 @@ watch(
     <ErrorMessage class="text-error-600 text-sm mt-2 block" :name="name" />
   </div>
 </template>
-
-<style scoped></style>
