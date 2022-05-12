@@ -11,6 +11,8 @@ test:
     - npm i -g lerna yarn
     - lerna bootstrap
     - yarn coverage
+  tags:
+    - gits-dev-mars
 
 analyze:sonar:
   stage: analyze
