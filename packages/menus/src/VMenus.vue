@@ -1,8 +1,8 @@
 <script setup>
-import { ref, toRefs, computed } from "vue";
-import { ChevronDownIcon, ChevronRightIcon } from "@heroicons/vue/solid";
-import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
-import VBtn from "@gits-id/button";
+import {ref, toRefs, computed} from 'vue';
+import {ChevronDownIcon, ChevronRightIcon} from '@heroicons/vue/solid';
+import {Menu, MenuButton, MenuItems, MenuItem} from '@headlessui/vue';
+import VBtn from '@gits-id/button';
 
 const props = defineProps({
   items: {
@@ -19,22 +19,32 @@ const props = defineProps({
   },
   btnClass: {
     type: String,
-    default: "",
+    default: '',
   },
 });
 
 const emit = defineEmits([]);
 
-const { items, right, rightIcon } = toRefs(props);
+const {items, right, rightIcon} = toRefs(props);
 
-const placementClass = computed(() => (props.right ? "right-0" : "left-0"));
+const placementClass = computed(() => (props.right ? 'right-0' : 'left-0'));
 </script>
 
 <template>
   <Menu as="div" class="relative inline-block mx-4 text-left">
     <div>
       <MenuButton
-        class="inline-flex font-semibold text-gray-700 justify-center items-center w-full py-1 focus:outline-none text-sm"
+        class="
+          inline-flex
+          font-semibold
+          text-gray-700
+          justify-center
+          items-center
+          w-full
+          py-1
+          focus:outline-none
+          text-sm
+        "
         :class="btnClass"
       >
         <slot />
@@ -53,19 +63,30 @@ const placementClass = computed(() => (props.right ? "right-0" : "left-0"));
       leave-to-class="transform scale-95 opacity-0"
     >
       <MenuItems
-        class="absolute z-10 w-56 mt-2 bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+        class="
+          absolute
+          z-10
+          w-56
+          mt-2
+          bg-white
+          divide-y divide-gray-100
+          rounded-md
+          shadow-lg
+          ring-1 ring-black ring-opacity-5
+          focus:outline-none
+        "
         :class="placementClass"
       >
-        <div :class="['arrow', { right: right }]"></div>
+        <div :class="['arrow', {right: right}]"></div>
         <div class="px-1 py-1">
           <slot name="prepend" />
-          <MenuItem v-for="(item, i) in items" :key="i" v-slot="{ active }">
+          <MenuItem v-for="(item, i) in items" :key="i" v-slot="{active}">
             <VBtn
               :to="item.to"
-              text
               no-ring
+              block
               :color="active ? 'primary' : ''"
-              class="!items-center !justify-between text-sm font-semibold hover:text-primary !pl-3 !pr-1 !py-2 w-full focus:outline-none"
+              class="rounded border-none !justify-start font-normal"
             >
               <span class="flex-none">
                 {{ item.text }}
@@ -94,7 +115,7 @@ const placementClass = computed(() => (props.right ? "right-0" : "left-0"));
   overflow: hidden;
 }
 .arrow:after {
-  content: "";
+  content: '';
   position: absolute;
   width: 25px;
   height: 25px;
