@@ -16297,7 +16297,7 @@ vite@^2.7.10:
   optionalDependencies:
     fsevents "~2.3.2"
 
-vite@^2.8.6:
+vite@^2.8.6, vite@^2.9.1:
   version "2.9.9"
   resolved "https://registry.npmjs.org/vite/-/vite-2.9.9.tgz"
   integrity sha512-ffaam+NgHfbEmfw/Vuh6BHKKlI/XIAhxE5QSS7gFLIngxg171mg1P3a4LSRME0z2ZU1ScxoKzphkipcYwSD5Ew==
