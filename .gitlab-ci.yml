@@ -3,7 +3,7 @@ image: node:16.13.2-alpine
 stages:
   - test
   - analyze
-  # - release
+  - release
 
 test:
   stage: test
