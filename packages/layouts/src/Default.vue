@@ -1,5 +1,5 @@
-<script setup>
-import {inject, onMounted, ref, toRefs} from 'vue';
+<script setup lang="ts">
+import {inject, onMounted, ref} from 'vue';
 import SidebarMenu from './SidebarMenu.vue';
 import {
   MenuAlt1Icon,
@@ -35,7 +35,18 @@ window.addEventListener('resize', resizeHandler);
 <template>
   <div class="flex flex-row h-screen bg-blue-800">
     <div
-      class="bg-blue-800 z-10 h-screen top-0 left-0 py-2 flex-none flex flex-col justify-between transition-all duration-300"
+      class="
+        bg-blue-800
+        z-10
+        h-screen
+        top-0
+        left-0
+        py-2
+        flex-none flex flex-col
+        justify-between
+        transition-all
+        duration-300
+      "
       :class="isCollapsed ? 'collapsed' : 'normal'"
     >
       <div class="flex-grow">
@@ -81,7 +92,13 @@ window.addEventListener('resize', resizeHandler);
       </div>
     </div>
     <div
-      class="flex-grow bg-gray-200 rounded-tl-xl rounded-bl-xl min-h-screen overflow-y-auto"
+      class="
+        flex-grow
+        bg-gray-200
+        rounded-tl-xl rounded-bl-xl
+        min-h-screen
+        overflow-y-auto
+      "
     >
       <div class="flex justify-between mb-4">
         <button

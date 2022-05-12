@@ -1,7 +1,6 @@
 import {Meta, Story} from '@storybook/vue3';
 import VBtn from '@gits-id/button';
 import VInput from '@gits-id/input';
-import VInput from '@gits-id/input';
 import {RiMailLine, RiExternalLinkLine, RiPhoneLine} from 'vue-remix-icons';
 import {object, string} from 'yup';
 import {useForm} from 'vee-validate';

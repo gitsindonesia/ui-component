@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import {
   ref,
   toRefs,
@@ -97,11 +97,11 @@ const {
 const emit = defineEmits(['update:modelValue', 'change', 'remove']);
 
 const selected = ref(modelValue.value);
-const tabRefs = ref([]);
-const tabContent = ref(null);
-const tabSlider = ref(null);
+const tabRefs = ref<HTMLElement[]>([]);
+const tabContent = ref<HTMLDivElement>();
+const tabSlider = ref<HTMLDivElement>();
 
-const setTabRef = (el) => {
+const setTabRef = (el: any) => {
   if (el) {
     tabRefs.value.push(el);
   }
@@ -111,11 +111,14 @@ onBeforeUpdate(() => {
   tabRefs.value = [];
 });
 
-const moveNavigantion = (val) => {
-  tabContent.value.scrollLeft = tabContent.value.scrollLeft + val;
+const moveNavigation = (val: any) => {
+  if (tabContent.value) {
+    (tabContent.value as any).scrollLeft =
+      (tabContent.value as any).scrollLeft + val;
+  }
 };
 
-const onTabClicked = ({index, event}) => {
+const onTabClicked = ({index, event}: any) => {
   selected.value = index;
 
   const el = event.target;
@@ -136,16 +139,16 @@ const onTabClicked = ({index, event}) => {
     });
   } else {
     if (parent.children[parent.children.length - 1] === el) {
-      moveNavigantion(parent.offsetWidth);
+      moveNavigation(parent.offsetWidth);
     } else if (nextEl && nextEl.offsetLeft > parent.offsetWidth) {
-      moveNavigantion(nextEl.offsetWidth);
+      moveNavigation(nextEl.offsetWidth);
     } else if (prevEl && prevEl.offsetLeft < el.offsetLeft) {
-      moveNavigantion(-prevEl.offsetWidth);
+      moveNavigation(-prevEl.offsetWidth);
     }
   }
 };
 
-const setSlider = (index) => {
+const setSlider = (index: number) => {
   if (hideSlider.value) return;
 
   nextTick(() => {
@@ -154,36 +157,38 @@ const setSlider = (index) => {
       console.warn('Tab item not found', el);
       return;
     }
-    if (vertical.value) {
-      tabSlider.value.style.top = el.offsetTop + 'px';
-      tabSlider.value.style.height = el.offsetHeight + 'px';
-    } else {
-      tabSlider.value.style.left = el.offsetLeft + 'px';
-      tabSlider.value.style.width = el.offsetWidth + 'px';
+    if (tabSlider.value) {
+      if (vertical.value) {
+        tabSlider.value.style.top = el.offsetTop + 'px';
+        tabSlider.value.style.height = el.offsetHeight + 'px';
+      } else {
+        tabSlider.value.style.left = el.offsetLeft + 'px';
+        tabSlider.value.style.width = el.offsetWidth + 'px';
+      }
     }
   });
 };
 
 onMounted(() => {
-  setSlider(selected.value);
+  setSlider(+selected.value);
 });
 
 watch(selected, (value) => {
   emit('update:modelValue', value);
   emit('change', value);
 
-  setSlider(value);
+  setSlider(+value);
 });
 
 watch(modelValue, (value) => {
   selected.value = value;
 });
 
-const previous = () => moveNavigantion(-200);
+const previous = () => moveNavigation(-200);
 
-const next = () => moveNavigantion(200);
+const next = () => moveNavigation(200);
 
-const onTabRemoved = (index) => {
+const onTabRemoved = (index: number) => {
   emit('remove', index);
 };
 
@@ -263,13 +268,11 @@ const sliderColor = computed(() => getBgColor(color.value));
 </template>
 
 <style scoped>
-.tab-items {
-  scroll-behavior: smooth;
-}
 .tab-items::-webkit-scrollbar {
   display: none;
 }
 .tab-items {
+  scroll-behavior: smooth;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }

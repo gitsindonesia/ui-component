@@ -1,9 +1,9 @@
-<script setup>
+<script setup lang="ts">
 import {ref, toRefs, watch} from 'vue';
-import {UserIcon, LockClosedIcon, ArrowLeftIcon} from '@heroicons/vue/outline';
-import {VInput, VInputGroup} from '@gits-id/input';
+import {ArrowLeftIcon} from '@heroicons/vue/outline';
+import {VInput} from '@gits-id/input';
 import Button from '@gits-id/button';
-import {Form, Field, useForm} from 'vee-validate';
+import {Form, useForm} from 'vee-validate';
 import {string, object, ref as YupRef} from 'yup';
 import Alert from '@gits-id/alert';
 

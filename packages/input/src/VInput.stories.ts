@@ -7,7 +7,6 @@ import {themeColors} from '@gits-id/utils';
 import VBtn from '@gits-id/button';
 import {useForm} from 'vee-validate';
 import {object, string} from 'yup';
-import VBtn from '@gits-id/button';
 
 export default {
   title: 'Components/Form/Input',
@@ -40,26 +39,20 @@ export default {
 } as Meta;
 
 const Template: Story<VInputProps> = (args) => ({
-  // Components used in your story `template` are defined in the `components` object
   components: {VInput},
-  // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
     return {args};
   },
-  // And then the `args` are bound to your component with `v-bind="args"`
   template: `
   <VInput v-bind='args'/>
 `,
 });
 
 export const Variants: Story<VInputProps> = (args) => ({
-  // Components used in your story `template` are defined in the `components` object
   components: {VInput},
-  // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
     return {args, themeColors};
   },
-  // And then the `args` are bound to your component with `v-bind="args"`
   template: `
     <div class='space-y-2 border-none'>
       <template v-for='color in themeColors' :key='color'>
@@ -414,11 +407,3 @@ export const Validation: Story<VInputProps> = (args) => ({
     </form>
 `,
 });
-// Validation.parameters = {
-//   docs: {
-//     source: {
-//       code: `
-//       `,
-//     },
-//   },
-// };

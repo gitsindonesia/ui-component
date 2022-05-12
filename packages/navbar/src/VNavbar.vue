@@ -3,10 +3,15 @@ import {computed, ref, toRefs, watch, PropType} from 'vue';
 import {UserCircleIcon, ChevronDownIcon} from '@heroicons/vue/solid';
 import {MenuIcon} from '@heroicons/vue/outline';
 import VBtn from '@gits-id/button';
-import {Disclosure, DisclosureButton, DisclosurePanel} from '@headlessui/vue';
+import {
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+  Menu,
+  MenuItem,
+} from '@headlessui/vue';
 import VMenus from '@gits-id/menus';
 import VLogo from '@gits-id/logo';
-import {Menu, MenuItem} from '@headlessui/vue';
 import type {VNavbarMenuItem} from './types';
 
 const props = defineProps({
@@ -89,7 +94,7 @@ const userFirstName = computed(() => user.value?.name?.split(' ')?.[0]);
         leave-to-class="opacity-0 scale-95"
       >
         <div v-if="isOpen" class="shadow-lg mt-1 absolute bg-white w-full z-10">
-          <nav class="my-3 block w-full">
+          <nav class="my-3 block w-full" aria-label="Navigation">
             <template v-for="menu in menus" :key="menu.text">
               <Disclosure v-if="menu.children">
                 <DisclosureButton
@@ -202,7 +207,10 @@ const userFirstName = computed(() => user.value?.name?.split(' ')?.[0]);
         <v-logo :img-class="imgClass" />
       </slot>
 
-      <nav class="ml-4 flex items-center flex-grow">
+      <nav
+        class="ml-4 flex items-center flex-grow"
+        aria-label="Desktop Navigation"
+      >
         <template v-for="menu in menus" :key="menu.text">
           <v-menus v-if="menu.children" :items="menu.children">
             {{ menu.text }}

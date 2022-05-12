@@ -1,5 +1,5 @@
-<script setup>
-import {ref, toRefs} from 'vue';
+<script setup lang="ts">
+import {toRefs} from 'vue';
 
 const props = defineProps({
   label: {
@@ -26,7 +26,7 @@ const props = defineProps({
 
 const {label, labelFor, inline, labelClass, inlineClass} = toRefs(props);
 
-const emit = defineEmits(['update:label']);
+defineEmits(['update:label']);
 </script>
 
 <template>

@@ -15,9 +15,6 @@ export function useRange(
 
   function validation() {
     if (/^\d*$/.test(String(minValue.value))) {
-      // if (minValue.value > max.value) {
-      //   minValue.value = 9500;
-      // }
       if (minValue.value < min.value) {
         minValue.value = min.value;
       }
@@ -28,13 +25,7 @@ export function useRange(
       if (maxValue.value > max.value) {
         maxValue.value = max.value;
       }
-      // if (maxValue.value < min.value) {
-      //   maxValue.value = 200;
-      // }
     }
-    //  else {
-    //   maxValue.value = 10000;
-    // }
   }
 
   function minTrigger() {

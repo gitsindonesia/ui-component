@@ -1,12 +1,12 @@
-<script setup>
-import {ref, toRefs, computed} from 'vue';
+<script setup lang="ts">
+import {computed, PropType} from 'vue';
 import {ChevronDownIcon, ChevronRightIcon} from '@heroicons/vue/solid';
 import {Menu, MenuButton, MenuItems, MenuItem} from '@headlessui/vue';
 import VBtn from '@gits-id/button';
 
 const props = defineProps({
   items: {
-    type: Array,
+    type: Array as PropType<Record<string, any>>,
     default: () => [],
   },
   right: {
@@ -22,10 +22,6 @@ const props = defineProps({
     default: '',
   },
 });
-
-const emit = defineEmits([]);
-
-const {items, right, rightIcon} = toRefs(props);
 
 const placementClass = computed(() => (props.right ? 'right-0' : 'left-0'));
 </script>

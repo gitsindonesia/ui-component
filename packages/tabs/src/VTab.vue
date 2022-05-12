@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import {ref, toRefs} from 'vue';
 import {TrashIcon} from '@heroicons/vue/outline';
 import VBtn from '@gits-id/button';
@@ -59,13 +59,13 @@ const emit = defineEmits(['click', 'remove']);
 
 const hovered = ref(0);
 
-const onClick = (index, event) => {
-  emit('click', {index, event, item: item.value});
+const onClick = (idx: number, event: any) => {
+  emit('click', {index: idx, event, item: item.value});
 };
 
-const remove = (index) => emit('remove', index);
+const remove = (idx: number) => emit('remove', idx);
 
-const setRef = (el) => {
+const setRef = (el: any) => {
   wrapper.value = el;
   if (props.getRef) {
     props.getRef(el);
@@ -100,7 +100,7 @@ const setRef = (el) => {
     <div
       @click="onClick(index, $event)"
       @mouseover="hovered = index"
-      @mouseout="hovered = null"
+      @mouseout="hovered = -1"
     >
       <slot />
     </div>

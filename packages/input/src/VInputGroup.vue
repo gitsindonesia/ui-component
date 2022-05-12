@@ -51,17 +51,8 @@ const props = defineProps({
   },
 });
 
-const {
-  prepend,
-  append,
-  inputProps,
-  error,
-  errorMessages,
-  name,
-  errorClass,
-  modelValue,
-  type,
-} = toRefs(props);
+const {prepend, append, inputProps, error, name, errorClass, modelValue, type} =
+  toRefs(props);
 
 const emit = defineEmits(['update:modelValue', 'blur']);
 
