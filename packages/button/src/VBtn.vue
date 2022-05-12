@@ -95,15 +95,15 @@ const computedComponent = computed(() => {
 });
 
 const attrs = computed(() => {
-  const attrs: Record<string, any> | string = {};
+  const attributes: Record<string, any> | string = {};
   if (props.to) {
-    attrs.to = props.to;
+    attributes.to = props.to;
   } else if (props.href) {
-    attrs.href = props.href;
+    attributes.href = props.href;
   } else {
-    attrs.type = props.type;
+    attributes.type = props.type;
   }
-  return attrs;
+  return attributes;
 });
 
 const spinnerColor = computed(() => {
