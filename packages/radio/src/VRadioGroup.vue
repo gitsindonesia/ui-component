@@ -65,9 +65,7 @@ const props = defineProps({
 const {
   modelValue,
   error,
-  errorMessages,
   value,
-  readonly,
   disabled,
   label,
   items,
@@ -105,11 +103,11 @@ const getText = (item: RadioItem) => {
   return typeof item === 'object' ? item?.[itemText.value] : item;
 };
 
-watch(selected, (value) => {
-  emit('update:modelValue', value);
-  emit('update:value', value);
-  emit('input', value);
-  emit('change', value);
+watch(selected, (val) => {
+  emit('update:modelValue', val);
+  emit('update:value', val);
+  emit('input', val);
+  emit('change', val);
 });
 
 const {class: sizeClass} = useTextSize(size.value);

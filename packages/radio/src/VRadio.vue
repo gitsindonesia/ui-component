@@ -36,9 +36,6 @@ const value = ref<string | number | string[] | undefined>(props.modelValue);
 
 const colorClass = computed(() => {
   switch (color.value) {
-    case 'primary':
-    default:
-      return 'text-primary focus:ring-primary';
     case 'secondary':
       return 'text-secondary focus:ring-secondary';
     case 'info':
@@ -49,6 +46,9 @@ const colorClass = computed(() => {
       return 'text-warning focus:ring-warning';
     case 'error':
       return 'text-error focus:ring-error';
+    case 'primary':
+    default:
+      return 'text-primary focus:ring-primary';
   }
 });
 

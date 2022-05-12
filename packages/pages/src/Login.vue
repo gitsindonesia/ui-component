@@ -1,10 +1,10 @@
-<script setup>
+<script setup lang="ts">
 import {computed, ref, toRefs, watch} from 'vue';
 import {UserIcon, LockClosedIcon} from '@heroicons/vue/outline';
-import {VInput, VInputGroup} from '@gits-id/input';
+import {VInput} from '@gits-id/input';
 import VBtn from '@gits-id/button';
 import VCheckbox from '@gits-id/checkbox';
-import {Form, Field, useForm} from 'vee-validate';
+import {useForm} from 'vee-validate';
 import {object, string} from 'yup';
 import VAlert from '@gits-id/alert';
 

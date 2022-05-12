@@ -6,7 +6,6 @@ import type {VDataTableHeader, VDataTableItem} from './types';
 import {ChevronDownIcon, ChevronUpIcon} from '@heroicons/vue/solid';
 import VSpinner from '@gits-id/spinner';
 import VCheckbox from '@gits-id/checkbox';
-// import get from 'lodash/get';
 import {get} from '@gits-id/utils';
 
 const props = defineProps({
@@ -260,10 +259,6 @@ const handleSort = (header: VDataTableHeader) => {
   });
 };
 
-const onPerPageChange = (perPage: {text: string; value: number}) => {
-  emit('update:itemsPerPage', perPage.value);
-};
-
 const paddingClass = computed(() => (dense.value ? 'px-4 py-2' : 'px-6 py-3'));
 
 const onPaginationChange = (params = {}) => {
@@ -326,19 +321,8 @@ watch(
   {deep: true, immediate: true},
 );
 
-// watch(
-//   value,
-//   (val) => {
-//     selected.value = val;
-//   },
-//   {deep: true, immediate: true},
-// );
-
 const start = computed(() =>
   totalItems.value > 0 ? (page.value - 1) * itemsPerPage.value + 1 : 1,
-);
-const end = computed(() =>
-  totalItems.value > 0 ? start.value + itemsPerPage.value - 1 : null,
 );
 </script>
 

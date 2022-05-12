@@ -31,8 +31,6 @@ const props = withDefaults(defineProps<Props>(), {
 const {title, icon, value, color, from, progressColor, progress, up, down} =
   toRefs(props);
 
-// const emit = defineEmits(['update:title']);
-
 const colorClass = computed(() => {
   switch (color.value) {
     case 'primary':

@@ -45,14 +45,13 @@ const {title, subtitle} = toRefs(props);
 
 const emit = defineEmits(['submit']);
 
+const passwordRegex = /[^\w\d]*((\d+.*[A-Za-z]+.*)|[A-Za-z]+.*(\d+.*))/i;
+
 const schema = object({
   password: string()
     .required()
     .min(8)
-    .matches(
-      /[^\w\d]*(([0-9]+.*[A-Za-z]+.*)|[A-Za-z]+.*([0-9]+.*))/i,
-      props.passwordFormatError,
-    )
+    .matches(passwordRegex, props.passwordFormatError)
     .label(props.passwordText),
   passwordConfirmation: string()
     .required()

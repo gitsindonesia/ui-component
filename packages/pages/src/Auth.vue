@@ -55,16 +55,19 @@ const {
           v-if="image === 'authentication'"
           src="./assets/authentication.svg"
           class="max-w-full sm:max-w-2xl sm:my-5 block"
+          alt="authentication illustration"
         />
         <img
           v-else-if="image === 'login'"
           src="./assets/login.svg"
           class="max-w-full sm:max-w-2xl sm:my-5 block"
+          alt="login illustration"
         />
         <img
           v-else-if="image === 'forgot-password'"
           src="./assets/forgot-password.svg"
           class="max-w-full sm:max-w-2xl sm:my-5 block"
+          alt="forgot password illustration"
         />
       </slot>
     </div>

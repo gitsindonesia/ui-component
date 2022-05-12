@@ -22,13 +22,10 @@ export default {
 } as Meta;
 
 const Template: Story = (args) => ({
-  // Components used in your story `template` are defined in the `components` object
   components: {VRadioGroup},
-  // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
     return {args};
   },
-  // And then the `args` are bound to your component with `v-bind="args"`
   template: `<V-RadioGroup v-bind='args'/>`,
 });
 
@@ -89,12 +86,3 @@ NoLabel.parameters = {
     },
   },
 };
-
-// export const RadioGroup: Story = (args) => ({
-//   components: {VRadioGroup},
-//   setup() {
-//     return {args};
-//   },
-//   template: '<VRadioGroup v-bind="args" />',
-// });
-// RadioGroup.storyName = 'RadioGroup';

@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import {computed, ref, toRefs, watch} from 'vue';
 import Pagino from 'pagino';
 
@@ -92,8 +92,8 @@ const cantPrev = computed(() => page.value <= 1);
 const activeClasses = computed(() => activeClass.value);
 const defaultClasses = computed(() => defaultClass.value);
 
-const emitPage = (page) => {
-  emit('update:modelValue', page);
+const emitPage = (newPage: number) => {
+  emit('update:modelValue', newPage);
 };
 
 watch(

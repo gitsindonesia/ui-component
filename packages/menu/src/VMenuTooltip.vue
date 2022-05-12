@@ -1,5 +1,5 @@
-<script setup>
-import {ref, toRefs} from 'vue';
+<script setup lang="ts">
+import {toRefs} from 'vue';
 
 const props = defineProps({
   show: {
@@ -10,7 +10,7 @@ const props = defineProps({
 
 const {show} = toRefs(props);
 
-const emit = defineEmits(['update:show']);
+defineEmits(['update:show']);
 </script>
 
 <template>
