@@ -4,13 +4,15 @@ import type {DropdownItemProps} from './types';
 import DropdownItem from './DropdownItem.vue';
 import {RiArrowDownSLine as IconArrowDown} from 'vue-remix-icons';
 
-const props = withDefaults(
+withDefaults(
   defineProps<{
     modelValue?: boolean;
     btnProps?: Record<string, any>;
     label?: string;
     right?: boolean;
     items?: DropdownItemProps[];
+    top?: boolean;
+    topClass?: string;
   }>(),
   {
     modelValue: false,
@@ -20,6 +22,9 @@ const props = withDefaults(
     label: 'Options',
     right: false,
     items: () => [],
+    top: false,
+    topClass: 'bottom-10',
+    bottomClass: 'top-0',
   },
 );
 </script>
@@ -50,14 +55,13 @@ const props = withDefaults(
           p-1
           w-56
           mt-2
-          origin-top-right
           bg-white
           rounded-md
           shadow-lg
           ring-1 ring-black ring-opacity-5
           focus:outline-none
         "
-        :class="right ? 'right-0' : 'left-0'"
+        :class="[right ? 'right-0' : 'left-0', top ? topClass : bottomClass]"
       >
         <slot>
           <DropdownItem v-for="item in items" :key="item.text" v-bind="item" />

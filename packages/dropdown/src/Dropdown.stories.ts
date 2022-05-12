@@ -36,7 +36,7 @@ const Template: Story = (args, {argTypes}) => ({
     return {args, argTypes};
   },
   template: `
-    <div class="flex justify-center">
+    <div class="flex justify-center" :class="args.top ? 'mt-60' : ''">
       <Dropdown v-bind="args"/>
     </div>
   `,
@@ -48,6 +48,11 @@ Default.args = {};
 export const Right = Template.bind({});
 Right.args = {
   right: true,
+};
+
+export const Top = Template.bind({});
+Top.args = {
+  top: true,
 };
 
 export const RouterLink = Template.bind({});
@@ -98,8 +103,8 @@ export const CustomActivator: Story = (args, {argTypes}) => ({
     return {args, argTypes, Button};
   },
   template: `
-    <div class="flex justify-center">
-      <Dropdown v-bind="args">
+    <div class="flex justify-center mt-60">
+      <Dropdown v-bind="args" top top-class="bottom-12">
         <template #activator>
           <DropdownButton :as="Button" color="error" outlined>
             My Button
