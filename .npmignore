@@ -6,3 +6,4 @@ apps
 storybook-static
 dist
 .firebase
+coverage

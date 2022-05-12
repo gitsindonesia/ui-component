@@ -11,3 +11,4 @@ lerna-debug.log
 build/**
 yarn-error.log
 .idea
+coverage

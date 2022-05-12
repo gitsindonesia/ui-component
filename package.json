@@ -11,7 +11,8 @@
     "build": "lerna run build --scope @gits-id/playground --stream",
     "deploy:ui": "firebase deploy --only hosting:ui",
     "deploy:playground": "firebase deploy --only hosting:playground",
-    "test": "vitest"
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@vueuse/core": "^7.7.1",
@@ -52,6 +53,7 @@
     "@vue/test-utils": "^2.0.0-rc.17",
     "autoprefixer": "^10.4.4",
     "babel-loader": "^8.2.4",
+    "c8": "^7.11.2",
     "conventional-changelog-cli": "^2.2.2",
     "cross-env": "^7.0.3",
     "doctrine": "^3.0.0",
