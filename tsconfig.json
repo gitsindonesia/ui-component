@@ -15,6 +15,6 @@
     "types": ["vite/client"],
     "emitDeclarationOnly": true
   },
-  "include": ["types", "packages"],
+  "include": ["types", "packages", "env.d.ts"],
   "exclude": ["types/**/**.stories.ts"]
 }

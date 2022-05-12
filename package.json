@@ -82,7 +82,7 @@
     "util-deprecate": "^1.0.2",
     "uuid-browser": "^3.1.0",
     "vite": "^2.8.6",
-    "vitest": "^0.7.10",
+    "vitest": "^0.12.4",
     "vue-loader": "^16.8.3",
     "webpack": "^5.70.0"
   },

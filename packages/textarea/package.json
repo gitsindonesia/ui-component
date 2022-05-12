@@ -33,5 +33,6 @@
   "jsdelivr": "dist/textarea.iife.js",
   "module": "./dist/textarea.es.js",
   "types": "./dist/types/index.d.ts",
-  "gitHead": "1c8786cbf03a24b464264d95d0d3a90812476412"
+  "gitHead": "1c8786cbf03a24b464264d95d0d3a90812476412",
+  "private": true
 }
