@@ -16,8 +16,8 @@ test:
   before_script:
     - yarn config set cache-folder .yarn
   script:
-    - lerna bootstrap
-    - lerna run build
+    - npx lerna bootstrap
+    - npx lerna run build
     - yarn coverage
   only:
     - main
