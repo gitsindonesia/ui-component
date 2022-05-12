@@ -1,4 +1,4 @@
-image: node:14.17.5-alpine
+image: node:16.13.2-alpine
 
 stages:
   - analyze
