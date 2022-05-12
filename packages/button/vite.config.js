@@ -48,4 +48,11 @@ export default defineConfig({
       ],
     },
   },
+  test: {
+    globals: true,
+    environment: 'happy-dom',
+    coverage: {
+      reporter: ['text', 'json', 'html', 'lcov'],
+    },
+  },
 });

@@ -17,5 +17,10 @@
     "allowSyntheticDefaultImports": true
   },
   "include": ["vue.d.ts", "*.vue", "src"],
-  "exclude": ["src/**/*.stories.ts", "src/**/*.spec.ts", "src/**/*.test.ts"]
+  "exclude": [
+    "src/**/*.stories.ts",
+    "src/**/*.stories.js",
+    "src/**/*.spec.ts",
+    "src/**/*.test.ts"
+  ]
 }
