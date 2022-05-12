@@ -1,8 +1,16 @@
 image: node:16.13.2-alpine
 
 stages:
+  - test
   - analyze
-  - release
+  # - release
+
+test:
+  stage: test
+  script:
+    - npm i -g lerna yarn
+    - lerna bootstrap
+    - yarn coverage
 
 analyze:sonar:
   stage: analyze
@@ -17,11 +25,6 @@ analyze:sonar:
     paths:
       - .sonar/cache
   script:
-    # - npm i -g yarn lerna
-    # - lerna bootstrap
-    # - yarn coverage
-    - npm i
-    - npm run coverage
     # - sonar-scanner -Dsonar.projectKey=$CI_PROJECT_NAME -Dsonar.sources=. -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_USER -Dsonar.password=$SONAR_PASSWORD
     - sonar-scanner -Dsonar.projectKey=$CI_PROJECT_NAME -Dsonar.sources=src -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_USER -Dsonar.password=$SONAR_PASSWORD -Dsonar.exclusions=**/express/routers/**,**/rabbit-rpc/routers/**,**/mocks/**,**/*.stories.ts,**/*.stories.js -Dsonar.cpd.exclusions=**/router/**,**/utils/menu.ts -Dsonar.test.inclusions=**/*.test.js,**/*.test.ts,**/*.spec.js,**/*.spec.ts -Dsonar.javascript.coveragePlugin=lcov -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info -Dsonar.testExecutionReportPaths=coverage/test-reporter.xml
   allow_failure: false
