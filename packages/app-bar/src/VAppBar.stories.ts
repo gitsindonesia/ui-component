@@ -14,13 +14,10 @@ export default {
 } as Meta;
 
 const Template: Story<{}> = (args) => ({
-  // Components used in your story `template` are defined in the `components` object
   components: {VAppBar},
-  // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
     return {args};
   },
-  // And then the `args` are bound to your component with `v-bind="args"`
   template: `<VAppBar v-bind="args">Hello</VAppBar>`,
 });
 
@@ -79,7 +76,7 @@ Custom.args = {
 Custom.parameters = {
   docs: {
     source: {
-      code: `<v-app-bar dark class="rounded-lg"/>`,
+      code: `<v-app-bar class="rounded-lg">`,
     },
   },
 };

@@ -45,29 +45,31 @@ const toggleMenu = () => emit('toggleMenu');
   <div
     class="v-app-bar"
     :class="[
-      dark ? 'bg-black' : 'bg-white',
+      dark ? 'bg-gray-900 text-white' : 'bg-white',
       mini ? 'v-app-bar-mini' : drawer ? 'v-app-bar-drawer' : '',
       defaultHidden ? 'flex sm:hidden' : fixed ? 'fixed w-full' : 'relative',
     ]"
   >
-    <template v-if="!hideToggle">
-      <slot name="toggle" :toggle="toggleMenu">
-        <v-btn
-          text
-          icon
-          dense
-          rounded
-          :color="dark ? 'white' : ''"
-          class="hover:bg-transparent hover:text-primary-500 mr-2"
-          @click="toggleMenu"
-        >
-          <MenuIcon class="w-6 h-6" />
-        </v-btn>
-      </slot>
-    </template>
-    <div class="flex-grow">
-      <slot />
-    </div>
+    <slot>
+      <template v-if="!hideToggle">
+        <slot name="toggle" :toggle="toggleMenu">
+          <v-btn
+            text
+            icon
+            dense
+            rounded
+            :color="dark ? 'white' : ''"
+            class="hover:bg-transparent hover:text-primary-500 mr-2"
+            @click="toggleMenu"
+          >
+            <MenuIcon class="w-6 h-6" />
+          </v-btn>
+        </slot>
+      </template>
+      <div class="flex-grow">
+        <slot />
+      </div>
+    </slot>
   </div>
 </template>
 
