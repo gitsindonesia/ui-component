@@ -11,8 +11,10 @@ test:
     - npm i -g lerna yarn
     - lerna bootstrap
     - yarn coverage
+  only:
+    - main
   tags:
-    - gits-dev-mars
+    - nginx-proxy-sonar
 
 analyze:sonar:
   stage: analyze
