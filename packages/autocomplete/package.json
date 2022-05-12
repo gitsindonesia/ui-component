@@ -27,7 +27,8 @@
     "@gits-id/tailwind-config": "^0.3.0",
     "@gits-id/utils": "^0.3.0",
     "@vue/test-utils": "^2.0.0-rc.17",
-    "vitest": "^0.7.10"
+    "vite": "^2.9.9",
+    "vitest": "^0.12.4"
   },
   "main": "dist/autocomplete.umd.js",
   "unpkg": "dist/autocomplete.iife.js",

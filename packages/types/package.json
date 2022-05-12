@@ -13,5 +13,9 @@
   "dependencies": {
     "vue": "^3"
   },
-  "gitHead": "38a692f5d09dc0b64918d29d39003f8ab9998611"
+  "gitHead": "38a692f5d09dc0b64918d29d39003f8ab9998611",
+  "devDependencies": {
+    "vite": "^2.9.9",
+    "vitest": "^0.12.4"
+  }
 }

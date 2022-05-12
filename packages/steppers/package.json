@@ -22,7 +22,8 @@
     "@gits-id/tailwind-config": "^0.3.0",
     "@vue/compiler-dom": "^3.2.31",
     "@vue/test-utils": "^2.0.0-rc.17",
-    "vitest": "^0.7.10"
+    "vite": "^2.9.9",
+    "vitest": "^0.12.4"
   },
   "main": "dist/steppers.umd.js",
   "unpkg": "dist/steppers.iife.js",

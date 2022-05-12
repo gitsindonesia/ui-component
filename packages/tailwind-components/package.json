@@ -11,5 +11,12 @@
   "author": "",
   "license": "ISC",
   "gitHead": "1c8786cbf03a24b464264d95d0d3a90812476412",
-  "main": "index.js"
+  "main": "index.js",
+  "devDependencies": {
+    "vite": "^2.9.9",
+    "vitest": "^0.12.4"
+  },
+  "dependencies": {
+    "vue": "^3.2.33"
+  }
 }

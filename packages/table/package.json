@@ -19,7 +19,8 @@
     "@gits-id/pagination": "^0.3.0",
     "@gits-id/select": "^0.3.0",
     "@gits-id/spinner": "^0.3.0",
-    "@gits-id/utils": "^0.3.0"
+    "@gits-id/utils": "^0.3.0",
+    "vue": "^3.2.33"
   },
   "devDependencies": {
     "@gits-id/tailwind-config": "^0.3.0",
@@ -27,7 +28,8 @@
     "@heroicons/vue": "^1.0.6",
     "@vue/test-utils": "^2.0.0-rc.17",
     "tailwindcss": "^3.0.23",
-    "vitest": "^0.7.10"
+    "vite": "^2.9.9",
+    "vitest": "^0.12.4"
   },
   "main": "dist/table.umd.js",
   "unpkg": "dist/table.iife.js",
