@@ -22,7 +22,7 @@ const props = defineProps({
   },
   getRef: {
     type: Function,
-    default: () => {},
+    default: undefined,
   },
   vertical: {
     type: Boolean,

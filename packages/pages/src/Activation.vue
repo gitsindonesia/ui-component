@@ -3,7 +3,7 @@ import {ref, toRefs, watch} from 'vue';
 import {ArrowLeftIcon} from '@heroicons/vue/outline';
 import {VInput} from '@gits-id/input';
 import Button from '@gits-id/button';
-import {Form, useForm} from 'vee-validate';
+import {useForm} from 'vee-validate';
 import {string, object, ref as YupRef} from 'yup';
 import Alert from '@gits-id/alert';
 
