@@ -37,6 +37,7 @@ analyze:sonar:
     paths:
       - .sonar/cache
   before_script:
+    - npm i -g yarn
     - yarn config set cache-folder .yarn
   script:
     - npx lerna bootstrap
