@@ -26,5 +26,5 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
       - run: npx lerna bootstrap
-      - run: npx lerna run build
+      - run: npx lerna run build --include-dependencies
       - run: yarn test
