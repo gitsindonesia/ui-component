@@ -25,5 +25,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: yarn install
-      - run: yarn test
+      - run: npm i -g lerna
+      - run: lerna bootstrap
+      - run: lerna run build
+      - run: yarn coverage
