@@ -1,9 +1,9 @@
 image: node:16.13.2-alpine
 
 stages:
+  - test
   - analyze
-  # - test
-  - release
+  # - release
 
 # And to cache them as well.
 cache:
@@ -24,6 +24,21 @@ cache:
 #   tags:
 #     - nginx-proxy-sonar
 
+coverage:
+  stage: test
+  script:
+    - npm i -g lerna
+    - lerna bootstrap
+    - lerna run build
+    - yarn coverage
+  only:
+    - main
+  tags:
+    - nginx-proxy-sonar
+  artifacts:
+    paths:
+      - $CI_PROJECT_DIR/coverage/
+
 analyze:sonar:
   stage: analyze
   variables:
@@ -36,12 +51,7 @@ analyze:sonar:
     key: '${CI_JOB_NAME}'
     paths:
       - .sonar/cache
-  before_script:
-    - npm i -g yarn
-    - yarn config set cache-folder .yarn
   script:
-    - yarn install
-    - yarn coverage
     # - sonar-scanner -Dsonar.projectKey=$CI_PROJECT_NAME -Dsonar.sources=. -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_USER -Dsonar.password=$SONAR_PASSWORD
     - sonar-scanner -Dsonar.projectKey=$CI_PROJECT_NAME -Dsonar.sources=packages -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_USER -Dsonar.password=$SONAR_PASSWORD -Dsonar.exclusions=**/express/routers/**,**/rabbit-rpc/routers/**,**/mocks/**,**/*.stories.ts,**/*.stories.js -Dsonar.cpd.exclusions=**/router/**,**/utils/menu.ts -Dsonar.test.inclusions=**/*.test.js,**/*.test.ts,**/*.spec.js,**/*.spec.ts -Dsonar.javascript.coveragePlugin=lcov -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
   allow_failure: false
