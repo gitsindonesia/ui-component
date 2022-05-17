@@ -23,6 +23,7 @@
   },
   "gitHead": "1c8786cbf03a24b464264d95d0d3a90812476412",
   "devDependencies": {
+    "c8": "^7.11.3",
     "vite": "^2.9.9",
     "vitest": "^0.12.4"
   }

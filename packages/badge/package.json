@@ -22,6 +22,7 @@
     "@gits-id/tailwind-config": "^0.3.0",
     "@gits-id/utils": "^0.3.0",
     "@vue/test-utils": "^2.0.0-rc.17",
+    "c8": "^7.11.3",
     "tailwindcss": "^3.0.23",
     "vite": "^2.9.9",
     "vitest": "^0.12.4"
