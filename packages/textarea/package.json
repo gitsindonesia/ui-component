@@ -29,10 +29,9 @@
     "vite": "^2.9.1",
     "vitest": "^0.12.4"
   },
-  "main": "dist/textarea.umd.js",
+  "main": "src/index.ts",
   "unpkg": "dist/textarea.iife.js",
   "jsdelivr": "dist/textarea.iife.js",
-  "module": "./dist/textarea.es.js",
-  "types": "./dist/types/index.d.ts",
+  "module": "src/index.ts",
   "gitHead": "1c8786cbf03a24b464264d95d0d3a90812476412"
 }
