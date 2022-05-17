@@ -1,14 +1,14 @@
 {
-  "name": "@gits-id/textarea",
+  "name": "@gits-id/forms",
   "version": "0.3.0",
-  "description": "GITS Textarea Component",
+  "description": "GITS Form Component",
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "npm run build",
     "test": "vitest"
   },
   "keywords": [
-    "textarea",
+    "form",
     "gits",
     "ui-component"
   ],
@@ -30,8 +30,8 @@
     "vitest": "^0.12.4"
   },
   "main": "src/index.ts",
-  "unpkg": "dist/textarea.iife.js",
-  "jsdelivr": "dist/textarea.iife.js",
+  "unpkg": "dist/forms.iife.js",
+  "jsdelivr": "dist/forms.iife.js",
   "module": "src/index.ts",
   "gitHead": "1c8786cbf03a24b464264d95d0d3a90812476412"
 }

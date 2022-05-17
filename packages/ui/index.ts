@@ -22,7 +22,7 @@ import {VRadio, VRadioGroup} from '@gits-id/radio';
 import VSelect from '@gits-id/select';
 import VSwitch from '@gits-id/switch';
 import VTabs from '@gits-id/tabs';
-import VTextarea from '@gits-id/textarea';
+import {Textarea as VTextarea} from '@gits-id/forms';
 import VTooltip from '@gits-id/tooltip';
 import VFormGroup from '@gits-id/form-group';
 import VNavbar from '@gits-id/navbar';

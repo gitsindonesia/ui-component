@@ -16,6 +16,6 @@
     "emitDeclarationOnly": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src/vue.d.ts", "*.vue", "src"],
+  "include": ["crud.ts", "index.ts"],
   "exclude": ["**/*.stories.ts", "**/*.spec.ts", "**/*.test.ts"]
 }

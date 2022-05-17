@@ -1,12 +1,12 @@
 import {Meta, Story} from '@storybook/vue3';
 import {sizes} from '@gits-id/utils';
-import VTextarea from './VTextarea.vue';
+import VTextarea from './Textarea.vue';
 import VBtn from '@gits-id/button';
 import {object, string} from 'yup';
 import {useForm} from 'vee-validate';
 
 export default {
-  title: 'Components/Form/Textarea',
+  title: 'Forms/Textarea',
   component: VTextarea,
   argTypes: {
     size: {
