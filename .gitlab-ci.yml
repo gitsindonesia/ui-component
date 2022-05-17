@@ -3,6 +3,7 @@ image: node:16.13.2-alpine
 stages:
   - test
   - analyze
+  - deploy
   - release
 
 # And to cache them as well.
@@ -81,3 +82,14 @@ release:minor:
   script:
     - npm run release -- --release-as minor
     - git push --follow-tags origin main && npm publish
+
+deploy-production:
+  stage: deploy
+  script:
+    - npm install -g firebase-tools
+    - firebase use gits-starter --token $FIREBASE_TOKEN
+    - firebase deploy --only hosting:starter -m "Pipeline $CI_PIPELINE_ID, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_TOKEN
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+  tags:
+    - nginx-proxy-sonar
