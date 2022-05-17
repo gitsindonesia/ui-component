@@ -74,7 +74,9 @@ build-storybook:
   rules:
     - if: $CI_COMMIT_BRANCH == "main"
   script:
-    - yarn install
+    - npm i -g lerna
+    - lerna bootstrap
+    - lerna run build
     - yarn build-storybook
   artifacts:
     paths:
