@@ -39,6 +39,8 @@ const emit = defineEmits(['toggleMenu', 'update:modelValue']);
 const {mini, fixed, drawer, dark, hideToggle} = toRefs(props);
 
 const toggleMenu = () => emit('toggleMenu');
+
+defineExpose(toggleMenu);
 </script>
 
 <template>
@@ -58,15 +60,16 @@ const toggleMenu = () => emit('toggleMenu');
             icon
             dense
             rounded
+            btn-toggle
             :color="dark ? 'white' : ''"
-            class="hover:bg-transparent hover:text-primary-500 mr-2"
+            class="btn-toggle hover:bg-transparent hover:text-primary-500 mr-2"
             @click="toggleMenu"
           >
             <MenuIcon class="w-6 h-6" />
           </v-btn>
         </slot>
       </template>
-      <div class="flex-grow">
+      <div class="flex-grow" :data-hide-toggle="hideToggle">
         <slot />
       </div>
     </slot>
