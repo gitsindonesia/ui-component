@@ -1,0 +1,15 @@
+import {mount} from '@vue/test-utils';
+import {describe, expect, test} from 'vitest';
+import SidebarMenu from './SidebarMenu.vue';
+
+describe('SidebarMenu', () => {
+  test('mount component', () => {
+    expect(SidebarMenu).toBeTruthy();
+
+    const wrapper = mount(SidebarMenu, {
+      props: {},
+    });
+
+    expect(wrapper.html()).toContain('uppercase');
+  });
+});
