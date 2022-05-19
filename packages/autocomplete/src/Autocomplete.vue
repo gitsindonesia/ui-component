@@ -19,10 +19,12 @@ import {
 type Item = {
   text: string;
   value: string | number;
+
+  [x: string]: any;
 };
 
 type Props = {
-  modelValue?: Item | string | null;
+  modelValue?: Item | string;
   searchBy?: string;
   displayText?: string;
   placeholder?: string;
@@ -30,7 +32,6 @@ type Props = {
   items: Item[];
   name?: string;
   rules?: string;
-  clearable?: boolean;
   notFoundText?: string;
   noDataText?: string;
   clearable?: boolean;
@@ -78,7 +79,7 @@ const filteredItems = computed(() =>
   query.value === ''
     ? items.value
     : items.value.filter((item) =>
-        item[searchBy.value]
+        String(item[searchBy.value])
           .toLowerCase()
           .replace(/\s+/g, '')
           .includes(query.value.toLowerCase().replace(/\s+/g, '')),
