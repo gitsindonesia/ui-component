@@ -17,8 +17,7 @@
   "dependencies": {
     "@gits-id/alert": "^0.3.0",
     "@gits-id/button": "^0.3.0",
-    "@gits-id/checkbox": "^0.3.0",
-    "@gits-id/input": "^0.3.0",
+    "@gits-id/forms": "^0.3.0",
     "vue": "^3.2.31",
     "yup": "^0.32.11"
   },

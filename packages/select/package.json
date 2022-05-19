@@ -15,7 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gits-id/input": "^0.3.0",
+    "@gits-id/forms": "^0.3.0",
     "@gits-id/tooltip": "^0.3.0",
     "@gits-id/utils": "^0.3.0",
     "vue": "^3.2.31"

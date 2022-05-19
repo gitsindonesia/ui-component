@@ -8,7 +8,7 @@ import {
 } from '@headlessui/vue';
 import {CheckIcon, ChevronDownIcon, XIcon} from '@heroicons/vue/solid';
 import {getBgColor, getTextColor} from '@gits-id/utils';
-import VInput from '@gits-id/input';
+import {VInput} from '@gits-id/forms';
 import VTooltip from '@gits-id/tooltip';
 import {ErrorMessage} from 'vee-validate';
 
@@ -198,7 +198,30 @@ const clear = () => (selectedItem.value = null);
     <Listbox v-model="selectedItem">
       <div class="relative">
         <ListboxButton
-          class="border relative w-full py-2 px-4 h-10 text-left bg-white rounded-md shadow-sm cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-primary-300 focus-visible:ring-offset-2 focus-visible:border-primary-600 sm:text-sm flex items-center gap-1"
+          class="
+            border
+            relative
+            w-full
+            py-2
+            px-4
+            h-10
+            text-left
+            bg-white
+            rounded-md
+            shadow-sm
+            cursor-default
+            focus:outline-none
+            focus-visible:ring-2
+            focus-visible:ring-opacity-75
+            focus-visible:ring-white
+            focus-visible:ring-offset-primary-300
+            focus-visible:ring-offset-2
+            focus-visible:border-primary-600
+            sm:text-sm
+            flex
+            items-center
+            gap-1
+          "
           :class="[btnClass, error ? 'border-error-600' : '']"
           :disabled="disabled"
         >
@@ -229,7 +252,22 @@ const clear = () => (selectedItem.value = null);
           leave-to-class="opacity-0"
         >
           <ListboxOptions
-            class="absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm z-10"
+            class="
+              absolute
+              w-full
+              py-1
+              mt-1
+              overflow-auto
+              text-base
+              bg-white
+              rounded-md
+              shadow-lg
+              max-h-60
+              ring-1 ring-black ring-opacity-5
+              focus:outline-none
+              sm:text-sm
+              z-10
+            "
             :class="top ? 'bottom-10' : ''"
           >
             <div v-if="searchable" class="px-2 border-b py-2">

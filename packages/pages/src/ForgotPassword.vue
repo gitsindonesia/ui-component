@@ -2,7 +2,7 @@
 import {toRefs} from 'vue';
 import {AtSymbolIcon} from '@heroicons/vue/outline';
 import VBtn from '@gits-id/button';
-import {VInput} from '@gits-id/input';
+import {VInput} from '@gits-id/forms';
 import {useForm} from 'vee-validate';
 import {string} from 'yup';
 

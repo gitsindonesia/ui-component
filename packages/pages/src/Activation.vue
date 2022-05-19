@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {ref, toRefs, watch} from 'vue';
 import {ArrowLeftIcon} from '@heroicons/vue/outline';
-import {VInput} from '@gits-id/input';
+import {VInput} from '@gits-id/forms';
 import Button from '@gits-id/button';
 import {useForm} from 'vee-validate';
 import {string, object, ref as YupRef} from 'yup';

@@ -8,7 +8,6 @@ module.exports = {
     '@gits-id/breadcrumbs/*.{vue,js,ts,jsx,tsx}',
     '@gits-id/button/*.{vue,js,ts,jsx,tsx}',
     '@gits-id/card/*.{vue,js,ts,jsx,tsx}',
-    '@gits-id/checkbox/*.{vue,js,ts,jsx,tsx}',
     '@gits-id/collapsible/*.{vue,js,ts,jsx,tsx}',
     '@gits-id/container/*.{vue,js,ts,jsx,tsx}',
     '@gits-id/dropdown/*.{vue,js,ts,jsx,tsx}',

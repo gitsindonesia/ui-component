@@ -5,7 +5,7 @@ import VDataTablePagination from './VDataTablePagination.vue';
 import type {VDataTableHeader, VDataTableItem} from './types';
 import {ChevronDownIcon, ChevronUpIcon} from '@heroicons/vue/solid';
 import VSpinner from '@gits-id/spinner';
-import VCheckbox from '@gits-id/checkbox';
+import {VCheckbox} from '@gits-id/forms';
 import {get} from '@gits-id/utils';
 
 const props = defineProps({
