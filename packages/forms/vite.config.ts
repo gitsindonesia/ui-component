@@ -21,6 +21,8 @@ export default defineConfig({
       external: [
         'vue',
         'vee-validate',
+        '@gits-id/button',
+        '@gits-id/spinner',
         '@gits-id/utils',
         '@gits-id/tailwind-config',
         '@heroicons/vue/solid',

@@ -16,6 +16,8 @@
   "license": "ISC",
   "dependencies": {
     "@gits-id/utils": "^0.3.0",
+    "@gits-id/button": "^0.3.0",
+    "@gits-id/spinner": "^0.3.0",
     "vee-validate": "^4.5.9",
     "vue": "^3.2.31"
   },
