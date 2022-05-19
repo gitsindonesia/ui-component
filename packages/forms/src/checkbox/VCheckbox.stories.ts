@@ -4,7 +4,7 @@ import {sizes} from '@gits-id/utils/sizes';
 import {Meta, Story} from '@storybook/vue3';
 
 export default {
-  title: 'Components/Form/Checkbox',
+  title: 'Forms/Checkbox',
   component: MyCheckbox,
   argTypes: {
     size: {

@@ -23,6 +23,7 @@ export default defineConfig({
         'vee-validate',
         '@gits-id/utils',
         '@gits-id/tailwind-config',
+        '@heroicons/vue/solid',
       ],
       output: {
         // Provide global variables to use in the UMD build

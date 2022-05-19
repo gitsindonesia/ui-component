@@ -3,7 +3,7 @@ import {ref} from 'vue';
 import VInputRange from './VInputRange.vue';
 
 export default {
-  title: 'Components/Form/InputRange',
+  title: 'Forms/InputRange',
   component: VInputRange,
   argTypes: {},
   args: {

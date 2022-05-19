@@ -10,7 +10,7 @@ import {
 } from 'vue';
 import {CameraIcon, PlusIcon, TrashIcon} from '@heroicons/vue/solid';
 import VBtn from '@gits-id/button';
-import VInput from '@gits-id/input';
+import VInput from '../input/VInput.vue';
 import VSpinner from '@gits-id/spinner';
 import {ErrorMessage} from 'vee-validate';
 
@@ -290,7 +290,7 @@ const disabledClass = computed(() => {
   return disabled.value || readonly.value ? 'disabled-input' : '';
 });
 
-let guid = () => crypto.randomUUID()
+let guid = () => crypto.randomUUID();
 
 const dropzoneId = computed(() => guid());
 

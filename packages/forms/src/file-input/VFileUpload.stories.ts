@@ -2,7 +2,7 @@ import {Story} from '@storybook/vue3';
 import VFileUpload from './VFileUpload.vue';
 
 export default {
-  title: 'Components/Form/FileUpload',
+  title: 'Forms/FileUpload',
   component: VFileUpload,
   argTypes: {},
   args: {

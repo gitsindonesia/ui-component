@@ -6,25 +6,31 @@ import VAppBar from '@gits-id/app-bar';
 import VBadge from '@gits-id/badge';
 import VBreadcrumbs from '@gits-id/breadcrumbs';
 import VCard from '@gits-id/card';
-import VCheckbox from '@gits-id/checkbox';
+import {
+  VCheckbox,
+  VFileUpload,
+  VInput,
+  VInputGroup,
+  VInputRange,
+  VFormSelect,
+  VRadio,
+  VRadioGroup,
+  VFormGroup,
+  VTextarea,
+} from '@gits-id/forms';
 import {VDataTable, VDataTablePagination} from '@gits-id/table';
 import {
   Dropdown as VDropdown,
   DropdownItem as VDropdownItem,
   DropdownButton,
 } from '@gits-id/dropdown';
-import VFormSelect from '@gits-id/form-select';
-import {VInput, VInputGroup, VInputRange} from '@gits-id/input';
 import VModal from '@gits-id/modal';
 import VPagination from '@gits-id/pagination';
 import VProgressBar from '@gits-id/progress-bar';
-import {VRadio, VRadioGroup} from '@gits-id/radio';
 import VSelect from '@gits-id/select';
 import VSwitch from '@gits-id/switch';
 import VTabs from '@gits-id/tabs';
-import {Textarea as VTextarea} from '@gits-id/forms';
 import VTooltip from '@gits-id/tooltip';
-import VFormGroup from '@gits-id/form-group';
 import VNavbar from '@gits-id/navbar';
 import VNavDrawer from '@gits-id/nav-drawer';
 import VMenu from '@gits-id/menu';
@@ -33,7 +39,6 @@ import VContainer from '@gits-id/container';
 import VLogo from '@gits-id/logo';
 import VToast from '@gits-id/toast';
 import VStats from '@gits-id/stats';
-import VFileUpload from '@gits-id/file-input';
 import {VCollapsible, VCollapse, VCollapsibleGroup} from '@gits-id/collapsible';
 import VMultiSelect from '@gits-id/multi-select';
 import VEditor from '@gits-id/editor';
@@ -158,7 +163,7 @@ export * from '@gits-id/badge/src/types';
 export * from '@gits-id/breadcrumbs/src/types';
 export * from '@gits-id/table/src/types';
 export * from '@gits-id/dropdown/src/types';
-export * from '@gits-id/input/src/types';
+export * from '@gits-id/forms/src/input/types';
 export * from '@gits-id/navbar/src/types';
 export * from '@gits-id/tabs/src/types';
 export * from '@gits-id/modal/src/types';

@@ -9,7 +9,7 @@ import {useForm} from 'vee-validate';
 import {object, string} from 'yup';
 
 export default {
-  title: 'Components/Form/Input',
+  title: 'Forms/Input',
   component: VInput,
   argTypes: {
     size: {
