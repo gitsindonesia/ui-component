@@ -4,7 +4,7 @@ import {sizes} from '@gits-id/utils/sizes';
 import {Meta, Story} from '@storybook/vue3';
 
 export default {
-  title: 'Components/Form/Radio',
+  title: 'Forms/Radio',
   component: VRadio,
   argTypes: {
     size: {

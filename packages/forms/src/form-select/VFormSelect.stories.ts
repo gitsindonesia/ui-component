@@ -9,7 +9,7 @@ const items = [...Array(5)].map((item, index) => ({
 }));
 
 export default {
-  title: 'Components/Form/Select',
+  title: 'Forms/Select',
   component: VFormSelect,
   argTypes: {
     size: {

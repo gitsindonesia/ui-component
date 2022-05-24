@@ -2,7 +2,7 @@ import {Meta, Story} from '@storybook/vue3';
 import VRadioGroup from './VRadioGroup.vue';
 
 export default {
-  title: 'Components/Form/RadioGroup',
+  title: 'Forms/RadioGroup',
   component: VRadioGroup,
   argTypes: {},
   args: {
