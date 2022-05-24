@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/gitsindonesia/ui-component/compare/v0.1.7...v0.2.0) (2022-05-24)
+
+
+### Features
+
+* add props restartpagination ([50e0bf3](https://github.com/gitsindonesia/ui-component/commit/50e0bf36deb40e56ee9d88f428bb0d4a2d887aec))
+
 ### [0.1.8](https://github.com/gitsindonesia/ui-component/compare/v0.1.7...v0.1.8) (2022-05-24)
 
 
