@@ -116,6 +116,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  restartPagination: {
+    type: Boolean,
+    default: true,
+  },
 });
 
 const emit = defineEmits([
@@ -131,6 +135,7 @@ const emit = defineEmits([
   'pagination:change',
   'update:modelValue',
   'update:value',
+  'restartPagination'
 ]);
 
 const {
@@ -155,6 +160,7 @@ const {
   selectable,
   modelValue,
   value,
+  restartPagination
 } = toRefs(props);
 
 const page = ref<number>(props.page);
@@ -284,7 +290,9 @@ watch(page, (val) => {
 watch(perPage, (val) => {
   emit('itemsPerPage:change', val);
   onPaginationChange({itemsPerPage: val});
-  page.value = 1;
+  if (restartPagination.value) {
+    page.value = 1;
+  } 
 });
 
 watch(paginationPage, (val) => {
@@ -359,6 +367,7 @@ const end = computed(() =>
               scope="col"
               class="text-left py-3 text-sm font-bold uppercase tracking-wider"
               :class="[getThClass(header), paddingClass, header.class]"
+              :width="header.width"
             >
               <slot
                 v-if="selectable && header.value === 'selected'"
