@@ -2,7 +2,6 @@
 import {computed, PropType, ref, toRefs, watch} from 'vue';
 import {
   Listbox,
-  ListboxLabel,
   ListboxButton,
   ListboxOptions,
   ListboxOption,
@@ -12,21 +11,23 @@ import {getBgColor, getTextColor} from '../../utils';
 import VInput from '../VInput/VInput.vue';
 import {ErrorMessage} from 'vee-validate';
 
-interface SelectItem {
+type SelectItem = {
   text: string;
   value: any;
 
   [x: string]: any;
-}
+};
+
+type Val = string | number | boolean | Record<string, any> | undefined;
 
 const props = defineProps({
   value: {
-    type: [Object, String, Number, Boolean],
-    default: undefined,
+    type: [Object, String, Number, Boolean] as PropType<Val>,
+    default: '',
   },
   modelValue: {
-    type: [Object, String, Number, Boolean],
-    default: undefined,
+    type: [Object, String, Number, Boolean] as PropType<Val>,
+    default: '',
   },
   items: {
     type: Array as PropType<SelectItem[]>,
@@ -117,8 +118,6 @@ const emit = defineEmits(['update:modelValue', 'update:value', 'search']);
 
 const bgColor = getBgColor(color.value);
 const textColor = getTextColor(color.value);
-
-type Val = string | number | boolean | Record<string, any> | null;
 
 const selectedItem = ref<Val>(modelValue.value || value.value);
 const search = ref('');
@@ -220,7 +219,7 @@ const clear = () => (selectedItem.value = null);
           :disabled="disabled"
         >
           <div class="block flex-grow w-full truncate mr-2">
-            {{ label }}
+              {{ label }}
           </div>
           <v-tooltip v-if="selectedItem && clearable">
             <template #activator="{on}">
