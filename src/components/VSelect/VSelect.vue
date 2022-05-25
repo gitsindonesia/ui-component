@@ -22,11 +22,11 @@ interface SelectItem {
 const props = defineProps({
   value: {
     type: [Object, String, Number, Boolean],
-    default: null,
+    default: undefined,
   },
   modelValue: {
     type: [Object, String, Number, Boolean],
-    default: null,
+    default: undefined,
   },
   items: {
     type: Array as PropType<SelectItem[]>,
