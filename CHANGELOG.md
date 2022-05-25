@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.4.3](https://github.com/gitsindonesia/ui-component/compare/v0.4.2...v0.4.3) (2022-05-25)
+
+
+### Bug Fixes
+
+* type ([37f2cd5](https://github.com/gitsindonesia/ui-component/commit/37f2cd5807dbd2384e618390e6f415073f905d49))
+
 ### [0.4.2](https://github.com/gitsindonesia/ui-component/compare/v0.4.1...v0.4.2) (2022-05-25)
 
 
