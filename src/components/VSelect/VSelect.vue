@@ -183,7 +183,7 @@ const label = computed(() => {
   );
 });
 
-const clear = () => (selectedItem.value = null);
+const clear = () => (selectedItem.value = '');
 </script>
 
 <template>
