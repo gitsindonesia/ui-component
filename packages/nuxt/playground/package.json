@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "name": "gits-ui-nuxt-playground",
+  "scripts": {
+    "dev": "nuxi dev",
+    "build": "nuxi build"
+  },
+  "dependencies": {
+    "@gits-id/ui": "^0.3.2"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^5.1.2"
+  }
+}
