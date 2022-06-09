@@ -10,6 +10,7 @@ import VMenuTooltip from './VMenuTooltip.vue';
 import VMenuItem from './VMenuItem.vue';
 import {VCollapsible} from '@gits-id/collapsible';
 import {useRoute} from 'vue-router';
+import VMenuIcon from './VMenuIcon.vue';
 
 const props = defineProps({
   menu: {
@@ -120,12 +121,7 @@ const isActive = (path: any) => {
             />
             <span v-else-if="menu.svg" v-html="menu.svg" />
             <template v-else-if="menu.icon">
-              <template v-if="typeof menu.icon === 'string'">
-                <slot name="icon" :menu="menu">
-                  <v-icon :name="menu.icon" />
-                </slot>
-              </template>
-              <component :is="menu.icon" v-else class="w-5 h-5" />
+              <VMenuIcon :icon="menu.icon" :menu="menu" />
             </template>
           </div>
 
@@ -182,7 +178,8 @@ const isActive = (path: any) => {
       ]"
     >
       <img v-if="menu.img" :src="menu.img" alt="img icon" class="w-5 h-5" />
-      <component :is="menu.icon" v-else-if="menu.icon" class="w-5 h-5" />
+      <VMenuIcon :icon="menu.icon" :menu="menu" />
+
       <span :class="{'sm:hidden': mini && !expandHover}">
         {{ menu.text }}
       </span>

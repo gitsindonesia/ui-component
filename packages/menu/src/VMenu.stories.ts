@@ -87,12 +87,18 @@ Mini.parameters = {
   },
 };
 
-export const Dark = Template.bind({});
-Dark.args = {dark: true};
-Dark.parameters = {
+export const Icon = Template.bind({});
+Icon.args = {
+  menu: {
+    text: 'Text',
+    to: '/',
+    icon: 'mdi-light:home',
+  },
+};
+Icon.parameters = {
   docs: {
     source: {
-      code: '<v-menu :menu="menu" dark />',
+      code: '<v-menu :menu="menu" />',
     },
   },
 };
@@ -102,7 +108,7 @@ Single.args = {
   menu: {
     text: 'Text',
     to: '/',
-    icon: RiHomeFill,
+    icon: 'mdi-light:home',
   },
 };
 Single.parameters = {

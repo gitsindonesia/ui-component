@@ -15,7 +15,7 @@ import {
 } from 'vue-remix-icons';
 
 export default {
-  title: 'Components/SideMenu',
+  title: 'Components/NavDrawer',
   component: MyNavbarDrawer,
   argTypes: {},
   args: {
