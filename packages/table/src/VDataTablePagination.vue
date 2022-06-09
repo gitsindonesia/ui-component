@@ -3,11 +3,6 @@ import {computed, PropType, ref, toRefs, watch} from 'vue';
 import Pagination from '@gits-id/pagination';
 import VSelect from '@gits-id/select';
 
-interface PerPageItem {
-  text: string;
-  value: number;
-}
-
 const props = defineProps({
   modelValue: {
     type: Number,

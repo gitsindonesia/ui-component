@@ -149,7 +149,6 @@ const {
   mustSort,
   selectable,
   modelValue,
-  value,
 } = toRefs(props);
 
 const page = ref<number>(props.page);
@@ -438,7 +437,7 @@ const start = computed(() =>
                 v-if="selectable && header.value === 'selected'"
                 name="item.selected"
               >
-                <v-checkbox v-model="selected" :value="item" />
+                <v-checkbox v-model="selected" :value="(item as any)" />
               </slot>
               <slot v-else-if="header.value === 'index'" name="item.index">
                 {{ start + index }}

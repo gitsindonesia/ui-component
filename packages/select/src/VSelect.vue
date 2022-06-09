@@ -7,7 +7,7 @@ import {
   ListboxOption,
 } from '@headlessui/vue';
 import {CheckIcon, ChevronDownIcon, XIcon} from '@heroicons/vue/solid';
-import {getBgColor, getTextColor} from '@gits-id/utils';
+import {getBgColor} from '@gits-id/utils';
 import {VInput} from '@gits-id/forms';
 import VTooltip from '@gits-id/tooltip';
 import {ErrorMessage} from 'vee-validate';
@@ -22,11 +22,11 @@ type SelectItem = {
 const props = defineProps({
   value: {
     type: [Object, String, Number, Boolean],
-    default: null,
+    default: '',
   },
   modelValue: {
     type: [Object, String, Number, Boolean],
-    default: null,
+    default: '',
   },
   items: {
     type: Array as PropType<SelectItem[]>,
@@ -116,9 +116,8 @@ const {
 const emit = defineEmits(['update:modelValue', 'update:value', 'search']);
 
 const bgColor = getBgColor(color.value);
-const textColor = getTextColor(color.value);
 
-type Val = string | number | boolean | Record<string, any> | null;
+type Val = string | number | boolean | Record<string, any>;
 
 const selectedItem = ref<Val>(modelValue.value || value.value);
 const search = ref('');
@@ -190,7 +189,7 @@ const label = computed(() => {
   );
 });
 
-const clear = () => (selectedItem.value = null);
+const clear = () => (selectedItem.value = '');
 </script>
 
 <template>
