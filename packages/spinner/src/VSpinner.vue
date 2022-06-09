@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import {computed} from 'vue';
 
 const props = defineProps({
@@ -23,8 +23,6 @@ const props = defineProps({
     default: '',
   },
 });
-
-const emit = defineEmits([]);
 
 const sizeClass = computed(() => {
   if (props.large) {

@@ -1,9 +1,3 @@
-<script lang="ts">
-export default {
-  // inheritAttrs: false
-};
-</script>
-
 <script setup lang="ts">
 import {ref, toRefs, watch} from 'vue';
 import {
@@ -15,7 +9,7 @@ import {
 } from '@headlessui/vue';
 import VBtn from '@gits-id/button';
 
-interface Props {
+type Props = {
   modelValue?: boolean;
   title?: string;
   confirm?: boolean;
@@ -31,7 +25,7 @@ interface Props {
   loading?: boolean;
   hideHeader?: boolean;
   hideFooter?: boolean;
-}
+};
 
 const props = withDefaults(defineProps<Props>(), {
   modelValue: false,
@@ -123,7 +117,21 @@ const onConfirm = () => {
             leave-to="opacity-0 scale-95"
           >
             <div
-              class="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-lg"
+              class="
+                inline-block
+                w-full
+                max-w-md
+                p-6
+                my-8
+                overflow-hidden
+                text-left
+                align-middle
+                transition-all
+                transform
+                bg-white
+                shadow-xl
+                rounded-lg
+              "
               :class="modalClass"
             >
               <DialogTitle

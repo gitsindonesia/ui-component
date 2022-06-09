@@ -23,6 +23,7 @@
     "vue": "^3.2.31"
   },
   "devDependencies": {
+    "@types/ckeditor__ckeditor5-build-classic": "^29.0.1",
     "@gits-id/tailwind-config": "^0.4.4",
     "@gits-id/utils": "^0.4.4",
     "@headlessui/vue": "^1.5.0",
@@ -39,5 +40,5 @@
   "jsdelivr": "dist/editor.iife.js",
   "module": "./dist/editor.es.js",
   "types": "./dist/types/index.d.ts",
-  "gitHead": "b29c3a49d5dbfe5b5d579450bfd551387c8d834f"
+  "gitHead": "8da730d8ef029aaf0d83bc3ff7b9f87c3c538713"
 }

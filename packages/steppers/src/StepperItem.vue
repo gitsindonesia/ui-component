@@ -4,7 +4,7 @@ import StepperDivider from './StepperDivider.vue';
 import type {StepItem} from './types';
 import {toRefs, computed} from 'vue';
 
-interface Props {
+type Props = {
   index: number;
   item: StepItem;
   startFrom?: number;
@@ -12,7 +12,7 @@ interface Props {
   active?: boolean;
   as?: string;
   vertical?: boolean;
-}
+};
 
 const props = withDefaults(defineProps<Props>(), {
   startFrom: 1,

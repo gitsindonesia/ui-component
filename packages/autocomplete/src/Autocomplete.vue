@@ -44,6 +44,7 @@ const props = withDefaults(defineProps<Props>(), {
   placeholder: 'Search...',
   label: '',
   rules: '',
+  name: '',
   items: () => [],
   noDataText: 'No data.',
   notFoundText: 'Nothing found.',
@@ -129,7 +130,7 @@ const clear = () => {
             leading-5
             text-gray-600
           "
-          :display-value="(item) => item[displayText] || ''"
+          :display-value="(item: any) => item[displayText] || ''"
           :placeholder="placeholder"
           @change="query = $event.target.value"
         />

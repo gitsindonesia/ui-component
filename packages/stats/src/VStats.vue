@@ -4,7 +4,7 @@ import VCard from '@gits-id/card';
 import VBadge from '@gits-id/badge';
 import VueFeather from 'vue-feather';
 
-interface Props {
+type Props = {
   title?: string;
   icon?: string;
   value?: string | number;
@@ -14,7 +14,7 @@ interface Props {
   progress?: string;
   up?: boolean;
   down?: boolean;
-}
+};
 
 const props = withDefaults(defineProps<Props>(), {
   title: '',

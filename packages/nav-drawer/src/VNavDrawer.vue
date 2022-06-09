@@ -1,11 +1,10 @@
 <script setup lang="ts">
 import {computed, PropType, toRefs} from 'vue';
 import {XIcon} from '@heroicons/vue/outline';
-import VMenu from '@gits-id/menu';
+import VMenu, {type Menu} from '@gits-id/menu';
 import VLogo from '@gits-id/logo';
 import {ChevronLeftIcon} from '@heroicons/vue/solid';
 import {getBgColor} from '@gits-id/utils';
-import type {VNavbarMenuItem} from '@gits-id/navbar/dist/types';
 
 const props = defineProps({
   modelValue: {
@@ -17,7 +16,7 @@ const props = defineProps({
     default: false,
   },
   menus: {
-    type: Array as PropType<VNavbarMenuItem[]>,
+    type: Array as PropType<Menu[]>,
     default: () => [],
   },
   mini: {

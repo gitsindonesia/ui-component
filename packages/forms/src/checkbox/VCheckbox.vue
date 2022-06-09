@@ -3,11 +3,6 @@ import {toRefs, computed, PropType} from 'vue';
 import {useTextSize} from '@gits-id/utils';
 import {useField} from 'vee-validate';
 
-type VDataTableItem = {
-  selected?: boolean;
-  [key: string]: any;
-};
-
 const props = defineProps({
   modelValue: {
     type: Boolean,
@@ -34,7 +29,7 @@ const props = defineProps({
     default: '',
   },
   value: {
-    type: [String, Number] as PropType<string | number | VDataTableItem>,
+    type: [String, Number, Boolean] as PropType<any[] | boolean | undefined>,
     default: '',
   },
   name: {

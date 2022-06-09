@@ -7,6 +7,7 @@ import {
   onMounted,
   nextTick,
   computed,
+  PropType,
 } from 'vue';
 import {ChevronLeftIcon, ChevronRightIcon} from '@heroicons/vue/outline';
 import VTab from './VTab.vue';
@@ -19,7 +20,7 @@ const props = defineProps({
     default: 0,
   },
   items: {
-    type: Array,
+    type: Array as PropType<Record<string, any>[]>,
     default: () => [],
   },
   itemText: {

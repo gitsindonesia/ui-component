@@ -1,5 +1,5 @@
-import VNavbar from '../src/VNavbar.vue';
+import VNavbar from './VNavbar.vue';
 
-export * from '../src/types';
+export * from './types';
 export {VNavbar};
 export default VNavbar;

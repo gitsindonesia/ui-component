@@ -13,6 +13,7 @@ withDefaults(
     items?: DropdownItemProps[];
     top?: boolean;
     topClass?: string;
+    bottomClass?: string;
   }>(),
   {
     modelValue: false,

@@ -3,7 +3,7 @@
   "version": "0.4.4",
   "description": "GITS Button Component",
   "scripts": {
-    "build": "vite build && vue-vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
+    "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "npm run build",
     "test": "vitest"
   },
@@ -40,5 +40,5 @@
   "jsdelivr": "dist/button.iife.js",
   "module": "./dist/button.es.js",
   "types": "./dist/types/index.d.ts",
-  "gitHead": "b29c3a49d5dbfe5b5d579450bfd551387c8d834f"
+  "gitHead": "8da730d8ef029aaf0d83bc3ff7b9f87c3c538713"
 }

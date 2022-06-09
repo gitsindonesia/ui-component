@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import {toRefs} from 'vue';
-
-const props = defineProps({
+defineProps({
   mini: {
     type: Boolean,
     default: false,
@@ -11,8 +9,6 @@ const props = defineProps({
     default: false,
   },
 });
-
-const {mini, fixed} = toRefs(props);
 </script>
 
 <template>

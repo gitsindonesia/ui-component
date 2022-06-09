@@ -1,4 +1,4 @@
-<script setup inherit-attrs="false" lang="ts">
+<script setup lang="ts">
 import {ref, toRefs, PropType, watch, computed} from 'vue';
 import {ErrorMessage} from 'vee-validate';
 import {useInputClasses, useTextSize} from '@gits-id/utils';
@@ -105,8 +105,8 @@ const getText = (option: string | Record<string, any>) => {
     <option
       v-for="(option, index) in items"
       :key="index"
-      :value="getValue(option)"
       v-bind="option"
+      :value="getValue(option)"
     >
       {{ getText(option) }}
     </option>

@@ -32,7 +32,7 @@ import {
 } from '@heroicons/vue/outline';
 import VBtn from '@gits-id/button';
 
-// interface Props {
+// type Props = {
 //   modelValue?: boolean;
 //   title?: string;
 //   confirm?: boolean;
@@ -339,7 +339,20 @@ const iconColorClass = computed(() => {
 
           <TransitionChild as="template" v-bind="transitionProps">
             <div
-              class="inline-block w-full max-w-sm p-4 overflow-hidden text-left transition-all transform shadow-xl rounded-lg border absolute"
+              class="
+                inline-block
+                w-full
+                max-w-sm
+                p-4
+                overflow-hidden
+                text-left
+                transition-all
+                transform
+                shadow-xl
+                rounded-lg
+                border
+                absolute
+              "
               :class="[placementClass, colorClass]"
             >
               <div

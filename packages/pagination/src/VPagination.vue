@@ -69,19 +69,18 @@ const totalPages = computed(() =>
   Math.ceil(totalItems.value / itemsPerPage.value),
 );
 
-const pagino = computed(
-  () =>
-    new Pagino({
-      ...props,
-      page: page.value,
-      count: totalPages.value,
-      onChange: (localPage) => {
-        if (Number.isNaN(localPage)) return;
-        page.value = localPage;
-        emitPage(localPage);
-      },
-    }),
-);
+const pagino = computed<any>(() => {
+  return Pagino({
+    ...props,
+    page: page.value,
+    count: totalPages.value,
+    onChange: (localPage) => {
+      if (Number.isNaN(localPage)) return;
+      page.value = localPage;
+      emitPage(localPage);
+    },
+  });
+});
 
 const pages = computed(() => pagino.value.getPages());
 const isFirstPage = computed(() => page.value === 1);

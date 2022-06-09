@@ -5,16 +5,17 @@ export default {
 </script>
 
 <script setup lang="ts">
-import {computed, ref, toRefs} from 'vue';
+import {computed, PropType, toRefs} from 'vue';
 import VMenuTooltip from './VMenuTooltip.vue';
 import VMenuItem from './VMenuItem.vue';
 import {VCollapsible} from '@gits-id/collapsible';
 import {useRoute} from 'vue-router';
 import VMenuIcon from './VMenuIcon.vue';
+import {Menu} from './types';
 
 const props = defineProps({
   menu: {
-    type: Object,
+    type: Object as PropType<Menu>,
     default: null,
   },
   mini: {
@@ -57,11 +58,10 @@ const props = defineProps({
 
 const {menu, mini, dark, classMenuParent, expandHover} = toRefs(props);
 
-const panel = ref<HTMLDivElement | null>(null);
-
 const menuItemColor = computed(() => {
   return dark.value ? props.darkColor : props.color;
 });
+
 const menuItemBgColor = computed(() => {
   return dark.value ? props.darkBgColor : props.bgColor;
 });
