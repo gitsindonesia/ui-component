@@ -28,7 +28,7 @@
     "vite": "^2.8.6",
     "vitest": "^0.12.4"
   },
-  "gitHead": "1c8786cbf03a24b464264d95d0d3a90812476412",
+  "gitHead": "b29c3a49d5dbfe5b5d579450bfd551387c8d834f",
   "main": "dist/alert.umd.js",
   "unpkg": "dist/alert.iife.js",
   "jsdelivr": "dist/alert.iife.js",

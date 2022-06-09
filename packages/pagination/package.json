@@ -35,5 +35,5 @@
   "jsdelivr": "dist/pagination.iife.js",
   "module": "./dist/pagination.es.js",
   "types": "./dist/types/index.d.ts",
-  "gitHead": "1c8786cbf03a24b464264d95d0d3a90812476412"
+  "gitHead": "b29c3a49d5dbfe5b5d579450bfd551387c8d834f"
 }

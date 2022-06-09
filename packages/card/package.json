@@ -33,7 +33,7 @@
   "jsdelivr": "dist/card.iife.js",
   "module": "./dist/card.es.js",
   "types": "./dist/types/index.d.ts",
-  "gitHead": "1c8786cbf03a24b464264d95d0d3a90812476412",
+  "gitHead": "b29c3a49d5dbfe5b5d579450bfd551387c8d834f",
   "dependencies": {
     "vue": "^3.2.33"
   }

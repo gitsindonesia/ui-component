@@ -30,5 +30,6 @@
     "@nuxtjs/tailwindcss": "^5.1.2",
     "eslint": "latest",
     "nuxt": "^3.0.0-rc.3"
-  }
+  },
+  "gitHead": "b29c3a49d5dbfe5b5d579450bfd551387c8d834f"
 }

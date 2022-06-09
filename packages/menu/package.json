@@ -36,5 +36,5 @@
   "jsdelivr": "dist/menu.iife.js",
   "module": "./dist/menu.es.js",
   "types": "./dist/types/index.d.ts",
-  "gitHead": "ab2187381450ab566a97afdfad2b380dfcb80ecc"
+  "gitHead": "b29c3a49d5dbfe5b5d579450bfd551387c8d834f"
 }
