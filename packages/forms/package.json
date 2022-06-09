@@ -31,10 +31,10 @@
     "vite": "^2.9.1",
     "vitest": "^0.12.4"
   },
-  "main": "dist/forms.umd.ts",
+  "main": "dist/forms.umd.js",
   "unpkg": "dist/forms.iife.js",
   "jsdelivr": "dist/forms.iife.js",
-  "module": "dist/forms.es.ts",
+  "module": "dist/forms.es.js",
   "types": "./dist/types/index.d.ts",
   "gitHead": "e0aeee7a565be76bbe461e758c12d61c0814b3ab"
 }

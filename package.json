@@ -98,8 +98,7 @@
     "preset.js"
   ],
   "workspaces": [
-    "packages/*",
-    "apps/*"
+    "packages/*"
   ],
   "private": true
 }
