@@ -128,7 +128,7 @@ const inputVariantClass = computed(() => {
   } else {
     const variants: Record<string, string> = {
       default:
-        'border-gray-400 focus:ring-primary-500 focus:ring-opacity-50 focus:border-primary-500',
+        'border-gray-300 hover:border-gray-400 focus:ring-primary-500 focus:ring-opacity-50 focus:border-primary-500',
       blue: 'border-gray-400 focus:ring-blue-500 focus:ring-opacity-50 focus:border-blue-500',
       primary:
         'border-gray-400 focus:ring-primary-500 focus:ring-opacity-50 focus:border-primary-500',
