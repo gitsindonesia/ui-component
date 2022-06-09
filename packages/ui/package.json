@@ -56,6 +56,7 @@
   "devDependencies": {
     "c8": "^7.11.3",
     "vite": "^2.9.9",
-    "vitest": "^0.12.4"
+    "vitest": "^0.12.4",
+    "unplugin-vue-components": "^0.19.6"
   }
 }
