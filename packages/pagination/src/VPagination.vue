@@ -70,11 +70,11 @@ const totalPages = computed(() =>
 );
 
 const pagino = computed<any>(() => {
-  return Pagino({
+  return new (Pagino as any)({
     ...props,
     page: page.value,
     count: totalPages.value,
-    onChange: (localPage) => {
+    onChange: (localPage: number) => {
       if (Number.isNaN(localPage)) return;
       page.value = localPage;
       emitPage(localPage);
