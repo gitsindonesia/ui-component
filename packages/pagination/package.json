@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/pagination",
-  "version": "0.4.5-alpha.0",
+  "version": "0.4.5",
   "description": "GITS Pagination Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
