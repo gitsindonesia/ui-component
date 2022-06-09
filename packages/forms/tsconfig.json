@@ -13,7 +13,6 @@
     "rootDir": ".",
     "skipLibCheck": true,
     "types": ["vite/client"],
-    "emitDeclarationOnly": true,
     "allowSyntheticDefaultImports": true,
     "jsx": "preserve"
   },

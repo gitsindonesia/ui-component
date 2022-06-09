@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/types",
-  "version": "0.4.4",
+  "version": "0.4.5-alpha.0+e0aeee7",
   "description": "GITS Types Definition",
   "main": "index.ts",
   "scripts": {},
@@ -13,7 +13,7 @@
   "dependencies": {
     "vue": "^3"
   },
-  "gitHead": "8da730d8ef029aaf0d83bc3ff7b9f87c3c538713",
+  "gitHead": "e0aeee7a565be76bbe461e758c12d61c0814b3ab",
   "devDependencies": {
     "c8": "^7.11.3",
     "vite": "^2.9.9",

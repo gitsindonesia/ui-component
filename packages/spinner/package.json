@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/spinner",
-  "version": "0.4.4",
+  "version": "0.4.5-alpha.0+e0aeee7",
   "description": "GITS Spinner Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -17,8 +17,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@gits-id/tailwind-config": "^0.4.4",
-    "@gits-id/utils": "^0.4.4",
+    "@gits-id/tailwind-config": "^0.4.5-alpha.0+e0aeee7",
+    "@gits-id/utils": "^0.4.5-alpha.0+e0aeee7",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
     "vite": "^2.9.9",
@@ -29,7 +29,7 @@
   "jsdelivr": "dist/spinner.iife.js",
   "module": "./dist/spinner.es.js",
   "types": "./dist/types/index.d.ts",
-  "gitHead": "8da730d8ef029aaf0d83bc3ff7b9f87c3c538713",
+  "gitHead": "e0aeee7a565be76bbe461e758c12d61c0814b3ab",
   "dependencies": {
     "vue": "^3.2.33"
   }

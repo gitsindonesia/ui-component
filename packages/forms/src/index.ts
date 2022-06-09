@@ -1,11 +1,24 @@
-export {default as VTextarea} from './textarea/Textarea.vue';
-export {default as VCheckbox} from './checkbox/VCheckbox.vue';
-export {default as VFileUpload} from './file-input/VFileUpload.vue';
-export {default as VFormGroup} from './form-group/VFormGroup.vue';
-export {default as VFormSelect} from './form-select/VFormSelect.vue';
-export {default as VInput} from './input/VInput.vue';
-export {default as VInputGroup} from './input/VInputGroup.vue';
-export {default as VInputRange} from './input/VInputRange.vue';
-export {default as VRadio} from './radio/VRadio.vue';
-export {default as VRadioGroup} from './radio/VRadioGroup.vue';
+import VTextarea from './textarea/Textarea.vue';
+import VCheckbox from './checkbox/VCheckbox.vue';
+import VFileUpload from './file-input/VFileUpload.vue';
+import VFormGroup from './form-group/VFormGroup.vue';
+import VFormSelect from './form-select/VFormSelect.vue';
+import VInput from './input/VInput.vue';
+import VInputGroup from './input/VInputGroup.vue';
+import VInputRange from './input/VInputRange.vue';
+import VRadio from './radio/VRadio.vue';
+import VRadioGroup from './radio/VRadioGroup.vue';
+
+export {
+  VTextarea,
+  VCheckbox,
+  VFileUpload,
+  VFormGroup,
+  VFormSelect,
+  VInput,
+  VInputGroup,
+  VInputRange,
+  VRadio,
+  VRadioGroup,
+};
 export * from './form-select/types';
