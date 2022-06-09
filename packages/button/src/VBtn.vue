@@ -123,7 +123,7 @@ const spinnerColor = computed(() => {
 
 const defaultVariants: Record<string, any> = {
   default:
-    'border-gray-500 text-gray-800 bg-white hover:bg-gray-100 active:bg-gray-50 active:border-gray-600 active:text-gray-600',
+    'border-gray-400 text-gray-700 bg-white hover:bg-gray-100 active:bg-gray-50 active:border-gray-600 active:text-gray-600',
   primary:
     'border-primary-500 bg-primary-500 text-white hover:bg-primary-600 hover:border-primary-600 active:bg-primary-400 active:border-primary-400',
   secondary:
@@ -173,11 +173,11 @@ const textVariants: Record<string, any> = {
 };
 
 const sizeVariants: Record<string, any> = {
-  xs: 'px-1.5 py-1 text-xs',
-  sm: 'px-2 py-1.5 text-sm',
+  xs: 'px-2 py-1 text-xs',
+  sm: 'px-3 py-1.5 text-sm',
   md: 'px-4 py-2 text-base',
   lg: 'px-5 py-3 text-lg',
-  xl: 'px-8 py-4 text-xl',
+  xl: 'px-6 py-4 text-xl',
 };
 
 const ringVariants: Record<string, any> = {
@@ -259,7 +259,7 @@ const iconClass = computed(() => {
 
 const classes = computed(() => {
   return [
-    'inline-flex justify-center items-center border rounded-md font-semibold transition duration-300',
+    'inline-flex justify-center items-center border rounded-md font-medium transition duration-300',
     disabledClass.value,
     colorClass.value,
     {
