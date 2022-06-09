@@ -3,7 +3,7 @@
   "version": "0.4.1-alpha.0",
   "description": "GITS Button Component",
   "scripts": {
-    "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
+    "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "npm run build",
     "test": "vitest"
   },
@@ -31,9 +31,9 @@
     "postcss": "^8.4.8",
     "tailwindcss": "^3.0.23",
     "typescript": "^4.6.2",
+    "vue-tsc": "^0.37.3",
     "vite": "^2.8.6",
-    "vitest": "^0.12.4",
-    "vue": "^3.2.31"
+    "vitest": "^0.12.4"
   },
   "main": "dist/button.umd.js",
   "unpkg": "dist/button.iife.js",
