@@ -23,20 +23,18 @@ pnpm i @gits-id/ui
 ## Usage
 
 ```ts
-// main.ts
+// file: main.ts
 
-import GitsUi from '@gits-id/ui';
-// gits ui styles
-import '@gits-id/ui/style.css';
+import GitsUI from '@gits-id/ui';
 
 const app = createApp(App);
 
-app.use(GitsUi); // use plugin
+app.use(GitsUI);
 ```
 
 ## Documentation
 
-View `UI Component` documentation [here](https://gits-ui.web.app).
+View full documentation [here](https://gits-ui.web.app).
 
 ## License
 
