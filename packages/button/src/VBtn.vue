@@ -123,7 +123,7 @@ const spinnerColor = computed(() => {
 
 const defaultVariants: Record<string, any> = {
   default:
-    'border-gray-400 text-gray-700 bg-white hover:bg-gray-100 active:bg-gray-50 active:border-gray-600 active:text-gray-600',
+    'border-gray-400 text-gray-700 bg-white hover:border-gray-500 active:bg-gray-50 active:border-gray-600 active:text-gray-600',
   primary:
     'border-primary-500 bg-primary-500 text-white hover:bg-primary-600 hover:border-primary-600 active:bg-primary-400 active:border-primary-400',
   secondary:
@@ -140,7 +140,7 @@ const defaultVariants: Record<string, any> = {
 
 const outlinedVariants: Record<string, any> = {
   default:
-    'border-gray-500 text-gray-800 hover:bg-gray-700 hover:border-gray-700 hover:text-white active:bg-gray-50 active:border-gray-600 active:text-gray-600',
+    'border-gray-400 text-gray-700 hover:bg-gray-700 hover:border-gray-700 hover:text-white active:bg-gray-50 active:border-gray-600 active:text-gray-600',
   primary:
     'border-primary-500 bg-transparent text-primary-500 hover:bg-primary-600 hover:border-primary-600 hover:text-white active:bg-primary-400 active:border-primary-400',
   secondary:

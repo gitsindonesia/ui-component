@@ -40,6 +40,7 @@ export default {
     tile: false,
     icon: false,
     loading: false,
+    block: false,
   },
   parameters: {
     docs: {
