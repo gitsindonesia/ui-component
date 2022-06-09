@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/button",
-  "version": "0.4.1-alpha.0",
+  "version": "0.4.1",
   "description": "GITS Button Component",
   "scripts": {
     "build": "vite build && vue-vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -16,14 +16,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gits-id/spinner": "^0.4.1-alpha.0",
-    "@gits-id/theme": "^0.4.1-alpha.0",
-    "@gits-id/utils": "^0.4.1-alpha.0",
+    "@gits-id/spinner": "^0.4.1",
+    "@gits-id/theme": "^0.4.1",
+    "@gits-id/utils": "^0.4.1",
     "vue": "^3.2.33"
   },
   "devDependencies": {
-    "@gits-id/tailwind-components": "^0.4.1-alpha.0",
-    "@gits-id/tailwind-config": "^0.4.1-alpha.0",
+    "@gits-id/tailwind-components": "^0.4.1",
+    "@gits-id/tailwind-config": "^0.4.1",
     "@vitejs/plugin-vue": "^2.2.4",
     "@vue/test-utils": "^2.0.0-rc.17",
     "autoprefixer": "^10.4.2",
@@ -31,9 +31,9 @@
     "postcss": "^8.4.8",
     "tailwindcss": "^3.0.23",
     "typescript": "^4.6.2",
-    "vue-tsc": "^0.37.3",
     "vite": "^2.8.6",
-    "vitest": "^0.12.4"
+    "vitest": "^0.12.4",
+    "vue-tsc": "^0.37.3"
   },
   "main": "dist/button.umd.js",
   "unpkg": "dist/button.iife.js",
