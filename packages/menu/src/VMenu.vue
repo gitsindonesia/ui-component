@@ -79,11 +79,6 @@ const openClass = (isOpen: boolean) => {
   return isOpen ? `${classMenuParent.value}` : '';
 };
 
-const getScrollHeight = () => {
-  const scrollHeight = (panel as any).value?.el?.scrollHeight;
-  return `${scrollHeight}px`;
-};
-
 const route = useRoute();
 
 const isActive = (path: any) => {
@@ -128,7 +123,7 @@ const isActive = (path: any) => {
           <span
             :title="menu.text"
             class="flex-grow text-left truncate"
-            :class="{'sm:hidden': mini && !expandHover, 'text-sm': small}"
+            :class="{hidden: mini && !expandHover, 'text-sm': small}"
           >
             {{ menu.text }}
           </span>
@@ -180,7 +175,7 @@ const isActive = (path: any) => {
       <img v-if="menu.img" :src="menu.img" alt="img icon" class="w-5 h-5" />
       <VMenuIcon :icon="menu.icon" :menu="menu" />
 
-      <span :class="{'sm:hidden': mini && !expandHover}">
+      <span :class="{hidden: mini && !expandHover}">
         {{ menu.text }}
       </span>
 

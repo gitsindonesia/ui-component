@@ -68,7 +68,7 @@ const props = defineProps({
       </svg>
     </span>
 
-    <span :class="{'sm:hidden': mini && !expandHover, 'text-sm': small}">
+    <span :class="{hidden: mini && !expandHover, 'text-sm': small}">
       {{ item.text }}
     </span>
 
