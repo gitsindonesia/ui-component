@@ -151,6 +151,7 @@ export {
   VCollapsibleGroup,
   VFileUpload,
   DropdownButton,
+  VMultiSelect,
 };
 
 export * from '@gits-id/utils';
