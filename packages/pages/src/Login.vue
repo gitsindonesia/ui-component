@@ -107,7 +107,7 @@ const onSubmit = handleSubmit((values) => {
     <h1 class="font-extrabold text-4xl mb-2">{{ title }}</h1>
     <div class="text-gray-600">{{ subtitle }}</div>
 
-    <v-alert v-model="isError" color="error" class="mt-5" icon dismissable>
+    <v-alert v-model="isError" color="error" class="mt-5" dismissable>
       {{ message }}
     </v-alert>
 

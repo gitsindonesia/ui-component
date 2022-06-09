@@ -76,7 +76,7 @@ const props = defineProps({
 
 const {message, title, subtitle} = toRefs(props);
 
-const emit = defineEmits(['submit']);
+const emit = defineEmits(['submit', 'cancel']);
 
 const isError = ref(false);
 
@@ -91,7 +91,7 @@ watch(
 const schema = object({
   currentPassword: props.withOldPassword
     ? string().required().label(props.currentPasswordText)
-    : undefined,
+    : string(),
   password: string()
     .required()
     .min(8)
@@ -106,13 +106,17 @@ const schema = object({
     .label(props.passwordConfirmationText),
 });
 
-const {handleSubmit, errors} = useForm({
+const {handleSubmit} = useForm({
   validationSchema: schema,
 });
 
 const onSubmit = handleSubmit((values) => {
   emit('submit', values);
 });
+
+const cancel = () => {
+  emit('cancel');
+};
 </script>
 
 <template>
@@ -140,7 +144,7 @@ const onSubmit = handleSubmit((values) => {
       </div>
     </slot>
 
-    <Alert v-model="isError" color="error" class="mt-5" icon dismissable>
+    <Alert v-model="isError" color="error" class="mt-5" dismissable>
       {{ message }}
     </Alert>
 
