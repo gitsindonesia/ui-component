@@ -1,11 +1,10 @@
-<script setup>
+<script setup lang="ts">
 import VMenuTooltip from './VMenuTooltip.vue';
+import {computed, PropType} from 'vue';
+import {Menu} from './types';
 
 const props = defineProps({
-  item: {
-    type: Object,
-    default: undefined,
-  },
+  item: Object as PropType<Menu>,
   mini: {
     type: Boolean,
     default: false,
@@ -27,10 +26,23 @@ const props = defineProps({
     default: false,
   },
 });
+
+const centerClass = computed(() => {
+  if (props.expandHover) {
+    return 'justify-start sm:justify-center';
+  }
+
+  if (props.mini) {
+    return 'justify-center flex justify-center';
+  }
+
+  return '';
+});
 </script>
 
 <template>
   <router-link
+    v-if="item"
     :to="item.to"
     exact
     class="
@@ -46,17 +58,9 @@ const props = defineProps({
       truncate
       hover:bg-gray-100
     "
-    :class="[
-      textColor,
-      mini ? 'py-4' : '',
-      mini
-        ? !expandHover
-          ? 'justify-center'
-          : 'justify-start sm:justify-center'
-        : '',
-    ]"
+    :class="[textColor, mini ? 'py-4' : '', centerClass]"
   >
-    <span class="w-6" :class="mini ? '' : 'px-1'">
+    <span :class="mini ? '' : 'px-1 w-6'">
       <svg
         width="12"
         height="12"

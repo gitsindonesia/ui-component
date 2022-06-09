@@ -87,13 +87,20 @@ const isActive = (path: any) => {
   const parts = path?.to?.split('/');
   return parts?.[2] === currentRoute?.[2];
 };
+
+const activatorClass = computed(() => {
+  return [
+    'font-normal hover:bg-gray-100 rounded !p-2 !py-3',
+    props.mini ? '!justify-center' : '',
+  ].join(' ');
+});
 </script>
 
 <template>
   <template v-if="menu">
     <VCollapsible
       v-if="menu.children"
-      activator-class="font-normal hover:bg-gray-100 rounded !p-2 !py-3"
+      :activator-class="activatorClass"
       panel-class=""
       header-class=""
       :hide-icon="mini"
