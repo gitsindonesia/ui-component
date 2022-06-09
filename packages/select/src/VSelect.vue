@@ -12,12 +12,12 @@ import {VInput} from '@gits-id/forms';
 import VTooltip from '@gits-id/tooltip';
 import {ErrorMessage} from 'vee-validate';
 
-interface SelectItem {
+type SelectItem = {
   text: string;
   value: any;
 
   [x: string]: any;
-}
+};
 
 const props = defineProps({
   value: {
