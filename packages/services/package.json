@@ -3,7 +3,7 @@
   "version": "0.4.1-alpha.0",
   "description": "GITS Services",
   "scripts": {
-    "build": "vite build && tsc --emitDeclarationOnly",
+    "build": "vite build && vue-tsc --emitDeclarationOnly",
     "prepublishOnly": "npm run build",
     "test": "vitest"
   },
