@@ -35,6 +35,7 @@ export default {
     size: 'default',
     shadow: false,
     text: false,
+    label: '',
   },
 } as Meta;
 
@@ -360,7 +361,7 @@ export const Sizes: Story<VInputProps> = (args) => ({
   },
   // And then the `args` are bound to your component with `v-bind="args"`
   template: `
-<div class="flex gap-2 flex-wrap border-none">
+<div class="space-y-2">
   <VInput v-for="size in sizes" :key="size" v-bind='args' :size="size" :placeholder="size"/>
 </div>
 `,
