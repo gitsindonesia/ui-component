@@ -20,7 +20,7 @@ const props = defineProps({
   },
   defaultBodyClass: {
     type: String,
-    default: 'px-4 py-2 flex',
+    default: 'px-4 py-2 flex flex-col',
   },
   wrapperClass: {
     type: String,
