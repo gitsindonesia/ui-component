@@ -4,9 +4,7 @@ import {resolve} from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    vue(),
-  ],
+  plugins: [vue()],
   esbuild: {
     exclude: ['./src/**/**.stories.ts'],
   },
@@ -26,17 +24,18 @@ export default defineConfig({
         '@heroicons/vue/solid',
         '@headlessui/vue',
         'vue-router',
-        '@gits-id/collapsible'
+        '@gits-id/collapsible',
+        '@iconify/vue',
       ],
       output: {
         // Provide global variables to use in the UMD build
         // for externalized deps
         globals: {
-          vue: 'Vue'
-        }
+          vue: 'Vue',
+        },
       },
       resolve: {
-        dedupe: "vue"
+        dedupe: 'vue',
       },
     },
   },
