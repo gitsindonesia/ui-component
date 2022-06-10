@@ -21,7 +21,7 @@
     "tailwindcss": "^3.0.23",
     "vue": "^3.2.33"
   },
-  "gitHead": "e0aeee7a565be76bbe461e758c12d61c0814b3ab",
+  "gitHead": "1d5ab0b8bd47aa4d59eef04a07cfa9ae7f2737b3",
   "devDependencies": {
     "c8": "^7.11.3",
     "vite": "^2.9.9",

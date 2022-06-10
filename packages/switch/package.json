@@ -35,5 +35,5 @@
   "jsdelivr": "dist/switch.iife.js",
   "module": "./dist/switch.es.js",
   "types": "./dist/types/index.d.ts",
-  "gitHead": "e0aeee7a565be76bbe461e758c12d61c0814b3ab"
+  "gitHead": "1d5ab0b8bd47aa4d59eef04a07cfa9ae7f2737b3"
 }
