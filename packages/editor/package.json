@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/editor",
-  "version": "0.4.6-alpha.0",
+  "version": "0.4.6",
   "description": "GITS Rich Text Editor Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -23,8 +23,8 @@
     "vue": "^3.2.31"
   },
   "devDependencies": {
-    "@gits-id/tailwind-config": "^0.4.6-alpha.0",
-    "@gits-id/utils": "^0.4.6-alpha.0",
+    "@gits-id/tailwind-config": "^0.4.6",
+    "@gits-id/utils": "^0.4.6",
     "@headlessui/vue": "^1.5.0",
     "@heroicons/vue": "^1.0.6",
     "@types/ckeditor__ckeditor5-build-classic": "^29.0.1",
