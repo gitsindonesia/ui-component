@@ -26,6 +26,7 @@ export default defineConfig({
         '@gits-id/utils',
         '@gits-id/tailwind-config',
         '@heroicons/vue/solid',
+        '@iconify/vue',
       ],
       output: {
         // Provide global variables to use in the UMD build

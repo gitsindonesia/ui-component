@@ -183,6 +183,37 @@ Error.parameters = {
   },
 };
 
+export const Icon: Story<VInputProps> = (args) => ({
+  components: {VInput},
+  setup() {
+    const showAlert = (message: string) => {
+      alert(message);
+    };
+
+    return {args, showAlert};
+  },
+  template: `
+<div class="space-y-2">
+  <VInput prepend-icon="ri:search-line" placeholder="Search..." @clickPrepend="showAlert('prepend click')"/>
+  <VInput append-icon="ri:search-line" placeholder="Search..." @clickAppend="showAlert('append click')"/>
+  <VInput prepend-icon="ic:baseline-add-reaction" placeholder="Search..." @clickPrependIcon="showAlert('prepend icon click')"/>
+  <VInput append-icon="ic:baseline-add-reaction" placeholder="Search..." @clickAppendIcon="showAlert('append icon click')"/>
+</div>
+`,
+});
+Icon.parameters = {
+  docs: {
+    source: {
+      code: `
+      <VInput prepend-icon="ri:search-line" placeholder="Search..." @clickPrepend="showAlert('prepend click')"/>
+      <VInput append-icon="ri:search-line" placeholder="Search..." @clickAppend="showAlert('append click')"/>
+      <VInput prepend-icon="ic:baseline-add-reaction" placeholder="Search..." @clickPrependIcon="showAlert('prepend icon click')"/>
+      <VInput append-icon="ic:baseline-add-reaction" placeholder="Search..." @clickPrependIcon="showAlert('append icon click')"/>
+      `,
+    },
+  },
+};
+
 export const Slots: Story<VInputProps> = (args) => ({
   components: {VInput, RiSearchLine, VBtn},
   setup() {

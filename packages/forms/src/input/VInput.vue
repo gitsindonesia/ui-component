@@ -6,8 +6,8 @@ export default {
 
 <script setup lang="ts">
 import {toRefs, computed} from 'vue';
-import {SearchIcon} from '@heroicons/vue/solid';
 import {useField} from 'vee-validate';
+import {Icon} from '@iconify/vue';
 
 const props = defineProps({
   value: {
@@ -101,10 +101,17 @@ const props = defineProps({
   },
 });
 
-const {type, readonly, disabled, placeholder, prependIcon, appendIcon} =
-  toRefs(props);
+const {type, readonly, disabled, placeholder, prependIcon} = toRefs(props);
 
-defineEmits(['input:modelValue', 'blur', 'change']);
+const emit = defineEmits([
+  'input:modelValue',
+  'blur',
+  'change',
+  'clickPrepend',
+  'clickPrependIcon',
+  'clickAppend',
+  'clickAppendIcon',
+]);
 
 const sizeClass = computed(() => {
   const sizes: Record<string, string> = {
@@ -146,6 +153,20 @@ const inputVariantClass = computed(() => {
     return variants[props.color];
   }
 });
+
+const paddingClass = computed(() => {
+  const classes = [];
+
+  if (props.prependIcon) {
+    classes.push('pl-10');
+  }
+
+  if (props.appendIcon) {
+    classes.push('pr-10');
+  }
+
+  return classes.join(' ');
+});
 </script>
 
 <template>
@@ -162,12 +183,17 @@ const inputVariantClass = computed(() => {
             h-full
             flex
             items-center
-            pr-2
+            px-3
             text-gray-500
           "
+          @click="emit('clickPrepend')"
         >
           <slot name="prepend">
-            <SearchIcon v-if="prependIcon === 'search'" class="w-5 h-5 ml-3" />
+            <Icon
+              :icon="prependIcon"
+              class="w-5 h-5"
+              @click="emit('clickPrependIcon')"
+            />
           </slot>
         </div>
       </slot>
@@ -186,7 +212,13 @@ const inputVariantClass = computed(() => {
           disabled:cursor-not-allowed
           focus:ring-2
         "
-        :class="[{shadow}, sizeClass, inputVariantClass, inputClass]"
+        :class="[
+          {shadow},
+          sizeClass,
+          inputVariantClass,
+          inputClass,
+          paddingClass,
+        ]"
         :placeholder="placeholder"
         :type="type"
         :disabled="disabled"
@@ -202,12 +234,17 @@ const inputVariantClass = computed(() => {
             h-full
             flex
             items-center
-            pl-2
+            px-3
             text-gray-500
           "
+          @click="emit('clickAppend')"
         >
           <slot name="append">
-            <SearchIcon v-if="appendIcon === 'search'" class="w-5 h-5 mr-3" />
+            <Icon
+              :icon="appendIcon"
+              class="w-5 h-5"
+              @click="emit('clickAppendIcon')"
+            />
           </slot>
         </div>
       </slot>
