@@ -595,7 +595,7 @@ onUnmounted(() => {
         @click="pickFile"
       >
         <template #append>
-          <div class="mr-1 space-x-1">
+          <div class="space-x-1 -mr-2">
             <VBtn
               :disabled="readonly || disabled"
               type="button"
