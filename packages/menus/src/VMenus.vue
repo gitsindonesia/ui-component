@@ -13,6 +13,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  small: {
+    type: Boolean,
+    default: false,
+  },
   rightIcon: {
     type: Boolean,
     default: false,
@@ -32,16 +36,15 @@ const placementClass = computed(() => (props.right ? 'right-0' : 'left-0'));
       <MenuButton
         class="
           inline-flex
-          font-semibold
+          font-medium
           text-gray-700
           justify-center
           items-center
           w-full
           py-1
           focus:outline-none
-          text-sm
         "
-        :class="btnClass"
+        :class="[btnClass, small ? 'text-sm' : '']"
       >
         <slot />
         <slot name="icon">
