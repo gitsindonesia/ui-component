@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/stats",
-  "version": "0.4.6",
+  "version": "0.4.7",
   "description": "GITS Stats Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -18,9 +18,9 @@
   "dependencies": {
     "@gits-id/badge": "^0.4.6",
     "@gits-id/card": "^0.4.6",
+    "@iconify/vue": "^3.2.1",
     "feather-icons": "^4.28.0",
-    "vue": "^3.2.31",
-    "@iconify/vue": "^3.2.1"
+    "vue": "^3.2.31"
   },
   "devDependencies": {
     "@gits-id/tailwind-config": "^0.4.6",

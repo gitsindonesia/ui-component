@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/ui",
-  "version": "0.4.6",
+  "version": "0.4.7",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly",
     "prepublishOnly": "npm run build",
@@ -32,7 +32,7 @@
     "@gits-id/select": "^0.4.6",
     "@gits-id/services": "^0.4.6",
     "@gits-id/spinner": "^0.4.6",
-    "@gits-id/stats": "^0.4.6",
+    "@gits-id/stats": "^0.4.7",
     "@gits-id/switch": "^0.4.6",
     "@gits-id/table": "^0.4.6",
     "@gits-id/tabs": "^0.4.6",
