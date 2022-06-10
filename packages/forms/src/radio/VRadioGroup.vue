@@ -60,6 +60,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  labelClass: {
+    type: String,
+    default: '',
+  },
 });
 
 const {
@@ -138,8 +142,8 @@ watch(
     <label
       v-if="label"
       :for="name"
-      class="font-semibold mb-1 block"
-      :class="error ? 'text-error-500' : 'text-gray-700'"
+      class="font-medium mb-1 block"
+      :class="[error ? 'text-error-500' : 'text-gray-700', labelClass]"
     >
       {{ label }}
     </label>
