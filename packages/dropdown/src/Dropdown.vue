@@ -14,6 +14,8 @@ withDefaults(
     top?: boolean;
     topClass?: string;
     bottomClass?: string;
+    panelClass?: string;
+    buttonWrapperClass?: string;
   }>(),
   {
     modelValue: false,
@@ -26,13 +28,15 @@ withDefaults(
     top: false,
     topClass: 'bottom-10',
     bottomClass: 'top-0',
+    panelClass: '',
+    buttonWrapperClass: '',
   },
 );
 </script>
 
 <template>
   <Menu as="div" class="relative inline-block text-left">
-    <div>
+    <div :class="buttonWrapperClass">
       <slot name="activator" :btn-props="btnProps" :label="label">
         <MenuButton as="button" v-bind="btnProps">
           {{ label }}
@@ -62,7 +66,11 @@ withDefaults(
           ring-1 ring-black ring-opacity-5
           focus:outline-none
         "
-        :class="[right ? 'right-0' : 'left-0', top ? topClass : bottomClass]"
+        :class="[
+          right ? 'right-0' : 'left-0',
+          top ? topClass : bottomClass,
+          panelClass,
+        ]"
       >
         <slot>
           <DropdownItem v-for="item in items" :key="item.text" v-bind="item" />
