@@ -212,23 +212,18 @@ const userFirstName = computed(() => user.value?.name?.split(' ')?.[0]);
         aria-label="Desktop Navigation"
       >
         <template v-for="menu in menus" :key="menu.text">
-          <v-menus v-if="menu.children" :items="menu.children">
+          <v-menus v-if="menu.children" :items="menu.children" :small="small">
             {{ menu.text }}
           </v-menus>
-          <router-link
+          <v-btn
             v-else
+            v-bind="menu"
             :to="menu.to"
-            class="
-              transition
-              duration-300
-              font-semibold
-              mx-4
-              hover:text-primary-600
-            "
-            :class="[small ? 'text-sm' : '']"
+            :size="menu.small || small ? 'sm' : ''"
+            :class="menu.small || small ? 'text-sm' : ''"
           >
             {{ menu.text }}
-          </router-link>
+          </v-btn>
         </template>
       </nav>
 

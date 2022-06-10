@@ -17,15 +17,12 @@ export default {
 } as Meta;
 
 const Template: Story = (args) => ({
-  // Components used in your story `template` are defined in the `components` object
   components: {
     'v-navbar': VNavbar,
   },
-  // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
     return {args};
   },
-  // And then the `args` are bound to your component with `v-bind="args"`
   template: `<v-navbar v-bind="args">{{ args.label }}</v-navbar>`,
 });
 
