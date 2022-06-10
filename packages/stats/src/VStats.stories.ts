@@ -15,7 +15,7 @@ export default {
     modelValue: true,
     title: 'Avg. Click Rate',
     value: '24.59%',
-    icon: 'user',
+    icon: 'ri:user-line',
     color: 'primary',
   },
 } as Meta;
@@ -35,7 +35,7 @@ Default.args = {};
 Default.parameters = {
   docs: {
     source: {
-      code: '<v-stats title="Avg. Click Rate" value="24.59%" icon="user" />',
+      code: '<v-stats title="Avg. Click Rate" value="24.59%" icon="ri:user-line" />',
     },
   },
 };
@@ -61,7 +61,7 @@ ProgressUp.args = {
 ProgressUp.parameters = {
   docs: {
     source: {
-      code: '<v-stats title="Avg. Click Rate" value="24.59%" icon="user" from="10.5%" to="5.5.%" up />',
+      code: '<v-stats title="Avg. Click Rate" value="24.59%" icon="ri:user-line" from="10.5%" to="5.5.%" up />',
     },
   },
 };
@@ -75,7 +75,7 @@ ProgressDown.args = {
 ProgressUp.parameters = {
   docs: {
     source: {
-      code: '<v-stats title="Avg. Click Rate" value="24.59%" icon="user" from="10.5%" to="5.5.%" down />',
+      code: '<v-stats title="Avg. Click Rate" value="24.59%" icon="ri:user-line" from="10.5%" to="5.5.%" down />',
     },
   },
 };
@@ -87,7 +87,7 @@ Success.args = {
 Success.parameters = {
   docs: {
     source: {
-      code: '<v-stats title="Avg. Click Rate" value="24.59%" icon="user" color="success" />',
+      code: '<v-stats title="Avg. Click Rate" value="24.59%" icon="ri:user-line" color="success" />',
     },
   },
 };
@@ -99,7 +99,7 @@ Primary.args = {
 Primary.parameters = {
   docs: {
     source: {
-      code: '<v-stats title="Avg. Click Rate" value="24.59%" icon="user" color="primary" />',
+      code: '<v-stats title="Avg. Click Rate" value="24.59%" icon="ri:user-line" color="primary" />',
     },
   },
 };
@@ -111,7 +111,7 @@ Error.args = {
 Error.parameters = {
   docs: {
     source: {
-      code: '<v-stats title="Avg. Click Rate" value="24.59%" icon="user" color="error" />',
+      code: '<v-stats title="Avg. Click Rate" value="24.59%" icon="ri:user-line" color="error" />',
     },
   },
 };
@@ -123,7 +123,7 @@ Info.args = {
 Info.parameters = {
   docs: {
     source: {
-      code: '<v-stats title="Avg. Click Rate" value="24.59%" icon="user" color="info" />',
+      code: '<v-stats title="Avg. Click Rate" value="24.59%" icon="ri:user-line" color="info" />',
     },
   },
 };
@@ -135,7 +135,7 @@ Warning.args = {
 Warning.parameters = {
   docs: {
     source: {
-      code: '<v-stats title="Avg. Click Rate" value="24.59%" icon="user" color="warning" />',
+      code: '<v-stats title="Avg. Click Rate" value="24.59%" icon="ri:user-line" color="warning" />',
     },
   },
 };

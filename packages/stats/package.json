@@ -20,7 +20,7 @@
     "@gits-id/card": "^0.4.6",
     "feather-icons": "^4.28.0",
     "vue": "^3.2.31",
-    "vue-feather": "^2.0.0"
+    "@iconify/vue": "^3.2.1"
   },
   "devDependencies": {
     "@gits-id/tailwind-config": "^0.4.6",

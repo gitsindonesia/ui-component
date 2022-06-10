@@ -3,6 +3,7 @@ import {computed, toRefs} from 'vue';
 import VCard from '@gits-id/card';
 import VBadge from '@gits-id/badge';
 import VueFeather from 'vue-feather';
+import {Icon} from '@iconify/vue';
 
 type Props = {
   title?: string;
@@ -14,6 +15,7 @@ type Props = {
   progress?: string;
   up?: boolean;
   down?: boolean;
+  iconClass?: string;
 };
 
 const props = withDefaults(defineProps<Props>(), {
@@ -26,6 +28,7 @@ const props = withDefaults(defineProps<Props>(), {
   progress: '',
   up: false,
   down: false,
+  iconClass: 'w-8 h-8',
 });
 
 const {title, icon, value, color, from, progressColor, progress, up, down} =
@@ -61,7 +64,7 @@ const badgeColor = computed(() => {
   <v-card
     :title="title"
     wrapper-class="rounded-lg"
-    body-class="!p-4 flex items-start gap-4"
+    body-class="!flex-row items-center !py-4 !gap-4"
     hide-header
     hide-footer
   >
@@ -81,7 +84,7 @@ const badgeColor = computed(() => {
       :class="colorClass"
     >
       <slot name="icon" :icon="icon">
-        <vue-feather :type="icon" />
+        <Icon :icon="icon" :class="iconClass" />
       </slot>
     </div>
     <div class="w-full">

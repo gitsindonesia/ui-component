@@ -21,7 +21,7 @@ export default defineConfig({
       external: [
         'vue',
         '@heroicons/vue/outline',
-        'vue-feather',
+        '@iconify/vue',
         '@gits-id/card',
         '@gits-id/badge',
       ],
