@@ -45,7 +45,7 @@ const {fillHeight, noButton, noImage, title, description} = toRefs(props);
       <div class="font-semibold text-2xl mb-2 text-gray-700">
         {{ title }}
       </div>
-      <div class="mb-6 text-gray-600">
+      <div class="mb-6 text-gray-500">
         {{ description }}
       </div>
       <v-btn v-if="!noButton" to="/" color="primary"> Back to Home </v-btn>

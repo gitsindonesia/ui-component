@@ -1,26 +1,24 @@
 import {Story} from '@storybook/vue3';
-import Login from './Login.vue';
+import NotFound from './NotFound.vue';
 import Auth from './Auth.vue';
 
 export default {
-  title: 'Pages/Login',
-  component: Login,
+  title: 'Pages/NotFound',
+  component: NotFound,
   argTypes: {},
   args: {},
 };
 
 const Template: Story<{}> = (args) => ({
-  components: {Login, Auth},
+  components: {NotFound, Auth},
   setup() {
     return {args};
   },
   template: `
-    <Auth>
-      <Login/>
-    </Auth>
+    <NotFound/>
   `,
 });
 
 export const Default = Template.bind({});
 Default.args = {};
-Default.storyName = 'Login';
+Default.storyName = 'NotFound';
