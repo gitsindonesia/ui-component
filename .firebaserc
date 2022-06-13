@@ -1,6 +1,6 @@
 {
   "projects": {
-    "default": "gits-components"
+    "default": "gits-ui"
   },
   "targets": {
     "gits-ui": {
