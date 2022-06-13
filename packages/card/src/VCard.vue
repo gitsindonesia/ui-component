@@ -12,15 +12,15 @@ const props = defineProps({
   },
   defaultHeaderClass: {
     type: String,
-    default: 'font-semibold flex px-4 py-2',
+    default: 'font-semibold flex px-4',
   },
   defaultFooterClass: {
     type: String,
-    default: 'px-4 py-2 flex',
+    default: 'px-4 flex',
   },
   defaultBodyClass: {
     type: String,
-    default: 'px-4 py-2 flex flex-col',
+    default: 'px-4 flex flex-col',
   },
   wrapperClass: {
     type: String,
@@ -81,18 +81,32 @@ const tag = computed(() => (to.value ? 'router-link' : 'div'));
     <slot name="image" />
     <div
       v-if="!hideHeader"
-      :class="[defaultHeaderClass, headerClass, bordered ? 'border-b' : '']"
+      :class="[
+        defaultHeaderClass,
+        bordered ? 'border-b py-3' : 'pt-3',
+        headerClass,
+      ]"
     >
       <slot name="header">
         <div>{{ title }}</div>
       </slot>
     </div>
-    <div :class="[defaultBodyClass, bodyClass]">
+    <div
+      :class="[
+        defaultBodyClass,
+        bordered ? 'border-t py-3' : 'py-3',
+        bodyClass,
+      ]"
+    >
       <slot />
     </div>
     <div
       v-if="!hideFooter"
-      :class="[defaultFooterClass, footerClass, bordered ? 'border-t' : '']"
+      :class="[
+        defaultFooterClass,
+        bordered ? 'border-t py-3' : 'pb-3',
+        footerClass,
+      ]"
     >
       <slot name="footer" />
     </div>

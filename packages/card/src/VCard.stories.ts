@@ -7,7 +7,7 @@ export default {
   component: VCard,
   argTypes: {},
   args: {
-    title: 'Header',
+    title: 'Title',
     body: 'Body',
     footer: 'Footer',
     headerClass: '',
@@ -34,7 +34,7 @@ const Template: Story = (args) => ({
   <template #footer>
     {{args.footer}}
   </template>
-  Body
+  {{ args.body }}
   </v-card>`,
 });
 
@@ -48,12 +48,36 @@ Default.parameters = {
   },
 };
 
-export const HideHeaderFooter = Template.bind({});
-HideHeaderFooter.args = {
+export const HideFooter = Template.bind({});
+HideFooter.args = {
+  hideFooter: true,
+};
+HideFooter.parameters = {
+  docs: {
+    source: {
+      code: '<v-card title="Header" hide-footer>Body</v-card>',
+    },
+  },
+};
+
+export const HideHeader = Template.bind({});
+HideHeader.args = {
+  hideHeader: true,
+};
+HideHeader.parameters = {
+  docs: {
+    source: {
+      code: '<v-card title="Header" hide-header>Body</v-card>',
+    },
+  },
+};
+
+export const BodyOnly = Template.bind({});
+BodyOnly.args = {
   hideHeader: true,
   hideFooter: true,
 };
-HideHeaderFooter.parameters = {
+BodyOnly.parameters = {
   docs: {
     source: {
       code: '<v-card title="Header" hide-header hide-footer>Body</v-card>',
@@ -87,8 +111,8 @@ export const CustomSlots: Story = (args) => ({
     <div>My Header</div>
   </template>
   <template #footer>
-      <v-btn color="primary">Agree</v-btn>
-      <v-btn>Cancel</v-btn>
+    <v-btn color="primary">Agree</v-btn>
+    <v-btn>Cancel</v-btn>
   </template>
   
   <p class="text-gray-600">lorem ipsum body</p>
@@ -109,6 +133,18 @@ CustomSlots.parameters = {
   
   <p class="text-gray-600">lorem ipsum body</p>
 </v-card>`,
+    },
+  },
+};
+
+export const Flat = Template.bind({});
+Flat.args = {
+  flat: true,
+};
+Flat.parameters = {
+  docs: {
+    source: {
+      code: '<v-card title="Header" flat>Body</v-card>',
     },
   },
 };
