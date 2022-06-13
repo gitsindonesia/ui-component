@@ -1,10 +1,10 @@
 <script setup>
 import {toRefs} from 'vue';
-import {AtSymbolIcon} from '@heroicons/vue/outline';
 import VBtn from '@gits-id/button';
 import {VInput} from '@gits-id/forms';
 import {useForm} from 'vee-validate';
 import {string} from 'yup';
+import {Icon} from '@iconify/vue';
 
 const props = defineProps({
   modelValue: {
@@ -61,16 +61,10 @@ const onSubmit = handleSubmit((values) => {
           type="email"
           wrapper-class="mb-4"
           class="pl-10"
+          prepend-icon="heroicons-outline:at-symbol"
           :label="emailText"
           :placeholder="emailText"
-        >
-          <template #prepend>
-            <AtSymbolIcon
-              class="w-5 h-5 ml-3"
-              :class="errors.email ? 'text-error' : 'text-gray-300'"
-            />
-          </template>
-        </VInput>
+        />
 
         <VBtn type="submit" color="primary" block uppercase> Submit </VBtn>
       </div>

@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import {computed, ref, toRefs, watch} from 'vue';
-import {UserIcon, LockClosedIcon} from '@heroicons/vue/outline';
 import {VInput, VCheckbox} from '@gits-id/forms';
 import VBtn from '@gits-id/button';
 import {useForm} from 'vee-validate';
@@ -92,7 +91,7 @@ const schema = computed(() => {
   });
 });
 
-const {handleSubmit, errors} = useForm({
+const {handleSubmit} = useForm({
   validationSchema: schema,
 });
 
@@ -116,35 +115,21 @@ const onSubmit = handleSubmit((values) => {
         <VInput
           id="username"
           name="email"
-          class="pl-10"
           wrapper-class="mb-4"
+          prepend-icon="heroicons-outline:at-symbol"
           :label="usernameText"
           :placeholder="usernameText"
           :autocomplete="autocomplete"
-        >
-          <template #prepend>
-            <UserIcon
-              class="w-5 h-5 m-3"
-              :class="errors.email ? 'text-error' : 'text-gray-300'"
-            />
-          </template>
-        </VInput>
+        />
 
         <VInput
           id="password"
           name="password"
-          class="pl-10"
           type="password"
+          prepend-icon="heroicons-outline:lock-closed"
           :label="passwordText"
           :placeholder="passwordText"
-        >
-          <template #prepend>
-            <LockClosedIcon
-              class="w-5 h-5 ml-3"
-              :class="errors.password ? 'text-error' : 'text-gray-300'"
-            />
-          </template>
-        </VInput>
+        />
 
         <div class="mb-4 flex justify-between items-center">
           <div class="w-6/12">

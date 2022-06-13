@@ -84,36 +84,20 @@ const onSubmit = handleSubmit((values) => {
           name="password"
           type="password"
           wrapper-class="mb-4"
-          class="pl-10"
+          prepend-icon="heroicons-outline:lock-closed"
           :label="passwordText"
           :placeholder="passwordText"
-        >
-          <template #prepend>
-            <LockClosedIcon
-              class="w-5 h-5 ml-3"
-              :class="errors.password ? 'text-error' : 'text-gray-300'"
-            />
-          </template>
-        </VInput>
+        />
 
         <VInput
           id="passwordConfirmation"
           name="passwordConfirmation"
           type="password"
-          class="pl-10"
           wrapper-class="mb-4"
+          prepend-icon="heroicons-outline:lock-closed"
           :label="passwordConfirmationText"
           :placeholder="passwordConfirmationText"
-        >
-          <template #prepend>
-            <LockClosedIcon
-              class="w-5 h-5 ml-3"
-              :class="
-                errors.passwordConfirmation ? 'text-error' : 'text-gray-300'
-              "
-            />
-          </template>
-        </VInput>
+        />
 
         <VBtn color="primary" type="submit" block> {{ submitText }} </VBtn>
       </div>
