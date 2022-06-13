@@ -126,14 +126,14 @@ export default {
   },
 } as Meta;
 
-export const SideMenu: Story = (args) => ({
+export const NavDrawer: Story = (args) => ({
   components: {MyNavbarDrawer},
   setup() {
     return {args};
   },
   template: '<MyNavbarDrawer v-bind="args" />',
 });
-SideMenu.parameters = {
+NavDrawer.parameters = {
   docs: {
     source: {
       code: '<v-nav-drawer :menus="menus" />',
