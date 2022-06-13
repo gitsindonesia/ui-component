@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/dropdown",
-  "version": "0.4.6",
+  "version": "0.4.8-alpha.14+cb58879",
   "description": "GITS Dropdown Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,7 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gits-id/button": "^0.4.6",
+    "@gits-id/button": "^0.4.8-alpha.14+cb58879",
     "@headlessui/vue": "^1.5.0",
     "@heroicons/vue": "^1.0.6",
     "feather-icons": "^4.28.0",
@@ -25,8 +25,8 @@
     "vue-remix-icons": "^1.1.1"
   },
   "devDependencies": {
-    "@gits-id/tailwind-config": "^0.4.6",
-    "@gits-id/utils": "^0.4.6",
+    "@gits-id/tailwind-config": "^0.4.8-alpha.14+cb58879",
+    "@gits-id/utils": "^0.4.8-alpha.14+cb58879",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
     "vite": "^2.9.9",
@@ -37,5 +37,5 @@
   "jsdelivr": "dist/dropdown.iife.js",
   "module": "./dist/dropdown.es.js",
   "types": "./dist/types/index.d.ts",
-  "gitHead": "1d5ab0b8bd47aa4d59eef04a07cfa9ae7f2737b3"
+  "gitHead": "cb58879552998dee005d841deb763f1017f5e27c"
 }

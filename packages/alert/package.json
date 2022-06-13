@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/alert",
-  "version": "0.4.6",
+  "version": "0.4.8-alpha.14+cb58879",
   "description": "GITS Alert Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,7 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gits-id/utils": "^0.4.6",
+    "@gits-id/utils": "^0.4.8-alpha.14+cb58879",
     "@heroicons/vue": "^1.0.6",
     "vue": "^3.2.33"
   },
@@ -28,7 +28,7 @@
     "vite": "^2.8.6",
     "vitest": "^0.12.4"
   },
-  "gitHead": "1d5ab0b8bd47aa4d59eef04a07cfa9ae7f2737b3",
+  "gitHead": "cb58879552998dee005d841deb763f1017f5e27c",
   "main": "dist/alert.umd.js",
   "unpkg": "dist/alert.iife.js",
   "jsdelivr": "dist/alert.iife.js",

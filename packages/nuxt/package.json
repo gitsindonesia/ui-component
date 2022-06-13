@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/ui-nuxt",
-  "version": "0.4.7",
+  "version": "0.4.8-alpha.14+cb58879",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -21,7 +21,7 @@
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
   },
   "dependencies": {
-    "@gits-id/ui": "^0.4.7",
+    "@gits-id/ui": "^0.4.8-alpha.14+cb58879",
     "@nuxt/kit": "^3.0.0-rc.3"
   },
   "devDependencies": {
@@ -31,5 +31,5 @@
     "eslint": "latest",
     "nuxt": "^3.0.0-rc.3"
   },
-  "gitHead": "1d5ab0b8bd47aa4d59eef04a07cfa9ae7f2737b3"
+  "gitHead": "cb58879552998dee005d841deb763f1017f5e27c"
 }
