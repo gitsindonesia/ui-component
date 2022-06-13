@@ -4,17 +4,15 @@ import {resolve} from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    vue(),
-  ],
+  plugins: [vue()],
   esbuild: {
     exclude: ['./src/**/**.stories.ts'],
   },
   build: {
     target: 'esnext',
     lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
-      name: 'Badge',
+      entry: resolve(__dirname, 'index.ts'),
+      name: 'Utils',
       formats: ['es', 'cjs', 'iife', 'umd'],
     },
     rollupOptions: {
@@ -25,11 +23,11 @@ export default defineConfig({
         // Provide global variables to use in the UMD build
         // for externalized deps
         globals: {
-          vue: 'Vue'
-        }
+          vue: 'Vue',
+        },
       },
       resolve: {
-        dedupe: "vue"
+        dedupe: 'vue',
       },
     },
   },

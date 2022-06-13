@@ -2,8 +2,11 @@
   "name": "@gits-id/utils",
   "version": "0.4.6",
   "description": "GITS Utilities",
-  "main": "index.ts",
-  "scripts": {},
+  "scripts": {
+    "build": "vite build && vue-tsc --emitDeclarationOnly",
+    "prepublishOnly": "npm run build",
+    "test": "vitest"
+  },
   "keywords": [
     "utils",
     "utilities"
@@ -18,5 +21,9 @@
     "c8": "^7.11.3",
     "vite": "^2.9.9",
     "vitest": "^0.12.4"
-  }
+  },
+  "main": "dist/utils.umd.js",
+  "unpkg": "dist/utils.iife.js",
+  "jsdelivr": "dist/utils.iife.js",
+  "module": "./dist/utils.es.js"
 }
