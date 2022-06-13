@@ -19,7 +19,8 @@
     "@gits-id/button": "^0.4.6",
     "@gits-id/forms": "^0.4.6",
     "vue": "^3.2.31",
-    "yup": "^0.32.11"
+    "yup": "^0.32.11",
+    "@iconify/vue": "^3.2.1"
   },
   "devDependencies": {
     "@gits-id/tailwind-config": "^0.4.6",

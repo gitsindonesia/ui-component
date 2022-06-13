@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import {ref, toRefs, watch} from 'vue';
-import {ArrowLeftIcon} from '@heroicons/vue/outline';
 import {VInput} from '@gits-id/forms';
 import Button from '@gits-id/button';
 import {useForm} from 'vee-validate';
 import {string, object, ref as YupRef} from 'yup';
 import Alert from '@gits-id/alert';
+import {Icon} from '@iconify/vue';
 
 const props = defineProps({
   title: {
@@ -129,7 +129,7 @@ const cancel = () => {
         class="relative -left-10 md:absolute md:top-20 md:left-24 gap-4"
         @click="cancel"
       >
-        <ArrowLeftIcon class="w-6 h-6" />
+        <Icon class="w-6 h-6" icon="heroicons-outline:arrow-left" />
 
         <span v-if="backText" class="text-gray-1">{{ backText }}</span>
       </Button>
@@ -156,6 +156,7 @@ const cancel = () => {
           name="currentPassword"
           type="password"
           wrapper-class="mb-4"
+          prepend-icon="heroicons-outline:lock-closed"
           :label="currentPasswordText"
           :placeholder="currentPasswordText"
           :hint="currentPasswordHint"
@@ -166,6 +167,7 @@ const cancel = () => {
           name="password"
           type="password"
           wrapper-class="mb-4"
+          prepend-icon="heroicons-outline:lock-closed"
           :label="passwordText"
           :placeholder="passwordText"
           :hint="passwordHint"
@@ -176,6 +178,7 @@ const cancel = () => {
           name="passwordConfirmation"
           type="passwordConfirmation"
           wrapper-class="mb-4"
+          prepend-icon="heroicons-outline:lock-closed"
           :label="passwordConfirmationText"
           :placeholder="passwordConfirmationText"
           :hint="passwordConfirmationHint"
