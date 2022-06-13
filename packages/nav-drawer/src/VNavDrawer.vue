@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {computed, PropType, toRefs} from 'vue';
+import {computed, PropType, ref, toRefs, watch} from 'vue';
 import {XIcon} from '@heroicons/vue/outline';
 import VMenu, {type Menu} from '@gits-id/menu';
 import VLogo from '@gits-id/logo';
@@ -78,6 +78,7 @@ const {
   classMenuParent,
   expandHover,
   isExpandHover,
+  modelValue,
 } = toRefs(props);
 
 const emit = defineEmits([
@@ -87,9 +88,25 @@ const emit = defineEmits([
   'update:expandHover',
 ]);
 
+const isOpen = ref(modelValue.value)
+
+watch(modelValue, val => {
+  isOpen.value = val
+}, {immediate: true})
+
+const isMini = ref(mini.value)
+
+watch(mini, val => {
+  isMini.value = val
+}, {immediate: true})
+
+watch(isMini, val => {
+  emit('update:mini', val);
+})
+
 const toggleMenu = () => {
+  isMini.value = !isMini.value
   emit('toggle:click');
-  emit('update:mini', !mini.value);
 };
 
 const mouseOver = () => {
@@ -118,7 +135,7 @@ const bgColor = computed(() =>
     leave-to-class="opacity-0"
   >
     <div
-      v-if="mini"
+      v-if="isMini"
       class="fixed sm:hidden inset-0 z-20 transition-opacity"
       aria-hidden="true"
       @click="toggleMenu"
@@ -146,7 +163,7 @@ const bgColor = computed(() =>
     "
     :class="[
       bgColor,
-      mini
+      isMini
         ? 'w-10/12 sm:w-[85px]'
         : 'transform -translate-x-full sm:transform-none sm:w-[260px]',
       expandHover ? 'hover:sm:w-[260px]' : '',
@@ -167,12 +184,12 @@ const bgColor = computed(() =>
           >
             <ChevronLeftIcon
               class="w-5 h-5"
-              :class="[mini ? 'rotate-180' : '']"
+              :class="[isMini ? 'rotate-180' : '']"
             />
           </v-btn>
         </slot>
       </template>
-      <template v-if="mini && !expandHover">
+      <template v-if="isMini && !expandHover">
         <slot name="logo.mini" />
       </template>
       <slot v-else name="logo">
@@ -195,7 +212,7 @@ const bgColor = computed(() =>
           :classMenuParent="classMenuParent"
           :key="i"
           :menu="menu"
-          :mini="mini"
+          :mini="isMini"
           :expandHover="expandHover"
           :dark="dark"
           :bg-color="expandColor"

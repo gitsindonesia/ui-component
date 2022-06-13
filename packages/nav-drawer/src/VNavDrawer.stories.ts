@@ -131,7 +131,13 @@ export const NavDrawer: Story = (args) => ({
   setup() {
     return {args};
   },
-  template: '<MyNavbarDrawer v-bind="args" />',
+  template: `
+  <MyNavbarDrawer v-bind="args">
+    <template #logo.mini>
+      <div class="text-center font-semibold">GITS</div>
+    </template>
+  </MyNavbarDrawer>
+  `,
 });
 NavDrawer.parameters = {
   docs: {
