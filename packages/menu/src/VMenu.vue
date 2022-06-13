@@ -182,7 +182,7 @@ const activatorClass = computed(() => {
       <img v-if="menu.img" :src="menu.img" alt="img icon" class="w-5 h-5" />
       <VMenuIcon :icon="menu.icon" :menu="menu" />
 
-      <span :class="{hidden: mini && !expandHover}">
+      <span :class="{'sm:hidden': mini && !expandHover}">
         {{ menu.text }}
       </span>
 
