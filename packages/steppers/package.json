@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/stepper",
-  "version": "0.4.8-alpha.14+cb58879",
+  "version": "0.4.8-alpha.16+d5b1ff8",
   "description": "GITS Stepper Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -19,7 +19,7 @@
     "vue": "^3.2.31"
   },
   "devDependencies": {
-    "@gits-id/tailwind-config": "^0.4.8-alpha.14+cb58879",
+    "@gits-id/tailwind-config": "^0.4.8-alpha.16+d5b1ff8",
     "@vue/compiler-dom": "^3.2.31",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
@@ -31,5 +31,5 @@
   "jsdelivr": "dist/steppers.iife.js",
   "module": "./dist/steppers.es.js",
   "types": "./dist/types/index.d.ts",
-  "gitHead": "cb58879552998dee005d841deb763f1017f5e27c"
+  "gitHead": "d5b1ff85176022c4a3492b24734007ab5d84e6cc"
 }

@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/tailwind-components",
-  "version": "0.4.8-alpha.14+cb58879",
+  "version": "0.4.8-alpha.16+d5b1ff8",
   "description": "GITS Tailwind Plugin",
   "scripts": {},
   "keywords": [
@@ -10,7 +10,7 @@
   ],
   "author": "",
   "license": "ISC",
-  "gitHead": "cb58879552998dee005d841deb763f1017f5e27c",
+  "gitHead": "d5b1ff85176022c4a3492b24734007ab5d84e6cc",
   "main": "index.js",
   "devDependencies": {
     "c8": "^7.11.3",
