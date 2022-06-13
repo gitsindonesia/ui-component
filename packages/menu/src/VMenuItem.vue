@@ -72,7 +72,7 @@ const centerClass = computed(() => {
       </svg>
     </span>
 
-    <span :class="{hidden: mini && !expandHover, 'text-sm': small}">
+    <span :class="{'sm:hidden': mini && !expandHover, 'text-sm': small}">
       {{ item.text }}
     </span>
 

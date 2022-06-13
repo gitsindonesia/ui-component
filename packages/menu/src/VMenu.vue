@@ -130,7 +130,7 @@ const activatorClass = computed(() => {
           <span
             :title="menu.text"
             class="flex-grow text-left truncate"
-            :class="{hidden: mini && !expandHover, 'text-sm': small}"
+            :class="{'sm:hidden': mini && !expandHover, 'text-sm': small}"
           >
             {{ menu.text }}
           </span>
