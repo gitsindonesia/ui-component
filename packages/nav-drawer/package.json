@@ -19,6 +19,7 @@
     "@gits-id/menu": "^0.4.6",
     "@gits-id/navbar": "^0.4.6",
     "@gits-id/utils": "^0.4.6",
+    "@gits-id/button": "^0.4.6",
     "vue": "^3.2.31"
   },
   "devDependencies": {

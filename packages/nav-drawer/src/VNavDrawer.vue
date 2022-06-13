@@ -5,6 +5,7 @@ import VMenu, {type Menu} from '@gits-id/menu';
 import VLogo from '@gits-id/logo';
 import {ChevronLeftIcon} from '@heroicons/vue/solid';
 import {getBgColor} from '@gits-id/utils';
+import VBtn from '@gits-id/button'
 
 const props = defineProps({
   modelValue: {
@@ -25,7 +26,9 @@ const props = defineProps({
   },
   logoProps: {
     type: Object,
-    default: () => ({}),
+    default: () => ({
+      imgClass: 'h-10'
+    }),
   },
   dark: {
     type: Boolean,
