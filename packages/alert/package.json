@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/alert",
-  "version": "0.4.8-alpha.16+d5b1ff8",
+  "version": "0.4.8",
   "description": "GITS Alert Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,7 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gits-id/utils": "^0.4.8-alpha.16+d5b1ff8",
+    "@gits-id/utils": "^0.4.8",
     "@heroicons/vue": "^1.0.6",
     "vue": "^3.2.33"
   },

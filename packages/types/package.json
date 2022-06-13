@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/types",
-  "version": "0.4.8-alpha.16+d5b1ff8",
+  "version": "0.4.8",
   "description": "GITS Types Definition",
   "main": "index.ts",
   "scripts": {},
