@@ -126,7 +126,7 @@ export default {
   },
 } as Meta;
 
-export const NavDrawer: Story = (args) => ({
+const Template: Story = (args) => ({
   components: {MyNavbarDrawer},
   setup() {
     return {args};
@@ -139,7 +139,21 @@ export const NavDrawer: Story = (args) => ({
   </MyNavbarDrawer>
   `,
 });
+
+export const NavDrawer = Template.bind({});
 NavDrawer.parameters = {
+  docs: {
+    source: {
+      code: '<v-nav-drawer :menus="menus" />',
+    },
+  },
+};
+
+export const ExpandHover = Template.bind({});
+ExpandHover.args = {
+  expandHover: true,
+};
+ExpandHover.parameters = {
   docs: {
     source: {
       code: '<v-nav-drawer :menus="menus" />',
