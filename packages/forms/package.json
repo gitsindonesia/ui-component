@@ -18,7 +18,6 @@
     "@gits-id/button": "^0.4.6",
     "@gits-id/spinner": "^0.4.6",
     "@gits-id/utils": "^0.4.6",
-    "@iconify/vue": "^3.2.1",
     "vee-validate": "^4.5.9",
     "vue": "^3.2.31"
   },
