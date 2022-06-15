@@ -157,7 +157,7 @@ const outlinedVariants: Record<string, any> = {
 
 const textVariants: Record<string, any> = {
   default:
-    'border-transparent bg-transparent text-gray-800 hover:text-gray-900 active:text-gray-600',
+    'border-transparent bg-transparent text-gray-700 hover:text-gray-900 active:text-gray-600',
   primary:
     'border-transparent bg-transparent text-primary-500 hover:text-primary-600 active:text-primary-400',
   secondary:
