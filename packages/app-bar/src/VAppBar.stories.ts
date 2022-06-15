@@ -70,13 +70,13 @@ Dark.parameters = {
 export const Custom = Template.bind({});
 Custom.args = {
   dark: true,
-  class: 'rounded-lg',
+  class: 'bg-orange-600 text-white',
 };
 
 Custom.parameters = {
   docs: {
     source: {
-      code: `<v-app-bar class="rounded-lg">`,
+      code: `<v-app-bar class="bg-orange-600">`,
     },
   },
 };
