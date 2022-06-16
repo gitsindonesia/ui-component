@@ -198,20 +198,4 @@ const activatorClass = computed(() => {
 .fill-white {
   fill: #fff;
 }
-/**
-.menu-item.router-link-active,
-.menu-item.router-link-active.router-link-exact-active,
-.menu-item.router-link-active.router-link-exact-active .menu-tooltip {
-  @apply text-primary-600;
-}
-.sub-menu.router-link-active,
-.sub-menu.router-link-active.router-link-exact-active,
-.sub-menu.router-link-active.router-link-exact-active .menu-tooltip {
-  @apply text-primary-600;
-}
-.sub-menu.router-link-active svg circle,
-.sub-menu.router-link-active.router-link-exact-active svg circle {
-  @apply text-primary-600;
-}
-**/
 </style>
