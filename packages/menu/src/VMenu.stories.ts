@@ -87,6 +87,18 @@ Mini.parameters = {
   },
 };
 
+export const CustomActiveClass = Template.bind({});
+CustomActiveClass.args = {
+  activeClass: 'bg-blue-600 text-white',
+};
+CustomActiveClass.parameters = {
+  docs: {
+    source: {
+      code: '<v-menu :menu="menu" mini />',
+    },
+  },
+};
+
 export const Icon = Template.bind({});
 Icon.args = {
   menu: {

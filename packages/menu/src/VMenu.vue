@@ -104,6 +104,7 @@ const activatorClass = computed(() => {
       panel-class=""
       header-class=""
       :hide-icon="mini"
+      :active-class="classMenuParent"
     >
       <template #header="{isOpen: open}">
         <div
