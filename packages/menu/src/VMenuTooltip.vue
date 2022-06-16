@@ -21,10 +21,10 @@ defineEmits(['update:show']);
       hidden
       shadow
       absolute
-      bg-gray-200
+      bg-gray-100
       text-gray-700
       px-4
-      py-3
+      py-2.5
       min-w-[200px]
       rounded
       left-20
