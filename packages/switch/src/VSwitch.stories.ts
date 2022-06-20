@@ -89,3 +89,16 @@ Warning.parameters = {
     },
   },
 };
+
+export const NoLabel = Template.bind({});
+NoLabel.args = {
+  color: 'warning',
+  label: '',
+};
+NoLabel.parameters = {
+  docs: {
+    source: {
+      code: `<v-switch v-model="model" color="warning" />`,
+    },
+  },
+};
