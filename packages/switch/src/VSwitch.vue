@@ -16,6 +16,30 @@ const props = defineProps({
     type: String,
     default: 'primary',
   },
+  inactiveClass: {
+    type: String,
+    default: 'bg-gray-200',
+  },
+  activeClass: {
+    type: String,
+    default: '',
+  },
+  buttonClass: {
+    type: String,
+    default: '',
+  },
+  wrapperClass: {
+    type: String,
+    default: '',
+  },
+  switchClass: {
+    type: String,
+    default: '',
+  },
+  labelClass: {
+    type: String,
+    default: '',
+  },
 });
 
 const emit = defineEmits(['update:modelValue']);
@@ -49,8 +73,10 @@ watch(modelValue, (val) => {
 
 <template>
   <div class="w-full">
-    <SwitchGroup as="div" class="flex items-center gap-4">
-      <SwitchLabel v-if="label">{{ label }}</SwitchLabel>
+    <SwitchGroup as="div" class="flex items-center gap-4" :class="wrapperClass">
+      <SwitchLabel v-if="label" :class="labelClass">
+        {{ label }}
+      </SwitchLabel>
 
       <Switch
         v-slot="{checked}"
@@ -71,7 +97,10 @@ watch(modelValue, (val) => {
           focus:outline-none
           focus:shadow-outline
         "
-        :class="switchValue ? colorClass : 'bg-gray-200'"
+        :class="[
+          switchValue ? colorClass ?? activeClass : inactiveClass,
+          switchClass,
+        ]"
       >
         <span
           class="
@@ -85,7 +114,10 @@ watch(modelValue, (val) => {
             bg-white
             rounded-full
           "
-          :class="{'translate-x-5': checked, 'translate-x-0': !checked}"
+          :class="[
+            {'translate-x-5': checked, 'translate-x-0': !checked},
+            buttonClass,
+          ]"
         />
       </Switch>
     </SwitchGroup>

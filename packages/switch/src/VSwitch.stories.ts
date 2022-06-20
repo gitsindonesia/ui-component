@@ -102,3 +102,29 @@ NoLabel.parameters = {
     },
   },
 };
+
+export const CustomClass = Template.bind({});
+CustomClass.args = {
+  color: '',
+  label: 'Custom Switch',
+  switchClass: 'border-cyan-200',
+  activeClass: 'bg-white',
+  inactiveClass: 'bg-white',
+  buttonClass: 'bg-cyan-500',
+};
+CustomClass.parameters = {
+  docs: {
+    source: {
+      code: `
+<v-switch
+  v-model="model"       
+  color=""
+  label="Custom Switch"
+  switch-class="border-cyan-200"
+  active-class="bg-white"
+  inactive-class="bg-white"
+  button-class="bg-cyan-500"
+/>`,
+    },
+  },
+};
