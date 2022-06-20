@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/gitsindonesia/ui-component/compare/v0.4.8...v0.5.0) (2022-06-20)
+
+
+### Bug Fixes
+
+* **v-menu:** apply classMenuParent class ([d0d64ba](https://github.com/gitsindonesia/ui-component/commit/d0d64ba6621ca0493c30d5bf095bc1a8204ab653))
+
+
+
+
+
 # [0.3.0](https://github.com/gitsindonesia/ui-component/compare/v0.2.6...v0.3.0) (2022-05-11)
 
 **Note:** Version bump only for package @gits-id/menu

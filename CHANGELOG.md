@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/gitsindonesia/ui-component/compare/v0.4.8...v0.5.0) (2022-06-20)
+
+
+### Bug Fixes
+
+* same color for text styled button ([26909ca](https://github.com/gitsindonesia/ui-component/commit/26909ca7146ac9fc6ef386717f7f6d5829f8fd42))
+* **v-menu:** apply classMenuParent class ([d0d64ba](https://github.com/gitsindonesia/ui-component/commit/d0d64ba6621ca0493c30d5bf095bc1a8204ab653))
+
+
+### Features
+
+* **v-data-table:** customizable table classes ([ba69b5d](https://github.com/gitsindonesia/ui-component/commit/ba69b5d2e3778a627fea117b51b63692e09e77e7))
+
+
+
+
+
 ## [0.4.7](https://github.com/gitsindonesia/ui-component/compare/v0.4.6...v0.4.7) (2022-06-10)
 
 

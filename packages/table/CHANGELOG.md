@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/gitsindonesia/ui-component/compare/v0.4.8...v0.5.0) (2022-06-20)
+
+
+### Features
+
+* **v-data-table:** customizable table classes ([ba69b5d](https://github.com/gitsindonesia/ui-component/commit/ba69b5d2e3778a627fea117b51b63692e09e77e7))
+
+
+
+
+
 # [0.3.0](https://github.com/gitsindonesia/ui-component/compare/v0.2.6...v0.3.0) (2022-05-11)
 
 **Note:** Version bump only for package @gits-id/table
