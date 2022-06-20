@@ -111,6 +111,38 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  headerClass: {
+    type: String,
+    default: 'bg-gray-50',
+  },
+  bodyClass: {
+    type: String,
+    default: 'bg-white',
+  },
+  footerClass: {
+    type: String,
+    default: '',
+  },
+  columnActiveClass: {
+    type: String,
+    default: 'text-primary-500 hover:text-primary-600',
+  },
+  columnInactiveClass: {
+    type: String,
+    default: 'text-gray-600 hover:text-primary-500',
+  },
+  hoverClass: {
+    type: String,
+    default: 'transition duration-300 hover:bg-gray-100',
+  },
+  stripedClass: {
+    type: String,
+    default: 'even:bg-gray-100',
+  },
+  tdClass: {
+    type: String,
+    default: '',
+  },
 });
 
 const emit = defineEmits([
@@ -207,9 +239,7 @@ const getThClass = (header: VDataTableHeader) => {
   const positionFreeze =
     header.positionFreeze === 'right' ? 'right-0' : 'left-0';
   return [
-    isActive
-      ? 'text-primary-500 hover:text-primary-600'
-      : 'text-gray-600 hover:text-primary-500',
+    isActive ? props.columnActiveClass : props.columnInactiveClass,
     {
       [`text-${header.align}`]: !!header.align,
     },
@@ -332,7 +362,7 @@ const start = computed(() =>
   >
     <div class="overflow-x-auto rounded-t-md">
       <table class="w-full divide-y divide-gray-200">
-        <thead class="bg-gray-50">
+        <thead :class="headerClass">
           <tr>
             <th
               v-for="header in computedHeaders"
@@ -345,6 +375,7 @@ const start = computed(() =>
                 font-semibold
                 uppercase
                 tracking-wider
+                group
               "
               :class="[getThClass(header), paddingClass, header.class]"
               :width="header.width"
@@ -356,10 +387,12 @@ const start = computed(() =>
                 <v-checkbox v-model="selectAll" />
               </slot>
               <slot v-else :name="`header.${header.value}`">
-                <a
+                <button
                   v-if="!disableSorting && header.sortable"
-                  href="#"
-                  class="flex items-center truncate"
+                  role="button"
+                  aria-label="Sort"
+                  type="button"
+                  class="flex items-center truncate appearance-none"
                   :class="[
                     header.align
                       ? `justify-${header.align}`
@@ -378,7 +411,7 @@ const start = computed(() =>
                     v-if="header.sorting === 'asc'"
                     class="ml-2 h-5 w-5"
                   />
-                </a>
+                </button>
                 <span v-else>
                   {{ header.text }}
                 </span>
@@ -386,10 +419,7 @@ const start = computed(() =>
             </th>
           </tr>
         </thead>
-        <tbody
-          class="bg-white"
-          :class="[striped ? '' : 'divide-y divide-gray-200']"
-        >
+        <tbody :class="[striped ? '' : 'divide-y divide-gray-200', bodyClass]">
           <template v-if="paginatedItems.length < 1 && !loading">
             <slot name="empty">
               <tr>
@@ -422,16 +452,17 @@ const start = computed(() =>
             v-else
             v-for="(item, index) in paginatedItems"
             :key="`item-${index}`"
-            :class="[
-              striped ? 'even:bg-gray-100' : '',
-              hover ? 'transition duration-300 hover:bg-gray-100' : '',
-            ]"
+            :class="{
+              group: true,
+              [stripedClass]: striped,
+              [hoverClass]: hover,
+            }"
           >
             <td
               v-for="header in headers"
               :key="`header-${header.value}`"
               class="whitespace-nowrap text-sm text-gray-900"
-              :class="[getTdClass(header), paddingClass]"
+              :class="[getTdClass(header), paddingClass, tdClass]"
             >
               <slot
                 v-if="selectable && header.value === 'selected'"
@@ -462,6 +493,7 @@ const start = computed(() =>
           v-model="page"
           :background-color="footerColor ? footerColor : ''"
           class="rounded-b-md"
+          :class="footerClass"
           :total-items="serverSide ? totalItems : items.length"
           v-model:itemsPerPage="perPage"
           v-bind="pagination"

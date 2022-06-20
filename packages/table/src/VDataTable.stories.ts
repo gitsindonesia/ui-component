@@ -114,3 +114,33 @@ Empty.parameters = {
     },
   },
 };
+
+export const CustomClass = Template.bind({});
+CustomClass.args = {
+  headerClass: 'bg-blue-600 text-white',
+  bodyClass: 'bg-blue-100',
+  footerClass: 'bg-gray-100',
+  columnInactiveClass: 'text-blue-50 hover:text-blue-200',
+  hover: true,
+  hoverClass: 'transition duration-300 hover:bg-blue-500 hover:text-white',
+  tdClass: 'group-hover:text-white',
+};
+CustomClass.parameters = {
+  docs: {
+    source: {
+      code: `
+<v-data-table
+  :headers="headers"
+  :items="items"
+  header-class="bg-blue-600"
+  body-class="bg-gray-100"
+  footer-class="bg-gray-100"
+  column-inactive-class="text-blue-50 hover:text-blue-200"
+  hover
+  hover-class="transition duration-300 hover:bg-blue-500 hover:text-white"
+  td-class="group-hover:text-white"
+/>
+      `,
+    },
+  },
+};
