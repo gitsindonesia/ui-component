@@ -16,7 +16,7 @@ const Template: Story<{}> = (args) => ({
   },
   template: `
     <Auth>
-      <Login/>
+      <Login v-bind="args"/>
     </Auth>
   `,
 });
@@ -24,3 +24,10 @@ const Template: Story<{}> = (args) => ({
 export const Default = Template.bind({});
 Default.args = {};
 Default.storyName = 'Login';
+
+export const Custom = Template.bind({});
+Custom.args = {
+  btnProps: {
+    color: 'secondary',
+  },
+};

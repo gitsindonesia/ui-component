@@ -63,6 +63,14 @@ const props = defineProps({
     type: String,
     default: 'off',
   },
+  btnProps: {
+    type: Object,
+    default: () => ({}),
+  },
+  btnRegisterProps: {
+    type: Object,
+    default: () => ({}),
+  },
 });
 
 const {message} = toRefs(props);
@@ -160,6 +168,7 @@ const onSubmit = handleSubmit((values) => {
           uppercase
           :disabled="loading || disabled"
           :loading="loading"
+          v-bind="btnProps"
         >
           {{ loginText }}
         </VBtn>
@@ -168,7 +177,14 @@ const onSubmit = handleSubmit((values) => {
         <slot name="register">
           <div class="mt-4">
             Already have an account?
-            <v-btn text color="primary" :to="register">Register</v-btn>
+            <v-btn
+              text
+              color="primary"
+              :to="register"
+              v-bind="btnRegisterProps"
+            >
+              Register
+            </v-btn>
           </div>
         </slot>
       </template>
