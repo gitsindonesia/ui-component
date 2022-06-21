@@ -135,6 +135,7 @@ const onSubmit = handleSubmit((values) => {
           name="password"
           type="password"
           prepend-icon="heroicons-outline:lock-closed"
+          wrapper-class="mb-4"
           :label="passwordText"
           :placeholder="passwordText"
         />
@@ -154,7 +155,7 @@ const onSubmit = handleSubmit((values) => {
               dense
               small
               :to="passwordPath"
-              class="p-0"
+              class="!p-0"
             >
               {{ forgotPasswordText }}
             </VBtn>
