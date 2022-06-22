@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/tooltip",
-  "version": "0.7.0",
+  "version": "0.7.2",
   "description": "GITS Tooltip Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -20,9 +20,9 @@
     "vue": "^3.2.31"
   },
   "devDependencies": {
-    "@gits-id/button": "^0.7.0",
-    "@gits-id/tailwind-config": "^0.7.0",
-    "@gits-id/utils": "^0.7.0",
+    "@gits-id/button": "^0.7.2",
+    "@gits-id/tailwind-config": "^0.7.2",
+    "@gits-id/utils": "^0.7.2",
     "@headlessui/vue": "^1.5.0",
     "@heroicons/vue": "^1.0.6",
     "@vue/test-utils": "^2.0.0-rc.17",
