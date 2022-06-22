@@ -1,6 +1,7 @@
 {
   "name": "@gits-id/list-group",
   "version": "0.7.0",
+  "private": true,
   "description": "GITS List Group Component",
   "scripts": {
     "build": "vue-tsc --emitDeclarationOnly && vite build && mv dist/src dist/types",
