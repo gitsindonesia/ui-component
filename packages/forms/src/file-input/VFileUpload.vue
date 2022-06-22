@@ -18,7 +18,6 @@ import {
 } from 'vue';
 import {CameraIcon, PlusIcon, TrashIcon} from '@heroicons/vue/solid';
 import VBtn from '@gits-id/button';
-import VInput from '../input/VInput.vue';
 import VSpinner from '@gits-id/spinner';
 import {ErrorMessage, useField} from 'vee-validate';
 
@@ -627,7 +626,8 @@ onUnmounted(() => {
     <template v-else>
       <div
         class="
-        transition duration-300
+          transition
+          duration-300
           border border-gray-300
           focus-within:border-primary-500
           hover:border-primary-500
