@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/list-group",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "GITS List Group Component",
   "scripts": {
     "build": "vue-tsc --emitDeclarationOnly && vite build && mv dist/src dist/types",
@@ -17,8 +17,8 @@
   "author": "PT GITS Indonesia",
   "license": "ISC",
   "dependencies": {
-    "vue": "^3.2.33",
-    "@iconify/vue": "^3.2.1"
+    "@iconify/vue": "^3.2.1",
+    "vue": "^3.2.33"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.2",

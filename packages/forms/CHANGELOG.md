@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/gitsindonesia/ui-component/compare/v0.6.0...v0.7.0) (2022-06-22)
+
+
+### Bug Fixes
+
+* **v-file-upload:** disable inherit attrs ([b73dcf1](https://github.com/gitsindonesia/ui-component/commit/b73dcf1662f105486a0d8dce44dba0efa68859f9))
+
+
+
+
+
 # [0.6.0](https://github.com/gitsindonesia/ui-component/compare/v0.5.0...v0.6.0) (2022-06-20)
 
 **Note:** Version bump only for package @gits-id/forms
