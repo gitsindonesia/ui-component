@@ -20,7 +20,7 @@ import {CameraIcon, PlusIcon, TrashIcon} from '@heroicons/vue/solid';
 import VBtn from '@gits-id/button';
 import VInput from '../input/VInput.vue';
 import VSpinner from '@gits-id/spinner';
-import {ErrorMessage} from 'vee-validate';
+import {ErrorMessage, useField} from 'vee-validate';
 
 type FileValue = File | FileList | File[] | Record<string, any> | null;
 
@@ -155,6 +155,26 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  rules: {
+    type: String,
+    default: '',
+  },
+  errorClass: {
+    type: String,
+    default: 'text-error-500 text-sm',
+  },
+  label: {
+    type: String,
+    default: '',
+  },
+  labelClass: {
+    type: String,
+    default: 'block mb-1',
+  },
+  wrapperClass: {
+    type: String,
+    default: '',
+  },
 });
 
 const emit = defineEmits([
@@ -177,11 +197,16 @@ const {
   multiple,
   customSize,
   hideRemove,
+  name,
+  rules,
 } = toRefs(props);
+
+const {value: innerValue, errorMessage} = useField(name, rules, {
+  initialValue: props.modelValue || props.value,
+});
 
 const sizeClass = computed(() => (props.full ? 'w-full' : customSize.value));
 
-const innerValue = ref<FileValue>(null);
 const fileRef = ref<HTMLInputElement | null>(null);
 const previewURL = ref<string | null>(null);
 const hasInitialValue = ref(false);
@@ -354,7 +379,11 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div :class="customLayout">
+  <div :class="[customLayout, wrapperClass]">
+    <label v-if="label" :for="name" :class="labelClass">
+      {{ label }}
+    </label>
+
     <div v-if="theme === 'button'" class="flex gap-2">
       <div v-if="hasFile" class="flex gap-2 items-center">
         <div
@@ -451,7 +480,7 @@ onUnmounted(() => {
           bg-no-repeat bg-contain bg-center
           max-w-full
         "
-        :class="[sizeClass, {'rounded-10': rounded}]"
+        :class="[sizeClass, {'rounded-lg': rounded}]"
         :style="{
           backgroundImage: image && !loading ? `url(${previewURL})` : 'none',
         }"
@@ -595,37 +624,59 @@ onUnmounted(() => {
       </div>
     </template>
 
-    <div v-else>
-      <v-input
-        :model-value="fileName"
-        :placeholder="!hidePlaceholder ? placeholder : ''"
-        readonly
-        @click="pickFile"
+    <template v-else>
+      <div
+        class="
+        transition duration-300
+          border border-gray-300
+          focus-within:border-primary-500
+          hover:border-primary-500
+          group
+          rounded-lg
+          flex
+          gap-4
+          items-center
+          py-1
+        "
       >
-        <template #append>
-          <div class="space-x-1 -mr-2">
-            <VBtn
-              :disabled="readonly || disabled"
-              type="button"
-              size="sm"
-              @click="pickFile"
-            >
-              {{ hasFile ? changeText : browseText }}
-            </VBtn>
-            <VBtn
-              v-if="hasFile && !hideRemove"
-              type="button"
-              size="sm"
-              color="error"
-              :disabled="readonly || disabled"
-              @click="removeFile"
-            >
-              {{ removeText }}
-            </VBtn>
-          </div>
-        </template>
-      </v-input>
-    </div>
+        <div
+          class="
+            flex-1
+            text-gray-500
+            hover:text-gray-700
+            text-sm
+            truncate
+            px-3
+            py-1
+            h-full
+          "
+          :title="fileName || placeholder"
+          @click="pickFile"
+        >
+          {{ fileName || placeholder }}
+        </div>
+        <div class="space-x-1 px-1">
+          <VBtn
+            :disabled="readonly || disabled"
+            type="button"
+            size="sm"
+            @click="pickFile"
+          >
+            {{ hasFile ? changeText : browseText }}
+          </VBtn>
+          <VBtn
+            v-if="hasFile && !hideRemove"
+            type="button"
+            size="sm"
+            color="error"
+            :disabled="readonly || disabled"
+            @click="removeFile"
+          >
+            {{ removeText }}
+          </VBtn>
+        </div>
+      </div>
+    </template>
 
     <input
       :id="id"
@@ -685,9 +736,12 @@ onUnmounted(() => {
       :error-messages="errorMessages"
       :name="name"
     >
+      <div v-if="errorMessage" :class="errorClass">
+        {{ errorMessage }}
+      </div>
       <ErrorMessage
-        v-if="errorMessages.length"
-        class="text-error-500 text-sm"
+        v-else-if="errorMessages.length"
+        :class="errorClass"
         :name="name"
       />
     </slot>
