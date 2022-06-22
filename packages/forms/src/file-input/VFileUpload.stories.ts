@@ -105,7 +105,7 @@ export const Validation: Story<VInputProps> = (args) => ({
       document: mixed().required().label('Document'),
     });
 
-    const {handleSubmit, resetForm} = useForm({
+    const {handleSubmit, resetForm, values} = useForm({
       validationSchema: schema,
     });
 
@@ -113,7 +113,7 @@ export const Validation: Story<VInputProps> = (args) => ({
       alert(JSON.stringify(values));
     });
 
-    return {onSubmit, resetForm};
+    return {onSubmit, resetForm, values};
   },
   template: `
     <form @submit="onSubmit" class="border-none">
@@ -149,6 +149,7 @@ export const Validation: Story<VInputProps> = (args) => ({
         <v-btn type="submit">Submit</v-btn>
         <v-btn type="button" text @click="resetForm">Reset</v-btn>
       </div>
+      <pre>{{ {values} }}</pre>
     </form>
 `,
 });
