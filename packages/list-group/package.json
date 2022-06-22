@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/list-group",
-  "version": "0.7.0",
+  "version": "0.7.1-alpha.0",
   "private": true,
   "description": "GITS List Group Component",
   "scripts": {
