@@ -1,3 +1,10 @@
+<script lang="ts">
+import { defineComponent } from 'vue';
+export default defineComponent({
+  inheritAttrs: false
+})
+</script>
+
 <script setup lang="ts">
 import {computed, PropType, ref, toRefs, watch} from 'vue';
 import {XIcon} from '@heroicons/vue/outline';
@@ -66,6 +73,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  drawerClass: {
+    type: String,
+    default: ''
+  }
 });
 
 const {
@@ -168,6 +179,7 @@ const bgColor = computed(() =>
         : 'transform -translate-x-full sm:transform-none sm:w-[260px]',
       expandHover ? 'hover:sm:w-[260px]' : '',
     ]"
+    v-bind="$attrs"
   >
     <div class="hidden sm:block">
       <template v-if="!hideToggle">

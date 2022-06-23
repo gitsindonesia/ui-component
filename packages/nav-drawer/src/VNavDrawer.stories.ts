@@ -160,3 +160,15 @@ ExpandHover.parameters = {
     },
   },
 };
+
+export const CustomAttributes = Template.bind({});
+CustomAttributes.args = {
+  class: 'bg-blue-800'
+};
+CustomAttributes.parameters = {
+  docs: {
+    source: {
+      code: '<v-nav-drawer :menus="menus" />',
+    },
+  },
+};
