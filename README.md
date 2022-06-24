@@ -1,7 +1,6 @@
 # GITS UI Component
 
 [![Quality Gate Status](https://sonar.gits.id/api/project_badges/measure?project=ui&metric=alert_status&token=47997a4785ff0c755eff7782b1be0676a7d358d3)](https://sonar.gits.id/dashboard?id=ui)
-
 [![Coverage](https://sonar.gits.id/api/project_badges/measure?project=ui&metric=coverage&token=47997a4785ff0c755eff7782b1be0676a7d358d3)](https://sonar.gits.id/dashboard?id=ui)
 
 ![GITS.ID](https://gits.id/wp-content/uploads/2020/09/Logo-Main.png)
@@ -17,7 +16,7 @@ The official UI Component for GITS Indonesia.
 - [Heroicons](https://heroicons.com/)
 - [Vue Remix Icons](https://www.npmjs.com/package/vue-remix-icons)
 
-## Setup
+## Development
 
 - Install [lerna](https://lerna.js.org/) and [yarn](https://yarnpkg.com/) globally:
   ```bash
@@ -43,7 +42,7 @@ The official UI Component for GITS Indonesia.
 | `build`     | Build playground              |
 | `test`      | Run test via `vitest`         |
 
-## Lerna Commands
+### Lerna Commands
 
 | Command     | Description            |
 | ----------- | ---------------------- |
