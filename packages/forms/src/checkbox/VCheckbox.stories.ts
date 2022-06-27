@@ -2,8 +2,8 @@ import MyCheckbox from './VCheckbox.vue';
 import {themeColors} from '@gits-id/utils/colors';
 import {sizes} from '@gits-id/utils/sizes';
 import {Meta, Story} from '@storybook/vue3';
-import { useForm } from 'vee-validate';
-import { object, boolean } from 'yup';
+import {useForm} from 'vee-validate';
+import {object, boolean} from 'yup';
 import VBtn from '@gits-id/button';
 
 export default {
@@ -45,7 +45,6 @@ Checkbox.parameters = {
   },
 };
 
-
 export const Validation: Story<{}> = () => ({
   components: {VCheckbox: MyCheckbox, VBtn},
   setup() {
@@ -60,7 +59,7 @@ export const Validation: Story<{}> = () => ({
       validationSchema: schema,
       initialValues: {
         agreement: false,
-      }
+      },
     });
 
     const onSubmit = handleSubmit((values) => {
