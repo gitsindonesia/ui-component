@@ -5,7 +5,7 @@ import {object, string} from 'yup';
 import {useForm} from 'vee-validate';
 
 export default {
-  title: 'Components/Editor',
+  title: 'Forms/Editor',
   component: VEditor,
   argTypes: {},
   args: {
@@ -65,7 +65,7 @@ export const Validation: Story<{}> = (args) => ({
       content: string().required().label('Content'),
     });
 
-    const {handleSubmit, resetForm, values} = useForm({
+    const {handleSubmit, resetForm, values, errors} = useForm({
       validationSchema: schema,
     });
 
@@ -73,7 +73,7 @@ export const Validation: Story<{}> = (args) => ({
       alert(JSON.stringify(values));
     });
 
-    return {onSubmit, resetForm, values};
+    return {onSubmit, resetForm, values, errors};
   },
   template: `
     <form @submit="onSubmit" class="border-none">
@@ -87,7 +87,8 @@ export const Validation: Story<{}> = (args) => ({
         <v-btn type="submit">Submit</v-btn>
         <v-btn type="button" text @click="resetForm">Reset</v-btn>
       </div>
-      <pre>{{ {values} }}</pre>
+      <div class="my-5">Debug:</div>
+      <pre>{{ {errors, values} }}</pre>
     </form>
 `,
 });
