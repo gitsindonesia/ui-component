@@ -40,6 +40,10 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  wrapperClass: {
+    type: String,
+    default: '',
+  },
 });
 
 defineEmits(['update:modelValue']);
@@ -79,7 +83,7 @@ const {value: innerValue, errorMessage} = useField(props.name, props.rules, {
 </script>
 
 <template>
-  <label class="flex items-center gap-2">
+  <div class="flex items-center gap-2" :class="wrapperClass">
     <input
       :id="name"
       v-model="innerValue"
@@ -96,10 +100,10 @@ const {value: innerValue, errorMessage} = useField(props.name, props.rules, {
       :disabled="disabled"
       :class="[inputClass, colorClass]"
     />
-    <span class="select-none" :for="name" :class="[sizeClass]">
+    <label class="select-none" :for="name" :class="[sizeClass]">
       {{ label }}
-    </span>
-  </label>
+    </label>
+  </div>
 
   <div v-if="errorMessage" class="text-error-500 text-sm">
     {{ errorMessage }}
