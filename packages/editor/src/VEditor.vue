@@ -134,7 +134,7 @@ watch(content, (value) => {
       :editor="classicEditor"
       :config="editorConfig"
     />
-    <div v-if="error" :class="errorClass" :name="name">
+    <div v-if="error" :class="errorClass">
       {{ error }}
     </div>
   </div>
