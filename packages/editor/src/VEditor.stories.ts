@@ -1,5 +1,8 @@
 import {Story} from '@storybook/vue3';
 import VEditor from './VEditor.vue';
+import VBtn from '@gits-id/button';
+import {object, string} from 'yup';
+import {useForm} from 'vee-validate';
 
 export default {
   title: 'Components/Editor',
@@ -31,6 +34,18 @@ Default.parameters = {
   },
 };
 
+export const Label = Template.bind({});
+Label.args = {
+  label: 'Blog Content'
+};
+Label.parameters = {
+  docs: {
+    source: {
+      code: '<v-editor label="Blog Content" />',
+    },
+  },
+};
+
 export const InitialValue = Template.bind({});
 InitialValue.args = {
   modelValue: '<p>Hello World</p>',
@@ -42,3 +57,37 @@ InitialValue.parameters = {
     },
   },
 };
+
+export const Validation: Story<{}> = (args) => ({
+  components: {VEditor, VBtn},
+  setup() {
+    const schema = object({
+      content: string().required().label('Content'),
+    });
+
+    const {handleSubmit, resetForm, values} = useForm({
+      validationSchema: schema,
+    });
+
+    const onSubmit = handleSubmit((values) => {
+      alert(JSON.stringify(values));
+    });
+
+    return {onSubmit, resetForm, values};
+  },
+  template: `
+    <form @submit="onSubmit" class="border-none">
+      <VEditor
+        wrapper-class="mb-4"
+        name="content"
+        label="Content"
+        placeholder="Content"
+      />
+      <div class="mt-4">
+        <v-btn type="submit">Submit</v-btn>
+        <v-btn type="button" text @click="resetForm">Reset</v-btn>
+      </div>
+      <pre>{{ {values} }}</pre>
+    </form>
+`,
+});

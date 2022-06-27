@@ -5,8 +5,8 @@ export default {
 </script>
 
 <script setup lang="ts">
-import {PropType, ref, toRefs, watch} from 'vue';
-import {ErrorMessage} from 'vee-validate';
+import {computed, PropType, ref, toRefs, watch} from 'vue';
+import {useField} from 'vee-validate';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import {component as ckeditor} from '@ckeditor/ckeditor5-vue';
 
@@ -23,9 +23,29 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  rules: {
+    type: String,
+    default: '',
+  },
+  label: {
+    type: String,
+    default: '',
+  },
+  labelClass: {
+    type: String,
+    default: 'block mb-2',
+  },
+  wrapperClass: {
+    type: String,
+    default: '',
+  },
   error: {
     type: Boolean,
     default: false,
+  },
+  errorClass: {
+    type: String,
+    default: 'text-error-600 mt-1 text-sm',
   },
   errorMessages: {
     type: Array as PropType<string[]>,
@@ -45,9 +65,16 @@ const emit = defineEmits([
   'blur',
 ]);
 
-const {value, modelValue, name, errorMessages} = toRefs(props);
+const {rules, name, modelValue, value} = toRefs(props);
 
-const content = ref(value.value || modelValue.value);
+const {value: content, errorMessage} = useField(name, rules, {
+  initialValue: modelValue.value || value.value,
+});
+
+const error = computed(() => {
+  return errorMessage.value || props.errorMessages[0];
+})
+
 const classicEditor = ref(ClassicEditor);
 const editorConfig = {
   toolbar: [
@@ -97,17 +124,19 @@ watch(content, (value) => {
 </script>
 
 <template>
-  <div>
+  <div :class="wrapperClass">
+    <label v-if="label" :for="name" :class="labelClass">
+      {{ label }}
+    </label>
     <ckeditor
+      :id="name"
       v-model="content"
       :editor="classicEditor"
       :config="editorConfig"
     />
-    <ErrorMessage
-      v-if="errorMessages.length"
-      class="text-error-600 mt-1 text-sm"
-      :name="name"
-    />
+    <div v-if="error" :class="errorClass" :name="name">
+      {{ error }}
+    </div>
   </div>
 </template>
 
