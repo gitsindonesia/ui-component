@@ -106,7 +106,7 @@ const emit = defineEmits([
 ]);
 
 const {value: selected, errorMessage} = useField(name, rules, {
-  initialValue: modelValue.value || modelValue.value,
+  initialValue: modelValue.value || value.value,
 });
 
 const onChange = (event: any) => {
