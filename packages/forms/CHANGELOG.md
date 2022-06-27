@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/gitsindonesia/ui-component/compare/v0.7.3...v0.8.0) (2022-06-27)
+
+
+### Bug Fixes
+
+* **v-radio-group:** fix second value ([c443bab](https://github.com/gitsindonesia/ui-component/commit/c443bab4f72b6c7b1ba8fb150e5a365d8d982e65))
+
+
+### Features
+
+* **v-form-select:** integrate vee-validate to v-form-select ([637cf64](https://github.com/gitsindonesia/ui-component/commit/637cf649d6685a1a479c3cc8a569bcb417903c94))
+* **v-input-range:** integrate vee-validate validation ([05ee6f7](https://github.com/gitsindonesia/ui-component/commit/05ee6f733e8229877aa8214cf09ae8b7ba30d979))
+* **v-radio-group:** integrate vee-validate validation ([59cb499](https://github.com/gitsindonesia/ui-component/commit/59cb4996af7f71b0bf897736ce481c8cb3952728))
+* **v-radio:** integrate vee-validate validation ([2e84b4b](https://github.com/gitsindonesia/ui-component/commit/2e84b4b929491520861a0e1d29f5002dadd80ffa))
+
+
+
+
+
 ## [0.7.3](https://github.com/gitsindonesia/ui-component/compare/v0.7.2...v0.7.3) (2022-06-22)
 
 **Note:** Version bump only for package @gits-id/forms

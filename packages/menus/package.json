@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/menus",
-  "version": "0.7.3",
+  "version": "0.8.0",
   "description": "GITS Menus Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,12 +15,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gits-id/button": "^0.7.3",
+    "@gits-id/button": "^0.8.0",
     "vue": "^3.2.31"
   },
   "devDependencies": {
-    "@gits-id/tailwind-config": "^0.7.3",
-    "@gits-id/utils": "^0.7.3",
+    "@gits-id/tailwind-config": "^0.8.0",
+    "@gits-id/utils": "^0.8.0",
     "@headlessui/vue": "^1.5.0",
     "@heroicons/vue": "^1.0.6",
     "@vue/test-utils": "^2.0.0-rc.17",

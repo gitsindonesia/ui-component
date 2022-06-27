@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/gitsindonesia/ui-component/compare/v0.7.3...v0.8.0) (2022-06-27)
+
+
+### Features
+
+* **v-nav-drawer:** append attributes ([e88b73c](https://github.com/gitsindonesia/ui-component/commit/e88b73c2a90596788a96b2fba9651e3f18ae5c88))
+
+
+
+
+
 ## [0.7.3](https://github.com/gitsindonesia/ui-component/compare/v0.7.2...v0.7.3) (2022-06-22)
 
 **Note:** Version bump only for package @gits-id/nav-drawer

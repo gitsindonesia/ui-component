@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/gitsindonesia/ui-component/compare/v0.7.3...v0.8.0) (2022-06-27)
+
+
+### Bug Fixes
+
+* **dropdown:** customizable `rightClass` and `leftClass` ([e27a851](https://github.com/gitsindonesia/ui-component/commit/e27a85117742f434adb811280511cc5143a83b7d))
+* **v-radio-group:** fix second value ([c443bab](https://github.com/gitsindonesia/ui-component/commit/c443bab4f72b6c7b1ba8fb150e5a365d8d982e65))
+
+
+### Features
+
+* **v-editor:** integrate vee-validate ([85593aa](https://github.com/gitsindonesia/ui-component/commit/85593aadd45ab3342acaa0211c465174a2cf2b33))
+* **v-form-select:** integrate vee-validate to v-form-select ([637cf64](https://github.com/gitsindonesia/ui-component/commit/637cf649d6685a1a479c3cc8a569bcb417903c94))
+* **v-input-range:** integrate vee-validate validation ([05ee6f7](https://github.com/gitsindonesia/ui-component/commit/05ee6f733e8229877aa8214cf09ae8b7ba30d979))
+* **v-nav-drawer:** append attributes ([e88b73c](https://github.com/gitsindonesia/ui-component/commit/e88b73c2a90596788a96b2fba9651e3f18ae5c88))
+* **v-radio-group:** integrate vee-validate validation ([59cb499](https://github.com/gitsindonesia/ui-component/commit/59cb4996af7f71b0bf897736ce481c8cb3952728))
+* **v-radio:** integrate vee-validate validation ([2e84b4b](https://github.com/gitsindonesia/ui-component/commit/2e84b4b929491520861a0e1d29f5002dadd80ffa))
+* **v-switch:** integrate vee-validate to switch ([89a3585](https://github.com/gitsindonesia/ui-component/commit/89a3585aae09930790368d474a1d4eb90c01682c))
+
+
+
+
+
 ## [0.7.3](https://github.com/gitsindonesia/ui-component/compare/v0.7.2...v0.7.3) (2022-06-22)
 
 **Note:** Version bump only for package @gits-id/components

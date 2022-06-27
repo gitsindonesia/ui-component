@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/utils",
-  "version": "0.7.3",
+  "version": "0.8.0",
   "description": "GITS Utilities",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly",
