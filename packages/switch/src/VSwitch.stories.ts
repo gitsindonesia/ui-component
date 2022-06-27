@@ -1,5 +1,8 @@
 import VSwitch from '../src/VSwitch.vue';
 import {Meta, Story} from '@storybook/vue3';
+import {useForm} from 'vee-validate';
+import {object, boolean} from 'yup';
+import VBtn from '@gits-id/button';
 
 export default {
   title: 'Components/Switch',
@@ -128,3 +131,40 @@ CustomClass.parameters = {
     },
   },
 };
+
+export const Validation: Story<{}> = () => ({
+  components: {VSwitch, VBtn},
+  setup() {
+    const schema = object({
+      agreement: boolean()
+        .oneOf([true], 'You must agree to terms and condition')
+        .required()
+        .label('Agreement'),
+    });
+
+    const {handleSubmit, resetForm, values, errors} = useForm({
+      validationSchema: schema,
+    });
+
+    const onSubmit = handleSubmit((values) => {
+      alert(JSON.stringify(values));
+    });
+
+    return {onSubmit, resetForm, values, errors};
+  },
+  template: `
+    <form @submit="onSubmit" class="border-none">
+      <VSwitch
+        wrapper-class="mb-4"
+        name="agreement"
+        label="Agreement"
+      />
+      <div class="mt-4">
+        <v-btn type="submit">Submit</v-btn>
+        <v-btn type="button" text @click="resetForm">Reset</v-btn>
+      </div>
+      <div class="my-5">Debug:</div>
+      <pre>{{ {errors, values} }}</pre>
+    </form>
+`,
+});

@@ -20,7 +20,8 @@
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^32.0.0",
     "@ckeditor/ckeditor5-vue": "^2.0.1",
-    "vue": "^3.2.31"
+    "vue": "^3.2.31",
+    "vee-validate": "^4.5.11"
   },
   "devDependencies": {
     "@gits-id/tailwind-config": "^0.7.3",

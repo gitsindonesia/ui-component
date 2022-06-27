@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import {toRefs, watch, computed, ref} from 'vue';
+import {toRefs, watch, computed} from 'vue';
 import {Switch, SwitchGroup, SwitchLabel} from '@headlessui/vue';
 import type {Colors} from '@gits-id/types';
+import {useField} from 'vee-validate';
 
 const props = defineProps({
   modelValue: {
@@ -36,15 +37,31 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  switchGroupClass: {
+    type: String,
+    default: '',
+  },
   labelClass: {
     type: String,
     default: '',
+  },
+  name: {
+    type: String,
+    default: '',
+  },
+  rules: {
+    type: String,
+    default: '',
+  },
+  errorClass: {
+    type: String,
+    default: 'text-error-600 mt-1 text-sm',
   },
 });
 
 const emit = defineEmits(['update:modelValue']);
 
-const {modelValue, label} = toRefs(props);
+const {modelValue, label, name, rules} = toRefs(props);
 
 const colors: Record<Colors, string> = {
   primary: 'bg-primary-600',
@@ -60,7 +77,9 @@ const colorClass = computed(() =>
   props.color ? colors[props.color] : colors.default,
 );
 
-const switchValue = ref(modelValue.value);
+const {value: switchValue, errorMessage} = useField(name, rules, {
+  initialValue: modelValue.value,
+});
 
 watch(switchValue, (value) => {
   emit('update:modelValue', value);
@@ -72,8 +91,12 @@ watch(modelValue, (val) => {
 </script>
 
 <template>
-  <div class="w-full">
-    <SwitchGroup as="div" class="flex items-center gap-4" :class="wrapperClass">
+  <div :class="['w-full', wrapperClass]">
+    <SwitchGroup
+      as="div"
+      class="flex items-center gap-4"
+      :class="switchGroupClass"
+    >
       <SwitchLabel v-if="label" :class="labelClass">
         {{ label }}
       </SwitchLabel>
@@ -121,5 +144,8 @@ watch(modelValue, (val) => {
         />
       </Switch>
     </SwitchGroup>
+    <div v-if="errorMessage" :class="errorClass">
+      {{ errorMessage }}
+    </div>
   </div>
 </template>
