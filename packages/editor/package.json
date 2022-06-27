@@ -3,9 +3,11 @@
   "version": "0.7.3",
   "description": "GITS Rich Text Editor Component",
   "scripts": {
-    "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
+    "build": "vite build",
     "prepublishOnly": "npm run build",
-    "test": "vitest"
+    "test": "vitest",
+    "build-types": "vue-tsc --emitDeclarationOnly",
+    "move-types": "mv dist/src dist/types"
   },
   "keywords": [
     "vue",
@@ -21,7 +23,7 @@
     "@ckeditor/ckeditor5-build-classic": "^32.0.0",
     "@ckeditor/ckeditor5-vue": "^2.0.1",
     "vue": "^3.2.31",
-    "vee-validate": "^4.5.11"
+    "vee-validate": "^4.5.9"
   },
   "devDependencies": {
     "@gits-id/tailwind-config": "^0.7.3",

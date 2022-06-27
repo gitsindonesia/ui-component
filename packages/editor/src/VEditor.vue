@@ -1,14 +1,8 @@
-<script lang="ts">
-export default {
-  inheritAttrs: false,
-};
-</script>
-
 <script setup lang="ts">
 import {computed, PropType, ref, toRefs, watch} from 'vue';
 import {useField} from 'vee-validate';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import {component as ckeditor} from '@ckeditor/ckeditor5-vue';
+import {component as CKEditor} from '@ckeditor/ckeditor5-vue';
 
 const props = defineProps({
   modelValue: {
@@ -128,7 +122,7 @@ watch(content, (value) => {
     <label v-if="label" :for="name" :class="labelClass">
       {{ label }}
     </label>
-    <ckeditor
+    <CKEditor
       :id="name"
       v-model="content"
       :editor="classicEditor"
