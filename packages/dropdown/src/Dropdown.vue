@@ -16,6 +16,8 @@ withDefaults(
     bottomClass?: string;
     panelClass?: string;
     buttonWrapperClass?: string;
+    rightClass?: string;
+    leftClass?: string;
   }>(),
   {
     modelValue: false,
@@ -27,9 +29,11 @@ withDefaults(
     items: () => [],
     top: false,
     topClass: 'bottom-10',
-    bottomClass: 'top-0',
+    bottomClass: 'top-6',
     panelClass: '',
     buttonWrapperClass: '',
+    leftClass: 'left-0',
+    rightClass: 'right-0'
   },
 );
 </script>
@@ -67,7 +71,7 @@ withDefaults(
           focus:outline-none
         "
         :class="[
-          right ? 'right-0' : 'left-0',
+          right ? rightClass : leftClass,
           top ? topClass : bottomClass,
           panelClass,
         ]"
