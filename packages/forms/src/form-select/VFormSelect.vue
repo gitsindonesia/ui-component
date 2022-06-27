@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {ref, toRefs, PropType, watch, computed} from 'vue';
-import {ErrorMessage} from 'vee-validate';
+import {ErrorMessage, useField} from 'vee-validate';
 import {useInputClasses, useTextSize} from '@gits-id/utils';
 import type {VFormSelectItem} from './types';
 
@@ -45,22 +45,40 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  errorClass: {
+    type: String,
+    default: 'text-error-600 mt-1 text-sm',
+  },
+  rules: {
+    type: String,
+    default: '',
+  },
+  label: {
+    type: String,
+    default: '',
+  },
+  labelClass: {
+    type: String,
+    default: 'block mb-1',
+  },
+  wrapperClass: {
+    type: String,
+    default: '',
+  },
 });
 
 const emit = defineEmits(['update:modelValue']);
 
-const {
-  modelValue,
-  value,
-  itemText,
-  itemValue,
-  error,
-  errorMessages,
-  name,
-  disabled,
-} = toRefs(props);
+const {modelValue, value, itemText, itemValue, error, name, disabled, rules} =
+  toRefs(props);
 
-const inputValue = ref(modelValue.value);
+const {value: inputValue, errorMessage} = useField(name, rules, {
+  initialValue: value.value || modelValue.value,
+});
+
+const message = computed(() => {
+  return errorMessage.value || props.errorMessages[0];
+});
 
 const {class: sizeClass} = useTextSize(props.size);
 const inputClass = computed(() => useInputClasses(error.value));
@@ -95,25 +113,28 @@ const getText = (option: string | Record<string, any>) => {
 </script>
 
 <template>
-  <select
-    v-model="inputValue"
-    class="w-full block transition duration-300"
-    :class="classes"
-    :disabled="disabled"
-    v-bind="$attrs"
-  >
-    <option
-      v-for="(option, index) in items"
-      :key="index"
-      v-bind="option"
-      :value="getValue(option)"
+  <div :class="wrapperClass">
+    <label v-if="label" :for="name" :class="labelClass">
+      {{ label }}
+    </label>
+    <select
+      v-model="inputValue"
+      class="w-full block transition duration-300"
+      :class="classes"
+      :disabled="disabled"
+      v-bind="$attrs"
     >
-      {{ getText(option) }}
-    </option>
-  </select>
-  <ErrorMessage
-    v-if="errorMessages.length"
-    class="text-error text-sm"
-    :name="name"
-  />
+      <option
+        v-for="(option, index) in items"
+        :key="index"
+        v-bind="option"
+        :value="getValue(option)"
+      >
+        {{ getText(option) }}
+      </option>
+    </select>
+    <div v-if="message" :class="errorClass">
+      {{ message }}
+    </div>
+  </div>
 </template>
