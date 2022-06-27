@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import {ref, toRefs, PropType, watch, computed} from 'vue';
-import {ErrorMessage, useField} from 'vee-validate';
+import {toRefs, PropType, watch, computed} from 'vue';
+import { useField} from 'vee-validate';
 import {useInputClasses, useTextSize} from '@gits-id/utils';
 import type {VFormSelectItem} from './types';
 

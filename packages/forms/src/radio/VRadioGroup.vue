@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import {ref, computed, toRefs, watch, PropType} from 'vue';
-import {ErrorMessage, useField} from 'vee-validate';
+import {computed, toRefs, watch, PropType} from 'vue';
+import {useField} from 'vee-validate';
 import {useTextSize} from '@gits-id/utils';
 
 type Value = string | number | object | boolean | Record<string, any>;
