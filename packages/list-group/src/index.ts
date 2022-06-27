@@ -1,4 +1,4 @@
-import VAlert from './ListGroup.vue';
+import ListGroup from './ListGroup.vue';
 
-export {VAlert};
-export default VAlert;
+export {ListGroup};
+export default ListGroup;
