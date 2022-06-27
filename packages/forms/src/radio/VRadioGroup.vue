@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {ref, computed, toRefs, watch, PropType} from 'vue';
-import {ErrorMessage} from 'vee-validate';
+import {ErrorMessage, useField} from 'vee-validate';
 import {useTextSize} from '@gits-id/utils';
 
 type Value = string | number | object | boolean | Record<string, any>;
@@ -60,7 +60,23 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  hideError: {
+    type: Boolean,
+    default: false,
+  },
   labelClass: {
+    type: String,
+    default: '',
+  },
+  errorClass: {
+    type: String,
+    default: 'text-error-600 text-sm mt-1',
+  },
+  rules: {
+    type: String,
+    default: '',
+  },
+  id: {
     type: String,
     default: '',
   },
@@ -77,6 +93,8 @@ const {
   itemText,
   size,
   inline,
+  name,
+  rules,
 } = toRefs(props);
 
 const emit = defineEmits([
@@ -87,7 +105,9 @@ const emit = defineEmits([
   'blur',
 ]);
 
-const selected = ref(value.value || modelValue.value);
+const {value: selected, errorMessage} = useField(name, rules, {
+  initialValue: modelValue.value || modelValue.value,
+});
 
 const onChange = (event: any) => {
   emit('change', event);
@@ -120,21 +140,13 @@ const setInnerValue = (val: Value) => {
   selected.value = val;
 };
 
-watch(
-  modelValue,
-  (val) => {
-    setInnerValue(val);
-  },
-  {immediate: true},
-);
+watch(modelValue, (val) => {
+  setInnerValue(val);
+});
 
-watch(
-  value,
-  (val) => {
-    setInnerValue(val);
-  },
-  {immediate: true},
-);
+watch(value, (val) => {
+  setInnerValue(val);
+});
 </script>
 
 <template>
@@ -153,6 +165,7 @@ watch(
     >
       <label v-for="(item, index) in items" :key="index">
         <input
+          :id="id || name"
           v-model="selected"
           :name="name"
           type="radio"
@@ -175,6 +188,8 @@ watch(
         </slot>
       </label>
     </div>
-    <ErrorMessage class="text-error-600 text-sm mt-2 block" :name="name" />
+    <div v-if="errorMessage && !hideError" :class="errorClass">
+      {{ errorMessage }}
+    </div>
   </div>
 </template>

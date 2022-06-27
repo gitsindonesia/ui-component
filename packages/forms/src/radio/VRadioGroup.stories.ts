@@ -1,5 +1,13 @@
 import {Meta, Story} from '@storybook/vue3';
+import {useForm} from 'vee-validate';
+import {object, number} from 'yup';
 import VRadioGroup from './VRadioGroup.vue';
+import VBtn from '@gits-id/button';
+
+const items = [...Array(5)].map((v, k) => ({
+  text: `Item ${k + 1}`,
+  value: k + 1,
+}));
 
 export default {
   title: 'Forms/RadioGroup',
@@ -8,7 +16,7 @@ export default {
   args: {
     modelValue: '',
     value: '',
-    items: [...Array(5)].map((v, k) => ({text: `Item ${k + 1}`, value: k + 1})),
+    items,
     itemText: 'text',
     itemValue: 'value',
     disabled: false,
@@ -86,3 +94,42 @@ NoLabel.parameters = {
     },
   },
 };
+
+export const Validation: Story<{}> = () => ({
+  components: {VRadioGroup, VBtn},
+  setup() {
+    const schema = object({
+      choose: number().oneOf([1, 2]).required().label('Agreement'),
+    });
+
+    const {handleSubmit, resetForm, values, errors} = useForm({
+      validationSchema: schema,
+      initialValues: {
+        choose: 0,
+      },
+    });
+
+    const onSubmit = handleSubmit((values) => {
+      alert(JSON.stringify(values));
+    });
+
+    return {onSubmit, resetForm, values, errors, items};
+  },
+  template: `
+    <form @submit="onSubmit" class="border-none">
+      <div class="flex gap-4">
+        <v-radio-group
+          name="choose"
+          label="Choose"
+          :items="items"
+        />
+      </div>
+      <div class="mt-4">
+        <v-btn type="submit">Submit</v-btn>
+        <v-btn type="button" text @click="resetForm">Reset</v-btn>
+      </div>
+      <div class="my-5">Debug:</div>
+      <pre>{{ {errors, values} }}</pre>
+    </form>
+`,
+});
