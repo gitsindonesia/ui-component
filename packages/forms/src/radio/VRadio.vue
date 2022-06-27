@@ -1,8 +1,19 @@
+<script lang="ts">
+export default {
+  inheritAttrs: false,
+};
+</script>
+
 <script setup lang="ts">
-import {ref, toRefs, watch, computed} from 'vue';
+import {useField} from 'vee-validate';
+import {toRefs, watch, computed} from 'vue';
 
 const props = defineProps({
   modelValue: {
+    type: String,
+    default: '',
+  },
+  value: {
     type: String,
     default: '',
   },
@@ -26,13 +37,37 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  rules: {
+    type: String,
+    default: '',
+  },
+  labelClass: {
+    type: String,
+    default: '',
+  },
+  wrapperClass: {
+    type: String,
+    default: '',
+  },
+  groupClass: {
+    type: String,
+    default: '',
+  },
+  hideError: {
+    type: Boolean,
+    default: false,
+  },
 });
 
-const {modelValue, label, inputClass, color, name, id} = toRefs(props);
+const {modelValue, rules, label, inputClass, color, name, id} = toRefs(props);
 
 const emit = defineEmits(['update:modelValue']);
 
-const value = ref<string | number | string[] | undefined>(props.modelValue);
+type RadioValue = string | number | string[] | undefined;
+
+const {value: inputValue, errorMessage} = useField<RadioValue>(name, rules, {
+  initialValue: modelValue.value,
+});
 
 const colorClass = computed(() => {
   switch (color.value) {
@@ -53,7 +88,7 @@ const colorClass = computed(() => {
 });
 
 watch(
-  value,
+  inputValue,
   (val) => {
     emit('update:modelValue', val);
   },
@@ -63,23 +98,30 @@ watch(
 watch(
   modelValue,
   (val) => {
-    value.value = val;
+    inputValue.value = val;
   },
   {immediate: true},
 );
 </script>
 
 <template>
-  <label class="flex w-full items-center gap-2 select-none">
-    <input
-      :id="id"
-      v-model="value"
-      type="radio"
-      :name="name"
-      :value="value"
-      class="transition duration-300"
-      :class="[inputClass, colorClass]"
-    />
-    {{ label }}
-  </label>
+  <div :class="wrapperClass">
+    <div class="flex w-full items-center gap-2 select-none" :class="groupClass">
+      <input
+        :id="id"
+        v-model="inputValue"
+        type="radio"
+        :name="name"
+        :value="value"
+        class="transition duration-300"
+        :class="[inputClass, colorClass]"
+      />
+      <label v-if="label" :for="id || name" :class="labelClass">
+        {{ label }}
+      </label>
+    </div>
+    <div v-if="errorMessage && !hideError" class="text-error-500 text-sm">
+      {{ errorMessage }}
+    </div>
+  </div>
 </template>
