@@ -2,10 +2,10 @@ import {Story, Meta} from '@storybook/vue3';
 import {sizes} from '@gits-id/utils/sizes';
 import type {VFormSelectItem as VFormSelectProps} from './types';
 import VFormSelect from './VFormSelect.vue';
-import { useForm } from 'vee-validate';
-import { object, string } from 'yup';
-import {ref} from 'vue'
-import VBtn from '@gits-id/button'
+import {useForm} from 'vee-validate';
+import {object, string} from 'yup';
+import {ref} from 'vue';
+import VBtn from '@gits-id/button';
 
 const items = [...Array(5)].map((item, index) => ({
   value: index,
@@ -31,7 +31,7 @@ export default {
     name: '',
     error: false,
     errorMessages: [],
-    disabled: false
+    disabled: false,
   },
 } as Meta;
 
@@ -82,7 +82,7 @@ Error.parameters = {
 
 export const Label = Template.bind({});
 Label.args = {
-  label: 'My Label'
+  label: 'My Label',
 };
 Label.parameters = {
   docs: {
@@ -91,7 +91,6 @@ Label.parameters = {
     },
   },
 };
-
 
 export const Validation: Story<{}> = (args) => ({
   components: {VBtn, VFormSelect},
@@ -113,33 +112,33 @@ export const Validation: Story<{}> = (args) => ({
       {
         text: 'Select Gender',
         value: '',
-        disabled: true
+        disabled: true,
       },
       {
         text: 'Male',
-        value: 'male'
+        value: 'male',
       },
       {
         text: 'Female',
-        value: 'female'
-      }
-    ])
+        value: 'female',
+      },
+    ]);
 
     const genres = ref([
       {
         text: 'Select Genre',
         value: '',
-        disabled: true
+        disabled: true,
       },
       {
         text: 'Pop',
-        value: 'pop'
+        value: 'pop',
       },
       {
         text: 'Rock',
-        value: 'rock'
-      }
-    ])
+        value: 'rock',
+      },
+    ]);
 
     return {onSubmit, resetForm, values, genders, genres};
   },

@@ -2,6 +2,10 @@ import {Story, Meta} from '@storybook/vue3';
 import {themeColors} from '@gits-id/utils';
 import type {VSelectProps} from './types';
 import VSelect from './VSelect.vue';
+import {useForm} from 'vee-validate';
+import {ref} from 'vue';
+import {mixed, object, string} from 'yup';
+import VBtn from '@gits-id/button';
 
 const items = [...Array(5)].map((item, index) => ({
   value: index,
@@ -89,3 +93,68 @@ Label.parameters = {
     },
   },
 };
+
+export const Validation: Story<{}> = () => ({
+  components: {VBtn, VSelect},
+  setup() {
+    const schema = object({
+      genre: object().required().label('Genre'),
+      gender: object().required().label('Gender'),
+    });
+
+    const {handleSubmit, resetForm, values} = useForm({
+      validationSchema: schema,
+    });
+
+    const onSubmit = handleSubmit((values) => {
+      alert(JSON.stringify(values));
+    });
+
+    const genders = ref([
+      {
+        text: 'Male',
+        value: 'male',
+      },
+      {
+        text: 'Female',
+        value: 'female',
+      },
+    ]);
+
+    const genres = ref([
+      {
+        text: 'Pop',
+        value: 'pop',
+      },
+      {
+        text: 'Rock',
+        value: 'rock',
+      },
+    ]);
+
+    return {onSubmit, resetForm, values, genders, genres};
+  },
+  template: `
+    <form @submit="onSubmit" class="border-none">
+      <v-select
+        wrapper-class="mb-4"
+        name="genre"
+        label="Genre"
+        placeholder="Select your genre"
+        :items="genres"
+      />
+      <v-select
+        wrapper-class="mb-4"
+        name="gender"
+        label="Gender"
+        placeholder="Select your gender"
+        :items="genders"
+      />
+      <div class="mt-4">
+        <v-btn type="submit">Submit</v-btn>
+        <v-btn type="button" text @click="resetForm">Reset</v-btn>
+      </div>
+      <pre>{{ {values} }}</pre>
+    </form>
+`,
+});

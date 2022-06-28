@@ -11,7 +11,7 @@ import {CheckIcon, ChevronDownIcon, XIcon} from '@heroicons/vue/solid';
 import {getBgColor} from '@gits-id/utils';
 import {VInput} from '@gits-id/forms';
 import VTooltip from '@gits-id/tooltip';
-import {ErrorMessage} from 'vee-validate';
+import {ErrorMessage, useField} from 'vee-validate';
 
 type SelectItem = {
   text: string;
@@ -97,11 +97,23 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  label: {
+    type: String,
+    default: '',
+  },
   labelClass: {
     type: String,
     default: 'mb-1 block',
   },
   wrapperClass: {
+    type: String,
+    default: '',
+  },
+  errorClass: {
+    type: String,
+    default: 'text-error-600 mt-1 text-sm',
+  },
+  rules: {
     type: String,
     default: '',
   },
@@ -120,6 +132,8 @@ const {
   itemValue,
   value,
   returnObject,
+  name,
+  rules,
 } = toRefs(props);
 
 const emit = defineEmits(['update:modelValue', 'update:value', 'search']);
@@ -128,7 +142,22 @@ const bgColor = getBgColor(color.value);
 
 type Val = string | number | boolean | Record<string, any>;
 
-const selectedItem = ref<Val>(modelValue.value || value.value);
+const {value: selectedItem, errorMessage} = useField<Val>(name, rules, {
+  initialValue: modelValue.value || value.value,
+});
+
+const message = computed(() => {
+  return errorMessage.value || props.errorMessages[0];
+});
+
+watch(modelValue, (val) => {
+  selectedItem.value = val;
+});
+
+watch(value, (val) => {
+  selectedItem.value = val;
+});
+
 const search = ref('');
 
 const filteredItems = computed(() => {
@@ -136,8 +165,8 @@ const filteredItems = computed(() => {
     const query = search.value.toLowerCase();
     return items.value.filter((item) => {
       return (
-        item[itemText.value]?.toLowerCase()?.includes(query) ||
-        item[itemValue.value]?.toLowerCase()?.includes(query)
+        item[itemText.value]?.toLowerCase?.()?.includes(query) ||
+        item[itemValue.value]?.toLowerCase?.()?.includes(query)
       );
     });
   } else {
@@ -192,7 +221,7 @@ watch(search, (val) => {
   emit('search', val);
 });
 
-const label = computed(() => {
+const selectedText = computed(() => {
   return (
     (selectedItem.value as SelectItem)?.[itemText.value] || placeholder.value
   );
@@ -236,7 +265,7 @@ const clear = () => (selectedItem.value = '');
         >
           <div class="block flex-grow w-full truncate mr-2">
             <slot name="selected" :item="selectedItem">
-              {{ label }}
+              {{ selectedText }}
             </slot>
           </div>
           <v-tooltip v-if="selectedItem && clearable">
@@ -329,10 +358,8 @@ const clear = () => (selectedItem.value = '');
       </div>
     </Listbox>
 
-    <ErrorMessage
-      v-if="errorMessages.length"
-      class="text-error-600 text-sm"
-      :name="name"
-    />
+    <div v-if="message" :class="errorClass">
+      {{ message }}
+    </div>
   </div>
 </template>
