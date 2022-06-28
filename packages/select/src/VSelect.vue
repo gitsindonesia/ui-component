@@ -5,6 +5,7 @@ import {
   ListboxButton,
   ListboxOptions,
   ListboxOption,
+  ListboxLabel,
 } from '@headlessui/vue';
 import {CheckIcon, ChevronDownIcon, XIcon} from '@heroicons/vue/solid';
 import {getBgColor} from '@gits-id/utils';
@@ -95,6 +96,14 @@ const props = defineProps({
   readonly: {
     type: Boolean,
     default: false,
+  },
+  labelClass: {
+    type: String,
+    default: 'mb-1 block',
+  },
+  wrapperClass: {
+    type: String,
+    default: '',
   },
 });
 
@@ -193,8 +202,9 @@ const clear = () => (selectedItem.value = '');
 </script>
 
 <template>
-  <div class="">
+  <div :class="wrapperClass">
     <Listbox v-model="selectedItem">
+      <ListboxLabel v-if="label" :class="labelClass">{{ label }}</ListboxLabel>
       <div class="relative">
         <ListboxButton
           class="

@@ -76,3 +76,16 @@ NoCheckIcon.parameters = {
     },
   },
 };
+
+export const Label = Template.bind({});
+Label.args = {
+  label: 'My Label',
+  labelClass: 'font-semibold mb-1 block',
+};
+Label.parameters = {
+  docs: {
+    source: {
+      code: '<v-select :items="items" label="My Label" label-class="font-semibold mb-1 block" />',
+    },
+  },
+};
