@@ -11,7 +11,7 @@ import {CheckIcon, ChevronDownIcon, XIcon} from '@heroicons/vue/solid';
 import {getBgColor} from '@gits-id/utils';
 import {VInput} from '@gits-id/forms';
 import VTooltip from '@gits-id/tooltip';
-import {ErrorMessage, useField} from 'vee-validate';
+import {useField} from 'vee-validate';
 
 type SelectItem = {
   text: string;
