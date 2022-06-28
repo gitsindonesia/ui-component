@@ -1,120 +1,63 @@
 <script setup lang="ts">
-import {computed, PropType, ref, toRefs, watch} from 'vue';
-import {useField} from 'vee-validate';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import {component as CKEditor} from '@ckeditor/ckeditor5-vue';
+import { computed, toRefs, watch } from "vue";
+import { useField } from "vee-validate";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import { component as ckeditor } from "@ckeditor/ckeditor5-vue";
+import editorConfig from "./config";
 
-const props = defineProps({
-  modelValue: {
-    type: String,
-    default: '',
-  },
-  value: {
-    type: String,
-    default: '',
-  },
-  name: {
-    type: String,
-    default: '',
-  },
-  rules: {
-    type: String,
-    default: '',
-  },
-  label: {
-    type: String,
-    default: '',
-  },
-  labelClass: {
-    type: String,
-    default: 'block mb-2',
-  },
-  wrapperClass: {
-    type: String,
-    default: '',
-  },
-  error: {
-    type: Boolean,
-    default: false,
-  },
-  errorClass: {
-    type: String,
-    default: 'text-error-600 mt-1 text-sm',
-  },
-  errorMessages: {
-    type: Array as PropType<string[]>,
-    default: () => [],
-  },
-  readonly: {
-    type: Boolean,
-    default: false,
-  },
+type Props = {
+  modelValue?: string;
+  value?: string;
+  name?: string;
+  rules?: string;
+  label?: string;
+  labelClass?: string;
+  wrapperClass?: string;
+  error?: boolean;
+  errorClass?: string;
+  errorMessages?: string[];
+  readonly?: string;
+};
+
+const props = withDefaults(defineProps<Props>(), {
+  modelValue: "",
+  value: "",
+  name: "",
+  errorMessages: () => [],
+  labelClass: "block mb-2",
+  errorClass: "text-error-600 mt-1 text-sm",
 });
 
-const emit = defineEmits([
-  'update:modelValue',
-  'update:value',
-  'change',
-  'input',
-  'blur',
-]);
+const emit = defineEmits<{
+  (e: "update:modelValue", value: string): void;
+  (e: "update:value", value: string): void;
+  (e: "change", value: string): void;
+  (e: "input", value: string): void;
+  (e: "blur", event: any): void;
+}>();
 
-const {rules, name, modelValue, value} = toRefs(props);
+const { modelValue, value, name, rules } = toRefs(props);
 
-const {value: content, errorMessage} = useField(name, rules, {
+const { value: content, errorMessage } = useField(name, rules, {
   initialValue: modelValue.value || value.value,
 });
 
-const error = computed(() => {
-  return errorMessage.value || props.errorMessages[0];
-})
+watch([modelValue, value], ([newModelValue, newVal]) => {
+  const val = newModelValue || newVal;
 
-const classicEditor = ref(ClassicEditor);
-const editorConfig = {
-  toolbar: [
-    'heading',
-    '|',
-    'bold',
-    'italic',
-    'link',
-    'bulletedList',
-    'numberedList',
-    'blockQuote',
-    '|',
-    'indent',
-    'outdent',
-    '|',
-    'insertTable',
-    '|',
-    'undo',
-    'redo',
-  ],
-};
+  content.value = val;
 
-watch(value, (val) => {
-  if (modelValue.value) {
-    return;
-  }
-
-  if (val) {
-    content.value = val;
-  }
+  emit("update:modelValue", val);
+  emit("update:value", val);
+  emit("change", val);
+  emit("input", val);
 });
 
-watch(modelValue, (val) => {
-  if (value.value) return;
+const hasError = computed(
+  () => props.error || props.errorMessages.length > 0 || !!errorMessage.value
+);
 
-  if (val) {
-    content.value = val;
-  }
-});
-
-watch(content, (value) => {
-  emit('update:modelValue', value);
-  emit('update:value', value);
-  emit('change', value);
-  emit('input', value);
-});
+const message = computed(() => props.errorMessages[0] || errorMessage.value);
 </script>
 
 <template>
@@ -122,14 +65,14 @@ watch(content, (value) => {
     <label v-if="label" :for="name" :class="labelClass">
       {{ label }}
     </label>
-    <CKEditor
+    <ckeditor
       :id="name"
       v-model="content"
-      :editor="classicEditor"
+      :editor="ClassicEditor"
       :config="editorConfig"
     />
-    <div v-if="error" :class="errorClass">
-      {{ error }}
+    <div v-if="hasError" :class="errorClass">
+      {{ message }}
     </div>
   </div>
 </template>

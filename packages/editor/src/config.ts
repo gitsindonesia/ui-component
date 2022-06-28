@@ -1,0 +1,20 @@
+export default {
+  toolbar: [
+    "heading",
+    "|",
+    "bold",
+    "italic",
+    "link",
+    "bulletedList",
+    "numberedList",
+    "blockQuote",
+    "|",
+    "indent",
+    "outdent",
+    "|",
+    "insertTable",
+    "|",
+    "undo",
+    "redo",
+  ],
+}

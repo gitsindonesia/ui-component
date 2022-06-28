@@ -3,7 +3,7 @@
   "version": "0.8.0",
   "description": "GITS Rich Text Editor Component",
   "scripts": {
-    "build": "vite build",
+    "build": "vite build && npm run build-types && npm run move-types",
     "prepublishOnly": "npm run build",
     "test": "vitest",
     "build-types": "vue-tsc --emitDeclarationOnly",
