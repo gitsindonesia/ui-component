@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.2](https://github.com/gitsindonesia/ui-component/compare/v0.8.1...v0.8.2) (2022-06-28)
+
+
+### Features
+
+* **v-select:** integrate v-select with vee-validate ([88baa33](https://github.com/gitsindonesia/ui-component/commit/88baa33ab1a4a267f9e8118982b4978bfb8fd243))
+* **v-select:** new props: `label`, `labelClass`, `wrapperClass` ([f6ed412](https://github.com/gitsindonesia/ui-component/commit/f6ed412bd042fa85ea2999f7555b8f594baee19b))
+
+
+
+
+
 ## [0.8.1](https://github.com/gitsindonesia/ui-component/compare/v0.8.0...v0.8.1) (2022-06-28)
 
 
