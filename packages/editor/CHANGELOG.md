@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.1](https://github.com/gitsindonesia/ui-component/compare/v0.8.0...v0.8.1) (2022-06-28)
+
+
+### Bug Fixes
+
+* **v-editor:** fix editor typing ([d3660cc](https://github.com/gitsindonesia/ui-component/commit/d3660cc155c145f516f43b900bbf899eef678114))
+
+
+
+
+
 # [0.8.0](https://github.com/gitsindonesia/ui-component/compare/v0.7.3...v0.8.0) (2022-06-27)
 
 
