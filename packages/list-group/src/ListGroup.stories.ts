@@ -144,7 +144,7 @@ export const Slots: Story = (args) => ({
         </template>
         <template #append>
           <div class="text-orange-500">
-            prepend
+            append
           </div>
         </template>
 
