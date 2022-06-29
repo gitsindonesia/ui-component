@@ -24,6 +24,7 @@ export default {
     label: 'Checkbox',
     color: '',
     size: '',
+    name: 'myCheckbox',
   },
 } as Meta;
 
