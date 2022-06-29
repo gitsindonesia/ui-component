@@ -3,8 +3,6 @@ image: node:16.13.2-alpine
 stages:
   - test
   - analyze
-  - build
-  - deploy
 
 cache:
   paths:
@@ -45,54 +43,5 @@ analyze:sonar:
   allow_failure: true
   only:
     - main
-  tags:
-    - nginx-proxy-sonar
-
-.release:
-  stage: release
-  only:
-    - main
-  variables:
-    GITLAB_AUTH_TOKEN: $CI_JOB_TOKEN
-  tags:
-    - gits-dev-mars
-  when: manual
-
-# release:patch:
-#   extends: .release
-#   script:
-#     - npm run release -- --release-as patch
-#     - git push --follow-tags origin main && npm publish
-
-# release:minor:
-#   extends: .release
-#   script:
-#     - npm run release -- --release-as minor
-#     - git push --follow-tags origin main && npm publish
-
-build-storybook:
-  stage: build
-  rules:
-    - if: $CI_COMMIT_BRANCH == "main"
-  script:
-    - npm i -g lerna
-    - lerna bootstrap
-    - lerna run build
-    - yarn build-storybook
-  artifacts:
-    paths:
-      - storybook-static
-    expire_in: 1 hour
-  tags:
-    - nginx-proxy-sonar
-
-deploy-storybook:
-  stage: deploy
-  script:
-    - npm install -g firebase-tools
-    - firebase use gits-ui --token $FIREBASE_TOKEN
-    - firebase deploy --only hosting:ui -m "Pipeline $CI_PIPELINE_ID, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_TOKEN
-  rules:
-    - if: $CI_COMMIT_BRANCH == "main"
   tags:
     - nginx-proxy-sonar
