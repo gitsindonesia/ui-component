@@ -33,7 +33,8 @@
     "typescript": "^4.6.2",
     "vite": "^2.8.6",
     "vitest": "^0.12.4",
-    "vue-tsc": "^0.38.2"
+    "vue-tsc": "^0.38.2",
+    "storybook-vue3-router": "^2.2.1"
   },
   "main": "dist/list-group.umd.js",
   "unpkg": "dist/list-group.iife.js",

@@ -5,6 +5,7 @@ import ListItem from './ListItem.vue';
 import ListItemDivider from './ListItemDivider.vue';
 import ListItemHeader from './ListItemHeader.vue';
 import ListCollapse from './ListCollapse.vue';
+import vueRouter from 'storybook-vue3-router';
 
 export default {
   title: 'Components/ListGroup',
@@ -49,23 +50,19 @@ export const TwoLine: Story = (args) => ({
       <ListItem>
         <div>Item 1</div>
         <div class="text-sm text-gray-500">Sub Item 1</div>
-        <p class="text-xs text-gray-700 mt-1">Lorem ipsum dolor sit amet</p>
       </ListItem>
       <ListItem>
         <div>Item 2</div>
         <div class="text-sm text-gray-500">Sub Item 2</div>
-        <p class="text-xs text-gray-700 mt-1">Lorem ipsum dolor sit amet</p>
       </ListItem>
       <ListItemDivider />
       <ListItem>
         <div>Item 3</div>
         <div class="text-sm text-gray-500">Sub Item 3</div>
-        <p class="text-xs text-gray-700 mt-1">Lorem ipsum dolor sit amet</p>
       </ListItem>
       <ListItem>
         <div>Item 4</div>
         <div class="text-sm text-gray-500">Sub Item 4</div>
-        <p class="text-xs text-gray-700 mt-1">Lorem ipsum dolor sit amet</p>
       </ListItem>
     </ListGroup>
   `,
@@ -85,19 +82,23 @@ export const ThreeLine: Story = (args) => ({
       <ListItem>
         <div>Item 1</div>
         <div class="text-sm text-gray-500">Sub Item 1</div>
+        <p class="text-xs text-gray-700 mt-1">Lorem ipsum dolor sit amet</p>
       </ListItem>
       <ListItem>
         <div>Item 2</div>
         <div class="text-sm text-gray-500">Sub Item 2</div>
+        <p class="text-xs text-gray-700 mt-1">Lorem ipsum dolor sit amet</p>
       </ListItem>
       <ListItemDivider />
       <ListItem>
         <div>Item 3</div>
         <div class="text-sm text-gray-500">Sub Item 3</div>
+        <p class="text-xs text-gray-700 mt-1">Lorem ipsum dolor sit amet</p>
       </ListItem>
       <ListItem>
         <div>Item 4</div>
         <div class="text-sm text-gray-500">Sub Item 4</div>
+        <p class="text-xs text-gray-700 mt-1">Lorem ipsum dolor sit amet</p>
       </ListItem>
     </ListGroup>
   `,
@@ -121,6 +122,8 @@ export const Link: Story = (args) => ({
     </ListGroup>
   `,
 });
+
+Link.decorators = [vueRouter()];
 
 export const Slots: Story = (args) => ({
   components: {
