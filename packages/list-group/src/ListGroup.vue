@@ -3,5 +3,7 @@
 </script>
 
 <template>
-  <div></div>
+  <div class="flex flex-col gap-1">
+    <slot />
+  </div>
 </template>

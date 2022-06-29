@@ -1606,6 +1606,13 @@
   resolved "https://registry.npmjs.org/@gar/promisify/-/promisify-1.1.3.tgz"
   integrity sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==
 
+"@gits-id/collapsible@^0.7.3":
+  version "0.7.3"
+  resolved "https://registry.yarnpkg.com/@gits-id/collapsible/-/collapsible-0.7.3.tgz#44e84167be225a5a97428e97b47e52691601c832"
+  integrity sha512-YJbS05Vao6f1TS0+EVJ1dEOoGSn/0E0PNs09E3BQ2wq8CnjHlMef/VfZHWHzCzxlEbZ2PvT6HpmZ09NavqfHqA==
+  dependencies:
+    vue "^3.2.33"
+
 "@gits-id/textarea@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@gits-id/textarea/-/textarea-0.3.0.tgz#3ace37261d7c9b7dd0a48999b2d1d6153de69589"
@@ -19899,6 +19906,13 @@ vue-router@^4.0.15:
   version "4.0.15"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.0.15.tgz#b4a0661efe197f8c724e0f233308f8776e2c3667"
   integrity sha512-xa+pIN9ZqORdIW1MkN2+d9Ui2pCM1b/UMgwYUCZOiFYHAvz/slKKBDha8DLrh5aCG/RibtrpyhKjKOZ85tYyWg==
+  dependencies:
+    "@vue/devtools-api" "^6.0.0"
+
+vue-router@^4.0.16:
+  version "4.0.16"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.0.16.tgz#9477beeeef36e80e04d041a1738801a55e6e862e"
+  integrity sha512-JcO7cb8QJLBWE+DfxGUL3xUDOae/8nhM1KVdnudadTAORbuxIC/xAydC5Zr/VLHUDQi1ppuTF5/rjBGzgzrJNA==
   dependencies:
     "@vue/devtools-api" "^6.0.0"
 
