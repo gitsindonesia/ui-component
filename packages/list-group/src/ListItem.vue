@@ -14,12 +14,16 @@ type Props = {
   appendClass?: string;
   appendIcon?: string;
   appendIconClass?: string;
+  hidePrepend?: boolean;
+  hideAppend?: boolean;
 };
 
 const props = withDefaults(defineProps<Props>(), {
   defaultClass: 'select-none',
   prependClass: 'w-5 shrink-0',
   appendClass: 'w-5 shrink-0',
+  hidePrepend: false,
+  hideAppend: false,
 });
 
 const is = computed(() => {
@@ -55,7 +59,7 @@ const attrs = computed(() => {
     "
     v-bind="{...attrs, ...$attrs}"
   >
-    <slot name="prepend">
+    <slot v-if="!hidePrepend" name="prepend">
       <div :class="prependClass">
         <slot name="prepend.icon">
           <Icon
@@ -69,7 +73,7 @@ const attrs = computed(() => {
     <div class="flex-1" :class="defaultClass">
       <slot />
     </div>
-    <slot name="append">
+    <slot v-if="!hideAppend" name="append">
       <div :class="appendClass">
         <slot name="append.icon">
           <Icon

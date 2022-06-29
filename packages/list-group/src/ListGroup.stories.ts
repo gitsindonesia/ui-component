@@ -37,6 +37,27 @@ export const BasicList: Story = (args) => ({
   `,
 });
 
+export const HidePrependAppend: Story = (args) => ({
+  components: {
+    ListGroup,
+    ListItem,
+    ListItemDivider,
+  },
+  setup() {
+    return {args};
+  },
+  template: `
+    <ListGroup v-bind="args">
+      <ListItem hide-prepend>Item 1</ListItem>
+      <ListItem hide-prepend hide-append>Item 2</ListItem>
+    </ListGroup>
+    <ListGroup v-bind="args" hide-prepend hide-append v-slot="props">
+      <ListItem v-bind="props">Item 3</ListItem>
+      <ListItem v-bind="props">Item 4</ListItem>
+    </ListGroup>
+  `,
+});
+
 export const TwoLine: Story = (args) => ({
   components: {
     ListGroup,
