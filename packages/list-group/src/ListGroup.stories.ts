@@ -6,6 +6,7 @@ import ListItemDivider from './ListItemDivider.vue';
 import ListItemHeader from './ListItemHeader.vue';
 import ListCollapse from './ListCollapse.vue';
 import vueRouter from 'storybook-vue3-router';
+import {ref} from 'vue';
 
 export default {
   title: 'Components/ListGroup',
@@ -292,6 +293,65 @@ export const Collapse: Story = (args) => ({
           </ListItem>
         </ListGroup>
       </ListCollapse>
+    </ListGroup>
+  `,
+});
+
+export const Image: Story = (args) => ({
+  components: {
+    ListGroup,
+    ListItem,
+    ListItemDivider,
+    ListItemHeader,
+  },
+  setup() {
+    const users = ref([
+      {
+        name: 'Alexander Hipp',
+        email: 'alex@example.com',
+        image:
+          'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80',
+      },
+      {
+        name: 'Julian Wann',
+        email: 'julian@example.com',
+        image:
+          'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
+      },
+      {
+        name: 'Jane Doe',
+        email: 'jane@example.com',
+        image:
+          'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
+      },
+    ]);
+    return {args, users};
+  },
+  template: `
+    <ListGroup v-bind="args">
+      <ListItemHeader class="font-semibold">Teams</ListItemHeader>
+      <ListItem
+        v-for="(user, idx) in users"
+        :key="idx"
+        append-icon="ri:phone-line"
+        append-icon-class="text-orange-500"
+        class="hover:bg-orange-100"
+      >
+        <template #prepend>
+          <img
+            :src="user.image"
+            width="40"
+            height="40"
+            class="shrink-0 w-10 h-10 rounded object-cover"
+          >
+        </template>
+        <div class="font-semibold">
+          {{ user.name }}
+        </div>
+        <p class="text-sm text-gray-500">
+          {{ user.email }}
+        </p>
+      </ListItem>
     </ListGroup>
   `,
 });
