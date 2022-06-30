@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.4.9](https://github.com/gitsindonesia/ui-component/compare/v0.4.3...v0.4.9) (2022-06-30)
+
+
+### Features
+
+* add props header wraptext ([9b16059](https://github.com/gitsindonesia/ui-component/commit/9b160597886f5cd66f235648c380e4b6c9e87e2d))
+
 ### [0.4.8](https://github.com/gitsindonesia/ui-component/compare/v0.4.3...v0.4.8) (2022-06-30)
 
 
