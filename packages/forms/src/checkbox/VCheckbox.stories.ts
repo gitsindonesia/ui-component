@@ -3,7 +3,7 @@ import {themeColors} from '@gits-id/utils/colors';
 import {sizes} from '@gits-id/utils/sizes';
 import {Meta, Story} from '@storybook/vue3';
 import {useForm} from 'vee-validate';
-import {object, boolean} from 'yup';
+import {object, boolean, string, array} from 'yup';
 import VBtn from '@gits-id/button';
 
 export default {
@@ -45,6 +45,70 @@ Checkbox.parameters = {
     },
   },
 };
+
+export const Multiple: Story<{}> = () => ({
+  components: {VCheckbox: MyCheckbox, VBtn},
+  setup() {
+    const schema = object({
+      genre: array().required(),
+    });
+
+    const {handleSubmit, resetForm, values, errors} = useForm({
+      validationSchema: schema,
+    });
+
+    const onSubmit = handleSubmit((values) => {
+      alert(JSON.stringify(values));
+    });
+
+    return {onSubmit, resetForm, values, errors};
+  },
+  template: `
+    <form @submit="onSubmit" class="border-none">
+      <v-checkbox
+        wrapper-class="mb-4"
+        name="genre"
+        value="Rock"
+        label="Rock"
+        id="genre1"
+      />
+      <v-checkbox
+        wrapper-class="mb-4"
+        name="genre"
+        value="Pop"
+        label="Pop"
+        id="genre2"
+      />
+      <v-checkbox
+        wrapper-class="mb-4"
+        name="genre"
+        value="Jazz"
+        label="Jazz"
+        id="genre3"
+      />
+      <v-checkbox
+        wrapper-class="mb-4"
+        name="genre"
+        value="Tomato"
+        label="Tomato"
+        id="genre4"
+      />
+      <v-checkbox
+        wrapper-class="mb-4"
+        name="genre"
+        value="Cucumber"
+        label="Cucumber"
+        id="genre5"
+      />
+      <div class="mt-4">
+        <v-btn type="submit">Submit</v-btn>
+        <v-btn type="button" text @click="resetForm">Reset</v-btn>
+      </div>
+      <div class="my-5">Debug:</div>
+      <pre>{{ {errors, values} }}</pre>
+    </form>
+`,
+});
 
 export const Validation: Story<{}> = () => ({
   components: {VCheckbox: MyCheckbox, VBtn},

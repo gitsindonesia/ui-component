@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import {toRefs, computed, PropType} from 'vue';
+import {toRefs, computed, PropType, watch} from 'vue';
 import {useTextSize} from '@gits-id/utils';
 import {useField} from 'vee-validate';
+
+type CheckboxValue = any[] | boolean | undefined;
 
 const props = defineProps({
   modelValue: {
@@ -29,10 +31,14 @@ const props = defineProps({
     default: '',
   },
   value: {
-    type: [String, Number, Boolean] as PropType<any[] | boolean | undefined>,
-    default: '',
+    type: [String, Number, Boolean] as PropType<CheckboxValue>,
+    default: false,
   },
   name: {
+    type: String,
+    default: '',
+  },
+  id: {
     type: String,
     default: '',
   },
@@ -44,18 +50,23 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  checkedValue: {
+    type: Boolean,
+    default: false,
+  },
+  uncheckedValue: {
+    type: Boolean,
+    default: false,
+  },
 });
 
-defineEmits(['update:modelValue']);
+const emit =
+  defineEmits<{
+    (e: 'update:modelValue', value: CheckboxValue): void;
+  }>();
 
-const {
-  label,
-  inputClass,
-  color,
-  disabled,
-  size,
-  value: checkboxValue,
-} = toRefs(props);
+const {modelValue, label, inputClass, color, disabled, size, name, rules} =
+  toRefs(props);
 
 const colorClass = computed(() => {
   switch (color.value) {
@@ -77,18 +88,30 @@ const colorClass = computed(() => {
 
 const {class: sizeClass} = useTextSize(size.value);
 
-const {value: innerValue, errorMessage} = useField(props.name, props.rules, {
-  initialValue: props.modelValue || props.value,
+const {value: innerValue, errorMessage} = useField<CheckboxValue>(name, rules, {
+  type: 'checkbox',
+  valueProp: props.value,
+  checkedValue: props.value,
+  uncheckedValue: props.uncheckedValue,
+});
+
+watch(modelValue, (val) => {
+  innerValue.value = val;
+});
+
+watch(innerValue, (val) => {
+  emit('update:modelValue', val);
 });
 </script>
 
 <template>
   <div class="flex items-center gap-2" :class="wrapperClass">
     <input
-      :id="name"
+      :id="id || name"
       v-model="innerValue"
+      :name="name"
+      :value="value"
       type="checkbox"
-      :value="checkboxValue"
       class="
         rounded
         transition
@@ -100,7 +123,7 @@ const {value: innerValue, errorMessage} = useField(props.name, props.rules, {
       :disabled="disabled"
       :class="[inputClass, colorClass]"
     />
-    <label class="select-none" :for="name" :class="[sizeClass]">
+    <label class="select-none" :for="id || name" :class="[sizeClass]">
       {{ label }}
     </label>
   </div>
