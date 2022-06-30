@@ -37,6 +37,28 @@ export const BasicList: Story = (args) => ({
   `,
 });
 
+export const Hover: Story = (args) => ({
+  components: {
+    ListGroup,
+    ListItem,
+    ListItemDivider,
+  },
+  setup() {
+    return {args};
+  },
+  template: `
+    <ListGroup v-bind="args">
+      <ListItem hover>Default</ListItem>
+      <ListItem hover hover-class="hover:bg-primary-200 hover:text-primary-700">
+        Custom Class
+      </ListItem>
+      <ListItem hover hover-class="group-hover:bg-orange-200 group-hover:text-orange-700">
+        Group Hover
+      </ListItem>
+    </ListGroup>
+  `,
+});
+
 export const HidePrependAppend: Story = (args) => ({
   components: {
     ListGroup,
