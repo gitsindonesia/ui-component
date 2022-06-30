@@ -60,6 +60,14 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  wrapperClass: {
+    type: String,
+    default: '',
+  },
+  inputClass: {
+    type: String,
+    default: '',
+  },
 });
 
 const {error, size} = toRefs(props);
@@ -71,19 +79,20 @@ const {value, errorMessage} = useField(props.name, props.rules, {
 });
 
 const {class: sizeClass} = useTextSize(size.value);
-const inputClass = computed(() =>
+const inputClasses = computed(() =>
   useInputClasses(error.value || !!errorMessage.value),
 );
 
 const classes = computed(() => [
-  inputClass.value,
+  inputClasses.value,
   sizeClass.value,
   {shadow: props.shadow},
+  props.inputClass,
 ]);
 </script>
 
 <template>
-  <div class="mb-4">
+  <div :class="wrapperClass">
     <label v-if="label" :for="name" class="mb-1 block">{{ label }}</label>
     <textarea
       :id="name"

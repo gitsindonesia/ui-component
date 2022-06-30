@@ -30,23 +30,12 @@ export default {
 } as Meta;
 
 const Template: Story = (args) => ({
-  // Components used in your story `template` are defined in the `components` object
   components: {VTextarea},
-  // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
     return {args};
   },
-  // And then the `args` are bound to your component with `v-bind="args"`
   template: `<VTextarea v-bind='args'/>`,
 });
-
-// export const Textarea: Story = (args) => ({
-//   components: { VTextarea },
-//   setup() {
-//     return { args };
-//   },
-//   template: '<VTextarea v-bind="args" />',
-// });
 
 export const Default = Template.bind({});
 Default.args = {};
@@ -96,10 +85,11 @@ Error.parameters = {
   },
 };
 
-export const Validation: Story<{}> = (args) => ({
+export const Validation: Story<{}> = () => ({
   components: {VTextarea, VBtn},
   setup() {
     const schema = object({
+      bio: string().required().label('Bio'),
       message: string().required().label('Message'),
     });
 
@@ -115,7 +105,19 @@ export const Validation: Story<{}> = (args) => ({
   },
   template: `
     <form @submit="onSubmit" class="border-none">
-      <v-textarea name="message" label="Message" placeholder="Enter your message" />
+      <v-textarea
+        wrapper-class="mb-4"
+        name="message"
+        label="Message"
+        placeholder="Enter your message"
+      />
+      <v-textarea
+        wrapper-class="mb-4"
+        name="bio"
+        label="Bio"
+        placeholder="Enter your bio"
+        input-class="italic"
+      />
       <v-btn type="submit">Submit</v-btn>
       <v-btn type="button" text @click="resetForm">Reset</v-btn>
     </form>
