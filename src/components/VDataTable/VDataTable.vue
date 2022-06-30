@@ -235,6 +235,7 @@ const getTdClass = (header: VDataTableHeader) => {
       [`text-${header.align}`]: !!header.align,
     },
     header.freeze ? `sticky ${positionFreeze} bg-white drop-shadow-lg` : '',
+    header.wrapText ? 'words-break' : 'whitespace-nowrap',
   ];
 };
 
@@ -446,7 +447,7 @@ const end = computed(() =>
             <td
               v-for="header in headers"
               :key="`header-${header.value}`"
-              class="whitespace-nowrap text-sm text-gray-900"
+              class="text-sm text-gray-900"
               :class="[getTdClass(header), paddingClass]"
             >
               <slot
