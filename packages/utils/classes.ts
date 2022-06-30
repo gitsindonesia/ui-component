@@ -17,7 +17,7 @@ export const useInputClasses = (error = false) => {
   if (error) {
     className.push(inputErrorClasses);
   } else {
-    className.push('border-gray-300');
+    className.push('border-gray-300 hover:border-gray-400');
   }
 
   return className.join(' ');
