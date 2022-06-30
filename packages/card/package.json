@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/card",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "GITS Card Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,8 +15,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@gits-id/button": "^0.8.0",
-    "@gits-id/utils": "^0.8.0",
+    "@gits-id/button": "^0.9.0",
+    "@gits-id/utils": "^0.9.0",
     "@vitejs/plugin-vue": "^2.2.4",
     "@vue/test-utils": "^2.0.0-rc.17",
     "autoprefixer": "^10.4.2",

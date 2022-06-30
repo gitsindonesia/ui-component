@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/gitsindonesia/ui-component/compare/v0.8.2...v0.9.0) (2022-06-30)
+
+
+### Bug Fixes
+
+* **utils:** add hover effect on input border ([3187544](https://github.com/gitsindonesia/ui-component/commit/31875447b2d7ef2720ab499a4ee93570f2a612a8))
+
+
+
+
+
 # [0.8.0](https://github.com/gitsindonesia/ui-component/compare/v0.7.3...v0.8.0) (2022-06-27)
 
 **Note:** Version bump only for package @gits-id/utils

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/gitsindonesia/ui-component/compare/v0.8.2...v0.9.0) (2022-06-30)
+
+
+### Bug Fixes
+
+* **checkbox:** support multiple checkbox ([cfd9bc7](https://github.com/gitsindonesia/ui-component/commit/cfd9bc7cc23c4d4679bedefad2585048ad72831c))
+* **textarea:** add new props: `wrapperClass` and `inputClass` ([4c8e126](https://github.com/gitsindonesia/ui-component/commit/4c8e12692cba83a0d507660778a7f506e30956ff))
+
+
+
+
+
 ## [0.8.2](https://github.com/gitsindonesia/ui-component/compare/v0.8.1...v0.8.2) (2022-06-28)
 
 
