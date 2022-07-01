@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/gitsindonesia/ui-component/compare/v0.9.0...v0.10.0) (2022-07-01)
+
+
+### Features
+
+* **list group:** new `hideText` prop ([218da36](https://github.com/gitsindonesia/ui-component/commit/218da36b25369eeaadc7cd42f8fb72fe944b868c))
+* **list group:** new `rounded` style ([4c14f0f](https://github.com/gitsindonesia/ui-component/commit/4c14f0f86da21910f39eeb66e5a90d420c048b12))
+* **list group:** new `shaped` style ([25cba28](https://github.com/gitsindonesia/ui-component/commit/25cba28dfef482031d1aae59b97d3ed4da0595af))
+
+
+
+
+
 # [0.9.0](https://github.com/gitsindonesia/ui-component/compare/v0.8.2...v0.9.0) (2022-06-30)
 
 
