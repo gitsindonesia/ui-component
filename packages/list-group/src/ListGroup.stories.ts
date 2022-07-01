@@ -455,3 +455,119 @@ export const Image: Story = (args) => ({
     </ListGroup>
   `,
 });
+
+export const NavDrawerList: Story = (args) => ({
+  components: {
+    ListGroup,
+    ListItem,
+    ListItemDivider,
+    VNavDrawer,
+    ListCollapse,
+    VBtn,
+  },
+  setup() {
+    const isOpen = ref(false);
+    const isMini = ref(false);
+    const menus = ref([
+      {
+        title: 'Home',
+        to: '/',
+        prependIcon: 'ri:home-2-line',
+      },
+      {
+        title: 'Blog',
+        to: '/',
+        prependIcon: 'ri:book-line',
+        items: [
+          {
+            title: 'Posts',
+            to: '/',
+          },
+          {
+            title: 'Comments',
+            to: '/',
+          },
+        ],
+      },
+      {
+        title: 'Shop',
+        to: '/',
+        prependIcon: 'ri:user-line',
+        items: [
+          {
+            title: 'Products',
+            to: '/',
+          },
+          {
+            title: 'Categories',
+            to: '/',
+          },
+        ],
+      },
+      {
+        title: 'Long Text Management Example',
+        to: '/',
+        prependIcon: 'ri:cart-line',
+      },
+    ]);
+    return {args, isOpen, isMini, menus};
+  },
+  template: `
+    <div class="sm:ml-[300px] space-x-2">
+      <v-btn @click="isOpen = !isOpen">Toggle Open</v-btn>
+      <v-btn @click="isMini = !isMini">Toggle Mini</v-btn>
+      <pre class="mt-5">State: {{ {isOpen, isMini} }}</pre>
+    </div>
+    <v-nav-drawer
+      v-model="isOpen"
+      v-model:mini="isMini"
+      hide-toggle  
+    >
+      <template #logo.mini>
+        <div class="text-center font-semibold">GITS</div>
+      </template>
+      <template #menus>
+        <ListGroup>
+          <template v-for="menu in menus" :key="menu.text">
+            <ListCollapse v-if="menu.items">
+              <template #activator="{isOpen, toggle}">
+                <ListItem
+                  v-bind="menu"
+                  :class="isMini ? 'justify-center' : ''"
+                  :hide-text="isMini"
+                  :hide-append="isMini"
+                  append-icon="ri:arrow-down-s-line"
+                  :append-icon-class="isOpen ? 'rotate-180' : ''"
+                  @click="toggle"
+                >
+                  {{ menu.title }}
+                </ListItem>
+              </template>
+              <ListGroup>
+                <ListItem
+                  v-for="child in menu.items"
+                  :key="child.text"
+                  v-bind="child"
+                  :class="isMini ? 'justify-center' : ''"
+                  :hide-text="isMini"
+                  :hide-append="isMini"
+                >
+                  {{ child.title }}
+                </ListItem>
+              </ListGroup>
+            </ListCollapse>
+            <ListItem
+              v-else
+              v-bind="menu"
+              :class="isMini ? 'justify-center' : ''"
+              :hide-text="isMini"
+              :hide-append="isMini"
+            >
+              {{ menu.title }}
+            </ListItem>
+          </template>
+        </ListGroup>
+      </template>
+    </v-nav-drawer>
+  `,
+});
