@@ -34,5 +34,5 @@
   "jsdelivr": "dist/layouts.iife.js",
   "module": "./dist/layouts.es.js",
   "types": "./dist/types/index.d.ts",
-  "gitHead": "d5b1ff85176022c4a3492b24734007ab5d84e6cc"
+  "gitHead": "fc933ad9d738da7267f8e563500c83232d21f00e"
 }

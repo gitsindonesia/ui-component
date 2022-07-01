@@ -10,7 +10,7 @@
   ],
   "author": "",
   "license": "ISC",
-  "gitHead": "d5b1ff85176022c4a3492b24734007ab5d84e6cc",
+  "gitHead": "fc933ad9d738da7267f8e563500c83232d21f00e",
   "main": "index.js",
   "devDependencies": {
     "c8": "^7.11.3",
