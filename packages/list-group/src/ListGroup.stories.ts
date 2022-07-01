@@ -78,6 +78,22 @@ export const Shaped: Story = (args) => ({
   `,
 });
 
+export const Rounded: Story = (args) => ({
+  components: {
+    ListGroup,
+    ListItem,
+    ListItemDivider,
+  },
+  setup() {
+    return {args};
+  },
+  template: `
+    <ListGroup v-bind="args">
+      <ListItem hover rounded v-for="i in 5" :key="i">Item</ListItem>
+    </ListGroup>
+  `,
+});
+
 export const HidePrependAppend: Story = (args) => ({
   components: {
     ListGroup,

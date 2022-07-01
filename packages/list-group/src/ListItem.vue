@@ -20,6 +20,7 @@ type Props = {
   hoverClass?: string;
   shaped?: boolean;
   shapedClass?: string;
+  rounded?: boolean;
 };
 
 const props = withDefaults(defineProps<Props>(), {
@@ -31,6 +32,7 @@ const props = withDefaults(defineProps<Props>(), {
   hoverClass: 'hover:bg-gray-100',
   shaped: false,
   shapedClass: 'rounded-r-full',
+  rounded: false,
 });
 
 const is = computed(() => {
@@ -64,6 +66,7 @@ const hoverClasses = computed(() => {
       hoverClasses,
       {
         [shapedClass]: shaped,
+        'rounded-full': rounded,
       },
     ]"
     v-bind="attributes"
