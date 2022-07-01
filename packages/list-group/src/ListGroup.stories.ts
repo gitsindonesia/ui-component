@@ -59,6 +59,25 @@ export const Hover: Story = (args) => ({
   `,
 });
 
+export const Shaped: Story = (args) => ({
+  components: {
+    ListGroup,
+    ListItem,
+    ListItemDivider,
+  },
+  setup() {
+    return {args};
+  },
+  template: `
+    <ListGroup v-bind="args">
+      <ListItem hover shaped v-for="i in 5" :key="i">Item</ListItem>
+      <ListItem hover shaped shaped-class="rounded-l-full">
+        Custom Shaped Class
+      </ListItem>
+    </ListGroup>
+  `,
+});
+
 export const HidePrependAppend: Story = (args) => ({
   components: {
     ListGroup,

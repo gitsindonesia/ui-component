@@ -18,6 +18,8 @@ type Props = {
   hideAppend?: boolean;
   hover?: boolean;
   hoverClass?: string;
+  shaped?: boolean;
+  shapedClass?: string;
 };
 
 const props = withDefaults(defineProps<Props>(), {
@@ -27,6 +29,8 @@ const props = withDefaults(defineProps<Props>(), {
   hidePrepend: false,
   hideAppend: false,
   hoverClass: 'hover:bg-gray-100',
+  shaped: false,
+  shapedClass: 'rounded-r-full',
 });
 
 const is = computed(() => {
@@ -47,7 +51,7 @@ const attributes = computed(() => {
   return attrs;
 });
 
-const hoverClass = computed(() => {
+const hoverClasses = computed(() => {
   return props.hover || props.to || props.href ? props.hoverClass : '';
 });
 </script>
@@ -56,7 +60,12 @@ const hoverClass = computed(() => {
   <component
     :is="is"
     class="flex gap-4 px-3 py-2 rounded transition duration-300 items-center"
-    :class="hoverClass"
+    :class="[
+      hoverClasses,
+      {
+        [shapedClass]: shaped,
+      },
+    ]"
     v-bind="attributes"
   >
     <slot v-if="!hidePrepend" name="prepend">
