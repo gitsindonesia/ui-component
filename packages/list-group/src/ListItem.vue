@@ -21,6 +21,7 @@ type Props = {
   shaped?: boolean;
   shapedClass?: string;
   rounded?: boolean;
+  hideText?: boolean;
 };
 
 const props = withDefaults(defineProps<Props>(), {
@@ -82,7 +83,7 @@ const hoverClasses = computed(() => {
         </slot>
       </div>
     </slot>
-    <div class="flex-1" :class="defaultClass">
+    <div v-if="!hideText" class="flex-1" :class="defaultClass">
       <slot />
     </div>
     <slot v-if="!hideAppend" name="append">

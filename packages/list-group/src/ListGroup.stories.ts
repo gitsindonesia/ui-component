@@ -7,6 +7,8 @@ import ListItemHeader from './ListItemHeader.vue';
 import ListCollapse from './ListCollapse.vue';
 import vueRouter from 'storybook-vue3-router';
 import {ref} from 'vue';
+import VNavDrawer from '@gits-id/nav-drawer';
+import VBtn from '@gits-id/button';
 
 export default {
   title: 'Components/ListGroup',
@@ -111,6 +113,26 @@ export const HidePrependAppend: Story = (args) => ({
     <ListGroup v-bind="args" hide-prepend hide-append v-slot="props">
       <ListItem v-bind="props">Item 3</ListItem>
       <ListItem v-bind="props">Item 4</ListItem>
+    </ListGroup>
+  `,
+});
+
+export const HideText: Story = (args) => ({
+  components: {
+    ListGroup,
+    ListItem,
+    ListItemDivider,
+    VBtn,
+  },
+  setup() {
+    const hideText = ref(true);
+    return {args, hideText};
+  },
+  template: `
+    <VBtn @click="hideText = !hideText">{{ hideText ? 'Show' : 'Hide' }} Text</VBtn>
+    <ListGroup class="mt-4">
+      <ListItem :hide-text="hideText" prepend-icon="ri:home-2-line" hide-append>Item 1</ListItem>
+      <ListItem :hide-text="hideText" prepend-icon="ri:user-line" hide-append>Item 2</ListItem>
     </ListGroup>
   `,
 });
