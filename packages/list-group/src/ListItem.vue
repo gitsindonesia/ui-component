@@ -24,7 +24,7 @@ type Props = {
 };
 
 const props = withDefaults(defineProps<Props>(), {
-  defaultClass: 'select-none',
+  defaultClass: 'select-none truncate whitespace-nowrap',
   prependClass: 'w-5 shrink-0',
   appendClass: 'w-5 shrink-0',
   hidePrepend: false,
