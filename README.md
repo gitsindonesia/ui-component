@@ -13,8 +13,7 @@ The official UI Component for GITS Indonesia.
 - [Vue.js](https://vuejs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Headless UI](https://headlessui.dev/)
-- [Heroicons](https://heroicons.com/)
-- [Vue Remix Icons](https://www.npmjs.com/package/vue-remix-icons)
+- [Iconify Vue](https://www.npmjs.com/package/vue-remix-icons)
 
 ## Development
 
@@ -29,18 +28,16 @@ The official UI Component for GITS Indonesia.
 - Run storybook:
 
   ```bash
-  yarn sb
+  yarn dev
   ```
 
 ## Commands
 
-| Command     | Description                   |
-| ----------- | ----------------------------- |
-| `storybook` | Run storybook                 |
-| `sb`        | Alias for `storybook` command |
-| `dev`       | Run playground                |
-| `build`     | Build playground              |
-| `test`      | Run test via `vitest`         |
+| Command                      | Description           |
+| ---------------------------- | --------------------- |
+| `storybook` or `sb` or `dev` | Run storybook         |
+| `build`                      | Build storybook       |
+| `test`                       | Run test via `vitest` |
 
 ### Lerna Commands
 
