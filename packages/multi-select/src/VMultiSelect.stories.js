@@ -73,3 +73,20 @@ MaxBadge.parameters = {
     },
   },
 };
+
+export const CustomStyle = Template.bind({});
+CustomStyle.args = {
+  wrapperClass: '!rounded-full !border-orange-500 focus-within:!border-orange-600',
+  inputClass: '!italic',
+  dropdownClass: 'bg-black/50',
+  itemClass: 'bg-black/50 text-white hover:bg-warning-500 hover:text-white',
+  badgeColor: 'warning',
+  checkWrapperClass: 'text-orange-500'
+};
+CustomStyle.parameters = {
+  docs: {
+    source: {
+      code: '<v-multi-select :items="items" :max-badge="3" />',
+    },
+  },
+};

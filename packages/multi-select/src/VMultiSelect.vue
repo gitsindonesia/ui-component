@@ -92,6 +92,50 @@ const props = defineProps({
     type: Array,
     default: () => [],
   },
+  wrapperClass: {
+    type: String,
+    default: '',
+  },
+  inputClass: {
+    type: String,
+    default: '',
+  },
+  badgeColor: {
+    type: String,
+    default: 'primary',
+  },
+  badgeClass: {
+    type: String,
+    default: '',
+  },
+  badgeProps: {
+    type: Object,
+    default: () => ({}),
+  },
+  dropdownClass: {
+    type: String,
+    default: '',
+  },
+  itemClass: {
+    type: String,
+    default: '',
+  },
+  checkWrapperClass: {
+    type: String,
+    default: 'text-primary-500',
+  },
+  checkIconClass: {
+    type: String,
+    default: '',
+  },
+  noDataClass: {
+    type: String,
+    default: '',
+  },
+  loadingClass: {
+    type: String,
+    default: '',
+  },
 });
 
 const emit = defineEmits([
@@ -312,20 +356,44 @@ watch(
     <div>
       <div class="relative mt-1">
         <div
-          as="div"
-          class="min-h-[50px] relative w-full py-1 pl-3 pr-10 text-left bg-white rounded-lg border cursor-default focus:outline-none sm:text-sm gap-y-1 flex flex-wrap items-center focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-offset-2"
-          :class="[error ? 'v-multi-select-error' : 'v-multi-select-normal']"
+          class="
+            min-h-[50px]
+            relative
+            w-full
+            py-1
+            pl-3
+            pr-10
+            text-left
+            bg-white
+            rounded-lg
+            border
+            cursor-default
+            focus:outline-none
+            sm:text-sm
+            gap-y-1
+            flex flex-wrap
+            items-center
+            focus-visible:ring-2
+            focus-visible:ring-opacity-75
+            focus-visible:ring-offset-2
+          "
+          :class="[
+            error ? 'v-multi-select-error' : 'v-multi-select-normal',
+            wrapperClass,
+          ]"
           @click="(e) => e.preventDefault()"
         >
           <div v-if="selected.length" class="flex items-center gap-2 flex-wrap">
             <v-badge
               v-for="sItem in badges"
               :key="sItem.value"
-              color="primary"
+              :color="badgeColor"
               dismissable
               small
               class="h-6 truncate"
+              :class="badgeClass"
               @dismiss="deselect(sItem)"
+              v-bind="badgeProps"
             >
               {{ sItem[itemText] }}
             </v-badge>
@@ -337,7 +405,17 @@ watch(
           <input
             :id="id"
             type="search"
-            class="border-none px-1 py-1 focus:outline-none focus:!ring-0 focus:!border-none text-sm flex-grow"
+            class="
+              border-none
+              px-1
+              py-1
+              focus:outline-none
+              focus:!ring-0
+              focus:!border-none
+              text-sm
+              flex-grow
+            "
+            :class="inputClass"
             autofill="false"
             autocomplete="off"
             :placeholder="selected.length < 1 ? placeholder : ''"
@@ -356,7 +434,6 @@ watch(
             <v-tooltip v-if="selected.length > 1">
               <template #activator="{on}">
                 <v-badge
-                  outlined
                   circle
                   class="!p-1 !bg-transparent"
                   @click="clearSelected"
@@ -380,15 +457,47 @@ watch(
           <div
             v-if="isOpen"
             ref="dropdown"
-            class="absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm px-0 z-10"
+            class="
+              absolute
+              w-full
+              py-1
+              mt-1
+              overflow-auto
+              text-base
+              bg-white
+              rounded-md
+              shadow-lg
+              max-h-60
+              ring-1 ring-black ring-opacity-5
+              focus:outline-none
+              sm:text-sm
+              px-0
+              z-10
+            "
+            :class="dropdownClass"
           >
-            <div v-if="loading" class="pl-6 pr-4 py-2 text-gray-600">
+            <div
+              v-if="loading"
+              class="pl-6 pr-4 py-2 text-gray-600"
+              :class="loadingClass"
+            >
               Loading...
             </div>
             <template v-else-if="filteredItems.length">
               <template v-if="selectAll">
                 <div
-                  class="bg-white hover:text-primary-500 hover:bg-primary-100 text-gray-900 cursor-default select-none py-2 pl-10 pr-4 relative"
+                  class="
+                    bg-white
+                    hover:text-primary-500
+                    hover:bg-primary-100
+                    text-gray-900
+                    cursor-default
+                    select-none
+                    py-2
+                    pl-10
+                    pr-4
+                    relative
+                  "
                   @click="toggleSelectAll"
                 >
                   <span
@@ -401,7 +510,15 @@ watch(
                   </span>
                   <span
                     v-if="isAllSelected"
-                    class="absolute inset-y-0 left-0 flex items-center pl-3 text-primary-500"
+                    class="
+                      absolute
+                      inset-y-0
+                      left-0
+                      flex
+                      items-center
+                      pl-3
+                      text-primary-500
+                    "
                   >
                     <CheckIcon class="w-5 h-5" aria-hidden="true" />
                   </span>
@@ -423,6 +540,7 @@ watch(
                       ? 'text-primary-500 bg-primary-100'
                       : 'text-gray-900',
                     'cursor-default select-none relative py-2 pl-10 pr-4',
+                    itemClass,
                   ]"
                 >
                   <span
@@ -435,14 +553,33 @@ watch(
                   </span>
                   <span
                     v-if="isSelected(item, index)"
-                    class="absolute inset-y-0 left-0 flex items-center pl-3 text-primary-500"
+                    class="
+                      absolute
+                      inset-y-0
+                      left-0
+                      flex
+                      items-center
+                      pl-3
+                      text-primary-500
+                    "
+                    :class="checkWrapperClass"
                   >
-                    <CheckIcon class="w-5 h-5" aria-hidden="true" />
+                    <CheckIcon
+                      class="w-5 h-5"
+                      :class="checkIconClass"
+                      aria-hidden="true"
+                    />
                   </span>
                 </div>
               </div>
             </template>
-            <div v-else class="pl-6 pr-4 py-2 text-gray-600">No Data</div>
+            <div
+              v-else
+              class="pl-6 pr-4 py-2 text-gray-600"
+              :class="noDataClass"
+            >
+              No Data
+            </div>
           </div>
         </transition>
       </div>
