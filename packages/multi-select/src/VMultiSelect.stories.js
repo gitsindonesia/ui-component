@@ -83,10 +83,10 @@ CustomStyle.args = {
   badgeColor: 'warning',
   checkWrapperClass: 'text-orange-500'
 };
-CustomStyle.parameters = {
-  docs: {
-    source: {
-      code: '<v-multi-select :items="items" :max-badge="3" />',
-    },
-  },
-};
+// CustomStyle.parameters = {
+//   docs: {
+//     source: {
+//       code: '<v-multi-select :items="items" :max-badge="3" />',
+//     },
+//   },
+// };
