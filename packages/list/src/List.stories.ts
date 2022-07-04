@@ -9,6 +9,7 @@ import vueRouter from 'storybook-vue3-router';
 import {ref} from 'vue';
 import VNavDrawer from '@gits-id/nav-drawer';
 import VBtn from '@gits-id/button';
+import {Dropdown} from '@gits-id/dropdown';
 
 export default {
   title: 'Components/List',
@@ -693,5 +694,112 @@ export const IosSettings: Story = (args) => ({
         VPN
       </ListItem>
     </List>
+  `,
+});
+
+export const ListInDropdown: Story = (args) => ({
+  components: {
+    List,
+    ListItem,
+    ListItemDivider,
+    Dropdown,
+  },
+  setup() {
+    return {args};
+  },
+  template: `
+  <Dropdown label="Dropdown" panel-class="p-0">
+    <List>
+      <ListItem
+        hover
+        tile
+        append-icon="ri:arrow-right-s-line"
+        append-icon-class="text-gray-500"
+      >
+        <template #prepend>
+          <img
+            src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
+            width="40"
+            height="40"
+            class="shrink-0 w-10 h-10 rounded-full object-cover"
+          >
+        </template>
+        <div>
+          <div class="font-semibold">John Doe</div>
+          <p class="text-sm text-gray-500 truncate">
+            Apple ID, iCloud+, Media & Purchases
+          </p>
+        </div>
+      </ListItem>
+    </List>
+    <List
+      class="mt-6 divide divide-y border-t"
+    >
+      <ListItem
+        hover
+        tile
+        prepend-icon="ion:ios-airplane"
+        prepend-class="p-1 bg-orange-500 text-white rounded"
+        append-icon="ri:arrow-right-s-line"
+        append-icon-class="text-gray-500"
+      >
+        Airplane Mode
+      </ListItem>
+      <ListItem
+        hover
+        tile
+        prepend-icon="ic:outline-wifi"
+        prepend-class="p-1 bg-blue-500 text-white rounded"
+        append-icon="ri:arrow-right-s-line"
+        append-icon-class="text-gray-500"
+        append-text="Coffee Wifi"
+        append-text-class="text-sm text-gray-800"
+      >
+        Wifi
+      </ListItem>
+      <ListItem
+        hover
+        tile
+        prepend-icon="ri:bluetooth-line"
+        prepend-class="p-1 bg-blue-500 text-white rounded"
+        append-icon="ri:arrow-right-s-line"
+        append-icon-class="text-gray-500"
+        append-text="On"
+        append-text-class="text-sm text-gray-800"
+      >
+        Bluetooth
+      </ListItem>
+      <ListItem
+        hover
+        tile
+        prepend-icon="ic:sharp-cell-tower"
+        prepend-class="p-1 bg-green-500 text-white rounded"
+        append-icon="ri:arrow-right-s-line"
+        append-icon-class="text-gray-500"
+      >
+        Cellular
+      </ListItem>
+      <ListItem
+        hover
+        tile
+        prepend-icon="ri:hotspot-line"
+        prepend-class="p-1 bg-green-500 text-white rounded"
+        append-icon="ri:arrow-right-s-line"
+        append-icon-class="text-gray-500"
+      >
+        Personal Hotspot
+      </ListItem>
+      <ListItem
+        hover
+        tile
+        prepend-icon="material-symbols:vpn-lock"
+        prepend-class="p-1 bg-blue-500 text-white rounded"
+        append-icon="ri:arrow-right-s-line"
+        append-icon-class="text-gray-500"
+      >
+        VPN
+      </ListItem>
+    </List>
+  </Dropdown>
   `,
 });
