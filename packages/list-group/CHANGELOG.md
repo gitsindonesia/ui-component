@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.1](https://github.com/gitsindonesia/ui-component/compare/v0.10.0...v0.10.1) (2022-07-04)
+
+
+### Bug Fixes
+
+* **list group:** remove default gap ([1e93020](https://github.com/gitsindonesia/ui-component/commit/1e930207a22b791995f670b055773d86c74198b4))
+
+
+### Features
+
+* **list group:** tile list and append text ([3554bc5](https://github.com/gitsindonesia/ui-component/commit/3554bc52c278772ec23470413ae85da5689d2d61))
+
+
+
+
+
 # [0.10.0](https://github.com/gitsindonesia/ui-component/compare/v0.9.0...v0.10.0) (2022-07-01)
 
 
