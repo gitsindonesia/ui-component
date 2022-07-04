@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/ui-nuxt",
-  "version": "0.10.3-alpha.0",
+  "version": "0.10.3-alpha.1",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -21,7 +21,7 @@
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
   },
   "dependencies": {
-    "@gits-id/ui": "^0.10.3-alpha.0",
+    "@gits-id/ui": "^0.10.3-alpha.1",
     "@nuxt/kit": "^3.0.0-rc.3"
   },
   "devDependencies": {
