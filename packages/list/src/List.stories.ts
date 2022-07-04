@@ -803,3 +803,39 @@ export const ListInDropdown: Story = (args) => ({
   </Dropdown>
   `,
 });
+
+export const Event: Story = (args) => ({
+  components: {
+    List,
+    ListItem,
+    ListItemDivider,
+  },
+  setup() {
+    const showMessage = (message: string) => alert(`Clicked: ${message}`);
+    return {args, showMessage};
+  },
+  template: `
+    <List>
+      <ListItem prepend-icon="ri:home-2-line" @click:prependIcon="showMessage('prependIcon')">
+        Click on the icon
+      </ListItem>
+      <ListItem append-icon="ri:user-line" @click:appendIcon="showMessage('appendIcon')">
+        Click on the icon
+      </ListItem>
+      <ListItem prepend-class="p-1 rounded bg-cyan-500" prepend-icon="ri:home-2-line" @click:prepend="showMessage('prepend')">
+        Click on the icon wrapper area
+      </ListItem>
+      <ListItem append-class="p-1 rounded bg-sky-500" append-icon="ri:user-line" @click:append="showMessage('append')">
+        Click on the icon wrapper area
+      </ListItem>
+      <ListItem
+        append-icon="ri:arrow-right-s-line"
+        append-text="Click me"
+        append-text-class="hover:underline"
+        @click:appendText="showMessage('appendText')"
+      >
+        Click on the append text
+      </ListItem>
+    </List> 
+  `,
+});

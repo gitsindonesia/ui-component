@@ -41,6 +41,15 @@ const props = withDefaults(defineProps<Props>(), {
   tile: false,
 });
 
+const emit =
+  defineEmits<{
+    (e: 'click:prepend'): void;
+    (e: 'click:prependIcon'): void;
+    (e: 'click:append'): void;
+    (e: 'click:appendIcon'): void;
+    (e: 'click:appendText'): void;
+  }>();
+
 const is = computed(() => {
   if (props.to) return RouterLink;
 
@@ -84,12 +93,13 @@ const roundedClass = computed(() => {
     v-bind="attributes"
   >
     <slot v-if="!hidePrepend" name="prepend">
-      <div :class="prependClass">
+      <div :class="prependClass" @click="emit('click:prepend')">
         <slot name="prepend.icon">
           <Icon
             :icon="prependIcon"
             class="transition duration-300 transform w-5 h-5"
             :class="prependIconClass"
+            @click="emit('click:prependIcon')"
           />
         </slot>
       </div>
@@ -98,15 +108,22 @@ const roundedClass = computed(() => {
       <slot />
     </div>
     <slot v-if="!hideAppend" name="append">
-      <div class="flex gap-1 items-center" :class="appendClass">
+      <div
+        class="flex gap-1 items-center"
+        :class="appendClass"
+        @click="emit('click:append')"
+      >
         <slot name="append.text">
-          <span :class="appendTextClass">{{ appendText }}</span>
+          <span :class="appendTextClass" @click="emit('click:appendText')">
+            {{ appendText }}
+          </span>
         </slot>
         <slot name="append.icon">
           <Icon
             :icon="appendIcon"
             class="transition duration-300 transform w-5 h-5"
             :class="appendIconClass"
+            @click="emit('click:appendIcon')"
           />
         </slot>
       </div>
