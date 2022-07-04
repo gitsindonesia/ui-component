@@ -1,40 +1,40 @@
-# GITS List Group Component
+# GITS List Component
 
-Use List Group component for creating list, grouping list and creating menus.
+Use `List` component for creating list, grouping list and creating menus.
 
 ## Installation
 
 npm
 
 ```
-npm i @gits-id/list-group
+npm i @gits-id/list
 ```
 
 yarn
 
 ```
-yarn add @gits-id/list-group
+yarn add @gits-id/list
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/list-group
+pnpm i @gits-id/list
 ```
 
 ## Usage
 
-This package provides 5 components: `ListGroup`, `ListItem`, `ListItemDivider`, `ListItemHeader`, `ListCollapse`.
+This package provides 5 components: `List`, `ListItem`, `ListItemDivider`, `ListItemHeader`, `ListCollapse`.
 
 ### Basic Usage
 
 ```vue
 <script setup lang="ts">
-import {ListGroup, ListItem, ListItemDivider} from '@gits-id/list-group';
+import {List, ListItem, ListItemDivider} from '@gits-id/list';
 </script>
 
 <template>
-  <ListGroup>
+  <List>
     <ListItem>Item 1</ListItem>
     <ListItem>Item 2</ListItem>
     <ListItemDivider />
@@ -42,7 +42,7 @@ import {ListGroup, ListItem, ListItemDivider} from '@gits-id/list-group';
     <ListItemDivider />
     <ListItem>Item 4</ListItem>
     <ListItem>Item 5</ListItem>
-  </ListGroup>
+  </List>
 </template>
 ```
 
@@ -50,7 +50,7 @@ import {ListGroup, ListItem, ListItemDivider} from '@gits-id/list-group';
 
 ```vue
 <template>
-  <ListGroup v-bind="args">
+  <List v-bind="args">
     <ListItem prepend-icon="ri:user-line"> Item 1 </ListItem>
     <ListItem prepend-icon="ri:search-line"> Item 2 </ListItem>
     <ListItemDivider />
@@ -63,7 +63,7 @@ import {ListGroup, ListItem, ListItemDivider} from '@gits-id/list-group';
     <ListItem prepend-icon="ri:user-line" append-icon="ri:arrow-downs-line">
       Item 6
     </ListItem>
-  </ListGroup>
+  </List>
 </template>
 ```
 
@@ -71,7 +71,7 @@ import {ListGroup, ListItem, ListItemDivider} from '@gits-id/list-group';
 
 ```vue
 <template>
-  <ListGroup>
+  <List>
     <ListItem prepend-icon="ri:home-2-line"> Home </ListItem>
     <ListCollapse>
       <template #activator="{isOpen, toggle}">
@@ -84,10 +84,10 @@ import {ListGroup, ListItem, ListItemDivider} from '@gits-id/list-group';
           Blog
         </ListItem>
       </template>
-      <ListGroup>
+      <List>
         <ListItem> Add New Post </ListItem>
         <ListItem> View Comments </ListItem>
-      </ListGroup>
+      </List>
     </ListCollapse>
     <ListCollapse>
       <template #activator="{isOpen, toggle}">
@@ -100,12 +100,12 @@ import {ListGroup, ListItem, ListItemDivider} from '@gits-id/list-group';
           Shop
         </ListItem>
       </template>
-      <ListGroup>
+      <List>
         <ListItem> View Dashboard </ListItem>
         <ListItem> Sales </ListItem>
-      </ListGroup>
+      </List>
     </ListCollapse>
-  </ListGroup>
+  </List>
 </template>
 ```
 
