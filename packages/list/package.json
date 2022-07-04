@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/list",
-  "version": "0.10.2",
+  "version": "0.10.3-alpha.0",
   "private": true,
   "description": "GITS List Component",
   "scripts": {

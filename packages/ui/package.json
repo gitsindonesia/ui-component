@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/ui",
-  "version": "0.10.1",
+  "version": "0.10.3-alpha.0",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly",
     "prepublishOnly": "npm run build",
@@ -19,6 +19,7 @@
     "@gits-id/editor": "^0.10.1",
     "@gits-id/forms": "^0.10.1",
     "@gits-id/layouts": "^0.10.1",
+    "@gits-id/list": "^0.10.3-alpha.0",
     "@gits-id/logo": "^0.10.1",
     "@gits-id/menu": "^0.10.1",
     "@gits-id/menus": "^0.10.1",
@@ -44,7 +45,6 @@
     "@gits-id/tooltip": "^0.10.1",
     "@gits-id/types": "^0.10.1",
     "@gits-id/utils": "^0.10.1",
-    "@gits-id/list": "^0.10.2",
     "@vue/test-utils": "^2.0.0-rc.17",
     "vue": "^3.2.33",
     "vue-remix-icons": "^1.1.1"
