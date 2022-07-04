@@ -1,6 +1,6 @@
 import {Meta, Story} from '@storybook/vue3';
 import {Icon} from '@iconify/vue';
-import ListGroup from './ListGroup.vue';
+import List from './List.vue';
 import ListItem from './ListItem.vue';
 import ListItemDivider from './ListItemDivider.vue';
 import ListItemHeader from './ListItemHeader.vue';
@@ -11,15 +11,15 @@ import VNavDrawer from '@gits-id/nav-drawer';
 import VBtn from '@gits-id/button';
 
 export default {
-  title: 'Components/ListGroup',
-  component: ListGroup,
+  title: 'Components/List',
+  component: List,
   argTypes: {},
   args: {},
 } as Meta;
 
 export const BasicList: Story = (args) => ({
   components: {
-    ListGroup,
+    List,
     ListItem,
     ListItemDivider,
   },
@@ -27,7 +27,7 @@ export const BasicList: Story = (args) => ({
     return {args};
   },
   template: `
-    <ListGroup v-bind="args">
+    <List v-bind="args">
       <ListItem>Item 1</ListItem>
       <ListItem>Item 2</ListItem>
       <ListItemDivider />
@@ -35,13 +35,13 @@ export const BasicList: Story = (args) => ({
       <ListItemDivider />
       <ListItem>Item 4</ListItem>
       <ListItem>Item 5</ListItem>
-    </ListGroup>
+    </List>
   `,
 });
 
 export const Hover: Story = (args) => ({
   components: {
-    ListGroup,
+    List,
     ListItem,
     ListItemDivider,
   },
@@ -49,7 +49,7 @@ export const Hover: Story = (args) => ({
     return {args};
   },
   template: `
-    <ListGroup v-bind="args">
+    <List v-bind="args">
       <ListItem hover>Default</ListItem>
       <ListItem hover hover-class="hover:bg-primary-200 hover:text-primary-700">
         Custom Class
@@ -57,13 +57,13 @@ export const Hover: Story = (args) => ({
       <ListItem hover hover-class="group-hover:bg-orange-200 group-hover:text-orange-700">
         Group Hover
       </ListItem>
-    </ListGroup>
+    </List>
   `,
 });
 
 export const Shaped: Story = (args) => ({
   components: {
-    ListGroup,
+    List,
     ListItem,
     ListItemDivider,
   },
@@ -71,18 +71,18 @@ export const Shaped: Story = (args) => ({
     return {args};
   },
   template: `
-    <ListGroup v-bind="args">
+    <List v-bind="args">
       <ListItem hover shaped v-for="i in 5" :key="i">Item</ListItem>
       <ListItem hover shaped shaped-class="rounded-l-full">
         Custom Shaped Class
       </ListItem>
-    </ListGroup>
+    </List>
   `,
 });
 
 export const Rounded: Story = (args) => ({
   components: {
-    ListGroup,
+    List,
     ListItem,
     ListItemDivider,
   },
@@ -90,15 +90,15 @@ export const Rounded: Story = (args) => ({
     return {args};
   },
   template: `
-    <ListGroup v-bind="args">
+    <List v-bind="args">
       <ListItem hover rounded v-for="i in 5" :key="i">Item</ListItem>
-    </ListGroup>
+    </List>
   `,
 });
 
 export const Tile: Story = (args) => ({
   components: {
-    ListGroup,
+    List,
     ListItem,
     ListItemDivider,
   },
@@ -106,15 +106,15 @@ export const Tile: Story = (args) => ({
     return {args};
   },
   template: `
-    <ListGroup v-bind="args">
+    <List v-bind="args">
       <ListItem hover tile v-for="i in 5" :key="i">Item</ListItem>
-    </ListGroup>
+    </List>
   `,
 });
 
 export const HidePrependAppend: Story = (args) => ({
   components: {
-    ListGroup,
+    List,
     ListItem,
     ListItemDivider,
   },
@@ -122,20 +122,20 @@ export const HidePrependAppend: Story = (args) => ({
     return {args};
   },
   template: `
-    <ListGroup v-bind="args">
+    <List v-bind="args">
       <ListItem hide-prepend>Item 1</ListItem>
       <ListItem hide-prepend hide-append>Item 2</ListItem>
-    </ListGroup>
-    <ListGroup v-bind="args" hide-prepend hide-append v-slot="props">
+    </List>
+    <List v-bind="args" hide-prepend hide-append v-slot="props">
       <ListItem v-bind="props">Item 3</ListItem>
       <ListItem v-bind="props">Item 4</ListItem>
-    </ListGroup>
+    </List>
   `,
 });
 
 export const HideText: Story = (args) => ({
   components: {
-    ListGroup,
+    List,
     ListItem,
     ListItemDivider,
     VBtn,
@@ -146,16 +146,16 @@ export const HideText: Story = (args) => ({
   },
   template: `
     <VBtn @click="hideText = !hideText">{{ hideText ? 'Show' : 'Hide' }} Text</VBtn>
-    <ListGroup class="mt-4">
+    <List class="mt-4">
       <ListItem :hide-text="hideText" prepend-icon="ri:home-2-line" hide-append>Item 1</ListItem>
       <ListItem :hide-text="hideText" prepend-icon="ri:user-line" hide-append>Item 2</ListItem>
-    </ListGroup>
+    </List>
   `,
 });
 
 export const TwoLine: Story = (args) => ({
   components: {
-    ListGroup,
+    List,
     ListItem,
     ListItemDivider,
   },
@@ -163,7 +163,7 @@ export const TwoLine: Story = (args) => ({
     return {args};
   },
   template: `
-    <ListGroup v-bind="args">
+    <List v-bind="args">
       <ListItem>
         <div>Item 1</div>
         <div class="text-sm text-gray-500">Sub Item 1</div>
@@ -181,13 +181,13 @@ export const TwoLine: Story = (args) => ({
         <div>Item 4</div>
         <div class="text-sm text-gray-500">Sub Item 4</div>
       </ListItem>
-    </ListGroup>
+    </List>
   `,
 });
 
 export const ThreeLine: Story = (args) => ({
   components: {
-    ListGroup,
+    List,
     ListItem,
     ListItemDivider,
   },
@@ -195,7 +195,7 @@ export const ThreeLine: Story = (args) => ({
     return {args};
   },
   template: `
-    <ListGroup v-bind="args">
+    <List v-bind="args">
       <ListItem>
         <div>Item 1</div>
         <div class="text-sm text-gray-500">Sub Item 1</div>
@@ -217,13 +217,13 @@ export const ThreeLine: Story = (args) => ({
         <div class="text-sm text-gray-500">Sub Item 4</div>
         <p class="text-xs text-gray-700 mt-1">Lorem ipsum dolor sit amet</p>
       </ListItem>
-    </ListGroup>
+    </List>
   `,
 });
 
 export const Link: Story = (args) => ({
   components: {
-    ListGroup,
+    List,
     ListItem,
     ListItemDivider,
   },
@@ -231,12 +231,12 @@ export const Link: Story = (args) => ({
     return {args};
   },
   template: `
-    <ListGroup v-bind="args">
+    <List v-bind="args">
       <ListItem to="/">Home</ListItem>
       <ListItem to="/profile">Profile</ListItem>
       <ListItem href="/settings">Settings</ListItem>
       <ListItem href="/logout">Logout</ListItem>
-    </ListGroup>
+    </List>
   `,
 });
 
@@ -244,7 +244,7 @@ Link.decorators = [vueRouter()];
 
 export const Slots: Story = (args) => ({
   components: {
-    ListGroup,
+    List,
     ListItem,
     ListItemDivider,
   },
@@ -252,7 +252,7 @@ export const Slots: Story = (args) => ({
     return {args};
   },
   template: `
-    <ListGroup v-bind="args">
+    <List v-bind="args">
       <ListItem>
         <template #prepend>
           <div class="text-cyan-500">
@@ -267,13 +267,13 @@ export const Slots: Story = (args) => ({
 
         default slot
       </ListItem>
-    </ListGroup>
+    </List>
   `,
 });
 
 export const Icons: Story = (args) => ({
   components: {
-    ListGroup,
+    List,
     ListItem,
     ListItemDivider,
     Icon,
@@ -282,7 +282,7 @@ export const Icons: Story = (args) => ({
     return {args};
   },
   template: `
-    <ListGroup v-bind="args">
+    <List v-bind="args">
       <ListItem prepend-icon="ri:user-line">
         Item 1
       </ListItem>
@@ -303,13 +303,13 @@ export const Icons: Story = (args) => ({
       <ListItem prepend-icon="ri:user-line" append-icon="ri:arrow-downs-line">
         Item 6
       </ListItem>
-    </ListGroup>
+    </List>
   `,
 });
 
 export const Header: Story = (args) => ({
   components: {
-    ListGroup,
+    List,
     ListItem,
     ListItemDivider,
     Icon,
@@ -319,14 +319,14 @@ export const Header: Story = (args) => ({
     return {args};
   },
   template: `
-    <ListGroup v-bind="args">
+    <List v-bind="args">
       <ListItem prepend-icon="ri:user-line">
         Home
       </ListItem>
       <ListItem prepend-icon="ri:search-line">
         User Management
       </ListItem>
-      <ListGroup class="mt-2">
+      <List class="mt-2">
         <ListItemHeader prepend-icon="ri:search-line">
           Blog
         </ListItemHeader>
@@ -336,8 +336,8 @@ export const Header: Story = (args) => ({
         <ListItem prepend-icon="ri:user-line">
           View Comments
         </ListItem>
-      </ListGroup>
-      <ListGroup class="mt-2">
+      </List>
+      <List class="mt-2">
         <ListItemHeader prepend-icon="ri:user-line">
           Shop
         </ListItemHeader>
@@ -347,15 +347,15 @@ export const Header: Story = (args) => ({
         <ListItem prepend-icon="ri:user-line">
           Sales
         </ListItem>
-      </ListGroup>
-    </ListGroup>
+      </List>
+    </List>
   `,
 });
 
 export const Collapse: Story = (args) => ({
   components: {
     Icon,
-    ListGroup,
+    List,
     ListItem,
     ListItemDivider,
     ListItemHeader,
@@ -365,7 +365,7 @@ export const Collapse: Story = (args) => ({
     return {args};
   },
   template: `
-    <ListGroup v-bind="args">
+    <List v-bind="args">
       <ListItem prepend-icon="ri:home-2-line">
         Home
       </ListItem>
@@ -380,14 +380,14 @@ export const Collapse: Story = (args) => ({
             Blog
           </ListItem>
         </template>
-        <ListGroup>
+        <List>
           <ListItem>
             Add New Post
           </ListItem>
           <ListItem>
             View Comments
           </ListItem>
-        </ListGroup>
+        </List>
       </ListCollapse>
       <ListCollapse>
         <template #activator="{isOpen, toggle}">
@@ -400,22 +400,22 @@ export const Collapse: Story = (args) => ({
             Shop
           </ListItem>
         </template>
-        <ListGroup>
+        <List>
           <ListItem>
             View Dashboard
           </ListItem>
           <ListItem>
             Sales
           </ListItem>
-        </ListGroup>
+        </List>
       </ListCollapse>
-    </ListGroup>
+    </List>
   `,
 });
 
 export const Image: Story = (args) => ({
   components: {
-    ListGroup,
+    List,
     ListItem,
     ListItemDivider,
     ListItemHeader,
@@ -444,7 +444,7 @@ export const Image: Story = (args) => ({
     return {args, users};
   },
   template: `
-    <ListGroup v-bind="args">
+    <List v-bind="args">
       <ListItemHeader class="font-semibold">Teams</ListItemHeader>
       <ListItem
         v-for="(user, idx) in users"
@@ -468,13 +468,13 @@ export const Image: Story = (args) => ({
           {{ user.email }}
         </p>
       </ListItem>
-    </ListGroup>
+    </List>
   `,
 });
 
 export const NavDrawerList: Story = (args) => ({
   components: {
-    ListGroup,
+    List,
     ListItem,
     ListItemDivider,
     VNavDrawer,
@@ -544,7 +544,7 @@ export const NavDrawerList: Story = (args) => ({
         <div class="text-center font-semibold">GITS</div>
       </template>
       <template #menus>
-        <ListGroup>
+        <List>
           <template v-for="menu in menus" :key="menu.text">
             <ListCollapse v-if="menu.items">
               <template #activator="{isOpen, toggle}">
@@ -560,7 +560,7 @@ export const NavDrawerList: Story = (args) => ({
                   {{ menu.title }}
                 </ListItem>
               </template>
-              <ListGroup>
+              <List>
                 <ListItem
                   v-for="child in menu.items"
                   :key="child.text"
@@ -571,7 +571,7 @@ export const NavDrawerList: Story = (args) => ({
                 >
                   {{ child.title }}
                 </ListItem>
-              </ListGroup>
+              </List>
             </ListCollapse>
             <ListItem
               v-else
@@ -583,7 +583,7 @@ export const NavDrawerList: Story = (args) => ({
               {{ menu.title }}
             </ListItem>
           </template>
-        </ListGroup>
+        </List>
       </template>
     </v-nav-drawer>
   `,
@@ -591,7 +591,7 @@ export const NavDrawerList: Story = (args) => ({
 
 export const IosSettings: Story = (args) => ({
   components: {
-    ListGroup,
+    List,
     ListItem,
     ListItemDivider,
     Icon,
@@ -600,7 +600,7 @@ export const IosSettings: Story = (args) => ({
     return {args};
   },
   template: `
-    <ListGroup
+    <List
       class="border rounded-xl"
     >
       <ListItem
@@ -624,8 +624,8 @@ export const IosSettings: Story = (args) => ({
           </p>
         </div>
       </ListItem>
-    </ListGroup>
-    <ListGroup
+    </List>
+    <List
       class="border rounded-xl mt-6 divide divide-y"
     >
       <ListItem
@@ -692,6 +692,6 @@ export const IosSettings: Story = (args) => ({
       >
         VPN
       </ListItem>
-    </ListGroup>
+    </List>
   `,
 });

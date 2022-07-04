@@ -1,8 +1,8 @@
 {
-  "name": "@gits-id/list-group",
-  "version": "0.10.1",
+  "name": "@gits-id/list",
+  "version": "0.0.0",
   "private": true,
-  "description": "GITS List Group Component",
+  "description": "GITS List Component",
   "scripts": {
     "build": "vite build && npm run build-types && npm run move-types",
     "prepublishOnly": "npm run build",
