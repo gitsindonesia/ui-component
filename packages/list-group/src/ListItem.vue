@@ -22,18 +22,23 @@ type Props = {
   shapedClass?: string;
   rounded?: boolean;
   hideText?: boolean;
+  appendText?: string;
+  appendTextClass?: string;
+  tile?: boolean;
 };
 
 const props = withDefaults(defineProps<Props>(), {
   defaultClass: 'select-none truncate whitespace-nowrap',
-  prependClass: 'w-5 shrink-0',
-  appendClass: 'w-5 shrink-0',
+  prependClass: 'w-auto shrink-0',
+  appendClass: 'w-auto shrink-0',
   hidePrepend: false,
   hideAppend: false,
   hoverClass: 'hover:bg-gray-100',
   shaped: false,
   shapedClass: 'rounded-r-full',
   rounded: false,
+  appendTextClass: '',
+  tile: false,
 });
 
 const is = computed(() => {
@@ -57,17 +62,23 @@ const attributes = computed(() => {
 const hoverClasses = computed(() => {
   return props.hover || props.to || props.href ? props.hoverClass : '';
 });
+
+const roundedClass = computed(() => {
+  if (props.rounded) return 'rounded-full';
+
+  return props.tile ? 'rounded-none' : 'rounded';
+});
 </script>
 
 <template>
   <component
     :is="is"
-    class="flex gap-4 px-3 py-2 rounded transition duration-300 items-center"
+    class="flex gap-4 px-3 py-2 transition duration-300 items-center"
     :class="[
       hoverClasses,
+      roundedClass,
       {
         [shapedClass]: shaped,
-        'rounded-full': rounded,
       },
     ]"
     v-bind="attributes"
@@ -87,7 +98,10 @@ const hoverClasses = computed(() => {
       <slot />
     </div>
     <slot v-if="!hideAppend" name="append">
-      <div :class="appendClass">
+      <div class="flex gap-1 items-center" :class="appendClass">
+        <slot name="append.text">
+          <span :class="appendTextClass">{{ appendText }}</span>
+        </slot>
         <slot name="append.icon">
           <Icon
             :icon="appendIcon"
