@@ -1,22 +1,15 @@
 import {mount} from '@vue/test-utils';
 import {describe, expect, test} from 'vitest';
-import ListGroup from './ListGroup.vue';
+import List from './List.vue';
 
-const ALERT_TEXT = 'Alert text';
-
-describe('ListGroup', () => {
+describe('List', () => {
   test('mount component', () => {
-    expect(ListGroup).toBeTruthy();
+    expect(List).toBeTruthy();
 
-    const wrapper = mount(ListGroup, {
+    const wrapper = mount(List, {
       props: {},
-      slots: {
-        default: ALERT_TEXT,
-      },
     });
 
-    expect(wrapper).toBeTruthy()
-
-    // expect(wrapper.text()).toContain(ALERT_TEXT);
+    expect(wrapper).toBeTruthy();
   });
 });
