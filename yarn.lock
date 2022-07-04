@@ -1623,6 +1623,20 @@
   dependencies:
     vue "^3.2.33"
 
+"@gits-id/dropdown@^0.7.3":
+  version "0.7.3"
+  resolved "https://registry.yarnpkg.com/@gits-id/dropdown/-/dropdown-0.7.3.tgz#97fa5fb538efceda876dde5c177b638c113fc4db"
+  integrity sha512-dT/rYJq0ByEXNOSDeG8t77AM66fgxXbdsSo0Hj95TjwrHLA6MXrRTUyJZOntSOFR+YXuAwTJX1JRuSdlEzabEQ==
+  dependencies:
+    "@gits-id/button" "^0.7.3"
+    "@headlessui/vue" "^1.5.0"
+    "@heroicons/vue" "^1.0.6"
+    feather-icons "^4.28.0"
+    tailwindcss "^3.0.23"
+    vue "^3.2.31"
+    vue-feather "^2.0.0"
+    vue-remix-icons "^1.1.1"
+
 "@gits-id/logo@^0.7.3":
   version "0.7.3"
   resolved "https://registry.yarnpkg.com/@gits-id/logo/-/logo-0.7.3.tgz#52e2e9191b16b17060fae34d7160e5338c076ce6"

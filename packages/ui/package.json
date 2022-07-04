@@ -44,6 +44,7 @@
     "@gits-id/tooltip": "^0.10.1",
     "@gits-id/types": "^0.10.1",
     "@gits-id/utils": "^0.10.1",
+    "@gits-id/list": "^0.10.2",
     "@vue/test-utils": "^2.0.0-rc.17",
     "vue": "^3.2.33",
     "vue-remix-icons": "^1.1.1"

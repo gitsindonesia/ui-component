@@ -55,6 +55,13 @@ import {
   ResetPassword,
   NotFound,
 } from '@gits-id/pages';
+import {
+  List,
+  ListItem,
+  ListItemDivider,
+  ListCollapse,
+  ListItemHeader,
+} from '@gits-id/list';
 
 const plugin = {
   install: (app: App) => {
@@ -98,6 +105,12 @@ const plugin = {
     app.component('VCollapsibleGroup', VCollapsibleGroup);
     app.component('VMultiSelect', VMultiSelect);
     app.component('VLogo', VLogo);
+    app.component('VDropdownButton', DropdownButton);
+    app.component('VList', List);
+    app.component('VListItem', ListItem);
+    app.component('VListItemDivider', ListItemDivider);
+    app.component('VListItemHeader', ListItemHeader);
+    app.component('VListCollapse', ListCollapse);
   },
 };
 
@@ -152,6 +165,11 @@ export {
   VFileUpload,
   DropdownButton,
   VMultiSelect,
+  List,
+  ListCollapse,
+  ListItem,
+  ListItemDivider,
+  ListItemHeader,
 };
 
 export * from '@gits-id/utils';
