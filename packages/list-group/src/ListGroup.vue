@@ -11,7 +11,7 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <div class="flex flex-col gap-1 group overflow-hidden">
+  <div class="flex flex-col group overflow-hidden">
     <slot v-bind="props" />
   </div>
 </template>
