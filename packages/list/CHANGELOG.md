@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.3](https://github.com/gitsindonesia/ui-component/compare/v0.10.3-alpha.1...v0.10.3) (2022-07-04)
+
+**Note:** Version bump only for package @gits-id/list
+
+
+
+
+
 ## [0.10.3-alpha.1](https://github.com/gitsindonesia/ui-component/compare/v0.10.3-alpha.0...v0.10.3-alpha.1) (2022-07-04)
 
 **Note:** Version bump only for package @gits-id/list
