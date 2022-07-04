@@ -537,7 +537,8 @@ export const NavDrawerList: Story = (args) => ({
     <v-nav-drawer
       v-model="isOpen"
       v-model:mini="isMini"
-      hide-toggle  
+      hide-toggle
+      class="absolute"
     >
       <template #logo.mini>
         <div class="text-center font-semibold">GITS</div>
@@ -618,7 +619,7 @@ export const IosSettings: Story = (args) => ({
         </template>
         <div>
           <div class="font-semibold">John Doe</div>
-          <p class="text-sm text-gray-500">
+          <p class="text-sm text-gray-500 truncate">
             Apple ID, iCloud+, Media & Purchases
           </p>
         </div>
