@@ -82,7 +82,7 @@ watch(isOpen, (val) => emit('update:modelValue', val));
 watch(isLoading, (val) => (isLoading.value = val));
 
 function onModalClose() {
-  if (props.persistent) {
+  if (props.persistent || isLoading.value) {
     return null;
   } else {
     closeModal();
