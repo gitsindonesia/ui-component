@@ -132,7 +132,6 @@ const onConfirm = () => {
           >
             <div
               class="
-                flex flex-col
                 w-full
                 overflow-hidden
                 align-middle
@@ -144,9 +143,8 @@ const onConfirm = () => {
               "
               :class="[
                 {
-                  'max-w-md': !fullscreen,
-                  'rounded-lg my-8': !fullscreen,
-                  'h-screen': fullscreen,
+                  'max-w-md inline-block rounded-lg my-8': !fullscreen,
+                  'h-screen flex flex-col': fullscreen,
                 },
                 centered ? 'text-center' : 'text-left',
                 modalClass,
