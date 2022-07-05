@@ -41,7 +41,6 @@ import VToast from '@gits-id/toast';
 import VStats from '@gits-id/stats';
 import {VCollapsible, VCollapse, VCollapsibleGroup} from '@gits-id/collapsible';
 import VMultiSelect from '@gits-id/multi-select';
-import VEditor from '@gits-id/editor';
 import {
   Auth as AuthLayout,
   Base as BaseLayout,
@@ -158,7 +157,6 @@ export {
   Login,
   ResetPassword,
   NotFound,
-  VEditor,
   VCollapse,
   VCollapsible,
   VCollapsibleGroup,
