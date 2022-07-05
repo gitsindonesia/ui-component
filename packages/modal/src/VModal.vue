@@ -53,6 +53,7 @@ const props = withDefaults(defineProps<Props>(), {
   hideFooter: false,
   centered: false,
   fullscreen: false,
+  loading: false,
 });
 
 const emit = defineEmits(['update:modelValue', 'confirm', 'close', 'open']);
@@ -70,10 +71,13 @@ const {
 } = toRefs(props);
 
 const isOpen = ref(modelValue.value);
+const isLoading = ref(loading.value);
 
 watch(modelValue, (val) => (isOpen.value = val));
 
 watch(isOpen, (val) => emit('update:modelValue', val));
+
+watch(isLoading, (val) => (isLoading.value = val));
 
 function closeModal() {
   isOpen.value = false;
@@ -177,20 +181,24 @@ const onConfirm = () => {
               >
                 <slot
                   name="footer"
-                  :loading="loading"
+                  :loading="isLoading"
                   :confirm-props="confirmProps"
                   :on-confirm="onConfirm"
                 >
                   <v-btn
                     v-if="confirm"
                     :color="confirmColor"
-                    :loading="loading"
+                    :loading="isLoading"
                     v-bind="confirmProps"
                     @click="onConfirm"
                   >
                     {{ confirmText }}
                   </v-btn>
-                  <v-btn v-bind="closeProps" @click="closeModal">
+                  <v-btn
+                    v-bind="closeProps"
+                    :disabled="isLoading"
+                    @click="closeModal"
+                  >
                     {{ closeText }}
                   </v-btn>
                 </slot>

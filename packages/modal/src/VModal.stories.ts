@@ -179,3 +179,23 @@ export const Centered: Story = (args) => ({
     </v-modal>
   `,
 });
+
+export const Loading: Story = (args) => ({
+  components: {
+    VModal,
+    VBtn,
+  },
+  setup() {
+    const isOpen = ref(true);
+    const loading = ref(true);
+    return {args, isOpen, loading};
+  },
+  template: `
+<v-modal v-model="isOpen" :loading="loading" confirm>
+  <template #activator="{open}">
+    <v-btn @click="open">Click Me</v-btn>
+  </template>
+  Hello World
+</v-modal>  
+  `,
+});
