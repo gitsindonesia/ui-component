@@ -10,7 +10,7 @@ export default {
   component: VModal,
   argTypes: {},
   args: {
-    modelValue: false,
+    modelValue: true,
     title: 'Modal Header',
     confirm: false,
     confirmColor: 'primary',
