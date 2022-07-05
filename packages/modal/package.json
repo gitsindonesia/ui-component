@@ -35,5 +35,5 @@
   "jsdelivr": "dist/modal.iife.js",
   "module": "./dist/modal.es.js",
   "types": "./dist/types/index.d.ts",
-  "gitHead": "fc933ad9d738da7267f8e563500c83232d21f00e"
+  "gitHead": "5bc9ce1c4eeeafbc6e3e0f00c2644465b06ad474"
 }

@@ -53,7 +53,7 @@
   "unpkg": "dist/ui.iife.js",
   "jsdelivr": "dist/ui.iife.js",
   "module": "./dist/ui.es.js",
-  "gitHead": "927ceb2dc21a5fdcc001f77cf86384e561837398",
+  "gitHead": "5bc9ce1c4eeeafbc6e3e0f00c2644465b06ad474",
   "devDependencies": {
     "c8": "^7.11.3",
     "unplugin-vue-components": "^0.19.6",
