@@ -11,7 +11,7 @@ export default {
   argTypes: {},
   args: {
     modelValue: false,
-    title: '',
+    title: 'Modal Header',
     confirm: false,
     confirmColor: 'primary',
     confirmProps: {},
@@ -42,7 +42,7 @@ const Template: Story = (args) => ({
     return {args, isOpen};
   },
   template: `
-<v-modal v-model="isOpen" v-bind="args">
+<v-modal v-bind="args" v-model="isOpen" v-bind="args">
   <template #activator="{open}">
     <v-btn @click="open">Click Me</v-btn>
   </template>
@@ -62,7 +62,7 @@ Default.parameters = {
   docs: {
     source: {
       code: `
-<v-modal v-model="isOpen">
+<v-modal v-bind="args" v-model="isOpen">
   <template #activator="{open}">
     <v-btn @click="open">Click Me</v-btn>
   </template>
@@ -81,7 +81,7 @@ Confirm.parameters = {
   docs: {
     source: {
       code: `
-<v-modal v-model="isOpen" confirm>
+<v-modal v-bind="args" v-model="isOpen" confirm>
   <template #activator="{open}">
     <v-btn @click="open">Click Me</v-btn>
   </template>
@@ -100,7 +100,7 @@ HideHeader.parameters = {
   docs: {
     source: {
       code: `
-<v-modal v-model="isOpen" hide-header>
+<v-modal v-bind="args" v-model="isOpen" hide-header>
   <template #activator="{open}">
     <v-btn @click="open">Click Me</v-btn>
   </template>
@@ -121,8 +121,8 @@ export const Fullscreen: Story = (args) => ({
     return {args, isOpen};
   },
   template: `
-    <v-modal v-model="isOpen" title="Hello" fullscreen>
-      <template #activator="{open}">
+  <v-modal v-bind="args" v-model="isOpen" fullscreen>
+  <template #activator="{open}">
         <v-btn @click="open">Click Me</v-btn>
       </template>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -151,7 +151,7 @@ export const Centered: Story = (args) => ({
       e.close();
     };
     const deleteItem = () => {
-      return new Promise((resolve) => {
+      return new Promise((resolve: (value?: any) => void) => {
         setTimeout(() => {
           resolve();
         }, 2000);
@@ -161,6 +161,7 @@ export const Centered: Story = (args) => ({
   },
   template: `
     <v-modal
+      v-bind="args"
       v-model="isOpen"
       title="Delete Item"
       confirm
@@ -191,12 +192,17 @@ export const Loading: Story = (args) => ({
     return {args, isOpen, loading};
   },
   template: `
-<v-modal v-model="isOpen" :loading="loading" confirm>
-  <template #activator="{open}">
-    <v-btn @click="open">Click Me</v-btn>
-  </template>
-  Hello World
-</v-modal>  
+    <v-modal
+      v-bind="args"
+      v-model="isOpen"
+      :loading="loading"
+      confirm
+    >
+      <template #activator="{open}">
+        <v-btn @click="open">Click Me</v-btn>
+      </template>
+      Hello World
+    </v-modal>  
   `,
 });
 
@@ -210,11 +216,11 @@ export const Persistent: Story = (args) => ({
     return {args, isOpen};
   },
   template: `
-<v-modal v-model="isOpen" persistent>
-  <template #activator="{open}">
-    <v-btn @click="open">Click Me</v-btn>
-  </template>
-  Hello World
-</v-modal>  
+    <v-modal v-bind="args" v-model="isOpen" persistent>
+      <template #activator="{open}">
+        <v-btn @click="open">Click Me</v-btn>
+      </template>
+      Hello World
+    </v-modal>  
   `,
 });

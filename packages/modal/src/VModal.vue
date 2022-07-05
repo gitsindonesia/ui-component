@@ -14,6 +14,7 @@ import {
   DialogPanel,
 } from '@headlessui/vue';
 import VBtn from '@gits-id/button';
+import {XIcon} from '@heroicons/vue/outline';
 
 type Props = {
   modelValue?: boolean;
@@ -34,6 +35,9 @@ type Props = {
   centered?: boolean;
   fullscreen?: boolean;
   persistent?: boolean;
+  hideXButton?: boolean;
+  xButtonProps?: Record<string, any>;
+  xIconClass?: string;
 };
 
 const props = withDefaults(defineProps<Props>(), {
@@ -56,6 +60,9 @@ const props = withDefaults(defineProps<Props>(), {
   fullscreen: false,
   loading: false,
   persistent: false,
+  hideXButton: false,
+  xButtonProps: () => ({}),
+  xIconClass: '',
 });
 
 const emit = defineEmits(['update:modelValue', 'confirm', 'close', 'open']);
@@ -166,13 +173,28 @@ const onConfirm = () => {
             >
               <DialogTitle
                 v-if="!hideHeader"
-                as="h3"
-                class="text-lg font-medium leading-6 text-gray-900"
+                as="div"
+                class="flex justify-between gap-4 items-center"
                 :class="headerClass"
               >
                 <slot name="header">
-                  {{ title }}
+                  <h3 class="text-lg font-medium leading-6 text-gray-900">
+                    {{ title }}
+                  </h3>
                 </slot>
+                <VBtn
+                  v-if="!hideXButton"
+                  icon
+                  text
+                  rounded
+                  size="sm"
+                  class="p-0"
+                  :disabled="isLoading"
+                  v-bind="xButtonProps"
+                  @click="closeModal"
+                >
+                  <XIcon class="w-5 h-5" :class="xIconClass" />
+                </VBtn>
               </DialogTitle>
               <div
                 class="mt-4 text-gray-600 flex-1"
