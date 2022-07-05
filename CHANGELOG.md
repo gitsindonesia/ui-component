@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.4](https://github.com/gitsindonesia/ui-component/compare/v0.10.3...v0.10.4) (2022-07-05)
+
+
+### Features
+
+* **v-modal:** new `centered` style ([f4ec7f6](https://github.com/gitsindonesia/ui-component/commit/f4ec7f6fad261357c3009c14eadc766bbd39673f))
+* **v-modal:** new `fullscreen` mode ([39ec85c](https://github.com/gitsindonesia/ui-component/commit/39ec85c46d61b113480ce98f5121092c80e3ed05))
+
+
+
+
+
 ## [0.10.3](https://github.com/gitsindonesia/ui-component/compare/v0.10.3-alpha.1...v0.10.3) (2022-07-04)
 
 **Note:** Version bump only for package @gits-id/components

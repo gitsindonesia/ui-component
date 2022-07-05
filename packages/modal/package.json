@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/modal",
-  "version": "0.10.1",
+  "version": "0.10.4",
   "description": "GITS Modal Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
