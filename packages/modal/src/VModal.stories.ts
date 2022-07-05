@@ -94,7 +94,7 @@ Confirm.parameters = {
 
 export const HideHeader = Template.bind({});
 HideHeader.args = {
-  HideHeader: true,
+  hideHeader: true,
 };
 HideHeader.parameters = {
   docs: {
@@ -110,6 +110,31 @@ HideHeader.parameters = {
     },
   },
 };
+
+export const Fullscreen: Story = (args) => ({
+  components: {
+    VModal,
+    VBtn,
+  },
+  setup() {
+    const isOpen = ref(false);
+    return {args, isOpen};
+  },
+  template: `
+    <v-modal v-model="isOpen" title="Hello" fullscreen>
+      <template #activator="{open}">
+        <v-btn @click="open">Click Me</v-btn>
+      </template>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+      ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+      in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      Excepteur sint occaecat cupidatat non proident,
+      sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </v-modal>
+  `,
+});
 
 export const Centered: Story = (args) => ({
   components: {
@@ -151,6 +176,6 @@ export const Centered: Story = (args) => ({
         <v-btn @click="open" color="error">Delete</v-btn>
       </template>
       <p>Are you sure want to delete this item?</p>
-    </v-modal>  
+    </v-modal>
   `,
 });

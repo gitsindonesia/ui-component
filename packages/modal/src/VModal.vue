@@ -32,6 +32,7 @@ type Props = {
   hideHeader?: boolean;
   hideFooter?: boolean;
   centered?: boolean;
+  fullscreen?: boolean;
 };
 
 const props = withDefaults(defineProps<Props>(), {
@@ -51,6 +52,7 @@ const props = withDefaults(defineProps<Props>(), {
   hideHeader: false,
   hideFooter: false,
   centered: false,
+  fullscreen: false,
 });
 
 const emit = defineEmits(['update:modelValue', 'confirm', 'close', 'open']);
@@ -98,7 +100,7 @@ const onConfirm = () => {
   <TransitionRoot appear :show="isOpen" as="template">
     <Dialog as="div" @close="closeModal">
       <div class="fixed inset-0 z-30 overflow-y-auto">
-        <div class="min-h-screen px-4 text-center">
+        <div class="min-h-screen text-center" :class="{'px-4': !fullscreen}">
           <TransitionChild
             as="template"
             enter="duration-300 ease-out"
@@ -111,7 +113,11 @@ const onConfirm = () => {
             <DialogOverlay class="fixed bg-black bg-opacity-50 inset-0" />
           </TransitionChild>
 
-          <span class="inline-block h-screen align-middle" aria-hidden="true">
+          <span
+            v-if="!fullscreen"
+            class="inline-block h-screen align-middle"
+            aria-hidden="true"
+          >
             &#8203;
           </span>
 
@@ -126,20 +132,25 @@ const onConfirm = () => {
           >
             <div
               class="
-                inline-block
+                flex flex-col
                 w-full
-                max-w-md
-                p-6
-                my-8
                 overflow-hidden
                 align-middle
                 transition-all
                 transform
                 bg-white
                 shadow-xl
-                rounded-lg
+                p-6
               "
-              :class="[centered ? 'text-center' : 'text-left', modalClass]"
+              :class="[
+                {
+                  'max-w-md': !fullscreen,
+                  'rounded-lg my-8': !fullscreen,
+                  'h-screen': fullscreen,
+                },
+                centered ? 'text-center' : 'text-left',
+                modalClass,
+              ]"
             >
               <DialogTitle
                 v-if="!hideHeader"
@@ -152,7 +163,7 @@ const onConfirm = () => {
                 </slot>
               </DialogTitle>
               <div
-                class="mt-4 text-gray-600"
+                class="mt-4 text-gray-600 flex-1"
                 :class="[centered ? 'text-center' : '', bodyClass]"
               >
                 <slot />
