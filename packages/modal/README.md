@@ -1,7 +1,5 @@
 # GITS Modal Component
 
-> Reusable Modal Component
-
 ## Installation
 
 npm
@@ -22,21 +20,27 @@ pnpm
 pnpm i @gits-id/modal
 ```
 
-## Usage
+## Basic Usage
 
-```vue
+```html
 <script setup lang="ts">
-import Modal from '@gits-id/modal';
+  import Modal from '@gits-id/modal';
 </script>
 
 <template>
-  <Modal />
+  <Modal>
+    <template #activator="{open}">
+      <v-btn @click="open">Click Me</v-btn>
+    </template>
+
+    Lorem ipsum dolor sit amet
+  </Modal>
 </template>
 ```
 
 ## Documentation
 
-View `Modal` documentation [here](https://gits-ui.web.app/?path=/story/components-modal--default).
+View full documentation [here](https://gits-ui.web.app/?path=/story/components-modal--default).
 
 ## License
 
