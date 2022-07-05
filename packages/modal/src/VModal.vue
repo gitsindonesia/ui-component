@@ -1,3 +1,9 @@
+<script lang="ts">
+export default {
+  inheritAttrs: false,
+};
+</script>
+
 <script setup lang="ts">
 import {ref, toRefs, watch} from 'vue';
 import {
@@ -25,6 +31,7 @@ type Props = {
   loading?: boolean;
   hideHeader?: boolean;
   hideFooter?: boolean;
+  centered?: boolean;
 };
 
 const props = withDefaults(defineProps<Props>(), {
@@ -43,6 +50,7 @@ const props = withDefaults(defineProps<Props>(), {
   boolean: false,
   hideHeader: false,
   hideFooter: false,
+  centered: false,
 });
 
 const emit = defineEmits(['update:modelValue', 'confirm', 'close', 'open']);
@@ -124,7 +132,6 @@ const onConfirm = () => {
                 p-6
                 my-8
                 overflow-hidden
-                text-left
                 align-middle
                 transition-all
                 transform
@@ -132,7 +139,7 @@ const onConfirm = () => {
                 shadow-xl
                 rounded-lg
               "
-              :class="modalClass"
+              :class="[centered ? 'text-center' : 'text-left', modalClass]"
             >
               <DialogTitle
                 v-if="!hideHeader"
@@ -144,14 +151,20 @@ const onConfirm = () => {
                   {{ title }}
                 </slot>
               </DialogTitle>
-              <div class="mt-4 text-gray-600" :class="bodyClass">
+              <div
+                class="mt-4 text-gray-600"
+                :class="[centered ? 'text-center' : '', bodyClass]"
+              >
                 <slot />
               </div>
 
               <div
                 v-if="!hideFooter"
-                class="mt-6 flex justify-end gap-2"
-                :class="footerClass"
+                class="mt-6 flex gap-2"
+                :class="[
+                  centered ? 'justify-center' : 'justify-end',
+                  footerClass,
+                ]"
               >
                 <slot
                   name="footer"

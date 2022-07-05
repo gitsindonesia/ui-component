@@ -33,17 +33,14 @@ export default {
 } as Meta;
 
 const Template: Story = (args) => ({
-  // Components used in your story `template` are defined in the `components` object
   components: {
     VModal,
     VBtn,
   },
-  // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
     const isOpen = ref(false);
     return {args, isOpen};
   },
-  // And then the `args` are bound to your component with `v-bind="args"`
   template: `
 <v-modal v-model="isOpen" v-bind="args">
   <template #activator="{open}">
@@ -113,3 +110,47 @@ HideHeader.parameters = {
     },
   },
 };
+
+export const Centered: Story = (args) => ({
+  components: {
+    VModal,
+    VBtn,
+  },
+  setup() {
+    const isOpen = ref(false);
+    const loading = ref(false);
+    const onConfirm = async (e) => {
+      loading.value = true;
+      await deleteItem();
+      loading.value = false;
+      e.close();
+    };
+    const deleteItem = () => {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve();
+        }, 2000);
+      });
+    };
+    return {args, isOpen, onConfirm, loading};
+  },
+  template: `
+    <v-modal
+      v-model="isOpen"
+      title="Delete Item"
+      confirm
+      confirm-text="Delete"
+      confirm-color="error"
+      :loading="loading"
+      centered
+      footer-class="flex-row-reverse"
+      close-text="Cancel"
+      @confirm="onConfirm"
+    >
+      <template #activator="{open}">
+        <v-btn @click="open" color="error">Delete</v-btn>
+      </template>
+      <p>Are you sure want to delete this item?</p>
+    </v-modal>  
+  `,
+});
