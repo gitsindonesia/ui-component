@@ -199,3 +199,22 @@ export const Loading: Story = (args) => ({
 </v-modal>  
   `,
 });
+
+export const Persistent: Story = (args) => ({
+  components: {
+    VModal,
+    VBtn,
+  },
+  setup() {
+    const isOpen = ref(true);
+    return {args, isOpen};
+  },
+  template: `
+<v-modal v-model="isOpen" persistent>
+  <template #activator="{open}">
+    <v-btn @click="open">Click Me</v-btn>
+  </template>
+  Hello World
+</v-modal>  
+  `,
+});

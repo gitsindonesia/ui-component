@@ -10,8 +10,8 @@ import {
   TransitionRoot,
   TransitionChild,
   Dialog,
-  DialogOverlay,
   DialogTitle,
+  DialogPanel,
 } from '@headlessui/vue';
 import VBtn from '@gits-id/button';
 
@@ -33,6 +33,7 @@ type Props = {
   hideFooter?: boolean;
   centered?: boolean;
   fullscreen?: boolean;
+  persistent?: boolean;
 };
 
 const props = withDefaults(defineProps<Props>(), {
@@ -54,6 +55,7 @@ const props = withDefaults(defineProps<Props>(), {
   centered: false,
   fullscreen: false,
   loading: false,
+  persistent: false,
 });
 
 const emit = defineEmits(['update:modelValue', 'confirm', 'close', 'open']);
@@ -79,6 +81,14 @@ watch(isOpen, (val) => emit('update:modelValue', val));
 
 watch(isLoading, (val) => (isLoading.value = val));
 
+function onModalClose() {
+  if (props.persistent) {
+    return null;
+  } else {
+    closeModal();
+  }
+}
+
 function closeModal() {
   isOpen.value = false;
   emit('update:modelValue', false);
@@ -102,7 +112,7 @@ const onConfirm = () => {
 <template>
   <slot name="activator" :open="openModal" />
   <TransitionRoot appear :show="isOpen" as="template">
-    <Dialog as="div" @close="closeModal">
+    <Dialog static :open="isOpen" as="div" @close="onModalClose">
       <div class="fixed inset-0 z-30 overflow-y-auto">
         <div class="min-h-screen text-center" :class="{'px-4': !fullscreen}">
           <TransitionChild
@@ -114,7 +124,7 @@ const onConfirm = () => {
             leave-from="opacity-100"
             leave-to="opacity-0"
           >
-            <DialogOverlay class="fixed bg-black bg-opacity-50 inset-0" />
+            <div class="fixed bg-black bg-opacity-50 inset-0" />
           </TransitionChild>
 
           <span
@@ -134,7 +144,7 @@ const onConfirm = () => {
             leave-from="opacity-100 scale-100"
             leave-to="opacity-0 scale-95"
           >
-            <div
+            <DialogPanel
               class="
                 w-full
                 overflow-hidden
@@ -203,7 +213,7 @@ const onConfirm = () => {
                   </v-btn>
                 </slot>
               </div>
-            </div>
+            </DialogPanel>
           </TransitionChild>
         </div>
       </div>
