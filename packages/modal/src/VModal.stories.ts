@@ -111,6 +111,44 @@ HideHeader.parameters = {
   },
 };
 
+export const HideFooter = Template.bind({});
+HideFooter.args = {
+  hideFooter: true,
+};
+HideFooter.parameters = {
+  docs: {
+    source: {
+      code: `
+<v-modal v-bind="args" v-model="isOpen" hide-footer>
+  <template #activator="{open}">
+    <v-btn @click="open">Click Me</v-btn>
+  </template>
+  Hello World
+</v-modal>
+      `,
+    },
+  },
+};
+
+export const HideXButton = Template.bind({});
+HideXButton.args = {
+  hideXButton: true,
+};
+HideXButton.parameters = {
+  docs: {
+    source: {
+      code: `
+<v-modal v-bind="args" v-model="isOpen" hide-x-button>
+  <template #activator="{open}">
+    <v-btn @click="open">Click Me</v-btn>
+  </template>
+  Hello World
+</v-modal>
+      `,
+    },
+  },
+};
+
 export const Fullscreen: Story = (args) => ({
   components: {
     VModal,
