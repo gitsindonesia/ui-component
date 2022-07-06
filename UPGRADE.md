@@ -1,8 +1,17 @@
 # Upgrade Guide
 
+## `v0.10.5`
+
+- To support SSR, change `VEditor` import from `@gits-id/ui` to `@gits-id/editor`.
+
+```
+- import {VEditor} from '@gits-id/ui/editor';
++ import {VEditor} from '@gits-id/editor';
+```
+
 ## `v0.10.4`
 
-- In order to support SSR, we decide to separate `VEditor` export from `@gits-id/ui` to `@gits-id/ui/editor`.
+- As of an experimental SSR support, change `VEditor` import from `@gits-id/ui` to `@gits-id/ui/editor`.
 
 ```
 - import {VEditor} from '@gits-id/ui';
