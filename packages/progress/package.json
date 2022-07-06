@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/progress-bar",
-  "version": "0.10.1",
+  "version": "0.10.5",
   "description": "GITS Progress Bar Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",

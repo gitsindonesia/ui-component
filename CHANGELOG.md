@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.5](https://github.com/gitsindonesia/ui-component/compare/v0.10.4...v0.10.5) (2022-07-06)
+
+
+### Bug Fixes
+
+* **v-modal:** disable click outside when loading ([b187fd9](https://github.com/gitsindonesia/ui-component/commit/b187fd9cb5cdc9ef2744868ddc5b983b88c1e6e5))
+* **v-modal:** fix modal loading state ([a040528](https://github.com/gitsindonesia/ui-component/commit/a04052828fda5339c56b45cffa715d3948870c91))
+
+
+### Features
+
+* **v-modal:** modal `persistent` ([61c2b26](https://github.com/gitsindonesia/ui-component/commit/61c2b264b5deccc6f4929dac138da80ea994004a))
+* **v-modal:** modal x close button ([f1cc5e6](https://github.com/gitsindonesia/ui-component/commit/f1cc5e6e92db80aff372939710d25c955c7fda53))
+
+
+
+
+
 ## [0.10.4](https://github.com/gitsindonesia/ui-component/compare/v0.10.3...v0.10.4) (2022-07-05)
 
 

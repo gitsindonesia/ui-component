@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/multi-select",
-  "version": "0.10.1",
+  "version": "0.10.5",
   "description": "GITS Input Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -16,7 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "@gits-id/badge": "^0.10.1",
-    "@gits-id/tooltip": "^0.10.1",
+    "@gits-id/tooltip": "^0.10.5",
     "@vueuse/core": "^7.7.1",
     "vue": "^3.2.31"
   },
