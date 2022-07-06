@@ -23,7 +23,7 @@
     "vitest": "^0.12.4",
     "vue-tsc": "^0.38.2"
   },
-  "main": "./dist/types/index.d.ts",
-  "module": "./dist/types/index.d.ts",
-  "types": "./dist/types/index.d.ts"
+  "main": "./src/index.d.ts",
+  "module": "./src/index.d.ts",
+  "types": "./src/index.d.ts"
 }
