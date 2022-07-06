@@ -2,7 +2,7 @@
   "name": "@gits-id/ui",
   "version": "0.10.4",
   "scripts": {
-    "build": "vite build && vue-tsc --emitDeclarationOnly",
+    "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "npm run build",
     "test": "vitest"
   },
@@ -53,10 +53,10 @@
   "unpkg": "dist/ui.iife.js",
   "jsdelivr": "dist/ui.iife.js",
   "module": "./dist/ui.es.js",
+  "types": "./dist/types/index.d.ts",
   "gitHead": "5bc9ce1c4eeeafbc6e3e0f00c2644465b06ad474",
   "devDependencies": {
     "c8": "^7.11.3",
-    "unplugin-vue-components": "^0.19.6",
     "vite": "^2.9.9",
     "vitest": "^0.12.4"
   }

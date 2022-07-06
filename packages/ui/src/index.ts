@@ -186,4 +186,5 @@ export * from '@gits-id/tabs/src/types';
 export * from '@gits-id/modal/src/types';
 export * from '@gits-id/dropdown/src/types';
 export * from './component-resolver';
+export * from './editor';
 export default plugin;

@@ -6,12 +6,12 @@ import {resolve} from 'path';
 export default defineConfig({
   plugins: [vue()],
   esbuild: {
-    exclude: ['./src/**/**.stories.ts'],
+    exclude: ['./src/**/**.stories.ts', './src/**/**.stories.tsx'],
   },
   build: {
     target: 'esnext',
     lib: {
-      entry: resolve(__dirname, 'index.ts'),
+      entry: resolve(__dirname, 'src/index.ts'),
       name: 'GitsUi',
       formats: ['es', 'cjs', 'iife', 'umd'],
     },
@@ -60,10 +60,12 @@ export default defineConfig({
         '@gits-id/tooltip',
         '@gits-id/types',
         '@gits-id/utils',
+        '@gits-id/list',
         'vee-validate',
         'vue-router',
         'pinia',
-        'vuex'
+        'vuex',
+        'iconify/vue',
       ],
       output: {
         // Provide global variables to use in the UMD build
