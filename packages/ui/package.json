@@ -43,7 +43,6 @@
     "@gits-id/theme": "^0.10.1",
     "@gits-id/toast": "^0.10.5",
     "@gits-id/tooltip": "^0.10.5",
-    "@gits-id/types": "^0.10.6-alpha.0+ec19c5c",
     "@gits-id/utils": "^0.10.1",
     "@vue/test-utils": "^2.0.0-rc.17",
     "vue": "^3.2.33",

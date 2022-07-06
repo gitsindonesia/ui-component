@@ -172,7 +172,6 @@ export {
 
 export * from '@gits-id/utils';
 export * from '@gits-id/pages';
-export * from '@gits-id/types';
 export * from '@gits-id/services';
 export * from '@gits-id/toast';
 export * from '@gits-id/app-bar/src/types';
@@ -186,4 +185,6 @@ export * from '@gits-id/tabs/src/types';
 export * from '@gits-id/modal/src/types';
 export * from '@gits-id/dropdown/src/types';
 export * from './component-resolver';
+export * from './colors';
+export * from './plugin';
 export default plugin;

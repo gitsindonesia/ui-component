@@ -58,7 +58,6 @@ export default defineConfig({
         '@gits-id/textarea',
         '@gits-id/toast',
         '@gits-id/tooltip',
-        '@gits-id/types',
         '@gits-id/utils',
         '@gits-id/list',
         'vee-validate',

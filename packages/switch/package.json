@@ -21,7 +21,6 @@
   "devDependencies": {
     "@gits-id/button": "^0.10.1",
     "@gits-id/tailwind-config": "^0.10.1",
-    "@gits-id/types": "^0.10.6-alpha.0+ec19c5c",
     "@gits-id/utils": "^0.10.1",
     "@headlessui/vue": "^1.6.0",
     "@heroicons/vue": "^1.0.6",

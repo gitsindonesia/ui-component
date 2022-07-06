@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {toRefs, watch, computed} from 'vue';
 import {Switch, SwitchGroup, SwitchLabel} from '@headlessui/vue';
-import type {Colors} from '@gits-id/types';
+import type {Colors} from '@gits-id/ui';
 import {useField} from 'vee-validate';
 
 const props = defineProps({
