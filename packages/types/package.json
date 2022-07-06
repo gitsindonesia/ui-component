@@ -2,8 +2,11 @@
   "name": "@gits-id/types",
   "version": "0.10.1",
   "description": "GITS Types Definition",
-  "main": "index.ts",
-  "scripts": {},
+  "scripts": {
+    "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
+    "prepublishOnly": "npm run build",
+    "test": "vitest"
+  },
   "keywords": [
     "types",
     "gits"
@@ -17,6 +20,10 @@
   "devDependencies": {
     "c8": "^7.11.3",
     "vite": "^2.9.9",
-    "vitest": "^0.12.4"
-  }
+    "vitest": "^0.12.4",
+    "vue-tsc": "^0.38.2"
+  },
+  "main": "./dist/types/index.d.ts",
+  "module": "./dist/types/index.d.ts",
+  "types": "./dist/types/index.d.ts"
 }
