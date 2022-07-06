@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/types",
-  "version": "0.10.1",
+  "version": "0.10.6-alpha.0+ec19c5c",
   "description": "GITS Types Definition",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -16,7 +16,7 @@
   "dependencies": {
     "vue": "^3"
   },
-  "gitHead": "fc933ad9d738da7267f8e563500c83232d21f00e",
+  "gitHead": "ec19c5c1a27f9bf11c214bed1ee8d268520d4f58",
   "devDependencies": {
     "c8": "^7.11.3",
     "vite": "^2.9.9",
