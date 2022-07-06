@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/switch",
-  "version": "0.10.6-alpha.0+ec19c5c",
+  "version": "0.10.6",
   "description": "GITS Switch Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
