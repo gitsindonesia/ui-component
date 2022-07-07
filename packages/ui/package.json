@@ -56,7 +56,7 @@
   "exports": {
     ".": {
       "import": "./dist/ui.es.js",
-      "require": "./dist/ui.umd.js"
+      "require": "./dist/ui.cjs.js"
     },
     "./editor": "./editor.js",
     "./*": "./src/*"
