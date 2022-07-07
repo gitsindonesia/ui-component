@@ -14,7 +14,9 @@ const Template: Story<{}> = (args) => ({
     return {args};
   },
   template: `
-    <Auth />
+    <Auth form-wrapper-class="bg-gray-100">
+      <p>Content here</p>
+    </Auth>
   `,
 });
 

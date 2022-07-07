@@ -22,12 +22,13 @@ export default defineConfig({
       // into your library
       external: [
         'vue',
-        '@heroicons/vue/outline',
-        '@heroicons/vue/solid',
+        '@heroicons/vue',
         '@gits-id/button',
         '@gits-id/forms',
+        '@gits-id/alert',
         'vee-validate',
         'yup',
+        '@iconify/vue'
       ],
       output: {
         // Provide global variables to use in the UMD build

@@ -43,33 +43,20 @@ const {
 <template>
   <div class="flex flex-col lg:flex-row sm:min-h-screen">
     <div
-      class=""
+      class="
+        bg-no-repeat
+        bg-[url(https://images.unsplash.com/photo-1525351549016-1ddd272c8315?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80)]
+        bg-cover
+        hidden
+        sm:block
+      "
       :class="[
         defaultImageWrapperClass,
         formOnLeft ? 'order-2' : 'order-1',
         imageWrapperClass,
       ]"
     >
-      <slot name="image">
-        <img
-          v-if="image === 'authentication'"
-          src="./assets/authentication.svg"
-          class="max-w-full sm:max-w-2xl sm:my-5 block"
-          alt="authentication illustration"
-        />
-        <img
-          v-else-if="image === 'login'"
-          src="./assets/login.svg"
-          class="max-w-full sm:max-w-2xl sm:my-5 block"
-          alt="login illustration"
-        />
-        <img
-          v-else-if="image === 'forgot-password'"
-          src="./assets/forgot-password.svg"
-          class="max-w-full sm:max-w-2xl sm:my-5 block"
-          alt="forgot password illustration"
-        />
-      </slot>
+      <slot name="image" />
     </div>
     <div
       :class="[

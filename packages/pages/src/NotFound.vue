@@ -34,14 +34,7 @@ const {fillHeight, noButton, noImage, title, description} = toRefs(props);
     :class="[fillHeight ? 'min-h-screen' : '']"
   >
     <div class="mx-auto py-4 text-center">
-      <slot name="image" :noImage="noImage">
-        <img
-          v-if="!noImage"
-          src="./assets/not-found.svg"
-          alt="Not Found"
-          class="w-56 mx-auto mb-5"
-        />
-      </slot>
+      <slot v-if="!noImage" name="image" />
       <div class="font-semibold text-2xl mb-2 text-gray-700">
         {{ title }}
       </div>

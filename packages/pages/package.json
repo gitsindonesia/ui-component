@@ -34,7 +34,7 @@
     "vite": "^2.9.9",
     "vitest": "^0.12.4"
   },
-  "main": "dist/pages.umd.js",
+  "main": "dist/pages.cjs.js",
   "unpkg": "dist/pages.iife.js",
   "jsdelivr": "dist/pages.iife.js",
   "module": "./dist/pages.es.js",
