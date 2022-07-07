@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import {toRefs} from 'vue';
-
-const props = defineProps({
+defineProps({
   image: {
     type: String,
     default: 'authentication',
@@ -29,15 +27,6 @@ const props = defineProps({
       'w-full lg:w-6/12 xl:w-5/12 flex items-center justify-center p-4 xl:p-0',
   },
 });
-
-const {
-  image,
-  formOnLeft,
-  imageWrapperClass,
-  formWrapperClass,
-  defaultImageWrapperClass,
-  defaultFormWrapperClass,
-} = toRefs(props);
 </script>
 
 <template>
