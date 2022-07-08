@@ -130,7 +130,7 @@ const clear = () => {
             leading-5
             text-gray-600
           "
-          :display-value="(item: any) => item[displayText] || ''"
+          :display-value="(item: any) => item?.[displayText] || ''"
           :placeholder="placeholder"
           @change="query = $event.target.value"
         />
