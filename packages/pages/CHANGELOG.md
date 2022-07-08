@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.7](https://github.com/gitsindonesia/ui-component/compare/v0.10.6...v0.10.7) (2022-07-08)
+
+
+### Bug Fixes
+
+* **pages:** replace svg with bg image ([0c8a934](https://github.com/gitsindonesia/ui-component/commit/0c8a934911e6c28ddb69c0b2f5f595538a660428))
+
+
+
+
+
 ## [0.10.5](https://github.com/gitsindonesia/ui-component/compare/v0.10.4...v0.10.5) (2022-07-06)
 
 **Note:** Version bump only for package @gits-id/pages

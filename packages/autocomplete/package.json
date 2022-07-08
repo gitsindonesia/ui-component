@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/autocomplete",
-  "version": "0.10.5",
+  "version": "0.10.7",
   "description": "GITS Autocomplete Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
