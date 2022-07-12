@@ -31,6 +31,8 @@
   "devDependencies": {
     "@babel/core": "^7.17.8",
     "@base2/pretty-print-object": "^1.0.1",
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
     "@headlessui/vue": "1.4.1",
     "@heroicons/vue": "^1.0.6",
     "@iconify-json/heroicons-solid": "^1.1.1",
@@ -64,6 +66,7 @@
     "global": "^4.4.0",
     "happy-dom": "^2.50.0",
     "hoist-non-react-statics": "^3.3.2",
+    "husky": "^8.0.1",
     "jest": "^27.5.1",
     "lerna": "^4.0.0",
     "lodash": "^4.17.21",
