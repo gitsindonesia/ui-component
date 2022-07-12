@@ -2,11 +2,31 @@
 
 ## `v0.10.5`
 
-- To support SSR, change `VEditor` import from `@gits-id/ui` to `@gits-id/editor`.
+### BREAKING CHANGE
+
+Since `v0.10.5`, in order add SSR Support, `VEditor` must be imported from `@gits-id/editor`.
+
+To upgrade, change `VEditor` import from `@gits-id/ui` to `@gits-id/editor`.
 
 ```
 - import {VEditor} from '@gits-id/ui/editor';
 + import {VEditor} from '@gits-id/editor';
+```
+
+**Optimizing bundle size**
+
+To optimize bundle size of `VEditor` you can code-split the component using `defineAsyncComponent`:
+
+```html
+<script setup lang="ts">
+  import {defineAsyncComponent} from 'vue';
+
+  const VEditor = defineAsyncComponent(() => import('@gits-id/editor'));
+</script>
+
+<template>
+  <VEditor name="content" />
+</template>
 ```
 
 ## `v0.10.4`
