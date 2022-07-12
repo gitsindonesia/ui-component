@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.9](https://github.com/gitsindonesia/ui-component/compare/v0.10.8...v0.10.9) (2022-07-12)
+
+### Bug Fixes
+
+- **v-form-select:** fix form select value bug ([b167861](https://github.com/gitsindonesia/ui-component/commit/b167861fdf70cc502bbeaae55a9fa385532f9edd))
+
 ## [0.10.8](https://github.com/gitsindonesia/ui-component/compare/v0.10.7...v0.10.8) (2022-07-12)
 
 ### Features
