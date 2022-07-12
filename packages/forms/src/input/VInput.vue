@@ -99,6 +99,22 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  prependClass: {
+    type: String,
+    default: '',
+  },
+  prependIconClass: {
+    type: String,
+    default: '',
+  },
+  appendClass: {
+    type: String,
+    default: '',
+  },
+  appendIconClass: {
+    type: String,
+    default: '',
+  },
 });
 
 const {type, readonly, disabled, placeholder, prependIcon} = toRefs(props);
@@ -186,12 +202,14 @@ const paddingClass = computed(() => {
             px-3
             text-gray-500
           "
+          :class="prependClass"
           @click="emit('clickPrepend')"
         >
           <slot name="prepend">
             <Icon
               :icon="prependIcon"
               class="w-5 h-5"
+              :class="prependIconClass"
               @click="emit('clickPrependIcon')"
             />
           </slot>
@@ -237,12 +255,14 @@ const paddingClass = computed(() => {
             px-3
             text-gray-500
           "
+          :class="appendClass"
           @click="emit('clickAppend')"
         >
           <slot name="append">
             <Icon
               :icon="appendIcon"
               class="w-5 h-5"
+              :class="appendIconClass"
               @click="emit('clickAppendIcon')"
             />
           </slot>

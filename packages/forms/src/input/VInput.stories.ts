@@ -198,6 +198,11 @@ export const Icon: Story<VInputProps> = (args) => ({
   <VInput append-icon="ri:search-line" placeholder="Search..." @clickAppend="showAlert('append click')"/>
   <VInput prepend-icon="ic:baseline-add-reaction" placeholder="Search..." @clickPrependIcon="showAlert('prepend icon click')"/>
   <VInput append-icon="ic:baseline-add-reaction" placeholder="Search..." @clickAppendIcon="showAlert('append icon click')"/>
+  <p>Custom Classes:</p>
+  <VInput class="pl-14" prepend-class="bg-gray-100 border-gray-200 border rounded-l-md" prepend-icon="ri:search-line" placeholder="Search..." @clickPrepend="showAlert('prepend click')"/>
+  <VInput append-class="bg-gray-100 border-gray-200 border rounded-r-md" append-icon="ri:search-line" placeholder="Search..." @clickAppend="showAlert('append click')"/>
+  <VInput prepend-icon-class="text-primary" prepend-icon="ic:baseline-add-reaction" placeholder="Search..." @clickPrependIcon="showAlert('prepend icon click')"/>
+  <VInput append-icon-class="text-primary" append-icon="ic:baseline-add-reaction" placeholder="Search..." @clickAppendIcon="showAlert('append icon click')"/>
 </div>
 `,
 });
@@ -205,10 +210,52 @@ Icon.parameters = {
   docs: {
     source: {
       code: `
-      <VInput prepend-icon="ri:search-line" placeholder="Search..." @clickPrepend="showAlert('prepend click')"/>
-      <VInput append-icon="ri:search-line" placeholder="Search..." @clickAppend="showAlert('append click')"/>
-      <VInput prepend-icon="ic:baseline-add-reaction" placeholder="Search..." @clickPrependIcon="showAlert('prepend icon click')"/>
-      <VInput append-icon="ic:baseline-add-reaction" placeholder="Search..." @clickPrependIcon="showAlert('append icon click')"/>
+<VInput
+  prepend-icon="ri:search-line"
+  placeholder="Search..."
+  @clickPrepend="showAlert('prepend click')"
+/>
+<VInput
+  append-icon="ri:search-line"
+  placeholder="Search..."
+  @clickAppend="showAlert('append click')"
+/>
+<VInput
+  prepend-icon="ic:baseline-add-reaction"
+  placeholder="Search..."
+  @clickPrependIcon="showAlert('prepend icon click')"
+/>
+<VInput
+  append-icon="ic:baseline-add-reaction"
+  placeholder="Search..."
+  @clickPrependIcon="showAlert('append icon click')"
+/>
+<p>Custom Classes:</p>
+<VInput
+  class="pl-14"
+  prepend-icon="ri:search-line"
+  prepend-class="bg-gray-100 border-gray-200 border rounded-l-md"
+  placeholder="Search..."
+  @clickPrepend="showAlert('prepend click')"
+/>
+<VInput
+  append-icon="ri:search-line"
+  append-class="bg-gray-100 border-gray-200 border rounded-r-md"
+  placeholder="Search..."
+  @clickAppend="showAlert('append click')"
+/>
+<VInput
+  prepend-icon="ic:baseline-add-reaction"
+  prepend-icon-class="text-primary"
+  placeholder="Search..."
+  @clickPrependIcon="showAlert('prepend icon click')"
+/>
+<VInput
+  append-icon="ic:baseline-add-reaction"
+  append-icon-class="text-primary"
+  placeholder="Search..."
+  @clickAppendIcon="showAlert('append icon click')"
+/>
       `,
     },
   },
