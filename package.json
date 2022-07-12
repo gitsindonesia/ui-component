@@ -69,6 +69,7 @@
     "husky": "^8.0.1",
     "jest": "^27.5.1",
     "lerna": "^4.0.0",
+    "lint-staged": "^13.0.3",
     "lodash": "^4.17.21",
     "memoizerific": "^1.11.3",
     "postcss": "^8.4.12",
@@ -103,5 +104,9 @@
   "workspaces": [
     "packages/*"
   ],
-  "private": true
+  "private": true,
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,html,css,vue}": "eslint --fix",
+    "*.{js,jsx,ts,tsx,md,html,css,vue}": "prettier --write"
+  }
 }
