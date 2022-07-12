@@ -1,6 +1,6 @@
 # Nuxt GITS UI
 
-GITS UI Component + Nuxt.
+GITS UI Component + Nuxt 3.
 
 ## Installation
 
@@ -23,16 +23,13 @@ import {defineNuxtConfig} from 'nuxt';
 
 export default defineNuxtConfig({
   modules: ['@gits-id/ui-nuxt', '@nuxtjs/tailwindcss'],
-  ssr: false,
   gitsUi: {
     //
   },
 });
 ```
 
-> Currently, because of `@gits-id/editor` is not SSR friendly, so we need to disable SSR by option `ssr: false`
-
-Create your tailwind.config.js by running:
+Create your `tailwind.config.js` by running:
 
 ```bash
 npx tailwindcss init
@@ -42,7 +39,7 @@ Update your `tailwind.config.js`:
 
 ```js
 module.exports = {
-  content: ['./node_modules/@gits-id/**/src/**/*.{vue,js,ts,jsx,tsx}'],
+  content: ['./node_modules/@gits-id/**/src/**/*.{vue,js,ts,jsx,tsx,css}'],
   presets: [require('@gits-id/tailwind-config/preset')],
 };
 ```
