@@ -166,3 +166,57 @@ export const Validation: Story<{}> = (args) => ({
     </form>
 `,
 });
+
+export const IntialValues: Story<{}> = (args) => ({
+  components: {VBtn, VFormSelect},
+  setup() {
+    const schema = object({
+      genre: string().required().label('Genre'),
+    });
+
+    const {handleSubmit, resetForm, values} = useForm({
+      validationSchema: schema,
+      initialValues: {
+        genre: 'pop',
+      },
+    });
+
+    const onSubmit = handleSubmit((values) => {
+      alert(JSON.stringify(values));
+    });
+
+    const genres = ref([
+      {
+        text: 'Select Genre',
+        value: '',
+        disabled: true,
+      },
+      {
+        text: 'Pop',
+        value: 'pop',
+      },
+      {
+        text: 'Rock',
+        value: 'rock',
+      },
+    ]);
+
+    return {onSubmit, resetForm, values, genres};
+  },
+  template: `
+    <form @submit="onSubmit" class="border-none">
+      <v-form-select
+        wrapper-class="mb-4"
+        name="genre"
+        label="Genre"
+        placeholder="Select your genre"
+        :items="genres"
+      />
+      <div class="mt-4">
+        <v-btn type="submit">Submit</v-btn>
+        <v-btn type="button" text @click="resetForm">Reset</v-btn>
+      </div>
+      <pre>{{ {values} }}</pre>
+    </form>
+`,
+});

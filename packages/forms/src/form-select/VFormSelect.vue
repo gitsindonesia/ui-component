@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {toRefs, PropType, watch, computed} from 'vue';
-import { useField} from 'vee-validate';
+import {useField} from 'vee-validate';
 import {useInputClasses, useTextSize} from '@gits-id/utils';
 import type {VFormSelectItem} from './types';
 
@@ -91,15 +91,7 @@ watch(inputValue, (val) => {
   emit('update:modelValue', val);
 });
 
-watch(
-  modelValue,
-  (val) => {
-    inputValue.value = val;
-  },
-  {immediate: true},
-);
-
-watch(value, (val) => {
+watch(modelValue, (val) => {
   inputValue.value = val;
 });
 
