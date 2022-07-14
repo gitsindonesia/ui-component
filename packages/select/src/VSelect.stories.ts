@@ -94,6 +94,18 @@ Label.parameters = {
   },
 };
 
+export const Shadow = Template.bind({});
+Shadow.args = {
+  shadow: true,
+};
+Shadow.parameters = {
+  docs: {
+    source: {
+      code: '<v-select :items="items" shadow />',
+    },
+  },
+};
+
 export const Validation: Story<{}> = () => ({
   components: {VBtn, VSelect},
   setup() {

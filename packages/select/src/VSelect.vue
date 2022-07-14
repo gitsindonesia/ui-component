@@ -117,6 +117,14 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  shadow: {
+    type: Boolean,
+    default: false,
+  },
+  shadowClass: {
+    type: String,
+    default: 'shadow-sm',
+  },
 });
 
 const {
@@ -246,7 +254,6 @@ const clear = () => (selectedItem.value = '');
             text-left
             bg-white
             rounded-md
-            shadow-sm
             cursor-default
             focus:outline-none
             focus-visible:ring-2
@@ -255,12 +262,17 @@ const clear = () => (selectedItem.value = '');
             focus-visible:ring-offset-primary-300
             focus-visible:ring-offset-2
             focus-visible:border-primary-600
-            sm:text-sm
             flex
             items-center
             gap-1
           "
-          :class="[btnClass, error ? 'border-error-600' : '']"
+          :class="[
+            btnClass,
+            error ? 'border-error-500' : '',
+            {
+              [shadowClass]: shadow,
+            },
+          ]"
           :disabled="disabled"
         >
           <div class="block flex-grow w-full truncate mr-2">
