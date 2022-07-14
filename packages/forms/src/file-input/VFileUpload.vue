@@ -384,7 +384,7 @@ const hasError = computed(() => {
 const borderClass = computed(() => {
   return hasError.value
     ? 'border-error-500'
-    : 'border-gray-300 focus-within:border-primary-500 hover:border-primary-500';
+    : 'border-gray-300 focus-within:border-primary-500 hover:border-gray-400';
 });
 
 const dropzoneBorderClass = computed(() => {
@@ -392,7 +392,7 @@ const dropzoneBorderClass = computed(() => {
 
   return hasError.value
     ? 'border-2 border-error-500 border-dashed'
-    : 'border-2 border-gray-300 border-dashed';
+    : 'border-2 border-gray-300 hover:border-gray-400 border-dashed';
 });
 </script>
 
@@ -516,7 +516,15 @@ const dropzoneBorderClass = computed(() => {
 
     <template v-else-if="theme === 'dropzone'">
       <div
-        class="flex justify-center items-center p-4 rounded-md"
+        class="
+          flex
+          justify-center
+          items-center
+          p-4
+          rounded-md
+          transition
+          duration-300
+        "
         :class="[dropzoneId, dropzoneBorderClass]"
       >
         <div v-if="hasFile" class="text-center flex flex-col gap-4">
