@@ -153,3 +153,66 @@ export const Validation: Story<VInputProps> = (args) => ({
     </form>
 `,
 });
+
+export const InitialError: Story<VInputProps> = (args) => ({
+  components: {VInput, VBtn, VFileUpload},
+  setup() {
+    const schema = object({
+      avatar: mixed().required().label('Avatar'),
+      banner: mixed().required().label('Banner'),
+      document: mixed().required().label('Document'),
+    });
+
+    const {handleSubmit, resetForm, values} = useForm({
+      validationSchema: schema,
+      initialErrors: {
+        avatar: 'Avatar is required',
+        banner: 'Banner is required',
+        document: 'Document is required',
+      },
+    });
+
+    const onSubmit = handleSubmit((values) => {
+      alert(JSON.stringify(values));
+    });
+
+    return {onSubmit, resetForm, values};
+  },
+  template: `
+    <form @submit="onSubmit" class="border-none">
+      <v-file-upload
+        wrapper-class="mb-4"
+        theme="image"
+        name="avatar"
+        label="Avatar"
+        placeholder="Pick your best photo"
+        label="Image"
+        rounded
+        image
+      />
+      <v-file-upload
+        wrapper-class="mb-4"
+        theme="dropzone"
+        name="banner"
+        label="Banner"
+        placeholder="Choose banner image"
+        label="Banner"
+        image
+        preview
+      />
+      <v-file-upload
+        wrapper-class="mb-4"
+        name="document"
+        label="Document"
+        placeholder="Pick PDF File"
+        accept="application/pdf"
+        label="Document"
+      />
+      <div class="mt-4">
+        <v-btn type="submit">Submit</v-btn>
+        <v-btn type="button" text @click="resetForm">Reset</v-btn>
+      </div>
+      <pre>{{ {values} }}</pre>
+    </form>
+`,
+});

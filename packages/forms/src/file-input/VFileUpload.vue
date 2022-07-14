@@ -204,6 +204,7 @@ const {value: innerValue, errorMessage} = useField(name, rules, {
   initialValue: props.modelValue || props.value,
 });
 
+const isDropzone = computed(() => props.theme === 'dropzone');
 const sizeClass = computed(() => (props.full ? 'w-full' : customSize.value));
 
 const fileRef = ref<HTMLInputElement | null>(null);
@@ -375,6 +376,24 @@ onUnmounted(() => {
   document.removeEventListener('dragenter', onDragEnter, false);
   document.removeEventListener('dragleave', onDragLeave, false);
 });
+
+const hasError = computed(() => {
+  return props.error || props.errorMessages.length > 0 || !!errorMessage.value;
+});
+
+const borderClass = computed(() => {
+  return hasError.value
+    ? 'border-error-500'
+    : 'border-gray-300 focus-within:border-primary-500 hover:border-primary-500';
+});
+
+const dropzoneBorderClass = computed(() => {
+  if (readonly.value) return 'border';
+
+  return hasError.value
+    ? 'border-2 border-error-500 border-dashed'
+    : 'border-2 border-gray-300 border-dashed';
+});
 </script>
 
 <template>
@@ -395,7 +414,7 @@ onUnmounted(() => {
             rounded
             hover:border-gray-400
           "
-          :class="[disabledClass]"
+          :class="[disabledClass, borderClass]"
           @click="pickFile"
         >
           {{ fileName }}
@@ -469,17 +488,14 @@ onUnmounted(() => {
           duration-300
           border
           cursor-pointer
-          hover:bg-primary-50
-          hover:border-primary-600
           flex flex-col
           items-center
           justify-center
-          border-gray-200
           py-10
           bg-no-repeat bg-contain bg-center
           max-w-full
         "
-        :class="[sizeClass, {'rounded-lg': rounded}]"
+        :class="[sizeClass, {'rounded-lg': rounded}, borderClass]"
         :style="{
           backgroundImage: image && !loading ? `url(${previewURL})` : 'none',
         }"
@@ -501,10 +517,7 @@ onUnmounted(() => {
     <template v-else-if="theme === 'dropzone'">
       <div
         class="flex justify-center items-center p-4 rounded-md"
-        :class="[
-          dropzoneId,
-          readonly ? 'border' : 'border-2 border-gray-300 border-dashed',
-        ]"
+        :class="[dropzoneId, dropzoneBorderClass]"
       >
         <div v-if="hasFile" class="text-center flex flex-col gap-4">
           <slot
@@ -628,9 +641,7 @@ onUnmounted(() => {
         class="
           transition
           duration-300
-          border border-gray-300
-          focus-within:border-primary-500
-          hover:border-primary-500
+          border
           group
           rounded-lg
           flex
@@ -638,6 +649,7 @@ onUnmounted(() => {
           items-center
           py-1
         "
+        :class="borderClass"
       >
         <div
           class="
@@ -690,7 +702,9 @@ onUnmounted(() => {
     />
 
     <div
-      v-if="hasFile && !readonly && (image || button) && !loading"
+      v-if="
+        hasFile && !readonly && (image || button || !isDropzone) && !loading
+      "
       class="flex w-full mt-3 justify-center items-center gap-y-2 gap-x-2"
       :class="[full || button ? 'flex-row' : 'w-full sm:w-[180px] flex-col']"
     >
@@ -734,7 +748,7 @@ onUnmounted(() => {
       name="error"
       :error="error"
       :error-messages="errorMessages"
-      :name="name"
+      :field-name="name"
     >
       <div v-if="errorMessage" :class="errorClass">
         {{ errorMessage }}
