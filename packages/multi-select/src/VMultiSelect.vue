@@ -18,7 +18,7 @@ import {CheckIcon, ChevronDownIcon, XIcon} from '@heroicons/vue/solid';
 import VBadge from '@gits-id/badge';
 import VTooltip from '@gits-id/tooltip';
 import {onClickOutside, useDebounceFn} from '@vueuse/core';
-import {ErrorMessage} from 'vee-validate';
+import {ErrorMessage, useField} from 'vee-validate';
 
 type VMultiSelectItem = {
   text: string;
@@ -28,10 +28,6 @@ type VMultiSelectItem = {
 };
 
 const props = defineProps({
-  value: {
-    type: Array as PropType<VMultiSelectItem[]>,
-    default: () => [],
-  },
   modelValue: {
     type: Array as PropType<VMultiSelectItem[]>,
     default: () => [],
@@ -144,6 +140,14 @@ const props = defineProps({
     type: String,
     default: 'mb-2 block',
   },
+  rules: {
+    type: String,
+    default: '',
+  },
+  errorClass: {
+    type: String,
+    default: 'text-error-600 mt-1 text-sm',
+  },
 });
 
 const emit = defineEmits([
@@ -156,7 +160,6 @@ const emit = defineEmits([
 const {
   maxBadge,
   items,
-  value,
   modelValue,
   placeholder,
   id,
@@ -168,16 +171,20 @@ const {
   searchBy,
   selectAll,
   loading,
+  rules,
 } = toRefs(props);
 
 // refs
 const target = ref(null);
 const isOpen = ref(false);
 const search = ref('');
-const selected = ref(modelValue.value);
 const focus = ref(-1);
 const refItems = ref<HTMLDivElement[]>([]);
 const dropdown = ref<HTMLDivElement | null>(null);
+
+const {value: selected, errorMessage} = useField(name, rules, {
+  initialValue: modelValue.value,
+});
 
 const matchBy = (item: VMultiSelectItem, key: string) =>
   String(item?.[key])?.toLowerCase()?.includes(search.value.toLowerCase());
@@ -343,14 +350,6 @@ watch(
 );
 
 watch(
-  value,
-  (val) => {
-    selected.value = val;
-  },
-  {immediate: true, deep: true},
-);
-
-watch(
   selected,
   (val) => {
     emit('update:modelValue', val);
@@ -366,10 +365,9 @@ watch(
       <div class="relative mt-1">
         <div
           class="
-            min-h-[50px]
             relative
             w-full
-            py-1
+            py-2
             pl-3
             pr-10
             text-left
@@ -599,6 +597,9 @@ watch(
     class="text-error-600 text-sm"
     :name="name"
   />
+  <div v-else-if="errorMessage" :class="errorClass">
+    {{ errorMessage }}
+  </div>
 </template>
 
 <style scoped>

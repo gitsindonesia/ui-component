@@ -18,11 +18,13 @@
     "@gits-id/badge": "^0.10.1",
     "@gits-id/tooltip": "^0.10.5",
     "@vueuse/core": "^7.7.1",
-    "vue": "^3.2.31"
+    "vue": "^3.2.31",
+    "vee-validate": "^4.6.1"
   },
   "devDependencies": {
     "@gits-id/tailwind-config": "^0.10.1",
     "@gits-id/utils": "^0.10.1",
+    "@gits-id/button": "^0.10.1",
     "@headlessui/vue": "^1.6.0",
     "@heroicons/vue": "^1.0.6",
     "@vue/test-utils": "^2.0.0-rc.17",

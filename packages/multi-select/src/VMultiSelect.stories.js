@@ -1,4 +1,8 @@
 import VMultiSelect from './VMultiSelect.vue';
+import VBtn from '@gits-id/button';
+import {useForm} from 'vee-validate';
+import {object, array} from 'yup';
+import {ref} from 'vue';
 
 const items = [...Array(200)].map((item, index) => ({
   value: index + 1,
@@ -96,10 +100,56 @@ CustomStyle.args = {
   badgeColor: 'warning',
   checkWrapperClass: 'text-orange-500',
 };
-// CustomStyle.parameters = {
-//   docs: {
-//     source: {
-//       code: '<v-multi-select :items="items" :max-badge="3" />',
-//     },
-//   },
-// };
+
+export const Validation = (args) => ({
+  components: {VBtn, VMultiSelect},
+  setup() {
+    const schema = object({
+      genre: array().required().min(1).label('Genre'),
+    });
+
+    const {handleSubmit, resetForm, values} = useForm({
+      validationSchema: schema,
+    });
+
+    const onSubmit = handleSubmit((values) => {
+      alert(JSON.stringify(values));
+    });
+
+    const genres = ref([
+      {
+        text: 'Pop',
+        value: 'pop',
+      },
+      {
+        text: 'Rock',
+        value: 'rock',
+      },
+      {
+        text: 'Jazz',
+        value: 'jazz',
+      },
+      {
+        text: 'Alternative',
+        value: 'alternative',
+      },
+    ]);
+
+    return {onSubmit, resetForm, values, genres};
+  },
+  template: `
+    <form @submit="onSubmit" class="border-none">
+      <v-multi-select
+        name="genre"
+        label="Genre"
+        placeholder="Choose your prefered genres"
+        :items="genres"
+      />
+      <div class="mt-4">
+        <v-btn type="submit">Submit</v-btn>
+        <v-btn type="button" text @click="resetForm">Reset</v-btn>
+      </div>
+      <pre>{{ {values} }}</pre>
+    </form>
+`,
+});
