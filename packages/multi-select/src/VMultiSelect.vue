@@ -136,6 +136,14 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  label: {
+    type: String,
+    default: '',
+  },
+  labelClass: {
+    type: String,
+    default: 'mb-2 block',
+  },
 });
 
 const emit = defineEmits([
@@ -354,6 +362,7 @@ watch(
 <template>
   <div ref="target" class="">
     <div>
+      <label :for="id || name" :class="labelClass">{{ label }}</label>
       <div class="relative mt-1">
         <div
           class="
