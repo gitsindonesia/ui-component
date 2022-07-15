@@ -1,4 +1,4 @@
-import Autocomplete from './Autocomplete.vue';
+import VAutocomplete from './VAutocomplete.vue';
 
-export {Autocomplete};
-export default Autocomplete;
+export {VAutocomplete, VAutocomplete as Autocomplete};
+export default VAutocomplete;

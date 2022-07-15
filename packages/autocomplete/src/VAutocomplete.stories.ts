@@ -1,8 +1,8 @@
-import { useForm } from 'vee-validate';
+import {useForm} from 'vee-validate';
 import {ref} from 'vue';
-import { object, array } from 'yup';
+import {object, array} from 'yup';
 import Autocomplete from './Autocomplete.vue';
-import VBtn from '@gits-id/button'
+import VBtn from '@gits-id/button';
 
 const items = [
   {value: 1, text: 'Wade Cooper'},
@@ -41,7 +41,6 @@ export const Clearable = Template.bind({});
 Clearable.args = {
   clearable: true,
 };
-
 
 export const Validation = (args) => ({
   components: {VBtn, Autocomplete},
