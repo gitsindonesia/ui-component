@@ -385,7 +385,9 @@ watch(
             focus-visible:ring-offset-2
           "
           :class="[
-            error ? 'v-multi-select-error' : 'v-multi-select-normal',
+            error || errorMessage
+              ? `v-multi-select-error border-error-500`
+              : 'v-multi-select-normal',
             wrapperClass,
           ]"
           @click="(e) => e.preventDefault()"
