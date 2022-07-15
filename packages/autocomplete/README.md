@@ -6,39 +6,39 @@ Autocomplete Component.
 
 npm
 
-```
+```bash
 npm i @gits-id/autocomplete
 ```
 
 yarn
 
-```
+```bash
 yarn add @gits-id/autocomplete
 ```
 
 pnpm
 
-```
+```bash
 pnpm i @gits-id/autocomplete
 ```
 
 ## Usage
 
-```vue
+```html
 <script setup lang="ts">
-import Autocomplete from '@gits-id/autocomplete';
-import {ref} from 'vue';
+  import Autocomplete from '@gits-id/autocomplete';
+  import {ref} from 'vue';
 
-const items = [
-  {value: 1, text: 'Wade Cooper'},
-  {value: 2, text: 'Arlene Mccoy'},
-  {value: 3, text: 'Devon Webb'},
-  {value: 4, text: 'Tom Cook'},
-  {value: 5, text: 'Tanya Fox'},
-  {value: 6, text: 'Hellen Schmidt'},
-];
+  const items = [
+    {value: 1, text: 'Wade Cooper'},
+    {value: 2, text: 'Arlene Mccoy'},
+    {value: 3, text: 'Devon Webb'},
+    {value: 4, text: 'Tom Cook'},
+    {value: 5, text: 'Tanya Fox'},
+    {value: 6, text: 'Hellen Schmidt'},
+  ];
 
-const selected = ref();
+  const selected = ref();
 </script>
 
 <template>
@@ -48,7 +48,7 @@ const selected = ref();
 
 ## Documentation
 
-View `Autocomplete` documentation [here](https://gits-ui.web.app/?path=/story/components-autocomplete--default).
+View full documentation [here](https://gits-ui.web.app/?path=/story/components-autocomplete--default).
 
 ## License
 

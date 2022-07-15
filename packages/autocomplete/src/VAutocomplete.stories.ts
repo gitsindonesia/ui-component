@@ -1,8 +1,9 @@
 import {useForm} from 'vee-validate';
 import {ref} from 'vue';
-import {object, array} from 'yup';
-import Autocomplete from './Autocomplete.vue';
+import {object} from 'yup';
+import VAutocomplete from './VAutocomplete.vue';
 import VBtn from '@gits-id/button';
+import {Story} from '@storybook/vue3';
 
 const items = [
   {value: 1, text: 'Wade Cooper'},
@@ -15,21 +16,21 @@ const items = [
 
 export default {
   title: 'Components/Autocomplete',
-  component: Autocomplete,
+  component: VAutocomplete,
   argTypes: {},
   args: {
     items,
   },
 };
 
-const Template = (args) => ({
-  components: {Autocomplete},
+const Template: Story = (args) => ({
+  components: {VAutocomplete},
   setup() {
     const selected = ref();
     return {args, selected};
   },
   template: `
-    <Autocomplete v-bind="args" v-model="selected"/>
+    <VAutocomplete v-bind="args" v-model="selected"/>
     Selected: {{ selected }}
   `,
 });
@@ -42,8 +43,8 @@ Clearable.args = {
   clearable: true,
 };
 
-export const Validation = (args) => ({
-  components: {VBtn, Autocomplete},
+export const Validation: Story = (args) => ({
+  components: {VBtn, VAutocomplete},
   setup() {
     const schema = object({
       genre: object().required().label('Genre'),
@@ -80,7 +81,7 @@ export const Validation = (args) => ({
   },
   template: `
     <form @submit="onSubmit" class="border-none">
-      <Autocomplete
+      <VAutocomplete
         name="genre"
         label="Genre"
         placeholder="Choose your prefered genres"
