@@ -110,8 +110,8 @@ export const Validation: Story<{}> = () => ({
   components: {VBtn, VSelect},
   setup() {
     const schema = object({
-      genre: object().required().label('Genre'),
-      gender: object().required().label('Gender'),
+      genre: object().required().nullable().label('Genre'),
+      gender: object().required().nullable().label('Gender'),
     });
 
     const {handleSubmit, resetForm, values} = useForm({
