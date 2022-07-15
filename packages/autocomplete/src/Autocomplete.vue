@@ -105,7 +105,7 @@ const clear = () => {
           text-left
           bg-white
           border
-          rounded
+          rounded-md
           cursor-default
           focus:outline-none
           focus-within:ring focus-within:ring-opacity-50
@@ -117,7 +117,7 @@ const clear = () => {
         :class="
           errorMessage
             ? 'border-error-500 focus-within:ring-error-500 focus-within:border-error-500'
-            : 'border-gray-400 focus-within:ring-primary-500 focus-within:border-primary-500'
+            : 'border-gray-300 hover:border-gray-400 focus-within:ring-primary-500 focus-within:border-primary-500'
         "
       >
         <ComboboxInput
@@ -152,13 +152,13 @@ const clear = () => {
             @click="clear"
           >
             <XIcon
-              class="w-6 h-6 fill-current text-gray-500"
+              class="w-6 h-6 fill-current text-gray-400"
               aria-hidden="true"
             />
           </button>
           <ComboboxButton>
             <ChevronDownIcon
-              class="w-6 h-6 fill-current text-gray-500"
+              class="w-6 h-6 fill-current text-gray-400"
               aria-hidden="true"
             />
           </ComboboxButton>

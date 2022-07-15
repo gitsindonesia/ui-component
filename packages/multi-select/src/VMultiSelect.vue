@@ -372,7 +372,7 @@ watch(
             pr-10
             text-left
             bg-white
-            rounded-lg
+            rounded-md
             border
             cursor-default
             focus:outline-none
@@ -387,7 +387,7 @@ watch(
           :class="[
             error || errorMessage
               ? `v-multi-select-error border-error-500`
-              : 'v-multi-select-normal',
+              : 'v-multi-select-normal border-gray-300 hover:border-gray-400',
             wrapperClass,
           ]"
           @click="(e) => e.preventDefault()"
