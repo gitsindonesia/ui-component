@@ -35,6 +35,8 @@ type Props = {
   notFoundText?: string;
   noDataText?: string;
   clearable?: boolean;
+  errorClass?: string;
+  wrapperClass?: string;
 };
 
 const props = withDefaults(defineProps<Props>(), {
@@ -49,6 +51,8 @@ const props = withDefaults(defineProps<Props>(), {
   noDataText: 'No data.',
   notFoundText: 'Nothing found.',
   clearable: false,
+  errorClass: 'text-error-500 text-sm mt-1',
+  wrapperClass: '',
 });
 
 const emit = defineEmits(['update:modelValue', 'update:query']);
@@ -69,11 +73,6 @@ watch(selected, (val) => {
 
 watch(query, (val) => {
   emit('update:query', val);
-
-  // if (val === '') {
-  // console.log({val});
-  // selected.value = '';
-  // }
 });
 
 const filteredItems = computed(() =>
@@ -94,7 +93,7 @@ const clear = () => {
 </script>
 
 <template>
-  <Combobox v-model="selected" class="mb-4" as="div">
+  <Combobox v-model="selected" :class="wrapperClass" as="div">
     <ComboboxLabel v-if="label" class="mb-2 font-medium">
       {{ label }}
     </ComboboxLabel>
@@ -105,18 +104,20 @@ const clear = () => {
           w-full
           text-left
           bg-white
-          border border-gray-400
+          border
           rounded
           cursor-default
           focus:outline-none
-          focus-within:ring
-          focus-within:ring-primary-500
-          focus-within:border-primary-500
-          focus-within:ring-opacity-50
+          focus-within:ring focus-within:ring-opacity-50
           sm:text-sm
           overflow-hidden
           transition
           duration-300
+        "
+        :class="
+          errorMessage
+            ? 'border-error-500 focus-within:ring-error-500 focus-within:border-error-500'
+            : 'border-gray-400 focus-within:ring-primary-500 focus-within:border-primary-500'
         "
       >
         <ComboboxInput
@@ -239,5 +240,7 @@ const clear = () => {
       </TransitionRoot>
     </div>
   </Combobox>
-  <div class="text-error text-sm mt-1">{{ errorMessage }}</div>
+  <div v-if="errorMessage" :class="errorClass">
+    {{ errorMessage }}
+  </div>
 </template>
