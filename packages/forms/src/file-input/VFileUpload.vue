@@ -1,5 +1,6 @@
 <script lang="ts">
 import {defineComponent} from 'vue';
+import {FileValue} from './types';
 
 export default defineComponent({
   inheritAttrs: false,
@@ -7,23 +8,13 @@ export default defineComponent({
 </script>
 
 <script setup lang="ts">
-import {
-  ref,
-  toRefs,
-  computed,
-  watch,
-  PropType,
-  onMounted,
-  onUnmounted,
-} from 'vue';
+import {ref, toRefs, computed, watch, PropType} from 'vue';
 import {ErrorMessage, useField} from 'vee-validate';
 import VFileUploadActions from './VFileUploadActions.vue';
 import VFileUploadDefaultTheme from './VFileUploadDefaultTheme.vue';
 import VFileUploadButtonTheme from './VFileUploadButtonTheme.vue';
 import VFileUploadImageTheme from './VFileUploadImageTheme.vue';
 import VFileUploadDropzoneTheme from './VFileUploadDropzoneTheme.vue';
-
-type FileValue = File | FileList | File[] | Record<string, any> | null | string;
 
 const props = defineProps({
   value: {
@@ -286,15 +277,30 @@ const hasFile = computed(() => {
   return !!innerValue.value || !!hasInitialValue.value;
 });
 
-const fileName = computed(
-  () =>
-    (innerValue.value || value.value || modelValue.value || {name: ''}).name,
-);
+function getFileValue(key: string, defaultValue?: any) {
+  const val = (innerValue.value || value.value || modelValue.value) as Record<
+    string,
+    any
+  >;
 
-const fileURL = computed(
-  () =>
-    (innerValue.value || value.value || modelValue.value || {file: ''}).file,
-);
+  return (val as any)?.[key] || defaultValue;
+}
+
+const fileName = computed(() => {
+  if (typeof innerValue.value === 'string') {
+    return innerValue.value.split('/').pop();
+  }
+
+  return getFileValue('name', '');
+});
+
+const fileURL = computed(() => {
+  if (typeof innerValue.value === 'string') {
+    return innerValue.value;
+  }
+
+  return getFileValue('name', '');
+});
 
 const disabledClass = computed(() => {
   return disabled.value || readonly.value ? 'disabled-input' : '';

@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import {computed, onMounted, onUnmounted} from 'vue';
+import {FileValue} from './types';
 
 type Props = {
-  modelValue?: string | File | FileList;
+  modelValue?: FileValue;
   readonly?: boolean;
   hasError?: boolean;
   hasFile?: boolean;
   fileName?: string;
-  previewURL?: string;
+  previewURL?: string | null;
   image?: boolean;
   preview?: boolean;
   disabled?: boolean;

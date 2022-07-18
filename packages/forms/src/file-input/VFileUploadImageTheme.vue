@@ -7,7 +7,7 @@ type Props = {
   rounded?: boolean;
   sizeClass?: string;
   borderClass?: string;
-  previewURL?: string;
+  previewURL?: string | null;
   loading?: boolean;
   image?: boolean;
   fileName?: string;
