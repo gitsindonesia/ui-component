@@ -21,6 +21,7 @@ import VBtn from '@gits-id/button';
 import VSpinner from '@gits-id/spinner';
 import {ErrorMessage, useField} from 'vee-validate';
 import VFileUploadActions from './VFileUploadActions.vue';
+import VFileUploadDefaultTheme from './VFileUploadDefaultTheme.vue';
 
 type FileValue = File | FileList | File[] | Record<string, any> | null | string;
 
@@ -635,59 +636,23 @@ const dropzoneBorderClass = computed(() => {
       </div>
     </template>
 
-    <template v-else>
-      <div
-        class="
-          transition
-          duration-300
-          border
-          group
-          rounded-lg
-          flex
-          gap-4
-          items-center
-          py-1
-        "
-        :class="borderClass"
-      >
-        <div
-          class="
-            flex-1
-            text-gray-500
-            hover:text-gray-700
-            text-sm
-            truncate
-            px-3
-            py-1
-            h-full
-          "
-          :title="fileName || placeholder"
-          @click="pickFile"
-        >
-          {{ fileName || placeholder }}
-        </div>
-        <div class="space-x-1 px-1">
-          <VBtn
-            :disabled="readonly || disabled"
-            type="button"
-            size="sm"
-            @click="pickFile"
-          >
-            {{ hasFile ? changeText : browseText }}
-          </VBtn>
-          <VBtn
-            v-if="hasFile && !hideRemove"
-            type="button"
-            size="sm"
-            color="error"
-            :disabled="readonly || disabled"
-            @click="removeFile"
-          >
-            {{ removeText }}
-          </VBtn>
-        </div>
-      </div>
-    </template>
+    <VFileUploadDefaultTheme
+      v-else
+      v-bind="{
+        borderClass,
+        fileName,
+        placeholder,
+        readonly,
+        disabled,
+        hasFile,
+        changeText,
+        browseText,
+        hideRemove,
+        removeText,
+      }"
+      @choose="pickFile"
+      @remove="removeFile"
+    />
 
     <input
       :id="id"
@@ -713,6 +678,8 @@ const dropzoneBorderClass = computed(() => {
         changeText,
         removeText,
       }"
+      @choose="pickFile"
+      @remove="removeFile"
     />
 
     <slot name="hint">

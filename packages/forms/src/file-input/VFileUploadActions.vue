@@ -19,7 +19,7 @@ withDefaults(defineProps<Props>(), {
 
 const emit =
   defineEmits<{
-    (e: 'change'): void;
+    (e: 'choose'): void;
     (e: 'remove'): void;
   }>();
 </script>
@@ -38,7 +38,7 @@ const emit =
         small
         dense
         type="button"
-        @click="emit('change')"
+        @click="emit('choose')"
       >
         {{ changeText }}
       </VBtn>
