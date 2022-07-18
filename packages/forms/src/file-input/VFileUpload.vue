@@ -16,12 +16,12 @@ import {
   onMounted,
   onUnmounted,
 } from 'vue';
-import {CameraIcon, PlusIcon, TrashIcon} from '@heroicons/vue/solid';
-import VBtn from '@gits-id/button';
+import {CameraIcon} from '@heroicons/vue/solid';
 import VSpinner from '@gits-id/spinner';
 import {ErrorMessage, useField} from 'vee-validate';
 import VFileUploadActions from './VFileUploadActions.vue';
 import VFileUploadDefaultTheme from './VFileUploadDefaultTheme.vue';
+import VFileUploadButtonTheme from './VFileUploadButtonTheme.vue';
 
 type FileValue = File | FileList | File[] | Record<string, any> | null | string;
 
@@ -115,7 +115,7 @@ const props = defineProps({
     default: 'Uploading...',
   },
   theme: {
-    type: String,
+    type: String as PropType<'button' | 'image' | '' | 'default' | 'dropzone'>,
     default: '',
     validator: (v: string) =>
       ['button', 'image', '', 'default', 'dropzone'].includes(v),
@@ -379,84 +379,27 @@ const dropzoneBorderClass = computed(() => {
       {{ label }}
     </label>
 
-    <div v-if="theme === 'button'" class="flex gap-2">
-      <div v-if="hasFile" class="flex gap-2 items-center">
-        <div
-          class="
-            px-4
-            py-2
-            truncate
-            text-center
-            border
-            rounded
-            hover:border-gray-400
-          "
-          :class="[disabledClass, borderClass]"
-          @click="pickFile"
-        >
-          {{ fileName }}
-        </div>
-        <v-btn
-          v-if="readonly"
-          :href="fileURL"
-          target="_blank"
-          tag="a"
-          class="whitespace-nowrap"
-          small
-          color="primary"
-        >
-          {{ viewFileText }}
-        </v-btn>
-
-        <div
-          v-if="!hasFile && !hidePlaceholder"
-          class="text-sm mt-1 text-gray-500"
-        >
-          {{ placeholder }}
-        </div>
-      </div>
-      <div class="flex gap-2 items-center">
-        <VBtn
-          uppercase
-          outlined
-          type="button"
-          color="primary"
-          class="line-clamp"
-          :disabled="readonly || disabled"
-          @click="pickFile"
-        >
-          <template v-if="!hasFile">
-            <slot name="icon.plus">
-              <PlusIcon class="w-5 h-5 mr-2" />
-            </slot>
-          </template>
-          <template v-if="hasFile">
-            <slot name="icon.plus">
-              <PlusIcon class="w-5 h-5 mr-2" />
-            </slot>
-          </template>
-
-          {{ hasFile ? changeText : browseText }}
-        </VBtn>
-
-        <VBtn
-          v-if="hasFile && !hideRemove"
-          small
-          dense
-          outlined
-          type="button"
-          color="error"
-          class="space-x-2"
-          :disabled="readonly || disabled"
-          @click="removeFile"
-        >
-          <slot name="icon.trash">
-            <TrashIcon class="w-5 h-5" />
-          </slot>
-          <span>{{ removeText }}</span>
-        </VBtn>
-      </div>
-    </div>
+    <VFileUploadButtonTheme
+      v-if="theme === 'button'"
+      v-bind="{
+        hasFile,
+        disabledClass,
+        borderClass,
+        fileName,
+        fileURL,
+        viewFileText,
+        readonly,
+        placeholder,
+        hidePlaceholder,
+        changeText,
+        removeText,
+        hideRemove,
+        disabled,
+        browseText,
+      }"
+      @choose="pickFile"
+      @remove="removeFile"
+    />
 
     <div v-else-if="theme === 'image'">
       <div
