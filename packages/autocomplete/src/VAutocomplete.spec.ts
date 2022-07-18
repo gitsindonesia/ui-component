@@ -1,12 +1,12 @@
 import {mount} from '@vue/test-utils';
 import {describe, expect, test} from 'vitest';
-import Autocomplete from './Autocomplete.vue';
+import VAutocomplete from './VAutocomplete.vue';
 
-describe('Autocomplete', () => {
+describe('VAutocomplete', () => {
   test('mount component', () => {
-    expect(Autocomplete).toBeTruthy();
+    expect(VAutocomplete).toBeTruthy();
 
-    const wrapper = mount(Autocomplete, {
+    const wrapper = mount(VAutocomplete, {
       props: {
         modelValue: undefined,
         searchBy: 'text',
