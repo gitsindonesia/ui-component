@@ -21,7 +21,7 @@ import VBtn from '@gits-id/button';
 import VSpinner from '@gits-id/spinner';
 import {ErrorMessage, useField} from 'vee-validate';
 
-type FileValue = File | FileList | File[] | Record<string, any> | null;
+type FileValue = File | FileList | File[] | Record<string, any> | null | string;
 
 const props = defineProps({
   value: {
@@ -265,6 +265,8 @@ const removeFile = () => {
 };
 
 const setInitialValue = (val: any) => {
+  console.log({val, props});
+
   const isFile = val instanceof File;
   const isFileList = val instanceof FileList;
 
@@ -303,22 +305,10 @@ const fileURL = computed(
     (innerValue.value || value.value || modelValue.value || {file: ''}).file,
 );
 
-watch(
-  value,
-  (val) => {
-    setInitialValue(val);
-  },
-  {immediate: true},
-);
-
-watch(
-  modelValue,
-  (val) => {
-    setInitialValue(val);
-  },
-  {immediate: true},
-);
-
+watch(modelValue, (val) => {
+  setInitialValue(val);
+});
+22;
 const disabledClass = computed(() => {
   return disabled.value || readonly.value ? 'disabled-input' : '';
 });
@@ -711,7 +701,7 @@ const dropzoneBorderClass = computed(() => {
 
     <div
       v-if="
-        hasFile && !readonly && (image || button || !isDropzone) && !loading
+        hasFile && !readonly && (image || button) && !isDropzone && !loading
       "
       class="flex w-full mt-3 justify-center items-center gap-y-2 gap-x-2"
       :class="[full || button ? 'flex-row' : 'w-full sm:w-[180px] flex-col']"
