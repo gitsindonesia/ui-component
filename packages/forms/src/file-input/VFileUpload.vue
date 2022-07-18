@@ -178,14 +178,7 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits([
-  'input',
-  'removed',
-  'update:modelValue',
-  'update:value',
-  'change',
-  'blur',
-]);
+const emit = defineEmits(['removed', 'update:modelValue', 'change', 'blur']);
 
 const {
   image,
@@ -203,17 +196,39 @@ const {
 } = toRefs(props);
 
 const {value: innerValue, errorMessage} = useField(name, rules, {
-  initialValue: props.modelValue || props.value,
+  initialValue: modelValue.value || value.value,
 });
-
-const isDropzone = computed(() => props.theme === 'dropzone');
-const sizeClass = computed(() => (props.full ? 'w-full' : customSize.value));
 
 const fileRef = ref<HTMLInputElement | null>(null);
 const previewURL = ref<string | null>(null);
 const hasInitialValue = ref(false);
 
+const isDropzone = computed(() => props.theme === 'dropzone');
+const sizeClass = computed(() => (props.full ? 'w-full' : customSize.value));
+
 const acceptedTypes = computed(() => (image.value ? 'image/*' : accept.value));
+
+const setInitialValue = (val: any) => {
+  const isFile = val instanceof File;
+  const isFileList = val instanceof FileList;
+
+  if (typeof val === 'string') {
+    hasInitialValue.value = true;
+    innerValue.value = val;
+    previewURL.value = val;
+  } else if (isFile || isFileList) {
+    innerValue.value = val;
+  } else if (image.value && val && !previewURL.value) {
+    hasInitialValue.value = true;
+    previewURL.value = URL.createObjectURL(innerValue.value as any);
+  } else if (!val) {
+    innerValue.value = null;
+    previewURL.value = null;
+    hasInitialValue.value = false;
+  }
+};
+
+setInitialValue(innerValue.value);
 
 const inputAttrs = computed(() => ({
   ...inputProps.value,
@@ -230,7 +245,6 @@ const handleFiles = (files: FileList) => {
 
     emit('change', files);
     emit('update:modelValue', files);
-    emit('update:value', files);
   } else {
     const firstFile = files[0];
 
@@ -242,7 +256,6 @@ const handleFiles = (files: FileList) => {
 
     emit('change', firstFile);
     emit('update:modelValue', firstFile);
-    emit('update:value', firstFile);
   }
 };
 
@@ -262,36 +275,12 @@ const removeFile = () => {
 
   emit('change', null);
   emit('update:modelValue', null);
-  emit('update:value', null);
   emit('removed');
 };
 
-const setInitialValue = (val: any) => {
-  console.log({val, props});
-
-  const isFile = val instanceof File;
-  const isFileList = val instanceof FileList;
-
-  if (typeof val === 'string') {
-    hasInitialValue.value = true;
-    previewURL.value = val;
-  }
-
-  if (isFile || isFileList) {
-    innerValue.value = val;
-  }
-
-  if (image.value && val && !previewURL.value) {
-    hasInitialValue.value = true;
-    previewURL.value = URL.createObjectURL(innerValue.value as any);
-  }
-
-  if (!val) {
-    innerValue.value = null;
-    previewURL.value = null;
-    hasInitialValue.value = false;
-  }
-};
+watch(modelValue, (val) => {
+  setInitialValue(val);
+});
 
 const hasFile = computed(() => {
   return !!innerValue.value || !!hasInitialValue.value;
@@ -307,10 +296,6 @@ const fileURL = computed(
     (innerValue.value || value.value || modelValue.value || {file: ''}).file,
 );
 
-watch(modelValue, (val) => {
-  setInitialValue(val);
-});
-22;
 const disabledClass = computed(() => {
   return disabled.value || readonly.value ? 'disabled-input' : '';
 });
