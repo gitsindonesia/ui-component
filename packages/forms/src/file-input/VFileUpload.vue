@@ -20,6 +20,7 @@ import {CameraIcon, PlusIcon, TrashIcon} from '@heroicons/vue/solid';
 import VBtn from '@gits-id/button';
 import VSpinner from '@gits-id/spinner';
 import {ErrorMessage, useField} from 'vee-validate';
+import VFileUploadActions from './VFileUploadActions.vue';
 
 type FileValue = File | FileList | File[] | Record<string, any> | null | string;
 
@@ -699,42 +700,20 @@ const dropzoneBorderClass = computed(() => {
       @change="onFileChanged"
     />
 
-    <div
+    <VFileUploadActions
       v-if="
         hasFile && !readonly && (image || button) && !isDropzone && !loading
       "
-      class="flex w-full mt-3 justify-center items-center gap-y-2 gap-x-2"
-      :class="[full || button ? 'flex-row' : 'w-full sm:w-[180px] flex-col']"
-    >
-      <div>
-        <slot name="prepend" />
-      </div>
-      <div class="flex gap-2">
-        <VBtn
-          :disabled="readonly || disabled"
-          small
-          dense
-          type="button"
-          @click="pickFile"
-        >
-          {{ changeText }}
-        </VBtn>
-        <VBtn
-          v-if="!hideRemove"
-          small
-          dense
-          type="button"
-          color="error"
-          :disabled="readonly || disabled"
-          @click="removeFile"
-        >
-          {{ removeText }}
-        </VBtn>
-      </div>
-      <div>
-        <slot name="append" />
-      </div>
-    </div>
+      v-bind="{
+        readonly,
+        button,
+        full,
+        disabled,
+        hideRemove,
+        changeText,
+        removeText,
+      }"
+    />
 
     <slot name="hint">
       <div v-if="hint" class="text-xs mt-2 text-black">
