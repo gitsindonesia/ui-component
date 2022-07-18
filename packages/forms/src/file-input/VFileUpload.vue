@@ -16,12 +16,11 @@ import {
   onMounted,
   onUnmounted,
 } from 'vue';
-import {CameraIcon} from '@heroicons/vue/solid';
-import VSpinner from '@gits-id/spinner';
 import {ErrorMessage, useField} from 'vee-validate';
 import VFileUploadActions from './VFileUploadActions.vue';
 import VFileUploadDefaultTheme from './VFileUploadDefaultTheme.vue';
 import VFileUploadButtonTheme from './VFileUploadButtonTheme.vue';
+import VFileUploadImageTheme from './VFileUploadImageTheme.vue';
 
 type FileValue = File | FileList | File[] | Record<string, any> | null | string;
 
@@ -401,38 +400,22 @@ const dropzoneBorderClass = computed(() => {
       @remove="removeFile"
     />
 
-    <div v-else-if="theme === 'image'">
-      <div
-        class="
-          transition
-          duration-300
-          border
-          cursor-pointer
-          flex flex-col
-          items-center
-          justify-center
-          py-10
-          bg-no-repeat bg-contain bg-center
-          max-w-full
-        "
-        :class="[sizeClass, {'rounded-lg': rounded}, borderClass]"
-        :style="{
-          backgroundImage: image && !loading ? `url(${previewURL})` : 'none',
-        }"
-        @click="pickFile"
-      >
-        <v-spinner v-if="loading" color="primary" large />
-        <div v-else-if="hasFile" class="px-2 text-center">
-          {{ image ? '' : fileName }}
-        </div>
-        <template v-else>
-          <CameraIcon class="w-10 h-10 text-gray-500 mb-1" />
-          <div class="uppercase text-gray-500">
-            {{ loading ? loadingText : browseText }}
-          </div>
-        </template>
-      </div>
-    </div>
+    <VFileUploadImageTheme
+      v-else-if="theme === 'image'"
+      v-bind="{
+        rounded,
+        sizeClass,
+        borderClass,
+        previewURL,
+        loading,
+        image,
+        fileName,
+        hasFile,
+        loadingText,
+        browseText,
+      }"
+      @choose="pickFile"
+    />
 
     <template v-else-if="theme === 'dropzone'">
       <div
