@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.10](https://github.com/gitsindonesia/ui-component/compare/v0.10.9...v0.10.10) (2022-07-18)
+
+### Bug Fixes
+
+- **v-file-upload:** accept string value and hide action button on for dropzone theme ([16ab948](https://github.com/gitsindonesia/ui-component/commit/16ab948683098b5d36765b5836c66b890cd13bbf))
+- **v-multi-select:** add error style ([ae9367d](https://github.com/gitsindonesia/ui-component/commit/ae9367d77f1ef0053d78c8b0b2b639bd4d1f88a1))
+
+### chore
+
+- **autocomplete:** change component name ([6ed3c28](https://github.com/gitsindonesia/ui-component/commit/6ed3c2881bba1080f414e9f6c07fc6099d7c645c))
+
+### Features
+
+- **autocomplete:** add validation state ([87c3752](https://github.com/gitsindonesia/ui-component/commit/87c375207b0ded3f8a4cf00692176ddc07a253fa))
+- **v-file-upload:** accept string url as value ([cd800db](https://github.com/gitsindonesia/ui-component/commit/cd800db740fc339cb444a8b3a3c8401d989e4f4c))
+- **v-file-upload:** apply different border color when error ([bdf7719](https://github.com/gitsindonesia/ui-component/commit/bdf771949356e43e0de0f68c87cbfca679be8a81))
+- **v-multi-select:** custom label ([8b4d9b1](https://github.com/gitsindonesia/ui-component/commit/8b4d9b10e28a832020f5ec7fd0649399a902153d))
+- **v-multi-select:** integrate vee-validate to v-multi-select ([30fbe4b](https://github.com/gitsindonesia/ui-component/commit/30fbe4b7e307af3fb2523a3f1e5b040a095d3a26))
+- **v-select:** reverse shadow strategy ([ef3dfa1](https://github.com/gitsindonesia/ui-component/commit/ef3dfa1b5bdaa985231f499483ada88e570cb947))
+
+### BREAKING CHANGES
+
+- **autocomplete:** `Autocomplete` renamed to `VAutocomplete`
+
 ## [0.10.9](https://github.com/gitsindonesia/ui-component/compare/v0.10.8...v0.10.9) (2022-07-12)
 
 ### Bug Fixes

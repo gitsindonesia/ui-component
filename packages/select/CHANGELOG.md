@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.10](https://github.com/gitsindonesia/ui-component/compare/v0.10.9...v0.10.10) (2022-07-18)
+
+### Features
+
+- **v-select:** reverse shadow strategy ([ef3dfa1](https://github.com/gitsindonesia/ui-component/commit/ef3dfa1b5bdaa985231f499483ada88e570cb947))
+
 ## [0.10.9](https://github.com/gitsindonesia/ui-component/compare/v0.10.8...v0.10.9) (2022-07-12)
 
 **Note:** Version bump only for package @gits-id/select

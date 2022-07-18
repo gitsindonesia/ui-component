@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.10](https://github.com/gitsindonesia/ui-component/compare/v0.10.9...v0.10.10) (2022-07-18)
+
+### Bug Fixes
+
+- **v-file-upload:** accept string value and hide action button on for dropzone theme ([16ab948](https://github.com/gitsindonesia/ui-component/commit/16ab948683098b5d36765b5836c66b890cd13bbf))
+
+### Features
+
+- **v-file-upload:** accept string url as value ([cd800db](https://github.com/gitsindonesia/ui-component/commit/cd800db740fc339cb444a8b3a3c8401d989e4f4c))
+- **v-file-upload:** apply different border color when error ([bdf7719](https://github.com/gitsindonesia/ui-component/commit/bdf771949356e43e0de0f68c87cbfca679be8a81))
+
 ## [0.10.9](https://github.com/gitsindonesia/ui-component/compare/v0.10.8...v0.10.9) (2022-07-12)
 
 ### Bug Fixes
