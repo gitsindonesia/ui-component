@@ -21,6 +21,7 @@ import VFileUploadActions from './VFileUploadActions.vue';
 import VFileUploadDefaultTheme from './VFileUploadDefaultTheme.vue';
 import VFileUploadButtonTheme from './VFileUploadButtonTheme.vue';
 import VFileUploadImageTheme from './VFileUploadImageTheme.vue';
+import VFileUploadDropzoneTheme from './VFileUploadDropzoneTheme.vue';
 
 type FileValue = File | FileList | File[] | Record<string, any> | null | string;
 
@@ -299,60 +300,6 @@ const disabledClass = computed(() => {
   return disabled.value || readonly.value ? 'disabled-input' : '';
 });
 
-let guid = () => crypto.randomUUID();
-
-const dropzoneId = computed(() => guid());
-
-const dragInactiveClass = 'border-gray-300';
-const dragClass = 'border-primary-600';
-
-const isDropZoneTarget = (event: any) => {
-  return Array.from(event.target.classList).includes(dropzoneId.value);
-};
-
-const onDrop = (e: any) => {
-  e.preventDefault();
-
-  e.target.classList.remove(dragClass);
-  e.target.classList.add(dragInactiveClass);
-
-  if (isDropZoneTarget(e)) {
-    handleFiles(e.dataTransfer.files);
-  }
-};
-
-const onDragOver = (e: any) => {
-  e.preventDefault();
-};
-
-const onDragEnter = (event: any) => {
-  if (isDropZoneTarget(event)) {
-    event.target.classList.remove(dragInactiveClass);
-    event.target.classList.add(dragClass);
-  }
-};
-
-const onDragLeave = (event: any) => {
-  if (isDropZoneTarget(event)) {
-    event.target.classList.remove(dragClass);
-    event.target.classList.add(dragInactiveClass);
-  }
-};
-
-onMounted(() => {
-  document.addEventListener('dragover', onDragOver, false);
-  document.addEventListener('drop', onDrop);
-  document.addEventListener('dragenter', onDragEnter, false);
-  document.addEventListener('dragleave', onDragLeave, false);
-});
-
-onUnmounted(() => {
-  document.removeEventListener('dragover', onDragOver, false);
-  document.removeEventListener('drop', onDrop);
-  document.removeEventListener('dragenter', onDragEnter, false);
-  document.removeEventListener('dragleave', onDragLeave, false);
-});
-
 const hasError = computed(() => {
   return props.error || props.errorMessages.length > 0 || !!errorMessage.value;
 });
@@ -361,14 +308,6 @@ const borderClass = computed(() => {
   return hasError.value
     ? 'border-error-500'
     : 'border-gray-300 focus-within:border-primary-500 hover:border-gray-400';
-});
-
-const dropzoneBorderClass = computed(() => {
-  if (readonly.value) return 'border';
-
-  return hasError.value
-    ? 'border-2 border-error-500 border-dashed'
-    : 'border-2 border-gray-300 hover:border-gray-400 border-dashed';
 });
 </script>
 
@@ -417,135 +356,31 @@ const dropzoneBorderClass = computed(() => {
       @choose="pickFile"
     />
 
-    <template v-else-if="theme === 'dropzone'">
-      <div
-        class="
-          flex
-          justify-center
-          items-center
-          p-4
-          rounded-md
-          transition
-          duration-300
-        "
-        :class="[dropzoneId, dropzoneBorderClass]"
-      >
-        <div v-if="hasFile" class="text-center flex flex-col gap-4">
-          <slot
-            name="dropzone.preview"
-            :value="innerValue"
-            :file-name="fileName"
-            :has-file="hasFile"
-          >
-            <div class="flex flex-col gap-4">
-              <div
-                v-if="image || preview"
-                class="
-                  w-60
-                  h-40
-                  flex
-                  bg-contain bg-gray-100
-                  mx-auto
-                  rounded-lg
-                  bg-no-repeat bg-center
-                "
-                :class="previewClass"
-                :style="{
-                  backgroundImage: !loading ? `url(${previewURL})` : 'none',
-                }"
-              ></div>
-              <div v-if="fileName" class="text-gray-500 text-sm">
-                {{ fileName }}
-              </div>
-            </div>
-          </slot>
-
-          <div v-if="!readonly && !disabled" class="space-x-3">
-            <label
-              for="file-upload"
-              class="
-                relative
-                cursor-pointer
-                bg-white
-                rounded-md
-                font-medium
-                text-primary-600
-                hover:text-primary-500
-                focus-within:outline-none
-                focus-within:ring-2
-                focus-within:ring-offset-2
-                focus-within:ring-primary-500
-              "
-              @click="pickFile"
-            >
-              <span>{{ changeText }} </span>
-            </label>
-
-            <label
-              v-if="!hideRemove"
-              class="
-                relative
-                cursor-pointer
-                bg-white
-                rounded-md
-                font-medium
-                text-error-600
-                hover:text-error-500
-                focus-within:outline-none
-                focus-within:ring-2
-                focus-within:ring-offset-2
-                focus-within:ring-error-500
-              "
-              @click="removeFile"
-            >
-              <span>{{ removeText }} </span>
-            </label>
-          </div>
-        </div>
-
-        <div v-else class="space-y-1 text-center">
-          <slot name="dropzone.image">
-            <svg
-              class="mx-auto h-12 w-12 text-gray-400"
-              stroke="currentColor"
-              fill="none"
-              viewBox="0 0 48 48"
-              aria-hidden="true"
-            >
-              <path
-                d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </slot>
-          <div class="flex text-sm text-gray-600">
-            <label
-              for="file-upload"
-              class="
-                relative
-                cursor-pointer
-                bg-white
-                rounded-md
-                font-medium
-                text-primary-600
-                hover:text-primary-500
-                focus-within:outline-none
-                focus-within:ring-2
-                focus-within:ring-offset-2
-                focus-within:ring-primary-500
-              "
-              @click="pickFile"
-            >
-              <span>{{ uploadText }} </span>
-            </label>
-            <p class="pl-1">{{ dragText }}</p>
-          </div>
-          <p class="text-xs text-gray-500">{{ hint }}</p>
-        </div>
-      </div>
-    </template>
+    <VFileUploadDropzoneTheme
+      v-else-if="theme === 'dropzone'"
+      v-bind="{
+        modelValue: innerValue,
+        readonly,
+        hasError,
+        hasFile,
+        fileName,
+        previewURL,
+        image,
+        preview,
+        disabled,
+        hideRemove,
+        changeText,
+        uploadText,
+        dragText,
+        removeText,
+        hint,
+        previewClass,
+        loading,
+      }"
+      @dropped="handleFiles"
+      @choose="pickFile"
+      @remove="removeFile"
+    />
 
     <VFileUploadDefaultTheme
       v-else
