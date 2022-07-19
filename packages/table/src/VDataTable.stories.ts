@@ -115,6 +115,18 @@ Empty.parameters = {
   },
 };
 
+export const Flat = Template.bind({});
+Flat.args = {
+  flat: true,
+};
+Flat.parameters = {
+  docs: {
+    source: {
+      code: `<v-data-table :headers="headers" :items="items" flat />`,
+    },
+  },
+};
+
 export const CustomWrapperClass = Template.bind({});
 CustomWrapperClass.args = {
   wrapperClass: 'border border-blue-500 shadow-blue-500',

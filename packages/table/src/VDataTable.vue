@@ -147,6 +147,10 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  flat: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const emit =
@@ -362,8 +366,14 @@ const start = computed(() =>
 
 <template>
   <div
-    class="w-full flex flex-col border-gray-200 rounded sm:rounded-lg"
-    :class="[!noShadow ? 'shadow' : '', wrapperClass]"
+    class="w-full flex flex-col border-gray-200 sm:rounded-lg"
+    :class="[
+      {
+        shadow: !noShadow && !flat,
+        rounded: !tile,
+      },
+      wrapperClass,
+    ]"
   >
     <div class="overflow-x-auto rounded-t-md">
       <table class="w-full divide-y divide-gray-200">
