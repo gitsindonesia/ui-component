@@ -126,6 +126,30 @@ Empty.parameters = {
   },
 };
 
+export const MustSort = Template.bind({});
+MustSort.args = {
+  mustSort: true,
+};
+MustSort.parameters = {
+  docs: {
+    source: {
+      code: `<v-data-table :headers="headers" :items="items" mustSort />`,
+    },
+  },
+};
+
+export const DisableSorting = Template.bind({});
+DisableSorting.args = {
+  disableSorting: true,
+};
+DisableSorting.parameters = {
+  docs: {
+    source: {
+      code: `<v-data-table :headers="headers" :items="items" disableSorting />`,
+    },
+  },
+};
+
 export const Flat = Template.bind({});
 Flat.args = {
   flat: true,

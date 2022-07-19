@@ -72,7 +72,7 @@ const props = defineProps({
     default: '',
   },
   sortDirection: {
-    type: String,
+    type: String as PropType<SortDirection>,
     default: '',
   },
   hover: {
@@ -189,8 +189,6 @@ const {
   search,
   searchBy,
   serverSide,
-  sortBy,
-  sortDirection,
   items,
   hover,
   striped,
@@ -202,11 +200,15 @@ const {
   mustSort,
   selectable,
   modelValue,
+  sortBy: sortByProp,
+  sortDirection: sortDirectionProp,
 } = toRefs(props);
 
-const page = ref<number>(props.page);
+const page = ref(props.page);
 const perPage = ref(itemsPerPage.value);
 const offset = computed(() => (page.value - 1) * Number(perPage.value));
+const sortBy = ref(sortByProp.value);
+const sortDirection = ref<SortDirection>(sortDirectionProp.value);
 
 const defaultSearchBy = computed(() => headers.value.map((item) => item.value));
 
@@ -241,6 +243,7 @@ const paginatedItems = computed(() => {
         );
     });
   }
+
   return clonedItems.slice(offset.value).slice(0, perPage.value);
 });
 
@@ -301,13 +304,19 @@ const handleSort = (header: VDataTableHeader) => {
 
   header.sorting = direction;
 
-  emit('update:sortBy', header.value);
-  emit('update:sortDirection', direction);
-  emit('sort', {
-    sortBy: header.value,
-    direction: direction,
-  });
+  sortBy.value = header.value;
+  sortDirection.value = direction;
 };
+
+// watch sorting
+watch([sortBy, sortDirection], ([newSortBy, newDirection]) => {
+  emit('update:sortBy', newSortBy);
+  emit('update:sortDirection', newDirection);
+  emit('sort', {
+    sortBy: newSortBy,
+    direction: newDirection,
+  });
+});
 
 const paddingClass = computed(() => (dense.value ? 'px-4 py-2' : 'px-6 py-3'));
 
