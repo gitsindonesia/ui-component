@@ -151,6 +151,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  roundedClass: {
+    type: String,
+    default: 'sm:rounded-lg',
+  },
 });
 
 const emit =
@@ -366,11 +370,11 @@ const start = computed(() =>
 
 <template>
   <div
-    class="w-full flex flex-col border-gray-200 sm:rounded-lg"
+    class="w-full flex flex-col border-gray-200"
     :class="[
       {
         shadow: !noShadow && !flat,
-        rounded: !tile,
+        [roundedClass]: true,
       },
       wrapperClass,
     ]"
