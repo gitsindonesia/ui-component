@@ -139,6 +139,20 @@ Bordered.parameters = {
   },
 };
 
+export const Tile = Template.bind({});
+Tile.args = {
+  tile: true,
+  bordered: true,
+  flat: true,
+};
+Tile.parameters = {
+  docs: {
+    source: {
+      code: `<v-data-table :headers="headers" :items="items" tile />`,
+    },
+  },
+};
+
 export const CustomWrapperClass = Template.bind({});
 CustomWrapperClass.args = {
   wrapperClass: 'border border-blue-500 shadow-blue-500',

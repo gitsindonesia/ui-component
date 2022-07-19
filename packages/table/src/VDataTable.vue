@@ -159,6 +159,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  tile: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const emit =
@@ -378,7 +382,7 @@ const start = computed(() =>
     :class="[
       {
         shadow: !noShadow && !flat,
-        [roundedClass]: true,
+        [roundedClass]: !tile,
         border: bordered,
         'border-gray-200': bordered,
       },
