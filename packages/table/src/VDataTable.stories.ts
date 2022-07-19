@@ -1,4 +1,5 @@
 import {Meta, Story} from '@storybook/vue3';
+import {ref} from 'vue';
 import VDataTable from './VDataTable.vue';
 
 const items = [...Array(30)].map((item, index) => ({
@@ -7,6 +8,29 @@ const items = [...Array(30)].map((item, index) => ({
   email: `user-${index}@example.com`,
 }));
 
+const headers = [
+  {
+    value: 'index',
+    text: 'ID',
+  },
+  {
+    value: 'name',
+    text: 'Name',
+  },
+  {
+    value: 'email',
+    text: 'Email',
+  },
+];
+
+const selectableHeaders = [
+  {
+    text: 'Checkox',
+    value: 'selected',
+  },
+  ...headers.slice(1),
+];
+
 export default {
   title: 'Components/DataTable',
   component: VDataTable,
@@ -14,20 +38,7 @@ export default {
   args: {
     itemsPerPage: 10,
     items,
-    headers: [
-      {
-        value: 'index',
-        text: 'ID',
-      },
-      {
-        value: 'name',
-        text: 'Name',
-      },
-      {
-        value: 'email',
-        text: 'Email',
-      },
-    ],
+    headers,
     striped: false,
     hover: false,
     dense: false,
@@ -194,3 +205,23 @@ CustomClass.parameters = {
     },
   },
 };
+
+export const Selectable: Story = (args) => ({
+  components: {
+    VDataTable,
+  },
+  setup() {
+    const selected = ref([]);
+    return {args, selected, selectableHeaders};
+  },
+  template: `
+    <v-data-table
+      v-bind="args"
+      :headers="selectableHeaders"
+      v-model="selected"
+      selectable
+    />
+    <pre class="mt-4">Selected: {{ {total: selected.length, items: selected} }}
+    </pre>
+  `,
+});
