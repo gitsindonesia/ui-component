@@ -115,6 +115,18 @@ Empty.parameters = {
   },
 };
 
+export const CustomWrapperClass = Template.bind({});
+CustomWrapperClass.args = {
+  wrapperClass: 'border border-blue-500 shadow-blue-500',
+};
+CustomWrapperClass.parameters = {
+  docs: {
+    source: {
+      code: `<v-data-table :headers="headers" :items="items" wrapperClass="border border-blue-500 shadow-blue-500" />`,
+    },
+  },
+};
+
 export const CustomClass = Template.bind({});
 CustomClass.args = {
   headerClass: 'bg-blue-600 text-white',

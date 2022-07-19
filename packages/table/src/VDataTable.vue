@@ -143,6 +143,10 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  wrapperClass: {
+    type: String,
+    default: '',
+  },
 });
 
 const emit =
@@ -359,7 +363,7 @@ const start = computed(() =>
 <template>
   <div
     class="w-full flex flex-col border-gray-200 rounded sm:rounded-lg"
-    :class="[!noShadow ? 'shadow' : '']"
+    :class="[!noShadow ? 'shadow' : '', wrapperClass]"
   >
     <div class="overflow-x-auto rounded-t-md">
       <table class="w-full divide-y divide-gray-200">
