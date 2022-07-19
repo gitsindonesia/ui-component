@@ -155,6 +155,10 @@ const props = defineProps({
     type: String,
     default: 'sm:rounded-lg',
   },
+  bordered: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const emit =
@@ -370,11 +374,13 @@ const start = computed(() =>
 
 <template>
   <div
-    class="w-full flex flex-col border-gray-200"
+    class="w-full flex flex-col overflow-hidden"
     :class="[
       {
         shadow: !noShadow && !flat,
         [roundedClass]: true,
+        border: bordered,
+        'border-gray-200': bordered,
       },
       wrapperClass,
     ]"
@@ -382,7 +388,11 @@ const start = computed(() =>
     <div class="overflow-x-auto rounded-t-md">
       <table class="w-full divide-y divide-gray-200">
         <thead :class="headerClass">
-          <tr>
+          <tr
+            :class="{
+              'divide divide-x': bordered,
+            }"
+          >
             <th
               v-for="header in computedHeaders"
               :key="header.value"
@@ -475,6 +485,7 @@ const start = computed(() =>
               group: true,
               [stripedClass]: striped,
               [hoverClass]: hover,
+              'divide-x': bordered,
             }"
           >
             <td

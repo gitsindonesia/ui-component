@@ -127,6 +127,18 @@ Flat.parameters = {
   },
 };
 
+export const Bordered = Template.bind({});
+Bordered.args = {
+  bordered: true,
+};
+Bordered.parameters = {
+  docs: {
+    source: {
+      code: `<v-data-table :headers="headers" :items="items" bordered />`,
+    },
+  },
+};
+
 export const CustomWrapperClass = Template.bind({});
 CustomWrapperClass.args = {
   wrapperClass: 'border border-blue-500 shadow-blue-500',
