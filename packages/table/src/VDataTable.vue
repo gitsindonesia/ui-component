@@ -172,6 +172,7 @@ const emit =
     (e: 'update:sortDirection', value: SortDirection): void;
     (e: 'update:page', value: number): void;
     (e: 'update:itemsPerPage', value: number): void;
+    (e: 'update:totalItems', value: number): void;
     (e: 'update:pagination', value: Record<string, any>): void;
     (e: 'page:change', value: number): void;
     (e: 'itemsPerPage:change', value: number): void;
@@ -204,7 +205,7 @@ const {
   sortDirection: sortDirectionProp,
 } = toRefs(props);
 
-const page = ref(props.page);
+const page = ref(paginationPage.value);
 const perPage = ref(itemsPerPage.value);
 const offset = computed(() => (page.value - 1) * Number(perPage.value));
 const sortBy = ref(sortByProp.value);
@@ -330,17 +331,23 @@ const onPaginationChange = (params = {}) => {
 
 watch(page, (val) => {
   emit('page:change', val);
+  emit('update:page', val);
   onPaginationChange({page: val});
 });
 
 watch(perPage, (val) => {
   emit('itemsPerPage:change', val);
+  emit('update:itemsPerPage', val);
   onPaginationChange({itemsPerPage: val});
   page.value = 1;
 });
 
 watch(paginationPage, (val) => {
   page.value = val;
+});
+
+watch(itemsPerPage, (val) => {
+  perPage.value = val;
 });
 
 const selected = ref<any>([]);
