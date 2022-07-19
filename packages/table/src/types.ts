@@ -6,17 +6,19 @@ export interface VDataTableItem {
 }
 
 export interface VDataTableHeader {
-  text?: string;
-  value?: string;
+  text: string;
+  value: string;
   align?: string;
   sortable?: false;
   class?: string;
   [key: string]: any;
 }
 
+export type SortDirection = 'asc' | 'desc' | '';
+
 export interface VDataTableSortEvent {
   sortBy: string;
-  direction: 'asc' | 'desc' | '';
+  direction: SortDirection;
 }
 
 export interface VDataTableProps {

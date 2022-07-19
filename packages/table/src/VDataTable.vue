@@ -2,7 +2,7 @@
 import {computed, watch, ref, toRefs} from 'vue';
 import type {PropType} from 'vue';
 import VDataTablePagination from './VDataTablePagination.vue';
-import type {VDataTableHeader, VDataTableItem} from './types';
+import type {SortDirection, VDataTableHeader, VDataTableItem} from './types';
 import {ChevronDownIcon, ChevronUpIcon} from '@heroicons/vue/solid';
 import VSpinner from '@gits-id/spinner';
 import {VCheckbox} from '@gits-id/forms';
@@ -145,20 +145,21 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits([
-  'update:search',
-  'sort',
-  'update:sortBy',
-  'update:sortDirection',
-  'update:page',
-  'update:itemsPerPage',
-  'update:pagination',
-  'page:change',
-  'itemsPerPage:change',
-  'pagination:change',
-  'update:modelValue',
-  'update:value',
-]);
+const emit =
+  defineEmits<{
+    (e: 'update:search', value: string): void;
+    (e: 'update:sortBy', value: string): void;
+    (e: 'update:sortDirection', value: SortDirection): void;
+    (e: 'update:page', value: number): void;
+    (e: 'update:itemsPerPage', value: number): void;
+    (e: 'update:pagination', value: Record<string, any>): void;
+    (e: 'page:change', value: number): void;
+    (e: 'itemsPerPage:change', value: number): void;
+    (e: 'pagination:change', value: Record<string, any>): void;
+    (e: 'update:modelValue', value: any): void;
+    (e: 'update:value', value: any): void;
+    (e: 'sort', payload: {sortBy: string; direction: SortDirection}): void;
+  }>();
 
 const {
   disableSorting,
@@ -261,7 +262,7 @@ const getTdClass = (header: VDataTableHeader) => {
 const handleSort = (header: VDataTableHeader) => {
   if (!header) return;
 
-  let direction = '';
+  let direction: SortDirection = '';
   if (mustSort.value) {
     if (sortDirection.value === 'asc') {
       direction = 'desc';
