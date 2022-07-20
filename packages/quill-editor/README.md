@@ -30,7 +30,7 @@ pnpm i @gits-id/quill-editor
 
 ```html
 <script setup lang="ts">
-  import VQuillEditor from '@gits-id/quill-editor';
+  import {VQuillEditor} from '@gits-id/quill-editor';
   import '@gits-id/quill-editor/dist/style.css';
 
   const content = ref('');
