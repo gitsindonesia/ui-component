@@ -1,0 +1,40 @@
+{
+  "name": "@gits-id/quill-editor",
+  "version": "0.0.0",
+  "description": "Quill Editor Vue Component",
+  "scripts": {
+    "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
+    "prepublishOnly": "npm run build",
+    "test": "vitest"
+  },
+  "keywords": [
+    "quill",
+    "quill-editor",
+    "editor",
+    "wysiwyg",
+    "gits",
+    "ui-component"
+  ],
+  "author": "Warsono <warsono16694@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^3.2.31",
+    "quill": "^1.3.7",
+    "@vueup/vue-quill": "^1.0.0-beta.8"
+  },
+  "devDependencies": {
+    "@gits-id/tailwind-config": "^0.10.10",
+    "@vue/test-utils": "^2.0.0-rc.17",
+    "c8": "^7.11.3",
+    "tailwindcss": "^3.0.23",
+    "vee-validate": "^4.5.9",
+    "vite": "^2.9.9",
+    "vitest": "^0.12.4",
+    "@types/quill": "^2.0.9"
+  },
+  "main": "dist/quill-editor.umd.js",
+  "unpkg": "dist/quill-editor.iife.js",
+  "jsdelivr": "dist/quill-editor.iife.js",
+  "module": "./dist/quill-editor.es.js",
+  "types": "./dist/types/index.d.ts"
+}
