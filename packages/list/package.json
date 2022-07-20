@@ -42,5 +42,5 @@
   "jsdelivr": "dist/list.iife.js",
   "module": "./dist/list.es.js",
   "types": "./dist/types/index.d.ts",
-  "gitHead": "927ceb2dc21a5fdcc001f77cf86384e561837398"
+  "gitHead": "262e63ff9c3301948641b84ae8aeb76f2bf87463"
 }
