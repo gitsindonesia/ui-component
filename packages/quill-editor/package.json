@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/quill-editor",
-  "version": "0.10.11",
+  "version": "0.10.12",
   "description": "Quill Editor Vue Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -23,7 +23,7 @@
     "vue": "^3.2.31"
   },
   "devDependencies": {
-    "@gits-id/tailwind-config": "^0.10.11",
+    "@gits-id/tailwind-config": "^0.10.12",
     "@types/quill": "^2.0.9",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
