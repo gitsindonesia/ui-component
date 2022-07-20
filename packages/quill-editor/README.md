@@ -31,6 +31,7 @@ pnpm i @gits-id/quill-editor
 ```html
 <script setup lang="ts">
   import VQuillEditor from '@gits-id/quill-editor';
+  import '@gits-id/quill-editor/dist/style.css';
 
   const content = ref('');
 </script>
@@ -50,10 +51,11 @@ pnpm i @gits-id/quill-editor
 
 ```html
 <script setup lang="ts">
-  import VQuillEditor from '@gits-id/quill-editor';
+  import {VQuillEditor} from '@gits-id/quill-editor';
   import {useForm} from 'vee-validate';
   import {object, string} from 'yup';
   import VBtn from '@gits-id/button';
+  import '@gits-id/quill-editor/dist/style.css';
 
   const schema = object({
     content: string().required().label('Content'),
@@ -79,7 +81,7 @@ pnpm i @gits-id/quill-editor
       <v-btn type="submit">Submit</v-btn>
       <v-btn type="button" text @click="resetForm">Reset</v-btn>
     </div>
-    <pre>{{ {values} }}</pre>
+    <pre>{{ { values } }}</pre>
   </form>
 </template>
 ```
