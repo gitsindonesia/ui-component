@@ -37,15 +37,23 @@ const {value: content, errorMessage} = useField(name, rules, {
 
 const editor = ref();
 
+watch(modelValue, (value) => {
+  if (value) {
+    content.value = value;
+  }
+});
+
 watch(
   content,
   (val: any) => {
     editor.value?.setHTML(val);
 
     nextTick(() => {
-      let q = editor.value.getQuill();
-      q.setSelection(val.length, 0, 'api');
-      q.focus();
+      let q = editor.value?.getQuill();
+      if (q) {
+        q.setSelection(val.length, 0, 'api');
+        q.focus();
+      }
     });
   },
   {immediate: true},
