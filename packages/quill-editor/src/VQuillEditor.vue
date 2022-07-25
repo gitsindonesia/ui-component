@@ -10,7 +10,7 @@ const props = withDefaults(
     value?: string | Delta;
     name: string;
     label: string;
-    toolbar?: string;
+    toolbar?: 'essential' | 'minimal' | 'full' | '';
     rules?: string | Record<string, any>;
     contentType?: 'html' | 'text' | 'delta';
     enable?: boolean;
@@ -19,8 +19,8 @@ const props = withDefaults(
     errorClass?: string;
   }>(),
   {
+    toolbar: 'essential',
     modelValue: '',
-    toolbar: 'full',
     contentType: 'html',
     enable: true,
     readOnly: false,
