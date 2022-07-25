@@ -18,7 +18,7 @@ export default defineConfig({
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
-      external: ['vue', '@vueup/vue-quill', 'quill'],
+      external: ['vue', '@vueup/vue-quill', 'quill', 'vee-validate', 'yup'],
       output: {
         // Provide global variables to use in the UMD build
         // for externalized deps
