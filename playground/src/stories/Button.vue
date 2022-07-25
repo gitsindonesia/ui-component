@@ -1,10 +1,12 @@
 <template>
-  <button type="button" :class="classes" @click="onClick" :style="style">{{ label }}</button>
+  <button type="button" :class="classes" @click="onClick" :style="style">
+    {{ label }}
+  </button>
 </template>
 
 <script>
 import './button.css';
-import { reactive, computed } from 'vue';
+import {reactive, computed} from 'vue';
 
 export default {
   name: 'my-button',
@@ -31,7 +33,7 @@ export default {
 
   emits: ['click'],
 
-  setup(props, { emit }) {
+  setup(props, {emit}) {
     props = reactive(props);
     return {
       classes: computed(() => ({
@@ -45,8 +47,8 @@ export default {
       })),
       onClick() {
         emit('click');
-      }
-    }
+      },
+    };
   },
 };
 </script>

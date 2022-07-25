@@ -5,6 +5,7 @@ import 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard';
 import 'prism-themes/themes/prism-material-dark.css';
 import 'prismjs/plugins/toolbar/prism-toolbar.css';
 import {ref, withDefaults} from 'vue';
+import Prism from 'vue-prism-component';
 
 const props = withDefaults(
   defineProps<{

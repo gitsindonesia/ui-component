@@ -8,7 +8,21 @@ const {isOpen} = toRefs(state);
 
 <template>
   <div
-    class="z-10 sm:z-0 fixed overflow-y-auto sm:relative sm:top-0 top-[60px] h-[calc(100vh-70px)] w-full bg-white sm:bg-transparent p-4 sm:p-0"
+    class="
+      z-10
+      sm:z-0
+      fixed
+      overflow-y-auto
+      sm:relative
+      sm:top-0
+      top-[60px]
+      h-[calc(100vh-70px)]
+      w-full
+      bg-white
+      sm:bg-transparent
+      p-4
+      sm:p-0
+    "
     :class="isOpen ? 'block' : 'hidden sm:block'"
   >
     <AppMenu v-for="(menu, idx) in menus" :key="idx" :menu="menu" />

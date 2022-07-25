@@ -2,7 +2,23 @@
 
 <template>
   <div
-    class="flex h-16 p-2 sm:px-4 items-center gap-2 border-b z-20 fixed top-0 sm:relative bg-white w-full shadow-md sm:shadow-none"
+    class="
+      flex
+      h-16
+      p-2
+      sm:px-4
+      items-center
+      gap-2
+      border-b
+      z-20
+      fixed
+      top-0
+      sm:relative
+      bg-white
+      w-full
+      shadow-md
+      sm:shadow-none
+    "
   >
     <div class="flex sm:hidden">
       <HamburgerMenu />

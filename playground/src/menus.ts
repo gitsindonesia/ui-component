@@ -24,6 +24,7 @@ const componentSubMenus = [
   componentRoute('Container', '/components/container'),
   componentRoute('Logo', '/components/logo'),
   componentRoute('Switch', '/components/switch'),
+  componentRoute('QuillEditor', '/components/quill-editor'),
 ];
 
 const formChildren = [

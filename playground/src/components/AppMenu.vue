@@ -38,7 +38,18 @@ const isOpen = ref(true);
           :to="child.to"
           exact
           exact-active-class="bg-primary-50 text-primary-500"
-          class="hover:bg-primary-50 hover:text-primary-500 text-sm px-2 py-1 rounded transition duration-300 block sm:inline"
+          class="
+            hover:bg-primary-50
+            hover:text-primary-500
+            text-sm
+            px-2
+            py-1
+            rounded
+            transition
+            duration-300
+            block
+            sm:inline
+          "
         >
           {{ child.title }}
         </router-link>
