@@ -1,8 +1,7 @@
 import Stepper from './Stepper.vue';
-import StepperItem from './StepperItem.vue';
-import StepperNumber from './StepperNumber.vue';
-import StepperDivider from './StepperDivider.vue';
-
+export {default as StepperItem} from './StepperItem.vue';
+export {default as StepperNumber} from './StepperNumber.vue';
+export {default as StepperDivider} from './StepperDivider.vue';
 export * from './types';
-export {Stepper, StepperItem, StepperDivider, StepperNumber};
+export {Stepper};
 export default Stepper;

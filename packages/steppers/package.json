@@ -26,10 +26,10 @@
     "vite": "^2.9.9",
     "vitest": "^0.12.4"
   },
-  "main": "dist/steppers.umd.js",
-  "unpkg": "dist/steppers.iife.js",
-  "jsdelivr": "dist/steppers.iife.js",
-  "module": "./dist/steppers.es.js",
+  "main": "dist/stepper.umd.js",
+  "unpkg": "dist/stepper.iife.js",
+  "jsdelivr": "dist/stepper.iife.js",
+  "module": "./dist/stepper.es.js",
   "types": "./dist/types/index.d.ts",
   "gitHead": "262e63ff9c3301948641b84ae8aeb76f2bf87463"
 }
