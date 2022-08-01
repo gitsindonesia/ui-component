@@ -1676,8 +1676,10 @@
     "@gits-id/utils" "^0.10.12"
     vue "^3.2.31"
 
-"@gits-id/quill-editor@../packages/quill-editor":
+"@gits-id/quill-editor@^0.10.13":
   version "0.10.13"
+  resolved "https://registry.yarnpkg.com/@gits-id/quill-editor/-/quill-editor-0.10.13.tgz#070785cced55efb35e2c2fb53e37e61bd8191254"
+  integrity sha512-32aFWNAQ3VjvvWMMqNPYdg6gtrNM5kROKR/rVbV6sNopuQy/YMw/CcISLYY+xl1zgERA7qlXkiBBP+T8KFyKfw==
   dependencies:
     "@vueup/vue-quill" "^1.0.0-beta.8"
     quill "^1.3.7"
@@ -1722,10 +1724,10 @@
     feather-icons "^4.28.0"
     vue "^3.2.31"
 
-"@gits-id/stepper@0.10.14-alpha.1+25d9226":
-  version "0.10.14-alpha.1"
-  resolved "https://registry.yarnpkg.com/@gits-id/stepper/-/stepper-0.10.14-alpha.1.tgz#2c44021223d5267393223085946e579e18a1fd26"
-  integrity sha512-UH27JHkdot60KcwedsbHHaLR4PQSgC4tW8Ruvz+xdEbFhVhx/7xj+/wb1IQEh9WpHoYnQdi+tW/EAx4Q7VC0Dg==
+"@gits-id/stepper@^0.10.14":
+  version "0.10.14"
+  resolved "https://registry.yarnpkg.com/@gits-id/stepper/-/stepper-0.10.14.tgz#ec05f5025a6cb5d26ed2d3f078941ec4d4d6c6da"
+  integrity sha512-T5Di1V0H76wtH/otcVAwIEw+r+7RtdvpGfzm7x0E78qfUX8QxZ5WXSs0clKMxjpN2ToWgejSQtbt977Dqz4Njg==
   dependencies:
     tailwindcss "^3.0.23"
     vue "^3.2.31"
@@ -1767,8 +1769,10 @@
   dependencies:
     vue "^3.2.33"
 
-"@gits-id/tailwind-config@../packages/tailwind-config", "@gits-id/tailwind-config@^0.10.12":
+"@gits-id/tailwind-config@^0.10.12":
   version "0.10.12"
+  resolved "https://registry.yarnpkg.com/@gits-id/tailwind-config/-/tailwind-config-0.10.12.tgz#dbda18ba83c140621d781bdb8a2696c27e520689"
+  integrity sha512-DKJL1l6noRA19nb/rh7bMwae7RjSBX6/Cm59SjugDFelD+7UwEBurPDht/ZGbUwge3eIySOHda2fgs05ya4ISA==
   dependencies:
     "@gits-id/tailwind-components" "^0.10.12"
     "@gits-id/theme" "^0.10.12"
@@ -1817,8 +1821,10 @@
     vee-validate "^4.5.9"
     vue "^3.2.31"
 
-"@gits-id/ui@../packages/ui":
+"@gits-id/ui@^0.10.12":
   version "0.10.12"
+  resolved "https://registry.yarnpkg.com/@gits-id/ui/-/ui-0.10.12.tgz#a1ed0c37635357787ca0748842d315b71366dc77"
+  integrity sha512-5Bf0j+/RFp20sgE1O2ESr5kolKM1WB0qwYucbD0wuZIy/TFLckdQ3vuc8v+eMxpDFerus/KYEfgfKaXzWqZNfw==
   dependencies:
     "@gits-id/alert" "^0.10.12"
     "@gits-id/app-bar" "^0.10.12"
