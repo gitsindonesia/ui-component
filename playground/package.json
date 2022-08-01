@@ -16,6 +16,7 @@
     "@gits-id/tailwind-config": "../packages/tailwind-config",
     "@gits-id/quill-editor": "../packages/quill-editor",
     "@gits-id/ui": "../packages/ui",
+    "@gits-id/stepper": "0.10.14-alpha.1+25d9226",
     "pinia": "^2.0.12",
     "prism-themes": "^1.9.0",
     "prismjs": "^1.27.0",
