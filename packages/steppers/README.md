@@ -1,45 +1,46 @@
 # GITS Steppers Component
 
-> Reusable Steppers Component
-
 ## Installation
 
 npm
 
 ```
-npm i @gits-id/steppers
+npm i @gits-id/stepper
 ```
 
 yarn
 
 ```
-yarn add @gits-id/steppers
+yarn add @gits-id/stepper
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/steppers
+pnpm i @gits-id/stepper
 ```
 
 ## Usage
 
 ```vue
 <script setup lang="ts">
-// import styles
-import '@gits-id/steppers/dist/style.css';
-// import component
-import Steppers from '@gits-id/steppers';
+import Stepper from '@gits-id/stepper';
+
+const items = Array.from({length: 5}, (v, k) => ({
+  title: 'Title',
+  subtitle: 'Subtitle',
+  path: '/step/' + k,
+}));
 </script>
 
 <template>
-  <Steppers />
+  <Stepper :items="items" />
 </template>
 ```
 
 ## Documentation
 
-View `Steppers` documentation [here](https://gits-ui.web.app/?path=/story/components-steppers--default).
+View full documentation [here](https://gits-ui.web.app/?path=/story/components-steppers--default).
 
 ## License
 
