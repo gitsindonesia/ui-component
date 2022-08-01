@@ -3,6 +3,7 @@ import {Meta, Story} from '@storybook/vue3';
 import {useForm} from 'vee-validate';
 import {object, string} from 'yup';
 import VBtn from '@gits-id/button';
+import {ref} from 'vue';
 
 export default {
   title: 'Forms/QuillEditor',
@@ -10,15 +11,17 @@ export default {
   args: {
     modelValue: '',
   },
-} as Meta;
+} as Meta<typeof VQuillEditor>;
 
-const Template: Story = (args) => ({
+const Template: Story<typeof VQuillEditor> = (args) => ({
   components: {VQuillEditor},
   setup() {
-    return {args};
+    const value = ref('');
+    return {args, value};
   },
   template: `
-    <VQuillEditor v-bind="args" />
+    <VQuillEditor v-model="value" v-bind="args" />
+    <p>Value: {{value}}</p>
   `,
 });
 
