@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {ref} from 'vue';
-import {VEditor} from '@gits-id/ui';
+import VEditor from '@gits-id/editor';
 
 const breadcrumbs = ref([
   {
