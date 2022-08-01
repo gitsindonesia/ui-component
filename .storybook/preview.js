@@ -17,4 +17,18 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  options: {
+    storySort: {
+      method: 'alphabetical',
+      order: [
+        'Getting Started',
+        'Components',
+        'Forms',
+        'Layouts',
+        'Pages',
+        'Snippets',
+      ],
+      // locales: '',
+    },
+  },
 };
