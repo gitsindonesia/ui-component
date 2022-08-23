@@ -1,7 +1,7 @@
 import VAlert from './VAlert.vue';
 import {themeColors} from '@gits-id/utils/colors';
 import {Meta, Story} from '@storybook/vue3';
-import {RiInformationFill, RiCloseCircleLine} from 'vue-remix-icons';
+import {InformationCircleIcon, XCircleIcon} from '@heroicons/vue/outline';
 
 export default {
   title: 'Components/Alert',
@@ -97,14 +97,14 @@ Icon.parameters = {
 };
 
 export const CustomSlots = () => ({
-  components: {VAlert, RiCloseCircleLine, RiInformationFill},
+  components: {VAlert, InformationCircleIcon, XCircleIcon},
   template: `
 <v-alert color="error" dismissable>
   <template #icon>
-    <RiInformationFill class="fill-current w-6 h-6 mr-2" />
+    <InformationCircleIcon class="fill-current w-6 h-6 mr-2" />
   </template>
   <template #x-icon>
-    <RiCloseCircleLine class="fill-current w-6 h-6 text-error-500" />
+    <XCircleIcon class="fill-current w-6 h-6 text-error-500" />
   </template>
 
   Change a few things up and try submitting again.
@@ -116,10 +116,10 @@ CustomSlots.parameters = {
     source: {
       code: `<v-alert color="error" dismissable>
   <template #icon>
-    <RiInformationFill class="fill-current w-6 h-6 mr-2" />
+    <InformationCircleIcon class="fill-current w-6 h-6 mr-2" />
   </template>
   <template #x-icon>
-    <RiCloseCircleLine class="fill-current w-6 h-6 text-error-500" />
+    <XCircleIcon class="fill-current w-6 h-6 text-error-500" />
   </template>
 
   Change a few things up and try submitting again.
