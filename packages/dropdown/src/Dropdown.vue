@@ -2,7 +2,7 @@
 import {Menu, MenuButton, MenuItems} from '@headlessui/vue';
 import type {DropdownItemProps} from './types';
 import DropdownItem from './DropdownItem.vue';
-import {RiArrowDownSLine as IconArrowDown} from 'vue-remix-icons';
+import {ChevronDownIcon} from '@heroicons/vue/outline';
 
 withDefaults(
   defineProps<{
@@ -33,7 +33,7 @@ withDefaults(
     panelClass: '',
     buttonWrapperClass: '',
     leftClass: 'left-0',
-    rightClass: 'right-0'
+    rightClass: 'right-0',
   },
 );
 </script>
@@ -44,7 +44,7 @@ withDefaults(
       <slot name="activator" :btn-props="btnProps" :label="label">
         <MenuButton as="button" v-bind="btnProps">
           {{ label }}
-          <IconArrowDown class="w-5 h-5 inline" aria-hidden="true" />
+          <ChevronDownIcon class="w-5 h-5 inline" aria-hidden="true" />
         </MenuButton>
       </slot>
     </div>
