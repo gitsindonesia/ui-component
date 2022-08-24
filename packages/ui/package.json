@@ -44,6 +44,7 @@
     "@gits-id/toast": "^0.11.0",
     "@gits-id/tooltip": "^0.11.0",
     "@gits-id/utils": "^0.11.0",
+    "@gits-id/icon": "^0.11.0",
     "@vue/test-utils": "^2.0.0-rc.17",
     "vue": "^3.2.33"
   },

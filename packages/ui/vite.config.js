@@ -60,6 +60,7 @@ export default defineConfig({
         '@gits-id/tooltip',
         '@gits-id/utils',
         '@gits-id/list',
+        '@gits-id/icon',
         'vee-validate',
         'vue-router',
         'pinia',
