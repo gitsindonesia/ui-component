@@ -1,0 +1,31 @@
+{
+  "name": "@gits-id/icon",
+  "version": "0.10.12",
+  "description": "GITS Icon Component",
+  "scripts": {
+    "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
+    "prepublishOnly": "npm run build",
+    "test": "vitest"
+  },
+  "keywords": [
+    "gits",
+    "icon",
+    "iconify"
+  ],
+  "author": "Warsono <warsono16694@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^3.2.31"
+  },
+  "devDependencies": {
+    "vite": "^2.9.9",
+    "vitest": "^0.12.4",
+    "vue-tsc": "^0.40.1"
+  },
+  "main": "dist/icon.js",
+  "unpkg": "dist/icon.iife.js",
+  "jsdelivr": "dist/icon.iife.js",
+  "module": "./dist/icon.mjs",
+  "types": "./dist/types/index.d.ts",
+  "gitHead": "262e63ff9c3301948641b84ae8aeb76f2bf87463"
+}
