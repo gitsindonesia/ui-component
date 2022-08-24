@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/ui",
-  "version": "0.11.1",
+  "version": "0.11.2-alpha.1+5e85d86",
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "npm run build",
@@ -61,7 +61,7 @@
     "./editor": "./editor.js",
     "./*": "./src/*"
   },
-  "gitHead": "262e63ff9c3301948641b84ae8aeb76f2bf87463",
+  "gitHead": "5e85d86dd287ec2269eea3d5f5c9faed649bbf77",
   "devDependencies": {
     "c8": "^7.11.3",
     "unplugin-vue-components": "^0.21.1",
