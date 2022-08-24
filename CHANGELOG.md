@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.11.0](https://github.com/gitsindonesia/ui-component/compare/v0.10.14...v0.11.0) (2022-08-24)
+
+### Features
+
+- **autocomplete:** replace remix icons with Icon component ([86b0368](https://github.com/gitsindonesia/ui-component/commit/86b036872e4252cdbc607668820e44c0e5d83d2e))
+- **dropdown:** replace vue-remix-icons with heroicons ([aa23078](https://github.com/gitsindonesia/ui-component/commit/aa23078a1c923692d4fc2b8bb4e2a7063bbe0424))
+- **Icon:** new `Icon` component ([6d9ba51](https://github.com/gitsindonesia/ui-component/commit/6d9ba517d7276ef41e0e75263f54f8127f893d36))
+
 ## [0.10.12](https://github.com/gitsindonesia/ui-component/compare/v0.10.11...v0.10.12) (2022-07-20)
 
 **Note:** Version bump only for package @gits-id/components

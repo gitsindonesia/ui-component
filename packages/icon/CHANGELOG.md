@@ -5,8 +5,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [0.11.0](https://github.com/gitsindonesia/ui-component/compare/v0.10.14...v0.11.0) (2022-08-24)
 
-**Note:** Version bump only for package @gits-id/quill-editor
+### Features
 
-## [0.10.12](https://github.com/gitsindonesia/ui-component/compare/v0.10.11...v0.10.12) (2022-07-20)
-
-**Note:** Version bump only for package @gits-id/quill-editor
+- **Icon:** new `Icon` component ([6d9ba51](https://github.com/gitsindonesia/ui-component/commit/6d9ba517d7276ef41e0e75263f54f8127f893d36))

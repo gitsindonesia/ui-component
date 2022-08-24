@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/menu",
-  "version": "0.10.12",
+  "version": "0.11.0",
   "description": "GITS Menu Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -20,9 +20,9 @@
     "vue-router": "^4.0.13"
   },
   "devDependencies": {
-    "@gits-id/collapsible": "^0.10.12",
-    "@gits-id/tailwind-config": "^0.10.12",
-    "@gits-id/utils": "^0.10.12",
+    "@gits-id/collapsible": "^0.11.0",
+    "@gits-id/tailwind-config": "^0.11.0",
+    "@gits-id/utils": "^0.11.0",
     "@headlessui/vue": "^1.6.0",
     "@heroicons/vue": "^1.0.6",
     "@vue/test-utils": "^2.0.0-rc.17",
