@@ -1,7 +1,7 @@
 import {Meta, Story} from '@storybook/vue3';
 import VBtn from '@gits-id/button';
 import {VInput} from '@gits-id/forms';
-import {RiMailLine, RiExternalLinkLine, RiPhoneLine} from 'vue-remix-icons';
+import {Icon} from '@gits-id/icon';
 import {object, string} from 'yup';
 import {useForm} from 'vee-validate';
 
@@ -12,7 +12,7 @@ export default {
 } as Meta;
 
 export const ContactForm: Story = (args) => ({
-  components: {VBtn, VInput, RiMailLine, RiExternalLinkLine, RiPhoneLine},
+  components: {VBtn, VInput, Icon},
   setup() {
     const schema = object({
       name: string().required().label('Name'),
@@ -44,7 +44,7 @@ export const ContactForm: Story = (args) => ({
             <li>
               <a href="#" class="flex gap-2 items-center text-gray-700 hover:text-gray-900">
                 <div class="w-9 h-9 bg-primary rounded-full grid place-items-center">
-                  <RiMailLine class="fill-current text-white w-5 h-5" />
+                  <Icon name="ri:mail-line" class="fill-current text-white w-5 h-5" />
                 </div>
                 connect@gits.id
               </a>
@@ -52,7 +52,7 @@ export const ContactForm: Story = (args) => ({
             <li>
               <a href="https://api.whatsapp.com/send?phone=+628111309991" target="_blank" rel="noopener" class="flex gap-2 items-center text-gray-700 hover:text-gray-900">
                 <div class="w-9 h-9 bg-secondary rounded-full grid place-items-center">
-                  <RiPhoneLine class="fill-current text-white w-5 h-5" />
+                  <Icon name="ri:phone-line" class="fill-current text-white w-5 h-5" />
                 </div>
                 +62-8111-3099-91
               </a>
@@ -60,7 +60,7 @@ export const ContactForm: Story = (args) => ({
             <li>
               <a href="https://gits.id" target="_blank" rel="noopener" class="flex gap-2 items-center text-gray-700 hover:text-gray-900">
                 <div class="w-9 h-9 bg-gray-700 rounded-full grid place-items-center">
-                  <RiExternalLinkLine class="fill-current text-white w-5 h-5" />
+                  <Icon name="ri:global-line" class="fill-current text-white w-5 h-5" />
                 </div>
                 gits.id
               </a>

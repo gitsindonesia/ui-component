@@ -1,18 +1,6 @@
 import {Meta, Story} from '@storybook/vue3';
 import MyNavbarDrawer from './VNavDrawer.vue';
-import {
-  RiDashboardLine,
-  RiStethoscopeLine,
-  RiFunctionLine,
-  RiCalendarLine,
-  RiUserSettingsLine,
-  RiShoppingCart2Line,
-  RiImageAddLine,
-  RiTestTubeLine,
-  RiHistoryLine,
-  RiMentalHealthLine,
-  RiPhoneLine,
-} from 'vue-remix-icons';
+import {Icon} from '@gits-id/icon';
 
 export default {
   title: 'Components/NavDrawer',
@@ -27,13 +15,13 @@ export default {
       {
         text: 'Dasbor',
         to: '/',
-        icon: RiDashboardLine,
+        icon: 'ri:database-2-line',
         hover: false,
         permission: ['dashboard-view'],
       },
       {
         text: 'Administrator',
-        icon: RiUserSettingsLine,
+        icon: 'ri:database-2-line',
         hover: false,
         children: [
           {
@@ -50,19 +38,19 @@ export default {
       },
       {
         text: 'Manajemen Dokter',
-        icon: RiStethoscopeLine,
+        icon: 'ri:database-2-line',
         to: '/cms/manajemen-dokter',
         permission: ['doctor-view'],
       },
       {
         text: 'Manajemen Fitur',
         to: '/cms/manajemen-fitur',
-        icon: RiFunctionLine,
+        icon: 'ri:database-2-line',
         hover: false,
       },
       {
         text: 'Manajemen Tes & Panel',
-        icon: RiTestTubeLine,
+        icon: 'ri:database-2-line',
         children: [
           {
             text: 'Tes Populer',
@@ -77,26 +65,26 @@ export default {
       {
         text: 'Manajemen Spanduk',
         to: '/cms/manajemen-spanduk',
-        icon: RiImageAddLine,
+        icon: 'ri:database-2-line',
         hover: false,
         permission: ['banner-view'],
       },
       {
         text: 'Manajemen Praktik & SIP',
         to: '/cms/manajemen-praktik-sip',
-        icon: RiCalendarLine,
+        icon: 'ri:database-2-line',
         hover: false,
       },
       {
         text: 'Riwayat Pemesanan',
         to: '/cms/riwayat-pemesanan',
-        icon: RiShoppingCart2Line,
+        icon: 'ri:database-2-line',
         hover: false,
         permission: ['order-view'],
       },
       {
         text: 'Manajemen Informasi',
-        icon: RiMentalHealthLine,
+        icon: 'ri:database-2-line',
         children: [
           {
             text: 'Informasi',
@@ -113,13 +101,13 @@ export default {
       {
         text: 'Log Aktivitas',
         to: '/cms/log-aktivitas',
-        icon: RiHistoryLine,
+        icon: 'ri:database-2-line',
         hover: false,
       },
       {
         text: 'Kontak Kami',
         to: '/cms/kontak-kami',
-        icon: RiPhoneLine,
+        icon: 'ri:database-2-line',
         hover: false,
       },
     ],
@@ -163,7 +151,7 @@ ExpandHover.parameters = {
 
 export const CustomAttributes = Template.bind({});
 CustomAttributes.args = {
-  class: 'bg-blue-800'
+  class: 'bg-blue-800',
 };
 CustomAttributes.parameters = {
   docs: {

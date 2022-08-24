@@ -29,6 +29,7 @@
   "types": "./dist/types/index.d.ts",
   "gitHead": "262e63ff9c3301948641b84ae8aeb76f2bf87463",
   "dependencies": {
-    "vue": "^3.2.33"
+    "vue": "^3.2.33",
+    "@gits-id/icon": "^0.10.12"
   }
 }

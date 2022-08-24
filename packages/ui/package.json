@@ -45,8 +45,7 @@
     "@gits-id/tooltip": "^0.10.12",
     "@gits-id/utils": "^0.10.12",
     "@vue/test-utils": "^2.0.0-rc.17",
-    "vue": "^3.2.33",
-    "vue-remix-icons": "^1.1.1"
+    "vue": "^3.2.33"
   },
   "main": "./dist/ui.umd.js",
   "unpkg": "./dist/ui.iife.js",

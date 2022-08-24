@@ -1,5 +1,5 @@
 import {Meta, Story} from '@storybook/vue3';
-import {Ri4kFill} from 'vue-remix-icons';
+import {Icon} from '@gits-id/icon';
 
 export default {
   title: 'Snippets/Feature Sections',
@@ -8,7 +8,7 @@ export default {
 } as Meta;
 
 export const FeatureSections: Story = (args) => ({
-  components: {Ri4kFill},
+  components: {Icon},
   setup() {
     return {args};
   },
@@ -29,7 +29,7 @@ export const FeatureSections: Story = (args) => ({
           <div
             class="bg-primary border-primary w-10 h-10 rounded grid place-items-center mb-3"
           >
-            <Ri4kFill class="w-5 h-5 fill-current text-white" />
+            <Icon name="ri:4k-line" class="w-5 h-5 fill-current text-white" />
           </div>
           <h3 class="font-semibold text-gray-800 mb-1 text-lg">
             Feature {{ i }}

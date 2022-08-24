@@ -1,7 +1,7 @@
 import {Meta, Story} from '@storybook/vue3';
 import VMenu from './VMenu.vue';
 import vueRouter from 'storybook-vue3-router';
-import {RiHomeFill} from 'vue-remix-icons';
+import {Icon} from '@gits-id/icon';
 
 export default {
   title: 'Components/Menu',
@@ -11,7 +11,7 @@ export default {
     menu: {
       text: 'Text',
       to: '/',
-      icon: RiHomeFill,
+      icon: 'ri:home-2-line',
       children: [
         {
           text: 'Sub Item',
@@ -36,15 +36,12 @@ export default {
 } as Meta;
 
 const Template: Story = (args) => ({
-  // Components used in your story `template` are defined in the `components` object
   components: {
     VMenu,
   },
-  // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
     return {args};
   },
-  // And then the `args` are bound to your component with `v-bind="args"`
   template: `
   <div :class="args.mini ? 'w-12' : ''">
     <VMenu v-bind="args">{{ args.label }}</VMenu>
@@ -99,15 +96,15 @@ CustomActiveClass.parameters = {
   },
 };
 
-export const Icon = Template.bind({});
-Icon.args = {
+export const Icons = Template.bind({});
+Icons.args = {
   menu: {
     text: 'Text',
     to: '/',
     icon: 'mdi-light:home',
   },
 };
-Icon.parameters = {
+Icons.parameters = {
   docs: {
     source: {
       code: '<v-menu :menu="menu" />',
@@ -129,7 +126,7 @@ Single.parameters = {
       code: `<v-menu :menu="{
   text: 'Text',
   to: '/',
-  icon: RiHomeFill,
+  icon: 'ri:home-2-line',
 }" />`,
     },
   },

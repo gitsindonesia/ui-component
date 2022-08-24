@@ -2,7 +2,7 @@ import VInput from './VInput.vue';
 import {sizes} from '@gits-id/utils/sizes';
 import {Meta, Story} from '@storybook/vue3';
 import type {VInputProps} from './types';
-import {RiSearchLine} from 'vue-remix-icons';
+import {Icon} from '@gits-id/icon';
 import {themeColors} from '@gits-id/utils';
 import VBtn from '@gits-id/button';
 import {useForm} from 'vee-validate';
@@ -183,7 +183,7 @@ Error.parameters = {
   },
 };
 
-export const Icon: Story<VInputProps> = (args) => ({
+export const Icons: Story<VInputProps> = (args) => ({
   components: {VInput},
   setup() {
     const showAlert = (message: string) => {
@@ -206,7 +206,7 @@ export const Icon: Story<VInputProps> = (args) => ({
 </div>
 `,
 });
-Icon.parameters = {
+Icons.parameters = {
   docs: {
     source: {
       code: `
@@ -262,7 +262,7 @@ Icon.parameters = {
 };
 
 export const Slots: Story<VInputProps> = (args) => ({
-  components: {VInput, RiSearchLine, VBtn},
+  components: {VInput, Icon, VBtn},
   setup() {
     return {args};
   },
@@ -271,25 +271,25 @@ export const Slots: Story<VInputProps> = (args) => ({
 <div class="space-y-1 border-none">
   <v-input placeholder="Search...">
     <template #prepend.outer>
-      <RiSearchLine class="fill-current mr-1 w-5 h-5" />
+      <Icon name="ri:search" class="fill-current mr-1 w-5 h-5" />
     </template>
   </v-input>
 
   <v-input placeholder="Search...">
     <template #append.outer>
-      <RiSearchLine class="fill-current mr-3 w-5 h-5" />
+      <Icon name="ri:search" class="fill-current mr-3 w-5 h-5" />
     </template>
   </v-input>
 
   <v-input placeholder="Search..." class="pl-10">
     <template #prepend>
-      <RiSearchLine class="fill-current ml-3 w-5 h-5" />
+      <Icon name="ri:search" class="fill-current ml-3 w-5 h-5" />
     </template>
   </v-input>
 
   <v-input placeholder="Search...">
     <template #append>
-      <RiSearchLine class="fill-current mr-3 w-5 h-5" />
+      <Icon name="ri:search" class="fill-current mr-3 w-5 h-5" />
     </template>
   </v-input>
 
@@ -353,25 +353,25 @@ Slots.parameters = {
 <div class="space-y-1 border-none">
   <v-input placeholder="Search...">
     <template #prepend.outer>
-      <RiSearchLine class="fill-current mr-1 w-5 h-5" />
+      <Icon name="ri:search" class="fill-current mr-1 w-5 h-5" />
     </template>
   </v-input>
 
   <v-input placeholder="Search...">
     <template #append.outer>
-      <RiSearchLine class="fill-current mr-3 w-5 h-5" />
+      <Icon name="ri:search" class="fill-current mr-3 w-5 h-5" />
     </template>
   </v-input>
 
   <v-input placeholder="Search..." input-class="pl-10">
     <template #prepend>
-      <RiSearchLine class="fill-current w-5 h-5" />
+      <Icon name="ri:search" class="fill-current w-5 h-5" />
     </template>
   </v-input>
 
   <v-input placeholder="Search...">
     <template #append>
-      <RiSearchLine class="fill-current w-5 h-5" />
+      <Icon name="ri:search" class="fill-current w-5 h-5" />
     </template>
   </v-input>
 

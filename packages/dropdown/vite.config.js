@@ -20,10 +20,9 @@ export default defineConfig({
       // into your library
       external: [
         'vue',
-        '@heroicons/vue/solid',
         '@gits-id/button',
+        '@gits-id/icon',
         '@headlessui/vue',
-        'vue-remix-icons',
         'vue-router',
       ],
       output: {
