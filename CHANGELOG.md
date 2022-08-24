@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.1](https://github.com/gitsindonesia/ui-component/compare/v0.11.0...v0.11.1) (2022-08-24)
+
+### Bug Fixes
+
+- **icon:** fix package exports ([a35a622](https://github.com/gitsindonesia/ui-component/commit/a35a62205e971d58fa33d7de4f4de48a3b6eaee6))
+- **ui:** register icon component ([28f51ca](https://github.com/gitsindonesia/ui-component/commit/28f51caad39a870479f2c6e189a1672527d98fbb))
+
 # [0.11.0](https://github.com/gitsindonesia/ui-component/compare/v0.10.14...v0.11.0) (2022-08-24)
 
 ### Features

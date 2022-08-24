@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/ui",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "npm run build",
@@ -10,14 +10,15 @@
     "@gits-id/alert": "^0.11.0",
     "@gits-id/app-bar": "^0.11.0",
     "@gits-id/badge": "^0.11.0",
-    "@gits-id/breadcrumbs": "^0.11.0",
+    "@gits-id/breadcrumbs": "^0.11.1",
     "@gits-id/button": "^0.11.0",
     "@gits-id/card": "^0.11.0",
     "@gits-id/collapsible": "^0.11.0",
     "@gits-id/container": "^0.11.0",
-    "@gits-id/dropdown": "^0.11.0",
+    "@gits-id/dropdown": "^0.11.1",
     "@gits-id/editor": "^0.11.0",
     "@gits-id/forms": "^0.11.0",
+    "@gits-id/icon": "^0.11.1",
     "@gits-id/layouts": "^0.11.0",
     "@gits-id/list": "^0.11.0",
     "@gits-id/logo": "^0.11.0",
@@ -44,7 +45,6 @@
     "@gits-id/toast": "^0.11.0",
     "@gits-id/tooltip": "^0.11.0",
     "@gits-id/utils": "^0.11.0",
-    "@gits-id/icon": "^0.11.0",
     "@vue/test-utils": "^2.0.0-rc.17",
     "vue": "^3.2.33"
   },

@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/breadcrumbs",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "description": "GITS Breadcrumbs Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -29,7 +29,7 @@
   "types": "./dist/types/index.d.ts",
   "gitHead": "262e63ff9c3301948641b84ae8aeb76f2bf87463",
   "dependencies": {
-    "@gits-id/icon": "^0.11.0",
+    "@gits-id/icon": "^0.11.1",
     "vue": "^3.2.33"
   }
 }
