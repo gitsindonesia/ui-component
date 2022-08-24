@@ -10,11 +10,7 @@ import {
   TransitionRoot,
 } from '@headlessui/vue';
 import {useField} from 'vee-validate';
-import {
-  RiCheckLine as CheckIcon,
-  RiCloseLine as XIcon,
-  RiArrowDownSLine as ChevronDownIcon,
-} from 'vue-remix-icons';
+import {Icon} from '@gits-id/icon';
 
 type Item = {
   text: string;
@@ -151,13 +147,15 @@ const clear = () => {
             "
             @click="clear"
           >
-            <XIcon
+            <Icon
+              name="ri:check-line"
               class="w-6 h-6 fill-current text-gray-400"
               aria-hidden="true"
             />
           </button>
           <ComboboxButton>
-            <ChevronDownIcon
+            <Icon
+              name="ri:arrow-down-s-line"
               class="w-6 h-6 fill-current text-gray-400"
               aria-hidden="true"
             />
@@ -229,7 +227,8 @@ const clear = () => {
                 v-if="selected"
                 class="absolute inset-y-0 left-0 flex items-center pl-3"
               >
-                <CheckIcon
+                <Icon
+                  name="ri:check-line"
                   class="w-5 h-5 fill-current text-primary-500"
                   aria-hidden="true"
                 />
