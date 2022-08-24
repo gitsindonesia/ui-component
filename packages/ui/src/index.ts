@@ -19,11 +19,7 @@ import {
   VTextarea,
 } from '@gits-id/forms';
 import {VDataTable, VDataTablePagination} from '@gits-id/table';
-import {
-  Dropdown as VDropdown,
-  DropdownItem as VDropdownItem,
-  DropdownButton,
-} from '@gits-id/dropdown';
+import {Dropdown, DropdownItem, DropdownButton} from '@gits-id/dropdown';
 import VModal from '@gits-id/modal';
 import VPagination from '@gits-id/pagination';
 import VProgressBar from '@gits-id/progress-bar';
@@ -74,8 +70,9 @@ const plugin = {
     app.component('VCheckbox', VCheckbox);
     app.component('VDataTable', VDataTable);
     app.component('VDataTablePagination', VDataTablePagination);
-    app.component('VDropdown', VDropdown);
-    app.component('VDropdownItem', VDropdownItem);
+    app.component('VDropdown', Dropdown);
+    app.component('VDropdownItem', DropdownItem);
+    app.component('VDropdownButton', DropdownButton);
     app.component('VFormSelect', VFormSelect);
     app.component('VInput', VInput);
     app.component('VInputGroup', VInputGroup);
@@ -105,7 +102,6 @@ const plugin = {
     app.component('VCollapsibleGroup', VCollapsibleGroup);
     app.component('VMultiSelect', VMultiSelect);
     app.component('VLogo', VLogo);
-    app.component('VDropdownButton', DropdownButton);
     app.component('VList', List);
     app.component('VListItem', ListItem);
     app.component('VListItemDivider', ListItemDivider);
@@ -125,7 +121,6 @@ export {
   VCheckbox,
   VDataTable,
   VDataTablePagination,
-  VDropdown,
   VFormSelect,
   VInput,
   VInputGroup,
@@ -164,6 +159,8 @@ export {
   VCollapsibleGroup,
   VFileUpload,
   DropdownButton,
+  DropdownItem,
+  Dropdown,
   VMultiSelect,
   List,
   ListCollapse,
