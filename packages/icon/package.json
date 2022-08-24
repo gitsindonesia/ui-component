@@ -22,10 +22,10 @@
     "vitest": "^0.12.4",
     "vue-tsc": "^0.40.1"
   },
-  "main": "dist/icon.js",
+  "main": "dist/icon.umd.js",
   "unpkg": "dist/icon.iife.js",
   "jsdelivr": "dist/icon.iife.js",
-  "module": "./dist/icon.mjs",
+  "module": "./dist/icon.es.js",
   "types": "./dist/types/index.d.ts",
   "gitHead": "63a466289461c9391850c40d3ffa7f8429ce979f"
 }
