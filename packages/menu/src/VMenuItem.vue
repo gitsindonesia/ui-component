@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import VMenuTooltip from './VMenuTooltip.vue';
-import {computed, PropType} from 'vue';
+import {computed, PropType, resolveComponent} from 'vue';
 import {Menu} from './types';
 import {Icon} from '@iconify/vue';
 
@@ -26,6 +26,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  as: {
+    type: String,
+    default: '',
+  },
 });
 
 const centerClass = computed(() => {
@@ -39,11 +43,14 @@ const centerClass = computed(() => {
 
   return '';
 });
+
+const is = computed(() => props.as || resolveComponent('RouterLink'));
 </script>
 
 <template>
-  <router-link
+  <component
     v-if="item"
+    :is="is"
     :to="item.to"
     exact
     class="
@@ -72,5 +79,5 @@ const centerClass = computed(() => {
     <v-menu-tooltip :show="mini && !expandHover">
       {{ item.text }}
     </v-menu-tooltip>
-  </router-link>
+  </component>
 </template>

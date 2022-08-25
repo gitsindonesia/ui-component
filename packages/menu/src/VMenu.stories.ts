@@ -14,12 +14,12 @@ export default {
       icon: 'ri:home-2-line',
       children: [
         {
-          text: 'Sub Item',
+          text: 'Home',
           to: '/',
         },
         {
-          text: 'Sub Item 2',
-          to: '/',
+          text: 'About',
+          to: '/about',
         },
       ],
     },
@@ -45,6 +45,11 @@ const Template: Story = (args) => ({
   template: `
   <div :class="args.mini ? 'w-12' : ''">
     <VMenu v-bind="args">{{ args.label }}</VMenu>
+
+    <div class="rounded-lg border px-4 py-3 mt-4">
+      Router View:
+      <router-view />
+    </div>
   </div>
   `,
 });
@@ -61,7 +66,20 @@ Default.parameters = {
 
 Default.decorators = [
   /* this is the basic setup with no params passed to the decorator */
-  vueRouter(),
+  vueRouter([
+    {
+      path: '/',
+      component: {
+        template: 'Home',
+      },
+    },
+    {
+      path: '/about',
+      component: {
+        template: 'About',
+      },
+    },
+  ]),
 ];
 
 export const Small = Template.bind({});
