@@ -34,5 +34,14 @@
   "jsdelivr": "dist/dropdown.iife.js",
   "module": "./dist/dropdown.es.js",
   "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/belajar-id-components.mjs",
+      "require": "./dist/belajar-id-components.js"
+    },
+    "./package.json": "./package.json",
+    "./src/*": "./src/*",
+    "./*": "./*"
+  },
   "gitHead": "262e63ff9c3301948641b84ae8aeb76f2bf87463"
 }
