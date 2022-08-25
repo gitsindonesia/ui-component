@@ -33,5 +33,14 @@
   "unpkg": "dist/alert.iife.js",
   "jsdelivr": "dist/alert.iife.js",
   "module": "./dist/alert.es.js",
-  "types": "./dist/types/index.d.ts"
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/alert.es.js",
+      "require": "./dist/alert.cjs.js"
+    },
+    "./package.json": "./package.json",
+    "./src/*": "./src/*",
+    "./*": "./*"
+  }
 }

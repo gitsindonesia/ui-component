@@ -37,10 +37,19 @@
     "vitest": "^0.12.4",
     "vue-tsc": "^0.38.2"
   },
-  "main": "dist/list.umd.js",
+  "main": "dist/list.cjs.js",
   "unpkg": "dist/list.iife.js",
   "jsdelivr": "dist/list.iife.js",
   "module": "./dist/list.es.js",
   "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/list.es.js",
+      "require": "./dist/list.cjs.js"
+    },
+    "./package.json": "./package.json",
+    "./src/*": "./src/*",
+    "./*": "./*"
+  },
   "gitHead": "262e63ff9c3301948641b84ae8aeb76f2bf87463"
 }
