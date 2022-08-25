@@ -29,15 +29,15 @@
     "vite": "^2.9.9",
     "vitest": "^0.12.4"
   },
-  "main": "dist/dropdown.umd.js",
+  "main": "dist/dropdown.cjs.js",
   "unpkg": "dist/dropdown.iife.js",
   "jsdelivr": "dist/dropdown.iife.js",
   "module": "./dist/dropdown.es.js",
   "types": "./dist/types/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/belajar-id-components.mjs",
-      "require": "./dist/belajar-id-components.js"
+      "import": "./dist/dropdown.es.js",
+      "require": "./dist/dropdown.cjs.js"
     },
     "./package.json": "./package.json",
     "./src/*": "./src/*",
