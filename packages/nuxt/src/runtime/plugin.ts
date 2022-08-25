@@ -1,7 +1,6 @@
-import { defineNuxtPlugin } from "#app";
-import GitsUI from "@gits-id/ui";
+import GitsUI from '@gits-id/ui'
+import { defineNuxtPlugin } from '#app'
 
 export default defineNuxtPlugin((nuxtApp) => {
-  console.log("nuxt plugiinnn...");
-  nuxtApp.vueApp.use(GitsUI);
-});
+  nuxtApp.vueApp.use(GitsUI)
+})
