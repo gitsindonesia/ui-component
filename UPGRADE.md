@@ -1,5 +1,37 @@
 # Upgrade Guide
 
+## `0.11.0`...`0.11.2`
+
+### Features
+
+- New `Icon` component. Registered globally as `v-icon`.
+- Drop `vue-remix-icons` in favor of new `Icon` component.
+- Nuxt: Transpile dependency automatically for better SSR support
+
+### How to upgrade
+
+Bump `@gits-id/ui` or `@gits-id/ui-nuxt` (for Nuxt 3) version to latest `^0.11.2` and run `yarn install` or `npm install`
+
+Vue:
+
+```json
+{
+  "dependencies": {
+    "@gits-id/ui": "^0.11.2"
+  }
+}
+```
+
+Nuxt:
+
+```json
+{
+  "dependencies": {
+    "@gits-id/ui-nuxt": "^0.11.2"
+  }
+}
+```
+
 ## `v0.10.5`
 
 ### BREAKING CHANGE
