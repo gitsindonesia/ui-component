@@ -29,7 +29,7 @@ const isFirst = computed(() => first.value || index.value === 0);
 const isRouterLink = computed(() =>
   ['router-link', 'RouterLink'].includes(as.value),
 );
-const to = computed(() => (isRouterLink ? item.value.path : ''));
+const to = computed(() => (isRouterLink.value ? item.value.path : ''));
 </script>
 
 <template>
