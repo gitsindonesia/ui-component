@@ -16,12 +16,8 @@ export default defineConfig({
       formats: ['es', 'cjs', 'iife', 'umd'],
     },
     rollupOptions: {
-      // make sure to externalize deps that shouldn't be bundled
-      // into your library
-      external: ['vue', '@iconify/vue'],
+      external: ['vue', '@iconify/vue', '@iconify/vue/dist/offline'],
       output: {
-        // Provide global variables to use in the UMD build
-        // for externalized deps
         globals: {
           vue: 'Vue',
         },

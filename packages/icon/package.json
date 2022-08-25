@@ -22,10 +22,19 @@
     "vitest": "^0.12.4",
     "vue-tsc": "^0.40.1"
   },
-  "main": "dist/icon.umd.js",
+  "main": "dist/icon.cjs.js",
   "unpkg": "dist/icon.iife.js",
   "jsdelivr": "dist/icon.iife.js",
   "module": "./dist/icon.es.js",
   "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/icon.es.js",
+      "require": "./dist/icon.cjs.js"
+    },
+    "./package.json": "./package.json",
+    "./src/*": "./src/*",
+    "./*": "./*"
+  },
   "gitHead": "63a466289461c9391850c40d3ffa7f8429ce979f"
 }
