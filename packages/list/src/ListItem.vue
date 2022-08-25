@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {Icon} from '@iconify/vue';
-import {computed, useAttrs} from 'vue';
-import {RouterLink, RouteLocation} from 'vue-router';
+import {computed, resolveComponent, useAttrs} from 'vue';
+import {RouteLocation} from 'vue-router';
 
 type Props = {
   to?: string | RouteLocation;
@@ -51,7 +51,7 @@ const emit =
   }>();
 
 const is = computed(() => {
-  if (props.to) return RouterLink;
+  if (props.to) return resolveComponent('RouterLink');
 
   if (props.href) return 'a';
 
