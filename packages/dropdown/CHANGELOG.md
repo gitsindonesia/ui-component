@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.3](https://github.com/gitsindonesia/ui-component/compare/v0.11.2...v0.11.3) (2022-08-26)
+
+### Bug Fixes
+
+- resolve RouterLink component ([0dbb5f6](https://github.com/gitsindonesia/ui-component/commit/0dbb5f68679f0bb4e6548599e472a1c22bc2fd28))
+
 ## [0.11.2](https://github.com/gitsindonesia/ui-component/compare/v0.11.1...v0.11.2) (2022-08-25)
 
 ### Bug Fixes

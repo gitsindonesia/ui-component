@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.3](https://github.com/gitsindonesia/ui-component/compare/v0.11.2...v0.11.3) (2022-08-26)
+
+### Bug Fixes
+
+- **Stepper:** fix value check ([90f1c49](https://github.com/gitsindonesia/ui-component/commit/90f1c49bd6bbb454b1dbaf85e927a1fdb8034efc))
+
 # [0.11.0](https://github.com/gitsindonesia/ui-component/compare/v0.10.14...v0.11.0) (2022-08-24)
 
 **Note:** Version bump only for package @gits-id/stepper

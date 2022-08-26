@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.3](https://github.com/gitsindonesia/ui-component/compare/v0.11.2...v0.11.3) (2022-08-26)
+
+### Bug Fixes
+
+- resolve RouterLink component ([0dbb5f6](https://github.com/gitsindonesia/ui-component/commit/0dbb5f68679f0bb4e6548599e472a1c22bc2fd28))
+- **Stepper:** fix value check ([90f1c49](https://github.com/gitsindonesia/ui-component/commit/90f1c49bd6bbb454b1dbaf85e927a1fdb8034efc))
+- **ui:** prefix export with `V` ([e6d9163](https://github.com/gitsindonesia/ui-component/commit/e6d9163405a23728a5757b46760d3227e3ddf9bb))
+
+### Features
+
+- **menu-item:** allow to customize item tag via `as` prop ([69fbd7e](https://github.com/gitsindonesia/ui-component/commit/69fbd7eaa8e7d937b27d4b250e72e9c8e8d7be4a))
+
 ## [0.11.2](https://github.com/gitsindonesia/ui-component/compare/v0.11.1...v0.11.2) (2022-08-25)
 
 ### Bug Fixes
