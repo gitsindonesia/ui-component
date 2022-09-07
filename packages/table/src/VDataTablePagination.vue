@@ -114,14 +114,19 @@ watch(
       sm:justify-between
     "
   >
-    <v-select
-      v-model="itemsPerPageValue"
-      :items="perPageItems"
-      hide-check-icon
-      placeholder="Select"
-      class="w-30 order-1"
-      top
-    />
+    <slot
+      name="rowsPerPage"
+      v-bind="{value: itemsPerPageValue, items: perPageItems}"
+    >
+      <v-select
+        v-model="itemsPerPageValue"
+        :items="perPageItems"
+        hide-check-icon
+        placeholder="Select"
+        class="w-30 order-1"
+        top
+      />
+    </slot>
 
     <p
       class="

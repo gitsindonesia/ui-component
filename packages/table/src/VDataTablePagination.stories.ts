@@ -76,3 +76,40 @@ HideFirstAndLast.parameters = {
     },
   },
 };
+
+export const RowsPerPageSlot: Story = (args) => ({
+  components: {
+    VDataTablePagination,
+  },
+  setup() {
+    return {args};
+  },
+  template: `
+    <v-data-table-pagination v-bind="args">
+      <template #rowsPerPage="{value, items}">
+        <select :value="value">
+          <option v-for="item in items" :value="item.value">
+            {{ item.text }}
+          </option>
+        </select>
+      </template>
+    </v-data-table-pagination>
+  `,
+});
+RowsPerPageSlot.parameters = {
+  docs: {
+    source: {
+      code: `
+<v-data-table-pagination v-bind="args">
+  <template #rowsPerPage="{value, items}">
+    <select :value="value">
+      <option v-for="item in items" :value="item.value">
+        {{ item.text }}
+      </option>
+    </select>
+  </template>
+</v-data-table-pagination> 
+      `,
+    },
+  },
+};
