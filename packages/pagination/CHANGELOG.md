@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.4](https://github.com/gitsindonesia/ui-component/compare/v0.11.3...v0.11.4) (2022-09-07)
+
+### Features
+
+- **Pagination:** allow content customization for first, prev, next, last buttons ([f32a80d](https://github.com/gitsindonesia/ui-component/commit/f32a80d8dbfb979927bfead3f8b1f3c4e753225f))
+
 # [0.11.0](https://github.com/gitsindonesia/ui-component/compare/v0.10.14...v0.11.0) (2022-08-24)
 
 **Note:** Version bump only for package @gits-id/pagination

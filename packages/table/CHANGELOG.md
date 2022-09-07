@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.4](https://github.com/gitsindonesia/ui-component/compare/v0.11.3...v0.11.4) (2022-09-07)
+
+### Bug Fixes
+
+- **DataTatablePagination:** fix class props value bleeds into wrapper div ([959a42d](https://github.com/gitsindonesia/ui-component/commit/959a42d3b647df0253d37a2ef3aff9e8e419f73e)), closes [#3](https://github.com/gitsindonesia/ui-component/issues/3)
+- **table:** externalize `@gits-id/forms` ([5ffd2c2](https://github.com/gitsindonesia/ui-component/commit/5ffd2c2291030f3b7faebc45574d03fa2a51d314))
+
+### Features
+
+- **DataTablePagination:** new `meta` slot ([a3bf32b](https://github.com/gitsindonesia/ui-component/commit/a3bf32bb25460377b104cc947d439c1053529e39))
+- **DataTablePagination:** new `rowsPerPage` slot ([5270cdf](https://github.com/gitsindonesia/ui-component/commit/5270cdff954939d9a395607258ca5924d7d4c6bf))
+
 # [0.11.0](https://github.com/gitsindonesia/ui-component/compare/v0.10.14...v0.11.0) (2022-08-24)
 
 **Note:** Version bump only for package @gits-id/table

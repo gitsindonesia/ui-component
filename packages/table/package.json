@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/table",
-  "version": "0.11.0",
+  "version": "0.11.4",
   "description": "GITS Table Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -16,7 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "@gits-id/forms": "^0.11.0",
-    "@gits-id/pagination": "^0.11.0",
+    "@gits-id/pagination": "^0.11.4",
     "@gits-id/select": "^0.11.0",
     "@gits-id/spinner": "^0.11.0",
     "@gits-id/utils": "^0.11.0",
