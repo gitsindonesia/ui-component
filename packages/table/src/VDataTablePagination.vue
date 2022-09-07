@@ -139,14 +139,20 @@ watch(
         order-2
       "
     >
-      <span class="hidden sm:inline"> {{ showingText }} </span>
-      <span class="font-semibold">{{ start }}</span>
-      <span>-</span>
-      <span class="font-semibold">{{ end }}</span>
-      <span>{{ fromText }}</span>
-      <span class="font-semibold">{{ totalItems }}</span>
-      <span class="hidden sm:inline"> {{ dataText }} </span>
+      <slot
+        name="meta"
+        v-bind="{showingText, start, end, fromText, totalItems, dataText}"
+      >
+        <span class="hidden sm:inline"> {{ showingText }} </span>
+        <span class="font-semibold">{{ start }}</span>
+        <span>-</span>
+        <span class="font-semibold">{{ end }}</span>
+        <span>{{ fromText }}</span>
+        <span class="font-semibold">{{ totalItems }}</span>
+        <span class="hidden sm:inline"> {{ dataText }} </span>
+      </slot>
     </p>
+
     <div class="flex-grow order-1 sm:order-3">&nbsp;</div>
     <div class="w-auto flex justify-center sm:justify-end order-3 sm:order-4">
       <Pagination

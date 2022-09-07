@@ -113,3 +113,32 @@ RowsPerPageSlot.parameters = {
     },
   },
 };
+
+export const MetaSlot: Story = (args) => ({
+  components: {
+    VDataTablePagination,
+  },
+  setup() {
+    return {args};
+  },
+  template: `
+    <v-data-table-pagination v-bind="args">
+    <template #meta="{showingText, start, end, fromText, totalItems, dataText}">
+      {{ showingText }} {{ start }} to {{ end }} of {{ totalItems }} {{ dataText }}
+    </template>
+    </v-data-table-pagination>
+  `,
+});
+MetaSlot.parameters = {
+  docs: {
+    source: {
+      code: `
+<v-data-table-pagination v-bind="args">
+  <template #meta="{showingText, start, end, fromText, totalItems, dataText}">
+    {{ showingText }} {{ start }} to {{ end }} of {{ totalItems }} {{ dataText }}
+  </template>
+</v-data-table-pagination> 
+      `,
+    },
+  },
+};
