@@ -142,3 +142,45 @@ MetaSlot.parameters = {
     },
   },
 };
+
+export const CustomClass: Story = (args) => ({
+  components: {
+    VDataTablePagination,
+  },
+  setup() {
+    return {args};
+  },
+  template: `
+    <v-data-table-pagination v-bind="args" class="THIS__SHOULD__NOT__BLEED" />
+  `,
+});
+CustomClass.parameters = {
+  docs: {
+    source: {
+      code: `
+<v-data-table-pagination v-bind="args" class="THIS__SHOULD__NOT__BLEED" />
+      `,
+    },
+  },
+};
+
+export const PassingPaginationProps: Story = (args) => ({
+  components: {
+    VDataTablePagination,
+  },
+  setup() {
+    return {args};
+  },
+  template: `
+    <v-data-table-pagination v-bind="args" :pagination="{showFirst: false, showLast: false}" />
+  `,
+});
+PassingPaginationProps.parameters = {
+  docs: {
+    source: {
+      code: `
+<v-data-table-pagination v-bind="args" :pagination="{showFirst: false, showLast: false}" />
+      `,
+    },
+  },
+};

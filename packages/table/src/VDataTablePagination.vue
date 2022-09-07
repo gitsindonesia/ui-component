@@ -3,6 +3,8 @@ import {computed, PropType, ref, toRefs, watch} from 'vue';
 import Pagination from '@gits-id/pagination';
 import VSelect from '@gits-id/select';
 
+type PaginationProps = InstanceType<typeof Pagination>['$props'];
+
 const props = defineProps({
   modelValue: {
     type: Number,
@@ -35,6 +37,10 @@ const props = defineProps({
   fromText: {
     type: String,
     default: 'from',
+  },
+  pagination: {
+    type: Object as PropType<PaginationProps>,
+    default: () => ({}),
   },
 });
 
@@ -159,7 +165,7 @@ watch(
         v-model="page"
         :total-items="totalItems"
         :items-per-page="itemsPerPage"
-        v-bind="$attrs"
+        v-bind="pagination"
       />
     </div>
   </div>
