@@ -22,6 +22,7 @@ export default defineConfig({
         'vue',
         '@heroicons/vue/outline',
         '@heroicons/vue/solid',
+        '@gits-id/forms',
         '@gits-id/pagination',
         '@gits-id/select',
         '@gits-id/spinner',
