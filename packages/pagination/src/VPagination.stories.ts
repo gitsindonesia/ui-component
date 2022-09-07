@@ -4,7 +4,12 @@ import VPagination from './VPagination.vue';
 export default {
   title: 'Components/Pagination',
   component: VPagination,
-  argTypes: {},
+  argTypes: {
+    btnLast: { control: { type: 'text' }, defaultValue: '', table: { category: 'Slots'} },
+    btnFirst: { control: { type: 'text' }, defaultValue: '', table: { category: 'Slots'} },
+    btnNext: { control: { type: 'text' }, defaultValue: '', table: { category: 'Slots'} },
+    btnPrev: { control: { type: 'text' }, defaultValue: '', table: { category: 'Slots'} },
+  },
   args: {
     totalItems: 30,
     itemsPerPage: 10,
@@ -18,20 +23,21 @@ export default {
     siblingCount: 1,
     boundaryCount: 1,
     simple: false,
+    btnLast: ''
   },
 } as Meta;
 
 const Template: Story = (args) => ({
   // Components used in your story `template` are defined in the `components` object
   components: {
-    'V-component': VPagination,
+    'v-pagination': VPagination,
   },
   // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
     return {args};
   },
   // And then the `args` are bound to your component with `v-bind="args"`
-  template: `<V-component v-bind="args">{{ args.label }}</V-component>`,
+  template: `<v-pagination v-bind="args" data-test="fasdasd">{{ args.label }}<template v-slot:btnLast><footer v-if="args.btnLast" v-html="args.btnLast" /></template></v-pagination>`,
 });
 
 export const Default = Template.bind({});
