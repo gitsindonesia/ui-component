@@ -166,7 +166,9 @@ watch(
         :total-items="totalItems"
         :items-per-page="itemsPerPage"
         v-bind="pagination"
-      />
+      >
+        <template v-for="(_, name) in $slots" v-slot:[name]><slot :name="name" /></template>
+      </Pagination>
     </div>
   </div>
 </template>
