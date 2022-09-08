@@ -27,13 +27,13 @@
     "c8": "^7.11.3",
     "tailwindcss": "^3.0.23",
     "vee-validate": "^4.5.9",
-    "vite": "^2.9.9",
+    "vite": "^3.0.0",
     "vitest": "^0.12.4"
   },
   "main": "dist/pagination.umd.js",
   "unpkg": "dist/pagination.iife.js",
   "jsdelivr": "dist/pagination.iife.js",
-  "module": "./dist/pagination.es.js",
+  "module": "./dist/pagination.mjs",
   "types": "./dist/types/index.d.ts",
   "gitHead": "262e63ff9c3301948641b84ae8aeb76f2bf87463"
 }

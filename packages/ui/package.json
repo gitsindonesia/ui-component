@@ -51,12 +51,12 @@
   "main": "./dist/ui.umd.js",
   "unpkg": "./dist/ui.iife.js",
   "jsdelivr": "./dist/ui.iife.js",
-  "module": "./dist/ui.es.js",
+  "module": "./dist/ui.mjs",
   "types": "./dist/types/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/ui.es.js",
-      "require": "./dist/ui.cjs.js"
+      "import": "./dist/ui.mjs",
+      "require": "./dist/ui.js"
     },
     "./editor": "./editor.js",
     "./*": "./src/*"
@@ -65,7 +65,7 @@
   "devDependencies": {
     "c8": "^7.11.3",
     "unplugin-vue-components": "^0.21.1",
-    "vite": "^2.9.9",
+    "vite": "^3.0.0",
     "vitest": "^0.12.4"
   }
 }

@@ -24,13 +24,13 @@
     "@gits-id/utils": "^0.11.0",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
-    "vite": "^2.9.9",
+    "vite": "^3.0.0",
     "vitest": "^0.12.4"
   },
   "main": "dist/services.umd.js",
   "unpkg": "dist/services.iife.js",
   "jsdelivr": "dist/services.iife.js",
-  "module": "./dist/services.es.js",
+  "module": "./dist/services.mjs",
   "types": "./dist/types/index.d.ts",
   "gitHead": "262e63ff9c3301948641b84ae8aeb76f2bf87463"
 }

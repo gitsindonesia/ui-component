@@ -18,19 +18,19 @@
     "vue": "^3.2.31"
   },
   "devDependencies": {
-    "vite": "^2.9.9",
+    "vite": "^3.0.0",
     "vitest": "^0.12.4",
     "vue-tsc": "^0.40.1"
   },
-  "main": "dist/icon.cjs.js",
+  "main": "dist/icon.js",
   "unpkg": "dist/icon.iife.js",
   "jsdelivr": "dist/icon.iife.js",
-  "module": "./dist/icon.es.js",
+  "module": "./dist/icon.mjs",
   "types": "./dist/types/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/icon.es.js",
-      "require": "./dist/icon.cjs.js"
+      "import": "./dist/icon.mjs",
+      "require": "./dist/icon.js"
     },
     "./package.json": "./package.json",
     "./src/*": "./src/*",
