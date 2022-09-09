@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.5](https://github.com/gitsindonesia/ui-component/compare/v0.11.4...v0.11.5) (2022-09-09)
+
+### Features
+
+- **snippets:** new `Footer` snippet ([36e6090](https://github.com/gitsindonesia/ui-component/commit/36e6090e807032db0e23097b5dc16e3e78530944))
+- upgrade to vite 3 ([a733f2e](https://github.com/gitsindonesia/ui-component/commit/a733f2e6469150a9041472b5cd393d715d2764a4))
+- **VDataTablePagination:** support pagination custom content ([574d4ca](https://github.com/gitsindonesia/ui-component/commit/574d4ca8708a7d9995a1838ef4771251e3e46e34))
+
 ## [0.11.4](https://github.com/gitsindonesia/ui-component/compare/v0.11.3...v0.11.4) (2022-09-07)
 
 ### Bug Fixes
