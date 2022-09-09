@@ -27,7 +27,7 @@
   "jsdelivr": "dist/container.iife.js",
   "module": "./dist/container.mjs",
   "types": "./dist/types/index.d.ts",
-  "gitHead": "262e63ff9c3301948641b84ae8aeb76f2bf87463",
+  "gitHead": "f5e7820fb27cd40942d174fa5acccd1207a225b2",
   "dependencies": {
     "vue": "^3.2.33"
   }

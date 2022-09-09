@@ -36,5 +36,5 @@
     "./src/*": "./src/*",
     "./*": "./*"
   },
-  "gitHead": "63a466289461c9391850c40d3ffa7f8429ce979f"
+  "gitHead": "f5e7820fb27cd40942d174fa5acccd1207a225b2"
 }

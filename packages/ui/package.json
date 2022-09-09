@@ -61,7 +61,7 @@
     "./editor": "./editor.js",
     "./*": "./src/*"
   },
-  "gitHead": "5e85d86dd287ec2269eea3d5f5c9faed649bbf77",
+  "gitHead": "f5e7820fb27cd40942d174fa5acccd1207a225b2",
   "devDependencies": {
     "c8": "^7.11.3",
     "unplugin-vue-components": "^0.21.1",
