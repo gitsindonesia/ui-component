@@ -17,8 +17,8 @@ export const Basic: Story = (args) => ({
     return {args};
   },
   template: `
-<footer class="bg-white p-5 sm:px-0">
-  <div class="container mx-auto">
+<footer class="bg-white">
+  <div class="container mx-auto p-5 sm:px-0">
     <div class="flex gap-4 flex-col sm:flex-row">
       <div class="sm:w-4/12 space-y-4">
         <Logo img-class="h-10" />
@@ -121,8 +121,8 @@ export const Dark: Story = (args) => ({
     return {args};
   },
   template: `
-<footer class="bg-gray-800 p-5 sm:px-0">
-  <div class="container mx-auto">
+<footer class="bg-gray-800">
+  <div class="container mx-auto p-5 xl:px-0">
     <div class="flex gap-4 flex-col sm:flex-row">
       <div class="sm:w-4/12 space-y-4">
         <Logo img-class="h-10" white />
@@ -225,8 +225,8 @@ export const AutoDarkMode: Story = (args) => ({
     return {args};
   },
   template: `
-<footer class="dark:bg-gray-800 dark:text-gray-200 p-5 sm:px-0">
-  <div class="container mx-auto">
+<footer class="dark:bg-gray-800 dark:text-gray-200">
+  <div class="container mx-auto p-5 xl:px-0">
     <div class="flex gap-4 flex-col sm:flex-row">
       <div class="sm:w-4/12 space-y-4">
         <Logo class="block dark:hidden" img-class="h-10" />
@@ -330,8 +330,8 @@ export const LanguageCurrencyNewsLetter: Story = (args) => ({
     return {args};
   },
   template: `
-<footer class="dark:bg-gray-800 dark:text-gray-200 p-5 sm:px-0">
-  <div class="container mx-auto">
+<footer class="dark:bg-gray-800 dark:text-gray-200">
+  <div class="container mx-auto p-5 xl:px-0">
     <div class="flex gap-4 flex-col sm:flex-row">
       <div class="sm:w-full">
         <div class="grid grid-cols-1 sm:grid-cols-5 gap-5 w-full">
@@ -451,8 +451,8 @@ export const Newsletter: Story = (args) => ({
     return {args};
   },
   template: `
-<footer class="dark:bg-gray-800 dark:text-gray-200 p-5 sm:px-0">
-  <div class="container mx-auto">
+<footer class="dark:bg-gray-800 dark:text-gray-200">
+  <div class="container mx-auto p-5 xl:px-0">
     <div class="flex gap-4 flex-col sm:flex-row">
       <div class="sm:w-full">
         <div class="grid grid-cols-1 sm:grid-cols-6 gap-4 w-full">
@@ -563,8 +563,8 @@ export const SimpleCentered: Story = (args) => ({
     return {args};
   },
   template: `
-<footer class="dark:bg-gray-800 dark:text-gray-200 p-5 sm:px-0">
-  <div class="container mx-auto space-y-6">
+<footer class="dark:bg-gray-800 dark:text-gray-200">
+  <div class="container mx-auto space-y-6 p-5 xl:px-0">
     <div class="flex justify-center gap-6">
       <a href="#" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
         About
@@ -607,8 +607,8 @@ export const SocialLinksOnly: Story = (args) => ({
     return {args};
   },
   template: `
-<footer class="dark:bg-gray-800 dark:text-gray-200 p-5 sm:px-0">
-  <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 items-center">
+<footer class="dark:bg-gray-800 dark:text-gray-200">
+  <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 items-center p-5 xl:px-0">
     <p class="text-left text-gray-400 dark:text-gray-400">&copy; 2022 GITS Indonesia. All rights reserved.</p>
     <div class="flex gap-4 space-between justify-end">
       <a href="#" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
