@@ -217,7 +217,8 @@ CustomClass.args = {
   hover: true,
   hoverClass: 'transition duration-300 hover:bg-blue-500 hover:text-white',
   tdClass: 'group-hover:text-white __GLOBAL_TD_CLASS__',
-  headers: headers.map((e, idx) => ({...e, class: `__CLASS_${idx}__`, tdClass: `__TD_HEAD_CLASS_${idx}__`, }))
+  headers: headers.map((e, idx) => ({...e, class: `__CLASS_${idx}__`, tdClass: `__TD_HEAD_CLASS_${idx}__`, })),
+  trClass: 'hover:!bg-gray-700 border-2 __TR__CLASS__',
 };
 CustomClass.parameters = {
   docs: {
@@ -233,6 +234,7 @@ CustomClass.parameters = {
   hover
   hover-class="transition duration-300 hover:bg-blue-500 hover:text-white"
   td-class="group-hover:text-white"
+  tr-class="!hover:bg-gray-700 __TR__CLASS__"
 />
       `,
     },

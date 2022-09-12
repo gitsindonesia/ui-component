@@ -143,6 +143,10 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  trClass: {
+    type: String,
+    default: '',
+  },
   wrapperClass: {
     type: String,
     default: '',
@@ -506,6 +510,7 @@ const start = computed(() =>
               [stripedClass]: striped,
               [hoverClass]: hover,
               'divide-x': bordered,
+              [trClass]: Boolean(trClass)
             }"
           >
             <td
