@@ -11,6 +11,7 @@ export interface VDataTableHeader {
   align?: string;
   sortable?: false;
   class?: string;
+  tdClass?: string;
   [key: string]: any;
 }
 

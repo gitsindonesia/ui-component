@@ -512,7 +512,7 @@ const start = computed(() =>
               v-for="header in headers"
               :key="`header-${header.value}`"
               class="whitespace-nowrap text-sm text-gray-900"
-              :class="[getTdClass(header), paddingClass, tdClass]"
+              :class="[getTdClass(header), paddingClass, tdClass, header?.tdClass || '']"
             >
               <slot
                 v-if="selectable && header.value === 'selected'"

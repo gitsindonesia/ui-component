@@ -14,14 +14,20 @@ const headers = [
   {
     value: 'index',
     text: 'ID',
+    class: '',
+    tdClass: '',
   },
   {
     value: 'name',
     text: 'Name',
+    class: '',
+    tdClass: '',
   },
   {
     value: 'email',
     text: 'Email',
+    class: '',
+    tdClass: '',
   },
 ];
 
@@ -210,14 +216,15 @@ CustomClass.args = {
   columnInactiveClass: 'text-blue-50 hover:text-blue-200',
   hover: true,
   hoverClass: 'transition duration-300 hover:bg-blue-500 hover:text-white',
-  tdClass: 'group-hover:text-white',
+  tdClass: 'group-hover:text-white __GLOBAL_TD_CLASS__',
+  headers: headers.map((e, idx) => ({...e, class: `__CLASS_${idx}__`, tdClass: `__TD_HEAD_CLASS_${idx}__`, }))
 };
 CustomClass.parameters = {
   docs: {
     source: {
       code: `
 <v-data-table
-  :headers="headers"
+  :headers="${JSON.stringify(CustomClass.args.headers).replaceAll('"', "'")}"
   :items="items"
   header-class="bg-blue-600"
   body-class="bg-gray-100"
