@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.6](https://github.com/gitsindonesia/ui-component/compare/v0.11.5...v0.11.6) (2022-09-13)
+
+### Features
+
+- support custom td class for each column ([153a37b](https://github.com/gitsindonesia/ui-component/commit/153a37ba8a2d66a218e13b9cd0def0dc896e9d30))
+- support custom tr class ([e171d3a](https://github.com/gitsindonesia/ui-component/commit/e171d3ae7756fc2e122357a4efe57d5fd03520b6))
+
 ## [0.11.5](https://github.com/gitsindonesia/ui-component/compare/v0.11.4...v0.11.5) (2022-09-09)
 
 ### Features
