@@ -16,10 +16,6 @@ const props = defineProps({
     type: String,
     default: '',
   },
-  headerClass: {
-    type: String,
-    default: 'font-semibold',
-  },
   activeClass: {
     type: String,
     default: '',
