@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.7](https://github.com/gitsindonesia/ui-component/compare/v0.11.6...v0.11.7) (2022-09-15)
+
+### Bug Fixes
+
+- **DataTable:** header font weight inconsistent when sorting ([ce238f7](https://github.com/gitsindonesia/ui-component/commit/ce238f79354b084106af74dde393162e4b686dcf)), closes [#10](https://github.com/gitsindonesia/ui-component/issues/10)
+
 ## [0.11.6](https://github.com/gitsindonesia/ui-component/compare/v0.11.5...v0.11.6) (2022-09-13)
 
 ### Features

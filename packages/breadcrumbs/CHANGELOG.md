@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.7](https://github.com/gitsindonesia/ui-component/compare/v0.11.6...v0.11.7) (2022-09-15)
+
+### Features
+
+- **v-breadcrumbs:** optional `to` prop ([17f5c17](https://github.com/gitsindonesia/ui-component/commit/17f5c177e03a1e0e64929ce781a4b471dd452437)), closes [#11](https://github.com/gitsindonesia/ui-component/issues/11)
+
 ## [0.11.6](https://github.com/gitsindonesia/ui-component/compare/v0.11.5...v0.11.6) (2022-09-13)
 
 **Note:** Version bump only for package @gits-id/breadcrumbs
