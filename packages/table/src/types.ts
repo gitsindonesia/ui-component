@@ -1,4 +1,6 @@
-import type {VPagination} from '@gits-id/pagination/src/types';
+import Pagination from '@gits-id/pagination';
+
+type VPagination = InstanceType<typeof Pagination>['$props'];
 
 export interface VDataTableItem {
   selected?: boolean;
