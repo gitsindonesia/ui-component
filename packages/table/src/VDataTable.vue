@@ -421,15 +421,7 @@ const start = computed(() =>
               v-for="header in computedHeaders"
               :key="header.value"
               scope="col"
-              class="
-                text-left
-                py-3
-                text-sm
-                font-semibold
-                uppercase
-                tracking-wider
-                group
-              "
+              class="text-left py-3 group"
               :class="[getThClass(header), paddingClass, header.class]"
               :width="header.width"
             >
@@ -445,7 +437,16 @@ const start = computed(() =>
                   role="button"
                   aria-label="Sort"
                   type="button"
-                  class="flex items-center truncate appearance-none"
+                  class="
+                    flex
+                    items-center
+                    truncate
+                    appearance-none
+                    text-sm
+                    font-semibold
+                    uppercase
+                    tracking-wider
+                  "
                   :class="[
                     header.align
                       ? `justify-${header.align}`
@@ -465,7 +466,10 @@ const start = computed(() =>
                     class="ml-2 h-5 w-5"
                   />
                 </button>
-                <span v-else>
+                <span
+                  v-else
+                  class="text-sm font-semibold uppercase tracking-wider"
+                >
                   {{ header.text }}
                 </span>
               </slot>
@@ -510,14 +514,19 @@ const start = computed(() =>
               [stripedClass]: striped,
               [hoverClass]: hover,
               'divide-x': bordered,
-              [trClass]: Boolean(trClass)
+              [trClass]: Boolean(trClass),
             }"
           >
             <td
               v-for="header in headers"
               :key="`header-${header.value}`"
               class="whitespace-nowrap text-sm text-gray-900"
-              :class="[getTdClass(header), paddingClass, tdClass, header?.tdClass || '']"
+              :class="[
+                getTdClass(header),
+                paddingClass,
+                tdClass,
+                header?.tdClass || '',
+              ]"
             >
               <slot
                 v-if="selectable && header.value === 'selected'"

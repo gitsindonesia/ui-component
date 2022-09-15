@@ -9,10 +9,26 @@ export default {
     color: {
       control: {type: 'select', options: themeColors},
     },
-      btnLast: { control: { type: 'text' }, defaultValue: '', table: { category: 'Slots'} },
-      btnFirst: { control: { type: 'text' }, defaultValue: '', table: { category: 'Slots'} },
-      btnNext: { control: { type: 'text' }, defaultValue: '', table: { category: 'Slots'} },
-      btnPrev: { control: { type: 'text' }, defaultValue: '', table: { category: 'Slots'} },
+    btnLast: {
+      control: {type: 'text'},
+      defaultValue: '',
+      table: {category: 'Slots'},
+    },
+    btnFirst: {
+      control: {type: 'text'},
+      defaultValue: '',
+      table: {category: 'Slots'},
+    },
+    btnNext: {
+      control: {type: 'text'},
+      defaultValue: '',
+      table: {category: 'Slots'},
+    },
+    btnPrev: {
+      control: {type: 'text'},
+      defaultValue: '',
+      table: {category: 'Slots'},
+    },
   },
   args: {
     totalItems: 30,
@@ -31,19 +47,24 @@ const Template: Story = (args) => ({
   setup() {
     const {btnLast, btnFirst, btnNext, btnPrev} = args;
 
-    const argsWSlots:Args = {
+    const argsWSlots: Args = {
       args: args,
-      $slots: {}
+      $slots: {},
     };
 
     // added `$slot` prop to `args` so we can easily access it in storybook template
-    for (const [key, value] of Object.entries({btnPrev, btnNext, btnFirst, btnLast})) {
-      if(value !== undefined && value !== null && value !== ""){
+    for (const [key, value] of Object.entries({
+      btnPrev,
+      btnNext,
+      btnFirst,
+      btnLast,
+    })) {
+      if (value !== undefined && value !== null && value !== '') {
         argsWSlots.$slots[key] = value;
       }
     }
 
-    return {args:argsWSlots};
+    return {args: argsWSlots};
   },
   template: `<v-data-table-pagination v-bind="args.args">
   <template v-for="(content, name) in args.$slots" v-slot:[name]>{{content}}</template>
