@@ -1,4 +1,6 @@
+import type {RouteLocationRaw} from 'vue-router';
+
 export type VBreadcrumbItem = {
-  to: string;
+  to?: RouteLocationRaw;
   title: string;
 };

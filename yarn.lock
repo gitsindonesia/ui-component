@@ -18172,6 +18172,13 @@ vue-router@4.x, vue-router@^4.0.13, vue-router@^4.0.14, vue-router@^4.0.16, vue-
   dependencies:
     "@vue/devtools-api" "^6.1.4"
 
+vue-router@^4.1.5:
+  version "4.1.5"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.1.5.tgz#256f597e3f5a281a23352a6193aa6e342c8d9f9a"
+  integrity sha512-IsvoF5D2GQ/EGTs/Th4NQms9gd2NSqV+yylxIyp/OYp8xOwxmU8Kj/74E9DTSYAyH5LX7idVUngN3JSj1X4xcQ==
+  dependencies:
+    "@vue/devtools-api" "^6.1.4"
+
 vue-tsc@^0.37.3:
   version "0.37.9"
   resolved "https://registry.yarnpkg.com/vue-tsc/-/vue-tsc-0.37.9.tgz#c79b6e6915a6be234ef323cdbefed25b31f68398"

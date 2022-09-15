@@ -2,16 +2,20 @@ import VBreadcrumbs from './VBreadcrumbs.vue';
 import {Meta, Story} from '@storybook/vue3';
 import {Icon} from '@gits-id/icon';
 import vueRouter from 'storybook-vue3-router';
+import type {VBreadcrumbItem} from './types';
+import {ref} from 'vue';
+
+const items = [...Array(5)].map((v, k) => ({
+  title: `Link ${k + 1}`,
+  to: '/',
+}));
 
 export default {
   title: 'Components/Breadcrumbs',
   component: VBreadcrumbs,
   argTypes: {},
   args: {
-    items: [...Array(5)].map((v, k) => ({
-      title: `Link ${k + 1}`,
-      to: '/',
-    })),
+    items,
     divider: '/',
   },
 } as Meta;
@@ -76,3 +80,47 @@ CustomDividerSlots.parameters = {
 };
 
 CustomDividerSlots.decorators = [vueRouter()];
+
+export const OptionalRouterLink: Story = (args) => ({
+  components: {VBreadcrumbs, Icon},
+  setup() {
+    const items = ref<VBreadcrumbItem[]>([
+      {
+        title: 'Item 1',
+      },
+      {
+        title: 'Item 2',
+      },
+    ]);
+    return {args, items};
+  },
+  template: `
+<v-breadcrumbs v-bind="args" />
+`,
+});
+
+OptionalRouterLink.parameters = {
+  docs: {
+    source: {
+      language: 'html',
+      code: `
+<script setup lang="ts">
+import { ref } from 'vue';
+
+const items = ref<VBreadcrumbItem[]>([
+  {
+    title: 'Item 1',
+  },
+  {
+    title: 'Item 2',
+  },
+]);
+</script>
+
+<template>
+  <v-breadcrumbs :items="items" />
+</template>
+`,
+    },
+  },
+};
