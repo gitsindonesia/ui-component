@@ -1,13 +1,17 @@
 import {Meta, Story} from '@storybook/vue3';
 import qs from 'qs';
-import {onMounted, reactive, ref, watch} from 'vue';
-import {VDataTableHeader} from './types';
+import {onMounted, ref, watch} from 'vue';
 import VDataTable from './VDataTable.vue';
+import type {VDataTableHeader} from './types';
 
-const items = [...Array(30)].map((item, index) => ({
+const states = ['active', 'inactive'];
+
+const items = [...Array(30)].map((_, index) => ({
   index,
   name: `User-${index}`,
   email: `user-${index}@example.com`,
+  age: index + 1 * 10,
+  state: states[Math.floor(Math.random() * states.length)],
 }));
 
 const headers = [
@@ -217,7 +221,11 @@ CustomClass.args = {
   hover: true,
   hoverClass: 'transition duration-300 hover:bg-blue-500 hover:text-white',
   tdClass: 'group-hover:text-white __GLOBAL_TD_CLASS__',
-  headers: headers.map((e, idx) => ({...e, class: `__CLASS_${idx}__`, tdClass: `__TD_HEAD_CLASS_${idx}__`, })),
+  headers: headers.map((e, idx) => ({
+    ...e,
+    class: `__CLASS_${idx}__`,
+    tdClass: `__TD_HEAD_CLASS_${idx}__`,
+  })),
   trClass: 'hover:!bg-gray-700 border-2 __TR__CLASS__',
 };
 CustomClass.parameters = {
@@ -387,5 +395,61 @@ export const ServerSide: Story = (args) => ({
     </v-data-table>
 
     <pre class="mt-5">{{ {page, itemsPerPage, totalItems} }}</pre>
+  `,
+});
+
+export const StickyColumn: Story = (args) => ({
+  components: {
+    VDataTable,
+  },
+  setup() {
+    const headers = ref<VDataTableHeader[]>([
+      {
+        value: 'index',
+        text: 'ID',
+
+        freeze: true,
+        positionFreeze: 'left',
+        sortable: false,
+        align: 'center',
+      },
+      {
+        value: 'name',
+        text: 'First Name',
+      },
+      {
+        value: 'name',
+        text: 'Last Name',
+      },
+      {
+        value: 'email',
+        text: 'Email',
+      },
+      {
+        value: 'age',
+        text: 'Age',
+      },
+      {
+        value: 'state',
+        text: 'State',
+      },
+      {
+        value: 'action',
+        text: 'Action',
+        freeze: true,
+        positionFreeze: 'right',
+        sortable: false,
+        align: 'center',
+      },
+    ]);
+
+    return {args, headers};
+  },
+  template: `
+<v-data-table v-bind="args" :headers="headers">
+  <template #item.action>
+    ...
+  </template>
+</v-data-table>
   `,
 });

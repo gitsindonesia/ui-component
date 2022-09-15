@@ -10,10 +10,13 @@ export interface VDataTableItem {
 export interface VDataTableHeader {
   text: string;
   value: string;
-  align?: string;
+  align?: 'left' | 'center' | 'right' | string;
   sortable?: false;
   class?: string;
   tdClass?: string;
+  freeze?: boolean;
+  positionFreeze?: 'left' | 'right';
+
   [key: string]: any;
 }
 

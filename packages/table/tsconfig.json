@@ -18,5 +18,5 @@
     "jsx": "preserve"
   },
   "include": ["src/vue.d.ts", "*.vue", "src"],
-  "exclude": ["**/*.stories.ts", "**/*.spec.ts", "**/*.test.ts"]
+  "exclude": ["**/*.spec.ts", "**/*.test.ts"]
 }
