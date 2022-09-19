@@ -8,6 +8,7 @@ import VBtn from '@gits-id/button';
 import {useForm} from 'vee-validate';
 import {object, string} from 'yup';
 import FieldArrayStory from './stories/FieldArray.story.vue';
+import FieldArrayOfObject from './stories/FieldArrayOfObject.story.vue';
 
 export default {
   title: 'Forms/Input',
@@ -491,4 +492,9 @@ export const Validation: Story<VInputProps> = (args) => ({
 export const FieldArrays: Story<VInputProps> = () => ({
   components: {FieldArrayStory},
   template: `<FieldArrayStory />`,
+});
+
+export const FieldArrayOfObjects: Story<VInputProps> = () => ({
+  components: {FieldArrayOfObject},
+  template: `<FieldArrayOfObject />`,
 });
