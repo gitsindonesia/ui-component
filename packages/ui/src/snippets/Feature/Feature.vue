@@ -1,18 +1,8 @@
-import {Meta, Story} from '@storybook/vue3';
+<script setup lang="ts">
 import {Icon} from '@gits-id/icon';
+</script>
 
-export default {
-  title: 'Snippets/Feature Sections',
-  argTypes: {},
-  args: {},
-} as Meta;
-
-export const FeatureSections: Story = (args) => ({
-  components: {Icon},
-  setup() {
-    return {args};
-  },
-  template: `
+<template>
   <section class="py-8 sm:py-12 px-4 sm:px-0" id="feature">
     <div class="container mx-auto">
       <div class="mb-12 text-center space-y-2">
@@ -27,7 +17,16 @@ export const FeatureSections: Story = (args) => ({
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-8">
         <div v-for="i in 8" :key="i">
           <div
-            class="bg-primary border-primary w-10 h-10 rounded grid place-items-center mb-3"
+            class="
+              bg-primary
+              border-primary
+              w-10
+              h-10
+              rounded
+              grid
+              place-items-center
+              mb-3
+            "
           >
             <Icon name="ri:4k-line" class="w-5 h-5 fill-current text-white" />
           </div>
@@ -42,5 +41,4 @@ export const FeatureSections: Story = (args) => ({
       </div>
     </div>
   </section>
-  `,
-});
+</template>
