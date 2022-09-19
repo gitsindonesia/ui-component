@@ -1,4 +1,4 @@
-# GITS UI Component
+# GITS UI
 
 [![Quality Gate Status](https://sonar.gits.id/api/project_badges/measure?project=ui&metric=alert_status&token=47997a4785ff0c755eff7782b1be0676a7d358d3)](https://sonar.gits.id/dashboard?id=ui)
 [![Coverage](https://sonar.gits.id/api/project_badges/measure?project=ui&metric=coverage&token=47997a4785ff0c755eff7782b1be0676a7d358d3)](https://sonar.gits.id/dashboard?id=ui)
@@ -6,13 +6,24 @@
 
 ![GITS.ID](https://gits.id/wp-content/uploads/2020/09/Logo-Main.png)
 
-The official UI Component for GITS Indonesia.
+GITS UI is the official UI Component Library in GITS Indonesia built with Vue 3 and Tailwind CSS.
 
 ## Major Dependencies
 
 - [Vue.js](https://vuejs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Iconify Vue](https://icones.js.org/)
+
+## Documentation
+
+Documentation is located [here](https://gits-ui.web.app/).
+
+## Examples
+
+Checkout [examples](/examples/):
+
+- [Vue 3](/examples/vue/)
+- [Nuxt 3 Starter with GITS UI](https://github.com/gitsindonesia/nuxt-starter)
 
 ## Development
 
