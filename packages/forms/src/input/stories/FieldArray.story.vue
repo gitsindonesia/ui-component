@@ -19,7 +19,12 @@ const onSubmit = handleSubmit((values) => {
 <template>
   <form @submit="onSubmit" novalidate>
     <div v-for="(field, idx) in fields" :key="field.key" class="flex gap-4">
-      <VInput :name="`links[${idx}]`" type="url" wrapper-class="mb-2 flex-1" />
+      <VInput
+        placeholder="http://"
+        :name="`links[${idx}]`"
+        type="url"
+        wrapper-class="mb-2 flex-1"
+      />
       <div>
         <v-btn type="button" @click="remove(idx)">Remove</v-btn>
       </div>
