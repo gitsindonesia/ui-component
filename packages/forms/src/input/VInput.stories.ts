@@ -9,6 +9,7 @@ import {useForm} from 'vee-validate';
 import {object, string} from 'yup';
 import FieldArrayStory from './stories/FieldArray.story.vue';
 import FieldArrayOfObject from './stories/FieldArrayOfObject.story.vue';
+import FieldArrayNestedComponent from './stories/FieldArrayNested.story.vue';
 
 export default {
   title: 'Forms/Input',
@@ -497,4 +498,9 @@ export const FieldArrays: Story<VInputProps> = () => ({
 export const FieldArrayOfObjects: Story<VInputProps> = () => ({
   components: {FieldArrayOfObject},
   template: `<FieldArrayOfObject />`,
+});
+
+export const FieldArrayNested: Story<VInputProps> = () => ({
+  components: {FieldArrayNestedComponent},
+  template: `<FieldArrayNestedComponent />`,
 });

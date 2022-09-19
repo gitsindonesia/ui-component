@@ -17,7 +17,7 @@ const {handleSubmit, values, errors} = useForm({
 const {remove, push, fields} = useFieldArray('users');
 
 const onSubmit = handleSubmit((values) => {
-  console.log(JSON.stringify(values, null, 2));
+  alert(JSON.stringify(values, null, 2));
 });
 </script>
 

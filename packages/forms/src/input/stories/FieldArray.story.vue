@@ -12,7 +12,7 @@ const {handleSubmit, values, errors} = useForm({
 const {remove, push, fields} = useFieldArray('links');
 
 const onSubmit = handleSubmit((values) => {
-  console.log(JSON.stringify(values, null, 2));
+  alert(JSON.stringify(values, null, 2));
 });
 </script>
 
@@ -31,7 +31,7 @@ const onSubmit = handleSubmit((values) => {
     </div>
     <div class="mt-4 space-x-2">
       <v-btn type="button" @click="push('')">Add</v-btn>
-      <v-btn>Submit</v-btn>
+      <v-btn type="submit">Submit</v-btn>
     </div>
     Debug:
     <pre>{{ {values, errors} }}</pre>
