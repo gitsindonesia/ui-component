@@ -7,6 +7,7 @@ import {themeColors} from '@gits-id/utils';
 import VBtn from '@gits-id/button';
 import {useForm} from 'vee-validate';
 import {object, string} from 'yup';
+import FieldArrayStory from './stories/FieldArray.story.vue';
 
 export default {
   title: 'Forms/Input',
@@ -485,4 +486,9 @@ export const Validation: Story<VInputProps> = (args) => ({
       </div>
     </form>
 `,
+});
+
+export const FieldArrays: Story<VInputProps> = () => ({
+  components: {FieldArrayStory},
+  template: `<FieldArrayStory />`,
 });

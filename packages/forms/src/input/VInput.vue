@@ -117,7 +117,8 @@ const props = defineProps({
   },
 });
 
-const {type, readonly, disabled, placeholder, prependIcon} = toRefs(props);
+const {type, readonly, disabled, placeholder, prependIcon, name, rules} =
+  toRefs(props);
 
 const emit = defineEmits([
   'input:modelValue',
@@ -141,7 +142,7 @@ const sizeClass = computed(() => {
   return sizes[props.size];
 });
 
-const {value: inputValue, errorMessage} = useField(props.name, props.rules, {
+const {value: inputValue, errorMessage} = useField(name, rules, {
   initialValue: props.modelValue || props.value,
 });
 
