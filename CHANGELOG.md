@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.8](https://github.com/gitsindonesia/ui-component/compare/v0.11.7...v0.11.8) (2022-09-19)
+
+### Bug Fixes
+
+- fix behavior when using field array and custom component in Form ([d961be0](https://github.com/gitsindonesia/ui-component/commit/d961be000031d465478e426253456d7b0adedb6e)), closes [#12](https://github.com/gitsindonesia/ui-component/issues/12)
+
 ## [0.11.7](https://github.com/gitsindonesia/ui-component/compare/v0.11.6...v0.11.7) (2022-09-15)
 
 ### Bug Fixes
