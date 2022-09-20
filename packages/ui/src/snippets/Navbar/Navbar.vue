@@ -4,6 +4,7 @@ import Logo from '@gits-id/logo';
 import VBtn from '@gits-id/button';
 import Icon from '@gits-id/icon';
 import '@gits-id/avatar/dist/style.css';
+import '@gits-id/logo/dist/style.css';
 
 const menus = ref([
   {
