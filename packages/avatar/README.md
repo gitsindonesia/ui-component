@@ -35,7 +35,7 @@ import Avatar from '@gits-id/avatar';
 
 ## Documentation
 
-View full documentation [here](https://gits-ui.web.app/?path=/story/components-avatar--default).
+View full documentation [here](https://gits-ui.web.app/?path=/story/components-avatar--variants).
 
 ## License
 
