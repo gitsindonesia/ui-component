@@ -3,6 +3,7 @@ import {ref} from 'vue';
 import Logo from '@gits-id/logo';
 import VBtn from '@gits-id/button';
 import Icon from '@gits-id/icon';
+import '@gits-id/avatar/dist/style.css';
 
 const menus = ref([
   {
@@ -39,9 +40,7 @@ const isOpen = ref(false);
       "
     >
       <div class="flex justify-between items-center w-full sm:w-auto gap-4">
-        <a class="font-semibold flex-1" href="#">
-          <Logo img-class="h-8" />
-        </a>
+        <Logo size="md" />
         <v-btn class="sm:hidden" rounded icon @click="isOpen = !isOpen">
           <Icon name="ri:menu-line" />
         </v-btn>
