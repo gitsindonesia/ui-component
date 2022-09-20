@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "dist",
+    "declaration": true,
+    "sourceMap": false,
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "rootDir": ".",
+    "skipLibCheck": true,
+    "types": ["vite/client"],
+    "emitDeclarationOnly": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "preserve"
+  },
+  "include": ["src/vue.d.ts", "*.vue", "src"],
+  "exclude": [
+    "src/**/*.stories.ts",
+    "src/**/*.stories.js",
+    "src/**/*.spec.ts",
+    "src/**/*.test.ts"
+  ]
+}
