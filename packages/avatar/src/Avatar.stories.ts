@@ -181,3 +181,43 @@ Shape.parameters = {
     },
   },
 };
+
+export const CustomSizes: StoryFn<typeof Avatar> = (args) => ({
+  components: {Avatar},
+  setup() {
+    return {args, sizes, colors, avatar1, avatar2};
+  },
+  template: `
+    <div class="flex gap-2">
+      <Avatar
+        :size="100"
+        name="Michael Dam"
+        :src="avatar1"
+      />
+      <Avatar
+        size="200"
+        name="Alex Hipp"
+        :src="avatar2"
+      />
+    </div>
+  `,
+});
+CustomSizes.parameters = {
+  docs: {
+    source: {
+      code: `
+<Avatar
+  :size="100"
+  name="Michael Dam"
+  :src="avatar1"
+/>
+<Avatar
+  size="200"
+  name="Alex Hipp"
+  :src="avatar2"
+/>
+`,
+      language: 'html',
+    },
+  },
+};

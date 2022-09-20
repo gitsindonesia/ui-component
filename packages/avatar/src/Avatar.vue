@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import {computed} from 'vue';
-import {DefaultColors, DefaultSizes} from '@gits-id/theme/defaultTheme';
+import {
+  DefaultColors,
+  defaultSizes,
+  DefaultSizes,
+} from '@gits-id/theme/defaultTheme';
 
 export type Props = {
   color?: DefaultColors;
@@ -30,18 +34,46 @@ const initial = computed(() => {
     .slice(0, props.maxInitial)
     .join('');
 });
+
+const computedSize = computed(() => {
+  if (!defaultSizes.includes(String(props.size))) {
+    return {
+      width: props.size,
+      height: props.size,
+    };
+  }
+
+  return {};
+});
+
+const computedStyle = computed(() => {
+  if (!defaultSizes.includes(String(props.size))) {
+    return {
+      width: `${props.size}px`,
+      height: `${props.size}px`,
+    };
+  }
+
+  return {};
+});
 </script>
 
 <template>
-  <div :class="classes">
-    <img v-if="src" :src="src" :alt="name || alt" class="avatar-image" />
+  <div :class="classes" :style="computedStyle">
+    <img
+      v-if="src"
+      :src="src"
+      :alt="name || alt"
+      class="avatar-image"
+      v-bind="computedSize"
+    />
     <span v-else class="avatar-initial">{{ initial }}</span>
   </div>
 </template>
 
 <style>
 .avatar {
-  @apply flex items-center justify-center font-semibold border uppercase;
+  @apply flex items-center justify-center font-semibold border uppercase overflow-hidden;
 }
 
 /* shapes */
