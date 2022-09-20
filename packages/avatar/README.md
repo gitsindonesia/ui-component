@@ -24,7 +24,10 @@ pnpm i @gits-id/avatar
 
 ```vue
 <script setup lang="ts">
+// import component
 import Avatar from '@gits-id/avatar';
+// import style
+import '@gits-id/avatar/dist/style.css';
 </script>
 
 <template>
