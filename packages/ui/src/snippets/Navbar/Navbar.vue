@@ -64,25 +64,31 @@ const isOpen = ref(false);
       </nav>
 
       <!-- mobile navigation -->
-      <nav
-        v-if="isOpen"
-        class="fixed sm:hidden top-[66px] bg-white shadow left-0 w-full"
-        aria-label="Mobile Navigation"
-      >
-        <ul class="flex flex-col py-1">
-          <li v-for="menu in menus" :key="menu.text">
-            <router-link
-              class="hover:bg-gray-100 hover:text-primary block px-4 py-3"
-              :class="
-                menu.active ? 'bg-gray-100 text-primary font-semibold' : ''
-              "
-              :to="menu.to"
-            >
-              {{ menu.text }}
-            </router-link>
-          </li>
-        </ul>
-      </nav>
+      <transition name="fade">
+        <nav
+          v-if="isOpen"
+          class="fixed sm:hidden top-[66px] bg-white shadow left-0 w-full"
+          aria-label="Mobile Navigation"
+        >
+          <ul class="flex flex-col py-1">
+            <li v-for="menu in menus" :key="menu.text">
+              <router-link
+                class="hover:bg-gray-100 hover:text-primary block px-4 py-3"
+                :class="
+                  menu.active ? 'bg-gray-100 text-primary font-semibold' : ''
+                "
+                :to="menu.to"
+              >
+                {{ menu.text }}
+              </router-link>
+            </li>
+          </ul>
+        </nav>
+      </transition>
     </div>
   </header>
 </template>
+
+<style>
+@import '../../assets/transition.css';
+</style>
