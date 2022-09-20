@@ -5,11 +5,9 @@ import {sizes} from './types';
 export default {
   title: 'Components/Logo',
   component: VLogo,
-  argTypes: {},
   args: {
-    white: false,
     to: '/',
-    imgClass: 'h-7',
+    size: 'md',
   },
 } as Meta;
 

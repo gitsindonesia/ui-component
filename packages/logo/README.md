@@ -1,7 +1,5 @@
 # GITS Logo Component
 
-> Reusable Logo Component
-
 ## Installation
 
 npm
@@ -27,6 +25,7 @@ pnpm i @gits-id/logo
 ```vue
 <script setup lang="ts">
 import VLogo from '@gits-id/logo';
+import '@gits-id/logo/dist/style.css';
 </script>
 
 <template>

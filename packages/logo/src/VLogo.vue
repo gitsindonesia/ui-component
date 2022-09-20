@@ -15,26 +15,35 @@ const props = withDefaults(defineProps<Props>(), {
   to: '/',
   white: false,
   imgClass: '',
-  size: '',
-  width: 'auto',
-  height: 'auto',
+  size: 'md',
 });
 
 const {white, to} = toRefs(props);
 
 const tag = computed(() => (to.value ? resolveComponent('RouterLink') : 'a'));
+
+const imgAttrs = computed(() => {
+  return {
+    width: props.width,
+    height: props.height,
+  };
+});
 </script>
 
 <template>
-  <component :is="tag" :to="to" class="v-logo" :class="`v-logo--${size}`">
+  <component
+    :is="tag"
+    :to="to"
+    class="v-logo"
+    :class="size && `v-logo--${size}`"
+  >
     <img
       v-if="white"
       class="v-logo-image"
       :class="imgClass"
       alt="Logo White"
       src="./assets/logo-white.png"
-      :width="width"
-      :height="height"
+      v-bind="imgAttrs"
     />
     <img
       v-else
@@ -42,8 +51,7 @@ const tag = computed(() => (to.value ? resolveComponent('RouterLink') : 'a'));
       :class="imgClass"
       alt="Logo Base"
       src="./assets/logo-base.png"
-      :width="width"
-      :height="height"
+      v-bind="imgAttrs"
     />
   </component>
 </template>
