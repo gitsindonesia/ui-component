@@ -20,7 +20,7 @@ const onSubmit = handleSubmit((values) => {
 </script>
 
 <template>
-  <div>
+  <div class="sm:max-w-md sm:mx-auto">
     <v-card>
       <v-logo img-class="h-10 mx-auto" />
 
@@ -47,8 +47,8 @@ const onSubmit = handleSubmit((values) => {
           name="password"
           :type="showPassword ? 'text' : 'password'"
           prepend-icon="ri:lock-line"
-          append-icon="ri:eye-line"
-          @clickPrependIcon="showPassword = !showPassword"
+          :append-icon="showPassword ? 'ri:eye-off-line' : 'ri:eye-line'"
+          @click-append-icon="showPassword = !showPassword"
         />
         <v-checkbox
           wrapper-class="mt-4"
