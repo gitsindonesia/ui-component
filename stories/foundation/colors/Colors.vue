@@ -11,6 +11,7 @@ colors.error = colors.rose;
 </script>
 
 <template>
+  <h1 class="text-3xl font-bold mb-5">Colors</h1>
   <h3 class="text-lg font-semibold mb-3">Brand Colors</h3>
   <div class="grid gap-4 grid-cols-2 sm:grid-cols-6">
     <div v-for="color in defaultColors" :key="color">
