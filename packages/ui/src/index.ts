@@ -59,6 +59,7 @@ import {
 } from '@gits-id/list';
 import {Icon} from '@gits-id/icon';
 import Avatar from '@gits-id/avatar';
+import Shimmer from '@gits-id/shimmer';
 
 const plugin = {
   install: (app: App) => {
@@ -110,6 +111,7 @@ const plugin = {
     app.component('VListCollapse', ListCollapse);
     app.component('VIcon', Icon);
     app.component('VAvatar', Avatar);
+    app.component('VShimmer', Shimmer);
   },
 };
 
@@ -171,6 +173,7 @@ export {
   ListItemHeader as VListItemHeader,
   Icon as VIcon,
   Avatar as VAvatar,
+  Shimmer as VShimmer,
 };
 
 export * from '@gits-id/utils';
