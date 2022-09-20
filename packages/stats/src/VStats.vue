@@ -54,9 +54,9 @@ const colorClass = computed(() => {
 });
 
 const badgeColor = computed(() => {
-  if (progressColor.value) return progressColor.value;
-  else if (up.value) return 'success';
+  if (up.value) return 'success';
   else if (down.value) return 'error';
+  return progressColor.value;
 });
 </script>
 

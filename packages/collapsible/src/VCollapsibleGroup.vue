@@ -60,6 +60,7 @@ const onChange = (isOpen: boolean, item: CollapsibleItem, idx: number) => {
       <slot name="group:header"> </slot>
       <VCollapsible
         v-for="(item, idx) in groupItems"
+        :key="idx"
         v-model="item.isOpen"
         v-bind="item"
         @change="onChange($event, item, idx)"

@@ -54,7 +54,6 @@ export const Small = Template.bind({});
 Small.args = {
   small: true,
 };
-Small.storyName = 'Small';
 Small.parameters = {
   docs: {
     source: {
@@ -67,7 +66,6 @@ export const Large = Template.bind({});
 Large.args = {
   large: true,
 };
-Large.storyName = 'Large';
 Large.parameters = {
   docs: {
     source: {

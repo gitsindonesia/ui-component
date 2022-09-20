@@ -14,7 +14,8 @@
     "deploy:ui": "firebase deploy --only hosting:ui",
     "deploy:playground": "firebase deploy --only hosting:playground",
     "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "lint": "eslint --ext .ts,.tsx,.js,.jsx,.vue packages"
   },
   "dependencies": {
     "@vueuse/core": "^7.7.1",
@@ -93,7 +94,7 @@
   ],
   "private": true,
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,html,css,vue}": "eslint --fix",
+    "*.{js,jsx,ts,tsx,html,css,vue}": "npm run lint",
     "*.{js,jsx,ts,tsx,md,html,css,vue}": "prettier --write"
   }
 }
