@@ -58,6 +58,7 @@ import {
   ListItemHeader,
 } from '@gits-id/list';
 import {Icon} from '@gits-id/icon';
+import Avatar from '@gits-id/avatar';
 
 const plugin = {
   install: (app: App) => {
@@ -108,6 +109,7 @@ const plugin = {
     app.component('VListItemHeader', ListItemHeader);
     app.component('VListCollapse', ListCollapse);
     app.component('VIcon', Icon);
+    app.component('VAvatar', Avatar);
   },
 };
 
@@ -168,6 +170,7 @@ export {
   ListItemDivider as VListItemDivider,
   ListItemHeader as VListItemHeader,
   Icon as VIcon,
+  Avatar as VAvatar,
 };
 
 export * from '@gits-id/utils';
