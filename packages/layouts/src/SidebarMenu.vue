@@ -36,7 +36,7 @@ const {isCollapsed, menus} = toRefs(props);
         {{ menu.title }}
       </div>
 
-      <template v-for="(child, cIdx) in menu.children" :key="cIdx">
+      <template v-for="child in menu.children" :key="child.title">
         <div
           v-if="child.children && child.children.length > 0"
           class="
