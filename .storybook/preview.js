@@ -22,6 +22,7 @@ export const parameters = {
       method: 'alphabetical',
       order: [
         'Getting Started',
+        'Foundation',
         'Components',
         'Forms',
         'Layouts',
