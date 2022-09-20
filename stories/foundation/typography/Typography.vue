@@ -11,12 +11,12 @@ import defaultTheme from 'tailwindcss/defaultTheme';
 
         <ul class="font-mono text-xs mt-1">
           <li>Font size: {{ size[0] }}</li>
-          <li>Line height: {{ size[1] }}</li>
+          <li>Line height: {{ size[1].lineHeight }}</li>
         </ul>
       </div>
       <p
         class="border-2 rounded-xl p-4 mt-4"
-        :style="{fontSize: size[0], lineHeight: size[1]}"
+        :style="{fontSize: size[0], lineHeight: size[1].lineHeight}"
       >
         Lorem ipsum dolor sit amet consectetur, adipisicing elit
       </p>
