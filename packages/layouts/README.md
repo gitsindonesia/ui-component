@@ -1,5 +1,7 @@
 # GITS Layouts Component
 
+> Deprecated
+
 Layouts Component.
 
 ## Installation
