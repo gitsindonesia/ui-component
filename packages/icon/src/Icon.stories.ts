@@ -10,18 +10,44 @@ export default {
   },
 };
 
-export const Default: Story<{}> = (args) => ({
+export const Default: Story<{}> = () => ({
   components: {Icon},
-  setup() {
-    return {args};
-  },
   template: `<Icon v-bind="args" />`,
 });
-Default.storyName = 'Icon';
 Default.parameters = {
   docs: {
     source: {
       code: '<Icon name="ic:round-home" />',
+    },
+  },
+};
+
+export const Sizes: Story<{}> = (args) => ({
+  components: {Icon},
+  template: `
+<Icon name="ri:search-line" size="xxs" />
+<Icon name="ri:search-line" size="xs" />
+<Icon name="ri:search-line" size="sm" />
+<Icon name="ri:search-line" size="md" />
+<Icon name="ri:search-line" size="lg" />
+<Icon name="ri:search-line" size="xl" />
+<Icon name="ri:search-line" size="50" />
+<Icon name="ri:search-line" :size="70" />
+  `,
+});
+Sizes.parameters = {
+  docs: {
+    source: {
+      code: `
+<Icon name="ri:search-line" size="xxs" />
+<Icon name="ri:search-line" size="xs" />
+<Icon name="ri:search-line" size="sm" />
+<Icon name="ri:search-line" size="md" />
+<Icon name="ri:search-line" size="lg" />
+<Icon name="ri:search-line" size="xl" />
+<Icon name="ri:search-line" size="50" />
+<Icon name="ri:search-line" :size="70" />
+      `,
     },
   },
 };
