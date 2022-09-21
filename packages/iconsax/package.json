@@ -1,0 +1,33 @@
+{
+  "name": "@gits-id/iconsax",
+  "version": "0.0.0",
+  "description": "Vue Iconsax",
+  "scripts": {
+    "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
+    "prepublishOnly": "npm run build",
+    "test": "vitest"
+  },
+  "keywords": [
+    "icon",
+    "gits",
+    "ui-component",
+    "iconsax",
+    "vue"
+  ],
+  "author": "Warsono <warsono16694@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^3.2.31"
+  },
+  "devDependencies": {
+    "@vue/test-utils": "^2.0.0-rc.17",
+    "c8": "^7.11.3",
+    "vite": "^3.0.0",
+    "vitest": "^0.12.4"
+  },
+  "main": "dist/iconsax.umd.js",
+  "unpkg": "dist/iconsax.iife.js",
+  "jsdelivr": "dist/iconsax.iife.js",
+  "module": "./dist/iconsax.mjs",
+  "types": "./dist/types/index.d.ts"
+}
