@@ -6,7 +6,7 @@ import {type DefaultSizes, defaultSizes} from '@gits-id/theme/defaultTheme';
 
 export type Props = {
   name: string;
-  size: DefaultSizes | string | number;
+  size?: DefaultSizes | string | number;
 };
 
 const props = withDefaults(defineProps<Props>(), {

@@ -10,7 +10,10 @@ export default {
   },
 };
 
-export const Default: Story<{}> = () => ({
+export const Default: Story<{}> = (args) => ({
+  setup() {
+    return {args};
+  },
   components: {Icon},
   template: `<Icon v-bind="args" />`,
 });
