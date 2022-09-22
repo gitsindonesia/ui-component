@@ -32,5 +32,8 @@ export default defineConfig({
         items: [{text: 'Alert', link: '/components/alerts'}],
       },
     ],
+    socialLinks: [
+      {icon: 'github', link: 'https://github.com/gitsindonesia/ui-component'},
+    ],
   },
 });
