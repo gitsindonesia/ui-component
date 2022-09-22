@@ -55,7 +55,7 @@ module.exports = {
 
 Once that's done, open `src/main.ts` and import `GitsUi` plugin from `@gits-id/ui` and use it as the Vue plugin.
 
-```ts{7-8,14}
+```ts{7-8,12}
 // main.ts
 import { createApp } from "vue";
 
@@ -86,7 +86,7 @@ Open `src/views/HomeView` and replace the existing content with the code below:
 
 ```vue
 <template>
-  <h1 class="text-3xl font-bold text-gray-800">GITS UI Examples</h1>
+  <h1 class="text-3xl font-bold text-gray-800">GITS UI</h1>
 
   <VAlert> Alert text </VAlert>
 
