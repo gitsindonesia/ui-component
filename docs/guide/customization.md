@@ -2,7 +2,7 @@
 
 ## Brand Colors
 
-There are 5 named colors which come with itws own shade from `50-900` like tailwind.
+There are 5 named colors which come with its own shade from 50 to 900 like tailwind.
 
 - primary
 - secondary
