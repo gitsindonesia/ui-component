@@ -20,7 +20,9 @@ cd my-app
 yarn install
 ```
 
-## Step 2. Install GITS UI
+![Step 1](/getting-started-1.png)
+
+## Step 2. Install Tailwind CSS and GITS UI
 
 Install `@gits-id/ui` and `tailwindcss` package:
 
@@ -28,15 +30,15 @@ Install `@gits-id/ui` and `tailwindcss` package:
 yarn add @gits-id/ui tailwindcss postcss autoprefixer
 ```
 
-Generate the tailwind config files:
+Next, generate the tailwind config files:
 
 ```bash
 npx tailwindcss init -p
 ```
 
-Install the GITS UI preset and scan the GITS UI Component Folders.
+Next, register the GITS UI preset and add the component folders the `content` section in the `tailwind.config.cjs` file:
 
-```js{6,15}
+```js{6,12}
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -52,7 +54,15 @@ module.exports = {
 };
 ```
 
-Once that's done, open `src/main.ts` and import `GitsUi` plugin from `@gits-id/ui` and use it as the Vue plugin.
+Next, add the Tailwind directives to `src/assets/main.css`:
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+Next, open `src/main.ts` and import `GitsUi` plugin from `@gits-id/ui` and use it as the Vue plugin.
 
 ```ts{7-8,12}
 // main.ts
@@ -71,7 +81,29 @@ app.use(GitsUi);
 app.mount("#app");
 ```
 
-## Step 3. Boot up dev server
+## Step 3. Use the component
+
+Open `src/views/HomeView.vue` and replace the existing content with the code below:
+
+```vue
+<template>
+  <div class="container mx-auto p-6 space-y-3">
+    <h1 class="text-3xl font-bold text-gray-800">GITS UI</h1>
+
+    <VAlert color="error"> Alert text </VAlert>
+
+    <VBtn color="primary"> Click me </VBtn>
+
+    <VInput placeholder="Type something..." />
+  </div>
+</template>
+```
+
+::: info
+The component `VAlert`, `VBtn` and `VInput` are registered globally.
+:::
+
+## Step 4. Boot up dev server
 
 Run `dev` scripts and open http://localhost:5173.
 
@@ -79,26 +111,12 @@ Run `dev` scripts and open http://localhost:5173.
 yarn dev
 ```
 
-## Step 4. Use the component
+If everything goes well, you should see something like in the browser:
 
-Open `src/views/HomeView` and replace the existing content with the code below:
+![Getting Started 2](/getting-started-2.png)
 
-```vue
-<template>
-  <h1 class="text-3xl font-bold text-gray-800">GITS UI</h1>
+## What's Next ?
 
-  <VAlert> Alert text </VAlert>
+Congratulation! You have completed setup your application with GITS UI! Now you can start creating your application with ease.
 
-  <VBtn> Click me </VBtn>
-
-  <VInput placeholder="Type something..." />
-</template>
-```
-
-::: info
-The component `VAlert`, `VBtn` and `VInput` is registered globally.
-:::
-
-View the result on the browser. You should see something like this:
-
-[screenshot]
+If you don't want to repeat this step in the future, you can save and push the project to your GitHub or somewhere elese as your personal starter kit and use it when needed. You can also you the official [Nuxt Starter](https://github.com/gitsindonesia/nuxt-starter) and Vue Starter [here](https://github.com/gitsindonesia/ui-component/tree/main/examples/vue).
