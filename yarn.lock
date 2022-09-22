@@ -5731,13 +5731,6 @@
   dependencies:
     "@vue/shared" "3.2.37"
 
-"@vue/reactivity@3.2.39":
-  version "3.2.39"
-  resolved "https://registry.yarnpkg.com/@vue/reactivity/-/reactivity-3.2.39.tgz#e6e3615fe2288d4232b104640ddabd0729a78c80"
-  integrity sha512-vlaYX2a3qMhIZfrw3Mtfd+BuU+TZmvDrPMa+6lpfzS9k/LnGxkSuf0fhkP0rMGfiOHPtyKoU9OJJJFGm92beVQ==
-  dependencies:
-    "@vue/shared" "3.2.39"
-
 "@vue/runtime-core@3.2.37":
   version "3.2.37"
   resolved "https://registry.yarnpkg.com/@vue/runtime-core/-/runtime-core-3.2.37.tgz#7ba7c54bb56e5d70edfc2f05766e1ca8519966e3"

@@ -19,6 +19,7 @@
     "@gits-id/theme": "*"
   },
   "devDependencies": {
+    "@gits-id/tailwind-config": "*",
     "vite": "^3.0.0",
     "vitest": "^0.12.4",
     "vue-tsc": "^0.40.1"
