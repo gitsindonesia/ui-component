@@ -3,7 +3,7 @@
 This section will help you build a basic Vue app with GITS UI from ground up. If you already have an existing project and would like to keep documentation inside the project, start from Step 2.
 
 ::: tip
-Checkout [examples](https://github.com/gitsindonesia/ui-component/tree/main/examples/vue) to help you get started faster.
+Checkout [Nuxt Starter](https://github.com/gitsindonesia/nuxt-starter) and [examples](https://github.com/gitsindonesia/ui-component/tree/main/examples/vue) to get you started faster.
 :::
 
 ::: info
