@@ -25,7 +25,7 @@ To create your own preset, you can copy the default preset and make change on it
 cp ./node_modules/@gits-id/tailwind-config/preset.js ./src/preset.js
 ```
 
-Now you can modify the preset color in `./src/preset.js` like so:
+Now you can freely modify the preset color in `./src/preset.js` as you need:
 
 ```js
 const colors = require('tailwindcss/colors');
