@@ -5,6 +5,9 @@ title: Vue Component Library
 hero:
   name: GITS UI
   text: Vue Component Library
+  image:
+    src: https://gits.id/wp-content/uploads/2022/06/Logo-Main-1.png
+    alt: GITS
   # tagline: Beautiful yet costumizable Vue Components
   actions:
     - theme: brand

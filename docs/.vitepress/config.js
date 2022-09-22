@@ -8,7 +8,8 @@ export default defineConfig({
   themeConfig: {
     logo: 'https://gits.id/wp-content/uploads/2022/06/Logo-Main-1.png',
     nav: [
-      {text: 'Guide', link: '/guide/introduction'},
+      {text: 'Guide', link: '/guide/getting-started'},
+      {text: 'Storybook', link: 'https://gits-ui.web.app'},
       // {
       //   text: 'Ecosystem',
       //   items: [
