@@ -50,7 +50,6 @@ module.exports = {
   plugins: [],
   presets: [require("@gits-id/tailwind-config/preset")],
 };
-
 ```
 
 Once that's done, open `src/main.ts` and import `GitsUi` plugin from `@gits-id/ui` and use it as the Vue plugin.
