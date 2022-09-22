@@ -6,7 +6,7 @@
     "release": "standard-version",
     "build-storybook": "build-storybook",
     "build": "build-storybook",
-    "storybook": "yarn storybook -s ./packages/iconsax/src",
+    "storybook": "start-storybook -p 6006",
     "sb": "npm run storybook",
     "dev": "npm run storybook",
     "dev:playground": "lerna run dev --scope @gits-id/playground --stream",
