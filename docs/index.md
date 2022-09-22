@@ -1,5 +1,6 @@
 ---
 layout: home
+title: Vue Component Library
 
 hero:
   name: GITS UI
