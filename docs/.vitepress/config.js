@@ -3,6 +3,7 @@ import {defineConfig} from 'vitepress';
 export default defineConfig({
   title: 'GITS UI',
   description: 'GITS UI Component Library',
+  ignoreDeadLinks: true,
   themeConfig: {
     logo: 'https://gits.id/wp-content/uploads/2022/06/Logo-Main-1.png',
     nav: [
