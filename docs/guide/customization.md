@@ -2,7 +2,7 @@
 
 ## Brand Colors
 
-There are 5 named colors which come with its own shade from 50 to 900 like tailwind.
+There are 6 named colors which come with its own shade from 50 to 900 like tailwind.
 
 - primary
 - secondary
@@ -19,7 +19,7 @@ GITS UI ships with default GITS Design as Tailwind Preset via `@gits-id/tailwind
 
 ### Creating your own preset
 
-To create your own preset, you can copy the default preset and make change on its file.
+To create your own preset, you can copy the default preset to your project.
 
 ```bash
 cp ./node_modules/@gits-id/tailwind-config/preset.js ./src/preset.js
@@ -84,7 +84,7 @@ module.exports = {
 };
 ```
 
-After that, change the preset path to your local one:
+After that, change the preset path to your local one and you good to go.
 
 ```js{12}
 /** @type {import('tailwindcss').Config} */

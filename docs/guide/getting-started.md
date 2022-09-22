@@ -119,4 +119,4 @@ If everything goes well, you should see something like in the browser:
 
 Congratulation! You have completed setup your application with GITS UI! Now you can start creating your application with ease.
 
-If you don't want to repeat this step in the future, you can save and push the project to your GitHub or somewhere elese as your personal starter kit and use it when needed. You can also you the official [Nuxt Starter](https://github.com/gitsindonesia/nuxt-starter) and Vue Starter [here](https://github.com/gitsindonesia/ui-component/tree/main/examples/vue).
+If you don't want to repeat this step in the future, you can save and push the project to your GitHub or somewhere else as your personal starter kit and use it when needed. You can also you the official [Nuxt Starter](https://github.com/gitsindonesia/nuxt-starter) and Vue Starter [here](https://github.com/gitsindonesia/ui-component/tree/main/examples/vue).
