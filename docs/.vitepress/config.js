@@ -29,7 +29,7 @@ export default defineConfig({
       },
       {
         text: 'Components',
-        items: [{text: 'Alert', link: '/components/alerts'}],
+        items: [{text: 'Avatar', link: '/components/avatar'}],
       },
     ],
     socialLinks: [

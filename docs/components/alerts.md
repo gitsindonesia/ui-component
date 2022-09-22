@@ -1,5 +1,0 @@
-# Alert
-
-## Installation
-
-## Usage
