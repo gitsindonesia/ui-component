@@ -3,6 +3,40 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.9](https://github.com/gitsindonesia/ui-component/compare/v0.11.8...v0.11.9) (2022-09-23)
+
+### Bug Fixes
+
+- **VCheckbox:** improve checkbox disabled state ([c769e44](https://github.com/gitsindonesia/ui-component/commit/c769e44eb96d4803f7f2362f3e4c2a276e86aa85)), closes [#13](https://github.com/gitsindonesia/ui-component/issues/13)
+
+### chore
+
+- remove layouts stories ([94e2718](https://github.com/gitsindonesia/ui-component/commit/94e27186dd4f28829cb224cdab3658702040183c))
+
+### Features
+
+- add foundation stories for elevation, rounded, typography ([32ff68a](https://github.com/gitsindonesia/ui-component/commit/32ff68ad32c0032fbddeebe0c02229d9af5361f3))
+- add foundation/colors stories ([d40cbb9](https://github.com/gitsindonesia/ui-component/commit/d40cbb90a11bce330a526626e99a95d6169ec5e6))
+- **Avatar:** new Avatar component ([560f774](https://github.com/gitsindonesia/ui-component/commit/560f77486df9e4a12820da0aae2da834c568a4a1))
+- **docs:** wip official docs ([0950937](https://github.com/gitsindonesia/ui-component/commit/095093719b1d1f81a9a66702cf90f2e29ec09202))
+- **examples:** add vue 3 example ([4c445d4](https://github.com/gitsindonesia/ui-component/commit/4c445d4f12053bfe6a41ea5ea74c3f24ef5e604e))
+- **Icon:** improved icon size ([a952056](https://github.com/gitsindonesia/ui-component/commit/a95205669f5e4a038f492d4ecb5bf6796f5f98d5))
+- **iconsax:** new Iconsax component ([fe71c52](https://github.com/gitsindonesia/ui-component/commit/fe71c52204e00c2a13a9b6e5ecf0c420d5d3cd11))
+- **Logo:** new size props ([e8ec195](https://github.com/gitsindonesia/ui-component/commit/e8ec1954c2896da604b337578b50717312f6d4e5))
+- new transition classes: , , , & ([2024b83](https://github.com/gitsindonesia/ui-component/commit/2024b831a94ab0f3f07a834304e016e768d51fbf))
+- **Shimmer:** new Shimmer component ([d430714](https://github.com/gitsindonesia/ui-component/commit/d4307148f8bdc635c72430a59bf0dbd4881ed8fb))
+- **snippets:** add auth login and forgot password snippets ([ee5877c](https://github.com/gitsindonesia/ui-component/commit/ee5877c52a30c76784cce5b09d9262ae62071473))
+- **snippets:** add Navbar snippet ([996944c](https://github.com/gitsindonesia/ui-component/commit/996944cafd4341daea14625a9dc4f30b493a5fc9))
+- **snippets:** convert snippet storybook into vue component snippets ([3fc7ccb](https://github.com/gitsindonesia/ui-component/commit/3fc7ccbe1dc8c325b873597b5d19eaef939100df))
+- **snippets:** footer snippets as vue component ([e3238c8](https://github.com/gitsindonesia/ui-component/commit/e3238c8acc9ccd2ed284c32ccc81fc3480ba4c1b))
+- **snippets:** new sidebar layout ([f4aae93](https://github.com/gitsindonesia/ui-component/commit/f4aae9389a91fa9f6b0e1b81a8999d66a0453b31))
+- **theme:** add defaultTheme ([90350f2](https://github.com/gitsindonesia/ui-component/commit/90350f25c15ac0eb27fc73e6059f4193f8fb8b85))
+- **VRadio:** implement disabled state ([e948e6c](https://github.com/gitsindonesia/ui-component/commit/e948e6caedf1931578be729de266c2b9306f0ab2)), closes [#13](https://github.com/gitsindonesia/ui-component/issues/13)
+
+### BREAKING CHANGES
+
+- deprecated `@gits-id/layouts` package
+
 ## [0.11.8](https://github.com/gitsindonesia/ui-component/compare/v0.11.7...v0.11.8) (2022-09-19)
 
 ### Bug Fixes

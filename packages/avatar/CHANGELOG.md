@@ -7,4 +7,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-- **iconsax:** new Iconsax component ([fe71c52](https://github.com/gitsindonesia/ui-component/commit/fe71c52204e00c2a13a9b6e5ecf0c420d5d3cd11))
+- **Avatar:** new Avatar component ([560f774](https://github.com/gitsindonesia/ui-component/commit/560f77486df9e4a12820da0aae2da834c568a4a1))

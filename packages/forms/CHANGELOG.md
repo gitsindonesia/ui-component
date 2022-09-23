@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.9](https://github.com/gitsindonesia/ui-component/compare/v0.11.8...v0.11.9) (2022-09-23)
+
+### Bug Fixes
+
+- **VCheckbox:** improve checkbox disabled state ([c769e44](https://github.com/gitsindonesia/ui-component/commit/c769e44eb96d4803f7f2362f3e4c2a276e86aa85)), closes [#13](https://github.com/gitsindonesia/ui-component/issues/13)
+
+### Features
+
+- **VRadio:** implement disabled state ([e948e6c](https://github.com/gitsindonesia/ui-component/commit/e948e6caedf1931578be729de266c2b9306f0ab2)), closes [#13](https://github.com/gitsindonesia/ui-component/issues/13)
+
 ## [0.11.8](https://github.com/gitsindonesia/ui-component/compare/v0.11.7...v0.11.8) (2022-09-19)
 
 ### Bug Fixes

@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.9](https://github.com/gitsindonesia/ui-component/compare/v0.11.8...v0.11.9) (2022-09-23)
+
+### chore
+
+- remove layouts stories ([94e2718](https://github.com/gitsindonesia/ui-component/commit/94e27186dd4f28829cb224cdab3658702040183c))
+
+### BREAKING CHANGES
+
+- deprecated `@gits-id/layouts` package
+
 ## [0.11.6](https://github.com/gitsindonesia/ui-component/compare/v0.11.5...v0.11.6) (2022-09-13)
 
 **Note:** Version bump only for package @gits-id/layouts

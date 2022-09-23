@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.9](https://github.com/gitsindonesia/ui-component/compare/v0.11.8...v0.11.9) (2022-09-23)
+
+### Features
+
+- **theme:** add defaultTheme ([90350f2](https://github.com/gitsindonesia/ui-component/commit/90350f25c15ac0eb27fc73e6059f4193f8fb8b85))
+
 ## [0.11.6](https://github.com/gitsindonesia/ui-component/compare/v0.11.5...v0.11.6) (2022-09-13)
 
 **Note:** Version bump only for package @gits-id/theme

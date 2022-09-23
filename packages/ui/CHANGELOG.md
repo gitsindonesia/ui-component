@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.9](https://github.com/gitsindonesia/ui-component/compare/v0.11.8...v0.11.9) (2022-09-23)
+
+### Features
+
+- new transition classes: , , , & ([2024b83](https://github.com/gitsindonesia/ui-component/commit/2024b831a94ab0f3f07a834304e016e768d51fbf))
+- **snippets:** add auth login and forgot password snippets ([ee5877c](https://github.com/gitsindonesia/ui-component/commit/ee5877c52a30c76784cce5b09d9262ae62071473))
+- **snippets:** add Navbar snippet ([996944c](https://github.com/gitsindonesia/ui-component/commit/996944cafd4341daea14625a9dc4f30b493a5fc9))
+- **snippets:** convert snippet storybook into vue component snippets ([3fc7ccb](https://github.com/gitsindonesia/ui-component/commit/3fc7ccbe1dc8c325b873597b5d19eaef939100df))
+- **snippets:** footer snippets as vue component ([e3238c8](https://github.com/gitsindonesia/ui-component/commit/e3238c8acc9ccd2ed284c32ccc81fc3480ba4c1b))
+- **snippets:** new sidebar layout ([f4aae93](https://github.com/gitsindonesia/ui-component/commit/f4aae9389a91fa9f6b0e1b81a8999d66a0453b31))
+
 ## [0.11.8](https://github.com/gitsindonesia/ui-component/compare/v0.11.7...v0.11.8) (2022-09-19)
 
 **Note:** Version bump only for package @gits-id/ui
