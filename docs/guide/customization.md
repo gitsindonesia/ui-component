@@ -28,8 +28,9 @@ cp ./node_modules/@gits-id/tailwind-config/preset.js ./src/preset.js
 Now you can freely modify the preset color in `./src/preset.js` as you need:
 
 ```js
-const colors = require('tailwindcss/colors');
+const tailwindColors = require('tailwindcss/colors');
 
+// default GITS Color
 const primary = {
   DEFAULT: '#28A0F6',
   50: '#D8EEFD',
@@ -44,6 +45,7 @@ const primary = {
   900: '#02233B',
 };
 
+// default GITS Color
 const secondary = {
   DEFAULT: '#FF8B49',
   50: '#FFFFFF',
@@ -61,10 +63,10 @@ const secondary = {
 const colors = {
   primary,
   secondary,
-  info: colors.sky,
-  success: colors.emerald,
-  warning: colors.yellow,
-  error: colors.rose,
+  info: tailwindColors.sky,
+  success: tailwindColors.emerald,
+  warning: tailwindColors.yellow,
+  error: tailwindColors.rose,
 };
 
 module.exports = {
