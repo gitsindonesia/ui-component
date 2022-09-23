@@ -31,5 +31,6 @@
   "unpkg": "dist/shimmer.iife.js",
   "jsdelivr": "dist/shimmer.iife.js",
   "module": "./dist/shimmer.mjs",
-  "types": "./dist/types/index.d.ts"
+  "types": "./dist/types/index.d.ts",
+  "gitHead": "b5a78473960cae120ca3396a242f6fb241970de4"
 }
