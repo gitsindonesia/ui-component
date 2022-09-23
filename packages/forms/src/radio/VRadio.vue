@@ -57,6 +57,14 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
+  disabledClass: {
+    type: String,
+    default: 'disabled:text-gray-200 disabled:cursor-not-allowed',
+  },
 });
 
 const {modelValue, rules, label, inputClass, color, name, id} = toRefs(props);
@@ -114,7 +122,10 @@ watch(
         :name="name"
         :value="value"
         class="transition duration-300"
-        :class="[inputClass, colorClass]"
+        :class="[inputClass, colorClass, disabled && disabledClass]"
+        :aria-disabled="disabled"
+        :disabled="disabled"
+        v-bind="$attrs"
       />
       <label v-if="label" :for="id || name" :class="labelClass">
         {{ label }}

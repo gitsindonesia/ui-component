@@ -45,6 +45,18 @@ Radio.parameters = {
   },
 };
 
+export const Disabled = Template.bind({});
+Disabled.args = {
+  disabled: true,
+};
+Disabled.parameters = {
+  docs: {
+    source: {
+      code: '<v-radio disabled />',
+    },
+  },
+};
+
 export const Validation: Story<{}> = () => ({
   components: {VRadio, VBtn},
   setup() {
