@@ -1,6 +1,8 @@
 # Avatar
 
-## Basic usage
+## Usage
+
+### Basic Usage
 
 ```vue
 <script setup lang="ts">
@@ -12,6 +14,61 @@ import '@gits-id/avatar/dist/style.css';
   <!-- VAvatar is registered globally -->
   <VAvatar color="primary" name="John Doe" />
   <VAvatar color="primary" src="path-to-image.png" />
+</template>
+```
+
+### Initial Name
+
+```vue
+<script setup lang="ts">
+// import style
+import '@gits-id/avatar/dist/style.css';
+</script>
+
+<template>
+  <VAvatar name="John Doe" />
+</template>
+```
+
+### Max Initial
+
+```vue
+<script setup lang="ts">
+// import style
+import '@gits-id/avatar/dist/style.css';
+</script>
+
+<template>
+  <VAvatar name="John Doe" :max-initial="1" />
+</template>
+```
+
+### Image
+
+```vue
+<script setup lang="ts">
+// import style
+import '@gits-id/avatar/dist/style.css';
+</script>
+
+<template>
+  <VAvatar src="path-to-image.jpg" alt="John Doe" />
+</template>
+```
+
+### Shape
+
+```vue
+<script setup lang="ts">
+// import style
+import '@gits-id/avatar/dist/style.css';
+</script>
+
+<template>
+  <!-- default shape is circle -->
+  <VAvatar src="path-to-image.jpg" alt="John Doe" />
+  <VAvatar shape="square" src="path-to-image.jpg" alt="John Doe" />
+  <VAvatar shape="rounded" src="path-to-image.jpg" alt="John Doe" />
 </template>
 ```
 
