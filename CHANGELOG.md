@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.10](https://github.com/gitsindonesia/ui-component/compare/v0.11.9...v0.11.10) (2022-09-23)
+
+### Bug Fixes
+
+- **Forms:** fix duplicate prop on v-checkbox ([8e3d3a1](https://github.com/gitsindonesia/ui-component/commit/8e3d3a13716a5865ce12a24a6eb14339e324758e))
+
 ## [0.11.9](https://github.com/gitsindonesia/ui-component/compare/v0.11.8...v0.11.9) (2022-09-23)
 
 ### Bug Fixes

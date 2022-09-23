@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/list",
-  "version": "0.11.9",
+  "version": "0.11.10",
   "description": "GITS List Component",
   "scripts": {
     "build": "vite build && npm run build-types && npm run move-types",

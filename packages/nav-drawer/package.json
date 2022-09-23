@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/nav-drawer",
-  "version": "0.11.9",
+  "version": "0.11.10",
   "description": "GITS Navigation Drawer Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,15 +15,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gits-id/button": "^0.11.9",
-    "@gits-id/logo": "^0.11.9",
-    "@gits-id/menu": "^0.11.9",
-    "@gits-id/navbar": "^0.11.9",
-    "@gits-id/utils": "^0.11.9",
+    "@gits-id/button": "^0.11.10",
+    "@gits-id/logo": "^0.11.10",
+    "@gits-id/menu": "^0.11.10",
+    "@gits-id/navbar": "^0.11.10",
+    "@gits-id/utils": "^0.11.10",
     "vue": "^3.2.31"
   },
   "devDependencies": {
-    "@gits-id/tailwind-config": "^0.11.9",
+    "@gits-id/tailwind-config": "^0.11.10",
     "@headlessui/vue": "^1.6.0",
     "@heroicons/vue": "^1.0.6",
     "@vue/test-utils": "^2.0.0-rc.17",
