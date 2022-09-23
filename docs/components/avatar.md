@@ -4,26 +4,65 @@
 
 ```vue
 <script setup lang="ts">
-// import component
-import Avatar from '@gits-id/avatar';
 // import style
 import '@gits-id/avatar/dist/style.css';
 </script>
 
 <template>
-  <Avatar color="primary" name="John Doe" />
-  <Avatar color="primary" src="path-to-image.png" />
+  <!-- VAvatar is registered globally -->
+  <VAvatar color="primary" name="John Doe" />
+  <VAvatar color="primary" src="path-to-image.png" />
 </template>
 ```
 
-## Install component individually
+## Props
 
-You can also install the `Avatar` component individually via `@gits-id/avatar`:
+| Name                      | Type                                                      | Default  | Description               |
+| ------------------------- | --------------------------------------------------------- | -------- | ------------------------- |
+| [name](#name)             | `string`                                                  | `-`      | Avatar color              |
+| [maxInitial](#maxInitial) | `number`                                                  | `2`      | Max initial chars to show |
+| [color](#color)           | `string` , [available colors](/guide/theme#colors)        | `-`      | Avatar color              |
+| [size](#size)             | `string`, `number`, [available sizes](/guide/theme#sizes) | `md`     | Avatar size               |
+| [shape](#shape)           | `square` , `circle` , `rounded`                           | `circle` | Avatar shape              |
+| [alt](#alt)               | `string`                                                  | `-`      | Image alt                 |
+
+## Methods
+
+None
+
+## Events
+
+None
+
+## Slots
+
+| Name                | Description          |
+| ------------------- | -------------------- |
+| [default](#default) | The default Vue slot |
+
+## CSS Variables
+
+None
+
+## Manual Installation
+
+You can also install the `Avatar` component individually via `@gits-id/avatar` package:
 
 ```bash
 yarn install @gits-id/avatar
 ```
 
-## Documentation
+```vue
+<script setup lang="ts">
+import VAvatar from '@gits-id/avatar';
+</script>
 
-View full documentation on Storybook [here](https://gits-ui.web.app/?path=/story/components-avatar--variants).
+<template>
+  <VAvatar color="primary" name="John Doe" />
+  <VAvatar color="primary" src="path-to-image.png" />
+</template>
+```
+
+## Storybook
+
+View Storybook documentation [here](https://gits-ui.web.app/?path=/story/components-avatar--variants).
