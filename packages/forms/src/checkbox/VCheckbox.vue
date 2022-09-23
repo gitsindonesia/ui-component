@@ -58,6 +58,15 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
+  disabledClass: {
+    type: String,
+    default:
+      'disabled:bg-gray-200 disabled:border-gray-200 disabled:cursor-not-allowed',
+  },
 });
 
 const emit =
@@ -112,16 +121,9 @@ watch(innerValue, (val) => {
       :name="name"
       :value="value"
       type="checkbox"
-      class="
-        rounded
-        transition
-        duration-300
-        disabled:border-gray-400
-        disabled:bg-gray-400
-        disabled:hover:bg-gray-300
-      "
+      class="rounded transition duration-300"
       :disabled="disabled"
-      :class="[inputClass, colorClass]"
+      :class="[inputClass, colorClass, disabledClass]"
     />
     <label class="select-none" :for="id || name" :class="[sizeClass]">
       {{ label }}

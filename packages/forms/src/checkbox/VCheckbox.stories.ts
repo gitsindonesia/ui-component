@@ -3,7 +3,7 @@ import {themeColors} from '@gits-id/utils/colors';
 import {sizes} from '@gits-id/utils/sizes';
 import {Meta, Story} from '@storybook/vue3';
 import {useForm} from 'vee-validate';
-import {object, boolean, string, array} from 'yup';
+import {object, boolean, array} from 'yup';
 import VBtn from '@gits-id/button';
 
 export default {
@@ -42,6 +42,18 @@ Checkbox.parameters = {
   docs: {
     source: {
       code: `<v-checkbox label="Checkbox" />`,
+    },
+  },
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  disabled: true,
+};
+Disabled.parameters = {
+  docs: {
+    source: {
+      code: `<v-checkbox label="Checkbox" disabled />`,
     },
   },
 };
