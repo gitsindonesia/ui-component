@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {computed, toRefs, ref, watch} from 'vue';
-import {XIcon, ExclamationIcon, CheckCircleIcon} from '@heroicons/vue/solid';
+import Icon from '@gits-id/icon';
 
 const props = defineProps({
   modelValue: {
@@ -31,11 +31,23 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  transition: {
+    type: String,
+    default: 'fade',
+  },
+  iconClass: {
+    type: String,
+    default: '',
+  },
 });
 
-const {color, modelValue} = toRefs(props);
+const {modelValue} = toRefs(props);
 
-const emit = defineEmits(['dismissed', 'update:modelValue']);
+const emit =
+  defineEmits<{
+    (event: 'update:modelValue', value: boolean): void;
+    (event: 'dismissed'): void;
+  }>();
 
 const isOpen = ref(modelValue.value);
 
@@ -48,127 +60,52 @@ watch(isOpen, (val) => {
 });
 
 const classes = computed(() => {
-  let colors: Record<string, string> = {};
-  if (props.outlined) {
-    colors = {
-      primary: 'border-primary-500 bg-transparent text-primary-500',
-      secondary: 'border-secondary-500 bg-transparent text-secondary-500',
-      error: 'border-error-500 bg-transparent text-error-500',
-      info: 'border-info-500 bg-transparent text-info-500',
-      warning: 'border-warning-500 bg-transparent text-warning-500',
-      success: 'border-success-500 bg-transparent text-success-500',
-      dark: 'border-gray-900 bg-transparent text-gray-900',
-      default: 'border-gray-500',
-    };
-  } else if (props.solid) {
-    if (props.border) {
-      colors = {
-        primary: 'border-primary-400 bg-primary-500 text-white',
-        secondary: 'border-secondary-400 bg-secondary-500 text-white',
-        error: 'border-error-400 bg-error-500 text-white',
-        info: 'border-info-400 bg-info-500 text-white',
-        warning: 'border-warning-400 bg-warning-500 text-white',
-        success: 'border-success-400 bg-success-500 text-white',
-        dark: 'border-gray-500 bg-gray-900 text-white',
-        default: 'border-gray-500 bg-white',
-      };
-    } else {
-      colors = {
-        primary: 'border-primary-500 bg-primary-500 text-white',
-        secondary: 'border-secondary-500 bg-secondary-500 text-white',
-        error: 'border-error-500 bg-error-500 text-white',
-        info: 'border-info-500 bg-info-500 text-white',
-        warning: 'border-warning-500 bg-warning-500 text-white',
-        success: 'border-success-500 bg-success-500 text-white',
-        dark: 'border-gray-900 bg-gray-900 text-white',
-        default: 'border-gray-500 bg-white',
-      };
-    }
-  } else {
-    colors = {
-      primary: 'border-primary-500 bg-primary-100 text-primary-500',
-      secondary: 'border-secondary-500 bg-secondary-100 text-secondary-500',
-      error: 'border-error-500 bg-error-100 text-error-500',
-      info: 'border-info-500 bg-info-100 text-info-500',
-      warning: 'border-warning-500 bg-warning-100 text-warning-500',
-      success: 'border-success-500 bg-success-100 text-success-500',
-      dark: 'border-gray-900 bg-gray-900 text-white',
-      default: 'border-gray-500',
-    };
-  }
-
-  const borderClasses: Record<string, any> = {
-    top: 'border-t-8',
-    left: 'border-l-8',
-    right: 'border-r-8',
-    bottom: 'border-b-8',
-  };
-
-  return [colors[color.value], props.border ? borderClasses[props.border] : ''];
-});
-
-const iconClasses = computed(() => {
-  switch (color.value) {
-    case 'primary':
-      return 'text-primary-500';
-    case 'secondary':
-      return 'text-secondary-500';
-    case 'error':
-      return 'text-error-500';
-    case 'info':
-      return 'text-info-500';
-    case 'warning':
-      return 'text-warning-500';
-    case 'success':
-      return 'text-success-500';
-    default:
-      return '';
-  }
+  return [
+    `alert-${props.color}`,
+    {
+      'alert--outlined': props.outlined,
+      'alert--solid': props.solid,
+      'alert--bordered': props.border,
+    },
+  ];
 });
 
 const dismiss = () => {
   isOpen.value = false;
   emit('dismissed');
 };
+
+const mappedIcons: Record<string, string> = {
+  info: 'heroicons:information-circle',
+  success: 'heroicons:check-circle',
+  warning: 'heroicons:exclamation-triangle',
+  error: 'heroicons:x-circle',
+};
 </script>
 
 <template>
-  <transition
-    enter-active-class="duration-150 ease-out"
-    enter-from-class="opacity-0 scale-95"
-    enter-to-class="opacity-100 scale-100"
-    leave-active-class="duration-100 ease-in"
-    leave-from-class="opacity-100 scale-100"
-    leave-to-class="opacity-0 scale-95"
-  >
-    <div
-      v-if="isOpen"
-      class="px-4 py-3 border rounded-md flex w-full items-center"
-      :class="classes"
-    >
-      <div>
-        <slot name="icon" :icon="props.icon">
-          <ExclamationIcon
-            v-if="props.icon === 'warning'"
-            class="w-8 h-8 mr-3"
-            :class="iconClasses"
-          />
-          <CheckCircleIcon
-            v-if="props.icon === 'success'"
-            class="w-8 h-8 mr-3"
-            :class="iconClasses"
-          />
-        </slot>
-      </div>
-      <div>
+  <transition :name="transition">
+    <div v-if="isOpen" class="alert" :class="classes">
+      <slot name="icon" :icon="icon">
+        <Icon
+          v-if="icon"
+          :name="mappedIcons[icon] || icon"
+          class="alert-icon"
+          :class="iconClass"
+        />
+      </slot>
+      <div class="alert-content">
         <slot />
       </div>
-      <div class="flex-grow"></div>
-      <div v-if="props.dismissable" class="pl-4 flex items-center">
+      <div v-if="dismissable" class="alert-dismissable">
         <slot name="x-button" :dismiss="dismiss">
-          <button class="focus:outline-none" @click="dismiss">
+          <button
+            class="alert-dismissable-button"
+            aria-label="Close"
+            @click="dismiss"
+          >
             <slot name="x-icon">
-              <XIcon class="w-5 h-5" />
+              <Icon name="heroicons:x-mark" class="alert-x-icon" />
             </slot>
           </button>
         </slot>
@@ -176,3 +113,168 @@ const dismiss = () => {
     </div>
   </transition>
 </template>
+
+<style>
+.alert {
+  @apply flex items-center w-full gap-4;
+
+  background-color: var(--alert-bg-color);
+  color: var(--alert-text-color);
+  border-color: var(--alert-border-color);
+  border-radius: var(--alert-border-radius);
+  border-width: var(--alert-border-width);
+  padding: var(--alert-padding-y) var(--alert-padding-x);
+}
+
+.alert-content {
+  @apply flex-1;
+}
+
+.alert-dismissable {
+  @apply pl-4 flex items-center;
+}
+
+.alert-icon {
+  @apply w-6 h-6;
+}
+
+.alert-x-icon {
+  @apply w-5 h-5;
+}
+
+/* default */
+:root {
+  --alert-bg-color: theme('colors.white');
+  --alert-text-color: theme('colors.gray.800');
+  --alert-border-radius: theme('borderRadius.md');
+  --alert-border-color: theme('colors.gray.500');
+  --alert-border-width: theme('borderWidth.DEFAULT');
+  --alert-padding-x: theme('padding.4');
+  --alert-padding-y: theme('padding.3');
+}
+
+/* colors */
+.alert-primary {
+  --alert-bg-color: theme('colors.primary.100');
+  --alert-text-color: theme('colors.primary.500');
+  --alert-border-color: theme('colors.primary.500');
+}
+.alert-secondary {
+  --alert-bg-color: theme('colors.secondary.100');
+  --alert-text-color: theme('colors.secondary.500');
+  --alert-border-color: theme('colors.secondary.500');
+}
+.alert-info {
+  --alert-bg-color: theme('colors.info.100');
+  --alert-text-color: theme('colors.info.500');
+  --alert-border-color: theme('colors.info.500');
+}
+.alert-warning {
+  --alert-bg-color: theme('colors.warning.100');
+  --alert-text-color: theme('colors.warning.500');
+  --alert-border-color: theme('colors.warning.500');
+}
+.alert-success {
+  --alert-bg-color: theme('colors.success.100');
+  --alert-text-color: theme('colors.success.500');
+  --alert-border-color: theme('colors.success.500');
+}
+.alert-error {
+  --alert-bg-color: theme('colors.error.100');
+  --alert-text-color: theme('colors.error.500');
+  --alert-border-color: theme('colors.error.500');
+}
+.alert-dark {
+  --alert-bg-color: theme('colors.gray.800');
+  --alert-text-color: theme('colors.white');
+  --alert-border-color: theme('colors.gray.800');
+}
+
+/* solid */
+.alert--solid {
+  --alert-text-color: theme('colors.white');
+  --alert-bg-color: theme('colors.gray.500');
+}
+.alert--solid.alert-primary {
+  --alert-bg-color: theme('colors.primary.500');
+  --alert-border-color: theme('colors.primary.500');
+}
+.alert--solid.alert-secondary {
+  --alert-bg-color: theme('colors.secondary.500');
+  --alert-border-color: theme('colors.secondary.500');
+}
+.alert--solid.alert-info {
+  --alert-bg-color: theme('colors.info.500');
+  --alert-border-color: theme('colors.info.500');
+}
+.alert--solid.alert-warning {
+  --alert-bg-color: theme('colors.warning.500');
+  --alert-border-color: theme('colors.warning.500');
+}
+.alert--solid.alert-success {
+  --alert-bg-color: theme('colors.success.500');
+  --alert-border-color: theme('colors.success.500');
+}
+.alert--solid.alert-error {
+  --alert-bg-color: theme('colors.error.500');
+  --alert-border-color: theme('colors.error.500');
+}
+.alert--solid.alert-dark {
+  --alert-bg-color: theme('colors.gray.800');
+  --alert-border-color: theme('colors.gray.800');
+}
+
+/* outlined */
+.alert--outlined {
+  --alert-text-color: theme('colors.gray.500');
+  --alert-bg-color: theme('colors.transparent');
+  --alert-border-width: theme('borderWidth.2');
+}
+.alert--outlined.alert-primary {
+  --alert-text-color: theme('colors.primary.500');
+}
+.alert--outlined.alert-secondary {
+  --alert-text-color: theme('colors.secondary.500');
+}
+.alert--outlined.alert-info {
+  --alert-text-color: theme('colors.info.500');
+}
+.alert--outlined.alert-warning {
+  --alert-text-color: theme('colors.warning.500');
+}
+.alert--outlined.alert-success {
+  --alert-text-color: theme('colors.success.500');
+}
+.alert--outlined.alert-error {
+  --alert-text-color: theme('colors.error.500');
+}
+.alert--outlined.alert-dark {
+  --alert-text-color: theme('colors.gray.800');
+}
+
+/* bordered */
+.alert--bordered {
+  --alert-border-width: theme('borderWidth.2');
+}
+.alert--bordered.alert-primary {
+  --alert-text-color: theme('colors.primary.500');
+}
+.alert--bordered.alert-secondary {
+  --alert-text-color: theme('colors.secondary.500');
+}
+.alert--bordered.alert-info {
+  --alert-text-color: theme('colors.info.500');
+}
+.alert--bordered.alert-warning {
+  --alert-text-color: theme('colors.warning.500');
+}
+.alert--bordered.alert-success {
+  --alert-text-color: theme('colors.success.500');
+}
+.alert--bordered.alert-error {
+  --alert-text-color: theme('colors.error.500');
+}
+.alert--bordered.alert-dark {
+  --alert-text-color: theme('colors.white');
+}
+</style>

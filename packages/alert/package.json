@@ -12,11 +12,12 @@
     "ui-component",
     "ui"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Warsono <warsono16694@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "@gits-id/utils": "^0.11.10",
-    "@heroicons/vue": "^1.0.6",
+    "@gits-id/theme": "^0.11.10",
+    "@gits-id/icon": "^0.11.10",
     "vue": "^3.2.33"
   },
   "devDependencies": {

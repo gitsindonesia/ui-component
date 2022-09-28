@@ -1,22 +1,20 @@
 # GITS Alert Component
 
-> Alert Component
-
 ## Installation
 
-npm
+via npm
 
 ```
 npm i @gits-id/alert
 ```
 
-yarn
+via yarn
 
 ```
 yarn add @gits-id/alert
 ```
 
-pnpm
+via pnpm
 
 ```
 pnpm i @gits-id/alert
@@ -28,7 +26,10 @@ Import `Alert` to your component:
 
 ```vue
 <script setup lang="ts">
+// import component
 import Alert from '@gits-id/alert';
+// import styles
+import '@gits-id/alert/dist/style.css';
 </script>
 
 <template>
@@ -38,7 +39,7 @@ import Alert from '@gits-id/alert';
 
 ## Documentation
 
-View `Alert` documentation [here](https://gits-ui.web.app/?path=/story/components-alert--default).
+View full documentation [here](https://gitsindonesia.github.io/ui-component/components/alert).
 
 ## License
 

@@ -1,7 +1,7 @@
 import VAlert from './VAlert.vue';
 import {themeColors} from '@gits-id/utils/colors';
 import {Meta, Story} from '@storybook/vue3';
-import {InformationCircleIcon, XCircleIcon} from '@heroicons/vue/outline';
+import Icon from '@gits-id/icon';
 
 export default {
   title: 'Components/Alert',
@@ -72,6 +72,30 @@ Solid.parameters = {
   },
 };
 
+export const Outlined = Template.bind({});
+Outlined.args = {
+  outlined: true,
+};
+Outlined.parameters = {
+  docs: {
+    source: {
+      code: `<v-alert solid>Alert text</v-alert>`,
+    },
+  },
+};
+
+export const Bordered = Template.bind({});
+Bordered.args = {
+  border: true,
+};
+Bordered.parameters = {
+  docs: {
+    source: {
+      code: `<v-alert border>Alert text</v-alert>`,
+    },
+  },
+};
+
 export const Dismissable = Template.bind({});
 Dismissable.args = {
   dismissable: true,
@@ -84,11 +108,11 @@ Dismissable.parameters = {
   },
 };
 
-export const Icon = Template.bind({});
-Icon.args = {
+export const Icons = Template.bind({});
+Icons.args = {
   icon: 'success',
 };
-Icon.parameters = {
+Icons.parameters = {
   docs: {
     source: {
       code: `<v-alert icon="success">Alert text</v-alert>`,
@@ -97,14 +121,14 @@ Icon.parameters = {
 };
 
 export const CustomSlots = () => ({
-  components: {VAlert, InformationCircleIcon, XCircleIcon},
+  components: {VAlert, Icon},
   template: `
 <v-alert color="error" dismissable>
   <template #icon>
-    <InformationCircleIcon class="fill-current w-6 h-6 mr-2" />
+    <Icon name="ri:alarm-warning-fill" class="fill-current w-6 h-6 mr-2" />
   </template>
   <template #x-icon>
-    <XCircleIcon class="fill-current w-6 h-6 text-error-500" />
+    <Icon name="ri:close-fill" class="fill-current w-6 h-6 text-error-500" />
   </template>
 
   Change a few things up and try submitting again.
@@ -116,10 +140,10 @@ CustomSlots.parameters = {
     source: {
       code: `<v-alert color="error" dismissable>
   <template #icon>
-    <InformationCircleIcon class="fill-current w-6 h-6 mr-2" />
+    <Icon name="ri:alarm-warning-fill" class="fill-current w-6 h-6 mr-2" />
   </template>
   <template #x-icon>
-    <XCircleIcon class="fill-current w-6 h-6 text-error-500" />
+    <Icon name="ri:close-fill" class="fill-current w-6 h-6 text-error-500" />
   </template>
 
   Change a few things up and try submitting again.
