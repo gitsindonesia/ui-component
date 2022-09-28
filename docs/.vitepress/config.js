@@ -31,7 +31,10 @@ export default defineConfig({
       },
       {
         text: 'Components',
-        items: [{text: 'Avatar', link: '/components/avatar'}],
+        items: [
+          {text: 'Alert', link: '/components/alert'},
+          {text: 'Avatar', link: '/components/avatar'},
+        ],
       },
     ],
     socialLinks: [
