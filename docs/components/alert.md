@@ -167,7 +167,7 @@ const isOpen = ref(true);
 
 <template>
   <Button @click="isOpen = !isOpen">Toggle Alert</Button>
-  <VAlert v-model="isOpen" outlined> Alert text </VAlert>
+  <VAlert v-model="isOpen" border> Alert text </VAlert>
 </template>
 ```
 
@@ -180,11 +180,13 @@ const isOpen = ref(true);
 
 Use `transition` prop change the default transition.
 
-```vue{11}
+```vue{6,13}
 <script setup lang="ts">
 import {ref} from 'vue';
-import '@gits-id/alert/dist/style.css';
 import Button from '@gits-id/button';
+import '@gits-id/alert/dist/style.css';
+// import transition styles
+import '@gits-id/ui/src/assets/transition.css';
 
 const isOpen = ref(true);
 </script>
@@ -222,11 +224,11 @@ None
 
 ## Slots
 
-| Name                  | Props                  | Description             |
-| --------------------- | ---------------------- | ----------------------- |
-| [default](#default)   | None                   | The default Vue slot    |
-| [icon](#icon)         | None                   | Prepend icon slot       |
-| [x-button](#x-button) | `(dismis: () => void)` | Dismissable button slot |
+| Name                  | Props                   | Description             |
+| --------------------- | ----------------------- | ----------------------- |
+| [default](#default)   | None                    | The default Vue slot    |
+| [icon](#icon)         | None                    | Prepend icon slot       |
+| [x-button](#x-button) | `(dismiss: () => void)` | Dismissable button slot |
 
 ## CSS Variables
 
