@@ -1,22 +1,22 @@
-# GITS AppBar Component
+# AppBar Component
 
-> Application Bar Component
+Application Bar Component. Generally used for navigation bar.
 
 ## Installation
 
-npm
+Via npm:
 
 ```
 npm i @gits-id/app-bar
 ```
 
-yarn
+Via yarn:
 
 ```
 yarn add @gits-id/app-bar
 ```
 
-pnpm
+Via pnpm:
 
 ```
 pnpm i @gits-id/app-bar
@@ -26,17 +26,20 @@ pnpm i @gits-id/app-bar
 
 ```vue
 <script setup lang="ts">
+// import component
 import AppBar from '@gits-id/app-bar';
+// import styles
+import '@gits-id/app-bar/dist/style.css';
 </script>
 
 <template>
-  <AppBar />
+  <AppBar> Hello World </AppBar>
 </template>
 ```
 
 ## Documentation
 
-View `AppBar` documentation [here](https://gits-ui.web.app/?path=/story/components-app-bar--default).
+View full documentation [here](https://gits-ui.web.app/?path=/story/components-app-bar--default).
 
 ## License
 
