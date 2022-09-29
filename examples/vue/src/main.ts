@@ -7,6 +7,7 @@ import router from "./router";
 import GitsUi from "@gits-id/ui";
 
 import "./assets/index.css";
+import "@gits-id/app-bar/dist/style.css";
 
 const app = createApp(App);
 
