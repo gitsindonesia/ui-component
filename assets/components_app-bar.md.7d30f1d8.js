@@ -123,7 +123,7 @@ import{_ as s,c as a,o as l,a as n}from"./app.ddefb5cd.js";const C=JSON.parse('{
 <span class="line"><span style="color:#89DDFF;">&lt;/</span><span style="color:#F07178;">template</span><span style="color:#89DDFF;">&gt;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#89DDFF;">&lt;</span><span style="color:#F07178;">style</span><span style="color:#89DDFF;">&gt;</span></span>
-<span class="line"><span style="color:#89DDFF;">.</span><span style="color:#FFCB6B;">app-bar--indigo</span><span style="color:#A6ACCD;"> </span><span style="color:#89DDFF;">{</span></span>
+<span class="line"><span style="color:#89DDFF;">.</span><span style="color:#FFCB6B;">app-bar-indigo</span><span style="color:#A6ACCD;"> </span><span style="color:#89DDFF;">{</span></span>
 <span class="line highlighted"><span style="color:#A6ACCD;">  --app-bar-bg-color</span><span style="color:#89DDFF;">:</span><span style="color:#A6ACCD;"> theme(</span><span style="color:#89DDFF;">&#39;</span><span style="color:#C3E88D;">colors.indigo.500</span><span style="color:#89DDFF;">&#39;</span><span style="color:#A6ACCD;">)</span><span style="color:#89DDFF;">;</span></span>
 <span class="line highlighted"><span style="color:#A6ACCD;">  --app-bar-color</span><span style="color:#89DDFF;">:</span><span style="color:#A6ACCD;"> theme(</span><span style="color:#89DDFF;">&#39;</span><span style="color:#C3E88D;">colors.white</span><span style="color:#89DDFF;">&#39;</span><span style="color:#A6ACCD;">)</span><span style="color:#89DDFF;">;</span></span>
 <span class="line"><span style="color:#89DDFF;">}</span></span>
