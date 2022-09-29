@@ -1,7 +1,7 @@
 {
   "name": "@gits-id/app-bar",
   "version": "0.11.10",
-  "description": "GITS AppBar Component",
+  "description": "Application Bar / Navigation Bar Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "npm run build",
@@ -12,8 +12,8 @@
     "nav-bar",
     "tailwind-config"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Warsono <warsono16694@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "@gits-id/theme": "^0.11.10",
     "vue": "^3.2.33"
