@@ -25,27 +25,11 @@ const props = defineProps({
     type: Boolean,
     default: true,
   },
-  mini: {
-    type: Boolean,
-    default: false,
-  },
   fixed: {
     type: Boolean,
     default: false,
   },
   sticky: {
-    type: Boolean,
-    default: false,
-  },
-  drawer: {
-    type: Boolean,
-    default: false,
-  },
-  dark: {
-    type: Boolean,
-    default: false,
-  },
-  hideToggle: {
     type: Boolean,
     default: false,
   },
@@ -74,7 +58,6 @@ const props = defineProps({
 const emit =
   defineEmits<{
     (e: 'update:modelValue', value: boolean): void;
-    (e: 'toggleMenu'): void;
   }>();
 
 const {modelValue} = toRefs(props);
@@ -89,9 +72,9 @@ watch(modelValue, (val) => {
   isOpen.value = val;
 });
 
-const toggleMenu = () => emit('toggleMenu');
+const toggle = () => (isOpen.value = !isOpen.value);
 
-defineExpose(toggleMenu);
+defineExpose(toggle);
 </script>
 
 <template>
@@ -101,7 +84,6 @@ defineExpose(toggleMenu);
       class="app-bar"
       :class="[
         `app-bar-${color}`,
-        dark ? 'app-bar--dark' : 'app-bar--light',
         typeof shadow === 'string'
           ? `app-bar--shadow-${shadow}`
           : shadow
@@ -109,16 +91,14 @@ defineExpose(toggleMenu);
           : '',
         size ? `app-bar--${size}` : '',
         {
-          'app-bar--mini': mini,
           'app-bar--fixed': fixed,
           'app-bar--sticky': sticky,
-          'app-bar--drawer': drawer,
           'app-bar--bordered': bordered,
         },
       ]"
       v-bind="$attrs"
     >
-      <slot :toggle="toggleMenu" />
+      <slot :toggle="toggle" />
     </header>
   </transition>
 </template>
