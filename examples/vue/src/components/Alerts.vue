@@ -8,5 +8,18 @@
     <v-alert color="warning"> Lorem ipsum solor sit amet </v-alert>
     <v-alert color="success"> Lorem ipsum solor sit amet </v-alert>
     <v-alert color="error"> Lorem ipsum solor sit amet </v-alert>
+    <v-alert color="indigo"> Custom alert with CSS Variables </v-alert>
   </div>
 </template>
+
+<style scoped>
+.alert-indigo {
+  --alert-bg-color: theme("colors.indigo.600");
+  --alert-text-color: theme("colors.white");
+  --alert-border-radius: theme("borderRadius.lg");
+  --alert-border-color: theme("colors.indigo.600");
+  --alert-border-width: theme("borderWidth.2");
+  --alert-padding-x: theme("padding.6");
+  --alert-padding-y: theme("padding.4");
+}
+</style>

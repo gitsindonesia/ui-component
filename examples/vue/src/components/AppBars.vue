@@ -20,5 +20,15 @@
     <v-app-bar color="error">
       <span class="font-semibold"> GITS UI </span>
     </v-app-bar>
+    <v-app-bar color="indigo">
+      <span class="font-semibold"> Custom AppBar with CSS Variables </span>
+    </v-app-bar>
   </div>
 </template>
+
+<style scoped>
+.app-bar-indigo {
+  --app-bar-bg-color: theme("colors.indigo.600");
+  --app-bar-color: theme("colors.white");
+}
+</style>
