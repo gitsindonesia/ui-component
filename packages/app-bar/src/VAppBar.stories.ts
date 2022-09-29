@@ -247,7 +247,7 @@ export const MobileNavigation: Story<{}> = (args) => ({
   shadow
   sticky
 >
-  <div class="flex justify-between items-center">
+  <div class="flex justify-between items-center w-full">
     <div class="flex gap-4 items-center">
       <Button color="primary" text icon rounded>
         <Icon class="w-5 h-5" name="ri:arrow-left-line" />
@@ -285,7 +285,7 @@ export const WithSearchBar: Story<{}> = (args) => ({
   sticky
   class="mb-5"
 >
-  <div class="flex justify-between items-center">
+  <div class="flex justify-between items-center w-full">
     <Button text icon rounded>
       <Icon class="w-5 h-5" name="ri:menu-line" />
     </Button>
@@ -300,7 +300,7 @@ export const WithSearchBar: Story<{}> = (args) => ({
   sticky
   class="mb-5"
 >
-  <div class="flex justify-between items-center">
+  <div class="flex justify-between items-center w-full">
     <Button text icon rounded>
       <Icon class="w-5 h-5" name="ri:menu-line" />
     </Button>
