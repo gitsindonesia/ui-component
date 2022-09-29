@@ -290,7 +290,7 @@ import '@gits-id/app-bar/dist/style.css';
 </template>
 
 <style>
-.app-bar--indigo {
+.app-bar-indigo {
   --app-bar-bg-color: theme('colors.indigo.500');
   --app-bar-color: theme('colors.white');
 }
