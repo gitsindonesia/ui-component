@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/app-bar",
-  "version": "0.11.10",
+  "version": "0.11.11-alpha.0",
   "description": "Application Bar / Navigation Bar Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",

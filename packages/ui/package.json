@@ -1,14 +1,14 @@
 {
   "name": "@gits-id/ui",
-  "version": "0.11.10",
+  "version": "0.11.11-alpha.0",
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "npm run build",
     "test": "vitest"
   },
   "dependencies": {
-    "@gits-id/alert": "^0.11.10",
-    "@gits-id/app-bar": "^0.11.10",
+    "@gits-id/alert": "^0.11.11-alpha.0",
+    "@gits-id/app-bar": "^0.11.11-alpha.0",
     "@gits-id/avatar": "^0.11.10",
     "@gits-id/badge": "^0.11.10",
     "@gits-id/breadcrumbs": "^0.11.10",
@@ -29,7 +29,7 @@
     "@gits-id/multi-select": "^0.11.10",
     "@gits-id/nav-drawer": "^0.11.10",
     "@gits-id/navbar": "^0.11.10",
-    "@gits-id/pages": "^0.11.10",
+    "@gits-id/pages": "^0.11.11-alpha.0",
     "@gits-id/pagination": "^0.11.10",
     "@gits-id/progress-bar": "^0.11.10",
     "@gits-id/select": "^0.11.10",
