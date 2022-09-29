@@ -147,7 +147,7 @@ import '@gits-id/app-bar/dist/style.css';
 
 Use `size` to apply size to the app-bar.
 
-```vue{9}
+```vue
 <script setup lang="ts">
 import {ref} from 'vue';
 import '@gits-id/app-bar/dist/style.css';
