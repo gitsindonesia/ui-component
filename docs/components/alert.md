@@ -217,10 +217,10 @@ None
 
 ## Events
 
-| Name                                   | Payload           | Description                         |
-| -------------------------------------- | ----------------- | ----------------------------------- |
-| [update:modelValue](#updateModelValue) | `(value: string)` | Fired internal `open` state changed |
-| [dismissed](#dismissed)                | None              | Fired when alert is hidden          |
+| Name                                   | Payload            | Description                         |
+| -------------------------------------- | ------------------ | ----------------------------------- |
+| [update:modelValue](#updateModelValue) | `(value: boolean)` | Fired internal `open` state changed |
+| [dismissed](#dismissed)                | None               | Fired when alert is hidden          |
 
 ## Slots
 

@@ -132,7 +132,7 @@ import '@gits-id/app-bar/dist/style.css';
   <VAppBar shadow="md"> Hello World </VAppBar>
   <VAppBar shadow="lg"> Hello World </VAppBar>
   <VAppBar shadow="xl"> Hello World </VAppBar>
-  <VAppBar shadow="2x"> Hello World </VAppBar>
+  <VAppBar shadow="2xl"> Hello World </VAppBar>
   <VAppBar shadow="inner"> Hello World </VAppBar>
   <VAppBar shadow="none"> Hello World </VAppBar>
 </template>

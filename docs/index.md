@@ -22,11 +22,11 @@ hero:
 features:
   - icon: 🖖
     title: Vue 3
-    details: Built with and for the latest and greatest Vue 3
+    details: Built with the latest and greatest Vue 3
   - icon: 💨
     title: Tailwind CSS
     details: Fast prototyping with Tailwind CSS
   - icon: 🛠️
-    title: Versatile
-    details: Extendable, Themeable and Configurable
+    title: Customizable
+    details: Easy customization with CSS Properties
 ---
