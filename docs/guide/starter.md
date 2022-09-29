@@ -13,7 +13,7 @@ You can also scaffold new project with this starter using [`degit`](https://gith
 ```bash
 npx degit gitsindonesia/ui-component/examples/vue my-app
 cd vue-app
-pnpm install
+pnpm install --shamefully-hoist
 pnpm dev
 ```
 
