@@ -1,7 +1,24 @@
+<script lang="ts">
+export default {
+  inheritAttrs: false,
+};
+</script>
+
 <script setup lang="ts">
-import {MenuIcon} from '@heroicons/vue/outline';
-import {toRefs} from 'vue';
-import VBtn from '@gits-id/button';
+import {toRefs, ref, watch, PropType} from 'vue';
+import type {DefaultColors} from '@gits-id/theme/defaultTheme';
+
+export type AppBarShadow =
+  | boolean
+  | 'sm'
+  | 'md'
+  | 'lg'
+  | 'xl'
+  | '2xl'
+  | 'inner'
+  | 'none';
+
+export type AppBarColors = DefaultColors | 'default';
 
 const props = defineProps({
   modelValue: {
@@ -13,6 +30,10 @@ const props = defineProps({
     default: false,
   },
   fixed: {
+    type: Boolean,
+    default: false,
+  },
+  sticky: {
     type: Boolean,
     default: false,
   },
@@ -28,15 +49,45 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-  defaultHidden: {
+  bordered: {
     type: Boolean,
     default: false,
   },
+  shadow: {
+    type: [Boolean, String] as PropType<AppBarShadow>,
+    default: false,
+  },
+  color: {
+    type: String as PropType<AppBarColors>,
+    default: 'default',
+  },
+  transition: {
+    type: String,
+    default: 'fade',
+  },
+  size: {
+    type: String as PropType<'sm' | 'md' | 'lg'>,
+    default: 'md',
+  },
 });
 
-const emit = defineEmits(['toggleMenu', 'update:modelValue']);
+const emit =
+  defineEmits<{
+    (e: 'update:modelValue', value: boolean): void;
+    (e: 'toggleMenu'): void;
+  }>();
 
-const {mini, fixed, drawer, dark, hideToggle} = toRefs(props);
+const {modelValue} = toRefs(props);
+
+const isOpen = ref(modelValue.value);
+
+watch(isOpen, (val) => {
+  emit('update:modelValue', val);
+});
+
+watch(modelValue, (val) => {
+  isOpen.value = val;
+});
 
 const toggleMenu = () => emit('toggleMenu');
 
@@ -44,55 +95,144 @@ defineExpose(toggleMenu);
 </script>
 
 <template>
-  <div
-    class="v-app-bar"
-    :class="[
-      dark ? 'bg-gray-900 text-white' : 'bg-white',
-      mini ? 'v-app-bar-mini' : drawer ? 'v-app-bar-drawer' : '',
-      defaultHidden ? 'flex sm:hidden' : fixed ? 'fixed w-full' : 'relative',
-    ]"
-  >
-    <slot>
-      <template v-if="!hideToggle">
-        <slot name="toggle" :toggle="toggleMenu">
-          <v-btn
-            text
-            icon
-            dense
-            rounded
-            btn-toggle
-            :color="dark ? 'white' : ''"
-            class="btn-toggle hover:bg-transparent hover:text-primary-500 mr-2"
-            @click="toggleMenu"
-          >
-            <MenuIcon class="w-6 h-6" />
-          </v-btn>
-        </slot>
-      </template>
-      <div class="flex-grow" :data-hide-toggle="hideToggle">
-        <slot />
-      </div>
-    </slot>
-  </div>
+  <transition :name="transition">
+    <header
+      v-if="isOpen"
+      class="app-bar"
+      :class="[
+        `app-bar-${color}`,
+        dark ? 'app-bar--dark' : 'app-bar--light',
+        typeof shadow === 'string'
+          ? `app-bar--shadow-${shadow}`
+          : shadow
+          ? 'app-bar--shadow'
+          : '',
+        size ? `app-bar--${size}` : '',
+        {
+          'app-bar--mini': mini,
+          'app-bar--fixed': fixed,
+          'app-bar--sticky': sticky,
+          'app-bar--drawer': drawer,
+          'app-bar--bordered': bordered,
+        },
+      ]"
+      v-bind="$attrs"
+    >
+      <slot :toggle="toggleMenu" />
+    </header>
+  </transition>
 </template>
 
-<style scoped>
-.v-app-bar {
-  @apply top-0
-      shadow-md
-      px-4
-      py-3
-      flex
-      items-center
-      gap-2
-      z-20
-      transition-all
-      duration-300;
+<style>
+:root {
+  --app-bar-height: 54px;
+  --app-bar-padding-x: theme('padding.4');
+  --app-bar-padding-y: theme('padding.3');
+  --app-bar-bg-color: theme('colors.white');
+  --app-bar-color: theme('colors.gray.800');
+  --app-bar-transition: all 0.3s ease;
+  --app-bar-border-style: solid;
+  --app-bar-border-width: theme('borderWidth.DEFAULT');
+  --app-bar-border-color: theme('borderColor.DEFAULT');
 }
-.v-app-bar-mini {
-  @apply sm:ml-[85px] w-full sm:w-[calc(100%-85px)];
+
+.app-bar {
+  @apply flex items-center;
+
+  height: var(--app-bar-height);
+  padding: var(--app-bar-padding-y) var(--app-bar-padding-x);
+  background-color: var(--app-bar-bg-color);
+  color: var(--app-bar-color);
+  transition: var(--app-bar-transition);
 }
-.v-app-bar-drawer {
-  @apply sm:ml-[250px] w-full sm:w-[calc(100%-250px)];
+
+.app-bar--fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.app-bar--sticky {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.app-bar--bordered {
+  border-bottom-style: var(--app-bar-border-style);
+  border-bottom-width: var(--app-bar-border-width);
+  border-bottom-color: var(--app-bar-border-color);
+}
+
+/* Shadows */
+.app-bar--shadow {
+  @apply shadow;
+}
+
+.app-bar--shadow-sm {
+  @apply shadow-sm;
+}
+.app-bar--shadow-md {
+  @apply shadow-md;
+}
+.app-bar--shadow-lg {
+  @apply shadow-lg;
+}
+.app-bar--shadow-xl {
+  @apply shadow-xl;
+}
+.app-bar--shadow-2xl {
+  @apply shadow-2xl;
+}
+.app-bar--shadow-inner {
+  @apply shadow-inner;
+}
+.app-bar--shadow-none {
+  @apply shadow-none;
+}
+
+/* Colors */
+.app-bar-primary {
+  --app-bar-bg-color: theme('colors.primary.500');
+  --app-bar-color: theme('colors.white');
+}
+.app-bar-secondary {
+  --app-bar-bg-color: theme('colors.secondary.500');
+  --app-bar-color: theme('colors.white');
+}
+.app-bar-info {
+  --app-bar-bg-color: theme('colors.info.500');
+  --app-bar-color: theme('colors.white');
+}
+.app-bar-warning {
+  --app-bar-bg-color: theme('colors.warning.500');
+  --app-bar-color: theme('colors.white');
+}
+.app-bar-success {
+  --app-bar-bg-color: theme('colors.success.500');
+  --app-bar-color: theme('colors.white');
+}
+.app-bar-error {
+  --app-bar-bg-color: theme('colors.error.500');
+  --app-bar-color: theme('colors.white');
+}
+
+/* sizes */
+.app-bar--sm {
+  --app-bar-height: 48px;
+}
+
+.app-bar--md {
+  --app-bar-height: 54px;
+}
+
+.app-bar--lg {
+  @apply flex-col items-start;
+
+  --app-bar-height: 94px;
 }
 </style>
