@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import defaultTheme from 'tailwindcss/defaultTheme';
+import {remToPx} from '../utils';
 </script>
 
 <template>
@@ -14,7 +15,7 @@ import defaultTheme from 'tailwindcss/defaultTheme';
       <div class="font-semibold mb-3">
         {{ name === 'DEFAULT' ? 'rounded' : `rounded-${name}` }}
       </div>
-      <code>{{ rounded }}</code>
+      <code>{{ rounded }} ({{ remToPx(rounded) }})</code>
     </div>
   </div>
 </template>

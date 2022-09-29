@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import defaultTheme from 'tailwindcss/defaultTheme';
-
-const remToPx = (rem: string) => +rem.replace('rem', '') * 16 + 'px';
+import {remToPx} from '../utils';
 </script>
 
 <template>
