@@ -273,7 +273,7 @@ import VAlert from '@gits-id/alert';
 
 This package comes with custom tailwind plugin for styling. If you are installing this package separately from `@gits-id/ui` package, you need to include the plugin in `plugins` section in your Tailwind config file.
 
-```js
+```js{4}
 // tailwind.config.js
 module.exports = {
   content: [],

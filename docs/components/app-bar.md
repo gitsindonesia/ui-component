@@ -4,17 +4,9 @@ Application Bar / Navigation Bar.
 
 ## Usage
 
-- To use the package, export `VAppBar` from `@gits-id/ui` or `AppBar` from `@gits-id/app-bar` package.
-- Then, import the styles from `@gits-id/app-bar/dist/style.css`.
-
 ### Basic Usage
 
 ```vue
-<script setup lang="ts">
-// import style
-import '@gits-id/app-bar/dist/style.css';
-</script>
-
 <template>
   <!-- VAppBar is registered globally -->
   <VAppBar> Hello World </VAppBar>
@@ -35,11 +27,6 @@ The `VAppBar` component is registered globally when you install with `@gits-id/u
 Use `color` to different color style to the app-bar.
 
 ```vue
-<script setup lang="ts">
-// import style
-import '@gits-id/app-bar/dist/style.css';
-</script>
-
 <template>
   <VAppBar> Hello World </VAppBar>
   <VAppBar color="primary"> Hello World </VAppBar>
@@ -60,10 +47,9 @@ import '@gits-id/app-bar/dist/style.css';
 
 Use `fixed` to set fixed position of `AppBar` in the top of the page.
 
-```vue{7}
+```vue{6}
 <script setup lang="ts">
 import {ref} from 'vue';
-import '@gits-id/app-bar/dist/style.css';
 </script>
 
 <template>
@@ -80,10 +66,9 @@ import '@gits-id/app-bar/dist/style.css';
 
 Use `sticky` to set sticky position of `AppBar` in the top of the page.
 
-```vue{7}
+```vue{6}
 <script setup lang="ts">
 import {ref} from 'vue';
-import '@gits-id/app-bar/dist/style.css';
 </script>
 
 <template>
@@ -100,10 +85,9 @@ import '@gits-id/app-bar/dist/style.css';
 
 Use `bordered` to apply border style to the app-bar.
 
-```vue{7}
+```vue{6}
 <script setup lang="ts">
 import {ref} from 'vue';
-import '@gits-id/app-bar/dist/style.css';
 </script>
 
 <template>
@@ -123,7 +107,6 @@ Use `shadow` to apply shadow style to the app-bar.
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
-import '@gits-id/app-bar/dist/style.css';
 </script>
 
 <template>
@@ -150,7 +133,6 @@ Use `size` to apply size to the app-bar.
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
-import '@gits-id/app-bar/dist/style.css';
 </script>
 
 <template>
@@ -169,10 +151,9 @@ import '@gits-id/app-bar/dist/style.css';
 
 Use `v-model` to show or hide the app-bar.
 
-```vue{11}
+```vue{10}
 <script setup lang="ts">
 import {ref} from 'vue';
-import '@gits-id/app-bar/dist/style.css';
 import Button from '@gits-id/button';
 
 const isOpen = ref(true);
@@ -193,11 +174,10 @@ const isOpen = ref(true);
 
 Use `transition` prop change the default transition.
 
-```vue{6,13}
+```vue{5,12}
 <script setup lang="ts">
 import {ref} from 'vue';
 import Button from '@gits-id/button';
-import '@gits-id/app-bar/dist/style.css';
 // import transition styles
 import '@gits-id/ui/src/assets/transition.css';
 
@@ -229,11 +209,10 @@ const isOpen = ref(true);
 
 - Type: `toggle: () => void`
 
-```vue{6,9,16}
+```vue{5,8,15}
 <script setup lang="ts">
 import {ref} from 'vue';
 import Button from '@gits-id/button';
-import '@gits-id/app-bar/dist/style.css';
 
 const appBarRef = ref();
 
@@ -279,10 +258,9 @@ const toggle = () => {
 
 With the power of CSS Variables and Tailwind's `theme` function, you can create your custom app-bar.
 
-```vue{7,12-13}
+```vue{6,11-12}
 <script setup lang="ts">
 import {ref} from 'vue';
-import '@gits-id/app-bar/dist/style.css';
 </script>
 
 <template>
@@ -308,12 +286,23 @@ yarn install @gits-id/app-bar
 ```vue
 <script setup lang="ts">
 import VAppBar from '@gits-id/app-bar';
-import '@gits-id/app-bar/dist/style.css';
 </script>
 
 <template>
   <VAppBar> Hello World </VAppBar>
 </template>
+```
+
+## Tailwind Plugin
+
+This package comes with custom tailwind plugin for styling. If you are installing this package separately from `@gits-id/ui` package, you need to include the plugin in `plugins` section in your Tailwind config file.
+
+```js{4}
+// tailwind.config.js
+module.exports = {
+  content: [],
+  presets: [require('@gits-id/app-bar/plugin')],
+};
 ```
 
 ## Storybook
