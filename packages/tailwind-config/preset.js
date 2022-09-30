@@ -1,27 +1,12 @@
 const colors = require('@gits-id/theme');
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   theme: {
     extend: {
       colors,
       fontFamily: {
-        sans: [
-          'Poppins',
-          'ui-sans-serif',
-          'system-ui',
-          '-apple-system',
-          'BlinkMacSystemFont',
-          '"Segoe UI"',
-          'Roboto',
-          '"Helvetica Neue"',
-          'Arial',
-          '"Noto Sans"',
-          'sans-serif',
-          '"Apple Color Emoji"',
-          '"Segoe UI Emoji"',
-          '"Segoe UI Symbol"',
-          '"Noto Color Emoji"',
-        ],
+        sans: ['Poppins', ...defaultTheme.fontFamily.sans],
       },
     },
   },
@@ -30,7 +15,6 @@ module.exports = {
     require('@tailwindcss/forms'),
     require('@tailwindcss/aspect-ratio'),
     require('@tailwindcss/line-clamp'),
-    require('@gits-id/tailwind-components/button'),
-    require('@gits-id/tailwind-components/alert')
+    require('@gits-id/alert/plugin'),
   ],
 };

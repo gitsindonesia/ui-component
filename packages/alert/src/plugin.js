@@ -82,89 +82,89 @@ const alert = plugin(function ({addComponents, theme}) {
     '.alert--solid': {
       '--alert-text-color': theme('colors.white'),
       '--alert-bg-color': theme('colors.gray.500'),
-      // colors
-      '.alert-primary': {
-        '--alert-bg-color': theme('colors.primary.500'),
-        '--alert-border-color': theme('colors.primary.500'),
-      },
-      '.alert-secondary': {
-        '--alert-bg-color': theme('colors.secondary.500'),
-        '--alert-border-color': theme('colors.secondary.500'),
-      },
-      '.alert-info': {
-        '--alert-bg-color': theme('colors.info.500'),
-        '--alert-border-color': theme('colors.info.500'),
-      },
-      '.alert-warning': {
-        '--alert-bg-color': theme('colors.warning.500'),
-        '--alert-border-color': theme('colors.warning.500'),
-      },
-      '.alert-success': {
-        '--alert-bg-color': theme('colors.success.500'),
-        '--alert-border-color': theme('colors.success.500'),
-      },
-      '.alert-error': {
-        '--alert-bg-color': theme('colors.error.500'),
-        '--alert-border-color': theme('colors.error.500'),
-      },
-      '.alert-dark': {
-        '--alert-bg-color': theme('colors.gray.800'),
-        '--alert-border-color': theme('colors.gray.800'),
-      },
+    },
+    // colors
+    '.alert--solid.alert-primary': {
+      '--alert-bg-color': theme('colors.primary.500'),
+      '--alert-border-color': theme('colors.primary.500'),
+    },
+    '.alert--solid.alert-secondary': {
+      '--alert-bg-color': theme('colors.secondary.500'),
+      '--alert-border-color': theme('colors.secondary.500'),
+    },
+    '.alert--solid.alert-info': {
+      '--alert-bg-color': theme('colors.info.500'),
+      '--alert-border-color': theme('colors.info.500'),
+    },
+    '.alert--solid.alert-warning': {
+      '--alert-bg-color': theme('colors.warning.500'),
+      '--alert-border-color': theme('colors.warning.500'),
+    },
+    '.alert--solid.alert-success': {
+      '--alert-bg-color': theme('colors.success.500'),
+      '--alert-border-color': theme('colors.success.500'),
+    },
+    '.alert--solid.alert-error': {
+      '--alert-bg-color': theme('colors.error.500'),
+      '--alert-border-color': theme('colors.error.500'),
+    },
+    '.alert--solid.alert-dark': {
+      '--alert-bg-color': theme('colors.gray.800'),
+      '--alert-border-color': theme('colors.gray.800'),
     },
     // outlined
     '.alert--outlined': {
       '--alert-text-color': theme('colors.gray.500'),
       '--alert-bg-color': theme('colors.transparent'),
       '--alert-border-width': theme('borderWidth.2'),
-      // colors
-      '.alert-primary': {
-        '--alert-text-color': theme('colors.primary.500'),
-      },
-      '.alert-secondary': {
-        '--alert-text-color': theme('colors.secondary.500'),
-      },
-      '.alert-info': {
-        '--alert-text-color': theme('colors.info.500'),
-      },
-      '.alert-warning': {
-        '--alert-text-color': theme('colors.warning.500'),
-      },
-      '.alert-success': {
-        '--alert-text-color': theme('colors.success.500'),
-      },
-      '.alert-error': {
-        '--alert-text-color': theme('colors.error.500'),
-      },
-      '.alert-dark': {
-        '--alert-text-color': theme('colors.gray.800'),
-      },
+    },
+    // colors
+    '.alert--outlined.alert-primary': {
+      '--alert-text-color': theme('colors.primary.500'),
+    },
+    '.alert--outlined.alert-secondary': {
+      '--alert-text-color': theme('colors.secondary.500'),
+    },
+    '.alert--outlined.alert-info': {
+      '--alert-text-color': theme('colors.info.500'),
+    },
+    '.alert--outlined.alert-warning': {
+      '--alert-text-color': theme('colors.warning.500'),
+    },
+    '.alert--outlined.alert-success': {
+      '--alert-text-color': theme('colors.success.500'),
+    },
+    '.alert--outlined.alert-error': {
+      '--alert-text-color': theme('colors.error.500'),
+    },
+    '.alert--outlined.alert-dark': {
+      '--alert-text-color': theme('colors.gray.800'),
     },
     // bordered
     '.alert--bordered': {
       '--alert-border-width': theme('borderWidth.2'),
-      // colors
-      '.alert-primary': {
-        '--alert-text-color': theme('colors.primary.500'),
-      },
-      '.alert-secondary': {
-        '--alert-text-color': theme('colors.secondary.500'),
-      },
-      '.alert-info': {
-        '--alert-text-color': theme('colors.info.500'),
-      },
-      '.alert-warning': {
-        '--alert-text-color': theme('colors.warning.500'),
-      },
-      '.alert-success': {
-        '--alert-text-color': theme('colors.success.500'),
-      },
-      '.alert-error': {
-        '--alert-text-color': theme('colors.error.500'),
-      },
-      '.alert-dark': {
-        '--alert-text-color': theme('colors.white'),
-      },
+    },
+    // colors
+    '.alert--bordered.alert-primary': {
+      '--alert-text-color': theme('colors.primary.500'),
+    },
+    '.alert--bordered.alert-secondary': {
+      '--alert-text-color': theme('colors.secondary.500'),
+    },
+    '.alert--bordered.alert-info': {
+      '--alert-text-color': theme('colors.info.500'),
+    },
+    '.alert--bordered.alert-warning': {
+      '--alert-text-color': theme('colors.warning.500'),
+    },
+    '.alert--bordered.alert-success': {
+      '--alert-text-color': theme('colors.success.500'),
+    },
+    '.alert--bordered.alert-error': {
+      '--alert-text-color': theme('colors.error.500'),
+    },
+    '.alert--bordered.alert-dark': {
+      '--alert-text-color': theme('colors.white'),
     },
   });
 });
