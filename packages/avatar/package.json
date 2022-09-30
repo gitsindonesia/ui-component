@@ -32,5 +32,16 @@
   "jsdelivr": "dist/avatar.iife.js",
   "module": "./dist/avatar.mjs",
   "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/avatar.mjs",
+      "require": "./dist/avatar.js"
+    },
+    "./plugin": "./src/plugin.js",
+    "./plugin.js": "./src/plugin.js",
+    "./package.json": "./package.json",
+    "./src/*": "./src/*",
+    "./*": "./*"
+  },
   "gitHead": "b5a78473960cae120ca3396a242f6fb241970de4"
 }
