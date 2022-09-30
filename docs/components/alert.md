@@ -2,17 +2,9 @@
 
 ## Usage
 
-- To use the package, export `VAlert` from `@gits-id/ui` or `Alert` from `@gits-id/alert` package.
-- Then, import the styles from `@gits-id/alert/dist/style.css`.
-
 ### Basic Usage
 
 ```vue
-<script setup lang="ts">
-// import style
-import '@gits-id/alert/dist/style.css';
-</script>
-
 <template>
   <!-- VAlert is registered globally -->
   <VAlert> Alert text </VAlert>
@@ -34,11 +26,6 @@ The `VAlert` component is registered globally when you install with `@gits-id/ui
 Use `color` to different color style to the alert.
 
 ```vue
-<script setup lang="ts">
-// import style
-import '@gits-id/alert/dist/style.css';
-</script>
-
 <template>
   <VAlert> Alert text </VAlert>
   <VAlert color="primary"> Alert text </VAlert>
@@ -60,10 +47,9 @@ import '@gits-id/alert/dist/style.css';
 
 Use `v-model` to show or hide the alert.
 
-```vue{11}
+```vue{10}
 <script setup lang="ts">
 import {ref} from 'vue';
-import '@gits-id/alert/dist/style.css';
 import Button from '@gits-id/button';
 
 const isOpen = ref(true);
@@ -84,10 +70,9 @@ const isOpen = ref(true);
 
 Use `dismissable` to make alert dismissable.
 
-```vue{11}
+```vue{10}
 <script setup lang="ts">
 import {ref} from 'vue';
-import '@gits-id/alert/dist/style.css';
 import Button from '@gits-id/button';
 
 const isOpen = ref(true);
@@ -108,10 +93,9 @@ const isOpen = ref(true);
 
 Use `solid` to apply solid style to the alert.
 
-```vue{11}
+```vue{10}
 <script setup lang="ts">
 import {ref} from 'vue';
-import '@gits-id/alert/dist/style.css';
 import Button from '@gits-id/button';
 
 const isOpen = ref(true);
@@ -132,10 +116,9 @@ const isOpen = ref(true);
 
 Use `outlined` to apply outlined style to the alert.
 
-```vue{11}
+```vue{10}
 <script setup lang="ts">
 import {ref} from 'vue';
-import '@gits-id/alert/dist/style.css';
 import Button from '@gits-id/button';
 
 const isOpen = ref(true);
@@ -156,10 +139,9 @@ const isOpen = ref(true);
 
 Use `border` to apply bordered style to the alert.
 
-```vue{11}
+```vue{10}
 <script setup lang="ts">
 import {ref} from 'vue';
-import '@gits-id/alert/dist/style.css';
 import Button from '@gits-id/button';
 
 const isOpen = ref(true);
@@ -180,11 +162,10 @@ const isOpen = ref(true);
 
 Use `transition` prop change the default transition.
 
-```vue{6,13}
+```vue{5,12}
 <script setup lang="ts">
 import {ref} from 'vue';
 import Button from '@gits-id/button';
-import '@gits-id/alert/dist/style.css';
 // import transition styles
 import '@gits-id/ui/src/assets/transition.css';
 
@@ -246,10 +227,9 @@ None
 
 With the power of CSS Variables and Tailwind's `theme` function, you can create your custom alert.
 
-```vue{9,14-20}
+```vue{8,13-19}
 <script setup lang="ts">
 import {ref} from 'vue';
-import '@gits-id/alert/dist/style.css';
 
 const isOpen = ref(true);
 </script>
@@ -282,12 +262,23 @@ yarn install @gits-id/alert
 ```vue
 <script setup lang="ts">
 import VAlert from '@gits-id/alert';
-import '@gits-id/alert/dist/style.css';
 </script>
 
 <template>
   <VAlert> Alert text </VAlert>
 </template>
+```
+
+## Tailwind Plugin
+
+This package comes with custom tailwind plugin for styling. If you are installing this package separately from `@gits-id/ui` package, you need to include the plugin in `plugins` section in your Tailwind config file.
+
+```js
+// tailwind.config.js
+module.exports = {
+  content: [],
+  presets: [require('@gits-id/alert/plugin')],
+};
 ```
 
 ## Storybook
