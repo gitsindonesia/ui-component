@@ -33,5 +33,16 @@
   "jsdelivr": "dist/app-bar.iife.js",
   "module": "./dist/app-bar.mjs",
   "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/app-bar.mjs",
+      "require": "./dist/app-bar.js"
+    },
+    "./plugin": "./src/plugin.js",
+    "./plugin.js": "./src/plugin.js",
+    "./package.json": "./package.json",
+    "./src/*": "./src/*",
+    "./*": "./*"
+  },
   "gitHead": "b5a78473960cae120ca3396a242f6fb241970de4"
 }

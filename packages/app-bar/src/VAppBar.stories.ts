@@ -6,8 +6,6 @@ import Icon from '@gits-id/icon';
 import Button from '@gits-id/button';
 import {VInput} from '@gits-id/forms';
 
-const shadows = [true, 'sm', 'md', 'lg', 'xl', '2xl', 'inner', 'none'];
-
 export default {
   title: 'Components/AppBar',
   component: VAppBar,
@@ -76,6 +74,8 @@ Bordered.parameters = {
 export const Shadow: Story<{}> = (args) => ({
   components: {VAppBar},
   setup() {
+    const shadows = [true, 'sm', 'md', 'lg', 'xl', '2xl', 'inner', 'none'];
+
     return {args, shadows};
   },
   template: `
