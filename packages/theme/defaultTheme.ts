@@ -39,3 +39,15 @@ export const secondary = {
 
 export const defaultSizes = ['xxs', 'xs', 'sm', 'md', 'lg', 'xl'];
 export type DefaultSizes = typeof defaultSizes[number];
+
+export const defaultShadows = [
+  true,
+  'sm',
+  'md',
+  'lg',
+  'xl',
+  '2xl',
+  'inner',
+  'none',
+];
+export type DefaultShadows = typeof defaultShadows[number];

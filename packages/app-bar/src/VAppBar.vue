@@ -6,17 +6,7 @@ export default {
 
 <script setup lang="ts">
 import {toRefs, ref, watch, PropType} from 'vue';
-import type {DefaultColors} from '@gits-id/theme/defaultTheme';
-
-export type AppBarShadow =
-  | boolean
-  | 'sm'
-  | 'md'
-  | 'lg'
-  | 'xl'
-  | '2xl'
-  | 'inner'
-  | 'none';
+import type {DefaultColors, DefaultShadows} from '@gits-id/theme/defaultTheme';
 
 export type AppBarColors = DefaultColors | 'default';
 
@@ -38,7 +28,7 @@ const props = defineProps({
     default: false,
   },
   shadow: {
-    type: [Boolean, String] as PropType<AppBarShadow>,
+    type: [Boolean, String] as PropType<DefaultShadows>,
     default: false,
   },
   color: {
