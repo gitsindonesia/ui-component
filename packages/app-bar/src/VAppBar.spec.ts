@@ -1,4 +1,9 @@
 import {mount} from '@vue/test-utils';
+import {
+  defaultColors,
+  defaultShadows,
+  defaultSizes,
+} from '@gits-id/theme/defaultTheme';
 import {describe, expect, test} from 'vitest';
 import VAppBar from './VAppBar.vue';
 
@@ -6,126 +11,85 @@ describe('VAppBar', () => {
   test('mount component', () => {
     expect(VAppBar).toBeTruthy();
 
-    const wrapper = mount(VAppBar, {
-      props: {
-        modelValue: true,
-        mini: false,
-        fixed: false,
-        drawer: false,
-        dark: false,
-        hideToggle: false,
-        defaultHidden: false,
-      },
-    });
+    const wrapper = mount(VAppBar);
 
-    expect(wrapper.html()).toContain('v-app-bar');
+    expect(wrapper.html()).toContain('app-bar');
     expect(wrapper.vm.modelValue).toBe(true);
-    expect(wrapper.vm.mini).toBe(false);
-    expect(wrapper.vm.fixed).toBe(false);
-    expect(wrapper.vm.drawer).toBe(false);
-    expect(wrapper.vm.dark).toBe(false);
-    expect(wrapper.vm.hideToggle).toBe(false);
-    expect(wrapper.vm.defaultHidden).toBe(false);
-  });
-
-  test('mini', () => {
-    const wrapper = mount(VAppBar, {
-      props: {
-        modelValue: true,
-        mini: true,
-        fixed: false,
-        drawer: false,
-        dark: false,
-        hideToggle: false,
-        defaultHidden: false,
-      },
-    });
-
-    expect(wrapper.html()).toContain('v-app-bar-mini');
-    expect(wrapper.vm.mini).toBe(true);
-  });
-
-  test('drawer', () => {
-    const wrapper = mount(VAppBar, {
-      props: {
-        modelValue: true,
-        mini: false,
-        fixed: false,
-        drawer: true,
-        dark: false,
-        hideToggle: false,
-        defaultHidden: false,
-      },
-    });
-
-    expect(wrapper.html()).toContain('v-app-bar-drawer');
-    expect(wrapper.vm.drawer).toBe(true);
   });
 
   test('fixed', () => {
     const wrapper = mount(VAppBar, {
       props: {
-        modelValue: true,
-        mini: false,
         fixed: true,
-        drawer: false,
-        dark: false,
-        hideToggle: false,
-        defaultHidden: false,
       },
     });
 
-    expect(wrapper.html()).toContain('fixed w-full');
+    expect(wrapper.html()).toContain('app-bar--fixed');
     expect(wrapper.vm.fixed).toBe(true);
   });
 
-  test('dark', () => {
+  test('sticky', () => {
     const wrapper = mount(VAppBar, {
       props: {
-        modelValue: true,
-        mini: false,
-        fixed: false,
-        drawer: false,
-        dark: true,
-        hideToggle: false,
-        defaultHidden: false,
+        sticky: true,
       },
     });
 
-    expect(wrapper.html()).toContain('bg-gray-900 text-white');
-    expect(wrapper.vm.dark).toBe(true);
+    expect(wrapper.html()).toContain('app-bar--sticky');
+    expect(wrapper.vm.sticky).toBe(true);
   });
 
-  test('defaultHidden', () => {
+  test('bordered', () => {
     const wrapper = mount(VAppBar, {
       props: {
-        modelValue: true,
-        mini: false,
-        fixed: false,
-        drawer: false,
-        dark: false,
-        hideToggle: false,
-        defaultHidden: true,
+        bordered: true,
       },
     });
 
-    expect(wrapper.html()).toContain('flex sm:hidden');
-    expect(wrapper.vm.defaultHidden).toBe(true);
+    expect(wrapper.html()).toContain('app-bar--bordered');
+    expect(wrapper.vm.bordered).toBe(true);
   });
 
-  test('hideToggle', () => {
+  test('shadow', () => {
+    defaultShadows.forEach((shadow) => {
+      const wrapper = mount(VAppBar, {
+        props: {
+          shadow,
+        },
+      });
+
+      expect(wrapper.html()).toContain('app-bar--shadow');
+    });
+  });
+
+  test('color', () => {
+    defaultColors.forEach((color) => {
+      const wrapper = mount(VAppBar, {
+        props: {
+          color,
+        },
+      });
+      expect(wrapper.html()).toContain(`app-bar-${color}`);
+    });
+  });
+
+  test('size', () => {
+    defaultSizes.forEach((size) => {
+      const wrapper = mount(VAppBar, {
+        props: {
+          size,
+        },
+      });
+      expect(wrapper.html()).toContain(`app-bar--${size}`);
+    });
+  });
+
+  test('transition', () => {
     const wrapper = mount(VAppBar, {
       props: {
-        modelValue: true,
-        mini: false,
-        fixed: false,
-        drawer: false,
-        dark: false,
-        hideToggle: true,
-        defaultHidden: false,
+        transition: 'slide-down',
       },
     });
-
-    expect(wrapper.get('[data-hide-toggle]').html()).toBeTruthy();
+    expect(wrapper).toBeTruthy();
   });
 });
