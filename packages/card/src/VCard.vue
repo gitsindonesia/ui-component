@@ -85,7 +85,7 @@ const tag = computed(() => (to.value ? 'router-link' : 'div'));
 const classes = computed(() => {
   const shadowClass = props.flat
     ? 'card--shadow-none'
-    : props.shadow
+    : typeof props.shadow === 'string'
     ? `card--shadow-${props.shadow}`
     : 'card--shadow';
 
