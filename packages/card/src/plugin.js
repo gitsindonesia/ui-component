@@ -33,6 +33,8 @@ const card = plugin(function ({addComponents, theme}) {
       padding: 'var(--card-padding-y) var(--card-padding-x)',
     },
     '.card-footer': {
+      display: 'flex',
+      gap: theme('spacing.2'),
       padding:
         '0 var(--card-padding-x) var(--card-padding-y) var(--card-padding-x)',
     },
