@@ -1,5 +1,15 @@
 <script setup lang="ts">
-import {computed, toRefs} from 'vue';
+import {computed, PropType, toRefs} from 'vue';
+
+export type CardShadow =
+  | boolean
+  | 'sm'
+  | 'md'
+  | 'lg'
+  | 'xl'
+  | '2xl'
+  | 'inner'
+  | 'none';
 
 const props = defineProps({
   title: {
@@ -8,19 +18,19 @@ const props = defineProps({
   },
   defaultWrapperClass: {
     type: String,
-    default: 'rounded-md bg-white flex flex-col',
+    default: '',
   },
   defaultHeaderClass: {
     type: String,
-    default: 'font-semibold flex px-4',
+    default: 'card-header',
   },
   defaultFooterClass: {
     type: String,
-    default: 'px-4 flex',
+    default: 'card-footer',
   },
   defaultBodyClass: {
     type: String,
-    default: 'px-4 flex flex-col',
+    default: 'card-body',
   },
   wrapperClass: {
     type: String,
@@ -54,60 +64,57 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  shadow: {
+    type: [Boolean, String] as PropType<CardShadow>,
+    default: false,
+  },
   to: {
     type: String,
     default: '',
+  },
+  color: {
+    type: String,
+    default: 'default',
   },
 });
 
 const {to} = toRefs(props);
 
 const tag = computed(() => (to.value ? 'router-link' : 'div'));
+
+const classes = computed(() => {
+  const shadowClass = props.flat
+    ? 'card--shadow-none'
+    : typeof props.shadow === 'string'
+    ? `card--shadow-${props.shadow}`
+    : 'card--shadow';
+
+  return [
+    `card card-${props.color}`,
+    props.defaultWrapperClass,
+    props.wrapperClass,
+    shadowClass,
+    {
+      'card--bordered': props.bordered,
+    },
+  ];
+});
 </script>
 
 <template>
-  <component
-    :is="tag"
-    :to="to"
-    :class="[
-      defaultWrapperClass,
-      wrapperClass,
-      {
-        border: bordered,
-        shadow: !flat,
-      },
-    ]"
-  >
+  <component :is="tag" :to="to" :class="classes">
     <slot name="image" />
-    <div
-      v-if="!hideHeader"
-      :class="[
-        defaultHeaderClass,
-        bordered ? 'border-b py-3' : 'pt-3',
-        headerClass,
-      ]"
-    >
+    <div v-if="!hideHeader" :class="[defaultHeaderClass, headerClass]">
+      <slot name="header.prepend" />
       <slot name="header">
-        <div>{{ title }}</div>
+        <div class="card-title">{{ title }}</div>
       </slot>
+      <slot name="header.append" />
     </div>
-    <div
-      :class="[
-        defaultBodyClass,
-        bordered ? 'border-t py-3' : 'py-3',
-        bodyClass,
-      ]"
-    >
+    <div :class="[defaultBodyClass, bodyClass]">
       <slot />
     </div>
-    <div
-      v-if="!hideFooter"
-      :class="[
-        defaultFooterClass,
-        bordered ? 'border-t py-3' : 'pb-3',
-        footerClass,
-      ]"
-    >
+    <div v-if="!hideFooter" :class="[defaultFooterClass, footerClass]">
       <slot name="footer" />
     </div>
   </component>
