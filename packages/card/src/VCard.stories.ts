@@ -1,6 +1,7 @@
 import {Meta, Story} from '@storybook/vue3';
 import VCard from './VCard.vue';
 import VBtn from '@gits-id/button';
+import {defaultColors} from '@gits-id/theme/defaultTheme';
 
 export default {
   title: 'Components/Card',
@@ -20,21 +21,19 @@ export default {
 } as Meta;
 
 const Template: Story = (args) => ({
-  // Components used in your story `template` are defined in the `components` object
   components: {VCard},
-  // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
     return {args};
   },
-  // And then the `args` are bound to your component with `v-bind="args"`
-  template: `<v-card v-bind='args'>
-  <template #header>
-    {{args.title}}
-  </template>
-  <template #footer>
-    {{args.footer}}
-  </template>
-  {{ args.body }}
+  template: `
+  <v-card v-bind='args'>
+    <template #header>
+      {{args.title}}
+    </template>
+    <template #footer>
+      {{args.footer}}
+    </template>
+    {{ args.body }}
   </v-card>`,
 });
 
@@ -88,23 +87,21 @@ BodyOnly.parameters = {
 export const Bordered = Template.bind({});
 Bordered.args = {
   bordered: true,
+  flat: true,
 };
 Bordered.parameters = {
   docs: {
     source: {
-      code: '<v-card title="Header" bordered>Body</v-card>',
+      code: '<v-card title="Header" bordered flat>Body</v-card>',
     },
   },
 };
 
 export const CustomSlots: Story = (args) => ({
-  // Components used in your story `template` are defined in the `components` object
   components: {VCard, VBtn},
-  // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
     return {args};
   },
-  // And then the `args` are bound to your component with `v-bind="args"`
   template: `
 <v-card v-bind='args' header-class="items-center" footer-class="gap-2">
   <template #header>
@@ -122,7 +119,8 @@ export const CustomSlots: Story = (args) => ({
 CustomSlots.parameters = {
   docs: {
     source: {
-      code: `<v-card header-class="items-center" footer-class="gap-2">
+      code: `
+<v-card header-class="items-center" footer-class="gap-2">
   <template #header>
     <div>My Header</div>
   </template>
@@ -148,3 +146,43 @@ Flat.parameters = {
     },
   },
 };
+
+export const Colors: Story<{}> = (args) => ({
+  components: {VCard},
+  setup() {
+    return {args, colors: ['default', ...defaultColors]};
+  },
+  template: `
+<v-card
+  v-for="(color, idx) in colors"
+  :key="idx"
+  :color="color"
+  class="mb-4"
+  hide-header
+  hide-footer
+  >
+  Card: {{ color }}
+</v-card>
+`,
+});
+
+export const Shadow: Story<{}> = (args) => ({
+  components: {VCard},
+  setup() {
+    const shadows = [true, 'sm', 'md', 'lg', 'xl', '2xl', 'inner', 'none'];
+
+    return {args, shadows};
+  },
+  template: `
+<v-card
+  v-for="(shadow, idx) in shadows"
+  :key="idx"
+  :shadow="shadow"
+  class="mb-4"
+  hide-header
+  hide-footer
+  >
+  Shadow: {{ shadow }}
+</v-card>
+`,
+});
