@@ -104,7 +104,7 @@ const appBar = plugin(function ({addComponents, theme}) {
       '--app-bar-height': '54px',
     },
     '.app-bar--lg': {
-      flexDirectin: 'column',
+      flexDirection: 'column',
       alignItems: 'center',
       '--app-bar-height': '94px',
     },

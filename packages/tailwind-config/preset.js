@@ -19,6 +19,7 @@ module.exports = {
     require('@gits-id/alert/plugin'),
     require('@gits-id/app-bar/plugin'),
     require('@gits-id/avatar/plugin'),
+    require('@gits-id/badge/plugin'),
     require('@gits-id/card/plugin'),
   ],
 };

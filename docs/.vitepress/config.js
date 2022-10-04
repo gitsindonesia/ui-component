@@ -35,6 +35,7 @@ export default defineConfig({
           {text: 'Alert', link: '/components/alert'},
           {text: 'AppBar', link: '/components/app-bar'},
           {text: 'Avatar', link: '/components/avatar'},
+          {text: 'Badge', link: '/components/badge'},
           {text: 'Card', link: '/components/card'},
         ],
       },
