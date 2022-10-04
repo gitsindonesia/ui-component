@@ -127,7 +127,19 @@ None
 
 ## Events
 
-None
+### `dismiss`
+
+Fired when dismissable button clicked.
+
+```vue
+<script setup lang="ts">
+const onDismiss = () => alert('Dismiss!');
+</script>
+
+<template>
+  <VBadge @dismiss="onDismiss"> Badge </VBadge>
+</template>
+```
 
 ## Slots
 
