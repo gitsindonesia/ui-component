@@ -51,3 +51,16 @@ export const defaultShadows = [
   'none',
 ];
 export type DefaultShadows = typeof defaultShadows[number];
+
+export const defaultRounded = [
+  true,
+  'sm',
+  'md',
+  'lg',
+  'xl',
+  '2xl',
+  '3xl',
+  'full',
+  'none',
+];
+export type DefaultRounded = typeof defaultRounded[number];

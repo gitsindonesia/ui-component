@@ -1,14 +1,15 @@
 <script setup lang="ts">
-import {computed, toRefs} from 'vue';
-import {XIcon} from '@heroicons/vue/outline';
+import {computed, PropType} from 'vue';
+import Icon from '@gits-id/icon';
+import {DefaultColors, DefaultRounded} from '@gits-id/theme/defaultTheme';
 
 const props = defineProps({
   color: {
-    type: String,
+    type: String as PropType<DefaultColors | 'default'>,
     default: 'default',
   },
   rounded: {
-    type: Boolean,
+    type: [Boolean, String] as PropType<boolean | DefaultRounded>,
     default: false,
   },
   small: {
@@ -19,14 +20,23 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  /**
+   * @deprecated use `color` prop instead
+   */
   bgColor: {
     type: String,
     default: '',
   },
+  /**
+   * @deprecated use `color` prop instead
+   */
   textColor: {
     type: String,
     default: 'text-white',
   },
+  /**
+   * @deprecated use `rounded="none"` instead
+   */
   circle: {
     type: Boolean,
     default: false,
@@ -39,114 +49,56 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  closeIcon: {
+    type: String,
+    default: 'ri:close-line',
+  },
 });
 
-const {dismissable} = toRefs(props);
-
-const emit = defineEmits(['dismiss']);
-
-const colorClass = computed(() => {
-  if (props.bgColor) {
-    return `${props.bgColor} ${props.textColor}`;
-  }
-
-  let colors: Record<string, string>;
-
-  if (props.outlined) {
-    colors = {
-      default: 'bg-transparent border border-gray-800 text-gray-800',
-      primary: 'bg-transparent border border-primary-500 text-primary-500',
-      secondary:
-        'bg-transparent border border-secondary-500 text-secondary-500',
-      info: 'bg-transparent border border-info-500 text-info-500',
-      warning: 'bg-transparent border border-warning-500 text-warning-500',
-      error: 'bg-transparent border border-error-500 text-error-500',
-      success: 'bg-transparent border border-success-500 text-success-500',
-      dark: 'bg-transparent border border-gray-900 text-gray-900',
-    };
-  } else {
-    colors = {
-      default: 'bg-gray-200 text-gray-800',
-      primary: 'bg-primary-500 text-white',
-      secondary: 'bg-secondary-500 text-white',
-      info: 'bg-info-500 text-white',
-      warning: 'bg-warning-500 text-white',
-      error: 'bg-error-500 text-white',
-      success: 'bg-success-500 text-white',
-      dark: 'bg-gray-900 text-white',
-    };
-  }
-
-  return colors[props.color];
-});
-
-const sizeClass = computed(() => {
-  if (props.small) {
-    return 'px-2 py-1 text-xs';
-  } else if (props.large) {
-    return 'px-4 py-2 text-lg';
-  } else {
-    return 'px-2 py-1 text-sm';
-  }
-});
-
-const roundedClass = computed(() => {
-  let rounded = 'rounded-md';
-  if (props.small) {
-    rounded = 'rounded';
-  } else if (props.large) {
-    rounded = 'rounded-lg';
-  }
-
-  return props.rounded ? `rounded-full` : rounded;
-});
-
-const circleClass = computed(() => {
-  let size = 'w-7 h-7';
-  if (props.small) {
-    size = 'w-6 h-6';
-  } else if (props.large) {
-    size = 'w-10 h-10';
-  }
-
-  return props.circle
-    ? 'inline-flex items-center justify-center rounded-full ' + size
-    : '';
-});
-
-const dismissableColor = computed(() => {
-  const colors: Record<string, string> = {
-    default: 'hover:bg-gray-400 active:bg-gray-300 hover:text-white',
-    primary: 'hover:bg-primary-400 active:bg-primary-300',
-    secondary: 'hover:bg-secondary-400 active:bg-secondary-300',
-    info: 'hover:bg-info-400 active:bg-info-300',
-    warning: 'hover:bg-warning-400 active:bg-warning-300',
-    success: 'hover:bg-success-400 active:bg-success-300',
-    error: 'hover:bg-error-400 active:bg-error-300',
-  };
-
-  return colors[props.color];
-});
+const emit =
+  defineEmits<{
+    (e: 'dismiss'): void;
+  }>();
 
 const onDismiss = () => {
   emit('dismiss');
 };
+
+const classes = computed(() => {
+  const roundedClass =
+    typeof props.rounded === 'string'
+      ? {[`badge--rounded-${props.rounded}`]: !!props.rounded}
+      : props.rounded
+      ? `badge--rounded`
+      : '';
+
+  return [
+    'badge',
+    `badge-${props.color}`,
+    roundedClass,
+    {
+      'badge--sm': props.small,
+      'badge--lg': props.large,
+      'badge--outlined': props.outlined,
+      'badge--dismissable': props.dismissable,
+    },
+  ];
+});
 </script>
 
 <template>
-  <span
-    class="inline-flex items-center gap-2"
-    :class="[colorClass, roundedClass, sizeClass, circleClass]"
-  >
+  <span class="badge" :class="classes">
     <slot />
-    <button
-      v-if="dismissable"
-      class="bg-transparent rounded-sm !p-0"
-      :class="[dismissableColor]"
-      type="button"
-      @click="onDismiss"
-    >
-      <XIcon class="h-4 w-4" />
-    </button>
+    <slot name="dismissable" :dismiss="onDismiss">
+      <button
+        v-if="dismissable"
+        class="badge-dismiss-button"
+        type="button"
+        aria-label="Close"
+        @click="onDismiss"
+      >
+        <Icon :name="closeIcon" class="badge-icon" />
+      </button>
+    </slot>
   </span>
 </template>
