@@ -3,9 +3,11 @@ import {computed, PropType} from 'vue';
 import Icon from '@gits-id/icon';
 import {DefaultColors, DefaultRounded} from '@gits-id/theme/defaultTheme';
 
+export type BadgeColors = DefaultColors | 'default' | string;
+
 const props = defineProps({
   color: {
-    type: String as PropType<DefaultColors | 'default'>,
+    type: String as PropType<BadgeColors>,
     default: 'default',
   },
   rounded: {

@@ -5,13 +5,15 @@ import VBadge from '@gits-id/badge';
 import VueFeather from 'vue-feather';
 import {Icon} from '@iconify/vue';
 
+type BadgeProps = InstanceType<typeof VBadge>['$props'];
+
 type Props = {
   title?: string;
   icon?: string;
   value?: string | number;
   color?: string;
   from?: string;
-  progressColor?: string;
+  progressColor?: BadgeProps['color'] | 'default';
   progress?: string;
   up?: boolean;
   down?: boolean;
@@ -24,7 +26,7 @@ const props = withDefaults(defineProps<Props>(), {
   value: '',
   from: '',
   color: 'primary',
-  progressColor: '',
+  progressColor: 'default',
   progress: '',
   up: false,
   down: false,
