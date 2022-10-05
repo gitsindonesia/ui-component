@@ -4,6 +4,8 @@ import Icon from '@gits-id/icon';
 import vueRouter from 'storybook-vue3-router';
 import type {VBreadcrumbItem} from './types';
 import {ref} from 'vue';
+import VBreadcrumbsDivider from './VBreadcrumbsDivider.vue';
+import VBreadcrumbsItem from './VBreadcrumbsItem.vue';
 
 const items = [...Array(5)].map((v, k) => ({
   title: `Link ${k + 1}`,
@@ -98,8 +100,54 @@ export const OptionalRouterLink: Story = (args) => ({
 <v-breadcrumbs v-bind="args" />
 `,
 });
-
 OptionalRouterLink.parameters = {
+  docs: {
+    source: {
+      language: 'html',
+      code: `
+<script setup lang="ts">
+import { ref } from 'vue';
+
+const items = ref<VBreadcrumbItem[]>([
+  {
+    title: 'Item 1',
+  },
+  {
+    title: 'Item 2',
+  },
+]);
+</script>
+
+<template>
+  <v-breadcrumbs :items="items" />
+</template>
+`,
+    },
+  },
+};
+
+export const Bare: Story = (args) => ({
+  components: {VBreadcrumbs, VBreadcrumbsItem, VBreadcrumbsDivider, Icon},
+  setup() {
+    return {args};
+  },
+  template: `
+<v-breadcrumbs>
+  <v-breadcrumbs-item to="/">
+    Home
+  </v-breadcrumbs-item>
+  <v-breadcrumbs-divider />
+  <v-breadcrumbs-item to="/account">
+    Account
+  </v-breadcrumbs-item>
+  <v-breadcrumbs-divider />
+  <v-breadcrumbs-item to="/account/profile" disabled>
+    Profile
+  </v-breadcrumbs-item>
+</v-breadcrumbs>
+`,
+});
+Bare.parameters = {
   docs: {
     source: {
       language: 'html',

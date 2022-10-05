@@ -21,5 +21,6 @@ module.exports = {
     require('@gits-id/avatar/plugin'),
     require('@gits-id/badge/plugin'),
     require('@gits-id/card/plugin'),
+    require('@gits-id/breadcrumbs/plugin'),
   ],
 };

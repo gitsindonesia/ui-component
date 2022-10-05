@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import type {VBreadcrumbItem} from './types';
-import {PropType, resolveComponent} from 'vue';
+import {PropType} from 'vue';
+import VBreadcrumbsItem from './VBreadcrumbsItem.vue';
+import VBreadcrumbsDivider from './VBreadcrumbsDivider.vue';
 
-const props = defineProps({
+defineProps({
   items: {
     type: Array as PropType<VBreadcrumbItem[]>,
-    default: () => [],
+    default: () => [] as VBreadcrumbItem[],
   },
   divider: {
     type: String,
@@ -17,36 +19,31 @@ const props = defineProps({
   },
   activeColor: {
     type: String,
-    default: '!text-primary-500',
+    default: 'breadcrumbs-item--active',
+  },
+  tag: {
+    type: String,
+    default: 'li',
   },
 });
-
-const RouterLink = resolveComponent('RouterLink');
 </script>
 
 <template>
-  <div class="mb-3 flex gap-2 items-center">
-    <template v-for="(item, index) in props.items" :key="index">
-      <slot :name="`item.${index}`">
-        <component
-          :is="item.to ? RouterLink : 'span'"
-          :to="item.to"
-          :class="[customClass]"
-          class="font-medium hover:text-primary-700"
-          :exact-active-class="props.activeColor"
-        >
-          <slot :name="`title.${index}`">
-            {{ item.title }}
-          </slot>
-        </component>
-        <template v-if="index + 1 < props.items.length">
-          <slot name="divider">
-            <span class="text-sm text-gray-400 font-medium mx-0">
-              {{ props.divider }}
-            </span>
-          </slot>
-        </template>
-      </slot>
-    </template>
-  </div>
+  <nav aria-label="Breadcrumbs" class="breadcrumbs">
+    <slot>
+      <template v-for="(item, index) in items" :key="index">
+        <slot :name="`item.${index}`">
+          <VBreadcrumbsItem
+            :to="item.to"
+            :title="item.title"
+            :active-class="activeColor"
+            :tag="tag"
+          />
+        </slot>
+        <slot v-if="index + 1 < items.length" name="divider">
+          <VBreadcrumbsDivider :text="divider" />
+        </slot>
+      </template>
+    </slot>
+  </nav>
 </template>
