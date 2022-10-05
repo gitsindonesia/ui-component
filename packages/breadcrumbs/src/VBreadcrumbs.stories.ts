@@ -1,6 +1,6 @@
 import VBreadcrumbs from './VBreadcrumbs.vue';
 import {Meta, Story} from '@storybook/vue3';
-import {Icon} from '@gits-id/icon';
+import Icon from '@gits-id/icon';
 import vueRouter from 'storybook-vue3-router';
 import type {VBreadcrumbItem} from './types';
 import {ref} from 'vue';
@@ -60,7 +60,7 @@ export const CustomDividerSlots: Story = (args) => ({
   template: `<div class="container mx-auto">
   <v-breadcrumbs v-bind="args">
     <template #divider>
-      <Icon name="ri:arrow-right-line" class="fill-current w-5 h-5 text-gray-500" />
+      <Icon name="ri:arrow-right-s-line" class="w-5 h-5 text-gray-500" />
     </template>
   </v-breadcrumbs>
 </div>`,
@@ -71,7 +71,7 @@ CustomDividerSlots.parameters = {
       code: `
 <v-breadcrumbs :items="items">
   <template #divider>
-  <Icon name="ri:arrow-right-line" class="fill-current w-5 h-5 text-gray-500" />
+  <Icon name="ri:arrow-right-line" class="w-5 h-5 text-gray-500" />
   </template>
 </v-breadcrumbs>
 `,
