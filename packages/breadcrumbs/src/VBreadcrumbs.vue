@@ -29,7 +29,7 @@ defineProps({
 </script>
 
 <template>
-  <nav aria-label="Breadcrumbs" class="breadcrumbs">
+  <nav aria-label="Breadcrumbs" class="breadcrumbs" :class="customClass">
     <slot>
       <template v-for="(item, index) in items" :key="index">
         <slot :name="`item.${index}`">
