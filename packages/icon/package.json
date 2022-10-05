@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/icon",
-  "version": "0.11.10",
+  "version": "0.12.0-alpha.0",
   "description": "GITS Icon Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,11 +15,11 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "@gits-id/theme": "^0.11.10",
+    "@gits-id/theme": "^0.12.0-alpha.0",
     "vue": "^3.2.31"
   },
   "devDependencies": {
-    "@gits-id/tailwind-config": "^0.11.10",
+    "@gits-id/tailwind-config": "^0.12.0-alpha.0",
     "vite": "^3.0.0",
     "vitest": "^0.12.4",
     "vue-tsc": "^0.40.1"

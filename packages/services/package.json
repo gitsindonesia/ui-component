@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/services",
-  "version": "0.11.10",
+  "version": "0.12.0-alpha.0",
   "description": "GITS Services",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly",
@@ -15,12 +15,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gits-id/button": "^0.11.10",
+    "@gits-id/button": "^0.12.0-alpha.0",
     "axios": "^0.26.0",
     "vue": "^3.2.33"
   },
   "devDependencies": {
-    "@gits-id/tailwind-config": "^0.11.10",
+    "@gits-id/tailwind-config": "^0.12.0-alpha.0",
     "@gits-id/utils": "^0.11.10",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
