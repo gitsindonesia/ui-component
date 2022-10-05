@@ -170,7 +170,7 @@ With the power of CSS Variables and Tailwind's `theme` function, you can create 
 </template>
 
 <style>
-.breadcrumbs-indigo {
+:root {
   --breadcrumbs-gap: theme('spacing.4');
   --breadcrumbs-margin-bottom: theme('spacing.5');
   --breadcrumbs-font-weight: theme('fontWeight.semibold');
