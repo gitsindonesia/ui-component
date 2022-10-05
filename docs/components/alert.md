@@ -8,9 +8,12 @@
 <template>
   <!-- VAlert is registered globally -->
   <VAlert> Alert text </VAlert>
-  <VAlert color="primary"> Alert text </VAlert>
 </template>
 ```
+
+<DocsCanvas>
+  <VAlert> Alert text </VAlert>
+</DocsCanvas>
 
 ::: info
 The `VAlert` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
@@ -38,6 +41,95 @@ Use `color` to different color style to the alert.
 </template>
 ```
 
+<DocsCanvas>
+  <VAlert> Alert text </VAlert>
+  <VAlert color="primary"> Alert text </VAlert>
+  <VAlert color="secondary"> Alert text </VAlert>
+  <VAlert color="info"> Alert text </VAlert>
+  <VAlert color="warning"> Alert text </VAlert>
+  <VAlert color="success"> Alert text </VAlert>
+  <VAlert color="error"> Alert text </VAlert>
+  <VAlert color="dark"> Alert text </VAlert>
+</DocsCanvas>
+
+### Solid
+
+- **prop**: `solid`
+- **type**: `boolean`
+- **default**: `false`
+- **required**: `false`
+
+Use `solid` to apply solid style to the alert.
+
+```vue
+<template>
+  <VAlert solid> default </VAlert>
+  <VAlert solid color="primary"> primary </VAlert>
+  <VAlert solid color="secondary"> secondary </VAlert>
+  <VAlert solid color="info"> info </VAlert>
+  <VAlert solid color="warning"> warning </VAlert>
+  <VAlert solid color="success"> success </VAlert>
+  <VAlert solid color="error"> error </VAlert>
+  <VAlert solid color="dark"> dark </VAlert>
+</template>
+```
+
+<DocsCanvas>
+  <AlertsSolid />
+</DocsCanvas>
+
+### Outlined
+
+- **prop**: `outlined`
+- **type**: `boolean`
+- **default**: `false`
+- **required**: `false`
+
+Use `outlined` to apply outlined style to the alert.
+
+```vue
+<template>
+  <VAlert outlined> default </VAlert>
+  <VAlert outlined color="primary"> primary </VAlert>
+  <VAlert outlined color="secondary"> secondary </VAlert>
+  <VAlert outlined color="info"> info </VAlert>
+  <VAlert outlined color="warning"> warning </VAlert>
+  <VAlert outlined color="success"> success </VAlert>
+  <VAlert outlined color="error"> error </VAlert>
+  <VAlert outlined color="dark"> dark </VAlert>
+</template>
+```
+
+<DocsCanvas>
+  <AlertsOutlined />
+</DocsCanvas>
+
+### Bordered
+
+- **prop**: `border`
+- **type**: `boolean`
+- **default**: `false`
+- **required**: `false`
+
+Use `border` to apply bordered style to the alert.
+
+```vue
+<template>
+  <VAlert bordered> default </VAlert>
+  <VAlert bordered color="primary"> primary </VAlert>
+  <VAlert bordered color="secondary"> secondary </VAlert>
+  <VAlert bordered color="info"> info </VAlert>
+  <VAlert bordered color="warning"> warning </VAlert>
+  <VAlert bordered color="success"> success </VAlert>
+  <VAlert bordered color="error"> error </VAlert>
+  <VAlert bordered color="dark"> dark </VAlert>
+</template>
+```
+
+<DocsCanvas>
+  <AlertsBordered />
+</DocsCanvas>
+
 ### `v-model`
 
 - **prop**: `modelValue`
@@ -46,6 +138,10 @@ Use `color` to different color style to the alert.
 - **required**: `false`
 
 Use `v-model` to show or hide the alert.
+
+<DocsCanvas>
+  <AlertsVModel />
+</DocsCanvas>
 
 ```vue{10}
 <script setup lang="ts">
@@ -84,74 +180,9 @@ const isOpen = ref(true);
 </template>
 ```
 
-### Solid
-
-- **prop**: `solid`
-- **type**: `boolean`
-- **default**: `false`
-- **required**: `false`
-
-Use `solid` to apply solid style to the alert.
-
-```vue{10}
-<script setup lang="ts">
-import {ref} from 'vue';
-import Button from '@gits-id/button';
-
-const isOpen = ref(true);
-</script>
-
-<template>
-  <Button @click="isOpen = !isOpen">Toggle Alert</Button>
-  <VAlert v-model="isOpen" solid> Alert text </VAlert>
-</template>
-```
-
-### Outlined
-
-- **prop**: `outlined`
-- **type**: `boolean`
-- **default**: `false`
-- **required**: `false`
-
-Use `outlined` to apply outlined style to the alert.
-
-```vue{10}
-<script setup lang="ts">
-import {ref} from 'vue';
-import Button from '@gits-id/button';
-
-const isOpen = ref(true);
-</script>
-
-<template>
-  <Button @click="isOpen = !isOpen">Toggle Alert</Button>
-  <VAlert v-model="isOpen" outlined> Alert text </VAlert>
-</template>
-```
-
-### Bordered
-
-- **prop**: `border`
-- **type**: `boolean`
-- **default**: `false`
-- **required**: `false`
-
-Use `border` to apply bordered style to the alert.
-
-```vue{10}
-<script setup lang="ts">
-import {ref} from 'vue';
-import Button from '@gits-id/button';
-
-const isOpen = ref(true);
-</script>
-
-<template>
-  <Button @click="isOpen = !isOpen">Toggle Alert</Button>
-  <VAlert v-model="isOpen" border> Alert text </VAlert>
-</template>
-```
+<DocsCanvas>
+  <AlertsDismissable />
+</DocsCanvas>
 
 ### Transition
 
@@ -177,6 +208,10 @@ const isOpen = ref(true);
   <VAlert v-model="isOpen" transition="slide-up"> Alert text </VAlert>
 </template>
 ```
+
+<DocsCanvas>
+  <AlertsTransition />
+</DocsCanvas>
 
 ## Props
 
