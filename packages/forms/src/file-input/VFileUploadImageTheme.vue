@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import VSpinner from '@gits-id/spinner';
 import {computed} from 'vue';
-import {CameraIcon} from '@heroicons/vue/solid';
+import Icon from '@gits-id/icon';
 
 type Props = {
   rounded?: boolean;
@@ -57,7 +57,10 @@ const backgroundImage = computed(() =>
         {{ image ? '' : fileName }}
       </div>
       <template v-else>
-        <CameraIcon class="w-10 h-10 text-gray-500 mb-1" />
+        <Icon
+          name="heroicons:camera-solid"
+          class="w-10 h-10 text-gray-500 mb-1"
+        />
         <div class="uppercase text-gray-500">
           {{ loading ? loadingText : browseText }}
         </div>

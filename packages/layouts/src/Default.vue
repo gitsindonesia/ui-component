@@ -1,12 +1,7 @@
 <script setup lang="ts">
 import {inject, onMounted, ref} from 'vue';
 import SidebarMenu from './SidebarMenu.vue';
-import {
-  MenuAlt1Icon,
-  LogoutIcon,
-  UserIcon,
-  CogIcon,
-} from '@heroicons/vue/outline';
+import Icon from '@gits-id/icon';
 
 const title = inject('appTitle') || 'GITS';
 const subtitle = inject('appSubtitle') || 'Panel';
@@ -81,12 +76,12 @@ window.addEventListener('resize', resizeHandler);
         }"
       >
         <div class="flex items-center flex-none">
-          <UserIcon class="w-5 h-5" />
+          <Icon name="heroicons:user" class="w-5 h-5" />
           <span v-if="!isCollapsed" class="ml-2">{{ authUser }}</span>
         </div>
         <div v-if="!isCollapsed" class="flex-none">
           <button class="px-2 py-2 focus:outline-none">
-            <CogIcon class="w-5 h-5" />
+            <Icon name="heroicons:cog" class="w-5 h-5" />
           </button>
         </div>
       </div>
@@ -105,14 +100,14 @@ window.addEventListener('resize', resizeHandler);
           class="text-gray-200 ml-4 mt-3 text-gray-800 focus:outline-none"
           @click="toggleMenu"
         >
-          <MenuAlt1Icon class="w-6 h-6" />
+          <Icon name="ri:menu-line" class="w-6 h-6" />
         </button>
         <router-link
           v-if="logoutPath"
           :to="logoutPath"
           class="text-gray-200 mr-4 mt-3 text-gray-800 focus:outline-none"
         >
-          <LogoutIcon class="w-6 h-6" />
+          <Icon name="ri:logout-box-line" class="w-6 h-6" />
         </router-link>
       </div>
       <div class="px-4 py-2">

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import {computed, PropType} from 'vue';
-import {ChevronDownIcon, ChevronRightIcon} from '@heroicons/vue/solid';
 import {Menu, MenuButton, MenuItems, MenuItem} from '@headlessui/vue';
 import VBtn from '@gits-id/button';
+import Icon from '@gits-id/icon';
 
 const props = defineProps({
   items: {
@@ -48,7 +48,11 @@ const placementClass = computed(() => (props.right ? 'right-0' : 'left-0'));
       >
         <slot />
         <slot name="icon">
-          <ChevronDownIcon class="w-5 h-5 ml-2 -mr-1" aria-hidden="true" />
+          <Icon
+            name="heroicons:chevron-down"
+            class="w-5 h-5 ml-2 -mr-1"
+            aria-hidden="true"
+          />
         </slot>
       </MenuButton>
     </div>
@@ -92,7 +96,7 @@ const placementClass = computed(() => (props.right ? 'right-0' : 'left-0'));
               </span>
               <template v-if="rightIcon">
                 <slot name="right-icon">
-                  <ChevronRightIcon class="w-6 h-6" />
+                  <Icon name="heroicons:chevron-right" class="w-6 h-6" />
                 </slot>
               </template>
             </VBtn>

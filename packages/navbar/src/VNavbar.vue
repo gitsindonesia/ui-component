@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import {computed, ref, toRefs, watch, PropType} from 'vue';
-import {UserCircleIcon, ChevronDownIcon} from '@heroicons/vue/solid';
-import {MenuIcon} from '@heroicons/vue/outline';
 import VBtn from '@gits-id/button';
 import {
   Disclosure,
@@ -13,6 +11,7 @@ import {
 import VMenus from '@gits-id/menus';
 import VLogo from '@gits-id/logo';
 import type {VNavbarMenuItem} from './types';
+import Icon from '@gits-id/icon';
 
 const props = defineProps({
   modelValue: {
@@ -77,7 +76,7 @@ const userFirstName = computed(() => user.value?.name?.split(' ')?.[0]);
     <div class="container mx-auto sm:hidden">
       <div class="flex w-full items-center px-4 justify-between">
         <v-btn rounded icon text @click="toggleMenu">
-          <MenuIcon class="w-6 h-6" />
+          <Icon name="ri:menu-line" class="w-6 h-6" />
         </v-btn>
         <slot name="logo">
           <v-logo :img-class="imgClass" />
@@ -112,7 +111,7 @@ const userFirstName = computed(() => user.value?.name?.split(' ')?.[0]);
                   "
                 >
                   <span>{{ menu.text }}</span>
-                  <ChevronDownIcon class="w-5 h-5" />
+                  <Icon name="heroicons:chevron-down" class="w-5 h-5" />
                 </DisclosureButton>
                 <DisclosurePanel class="px-4 pb-2 text-gray-600">
                   <router-link
@@ -147,15 +146,15 @@ const userFirstName = computed(() => user.value?.name?.split(' ')?.[0]);
                     py-2
                     text-left
                     font-semibold
-                    block
-                    py-2
-                    px-4
                     text-gray-700
                     focus:outline-none
                   "
                 >
                   <span class="inline-flex items-center">
-                    <UserCircleIcon class="w-[30px] inline h-[30px] mr-2" />
+                    <Icon
+                      name="heroicons:user-circle"
+                      class="w-[30px] inline h-[30px] mr-2"
+                    />
                     <span>{{ user.name }}</span>
                   </span>
                   <ChevronDownIcon class="w-5 h-5" />
@@ -181,8 +180,9 @@ const userFirstName = computed(() => user.value?.name?.split(' ')?.[0]);
                   outlined
                   dense
                   solid
-                  >Login</VBtn
                 >
+                  Login
+                </VBtn>
               </div>
             </div>
           </nav>
@@ -246,10 +246,11 @@ const userFirstName = computed(() => user.value?.name?.split(' ')?.[0]);
           </template>
 
           <template #icon>
-            <ChevronDownIcon class="ml-2 w-5 h-5" />
+            <Icon name="heroicons:chevron-down" class="ml-2 w-5 h-5" />
           </template>
 
-          <UserCircleIcon
+          <Icon
+            name="heroicons:user-circle"
             class="w-[30px] h-[30px] mr-2"
             :class="[small ? 'text-sm' : '']"
           />

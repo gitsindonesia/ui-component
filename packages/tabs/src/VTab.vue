@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {ref, toRefs} from 'vue';
-import {TrashIcon} from '@heroicons/vue/outline';
 import VBtn from '@gits-id/button';
+import Icon from '@gits-id/icon';
 
 const props = defineProps({
   item: {
@@ -114,7 +114,7 @@ const setRef = (el: any) => {
       type="button"
       @click="remove(index)"
     >
-      <TrashIcon class="w-5 h-5" />
+      <Icon name="heroicons:trash-solid" class="w-5 h-5" />
     </v-btn>
   </div>
 </template>

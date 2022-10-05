@@ -1,9 +1,7 @@
-import {ChipIcon} from '@heroicons/vue/solid';
-
 const componentRoute = (title: string, to: string) => ({
   title,
   to,
-  icon: ChipIcon,
+  icon: 'heroicons:cpu-chip',
 });
 
 const componentSubMenus = [

@@ -20,10 +20,10 @@ export default defineConfig({
       // into your library
       external: [
         'vue',
-        '@heroicons/vue/outline',
         '@iconify/vue',
         '@gits-id/card',
         '@gits-id/badge',
+        '@gits-id/icon',
       ],
       output: {
         // Provide global variables to use in the UMD build

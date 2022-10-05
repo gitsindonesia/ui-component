@@ -19,8 +19,8 @@
     "@gits-id/pagination": "^0.12.0-alpha.0",
     "@gits-id/select": "^0.12.0-alpha.0",
     "@gits-id/spinner": "^0.12.0-alpha.0",
+    "@gits-id/icon": "^0.12.0-alpha.0",
     "@gits-id/utils": "^0.11.10",
-    "@heroicons/vue": "^1.0.6",
     "vue": "^3.2.33"
   },
   "devDependencies": {

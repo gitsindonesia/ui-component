@@ -7,7 +7,7 @@ export default {
 <script setup lang="ts">
 import {toRefs, computed} from 'vue';
 import {useField} from 'vee-validate';
-import {Icon} from '@iconify/vue';
+import Icon from '@gits-id/icon';
 
 const props = defineProps({
   value: {
@@ -208,7 +208,7 @@ const paddingClass = computed(() => {
         >
           <slot name="prepend">
             <Icon
-              :icon="prependIcon"
+              :name="prependIcon"
               class="w-5 h-5"
               :class="prependIconClass"
               @click="emit('clickPrependIcon')"
@@ -261,7 +261,7 @@ const paddingClass = computed(() => {
         >
           <slot name="append">
             <Icon
-              :icon="appendIcon"
+              :name="appendIcon"
               class="w-5 h-5"
               :class="appendIconClass"
               @click="emit('clickAppendIcon')"

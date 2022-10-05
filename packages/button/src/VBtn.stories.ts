@@ -1,7 +1,7 @@
 import {Meta, Story} from '@storybook/vue3';
 import Button from './VBtn.vue';
 import {VBtnProps} from './types';
-import {HomeIcon} from '@heroicons/vue/outline';
+import VIcon from '@gits-id/icon';
 
 const themeColors = [
   'default',
@@ -224,7 +224,7 @@ NoRingEffect.parameters = {
 };
 
 export const Icon: Story<VBtnProps> = (args) => ({
-  components: {Button, HomeIcon},
+  components: {Button, VIcon},
   setup() {
     return {
       args,
@@ -242,7 +242,7 @@ export const Icon: Story<VBtnProps> = (args) => ({
   template: `
 <div class="flex items-end gap-2">
   <Button v-for="size in sizes" :key="size" v-bind="args" color="primary" :size="size" icon>
-    <HomeIcon class="w-full"/>
+    <VIcon name="ri:home-line" class="w-full"/>
   </Button>
 </div>`,
 });
@@ -251,7 +251,7 @@ Icon.parameters = {
     source: {
       code: `
 <v-btn color="primary" icon>
-  <HomeIcon class="w-full"/>
+  <VIcon name="ri:home-line" class="w-full"/>
 </v-btn>
       `,
     },

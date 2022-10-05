@@ -1947,6 +1947,14 @@
     vue-feather "^2.0.0"
     vue-remix-icons "^1.1.1"
 
+"@gits-id/icon@^0.11.10":
+  version "0.11.10"
+  resolved "https://registry.yarnpkg.com/@gits-id/icon/-/icon-0.11.10.tgz#ce0accc0ec788389c1762860d22405c9cc2758b6"
+  integrity sha512-V3vo61aKUpkZosMwfPQ4ujEaT0ErLjoW3KSSFyAYaCzt41MoikFznJwynqFWA5WsOqqfcwar39dwt4oHstR6yw==
+  dependencies:
+    "@gits-id/theme" "^0.11.10"
+    vue "^3.2.31"
+
 "@gits-id/logo@^0.7.3":
   version "0.7.3"
   resolved "https://registry.yarnpkg.com/@gits-id/logo/-/logo-0.7.3.tgz#52e2e9191b16b17060fae34d7160e5338c076ce6"
@@ -2008,6 +2016,14 @@
     "@gits-id/utils" "^0.3.0"
     vee-validate "^4.5.9"
     vue "^3.2.31"
+
+"@gits-id/theme@^0.11.10":
+  version "0.11.10"
+  resolved "https://registry.yarnpkg.com/@gits-id/theme/-/theme-0.11.10.tgz#7d25f44929e1a14df9b08459ca617d5761ac7272"
+  integrity sha512-wC0c0Q9vPlfvxF8N+eRELHgdpd7nOxJxXi5d1C9H6nYkvEQhJV4PbwboZDlXiuUiE/HeCcx+/YWzVGXi/UEYfg==
+  dependencies:
+    tailwindcss "^3.0.23"
+    vue "^3.2.33"
 
 "@gits-id/theme@^0.7.3":
   version "0.7.3"

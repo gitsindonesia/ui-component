@@ -18,13 +18,7 @@ export default defineConfig({
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
-      external: [
-        'vue',
-        '@heroicons/vue/outline',
-        '@heroicons/vue/solid',
-        '@gits-id/button',
-        '@gits-id/utils',
-      ],
+      external: ['vue', '@gits-id/button', '@gits-id/utils', '@gits-id/icon'],
       output: {
         // Provide global variables to use in the UMD build
         // for externalized deps

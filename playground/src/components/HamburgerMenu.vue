@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import {MenuIcon, XIcon} from '@heroicons/vue/outline';
 import {state} from '@/composables/useMainMenu';
+import Icon from '@gits-id/icon';
 </script>
 
 <template>
   <v-btn icon text class="p-2" @click="state.isOpen = !state.isOpen">
-    <XIcon v-if="state.isOpen" class="w-6 h-6" />
-    <MenuIcon v-else class="w-6 h-6" />
+    <Icon
+      :name="state.isOpen ? 'heroicons:x-mark' : 'ri:menu-line'"
+      class="w-6 h-6"
+    />
   </v-btn>
 </template>

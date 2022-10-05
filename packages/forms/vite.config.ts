@@ -25,7 +25,7 @@ export default defineConfig({
         '@gits-id/spinner',
         '@gits-id/utils',
         '@gits-id/tailwind-config',
-        '@heroicons/vue/solid',
+        '@gits-id/icon',
         '@iconify/vue',
       ],
       output: {

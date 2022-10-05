@@ -14,7 +14,7 @@ import {
   DialogPanel,
 } from '@headlessui/vue';
 import VBtn from '@gits-id/button';
-import {XIcon} from '@heroicons/vue/outline';
+import Icon from '@gits-id/icon';
 
 type Props = {
   modelValue?: boolean;
@@ -193,7 +193,11 @@ const onConfirm = () => {
                   v-bind="xButtonProps"
                   @click="closeModal"
                 >
-                  <XIcon class="w-5 h-5" :class="xIconClass" />
+                  <Icon
+                    name="ri:close-line"
+                    class="w-5 h-5"
+                    :class="xIconClass"
+                  />
                 </VBtn>
               </DialogTitle>
               <div

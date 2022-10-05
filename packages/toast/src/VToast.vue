@@ -1,15 +1,4 @@
 <script lang="ts">
-export type ToastTypes = 'success' | 'error' | 'warning' | 'question';
-
-export type ToastPlacement =
-  | 'center'
-  | 'top'
-  | 'top-start'
-  | 'top-end'
-  | 'bottom'
-  | 'bottom-start'
-  | 'bottom-end';
-
 export default {
   inheritAttrs: false,
 };
@@ -24,13 +13,19 @@ import {
   DialogOverlay,
   DialogTitle,
 } from '@headlessui/vue';
-import {
-  XIcon,
-  CheckIcon,
-  ExclamationIcon,
-  QuestionMarkCircleIcon,
-} from '@heroicons/vue/outline';
 import VBtn from '@gits-id/button';
+import Icon from '@gits-id/icon';
+
+export type ToastTypes = 'success' | 'error' | 'warning' | 'question';
+
+export type ToastPlacement =
+  | 'center'
+  | 'top'
+  | 'top-start'
+  | 'top-end'
+  | 'bottom'
+  | 'bottom-start'
+  | 'bottom-end';
 
 // type Props = {
 //   modelValue?: boolean;
@@ -360,22 +355,26 @@ const iconColorClass = computed(() => {
                 :class="title ? 'items-start' : 'items-center'"
               >
                 <slot name="media">
-                  <CheckIcon
+                  <Icon
+                    name="heroicons:check"
                     v-if="type === 'success'"
                     class="w-6 h-6"
                     :class="iconColorClass || 'text-success'"
                   />
-                  <XIcon
+                  <Icon
+                    name="heroicons:x-mark"
                     v-if="type === 'error'"
                     class="w-6 h-6"
                     :class="iconColorClass || 'text-error'"
                   />
-                  <ExclamationIcon
+                  <Icon
+                    name="heroicons:exclamation-triangle"
                     v-if="type === 'warning'"
                     class="w-6 h-6"
                     :class="iconColorClass || 'text-warning'"
                   />
-                  <QuestionMarkCircleIcon
+                  <Icon
+                    name="heroicons:question-mark-circle"
                     v-if="type === 'question'"
                     class="w-6 h-6"
                     :class="iconColorClass || 'text-info'"
@@ -432,7 +431,11 @@ const iconColorClass = computed(() => {
                       :class="[title ? '-m-2' : '']"
                       @click="closeModal"
                     >
-                      <XIcon class="w-5 h-5" :class="textColorClass" />
+                      <Icon
+                        name="heroicons:x-mark"
+                        class="w-5 h-5"
+                        :class="textColorClass"
+                      />
                     </v-btn>
                   </slot>
                 </div>
