@@ -223,7 +223,7 @@ None
 | [`--alert-padding-x`](#--alert-padding-x)         | `theme('padding.4')`           |
 | [`--alert-padding-y`](#--alert-padding-y)         | `theme('padding.3')`           |
 
-### Creating your own style
+## Customization
 
 With the power of CSS Variables and Tailwind's `theme` function, you can create your custom alert.
 
