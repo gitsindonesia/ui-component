@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import {VCard} from '@gits-id/ui';
+</script>
+
 <template>
   <VCard
     title="Preview"
