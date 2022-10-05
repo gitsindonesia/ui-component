@@ -3,10 +3,10 @@ import {computed, watch, ref, toRefs} from 'vue';
 import type {PropType} from 'vue';
 import VDataTablePagination from './VDataTablePagination.vue';
 import type {SortDirection, VDataTableHeader, VDataTableItem} from './types';
-import {ChevronDownIcon, ChevronUpIcon} from '@heroicons/vue/solid';
 import VSpinner from '@gits-id/spinner';
 import {VCheckbox} from '@gits-id/forms';
 import {get} from '@gits-id/utils';
+import Icon from '@gits-id/icon';
 
 const props = defineProps({
   modelValue: {
@@ -457,11 +457,13 @@ const start = computed(() =>
                   <span>
                     {{ header.text }}
                   </span>
-                  <ChevronDownIcon
+                  <Icon
+                    name="heroicons:chevron-down"
                     v-if="header.sorting === 'desc'"
                     class="ml-2 h-5 w-5"
                   />
-                  <ChevronUpIcon
+                  <Icon
+                    name="heroicons:chevron-up"
                     v-if="header.sorting === 'asc'"
                     class="ml-2 h-5 w-5"
                   />

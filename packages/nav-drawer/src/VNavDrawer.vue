@@ -1,18 +1,17 @@
 <script lang="ts">
-import { defineComponent } from 'vue';
+import {defineComponent} from 'vue';
 export default defineComponent({
-  inheritAttrs: false
-})
+  inheritAttrs: false,
+});
 </script>
 
 <script setup lang="ts">
 import {computed, PropType, ref, toRefs, watch} from 'vue';
-import {XIcon} from '@heroicons/vue/outline';
 import VMenu, {type Menu} from '@gits-id/menu';
 import VLogo from '@gits-id/logo';
-import {ChevronLeftIcon} from '@heroicons/vue/solid';
 import {getBgColor} from '@gits-id/utils';
 import VBtn from '@gits-id/button'
+import Icon from '@gits-id/icon'
 
 const props = defineProps({
   modelValue: {
@@ -194,7 +193,8 @@ const bgColor = computed(() =>
             :color="toggleColor"
             @click="toggleMenu"
           >
-            <ChevronLeftIcon
+            <Icon
+              name="heroicons:chevron-left"
               class="w-5 h-5"
               :class="[isMini ? 'rotate-180' : '']"
             />
@@ -213,7 +213,7 @@ const bgColor = computed(() =>
         <v-logo :white="dark" v-bind="logoProps" />
       </slot>
       <v-btn text icon no-ring @click="toggleMenu">
-        <XIcon class="w-5 h-5" />
+        <Icon name="heroicons:x-mark" class="w-5 h-5" />
       </v-btn>
     </div>
 

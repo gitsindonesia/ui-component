@@ -2,7 +2,7 @@
 import {ref, toRefs, computed, watch} from 'vue';
 import VInput from './VInput.vue';
 import {ErrorMessage} from 'vee-validate';
-import {EyeOffIcon, EyeIcon} from '@heroicons/vue/outline';
+import Icon from '@gits-id/icon';
 
 const props = defineProps({
   modelValue: {
@@ -124,13 +124,8 @@ const inputType = computed(() =>
             icon
             @click="showPassword = !showPassword"
           >
-            <EyeOffIcon
-              v-if="showPassword"
-              class="w-5 h-5"
-              :class="error ? 'text-error-500' : 'text-[#DFE0E0]'"
-            />
-            <EyeIcon
-              v-else
+            <Icon
+              :name="showPassword ? 'heroicons:eye-slash' : 'heroicons:eye'"
               class="w-5 h-5"
               :class="error ? 'text-error-500' : 'text-[#DFE0E0]'"
             />

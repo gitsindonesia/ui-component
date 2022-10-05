@@ -20,8 +20,6 @@ export default defineConfig({
       // into your library
       external: [
         'vue',
-        '@heroicons/vue/outline',
-        '@heroicons/vue/solid',
         '@headlessui/vue',
         'vue-router',
         '@gits-id/collapsible',

@@ -1,6 +1,5 @@
 <script setup>
 import {toRefs} from 'vue';
-import {LockClosedIcon} from '@heroicons/vue/outline';
 import VBtn from '@gits-id/button';
 import {VInput} from '@gits-id/forms';
 import {string, object, ref as YupRef} from 'yup';

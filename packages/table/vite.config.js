@@ -20,9 +20,8 @@ export default defineConfig({
       // into your library
       external: [
         'vue',
-        '@heroicons/vue/outline',
-        '@heroicons/vue/solid',
         '@gits-id/forms',
+        '@gits-id/icon',
         '@gits-id/pagination',
         '@gits-id/select',
         '@gits-id/spinner',

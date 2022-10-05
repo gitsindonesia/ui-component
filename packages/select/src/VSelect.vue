@@ -7,11 +7,11 @@ import {
   ListboxOption,
   ListboxLabel,
 } from '@headlessui/vue';
-import {CheckIcon, ChevronDownIcon, XIcon} from '@heroicons/vue/solid';
 import {getBgColor} from '@gits-id/utils';
 import {VInput} from '@gits-id/forms';
 import VTooltip from '@gits-id/tooltip';
 import {useField} from 'vee-validate';
+import Icon from '@gits-id/icon';
 
 type SelectItem = {
   text: string;
@@ -283,7 +283,8 @@ const clear = () => (selectedItem.value = '');
           <v-tooltip v-if="selectedItem && clearable">
             <template #activator="{on}">
               <span v-on="on" @click="clear" class="w-auto cursor-pointer">
-                <XIcon
+                <Icon
+                  name="heroicons:x-mark"
                   class="w-5 h-5 text-gray-400 hover:text-gray-500"
                   aria-hidden="true"
                 />
@@ -292,7 +293,11 @@ const clear = () => (selectedItem.value = '');
             <span> {{ clearText }} </span>
           </v-tooltip>
           <span class="w-auto">
-            <ChevronDownIcon class="w-5 h-5 text-gray-400" aria-hidden="true" />
+            <Icon
+              name="heroicons:chevron-down"
+              class="w-5 h-5 text-gray-400"
+              aria-hidden="true"
+            />
           </span>
         </ListboxButton>
 
@@ -360,7 +365,11 @@ const clear = () => (selectedItem.value = '');
                   :class="[active ? 'text-white' : 'text-gray-900']"
                 >
                   <slot name="icon">
-                    <CheckIcon class="w-5 h-5" aria-hidden="true" />
+                    <Icon
+                      name="heroicons:check"
+                      class="w-5 h-5"
+                      aria-hidden="true"
+                    />
                   </slot>
                 </span>
               </li>

@@ -14,11 +14,11 @@ import {
   nextTick,
   PropType,
 } from 'vue';
-import {CheckIcon, ChevronDownIcon, XIcon} from '@heroicons/vue/solid';
 import VBadge from '@gits-id/badge';
 import VTooltip from '@gits-id/tooltip';
 import {onClickOutside, useDebounceFn} from '@vueuse/core';
 import {ErrorMessage, useField} from 'vee-validate';
+import Icon from '@gits-id/icon';
 
 type VMultiSelectItem = {
   text: string;
@@ -448,13 +448,17 @@ watch(
                   @click="clearSelected"
                   v-on="on"
                 >
-                  <XIcon class="text-gray-400" />
+                  <Icon name="ri:close-line" class="text-gray-400" />
                 </v-badge>
               </template>
               <span>Clear</span>
             </v-tooltip>
 
-            <ChevronDownIcon class="w-5 h-5 text-gray-400" aria-hidden="true" />
+            <Icon
+              name="heroicons:chevron-down"
+              class="w-5 h-5 text-gray-400"
+              aria-hidden="true"
+            />
           </span>
         </div>
 
@@ -529,7 +533,11 @@ watch(
                       text-primary-500
                     "
                   >
-                    <CheckIcon class="w-5 h-5" aria-hidden="true" />
+                    <Icon
+                      name="heroicons:check"
+                      class="w-5 h-5"
+                      aria-hidden="true"
+                    />
                   </span>
                 </div>
                 <div class="border-b h-1"></div>
@@ -573,7 +581,8 @@ watch(
                     "
                     :class="checkWrapperClass"
                   >
-                    <CheckIcon
+                    <Icon
+                      name="heroicons:check"
                       class="w-5 h-5"
                       :class="checkIconClass"
                       aria-hidden="true"

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import VBtn from '@gits-id/button';
-import {PlusIcon, TrashIcon} from '@heroicons/vue/solid';
+import Icon from '@gits-id/icon';
 
 type Props = {
   hasFile?: boolean;
@@ -83,7 +83,7 @@ const emit =
         @click="emit('choose')"
       >
         <slot name="icon.plus">
-          <PlusIcon class="w-5 h-5 mr-2" />
+          <Icon name="heroicons:plus-solid" class="w-5 h-5 mr-2" />
         </slot>
 
         {{ hasFile ? changeText : browseText }}
@@ -101,7 +101,7 @@ const emit =
         @click="emit('remove')"
       >
         <slot name="icon.trash">
-          <TrashIcon class="w-5 h-5" />
+          <Icon name="heroicons:trash-solid" class="w-5 h-5" />
         </slot>
         <span>{{ removeText }}</span>
       </VBtn>

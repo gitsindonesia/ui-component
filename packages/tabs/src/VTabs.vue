@@ -9,10 +9,10 @@ import {
   computed,
   PropType,
 } from 'vue';
-import {ChevronLeftIcon, ChevronRightIcon} from '@heroicons/vue/outline';
 import VTab from './VTab.vue';
 import {getBgColor} from '@gits-id/utils';
 import VBtn from '@gits-id/button';
+import Icon from '@gits-id/icon';
 
 const props = defineProps({
   modelValue: {
@@ -202,7 +202,7 @@ const sliderColor = computed(() => getBgColor(color.value));
       <slot name="previous">
         <div>
           <v-btn icon text small no-ring @click="previous">
-            <ChevronLeftIcon class="w-full h-full" />
+            <Icon name="heroicons:chevron-left" class="w-full h-full" />
           </v-btn>
         </div>
       </slot>
@@ -260,7 +260,7 @@ const sliderColor = computed(() => getBgColor(color.value));
       <slot name="next">
         <div>
           <v-btn icon text small no-ring @click="next">
-            <ChevronRightIcon class="w-full h-full" />
+            <Icon name="heroicons:chevron-right" class="w-full h-full" />
           </v-btn>
         </div>
       </slot>

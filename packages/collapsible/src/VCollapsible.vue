@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {ref, watch, toRefs} from 'vue';
-import {ChevronDownIcon} from '@heroicons/vue/outline';
 import VCollapse from './VCollapse.vue';
+import Icon from '@gits-id/icon';
 
 const props = defineProps({
   modelValue: {
@@ -96,8 +96,9 @@ watch(isOpen, (value) => {
       </slot>
 
       <slot name="icon">
-        <ChevronDownIcon
+        <Icon
           v-if="!hideIcon"
+          name="heroicons:chevron-down"
           class="w-5 h-5 transform transition duration-300"
           :class="[isOpen ? 'rotate-180' : '']"
         />
