@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import {VAlert} from '@gits-id/ui';
+</script>
+
 <template>
   <VAlert border> default </VAlert>
   <VAlert border color="primary"> primary </VAlert>

@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import {VAlert} from '@gits-id/ui';
+</script>
+
 # Alert
 
 ## Usage
@@ -42,14 +46,7 @@ Use `color` to different color style to the alert.
 ```
 
 <DocsCanvas>
-  <VAlert> Alert text </VAlert>
-  <VAlert color="primary"> Alert text </VAlert>
-  <VAlert color="secondary"> Alert text </VAlert>
-  <VAlert color="info"> Alert text </VAlert>
-  <VAlert color="warning"> Alert text </VAlert>
-  <VAlert color="success"> Alert text </VAlert>
-  <VAlert color="error"> Alert text </VAlert>
-  <VAlert color="dark"> Alert text </VAlert>
+  <AlertsColors />
 </DocsCanvas>
 
 ### Solid

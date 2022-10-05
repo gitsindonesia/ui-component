@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import {ref} from 'vue';
+import {VAlert} from '@gits-id/ui';
 import Button from '@gits-id/button';
 // import transition styles
 // import '@gits-id/ui/src/assets/transition.css';
