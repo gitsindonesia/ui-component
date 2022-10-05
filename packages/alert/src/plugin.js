@@ -32,6 +32,8 @@ const alert = plugin(function ({addComponents, theme}) {
     },
     '.alert-dismissable': {
       cursor: 'pointer',
+      display: 'flex',
+      alignItems: 'center',
     },
     '.alert-icon': {
       width: 24,

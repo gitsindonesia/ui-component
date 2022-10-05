@@ -97,19 +97,13 @@ const mappedIcons: Record<string, string> = {
       <div class="alert-content">
         <slot />
       </div>
-      <div v-if="dismissable" class="alert-dismissable">
-        <slot name="x-button" :dismiss="dismiss">
-          <button
-            class="alert-dismissable-button"
-            aria-label="Close"
-            @click="dismiss"
-          >
-            <slot name="x-icon">
-              <Icon name="heroicons:x-mark" class="alert-x-icon" />
-            </slot>
-          </button>
-        </slot>
-      </div>
+      <slot v-if="dismissable" name="x-button" :dismiss="dismiss">
+        <button class="alert-dismissable" aria-label="Dismiss" @click="dismiss">
+          <slot name="x-icon">
+            <Icon name="heroicons:x-mark" class="alert-x-icon" />
+          </slot>
+        </button>
+      </slot>
     </div>
   </transition>
 </template>
