@@ -169,7 +169,7 @@ With the power of CSS Variables and Tailwind's `theme` function, you can create 
 
 ```vue{2,7-8}
 <template>
-  <VBadge color="indigo"> Indigo Colored Card </VBadge>
+  <VBadge color="indigo"> Indigo Colored Badge </VBadge>
 </template>
 
 <style>
@@ -182,7 +182,7 @@ With the power of CSS Variables and Tailwind's `theme` function, you can create 
 
 ## Manual Installation
 
-You can also install the `Card` component individually via `@gits-id/badge` package:
+You can also install the `Badge` component individually via `@gits-id/badge` package:
 
 ```bash
 yarn install @gits-id/badge

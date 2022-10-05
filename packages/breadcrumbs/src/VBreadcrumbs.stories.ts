@@ -1,9 +1,11 @@
 import VBreadcrumbs from './VBreadcrumbs.vue';
 import {Meta, Story} from '@storybook/vue3';
-import {Icon} from '@gits-id/icon';
+import Icon from '@gits-id/icon';
 import vueRouter from 'storybook-vue3-router';
 import type {VBreadcrumbItem} from './types';
 import {ref} from 'vue';
+import VBreadcrumbsDivider from './VBreadcrumbsDivider.vue';
+import VBreadcrumbsItem from './VBreadcrumbsItem.vue';
 
 const items = [...Array(5)].map((v, k) => ({
   title: `Link ${k + 1}`,
@@ -60,7 +62,7 @@ export const CustomDividerSlots: Story = (args) => ({
   template: `<div class="container mx-auto">
   <v-breadcrumbs v-bind="args">
     <template #divider>
-      <Icon name="ri:arrow-right-line" class="fill-current w-5 h-5 text-gray-500" />
+      <Icon name="ri:arrow-right-s-line" class="w-5 h-5 text-gray-500" />
     </template>
   </v-breadcrumbs>
 </div>`,
@@ -71,7 +73,7 @@ CustomDividerSlots.parameters = {
       code: `
 <v-breadcrumbs :items="items">
   <template #divider>
-  <Icon name="ri:arrow-right-line" class="fill-current w-5 h-5 text-gray-500" />
+  <Icon name="ri:arrow-right-line" class="w-5 h-5 text-gray-500" />
   </template>
 </v-breadcrumbs>
 `,
@@ -98,8 +100,54 @@ export const OptionalRouterLink: Story = (args) => ({
 <v-breadcrumbs v-bind="args" />
 `,
 });
-
 OptionalRouterLink.parameters = {
+  docs: {
+    source: {
+      language: 'html',
+      code: `
+<script setup lang="ts">
+import { ref } from 'vue';
+
+const items = ref<VBreadcrumbItem[]>([
+  {
+    title: 'Item 1',
+  },
+  {
+    title: 'Item 2',
+  },
+]);
+</script>
+
+<template>
+  <v-breadcrumbs :items="items" />
+</template>
+`,
+    },
+  },
+};
+
+export const Bare: Story = (args) => ({
+  components: {VBreadcrumbs, VBreadcrumbsItem, VBreadcrumbsDivider, Icon},
+  setup() {
+    return {args};
+  },
+  template: `
+<v-breadcrumbs>
+  <v-breadcrumbs-item to="/">
+    Home
+  </v-breadcrumbs-item>
+  <v-breadcrumbs-divider />
+  <v-breadcrumbs-item to="/account">
+    Account
+  </v-breadcrumbs-item>
+  <v-breadcrumbs-divider />
+  <v-breadcrumbs-item to="/account/profile" disabled>
+    Profile
+  </v-breadcrumbs-item>
+</v-breadcrumbs>
+`,
+});
+Bare.parameters = {
   docs: {
     source: {
       language: 'html',

@@ -36,6 +36,7 @@ export default defineConfig({
           {text: 'AppBar', link: '/components/app-bar'},
           {text: 'Avatar', link: '/components/avatar'},
           {text: 'Badge', link: '/components/badge'},
+          {text: 'Breadcrumbs', link: '/components/breadcrumbs'},
           {text: 'Card', link: '/components/card'},
         ],
       },
