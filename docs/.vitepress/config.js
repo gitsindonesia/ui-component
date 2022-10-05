@@ -28,6 +28,7 @@ export default defineConfig({
           {text: 'Default Theme', link: '/guide/theme'},
           {text: 'Starter', link: '/guide/starter'},
           {text: 'Migration', link: '/guide/migration'},
+          {text: 'Changelog', link: '/guide/changelog'},
         ],
       },
       {
