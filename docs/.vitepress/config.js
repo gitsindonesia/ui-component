@@ -27,6 +27,7 @@ export default defineConfig({
           {text: 'Customization', link: '/guide/customization'},
           {text: 'Default Theme', link: '/guide/theme'},
           {text: 'Starter', link: '/guide/starter'},
+          {text: 'Migration', link: '/guide/migration'},
         ],
       },
       {
