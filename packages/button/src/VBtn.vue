@@ -172,13 +172,13 @@ const textVariants: Record<string, any> = {
   dark: 'border-transparent bg-transparent text-gray-800 hover:text-gray-900 active:text-gray-600',
 };
 
-const sizeVariants: Record<string, any> = {
-  xs: 'px-2 py-1 text-xs',
-  sm: 'px-3 py-1.5 text-sm',
-  md: 'px-4 py-2 text-base',
-  lg: 'px-5 py-3 text-lg',
-  xl: 'px-6 py-4 text-xl',
-};
+// const sizeVariants: Record<string, any> = {
+//   xs: 'px-2 py-1 text-xs',
+//   sm: 'px-3 py-1.5 text-sm',
+//   md: 'px-4 py-2 text-base',
+//   lg: 'px-5 py-3 text-lg',
+//   xl: 'px-6 py-4 text-xl',
+// };
 
 const ringVariants: Record<string, any> = {
   default: '',
@@ -246,9 +246,9 @@ const iconClass = computed(() => {
 
   const iconPadding: Record<string, any> = {
     xs: 'px-1',
-    sm: 'px-1.5',
+    sm: 'px-1',
     md: 'px-2',
-    lg: 'px-2.5',
+    lg: 'px-2',
     xl: 'px-3',
   };
   return [
@@ -259,18 +259,22 @@ const iconClass = computed(() => {
 
 const classes = computed(() => {
   return [
-    'inline-flex justify-center items-center border rounded-md font-medium transition duration-300',
+    // 'inline-flex justify-center items-center border rounded-md font-medium transition duration-300',
+    'btn',
+    `btn-${props.color}`,
+    `btn--${props.size}`,
     disabledClass.value,
     colorClass.value,
     {
-      'focus:ring focus:ring-offset-2 focus:outline-none': !props.noRing,
+      // 'focus:ring focus:ring-offset-2 focus:outline-none': !props.noRing,
+      '.btn--ring': !props.noRing,
       [ringVariants[props.color]]: !props.noRing,
-      'rounded-full': props.rounded,
-      'rounded-none': props.tile,
+      'btn--rounded': props.rounded,
+      'btn--tile': props.tile,
       shadow: props.shadow,
-      'w-full': props.block,
-      'btn-loading': props.loading,
-      [sizeVariants[props.size]]: !props.icon,
+      'btn--block': props.block,
+      'btn--loading': props.loading,
+      // [sizeVariants[props.size]]: !props.icon,
       [iconClass.value]: props.icon,
     },
   ];
