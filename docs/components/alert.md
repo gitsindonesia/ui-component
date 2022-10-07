@@ -15,10 +15,6 @@ import {VAlert} from '@gits-id/ui';
 </template>
 ```
 
-<DocsCanvas>
-  <VAlert> Alert text </VAlert>
-</DocsCanvas>
-
 ::: info
 The `VAlert` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
@@ -45,10 +41,6 @@ Use `color` to different color style to the alert.
 </template>
 ```
 
-<DocsCanvas>
-  <AlertsColors />
-</DocsCanvas>
-
 ### Solid
 
 - **prop**: `solid`
@@ -70,10 +62,6 @@ Use `solid` to apply solid style to the alert.
   <VAlert solid color="dark"> dark </VAlert>
 </template>
 ```
-
-<DocsCanvas>
-  <AlertsSolid />
-</DocsCanvas>
 
 ### Outlined
 
@@ -97,10 +85,6 @@ Use `outlined` to apply outlined style to the alert.
 </template>
 ```
 
-<DocsCanvas>
-  <AlertsOutlined />
-</DocsCanvas>
-
 ### Bordered
 
 - **prop**: `border`
@@ -123,10 +107,6 @@ Use `border` to apply bordered style to the alert.
 </template>
 ```
 
-<DocsCanvas>
-  <AlertsBordered />
-</DocsCanvas>
-
 ### `v-model`
 
 - **prop**: `modelValue`
@@ -135,10 +115,6 @@ Use `border` to apply bordered style to the alert.
 - **required**: `false`
 
 Use `v-model` to show or hide the alert.
-
-<DocsCanvas>
-  <AlertsVModel />
-</DocsCanvas>
 
 ```vue{10}
 <script setup lang="ts">
@@ -177,10 +153,6 @@ const isOpen = ref(true);
 </template>
 ```
 
-<DocsCanvas>
-  <AlertsDismissable />
-</DocsCanvas>
-
 ### Transition
 
 - **prop**: `transition`
@@ -205,10 +177,6 @@ const isOpen = ref(true);
   <VAlert v-model="isOpen" transition="slide-up"> Alert text </VAlert>
 </template>
 ```
-
-<DocsCanvas>
-  <AlertsTransition />
-</DocsCanvas>
 
 ## Props
 
