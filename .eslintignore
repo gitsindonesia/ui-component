@@ -2,5 +2,6 @@
 /examples
 /packages/nuxt/playground
 /packages/nuxt/dist
+/docs
 .nuxt
 *.config.*
