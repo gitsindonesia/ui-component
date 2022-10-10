@@ -23,6 +23,8 @@ import '@gits-id/avatar/dist/style.css';
 </template>
 ```
 
+<LivePreview src="components-avatar--variants" height="70" />
+
 ### Initial Name
 
 - **prop**: `name`
@@ -83,6 +85,8 @@ import '@gits-id/avatar/dist/style.css';
 </template>
 ```
 
+<LivePreview src="components-avatar--image" height="70" />
+
 ### Shape
 
 - **prop**: `shape`
@@ -105,6 +109,8 @@ import '@gits-id/avatar/dist/style.css';
   <VAvatar shape="rounded" src="path-to-image.jpg" alt="John Doe" />
 </template>
 ```
+
+<LivePreview src="components-avatar--shape" height="70" />
 
 ## Props
 
