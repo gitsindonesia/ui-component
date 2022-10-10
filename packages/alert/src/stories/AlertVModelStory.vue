@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import {ref} from 'vue';
 import Button from '@gits-id/button';
+import VAlert from '../VAlert.vue';
 
 const isOpen = ref(true);
 </script>

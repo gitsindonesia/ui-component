@@ -1,7 +1,7 @@
 import {app} from '@storybook/vue3';
 import {createMemoryHistory, createRouter} from 'vue-router';
 import '../packages/tailwind-config/tailwind.css';
-import '../packages/ui/src/assets/transition.css';
+import '../packages/theme/transition.css';
 
 const router = createRouter({
   history: createMemoryHistory(),
