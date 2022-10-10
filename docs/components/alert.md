@@ -265,7 +265,7 @@ const isOpen = ref(true);
 </template>
 
 <style>
-.alert--indigo {
+.alert-indigo {
   --alert-bg-color: theme('colors.indigo.600');
   --alert-text-color: theme('colors.white');
   --alert-border-radius: theme('borderRadius.lg');

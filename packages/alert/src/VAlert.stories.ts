@@ -4,6 +4,7 @@ import {Meta, Story} from '@storybook/vue3';
 import Icon from '@gits-id/icon';
 import AlertVModelStory from './stories/AlertVModelStory.vue';
 import AlertTransitionStory from './stories/AlertTransitionStory.vue';
+import AlertCustomStory from './stories/AlertCustomStory.vue';
 
 export default {
   title: 'Components/Alert',
@@ -162,4 +163,9 @@ export const VModel = () => ({
 export const Transition = () => ({
   components: {AlertTransitionStory},
   template: `<AlertTransitionStory />`,
+});
+
+export const Custom = () => ({
+  components: {AlertCustomStory},
+  template: `<AlertCustomStory />`,
 });
