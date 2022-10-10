@@ -36,6 +36,8 @@ Use `color` to different color style to the badge.
 </template>
 ```
 
+<LivePreview src="components-badge--variants" height="70" />
+
 ### Outlined
 
 - **prop**: `outlined`
@@ -50,6 +52,8 @@ Use `outlined` to apply bordered style to the badge.
   <VBadge outlined> Hello World </VBadge>
 </template>
 ```
+
+<LivePreview src="components-badge--outlined" height="70" />
 
 ### Rounded
 
@@ -77,6 +81,8 @@ import {ref} from 'vue';
 </template>
 ```
 
+<LivePreview src="components-badge--rounded" height="70" />
+
 ### Sizes
 
 - **prop**: `small` or `large`
@@ -94,6 +100,8 @@ Use `small` or `large` to change badge size.
 </template>
 ```
 
+<LivePreview src="components-badge--sizes" height="70" />
+
 ### Dismissable
 
 - **prop**: `dismissable`
@@ -108,6 +116,8 @@ Use `dismissable` to show X button in badge.
   <VBadge dismissable> Badge </VBadge>
 </template>
 ```
+
+<LivePreview src="components-badge--dismissable" height="70" />
 
 ## Props
 
