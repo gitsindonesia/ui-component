@@ -15,6 +15,8 @@ import {VAlert} from '@gits-id/ui';
 </template>
 ```
 
+<LivePreview src="components-alert--default" />
+
 ::: info
 The `VAlert` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
@@ -41,6 +43,8 @@ Use `color` to different color style to the alert.
 </template>
 ```
 
+<LivePreview src="components-alert--default" />
+
 ### Solid
 
 - **prop**: `solid`
@@ -62,6 +66,8 @@ Use `solid` to apply solid style to the alert.
   <VAlert solid color="dark"> dark </VAlert>
 </template>
 ```
+
+<LivePreview src="components-alert--solid" />
 
 ### Outlined
 
@@ -85,6 +91,8 @@ Use `outlined` to apply outlined style to the alert.
 </template>
 ```
 
+<LivePreview src="components-alert--outlined" />
+
 ### Bordered
 
 - **prop**: `border`
@@ -106,6 +114,8 @@ Use `border` to apply bordered style to the alert.
   <VAlert bordered color="dark"> dark </VAlert>
 </template>
 ```
+
+<LivePreview src="components-alert--bordered" />
 
 ### `v-model`
 
@@ -130,6 +140,8 @@ const isOpen = ref(true);
 </template>
 ```
 
+<LivePreview src="components-alert--v-model" />
+
 ### Dismissable
 
 - **prop**: `dismissable`
@@ -152,6 +164,8 @@ const isOpen = ref(true);
   <VAlert v-model="isOpen" dismissable> Alert text </VAlert>
 </template>
 ```
+
+<LivePreview src="components-alert--dismissable" />
 
 ### Transition
 
@@ -177,6 +191,8 @@ const isOpen = ref(true);
   <VAlert v-model="isOpen" transition="slide-up"> Alert text </VAlert>
 </template>
 ```
+
+<LivePreview src="components-alert--transition" />
 
 ## Props
 
