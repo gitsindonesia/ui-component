@@ -8,5 +8,13 @@ const isOpen = ref(true);
 
 <template>
   <Button @click="isOpen = !isOpen">Toggle Alert</Button>
-  <VAlert v-model="isOpen" transition="slide-up"> Alert text </VAlert>
+  <VAlert
+    v-model="isOpen"
+    color="primary"
+    class="mt-4"
+    solid
+    transition="slide-down"
+  >
+    Alert text
+  </VAlert>
 </template>
