@@ -277,6 +277,8 @@ const isOpen = ref(true);
 </style>
 ```
 
+<LivePreview src="components-alert--custom" />
+
 ## Manual Installation
 
 You can also install the `Alert` component individually via `@gits-id/alert` package:
