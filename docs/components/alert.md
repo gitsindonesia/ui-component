@@ -136,7 +136,9 @@ const isOpen = ref(true);
 
 <template>
   <Button @click="isOpen = !isOpen">Toggle Alert</Button>
-  <VAlert v-model="isOpen"> Alert text </VAlert>
+  <VAlert v-model="isOpen" color="primary" class="mt-4" solid dismissable>
+    Alert text
+  </VAlert>
 </template>
 ```
 
@@ -176,7 +178,7 @@ const isOpen = ref(true);
 
 Use `transition` prop change the default transition.
 
-```vue{5,12}
+```vue{5,17}
 <script setup lang="ts">
 import {ref} from 'vue';
 import Button from '@gits-id/button';
@@ -188,7 +190,15 @@ const isOpen = ref(true);
 
 <template>
   <Button @click="isOpen = !isOpen">Toggle Alert</Button>
-  <VAlert v-model="isOpen" transition="slide-up"> Alert text </VAlert>
+  <VAlert
+    v-model="isOpen"
+    color="primary"
+    class="mt-4"
+    solid
+    transition="slide-down"
+  >
+    Alert text
+  </VAlert>
 </template>
 ```
 
