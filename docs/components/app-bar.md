@@ -13,6 +13,8 @@ Application Bar / Navigation Bar.
 </template>
 ```
 
+<LivePreview src="components-appbar--default" />
+
 ::: info
 The `VAppBar` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
@@ -38,6 +40,8 @@ Use `color` to different color style to the app-bar.
 </template>
 ```
 
+<LivePreview src="components-appbar--colors" />
+
 ### Fixed
 
 - **prop**: `fixed`
@@ -47,15 +51,13 @@ Use `color` to different color style to the app-bar.
 
 Use `fixed` to set fixed position of `AppBar` in the top of the page.
 
-```vue{6}
-<script setup lang="ts">
-import {ref} from 'vue';
-</script>
-
+```vue
 <template>
   <VAppBar fixed> Hello World </VAppBar>
 </template>
 ```
+
+<LivePreview src="components-appbar--fixed" />
 
 ### Sticky
 
@@ -66,15 +68,13 @@ import {ref} from 'vue';
 
 Use `sticky` to set sticky position of `AppBar` in the top of the page.
 
-```vue{6}
-<script setup lang="ts">
-import {ref} from 'vue';
-</script>
-
+```vue
 <template>
   <VAppBar sticky> Hello World </VAppBar>
 </template>
 ```
+
+<LivePreview src="components-appbar--sticky" />
 
 ### Bordered
 
@@ -85,15 +85,13 @@ import {ref} from 'vue';
 
 Use `bordered` to apply border style to the app-bar.
 
-```vue{6}
-<script setup lang="ts">
-import {ref} from 'vue';
-</script>
-
+```vue
 <template>
   <VAppBar bordered> Hello World </VAppBar>
 </template>
 ```
+
+<LivePreview src="components-appbar--bordered" />
 
 ### Shadow
 
@@ -105,10 +103,6 @@ import {ref} from 'vue';
 Use `shadow` to apply shadow style to the app-bar.
 
 ```vue
-<script setup lang="ts">
-import {ref} from 'vue';
-</script>
-
 <template>
   <VAppBar shadow> Hello World </VAppBar>
   <VAppBar shadow="sm"> Hello World </VAppBar>
@@ -121,6 +115,8 @@ import {ref} from 'vue';
 </template>
 ```
 
+<LivePreview src="components-appbar--shadow" />
+
 ### Sizes
 
 - **prop**: `size`
@@ -131,16 +127,14 @@ import {ref} from 'vue';
 Use `size` to apply size to the app-bar.
 
 ```vue
-<script setup lang="ts">
-import {ref} from 'vue';
-</script>
-
 <template>
   <VAppBar size="sm"> Hello World </VAppBar>
   <VAppBar size="md"> Hello World </VAppBar>
   <VAppBar size="lg"> Hello World </VAppBar>
 </template>
 ```
+
+<LivePreview src="components-appbar--sizes" />
 
 ### `v-model`
 
@@ -151,7 +145,7 @@ import {ref} from 'vue';
 
 Use `v-model` to show or hide the app-bar.
 
-```vue{10}
+```vue{5,10}
 <script setup lang="ts">
 import {ref} from 'vue';
 import Button from '@gits-id/button';
@@ -164,6 +158,8 @@ const isOpen = ref(true);
   <VAppBar v-model="isOpen"> Hello World </VAppBar>
 </template>
 ```
+
+<LivePreview src="components-appbar--toggle" />
 
 ### Transition
 
@@ -189,6 +185,8 @@ const isOpen = ref(true);
   <VAppBar v-model="isOpen" transition="slide-down"> Hello World </VAppBar>
 </template>
 ```
+
+<LivePreview src="components-appbar--custom-transition" />
 
 ## Props
 
