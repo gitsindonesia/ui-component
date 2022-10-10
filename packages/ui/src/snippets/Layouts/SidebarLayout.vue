@@ -237,7 +237,7 @@ watch(isSidebarOpen, (val) => {
 </template>
 
 <style>
-@import '../../assets/transition.css';
+@import '@gits-id/theme/transition.css';
 
 .sb-main-padded {
   padding: 0 !important;

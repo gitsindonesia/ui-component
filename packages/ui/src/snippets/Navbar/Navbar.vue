@@ -89,5 +89,5 @@ const isOpen = ref(false);
 </template>
 
 <style>
-@import '../../assets/transition.css';
+@import '@gits-id/theme/transition.css';
 </style>
