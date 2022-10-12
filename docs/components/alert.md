@@ -15,6 +15,8 @@ import {VAlert} from '@gits-id/ui';
 </template>
 ```
 
+<LivePreview src="components-alert--default" />
+
 ::: info
 The `VAlert` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
@@ -41,6 +43,8 @@ Use `color` to different color style to the alert.
 </template>
 ```
 
+<LivePreview src="components-alert--default" />
+
 ### Solid
 
 - **prop**: `solid`
@@ -62,6 +66,8 @@ Use `solid` to apply solid style to the alert.
   <VAlert solid color="dark"> dark </VAlert>
 </template>
 ```
+
+<LivePreview src="components-alert--solid" />
 
 ### Outlined
 
@@ -85,6 +91,8 @@ Use `outlined` to apply outlined style to the alert.
 </template>
 ```
 
+<LivePreview src="components-alert--outlined" />
+
 ### Bordered
 
 - **prop**: `border`
@@ -107,6 +115,8 @@ Use `border` to apply bordered style to the alert.
 </template>
 ```
 
+<LivePreview src="components-alert--bordered" />
+
 ### `v-model`
 
 - **prop**: `modelValue`
@@ -126,9 +136,13 @@ const isOpen = ref(true);
 
 <template>
   <Button @click="isOpen = !isOpen">Toggle Alert</Button>
-  <VAlert v-model="isOpen"> Alert text </VAlert>
+  <VAlert v-model="isOpen" color="primary" class="mt-4" solid dismissable>
+    Alert text
+  </VAlert>
 </template>
 ```
+
+<LivePreview src="components-alert--v-model" />
 
 ### Dismissable
 
@@ -153,6 +167,8 @@ const isOpen = ref(true);
 </template>
 ```
 
+<LivePreview src="components-alert--dismissable" />
+
 ### Transition
 
 - **prop**: `transition`
@@ -162,7 +178,7 @@ const isOpen = ref(true);
 
 Use `transition` prop change the default transition.
 
-```vue{5,12}
+```vue{5,17}
 <script setup lang="ts">
 import {ref} from 'vue';
 import Button from '@gits-id/button';
@@ -174,9 +190,19 @@ const isOpen = ref(true);
 
 <template>
   <Button @click="isOpen = !isOpen">Toggle Alert</Button>
-  <VAlert v-model="isOpen" transition="slide-up"> Alert text </VAlert>
+  <VAlert
+    v-model="isOpen"
+    color="primary"
+    class="mt-4"
+    solid
+    transition="slide-down"
+  >
+    Alert text
+  </VAlert>
 </template>
 ```
+
+<LivePreview src="components-alert--transition" />
 
 ## Props
 
@@ -239,7 +265,7 @@ const isOpen = ref(true);
 </template>
 
 <style>
-.alert--indigo {
+.alert-indigo {
   --alert-bg-color: theme('colors.indigo.600');
   --alert-text-color: theme('colors.white');
   --alert-border-radius: theme('borderRadius.lg');
@@ -250,6 +276,8 @@ const isOpen = ref(true);
 }
 </style>
 ```
+
+<LivePreview src="components-alert--custom" />
 
 ## Manual Installation
 

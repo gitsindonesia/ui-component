@@ -5,3 +5,4 @@
 /docs
 .nuxt
 *.config.*
+.storybook

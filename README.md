@@ -20,7 +20,7 @@ GITS UI is the official UI Component Library in GITS Indonesia built with Vue 3 
 
 ## Documentation
 
-Documentation is located [here](https://gits-ui.web.app/).
+Documentation is located [here](https://gitsindonesia.github.io/ui-component/).
 
 ## Examples
 

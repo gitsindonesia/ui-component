@@ -30,6 +30,8 @@ const items = ref<VBreadcrumbItem[]>([
 </template>
 ```
 
+<LivePreview src="components-breadcrumbs--default" height="70" />
+
 ::: info
 The `VBreadcrumbs` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
@@ -68,6 +70,8 @@ const items = ref<VBreadcrumbItem[]>([
 </template>
 ```
 
+<LivePreview src="components-breadcrumbs--custom-divider" height="70" />
+
 ### Divider Slots
 
 We can use slots for customize the item and divider content.
@@ -102,6 +106,8 @@ const items = ref<VBreadcrumbItem[]>([
 </template>
 ```
 
+<LivePreview src="components-breadcrumbs--custom-divider-slots" height="70" />
+
 ### Default Slots
 
 We can also define breadcrumb inside default slots.
@@ -119,6 +125,8 @@ We can also define breadcrumb inside default slots.
   </v-breadcrumbs>
 </template>
 ```
+
+<LivePreview src="components-breadcrumbs--bare" height="70" />
 
 ## Props
 

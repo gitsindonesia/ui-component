@@ -11,6 +11,8 @@
 </template>
 ```
 
+<LivePreview src="components-card--default" height="160" />
+
 ::: info
 The `VCard` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
@@ -22,6 +24,8 @@ The `VCard` component is registered globally when you install with `@gits-id/ui`
   <VCard title="Header"> Hello World </VCard>
 </template>
 ```
+
+<LivePreview src="components-card--hide-footer" height="120" />
 
 ### Header and Footer
 
@@ -38,6 +42,8 @@ The `VCard` component is registered globally when you install with `@gits-id/ui`
 </template>
 ```
 
+<LivePreview src="components-card--default" height="160" />
+
 ### Hide Header and Footer
 
 ```vue {2}
@@ -52,6 +58,8 @@ The `VCard` component is registered globally when you install with `@gits-id/ui`
   </VCard>
 </template>
 ```
+
+<LivePreview src="components-card--body-only" height="90" />
 
 ### Colors
 
@@ -74,6 +82,8 @@ Use `color` to different color style to the card.
 </template>
 ```
 
+<LivePreview src="components-card--colors" height="480" />
+
 ### Bordered
 
 - **prop**: `bordered`
@@ -88,6 +98,8 @@ Use `bordered` to apply border to the card.
   <VCard bordered> Hello World </VCard>
 </template>
 ```
+
+<LivePreview src="components-card--bordered" height="200" />
 
 ### Shadow
 
@@ -114,6 +126,8 @@ import {ref} from 'vue';
   <VCard shadow="none"> Hello World </VCard>
 </template>
 ```
+
+<LivePreview src="components-card--shadow" height="520" />
 
 ## Props
 
