@@ -3,7 +3,6 @@ const plugin = require('tailwindcss/plugin');
 const btn = plugin(function ({addComponents, theme}) {
   addComponents({
     ':root': {
-      '--btn-font-weight': theme('fontWeight.semibold'),
       '--btn-bg-color': theme('colors.gray.200'),
       '--btn-text-color': theme('colors.gray.800'),
       '--btn-border-color': theme('colors.gray.300'),
@@ -13,6 +12,8 @@ const btn = plugin(function ({addComponents, theme}) {
       '--btn-padding-y': theme('spacing.2'),
       '--btn-line-height': theme('lineHeight.tight'),
       '--btn-font-size': theme('fontSize.base'),
+      '--btn-font-weight': theme('fontWeight.normal'),
+      '--btn-shadow': theme('boxShadow.none'),
     },
     '.btn': {
       display: 'inline-flex',

@@ -14,9 +14,7 @@
     "skipLibCheck": true,
     "types": ["vite/client"],
     "emitDeclarationOnly": true,
-    "allowSyntheticDefaultImports": true,
-    "jsx": "preserve"
+    "allowSyntheticDefaultImports": true
   },
-  "include": ["src/vue.d.ts", "*.vue", "src"],
-  "exclude": ["**/*.stories.ts", "**/*.spec.ts", "**/*.test.ts"]
+  "include": ["src/vue.d.ts", "*.vue", "src"]
 }

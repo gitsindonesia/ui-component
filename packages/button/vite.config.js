@@ -4,9 +4,7 @@ import {resolve} from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    vue(),
-  ],
+  plugins: [vue()],
   esbuild: {
     exclude: ['./src/**/**.stories.ts'],
   },
@@ -20,32 +18,17 @@ export default defineConfig({
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
-      external: ['vue', '@gits-id/spinner', '@gits-id/utils'],
+      external: ['vue', '@gits-id/spinner', '@gits-id/utils', '@gits-id/theme'],
       output: {
         // Provide global variables to use in the UMD build
         // for externalized deps
         globals: {
-          vue: 'Vue'
-        }
+          vue: 'Vue',
+        },
       },
       resolve: {
-        dedupe: "vue"
+        dedupe: 'vue',
       },
-      plugins: [
-        {
-          name: 'remove-collection-handlers',
-          transform(code, id) {
-            if (
-              id.endsWith('reactivity.esm-bundler.js') ||
-              id.endsWith('runtime-core.esm-bundler.js')
-            ) {
-              return code
-                .replace(`mutableCollectionHandlers,`, `null,`)
-                .replace(`readonlyCollectionHandlers,`, `null,`);
-            }
-          },
-        },
-      ],
     },
   },
   test: {

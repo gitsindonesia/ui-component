@@ -2,19 +2,7 @@ import {Meta, Story} from '@storybook/vue3';
 import Button from './VBtn.vue';
 import {VBtnProps} from './types';
 import VIcon from '@gits-id/icon';
-
-const themeColors = [
-  'default',
-  'primary',
-  'secondary',
-  'info',
-  'success',
-  'warning',
-  'error',
-  'dark',
-];
-
-const sizes = ['xs', 'sm', 'md', 'lg', 'xl'];
+import {defaultColors, defaultSizes} from '@gits-id/theme/defaultTheme';
 
 export default {
   component: Button,
@@ -22,25 +10,12 @@ export default {
   argTypes: {
     color: {
       control: 'select',
-      options: themeColors,
+      options: defaultColors,
     },
     size: {
       control: 'select',
-      options: sizes,
+      options: defaultSizes,
     },
-  },
-  args: {
-    color: '',
-    outlined: false,
-    rounded: false,
-    ring: false,
-    disabled: false,
-    text: false,
-    size: 'md',
-    tile: false,
-    icon: false,
-    loading: false,
-    block: false,
   },
   parameters: {
     docs: {
@@ -55,7 +30,7 @@ export default {
 const Template: Story<VBtnProps> = (args) => ({
   components: {Button},
   setup() {
-    return {args, colors: themeColors};
+    return {args, colors: defaultColors};
   },
   template: `<div class="space-x-2 space-y-2">
     <Button v-for="color in colors" :key="color" v-bind="args" :color="color">
@@ -229,7 +204,7 @@ export const Icon: Story<VBtnProps> = (args) => ({
     return {
       args,
       sizes,
-      themeColors,
+      defaultColors,
       sizeClass: {
         xs: 'w-4 h-4',
         sm: 'w-5 h-5',
@@ -297,9 +272,9 @@ TextIcon.parameters = {
 export const Sizes: Story<VBtnProps> = (args) => ({
   components: {Button},
   setup() {
-    return {args, sizes, themeColors};
+    return {args, sizes, defaultColors};
   },
-  template: `<div v-for="color in themeColors" :key="color" class="mb-6">
+  template: `<div v-for="color in defaultColors" :key="color" class="mb-6">
   <div>
     <div class="font-semibold text-lg mb-2">{{color}}</div>
     <div class="flex items-end gap-2">
