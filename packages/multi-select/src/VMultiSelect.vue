@@ -118,7 +118,7 @@ const props = defineProps({
   },
   checkWrapperClass: {
     type: String,
-    default: 'text-primary-500',
+    default: '',
   },
   checkIconClass: {
     type: String,
@@ -147,6 +147,10 @@ const props = defineProps({
   errorClass: {
     type: String,
     default: 'text-error-600 mt-1 text-sm',
+  },
+  transition: {
+    type: String,
+    default: 'fade',
   },
 });
 
@@ -359,46 +363,29 @@ watch(
 </script>
 
 <template>
-  <div ref="target" class="">
+  <div ref="target" class="v-multi-select">
     <div>
-      <label :for="id || name" :class="labelClass">{{ label }}</label>
-      <div class="relative mt-1">
+      <label :for="id || name" class="v-multi-select-label" :class="labelClass">
+        {{ label }}
+      </label>
+      <div class="v-multi-select-panel">
         <div
-          class="
-            relative
-            w-full
-            py-2
-            pl-3
-            pr-10
-            text-left
-            bg-white
-            rounded-md
-            border
-            cursor-default
-            focus:outline-none
-            sm:text-sm
-            gap-y-1
-            flex flex-wrap
-            items-center
-            focus-visible:ring-2
-            focus-visible:ring-opacity-75
-            focus-visible:ring-offset-2
-          "
+          class="v-multi-select-input"
           :class="[
             error || errorMessage
               ? `v-multi-select-error border-error-500`
               : 'v-multi-select-normal border-gray-300 hover:border-gray-400',
             wrapperClass,
           ]"
+          @click="isOpen = true"
         >
-          <div v-if="selected.length" class="flex items-center gap-2 flex-wrap">
+          <div v-if="selected.length" class="v-multi-select-badges">
             <v-badge
               v-for="sItem in badges"
               :key="sItem.value"
               :color="badgeColor"
               dismissable
-              small
-              class="h-6 truncate"
+              class="truncate"
               :class="badgeClass"
               @dismiss="deselect(sItem)"
               v-bind="badgeProps"
@@ -413,16 +400,7 @@ watch(
           <input
             :id="id"
             type="search"
-            class="
-              border-none
-              px-1
-              py-1
-              focus:outline-none
-              focus:!ring-0
-              focus:!border-none
-              text-sm
-              flex-grow
-            "
+            class="v-multi-select-input-control"
             :class="inputClass"
             autofill="false"
             autocomplete="off"
@@ -438,7 +416,7 @@ watch(
             @keydown.esc.prevent="onEsc"
           />
 
-          <span class="absolute inset-y-0 right-0 flex items-center pr-2">
+          <span class="v-multi-select-action">
             <v-tooltip v-if="selected.length > 1">
               <template #activator="{on}">
                 <v-badge
@@ -447,7 +425,7 @@ watch(
                   @click="clearSelected"
                   v-on="on"
                 >
-                  <Icon name="ri:close-line" class="text-gray-400" />
+                  <Icon name="ri:close-line" class="text-gray-400 w-5 h-5" />
                 </v-badge>
               </template>
               <span>Clear</span>
@@ -461,123 +439,61 @@ watch(
           </span>
         </div>
 
-        <transition
-          leave-active-class="transition duration-100 ease-in"
-          leave-from-class="opacity-100"
-          leave-to-class="opacity-0"
-        >
+        <transition :name="transition">
           <div
             v-if="isOpen"
             ref="dropdown"
-            class="
-              absolute
-              w-full
-              py-1
-              mt-1
-              overflow-auto
-              text-base
-              bg-white
-              rounded-md
-              shadow-lg
-              max-h-60
-              ring-1 ring-black ring-opacity-5
-              focus:outline-none
-              sm:text-sm
-              px-0
-              z-10
-            "
+            class="v-multi-select-dropdown"
             :class="dropdownClass"
           >
             <div
               v-if="loading"
-              class="pl-6 pr-4 py-2 text-gray-600"
+              class="v-multi-select-dropdown-loading"
               :class="loadingClass"
             >
               Loading...
             </div>
             <template v-else-if="filteredItems.length">
               <template v-if="selectAll">
-                <div
-                  class="
-                    bg-white
-                    hover:text-primary-500
-                    hover:bg-primary-100
-                    text-gray-900
-                    cursor-default
-                    select-none
-                    py-2
-                    pl-10
-                    pr-4
-                    relative
-                  "
-                  @click="toggleSelectAll"
-                >
-                  <span
+                <div class="v-multi-select-item" @click="toggleSelectAll">
+                  <div
                     :class="[
                       isAllSelected ? 'font-medium' : 'font-normal',
                       'block truncate',
                     ]"
                   >
                     {{ isAllSelected ? 'Deselect All' : 'Select All' }}
-                  </span>
-                  <span
-                    v-if="isAllSelected"
-                    class="
-                      absolute
-                      inset-y-0
-                      left-0
-                      flex
-                      items-center
-                      pl-3
-                      text-primary-500
-                    "
-                  >
+                  </div>
+                  <div v-if="isAllSelected" class="v-multi-select-item-check">
                     <Icon
                       name="heroicons:check"
                       class="w-5 h-5"
                       aria-hidden="true"
                     />
-                  </span>
+                  </div>
                 </div>
                 <div class="border-b h-1"></div>
               </template>
-              <div
+              <template
                 v-for="(item, index) in filteredItems"
                 :key="item.value"
-                :ref="(el) => setRefItem(el, index)"
-                @click="handleSelect(item)"
-                @mouseover="focus = index"
-                @mouseout="focus = -1"
               >
                 <div
-                  class="bg-white hover:text-primary-500 hover:bg-primary-100"
+                  :ref="(el) => setRefItem(el, index)"
+                  @click="handleSelect(item)"
+                  @mouseover="focus = index"
+                  @mouseout="focus = -1"
+                  class="v-multi-select-item group"
                   :class="[
-                    focus === index
-                      ? 'text-primary-500 bg-primary-100'
-                      : 'text-gray-900',
-                    'cursor-default select-none relative py-2 pl-10 pr-4',
                     itemClass,
+                    {
+                      'v-multi-select-item--focused': focus === index,
+                      'v-multi-select-item--active': isSelected(item, index),
+                    },
                   ]"
                 >
-                  <span
-                    :class="[
-                      isSelected(item, index) ? 'font-medium' : 'font-normal',
-                      'block truncate',
-                    ]"
-                  >
-                    {{ item[itemText] }}
-                  </span>
-                  <span
-                    v-if="isSelected(item, index)"
-                    class="
-                      absolute
-                      inset-y-0
-                      left-0
-                      flex
-                      items-center
-                      pl-3
-                      text-primary-500
-                    "
+                  <div
+                    class="v-multi-select-item-check"
                     :class="checkWrapperClass"
                   >
                     <Icon
@@ -586,9 +502,12 @@ watch(
                       :class="checkIconClass"
                       aria-hidden="true"
                     />
-                  </span>
+                  </div>
+                  <div class="v-multi-select-item-text">
+                    {{ item[itemText] }}
+                  </div>
                 </div>
-              </div>
+              </template>
             </template>
             <div
               v-else
@@ -612,12 +531,105 @@ watch(
   </div>
 </template>
 
-<style scoped>
+<style>
 .v-multi-select-error {
   @apply border-error-600 focus-visible:ring-white focus-visible:ring-offset-error-300 focus-visible:border-error-500;
 }
 
 .v-multi-select-normal {
   @apply border-gray-300 focus-visible:ring-white focus-visible:ring-offset-gray-300 focus-visible:border-primary-500;
+}
+
+.v-multi-select-input {
+  @apply relative
+    w-full
+    py-2
+    pl-3
+    pr-10
+    text-left
+    bg-white
+    rounded-md
+    border
+    cursor-default
+    focus:outline-none
+    sm:text-sm
+    gap-y-1
+    flex flex-wrap
+    items-center
+    focus-visible:ring-2
+    focus-visible:ring-opacity-75
+    focus-visible:ring-offset-2;
+}
+
+.v-multi-select-panel {
+  @apply relative mt-1;
+}
+
+.v-multi-select-badges {
+  @apply flex items-center gap-2 flex-wrap;
+}
+
+.v-multi-select-dropdown {
+  @apply absolute
+    w-full
+    py-1
+    mt-1
+    overflow-auto
+    text-base
+    bg-white
+    rounded-md
+    shadow-lg
+    max-h-60
+    ring-1 ring-black ring-opacity-5
+    focus:outline-none
+    sm:text-sm
+    px-0
+    z-10;
+}
+
+.v-multi-select-input-control {
+  @apply border-none
+    px-1
+    py-1
+    focus:outline-none
+    focus:!ring-0
+    focus:!border-none
+    text-sm
+    flex-grow;
+}
+
+.v-multi-select-action {
+  @apply absolute inset-y-0 right-0 flex items-center pr-2;
+}
+
+.v-multi-select-item {
+  @apply bg-white
+    hover:text-white
+    hover:bg-primary-500
+    text-gray-800
+    cursor-default
+    select-none
+    px-3 py-2
+    relative flex gap-2 items-center;
+}
+
+.v-multi-select-item--focused {
+  @apply text-white bg-primary-500;
+}
+
+.v-multi-select-dropdown-loading {
+  @apply pl-6 pr-4 py-2 text-gray-500;
+}
+
+.v-multi-select-item-check {
+  @apply invisible flex items-center text-white group-hover:text-white group-focus:text-white;
+}
+
+.v-multi-select-item--active .v-multi-select-item-check {
+  @apply visible text-primary-500;
+}
+
+.v-multi-select-item-text {
+  @apply block truncate;
 }
 </style>
