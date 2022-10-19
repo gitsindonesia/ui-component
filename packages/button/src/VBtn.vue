@@ -224,7 +224,6 @@ const classes = computed(() => {
 </script>
 
 <template>
-  <pre>{{ classes }}</pre>
   <component
     :is="computedComponent"
     :class="classes"
