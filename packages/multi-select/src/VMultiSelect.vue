@@ -390,7 +390,6 @@ watch(
               : 'v-multi-select-normal border-gray-300 hover:border-gray-400',
             wrapperClass,
           ]"
-          @click="(e) => e.preventDefault()"
         >
           <div v-if="selected.length" class="flex items-center gap-2 flex-wrap">
             <v-badge
