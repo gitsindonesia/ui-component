@@ -23,5 +23,6 @@ module.exports = {
     require('@gits-id/card/plugin'),
     require('@gits-id/breadcrumbs/plugin'),
     require('@gits-id/button/plugin'),
+    require('@gits-id/dropdown/plugin'),
   ],
 };

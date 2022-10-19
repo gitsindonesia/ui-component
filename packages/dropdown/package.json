@@ -12,8 +12,8 @@
     "gits",
     "ui-component"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Warsono <warsono16694@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "@gits-id/button": "^0.12.0-alpha.0",
     "@gits-id/icon": "^0.12.0-alpha.0",
@@ -39,6 +39,8 @@
       "import": "./dist/dropdown.mjs",
       "require": "./dist/dropdown.js"
     },
+    "./plugin": "./src/plugin.js",
+    "./plugin.js": "./src/plugin.js",
     "./package.json": "./package.json",
     "./src/*": "./src/*",
     "./*": "./*"
