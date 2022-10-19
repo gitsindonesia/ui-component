@@ -201,8 +201,8 @@ export const InitialErrors = (args) => ({
         placeholder="Choose your prefered genres"
         :items="genres"
       />
-      <div class="mt-4">
-        <v-btn type="submit">Submit</v-btn>
+      <div class="mt-4 space-x-2">
+        <v-btn type="submit" color="primary">Submit</v-btn>
         <v-btn type="button" text @click="resetForm">Reset</v-btn>
       </div>
       <pre>{{ {values} }}</pre>
