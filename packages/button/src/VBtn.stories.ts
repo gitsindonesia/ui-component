@@ -293,7 +293,7 @@ export const Plugin: Story<VBtnProps> = () => ({
 </div>
 <h3 class="font-semibold text-lg mb-2">Sizes</h3>
 <div class="flex items-end gap-2 mb-5">
-  <button v-for="size in sizes" :key="size" :class="\`btn btn-primary btn--\${size}\`"> {{ size }} </button>
+  <button v-for="size in sizes" :key="size" :class="\`btn btn-primary btn--\${size}\`"> Button </button>
 </div>
 <h3 class="font-semibold text-lg mb-2">Icon</h3>
 <div class="flex items-end gap-2 mb-5">
