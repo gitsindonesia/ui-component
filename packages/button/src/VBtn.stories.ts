@@ -257,3 +257,55 @@ Sizes.parameters = {
     },
   },
 };
+
+export const Plugin: Story<VBtnProps> = () => ({
+  components: {VIcon},
+  setup() {
+    return {
+      colors: ['default', 'dark', ...defaultColors],
+      sizes: defaultSizes,
+    };
+  },
+  template: `
+<h3 class="font-semibold text-lg mb-2">Colors</h3>
+<div class="space-x-2 space-y-2 mb-5">
+  <button v-for="color in colors" :key="color" :class="\`btn btn-\${color}\`"> {{ color }} </button>
+</div>
+<h3 class="font-semibold text-lg mb-2">Shadow</h3>
+<div class="space-x-2 space-y-2 mb-5">
+  <button v-for="color in colors" :key="color" :class="\`btn shadow-md btn-\${color}\`"> {{ color }} </button>
+</div>
+<h3 class="font-semibold text-lg mb-2">Outlined</h3>
+<div class="space-x-2 space-y-2 mb-5">
+  <button v-for="color in colors" :key="color" :class="\`btn btn--outlined btn-\${color}\`"> {{ color }} </button>
+</div>
+<h3 class="font-semibold text-lg mb-2">Text</h3>
+<div class="space-x-2 space-y-2 mb-5">
+  <button v-for="color in colors" :key="color" :class="\`btn btn--text btn-\${color}\`"> {{ color }} </button>
+</div>
+<h3 class="font-semibold text-lg mb-2">Rounded</h3>
+<div class="space-x-2 space-y-2 mb-5">
+  <button v-for="color in colors" :key="color" :class="\`btn btn--rounded btn-\${color}\`"> {{ color }} </button>
+</div>
+<h3 class="font-semibold text-lg mb-2">Tile</h3>
+<div class="space-x-2 space-y-2 mb-5">
+  <button v-for="color in colors" :key="color" :class="\`btn btn--tile btn-\${color}\`"> {{ color }} </button>
+</div>
+<h3 class="font-semibold text-lg mb-2">Sizes</h3>
+<div class="flex items-end gap-2 mb-5">
+  <button v-for="size in sizes" :key="size" :class="\`btn btn-primary btn--\${size}\`"> {{ size }} </button>
+</div>
+<h3 class="font-semibold text-lg mb-2">Icon</h3>
+<div class="flex items-end gap-2 mb-5">
+  <button v-for="size in sizes" :key="size" :class="\`btn btn-secondary btn--\${size}\`"> 
+    <v-icon name="ic:round-search" class="btn-icon" />
+  </button>
+</div>
+<h3 class="font-semibold text-lg mb-2">Icon FAB</h3>
+<div class="flex items-end gap-2 mb-5">
+  <button v-for="size in sizes" :key="size" :class="\`btn btn-success btn--fab btn--\${size}\`"> 
+    <v-icon name="ic:round-search" class="btn-icon" />
+  </button>
+</div>
+  `,
+});

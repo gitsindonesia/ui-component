@@ -23,7 +23,6 @@
     "vue": "^3.2.33"
   },
   "devDependencies": {
-    "@gits-id/tailwind-components": "^0.12.0-alpha.0",
     "@gits-id/tailwind-config": "^0.12.0-alpha.0",
     "@vitejs/plugin-vue": "^2.2.4",
     "@vue/test-utils": "^2.0.0-rc.17",

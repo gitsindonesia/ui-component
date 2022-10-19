@@ -32,6 +32,7 @@ export interface Props {
    * @deprecated
    */
   solid?: boolean;
+  fab?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -212,6 +213,7 @@ const classes = computed(() => {
       // [ringVariants[props.color]]: !props.noRing,
       'btn--ring': !props.noRing,
       'btn--rounded': props.rounded,
+      'btn--fab': props.fab,
       'btn--tile': props.tile,
       'btn--block': props.block,
       'btn--loading': props.loading,
