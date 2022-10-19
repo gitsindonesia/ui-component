@@ -4,8 +4,10 @@ import VSpinner from '@gits-id/spinner';
 import type {DefaultColors, DefaultSizes} from '@gits-id/theme/defaultTheme';
 import type {RouteLocationRaw} from 'vue-router';
 
+export type ButtonColors = DefaultColors | 'default' | string;
+
 export interface Props {
-  color?: DefaultColors | 'default' | string;
+  color?: ButtonColors;
   size?: DefaultSizes;
   to?: RouteLocationRaw;
   href?: string;
@@ -39,16 +41,14 @@ const props = withDefaults(defineProps<Props>(), {
   loadingText: 'Loading...',
 });
 
-// const {disabled, loading, loadingText} = toRefs(props);
-
 const computedComponent = computed(() => {
   if (props.to) {
     return resolveComponent('router-link');
   } else if (props.href) {
     return 'a';
-  } else {
-    return 'button';
   }
+
+  return 'button';
 });
 
 const attrs = computed(() => {
@@ -62,21 +62,6 @@ const attrs = computed(() => {
   }
   return attributes;
 });
-
-// const spinnerColor = computed(() => {
-//   switch (props.color) {
-//     case 'primary':
-//     case 'info':
-//     case 'warning':
-//     case 'error':
-//     case 'success':
-//       return 'white';
-//     case 'white':
-//       return 'black';
-//     default:
-//       return props.color;
-//   }
-// });
 
 // const defaultVariants: Record<string, any> = {
 //   default:
@@ -94,8 +79,6 @@ const attrs = computed(() => {
 //     'border-error-500 bg-error-500 text-white hover:bg-error-600 hover:border-error-600 active:bg-error-400 active:border-error-400',
 //   dark: 'border-gray-800 bg-gray-800 text-white hover:bg-gray-900 hover:border-gray-900 active:bg-gray-700 active:border-gray-700',
 // };
-
-s;
 
 // const outlinedVariants: Record<string, any> = {
 //   default:
@@ -241,6 +224,7 @@ const classes = computed(() => {
 </script>
 
 <template>
+  <pre>{{ classes }}</pre>
   <component
     :is="computedComponent"
     :class="classes"

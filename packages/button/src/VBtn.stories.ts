@@ -1,6 +1,6 @@
 import {Meta, Story} from '@storybook/vue3';
 import Button from './VBtn.vue';
-import {VBtnProps} from './types';
+import type {Props as VBtnProps} from './VBtn.vue';
 import VIcon from '@gits-id/icon';
 import {defaultColors, defaultSizes} from '@gits-id/theme/defaultTheme';
 
@@ -26,7 +26,6 @@ export default {
   },
 } as Meta;
 
-//👇 We create a “template” of how args map to rendering
 const Template: Story<VBtnProps> = (args) => ({
   components: {Button},
   setup() {
@@ -98,46 +97,6 @@ Tile.parameters = {
   },
 };
 
-export const ExtraSmall = Template.bind({});
-ExtraSmall.args = {color: 'primary', size: 'xs'};
-ExtraSmall.parameters = {
-  docs: {
-    source: {
-      code: '<v-btn color="primary" size="xs">Button</v-btn>',
-    },
-  },
-};
-
-export const Small = Template.bind({});
-Small.args = {color: 'primary', size: 'sm'};
-Small.parameters = {
-  docs: {
-    source: {
-      code: '<v-btn color="primary" size="sm">Button</v-btn>',
-    },
-  },
-};
-
-export const Large = Template.bind({});
-Large.args = {color: 'primary', size: 'lg'};
-Large.parameters = {
-  docs: {
-    source: {
-      code: '<v-btn color="primary" size="lg">Button</v-btn>',
-    },
-  },
-};
-
-export const ExtraLarge = Template.bind({});
-ExtraLarge.args = {color: 'primary', size: 'xl'};
-ExtraLarge.parameters = {
-  docs: {
-    source: {
-      code: '<v-btn color="primary" size="xl">Button</v-btn>',
-    },
-  },
-};
-
 export const Disabled = Template.bind({});
 Disabled.args = {color: 'primary', disabled: true};
 Disabled.parameters = {
@@ -203,20 +162,20 @@ export const Icon: Story<VBtnProps> = (args) => ({
   setup() {
     return {
       args,
-      sizes,
+      sizes: defaultSizes,
       defaultColors,
-      sizeClass: {
-        xs: 'w-4 h-4',
-        sm: 'w-5 h-5',
-        md: 'w-6 h-6',
-        lg: 'w-10 h-10',
-        xl: 'w-12 h-12',
-      },
     };
   },
   template: `
 <div class="flex items-end gap-2">
-  <Button v-for="size in sizes" :key="size" v-bind="args" color="primary" :size="size" icon>
+  <Button
+    v-for="size in sizes"
+    :key="size"
+    color="primary"
+    :size="size"
+    icon
+    v-bind="args"
+  >
     <VIcon name="ri:home-line" class="w-full"/>
   </Button>
 </div>`,
@@ -272,7 +231,7 @@ TextIcon.parameters = {
 export const Sizes: Story<VBtnProps> = (args) => ({
   components: {Button},
   setup() {
-    return {args, sizes, defaultColors};
+    return {args, sizes: defaultSizes, defaultColors};
   },
   template: `<div v-for="color in defaultColors" :key="color" class="mb-6">
   <div>

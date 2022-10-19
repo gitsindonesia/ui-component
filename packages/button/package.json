@@ -13,12 +13,13 @@
     "ui-component",
     "ui"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Warsono <warsono16694@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "@gits-id/spinner": "^0.12.0-alpha.0",
     "@gits-id/theme": "^0.12.0-alpha.0",
     "@gits-id/utils": "^0.11.10",
+    "vue-router": "^4.1.5",
     "vue": "^3.2.33"
   },
   "devDependencies": {
@@ -33,7 +34,7 @@
     "typescript": "^4.6.2",
     "vite": "^3.0.0",
     "vitest": "^0.12.4",
-    "vue-tsc": "^0.37.3"
+    "vue-tsc": "^1.0.8"
   },
   "main": "dist/button.umd.js",
   "unpkg": "dist/button.iife.js",

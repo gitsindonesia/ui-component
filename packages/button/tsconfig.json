@@ -16,5 +16,5 @@
     "emitDeclarationOnly": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src/vue.d.ts", "*.vue", "src"]
+  "include": ["src"]
 }

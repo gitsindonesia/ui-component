@@ -18,7 +18,13 @@ export default defineConfig({
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
-      external: ['vue', '@gits-id/spinner', '@gits-id/utils', '@gits-id/theme'],
+      external: [
+        'vue',
+        '@gits-id/spinner',
+        '@gits-id/utils',
+        '@gits-id/theme',
+        'vue-router',
+      ],
       output: {
         // Provide global variables to use in the UMD build
         // for externalized deps

@@ -12,3 +12,4 @@ build/**
 yarn-error.log
 .idea
 coverage
+__snapshots__
