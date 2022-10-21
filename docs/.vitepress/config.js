@@ -47,6 +47,10 @@ export default defineConfig({
             text: 'DataTablePagination',
             link: '/components/data-table-pagination',
           },
+          {
+            text: 'Dropdown',
+            link: '/components/dropdown',
+          },
         ],
       },
     ],
