@@ -258,7 +258,7 @@ const computedHeaders = computed(() =>
       ({
         ...header,
         sortable: header.hasOwnProperty('sortable') ? header.sortable : true,
-        sorting: 'asc',
+        sorting: '',
       } as VDataTableHeader),
   ),
 );
