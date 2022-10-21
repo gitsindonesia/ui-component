@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/tailwind-config",
-  "version": "0.12.0-alpha.1",
+  "version": "0.12.0-alpha.2",
   "description": "GITS Tailwind Config",
   "main": "config.js",
   "scripts": {},
@@ -17,7 +17,7 @@
     "@gits-id/breadcrumbs": "^0.12.0-alpha.1",
     "@gits-id/button": "^0.12.0-alpha.1",
     "@gits-id/card": "^0.12.0-alpha.1",
-    "@gits-id/dropdown": "^0.12.0-alpha.1",
+    "@gits-id/dropdown": "^0.12.0-alpha.2",
     "@gits-id/tailwind-components": "^0.12.0-alpha.1",
     "@gits-id/theme": "^0.12.0-alpha.1",
     "@gits-id/utils": "^0.12.0-alpha.1",

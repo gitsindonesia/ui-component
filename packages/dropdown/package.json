@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/dropdown",
-  "version": "0.12.0-alpha.1",
+  "version": "0.12.0-alpha.2",
   "description": "GITS Dropdown Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -22,7 +22,7 @@
     "vue": "^3.2.31"
   },
   "devDependencies": {
-    "@gits-id/tailwind-config": "^0.12.0-alpha.1",
+    "@gits-id/tailwind-config": "^0.12.0-alpha.2",
     "@gits-id/utils": "^0.12.0-alpha.1",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
