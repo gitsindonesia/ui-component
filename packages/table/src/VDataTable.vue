@@ -428,6 +428,7 @@ const start = computed(() =>
               <slot
                 v-if="selectable && header.value === 'selected'"
                 name="header.selectable"
+                :selectAll="selectAll"
               >
                 <v-checkbox v-model="selectAll" />
               </slot>
@@ -533,10 +534,17 @@ const start = computed(() =>
               <slot
                 v-if="selectable && header.value === 'selected'"
                 name="item.selected"
+                :selected="selected"
+                :item="item"
               >
                 <v-checkbox v-model="selected" :value="(item as any)" />
               </slot>
-              <slot v-else-if="header.value === 'index'" name="item.index">
+              <slot
+                v-else-if="header.value === 'index'"
+                name="item.index"
+                :index="index"
+                :item="item"
+              >
                 {{ start + index }}
               </slot>
               <slot
@@ -554,7 +562,19 @@ const start = computed(() =>
     </div>
 
     <template v-if="!hideFooter">
-      <slot name="footer">
+      <slot
+        name="footer"
+        v-bind="{
+          pagination,
+          perPage,
+          serverSide,
+          items,
+          totalItems,
+          footerColor,
+          footerClass,
+          page,
+        }"
+      >
         <VDataTablePagination
           v-model="page"
           :background-color="footerColor ? footerColor : ''"
