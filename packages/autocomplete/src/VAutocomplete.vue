@@ -148,7 +148,7 @@ const clear = () => {
             @click="clear"
           >
             <Icon
-              name="ri:check-line"
+              name="ri:close-line"
               class="w-6 h-6 fill-current text-gray-400"
               aria-hidden="true"
             />
