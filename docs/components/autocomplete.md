@@ -36,6 +36,7 @@ The `VAutocomplete` component is registered globally when you install with `@git
 import {ref} from 'vue';
 import {useForm} from 'vee-validate';
 import {object} from 'yup';
+import type {Item} from '@gits-id/autocomplete';
 
 const schema = object({
   genre: object().required().label('Genre'),
@@ -49,7 +50,7 @@ const onSubmit = handleSubmit((values) => {
   alert(JSON.stringify(values));
 });
 
-const genres = ref([
+const genres = ref<Item[]>([
   {
     text: 'Pop',
     value: 'pop',
