@@ -41,6 +41,7 @@ export default defineConfig({
           {text: 'Badge', link: '/components/badge'},
           {text: 'Breadcrumbs', link: '/components/breadcrumbs'},
           {text: 'Card', link: '/components/card'},
+          {text: 'Collapsible', link: '/components/collapsible'},
         ],
       },
     ],
