@@ -36,6 +36,7 @@ export default defineConfig({
         items: [
           {text: 'Alert', link: '/components/alert'},
           {text: 'AppBar', link: '/components/app-bar'},
+          {text: 'Autocomplete', link: '/components/autocomplete'},
           {text: 'Avatar', link: '/components/avatar'},
           {text: 'Badge', link: '/components/badge'},
           {text: 'Breadcrumbs', link: '/components/breadcrumbs'},
