@@ -91,21 +91,21 @@ const genres = ref<Item[]>([
 
 ## Props
 
-| Name                          | Type      | Default                |
-| ----------------------------- | --------- | ---------------------- |
-| [items](#items)               | `Item[]`  | `[]`                   |
-| [modelValue](#modelValue)     | `Item`    | `undefined`            |
-| [searchBy](#searchBy)         | `string`  | `text`                 |
-| [displayText](#displayText)   | `string`  | `text`                 |
-| [placeholder](#placeholder)   | `string`  | `'Search...'`          |
-| [label](#label)               | `string`  | `''`                   |
-| [name](#name)                 | `string`  | `''`                   |
-| [rules](#rules)               | `string`  | `''`                   |
-| [notFoundText](#notFoundText) | `string`  | ` 'No data.'`          |
-| [noDataText](#noDataText)     | `string`  | `'Nothing found.'`     |
-| [clearable](#clearable)       | `boolean` | `false`                |
-| [errorClass](#errorClass)     | `string`  | `'autocomplete-error'` |
-| [wrapperClass](#wrapperClass) | `string`  | `''`                   |
+| Name                            | Type      | Default                |
+| ------------------------------- | --------- | ---------------------- |
+| [`items`](#items)               | `Item[]`  | `[]`                   |
+| [`modelValue`](#modelValue)     | `Item`    | `undefined`            |
+| [`searchBy`](#searchBy)         | `string`  | `text`                 |
+| [`displayText`](#displayText)   | `string`  | `text`                 |
+| [`placeholder`](#placeholder)   | `string`  | `'Search...'`          |
+| [`label`](#label)               | `string`  | `''`                   |
+| [`name`](#name)                 | `string`  | `''`                   |
+| [`rules`](#rules)               | `string`  | `''`                   |
+| [`notFoundText`](#notFoundText) | `string`  | ` 'No data.'`          |
+| [`noDataText`](#noDataText)     | `string`  | `'Nothing found.'`     |
+| [`clearable`](#clearable)       | `boolean` | `false`                |
+| [`errorClass`](#errorClass)     | `string`  | `'autocomplete-error'` |
+| [`wrapperClass`](#wrapperClass) | `string`  | `''`                   |
 
 ## Methods
 
