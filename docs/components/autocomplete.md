@@ -90,9 +90,21 @@ const genres = ref([
 
 ## Props
 
-| Name            | Type     | Default |
-| --------------- | -------- | ------- |
-| [items](#items) | `Item[]` | `[]`    |
+| Name                          | Type      | Default                |
+| ----------------------------- | --------- | ---------------------- |
+| [items](#items)               | `Item[]`  | `[]`                   |
+| [modelValue](#modelValue)     | `Item`    | `undefined`            |
+| [searchBy](#searchBy)         | `string`  | `text`                 |
+| [displayText](#displayText)   | `string`  | `text`                 |
+| [placeholder](#placeholder)   | `string`  | `'Search...'`          |
+| [label](#label)               | `string`  | `''`                   |
+| [name](#name)                 | `string`  | `''`                   |
+| [rules](#rules)               | `string`  | `''`                   |
+| [notFoundText](#notFoundText) | `string`  | ` 'No data.'`          |
+| [noDataText](#noDataText)     | `string`  | `'Nothing found.'`     |
+| [clearable](#clearable)       | `boolean` | `false`                |
+| [errorClass](#errorClass)     | `string`  | `'autocomplete-error'` |
+| [wrapperClass](#wrapperClass) | `string`  | `''`                   |
 
 ## Methods
 
@@ -105,30 +117,11 @@ None
 
 ## Slots
 
-WIP
+None
 
 ## CSS Variables
 
-| Variable                                                 | Default Value        |
-| -------------------------------------------------------- | -------------------- |
-| [`--autocomplete-padding-x` ](#--autocomplete-padding-x) | `theme('padding.4')` |
-
-## Customization
-
-With the power of CSS Variables and Tailwind's `theme` function, you can create your custom autocomplete.
-
-```vue{2,7-8}
-<template>
-  <VAutocomplete color="indigo"> Indigo Colored Autocomplete </VAutocomplete>
-</template>
-
-<style>
-.autocomplete-indigo {
-  --autocomplete-bg-color: theme('colors.indigo.500');
-  --autocomplete-color: theme('colors.white');
-}
-</style>
-```
+None
 
 ## Manual Installation
 
@@ -144,20 +137,8 @@ import VAutocomplete from '@gits-id/autocomplete';
 </script>
 
 <template>
-  <VAutocomplete> Hello World </VAutocomplete>
+  <VAutocomplete />
 </template>
-```
-
-## Tailwind Plugin
-
-This package comes with custom tailwind plugin for styling. If you are installing this package separately from `@gits-id/ui` package, you need to include the plugin in `plugins` section in your Tailwind config file.
-
-```js{4}
-// tailwind.config.js
-module.exports = {
-  content: [],
-  presets: [require('@gits-id/autocomplete/plugin')],
-};
 ```
 
 ## Storybook
