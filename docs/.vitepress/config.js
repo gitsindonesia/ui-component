@@ -42,6 +42,7 @@ export default defineConfig({
           {text: 'Breadcrumbs', link: '/components/breadcrumbs'},
           {text: 'Card', link: '/components/card'},
           {text: 'Collapsible', link: '/components/collapsible'},
+          {text: 'DataTable', link: '/components/data-table'},
         ],
       },
     ],
