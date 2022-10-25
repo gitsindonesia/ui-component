@@ -55,6 +55,10 @@ export default defineConfig({
             text: 'Icon',
             link: '/components/icon',
           },
+          {
+            text: 'List',
+            link: '/components/list',
+          },
         ],
       },
     ],

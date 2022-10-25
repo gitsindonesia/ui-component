@@ -6,3 +6,10 @@
     #41d1ff
   );
 }
+
+h4,
+h3,
+h5,
+h6 {
+  margin-bottom: 16px;
+}
