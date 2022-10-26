@@ -52,7 +52,7 @@ CustomClass.args = {
 CustomClass.parameters = {
   docs: {
     source: {
-      code: '<v-editor img-class="h-10" />',
+      code: '<v-logo img-class="h-10" />',
     },
   },
 };

@@ -5,7 +5,7 @@ import LivePreview from './components/LivePreview.vue';
 
 export default {
   ...DefaultTheme,
-  enhanceApp({app, router, siteData}) {
+  enhanceApp({app}) {
     app.component('LivePreview', LivePreview);
   },
 };
