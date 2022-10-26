@@ -299,7 +299,7 @@ This package comes with custom tailwind plugin for styling. If you are installin
 // tailwind.config.js
 module.exports = {
   content: [],
-  presets: [require('@gits-id/app-bar/plugin')],
+  plugins: [require('@gits-id/app-bar/plugin')],
 };
 ```
 
