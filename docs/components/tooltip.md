@@ -9,9 +9,9 @@
   <!-- VTooltip is registered globally -->
   <VTooltip placement="top">
     <template #activator="{on}">
-      <v-btn v-on="on">
+      <VBtn v-on="on">
         {{ place }}
-      </v-btn>
+      </VBtn>
     </template>
     <span>Hello :)</span>
   </VTooltip>
@@ -65,9 +65,9 @@ import VTooltip from '@gits-id/tooltip';
 <template>
   <VTooltip placement="top">
     <template #activator="{on}">
-      <v-btn v-on="on">
+      <VBtn v-on="on">
         {{ place }}
-      </v-btn>
+      </VBtn>
     </template>
     <span>Hello :)</span>
   </VTooltip>
