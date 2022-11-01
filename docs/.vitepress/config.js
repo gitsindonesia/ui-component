@@ -63,6 +63,14 @@ export default defineConfig({
             text: 'Logo',
             link: '/components/logo',
           },
+          {
+            text: 'Tabs',
+            link: '/components/tabs',
+          },
+          {
+            text: 'Tooltip',
+            link: '/components/tooltip',
+          },
         ],
       },
     ],
