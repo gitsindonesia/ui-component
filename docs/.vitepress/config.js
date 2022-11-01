@@ -22,6 +22,7 @@ export default defineConfig({
     sidebar: [
       {
         text: 'Guide',
+        collapsible: true,
         items: [
           {text: 'Getting Started', link: '/guide/getting-started'},
           {text: 'Customization', link: '/guide/customization'},
@@ -33,6 +34,7 @@ export default defineConfig({
       },
       {
         text: 'Components',
+        collapsible: true,
         items: [
           {text: 'Alert', link: '/components/alert'},
           {text: 'AppBar', link: '/components/app-bar'},
@@ -68,8 +70,30 @@ export default defineConfig({
             link: '/components/modal',
           },
           {
+            text: 'Tabs',
+            link: '/components/tabs',
+          },
+          {
+            text: 'Tooltip',
+            link: '/components/tooltip',
+          },
+        ],
+      },
+      {
+        text: 'Forms',
+        collapsible: true,
+        items: [
+          {
+            text: 'Button',
+            link: '/components/button',
+          },
+          {
             text: 'Multi Select',
             link: '/components/multi-select',
+          },
+          {
+            text: 'QuillEditor',
+            link: '/components/quill-editor',
           },
         ],
       },
