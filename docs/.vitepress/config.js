@@ -80,6 +80,10 @@ export default defineConfig({
         collapsible: true,
         items: [
           {
+            text: 'Button',
+            link: '/components/button',
+          },
+          {
             text: 'QuillEditor',
             link: '/components/quill-editor',
           },
