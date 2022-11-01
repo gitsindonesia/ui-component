@@ -66,6 +66,10 @@ export default defineConfig({
             link: '/components/logo',
           },
           {
+            text: 'Modal',
+            link: '/components/modal',
+          },
+          {
             text: 'Tabs',
             link: '/components/tabs',
           },
@@ -82,6 +86,10 @@ export default defineConfig({
           {
             text: 'Button',
             link: '/components/button',
+          },
+          {
+            text: 'Multi Select',
+            link: '/components/multi-select',
           },
           {
             text: 'QuillEditor',
