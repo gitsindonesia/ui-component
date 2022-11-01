@@ -71,6 +71,10 @@ export default defineConfig({
             text: 'Tooltip',
             link: '/components/tooltip',
           },
+          {
+            text: 'QuillEditor',
+            link: '/components/quill-editor',
+          },
         ],
       },
     ],
