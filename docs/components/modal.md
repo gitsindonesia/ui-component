@@ -271,7 +271,12 @@ import VModal from '@gits-id/modal';
 </script>
 
 <template>
-  <VLogo />
+  <VModal v-model="isOpen">
+    <template #activator="{open}">
+      <v-btn @click="open">Click Me</v-btn>
+    </template>
+    Hello World
+  </VModal>
 </template>
 ```
 

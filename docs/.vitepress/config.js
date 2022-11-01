@@ -67,6 +67,10 @@ export default defineConfig({
             text: 'Modal',
             link: '/components/modal',
           },
+          {
+            text: 'Multi Select',
+            link: '/components/multi-select',
+          },
         ],
       },
     ],
