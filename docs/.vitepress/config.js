@@ -63,6 +63,10 @@ export default defineConfig({
             text: 'Logo',
             link: '/components/logo',
           },
+          {
+            text: 'Modal',
+            link: '/components/modal',
+          },
         ],
       },
     ],
