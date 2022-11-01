@@ -67,6 +67,10 @@ export default defineConfig({
             text: 'Tabs',
             link: '/components/tabs',
           },
+          {
+            text: 'Tooltip',
+            link: '/components/tooltip',
+          },
         ],
       },
     ],
