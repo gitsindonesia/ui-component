@@ -6,16 +6,16 @@
 
 ```vue
 <script setup lang="ts">
-  const items = [
-    {
-      value: 1,
-      text: 'Option 1',
-    },
-    {
-      value: 2,
-      text: 'Option 2',
-    },
-  ];
+const items = [
+  {
+    value: 1,
+    text: 'Option 1',
+  },
+  {
+    value: 2,
+    text: 'Option 2',
+  },
+];
 </script>
 
 <template>
@@ -66,12 +66,12 @@ The `VMultiSelect` component is registered globally when you install with `@gits
 <template>
   <VMultiSelect
     :items="items"
-    wrapperClass="!rounded-full !border-orange-500 focus-within:!border-orange-600",
-    inputClass="!italic",
-    dropdownClass="bg-black/50",
-    itemClass="bg-black/50 text-white hover:bg-warning-500 hover:text-white",
-    badgeColor="warning",
-    checkWrapperClass="text-orange-500",
+    wrapper-class="!rounded-full !border-orange-500 focus-within:!border-orange-600"
+    input-class="!italic"
+    dropdown-class="bg-black/50"
+    item-class="bg-black/50 text-white hover:bg-warning-500 hover:text-white"
+    badge-color="warning"
+    check-wrapper-class="text-orange-500"
   />
 </template>
 ```
@@ -82,39 +82,39 @@ The `VMultiSelect` component is registered globally when you install with `@gits
 
 ```vue
 <script setup lang="ts">
-  const schema = object({
-      genre: array().required().min(1).label('Genre'),
-    });
+const schema = object({
+  genre: array().required().min(1).label('Genre'),
+});
 
-    const {handleSubmit, resetForm, values} = useForm({
-      validationSchema: schema,
-      initialErrors: {
-        genre: 'Genre is required',
-      },
-    });
+const {handleSubmit, resetForm, values} = useForm({
+  validationSchema: schema,
+  initialErrors: {
+    genre: 'Genre is required',
+  },
+});
 
-    const onSubmit = handleSubmit((values) => {
-      alert(JSON.stringify(values));
-    });
+const onSubmit = handleSubmit((values) => {
+  alert(JSON.stringify(values));
+});
 
-    const genres = ref([
-      {
-        text: 'Pop',
-        value: 'pop',
-      },
-      {
-        text: 'Rock',
-        value: 'rock',
-      },
-      {
-        text: 'Jazz',
-        value: 'jazz',
-      },
-      {
-        text: 'Alternative',
-        value: 'alternative',
-      },
-    ]);
+const genres = ref([
+  {
+    text: 'Pop',
+    value: 'pop',
+  },
+  {
+    text: 'Rock',
+    value: 'rock',
+  },
+  {
+    text: 'Jazz',
+    value: 'jazz',
+  },
+  {
+    text: 'Alternative',
+    value: 'alternative',
+  },
+]);
 </script>
 
 <template>
@@ -138,39 +138,39 @@ The `VMultiSelect` component is registered globally when you install with `@gits
 
 ## Props
 
-| Name                                      | Type                                     | Default                         |
-| ----------------------------------------- | ---------------------------------------- | ------------------------------- |
-| [`items`](#items)                         | `Array as PropType<VMultiSelectItem[]>`  | `[]`                            |
-| [`itemText`](#itemText)                   | `string`                                 | `'text'`                        |
-| [`itemValue`](#confirm)                   | `string`                                 | `value`                         |
-| [`searchBy`](#searchBy)                   | `string`                                 | `''`                            |
-| [`placeholder`](#placeholder)             | `string`                                 | `'Search...'`                   |
-| [`name`](#name)                           | `string`                                 | `''`                            |
-| [`error`](#error)                         | `boolean`                                | `false`                         |
-| [`errorMessages`](#errorMessages)         | `Array`                                  | `'[]'`                          |
-| [`clearable`](#clearable)                 | `boolean`                                | `'false'`                       |
-| [`maxBadge`](#maxBadge)                   | `number`                                 | `0`                             |
-| [`delay`](#delay)                         | `number`                                 | `'500'`                         |
-| [`id`](#id)                               | `string`                                 | `''`                            |
-| [`inputProps`](#inputProps)               | `Object as PropType<Record<string, any>>`| `'{}'`                          |
-| [`selectAll`](#selectAll)                 | `boolean`                                | `false`                         |
-| [`loading`](#loading)                     | `boolean`                                | `false`                         |
-| [`wrapperClass`](#wrapperClass)           | `string`                                 | `''`                            |
-| [`inputClass`](#inputClass)               | `string`                                 | `''`                            |
-| [`badgeColor`](#badgeColor)               | `string`                                 | `'primary'`                     |
-| [`badgeClass`](#badgeClass)               | `string`                                 | `''`                            |
-| [`badgeProps`](#badgeProps)               | `object`                                 | `{}`                            |
-| [`dropdownClass`](#dropdownClass)         | `string`                                 | `''`                            |
-| [`itemClass`](#itemClass)                 | `string`                                 | `''`                            |
-| [`checkWrapperClass`](#checkWrapperClass) | `string`                                 | `''`                            |
-| [`checkIconClass`](#checkIconClass)       | `string`                                 | `''`                            |
-| [`noDataClass`](#noDataClass)             | `string`                                 | `''`                            |
-| [`loadingClass`](#loadingClass)           | `string`                                 | `''`                            |
-| [`label`](#label)                         | `string`                                 | `''`                            |
-| [`labelClass`](#labelClass)               | `string`                                 | `'mb-2 block'`                  |
-| [`rules`](#rules)                         | `string`                                 | `''`                            |
-| [`errorClass`](#errorClass)               | `string`                                 | `'text-error-600 mt-1 text-sm'` |
-| [`transition`](#transition)               | `string`                                 | `'fade'`                        |
+| Name                                      | Type                                      | Default                         |
+| ----------------------------------------- | ----------------------------------------- | ------------------------------- |
+| [`items`](#items)                         | `Array as PropType<VMultiSelectItem[]>`   | `[]`                            |
+| [`itemText`](#itemText)                   | `string`                                  | `'text'`                        |
+| [`itemValue`](#confirm)                   | `string`                                  | `value`                         |
+| [`searchBy`](#searchBy)                   | `string`                                  | `''`                            |
+| [`placeholder`](#placeholder)             | `string`                                  | `'Search...'`                   |
+| [`name`](#name)                           | `string`                                  | `''`                            |
+| [`error`](#error)                         | `boolean`                                 | `false`                         |
+| [`errorMessages`](#errorMessages)         | `Array`                                   | `'[]'`                          |
+| [`clearable`](#clearable)                 | `boolean`                                 | `'false'`                       |
+| [`maxBadge`](#maxBadge)                   | `number`                                  | `0`                             |
+| [`delay`](#delay)                         | `number`                                  | `'500'`                         |
+| [`id`](#id)                               | `string`                                  | `''`                            |
+| [`inputProps`](#inputProps)               | `Object as PropType<Record<string, any>>` | `'{}'`                          |
+| [`selectAll`](#selectAll)                 | `boolean`                                 | `false`                         |
+| [`loading`](#loading)                     | `boolean`                                 | `false`                         |
+| [`wrapperClass`](#wrapperClass)           | `string`                                  | `''`                            |
+| [`inputClass`](#inputClass)               | `string`                                  | `''`                            |
+| [`badgeColor`](#badgeColor)               | `string`                                  | `'primary'`                     |
+| [`badgeClass`](#badgeClass)               | `string`                                  | `''`                            |
+| [`badgeProps`](#badgeProps)               | `object`                                  | `{}`                            |
+| [`dropdownClass`](#dropdownClass)         | `string`                                  | `''`                            |
+| [`itemClass`](#itemClass)                 | `string`                                  | `''`                            |
+| [`checkWrapperClass`](#checkWrapperClass) | `string`                                  | `''`                            |
+| [`checkIconClass`](#checkIconClass)       | `string`                                  | `''`                            |
+| [`noDataClass`](#noDataClass)             | `string`                                  | `''`                            |
+| [`loadingClass`](#loadingClass)           | `string`                                  | `''`                            |
+| [`label`](#label)                         | `string`                                  | `''`                            |
+| [`labelClass`](#labelClass)               | `string`                                  | `'mb-2 block'`                  |
+| [`rules`](#rules)                         | `string`                                  | `''`                            |
+| [`errorClass`](#errorClass)               | `string`                                  | `'text-error-600 mt-1 text-sm'` |
+| [`transition`](#transition)               | `string`                                  | `'fade'`                        |
 
 ## Methods
 

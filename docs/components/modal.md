@@ -86,21 +86,20 @@ The `VModal` component is registered globally when you install with `@gits-id/ui
 
 ```vue
 <script setup lang="ts">
-  const isOpen = ref(false);
+const isOpen = ref(false);
 </script>
 
 <template>
   <VModal v-model="isOpen" fullscreen>
     <template #activator="{open}">
-        <v-btn @click="open">Click Me</v-btn>
+      <v-btn @click="open">Click Me</v-btn>
     </template>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-    ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-    in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    Excepteur sint occaecat cupidatat non proident,
-    sunt in culpa qui officia deserunt mollit anim id est laborum.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   </VModal>
 </template>
 ```
@@ -111,21 +110,21 @@ The `VModal` component is registered globally when you install with `@gits-id/ui
 
 ```vue
 <script setup lang="ts">
-  const isOpen = ref(false);
-  const loading = ref(false);
-  const onConfirm = async (e) => {
-    loading.value = true;
-    await deleteItem();
-    loading.value = false;
-    e.close();
-  };
-  const deleteItem = () => {
-    return new Promise((resolve: (value?: any) => void) => {
-      setTimeout(() => {
-        resolve();
-      }, 2000);
-    });
-  };
+const isOpen = ref(false);
+const loading = ref(false);
+const onConfirm = async (e) => {
+  loading.value = true;
+  await deleteItem();
+  loading.value = false;
+  e.close();
+};
+const deleteItem = () => {
+  return new Promise((resolve: (value?: any) => void) => {
+    setTimeout(() => {
+      resolve();
+    }, 2000);
+  });
+};
 </script>
 
 <template>
@@ -155,21 +154,17 @@ The `VModal` component is registered globally when you install with `@gits-id/ui
 
 ```vue
 <script setup lang="ts">
-  const isOpen = ref(true);
-  const loading = ref(true);
+const isOpen = ref(true);
+const loading = ref(true);
 </script>
 
 <template>
-  <VModal
-    v-model="isOpen"
-    :loading="loading"
-    confirm
-  >
+  <VModal v-model="isOpen" :loading="loading" confirm>
     <template #activator="{open}">
       <v-btn @click="open">Click Me</v-btn>
     </template>
     Hello World
-  </VModal>  
+  </VModal>
 </template>
 ```
 
@@ -184,7 +179,7 @@ The `VModal` component is registered globally when you install with `@gits-id/ui
       <v-btn @click="open">Click Me</v-btn>
     </template>
     Hello World
-  </VModal>  
+  </VModal>
 </template>
 ```
 
@@ -192,22 +187,22 @@ The `VModal` component is registered globally when you install with `@gits-id/ui
 
 ## Props
 
-| Name                            | Type        | Default           |
-| ------------------------------- | ----------- | ----------------- |
-| [`title`](#title)               | `string`    | `'Modal Header'`  |
-| [`confirm`](#confirm)           | `boolean`   | `false`           |
-| [`confirmColor`](#confirmColor) | `string`    | `'primary'`       |
-| [`confirmProps`](#confirmProps) | `object`    | `'{}'`            |
-| [`confirmText`](#confirmText)   | `string`    | `Confirm`         |
-| [`closeText`](#closeText)       | `string`    | `Close`           |
-| [`closeProps`](#closeProps)     | `object`    | `'{}'`            |
-| [`headerClass`](#headerClass)   | `string`    | `''`              |
-| [`bodyClass`](#bodyClass)       | `string`    | `''`              |
-| [`modalClass`](#modalClass)     | `string`    | `''`              |
-| [`footerClass`](#footerClass)   | `string`    | `''`              |
-| [`footerClass`](#footerClass)   | `string`    | `''`              |
-| [`hideHeader`](#hideHeader)     | `boolean`   | `false`           |
-| [`hideFooter`](#hideFooter)     | `boolean`   | `false`           |
+| Name                            | Type      | Default          |
+| ------------------------------- | --------- | ---------------- |
+| [`title`](#title)               | `string`  | `'Modal Header'` |
+| [`confirm`](#confirm)           | `boolean` | `false`          |
+| [`confirmColor`](#confirmColor) | `string`  | `'primary'`      |
+| [`confirmProps`](#confirmProps) | `object`  | `'{}'`           |
+| [`confirmText`](#confirmText)   | `string`  | `Confirm`        |
+| [`closeText`](#closeText)       | `string`  | `Close`          |
+| [`closeProps`](#closeProps)     | `object`  | `'{}'`           |
+| [`headerClass`](#headerClass)   | `string`  | `''`             |
+| [`bodyClass`](#bodyClass)       | `string`  | `''`             |
+| [`modalClass`](#modalClass)     | `string`  | `''`             |
+| [`footerClass`](#footerClass)   | `string`  | `''`             |
+| [`footerClass`](#footerClass)   | `string`  | `''`             |
+| [`hideHeader`](#hideHeader)     | `boolean` | `false`          |
+| [`hideFooter`](#hideFooter)     | `boolean` | `false`          |
 
 ## Methods
 
@@ -221,26 +216,22 @@ Event for confirmation modal.
 
 ```vue
 <script setup lang="ts">
-  const isOpen = ref(false);
-  const onConfirm = async (e) => {
-    await approveRequest();
-    e.close();
-  };
-  const approveRequest = () => {
-    return new Promise((resolve: (value?: any) => void) => {
-      setTimeout(() => {
-        resolve();
-      }, 2000);
-    });
-  };
+const isOpen = ref(false);
+const onConfirm = async (e) => {
+  await approveRequest();
+  e.close();
+};
+const approveRequest = () => {
+  return new Promise((resolve: (value?: any) => void) => {
+    setTimeout(() => {
+      resolve();
+    }, 2000);
+  });
+};
 </script>
 
 <template>
-  <VModal
-    v-model="isOpen"
-    confirm
-    @confirm="onConfirm"
-  >
+  <VModal v-model="isOpen" confirm @confirm="onConfirm">
     <template #activator="{open}">
       <v-btn @click="open" color="error">Approve</v-btn>
     </template>
