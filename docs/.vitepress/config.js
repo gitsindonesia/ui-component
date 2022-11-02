@@ -82,6 +82,10 @@ export default defineConfig({
             link: '/components/navbar',
           },
           {
+            text: 'Navigation Drawer',
+            link: '/components/nav-drawer',
+          },
+          {
             text: 'Tabs',
             link: '/components/tabs',
           },

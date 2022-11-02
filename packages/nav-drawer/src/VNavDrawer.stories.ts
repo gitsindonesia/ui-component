@@ -1,6 +1,5 @@
 import {Meta, Story} from '@storybook/vue3';
 import MyNavbarDrawer from './VNavDrawer.vue';
-import {Icon} from '@gits-id/icon';
 
 export default {
   title: 'Components/NavDrawer',
