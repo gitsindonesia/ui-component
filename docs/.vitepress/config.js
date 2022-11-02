@@ -70,6 +70,10 @@ export default defineConfig({
             link: '/components/menu',
           },
           {
+            text: 'Menus',
+            link: '/components/menus',
+          },
+          {
             text: 'Modal',
             link: '/components/modal',
           },
