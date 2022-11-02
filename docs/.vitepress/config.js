@@ -66,6 +66,10 @@ export default defineConfig({
             link: '/components/logo',
           },
           {
+            text: 'Menu',
+            link: '/components/menu',
+          },
+          {
             text: 'Modal',
             link: '/components/modal',
           },
