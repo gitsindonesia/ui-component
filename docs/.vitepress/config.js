@@ -78,6 +78,10 @@ export default defineConfig({
             link: '/components/modal',
           },
           {
+            text: 'Navbar',
+            link: '/components/navbar',
+          },
+          {
             text: 'Tabs',
             link: '/components/tabs',
           },
