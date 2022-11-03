@@ -50,22 +50,19 @@ Checkout [examples](/examples/):
   yarn dev
   ```
 
-## Commands
+## Running Documentation
 
-| Command                      | Description           |
-| ---------------------------- | --------------------- |
-| `storybook` or `sb` or `dev` | Run storybook         |
-| `build`                      | Build storybook       |
-| `test`                       | Run test via `vitest` |
+Running docs:
 
-### Lerna Commands
+```
+yarn docs:dev
+```
 
-| Command     | Description            |
-| ----------- | ---------------------- |
-| `bootstrap` | Bootstrap all packages |
-| `publish`   | Publish packages       |
+Build docs:
 
-Visit [lerna documentation](https://github.com/lerna/lerna) for all other commands.
+```
+yarn docs:build
+```
 
 ## License
 
