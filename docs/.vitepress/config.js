@@ -86,6 +86,10 @@ export default defineConfig({
             link: '/components/nav-drawer',
           },
           {
+            text: 'Pagination',
+            link: '/components/pagination',
+          },
+          {
             text: 'Tabs',
             link: '/components/tabs',
           },
