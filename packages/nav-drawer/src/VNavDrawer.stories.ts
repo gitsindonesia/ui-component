@@ -6,10 +6,10 @@ export default {
   component: MyNavbarDrawer,
   argTypes: {},
   args: {
-    classMenuParent: 'text-grey-600 bg-gray-700',
-    modelValue: '',
-    type: 'text',
-    placeholder: 'Type...',
+    // classMenuParent: 'text-grey-600 bg-gray-700',
+    // modelValue: '',
+    // type: 'text',
+    // placeholder: 'Type...',
     menus: [
       {
         text: 'Dasbor',
