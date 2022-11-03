@@ -182,7 +182,7 @@ watch(isSidebarOpen, (val) => {
             <v-btn
               class="sm:hidden"
               icon
-              rounded
+              fab
               text
               @click="isSidebarOpen = true"
             >
@@ -197,10 +197,10 @@ watch(isSidebarOpen, (val) => {
             </div>
             <div class="flex-1"></div>
             <div class="flex items-center gap-2">
-              <v-btn class="sm:hidden" icon rounded text>
+              <v-btn class="sm:hidden" icon fab text>
                 <Icon name="ri:search-line" />
               </v-btn>
-              <v-btn icon rounded text>
+              <v-btn icon fab text>
                 <Icon name="ri:notification-line" />
               </v-btn>
               <Dropdown right label="Account" :items="accountMenus" />

@@ -217,6 +217,7 @@ const classes = computed(() => {
       'btn--tile': props.tile,
       'btn--block': props.block,
       'btn--loading': props.loading,
+      'btn--text': props.text,
       shadow: props.shadow,
       // [sizeVariants[props.size]]: !props.icon,
       // [iconClass.value]: props.icon,
