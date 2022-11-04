@@ -84,22 +84,22 @@ None
 
 ## Manual Installation
 
-You can also install the `Logo` component individually via `@gits-id/logo` package:
+You can also install the `Pagination` component individually via `@gits-id/pagination` package:
 
 ```bash
-yarn install @gits-id/logo
+yarn install @gits-id/pagination
 ```
 
 ```vue
 <script setup lang="ts">
-import VLogo from '@gits-id/logo';
+import VPagination from '@gits-id/pagination';
 </script>
 
 <template>
-  <VLogo />
+  <VPagination />
 </template>
 ```
 
 ## Storybook
 
-View Storybook documentation [here](https://gits-ui.web.app/?path=/story/components-logo--default).
+View Storybook documentation [here](https://gits-ui.web.app/?path=/story/components-pagination--default).
