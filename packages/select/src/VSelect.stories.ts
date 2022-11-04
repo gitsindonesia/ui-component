@@ -4,7 +4,7 @@ import type {VSelectProps} from './types';
 import VSelect from './VSelect.vue';
 import {useForm} from 'vee-validate';
 import {ref} from 'vue';
-import {mixed, object, string} from 'yup';
+import {object} from 'yup';
 import VBtn from '@gits-id/button';
 
 const items = [...Array(5)].map((item, index) => ({

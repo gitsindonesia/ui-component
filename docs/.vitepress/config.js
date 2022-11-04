@@ -94,6 +94,10 @@ export default defineConfig({
             link: '/components/progress-bar',
           },
           {
+            text: 'Select',
+            link: '/components/select',
+          },
+          {
             text: 'Tabs',
             link: '/components/tabs',
           },
