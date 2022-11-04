@@ -90,6 +90,10 @@ export default defineConfig({
             link: '/components/pagination',
           },
           {
+            text: 'Progress Bar',
+            link: '/components/progress-bar',
+          },
+          {
             text: 'Tabs',
             link: '/components/tabs',
           },
