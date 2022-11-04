@@ -1,13 +1,13 @@
 <script setup>
-import {ref, toRefs, onMounted} from 'vue';
+import {ref, watch, toRefs, onMounted} from 'vue';
 import {useRange} from './useRange';
 import {useInputClasses} from '@gits-id/utils';
 import {useField} from 'vee-validate';
 
 const props = defineProps({
   modelValue: {
-    type: String,
-    default: '',
+    type: Object,
+    default: () => ({min: 0, max:0}),
   },
   min: {
     type: Number,
@@ -51,7 +51,7 @@ const {modelValue, showInput, name, rules} = toRefs(props);
 
 const emit = defineEmits(['update:modelValue']);
 
-const {value, errorMessage} = useField(name, rules, {
+const {value, errorMessage, handleChange} = useField(name, rules, {
   initialValue: modelValue,
 });
 
@@ -69,6 +69,16 @@ const {
   maxTrigger,
   validation,
 } = useRange(props.min, props.max, props.step);
+
+watch([minValue, maxValue], (val) => {
+  const nuValue = {
+    min: val[0],
+    max: val[1],
+  };
+
+  handleChange(nuValue);
+  emit('update:modelValue', nuValue)
+})
 
 onMounted(() => {
   minTrigger();

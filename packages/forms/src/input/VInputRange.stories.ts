@@ -54,15 +54,24 @@ export const Validation: Story<{}> = () => ({
   components: {VInputRange, VBtn},
   setup() {
     const schema = object({
-      score: string()
+      score: object()
         .required()
+          .test(
+              'isBetween',
+              ({ label }) => `${label} must be between 25-75`, // a message can also be a function
+              (value, testContext) => {
+                return (value.min >= 25 && value.max <= 75);
+              })
         .label('Range'),
     });
 
     const {handleSubmit, resetForm, values, errors} = useForm({
       validationSchema: schema,
       initialValues: {
-        score: 0,
+        score: {
+          min: 0,
+          max: 0
+        },
       },
     });
 
