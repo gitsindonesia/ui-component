@@ -10,6 +10,7 @@ import {object, string} from 'yup';
 import FieldArrayStory from './stories/FieldArray.story.vue';
 import FieldArrayOfObject from './stories/FieldArrayOfObject.story.vue';
 import FieldArrayNestedComponent from './stories/FieldArrayNested.story.vue';
+import {ref} from "vue";
 
 export default {
   title: 'Forms/Input',
@@ -22,6 +23,10 @@ export default {
     color: {
       control: 'select',
       options: themeColors,
+    },
+    validationMode: {
+      control: 'select',
+      options: ['aggressive', 'eager'],
     },
   },
   args: {
@@ -39,6 +44,7 @@ export default {
     shadow: false,
     text: false,
     label: '',
+    validationMode: 'aggressive'
   },
 } as Meta;
 
@@ -488,6 +494,50 @@ export const Validation: Story<VInputProps> = (args) => ({
       </div>
     </form>
 `,
+});
+
+export const ValidationMode: Story<VInputProps> = (args) => ({
+  components: {VInput, VBtn},
+  setup() {
+    const schema = object({
+      name_eager: string().required().label('Name'),
+      email_eager: string().required().email().label('Email'),
+      name_aggressive: string().required().label('Name'),
+      email_aggressive: string().required().email().label('Email'),
+    });
+
+    const {handleSubmit, resetForm} = useForm({
+      validationSchema: schema,
+    });
+
+    const modes = ref(['eager', 'aggressive'])
+
+    const onSubmit =
+            handleSubmit((values) => {
+              alert(JSON.stringify(values));
+            });
+
+    return {modes, onSubmit, resetForm};
+  },
+  template: `
+    <form @submit="onSubmit">
+      <div class="flex flex-wrap gap-4">
+        <fieldset
+            class="border-none flex-1"
+            v-for="mode in modes"
+            :key="mode"
+        >
+          <legend>Mode: {{ mode }}</legend>
+          <v-input wrapper-class="mb-2" :name="'name_'+mode" label="Name" placeholder="Your Name" :validation-mode="mode"/>
+          <v-input wrapper-class="mb-2" :name="'email_'+mode" label="Email" placeholder="Your Email" :validation-mode="mode"/>
+        </fieldset>
+      </div>
+      <div class="mt-4">
+        <v-btn type="submit">Submit</v-btn>
+        <v-btn type="button" text @click="resetForm">Reset</v-btn>
+      </div>
+    </form>
+  `,
 });
 
 export const FieldArrays: Story<VInputProps> = () => ({
