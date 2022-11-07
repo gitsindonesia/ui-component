@@ -26,6 +26,10 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  validationMode: {
+    type: String,
+    default: 'aggressive',
+  },
   value: {
     type: [String, Number, Boolean] as PropType<CheckboxValue>,
     default: false,
@@ -70,7 +74,7 @@ const emit =
     (e: 'update:modelValue', value: CheckboxValue): void;
   }>();
 
-const {modelValue, label, inputClass, color, disabled, size, name, rules} =
+const {modelValue, label, inputClass, color, disabled, size, name, rules, validationMode} =
   toRefs(props);
 
 const colorClass = computed(() => {
@@ -91,13 +95,18 @@ const colorClass = computed(() => {
   }
 });
 
+const isEagerValidation = computed(() => {
+  return validationMode.value === 'eager';
+})
+
 const {class: sizeClass} = useTextSize(size.value);
 
-const {value: innerValue, errorMessage} = useField<CheckboxValue>(name, rules, {
+const {value: innerValue, errorMessage, validate} = useField<CheckboxValue>(name, rules, {
   type: 'checkbox',
   valueProp: props.value,
   checkedValue: props.value,
   uncheckedValue: props.uncheckedValue,
+  validateOnValueUpdate: !isEagerValidation.value,
 });
 
 watch(modelValue, (val) => {
@@ -107,6 +116,19 @@ watch(modelValue, (val) => {
 watch(innerValue, (val) => {
   emit('update:modelValue', val);
 });
+
+const handleBlur = (m:any) => {
+  if (isEagerValidation.value) {
+     validate();
+  }
+}
+
+const handleChange = (m:any) => {
+  if (errorMessage.value && isEagerValidation.value) {
+    validate();
+  }
+}
+
 </script>
 
 <template>
@@ -114,6 +136,8 @@ watch(innerValue, (val) => {
     <input
       :id="id || name"
       v-model="innerValue"
+      @blur="handleBlur"
+      @input="handleChange"
       :name="name"
       :value="value"
       type="checkbox"
@@ -121,7 +145,7 @@ watch(innerValue, (val) => {
       :disabled="disabled"
       :class="[inputClass, colorClass, disabledClass]"
     />
-    <label class="select-none" :for="id || name" :class="[sizeClass]">
+    <label class="select-none" :for="id || name" :class="[sizeClass]" @mousedown.prevent="null">
       {{ label }}
     </label>
   </div>
