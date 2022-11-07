@@ -1,5 +1,5 @@
 <script setup>
-import {ref, watch, toRefs, onMounted} from 'vue';
+import {ref, watch, toRefs, onMounted, computed} from 'vue';
 import {useRange} from './useRange';
 import {useInputClasses} from '@gits-id/utils';
 import {useField} from 'vee-validate';
@@ -45,14 +45,23 @@ const props = defineProps({
     type: String,
     default: 'block mb-1',
   },
+  validationMode: {
+    type: String,
+    default: 'aggressive',
+  },
 });
 
-const {modelValue, showInput, name, rules} = toRefs(props);
+const {modelValue, showInput, name, rules, validationMode} = toRefs(props);
 
 const emit = defineEmits(['update:modelValue']);
 
-const {value, errorMessage, handleChange} = useField(name, rules, {
+const isEagerValidation = computed(() => {
+  return validationMode.value === 'eager';
+})
+
+const {value, errorMessage, handleChange, validate} = useField(name, rules, {
   initialValue: modelValue,
+  validateOnValueUpdate: !isEagerValidation.value
 });
 
 const inputClass = useInputClasses();
@@ -76,7 +85,11 @@ watch([minValue, maxValue], (val) => {
     max: val[1],
   };
 
-  handleChange(nuValue);
+  if(!errorMessage.value && isEagerValidation.value){
+    handleChange(nuValue, false)
+  }else {
+    handleChange(nuValue);
+  }
   emit('update:modelValue', nuValue)
 })
 
@@ -84,6 +97,12 @@ onMounted(() => {
   minTrigger();
   maxTrigger();
 });
+
+const handleBlur = () => {
+  if(isEagerValidation.value){
+    validate();
+  }
+}
 </script>
 
 <template>
@@ -91,7 +110,7 @@ onMounted(() => {
     <label v-if="label" :class="labelClass">{{ label }}</label>
     <div class="flex justify-center items-center">
       <div class="relative w-full">
-        <div>
+        <div tabindex="1">
           <div class="flex justify-between mb-3">
             <label class="text-gray-700 text-sm" for="min"
               >{{ minValue }}
@@ -104,6 +123,7 @@ onMounted(() => {
           <input
             v-model="minValue"
             type="range"
+            @blur="handleBlur"
             :step="step"
             :min="min"
             :max="max"
@@ -123,6 +143,7 @@ onMounted(() => {
           <input
             v-model="maxValue"
             type="range"
+            @blur="handleBlur"
             :step="step"
             :min="min"
             :max="max"
@@ -215,6 +236,7 @@ onMounted(() => {
           <div>
             <input
               v-model="minValue"
+              @blur="handleBlur"
               type="text"
               maxlength="5"
               :class="inputClass"
@@ -224,6 +246,7 @@ onMounted(() => {
           <div>
             <input
               v-model="maxValue"
+              @blur="handleBlur"
               type="text"
               maxlength="5"
               :class="inputClass"
