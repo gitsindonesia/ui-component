@@ -6,7 +6,7 @@
 
 ```vue
 <template>
-  <!-- VPagination is registered globally -->
+  <!-- VInputRange is registered globally -->
   <VInputRange />
 </template>
 ```
@@ -25,7 +25,7 @@ The `VInputRange` component is registered globally when you install with `@gits-
 </template>
 ```
 
-<LivePreview src="forms-inputrange--validation" height="100" />
+<LivePreview src="forms-inputrange--with-input" height="150" />
 
 ### Validation
 
