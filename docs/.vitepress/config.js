@@ -116,6 +116,10 @@ export default defineConfig({
             link: '/components/button',
           },
           {
+            text: 'Editor',
+            link: '/components/editor',
+          },
+          {
             text: 'Multi Select',
             link: '/components/multi-select',
           },
