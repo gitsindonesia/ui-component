@@ -74,7 +74,7 @@ const onSubmit = handleSubmit((values, ctx) => {
 </template>
 ```
 
-<LivePreview src="components-pagination--large" height="100" />
+<LivePreview src="forms-inputrange--validation" height="510" />
 
 ## Props
 
