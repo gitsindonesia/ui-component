@@ -58,6 +58,10 @@ export default defineConfig({
             link: '/components/icon',
           },
           {
+            text: 'Input Range',
+            link: '/components/input-range',
+          },
+          {
             text: 'List',
             link: '/components/list',
           },
