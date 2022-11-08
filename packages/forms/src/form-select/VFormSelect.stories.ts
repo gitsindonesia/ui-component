@@ -167,6 +167,95 @@ export const Validation: Story<{}> = (args) => ({
 `,
 });
 
+export const ValidationMode: Story<{}> = () => ({
+  components: {VFormSelect, VBtn},
+  setup() {
+    const schema = object({
+      genre_eager: string().required()
+          .test('isCorrect',
+              ({label}) => `${label} is not correct`,
+              (val, ctx) => {
+                return !!(['E', 'A', 'U', 'I', 'O'].find(e => e === val?.charAt(0)?.toUpperCase()))
+              })
+          .label('Genre'),
+      genre_aggressive: string().required()
+          .test('isCorrect',
+              ({label}) => `${label} is not correct`,
+              (val, ctx) => {
+                return !!(['E', 'A', 'U', 'I', 'O'].find(e => e === val?.charAt(0)?.toUpperCase()))
+              })
+          .label('Genre'),
+    });
+
+    const modes = ref(['eager', 'aggressive'])
+    const genres = ref([
+      {
+        text: 'Select Genre that starts with a vowel',
+        value: '',
+        disabled: true,
+      },
+      {
+        text: 'Pop',
+        value: 'pop',
+      },
+      {
+        text: 'Rock',
+        value: 'rock',
+      },
+      {
+        text: 'Hip-Hop',
+        value: 'hiphop',
+      },
+      {
+        text: 'Electronic',
+        value: 'electronic',
+      },
+      {
+        text: 'Opera',
+        value: 'opera',
+      },
+    ]);
+
+    const {handleSubmit, resetForm, values, errors} = useForm({
+      validationSchema: schema,
+    });
+
+    const onSubmit = handleSubmit((values) => {
+      alert(JSON.stringify(values));
+    });
+
+    return {onSubmit, resetForm, values, errors, modes, genres};
+  },
+  template: `
+    <form @submit="onSubmit" class="border-none">
+    <div class="flex flex-wrap gap-4">
+      <fieldset
+          class="border-none flex-1"
+          v-for="mode in modes"
+          :key="mode"
+      >
+        <legend>Mode: {{ mode }}</legend>
+
+        <v-form-select
+            wrapper-class="mb-4"
+            :items="genres"
+            :name="'genre_'+mode"
+            label="Genre"
+            placeholder="Select your genre"
+            :validation-mode="mode"
+        />
+      </fieldset>
+    </div>
+    <div class="mt-4">
+      <v-btn type="submit">Submit</v-btn>
+      <v-btn type="button" text @click="resetForm">Reset</v-btn>
+    </div>
+    <div class="my-5">Debug:</div>
+    <pre>{{ {errors, values} }}</pre>
+    </form>
+  `,
+});
+
 export const IntialValues: Story<{}> = (args) => ({
   components: {VBtn, VFormSelect},
   setup() {
