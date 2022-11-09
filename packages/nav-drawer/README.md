@@ -1,24 +1,19 @@
-# GITS Navigation Drawer Component
+# NavDrawer
 
-> Reusable Navigation Drawer Component
+Navigation Drawer Component.
 
 ## Installation
 
-npm
+Install with your own prefered package manager:
 
 ```
+# with NPM
 npm i @gits-id/nav-drawer
-```
 
-yarn
-
-```
+# Or with Yarn
 yarn add @gits-id/nav-drawer
-```
 
-pnpm
-
-```
+# Or with PNPM
 pnpm i @gits-id/nav-drawer
 ```
 
@@ -26,11 +21,17 @@ pnpm i @gits-id/nav-drawer
 
 ```vue
 <script setup lang="ts">
+import {ref} from 'vue';
 import VNavDrawer from '@gits-id/nav-drawer';
+import '@gits-id/nav-drawer/dist/style.css';
+
+const isOpen = ref(true);
 </script>
 
 <template>
-  <VNavDrawer />
+  <VNavDrawer v-model="isOpen">
+    <p>Hello World</p>
+  </VNavDrawer>
 </template>
 ```
 

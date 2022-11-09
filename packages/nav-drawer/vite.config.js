@@ -24,6 +24,8 @@ export default defineConfig({
         '@gits-id/logo',
         '@gits-id/utils',
         '@gits-id/navbar',
+        '@gits-id/button',
+        '@gits-id/icon',
       ],
       output: {
         // Provide global variables to use in the UMD build
