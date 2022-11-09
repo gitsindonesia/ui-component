@@ -5,8 +5,12 @@ name: Run tests
 
 on:
   push:
+    paths:
+      - '**.{spec,test}.{js,ts}'
     branches: [main]
   pull_request:
+    paths:
+      - '**.{spec,test}.{js,ts}'
     branches: [main]
 
 jobs:

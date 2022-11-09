@@ -1,6 +1,8 @@
 name: Build
 on:
   push:
+    paths:
+      - 'packages/**'
     branches:
       - main # or the name of your main branch
 jobs:
