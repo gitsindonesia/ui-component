@@ -1,4 +1,3 @@
-import VNavDrawer from '../src/VNavDrawer.vue';
-
-export {VNavDrawer};
-export default VNavDrawer;
+export {default as VNavDrawer} from './deprecated/VNavDrawer.vue';
+export {default} from './deprecated/VNavDrawer.vue';
+export {default as NavDrawer} from './NavDrawer.vue';
