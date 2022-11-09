@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/alert",
-  "version": "0.12.0-alpha.1",
+  "version": "0.12.0-alpha.3",
   "description": "GITS Alert Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,8 +15,8 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@gits-id/button": "^0.12.0-alpha.1",
-    "@gits-id/icon": "^0.12.0-alpha.1",
+    "@gits-id/button": "^0.12.0-alpha.3",
+    "@gits-id/icon": "^0.12.0-alpha.3",
     "@gits-id/theme": "^0.12.0-alpha.1",
     "@gits-id/utils": "^0.12.0-alpha.1",
     "vue": "^3.2.33"
