@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {computed, toRefs, watch} from 'vue';
+import {computed, toRefs, PropType, watch} from 'vue';
 import {useInputClasses, useTextSize} from '@gits-id/utils';
 import {useField} from 'vee-validate';
 
@@ -68,17 +68,26 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  validationMode: {
+    type: String as PropType<'aggressive' | 'eager'>,
+    default: 'aggressive',
+  },
 });
 
-const {error, size} = toRefs(props);
+const {error, size, validationMode, name, rules} = toRefs(props);
 
 const emit =
   defineEmits<{
     (e: 'update:modelValue', value: string): void;
   }>();
 
-const {value, errorMessage} = useField(props.name, props.rules, {
+const isEagerValidation = computed(() => {
+  return validationMode.value === 'eager';
+});
+
+const {value, errorMessage, handleChange} = useField(name, rules, {
   initialValue: props.modelValue || props.value,
+  validateOnValueUpdate: !isEagerValidation.value,
 });
 
 watch(value, (val) => emit('update:modelValue', val));
@@ -94,6 +103,25 @@ const classes = computed(() => [
   {shadow: props.shadow},
   props.inputClass,
 ]);
+
+const validationListeners = computed(() => {
+  // If the field is valid or have not been validated yet
+  // lazy
+  if (!errorMessage.value && isEagerValidation.value) {
+    return {
+      blur: handleChange,
+      change: handleChange,
+      // disable `shouldValidate` to avoid validating on input
+      input: (e) => handleChange(e, false),
+    };
+  }
+  // Aggressive
+  return {
+    blur: handleChange,
+    change: handleChange,
+    input: handleChange, // only switched this
+  };
+});
 </script>
 
 <template>
@@ -102,6 +130,7 @@ const classes = computed(() => [
     <textarea
       :id="name"
       v-model="value"
+      v-on="validationListeners"
       class="block w-full"
       :class="classes"
       :readonly="readonly"

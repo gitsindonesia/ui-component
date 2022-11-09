@@ -24,6 +24,10 @@
     "vitest": "^0.12.4",
     "vue-tsc": "^0.40.1"
   },
+  "peerDependencies": {
+    "@heroicons/vue": "^1.0.6",
+    "@iconify/vue": "^3.2.1"
+  },
   "main": "dist/icon.js",
   "unpkg": "dist/icon.iife.js",
   "jsdelivr": "dist/icon.iife.js",

@@ -65,21 +65,42 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  validationMode: {
+    type: String as PropType<'aggressive' | 'eager'>,
+    default: 'aggressive',
+  },
 });
 
 const emit = defineEmits(['update:modelValue']);
 
-const {modelValue, value, itemText, itemValue, error, name, disabled, rules} =
-  toRefs(props);
+const {
+  modelValue,
+  value,
+  itemText,
+  itemValue,
+  error,
+  name,
+  disabled,
+  rules,
+  validationMode,
+} = toRefs(props);
 
-const {value: inputValue, errorMessage} = useField(name, rules, {
-  initialValue: value.value || modelValue.value,
+const isEagerValidation = computed(() => {
+  return validationMode.value === 'eager';
 });
 
 const message = computed(() => {
   return errorMessage.value || props.errorMessages[0];
 });
 
+const {
+  value: inputValue,
+  errorMessage,
+  validate,
+} = useField(name, rules, {
+  initialValue: value.value || modelValue.value,
+  validateOnValueUpdate: !isEagerValidation.value,
+});
 const {class: sizeClass} = useTextSize(props.size);
 const inputClass = computed(() => useInputClasses(error.value));
 
@@ -89,6 +110,10 @@ const classes = computed(() => {
 
 watch(inputValue, (val) => {
   emit('update:modelValue', val);
+
+  if (errorMessage.value && isEagerValidation.value) {
+    validate();
+  }
 });
 
 watch(modelValue, (val) => {
@@ -102,6 +127,12 @@ const getValue = (option: string | Record<string, any>) => {
 const getText = (option: string | Record<string, any>) => {
   return typeof option === 'string' ? option : option[itemText.value];
 };
+
+const handleBlur = () => {
+  if (isEagerValidation.value) {
+    validate();
+  }
+};
 </script>
 
 <template>
@@ -111,6 +142,7 @@ const getText = (option: string | Record<string, any>) => {
     </label>
     <select
       v-model="inputValue"
+      @blur="handleBlur"
       class="w-full block transition duration-300"
       :class="classes"
       :disabled="disabled"
