@@ -70,6 +70,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  validationMode: {
+    type: String,
+    default: 'aggressive',
+  },
   classes: {
     type: Object,
     default: () => ({
@@ -117,7 +121,7 @@ const props = defineProps({
   },
 });
 
-const {type, readonly, disabled, placeholder, prependIcon, name, rules} =
+const {type, readonly, disabled, placeholder, prependIcon, name, rules, validationMode} =
   toRefs(props);
 
 const emit = defineEmits([
@@ -142,8 +146,13 @@ const sizeClass = computed(() => {
   return sizes[props.size];
 });
 
-const {value: inputValue, errorMessage} = useField(name, rules, {
+const isEagerValidation = computed(() => {
+  return validationMode.value === 'eager';
+})
+
+const {value: inputValue, errorMessage, handleChange} = useField(name, rules, {
   initialValue: props.modelValue || props.value,
+  validateOnValueUpdate: !isEagerValidation.value,
 });
 
 const inputVariantClass = computed(() => {
@@ -184,11 +193,32 @@ const paddingClass = computed(() => {
 
   return classes.join(' ');
 });
+
+const validationListeners = computed(() => {
+  // If the field is valid or have not been validated yet
+  // lazy
+  if (!errorMessage.value && isEagerValidation.value) {
+    return {
+      blur: handleChange,
+      change: handleChange,
+      // disable `shouldValidate` to avoid validating on input
+      input: e => handleChange(e, false),
+    };
+  }
+  // Aggressive
+  return {
+    blur: handleChange,
+    change: handleChange,
+    input: handleChange, // only switched this
+  };
+});
 </script>
 
 <template>
   <div :class="wrapperClass">
-    <label v-if="label" :for="id || name" class="mb-1 block">{{ label }}</label>
+    <slot name="label" :v-slot="{for: id || name}" v-if="label">
+      <label v-if="label" :for="id || name" class="mb-1 block">{{ label }}</label>
+    </slot>
     <div v-if="text" v-bind="$attrs">{{ inputValue }}</div>
     <div v-else class="relative w-full flex gap-2 items-center">
       <slot name="prepend.outer">
@@ -219,6 +249,7 @@ const paddingClass = computed(() => {
       <input
         :id="id || name"
         v-model="inputValue"
+        v-on="validationListeners"
         class="
           w-full
           border

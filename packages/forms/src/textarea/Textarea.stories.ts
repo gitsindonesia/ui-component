@@ -4,6 +4,7 @@ import VTextarea from './Textarea.vue';
 import VBtn from '@gits-id/button';
 import {object, string} from 'yup';
 import {useForm} from 'vee-validate';
+import {ref} from "vue";
 
 export default {
   title: 'Forms/Textarea',
@@ -123,3 +124,54 @@ export const Validation: Story<{}> = () => ({
     </form>
 `,
 });
+
+export const ValidationMode: Story<{}> = () => ({
+  components: {VTextarea, VBtn},
+  setup() {
+    const schema = object({
+      bio_eager: string().required().min(5).max(150).label('Bio'),
+      bio_aggressive: string().required().min(5).max(150).label('Bio'),
+    });
+
+    const modes = ref(['eager', 'aggressive'])
+
+    const {handleSubmit, resetForm, values, errors} = useForm({
+      validationSchema: schema,
+    });
+
+    const onSubmit = handleSubmit((values) => {
+      alert(JSON.stringify(values));
+    });
+
+    return {onSubmit, resetForm, values, errors, modes};
+  },
+  template: `
+    <form @submit="onSubmit" class="border-none">
+    <div class="flex flex-wrap gap-4">
+      <fieldset
+          class="border-none flex-1"
+          v-for="mode in modes"
+          :key="mode"
+      >
+        <legend>Mode: {{ mode }}</legend>
+
+        <v-textarea
+            wrapper-class="mb-4"
+            :name="'bio_'+mode"
+            label="Bio"
+            placeholder="Enter your bio"
+            input-class="italic"
+            :validation-mode="mode"
+        />
+      </fieldset>
+    </div>
+    <div class="mt-4">
+      <v-btn type="submit">Submit</v-btn>
+      <v-btn type="button" text @click="resetForm">Reset</v-btn>
+    </div>
+    <div class="my-5">Debug:</div>
+    <pre>{{ {errors, values} }}</pre>
+    </form>
+  `,
+});
+

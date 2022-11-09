@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {computed, toRefs, watch, PropType} from 'vue';
+import {computed, toRefs, watch, PropType, ref, onMounted, onBeforeUnmount} from 'vue';
 import {useField} from 'vee-validate';
 import {useTextSize} from '@gits-id/utils';
 
@@ -80,6 +80,10 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  validationMode: {
+    type: String as PropType<"aggressive"|"eager">,
+    default: 'aggressive',
+  },
 });
 
 const {
@@ -95,6 +99,7 @@ const {
   inline,
   name,
   rules,
+  validationMode,
 } = toRefs(props);
 
 const emit = defineEmits([
@@ -105,13 +110,16 @@ const emit = defineEmits([
   'blur',
 ]);
 
-const {value: selected, errorMessage} = useField(name, rules, {
-  initialValue: modelValue.value || value.value,
-});
+const groupRef = ref();
 
-const onChange = (event: any) => {
-  emit('change', event);
-};
+const isEagerValidation = computed(() => {
+  return validationMode.value === 'eager';
+})
+
+const {value: selected, errorMessage, validate, meta} = useField(name, rules, {
+  initialValue: modelValue.value || value.value,
+  validateOnValueUpdate: !isEagerValidation.value
+});
 
 const classes = computed(() =>
   error.value
@@ -147,6 +155,48 @@ watch(modelValue, (val) => {
 watch(value, (val) => {
   setInnerValue(val);
 });
+
+const onChange = (event: any) => {
+  emit('change', event);
+
+  if(errorMessage.value){
+    validate();
+  }
+};
+
+const handleBlur = (e: Event) => {
+  if(isEagerValidation.value) {
+    requestAnimationFrame(() => {
+      // if has error, turn to aggressive mode
+      if(errorMessage.value){
+        validate();
+      }
+    })
+  }
+}
+
+const clickEvtListener = (e: Event) => {
+  if(isEagerValidation.value) {
+    requestAnimationFrame(() => {
+      // check if user click anywhere within document
+      // that is not the group's child (which is the inputs and label in this case)
+      // thus can be considered a 'blur' event
+      const isChild = (groupRef.value as HTMLElement).contains(e.target as HTMLElement);
+
+      if (!isChild && meta.dirty && !meta.valid) {
+        validate();
+      }
+    })
+  }
+}
+
+onMounted(() => {
+  document.addEventListener('click', clickEvtListener);
+})
+
+onBeforeUnmount(() => {
+  document.removeEventListener('click', clickEvtListener);
+})
 </script>
 
 <template>
@@ -160,6 +210,7 @@ watch(value, (val) => {
       {{ label }}
     </label>
     <div
+      ref="groupRef"
       class="flex gap-y-2 sm:gap-y-0 gap-x-8"
       :class="[inline ? 'flex-row' : 'flex-col']"
     >
@@ -167,6 +218,7 @@ watch(value, (val) => {
         <input
           :id="id || name"
           v-model="selected"
+          @blur="handleBlur"
           :name="name"
           type="radio"
           :value="getValue(item)"

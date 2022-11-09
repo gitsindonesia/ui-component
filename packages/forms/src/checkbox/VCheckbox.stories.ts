@@ -1,4 +1,5 @@
 import MyCheckbox from './VCheckbox.vue';
+import {ref} from 'vue';
 import {themeColors} from '@gits-id/utils/colors';
 import {sizes} from '@gits-id/utils/sizes';
 import {Meta, Story} from '@storybook/vue3';
@@ -127,9 +128,9 @@ export const Validation: Story<{}> = () => ({
   setup() {
     const schema = object({
       agreement: boolean()
-        .oneOf([true], 'You must agree to terms and condition')
-        .required()
-        .label('Agreement'),
+          .oneOf([true], 'You must agree to terms and condition')
+          .required()
+          .label('Agreement'),
     });
 
     const {handleSubmit, resetForm, values, errors} = useForm({
@@ -161,3 +162,62 @@ export const Validation: Story<{}> = () => ({
     </form>
 `,
 });
+
+export const ValidationMode: Story<{}> = () => ({
+  components: {VCheckbox: MyCheckbox, VBtn},
+  setup() {
+    const schema = object({
+      agreement_eager: boolean()
+          .oneOf([true], 'You must agree to terms and condition')
+          .required()
+          .label('Agreement'),
+      agreement_aggressive: boolean()
+          .oneOf([true], 'You must agree to terms and condition')
+          .required()
+          .label('Agreement'),
+    });
+
+    const modes = ref(['eager', 'aggressive'])
+
+    const {handleSubmit, resetForm, values, errors} = useForm({
+      validationSchema: schema,
+      initialValues: {
+        agreement_eager: false,
+        agreement_aggressive: false,
+      },
+    });
+
+    const onSubmit = handleSubmit((values) => {
+      alert(JSON.stringify(values));
+    });
+
+    return {onSubmit, resetForm, values, errors, modes};
+  },
+  template: `
+    <form @submit="onSubmit" class="border-none">
+    <div class="flex flex-wrap gap-4">
+      <fieldset
+          class="border-none flex-1"
+          v-for="mode in modes"
+          :key="mode"
+      >
+        <legend>Mode: {{ mode }}</legend>
+
+        <v-checkbox
+            wrapper-class="mb-4"
+            :name="'agreement_'+mode"
+            label="Agreement"
+            :validation-mode="mode"
+        />
+      </fieldset>
+    </div>
+    <div class="mt-4">
+      <v-btn type="submit">Submit</v-btn>
+      <v-btn type="button" text @click="resetForm">Reset</v-btn>
+    </div>
+    <div class="my-5">Debug:</div>
+    <pre>{{ {errors, values} }}</pre>
+    </form>
+  `,
+});
+
