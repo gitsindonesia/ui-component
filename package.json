@@ -22,12 +22,9 @@
   },
   "dependencies": {
     "@vueuse/core": "^7.7.1",
-    "feather-icons": "^4.28.0",
     "pagino": "^1.4.1",
     "vee-validate": "^4.5.10",
     "vue": "^3.2.31",
-    "vue-feather": "^2.0.0",
-    "vue-remix-icons": "^1.1.1",
     "vue-router": "^4.0.14",
     "vuex": "^4.0.2",
     "yup": "^0.32.11"
@@ -37,7 +34,6 @@
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
     "@headlessui/vue": "1.4.1",
-    "@heroicons/vue": "^1.0.6",
     "@iconify-json/heroicons-solid": "^1.1.1",
     "@storybook/addon-actions": "^6.5.13",
     "@storybook/addon-docs": "^6.5.13",
