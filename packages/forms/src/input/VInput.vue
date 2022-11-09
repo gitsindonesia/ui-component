@@ -216,7 +216,7 @@ const validationListeners = computed(() => {
       blur: handleChange,
       change: handleChange,
       // disable `shouldValidate` to avoid validating on input
-      input: (e) => handleChange(e, false),
+      input: (e: any) => handleChange(e, false),
     };
   }
   // Aggressive
