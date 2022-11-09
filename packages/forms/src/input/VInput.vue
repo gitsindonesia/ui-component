@@ -5,7 +5,7 @@ export default {
 </script>
 
 <script setup lang="ts">
-import {toRefs, computed} from 'vue';
+import {toRefs, computed, watch} from 'vue';
 import {useField} from 'vee-validate';
 import Icon from '@gits-id/icon';
 
@@ -121,7 +121,7 @@ const {type, readonly, disabled, placeholder, prependIcon, name, rules} =
   toRefs(props);
 
 const emit = defineEmits([
-  'input:modelValue',
+  'update:modelValue',
   'blur',
   'change',
   'clickPrepend',
@@ -145,6 +145,8 @@ const sizeClass = computed(() => {
 const {value: inputValue, errorMessage} = useField(name, rules, {
   initialValue: props.modelValue || props.value,
 });
+
+watch(inputValue, (val) => emit('update:modelValue', val));
 
 const inputVariantClass = computed(() => {
   if (props.error || errorMessage.value) {

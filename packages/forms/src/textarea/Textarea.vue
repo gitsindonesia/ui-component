@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {computed, toRefs} from 'vue';
+import {computed, toRefs, watch} from 'vue';
 import {useInputClasses, useTextSize} from '@gits-id/utils';
 import {useField} from 'vee-validate';
 
@@ -72,11 +72,16 @@ const props = defineProps({
 
 const {error, size} = toRefs(props);
 
-defineEmits(['input:modelValue']);
+const emit =
+  defineEmits<{
+    (e: 'update:modelValue', value: string): void;
+  }>();
 
 const {value, errorMessage} = useField(props.name, props.rules, {
   initialValue: props.modelValue || props.value,
 });
+
+watch(value, (val) => emit('update:modelValue', val));
 
 const {class: sizeClass} = useTextSize(size.value);
 const inputClasses = computed(() =>
