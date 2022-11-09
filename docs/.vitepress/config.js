@@ -102,6 +102,10 @@ export default defineConfig({
             link: '/components/select',
           },
           {
+            text: 'Spinner',
+            link: '/components/spinner',
+          },
+          {
             text: 'Tabs',
             link: '/components/tabs',
           },

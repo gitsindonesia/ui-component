@@ -36,7 +36,7 @@ import Spinner from '@gits-id/spinner';
 
 ## Documentation
 
-View `Spinner` documentation [here](https://gits-ui.web.app/?path=/story/components-spinner--default).
+View `Spinner` documentation [here](https://gitsindonesia.github.io/ui-component/components/spinner.html).
 
 ## License
 
