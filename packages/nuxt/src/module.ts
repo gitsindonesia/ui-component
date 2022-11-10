@@ -90,6 +90,16 @@ const components: AddComponentOptions[] = [
     filePath: '@gits-id/dropdown'
   },
   {
+    name: 'VDropdownButton',
+    export: 'VDropdownButton',
+    filePath: '@gits-id/dropdown'
+  },
+  {
+    name: 'VDropdownItem',
+    export: 'VDropdownItem',
+    filePath: '@gits-id/dropdown'
+  },
+  {
     name: 'VEditor',
     filePath: '@gits-id/editor'
   },
