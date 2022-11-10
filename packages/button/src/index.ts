@@ -1,5 +1,4 @@
-import VBtn from './VBtn.vue';
+import {findProp} from '@vue/compiler-core';
 
-export {VBtn};
-export * from './types';
-export default VBtn;
+export {default as VBtn} from './VBtn.vue';
+export {default} from './VBtn.vue';
