@@ -11,8 +11,14 @@ module.exports = {
   features: {
     storyStoreV7: true,
   },
-  // async viteFinal(config, {configType}) {
-  // config.resolve.dedupe = ['@storybook/client-api']; // config.optimizeDeps.include = [...config.optimizeDeps.include, 'hoist-non-react-statics', 'fast-deep-equal', 'lodash']
-  // return config;
-  // },
+  viteFinal: (config) => {
+    return {
+      ...config,
+      build: {
+        ...config.build,
+        sourcemap: false,
+        // target: ['es2020'],
+      },
+    };
+  },
 };
