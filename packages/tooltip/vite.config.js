@@ -18,7 +18,7 @@ export default defineConfig({
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
-      external: ['vue', '@gits-id/icon', '@popperjs/core'],
+      external: ['vue', '@gits-id/icon', 'floating-vue'],
       output: {
         // Provide global variables to use in the UMD build
         // for externalized deps
