@@ -29,4 +29,7 @@ features:
   - icon: 🛠️
     title: Customizable
     details: Easy customization with CSS Properties
+  - icon: ⛰️
+    title: Nuxt 3
+    details: Easy integrate with Nuxt 3
 ---
