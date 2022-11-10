@@ -1,16 +1,18 @@
 import {Meta, Story} from '@storybook/vue3';
-import Button from './VBtn.vue';
+import VBtn from './VBtn.vue';
 import type {Props as VBtnProps} from './VBtn.vue';
 import VIcon from '@gits-id/icon';
 import {defaultColors, defaultSizes} from '@gits-id/theme/defaultTheme';
 
+const colors = ['default', 'dark', ...defaultColors];
+
 export default {
-  component: Button,
-  title: 'Components/Button',
+  component: VBtn,
+  title: 'Components/Btn',
   argTypes: {
     color: {
       control: 'select',
-      options: defaultColors,
+      options: colors,
     },
     size: {
       control: 'select',
@@ -27,14 +29,14 @@ export default {
 } as Meta;
 
 const Template: Story<VBtnProps> = (args) => ({
-  components: {Button},
+  components: {VBtn},
   setup() {
-    return {args, colors: defaultColors};
+    return {args, colors};
   },
   template: `<div class="space-x-2 space-y-2">
-    <Button v-for="color in colors" :key="color" v-bind="args" :color="color">
+    <VBtn v-for="color in colors" :key="color" v-bind="args" :color="color">
       <span>{{ args.label || color }}</span>
-    </Button>
+    </VBtn>
   </div>
   `,
 });
@@ -158,7 +160,7 @@ NoRingEffect.parameters = {
 };
 
 export const Icon: Story<VBtnProps> = (args) => ({
-  components: {Button, VIcon},
+  components: {VBtn, VIcon},
   setup() {
     return {
       args,
@@ -168,7 +170,7 @@ export const Icon: Story<VBtnProps> = (args) => ({
   },
   template: `
 <div class="flex items-end gap-2">
-  <Button
+  <VBtn
     v-for="size in sizes"
     :key="size"
     color="primary"
@@ -177,7 +179,7 @@ export const Icon: Story<VBtnProps> = (args) => ({
     v-bind="args"
   >
     <VIcon name="ri:home-line" class="w-full"/>
-  </Button>
+  </VB>
 </div>`,
 });
 Icon.parameters = {
@@ -229,7 +231,7 @@ TextIcon.parameters = {
 };
 
 export const Sizes: Story<VBtnProps> = (args) => ({
-  components: {Button},
+  components: {Button: VBtn},
   setup() {
     return {args, sizes: defaultSizes, defaultColors};
   },
@@ -253,6 +255,40 @@ Sizes.parameters = {
 <v-btn size="md"> Button </v-btn>
 <v-btn size="lg"> Button </v-btn>
 <v-btn size="xl"> Button </v-btn>
+      `,
+    },
+  },
+};
+
+export const Icons: Story<VBtnProps> = (args) => ({
+  components: {VBtn},
+  setup() {
+    const onClick = () => {
+      alert('Clicked!');
+    };
+    return {args, onClick};
+  },
+  template: `
+<div class="flex gap-2">
+    <VBtn prefix-icon="ri:search-2-line">
+      Search
+    </VBtn>
+    <VBtn suffix-icon="ri:download-2-line">
+      Download
+    </VBtn>
+</div>
+  `,
+});
+Icons.parameters = {
+  docs: {
+    source: {
+      code: `  
+<VBtn prefix-icon="ri:search-2-line">
+  Search
+</VBtn>
+<VBtn suffix-icon="ri:download-2-line">
+  Download
+</VBtn>
       `,
     },
   },

@@ -23,6 +23,7 @@ export default defineConfig({
         '@gits-id/spinner',
         '@gits-id/utils',
         '@gits-id/theme',
+        '@gits-id/icon',
         'vue-router',
       ],
       output: {

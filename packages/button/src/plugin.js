@@ -66,6 +66,7 @@ const btn = plugin(function ({addComponents, theme}) {
       display: 'inline-flex',
       alignItems: 'center',
       justifyContent: 'center',
+      gap: theme('spacing.3'),
       backgroundColor: 'var(--btn-bg-color)',
       color: 'var(--btn-text-color)',
       fontWeight: 'var(--btn-font-weight)',
@@ -78,6 +79,11 @@ const btn = plugin(function ({addComponents, theme}) {
       transition: 'all 0.2s ease-in-out',
       width: 'var(--btn-width)',
       height: 'var(--btn-height)',
+
+      // disabled
+      '&:disabled': {
+        opacity: 0.5,
+      },
 
       // colors
       '&.btn-default:not(.btn--outlined):not(.btn--text)': {
