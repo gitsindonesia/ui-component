@@ -70,7 +70,7 @@
     "./styles": "./dist/style.css",
     "./*": "./src/*"
   },
-  "gitHead": "80bc1037da208367d00723d488dff0ca00e2ebee",
+  "gitHead": "a66f8d89ce157b912642d9b1f1e2a80991e12ce3",
   "devDependencies": {
     "c8": "^7.11.3",
     "unplugin-vue-components": "^0.21.1",

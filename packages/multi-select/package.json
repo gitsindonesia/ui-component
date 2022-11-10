@@ -42,5 +42,5 @@
   "jsdelivr": "dist/multi-select.iife.js",
   "module": "./dist/multi-select.mjs",
   "types": "./dist/types/index.d.ts",
-  "gitHead": "80bc1037da208367d00723d488dff0ca00e2ebee"
+  "gitHead": "a66f8d89ce157b912642d9b1f1e2a80991e12ce3"
 }
