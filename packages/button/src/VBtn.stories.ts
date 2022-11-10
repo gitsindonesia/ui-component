@@ -8,7 +8,7 @@ const colors = ['default', 'dark', ...defaultColors];
 
 export default {
   component: VBtn,
-  title: 'Components/Btn',
+  title: 'Forms/Button',
   argTypes: {
     color: {
       control: 'select',

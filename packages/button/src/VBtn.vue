@@ -98,6 +98,7 @@ const classes = computed(() => {
     :target="newTab ? '_blank' : undefined"
     :disabled="disabled"
     aria-label="Button"
+    :aria-disabled="disabled"
     v-bind="$attrs"
   >
     <slot name="prefix">

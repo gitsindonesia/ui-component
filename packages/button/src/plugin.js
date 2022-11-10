@@ -3,11 +3,11 @@ const colors = ['primary', 'secondary', 'success', 'error', 'warning', 'info'];
 
 const btn = plugin(function ({addComponents, theme}) {
   const colorVariant = (color) => ({
-    [`&.btn-${color}:not(.btn--outlined):not(.btn--text)`]: {
+    [`&.btn-${color}:not(.btn--outlined):not(.btn--text):not(:disabled)`]: {
       '--btn-bg-color': theme(`colors.${color}.500`),
       '--btn-text-color': theme('colors.white'),
       '--btn-border-color': theme(`colors.${color}.500`),
-      '&:hover': {
+      '&:hover:not(:disabled)': {
         '--btn-bg-color': theme(`colors.${color}.600`),
         '--btn-border-color': theme(`colors.${color}.600`),
         '--btn-text-color': theme('colors.white'),
@@ -17,11 +17,11 @@ const btn = plugin(function ({addComponents, theme}) {
 
   const outlinedVariant = (color) => {
     return {
-      [`&.btn-${color}`]: {
+      [`&.btn-${color}:not(:disabled)`]: {
         '--btn-bg-color': theme('colors.white'),
         '--btn-text-color': theme(`colors.${color}.500`),
         '--btn-border-color': theme(`colors.${color}.500`),
-        '&:hover': {
+        '&:hover:not(:disabled)': {
           '--btn-bg-color': theme(`colors.${color}.700`),
           '--btn-border-color': theme(`colors.${color}.700`),
           '--btn-text-color': theme('colors.white'),
@@ -40,6 +40,17 @@ const btn = plugin(function ({addComponents, theme}) {
         '&:active': {
           '--btn-text-color': theme(`colors.${color}.400`),
         },
+      },
+    };
+  };
+
+  const disabledVariant = () => {
+    return {
+      '&:disabled:not(.btn--outlined)': {
+        cursor: 'not-allowed',
+        '--btn-bg-color': theme('colors.gray.200'),
+        '--btn-text-color': theme('colors.gray.500'),
+        '--btn-border-color': theme('colors.gray.200'),
       },
     };
   };
@@ -81,12 +92,10 @@ const btn = plugin(function ({addComponents, theme}) {
       height: 'var(--btn-height)',
 
       // disabled
-      '&:disabled': {
-        opacity: 0.5,
-      },
+      '&:disabled': disabledVariant(),
 
       // colors
-      '&.btn-default:not(.btn--outlined):not(.btn--text)': {
+      '&.btn-default:not(.btn--outlined):not(.btn--text):not(:disabled)': {
         '--btn-bg-color': theme('colors.white'),
         '--btn-text-color': theme('colors.gray.800'),
         '--btn-border-color': theme('colors.gray.800'),
@@ -95,7 +104,7 @@ const btn = plugin(function ({addComponents, theme}) {
           '--btn-border-color': theme('colors.gray.900'),
         },
       },
-      '&.btn-dark:not(.btn--outlined):not(.btn--text)': {
+      '&.btn-dark:not(.btn--outlined):not(.btn--text):not(:disabled)': {
         '--btn-bg-color': theme('colors.gray.800'),
         '--btn-text-color': theme('colors.white'),
         '--btn-border-color': theme('colors.gray.800'),
@@ -115,21 +124,28 @@ const btn = plugin(function ({addComponents, theme}) {
 
     // outlined
     '.btn--outlined': {
-      '&.btn-default': {
+      '&:disabled': {
+        cursor: 'not-allowed',
+        '--btn-bg-color': theme('colors.transparent'),
+        '--btn-text-color': theme('colors.gray.500'),
+        '--btn-border-color': theme('colors.gray.200'),
+      },
+
+      '&.btn-default:not(:disabled)': {
         '--btn-bg-color': theme('colors.transparent'),
         '--btn-text-color': theme('colors.gray.800'),
         '--btn-border-color': theme('colors.gray.800'),
-        '&:hover': {
+        '&:hover:not(:disabled)': {
           '--btn-bg-color': theme('colors.gray.900'),
           '--btn-border-color': theme('colors.gray.900'),
           '--btn-text-color': theme('colors.white'),
         },
       },
-      '&.btn-dark': {
+      '&.btn-dark:not(:disabled)': {
         '--btn-bg-color': theme('colors.transparent'),
         '--btn-text-color': theme('colors.gray.800'),
         '--btn-border-color': theme('colors.gray.800'),
-        '&:hover': {
+        '&:hover:not(:disabled)': {
           '--btn-bg-color': theme('colors.gray.900'),
           '--btn-border-color': theme('colors.gray.900'),
           '--btn-text-color': theme('colors.white'),
