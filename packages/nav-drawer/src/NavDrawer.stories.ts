@@ -3,6 +3,7 @@ import type {Meta, StoryFn} from '@storybook/vue3';
 import {ref} from 'vue';
 import Button from '@gits-id/button';
 import {colors} from './colors';
+import NavDrawerCustom from './stories/NavDrawerCustom.vue';
 
 export default {
   title: 'Components/NavigationDrawer',
@@ -269,5 +270,12 @@ export const CustomTransition: StoryFn<typeof NavDrawer> = (args) => ({
         </Button>
       </main>
     </div>
+  `,
+});
+
+export const CustomColor: StoryFn<typeof NavDrawer> = (args) => ({
+  components: {NavDrawerCustom},
+  template: `
+    <NavDrawerCustom />
   `,
 });

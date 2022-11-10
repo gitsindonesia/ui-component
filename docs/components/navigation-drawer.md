@@ -458,6 +458,28 @@ const onOverlayClicked = () => console.log('Clicked!');
 | [`--nav-drawer-text-color`](#--nav-drawer-text-color) | `theme('colors.gray.800')` |
 | [`--nav-drawer-shadow`](#--nav-drawer-shadow)         | `'none'`                   |
 
+## Customization
+
+```vue
+<script setup lang="ts">
+import {NavDrawer} from '@gits-id/nav-drawer';
+import '@gits-id/nav-drawer/dist/style.css';
+</script>
+
+<template>
+  <NavDrawer color="indigo"> Custom </NavDrawer>
+</template>
+
+<style>
+.nav-drawer-indigo {
+  --nav-drawer-bg-color: theme('colors.indigo.600');
+  --nav-drawer-text-color: theme('colors.white');
+}
+</style>
+```
+
+<LivePreview src="components-navigationdrawer--custom-color" />
+
 ## Manual Installation
 
 You can also install the `NavDrawer` component individually via `@gits-id/nav-drawer` package:

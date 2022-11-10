@@ -10,7 +10,7 @@ import {computed} from 'vue';
 import {Colors} from './colors';
 
 export interface Props {
-  color?: Colors;
+  color?: Colors | string;
   modelValue?: boolean;
   shadow?: 'sm' | 'md' | 'lg' | 'xl' | boolean;
   bordered?: boolean;
