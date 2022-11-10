@@ -2,6 +2,10 @@
 
 NavDrawer / Navigation Drawer / Sidebar.
 
+::: warning
+This component is deprecated and will be replaced by [Navigation Drawer](/components/navigation-drawer) component in the next major version.
+:::
+
 ## Usage
 
 ### Basic Usage

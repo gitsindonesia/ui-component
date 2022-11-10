@@ -86,8 +86,12 @@ export default defineConfig({
             link: '/components/navbar',
           },
           {
-            text: 'Navigation Drawer',
+            text: 'Nav Drawer (Deprecated)',
             link: '/components/nav-drawer',
+          },
+          {
+            text: 'Navigation Drawer',
+            link: '/components/navigation-drawer',
           },
           {
             text: 'Pagination',
