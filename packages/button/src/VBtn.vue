@@ -70,13 +70,28 @@ const computedComponent = computed(() => {
   return 'button';
 });
 
+const ringClass = computed(() => {
+  const classes: Record<string, string> = {
+    default: '',
+    primary: 'focus:ring-primary-500',
+    secondary: 'focus:ring-secondary-500',
+    info: 'focus:ring-info-500',
+    warning: 'focus:ring-warning-500',
+    success: 'focus:ring-success-500',
+    error: 'focus:ring-error-500',
+    dark: 'focus:ring-gray-500',
+  };
+  const klass = classes[props.color];
+  return `focus:ring focus:ring-offset-2 focus:outline-none ${klass}`;
+});
+
 const classes = computed(() => {
   return [
     'btn',
     `btn-${props.color}`,
     `btn--${props.size}`,
     {
-      'btn--ring': !props.noRing,
+      [ringClass.value]: !props.noRing,
       'btn--rounded': props.rounded,
       'btn--outlined': props.outlined,
       'btn--fab': props.fab,
