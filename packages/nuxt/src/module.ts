@@ -53,10 +53,10 @@ const components: AddComponentOptions[] = [
     name: 'VAppBar',
     filePath: '@gits-id/app-bar'
   },
-  {
-    name: 'VAutocomplete',
-    filePath: '@gits-id/autocomplete'
-  },
+  // {
+  //   name: 'VAutocomplete',
+  //   filePath: '@gits-id/autocomplete'
+  // },
   {
     name: 'VAvatar',
     filePath: '@gits-id/avatar'
@@ -91,12 +91,12 @@ const components: AddComponentOptions[] = [
   },
   {
     name: 'VDropdownButton',
-    export: 'VDropdownButton',
+    export: 'DropdownButton',
     filePath: '@gits-id/dropdown'
   },
   {
     name: 'VDropdownItem',
-    export: 'VDropdownItem',
+    export: 'DropdownItem',
     filePath: '@gits-id/dropdown'
   },
   {
