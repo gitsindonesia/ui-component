@@ -147,6 +147,33 @@ export const Toggle: StoryFn<typeof NavDrawer> = (args) => ({
   `,
 });
 
+export const Mini: StoryFn<typeof NavDrawer> = (args) => ({
+  components: {NavDrawer, Button},
+  setup() {
+    const isMini = ref(false);
+
+    return {args, isMini};
+  },
+  template: `
+    <div class="flex">
+      <NavDrawer
+        color="primary"
+        shadow="lg"
+        :mini="isMini"
+      >
+        <p class="font-semibold">
+          Mini
+        </p>
+      </NavDrawer>
+      <main class=" bg-default h-screen p-6 transition-all duration-300 w-full">
+        <Button class="mt-5" @click="isMini = !isMini">
+          Toggle Mini
+        </Button>
+      </main>
+    </div>
+  `,
+});
+
 export const Right: StoryFn<typeof NavDrawer> = (args) => ({
   components: {NavDrawer, Button},
   setup() {
