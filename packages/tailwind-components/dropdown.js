@@ -11,7 +11,7 @@ const dropdown = plugin(function ({addComponents, theme}) {
       textAlign: 'left',
     },
     '.dropdown-panel': {
-      position: theme('position.absolute'),
+      position: 'absolute',
       zIndex: theme('zIndex.10'),
       padding: theme('spacing.1'),
       width: theme('width.56'),
@@ -22,7 +22,6 @@ const dropdown = plugin(function ({addComponents, theme}) {
       '&:focus': {
         outline: 'none',
       },
-      // ring-1 ring-black ring-opacity-5
     },
     '.dropdown-divider': {
       height: theme('borderWidth.1'),
