@@ -173,6 +173,10 @@ const components: AddComponentOptions[] = [
     filePath: '@gits-id/icon'
   },
   {
+    name: 'VLogo',
+    filePath: '@gits-id/logo'
+  },
+  {
     name: 'VList',
     export: 'List',
     filePath: '@gits-id/list'
