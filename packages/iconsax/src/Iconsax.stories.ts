@@ -13,14 +13,14 @@ export default {
 export const Default: Story<{}> = () => ({
   components: {Iconsax},
   template: `
-<Iconsax name="airplane" />
+<Iconsax name="dcube" />
   `,
 });
 Default.parameters = {
   docs: {
     source: {
       code: `
-<Iconsax name="airplane" />      
+<Iconsax name="dcube" />      
       `,
     },
   },

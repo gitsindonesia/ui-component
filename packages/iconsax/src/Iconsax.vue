@@ -5,5 +5,7 @@ defineProps<{
 </script>
 
 <template>
-  <i :class="`isax isax-${name}`"></i>
+  <span :class="`isax isax-${name}`" class="w-6 h-6"></span>
 </template>
+
+<style src="./style.css"></style>
