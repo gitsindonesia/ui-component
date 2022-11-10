@@ -40,7 +40,7 @@ const items = Array.from({length: 5}, (v, k) => ({
 
 ## Documentation
 
-View full documentation [here](https://gits-ui.web.app/?path=/story/components-steppers--default).
+View `Spinner` documentation [here](https://gitsindonesia.github.io/ui-component/components/stepper.html).
 
 ## License
 
