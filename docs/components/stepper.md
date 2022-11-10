@@ -21,6 +21,26 @@ import {VStepper} from '@gits-id/ui';
 The `VStepper` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
+### Linear
+
+- **prop**: `linear`
+- **type**: `boolean`
+- **default**: `default`
+- **required**: `false`
+
+Use `linear` to set the stepper's active state as continuous, meaning to get to next step, previous step must be passed.
+When it is set to `true` previous will also be set as `active`.
+When it is set to `false`, only current step will be set as `active`.
+
+```vue
+<template>
+  <VStepper />
+  <VStepper :linear="true" />
+</template>
+```
+
+<LivePreview src="components-stepper--linear" />
+
 ### Disable Route Active
 
 - **prop**: `disableRouteActive`
@@ -118,6 +138,7 @@ const items = [
 | [disableRouteActive](#disable-route-active) | `voolean` | `false` |
 | [linkable](#linkable)                       | `boolean` | `false` |
 | [vertical](#vertical)                       | `boolean` | `false` |
+| [linear](#linear)                           | `boolean` | `false` |
 
 ## Events
 
