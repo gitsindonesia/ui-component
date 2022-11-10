@@ -9,6 +9,7 @@
   "dependencies": {
     "@gits-id/alert": "^0.12.0-alpha.4",
     "@gits-id/app-bar": "^0.12.0-alpha.4",
+    "@gits-id/autocomplete": "^0.12.0-alpha.4",
     "@gits-id/avatar": "^0.12.0-alpha.4",
     "@gits-id/badge": "^0.12.0-alpha.4",
     "@gits-id/breadcrumbs": "^0.12.0-alpha.4",

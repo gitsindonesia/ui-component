@@ -61,6 +61,7 @@ import { Icon } from '@gits-id/icon';
 import Avatar from '@gits-id/avatar';
 import Shimmer from '@gits-id/shimmer';
 import './style.css';
+import VAutocomplete from '@gits-id/autocomplete'
 
 const plugin = {
   install: (app: App) => {
@@ -113,6 +114,7 @@ const plugin = {
     app.component('VIcon', Icon);
     app.component('VAvatar', Avatar);
     app.component('VShimmer', Shimmer);
+    app.component('VAutocomplete', VAutocomplete);
   },
 };
 
@@ -175,6 +177,7 @@ export {
   Icon as VIcon,
   Avatar as VAvatar,
   Shimmer as VShimmer,
+  VAutocomplete
 };
 
 export * from '@gits-id/utils';
