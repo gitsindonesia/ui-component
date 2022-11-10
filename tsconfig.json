@@ -15,5 +15,11 @@
     "types": ["vite/client"],
     "emitDeclarationOnly": true
   },
-  "include": ["types", "packages", "env.d.ts", "vue.d.ts"]
+  "include": ["types", "packages", "env.d.ts", "vue.d.ts"],
+  "exclude": [
+    "packages/**/*.stories.ts",
+    "packages/**/*.stories.js",
+    "packages/**/*.test.ts",
+    "packages/**/*.spec.ts"
+  ]
 }
