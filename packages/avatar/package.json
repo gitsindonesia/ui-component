@@ -37,8 +37,6 @@
       "import": "./dist/avatar.mjs",
       "require": "./dist/avatar.js"
     },
-    "./plugin": "./src/plugin.js",
-    "./plugin.js": "./src/plugin.js",
     "./package.json": "./package.json",
     "./src/*": "./src/*",
     "./*": "./*"

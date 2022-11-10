@@ -305,7 +305,7 @@ This package comes with custom tailwind plugin for styling. If you are installin
 // tailwind.config.js
 module.exports = {
   content: [],
-  plugins: [require('@gits-id/alert/plugin')],
+  plugins: [require('@gits-id/tailwind-components/alert')],
 };
 ```
 

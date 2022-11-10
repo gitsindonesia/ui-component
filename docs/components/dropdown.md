@@ -166,6 +166,18 @@ None
 
 None
 
+## Tailwind Plugin
+
+This package comes with custom tailwind plugin for styling. If you are installing this package separately from `@gits-id/ui` package, you need to include the plugin in `plugins` section in your Tailwind config file.
+
+```js{4}
+// tailwind.config.js
+module.exports = {
+  content: [],
+  plugins: [require('@gits-id/tailwind-components/dropdown')],
+};
+```
+
 ## Manual Installation
 
 You can also install the `Dropdown` component individually via `@gits-id/dropdown` package:

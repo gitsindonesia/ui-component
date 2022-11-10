@@ -41,8 +41,6 @@
       "import": "./dist/card.mjs",
       "require": "./dist/card.js"
     },
-    "./plugin": "./src/plugin.js",
-    "./plugin.js": "./src/plugin.js",
     "./package.json": "./package.json",
     "./src/*": "./src/*",
     "./*": "./*"

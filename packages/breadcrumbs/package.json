@@ -38,8 +38,6 @@
       "import": "./dist/breadcrumbs.mjs",
       "require": "./dist/breadcrumbs.js"
     },
-    "./plugin": "./src/plugin.js",
-    "./plugin.js": "./src/plugin.js",
     "./package.json": "./package.json",
     "./src/*": "./src/*",
     "./*": "./*"

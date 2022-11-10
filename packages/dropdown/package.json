@@ -39,8 +39,6 @@
       "import": "./dist/dropdown.mjs",
       "require": "./dist/dropdown.js"
     },
-    "./plugin": "./src/plugin.js",
-    "./plugin.js": "./src/plugin.js",
     "./package.json": "./package.json",
     "./src/*": "./src/*",
     "./*": "./*"

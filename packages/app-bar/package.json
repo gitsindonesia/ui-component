@@ -42,8 +42,6 @@
       "import": "./dist/app-bar.mjs",
       "require": "./dist/app-bar.js"
     },
-    "./plugin": "./src/plugin.js",
-    "./plugin.js": "./src/plugin.js",
     "./package.json": "./package.json",
     "./src/*": "./src/*",
     "./*": "./*"
