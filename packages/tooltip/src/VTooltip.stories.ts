@@ -43,18 +43,19 @@ const Template: Story = (args) => ({
   setup() {
     return {args, placements};
   },
-  template: `<div class="grid grid-cols-6 items-center justify-center gap-4 h-screen">
+  template: `
+<div class="grid grid-cols-6 items-center justify-center gap-4 h-screen">
   <div class="w-full flex justify-center" v-for="place in placements" :key="place">
-  <VTooltip v-bind='args' :placement="place">
-  <template #activator="{on}">
-    <v-btn v-on="on">
-      {{ place }}
-    </v-btn>
-  </template>
-  <span>Hello :)</span>
-</VTooltip>
-</div>
+    <VTooltip v-bind='args' :placement="place">
+      <template #activator>
+        <v-btn>
+          {{ place }}
+        </v-btn>
+      </template>
+      <span>Hello :)</span>
+    </VTooltip>
   </div>
+</div>
   `,
 });
 

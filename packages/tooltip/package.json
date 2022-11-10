@@ -18,6 +18,7 @@
     "@gits-id/icon": "^0.11.10",
     "@popperjs/core": "^2.11.2",
     "vee-validate": "^4.5.9",
+    "floating-vue": "^2.0.0-beta.20",
     "vue": "^3.2.31"
   },
   "devDependencies": {
