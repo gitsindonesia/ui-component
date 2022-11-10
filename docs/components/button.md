@@ -16,7 +16,7 @@
 </template>
 ```
 
-<LivePreview src="components-button--default" />
+<LivePreview src="forms-button--default" />
 
 ::: info
 The `VBtn` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
@@ -36,7 +36,7 @@ The `VBtn` component is registered globally when you install with `@gits-id/ui`.
 </template>
 ```
 
-<LivePreview src="components-button--outlined" />
+<LivePreview src="forms-button--outlined" />
 
 ### Text
 
@@ -52,7 +52,7 @@ The `VBtn` component is registered globally when you install with `@gits-id/ui`.
 </template>
 ```
 
-<LivePreview src="components-button--text" />
+<LivePreview src="forms-button--text" />
 
 ### Rounded
 
@@ -68,7 +68,7 @@ The `VBtn` component is registered globally when you install with `@gits-id/ui`.
 </template>
 ```
 
-<LivePreview src="components-button--rounded" />
+<LivePreview src="forms-button--rounded" />
 
 ### Tile
 
@@ -84,7 +84,7 @@ The `VBtn` component is registered globally when you install with `@gits-id/ui`.
 </template>
 ```
 
-<LivePreview src="components-button--tile" />
+<LivePreview src="forms-button--tile" />
 
 ### Sizes
 
@@ -98,7 +98,7 @@ The `VBtn` component is registered globally when you install with `@gits-id/ui`.
 </template>
 ```
 
-<LivePreview src="components-button--sizes" />
+<LivePreview src="forms-button--sizes" />
 
 ### Disabled
 
@@ -114,7 +114,7 @@ The `VBtn` component is registered globally when you install with `@gits-id/ui`.
 </template>
 ```
 
-<LivePreview src="components-button--disabled" height="140" />
+<LivePreview src="forms-button--disabled" height="140" />
 
 ### Outlined Disabled
 
@@ -130,7 +130,7 @@ The `VBtn` component is registered globally when you install with `@gits-id/ui`.
 </template>
 ```
 
-<LivePreview src="components-button--outlined-disabled" height="140" />
+<LivePreview src="forms-button--outlined-disabled" height="140" />
 
 ### Loading
 
@@ -146,7 +146,7 @@ The `VBtn` component is registered globally when you install with `@gits-id/ui`.
 </template>
 ```
 
-<LivePreview src="components-button--loading" height="140" />
+<LivePreview src="forms-button--loading" height="140" />
 
 ### Block
 
@@ -162,7 +162,7 @@ The `VBtn` component is registered globally when you install with `@gits-id/ui`.
 </template>
 ```
 
-<LivePreview src="components-button--block" />
+<LivePreview src="forms-button--block" />
 
 ### Shadow
 
@@ -178,7 +178,7 @@ The `VBtn` component is registered globally when you install with `@gits-id/ui`.
 </template>
 ```
 
-<LivePreview src="components-button--shadow" height="140" />
+<LivePreview src="forms-button--shadow" height="140" />
 
 ### No ring effect
 
@@ -194,7 +194,7 @@ The `VBtn` component is registered globally when you install with `@gits-id/ui`.
 </template>
 ```
 
-<LivePreview src="components-button--no-ring-effect" height="140" />
+<LivePreview src="forms-button--no-ring-effect" height="140" />
 
 ### Icon
 
@@ -210,7 +210,7 @@ import VIcon from '@gits-id/icon';
 </template>
 ```
 
-<LivePreview src="components-button--icon" height="100" />
+<LivePreview src="forms-button--icon" height="100" />
 
 ### Rounded Icon
 
@@ -226,7 +226,7 @@ import VIcon from '@gits-id/icon';
 </template>
 ```
 
-<LivePreview src="components-button--rounded-icon" height="100" />
+<LivePreview src="forms-button--rounded-icon" height="100" />
 
 ### Outlined Icon
 
@@ -242,7 +242,7 @@ import VIcon from '@gits-id/icon';
 </template>
 ```
 
-<LivePreview src="components-button--outlined-icon" height="100" />
+<LivePreview src="forms-button--outlined-icon" height="100" />
 
 ### Text Icon
 
@@ -258,7 +258,7 @@ import VIcon from '@gits-id/icon';
 </template>
 ```
 
-<LivePreview src="components-button--text-icon" height="100" />
+<LivePreview src="forms-button--text-icon" height="100" />
 
 ## Props
 
@@ -332,4 +332,4 @@ import VBtn from '@gits-id/button';
 
 ## Storybook
 
-View Storybook documentation [here](https://gits-ui.web.app/?path=/story/components-button--default).
+View Storybook documentation [here](https://gits-ui.web.app/?path=/story/forms-button--default).
