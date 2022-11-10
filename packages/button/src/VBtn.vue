@@ -111,6 +111,8 @@ const classes = computed(() => {
     :class="classes"
     :rel="newTab ? 'noopener' : undefined"
     :target="newTab ? '_blank' : undefined"
+    :to="to"
+    :href="href"
     :disabled="disabled"
     aria-label="Button"
     :aria-disabled="disabled"
