@@ -223,7 +223,7 @@ const paginatedItems = computed(() => {
   if (serverSide.value) return clonedItems;
 
   // sorting
-  if (sortBy.value && sortBy.value && !serverSide.value) {
+  if (sortBy.value && !serverSide.value) {
     clonedItems.sort((a, b) => {
       const aValue = +a[sortBy.value];
       const bValue = +b[sortBy.value];
