@@ -8,6 +8,20 @@
       <v-btn color="secondary">Secondary</v-btn>
       <v-btn color="success">Success</v-btn>
     </div>
+
+    <div>
+      <form>
+        <v-input label="Name" />
+        <v-input label="Email" />
+        <v-input label="Password" />
+        <v-input label="Confirm Password" />
+        <v-input label="Phone" />
+        <v-textarea label="Address" />
+        <v-checkbox label="I agree to the terms and conditions" />
+        <v-btn v-tooltip="'Submit'">Submit</v-btn>
+      </form>
+
+    </div>
   </div>
 </template>
 

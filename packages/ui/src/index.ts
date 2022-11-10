@@ -1,4 +1,4 @@
-import type {App} from 'vue';
+import type { App } from 'vue';
 import VBtn from '@gits-id/button';
 import VAlert from '@gits-id/alert';
 import VSpinner from '@gits-id/spinner';
@@ -18,8 +18,8 @@ import {
   VFormGroup,
   VTextarea,
 } from '@gits-id/forms';
-import {VDataTable, VDataTablePagination} from '@gits-id/table';
-import {Dropdown, DropdownItem, DropdownButton} from '@gits-id/dropdown';
+import { VDataTable, VDataTablePagination } from '@gits-id/table';
+import { Dropdown, DropdownItem, DropdownButton } from '@gits-id/dropdown';
 import VModal from '@gits-id/modal';
 import VPagination from '@gits-id/pagination';
 import VProgressBar from '@gits-id/progress-bar';
@@ -35,7 +35,7 @@ import VContainer from '@gits-id/container';
 import VLogo from '@gits-id/logo';
 import VToast from '@gits-id/toast';
 import VStats from '@gits-id/stats';
-import {VCollapsible, VCollapse, VCollapsibleGroup} from '@gits-id/collapsible';
+import { VCollapsible, VCollapse, VCollapsibleGroup } from '@gits-id/collapsible';
 import VMultiSelect from '@gits-id/multi-select';
 import {
   Auth as AuthLayout,
@@ -57,9 +57,10 @@ import {
   ListCollapse,
   ListItemHeader,
 } from '@gits-id/list';
-import {Icon} from '@gits-id/icon';
+import { Icon } from '@gits-id/icon';
 import Avatar from '@gits-id/avatar';
 import Shimmer from '@gits-id/shimmer';
+import './style.css';
 
 const plugin = {
   install: (app: App) => {
