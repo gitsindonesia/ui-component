@@ -169,7 +169,7 @@ const components: AddComponentOptions[] = [
     filePath: '@gits-id/forms'
   },
   {
-    name: 'VIconsax',
+    name: 'VIcon',
     filePath: '@gits-id/icon'
   },
   {
