@@ -106,6 +106,10 @@ export default defineConfig({
             link: '/components/spinner',
           },
           {
+            text: 'Stepper',
+            link: '/components/stepper',
+          },
+          {
             text: 'Tabs',
             link: '/components/tabs',
           },
