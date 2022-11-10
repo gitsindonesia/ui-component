@@ -30,6 +30,7 @@ export default defineConfig({
           {text: 'Starter', link: '/guide/starter'},
           {text: 'Migration', link: '/guide/migration'},
           {text: 'Changelog', link: '/guide/changelog'},
+          {text: 'Usage with Nuxt 3', link: '/guide/nuxt'},
         ],
       },
       {
