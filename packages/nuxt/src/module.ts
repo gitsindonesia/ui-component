@@ -53,10 +53,10 @@ const components: AddComponentOptions[] = [
     name: 'VAppBar',
     filePath: '@gits-id/app-bar'
   },
-  // {
-  //   name: 'VAutocomplete',
-  //   filePath: '@gits-id/autocomplete'
-  // },
+  {
+    name: 'VAutocomplete',
+    filePath: '@gits-id/autocomplete'
+  },
   {
     name: 'VAvatar',
     filePath: '@gits-id/avatar'
