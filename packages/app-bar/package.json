@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/app-bar",
-  "version": "0.12.0-alpha.9",
+  "version": "0.12.0-alpha.10",
   "description": "Application Bar / Navigation Bar Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -19,7 +19,7 @@
     "vue": "^3.2.33"
   },
   "devDependencies": {
-    "@gits-id/button": "^0.12.0-alpha.9",
+    "@gits-id/button": "^0.12.0-alpha.10",
     "@gits-id/icon": "^0.12.0-alpha.9",
     "@gits-id/tailwind-config": "^0.12.0-alpha.9",
     "@vue/test-utils": "^2.0.0-rc.17",
