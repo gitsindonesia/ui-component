@@ -174,6 +174,34 @@ export const Mini: StoryFn<typeof NavDrawer> = (args) => ({
   `,
 });
 
+export const ExpandOnHover: StoryFn<typeof NavDrawer> = (args) => ({
+  components: {NavDrawer, Button},
+  setup() {
+    const isExpanded = ref(false);
+
+    return {args, isExpanded};
+  },
+  template: `
+    <div class="flex">
+      <NavDrawer
+        color="primary"
+        shadow="lg"
+        expand-on-hover
+        v-model:expanded="isExpanded"
+      >
+        <p class="font-semibold">
+          Expand on Hover
+        </p>
+      </NavDrawer>
+      <main class=" bg-default h-screen p-6 transition-all duration-300 w-full">
+        <Button class="mt-5" @click="isExpanded = !isExpanded">
+          Toggle Expand
+        </Button>
+      </main>
+    </div>
+  `,
+});
+
 export const Right: StoryFn<typeof NavDrawer> = (args) => ({
   components: {NavDrawer, Button},
   setup() {

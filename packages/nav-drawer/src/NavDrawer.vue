@@ -23,6 +23,8 @@ export interface Props {
   overlayTransition?: string;
   closeOnOverlayClick?: boolean;
   mini?: boolean;
+  expandOnHover?: boolean;
+  expanded?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -37,10 +39,12 @@ const props = withDefaults(defineProps<Props>(), {
 const emit =
   defineEmits<{
     (e: 'update:modelValue', value: string): void;
+    (e: 'update:expanded', value: boolean): void;
     (e: 'clickOverlay'): void;
   }>();
 
 const isOpen = useVModel(props, 'modelValue', emit);
+const isExpanded = useVModel(props, 'expanded', emit);
 
 const classes = computed(() => {
   const shadowClass =
@@ -59,6 +63,8 @@ const classes = computed(() => {
       'nav-drawer--right': props.right,
       'nav-drawer--left': props.left,
       'nav-drawer--mini': props.mini,
+      'nav-drawer--expand-on-hover': props.expandOnHover,
+      'nav-drawer--expanded': isExpanded.value,
     },
   ];
 });
@@ -71,6 +77,14 @@ const onOverlayClick = () => {
   emit('clickOverlay');
 
   if (props.closeOnOverlayClick) isOpen.value = false;
+};
+
+const onMouseOver = () => {
+  if (props.expandOnHover) isExpanded.value = true;
+};
+
+const onMouseOut = () => {
+  if (props.expandOnHover) isExpanded.value = false;
 };
 </script>
 
@@ -86,7 +100,13 @@ const onOverlayClick = () => {
     </transition>
   </teleport>
   <transition :name="transitionName">
-    <aside v-if="isOpen" :class="classes" v-bind="$attrs">
+    <aside
+      v-if="isOpen"
+      :class="classes"
+      v-bind="$attrs"
+      @mouseover="onMouseOver"
+      @mouseout="onMouseOut"
+    >
       <slot />
     </aside>
   </transition>
@@ -224,5 +244,13 @@ const onOverlayClick = () => {
 .nav-drawer-overlay-transition-enter-from,
 .nav-drawer-overlay-transition-leave-to {
   opacity: 0;
+}
+
+/* expand on hover */
+.nav-drawer--expand-on-hover:not(.nav-drawer--expanded) {
+  --nav-drawer-width: 62px;
+}
+.nav-drawer--expand-on-hover.nav-drawer--expanded {
+  --nav-drawer-width: 248px;
 }
 </style>
