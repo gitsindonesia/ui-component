@@ -199,20 +199,15 @@ The `VBtn` component is registered globally when you install with `@gits-id/ui`.
 ### Icon
 
 ```vue
-<script setup lang="ts">
-import VIcon from '@gits-id/icon';
-</script>
-
 <template>
-  <VBtn icon>
-    <VIcon name="ri:home-line" class="w-full" />
-  </VBtn>
+  <VBtn prefix-icon="ri:search-2-line"> Search </VBtn>
+  <VBtn suffix-icon="ri:download-2-line"> Download </VBtn>
 </template>
 ```
 
-<LivePreview src="forms-button--icon" height="100" />
+<LivePreview src="forms-button--icons" height="100" />
 
-### Rounded Icon
+### FAB
 
 ```vue
 <script setup lang="ts">
@@ -220,7 +215,7 @@ import VIcon from '@gits-id/icon';
 </script>
 
 <template>
-  <VBtn icon rounded>
+  <VBtn icon fab>
     <VIcon name="ri:home-line" class="w-full" />
   </VBtn>
 </template>
@@ -317,7 +312,7 @@ module.exports = {
 You can also install the `Button` component individually via `@gits-id/button` package:
 
 ```bash
-yarn install @gits-id/button
+npm install @gits-id/button
 ````
 
 ```vue

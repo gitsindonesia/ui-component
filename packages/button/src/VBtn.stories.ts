@@ -159,77 +159,6 @@ NoRingEffect.parameters = {
   },
 };
 
-export const Icon: Story<VBtnProps> = (args) => ({
-  components: {VBtn, VIcon},
-  setup() {
-    return {
-      args,
-      sizes: defaultSizes,
-      defaultColors,
-    };
-  },
-  template: `
-<div class="flex items-end gap-2">
-  <VBtn
-    v-for="size in sizes"
-    :key="size"
-    color="primary"
-    :size="size"
-    icon
-    v-bind="args"
-  >
-    <VIcon name="ri:home-line" class="w-full"/>
-  </VB>
-</div>`,
-});
-Icon.parameters = {
-  docs: {
-    source: {
-      code: `
-<v-btn color="primary" icon>
-  <VIcon name="ri:home-line" class="w-full"/>
-</v-btn>
-      `,
-    },
-  },
-};
-
-export const RoundedIcon = Icon.bind({});
-RoundedIcon.args = {rounded: true};
-RoundedIcon.parameters = {
-  docs: {
-    source: {
-      code: `
-<v-btn rounded icon> Button </v-btn>
-      `,
-    },
-  },
-};
-
-export const OutlinedIcon = Icon.bind({});
-OutlinedIcon.args = {outlined: true};
-OutlinedIcon.parameters = {
-  docs: {
-    source: {
-      code: `
-<v-btn outlined icon> Button </v-btn>
-      `,
-    },
-  },
-};
-
-export const TextIcon = Icon.bind({});
-TextIcon.args = {text: true};
-TextIcon.parameters = {
-  docs: {
-    source: {
-      code: `
-<v-btn text icon> Button </v-btn>
-      `,
-    },
-  },
-};
-
 export const Sizes: Story<VBtnProps> = (args) => ({
   components: {Button: VBtn},
   setup() {
@@ -262,16 +191,14 @@ Sizes.parameters = {
 
 export const Icons: Story<VBtnProps> = (args) => ({
   components: {VBtn},
-  setup() {
-    const onClick = () => {
-      alert('Clicked!');
-    };
-    return {args, onClick};
-  },
   template: `
 <div class="flex gap-2">
     <VBtn prefix-icon="ri:search-2-line">
+    </VBtn>
+    <VBtn prefix-icon="ri:search-2-line">
       Search
+    </VBtn>
+    <VBtn suffix-icon="ri:download-2-line">
     </VBtn>
     <VBtn suffix-icon="ri:download-2-line">
       Download
@@ -283,12 +210,30 @@ Icons.parameters = {
   docs: {
     source: {
       code: `  
+<VBtn prefix-icon="ri:search-2-line" />
 <VBtn prefix-icon="ri:search-2-line">
   Search
 </VBtn>
+<VBtn suffix-icon="ri:download-2-line" />
 <VBtn suffix-icon="ri:download-2-line">
   Download
 </VBtn>
+      `,
+    },
+  },
+};
+
+export const Fab: Story<VBtnProps> = (args) => ({
+  components: {VBtn},
+  template: `
+    <VBtn color="primary" prefix-icon="ri:search-2-line" fab />
+  `,
+});
+Icons.parameters = {
+  docs: {
+    source: {
+      code: `  
+<VBtn color="primary" prefix-icon="ri:search-2-line" fab />
       `,
     },
   },
