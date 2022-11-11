@@ -98,8 +98,8 @@ export default defineConfig({
             link: '/components/progress-bar',
           },
           {
-            text: 'Quill Editor',
-            link: '/components/quill-editor',
+            text: 'Editor',
+            link: '/components/editor',
           },
           {
             text: 'Select',
