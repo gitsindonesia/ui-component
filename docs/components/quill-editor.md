@@ -36,7 +36,7 @@ const value = ref('');
 </template>
 ```
 
-<LivePreview src="forms-quilleditor--label" />
+<LivePreview src="forms-quilleditor--label" height="410" />
 
 ### Validation
 
@@ -75,7 +75,7 @@ const onSubmit = handleSubmit((values) => {
 </template>
 ```
 
-<LivePreview src="forms-quilleditor--validation" />
+<LivePreview src="forms-quilleditor--validation" height="550" />
 
 ### Initial Values
 
@@ -117,7 +117,7 @@ const onSubmit = handleSubmit((values) => {
 </template>
 ```
 
-<LivePreview src="forms-quilleditor--initial-values" />
+<LivePreview src="forms-quilleditor--initial-values" height="540" />
 
 ### Initial Errors
 
@@ -159,7 +159,7 @@ const onSubmit = handleSubmit((values) => {
 </template>
 ```
 
-<LivePreview src="forms-quilleditor--initial-errors" />
+<LivePreview src="forms-quilleditor--initial-errors" height="580" />
 
 ### Toolbar
 
@@ -212,7 +212,7 @@ const onSubmit = handleSubmit((values) => {
 </template>
 ```
 
-<LivePreview src="forms-quilleditor--toolbar" />
+<LivePreview src="forms-quilleditor--toolbar"  />
 
 ## Props
 
