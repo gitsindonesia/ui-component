@@ -450,8 +450,8 @@ const clear = () => {
 
 /* icon */
 .v-input-icon {
-  width: var(--v-input-icon-width);
-  height: var(--v-input-icon-height);
+  width: var(--v-input-icon-width) !important;
+  height: var(--v-input-icon-height) !important;
   color: var(--v-input-icon-color);
 }
 
