@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0-alpha.14](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.13...v0.12.0-alpha.14) (2022-11-14)
+
+### Bug Fixes
+
+- **VInput:** decrease padding on small input ([3df31a3](https://github.com/gitsindonesia/ui-component/commit/3df31a336135d4513e8725e43528373a2bccdea2))
+
+### Features
+
+- **VInput:** clearable input ([b4c59f9](https://github.com/gitsindonesia/ui-component/commit/b4c59f90f24c52c914a0a0f502ff3fb50444cde0))
+
 # [0.12.0-alpha.13](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.12...v0.12.0-alpha.13) (2022-11-14)
 
 ### Features
