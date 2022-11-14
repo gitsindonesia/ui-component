@@ -2,7 +2,7 @@ import {Args, Story} from '@storybook/vue3';
 import VStepper from './Stepper.vue';
 import vueRouter from 'storybook-vue3-router';
 import {defineComponent, ref, computed, toRefs, PropType} from 'vue';
-import {useRoute, useRouter} from 'vue-router';
+import {useRoute} from 'vue-router';
 
 export default {
   title: 'Components/Stepper',
@@ -18,6 +18,7 @@ export default {
     disableRouteActive: false,
     linkable: false,
     vertical: false,
+    linear: false,
   },
 };
 
@@ -150,6 +151,66 @@ Default.decorators = [
         })(story, ctx)
     },
 ];
+
+
+export const Linear = (args:Args) => ({
+  components: {
+    VStepper,
+  },
+  setup() {
+    const val = ref(args?.modelValue || 0);
+
+    const linear = [true, false]
+
+    const nuArgs = {
+      args: linear.map((e) => {
+        return {
+          ...args,
+          modelValue: val,
+          disableRouteActive: true,
+          linear : e,
+        }
+      }),
+      linear
+    }
+
+    const onPrevClick = () => {
+        val.value -= 1;
+    }
+    const onNextClick = () => {
+      val.value += 1;
+    }
+
+    return {args:nuArgs, linear, val, onPrevClick, onNextClick};
+  },
+  template: `
+    <div class="flex flex-col gap-4">
+      <div v-for="(val, idx) in linear">
+        <p class="mb-2">{{val ? 'Linear' : 'Non-linear'}}</p>
+        <v-stepper v-bind="args.args[idx]"/>
+      </div>
+
+      <div class="flex gap-4 my-4 items-center justify-center">
+        <button class="border-[1px] border-gray-400 p-2" @click="onPrevClick">
+          Prev
+        </button>
+        <button class="border-[1px] border-gray-400 p-2" @click="onNextClick">
+          Next
+        </button>
+      </div>
+    </div>
+  `,
+});
+Linear.parameters = {
+  docs: {
+    source: {
+      code: `
+<v-steppers />
+<v-steppers :linear="true" />
+      `,
+    },
+  },
+};
 
 
 export const DisableRouteActive = Template.bind({});

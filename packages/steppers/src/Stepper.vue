@@ -10,6 +10,7 @@ type Props = {
   disableRouteActive?: boolean;
   linkable?: boolean;
   vertical?: boolean;
+  linear?:boolean
 };
 
 const props = withDefaults(defineProps<Props>(), {
@@ -18,6 +19,7 @@ const props = withDefaults(defineProps<Props>(), {
   disableRouteActive: false,
   linkable: false,
   vertical: false,
+  linear: false,
 });
 
 const emit = defineEmits(['update:modelValue']);
@@ -67,7 +69,7 @@ if (!disableRouteActive.value) {
       <StepperItem
         :item="item"
         :index="idx"
-        :active="activeIndex === idx"
+        :active="linear ? activeIndex >= idx : activeIndex === idx"
         :as="tag"
         :vertical="vertical"
       />
