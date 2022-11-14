@@ -1,7 +1,7 @@
 import VInput from './VInput.vue';
 import {Meta, Story} from '@storybook/vue3';
 import type {VInputProps} from './types';
-import {Icon} from '@gits-id/icon';
+import Icon from '@gits-id/icon';
 import {themeColors} from '@gits-id/utils';
 import VBtn from '@gits-id/button';
 import {useForm} from 'vee-validate';
@@ -242,54 +242,55 @@ export const Slots: Story<VInputProps> = (args) => ({
     return {args};
   },
   template: `
-<h3 class="font-semibold text-xl mb-3 mt-5">Icon</h3>
+<h3 class="font-semibold text-xl mb-3 mt-5">Outer</h3>
 <div class="space-y-1 border-none">
   <v-input placeholder="Search...">
     <template #prepend.outer>
-      <Icon name="ri:search" class="fill-current mr-1 w-5 h-5" />
+      <Icon name="ri:search-line" class="fill-current ml-3 w-5 h-5" />
     </template>
   </v-input>
 
   <v-input placeholder="Search...">
     <template #append.outer>
-      <Icon name="ri:search" class="fill-current mr-3 w-5 h-5" />
+      <Icon name="ri:search-line" class="fill-current mr-3 w-5 h-5" />
     </template>
   </v-input>
 
+<h3 class="font-semibold text-xl mb-3 mt-5">Inner</h3>
   <v-input placeholder="Search..." class="pl-10">
     <template #prepend>
-      <Icon name="ri:search" class="fill-current ml-3 w-5 h-5" />
+      <Icon name="ri:search-line" class="fill-current w-5 h-5" />
     </template>
   </v-input>
 
   <v-input placeholder="Search...">
     <template #append>
-      <Icon name="ri:search" class="fill-current mr-3 w-5 h-5" />
+      <Icon name="ri:search-line" class="fill-current w-5 h-5" />
     </template>
   </v-input>
 
   <h3 class="font-semibold text-xl mb-3 mt-5">Text</h3>
   <v-input placeholder="Search...">
     <template #prepend.outer>
-      Text
+      <span class="ml-3">Text</span>
     </template>
   </v-input>
 
   <v-input placeholder="Search...">
     <template #append.outer>
-      Text
+      <span class="mr-3">Text</span>
     </template>
   </v-input>
 
-  <v-input placeholder="username" class="pl-40">
+  <v-input placeholder="username">
     <template #prepend>
-      <span class="ml-3 text-gray-700 font-medium">https://gits.id/user/</span>
+      <span class="text-gray-700 text-sm font-medium">https://gits.id/user/</span>
     </template>
   </v-input>
 
   <v-input placeholder="username">
     <template #append>
-      <span class="mr-3">@gits.id</span>
+      <span>@gits.id</span>
     </template>
   </v-input>
 
@@ -306,15 +307,15 @@ export const Slots: Story<VInputProps> = (args) => ({
     </template>
   </v-input>
 
-  <v-input placeholder="No File Selected" class="pl-20">
+  <v-input placeholder="No File Selected" prepend-class="!pl-0">
     <template #prepend>
-      <v-btn text>Browse</v-btn>
+      <v-btn text no-ring>Browse</v-btn>
     </template>
   </v-input>
 
-  <v-input placeholder="No File Selected">
+  <v-input placeholder="No File Selected" append-class="!pr-0">
     <template #append>
-      <v-btn text>Browse</v-btn>
+      <v-btn text no-ring>Browse</v-btn>
     </template>
   </v-input>
 </div>
@@ -412,7 +413,16 @@ export const Sizes: Story<VInputProps> = (args) => ({
   },
   template: `
 <div class="space-y-2">
-  <VInput v-for="size in sizes" :key="size" v-bind='args' :size="size" label="Label" :placeholder="size"/>
+  <VInput
+    v-for="size in sizes"
+    :key="size"
+    v-bind='args'
+    :size="size" 
+    label="Label" 
+    :placeholder="size"
+    prepend-icon="ri:search-line"
+    append-icon="ri:add-line"
+  />
 </div>
 `,
 });
