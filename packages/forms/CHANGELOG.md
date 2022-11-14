@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0-alpha.11](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.10...v0.12.0-alpha.11) (2022-11-14)
+
+### Features
+
+- **Forms.VInput:** dynamic input icon size via CSS Vars ([9a53666](https://github.com/gitsindonesia/ui-component/commit/9a5366614cf076307ad97f387a8ce72009c631dd))
+- **Forms.VInput:** improved v-input styles with CSS Variables ([cbaadaa](https://github.com/gitsindonesia/ui-component/commit/cbaadaa410c682ed87002b17b3f9de153f27d0da))
+
 ## [0.11.10](https://github.com/gitsindonesia/ui-component/compare/v0.11.9...v0.11.10) (2022-09-23)
 
 ### Bug Fixes

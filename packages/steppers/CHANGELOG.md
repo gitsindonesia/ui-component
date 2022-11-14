@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0-alpha.11](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.10...v0.12.0-alpha.11) (2022-11-14)
+
+### Features
+
+- **Stepper:** add linear prop to enable continuous active state ([#33](https://github.com/gitsindonesia/ui-component/issues/33)) ([aa051c2](https://github.com/gitsindonesia/ui-component/commit/aa051c2ce4bcd6d14ca88fa7be7d1fb1ff7881fe))
+
 ## [0.11.10](https://github.com/gitsindonesia/ui-component/compare/v0.11.9...v0.11.10) (2022-09-23)
 
 **Note:** Version bump only for package @gits-id/stepper

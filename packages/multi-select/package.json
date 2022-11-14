@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/multi-select",
-  "version": "0.12.0-alpha.10",
+  "version": "0.12.0-alpha.11",
   "description": "GITS Input Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -16,13 +16,13 @@
   "license": "ISC",
   "dependencies": {
     "@gits-id/badge": "^0.12.0-alpha.9",
-    "@gits-id/tooltip": "^0.12.0-alpha.10",
+    "@gits-id/tooltip": "^0.12.0-alpha.11",
     "@vueuse/core": "^7.7.1",
     "vee-validate": "^4.6.1",
     "vue": "^3.2.31"
   },
   "devDependencies": {
-    "@gits-id/button": "^0.12.0-alpha.10",
+    "@gits-id/button": "^0.12.0-alpha.11",
     "@gits-id/tailwind-config": "^0.12.0-alpha.9",
     "@gits-id/utils": "^0.12.0-alpha.1",
     "@headlessui/vue": "^1.6.0",

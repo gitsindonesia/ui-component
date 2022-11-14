@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/services",
-  "version": "0.12.0-alpha.10",
+  "version": "0.12.0-alpha.11",
   "description": "GITS Services",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly",
@@ -15,7 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gits-id/button": "^0.12.0-alpha.10",
+    "@gits-id/button": "^0.12.0-alpha.11",
     "axios": "^0.26.0",
     "vue": "^3.2.33"
   },

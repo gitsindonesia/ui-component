@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0-alpha.11](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.10...v0.12.0-alpha.11) (2022-11-14)
+
+### Bug Fixes
+
+- **VBtn:** set button type ([f81c828](https://github.com/gitsindonesia/ui-component/commit/f81c828c16fc305d87955e1441eb8e8dab62e6d2))
+
+### Features
+
+- **Forms.VInput:** dynamic input icon size via CSS Vars ([9a53666](https://github.com/gitsindonesia/ui-component/commit/9a5366614cf076307ad97f387a8ce72009c631dd))
+- **Forms.VInput:** improved v-input styles with CSS Variables ([cbaadaa](https://github.com/gitsindonesia/ui-component/commit/cbaadaa410c682ed87002b17b3f9de153f27d0da))
+- **Stepper:** add linear prop to enable continuous active state ([#33](https://github.com/gitsindonesia/ui-component/issues/33)) ([aa051c2](https://github.com/gitsindonesia/ui-component/commit/aa051c2ce4bcd6d14ca88fa7be7d1fb1ff7881fe))
+
 ## [0.11.10](https://github.com/gitsindonesia/ui-component/compare/v0.11.9...v0.11.10) (2022-09-23)
 
 ### Bug Fixes

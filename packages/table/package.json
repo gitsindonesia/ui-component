@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/table",
-  "version": "0.12.0-alpha.10",
+  "version": "0.12.0-alpha.11",
   "description": "GITS Table Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,10 +15,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gits-id/forms": "^0.12.0-alpha.10",
+    "@gits-id/forms": "^0.12.0-alpha.11",
     "@gits-id/icon": "^0.12.0-alpha.9",
     "@gits-id/pagination": "^0.12.0-alpha.9",
-    "@gits-id/select": "^0.12.0-alpha.10",
+    "@gits-id/select": "^0.12.0-alpha.11",
     "@gits-id/spinner": "^0.12.0-alpha.9",
     "@gits-id/utils": "^0.12.0-alpha.1",
     "vue": "^3.2.33"
