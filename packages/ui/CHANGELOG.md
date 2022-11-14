@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0-alpha.15](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.14...v0.12.0-alpha.15) (2022-11-14)
+
+### Bug Fixes
+
+- **ui:** fix style order ([3630ff4](https://github.com/gitsindonesia/ui-component/commit/3630ff46e0d0bfa82f6e89a3af3f1ae64f2a1686))
+
 # [0.12.0-alpha.14](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.13...v0.12.0-alpha.14) (2022-11-14)
 
 **Note:** Version bump only for package @gits-id/ui
