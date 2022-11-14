@@ -605,8 +605,8 @@ None
 | Variable                                                          | Default Value                  |
 | ----------------------------------------------------------------- | ------------------------------ |
 | [`--v-input-height`](#--v-input-height)                           | `2.5rem`                       |
-| [`--v-input-border-color`](#--v-input-border-color)               | `#D4D5D6`                      |
-| [`--v-input-placeholder-color`](#--v-input-placeholder-color)     | `#BDBDBD`                      |
+| [`--v-input-border-color`](#--v-input-border-color)               | `theme('colors.gray.300'`      |
+| [`--v-input-placeholder-color`](#--v-input-placeholder-color)     | `theme('colors.gray.500')`     |
 | [`--v-input-border-radius`](#--v-input-border-radius)             | `theme('borderRadius.md')`     |
 | [`--v-input-padding-x`](#--v-input-padding-x)                     | `theme('padding.3')`           |
 | [`--v-input-padding-y`](#--v-input-padding-y)                     | `theme('padding.2')`           |
@@ -621,6 +621,7 @@ None
 | [`--v-input-text-font-weight`](#--v-input-text-font-weight)       | `theme('fontWeight.normal')`   |
 | [`--v-input-icon-width`](#--v-input-icon-width)                   | `theme('width.5')`             |
 | [`--v-input-icon-height`](#--v-input-icon-height)                 | `theme('height.5')`            |
+| [`--v-input-icon-color`](#--v-input-icon-color)                   | `theme('colors.gray.500')`     |
 
 ## Manual Installation
 

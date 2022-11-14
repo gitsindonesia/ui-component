@@ -263,8 +263,8 @@ const validationListeners = computed(() => {
 :root {
   /* input control */
   --v-input-height: 2.5rem;
-  --v-input-border-color: #D4D5D6;
-  --v-input-placeholder-color: #BDBDBD;
+  --v-input-border-color: theme('colors.gray.300');
+  --v-input-placeholder-color: theme('colors.gray.500');
   --v-input-border-radius: theme('borderRadius.md');
   --v-input-padding-x: theme('padding.3');
   --v-input-padding-y: theme('padding.2');
@@ -285,6 +285,7 @@ const validationListeners = computed(() => {
   /* icon */
   --v-input-icon-width: theme('width.5');
   --v-input-icon-height: theme('height.5');
+  --v-input-icon-color: theme('colors.gray.500');
 }
 .v-input-label {
   font-size: var(--v-input-label-font-size);
@@ -396,6 +397,7 @@ const validationListeners = computed(() => {
 .v-input-icon {
   width: var(--v-input-icon-width);
   height: var(--v-input-icon-height);
+  color: var(--v-input-icon-color);
 }
 
 /* sizes */
