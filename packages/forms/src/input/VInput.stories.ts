@@ -59,7 +59,7 @@ const Template: Story<VInputProps> = (args) => ({
 `,
 });
 
-export const Variants: Story<VInputProps> = (args) => ({
+export const Colors: Story<VInputProps> = (args) => ({
   components: {VInput},
   setup() {
     return {args, themeColors};
