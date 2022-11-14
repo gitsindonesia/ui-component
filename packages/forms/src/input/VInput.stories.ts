@@ -421,7 +421,7 @@ export const Sizes: Story<VInputProps> = (args) => ({
     :size="size" 
     label="Label" 
     :placeholder="size"
-    prepend-icon="ri:search-line"
+    prepend-icon="ri:user-line"
     append-icon="ri:add-line"
   />
 </div>

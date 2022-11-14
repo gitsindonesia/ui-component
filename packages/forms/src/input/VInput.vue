@@ -424,6 +424,9 @@ const validationListeners = computed(() => {
   --v-input-icon-width: theme('width.4');
   --v-input-icon-height: theme('height.4');
 }
+.v-input.v-input--sm .v-input-prepend:not(:empty) {
+  @apply px-2;
+}
 
 .v-input.v-input--lg {
   --v-input-height: 50px;
