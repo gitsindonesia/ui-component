@@ -550,8 +550,33 @@ const onSubmit = handleSubmit((values) => {
 
 ## Props
 
-| Name | Type | Default |
-| ---- | ---- | ------- |
+| Name                                    | Type                                       | Default        |
+| --------------------------------------- | ------------------------------------------ | -------------- |
+| [`modelValue`](#modelValue)             | `[String, Number]`                         | `''`           |
+| [`type`](#type)                         | `String`                                   | `'text'`       |
+| [`name`](#name)                         | `String`                                   | `''`           |
+| [`error`](#error)                       | `Boolean`                                  | `false`        |
+| [`errorMessages`](#errorMessages)       | `Array`                                    | `[]`           |
+| [`readonly`](#readonly)                 | `Boolean`                                  | `false`        |
+| [`disabled`](#disabled)                 | `Boolean`                                  | `false`        |
+| [`size`](#size)                         | `String as PropType<'sm' \| 'md' \| 'lg'>` | `'md'`         |
+| [`placeholder`](#placeholder)           | `String`                                   | `''`           |
+| [`prependIcon`](#prependIcon)           | `String`                                   | `''`           |
+| [`appendIcon`](#appendIcon)             | `String`                                   | `''`           |
+| [`color`](#color)                       | `String`                                   | `'default'`    |
+| [`text`](#text)                         | Boolean,                                   | `false`        |
+| [`shadow`](#shadow)                     | Boolean,                                   | `false`        |
+| [`validationMode`](#validationMode)     | `String`                                   | `'aggressive'` |
+| [`classes`](#classes)                   | Object,                                    | `{}`           |
+| [`label`](#label)                       | `String`                                   | `''`           |
+| [`rules`](#rules)                       | [Object, String],                          | `null`         |
+| [`id`](#id)                             | `String`                                   | `''`           |
+| [`inputClass`](#inputClass)             | `String`                                   | `''`           |
+| [`wrapperClass`](#wrapperClass)         | `String`                                   | `''`           |
+| [`prependClass`](#prependClass)         | `String`                                   | `''`           |
+| [`prependIconClass`](#prependIconClass) | `String`                                   | `''`           |
+| [`appendClass`](#appendClass)           | `String`                                   | `''`           |
+| [`appendIconClass`](#appendIconClass)   | `String`                                   | `''`           |
 
 ## Methods
 
@@ -559,22 +584,50 @@ None
 
 ## Events
 
-None
+- [`update:modelValue`](#update:modelValue)
+- [`blur`](#blur)
+- [`change`](#change)
+- [`clickPrepend`](#clickPrepend)
+- [`clickPrependIcon`](#clickPrependIcon)
+- [`clickAppend`](#clickAppend)
+- [`clickAppendIcon`](#clickAppendIcon)
 
 ## Slots
 
-None
+- [`label`](#label)
+- [`prepend.outer`](#prepend.outer)
+- [`prepend`](#prepend)
+- [`append.outer`](#append.outer)
+- [`append`](#append)
 
 ## CSS Variables
 
-None
+| Variable                                                          | Default Value                  |
+| ----------------------------------------------------------------- | ------------------------------ |
+| [`--v-input-height`](#--v-input-height)                           | `2.5rem`                       |
+| [`--v-input-border-color`](#--v-input-border-color)               | `#D4D5D6`                      |
+| [`--v-input-placeholder-color`](#--v-input-placeholder-color)     | `#BDBDBD`                      |
+| [`--v-input-border-radius`](#--v-input-border-radius)             | `theme('borderRadius.md')`     |
+| [`--v-input-padding-x`](#--v-input-padding-x)                     | `theme('padding.3')`           |
+| [`--v-input-padding-y`](#--v-input-padding-y)                     | `theme('padding.2')`           |
+| [`--v-input-font-size`](#--v-input-font-size)                     | `theme('fontSize.base')`       |
+| [`--v-input-bg-color`](#--v-input-bg-color)                       | `theme('colors.white')`        |
+| [`--v-input-label-font-size`](#--v-input-label-font-size)         | `theme('fontSize.sm'`          |
+| [`--v-input-label-font-weight`](#--v-input-label-font-weight)     | `theme('fontWeight.semibold')` |
+| [`--v-input-label-display`](#--v-input-label-display)             | `block`                        |
+| [`--v-input-label-margin-bottom`](#--v-input-label-margin-bottom) | `theme('margin.1')`            |
+| [`--v-input-text-color`](#--v-input-text-color)                   | `theme('colors.gray.600')`     |
+| [`--v-input-text-font-size`](#--v-input-text-font-size)           | `theme('fontSize.sm')`         |
+| [`--v-input-text-font-weight`](#--v-input-text-font-weight)       | `theme('fontWeight.normal')`   |
+| [`--v-input-icon-width`](#--v-input-icon-width)                   | `theme('width.5')`             |
+| [`--v-input-icon-height`](#--v-input-icon-height)                 | `theme('height.5')`            |
 
 ## Manual Installation
 
-You can also install the `Input` component individually via `@gits-id/input` package:
+You can also install the `VInput` component individually via `@gits-id/forms` package:
 
 ```bash
-npm install @gits-id/input
+npm install @gits-id/forms
 ```
 
 ```vue
