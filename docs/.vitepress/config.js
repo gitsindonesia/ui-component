@@ -59,10 +59,6 @@ export default defineConfig({
             link: '/components/icon',
           },
           {
-            text: 'Input Range',
-            link: '/components/input-range',
-          },
-          {
             text: 'List',
             link: '/components/list',
           },
@@ -135,6 +131,14 @@ export default defineConfig({
           {
             text: 'Editor',
             link: '/components/editor',
+          },
+          {
+            text: 'Input',
+            link: '/components/input',
+          },
+          {
+            text: 'Input Range',
+            link: '/components/input-range',
           },
           {
             text: 'Multi Select',
