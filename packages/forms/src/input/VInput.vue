@@ -5,7 +5,7 @@ export default {
 </script>
 
 <script setup lang="ts">
-import {toRefs, computed, watch, PropType} from 'vue';
+import {toRefs, computed, watch, PropType, ref} from 'vue';
 import {useField} from 'vee-validate';
 import Icon from '@gits-id/icon';
 
@@ -132,6 +132,22 @@ const props = defineProps({
     type: String as PropType<IconSize>,
     default: 'md',
   },
+  clearable: {
+    type: Boolean,
+    default: false,
+  },
+  clearableIcon: {
+    type: String,
+    default: 'ri:close-line',
+  },
+  clearableIconClass: {
+    type: String,
+    default: '',
+  },
+  clearableIconSize: {
+    type: String as PropType<IconSize>,
+    default: 'md',
+  },
 });
 
 const {
@@ -153,16 +169,20 @@ const emit = defineEmits([
   'clickPrependIcon',
   'clickAppend',
   'clickAppendIcon',
+  'clear',
 ]);
 
 const isEagerValidation = computed(() => {
   return validationMode.value === 'eager';
 });
 
+const input = ref();
+
 const {
   value: inputValue,
   errorMessage,
   handleChange,
+  resetField,
 } = useField(name, rules, {
   initialValue: props.modelValue || props.value,
   validateOnValueUpdate: !isEagerValidation.value,
@@ -188,6 +208,12 @@ const validationListeners = computed(() => {
     input: handleChange, // only switched this
   };
 });
+
+const clear = () => {
+  resetField();
+  emit('clear');
+  input.value?.focus();
+};
 </script>
 
 <template>
@@ -231,6 +257,7 @@ const validationListeners = computed(() => {
         :id="id || name"
         v-model="inputValue"
         v-on="validationListeners"
+        ref="input"
         class="v-input-control"
         :class="[
           {
@@ -262,6 +289,22 @@ const validationListeners = computed(() => {
             />
           </slot>
         </div>
+      </slot>
+      <slot v-if="clearable && inputValue" name="clearable">
+        <button
+          type="button"
+          aria-label="Clear"
+          class="v-input-clearable"
+          title="Clear"
+          @click="clear"
+        >
+          <Icon
+            :name="clearableIcon"
+            :size="clearableIconSize || size"
+            class="v-input-icon v-input-icon--append v-input-icon--clearable"
+            :class="clearableIconClass"
+          />
+        </button>
       </slot>
     </div>
 
@@ -438,5 +481,10 @@ const validationListeners = computed(() => {
 .v-input.v-input--lg .v-input-icon {
   --v-input-icon-width: theme('width.7');
   --v-input-icon-height: theme('height.7');
+}
+
+.v-input-clearable {
+  @apply cursor-pointer w-7 h-7 flex items-center justify-center
+  hover:bg-gray-100 active:bg-gray-50 rounded-full mr-2;
 }
 </style>

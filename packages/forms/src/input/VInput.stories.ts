@@ -439,6 +439,37 @@ Sizes.parameters = {
     },
   },
 };
+export const Clearable: Story<VInputProps> = (args) => ({
+  components: {VInput},
+  setup() {
+    const value = ref('');
+    return {args, value};
+  },
+  template: `
+  <VInput
+    name="foo"
+    label="Username"
+    placeholder="Username..."
+    clearable
+    wrapper-class="mb-4"
+  />
+  <VInput
+    name="password"
+    label="Password"
+    placeholder="Password..."
+    clearable
+    wrapper-class="mb-4"
+  />
+`,
+});
+Sizes.parameters = {
+  docs: {
+    source: {
+      code: `
+      `,
+    },
+  },
+};
 
 export const Validation: Story<VInputProps> = (args) => ({
   components: {VInput, VBtn},
