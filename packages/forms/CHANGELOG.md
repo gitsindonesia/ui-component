@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0-alpha.13](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.12...v0.12.0-alpha.13) (2022-11-14)
+
+### Features
+
+- **VInput:** allow to customize icon size via prop ([d137e0d](https://github.com/gitsindonesia/ui-component/commit/d137e0d05ee3bfbd796dd8f04905009bb5f1ab86))
+
 # [0.12.0-alpha.12](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.11...v0.12.0-alpha.12) (2022-11-14)
 
 **Note:** Version bump only for package @gits-id/forms
