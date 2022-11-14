@@ -10,6 +10,7 @@ import FieldArrayStory from './stories/FieldArray.story.vue';
 import FieldArrayOfObject from './stories/FieldArrayOfObject.story.vue';
 import FieldArrayNestedComponent from './stories/FieldArrayNested.story.vue';
 import {ref} from 'vue';
+import FormsPlaygroundComponent from './stories/FormsPlayground.vue';
 
 const sizes = ['sm', 'md', 'lg'] as const;
 
@@ -525,4 +526,9 @@ export const FieldArrayOfObjects: Story<VInputProps> = () => ({
 export const FieldArrayNested: Story<VInputProps> = () => ({
   components: {FieldArrayNestedComponent},
   template: `<FieldArrayNestedComponent />`,
+});
+
+export const FormsPlayground: Story<VInputProps> = () => ({
+  components: {FormsPlaygroundComponent},
+  template: `<FormsPlaygroundComponent />`,
 });
