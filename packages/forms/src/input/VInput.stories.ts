@@ -1,5 +1,4 @@
 import VInput from './VInput.vue';
-import {sizes} from '@gits-id/utils/sizes';
 import {Meta, Story} from '@storybook/vue3';
 import type {VInputProps} from './types';
 import {Icon} from '@gits-id/icon';
@@ -11,6 +10,8 @@ import FieldArrayStory from './stories/FieldArray.story.vue';
 import FieldArrayOfObject from './stories/FieldArrayOfObject.story.vue';
 import FieldArrayNestedComponent from './stories/FieldArrayNested.story.vue';
 import {ref} from 'vue';
+
+const sizes = ['sm', 'md', 'lg'] as const;
 
 export default {
   title: 'Forms/Input',
@@ -34,7 +35,7 @@ export default {
     modelValue: '',
     placeholder: 'Type something...',
     type: 'text',
-    color: 'primary',
+    color: 'default',
     name: '',
     error: false,
     errorMessages: [],
@@ -168,8 +169,8 @@ Shadow.parameters = {
 export const Text = Template.bind({});
 Text.args = {
   text: true,
+  label: 'Label',
   modelValue: 'Lorem ipsum',
-  class: 'text-sm font-semibold',
 };
 Text.parameters = {
   docs: {
@@ -208,8 +209,8 @@ export const Icons: Story<VInputProps> = (args) => ({
   <VInput prepend-icon="ic:baseline-add-reaction" placeholder="Search..." @clickPrependIcon="showAlert('prepend icon click')"/>
   <VInput append-icon="ic:baseline-add-reaction" placeholder="Search..." @clickAppendIcon="showAlert('append icon click')"/>
   <p>Custom Classes:</p>
-  <VInput class="pl-14" prepend-class="bg-gray-100 border-gray-200 border rounded-l-md" prepend-icon="ri:search-line" placeholder="Search..." @clickPrepend="showAlert('prepend click')"/>
-  <VInput append-class="bg-gray-100 border-gray-200 border rounded-r-md" append-icon="ri:search-line" placeholder="Search..." @clickAppend="showAlert('append click')"/>
+  <VInput prepend-class="bg-gray-100 border-gray-200 border-r" prepend-icon="ri:search-line" placeholder="Search..." @clickPrepend="showAlert('prepend click')"/>
+  <VInput append-class="bg-gray-100 border-gray-200 border-l" append-icon="ri:search-line" placeholder="Search..." @clickAppend="showAlert('append click')"/>
   <VInput prepend-icon-class="text-primary" prepend-icon="ic:baseline-add-reaction" placeholder="Search..." @clickPrependIcon="showAlert('prepend icon click')"/>
   <VInput append-icon-class="text-primary" append-icon="ic:baseline-add-reaction" placeholder="Search..." @clickAppendIcon="showAlert('append icon click')"/>
 </div>
@@ -219,52 +220,17 @@ Icons.parameters = {
   docs: {
     source: {
       code: `
-<VInput
-  prepend-icon="ri:search-line"
-  placeholder="Search..."
-  @clickPrepend="showAlert('prepend click')"
-/>
-<VInput
-  append-icon="ri:search-line"
-  placeholder="Search..."
-  @clickAppend="showAlert('append click')"
-/>
-<VInput
-  prepend-icon="ic:baseline-add-reaction"
-  placeholder="Search..."
-  @clickPrependIcon="showAlert('prepend icon click')"
-/>
-<VInput
-  append-icon="ic:baseline-add-reaction"
-  placeholder="Search..."
-  @clickPrependIcon="showAlert('append icon click')"
-/>
-<p>Custom Classes:</p>
-<VInput
-  class="pl-14"
-  prepend-icon="ri:search-line"
-  prepend-class="bg-gray-100 border-gray-200 border rounded-l-md"
-  placeholder="Search..."
-  @clickPrepend="showAlert('prepend click')"
-/>
-<VInput
-  append-icon="ri:search-line"
-  append-class="bg-gray-100 border-gray-200 border rounded-r-md"
-  placeholder="Search..."
-  @clickAppend="showAlert('append click')"
-/>
-<VInput
-  prepend-icon="ic:baseline-add-reaction"
-  prepend-icon-class="text-primary"
-  placeholder="Search..."
-  @clickPrependIcon="showAlert('prepend icon click')"
-/>
-<VInput
-  append-icon="ic:baseline-add-reaction"
-  append-icon-class="text-primary"
-  placeholder="Search..."
-  @clickAppendIcon="showAlert('append icon click')"
-/>
+<div class="space-y-2">
+  <VInput prepend-icon="ri:search-line" placeholder="Search..." @clickPrepend="showAlert('prepend click')"/>
+  <VInput append-icon="ri:search-line" placeholder="Search..." @clickAppend="showAlert('append click')"/>
+  <VInput prepend-icon="ic:baseline-add-reaction" placeholder="Search..." @clickPrependIcon="showAlert('prepend icon click')"/>
+  <VInput append-icon="ic:baseline-add-reaction" placeholder="Search..." @clickAppendIcon="showAlert('append icon click')"/>
+  <p>Custom Classes:</p>
+  <VInput prepend-class="bg-gray-100 border-gray-200 border-r" prepend-icon="ri:search-line" placeholder="Search..." @clickPrepend="showAlert('prepend click')"/>
+  <VInput append-class="bg-gray-100 border-gray-200 border-l" append-icon="ri:search-line" placeholder="Search..." @clickAppend="showAlert('append click')"/>
+  <VInput prepend-icon-class="text-primary" prepend-icon="ic:baseline-add-reaction" placeholder="Search..." @clickPrependIcon="showAlert('prepend icon click')"/>
+  <VInput append-icon-class="text-primary" append-icon="ic:baseline-add-reaction" placeholder="Search..." @clickAppendIcon="showAlert('append icon click')"/>
+</div>
       `,
     },
   },
@@ -440,16 +406,13 @@ Slots.parameters = {
 };
 
 export const Sizes: Story<VInputProps> = (args) => ({
-  // Components used in your story `template` are defined in the `components` object
   components: {VInput},
-  // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
     return {args, sizes};
   },
-  // And then the `args` are bound to your component with `v-bind="args"`
   template: `
 <div class="space-y-2">
-  <VInput v-for="size in sizes" :key="size" v-bind='args' :size="size" :placeholder="size"/>
+  <VInput v-for="size in sizes" :key="size" v-bind='args' :size="size" label="Label" :placeholder="size"/>
 </div>
 `,
 });

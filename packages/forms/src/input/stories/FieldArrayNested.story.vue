@@ -75,7 +75,7 @@ const onSubmit = handleSubmit((values) => {
       </div>
 
       <div class="border-t mt-5 pt-2">
-        <v-btn type="button" color="secondary" @click="push({})">
+        <v-btn type="button" color="primary" @click="push({})">
           Add User
         </v-btn>
       </div>
