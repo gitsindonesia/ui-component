@@ -9,6 +9,8 @@ import {toRefs, computed, watch, PropType} from 'vue';
 import {useField} from 'vee-validate';
 import Icon from '@gits-id/icon';
 
+type IconSize = InstanceType<typeof Icon>['$props']['size'];
+
 const props = defineProps({
   /**
    * @deprecated Use `modelValue` instead
@@ -114,6 +116,10 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  prependIconSize: {
+    type: String as PropType<IconSize>,
+    default: 'md',
+  },
   appendClass: {
     type: String,
     default: '',
@@ -121,6 +127,10 @@ const props = defineProps({
   appendIconClass: {
     type: String,
     default: '',
+  },
+  appendIconSize: {
+    type: String as PropType<IconSize>,
+    default: 'md',
   },
 });
 
@@ -209,6 +219,7 @@ const validationListeners = computed(() => {
             <Icon
               v-if="prependIcon"
               :name="prependIcon"
+              :size="prependIconSize || size"
               class="v-input-icon v-input-icon--prepend"
               :class="prependIconClass"
               @click="emit('clickPrependIcon')"
@@ -244,6 +255,7 @@ const validationListeners = computed(() => {
             <Icon
               v-if="appendIcon"
               :name="appendIcon"
+              :size="appendIconSize || size"
               class="v-input-icon v-input-icon--append"
               :class="appendIconClass"
               @click="emit('clickAppendIcon')"
