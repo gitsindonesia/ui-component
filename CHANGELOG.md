@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0-alpha.16](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.15...v0.12.0-alpha.16) (2022-11-14)
+
+### Bug Fixes
+
+- **VInput:** fix icon size conflict ([db794fa](https://github.com/gitsindonesia/ui-component/commit/db794faa3783a34fc59d27721c777f64002826ac))
+
 # [0.12.0-alpha.15](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.14...v0.12.0-alpha.15) (2022-11-14)
 
 ### Bug Fixes
