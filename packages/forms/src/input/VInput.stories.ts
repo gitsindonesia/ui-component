@@ -75,7 +75,7 @@ export const Colors: Story<VInputProps> = (args) => ({
     </div>
 `,
 });
-Variants.parameters = {
+Colors.parameters = {
   docs: {
     source: {
       code: `
