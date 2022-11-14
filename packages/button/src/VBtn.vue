@@ -116,6 +116,7 @@ const classes = computed(() => {
     :disabled="disabled"
     aria-label="Button"
     :aria-disabled="disabled"
+    :type="type"
     v-bind="$attrs"
   >
     <slot name="prefix">
