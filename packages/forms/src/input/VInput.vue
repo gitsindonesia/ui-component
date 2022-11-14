@@ -281,6 +281,10 @@ const validationListeners = computed(() => {
   --v-input-text-color: theme('colors.gray.600');
   --v-input-text-font-size: theme('fontSize.sm');
   --v-input-text-font-weight: theme('fontWeight.normal');
+
+  /* icon */
+  --v-input-icon-width: theme('width.5');
+  --v-input-icon-height: theme('height.5');
 }
 .v-input-label {
   font-size: var(--v-input-label-font-size);
@@ -390,7 +394,8 @@ const validationListeners = computed(() => {
 
 /* icon */
 .v-input-icon {
-  @apply w-5 h-5;
+  width: var(--v-input-icon-width);
+  height: var(--v-input-icon-height);
 }
 
 /* sizes */
@@ -401,11 +406,20 @@ const validationListeners = computed(() => {
   --v-input-font-size: theme('fontSize.sm');
   --v-input-label-font-size: theme('fontSize.xs');
 }
+.v-input.v-input--sm .v-input-icon {
+  --v-input-icon-width: theme('width.4');
+  --v-input-icon-height: theme('height.4');
+}
+
 .v-input.v-input--lg {
   --v-input-height: 50px;
   --v-input-padding-x: theme('padding.5');
   --v-input-padding-y: theme('padding.3');
   --v-input-font-size: theme('fontSize.lg');
   --v-input-label-font-size: theme('fontSize.base');
+}
+.v-input.v-input--lg .v-input-icon {
+  --v-input-icon-width: theme('width.7');
+  --v-input-icon-height: theme('height.7');
 }
 </style>
