@@ -1,6 +1,11 @@
-import { resolve } from 'path'
-import { fileURLToPath } from 'url'
-import { defineNuxtModule, addPlugin, addComponent, AddComponentOptions } from '@nuxt/kit'
+import {resolve} from 'path';
+import {fileURLToPath} from 'url';
+import {
+  defineNuxtModule,
+  addPlugin,
+  addComponent,
+  AddComponentOptions,
+} from '@nuxt/kit';
 
 const transpile = [
   '@headlessui/vue',
@@ -41,304 +46,309 @@ const transpile = [
   '@gits-id/theme',
   '@gits-id/toast',
   '@gits-id/tooltip',
-  '@gits-id/utils'
-]
+  '@gits-id/utils',
+];
 
 const components: AddComponentOptions[] = [
   {
     name: 'VAlert',
-    filePath: '@gits-id/alert'
+    filePath: '@gits-id/alert',
   },
   {
     name: 'VAppBar',
-    filePath: '@gits-id/app-bar'
+    filePath: '@gits-id/app-bar',
   },
   {
     name: 'VAutocomplete',
-    filePath: '@gits-id/autocomplete'
+    filePath: '@gits-id/autocomplete',
   },
   {
     name: 'VAvatar',
-    filePath: '@gits-id/avatar'
+    filePath: '@gits-id/avatar',
   },
   {
     name: 'VBadge',
-    filePath: '@gits-id/badge'
+    filePath: '@gits-id/badge',
   },
   {
     name: 'VBreadcrumbs',
-    filePath: '@gits-id/breadcrumbs'
+    filePath: '@gits-id/breadcrumbs',
   },
   {
     name: 'VBtn',
-    filePath: '@gits-id/button'
+    filePath: '@gits-id/button',
   },
   {
     name: 'VCard',
-    filePath: '@gits-id/card'
+    filePath: '@gits-id/card',
   },
   {
     name: 'VCollapsible',
-    filePath: '@gits-id/collapsible'
+    filePath: '@gits-id/collapsible',
   },
   {
     name: 'VContainer',
-    filePath: '@gits-id/container'
+    filePath: '@gits-id/container',
   },
   {
     name: 'VDropdown',
-    filePath: '@gits-id/dropdown'
+    filePath: '@gits-id/dropdown',
   },
   {
     name: 'VDropdownButton',
     export: 'DropdownButton',
-    filePath: '@gits-id/dropdown'
+    filePath: '@gits-id/dropdown',
   },
   {
     name: 'VDropdownItem',
     export: 'DropdownItem',
-    filePath: '@gits-id/dropdown'
+    filePath: '@gits-id/dropdown',
   },
   {
     name: 'VEditor',
-    filePath: '@gits-id/editor'
+    filePath: '@gits-id/editor',
   },
   {
     name: 'VInput',
     export: 'VInput',
-    filePath: '@gits-id/forms'
+    filePath: '@gits-id/forms',
   },
   {
     name: 'VInputGroup',
     export: 'VInputGroup',
-    filePath: '@gits-id/forms'
+    filePath: '@gits-id/forms',
   },
   {
     name: 'VInputRange',
     export: 'VInputRange',
-    filePath: '@gits-id/forms'
+    filePath: '@gits-id/forms',
   },
   {
     name: 'VCheckbox',
     export: 'VCheckbox',
-    filePath: '@gits-id/forms'
+    filePath: '@gits-id/forms',
   },
   {
     name: 'VFileUpload',
     export: 'VFileUpload',
-    filePath: '@gits-id/forms'
+    filePath: '@gits-id/forms',
   },
   {
     name: 'VFileUploadActions',
     export: 'VFileUploadActions',
-    filePath: '@gits-id/forms'
+    filePath: '@gits-id/forms',
   },
   {
     name: 'VFileUploadButtonTheme',
     export: 'VFileUploadButtonTheme',
-    filePath: '@gits-id/forms'
+    filePath: '@gits-id/forms',
   },
   {
     name: 'VFileUploadDefaultTheme',
     export: 'VFileUploadDefaultTheme',
-    filePath: '@gits-id/forms'
+    filePath: '@gits-id/forms',
   },
   {
     name: 'VFileUploadDropzoneTheme',
     export: 'VFileUploadDropzoneTheme',
-    filePath: '@gits-id/forms'
+    filePath: '@gits-id/forms',
   },
   {
     name: 'VFileUploadImageTheme',
     export: 'VFileUploadImageTheme',
-    filePath: '@gits-id/forms'
+    filePath: '@gits-id/forms',
   },
   {
     name: 'VFormGroup',
     export: 'VFormGroup',
-    filePath: '@gits-id/forms'
+    filePath: '@gits-id/forms',
   },
   {
     name: 'VFormSelect',
     export: 'VFormSelect',
-    filePath: '@gits-id/forms'
+    filePath: '@gits-id/forms',
   },
   {
     name: 'VRadio',
     export: 'VRadio',
-    filePath: '@gits-id/forms'
+    filePath: '@gits-id/forms',
   },
   {
     name: 'VRadioGroup',
     export: 'VRadioGroup',
-    filePath: '@gits-id/forms'
+    filePath: '@gits-id/forms',
   },
   {
     name: 'VTextarea',
     export: 'VTextarea',
-    filePath: '@gits-id/forms'
+    filePath: '@gits-id/forms',
   },
   {
     name: 'VIcon',
-    filePath: '@gits-id/icon'
+    filePath: '@gits-id/icon',
   },
   {
     name: 'VLogo',
-    filePath: '@gits-id/logo'
+    filePath: '@gits-id/logo',
   },
   {
     name: 'VList',
     export: 'List',
-    filePath: '@gits-id/list'
+    filePath: '@gits-id/list',
   },
   {
     name: 'VListItem',
     export: 'ListItem',
-    filePath: '@gits-id/list'
+    filePath: '@gits-id/list',
   },
   {
     name: 'VListCollapse',
     export: 'ListCollapse',
-    filePath: '@gits-id/list'
+    filePath: '@gits-id/list',
   },
   {
     name: 'VListItemDivider',
     export: 'ListItemDivider',
-    filePath: '@gits-id/list'
+    filePath: '@gits-id/list',
   },
   {
     name: 'VListItemHeader',
     export: 'ListItemHeader',
-    filePath: '@gits-id/list'
+    filePath: '@gits-id/list',
   },
   {
     name: 'VMenu',
-    filePath: '@gits-id/menu'
+    filePath: '@gits-id/menu',
   },
   {
     name: 'VMenuItem',
     export: 'VMenuItem',
-    filePath: '@gits-id/menu'
+    filePath: '@gits-id/menu',
   },
   {
     name: 'VMenuIcon',
     export: 'VMenuIcon',
-    filePath: '@gits-id/menu'
+    filePath: '@gits-id/menu',
   },
   {
     name: 'VMenuTooltip',
     export: 'VMenuTooltip',
-    filePath: '@gits-id/menu'
+    filePath: '@gits-id/menu',
   },
   {
     name: 'VMenus',
-    filePath: '@gits-id/menus'
+    filePath: '@gits-id/menus',
+  },
+  {
+    name: 'VMenusItem',
+    export: 'VMenusItem',
+    filePath: '@gits-id/menus',
   },
   {
     name: 'VModal',
-    filePath: '@gits-id/modal'
+    filePath: '@gits-id/modal',
   },
   {
     name: 'VMultiSelect',
-    filePath: '@gits-id/multi-select'
+    filePath: '@gits-id/multi-select',
   },
   {
     name: 'VNavDrawer',
     export: 'NavDrawer',
-    filePath: '@gits-id/nav-drawer'
+    filePath: '@gits-id/nav-drawer',
   },
   {
     name: 'VNavbar',
-    filePath: '@gits-id/navbar'
+    filePath: '@gits-id/navbar',
   },
   {
     name: 'VPagination',
-    filePath: '@gits-id/pagination'
+    filePath: '@gits-id/pagination',
   },
   {
     name: 'VProgressBar',
-    filePath: '@gits-id/progress-bar'
+    filePath: '@gits-id/progress-bar',
   },
   {
     name: 'VSelect',
-    filePath: '@gits-id/select'
+    filePath: '@gits-id/select',
   },
   {
     name: 'VShimmer',
-    filePath: '@gits-id/shimmer'
+    filePath: '@gits-id/shimmer',
   },
   {
     name: 'VSpinner',
-    filePath: '@gits-id/spinner'
+    filePath: '@gits-id/spinner',
   },
   {
     name: 'VSwitch',
-    filePath: '@gits-id/switch'
+    filePath: '@gits-id/switch',
   },
   {
     name: 'VDataTable',
-    filePath: '@gits-id/table'
+    filePath: '@gits-id/table',
   },
   {
     name: 'VDataTablePagination',
     export: 'VDataTablePagination',
-    filePath: '@gits-id/table'
+    filePath: '@gits-id/table',
   },
   {
     name: 'VTabs',
-    filePath: '@gits-id/tabs'
+    filePath: '@gits-id/tabs',
   },
   {
     name: 'VTab',
     export: 'VTab',
-    filePath: '@gits-id/tabs'
+    filePath: '@gits-id/tabs',
   },
   {
     name: 'VToast',
-    filePath: '@gits-id/toast'
+    filePath: '@gits-id/toast',
   },
   {
     name: 'VTooltip',
-    filePath: '@gits-id/tooltip'
-  }
-]
+    filePath: '@gits-id/tooltip',
+  },
+];
 export interface ModuleOptions {
-  css?: boolean
-  components?: boolean
-  transpileDeps?: boolean
+  css?: boolean;
+  components?: boolean;
+  transpileDeps?: boolean;
 }
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
     name: 'gits-ui',
-    configKey: 'gitsUi'
+    configKey: 'gitsUi',
   },
   defaults: {
     css: true,
     components: true,
-    transpileDeps: true
+    transpileDeps: true,
   },
   setup(options, nuxt) {
-    const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
-    nuxt.options.build.transpile.push(runtimeDir)
-    addPlugin(resolve(runtimeDir, 'plugin'))
+    const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url));
+    nuxt.options.build.transpile.push(runtimeDir);
+    addPlugin(resolve(runtimeDir, 'plugin'));
 
     // transpile deps
     if (options.transpileDeps) {
       nuxt.options.build.transpile = [
         ...nuxt.options.build.transpile,
-        ...transpile
-      ]
+        ...transpile,
+      ];
     }
 
     if (options.css) {
-      nuxt.options.css.push('@gits-id/ui/styles')
+      nuxt.options.css.push('@gits-id/ui/styles');
     }
 
     if (options.components) {
       components.forEach((component) => {
-        addComponent(component)
-      })
+        addComponent(component);
+      });
     }
-  }
-})
+  },
+});
