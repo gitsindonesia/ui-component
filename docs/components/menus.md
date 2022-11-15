@@ -145,14 +145,26 @@ const items = [
 
 ## Props
 
-| Name                      | Type                                     | Default          |
-| ------------------------- | ---------------------------------------- | ---------------- |
-| [`items`](#items)         | `Array as PropType<Record<string, any>>` | `[]`             |
-| [`right`](#right)         | `Boolean`                                | `false`          |
-| [`small`](#small)         | `Boolean`                                | `false`          |
-| [`rightIcon`](#rightIcon) | `Boolean`                                | `false`          |
-| [`btnClass`](#btnClass)   | `String`                                 | `''`             |
-| [`placement`](#placement) | `String`                                 | `'bottom-start'` |
+| Name                      | Type                                                                                                | Default          |
+| ------------------------- | --------------------------------------------------------------------------------------------------- | ---------------- |
+| [`items`](#items)         | `VMenuItem[]`                                                                                       | `[]`             |
+| [`right`](#right)         | `Boolean`                                                                                           | `false`          |
+| [`small`](#small)         | `Boolean`                                                                                           | `false`          |
+| [`rightIcon`](#rightIcon) | `Boolean`                                                                                           | `false`          |
+| [`btnClass`](#btnClass)   | `String`                                                                                            | `''`             |
+| [`placement`](#placement) | `String`. See [available options](https://floating-vue.starpad.dev/guide/component.html#placements) | `'bottom-start'` |
+| [`label`](#label)         | `String`                                                                                            | `'Menu'`         |
+
+- `VMenuItem`
+
+```ts
+export interface VMenuItem {
+  icon?: string;
+  text: string;
+  to?: string;
+  onClick?: () => void;
+}
+```
 
 ## Methods
 
@@ -168,7 +180,17 @@ None
 
 ## CSS Variables
 
-None
+| Variable                                                    | Default Value                |
+| ----------------------------------------------------------- | ---------------------------- |
+| [`--v-menus-items-margin-y`](#--v-menus-items-margin-y)     | `theme('margin.1')`          |
+| [`--v-menus-items-margin-x`](#--v-menus-items-margin-x)     | `theme('margin.1')`          |
+| [`--v-menus-items-width` ](#--v-menus-items-width)          | t`heme('width.56')`          |
+| [`--v-menus-item-padding-y`](#--v-menus-item-padding-y)     | `theme('spacing.2')`         |
+| [`--v-menus-item-padding-x`](#--v-menus-item-padding-x)     | `theme('spacing.3')`         |
+| [`--v-menus-item-bg-color`](#--v-menus-item-bg-color)       | `theme('colors.white')`      |
+| [`--v-menus-item-text-color`](#--v-menus-item-text-color)   | `theme('colors.gray.800')`   |
+| [`--v-menus-item-font-size`](#--v-menus-item-font-size)     | `theme('fontSize.base')`     |
+| [`--v-menus-item-font-weight`](#--v-menus-item-font-weight) | `theme('fontWeight.normal')` |
 
 ## Manual Installation
 
