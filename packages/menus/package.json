@@ -1,7 +1,7 @@
 {
   "name": "@gits-id/menus",
   "version": "0.12.0-alpha.11",
-  "description": "GITS Menus Component",
+  "description": "Menus component for Vue.js",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "npm run build",
@@ -10,28 +10,28 @@
   "keywords": [
     "menus",
     "gits",
-    "ui-component"
+    "ui-component",
+    "vue",
+    "component"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Warsono <warsono16694@gmail.com>",
+  "license": "MIT",
   "dependencies": {
-    "@gits-id/button": "^0.12.0-alpha.11",
-    "vue": "^3.2.31"
+    "vue": "^3.2.31",
+    "@gits-id/icon": "^0.12.0-alpha.9",
+    "@gits-id/list": "^0.12.0-alpha.1",
+    "floating-vue": "^2.0.0-beta.20"
   },
   "devDependencies": {
+    "@gits-id/button": "^0.12.0-alpha.11",
+    "@gits-id/app-bar": "^0.12.0-alpha.11",
     "@gits-id/tailwind-config": "^0.12.0-alpha.9",
     "@gits-id/utils": "^0.12.0-alpha.1",
-    "@headlessui/vue": "^1.6.0",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
     "tailwindcss": "^3.0.23",
-    "vee-validate": "^4.5.9",
     "vite": "^3.0.0",
     "vitest": "^0.12.4"
-  },
-  "peerDependencies": {
-    "@heroicons/vue": "^1.0.6",
-    "@iconify/vue": "^3.2.1"
   },
   "main": "dist/menus.umd.js",
   "unpkg": "dist/menus.iife.js",

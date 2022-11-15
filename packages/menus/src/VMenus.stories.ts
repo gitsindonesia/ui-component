@@ -1,6 +1,7 @@
 import {Meta, Story} from '@storybook/vue3';
 import VMenus from './VMenus.vue';
 import vueRouter from 'storybook-vue3-router';
+import VAppBar from '@gits-id/app-bar';
 
 export default {
   title: 'Components/Menus',
@@ -28,25 +29,18 @@ export default {
 } as Meta;
 
 const Template: Story = (args) => ({
-  // Components used in your story `template` are defined in the `components` object
   components: {
     VMenus,
   },
-  // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
     return {args};
   },
-  // And then the `args` are bound to your component with `v-bind="args"`
-  template: `<div class="flex justify-center">
-  <VMenus v-bind="args">Menu</VMenus>
-</div>
+  template: `
+<VMenus v-bind="args" />
   `,
 });
 
-Template.decorators = [
-  /* this is the basic setup with no params passed to the decorator */
-  vueRouter(),
-];
+Template.decorators = [vueRouter()];
 
 export const Default = Template.bind({});
 Default.args = {};
@@ -67,3 +61,51 @@ Right.parameters = {
     },
   },
 };
+
+export const Small = Template.bind({});
+Small.args = {small: true};
+Small.parameters = {
+  docs: {
+    source: {
+      code: '<v-menus :items="items" small />',
+    },
+  },
+};
+
+export const InAppBar: Story = (args) => ({
+  components: {
+    VMenus,
+    VAppBar,
+  },
+  setup() {
+    return {args};
+  },
+  template: `
+<div class="space-y-2">
+  <VAppBar shadow>
+    <span class="font-semibold mr-4">Default</span>
+    <nav aria-label="Nav" class="flex gap-3 items-center">  
+      <VMenus label="Home" v-bind="args" />
+      <VMenus label="About" v-bind="args" />
+      <VMenus label="Profile" v-bind="args" />
+    </nav>
+  </VAppBar>
+  <VAppBar shadow>
+    <span class="font-semibold mr-4">Small</span>
+    <nav aria-label="Nav" class="flex gap-3 items-center">  
+      <VMenus label="Home" v-bind="args" small />
+      <VMenus label="About" v-bind="args" small />
+      <VMenus label="Profile" v-bind="args" small />
+    </nav>
+  </VAppBar>
+  <VAppBar shadow class="flex justify-between">
+    <span class="font-semibold mr-4">Right</span>
+    <nav aria-label="Nav" class="flex gap-3 items-center">  
+      <VMenus label="Home" v-bind="args" right />
+      <VMenus label="About" v-bind="args" right />
+      <VMenus label="Profile" v-bind="args" right />
+    </nav>
+  </VAppBar>
+</div>
+  `,
+});

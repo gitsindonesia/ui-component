@@ -1,135 +1,111 @@
 <script setup lang="ts">
-import {computed, PropType} from 'vue';
-import {Menu, MenuButton, MenuItems, MenuItem} from '@headlessui/vue';
-import VBtn from '@gits-id/button';
-import Icon from '@gits-id/icon';
+import {Menu} from 'floating-vue';
+import {List, ListItem} from '@gits-id/list';
+import 'floating-vue/dist/style.css';
+import {computed} from 'vue';
 
-const props = defineProps({
-  items: {
-    type: Array as PropType<Record<string, any>>,
-    default: () => [],
-  },
-  right: {
-    type: Boolean,
-    default: false,
-  },
-  small: {
-    type: Boolean,
-    default: false,
-  },
-  rightIcon: {
-    type: Boolean,
-    default: false,
-  },
-  btnClass: {
-    type: String,
-    default: '',
-  },
+export interface VMenuItem {
+  icon?: string;
+  text: string;
+  to?: string;
+  onClick?: () => void;
+}
+
+export type Placement = InstanceType<typeof Menu>['$props']['placement'];
+
+export interface Props {
+  items?: VMenuItem[];
+  right?: boolean;
+  /**
+   * @deprecated
+   */
+  rightIcon?: string;
+  small?: boolean;
+  btnClass?: string;
+  placement?: Placement;
+  label?: string;
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  items: () => [],
+  right: false,
+  rightIcon: 'ri:arrow-down-s-line',
+  small: false,
+  btnClass: '',
+  placement: 'bottom-start',
+  label: 'Menu',
 });
 
-const placementClass = computed(() => (props.right ? 'right-0' : 'left-0'));
+const menuPlacement = computed(() => {
+  return props.right ? 'bottom-end' : props.placement;
+});
 </script>
 
 <template>
-  <Menu as="div" class="relative inline-block mx-4 text-left">
-    <div>
-      <MenuButton
-        class="
-          inline-flex
-          font-medium
-          text-gray-700
-          justify-center
-          items-center
-          w-full
-          py-1
-          focus:outline-none
-        "
-        :class="[btnClass, small ? 'text-sm' : '']"
-      >
-        <slot />
-        <slot name="icon">
-          <Icon
-            name="heroicons:chevron-down"
-            class="w-5 h-5 ml-2 -mr-1"
-            aria-hidden="true"
-          />
-        </slot>
-      </MenuButton>
-    </div>
-
-    <transition
-      enter-active-class="transition duration-100 ease-out"
-      enter-from-class="transform scale-95 opacity-0"
-      enter-to-class="transform scale-100 opacity-100"
-      leave-active-class="transition duration-75 ease-in"
-      leave-from-class="transform scale-100 opacity-100"
-      leave-to-class="transform scale-95 opacity-0"
-    >
-      <MenuItems
-        class="
-          absolute
-          z-10
-          w-56
-          mt-2
-          bg-white
-          divide-y divide-gray-100
-          rounded-md
-          shadow-lg
-          ring-1 ring-black ring-opacity-5
-          focus:outline-none
-        "
-        :class="placementClass"
-      >
-        <div :class="['arrow', {right: right}]"></div>
-        <div class="px-1 py-1">
-          <slot name="prepend" />
-          <MenuItem v-for="(item, i) in items" :key="i" v-slot="{active}">
-            <VBtn
-              :to="item.to"
-              no-ring
-              block
-              :color="active ? 'primary' : ''"
-              class="rounded border-none !justify-start font-normal"
+  <Menu :placement="menuPlacement">
+    <slot>
+      <button>
+        {{ label }}
+        <Icon name="ri:arrow-down-s-line" />
+      </button>
+    </slot>
+    <template #popper>
+      <slot name="items">
+        <List class="v-menus-items">
+          <template v-for="item in items" :key="item.text">
+            <ListItem
+              class="v-menus-item"
+              :class="{'v-menus-item--sm': small}"
+              v-bind="item"
             >
-              <span class="flex-none">
-                {{ item.text }}
-              </span>
-              <template v-if="rightIcon">
-                <slot name="right-icon">
-                  <Icon name="heroicons:chevron-right" class="w-6 h-6" />
-                </slot>
-              </template>
-            </VBtn>
-          </MenuItem>
-          <slot name="append" />
-        </div>
-      </MenuItems>
-    </transition>
+              {{ item.text }}
+            </ListItem>
+          </template>
+        </List>
+      </slot>
+    </template>
   </Menu>
 </template>
 
-<style scoped>
-.arrow {
-  width: 35px;
-  height: 20px;
-  position: absolute;
-  top: -19px;
-  left: 15px;
-  overflow: hidden;
+<style>
+:root {
+  /* items */
+  --v-menus-items-margin-y: theme('margin.1');
+  --v-menus-items-margin-x: theme('margin.1');
+  --v-menus-items-width: theme('width.56');
+
+  /* item */
+  --v-menus-item-padding-y: theme('spacing.2');
+  --v-menus-item-padding-x: theme('spacing.3');
+  --v-menus-item-bg-color: theme('colors.white');
+  --v-menus-item-text-color: theme('colors.gray.800');
+  --v-menus-item-font-size: theme('fontSize.base');
+  --v-menus-item-font-weight: theme('fontWeight.normal');
 }
-.arrow:after {
-  content: '';
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  background: white;
-  transform: rotate(45deg); /* Prefixes... */
-  top: 10px;
-  left: 5px;
-  box-shadow: -1px -1px 5px -2px rgba(0, 0, 0, 0.5);
+
+.v-menus-items {
+  margin: var(--v-menus-items-margin-y) var(--v-menus-items-margin-x);
+  width: var(--v-menus-items-width);
+
+  @apply space-y-1;
 }
-.arrow.right {
-  left: initial;
-  right: 20px;
+
+.v-menus-item {
+  background-color: var(--v-menus-item-bg-color);
+  color: var(--v-menus-item-color);
+  padding: var(--v-menus-item-padding-y) var(--v-menus-item-padding-x);
+  font-size: var(--v-menus-item-font-size);
+  font-weight: var(--v-menus-item-font-weight);
+}
+
+.v-menus-item:hover {
+  --v-menus-item-bg-color: theme('colors.gray.200');
+  --v-menus-item-text-color: theme('colors.gray.800');
+}
+
+.v-menus-item--sm {
+  --v-menus-item-padding-x: theme('spacing.2');
+  --v-menus-item-padding-y: theme('spacing.1');
+  --v-menus-item-font-size: theme('fontSize.sm');
 }
 </style>
