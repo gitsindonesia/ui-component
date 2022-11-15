@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/nav-drawer",
-  "version": "0.12.0-alpha.11",
+  "version": "0.12.0-alpha.17",
   "description": "GITS Navigation Drawer Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,10 +15,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gits-id/button": "^0.12.0-alpha.11",
+    "@gits-id/button": "^0.12.0-alpha.17",
     "@gits-id/logo": "^0.12.0-alpha.9",
     "@gits-id/menu": "^0.12.0-alpha.9",
-    "@gits-id/navbar": "^0.12.0-alpha.11",
+    "@gits-id/navbar": "^0.12.0-alpha.17",
     "@gits-id/utils": "^0.12.0-alpha.1",
     "vue": "^3.2.31"
   },

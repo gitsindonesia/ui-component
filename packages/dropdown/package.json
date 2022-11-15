@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/dropdown",
-  "version": "0.12.0-alpha.11",
+  "version": "0.12.0-alpha.17",
   "description": "GITS Dropdown Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,7 +15,7 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@gits-id/button": "^0.12.0-alpha.11",
+    "@gits-id/button": "^0.12.0-alpha.17",
     "@gits-id/icon": "^0.12.0-alpha.9",
     "@headlessui/vue": "^1.6.0",
     "tailwindcss": "^3.0.23",

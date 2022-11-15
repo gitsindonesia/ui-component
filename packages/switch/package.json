@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/switch",
-  "version": "0.12.0-alpha.11",
+  "version": "0.12.0-alpha.17",
   "description": "GITS Switch Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -19,7 +19,7 @@
     "vue": "^3.2.31"
   },
   "devDependencies": {
-    "@gits-id/button": "^0.12.0-alpha.11",
+    "@gits-id/button": "^0.12.0-alpha.17",
     "@gits-id/tailwind-config": "^0.12.0-alpha.9",
     "@gits-id/utils": "^0.12.0-alpha.1",
     "@headlessui/vue": "^1.6.0",

@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0-alpha.17](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.16...v0.12.0-alpha.17) (2022-11-15)
+
+### Bug Fixes
+
+- **VMenus:** improve menu button activator props ([f8a24dc](https://github.com/gitsindonesia/ui-component/commit/f8a24dce907c259e2eccb85abb1f41c898487c4f))
+
+### Features
+
+- **VMenus:** revamp menus component ([192da4e](https://github.com/gitsindonesia/ui-component/commit/192da4e14a39129023f5793d459f1e84888edaa1))
+
 # [0.12.0-alpha.11](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.10...v0.12.0-alpha.11) (2022-11-14)
 
 **Note:** Version bump only for package @gits-id/menus

@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/tabs",
-  "version": "0.12.0-alpha.11",
+  "version": "0.12.0-alpha.17",
   "description": "GITS Tabs Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,8 +15,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gits-id/button": "^0.12.0-alpha.11",
-    "@gits-id/card": "^0.12.0-alpha.11",
+    "@gits-id/button": "^0.12.0-alpha.17",
+    "@gits-id/card": "^0.12.0-alpha.17",
     "@gits-id/icon": "^0.11.10",
     "@gits-id/utils": "^0.12.0-alpha.1",
     "vue": "^3.2.31"

@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/menus",
-  "version": "0.12.0-alpha.11",
+  "version": "0.12.0-alpha.17",
   "description": "Menus component for Vue.js",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -17,14 +17,14 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "vue": "^3.2.31",
     "@gits-id/icon": "^0.12.0-alpha.9",
     "@gits-id/list": "^0.12.0-alpha.1",
-    "floating-vue": "^2.0.0-beta.20"
+    "floating-vue": "^2.0.0-beta.20",
+    "vue": "^3.2.31"
   },
   "devDependencies": {
-    "@gits-id/button": "^0.12.0-alpha.11",
-    "@gits-id/app-bar": "^0.12.0-alpha.11",
+    "@gits-id/app-bar": "^0.12.0-alpha.17",
+    "@gits-id/button": "^0.12.0-alpha.17",
     "@gits-id/tailwind-config": "^0.12.0-alpha.9",
     "@gits-id/utils": "^0.12.0-alpha.1",
     "@vue/test-utils": "^2.0.0-rc.17",

@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/stats",
-  "version": "0.12.0-alpha.11",
+  "version": "0.12.0-alpha.17",
   "description": "GITS Stats Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -17,7 +17,7 @@
   "license": "ISC",
   "dependencies": {
     "@gits-id/badge": "^0.12.0-alpha.9",
-    "@gits-id/card": "^0.12.0-alpha.11",
+    "@gits-id/card": "^0.12.0-alpha.17",
     "vue": "^3.2.31"
   },
   "devDependencies": {
