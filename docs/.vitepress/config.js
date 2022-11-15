@@ -79,7 +79,7 @@ export default defineConfig({
             link: '/components/modal',
           },
           {
-            text: 'Navbar',
+            text: 'Navbar (Deprecated)',
             link: '/components/navbar',
           },
           {

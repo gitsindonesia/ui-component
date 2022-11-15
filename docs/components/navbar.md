@@ -2,6 +2,10 @@
 
 Navigation bar.
 
+::: warning
+This component is **deprecated**. You can replace it with the new [`VAppBar`](/components/app-bar).
+:::
+
 ## Usage
 
 ### Basic Usage
