@@ -44,7 +44,7 @@ const menuPlacement = computed(() => {
 <template>
   <Menu :placement="menuPlacement">
     <slot>
-      <button>
+      <button :class="btnClass" :aria-label="label" type="button">
         {{ label }}
         <Icon name="ri:arrow-down-s-line" />
       </button>
