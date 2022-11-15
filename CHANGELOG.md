@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0-alpha.18](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.17...v0.12.0-alpha.18) (2022-11-15)
+
+### Features
+
+- **nuxt:** register `VMenusItem` component ([523f20a](https://github.com/gitsindonesia/ui-component/commit/523f20abb0e4c0a6d271d47b14a5e431b37fed32))
+- **VMenus:** dynamic popper mode `hover` or `click` & new button props ([345f638](https://github.com/gitsindonesia/ui-component/commit/345f6382fce01b7738a277b21289b54c6bf88f1e))
+- **VMenus:** improved v-menus slots & new `VMenusItem` component ([d3cdeee](https://github.com/gitsindonesia/ui-component/commit/d3cdeeecacabc172135ef568ffbad6648360d7c2))
+
 # [0.12.0-alpha.17](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.16...v0.12.0-alpha.17) (2022-11-15)
 
 ### Bug Fixes

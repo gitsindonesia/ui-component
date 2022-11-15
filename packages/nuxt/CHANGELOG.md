@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0-alpha.18](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.17...v0.12.0-alpha.18) (2022-11-15)
+
+### Features
+
+- **nuxt:** register `VMenusItem` component ([523f20a](https://github.com/gitsindonesia/ui-component/commit/523f20abb0e4c0a6d271d47b14a5e431b37fed32))
+
 # [0.12.0-alpha.17](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.16...v0.12.0-alpha.17) (2022-11-15)
 
 **Note:** Version bump only for package @gits-id/ui-nuxt
