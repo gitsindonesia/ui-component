@@ -49,7 +49,7 @@ The `VInput` component is registered globally when you install with `@gits-id/ui
 </template>
 ```
 
-<LivePreview src="forms-input--variants" />
+<LivePreview src="forms-input--colors" />
 
 ### Readonly
 
