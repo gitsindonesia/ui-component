@@ -103,21 +103,40 @@ const classes = computed(() => {
     },
   ];
 });
+
+const attributes = computed(() => {
+  let attrs: Record<string, any> = {
+    type: props.type,
+    'aria-label': 'Button',
+  };
+
+  if (props.disabled) {
+    attrs['aria-disabled'] = true;
+    attrs['disabled'] = true;
+  }
+
+  if (props.to) {
+    attrs['to'] = props.to;
+  }
+
+  if (props.href) {
+    attrs['href'] = props.href;
+  }
+
+  if (props.newTab) {
+    attrs['rel'] = 'noopener';
+    attrs['target'] = '_blank';
+  }
+
+  return attrs;
+});
 </script>
 
 <template>
   <component
     :is="computedComponent"
     :class="classes"
-    :rel="newTab ? 'noopener' : undefined"
-    :target="newTab ? '_blank' : undefined"
-    :to="to"
-    :href="href"
-    :disabled="disabled"
-    aria-label="Button"
-    :aria-disabled="disabled"
-    :type="type"
-    v-bind="$attrs"
+    v-bind="{...attributes, ...$attrs}"
   >
     <slot name="prefix">
       <VIcon

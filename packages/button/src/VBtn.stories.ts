@@ -290,3 +290,14 @@ export const Plugin: Story<VBtnProps> = () => ({
 </div>
   `,
 });
+
+export const DynamicProps: Story<VBtnProps> = () => ({
+  components: {VIcon, VBtn},
+  template: `
+<VBtn>Default</VBtn>
+<VBtn disabled>Disabled</VBtn>
+<VBtn to="/">Router Link</VBtn>
+<VBtn href="https://google.com">Href Link</VBtn>
+<VBtn href="https://google.com" new-tab>Href Link (New Tab)</VBtn>
+  `,
+});
