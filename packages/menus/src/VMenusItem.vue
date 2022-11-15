@@ -3,7 +3,7 @@ import {ListItem, ListItemDivider} from '@gits-id/list';
 
 withDefaults(
   defineProps<{
-    text: string;
+    text?: string;
     small?: boolean;
     divider?: boolean;
     prependIcon?: string;

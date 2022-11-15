@@ -101,6 +101,7 @@ const menuPlacement = computed(() => {
 }
 
 .v-menus-item {
+  cursor: pointer;
   background-color: var(--v-menus-item-bg-color);
   color: var(--v-menus-item-color);
   padding: var(--v-menus-item-padding-y) var(--v-menus-item-padding-x);
