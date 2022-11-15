@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0-alpha.19](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.18...v0.12.0-alpha.19) (2022-11-15)
+
+**Note:** Version bump only for package @gits-id/navbar
+
 # [0.12.0-alpha.18](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.17...v0.12.0-alpha.18) (2022-11-15)
 
 **Note:** Version bump only for package @gits-id/navbar

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0-alpha.19](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.18...v0.12.0-alpha.19) (2022-11-15)
+
+### Bug Fixes
+
+- **VMenusItem:** set `text` prop optional & set menus-item cursor ([8053e7d](https://github.com/gitsindonesia/ui-component/commit/8053e7d8cec08c798e479846944db71a85515c33))
+
 # [0.12.0-alpha.18](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.17...v0.12.0-alpha.18) (2022-11-15)
 
 ### Features
