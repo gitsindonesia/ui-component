@@ -564,12 +564,12 @@ const onSubmit = handleSubmit((values) => {
 | [`prependIcon`](#prependIcon)           | `String`                                   | `''`           |
 | [`appendIcon`](#appendIcon)             | `String`                                   | `''`           |
 | [`color`](#color)                       | `String`                                   | `'default'`    |
-| [`text`](#text)                         | Boolean,                                   | `false`        |
-| [`shadow`](#shadow)                     | Boolean,                                   | `false`        |
+| [`text`](#text)                         | `Boolean`                                  | `false`        |
+| [`shadow`](#shadow)                     | `Boolean`                                  | `false`        |
 | [`validationMode`](#validationMode)     | `String`                                   | `'aggressive'` |
-| [`classes`](#classes)                   | Object,                                    | `{}`           |
+| [`classes`](#classes)                   | `Object`                                   | `{}`           |
 | [`label`](#label)                       | `String`                                   | `''`           |
-| [`rules`](#rules)                       | [Object, String],                          | `null`         |
+| [`rules`](#rules)                       | `[Object, String]`                         | `null`         |
 | [`id`](#id)                             | `String`                                   | `''`           |
 | [`inputClass`](#inputClass)             | `String`                                   | `''`           |
 | [`wrapperClass`](#wrapperClass)         | `String`                                   | `''`           |
@@ -585,20 +585,140 @@ None
 ## Events
 
 - [`update:modelValue`](#update:modelValue)
+
+```vue
+<script setup lang="ts">
+const handle = () => alert('Triggered!');
+</script>
+
+<template>
+  <VInput @update:modelValue="handle" />
+</template>
+```
+
 - [`blur`](#blur)
+
+```vue
+<script setup lang="ts">
+const handle = () => alert('Triggered!');
+</script>
+
+<template>
+  <VInput @blur="handle" />
+</template>
+```
+
 - [`change`](#change)
+
+```vue
+<script setup lang="ts">
+const handle = () => alert('Triggered!');
+</script>
+
+<template>
+  <VInput @change="handle" />
+</template>
+```
+
 - [`clickPrepend`](#clickPrepend)
+
+```vue
+<script setup lang="ts">
+const handle = () => alert('Triggered!');
+</script>
+
+<template>
+  <VInput @click-prepend="handle" />
+</template>
+```
+
 - [`clickPrependIcon`](#clickPrependIcon)
+
+```vue
+<script setup lang="ts">
+const handle = () => alert('Triggered!');
+</script>
+
+<template>
+  <VInput @click-prepend-icon="handle" />
+</template>
+```
+
 - [`clickAppend`](#clickAppend)
+
+```vue
+<script setup lang="ts">
+const handle = () => alert('Triggered!');
+</script>
+
+<template>
+  <VInput @click-append="handle" />
+</template>
+```
+
 - [`clickAppendIcon`](#clickAppendIcon)
+
+```vue
+<script setup lang="ts">
+const handle = () => alert('Triggered!');
+</script>
+
+<template>
+  <VInput @click-append-icon="handle" />
+</template>
+```
 
 ## Slots
 
 - [`label`](#label)
+
+```vue
+<template>
+  <VInput>
+    <template #label>My Label</template>
+  </VInput>
+</template>
+```
+
 - [`prepend.outer`](#prepend.outer)
+
+```vue
+<template>
+  <VInput>
+    <template #prepend.outer>Prepend Outer</template>
+  </VInput>
+</template>
+```
+
 - [`prepend`](#prepend)
+
+```vue
+<template>
+  <VInput>
+    <template #prepend>Prepend</template>
+  </VInput>
+</template>
+```
+
 - [`append.outer`](#append.outer)
+
+```vue
+<template>
+  <VInput>
+    <template #append.outer>Append Outer</template>
+  </VInput>
+</template>
+```
+
 - [`append`](#append)
+
+```vue
+<template>
+  <VInput>
+    <template #append>Append</template>
+  </VInput>
+</template>
+```
 
 ## CSS Variables
 
