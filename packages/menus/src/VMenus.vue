@@ -1,17 +1,12 @@
 <script setup lang="ts">
 import {Menu, Dropdown} from 'floating-vue';
-import {List, ListItem} from '@gits-id/list';
+import {List} from '@gits-id/list';
 import 'floating-vue/dist/style.css';
 import {computed} from 'vue';
 import Icon from '@gits-id/icon';
+import VMenusItem from './VMenusItem.vue';
 
-export interface VMenuItem {
-  icon?: string;
-  text: string;
-  to?: string;
-  onClick?: () => void;
-}
-
+export type VMenuItem = InstanceType<typeof VMenusItem>['$props'];
 export type Placement = InstanceType<typeof Menu>['$props']['placement'];
 
 export interface Props {
@@ -69,19 +64,15 @@ const menuPlacement = computed(() => {
       </button>
     </slot>
     <template #popper>
-      <slot name="items">
-        <List class="v-menus-items">
+      <List class="v-menus-items">
+        <slot name="items">
           <template v-for="item in items" :key="item.text">
-            <ListItem
-              class="v-menus-item"
-              :class="{'v-menus-item--sm': small}"
-              v-bind="item"
-            >
+            <VMenusItem v-bind="{...item, small}">
               {{ item.text }}
-            </ListItem>
+            </VMenusItem>
           </template>
-        </List>
-      </slot>
+        </slot>
+      </List>
     </template>
   </component>
 </template>

@@ -1,5 +1,6 @@
 import {Meta, Story} from '@storybook/vue3';
 import VMenus from './VMenus.vue';
+import VMenusItem from './VMenusItem.vue';
 import vueRouter from 'storybook-vue3-router';
 import VAppBar from '@gits-id/app-bar';
 
@@ -117,5 +118,28 @@ export const InAppBar: Story = (args) => ({
     </nav>
   </VAppBar>
 </div>
+  `,
+});
+
+export const Slots: Story = (args) => ({
+  components: {
+    VAppBar,
+    VMenus,
+    VMenusItem,
+  },
+  setup() {
+    return {args};
+  },
+  template: `
+<VAppBar shadow>
+  <VMenus label="Account">
+    <template #items>
+      <VMenusItem prepend-icon="ri:user-line">Profile</VMenusItem>
+      <VMenusItem prepend-icon="ri:settings-4-line"> Preferences </VMenusItem>
+      <VMenusItem divider />
+      <VMenusItem prepend-icon="ri:logout-box-line">Logout</VMenusItem>
+    </template>
+  </VMenus>
+</VAppBar>
   `,
 });
