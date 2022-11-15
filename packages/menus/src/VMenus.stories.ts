@@ -72,6 +72,16 @@ Small.parameters = {
   },
 };
 
+export const Hover = Template.bind({});
+Hover.args = {hover: true};
+Hover.parameters = {
+  docs: {
+    source: {
+      code: '<v-menus :items="items" hover />',
+    },
+  },
+};
+
 export const InAppBar: Story = (args) => ({
   components: {
     VMenus,

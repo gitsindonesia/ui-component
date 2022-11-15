@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import {Menu} from 'floating-vue';
+import {Menu, Dropdown} from 'floating-vue';
 import {List, ListItem} from '@gits-id/list';
 import 'floating-vue/dist/style.css';
 import {computed} from 'vue';
+import Icon from '@gits-id/icon';
 
 export interface VMenuItem {
   icon?: string;
@@ -24,6 +25,9 @@ export interface Props {
   btnClass?: string;
   placement?: Placement;
   label?: string;
+  hover?: boolean;
+  btnIcon?: string;
+  btnIconClass?: string;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -34,6 +38,9 @@ const props = withDefaults(defineProps<Props>(), {
   btnClass: '',
   placement: 'bottom-start',
   label: 'Menu',
+  hover: false,
+  btnIcon: 'ri:arrow-down-s-line',
+  btnIconClass: '',
 });
 
 const menuPlacement = computed(() => {
@@ -42,11 +49,23 @@ const menuPlacement = computed(() => {
 </script>
 
 <template>
-  <Menu :placement="menuPlacement">
+  <component
+    :is="hover ? Menu : Dropdown"
+    :placement="menuPlacement"
+    class="v-menus"
+  >
     <slot>
-      <button :class="btnClass" :aria-label="label" type="button">
+      <button
+        :class="['v-menus-button', btnClass]"
+        :aria-label="label"
+        type="button"
+      >
         {{ label }}
-        <Icon name="ri:arrow-down-s-line" />
+        <Icon
+          :name="btnIcon"
+          class="v-menus-button-icon"
+          :class="btnIconClass"
+        />
       </button>
     </slot>
     <template #popper>
@@ -64,7 +83,7 @@ const menuPlacement = computed(() => {
         </List>
       </slot>
     </template>
-  </Menu>
+  </component>
 </template>
 
 <style>
@@ -107,5 +126,13 @@ const menuPlacement = computed(() => {
   --v-menus-item-padding-x: theme('spacing.2');
   --v-menus-item-padding-y: theme('spacing.1');
   --v-menus-item-font-size: theme('fontSize.sm');
+}
+
+.v-menus-button {
+  @apply inline-flex items-center justify-center gap-1;
+}
+
+.v-menus-button-icon {
+  @apply text-gray-500 w-5 h-5;
 }
 </style>
