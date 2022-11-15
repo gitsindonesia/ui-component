@@ -143,19 +143,37 @@ const items = [
 
 <LivePreview src="components-menus--in-app-bar" />
 
+### Slots
+
+```vue
+<template>
+  <VMenus label="Account">
+    <template #items>
+      <VMenusItem prepend-icon="ri:user-line">Profile</VMenusItem>
+      <VMenusItem prepend-icon="ri:settings-4-line"> Preferences </VMenusItem>
+      <VMenusItem divider />
+      <VMenusItem prepend-icon="ri:logout-box-line">Logout</VMenusItem>
+    </template>
+  </VMenus>
+</template>
+```
+
+<LivePreview src="components-menus--slots" />
+
 ## Props
 
-| Name                      | Type                                                                                                | Default          |
-| ------------------------- | --------------------------------------------------------------------------------------------------- | ---------------- |
-| [`items`](#items)         | `VMenuItem[]`                                                                                       | `[]`             |
-| [`right`](#right)         | `Boolean`                                                                                           | `false`          |
-| [`small`](#small)         | `Boolean`                                                                                           | `false`          |
-| [`rightIcon`](#rightIcon) | `Boolean`                                                                                           | `false`          |
-| [`btnClass`](#btnClass)   | `String`                                                                                            | `''`             |
-| [`placement`](#placement) | `String`. See [available options](https://floating-vue.starpad.dev/guide/component.html#placements) | `'bottom-start'` |
-| [`label`](#label)         | `String`                                                                                            | `'Menu'`         |
+| Name                        | Type                                                                                                | Default          |
+| --------------------------- | --------------------------------------------------------------------------------------------------- | ---------------- |
+| [`items`](#items)           | `VMenuItem[]`                                                                                       | `[]`             |
+| [`right`](#right)           | `Boolean`                                                                                           | `false`          |
+| [`small`](#small)           | `Boolean`                                                                                           | `false`          |
+| [`rightIcon`](#rightIcon)   | `Boolean`                                                                                           | `false`          |
+| [`btnClass`](#btnClass)     | `String`                                                                                            | `''`             |
+| [`btnIconClass`](#btnClass) | `String`                                                                                            | `''`             |
+| [`placement`](#placement)   | `String`. See [available options](https://floating-vue.starpad.dev/guide/component.html#placements) | `'bottom-start'` |
+| [`label`](#label)           | `String`                                                                                            | `'Menu'`         |
 
-- `VMenuItem`
+- [`VMenuItem`](#VMenuItem)
 
 ```ts
 export interface VMenuItem {
@@ -176,7 +194,36 @@ None
 
 ## Slots
 
-None
+- [`default`](#default): used as menu activator.
+
+```vue
+<template>
+  <VMenus>
+    <button>Account</button>
+    <template #items>
+      <VMenusItem prepend-icon="ri:user-line">Profile</VMenusItem>
+      <VMenusItem prepend-icon="ri:settings-4-line"> Preferences </VMenusItem>
+      <VMenusItem divider />
+      <VMenusItem prepend-icon="ri:logout-box-line">Logout</VMenusItem>
+    </template>
+  </VMenus>
+</template>
+```
+
+- [`items`](#items): used to place menu items.
+
+```vue
+<template>
+  <VMenus label="Account">
+    <template #items>
+      <VMenusItem prepend-icon="ri:user-line">Profile</VMenusItem>
+      <VMenusItem prepend-icon="ri:settings-4-line"> Preferences </VMenusItem>
+      <VMenusItem divider />
+      <VMenusItem prepend-icon="ri:logout-box-line">Logout</VMenusItem>
+    </template>
+  </VMenus>
+</template>
+```
 
 ## CSS Variables
 
@@ -197,7 +244,12 @@ None
 You can also install the `Menus` component individually via `@gits-id/menus` package:
 
 ```bash
-yarn install @gits-id/menus
+# with npm
+npm install @gits-id/menus
+# or with yarn
+yarn add @gits-id/menus
+# or with pnpm
+pnpm add @gits-id/menus
 ```
 
 ```vue
