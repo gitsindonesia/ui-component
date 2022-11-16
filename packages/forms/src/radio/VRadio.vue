@@ -6,7 +6,7 @@ export default {
 
 <script setup lang="ts">
 import {useField} from 'vee-validate';
-import {toRefs, watch, computed} from 'vue';
+import {toRefs, watch} from 'vue';
 
 const props = defineProps({
   modelValue: {
@@ -61,13 +61,16 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  /**
+   * @deprecated
+   */
   disabledClass: {
     type: String,
     default: 'disabled:text-gray-200 disabled:cursor-not-allowed',
   },
 });
 
-const {modelValue, rules, label, inputClass, color, name, id} = toRefs(props);
+const {modelValue, rules, label, inputClass, name, id} = toRefs(props);
 
 const emit = defineEmits(['update:modelValue']);
 
@@ -75,24 +78,6 @@ type RadioValue = string | number | string[] | undefined;
 
 const {value: inputValue, errorMessage} = useField<RadioValue>(name, rules, {
   initialValue: modelValue.value,
-});
-
-const colorClass = computed(() => {
-  switch (color.value) {
-    case 'secondary':
-      return 'text-secondary focus:ring-secondary';
-    case 'info':
-      return 'text-info focus:ring-info';
-    case 'success':
-      return 'text-success focus:ring-success';
-    case 'warning':
-      return 'text-warning focus:ring-warning';
-    case 'error':
-      return 'text-error focus:ring-error';
-    case 'primary':
-    default:
-      return 'text-primary focus:ring-primary';
-  }
 });
 
 watch(
@@ -113,26 +98,54 @@ watch(
 </script>
 
 <template>
-  <div :class="wrapperClass">
-    <div class="flex w-full items-center gap-2 select-none" :class="groupClass">
+  <div
+    class="v-radio"
+    :class="[
+      wrapperClass,
+      {
+        'v-radio--error': !!errorMessage,
+      },
+    ]"
+  >
+    <div class="v-radio-group" :class="groupClass">
       <input
         :id="id"
         v-model="inputValue"
         type="radio"
         :name="name"
         :value="value"
-        class="transition duration-300"
-        :class="[inputClass, colorClass, disabled && disabledClass]"
+        class="v-radio-input"
+        :class="inputClass"
         :aria-disabled="disabled"
         :disabled="disabled"
         v-bind="$attrs"
       />
-      <label v-if="label" :for="id || name" :class="labelClass">
+      <label
+        v-if="label"
+        :for="id || name"
+        class="v-radio-label"
+        :class="labelClass"
+      >
         {{ label }}
       </label>
     </div>
-    <div v-if="errorMessage && !hideError" class="text-error-500 text-sm">
+    <div v-if="errorMessage && !hideError" class="v-radio-error">
       {{ errorMessage }}
     </div>
   </div>
 </template>
+
+<style>
+.v-radio-group {
+  @apply flex w-full items-center gap-2 select-none;
+}
+.v-radio-input {
+  @apply transition duration-300;
+}
+.v-radio-error {
+  @apply text-error-500 text-sm;
+}
+.v-radio.v-radio--error .v-radio-input {
+  @apply border-error-500 focus:border-error-500 focus:ring-error-500;
+}
+</style>
