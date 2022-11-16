@@ -69,9 +69,12 @@ if (!disableRouteActive.value) {
       <StepperItem
         :item="item"
         :index="idx"
+        :active-index="activeIndex"
         :active="linear ? activeIndex >= idx : activeIndex === idx"
         :as="tag"
         :vertical="vertical"
+        :linear="linear"
+        :last="idx === (items.length -1)"
       />
     </template>
   </div>

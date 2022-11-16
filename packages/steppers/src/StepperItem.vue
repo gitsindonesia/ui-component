@@ -6,23 +6,28 @@ import {toRefs, computed} from 'vue';
 
 type Props = {
   index: number;
+  activeIndex: number;
   item: StepItem;
   startFrom?: number;
   first?: boolean;
+  last?: boolean;
   active?: boolean;
   as?: string;
   vertical?: boolean;
+  linear?: boolean,
 };
 
 const props = withDefaults(defineProps<Props>(), {
   startFrom: 1,
   first: false,
+  last: false,
   active: false,
   as: 'div',
   vertical: false,
+  linear: false,
 });
 
-const {active, startFrom, first, as, item, index} = toRefs(props);
+const {active, startFrom, first, last, as, item, index} = toRefs(props);
 
 const displayIndex = computed(() => startFrom.value + index.value);
 const isFirst = computed(() => first.value || index.value === 0);
@@ -36,11 +41,16 @@ const to = computed(() => (isRouterLink.value ? item.value.path : ''));
   <component
     :is="as"
     :to="to"
-    class="w-full flex gap-x-2 items-center"
+    class="w-full flex gap-x-2 items-center relative"
     :class="[vertical ? 'flex-row' : 'flex-col']"
   >
-    <div class="relative">
-      <StepperDivider v-if="!isFirst" :vertical="vertical" />
+    <StepperDivider
+        v-if="(vertical && !last) || (!vertical && !isFirst)"
+        :vertical="vertical"
+        :is-active="linear ? (vertical ? activeIndex !== index && active : active) : false"
+        :linear="linear"
+    />
+    <div class="">
       <StepperNumber
         :index="displayIndex"
         :is-active="active"
