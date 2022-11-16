@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0-alpha.21](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.20...v0.12.0-alpha.21) (2022-11-16)
+
+### Features
+
+- **Forms.VInput, Forms.VTextarea:** revamp textarea ([c554b82](https://github.com/gitsindonesia/ui-component/commit/c554b829d35dc02d20982b0cede2118f9acc423a))
+
 ## [0.11.10](https://github.com/gitsindonesia/ui-component/compare/v0.11.9...v0.11.10) (2022-09-23)
 
 **Note:** Version bump only for package @gits-id/utils

@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0-alpha.21](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.20...v0.12.0-alpha.21) (2022-11-16)
+
+### Features
+
+- **Forms.Select:** improve form select styles ([cff4e0d](https://github.com/gitsindonesia/ui-component/commit/cff4e0d30e3454d357f97676d9c3099158313933))
+- **Forms.VFileUpload:** use VInput as default file upload ([fb50eac](https://github.com/gitsindonesia/ui-component/commit/fb50eac3a0ce98908dc34ce105498498892896b2))
+- **Forms.VInput, Forms.VTextarea:** revamp textarea ([c554b82](https://github.com/gitsindonesia/ui-component/commit/c554b829d35dc02d20982b0cede2118f9acc423a))
+- **VCheckbox:** revamp v-checkbox component ([de07145](https://github.com/gitsindonesia/ui-component/commit/de07145b0fcc581e070c4095df9ca43e24163577))
+- **VRadio:** add BEM class for v-input ([a12f57c](https://github.com/gitsindonesia/ui-component/commit/a12f57c8476eead9b468ab662a5c0124a995742e))
+
 # [0.12.0-alpha.20](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.19...v0.12.0-alpha.20) (2022-11-16)
 
 **Note:** Version bump only for package @gits-id/forms
