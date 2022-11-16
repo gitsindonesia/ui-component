@@ -1,5 +1,12 @@
 # Button
 
+<details>
+  <summary> Table of Contents </summary>
+  
+  [[toc]]
+
+</details>
+
 ## Usage
 
 ### Basic Usage
@@ -209,6 +216,8 @@ The `VBtn` component is registered globally when you install with `@gits-id/ui`.
 
 ### FAB
 
+Floating Action Button (FAB).
+
 ```vue
 <script setup lang="ts">
 import VIcon from '@gits-id/icon';
@@ -221,39 +230,7 @@ import VIcon from '@gits-id/icon';
 </template>
 ```
 
-<LivePreview src="forms-button--rounded-icon" height="100" />
-
-### Outlined Icon
-
-```vue
-<script setup lang="ts">
-import VIcon from '@gits-id/icon';
-</script>
-
-<template>
-  <VBtn icon outlined>
-    <VIcon name="ri:home-line" class="w-full" />
-  </VBtn>
-</template>
-```
-
-<LivePreview src="forms-button--outlined-icon" height="100" />
-
-### Text Icon
-
-```vue
-<script setup lang="ts">
-import VIcon from '@gits-id/icon';
-</script>
-
-<template>
-  <VBtn icon text>
-    <VIcon name="ri:home-line" class="w-full" />
-  </VBtn>
-</template>
-```
-
-<LivePreview src="forms-button--text-icon" height="100" />
+<LivePreview src="forms-button--fab" height="100" />
 
 ## Props
 
@@ -280,32 +257,73 @@ import VIcon from '@gits-id/icon';
 | [`solid`](#solid)             | `boolean`                                                                            | `false`      |
 | [`fab` ](#fab)                | `boolean`                                                                            | `false`      |
 
-## Methods
-
-None
-
 ## Events
 
 None
 
 ## Slots
 
-None
+- [`default`](#default)
+
+```vue
+<template>
+  <VBtn> Button </VBtn>
+</template>
+```
+
+- [`prefix`](#prefix)
+
+```vue
+<template>
+  <VBtn>
+    <template #prefix> Prefix </template>
+    Button
+  </VBtn>
+</template>
+```
+
+- [`suffix`](#suffix)
+
+```vue
+<template>
+  <VBtn>
+    <template #suffix> Suffix </template>
+    Button
+  </VBtn>
+</template>
+```
 
 ## CSS Variables
 
-None
+| Variable                                      | Default Value                   |
+| --------------------------------------------- | ------------------------------- |
+| [`--btn-bg-color`](#--btn-bg-color)           | `theme('colors.gray.200')`      |
+| [`--btn-text-color`](#--btn-text-color)       | `theme('colors.gray.800')`      |
+| [`--btn-border-color`](#--btn-border-color)   | `theme('colors.gray.300')`      |
+| [`--btn-border-radius`](#--btn-border-radius) | `theme('borderRadius.DEFAULT')` |
+| [`--btn-border-width`](#--btn-border-width)   | `theme('borderWidth.DEFAULT')`  |
+| [`--btn-padding-x`](#--btn-padding-x)         | `theme('spacing.3')`            |
+| [`--btn-padding-y`](#--btn-padding-y)         | `theme('spacing.2')`            |
+| [`--btn-line-height`](#--btn-line-height)     | `theme('lineHeight.tight')`     |
+| [`--btn-font-size`](#--btn-font-size)         | `theme('fontSize.base')`        |
+| [`--btn-font-weight`](#--btn-font-weight)     | `theme('fontWeight.medium')`    |
+| [`--btn-shadow`](#--btn-shadow)               | `theme('boxShadow.none')`       |
+| [`--btn-icon-width`](#--btn-icon-width)       | `theme('spacing.5')`            |
+| [`--btn-icon-height`](#--btn-icon-height)     | `theme('spacing.5')`            |
+| [`--btn-width`](#--btn-width)                 | `theme('width.auto')`           |
+| [`--btn-height`](#--btn-height)               | `theme('width.auto')`           |
 
 ## Tailwind Plugin
 
 This package comes with custom tailwind plugin for styling. If you are installing this package separately from `@gits-id/ui` package, you need to include the plugin in `plugins` section in your Tailwind config file.
 
-````js{4}
+```js{4}
 // tailwind.config.js
 module.exports = {
   content: [],
   plugins: [require('@gits-id/tailwind-components/button')],
 };
+```
 
 ## Manual Installation
 
@@ -313,7 +331,7 @@ You can also install the `Button` component individually via `@gits-id/button` p
 
 ```bash
 npm install @gits-id/button
-````
+```
 
 ```vue
 <script setup lang="ts">
