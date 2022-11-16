@@ -16,16 +16,7 @@ export default {
     },
   },
   args: {
-    value: '',
-    modelValue: '',
-    name: '',
-    error: false,
-    errorMessages: [],
-    readonly: false,
-    disabled: false,
-    size: '',
-    rows: 10,
-    cols: '',
+    rows: 5,
     placeholder: 'Type something...',
   },
 } as Meta;
@@ -44,6 +35,16 @@ Default.parameters = {
   docs: {
     source: {
       code: '<v-textarea />',
+    },
+  },
+};
+
+export const Label = Template.bind({});
+Label.args = {label: 'My Label'};
+Label.parameters = {
+  docs: {
+    source: {
+      code: '<v-textarea label="My Label" />',
     },
   },
 };
@@ -82,6 +83,18 @@ Error.parameters = {
   docs: {
     source: {
       code: `<v-textarea error :error-messages="['Field is required']" />`,
+    },
+  },
+};
+
+export const Counter = Template.bind({});
+Counter.args = {
+  counter: true,
+};
+Counter.parameters = {
+  docs: {
+    source: {
+      code: `<v-textarea counter />`,
     },
   },
 };

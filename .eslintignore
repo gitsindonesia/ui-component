@@ -5,3 +5,4 @@
 .nuxt
 *.config.*
 .storybook
+*.css

@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import {computed, toRefs, PropType, watch} from 'vue';
-import {useInputClasses, useTextSize} from '@gits-id/utils';
 import {useField} from 'vee-validate';
 
 const props = defineProps({
@@ -40,6 +39,9 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  /**
+   * @deprecated
+   */
   size: {
     type: String,
     default: '',
@@ -74,7 +76,7 @@ const props = defineProps({
   },
 });
 
-const {error, size, validationMode, name, rules} = toRefs(props);
+const {validationMode, name, rules} = toRefs(props);
 
 const emit =
   defineEmits<{
@@ -91,18 +93,6 @@ const {value, errorMessage, handleChange} = useField(name, rules, {
 });
 
 watch(value, (val) => emit('update:modelValue', val));
-
-const {class: sizeClass} = useTextSize(size.value);
-const inputClasses = computed(() =>
-  useInputClasses(error.value || !!errorMessage.value),
-);
-
-const classes = computed(() => [
-  inputClasses.value,
-  sizeClass.value,
-  {shadow: props.shadow},
-  props.inputClass,
-]);
 
 const validationListeners = computed(() => {
   // If the field is valid or have not been validated yet
@@ -125,29 +115,40 @@ const validationListeners = computed(() => {
 </script>
 
 <template>
-  <div :class="wrapperClass">
-    <label v-if="label" :for="name" class="mb-1 block">{{ label }}</label>
+  <div
+    :class="[
+      `v-input v-input--textarea`,
+      {
+        'v-input--error': error || !!errorMessage,
+        'v-input--disabled': disabled,
+        'v-input--shadow': shadow,
+      },
+      wrapperClass,
+    ]"
+  >
+    <label v-if="label" :for="name" class="v-input-label">{{ label }}</label>
     <textarea
       :id="name"
       v-model="value"
       v-on="validationListeners"
-      class="block w-full"
-      :class="classes"
+      :class="['v-input-control', inputClass]"
       :readonly="readonly"
       :disabled="disabled"
       :cols="cols"
       :rows="rows"
       v-bind="$attrs"
     />
-    <div class="flex p-0 relative">
-      <div
-        v-if="errorMessage"
-        class="text-error-600 text-sm mt-1"
-        v-text="errorMessage"
-      />
-      <div v-if="counter" class="absolute right-0">
-        {{ value.length }}
+    <div class="v-input-footer">
+      <div class="v-input-error" v-text="errorMessage" />
+      <div v-if="counter" class="v-input-counter">
+        <slot name="counter" :count="value.length">
+          {{ value.length }}
+        </slot>
       </div>
     </div>
   </div>
 </template>
+
+<style>
+@import '../forms.css';
+</style>

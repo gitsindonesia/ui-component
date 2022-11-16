@@ -1,3 +1,4 @@
+import './forms.css';
 export {default as VTextarea} from './textarea/Textarea.vue';
 export {default as VCheckbox} from './checkbox/VCheckbox.vue';
 export {default as VFileUpload} from './file-input/VFileUpload.vue';
