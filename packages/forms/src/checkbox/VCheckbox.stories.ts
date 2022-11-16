@@ -21,10 +21,7 @@ export default {
     },
   },
   args: {
-    modelValue: false,
     label: 'Checkbox',
-    color: '',
-    size: '',
     name: 'myCheckbox',
   },
 } as Meta;

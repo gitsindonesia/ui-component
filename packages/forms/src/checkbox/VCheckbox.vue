@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import {toRefs, computed, PropType, watch} from 'vue';
-import {useTextSize} from '@gits-id/utils';
 import {useField} from 'vee-validate';
 
 type CheckboxValue = any[] | boolean | undefined;
@@ -62,10 +61,16 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  /**
+   * @deprecated
+   */
   disabledClass: {
     type: String,
-    default:
-      'disabled:bg-gray-200 disabled:border-gray-200 disabled:cursor-not-allowed',
+    default: 'v-checkbox--disabled',
+  },
+  errorClass: {
+    type: String,
+    default: '',
   },
 });
 
@@ -74,41 +79,12 @@ const emit =
     (e: 'update:modelValue', value: CheckboxValue): void;
   }>();
 
-const {
-  modelValue,
-  label,
-  inputClass,
-  color,
-  disabled,
-  size,
-  name,
-  rules,
-  validationMode,
-} = toRefs(props);
-
-const colorClass = computed(() => {
-  switch (color.value) {
-    case 'secondary':
-      return 'text-secondary-600 focus:ring-secondary-600';
-    case 'info':
-      return 'text-info-600 focus:ring-info-600';
-    case 'success':
-      return 'text-success-600 focus:ring-success-600';
-    case 'warning':
-      return 'text-warning-600 focus:ring-warning-600';
-    case 'error':
-      return 'text-error-600 focus:ring-error-600';
-    case 'primary':
-    default:
-      return 'text-primary-600 focus:ring-primary-600';
-  }
-});
+const {modelValue, label, inputClass, disabled, name, rules, validationMode} =
+  toRefs(props);
 
 const isEagerValidation = computed(() => {
   return validationMode.value === 'eager';
 });
-
-const {class: sizeClass} = useTextSize(size.value);
 
 const {
   value: innerValue,
@@ -144,30 +120,86 @@ const handleChange = (m: any) => {
 </script>
 
 <template>
-  <div class="flex items-center gap-2" :class="wrapperClass">
-    <input
-      :id="id || name"
-      v-model="innerValue"
-      @blur="handleBlur"
-      @input="handleChange"
-      :name="name"
-      :value="value"
-      type="checkbox"
-      class="rounded transition duration-300"
-      :disabled="disabled"
-      :class="[inputClass, colorClass, disabledClass]"
-    />
-    <label
-      class="select-none"
-      :for="id || name"
-      :class="[sizeClass]"
-      @mousedown.prevent="null"
+  <div :class="wrapperClass">
+    <div
+      class="v-checkbox"
+      :class="[
+        `v-checkbox-${color}`,
+        {'v-checkbox--disabled': disabled, 'v-checkbox--error': !!errorMessage},
+      ]"
     >
-      {{ label }}
-    </label>
-  </div>
-
-  <div v-if="errorMessage" class="text-error-500 text-sm">
-    {{ errorMessage }}
+      <input
+        :id="id || name"
+        v-model="innerValue"
+        @blur="handleBlur"
+        @input="handleChange"
+        :name="name"
+        :value="value"
+        type="checkbox"
+        :class="['v-checkbox-input', inputClass]"
+        :disabled="disabled"
+        v-bind="$attrs"
+      />
+      <label
+        class="v-checkbox-label"
+        :for="id || name"
+        @mousedown.prevent="null"
+      >
+        {{ label }}
+      </label>
+    </div>
+    <div v-if="errorMessage" class="v-checkbox-error" :class="errorClass">
+      {{ errorMessage }}
+    </div>
   </div>
 </template>
+
+<style>
+:root {
+  --v-checkbox-bg-color: theme('colors.white');
+  --v-checkbox-border-width: 1px;
+  --v-checkbox-border-style: solid;
+  --v-checkbox-border-color: theme('colors.gray.500');
+  --v-checkbox-border-radius: theme('borderRadius.DEFAULT');
+}
+
+.v-checkbox {
+  @apply flex items-center gap-2;
+}
+.v-checkbox-input {
+  border-radius: var(--v-checkbox-border-radius);
+  background-color: var(--v-checkbox-bg-color);
+  border: var(--v-checkbox-border-width) var(--v-checkbox-border-style)
+    var(--v-checkbox-border-color);
+
+  @apply transition duration-300
+    disabled:bg-gray-100 disabled:border-gray-200 disabled:cursor-not-allowed;
+}
+.v-checkbox-label {
+  @apply select-none;
+}
+.v-checkbox-error {
+  @apply text-sm text-error-500;
+}
+.v-checkbox-primary .v-checkbox-input {
+  @apply text-primary-500 focus:border-primary-500 focus:ring-primary-500;
+}
+.v-checkbox-secondary .v-checkbox-input {
+  @apply text-secondary-500 focus:border-secondary-500 focus:ring-secondary-500;
+}
+.v-checkbox-info .v-checkbox-input {
+  @apply text-info-500 focus:border-info-500 focus:ring-info-500;
+}
+.v-checkbox-success .v-checkbox-input {
+  @apply text-success-500 focus:border-success-500 focus:ring-success-500;
+}
+.v-checkbox-warning .v-checkbox-input {
+  @apply text-warning-500 focus:border-warning-500 focus:ring-warning-500;
+}
+.v-checkbox-error .v-checkbox-input {
+  @apply text-error-500 focus:border-error-500 focus:ring-error-500;
+}
+.v-checkbox--error .v-checkbox-input {
+  @apply text-error-500 border-error-500 ring-error-500 focus:border-error-500 focus:ring-error-500;
+}
+</style>
