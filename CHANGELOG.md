@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0-alpha.20](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.19...v0.12.0-alpha.20) (2022-11-16)
+
+### Bug Fixes
+
+- **tailwind-components:** fix tailwind scan folder ([38e3915](https://github.com/gitsindonesia/ui-component/commit/38e3915aca636d2fb27ffb926b711aed8b647593))
+
 # [0.12.0-alpha.19](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.18...v0.12.0-alpha.19) (2022-11-15)
 
 ### Bug Fixes
