@@ -33,11 +33,13 @@
   margin-bottom: var(--v-input-label-margin-bottom);
 }
 
+.v-input.v-input--select .v-input-control,
 .v-input.v-input--textarea .v-input-control {
   @apply w-full focus:ring-1 focus:border-primary-500 focus:ring-primary-500;
 }
 
 .v-input.v-input--textarea .v-input-control,
+.v-input.v-input--select .v-input-control,
 .v-input-wrapper {
   border: 1px solid var(--v-input-border-color);
   border-radius: var(--v-input-border-radius);
@@ -129,6 +131,8 @@
 }
 
 /* disabled */
+.v-input.v-input--disabled.v-input--textarea .v-input-control,
+.v-input.v-input--disabled.v-input--select .v-input-control,
 .v-input.v-input--disabled .v-input-wrapper {
   @apply border-gray-200 bg-gray-100;
 }

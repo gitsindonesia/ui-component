@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import {toRefs, PropType, watch, computed} from 'vue';
 import {useField} from 'vee-validate';
-import {useInputClasses, useTextSize} from '@gits-id/utils';
 import type {VFormSelectItem} from './types';
 
 const props = defineProps({
@@ -9,6 +8,9 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  /**
+   * @deprecated Use `modelValue` instead
+   */
   value: {
     type: String,
     default: '',
@@ -47,7 +49,7 @@ const props = defineProps({
   },
   errorClass: {
     type: String,
-    default: 'text-error-600 mt-1 text-sm',
+    default: '',
   },
   rules: {
     type: String,
@@ -59,7 +61,7 @@ const props = defineProps({
   },
   labelClass: {
     type: String,
-    default: 'block mb-1',
+    default: '',
   },
   wrapperClass: {
     type: String,
@@ -71,7 +73,10 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits(['update:modelValue']);
+const emit =
+  defineEmits<{
+    (e: 'update:modelValue', value: string): void;
+  }>();
 
 const {
   modelValue,
@@ -100,12 +105,6 @@ const {
 } = useField(name, rules, {
   initialValue: value.value || modelValue.value,
   validateOnValueUpdate: !isEagerValidation.value,
-});
-const {class: sizeClass} = useTextSize(props.size);
-const inputClass = computed(() => useInputClasses(error.value));
-
-const classes = computed(() => {
-  return [inputClass.value, sizeClass.value];
 });
 
 watch(inputValue, (val) => {
@@ -136,15 +135,23 @@ const handleBlur = () => {
 </script>
 
 <template>
-  <div :class="wrapperClass">
-    <label v-if="label" :for="name" :class="labelClass">
+  <div
+    :class="[
+      `v-input v-input--select`,
+      {
+        'v-input--error': error || !!errorMessage,
+        'v-input--disabled': disabled,
+      },
+      wrapperClass,
+    ]"
+  >
+    <label v-if="label" :for="name" class="v-input-label" :class="labelClass">
       {{ label }}
     </label>
     <select
       v-model="inputValue"
       @blur="handleBlur"
-      class="w-full block transition duration-300"
-      :class="classes"
+      class="v-input-control"
       :disabled="disabled"
       v-bind="$attrs"
     >
@@ -157,8 +164,12 @@ const handleBlur = () => {
         {{ getText(option) }}
       </option>
     </select>
-    <div v-if="message" :class="errorClass">
+    <div v-if="message" class="v-input-error" :class="errorClass">
       {{ message }}
     </div>
   </div>
 </template>
+
+<style>
+@import '../forms.css';
+</style>
