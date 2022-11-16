@@ -11,8 +11,16 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "gitHead": "80bc1037da208367d00723d488dff0ca00e2ebee",
-  "main": "index.js",
+  "main": "src/index.js",
   "devDependencies": {
     "tailwindcss": "^3.2.3"
+  },
+  "exports": {
+    ".": {
+      "import": "./src/index.js",
+      "require": "./src/index.js"
+    },
+    "./package.json": "./package.json",
+    "./*": "./src/*.js"
   }
 }
