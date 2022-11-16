@@ -197,3 +197,7 @@
 .v-input-counter {
   /*  */
 }
+
+.v-input-action {
+  @apply flex items-center gap-2;
+}

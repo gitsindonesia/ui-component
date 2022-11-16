@@ -1,5 +1,4 @@
 import {Story} from '@storybook/vue3';
-import {VInputProps} from 'packages/ui';
 import {useForm} from 'vee-validate';
 import {mixed, object} from 'yup';
 import {VInput} from '..';
@@ -22,7 +21,7 @@ export default {
     name: '',
     error: false,
     errorMessages: [],
-    placeholder: 'Browse file...',
+    placeholder: 'Choose file...',
     id: '',
   },
 };
@@ -96,7 +95,7 @@ Dropzone.parameters = {
   },
 };
 
-export const Validation: Story<VInputProps> = (args) => ({
+export const Validation: Story<{}> = () => ({
   components: {VInput, VBtn, VFileUpload},
   setup() {
     const schema = object({
@@ -211,7 +210,7 @@ export const InitialError: Story<VInputProps> = (args) => ({
 `,
 });
 
-export const InitialValues: Story<VInputProps> = (args) => ({
+export const InitialValues: Story<{}> = () => ({
   components: {VInput, VBtn, VFileUpload},
   setup() {
     const schema = object({

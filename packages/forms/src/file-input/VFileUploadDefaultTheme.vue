@@ -1,5 +1,12 @@
+<script lang="ts">
+export default {
+  inheritAttrs: false,
+};
+</script>
+
 <script setup lang="ts">
 import VBtn from '@gits-id/button';
+import VInput from '../input/VInput.vue';
 
 type Props = {
   borderClass?: string;
@@ -28,55 +35,33 @@ const emit =
 </script>
 
 <template>
-  <div
-    class="
-      transition
-      duration-300
-      border
-      group
-      rounded-lg
-      flex
-      gap-4
-      items-center
-      py-1
-    "
-    :class="borderClass"
+  <VInput
+    readonly
+    :model-value="fileName"
+    :placeholder="fileName ? '' : placeholder"
+    @click="emit('choose')"
   >
-    <div
-      class="
-        flex-1
-        text-gray-500
-        hover:text-gray-700
-        text-sm
-        truncate
-        px-3
-        py-1
-        h-full
-      "
-      :title="fileName || placeholder"
-      @click="emit('choose')"
-    >
-      {{ fileName || placeholder }}
-    </div>
-    <div class="space-x-1 px-1">
-      <VBtn
-        :disabled="readonly || disabled"
-        type="button"
-        size="sm"
-        @click="emit('choose')"
-      >
-        {{ hasFile ? changeText : browseText }}
-      </VBtn>
-      <VBtn
-        v-if="hasFile && !hideRemove"
-        type="button"
-        size="sm"
-        color="error"
-        :disabled="readonly || disabled"
-        @click="emit('remove')"
-      >
-        {{ removeText }}
-      </VBtn>
-    </div>
-  </div>
+    <template #append>
+      <div class="v-input-action">
+        <VBtn
+          :disabled="readonly || disabled"
+          type="button"
+          size="sm"
+          @click="emit('choose')"
+        >
+          {{ hasFile ? changeText : browseText }}
+        </VBtn>
+        <VBtn
+          v-if="hasFile && !hideRemove"
+          type="button"
+          size="sm"
+          color="error"
+          :disabled="readonly || disabled"
+          @click="emit('remove')"
+        >
+          {{ removeText }}
+        </VBtn>
+      </div>
+    </template>
+  </VInput>
 </template>
