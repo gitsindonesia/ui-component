@@ -12,8 +12,8 @@
     "gits",
     "ui-component"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Warsono <warsono16694@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "@gits-id/collapsible": "^0.12.0-alpha.22",
     "vue": "^3.2.31",
@@ -39,5 +39,14 @@
   "jsdelivr": "dist/menu.iife.js",
   "module": "./dist/menu.mjs",
   "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/menu.mjs",
+      "require": "./dist/menu.js"
+    },
+    "./package.json": "./package.json",
+    "./src/*": "./src/*",
+    "./*": "./*"
+  },
   "gitHead": "80bc1037da208367d00723d488dff0ca00e2ebee"
 }

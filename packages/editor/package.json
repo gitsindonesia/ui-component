@@ -17,8 +17,8 @@
     "gits",
     "ui-component"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Warsono <warsono16694@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^32.0.0",
     "@ckeditor/ckeditor5-vue": "^2.0.1",
@@ -43,5 +43,14 @@
   "jsdelivr": "dist/editor.iife.js",
   "module": "./dist/editor.mjs",
   "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/editor.mjs",
+      "require": "./dist/editor.js"
+    },
+    "./package.json": "./package.json",
+    "./src/*": "./src/*",
+    "./*": "./*"
+  },
   "gitHead": "a66f8d89ce157b912642d9b1f1e2a80991e12ce3"
 }

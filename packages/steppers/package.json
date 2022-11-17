@@ -12,8 +12,8 @@
     "gits",
     "ui-component"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Warsono <warsono16694@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "tailwindcss": "^3.0.23",
     "vue": "^3.2.31"
@@ -31,5 +31,14 @@
   "jsdelivr": "dist/stepper.iife.js",
   "module": "./dist/stepper.mjs",
   "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/stepper.mjs",
+      "require": "./dist/stepper.js"
+    },
+    "./package.json": "./package.json",
+    "./src/*": "./src/*",
+    "./*": "./*"
+  },
   "gitHead": "80bc1037da208367d00723d488dff0ca00e2ebee"
 }

@@ -11,8 +11,8 @@
     "utils",
     "utilities"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Warsono <warsono16694@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "vue": "^3.2.31"
   },

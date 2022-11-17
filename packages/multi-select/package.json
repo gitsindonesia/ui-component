@@ -12,8 +12,8 @@
     "gits",
     "ui-component"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Warsono <warsono16694@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "@gits-id/badge": "^0.12.0-alpha.21",
     "@gits-id/tooltip": "^0.12.0-alpha.21",
@@ -42,5 +42,14 @@
   "jsdelivr": "dist/multi-select.iife.js",
   "module": "./dist/multi-select.mjs",
   "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/multi-select.mjs",
+      "require": "./dist/multi-select.js"
+    },
+    "./package.json": "./package.json",
+    "./src/*": "./src/*",
+    "./*": "./*"
+  },
   "gitHead": "a66f8d89ce157b912642d9b1f1e2a80991e12ce3"
 }

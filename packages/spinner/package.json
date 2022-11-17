@@ -14,8 +14,8 @@
     "ui-component",
     "ui"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Warsono <warsono16694@gmail.com>",
+  "license": "MIT",
   "devDependencies": {
     "@gits-id/tailwind-config": "^0.12.0-alpha.21",
     "@gits-id/utils": "^0.12.0-alpha.21",
@@ -29,6 +29,15 @@
   "jsdelivr": "dist/spinner.iife.js",
   "module": "./dist/spinner.mjs",
   "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/spinner.mjs",
+      "require": "./dist/spinner.js"
+    },
+    "./package.json": "./package.json",
+    "./src/*": "./src/*",
+    "./*": "./*"
+  },
   "gitHead": "80bc1037da208367d00723d488dff0ca00e2ebee",
   "dependencies": {
     "vue": "^3.2.33"

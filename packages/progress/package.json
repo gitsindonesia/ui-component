@@ -12,8 +12,8 @@
     "gits",
     "ui-component"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Warsono <warsono16694@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "@gits-id/utils": "^0.12.0-alpha.21",
     "vue": "^3.2.31"
@@ -34,5 +34,14 @@
   "jsdelivr": "dist/progress-bar.iife.js",
   "module": "./dist/progress-bar.mjs",
   "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/progress-bar.mjs",
+      "require": "./dist/progress-bar.js"
+    },
+    "./package.json": "./package.json",
+    "./src/*": "./src/*",
+    "./*": "./*"
+  },
   "gitHead": "80bc1037da208367d00723d488dff0ca00e2ebee"
 }

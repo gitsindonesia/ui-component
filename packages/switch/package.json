@@ -12,8 +12,8 @@
     "gits",
     "ui-component"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Warsono <warsono16694@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "vee-validate": "^4.5.11",
     "vue": "^3.2.31"
@@ -39,5 +39,14 @@
   "jsdelivr": "dist/switch.iife.js",
   "module": "./dist/switch.mjs",
   "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/switch.mjs",
+      "require": "./dist/switch.js"
+    },
+    "./package.json": "./package.json",
+    "./src/*": "./src/*",
+    "./*": "./*"
+  },
   "gitHead": "a66f8d89ce157b912642d9b1f1e2a80991e12ce3"
 }

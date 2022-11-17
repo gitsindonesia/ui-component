@@ -8,8 +8,8 @@
     "theme",
     "tailwind-theme"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Warsono <warsono16694@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "tailwindcss": "^3.0.23",
     "vue": "^3.2.33"

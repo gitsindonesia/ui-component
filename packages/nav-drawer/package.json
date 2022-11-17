@@ -1,7 +1,7 @@
 {
   "name": "@gits-id/nav-drawer",
   "version": "0.12.0-alpha.22",
-  "description": "GITS Navigation Drawer Component",
+  "description": "Vue Navigation Drawer Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "npm run build",
@@ -12,13 +12,12 @@
     "gits",
     "ui-component"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Warsono <warsono16694@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "@gits-id/button": "^0.12.0-alpha.21",
     "@gits-id/logo": "^0.12.0-alpha.21",
     "@gits-id/menu": "^0.12.0-alpha.22",
-    "@gits-id/navbar": "^0.12.0-alpha.22",
     "@gits-id/utils": "^0.12.0-alpha.21",
     "vue": "^3.2.31"
   },
@@ -41,5 +40,14 @@
   "jsdelivr": "dist/nav-drawer.iife.js",
   "module": "./dist/nav-drawer.mjs",
   "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/nav-drawer.mjs",
+      "require": "./dist/nav-drawer.js"
+    },
+    "./package.json": "./package.json",
+    "./src/*": "./src/*",
+    "./*": "./*"
+  },
   "gitHead": "a66f8d89ce157b912642d9b1f1e2a80991e12ce3"
 }

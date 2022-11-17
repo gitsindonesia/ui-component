@@ -12,8 +12,8 @@
     "gits",
     "ui-component"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Warsono <warsono16694@gmail.com>",
+  "license": "MIT",
   "devDependencies": {
     "@gits-id/utils": "^0.12.0-alpha.21",
     "@vue/test-utils": "^2.0.0-rc.17",
@@ -27,6 +27,15 @@
   "jsdelivr": "dist/container.iife.js",
   "module": "./dist/container.mjs",
   "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/container.mjs",
+      "require": "./dist/container.js"
+    },
+    "./package.json": "./package.json",
+    "./src/*": "./src/*",
+    "./*": "./*"
+  },
   "gitHead": "b5a78473960cae120ca3396a242f6fb241970de4",
   "dependencies": {
     "vue": "^3.2.33"

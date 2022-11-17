@@ -13,7 +13,7 @@
     "iconify"
   ],
   "author": "Warsono <warsono16694@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@gits-id/theme": "^0.12.0-alpha.1",
     "vue": "^3.2.31"

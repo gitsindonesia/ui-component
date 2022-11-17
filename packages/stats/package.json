@@ -13,11 +13,12 @@
     "gits",
     "ui-component"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Warsono <warsono16694@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "@gits-id/badge": "^0.12.0-alpha.21",
     "@gits-id/card": "^0.12.0-alpha.21",
+    "@gits-id/icon": "^0.12.0-alpha.21",
     "vue": "^3.2.31"
   },
   "devDependencies": {
@@ -41,5 +42,14 @@
   "jsdelivr": "dist/stats.iife.js",
   "module": "./dist/stats.mjs",
   "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/stats.mjs",
+      "require": "./dist/stats.js"
+    },
+    "./package.json": "./package.json",
+    "./src/*": "./src/*",
+    "./*": "./*"
+  },
   "gitHead": "a66f8d89ce157b912642d9b1f1e2a80991e12ce3"
 }

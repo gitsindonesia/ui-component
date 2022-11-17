@@ -12,8 +12,8 @@
     "gits",
     "ui-component"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Warsono <warsono16694@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "floating-vue": "^2.0.0-beta.20",
     "vee-validate": "^4.5.9",
@@ -35,5 +35,14 @@
   "jsdelivr": "dist/tooltip.iife.js",
   "module": "./dist/tooltip.mjs",
   "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/tooltip.mjs",
+      "require": "./dist/tooltip.js"
+    },
+    "./package.json": "./package.json",
+    "./src/*": "./src/*",
+    "./*": "./*"
+  },
   "gitHead": "a66f8d89ce157b912642d9b1f1e2a80991e12ce3"
 }

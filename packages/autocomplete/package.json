@@ -12,8 +12,8 @@
     "gits",
     "ui-component"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Warsono <warsono16694@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "@gits-id/button": "^0.12.0-alpha.21",
     "@gits-id/icon": "^0.12.0-alpha.21",
@@ -34,5 +34,14 @@
   "jsdelivr": "dist/autocomplete.iife.js",
   "module": "./dist/autocomplete.mjs",
   "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/autocomplete.mjs",
+      "require": "./dist/autocomplete.js"
+    },
+    "./package.json": "./package.json",
+    "./src/*": "./src/*",
+    "./*": "./*"
+  },
   "gitHead": "a66f8d89ce157b912642d9b1f1e2a80991e12ce3"
 }

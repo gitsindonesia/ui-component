@@ -32,5 +32,14 @@
   "jsdelivr": "dist/shimmer.iife.js",
   "module": "./dist/shimmer.mjs",
   "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/shimmer.mjs",
+      "require": "./dist/shimmer.js"
+    },
+    "./package.json": "./package.json",
+    "./src/*": "./src/*",
+    "./*": "./*"
+  },
   "gitHead": "80bc1037da208367d00723d488dff0ca00e2ebee"
 }

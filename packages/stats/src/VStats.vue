@@ -2,8 +2,7 @@
 import {computed, toRefs} from 'vue';
 import VCard from '@gits-id/card';
 import VBadge from '@gits-id/badge';
-import VueFeather from 'vue-feather';
-import {Icon} from '@iconify/vue';
+import Icon from '@gits-id/icon';
 
 type BadgeProps = InstanceType<typeof VBadge>['$props'];
 
@@ -18,6 +17,7 @@ type Props = {
   up?: boolean;
   down?: boolean;
   iconClass?: string;
+  iconSize?: string;
 };
 
 const props = withDefaults(defineProps<Props>(), {
@@ -86,7 +86,7 @@ const badgeColor = computed(() => {
       :class="colorClass"
     >
       <slot name="icon" :icon="icon">
-        <Icon :icon="icon" :class="iconClass" />
+        <Icon :name="icon" :class="iconClass" />
       </slot>
     </div>
     <div class="w-full">
@@ -100,8 +100,10 @@ const badgeColor = computed(() => {
         </div>
         <div v-if="progress" class="w-auto text-xs">
           <v-badge :color="badgeColor" rounded class="flex gap-1 items-center">
-            <vue-feather v-if="down" type="arrow-down" size="16" />
-            <vue-feather v-else-if="up" type="arrow-up" size="16" />
+            <Icon
+              :name="down ? 'ri:arrow-down-s-line' : 'ri:arrow-up-s-line'"
+              :size="iconSize"
+            />
             <span class="text-xs"> {{ progress }} </span>
           </v-badge>
         </div>

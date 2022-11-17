@@ -16,7 +16,7 @@
     "ui-component"
   ],
   "author": "Warsono <warsono16694@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@vueup/vue-quill": "^1.0.0-beta.8",
     "quill": "^1.3.7",
@@ -38,5 +38,14 @@
   "jsdelivr": "dist/quill-editor.iife.js",
   "module": "./dist/quill-editor.mjs",
   "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/quill-editor.mjs",
+      "require": "./dist/quill-editor.js"
+    },
+    "./package.json": "./package.json",
+    "./src/*": "./src/*",
+    "./*": "./*"
+  },
   "gitHead": "80bc1037da208367d00723d488dff0ca00e2ebee"
 }

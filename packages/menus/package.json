@@ -38,5 +38,14 @@
   "jsdelivr": "dist/menus.iife.js",
   "module": "./dist/menus.mjs",
   "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/menus.mjs",
+      "require": "./dist/menus.js"
+    },
+    "./package.json": "./package.json",
+    "./src/*": "./src/*",
+    "./*": "./*"
+  },
   "gitHead": "a66f8d89ce157b912642d9b1f1e2a80991e12ce3"
 }

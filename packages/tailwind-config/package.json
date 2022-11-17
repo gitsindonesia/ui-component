@@ -8,8 +8,8 @@
     "tailwind",
     "tailwind-config"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Warsono <warsono16694@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "@gits-id/tailwind-components": "^0.12.0-alpha.20",
     "@gits-id/theme": "^0.12.0-alpha.1",
