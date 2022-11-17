@@ -25,5 +25,13 @@
   "main": "dist/utils.umd.js",
   "unpkg": "dist/utils.iife.js",
   "jsdelivr": "dist/utils.iife.js",
-  "module": "./dist/utils.mjs"
+  "module": "./dist/utils.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/utils.mjs",
+      "require": "./dist/utils.js"
+    },
+    "./package.json": "./package.json",
+    "./*": "./*"
+  }
 }
