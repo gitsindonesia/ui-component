@@ -12,8 +12,8 @@
     "gits",
     "ui-component"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Warsono <warsono16694@gmail.com>",
+  "license": "MIT",
   "devDependencies": {
     "@gits-id/icon": "^0.11.10",
     "@gits-id/utils": "^0.12.0-alpha.21",
@@ -31,6 +31,15 @@
   "jsdelivr": "dist/collapsible.iife.js",
   "module": "./dist/collapsible.mjs",
   "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/collapsible.mjs",
+      "require": "./dist/collapsible.js"
+    },
+    "./package.json": "./package.json",
+    "./src/*": "./src/*",
+    "./*": "./*"
+  },
   "gitHead": "b5a78473960cae120ca3396a242f6fb241970de4",
   "dependencies": {
     "vue": "^3.2.33"
