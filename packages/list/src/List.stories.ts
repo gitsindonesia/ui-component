@@ -7,9 +7,10 @@ import ListItemHeader from './ListItemHeader.vue';
 import ListCollapse from './ListCollapse.vue';
 import vueRouter from 'storybook-vue3-router';
 import {ref} from 'vue';
-import VNavDrawer from '@gits-id/nav-drawer';
+import {NavDrawer as VNavDrawer} from '@gits-id/nav-drawer';
 import VBtn from '@gits-id/button';
 import {Dropdown} from '@gits-id/dropdown';
+import '@gits-id/nav-drawer/dist/style.css';
 
 export default {
   title: 'Components/List',
@@ -483,7 +484,7 @@ export const NavDrawerList: Story = (args) => ({
     VBtn,
   },
   setup() {
-    const isOpen = ref(false);
+    const isOpen = ref(true);
     const isMini = ref(false);
     const menus = ref([
       {
@@ -530,63 +531,66 @@ export const NavDrawerList: Story = (args) => ({
     return {args, isOpen, isMini, menus};
   },
   template: `
-    <div class="sm:ml-[300px] space-x-2">
-      <v-btn @click="isOpen = !isOpen">Toggle Open</v-btn>
-      <v-btn @click="isMini = !isMini">Toggle Mini</v-btn>
-      <pre class="mt-5">State: {{ {isOpen, isMini} }}</pre>
-    </div>
+  <div class="flex gap-4">
     <v-nav-drawer
       v-model="isOpen"
-      v-model:mini="isMini"
-      hide-toggle
-      class="absolute"
+      :mini="isMini"
+      color="dark"
+      class="p-2"
     >
-      <template #logo.mini>
-        <div class="text-center font-semibold">GITS</div>
-      </template>
-      <template #menus>
-        <List>
-          <template v-for="menu in menus" :key="menu.text">
-            <ListCollapse v-if="menu.items">
-              <template #activator="{isOpen, toggle}">
-                <ListItem
-                  v-bind="menu"
-                  :class="isMini ? 'justify-center' : ''"
-                  :hide-text="isMini"
-                  :hide-append="isMini"
-                  append-icon="ri:arrow-down-s-line"
-                  :append-icon-class="isOpen ? 'rotate-180' : ''"
-                  @click="toggle"
-                >
-                  {{ menu.title }}
-                </ListItem>
-              </template>
-              <List>
-                <ListItem
-                  v-for="child in menu.items"
-                  :key="child.text"
-                  v-bind="child"
-                  :class="isMini ? 'justify-center' : ''"
-                  :hide-text="isMini"
-                  :hide-append="isMini"
-                >
-                  {{ child.title }}
-                </ListItem>
-              </List>
-            </ListCollapse>
-            <ListItem
-              v-else
-              v-bind="menu"
-              :class="isMini ? 'justify-center' : ''"
-              :hide-text="isMini"
-              :hide-append="isMini"
-            >
-              {{ menu.title }}
-            </ListItem>
-          </template>
-        </List>
-      </template>
+      <div class="text-center font-semibold">GITS</div>
+      <List>
+        <template v-for="menu in menus" :key="menu.text">
+          <ListCollapse v-if="menu.items">
+            <template #activator="{isOpen, toggle}">
+              <ListItem
+                v-bind="menu"
+                :class="isMini ? 'justify-center' : ''"
+                :hide-text="isMini"
+                :hide-append="isMini"
+                append-icon="ri:arrow-down-s-line"
+                :append-icon-class="isOpen ? 'rotate-180' : ''"
+                hover
+                hover-class="hover:bg-gray-700"
+                @click="toggle"
+              >
+                {{ menu.title }}
+              </ListItem>
+            </template>
+            <List>
+              <ListItem
+                v-for="child in menu.items"
+                :key="child.text"
+                v-bind="child"
+                :class="isMini ? 'justify-center' : ''"
+                :hide-text="isMini"
+                :hide-append="isMini"
+                hover
+                hover-class="hover:bg-gray-700"
+              >
+                {{ child.title }}
+              </ListItem>
+            </List>
+          </ListCollapse>
+          <ListItem
+            v-else
+            v-bind="menu"
+            :class="isMini ? 'justify-center' : ''"
+            :hide-text="isMini"
+            :hide-append="isMini"
+            hover
+            hover-class="hover:bg-gray-700"
+          >
+            {{ menu.title }}
+          </ListItem>
+        </template>
+      </List>
     </v-nav-drawer>
+    <div class="space-x-2">
+      <v-btn @click="isOpen = !isOpen">Toggle Open</v-btn>
+      <v-btn @click="isMini = !isMini">Toggle Mini</v-btn>
+    </div>
+    </div>
   `,
 });
 
