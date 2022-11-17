@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0-alpha.22](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.21...v0.12.0-alpha.22) (2022-11-17)
+
+### Bug Fixes
+
+- **collapsible:** update package exports ([8ceb42f](https://github.com/gitsindonesia/ui-component/commit/8ceb42f0bd9d59d5138a8bae6065aa37c19a32b5))
+- **list:** upgrade deps and update nav-drawer story ([8990d73](https://github.com/gitsindonesia/ui-component/commit/8990d73f57917655a6b0def26560ffab7d8c66aa))
+
 # [0.12.0-alpha.21](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.20...v0.12.0-alpha.21) (2022-11-16)
 
 ### Bug Fixes

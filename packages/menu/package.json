@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/menu",
-  "version": "0.12.0-alpha.21",
+  "version": "0.12.0-alpha.22",
   "description": "GITS Menu Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,7 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gits-id/collapsible": "^0.12.0-alpha.21",
+    "@gits-id/collapsible": "^0.12.0-alpha.22",
     "vue": "^3.2.31",
     "vue-router": "^4.0.13"
   },

@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/menus",
-  "version": "0.12.0-alpha.21",
+  "version": "0.12.0-alpha.22",
   "description": "Menus component for Vue.js",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -18,7 +18,7 @@
   "license": "MIT",
   "dependencies": {
     "@gits-id/icon": "^0.12.0-alpha.21",
-    "@gits-id/list": "^0.12.0-alpha.1",
+    "@gits-id/list": "^0.12.0-alpha.22",
     "floating-vue": "^2.0.0-beta.20",
     "vue": "^3.2.31"
   },
