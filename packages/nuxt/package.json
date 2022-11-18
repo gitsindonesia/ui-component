@@ -34,9 +34,5 @@
     "nuxt": "^3.0.0",
     "postcss-custom-properties": "^10.0.0"
   },
-  "peerDependencies": {
-    "@heroicons/vue": "^1.0.6",
-    "@iconify/vue": "^3.2.1"
-  },
   "gitHead": "a66f8d89ce157b912642d9b1f1e2a80991e12ce3"
 }

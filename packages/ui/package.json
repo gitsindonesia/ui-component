@@ -52,10 +52,6 @@
     "@vue/test-utils": "^2.0.0-rc.17",
     "vue": "^3.2.33"
   },
-  "peerDependencies": {
-    "@heroicons/vue": "^1.0.6",
-    "@iconify/vue": "^3.2.1"
-  },
   "main": "./dist/ui.umd.js",
   "unpkg": "./dist/ui.iife.js",
   "jsdelivr": "./dist/ui.iife.js",
