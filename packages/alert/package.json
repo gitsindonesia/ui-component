@@ -30,6 +30,10 @@
     "vite": "^3.0.0",
     "vitest": "^0.12.4"
   },
+  "peerDependencies": {
+    "@heroicons/vue": "^1.0.6",
+    "@iconify/vue": "^3.2.1"
+  },
   "gitHead": "a66f8d89ce157b912642d9b1f1e2a80991e12ce3",
   "main": "dist/alert.umd.js",
   "unpkg": "dist/alert.iife.js",
