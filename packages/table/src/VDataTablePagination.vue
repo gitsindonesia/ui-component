@@ -2,6 +2,7 @@
 import {computed, PropType, ref, toRefs, watch} from 'vue';
 import Pagination from '@gits-id/pagination';
 import VSelect from '@gits-id/select';
+import '@gits-id/select/dist/style.css';
 
 type PaginationProps = InstanceType<typeof Pagination>['$props'];
 
@@ -167,7 +168,9 @@ watch(
         :items-per-page="itemsPerPage"
         v-bind="pagination"
       >
-        <template v-for="(_, name) in $slots" v-slot:[name]><slot :name="name" /></template>
+        <template v-for="(_, name) in $slots" v-slot:[name]
+          ><slot :name="name"
+        /></template>
       </Pagination>
     </div>
   </div>
