@@ -14,15 +14,9 @@ import Icon from '@gits-id/icon';
 import '@gits-id/forms/dist/style.css';
 import '@gits-id/tooltip/dist/style.css';
 import '@gits-id/theme/transition.css';
+import {VSelectItem} from './types';
 
-type SelectItem = {
-  text: string;
-  value: any;
-
-  [x: string]: any;
-};
-
-type Val = string | number | boolean | SelectItem;
+type Val = string | number | boolean | VSelectItem;
 
 const props = defineProps({
   /**
@@ -37,7 +31,7 @@ const props = defineProps({
     default: '',
   },
   items: {
-    type: Array as PropType<SelectItem[]>,
+    type: Array as PropType<VSelectItem[]>,
     default: () => [],
   },
   color: {
