@@ -34,8 +34,7 @@
   },
   "peerDependencies": {
     "@heroicons/vue": "^1.0.6",
-    "@iconify/vue": "^3.2.1",
-    "feather-icons": "^4.28.0"
+    "@iconify/vue": "^3.2.1"
   },
   "main": "dist/stats.umd.js",
   "unpkg": "dist/stats.iife.js",
