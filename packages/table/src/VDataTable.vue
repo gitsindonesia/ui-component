@@ -113,7 +113,7 @@ const props = defineProps({
   },
   headerClass: {
     type: String,
-    default: 'bg-gray-50',
+    default: '',
   },
   bodyClass: {
     type: String,
@@ -129,7 +129,7 @@ const props = defineProps({
   },
   columnInactiveClass: {
     type: String,
-    default: 'text-gray-600 hover:text-primary-500',
+    default: '',
   },
   hoverClass: {
     type: String,
@@ -265,25 +265,25 @@ const computedHeaders = computed(() =>
 
 const getThClass = (header: VDataTableHeader) => {
   const isActive = header.sorting && sortBy.value === header.value;
-  const positionFreeze =
-    header.positionFreeze === 'right' ? 'right-0' : 'left-0';
   return [
     isActive ? props.columnActiveClass : props.columnInactiveClass,
     {
-      [`text-${header.align}`]: !!header.align,
+      [`v-table-th--${header.align}`]: !!header.align,
+      'v-table-th--sticky': header.freeze,
+      'v-table-th--sticky-right': header.positionFreeze === 'right',
+      'v-table-th--sticky-left': header.positionFreeze === 'left',
     },
-    header.freeze ? `sticky ${positionFreeze} bg-gray-50 drop-shadow-lg` : '',
   ];
 };
 
 const getTdClass = (header: VDataTableHeader) => {
-  const positionFreeze =
-    header.positionFreeze === 'right' ? 'right-0' : 'left-0';
   return [
     {
-      [`text-${header.align}`]: !!header.align,
+      [`v-table-td--${header.align}`]: !!header.align,
+      'v-table-td--sticky': header.freeze,
+      'v-table-td--sticky-right': header.positionFreeze === 'right',
+      'v-table-td--sticky-left': header.positionFreeze === 'left',
     },
-    header.freeze ? `sticky ${positionFreeze} bg-white drop-shadow-lg` : '',
   ];
 };
 
@@ -322,8 +322,6 @@ watch([sortBy, sortDirection], ([newSortBy, newDirection]) => {
     direction: newDirection,
   });
 });
-
-const paddingClass = computed(() => (dense.value ? 'px-4 py-2' : 'px-6 py-3'));
 
 const onPaginationChange = (params = {}) => {
   emit('pagination:change', {
@@ -398,31 +396,32 @@ const start = computed(() =>
 
 <template>
   <div
-    class="w-full flex flex-col overflow-hidden"
+    class="v-table"
     :class="[
       {
-        shadow: !noShadow && !flat,
-        [roundedClass]: !tile,
-        border: bordered,
-        'border-gray-200': bordered,
+        'v-table--shadow': !noShadow && !flat,
+        'v-table--rounded': !tile,
+        'v-table--bordered': bordered,
+        'v-table--striped': striped,
+        'v-table--empty': !items.length,
+        'v-table--loading': loading,
+        'v-table--flat': flat,
+        'v-table--dense': dense,
+        'v-table--tile': tile,
       },
       wrapperClass,
     ]"
   >
-    <div class="overflow-x-auto rounded-t-md">
-      <table class="w-full divide-y divide-gray-200">
-        <thead :class="headerClass">
-          <tr
-            :class="{
-              'divide divide-x': bordered,
-            }"
-          >
+    <div class="v-table-overflow">
+      <table class="v-table-table">
+        <thead class="v-table-thead" :class="headerClass">
+          <tr class="v-table-tr">
             <th
               v-for="header in computedHeaders"
               :key="header.value"
               scope="col"
-              class="text-left py-3 group"
-              :class="[getThClass(header), paddingClass, header.class]"
+              class="v-table-th group"
+              :class="[getThClass(header), header.class]"
               :width="header.width"
             >
               <slot
@@ -438,56 +437,40 @@ const start = computed(() =>
                   role="button"
                   aria-label="Sort"
                   type="button"
-                  class="
-                    flex
-                    items-center
-                    truncate
-                    appearance-none
-                    text-sm
-                    font-semibold
-                    uppercase
-                    tracking-wider
-                  "
+                  class="v-table-sort-button"
                   :class="[
                     header.align
                       ? `justify-${header.align}`
                       : 'justify-between',
                   ]"
-                  @click.prevent="handleSort(header)"
+                  @click="handleSort(header)"
                 >
-                  <span>
+                  <span class="v-table-sort-header-text">
                     {{ header.text }}
                   </span>
                   <Icon
                     name="heroicons:chevron-down"
                     v-if="header.sorting === 'desc'"
-                    class="ml-2 h-5 w-5"
+                    class="v-table-sort-icon"
                   />
                   <Icon
                     name="heroicons:chevron-up"
                     v-if="header.sorting === 'asc'"
-                    class="ml-2 h-5 w-5"
+                    class="v-table-sort-icon"
                   />
                 </button>
-                <span
-                  v-else
-                  class="text-sm font-semibold uppercase tracking-wider"
-                >
+                <span v-else class="v-table-header-text">
                   {{ header.text }}
                 </span>
               </slot>
             </th>
           </tr>
         </thead>
-        <tbody :class="[striped ? '' : 'divide-y divide-gray-200', bodyClass]">
+        <tbody class="v-table-tbody" :class="bodyClass">
           <template v-if="paginatedItems.length < 1 && !loading">
             <slot name="empty">
-              <tr>
-                <td
-                  :colspan="headers.length"
-                  class="text-center text-gray-600 text-sm whitespace-nowrap"
-                  :class="[paddingClass]"
-                >
+              <tr class="v-table-tr group">
+                <td :colspan="headers.length" class="v-table-td">
                   {{ noDataText }}
                 </td>
               </tr>
@@ -495,14 +478,9 @@ const start = computed(() =>
           </template>
           <template v-if="loading">
             <slot name="loading">
-              <tr>
-                <td
-                  :colspan="headers.length"
-                  class="text-center text-gray-600 text-sm whitespace-nowrap"
-                  :class="[paddingClass]"
-                >
-                  <v-spinner color="primary" class="mr-1" />
-
+              <tr class="v-table-tr group">
+                <td :colspan="headers.length" class="v-table-td">
+                  <v-spinner color="primary" class="mr-1 v-table-spinner" />
                   {{ loadingText }}
                 </td>
               </tr>
@@ -512,24 +490,18 @@ const start = computed(() =>
             v-else
             v-for="(item, index) in paginatedItems"
             :key="`item-${index}`"
+            class="group v-table-tr"
             :class="{
-              group: true,
               [stripedClass]: striped,
               [hoverClass]: hover,
-              'divide-x': bordered,
               [trClass]: Boolean(trClass),
             }"
           >
             <td
               v-for="header in headers"
               :key="`header-${header.value}`"
-              class="whitespace-nowrap text-sm text-gray-900"
-              :class="[
-                getTdClass(header),
-                paddingClass,
-                tdClass,
-                header?.tdClass || '',
-              ]"
+              class="v-table-td"
+              :class="[getTdClass(header), tdClass, header?.tdClass || '']"
             >
               <slot
                 v-if="selectable && header.value === 'selected'"
@@ -537,7 +509,11 @@ const start = computed(() =>
                 :selected="selected"
                 :item="item"
               >
-                <v-checkbox v-model="selected" :value="(item as any)" />
+                <v-checkbox
+                  v-model="selected"
+                  wrapper-class="v-table-checkbox"
+                  :value="(item as any)"
+                />
               </slot>
               <slot
                 v-else-if="header.value === 'index'"
@@ -578,7 +554,7 @@ const start = computed(() =>
         <VDataTablePagination
           v-model="page"
           :background-color="footerColor ? footerColor : ''"
-          class="rounded-b-md"
+          class="v-table-pagination"
           :class="footerClass"
           :total-items="serverSide ? totalItems : items.length"
           v-model:itemsPerPage="perPage"
@@ -588,3 +564,165 @@ const start = computed(() =>
     </template>
   </div>
 </template>
+
+<style>
+:root {
+  /* spacing */
+  --v-table-padding-x: theme('spacing.6');
+  --v-table-padding-y: theme('spacing.3');
+  /* thead */
+  --v-table-thead-bg-color: theme('colors.gray.50');
+  /* th */
+  --v-table-th-color: theme('colors.gray.800');
+  --v-table-th-font-size: theme('fontSize.sm');
+  --v-table-th-font-weight: theme('fontWeight.semibold');
+  --v-table-th-white-space: nowrap;
+  --v-table-th-text-align: left;
+  /* td */
+  --v-table-td-color: theme('colors.gray.800');
+  --v-table-td-bg-color: theme('colors.white');
+  --v-table-td-font-size: theme('fontSize.sm');
+  --v-table-td-font-weight: theme('fontWeight.normal');
+  --v-table-td-white-space: nowrap;
+  --v-table-td-text-align: left;
+  /* dense */
+  --v-table-dense-padding-x: theme('spacing.4');
+  --v-table-dense-padding-y: theme('spacing.2');
+}
+
+.v-table {
+  @apply w-full flex flex-col overflow-hidden sm:rounded-lg shadow;
+}
+
+.v-table.v-table--flat {
+  @apply shadow-none;
+}
+
+.v-table.v-table--bordered {
+  @apply border shadow-none;
+}
+
+.v-table.v-table--tile {
+  @apply rounded-none;
+}
+
+.v-table.v-table--rounded {
+  @apply rounded-lg;
+}
+
+.v-table-thead {
+  background-color: var(--v-table-thead-bg-color);
+}
+
+.v-table-overflow {
+  @apply overflow-x-auto rounded-t-md;
+}
+
+.v-table-table {
+  @apply w-full divide-y divide-gray-200;
+}
+
+.v-table-sort-button {
+  font-size: var(--v-table-th-font-size);
+  font-weight: var(--v-table-th-font-weight);
+
+  @apply flex
+    items-center
+    truncate
+    appearance-none
+    uppercase
+    tracking-wider gap-2;
+}
+
+.v-table-header-text {
+  @apply text-sm font-semibold uppercase tracking-wider;
+}
+
+.v-table-th {
+  padding: var(--v-table-padding-y) var(--v-table-padding-x);
+  font-size: var(--v-table-th-font-size);
+  font-weight: var(--v-table-th-font-weight);
+  white-space: var(--v-table-th-white-space);
+  color: var(--v-table-th-color);
+  text-align: var(--v-table-th-text-align);
+}
+
+.v-table-td {
+  padding: var(--v-table-padding-y) var(--v-table-padding-x);
+  font-size: var(--v-table-td-font-size);
+  font-weight: var(--v-table-td-font-weight);
+  white-space: var(--v-table-td-white-space);
+  color: var(--v-table-td-color);
+  background: var(--v-table-td-bg-color);
+  text-align: var(--v-table-td-text-align);
+}
+
+.v-table-pagination {
+  @apply rounded-b-md;
+}
+
+.v-table-tbody {
+  @apply divide-y;
+}
+
+/* striped */
+.v-table--striped .v-table-tbody {
+  @apply divide-gray-200;
+}
+
+/* loading */
+.v-table--loading .v-table-td,
+.v-table--empty .v-table-td {
+  @apply text-center text-gray-600 text-sm whitespace-nowrap;
+}
+
+/* bordered */
+.v-table--bordered .v-table-tr {
+  @apply divide-x;
+}
+
+/* dense */
+.v-table--dense .v-table-th,
+.v-table--dense .v-table-td {
+  padding: var(--v-table-dense-padding-y) var(--v-table-dense-padding-x);
+}
+
+/* sticky */
+.v-table-th--sticky,
+.v-table-td--sticky {
+  @apply sticky bg-gray-50 drop-shadow-lg;
+}
+.v-table-th--sticky-right {
+  @apply right-0;
+}
+.v-table-th--sticky-left {
+  @apply left-0;
+}
+
+.v-table-td--sticky-right {
+  @apply right-0;
+}
+.v-table-td--sticky-left {
+  @apply left-0;
+}
+
+/* alignment */
+.v-table-th--left {
+  --v-table-th-text-align: left;
+}
+.v-table-th--right {
+  --v-table-th-text-align: right;
+}
+.v-table-th--center {
+  --v-table-th-text-align: center;
+}
+.v-table-td--left {
+  --v-table-td-text-align: left;
+}
+.v-table-td--right {
+  --v-table-td-text-align: right;
+}
+.v-table-td--center {
+  --v-table-td-text-align: center;
+}
+</style>

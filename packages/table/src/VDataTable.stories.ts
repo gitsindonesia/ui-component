@@ -51,10 +51,6 @@ export default {
     itemsPerPage: 10,
     items,
     headers,
-    striped: false,
-    hover: false,
-    dense: false,
-    loading: false,
   },
 } as Meta;
 
