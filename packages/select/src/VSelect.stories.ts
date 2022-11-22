@@ -4,12 +4,12 @@ import type {VSelectProps} from './types';
 import VSelect from './VSelect.vue';
 import {useForm} from 'vee-validate';
 import {ref} from 'vue';
-import {object} from 'yup';
+import {object, string} from 'yup';
 import VBtn from '@gits-id/button';
 
-const items = [...Array(5)].map((item, index) => ({
-  value: index,
-  text: `Option ${index}`,
+const items = [...Array(10)].map((_, index) => ({
+  value: index + 1,
+  text: `Option ${index + 1}`,
 }));
 
 export default {
@@ -23,17 +23,6 @@ export default {
   },
   args: {
     items,
-    color: 'primary',
-    modelValue: null,
-    value: null,
-    itemText: 'text',
-    itemValue: 'value',
-    name: '',
-    error: false,
-    errorMessages: [],
-    searchable: false,
-    placeholder: 'Select',
-    hideCheckIcon: false,
   },
 } as Meta;
 
@@ -42,9 +31,13 @@ const Template: Story<VSelectProps> = (args) => ({
     VSelect,
   },
   setup() {
-    return {args};
+    const value = ref();
+    return {args, value};
   },
-  template: `<v-select v-bind="args" />`,
+  template: `
+  <v-select v-bind="args" v-model="value" />
+  <pre class="mt-2">Model Value: {{ value }}</pre>
+  `,
 });
 
 export const Select = Template.bind({});
@@ -106,12 +99,74 @@ Shadow.parameters = {
   },
 };
 
+export const Error = Template.bind({});
+Error.args = {
+  error: true,
+};
+Error.parameters = {
+  docs: {
+    source: {
+      code: '<v-select :items="items" error />',
+    },
+  },
+};
+
+export const Clearable = Template.bind({});
+Clearable.args = {
+  clearable: true,
+};
+Clearable.parameters = {
+  docs: {
+    source: {
+      code: '<v-select :items="items" clearable />',
+    },
+  },
+};
+
+export const CustomTransition = Template.bind({});
+CustomTransition.args = {
+  transition: 'slide-down',
+};
+CustomTransition.parameters = {
+  docs: {
+    source: {
+      code: '<v-select :items="items" transition="slide-down" />',
+    },
+  },
+};
+
+export const ReturnObject = Template.bind({});
+ReturnObject.args = {
+  returnObject: true,
+};
+ReturnObject.parameters = {
+  docs: {
+    source: {
+      code: '<v-select :items="items" return-object />',
+    },
+  },
+};
+
+export const Sizes: Story<VSelectProps> = (args) => ({
+  components: {
+    VSelect,
+  },
+  setup() {
+    return {args};
+  },
+  template: `
+  <v-select v-bind="args" label="Small" wrapper-class="mb-4" size="sm" />
+  <v-select v-bind="args" label="Default" wrapper-class="mb-4" />
+  <v-select v-bind="args" label="Large" wrapper-class="mb-4" size="lg" />
+  `,
+});
+
 export const Validation: Story<{}> = () => ({
   components: {VBtn, VSelect},
   setup() {
     const schema = object({
-      genre: object().required().nullable().label('Genre'),
-      gender: object().required().nullable().label('Gender'),
+      genre: string().required().nullable().label('Genre'),
+      gender: string().required().nullable().label('Gender'),
     });
 
     const {handleSubmit, resetForm, values} = useForm({

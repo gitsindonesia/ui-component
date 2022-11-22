@@ -7,11 +7,13 @@ import {
   ListboxOption,
   ListboxLabel,
 } from '@headlessui/vue';
-import {getBgColor} from '@gits-id/utils';
 import {VInput} from '@gits-id/forms';
 import VTooltip from '@gits-id/tooltip';
-import {useField} from 'vee-validate';
+import {FieldOptions, useField} from 'vee-validate';
 import Icon from '@gits-id/icon';
+import '@gits-id/forms/dist/style.css';
+import '@gits-id/tooltip/dist/style.css';
+import '@gits-id/theme/transition.css';
 
 type SelectItem = {
   text: string;
@@ -20,7 +22,12 @@ type SelectItem = {
   [x: string]: any;
 };
 
+type Val = string | number | boolean | SelectItem;
+
 const props = defineProps({
+  /**
+   * @deprecated Use `modelValue` instead
+   */
   value: {
     type: [Object, String, Number, Boolean],
     default: '',
@@ -103,7 +110,7 @@ const props = defineProps({
   },
   labelClass: {
     type: String,
-    default: 'mb-1 block',
+    default: '',
   },
   wrapperClass: {
     type: String,
@@ -111,7 +118,7 @@ const props = defineProps({
   },
   errorClass: {
     type: String,
-    default: 'text-error-600 mt-1 text-sm',
+    default: '',
   },
   rules: {
     type: String,
@@ -125,51 +132,83 @@ const props = defineProps({
     type: String,
     default: 'shadow-sm',
   },
+  transition: {
+    type: String,
+    default: 'fade',
+  },
+  size: {
+    type: String as PropType<'sm' | 'md' | 'lg'>,
+    default: 'md',
+  },
+  searchSize: {
+    type: String as PropType<'sm' | 'md' | 'lg'>,
+    default: 'md',
+  },
+  searchPlaceholder: {
+    type: String,
+    default: 'Search...',
+  },
+  searchProps: {
+    type: Object as PropType<InstanceType<typeof VInput>['$props']>,
+    default: () => ({}),
+  },
+  fieldOptions: {
+    type: Object as PropType<Partial<FieldOptions<any>>>,
+    default: () => ({}),
+  },
 });
 
 const {
   modelValue,
-  color,
-  items,
-  placeholder,
-  searchable,
-  hideCheckIcon,
-  btnClass,
-  top,
-  itemText,
-  itemValue,
   value,
-  returnObject,
   name,
   rules,
+  items,
+  itemText,
+  itemValue,
+  placeholder,
 } = toRefs(props);
 
-const emit = defineEmits(['update:modelValue', 'update:value', 'search']);
-
-const bgColor = getBgColor(color.value);
-
-type Val = string | number | boolean | Record<string, any>;
+const emit =
+  defineEmits<{
+    (e: 'update:modelValue', value: Val): void;
+    (e: 'update:value', value: Val): void;
+    (e: 'search', value: string): void;
+  }>();
 
 const {value: selectedItem, errorMessage} = useField<Val>(name, rules, {
   initialValue: modelValue.value || value.value,
+  ...props.fieldOptions,
+});
+
+const findItem = (val: Val) => {
+  return items.value.find((item) => item[itemValue.value] === val);
+};
+
+watch(selectedItem, (val) => {
+  if (props.returnObject) {
+    if (typeof val === 'object') {
+      emit('update:modelValue', val);
+      emit('update:value', val);
+    } else {
+      const item = findItem(val) as Val;
+      emit('update:modelValue', item);
+      emit('update:value', item);
+    }
+  } else {
+    emit('update:modelValue', val);
+    emit('update:value', val);
+  }
 });
 
 const message = computed(() => {
   return errorMessage.value || props.errorMessages[0];
 });
 
-watch(modelValue, (val) => {
-  selectedItem.value = val;
-});
-
-watch(value, (val) => {
-  selectedItem.value = val;
-});
-
 const search = ref('');
 
 const filteredItems = computed(() => {
-  if (searchable.value) {
+  if (props.searchable) {
     const query = search.value.toLowerCase();
     return items.value.filter((item) => {
       return (
@@ -177,156 +216,101 @@ const filteredItems = computed(() => {
         item[itemValue.value]?.toLowerCase?.()?.includes(query)
       );
     });
-  } else {
-    return items.value;
   }
+
+  return items.value;
 });
 
-const setValue = (val: Val) => {
-  if (returnObject.value) {
-    selectedItem.value = val;
-  } else {
-    const newVal = val || modelValue.value || value.value;
-
-    if (['string', 'number', 'boolean'].includes(typeof newVal)) {
-      const itemVal = filteredItems.value.find((item) => {
-        return item[itemValue.value] === newVal;
-      });
-      if (itemVal) {
-        selectedItem.value = itemVal;
-      }
-    } else {
-      selectedItem.value = val;
-    }
-  }
-};
-
-watch(selectedItem, (item) => {
-  const val = returnObject.value
-    ? item
-    : (item as SelectItem)?.[itemValue.value];
-  emit('update:modelValue', val);
-  emit('update:value', val);
-});
-
-watch(
-  modelValue,
-  (val) => {
-    setValue(val);
-  },
-  {immediate: true},
-);
-
-watch(
-  value,
-  (val) => {
-    setValue(val);
-  },
-  {immediate: true},
-);
-
-watch(search, (val) => {
-  emit('search', val);
-});
+watch(search, (val) => emit('search', val));
 
 const selectedText = computed(() => {
-  return (
-    (selectedItem.value as SelectItem)?.[itemText.value] || placeholder.value
-  );
+  const item = filteredItems.value.find((item) => {
+    return item[itemValue.value] === selectedItem.value;
+  });
+
+  return item?.[props.itemText] || placeholder.value;
 });
 
 const clear = () => (selectedItem.value = '');
 </script>
 
 <template>
-  <div :class="wrapperClass">
+  <div
+    class="v-select"
+    :class="[
+      `v-select-${color}`,
+      `v-select--${size}`,
+      {
+        'v-select--error': error || !!errorMessages[0],
+        'v-select--disabled': disabled,
+      },
+      wrapperClass,
+    ]"
+  >
     <Listbox v-model="selectedItem">
-      <ListboxLabel v-if="label" :class="labelClass">{{ label }}</ListboxLabel>
-      <div class="relative">
+      <ListboxLabel v-if="label" class="v-select-label" :class="labelClass">
+        {{ label }}
+      </ListboxLabel>
+      <div class="v-select-panel">
         <ListboxButton
-          class="
-            border
-            relative
-            w-full
-            py-2
-            px-4
-            h-10
-            text-left
-            bg-white
-            rounded-md
-            cursor-default
-            focus:outline-none
-            focus-visible:ring-2
-            focus-visible:ring-opacity-75
-            focus-visible:ring-white
-            focus-visible:ring-offset-primary-300
-            focus-visible:ring-offset-2
-            focus-visible:border-primary-600
-            flex
-            items-center
-            gap-1
-          "
+          class="v-select-button"
           :class="[
             btnClass,
-            error ? 'border-error-500' : '',
             {
               [shadowClass]: shadow,
             },
           ]"
           :disabled="disabled"
         >
-          <div class="block flex-grow w-full truncate mr-2">
+          <div
+            class="v-select-selected"
+            :class="{
+              'v-select-selected--placeholder': !selectedItem,
+            }"
+          >
             <slot name="selected" :item="selectedItem">
               {{ selectedText }}
             </slot>
           </div>
           <v-tooltip v-if="selectedItem && clearable">
-            <template #activator="{on}">
-              <span v-on="on" @click="clear" class="w-auto cursor-pointer">
+            <template #activator>
+              <button
+                type="button"
+                aria-label="Clear"
+                class="v-select-clearable-button"
+                @click="clear"
+              >
                 <Icon
                   name="heroicons:x-mark"
-                  class="w-5 h-5 text-gray-400 hover:text-gray-500"
+                  class="v-select-clearable-icon"
                   aria-hidden="true"
                 />
-              </span>
+              </button>
             </template>
             <span> {{ clearText }} </span>
           </v-tooltip>
           <span class="w-auto">
             <Icon
               name="heroicons:chevron-down"
-              class="w-5 h-5 text-gray-400"
+              class="v-select-icon"
               aria-hidden="true"
             />
           </span>
         </ListboxButton>
 
-        <transition
-          leave-active-class="transition duration-100 ease-in"
-          leave-from-class="opacity-100"
-          leave-to-class="opacity-0"
-        >
+        <transition :name="transition">
           <ListboxOptions
-            class="
-              absolute
-              w-full
-              py-1
-              mt-1
-              overflow-auto
-              text-base
-              bg-white
-              rounded-md
-              shadow-lg
-              max-h-60
-              ring-1 ring-black ring-opacity-5
-              focus:outline-none
-              sm:text-sm
-              z-10
-            "
+            class="v-select-options"
             :class="top ? 'bottom-10' : ''"
           >
-            <div v-if="searchable" class="px-2 border-b py-2">
-              <v-input v-model="search" size="sm" placeholder="Search..." />
+            <div v-if="searchable" class="v-select-searchable">
+              <v-input
+                v-model="search"
+                :size="searchSize"
+                :placeholder="searchPlaceholder"
+                clearable
+                v-bind="searchProps"
+              />
             </div>
             <div
               v-if="searchable && !filteredItems.length"
@@ -336,40 +320,37 @@ const clear = () => (selectedItem.value = '');
             </div>
             <ListboxOption
               v-for="(item, index) in filteredItems"
-              v-slot="{active, selected}"
+              v-slot="{selected}"
               :key="index"
-              :value="item"
+              :value="returnObject ? item : item?.[itemValue]"
               as="template"
             >
               <li
-                class="group"
+                class="group v-select-option"
                 :class="[
-                  active ? `text-white ${bgColor}` : 'text-gray-900',
-                  'cursor-default select-none relative py-2 pr-4',
-                  !hideCheckIcon ? 'pl-10' : 'pl-4',
+                  {
+                    'v-select-option--active': selected,
+                  },
                 ]"
               >
                 <span
-                  :class="[
-                    selected ? 'font-medium' : 'font-normal',
-                    'block truncate',
-                  ]"
+                  v-if="!hideCheckIcon"
+                  class="v-select-option-check"
+                  :class="{
+                    'v-select-option-check--active': selected,
+                  }"
                 >
-                  <slot name="item" :item="item">
-                    {{ item?.[itemText] }}
-                  </slot>
-                </span>
-                <span
-                  v-if="selected && !hideCheckIcon"
-                  class="absolute inset-y-0 left-0 flex items-center pl-3"
-                  :class="[active ? 'text-white' : 'text-gray-900']"
-                >
-                  <slot name="icon">
+                  <slot v-if="selected" name="icon">
                     <Icon
                       name="heroicons:check"
-                      class="w-5 h-5"
+                      class="v-select-option-check-icon"
                       aria-hidden="true"
                     />
+                  </slot>
+                </span>
+                <span :class="['v-select-option-text']">
+                  <slot name="item" :item="item">
+                    {{ item?.[itemText] }}
                   </slot>
                 </span>
               </li>
@@ -379,8 +360,208 @@ const clear = () => (selectedItem.value = '');
       </div>
     </Listbox>
 
-    <div v-if="message" :class="errorClass">
+    <div v-if="message" class="v-select-error" :class="errorClass">
       {{ message }}
     </div>
   </div>
 </template>
+
+<style>
+:root {
+  /* input control / button */
+  --v-select-border-color: var(--v-input-border-color);
+  --v-select-border-radius: var(--v-input-border-radius);
+  --v-select-bg-color: var(--v-input-bg-color);
+  --v-select-height: var(--v-input-height);
+  --v-select-placeholder-color: var(--v-input-placeholder-color);
+  --v-select-border-radius: var(--v-input-border-radius);
+  --v-select-padding-x: var(--v-input-padding-x);
+  --v-select-padding-y: var(--v-input-padding-y);
+  --v-select-font-size: var(--v-input-font-size);
+
+  /* label */
+  --v-select-label-font-size: var(--v-input-label-font-size);
+  --v-select-label-font-weight: var(--v-input-label-font-weight);
+  --v-select-label-display: var(--v-input-label-display);
+  --v-select-label-margin-bottom: var(--v-input-label-margin-bottom);
+
+  /* text */
+  --v-select-text-color: var(--v-input-text-color);
+  --v-select-text-font-size: var(--v-input-text-font-size);
+  --v-select-text-font-weight: var(--v-input-text-font-weight);
+
+  /* icon */
+  --v-select-icon-width: var(--v-input-icon-width);
+  --v-select-icon-height: var(--v-input-icon-height);
+  --v-select-icon-color: var(--v-input-icon-color);
+
+  /* option item */
+  --v-select-option-padding-x: theme('spacing.4');
+  --v-select-option-padding-y: theme('spacing.2');
+  --v-select-option-bg-color: theme('colors.white');
+  --v-select-option-text-color: theme('colors.gray.800');
+
+  /* option item on hover */
+  --v-select-option-hover-bg-color: theme('colors.primary.500');
+  --v-select-option-hover-text-color: theme('colors.white');
+}
+
+.v-select-button {
+  border: 1px solid var(--v-select-border-color);
+  border-radius: var(--v-select-border-radius);
+  background-color: var(--v-select-bg-color);
+  padding: var(--v-select-padding-y) var(--v-select-padding-x);
+  height: var(--v-select-height);
+  font-size: var(--v-select-font-size);
+  font-weight: var(--v-select-font-weight);
+
+  @apply relative
+    w-full
+    text-left
+    cursor-default
+    focus:outline-none
+    focus:ring-1
+    focus:ring-primary-500
+    focus:border-primary-500
+    flex
+    items-center
+    gap-1;
+}
+
+.v-select--error .v-select-button {
+  @apply border-error-500;
+}
+
+.v-select-selected {
+  @apply block flex-grow w-full truncate mr-2;
+}
+
+.v-select-selected.v-select-selected--placeholder {
+  color: var(--v-select-placeholder-color);
+}
+
+.v-select-options {
+  @apply absolute
+    w-full
+    py-1
+    mt-1
+    overflow-auto
+    text-base
+    bg-white
+    rounded-md
+    shadow-lg
+    max-h-60
+    ring-1 ring-black ring-opacity-5
+    focus:outline-none
+    sm:text-sm
+    z-10;
+}
+
+.v-select-clearable-button {
+  @apply w-auto cursor-pointer flex items-center;
+}
+
+.v-select-clearable-icon {
+  width: var(--v-select-icon-width);
+  height: var(--v-select-icon-height);
+  color: var(--v-select-icon-color);
+}
+
+.v-select-clearable-icon:hover {
+  color: var(--v-select-icon-hover-color);
+}
+
+.v-select-icon {
+  width: var(--v-select-icon-width);
+  height: var(--v-select-icon-height);
+  color: var(--v-select-icon-color);
+
+  @apply text-gray-400;
+}
+
+.v-select-option {
+  padding: var(--v-select-option-padding-y) var(--v-select-option-padding-x);
+  font-size: var(--v-select-font-size);
+  font-weight: var(--v-select-font-weight);
+  background: var(--v-select-option-bg-color);
+  color: var(--v-select-option-text-color);
+
+  @apply cursor-default select-none relative flex gap-2 items-center;
+}
+
+.v-select-option:hover,
+.v-select-option.v-select-option--active {
+  --v-select-option-bg-color: var(--v-select-option-hover-bg-color);
+  --v-select-option-text-color: var(--v-select-option-hover-text-color);
+}
+
+.v-select-option-text {
+  @apply block truncate;
+}
+
+.v-select-option-check {
+  @apply w-6 h-6 shrink-0;
+}
+
+.v-select-option-check-icon {
+  @apply w-5 h-5;
+}
+
+.v-select-searchable {
+  @apply px-3 border-b py-2;
+}
+
+.v-select-error {
+  @apply text-error-500 mt-1 text-sm;
+}
+
+.v-select-label {
+  font-size: var(--v-select-label-font-size);
+  font-weight: var(--v-select-label-font-weight);
+  display: var(--v-select-label-display);
+  margin-bottom: var(--v-select-label-margin-bottom);
+}
+
+.v-select-panel {
+  @apply relative;
+}
+
+/* sizes */
+.v-select.v-select--sm {
+  --v-select-height: 2rem;
+  --v-select-padding-x: theme('padding.2');
+  --v-select-padding-y: theme('padding.1');
+  --v-select-font-size: theme('fontSize.sm');
+  --v-select-label-font-size: theme('fontSize.xs');
+}
+.v-select.v-select--sm .v-select-button {
+  --v-select-font-size: theme('fontSize.sm');
+}
+.v-select.v-select--sm .v-select-icon {
+  --v-select-icon-width: theme('width.4');
+  --v-select-icon-height: theme('height.4');
+}
+.v-select.v-select--sm .v-select-option {
+  --v-select-option-padding-x: theme('padding.2');
+  --v-select-option-padding-y: theme('padding.1');
+}
+
+.v-select.v-select--lg {
+  --v-select-height: 50px;
+  --v-select-padding-x: theme('padding.5');
+  --v-select-padding-y: theme('padding.3');
+  --v-select-font-size: theme('fontSize.lg');
+  --v-select-label-font-size: theme('fontSize.base');
+}
+.v-select.v-select--lg .v-select-button {
+  --v-select-font-size: theme('fontSize.lg');
+}
+.v-select.v-select--lg .v-select-icon {
+  --v-select-icon-width: theme('width.7');
+  --v-select-icon-height: theme('height.7');
+}
+.v-select.v-select--lg .v-select-option {
+  --v-select-option-padding-x: theme('padding.5');
+  --v-select-option-padding-y: theme('padding.3');
+}
+</style>

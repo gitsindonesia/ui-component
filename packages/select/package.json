@@ -1,7 +1,7 @@
 {
   "name": "@gits-id/select",
   "version": "0.12.0-alpha.25",
-  "description": "GITS Select Component",
+  "description": "Vue Select Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "npm run build",
@@ -10,7 +10,9 @@
   "keywords": [
     "select",
     "gits",
-    "ui-component"
+    "ui-component",
+    "component",
+    "vue"
   ],
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
@@ -18,6 +20,7 @@
     "@gits-id/forms": "^0.12.0-alpha.24",
     "@gits-id/tooltip": "^0.12.0-alpha.25",
     "@gits-id/utils": "^0.12.0-alpha.24",
+    "@gits-id/theme": "^0.12.0-alpha.24",
     "vue": "^3.2.31"
   },
   "devDependencies": {
