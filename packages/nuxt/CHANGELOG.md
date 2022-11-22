@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0-alpha.26](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.25...v0.12.0-alpha.26) (2022-11-22)
+
+**Note:** Version bump only for package @gits-id/ui-nuxt
+
 # [0.12.0-alpha.25](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.24...v0.12.0-alpha.25) (2022-11-17)
 
 **Note:** Version bump only for package @gits-id/ui-nuxt

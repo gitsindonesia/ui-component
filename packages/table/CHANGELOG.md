@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0-alpha.26](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.25...v0.12.0-alpha.26) (2022-11-22)
+
+### Bug Fixes
+
+- **VDataTablePagination:** fix v-select style ([6ea59fd](https://github.com/gitsindonesia/ui-component/commit/6ea59fd8178c679bdaaedb7d79f7d93f16862cc5))
+
+### Features
+
+- **DataTable:** add CSS Variables ([8e45c5c](https://github.com/gitsindonesia/ui-component/commit/8e45c5c0a1270c953d1d6d620fcabbfa4fe70e7d))
+
 # [0.12.0-alpha.25](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.24...v0.12.0-alpha.25) (2022-11-17)
 
 **Note:** Version bump only for package @gits-id/table
