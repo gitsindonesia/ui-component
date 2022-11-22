@@ -7,8 +7,9 @@
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
+import type {VSelectItem} from '@gits-id/select';
 
-const items = ref([
+const items = ref<VSelectItem[]>([
   {
     text: 'Item 1',
     value: 1,
@@ -40,8 +41,9 @@ The `VSelect` component is registered globally when you install with `@gits-id/u
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
+import type {VSelectItem} from '@gits-id/select';
 
-const items = ref([
+const items = ref<VSelectItem[]>([
   {
     text: 'Item 1',
     value: 1,
@@ -69,8 +71,9 @@ const items = ref([
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
+import type {VSelectItem} from '@gits-id/select';
 
-const items = ref([
+const items = ref<VSelectItem[]>([
   {
     text: 'Item 1',
     value: 1,
@@ -98,8 +101,9 @@ const items = ref([
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
+import type {VSelectItem} from '@gits-id/select';
 
-const items = ref([
+const items = ref<VSelectItem[]>([
   {
     text: 'Item 1',
     value: 1,
@@ -127,8 +131,9 @@ const items = ref([
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
+import type {VSelectItem} from '@gits-id/select';
 
-const items = ref([
+const items = ref<VSelectItem[]>([
   {
     text: 'Item 1',
     value: 1,
@@ -151,13 +156,14 @@ const items = ref([
 
 <LivePreview src="components-select--shadow" />
 
-### Validation
+### Error
 
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
+import type {VSelectItem} from '@gits-id/select';
 
-const items = ref([
+const items = ref<VSelectItem[]>([
   {
     text: 'Item 1',
     value: 1,
@@ -174,7 +180,200 @@ const items = ref([
 </script>
 
 <template>
-  <VSelect :items="items" validation />
+  <VSelect :items="items" error />
+</template>
+```
+
+<LivePreview src="components-select--error" />
+
+### Clearable
+
+```vue
+<script setup lang="ts">
+import {ref} from 'vue';
+import type {VSelectItem} from '@gits-id/select';
+
+const items = ref<VSelectItem[]>([
+  {
+    text: 'Item 1',
+    value: 1,
+  },
+  {
+    text: 'Item 2',
+    value: 2,
+  },
+  {
+    text: 'Item 3',
+    value: 3,
+  },
+]);
+</script>
+
+<template>
+  <VSelect :items="items" clearable />
+</template>
+```
+
+<LivePreview src="components-select--clearable" />
+
+### Custom Transition
+
+```vue
+<script setup lang="ts">
+import {ref} from 'vue';
+import type {VSelectItem} from '@gits-id/select';
+
+const items = ref<VSelectItem[]>([
+  {
+    text: 'Item 1',
+    value: 1,
+  },
+  {
+    text: 'Item 2',
+    value: 2,
+  },
+  {
+    text: 'Item 3',
+    value: 3,
+  },
+]);
+</script>
+
+<template>
+  <VSelect :items="items" transition="slide-down" />
+</template>
+```
+
+<LivePreview src="components-select--custom-transition" />
+
+### Return Object
+
+```vue
+<script setup lang="ts">
+import {ref} from 'vue';
+import type {VSelectItem} from '@gits-id/select';
+
+const items = ref<VSelectItem[]>([
+  {
+    text: 'Item 1',
+    value: 1,
+  },
+  {
+    text: 'Item 2',
+    value: 2,
+  },
+  {
+    text: 'Item 3',
+    value: 3,
+  },
+]);
+</script>
+
+<template>
+  <VSelect :items="items" return-object />
+</template>
+```
+
+<LivePreview src="components-select--return-object" />
+
+### Sizes
+
+```vue
+<script setup lang="ts">
+import {ref} from 'vue';
+import type {VSelectItem} from '@gits-id/select';
+
+const items = ref<VSelectItem[]>([
+  {
+    text: 'Item 1',
+    value: 1,
+  },
+  {
+    text: 'Item 2',
+    value: 2,
+  },
+  {
+    text: 'Item 3',
+    value: 3,
+  },
+]);
+</script>
+
+<template>
+  <v-select label="Small" wrapper-class="mb-4" size="sm" />
+  <v-select label="Default" wrapper-class="mb-4" />
+  <v-select label="Large" wrapper-class="mb-4" size="lg" />
+</template>
+```
+
+<LivePreview src="components-select--sizes" />
+
+### Validation
+
+```vue
+<script setup lang="ts">
+import {ref} from 'vue';
+import {object, string} from 'yup';
+import {useForm} from 'vee-validate';
+
+const schema = object({
+  genre: string().required().nullable().label('Genre'),
+  gender: string().required().nullable().label('Gender'),
+});
+
+const {handleSubmit, resetForm, values} = useForm({
+  validationSchema: schema,
+});
+
+const onSubmit = handleSubmit((values) => {
+  alert(JSON.stringify(values));
+});
+
+const genders = ref([
+  {
+    text: 'Male',
+    value: 'male',
+  },
+  {
+    text: 'Female',
+    value: 'female',
+  },
+]);
+
+const genres = ref([
+  {
+    text: 'Pop',
+    value: 'pop',
+  },
+  {
+    text: 'Rock',
+    value: 'rock',
+  },
+]);
+</script>
+
+<template>
+  <form @submit="onSubmit" class="border-none">
+    <v-select
+      wrapper-class="mb-4"
+      name="genre"
+      label="Genre"
+      placeholder="Select your genre"
+      :items="genres"
+    />
+    <v-select
+      wrapper-class="mb-4"
+      name="gender"
+      label="Gender"
+      placeholder="Select your gender"
+      :items="genders"
+    />
+    <div class="mt-4">
+      <v-btn type="submit">Submit</v-btn>
+      <v-btn type="button" text @click="resetForm">Reset</v-btn>
+    </div>
+    <pre>{{ {values} }}</pre>
+  </form>
 </template>
 ```
 
@@ -182,41 +381,47 @@ const items = ref([
 
 ## Props
 
-| Name                              | Type                                | Default                         |
-| --------------------------------- | ----------------------------------- | ------------------------------- |
-| [`value`](#value)                 | `[Object, String, Number, Boolean]` | `''`                            |
-| [`modelValue`](#modelValue)       | `[Object, String, Number, Boolean]` | `''`                            |
-| [`items`](#items)                 | `Array as PropType<SelectItem[]>`   | `[]`                            |
-| [`color`](#color)                 | `String`                            | `'primary'`                     |
-| [`placeholder`](#placeholder)     | `String`                            | `'Select'`                      |
-| [`searchable`](#searchable)       | `Boolean`                           | `false`                         |
-| [`hideCheckIcon`](#hideCheckIcon) | `Boolean`                           | `false`                         |
-| [`btnClass`](#btnClass)           | `String`                            | `''`                            |
-| [`top`](#top)                     | `Boolean`                           | `false`                         |
-| [`itemText`](#itemText)           | `String`                            | `'text'`                        |
-| [`itemValue`](#itemValue)         | `String`                            | `'value'`                       |
-| [`name`](#name)                   | `String`                            | `''`                            |
-| [`error`](#error)                 | `Boolean`                           | `false`                         |
-| [`errorMessages`](#errorMessages) | `Array`                             | `[]`                            |
-| [`returnObject`](#returnObject)   | `Boolean`                           | `false`                         |
-| [`clearable`](#clearable)         | `Boolean`                           | `false`                         |
-| [`clearText`](#clearText)         | `String`                            | `'Clear'`                       |
-| [`disabled`](#disabled)           | `Boolean`                           | `false`                         |
-| [`readonly`](#readonly)           | `Boolean`                           | `false`                         |
-| [`label`](#label)                 | `String`                            | `''`                            |
-| [`labelClass`](#labelClass)       | `String`                            | `'mb-1 block'`                  |
-| [`wrapperClass`](#wrapperClass)   | `String`                            | `''`                            |
-| [`errorClass`](#errorClass)       | `String`                            | `'text-error-600 mt-1 text-sm'` |
-| [`rules`](#rules)                 | `String`                            | `''`                            |
-| [`shadow`](#shadow)               | `Boolean`                           | `false`                         |
-| [`shadowClass`](#shadowClass)     | `String`                            | `'shadow-sm'`                   |
+| Name                                      | Type                                                        | Default                         |
+| ----------------------------------------- | ----------------------------------------------------------- | ------------------------------- |
+| [`value`](#value)                         | `[Object, String, Number, Boolean]`                         | `''`                            |
+| [`modelValue`](#modelValue)               | `[Object, String, Number, Boolean]`                         | `''`                            |
+| [`items`](#items)                         | `Array as PropType<SelectItem[]>`                           | `[]`                            |
+| [`color`](#color)                         | `String`                                                    | `'primary'`                     |
+| [`placeholder`](#placeholder)             | `String`                                                    | `'Select'`                      |
+| [`searchable`](#searchable)               | `Boolean`                                                   | `false`                         |
+| [`hideCheckIcon`](#hideCheckIcon)         | `Boolean`                                                   | `false`                         |
+| [`btnClass`](#btnClass)                   | `String`                                                    | `''`                            |
+| [`top`](#top)                             | `Boolean`                                                   | `false`                         |
+| [`itemText`](#itemText)                   | `String`                                                    | `'text'`                        |
+| [`itemValue`](#itemValue)                 | `String`                                                    | `'value'`                       |
+| [`name`](#name)                           | `String`                                                    | `''`                            |
+| [`error`](#error)                         | `Boolean`                                                   | `false`                         |
+| [`errorMessages`](#errorMessages)         | `Array`                                                     | `[]`                            |
+| [`returnObject`](#returnObject)           | `Boolean`                                                   | `false`                         |
+| [`clearable`](#clearable)                 | `Boolean`                                                   | `false`                         |
+| [`clearText`](#clearText)                 | `String`                                                    | `'Clear'`                       |
+| [`disabled`](#disabled)                   | `Boolean`                                                   | `false`                         |
+| [`readonly`](#readonly)                   | `Boolean`                                                   | `false`                         |
+| [`label`](#label)                         | `String`                                                    | `''`                            |
+| [`labelClass`](#labelClass)               | `String`                                                    | `'mb-1 block'`                  |
+| [`wrapperClass`](#wrapperClass)           | `String`                                                    | `''`                            |
+| [`errorClass`](#errorClass)               | `String`                                                    | `'text-error-600 mt-1 text-sm'` |
+| [`rules`](#rules)                         | `String`                                                    | `''`                            |
+| [`shadow`](#shadow)                       | `Boolean`                                                   | `false`                         |
+| [`shadowClass`](#shadowClass)             | `String`                                                    | `'shadow-sm'`                   |
+| [`transition`](#transition)               | `String`                                                    | `'fade'`                        |
+| [`size`](#size)                           | `String as PropType<'sm' \| 'md' \| 'lg'>`                  | `'md'`                          |
+| [`searchSize`](#searchSize)               | `String as PropType<'sm' \| 'md' \| 'lg'>`                  | `'md'`                          |
+| [`searchPlaceholder`](#searchPlaceholder) | `String`                                                    | `'Search...'`                   |
+| [`searchProps`](#searchProps)             | `Object as PropType<InstanceType<typeof VInput>['$props']>` | `{}`                            |
+| [`fieldOptions`](#fieldOptions)           | `Object as PropType<Partial<FieldOptions<any>>>`            | `{}`                            |
 
 ## Types
 
-### `SelectItem`
+### `VSelectItem`
 
 ```ts
-type SelectItem = {
+export interface VSelectItem = {
   text: string;
   value: any;
 
@@ -230,11 +435,57 @@ None
 
 ## Events
 
-None
+- [`update:modelValue`](#update:modelValue)
+- [`update:value`](#update:value)
+- [`search`](#search)
 
 ## Slots
 
-None
+- [`selected`](#selected)
+
+  ```vue
+  <template>
+    <VSelect>
+      <template #selected="item">
+        {{ item.text.toUpperCase() }}
+      </template>
+    </VSelect>
+  </template>
+  ```
+
+- [`empty`](#empty)
+
+  ```vue
+  <template>
+    <VSelect>
+      <template #empty> No item found. </template>
+    </VSelect>
+  </template>
+  ```
+
+- [`icon`](#icon)
+
+  ```vue
+  <template>
+    <VSelect>
+      <template #icon="item">
+        <VIcon name="ri:check-line" />
+      </template>
+    </VSelect>
+  </template>
+  ```
+
+- [`item`](#item)
+
+  ```vue
+  <template>
+    <VSelect>
+      <template #item="item">
+        {{ item?.text.toUpperCase() }}
+      </template>
+    </VSelect>
+  </template>
+  ```
 
 ## CSS Variables
 
@@ -282,16 +533,28 @@ None
 You can also install the `Select` component individually via `@gits-id/select` package:
 
 ```bash
-yarn install @gits-id/select
+npm i @gits-id/select
 ```
 
 ```vue
 <script setup lang="ts">
 import VSelect from '@gits-id/select';
+import '@gits-id/select/dist/style.css';
+
+const items = ref([
+  {
+    text: 'Item 1',
+    value: 1,
+  },
+  {
+    text: 'Item 2',
+    value: 2,
+  },
+]);
 </script>
 
 <template>
-  <VSelect />
+  <VSelect :items="items" />
 </template>
 ```
 
