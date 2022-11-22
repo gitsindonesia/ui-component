@@ -528,7 +528,29 @@ None
 
 ## CSS Variables
 
-None
+```css
+/* spacing */
+--v-table-padding-x: theme('spacing.6');
+--v-table-padding-y: theme('spacing.3');
+/* thead */
+--v-table-thead-bg-color: theme('colors.gray.50');
+/* th */
+--v-table-th-color: theme('colors.gray.800');
+--v-table-th-font-size: theme('fontSize.sm');
+--v-table-th-font-weight: theme('fontWeight.semibold');
+--v-table-th-white-space: nowrap;
+--v-table-th-text-align: left;
+/* td */
+--v-table-td-color: theme('colors.gray.800');
+--v-table-td-bg-color: theme('colors.white');
+--v-table-td-font-size: theme('fontSize.sm');
+--v-table-td-font-weight: theme('fontWeight.normal');
+--v-table-td-white-space: nowrap;
+--v-table-td-text-align: left;
+/* dense */
+--v-table-dense-padding-x: theme('spacing.4');
+--v-table-dense-padding-y: theme('spacing.2');
+```
 
 ## Manual Installation
 
