@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0-alpha.27](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.26...v0.12.0-alpha.27) (2022-11-23)
+
+**Note:** Version bump only for package @gits-id/components
+
 # [0.12.0-alpha.26](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.25...v0.12.0-alpha.26) (2022-11-22)
 
 ### Bug Fixes
