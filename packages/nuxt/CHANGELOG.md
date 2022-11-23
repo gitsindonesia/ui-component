@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0-alpha.28](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.27...v0.12.0-alpha.28) (2022-11-23)
+
+### Bug Fixes
+
+- **nuxt:** upgrade to nuxt 3 stable ([e24501a](https://github.com/gitsindonesia/ui-component/commit/e24501ad59e4a14907f6f108780eb699ae78ea77))
+- revert package name to `@gits-id/ui-nuxt` ([e09faf1](https://github.com/gitsindonesia/ui-component/commit/e09faf1f68d4268c4908199c0b98ccc76e4964e5))
+
 # [0.12.0-alpha.27](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.26...v0.12.0-alpha.27) (2022-11-23)
 
 **Note:** Version bump only for package nuxt-gits-ui
