@@ -3,6 +3,7 @@ import VBtn from './VBtn.vue';
 import type {Props as VBtnProps} from './VBtn.vue';
 import VIcon from '@gits-id/icon';
 import {defaultColors, defaultSizes} from '@gits-id/theme/defaultTheme';
+import VBtnGroup from './VBtnGroup.vue';
 
 const colors = ['default', 'dark', ...defaultColors];
 
@@ -299,5 +300,63 @@ export const DynamicProps: Story<VBtnProps> = () => ({
 <VBtn to="/">Router Link</VBtn>
 <VBtn href="https://google.com">Href Link</VBtn>
 <VBtn href="https://google.com" new-tab>Href Link (New Tab)</VBtn>
+  `,
+});
+
+export const ButtonGroup: Story<VBtnProps> = () => ({
+  components: {VBtnGroup, VBtn},
+  template: `
+    <h3 class="font-semibold">Default</h3>
+    <VBtnGroup class="w-full mt-2">
+      <VBtn>Button</VBtn>
+      <VBtn>Button</VBtn>
+      <VBtn>Button</VBtn>
+    </VBtnGroup>
+    <h3 class="font-semibold mt-5">Sizes:</h3>
+    <VBtnGroup class="w-full mt-2">
+      <VBtn size="xs">xs</VBtn>
+      <VBtn size="xs">xs</VBtn>
+      <VBtn size="xs">xs</VBtn>
+    </VBtnGroup>
+    <VBtnGroup class="w-full mt-2">
+      <VBtn size="sm">sm</VBtn>
+      <VBtn size="sm">sm</VBtn>
+      <VBtn size="sm">sm</VBtn>
+    </VBtnGroup>
+    <VBtnGroup class="w-full mt-2">
+      <VBtn size="lg">lg</VBtn>
+      <VBtn size="lg">lg</VBtn>
+      <VBtn size="lg">lg</VBtn>
+    </VBtnGroup>
+    <VBtnGroup class="w-full mt-2">
+      <VBtn size="xl">xl</VBtn>
+      <VBtn size="xl">xl</VBtn>
+      <VBtn size="xl">xl</VBtn>
+    </VBtnGroup>
+    <VBtnGroup class="w-full mt-5">
+      <VBtn color="primary">Button</VBtn>
+      <VBtn color="primary">Button</VBtn>
+      <VBtn color="primary">Button</VBtn>
+    </VBtnGroup>
+    <VBtnGroup class="w-full mt-5">
+      <VBtn color="primary">Button</VBtn>
+      <VBtn color="secondary">Button</VBtn>
+      <VBtn color="error">Button</VBtn>
+    </VBtnGroup>
+    <VBtnGroup class="w-full mt-5">
+      <VBtn outlined color="primary">Button</VBtn>
+      <VBtn outlined color="secondary">Button</VBtn>
+      <VBtn outlined color="error">Button</VBtn>
+    </VBtnGroup>
+    <VBtnGroup class="w-full mt-5">
+      <VBtn text color="primary">Button</VBtn>
+      <VBtn text color="secondary">Button</VBtn>
+      <VBtn text color="error">Button</VBtn>
+    </VBtnGroup>
+    <VBtnGroup class="mt-5">
+      <VBtn prefix-icon="ri:search-2-line"></VBtn>
+      <VBtn suffix-icon="ri:add-line"></VBtn>
+      <VBtn prefix-icon="ri:edit-line"></VBtn>
+    </VBtnGroup>
   `,
 });

@@ -323,6 +323,32 @@ const btn = plugin(function ({addComponents, theme}) {
       height: 'var(--btn-icon-height)',
     },
   });
+
+  // button group
+  addComponents({
+    '.v-btn-group': {
+      display: 'inline-flex',
+      '& > .btn': {
+        '--btn-border-radius': theme('borderRadius.none'),
+        'margin-left': '-1px',
+        '&:first-child': {
+          '--btn-border-radius':
+            theme('borderRadius.lg') + ' 0 0 ' + theme('borderRadius.lg'),
+        },
+        '&:last-child': {
+          '--btn-border-radius':
+            '0 ' +
+            theme('borderRadius.lg') +
+            ' ' +
+            theme('borderRadius.lg') +
+            ' 0',
+        },
+        '&:not(:first-child):not(:last-child)': {
+          '--btn-border-radius': '0',
+        },
+      },
+    },
+  });
 });
 
 module.exports = btn;
