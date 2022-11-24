@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/badge",
-  "version": "0.12.0-alpha.24",
+  "version": "0.12.0",
   "description": "GITS Badge Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,13 +15,13 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@gits-id/icon": "^0.12.0-alpha.24",
+    "@gits-id/icon": "^0.12.0",
     "vue": "^3.2.33"
   },
   "devDependencies": {
-    "@gits-id/tailwind-config": "^0.12.0-alpha.24",
-    "@gits-id/theme": "^0.12.0-alpha.23",
-    "@gits-id/utils": "^0.12.0-alpha.24",
+    "@gits-id/tailwind-config": "^0.12.0",
+    "@gits-id/theme": "^0.12.0",
+    "@gits-id/utils": "^0.12.0",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
     "tailwindcss": "^3.0.23",

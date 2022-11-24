@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.28...v0.12.0) (2022-11-24)
+
+**Note:** Version bump only for package gits-ui-monorepo
+
 # [0.12.0-alpha.28](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.27...v0.12.0-alpha.28) (2022-11-23)
 
 ### Bug Fixes
