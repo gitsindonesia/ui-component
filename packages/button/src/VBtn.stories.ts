@@ -2,10 +2,12 @@ import {Meta, Story} from '@storybook/vue3';
 import VBtn from './VBtn.vue';
 import type {Props as VBtnProps} from './VBtn.vue';
 import VIcon from '@gits-id/icon';
-import {defaultColors, defaultSizes} from '@gits-id/theme/defaultTheme';
+import {defaultColors} from '@gits-id/theme/defaultTheme';
 import VBtnGroup from './VBtnGroup.vue';
+import VBtnToolbar from './VBtnToolbar.vue';
 
 const colors = ['default', 'dark', ...defaultColors];
+const defaultSizes = ['sm', 'md', 'lg'];
 
 export default {
   component: VBtn,
@@ -165,7 +167,8 @@ export const Sizes: Story<VBtnProps> = (args) => ({
   setup() {
     return {args, sizes: defaultSizes, defaultColors};
   },
-  template: `<div v-for="color in defaultColors" :key="color" class="mb-6">
+  template: `
+<div v-for="color in defaultColors" :key="color" class="mb-6">
   <div>
     <div class="font-semibold text-lg mb-2">{{color}}</div>
     <div class="flex items-end gap-2">
@@ -174,7 +177,7 @@ export const Sizes: Story<VBtnProps> = (args) => ({
       </Button>
     </div>
   </div>
-  </div>`,
+</div>`,
 });
 Sizes.parameters = {
   docs: {
@@ -304,7 +307,7 @@ export const DynamicProps: Story<VBtnProps> = () => ({
 });
 
 export const ButtonGroup: Story<VBtnProps> = () => ({
-  components: {VBtnGroup, VBtn},
+  components: {VBtnGroup, VBtnToolbar, VBtn},
   template: `
     <h3 class="font-semibold">Default</h3>
     <VBtnGroup class="w-full mt-2">
@@ -358,5 +361,24 @@ export const ButtonGroup: Story<VBtnProps> = () => ({
       <VBtn suffix-icon="ri:add-line"></VBtn>
       <VBtn prefix-icon="ri:edit-line"></VBtn>
     </VBtnGroup>
+
+    <VBtnToolbar class="mt-5">
+      <VBtnGroup>
+        <VBtn prefix-icon="ri:bold"></VBtn>
+        <VBtn suffix-icon="ri:italic"></VBtn>
+        <VBtn prefix-icon="ri:underline"></VBtn>
+      </VBtnGroup>
+      <VBtnGroup>
+        <VBtn suffix-icon="ri:list-ordered"></VBtn>
+        <VBtn prefix-icon="ri:list-check"></VBtn>
+        <VBtn prefix-icon="ri:align-left"></VBtn>
+      </VBtnGroup>
+      <VBtnGroup>
+        <VBtn prefix-icon="ri:link"></VBtn>
+        <VBtn suffix-icon="ri:image-line"></VBtn>
+        <VBtn prefix-icon="ri:video-line"></VBtn>
+      </VBtnGroup>
+      <VBtn prefix-icon="ri:format-clear"></VBtn>
+    </VBtnToolbar>
   `,
 });

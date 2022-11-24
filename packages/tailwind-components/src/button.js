@@ -333,20 +333,32 @@ const btn = plugin(function ({addComponents, theme}) {
         'margin-left': '-1px',
         '&:first-child': {
           '--btn-border-radius':
-            theme('borderRadius.lg') + ' 0 0 ' + theme('borderRadius.lg'),
+            theme('borderRadius.DEFAULT') +
+            ' 0 0 ' +
+            theme('borderRadius.DEFAULT'),
         },
         '&:last-child': {
           '--btn-border-radius':
             '0 ' +
-            theme('borderRadius.lg') +
+            theme('borderRadius.DEFAULT') +
             ' ' +
-            theme('borderRadius.lg') +
+            theme('borderRadius.DEFAULT') +
             ' 0',
         },
         '&:not(:first-child):not(:last-child)': {
           '--btn-border-radius': '0',
         },
       },
+    },
+  });
+
+  // button toolbar
+  addComponents({
+    '.v-btn-toolbar': {
+      display: 'flex',
+      flexWrap: 'wrap',
+      gap: theme('spacing.2'),
+      alignItems: 'flex-end',
     },
   });
 });
