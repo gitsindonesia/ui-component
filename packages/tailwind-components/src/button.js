@@ -65,13 +65,17 @@ const btn = plugin(function ({addComponents, theme}) {
       '--btn-padding-x': theme('spacing.3'),
       '--btn-padding-y': theme('spacing.2'),
       '--btn-line-height': theme('lineHeight.tight'),
-      '--btn-font-size': theme('fontSize.base'),
-      '--btn-font-weight': theme('fontWeight.medium'),
+      '--btn-font-size': theme('fontSize.sm'),
+      '--btn-font-weight': theme('fontWeight.semibold'),
       '--btn-shadow': theme('boxShadow.none'),
       '--btn-icon-width': theme('spacing.5'),
       '--btn-icon-height': theme('spacing.5'),
       '--btn-width': theme('width.auto'),
       '--btn-height': theme('width.auto'),
+      '--btn-transition': 'all 0.2s ease-in-out',
+      '--btn-sm-height': 32,
+      '--btn-md-height': 44,
+      '--btn-lg-height': 52,
     },
     '.btn': {
       display: 'inline-flex',
@@ -87,7 +91,7 @@ const btn = plugin(function ({addComponents, theme}) {
       borderWidth: 'var(--btn-border-width)',
       borderColor: 'var(--btn-border-color)',
       padding: 'var(--btn-padding-y) var(--btn-padding-x)',
-      transition: 'all 0.2s ease-in-out',
+      transition: 'var(--btn-transition)',
       width: 'var(--btn-width)',
       height: 'var(--btn-height)',
 
@@ -188,25 +192,10 @@ const btn = plugin(function ({addComponents, theme}) {
     },
 
     // sizes
-    '.btn--xxs': {
-      '--btn-padding-x': theme('spacing.1'),
+    '.btn--sm': {
+      '--btn-padding-x': theme('spacing.3'),
       '--btn-padding-y': theme('spacing.1'),
-      '--btn-font-size': 10,
-      // icon size
-      '.btn-icon': {
-        '--btn-icon-width': theme('spacing.3'),
-        '--btn-icon-height': theme('spacing.3'),
-      },
-      // fab
-      '&.btn--fab': {
-        '--btn-width': theme('width.6'),
-        '--btn-height': theme('width.6'),
-      },
-    },
-    '.btn--xs': {
-      '--btn-padding-x': theme('spacing.2'),
-      '--btn-padding-y': theme('spacing.1'),
-      '--btn-font-size': theme('fontSize.xs'),
+      '--btn-height': 'var(--btn-sm-height)',
       // icon size
       '.btn-icon': {
         '--btn-icon-width': theme('spacing.4'),
@@ -214,14 +203,14 @@ const btn = plugin(function ({addComponents, theme}) {
       },
       // fab
       '&.btn--fab': {
-        '--btn-width': theme('width.8'),
-        '--btn-height': theme('width.8'),
+        '--btn-width': 'var(--btn-sm-height)',
+        '--btn-height': 'var(--btn-sm-height)',
       },
     },
-    '.btn--sm': {
-      '--btn-padding-x': theme('spacing.3'),
-      '--btn-padding-y': theme('spacing.2'),
-      '--btn-font-size': theme('fontSize.sm'),
+    '.btn--md': {
+      '--btn-padding-x': theme('spacing.4'),
+      '--btn-padding-y': theme('spacing.3'),
+      '--btn-height': 'var(--btn-md-height)',
       // icon size
       '.btn-icon': {
         '--btn-icon-width': theme('spacing.5'),
@@ -229,14 +218,14 @@ const btn = plugin(function ({addComponents, theme}) {
       },
       // fab
       '&.btn--fab': {
-        '--btn-width': theme('width.10'),
-        '--btn-height': theme('width.10'),
+        '--btn-width': 'var(--btn-md-height)',
+        '--btn-height': 'var(--btn-md-height)',
       },
     },
-    '.btn--md': {
-      '--btn-padding-x': theme('spacing.4'),
-      '--btn-padding-y': theme('spacing.2'),
-      '--btn-font-size': theme('fontSize.base'),
+    '.btn--lg': {
+      '--btn-padding-x': theme('spacing.6'),
+      '--btn-padding-y': theme('spacing.4'),
+      '--btn-height': 'var(--btn-lg-height)',
       // icon size
       '.btn-icon': {
         '--btn-icon-width': theme('spacing.6'),
@@ -244,38 +233,8 @@ const btn = plugin(function ({addComponents, theme}) {
       },
       // fab
       '&.btn--fab': {
-        '--btn-width': theme('width.12'),
-        '--btn-height': theme('width.12'),
-      },
-    },
-    '.btn--lg': {
-      '--btn-padding-x': theme('spacing.5'),
-      '--btn-padding-y': theme('spacing.3'),
-      '--btn-font-size': theme('fontSize.lg'),
-      // icon size
-      '.btn-icon': {
-        '--btn-icon-width': theme('spacing.7'),
-        '--btn-icon-height': theme('spacing.7'),
-      },
-      // fab
-      '&.btn--fab': {
-        '--btn-width': theme('width.16'),
-        '--btn-height': theme('width.16'),
-      },
-    },
-    '.btn--xl': {
-      '--btn-padding-x': theme('spacing.6'),
-      '--btn-padding-y': theme('spacing.4'),
-      '--btn-font-size': theme('fontSize.xl'),
-      // icon size
-      '.btn-icon': {
-        '--btn-icon-width': theme('spacing.8'),
-        '--btn-icon-height': theme('spacing.8'),
-      },
-      // fab
-      '&.btn--fab': {
-        '--btn-width': theme('width.20'),
-        '--btn-height': theme('width.20'),
+        '--btn-width': 'var(--btn-lg-height)',
+        '--btn-height': 'var(--btn-lg-height)',
       },
     },
 

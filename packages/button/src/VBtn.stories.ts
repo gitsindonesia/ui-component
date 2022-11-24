@@ -202,9 +202,9 @@ export const Icons: Story<VBtnProps> = (args) => ({
     <VBtn prefix-icon="ri:search-2-line">
       Search
     </VBtn>
-    <VBtn suffix-icon="ri:download-2-line">
+    <VBtn color="primary" suffix-icon="ri:download-2-line">
     </VBtn>
-    <VBtn suffix-icon="ri:download-2-line">
+    <VBtn color="primary" suffix-icon="ri:download-2-line">
       Download
     </VBtn>
 </div>
@@ -230,14 +230,22 @@ Icons.parameters = {
 export const Fab: Story<VBtnProps> = (args) => ({
   components: {VBtn},
   template: `
-    <VBtn color="primary" prefix-icon="ri:search-2-line" fab />
+<div class="flex gap-2 items-end">
+  <VBtn size="sm" color="primary" prefix-icon="ri:search-2-line" fab />
+  <VBtn color="primary" prefix-icon="ri:search-2-line" fab />
+  <VBtn size="lg" color="primary" prefix-icon="ri:search-2-line" fab />
+</div>
   `,
 });
-Icons.parameters = {
+Fab.parameters = {
   docs: {
     source: {
-      code: `  
-<VBtn color="primary" prefix-icon="ri:search-2-line" fab />
+      code: `
+<div class="flex gap-2 items-end">
+  <VBtn size="sm" color="primary" prefix-icon="ri:search-2-line" fab />
+  <VBtn color="primary" prefix-icon="ri:search-2-line" fab />
+  <VBtn size="lg" color="primary" prefix-icon="ri:search-2-line" fab />
+</div>
       `,
     },
   },
@@ -317,11 +325,6 @@ export const ButtonGroup: Story<VBtnProps> = () => ({
     </VBtnGroup>
     <h3 class="font-semibold mt-5">Sizes:</h3>
     <VBtnGroup class="w-full mt-2">
-      <VBtn size="xs">xs</VBtn>
-      <VBtn size="xs">xs</VBtn>
-      <VBtn size="xs">xs</VBtn>
-    </VBtnGroup>
-    <VBtnGroup class="w-full mt-2">
       <VBtn size="sm">sm</VBtn>
       <VBtn size="sm">sm</VBtn>
       <VBtn size="sm">sm</VBtn>
@@ -330,11 +333,6 @@ export const ButtonGroup: Story<VBtnProps> = () => ({
       <VBtn size="lg">lg</VBtn>
       <VBtn size="lg">lg</VBtn>
       <VBtn size="lg">lg</VBtn>
-    </VBtnGroup>
-    <VBtnGroup class="w-full mt-2">
-      <VBtn size="xl">xl</VBtn>
-      <VBtn size="xl">xl</VBtn>
-      <VBtn size="xl">xl</VBtn>
     </VBtnGroup>
     <VBtnGroup class="w-full mt-5">
       <VBtn color="primary">Button</VBtn>
