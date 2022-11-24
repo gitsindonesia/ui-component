@@ -6,13 +6,6 @@ const props = defineProps({
     type: [Number, String],
     default: 0,
   },
-  /**
-   * @deprecated use `modelValue` instead
-   */
-  width: {
-    type: [Number, String],
-    default: 0,
-  },
   color: {
     type: String,
     default: 'default',
@@ -66,7 +59,7 @@ const emit =
 
 const {modelValue} = toRefs(props);
 
-const value = ref(props.modelValue || props.width);
+const value = ref(props.modelValue);
 
 watch(modelValue, (val) => {
   value.value = val;
