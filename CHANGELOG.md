@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.1](https://github.com/gitsindonesia/ui-component/compare/v0.13.0...v0.13.1) (2022-11-24)
+
+### Bug Fixes
+
+- **ui:** import v-select styles ([f1cee92](https://github.com/gitsindonesia/ui-component/commit/f1cee9259eb607dd9bbb70600f63fb94397b6b87))
+
 # [0.13.0](https://github.com/gitsindonesia/ui-component/compare/v0.12.0...v0.13.0) (2022-11-24)
 
 ### Bug Fixes
