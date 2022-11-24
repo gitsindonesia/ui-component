@@ -47,6 +47,7 @@ const transpile = [
   '@gits-id/toast',
   '@gits-id/tooltip',
   '@gits-id/utils',
+  'floating-vue',
 ];
 
 const components: AddComponentOptions[] = [
