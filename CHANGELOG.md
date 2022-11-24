@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.3](https://github.com/gitsindonesia/ui-component/compare/v0.13.2...v0.13.3) (2022-11-24)
+
+### Bug Fixes
+
+- **ui:** import table style ([0eca7b6](https://github.com/gitsindonesia/ui-component/commit/0eca7b653985299f919734fbc670e36dd308529f))
+
 ## [0.13.2](https://github.com/gitsindonesia/ui-component/compare/v0.13.1...v0.13.2) (2022-11-24)
 
 ### Bug Fixes
