@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.13.0](https://github.com/gitsindonesia/ui-component/compare/v0.12.0...v0.13.0) (2022-11-24)
+
+### Bug Fixes
+
+- **VFormSelect:** improved `VFormSelectItem` types ([d3c3fde](https://github.com/gitsindonesia/ui-component/commit/d3c3fdec421f6ec6f3801d4227a281c4da65370e))
+
+### Features
+
+- **Button:** add `VBtnGroup` and `VBtnToolbar` component ([#38](https://github.com/gitsindonesia/ui-component/issues/38)) ([b2643b5](https://github.com/gitsindonesia/ui-component/commit/b2643b5563d7a5728c48d4c514425d8fd1cb807b))
+- **VProgressBar:** revamp `VProgressBar` component ([#37](https://github.com/gitsindonesia/ui-component/issues/37)) ([5080c5b](https://github.com/gitsindonesia/ui-component/commit/5080c5b6cc78795cc0abdc9542281f3314d86b35))
+
+### BREAKING CHANGES
+
+- **VProgressBar:** replaced`width` prop by `modelValue`
+
+- docs(VProgressBar): update progress-bar docs
+
 # [0.12.0](https://github.com/gitsindonesia/ui-component/compare/v0.12.0-alpha.28...v0.12.0) (2022-11-24)
 
 **Note:** Version bump only for package gits-ui-monorepo
