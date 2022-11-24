@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.2](https://github.com/gitsindonesia/ui-component/compare/v0.13.1...v0.13.2) (2022-11-24)
+
+### Bug Fixes
+
+- **nuxt:** transpile `floating-vue` ([8f6902a](https://github.com/gitsindonesia/ui-component/commit/8f6902aa1e90a3520b730a5f43247e9a841158a1))
+
 ## [0.13.1](https://github.com/gitsindonesia/ui-component/compare/v0.13.0...v0.13.1) (2022-11-24)
 
 ### Bug Fixes
