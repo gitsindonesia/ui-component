@@ -2,9 +2,12 @@ import {Meta, Story} from '@storybook/vue3';
 import VBtn from './VBtn.vue';
 import type {Props as VBtnProps} from './VBtn.vue';
 import VIcon from '@gits-id/icon';
-import {defaultColors, defaultSizes} from '@gits-id/theme/defaultTheme';
+import {defaultColors} from '@gits-id/theme/defaultTheme';
+import VBtnGroup from './VBtnGroup.vue';
+import VBtnToolbar from './VBtnToolbar.vue';
 
 const colors = ['default', 'dark', ...defaultColors];
+const defaultSizes = ['sm', 'md', 'lg'];
 
 export default {
   component: VBtn,
@@ -164,7 +167,8 @@ export const Sizes: Story<VBtnProps> = (args) => ({
   setup() {
     return {args, sizes: defaultSizes, defaultColors};
   },
-  template: `<div v-for="color in defaultColors" :key="color" class="mb-6">
+  template: `
+<div v-for="color in defaultColors" :key="color" class="mb-6">
   <div>
     <div class="font-semibold text-lg mb-2">{{color}}</div>
     <div class="flex items-end gap-2">
@@ -173,7 +177,7 @@ export const Sizes: Story<VBtnProps> = (args) => ({
       </Button>
     </div>
   </div>
-  </div>`,
+</div>`,
 });
 Sizes.parameters = {
   docs: {
@@ -198,9 +202,9 @@ export const Icons: Story<VBtnProps> = (args) => ({
     <VBtn prefix-icon="ri:search-2-line">
       Search
     </VBtn>
-    <VBtn suffix-icon="ri:download-2-line">
+    <VBtn color="primary" suffix-icon="ri:download-2-line">
     </VBtn>
-    <VBtn suffix-icon="ri:download-2-line">
+    <VBtn color="primary" suffix-icon="ri:download-2-line">
       Download
     </VBtn>
 </div>
@@ -226,14 +230,22 @@ Icons.parameters = {
 export const Fab: Story<VBtnProps> = (args) => ({
   components: {VBtn},
   template: `
-    <VBtn color="primary" prefix-icon="ri:search-2-line" fab />
+<div class="flex gap-2 items-end">
+  <VBtn size="sm" color="primary" prefix-icon="ri:search-2-line" fab />
+  <VBtn color="primary" prefix-icon="ri:search-2-line" fab />
+  <VBtn size="lg" color="primary" prefix-icon="ri:search-2-line" fab />
+</div>
   `,
 });
-Icons.parameters = {
+Fab.parameters = {
   docs: {
     source: {
-      code: `  
-<VBtn color="primary" prefix-icon="ri:search-2-line" fab />
+      code: `
+<div class="flex gap-2 items-end">
+  <VBtn size="sm" color="primary" prefix-icon="ri:search-2-line" fab />
+  <VBtn color="primary" prefix-icon="ri:search-2-line" fab />
+  <VBtn size="lg" color="primary" prefix-icon="ri:search-2-line" fab />
+</div>
       `,
     },
   },
@@ -299,5 +311,72 @@ export const DynamicProps: Story<VBtnProps> = () => ({
 <VBtn to="/">Router Link</VBtn>
 <VBtn href="https://google.com">Href Link</VBtn>
 <VBtn href="https://google.com" new-tab>Href Link (New Tab)</VBtn>
+  `,
+});
+
+export const ButtonGroup: Story<VBtnProps> = () => ({
+  components: {VBtnGroup, VBtnToolbar, VBtn},
+  template: `
+    <h3 class="font-semibold">Default</h3>
+    <VBtnGroup class="w-full mt-2">
+      <VBtn>Button</VBtn>
+      <VBtn>Button</VBtn>
+      <VBtn>Button</VBtn>
+    </VBtnGroup>
+    <h3 class="font-semibold mt-5">Sizes:</h3>
+    <VBtnGroup class="w-full mt-2">
+      <VBtn size="sm">sm</VBtn>
+      <VBtn size="sm">sm</VBtn>
+      <VBtn size="sm">sm</VBtn>
+    </VBtnGroup>
+    <VBtnGroup class="w-full mt-2">
+      <VBtn size="lg">lg</VBtn>
+      <VBtn size="lg">lg</VBtn>
+      <VBtn size="lg">lg</VBtn>
+    </VBtnGroup>
+    <VBtnGroup class="w-full mt-5">
+      <VBtn color="primary">Button</VBtn>
+      <VBtn color="primary">Button</VBtn>
+      <VBtn color="primary">Button</VBtn>
+    </VBtnGroup>
+    <VBtnGroup class="w-full mt-5">
+      <VBtn color="primary">Button</VBtn>
+      <VBtn color="secondary">Button</VBtn>
+      <VBtn color="error">Button</VBtn>
+    </VBtnGroup>
+    <VBtnGroup class="w-full mt-5">
+      <VBtn outlined color="primary">Button</VBtn>
+      <VBtn outlined color="secondary">Button</VBtn>
+      <VBtn outlined color="error">Button</VBtn>
+    </VBtnGroup>
+    <VBtnGroup class="w-full mt-5">
+      <VBtn text color="primary">Button</VBtn>
+      <VBtn text color="secondary">Button</VBtn>
+      <VBtn text color="error">Button</VBtn>
+    </VBtnGroup>
+    <VBtnGroup class="mt-5">
+      <VBtn prefix-icon="ri:search-2-line"></VBtn>
+      <VBtn suffix-icon="ri:add-line"></VBtn>
+      <VBtn prefix-icon="ri:edit-line"></VBtn>
+    </VBtnGroup>
+
+    <VBtnToolbar class="mt-5">
+      <VBtnGroup>
+        <VBtn prefix-icon="ri:bold"></VBtn>
+        <VBtn suffix-icon="ri:italic"></VBtn>
+        <VBtn prefix-icon="ri:underline"></VBtn>
+      </VBtnGroup>
+      <VBtnGroup>
+        <VBtn suffix-icon="ri:list-ordered"></VBtn>
+        <VBtn prefix-icon="ri:list-check"></VBtn>
+        <VBtn prefix-icon="ri:align-left"></VBtn>
+      </VBtnGroup>
+      <VBtnGroup>
+        <VBtn prefix-icon="ri:link"></VBtn>
+        <VBtn suffix-icon="ri:image-line"></VBtn>
+        <VBtn prefix-icon="ri:video-line"></VBtn>
+      </VBtnGroup>
+      <VBtn prefix-icon="ri:format-clear"></VBtn>
+    </VBtnToolbar>
   `,
 });

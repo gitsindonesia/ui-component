@@ -1,14 +1,15 @@
 <script setup lang="ts">
 import {computed, resolveComponent} from 'vue';
-import type {DefaultColors, DefaultSizes} from '@gits-id/theme/defaultTheme';
+import type {DefaultColors} from '@gits-id/theme/defaultTheme';
 import type {RouteLocationRaw} from 'vue-router';
 import VIcon from '@gits-id/icon';
+import '@gits-id/icon/dist/style.css';
 
 export type ButtonColors = DefaultColors | 'default' | string;
 
 export interface Props {
   color?: ButtonColors;
-  size?: DefaultSizes;
+  size?: 'sm' | 'md' | 'lg' | string;
   to?: RouteLocationRaw;
   href?: string;
   text?: boolean;
@@ -53,9 +54,9 @@ const props = withDefaults(defineProps<Props>(), {
   loadingIcon: 'gg:spinner',
   prefixIcon: '',
   prefixIconClass: '',
-  prefixIconSize: 'md',
+  prefixIconSize: 'sm',
   suffixIcon: '',
-  suffixIconSize: 'md',
+  suffixIconSize: 'sm',
   suffixIconClass: '',
   loadingClass: 'animate-spin',
 });
@@ -142,7 +143,11 @@ const attributes = computed(() => {
       <VIcon
         v-if="prefixIcon || loading"
         :name="loading ? loadingIcon : prefixIcon"
-        :class="[prefixIconClass, loading ? loadingClass : undefined]"
+        :class="[
+          'btn-icon',
+          prefixIconClass,
+          loading ? loadingClass : undefined,
+        ]"
         :size="prefixIconSize"
       />
     </slot>
@@ -152,7 +157,7 @@ const attributes = computed(() => {
         v-if="suffixIcon"
         :name="suffixIcon"
         :size="suffixIconSize"
-        :class="suffixIconClass"
+        :class="['btn-icon', suffixIconClass]"
       />
     </slot>
   </component>

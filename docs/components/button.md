@@ -1,11 +1,6 @@
 # Button
 
-<details>
-  <summary> Table of Contents </summary>
-  
-  [[toc]]
-
-</details>
+Button component.
 
 ## Usage
 
@@ -95,17 +90,35 @@ The `VBtn` component is registered globally when you install with `@gits-id/ui`.
 
 ### Sizes
 
+- Prop: `size`
+- Values: `sm | md | lg`
+- Default Value: `md`
+
 ```vue
 <template>
-  <VBtn size="xs"> Button </VBtn>
   <VBtn size="sm"> Button </VBtn>
   <VBtn size="md"> Button </VBtn>
   <VBtn size="lg"> Button </VBtn>
-  <VBtn size="xl"> Button </VBtn>
 </template>
 ```
 
 <LivePreview src="forms-button--sizes" />
+
+You can even roll your own custom sizing with CSS variables:
+
+```vue
+<template>
+  <VBtn
+    :style="{
+      '--btn-height': 40,
+      '--btn-padding-x': 16,
+      '--btn-padding-y': 8,
+    }"
+  >
+    Button
+  </VBtn>
+</template>
+```
 
 ### Disabled
 
@@ -232,12 +245,82 @@ import VIcon from '@gits-id/icon';
 
 <LivePreview src="forms-button--fab" height="100" />
 
+### Button Group
+
+```vue
+<template>
+  <h3 class="font-semibold">Default</h3>
+  <VBtnGroup class="w-full mt-2">
+    <VBtn>Button</VBtn>
+    <VBtn>Button</VBtn>
+    <VBtn>Button</VBtn>
+  </VBtnGroup>
+  <h3 class="font-semibold mt-5">Sizes:</h3>
+  <VBtnGroup class="w-full mt-2">
+    <VBtn size="sm">sm</VBtn>
+    <VBtn size="sm">sm</VBtn>
+    <VBtn size="sm">sm</VBtn>
+  </VBtnGroup>
+  <VBtnGroup class="w-full mt-2">
+    <VBtn size="lg">lg</VBtn>
+    <VBtn size="lg">lg</VBtn>
+    <VBtn size="lg">lg</VBtn>
+  </VBtnGroup>
+  <VBtnGroup class="w-full mt-5">
+    <VBtn color="primary">Button</VBtn>
+    <VBtn color="primary">Button</VBtn>
+    <VBtn color="primary">Button</VBtn>
+  </VBtnGroup>
+  <VBtnGroup class="w-full mt-5">
+    <VBtn color="primary">Button</VBtn>
+    <VBtn color="secondary">Button</VBtn>
+    <VBtn color="error">Button</VBtn>
+  </VBtnGroup>
+  <VBtnGroup class="w-full mt-5">
+    <VBtn outlined color="primary">Button</VBtn>
+    <VBtn outlined color="secondary">Button</VBtn>
+    <VBtn outlined color="error">Button</VBtn>
+  </VBtnGroup>
+  <VBtnGroup class="w-full mt-5">
+    <VBtn text color="primary">Button</VBtn>
+    <VBtn text color="secondary">Button</VBtn>
+    <VBtn text color="error">Button</VBtn>
+  </VBtnGroup>
+  <VBtnGroup class="mt-5">
+    <VBtn prefix-icon="ri:search-2-line"></VBtn>
+    <VBtn suffix-icon="ri:add-line"></VBtn>
+    <VBtn prefix-icon="ri:edit-line"></VBtn>
+  </VBtnGroup>
+
+  <VBtnToolbar class="mt-5">
+    <VBtnGroup>
+      <VBtn prefix-icon="ri:bold"></VBtn>
+      <VBtn suffix-icon="ri:italic"></VBtn>
+      <VBtn prefix-icon="ri:underline"></VBtn>
+    </VBtnGroup>
+    <VBtnGroup>
+      <VBtn suffix-icon="ri:list-ordered"></VBtn>
+      <VBtn prefix-icon="ri:list-check"></VBtn>
+      <VBtn prefix-icon="ri:align-left"></VBtn>
+    </VBtnGroup>
+    <VBtnGroup>
+      <VBtn prefix-icon="ri:link"></VBtn>
+      <VBtn suffix-icon="ri:image-line"></VBtn>
+      <VBtn prefix-icon="ri:video-line"></VBtn>
+    </VBtnGroup>
+    <VBtn prefix-icon="ri:format-clear"></VBtn>
+  </VBtnToolbar>
+</template>
+```
+
+<LivePreview src="forms-button--button-group" />
+
 ## Props
 
 | Name                          | Type                                                                                 | Default      |
 | ----------------------------- | ------------------------------------------------------------------------------------ | ------------ |
 | [`color`](#color)             | `'default' \| 'primary' \| 'secondary' \| 'info' \| 'warning' \| 'error' \| 'dark' ` | `'default'`  |
-| [`size`](#size)               | `'sm' \| 'md' \| 'lg \| 'xl'`                                                        | `'md'`       |
+| [`size`](#size)               | `'sm' \| 'md' \| 'lg'`                                                               | `'md'`       |
 | [`to`](#to)                   | `string \| RouteLocationRaw`                                                         | `undefined`  |
 | [`href`](#href)               | `string`                                                                             | `undefined`  |
 | [`text`](#text)               | `boolean`                                                                            | `false`      |
@@ -312,6 +395,10 @@ None
 | [`--btn-icon-height`](#--btn-icon-height)     | `theme('spacing.5')`            |
 | [`--btn-width`](#--btn-width)                 | `theme('width.auto')`           |
 | [`--btn-height`](#--btn-height)               | `theme('width.auto')`           |
+| [`--btn-transition'`](#--btn-transition)      | `'all 0.2s ease-in-out'`        |
+| [`--btn-sm-height`](#--btn-sm-height)         | `32`                            |
+| [`--btn-md-height`](#--btn-md-height)         | `44`                            |
+| [`--btn-lg-height`](#--btn-lg-height)         | `52`                            |
 
 ## Tailwind Plugin
 
