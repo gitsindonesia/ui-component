@@ -47,11 +47,6 @@ Variants.parameters = {
   },
 };
 
-export const Rounded = Template.bind({});
-Rounded.args = {
-  rounded: true,
-};
-
 export const Slots: Story = (args) => ({
   components: {VProgressBar},
   setup() {
