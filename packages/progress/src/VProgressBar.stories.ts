@@ -1,6 +1,8 @@
-import VProgressBar from '../src/VProgressBar.vue';
+import VProgressBar from './VProgressBar.vue';
 import {themeColors} from '@gits-id/utils/colors';
 import {Meta, Story} from '@storybook/vue3';
+import {ref} from 'vue';
+import VBtn from '@gits-id/button';
 
 export default {
   title: 'Components/ProgressBar',
@@ -12,24 +14,17 @@ export default {
     },
   },
   args: {
-    width: 70,
-    modelValue: '',
-    label: 'ProgressBar',
-    color: 'default',
-    size: '',
+    modelValue: 70,
   },
 } as Meta;
 
 const Template: Story = (args) => ({
-  // Components used in your story `template` are defined in the `components` object
   components: {VProgressBar},
-  // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
     return {args, themeColors};
   },
-  // And then the `args` are bound to your component with `v-bind="args"`
   template: `
-    <VProgressBar v-for="color in themeColors" :key="color" v-bind='args' :color="color" />
+    <VProgressBar v-for="color in themeColors" :key="color" v-bind='args' :color="color" class="mb-4" />
   `,
 });
 
@@ -51,3 +46,48 @@ Variants.parameters = {
     },
   },
 };
+
+export const Slots: Story = (args) => ({
+  components: {VProgressBar},
+  setup() {
+    return {args};
+  },
+  template: `
+    <VProgressBar color="secondary" class="mb-4" v-slot="{value}" height="auto" v-bind="args">
+      {{ value }} %
+    </VProgressBar>
+    <VProgressBar color="primary" class="mb-4" :height="20" v-bind="args"> 
+      <template #label="{value}">
+      {{ value }} %
+      </template>
+    </VProgressBar>
+  `,
+});
+
+export const VModel: Story = (args) => ({
+  components: {VProgressBar, VBtn},
+  setup() {
+    const value = ref(10);
+    return {args, value};
+  },
+  template: `
+    <VProgressBar color="secondary" v-model="value"/>
+
+    <div class="mt-4 space-x-2">
+      <VBtn size="sm" @click="value -= 10">-10</VBtn>
+      <VBtn size="sm" @click="value += 10">+10</VBtn>
+      <VBtn size="sm" @click="value = 100">Full</VBtn>
+      <VBtn size="sm" @click="value = 0">Reset</VBtn>
+    </div>
+  `,
+});
+
+export const Indeterminate: Story = (args) => ({
+  components: {VProgressBar},
+  setup() {
+    return {args};
+  },
+  template: `
+    <VProgressBar color="secondary" indeterminate/>
+  `,
+});
