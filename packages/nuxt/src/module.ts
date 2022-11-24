@@ -79,6 +79,16 @@ const components: AddComponentOptions[] = [
     filePath: '@gits-id/button',
   },
   {
+    name: 'VBtnGroup',
+    export: 'VBtnGroup',
+    filePath: '@gits-id/button',
+  },
+  {
+    name: 'VBtnToolbar',
+    export: 'VBtnToolbar',
+    filePath: '@gits-id/button',
+  },
+  {
     name: 'VCard',
     filePath: '@gits-id/card',
   },
