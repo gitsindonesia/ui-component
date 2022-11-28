@@ -85,6 +85,9 @@ const badge = plugin(function ({addComponents, theme}) {
     '.badge--rounded-none': {
       borderRadius: theme('borderRadius.none'),
     },
+    '.badge--rounded-full': {
+      borderRadius: theme('borderRadius.full'),
+    },
 
     /* Colors */
     '.badge-primary': {
