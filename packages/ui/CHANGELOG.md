@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.4](https://github.com/gitsindonesia/ui-component/compare/v0.13.3...v0.13.4) (2022-11-28)
+
+### Features
+
+- **ui:** register v-modal style ([448cf7c](https://github.com/gitsindonesia/ui-component/commit/448cf7c6a5f571174c955566f41ef6473d72a8d4))
+
 ## [0.13.3](https://github.com/gitsindonesia/ui-component/compare/v0.13.2...v0.13.3) (2022-11-24)
 
 ### Bug Fixes

@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.4](https://github.com/gitsindonesia/ui-component/compare/v0.13.3...v0.13.4) (2022-11-28)
+
+### Bug Fixes
+
+- **VModal:** improved types ([2954144](https://github.com/gitsindonesia/ui-component/commit/29541449a17901f1acc91a04152b66491dae33ef))
+- **VModal:** improved v-modal bundle size ([66d1797](https://github.com/gitsindonesia/ui-component/commit/66d1797b65b8ed54286dd336afa7afafa751a84d))
+
+### Features
+
+- documentation of tast ([#39](https://github.com/gitsindonesia/ui-component/issues/39)) ([234565c](https://github.com/gitsindonesia/ui-component/commit/234565c1dc2915e3b0a54cd68efe60d22c960654))
+- **ui:** register v-modal style ([448cf7c](https://github.com/gitsindonesia/ui-component/commit/448cf7c6a5f571174c955566f41ef6473d72a8d4))
+- **VModal:** add CSS Variables ([acd07d2](https://github.com/gitsindonesia/ui-component/commit/acd07d259a3a950a576ca37f8a72197bd03dccc1))
+- **VModal:** setup css classes ([41a3801](https://github.com/gitsindonesia/ui-component/commit/41a3801d1e78676db6abb80c673f33e1d277b788))
+
 ## [0.13.3](https://github.com/gitsindonesia/ui-component/compare/v0.13.2...v0.13.3) (2022-11-24)
 
 ### Bug Fixes
