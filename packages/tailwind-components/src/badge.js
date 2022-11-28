@@ -13,6 +13,7 @@ const badge = plugin(function ({addComponents, theme}) {
       '--badge-padding-y': theme('padding.1'),
       '--badge-font-size': theme('fontSize.xs'),
       '--badge-font-weight': theme('fontWeight.semibold'),
+      '--badge-icon-size': theme('width.4'),
     },
     '.badge': {
       display: 'inline-flex',
@@ -27,6 +28,7 @@ const badge = plugin(function ({addComponents, theme}) {
       padding: 'var(--badge-padding-y) var(--badge-padding-x)',
       fontSize: 'var(--badge-font-size)',
       fontWeight: 'var(--badge-font-weight)',
+      shrink: 0,
     },
 
     // elements
@@ -36,8 +38,8 @@ const badge = plugin(function ({addComponents, theme}) {
       padding: 0,
     },
     '.badge-icon': {
-      width: theme('width.4'),
-      height: theme('height.4'),
+      width: 'var(--badge-icon-size) !important',
+      height: 'var(--badge-icon-size) !important',
     },
 
     // modifiers
@@ -50,7 +52,7 @@ const badge = plugin(function ({addComponents, theme}) {
 
     '.badge--sm': {
       '--badge-padding-x': theme('padding.1'),
-      '--badge-padding-y': theme('padding.0.5'),
+      '--badge-padding-y': 2,
       '--badge-font-size': 10,
     },
 
@@ -58,6 +60,7 @@ const badge = plugin(function ({addComponents, theme}) {
       '--badge-padding-x': theme('padding.2'),
       '--badge-padding-y': theme('padding.1'),
       '--badge-font-size': theme('fontSize.sm'),
+      '--badge-icon-size': theme('width.5'),
     },
 
     /* Rounded */
@@ -84,6 +87,9 @@ const badge = plugin(function ({addComponents, theme}) {
     },
     '.badge--rounded-none': {
       borderRadius: theme('borderRadius.none'),
+    },
+    '.badge--rounded-full': {
+      borderRadius: theme('borderRadius.full'),
     },
 
     /* Colors */
