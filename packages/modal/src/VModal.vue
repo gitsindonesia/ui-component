@@ -16,6 +16,11 @@ import {
 import VBtn from '@gits-id/button';
 import Icon from '@gits-id/icon';
 
+export type ConfirmEventPayload = {
+  open: () => void;
+  close: () => void;
+};
+
 export interface Props {
   modelValue?: boolean;
   title?: string;
@@ -68,7 +73,7 @@ const props = withDefaults(defineProps<Props>(), {
 const emit =
   defineEmits<{
     (e: 'update:modelValue', value: boolean): void;
-    (e: 'confirm'): void;
+    (e: 'confirm', payload: ConfirmEventPayload): void;
     (e: 'close'): void;
     (e: 'open'): void;
   }>();
