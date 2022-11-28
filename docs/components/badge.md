@@ -172,6 +172,7 @@ const onDismiss = () => alert('Dismiss!');
 | [`--badge-padding-y`](#--badge-padding-y)         | `theme('padding.1')`               |
 | [`--badge-font-size`](#--badge-font-size)         | `theme('fontSize.xs')`             |
 | [`--badge-font-weight`](#--badge-font-weight)     | `theme('fontWeight.semibold')`     |
+| [`--badge-icon-size`](#--badge-icon-size)         | `theme('width.4')`                 |
 
 ## Customization
 

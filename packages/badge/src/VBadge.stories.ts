@@ -71,6 +71,39 @@ export const Rounded: Story<VBadgeProps> = (args) => ({
   `,
 });
 
+export const Dismissable: Story<VBadgeProps> = (args) => ({
+  components: {
+    VBadge,
+  },
+  setup() {
+    return {args};
+  },
+  template: `
+<div class="space-x-2">
+  <VBadge
+    color="primary"
+    small
+    dismissable
+  >
+    small
+  </VBadge>
+  <VBadge
+    color="primary"
+    dismissable
+  >
+    default
+  </VBadge>
+  <VBadge
+    color="primary"
+    large
+    dismissable
+  >
+    large
+  </VBadge>
+</div>
+  `,
+});
+
 export const Sizes: Story<VBadgeProps> = (args) => ({
   components: {
     VBadge,
@@ -121,18 +154,6 @@ Small.parameters = {
   docs: {
     source: {
       code: `<v-badge small> text </v-badge>`,
-    },
-  },
-};
-
-export const Dismissable = Template.bind({});
-Dismissable.args = {
-  dismissable: true,
-};
-Dismissable.parameters = {
-  docs: {
-    source: {
-      code: `<v-badge dismissable> text </v-badge>`,
     },
   },
 };
