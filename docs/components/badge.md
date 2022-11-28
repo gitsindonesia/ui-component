@@ -130,6 +130,7 @@ Use `dismissable` to show X button in badge.
 | [dismissable](#dismissable) | `boolean`                                                      | `false`         |
 | [outlined](#outlined)       | `boolean`                                                      | `false`         |
 | [closeIcon](#closeIcon)     | `string`                                                       | `ri:close-line` |
+| [iconSize](#iconSize)       | `string`                                                       | `xs`            |
 
 ## Methods
 
@@ -172,6 +173,7 @@ const onDismiss = () => alert('Dismiss!');
 | [`--badge-padding-y`](#--badge-padding-y)         | `theme('padding.1')`               |
 | [`--badge-font-size`](#--badge-font-size)         | `theme('fontSize.xs')`             |
 | [`--badge-font-weight`](#--badge-font-weight)     | `theme('fontWeight.semibold')`     |
+| [`--badge-icon-size`](#--badge-icon-size)         | `theme('width.4')`                 |
 
 ## Customization
 

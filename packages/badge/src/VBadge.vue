@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import {computed, PropType} from 'vue';
 import Icon from '@gits-id/icon';
+import '@gits-id/icon/dist/style.css';
 import {DefaultColors, DefaultRounded} from '@gits-id/theme/defaultTheme';
 
 export type BadgeColors = DefaultColors | 'default' | string;
@@ -55,6 +56,10 @@ const props = defineProps({
     type: String,
     default: 'ri:close-line',
   },
+  iconSize: {
+    type: [String, Number],
+    default: 'xs',
+  },
 });
 
 const emit =
@@ -99,7 +104,7 @@ const classes = computed(() => {
         aria-label="Close"
         @click="onDismiss"
       >
-        <Icon :name="closeIcon" class="badge-icon" />
+        <Icon :name="closeIcon" :size="iconSize" class="badge-icon" />
       </button>
     </slot>
   </span>
