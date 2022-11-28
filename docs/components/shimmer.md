@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import { VShimmer } from '@gits-id/ui';
-</script>
-
 # Shimmer
 
 ## Usage
