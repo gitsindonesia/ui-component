@@ -16,7 +16,7 @@ import {
 import VBtn from '@gits-id/button';
 import Icon from '@gits-id/icon';
 
-type Props = {
+export interface Props {
   modelValue?: boolean;
   title?: string;
   confirm?: boolean;
@@ -38,7 +38,7 @@ type Props = {
   hideXButton?: boolean;
   xButtonProps?: Record<string, any>;
   xIconClass?: string;
-};
+}
 
 const props = withDefaults(defineProps<Props>(), {
   modelValue: false,
@@ -65,7 +65,13 @@ const props = withDefaults(defineProps<Props>(), {
   xIconClass: '',
 });
 
-const emit = defineEmits(['update:modelValue', 'confirm', 'close', 'open']);
+const emit =
+  defineEmits<{
+    (e: 'update:modelValue', value: boolean): void;
+    (e: 'confirm'): void;
+    (e: 'close'): void;
+    (e: 'open'): void;
+  }>();
 
 const {
   modelValue,
