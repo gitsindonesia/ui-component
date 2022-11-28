@@ -130,6 +130,7 @@ Use `dismissable` to show X button in badge.
 | [dismissable](#dismissable) | `boolean`                                                      | `false`         |
 | [outlined](#outlined)       | `boolean`                                                      | `false`         |
 | [closeIcon](#closeIcon)     | `string`                                                       | `ri:close-line` |
+| [iconSize](#iconSize)       | `string`                                                       | `xs`            |
 
 ## Methods
 
