@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.5](https://github.com/gitsindonesia/ui-component/compare/v0.13.4...v0.13.5) (2022-11-28)
+
+### Bug Fixes
+
+- **Badge:** fix border radius & icon size ([#42](https://github.com/gitsindonesia/ui-component/issues/42)) ([4a075e4](https://github.com/gitsindonesia/ui-component/commit/4a075e49c0b192d43b81427f8ea1d61ca8572449))
+- **Badge:** fix rounded full badge ([f167625](https://github.com/gitsindonesia/ui-component/commit/f167625bd596cccf049705cdebfe5e89484f0b29))
+
 ## [0.13.4](https://github.com/gitsindonesia/ui-component/compare/v0.13.3...v0.13.4) (2022-11-28)
 
 ### Bug Fixes

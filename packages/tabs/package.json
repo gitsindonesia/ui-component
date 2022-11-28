@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/tabs",
-  "version": "0.13.0",
+  "version": "0.13.5",
   "description": "GITS Tabs Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,14 +15,14 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@gits-id/button": "^0.13.0",
-    "@gits-id/card": "^0.13.0",
+    "@gits-id/button": "^0.13.5",
+    "@gits-id/card": "^0.13.5",
     "@gits-id/icon": "^0.11.10",
     "@gits-id/utils": "^0.13.0",
     "vue": "^3.2.31"
   },
   "devDependencies": {
-    "@gits-id/tailwind-config": "^0.13.0",
+    "@gits-id/tailwind-config": "^0.13.5",
     "@headlessui/vue": "^1.6.0",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",

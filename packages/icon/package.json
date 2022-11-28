@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/icon",
-  "version": "0.13.0",
+  "version": "0.13.5",
   "description": "GITS Icon Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -19,7 +19,7 @@
     "vue": "^3.2.31"
   },
   "devDependencies": {
-    "@gits-id/tailwind-config": "^0.13.0",
+    "@gits-id/tailwind-config": "^0.13.5",
     "vite": "^3.0.0",
     "vitest": "^0.12.4",
     "vue-tsc": "^0.40.1"
