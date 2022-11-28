@@ -52,9 +52,9 @@ The `VShimmer` component is registered globally when you install with `@gits-id/
 ```vue
 <template>
   <div class="flex gap-4 shadow p-6 rounded-lg">
-    <Shimmer :width="100" :height="100" rounded />
+    <VShimmer :width="100" :height="100" rounded />
     <div class="flex-1 w-8/12">
-      <Shimmer :lines="4" width="100%" :height="20" class="mb-2" rounded />
+      <VShimmer :lines="4" width="100%" :height="20" class="mb-2" rounded />
     </div>
   </div>
 </template>
