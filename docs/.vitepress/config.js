@@ -103,6 +103,10 @@ export default defineConfig({
             link: '/components/select',
           },
           {
+            text: 'Shimmer',
+            link: '/components/shimmer',
+          },
+          {
             text: 'Spinner',
             link: '/components/spinner',
           },
