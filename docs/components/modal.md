@@ -1,5 +1,7 @@
 # Modal
 
+Vue modal component. Based on `@headlessui/vue` dialog component.
+
 ## Usage
 
 ### Basic Usage
@@ -242,11 +244,25 @@ const approveRequest = () => {
 
 ## Slots
 
-None
+### `default`
+
+### `activator`
+
+### `header`
+
+### `footer`
 
 ## CSS Variables
 
-None
+```css
+:root {
+  --v-modal-text-color: theme('colors.gray.800');
+  --v-modal-bg-color: theme('colors.white');
+  --v-modal-border-radius: theme('borderRadius.md');
+  --v-modal-z-index: 30;
+  --v-modal-shadow: theme('boxShadow.lg');
+}
+```
 
 ## Manual Installation
 
@@ -259,6 +275,7 @@ yarn install @gits-id/modal
 ```vue
 <script setup lang="ts">
 import VModal from '@gits-id/modal';
+import '@gits-id/modal/dist/style.css';
 </script>
 
 <template>
