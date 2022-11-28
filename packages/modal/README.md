@@ -1,4 +1,6 @@
-# GITS Modal Component
+# GITS Modal
+
+Vue modal component. Based on `@headlessui/vue` dialog.
 
 ## Installation
 
@@ -22,19 +24,20 @@ pnpm i @gits-id/modal
 
 ## Basic Usage
 
-```html
+```vue
 <script setup lang="ts">
-  import Modal from '@gits-id/modal';
+import VModal from '@gits-id/modal';
+import '@gits-id/modal/dist/style.css';
 </script>
 
 <template>
-  <Modal>
+  <VModal>
     <template #activator="{open}">
       <v-btn @click="open">Click Me</v-btn>
     </template>
 
     Lorem ipsum dolor sit amet
-  </Modal>
+  </VModal>
 </template>
 ```
 
