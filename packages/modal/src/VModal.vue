@@ -246,8 +246,18 @@ const onConfirm = () => {
 </template>
 
 <style>
+:root {
+  --v-modal-text-color: theme('colors.gray.800');
+  --v-modal-bg-color: theme('colors.white');
+  --v-modal-border-radius: theme('borderRadius.md');
+  --v-modal-z-index: 30;
+  --v-modal-shadow: theme('boxShadow.lg');
+}
+
 .v-modal-dialog {
-  @apply fixed inset-0 z-30 overflow-y-auto;
+  z-index: var(--v-modal-z-index);
+
+  @apply fixed inset-0 overflow-y-auto;
 }
 
 .v-modal-content {
@@ -259,15 +269,20 @@ const onConfirm = () => {
 }
 
 .v-modal-panel {
+  background: var(--v-modal-bg-color);
+  color: var(--v-modal-text-color);
+  border-radius: var(--v-modal-border-radius);
+  box-shadow: var(--v-modal-shadow);
+
   @apply w-full
     overflow-hidden
     align-middle
     transition-all
     transform
-    bg-white
-    shadow-xl
     p-6
-    max-w-md inline-block rounded-lg my-8
+    max-w-md
+    inline-block
+    my-8
     text-left;
 }
 
@@ -284,7 +299,7 @@ const onConfirm = () => {
 }
 
 .v-modal-body {
-  @apply mt-4 text-gray-600 flex-1 text-left;
+  @apply mt-4 flex-1 text-left;
 }
 
 .v-modal-footer {
@@ -295,6 +310,7 @@ const onConfirm = () => {
 .v-modal.v-modal--fullscreen .v-modal-panel {
   @apply h-screen flex flex-col max-w-full m-0 rounded-none;
 }
+
 .v-modal.v-modal--fullscreen .v-modal-content {
   @apply px-0;
 }
@@ -307,6 +323,7 @@ const onConfirm = () => {
 .v-modal.v-modal--centered .v-modal-body {
   @apply text-center;
 }
+
 .v-modal.v-modal--centered .v-modal-footer {
   @apply justify-center;
 }
