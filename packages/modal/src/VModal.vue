@@ -130,9 +130,23 @@ const onConfirm = () => {
 <template>
   <slot name="activator" :open="openModal" />
   <TransitionRoot appear :show="isOpen" as="template">
-    <Dialog static :open="isOpen" as="div" @close="onModalClose">
-      <div class="fixed inset-0 z-30 overflow-y-auto">
-        <div class="min-h-screen text-center" :class="{'px-4': !fullscreen}">
+    <Dialog
+      static
+      :open="isOpen"
+      as="div"
+      @close="onModalClose"
+      class="v-modal"
+      :class="[
+        {
+          'v-modal--centered': centered,
+          'v-modal--fullscreen': fullscreen,
+          'v-modal--loading': loading,
+          'v-modal--persistent': persistent,
+        },
+      ]"
+    >
+      <div class="v-modal-dialog">
+        <div class="v-modal-content">
           <TransitionChild
             as="template"
             enter="duration-300 ease-out"
@@ -142,14 +156,10 @@ const onConfirm = () => {
             leave-from="opacity-100"
             leave-to="opacity-0"
           >
-            <div class="fixed bg-black bg-opacity-50 inset-0" />
+            <div class="v-modal-overlay" />
           </TransitionChild>
 
-          <span
-            v-if="!fullscreen"
-            class="inline-block h-screen align-middle"
-            aria-hidden="true"
-          >
+          <span v-if="!fullscreen" class="v-modal-spacer" aria-hidden="true">
             &#8203;
           </span>
 
@@ -162,34 +172,15 @@ const onConfirm = () => {
             leave-from="opacity-100 scale-100"
             leave-to="opacity-0 scale-95"
           >
-            <DialogPanel
-              class="
-                w-full
-                overflow-hidden
-                align-middle
-                transition-all
-                transform
-                bg-white
-                shadow-xl
-                p-6
-              "
-              :class="[
-                {
-                  'max-w-md inline-block rounded-lg my-8': !fullscreen,
-                  'h-screen flex flex-col': fullscreen,
-                },
-                centered ? 'text-center' : 'text-left',
-                modalClass,
-              ]"
-            >
+            <DialogPanel class="v-modal-panel" :class="[modalClass]">
               <DialogTitle
                 v-if="!hideHeader"
                 as="div"
-                class="flex justify-between gap-4 items-center"
+                class="v-modal-header"
                 :class="headerClass"
               >
                 <slot name="header">
-                  <h3 class="text-lg font-medium leading-6 text-gray-900">
+                  <h3 class="v-modal-title">
                     {{ title }}
                   </h3>
                 </slot>
@@ -198,6 +189,7 @@ const onConfirm = () => {
                   icon
                   text
                   rounded
+                  fab
                   size="sm"
                   class="p-0"
                   :disabled="isLoading"
@@ -211,20 +203,14 @@ const onConfirm = () => {
                   />
                 </VBtn>
               </DialogTitle>
-              <div
-                class="mt-4 text-gray-600 flex-1"
-                :class="[centered ? 'text-center' : '', bodyClass]"
-              >
+              <div class="v-modal-body" :class="bodyClass">
                 <slot />
               </div>
 
               <div
                 v-if="!hideFooter"
-                class="mt-6 flex gap-2"
-                :class="[
-                  centered ? 'justify-center' : 'justify-end',
-                  footerClass,
-                ]"
+                class="v-modal-footer"
+                :class="[footerClass]"
               >
                 <slot
                   name="footer"
@@ -235,6 +221,7 @@ const onConfirm = () => {
                   <v-btn
                     v-if="confirm"
                     :color="confirmColor"
+                    :disabled="isLoading"
                     :loading="isLoading"
                     v-bind="confirmProps"
                     @click="onConfirm"
@@ -257,3 +244,70 @@ const onConfirm = () => {
     </Dialog>
   </TransitionRoot>
 </template>
+
+<style>
+.v-modal-dialog {
+  @apply fixed inset-0 z-30 overflow-y-auto;
+}
+
+.v-modal-content {
+  @apply min-h-screen text-center px-4;
+}
+
+.v-modal-overlay {
+  @apply fixed bg-black bg-opacity-50 inset-0;
+}
+
+.v-modal-panel {
+  @apply w-full
+    overflow-hidden
+    align-middle
+    transition-all
+    transform
+    bg-white
+    shadow-xl
+    p-6
+    max-w-md inline-block rounded-lg my-8
+    text-left;
+}
+
+.v-modal-spacer {
+  @apply inline-block h-screen align-middle;
+}
+
+.v-modal-header {
+  @apply flex justify-between gap-4 items-center;
+}
+
+.v-modal-title {
+  @apply text-lg font-medium leading-6 text-gray-900;
+}
+
+.v-modal-body {
+  @apply mt-4 text-gray-600 flex-1 text-left;
+}
+
+.v-modal-footer {
+  @apply mt-6 flex gap-2 justify-end;
+}
+
+/* fullscreen */
+.v-modal.v-modal--fullscreen .v-modal-panel {
+  @apply h-screen flex flex-col max-w-full m-0 rounded-none;
+}
+.v-modal.v-modal--fullscreen .v-modal-content {
+  @apply px-0;
+}
+
+/* centered */
+.v-modal.v-modal--centered .v-modal-panel {
+  @apply text-center justify-center;
+}
+
+.v-modal.v-modal--centered .v-modal-body {
+  @apply text-center;
+}
+.v-modal.v-modal--centered .v-modal-footer {
+  @apply justify-center;
+}
+</style>
