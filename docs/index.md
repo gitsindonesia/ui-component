@@ -32,4 +32,10 @@ features:
   - icon: ⛰️
     title: Nuxt 3
     details: Easy integrate with Nuxt 3
+  - icon: 🔐
+    title: TypeScript
+    details: TypeScript support out-of-the-box
+  - icon: 🔐
+    title: Themes
+    details: Theming supports
 ---
