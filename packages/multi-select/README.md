@@ -1,6 +1,6 @@
-# GITS Multi Select Component
+# Multi Select
 
-> Reusable Multi Select Component
+Vue Multi Select Component.
 
 ## Installation
 
@@ -26,20 +26,36 @@ pnpm i @gits-id/multi-select
 
 ```vue
 <script setup lang="ts">
-// import styles
-import '@gits-id/multi-select/dist/style.css';
-// import component
+import {ref} from 'vue';
 import VMultiSelect from '@gits-id/multi-select';
+import '@gits-id/multi-select/dist/style.css';
+
+const items = ref([
+  {
+    text: 'Item 1',
+    value: 1,
+  },
+  {
+    text: 'Item 2',
+    value: 2,
+  },
+  {
+    text: 'Item 2',
+    value: 2,
+  },
+]);
+
+const selected = ref();
 </script>
 
 <template>
-  <VMultiSelect />
+  <VMultiSelect v-model="selected" :items="items" />
 </template>
 ```
 
 ## Documentation
 
-View `VMultiSelect` documentation [here](https://gits-ui.web.app/?path=/story/components-multi-select--default).
+View full documentation [here](https://gits-ui.web.app/?path=/story/components-multi-select--default).
 
 ## License
 
