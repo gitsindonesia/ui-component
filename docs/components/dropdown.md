@@ -62,7 +62,18 @@ The `VDropdown` component is registered globally when you install with `@gits-id
 
 ### Router Link
 
-```vue
+```vue {7}
+<script setup lang="ts">
+import {ref} from 'vue';
+
+const items = ref([
+  {
+    text: 'Link 1',
+    to: '/home',
+  },
+]);
+</script>
+
 <template>
   <VDropdown />
 </template>
@@ -72,7 +83,18 @@ The `VDropdown` component is registered globally when you install with `@gits-id
 
 ### Href Link
 
-```vue
+```vue {7}
+<script setup lang="ts">
+import {ref} from 'vue';
+
+const items = ref([
+  {
+    text: 'Link 1',
+    href: '/home',
+  },
+]);
+</script>
+
 <template>
   <VDropdown />
 </template>
@@ -84,16 +106,16 @@ The `VDropdown` component is registered globally when you install with `@gits-id
 
 ```vue
 <script setup lang="ts">
-import {Dropdown, DropdownItem} from '@gits-id/dropdown';
+import {VDropdown, VDropdownItem} from '@gits-id/dropdown';
 </script>
 
 <template>
-  <Dropdown>
-    <DropdownItem text="Calendar" icon="calendar" />
-    <DropdownItem text="Files" icon="document" />
-    <DropdownItem divider />
-    <DropdownItem text="Timer" icon="clock" />
-  </Dropdown>
+  <VDropdown>
+    <VDropdownItem text="Calendar" icon="mdi:calendar" />
+    <VDropdownItem text="Files" icon="mdi:document" />
+    <VDropdownItem divider />
+    <VDropdownItem text="Timer" icon="mdi:clock" />
+  </VDropdown>
 </template>
 ```
 
@@ -102,19 +124,23 @@ import {Dropdown, DropdownItem} from '@gits-id/dropdown';
 ### Custom Activator
 
 ```vue
+<script setup lang="ts">
+import {VDropdown, VDropdownItem, VBtn} from '@gits-id/ui';
+</script>
+
 <template>
-  <Dropdown top top-class="bottom-12">
+  <VDropdown top top-class="bottom-12">
     <template #activator>
-      <DropdownButton :as="Button" color="error" outlined>
+      <VDropdownButton :as="VBtn" color="error" outlined>
         My Button
-      </DropdownButton>
+      </VDropdownButton>
     </template>
 
-    <DropdownItem text="Calendar" icon="calendar" />
-    <DropdownItem text="Files" icon="document" />
-    <DropdownItem divider />
-    <DropdownItem text="Timer" icon="clock" />
-  </Dropdown>
+    <VDropdownItem text="Calendar" icon="mdi:calendar" />
+    <VDropdownItem text="Files" icon="mdi:document" />
+    <VDropdownItem divider />
+    <VDropdownItem text="Timer" icon="mdi:clock" />
+  </VDropdown>
 </template>
 ```
 
@@ -122,21 +148,21 @@ import {Dropdown, DropdownItem} from '@gits-id/dropdown';
 
 ## Props
 
-| Name                                        | Type                  | Default                  |
-| ------------------------------------------- | --------------------- | ------------------------ |
-| [`modelValue`](#modelValue)                 | `boolean`             | `false`                  |
-| [`btnProps`](#btnProps)                     | `Record<string, any>` | `{variant: 'secondary'}` |
-| [`label`](#label)                           | `string`              | `'Options'`              |
-| [`right`](#right)                           | `boolean`             | `false`                  |
-| [`items`](#items)                           | `DropdownItemProps[]` | `[]`                     |
-| [`top`](#top)                               | `boolean`             | `false`                  |
-| [`topClass`](#topClass)                     | `string`              | `'bottom-10'`            |
-| [`bottomClass`](#bottomClass)               | `string`              | `'top-6'`                |
-| [`panelClass`](#panelClass)                 | `string`              | `''`                     |
-| [`buttonWrapperClass`](#buttonWrapperClass) | `string`              | `''`                     |
-| [`rightClass`](#rightClass)                 | `string`              | `'left-0'`               |
-| [`leftClass`](#leftClass)                   | `string`              | `'right-0'`              |
-| [`transition`](#transition)                 | `string`              | `'fade'`                 |
+| Name                                        | Type                   | Default                  |
+| ------------------------------------------- | ---------------------- | ------------------------ |
+| [`modelValue`](#modelValue)                 | `boolean`              | `false`                  |
+| [`btnProps`](#btnProps)                     | `Record<string, any>`  | `{variant: 'secondary'}` |
+| [`label`](#label)                           | `string`               | `'Options'`              |
+| [`right`](#right)                           | `boolean`              | `false`                  |
+| [`items`](#items)                           | `VDropdownItemProps[]` | `[]`                     |
+| [`top`](#top)                               | `boolean`              | `false`                  |
+| [`topClass`](#topClass)                     | `string`               | `'bottom-10'`            |
+| [`bottomClass`](#bottomClass)               | `string`               | `'top-6'`                |
+| [`panelClass`](#panelClass)                 | `string`               | `''`                     |
+| [`buttonWrapperClass`](#buttonWrapperClass) | `string`               | `''`                     |
+| [`rightClass`](#rightClass)                 | `string`               | `'left-0'`               |
+| [`leftClass`](#leftClass)                   | `string`               | `'right-0'`              |
+| [`transition`](#transition)                 | `string`               | `'fade'`                 |
 
 ## Methods
 
@@ -151,14 +177,32 @@ None
 ### `activator`
 
 ```vue
+<script setup lang="ts">
+import {VDropdown, VDropdownItem, VBtn} from '@gits-id/ui';
+</script>
+
 <template>
-  <Dropdown>
+  <VDropdown>
     <template #activator>
-      <DropdownButton :as="Button" color="error" outlined>
+      <VDropdownButton :as="VBtn" color="error" outlined>
         My Button
-      </DropdownButton>
+      </VDropdownButton>
     </template>
-  </Dropdown>
+  </VDropdown>
+</template>
+```
+
+### `default`
+
+```vue
+<script setup lang="ts">
+import {VDropdown, VDropdownItem, VBtn} from '@gits-id/ui';
+</script>
+
+<template>
+  <VDropdown>
+    <VDropdownItem>Item 1</VDropdownItem>
+  </VDropdown>
 </template>
 ```
 
@@ -187,19 +231,23 @@ module.exports = {
 
 ## Manual Installation
 
-You can also install the `Dropdown` component individually via `@gits-id/dropdown` package:
+You can also install the `VDropdown` component individually via `@gits-id/dropdown` package:
 
 ```bash
-yarn install @gits-id/dropdown
+npm i @gits-id/dropdown
 ```
 
 ```vue
 <script setup lang="ts">
-import VDropdown from '@gits-id/dropdown';
+import {VDropdown, VDropdownItem} from '@gits-id/dropdown';
 </script>
 
 <template>
-  <VDropdown />
+  <VDropdown>
+    <VDropdownItem> Item 1 </VDropdownItem>
+    <VDropdownItem> Item 2 </VDropdownItem>
+    <VDropdownItem> Item 3 </VDropdownItem>
+  </VDropdown>
 </template>
 ```
 
