@@ -19,6 +19,8 @@ import VTooltip from '@gits-id/tooltip';
 import {onClickOutside, useDebounceFn} from '@vueuse/core';
 import {ErrorMessage, useField} from 'vee-validate';
 import Icon from '@gits-id/icon';
+import '@gits-id/icon/dist/style.css';
+import '@gits-id/tooltip/dist/style.css';
 
 type VMultiSelectItem = {
   text: string;
