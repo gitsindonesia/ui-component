@@ -1,19 +1,23 @@
 <script setup lang="ts">
 import {MenuItem} from '@headlessui/vue';
 import {computed, resolveComponent, useAttrs} from 'vue';
+import VIcon from '@gits-id/icon';
+import '@gits-id/icon/dist/style.css';
 
 const props = withDefaults(
   defineProps<{
     text?: string;
     to?: string;
     href?: string;
-    icon?: any;
+    icon?: string | any;
+    iconSize?: string;
     iconClass?: string;
     newTab?: boolean;
     divider?: boolean;
   }>(),
   {
-    iconClass: 'dropdown-item-icon',
+    iconClass: '',
+    iconSize: 'sm',
   },
 );
 
@@ -44,7 +48,19 @@ const attributes = computed(() => {
       v-bind="attributes"
     >
       <slot name="icon">
-        <component :is="icon" :class="iconClass" />
+        <VIcon
+          v-if="typeof icon === 'string'"
+          :name="icon"
+          :size="iconSize"
+          :class="iconClass"
+          class="dropdown-item-icon"
+        />
+        <component
+          v-else
+          :is="icon"
+          :class="iconClass"
+          class="dropdown-item-icon"
+        />
       </slot>
       <slot>{{ text }}</slot>
     </component>
