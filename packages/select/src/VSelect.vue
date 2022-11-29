@@ -150,6 +150,18 @@ const props = defineProps({
     type: Object as PropType<Partial<FieldOptions<any>>>,
     default: () => ({}),
   },
+  checkIcon: {
+    type: String,
+    default: 'ri:check-line',
+  },
+  checkIconSize: {
+    type: String,
+    default: 'sm',
+  },
+  iconSize: {
+    type: String,
+    default: 'sm',
+  },
 });
 
 const {
@@ -286,6 +298,7 @@ const clear = () => (selectedItem.value = '');
           <span class="w-auto">
             <Icon
               name="heroicons:chevron-down"
+              :size="iconSize"
               class="v-select-icon"
               aria-hidden="true"
             />
@@ -336,7 +349,8 @@ const clear = () => (selectedItem.value = '');
                 >
                   <slot v-if="selected" name="icon">
                     <Icon
-                      name="heroicons:check"
+                      :name="checkIcon"
+                      :size="checkIconSize"
                       class="v-select-option-check-icon"
                       aria-hidden="true"
                     />
@@ -385,8 +399,8 @@ const clear = () => (selectedItem.value = '');
   --v-select-text-font-weight: var(--v-input-text-font-weight);
 
   /* icon */
-  --v-select-icon-width: var(--v-input-icon-width);
-  --v-select-icon-height: var(--v-input-icon-height);
+  --v-select-icon-width: theme('width.5');
+  --v-select-icon-height: theme('width.5');
   --v-select-icon-color: var(--v-input-icon-color);
 
   /* option item */
