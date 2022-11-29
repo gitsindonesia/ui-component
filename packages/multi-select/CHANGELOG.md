@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.6](https://github.com/gitsindonesia/ui-component/compare/v0.13.5...v0.13.6) (2022-11-29)
+
+### Bug Fixes
+
+- **VMultiSelect:** fix label position and fix error style ([#46](https://github.com/gitsindonesia/ui-component/issues/46)) ([e431812](https://github.com/gitsindonesia/ui-component/commit/e43181202747ec60f2e231d25973ac758ce7a162))
+
+### Features
+
+- **VMultiSelect:** add CSS Properties support ([#45](https://github.com/gitsindonesia/ui-component/issues/45)) ([8ae6b1e](https://github.com/gitsindonesia/ui-component/commit/8ae6b1eb99c73fdd8cae54827e74f80517b7ed01))
+
 ## [0.13.5](https://github.com/gitsindonesia/ui-component/compare/v0.13.4...v0.13.5) (2022-11-28)
 
 **Note:** Version bump only for package @gits-id/multi-select

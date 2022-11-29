@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.6](https://github.com/gitsindonesia/ui-component/compare/v0.13.5...v0.13.6) (2022-11-29)
+
+### Features
+
+- **Dropdown:** customizable dropdown icons ([#43](https://github.com/gitsindonesia/ui-component/issues/43)) ([081f642](https://github.com/gitsindonesia/ui-component/commit/081f64206099fa15ad8b2ddacae8782407df9544))
+
 ## [0.13.5](https://github.com/gitsindonesia/ui-component/compare/v0.13.4...v0.13.5) (2022-11-28)
 
 **Note:** Version bump only for package @gits-id/dropdown
