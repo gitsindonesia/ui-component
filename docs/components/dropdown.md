@@ -164,7 +164,14 @@ None
 
 ## CSS Variables
 
-None
+```css
+:root {
+  --dropdown-bg-color: theme('colors.white');
+  --dropdown-button-icon-color: theme('colors.gray.500');
+  --dropdown-item-color: theme('colors.gray.800');
+  --dropdown-item-icon-color: theme('colors.gray.600');
+}
+```
 
 ## Tailwind Plugin
 

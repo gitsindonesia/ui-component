@@ -4,6 +4,9 @@ const dropdown = plugin(function ({addComponents, theme}) {
   addComponents({
     ':root': {
       '--dropdown-bg-color': theme('colors.white'),
+      '--dropdown-button-icon-color': theme('colors.gray.500'),
+      '--dropdown-item-color': theme('colors.gray.800'),
+      '--dropdown-item-icon-color': theme('colors.gray.600'),
     },
     '.dropdown': {
       position: 'relative',
@@ -40,6 +43,7 @@ const dropdown = plugin(function ({addComponents, theme}) {
       alignItems: 'center',
       width: '100%',
       padding: theme('spacing.2'),
+      color: 'var(--dropdown-item-color, inherit)',
     },
     '.dropdown-item--active': {
       backgroundColor: theme('colors.gray.200'),
@@ -47,6 +51,10 @@ const dropdown = plugin(function ({addComponents, theme}) {
     '.dropdown-item-icon': {
       width: theme('width.5'),
       height: theme('height.5'),
+      color: 'var(--dropdown-item-icon-color)',
+    },
+    '.dropdown-button-icon': {
+      color: 'var(--dropdown-button-icon-color)',
     },
   });
 });

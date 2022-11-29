@@ -16,11 +16,6 @@ export default {
   title: 'Components/Dropdown',
   component: Dropdown,
   args: {
-    modelValue: false,
-    right: false,
-    btnProps: {
-      variant: 'secondary',
-    },
     label: 'Options',
     items,
   },
@@ -84,10 +79,10 @@ export const Slots: Story = (args, {argTypes}) => ({
   template: `
     <div class="flex justify-center">
       <Dropdown v-bind="args">
-        <DropdownItem text="Calendar" icon="calendar"/>
-        <DropdownItem text="Files" icon="document" />
+        <DropdownItem text="Calendar" icon="mdi:calendar"/>
+        <DropdownItem text="Files" icon="mdi:document" />
         <DropdownItem divider/>
-        <DropdownItem text="Timer" icon="clock"/>
+        <DropdownItem text="Timer" icon="mdi:clock"/>
       </Dropdown>
     </div>
   `,
@@ -107,10 +102,10 @@ export const CustomActivator: Story = (args, {argTypes}) => ({
           </DropdownButton>
         </template>
 
-        <DropdownItem text="Calendar" icon="calendar"/>
-        <DropdownItem text="Files" icon="document" />
+        <DropdownItem text="Calendar" icon="mdi:calendar"/>
+        <DropdownItem text="Files" icon="mdi:document" />
         <DropdownItem divider/>
-        <DropdownItem text="Timer" icon="clock"/>
+        <DropdownItem text="Timer" icon="mdi:clock"/>
       </Dropdown>
     </div>
   `,

@@ -18,6 +18,9 @@ export interface Props {
   rightClass?: string;
   leftClass?: string;
   transition?: string;
+  icon?: string;
+  iconSize?: string;
+  iconClass?: string;
 }
 
 withDefaults(defineProps<Props>(), {
@@ -36,6 +39,9 @@ withDefaults(defineProps<Props>(), {
   leftClass: 'left-0',
   rightClass: 'right-0',
   transition: 'fade',
+  icon: 'ri:arrow-down-s-line',
+  iconSize: 'sm',
+  iconClass: '',
 });
 </script>
 
@@ -50,8 +56,10 @@ withDefaults(defineProps<Props>(), {
         >
           {{ label }}
           <Icon
-            name="ri:arrow-down-s-line"
-            class="w-5 h-5 inline"
+            :name="icon"
+            :size="iconSize"
+            :class="iconClass"
+            class="dropdown-button-icon"
             aria-hidden="true"
           />
         </MenuButton>
