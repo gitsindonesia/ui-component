@@ -186,7 +186,41 @@ None
 
 ## CSS Variables
 
-None
+```css
+:root {
+  --v-multi-select-border-color: var(--v-input-border-color);
+  --v-multi-select-border-radius: var(--v-input-border-radius);
+  --v-multi-select-bg-color: var(--v-input-bg-color);
+  --v-multi-select-text-color: theme('colors.gray.800');
+  --v-multi-select-height: auto;
+  --v-multi-select-placeholder-color: var(--v-input-placeholder-color);
+  --v-multi-select-border-radius: var(--v-input-border-radius);
+  --v-multi-select-padding-x: var(--v-input-padding-x);
+  --v-multi-select-padding-y: var(--v-input-padding-y);
+  --v-multi-select-font-size: var(--v-input-font-size);
+
+  /* item */
+  --v-multi-select-item-font-size: theme('fontSize.base');
+  --v-multi-select-item-font-weight: theme('fontWeight.normal');
+  --v-multi-select-item-bg-color: theme('colors.white');
+  --v-multi-select-item-text-color: theme('colors.gray.800');
+  --v-multi-select-item-padding-x: theme('padding.3');
+  --v-multi-select-item-padding-y: theme('padding.2');
+  --v-multi-select-item-hover-bg-color: theme('colors.primary.500');
+  --v-multi-select-item-hover-text-color: theme('colors.white');
+
+  /* error */
+  --v-multi-select-error-border-color: theme('colors.error.500');
+
+  /* icon */
+  --v-multi-select-icon-color: theme('colors.gray.500');
+  --v-multi-select-check-icon-color: theme('colors.primary.500');
+
+  /* dropdown */
+  --v-multi-select-dropdown-bg-color: theme('colors.white');
+  --v-multi-select-dropdown-border-radius: theme('borderRadius.md');
+}
+```
 
 ## Manual Installation
 
