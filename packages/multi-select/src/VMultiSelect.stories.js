@@ -209,3 +209,26 @@ export const InitialErrors = (args) => ({
     </form>
 `,
 });
+
+export const CssVars = () => ({
+  components: {
+    VMultiSelect,
+  },
+  template: `
+  <v-multi-select
+    badge-color="purple"
+    :style="{
+      '--badge-bg-color': 'white',
+      '--badge-color': 'purple',
+      '--v-multi-select-bg-color': 'purple',
+      '--v-multi-select-border-color': 'purple',
+      '--v-multi-select-text-color': 'white',
+      '--v-multi-select-border-radius': '16px',
+      '--v-multi-select-padding-x': '1rem',
+      '--v-multi-select-item-hover-bg-color': 'purple',
+      '--v-multi-select-item-hover-text-color': 'white',
+      '--v-multi-select-icon-color': 'white',
+      '--v-multi-select-check-icon-color': 'purple',
+    }"
+  />`,
+});

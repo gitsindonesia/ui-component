@@ -1,7 +1,7 @@
 {
   "name": "@gits-id/multi-select",
   "version": "0.13.5",
-  "description": "GITS Input Component",
+  "description": "Vue Multi Select Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "npm run build",
@@ -10,13 +10,15 @@
   "keywords": [
     "input",
     "gits",
-    "ui-component"
+    "ui-component",
+    "multi-select"
   ],
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "@gits-id/badge": "^0.13.5",
     "@gits-id/tooltip": "^0.13.5",
+    "@gits-id/forms": "^0.13.5",
     "@vueuse/core": "^7.7.1",
     "vee-validate": "^4.6.1",
     "vue": "^3.2.31"
