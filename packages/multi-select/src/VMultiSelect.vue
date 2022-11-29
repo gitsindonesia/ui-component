@@ -370,23 +370,30 @@ watch(
 </script>
 
 <template>
-  <div ref="target" class="v-multi-select" v-bind="$attrs">
+  <label
+    v-if="label"
+    :for="id || name"
+    class="v-multi-select-label"
+    :class="labelClass"
+  >
+    {{ label }}
+  </label>
+  <div
+    ref="target"
+    class="v-multi-select"
+    :class="{
+      'v-multi-select--error': !!errorMessage || error,
+    }"
+    v-bind="$attrs"
+  >
     <div>
-      <label
-        v-if="label"
-        :for="id || name"
-        class="v-multi-select-label"
-        :class="labelClass"
-      >
-        {{ label }}
-      </label>
       <div class="v-multi-select-panel">
         <div
           class="v-multi-select-input"
           :class="[
-            error || errorMessage
-              ? `v-multi-select-error`
-              : 'v-multi-select-normal',
+            {
+              'v-multi-select-normal': error || !!errorMessage,
+            },
             wrapperClass,
           ]"
           @click="isOpen = true"
@@ -543,7 +550,7 @@ watch(
   </div>
   <ErrorMessage
     v-if="errorMessages.length"
-    class="text-error-600 text-sm"
+    class="text-error-500 text-sm"
     :name="name"
   />
   <div v-else-if="errorMessage" :class="errorClass">
@@ -598,6 +605,10 @@ watch(
   padding: var(--v-multi-select-padding-y) var(--v-multi-select-padding-x);
 
   @apply relative;
+}
+
+.v-multi-select--error {
+  border-color: var(--v-multi-select-error-border-color);
 }
 
 .v-multi-select-error {
