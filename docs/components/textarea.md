@@ -33,7 +33,7 @@
 
 <LivePreview height="250" src="forms-textarea--readonly" />
 
-### Disbled
+### Disabled
 
 ```vue
 <template>
