@@ -1,5 +1,7 @@
 # Shimmer
 
+Shimmer / content placeholder component.
+
 ## Usage
 
 ### Basic Usage
@@ -84,33 +86,47 @@ None
 
 ## CSS Variable
 
-None
+```css
+:root {
+  --shimmer-bg-image: linear-gradient(
+    to right,
+    rgb(247, 247, 247),
+    rgb(220, 220, 220),
+    rgb(247, 247, 247)
+  );
+  --shimmer-bg-size: 200%;
+  --shimmer-border-radius: 0;
+  --shimmer-animation-name: a-background-move;
+  --shimmer-animation-duration: 1.5s;
+}
+```
 
 ## Manual Installation
 
 You can also install the `Shimmer` component individually via `@gits-id/shimmer` package:
 
-yarn :
+yarn:
 
 ```bash
-yarn install @gits-id/shimmer
+yarn add @gits-id/shimmer
 ```
 
-npm :
+npm:
 
 ```bash
-npm install @gits-id/shimmer
+npm i @gits-id/shimmer
 ```
 
 pnpm :
 
 ```bash
-pnpm install @gits-id/shimmer
+pnpm add @gits-id/shimmer
 ```
 
 ```vue
 <script setup lang="ts">
 import Shimmer from '@gits-id/shimmer';
+import '@gits-id/shimmer/dist/style.css';
 </script>
 
 <template>
