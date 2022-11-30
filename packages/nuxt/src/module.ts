@@ -277,6 +277,11 @@ const components: AddComponentOptions[] = [
     filePath: '@gits-id/pagination',
   },
   {
+    name: 'VPaginationItem',
+    export: 'VPaginationItem',
+    filePath: '@gits-id/pagination',
+  },
+  {
     name: 'VProgressBar',
     filePath: '@gits-id/progress-bar',
   },
