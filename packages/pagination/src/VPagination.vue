@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import {computed, ref, toRefs, watch} from 'vue';
 import Pagino from 'pagino';
+import VPaginationItem from './VPaginationItem.vue';
+import VIcon from '@gits-id/icon';
+import '@gits-id/icon/dist/style.css';
 
 const props = defineProps({
   modelValue: {
@@ -41,20 +44,54 @@ const props = defineProps({
   },
   activeClass: {
     type: String,
-    default:
-      'bg-primary-600 border-primary-600 hover:!bg-primary-700 text-white !font-semibold',
+    default: 'v-pagination--active',
   },
   defaultClass: {
     type: String,
-    default: 'text-gray-700',
+    default: '',
   },
   simple: {
     type: Boolean,
     default: false,
   },
+  flat: {
+    type: Boolean,
+    default: false,
+  },
+  size: {
+    type: String,
+    default: 'md',
+  },
+  prevIcon: {
+    type: String,
+    default: 'heroicons:chevron-left-20-solid',
+  },
+  nextIcon: {
+    type: String,
+    default: 'heroicons:chevron-right-20-solid',
+  },
+  firstIcon: {
+    type: String,
+    default: 'heroicons:chevron-double-left-20-solid',
+  },
+  lastIcon: {
+    type: String,
+    default: 'heroicons:chevron-double-right-20-solid',
+  },
+  iconSize: {
+    type: String,
+    default: 'sm',
+  },
+  iconClass: {
+    type: String,
+    default: '',
+  },
 });
 
-const emit = defineEmits(['update:modelValue']);
+const emit =
+  defineEmits<{
+    (e: 'update:modelValue', value: number): void;
+  }>();
 
 const {
   totalItems,
@@ -64,7 +101,9 @@ const {
   defaultClass,
   simple,
 } = toRefs(props);
+
 const page = ref(modelValue.value);
+
 const totalPages = computed(() =>
   Math.ceil(totalItems.value / itemsPerPage.value),
 );
@@ -113,221 +152,233 @@ watch(
 </script>
 
 <template>
-  <nav
-    class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px"
+  <div
     aria-label="Pagination"
+    class="v-pagination"
+    :class="[
+      `v-pagination--${size}`,
+      {
+        'v-pagination--flat': flat,
+      },
+    ]"
   >
     <template v-for="item in pages" :key="item">
-      <button
+      <VPaginationItem
         v-if="item === 'previous'"
         :disabled="cantPrev"
-        class="
-          relative
-          inline-flex
-          items-center
-          px-2
-          py-2
-          border border-gray-300
-          bg-white
-          text-sm
-          font-medium
-        "
-        :class="{
-          'rounded-l-md': !pagino.showFirst,
-          'cursor-not-allowed text-gray-300': cantPrev,
-          'text-gray-600 hover:bg-gray-50': !cantPrev,
-        }"
-        @click.prevent="pagino.previous()"
+        sr-text="Previous"
+        action
+        @click="pagino.previous()"
       >
-        <slot name="btnPrev">
-        <span class="sr-only">Previous</span>
-        <!-- Heroicon name: solid/chevron-left -->
-        <svg
-          class="h-5 w-5"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          aria-hidden="true"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-            clip-rule="evenodd"
-          />
-        </svg>
-        </slot>
-      </button>
-
-      <button
+        <VIcon
+          v-if="prevIcon"
+          :name="prevIcon"
+          :size="iconSize"
+          :class="iconClass"
+        />
+        <slot name="btnPrev" />
+      </VPaginationItem>
+      <VPaginationItem
         v-else-if="item === 'next'"
         :disabled="cantNext"
-        class="
-          relative
-          inline-flex
-          items-center
-          px-2
-          py-2
-          border border-gray-300
-          bg-white
-          text-sm
-          font-medium
-        "
-        :class="{
-          'rounded-r-md': !pagino.showLast,
-          'cursor-not-allowed text-gray-300': cantNext,
-          'text-gray-600 hover:bg-gray-50': !cantNext,
-        }"
-        @click.prevent="pagino.next()"
+        sr-text="Next"
+        action
+        @click="pagino.next()"
       >
-        <slot name="btnNext">
-        <span class="sr-only">Next</span>
-        <!-- Heroicon name: solid/chevron-right -->
-        <svg
-          class="h-5 w-5"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          aria-hidden="true"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-            clip-rule="evenodd"
-          />
-        </svg>
-        </slot>
-      </button>
-      <button
+        <slot name="btnNext" />
+        <VIcon
+          v-if="nextIcon"
+          :name="nextIcon"
+          :size="iconSize"
+          :class="iconClass"
+        />
+      </VPaginationItem>
+      <VPaginationItem
         v-else-if="item === 'first'"
         :disabled="isFirstPage"
-        class="
-          relative
-          inline-flex
-          items-center
-          px-2
-          py-2
-          rounded-l-md
-          border border-gray-300
-          bg-white
-          text-sm
-          font-medium
-        "
-        :class="{
-          'cursor-not-allowed text-gray-300': isFirstPage,
-          'text-gray-600 hover:bg-gray-50': !isFirstPage,
-        }"
-        @click.prevent="pagino.first()"
+        sr-text="First"
+        first
+        action
+        @click="pagino.first()"
       >
-        <slot name="btnFirst">
-        <span class="sr-only">First</span>
-        <svg
-          class="h-4 w-4"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M15.707 15.707a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414l5-5a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 010 1.414zm-6 0a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414l5-5a1 1 0 011.414 1.414L5.414 10l4.293 4.293a1 1 0 010 1.414z"
-            clip-rule="evenodd"
-          />
-        </svg>
-        </slot>
-      </button>
-      <button
+        <VIcon
+          v-if="firstIcon"
+          :name="firstIcon"
+          :size="iconSize"
+          :class="iconClass"
+        />
+        <slot name="btnFirst" />
+      </VPaginationItem>
+      <VPaginationItem
         v-else-if="item === 'last'"
         :disabled="isLastPage"
-        class="
-          relative
-          inline-flex
-          items-center
-          px-2
-          py-2
-          rounded-r-md
-          border border-gray-300
-          bg-white
-          text-sm
-          font-medium
-        "
-        :class="{
-          'cursor-not-allowed text-gray-300': isLastPage,
-          'text-gray-600 hover:bg-gray-50': !isLastPage,
-        }"
-        @click.prevent="pagino.last()"
+        sr-text="Last"
+        last
+        action
+        @click="pagino.last()"
       >
-        <slot name="btnLast">
-          <span class="sr-only">Last</span>
-          <svg
-              class="h-4 w-4"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-          >
-            <path
-                fill-rule="evenodd"
-                d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
-                clip-rule="evenodd"
-            />
-            <path
-                fill-rule="evenodd"
-                d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
-                clip-rule="evenodd"
-            />
-          </svg>
-        </slot>
-      </button>
-      <span
-        v-else-if="item === 'start-ellipsis' || item === 'end-ellipsis'"
-        class="
-          relative
-          inline-flex
-          items-center
-          px-4
-          py-2
-          border border-gray-300
-          bg-white
-          text-sm
-          font-medium
-          text-gray-700
-        "
+        <slot name="btnLast" />
+        <VIcon
+          v-if="lastIcon"
+          :name="lastIcon"
+          :size="iconSize"
+          :class="iconClass"
+        />
+      </VPaginationItem>
+      <VPaginationItem
+        v-else-if="['start-ellipsis', 'end-ellipsis'].includes(item) && !simple"
+        ellipsis
       >
-        ...
-      </span>
-      <a
+        <slot name="ellipsis"> ... </slot>
+      </VPaginationItem>
+      <VPaginationItem
         v-else-if="!simple"
-        href="#"
-        class="
-          relative
-          inline-flex
-          items-center
-          px-4
-          py-2
-          border border-gray-300
-          text-sm
-          font-medium
-          hover:bg-gray-50
-        "
-        :class="pagino.page === item ? activeClasses : defaultClasses"
-        @click.prevent="pagino.setPage(item)"
+        :active="pagino.page === item"
+        :class="[
+          defaultClasses,
+          {
+            [activeClasses]: pagino.page === item,
+          },
+        ]"
+        @click="pagino.setPage(item)"
       >
         {{ item }}
-      </a>
-      <span
+      </VPaginationItem>
+      <VPaginationItem
         v-else-if="simple && pagino.page === item"
-        class="
-          relative
-          inline-flex
-          items-center
-          px-4
-          py-2
-          border border-gray-300
-          text-sm
-          font-medium
-          hover:bg-gray-50
-        "
+        simple
+        :active="pagino.page === item"
       >
         {{ item }}
-      </span>
+      </VPaginationItem>
     </template>
-  </nav>
+  </div>
 </template>
+
+<style>
+:root {
+  --v-pagination-shadow: theme('boxShadow.sm');
+
+  /* item */
+  --v-pagination-item-padding-x: theme('padding.4');
+  --v-pagination-item-padding-y: theme('padding.2');
+  --v-pagination-item-bg-color: theme('colors.white');
+  --v-pagination-item-text-color: theme('colors.gray.700');
+  --v-pagination-item-border-color: theme('colors.gray.300');
+  --v-pagination-item-border-radius: theme('borderRadius.DEFAULT');
+  --v-pagination-item-border-width: theme('borderWidth.DEFAULT');
+  --v-pagination-item-font-size: theme('fontSize.sm');
+  --v-pagination-item-font-weight: theme('fontWeight.medium');
+  --v-pagination-item-height: 38px;
+  --v-pagination-item-gap: theme('padding.2');
+
+  /* item active */
+  --v-pagination-item-active-bg-color: theme('colors.primary.500');
+  --v-pagination-item-active-border-color: theme('colors.primary.500');
+  --v-pagination-item-active-text-color: theme('colors.white');
+
+  /* item hover */
+  --v-pagination-item-hover-bg-color: theme('colors.gray.50');
+
+  /* item disabled */
+  --v-pagination-item-disabled-bg-color: inherit;
+  --v-pagination-item-disabled-text-color: theme('colors.gray.400');
+
+  /* item action */
+  --v-pagination-item-action-padding-x: theme('padding.2');
+  --v-pagination-item-action-padding-y: theme('padding.2');
+  /* action sm */
+  --v-pagination-sm-item-action-padding-x: theme('padding.2');
+  --v-pagination-sm-item-action-padding-y: theme('padding.2');
+  /* action sm */
+  --v-pagination-lg-item-action-padding-x: theme('padding.4');
+  --v-pagination-lg-item-action-padding-y: theme('padding.4');
+}
+
+.v-pagination {
+  box-shadow: var(--v-pagination-shadow);
+
+  @apply inline-flex items-center -space-x-px;
+}
+
+.v-pagination--flat {
+  --v-pagination-shadow: none;
+}
+
+.v-pagination-item {
+  background: var(--v-pagination-item-bg-color);
+  color: var(--v-pagination-item-text-color);
+  border: 1px solid var(--v-pagination-item-border-color);
+  padding: var(--v-pagination-item-padding-y) var(--v-pagination-item-padding-x);
+  font-size: var(--v-pagination-item-font-size);
+  font-weight: var(--v-pagination-item-font-weight);
+  height: var(--v-pagination-item-height);
+  gap: var(--v-pagination-item-gap);
+
+  @apply relative inline-flex items-center;
+}
+
+.v-pagination-item:disabled {
+  background: var(--v-pagination-item-disabled-bg-color);
+  color: var(--v-pagination-item-disabled-text-color);
+
+  @apply cursor-not-allowed;
+}
+
+.v-pagination-item:first-child {
+  border-top-left-radius: var(--v-pagination-item-border-radius);
+  border-bottom-left-radius: var(--v-pagination-item-border-radius);
+}
+
+.v-pagination-item:last-child {
+  border-top-right-radius: var(--v-pagination-item-border-radius);
+  border-bottom-right-radius: var(--v-pagination-item-border-radius);
+}
+
+.v-pagination-item:hover:not(.v-pagination-item--active):not(.v-pagination-item--ellipsis):not(:disabled) {
+  background: var(--v-pagination-item-hover-bg-color);
+  color: var(--v-pagination-item-hover-text-color);
+}
+
+.v-pagination-item.v-pagination-item--action {
+  padding: var(--v-pagination-item-action-padding-y)
+    var(--v-pagination-item-action-padding-x);
+}
+
+.v-pagination-item.v-pagination-item--active,
+.v-pagination-item.v-pagination-item--active:hover {
+  --v-pagination-item-bg-color: var(--v-pagination-item-active-bg-color);
+  --v-pagination-item-border-color: var(
+    --v-pagination-item-active-border-color
+  );
+  --v-pagination-item-text-color: var(--v-pagination-item-active-text-color);
+}
+
+.v-pagination-item.v-pagination--ellipsis {
+  --v-pagination-bg-color: transparent;
+  --v-pagination-border-color: transparent;
+}
+
+/* sizes */
+.v-pagination--sm {
+  --v-pagination-item-height: 30px;
+  --v-pagination-item-font-size: theme('fontSize.xs');
+  --v-pagination-item-padding-x: theme('spacing.3');
+  --v-pagination-item-padding-y: theme('spacing.1');
+}
+.v-pagination--sm .v-pagination-item.v-pagination-item--action {
+  padding: var(--v-pagination-sm-item-action-padding-y)
+    var(--v-pagination-sm-item-action-padding-x);
+}
+
+.v-pagination--lg {
+  --v-pagination-item-height: 46px;
+  --v-pagination-item-font-size: theme('fontSize.base');
+  --v-pagination-item-padding-x: theme('spacing.5');
+  --v-pagination-item-padding-y: theme('spacing.3');
+}
+.v-pagination--lg .v-pagination-item.v-pagination-item--action {
+  padding: var(--v-pagination-lg-item-action-padding-y)
+    var(--v-pagination-lg-item-action-padding-x);
+}
+</style>
