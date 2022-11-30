@@ -86,7 +86,20 @@ None
 
 ## CSS Variable
 
-None
+```css
+:root {
+  --shimmer-bg-image: linear-gradient(
+    to right,
+    rgb(247, 247, 247),
+    rgb(220, 220, 220),
+    rgb(247, 247, 247)
+  );
+  --shimmer-bg-size: 200%;
+  --shimmer-border-radius: 0;
+  --shimmer-animation-name: a-background-move;
+  --shimmer-animation-duration: 1.5s;
+}
+```
 
 ## Manual Installation
 
