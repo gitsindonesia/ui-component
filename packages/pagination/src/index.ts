@@ -1,5 +1,4 @@
-import VPagination from './VPagination.vue';
-
+export {default} from './VPagination.vue';
+export {default as VPagination} from './VPagination.vue';
+export {default as VPaginationItem} from './VPaginationItem.vue';
 export * from './types';
-export {VPagination};
-export default VPagination;

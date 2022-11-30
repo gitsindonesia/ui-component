@@ -1,6 +1,12 @@
-# GITS Pagination Component
+# GITS Pagination
 
-> Reusable Pagination Component
+Vue Pagination Component.
+
+## Features
+
+- Vue 3
+- TypeScript support
+- Customizable style via CSS Properties
 
 ## Installation
 
@@ -26,17 +32,18 @@ pnpm i @gits-id/pagination
 
 ```vue
 <script setup lang="ts">
-import Pagination from '@gits-id/pagination';
+import VPagination from '@gits-id/pagination';
+import '@gits-id/pagination/dist/style.css';
 </script>
 
 <template>
-  <Pagination />
+  <VPagination />
 </template>
 ```
 
 ## Documentation
 
-View `Pagination` documentation [here](https://gits-ui.web.app/?path=/story/components-pagination--default).
+View full documentation [here](https://gits-ui.web.app/?path=/story/components-pagination--default).
 
 ## License
 
