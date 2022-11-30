@@ -65,6 +65,15 @@
 
 ### Validation
 
+The first you need to do is import required package
+
+```ts
+import {useForm} from 'vee-validate';
+import {object, string} from 'yup';
+```
+
+And then
+
 ```ts
 const schema = object({
   bio: string().required().label('Bio'),
@@ -106,7 +115,9 @@ const onSubmit = handleSubmit((values) => {
 
 ### Validation Mode
 
-There are 2 modes. The first is `eager` mode, and the second is `aggressive` mode. The `eager` mode validates input when the blur event occurs. Meanwhile, `aggressive` mode validates the input every time the input itself changes.
+There are 2 modes. The first is `eager` mode, and the second is `aggressive` mode. The `eager` mode validates input when the blur event occurs. Meanwhile, `aggressive` mode validates the input every time the input itself changes. This can be useful when you are validating for example the minimum or maximum limits of an input.
+
+You can change the default value for this validation mode by adding an attribute or property named `validation-mode` to this component.
 
 ```ts{6}
 const schema = object({
@@ -152,3 +163,111 @@ const onSubmit = handleSubmit((values) => {
 ```
 
 <LivePreview src="forms-textarea--validation-mode" />
+
+## Props
+
+| Name                                | Type               | Default        |
+| ----------------------------------- | ------------------ | -------------- |
+| [`modelValue`](#modelValue)         | `string`           | `''`           |
+| [`rows`](#rows)                     | `string \| number` | `undefined`    |
+| [`value`](#value)                   | `string`           | `''`           |
+| [`name`](#name)                     | `string`           | `''`           |
+| [`error`](#error)                   | `boolean`          | `false`        |
+| [`errorMessages`](#errorMessages)   | `array`            | `[]`           |
+| [`readonly`](#readonly)             | `boolean`          | `false`        |
+| [`disabled`](#disabled)             | `boolean`          | `false`        |
+| [`shadow`](#shadow)                 | `boolean`          | `false`        |
+| [`size`](#shadow)(deprecated)       | `string`           | `''`           |
+| [`cols`](#cols)                     | `string \| number` | `'undefined'`  |
+| [`label`](#label)                   | `string`           | `''`           |
+| [`rules`](#rules)                   | `string`           | `''`           |
+| [`wrapperClass`](#wrapperClass)     | `string`           | `''`           |
+| [`inputClass`](#inputClass)         | `string`           | `''`           |
+| [`validationMode`](#validationMode) | `string`           | `'aggressive'` |
+
+## Methods
+
+None
+
+## Events
+
+- [`update:modelValue`](#update:modelValue)
+
+```vue
+<script lang="ts" setup>
+const handle = () => alert('Triggered!');
+</script>
+
+<template>
+  <VTextarea @update:modelValue="handle" />
+</template>
+```
+
+## Slots
+
+- [`counter`](#counter-slot)
+
+```vue
+<template>
+  <VTextarea counter>
+    <template #counter="{count}">
+      <div class="font-bold text-lg">{{ count }}</div>
+    </template>
+  </VTextarea>
+</template>
+```
+
+### CSS Variables
+
+| Variable                                                          | Default Value                  |
+| ----------------------------------------------------------------- | ------------------------------ |
+| [`--v-input-height`](#--v-input-height)                           | `2.5rem`                       |
+| [`--v-input-border-color`](#--v-input-border-color)               | `theme('colors.gray.300'`      |
+| [`--v-input-placeholder-color`](#--v-input-placeholder-color)     | `theme('colors.gray.500')`     |
+| [`--v-input-border-radius`](#--v-input-border-radius)             | `theme('borderRadius.md')`     |
+| [`--v-input-padding-x`](#--v-input-padding-x)                     | `theme('padding.3')`           |
+| [`--v-input-padding-y`](#--v-input-padding-y)                     | `theme('padding.2')`           |
+| [`--v-input-font-size`](#--v-input-font-size)                     | `theme('fontSize.base')`       |
+| [`--v-input-bg-color`](#--v-input-bg-color)                       | `theme('colors.white')`        |
+| [`--v-input-label-font-size`](#--v-input-label-font-size)         | `theme('fontSize.sm'`          |
+| [`--v-input-label-font-weight`](#--v-input-label-font-weight)     | `theme('fontWeight.semibold')` |
+| [`--v-input-label-display`](#--v-input-label-display)             | `block`                        |
+| [`--v-input-label-margin-bottom`](#--v-input-label-margin-bottom) | `theme('margin.1')`            |
+| [`--v-input-text-color`](#--v-input-text-color)                   | `theme('colors.gray.600')`     |
+| [`--v-input-text-font-size`](#--v-input-text-font-size)           | `theme('fontSize.sm')`         |
+| [`--v-input-text-font-weight`](#--v-input-text-font-weight)       | `theme('fontWeight.normal')`   |
+| [`--v-input-icon-width`](#--v-input-icon-width)                   | `theme('width.5')`             |
+| [`--v-input-icon-height`](#--v-input-icon-height)                 | `theme('height.5')`            |
+| [`--v-input-icon-color`](#--v-input-icon-color)                   | `theme('colors.gray.500')`     |
+
+## Manual Installation
+
+You can also install the `VTextarea` component individually via `@gits-id/forms` package:
+
+yarn :
+
+```bash
+yarn install @gits-id/forms
+```
+
+npm :
+
+```bash
+npm install @gits-id/forms
+```
+
+pnpm :
+
+```bash
+pnpm install @gits-id/forms
+```
+
+```vue
+<script setup lang="ts">
+import {VTextarea} from '@gits-id/forms';
+</script>
+
+<template>
+  <VTextarea />
+</template>
+```
