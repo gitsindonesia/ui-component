@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.7](https://github.com/gitsindonesia/ui-component/compare/v0.13.6...v0.13.7) (2022-11-30)
+
+### Features
+
+- **nuxt:** auto-import `VPaginationItem` component ([84462e6](https://github.com/gitsindonesia/ui-component/commit/84462e63ded6f8b5f377e6de0c26551b213108bb))
+
 ## [0.13.6](https://github.com/gitsindonesia/ui-component/compare/v0.13.5...v0.13.6) (2022-11-29)
 
 **Note:** Version bump only for package @gits-id/ui-nuxt

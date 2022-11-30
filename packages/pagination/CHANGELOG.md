@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.7](https://github.com/gitsindonesia/ui-component/compare/v0.13.6...v0.13.7) (2022-11-30)
+
+### Features
+
+- **Pagination:** revamp Pagination component ([#49](https://github.com/gitsindonesia/ui-component/issues/49)) ([78bbe71](https://github.com/gitsindonesia/ui-component/commit/78bbe7127bb0c9bb6613f01cca3e3be9c755c56b))
+
 ## [0.13.6](https://github.com/gitsindonesia/ui-component/compare/v0.13.5...v0.13.6) (2022-11-29)
 
 **Note:** Version bump only for package @gits-id/pagination

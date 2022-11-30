@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.7](https://github.com/gitsindonesia/ui-component/compare/v0.13.6...v0.13.7) (2022-11-30)
+
+### Features
+
+- **nuxt:** auto-import `VPaginationItem` component ([84462e6](https://github.com/gitsindonesia/ui-component/commit/84462e63ded6f8b5f377e6de0c26551b213108bb))
+- **Pagination:** revamp Pagination component ([#49](https://github.com/gitsindonesia/ui-component/issues/49)) ([78bbe71](https://github.com/gitsindonesia/ui-component/commit/78bbe7127bb0c9bb6613f01cca3e3be9c755c56b))
+- **Shimmer:** add CSS Properties support & update docs ([#48](https://github.com/gitsindonesia/ui-component/issues/48)) ([45d8297](https://github.com/gitsindonesia/ui-component/commit/45d8297a9ac2d1a981914d3aa33b7ba720477722))
+- **VSelect:** customizable select icons ([702aa01](https://github.com/gitsindonesia/ui-component/commit/702aa017857eb8b2427a6a7fba8fbd8a1c8efb2a))
+
 ## [0.13.6](https://github.com/gitsindonesia/ui-component/compare/v0.13.5...v0.13.6) (2022-11-29)
 
 ### Bug Fixes

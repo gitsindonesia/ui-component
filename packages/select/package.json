@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/select",
-  "version": "0.13.6",
+  "version": "0.13.7",
   "description": "Vue Select Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",

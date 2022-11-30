@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.7](https://github.com/gitsindonesia/ui-component/compare/v0.13.6...v0.13.7) (2022-11-30)
+
+### Features
+
+- **VSelect:** customizable select icons ([702aa01](https://github.com/gitsindonesia/ui-component/commit/702aa017857eb8b2427a6a7fba8fbd8a1c8efb2a))
+
 ## [0.13.6](https://github.com/gitsindonesia/ui-component/compare/v0.13.5...v0.13.6) (2022-11-29)
 
 **Note:** Version bump only for package @gits-id/select
