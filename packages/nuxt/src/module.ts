@@ -320,6 +320,11 @@ const components: AddComponentOptions[] = [
     filePath: '@gits-id/tabs',
   },
   {
+    name: 'VTabsSlider',
+    export: 'VTabsSlider',
+    filePath: '@gits-id/tabs',
+  },
+  {
     name: 'VToast',
     filePath: '@gits-id/toast',
   },
