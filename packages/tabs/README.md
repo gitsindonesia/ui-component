@@ -1,6 +1,6 @@
-# GITS Tabs Component
+# GITS Tabs
 
-> Reusable Tabs Component
+Vue Tabs Component.
 
 ## Installation
 
@@ -19,27 +19,41 @@ yarn add @gits-id/tabs
 pnpm
 
 ```
-pnpm i @gits-id/tabs
+pnpm add @gits-id/tabs
 ```
 
 ## Usage
 
 ```vue
 <script setup lang="ts">
-// import styles
-import '@gits-id/tabs/dist/style.css';
 // import component
 import Tabs from '@gits-id/tabs';
+// import styles
+import '@gits-id/tabs/dist/style.css';
+
+const items = ref([
+  {
+    text: 'Tab 1'
+  }
+  {,
+    text: 'Tab 2'
+  },
+  {
+    text: 'Tab 3'
+  }
+])
+
+const selectedTab = ref(0)
 </script>
 
 <template>
-  <Tabs />
+  <Tabs v-model="selectedTab" :items="items" />
 </template>
 ```
 
 ## Documentation
 
-View `Tabs` documentation [here](https://gits-ui.web.app/?path=/story/components-tabs--default).
+View full documentation [here](https://gits-ui.web.app/?path=/story/components-tabs--default).
 
 ## License
 
