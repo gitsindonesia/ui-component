@@ -252,6 +252,7 @@ provide('activeTab', selected.value);
         </v-tab>
       </slot>
       <VTabsSlider
+        v-if="!hideSlider"
         :set-ref="(el) => (tabSlider = el)"
         :vertical="vertical"
         :class="sliderClass"
