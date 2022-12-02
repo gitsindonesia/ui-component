@@ -204,6 +204,7 @@ const sliderColor = computed(() => getBgColor(color.value));
       wrapperClass,
       {
         'v-tabs--vertical': vertical,
+        'v-tabs--center-active': centerActive,
       },
     ]"
   >
@@ -272,6 +273,30 @@ const sliderColor = computed(() => getBgColor(color.value));
   --v-tabs-item-padding-y: theme('padding.2');
   --v-tabs-item-font-size: theme('fontSize.base');
   --v-tabs-item-font-weight: theme('fontSize.normal');
+  --v-tabs-item-bg-color: theme('colors.transparent');
+  --v-tabs-item-text-color: theme('colors.gray.800');
+  --v-tabs-item-border-color: theme('colors.transparent');
+  --v-tabs-item-border-radius: theme('borderRadius.DEFAULT');
+
+  /* item active */
+  --v-tabs-item-active-padding-x: theme('padding.4');
+  --v-tabs-item-active-padding-y: theme('padding.2');
+  --v-tabs-item-active-font-size: theme('fontSize.base');
+  --v-tabs-item-active-font-weight: theme('fontSize.semibold');
+  --v-tabs-item-active-bg-color: theme('colors.transparent');
+  --v-tabs-item-active-text-color: theme('colors.gray.800');
+  --v-tabs-item-active-border-color: theme('colors.transparent');
+  --v-tabs-item-active-border-radius: theme('borderRadius.DEFAULT');
+
+  /* item hover */
+  --v-tabs-item-hover-padding-x: theme('padding.4');
+  --v-tabs-item-hover-padding-y: theme('padding.2');
+  --v-tabs-item-hover-font-size: theme('fontSize.base');
+  --v-tabs-item-hover-font-weight: theme('fontSize.semibold');
+  --v-tabs-item-hover-bg-color: theme('colors.transparent');
+  --v-tabs-item-hover-text-color: theme('colors.gray.800');
+  --v-tabs-item-hover-border-color: theme('colors.transparent');
+  --v-tabs-item-hover-border-radius: theme('borderRadius.DEFAULT');
 
   /* slider */
   --v-tabs-slider-height: 3px;
@@ -331,6 +356,10 @@ const sliderColor = computed(() => getBgColor(color.value));
   font-size: var(--v-tabs-item-font-size);
   font-weight: var(--v-tabs-item-font-weight);
   padding: var(--v-tabs-item-padding-y) var(--v-tabs-item-padding-x);
+  background-color: var(--v-tabs-item-bg-color);
+  color: var(--v-tabs-item-text-color);
+  border-radius: var(--v-tabs-item-border-radius);
+  border: 1px solid var(--v-tabs-item-border-color);
 
   @apply focus:outline-none
     flex
@@ -341,6 +370,29 @@ const sliderColor = computed(() => getBgColor(color.value));
     duration-300
     cursor-pointer
     h-full;
+}
+
+/* item hover */
+.v-tabs-item:hover:not(.v-tabs-item--active) {
+  font-size: var(--v-tabs-item-hover-font-size);
+  font-weight: var(--v-tabs-item-hover-font-weight);
+  padding: var(--v-tabs-item-hover-padding-y) var(--v-tabs-item-hover-padding-x);
+  background-color: var(--v-tabs-item-hover-bg-color);
+  color: var(--v-tabs-item-hover-text-color);
+  border-radius: var(--v-tabs-item-hover-border-radius);
+  border: 1px solid var(--v-tabs-item-hover-border-color);
+}
+
+/* item active */
+.v-tabs-item.v-tabs-item--active {
+  font-size: var(--v-tabs-item-active-font-size);
+  font-weight: var(--v-tabs-item-active-font-weight);
+  padding: var(--v-tabs-item-active-padding-y)
+    var(--v-tabs-item-active-padding-x);
+  background-color: var(--v-tabs-item-active-bg-color);
+  color: var(--v-tabs-item-active-text-color);
+  border-radius: var(--v-tabs-item-active-border-radius);
+  border: 1px solid var(--v-tabs-item-active-border-color);
 }
 
 .v-tabs-item--vertical {

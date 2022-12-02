@@ -30,7 +30,7 @@ const props = defineProps({
   },
   activeClass: {
     type: String,
-    default: 'font-semibold',
+    default: '',
   },
   inactiveClass: {
     type: String,
@@ -50,16 +50,8 @@ const props = defineProps({
   },
 });
 
-const {
-  index,
-  active,
-  item,
-  removeable,
-  vertical,
-  activeClass,
-  inactiveClass,
-  defaultClass,
-} = toRefs(props);
+const {index, active, item, removeable, vertical, inactiveClass, defaultClass} =
+  toRefs(props);
 
 const wrapper = ref(null);
 
@@ -88,6 +80,9 @@ const setRef = (el: any) => {
     class="v-tabs-item"
     :class="[
       defaultClass,
+      {
+        'v-tabs-item--active': active,
+      },
       active ? activeClass : inactiveClass,
       vertical ? 'v-tabs-item--vertical' : '',
     ]"

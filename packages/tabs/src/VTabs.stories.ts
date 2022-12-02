@@ -17,12 +17,6 @@ export default {
   args: {
     modelValue: 0,
     items: createItems(),
-    itemText: 'text',
-    itemValue: '',
-    showArrows: false,
-    vertical: false,
-    hideSlider: false,
-    // color: '',
   },
 };
 
@@ -127,3 +121,23 @@ TabsWithCard.parameters = {
     },
   },
 };
+
+export const CustomStyle: Story<{}> = (args) => ({
+  components: {VTabs},
+  setup() {
+    const tab = ref(0);
+    return {args, tab};
+  },
+  template: `
+    <VTabs
+      v-model="tab"
+      v-bind="args"
+      :style="{
+        '--v-tabs-item-padding-x': '1rem',
+        '--v-tabs-item-padding-y': '0.25rem',
+        '--v-tabs-item-active-bg-color': 'purple',
+        '--v-tabs-item-active-text-color': 'white',
+      }"
+    />
+  `
+});
