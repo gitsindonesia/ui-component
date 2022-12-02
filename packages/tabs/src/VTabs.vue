@@ -1,18 +1,18 @@
 <script setup lang="ts">
+import VBtn from '@gits-id/button';
+import Icon from '@gits-id/icon';
+import {getBgColor} from '@gits-id/utils';
 import {
+  computed,
+  nextTick,
+  onBeforeUpdate,
+  onMounted,
+  PropType,
   ref,
   toRefs,
   watch,
-  onBeforeUpdate,
-  onMounted,
-  nextTick,
-  computed,
-  PropType,
 } from 'vue';
 import VTab from './VTab.vue';
-import {getBgColor} from '@gits-id/utils';
-import VBtn from '@gits-id/button';
-import Icon from '@gits-id/icon';
 
 const props = defineProps({
   modelValue: {
@@ -197,31 +197,27 @@ const sliderColor = computed(() => getBgColor(color.value));
 </script>
 
 <template>
-  <div :class="[defaultWrapperClass, wrapperClass]">
+  <div
+    class="v-tabs"
+    :class="[
+      defaultWrapperClass,
+      wrapperClass,
+      {
+        'v-tabs--vertical': vertical,
+      },
+    ]"
+  >
     <template v-if="showArrows">
       <slot name="previous">
         <div>
           <v-btn icon text small no-ring @click="previous">
-            <Icon name="heroicons:chevron-left" class="w-full h-full" />
+            <Icon name="heroicons:chevron-left" class="v-tabs-icon" />
           </v-btn>
         </div>
       </slot>
     </template>
     <slot name="prepend" />
-    <div
-      ref="tabContent"
-      class="
-        flex
-        items-center
-        gap-x-1
-        whitespace-nowrap
-        overflow-x-auto
-        tab-items
-        h-full
-        relative
-      "
-      :class="[vertical ? 'flex-col' : 'flex-row', contentClass]"
-    >
+    <div ref="tabContent" class="v-tabs-items" :class="[contentClass]">
       <slot>
         <v-tab
           v-for="(item, index) in items"
@@ -246,13 +242,8 @@ const sliderColor = computed(() => getBgColor(color.value));
         v-if="!hideSlider"
         id="tab-slider"
         ref="tabSlider"
-        class="transition-all duration-300 absolute"
-        :class="[
-          sliderColor,
-          vertical
-            ? 'w-1 inset-y-0 left-0'
-            : 'h-[3px] min-w-[3rem] max-w-md inset-x-0 bottom-0',
-        ]"
+        class="v-tabs-slider"
+        :class="[sliderColor, vertical ? 'v-tabs-slider--vertical' : '']"
       />
     </div>
     <slot name="append" />
@@ -260,7 +251,7 @@ const sliderColor = computed(() => getBgColor(color.value));
       <slot name="next">
         <div>
           <v-btn icon text small no-ring @click="next">
-            <Icon name="heroicons:chevron-right" class="w-full h-full" />
+            <Icon name="heroicons:chevron-right" class="v-tabs-icon" />
           </v-btn>
         </div>
       </slot>
@@ -268,13 +259,95 @@ const sliderColor = computed(() => getBgColor(color.value));
   </div>
 </template>
 
-<style scoped>
-.tab-items::-webkit-scrollbar {
+<style>
+:root {
+  --v-tabs-padding-x: theme('padding.4');
+  --v-tabs-padding-y: theme('padding.2');
+  --v-tabs-bg-color: theme('colors.transparent');
+  --v-tabs-border-color: theme('colors.transparent');
+  --v-tabs-border-radius: theme('borderRadius.DEFAULT');
+
+  /* item */
+  --v-tabs-item-padding-x: theme('padding.4');
+  --v-tabs-item-padding-y: theme('padding.2');
+  --v-tabs-item-font-size: theme('fontSize.base');
+  --v-tabs-item-font-weight: theme('fontSize.normal');
+
+  /* slider */
+  --v-tabs-slider-height: 3px;
+  --v-tabs-slider-width: 3rem;
+  --v-tabs-slider-max-width: theme('maxWidth.md');
+  --v-tabs-slider-bg-color: theme('colors.primary.500');
+  --v-tabs-slider-border-color: theme('colors.primary.500');
+  --v-tabs-slider-border-radius: theme('borderRadius.DEFAULT');
+}
+
+.v-tabs {
+  padding: var(--v-tabs-padding-y) var(--v-tabs-padding-x);
+  background-color: var(--v-tabs-bg-color);
+  border-radius: var(--v-tabs-border-radius);
+  border: 1px solid var(--v-tabs-border-color);
+}
+
+.v-tabs-slider {
+  height: var(--v-tabs-slider-height);
+  width: var(--v-tabs-slider-width);
+  background-color: var(--v-tabs-slider-bg-color);
+  border-radius: var(--v-tabs-slider-border-radius);
+  border: 1px solid var(--v-tabs-slider-border-color);
+
+  @apply transition-all duration-300 absolute inset-x-0 bottom-0;
+}
+
+.v-tab-items::-webkit-scrollbar {
   display: none;
 }
-.tab-items {
+
+.v-tab-items {
   scroll-behavior: smooth;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+
+  @apply flex-row flex
+    items-center
+    gap-x-1
+    whitespace-nowrap
+    overflow-x-auto
+    h-full
+    relative;
+}
+
+/* vertical */
+.v-tab--vertical .v-tabs-items {
+  @apply flex-col;
+}
+
+.v-tab--vertical .v-tabs-slider {
+  @apply w-1 inset-y-0 left-0;
+}
+
+/* item */
+.v-tabs-item {
+  font-size: var(--v-tabs-item-font-size);
+  font-weight: var(--v-tabs-item-font-weight);
+  padding: var(--v-tabs-item-padding-y) var(--v-tabs-item-padding-x);
+
+  @apply focus:outline-none
+    flex
+    items-center
+    justify-between
+    gap-y-1
+    transition
+    duration-300
+    cursor-pointer
+    h-full;
+}
+
+.v-tabs-item--vertical {
+  @apply w-full min-w-full;
+}
+
+.v-tabs-item-remove {
+  @apply ml-2 !p-0;
 }
 </style>

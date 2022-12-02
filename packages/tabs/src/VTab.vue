@@ -40,6 +40,14 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  icon: {
+    type: String,
+    default: 'heroicons:trash-solid',
+  },
+  iconSize: {
+    type: String,
+    default: 'sm',
+  },
 });
 
 const {
@@ -77,24 +85,11 @@ const setRef = (el: any) => {
   <div
     :id="`tab-item-${index}`"
     :ref="setRef"
-    class="
-      focus:outline-none
-      text-base
-      flex
-      items-center
-      justify-between
-      gap-y-1
-      transition
-      duration-300
-      px-4
-      py-3
-      cursor-pointer
-      h-full
-    "
+    class="v-tabs-item"
     :class="[
       defaultClass,
       active ? activeClass : inactiveClass,
-      vertical ? 'w-full min-w-full' : '',
+      vertical ? 'v-tabs-item--vertical' : '',
     ]"
   >
     <div
@@ -106,15 +101,19 @@ const setRef = (el: any) => {
     </div>
     <v-btn
       v-if="active && removeable"
-      class="ml-2 !p-0"
+      class="v-tabs-item-remove"
       color="error"
-      x-small
+      size="sm"
       text
       icon
       type="button"
       @click="remove(index)"
     >
-      <Icon name="heroicons:trash-solid" class="w-5 h-5" />
+      <Icon
+        :name="icon"
+        :size="iconSize"
+        class="v-tabs-icon v-tabs-icon--remove"
+      />
     </v-btn>
   </div>
 </template>
