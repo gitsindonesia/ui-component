@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import VBtn from '@gits-id/button';
 import Icon from '@gits-id/icon';
-import {getBgColor} from '@gits-id/utils';
 import {
-  computed,
   nextTick,
   onBeforeUpdate,
   onMounted,
@@ -28,7 +26,15 @@ const props = defineProps({
     default: 'text',
   },
   color: {
-    type: String,
+    type: String as PropType<
+      | 'primary'
+      | 'secondary'
+      | 'info'
+      | 'warning'
+      | 'success'
+      | 'error'
+      | string
+    >,
     default: 'primary',
   },
   showArrows: {
@@ -49,7 +55,7 @@ const props = defineProps({
   },
   defaultWrapperClass: {
     type: String,
-    default: 'flex items-center',
+    default: '',
   },
   wrapperClass: {
     type: String,
@@ -75,13 +81,16 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  sliderClass: {
+    type: String,
+    default: '',
+  },
 });
 
 const {
   modelValue,
   items,
   itemText,
-  color,
   showArrows,
   centerActive,
   removeable,
@@ -192,8 +201,6 @@ const next = () => moveNavigation(200);
 const onTabRemoved = (index: number) => {
   emit('remove', index);
 };
-
-const sliderColor = computed(() => getBgColor(color.value));
 </script>
 
 <template>
@@ -202,6 +209,7 @@ const sliderColor = computed(() => getBgColor(color.value));
     :class="[
       defaultWrapperClass,
       wrapperClass,
+      `v-tabs-${color}`,
       {
         'v-tabs--vertical': vertical,
         'v-tabs--center-active': centerActive,
@@ -244,7 +252,7 @@ const sliderColor = computed(() => getBgColor(color.value));
         id="tab-slider"
         ref="tabSlider"
         class="v-tabs-slider"
-        :class="[sliderColor, vertical ? 'v-tabs-slider--vertical' : '']"
+        :class="[vertical ? 'v-tabs-slider--vertical' : '', sliderClass]"
       />
     </div>
     <slot name="append" />
@@ -272,31 +280,31 @@ const sliderColor = computed(() => getBgColor(color.value));
   --v-tabs-item-padding-x: theme('padding.4');
   --v-tabs-item-padding-y: theme('padding.2');
   --v-tabs-item-font-size: theme('fontSize.base');
-  --v-tabs-item-font-weight: theme('fontSize.normal');
+  --v-tabs-item-font-weight: theme('fontWeight.normal');
   --v-tabs-item-bg-color: theme('colors.transparent');
   --v-tabs-item-text-color: theme('colors.gray.800');
   --v-tabs-item-border-color: theme('colors.transparent');
   --v-tabs-item-border-radius: theme('borderRadius.DEFAULT');
 
   /* item active */
-  --v-tabs-item-active-padding-x: theme('padding.4');
-  --v-tabs-item-active-padding-y: theme('padding.2');
-  --v-tabs-item-active-font-size: theme('fontSize.base');
-  --v-tabs-item-active-font-weight: theme('fontSize.semibold');
-  --v-tabs-item-active-bg-color: theme('colors.transparent');
-  --v-tabs-item-active-text-color: theme('colors.gray.800');
-  --v-tabs-item-active-border-color: theme('colors.transparent');
-  --v-tabs-item-active-border-radius: theme('borderRadius.DEFAULT');
+  --v-tabs-item-active-padding-x: var(--v-tabs-item-padding-x);
+  --v-tabs-item-active-padding-y: var(--v-tabs-item-padding-y);
+  --v-tabs-item-active-font-size: var(--v-tabs-item-font-size);
+  --v-tabs-item-active-font-weight: theme('fontWeight.semibold');
+  --v-tabs-item-active-bg-color: var(--v-tabs-item-bg-color);
+  --v-tabs-item-active-text-color: var(--v-tabs-item-text-color);
+  --v-tabs-item-active-border-color: var(--v-tabs-item-border-color);
+  --v-tabs-item-active-border-radius: var(--v-tabs-item-border-radius);
 
   /* item hover */
-  --v-tabs-item-hover-padding-x: theme('padding.4');
-  --v-tabs-item-hover-padding-y: theme('padding.2');
-  --v-tabs-item-hover-font-size: theme('fontSize.base');
-  --v-tabs-item-hover-font-weight: theme('fontSize.semibold');
-  --v-tabs-item-hover-bg-color: theme('colors.transparent');
-  --v-tabs-item-hover-text-color: theme('colors.gray.800');
-  --v-tabs-item-hover-border-color: theme('colors.transparent');
-  --v-tabs-item-hover-border-radius: theme('borderRadius.DEFAULT');
+  --v-tabs-item-hover-padding-x: var(--v-tabs-item-padding-x);
+  --v-tabs-item-hover-padding-y: var(--v-tabs-item-padding-y);
+  --v-tabs-item-hover-font-size: var(--v-tabs-item-font-size);
+  --v-tabs-item-hover-font-weight: var(--v-tabs-item-font-weight);
+  --v-tabs-item-hover-bg-color: var(--v-tabs-item-bg-color);
+  --v-tabs-item-hover-text-color: var(--v-tabs-item-text-color);
+  --v-tabs-item-hover-border-color: var(--v-tabs-item-border-color);
+  --v-tabs-item-hover-border-radius: var(--v-tabs-item-border-radius);
 
   /* slider */
   --v-tabs-slider-height: 3px;
@@ -312,6 +320,8 @@ const sliderColor = computed(() => getBgColor(color.value));
   background-color: var(--v-tabs-bg-color);
   border-radius: var(--v-tabs-border-radius);
   border: 1px solid var(--v-tabs-border-color);
+  display: flex;
+  align-items: center;
 }
 
 .v-tabs-slider {
@@ -324,11 +334,11 @@ const sliderColor = computed(() => getBgColor(color.value));
   @apply transition-all duration-300 absolute inset-x-0 bottom-0;
 }
 
-.v-tab-items::-webkit-scrollbar {
+.v-tabs-items::-webkit-scrollbar {
   display: none;
 }
 
-.v-tab-items {
+.v-tabs-items {
   scroll-behavior: smooth;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
@@ -343,12 +353,14 @@ const sliderColor = computed(() => getBgColor(color.value));
 }
 
 /* vertical */
-.v-tab--vertical .v-tabs-items {
-  @apply flex-col;
+.v-tabs--vertical .v-tabs-items {
+  @apply flex-col w-full;
 }
 
-.v-tab--vertical .v-tabs-slider {
-  @apply w-1 inset-y-0 left-0;
+.v-tabs--vertical .v-tabs-slider {
+  width: var(--v-tabs-slider-height);
+
+  @apply inset-y-0 left-0;
 }
 
 /* item */
@@ -401,5 +413,27 @@ const sliderColor = computed(() => getBgColor(color.value));
 
 .v-tabs-item-remove {
   @apply ml-2 !p-0;
+}
+
+/* colors */
+.v-tabs-secondary {
+  --v-tabs-slider-bg-color: theme('colors.secondary.500');
+  --v-tabs-slider-border-color: theme('colors.secondary.500');
+}
+.v-tabs-info {
+  --v-tabs-slider-bg-color: theme('colors.info.500');
+  --v-tabs-slider-border-color: theme('colors.info.500');
+}
+.v-tabs-warning {
+  --v-tabs-slider-bg-color: theme('colors.warning.500');
+  --v-tabs-slider-border-color: theme('colors.warning.500');
+}
+.v-tabs-error {
+  --v-tabs-slider-bg-color: theme('colors.error.500');
+  --v-tabs-slider-border-color: theme('colors.error.500');
+}
+.v-tabs-success {
+  --v-tabs-slider-bg-color: theme('colors.success.500');
+  --v-tabs-slider-border-color: theme('colors.success.500');
 }
 </style>

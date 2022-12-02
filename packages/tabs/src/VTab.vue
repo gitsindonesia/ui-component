@@ -2,6 +2,7 @@
 import {ref, toRefs} from 'vue';
 import VBtn from '@gits-id/button';
 import Icon from '@gits-id/icon';
+import '@gits-id/icon/dist/style.css';
 
 const props = defineProps({
   item: {

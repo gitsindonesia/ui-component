@@ -38,13 +38,42 @@ Default.parameters = {
   },
 };
 
+export const Colors: Story<{}> = (args) => ({
+  components: {VTabs},
+  setup() {
+    return {args};
+  },
+  template: `
+    <v-tabs v-bind='args' />
+    <v-tabs v-bind='args' color="secondary" />
+    <v-tabs v-bind='args' color="info" />
+    <v-tabs v-bind='args' color="warning" />
+    <v-tabs v-bind='args' color="success" />
+    <v-tabs v-bind='args' color="error" />
+  `,
+});
+Colors.parameters = {
+  docs: {
+    source: {
+      code: `
+<v-tabs :items="items" color="secondary" />
+<v-tabs v-bind='args' color="secondary" />
+<v-tabs v-bind='args' color="info" />
+<v-tabs v-bind='args' color="warning" />
+<v-tabs v-bind='args' color="success" />
+<v-tabs v-bind='args' color="error" />
+      `,
+    },
+  },
+};
+
 export const CustomActiveClass = Template.bind({});
 CustomActiveClass.args = {
   hideSlider: true,
   items: createItems(10, {
     defaultClass: '!rounded-lg',
-    inactiveClass: 'hover:bg-success-50 hover:!text-success-600',
-    activeClass: 'bg-success-50 rounded-t text-success-600 font-semibold',
+    inactiveClass: 'hover:!bg-success-50 hover:!text-success-600',
+    activeClass: '!bg-success-50 rounded-t !text-success-600 !font-bold',
   }),
 };
 CustomActiveClass.parameters = {
@@ -137,7 +166,12 @@ export const CustomStyle: Story<{}> = (args) => ({
         '--v-tabs-item-padding-y': '0.25rem',
         '--v-tabs-item-active-bg-color': 'purple',
         '--v-tabs-item-active-text-color': 'white',
+        '--v-tabs-item-hover-bg-color': 'purple',
+        '--v-tabs-item-hover-text-color': 'white',
+        '--v-tabs-slider-height': '5px',
+        '--v-tabs-slider-bg-color': 'pink',
+        '--v-tabs-slider-border-color': 'pink',
       }"
     />
-  `
+  `,
 });
