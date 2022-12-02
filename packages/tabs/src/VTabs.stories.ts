@@ -1,4 +1,6 @@
 import VTabs from './VTabs.vue';
+import VTab from './VTab.vue';
+import VTabsSlider from './VTabsSlider.vue';
 import VCard from '@gits-id/card';
 import {ref} from 'vue';
 import {Story} from '@storybook/vue3';
@@ -172,6 +174,21 @@ export const CustomStyle: Story<{}> = (args) => ({
         '--v-tabs-slider-bg-color': 'pink',
         '--v-tabs-slider-border-color': 'pink',
       }"
+    />
+  `,
+});
+
+export const Removeable: Story<{}> = (args) => ({
+  components: {VTabs, VTab, VTabsSlider},
+  setup() {
+    const selectedTab = ref(2);
+    return {args, selectedTab};
+  },
+  template: `
+    <VTabs
+      v-model="selectedTab"
+      v-bind="args"
+      removeable
     />
   `,
 });

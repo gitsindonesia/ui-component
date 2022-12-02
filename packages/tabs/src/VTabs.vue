@@ -6,11 +6,13 @@ import {
   onBeforeUpdate,
   onMounted,
   PropType,
+  provide,
   ref,
   toRefs,
   watch,
 } from 'vue';
 import VTab from './VTab.vue';
+import VTabsSlider from './VTabsSlider.vue';
 
 const props = defineProps({
   modelValue: {
@@ -201,6 +203,8 @@ const next = () => moveNavigation(200);
 const onTabRemoved = (index: number) => {
   emit('remove', index);
 };
+
+provide('activeTab', selected.value);
 </script>
 
 <template>
@@ -227,7 +231,7 @@ const onTabRemoved = (index: number) => {
     </template>
     <slot name="prepend" />
     <div ref="tabContent" class="v-tabs-items" :class="[contentClass]">
-      <slot>
+      <slot v-bind="{tabSlider}">
         <v-tab
           v-for="(item, index) in items"
           :key="index"
@@ -247,12 +251,10 @@ const onTabRemoved = (index: number) => {
           {{ item[itemText] }}
         </v-tab>
       </slot>
-      <div
-        v-if="!hideSlider"
-        id="tab-slider"
-        ref="tabSlider"
-        class="v-tabs-slider"
-        :class="[vertical ? 'v-tabs-slider--vertical' : '', sliderClass]"
+      <VTabsSlider
+        :set-ref="(el) => (tabSlider = el)"
+        :vertical="vertical"
+        :class="sliderClass"
       />
     </div>
     <slot name="append" />

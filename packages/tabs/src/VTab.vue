@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {ref, toRefs} from 'vue';
+import {computed, inject, ref, toRefs} from 'vue';
 import VBtn from '@gits-id/button';
 import Icon from '@gits-id/icon';
 import '@gits-id/icon/dist/style.css';
@@ -72,19 +72,25 @@ const setRef = (el: any) => {
     props.getRef(el);
   }
 };
+
+const isActive = computed(() => {
+  return inject('activeTab', 0) === index.value || props.active;
+});
 </script>
 
 <template>
-  <div
+  <button
+    type="button"
+    role="tab"
     :id="`tab-item-${index}`"
     :ref="setRef"
     class="v-tabs-item"
     :class="[
       defaultClass,
       {
-        'v-tabs-item--active': active,
+        'v-tabs-item--active': isActive,
       },
-      active ? activeClass : inactiveClass,
+      isActive ? activeClass : inactiveClass,
       vertical ? 'v-tabs-item--vertical' : '',
     ]"
   >
@@ -102,6 +108,7 @@ const setRef = (el: any) => {
       size="sm"
       text
       icon
+      fab
       type="button"
       @click="remove(index)"
     >
@@ -111,5 +118,5 @@ const setRef = (el: any) => {
         class="v-tabs-icon v-tabs-icon--remove"
       />
     </v-btn>
-  </div>
+  </button>
 </template>
