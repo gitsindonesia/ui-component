@@ -16,17 +16,15 @@
   "license": "MIT",
   "dependencies": {
     "@gits-id/theme": "^0.13.0",
-    "vue": "^3.2.31"
+    "vue": "^3.2.31",
+    "@heroicons/vue": "^1.0.6",
+    "@iconify/vue": "^3.2.1"
   },
   "devDependencies": {
     "@gits-id/tailwind-config": "^0.13.6",
     "vite": "^3.0.0",
     "vitest": "^0.12.4",
     "vue-tsc": "^0.40.1"
-  },
-  "peerDependencies": {
-    "@heroicons/vue": "^1.0.6",
-    "@iconify/vue": "^3.2.1"
   },
   "main": "dist/icon.js",
   "unpkg": "dist/icon.iife.js",

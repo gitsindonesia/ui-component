@@ -32,9 +32,6 @@
     "vite": "^3.0.0",
     "vitest": "^0.12.4"
   },
-  "peerDependencies": {
-    "@heroicons/vue": "^1.0.6"
-  },
   "main": "dist/toast.umd.js",
   "unpkg": "dist/toast.iife.js",
   "jsdelivr": "dist/toast.iife.js",

@@ -19,6 +19,7 @@
     "@gits-id/badge": "^0.13.6",
     "@gits-id/card": "^0.13.6",
     "@gits-id/icon": "^0.13.6",
+    "@iconify/vue": "^3.2.1",
     "vue": "^3.2.31"
   },
   "devDependencies": {

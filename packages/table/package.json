@@ -31,6 +31,10 @@
     "vite": "^3.0.0",
     "vitest": "^0.12.4"
   },
+  "peerDependencies": {
+    "@heroicons/vue": "^1.0.6",
+    "@iconify/vue": "^3.2.1"
+  },
   "main": "dist/table.umd.js",
   "unpkg": "dist/table.iife.js",
   "jsdelivr": "dist/table.iife.js",
