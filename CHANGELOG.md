@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.9](https://github.com/gitsindonesia/ui-component/compare/v0.13.8...v0.13.9) (2022-12-05)
+
+### Bug Fixes
+
+- **VAvatar:** fix avatar font size variable and text-transform ([51ee85a](https://github.com/gitsindonesia/ui-component/commit/51ee85ac72659aa34d92023c158c4bb182c9c2e2))
+
+### Features
+
+- **VSwitch:** customizable switch with CSS Properties ([#53](https://github.com/gitsindonesia/ui-component/issues/53)) ([93dd68e](https://github.com/gitsindonesia/ui-component/commit/93dd68e64cae64952a7d6f5ea3623bef680b7979))
+- **VToast:** revamp toast component ([#52](https://github.com/gitsindonesia/ui-component/issues/52)) ([f0415d5](https://github.com/gitsindonesia/ui-component/commit/f0415d5ee20cfa8a9c1fa1573c5bf7ec1240e5f7))
+
 ## [0.13.8](https://github.com/gitsindonesia/ui-component/compare/v0.13.7...v0.13.8) (2022-12-02)
 
 ### Features

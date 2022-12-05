@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.9](https://github.com/gitsindonesia/ui-component/compare/v0.13.8...v0.13.9) (2022-12-05)
+
+### Bug Fixes
+
+- **VAvatar:** fix avatar font size variable and text-transform ([51ee85a](https://github.com/gitsindonesia/ui-component/commit/51ee85ac72659aa34d92023c158c4bb182c9c2e2))
+
 ## [0.13.6](https://github.com/gitsindonesia/ui-component/compare/v0.13.5...v0.13.6) (2022-11-29)
 
 ### Features

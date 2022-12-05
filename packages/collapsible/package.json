@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/collapsible",
-  "version": "0.13.0",
+  "version": "0.13.9",
   "description": "GITS Collapsible Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",

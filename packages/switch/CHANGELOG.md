@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.9](https://github.com/gitsindonesia/ui-component/compare/v0.13.8...v0.13.9) (2022-12-05)
+
+### Features
+
+- **VSwitch:** customizable switch with CSS Properties ([#53](https://github.com/gitsindonesia/ui-component/issues/53)) ([93dd68e](https://github.com/gitsindonesia/ui-component/commit/93dd68e64cae64952a7d6f5ea3623bef680b7979))
+
 ## [0.13.6](https://github.com/gitsindonesia/ui-component/compare/v0.13.5...v0.13.6) (2022-11-29)
 
 **Note:** Version bump only for package @gits-id/switch

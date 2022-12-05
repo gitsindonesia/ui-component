@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.9](https://github.com/gitsindonesia/ui-component/compare/v0.13.8...v0.13.9) (2022-12-05)
+
+### Features
+
+- **VToast:** revamp toast component ([#52](https://github.com/gitsindonesia/ui-component/issues/52)) ([f0415d5](https://github.com/gitsindonesia/ui-component/commit/f0415d5ee20cfa8a9c1fa1573c5bf7ec1240e5f7))
+
 ## [0.13.6](https://github.com/gitsindonesia/ui-component/compare/v0.13.5...v0.13.6) (2022-11-29)
 
 **Note:** Version bump only for package @gits-id/toast
