@@ -19,6 +19,8 @@ const isOpen = ref(false);
 </template>
 ```
 
+<LivePreview src="components-toast--default" />
+
 ::: info
 The `VToast` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
@@ -38,7 +40,7 @@ const isOpen = ref(false);
 </template>
 ```
 
-<LivePreview src="components-toast--default" />
+<LivePreview src="components-toast--icon" />
 
 ### Placement
 
@@ -72,7 +74,7 @@ const changePlacement = (position: string) => {
 </template>
 ```
 
-<LivePreview src="components-toast--title" />
+<LivePreview src="components-toast--placement" />
 
 ### Colors
 
@@ -109,38 +111,72 @@ const colors = [...defaultColors, 'default', 'white'];
 </template>
 ```
 
-<LivePreview src="components-toast--title" />
+<LivePreview src="components-toast--colors" />
+
+### Slots
+
+```vue
+<script setup lang="ts">
+import {ref} from 'vue';
+
+const isOpen = ref(false);
+const actionHandler = () => {
+  alert('Confirmed!');
+};
+</script>
+
+<template>
+  <VBtn @click="isOpen = !isOpen">{{ isOpen ? 'Close' : 'Open' }} Toast</VBtn>
+  <VToast v-bind="args" v-model="isOpen">
+    Toast message
+    <template #action="{close}">
+      <VBtn text size="sm" color="primary" @click="actionHandler">Action</VBtn>
+      <VBtn
+        text
+        fab
+        size="sm"
+        color="primary"
+        prefix-icon="ri:close-line"
+        @click="close"
+      />
+    </template>
+  </VToast>
+</template>
+```
+
+<LivePreview src="components-toast--slots" />
 
 ## Props
 
-| Name                            | Type      | Default     |
-| ------------------------------- | --------- | ----------- |
-| [`modelValue`](#modelValue)     | `boolean` | `'false'`   |
+| Name                               | Type      | Default     |
+| ---------------------------------- | --------- | ----------- |
+| [`modelValue`](#modelValue)        | `boolean` | `'false'`   |
 | [`title`](#title) ❌               | `string`  | `''`        |
 | [`color`](#color) ❌               | `string`  | `'default'` |
 | [`confirmColor`](#confirmColor) ❌ | `string`  | `'primary'` |
 | [`confirmProps`](#confirmProps) ❌ | `object`  | `{}`        |
 | [`confirmText`](#confirmText) ❌   | `string`  | `'Confirm'` |
-| [`closeText`](#closeText) ❌      | `string`  | `'Close'`   |
+| [`closeText`](#closeText) ❌       | `string`  | `'Close'`   |
 | [`closeProps`](#closeProps) ❌     | `object`  | `{}`        |
 | [`headerClass`](#headerClass) ❌   | `string`  | `''`        |
 | [`bodyClass`](#bodyClass) ❌       | `string`  | `''`        |
 | [`actionsClass`](#actionsClass) ❌ | `string`  | `''`        |
-| [`placement`](#placement)       | `string`  | `''`        |
-| [`timeout`](#timeout)           | `mumber`  | `0`         |
+| [`placement`](#placement)          | `string`  | `''`        |
+| [`timeout`](#timeout)              | `mumber`  | `0`         |
 | [`type`](#type) ❌                 | `string`  | `''`        |
 | [`hideXIcon`](#hideXIcon) ❌       | `boolean` | `'false'`   |
 | [`overlay`](#overlay) ❌           | `boolean` | `false''`   |
 | [`loading`](#loading) ❌           | `boolean` | `'false'`   |
 | [`presistent`](#presistent) ❌     | `boolean` | `'false'`   |
-| [`transition`](#transition)     | `String`  | `''`        |
-| [`icon`](#icon)                 | `String`  | `''`        |
-| [`iconSize`](#iconSize)         | `String`  | `'md'`      |
-| [`iconClass`](#iconClass)       | `String`  | `''`        |
-| [`contentClass`](#contentClass) | `String`  | `''`        |
-| [`actionClass`](#actionClass)   | `String`  | `''`        |
+| [`transition`](#transition)        | `String`  | `''`        |
+| [`icon`](#icon)                    | `String`  | `''`        |
+| [`iconSize`](#iconSize)            | `String`  | `'md'`      |
+| [`iconClass`](#iconClass)          | `String`  | `''`        |
+| [`contentClass`](#contentClass)    | `String`  | `''`        |
+| [`actionClass`](#actionClass)      | `String`  | `''`        |
 
 - ❌ = deprecated
+
 ## Events
 
 | Name                                     | Payload          |
@@ -187,13 +223,12 @@ npm i @gits-id/toast
 ```vue
 <script setup lang="ts">
 import VToast from '@gits-id/toast';
+import '@gits-id/toast/dist/style.css';
 </script>
 
 <template>
-  <VBtn @click="openToast">
-    Open Toast
-  </VBtn>
-  <VToast v-model="isOpen" message="Lorem ipsum">
+  <VBtn @click="openToast"> Open Toast </VBtn>
+  <VToast v-model="isOpen"> Toast message </VToast>
 </template>
 ```
 
