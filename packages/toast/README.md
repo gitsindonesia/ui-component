@@ -1,6 +1,6 @@
-# GITS Toast Component
+# GITS Toast
 
-> Reusable Toast Component
+Vue Toast Component.
 
 ## Installation
 
@@ -26,17 +26,26 @@ pnpm i @gits-id/toast
 
 ```vue
 <script setup lang="ts">
-import Toast from '@gits-id/toast';
+import {ref} from 'vue';
+import VToast from '@gits-id/toast';
+import '@gits-id/toast/dist/style.css';
+
+const isOpen = ref(true)
 </script>
 
 <template>
-  <Toast />
+  <button @click="isOpen = !isOpen">
+    {{ isOpen ? 'Close' : 'Open' }} Toast
+  </button>
+  <VToast v-model="isOpen">
+    Toast message
+  </VToast>
 </template>
 ```
 
 ## Documentation
 
-View `Toast` documentation [here](https://gits-ui.web.app/?path=/story/components-toast--default).
+View full documentation [here](https://gits-ui.web.app/?path=/story/components-toast--default).
 
 ## License
 

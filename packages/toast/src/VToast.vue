@@ -5,445 +5,392 @@ export default {
 </script>
 
 <script setup lang="ts">
-import {computed, onUnmounted, ref, toRefs, watch} from 'vue';
-import {
-  TransitionRoot,
-  TransitionChild,
-  Dialog,
-  DialogOverlay,
-  DialogTitle,
-} from '@headlessui/vue';
-import VBtn from '@gits-id/button';
+import { computed, PropType, ref, toRefs, watch} from 'vue';
 import Icon from '@gits-id/icon';
+import { DefaultColors } from '@gits-id/theme/defaultTheme';
+import { ToastPlacement } from './types';
 
 export type ToastTypes = 'success' | 'error' | 'warning' | 'question';
 
-export type ToastPlacement =
-  | 'center'
-  | 'top'
-  | 'top-start'
-  | 'top-end'
-  | 'bottom'
-  | 'bottom-start'
-  | 'bottom-end';
-
-// type Props = {
-//   modelValue?: boolean;
-//   title?: string;
-//   confirm?: boolean;
-//   confirmColor?: string;
-//   confirmProps?: {};
-//   confirmText?: string;
-//   closeText?: string;
-//   closeProps?: {};
-//   headerClass?: string;
-//   bodyClass?: string;
-//   actionsClass?: string;
-//   placement?: ToastPlacement;
-//   actions?: boolean;
-//   timeout?: number;
-//   type?: ToastTypes;
-//   hideXIcon?: boolean;
-//   overlay?: boolean;
-//   loading?: boolean;
-//   persistent?: boolean;
-//   color?: string;
-// }
-
-// const props = withDefaults(defineProps<Props>(), {
-//   modelValue: false,
-//   title: '',
-//   confirm: false,
-//   confirmColor: 'primary',
-//   confirmProps: () => ({}),
-//   confirmText: 'Confirm',
-//   closeText: 'Close',
-//   closeProps: () => ({}),
-//   headerClass: '',
-//   bodyClass: '',
-//   actionsClass: '',
-//   placement: 'bottom',
-//   actions: false,
-//   timeout: 0,
-//   hideXIcon: false,
-//   overlay: false,
-//   color: 'white',
-// });
-
 const props = defineProps({
-  modelValue: {type: Boolean, default: false},
-  title: {type: String, default: ''},
-  confirm: {type: Boolean, default: false},
-  confirmColor: {type: String, default: 'primary'},
+  modelValue: {
+    type: Boolean,
+    default: false
+  },
+  /**
+   * @deprecated
+   */
+  title: {
+    type: String,
+    default: ''
+  },
+  /**
+   * @deprecated
+   */
+  confirm: {
+    type: Boolean,
+    default: false
+  },
+  /**
+   * @deprecated
+   */
+  confirmColor: {
+    type: String as PropType<DefaultColors | 'default' | string>,
+    default: 'primary'
+  },
+  /**
+   * @deprecated
+   */
   confirmProps: {
     type: Object,
     default: () => ({}),
   },
+  /**
+   * @deprecated
+   */
   confirmText: {
     type: String,
     default: 'Confirm',
   },
+  /**
+   * @deprecated
+   */
   closeText: {
     type: String,
     default: 'Close',
   },
+  /**
+   * @deprecated
+   */
   closeProps: {
     type: Object,
     default: () => ({}),
   },
-  headerClass: {type: String, default: ''},
-  bodyClass: {type: String, default: ''},
-  actionsClass: {type: String, default: ''},
-  placement: {type: String, default: 'bottom'},
-  actions: {type: Boolean, default: false},
-  timeout: {type: Number, default: 0},
-  hideXIcon: {type: Boolean, default: false},
-  overlay: {type: Boolean, default: false},
-  color: {type: String, default: 'white'},
-  type: {type: String, default: ''},
-  loading: {type: Boolean, default: false},
-  persistent: {type: Boolean, default: false},
+  /**
+   * @deprecated
+   */
+  headerClass: {
+    type: String,
+    default: ''
+  },
+  /**
+   * @deprecated
+   */
+  bodyClass: {
+    type: String,
+    default: ''
+  },
+  /**
+   * @deprecated
+   */
+  actionsClass: {
+    type: String,
+    default: ''
+  },
+  placement: {
+    type: String as PropType<ToastPlacement>,
+    default: 'bottom'
+  },
+  /**
+   * @deprecated
+   */
+  actions: {
+    type: Boolean,
+    default: false
+  },
+  timeout: {
+    type: Number,
+    default: 0
+  },
+  /**
+   * @deprecated
+   */
+  hideXIcon: {
+    type: Boolean,
+    default: false
+  },
+  /**
+   * @deprecated
+   */
+  overlay: {
+    type: Boolean,
+    default: false
+  },
+  color: {
+    type: String as PropType<DefaultColors | 'default' | 'white' | string>,
+    default: 'default'
+  },
+  /**
+   * @deprecated use `icon` prop instead
+   */
+  type: {
+    type: String,
+    default: ''
+  },
+  /**
+   * @deprecated
+   */
+  loading: {
+    type: Boolean,
+    default: false
+  },
+  /**
+   * @deprecated
+   */
+  persistent: {
+    type: Boolean,
+    default: false
+  },
+  transition: {
+    type: String,
+    default: ''
+  },
+  icon: {
+    type: String,
+    default: ''
+  },
+  iconSize: {
+    type: String,
+    default: 'md'
+  },
+  iconClass: {
+    type: String,
+    default: ''
+  },
+  contentClass: {
+    type: String,
+    default: ''
+  },
+  actionClass: {
+    type: String,
+    default: ''
+  },
 });
 
-const emit = defineEmits(['update:modelValue', 'confirm', 'close', 'open']);
+const emit = defineEmits<{
+  (e: 'update:modelValue', value: boolean): void
+}>();
 
-const {
-  modelValue,
-  title,
-  confirm,
-  confirmColor,
-  confirmProps,
-  confirmText,
-  closeText,
-  closeProps,
-  placement,
-  actions,
-  timeout,
-  type,
-  hideXIcon,
-  overlay,
-  color,
-  loading,
-  persistent,
-} = toRefs(props);
+const { modelValue } = toRefs(props);
 
 const isOpen = ref(modelValue.value);
-const timer = ref<any>(null);
-const internalLoading = ref<boolean>(loading.value);
 
-function closeModal() {
-  if (loading.value && persistent.value) return;
+const close = () => (isOpen.value = false);
 
-  isOpen.value = false;
-  emit('update:modelValue', false);
-  emit('close');
-}
+const timer = ref();
 
-function openModal() {
-  isOpen.value = true;
-  emit('update:modelValue', true);
-  emit('open');
-}
+watch(modelValue, (val) => {
+  isOpen.value = val;
 
-const startLoading = () => {
-  internalLoading.value = true;
-};
-
-const finishLoading = () => {
-  internalLoading.value = false;
-};
-
-const onConfirm = () => {
-  const payload = {
-    open: openModal,
-    close: closeModal,
-    startLoading,
-    finishLoading,
-  };
-
-  emit('confirm', payload);
-};
-
-const placementClass = computed(() => {
-  switch (placement.value) {
-    case 'top':
-      return 'top-4 left-1/2 transform -translate-x-1/2';
-    case 'top-start':
-      return 'top-4 left-4';
-    case 'top-end':
-      return 'top-4 right-4';
-    case 'bottom':
-      return 'bottom-4 left-1/2 transform -translate-x-1/2';
-    case 'bottom-start':
-      return 'bottom-4 left-4';
-    case 'bottom-end':
-      return 'bottom-4 right-4';
-    case 'center':
-      return 'top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2';
-    default:
-      return placement;
+  if (props.timeout) {
+    clearTimeout(timer.value);
+    timer.value = setTimeout(() => {
+      isOpen.value = false;
+    }, props.timeout);
   }
 });
 
-const transitionProps = computed(() => {
-  switch (placement.value) {
-    case 'top':
-    case 'top-start':
-    case 'top-end':
-      return {
-        enter: 'duration-300 ease-out',
-        enterFrom: 'opacity-0 -translate-y-full',
-        enterTo: 'opacity-100',
-        leave: 'duration-200 ease-in',
-        leaveFrom: 'opacity-100',
-        leaveTo: 'opacity-0 -translate-y-full',
-      };
-    case 'bottom':
-    case 'bottom-start':
-    case 'bottom-end':
-      return {
-        enter: 'duration-300 ease-out',
-        enterFrom: 'opacity-0 translate-y-full',
-        enterTo: 'opacity-100',
-        leave: 'duration-200 ease-in',
-        leaveFrom: 'opacity-100',
-        leaveTo: 'opacity-0 translate-y-full',
-      };
-    default:
-      return {
-        enter: 'duration-300 ease-out',
-        enterFrom: 'opacity-0 scale-95',
-        enterTo: 'opacity-100 scale-100',
-        leave: 'duration-200 ease-in',
-        leaveFrom: 'opacity-100 scale-100',
-        leaveTo: 'opacity-0 scale-95',
-      };
-  }
-});
+watch(isOpen, (val) => emit('update:modelValue', val));
 
-function setTimer() {
-  clearTimeout(timer.value);
-  timer.value = setTimeout(() => {
-    closeModal();
-  }, timeout.value);
-}
+const transitionName = computed(() => {
+  if (props.transition) return props.transition
 
-onUnmounted(() => {
-  clearTimeout(timer.value);
-});
+  if (props.placement === 'center') return 'toast-transition-center';
 
-watch(modelValue, (val) => (isOpen.value = val));
-
-watch(
-  isOpen,
-  (val) => {
-    emit('update:modelValue', val);
-
-    if (timeout.value > 0) {
-      setTimer();
-    }
-  },
-  {immediate: true},
-);
-
-watch(
-  modelValue,
-  (val) => {
-    isOpen.value = val;
-  },
-  {immediate: true},
-);
-
-watch(
-  loading,
-  (val) => {
-    internalLoading.value = val;
-  },
-  {immediate: true},
-);
-
-const colorClass = computed(() => {
-  switch (color.value) {
-    case 'primary':
-      return 'bg-primary';
-    case 'secondary':
-      return 'bg-secondary';
-    case 'warning':
-      return 'bg-warning';
-    case 'info':
-      return 'bg-info';
-    case 'error':
-      return 'bg-error';
-    case 'black':
-      return 'bg-black';
-    default:
-      return 'bg-white';
-  }
-});
-
-const textColorClass = computed(() => {
-  switch (color.value) {
-    case 'primary':
-    case 'secondary':
-    case 'warning':
-    case 'info':
-    case 'error':
-    case 'black':
-      return 'text-white';
-    default:
-      return '';
-  }
-});
-
-const iconColorClass = computed(() => {
-  switch (color.value) {
-    case 'primary':
-    case 'secondary':
-    case 'info':
-    case 'warning':
-    case 'error':
-      return 'text-white';
-    default:
-      return '';
-  }
-});
+  return ['top', 'top-start', 'top-end'].includes(props.placement)
+    ? 'toast-transition-top'
+    : 'toast-transition-bottom';
+})
 </script>
 
 <template>
-  <slot name="activator" :open="openModal" />
-  <TransitionRoot appear :show="isOpen" as="template">
-    <Dialog as="div" @close="closeModal">
-      <div class="fixed inset-0 z-30 overflow-y-auto">
-        <div class="relative min-h-screen p-4">
-          <TransitionChild
-            v-if="overlay"
-            as="template"
-            enter="duration-300 ease-out"
-            enter-from="opacity-0"
-            enter-to="opacity-100"
-            leave="duration-200 ease-in"
-            leave-from="opacity-100"
-            leave-to="opacity-0"
-          >
-            <DialogOverlay class="fixed bg-black bg-opacity-50 inset-0" />
-          </TransitionChild>
-
-          <!-- <span class="inline-block h-screen align-middle" aria-hidden="true">
-            &#8203;
-          </span> -->
-
-          <TransitionChild as="template" v-bind="transitionProps">
-            <div
-              class="
-                inline-block
-                w-full
-                max-w-sm
-                p-4
-                overflow-hidden
-                text-left
-                transition-all
-                transform
-                shadow-xl
-                rounded-lg
-                border
-                absolute
-              "
-              :class="[placementClass, colorClass]"
-            >
-              <div
-                class="flex gap-4"
-                :class="title ? 'items-start' : 'items-center'"
-              >
-                <slot name="media">
-                  <Icon
-                    name="heroicons:check"
-                    v-if="type === 'success'"
-                    class="w-6 h-6"
-                    :class="iconColorClass || 'text-success'"
-                  />
-                  <Icon
-                    name="heroicons:x-mark"
-                    v-if="type === 'error'"
-                    class="w-6 h-6"
-                    :class="iconColorClass || 'text-error'"
-                  />
-                  <Icon
-                    name="heroicons:exclamation-triangle"
-                    v-if="type === 'warning'"
-                    class="w-6 h-6"
-                    :class="iconColorClass || 'text-warning'"
-                  />
-                  <Icon
-                    name="heroicons:question-mark-circle"
-                    v-if="type === 'question'"
-                    class="w-6 h-6"
-                    :class="iconColorClass || 'text-info'"
-                  />
-                </slot>
-                <div class="flex-grow">
-                  <DialogTitle
-                    v-if="title"
-                    as="h3"
-                    class="font-semibold leading-6 mb-1"
-                    :class="[headerClass, textColorClass]"
-                  >
-                    <slot name="header">
-                      {{ title }}
-                    </slot>
-                  </DialogTitle>
-                  <div class="text-sm" :class="[bodyClass, textColorClass]">
-                    <slot />
-                  </div>
-
-                  <div
-                    v-if="actions"
-                    class="flex justify-start gap-2 pt-4"
-                    :class="actionsClass"
-                  >
-                    <slot name="actions">
-                      <v-btn
-                        v-if="confirm"
-                        :color="confirmColor"
-                        :loading="internalLoading"
-                        v-bind="confirmProps"
-                        @click="onConfirm"
-                      >
-                        {{ confirmText }}
-                      </v-btn>
-                      <v-btn
-                        v-bind="closeProps"
-                        :disabled="loading"
-                        @click="closeModal"
-                      >
-                        {{ closeText }}
-                      </v-btn>
-                    </slot>
-                  </div>
-                </div>
-                <div v-if="!hideXIcon">
-                  <slot name="rightActions">
-                    <v-btn
-                      icon
-                      rounded
-                      text
-                      no-ring
-                      size="xs"
-                      :class="[title ? '-m-2' : '']"
-                      @click="closeModal"
-                    >
-                      <Icon
-                        name="heroicons:x-mark"
-                        class="w-5 h-5"
-                        :class="textColorClass"
-                      />
-                    </v-btn>
-                  </slot>
-                </div>
-              </div>
-            </div>
-          </TransitionChild>
+  <teleport to="body">
+    <transition :name="transitionName">
+      <div
+        v-if="isOpen"
+        class="v-toast"
+        :class="[
+          `v-toast--${placement}`,
+          `v-toast-${color}`,
+        ]"
+        v-bind="$attrs"
+      >
+        <div class="v-toast-panel">
+          <slot name="icon">
+            <Icon
+              v-if="icon"
+              :name="icon"
+              :size="iconSize"
+              class="v-toast-icon"
+              :class="iconClass"
+            />
+          </slot>
+          <div class="v-toast-content" :class="contentClass">
+            <slot :close="close" />
+          </div>
+          <div class="v-toast-action" :class="actionClass">
+            <slot name="action" :close="close" />
+          </div>
         </div>
       </div>
-    </Dialog>
-  </TransitionRoot>
+    </transition>
+  </teleport>
 </template>
+
+<style>
+:root {
+  /* toast */
+  --v-toast-wrapper-padding-x: theme('padding.0');
+  --v-toast-wrapper-padding-y: theme('padding.3');
+  /* panel */
+  --v-toast-padding-x: theme('padding.4');
+  --v-toast-padding-y: theme('padding.3');
+  --v-toast-bg-color: #2F3031;
+  --v-toast-text-color: white;
+  --v-toast-font-size: theme('fontSize.sm');
+  --v-toast-font-weight: theme('fontWeight.normal');
+  --v-toast-width: 328px;
+  --v-toast-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2), 0px 2px 10px rgba(0, 0, 0, 0.1);
+  --v-toast-border-radius: theme('borderRadius.DEFAULT');
+  --v-toast-text-align: left;
+  --v-toast-gap: theme('gap.4');
+}
+
+.v-toast {
+  padding: var(--v-toast-wrapper-padding-y) var(--v-toast-wrapper-padding-x);
+
+  @apply fixed z-50 inset-x-0 transform flex items-center;
+}
+
+.v-toast-panel {
+  padding: var(--v-toast-padding-y) var(--v-toast-padding-x);
+  background: var(--v-toast-bg-color);
+  color: var(--v-toast-text-color);
+  font-size: var(--v-toast-font-size);
+  font-weight: var(--v-toast-font-weight);
+  box-shadow: var(--v-toast-box-shadow);
+  border-radius: var(--v-toast-border-radius);
+  text-align: var(--v-toast-text-align);
+  gap: var(--v-toast-gap);
+
+  @apply w-11/12 sm:w-[var(--v-toast-width)] inset-x-0 flex items-center;
+}
+
+
+/* themes */
+.v-toast-white {
+  --v-toast-bg-color: theme('colors.white');
+  --v-toast-text-color: theme('colors.gray.800');
+}
+.v-toast-primary {
+  --v-toast-bg-color: theme('colors.primary.500');
+  --v-toast-text-color: theme('colors.white');
+}
+.v-toast-secondary {
+  --v-toast-bg-color: theme('colors.secondary.500');
+  --v-toast-text-color: theme('colors.white');
+}
+.v-toast-info {
+  --v-toast-bg-color: theme('colors.info.500');
+  --v-toast-text-color: theme('colors.white');
+}
+.v-toast-warning {
+  --v-toast-bg-color: theme('colors.warning.500');
+  --v-toast-text-color: theme('colors.white');
+}
+.v-toast-error {
+  --v-toast-bg-color: theme('colors.error.500');
+  --v-toast-text-color: theme('colors.white');
+}
+.v-toast-success {
+  --v-toast-bg-color: theme('colors.success.500');
+  --v-toast-text-color: theme('colors.white');
+}
+
+/* icon */
+.v-toast-icon {
+  @apply w-5 h-5;
+}
+
+.v-toast-content {
+  @apply flex-1;
+}
+
+.v-toast-action {
+  @apply flex items-center gap-1 justify-center;
+}
+
+/* placement */
+.v-toast--bottom,
+.v-toast--bottom-start,
+.v-toast--bottom-end {
+  @apply bottom-0;
+}
+
+.v-toast--bottom {
+  @apply justify-center;
+}
+
+.v-toast--bottom-start {
+  @apply justify-start ml-4;
+}
+
+.v-toast--bottom-end {
+  @apply justify-end mr-4;
+}
+
+/* top */
+.v-toast--top,
+.v-toast--top-start,
+.v-toast--top-end {
+  @apply top-0;
+}
+
+.v-toast--top {
+  @apply justify-center;
+}
+
+.v-toast--top-start {
+  @apply justify-start ml-4;
+}
+
+.v-toast--top-end {
+  @apply justify-end mr-4;
+}
+
+/* center */
+.v-toast--center {
+  @apply absolute transform -translate-y-1/2 top-1/2 -translate-x-1/2 left-1/2 flex justify-center;
+}
+
+/* transition */
+.toast-transition-center-enter-active,
+.toast-transition-center-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.toast-transition-center-enter-from,
+.toast-transition-center-leave-to {
+  opacity: 0;
+}
+
+.toast-transition-bottom-enter-active,
+.toast-transition-bottom-leave-active {
+  transition: all 0.3s ease;
+}
+
+.toast-transition-bottom-enter-from,
+.toast-transition-bottom-leave-to {
+  transform: translateY(100%);
+}
+
+.toast-transition-top-enter-active,
+.toast-transition-top-leave-active {
+  transition: all 0.3s ease;
+}
+
+.toast-transition-top-enter-from,
+.toast-transition-top-leave-to {
+  transform: translateY(-100%);
+}
+</style>

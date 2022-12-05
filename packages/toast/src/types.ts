@@ -1,13 +1,16 @@
 export type ToastTypes = 'success' | 'error' | 'warning' | 'question';
 
-export type ToastPlacement =
-  | 'center'
-  | 'top'
-  | 'top-start'
-  | 'top-end'
-  | 'bottom'
-  | 'bottom-start'
-  | 'bottom-end';
+export const placements = [
+  'center',
+  'top',
+  'top-start',
+  'top-end',
+  'bottom',
+  'bottom-start',
+  'bottom-end'
+] as const
+
+export type ToastPlacement = typeof placements[number];
 
 export type VToastEvent = {
   open: () => void;
