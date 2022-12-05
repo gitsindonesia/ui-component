@@ -2,7 +2,6 @@
 @import '@gits-id/editor/dist/style.css';
 @import '@gits-id/icon/dist/style.css';
 @import '@gits-id/forms/dist/style.css';
-/* @import '@gits-id/iconsax/dist/style.css'; */
 @import '@gits-id/logo/dist/style.css';
 @import '@gits-id/menu/dist/style.css';
 @import '@gits-id/menus/dist/style.css';
@@ -16,3 +15,5 @@
 @import '@gits-id/select/dist/style.css';
 @import '@gits-id/table/dist/style.css';
 @import '@gits-id/modal/dist/style.css';
+@import '@gits-id/switch/dist/style.css';
+@import '@gits-id/toast/dist/style.css';
