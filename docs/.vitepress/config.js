@@ -115,6 +115,10 @@ export default defineConfig({
             link: '/components/stepper',
           },
           {
+            text: 'Switch',
+            link: '/components/switch',
+          },
+          {
             text: 'Tabs',
             link: '/components/tabs',
           },

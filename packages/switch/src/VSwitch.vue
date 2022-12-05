@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {toRefs, watch, computed} from 'vue';
+import {toRefs, watch, PropType} from 'vue';
 import {Switch, SwitchGroup, SwitchLabel} from '@headlessui/vue';
 import type {Colors} from './colors';
 import {useField} from 'vee-validate';
@@ -14,12 +14,12 @@ const props = defineProps({
     default: '',
   },
   color: {
-    type: String,
+    type: String as PropType<Colors>,
     default: 'primary',
   },
   inactiveClass: {
     type: String,
-    default: 'bg-gray-200',
+    default: '',
   },
   activeClass: {
     type: String,
@@ -55,27 +55,16 @@ const props = defineProps({
   },
   errorClass: {
     type: String,
-    default: 'text-error-600 mt-1 text-sm',
+    default: '',
   },
 });
 
-const emit = defineEmits(['update:modelValue']);
+const emit =
+  defineEmits<{
+    (e: 'update:modelValue', value: boolean): void;
+  }>();
 
 const {modelValue, label, name, rules} = toRefs(props);
-
-const colors: Record<Colors, string> = {
-  primary: 'bg-primary-600',
-  secondary: 'bg-secondary-600',
-  info: 'bg-info-600',
-  warning: 'bg-warning-600',
-  success: 'bg-success-600',
-  error: 'bg-error-600',
-  default: '',
-};
-
-const colorClass = computed(() =>
-  props.color ? colors[props.color] : colors.default,
-);
 
 const {value: switchValue, errorMessage} = useField(name, rules, {
   initialValue: modelValue.value,
@@ -91,61 +80,153 @@ watch(modelValue, (val) => {
 </script>
 
 <template>
-  <div :class="['w-full', wrapperClass]">
-    <SwitchGroup
-      as="div"
-      class="flex items-center gap-4"
-      :class="switchGroupClass"
-    >
-      <SwitchLabel v-if="label" :class="labelClass">
+  <div
+    class="v-switch"
+    :class="[
+      `v-switch-${color}`,
+      {
+        'v-switch--checked': switchValue,
+      },
+      wrapperClass,
+    ]"
+  >
+    <SwitchGroup as="div" class="v-switch-group" :class="switchGroupClass">
+      <SwitchLabel v-if="label" class="v-switch-label" :class="labelClass">
         {{ label }}
       </SwitchLabel>
-
       <Switch
-        v-slot="{checked}"
         v-model="switchValue"
         as="button"
-        class="
-          relative
-          inline-flex
-          flex-shrink-0
-          h-6
-          transition-colors
-          duration-200
-          ease-in-out
-          border-2 border-transparent
-          rounded-full
-          cursor-pointer
-          w-11
-          focus:outline-none
-          focus:shadow-outline
-        "
-        :class="[
-          switchValue ? colorClass ?? activeClass : inactiveClass,
-          switchClass,
-        ]"
+        class="v-switch-button"
+        :class="[switchValue ? activeClass : inactiveClass, switchClass]"
       >
-        <span
-          class="
-            inline-block
-            w-5
-            h-5
-            transition
-            duration-200
-            ease-in-out
-            transform
-            bg-white
-            rounded-full
-          "
-          :class="[
-            {'translate-x-5': checked, 'translate-x-0': !checked},
-            buttonClass,
-          ]"
-        />
+        <span class="v-switch-thumb" :class="[buttonClass]" />
       </Switch>
     </SwitchGroup>
-    <div v-if="errorMessage" :class="errorClass">
+    <div v-if="errorMessage" class="v-switch--error" :class="errorClass">
       {{ errorMessage }}
     </div>
   </div>
 </template>
+
+<style>
+:root {
+  --v-switch-width: theme('width.full');
+  /* button */
+  --v-switch-button-bg-color: theme('colors.gray.200');
+  --v-switch-button-border-color: theme('colors.transparent');
+  --v-switch-button-checked-bg-color: theme('colors.primary.500');
+  --v-switch-button-checked-border-color: theme('colors.primary.500');
+  --v-switch-button-width: theme('width.11');
+  --v-switch-button-height: theme('height.6');
+  --v-switch-button-padding-y: theme('padding.0');
+  --v-switch-button-padding-x: theme('padding.0');
+  /* thumb */
+  --v-switch-thumb-bg-color: theme('colors.white');
+  --v-switch-thumb-width: theme('width.5');
+  --v-switch-thumb-height: theme('height.5');
+  --v-switch-thumb-border-radius: theme('borderRadius.full');
+  /* label */
+  --v-switch-label-font-size: theme('fontSize.base');
+  --v-switch-label-font-weight: theme('fontWeight.normal');
+}
+
+.v-switch {
+  width: var(--v-switch-width);
+}
+
+.v-switch-group {
+  @apply flex items-center gap-4;
+}
+
+.v-switch-label {
+  font-size: var(--v-switch-label-font-size);
+  font-weight: var(--v-switch-label-font-weight);
+}
+
+.v-switch-button {
+  background: var(--v-switch-button-bg-color);
+  border: 2px solid var(--v-switch-button-border-color);
+  width: var(--v-switch-button-width);
+  height: var(--v-switch-button-height);
+  padding: var(--v-switch-button-padding-y) var(--v-switch-button-padding-x);
+
+  @apply relative
+    inline-flex
+    items-center
+    flex-shrink-0
+    transition-colors
+    duration-200
+    ease-in-out
+    rounded-full
+    cursor-pointer;
+}
+
+.v-switch-button:focus {
+  outline-color: var(--v-switch-button-border-color);
+}
+
+.v-switch-thumb {
+  background: var(--v-switch-thumb-bg-color);
+  width: var(--v-switch-thumb-width);
+  height: var(--v-switch-thumb-height);
+  border-radius: var(--v-switch-thumb-border-radius);
+
+  @apply inline-block
+    transition
+    duration-200
+    ease-in-out
+    transform
+    translate-x-0;
+}
+
+.v-switch--error {
+  @apply text-error-600 mt-1 text-sm;
+}
+
+/* checked */
+.v-switch--checked .v-switch-thumb {
+  @apply translate-x-5;
+}
+
+.v-switch--checked .v-switch-button {
+  background: var(--v-switch-button-checked-bg-color);
+  border-color: var(--v-switch-button-checked-border-color);
+}
+
+/* colors */
+.v-switch--checked.v-switch-primary .v-switch-button {
+  --v-switch-button-checked-bg-color: theme('colors.primary.500');
+  --v-switch-button-checked-border-color: theme('colors.primary.500');
+}
+
+.v-switch--checked.v-switch-secondary .v-switch-button {
+  --v-switch-button-checked-bg-color: theme('colors.secondary.500');
+  --v-switch-button-checked-border-color: theme('colors.secondary.500');
+}
+
+.v-switch--checked.v-switch-secondary .v-switch-button {
+  --v-switch-button-checked-bg-color: theme('colors.secondary.500');
+  --v-switch-button-checked-border-color: theme('colors.secondary.500');
+}
+
+.v-switch--checked.v-switch-success .v-switch-button {
+  --v-switch-button-checked-bg-color: theme('colors.success.500');
+  --v-switch-button-checked-border-color: theme('colors.success.500');
+}
+
+.v-switch--checked.v-switch-info .v-switch-button {
+  --v-switch-button-checked-bg-color: theme('colors.info.500');
+  --v-switch-button-checked-border-color: theme('colors.info.500');
+}
+
+.v-switch--checked.v-switch-warning .v-switch-button {
+  --v-switch-button-checked-bg-color: theme('colors.warning.500');
+  --v-switch-button-checked-border-color: theme('colors.warning.500');
+}
+
+.v-switch--checked.v-switch-error .v-switch-button {
+  --v-switch-button-checked-bg-color: theme('colors.error.500');
+  --v-switch-button-checked-border-color: theme('colors.error.500');
+}
+</style>

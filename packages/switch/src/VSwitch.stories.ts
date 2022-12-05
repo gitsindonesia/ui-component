@@ -3,12 +3,12 @@ import {Meta, Story} from '@storybook/vue3';
 import {useForm} from 'vee-validate';
 import {object, boolean} from 'yup';
 import VBtn from '@gits-id/button';
+import { ref } from 'vue';
 
 export default {
   title: 'Components/Switch',
   component: VSwitch,
   args: {
-    modelValue: true,
     label: 'Label',
   },
 } as Meta;
@@ -18,9 +18,10 @@ const Template: Story = (args) => ({
     VSwitch,
   },
   setup() {
-    return {args};
+    const checked = ref(true);
+    return {args, checked};
   },
-  template: `<v-switch v-bind="args" />`,
+  template: `<v-switch v-bind="args" v-model="checked" />`,
 });
 
 export const Default = Template.bind({});
@@ -33,9 +34,21 @@ Default.parameters = {
   },
 };
 
+export const Secondary = Template.bind({});
+Secondary.args = {
+  color: 'secondary',
+};
+Secondary.parameters = {
+  docs: {
+    source: {
+      code: `<v-switch v-model="model" color="secondary" />`,
+    },
+  },
+};
+
 export const Success = Template.bind({});
 Success.args = {
-  color: 'primary',
+  color: 'success',
 };
 Success.parameters = {
   docs: {
@@ -110,10 +123,10 @@ export const CustomClass = Template.bind({});
 CustomClass.args = {
   color: '',
   label: 'Custom Switch',
-  switchClass: 'border-cyan-200',
-  activeClass: 'bg-white',
-  inactiveClass: 'bg-white',
-  buttonClass: 'bg-cyan-500',
+  switchClass: '!border-cyan-200',
+  activeClass: '!bg-white',
+  inactiveClass: '!bg-white',
+  buttonClass: '!bg-cyan-500',
 };
 CustomClass.parameters = {
   docs: {
@@ -123,14 +136,35 @@ CustomClass.parameters = {
   v-model="model"       
   color=""
   label="Custom Switch"
-  switch-class="border-cyan-200"
-  active-class="bg-white"
-  inactive-class="bg-white"
-  button-class="bg-cyan-500"
+  switch-class="!border-cyan-200"
+  active-class="!bg-white"
+  inactive-class="!bg-white"
+  button-class="!bg-cyan-500"
 />`,
     },
   },
 };
+
+export const CustomStyle: Story<{}> = () => ({
+  components: {VSwitch, VBtn},
+  template: `
+    <VSwitch
+      label="Custom Style"
+      color="custom"
+      :style="{
+        '--v-switch-button-bg-color': 'transparent',
+        '--v-switch-button-border-color': 'purple',
+        '--v-switch-button-checked-bg-color': 'transparent',
+        '--v-switch-button-checked-border-color': 'purple',
+        '--v-switch-button-padding-x': '0.125rem',
+        '--v-switch-thumb-bg-color': 'purple',
+        '--v-switch-thumb-width': '1rem',
+        '--v-switch-thumb-height': '1rem',
+      }"
+    />
+`,
+});
+
 
 export const Validation: Story<{}> = () => ({
   components: {VSwitch, VBtn},
