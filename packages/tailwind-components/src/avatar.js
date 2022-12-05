@@ -12,6 +12,8 @@ const avatar = plugin(function ({addComponents, theme}) {
       '--avatar-border-style': 'solid',
       '--avatar-border-radius': theme('borderRadius.full'),
       '--avatar-font-weight': 600,
+      '--avatar-font-size': theme('fontSize.base'),
+      '--avatar-text-transform': 'uppercase',
     },
     '.avatar': {
       display: 'flex',
@@ -28,6 +30,7 @@ const avatar = plugin(function ({addComponents, theme}) {
       backgroundColor: 'var(--avatar-bg-color)',
       color: 'var(--avatar-text-color)',
       fontSize: 'var(--avatar-font-size)',
+      textTransform: 'var(--avatar-text-transform)',
     },
     /* shapes */
     '.avatar-square, .avatar-square .avatar-image': {
