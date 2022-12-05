@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.10](https://github.com/gitsindonesia/ui-component/compare/v0.13.9...v0.13.10) (2022-12-05)
+
+### Bug Fixes
+
+- **ui:** register toast and switch styles ([8c425d9](https://github.com/gitsindonesia/ui-component/commit/8c425d9ce8c5b5caeaac10749d6361e1e022909a))
+
 ## [0.13.9](https://github.com/gitsindonesia/ui-component/compare/v0.13.8...v0.13.9) (2022-12-05)
 
 **Note:** Version bump only for package @gits-id/ui
