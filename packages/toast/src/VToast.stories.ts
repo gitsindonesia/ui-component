@@ -1,8 +1,11 @@
+import { placements } from './types';
 import VToast from './VToast.vue';
-import VBtn from '@gits-id/button';
+import VBtn, {VBtnGroup} from '@gits-id/button';
 import {themeColors} from '@gits-id/utils/colors';
 import {Story} from '@storybook/vue3';
 import {ref} from 'vue';
+import '@gits-id/icon/dist/style.css';
+import { defaultColors } from '@gits-id/theme/defaultTheme';
 
 export default {
   title: 'Components/Toast',
@@ -29,27 +32,6 @@ export default {
       ],
     },
   },
-  args: {
-    modelValue: false,
-    title: '',
-    color: '',
-    confirm: false,
-    confirmColor: 'primary',
-    confirmProps: {},
-    confirmText: 'Confirm',
-    closeText: 'Close',
-    closeProps: {},
-    headerClass: '',
-    bodyClass: '',
-    actionsClass: '',
-    placement: 'bottom',
-    actions: false,
-    timeout: 0,
-    message: 'Lorem ipsum dolor',
-    type: '',
-    hideXIcon: false,
-    overlay: false,
-  },
 };
 
 const Template: Story<{}> = (args) => ({
@@ -62,8 +44,10 @@ const Template: Story<{}> = (args) => ({
     return {args, isOpen};
   },
   template: `
-    <v-btn @click="isOpen = true">Open Toast</v-btn>
-    <v-toast v-bind="args" v-model="isOpen">{{ args.message }}</v-toast>
+    <v-btn @click="isOpen = !isOpen">{{ isOpen ? 'Close' : 'Open' }} Toast</v-btn>
+    <v-toast v-bind="args" v-model="isOpen">
+      Toast message
+    </v-toast>
   `,
 });
 
@@ -81,11 +65,83 @@ Default.parameters = {
   },
 };
 
+export const Placement: Story<{}> = (args) => ({
+  components: {
+    VBtn,
+    VBtnGroup,
+    VToast,
+  },
+  setup() {
+    const isOpen = ref(true);
+    const placement = ref('bottom');
+    const changePlacement = (position: string) => {
+      placement.value = position;
+      isOpen.value = false
+      setTimeout(() => {
+        isOpen.value = true
+      }, 200)
+    }
+    return {args, isOpen, placements, placement, changePlacement};
+  },
+  template: `
+    <v-btn-group class="mt-14">
+      <v-btn
+        v-for="position in placements"
+        :key="position"
+        @click="changePlacement(position)"
+      >
+        {{ position }}
+      </v-btn>
+    </v-btn-group>
+    <v-toast v-model="isOpen" :placement="placement">
+      Toast message
+    </v-toast>
+  `,
+});
+
+export const Colors: Story<{}> = (args) => ({
+  components: {
+    VBtn,
+    VBtnGroup,
+    VToast,
+  },
+  setup() {
+    const isOpen = ref(true);
+    const color = ref('bottom');
+    const changecolor = (position: string) => {
+      color.value = position;
+      isOpen.value = false
+      setTimeout(() => {
+        isOpen.value = true
+      }, 200)
+    }
+    const colors = [...defaultColors, 'default', 'white'];
+    return {args, isOpen, colors, color, changecolor};
+  },
+  template: `
+    <v-btn-group>
+      <v-btn
+        v-for="color in colors"
+        :key="color"
+        :color="color"
+        @click="changecolor(color)"
+      >
+        {{ color }}
+      </v-btn>
+    </v-btn-group>
+    <v-toast v-model="isOpen" :color="color">
+      Toast message
+    </v-toast>
+  `,
+});
+
+
 export const Icon = Template.bind({});
 Icon.args = {
   type: 'success',
 };
 Icon.parameters = {
+  badges: ['Deprecated'],
   docs: {
     source: {
       code: `
@@ -102,6 +158,7 @@ Title.args = {
   title: 'Notification',
 };
 Title.parameters = {
+  badges: ['Deprecated'],
   docs: {
     source: {
       code: `
@@ -120,6 +177,7 @@ Actions.args = {
   confirm: true,
 };
 Actions.parameters = {
+  badges: ['Deprecated'],
   docs: {
     source: {
       code: `
@@ -149,6 +207,7 @@ Custom.args = {
   },
 };
 Custom.parameters = {
+  badges: ['Deprecated'],
   docs: {
     source: {
       code: `
@@ -177,3 +236,27 @@ Custom.parameters = {
     },
   },
 };
+
+export const Slots: Story<{}> = (args) => ({
+  components: {
+    VBtn,
+    VToast,
+  },
+  setup() {
+    const isOpen = ref(false);
+    const actionHandler = () => {
+      alert('Confirmed!');
+    }
+    return {args, isOpen, actionHandler};
+  },
+  template: `
+    <v-btn @click="isOpen = !isOpen">{{ isOpen ? 'Close' : 'Open' }} Toast</v-btn>
+    <v-toast v-bind="args" v-model="isOpen">
+      Toast message
+      <template #action="{close}">
+        <VBtn text size="sm" color="primary" @click="actionHandler">Action</VBtn>
+        <VBtn text fab size="sm" color="primary" prefix-icon="ri:close-line" @click="close"></VBtn>
+      </template>
+    </v-toast>
+  `,
+});

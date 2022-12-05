@@ -1,7 +1,7 @@
 {
   "name": "@gits-id/toast",
   "version": "0.13.6",
-  "description": "GITS Toast Component",
+  "description": "Vue Toast Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "npm run build",
