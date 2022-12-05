@@ -33,9 +33,21 @@ Default.parameters = {
   },
 };
 
+export const Secondary = Template.bind({});
+Secondary.args = {
+  color: 'secondary',
+};
+Secondary.parameters = {
+  docs: {
+    source: {
+      code: `<v-switch v-model="model" color="secondary" />`,
+    },
+  },
+};
+
 export const Success = Template.bind({});
 Success.args = {
-  color: 'primary',
+  color: 'success',
 };
 Success.parameters = {
   docs: {
@@ -110,10 +122,10 @@ export const CustomClass = Template.bind({});
 CustomClass.args = {
   color: '',
   label: 'Custom Switch',
-  switchClass: 'border-cyan-200',
-  activeClass: 'bg-white',
-  inactiveClass: 'bg-white',
-  buttonClass: 'bg-cyan-500',
+  switchClass: '!border-cyan-200',
+  activeClass: '!bg-white',
+  inactiveClass: '!bg-white',
+  buttonClass: '!bg-cyan-500',
 };
 CustomClass.parameters = {
   docs: {
@@ -123,14 +135,32 @@ CustomClass.parameters = {
   v-model="model"       
   color=""
   label="Custom Switch"
-  switch-class="border-cyan-200"
-  active-class="bg-white"
-  inactive-class="bg-white"
-  button-class="bg-cyan-500"
+  switch-class="!border-cyan-200"
+  active-class="!bg-white"
+  inactive-class="!bg-white"
+  button-class="!bg-cyan-500"
 />`,
     },
   },
 };
+
+export const CustomStyle: Story<{}> = () => ({
+  components: {VSwitch, VBtn},
+  template: `
+    <VSwitch
+      label="Custom Style"
+      :style="{
+        '--v-switch-button-border-color': 'purple',
+        '--v-switch-button-bg-color': 'transparent',
+        '--v-switch-button-padding-x': '0.125rem',
+        '--v-switch-thumb-bg-color': 'purple',
+        '--v-switch-thumb-width': '1rem',
+        '--v-switch-thumb-height': '1rem',
+      }"
+    />
+`,
+});
+
 
 export const Validation: Story<{}> = () => ({
   components: {VSwitch, VBtn},

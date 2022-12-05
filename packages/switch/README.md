@@ -1,6 +1,6 @@
-# GITS Switch Component
+# GITS Switch
 
-> Reusable Switch Component
+Vue Switch Component.
 
 ## Installation
 
@@ -26,11 +26,12 @@ pnpm i @gits-id/switch
 
 ```vue
 <script setup lang="ts">
-import Switch from '@gits-id/switch';
+import VSwitch from '@gits-id/switch';
+import '@gits-id/switch/dist/style.css';
 </script>
 
 <template>
-  <Switch />
+  <VSwitch />
 </template>
 ```
 

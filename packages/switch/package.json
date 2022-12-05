@@ -1,7 +1,7 @@
 {
   "name": "@gits-id/switch",
   "version": "0.13.6",
-  "description": "GITS Switch Component",
+  "description": "GITS Vue Switch",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "npm run build",
@@ -10,6 +10,8 @@
   "keywords": [
     "switch",
     "gits",
+    "vue",
+    "component",
     "ui-component"
   ],
   "author": "Warsono <warsono16694@gmail.com>",
