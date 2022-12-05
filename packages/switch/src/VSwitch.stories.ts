@@ -3,12 +3,12 @@ import {Meta, Story} from '@storybook/vue3';
 import {useForm} from 'vee-validate';
 import {object, boolean} from 'yup';
 import VBtn from '@gits-id/button';
+import { ref } from 'vue';
 
 export default {
   title: 'Components/Switch',
   component: VSwitch,
   args: {
-    modelValue: true,
     label: 'Label',
   },
 } as Meta;
@@ -18,9 +18,10 @@ const Template: Story = (args) => ({
     VSwitch,
   },
   setup() {
-    return {args};
+    const checked = ref(true);
+    return {args, checked};
   },
-  template: `<v-switch v-bind="args" />`,
+  template: `<v-switch v-bind="args" v-model="checked" />`,
 });
 
 export const Default = Template.bind({});
@@ -149,9 +150,12 @@ export const CustomStyle: Story<{}> = () => ({
   template: `
     <VSwitch
       label="Custom Style"
+      color="custom"
       :style="{
-        '--v-switch-button-border-color': 'purple',
         '--v-switch-button-bg-color': 'transparent',
+        '--v-switch-button-border-color': 'purple',
+        '--v-switch-button-checked-bg-color': 'transparent',
+        '--v-switch-button-checked-border-color': 'purple',
         '--v-switch-button-padding-x': '0.125rem',
         '--v-switch-thumb-bg-color': 'purple',
         '--v-switch-thumb-width': '1rem',
