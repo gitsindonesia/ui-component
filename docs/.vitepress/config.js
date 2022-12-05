@@ -168,6 +168,10 @@ export default defineConfig({
             text: 'QuillEditor',
             link: '/components/quill-editor',
           },
+          {
+            text: 'Radio',
+            link: '/components/radio',
+          },
         ],
       },
     ],

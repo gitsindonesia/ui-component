@@ -1,6 +1,6 @@
 # Checkbox
 
-Vue checkbox component.
+Form input checkbox component.
 
 ## Usage
 
