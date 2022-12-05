@@ -113,8 +113,10 @@ watch(modelValue, (val) => {
 :root {
   --v-switch-width: theme('width.full');
   /* button */
-  --v-switch-button-bg-color: theme('colors.primary.500');
-  --v-switch-button-border-color: theme('colors.primary.500');
+  --v-switch-button-bg-color: theme('colors.gray.200');
+  --v-switch-button-border-color: theme('colors.transparent');
+  --v-switch-button-checked-bg-color: theme('colors.primary.500');
+  --v-switch-button-checked-border-color: theme('colors.primary.500');
   --v-switch-button-width: theme('width.11');
   --v-switch-button-height: theme('height.6');
   --v-switch-button-padding-y: theme('padding.0');
@@ -187,29 +189,44 @@ watch(modelValue, (val) => {
   @apply translate-x-5;
 }
 
+.v-switch--checked .v-switch-button {
+  background: var(--v-switch-button-checked-bg-color);
+  border-color: var(--v-switch-button-checked-border-color);
+}
+
 /* colors */
-.v-switch-secondary .v-switch-button {
-  --v-switch-button-bg-color: theme('colors.secondary.500');
-  --v-switch-button-border-color: theme('colors.secondary.500');
+.v-switch--checked.v-switch-primary .v-switch-button {
+  --v-switch-button-checked-bg-color: theme('colors.primary.500');
+  --v-switch-button-checked-border-color: theme('colors.primary.500');
 }
 
-.v-switch-success .v-switch-button {
-  --v-switch-button-bg-color: theme('colors.success.500');
-  --v-switch-button-border-color: theme('colors.success.500');
+.v-switch--checked.v-switch-secondary .v-switch-button {
+  --v-switch-button-checked-bg-color: theme('colors.secondary.500');
+  --v-switch-button-checked-border-color: theme('colors.secondary.500');
 }
 
-.v-switch-info .v-switch-button {
-  --v-switch-button-bg-color: theme('colors.info.500');
-  --v-switch-button-border-color: theme('colors.info.500');
+.v-switch--checked.v-switch-secondary .v-switch-button {
+  --v-switch-button-checked-bg-color: theme('colors.secondary.500');
+  --v-switch-button-checked-border-color: theme('colors.secondary.500');
 }
 
-.v-switch-warning .v-switch-button {
-  --v-switch-button-bg-color: theme('colors.warning.500');
-  --v-switch-button-border-color: theme('colors.warning.500');
+.v-switch--checked.v-switch-success .v-switch-button {
+  --v-switch-button-checked-bg-color: theme('colors.success.500');
+  --v-switch-button-checked-border-color: theme('colors.success.500');
 }
 
-.v-switch-error .v-switch-button {
-  --v-switch-button-bg-color: theme('colors.error.500');
-  --v-switch-button-border-color: theme('colors.error.500');
+.v-switch--checked.v-switch-info .v-switch-button {
+  --v-switch-button-checked-bg-color: theme('colors.info.500');
+  --v-switch-button-checked-border-color: theme('colors.info.500');
+}
+
+.v-switch--checked.v-switch-warning .v-switch-button {
+  --v-switch-button-checked-bg-color: theme('colors.warning.500');
+  --v-switch-button-checked-border-color: theme('colors.warning.500');
+}
+
+.v-switch--checked.v-switch-error .v-switch-button {
+  --v-switch-button-checked-bg-color: theme('colors.error.500');
+  --v-switch-button-checked-border-color: theme('colors.error.500');
 }
 </style>
