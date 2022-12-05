@@ -212,7 +212,6 @@ const transitionName = computed(() => {
         :class="[
           `v-toast--${placement}`,
           `v-toast-${color}`,
-          `v-toast-${type}`,
         ]"
         v-bind="$attrs"
       >
