@@ -164,11 +164,12 @@ const items = [
 
 | Name                        | Type                                                                                                | Default          |
 | --------------------------- | --------------------------------------------------------------------------------------------------- | ---------------- |
-| [`items`](#items)           | `VMenuItem[]`                                                                                       | `[]`             |
+| [`items`](#items)           | [`VMenuItem[]`](#VMenuItem)                                                                                       | `[]`             |
 | [`right`](#right)           | `Boolean`                                                                                           | `false`          |
 | [`small`](#small)           | `Boolean`                                                                                           | `false`          |
-| [`rightIcon`](#rightIcon)   | `Boolean`                                                                                           | `false`          |
+| ~~rightIcon~~   | `Boolean`                                                                                           | `false`          |
 | [`btnClass`](#btnClass)     | `String`                                                                                            | `''`             |
+| [`btnIcon`](#btnIcon)     | `String`                                                                                            | `'ri:arrow-down-s-line'`             |
 | [`btnIconClass`](#btnClass) | `String`                                                                                            | `''`             |
 | [`placement`](#placement)   | `String`. See [available options](https://floating-vue.starpad.dev/guide/component.html#placements) | `'bottom-start'` |
 | [`label`](#label)           | `String`                                                                                            | `'Menu'`         |
@@ -183,6 +184,11 @@ export interface VMenuItem {
   onClick?: () => void;
 }
 ```
+
+::: info
+- ❌ = deprecated
+- ~~propName~~ = deprecated
+:::
 
 ## Methods
 

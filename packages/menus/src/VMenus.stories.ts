@@ -83,6 +83,16 @@ Hover.parameters = {
   },
 };
 
+export const CustomIcon = Template.bind({});
+CustomIcon.args = {'btn-icon': "ri:arrow-down-line"};
+CustomIcon.parameters = {
+  docs: {
+    source: {
+      code: '<v-menus :items="items" btn-icon="ri:arrow-down-line" />',
+    },
+  },
+};
+
 export const InAppBar: Story = (args) => ({
   components: {
     VMenus,

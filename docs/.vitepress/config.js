@@ -141,6 +141,10 @@ export default defineConfig({
             link: '/components/button',
           },
           {
+            text: 'Checkbox',
+            link: '/components/checkbox',
+          },
+          {
             text: 'Editor',
             link: '/components/editor',
           },
@@ -163,6 +167,10 @@ export default defineConfig({
           {
             text: 'QuillEditor',
             link: '/components/quill-editor',
+          },
+          {
+            text: 'Radio',
+            link: '/components/radio',
           },
         ],
       },
