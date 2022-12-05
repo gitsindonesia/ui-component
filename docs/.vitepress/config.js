@@ -141,6 +141,10 @@ export default defineConfig({
             link: '/components/button',
           },
           {
+            text: 'Checkbox',
+            link: '/components/checkbox',
+          },
+          {
             text: 'Editor',
             link: '/components/editor',
           },
