@@ -3,17 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [0.13.11](https://github.com/gitsindonesia/ui-component/compare/v0.13.10...v0.13.11) (2022-12-06)
+## [0.13.13](https://github.com/gitsindonesia/ui-component/compare/v0.13.12...v0.13.13) (2022-12-06)
 
+### Bug Fixes
+
+- **VList:** fix VListItem icon size ([#58](https://github.com/gitsindonesia/ui-component/issues/58)) ([866c363](https://github.com/gitsindonesia/ui-component/commit/866c363dca3ea2c7d687961acb5ffa53616e3854))
+
+## [0.13.11](https://github.com/gitsindonesia/ui-component/compare/v0.13.10...v0.13.11) (2022-12-06)
 
 ### Features
 
-* **VList:** revamp VList component ([#57](https://github.com/gitsindonesia/ui-component/issues/57)) ([fe50100](https://github.com/gitsindonesia/ui-component/commit/fe50100db1b9aca8e6aa854988b4f28f933e9724))
-
-
-
-
-
+- **VList:** revamp VList component ([#57](https://github.com/gitsindonesia/ui-component/issues/57)) ([fe50100](https://github.com/gitsindonesia/ui-component/commit/fe50100db1b9aca8e6aa854988b4f28f933e9724))
 
 ## [0.13.9](https://github.com/gitsindonesia/ui-component/compare/v0.13.8...v0.13.9) (2022-12-05)
 
