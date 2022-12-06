@@ -6,7 +6,7 @@
 
   /* item */
   --v-list-item-bg-color: theme('colors.transparent');
-  --v-list-item-color: theme('colors.gray.800');
+  --v-list-item-color: inherit;
   --v-list-item-padding-y: theme('padding.2');
   --v-list-item-padding-x: theme('padding.3');
   --v-list-item-border-radius: theme('borderRadius.DEFAULT');
