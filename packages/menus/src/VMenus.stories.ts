@@ -5,6 +5,21 @@ import vueRouter from 'storybook-vue3-router';
 import VAppBar from '@gits-id/app-bar';
 import VMenusCustom from './stories/VMenusCustom.vue';
 
+const items = [
+  {
+    text: 'Item',
+    to: '/',
+  },
+  {
+    text: 'Item 2',
+    to: '/',
+  },
+  {
+    text: 'Item 3',
+    to: '/',
+  },
+];
+
 export default {
   title: 'Components/Menus',
   component: VMenus,
@@ -13,20 +28,7 @@ export default {
     right: false,
     rightIcon: false,
     btnClass: '',
-    items: [
-      {
-        text: 'Item',
-        to: '/',
-      },
-      {
-        text: 'Item 2',
-        to: '/',
-      },
-      {
-        text: 'Item 3',
-        to: '/',
-      },
-    ],
+    items,
   },
 } as Meta;
 
@@ -83,6 +85,51 @@ Hover.parameters = {
     },
   },
 };
+
+
+export const MenuIcons: Story = (args) => ({
+  components: {
+    VMenus,
+  },
+  setup() {
+    const items = [
+      {
+        text: 'Home',
+        to: '/',
+        prependIcon: 'ri:home-line'
+      },
+      {
+        text: 'User',
+        to: '/',
+        prependIcon: 'ri:user-line'
+      },
+      {
+        text: 'Search',
+        to: '/',
+        prependIcon: 'ri:search-line'
+      },
+      {
+        divider: true
+      },
+      {
+        text: 'New Post',
+        to: '/',
+        appendIcon: 'ri:add-line'
+      },
+      {
+        text: 'New User',
+        to: '/',
+        appendIcon: 'ri:add-box-line'
+      },
+    ];
+    return {args, items};
+  },
+  template: `
+<VMenus v-bind="args" :items="items" />
+  `,
+});
+
+Template.decorators = [vueRouter()];
 
 export const CustomIcon = Template.bind({});
 CustomIcon.args = {'btn-icon': "ri:arrow-down-line"};

@@ -9,6 +9,7 @@ import VMenusItem from '../VMenusItem.vue';
     <VAppBar shadow color="primary">
       <VMenus
         label="Account"
+        popper-class="custom"
         items-class="!backdrop-blur-2xl !bg-white/30"
         :items-style="{
           '--v-menus-item-hover-bg-color': '#28A0F6',
@@ -75,7 +76,7 @@ import VMenusItem from '../VMenusItem.vue';
 </template>
 
 <style>
-:root {
+.custom {
   --v-menus-popper-border: none;
 }
 </style>
