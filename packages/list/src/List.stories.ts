@@ -63,6 +63,28 @@ export const Hover: Story = (args) => ({
   `,
 });
 
+export const Dense: Story = (args) => ({
+  components: {
+    List,
+    ListItem,
+    ListItemDivider,
+  },
+  setup() {
+    return {args};
+  },
+  template: `
+    <List v-bind="args" dense hover>
+      <ListItem>Item 1</ListItem>
+      <ListItem>Item 2</ListItem>
+      <ListItemDivider />
+      <ListItem>Item 3</ListItem>
+      <ListItemDivider />
+      <ListItem>Item 4</ListItem>
+      <ListItem>Item 5</ListItem>
+    </List>
+  `,
+});
+
 export const Shaped: Story = (args) => ({
   components: {
     List,

@@ -134,3 +134,11 @@
 .v-list-item-divider {
   @apply border-b;
 }
+
+/* dense */
+.v-list--dense .v-list-item,
+.v-list-item--dense {
+  --v-list-item-padding-y: theme('padding.1');
+  --v-list-item-padding-x: theme('padding.1');
+  --v-list-item-gap: theme('padding.1');
+}
