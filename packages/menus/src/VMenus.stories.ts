@@ -3,6 +3,7 @@ import VMenus from './VMenus.vue';
 import VMenusItem from './VMenusItem.vue';
 import vueRouter from 'storybook-vue3-router';
 import VAppBar from '@gits-id/app-bar';
+import VMenusCustom from './stories/VMenusCustom.vue';
 
 export default {
   title: 'Components/Menus',
@@ -151,5 +152,17 @@ export const Slots: Story = (args) => ({
     </template>
   </VMenus>
 </VAppBar>
+  `,
+});
+
+export const CustomStyle: Story = (args) => ({
+  components: {
+    VMenusCustom
+  },
+  setup() {
+    return {args};
+  },
+  template: `
+  <VMenusCustom />
   `,
 });
