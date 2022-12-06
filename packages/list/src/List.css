@@ -2,6 +2,7 @@
   --v-list-padding-y: theme('padding.1');
   --v-list-padding-x: theme('padding.1');
   --v-list-gap: theme('gap.0');
+  --v-list-bg-color: theme('colors.transparent');
 
   /* item */
   --v-list-item-bg-color: theme('colors.transparent');
@@ -40,11 +41,17 @@
   --v-list-item-header-line-height: var(--v-list-item-line-height);
   --v-list-item-header-text-transform: uppercase;
   --v-list-item-header-text-align: var(--v-list-item-text-align);
+
+  /* divider */
+  --v-list-item-divider-width: theme('borderWidth.DEFAULT');
+  --v-list-item-divider-color: theme('colors.gray.200');
+  --v-list-item-divider-style: solid;
 }
 
 .v-list {
   padding: var(--v-list-padding-y) var(--v-list-padding-x);
   gap: var(--v-list-gap);
+  background-color: var(--v-list-bg-color);
 
   @apply flex flex-col overflow-hidden;
 }
@@ -132,7 +139,11 @@
 
 /* item divider */
 .v-list-item-divider {
-  @apply border-b;
+  border-bottom-width: var(--v-list-item-divider-width);
+  border-bottom-style: var(--v-list-item-divider-style);
+  border-bottom-color: var(--v-list-item-divider-color);
+  
+  @apply my-1;
 }
 
 /* dense */

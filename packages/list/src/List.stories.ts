@@ -908,3 +908,33 @@ export const Event: Story = (args) => ({
     </List> 
   `,
 });
+
+export const CustomStyle: Story = (args) => ({
+  components: {
+    List,
+    ListItem,
+    ListItemDivider,
+  },
+  setup() {
+    return {args};
+  },
+  template: `
+    <List
+      v-bind="args"
+      hover
+      class="border rounded"
+      :style="{
+        '--v-list-item-hover-bg-color': '#4f46e5',
+        '--v-list-item-hover-color': 'white',
+      }"
+    >
+      <ListItem>Item 1</ListItem>
+      <ListItem>Item 2</ListItem>
+      <ListItemDivider />
+      <ListItem>Item 3</ListItem>
+      <ListItemDivider />
+      <ListItem>Item 4</ListItem>
+      <ListItem>Item 5</ListItem>
+    </List>
+  `,
+});
