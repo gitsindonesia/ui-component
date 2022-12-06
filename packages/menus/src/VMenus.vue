@@ -91,9 +91,7 @@ const menuPlacement = computed(() => {
       <List class="v-menus-items" :class="itemsClass" :style="itemsStyle">
         <slot name="items">
           <template v-for="item in items" :key="item.text">
-            <VMenusItem :class="itemClass" v-bind="{...item, small}">
-              {{ item.text }}
-            </VMenusItem>
+            <VMenusItem :class="itemClass" v-bind="{...item, small}" />
           </template>
         </slot>
       </List>
@@ -182,6 +180,10 @@ const menuPlacement = computed(() => {
   justify-content: var(--v-menus-item-justify-content);
   gap: var(--v-menus-item-gap);
   border-radius: var(--v-menus-item-border-radius);
+}
+
+.v-menus-item-text {
+  flex: 1;
 }
 
 .v-menus-item:hover {

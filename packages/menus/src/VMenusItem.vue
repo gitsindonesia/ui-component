@@ -38,7 +38,11 @@ withDefaults(
       class="v-menus-item-icon"
       :class="prependIconClass"
     />
-    <slot>{{ text }}</slot>
+    <div class="v-menus-item-text">
+      <slot>
+        {{ text }}
+      </slot>
+    </div>
     <Icon
       v-if="appendIcon"
       :name="appendIcon"
