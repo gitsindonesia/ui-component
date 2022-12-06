@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import {Icon} from '@iconify/vue';
+import Icon from '@gits-id/icon';
 import {computed, resolveComponent, useAttrs} from 'vue';
 import {RouteLocation} from 'vue-router';
+import '@gits-id/icon/dist/style.css';
 
 type Props = {
   to?: string | RouteLocation;
@@ -102,7 +103,7 @@ const hoverClasses = computed(() => {
         <slot name="prepend.icon">
           <Icon
             v-if="prependIcon"
-            :icon="prependIcon"
+            :name="prependIcon"
             :size="prependIconSize"
             class="v-list-item-icon v-list-item-icon--prepend"
             :class="prependIconClass"
@@ -132,7 +133,7 @@ const hoverClasses = computed(() => {
         <slot name="append.icon">
           <Icon
             v-if="appendIcon"
-            :icon="appendIcon"
+            :name="appendIcon"
             :size="appendIconSize"
             class="v-list-item-icon v-list-item-icon--append"
             :class="appendIconClass"

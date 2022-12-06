@@ -94,7 +94,7 @@
 }
 
 .v-list-item-icon {
-  @apply transition duration-300 transform w-5 h-5;
+  @apply transition duration-300 transform;
 }
 
 /* flush */

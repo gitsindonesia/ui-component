@@ -588,7 +588,7 @@ export const NavDrawerList: Story = (args) => ({
       {
         title: 'Long Text Management Example',
         to: '/',
-        prependIcon: 'ri:cart-line',
+        prependIcon: 'ri:chat-2-line',
       },
     ]);
     return {args, isOpen, isMini, menus};
@@ -602,7 +602,7 @@ export const NavDrawerList: Story = (args) => ({
       class="p-2"
     >
       <div class="text-center font-semibold">GITS</div>
-      <List>
+      <List flush>
         <template v-for="menu in menus" :key="menu.text">
           <ListCollapse v-if="menu.items">
             <template #activator="{isOpen, toggle}">
