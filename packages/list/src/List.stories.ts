@@ -51,8 +51,8 @@ export const Hover: Story = (args) => ({
     return {args};
   },
   template: `
-    <List v-bind="args">
-      <ListItem hover>Default</ListItem>
+    <List v-bind="args" hover>
+      <ListItem>Default</ListItem>
       <ListItem hover hover-class="hover:bg-primary-200 hover:text-primary-700">
         Custom Class
       </ListItem>
@@ -73,9 +73,9 @@ export const Shaped: Story = (args) => ({
     return {args};
   },
   template: `
-    <List v-bind="args">
-      <ListItem hover shaped v-for="i in 5" :key="i">Item</ListItem>
-      <ListItem hover shaped shaped-class="rounded-l-full">
+    <List v-bind="args" shaped hover>
+      <ListItem v-for="i in 5" :key="i">Item</ListItem>
+      <ListItem shaped shaped-class="rounded-l-full">
         Custom Shaped Class
       </ListItem>
     </List>
@@ -92,8 +92,11 @@ export const Rounded: Story = (args) => ({
     return {args};
   },
   template: `
-    <List v-bind="args">
-      <ListItem hover rounded v-for="i in 5" :key="i">Item</ListItem>
+    <List v-bind="args" rounded hover>
+      <ListItem v-for="i in 5" :key="i">Item</ListItem>
+    </List>
+    <List v-bind="args" hover>
+      <ListItem rounded v-for="i in 5" :key="i">Item</ListItem>
     </List>
   `,
 });
@@ -108,6 +111,9 @@ export const Tile: Story = (args) => ({
     return {args};
   },
   template: `
+    <List v-bind="args" tile hover>
+      <ListItem v-for="i in 5" :key="i">Item</ListItem>
+    </List>
     <List v-bind="args">
       <ListItem hover tile v-for="i in 5" :key="i">Item</ListItem>
     </List>
@@ -374,6 +380,7 @@ export const Collapse: Story = (args) => ({
       <ListCollapse>
         <template #activator="{isOpen, toggle}">
           <ListItem
+            as="button"
             prepend-icon="ri:book-line"
             append-icon="ri:arrow-down-s-line"
             :append-icon-class="isOpen ? 'rotate-180' : ''"
@@ -394,6 +401,7 @@ export const Collapse: Story = (args) => ({
       <ListCollapse>
         <template #activator="{isOpen, toggle}">
           <ListItem
+            as="button"
             prepend-icon="ri:user-line"
             append-icon="ri:arrow-down-s-line"
             :append-icon-class="isOpen ? 'rotate-180' : ''"
@@ -606,10 +614,11 @@ export const IosSettings: Story = (args) => ({
   },
   template: `
     <List
+      hover
+      flush
       class="border rounded-xl"
     >
       <ListItem
-        hover
         tile
         append-icon="ri:arrow-right-s-line"
         append-icon-class="text-gray-500"
@@ -631,6 +640,7 @@ export const IosSettings: Story = (args) => ({
       </ListItem>
     </List>
     <List
+      flush
       class="border rounded-xl mt-6 divide divide-y"
     >
       <ListItem
@@ -713,7 +723,7 @@ export const ListInDropdown: Story = (args) => ({
   },
   template: `
   <Dropdown label="Dropdown" panel-class="p-0">
-    <List>
+    <List flush>
       <ListItem
         hover
         tile

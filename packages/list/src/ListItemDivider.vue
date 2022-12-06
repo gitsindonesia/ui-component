@@ -1,3 +1,3 @@
 <template>
-  <div class="border-b" />
+  <div class="v-list-item-divider" />
 </template>

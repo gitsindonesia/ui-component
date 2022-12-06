@@ -10,9 +10,11 @@ type Props = {
   defaultClass?: string;
   prependClass?: string;
   prependIcon?: string;
+  prependIconSize?: string;
   prependIconClass?: string;
   appendClass?: string;
   appendIcon?: string;
+  appendIconSize?: string;
   appendIconClass?: string;
   hidePrepend?: boolean;
   hideAppend?: boolean;
@@ -28,17 +30,19 @@ type Props = {
 };
 
 const props = withDefaults(defineProps<Props>(), {
-  defaultClass: 'select-none truncate whitespace-nowrap',
-  prependClass: 'w-auto shrink-0',
-  appendClass: 'w-auto shrink-0',
+  defaultClass: '',
+  prependClass: '',
+  appendClass: '',
   hidePrepend: false,
   hideAppend: false,
-  hoverClass: 'hover:bg-gray-100',
+  hoverClass: 'v-list-item--hover',
   shaped: false,
-  shapedClass: 'rounded-r-full',
+  shapedClass: 'v-list-item--shaped',
   rounded: false,
   appendTextClass: '',
   tile: false,
+  prependIconSize: 'md',
+  appendIconSize: 'md',
 });
 
 const emit =
@@ -71,45 +75,48 @@ const attributes = computed(() => {
 const hoverClasses = computed(() => {
   return props.hover || props.to || props.href ? props.hoverClass : '';
 });
-
-const roundedClass = computed(() => {
-  if (props.rounded) return 'rounded-full';
-
-  return props.tile ? 'rounded-none' : 'rounded';
-});
 </script>
 
 <template>
   <component
     :is="is"
-    class="flex gap-4 px-3 py-2 transition duration-300 items-center"
+    class="v-list-item"
     :class="[
       hoverClasses,
-      roundedClass,
       {
+        'v-list-item--rounded': rounded,
+        'v-list-item--shaped': shaped,
+        'v-list-item--hoverable': hover,
+        'v-list-item--tile': tile,
         [shapedClass]: shaped,
       },
     ]"
     v-bind="attributes"
   >
     <slot v-if="!hidePrepend" name="prepend">
-      <div :class="prependClass" @click="emit('click:prepend')">
+      <div
+        class="v-list-item-prepend"
+        :class="prependClass"
+        @click="emit('click:prepend')"
+      >
         <slot name="prepend.icon">
           <Icon
+            v-if="prependIcon"
             :icon="prependIcon"
-            class="transition duration-300 transform w-5 h-5"
+            :size="prependIconSize"
+            class="v-list-item-icon v-list-item-icon--prepend"
             :class="prependIconClass"
             @click="emit('click:prependIcon')"
           />
         </slot>
       </div>
     </slot>
-    <div v-if="!hideText" class="flex-1" :class="defaultClass">
+    <div v-if="!hideText" class="v-list-item-content" :class="defaultClass">
       <slot />
     </div>
     <slot v-if="!hideAppend" name="append">
       <div
-        class="flex gap-1 items-center"
+        class="v-list-item-append"
         :class="appendClass"
         @click="emit('click:append')"
       >
@@ -120,8 +127,10 @@ const roundedClass = computed(() => {
         </slot>
         <slot name="append.icon">
           <Icon
+            v-if="appendIcon"
             :icon="appendIcon"
-            class="transition duration-300 transform w-5 h-5"
+            :size="appendIconSize"
+            class="v-list-item-icon v-list-item-icon--append"
             :class="appendIconClass"
             @click="emit('click:appendIcon')"
           />

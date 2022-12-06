@@ -1,0 +1,136 @@
+:root {
+  --v-list-padding-y: theme('padding.1');
+  --v-list-padding-x: theme('padding.1');
+  --v-list-gap: theme('gap.0');
+
+  /* item */
+  --v-list-item-bg-color: theme('colors.transparent');
+  --v-list-item-color: theme('colors.gray.800');
+  --v-list-item-padding-y: theme('padding.2');
+  --v-list-item-padding-x: theme('padding.3');
+  --v-list-item-border-radius: theme('borderRadius.DEFAULT');
+  --v-list-item-border-width: theme('borderWidth.DEFAULT');
+  --v-list-item-border-color: theme('colors.transparent');
+  --v-list-item-border-style: solid;
+  --v-list-item-gap: theme('gap.4');
+  --v-list-item-font-size: theme('fontSize.base');
+  --v-list-item-font-weight: theme('fontWeight.normal');
+  --v-list-item-line-height: theme('lineHeight.normal');
+  --v-list-item-text-align: left;
+
+  /* item hover */
+  --v-list-item-hover-bg-color: theme('colors.gray.100');
+  --v-list-item-hover-color: theme('colors.gray.700');
+
+  /* append & prepend */
+  --v-list-item-append-prepend-min-width: theme('width.5');
+
+  /* item header */
+  --v-list-item-header-bg-color: var(--v-list-item-bg-color);
+  --v-list-item-header-color: theme('colors.gray.500');
+  --v-list-item-header-padding-y: theme('padding.1');
+  --v-list-item-header-padding-x: var(--v-list-item-padding-x);
+  --v-list-item-header-border-radius: var(--v-list-item-border-radius);
+  --v-list-item-header-border-width: var(--v-list-item-border-width);
+  --v-list-item-header-border-color: var(--v-list-item-border-color);
+  --v-list-item-header-border-style: var(--v-list-item-border-style);
+  --v-list-item-header-gap: var(--v-list-item-gap);
+  --v-list-item-header-font-size: theme('fontSize.sm');
+  --v-list-item-header-font-weight: var(--v-list-item-font-weight);
+  --v-list-item-header-line-height: var(--v-list-item-line-height);
+  --v-list-item-header-text-transform: uppercase;
+  --v-list-item-header-text-align: var(--v-list-item-text-align);
+}
+
+.v-list {
+  padding: var(--v-list-padding-y) var(--v-list-padding-x);
+  gap: var(--v-list-gap);
+
+  @apply flex flex-col overflow-hidden;
+}
+
+.v-list-item {
+  padding: var(--v-list-item-padding-y) var(--v-list-item-padding-x);
+  gap: var(--v-list-item-gap);
+  background-color: var(--v-list-item-bg-color);
+  color: var(--v-list-item-color);
+  font-size: var(--v-list-item-font-size);
+  font-weight: var(--v-list-item-font-weight);
+  line-height: var(--v-list-item-line-height);
+  text-align: var(--v-list-item-text-align);
+  border-radius: var(--v-list-item-border-radius);
+
+  @apply flex items-center transition duration-300;
+}
+
+.v-list:not(.divide-y) .v-list-item {
+  border-width: var(--v-list-item-border-width);
+  border-style: var(--v-list-item-border-style);
+  border-color: var(--v-list-item-border-color);
+}
+
+.v-list-item--hover:hover,
+.v-list--hover .v-list-item:hover:not(.v-list-item--hoverable) {
+  background-color: var(--v-list-item-hover-bg-color);
+  color: var(--v-list-item-hover-color);
+}
+
+.v-list-item-content {
+  @apply flex-1 select-none truncate whitespace-nowrap;
+}
+
+.v-list-item-prepend,
+.v-list-item-append {
+  min-width: var(--v-list-item-append-prepend-min-width);
+
+  @apply flex gap-1 justify-center items-center;
+}
+
+.v-list-item-icon {
+  @apply transition duration-300 transform w-5 h-5;
+}
+
+/* flush */
+.v-list--flush {
+  padding: 0;
+}
+
+/* shaped */
+.v-list--shaped .v-list-item:not(.v-list-item--shaped) {
+  border-radius: 0px;
+  border-top-right-radius: theme('borderRadius.full');
+  border-bottom-right-radius: theme('borderRadius.full');
+}
+
+/* tile */
+.v-list--tile .v-list-item,
+.v-list-item--tile {
+  --v-list-item-border-radius: theme('borderRadius.none');
+}
+
+/* rounded */
+.v-list--rounded .v-list-item,
+.v-list-item--rounded {
+  --v-list-item-border-radius: theme('borderRadius.full');
+}
+
+/* item header */
+.v-list-item-header {
+  padding: var(--v-list-item-header-padding-y) var(--v-list-item-header-padding-x);
+  gap: var(--v-list-item-header-gap);
+  background-color: var(--v-list-item-header-bg-color);
+  color: var(--v-list-item-header-color);
+  font-size: var(--v-list-item-header-font-size);
+  font-weight: var(--v-list-item-header-font-weight);
+  line-height: var(--v-list-item-header-line-height);
+  border-width: var(--v-list-item-header-border-width);
+  border-style: var(--v-list-item-header-border-style);
+  border-color: var(--v-list-item-header-border-color);
+  text-transform: var(--v-list-item-header-text-transform);
+  text-align: var(--v-list-item-header-text-align);
+}
+
+/* item divider */
+.v-list-item-divider {
+  @apply border-b;
+}
