@@ -169,16 +169,20 @@ export default defineConfig({
             link: '/components/multi-select',
           },
           {
-            text: 'TextArea',
-            link: '/components/textarea',
-          },
-          {
             text: 'QuillEditor',
             link: '/components/quill-editor',
           },
           {
             text: 'Radio',
             link: '/components/radio',
+          },
+          {
+            text: 'RadioGroup',
+            link: '/components/radio-group',
+          },
+          {
+            text: 'TextArea',
+            link: '/components/textarea',
           },
         ],
       },
