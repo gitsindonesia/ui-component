@@ -149,6 +149,10 @@ export default defineConfig({
             link: '/components/editor',
           },
           {
+            text: 'FileInput',
+            link: '/components/file-input',
+          },
+          {
             text: 'Input',
             link: '/components/input',
           },
