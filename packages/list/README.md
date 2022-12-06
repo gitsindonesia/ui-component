@@ -31,6 +31,7 @@ This package provides 5 components: `List`, `ListItem`, `ListItemDivider`, `List
 ```vue
 <script setup lang="ts">
 import {List, ListItem, ListItemDivider} from '@gits-id/list';
+import '@gits-id/list/dist/style.css';
 </script>
 
 <template>
