@@ -56,6 +56,11 @@ const dropdown = plugin(function ({addComponents, theme}) {
     '.dropdown-button-icon': {
       color: 'var(--dropdown-button-icon-color)',
     },
+    '.dropdown-button-activator': {
+      display: 'flex',
+      alignItems: 'center',
+      gap: theme('spacing.2'),
+    }
   });
 });
 
