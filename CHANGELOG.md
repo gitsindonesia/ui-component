@@ -3,26 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [0.13.11](https://github.com/gitsindonesia/ui-component/compare/v0.13.10...v0.13.11) (2022-12-06)
-
+## [0.13.12](https://github.com/gitsindonesia/ui-component/compare/v0.13.11...v0.13.12) (2022-12-06)
 
 ### Bug Fixes
 
-* **Dropdown:** fix dropdown activator style ([3f28492](https://github.com/gitsindonesia/ui-component/commit/3f28492a27569172a358aaa94d8697819b5c7319))
-* **VMenus:** improve bundle size ([b216c8d](https://github.com/gitsindonesia/ui-component/commit/b216c8d41b46883088911cb1e7811b633811134b))
-* **VMenusItem:** fix text width when has appended icon ([2d8e27e](https://github.com/gitsindonesia/ui-component/commit/2d8e27ea5f16dc14a72d624a5b33c9af59373449))
+- **ui:** load list style ([7e59dad](https://github.com/gitsindonesia/ui-component/commit/7e59dada7d05ba6803eaf941b61a8ad47aec1920))
 
+## [0.13.11](https://github.com/gitsindonesia/ui-component/compare/v0.13.10...v0.13.11) (2022-12-06)
+
+### Bug Fixes
+
+- **Dropdown:** fix dropdown activator style ([3f28492](https://github.com/gitsindonesia/ui-component/commit/3f28492a27569172a358aaa94d8697819b5c7319))
+- **VMenus:** improve bundle size ([b216c8d](https://github.com/gitsindonesia/ui-component/commit/b216c8d41b46883088911cb1e7811b633811134b))
+- **VMenusItem:** fix text width when has appended icon ([2d8e27e](https://github.com/gitsindonesia/ui-component/commit/2d8e27ea5f16dc14a72d624a5b33c9af59373449))
 
 ### Features
 
-* **VList:** revamp VList component ([#57](https://github.com/gitsindonesia/ui-component/issues/57)) ([fe50100](https://github.com/gitsindonesia/ui-component/commit/fe50100db1b9aca8e6aa854988b4f28f933e9724))
-* **VMenus:** update CSS Properties for more customizable v-menus ([6b3b0df](https://github.com/gitsindonesia/ui-component/commit/6b3b0df404784af8a274a9090fd0813bdd7dd65e))
-* **VMenus:** update CSS Properties for more customizable v-menus ([#56](https://github.com/gitsindonesia/ui-component/issues/56)) ([a4c6594](https://github.com/gitsindonesia/ui-component/commit/a4c6594c36e616dc109dec1915352b80dfc602a3))
-
-
-
-
-
+- **VList:** revamp VList component ([#57](https://github.com/gitsindonesia/ui-component/issues/57)) ([fe50100](https://github.com/gitsindonesia/ui-component/commit/fe50100db1b9aca8e6aa854988b4f28f933e9724))
+- **VMenus:** update CSS Properties for more customizable v-menus ([6b3b0df](https://github.com/gitsindonesia/ui-component/commit/6b3b0df404784af8a274a9090fd0813bdd7dd65e))
+- **VMenus:** update CSS Properties for more customizable v-menus ([#56](https://github.com/gitsindonesia/ui-component/issues/56)) ([a4c6594](https://github.com/gitsindonesia/ui-component/commit/a4c6594c36e616dc109dec1915352b80dfc602a3))
 
 ## [0.13.10](https://github.com/gitsindonesia/ui-component/compare/v0.13.9...v0.13.10) (2022-12-05)
 

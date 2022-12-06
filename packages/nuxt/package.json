@@ -1,7 +1,7 @@
 {
   "name": "@gits-id/ui-nuxt",
   "description": "Nuxt module for GITS UI Component",
-  "version": "0.13.11",
+  "version": "0.13.12",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -22,7 +22,7 @@
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
   },
   "dependencies": {
-    "@gits-id/ui": "^0.13.11",
+    "@gits-id/ui": "^0.13.12",
     "@nuxt/kit": "^3.0.0"
   },
   "devDependencies": {

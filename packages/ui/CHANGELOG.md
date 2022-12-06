@@ -3,14 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.12](https://github.com/gitsindonesia/ui-component/compare/v0.13.11...v0.13.12) (2022-12-06)
+
+### Bug Fixes
+
+- **ui:** load list style ([7e59dad](https://github.com/gitsindonesia/ui-component/commit/7e59dada7d05ba6803eaf941b61a8ad47aec1920))
+
 ## [0.13.11](https://github.com/gitsindonesia/ui-component/compare/v0.13.10...v0.13.11) (2022-12-06)
 
 **Note:** Version bump only for package @gits-id/ui
-
-
-
-
-
 
 ## [0.13.10](https://github.com/gitsindonesia/ui-component/compare/v0.13.9...v0.13.10) (2022-12-05)
 
