@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/modal",
-  "version": "0.13.9",
+  "version": "0.13.11",
   "description": "GITS Modal Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,11 +15,11 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@gits-id/button": "^0.13.9",
+    "@gits-id/button": "^0.13.11",
     "vue": "^3.2.31"
   },
   "devDependencies": {
-    "@gits-id/tailwind-config": "^0.13.9",
+    "@gits-id/tailwind-config": "^0.13.11",
     "@gits-id/utils": "^0.13.0",
     "@headlessui/vue": "^1.6.0",
     "@vue/test-utils": "^2.0.0-rc.17",

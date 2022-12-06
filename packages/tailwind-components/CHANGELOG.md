@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.11](https://github.com/gitsindonesia/ui-component/compare/v0.13.10...v0.13.11) (2022-12-06)
+
+
+### Bug Fixes
+
+* **Dropdown:** fix dropdown activator style ([3f28492](https://github.com/gitsindonesia/ui-component/commit/3f28492a27569172a358aaa94d8697819b5c7319))
+
+
+
+
+
+
 ## [0.13.9](https://github.com/gitsindonesia/ui-component/compare/v0.13.8...v0.13.9) (2022-12-05)
 
 ### Bug Fixes

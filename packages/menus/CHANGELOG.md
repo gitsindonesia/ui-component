@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.11](https://github.com/gitsindonesia/ui-component/compare/v0.13.10...v0.13.11) (2022-12-06)
+
+
+### Bug Fixes
+
+* **VMenus:** improve bundle size ([b216c8d](https://github.com/gitsindonesia/ui-component/commit/b216c8d41b46883088911cb1e7811b633811134b))
+* **VMenusItem:** fix text width when has appended icon ([2d8e27e](https://github.com/gitsindonesia/ui-component/commit/2d8e27ea5f16dc14a72d624a5b33c9af59373449))
+
+
+### Features
+
+* **VMenus:** update CSS Properties for more customizable v-menus ([6b3b0df](https://github.com/gitsindonesia/ui-component/commit/6b3b0df404784af8a274a9090fd0813bdd7dd65e))
+
+
+
+
+
+
 ## [0.13.9](https://github.com/gitsindonesia/ui-component/compare/v0.13.8...v0.13.9) (2022-12-05)
 
 **Note:** Version bump only for package @gits-id/menus
