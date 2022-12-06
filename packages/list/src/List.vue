@@ -8,6 +8,7 @@ type Props = {
   hover?: boolean;
   flush?: boolean;
   dense?: boolean;
+  small?: boolean;
 };
 
 const props = withDefaults(defineProps<Props>(), {
@@ -26,6 +27,7 @@ const props = withDefaults(defineProps<Props>(), {
       'v-list--hover': hover,
       'v-list--flush': flush,
       'v-list--dense': dense,
+      'v-list--small': small,
     }"
   >
     <slot v-bind="props" />

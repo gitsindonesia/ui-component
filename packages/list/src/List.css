@@ -142,3 +142,13 @@
   --v-list-item-padding-x: theme('padding.1');
   --v-list-item-gap: theme('padding.1');
 }
+
+/* small */
+.v-list--small .v-list-item,
+.v-list-item--small {
+  --v-list-item-padding-y: theme('padding.1');
+  --v-list-item-padding-x: theme('padding.2');
+  --v-list-item-gap: theme('padding.2');
+  --v-list-item-font-size: theme('fontSize.sm');
+  --v-list-item-line-height: theme('lineHeight.normal');
+}
