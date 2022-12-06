@@ -146,6 +146,13 @@
   @apply my-1;
 }
 
+.v-list-item-divider--inset {
+  --margin: calc(var(--v-list-item-append-prepend-min-width) + var(--v-list-item-padding-x) + var(--v-list-item-gap));
+
+  width: calc(100% - var(--margin));
+  margin-left: var(--margin);
+}
+
 /* dense */
 .v-list--dense .v-list-item,
 .v-list-item--dense {

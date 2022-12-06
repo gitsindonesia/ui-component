@@ -938,3 +938,26 @@ export const CustomStyle: Story = (args) => ({
     </List>
   `,
 });
+
+export const DividerInset: Story = (args) => ({
+  components: {
+    List,
+    ListItem,
+    ListItemDivider,
+  },
+  setup() {
+    return {args};
+  },
+  template: `
+    <List
+      v-bind="args"
+      hover
+    >
+      <ListItem prepend-icon="ri:home-line">Item 1</ListItem>
+      <ListItemDivider inset />
+      <ListItem append-icon="ri:add-line">Item 3</ListItem>
+      <ListItemDivider inset />
+      <ListItem>Item 5</ListItem>
+    </List>
+  `,
+});
