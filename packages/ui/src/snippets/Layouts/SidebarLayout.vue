@@ -5,6 +5,8 @@ import Icon from '@gits-id/icon';
 import {ref, watch} from 'vue';
 import VBtn from '@gits-id/button';
 import {VInput} from '@gits-id/forms';
+import '@gits-id/forms/dist/style.css';
+import '@gits-id/list/dist/style.css';
 
 const accountMenus = ref<DropdownItemProps[]>([
   {
