@@ -153,6 +153,10 @@ export default defineConfig({
             link: '/components/file-input',
           },
           {
+            text: 'FormSelect',
+            link: '/components/form-select',
+          },
+          {
             text: 'Input',
             link: '/components/input',
           },
