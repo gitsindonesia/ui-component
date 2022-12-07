@@ -51,7 +51,7 @@ const props = defineProps({
   },
   checkedValue: {
     type: Boolean,
-    default: false,
+    default: true,
   },
   uncheckedValue: {
     type: Boolean,
@@ -93,7 +93,7 @@ const {
 } = useField<CheckboxValue>(name, rules, {
   type: 'checkbox',
   valueProp: props.value,
-  checkedValue: props.value,
+  checkedValue: props.checkedValue,
   uncheckedValue: props.uncheckedValue,
   validateOnValueUpdate: !isEagerValidation.value,
 });

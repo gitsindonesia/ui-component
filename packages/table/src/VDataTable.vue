@@ -10,11 +10,16 @@ import Icon from '@gits-id/icon';
 import '@gits-id/forms/dist/style.css';
 import '@gits-id/pagination/dist/style.css';
 
+type VDataTablePaginationProps = InstanceType<typeof VDataTablePagination>['$props']
+
 const props = defineProps({
   modelValue: {
-    type: Array,
+    type: Array as PropType<VDataTableItem[]>,
     default: () => [],
   },
+  /**
+   * @deprecated use `modelValue` instead
+   */
   value: {
     type: Array,
     default: () => [],
@@ -36,7 +41,7 @@ const props = defineProps({
     default: false,
   },
   pagination: {
-    type: Object,
+    type: Object as PropType<VDataTablePaginationProps>,
     default() {
       return {};
     },
@@ -119,7 +124,7 @@ const props = defineProps({
   },
   bodyClass: {
     type: String,
-    default: 'bg-white',
+    default: '',
   },
   footerClass: {
     type: String,
@@ -127,7 +132,7 @@ const props = defineProps({
   },
   columnActiveClass: {
     type: String,
-    default: 'text-primary-500 hover:text-primary-600',
+    default: '',
   },
   columnInactiveClass: {
     type: String,
@@ -159,7 +164,7 @@ const props = defineProps({
   },
   roundedClass: {
     type: String,
-    default: 'sm:rounded-lg',
+    default: '',
   },
   bordered: {
     type: Boolean,
@@ -269,9 +274,11 @@ const computedHeaders = computed(() =>
 const getThClass = (header: VDataTableHeader) => {
   const isActive = header.sorting && sortBy.value === header.value;
   return [
-    isActive ? props.columnActiveClass : props.columnInactiveClass,
     {
       [`v-table-th--${header.align}`]: !!header.align,
+      'v-table-th--active': isActive,
+      [props.columnActiveClass]: isActive,
+      [props.columnInactiveClass]: !isActive,
       'v-table-th--sticky': header.freeze,
       'v-table-th--sticky-right': header.positionFreeze === 'right',
       'v-table-th--sticky-left': header.positionFreeze === 'left',
@@ -587,14 +594,23 @@ const handleRowClick = (item: VDataTableItem, index: number) => {
   /* spacing */
   --v-table-padding-x: theme('spacing.6');
   --v-table-padding-y: theme('spacing.3');
+
   /* thead */
   --v-table-thead-bg-color: theme('colors.gray.50');
+
   /* th */
   --v-table-th-color: theme('colors.gray.800');
   --v-table-th-font-size: theme('fontSize.sm');
   --v-table-th-font-weight: theme('fontWeight.semibold');
   --v-table-th-white-space: nowrap;
   --v-table-th-text-align: left;
+
+  /* th active */
+  --v-table-th-active-color: theme('colors.primary.500');
+
+  /* th active hover */
+  --v-table-th-active-hover-color: theme('colors.primary.600');
+  
   /* td */
   --v-table-td-color: theme('colors.gray.800');
   --v-table-td-bg-color: theme('colors.white');
@@ -602,6 +618,7 @@ const handleRowClick = (item: VDataTableItem, index: number) => {
   --v-table-td-font-weight: theme('fontWeight.normal');
   --v-table-td-white-space: nowrap;
   --v-table-td-text-align: left;
+  
   /* dense */
   --v-table-dense-padding-x: theme('spacing.4');
   --v-table-dense-padding-y: theme('spacing.2');
@@ -649,8 +666,7 @@ const handleRowClick = (item: VDataTableItem, index: number) => {
   font-size: var(--v-table-th-font-size);
   font-weight: var(--v-table-th-font-weight);
 
-  @apply flex
-    items-center
+  @apply flex items-center
     truncate
     appearance-none
     uppercase
@@ -668,6 +684,14 @@ const handleRowClick = (item: VDataTableItem, index: number) => {
   white-space: var(--v-table-th-white-space);
   color: var(--v-table-th-color);
   text-align: var(--v-table-th-text-align);
+}
+
+.v-table-th--active {
+  color: var(--v-table-th-active-color);
+}
+
+.v-table-th--active:hover {
+  color: var(--v-table-th-active-hover-color);
 }
 
 .v-table-td {
@@ -697,6 +721,7 @@ const handleRowClick = (item: VDataTableItem, index: number) => {
   background-color: var(--v-table-striped-bg-color);
 }
 
+.v-table--selectable .v-table-td,
 .v-table--striped .v-table-td,
 .v-table--hover .v-table-td {
   --v-table-td-bg-color: transparent;
@@ -751,22 +776,40 @@ const handleRowClick = (item: VDataTableItem, index: number) => {
   @apply left-0;
 }
 
-/* alignment */
+/* th alignment */
 .v-table-th--left {
   --v-table-th-text-align: left;
 }
+.v-table-th--left .v-table-sort-button {
+  justify-content: flex-start;
+  width: 100%;
+}
+
 .v-table-th--right {
   --v-table-th-text-align: right;
 }
+.v-table-th--right .v-table-sort-button {
+  justify-content: flex-end;
+  width: 100%;
+}
+
 .v-table-th--center {
   --v-table-th-text-align: center;
 }
+.v-table-th--center .v-table-sort-button {
+  justify-content: center;
+  width: 100%;
+}
+
+/* td alignment */
 .v-table-td--left {
   --v-table-td-text-align: left;
 }
+
 .v-table-td--right {
   --v-table-td-text-align: right;
 }
+
 .v-table-td--center {
   --v-table-td-text-align: center;
 }

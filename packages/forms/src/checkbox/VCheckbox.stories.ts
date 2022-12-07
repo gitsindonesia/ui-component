@@ -1,4 +1,4 @@
-import MyCheckbox from './VCheckbox.vue';
+import VCheckbox from './VCheckbox.vue';
 import {ref} from 'vue';
 import {themeColors} from '@gits-id/utils/colors';
 import {sizes} from '@gits-id/utils/sizes';
@@ -9,7 +9,7 @@ import VBtn from '@gits-id/button';
 
 export default {
   title: 'Forms/Checkbox',
-  component: MyCheckbox,
+  component: VCheckbox,
   argTypes: {
     size: {
       control: 'select',
@@ -27,11 +27,15 @@ export default {
 } as Meta;
 
 const Template: Story = (args) => ({
-  components: {MyCheckbox},
+  components: {VCheckbox},
   setup() {
-    return {args};
+    const value = ref(false)
+    return {args, value};
   },
-  template: `<MyCheckbox v-bind='args'>${args.label}</MyCheckbox>`,
+  template: `
+    <VCheckbox v-bind='args' v-model="value" />
+    <pre>Value: {{ value }}</pre>
+  `,
 });
 
 export const Checkbox = Template.bind({});
@@ -57,7 +61,7 @@ Disabled.parameters = {
 };
 
 export const Multiple: Story<{}> = () => ({
-  components: {VCheckbox: MyCheckbox, VBtn},
+  components: {VCheckbox: VCheckbox, VBtn},
   setup() {
     const schema = object({
       genre: array().required(),
@@ -65,6 +69,9 @@ export const Multiple: Story<{}> = () => ({
 
     const {handleSubmit, resetForm, values, errors} = useForm({
       validationSchema: schema,
+      initialValues: {
+        genre: [null]
+      }
     });
 
     const onSubmit = handleSubmit((values) => {
@@ -121,7 +128,7 @@ export const Multiple: Story<{}> = () => ({
 });
 
 export const Validation: Story<{}> = () => ({
-  components: {VCheckbox: MyCheckbox, VBtn},
+  components: {VCheckbox: VCheckbox, VBtn},
   setup() {
     const schema = object({
       agreement: boolean()
@@ -161,7 +168,7 @@ export const Validation: Story<{}> = () => ({
 });
 
 export const ValidationMode: Story<{}> = () => ({
-  components: {VCheckbox: MyCheckbox, VBtn},
+  components: {VCheckbox: VCheckbox, VBtn},
   setup() {
     const schema = object({
       agreement_eager: boolean()
