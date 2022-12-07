@@ -719,6 +719,7 @@ const handleRowClick = (item: VDataTableItem, index: number) => {
   background-color: var(--v-table-striped-bg-color);
 }
 
+.v-table--selectable .v-table-td,
 .v-table--striped .v-table-td,
 .v-table--hover .v-table-td {
   --v-table-td-bg-color: transparent;
