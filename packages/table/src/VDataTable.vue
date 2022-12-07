@@ -663,8 +663,7 @@ const handleRowClick = (item: VDataTableItem, index: number) => {
   font-size: var(--v-table-th-font-size);
   font-weight: var(--v-table-th-font-weight);
 
-  @apply flex
-    items-center
+  @apply flex items-center
     truncate
     appearance-none
     uppercase
@@ -774,22 +773,40 @@ const handleRowClick = (item: VDataTableItem, index: number) => {
   @apply left-0;
 }
 
-/* alignment */
+/* th alignment */
 .v-table-th--left {
   --v-table-th-text-align: left;
 }
+.v-table-th--left .v-table-sort-button {
+  justify-content: flex-start;
+  width: 100%;
+}
+
 .v-table-th--right {
   --v-table-th-text-align: right;
 }
+.v-table-th--right .v-table-sort-button {
+  justify-content: flex-end;
+  width: 100%;
+}
+
 .v-table-th--center {
   --v-table-th-text-align: center;
 }
+.v-table-th--center .v-table-sort-button {
+  justify-content: center;
+  width: 100%;
+}
+
+/* td alignment */
 .v-table-td--left {
   --v-table-td-text-align: left;
 }
+
 .v-table-td--right {
   --v-table-td-text-align: right;
 }
+
 .v-table-td--center {
   --v-table-td-text-align: center;
 }
