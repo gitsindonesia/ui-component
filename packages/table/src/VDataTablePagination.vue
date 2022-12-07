@@ -3,6 +3,7 @@ import {computed, PropType, ref, toRefs, watch} from 'vue';
 import Pagination from '@gits-id/pagination';
 import VSelect from '@gits-id/select';
 import '@gits-id/select/dist/style.css';
+import '@gits-id/pagination/dist/style.css';
 
 type PaginationProps = InstanceType<typeof Pagination>['$props'];
 

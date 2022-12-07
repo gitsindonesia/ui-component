@@ -1,7 +1,6 @@
 import {VInput} from '@gits-id/forms';
 import {Meta, Story} from '@storybook/vue3';
-import qs from 'qs';
-import {onMounted, ref, watch, watchEffect} from 'vue';
+import {ref, watchEffect} from 'vue';
 import VDataTable from './VDataTable.vue';
 import type {VDataTableHeader} from './types';
 

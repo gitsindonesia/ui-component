@@ -1,13 +1,14 @@
 {
   "name": "@gits-id/table",
   "version": "0.13.11",
-  "description": "GITS Table Component",
+  "description": "GITS DataTable Table Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "npm run build",
     "test": "vitest"
   },
   "keywords": [
+    "table",
     "data-table",
     "gits",
     "ui-component"

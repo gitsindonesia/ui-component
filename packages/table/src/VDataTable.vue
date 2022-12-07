@@ -8,9 +8,10 @@ import {VCheckbox} from '@gits-id/forms';
 import {get} from '@gits-id/utils';
 import Icon from '@gits-id/icon';
 import '@gits-id/forms/dist/style.css';
-import '@gits-id/pagination/dist/style.css';
 
-type VDataTablePaginationProps = InstanceType<typeof VDataTablePagination>['$props']
+type VDataTablePaginationProps = InstanceType<
+  typeof VDataTablePagination
+>['$props'];
 
 const props = defineProps({
   modelValue: {
@@ -610,7 +611,7 @@ const handleRowClick = (item: VDataTableItem, index: number) => {
 
   /* th active hover */
   --v-table-th-active-hover-color: theme('colors.primary.600');
-  
+
   /* td */
   --v-table-td-color: theme('colors.gray.800');
   --v-table-td-bg-color: theme('colors.white');
@@ -618,7 +619,7 @@ const handleRowClick = (item: VDataTableItem, index: number) => {
   --v-table-td-font-weight: theme('fontWeight.normal');
   --v-table-td-white-space: nowrap;
   --v-table-td-text-align: left;
-  
+
   /* dense */
   --v-table-dense-padding-x: theme('spacing.4');
   --v-table-dense-padding-y: theme('spacing.2');
