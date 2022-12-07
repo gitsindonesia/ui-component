@@ -135,11 +135,11 @@ const props = defineProps({
   },
   hoverClass: {
     type: String,
-    default: 'transition duration-300 hover:bg-gray-100',
+    default: '',
   },
   stripedClass: {
     type: String,
-    default: 'even:bg-gray-100',
+    default: '',
   },
   tdClass: {
     type: String,
@@ -186,6 +186,7 @@ const emit =
     (e: 'update:modelValue', value: any): void;
     (e: 'update:value', value: any): void;
     (e: 'sort', payload: {sortBy: string; direction: SortDirection}): void;
+    (e: 'row:click', item: VDataTableItem): void;
   }>();
 
 const {
@@ -394,6 +395,17 @@ watch(
 const start = computed(() =>
   totalItems.value > 0 ? (page.value - 1) * itemsPerPage.value + 1 : 1,
 );
+
+const handleRowClick = (item: VDataTableItem, index: number) => {
+  if (selectable.value) {
+    if (selected.value.includes(item)) {
+      selected.value.splice(index, 1);
+    } else {
+      selected.value.push(item);
+    }
+  }
+  emit('row:click', item);
+};
 </script>
 
 <template>
@@ -410,6 +422,8 @@ const start = computed(() =>
         'v-table--flat': flat,
         'v-table--dense': dense,
         'v-table--tile': tile,
+        'v-table--hover': hover,
+        'v-table--selectable': selectable,
       },
       wrapperClass,
     ]"
@@ -498,6 +512,7 @@ const start = computed(() =>
               [hoverClass]: hover,
               [trClass]: Boolean(trClass),
             }"
+            @click="handleRowClick(item, index)"
           >
             <td
               v-for="header in headers"
@@ -590,6 +605,12 @@ const start = computed(() =>
   /* dense */
   --v-table-dense-padding-x: theme('spacing.4');
   --v-table-dense-padding-y: theme('spacing.2');
+
+  /* striped */
+  --v-table-striped-bg-color: theme('colors.gray.100');
+
+  /* hover */
+  --v-table-hover-bg-color: theme('colors.gray.100');
 }
 
 .v-table {
@@ -670,6 +691,28 @@ const start = computed(() =>
 /* striped */
 .v-table--striped .v-table-tbody {
   @apply divide-gray-200;
+}
+
+.v-table--striped .v-table-tr:nth-child(odd) {
+  background-color: var(--v-table-striped-bg-color);
+}
+
+.v-table--striped .v-table-td,
+.v-table--hover .v-table-td {
+  --v-table-td-bg-color: transparent;
+}
+
+/* hover */
+.v-table--selectable .v-table-tr:hover,
+.v-table--hover .v-table-tr:hover {
+  background-color: var(--v-table-hover-bg-color);
+
+  @apply transition duration-200;
+}
+
+/* selectable */
+.v-table--selectable .v-table-tr {
+  @apply cursor-pointer;
 }
 
 /* loading */
