@@ -1,7 +1,7 @@
-import { VInput } from '@gits-id/forms';
+import {VInput} from '@gits-id/forms';
 import {Meta, Story} from '@storybook/vue3';
 import qs from 'qs';
-import {onMounted, ref, watch} from 'vue';
+import {onMounted, ref, watch, watchEffect} from 'vue';
 import VDataTable from './VDataTable.vue';
 import type {VDataTableHeader} from './types';
 
@@ -269,7 +269,7 @@ export const Selectable: Story = (args) => ({
 export const Search: Story = (args) => ({
   components: {
     VDataTable,
-    VInput
+    VInput,
   },
   setup() {
     const search = ref('');
@@ -289,6 +289,22 @@ export const Search: Story = (args) => ({
   `,
 });
 
+function numberToStars(num: number) {
+  // Round the number to the nearest half integer
+  num = Math.round(num * 2) / 2;
+
+  // Calculate the number of full stars to display
+  const fullStars = Math.floor(num);
+
+  // Calculate whether to display a half star or not
+  const halfStar = num % 1 === 0.5 ? '½' : '';
+
+  // Calculate the number of empty stars to display
+  const emptyStars = 5 - fullStars - halfStar.length;
+
+  // Use the String.repeat() method to generate the appropriate number of full, half, and empty stars
+  return '★'.repeat(fullStars) + halfStar + '☆'.repeat(emptyStars);
+}
 
 export const ServerSide: Story = (args) => ({
   components: {
@@ -298,16 +314,26 @@ export const ServerSide: Story = (args) => ({
     const headers = ref<VDataTableHeader[]>([
       {
         text: 'Image',
-        value: 'image',
+        value: 'thumbnail',
         sortable: false,
       },
       {
         text: 'Title',
-        value: 'attributes.title',
+        value: 'title',
       },
       {
-        text: 'Published At',
-        value: 'publishedAt',
+        text: 'Price',
+        value: 'price',
+      },
+      {
+        text: 'Rating',
+        value: 'rating',
+        align: 'center',
+      },
+      {
+        text: 'Stock',
+        value: 'stock',
+        align: 'center',
       },
     ]);
 
@@ -317,79 +343,40 @@ export const ServerSide: Story = (args) => ({
     const totalItems = ref(0);
     const loading = ref(false);
 
-    const API_URL = 'https://bapi.warsono.id';
+    const API_URL = 'https://dummyjson.com/products';
 
-    const strapiUrl = (image: any) => API_URL + image?.data?.attributes?.url;
-
-    const toDate = (date: string) => {
-      const d = new Date(date);
-      return d.toLocaleDateString('id-ID', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-      });
-    };
-
-    const fetchData = (
-      params: {
-        page?: number;
-        itemsPerPage?: number;
-      } = {},
-    ) => {
+    const fetchData = () => {
       loading.value = true;
 
-      const query = qs.stringify(
-        {
-          populate: 'image',
-          pagination: {
-            page: params.page || page.value,
-            pageSize: params.itemsPerPage || itemsPerPage.value,
-          },
-        },
-        {
-          encodeValuesOnly: true, // prettify URL
-        },
-      );
+      const skip = (page.value - 1) * itemsPerPage.value;
 
-      fetch(`${API_URL}/api/articles?${query}`)
+      const query = new URLSearchParams({
+        limit: itemsPerPage.value.toString(),
+        skip: skip.toString(),
+      });
+
+      fetch(`${API_URL}?${query}`)
         .then((res) => res.json())
         .then((res) => {
-          items.value = res.data;
-          totalItems.value = res.meta.pagination.total;
-          itemsPerPage.value = res.meta.pagination.pageSize;
-          page.value = res.meta.pagination.page;
+          items.value = res.products;
+          totalItems.value = res.total;
         })
         .finally(() => {
           loading.value = false;
         });
     };
 
-    watch(page, (val) => {
-      fetchData({
-        page: val,
-      });
-    });
-
-    watch(itemsPerPage, (val) => {
-      fetchData({
-        itemsPerPage: val,
-      });
-    });
-
-    onMounted(() => {
-      fetchData();
-    });
+    watchEffect(fetchData);
 
     return {
       args,
       headers,
       items,
-      strapiUrl,
-      toDate,
       page,
       itemsPerPage,
       totalItems,
       loading,
+      numberToStars,
     };
   },
   template: `
@@ -402,16 +389,19 @@ export const ServerSide: Story = (args) => ({
       :loading="loading"
       server-side
     >
-      <template #item.image="{item}">
+      <template #item.thumbnail="{item}">
         <img
-          :src="strapiUrl(item.attributes.image)"
+          :src="item.thumbnail"
           width="50"
           height="50"
           class="max-w-full rounded shadow"
         />
       </template>
-      <template #item.publishedAt="{item}">
-        {{ toDate(item.attributes.publishedAt) }}
+      <template #item.price="{item}">
+        {{ item.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' }) }}
+      </template>
+      <template #item.rating="{item}">
+        {{ numberToStars(item.rating) }}
       </template>
     </v-data-table>
 
