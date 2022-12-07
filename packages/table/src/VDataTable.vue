@@ -10,11 +10,16 @@ import Icon from '@gits-id/icon';
 import '@gits-id/forms/dist/style.css';
 import '@gits-id/pagination/dist/style.css';
 
+type VDataTablePaginationProps = InstanceType<typeof VDataTablePagination>['$props']
+
 const props = defineProps({
   modelValue: {
-    type: Array,
+    type: Array as PropType<VDataTableItem[]>,
     default: () => [],
   },
+  /**
+   * @deprecated use `modelValue` instead
+   */
   value: {
     type: Array,
     default: () => [],
@@ -36,7 +41,7 @@ const props = defineProps({
     default: false,
   },
   pagination: {
-    type: Object,
+    type: Object as PropType<VDataTablePaginationProps>,
     default() {
       return {};
     },
