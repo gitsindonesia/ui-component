@@ -1,12 +1,16 @@
 # DataTable
 
+The `VDataTable` component is used for displaying tabular data. Features include sorting, searching, pagination, and row selection.
+
 ## Usage
+
+The standard data-table will by default render your data as simple rows.
 
 ### Basic Usage
 
 ```vue
 <script setup lang="ts">
-import {isOpen} from 'vue';
+import {ref} from 'vue';
 import type {VDataTableHeader} from '@gits-id/table';
 
 const states = ['active', 'inactive'];
@@ -251,19 +255,39 @@ const headers = ref<VDataTableHeader[]>([
 
 ```vue
 <script setup lang="ts">
+import {ref} from 'vue';
+
+function numberToStars(num: number) {
+  num = Math.round(num * 2) / 2;
+  const fullStars = Math.floor(num);
+  const halfStar = num % 1 === 0.5 ? '½' : '';
+  const emptyStars = 5 - fullStars - halfStar.length;
+  return '★'.repeat(fullStars) + halfStar + '☆'.repeat(emptyStars);
+}
+
 const headers = ref<VDataTableHeader[]>([
   {
     text: 'Image',
-    value: 'image',
+    value: 'thumbnail',
     sortable: false,
   },
   {
     text: 'Title',
-    value: 'attributes.title',
+    value: 'title',
   },
   {
-    text: 'Published At',
-    value: 'publishedAt',
+    text: 'Price',
+    value: 'price',
+  },
+  {
+    text: 'Rating',
+    value: 'rating',
+    align: 'center',
+  },
+  {
+    text: 'Stock',
+    value: 'stock',
+    align: 'center',
   },
 ]);
 
@@ -273,68 +297,30 @@ const itemsPerPage = ref(10);
 const totalItems = ref(0);
 const loading = ref(false);
 
-const API_URL = 'https://bapi.warsono.id';
+const API_URL = 'https://dummyjson.com/products';
 
-const strapiUrl = (image: any) => API_URL + image?.data?.attributes?.url;
-
-const toDate = (date: string) => {
-  const d = new Date(date);
-  return d.toLocaleDateString('id-ID', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
-};
-
-const fetchData = (
-  params: {
-    page?: number;
-    itemsPerPage?: number;
-  } = {},
-) => {
+const fetchData = () => {
   loading.value = true;
 
-  const query = qs.stringify(
-    {
-      populate: 'image',
-      pagination: {
-        page: params.page || page.value,
-        pageSize: params.itemsPerPage || itemsPerPage.value,
-      },
-    },
-    {
-      encodeValuesOnly: true, // prettify URL
-    },
-  );
+  const skip = (page.value - 1) * itemsPerPage.value;
 
-  fetch(`${API_URL}/api/articles?${query}`)
+  const query = new URLSearchParams({
+    limit: itemsPerPage.value.toString(),
+    skip: skip.toString(),
+  });
+
+  fetch(`${API_URL}?${query}`)
     .then((res) => res.json())
     .then((res) => {
-      items.value = res.data;
-      totalItems.value = res.meta.pagination.total;
-      itemsPerPage.value = res.meta.pagination.pageSize;
-      page.value = res.meta.pagination.page;
+      items.value = res.products;
+      totalItems.value = res.total;
     })
     .finally(() => {
       loading.value = false;
     });
 };
 
-watch(page, (val) => {
-  fetchData({
-    page: val,
-  });
-});
-
-watch(itemsPerPage, (val) => {
-  fetchData({
-    itemsPerPage: val,
-  });
-});
-
-onMounted(() => {
-  fetchData();
-});
+watchEffect(fetchData);
 </script>
 
 <template>
@@ -347,66 +333,91 @@ onMounted(() => {
     :loading="loading"
     server-side
   >
-    <template #item.image="{item}">
+    <template #item.thumbnail="{item}">
       <img
-        :src="strapiUrl(item.attributes.image)"
+        :src="item.thumbnail"
         width="50"
         height="50"
         class="max-w-full rounded shadow"
       />
     </template>
-    <template #item.publishedAt="{item}">
-      {{ toDate(item.attributes.publishedAt) }}
+    <template #item.price="{item}">
+      {{
+        item.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})
+      }}
+    </template>
+    <template #item.rating="{item}">
+      {{ numberToStars(item.rating) }}
     </template>
   </VDataTable>
 </template>
 ```
 
-<LivePreview src="components-datatable--server-side" />
+### Search
+
+```vue
+<script setup lang="ts">
+import {ref} from 'vue';
+
+const search = ref('');
+</script>
+
+<template>
+  <VInput
+    v-model="search"
+    placeholder="Search..."
+    wrapper-class="mb-4"
+    prepend-icon="ri:search-line"
+  />
+  <VDataTable v-model:search="search" />
+</template>
+```
+
+<LivePreview src="components-datatable--search" />
 
 ## Props
 
-| Name                                          | Type                                    | Default                                       |
-| --------------------------------------------- | --------------------------------------- | --------------------------------------------- |
-| [`modelValue`](#modelValue)                   | `Array`                                 | `[]`                                          |
-| [`value`](#value)                             | `Array`                                 | `[]`                                          |
-| [`headers`](#headers)                         | `Array as PropType<VDataTableHeader[]>` | `[]`                                          |
-| [`items`](#items)                             | `Array as PropType<VDataTableItem[]>`   | `[]`                                          |
-| [`itemsPerPage`](#itemsPerPage)               | `Number`                                | `10`                                          |
-| [`disableSorting`](#disableSorting)           | `Boolean`                               | `false`                                       |
-| [`pagination`](#pagination)                   | `Object`                                | `{}`                                          |
-| [`loading`](#loading)                         | `Boolean`                               | `false`                                       |
-| [`search`](#search)                           | `String`                                | `''`                                          |
-| [`searchBy`](#searchBy)                       | `[String, Array] as PropType<string>`   | `string[]`                                    |
-| [`loadingText`](#loadingText)                 | `String`                                | `'Loading...'`                                |
-| [`noDataText`](#noDataText)                   | `String`                                | `'Data tidak ditemukan'`                      |
-| [`footerColor`](#footerColor)                 | `String`                                | `''`                                          |
-| [`serverSide`](#serverSide)                   | `Boolean`                               | `false`                                       |
-| [`sortBy`](#sortBy)                           | `String`                                | `''`                                          |
-| [`sortDirection`](#sortDirection)             | `String as PropType<SortDirection>`     | `''`                                          |
-| [`hover`](#hover)                             | `Boolean`                               | `false`                                       |
-| [`striped`](#striped)                         | `Boolean`                               | `false`                                       |
-| [`dense`](#dense)                             | `Boolean`                               | `false`                                       |
-| [`hideFooter`](#hideFooter)                   | `Boolean`                               | `false`                                       |
-| [`totalItems`](#totalItems)                   | `Number`                                | `0`                                           |
-| [`page`](#page)                               | `Number`                                | `1`                                           |
-| [`mustSort`](#mustSort)                       | `Boolean`                               | `false`                                       |
-| [`noShadow`](#noShadow)                       | `Boolean`                               | `false`                                       |
-| [`selectable`](#selectable)                   | `Boolean`                               | `false`                                       |
-| [`headerClass`](#headerClass)                 | `String`                                | `'bg-gray-50'`                                |
-| [`bodyClass`](#bodyClass)                     | `String`                                | `'bg-white'`                                  |
-| [`footerClass`](#footerClass)                 | `String`                                | `''`                                          |
-| [`columnActiveClass`](#columnActiveClass)     | `String`                                | `'text-primary-500 hover:text-primary-600'`   |
-| [`columnInactiveClass`](#columnInactiveClass) | `String`                                | `'text-gray-600 hover:text-primary-500'`      |
-| [`hoverClass`](#hoverClass)                   | `String`                                | `'transition duration-300 hover:bg-gray-100'` |
-| [`stripedClass`](#stripedClass)               | `String`                                | `'even:bg-gray-100'`                          |
-| [`tdClass`](#tdClass)                         | `String`                                | `''`                                          |
-| [`trClass`](#trClass)                         | `String`                                | `''`                                          |
-| [`wrapperClass`](#wrapperClass)               | `String`                                | `''`                                          |
-| [`flat`](#flat)                               | `Boolean`                               | `false`                                       |
-| [`roundedClass`](#roundedClass)               | `String`                                | `'sm:rounded-lg'`                             |
-| [`bordered`](#bordered)                       | `Boolean`                               | `false`                                       |
-| [`tile`](#tile)                               | `Boolean`                               | `false`                                       |
+| Name                                          | Type                                    | Default                  |
+| --------------------------------------------- | --------------------------------------- | ------------------------ |
+| [`modelValue`](#modelValue)                   | `Array`                                 | `[]`                     |
+| [`value`](#value)                             | `Array`                                 | `[]`                     |
+| [`headers`](#headers)                         | `Array as PropType<VDataTableHeader[]>` | `[]`                     |
+| [`items`](#items)                             | `Array as PropType<VDataTableItem[]>`   | `[]`                     |
+| [`itemsPerPage`](#itemsPerPage)               | `Number`                                | `10`                     |
+| [`disableSorting`](#disableSorting)           | `Boolean`                               | `false`                  |
+| [`pagination`](#pagination)                   | `Object`                                | `{}`                     |
+| [`loading`](#loading)                         | `Boolean`                               | `false`                  |
+| [`search`](#search)                           | `String`                                | `''`                     |
+| [`searchBy`](#searchBy)                       | `[String, Array] as PropType<string>`   | `string[]`               |
+| [`loadingText`](#loadingText)                 | `String`                                | `'Loading...'`           |
+| [`noDataText`](#noDataText)                   | `String`                                | `'Data tidak ditemukan'` |
+| [`footerColor`](#footerColor)                 | `String`                                | `''`                     |
+| [`serverSide`](#serverSide)                   | `Boolean`                               | `false`                  |
+| [`sortBy`](#sortBy)                           | `String`                                | `''`                     |
+| [`sortDirection`](#sortDirection)             | `String as PropType<SortDirection>`     | `''`                     |
+| [`hover`](#hover)                             | `Boolean`                               | `false`                  |
+| [`striped`](#striped)                         | `Boolean`                               | `false`                  |
+| [`dense`](#dense)                             | `Boolean`                               | `false`                  |
+| [`hideFooter`](#hideFooter)                   | `Boolean`                               | `false`                  |
+| [`totalItems`](#totalItems)                   | `Number`                                | `0`                      |
+| [`page`](#page)                               | `Number`                                | `1`                      |
+| [`mustSort`](#mustSort)                       | `Boolean`                               | `false`                  |
+| [`noShadow`](#noShadow)                       | `Boolean`                               | `false`                  |
+| [`selectable`](#selectable)                   | `Boolean`                               | `false`                  |
+| [`headerClass`](#headerClass)                 | `String`                                | `''`                     |
+| [`bodyClass`](#bodyClass)                     | `String`                                | `''`                     |
+| [`footerClass`](#footerClass)                 | `String`                                | `''`                     |
+| [`columnActiveClass`](#columnActiveClass)     | `String`                                | `''`                     |
+| [`columnInactiveClass`](#columnInactiveClass) | `String`                                | `''`                     |
+| [`hoverClass`](#hoverClass)                   | `String`                                | `''`                     |
+| [`stripedClass`](#stripedClass)               | `String`                                | `''`                     |
+| [`tdClass`](#tdClass)                         | `String`                                | `''`                     |
+| [`trClass`](#trClass)                         | `String`                                | `''`                     |
+| [`wrapperClass`](#wrapperClass)               | `String`                                | `''`                     |
+| [`flat`](#flat)                               | `Boolean`                               | `false`                  |
+| [`roundedClass`](#roundedClass)               | `String`                                | `''`                     |
+| [`bordered`](#bordered)                       | `Boolean`                               | `false`                  |
+| [`tile`](#tile)                               | `Boolean`                               | `false`                  |
 
 ## Methods
 
@@ -529,27 +540,45 @@ None
 ## CSS Variables
 
 ```css
-/* spacing */
---v-table-padding-x: theme('spacing.6');
---v-table-padding-y: theme('spacing.3');
-/* thead */
---v-table-thead-bg-color: theme('colors.gray.50');
-/* th */
---v-table-th-color: theme('colors.gray.800');
---v-table-th-font-size: theme('fontSize.sm');
---v-table-th-font-weight: theme('fontWeight.semibold');
---v-table-th-white-space: nowrap;
---v-table-th-text-align: left;
-/* td */
---v-table-td-color: theme('colors.gray.800');
---v-table-td-bg-color: theme('colors.white');
---v-table-td-font-size: theme('fontSize.sm');
---v-table-td-font-weight: theme('fontWeight.normal');
---v-table-td-white-space: nowrap;
---v-table-td-text-align: left;
-/* dense */
---v-table-dense-padding-x: theme('spacing.4');
---v-table-dense-padding-y: theme('spacing.2');
+:root {
+  /* spacing */
+  --v-table-padding-x: theme('spacing.6');
+  --v-table-padding-y: theme('spacing.3');
+
+  /* thead */
+  --v-table-thead-bg-color: theme('colors.gray.50');
+
+  /* th */
+  --v-table-th-color: theme('colors.gray.800');
+  --v-table-th-font-size: theme('fontSize.sm');
+  --v-table-th-font-weight: theme('fontWeight.semibold');
+  --v-table-th-white-space: nowrap;
+  --v-table-th-text-align: left;
+
+  /* th active */
+  --v-table-th-active-color: theme('colors.primary.500');
+
+  /* th active hover */
+  --v-table-th-active-hover-color: theme('colors.primary.600');
+  
+  /* td */
+  --v-table-td-color: theme('colors.gray.800');
+  --v-table-td-bg-color: theme('colors.white');
+  --v-table-td-font-size: theme('fontSize.sm');
+  --v-table-td-font-weight: theme('fontWeight.normal');
+  --v-table-td-white-space: nowrap;
+  --v-table-td-text-align: left;
+
+  /* dense */
+  --v-table-dense-padding-x: theme('spacing.4');
+  --v-table-dense-padding-y: theme('spacing.2');
+
+  /* striped */
+  --v-table-striped-bg-color: theme('colors.gray.100');
+
+  /* hover */
+  --v-table-hover-bg-color: theme('colors.gray.100');
+}
 ```
 
 ## Manual Installation
@@ -557,12 +586,13 @@ None
 You can also install the `DataTable` component individually via `@gits-id/table` package:
 
 ```bash
-yarn install @gits-id/table
+npm i @gits-id/table
 ```
 
 ```vue
 <script setup lang="ts">
 import VDataTable from '@gits-id/table';
+import '@gits-id/table/dist/style.css';
 </script>
 
 <template>
