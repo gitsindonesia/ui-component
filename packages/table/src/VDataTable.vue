@@ -124,7 +124,7 @@ const props = defineProps({
   },
   bodyClass: {
     type: String,
-    default: 'bg-white',
+    default: '',
   },
   footerClass: {
     type: String,
@@ -132,7 +132,7 @@ const props = defineProps({
   },
   columnActiveClass: {
     type: String,
-    default: 'text-primary-500 hover:text-primary-600',
+    default: '',
   },
   columnInactiveClass: {
     type: String,
@@ -164,7 +164,7 @@ const props = defineProps({
   },
   roundedClass: {
     type: String,
-    default: 'sm:rounded-lg',
+    default: '',
   },
   bordered: {
     type: Boolean,
@@ -274,9 +274,11 @@ const computedHeaders = computed(() =>
 const getThClass = (header: VDataTableHeader) => {
   const isActive = header.sorting && sortBy.value === header.value;
   return [
-    isActive ? props.columnActiveClass : props.columnInactiveClass,
     {
       [`v-table-th--${header.align}`]: !!header.align,
+      'v-table-th--active': isActive,
+      [props.columnActiveClass]: isActive,
+      [props.columnInactiveClass]: !isActive,
       'v-table-th--sticky': header.freeze,
       'v-table-th--sticky-right': header.positionFreeze === 'right',
       'v-table-th--sticky-left': header.positionFreeze === 'left',
@@ -600,6 +602,13 @@ const handleRowClick = (item: VDataTableItem, index: number) => {
   --v-table-th-font-weight: theme('fontWeight.semibold');
   --v-table-th-white-space: nowrap;
   --v-table-th-text-align: left;
+
+  /* th active */
+  --v-table-th-active-color: theme('colors.primary.500');
+
+  /* th active hover */
+  --v-table-th-active-hover-color: theme('colors.primary.600');
+  
   /* td */
   --v-table-td-color: theme('colors.gray.800');
   --v-table-td-bg-color: theme('colors.white');
@@ -673,6 +682,14 @@ const handleRowClick = (item: VDataTableItem, index: number) => {
   white-space: var(--v-table-th-white-space);
   color: var(--v-table-th-color);
   text-align: var(--v-table-th-text-align);
+}
+
+.v-table-th--active {
+  color: var(--v-table-th-active-color);
+}
+
+.v-table-th--active:hover {
+  color: var(--v-table-th-active-hover-color);
 }
 
 .v-table-td {
