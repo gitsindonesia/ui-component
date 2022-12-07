@@ -1,3 +1,4 @@
+import { VInput } from '@gits-id/forms';
 import {Meta, Story} from '@storybook/vue3';
 import qs from 'qs';
 import {onMounted, ref, watch} from 'vue';
@@ -264,6 +265,30 @@ export const Selectable: Story = (args) => ({
     </pre>
   `,
 });
+
+export const Search: Story = (args) => ({
+  components: {
+    VDataTable,
+    VInput
+  },
+  setup() {
+    const search = ref('');
+    return {args, search};
+  },
+  template: `
+    <VInput
+      v-model="search"
+      placeholder="Search..."
+      wrapper-class="mb-4"
+      prepend-icon="ri:search-line"
+    />
+    <VDataTable
+      v-bind="args"
+      v-model:search="search"
+    />
+  `,
+});
+
 
 export const ServerSide: Story = (args) => ({
   components: {
