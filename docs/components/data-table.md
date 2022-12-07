@@ -438,6 +438,7 @@ None
 - `(e: 'update:modelValue', value: any): void;`
 - `(e: 'update:value', value: any): void;`
 - `(e: 'sort', payload: {sortBy: string; direction: SortDirection}): void;`
+- `(e: 'row:click', payload: {item: VDataTableItem; index: number}): void;`
 
 ## Slots
 
@@ -560,7 +561,7 @@ None
 
   /* th active hover */
   --v-table-th-active-hover-color: theme('colors.primary.600');
-  
+
   /* td */
   --v-table-td-color: theme('colors.gray.800');
   --v-table-td-bg-color: theme('colors.white');
