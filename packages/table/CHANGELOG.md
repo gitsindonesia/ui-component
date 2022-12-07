@@ -3,14 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.14](https://github.com/gitsindonesia/ui-component/compare/v0.13.13...v0.13.14) (2022-12-07)
+
+### Bug Fixes
+
+- **VDataTable:** fix duplicate css import ([4755402](https://github.com/gitsindonesia/ui-component/commit/4755402ac297ecde9fa79560486cfb034be12be2))
+
+### Features
+
+- **VDataTable:** improved `VDataTable` component ([#59](https://github.com/gitsindonesia/ui-component/issues/59)) ([653c0f1](https://github.com/gitsindonesia/ui-component/commit/653c0f1251bc1dbbb5f5e5fe85392d98324278eb))
+- **VDataTable:** striped, hover & selectable style ([7b2ccf1](https://github.com/gitsindonesia/ui-component/commit/7b2ccf17a171c6ba3514a886d5e91ca8cc03bac3))
+
 ## [0.13.11](https://github.com/gitsindonesia/ui-component/compare/v0.13.10...v0.13.11) (2022-12-06)
 
 **Note:** Version bump only for package @gits-id/table
-
-
-
-
-
 
 ## [0.13.9](https://github.com/gitsindonesia/ui-component/compare/v0.13.8...v0.13.9) (2022-12-05)
 

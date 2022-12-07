@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/multi-select",
-  "version": "0.13.11",
+  "version": "0.13.14",
   "description": "Vue Multi Select Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -17,7 +17,7 @@
   "license": "MIT",
   "dependencies": {
     "@gits-id/badge": "^0.13.11",
-    "@gits-id/forms": "^0.13.11",
+    "@gits-id/forms": "^0.13.14",
     "@gits-id/tooltip": "^0.13.11",
     "@vueuse/core": "^7.7.1",
     "vee-validate": "^4.6.1",

@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/forms",
-  "version": "0.13.11",
+  "version": "0.13.14",
   "description": "GITS Form Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
