@@ -9,7 +9,6 @@ import {get} from '@gits-id/utils';
 import Icon from '@gits-id/icon';
 import '@gits-id/forms/dist/style.css';
 import '@gits-id/pagination/dist/style.css';
-import '@gits-id/pagination/dist/style.css';
 
 const props = defineProps({
   modelValue: {
