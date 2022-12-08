@@ -17,4 +17,4 @@ export default {
     "undo",
     "redo",
   ],
-}
+} as Record<string, any>

@@ -17,6 +17,7 @@ type Props = {
   errorClass?: string;
   errorMessages?: string[];
   readonly?: string;
+  config?: Record<string, any>
 };
 
 const props = withDefaults(defineProps<Props>(), {
@@ -24,8 +25,9 @@ const props = withDefaults(defineProps<Props>(), {
   value: "",
   name: "",
   errorMessages: () => [],
-  labelClass: "block mb-2",
-  errorClass: "text-error-600 mt-1 text-sm",
+  labelClass: "",
+  errorClass: "",
+  config: () => editorConfig
 });
 
 const emit = defineEmits<{
@@ -62,35 +64,46 @@ const message = computed(() => props.errorMessages[0] || errorMessage.value);
 
 <template>
   <div :class="wrapperClass">
-    <label v-if="label" :for="name" :class="labelClass">
+    <label v-if="label" :for="name" class="v-editor-label" :class="labelClass">
       {{ label }}
     </label>
     <ckeditor
       :id="name"
       v-model="content"
+      class="v-editor"
       :editor="ClassicEditor"
-      :config="editorConfig"
+      :config="config"
     />
-    <div v-if="hasError" :class="errorClass">
+    <div v-if="hasError" class="v-editor-error" :class="errorClass">
       {{ message }}
     </div>
   </div>
 </template>
 
-<style scoped>
-:deep(.ck-editor__editable),
-:deep(.ql-editor) {
-  min-height: 300px;
+<style>
+:root {
+  --v-editor-height: 300px;
+
+  /* label */
+  --v-editor-label-font-size: var(--input-label-font-size, theme('fontSize.sm'));
+  --v-editor-label-font-weight: theme('fontWeight.normal');
+  --v-editor-label-display: var(--v-input-label-display, block);
+  --v-editor-label-margin-bottom: theme('margin.2');
 }
-ul,
-ol {
-  margin: 0.5em;
-  padding: 0.5em;
+
+:deep(.ck-editor__editable) {
+  min-height: var(--v-editor-height);
 }
-ul {
-  list-style: initial !important;
+
+.v-editor-label {
+  font-size: var(--v-checkbox-label-font-size);
+  font-weight: var(--v-checkbox-label-font-weight);
+  display: var(--v-checkbox-label-display);
+  margin-bottom: var(--v-checkbox-label-margin-bottom);
+  user-select: none;
 }
-ol {
-  list-style: decimal !important;
+
+.v-editor-error {
+  @apply text-error-500 mt-1 text-sm;
 }
 </style>

@@ -3,6 +3,7 @@ import VEditor from './VEditor.vue';
 import VBtn from '@gits-id/button';
 import {object, string} from 'yup';
 import {useForm} from 'vee-validate';
+import {ref} from 'vue';
 
 export default {
   title: 'Forms/Editor',
@@ -33,6 +34,19 @@ Default.parameters = {
     },
   },
 };
+
+
+export const VModel: Story<{}> = (args) => ({
+  components: {VEditor},
+  setup() {
+    const content = ref('')
+    return {args, content};
+  },
+  template: `
+<VEditor v-bind='args' v-model="content" />
+<pre>{{ content }}</pre>
+  `,
+});
 
 export const Label = Template.bind({});
 Label.args = {

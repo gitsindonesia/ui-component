@@ -20,8 +20,8 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@ckeditor/ckeditor5-build-classic": "^32.0.0",
-    "@ckeditor/ckeditor5-vue": "^2.0.1",
+    "@ckeditor/ckeditor5-build-classic": "^35.3.2",
+    "@ckeditor/ckeditor5-vue": "^4.0.1",
     "vee-validate": "^4.5.9",
     "vue": "^3.2.31"
   },
