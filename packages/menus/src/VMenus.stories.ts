@@ -25,9 +25,6 @@ export default {
   component: VMenus,
   argTypes: {},
   args: {
-    right: false,
-    rightIcon: false,
-    btnClass: '',
     items,
   },
 } as Meta;
