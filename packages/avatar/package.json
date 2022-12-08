@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/avatar",
-  "version": "0.13.15",
+  "version": "0.13.16",
   "description": "Avatar Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,11 +15,11 @@
   "author": "Warsono <warsono@gits.id>",
   "license": "MIT",
   "dependencies": {
-    "@gits-id/theme": "^0.13.15",
+    "@gits-id/theme": "^0.13.16",
     "vue": "^3.2.33"
   },
   "devDependencies": {
-    "@gits-id/tailwind-config": "^0.13.15",
+    "@gits-id/tailwind-config": "^0.13.16",
     "@gits-id/utils": "^0.13.0",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",

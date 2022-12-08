@@ -3,22 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.16](https://github.com/gitsindonesia/ui-component/compare/v0.13.15...v0.13.16) (2022-12-08)
+
+**Note:** Version bump only for package @gits-id/dropdown
+
 ## [0.13.15](https://github.com/gitsindonesia/ui-component/compare/v0.13.14...v0.13.15) (2022-12-08)
 
 **Note:** Version bump only for package @gits-id/dropdown
 
-
-
-
-
 ## [0.13.11](https://github.com/gitsindonesia/ui-component/compare/v0.13.10...v0.13.11) (2022-12-06)
 
 **Note:** Version bump only for package @gits-id/dropdown
-
-
-
-
-
 
 ## [0.13.9](https://github.com/gitsindonesia/ui-component/compare/v0.13.8...v0.13.9) (2022-12-05)
 

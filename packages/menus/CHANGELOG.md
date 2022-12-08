@@ -3,17 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [0.13.15](https://github.com/gitsindonesia/ui-component/compare/v0.13.14...v0.13.15) (2022-12-08)
-
+## [0.13.16](https://github.com/gitsindonesia/ui-component/compare/v0.13.15...v0.13.16) (2022-12-08)
 
 ### Bug Fixes
 
-* **UI:** update `defaultColors` value, `VMenus` supports link, `AppBar` transparent & custom color and `VCheckbox` inherit style ([#60](https://github.com/gitsindonesia/ui-component/issues/60)) ([0bbca3f](https://github.com/gitsindonesia/ui-component/commit/0bbca3f92ef7d47ec7e0922ae686798948f488ba))
+- **VMenus:** fix `newTab` type ([5e15df8](https://github.com/gitsindonesia/ui-component/commit/5e15df87352306bf767ef5af725bc1c185356748))
 
+## [0.13.15](https://github.com/gitsindonesia/ui-component/compare/v0.13.14...v0.13.15) (2022-12-08)
 
+### Bug Fixes
 
-
-
+- **UI:** update `defaultColors` value, `VMenus` supports link, `AppBar` transparent & custom color and `VCheckbox` inherit style ([#60](https://github.com/gitsindonesia/ui-component/issues/60)) ([0bbca3f](https://github.com/gitsindonesia/ui-component/commit/0bbca3f92ef7d47ec7e0922ae686798948f488ba))
 
 ## [0.13.13](https://github.com/gitsindonesia/ui-component/compare/v0.13.12...v0.13.13) (2022-12-06)
 

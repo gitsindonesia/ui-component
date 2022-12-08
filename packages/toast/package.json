@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/toast",
-  "version": "0.13.15",
+  "version": "0.13.16",
   "description": "Vue Toast Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,15 +15,15 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@gits-id/button": "^0.13.15",
-    "@gits-id/icon": "^0.13.15",
+    "@gits-id/button": "^0.13.16",
+    "@gits-id/icon": "^0.13.16",
     "pinia": "^2.0.11",
     "vee-validate": "^4.5.9",
     "vue": "^3.2.31",
     "vuex": "^4.0.2"
   },
   "devDependencies": {
-    "@gits-id/tailwind-config": "^0.13.15",
+    "@gits-id/tailwind-config": "^0.13.16",
     "@gits-id/utils": "^0.13.0",
     "@headlessui/vue": "^1.6.0",
     "@vue/test-utils": "^2.0.0-rc.17",
