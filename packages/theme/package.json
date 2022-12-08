@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/theme",
-  "version": "0.13.0",
+  "version": "0.13.15",
   "description": "GITS Default Tailwind Colors",
   "main": "colors.js",
   "scripts": {},

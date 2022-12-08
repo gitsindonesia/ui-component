@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/breadcrumbs",
-  "version": "0.13.11",
+  "version": "0.13.15",
   "description": "GITS Breadcrumbs Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,12 +15,12 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@gits-id/icon": "^0.13.11",
+    "@gits-id/icon": "^0.13.15",
     "vue": "^3.2.33",
     "vue-router": "^4.1.5"
   },
   "devDependencies": {
-    "@gits-id/theme": "^0.13.0",
+    "@gits-id/theme": "^0.13.15",
     "@gits-id/utils": "^0.13.0",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.15](https://github.com/gitsindonesia/ui-component/compare/v0.13.14...v0.13.15) (2022-12-08)
+
+
+### Bug Fixes
+
+* update defaultColors ([ba6de73](https://github.com/gitsindonesia/ui-component/commit/ba6de730dd8e0b6f60875ca12a9875c2f6a713a4))
+
+
+
+
+
+
 # [0.13.0](https://github.com/gitsindonesia/ui-component/compare/v0.12.0...v0.13.0) (2022-11-24)
 
 **Note:** Version bump only for package @gits-id/theme

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.15](https://github.com/gitsindonesia/ui-component/compare/v0.13.14...v0.13.15) (2022-12-08)
+
+
+### Bug Fixes
+
+* **UI:** update `defaultColors` value, `VMenus` supports link, `AppBar` transparent & custom color and `VCheckbox` inherit style ([#60](https://github.com/gitsindonesia/ui-component/issues/60)) ([0bbca3f](https://github.com/gitsindonesia/ui-component/commit/0bbca3f92ef7d47ec7e0922ae686798948f488ba))
+
+
+
+
+
 ## [0.13.11](https://github.com/gitsindonesia/ui-component/compare/v0.13.10...v0.13.11) (2022-12-06)
 
 **Note:** Version bump only for package @gits-id/app-bar
