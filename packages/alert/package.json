@@ -34,7 +34,7 @@
     "@heroicons/vue": "^1.0.6",
     "@iconify/vue": "^3.2.1"
   },
-  "gitHead": "a66f8d89ce157b912642d9b1f1e2a80991e12ce3",
+  "gitHead": "8104720a06b60ca92b79f9b6ce89108faa68bba5",
   "main": "dist/alert.umd.js",
   "unpkg": "dist/alert.iife.js",
   "jsdelivr": "dist/alert.iife.js",
