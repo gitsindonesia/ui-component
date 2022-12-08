@@ -3,7 +3,7 @@ import {ListItemDivider} from '@gits-id/list';
 import Icon from '@gits-id/icon';
 import '@gits-id/icon/dist/style.css';
 import {RouteLocation} from 'vue-router';
-import { computed, resolveComponent, useAttrs } from 'vue';
+import {computed, resolveComponent, useAttrs} from 'vue';
 
 const props = withDefaults(
   defineProps<{
@@ -18,19 +18,19 @@ const props = withDefaults(
     appendIconClass?: string;
     to?: RouteLocation | string;
     href?: string;
-    newTab?: string;
+    newTab?: boolean;
     as?: string;
   }>(),
   {
     prependIconSize: 'sm',
     appendIconSize: 'sm',
-    as: 'button'
+    as: 'button',
   },
 );
 
 const computedComponent = computed(() => {
   if (props.to) {
-    return resolveComponent('router-link')
+    return resolveComponent('router-link');
   }
 
   if (props.href) {
@@ -42,14 +42,14 @@ const computedComponent = computed(() => {
 
 const computedAttrs = computed(() => {
   return {
-    ...(props.as === 'button' ? { type: 'button' } : {}),
+    ...(props.as === 'button' ? {type: 'button'} : {}),
     to: props.to ? props.to : undefined,
     href: props.href ? props.href : undefined,
     target: props.newTab ? '_blank' : undefined,
     rel: props.newTab ? 'noopener noreferrer' : undefined,
     ...useAttrs(),
   };
-})
+});
 </script>
 
 <template>
