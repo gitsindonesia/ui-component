@@ -35,7 +35,7 @@ const props = defineProps({
    * @deprecated
    */
   confirmColor: {
-    type: String as PropType<DefaultColors | 'default' | string>,
+    type: String as PropType<DefaultColors | string>,
     default: 'primary'
   },
   /**
@@ -117,7 +117,7 @@ const props = defineProps({
     default: false
   },
   color: {
-    type: String as PropType<DefaultColors | 'default' | 'white' | string>,
+    type: String as PropType<DefaultColors | 'white' | string>,
     default: 'default'
   },
   /**

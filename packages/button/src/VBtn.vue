@@ -5,7 +5,7 @@ import type {RouteLocationRaw} from 'vue-router';
 import VIcon from '@gits-id/icon';
 import '@gits-id/icon/dist/style.css';
 
-export type ButtonColors = DefaultColors | 'default' | string;
+export type ButtonColors = DefaultColors | string;
 
 export interface Props {
   color?: ButtonColors;

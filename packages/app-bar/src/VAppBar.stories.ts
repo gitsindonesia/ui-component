@@ -1,10 +1,11 @@
 import VAppBar from './VAppBar.vue';
 import {Story, Meta} from '@storybook/vue3';
-import {defaultColors} from '@gits-id/theme/defaultTheme';
+import {defaultColors, defaultShadows} from '@gits-id/theme/defaultTheme';
 import {ref} from 'vue';
 import Icon from '@gits-id/icon';
 import Button from '@gits-id/button';
 import {VInput} from '@gits-id/forms';
+import '@gits-id/forms/dist/style.css';
 
 export default {
   title: 'Components/AppBar',
@@ -74,7 +75,7 @@ Bordered.parameters = {
 export const Shadow: Story<{}> = (args) => ({
   components: {VAppBar},
   setup() {
-    const shadows = [true, 'sm', 'md', 'lg', 'xl', '2xl', 'inner', 'none'];
+    const shadows = defaultShadows;
 
     return {args, shadows};
   },

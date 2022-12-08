@@ -6,7 +6,7 @@ import {defaultColors} from '@gits-id/theme/defaultTheme';
 import VBtnGroup from './VBtnGroup.vue';
 import VBtnToolbar from './VBtnToolbar.vue';
 
-const colors = ['default', 'dark', ...defaultColors];
+const colors = defaultColors;
 const defaultSizes = ['sm', 'md', 'lg'];
 
 export default {
