@@ -161,6 +161,12 @@ const handleChange = (m: any) => {
   --v-checkbox-border-style: solid;
   --v-checkbox-border-color: theme('colors.gray.500');
   --v-checkbox-border-radius: theme('borderRadius.DEFAULT');
+
+  /* label */
+  --v-checkbox-label-font-size: var(--input-label-font-size, theme('fontSize.sm'));
+  --v-checkbox-label-font-weight: theme('fontWeight.normal');
+  --v-checkbox-label-display: var(--v-input-label-display, block);
+  --v-checkbox-label-margin-top: 1px;
 }
 
 .v-checkbox {
@@ -176,6 +182,11 @@ const handleChange = (m: any) => {
     disabled:bg-gray-100 disabled:border-gray-200 disabled:cursor-not-allowed;
 }
 .v-checkbox-label {
+  font-size: var(--v-checkbox-label-font-size);
+  font-weight: var(--v-checkbox-label-font-weight);
+  display: var(--v-checkbox-label-display);
+  margin-top: var(--v-checkbox-label-margin-top);
+
   @apply select-none;
 }
 .v-checkbox-error {

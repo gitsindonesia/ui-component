@@ -81,6 +81,7 @@ const changePlacement = (position: string) => {
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
+import {defaultColors} from '@gits-id/theme/defaultTheme';
 
 const isOpen = ref(true);
 const color = ref('default');
@@ -93,7 +94,7 @@ const changecolor = (position: string) => {
   }, 200);
 };
 
-const colors = [...defaultColors, 'default', 'white'];
+const colors = [...defaultColors, 'white'];
 </script>
 
 <template>

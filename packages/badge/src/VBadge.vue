@@ -4,7 +4,7 @@ import Icon from '@gits-id/icon';
 import '@gits-id/icon/dist/style.css';
 import {DefaultColors, DefaultRounded} from '@gits-id/theme/defaultTheme';
 
-export type BadgeColors = DefaultColors | 'default' | string;
+export type BadgeColors = DefaultColors | string;
 
 const props = defineProps({
   color: {

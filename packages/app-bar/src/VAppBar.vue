@@ -8,7 +8,7 @@ export default {
 import {toRefs, ref, watch, PropType} from 'vue';
 import type {DefaultColors, DefaultShadows} from '@gits-id/theme/defaultTheme';
 
-export type AppBarColors = DefaultColors | 'default';
+export type AppBarColors = DefaultColors | 'transparent' | string
 
 const props = defineProps({
   modelValue: {

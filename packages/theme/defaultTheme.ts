@@ -5,6 +5,8 @@ export const defaultColors = [
   'warning',
   'success',
   'error',
+  'default',
+  'dark',
 ] as const;
 
 export type DefaultColors = typeof defaultColors[number];

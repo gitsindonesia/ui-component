@@ -115,7 +115,7 @@ export const Colors: Story<{}> = (args) => ({
         isOpen.value = true
       }, 200)
     }
-    const colors = [...defaultColors, 'default', 'white'];
+    const colors = [...defaultColors, 'white'];
     return {args, isOpen, colors, color, changecolor};
   },
   template: `

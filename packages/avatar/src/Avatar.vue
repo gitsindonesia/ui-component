@@ -7,7 +7,7 @@ import {
 } from '@gits-id/theme/defaultTheme';
 
 export type Props = {
-  color?: DefaultColors;
+  color?: DefaultColors | string;
   size?: DefaultSizes | string | number;
   shape?: 'square' | 'circle' | 'rounded';
   alt?: string;

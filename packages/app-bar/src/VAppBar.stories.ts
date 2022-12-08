@@ -1,10 +1,11 @@
 import VAppBar from './VAppBar.vue';
 import {Story, Meta} from '@storybook/vue3';
-import {defaultColors} from '@gits-id/theme/defaultTheme';
+import {defaultColors, defaultShadows} from '@gits-id/theme/defaultTheme';
 import {ref} from 'vue';
 import Icon from '@gits-id/icon';
 import Button from '@gits-id/button';
 import {VInput} from '@gits-id/forms';
+import '@gits-id/forms/dist/style.css';
 
 export default {
   title: 'Components/AppBar',
@@ -74,7 +75,7 @@ Bordered.parameters = {
 export const Shadow: Story<{}> = (args) => ({
   components: {VAppBar},
   setup() {
-    const shadows = [true, 'sm', 'md', 'lg', 'xl', '2xl', 'inner', 'none'];
+    const shadows = defaultShadows;
 
     return {args, shadows};
   },
@@ -314,5 +315,38 @@ export const WithSearchBar: Story<{}> = (args) => ({
     </nav>
   </div>
 </v-app-bar>
+`,
+});
+
+
+export const Transparent: Story<{}> = (args) => ({
+  components: {VAppBar},
+  template: `
+<main class="mt-5 h-screen bg-primary-500 text-white">
+  <v-app-bar
+    color="transparent"
+    fixed
+    shadow
+  >
+    Transparent AppBar
+  </v-app-bar>
+  <p>lorem </p>
+</main>
+`,
+});
+
+export const BackdropBlur: Story<{}> = (args) => ({
+  components: {VAppBar},
+  template: `
+<main class="mt-5 h-screen bg-primary-500 text-white">
+  <v-app-bar
+    fixed
+    shadow
+    class="bg-black/30 backdrop-blur-xl text-white"
+  >
+    Transparent AppBar
+  </v-app-bar>
+  <p>lorem </p>
+</main>
 `,
 });
