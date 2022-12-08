@@ -7,16 +7,16 @@ import VMenusCustom from './stories/VMenusCustom.vue';
 
 const items = [
   {
-    text: 'Item',
+    text: 'Home',
     to: '/',
   },
   {
-    text: 'Item 2',
-    to: '/',
+    text: 'About',
+    to: '/faq',
   },
   {
-    text: 'Item 3',
-    to: '/',
+    text: 'FAQ',
+    to: '/faq',
   },
 ];
 
@@ -86,7 +86,6 @@ Hover.parameters = {
   },
 };
 
-
 export const MenuIcons: Story = (args) => ({
   components: {
     VMenus,
@@ -96,30 +95,30 @@ export const MenuIcons: Story = (args) => ({
       {
         text: 'Home',
         to: '/',
-        prependIcon: 'ri:home-line'
+        prependIcon: 'ri:home-line',
       },
       {
         text: 'User',
         to: '/',
-        prependIcon: 'ri:user-line'
+        prependIcon: 'ri:user-line',
       },
       {
         text: 'Search',
         to: '/',
-        prependIcon: 'ri:search-line'
+        prependIcon: 'ri:search-line',
       },
       {
-        divider: true
+        divider: true,
       },
       {
         text: 'New Post',
         to: '/',
-        appendIcon: 'ri:add-line'
+        appendIcon: 'ri:add-line',
       },
       {
         text: 'New User',
         to: '/',
-        appendIcon: 'ri:add-box-line'
+        appendIcon: 'ri:add-box-line',
       },
     ];
     return {args, items};
@@ -129,10 +128,55 @@ export const MenuIcons: Story = (args) => ({
   `,
 });
 
-Template.decorators = [vueRouter()];
+export const Href: Story = (args) => ({
+  components: {
+    VMenus,
+  },
+  setup() {
+    const items = [
+      {
+        text: 'Google.com',
+        href: 'https://www.google.com',
+      },
+      {
+        text: '(New Tab) Google.com',
+        href: 'https://www.google.com',
+        newTab: true,
+      },
+    ];
+    return {args, items};
+  },
+  template: `
+<VMenus v-bind="args" :items="items" />
+<router-view />
+  `,
+});
+
+Template.decorators = [
+  vueRouter([
+    {
+      component: {
+        template: '<div>Home</div>',
+      },
+      path: '/',
+    },
+    {
+      component: {
+        template: '<div>About</div>',
+      },
+      path: '/about',
+    },
+    {
+      component: {
+        template: '<div>FAQ</div>',
+      },
+      path: '/faq',
+    },
+  ]),
+];
 
 export const CustomIcon = Template.bind({});
-CustomIcon.args = {'btn-icon': "ri:arrow-down-line"};
+CustomIcon.args = {'btn-icon': 'ri:arrow-down-line'};
 CustomIcon.parameters = {
   docs: {
     source: {
@@ -204,7 +248,7 @@ export const Slots: Story = (args) => ({
 
 export const CustomStyle: Story = (args) => ({
   components: {
-    VMenusCustom
+    VMenusCustom,
   },
   setup() {
     return {args};

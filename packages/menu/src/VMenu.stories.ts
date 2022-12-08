@@ -1,7 +1,6 @@
 import {Meta, Story} from '@storybook/vue3';
 import VMenu from './VMenu.vue';
 import vueRouter from 'storybook-vue3-router';
-import {Icon} from '@gits-id/icon';
 
 export default {
   title: 'Components/Menu',
