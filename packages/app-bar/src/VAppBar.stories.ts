@@ -317,3 +317,36 @@ export const WithSearchBar: Story<{}> = (args) => ({
 </v-app-bar>
 `,
 });
+
+
+export const Transparent: Story<{}> = (args) => ({
+  components: {VAppBar},
+  template: `
+<main class="mt-5 h-screen bg-primary-500 text-white">
+  <v-app-bar
+    color="transparent"
+    fixed
+    shadow
+  >
+    Transparent AppBar
+  </v-app-bar>
+  <p>lorem </p>
+</main>
+`,
+});
+
+export const BackdropBlur: Story<{}> = (args) => ({
+  components: {VAppBar},
+  template: `
+<main class="mt-5 h-screen bg-primary-500 text-white">
+  <v-app-bar
+    fixed
+    shadow
+    class="bg-black/30 backdrop-blur-xl text-white"
+  >
+    Transparent AppBar
+  </v-app-bar>
+  <p>lorem </p>
+</main>
+`,
+});

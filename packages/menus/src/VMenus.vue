@@ -92,7 +92,7 @@ const menuPlacement = computed(() => {
       <List class="v-menus-items" :class="itemsClass" :style="itemsStyle">
         <slot name="items">
           <template v-for="item in items" :key="item.text">
-            <VMenusItem :class="itemClass" v-bind="{...item, small}" />
+            <VMenusItem :class="itemClass" v-bind="item" :small="(item.small || small)" />
           </template>
         </slot>
       </List>
@@ -142,16 +142,9 @@ const menuPlacement = computed(() => {
 }
 
 .v-popper--theme-menus .v-popper__inner {
-  /* padding: 2px; */
-  /* margin: -2px; */
   background: transparent;
   border: var(--v-menus-popper-border);
 }
-
-/* 
-.v-popper--theme-menus .v-popper__arrow-inner {
-  border-color: var(--v-menus-arrow-border-color);
-} */
 
 .v-menus-items {
   padding: var(--v-menus-padding-y) var(--v-menus-padding-x);

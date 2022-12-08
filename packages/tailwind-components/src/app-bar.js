@@ -95,6 +95,9 @@ const appBar = plugin(function ({addComponents, theme}) {
       '--app-bar-bg-color': theme('colors.error.500'),
       '--app-bar-color': theme('colors.white'),
     },
+    '.app-bar-transparent': {
+      '--app-bar-bg-color': theme('colors.transparent'),
+    },
 
     /* sizes */
     '.app-bar--sm': {
