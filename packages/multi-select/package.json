@@ -19,6 +19,7 @@
     "@gits-id/badge": "^0.13.16",
     "@gits-id/forms": "^0.13.16",
     "@gits-id/tooltip": "^0.13.16",
+    "@gits-id/icon": "^0.13.16",
     "@vueuse/core": "^7.7.1",
     "vee-validate": "^4.6.1",
     "vue": "^3.2.31"
