@@ -255,6 +255,38 @@ Slot Props
 
 <LivePreview src="components-multiselect--custom-select-all" />
 
+### prepend.item
+Add custom element before option list
+
+```vue
+<v-multi-select
+>
+    <template #prepend.item>
+      <div class='text-center italic py-4 px-2'>
+        What genre you often listen to? 🎵 🎧
+      </div>
+    </template>
+</v-multi-select>
+```
+
+<LivePreview src="components-multiselect--prepend-item" />
+
+### append.item
+Add custom element after option list
+
+```vue
+<v-multi-select
+>
+    <template #append.item>
+      <div class='text-center italic'>
+        🔥 This is appended to item list! 🔥
+      </div>
+    </template>
+</v-multi-select>
+```
+
+<LivePreview src="components-multiselect--append-item" />
+
 
 ## CSS Variables
 

@@ -515,6 +515,8 @@ watch(
                 </slot>
               </template>
 
+              <slot name='prepend.item' />
+
               <template
                 v-for="(item, index) in filteredItems"
                 :key="item.value"
@@ -550,6 +552,8 @@ watch(
                   </div>
                 </div>
               </template>
+
+              <slot name='append.item' />
             </template>
             <div
               v-else

@@ -340,6 +340,88 @@ export const CustomSelectAll = (args) => ({
 `,
 });
 
+export const PrependItem = (args) => ({
+  components: {VMultiSelect},
+  setup() {
+    const schema = object({
+      genre: array().required().min(1).label('Genre'),
+    });
+
+    const {handleSubmit, resetForm, values} = useForm({
+      validationSchema: schema,
+      initialValues: {
+        genre: [...genreItems]
+      }
+    });
+
+    const onSubmit = handleSubmit((values) => {
+      alert(JSON.stringify(values));
+    });
+
+    const genres = ref(genreItems);
+
+    return {onSubmit, resetForm, values, genres};
+  },
+  template: `
+    <form @submit="onSubmit" class="border-none">
+      <v-multi-select
+        name="genre"
+        label="Genre"
+        placeholder="Choose your prefered genres"
+        select-all
+        :items="genres"
+      >
+        <template #prepend.item>
+          <div class='text-center italic py-4 px-2'>
+            What genre you often listen to? 🎵 🎧
+          </div>
+        </template>
+      </v-multi-select>
+    </form>
+`,
+});
+
+export const AppendItem = (args) => ({
+  components: {VMultiSelect},
+  setup() {
+    const schema = object({
+      genre: array().required().min(1).label('Genre'),
+    });
+
+    const {handleSubmit, resetForm, values} = useForm({
+      validationSchema: schema,
+      initialValues: {
+        genre: [...genreItems]
+      }
+    });
+
+    const onSubmit = handleSubmit((values) => {
+      alert(JSON.stringify(values));
+    });
+
+    const genres = ref(genreItems);
+
+    return {onSubmit, resetForm, values, genres};
+  },
+  template: `
+    <form @submit="onSubmit" class="border-none">
+      <v-multi-select
+        name="genre"
+        label="Genre"
+        placeholder="Choose your prefered genres"
+        select-all
+        :items="genres"
+      >
+        <template #append.item>
+          <div class='text-center italic'>
+            🔥 This is appended to item list! 🔥
+          </div>
+        </template>
+      </v-multi-select>
+    </form>
+`,
+});
+
 export const CssVars = () => ({
   components: {
     VMultiSelect,
