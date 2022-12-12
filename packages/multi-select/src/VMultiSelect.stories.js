@@ -2,12 +2,13 @@ import VMultiSelect from './VMultiSelect.vue';
 import VBtn from '@gits-id/button';
 import {useForm} from 'vee-validate';
 import {object, array} from 'yup';
-import {ref} from 'vue';
+import {computed, ref} from 'vue';
 
 const items = [...Array(200)].map((item, index) => ({
   value: index + 1,
   text: `Option ${index + 1}`,
 }));
+const genreItems = ['pop', 'rock', 'jazz', 'alternative','electronic', 'classical','hiphop', 'blues'].map((e) => ({text: e.toUpperCase(), value: e}))
 
 export default {
   title: 'Components/MultiSelect',
@@ -206,6 +207,90 @@ export const InitialErrors = (args) => ({
         <v-btn type="button" text @click="resetForm">Reset</v-btn>
       </div>
       <pre>{{ {values} }}</pre>
+    </form>
+`,
+});
+
+export const CustomSelection = (args) => ({
+  components: {VMultiSelect},
+  setup() {
+    const schema = object({
+      genre: array().required().min(1).label('Genre'),
+    });
+
+    const {handleSubmit, resetForm, values} = useForm({
+      validationSchema: schema,
+    });
+
+    const onSubmit = handleSubmit((values) => {
+      alert(JSON.stringify(values));
+    });
+
+    const genres = ref(genreItems);
+
+    const moreText = computed(() => {
+      return values.genre.slice(3).map((e) => e.text).join(', ');
+    })
+
+    return {onSubmit, resetForm, values, genres, moreText};
+  },
+  template: `
+    <form @submit="onSubmit" class="border-none">
+      <v-multi-select
+        name="genre"
+        label="Genre"
+        placeholder="Choose your prefered genres"
+        :max-badge='3'
+        :items="genres"
+      >
+        <template v-slot:selection='{index, value, onRemove}'>
+          <span class='font-bold' @click='onRemove'>{{value}}{{index < (values.genre.length-1) && values.genre.length > 0 ? ',' :''}}</span>
+        </template>
+      </v-multi-select>
+    </form>
+`,
+});
+
+export const CustomMaxSelection = (args) => ({
+  components: {VMultiSelect},
+  setup() {
+    const schema = object({
+      genre: array().required().min(1).label('Genre'),
+    });
+
+    const {handleSubmit, resetForm, values} = useForm({
+      validationSchema: schema,
+      initialValues: {
+        genre: [...genreItems]
+      }
+    });
+
+    const onSubmit = handleSubmit((values) => {
+      alert(JSON.stringify(values));
+    });
+
+    const genres = ref(genreItems);
+    const maxItem = ref(2);
+
+    const moreText = computed(() => {
+      return values.genre.slice(maxItem.value).map((e) => e.text).join(', ');
+    })
+
+    return {onSubmit, resetForm, values, genres, maxItem, moreText};
+  },
+  template: `
+    <form @submit="onSubmit" class="border-none">
+      <v-multi-select
+        name="genre"
+        label="Genre"
+        placeholder="Choose your prefered genres"
+        :max-badge='maxItem'
+        :items="genres"
+      >
+        <template v-slot:max-selection='{length}'>
+          <span :title='moreText'>{{length}} more (hover me)</span>
+        </template>
+      </v-multi-select>
     </form>
 `,
 });

@@ -182,7 +182,51 @@ None
 
 ## Slots
 
-None
+### selection
+Allow customized selection rendering. Will only be run when there is selected value.
+If [`maxBadge`](#maxBadge) is set to valid value, it will only be run for items within the set limit. 
+
+Slot Props
+
+| Prop       | Value       | Description                           |
+|------------|-------------|---------------------------------------|
+| `index`    | `number`    | Index of the current selection        |
+| `item`     | `any`       | Current selected item at given index  |
+| `value`    | `string`    | Label of selected item.               |
+| `onRemove` | `function`  | Callback to remove selected item      |
+
+```vue
+<v-multi-select>
+    <template v-slot:selection='{index, value, onRemove}'>
+      <span class='font-bold' @click='onRemove'>{{index > 0 ? ',' :''}}{{value}}</span>
+    </template>
+</v-multi-select>
+```
+
+<LivePreview src="components-multiselect--custom-selection" />
+
+
+### max-selection
+Allows customized rendering for max-selection rendering. This will only be run if [`maxBadge`](#maxBadge) props is set to valid value.
+
+Slot Props
+
+| Prop       | Value       | Description                           |
+|------------|-------------|---------------------------------------|
+| `length`   | `number`    | Number of selected items being hidden |
+
+```vue
+<v-multi-select
+  :max-badge='2'
+>
+    <template v-slot:max-selection='{length}'>
+      <span>{{length}} more (hover me)</span>
+    </template>
+</v-multi-select>
+```
+
+<LivePreview src="components-multiselect--custom-max-selection" />
+
 
 ## CSS Variables
 

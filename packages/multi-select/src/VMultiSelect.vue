@@ -400,21 +400,32 @@ watch(
         >
           <div class="flex-1 space-y-2">
             <div v-if="selected.length" class="v-multi-select-badges">
-              <v-badge
-                v-for="sItem in badges"
-                :key="sItem.value"
-                :color="badgeColor"
-                dismissable
-                class="truncate"
-                :class="badgeClass"
-                @dismiss="deselect(sItem)"
-                v-bind="badgeProps"
-              >
-                {{ sItem[itemText] }}
-              </v-badge>
-              <v-badge v-if="maxBadge > 0 && selected.length > maxBadge" small>
-                {{ selected.length - maxBadge }} more
-              </v-badge>
+              <template v-for="(sItem, index) in badges" :key="sItem.value">
+                <slot name="selection"
+                      :index="index"
+                      :item="sItem"
+                      :value="sItem[itemText]"
+                      :onRemove="() => deselect(sItem)">
+                  <v-badge
+                    :color="badgeColor"
+                    dismissable
+                    class="truncate"
+                    :class="badgeClass"
+                    @dismiss="deselect(sItem)"
+                    v-bind="badgeProps"
+                  >
+                    {{ sItem[itemText] }}
+                  </v-badge>
+                </slot>
+              </template>
+
+              <template v-if="maxBadge > 0 && selected.length > maxBadge">
+                <slot name="max-selection">
+                  <v-badge small>
+                    {{ selected.length - maxBadge }} more
+                  </v-badge>
+                </slot>
+              </template>
             </div>
             <input
               :id="id"
