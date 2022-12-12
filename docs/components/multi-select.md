@@ -227,6 +227,34 @@ Slot Props
 
 <LivePreview src="components-multiselect--custom-max-selection" />
 
+### select-all
+Allows custom render for select all option. This will only be run if [`selectAll`](#selectAll) props is set to valid value.
+
+Slot Props
+
+| Prop        | Value      | Description                                             |
+|-------------|------------|---------------------------------------------------------|
+| `iSelected` | `boolean`  | A flag to indicate if all options is currently selected |
+| `onClick`   | `function` | Callback to toggle select all state                     |
+
+```vue
+<v-multi-select
+  select-all
+>
+    <template v-slot:select-all='{onClick, isSelected}'>
+      <div class="p-4 bg-white sticky left-0 top-0 hover:bg-[gainsboro] border-b-[1px] border-b-grey-500"
+           style="z-index: 1;"
+           @click='onClick'
+      >
+        {{isSelected ? ' v ' : ''}}
+        Select All
+      </div>
+    </template>
+</v-multi-select>
+```
+
+<LivePreview src="components-multiselect--custom-select-all" />
+
 
 ## CSS Variables
 

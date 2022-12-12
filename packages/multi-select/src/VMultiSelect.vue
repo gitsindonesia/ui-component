@@ -427,6 +427,7 @@ watch(
                 </slot>
               </template>
             </div>
+
             <input
               :id="id"
               type="text"
@@ -492,25 +493,28 @@ watch(
             </div>
             <template v-else-if="filteredItems.length">
               <template v-if="selectAll">
-                <div class="v-multi-select-item" @click="toggleSelectAll">
-                  <div
-                    :class="[
+                <slot name="select-all" :onClick="toggleSelectAll" :isSelected='isAllSelected'>
+                  <div class="v-multi-select-item" @click="toggleSelectAll">
+                    <div
+                      :class="[
                       isAllSelected ? 'font-medium' : 'font-normal',
                       'block truncate',
                     ]"
-                  >
-                    {{ isAllSelected ? 'Deselect All' : 'Select All' }}
+                    >
+                      {{ isAllSelected ? 'Deselect All' : 'Select All' }}
+                    </div>
+                    <div v-if="isAllSelected" class="v-multi-select-item-check">
+                      <Icon
+                        name="heroicons:check"
+                        class="w-5 h-5"
+                        aria-hidden="true"
+                      />
+                    </div>
                   </div>
-                  <div v-if="isAllSelected" class="v-multi-select-item-check">
-                    <Icon
-                      name="heroicons:check"
-                      class="w-5 h-5"
-                      aria-hidden="true"
-                    />
-                  </div>
-                </div>
-                <div class="border-b h-1"></div>
+                  <div class="border-b h-1"></div>
+                </slot>
               </template>
+
               <template
                 v-for="(item, index) in filteredItems"
                 :key="item.value"

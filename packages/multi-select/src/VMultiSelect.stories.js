@@ -295,6 +295,51 @@ export const CustomMaxSelection = (args) => ({
 `,
 });
 
+export const CustomSelectAll = (args) => ({
+  components: {VMultiSelect},
+  setup() {
+    const schema = object({
+      genre: array().required().min(1).label('Genre'),
+    });
+
+    const {handleSubmit, resetForm, values} = useForm({
+      validationSchema: schema,
+      initialValues: {
+        genre: [...genreItems]
+      }
+    });
+
+    const onSubmit = handleSubmit((values) => {
+      alert(JSON.stringify(values));
+    });
+
+    const genres = ref(genreItems);
+
+    return {onSubmit, resetForm, values, genres};
+  },
+  template: `
+    <form @submit="onSubmit" class="border-none">
+      <v-multi-select
+        name="genre"
+        label="Genre"
+        placeholder="Choose your prefered genres"
+        select-all
+        :items="genres"
+      >
+        <template v-slot:select-all='{onClick, isSelected}'>
+          <div class="px-4 py-8 bg-white font-bold sticky left-0 -top-[0.25rem] hover:bg-[gainsboro] border-b-[1px] border-b-grey-500" 
+               style="z-index: 1;"
+               @click='onClick'
+          >
+            {{isSelected ? ' v ' : ''}}
+            Select All
+          </div>
+        </template>
+      </v-multi-select>
+    </form>
+`,
+});
+
 export const CssVars = () => ({
   components: {
     VMultiSelect,
