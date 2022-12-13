@@ -182,7 +182,147 @@ None
 
 ## Slots
 
-None
+### selection
+Allow customized selection rendering. Will only be run when there is selected value.
+If [`maxBadge`](#maxBadge) is set to valid value, it will only be run for items within the set limit. 
+
+Slot Props
+
+| Prop       | Value       | Description                           |
+|------------|-------------|---------------------------------------|
+| `index`    | `number`    | Index of the current selection        |
+| `item`     | `any`       | Current selected item at given index  |
+| `value`    | `string`    | Label of selected item.               |
+| `onRemove` | `function`  | Callback to remove selected item      |
+
+```vue
+<v-multi-select>
+    <template v-slot:selection='{index, value, onRemove}'>
+      <span class='font-bold' @click='onRemove'>{{index > 0 ? ',' :''}}{{value}}</span>
+    </template>
+</v-multi-select>
+```
+
+<LivePreview src="components-multiselect--custom-selection" />
+
+
+### max-selection
+Allows customized rendering for max-selection rendering. This will only be run if [`maxBadge`](#maxBadge) props is set to valid value.
+
+Slot Props
+
+| Prop       | Value       | Description                           |
+|------------|-------------|---------------------------------------|
+| `length`   | `number`    | Number of selected items being hidden |
+
+```vue
+<v-multi-select
+  :max-badge='2'
+>
+    <template v-slot:max-selection='{length}'>
+      <span>{{length}} more (hover me)</span>
+    </template>
+</v-multi-select>
+```
+
+<LivePreview src="components-multiselect--custom-max-selection" />
+
+### select-all
+Allows custom render for select all option. This will only be run if [`selectAll`](#selectAll) props is set to valid value.
+
+Slot Props
+
+| Prop        | Value      | Description                                             |
+|-------------|------------|---------------------------------------------------------|
+| `iSelected` | `boolean`  | A flag to indicate if all options is currently selected |
+| `onClick`   | `function` | Callback to toggle select all state                     |
+
+```vue
+<v-multi-select
+  select-all
+>
+    <template v-slot:select-all='{onClick, isSelected}'>
+      <div class="p-4 bg-white sticky left-0 top-0 hover:bg-[gainsboro] border-b-[1px] border-b-grey-500"
+           style="z-index: 1;"
+           @click='onClick'
+      >
+        {{isSelected ? ' v ' : ''}}
+        Select All
+      </div>
+    </template>
+</v-multi-select>
+```
+
+<LivePreview src="components-multiselect--custom-select-all" />
+
+### prepend.item
+Add custom element before option list
+
+```vue
+<v-multi-select
+>
+    <template #prepend.item>
+      <div class='text-center italic py-4 px-2'>
+        What genre you often listen to? 🎵 🎧
+      </div>
+    </template>
+</v-multi-select>
+```
+
+<LivePreview src="components-multiselect--prepend-item" />
+
+### append.item
+Add custom element after option list
+
+```vue
+<v-multi-select
+>
+    <template #append.item>
+      <div class='text-center italic'>
+        🔥 This is appended to item list! 🔥
+      </div>
+    </template>
+</v-multi-select>
+```
+
+<LivePreview src="components-multiselect--append-item" />
+
+### item.label
+Allows custom render for option item.
+
+Slot Props
+
+| Prop        | Value      | Description                                    |
+|-------------|------------|------------------------------------------------|
+| `index`    | `number`    | Index of the current selection                 |
+| `item`     | `any`       | Current selected item at given index           |
+| `value`    | `string`    | Label of selected item.                        |
+| `iSelected` | `boolean`  | A flag to indicate if it is currently selected |
+
+```vue
+<v-multi-select>
+    <template v-slot:item.label="{item, index}">
+      <div class="flex gap-4">
+        <div>
+          <img :src="item.picture" class="rounded-full w-[60px]"/>
+        </div>
+    
+        <div class="flex-1 overflow-hidden">
+          <div class="font-bold text-gray-600">
+            {{ item.name?.first }} {{item.name?.last}}
+          </div>
+          <div class="text-sm text-gray-500">
+            {{item.email}}<br/>
+            {{item.nat}}
+          </div>
+        </div>
+      </div>
+    </template>
+</v-multi-select>
+```
+
+<LivePreview src="components-multiselect--custom-item-label" />
+
 
 ## CSS Variables
 

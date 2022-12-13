@@ -400,22 +400,34 @@ watch(
         >
           <div class="flex-1 space-y-2">
             <div v-if="selected.length" class="v-multi-select-badges">
-              <v-badge
-                v-for="sItem in badges"
-                :key="sItem.value"
-                :color="badgeColor"
-                dismissable
-                class="truncate"
-                :class="badgeClass"
-                @dismiss="deselect(sItem)"
-                v-bind="badgeProps"
-              >
-                {{ sItem[itemText] }}
-              </v-badge>
-              <v-badge v-if="maxBadge > 0 && selected.length > maxBadge" small>
-                {{ selected.length - maxBadge }} more
-              </v-badge>
+              <template v-for="(sItem, index) in badges" :key="sItem.value">
+                <slot name="selection"
+                      :index="index"
+                      :item="sItem"
+                      :value="sItem[itemText]"
+                      :onRemove="() => deselect(sItem)">
+                  <v-badge
+                    :color="badgeColor"
+                    dismissable
+                    class="truncate"
+                    :class="badgeClass"
+                    @dismiss="deselect(sItem)"
+                    v-bind="badgeProps"
+                  >
+                    {{ sItem[itemText] }}
+                  </v-badge>
+                </slot>
+              </template>
+
+              <template v-if="maxBadge > 0 && selected.length > maxBadge">
+                <slot name="max-selection">
+                  <v-badge small>
+                    {{ selected.length - maxBadge }} more
+                  </v-badge>
+                </slot>
+              </template>
             </div>
+
             <input
               :id="id"
               type="text"
@@ -481,25 +493,30 @@ watch(
             </div>
             <template v-else-if="filteredItems.length">
               <template v-if="selectAll">
-                <div class="v-multi-select-item" @click="toggleSelectAll">
-                  <div
-                    :class="[
+                <slot name="select-all" :onClick="toggleSelectAll" :isSelected='isAllSelected'>
+                  <div class="v-multi-select-item" @click="toggleSelectAll">
+                    <div
+                      :class="[
                       isAllSelected ? 'font-medium' : 'font-normal',
                       'block truncate',
                     ]"
-                  >
-                    {{ isAllSelected ? 'Deselect All' : 'Select All' }}
+                    >
+                      {{ isAllSelected ? 'Deselect All' : 'Select All' }}
+                    </div>
+                    <div v-if="isAllSelected" class="v-multi-select-item-check">
+                      <Icon
+                        name="heroicons:check"
+                        class="w-5 h-5"
+                        aria-hidden="true"
+                      />
+                    </div>
                   </div>
-                  <div v-if="isAllSelected" class="v-multi-select-item-check">
-                    <Icon
-                      name="heroicons:check"
-                      class="w-5 h-5"
-                      aria-hidden="true"
-                    />
-                  </div>
-                </div>
-                <div class="border-b h-1"></div>
+                  <div class="border-b h-1"></div>
+                </slot>
               </template>
+
+              <slot name='prepend.item' />
+
               <template
                 v-for="(item, index) in filteredItems"
                 :key="item.value"
@@ -531,10 +548,12 @@ watch(
                     />
                   </div>
                   <div class="v-multi-select-item-text">
-                    {{ item[itemText] }}
+                    <slot  name="item.label" :index="index" :item="item" :value="item[itemText]" :isSelected='isSelected(item, index)'>{{ item[itemText] }}</slot>
                   </div>
                 </div>
               </template>
+
+              <slot name='append.item' />
             </template>
             <div
               v-else
