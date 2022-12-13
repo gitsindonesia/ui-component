@@ -548,7 +548,7 @@ watch(
                     />
                   </div>
                   <div class="v-multi-select-item-text">
-                    {{ item[itemText] }}
+                    <slot  name="item.label" :index="index" :item="item" :value="item[itemText]" :isSelected='isSelected(item, index)'>{{ item[itemText] }}</slot>
                   </div>
                 </div>
               </template>

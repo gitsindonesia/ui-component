@@ -9,6 +9,118 @@ const items = [...Array(200)].map((item, index) => ({
   text: `Option ${index + 1}`,
 }));
 const genreItems = ['pop', 'rock', 'jazz', 'alternative','electronic', 'classical','hiphop', 'blues'].map((e) => ({text: e.toUpperCase(), value: e}))
+const userItems = [
+  {
+    "name": {
+      "title": "Miss",
+      "first": "Laura",
+      "last": "Woods"
+    },
+    "picture": "https://randomuser.me/api/portraits/thumb/women/88.jpg",
+    "country": "Ireland",
+    "email": "laura.woods@example.com",
+    "nat": "IE"
+  },
+  {
+    "name": {
+      "title": "Mr",
+      "first": "Marten",
+      "last": "Faber"
+    },
+    "picture": "https://randomuser.me/api/portraits/thumb/men/1.jpg",
+    "country": "Germany",
+    "email": "marten.faber@example.com",
+    "nat": "DE"
+  },
+  {
+    "name": {
+      "title": "Miss",
+      "first": "Christy",
+      "last": "Diaz"
+    },
+    "picture": "https://randomuser.me/api/portraits/thumb/women/53.jpg",
+    "country": "Australia",
+    "email": "christy.diaz@example.com",
+    "nat": "AU"
+  },
+  {
+    "name": {
+      "title": "Mrs",
+      "first": "Naomi",
+      "last": "Ortiz"
+    },
+    "picture": "https://randomuser.me/api/portraits/thumb/women/10.jpg",
+    "country": "Australia",
+    "email": "naomi.ortiz@example.com",
+    "nat": "AU"
+  },
+  {
+    "name": {
+      "title": "Miss",
+      "first": "Emeline",
+      "last": "Carpentier"
+    },
+    "picture": "https://randomuser.me/api/portraits/thumb/women/95.jpg",
+    "country": "France",
+    "email": "emeline.carpentier@example.com",
+    "nat": "FR"
+  },
+  {
+    "name": {
+      "title": "Mr",
+      "first": "Jun",
+      "last": "Hansen"
+    },
+    "picture": "https://randomuser.me/api/portraits/thumb/men/1.jpg",
+    "country": "Netherlands",
+    "email": "jun.hansen@example.com",
+    "nat": "NL"
+  },
+  {
+    "name": {
+      "title": "Miss",
+      "first": "Carla",
+      "last": "Fernández"
+    },
+    "picture": "https://randomuser.me/api/portraits/thumb/women/52.jpg",
+    "country": "Spain",
+    "email": "carla.fernandez@example.com",
+    "nat": "ES"
+  },
+  {
+    "name": {
+      "title": "Ms",
+      "first": "Vandana",
+      "last": "Dalvi"
+    },
+    "picture": "https://randomuser.me/api/portraits/thumb/women/16.jpg",
+    "country": "India",
+    "email": "vandana.dalvi@example.com",
+    "nat": "IN"
+  },
+  {
+    "name": {
+      "title": "Mrs",
+      "first": "Nurdan",
+      "last": "Köybaşı"
+    },
+    "picture": "https://randomuser.me/api/portraits/thumb/women/86.jpg",
+    "country": "Turkey",
+    "email": "nurdan.koybasi@example.com",
+    "nat": "TR"
+  },
+  {
+    "name": {
+      "title": "Mr",
+      "first": "Marc",
+      "last": "Shaw"
+    },
+    "picture": "https://randomuser.me/api/portraits/thumb/men/92.jpg",
+    "country": "United States",
+    "email": "marc.shaw@example.com",
+    "nat": "US"
+  }
+];
 
 export default {
   title: 'Components/MultiSelect',
@@ -415,6 +527,58 @@ export const AppendItem = (args) => ({
         <template #append.item>
           <div class='text-center italic'>
             🔥 This is appended to item list! 🔥
+          </div>
+        </template>
+      </v-multi-select>
+    </form>
+`,
+});
+
+export const CustomItemLabel = (args) => ({
+  components: {VMultiSelect},
+  setup() {
+    const schema = object({
+      genre: array().required().min(1).label('Genre'),
+    });
+
+    const {handleSubmit, resetForm, values} = useForm({
+      validationSchema: schema,
+    });
+
+    const onSubmit = handleSubmit((values) => {
+      alert(JSON.stringify(values));
+    });
+
+    const genres = ref(userItems);
+
+    return {onSubmit, resetForm, values, genres};
+  },
+  template: `
+    <form @submit="onSubmit" class="border-none">
+      <v-multi-select
+        name="assignee"
+        label="Assign To"
+        placeholder="Choose users"
+        item-text="email"
+        item-value="email"
+        select-all
+        :items="genres"
+      >
+        <template v-slot:item.label="{item}">
+          <div class="flex gap-4">
+            <div>
+              <img :src="item.picture" class="rounded-full w-[60px]"/>
+            </div>
+            
+            <div class="flex-1 overflow-hidden">
+              <div class="font-bold text-gray-600">
+                {{ item.name?.first }} {{item.name?.last}}
+              </div>
+              <div class="text-sm text-gray-500">
+                {{item.email}}<br/>
+                {{item.nat}}
+              </div>
+            </div>
           </div>
         </template>
       </v-multi-select>

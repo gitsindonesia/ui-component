@@ -287,6 +287,42 @@ Add custom element after option list
 
 <LivePreview src="components-multiselect--append-item" />
 
+### item.label
+Allows custom render for option item.
+
+Slot Props
+
+| Prop        | Value      | Description                                    |
+|-------------|------------|------------------------------------------------|
+| `index`    | `number`    | Index of the current selection                 |
+| `item`     | `any`       | Current selected item at given index           |
+| `value`    | `string`    | Label of selected item.                        |
+| `iSelected` | `boolean`  | A flag to indicate if it is currently selected |
+
+```vue
+<v-multi-select>
+    <template v-slot:item.label="{item, index}">
+      <div class="flex gap-4">
+        <div>
+          <img :src="item.picture" class="rounded-full w-[60px]"/>
+        </div>
+    
+        <div class="flex-1 overflow-hidden">
+          <div class="font-bold text-gray-600">
+            {{ item.name?.first }} {{item.name?.last}}
+          </div>
+          <div class="text-sm text-gray-500">
+            {{item.email}}<br/>
+            {{item.nat}}
+          </div>
+        </div>
+      </div>
+    </template>
+</v-multi-select>
+```
+
+<LivePreview src="components-multiselect--custom-item-label" />
+
 
 ## CSS Variables
 
