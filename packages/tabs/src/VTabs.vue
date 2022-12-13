@@ -146,7 +146,7 @@ const onTabClicked = ({index, event}: any) => {
     const width = el.offsetWidth;
     const parentWidth = parent.offsetWidth;
     const position = left + width / 2 - parentWidth / 2;
-    el.parentElement.scrollTo({
+    (tabContent.value as HTMLElement).scrollTo({
       left: position,
     });
   } else {
@@ -155,7 +155,7 @@ const onTabClicked = ({index, event}: any) => {
     } else if (nextEl && nextEl.offsetLeft > parent.offsetWidth) {
       moveNavigation(nextEl.offsetWidth);
     } else if (prevEl && prevEl.offsetLeft < el.offsetLeft) {
-      moveNavigation(-prevEl.offsetWidth);
+      moveNavigation(tabEl.offsetWidth);
     }
   }
 };
