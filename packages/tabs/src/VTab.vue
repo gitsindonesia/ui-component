@@ -109,7 +109,7 @@ const isActive = computed(() => {
       icon
       fab
       type="button"
-      @click="remove(index)"
+      @click.prevent.stop="remove(index)"
     >
       <Icon
         :name="icon"
