@@ -19,6 +19,7 @@ const items = createItems();
 ```
 
 ```vue
+
 <template>
   <VTabs :items="items" />
 </template>
@@ -27,10 +28,13 @@ const items = createItems();
 <LivePreview src="components-tabs--default" />
 
 ::: info
-The `VTabs` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
+The `VTabs` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it
+manually.
 :::
 
 ### `v-model`
+
+Use `v-model `to set selected tab.
 
 ```vue
 <script setup lang="ts">
@@ -46,21 +50,25 @@ const selectedTab = ref(0);
 
 ### Custom Active Class
 
+Define custom classes to apply when tab is active (`active-class`), inactive (`inactive-class`). Or add common custom class for tabs using `default-class`.
+
 ```vue
 <template>
   <VTabs
     :items="items"
-    default-class="!rounded-lg"
-    inactive-class="hover:bg-success-50 hover:!text-success-600"
-    active-class="bg-success-50 rounded-t text-success-600 font-semibold"
+    default-class='!rounded-lg'
+    inactive-class='hover:bg-success-50 hover:!text-success-600'
+    active-class='bg-success-50 rounded-t text-success-600 font-semibold'
     hide-slider
   />
 </template>
 ```
 
-<LivePreview src="components-tabs--custom-active-class"  />
+<LivePreview src="components-tabs--custom-active-class" height='150' />
 
 ### Show Arrow
+
+Use `showArrow` to enable  arrows to scroll the tab list. Only works if the list is scrollable.
 
 ```vue
 <template>
@@ -68,9 +76,11 @@ const selectedTab = ref(0);
 </template>
 ```
 
-<LivePreview src="components-tabs--show-arrows" />
+<LivePreview src="components-tabs--show-arrows" height='150' />
 
 ### Center Active
+
+Use `centerActive` to allow the active tab to be position as at the center if possible. Works well when the list is scrollable.
 
 ```vue
 <template>
@@ -78,9 +88,11 @@ const selectedTab = ref(0);
 </template>
 ```
 
-<LivePreview src="components-tabs--center-active" />
+<LivePreview src="components-tabs--center-active" height='150'/>
 
 ### Vertical
+
+Use `vertical` to render the tabs vertically.
 
 ```vue
 <template>
@@ -88,15 +100,17 @@ const selectedTab = ref(0);
 </template>
 ```
 
-<LivePreview src="components-tabs--vertical" />
+<LivePreview src="components-tabs--vertical" height='150' />
 
 ### Tabs with Card
 
+Use `VTabs` as header in a `VCard` component.
+
 ```vue
 <template>
-  <VCard body-class="!p-0" hide-header hide-footer>
+  <VCard body-class='!p-0' hide-header hide-footer>
     <VTabs v-model="tab" />
-    <div class="px-4 py-2">Tab Content {{ tab }}</div>
+    <div class='px-4 py-2'>Tab Content {{ tab }}</div>
   </VCard>
 </template>
 ```
@@ -104,6 +118,8 @@ const selectedTab = ref(0);
 <LivePreview src="components-tabs--tabs-with-card" />
 
 ### Custom Style
+
+Override CSS variables for `VTabs` inline through `style` prop;
 
 ```vue
 <template>
@@ -124,7 +140,7 @@ const selectedTab = ref(0);
 </template>
 ```
 
-<LivePreview src="components-tabs--custom-style" />
+<LivePreview src="components-tabs--custom-style" height='150' />
 
 ### Removeable
 
@@ -138,24 +154,24 @@ const selectedTab = ref(0);
 
 ## Props
 
-| Name                                          | Type                                                                                | Default     |
-| --------------------------------------------- | ----------------------------------------------------------------------------------- | ----------- |
-| [`modelValue`](#modelValue)                   | `Number or String`                                                                  | `0`         |
-| [`items`](#items)                             | `Array<TabItem[]>`                                                                  | `[]`        |
-| [`itemText`](#itemText)                       | `String`                                                                            | `'text'`    |
-| [`color`](#color)                             | `String \| 'primary' \| 'secondary' \| 'info' \| 'warning' \| 'success' \| 'error'` | `'primary'` |
-| [`showArrows`](#showArrows)                   | `Boolean`                                                                           | `false`     |
-| [`centerActive`](#centerActive)               | `Boolean`                                                                           | `false`     |
-| [`removeable`](#removeable)                   | `Boolean`                                                                           | `false`     |
-| [`vertical`](#vertical)                       | `Boolean`                                                                           | `false`     |
-| [`defaultWrapperClass`](#defaultWrapperClass) | `String`                                                                            | `''`        |
-| [`wrapperClass`](#wrapperClass)               | `String`                                                                            | `''`        |
-| [`hideSlider`](#hideSlider)                   | `Boolean`                                                                           | `false`     |
-| [`activeClass`](#activeClass)                 | `String`                                                                            | `''`        |
-| [`inactiveClass`](#inactiveClass)             | `String`                                                                            | `''`        |
-| [`defaultClass`](#defaultClass)               | `String`                                                                            | `''`        |
-| [`contentClass`](#contentClass)               | `String`                                                                            | `''`        |
-| [`sliderClass`](#sliderClass)                 | `String`                                                                            | `''`        |
+| Name                                          | Type                                                                                            | Default     |
+|-----------------------------------------------|-------------------------------------------------------------------------------------------------|-------------|
+| [`modelValue`](#modelValue)                   | `Number or String`                                                                              | `0`         |
+| [`items`](#items)                             | `Array<TabItem[]>`                                                                              | `[]`        |
+| [`itemText`](#itemText)                       | `String`                                                                                        | `'text'`    |
+| [`color`](#color)                             | `'primary'` &vert; `'secondary'` &vert; `'info'` &vert; `'warning'` &vert; `'success'` &vert; `'error'` | `'primary'` |
+| [`showArrows`](#showArrows)                   | `Boolean`                                                                                       | `false`     |
+| [`centerActive`](#centerActive)               | `Boolean`                                                                                       | `false`     |
+| [`removeable`](#removeable)                   | `Boolean`                                                                                       | `false`     |
+| [`vertical`](#vertical)                       | `Boolean`                                                                                       | `false`     |
+| [`defaultWrapperClass`](#defaultWrapperClass) | `String`                                                                                        | `''`        |
+| [`wrapperClass`](#wrapperClass)               | `String`                                                                                        | `''`        |
+| [`hideSlider`](#hideSlider)                   | `Boolean`                                                                                       | `false`     |
+| [`activeClass`](#activeClass)                 | `String`                                                                                        | `''`        |
+| [`inactiveClass`](#inactiveClass)             | `String`                                                                                        | `''`        |
+| [`defaultClass`](#defaultClass)               | `String`                                                                                        | `''`        |
+| [`contentClass`](#contentClass)               | `String`                                                                                        | `''`        |
+| [`sliderClass`](#sliderClass)                 | `String`                                                                                        | `''`        |
 
 ## Events
 
@@ -214,7 +230,7 @@ const onChange = (value: number) => console.log(value);
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
-improt {useToast} from '@/composables';
+import {useToast} from '@/composables';
 
 const items = ref([
   {
@@ -245,64 +261,146 @@ const onRemove = (index: number) => {
 
 ### `default`
 
+Define custom tab items rendering
+
+Slot Props
+
+| Prop          | Value      | Description                |
+|---------------|------------|----------------------------|
+| `onClick`     | `function` | Index of current tab       |
+| `registerRef` | `function` | Current tab original value |
+
 ```vue
-<template>
-  <VTabs>
-    <VTabsSlider />
-    <VTab>Tab 1</VTab>
-    <VTab>Tab 2</VTab>
-    <VTab>Tab 3</VTab>
-  </VTabs>
+<VTabs>
+<template v-slot:default="{onClick, registerRef, }">
+  <VTab
+    v-bind="item"
+    v-for="(item, index) in items"
+    :key="index"
+    :index="index"
+    :get-ref="registerRef"
+    :active="index === activeTab"
+    @click="onClick"
+  >
+    <div class="inline-block">
+      {{ item.text }} {{ item.icon }}
+
+      <span v-if="tab  === index" class='text-red-700' style='font-size: 10px; vertical-align: middle;'>
+        {{ index }}
+      </span>
+    </div>
+  </VTab>
 </template>
+</VTabs>
 ```
+
+<LivePreview src="components-tabs--custom-tab" height='200' />
+
+### `item`
+
+Define custom content for the tab.
+
+Slot Props
+
+| Prop     | Value     | Description                              |
+|----------|-----------|------------------------------------------|
+| `index`  | `number`  | Index of current tab                     |
+| `item`   | `any`     | Current tab original value               |
+| `value`  | `any`     | Current tab label                        |
+| `active` | `boolean` | Indication whether current tab is active |
+
+```vue
+<VTabs>
+<template v-slot:item="{index, item, value, active}">
+  <div class="inline-block">
+    {{ value }} {{ item.icon }}
+
+    <span v-if="active" class='text-red-700' style='font-size: 10px; vertical-align: middle;'>
+        {{ index }}
+      </span>
+  </div>
+</template>
+</VTabs>
+
+```
+
+<LivePreview src="components-tabs--custom-tab-content" height="200" />
 
 ### `previous`
 
+Define custom content for the previous arrow. Works when `showArrows` is set to `true`.
+
+Slot Props
+
+| Prop      | Value      | Description                     |
+|-----------|------------|---------------------------------|
+| `onClick` | `function` | Callback to handle click action |
+
 ```vue
-<template>
-  <VTabs>
-    <template #previous>
-      <VBtn prefix-icon="ri:arrow-left-s-line" />
-    </template>
-  </VTabs>
+<VTabs>
+<template v-slot:previous="{onClick}">
+  <VBtn prefix-icon="ri:arrow-left-s-line" class='mr-2' @click="onClick" />
 </template>
+</VTabs>
 ```
+
+<LivePreview src="components-tabs--previous" height="200" />
 
 ### `next`
 
+Define custom content for the next arrow. Works when `showArrows` is set to `true`.
+
+Slot Props
+
+| Prop      | Value      | Description                     |
+|-----------|------------|---------------------------------|
+| `onClick` | `function` | Callback to handle click action |
+
 ```vue
-<template>
-  <VTabs>
-    <template #next>
-      <VBtn prefix-icon="ri:arrow-right-s-line" />
-    </template>
-  </VTabs>
+<VTabs>
+<template v-slot:next="{onClick}">
+  <VBtn prefix-icon="ri:arrow-right-s-line" class='mr-2' @click="onClick" />
 </template>
+</VTabs>
 ```
+
+<LivePreview src="components-tabs--next" height="200" />
 
 ### `prepend`
 
+Add an item to the start of the tab list
+
 ```vue
 <template>
-  <VTabs :items="items">
+  <VTabs>
     <template #prepend>
-      <VTab>Prepended Item</VTab>
+      <div class='bg-[yellow] whitespace-nowrap uppercase p-3 mr-2 rounded-full'>
+        🎒
+      </div>
     </template>
   </VTabs>
 </template>
 ```
+
+<LivePreview src="components-tabs--prepend" height="200" />
 
 ### `append`
 
+Add an item to the end of the tab list
+
 ```vue
 <template>
-  <VTabs :items="items">
+  <VTabs>
     <template #append>
-      <VTab>Appended Item</VTab>
+      <button title="See? I've been appended!">
+        ❓
+      </button>
     </template>
   </VTabs>
 </template>
 ```
+
+<LivePreview src="components-tabs--append" height="200" />
 
 ## CSS Variables
 

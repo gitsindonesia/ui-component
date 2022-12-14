@@ -2,7 +2,7 @@
 import VBtn from '@gits-id/button';
 import Icon from '@gits-id/icon';
 import {
-  nextTick,
+  nextTick, onBeforeUnmount,
   onBeforeUpdate,
   onMounted,
   PropType,
@@ -10,6 +10,7 @@ import {
   ref,
   toRefs,
   watch,
+  readonly
 } from 'vue';
 import VTab from './VTab.vue';
 import VTabsSlider from './VTabsSlider.vue';
@@ -112,6 +113,21 @@ const selected = ref(modelValue.value);
 const tabRefs = ref<HTMLElement[]>([]);
 const tabContent = ref<HTMLDivElement>();
 const tabSlider = ref<HTMLDivElement>();
+const observer = ref(new MutationObserver((event) => {
+  setSlider(selected.value as number);
+}));
+
+watch(tabContent, (val, prev) => {
+  if (prev) {
+    observer.value.disconnect();
+  }
+
+  observer.value.observe(val as HTMLElement, {characterData: true, attributes: true, childList: true, subtree: true});
+});
+
+watch(modelValue, (val) => {
+  setSlider(val as number);
+})
 
 const setTabRef = (el: any) => {
   if (el) {
@@ -185,6 +201,10 @@ onMounted(() => {
   setSlider(+selected.value);
 });
 
+onBeforeUnmount(() => {
+  observer.value.disconnect();
+});
+
 watch(selected, (value) => {
   emit('update:modelValue', value);
   emit('change', value);
@@ -204,7 +224,7 @@ const onTabRemoved = (index: number) => {
   emit('remove', index);
 };
 
-provide('activeTab', selected.value);
+provide('activeTab', readonly(selected));
 </script>
 
 <template>
@@ -221,7 +241,7 @@ provide('activeTab', selected.value);
     ]"
   >
     <template v-if="showArrows">
-      <slot name="previous">
+      <slot name="previous" :onClick="previous">
         <div>
           <v-btn icon text small no-ring @click="previous">
             <Icon name="heroicons:chevron-left" class="v-tabs-icon" />
@@ -231,7 +251,7 @@ provide('activeTab', selected.value);
     </template>
     <slot name="prepend" />
     <div ref="tabContent" class="v-tabs-items" :class="[contentClass]">
-      <slot v-bind="{tabSlider}">
+      <slot v-bind="{tabSlider}" :onClick="onTabClicked" :registerRef="setTabRef">
         <v-tab
           v-for="(item, index) in items"
           :key="index"
@@ -248,7 +268,9 @@ provide('activeTab', selected.value);
           @remove="onTabRemoved"
           @click="onTabClicked"
         >
-          {{ item[itemText] }}
+          <slot name="item" :index="index" :value="item[itemText]" :item="item" :active="selected === index">
+            <div>{{ item[itemText] }}</div>
+          </slot>
         </v-tab>
       </slot>
       <VTabsSlider
@@ -260,7 +282,7 @@ provide('activeTab', selected.value);
     </div>
     <slot name="append" />
     <template v-if="showArrows">
-      <slot name="next">
+      <slot name="next" :onClick="next">
         <div>
           <v-btn icon text small no-ring @click="next">
             <Icon name="heroicons:chevron-right" class="v-tabs-icon" />

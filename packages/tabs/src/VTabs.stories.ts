@@ -1,9 +1,10 @@
 import VTabs from './VTabs.vue';
 import VTab from './VTab.vue';
-import VTabsSlider from './VTabsSlider.vue';
+import VBtn from '@gits-id/button';
 import VCard from '@gits-id/card';
 import {ref} from 'vue';
 import {Story} from '@storybook/vue3';
+import VTabsSlider from './VTabsSlider.vue';
 
 function createItems(len = 20, additionalItem = {}) {
   return [...Array(20)].map((v, k) => ({
@@ -13,6 +14,7 @@ function createItems(len = 20, additionalItem = {}) {
 }
 
 export default {
+  components: {VTabsSlider},
   title: 'Components/Tabs',
   component: VTabs,
   argTypes: {},
@@ -27,7 +29,7 @@ const Template: Story<{}> = (args) => ({
   setup() {
     return {args};
   },
-  template: `<v-tabs v-bind='args'/>`,
+  template: `<v-tabs v-bind="args"/>`,
 });
 
 export const Default = Template.bind({});
@@ -46,12 +48,12 @@ export const Colors: Story<{}> = (args) => ({
     return {args};
   },
   template: `
-    <v-tabs v-bind='args' />
-    <v-tabs v-bind='args' color="secondary" />
-    <v-tabs v-bind='args' color="info" />
-    <v-tabs v-bind='args' color="warning" />
-    <v-tabs v-bind='args' color="success" />
-    <v-tabs v-bind='args' color="error" />
+    <v-tabs v-bind="args" />
+    <v-tabs v-bind="args" color="secondary" />
+    <v-tabs v-bind="args" color="info" />
+    <v-tabs v-bind="args" color="warning" />
+    <v-tabs v-bind="args" color="success" />
+    <v-tabs v-bind="args" color="error" />
   `,
 });
 Colors.parameters = {
@@ -59,11 +61,11 @@ Colors.parameters = {
     source: {
       code: `
 <v-tabs :items="items" color="secondary" />
-<v-tabs v-bind='args' color="secondary" />
-<v-tabs v-bind='args' color="info" />
-<v-tabs v-bind='args' color="warning" />
-<v-tabs v-bind='args' color="success" />
-<v-tabs v-bind='args' color="error" />
+<v-tabs v-bind="args" color="secondary" />
+<v-tabs v-bind="args" color="info" />
+<v-tabs v-bind="args" color="warning" />
+<v-tabs v-bind="args" color="success" />
+<v-tabs v-bind="args" color="error" />
       `,
     },
   },
@@ -190,5 +192,288 @@ export const Removeable: Story<{}> = (args) => ({
       v-bind="args"
       removeable
     />
+  `,
+});
+
+export const CustomTabContent: Story<{}> = (args) => ({
+  components: {VTabs, VBtn},
+  setup() {
+    const tab = ref(0);
+    const simple = ref(false);
+    const items = ref([
+      {
+        text: 'Fruits',
+        icon: '🥑',
+      },
+      {
+        text: 'Meat',
+        icon: '🥩',
+      },
+      {
+        text: 'Veggies',
+        icon: '🥦',
+      },
+      {
+        text: 'Bread',
+        icon: '🍞',
+      },
+      {
+        text: 'Fish',
+        icon: '🐟',
+      },
+    ]);
+
+    return {args, items, tab, simple};
+  },
+  template: `
+    <VBtn @click='simple = !simple;'>
+      Click me to toggle simplified tabs view
+    </VBtn>
+
+    <VTabs
+      v-bind="args"
+      v-model="tab"
+      :items="items"
+    >
+      <template v-slot:item="{index, item, value, active}">
+        <div class="inline-block">
+          {{ !simple ? value : '' }} {{ item.icon }}
+
+          <span v-if="active" class='text-red-700' style='font-size: 10px; vertical-align: middle;'>
+            {{ index }}
+          </span>
+        </div>
+      </template>
+    </VTabs>
+  `,
+});
+
+export const CustomTab: Story<{}> = (args) => ({
+  components: {VTabs, VTab},
+  setup() {
+    const tab = ref(0);
+    const items = ref([
+      {
+        text: 'Fruits',
+        icon: '🥑',
+      },
+      {
+        text: 'Meat',
+        icon: '🥩',
+      },
+      {
+        text: 'Veggies',
+        icon: '🥦',
+      },
+      {
+        text: 'Bread',
+        icon: '🍞',
+      },
+      {
+        text: 'Fish',
+        icon: '🐟',
+      },
+    ]);
+
+    return {args, items, tab};
+  },
+  template: `
+    <VTabs
+      v-model="tab"
+    >
+      <template v-slot:default="{onClick, registerRef, }">
+        <VTab
+          v-bind="item"
+          v-for="(item, index) in items"
+          :key="index"
+          :index="index"
+          :get-ref="registerRef"
+          class="TEST_CLASS"
+          @click="onClick"
+        >
+          <div class="inline-block">
+            {{ item.text }} {{ item.icon }}
+
+            <span v-if="tab  === index" class='text-red-700' style='font-size: 10px; vertical-align: middle;'>
+            {{ index }}
+          </span>
+          </div>
+        </VTab>
+      </template>
+    </VTabs>
+  `,
+});
+
+export const Prepend: Story<{}> = (args) => ({
+  components: {VTabs, VTab},
+  setup() {
+    const tab = ref(0);
+    const items = ref([
+      {
+        text: 'Fruits',
+        icon: '🥑',
+      },
+      {
+        text: 'Meat',
+        icon: '🥩',
+      },
+      {
+        text: 'Veggies',
+        icon: '🥦',
+      },
+      {
+        text: 'Bread',
+        icon: '🍞',
+      },
+      {
+        text: 'Fish',
+        icon: '🐟',
+      },
+    ]);
+
+    return {args, items, tab};
+  },
+  template: `
+    <VTabs
+      v-bind="args"
+      v-model="tab"
+      :items="items"
+    >
+    <template #prepend>
+      <div class="bg-[yellow] whitespace-nowrap uppercase p-3 mr-2 rounded-full">
+        🎒
+      </div>
+    </template>
+    </VTabs>
+  `,
+});
+
+export const Append: Story<{}> = (args) => ({
+  components: {VTabs, VTab},
+  setup() {
+    const tab = ref(0);
+    const items = ref([
+      {
+        text: 'Fruits',
+        icon: '🥑',
+      },
+      {
+        text: 'Meat',
+        icon: '🥩',
+      },
+      {
+        text: 'Veggies',
+        icon: '🥦',
+      },
+      {
+        text: 'Bread',
+        icon: '🍞',
+      },
+      {
+        text: 'Fish',
+        icon: '🐟',
+      },
+    ]);
+
+    return {args, items, tab};
+  },
+  template: `
+    <VTabs
+      v-bind="args"
+      v-model="tab"
+      :items="items"
+    >
+    <template #append>
+      <button title="See? I've been appended!">
+        ❓
+      </button>
+    </template>
+    </VTabs>
+  `,
+});
+
+export const Previous: Story<{}> = (args) => ({
+  components: {VTabs, VBtn},
+  setup() {
+    const tab = ref(0);
+    const items = ref([
+      {
+        text: 'Fruits',
+        icon: '🥑',
+      },
+      {
+        text: 'Meat',
+        icon: '🥩',
+      },
+      {
+        text: 'Veggies',
+        icon: '🥦',
+      },
+      {
+        text: 'Bread',
+        icon: '🍞',
+      },
+      {
+        text: 'Fish',
+        icon: '🐟',
+      },
+    ]);
+
+    return {args, items, tab};
+  },
+  template: `
+    <VTabs
+      v-bind="args"
+      v-model="tab"
+      :items="items"
+      show-arrows
+    >
+    <template v-slot:previous="{onClick}">
+      <VBtn prefix-icon="ri:arrow-left-s-line" class="mr-2" @click="onClick"/>
+    </template>
+    </VTabs>
+  `,
+});
+
+export const Next: Story<{}> = (args) => ({
+  components: {VTabs, VBtn},
+  setup() {
+    const tab = ref(0);
+    const items = ref([
+      {
+        text: 'Fruits',
+        icon: '🥑',
+      },
+      {
+        text: 'Meat',
+        icon: '🥩',
+      },
+      {
+        text: 'Veggies',
+        icon: '🥦',
+      },
+      {
+        text: 'Bread',
+        icon: '🍞',
+      },
+      {
+        text: 'Fish',
+        icon: '🐟',
+      },
+    ]);
+
+    return {args, items, tab};
+  },
+  template: `
+    <VTabs
+      v-bind="args"
+      v-model="tab"
+      :items="items"
+      show-arrows
+    >
+    <template v-slot:next="{onClick}">
+      <VBtn prefix-icon="ri:arrow-right-s-line" class='ml-2' @click="onClick"/>
+    </template>
+    </VTabs>
   `,
 });
