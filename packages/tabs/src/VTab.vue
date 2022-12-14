@@ -74,7 +74,8 @@ const setRef = (el: any) => {
 };
 
 const isActive = computed(() => {
-  return inject('activeTab', 0) === index.value || props.active;
+  const injected = inject('activeTab', {value: 0})?.value;
+  return injected === index.value || active.value;
 });
 </script>
 
@@ -82,7 +83,7 @@ const isActive = computed(() => {
   <button
     type="button"
     role="tab"
-    :id="`tab-item-${index}`"
+    :id='`tab-item-${index}`'
     :ref="setRef"
     class="v-tabs-item"
     :class="[
@@ -93,16 +94,14 @@ const isActive = computed(() => {
       isActive ? activeClass : inactiveClass,
       vertical ? 'v-tabs-item--vertical' : '',
     ]"
+    @click='onClick(index, $event)'
+    @mouseover="hovered = index"
+    @mouseout='hovered = -1'
   >
-    <div
-      @click="onClick(index, $event)"
-      @mouseover="hovered = index"
-      @mouseout="hovered = -1"
-    >
-      <slot />
-    </div>
+    <slot />
+
     <v-btn
-      v-if="active && removeable"
+      v-if='active && removeable'
       class="v-tabs-item-remove"
       color="error"
       size="sm"
