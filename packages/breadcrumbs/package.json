@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/breadcrumbs",
-  "version": "0.13.16",
+  "version": "0.13.17",
   "description": "GITS Breadcrumbs Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",

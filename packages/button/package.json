@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/button",
-  "version": "0.13.16",
+  "version": "0.13.17",
   "description": "GITS Button Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",

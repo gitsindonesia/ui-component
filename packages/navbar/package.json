@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/navbar",
-  "version": "0.13.16",
+  "version": "0.13.17",
   "description": "GITS Navbar Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,9 +15,9 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@gits-id/button": "^0.13.16",
+    "@gits-id/button": "^0.13.17",
     "@gits-id/logo": "^0.13.16",
-    "@gits-id/menus": "^0.13.16",
+    "@gits-id/menus": "^0.13.17",
     "vue": "^3.2.31"
   },
   "devDependencies": {

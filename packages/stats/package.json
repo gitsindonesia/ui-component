@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/stats",
-  "version": "0.13.16",
+  "version": "0.13.17",
   "description": "GITS Stats Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -16,8 +16,8 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@gits-id/badge": "^0.13.16",
-    "@gits-id/card": "^0.13.16",
+    "@gits-id/badge": "^0.13.17",
+    "@gits-id/card": "^0.13.17",
     "@gits-id/icon": "^0.13.16",
     "@iconify/vue": "^3.2.1",
     "vue": "^3.2.31"

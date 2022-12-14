@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/pages",
-  "version": "0.13.16",
+  "version": "0.13.17",
   "description": "GITS Pages Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,9 +15,9 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@gits-id/alert": "^0.13.16",
-    "@gits-id/button": "^0.13.16",
-    "@gits-id/forms": "^0.13.16",
+    "@gits-id/alert": "^0.13.17",
+    "@gits-id/button": "^0.13.17",
+    "@gits-id/forms": "^0.13.17",
     "@iconify/vue": "^3.2.1",
     "vue": "^3.2.31",
     "yup": "^0.32.11"

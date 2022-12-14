@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.17](https://github.com/gitsindonesia/ui-component/compare/v0.13.16...v0.13.17) (2022-12-14)
+
+### Features
+
+- **multiselect:** set some elements as slot to promote customization ([#63](https://github.com/gitsindonesia/ui-component/issues/63)) ([f8b8456](https://github.com/gitsindonesia/ui-component/commit/f8b845611fe89b044559cf861302d65b3956949f))
+
 ## [0.13.16](https://github.com/gitsindonesia/ui-component/compare/v0.13.15...v0.13.16) (2022-12-08)
 
 ### Bug Fixes

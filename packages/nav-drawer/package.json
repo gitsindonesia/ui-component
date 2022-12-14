@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/nav-drawer",
-  "version": "0.13.16",
+  "version": "0.13.17",
   "description": "Vue Navigation Drawer Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,7 +15,7 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@gits-id/button": "^0.13.16",
+    "@gits-id/button": "^0.13.17",
     "@gits-id/logo": "^0.13.16",
     "@gits-id/menu": "^0.13.16",
     "@gits-id/utils": "^0.13.0",
