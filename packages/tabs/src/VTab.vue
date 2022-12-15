@@ -1,8 +1,5 @@
 <script setup lang="ts">
 import {computed, inject, ref, toRefs} from 'vue';
-import VBtn from '@gits-id/button';
-import Icon from '@gits-id/icon';
-import '@gits-id/icon/dist/style.css';
 
 const props = defineProps({
   item: {
@@ -14,10 +11,6 @@ const props = defineProps({
     default: 0,
   },
   active: {
-    type: Boolean,
-    default: false,
-  },
-  removeable: {
     type: Boolean,
     default: false,
   },
@@ -41,17 +34,9 @@ const props = defineProps({
     type: String,
     default: '',
   },
-  icon: {
-    type: String,
-    default: 'heroicons:trash-solid',
-  },
-  iconSize: {
-    type: String,
-    default: 'sm',
-  },
 });
 
-const {index, active, item, removeable, vertical, inactiveClass, defaultClass} =
+const {index, active, item, vertical, inactiveClass, defaultClass} =
   toRefs(props);
 
 const wrapper = ref(null);
@@ -99,23 +84,5 @@ const isActive = computed(() => {
     @mouseout='hovered = -1'
   >
     <slot />
-
-    <v-btn
-      v-if='active && removeable'
-      class="v-tabs-item-remove"
-      color="error"
-      size="sm"
-      text
-      icon
-      fab
-      type="button"
-      @click.prevent.stop="remove(index)"
-    >
-      <Icon
-        :name="icon"
-        :size="iconSize"
-        class="v-tabs-icon v-tabs-icon--remove"
-      />
-    </v-btn>
   </button>
 </template>

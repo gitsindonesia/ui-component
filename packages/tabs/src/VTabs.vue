@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import VBtn from '@gits-id/button';
-import Icon from '@gits-id/icon';
 import {
   nextTick, onBeforeUnmount,
   onBeforeUpdate,
@@ -10,10 +8,14 @@ import {
   ref,
   toRefs,
   watch,
-  readonly
+  readonly,
 } from 'vue';
+import VBtn from '@gits-id/button';
+import Icon from '@gits-id/icon';
 import VTab from './VTab.vue';
 import VTabsSlider from './VTabsSlider.vue';
+import '@gits-id/icon/dist/style.css';
+
 
 const props = defineProps({
   modelValue: {
@@ -88,6 +90,14 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  removeIcon: {
+    type: String,
+    default: 'heroicons:trash-solid',
+  },
+  removeIconSize: {
+    type: String,
+    default: 'md',
+  },
 });
 
 const {
@@ -107,7 +117,7 @@ const {
   inactiveClass,
 } = toRefs(props);
 
-const emit = defineEmits(['update:modelValue', 'change', 'remove']);
+const emit = defineEmits(['update:modelValue', 'update:items', 'change', 'remove']);
 
 const selected = ref(modelValue.value);
 const tabRefs = ref<HTMLElement[]>([]);
@@ -127,7 +137,7 @@ watch(tabContent, (val, prev) => {
 
 watch(modelValue, (val) => {
   setSlider(val as number);
-})
+});
 
 const setTabRef = (el: any) => {
   if (el) {
@@ -221,6 +231,15 @@ const previous = () => moveNavigation(-200);
 const next = () => moveNavigation(200);
 
 const onTabRemoved = (index: number) => {
+  const list = items?.value.filter((e, idx) => idx !== index);
+
+  if (index < list.length) {
+    selected.value = index;
+  } else {
+    selected.value = list.length - 1;
+  }
+
+  emit('update:items', list);
   emit('remove', index);
 };
 
@@ -259,18 +278,34 @@ provide('activeTab', readonly(selected));
           :item="item"
           :get-ref="setTabRef"
           :active="selected === index"
-          :removeable="removeable"
           :vertical="vertical"
           :active-class="activeClass"
           :inactive-class="inactiveClass"
           :default-class="defaultClass"
           v-bind="item"
-          @remove="onTabRemoved"
           @click="onTabClicked"
         >
           <slot name="item" :index="index" :value="item[itemText]" :item="item" :active="selected === index">
             <div>{{ item[itemText] }}</div>
           </slot>
+
+          <v-btn
+            v-if="selected === index && removeable"
+            class="v-tabs-item-remove"
+            color="error"
+            size="sm"
+            text
+            icon
+            fab
+            type="button"
+            @click.prevent.stop="onTabRemoved(index)"
+          >
+            <Icon
+              :name="removeIcon"
+              :size="removeIconSize"
+              class="v-tabs-icon v-tabs-icon--remove"
+            />
+          </v-btn>
         </v-tab>
       </slot>
       <VTabsSlider
@@ -369,12 +404,12 @@ provide('activeTab', readonly(selected));
   scrollbar-width: none; /* Firefox */
 
   @apply flex-row flex
-    items-center
-    gap-x-1
-    whitespace-nowrap
-    overflow-x-auto
-    h-full
-    relative;
+  items-center
+  gap-x-1
+  whitespace-nowrap
+  overflow-x-auto
+  h-full
+  relative;
 }
 
 /* vertical */
@@ -399,14 +434,14 @@ provide('activeTab', readonly(selected));
   border: 1px solid var(--v-tabs-item-border-color);
 
   @apply focus:outline-none
-    flex
-    items-center
-    justify-between
-    gap-y-1
-    transition
-    duration-300
-    cursor-pointer
-    h-full;
+  flex
+  items-center
+  justify-between
+  gap-y-1
+  transition
+  duration-300
+  cursor-pointer
+  h-full;
 }
 
 /* item hover */
@@ -424,8 +459,7 @@ provide('activeTab', readonly(selected));
 .v-tabs-item.v-tabs-item--active {
   font-size: var(--v-tabs-item-active-font-size);
   font-weight: var(--v-tabs-item-active-font-weight);
-  padding: var(--v-tabs-item-active-padding-y)
-    var(--v-tabs-item-active-padding-x);
+  padding: var(--v-tabs-item-active-padding-y) var(--v-tabs-item-active-padding-x);
   background-color: var(--v-tabs-item-active-bg-color);
   color: var(--v-tabs-item-active-text-color);
   border-radius: var(--v-tabs-item-active-border-radius);
@@ -445,18 +479,22 @@ provide('activeTab', readonly(selected));
   --v-tabs-slider-bg-color: theme('colors.secondary.500');
   --v-tabs-slider-border-color: theme('colors.secondary.500');
 }
+
 .v-tabs-info {
   --v-tabs-slider-bg-color: theme('colors.info.500');
   --v-tabs-slider-border-color: theme('colors.info.500');
 }
+
 .v-tabs-warning {
   --v-tabs-slider-bg-color: theme('colors.warning.500');
   --v-tabs-slider-border-color: theme('colors.warning.500');
 }
+
 .v-tabs-error {
   --v-tabs-slider-bg-color: theme('colors.error.500');
   --v-tabs-slider-border-color: theme('colors.error.500');
 }
+
 .v-tabs-success {
   --v-tabs-slider-bg-color: theme('colors.success.500');
   --v-tabs-slider-border-color: theme('colors.success.500');
