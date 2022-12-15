@@ -56,15 +56,15 @@ Define custom classes to apply when tab is active (`active-class`), inactive (`i
 <template>
   <VTabs
     :items="items"
-    default-class='!rounded-lg'
-    inactive-class='hover:bg-success-50 hover:!text-success-600'
-    active-class='bg-success-50 rounded-t text-success-600 font-semibold'
+    default-class="!rounded-lg"
+    inactive-class="hover:bg-success-50 hover:!text-success-600"
+    active-class="bg-success-50 rounded-t text-success-600 font-semibold"
     hide-slider
   />
 </template>
 ```
 
-<LivePreview src="components-tabs--custom-active-class" height='150' />
+<LivePreview src="components-tabs--custom-active-class" height="150" />
 
 ### Show Arrow
 
@@ -76,7 +76,7 @@ Use `showArrow` to enable  arrows to scroll the tab list. Only works if the list
 </template>
 ```
 
-<LivePreview src="components-tabs--show-arrows" height='150' />
+<LivePreview src="components-tabs--show-arrows" height="150" />
 
 ### Center Active
 
@@ -88,7 +88,7 @@ Use `centerActive` to allow the active tab to be position as at the center if po
 </template>
 ```
 
-<LivePreview src="components-tabs--center-active" height='150'/>
+<LivePreview src="components-tabs--center-active" height="150"/>
 
 ### Vertical
 
@@ -100,7 +100,7 @@ Use `vertical` to render the tabs vertically.
 </template>
 ```
 
-<LivePreview src="components-tabs--vertical" height='150' />
+<LivePreview src="components-tabs--vertical" />
 
 ### Tabs with Card
 
@@ -108,9 +108,9 @@ Use `VTabs` as header in a `VCard` component.
 
 ```vue
 <template>
-  <VCard body-class='!p-0' hide-header hide-footer>
+  <VCard body-class="!p-0" hide-header hide-footer>
     <VTabs v-model="tab" />
-    <div class='px-4 py-2'>Tab Content {{ tab }}</div>
+    <div class="px-4 py-2">Tab Content {{ tab }}</div>
   </VCard>
 </template>
 ```
@@ -140,42 +140,49 @@ Override CSS variables for `VTabs` inline through `style` prop;
 </template>
 ```
 
-<LivePreview src="components-tabs--custom-style" height='150' />
+<LivePreview src="components-tabs--custom-style" height="150" />
 
 ### Removeable
 
+Makes tab item removable. To automatically handle side effects, `items` props need to be bound as `v-model`, otherwise
+side effect can be applied manually by listening to either `remove` event or `update:items`.
+
 ```vue
 <template>
-  <VTabs v-model="tab" removeable />
+  <VTabs v-model:model-value="tab" v-model:items="items" removeable />
 </template>
 ```
 
-<LivePreview src="components-tabs--removeable" />
+<LivePreview src="components-tabs--removeable" height="150" />
 
 ## Props
 
-| Name                                          | Type                                                                                            | Default     |
-|-----------------------------------------------|-------------------------------------------------------------------------------------------------|-------------|
-| [`modelValue`](#modelValue)                   | `Number or String`                                                                              | `0`         |
-| [`items`](#items)                             | `Array<TabItem[]>`                                                                              | `[]`        |
-| [`itemText`](#itemText)                       | `String`                                                                                        | `'text'`    |
-| [`color`](#color)                             | `'primary'` &vert; `'secondary'` &vert; `'info'` &vert; `'warning'` &vert; `'success'` &vert; `'error'` | `'primary'` |
-| [`showArrows`](#showArrows)                   | `Boolean`                                                                                       | `false`     |
-| [`centerActive`](#centerActive)               | `Boolean`                                                                                       | `false`     |
-| [`removeable`](#removeable)                   | `Boolean`                                                                                       | `false`     |
-| [`vertical`](#vertical)                       | `Boolean`                                                                                       | `false`     |
-| [`defaultWrapperClass`](#defaultWrapperClass) | `String`                                                                                        | `''`        |
-| [`wrapperClass`](#wrapperClass)               | `String`                                                                                        | `''`        |
-| [`hideSlider`](#hideSlider)                   | `Boolean`                                                                                       | `false`     |
-| [`activeClass`](#activeClass)                 | `String`                                                                                        | `''`        |
-| [`inactiveClass`](#inactiveClass)             | `String`                                                                                        | `''`        |
-| [`defaultClass`](#defaultClass)               | `String`                                                                                        | `''`        |
-| [`contentClass`](#contentClass)               | `String`                                                                                        | `''`        |
-| [`sliderClass`](#sliderClass)                 | `String`                                                                                        | `''`        |
+| Name                                          | Type                                                                                                    | Default                   |
+|-----------------------------------------------|---------------------------------------------------------------------------------------------------------|---------------------------|
+| [`modelValue`](#modelValue)                   | `Number or String`                                                                                      | `0`                       |
+| [`items`](#items)                             | `Array<TabItem[]>`                                                                                      | `[]`                      |
+| [`itemText`](#itemText)                       | `String`                                                                                                | `'text'`                  |
+| [`color`](#color)                             | `'primary'` &vert; `'secondary'` &vert; `'info'` &vert; `'warning'` &vert; `'success'` &vert; `'error'` | `'primary'`               |
+| [`showArrows`](#showArrows)                   | `Boolean`                                                                                               | `false`                   |
+| [`centerActive`](#centerActive)               | `Boolean`                                                                                               | `false`                   |
+| [`removeable`](#removeable)                   | `Boolean`                                                                                               | `false`                   |
+| [`vertical`](#vertical)                       | `Boolean`                                                                                               | `false`                   |
+| [`defaultWrapperClass`](#defaultWrapperClass) | `String`                                                                                                | `''`                      |
+| [`wrapperClass`](#wrapperClass)               | `String`                                                                                                | `''`                      |
+| [`hideSlider`](#hideSlider)                   | `Boolean`                                                                                               | `false`                   |
+| [`activeClass`](#activeClass)                 | `String`                                                                                                | `''`                      |
+| [`inactiveClass`](#inactiveClass)             | `String`                                                                                                | `''`                      |
+| [`defaultClass`](#defaultClass)               | `String`                                                                                                | `''`                      |
+| [`contentClass`](#contentClass)               | `String`                                                                                                | `''`                      |
+| [`sliderClass`](#sliderClass)                 | `String`                                                                                                | `''`                      |
+| [`removeIcon`](#sliderClass)                  | `String`                                                                                                | `'heroicons:trash-solid'` |
+| [`removeIconSize`](#sliderClass)              | `String`                                                                                                | `'md'`                    |
 
 ## Events
 
 ### `update:modelValue`
+
+Event emitted when active tab changes. It provides new `value` as argument.
 
 ```vue
 <script setup lang="ts">
@@ -197,6 +204,33 @@ const onChange = (value: number) => console.log(value);
 
 <template>
   <VTabs v-model="selected" :items="items" @update:modelValue="onChange" />
+</template>
+```
+
+### `update:items`
+
+Event emitted when list items change. It provides new `items` as argument. 
+
+```vue
+<script setup lang="ts">
+import {ref} from 'vue';
+
+const items = ref([
+  {
+    text: 'Item 1',
+  },
+  {
+    text: 'Item 2',
+  },
+]);
+
+const selected = ref(0);
+
+const onChange = (items: any[]) => console.log(items);
+</script>
+
+<template>
+  <VTabs v-model="selected" :items="items" @update:items="onChange" />
 </template>
 ```
 
@@ -285,7 +319,7 @@ Slot Props
     <div class="inline-block">
       {{ item.text }} {{ item.icon }}
 
-      <span v-if="tab  === index" class='text-red-700' style='font-size: 10px; vertical-align: middle;'>
+      <span v-if="tab  === index" class="text-red-700" style="font-size: 10px; vertical-align: middle;">
         {{ index }}
       </span>
     </div>
@@ -294,7 +328,7 @@ Slot Props
 </VTabs>
 ```
 
-<LivePreview src="components-tabs--custom-tab" height='200' />
+<LivePreview src="components-tabs--custom-tab" height="200" />
 
 ### `item`
 
@@ -315,7 +349,7 @@ Slot Props
   <div class="inline-block">
     {{ value }} {{ item.icon }}
 
-    <span v-if="active" class='text-red-700' style='font-size: 10px; vertical-align: middle;'>
+    <span v-if="active" class="text-red-700" style="font-size: 10px; vertical-align: middle;">
         {{ index }}
       </span>
   </div>
@@ -339,7 +373,7 @@ Slot Props
 ```vue
 <VTabs>
 <template v-slot:previous="{onClick}">
-  <VBtn prefix-icon="ri:arrow-left-s-line" class='mr-2' @click="onClick" />
+  <VBtn prefix-icon="ri:arrow-left-s-line" class="mr-2" @click="onClick" />
 </template>
 </VTabs>
 ```
@@ -359,7 +393,7 @@ Slot Props
 ```vue
 <VTabs>
 <template v-slot:next="{onClick}">
-  <VBtn prefix-icon="ri:arrow-right-s-line" class='mr-2' @click="onClick" />
+  <VBtn prefix-icon="ri:arrow-right-s-line" class="mr-2" @click="onClick" />
 </template>
 </VTabs>
 ```
@@ -374,7 +408,7 @@ Add an item to the start of the tab list
 <template>
   <VTabs>
     <template #prepend>
-      <div class='bg-[yellow] whitespace-nowrap uppercase p-3 mr-2 rounded-full'>
+      <div class="bg-[yellow] whitespace-nowrap uppercase p-3 mr-2 rounded-full">
         🎒
       </div>
     </template>
