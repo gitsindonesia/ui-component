@@ -590,6 +590,12 @@ watch(
   --v-multi-select-padding-y: var(--v-input-padding-y);
   --v-multi-select-font-size: var(--v-input-font-size);
 
+  /* label */
+  --v-multi-select-label-font-size: var(--v-input-label-font-size);
+  --v-multi-select-label-font-weight: var(--v-input-label-font-weight);
+  --v-multi-select-label-display: var(--v-input-label-display);
+  --v-multi-select-label-margin-bottom: var(--v-input-label-margin-bottom);
+
   /* item */
   --v-multi-select-item-font-size: theme('fontSize.base');
   --v-multi-select-item-font-weight: theme('fontWeight.normal');
@@ -639,6 +645,13 @@ watch(
 
 .v-multi-select-normal {
   @apply border-gray-300 focus-visible:ring-white focus-visible:ring-offset-gray-300 focus-visible:border-primary-500;
+}
+
+.v-multi-select-label {
+  font-size: var(--v-multi-select-label-font-size);
+  font-weight: var(--v-multi-select-label-font-weight);
+  display: var(--v-multi-select-label-display);
+  margin-bottom: var(--v-multi-select-label-margin-bottom);
 }
 
 .v-multi-select-input {
