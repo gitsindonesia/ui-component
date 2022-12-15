@@ -398,35 +398,33 @@ watch(
           ]"
           @click="isOpen = true"
         >
-          <div class="flex-1 space-y-2">
-            <div v-if="selected.length" class="v-multi-select-badges">
-              <template v-for="(sItem, index) in badges" :key="sItem.value">
-                <slot name="selection"
-                      :index="index"
-                      :item="sItem"
-                      :value="sItem[itemText]"
-                      :onRemove="() => deselect(sItem)">
-                  <v-badge
-                    :color="badgeColor"
-                    dismissable
-                    class="truncate"
-                    :class="badgeClass"
-                    @dismiss="deselect(sItem)"
-                    v-bind="badgeProps"
-                  >
-                    {{ sItem[itemText] }}
-                  </v-badge>
-                </slot>
-              </template>
+          <div class="v-multi-select-badges">
+            <template v-if='selected.length' v-for="(sItem, index) in badges" :key='sItem.value'>
+              <slot name="selection"
+                    :index="index"
+                    :item="sItem"
+                    :value="sItem[itemText]"
+                    :onRemove="() => deselect(sItem)">
+                <v-badge
+                  :color="badgeColor"
+                  dismissable
+                  class="truncate"
+                  :class="badgeClass"
+                  @dismiss="deselect(sItem)"
+                  v-bind="badgeProps"
+                >
+                  {{ sItem[itemText] }}
+                </v-badge>
+              </slot>
+            </template>
 
-              <template v-if="maxBadge > 0 && selected.length > maxBadge">
-                <slot name="max-selection">
-                  <v-badge small>
-                    {{ selected.length - maxBadge }} more
-                  </v-badge>
-                </slot>
-              </template>
-            </div>
+            <template v-if='maxBadge > 0 && selected.length > maxBadge'>
+              <slot name="max-selection">
+                <v-badge small>
+                  {{ selected.length - maxBadge }} more
+                </v-badge>
+              </slot>
+            </template>
 
             <input
               :id="id"
@@ -449,7 +447,7 @@ watch(
           </div>
 
           <div class="v-multi-select-action">
-            <v-tooltip v-if="selected.length > 1">
+            <v-tooltip v-if='selected.length > 1'>
               <template #activator="{on}">
                 <v-badge
                   circle
@@ -491,9 +489,9 @@ watch(
             >
               Loading...
             </div>
-            <template v-else-if="filteredItems.length">
+            <template v-else-if='filteredItems.length'>
               <template v-if="selectAll">
-                <slot name="select-all" :onClick="toggleSelectAll" :isSelected='isAllSelected'>
+                <slot name="select-all" :onClick="toggleSelectAll" :isSelected="isAllSelected">
                   <div class="v-multi-select-item" @click="toggleSelectAll">
                     <div
                       :class="[
@@ -519,7 +517,7 @@ watch(
 
               <template
                 v-for="(item, index) in filteredItems"
-                :key="item.value"
+                :key='item.value'
               >
                 <div
                   :ref="(el) => setRefItem(el, index)"
@@ -548,7 +546,9 @@ watch(
                     />
                   </div>
                   <div class="v-multi-select-item-text">
-                    <slot  name="item.label" :index="index" :item="item" :value="item[itemText]" :isSelected='isSelected(item, index)'>{{ item[itemText] }}</slot>
+                    <slot name='item.label' :index="index" :item="item" :value="item[itemText]"
+                          :isSelected="isSelected(item, index)">{{ item[itemText] }}
+                    </slot>
                   </div>
                 </div>
               </template>
@@ -568,7 +568,7 @@ watch(
     </div>
   </div>
   <ErrorMessage
-    v-if="errorMessages.length"
+    v-if='errorMessages.length'
     class="text-error-500 text-sm"
     :name="name"
   />
@@ -589,6 +589,12 @@ watch(
   --v-multi-select-padding-x: var(--v-input-padding-x);
   --v-multi-select-padding-y: var(--v-input-padding-y);
   --v-multi-select-font-size: var(--v-input-font-size);
+
+  /* label */
+  --v-multi-select-label-font-size: var(--v-input-label-font-size);
+  --v-multi-select-label-font-weight: var(--v-input-label-font-weight);
+  --v-multi-select-label-display: var(--v-input-label-display);
+  --v-multi-select-label-margin-bottom: var(--v-input-label-margin-bottom);
 
   /* item */
   --v-multi-select-item-font-size: theme('fontSize.base');
@@ -641,21 +647,28 @@ watch(
   @apply border-gray-300 focus-visible:ring-white focus-visible:ring-offset-gray-300 focus-visible:border-primary-500;
 }
 
+.v-multi-select-label {
+  font-size: var(--v-multi-select-label-font-size);
+  font-weight: var(--v-multi-select-label-font-weight);
+  display: var(--v-multi-select-label-display);
+  margin-bottom: var(--v-multi-select-label-margin-bottom);
+}
+
 .v-multi-select-input {
   @apply bg-transparent
-    w-full
-    cursor-default
-    focus:outline-none
-    gap-y-1
-    flex flex-wrap gap-2
-    items-center
-    focus-visible:ring-2
-    focus-visible:ring-opacity-75
-    focus-visible:ring-offset-2;
+  w-full
+  cursor-default
+  focus:outline-none
+  gap-y-1
+  flex flex-wrap gap-2
+  items-center
+  focus-visible:ring-2
+  focus-visible:ring-opacity-75
+  focus-visible:ring-offset-2;
 }
 
 .v-multi-select-badges {
-  @apply flex items-center gap-2 flex-wrap;
+  @apply flex flex-1 items-center gap-2 flex-wrap;
 }
 
 .v-multi-select-dropdown {
@@ -663,17 +676,17 @@ watch(
   background: var(--v-multi-select-dropdown-bg-color);
 
   @apply absolute inset-x-0
-    w-full
-    py-1
-    mt-3
-    overflow-auto
-    shadow-lg
-    max-h-60
-    ring-1 ring-black ring-opacity-5
-    focus:outline-none
-    sm:text-sm
-    px-0
-    z-10;
+  w-full
+  py-1
+  mt-3
+  overflow-auto
+  shadow-lg
+  max-h-60
+  ring-1 ring-black ring-opacity-5
+  focus:outline-none
+  sm:text-sm
+  px-0
+  z-10;
 }
 
 .v-multi-select-input-control::placeholder {
@@ -682,15 +695,16 @@ watch(
 
 .v-multi-select-input-control {
   color: var(--v-multi-select-text-color);
+  min-width: 0;
+  max-width: 100%;
 
   @apply border-none bg-transparent
-    px-1
-    py-1
-    focus:outline-none
-    focus:!ring-0
-    focus:!border-none
-    text-sm
-    flex-grow w-full;
+  p-1
+  focus:outline-none
+  focus:!ring-0
+  focus:!border-none
+  text-sm
+  flex-1;
 }
 
 .v-multi-select-action {
@@ -707,12 +721,11 @@ watch(
   color: var(--v-multi-select-item-text-color);
   font-size: var(--v-multi-select-item-font-size);
   font-weight: var(--v-multi-select-item-font-weight);
-  padding: var(--v-multi-select-item-padding-y)
-    var(--v-multi-select-item-padding-x);
+  padding: var(--v-multi-select-item-padding-y) var(--v-multi-select-item-padding-x);
 
   @apply cursor-default
-    select-none
-    relative flex gap-2 items-center;
+  select-none
+  relative flex gap-2 items-center;
 }
 
 .v-multi-select-item--focused {
