@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.18](https://github.com/gitsindonesia/ui-component/compare/v0.13.17...v0.13.18) (2022-12-16)
+
+
+### Bug Fixes
+
+* comment unused function ([7d7107a](https://github.com/gitsindonesia/ui-component/commit/7d7107adc66d3e9cfcbb0d25ee95b02e44d4c6b7))
+* **tabs:** handle removable prop effect in component instead of just emitting event ([#66](https://github.com/gitsindonesia/ui-component/issues/66)) ([c7e6ac6](https://github.com/gitsindonesia/ui-component/commit/c7e6ac6a6e7048ecaf41a17c47e02650c67eecca))
+
+
+
+
+
+
 ## [0.13.17](https://github.com/gitsindonesia/ui-component/compare/v0.13.16...v0.13.17) (2022-12-14)
 
 **Note:** Version bump only for package @gits-id/tabs

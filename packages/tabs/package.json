@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/tabs",
-  "version": "0.13.17",
+  "version": "0.13.18",
   "description": "GITS Tabs Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
