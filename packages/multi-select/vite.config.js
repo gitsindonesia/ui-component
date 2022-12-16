@@ -21,7 +21,8 @@ export default defineConfig({
       external: [
         'vue',
         '@gits-id/tooltip',
-        '@gits-id/badge',
+        '@gits-id/icon',
+        '@gits-id/forms',
         '@vueuse/core',
         'vee-validate',
       ],
