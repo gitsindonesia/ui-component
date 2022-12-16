@@ -23,6 +23,7 @@ export default defineConfig({
         '@gits-id/tooltip',
         '@gits-id/icon',
         '@gits-id/forms',
+        '@gits-id/badge',
         '@vueuse/core',
         'vee-validate',
       ],
