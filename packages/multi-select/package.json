@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/multi-select",
-  "version": "0.13.18",
+  "version": "0.13.19",
   "description": "Vue Multi Select Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",

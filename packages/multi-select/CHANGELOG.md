@@ -3,17 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [0.13.18](https://github.com/gitsindonesia/ui-component/compare/v0.13.17...v0.13.18) (2022-12-16)
-
+## [0.13.19](https://github.com/gitsindonesia/ui-component/compare/v0.13.18...v0.13.19) (2022-12-16)
 
 ### Bug Fixes
 
-* **multiselect:** make input node inline with tags + fix styling ([#67](https://github.com/gitsindonesia/ui-component/issues/67)) ([3c73fef](https://github.com/gitsindonesia/ui-component/commit/3c73fefdb600788eb9fc5d33aab1a8357b53bdc4))
+- **VMultiSelect:** fix external deps ([01073e6](https://github.com/gitsindonesia/ui-component/commit/01073e60e069d73cf03d467d055cf4d0b19d1994))
 
+## [0.13.18](https://github.com/gitsindonesia/ui-component/compare/v0.13.17...v0.13.18) (2022-12-16)
 
+### Bug Fixes
 
-
-
+- **multiselect:** make input node inline with tags + fix styling ([#67](https://github.com/gitsindonesia/ui-component/issues/67)) ([3c73fef](https://github.com/gitsindonesia/ui-component/commit/3c73fefdb600788eb9fc5d33aab1a8357b53bdc4))
 
 ## [0.13.17](https://github.com/gitsindonesia/ui-component/compare/v0.13.16...v0.13.17) (2022-12-14)
 
