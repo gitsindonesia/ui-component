@@ -49,7 +49,7 @@ const onClick = (idx: number, event: any) => {
   emit('click', {index: idx, event, item: item.value});
 };
 
-const remove = (idx: number) => emit('remove', idx);
+// const remove = (idx: number) => emit('remove', idx);
 
 const setRef = (el: any) => {
   wrapper.value = el;
