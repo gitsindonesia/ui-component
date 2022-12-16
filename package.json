@@ -76,6 +76,7 @@
     "vite": "^3.0.0",
     "vitepress": "^1.0.0-alpha.15",
     "vitest": "^0.12.4",
+    "vue-gtag": "^2.0.1",
     "vue-loader": "^16.8.3",
     "vue-tsc": "^0.37.3",
     "webpack": "^5.70.0"
