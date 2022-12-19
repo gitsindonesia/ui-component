@@ -11,11 +11,17 @@
 
 GITS UI is the official UI Component Library in GITS Indonesia built with Vue 3 and Tailwind CSS.
 
-## Major Dependencies
+## Features
 
-- [Vue.js](https://vuejs.org/)
+- [Vue 3](https://vuejs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Iconify Vue](https://icones.js.org/)
+- First-party [Nuxt 3](https://nuxt.com/) module
+- [TypeScript](https://www.typescriptlang.org/) support out-of-the-box
+- Customizable with CSS Properties
+-  Modular: Use it completely as UI Framework or use it individually as a plugin
+-  Headless by default (soon)
+-  Theming (soon)
 
 ## Documentation
 
