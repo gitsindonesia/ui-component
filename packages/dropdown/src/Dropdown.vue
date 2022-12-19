@@ -38,7 +38,7 @@ withDefaults(defineProps<Props>(), {
   buttonWrapperClass: '',
   leftClass: 'left-0',
   rightClass: 'right-0',
-  transition: 'fade',
+  transition: 'fade-scale',
   icon: 'ri:arrow-down-s-line',
   iconSize: 'sm',
   iconClass: '',
