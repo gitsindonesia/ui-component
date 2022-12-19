@@ -54,6 +54,26 @@ The `VBtn` component is registered globally when you install with `@gits-id/ui`.
 </template>
 ```
 
+### Flush
+
+- **Prop**: `flush`
+- **Type**: `boolean`
+- **Default Value**: `false`
+
+Use `flush` prop to remove button padding. It will also set the width and height button to `auto`;
+
+```vue
+<template>
+  <VBtn text flush> default </VBtn>
+  <VBtn color="primary" text flush> primary </VBtn>
+  <VBtn color="secondary" text flush> secondary </VBtn>
+  <VBtn color="info" text flush> info </VBtn>
+  <VBtn color="warning" text flush> warning </VBtn>
+  <VBtn color="error" text flush> error </VBtn>
+  <VBtn color="dark" text flush> dark </VBtn>
+</template>
+```
+
 <LivePreview src="forms-button--text" />
 
 ### Rounded

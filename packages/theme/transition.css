@@ -9,6 +9,18 @@
   opacity: 0;
 }
 
+/* fade scale */
+.fade-scale-enter-active,
+.fade-scale-leave-active {
+  transition: all 0.3s ease;
+}
+
+.fade-scale-enter-from,
+.fade-scale-leave-to {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
 /* slide-left */
 .slide-left-enter-active,
 .slide-left-leave-active {

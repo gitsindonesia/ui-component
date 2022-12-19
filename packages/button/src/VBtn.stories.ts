@@ -102,6 +102,16 @@ Tile.parameters = {
   },
 };
 
+export const Flush = Template.bind({});
+Flush.args = {color: 'primary', flush: true, text: true};
+Flush.parameters = {
+  docs: {
+    source: {
+      code: '<v-btn color="primary" flush text>Button</v-btn>',
+    },
+  },
+};
+
 export const Disabled = Template.bind({});
 Disabled.args = {color: 'primary', disabled: true};
 Disabled.parameters = {
