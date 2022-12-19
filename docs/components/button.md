@@ -74,7 +74,7 @@ Use `flush` prop to remove button padding. It will also set the width and height
 </template>
 ```
 
-<LivePreview src="forms-button--text" />
+<LivePreview src="forms-button--flush" />
 
 ### Rounded
 
