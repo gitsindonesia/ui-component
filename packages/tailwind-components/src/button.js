@@ -90,10 +90,13 @@ const btn = plugin(function ({addComponents, theme}) {
       borderRadius: 'var(--btn-border-radius)',
       borderWidth: 'var(--btn-border-width)',
       borderColor: 'var(--btn-border-color)',
-      padding: 'var(--btn-padding-y) var(--btn-padding-x)',
       transition: 'var(--btn-transition)',
-      width: 'var(--btn-width)',
-      height: 'var(--btn-height)',
+
+      '&:not(.btn--flush)': {
+        padding: 'var(--btn-padding-y) var(--btn-padding-x)',
+        width: 'var(--btn-width)',
+        height: 'var(--btn-height)',
+      },
 
       // disabled
       '&:disabled': disabledVariant(),
@@ -124,6 +127,12 @@ const btn = plugin(function ({addComponents, theme}) {
       ...colorVariant('warning'),
       ...colorVariant('success'),
       ...colorVariant('error'),
+    },
+
+    // flush
+    '.btn--flush': {
+      padding: 0,
+      '--btn-height': 'auto',
     },
 
     // outlined

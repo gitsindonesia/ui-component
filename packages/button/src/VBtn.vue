@@ -44,6 +44,7 @@ export interface Props {
   suffixIconSize?: string;
   suffixIconClass?: string;
   loadingClass?: string;
+  flush?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -100,6 +101,7 @@ const classes = computed(() => {
       'btn--block': props.block,
       'btn--loading': props.loading,
       'btn--text': props.text,
+      'btn--flush': props.flush,
       shadow: props.shadow,
     },
   ];
