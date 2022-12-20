@@ -72,6 +72,10 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  labelClass: {
+    type: String,
+    default: '',
+  },
 });
 
 const emit =
@@ -143,6 +147,7 @@ const handleChange = (m: any) => {
       <label
         v-if="label"
         class="v-checkbox-label"
+        :class="labelClass"
         :for="id || name"
         @mousedown.prevent="null"
       >

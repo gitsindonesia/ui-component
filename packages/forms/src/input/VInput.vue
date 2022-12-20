@@ -152,6 +152,10 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  labelClass: {
+    type: String,
+    default: '',
+  },
 });
 
 const {
@@ -233,7 +237,7 @@ const clear = () => {
     ]"
   >
     <slot v-if="label" name="label" :v-slot="{for: id || name}">
-      <label v-if="label" :for="id || name" class="v-input-label">
+      <label v-if="label" :for="id || name" class="v-input-label" :class="labelClass">
         {{ label }}
       </label>
     </slot>
