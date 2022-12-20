@@ -141,6 +141,7 @@ const handleChange = (m: any) => {
         v-bind="$attrs"
       />
       <label
+        v-if="label"
         class="v-checkbox-label"
         :for="id || name"
         @mousedown.prevent="null"
