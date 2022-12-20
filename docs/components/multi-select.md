@@ -136,6 +136,72 @@ const genres = ref([
 
 <LivePreview src="components-multiselect--initial-errors" />
 
+### Custom Compare Function
+
+Use `search-by` to use custom compare function.
+
+```vue
+<script setup lang="ts">
+const schema = object({
+  genre: array().required().min(1).label('Genre'),
+});
+
+const {handleSubmit, resetForm, values} = useForm({
+  validationSchema: schema,
+});
+
+const onSubmit = handleSubmit((values) => {
+  alert(JSON.stringify(values));
+});
+
+const genres = ref([
+  {
+    name: 'Pop',
+    id: 1,
+  },
+  {
+    name: 'Rock',
+    id: 2,
+  },
+  {
+    name: 'Jazz',
+    id: 3,
+  },
+  {
+    name: 'Alternative',
+    id: 4,
+  },
+]);
+
+const compareGenres = (item: VMultiSelectItem, query: string) => {
+  return (
+    +item.id === +query || item.name.toLowerCase().includes(query.toLowerCase())
+  );
+};
+</script>
+
+<template>
+  <form @submit="onSubmit" class="border-none">
+    <v-multi-select
+      name="genre"
+      label="Genre"
+      placeholder="Search by id. Ex: 1, 2, 3, 4"
+      :items="genres"
+      item-text="name"
+      item-value="key"
+      :search-by="compareGenres"
+    />
+    <div class="mt-4">
+      <v-btn type="submit">Submit</v-btn>
+      <v-btn type="button" text @click="resetForm">Reset</v-btn>
+    </div>
+    <pre>{{ {values} }}</pre>
+  </form>
+</template>
+```
+
+<LivePreview src="components-multiselect--initial-errors" />
+
 ## Props
 
 | Name                                      | Type                                      | Default                         |
@@ -183,17 +249,18 @@ None
 ## Slots
 
 ### selection
+
 Allow customized selection rendering. Will only be run when there is selected value.
-If [`maxBadge`](#maxBadge) is set to valid value, it will only be run for items within the set limit. 
+If [`maxBadge`](#maxBadge) is set to valid value, it will only be run for items within the set limit.
 
 Slot Props
 
-| Prop       | Value       | Description                           |
-|------------|-------------|---------------------------------------|
-| `index`    | `number`    | Index of the current selection        |
-| `item`     | `any`       | Current selected item at given index  |
-| `value`    | `string`    | Label of selected item.               |
-| `onRemove` | `function`  | Callback to remove selected item      |
+| Prop       | Value      | Description                          |
+| ---------- | ---------- | ------------------------------------ |
+| `index`    | `number`   | Index of the current selection       |
+| `item`     | `any`      | Current selected item at given index |
+| `value`    | `string`   | Label of selected item.              |
+| `onRemove` | `function` | Callback to remove selected item     |
 
 ```vue
 <v-multi-select>
@@ -205,20 +272,18 @@ Slot Props
 
 <LivePreview src="components-multiselect--custom-selection" />
 
-
 ### max-selection
+
 Allows customized rendering for max-selection rendering. This will only be run if [`maxBadge`](#maxBadge) props is set to valid value.
 
 Slot Props
 
-| Prop       | Value       | Description                           |
-|------------|-------------|---------------------------------------|
-| `length`   | `number`    | Number of selected items being hidden |
+| Prop     | Value    | Description                           |
+| -------- | -------- | ------------------------------------- |
+| `length` | `number` | Number of selected items being hidden |
 
 ```vue
-<v-multi-select
-  :max-badge='2'
->
+<v-multi-select :max-badge="2">
     <template v-slot:max-selection='{length}'>
       <span>{{length}} more (hover me)</span>
     </template>
@@ -228,19 +293,18 @@ Slot Props
 <LivePreview src="components-multiselect--custom-max-selection" />
 
 ### select-all
+
 Allows custom render for select all option. This will only be run if [`selectAll`](#selectAll) props is set to valid value.
 
 Slot Props
 
 | Prop        | Value      | Description                                             |
-|-------------|------------|---------------------------------------------------------|
+| ----------- | ---------- | ------------------------------------------------------- |
 | `iSelected` | `boolean`  | A flag to indicate if all options is currently selected |
 | `onClick`   | `function` | Callback to toggle select all state                     |
 
 ```vue
-<v-multi-select
-  select-all
->
+<v-multi-select select-all>
     <template v-slot:select-all='{onClick, isSelected}'>
       <div class="p-4 bg-white sticky left-0 top-0 hover:bg-[gainsboro] border-b-[1px] border-b-grey-500"
            style="z-index: 1;"
@@ -256,11 +320,11 @@ Slot Props
 <LivePreview src="components-multiselect--custom-select-all" />
 
 ### prepend.item
+
 Add custom element before option list
 
 ```vue
-<v-multi-select
->
+<v-multi-select>
     <template #prepend.item>
       <div class='text-center italic py-4 px-2'>
         What genre you often listen to? 🎵 🎧
@@ -272,11 +336,11 @@ Add custom element before option list
 <LivePreview src="components-multiselect--prepend-item" />
 
 ### append.item
+
 Add custom element after option list
 
 ```vue
-<v-multi-select
->
+<v-multi-select>
     <template #append.item>
       <div class='text-center italic'>
         🔥 This is appended to item list! 🔥
@@ -288,16 +352,17 @@ Add custom element after option list
 <LivePreview src="components-multiselect--append-item" />
 
 ### item.label
+
 Allows custom render for option item.
 
 Slot Props
 
-| Prop        | Value      | Description                                    |
-|-------------|------------|------------------------------------------------|
-| `index`    | `number`    | Index of the current selection                 |
-| `item`     | `any`       | Current selected item at given index           |
-| `value`    | `string`    | Label of selected item.                        |
-| `iSelected` | `boolean`  | A flag to indicate if it is currently selected |
+| Prop        | Value     | Description                                    |
+| ----------- | --------- | ---------------------------------------------- |
+| `index`     | `number`  | Index of the current selection                 |
+| `item`      | `any`     | Current selected item at given index           |
+| `value`     | `string`  | Label of selected item.                        |
+| `iSelected` | `boolean` | A flag to indicate if it is currently selected |
 
 ```vue
 <v-multi-select>
@@ -322,7 +387,6 @@ Slot Props
 ```
 
 <LivePreview src="components-multiselect--custom-item-label" />
-
 
 ## CSS Variables
 
