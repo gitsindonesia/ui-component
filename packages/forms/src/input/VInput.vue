@@ -148,6 +148,10 @@ const props = defineProps({
     type: String as PropType<IconSize>,
     default: 'md',
   },
+  errorClass: {
+    type: String,
+    default: '',
+  },
 });
 
 const {
@@ -308,7 +312,7 @@ const clear = () => {
       </slot>
     </div>
 
-    <div v-if="errorMessage" class="v-input-error">
+    <div v-if="errorMessage" class="v-input-error" :class='errorClass'>
       {{ errorMessage }}
     </div>
   </div>
