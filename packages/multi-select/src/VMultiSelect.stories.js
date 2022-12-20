@@ -2,124 +2,133 @@ import VMultiSelect from './VMultiSelect.vue';
 import VBtn from '@gits-id/button';
 import {useForm} from 'vee-validate';
 import {object, array} from 'yup';
-import {computed, ref} from 'vue';
+import {computed, ref, onMounted} from 'vue';
 
 const items = [...Array(200)].map((item, index) => ({
   value: index + 1,
   text: `Option ${index + 1}`,
 }));
-const genreItems = ['pop', 'rock', 'jazz', 'alternative','electronic', 'classical','hiphop', 'blues'].map((e) => ({text: e.toUpperCase(), value: e}))
+const genreItems = [
+  'pop',
+  'rock',
+  'jazz',
+  'alternative',
+  'electronic',
+  'classical',
+  'hiphop',
+  'blues',
+].map((e) => ({text: e.toUpperCase(), value: e}));
 const userItems = [
   {
-    "name": {
-      "title": "Miss",
-      "first": "Laura",
-      "last": "Woods"
+    name: {
+      title: 'Miss',
+      first: 'Laura',
+      last: 'Woods',
     },
-    "picture": "https://randomuser.me/api/portraits/thumb/women/88.jpg",
-    "country": "Ireland",
-    "email": "laura.woods@example.com",
-    "nat": "IE"
+    picture: 'https://randomuser.me/api/portraits/thumb/women/88.jpg',
+    country: 'Ireland',
+    email: 'laura.woods@example.com',
+    nat: 'IE',
   },
   {
-    "name": {
-      "title": "Mr",
-      "first": "Marten",
-      "last": "Faber"
+    name: {
+      title: 'Mr',
+      first: 'Marten',
+      last: 'Faber',
     },
-    "picture": "https://randomuser.me/api/portraits/thumb/men/1.jpg",
-    "country": "Germany",
-    "email": "marten.faber@example.com",
-    "nat": "DE"
+    picture: 'https://randomuser.me/api/portraits/thumb/men/1.jpg',
+    country: 'Germany',
+    email: 'marten.faber@example.com',
+    nat: 'DE',
   },
   {
-    "name": {
-      "title": "Miss",
-      "first": "Christy",
-      "last": "Diaz"
+    name: {
+      title: 'Miss',
+      first: 'Christy',
+      last: 'Diaz',
     },
-    "picture": "https://randomuser.me/api/portraits/thumb/women/53.jpg",
-    "country": "Australia",
-    "email": "christy.diaz@example.com",
-    "nat": "AU"
+    picture: 'https://randomuser.me/api/portraits/thumb/women/53.jpg',
+    country: 'Australia',
+    email: 'christy.diaz@example.com',
+    nat: 'AU',
   },
   {
-    "name": {
-      "title": "Mrs",
-      "first": "Naomi",
-      "last": "Ortiz"
+    name: {
+      title: 'Mrs',
+      first: 'Naomi',
+      last: 'Ortiz',
     },
-    "picture": "https://randomuser.me/api/portraits/thumb/women/10.jpg",
-    "country": "Australia",
-    "email": "naomi.ortiz@example.com",
-    "nat": "AU"
+    picture: 'https://randomuser.me/api/portraits/thumb/women/10.jpg',
+    country: 'Australia',
+    email: 'naomi.ortiz@example.com',
+    nat: 'AU',
   },
   {
-    "name": {
-      "title": "Miss",
-      "first": "Emeline",
-      "last": "Carpentier"
+    name: {
+      title: 'Miss',
+      first: 'Emeline',
+      last: 'Carpentier',
     },
-    "picture": "https://randomuser.me/api/portraits/thumb/women/95.jpg",
-    "country": "France",
-    "email": "emeline.carpentier@example.com",
-    "nat": "FR"
+    picture: 'https://randomuser.me/api/portraits/thumb/women/95.jpg',
+    country: 'France',
+    email: 'emeline.carpentier@example.com',
+    nat: 'FR',
   },
   {
-    "name": {
-      "title": "Mr",
-      "first": "Jun",
-      "last": "Hansen"
+    name: {
+      title: 'Mr',
+      first: 'Jun',
+      last: 'Hansen',
     },
-    "picture": "https://randomuser.me/api/portraits/thumb/men/1.jpg",
-    "country": "Netherlands",
-    "email": "jun.hansen@example.com",
-    "nat": "NL"
+    picture: 'https://randomuser.me/api/portraits/thumb/men/1.jpg',
+    country: 'Netherlands',
+    email: 'jun.hansen@example.com',
+    nat: 'NL',
   },
   {
-    "name": {
-      "title": "Miss",
-      "first": "Carla",
-      "last": "Fernández"
+    name: {
+      title: 'Miss',
+      first: 'Carla',
+      last: 'Fernández',
     },
-    "picture": "https://randomuser.me/api/portraits/thumb/women/52.jpg",
-    "country": "Spain",
-    "email": "carla.fernandez@example.com",
-    "nat": "ES"
+    picture: 'https://randomuser.me/api/portraits/thumb/women/52.jpg',
+    country: 'Spain',
+    email: 'carla.fernandez@example.com',
+    nat: 'ES',
   },
   {
-    "name": {
-      "title": "Ms",
-      "first": "Vandana",
-      "last": "Dalvi"
+    name: {
+      title: 'Ms',
+      first: 'Vandana',
+      last: 'Dalvi',
     },
-    "picture": "https://randomuser.me/api/portraits/thumb/women/16.jpg",
-    "country": "India",
-    "email": "vandana.dalvi@example.com",
-    "nat": "IN"
+    picture: 'https://randomuser.me/api/portraits/thumb/women/16.jpg',
+    country: 'India',
+    email: 'vandana.dalvi@example.com',
+    nat: 'IN',
   },
   {
-    "name": {
-      "title": "Mrs",
-      "first": "Nurdan",
-      "last": "Köybaşı"
+    name: {
+      title: 'Mrs',
+      first: 'Nurdan',
+      last: 'Köybaşı',
     },
-    "picture": "https://randomuser.me/api/portraits/thumb/women/86.jpg",
-    "country": "Turkey",
-    "email": "nurdan.koybasi@example.com",
-    "nat": "TR"
+    picture: 'https://randomuser.me/api/portraits/thumb/women/86.jpg',
+    country: 'Turkey',
+    email: 'nurdan.koybasi@example.com',
+    nat: 'TR',
   },
   {
-    "name": {
-      "title": "Mr",
-      "first": "Marc",
-      "last": "Shaw"
+    name: {
+      title: 'Mr',
+      first: 'Marc',
+      last: 'Shaw',
     },
-    "picture": "https://randomuser.me/api/portraits/thumb/men/92.jpg",
-    "country": "United States",
-    "email": "marc.shaw@example.com",
-    "nat": "US"
-  }
+    picture: 'https://randomuser.me/api/portraits/thumb/men/92.jpg',
+    country: 'United States',
+    email: 'marc.shaw@example.com',
+    nat: 'US',
+  },
 ];
 
 export default {
@@ -267,6 +276,68 @@ export const Validation = (args) => ({
 `,
 });
 
+export const InitialValues = (args) => ({
+  components: {VBtn, VMultiSelect},
+  setup() {
+    const genres = ref([
+      {
+        text: 'Pop',
+        value: 'pop',
+      },
+      {
+        text: 'Rock',
+        value: 'rock',
+      },
+      {
+        text: 'Jazz',
+        value: 'jazz',
+      },
+      {
+        text: 'Alternative',
+        value: 'alternative',
+      },
+    ]);
+
+    const schema = object({
+      genre: array().required().min(1).nullable().label('Genre'),
+    });
+
+    const {handleSubmit, resetForm, values} = useForm({
+      validationSchema: schema,
+      initialValues: {
+        genre: [genres.value[0]],
+      },
+    });
+
+    const onSubmit = handleSubmit((values) => {
+      alert(JSON.stringify(values));
+    });
+
+    const selected = ref([genres.value[0]]);
+
+    onMounted(() => {
+      resetForm();
+    });
+
+    return {onSubmit, resetForm, values, genres, selected};
+  },
+  template: `
+    <form @submit="onSubmit" class="border-none">
+      <v-multi-select
+        name="genre"
+        label="Genre"
+        placeholder="Choose your prefered genres"
+        :items="genres"
+      />
+      <div class="mt-4 space-x-2">
+        <v-btn type="submit" color="primary">Submit</v-btn>
+        <v-btn type="button" text @click="resetForm">Reset</v-btn>
+      </div>
+      <pre>{{ {values} }}</pre>
+    </form>
+`,
+});
+
 export const InitialErrors = (args) => ({
   components: {VBtn, VMultiSelect},
   setup() {
@@ -341,8 +412,11 @@ export const CustomSelection = (args) => ({
     const genres = ref(genreItems);
 
     const moreText = computed(() => {
-      return values.genre.slice(3).map((e) => e.text).join(', ');
-    })
+      return values.genre
+        .slice(3)
+        .map((e) => e.text)
+        .join(', ');
+    });
 
     return {onSubmit, resetForm, values, genres, moreText};
   },
@@ -373,8 +447,8 @@ export const CustomMaxSelection = (args) => ({
     const {handleSubmit, resetForm, values} = useForm({
       validationSchema: schema,
       initialValues: {
-        genre: [...genreItems]
-      }
+        genre: [...genreItems],
+      },
     });
 
     const onSubmit = handleSubmit((values) => {
@@ -385,8 +459,11 @@ export const CustomMaxSelection = (args) => ({
     const maxItem = ref(2);
 
     const moreText = computed(() => {
-      return values.genre.slice(maxItem.value).map((e) => e.text).join(', ');
-    })
+      return values.genre
+        .slice(maxItem.value)
+        .map((e) => e.text)
+        .join(', ');
+    });
 
     return {onSubmit, resetForm, values, genres, maxItem, moreText};
   },
@@ -417,8 +494,8 @@ export const CustomSelectAll = (args) => ({
     const {handleSubmit, resetForm, values} = useForm({
       validationSchema: schema,
       initialValues: {
-        genre: [...genreItems]
-      }
+        genre: [...genreItems],
+      },
     });
 
     const onSubmit = handleSubmit((values) => {
@@ -462,8 +539,8 @@ export const PrependItem = (args) => ({
     const {handleSubmit, resetForm, values} = useForm({
       validationSchema: schema,
       initialValues: {
-        genre: [...genreItems]
-      }
+        genre: [...genreItems],
+      },
     });
 
     const onSubmit = handleSubmit((values) => {
@@ -503,8 +580,8 @@ export const AppendItem = (args) => ({
     const {handleSubmit, resetForm, values} = useForm({
       validationSchema: schema,
       initialValues: {
-        genre: [...genreItems]
-      }
+        genre: [...genreItems],
+      },
     });
 
     const onSubmit = handleSubmit((values) => {

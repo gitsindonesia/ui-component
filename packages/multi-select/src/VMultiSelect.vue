@@ -195,6 +195,7 @@ const dropdown = ref<HTMLDivElement | null>(null);
 
 const {value: selected, errorMessage} = useField(name, rules, {
   initialValue: modelValue.value,
+  syncVModel: true,
 });
 
 const matchBy = (item: VMultiSelectItem, key: string) =>
@@ -357,7 +358,7 @@ watch(
   (val) => {
     selected.value = val;
   },
-  {immediate: true, deep: true},
+  {deep: true},
 );
 
 watch(
@@ -399,30 +400,32 @@ watch(
           @click="isOpen = true"
         >
           <div class="v-multi-select-badges">
-            <template v-if='selected.length' v-for="(sItem, index) in badges" :key='sItem.value'>
-              <slot name="selection"
-                    :index="index"
-                    :item="sItem"
-                    :value="sItem[itemText]"
-                    :onRemove="() => deselect(sItem)">
-                <v-badge
-                  :color="badgeColor"
-                  dismissable
-                  class="truncate"
-                  :class="badgeClass"
-                  @dismiss="deselect(sItem)"
-                  v-bind="badgeProps"
+            <template v-if="selected.length">
+              <template v-for="(sItem, index) in badges" :key="sItem.value">
+                <slot
+                  name="selection"
+                  :index="index"
+                  :item="sItem"
+                  :value="sItem[itemText]"
+                  :onRemove="() => deselect(sItem)"
                 >
-                  {{ sItem[itemText] }}
-                </v-badge>
-              </slot>
+                  <v-badge
+                    :color="badgeColor"
+                    dismissable
+                    class="truncate"
+                    :class="badgeClass"
+                    @dismiss="deselect(sItem)"
+                    v-bind="badgeProps"
+                  >
+                    {{ sItem[itemText] }}
+                  </v-badge>
+                </slot>
+              </template>
             </template>
 
-            <template v-if='maxBadge > 0 && selected.length > maxBadge'>
+            <template v-if="maxBadge > 0 && selected.length > maxBadge">
               <slot name="max-selection">
-                <v-badge small>
-                  {{ selected.length - maxBadge }} more
-                </v-badge>
+                <v-badge small> {{ selected.length - maxBadge }} more </v-badge>
               </slot>
             </template>
 
@@ -447,7 +450,7 @@ watch(
           </div>
 
           <div class="v-multi-select-action">
-            <v-tooltip v-if='selected.length > 1'>
+            <v-tooltip v-if="selected.length > 1">
               <template #activator="{on}">
                 <v-badge
                   circle
@@ -489,15 +492,19 @@ watch(
             >
               Loading...
             </div>
-            <template v-else-if='filteredItems.length'>
+            <template v-else-if="filteredItems.length">
               <template v-if="selectAll">
-                <slot name="select-all" :onClick="toggleSelectAll" :isSelected="isAllSelected">
+                <slot
+                  name="select-all"
+                  :onClick="toggleSelectAll"
+                  :isSelected="isAllSelected"
+                >
                   <div class="v-multi-select-item" @click="toggleSelectAll">
                     <div
                       :class="[
-                      isAllSelected ? 'font-medium' : 'font-normal',
-                      'block truncate',
-                    ]"
+                        isAllSelected ? 'font-medium' : 'font-normal',
+                        'block truncate',
+                      ]"
                     >
                       {{ isAllSelected ? 'Deselect All' : 'Select All' }}
                     </div>
@@ -513,11 +520,11 @@ watch(
                 </slot>
               </template>
 
-              <slot name='prepend.item' />
+              <slot name="prepend.item" />
 
               <template
                 v-for="(item, index) in filteredItems"
-                :key='item.value'
+                :key="item.value"
               >
                 <div
                   :ref="(el) => setRefItem(el, index)"
@@ -546,14 +553,20 @@ watch(
                     />
                   </div>
                   <div class="v-multi-select-item-text">
-                    <slot name='item.label' :index="index" :item="item" :value="item[itemText]"
-                          :isSelected="isSelected(item, index)">{{ item[itemText] }}
+                    <slot
+                      name="item.label"
+                      :index="index"
+                      :item="item"
+                      :value="item[itemText]"
+                      :isSelected="isSelected(item, index)"
+                    >
+                      {{ item[itemText] }}
                     </slot>
                   </div>
                 </div>
               </template>
 
-              <slot name='append.item' />
+              <slot name="append.item" />
             </template>
             <div
               v-else
@@ -568,7 +581,7 @@ watch(
     </div>
   </div>
   <ErrorMessage
-    v-if='errorMessages.length'
+    v-if="errorMessages.length"
     class="text-error-500 text-sm"
     :name="name"
   />
@@ -721,7 +734,8 @@ watch(
   color: var(--v-multi-select-item-text-color);
   font-size: var(--v-multi-select-item-font-size);
   font-weight: var(--v-multi-select-item-font-weight);
-  padding: var(--v-multi-select-item-padding-y) var(--v-multi-select-item-padding-x);
+  padding: var(--v-multi-select-item-padding-y)
+    var(--v-multi-select-item-padding-x);
 
   @apply cursor-default
   select-none
