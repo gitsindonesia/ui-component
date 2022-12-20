@@ -22,13 +22,9 @@ import Icon from '@gits-id/icon';
 import '@gits-id/icon/dist/style.css';
 import '@gits-id/tooltip/dist/style.css';
 import '@gits-id/forms/dist/style.css';
+import {VMultiSelectItem} from './types';
 
-type VMultiSelectItem = {
-  text: string;
-  value: any;
-
-  [x: string]: any;
-};
+type SearchByFunction = (item: VMultiSelectItem, search: string) => boolean;
 
 const props = defineProps({
   modelValue: {
@@ -48,7 +44,7 @@ const props = defineProps({
     default: 'value',
   },
   searchBy: {
-    type: String,
+    type: [String, Function] as PropType<string | SearchByFunction>,
     default: 'text',
   },
   maxBadge: {
@@ -198,17 +194,28 @@ const {value: selected, errorMessage} = useField(name, rules, {
   syncVModel: true,
 });
 
-const matchBy = (item: VMultiSelectItem, key: string) =>
-  String(item?.[key])?.toLowerCase()?.includes(search.value.toLowerCase());
+const matchBy = (item: VMultiSelectItem, key: string) => {
+  return String(item?.[key])
+    ?.toLowerCase()
+    ?.includes(search.value.toLowerCase());
+};
 
 const searchItem = (item: VMultiSelectItem) => {
-  const searchVal = search.value;
+  if (!search.value) return true;
 
-  if (!searchVal) return true;
+  return [
+    typeof searchBy.value === 'string' ? searchBy.value : '',
+    itemText.value,
+    itemValue.value,
+  ]
+    .filter(Boolean)
+    .some((query) => {
+      if (typeof searchBy.value === 'function') {
+        return searchBy.value(item, search.value);
+      }
 
-  const searchable = [searchBy.value, itemText.value, itemValue.value];
-
-  return searchable.filter(Boolean).some((query) => matchBy(item, query));
+      return matchBy(item, query);
+    });
 };
 
 // computed

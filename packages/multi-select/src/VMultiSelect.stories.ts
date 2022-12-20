@@ -3,8 +3,9 @@ import VBtn from '@gits-id/button';
 import {useForm} from 'vee-validate';
 import {object, array} from 'yup';
 import {computed, ref, onMounted} from 'vue';
+import {VMultiSelectItem} from './types';
 
-const items = [...Array(200)].map((item, index) => ({
+const items = [...Array(200)].map((_, index) => ({
   value: index + 1,
   text: `Option ${index + 1}`,
 }));
@@ -276,7 +277,7 @@ export const Validation = (args) => ({
 `,
 });
 
-export const InitialValues = (args) => ({
+export const InitialValues = () => ({
   components: {VBtn, VMultiSelect},
   setup() {
     const genres = ref([
@@ -338,7 +339,7 @@ export const InitialValues = (args) => ({
 `,
 });
 
-export const InitialErrors = (args) => ({
+export const InitialErrors = () => ({
   components: {VBtn, VMultiSelect},
   setup() {
     const schema = object({
@@ -394,7 +395,7 @@ export const InitialErrors = (args) => ({
 `,
 });
 
-export const CustomSelection = (args) => ({
+export const CustomSelection = () => ({
   components: {VMultiSelect},
   setup() {
     const schema = object({
@@ -437,7 +438,7 @@ export const CustomSelection = (args) => ({
 `,
 });
 
-export const CustomMaxSelection = (args) => ({
+export const CustomMaxSelection = () => ({
   components: {VMultiSelect},
   setup() {
     const schema = object({
@@ -484,7 +485,7 @@ export const CustomMaxSelection = (args) => ({
 `,
 });
 
-export const CustomSelectAll = (args) => ({
+export const CustomSelectAll = () => ({
   components: {VMultiSelect},
   setup() {
     const schema = object({
@@ -517,8 +518,8 @@ export const CustomSelectAll = (args) => ({
       >
         <template v-slot:select-all='{onClick, isSelected}'>
           <div class="px-4 py-8 bg-white font-bold sticky left-0 -top-[0.25rem] hover:bg-[gainsboro] border-b-[1px] border-b-grey-500" 
-               style="z-index: 1;"
-               @click='onClick'
+            style="z-index: 1;"
+            @click='onClick'
           >
             {{isSelected ? ' v ' : ''}}
             Select All
@@ -570,7 +571,7 @@ export const PrependItem = (args) => ({
 `,
 });
 
-export const AppendItem = (args) => ({
+export const AppendItem = () => ({
   components: {VMultiSelect},
   setup() {
     const schema = object({
@@ -611,7 +612,7 @@ export const AppendItem = (args) => ({
 `,
 });
 
-export const CustomItemLabel = (args) => ({
+export const CustomItemLabel = () => ({
   components: {VMultiSelect},
   setup() {
     const schema = object({
@@ -684,4 +685,64 @@ export const CssVars = () => ({
       '--v-multi-select-check-icon-color': 'purple',
     }"
   />`,
+});
+
+export const CustomSearchFunction = () => ({
+  components: {VBtn, VMultiSelect},
+  setup() {
+    const schema = object({
+      genre: array().required().min(1).label('Genre'),
+    });
+
+    const {handleSubmit, resetForm, values} = useForm({
+      validationSchema: schema,
+    });
+
+    const onSubmit = handleSubmit((values) => {
+      alert(JSON.stringify(values));
+    });
+
+    const genres = ref([
+      {
+        name: 'Pop',
+        id: 1
+      },
+      {
+        name: 'Rock',
+        id: 2
+      },
+      {
+        name: 'Jazz',
+        id: 3
+      },
+      {
+        name: 'Alternative',
+        id: 4
+      },
+    ]);
+
+    const compareGenres = (item: VMultiSelectItem, query: string) => {
+      return +item.id === +query || item.name.toLowerCase().includes(query.toLowerCase());
+    };
+
+    return {onSubmit, resetForm, values, genres, compareGenres};
+  },
+  template: `
+    <form @submit="onSubmit" class="border-none">
+      <v-multi-select
+        name="genre"
+        label="Genre"
+        placeholder="Search by id. Ex: 1, 2, 3, 4"
+        :items="genres"
+        item-text="name"
+        item-value="key"
+        :search-by="compareGenres"
+      />
+      <div class="mt-4">
+        <v-btn type="submit">Submit</v-btn>
+        <v-btn type="button" text @click="resetForm">Reset</v-btn>
+      </div>
+      <pre>{{ {values} }}</pre>
+    </form>
+`,
 });
