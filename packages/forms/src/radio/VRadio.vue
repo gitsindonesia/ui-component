@@ -68,6 +68,10 @@ const props = defineProps({
     type: String,
     default: 'disabled:text-gray-200 disabled:cursor-not-allowed',
   },
+  errorClass: {
+    type: String,
+    default: '',
+  },
 });
 
 const {modelValue, rules, label, inputClass, name, id} = toRefs(props);
@@ -129,7 +133,7 @@ watch(
         {{ label }}
       </label>
     </div>
-    <div v-if="errorMessage && !hideError" class="v-radio-error">
+    <div v-if="errorMessage && !hideError" class="v-radio-error" :class="errorClass">
       {{ errorMessage }}
     </div>
   </div>

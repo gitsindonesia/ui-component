@@ -148,6 +148,14 @@ const props = defineProps({
     type: String as PropType<IconSize>,
     default: 'md',
   },
+  errorClass: {
+    type: String,
+    default: '',
+  },
+  labelClass: {
+    type: String,
+    default: '',
+  },
 });
 
 const {
@@ -229,7 +237,7 @@ const clear = () => {
     ]"
   >
     <slot v-if="label" name="label" :v-slot="{for: id || name}">
-      <label v-if="label" :for="id || name" class="v-input-label">
+      <label v-if="label" :for="id || name" class="v-input-label" :class="labelClass">
         {{ label }}
       </label>
     </slot>
@@ -308,7 +316,7 @@ const clear = () => {
       </slot>
     </div>
 
-    <div v-if="errorMessage" class="v-input-error">
+    <div v-if="errorMessage" class="v-input-error" :class='errorClass'>
       {{ errorMessage }}
     </div>
   </div>
