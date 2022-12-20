@@ -9,7 +9,6 @@ const items = [...Array(200)].map((_, index) => ({
   value: index + 1,
   text: `Option ${index + 1}`,
 }));
-
 const genreItems = [
   'pop',
   'rock',
@@ -20,7 +19,6 @@ const genreItems = [
   'hiphop',
   'blues',
 ].map((e) => ({text: e.toUpperCase(), value: e}));
-
 const userItems = [
   {
     name: {
