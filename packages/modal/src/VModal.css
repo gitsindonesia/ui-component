@@ -1,0 +1,81 @@
+:root {
+  --v-modal-text-color: theme('colors.gray.800');
+  --v-modal-bg-color: theme('colors.white');
+  --v-modal-border-radius: theme('borderRadius.md');
+  --v-modal-z-index: 30;
+  --v-modal-shadow: theme('boxShadow.lg');
+}
+
+.v-modal-dialog {
+  z-index: var(--v-modal-z-index);
+
+  @apply fixed inset-0 overflow-y-auto;
+}
+
+.v-modal-content {
+  @apply min-h-screen text-center px-4;
+}
+
+.v-modal-overlay {
+  @apply fixed bg-black bg-opacity-50 inset-0;
+}
+
+.v-modal-panel {
+  background: var(--v-modal-bg-color);
+  color: var(--v-modal-text-color);
+  border-radius: var(--v-modal-border-radius);
+  box-shadow: var(--v-modal-shadow);
+
+  @apply w-full
+    overflow-hidden
+    align-middle
+    transition-all
+    transform
+    p-6
+    max-w-md
+    inline-block
+    my-8
+    text-left;
+}
+
+.v-modal-spacer {
+  @apply inline-block h-screen align-middle;
+}
+
+.v-modal-header {
+  @apply flex justify-between gap-4 items-center;
+}
+
+.v-modal-title {
+  @apply text-lg font-medium leading-6 text-gray-900;
+}
+
+.v-modal-body {
+  @apply mt-4 flex-1 text-left;
+}
+
+.v-modal-footer {
+  @apply mt-6 flex gap-2 justify-end;
+}
+
+/* fullscreen */
+.v-modal.v-modal--fullscreen .v-modal-panel {
+  @apply h-screen flex flex-col max-w-full m-0 rounded-none;
+}
+
+.v-modal.v-modal--fullscreen .v-modal-content {
+  @apply px-0;
+}
+
+/* centered */
+.v-modal.v-modal--centered .v-modal-panel {
+  @apply text-center justify-center;
+}
+
+.v-modal.v-modal--centered .v-modal-body {
+  @apply text-center;
+}
+
+.v-modal.v-modal--centered .v-modal-footer {
+  @apply justify-center;
+}
