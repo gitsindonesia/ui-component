@@ -1,12 +1,12 @@
-<script setup lang="ts">
-import {VAlert} from '@gits-id/ui';
-</script>
-
 # Alert
+
+The `VAlert` component is a flexible alert component that can be used to display various types of messages to the user. It is registered globally when you install` @gits-id/ui`, so you don't need to import it manually.
 
 ## Usage
 
 ### Basic Usage
+
+To use the `VAlert` component, you can simply include it in your template like this:
 
 ```vue
 <template>
@@ -17,10 +17,6 @@ import {VAlert} from '@gits-id/ui';
 
 <LivePreview src="components-alert--default" />
 
-::: info
-The `VAlert` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
-:::
-
 ### Colors
 
 - **prop**: `color`
@@ -28,7 +24,18 @@ The `VAlert` component is registered globally when you install with `@gits-id/ui
 - **default**: `default`
 - **required**: `false`
 
-Use `color` to different color style to the alert.
+You can use the color prop to specify the color style of the alert. The following colors are available:
+
+- `default`
+- `primary`
+- `secondary`
+- `info`
+- `warning`
+- `success`
+- `error`
+- `dark`
+  
+Here's an example of how to use different colors:
 
 ```vue
 <template>
@@ -45,7 +52,7 @@ Use `color` to different color style to the alert.
 
 <LivePreview src="components-alert--default" />
 
-### Solid
+### Solid Style
 
 - **prop**: `solid`
 - **type**: `boolean`
@@ -69,7 +76,7 @@ Use `solid` to apply solid style to the alert.
 
 <LivePreview src="components-alert--solid" />
 
-### Outlined
+### Outlined Style
 
 - **prop**: `outlined`
 - **type**: `boolean`
@@ -93,7 +100,7 @@ Use `outlined` to apply outlined style to the alert.
 
 <LivePreview src="components-alert--outlined" />
 
-### Bordered
+### Bordered Style
 
 - **prop**: `border`
 - **type**: `boolean`
@@ -124,7 +131,7 @@ Use `border` to apply bordered style to the alert.
 - **default**: `true`
 - **required**: `false`
 
-Use `v-model` to show or hide the alert.
+You can use the `v-model` directive to bind the alert to a data model. The `modelValue` prop is used to represent the model value, and it is a boolean that defaults to `true`.
 
 ```vue{10}
 <script setup lang="ts">
@@ -218,24 +225,53 @@ const isOpen = ref(true);
 | [transition](#transition)   | `string`                                           | `fade`    |
 | [iconClass](#iconClass)     | `string`                                           | ` `       |
 
-## Methods
-
-None
-
 ## Events
 
-| Name                                   | Payload            | Description                         |
-| -------------------------------------- | ------------------ | ----------------------------------- |
-| [update:modelValue](#updateModelValue) | `(value: boolean)` | Fired internal `open` state changed |
-| [dismissed](#dismissed)                | None               | Fired when alert is hidden          |
+| Name                                   | Payload            | Description                                                                             |
+| -------------------------------------- | ------------------ | --------------------------------------------------------------------------------------- |
+| [update:modelValue](#updateModelValue) | `(value: boolean)` | Emitted when the modelValue prop changes. Receives a value argument with the new value. |
+| [dismissed](#dismissed)                | None               | Emitted when the alert is dismissed by the user.                                        |
+
+To listen for the `emit` event in a parent component or another component, you can use the `@` symbol followed by the event name. For example:
+
+```vue
+<script setup>
+function handleModelValueUpdate(value) {
+  // do something with the value passed from the child component
+}
+
+function handleDismissed() {
+  // do something when the dismissed event is triggered
+}
+</script>
+
+<template>
+  <VAlert
+    @update:modelValue="handleModelValueUpdate"
+    @dismissed="handleDismissed"
+  >
+    Alert message
+  </VAlert>
+</template>
+```
 
 ## Slots
 
-| Name                  | Props                   | Description             |
-| --------------------- | ----------------------- | ----------------------- |
-| [default](#default)   | None                    | The default Vue slot    |
-| [icon](#icon)         | None                    | Prepend icon slot       |
-| [x-button](#x-button) | `(dismiss: () => void)` | Dismissable button slot |
+### `default`
+
+A slot for placing the alert content/message.
+
+### `icon`
+
+A slot for customizing the icon. Receives an icon prop with the name of the current icon.
+
+### `x-button`
+
+A slot for customizing the dismiss button. Receives a dismiss prop with a function that dismisses the alert.
+
+### `x-icon`
+
+A slot for customizing the icon in the dismiss button.
 
 ## CSS Variables
 
