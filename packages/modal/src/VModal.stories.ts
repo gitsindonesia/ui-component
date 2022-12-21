@@ -262,3 +262,26 @@ export const Persistent: Story = (args) => ({
     </v-modal>  
   `,
 });
+
+export const CustomClass: Story = (args) => ({
+  components: {
+    VModal,
+    VBtn,
+  },
+  setup() {
+    const isOpen = ref(true);
+    return {args, isOpen};
+  },
+  template: `
+    <v-modal
+      v-bind="args"
+      v-model="isOpen"
+      modal-class="!max-w-2xl"  
+    >
+      <template #activator="{open}">
+        <v-btn @click="open">Click Me</v-btn>
+      </template>
+      Hello World
+    </v-modal>  
+  `,
+});
