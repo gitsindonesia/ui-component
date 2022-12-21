@@ -31,6 +31,7 @@ export interface Props {
   closeText?: string;
   closeProps?: {};
   headerClass?: string;
+  titleClass?: string;
   bodyClass?: string;
   footerClass?: string;
   modalClass?: string;
@@ -160,6 +161,7 @@ const panelStyles = computed(() => {
           'v-modal--persistent': persistent,
         },
       ]"
+      v-bind="$attrs"
     >
       <div class="v-modal-dialog">
         <div class="v-modal-content">
@@ -200,7 +202,7 @@ const panelStyles = computed(() => {
                 :class="headerClass"
               >
                 <slot name="header">
-                  <h3 class="v-modal-title">
+                  <h3 class="v-modal-title" :class="titleClass">
                     {{ title }}
                   </h3>
                 </slot>
