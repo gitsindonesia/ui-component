@@ -6,6 +6,34 @@
   --v-modal-shadow: theme('boxShadow.lg');
   --v-modal-width: 25rem;
   --v-modal-max-width: 100%;
+
+  /* content */
+  --v-modal-content-padding-x: theme('padding.4');
+  --v-modal-content-padding-y: theme('padding.0');
+  --v-modal-content-text-align: center;
+
+  /* panel */
+  --v-modal-panel-padding-x: theme('padding.6');
+  --v-modal-panel-padding-y: theme('padding.6');
+  --v-modal-margin-padding-x: theme('margin.8');
+  --v-modal-margin-padding-y: theme('margin.8');
+  --v-modal-content-text-align: center;
+
+  /* title */
+  --v-modal-title-font-size: theme('fontSize.lg');
+  --v-modal-title-font-weight: theme('fontWeight.medium');
+  --v-modal-title-line-height: theme('lineHeight.6');
+  --v-modal-title-letter-spacing: theme('letterSpacing.tight');
+  --v-modal-title-color: theme('colors.gray.900');
+
+  /* body */
+  --v-modal-body-margin-top: theme('margin.4');
+  --v-modal-body-text-align: left;
+
+  /* footer */
+  --v-modal-footer-margin-top: theme('margin.6');
+  --v-modal-footer-justify-content: flex-end;
+  --v-modal-footer-gap: theme('gap.2');
 }
 
 .v-modal-dialog {
@@ -15,11 +43,14 @@
 }
 
 .v-modal-content {
-  @apply min-h-screen text-center px-4;
+  padding: var(--v-modal-content-padding-y) var(--v-modal-content-padding-x);
+  text-align: var(--v-modal-content-text-align);
+
+  @apply min-h-screen;
 }
 
 .v-modal-overlay {
-  @apply fixed bg-black bg-opacity-50 inset-0;
+  @apply fixed inset-0 bg-black/50;
 }
 
 .v-modal-panel {
@@ -29,16 +60,17 @@
   box-shadow: var(--v-modal-shadow);
   max-width: var(--v-modal-max-width);
   width: var(--v-modal-width);
+  padding: var(--v-modal-panel-padding-y) var(--v-modal-panel-padding-x);
+  margin: var(--v-modal-panel-margin-y) var(--v-modal-panel-margin-x);
+  text-align: var(--v-modal-panel-text-align);
+  overflow: hidden;
+  vertical-align: middle;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  display: inline-block;
 
-  @apply
-    overflow-hidden
-    align-middle
-    transition-all
-    transform
-    p-6
-    inline-block
-    my-8
-    text-left;
+  @apply transform;
 }
 
 .v-modal-spacer {
@@ -50,18 +82,33 @@
 }
 
 .v-modal-title {
-  @apply text-lg font-medium leading-6 text-gray-900;
+  font-size: var(--v-modal-title-font-size);
+  font-weight: var(--v-modal-title-font-weight);
+  line-height: var(--v-modal-title-line-height);
+  letter-spacing: var(--v-modal-title-letter-spacing);
+  color: var(--v-modal-title-color);
 }
 
 .v-modal-body {
-  @apply mt-4 flex-1 text-left;
+  margin-top: var(--v-modal-body-margin-top);
+  text-align: var(--v-modal-body-text-align);
+  
+  @apply flex-1;
 }
 
 .v-modal-footer {
-  @apply mt-6 flex gap-2 justify-end;
+  margin-top: var(--v-modal-footer-margin-top);
+  justify-content: var(--v-modal-footer-justify-content);
+  gap: var(--v-modal-footer-gap);
+  display: flex;
 }
 
 /* fullscreen */
+.v-modal--fullscreen {
+  --v-modal-width: 100%;
+  --v-modal-max-width: 100%;
+}
+
 .v-modal.v-modal--fullscreen .v-modal-panel {
   @apply h-screen flex flex-col max-w-full m-0 rounded-none;
 }

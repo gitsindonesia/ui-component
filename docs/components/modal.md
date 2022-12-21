@@ -261,6 +261,36 @@ const approveRequest = () => {
   --v-modal-border-radius: theme('borderRadius.md');
   --v-modal-z-index: 30;
   --v-modal-shadow: theme('boxShadow.lg');
+  --v-modal-width: 25rem;
+  --v-modal-max-width: 100%;
+
+  /* content */
+  --v-modal-content-padding-x: theme('padding.4');
+  --v-modal-content-padding-y: theme('padding.0');
+  --v-modal-content-text-align: center;
+
+  /* panel */
+  --v-modal-panel-padding-x: theme('padding.6');
+  --v-modal-panel-padding-y: theme('padding.6');
+  --v-modal-margin-padding-x: theme('margin.8');
+  --v-modal-margin-padding-y: theme('margin.8');
+  --v-modal-content-text-align: center;
+
+  /* title */
+  --v-modal-title-font-size: theme('fontSize.lg');
+  --v-modal-title-font-weight: theme('fontWeight.medium');
+  --v-modal-title-line-height: theme('lineHeight.6');
+  --v-modal-title-letter-spacing: theme('letterSpacing.tight');
+  --v-modal-title-color: theme('colors.gray.900');
+
+  /* body */
+  --v-modal-body-margin-top: theme('margin.4');
+  --v-modal-body-text-align: left;
+
+  /* footer */
+  --v-modal-footer-margin-top: theme('margin.6');
+  --v-modal-footer-justify-content: flex-end;
+  --v-modal-footer-gap: theme('gap.2');
 }
 ```
 
