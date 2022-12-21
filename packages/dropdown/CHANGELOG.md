@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.20](https://github.com/gitsindonesia/ui-component/compare/v0.13.19...v0.13.20) (2022-12-21)
+
+### Features
+
+- **transition & button:** new `fade-scale` transition and new button `flush` style ([#68](https://github.com/gitsindonesia/ui-component/issues/68)) ([f5b826b](https://github.com/gitsindonesia/ui-component/commit/f5b826bb86a4da6edd78393148d8fad70295a9ce))
+
 ## [0.13.17](https://github.com/gitsindonesia/ui-component/compare/v0.13.16...v0.13.17) (2022-12-14)
 
 **Note:** Version bump only for package @gits-id/dropdown

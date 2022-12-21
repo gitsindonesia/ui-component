@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.20](https://github.com/gitsindonesia/ui-component/compare/v0.13.19...v0.13.20) (2022-12-21)
+
+### Bug Fixes
+
+- **FileUpload:** fix button type ([#73](https://github.com/gitsindonesia/ui-component/issues/73)) ([ef920aa](https://github.com/gitsindonesia/ui-component/commit/ef920aa5dffe517a574d29533dff7b96688207b2))
+- **forms:** standardize label and error class ([#71](https://github.com/gitsindonesia/ui-component/issues/71)) ([cda5923](https://github.com/gitsindonesia/ui-component/commit/cda5923c77eea564f1df3696753e7b21a5da97c5))
+
 ## [0.13.17](https://github.com/gitsindonesia/ui-component/compare/v0.13.16...v0.13.17) (2022-12-14)
 
 **Note:** Version bump only for package @gits-id/forms

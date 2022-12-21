@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.20](https://github.com/gitsindonesia/ui-component/compare/v0.13.19...v0.13.20) (2022-12-21)
+
+### Features
+
+- **VMultiSelect:** add support for custom compare function via `search-by` prop ([#70](https://github.com/gitsindonesia/ui-component/issues/70)) ([78c0133](https://github.com/gitsindonesia/ui-component/commit/78c0133fbb1dfff30f0216babbb7ed8988befbc2))
+- **VMultiSelect:** sync v-model ([#69](https://github.com/gitsindonesia/ui-component/issues/69)) ([273503a](https://github.com/gitsindonesia/ui-component/commit/273503a3b15be2b0dbba441a91b14a130ff182af))
+
 ## [0.13.19](https://github.com/gitsindonesia/ui-component/compare/v0.13.18...v0.13.19) (2022-12-16)
 
 ### Bug Fixes

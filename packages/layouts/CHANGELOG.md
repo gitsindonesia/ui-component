@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.20](https://github.com/gitsindonesia/ui-component/compare/v0.13.19...v0.13.20) (2022-12-21)
+
+**Note:** Version bump only for package @gits-id/layouts
+
 ## [0.13.16](https://github.com/gitsindonesia/ui-component/compare/v0.13.15...v0.13.16) (2022-12-08)
 
 **Note:** Version bump only for package @gits-id/layouts

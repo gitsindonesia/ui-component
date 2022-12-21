@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.13.20](https://github.com/gitsindonesia/ui-component/compare/v0.13.19...v0.13.20) (2022-12-21)
+
+### Bug Fixes
+
+- **FileUpload:** fix button type ([#73](https://github.com/gitsindonesia/ui-component/issues/73)) ([ef920aa](https://github.com/gitsindonesia/ui-component/commit/ef920aa5dffe517a574d29533dff7b96688207b2))
+- **forms:** standardize label and error class ([#71](https://github.com/gitsindonesia/ui-component/issues/71)) ([cda5923](https://github.com/gitsindonesia/ui-component/commit/cda5923c77eea564f1df3696753e7b21a5da97c5))
+
+### Features
+
+- **storybook:** add GA ([a02deb9](https://github.com/gitsindonesia/ui-component/commit/a02deb9f9ea921961fc7326d4bba916973cb7aa6))
+- **transition & button:** new `fade-scale` transition and new button `flush` style ([#68](https://github.com/gitsindonesia/ui-component/issues/68)) ([f5b826b](https://github.com/gitsindonesia/ui-component/commit/f5b826bb86a4da6edd78393148d8fad70295a9ce))
+- **VMultiSelect:** add support for custom compare function via `search-by` prop ([#70](https://github.com/gitsindonesia/ui-component/issues/70)) ([78c0133](https://github.com/gitsindonesia/ui-component/commit/78c0133fbb1dfff30f0216babbb7ed8988befbc2))
+- **VMultiSelect:** sync v-model ([#69](https://github.com/gitsindonesia/ui-component/issues/69)) ([273503a](https://github.com/gitsindonesia/ui-component/commit/273503a3b15be2b0dbba441a91b14a130ff182af))
+
 ## [0.13.19](https://github.com/gitsindonesia/ui-component/compare/v0.13.18...v0.13.19) (2022-12-16)
 
 ### Bug Fixes
