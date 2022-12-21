@@ -4,6 +4,8 @@
   --v-modal-border-radius: theme('borderRadius.md');
   --v-modal-z-index: 30;
   --v-modal-shadow: theme('boxShadow.lg');
+  --v-modal-width: 25rem;
+  --v-modal-max-width: 100%;
 }
 
 .v-modal-dialog {
@@ -25,14 +27,15 @@
   color: var(--v-modal-text-color);
   border-radius: var(--v-modal-border-radius);
   box-shadow: var(--v-modal-shadow);
+  max-width: var(--v-modal-max-width);
+  width: var(--v-modal-width);
 
-  @apply w-full
+  @apply
     overflow-hidden
     align-middle
     transition-all
     transform
     p-6
-    max-w-md
     inline-block
     my-8
     text-left;
