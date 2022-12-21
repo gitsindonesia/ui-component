@@ -239,6 +239,7 @@ const panelStyles = computed(() => {
                   :loading="isLoading"
                   :confirm-props="confirmProps"
                   :on-confirm="onConfirm"
+                  :close="closeModal"
                 >
                   <v-btn
                     v-if="confirm"
