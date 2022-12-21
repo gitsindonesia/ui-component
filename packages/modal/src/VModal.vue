@@ -5,7 +5,7 @@ export default {
 </script>
 
 <script setup lang="ts">
-import {ref, toRefs, watch} from 'vue';
+import {computed, ref, toRefs, watch} from 'vue';
 import {
   TransitionRoot,
   TransitionChild,
@@ -43,8 +43,8 @@ export interface Props {
   hideXButton?: boolean;
   xButtonProps?: Record<string, any>;
   xIconClass?: string;
-  width: string | number
-  maxWidth: string | number
+  width: string | number;
+  maxWidth: string | number;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -127,6 +127,20 @@ const onConfirm = () => {
     close: closeModal,
   });
 };
+
+const panelStyles = computed(() => {
+  const styles: Record<string, any> = {};
+
+  if (props.width) {
+    styles['width'] = props.width;
+  }
+
+  if (props.maxWidth) {
+    styles['max-width'] = props.maxWidth;
+  }
+
+  return styles;
+});
 </script>
 
 <template>
@@ -174,7 +188,11 @@ const onConfirm = () => {
             leave-from="opacity-100 scale-100"
             leave-to="opacity-0 scale-95"
           >
-            <DialogPanel class="v-modal-panel" :class="[modalClass]">
+            <DialogPanel
+              class="v-modal-panel"
+              :style="panelStyles"
+              :class="[modalClass]"
+            >
               <DialogTitle
                 v-if="!hideHeader"
                 as="div"

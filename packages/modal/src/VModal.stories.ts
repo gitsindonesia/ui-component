@@ -285,3 +285,27 @@ export const CustomClass: Story = (args) => ({
     </v-modal>  
   `,
 });
+
+export const CustomWidth: Story = (args) => ({
+  components: {
+    VModal,
+    VBtn,
+  },
+  setup() {
+    const isOpen = ref(true);
+    return {args, isOpen};
+  },
+  template: `
+    <v-modal
+      v-bind="args"
+      v-model="isOpen"
+      width="700px"
+      max-width="100%"
+    >
+      <template #activator="{open}">
+        <v-btn @click="open">Click Me</v-btn>
+      </template>
+      Hello World
+    </v-modal>  
+  `,
+});
