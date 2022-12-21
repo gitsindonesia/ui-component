@@ -262,3 +262,91 @@ export const Persistent: Story = (args) => ({
     </v-modal>  
   `,
 });
+
+export const CustomClass: Story = (args) => ({
+  components: {
+    VModal,
+    VBtn,
+  },
+  setup() {
+    const isOpen = ref(true);
+    return {args, isOpen};
+  },
+  template: `
+    <v-modal
+      v-bind="args"
+      v-model="isOpen"
+      modal-class="!max-w-2xl"  
+    >
+      <template #activator="{open}">
+        <v-btn @click="open">Click Me</v-btn>
+      </template>
+      Hello World
+    </v-modal>  
+  `,
+});
+
+export const CustomWidth: Story = (args) => ({
+  components: {
+    VModal,
+    VBtn,
+  },
+  setup() {
+    const isOpen = ref(true);
+    return {args, isOpen};
+  },
+  template: `
+    <v-modal
+      v-bind="args"
+      v-model="isOpen"
+      width="700px"
+      max-width="100%"
+    >
+      <template #activator="{open}">
+        <v-btn @click="open">Click Me</v-btn>
+      </template>
+      Hello World
+    </v-modal>  
+  `,
+});
+
+export const Customization: Story = (args) => ({
+  components: {
+    VModal,
+    VBtn,
+  },
+  setup() {
+    const isOpen = ref(true);
+    return {args, isOpen};
+  },
+  template: `
+    <div class="bg-gray-800 text-white h-screen p-6 space-y-5">
+      <p class="mb-5" v-for="i in 5" :key="i">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+        ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+        in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Excepteur sint occaecat cupidatat non proident,
+        sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+
+      <v-modal
+        v-bind="args"
+        v-model="isOpen"
+        :style="{
+          '--v-modal-bg-color': 'rgb(255, 255, 255, 0.3)',
+          '--v-modal-shadow': 'none',
+        }"
+        modal-class="backdrop-blur-sm"
+        title-class="!text-white"
+        body-class="!text-white"
+      >
+        <template #activator="{open}">
+          <v-btn @click="open">Click Me</v-btn>
+        </template>
+        Hello World
+      </v-modal>
+    </div>  
+  `,
+});

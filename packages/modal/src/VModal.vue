@@ -5,7 +5,7 @@ export default {
 </script>
 
 <script setup lang="ts">
-import {ref, toRefs, watch} from 'vue';
+import {computed, ref, toRefs, watch} from 'vue';
 import {
   TransitionRoot,
   TransitionChild,
@@ -31,6 +31,7 @@ export interface Props {
   closeText?: string;
   closeProps?: {};
   headerClass?: string;
+  titleClass?: string;
   bodyClass?: string;
   footerClass?: string;
   modalClass?: string;
@@ -43,6 +44,8 @@ export interface Props {
   hideXButton?: boolean;
   xButtonProps?: Record<string, any>;
   xIconClass?: string;
+  width: string | number;
+  maxWidth: string | number;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -125,6 +128,20 @@ const onConfirm = () => {
     close: closeModal,
   });
 };
+
+const panelStyles = computed(() => {
+  const styles: Record<string, any> = {};
+
+  if (props.width) {
+    styles['width'] = props.width;
+  }
+
+  if (props.maxWidth) {
+    styles['max-width'] = props.maxWidth;
+  }
+
+  return styles;
+});
 </script>
 
 <template>
@@ -144,6 +161,7 @@ const onConfirm = () => {
           'v-modal--persistent': persistent,
         },
       ]"
+      v-bind="$attrs"
     >
       <div class="v-modal-dialog">
         <div class="v-modal-content">
@@ -172,7 +190,11 @@ const onConfirm = () => {
             leave-from="opacity-100 scale-100"
             leave-to="opacity-0 scale-95"
           >
-            <DialogPanel class="v-modal-panel" :class="[modalClass]">
+            <DialogPanel
+              class="v-modal-panel"
+              :style="panelStyles"
+              :class="[modalClass]"
+            >
               <DialogTitle
                 v-if="!hideHeader"
                 as="div"
@@ -180,7 +202,7 @@ const onConfirm = () => {
                 :class="headerClass"
               >
                 <slot name="header">
-                  <h3 class="v-modal-title">
+                  <h3 class="v-modal-title" :class="titleClass">
                     {{ title }}
                   </h3>
                 </slot>
@@ -217,6 +239,7 @@ const onConfirm = () => {
                   :loading="isLoading"
                   :confirm-props="confirmProps"
                   :on-confirm="onConfirm"
+                  :close="closeModal"
                 >
                   <v-btn
                     v-if="confirm"
@@ -245,86 +268,4 @@ const onConfirm = () => {
   </TransitionRoot>
 </template>
 
-<style>
-:root {
-  --v-modal-text-color: theme('colors.gray.800');
-  --v-modal-bg-color: theme('colors.white');
-  --v-modal-border-radius: theme('borderRadius.md');
-  --v-modal-z-index: 30;
-  --v-modal-shadow: theme('boxShadow.lg');
-}
-
-.v-modal-dialog {
-  z-index: var(--v-modal-z-index);
-
-  @apply fixed inset-0 overflow-y-auto;
-}
-
-.v-modal-content {
-  @apply min-h-screen text-center px-4;
-}
-
-.v-modal-overlay {
-  @apply fixed bg-black bg-opacity-50 inset-0;
-}
-
-.v-modal-panel {
-  background: var(--v-modal-bg-color);
-  color: var(--v-modal-text-color);
-  border-radius: var(--v-modal-border-radius);
-  box-shadow: var(--v-modal-shadow);
-
-  @apply w-full
-    overflow-hidden
-    align-middle
-    transition-all
-    transform
-    p-6
-    max-w-md
-    inline-block
-    my-8
-    text-left;
-}
-
-.v-modal-spacer {
-  @apply inline-block h-screen align-middle;
-}
-
-.v-modal-header {
-  @apply flex justify-between gap-4 items-center;
-}
-
-.v-modal-title {
-  @apply text-lg font-medium leading-6 text-gray-900;
-}
-
-.v-modal-body {
-  @apply mt-4 flex-1 text-left;
-}
-
-.v-modal-footer {
-  @apply mt-6 flex gap-2 justify-end;
-}
-
-/* fullscreen */
-.v-modal.v-modal--fullscreen .v-modal-panel {
-  @apply h-screen flex flex-col max-w-full m-0 rounded-none;
-}
-
-.v-modal.v-modal--fullscreen .v-modal-content {
-  @apply px-0;
-}
-
-/* centered */
-.v-modal.v-modal--centered .v-modal-panel {
-  @apply text-center justify-center;
-}
-
-.v-modal.v-modal--centered .v-modal-body {
-  @apply text-center;
-}
-
-.v-modal.v-modal--centered .v-modal-footer {
-  @apply justify-center;
-}
-</style>
+<style src="./VModal.css"></style>
