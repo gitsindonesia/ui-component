@@ -50,6 +50,7 @@ const backgroundImage = computed(() =>
       "
       :class="[sizeClass, {'rounded-lg': rounded}, borderClass]"
       :style="{backgroundImage}"
+      type="button"
       @click="emit('choose')"
     >
       <v-spinner v-if="loading" color="primary" large />
