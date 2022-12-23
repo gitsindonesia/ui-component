@@ -13,28 +13,30 @@ GITS UI is the official UI Component Library in GITS Indonesia built with Vue 3 
 
 ## Features
 
-- [Vue 3](https://vuejs.org/)
+- Built with [Vue 3](https://vuejs.org/) [`<script setup>`](https://vuejs.org/api/sfc-script-setup.html)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [Iconify Vue](https://icones.js.org/)
-- First-party [Nuxt 3](https://nuxt.com/) module
-- [TypeScript](https://www.typescriptlang.org/) support out-of-the-box
-- Customizable with CSS Properties
--  Modular: Use it completely as UI Framework or use it individually as a plugin
--  Headless by default (soon)
--  Theming (soon)
+- Includes [Iconify Vue](https://icones.js.org/) for customizable icon support
+- Offers a first-party [Nuxt 3](https://nuxt.com/) module for easy integration into Nuxt projects
+- Provides [TypeScript](https://www.typescriptlang.org/) support by default
+- Allows for customization with CSS properties
+- Modular design: allows for use as a complete UI framework or as individual plugins
+- Headless by default (coming soon)
+- Theming support (coming soon)
 
 ## Documentation
 
-Documentation is located [here](https://gitsindonesia.github.io/ui-component/).
+Detailed documentation can be found [here](https://gitsindonesia.github.io/ui-component/).
 
 ## Examples
 
-Checkout [examples](/examples/):
+See examples of GITS UI in action in the [examples](/examples/) directory:
 
 - [Vue 3](/examples/vue/)
 - [Nuxt 3 Starter with GITS UI](https://github.com/gitsindonesia/nuxt-starter)
 
 ## Development
+
+To set up GITS UI for development:
 
 - Install [lerna](https://lerna.js.org/) and [yarn](https://yarnpkg.com/) globally:
   ```bash
@@ -56,13 +58,13 @@ Checkout [examples](/examples/):
 
 ## Running Documentation
 
-Running docs:
+To run the documentation locally:
 
 ```
 yarn docs:dev
 ```
 
-Build docs:
+To build the documentation for production:
 
 ```
 yarn docs:build
@@ -70,4 +72,4 @@ yarn docs:build
 
 ## License
 
-MIT
+GITS UI is licensed under the MIT license.
