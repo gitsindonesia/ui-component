@@ -107,3 +107,5 @@ const mappedIcons: Record<string, string> = {
     </div>
   </transition>
 </template>
+
+<style lang="scss" src="./VAlert.scss"></style>

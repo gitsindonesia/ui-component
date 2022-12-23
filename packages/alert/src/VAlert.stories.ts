@@ -11,10 +11,8 @@ export default {
   component: VAlert,
   argTypes: {
     color: {
-      control: {type: 'select', options: themeColors},
-    },
-    icon: {
-      control: {type: 'select', options: ['success', 'warning']},
+      control: {type: 'select'},
+      options: themeColors
     },
   },
   args: {

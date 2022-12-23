@@ -16,7 +16,7 @@ module.exports = {
     require('@tailwindcss/aspect-ratio'),
     require('@tailwindcss/line-clamp'),
     // GITS UI Plugins
-    require('@gits-id/tailwind-components/alert'),
+    // require('@gits-id/tailwind-components/alert'),
     require('@gits-id/tailwind-components/app-bar'),
     require('@gits-id/tailwind-components/avatar'),
     require('@gits-id/tailwind-components/badge'),
