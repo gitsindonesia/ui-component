@@ -2,7 +2,7 @@
 
 ## Brand Colors
 
-There are 6 named colors which come with its own shade from 50 to 900 like tailwind.
+GITS UI includes 6 named colors with shades ranging from 50 to 900, similar to Tailwind CSS. These colors are:
 
 - primary
 - secondary
@@ -10,25 +10,26 @@ There are 6 named colors which come with its own shade from 50 to 900 like tailw
 - warning
 - success
 - error
-
-You can see the full colors [here](https://gits-ui.web.app/?path=/story/foundation-colors--colors).
+  
+  
+You can view the full set of colors [here](https://gits-ui.web.app/?path=/story/foundation-colors--colors).
 
 ## Tailwind Preset
 
-GITS UI ships with default GITS Design as Tailwind Preset via `@gits-id/tailwind-config/preset`.
+GITS UI comes with a default GITS Design as a Tailwind Preset via `@gits-id/tailwind-config/preset`.
 
-### Creating your own preset
+### Creating Your Own Preset
 
-To create your own preset, you can copy the default preset to your project.
+To create your own preset, you can copy the default preset to your project with the following command:
 
 ```bash
 cp ./node_modules/@gits-id/tailwind-config/preset.js ./src/preset.js
 ```
 
-Now you can freely modify the preset color in `./src/preset.js` as you need:
+This will create a `preset.js` file in the `src` directory that you can then modify to fit your needs. For example, you can customize the colors as follows:
 
 ```js
-const tailwindColors = require('tailwindcss/colors');
+const colors = require('tailwindcss/colors');
 
 // default GITS Color
 const primary = {
@@ -60,33 +61,26 @@ const secondary = {
   900: '#682600',
 };
 
-const colors = {
-  primary,
-  secondary,
-  info: tailwindColors.sky,
-  success: tailwindColors.emerald,
-  warning: tailwindColors.yellow,
-  error: tailwindColors.rose,
-};
-
 module.exports = {
   theme: {
     extend: {
-      colors,
+      colors: {
+        primary,
+        secondary,
+        info: colors.sky,
+        success: colors.emerald,
+        warning: colors.yellow,
+        error: colors.rose,
+      },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/aspect-ratio'),
-    require('@tailwindcss/line-clamp'),
-    require('@gits-id/tailwind-components/button'),
-    require('@gits-id/tailwind-components/alert'),
+  presets: [
+    require('@gits-id/tailwind-config/preset'),
   ],
 };
 ```
 
-After that, change the preset path to your local one and you good to go.
+Once you have customized your preset, you can use it in your project by changing the path to your local preset file in the Tailwind configuration:
 
 ```js{12}
 /** @type {import('tailwindcss').Config} */
