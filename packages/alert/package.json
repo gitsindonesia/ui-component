@@ -1,7 +1,7 @@
 {
   "name": "@gits-id/alert",
   "version": "0.13.20",
-  "description": "GITS Alert Component",
+  "description": "GITS Alert component is a flexible alert component that can be used to display various types of messages to the user.",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "npm run build",
