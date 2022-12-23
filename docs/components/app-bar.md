@@ -1,6 +1,6 @@
 # AppBar
 
-Application Bar / Navigation Bar.
+The AppBar, also known as a Navigation Bar, is a component used to display content at the top of a page.
 
 ## Usage
 
@@ -22,11 +22,10 @@ The `VAppBar` component is registered globally when you install with `@gits-id/u
 ### Colors
 
 - **prop**: `color`
-- **type**: `string`
+- **type**: `VAppBarColors | string`
 - **default**: `default`
-- **required**: `false`
 
-Use `color` to different color style to the app-bar.
+The `color` prop allows you to specify a color for the AppBar. The possible values for this prop are: `default`, `transparent`, `dark`, `primary`, `secondary`, `info`, `warning`, `success`, and `error`.
 
 ```vue
 <template>
@@ -47,9 +46,8 @@ Use `color` to different color style to the app-bar.
 - **prop**: `fixed`
 - **type**: `boolean`
 - **default**: `false`
-- **required**: `false`
 
-Use `fixed` to set fixed position of `AppBar` in the top of the page.
+The `fixed` prop allows you to set a fixed position for the AppBar at the top of the page.
 
 ```vue
 <template>
@@ -64,9 +62,8 @@ Use `fixed` to set fixed position of `AppBar` in the top of the page.
 - **prop**: `sticky`
 - **type**: `boolean`
 - **default**: `false`
-- **required**: `false`
 
-Use `sticky` to set sticky position of `AppBar` in the top of the page.
+The `sticky` prop allows you to set a sticky position for the AppBar at the top of the page.
 
 ```vue
 <template>
@@ -83,7 +80,7 @@ Use `sticky` to set sticky position of `AppBar` in the top of the page.
 - **default**: `false`
 - **required**: `false`
 
-Use `bordered` to apply border style to the app-bar.
+The `bordered` prop allows you to apply a border style to the AppBar.
 
 ```vue
 <template>
@@ -98,9 +95,8 @@ Use `bordered` to apply border style to the app-bar.
 - **prop**: `shadow`
 - **type**: `boolean | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'inner' | 'none'`
 - **default**: `none`
-- **required**: `false`
 
-Use `shadow` to apply shadow style to the app-bar.
+The `shadow` prop allows you to apply a shadow style to the AppBar. The possible values for this prop are: `true`, `false`, `sm`, `md`, `lg`, `xl`, `2xl`, `inner`, and `none`.
 
 ```vue
 <template>
@@ -124,7 +120,7 @@ Use `shadow` to apply shadow style to the app-bar.
 - **default**: `md`
 - **required**: `false`
 
-Use `size` to apply size to the app-bar.
+The `size` prop allows you to specify the size of the AppBar. The possible values for this prop are: `sm`, `md`, and `lg`.
 
 ```vue
 <template>
@@ -168,7 +164,7 @@ const isOpen = ref(true);
 - **default**: `fade`
 - **required**: `false`
 
-Use `transition` prop change the default transition.
+Use `transition` prop to change the default transition.
 
 ```vue{5,12}
 <script setup lang="ts">
@@ -240,21 +236,23 @@ const toggle = () => {
 
 ## CSS Variables
 
-| Variable                                            | Default Value                  |
-| --------------------------------------------------- | ------------------------------ |
-| [`--app-bar-height`](#--app-bar-height)             | `54px`                         |
-| [`--app-bar-padding-x` ](#--app-bar-padding-x)      | `theme('padding.4')`           |
-| [`--app-bar-padding-y` ](#--app-bar-padding-y)      | `theme('padding.3')`           |
-| [`--app-bar-bg-color` ](#--app-bar-bg-color)        | `theme('colors.white')`        |
-| [`--app-bar-color` ](#--app-bar-color)              | `theme('colors.gray.800')`     |
-| [`--app-bar-transition` ](#--app-bar-transition)    | `all 0.3s ease`                |
-| [`--app-bar-border-style`](#--app-bar-border-style) | `solid`                        |
-| [`--app-bar-border-width`](#--app-bar-border-width) | `theme('borderWidth.DEFAULT')` |
-| [`--app-bar-border-color`](#--app-bar-border-color) | `theme('borderColor.DEFAULT')` |
+```css
+:root {
+  --app-bar-height: 54;
+  --app-bar-padding-x: theme('padding.4');
+  --app-bar-padding-y: theme('padding.3');
+  --app-bar-bg-color: theme('colors.white');
+  --app-bar-color: theme('colors.gray.800');
+  --app-bar-transition: 'all 0.3s ease';
+  --app-bar-border-style: 'solid';
+  --app-bar-border-width: theme('borderWidth.DEFAULT');
+  --app-bar-border-color: theme('borderColor.DEFAULT');
+}
+```
 
 ## Customization
 
-With the power of CSS Variables and Tailwind's `theme` function, you can create your custom app-bar.
+You can customize the style of the AppBar using CSS properties and the `theme` helper from Tailwind:
 
 ```vue{6,11-12}
 <script setup lang="ts">
@@ -273,15 +271,21 @@ import {ref} from 'vue';
 </style>
 ```
 
+The `color` prop on the `VAppBar` component specifies the color for the AppBar. The corresponding CSS class, `.app-bar-indigo`, is then used to set the background color and text color using the `--app-bar-bg-color` and `--app-bar-color` CSS variables, respectively. The `theme` helper is used to retrieve the appropriate color values from the Tailwind theme.
+
 ## Manual Installation
 
-You can also install the `AppBar` component individually via `@gits-id/app-bar` package:
+You can install the `AppBar` component individually using the `@gits-id/app-bar` package.
+
+To install the package using NPM, run the following command:
 
 ```bash
-yarn install @gits-id/app-bar
+npm i @gits-id/app-bar
 ```
 
-```vue
+To use the `AppBar` component, you will need to import it in your code:
+
+```vue {2,6}
 <script setup lang="ts">
 import VAppBar from '@gits-id/app-bar';
 </script>
@@ -291,9 +295,11 @@ import VAppBar from '@gits-id/app-bar';
 </template>
 ```
 
+This will include the `AppBar` component in your project and allow you to use it in your templates. You can then customize the appearance of the AppBar using CSS or by using the provided props.
+
 ## Tailwind Plugin
 
-This package comes with custom tailwind plugin for styling. If you are installing this package separately from `@gits-id/ui` package, you need to include the plugin in `plugins` section in your Tailwind config file.
+This package includes a custom Tailwind plugin for styling the `AppBar` component. If you are installing this package separately from the `@gits-id/ui` package, you will need to include the plugin in the `plugins` section of your Tailwind configuration file.
 
 ```js{4}
 // tailwind.config.js
@@ -302,6 +308,8 @@ module.exports = {
   plugins: [require('@gits-id/tailwind-components/app-bar')],
 };
 ```
+
+This will enable the custom styles for the `AppBar` component in your project. You can then use these styles in your templates by applying the appropriate class names.
 
 ## Storybook
 

@@ -1,10 +1,12 @@
 # Autocomplete
 
-Autocomplete Input. Based on Headless UI Autocomplete component.
+The `VAutocomplete` component is a customizable autocomplete input based on the Headless UI Autocomplete component.
 
 ## Usage
 
 ### Basic Usage
+
+To use the `VAutocomplete` component, simply add it to your template:
 
 ```vue
 <template>
@@ -21,6 +23,8 @@ The `VAutocomplete` component is registered globally when you install with `@git
 
 ### Clearable
 
+To make the `VAutocomplete` component clearable, set the `clearable` prop:
+
 ```vue
 <template>
   <VAutocomplete clearable />
@@ -30,6 +34,8 @@ The `VAutocomplete` component is registered globally when you install with `@git
 <LivePreview src="components-autocomplete--clearable" />
 
 ### Validation
+
+You can use the `VAutocomplete` component with form validation libraries like `vee-validate`. In this example, we'll use the `useForm` hook from `vee-validate` to handle form submission and validation:
 
 ```vue
 <script setup lang="ts">
@@ -107,14 +113,46 @@ const genres = ref<Item[]>([
 | [`errorClass`](#errorClass)     | `string`  | `'autocomplete-error'` |
 | [`wrapperClass`](#wrapperClass) | `string`  | `''`                   |
 
-## Methods
-
-None
-
 ## Events
 
-- `update:modelValue`
-- `update:query`
+### `update:modelValue`
+
+The `update:modelValue` event is triggered whenever the selected value of the `VAutocomplete` component changes. 
+
+Here is an example of using the `update:modelValue` event:
+
+```vue
+<script setup lang="ts">
+import type {Item} from '@gits-id/autocomplete';
+
+function onModelValueChange(value: Item) {
+  console.log('Selected item:', value);
+}
+</script>
+
+<template>
+  <VAutocomplete @update:modelValue="onModelValueChange" />
+</template>
+```
+
+### `update:query`
+
+The `update:query` event is triggered whenever the search query in the `VAutocomplete` component changes.
+
+
+Here is an example of using the `update:query` event:
+
+```vue
+<script setup lang="ts">
+function onQueryChange(query: string) {
+  console.log('Searching:', query);
+}
+</script>
+
+<template>
+  <VAutocomplete @update:query="onQueryChange" />
+</template>
+```
 
 ## Slots
 
@@ -126,15 +164,19 @@ None
 
 ## Manual Installation
 
-You can also install the `Autocomplete` component individually via `@gits-id/autocomplete` package:
+To install the `VAutocomplete` component individually, you can use the `@gits-id/autocomplete` package:
 
 ```bash
-yarn install @gits-id/autocomplete
+npm i @gits-id/autocomplete
 ```
+
+You can then use the `VAutocomplete` component in your Vue templates like this:
+
 
 ```vue
 <script setup lang="ts">
 import VAutocomplete from '@gits-id/autocomplete';
+import '@gits-id/autocomplete/dist/style.css';
 </script>
 
 <template>

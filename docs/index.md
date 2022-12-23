@@ -1,10 +1,10 @@
 ---
 layout: home
-title: Vue Component Library
+title: GITS UI - Vue Component Library
 
 hero:
   name: GITS UI
-  text: Vue Component Library
+  text: A beautiful and customizable Vue component library
   image:
     src: https://gits.id/wp-content/uploads/2022/06/Logo-Main-1.png
     alt: GITS
@@ -17,25 +17,25 @@ hero:
       text: View on Storybook
       link: https://gits-ui.web.app
     - theme: alt
-      text: Checkout Examples
+      text: See Examples
       link: https://github.com/gitsindonesia/ui-component/tree/main/examples
 features:
   - icon: 🖖
     title: Vue 3
-    details: Built with the latest and greatest Vue 3
+    details: The latest and greatest version of Vue is used to build GITS UI.
   - icon: 💨
     title: Tailwind CSS
-    details: Fast prototyping with Tailwind CSS
+    details: GITS UI makes use of the popular CSS framework, Tailwind CSS, to allow for fast prototyping.
   - icon: 🛠️
     title: Customizable
-    details: Easy customization with CSS Properties
+    details: GITS UI components are easy to customize with CSS properties.
   - icon: ⛰️
-    title: Nuxt 3
-    details: Easy integrate with Nuxt 3
+    title: Nuxt 3 integration
+    details: GITS UI is easy to integrate with Nuxt 3.
   - icon: 🔐
     title: TypeScript
-    details: TypeScript support out-of-the-box
-  - icon: 🔐
+    details: GITS UI comes with TypeScript support out-of-the-box.
+  - icon: 🎨
     title: Themes
-    details: Theming supports
+    details: GITS UI includes support for theming (soon).
 ---

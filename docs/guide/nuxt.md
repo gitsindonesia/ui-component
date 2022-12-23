@@ -1,39 +1,39 @@
-# Use GITS UI with Nuxt 3
+# Using GITS UI with Nuxt 3
+
+GITS UI is designed to work seamlessly with Nuxt 3 projects. You can easily install it in a new or existing Nuxt project, or use our starter project to get started faster.
 
 ## Installation
 
-- Install Nuxt GITS UI
+1. Install Nuxt GITS UI by running the following command:
 
-```bash
-yarn add @gits-id/ui-nuxt
-```
+  ```bash
+  yarn add @gits-id/ui-nuxt
+  ```
 
-- Install `@nuxtjs/tailwindcss`
+2. Install `@nuxtjs/tailwindcss`
 
 ```bash
 yarn add --dev @nuxtjs/tailwindcss
 ```
 
-- Add it to your `modules` section in your `nuxt.config.ts`:
+3. Add the modules to your `nuxt.config.ts` file:
 
 ```ts
-import {defineNuxtConfig} from 'nuxt';
-
 export default defineNuxtConfig({
   modules: ['@gits-id/ui-nuxt', '@nuxtjs/tailwindcss'],
   gitsUi: {
-    //
+    // configuration options for GITS UI go here
   },
 });
 ```
 
-Create your `tailwind.config.js` by running:
+4. Create your `tailwind.config.js` by running:
 
 ```bash
 npx tailwindcss init
 ```
 
-Update your `tailwind.config.js`:
+5. Update your `tailwind.config.js`:
 
 ```js {2,3}
 module.exports = {
@@ -42,7 +42,7 @@ module.exports = {
 };
 ```
 
-Run the development server:
+6. Run the development server:
 
 ```bash
 yarn dev
@@ -50,14 +50,12 @@ yarn dev
 
 ## Starter
 
-Checkout Nuxt 3 Starter [here](https://github.com/gitsindonesia/nuxt-starter).
+You can use the Nuxt 3 Starter project, available [here](https://github.com/gitsindonesia/nuxt-starter) or online on [Stackblitz](https://stackblitz.com/github/gitsindonesia/nuxt-starter) as a starting point for your project.
 
-Try it online on [Stackblitz](https://stackblitz.com/github/gitsindonesia/nuxt-starter).
-
-You can also scaffold new project with this starter using `nuxi`:
+To create a new project based on this starter, run the following commands:
 
 ```bash
-npx nuxi init -t gitsindonesia/nuxt-starter my-app
+npx nuxi init -t gh:gitsindonesia/nuxt-starter my-app
 cd my-app
 yarn
 yarn dev

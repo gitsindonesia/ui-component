@@ -24,6 +24,7 @@ export default defineConfig({
         text: 'Guide',
         collapsible: true,
         items: [
+          {text: 'Introduction', link: '/guide/introduction'},
           {text: 'Getting Started', link: '/guide/getting-started'},
           {text: 'Customization', link: '/guide/customization'},
           {text: 'Default Theme', link: '/guide/theme'},
