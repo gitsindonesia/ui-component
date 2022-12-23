@@ -1,8 +1,12 @@
 # Badge
 
+The `VBadge` component is a small component that is used to display a small piece of information, such as a notification, status, or count. It can be used in a variety of contexts, such as to display a notification count on a user profile or to highlight new or unread content.
+
 ## Usage
 
 ### Basic Usage
+
+To use the `VBadge` component, you can simply include it in your template like this:
 
 ```vue
 <template>
@@ -12,7 +16,7 @@
 ```
 
 ::: info
-The `VBadge` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
+Note that the `VBadge` component is registered globally when you install `@gits-id/ui`, so you don't need to import it manually.
 :::
 
 ### Colors
@@ -22,7 +26,7 @@ The `VBadge` component is registered globally when you install with `@gits-id/ui
 - **default**: `default`
 - **required**: `false`
 
-Use `color` to different color style to the badge.
+You can use the `color` prop to apply different color styles to the badge:
 
 ```vue
 <template>
@@ -36,6 +40,8 @@ Use `color` to different color style to the badge.
 </template>
 ```
 
+The available color options are `default`, `primary`, `secondary`, `info`, `warning`, `success`, and `error`.
+
 <LivePreview src="components-badge--variants" height="70" />
 
 ### Outlined
@@ -45,7 +51,7 @@ Use `color` to different color style to the badge.
 - **default**: `false`
 - **required**: `false`
 
-Use `outlined` to apply bordered style to the badge.
+You can use the `outlined` prop to apply a bordered style to the badge:
 
 ```vue{2}
 <template>
@@ -62,7 +68,7 @@ Use `outlined` to apply bordered style to the badge.
 - **default**: `none`
 - **required**: `false`
 
-Use `rounded` to apply rounded style to the badge.
+You can use the `rounded` prop to apply a rounded style to the badge:
 
 ```vue
 <script setup lang="ts">
@@ -90,7 +96,7 @@ import {ref} from 'vue';
 - **default**: `false`
 - **required**: `false`
 
-Use `small` or `large` to change badge size.
+You can use the `small` or `large` prop to change the size of the badge:
 
 ```vue
 <template>
@@ -109,7 +115,7 @@ Use `small` or `large` to change badge size.
 - **default**: `false`
 - **required**: `false`
 
-Use `dismissable` to show X button in badge.
+You can use the `dismissable` prop to show an X button in the badge, which allows the user to dismiss the badge:
 
 ```vue
 <template>
@@ -132,15 +138,13 @@ Use `dismissable` to show X button in badge.
 | [closeIcon](#closeIcon)     | `string`                                                       | `ri:close-line` |
 | [iconSize](#iconSize)       | `string`                                                       | `xs`            |
 
-## Methods
-
-None
-
 ## Events
 
 ### `dismiss`
 
-Fired when dismissable button clicked.
+The `VBadge` component provides a `dismiss` event, which is fired when the dismissable button is clicked. This can be useful if you want to perform an action, such as hiding or removing the badge, when it is dismissed by the user.
+
+To listen for the `dismiss` event, you can use the @dismiss event binding in your template like this:
 
 ```vue
 <script setup lang="ts">
@@ -152,6 +156,8 @@ const onDismiss = () => alert('Dismiss!');
 </template>
 ```
 
+Note that the `dismiss` event is only available when the `dismissable` prop is set to `true`.
+
 ## Slots
 
 | Name                        | Props                   | Description                 |
@@ -161,23 +167,27 @@ const onDismiss = () => alert('Dismiss!');
 
 ## CSS Variables
 
-| Variable                                          | Default Value                      |
-| ------------------------------------------------- | ---------------------------------- |
-| [`--badge-bg-color`](#--badge-bg-color)           | `theme('colors.gray.100')`         |
-| [`--badge-color`](#--badge-color)                 | `theme('colors.gray.800')`         |
-| [`--badge-border-style`](#--badge-border-style)   | `solid`                            |
-| [`--badge-border-width`](#--badge-border-width)   | `theme('borderWidth.DEFAULT')`     |
-| [`--badge-border-color`](#--badge-border-color)   | `theme('borderColor.transparent')` |
-| [`--badge-border-radius`](#--badge-border-radius) | `theme('borderRadius.DEFAULT')`    |
-| [`--badge-padding-x`](#--badge-padding-x)         | `theme('padding.2')`               |
-| [`--badge-padding-y`](#--badge-padding-y)         | `theme('padding.1')`               |
-| [`--badge-font-size`](#--badge-font-size)         | `theme('fontSize.xs')`             |
-| [`--badge-font-weight`](#--badge-font-weight)     | `theme('fontWeight.semibold')`     |
-| [`--badge-icon-size`](#--badge-icon-size)         | `theme('width.4')`                 |
+```css
+:root: {
+  --badge-bg-color: theme('colors.gray.100');
+  --badge-color: theme('colors.gray.800');
+  --badge-border-style: 'solid';
+  --badge-border-width: theme('borderWidth.DEFAULT');
+  --badge-border-color: theme('borderColor.transparent');
+  --badge-border-radius: theme('borderRadius.DEFAULT');
+  --badge-padding-x: theme('padding.2');
+  --badge-padding-y: theme('padding.1');
+  --badge-font-size: theme('fontSize.xs');
+  --badge-font-weight: theme('fontWeight.semibold');
+  --badge-icon-size: theme('width.4');
+}
+```
 
 ## Customization
 
-With the power of CSS Variables and Tailwind's `theme` function, you can create your custom badge.
+The `VBadge` component can be customized using CSS variables and the `theme` function provided by Tailwind CSS. This allows you to create your own custom badge styles that match your project's design aesthetic.
+
+To customize the `VBadge` component, you can define your own CSS classes that set the desired CSS variables. For example, to create an "indigo" colored badge, you can define a `.badge-indigo` class like this:
 
 ```vue{2,7-8}
 <template>
@@ -192,13 +202,21 @@ With the power of CSS Variables and Tailwind's `theme` function, you can create 
 </style>
 ```
 
+This allows you to easily create custom color styles for the `VBadge` component, simply by defining a new class or color attribute and setting the appropriate CSS variables.
+
+Note that you can also customize the other visual aspects of the `VBadge` component, such as the border style, padding, font size, and more, by defining the appropriate CSS variables in your custom class.
+
 ## Manual Installation
 
-You can also install the `Badge` component individually via `@gits-id/badge` package:
+In addition to installing the `VBadge` component as part of the `@gits-id/ui` package, you can also install it individually using the `@gits-id/badge` package.
+
+To install the `@gits-id/badge` package, run the following command:
 
 ```bash
-yarn install @gits-id/badge
+npm i @gits-id/badge
 ```
+
+Then, you can import and use the `VBadge` component in your application like this:
 
 ```vue
 <script setup lang="ts">
@@ -212,7 +230,9 @@ import VBadge from '@gits-id/badge';
 
 ## Tailwind Plugin
 
-This package comes with custom tailwind plugin for styling. If you are installing this package separately from `@gits-id/ui` package, you need to include the plugin in `plugins` section in your Tailwind config file.
+The `@gits-id/badge` package comes with a custom Tailwind CSS plugin that provides various utility classes for styling the `VBadge` component. If you are installing the `@gits-id/badge` package separately from the `@gits-id/ui` package, you will need to include this plugin in the `plugins` section of your Tailwind CSS configuration file.
+
+Here's an example of how to include the `@gits-id/badge` plugin in your Tailwind CSS configuration file:
 
 ```js{4}
 // tailwind.config.js
