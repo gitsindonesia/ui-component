@@ -1,39 +1,41 @@
-# GITS Alert Component
+# GITS Alert
+
+GITS Alert component is a flexible alert component that can be used to display various types of messages to the user.
 
 ## Installation
 
-via npm
+Install with your prefered package manager.
 
+
+With NPM:
 ```
 npm i @gits-id/alert
 ```
 
-via yarn
-
+With Yarn:
 ```
 yarn add @gits-id/alert
 ```
 
-via pnpm
-
+With PNPM:
 ```
 pnpm i @gits-id/alert
 ```
 
 ## Usage
 
-Import `Alert` to your component:
+To use the component, you can simply include it in your template like this:
 
 ```vue
 <script setup lang="ts">
 // import component
-import Alert from '@gits-id/alert';
+import VAlert from '@gits-id/alert';
 // import styles
 import '@gits-id/alert/dist/style.css';
 </script>
 
 <template>
-  <Alert color="primary">Lorem ipsum</Alert>
+  <VAlert color="primary"> Hello World </VAlert>
 </template>
 ```
 
