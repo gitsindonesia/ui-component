@@ -1,23 +1,19 @@
 # Avatar
 
+The `Avatar` component is a visual representation of a user or an entity. It can be displayed in various shapes (e.g. circle, square, rounded) and can be initialized with either an image or a name.
+
+## Installation
+
+To use the `Avatar` component, you will need to install the `@gits-id/avatar` package and import the styles from `@gits-id/avatar/dist/style.css`.
+
+Alternatively, you can also use the `VAvatar` component from the `@gits-id/ui` package, which is registered globally and does not require manual importing.
+
 ## Usage
-
-To use the package, export `VAvatar` from `@gits-id/ui` or `Avatar` from `@gits-id/avatar` package. Then, import the styles from `@gits-id/avatar/dist/style.css`.
-
-::: info
-The `VAvatar` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
-:::
 
 ### Basic Usage
 
 ```vue
-<script setup lang="ts">
-// import style
-import '@gits-id/avatar/dist/style.css';
-</script>
-
 <template>
-  <!-- VAvatar is registered globally -->
   <VAvatar color="primary" name="John Doe" />
   <VAvatar color="primary" src="path-to-image.png" />
 </template>
@@ -35,11 +31,6 @@ import '@gits-id/avatar/dist/style.css';
 Use prop `name` to show the user initial name. You can pass the full name to the prop and it will automatically show the initial.
 
 ```vue
-<script setup lang="ts">
-// import style
-import '@gits-id/avatar/dist/style.css';
-</script>
-
 <template>
   <VAvatar name="John Doe" />
 </template>
@@ -55,11 +46,6 @@ import '@gits-id/avatar/dist/style.css';
 By default it max to `2` initial name, but you can change it with `max-initial` prop`.
 
 ```vue
-<script setup lang="ts">
-// import style
-import '@gits-id/avatar/dist/style.css';
-</script>
-
 <template>
   <VAvatar name="John Doe" :max-initial="1" />
 </template>
@@ -75,11 +61,6 @@ import '@gits-id/avatar/dist/style.css';
 We can also set avatar image with `image` prop. The `image` prop accept string as its value and usually contains full image url of avatar.
 
 ```vue
-<script setup lang="ts">
-// import style
-import '@gits-id/avatar/dist/style.css';
-</script>
-
 <template>
   <VAvatar src="path-to-image.jpg" alt="John Doe" />
 </template>
@@ -97,11 +78,6 @@ import '@gits-id/avatar/dist/style.css';
 We can change the shape of avatar via `shape` prop. By the default, the shape is `circle`, but you can also change it to `rounded` or `square`.
 
 ```vue
-<script setup lang="ts">
-// import style
-import '@gits-id/avatar/dist/style.css';
-</script>
-
 <template>
   <!-- default shape is circle -->
   <VAvatar src="path-to-image.jpg" alt="John Doe" />
@@ -123,10 +99,6 @@ import '@gits-id/avatar/dist/style.css';
 | [shape](#shape)           | `square` , `circle` , `rounded`                           | `circle` | Avatar shape              |
 | [alt](#alt)               | `string`                                                  | `-`      | Image alt                 |
 
-## Methods
-
-None
-
 ## Events
 
 None
@@ -143,15 +115,18 @@ None
 
 ## Manual Installation
 
-You can also install the `Avatar` component individually via `@gits-id/avatar` package:
+To install the `Avatar` component individually, you can use the `@gits-id/avatar` package. Here's how to install it using NPM:
 
 ```bash
-yarn install @gits-id/avatar
+npm i @gits-id/avatar
 ```
+
+To use the `Avatar` component, you will need to import it and then add it to your template:
 
 ```vue
 <script setup lang="ts">
 import VAvatar from '@gits-id/avatar';
+import '@gits-id/avatar/dist/style.css';
 </script>
 
 <template>
@@ -159,6 +134,7 @@ import VAvatar from '@gits-id/avatar';
   <VAvatar color="primary" src="path-to-image.png" />
 </template>
 ```
+
 
 ## Storybook
 
