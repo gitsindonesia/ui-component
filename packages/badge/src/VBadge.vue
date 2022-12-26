@@ -109,3 +109,5 @@ const classes = computed(() => {
     </slot>
   </span>
 </template>
+
+<style src="./VBadge.scss" lang="scss"></style>
