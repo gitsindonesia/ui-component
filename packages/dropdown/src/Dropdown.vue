@@ -81,3 +81,5 @@ withDefaults(defineProps<Props>(), {
     </transition>
   </Menu>
 </template>
+
+<style src="./Dropdown.scss" lang="scss"></style>
