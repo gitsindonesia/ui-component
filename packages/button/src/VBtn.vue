@@ -164,3 +164,5 @@ const attributes = computed(() => {
     </slot>
   </component>
 </template>
+
+<style src="./VBtn.scss" lang="scss"></style>
