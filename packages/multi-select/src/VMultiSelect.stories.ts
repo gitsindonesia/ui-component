@@ -133,7 +133,7 @@ const userItems = [
 ];
 
 export default {
-  title: 'Components/MultiSelect',
+  title: 'Forms/MultiSelect',
   component: VMultiSelect,
   argTypes: {},
   args: {
@@ -153,6 +153,8 @@ export default {
     inputProps: {},
     selectAll: false,
     loading: false,
+    disabled: false,
+    readonly: false,
   },
 };
 
