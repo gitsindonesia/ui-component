@@ -155,6 +155,14 @@ const props = defineProps({
     type: String,
     default: 'sm',
   },
+  readonly: {
+    type: Boolean,
+    default: false,
+  },
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const emit = defineEmits([
@@ -179,6 +187,8 @@ const {
   selectAll,
   loading,
   rules,
+  disabled,
+  readonly
 } = toRefs(props);
 
 // refs
@@ -292,7 +302,10 @@ const toggleSelectAll = () => {
 };
 
 const onInputClick = () => {
-  isOpen.value = true;
+  console.log({readonly, disabled})
+  if(!readonly.value && !disabled.value) {
+    isOpen.value = true;
+  }
 };
 
 onClickOutside(target, () => {
@@ -404,7 +417,7 @@ watch(
             },
             wrapperClass,
           ]"
-          @click="isOpen = true"
+          @click="onInputClick"
         >
           <div class="v-multi-select-badges">
             <template v-if="selected.length">
@@ -446,6 +459,8 @@ watch(
               :placeholder="placeholder"
               :name="name"
               v-bind="inputProps"
+              :readonly="readonly"
+              :disabled="disabled"
               @input="handleSearch"
               @focus="onInputClick"
               @keydown.enter.prevent="onEnter"
