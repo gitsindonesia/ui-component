@@ -150,7 +150,7 @@ Flat.parameters = {
 export const Colors: Story<{}> = (args) => ({
   components: {VCard},
   setup() {
-    return {args, colors: ['default', ...defaultColors]};
+    return {args, colors: defaultColors};
   },
   template: `
 <v-card
