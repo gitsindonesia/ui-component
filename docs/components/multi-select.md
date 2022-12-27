@@ -205,7 +205,7 @@ const compareGenres = (item: VMultiSelectItem, query: string) => {
 ## Props
 
 | Name                                      | Type                                      | Default                         |
-| ----------------------------------------- | ----------------------------------------- | ------------------------------- |
+|-------------------------------------------| ----------------------------------------- | ------------------------------- |
 | [`items`](#items)                         | `Array as PropType<VMultiSelectItem[]>`   | `[]`                            |
 | [`itemText`](#itemText)                   | `string`                                  | `'text'`                        |
 | [`itemValue`](#confirm)                   | `string`                                  | `value`                         |
@@ -215,6 +215,8 @@ const compareGenres = (item: VMultiSelectItem, query: string) => {
 | [`error`](#error)                         | `boolean`                                 | `false`                         |
 | [`errorMessages`](#errorMessages)         | `Array`                                   | `'[]'`                          |
 | [`clearable`](#clearable)                 | `boolean`                                 | `'false'`                       |
+| [`disabled`](#clearable)                  | `boolean`                                 | `'false'`                       |
+| [`readonly`](#clearable)                  | `boolean`                                 | `'false'`                       |
 | [`maxBadge`](#maxBadge)                   | `number`                                  | `0`                             |
 | [`delay`](#delay)                         | `number`                                  | `'500'`                         |
 | [`id`](#id)                               | `string`                                  | `''`                            |
