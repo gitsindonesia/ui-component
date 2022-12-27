@@ -2,7 +2,6 @@
 import Icon from '@gits-id/icon';
 import {computed, resolveComponent, useAttrs} from 'vue';
 import {RouteLocation} from 'vue-router';
-import '@gits-id/icon/dist/style.css';
 
 type Props = {
   to?: string | RouteLocation;

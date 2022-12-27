@@ -363,7 +363,7 @@ export const Icons: Story = (args) => ({
       <ListItem prepend-icon="ri:home-line" append-icon="ri:search-line">
         Item 5
       </ListItem>
-      <ListItem prepend-icon="ri:user-line" append-icon="ri:arrow-downs-line">
+      <ListItem prepend-icon="ri:user-line" append-icon="ri:arrow-down-line">
         Item 6
       </ListItem>
     </List>
