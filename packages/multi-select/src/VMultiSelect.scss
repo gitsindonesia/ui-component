@@ -120,8 +120,8 @@
     @apply border-none bg-transparent
       p-1
       focus:outline-none
-      focus:!ring-0
-      focus:!border-none
+      focus:ring-0
+      focus:border-none
       text-sm
       flex-1;
   }
