@@ -25,10 +25,10 @@
     duration-300
     border-gray-300 hover:border-gray-400 
     focus-within:ring-primary-500 focus-within:border-primary-500;
-  }
 
-  &-field--error {
-    @apply border-error-500 focus-within:ring-error-500 focus-within:border-error-500;
+    &--error {
+      @apply border-error-500 focus-within:ring-error-500 focus-within:border-error-500;
+    }
   }
 
   &-input {
@@ -44,10 +44,9 @@
 
   &-clearable {
     @apply absolute inset-y-0 right-0 flex items-center pr-4;
-  }
 
-  &-clearable-button {
-    @apply mr-1
+    &-button {
+      @apply mr-1
     text-gray-400
     hover:text-gray-700
     hover:bg-gray-100
@@ -55,6 +54,7 @@
     p-1
     transition
     duration-300;
+    }
   }
 
   &-icon {
@@ -84,33 +84,33 @@
 
   &-item {
     @apply cursor-default select-none relative py-2 pl-10 pr-4;
-  }
 
-  &-item-text {
-    @apply block truncate font-normal;
-  }
+    &-text {
+      @apply block truncate font-normal;
 
-  &-item--active {
-    @apply bg-gray-100;
-  }
+      &--selected {
+        @apply font-medium text-primary-500;
+      }
+    }
 
-  &-item--inactive {
-    @apply text-gray-900;
-  }
+    &--active {
+      @apply bg-gray-100;
+    }
 
-  &-item-selected {
-    @apply absolute inset-y-0 left-0 flex items-center pl-3;
-  }
+    &--inactive {
+      @apply text-gray-900;
+    }
 
-  &-item-selected-icon {
-    @apply w-5 h-5 fill-current text-primary-500;
+    &-selected {
+      @apply absolute inset-y-0 left-0 flex items-center pl-3;
+
+      &-icon {
+        @apply w-5 h-5 fill-current text-primary-500;
+      }
+    }
   }
 
   &-error {
     @apply text-error-500 text-sm mt-1;
-  }
-  
-  &-item-text--selected {
-    @apply font-medium text-primary-500;
   }
 }
