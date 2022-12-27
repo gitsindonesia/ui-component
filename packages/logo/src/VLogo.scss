@@ -1,0 +1,21 @@
+.v-logo {
+  &--xxs &-image {
+    width: 24px;
+  }
+  
+  &--xs &-image {
+    width: 32px;
+  }
+  
+  &--sm &-image {
+    width: 40px;
+  }
+  
+  &--md &-image {
+    width: 80px;
+  }
+  
+  &--lg &-image {
+    width: 120px;
+  }
+}
