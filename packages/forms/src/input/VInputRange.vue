@@ -263,7 +263,7 @@ const handleBlur = () => {
   </div>
 </template>
 
-<style scoped>
+<style>
 input[type='range']::-webkit-slider-thumb {
   @apply w-6 h-6 appearance-none pointer-events-auto;
 }
