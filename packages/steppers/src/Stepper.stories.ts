@@ -212,6 +212,80 @@ Linear.parameters = {
   },
 };
 
+export const Clickable = (args:Args) => ({
+  components: {
+    VStepper,
+  },
+  setup() {
+    const val = ref(args?.modelValue || 0);
+
+    const clickable = [true, false, true, true];
+    const disableRouteActive = [false, false, true, false];
+    const linkable = [false, false, false, true];
+
+    const nuArgs = {
+      args: clickable.map((e, idx) => {
+        return {
+          ...args,
+          modelValue: val,
+          disableRouteActive: disableRouteActive[idx],
+          clickable: clickable[idx],
+          linkable: linkable[idx],
+        }
+      }),
+      clickable
+    }
+
+    const onPrevClick = () => {
+        val.value -= 1;
+    }
+    const onNextClick = () => {
+      val.value += 1;
+    }
+
+    const onStepClick = (step:any) => {
+      alert('You clicked a step! ' + JSON.stringify(step));
+
+      val.value = step.index;
+    }
+
+    return {args:nuArgs, clickable, val, onPrevClick, onNextClick, onStepClick};
+  },
+  template: `
+    <div class="flex flex-col gap-4">
+      <div v-for="(val, idx) in clickable">
+        <p class="mb-2">
+          {{idx === 0 ? 'Clickable w/ Disable Route Active' : '' }}
+          {{idx === 1 ? 'Disable Route Active' : ''}}
+          {{idx === 2 ? 'Clickable w/ Route Active and not Linkable' : ''}}
+          {{idx === 3 ? 'Clickable w/ Route Active and Linkable' : ''}}
+        </p>
+        <v-stepper v-bind="args.args[idx]" @click="onStepClick"/>
+      </div>
+
+      <div class="flex gap-4 my-4 items-center justify-center">
+        <button class="border-[1px] border-gray-400 p-2" @click="onPrevClick">
+          Prev
+        </button>
+        <button class="border-[1px] border-gray-400 p-2" @click="onNextClick">
+          Next
+        </button>
+      </div>
+    </div>
+  `,
+});
+Clickable.parameters = {
+  docs: {
+    source: {
+      code: `
+<v-steppers clickable disable-route-active />
+<v-steppers :clickable="false" />
+<v-steppers clickable />
+      `,
+    },
+  },
+};
+
 
 export const DisableRouteActive = Template.bind({});
 DisableRouteActive.args = {

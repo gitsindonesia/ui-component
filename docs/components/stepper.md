@@ -66,7 +66,7 @@ Set `disableRouteActive` to `true` to base stepper active state by `modelValue` 
 - **default**: `false`
 - **required**: `false`
 
-Use `linable` to make the step item to be clickable. This works well with `disableRouteActive` set to `false`.
+Use `linkable` to make the step item to be clickable as route. This works well with `disableRouteActive` set to `false`.
 
 ```vue
 <template>
@@ -74,7 +74,24 @@ Use `linable` to make the step item to be clickable. This works well with `disab
 </template>
 ```
 
-<LivePreview src="components-stepper--linkable" height="250"/>
+### Clickable
+
+- **prop**: `clickable`
+- **type**: `boolean`
+- **default**: `false`
+- **required**: `false`
+
+Use `clickable` to allow `click` event to be emitted, allowing interaction with the step item. This is useful for when
+stepper needs to be rendered inside for example, a modal, which makes `linkable` unfeasible to be used for navigation
+through interaction with the step item.
+
+```vue
+<template>
+  <VStepper clickable />
+</template>
+```
+
+<LivePreview src="components-stepper--clickable" height="600"/>
 
 ### Vertical
 
@@ -142,14 +159,15 @@ const items = [
 
 ## Events
 
-| Name                                   | Payload            | Description                   |
-|----------------------------------------|--------------------|-------------------------------|
-| [update:modelValue](#updateModelValue) | `(value: boolean)` | Fired when step value changed |
+| Name                                   | Payload            | Description                                                                                      |
+|----------------------------------------|--------------------|--------------------------------------------------------------------------------------------------|
+| [update:modelValue](#updateModelValue) | `(value: boolean)` | Fired when step value changed                                                                    |
+| click                                  | `({item, index})`  | Fired when step item is clicked. *Only available when [`clickable`](#clickable) prop is enabled* |
 
 
 ## Manual Installation
 
-You can also install the `Alert` component individually via `@gits-id/alert` package:
+You can also install the `Stepper` component individually via `@gits-id/stepper` package:
 
 ```bash
 yarn install @gits-id/stepper
