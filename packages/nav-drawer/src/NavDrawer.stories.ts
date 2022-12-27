@@ -224,9 +224,10 @@ export const Right: StoryFn<typeof NavDrawer> = (args) => ({
         shadow="lg"
         fixed
         right
+        bordered
         v-bind="args"
       >
-        <div class="p-2">
+        <div class="p-4">
           <p class="font-semibold mb-2">
             Right NavDrawer + Transition
           </p>
