@@ -268,4 +268,4 @@ const panelStyles = computed(() => {
   </TransitionRoot>
 </template>
 
-<style src="./VModal.css"></style>
+<style src="./VModal.scss" lang="scss"></style>
