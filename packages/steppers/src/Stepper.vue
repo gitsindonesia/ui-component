@@ -9,6 +9,7 @@ type Props = {
   modelValue: number;
   disableRouteActive?: boolean;
   linkable?: boolean;
+  clickable?: boolean;
   vertical?: boolean;
   linear?:boolean
 };
@@ -18,15 +19,26 @@ const props = withDefaults(defineProps<Props>(), {
   items: () => [],
   disableRouteActive: false,
   linkable: false,
+  clickable: false,
   vertical: false,
   linear: false,
 });
 
-const emit = defineEmits(['update:modelValue']);
+const emit = defineEmits(['update:modelValue', 'click']);
 
-const {items, modelValue, linkable, disableRouteActive} = toRefs(props);
+const {items, modelValue, linkable, disableRouteActive, clickable} = toRefs(props);
 
-const tag = computed(() => (linkable.value ? 'router-link' : 'div'));
+const tag = computed(() => {
+  if(linkable.value) {
+    return 'router-link';
+  }
+
+  if(clickable.value){
+   return 'button';
+  }
+
+  return 'div';
+});
 
 const activeIndex = ref(modelValue.value);
 
@@ -72,6 +84,7 @@ if (!disableRouteActive.value) {
         :active-index="activeIndex"
         :active="linear ? activeIndex >= idx : activeIndex === idx"
         :as="tag"
+        @click="clickable ? emit('click', {item, index:idx}) : null"
         :vertical="vertical"
         :linear="linear"
         :last="idx === (items.length -1)"
