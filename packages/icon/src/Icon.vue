@@ -47,40 +47,4 @@ loadIconComponent();
   <span v-else>{{ name }}</span>
 </template>
 
-<style>
-.v-icon {
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-}
-
-.v-icon.v-icon--xxs {
-  width: 12px;
-  height: 12px;
-}
-
-.v-icon.v-icon--xs {
-  width: 16px;
-  height: 16px;
-}
-
-.v-icon.v-icon--sm {
-  width: 20px;
-  height: 20px;
-}
-
-.v-icon.v-icon.v-icon--md {
-  width: 24px;
-  height: 24px;
-}
-
-.v-icon.v-icon.v-icon--lg {
-  width: 32px;
-  height: 32px;
-}
-
-.v-icon.v-icon.v-icon--xl {
-  width: 40px;
-  height: 40px;
-}
-</style>
+<style src="./Icon.scss" lang="scss"></style>

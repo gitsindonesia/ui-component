@@ -2,7 +2,6 @@
 import {MenuItem} from '@headlessui/vue';
 import {computed, resolveComponent, useAttrs} from 'vue';
 import VIcon from '@gits-id/icon';
-import '@gits-id/icon/dist/style.css';
 
 const props = withDefaults(
   defineProps<{

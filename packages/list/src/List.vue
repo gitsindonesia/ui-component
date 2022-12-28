@@ -34,4 +34,4 @@ const props = withDefaults(defineProps<Props>(), {
   </div>
 </template>
 
-<style src="./List.css"></style>
+<style src="./List.scss" lang="scss"></style>

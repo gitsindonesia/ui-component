@@ -70,3 +70,5 @@ const computedStyle = computed(() => {
     <div v-else class="avatar-initial">{{ initial }}</div>
   </div>
 </template>
+
+<style src="./Avatar.scss" lang="scss"></style>

@@ -56,24 +56,4 @@ const imgAttrs = computed(() => {
   </component>
 </template>
 
-<style>
-.v-logo.v-logo--xxs .v-logo-image {
-  width: 24px;
-}
-
-.v-logo.v-logo--xs .v-logo-image {
-  width: 32px;
-}
-
-.v-logo.v-logo--sm .v-logo-image {
-  width: 40px;
-}
-
-.v-logo.v-logo--md .v-logo-image {
-  width: 80px;
-}
-
-.v-logo.v-logo--lg .v-logo-image {
-  width: 120px;
-}
-</style>
+<style src="./VLogo.scss" lang="scss"></style>

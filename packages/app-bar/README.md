@@ -1,28 +1,32 @@
-# AppBar Component
+# GITS AppBar
 
-Application Bar Component. Generally used for navigation bar.
+The AppBar, also known as a Navigation Bar, is a component used to display content at the top of a page.
 
 ## Installation
 
-Via npm:
+Install with your prefered package manager.
+
+With NPM:
 
 ```
-npm i @gits-id/app-bar
+npm i @gits-id/alert
 ```
 
-Via yarn:
+With Yarn:
 
 ```
-yarn add @gits-id/app-bar
+yarn add @gits-id/alert
 ```
 
-Via pnpm:
+With PNPM:
 
 ```
-pnpm i @gits-id/app-bar
+pnpm i @gits-id/alert
 ```
 
 ## Usage
+
+To use the component, you can simply include it in your template like this:
 
 ```vue
 <script setup lang="ts">

@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import {computed, PropType} from 'vue';
 import Icon from '@gits-id/icon';
-import '@gits-id/icon/dist/style.css';
 import {DefaultColors, DefaultRounded} from '@gits-id/theme/defaultTheme';
 
 export type BadgeColors = DefaultColors | string;
@@ -109,3 +108,5 @@ const classes = computed(() => {
     </slot>
   </span>
 </template>
+
+<style src="./VBadge.scss" lang="scss"></style>

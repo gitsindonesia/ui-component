@@ -5,8 +5,11 @@ import Icon from '@gits-id/icon';
 import {ref, watch} from 'vue';
 import VBtn from '@gits-id/button';
 import {VInput} from '@gits-id/forms';
-import '@gits-id/forms/dist/style.css';
-import '@gits-id/list/dist/style.css';
+import '@gits-id/forms/src/forms.scss';
+import '@gits-id/list/src/List.scss';
+import '@gits-id/button/src/VBtn.scss';
+import '@gits-id/dropdown/src/Dropdown.scss';
+import '@gits-id/theme/transition.css';
 
 const accountMenus = ref<DropdownItemProps[]>([
   {
@@ -239,8 +242,6 @@ watch(isSidebarOpen, (val) => {
 </template>
 
 <style>
-@import '@gits-id/theme/transition.css';
-
 .sb-main-padded {
   padding: 0 !important;
 }

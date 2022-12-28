@@ -1,4 +1,3 @@
-import { defineNuxtConfig } from "nuxt";
 import GitsUIModule from "..";
 
 export default defineNuxtConfig({

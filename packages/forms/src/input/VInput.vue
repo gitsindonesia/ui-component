@@ -322,6 +322,4 @@ const clear = () => {
   </div>
 </template>
 
-<style>
-@import '../forms.css';
-</style>
+<style src="../forms.scss" lang="scss"></style>

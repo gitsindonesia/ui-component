@@ -3,7 +3,6 @@ import {computed, resolveComponent} from 'vue';
 import type {DefaultColors} from '@gits-id/theme/defaultTheme';
 import type {RouteLocationRaw} from 'vue-router';
 import VIcon from '@gits-id/icon';
-import '@gits-id/icon/dist/style.css';
 
 export type ButtonColors = DefaultColors | string;
 
@@ -164,3 +163,5 @@ const attributes = computed(() => {
     </slot>
   </component>
 </template>
+
+<style src="./VBtn.scss" lang="scss"></style>

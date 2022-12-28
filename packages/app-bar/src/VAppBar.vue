@@ -92,3 +92,5 @@ defineExpose(toggle);
     </header>
   </transition>
 </template>
+
+<style lang="scss" src="./VAppBar.scss"></style>

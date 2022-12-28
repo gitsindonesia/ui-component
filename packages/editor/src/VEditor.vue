@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { computed, toRefs, watch } from "vue";
-import { useField } from "vee-validate";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import { component as ckeditor } from "@ckeditor/ckeditor5-vue";
-import editorConfig from "./config";
+import {computed, toRefs, watch} from 'vue';
+import {useField} from 'vee-validate';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import {component as ckeditor} from '@ckeditor/ckeditor5-vue';
+import editorConfig from './config';
 
 type Props = {
   modelValue?: string;
@@ -17,30 +17,31 @@ type Props = {
   errorClass?: string;
   errorMessages?: string[];
   readonly?: string;
-  config?: Record<string, any>
+  config?: Record<string, any>;
 };
 
 const props = withDefaults(defineProps<Props>(), {
-  modelValue: "",
-  value: "",
-  name: "",
+  modelValue: '',
+  value: '',
+  name: '',
   errorMessages: () => [],
-  labelClass: "",
-  errorClass: "",
-  config: () => editorConfig
+  labelClass: '',
+  errorClass: '',
+  config: () => editorConfig,
 });
 
-const emit = defineEmits<{
-  (e: "update:modelValue", value: string): void;
-  (e: "update:value", value: string): void;
-  (e: "change", value: string): void;
-  (e: "input", value: string): void;
-  (e: "blur", event: any): void;
-}>();
+const emit =
+  defineEmits<{
+    (e: 'update:modelValue', value: string): void;
+    (e: 'update:value', value: string): void;
+    (e: 'change', value: string): void;
+    (e: 'input', value: string): void;
+    (e: 'blur', event: any): void;
+  }>();
 
-const { modelValue, value, name, rules } = toRefs(props);
+const {modelValue, value, name, rules} = toRefs(props);
 
-const { value: content, errorMessage } = useField(name, rules, {
+const {value: content, errorMessage} = useField(name, rules, {
   initialValue: modelValue.value || value.value,
 });
 
@@ -49,14 +50,14 @@ watch([modelValue, value], ([newModelValue, newVal]) => {
 
   content.value = val;
 
-  emit("update:modelValue", val);
-  emit("update:value", val);
-  emit("change", val);
-  emit("input", val);
+  emit('update:modelValue', val);
+  emit('update:value', val);
+  emit('change', val);
+  emit('input', val);
 });
 
 const hasError = computed(
-  () => props.error || props.errorMessages.length > 0 || !!errorMessage.value
+  () => props.error || props.errorMessages.length > 0 || !!errorMessage.value,
 );
 
 const message = computed(() => props.errorMessages[0] || errorMessage.value);
@@ -80,30 +81,4 @@ const message = computed(() => props.errorMessages[0] || errorMessage.value);
   </div>
 </template>
 
-<style>
-:root {
-  --v-editor-height: 300px;
-
-  /* label */
-  --v-editor-label-font-size: var(--input-label-font-size, theme('fontSize.sm'));
-  --v-editor-label-font-weight: theme('fontWeight.normal');
-  --v-editor-label-display: var(--v-input-label-display, block);
-  --v-editor-label-margin-bottom: theme('margin.2');
-}
-
-:deep(.ck-editor__editable) {
-  min-height: var(--v-editor-height);
-}
-
-.v-editor-label {
-  font-size: var(--v-checkbox-label-font-size);
-  font-weight: var(--v-checkbox-label-font-weight);
-  display: var(--v-checkbox-label-display);
-  margin-bottom: var(--v-checkbox-label-margin-bottom);
-  user-select: none;
-}
-
-.v-editor-error {
-  @apply text-error-500 mt-1 text-sm;
-}
-</style>
+<style src="./VEditor.scss" lang="scss"></style>

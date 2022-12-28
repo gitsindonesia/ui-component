@@ -47,3 +47,5 @@ defineProps({
     </slot>
   </nav>
 </template>
+
+<style src="./VBreadcrumbs.scss" lang="scss"></style>

@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import VIcon from '@gits-id/icon';
-import '@gits-id/icon/dist/style.css';
 
 withDefaults(
   defineProps<{

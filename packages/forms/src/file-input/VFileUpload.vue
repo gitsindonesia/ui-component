@@ -458,7 +458,7 @@ const borderClass = computed(() => {
   </div>
 </template>
 
-<style scoped>
+<style>
 .disabled-input {
   @apply bg-[#F5F5F5] text-[#BDBDBD] placeholder-[#BDBDBD] cursor-not-allowed border-secondary-300;
 }

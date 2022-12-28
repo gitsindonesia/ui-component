@@ -1,0 +1,109 @@
+:root {
+  --v-progress-bar-bg-color: theme('colors.gray.200');
+  --v-progress-bar-fill-color: theme('colors.gray.400');
+  --v-progress-bar-height: theme('height.2');
+  --v-progress-bar-border-radius: theme('borderRadius.full');
+  --v-progress-bar-font-size: theme('fontSize.xs');
+  --v-progress-bar-label-color: theme('colors.white');
+  --v-progress-bar-transition-property: theme('transitionProperty.all');
+  --v-progress-bar-transition-duration: theme('transitionDuration.300');
+  --v-progress-bar-transition-timing-function: theme(
+    'transitionTimingFunction.in-out'
+  );
+  --v-progress-bar-indeterminate-animation-name: indeterminateAnimation;
+  --v-progress-bar-indeterminate-animation-duration: 2s;
+  --v-progress-bar-indeterminate-animation-timing-function: linear;
+  --v-progress-bar-indeterminate-animation-iteration-count: infinite;
+}
+
+.v-progress-bar {
+  position: relative;
+  font-size: var(--v-progress-bar-font-size);
+
+  &-background {
+    height: var(--v-progress-bar-height);
+    background-color: var(--v-progress-bar-bg-color);
+    border-radius: var(--v-progress-bar-border-radius);
+
+    @apply overflow-hidden flex;
+  }
+
+  &-fill {
+    background-color: var(--v-progress-bar-fill-color);
+    border-radius: var(--v-progress-bar-border-radius);
+    transition-property: var(--v-progress-bar-transition-property);
+    transition-duration: var(--v-progress-bar-transition-duration);
+    transition-timing-function: var(
+      --v-progress-bar-transition-timing-function
+    );
+
+    @apply flex flex-col items-center justify-center;
+  }
+
+  /* colors */
+  &-primary {
+    --v-progress-bar-bg-color: theme('colors.gray.200');
+    --v-progress-bar-fill-color: theme('colors.primary.500');
+  }
+  &-secondary {
+    --v-progress-bar-bg-color: theme('colors.gray.200');
+    --v-progress-bar-fill-color: theme('colors.secondary.500');
+  }
+  &-info {
+    --v-progress-bar-bg-color: theme('colors.gray.200');
+    --v-progress-bar-fill-color: theme('colors.info.500');
+  }
+  &-warning {
+    --v-progress-bar-bg-color: theme('colors.gray.200');
+    --v-progress-bar-fill-color: theme('colors.warning.500');
+  }
+  &-success {
+    --v-progress-bar-bg-color: theme('colors.gray.200');
+    --v-progress-bar-fill-color: theme('colors.success.500');
+  }
+  &-error {
+    --v-progress-bar-bg-color: theme('colors.gray.200');
+    --v-progress-bar-fill-color: theme('colors.error.500');
+  }
+  &-dark {
+    --v-progress-bar-bg-color: theme('colors.gray.200');
+    --v-progress-bar-fill-color: theme('colors.gray.800');
+  }
+
+  /* label */
+  &-label {
+    color: var(--v-progress-bar-label-color);
+
+    @apply absolute inset-0 flex items-center justify-center;
+  }
+
+  &-label:empty {
+    display: none;
+  }
+
+  /* indeterminate */
+  &--indeterminate &-fill {
+    animation-name: var(--v-progress-bar-indeterminate-animation-name);
+    animation-duration: var(--v-progress-bar-indeterminate-animation-duration);
+    animation-iteration-count: var(
+      --v-progress-bar-indeterminate-animation-iteration-count
+    );
+    animation-timing-function: var(
+      --v-progress-bar-indeterminate-animation-timing-function
+    );
+    transform-origin: 0% 50%;
+    width: 100%;
+  }
+}
+
+@keyframes indeterminateAnimation {
+  0% {
+    transform: translateX(0) scaleX(0);
+  }
+  40% {
+    transform: translateX(0) scaleX(0.4);
+  }
+  100% {
+    transform: translateX(100%) scaleX(0.5);
+  }
+}

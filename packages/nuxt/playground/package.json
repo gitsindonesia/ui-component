@@ -6,9 +6,9 @@
     "build": "nuxi build"
   },
   "dependencies": {
-    "@gits-id/ui": "^0.3.2"
+    "@gits-id/ui": "^0.13.21"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^5.1.2"
+    "@nuxtjs/tailwindcss": "^6.1.3"
   }
 }

@@ -1,14 +1,10 @@
 import { createApp } from "vue";
 import { createPinia } from "pinia";
-
 import App from "./App.vue";
 import router from "./router";
-
 import GitsUi from "@gits-id/ui";
-
 import "./assets/index.css";
-import "@gits-id/app-bar/dist/style.css";
-import "@gits-id/alert/dist/style.css";
+import "@gits-id/ui/styles.scss";
 
 const app = createApp(App);
 

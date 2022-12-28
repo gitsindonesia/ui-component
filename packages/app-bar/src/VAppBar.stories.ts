@@ -5,7 +5,9 @@ import {ref} from 'vue';
 import Icon from '@gits-id/icon';
 import Button from '@gits-id/button';
 import {VInput} from '@gits-id/forms';
-import '@gits-id/forms/dist/style.css';
+import '@gits-id/button/src/VBtn.scss';
+import '@gits-id/forms/src/forms.scss';
+import '@gits-id/theme/transition.css';
 
 export default {
   title: 'Components/AppBar',
@@ -18,11 +20,13 @@ const Template: Story<{}> = (args) => ({
     return {args};
   },
   template: `
+  <div>
 <VAppBar v-bind="args">Hello</VAppBar>
-<main class="container mx-auto p-6 space-y-2">
+<main class="container mx-auto p-6 space-y-2 mt-2">
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pellentesque diam, ac sollicitudin urna. Integer blandit quam quis arcu tempus, non consequat leo consectetur. Aliquam id consectetur nibh. Pellentesque tincidunt dolor eu malesuada sagittis. Nam eu porttitor libero. Pellentesque aliquam, metus ac sagittis tincidunt, quam eros vehicula lacus, sed rhoncus nulla mauris a eros. Suspendisse imperdiet blandit risus vitae hendrerit. Nunc eget nisl ut tellus efficitur hendrerit ac sed nisl. Nunc sed blandit nulla, at scelerisque justo. Duis mollis interdum orci. Cras pulvinar laoreet massa, at iaculis enim efficitur eu. Nam et lacus at turpis gravida aliquam nec nec arcu. Sed venenatis enim nec velit feugiat, vitae ullamcorper tellus lacinia.</p>
   <p>Sed ut ante id elit maximus accumsan. Sed at ligula vitae velit elementum scelerisque. Phasellus vel felis vel lacus sodales ullamcorper. Fusce pharetra lorem ac ultricies laoreet. Pellentesque congue nunc vitae nibh bibendum, id volutpat ligula pretium. Suspendisse semper ipsum sit amet interdum efficitur. Quisque elit nunc, porttitor ut eleifend at, fermentum sit amet elit. Etiam a ultricies felis, sed eleifend sapien. Donec id eros velit. Morbi blandit commodo vulputate. Praesent interdum sollicitudin rhoncus. Maecenas commodo ac ante eu egestas. In hac habitasse platea dictumst. Cras quis consequat justo.</p>
 </main>
+</div>
 `,
 });
 
@@ -80,7 +84,7 @@ export const Shadow: Story<{}> = (args) => ({
     return {args, shadows};
   },
   template: `
-<v-app-bar
+<VAppBar
   v-for="(shadow, idx) in shadows"
   :key="idx"
   :shadow="shadow"
@@ -317,7 +321,6 @@ export const WithSearchBar: Story<{}> = (args) => ({
 </v-app-bar>
 `,
 });
-
 
 export const Transparent: Story<{}> = (args) => ({
   components: {VAppBar},

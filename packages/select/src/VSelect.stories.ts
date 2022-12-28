@@ -1,11 +1,12 @@
 import {Story, Meta} from '@storybook/vue3';
 import {themeColors} from '@gits-id/utils';
-import type {VSelectProps} from './types';
 import VSelect from './VSelect.vue';
 import {useForm} from 'vee-validate';
 import {ref} from 'vue';
 import {object, string} from 'yup';
 import VBtn from '@gits-id/button';
+import '@gits-id/button/src/VBtn.scss';
+import '@gits-id/forms/src/forms.scss';
 
 const items = [...Array(10)].map((_, index) => ({
   value: index + 1,
@@ -26,7 +27,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<VSelectProps> = (args) => ({
+const Template: Story<typeof VSelect> = (args) => ({
   components: {
     VSelect,
   },
@@ -147,7 +148,7 @@ ReturnObject.parameters = {
   },
 };
 
-export const Sizes: Story<VSelectProps> = (args) => ({
+export const Sizes: Story<typeof VSelect> = (args) => ({
   components: {
     VSelect,
   },

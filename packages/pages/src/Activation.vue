@@ -6,6 +6,7 @@ import {useForm} from 'vee-validate';
 import {string, object, ref as YupRef} from 'yup';
 import Alert from '@gits-id/alert';
 import {Icon} from '@iconify/vue';
+import '@gits-id/button/src/VBtn.scss';
 
 const props = defineProps({
   title: {
