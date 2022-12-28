@@ -6,7 +6,7 @@
     "build": "nuxi build"
   },
   "dependencies": {
-    "@gits-id/ui": "../../ui"
+    "@gits-id/ui": "latest"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.1.3"

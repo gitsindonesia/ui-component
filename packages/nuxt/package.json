@@ -22,7 +22,7 @@
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
   },
   "dependencies": {
-    "@gits-id/ui": "../ui",
+    "@gits-id/ui": "latest",
     "@nuxt/kit": "^3.0.0"
   },
   "devDependencies": {
