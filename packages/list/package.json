@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/list",
-  "version": "0.13.20",
+  "version": "0.14.0-alpha.0",
   "description": "GITS List Component",
   "scripts": {
     "build": "vite build && npm run build-types && npm run move-types",
@@ -25,9 +25,9 @@
     "vue-router": "^4.0.16"
   },
   "devDependencies": {
-    "@gits-id/button": "^0.13.20",
-    "@gits-id/dropdown": "^0.13.20",
-    "@gits-id/nav-drawer": "^0.13.20",
+    "@gits-id/button": "^0.14.0-alpha.0",
+    "@gits-id/dropdown": "^0.14.0-alpha.0",
+    "@gits-id/nav-drawer": "^0.14.0-alpha.0",
     "@iconify/vue": "^3.2.1",
     "autoprefixer": "^10.4.2",
     "c8": "^7.11.3",
