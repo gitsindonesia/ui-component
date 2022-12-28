@@ -30,6 +30,15 @@ Install `@gits-id/ui` and `tailwindcss` package:
 yarn add @gits-id/ui tailwindcss postcss autoprefixer
 ```
 
+::: info
+If you want to use the SASS version of styling, you need to install the `sass` package.
+
+```bash
+yarn add -D sass
+```
+
+:::
+
 Next, generate the tailwind config files:
 
 ```bash
@@ -62,9 +71,9 @@ Next, add the Tailwind directives to `src/assets/main.css`:
 @tailwind utilities;
 ```
 
-Next, open `src/main.ts` and import `GitsUi` plugin from `@gits-id/ui` and use it as the Vue plugin.
+Next, open `src/main.ts`. Import and use the `GitsUi` plugin from `@gits-id/ui` and also load the styles from `@gits-id/ui/styles` for CSS bundle or use `@gits-id/ui/styles.scss` if you want to use the SCSS version instead.
 
-```ts{7-8,12}
+```ts{7,10}
 // main.ts
 import { createApp } from "vue";
 
@@ -72,6 +81,12 @@ import App from "./App.vue";
 import router from "./router";
 
 import GitsUi from "@gits-id/ui";
+
+// load CSS bundle
+import '@gits-id/ui/styles';
+
+// or uncomment this line to load SCSS styles
+// import '@gits-id/ui/styles.scss';
 
 const app = createApp(App);
 
