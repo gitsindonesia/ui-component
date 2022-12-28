@@ -64,7 +64,9 @@
     },
     "./editor": "./editor.js",
     "./styles": "./dist/style.css",
-    "./*": "./src/*"
+    "./styles.scss": "./src/style.scss",
+    "./src/*": "./src/*",
+    "./*": "./*"
   },
   "gitHead": "b20f0532383a5722449aeb41788a2eb47032e124",
   "devDependencies": {
