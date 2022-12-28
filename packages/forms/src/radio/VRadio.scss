@@ -1,0 +1,15 @@
+.v-radio {
+  &-group {
+    @apply flex w-full items-center gap-2 select-none;
+  }
+  &-input {
+    @apply transition duration-300;
+  }
+  &-error {
+    @apply text-error-500 text-sm;
+
+    &-input {
+      @apply border-error-500 focus:border-error-500 focus:ring-error-500;
+    }
+  }
+}

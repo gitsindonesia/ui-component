@@ -133,23 +133,14 @@ watch(
         {{ label }}
       </label>
     </div>
-    <div v-if="errorMessage && !hideError" class="v-radio-error" :class="errorClass">
+    <div
+      v-if="errorMessage && !hideError"
+      class="v-radio-error"
+      :class="errorClass"
+    >
       {{ errorMessage }}
     </div>
   </div>
 </template>
 
-<style>
-.v-radio-group {
-  @apply flex w-full items-center gap-2 select-none;
-}
-.v-radio-input {
-  @apply transition duration-300;
-}
-.v-radio-error {
-  @apply text-error-500 text-sm;
-}
-.v-radio.v-radio--error .v-radio-input {
-  @apply border-error-500 focus:border-error-500 focus:ring-error-500;
-}
-</style>
+<style src="./VRadio.scss" lang="scss"></style>
