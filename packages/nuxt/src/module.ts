@@ -335,6 +335,7 @@ const components: AddComponentOptions[] = [
 ];
 export interface ModuleOptions {
   css?: boolean;
+  sass?: boolean;
   components?: boolean;
   transpileDeps?: boolean;
 }
@@ -345,7 +346,8 @@ export default defineNuxtModule<ModuleOptions>({
     configKey: 'gitsUi',
   },
   defaults: {
-    css: true,
+    css: false,
+    sass: true,
     components: true,
     transpileDeps: true,
   },
@@ -362,10 +364,17 @@ export default defineNuxtModule<ModuleOptions>({
       ];
     }
 
+    // use css bundle
     if (options.css) {
       nuxt.options.css.push('@gits-id/ui/styles');
     }
 
+    // use sass bundle
+    if (options.sass) {
+      nuxt.options.css.push('@gits-id/ui/src/style.scss');
+    }
+
+    // register components
     if (options.components) {
       components.forEach((component) => {
         addComponent(component);
