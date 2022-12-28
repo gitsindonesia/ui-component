@@ -371,7 +371,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     // use sass bundle
     if (options.sass) {
-      nuxt.options.css.push('@gits-id/ui/src/style.scss');
+      nuxt.options.css.push('@gits-id/ui/styles.scss');
     }
 
     // register components
