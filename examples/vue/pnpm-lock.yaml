@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@gits-id/ui': 0.11.11-alpha.0
+  '@gits-id/ui': 0.14.0-alpha.48+b403f585
   '@rushstack/eslint-patch': ^1.1.4
   '@types/jsdom': ^20.0.0
   '@types/node': ^16.11.56
@@ -28,7 +28,7 @@ specifiers:
   vue-tsc: ^0.40.7
 
 dependencies:
-  '@gits-id/ui': 0.11.11-alpha.0_typescript@4.7.4
+  '@gits-id/ui': 0.14.0-alpha.48_typescript@4.7.4
   pinia: 2.0.22_uxrvejtcwrakwzzo6hlouuo2vq
   vue: 3.2.39
   vue-router: 4.1.5_vue@3.2.39
@@ -362,273 +362,280 @@ packages:
       '@babel/helper-validator-identifier': 7.19.1
       to-fast-properties: 2.0.0
 
-  /@ckeditor/ckeditor5-adapter-ckfinder/32.0.0:
-    resolution: {integrity: sha512-DCK4CPW4M4pEJW/zC6yo8zGGGDXfjsEQRGkTiF4QjHODh3QYBc6O0Oy4mzCuEIobkyMfcUAqEh3UQQVgEM8B+Q==}
+  /@ckeditor/ckeditor5-adapter-ckfinder/35.4.0:
+    resolution: {integrity: sha512-0o0nkggKYwjx60Ge7GGuJp2jJGwGW9LlAOZEVPTMRG8b/uSzMNLHyCChKeakRO4z7tiopJM6o9Y8sfbDM/nKpA==}
     engines: {node: '>=14.0.0', npm: '>=5.7.1'}
     dependencies:
-      ckeditor5: 32.0.0
+      ckeditor5: 35.4.0
     dev: false
 
-  /@ckeditor/ckeditor5-autoformat/32.0.0:
-    resolution: {integrity: sha512-9zg1Rm/ak+zflH+p3zUjxZgK0iPAhDA+/vElBXQSVANATYqNxa4gszM/PDIl71tMpy6Yc+De9/eTFiazxsR9zA==}
+  /@ckeditor/ckeditor5-autoformat/35.4.0:
+    resolution: {integrity: sha512-4vAOaoiziR2XN8KmismiBiknCeOYKtskW8yQnSrFWUX3Fkok3KrHaRFr48AbIN4pHI2xTMKPLeMLeRtZd8tTVw==}
     engines: {node: '>=14.0.0', npm: '>=5.7.1'}
     dependencies:
-      ckeditor5: 32.0.0
+      ckeditor5: 35.4.0
     dev: false
 
-  /@ckeditor/ckeditor5-basic-styles/32.0.0:
-    resolution: {integrity: sha512-Y3YzhHkCIbh1XqMGJKMOWnKtoLY7AbwquBI4rC1i2bGbO5iAlwfyiLeikstMM8ft2PbWFsXDeVPa3kRnBBQwDQ==}
+  /@ckeditor/ckeditor5-basic-styles/35.4.0:
+    resolution: {integrity: sha512-6JkoplYMwIHN1E/w3DoY0i95B41sbGwsNAtlvx6qaBvNKkLu4rRCtiBUJDnx8qZxxQXHih5ZOw8bUQHl4mt8hw==}
     engines: {node: '>=14.0.0', npm: '>=5.7.1'}
     dependencies:
-      ckeditor5: 32.0.0
+      ckeditor5: 35.4.0
     dev: false
 
-  /@ckeditor/ckeditor5-block-quote/32.0.0:
-    resolution: {integrity: sha512-A+htu5dwy5+lcbdwwFIBntcqVdD87ELyDIfOsrW4KUNOFpE1nnlFE2TPlYl5+kKWkhFcYPU/dVl9Ebnj/bb0ng==}
+  /@ckeditor/ckeditor5-block-quote/35.4.0:
+    resolution: {integrity: sha512-AXoJhSVwl/RSelmxqxMcLq0VUXubjEvMc32xvF6CyUkc/vlSkZec6noznXyVo0P5TXOxsFbzwFAdBOSFTFjD+A==}
     engines: {node: '>=14.0.0', npm: '>=5.7.1'}
     dependencies:
-      ckeditor5: 32.0.0
+      ckeditor5: 35.4.0
     dev: false
 
-  /@ckeditor/ckeditor5-build-classic/32.0.0:
-    resolution: {integrity: sha512-BUYJAuV6PRdswv7f98zMg787TxYMZGRLKYJN8jxSqNtEpPo62LYyvwCXRneWAdM6en5y6oVGxdPrjvqHRRxX5w==}
+  /@ckeditor/ckeditor5-build-classic/35.4.0:
+    resolution: {integrity: sha512-DDvhtoOggo2B7/M+XPReIkFOvkXzzjTP3d4dzakODIFhZ5Y633U0NlIwTeMP/KVvTfzmesW9FJzER0fbVosQgA==}
     engines: {node: '>=14.0.0', npm: '>=5.7.1'}
     dependencies:
-      '@ckeditor/ckeditor5-adapter-ckfinder': 32.0.0
-      '@ckeditor/ckeditor5-autoformat': 32.0.0
-      '@ckeditor/ckeditor5-basic-styles': 32.0.0
-      '@ckeditor/ckeditor5-block-quote': 32.0.0
-      '@ckeditor/ckeditor5-ckfinder': 32.0.0
-      '@ckeditor/ckeditor5-cloud-services': 32.0.0
-      '@ckeditor/ckeditor5-easy-image': 32.0.0
-      '@ckeditor/ckeditor5-editor-classic': 32.0.0
-      '@ckeditor/ckeditor5-essentials': 32.0.0
-      '@ckeditor/ckeditor5-heading': 32.0.0
-      '@ckeditor/ckeditor5-image': 32.0.0
-      '@ckeditor/ckeditor5-indent': 32.0.0
-      '@ckeditor/ckeditor5-link': 32.0.0
-      '@ckeditor/ckeditor5-list': 32.0.0
-      '@ckeditor/ckeditor5-media-embed': 32.0.0
-      '@ckeditor/ckeditor5-paragraph': 32.0.0
-      '@ckeditor/ckeditor5-paste-from-office': 32.0.0
-      '@ckeditor/ckeditor5-table': 32.0.0
-      '@ckeditor/ckeditor5-typing': 32.0.0
+      '@ckeditor/ckeditor5-adapter-ckfinder': 35.4.0
+      '@ckeditor/ckeditor5-autoformat': 35.4.0
+      '@ckeditor/ckeditor5-basic-styles': 35.4.0
+      '@ckeditor/ckeditor5-block-quote': 35.4.0
+      '@ckeditor/ckeditor5-ckbox': 35.4.0
+      '@ckeditor/ckeditor5-ckfinder': 35.4.0
+      '@ckeditor/ckeditor5-cloud-services': 35.4.0
+      '@ckeditor/ckeditor5-easy-image': 35.4.0
+      '@ckeditor/ckeditor5-editor-classic': 35.4.0
+      '@ckeditor/ckeditor5-essentials': 35.4.0
+      '@ckeditor/ckeditor5-heading': 35.4.0
+      '@ckeditor/ckeditor5-image': 35.4.0
+      '@ckeditor/ckeditor5-indent': 35.4.0
+      '@ckeditor/ckeditor5-link': 35.4.0
+      '@ckeditor/ckeditor5-list': 35.4.0
+      '@ckeditor/ckeditor5-media-embed': 35.4.0
+      '@ckeditor/ckeditor5-paragraph': 35.4.0
+      '@ckeditor/ckeditor5-paste-from-office': 35.4.0
+      '@ckeditor/ckeditor5-table': 35.4.0
+      '@ckeditor/ckeditor5-typing': 35.4.0
     dev: false
 
-  /@ckeditor/ckeditor5-ckfinder/32.0.0:
-    resolution: {integrity: sha512-1XOr+S26Gt2CNZxnIzxURwCpZXGnNW56ZTPqHa2NHLgemm+KYs3+iR8/AQj9HCW5za+ZFmj0I5Ztqq9Pssya1w==}
+  /@ckeditor/ckeditor5-ckbox/35.4.0:
+    resolution: {integrity: sha512-kpEleQLsu3/nyvc46zkWBp3EvvxinnQfmwvi52h+FLbbI0TE0dxadRppQHZjHXd4yw29N6B1ePeMAVFRX1iYjQ==}
     engines: {node: '>=14.0.0', npm: '>=5.7.1'}
     dependencies:
-      ckeditor5: 32.0.0
+      ckeditor5: 35.4.0
     dev: false
 
-  /@ckeditor/ckeditor5-clipboard/32.0.0:
-    resolution: {integrity: sha512-Irk+XMCaG6lEBHh4ffPVfP66CEfOIGokADM0w7Z11xrPGqz1UCWrdu2CGoEaEDWw3+7c5/IjDh9jmZ5xG8TZmQ==}
+  /@ckeditor/ckeditor5-ckfinder/35.4.0:
+    resolution: {integrity: sha512-PeA3PA1c1JGn9f+rZlnWHSuXUU4DjWU4oUp5tMWAtS8OV1srJ2DbU/+Z/WZHO4jmDMfQX9XmN5B/sdLvTQ7ZjQ==}
     engines: {node: '>=14.0.0', npm: '>=5.7.1'}
     dependencies:
-      '@ckeditor/ckeditor5-core': 32.0.0
-      '@ckeditor/ckeditor5-engine': 32.0.0
-      '@ckeditor/ckeditor5-utils': 32.0.0
-      '@ckeditor/ckeditor5-widget': 32.0.0
+      ckeditor5: 35.4.0
+    dev: false
+
+  /@ckeditor/ckeditor5-clipboard/35.4.0:
+    resolution: {integrity: sha512-B6rIQxvOrHvO9TZRC8JA0wKk+IfN880UJkYIg1qlhf9HFNVjdVbtHaiCsPD+TzGmQN3XHXfNjgjabGRIn0iZmw==}
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
+    dependencies:
+      '@ckeditor/ckeditor5-core': 35.4.0
+      '@ckeditor/ckeditor5-engine': 35.4.0
+      '@ckeditor/ckeditor5-utils': 35.4.0
+      '@ckeditor/ckeditor5-widget': 35.4.0
       lodash-es: 4.17.21
     dev: false
 
-  /@ckeditor/ckeditor5-cloud-services/32.0.0:
-    resolution: {integrity: sha512-hpbZP4Ue9glkK35+6/Tv+Zw6S/gWA7qNhuUWFEQ22kClKpiEH+2SOnQrTWBRrHVMLRm3GXIfq9sIvv3Ndi0a2w==}
+  /@ckeditor/ckeditor5-cloud-services/35.4.0:
+    resolution: {integrity: sha512-iavLfEKx0GVPMIyPnnOlD9TCVVLIrwp1dCQAfO3A7WUySiLBcC7ShJ+6Bm00CVQQE6VtrYOevrKN/RcRzImzHw==}
     engines: {node: '>=14.0.0', npm: '>=5.7.1'}
     dependencies:
-      ckeditor5: 32.0.0
+      ckeditor5: 35.4.0
     dev: false
 
-  /@ckeditor/ckeditor5-core/32.0.0:
-    resolution: {integrity: sha512-Vf13S2EQ/R7ULFHt13Is6lOunq3tWROqNsE9oclSuzL0kTWoYuzu3JFyEnyMwDMRisl3CDpU7/Bp5VJ76BsRsA==}
+  /@ckeditor/ckeditor5-core/35.4.0:
+    resolution: {integrity: sha512-Rf0H7C4inCj/YC8aii0cT7TC/IuBIQ+tXmu9qd8/1BJ/rz1MCHXtBPApjTbFp33OE3aOFB5+NUaKt05k/dL3OA==}
     engines: {node: '>=14.0.0', npm: '>=5.7.1'}
     dependencies:
-      '@ckeditor/ckeditor5-engine': 32.0.0
-      '@ckeditor/ckeditor5-ui': 32.0.0
-      '@ckeditor/ckeditor5-utils': 32.0.0
+      '@ckeditor/ckeditor5-engine': 35.4.0
+      '@ckeditor/ckeditor5-ui': 35.4.0
+      '@ckeditor/ckeditor5-utils': 35.4.0
       lodash-es: 4.17.21
     dev: false
 
-  /@ckeditor/ckeditor5-easy-image/32.0.0:
-    resolution: {integrity: sha512-PLt4xRGs9eTl0zaDHqBiw1m5EngOFDFMdsCb3au7XBDDZ7Q7UhXIbGvA6waAUHniJaZLCVppU7J+knTlmsZfRQ==}
+  /@ckeditor/ckeditor5-easy-image/35.4.0:
+    resolution: {integrity: sha512-DRCQ/zh2Ul0f7RrSBG3WYKnZbrU2jj1RazX4qZM1b1WlM81y7+i+Rnp209JIT9TnlrTdYJy2EUY17YHughuyzA==}
     engines: {node: '>=14.0.0', npm: '>=5.7.1'}
     dependencies:
-      ckeditor5: 32.0.0
+      ckeditor5: 35.4.0
     dev: false
 
-  /@ckeditor/ckeditor5-editor-classic/32.0.0:
-    resolution: {integrity: sha512-6idKBOId/sOnZ1gY5b5z34/RGSj5YsH+BgaNad04AtjKr4IVTJPrPZUhF83761nccFC9kRZTrXb9TcEWHsSHAg==}
+  /@ckeditor/ckeditor5-editor-classic/35.4.0:
+    resolution: {integrity: sha512-EqAqFD/5oPtDMU2AoH3eJaDplcS8MxfkiRQ5hzeC1JeIPT94w5FCHnB4SAkjLPDnlyZnBWOOYdZSuln2TRIbEw==}
     engines: {node: '>=14.0.0', npm: '>=5.7.1'}
     dependencies:
-      ckeditor5: 32.0.0
+      ckeditor5: 35.4.0
       lodash-es: 4.17.21
     dev: false
 
-  /@ckeditor/ckeditor5-engine/32.0.0:
-    resolution: {integrity: sha512-UuAEnGBdib0hVhCIJByLQ8tKDjdOJkJF/aKsAQth9an95Z7TJ8oqUqhwhUQWtsULu0ugaqb/95t7FUFA+3BJqw==}
+  /@ckeditor/ckeditor5-engine/35.4.0:
+    resolution: {integrity: sha512-67QKtUGJeLM072h9qURvzczYGU3ecuxR9LLmM4dffnV+PBNQ9e8RDCY7PuuEP0pplmAUI6/XqoZJIbk6h7ZV3Q==}
     engines: {node: '>=14.0.0', npm: '>=5.7.1'}
     dependencies:
-      '@ckeditor/ckeditor5-utils': 32.0.0
+      '@ckeditor/ckeditor5-utils': 35.4.0
       lodash-es: 4.17.21
     dev: false
 
-  /@ckeditor/ckeditor5-enter/32.0.0:
-    resolution: {integrity: sha512-1V0M9wyTWZmLJ07eqb7ZICEQTDzi2NwsKaTpAavOlMG04+L4q5Ha9H0EXxgZtKjN4iq0cQEv6sog06xDkRrTDw==}
+  /@ckeditor/ckeditor5-enter/35.4.0:
+    resolution: {integrity: sha512-y95RnA/Gw72e220PJKVwNbwPzX4SRs82/rXu1jVyJXty7CcEZqqfyRtW6odICAXr5eKI5XKgzFgpFYULL3D9Nw==}
     engines: {node: '>=14.0.0', npm: '>=5.7.1'}
     dependencies:
-      '@ckeditor/ckeditor5-core': 32.0.0
-      '@ckeditor/ckeditor5-engine': 32.0.0
-      '@ckeditor/ckeditor5-utils': 32.0.0
+      '@ckeditor/ckeditor5-core': 35.4.0
+      '@ckeditor/ckeditor5-engine': 35.4.0
     dev: false
 
-  /@ckeditor/ckeditor5-essentials/32.0.0:
-    resolution: {integrity: sha512-haHmUIdvz0ykMBM4YOyNFBbh6Ymku19yoPyX8xMIzMVbniI+DtB1k0fGZu7OqUNjjf5jPZJlz5sW+KHzzySVXg==}
+  /@ckeditor/ckeditor5-essentials/35.4.0:
+    resolution: {integrity: sha512-tTtTb4NYSQi99LPDzAVUnFhW6iTqSuaylkg0XnDvO2lVR3tAA27gOOjGqc8Ri9NMGGeZkFTvXpnVkXkFnDP2nQ==}
     engines: {node: '>=14.0.0', npm: '>=5.7.1'}
     dependencies:
-      ckeditor5: 32.0.0
+      ckeditor5: 35.4.0
     dev: false
 
-  /@ckeditor/ckeditor5-heading/32.0.0:
-    resolution: {integrity: sha512-XxB1yDP3aU1ePYAUE2XiQ/yjHkSdrRllVsihBtDKh5DTcoKxZHafmVEZXBiJaLrv5OPNmfvXyR+eC6yet35sMA==}
+  /@ckeditor/ckeditor5-heading/35.4.0:
+    resolution: {integrity: sha512-cZwKzAg0USxaDZstQXKMkzrE+fOEr+6YFtXpHGrKgsaisI9xkuOWD40dZvLovTmENLGPopDkdfGewj8jscB9Kg==}
     engines: {node: '>=14.0.0', npm: '>=5.7.1'}
     dependencies:
-      ckeditor5: 32.0.0
+      ckeditor5: 35.4.0
     dev: false
 
-  /@ckeditor/ckeditor5-image/32.0.0:
-    resolution: {integrity: sha512-sBdFbWH5YdmnvEIQsEY4Xj4kkHcSmLgFDjgtAQdjqdQi3GZI81kMYIepPNELtUtpEqNd0WyS3ReWYHMlbjOpfw==}
+  /@ckeditor/ckeditor5-image/35.4.0:
+    resolution: {integrity: sha512-SQ+IiIB6SLhdhVy3gRKxxfBXpLikInvaP3ILOvPQlaC0Bt5ciJ3t/180zCBlbCvvRwIQNo4bYbZc5cI8UBIAaA==}
     engines: {node: '>=14.0.0', npm: '>=5.7.1'}
     dependencies:
-      '@ckeditor/ckeditor5-ui': 32.0.0
-      ckeditor5: 32.0.0
+      '@ckeditor/ckeditor5-ui': 35.4.0
+      ckeditor5: 35.4.0
       lodash-es: 4.17.21
     dev: false
 
-  /@ckeditor/ckeditor5-indent/32.0.0:
-    resolution: {integrity: sha512-I1zHBv1kRCRUyOevKzSpVyd/Df1IdmYeKsVYmEKvDCUQMp126DEdOjlxCbSkq66gFJ1VLUlV+lev5BXg0w2NRA==}
+  /@ckeditor/ckeditor5-indent/35.4.0:
+    resolution: {integrity: sha512-FNp5S6t/RlY4eARR4E/jzxqjAbsGMa+30ZKS9maTOCx0TDmvmjD0jvZc9+1fe/KzSBk9wtmHYOil1J+W66rKvw==}
     engines: {node: '>=14.0.0', npm: '>=5.7.1'}
     dependencies:
-      ckeditor5: 32.0.0
+      ckeditor5: 35.4.0
     dev: false
 
-  /@ckeditor/ckeditor5-link/32.0.0:
-    resolution: {integrity: sha512-xJHLp+SZn/fzcDHFU80IOEkZ6aBWSAMgJyp2pDMFOJMz2eWTKwNNh6XJW18f4ELHVWaCMVNgdp/DuSZxxUGxfg==}
+  /@ckeditor/ckeditor5-link/35.4.0:
+    resolution: {integrity: sha512-aqHFwlnGyjW/fp/fklD1VupYLsfbvSwsh9RFGIdgJL4TuWnlhxR5JXCOAKyZtvCWpdyuKyqzEB8EV0NQAa+OMg==}
     engines: {node: '>=14.0.0', npm: '>=5.7.1'}
     dependencies:
-      '@ckeditor/ckeditor5-ui': 32.0.0
-      ckeditor5: 32.0.0
+      '@ckeditor/ckeditor5-ui': 35.4.0
+      ckeditor5: 35.4.0
       lodash-es: 4.17.21
     dev: false
 
-  /@ckeditor/ckeditor5-list/32.0.0:
-    resolution: {integrity: sha512-xjIfi142oso1H5m89BKB7uaOsWzMUb14BGzO9poTvSQjIpavBRYPTrin2qb0euuEY2XvUjVJF7GqPJ4zJdPDzA==}
+  /@ckeditor/ckeditor5-list/35.4.0:
+    resolution: {integrity: sha512-fPENWzEicpoXZsDmGR6EiR/j3Z4Q3KYAsBMsmWf8YwUlbM/hERt+V3yIB+LKdGQKbFrL6CWOA1JBB4tmmwd50A==}
     engines: {node: '>=14.0.0', npm: '>=5.7.1'}
     dependencies:
-      '@ckeditor/ckeditor5-ui': 32.0.0
-      ckeditor5: 32.0.0
+      '@ckeditor/ckeditor5-ui': 35.4.0
+      ckeditor5: 35.4.0
     dev: false
 
-  /@ckeditor/ckeditor5-media-embed/32.0.0:
-    resolution: {integrity: sha512-GoCaEqAW0Pu2mPOBKzNxdpqD2beM5KmxhaIANOR8xR404cYSMgXM6g5bL6eQPRRwtzqw60/qTj2k9QGIqg30xw==}
+  /@ckeditor/ckeditor5-media-embed/35.4.0:
+    resolution: {integrity: sha512-So+BYkI82pdIGP2VQ+b+gstEOnHLHA9yBX94pTJM9eW1O+ZTPMR1t2wJFFmEbCjQUYDVC8SdGUGaOb1gaeVXiw==}
     engines: {node: '>=14.0.0', npm: '>=5.7.1'}
     dependencies:
-      '@ckeditor/ckeditor5-ui': 32.0.0
-      ckeditor5: 32.0.0
+      '@ckeditor/ckeditor5-ui': 35.4.0
+      ckeditor5: 35.4.0
     dev: false
 
-  /@ckeditor/ckeditor5-paragraph/32.0.0:
-    resolution: {integrity: sha512-GRpMOb0pjZHvUtyTrX9jlH7gQ5n1/33ljX3Ty31Lyovz4KPfR3YNzyjNAVHb/fOk72zoPFUrhpd/NLum836DNA==}
+  /@ckeditor/ckeditor5-paragraph/35.4.0:
+    resolution: {integrity: sha512-8nhkEEFv1WClhH6q/HW8P596d+dlatSVc46kQ2+jGlYirL8P66tV/nK+OiE8z1d897oVr4QPGsqk2qGkRFUChw==}
     engines: {node: '>=14.0.0', npm: '>=5.7.1'}
     dependencies:
-      '@ckeditor/ckeditor5-core': 32.0.0
-      '@ckeditor/ckeditor5-ui': 32.0.0
-      '@ckeditor/ckeditor5-utils': 32.0.0
+      '@ckeditor/ckeditor5-core': 35.4.0
+      '@ckeditor/ckeditor5-ui': 35.4.0
+      '@ckeditor/ckeditor5-utils': 35.4.0
     dev: false
 
-  /@ckeditor/ckeditor5-paste-from-office/32.0.0:
-    resolution: {integrity: sha512-dX/vfBwp0e7938Y1j0lEyqfClsEInnQHG/MD4gz9AVcCixVxl12F2uL52WMm/nSVrVax5zcUSOz1QV9/0UG/mg==}
+  /@ckeditor/ckeditor5-paste-from-office/35.4.0:
+    resolution: {integrity: sha512-Uav1z9t52+qcu1axykcZ/NeH7JnURuZF9l0o+Pq/sNg3zjzVqB92V5cvFXg9hXeod8LzxlNLHy1BR8ZWTHeKHQ==}
     engines: {node: '>=14.0.0', npm: '>=5.7.1'}
     dependencies:
-      ckeditor5: 32.0.0
+      ckeditor5: 35.4.0
     dev: false
 
-  /@ckeditor/ckeditor5-select-all/32.0.0:
-    resolution: {integrity: sha512-HmkR1hivslj9N+x3KAf0hghIpTafxmGqV2nit8iE0WE4YCcBw0cubJHbDsdiFmniIQXrbsBgI7RUnXs4nXdaCg==}
+  /@ckeditor/ckeditor5-select-all/35.4.0:
+    resolution: {integrity: sha512-c+pIIY77SP6ux4/cyD7cCrllQAqtFVSnzNYdy7ygNPqljCGngCnpSV9xfCO/blFo6/zx2vsmzVGdRq3ArzGoMg==}
     engines: {node: '>=14.0.0', npm: '>=5.7.1'}
     dependencies:
-      '@ckeditor/ckeditor5-core': 32.0.0
-      '@ckeditor/ckeditor5-ui': 32.0.0
-      '@ckeditor/ckeditor5-utils': 32.0.0
+      '@ckeditor/ckeditor5-core': 35.4.0
+      '@ckeditor/ckeditor5-ui': 35.4.0
+      '@ckeditor/ckeditor5-utils': 35.4.0
     dev: false
 
-  /@ckeditor/ckeditor5-table/32.0.0:
-    resolution: {integrity: sha512-pWNeDCKMcNp/XpRU/hqu1K7rmzrDB++WIPzG5KDwkQQ83iwlbTqrfa7xsLLVX6bz6g2/fy2B3Ipt5BIndhlhjQ==}
+  /@ckeditor/ckeditor5-table/35.4.0:
+    resolution: {integrity: sha512-u2g3CIqXO7ByrfFVqlHagPssta8hd/zSE37CjFuylc5KYVmMxcuh3TiFirKaladH92/3gjfnf+GWEC5X14mA8w==}
     engines: {node: '>=14.0.0', npm: '>=5.7.1'}
     dependencies:
-      ckeditor5: 32.0.0
+      ckeditor5: 35.4.0
       lodash-es: 4.17.21
     dev: false
 
-  /@ckeditor/ckeditor5-typing/32.0.0:
-    resolution: {integrity: sha512-MkbFfgvwMgU4P5/2LZa473w2XA4DQmb7N+3VzqMQfn2y7YdsRk8tt54GxilwL0bTE/AiSqcR6f+LcnHFGj/coQ==}
+  /@ckeditor/ckeditor5-typing/35.4.0:
+    resolution: {integrity: sha512-Ad/PHWbVWcnAj9oevkkfLqf6CmvCFOti466uhvfOCKRNVf2+/xuGwleOGr8W6Lir/x/qav7ojFjKPKDxqbPXhA==}
     engines: {node: '>=14.0.0', npm: '>=5.7.1'}
     dependencies:
-      '@ckeditor/ckeditor5-core': 32.0.0
-      '@ckeditor/ckeditor5-engine': 32.0.0
-      '@ckeditor/ckeditor5-utils': 32.0.0
+      '@ckeditor/ckeditor5-core': 35.4.0
+      '@ckeditor/ckeditor5-engine': 35.4.0
+      '@ckeditor/ckeditor5-utils': 35.4.0
       lodash-es: 4.17.21
     dev: false
 
-  /@ckeditor/ckeditor5-ui/32.0.0:
-    resolution: {integrity: sha512-tkn5Y0ZYkhby8iFnAAZMLyh9zub/okOhzR2IJvS6T95J/w1z2HpJO/yNkdSrU43qXQtmp77o0UQ53PU4PvIp0Q==}
+  /@ckeditor/ckeditor5-ui/35.4.0:
+    resolution: {integrity: sha512-0SmYE+k1cYQPqyw2rQsPDV/RpudneBh1bNfiaTOz+rqViJIMe+TxiuK6Fz+znNZ05s0exr+ZHWvMttGqlVoQNw==}
     engines: {node: '>=14.0.0', npm: '>=5.7.1'}
     dependencies:
-      '@ckeditor/ckeditor5-core': 32.0.0
-      '@ckeditor/ckeditor5-utils': 32.0.0
+      '@ckeditor/ckeditor5-core': 35.4.0
+      '@ckeditor/ckeditor5-utils': 35.4.0
       lodash-es: 4.17.21
     dev: false
 
-  /@ckeditor/ckeditor5-undo/32.0.0:
-    resolution: {integrity: sha512-4diY4FcmX3Wbi0Gr0U1HsswwJ3HIjdRJV9x4zEm7rXz1PbH+IIQKPIJQSoyd1dSkE2F4DslUhfIGsZH5vzmQ8w==}
+  /@ckeditor/ckeditor5-undo/35.4.0:
+    resolution: {integrity: sha512-0RhsK0f/pX/7KB/JXYTLiDOswmUTQ9EKIIuewAwr7LTsBf4Q309FZSFdbeTmc0wIyX33212Xh5xsi3LyG1VJRg==}
     engines: {node: '>=14.0.0', npm: '>=5.7.1'}
     dependencies:
-      '@ckeditor/ckeditor5-core': 32.0.0
-      '@ckeditor/ckeditor5-engine': 32.0.0
-      '@ckeditor/ckeditor5-ui': 32.0.0
+      '@ckeditor/ckeditor5-core': 35.4.0
+      '@ckeditor/ckeditor5-engine': 35.4.0
+      '@ckeditor/ckeditor5-ui': 35.4.0
     dev: false
 
-  /@ckeditor/ckeditor5-upload/32.0.0:
-    resolution: {integrity: sha512-MSzZqB65zzrvwUOjzdUvuNp7syY5ZGZG3qdQeJBQNAS9G14f5WdzH4tKGK2j4dDX3KGhoCA1RJagpCmwDXqRWw==}
+  /@ckeditor/ckeditor5-upload/35.4.0:
+    resolution: {integrity: sha512-+eJAluAc4mAFmx5FNuSGjkCYmbm0V9NpSleubAXEx2e+KNiLarPAnsolwRaAcYXcloNp4C9/l0D+lPEx7VRYtg==}
     engines: {node: '>=14.0.0', npm: '>=5.7.1'}
     dependencies:
-      '@ckeditor/ckeditor5-core': 32.0.0
-      '@ckeditor/ckeditor5-ui': 32.0.0
-      '@ckeditor/ckeditor5-utils': 32.0.0
+      '@ckeditor/ckeditor5-core': 35.4.0
+      '@ckeditor/ckeditor5-ui': 35.4.0
+      '@ckeditor/ckeditor5-utils': 35.4.0
     dev: false
 
-  /@ckeditor/ckeditor5-utils/32.0.0:
-    resolution: {integrity: sha512-4O0TW/oeFRGbB+mrXMhx47zEzASdDz87ftiJiI9jcB+S6Pq5+aSqCNc0ZVQBKaj2URNGqFkkT6Kp6eEEsMBVWA==}
+  /@ckeditor/ckeditor5-utils/35.4.0:
+    resolution: {integrity: sha512-sFjbb+1VYdLbELDLWVYk86WzVN7Lo3sXHbVhdr8+kc0Ufxdr3mTFHDAkiymFt2fs1FOB5gZyWJlJU+EeJnhKUw==}
     engines: {node: '>=14.0.0', npm: '>=5.7.1'}
     dependencies:
       lodash-es: 4.17.21
     dev: false
 
-  /@ckeditor/ckeditor5-vue/2.0.1:
-    resolution: {integrity: sha512-EriE1OQVNj1uhn3UL3myYY3JTfcUWHO46Yqga8U+/61V5vU3tIV6Z7/9q/MYe8UcFk0AM1sZcYXaKvWW57vnwg==}
-    engines: {node: '>=8.0.0', npm: '>=5.7.1'}
+  /@ckeditor/ckeditor5-vue/4.0.1:
+    resolution: {integrity: sha512-QjlQYY0DVqpk+Oj3aDxtcgknet6xquGwjdGLVxgJh6hP+IOpcHldk0BQgMNPiF4T5Ojj37N55IEkaHdQcCLQlA==}
+    engines: {node: '>=14.0.0', npm: '>=5.7.1'}
     dev: false
 
-  /@ckeditor/ckeditor5-widget/32.0.0:
-    resolution: {integrity: sha512-YcF5iVtMwYC8/3sxv00Du/9bvdhx6br0gJdxfjkiNP1/7GY+WSwjhZSNJZhT30xp+iLHt4tGIUUQqFHIk3Ui6Q==}
+  /@ckeditor/ckeditor5-widget/35.4.0:
+    resolution: {integrity: sha512-SNYOXXWu7XV1BZET+ar0Cea25836vzNtUqXlDPwBx/jrmK86b8GMbFR99P2bUG0NvtIsH5cSk7XCmnxb4ZQ6wA==}
     engines: {node: '>=14.0.0', npm: '>=5.7.1'}
     dependencies:
-      '@ckeditor/ckeditor5-core': 32.0.0
-      '@ckeditor/ckeditor5-engine': 32.0.0
-      '@ckeditor/ckeditor5-enter': 32.0.0
-      '@ckeditor/ckeditor5-typing': 32.0.0
-      '@ckeditor/ckeditor5-ui': 32.0.0
-      '@ckeditor/ckeditor5-utils': 32.0.0
+      '@ckeditor/ckeditor5-core': 35.4.0
+      '@ckeditor/ckeditor5-engine': 35.4.0
+      '@ckeditor/ckeditor5-enter': 35.4.0
+      '@ckeditor/ckeditor5-typing': 35.4.0
+      '@ckeditor/ckeditor5-ui': 35.4.0
+      '@ckeditor/ckeditor5-utils': 35.4.0
       lodash-es: 4.17.21
     dev: false
 
@@ -669,92 +676,42 @@ packages:
       - supports-color
     dev: true
 
-  /@gits-id/alert/0.11.11-alpha.0:
-    resolution: {integrity: sha512-oq3TRS4g5dgXUaSsMD54tDm2cPChWPBJeJrFxGNRzx5ePHzDar1qRqvnmjqAzIHzfqgfv39BOOg77U9xWHpLAw==}
+  /@floating-ui/core/0.3.1:
+    resolution: {integrity: sha512-ensKY7Ub59u16qsVIFEo2hwTCqZ/r9oZZFh51ivcLGHfUwTn8l1Xzng8RJUe91H/UP8PeqeBronAGx0qmzwk2g==}
+    dev: false
+
+  /@floating-ui/dom/0.1.10:
+    resolution: {integrity: sha512-4kAVoogvQm2N0XE0G6APQJuCNuErjOfPW8Ux7DFxh8+AfugWflwVJ5LDlHOwrwut7z/30NUvdtHzQ3zSip4EzQ==}
     dependencies:
-      '@gits-id/icon': 0.11.10
-      '@gits-id/theme': 0.11.10
-      '@gits-id/utils': 0.11.10
+      '@floating-ui/core': 0.3.1
+    dev: false
+
+  /@gits-id/alert/0.14.0-alpha.48:
+    resolution: {integrity: sha512-8ZkId6TOAyjVHNfRvtLhbTPOMuHlks4EcRPvZUaUyq6+EfYkumxNTMcN+W7Ar7i9o1RctHrU1jTpDQAiR8jjrQ==}
+    dependencies:
+      '@gits-id/button': 0.14.0-alpha.48
+      '@gits-id/icon': 0.14.0-alpha.48
+      '@gits-id/theme': 0.13.20
+      '@gits-id/utils': 0.13.0
       vue: 3.2.39
     transitivePeerDependencies:
       - ts-node
     dev: false
 
-  /@gits-id/app-bar/0.11.11-alpha.0:
-    resolution: {integrity: sha512-jfFR9PbgIIagR5Kxxh6fWUGQ5qXw2vJ2ZILdrLREmkOA4t9lAs2ueyLmLadVVsczVRsqV+j1X2NZTvqaspAnWQ==}
+  /@gits-id/app-bar/0.14.0-alpha.48:
+    resolution: {integrity: sha512-QcX4VUDywkwN7R734BcJkQUJb5AobXFA2OB3KsbAC9IBahTCfsI/rDOgw0/VqatLVAcUjnwLGrpJ70k8Ahm86Q==}
     dependencies:
-      '@gits-id/theme': 0.11.10
+      '@gits-id/theme': 0.13.20
       vue: 3.2.39
     transitivePeerDependencies:
       - ts-node
     dev: false
 
-  /@gits-id/avatar/0.11.10:
-    resolution: {integrity: sha512-CygVjModOQCKqcmUI24uBFf1osRc+xL8EQgazpGFmsY7RyBZCd3IMmDlaWx58HUfDN4yk8xeV9Xsj+3PIqX+cw==}
+  /@gits-id/autocomplete/0.14.0-alpha.48:
+    resolution: {integrity: sha512-5j3o/wOLbDVe1AVutyeQMRC8ndJDaAaasOETcz38iTMq06s2th4ZYdydMKhQ7c310g6MEkmnHSZ+x86+LTceWA==}
     dependencies:
-      '@gits-id/theme': 0.11.10
-      vue: 3.2.39
-    transitivePeerDependencies:
-      - ts-node
-    dev: false
-
-  /@gits-id/badge/0.11.10:
-    resolution: {integrity: sha512-2O79M7hrwq8STTr81/sJBLGpB3ErHVHBi6yb21scs6rzIeq1d/CVWsry97FSMrfZ30rEmBfbUNYigdN3H8M8pQ==}
-    dependencies:
-      '@heroicons/vue': 1.0.6_vue@3.2.39
-      vue: 3.2.39
-    dev: false
-
-  /@gits-id/breadcrumbs/0.11.10:
-    resolution: {integrity: sha512-uUlUBHJ/NGxoyyNMDZDdKixeHOEbQ4Dudfv0RKNs4Ge4p/wl7f2C5l4Ol8XjNIUg+S2/wERCe/fD6xVpmIfwjA==}
-    dependencies:
-      '@gits-id/icon': 0.11.10
-      vue: 3.2.39
-      vue-router: 4.1.5_vue@3.2.39
-    transitivePeerDependencies:
-      - ts-node
-    dev: false
-
-  /@gits-id/button/0.11.10:
-    resolution: {integrity: sha512-4MLx6mnVDTaBBVvNq0CKhmc4u4mXcNCMywP1U/vbJ73Wg/K9egqGrCIx+LfHi8onSHWX3lDWjh90i1SZGQ4q8A==}
-    dependencies:
-      '@gits-id/spinner': 0.11.10
-      '@gits-id/theme': 0.11.10
-      '@gits-id/utils': 0.11.10
-      vue: 3.2.39
-    transitivePeerDependencies:
-      - ts-node
-    dev: false
-
-  /@gits-id/card/0.11.10:
-    resolution: {integrity: sha512-56RpP/hLiaNyQXPEp7coyDn3e4YNDhzROG/DRNorj0yntMuMWFQCr2Ryr+pZk/3c7k4ULzyqM54h3Ooo6MmFOg==}
-    dependencies:
-      vue: 3.2.39
-    dev: false
-
-  /@gits-id/collapsible/0.11.10:
-    resolution: {integrity: sha512-oOIqwUS0GZDydfgsP4IxLdFDaAxnmuVsVfX5zrSPWxbKTmuUk1JjZnRtJLHUwYpHYj3p6aMNE2pbYa9FsZj1bw==}
-    dependencies:
-      vue: 3.2.39
-    dev: false
-
-  /@gits-id/collapsible/0.7.3:
-    resolution: {integrity: sha512-YJbS05Vao6f1TS0+EVJ1dEOoGSn/0E0PNs09E3BQ2wq8CnjHlMef/VfZHWHzCzxlEbZ2PvT6HpmZ09NavqfHqA==}
-    dependencies:
-      vue: 3.2.39
-    dev: false
-
-  /@gits-id/container/0.11.10:
-    resolution: {integrity: sha512-SJCtqD6VSZwbFESubdhEdGBU9KdKHFXLdu4wjo36kcig1kepvH9zptSTbKPTeqE8hzy9CSHU393cre7RUrSUqg==}
-    dependencies:
-      vue: 3.2.39
-    dev: false
-
-  /@gits-id/dropdown/0.11.10:
-    resolution: {integrity: sha512-VvklUZW0ZoheOHztOA9iG17BL6EPibjUgFvvaC51Zpo2QStGT+6hvpxmDuU7WB9JPT4tlXNMsUj9XFSb51SSPg==}
-    dependencies:
-      '@gits-id/button': 0.11.10
-      '@gits-id/icon': 0.11.10
+      '@gits-id/button': 0.14.0-alpha.48
+      '@gits-id/icon': 0.14.0-alpha.48
       '@headlessui/vue': 1.7.2_vue@3.2.39
       tailwindcss: 3.1.8
       vue: 3.2.39
@@ -762,21 +719,93 @@ packages:
       - ts-node
     dev: false
 
-  /@gits-id/editor/0.11.10:
-    resolution: {integrity: sha512-GiAook7SCudkqXcAJCcLXIthbMsCBVZ9KfHWsL7uUINGkuXXvWrd7NUVsT2TNi987LrsGwY8qI8YHEbAiJ+V4g==}
+  /@gits-id/avatar/0.14.0-alpha.48:
+    resolution: {integrity: sha512-yDYrR6WPici4PgwhJLHzMItWbXxUmzl7pJeVPze2j4HpbrKA3vxkKTVjqpKy9JLw2Wph2VoRaOlpJlbDhpC3eA==}
     dependencies:
-      '@ckeditor/ckeditor5-build-classic': 32.0.0
-      '@ckeditor/ckeditor5-vue': 2.0.1
+      '@gits-id/theme': 0.13.20
+      vue: 3.2.39
+    transitivePeerDependencies:
+      - ts-node
+    dev: false
+
+  /@gits-id/badge/0.14.0-alpha.48:
+    resolution: {integrity: sha512-GNjFv6WY/d1o/UOGLxbXwk1l3WssOQR2On7LdZy14jGcJxmxXS1TXmt/ItKvu3cYIaAmeVvoasWNyc28lrhpEg==}
+    dependencies:
+      '@gits-id/icon': 0.14.0-alpha.48
+      vue: 3.2.39
+    transitivePeerDependencies:
+      - ts-node
+    dev: false
+
+  /@gits-id/breadcrumbs/0.14.0-alpha.48:
+    resolution: {integrity: sha512-BnBVZYNxNeHTmI5qhlKxAscyvZRwd+N+sxaFDLVuBBtL2U7MnGGd8pYpANEuQ3F28btdvUoMQvAyzP6ChjifqQ==}
+    dependencies:
+      '@gits-id/icon': 0.14.0-alpha.48
+      vue: 3.2.39
+      vue-router: 4.1.5_vue@3.2.39
+    transitivePeerDependencies:
+      - ts-node
+    dev: false
+
+  /@gits-id/button/0.14.0-alpha.48:
+    resolution: {integrity: sha512-N+6clnlvtAeBwnZIFBW/IZOqYt6S1VjCHj2ruXbP5af/riAxxQOdpohO5ugE1pJ8Aie93m7+rLqVODMpX3us5Q==}
+    dependencies:
+      '@gits-id/icon': 0.14.0-alpha.48
+      '@gits-id/spinner': 0.14.0-alpha.48
+      '@gits-id/theme': 0.13.20
+      '@gits-id/utils': 0.13.0
+      vue: 3.2.39
+      vue-router: 4.1.5_vue@3.2.39
+    transitivePeerDependencies:
+      - ts-node
+    dev: false
+
+  /@gits-id/card/0.14.0-alpha.48:
+    resolution: {integrity: sha512-QwHIGws7eu9qeOfeWfG0ZmTgJY6TBN/E8F++4tqc4HL8HYdcGomfDxF2HR23LdEmiOl9clsBuPtZagq0r2WaDw==}
+    dependencies:
+      vue: 3.2.39
+    dev: false
+
+  /@gits-id/collapsible/0.13.9:
+    resolution: {integrity: sha512-s2n691K+swpZ73bc1cbmK+d2sriQ8O3WD7m+c4us8jA/5QpKk+NyiTddrnFvqKkYy6AdbfdNGtZDZlC8VggN/w==}
+    dependencies:
+      vue: 3.2.39
+    dev: false
+
+  /@gits-id/container/0.13.0:
+    resolution: {integrity: sha512-qXa7QP/7cHS0WhGuELgdfrBPERKsy9urjF6ZBZoAhapPVbPXJBXvddUO4UjtBdfZWLsWb9dinNfdbXRdnBSC5g==}
+    dependencies:
+      vue: 3.2.39
+    dev: false
+
+  /@gits-id/dropdown/0.14.0-alpha.48:
+    resolution: {integrity: sha512-5Km9LFXvuXljwYDSoM+L2CRAicL3BY5eABvApFOjDN0vBFT1htr4VJrxKZ4QhkeCRAnIKo5molerg12VymLKMQ==}
+    dependencies:
+      '@gits-id/button': 0.14.0-alpha.48
+      '@gits-id/icon': 0.14.0-alpha.48
+      '@headlessui/vue': 1.7.2_vue@3.2.39
+      tailwindcss: 3.1.8
+      vue: 3.2.39
+    transitivePeerDependencies:
+      - ts-node
+    dev: false
+
+  /@gits-id/editor/0.14.0-alpha.48:
+    resolution: {integrity: sha512-/rDvL2sjZ+g+MSAJKFb7iw8cUsQWRO8Zbr+NdQbnFp4XlNWxEzrULT8mnaHXKJRrdt7ikspuhsSQOURmaHtljg==}
+    dependencies:
+      '@ckeditor/ckeditor5-build-classic': 35.4.0
+      '@ckeditor/ckeditor5-vue': 4.0.1
       vee-validate: 4.6.7_vue@3.2.39
       vue: 3.2.39
     dev: false
 
-  /@gits-id/forms/0.11.10:
-    resolution: {integrity: sha512-eKtj5WMJj/bIrhnFJNl2Pmxo2jVw4BA5rnfdOQlW6X5KBmfK3Vne/KqEXHdpmBPeiyv6eJsPaJftm0jQXflTwQ==}
+  /@gits-id/forms/0.14.0-alpha.48:
+    resolution: {integrity: sha512-BNPQLIa0Ze6CpgRj7uDRvyV7dOMjcPRAenGEurF7PMlTPuv8uzw6h4EkIlYCHKzBtFKjbhL5fKBnso3ou2jVZQ==}
     dependencies:
-      '@gits-id/button': 0.11.10
-      '@gits-id/spinner': 0.11.10
-      '@gits-id/utils': 0.11.10
+      '@gits-id/button': 0.14.0-alpha.48
+      '@gits-id/icon': 0.11.10
+      '@gits-id/spinner': 0.14.0-alpha.48
+      '@gits-id/utils': 0.13.0
       vee-validate: 4.6.7_vue@3.2.39
       vue: 3.2.39
     transitivePeerDependencies:
@@ -792,95 +821,110 @@ packages:
       - ts-node
     dev: false
 
-  /@gits-id/layouts/0.11.10:
-    resolution: {integrity: sha512-0O8aB+k2L5YUYNuIXeDfm/2OvjS8WUFTwy+6kVR0HmOmwoadYAmjpWfQ2RA/FDINyjJB7RdoOdPd6vg6Ima6LA==}
+  /@gits-id/icon/0.14.0-alpha.48:
+    resolution: {integrity: sha512-RcvcrfAaxkG5SQJXjTf6kSFrXGc+FNHg4JJNu/SRdJl+0BPmiiK/yp00LX4QJNedpwBxJJS+YQuNKCGRt79GbQ==}
     dependencies:
-      vue: 3.2.39
-    dev: false
-
-  /@gits-id/list/0.11.10:
-    resolution: {integrity: sha512-Go0BRzoPO0CLld6AujSh0J6MDvRaOCHNdRa15VXGM3y4yinEll9UK50Ygz3efBZeurFK77HbbEVdUgB4DLKHtQ==}
-    dependencies:
-      '@gits-id/collapsible': 0.7.3
+      '@gits-id/theme': 0.13.20
+      '@heroicons/vue': 1.0.6_vue@3.2.39
       '@iconify/vue': 3.2.1_vue@3.2.39
-      vue: 3.2.39
-      vue-router: 4.1.5_vue@3.2.39
-    dev: false
-
-  /@gits-id/logo/0.11.10:
-    resolution: {integrity: sha512-SNUEKawau9QfjZ68szM3QxK6E4SSKOxKIC+nGbjAvVHV/y6v7+Ano05yF3YHS77mzoxH+lJexmOtRMsinFdi0Q==}
-    dependencies:
-      vue: 3.2.39
-    dev: false
-
-  /@gits-id/menu/0.11.10:
-    resolution: {integrity: sha512-hj3TyQif2lRkCGTKTpd06znAqMlOWp/oby+AQc33oAGLnUo/gNeNFxCoScsCTvWkwdRUCKAA/uA9QaceuL42KQ==}
-    dependencies:
-      '@iconify/vue': 3.2.1_vue@3.2.39
-      vue: 3.2.39
-      vue-router: 4.1.5_vue@3.2.39
-    dev: false
-
-  /@gits-id/menus/0.11.10:
-    resolution: {integrity: sha512-wu3Ucqj8Asy7ZIaFsEnktQ6MMckFIozJHU9S+S/wXY4wg0s2c7QWR+7EN6lrf2MjQV2RcB0YHxltVbcVaNsMlQ==}
-    dependencies:
-      '@gits-id/button': 0.11.10
       vue: 3.2.39
     transitivePeerDependencies:
       - ts-node
     dev: false
 
-  /@gits-id/modal/0.11.10:
-    resolution: {integrity: sha512-1Pl0STPbqVl9/QO/Dou+oVQ8UAklrQMJ24sQOpJBBLaBJ2zEng5xc953ut/EMQlh1LfG0FwMiVCciFQ1uQX5dw==}
+  /@gits-id/layouts/0.14.0-alpha.48:
+    resolution: {integrity: sha512-3VVMxaV25jwh22v4zWTTbdEZ+DNHQvk4ShRnbezcdYmTUiRmZYMi2/iqEjRp7xv2OBSbE/y1sQa//AOi86H3Pg==}
     dependencies:
-      '@gits-id/button': 0.11.10
+      vue: 3.2.39
+    dev: false
+
+  /@gits-id/list/0.14.0-alpha.48:
+    resolution: {integrity: sha512-pJXrUY39p60T3BR41QWkofzm3F/uTZlHGqKUtw2IV/o3/65aaNTKShLdKr2Tn7a6+xiMco/k3JUjs6bEnBUBAA==}
+    dependencies:
+      '@gits-id/collapsible': 0.13.9
+      vue: 3.2.39
+      vue-router: 4.1.5_vue@3.2.39
+    dev: false
+
+  /@gits-id/logo/0.14.0-alpha.48:
+    resolution: {integrity: sha512-td5ODL/+xKYJ/SkFOdF9CwEw1twT+u/+lbmzqUNcqUDx+NDuiIiibsn29kPkcCyUaPMuavot3LwfpaZV7Rq+Vg==}
+    dependencies:
+      vue: 3.2.39
+    dev: false
+
+  /@gits-id/menu/0.14.0-alpha.48:
+    resolution: {integrity: sha512-oO/gCePltMEPTslLEW9my4rDJ7IBgrJcJ5LYFNdkasMnmBCbPw2B10kagEDjr0l68vuO38iaygpPppvxZ+k2pQ==}
+    dependencies:
+      '@gits-id/collapsible': 0.13.9
+      '@iconify/vue': 3.2.1_vue@3.2.39
+      vue: 3.2.39
+      vue-router: 4.1.5_vue@3.2.39
+    dev: false
+
+  /@gits-id/menus/0.14.0-alpha.48:
+    resolution: {integrity: sha512-rfUtpWzD+aNLzzZ/olYrGie0xlp5zkpr+/dSnhy/L9+G0nwvvtbOi4Ooqkx16QV/ctVsZIlAys1SZGY8+eRH+g==}
+    dependencies:
+      '@gits-id/icon': 0.14.0-alpha.48
+      '@gits-id/list': 0.14.0-alpha.48
+      floating-vue: 2.0.0-beta.20_vue@3.2.39
       vue: 3.2.39
     transitivePeerDependencies:
       - ts-node
     dev: false
 
-  /@gits-id/multi-select/0.11.10:
-    resolution: {integrity: sha512-0mD2P3pzeKP+cOGFNUXXkxB5NAVwoITbNSi3WwD8VX3FxFxyrAH7GLpR0d38OawT984ifB/d20ukcf+3gjfNjg==}
+  /@gits-id/modal/0.14.0-alpha.48:
+    resolution: {integrity: sha512-9m8dIvIrtopBiB1k1gIYGvgJkkpFsHdYvhx1T0LYpwjdUXVOjLm47/YkGwWi7h76OYgwGlgVFVcEPPzM1vod+Q==}
     dependencies:
-      '@gits-id/badge': 0.11.10
-      '@gits-id/tooltip': 0.11.10
+      '@gits-id/button': 0.14.0-alpha.48
+      vue: 3.2.39
+    transitivePeerDependencies:
+      - ts-node
+    dev: false
+
+  /@gits-id/multi-select/0.14.0-alpha.48:
+    resolution: {integrity: sha512-gRa58IJcCoqXX4Pj7c+PXpT4gEXnGvyGmfRQ6bbrrFf92Aq62zY6TFjvpjHvu6FLzm/x7ZvtafBSs1msr8C7OA==}
+    dependencies:
+      '@gits-id/badge': 0.14.0-alpha.48
+      '@gits-id/forms': 0.14.0-alpha.48
+      '@gits-id/icon': 0.14.0-alpha.48
+      '@gits-id/tooltip': 0.14.0-alpha.48
       '@vueuse/core': 7.7.1_vue@3.2.39
       vee-validate: 4.6.7_vue@3.2.39
       vue: 3.2.39
     transitivePeerDependencies:
       - '@vue/composition-api'
+      - ts-node
     dev: false
 
-  /@gits-id/nav-drawer/0.11.10:
-    resolution: {integrity: sha512-reBDKiQUtJmo4Z+aDdBy0UpjjXdyo8x4oIEsV7yNKnxrR3mKA+28EoCGUs5ldSKSqYTKXRRIh5lhRUZpVFxxRQ==}
+  /@gits-id/nav-drawer/0.14.0-alpha.48:
+    resolution: {integrity: sha512-+So+mz01EnEBNzob2EspeEspx8xsxHPce9uj+eK28xTSUoBORYCffsm8AwXzRWJc0jKPtTtgMvBE9yZDJflhLg==}
     dependencies:
-      '@gits-id/button': 0.11.10
-      '@gits-id/logo': 0.11.10
-      '@gits-id/menu': 0.11.10
-      '@gits-id/navbar': 0.11.10
-      '@gits-id/utils': 0.11.10
+      '@gits-id/button': 0.14.0-alpha.48
+      '@gits-id/logo': 0.14.0-alpha.48
+      '@gits-id/menu': 0.14.0-alpha.48
+      '@gits-id/utils': 0.13.0
       vue: 3.2.39
     transitivePeerDependencies:
       - ts-node
     dev: false
 
-  /@gits-id/navbar/0.11.10:
-    resolution: {integrity: sha512-fEKQ1YWdLgfNWXykkZl7q1y0NVx0Hc3IhP2uR41k9PB5Vx8vSSSaUECODV4G0fgzdDgupSiNL387lUn5h+jeTw==}
+  /@gits-id/navbar/0.14.0-alpha.48:
+    resolution: {integrity: sha512-1+UOVlxlJ/YZO7JGp77WYMEwO7zrEB04JCsCwHw/hoCaONfIvuWfhvCei4zX4d6PLrOuzvoQaSjd4gOj0PjLCA==}
     dependencies:
-      '@gits-id/button': 0.11.10
-      '@gits-id/logo': 0.11.10
-      '@gits-id/menus': 0.11.10
+      '@gits-id/button': 0.14.0-alpha.48
+      '@gits-id/logo': 0.14.0-alpha.48
+      '@gits-id/menus': 0.14.0-alpha.48
       vue: 3.2.39
     transitivePeerDependencies:
       - ts-node
     dev: false
 
-  /@gits-id/pages/0.11.11-alpha.0:
-    resolution: {integrity: sha512-CgwifrIqK8+ni+pL+aAQMkoWSfNK+6jRefKAhRP1bFkd9RNTDgjDlclLmS775jo73ycs+MyQCS21E/oTCN2utg==}
+  /@gits-id/pages/0.14.0-alpha.48:
+    resolution: {integrity: sha512-Io4EFNlvI942tVeIr/80MBJcJgQbbDiqPwhdt0t9Pm2W4weU539o4RV7NJigz0bs8kBdpsEJl/HvXmbiZXmBbA==}
     dependencies:
-      '@gits-id/alert': 0.11.11-alpha.0
-      '@gits-id/button': 0.11.10
-      '@gits-id/forms': 0.11.10
+      '@gits-id/alert': 0.14.0-alpha.48
+      '@gits-id/button': 0.14.0-alpha.48
+      '@gits-id/forms': 0.14.0-alpha.48
       '@iconify/vue': 3.2.1_vue@3.2.39
       vue: 3.2.39
       yup: 0.32.11
@@ -888,35 +932,37 @@ packages:
       - ts-node
     dev: false
 
-  /@gits-id/pagination/0.11.10:
-    resolution: {integrity: sha512-N0mPm9LyXAzkEpxsMxjjF9LWx5rVZ48aF02Sle+SqP77I/suBzlFhpj6MqfvNpX1bUkSvusRsWgHWsYkuel6QA==}
+  /@gits-id/pagination/0.14.0-alpha.48:
+    resolution: {integrity: sha512-b4U1yuzHR3xr4ZlI30c7NnZqoG6A2zizqsNAnUdgevavcKCLx6Br8d6rY3HtBugMPgF3oXQ5OrdD6Nmz05QyuQ==}
     dependencies:
       pagino: 1.4.1
       vue: 3.2.39
     dev: false
 
-  /@gits-id/progress-bar/0.11.10:
-    resolution: {integrity: sha512-GB4YqjDi2pfF+KeKMkMZYMLQ6DFECN7UfX1ks90wo1C1DgtD9TWDM0PLwQKrUqtv3MI7Wk6m9k17BXgl6WV22g==}
+  /@gits-id/progress-bar/0.14.0-alpha.48:
+    resolution: {integrity: sha512-0gMiDyorcRbXVebafzK0CS+4+H8CDk/VvX46A5VcIzhu5MSowgR7RXJaQj1M/yQLv/EwWkbVE5/6KhFaUttz5w==}
     dependencies:
-      '@gits-id/utils': 0.11.10
+      '@gits-id/utils': 0.13.0
       vue: 3.2.39
     dev: false
 
-  /@gits-id/select/0.11.10:
-    resolution: {integrity: sha512-2K0dDAmIq0dIRz1u8WL2WVshpWFS0GyfM5Iuxosa3dbC3meWoVCxDK/yIZ2dOkGOK7+FyCZaJBOMoIoFDbqpQg==}
+  /@gits-id/select/0.14.0-alpha.48:
+    resolution: {integrity: sha512-RZE+RANiJWT+7x3CmdT/0YwT4Ng5fElZN+3JzYJkWOo0cBUCGwmIF/nZTjuXcYTHGMkOfBg4MyozvKt3kHPa5Q==}
     dependencies:
-      '@gits-id/forms': 0.11.10
-      '@gits-id/tooltip': 0.11.10
-      '@gits-id/utils': 0.11.10
+      '@gits-id/forms': 0.14.0-alpha.48
+      '@gits-id/icon': 0.14.0-alpha.48
+      '@gits-id/theme': 0.13.20
+      '@gits-id/tooltip': 0.14.0-alpha.48
+      '@gits-id/utils': 0.13.0
       vue: 3.2.39
     transitivePeerDependencies:
       - ts-node
     dev: false
 
-  /@gits-id/services/0.11.10:
-    resolution: {integrity: sha512-G+eq2z5OGcPu7wjEtXF7bPrpxzgtdL3x/SU/miF6vst+StVALMCunp79aW7IDZJA2T3ZBgkoWcwztJppa4ARdQ==}
+  /@gits-id/services/0.14.0-alpha.48:
+    resolution: {integrity: sha512-S0l/3yd4qpb/o7E/k6vFinKG+6MlOvJPFtAW6jymZ67CDwYxS4eLApZ/ex4Z8iy5PtOCChUOLV8Eab08xD8QTA==}
     dependencies:
-      '@gits-id/button': 0.11.10
+      '@gits-id/button': 0.14.0-alpha.48
       axios: 0.26.1
       vue: 3.2.39
     transitivePeerDependencies:
@@ -924,72 +970,73 @@ packages:
       - ts-node
     dev: false
 
-  /@gits-id/shimmer/0.11.10:
-    resolution: {integrity: sha512-U3Q00xHcQgk1OXvlJc65Ci/GcnevN+Mkrlx8g/AuxXnrxhw9wquopNBnOC7BANtMSxBX1IneiP1OgVnHKIHI+g==}
+  /@gits-id/shimmer/0.14.0-alpha.48:
+    resolution: {integrity: sha512-dTwGPmgWl9ytWx7QrLNRUUDpK4RU6ftC1crpI4aXrz93a7LREpvc6u4DiO7RiiXlv54ANrkAVQ7DniGUZMWHig==}
     dependencies:
       vue: 3.2.39
     dev: false
 
-  /@gits-id/spinner/0.11.10:
-    resolution: {integrity: sha512-A3hqXzbl9cr28nvF6/uq26UfwKteBLqnrIam3Gc2jYnJa5nXWlqknIdzcPM5g+Xj0UUEnlYsMRVtK4NBJiiqaA==}
+  /@gits-id/spinner/0.14.0-alpha.48:
+    resolution: {integrity: sha512-buD85nGGPAuiP+QGHMY31AYthY6AjjGmmWkFyU4hhBmB4b10DkUfWIwVtuveOaoyAuLbDfQJBdgLxzRs8fG4TQ==}
     dependencies:
       vue: 3.2.39
     dev: false
 
-  /@gits-id/stats/0.11.10:
-    resolution: {integrity: sha512-hjVvtpwh6NBOPintE2CjRME6Zhu8frR4z8O87e4pHbPCn4PF/2KhJa9G6ZwDAhEnznemtyQ5fJLFqzrTARFdDA==}
+  /@gits-id/stats/0.14.0-alpha.48:
+    resolution: {integrity: sha512-VAvy/CR2b3qenGbDMoJq0VSIlCSF0/U/TZKtOppzhoojmMjZ7cNehtfi+h6Yb8pFDE2YrmrW1721/eJ1yeIFZA==}
     dependencies:
-      '@gits-id/badge': 0.11.10
-      '@gits-id/card': 0.11.10
+      '@gits-id/badge': 0.14.0-alpha.48
+      '@gits-id/card': 0.14.0-alpha.48
+      '@gits-id/icon': 0.14.0-alpha.48
       '@iconify/vue': 3.2.1_vue@3.2.39
-      feather-icons: 4.29.0
       vue: 3.2.39
+    transitivePeerDependencies:
+      - ts-node
     dev: false
 
-  /@gits-id/switch/0.11.10:
-    resolution: {integrity: sha512-AjYgWouiZMA1H7eA6fJ14zs52eG98PNBeYt/2bg858XZsuahvx2UwzEPstW4J+pZtQ7gtlnd/vlwu04QJrfBjA==}
+  /@gits-id/switch/0.14.0-alpha.48:
+    resolution: {integrity: sha512-Hp3l0IK/dr5ljY0r+SoQ76otcsw7Uqtv9+7jCeHKXVw3H1s/CYhErW4fwLSU2G/YI+2oo6e1TcNm8cglZe0YUA==}
     dependencies:
       vee-validate: 4.6.7_vue@3.2.39
       vue: 3.2.39
     dev: false
 
-  /@gits-id/table/0.11.10:
-    resolution: {integrity: sha512-oLg7mWp9usXy/lXhSNn+fhZxT3rxOmFsmRUrbKMuEzkEXvKyZZoG6YAFjf9Xp9tVNnZiVYXSPTci2q33S5SV8g==}
+  /@gits-id/table/0.14.0-alpha.48:
+    resolution: {integrity: sha512-woaCbqF3neAjVx9DGfPtDcO+3PtJ97D7EXw8MZM819xiICLHDDJAy1oECr+no55rk1btEDDDKqlckOi78vdagw==}
     dependencies:
-      '@gits-id/forms': 0.11.10
-      '@gits-id/pagination': 0.11.10
-      '@gits-id/select': 0.11.10
-      '@gits-id/spinner': 0.11.10
-      '@gits-id/utils': 0.11.10
-      '@heroicons/vue': 1.0.6_vue@3.2.39
+      '@gits-id/forms': 0.14.0-alpha.48
+      '@gits-id/icon': 0.14.0-alpha.48
+      '@gits-id/pagination': 0.14.0-alpha.48
+      '@gits-id/select': 0.14.0-alpha.48
+      '@gits-id/spinner': 0.14.0-alpha.48
+      '@gits-id/utils': 0.13.0
       vue: 3.2.39
     transitivePeerDependencies:
       - ts-node
     dev: false
 
-  /@gits-id/tabs/0.11.10:
-    resolution: {integrity: sha512-nFP6akPU2nlnPRjTBB8ZfDB49+eTKPZC4O8IiDNfn/Ru2sXqDUhsPLgEJmLXGVapoO2VHXQXI+wsjNoUSyowVA==}
+  /@gits-id/tabs/0.14.0-alpha.48:
+    resolution: {integrity: sha512-KUVopQkv1l4I4uANKpU4+xxBoBBTgqKU+7HyzV27V29WF27Y30tuzUkaD7xbjHctUSbeF+moLi4AYPXPlsBHNw==}
     dependencies:
-      '@gits-id/button': 0.11.10
-      '@gits-id/card': 0.11.10
-      '@gits-id/utils': 0.11.10
+      '@gits-id/button': 0.14.0-alpha.48
+      '@gits-id/card': 0.14.0-alpha.48
+      '@gits-id/icon': 0.11.10
+      '@gits-id/utils': 0.13.0
       vue: 3.2.39
     transitivePeerDependencies:
       - ts-node
     dev: false
 
-  /@gits-id/tailwind-components/0.11.10:
-    resolution: {integrity: sha512-9rOWeot1U1LZt7fJ/dw9pDKV50F0CdIH4iPGEb9JJmVIeJvCD0NVqVveJcwCU32MDAn3qinmgw8e6oGIRSFnsw==}
-    dependencies:
-      vue: 3.2.39
+  /@gits-id/tailwind-components/0.13.20:
+    resolution: {integrity: sha512-lRN7bJ+QMJgRQK23t6CVneSNdi4uot+yByHtZlUKDOv8hroY2TNz2Kp5e0j6f6dREADDaOcPUYHnYMh3649Eww==}
     dev: false
 
-  /@gits-id/tailwind-config/0.11.10:
-    resolution: {integrity: sha512-fmq8tvBZomVRMpM8//k8iNsLogcfZ15k7eIHb5QyxsocJqfAOVVvelRNvysg05KybSzy9LcNJ0svte+TfKDgWA==}
+  /@gits-id/tailwind-config/0.14.0-alpha.48:
+    resolution: {integrity: sha512-+BJfl25b2fnyqEeHX7URHUhr/3nt6rhKqS8S3XCpEPax7bh9pym3OpO/nnNgFbTIG/Y2/8Z1CNzvVaL6+e8Gcg==}
     dependencies:
-      '@gits-id/tailwind-components': 0.11.10
-      '@gits-id/theme': 0.11.10
-      '@gits-id/utils': 0.11.10
+      '@gits-id/tailwind-components': 0.13.20
+      '@gits-id/theme': 0.13.20
+      '@gits-id/utils': 0.13.0
       '@tailwindcss/aspect-ratio': 0.4.2_tailwindcss@3.1.8
       '@tailwindcss/forms': 0.5.3_tailwindcss@3.1.8
       '@tailwindcss/line-clamp': 0.3.1_tailwindcss@3.1.8
@@ -1017,10 +1064,20 @@ packages:
       - ts-node
     dev: false
 
-  /@gits-id/toast/0.11.10_typescript@4.7.4:
-    resolution: {integrity: sha512-kcHUF0sVSnQPb5fWxiT6VPKCrkYsFs2C4/NnXlsrGybMx4MjY3HmbnVsa6NmVKTLsvgNZHZOgJUi1RdITxhk7A==}
+  /@gits-id/theme/0.13.20:
+    resolution: {integrity: sha512-4kzlUIDBhYIPoaufzSyfzRR4slBUa8lb0YEQpirBy1zj0VYUhVY2Ed1qzMQYP6m2P9N0hFxk1XYPvkpUgSDHuw==}
     dependencies:
-      '@gits-id/button': 0.11.10
+      tailwindcss: 3.1.8
+      vue: 3.2.39
+    transitivePeerDependencies:
+      - ts-node
+    dev: false
+
+  /@gits-id/toast/0.14.0-alpha.48_typescript@4.7.4:
+    resolution: {integrity: sha512-NMLyoLpwl6ErgjobKkkDr1LWL7hent6bGjUREWvtpSsdkfNnv66zikiDgqV+P9C9rJDc3N3eJTOcJ+46gWMWpQ==}
+    dependencies:
+      '@gits-id/button': 0.14.0-alpha.48
+      '@gits-id/icon': 0.14.0-alpha.48
       pinia: 2.0.22_uxrvejtcwrakwzzo6hlouuo2vq
       vee-validate: 4.6.7_vue@3.2.39
       vue: 3.2.39
@@ -1031,57 +1088,59 @@ packages:
       - typescript
     dev: false
 
-  /@gits-id/tooltip/0.11.10:
-    resolution: {integrity: sha512-UAYOaCZpDRhMnQbwK+09MtTcCUNokGk3fm13Iu/Ag8Czu9ZTPd561hsAoQM2xhgg+TmCBIs2lQkcLQXpysFeWw==}
+  /@gits-id/tooltip/0.14.0-alpha.48:
+    resolution: {integrity: sha512-hPsMR8uyYXz86GtCR7J6wywEp7d38OIIhQfcgUwN6DrMlbSAA3uw0Cs0toQFvH1WAHX/pfzBYjP67KiPq7bGTQ==}
     dependencies:
-      '@popperjs/core': 2.11.6
+      floating-vue: 2.0.0-beta.20_vue@3.2.39
       vee-validate: 4.6.7_vue@3.2.39
       vue: 3.2.39
     dev: false
 
-  /@gits-id/ui/0.11.11-alpha.0_typescript@4.7.4:
-    resolution: {integrity: sha512-BqdWzsxGZFvvakZJm7VRi7XmAqnCehHnSjC5Fs0J5LV/8lZA/iiQV6hUQ6GvwX+iY4itv+wlQWtEaR6ZBohNIg==}
+  /@gits-id/ui/0.14.0-alpha.48_typescript@4.7.4:
+    resolution: {integrity: sha512-KLf4WVO6MXk2ogrLfTcqTFARUNtCTSU2x2GRjIhb8UF4OIBuFcpfAt6oQtuklKDAuqZCfJ15ZeJy51Ruyz3fKw==}
     dependencies:
-      '@gits-id/alert': 0.11.11-alpha.0
-      '@gits-id/app-bar': 0.11.11-alpha.0
-      '@gits-id/avatar': 0.11.10
-      '@gits-id/badge': 0.11.10
-      '@gits-id/breadcrumbs': 0.11.10
-      '@gits-id/button': 0.11.10
-      '@gits-id/card': 0.11.10
-      '@gits-id/collapsible': 0.11.10
-      '@gits-id/container': 0.11.10
-      '@gits-id/dropdown': 0.11.10
-      '@gits-id/editor': 0.11.10
-      '@gits-id/forms': 0.11.10
-      '@gits-id/icon': 0.11.10
-      '@gits-id/layouts': 0.11.10
-      '@gits-id/list': 0.11.10
-      '@gits-id/logo': 0.11.10
-      '@gits-id/menu': 0.11.10
-      '@gits-id/menus': 0.11.10
-      '@gits-id/modal': 0.11.10
-      '@gits-id/multi-select': 0.11.10
-      '@gits-id/nav-drawer': 0.11.10
-      '@gits-id/navbar': 0.11.10
-      '@gits-id/pages': 0.11.11-alpha.0
-      '@gits-id/pagination': 0.11.10
-      '@gits-id/progress-bar': 0.11.10
-      '@gits-id/select': 0.11.10
-      '@gits-id/services': 0.11.10
-      '@gits-id/shimmer': 0.11.10
-      '@gits-id/spinner': 0.11.10
-      '@gits-id/stats': 0.11.10
-      '@gits-id/switch': 0.11.10
-      '@gits-id/table': 0.11.10
-      '@gits-id/tabs': 0.11.10
-      '@gits-id/tailwind-components': 0.11.10
-      '@gits-id/tailwind-config': 0.11.10
+      '@gits-id/alert': 0.14.0-alpha.48
+      '@gits-id/app-bar': 0.14.0-alpha.48
+      '@gits-id/autocomplete': 0.14.0-alpha.48
+      '@gits-id/avatar': 0.14.0-alpha.48
+      '@gits-id/badge': 0.14.0-alpha.48
+      '@gits-id/breadcrumbs': 0.14.0-alpha.48
+      '@gits-id/button': 0.14.0-alpha.48
+      '@gits-id/card': 0.14.0-alpha.48
+      '@gits-id/collapsible': 0.13.9
+      '@gits-id/container': 0.13.0
+      '@gits-id/dropdown': 0.14.0-alpha.48
+      '@gits-id/editor': 0.14.0-alpha.48
+      '@gits-id/forms': 0.14.0-alpha.48
+      '@gits-id/icon': 0.14.0-alpha.48
+      '@gits-id/layouts': 0.14.0-alpha.48
+      '@gits-id/list': 0.14.0-alpha.48
+      '@gits-id/logo': 0.14.0-alpha.48
+      '@gits-id/menu': 0.14.0-alpha.48
+      '@gits-id/menus': 0.14.0-alpha.48
+      '@gits-id/modal': 0.14.0-alpha.48
+      '@gits-id/multi-select': 0.14.0-alpha.48
+      '@gits-id/nav-drawer': 0.14.0-alpha.48
+      '@gits-id/navbar': 0.14.0-alpha.48
+      '@gits-id/pages': 0.14.0-alpha.48
+      '@gits-id/pagination': 0.14.0-alpha.48
+      '@gits-id/progress-bar': 0.14.0-alpha.48
+      '@gits-id/select': 0.14.0-alpha.48
+      '@gits-id/services': 0.14.0-alpha.48
+      '@gits-id/shimmer': 0.14.0-alpha.48
+      '@gits-id/spinner': 0.14.0-alpha.48
+      '@gits-id/stats': 0.14.0-alpha.48
+      '@gits-id/switch': 0.14.0-alpha.48
+      '@gits-id/table': 0.14.0-alpha.48
+      '@gits-id/tabs': 0.14.0-alpha.48
+      '@gits-id/tailwind-components': 0.13.20
+      '@gits-id/tailwind-config': 0.14.0-alpha.48
       '@gits-id/textarea': 0.3.0
-      '@gits-id/theme': 0.11.10
-      '@gits-id/toast': 0.11.10_typescript@4.7.4
-      '@gits-id/tooltip': 0.11.10
-      '@gits-id/utils': 0.11.10
+      '@gits-id/theme': 0.13.20
+      '@gits-id/toast': 0.14.0-alpha.48_typescript@4.7.4
+      '@gits-id/tooltip': 0.14.0-alpha.48
+      '@gits-id/utils': 0.13.0
+      '@headlessui/vue': 1.7.2_vue@3.2.39
       '@vue/test-utils': 2.0.2_vue@3.2.39
       vue: 3.2.39
     transitivePeerDependencies:
@@ -1091,8 +1150,8 @@ packages:
       - typescript
     dev: false
 
-  /@gits-id/utils/0.11.10:
-    resolution: {integrity: sha512-U5z2KdiW6rdJxj61iDkB1H4f5Z02avnifYNeVCPRzxZXT1zBF0KYJk5KrUjZ9kZfGq9pYFuPADLXXT0hmwDEiw==}
+  /@gits-id/utils/0.13.0:
+    resolution: {integrity: sha512-2X+V6zluL3iDagrAchBOTLIdpT2UJDvttmtCA57f+lnS3LPG5IvpDkScJe52KKkjNijkYFLZrVzEwN0w6o/hPg==}
     dependencies:
       vue: 3.2.39
     dev: false
@@ -1207,10 +1266,6 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
-
-  /@popperjs/core/2.11.6:
-    resolution: {integrity: sha512-50/17A98tWUfQ176raKiOGXuYpLyyVMkxxG6oylzL3BPOlA6ADGdK7EYunSa4I064xerltq9TGXs8HmOk5E+vw==}
-    dev: false
 
   /@rushstack/eslint-patch/1.2.0:
     resolution: {integrity: sha512-sXo/qW2/pAcmT43VoRKOJbDOfV3cYpq3szSVfIThQXNt+E4DfKj361vaAt3c88U5tPUxzEswam7GW48PJqtKAg==}
@@ -1917,26 +1972,22 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
 
-  /ckeditor5/32.0.0:
-    resolution: {integrity: sha512-PehBSDwclMcZcVIRFZRUv6BSEdQCK+9kUbnWdcAOtM9LJL8aWCwCTg6VZTq6+aDEzoz6BfkjO1eF3ZtQVJT97w==}
+  /ckeditor5/35.4.0:
+    resolution: {integrity: sha512-vBEQVkFCbjYmEPVkyWsOqU44DOovUio6xBuCwroe4TuJLplqeRasCjFwB0DPknXQU8U0iM3Lh/QSKRyN92pw3Q==}
     engines: {node: '>=14.0.0', npm: '>=5.7.1'}
     dependencies:
-      '@ckeditor/ckeditor5-clipboard': 32.0.0
-      '@ckeditor/ckeditor5-core': 32.0.0
-      '@ckeditor/ckeditor5-engine': 32.0.0
-      '@ckeditor/ckeditor5-enter': 32.0.0
-      '@ckeditor/ckeditor5-paragraph': 32.0.0
-      '@ckeditor/ckeditor5-select-all': 32.0.0
-      '@ckeditor/ckeditor5-typing': 32.0.0
-      '@ckeditor/ckeditor5-ui': 32.0.0
-      '@ckeditor/ckeditor5-undo': 32.0.0
-      '@ckeditor/ckeditor5-upload': 32.0.0
-      '@ckeditor/ckeditor5-utils': 32.0.0
-      '@ckeditor/ckeditor5-widget': 32.0.0
-    dev: false
-
-  /classnames/2.3.2:
-    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
+      '@ckeditor/ckeditor5-clipboard': 35.4.0
+      '@ckeditor/ckeditor5-core': 35.4.0
+      '@ckeditor/ckeditor5-engine': 35.4.0
+      '@ckeditor/ckeditor5-enter': 35.4.0
+      '@ckeditor/ckeditor5-paragraph': 35.4.0
+      '@ckeditor/ckeditor5-select-all': 35.4.0
+      '@ckeditor/ckeditor5-typing': 35.4.0
+      '@ckeditor/ckeditor5-ui': 35.4.0
+      '@ckeditor/ckeditor5-undo': 35.4.0
+      '@ckeditor/ckeditor5-upload': 35.4.0
+      '@ckeditor/ckeditor5-utils': 35.4.0
+      '@ckeditor/ckeditor5-widget': 35.4.0
     dev: false
 
   /color-convert/1.9.3:
@@ -1975,11 +2026,6 @@ packages:
     dependencies:
       safe-buffer: 5.1.2
     dev: true
-
-  /core-js/3.25.2:
-    resolution: {integrity: sha512-YB4IAT1bjEfxTJ1XYy11hJAKskO+qmhuDBM8/guIfMz4JvdsAQAqvyb97zXX7JgSrfPLG5mRGFWJwJD39ruq2A==}
-    requiresBuild: true
-    dev: false
 
   /cross-spawn/6.0.5:
     resolution: {integrity: sha512-eTVLrBSt7fjbDygz805pMnstIs2VTBNkRm0qxZd+M7A5XDdxVRWO5MxGBXZhjY4cqLYLdtrGqRf8mBPmzwSpWQ==}
@@ -2619,13 +2665,6 @@ packages:
     dependencies:
       reusify: 1.0.4
 
-  /feather-icons/4.29.0:
-    resolution: {integrity: sha512-Y7VqN9FYb8KdaSF0qD1081HCkm0v4Eq/fpfQYQnubpqi0hXx14k+gF9iqtRys1SIcTEi97xDi/fmsPFZ8xo0GQ==}
-    dependencies:
-      classnames: 2.3.2
-      core-js: 3.25.2
-    dev: false
-
   /file-entry-cache/6.0.1:
     resolution: {integrity: sha512-7Gps/XWymbLk2QLYK4NzpMOrYjMhdIxXuIvy2QBsLE6ljuodKvdkWs/cpyJJ3CVIVpH0Oi1Hvg1ovbMzLdFBBg==}
     engines: {node: ^10.12.0 || >=12.0.0}
@@ -2658,6 +2697,16 @@ packages:
   /flatted/3.2.7:
     resolution: {integrity: sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==}
     dev: true
+
+  /floating-vue/2.0.0-beta.20_vue@3.2.39:
+    resolution: {integrity: sha512-N68otcpp6WwcYC7zP8GeJqNZVdfvS7tEY88lwmuAHeqRgnfWx1Un8enzLxROyVnBDZ3TwUoUdj5IFg+bUT7JeA==}
+    peerDependencies:
+      vue: ^3.2.0
+    dependencies:
+      '@floating-ui/dom': 0.1.10
+      vue: 3.2.39
+      vue-resize: 2.0.0-alpha.1_vue@3.2.39
+    dev: false
 
   /follow-redirects/1.15.2:
     resolution: {integrity: sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==}
@@ -4114,6 +4163,14 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /vue-resize/2.0.0-alpha.1_vue@3.2.39:
+    resolution: {integrity: sha512-7+iqOueLU7uc9NrMfrzbG8hwMqchfVfSzpVlCMeJQe4pyibqyoifDNbKTZvwxZKDvGkB+PdFeKvnGZMoEb8esg==}
+    peerDependencies:
+      vue: ^3.0.0
+    dependencies:
+      vue: 3.2.39
+    dev: false
 
   /vue-router/4.1.5_vue@3.2.39:
     resolution: {integrity: sha512-IsvoF5D2GQ/EGTs/Th4NQms9gd2NSqV+yylxIyp/OYp8xOwxmU8Kj/74E9DTSYAyH5LX7idVUngN3JSj1X4xcQ==}
