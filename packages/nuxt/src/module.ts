@@ -346,8 +346,8 @@ export default defineNuxtModule<ModuleOptions>({
     configKey: 'gitsUi',
   },
   defaults: {
-    css: false,
-    sass: true,
+    css: true,
+    sass: false,
     components: true,
     transpileDeps: true,
   },
