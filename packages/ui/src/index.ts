@@ -60,8 +60,8 @@ import {
 import { Icon } from '@gits-id/icon';
 import Avatar from '@gits-id/avatar';
 import Shimmer from '@gits-id/shimmer';
-import './style.css';
 import VAutocomplete from '@gits-id/autocomplete'
+import './style.scss';
 
 const plugin = {
   install: (app: App) => {
