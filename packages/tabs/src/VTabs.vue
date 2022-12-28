@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import {
-  nextTick, onBeforeUnmount,
+  nextTick,
+  onBeforeUnmount,
   onBeforeUpdate,
   onMounted,
   PropType,
@@ -14,8 +15,6 @@ import VBtn from '@gits-id/button';
 import Icon from '@gits-id/icon';
 import VTab from './VTab.vue';
 import VTabsSlider from './VTabsSlider.vue';
-import '@gits-id/icon/dist/style.css';
-
 
 const props = defineProps({
   modelValue: {
@@ -117,22 +116,34 @@ const {
   inactiveClass,
 } = toRefs(props);
 
-const emit = defineEmits(['update:modelValue', 'update:items', 'change', 'remove']);
+const emit = defineEmits([
+  'update:modelValue',
+  'update:items',
+  'change',
+  'remove',
+]);
 
 const selected = ref(modelValue.value);
 const tabRefs = ref<HTMLElement[]>([]);
 const tabContent = ref<HTMLDivElement>();
 const tabSlider = ref<HTMLDivElement>();
-const observer = ref(new MutationObserver((event) => {
-  setSlider(selected.value as number);
-}));
+const observer = ref(
+  new MutationObserver((event) => {
+    setSlider(selected.value as number);
+  }),
+);
 
 watch(tabContent, (val, prev) => {
   if (prev) {
     observer.value.disconnect();
   }
 
-  observer.value.observe(val as HTMLElement, {characterData: true, attributes: true, childList: true, subtree: true});
+  observer.value.observe(val as HTMLElement, {
+    characterData: true,
+    attributes: true,
+    childList: true,
+    subtree: true,
+  });
 });
 
 watch(modelValue, (val) => {
@@ -270,7 +281,11 @@ provide('activeTab', readonly(selected));
     </template>
     <slot name="prepend" />
     <div ref="tabContent" class="v-tabs-items" :class="[contentClass]">
-      <slot v-bind="{tabSlider}" :onClick="onTabClicked" :registerRef="setTabRef">
+      <slot
+        v-bind="{tabSlider}"
+        :onClick="onTabClicked"
+        :registerRef="setTabRef"
+      >
         <v-tab
           v-for="(item, index) in items"
           :key="index"
@@ -285,7 +300,13 @@ provide('activeTab', readonly(selected));
           v-bind="item"
           @click="onTabClicked"
         >
-          <slot name="item" :index="index" :value="item[itemText]" :item="item" :active="selected === index">
+          <slot
+            name="item"
+            :index="index"
+            :value="item[itemText]"
+            :item="item"
+            :active="selected === index"
+          >
             <div>{{ item[itemText] }}</div>
           </slot>
 
@@ -328,175 +349,4 @@ provide('activeTab', readonly(selected));
   </div>
 </template>
 
-<style>
-:root {
-  --v-tabs-padding-x: theme('padding.4');
-  --v-tabs-padding-y: theme('padding.2');
-  --v-tabs-bg-color: theme('colors.transparent');
-  --v-tabs-border-color: theme('colors.transparent');
-  --v-tabs-border-radius: theme('borderRadius.DEFAULT');
-
-  /* item */
-  --v-tabs-item-padding-x: theme('padding.4');
-  --v-tabs-item-padding-y: theme('padding.2');
-  --v-tabs-item-font-size: theme('fontSize.base');
-  --v-tabs-item-font-weight: theme('fontWeight.normal');
-  --v-tabs-item-bg-color: theme('colors.transparent');
-  --v-tabs-item-text-color: theme('colors.gray.800');
-  --v-tabs-item-border-color: theme('colors.transparent');
-  --v-tabs-item-border-radius: theme('borderRadius.DEFAULT');
-
-  /* item active */
-  --v-tabs-item-active-padding-x: var(--v-tabs-item-padding-x);
-  --v-tabs-item-active-padding-y: var(--v-tabs-item-padding-y);
-  --v-tabs-item-active-font-size: var(--v-tabs-item-font-size);
-  --v-tabs-item-active-font-weight: theme('fontWeight.semibold');
-  --v-tabs-item-active-bg-color: var(--v-tabs-item-bg-color);
-  --v-tabs-item-active-text-color: var(--v-tabs-item-text-color);
-  --v-tabs-item-active-border-color: var(--v-tabs-item-border-color);
-  --v-tabs-item-active-border-radius: var(--v-tabs-item-border-radius);
-
-  /* item hover */
-  --v-tabs-item-hover-padding-x: var(--v-tabs-item-padding-x);
-  --v-tabs-item-hover-padding-y: var(--v-tabs-item-padding-y);
-  --v-tabs-item-hover-font-size: var(--v-tabs-item-font-size);
-  --v-tabs-item-hover-font-weight: var(--v-tabs-item-font-weight);
-  --v-tabs-item-hover-bg-color: var(--v-tabs-item-bg-color);
-  --v-tabs-item-hover-text-color: var(--v-tabs-item-text-color);
-  --v-tabs-item-hover-border-color: var(--v-tabs-item-border-color);
-  --v-tabs-item-hover-border-radius: var(--v-tabs-item-border-radius);
-
-  /* slider */
-  --v-tabs-slider-height: 3px;
-  --v-tabs-slider-width: 3rem;
-  --v-tabs-slider-max-width: theme('maxWidth.md');
-  --v-tabs-slider-bg-color: theme('colors.primary.500');
-  --v-tabs-slider-border-color: theme('colors.primary.500');
-  --v-tabs-slider-border-radius: theme('borderRadius.DEFAULT');
-}
-
-.v-tabs {
-  padding: var(--v-tabs-padding-y) var(--v-tabs-padding-x);
-  background-color: var(--v-tabs-bg-color);
-  border-radius: var(--v-tabs-border-radius);
-  border: 1px solid var(--v-tabs-border-color);
-  display: flex;
-  align-items: center;
-}
-
-.v-tabs-slider {
-  height: var(--v-tabs-slider-height);
-  width: var(--v-tabs-slider-width);
-  background-color: var(--v-tabs-slider-bg-color);
-  border-radius: var(--v-tabs-slider-border-radius);
-  border: 1px solid var(--v-tabs-slider-border-color);
-
-  @apply transition-all duration-300 absolute inset-x-0 bottom-0;
-}
-
-.v-tabs-items::-webkit-scrollbar {
-  display: none;
-}
-
-.v-tabs-items {
-  scroll-behavior: smooth;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-
-  @apply flex-row flex
-  items-center
-  gap-x-1
-  whitespace-nowrap
-  overflow-x-auto
-  h-full
-  relative;
-}
-
-/* vertical */
-.v-tabs--vertical .v-tabs-items {
-  @apply flex-col w-full;
-}
-
-.v-tabs--vertical .v-tabs-slider {
-  width: var(--v-tabs-slider-height);
-
-  @apply inset-y-0 left-0;
-}
-
-/* item */
-.v-tabs-item {
-  font-size: var(--v-tabs-item-font-size);
-  font-weight: var(--v-tabs-item-font-weight);
-  padding: var(--v-tabs-item-padding-y) var(--v-tabs-item-padding-x);
-  background-color: var(--v-tabs-item-bg-color);
-  color: var(--v-tabs-item-text-color);
-  border-radius: var(--v-tabs-item-border-radius);
-  border: 1px solid var(--v-tabs-item-border-color);
-
-  @apply focus:outline-none
-  flex
-  items-center
-  justify-between
-  gap-y-1
-  transition
-  duration-300
-  cursor-pointer
-  h-full;
-}
-
-/* item hover */
-.v-tabs-item:hover:not(.v-tabs-item--active) {
-  font-size: var(--v-tabs-item-hover-font-size);
-  font-weight: var(--v-tabs-item-hover-font-weight);
-  padding: var(--v-tabs-item-hover-padding-y) var(--v-tabs-item-hover-padding-x);
-  background-color: var(--v-tabs-item-hover-bg-color);
-  color: var(--v-tabs-item-hover-text-color);
-  border-radius: var(--v-tabs-item-hover-border-radius);
-  border: 1px solid var(--v-tabs-item-hover-border-color);
-}
-
-/* item active */
-.v-tabs-item.v-tabs-item--active {
-  font-size: var(--v-tabs-item-active-font-size);
-  font-weight: var(--v-tabs-item-active-font-weight);
-  padding: var(--v-tabs-item-active-padding-y) var(--v-tabs-item-active-padding-x);
-  background-color: var(--v-tabs-item-active-bg-color);
-  color: var(--v-tabs-item-active-text-color);
-  border-radius: var(--v-tabs-item-active-border-radius);
-  border: 1px solid var(--v-tabs-item-active-border-color);
-}
-
-.v-tabs-item--vertical {
-  @apply w-full min-w-full;
-}
-
-.v-tabs-item-remove {
-  @apply ml-2 !p-0;
-}
-
-/* colors */
-.v-tabs-secondary {
-  --v-tabs-slider-bg-color: theme('colors.secondary.500');
-  --v-tabs-slider-border-color: theme('colors.secondary.500');
-}
-
-.v-tabs-info {
-  --v-tabs-slider-bg-color: theme('colors.info.500');
-  --v-tabs-slider-border-color: theme('colors.info.500');
-}
-
-.v-tabs-warning {
-  --v-tabs-slider-bg-color: theme('colors.warning.500');
-  --v-tabs-slider-border-color: theme('colors.warning.500');
-}
-
-.v-tabs-error {
-  --v-tabs-slider-bg-color: theme('colors.error.500');
-  --v-tabs-slider-border-color: theme('colors.error.500');
-}
-
-.v-tabs-success {
-  --v-tabs-slider-bg-color: theme('colors.success.500');
-  --v-tabs-slider-border-color: theme('colors.success.500');
-}
-</style>
+<style src="./VTabs.scss" lang="scss"></style>
