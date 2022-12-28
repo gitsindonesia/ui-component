@@ -12,7 +12,7 @@ export default {
   argTypes: {
     color: {
       control: {type: 'select'},
-      options: themeColors
+      options: themeColors,
     },
   },
   args: {
@@ -27,15 +27,12 @@ export default {
 } as Meta;
 
 const Template: Story = (args) => ({
-  // Components used in your story `template` are defined in the `components` object
   components: {
     'my-component': VAlert,
   },
-  // The story's `args` need to be mapped into the template through the `setup()` method
   setup() {
     return {args, themeColors};
   },
-  // And then the `args` are bound to your component with `v-bind="args"`
   template: `
 <div class="space-y-2">
   <my-component v-for="color in themeColors" :key="color" v-bind="args" :color="color">{{ args.label }}</my-component>

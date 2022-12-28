@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import {ListItemDivider} from '@gits-id/list';
 import Icon from '@gits-id/icon';
-import '@gits-id/icon/dist/style.css';
 import {RouteLocation} from 'vue-router';
 import {computed, resolveComponent, useAttrs} from 'vue';
 

@@ -3,7 +3,6 @@ import {computed, ref, toRefs, watch} from 'vue';
 import Pagino from 'pagino';
 import VPaginationItem from './VPaginationItem.vue';
 import VIcon from '@gits-id/icon';
-import '@gits-id/icon/dist/style.css';
 
 const props = defineProps({
   modelValue: {

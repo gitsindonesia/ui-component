@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import Icon from '@gits-id/icon';
+import Select from '@gits-id/select';
+import '@gits-id/icon/src/Icon.scss';
+import '@gits-id/select/src/VSelect.scss';
+import '@gits-id/forms/src/forms.scss';
 </script>
 
 <template>
@@ -215,12 +219,14 @@ import Icon from '@gits-id/icon';
                 hide-check-icon
                 class="mt-3"
                 placeholder="Language"
+                clearable
                 :items="[{text: 'English', value: 'English'}]"
               />
               <Select
                 hide-check-icon
                 class="mt-3"
                 placeholder="Currency"
+                clearable
                 :items="[{text: 'IDR', value: 'IDR'}]"
               />
             </div>

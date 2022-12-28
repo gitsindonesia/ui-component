@@ -19,9 +19,7 @@ import VTooltip from '@gits-id/tooltip';
 import {onClickOutside, useDebounceFn} from '@vueuse/core';
 import {ErrorMessage, useField} from 'vee-validate';
 import Icon from '@gits-id/icon';
-import '@gits-id/icon/dist/style.css';
 import '@gits-id/tooltip/dist/style.css';
-import '@gits-id/forms/dist/style.css';
 import {VMultiSelectItem} from './types';
 
 type SearchByFunction = (item: VMultiSelectItem, search: string) => boolean;

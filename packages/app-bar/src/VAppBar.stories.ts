@@ -5,7 +5,8 @@ import {ref} from 'vue';
 import Icon from '@gits-id/icon';
 import Button from '@gits-id/button';
 import {VInput} from '@gits-id/forms';
-import '@gits-id/forms/dist/style.css';
+import '@gits-id/button/src/VBtn.scss';
+import '@gits-id/forms/src/forms.scss';
 import '@gits-id/theme/transition.css';
 
 export default {
@@ -83,7 +84,7 @@ export const Shadow: Story<{}> = (args) => ({
     return {args, shadows};
   },
   template: `
-<v-app-bar
+<VAppBar
   v-for="(shadow, idx) in shadows"
   :key="idx"
   :shadow="shadow"
@@ -320,7 +321,6 @@ export const WithSearchBar: Story<{}> = (args) => ({
 </v-app-bar>
 `,
 });
-
 
 export const Transparent: Story<{}> = (args) => ({
   components: {VAppBar},
