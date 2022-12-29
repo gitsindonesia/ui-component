@@ -4,9 +4,11 @@ The `VDataTable` component is used for displaying tabular data. Features include
 
 ## Usage
 
-The standard data-table will by default render your data as simple rows.
-
 ### Basic Usage
+
+To use the `VDataTable` component, you will need to provide it with an array of items to display and an array of headers, which define the columns of the table.
+
+Here is an example of basic usage of the `VDataTable` component:
 
 ```vue
 <script setup lang="ts">
@@ -53,6 +55,8 @@ The `VDataTable` component is registered globally when you install with `@gits-i
 
 ### Striped
 
+To create a striped table, you can use the `striped` prop:
+
 ```vue
 <template>
   <VDataTable striped />
@@ -61,7 +65,11 @@ The `VDataTable` component is registered globally when you install with `@gits-i
 
 <LivePreview src="components-datatable--striped" />
 
+This will add alternate background colors to each row of the table, giving it a striped appearance.
+
 ### Hover
+
+To add a hover effect to the rows of the table, you can use the `hover` prop:
 
 ```vue
 <template>
@@ -71,7 +79,11 @@ The `VDataTable` component is registered globally when you install with `@gits-i
 
 <LivePreview src="components-datatable--hover" />
 
+This will change the background color of the row when the mouse pointer is hovering over it.
+
 ### Flat
+
+To remove the box shadow and border of the table, you can use the `flat` prop:
 
 ```vue
 <template>
@@ -83,6 +95,8 @@ The `VDataTable` component is registered globally when you install with `@gits-i
 
 ### Bordered
 
+To add a border around the table, you can use the `bordered` prop:
+
 ```vue
 <template>
   <VDataTable bordered />
@@ -92,6 +106,8 @@ The `VDataTable` component is registered globally when you install with `@gits-i
 <LivePreview src="components-datatable--bordered" />
 
 ### Tile
+
+To remove border radius of the table, you can use the `tile` prop:
 
 ```vue
 <template>
@@ -103,6 +119,8 @@ The `VDataTable` component is registered globally when you install with `@gits-i
 
 ### Dense
 
+To make the rows of the table denser, you can use the `dense` prop:
+
 ```vue
 <template>
   <VDataTable dense />
@@ -112,6 +130,9 @@ The `VDataTable` component is registered globally when you install with `@gits-i
 <LivePreview src="components-datatable--dense" />
 
 ### Loading
+
+To display a loading state for the table, you can use the `loading` prop.
+This will display a loading spinner and disable the table until the data is loaded.
 
 ```vue
 <template>
@@ -123,15 +144,40 @@ The `VDataTable` component is registered globally when you install with `@gits-i
 
 ### Empty
 
+The `VDataTable` component can display an empty state when the items prop is an empty array. This can be useful if you want to inform the user that there are no data items to display in the table.
+
 ```vue
 <template>
-  <VDataTable empty />
+  <VDataTable :items="[]" />
 </template>
 ```
 
 <LivePreview src="components-datatable--empty" />
 
+This will display a message indicating that the table is empty.
+
+You can also customize the appearance and behavior of the empty state using the following props:
+
+- `empty-text`: Customize the text displayed in the empty state.
+- `empty-class`: Add a custom class to the empty state element.
+
+For example, to customize the text displayed in the empty state and add a custom class, you can use the following code:
+
+```vue
+<template>
+  <VDataTable
+    :items="[]"
+    empty-text="No data available"
+    empty-class="text-red-500"
+  />
+</template>
+```
+
+This will display the empty state with the text "No data available" and the class "text-red-500" applied.
+
 ### Must Sort
+
+To require that a column be sorted before the table can be displayed, you can use the `must-sort` prop:
 
 ```vue
 <template>
@@ -143,6 +189,8 @@ The `VDataTable` component is registered globally when you install with `@gits-i
 
 ### Disable Sorting
 
+To disable sorting for the table, you can use the `disable-sorting` prop:
+
 ```vue
 <template>
   <VDataTable disable-sorting />
@@ -153,6 +201,8 @@ The `VDataTable` component is registered globally when you install with `@gits-i
 
 ### Custom Wrapper Class
 
+To add a custom class to the wrapper element of the table, you can use the `wrapper-class` prop:
+
 ```vue
 <template>
   <VDataTable wrapper-class="border border-blue-500 shadow-blue-500" />
@@ -162,6 +212,18 @@ The `VDataTable` component is registered globally when you install with `@gits-i
 <LivePreview src="components-datatable--custom-wrapper-class" />
 
 ### Custom Class
+
+To add custom classes to the various components of the table, you can use the following props:
+
+- `header-class`: Add a custom class to the header element.
+- `body-class`: Add a custom class to the body element.
+- `footer-class`: Add a custom class to the footer element.
+- `column-inactive-class`: Add a custom class to the inactive column elements.
+- `hover-class`: Add a custom class to the hover state of the rows.
+- `td-class`: Add a custom class to the cells.
+- `tr-class`: Add a custom class to the rows.
+
+For example, to add custom classes to the header, body, footer, and rows, you can use the following code:
 
 ```vue
 <template>
@@ -180,9 +242,17 @@ The `VDataTable` component is registered globally when you install with `@gits-i
 </template>
 ```
 
+This will add the classes `bg-blue-600` to the header element, `bg-gray-100` to the body element, `bg-gray-100` to the footer element, `transition duration-300 hover:bg-blue-500 hover:text-white` to the hover state of the rows, `group-hover:text-white` to the cells, and `!hover:bg-gray-700 TR__CLASS` to the rows.
+
 <LivePreview src="components-datatable--custom-class" />
 
-### Selectable
+### Selecting Rows in the DataTable
+
+The `VDataTable` component provides the `selectable` prop that allows you to enable row selection in the table. When the `selectable` prop is set to `true`, a checkbox will be displayed in the first column of each row, and the user will be able to select multiple rows by clicking on the checkboxes.
+
+To use row selection, you will need to bind the `v-model` directive to a variable that will store the selected rows. The selected rows will be stored as an array of objects, with each object representing a selected row.
+
+For example, to enable row selection and bind the `v-model` directive to a `selected` variable, you can use the following code:
 
 ```vue
 <script setup lang="ts">
@@ -196,9 +266,20 @@ const selected = ref([]);
 </template>
 ```
 
+This will enable row selection and bind the selected variable to the `v-model` directive.
+
 <LivePreview src="components-datatable--selectable" />
 
-### Sticky Column
+### Freezing Columns in the DataTable
+
+The `VDataTable` component allows you to freeze columns in place, so that they remain visible while the rest of the table is scrolled horizontally. This can be useful if you want to keep important columns, such as the first and last columns, visible at all times.
+
+To freeze a column, you can use the `freeze` prop in the header object for that column. The `positionFreeze` prop can be used to specify whether the column should be frozen to the left or right side of the table.
+
+<LivePreview src="components-datatable--sticky-column" />
+
+<details>
+  <summary>View Code</summary>
 
 ```vue
 <script setup lang="ts">
@@ -249,9 +330,20 @@ const headers = ref<VDataTableHeader[]>([
 </template>
 ```
 
-<LivePreview src="components-datatable--sticky-column" />
+</details>
+
+This will freeze the first and last columns of the table, so that they remain visible while the rest of the table is scrolled horizontally.
 
 ### Server Side
+
+This is an example of using a `server-side` data table in Vue.js. The data table is connected to a server-side API to retrieve data and handle pagination, sorting, and filtering.
+
+The example includes a function to convert ratings to star icons and displays them in the table. It also displays thumbnail images and formats price values with the appropriate currency symbol.
+
+<LivePreview src="components-datatable--server-side" />
+
+<details>
+  <summary>View Code</summary>
 
 ```vue
 <script setup lang="ts">
@@ -353,7 +445,13 @@ watchEffect(fetchData);
 </template>
 ```
 
+</details>
+
 ### Search
+
+The `VDataTable` component allows for searching through its items by binding a search string to its `search` prop.
+
+In this example, this is done by using the `VInput` component to create a search bar that updates the `search` prop of the `VDataTable` component whenever the user inputs a new search query. The `VDataTable` component then filters its items based on this search query.
 
 ```vue
 <script setup lang="ts">
@@ -419,30 +517,143 @@ const search = ref('');
 | [`bordered`](#bordered)                       | `Boolean`                               | `false`                  |
 | [`tile`](#tile)                               | `Boolean`                               | `false`                  |
 
-## Methods
-
-None
-
 ## Events
 
-- `(e: 'update:search', value: string): void;`
-- `(e: 'update:sortBy', value: string): void;`
-- `(e: 'update:sortDirection', value: SortDirection): void;`
-- `(e: 'update:page', value: number): void;`
-- `(e: 'update:itemsPerPage', value: number): void;`
-- `(e: 'update:totalItems', value: number): void;`
-- `(e: 'update:pagination', value: Record<string, any>): void;`
-- `(e: 'page:change', value: number): void;`
-- `(e: 'itemsPerPage:change', value: number): void;`
-- `(e: 'pagination:change', value: Record<string, any>): void;`
-- `(e: 'update:modelValue', value: any): void;`
-- `(e: 'update:value', value: any): void;`
-- `(e: 'sort', payload: {sortBy: string; direction: SortDirection}): void;`
-- `(e: 'row:click', payload: {item: VDataTableItem; index: number}): void;`
+### `update:search`
+
+This event is emitted when the search string changes. The value parameter contains the new search string.
+
+Type:
+
+```ts
+(e: 'update:search', value: string): void;
+```
+
+### `update:sortBy`
+
+This event is emitted when the sortBy value changes. The value parameter contains the new sortBy value.
+
+Type:
+
+```ts
+(e: 'update:sortBy', value: string): void;
+```
+
+### `update:sortDirection`
+
+This event is emitted when the sortDirection value changes. The value parameter contains the new sortDirection value.
+
+Type:
+
+```ts
+(e: 'update:sortDirection', value: SortDirection): void;
+```
+
+### `update:page`
+
+This event is emitted when the page value changes. The value parameter contains the new page value.
+
+Type:
+
+```ts
+(e: 'update:page', value: number): void;
+```
+
+### `update:itemsPerPage`
+
+This event is emitted when the itemsPerPage value changes. The value parameter contains the new itemsPerPage value.
+
+Type:
+
+```ts
+(e: 'update:itemsPerPage', value: number): void;
+```
+
+### `update:totalItems`
+
+This event is emitted when the totalItems value changes. The value parameter contains the new totalItems value.
+
+Type:
+
+```ts
+(e: 'update:totalItems', value: number): void;
+```
+
+### `update:pagination`
+
+This event is emitted when any of the pagination values (page, items per page, or total items) change. The `value` parameter contains an object with the updated pagination values.
+
+Type:
+
+```ts
+(e: 'update:pagination', value: Record<string, any>): void;
+```
+
+### `page:change`
+
+This event is emitted when the page number changes. The `value` parameter contains the new page number.
+
+Type:
+
+```ts
+(e: 'page:change', value: number): void;
+```
+
+### `itemsPerPage:change`
+
+This event is emitted when the number of items per page changes. The `value` parameter contains the new number of items per page.
+
+Type:
+
+```ts
+(e: 'itemsPerPage:change', value: number): void;
+```
+
+### `pagination:change`
+
+This event is emitted when any of the pagination values (page, items per page, or total items) change. The `value` parameter contains an object with the updated pagination values.
+
+Type:
+
+```ts
+(e: 'pagination:change', value: Record<string, any>): void;
+```
+
+### `update:modelValue`
+
+This event is emitted when the value of the `v-model` directive changes. The `value` parameter contains the new value.
+
+Type:
+
+```ts
+(e: 'update:modelValue', value: any): void;
+```
+
+### `sort`
+
+The `sort` event is emitted when the user sorts a table by a particular column. The payload for this event includes the name of the column that the table is being sorted by (`sortBy`) and the direction of the sort (`direction`).
+
+Type:
+
+```ts
+(e: 'sort', payload: {sortBy: string; direction: SortDirection}): void;
+```
+
+### `row:click`
+
+The `row:click` event is emitted when the user clicks on a row in the table. The payload for this event includes the data for the clicked row (`item`) and the index of the row in the table (`index`).
+
+Type:
+
+```ts
+(e: 'row:click', payload: {item: VDataTableItem; index: number}): void;
+```
 
 ## Slots
 
 ### `loading`
+
+The `loading` slot allows you to customize the content shown when the table is loading data.
 
 ```vue
 <template>
@@ -453,6 +664,8 @@ None
 ```
 
 ### `header.selectable`
+
+The `header.selectable` slot allows you to customize the content of the selectable column in the table header. It receives a `selectAll` payload that indicates whether all rows are currently selected.
 
 - Payload: `{selectAll}`
 
@@ -468,6 +681,8 @@ None
 
 ### `empty`
 
+The `empty` slot allows you to customize the content shown when the table has no data.
+
 ```vue
 <template>
   <VDataTable>
@@ -477,6 +692,8 @@ None
 ```
 
 ### `item.selected`
+
+The `item.selected` slot allows you to customize the content of the selected column for each row in the table. It receives a `selected` payload that indicates whether the current row is selected.
 
 - Payload: `{selected}`
 
@@ -492,6 +709,8 @@ None
 
 ### `item.index`
 
+The `item.index` slot allows you to customize the content of the index column for each row in the table. It receives an `index` payload that indicates the index of the current row.
+
 - Payload: `{item, index}`
 
 ```vue
@@ -505,6 +724,8 @@ None
 ```
 
 ### `item.{value}`
+
+The `item.{value}` slot allows you to customize the content of a particular column for each row in the table. The value in the slot name corresponds to the name of the column. It receives an `item` payload that contains the data for the current row and an `index` payload that indicates the index of the current row.
 
 - Payload: `{item, index}`
 
@@ -526,7 +747,24 @@ None
 
 ### `footer`
 
-- Payload: `{pagination, perPage, serverSide, items, totalItems, footerColor, footerClass, page}`
+The `footer` slot allows you to customize the content of the table footer. It receives a `pagination` payload that indicates whether pagination is enabled, a `perPage` payload that indicates the number of items per page, a `serverSide` payload that indicates whether the table is using server-side data, an `items` payload that contains the data for the current page, a `totalItems` payload that indicates the total number of items in the table, a `footerColor` payload that indicates the color of the footer, a `footerClass` payload that indicates the class of the footer, and a `page` payload that indicates the current page.
+
+- Payload:
+
+```ts
+{
+  pagination,
+  perPage,
+  serverSide,
+  items,
+  totalItems,
+  footerColor,
+  footerClass,
+  page;
+}
+```
+
+Example:
 
 ```vue
 <template>
