@@ -1,8 +1,12 @@
 # Breadcrumbs
 
+The `VBreadcrumbs` component is used to display a list of links that allow the user to navigate through different pages or sections of a website.
+
 ## Usage
 
 ### Basic Usage
+
+To use `VBreadcrumbs`, you will need to import it and pass an array of `VBreadcrumbItem` objects as the items prop. Each `VBreadcrumbItem` should have a `title` and a `to` property, which will be used to display the breadcrumb and link it to a specific page.
 
 ```vue
 <script setup lang="ts">
@@ -43,7 +47,7 @@ The `VBreadcrumbs` component is registered globally when you install with `@gits
 - **default**: `/`
 - **required**: `false`
 
-Use `divider` to change breadcrumbs divider/separator.
+You can use the `divider` prop to change the character or element used to separate the breadcrumbs.
 
 ```vue
 <script setup lang="ts">
@@ -74,7 +78,7 @@ const items = ref<VBreadcrumbItem[]>([
 
 ### Divider Slots
 
-We can use slots for customize the item and divider content.
+You can also use slots to customize the content of the divider element.
 
 ```vue
 <script setup lang="ts">
@@ -110,7 +114,7 @@ const items = ref<VBreadcrumbItem[]>([
 
 ### Default Slots
 
-We can also define breadcrumb inside default slots.
+You can use the default slots of `VBreadcrumbs` to define the breadcrumb items and dividers manually. This can be useful if you want to customize the appearance or behavior of each breadcrumb item.
 
 ```vue
 <template>
@@ -138,39 +142,76 @@ We can also define breadcrumb inside default slots.
 | [customClass](#customClass) | `string`            | ``                         |
 | [activeColor](#activeColor) | `string`            | `breadcrumbs-item--active` |
 
-## Methods
-
-None
-
 ## Events
 
 None
 
 ## Slots
 
-| Name                | Props | Description              |
-| ------------------- | ----- | ------------------------ |
-| [default](#default) | None  | The default Vue slot     |
-| [divider](#divider) | None  | Slot for divider content |
+The `VBreadcrumbs` component has the following slots:
+
+### default
+
+The `default` slot is the default Vue slot. You can use this slot to define the breadcrumb items and dividers manually using `VBreadcrumbItem` and `VBreadcrumbDivider` components.
+
+```vue
+<template>
+  <VBreadcrumbs>
+    <VBreadcrumbItem to="/">Home</VBreadcrumbItem>
+    <VBreadcrumbDivider />
+    <VBreadcrumbItem to="/account">Account</VBreadcrumbItem>
+    <VBreadcrumbDivider />
+    <VBreadcrumbItem to="/account/profile" disabled>Profile</VBreadcrumbItem>
+  </VBreadcrumbs>
+</template>
+```
+
+### divider
+
+The `divider` slot allows you to customize the content of the divider element. This can be useful if you want to use a custom icon or element as the divider.
+
+```vue
+<template>
+  <VBreadcrumbs :items="items">
+    <template #divider>
+      <Icon name="ri:arrow-right-s-line" />
+    </template>
+  </VBreadcrumbs>
+</template>
+```
 
 ## CSS Variables
 
-| Variable                                                                  | Default Value                 |
-| ------------------------------------------------------------------------- | ----------------------------- |
-| [`--breadcrumbs-gap`](#--breadcrumbs-gap)                                 | `theme('spacing.3')`          |
-| [`--breadcrumbs-margin-bottom`](#--breadcrumbs-margin-bottom)             | `theme('spacing.3')`          |
-| [`--breadcrumbs-font-weight`](#--breadcrumbs-font-weight)                 | `theme('fontWeight.medium')`  |
-| [`--breadcrumbs-item-color`](#--breadcrumbs-item-color)                   | `theme('colors.gray.800')`    |
-| [`--breadcrumbs-item-hover-color`](#--breadcrumbs-item-hover-color)       | `theme('colors.primary.700')` |
-| [`--breadcrumbs-item-active-color`](#--breadcrumbs-item-active-color)     | `theme('colors.primary.500')` |
-| [`--breadcrumbs-item-disabled-color`](#--breadcrumbs-item-disabled-color) | `theme('colors.gray.500')`    |
-| [`--breadcrumbs-divider-font-size`](#--breadcrumbs-divider-font-size)     | `theme('fontSize.sm')`        |
-| [`--breadcrumbs-divider-font-weight`](#--breadcrumbs-divider-font-weight) | `theme('fontWeight.medium')`  |
-| [`--breadcrumbs-divider-color`](#--breadcrumbs-divider-color)             | `theme('colors.gray.400')`    |
+```scss
+:root {
+  --breadcrumbs-gap: theme('spacing.3');
+  --breadcrumbs-margin-bottom: theme('spacing.3');
+  --breadcrumbs-font-weight: theme('fontWeight.medium');
+
+  // item
+  --breadcrumbs-item-color: theme('colors.gray.800');
+
+  // item hover
+  --breadcrumbs-item-hover-color: theme('colors.primary.700');
+
+  // item active
+  --breadcrumbs-item-active-color: theme('colors.primary.500');
+
+  // item disabled
+  --breadcrumbs-item-disabled-color: theme('colors.gray.500');
+
+  // divider
+  --breadcrumbs-divider-font-size: theme('fontSize.sm');
+  --breadcrumbs-divider-font-weight: theme('fontWeight.medium');
+  --breadcrumbs-divider-color: theme('colors.gray.400');
+}
+```
 
 ## Customization
 
-With the power of CSS Variables and Tailwind's `theme` function, you can create your custom breadcrumbs.
+You can customize the appearance of the `VBreadcrumbs` component using CSS variables and the theme function from Tailwind CSS.
+
+Here is an example of how you can customize the font size and color of the breadcrumb links:
 
 ```vue
 <template>
