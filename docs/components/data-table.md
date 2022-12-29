@@ -529,24 +529,6 @@ Type:
 (e: 'update:search', value: string): void;
 ```
 
-Example:
-
-```vue
-<template>
-  <VDataTable v-on:update:search="handleSearchUpdate" />
-</template>
-
-<script>
-export default {
-  methods: {
-    handleSearchUpdate(value) {
-      // do something with the updated search value
-    },
-  },
-};
-</script>
-```
-
 ### `update:sortBy`
 
 This event is emitted when the sortBy value changes. The value parameter contains the new sortBy value.
@@ -555,24 +537,6 @@ Type:
 
 ```ts
 (e: 'update:sortBy', value: string): void;
-```
-
-Example:
-
-```vue
-<template>
-  <VDataTable v-on:update:sortBy="handleSortByUpdate" />
-</template>
-
-<script>
-export default {
-  methods: {
-    handleSortByUpdate(value) {
-      // do something with the updated sortBy value
-    },
-  },
-};
-</script>
 ```
 
 ### `update:sortDirection`
@@ -585,24 +549,6 @@ Type:
 (e: 'update:sortDirection', value: SortDirection): void;
 ```
 
-Example:
-
-```vue
-<template>
-  <VDataTable v-on:update:sortDirection="handleSortDirectionUpdate" />
-</template>
-
-<script>
-export default {
-  methods: {
-    handleSortDirectionUpdate(value) {
-      // do something with the updated sortDirection value
-    },
-  },
-};
-</script>
-```
-
 ### `update:page`
 
 This event is emitted when the page value changes. The value parameter contains the new page value.
@@ -611,24 +557,6 @@ Type:
 
 ```ts
 (e: 'update:page', value: number): void;
-```
-
-Example:
-
-```vue
-<template>
-  <VDataTable v-on:update:page="handlePageUpdate" />
-</template>
-
-<script>
-export default {
-  methods: {
-    handlePageUpdate(value) {
-      // do something with the updated page value
-    },
-  },
-};
-</script>
 ```
 
 ### `update:itemsPerPage`
@@ -641,24 +569,6 @@ Type:
 (e: 'update:itemsPerPage', value: number): void;
 ```
 
-Example:
-
-```vue
-<template>
-  <VDataTable v-on:update:itemsPerPage="handleItemsPerPageUpdate" />
-</template>
-
-<script>
-export default {
-  methods: {
-    handleItemsPerPageUpdate(value) {
-      // do something with the updated itemsPerPage value
-    },
-  },
-};
-</script>
-```
-
 ### `update:totalItems`
 
 This event is emitted when the totalItems value changes. The value parameter contains the new totalItems value.
@@ -667,24 +577,6 @@ Type:
 
 ```ts
 (e: 'update:totalItems', value: number): void;
-```
-
-Example:
-
-```vue
-<template>
-  <VDataTable v-on:update:totalItems="handleTotalItemsUpdate" />
-</template>
-
-<script>
-export default {
-  methods: {
-    handleTotalItemsUpdate(value) {
-      // do something with the updated itemsPerPage value
-    },
-  },
-};
-</script>
 ```
 
 ### `update:pagination`
@@ -737,15 +629,9 @@ Type:
 (e: 'update:modelValue', value: any): void;
 ```
 
-### `update:value`
-
-Type:
-
-```ts
-(e: 'update:value', value: any): void;
-```
-
 ### `sort`
+
+The `sort` event is emitted when the user sorts a table by a particular column. The payload for this event includes the name of the column that the table is being sorted by (`sortBy`) and the direction of the sort (`direction`).
 
 Type:
 
@@ -754,6 +640,8 @@ Type:
 ```
 
 ### `row:click`
+
+The `row:click` event is emitted when the user clicks on a row in the table. The payload for this event includes the data for the clicked row (`item`) and the index of the row in the table (`index`).
 
 Type:
 
@@ -765,6 +653,8 @@ Type:
 
 ### `loading`
 
+The `loading` slot allows you to customize the content shown when the table is loading data.
+
 ```vue
 <template>
   <VDataTable>
@@ -774,6 +664,8 @@ Type:
 ```
 
 ### `header.selectable`
+
+The `header.selectable` slot allows you to customize the content of the selectable column in the table header. It receives a `selectAll` payload that indicates whether all rows are currently selected.
 
 - Payload: `{selectAll}`
 
@@ -789,6 +681,8 @@ Type:
 
 ### `empty`
 
+The `empty` slot allows you to customize the content shown when the table has no data.
+
 ```vue
 <template>
   <VDataTable>
@@ -798,6 +692,8 @@ Type:
 ```
 
 ### `item.selected`
+
+The `item.selected` slot allows you to customize the content of the selected column for each row in the table. It receives a `selected` payload that indicates whether the current row is selected.
 
 - Payload: `{selected}`
 
@@ -813,6 +709,8 @@ Type:
 
 ### `item.index`
 
+The `item.index` slot allows you to customize the content of the index column for each row in the table. It receives an `index` payload that indicates the index of the current row.
+
 - Payload: `{item, index}`
 
 ```vue
@@ -826,6 +724,8 @@ Type:
 ```
 
 ### `item.{value}`
+
+The `item.{value}` slot allows you to customize the content of a particular column for each row in the table. The value in the slot name corresponds to the name of the column. It receives an `item` payload that contains the data for the current row and an `index` payload that indicates the index of the current row.
 
 - Payload: `{item, index}`
 
@@ -847,7 +747,24 @@ Type:
 
 ### `footer`
 
-- Payload: `{pagination, perPage, serverSide, items, totalItems, footerColor, footerClass, page}`
+The `footer` slot allows you to customize the content of the table footer. It receives a `pagination` payload that indicates whether pagination is enabled, a `perPage` payload that indicates the number of items per page, a `serverSide` payload that indicates whether the table is using server-side data, an `items` payload that contains the data for the current page, a `totalItems` payload that indicates the total number of items in the table, a `footerColor` payload that indicates the color of the footer, a `footerClass` payload that indicates the class of the footer, and a `page` payload that indicates the current page.
+
+- Payload:
+
+```ts
+{
+  pagination,
+  perPage,
+  serverSide,
+  items,
+  totalItems,
+  footerColor,
+  footerClass,
+  page;
+}
+```
+
+Example:
 
 ```vue
 <template>
