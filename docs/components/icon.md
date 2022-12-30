@@ -1,14 +1,16 @@
 # Icon
 
-Icon component based on [`@iconify/vue`](https://docs.iconify.design/icon-components/vue/).
+`VIcon` component is based on [`@iconify/vue`](https://docs.iconify.design/icon-components/vue/). It allows you to easily display icons in your Vue.js application.
 
 ## Available Icons
 
-View available icons [here](https://icones.js.org/).
+You can view a list of available icons [here](https://icones.js.org/).
 
 ## Usage
 
 ### Basic Usage
+
+To use the `VIcon` component, simply include it in your template like this:
 
 ```vue
 <template>
@@ -23,6 +25,8 @@ The `VIcon` component is registered globally when you install with `@gits-id/ui`
 :::
 
 ### Sizes
+
+The `VIcon` component allows you to specify the size of the icon using the `size` prop. Here are some examples of how to use it:
 
 ```vue
 <template>
@@ -46,10 +50,6 @@ The `VIcon` component is registered globally when you install with `@gits-id/ui`
 | [`name`](#name) | `string`                              | ` `     |
 | [`size`](#size) | `'xxs', 'xs', 'sm', 'md', 'lg', 'xl'` | `'md'`  |
 
-## Methods
-
-None
-
 ## Events
 
 None
@@ -64,15 +64,18 @@ None
 
 ## Manual Installation
 
-You can also install the `Icon` component individually via `@gits-id/icon` package:
+If you want to install the Icon component individually, you can use the `@gits-id/icon` package:
 
 ```bash
-yarn install @gits-id/icon
+npm i @gits-id/icon
 ```
+
+Then, you can use it in your Vue.js application like this:
 
 ```vue
 <script setup lang="ts">
 import VIcon from '@gits-id/icon';
+import '@gits-id/icon/dist/style.css';
 </script>
 
 <template>
