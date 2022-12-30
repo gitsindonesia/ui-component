@@ -1,8 +1,12 @@
 # Card
 
+The `VCard` component is a container for displaying content in a card-like format.
+
 ## Usage
 
 ### Basic Usage
+
+To use the `VCard` component, simply wrap your content in the `VCard` element:
 
 ```vue
 <template>
@@ -19,6 +23,8 @@ The `VCard` component is registered globally when you install with `@gits-id/ui`
 
 ### With Title
 
+To add a title to your `VCard`, use the `title` prop:
+
 ```vue
 <template>
   <VCard title="Header"> Hello World </VCard>
@@ -28,6 +34,8 @@ The `VCard` component is registered globally when you install with `@gits-id/ui`
 <LivePreview src="components-card--hide-footer" height="120" />
 
 ### Header and Footer
+
+You can add a header and footer to your `VCard` by using the `title` prop for the header and the `footer` slot for the footer:
 
 ```vue {2,4-6}
 <template>
@@ -45,6 +53,8 @@ The `VCard` component is registered globally when you install with `@gits-id/ui`
 <LivePreview src="components-card--default" height="160" />
 
 ### Hide Header and Footer
+
+To hide the header or footer of your `VCard`, use the `hide-header` or `hide-footer` props, respectively:
 
 ```vue {2}
 <template>
@@ -68,7 +78,7 @@ The `VCard` component is registered globally when you install with `@gits-id/ui`
 - **default**: `default`
 - **required**: `false`
 
-Use `color` to different color style to the card.
+You can apply different colors to your `VCard` using the `color` prop. It can take one of the following values: `default`, `primary`, `secondary`, `info`, `warning`, `success`, or `error`. The default value is `default`.
 
 ```vue
 <template>
@@ -91,7 +101,9 @@ Use `color` to different color style to the card.
 - **default**: `false`
 - **required**: `false`
 
-Use `bordered` to apply border to the card.
+You can add a border to your `VCard` by using the `bordered` prop. It is a `boolean` prop that takes the value `true` to add a border and `false` to remove it. The default value is `false`.
+
+To use the `bordered` prop, set it to true like so:
 
 ```vue{6}
 <template>
@@ -108,7 +120,7 @@ Use `bordered` to apply border to the card.
 - **default**: `none`
 - **required**: `false`
 
-Use `shadow` to apply shadow style to the card.
+You can add a shadow to your `VCard` by using the `shadow` prop. It can take one of the following values: `sm`, `md`, `lg`, `xl`, `2xl`, `inner`, `none`. The default value is `none`.
 
 ```vue
 <script setup lang="ts">
@@ -151,40 +163,124 @@ import {ref} from 'vue';
 | [footer-class](#footer-class)                   | `string`                                                       | ` `           |
 | [body-class](#body-class)                       | `string`                                                       | ` `           |
 
-## Methods
-
-None
-
 ## Events
 
 None
 
 ## Slots
 
-| Name                              | Props | Description                              |
-| --------------------------------- | ----- | ---------------------------------------- |
-| [default](#default)               | None  | The default Vue slot                     |
-| [header](#header)                 | None  | The card header                          |
-| [header.append](#header.append)   | None  | Slot to append before the actual header  |
-| [header.prepend](#header.prepend) | None  | Slot to prepend before the actual header |
-| [footer](#default)                | None  | The card footer                          |
+| Name                              | Description                                |
+| --------------------------------- | ------------------------------------------ |
+| [default](#default)               | The default Vue slot for the card body     |
+| [header](#header)                 | The card header                            |
+| [header.append](#header.append)   | A slot to append before the actual header  |
+| [header.prepend](#header.prepend) | A slot to prepend before the actual header |
+| [footer](#default)                | The card footer                            |
+
+### Default
+
+The `default` slot is the main content area of the `VCard`. It is where you can place your card body content.
+
+```vue
+<template>
+  <VCard>
+    <!-- default slot -->
+    <p>Hello World</p>
+  </VCard>
+</template>
+```
+
+### Header
+
+The `header` slot is used to add a header to the `VCard`. It can contain any content you want to display in the header.
+
+```vue
+<template>
+  <VCard>
+    <!-- header slot -->
+    <template #header>
+      <h2>Card Header</h2>
+    </template>
+    <!-- default slot -->
+    <p>Hello World</p>
+  </VCard>
+</template>
+```
+
+### `header.append`
+
+The `header.append` slot is used to add content to the end of the header slot. It can be used to add buttons or other elements to the header.
+
+```vue
+<template>
+  <VCard title="Header">
+    <!-- header.append slot -->
+    <template #header.append>
+      <VBtn>Action</VBtn>
+    </template>
+    <!-- default slot -->
+    <p>Hello World</p>
+  </VCard>
+</template>
+```
+
+### `header.prepend`
+
+The `header.prepend` slot is used to add content to the beginning of the header slot. It can be used to add icons or other elements to the header.
+
+```vue
+<template>
+  <VCard title="Header">
+    <!-- header.prepend slot -->
+    <template #header.prepend>
+      <VBtn>Action</VBtn>
+    </template>
+    <!-- default slot -->
+    <p>Hello World</p>
+  </VCard>
+</template>
+```
+
+### Footer
+
+The `footer` slot is used to add a footer to the `VCard`. It can contain any content you want to display in the footer.
+
+```vue
+<template>
+  <VCard>
+    <!-- default slot -->
+    <p>Hello World</p>
+    <!-- footer slot -->
+    <template #footer>
+      <h4>Card Footer</h4>
+    </template>
+  </VCard>
+</template>
+```
 
 ## CSS Variables
 
-| Variable                                        | Default Value                   |
-| ----------------------------------------------- | ------------------------------- |
-| [`--card-padding-x` ](#--card-padding-x)        | `theme('padding.4')`            |
-| [`--card-padding-y` ](#--card-padding-y)        | `theme('padding.3')`            |
-| [`--card-bg-color` ](#--card-bg-color)          | `theme('colors.white')`         |
-| [`--card-color` ](#--card-color)                | `theme('colors.gray.800')`      |
-| [`--card-border-style`](#--card-border-style)   | `solid`                         |
-| [`--card-border-width`](#--card-border-width)   | `theme('borderWidth.DEFAULT')`  |
-| [`--card-border-color`](#--card-border-color)   | `theme('borderColor.DEFAULT')`  |
-| [`--card-border-radius`](#--card-border-radius) | `theme('borderRadius.DEFAULT')` |
+he `VCard` component has several CSS variables that can be used to customize its appearance. These variables can be set in the `:root` element of your stylesheet to change the default values.
+
+```scss
+:root {
+  --card-bg-color: theme('colors.white');
+  --card-color: theme('colors.gray.800');
+  --card-border-style: solid;
+  --card-border-width: theme('borderWidth.DEFAULT');
+  --card-border-color: theme('borderColor.DEFAULT');
+  --card-border-radius: theme('borderRadius.DEFAULT');
+  --card-padding-x: theme('padding.4');
+  --card-padding-y: theme('padding.3');
+  --card-box-shadow: theme('boxShadow.DEFAULT');
+}
+```
 
 ## Customization
 
-With the power of CSS Variables and Tailwind's `theme` function, you can create your custom card.
+The `VCard` component can be customized using CSS variables and the theme function provided by Tailwind CSS. This allows you to create your own custom card styles.
+
+To customize the `VCard`, you can define your own CSS class and set the desired CSS variables in it. For example, to create an indigo colored card with white text, you can do the following:
 
 ```vue{2,7-8}
 <template>
