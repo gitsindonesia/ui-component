@@ -1,10 +1,12 @@
 # Editor
 
-CKEditor component integrated with `vee-validate` for validation.
+The `VEditor` component is an integration of the CKEditor component with `vee-validate` for validation.
 
 ## Usage
 
 ### Basic Usage
+
+To use the `VEditor` component, bind it to a `value` using the `v-model` directive:
 
 ```vue
 <script setup lang="ts">
@@ -26,6 +28,8 @@ The `VEditor` component is registered globally when you install with `@gits-id/u
 
 ### Label
 
+You can add a label to the `VEditor` component by using the `label` prop:
+
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
@@ -41,6 +45,8 @@ const value = ref('');
 <LivePreview src="forms-editor--label" />
 
 ### Validation
+
+To add validation to the `VEditor` component, you can use the `useForm` hook from `vee-validate`. Here's an example of how to set up validation and handle form submission:
 
 ```vue
 <script setup lang="ts">
@@ -95,13 +101,69 @@ const onSubmit = handleSubmit((values) => {
 | [`errorMessages`](#errorMessages) | string[] | `[]`      |
 | [`readonly`](#readonly)           | string   | `''`      |
 
-## Methods
-
-None
-
 ## Events
 
-None
+The `VEditor` component emits several Vue events that can be listened to and acted upon.
+
+### `update:modelValue` event
+
+This event is emitted when the `modelValue` prop of the `VEditor` component is updated. It passes the updated value as an argument.
+
+```vue
+<script setup lang="ts">
+import {ref} from 'vue';
+
+const value = ref('');
+
+function onModelValueUpdate(value: string) {
+  // do something with the updated value
+}
+</script>
+
+<template>
+  <VEditor v-model="value" @update:modelValue="onModelValueUpdate" />
+</template>
+```
+
+### `change` event
+
+This event is emitted when the value of the `VEditor` component is changed. It passes the updated value as an argument.
+
+```vue
+<script setup lang="ts">
+import {ref} from 'vue';
+
+const value = ref('');
+
+function onChange(value: string) {
+  // do something with the updated value
+}
+</script>
+
+<template>
+  <VEditor v-model="value" @change="onChange" />
+</template>
+```
+
+### `blur` event
+
+This event is emitted when the VEditor component loses focus. It passes the event object as an argument.
+
+```vue
+<script setup lang="ts">
+import {ref} from 'vue';
+
+const value = ref('');
+
+function onBlur(event: any) {
+  // do something with the event object
+}
+</script>
+
+<template>
+  <VEditor v-model="value" @blur="onBlur" />
+</template>
+```
 
 ## Slots
 
@@ -109,7 +171,20 @@ None
 
 ## CSS Variables
 
-None
+```css
+:root {
+  --v-editor-height: 300px;
+
+  /* label */
+  --v-editor-label-font-size: var(
+    --input-label-font-size,
+    theme('fontSize.sm')
+  );
+  --v-editor-label-font-weight: theme('fontWeight.normal');
+  --v-editor-label-display: var(--v-input-label-display, block);
+  --v-editor-label-margin-bottom: theme('margin.2');
+}
+```
 
 ## Manual Installation
 
