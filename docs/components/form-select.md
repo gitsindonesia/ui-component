@@ -1,10 +1,12 @@
 # FormSelect
 
-Basic form select.
+The `VFormSelect` component is a form field that allows users to select a value from a dropdown list of options.
 
 ## Usage
 
 ### Basic Usage
+
+To use the `VFormSelect` component, you must first provide it with an array of options. Each option should be an object with `text` and `value` properties, like this:
 
 ```vue
 <script setup lang="ts">
@@ -39,6 +41,8 @@ The `VFormSelect` component is registered globally when you install with `@gits-
 
 ### Disabled
 
+To disable the `VFormSelect` component, you can use the `disabled` prop:
+
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
@@ -67,6 +71,8 @@ const options = ref([
 <LivePreview src="forms-select--disabled" />
 
 ### Error
+
+If you are using the `VFormSelect` component with a form validation library, you can use the `error` prop to indicate that the form field has an error:
 
 ```vue
 <script setup lang="ts">
@@ -97,6 +103,8 @@ const options = ref([
 
 ### Label
 
+You can use the `label` prop to specify a label for the `VFormSelect` component:
+
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
@@ -126,9 +134,17 @@ const options = ref([
 
 ### Validation
 
+To use the `VFormSelect` component with a form validation library, you can use the name prop to bind the component to a form control. For example, with `VeeValidate`, you can use the `useForm` hook to create a form with validation schema:
+
+<LivePreview src="forms-select--validation" />
+
+<details>
+  <summary>View Code</summary>
+
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
+import {useForm} from 'vee-validate';
 
 const schema = object({
   genre: string().required().label('Genre'),
@@ -201,9 +217,18 @@ const genres = ref([
 </template>
 ```
 
-<LivePreview src="forms-select--validation" />
+</details>
 
 ### Validation Mode
+
+There are 2 modes. The first is `eager` mode, and the second is `aggressive` mode. The `eager` mode validates input when the blur event occurs. Meanwhile, `aggressive` mode validates the input every time the input itself changes. This can be useful when you are validating for example the minimum or maximum limits of an input.
+
+You can change the default value for this validation mode by adding an attribute or property named `validation-mode` to this component.
+
+<LivePreview src="forms-select--validation-mode" />
+
+<details>
+  <summary>View Code</summary>
 
 ```vue
 <script setup lang="ts">
@@ -300,9 +325,11 @@ const onSubmit = handleSubmit((values) => {
 </template>
 ```
 
-<LivePreview src="forms-select--validation-mode" />
+</details>
 
 ### Initial Values
+
+To set initial values to the form, use the `initialValues` option in the `useForm` hook.
 
 ```vue
 <script setup lang="ts">
@@ -380,13 +407,17 @@ const genres = ref([
 | [`wrapperClass`](#wrapperClass)     | `String`                                      | `''`           |
 | [`validationMode`](#validationMode) | `String as PropType<'aggressive' \| 'eager'>` | `'aggressive'` |
 
-## Methods
-
-None
-
 ## Events
 
-### `(e: 'update:modelValue', value: string): void`
+### `update:modelValue`
+
+Type:
+
+```ts
+(e: 'update:modelValue', value: string): void`
+```
+
+Example:
 
 ```vue
 <script setup lang="ts">
