@@ -1,8 +1,12 @@
-# Form Input
+# Input
+
+The `VInput` component is a form control for receiving user input. It can be used in various ways, such as a single line text input, a password input, or a search bar.
 
 ## Usage
 
 ### Basic Usage
+
+To use the `VInput` component, simply add the component to your template:
 
 ```vue
 <template>
@@ -17,24 +21,19 @@
 The `VInput` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
-### Colors
+### Placeholder
+
+You can also provide a placeholder attribute to display a hint to the user:
 
 ```vue
 <template>
-  <VInput />
-  <VInput color="primary" />
-  <VInput color="secondary" />
-  <VInput color="info" />
-  <VInput color="warning" />
-  <VInput color="success" />
-  <VInput color="error" />
-  <VInput color="dark" />
+  <VInput placeholder="Enter your name" />
 </template>
 ```
 
-<LivePreview src="forms-input--colors" />
-
 ### Colors
+
+You can customize the color of the `VInput` component using the `color` prop. The available color options are: `primary`, `secondary`, `info`, `warning`, `success`, `error`, and `dark`.
 
 ```vue
 <template>
@@ -53,6 +52,8 @@ The `VInput` component is registered globally when you install with `@gits-id/ui
 
 ### Readonly
 
+To make the `VInput` component readonly, set the `readonly` prop to `true`.
+
 ```vue
 <template>
   <VInput readonly />
@@ -62,6 +63,8 @@ The `VInput` component is registered globally when you install with `@gits-id/ui
 <LivePreview src="forms-input--readonly" />
 
 ### Disabled
+
+To `disable` the VInput component, set the `disabled` prop to `true`.
 
 ```vue
 <template>
@@ -73,6 +76,8 @@ The `VInput` component is registered globally when you install with `@gits-id/ui
 
 ### Shadow
 
+To add a shadow to the `VInput` component, set the `shadow` prop to `true`.
+
 ```vue
 <template>
   <VInput shadow />
@@ -82,6 +87,8 @@ The `VInput` component is registered globally when you install with `@gits-id/ui
 <LivePreview src="forms-input--shadow" />
 
 ### Text
+
+To use the `VInput` component as a text input, set the `text` prop to `true` and provide a `model-value` and `label`.
 
 ```vue
 <template>
@@ -93,6 +100,8 @@ The `VInput` component is registered globally when you install with `@gits-id/ui
 
 ### Error
 
+To display an error message with the `VInput` component, set the `error` prop to `true`.
+
 ```vue
 <template>
   <VInput error />
@@ -102,6 +111,10 @@ The `VInput` component is registered globally when you install with `@gits-id/ui
 <LivePreview src="forms-input--error" />
 
 ### Icons
+
+You can add icons to the `VInput` component using the `prepend-icon` and `append-icon` props.
+
+To customize the icon classes, use the `prepend-icon-class` and `append-icon-class` props. To customize the wrapper element classes, use the `prepend-class` and `append-class` props.
 
 ```vue
 <script setup lang="ts">
