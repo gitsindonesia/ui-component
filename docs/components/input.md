@@ -60,7 +60,7 @@ To make the `VInput` component readonly, set the `readonly` prop to `true`.
 </template>
 ```
 
-<LivePreview src="forms-input--readonly" />
+<LivePreview src="forms-input--readonly" height="80" />
 
 ### Disabled
 
@@ -72,7 +72,7 @@ To `disable` the VInput component, set the `disabled` prop to `true`.
 </template>
 ```
 
-<LivePreview src="forms-input--disabled" />
+<LivePreview src="forms-input--disabled" height="80" />
 
 ### Shadow
 
@@ -84,7 +84,7 @@ To add a shadow to the `VInput` component, set the `shadow` prop to `true`.
 </template>
 ```
 
-<LivePreview src="forms-input--shadow" />
+<LivePreview src="forms-input--shadow" height="80" />
 
 ### Text
 
@@ -96,7 +96,7 @@ To use the `VInput` component as a text input, set the `text` prop to `true` and
 </template>
 ```
 
-<LivePreview src="forms-input--text" />
+<LivePreview src="forms-input--text" height="80" />
 
 ### Error
 
@@ -108,13 +108,18 @@ To display an error message with the `VInput` component, set the `error` prop to
 </template>
 ```
 
-<LivePreview src="forms-input--error" />
+<LivePreview src="forms-input--error" height="80" />
 
 ### Icons
 
 You can add icons to the `VInput` component using the `prepend-icon` and `append-icon` props.
 
 To customize the icon classes, use the `prepend-icon-class` and `append-icon-class` props. To customize the wrapper element classes, use the `prepend-class` and `append-class` props.
+
+<LivePreview src="forms-input--icons" />
+
+<details>
+  <summary>View Code</summary>
 
 ```vue
 <script setup lang="ts">
@@ -172,9 +177,36 @@ const showAlert = (message: string) => alert(message);
 </template>
 ```
 
-<LivePreview src="forms-input--icons" />
+</details>
 
 ### Slots
+
+You can use slots to insert custom content into the input field, such as icons, text, or buttons.
+
+- Prepend Slot (Outer Position)
+
+  The `prepend.outer` slot allows you to insert content before the input field, outside of the input field's container. This can be useful for adding icons or buttons that are positioned on the left side of the input field.
+
+- Append Slot (Outer Position)
+
+  The `prepend.outer` slot allows you to insert content before the input field, outside of the input field's container. This can be useful for adding icons or buttons that are positioned on the left side of the input field.
+
+- Prepend Slot (Inner Position)
+
+  The `prepend` slot allows you to insert content before the input field, inside of the input field's container. This can be useful for adding icons or text that are positioned on the left side of the input field and are aligned with the input text.
+
+- Append Slot (Inner Position)
+
+  The `append` slot allows you to insert content after the input field, inside of the input field's container. This can be useful for adding icons or text that are positioned on the right side of the input field and are aligned with the input text.
+
+- Button or Text Slots
+
+  You can use the `prepend.outer` and `append.outer` slots to insert button or text content on either side of the input field.
+
+<LivePreview src="forms-input--slots" />
+
+<details>
+  <summary>View Code</summary>
 
 ```vue
 <template>
@@ -260,9 +292,16 @@ const showAlert = (message: string) => alert(message);
 </template>
 ```
 
-<LivePreview src="forms-input--slots" />
+</details>
 
 ### Validation
+
+To use the `VInput` component with a form validation library, you can use the name prop to bind the component to a form control. For example, with `VeeValidate`, you can use the `useForm` hook to create a form with validation schema:
+
+<LivePreview src="forms-input--validation" />
+
+<details>
+  <summary>View Code</summary>
 
 ```vue
 <script setup lang="ts">
@@ -305,9 +344,18 @@ const onSubmit = handleSubmit((values) => {
 </template>
 ```
 
-<LivePreview src="forms-input--validation" />
+</details>
 
 ### Validation Mode
+
+There are 2 modes. The first is `eager` mode, and the second is `aggressive` mode. The `eager` mode validates input when the blur event occurs. Meanwhile, `aggressive` mode validates the input every time the input itself changes. This can be useful when you are validating for example the minimum or maximum limits of an input.
+
+You can change the default value for this validation mode by adding an attribute or property named `validation-mode` to this component.
+
+<LivePreview src="forms-input--validation-mode" />
+
+<details>
+  <summary>View Code</summary>
 
 ```vue
 <script setup lang="ts">
@@ -361,9 +409,16 @@ const onSubmit = handleSubmit((values) => {
 </template>
 ```
 
-<LivePreview src="forms-input--validation-mode" />
+</details>
 
 ### Field Array
+
+Here is example of using `VInput` as field array with `vee-validate`.
+
+<LivePreview src="forms-input--field-arrays" />
+
+<details>
+  <summary>View Code</summary>
 
 ```vue
 <script setup>
@@ -407,9 +462,16 @@ const onSubmit = handleSubmit((values) => {
 </template>
 ```
 
-<LivePreview src="forms-input--field-arrays" />
+</details>
 
 ### Field Array of Objects
+
+Here is example of using `VInput` as field array of object with `vee-validate`.
+
+<LivePreview src="forms-input--field-array-of-objects" />
+
+<details>
+  <summary>View Code</summary>
 
 ```vue
 <script setup>
@@ -463,9 +525,16 @@ const onSubmit = handleSubmit((values) => {
 </template>
 ```
 
-<LivePreview src="forms-input--field-array-of-objects" />
+</details>
 
 ### Field Array Nested
+
+Here is example of using `VInput` as nested field array with `vee-validate`.
+
+<LivePreview src="forms-input--field-array-nested" />
+
+<details>
+  <summary>View Code</summary>
 
 ```vue
 <script setup>
@@ -559,7 +628,7 @@ const onSubmit = handleSubmit((values) => {
 </template>
 ```
 
-<LivePreview src="forms-input--field-array-nested" />
+</details>
 
 ## Props
 
@@ -591,13 +660,11 @@ const onSubmit = handleSubmit((values) => {
 | [`appendClass`](#appendClass)           | `String`                                   | `''`           |
 | [`appendIconClass`](#appendIconClass)   | `String`                                   | `''`           |
 
-## Methods
-
-None
-
 ## Events
 
 - [`update:modelValue`](#update:modelValue)
+
+Triggered when the value of the input element changes.
 
 ```vue
 <script setup lang="ts">
@@ -611,6 +678,8 @@ const handle = () => alert('Triggered!');
 
 - [`blur`](#blur)
 
+Triggered when the input element loses focus.
+
 ```vue
 <script setup lang="ts">
 const handle = () => alert('Triggered!');
@@ -622,6 +691,8 @@ const handle = () => alert('Triggered!');
 ```
 
 - [`change`](#change)
+
+Triggered when the value of the input element changes and the element loses focus.
 
 ```vue
 <script setup lang="ts">
@@ -635,6 +706,8 @@ const handle = () => alert('Triggered!');
 
 - [`clickPrepend`](#clickPrepend)
 
+Triggered when the element with the `prepend` slot is clicked.
+
 ```vue
 <script setup lang="ts">
 const handle = () => alert('Triggered!');
@@ -646,6 +719,8 @@ const handle = () => alert('Triggered!');
 ```
 
 - [`clickPrependIcon`](#clickPrependIcon)
+
+Triggered when the element with the `prepend-icon` slot is clicked.
 
 ```vue
 <script setup lang="ts">
@@ -659,6 +734,8 @@ const handle = () => alert('Triggered!');
 
 - [`clickAppend`](#clickAppend)
 
+Triggered when the element with the `append` slot is clicked.
+
 ```vue
 <script setup lang="ts">
 const handle = () => alert('Triggered!');
@@ -670,6 +747,8 @@ const handle = () => alert('Triggered!');
 ```
 
 - [`clickAppendIcon`](#clickAppendIcon)
+
+Triggered when the element with the `append-icon` slot is clicked.
 
 ```vue
 <script setup lang="ts">
@@ -685,6 +764,8 @@ const handle = () => alert('Triggered!');
 
 - [`label`](#label)
 
+Allows you to customize the label of the input element.
+
 ```vue
 <template>
   <VInput>
@@ -694,6 +775,8 @@ const handle = () => alert('Triggered!');
 ```
 
 - [`prepend.outer`](#prepend.outer)
+
+Allows you to customize the outer element of the prepend slot.
 
 ```vue
 <template>
@@ -705,6 +788,8 @@ const handle = () => alert('Triggered!');
 
 - [`prepend`](#prepend)
 
+Allows you to customize the prepend slot.
+
 ```vue
 <template>
   <VInput>
@@ -714,6 +799,8 @@ const handle = () => alert('Triggered!');
 ```
 
 - [`append.outer`](#append.outer)
+
+Allows you to customize the outer element of the append slot.
 
 ```vue
 <template>
@@ -725,6 +812,8 @@ const handle = () => alert('Triggered!');
 
 - [`append`](#append)
 
+Allows you to customize the append slot.
+
 ```vue
 <template>
   <VInput>
@@ -735,38 +824,50 @@ const handle = () => alert('Triggered!');
 
 ## CSS Variables
 
-| Variable                                                          | Default Value                  |
-| ----------------------------------------------------------------- | ------------------------------ |
-| [`--v-input-height`](#--v-input-height)                           | `2.5rem`                       |
-| [`--v-input-border-color`](#--v-input-border-color)               | `theme('colors.gray.300'`      |
-| [`--v-input-placeholder-color`](#--v-input-placeholder-color)     | `theme('colors.gray.500')`     |
-| [`--v-input-border-radius`](#--v-input-border-radius)             | `theme('borderRadius.md')`     |
-| [`--v-input-padding-x`](#--v-input-padding-x)                     | `theme('padding.3')`           |
-| [`--v-input-padding-y`](#--v-input-padding-y)                     | `theme('padding.2')`           |
-| [`--v-input-font-size`](#--v-input-font-size)                     | `theme('fontSize.base')`       |
-| [`--v-input-bg-color`](#--v-input-bg-color)                       | `theme('colors.white')`        |
-| [`--v-input-label-font-size`](#--v-input-label-font-size)         | `theme('fontSize.sm'`          |
-| [`--v-input-label-font-weight`](#--v-input-label-font-weight)     | `theme('fontWeight.semibold')` |
-| [`--v-input-label-display`](#--v-input-label-display)             | `block`                        |
-| [`--v-input-label-margin-bottom`](#--v-input-label-margin-bottom) | `theme('margin.1')`            |
-| [`--v-input-text-color`](#--v-input-text-color)                   | `theme('colors.gray.600')`     |
-| [`--v-input-text-font-size`](#--v-input-text-font-size)           | `theme('fontSize.sm')`         |
-| [`--v-input-text-font-weight`](#--v-input-text-font-weight)       | `theme('fontWeight.normal')`   |
-| [`--v-input-icon-width`](#--v-input-icon-width)                   | `theme('width.5')`             |
-| [`--v-input-icon-height`](#--v-input-icon-height)                 | `theme('height.5')`            |
-| [`--v-input-icon-color`](#--v-input-icon-color)                   | `theme('colors.gray.500')`     |
+```scss
+:root {
+  /* input control */
+  --v-input-height: 2.5rem;
+  --v-input-border-color: theme('colors.gray.300');
+  --v-input-placeholder-color: theme('colors.gray.500');
+  --v-input-border-radius: theme('borderRadius.md');
+  --v-input-padding-x: theme('padding.3');
+  --v-input-padding-y: theme('padding.2');
+  --v-input-font-size: theme('fontSize.base');
+  --v-input-bg-color: theme('colors.white');
+
+  /* label */
+  --v-input-label-font-size: theme('fontSize.sm');
+  --v-input-label-font-weight: theme('fontWeight.semibold');
+  --v-input-label-display: block;
+  --v-input-label-margin-bottom: theme('margin.1');
+
+  /* text */
+  --v-input-text-color: theme('colors.gray.600');
+  --v-input-text-font-size: theme('fontSize.sm');
+  --v-input-text-font-weight: theme('fontWeight.normal');
+
+  /* icon */
+  --v-input-icon-width: theme('width.5');
+  --v-input-icon-height: theme('height.5');
+  --v-input-icon-color: theme('colors.gray.500');
+}
+```
 
 ## Manual Installation
 
 You can also install the `VInput` component individually via `@gits-id/forms` package:
 
 ```bash
-npm install @gits-id/forms
+npm i @gits-id/forms
 ```
 
 ```vue
 <script setup lang="ts">
 import {VInput} from '@gits-id/forms';
+import '@gits-id/forms/dist/style.css';
+// OR load SCSS styles
+// import '@gits-id/forms/src/forms.scss';
 </script>
 
 <template>
