@@ -411,6 +411,8 @@ const genres = ref([
 
 ### `update:modelValue`
 
+You can listen for the `update:modelValue` event to get notified when the value of the `VFormSelect` component changes.
+
 Type:
 
 ```ts
