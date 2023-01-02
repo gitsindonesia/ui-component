@@ -80,14 +80,6 @@ export default defineConfig({
             link: '/components/modal',
           },
           {
-            text: 'Navbar (Deprecated)',
-            link: '/components/navbar',
-          },
-          {
-            text: 'Nav Drawer (Deprecated)',
-            link: '/components/nav-drawer',
-          },
-          {
             text: 'Navigation Drawer',
             link: '/components/navigation-drawer',
           },
@@ -187,6 +179,20 @@ export default defineConfig({
           },
         ],
       },
+      {
+        text: 'Deprecated',
+        collapsible: true,
+        items: [   
+          {
+            text: 'Navbar',
+            link: '/components/navbar',
+          },
+          {
+            text: 'Nav Drawer',
+            link: '/components/nav-drawer',
+          },
+        ]
+      }
     ],
     socialLinks: [
       {icon: 'github', link: 'https://github.com/gitsindonesia/ui-component'},
