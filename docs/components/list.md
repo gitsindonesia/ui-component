@@ -1,24 +1,24 @@
 # List
 
+The List component is a flexible way to display a list of items in your Vue application. This documentation covers how to use various features of the List component, such as links, slots, icons, headers, and collapse functionality.
+
 ## Usage
 
 ### Basic Usage
 
-```vue
-<script setup lang="ts">
-import {List, ListItem, ListItemDivider} from '@gits-id/ui';
-</script>
+To use the `VList` component, just use the component in your template like so:
 
+```vue
 <template>
-  <List>
-    <ListItem>Item 1</ListItem>
-    <ListItem>Item 2</ListItem>
-    <ListItemDivider />
-    <ListItem>Item 3</ListItem>
-    <ListItemDivider />
-    <ListItem>Item 4</ListItem>
-    <ListItem>Item 5</ListItem>
-  </List>
+  <VList>
+    <VListItem>Item 1</VListItem>
+    <VListItem>Item 2</VListItem>
+    <VListItemDivider />
+    <VListItem>Item 3</VListItem>
+    <VListItemDivider />
+    <VListItem>Item 4</VListItem>
+    <VListItem>Item 5</VListItem>
+  </VList>
 </template>
 ```
 
@@ -30,24 +30,22 @@ The `VList` component is registered globally when you install with `@gits-id/ui`
 
 ### Hover Effect
 
-```vue
-<script setup lang="ts">
-import {List, ListItem} from '@gits-id/ui';
-</script>
+The Hover variant of the List component allows you to add custom shapes to the list items. You can use the `hover` prop on a ListItem to apply the default hover style, or use the `hover-class` prop to specify a custom `hover` class.
 
+```vue
 <template>
-  <List>
-    <ListItem hover>Default</ListItem>
-    <ListItem hover hover-class="hover:bg-primary-200 hover:text-primary-700">
+  <VList hover>
+    <VListItem>Default</VListItem>
+    <VListItem hover hover-class="hover:bg-primary-200 hover:text-primary-700">
       Custom Class
-    </ListItem>
-    <ListItem
+    </VListItem>
+    <VListItem
       hover
       hover-class="group-hover:bg-orange-200 group-hover:text-orange-700"
     >
       Group Hover
-    </ListItem>
-  </List>
+    </VListItem>
+  </VList>
 </template>
 ```
 
@@ -55,18 +53,16 @@ import {List, ListItem} from '@gits-id/ui';
 
 ### Shaped
 
-```vue
-<script setup lang="ts">
-import {List, ListItem} from '@gits-id/ui';
-</script>
+The Shaped variant of the List component allows you to add custom shapes to the list items. You can use the `shaped` prop on a ListItem to apply the default `shaped` style, or use the `shaped-class` prop to specify a custom `shaped` class.
 
+```vue
 <template>
-  <List>
-    <ListItem hover shaped v-for="i in 5" :key="i">Item</ListItem>
-    <ListItem hover shaped shaped-class="rounded-l-full">
+  <VList shaped>
+    <VListItem shaped v-for="i in 5" :key="i">Item</VListItem>
+    <VListItem hover shaped shaped-class="rounded-l-full">
       Custom Shaped Class
-    </ListItem>
-  </List>
+    </VListItem>
+  </VList>
 </template>
 ```
 
@@ -74,15 +70,13 @@ import {List, ListItem} from '@gits-id/ui';
 
 ### Rounded
 
-```vue
-<script setup lang="ts">
-import {List, ListItem} from '@gits-id/ui';
-</script>
+The Rounded variant of the List component adds rounded corners to the list items. You can use the `rounded` prop on a `VListItem` to apply the rounded style.
 
+```vue
 <template>
-  <List>
-    <ListItem hover rounded v-for="i in 5" :key="i">Item</ListItem>
-  </List>
+  <VList>
+    <VListItem hover rounded v-for="i in 5" :key="i">Item</VListItem>
+  </VList>
 </template>
 ```
 
@@ -90,15 +84,13 @@ import {List, ListItem} from '@gits-id/ui';
 
 ### Tile
 
-```vue
-<script setup lang="ts">
-import {List, ListItem} from '@gits-id/ui';
-</script>
+The Tile variant of the List component displays the list items as tiles. You can use the `tile` prop on a ListItem to apply the tile style.
 
+```vue
 <template>
-  <List>
-    <ListItem hover tile v-for="i in 5" :key="i">Item</ListItem>
-  </List>
+  <VList tile>
+    <VListItem hover tile v-for="i in 5" :key="i">Item</VListItem>
+  </VList>
 </template>
 ```
 
@@ -106,21 +98,19 @@ import {List, ListItem} from '@gits-id/ui';
 
 ### Hide Prepend & Hide Append
 
-```vue
-<script setup lang="ts">
-import {List, ListItem} from '@gits-id/ui';
-</script>
+The List component allows you to hide the prepend and append elements of a `VListItem`. You can use the hide-prepend and hide-append props on a `VListItem` to hide these elements. Alternatively, you can pass the `hide-prepend` and `hide-append` props to the parent `VList` component and bind them to the child `VListItem` components via slot props.
 
+```vue
 <template>
-  <List>
-    <ListItem hide-prepend>Item 1</ListItem>
-    <ListItem hide-prepend hide-append>Item 2</ListItem>
-  </List>
+  <VList>
+    <VListItem hide-prepend>Item 1</VListItem>
+    <VListItem hide-prepend hide-append>Item 2</VListItem>
+  </VList>
   <!-- use prop on parent and send it to child via slot props -->
-  <List hide-prepend hide-append v-slot="props">
-    <ListItem v-bind="props">Item 3</ListItem>
-    <ListItem v-bind="props">Item 4</ListItem>
-  </List>
+  <VList hide-prepend hide-append v-slot="props">
+    <VListItem v-bind="props">Item 3</VListItem>
+    <VListItem v-bind="props">Item 4</VListItem>
+  </VList>
 </template>
 ```
 
@@ -128,9 +118,11 @@ import {List, ListItem} from '@gits-id/ui';
 
 ### Hide Text
 
+The `VList` component allows you to hide the text of a `VListItem`. You can use the `hide-text` prop on a `VListItem` to hide the text. This can be useful for displaying icons only, for example.
+
 ```vue
 <script setup lang="ts">
-import {List, ListItem} from '@gits-id/ui';
+import {VList, VListItem} from '@gits-id/ui';
 import {ref} from 'vue';
 import VBtn from '@gits-id/button';
 
@@ -141,14 +133,14 @@ const hideText = ref(true);
   <VBtn @click="hideText = !hideText">
     {{ hideText ? 'Show' : 'Hide' }} Text
   </VBtn>
-  <List class="mt-4">
-    <ListItem :hide-text="hideText" prepend-icon="ri:home-2-line" hide-append>
+  <VList class="mt-4">
+    <VListItem :hide-text="hideText" prepend-icon="ri:home-2-line" hide-append>
       Item 1
-    </ListItem>
-    <ListItem :hide-text="hideText" prepend-icon="ri:user-line" hide-append>
+    </VListItem>
+    <VListItem :hide-text="hideText" prepend-icon="ri:user-line" hide-append>
       Item 2
-    </ListItem>
-  </List>
+    </VListItem>
+  </VList>
 </template>
 ```
 
@@ -156,31 +148,31 @@ const hideText = ref(true);
 
 ### Two Line
 
-```vue
-<script setup lang="ts">
-import {List, ListItem} from '@gits-id/ui';
-</script>
+To display a list with two lines per list item, you can nest elements inside the `VListItem` component:
 
+```vue
 <template>
-  <List>
-    <ListItem>
+  <VList>
+    <VListItem>
+      <!-- main line -->
       <div>Item 1</div>
+      <!-- sub line -->
       <div class="text-sm text-gray-500">Sub Item 1</div>
-    </ListItem>
-    <ListItem>
+    </VListItem>
+    <VListItem>
       <div>Item 2</div>
       <div class="text-sm text-gray-500">Sub Item 2</div>
-    </ListItem>
-    <ListItemDivider />
-    <ListItem>
+    </VListItem>
+    <VListItemDivider />
+    <VListItem>
       <div>Item 3</div>
       <div class="text-sm text-gray-500">Sub Item 3</div>
-    </ListItem>
-    <ListItem>
+    </VListItem>
+    <VListItem>
       <div>Item 4</div>
       <div class="text-sm text-gray-500">Sub Item 4</div>
-    </ListItem>
-  </List>
+    </VListItem>
+  </VList>
 </template>
 ```
 
@@ -188,35 +180,36 @@ import {List, ListItem} from '@gits-id/ui';
 
 ### Three Line
 
-```vue
-<script setup lang="ts">
-import {List, ListItem} from '@gits-id/ui';
-</script>
+To display a list with three lines per list item, you can nest additional elements inside the `VListItem` component:
 
+```vue
 <template>
-  <List>
-    <ListItem>
+  <VList>
+    <VListItem>
+      <!-- main line -->
       <div>Item 1</div>
+      <!-- sub line -->
       <div class="text-sm text-gray-500">Sub Item 1</div>
+      <!-- additional line -->
       <p class="text-xs text-gray-700 mt-1">Lorem ipsum dolor sit amet</p>
-    </ListItem>
-    <ListItem>
+    </VListItem>
+    <VListItem>
       <div>Item 2</div>
       <div class="text-sm text-gray-500">Sub Item 2</div>
       <p class="text-xs text-gray-700 mt-1">Lorem ipsum dolor sit amet</p>
-    </ListItem>
-    <ListItemDivider />
-    <ListItem>
+    </VListItem>
+    <VListItemDivider />
+    <VListItem>
       <div>Item 3</div>
       <div class="text-sm text-gray-500">Sub Item 3</div>
       <p class="text-xs text-gray-700 mt-1">Lorem ipsum dolor sit amet</p>
-    </ListItem>
-    <ListItem>
+    </VListItem>
+    <VListItem>
       <div>Item 4</div>
       <div class="text-sm text-gray-500">Sub Item 4</div>
       <p class="text-xs text-gray-700 mt-1">Lorem ipsum dolor sit amet</p>
-    </ListItem>
-  </List>
+    </VListItem>
+  </VList>
 </template>
 ```
 
@@ -224,18 +217,16 @@ import {List, ListItem} from '@gits-id/ui';
 
 ### Link
 
-```vue
-<script setup lang="ts">
-import {List, ListItem} from '@gits-id/ui';
-</script>
+You can use the `to` prop on a `VListItem` to make it a router link, or the `href` prop to make it a regular link:
 
+```vue
 <template>
-  <List>
-    <ListItem to="/">Home</ListItem>
-    <ListItem to="/profile">Profile</ListItem>
-    <ListItem href="/settings">Settings</ListItem>
-    <ListItem href="/logout">Logout</ListItem>
-  </List>
+  <VList>
+    <VListItem to="/">Home</VListItem>
+    <VListItem to="/profile">Profile</VListItem>
+    <VListItem href="/settings">Settings</VListItem>
+    <VListItem href="/logout">Logout</VListItem>
+  </VList>
 </template>
 ```
 
@@ -243,14 +234,12 @@ import {List, ListItem} from '@gits-id/ui';
 
 ### Slots
 
-```vue
-<script setup lang="ts">
-import {List, ListItem} from '@gits-id/ui';
-</script>
+The `VListItem` component has `prepend` and `append` slots that allow you to insert custom content at the beginning and end of each list item:
 
+```vue
 <template>
-  <List>
-    <ListItem>
+  <VList>
+    <VListItem>
       <template #prepend>
         <div class="text-cyan-500">prepend</div>
       </template>
@@ -259,8 +248,8 @@ import {List, ListItem} from '@gits-id/ui';
       </template>
 
       default slot
-    </ListItem>
-  </List>
+    </VListItem>
+  </VList>
 </template>
 ```
 
@@ -268,26 +257,24 @@ import {List, ListItem} from '@gits-id/ui';
 
 ### Icons
 
-```vue
-<script setup lang="ts">
-import {List, ListItem} from '@gits-id/ui';
-</script>
+You can use the `prepend-icon` and `append-icon` props to add icons to your list items. The value for these props should be the name of the icon in the [Icones](https://icones.js.org/) icon set.
 
+```vue
 <template>
-  <List>
-    <ListItem prepend-icon="ri:user-line"> Item 1 </ListItem>
-    <ListItem prepend-icon="ri:search-line"> Item 2 </ListItem>
-    <ListItemDivider />
-    <ListItem append-icon="ri:search-line"> Item 3 </ListItem>
-    <ListItem append-icon="ri:search-line"> Item 4 </ListItem>
-    <ListItemDivider />
-    <ListItem prepend-icon="ri:home-line" append-icon="ri:search-line">
+  <VList>
+    <VListItem prepend-icon="ri:user-line"> Item 1 </VListItem>
+    <VListItem prepend-icon="ri:search-line"> Item 2 </VListItem>
+    <VListItemDivider />
+    <VListItem append-icon="ri:search-line"> Item 3 </VListItem>
+    <VListItem append-icon="ri:search-line"> Item 4 </VListItem>
+    <VListItemDivider />
+    <VListItem prepend-icon="ri:home-line" append-icon="ri:search-line">
       Item 5
-    </ListItem>
-    <ListItem prepend-icon="ri:user-line" append-icon="ri:arrow-downs-line">
+    </VListItem>
+    <VListItem prepend-icon="ri:user-line" append-icon="ri:arrow-downs-line">
       Item 6
-    </ListItem>
-  </List>
+    </VListItem>
+  </VList>
 </template>
 ```
 
@@ -295,26 +282,24 @@ import {List, ListItem} from '@gits-id/ui';
 
 ### Header
 
-```vue
-<script setup lang="ts">
-import {List, ListItem, ListItemHeader} from '@gits-id/ui';
-</script>
+You can use the `VListItemHeader` component to add header to the list.
 
+```vue
 <template>
-  <List>
-    <ListItem prepend-icon="ri:user-line"> Home </ListItem>
-    <ListItem prepend-icon="ri:search-line"> User Management </ListItem>
-    <List class="mt-2">
-      <ListItemHeader prepend-icon="ri:search-line"> Blog </ListItemHeader>
-      <ListItem prepend-icon="ri:user-line"> Add New Post </ListItem>
-      <ListItem prepend-icon="ri:user-line"> View Comments </ListItem>
-    </List>
-    <List class="mt-2">
-      <ListItemHeader prepend-icon="ri:user-line"> Shop </ListItemHeader>
-      <ListItem prepend-icon="ri:user-line"> View Dashboard </ListItem>
-      <ListItem prepend-icon="ri:user-line"> Sales </ListItem>
-    </List>
-  </List>
+  <VList>
+    <VListItem prepend-icon="ri:user-line"> Home </VListItem>
+    <VListItem prepend-icon="ri:search-line"> User Management </VListItem>
+    <VList class="mt-2">
+      <VListItemHeader prepend-icon="ri:search-line"> Blog </VListItemHeader>
+      <VListItem prepend-icon="ri:user-line"> Add New Post </VListItem>
+      <VListItem prepend-icon="ri:user-line"> View Comments </VListItem>
+    </VList>
+    <VList class="mt-2">
+      <VListItemHeader prepend-icon="ri:user-line"> Shop </VListItemHeader>
+      <VListItem prepend-icon="ri:user-line"> View Dashboard </VListItem>
+      <VListItem prepend-icon="ri:user-line"> Sales </VListItem>
+    </VList>
+  </VList>
 </template>
 ```
 
@@ -322,57 +307,66 @@ import {List, ListItem, ListItemHeader} from '@gits-id/ui';
 
 ### Collapse
 
-```vue
-<script setup lang="ts">
-import {List, ListItem, ListCollapse} from '@gits-id/ui';
-</script>
+You can use the `VListCollapse` component to add collapsible list.
 
+<LivePreview src="components-list--collapse" />
+
+<details>
+  <summary>View Code</summary>
+
+```vue
 <template>
-  <List>
-    <ListItem prepend-icon="ri:home-2-line"> Home </ListItem>
-    <ListCollapse>
+  <VList>
+    <VListItem prepend-icon="ri:home-2-line"> Home </VListItem>
+    <VListCollapse>
       <template #activator="{isOpen, toggle}">
-        <ListItem
+        <VListItem
           prepend-icon="ri:book-line"
           append-icon="ri:arrow-down-s-line"
           :append-icon-class="isOpen ? 'rotate-180' : ''"
           @click="toggle"
         >
           Blog
-        </ListItem>
+        </VListItem>
       </template>
-      <List>
-        <ListItem> Add New Post </ListItem>
-        <ListItem> View Comments </ListItem>
-      </List>
-    </ListCollapse>
-    <ListCollapse>
+      <VList>
+        <VListItem> Add New Post </VListItem>
+        <VListItem> View Comments </VListItem>
+      </VList>
+    </VListCollapse>
+    <VListCollapse>
       <template #activator="{isOpen, toggle}">
-        <ListItem
+        <VListItem
           prepend-icon="ri:user-line"
           append-icon="ri:arrow-down-s-line"
           :append-icon-class="isOpen ? 'rotate-180' : ''"
           @click="toggle"
         >
           Shop
-        </ListItem>
+        </VListItem>
       </template>
-      <List>
-        <ListItem> View Dashboard </ListItem>
-        <ListItem> Sales </ListItem>
-      </List>
-    </ListCollapse>
-  </List>
+      <VList>
+        <VListItem> View Dashboard </VListItem>
+        <VListItem> Sales </VListItem>
+      </VList>
+    </VListCollapse>
+  </VList>
 </template>
 ```
 
-<LivePreview src="components-list--collapse" />
+</details>
 
 ### Image
 
+You can place image to the list using `prepend` slot in the `VListItem` component.
+
+<LivePreview src="components-list--image" />
+
+<details>
+  <summary>View Code</summary>
+
 ```vue
 <script setup lang="ts">
-import {List, ListItem, ListItemHeader} from '@gits-id/ui';
 import {ref} from 'vue';
 
 const users = ref([
@@ -398,9 +392,9 @@ const users = ref([
 </script>
 
 <template>
-  <List>
-    <ListItemHeader class="font-semibold">Teams</ListItemHeader>
-    <ListItem
+  <VList>
+    <VListItemHeader class="font-semibold">Teams</VListItemHeader>
+    <VListItem
       v-for="(user, idx) in users"
       :key="idx"
       append-icon="ri:phone-line"
@@ -421,18 +415,25 @@ const users = ref([
       <p class="text-sm text-gray-500">
         {{ user.email }}
       </p>
-    </ListItem>
-  </List>
+    </VListItem>
+  </VList>
 </template>
 ```
 
-<LivePreview src="components-list--image" />
+</details>
 
-### Navigation Drawer List
+### Navigation Drawer VList
+
+This example shows how to use `VList` inside `VNavDrawer` component to create sidebar navigation component.
+
+<LivePreview src="components-list--nav-drawer-list" />
+
+<details>
+  <summary>View Code</summary>
 
 ```vue
 <script setup lang="ts">
-import {List, ListItem, ListCollapse, VNavDrawer} from '@gits-id/ui';
+import {VList, VListItem, VListCollapse, VNavDrawer} from '@gits-id/ui';
 import {ref} from 'vue';
 
 const isOpen = ref(false);
@@ -497,11 +498,11 @@ const menus = ref([
       <div class="text-center font-semibold">GITS</div>
     </template>
     <template #menus>
-      <List>
+      <VList>
         <template v-for="menu in menus" :key="menu.text">
-          <ListCollapse v-if="menu.items">
+          <VListCollapse v-if="menu.items">
             <template #activator="{isOpen, toggle}">
-              <ListItem
+              <VListItem
                 v-bind="menu"
                 :class="isMini ? 'justify-center' : ''"
                 :hide-text="isMini"
@@ -511,10 +512,10 @@ const menus = ref([
                 @click="toggle"
               >
                 {{ menu.title }}
-              </ListItem>
+              </VListItem>
             </template>
-            <List>
-              <ListItem
+            <VList>
+              <VListItem
                 v-for="child in menu.items"
                 :key="child.text"
                 v-bind="child"
@@ -523,10 +524,10 @@ const menus = ref([
                 :hide-append="isMini"
               >
                 {{ child.title }}
-              </ListItem>
-            </List>
-          </ListCollapse>
-          <ListItem
+              </VListItem>
+            </VList>
+          </VListCollapse>
+          <VListItem
             v-else
             v-bind="menu"
             :class="isMini ? 'justify-center' : ''"
@@ -534,26 +535,29 @@ const menus = ref([
             :hide-append="isMini"
           >
             {{ menu.title }}
-          </ListItem>
+          </VListItem>
         </template>
-      </List>
+      </VList>
     </template>
   </v-nav-drawer>
 </template>
 ```
 
-<LivePreview src="components-list--nav-drawer-list" />
+</details>
 
 ### IOS Settings
 
-```vue
-<script setup lang="ts">
-import {List, ListItem} from '@gits-id/ui';
-</script>
+This example shows how to create IOS Settings menu using `VList` component.
 
+<LivePreview src="components-list--ios-settings" />
+
+<details>
+  <summary>View Code</summary>
+
+```vue
 <template>
-  <List class="border rounded-xl">
-    <ListItem
+  <VList class="border rounded-xl">
+    <VListItem
       hover
       tile
       append-icon="ri:arrow-right-s-line"
@@ -573,10 +577,10 @@ import {List, ListItem} from '@gits-id/ui';
           Apple ID, iCloud+, Media & Purchases
         </p>
       </div>
-    </ListItem>
-  </List>
-  <List class="border rounded-xl mt-6 divide divide-y">
-    <ListItem
+    </VListItem>
+  </VList>
+  <VList class="border rounded-xl mt-6 divide divide-y">
+    <VListItem
       hover
       tile
       prepend-icon="ion:ios-airplane"
@@ -585,8 +589,8 @@ import {List, ListItem} from '@gits-id/ui';
       append-icon-class="text-gray-500"
     >
       Airplane Mode
-    </ListItem>
-    <ListItem
+    </VListItem>
+    <VListItem
       hover
       tile
       prepend-icon="ic:outline-wifi"
@@ -597,8 +601,8 @@ import {List, ListItem} from '@gits-id/ui';
       append-text-class="text-sm text-gray-800"
     >
       Wifi
-    </ListItem>
-    <ListItem
+    </VListItem>
+    <VListItem
       hover
       tile
       prepend-icon="ri:bluetooth-line"
@@ -609,8 +613,8 @@ import {List, ListItem} from '@gits-id/ui';
       append-text-class="text-sm text-gray-800"
     >
       Bluetooth
-    </ListItem>
-    <ListItem
+    </VListItem>
+    <VListItem
       hover
       tile
       prepend-icon="ic:sharp-cell-tower"
@@ -619,8 +623,8 @@ import {List, ListItem} from '@gits-id/ui';
       append-icon-class="text-gray-500"
     >
       Cellular
-    </ListItem>
-    <ListItem
+    </VListItem>
+    <VListItem
       hover
       tile
       prepend-icon="ri:hotspot-line"
@@ -629,8 +633,8 @@ import {List, ListItem} from '@gits-id/ui';
       append-icon-class="text-gray-500"
     >
       Personal Hotspot
-    </ListItem>
-    <ListItem
+    </VListItem>
+    <VListItem
       hover
       tile
       prepend-icon="material-symbols:vpn-lock"
@@ -639,24 +643,27 @@ import {List, ListItem} from '@gits-id/ui';
       append-icon-class="text-gray-500"
     >
       VPN
-    </ListItem>
-  </List>
+    </VListItem>
+  </VList>
 </template>
 ```
 
-<LivePreview src="components-list--ios-settings" />
+</details>
 
 ### Dropdown
 
-```vue
-<script setup lang="ts">
-import {List, ListItem, Dropdown} from '@gits-id/ui';
-</script>
+This example shows how to use `VList` component in the dropdown component.
 
+<LivePreview src="components-list--list-in-dropdown" />
+
+<details>
+  <summary>View Code</summary>
+
+```vue
 <template>
-  <Dropdown label="Dropdown" panel-class="p-0">
-    <List>
-      <ListItem
+  <VDropdown label="Dropdown" panel-class="p-0">
+    <VList>
+      <VListItem
         hover
         tile
         append-icon="ri:arrow-right-s-line"
@@ -676,10 +683,10 @@ import {List, ListItem, Dropdown} from '@gits-id/ui';
             Apple ID, iCloud+, Media & Purchases
           </p>
         </div>
-      </ListItem>
-    </List>
-    <List class="mt-6 divide divide-y border-t">
-      <ListItem
+      </VListItem>
+    </VList>
+    <VList class="mt-6 divide divide-y border-t">
+      <VListItem
         hover
         tile
         prepend-icon="ion:ios-airplane"
@@ -688,8 +695,8 @@ import {List, ListItem, Dropdown} from '@gits-id/ui';
         append-icon-class="text-gray-500"
       >
         Airplane Mode
-      </ListItem>
-      <ListItem
+      </VListItem>
+      <VListItem
         hover
         tile
         prepend-icon="ic:outline-wifi"
@@ -700,8 +707,8 @@ import {List, ListItem, Dropdown} from '@gits-id/ui';
         append-text-class="text-sm text-gray-800"
       >
         Wifi
-      </ListItem>
-      <ListItem
+      </VListItem>
+      <VListItem
         hover
         tile
         prepend-icon="ri:bluetooth-line"
@@ -712,8 +719,8 @@ import {List, ListItem, Dropdown} from '@gits-id/ui';
         append-text-class="text-sm text-gray-800"
       >
         Bluetooth
-      </ListItem>
-      <ListItem
+      </VListItem>
+      <VListItem
         hover
         tile
         prepend-icon="ic:sharp-cell-tower"
@@ -722,8 +729,8 @@ import {List, ListItem, Dropdown} from '@gits-id/ui';
         append-icon-class="text-gray-500"
       >
         Cellular
-      </ListItem>
-      <ListItem
+      </VListItem>
+      <VListItem
         hover
         tile
         prepend-icon="ri:hotspot-line"
@@ -732,8 +739,8 @@ import {List, ListItem, Dropdown} from '@gits-id/ui';
         append-icon-class="text-gray-500"
       >
         Personal Hotspot
-      </ListItem>
-      <ListItem
+      </VListItem>
+      <VListItem
         hover
         tile
         prepend-icon="material-symbols:vpn-lock"
@@ -742,155 +749,251 @@ import {List, ListItem, Dropdown} from '@gits-id/ui';
         append-icon-class="text-gray-500"
       >
         VPN
-      </ListItem>
-    </List>
-  </Dropdown>
+      </VListItem>
+    </VList>
+  </VDropdown>
 </template>
 ```
 
-<LivePreview src="components-list--list-in-dropdown" />
+</details>
 
 ### Event
 
+This example demonstrates how to use events in the `VList` component. It shows examples of how to listen for clicks on the `prepend` and `append` icons, the prepend and append icon wrapper areas, and the append text. When one of these elements is clicked, a message is displayed using the `showMessage` function.
+
+<LivePreview src="components-list--event" />
+
+<details>
+  <summary>View Code</summary>
+
 ```vue
 <script setup lang="ts">
-import {List, ListItem} from '@gits-id/ui';
-
 const showMessage = (message: string) => alert(`Clicked: ${message}`);
 </script>
 
 <template>
-  <List>
-    <ListItem
+  <VList>
+    <VListItem
       prepend-icon="ri:home-2-line"
       @click:prependIcon="showMessage('prependIcon')"
     >
       Click on the icon
-    </ListItem>
-    <ListItem
+    </VListItem>
+    <VListItem
       append-icon="ri:user-line"
       @click:appendIcon="showMessage('appendIcon')"
     >
       Click on the icon
-    </ListItem>
-    <ListItem
+    </VListItem>
+    <VListItem
       prepend-class="p-1 rounded bg-cyan-500"
       prepend-icon="ri:home-2-line"
       @click:prepend="showMessage('prepend')"
     >
       Click on the icon wrapper area
-    </ListItem>
-    <ListItem
+    </VListItem>
+    <VListItem
       append-class="p-1 rounded bg-sky-500"
       append-icon="ri:user-line"
       @click:append="showMessage('append')"
     >
       Click on the icon wrapper area
-    </ListItem>
-    <ListItem
+    </VListItem>
+    <VListItem
       append-icon="ri:arrow-right-s-line"
       append-text="Click me"
       append-text-class="hover:underline"
       @click:appendText="showMessage('appendText')"
     >
       Click on the append text
-    </ListItem>
-  </List>
+    </VListItem>
+  </VList>
 </template>
 ```
 
-<LivePreview src="components-list--event" />
+</details>
 
 ## Props
 
-### `List`
+### `VList`
 
-| Name                          | Type      | Default |
-| ----------------------------- | --------- | ------- |
-| [`hideAppend`](#hideAppend)   | `boolean` | `false` |
-| [`hidePrepend`](#hidePrepend) | `boolean` | `false` |
+| Property      | Type      | Description                                        |
+| ------------- | --------- | -------------------------------------------------- |
+| `hidePrepend` | `boolean` | Whether to hide the prepend element.               |
+| `hideAppend`  | `boolean` | Whether to hide the append element.                |
+| `shaped`      | `boolean` | Whether to apply shaped styling to the list item.  |
+| `rounded`     | `boolean` | Whether to apply rounded styling to the list item. |
+| `tile`        | `boolean` | Whether to apply tile styling to the list item.    |
+| `hover`       | `boolean` | Whether to apply hover styling to the list item.   |
+| `flush`       | `boolean` | Whether to remove the border between list items.   |
+| `dense`       | `boolean` | Whether to reduce the padding on the list item.    |
+| `small`       | `boolean` | Whether to apply small styling to the list item.   |
 
-### `ListItem`
+### `VListItem`
 
-| Name                                    | Type                      | Default                                  |
-| --------------------------------------- | ------------------------- | ---------------------------------------- |
-| [`to`](#to)                             | `string \| RouteLocation` | `undefined`                              |
-| [`href`](#href)                         | string                    | `undefined`                              |
-| [`as`](#as)                             | any                       | `undefined`                              |
-| [`defaultClass`](#defaultClass)         | string                    | `select-none truncate whitespace-nowrap` |
-| [`prependClass`](#prependClass)         | string                    | `w-auto shrink-0`                        |
-| [`prependIcon`](#prependIcon)           | string                    | `''`                                     |
-| [`prependIconClass`](#prependIconClass) | string                    | `''`                                     |
-| [`appendClass`](#appendClass)           | string                    | `w-auto shrink-0`                        |
-| [`appendIcon`](#appendIcon)             | string                    | `''`                                     |
-| [`appendIconClass`](#appendIconClass)   | string                    | `''`                                     |
-| [`hidePrepend`](#hidePrepend)           | boolean                   | `false`                                  |
-| [`hideAppend`](#hideAppend)             | boolean                   | `false`                                  |
-| [`hover`](#hover)                       | boolean                   | `false`                                  |
-| [`hoverClass`](#hoverClass)             | string                    | `hover:bg-gray-100`                      |
-| [`shaped`](#shaped)                     | boolean                   | `false`                                  |
-| [`shapedClass`](#shapedClass)           | string                    | `rounded-r-full`                         |
-| [`rounded`](#rounded)                   | boolean                   | `false`                                  |
-| [`hideText`](#hideText)                 | boolean                   | `false`                                  |
-| [`appendText`](#appendText)             | string                    | `''`                                     |
-| [`appendTextClass`](#appendTextClass)   | string                    | `false`                                  |
-| [`tile`](#tile)                         | boolean                   | `false`                                  |
-
-## Methods
-
-None
+| Name                                    | Type                      | Default               |
+| --------------------------------------- | ------------------------- | --------------------- |
+| [`to`](#to)                             | `string \| RouteLocation` | `undefined`           |
+| [`href`](#href)                         | string                    | `undefined`           |
+| [`as`](#as)                             | any                       | `undefined`           |
+| [`defaultClass`](#defaultClass)         | string                    | ``                    |
+| [`prependClass`](#prependClass)         | string                    | ``                    |
+| [`prependIcon`](#prependIcon)           | string                    | `''`                  |
+| [`prependIconClass`](#prependIconClass) | string                    | `''`                  |
+| [`appendClass`](#appendClass)           | string                    | ``                    |
+| [`appendIcon`](#appendIcon)             | string                    | `''`                  |
+| [`appendIconClass`](#appendIconClass)   | string                    | `''`                  |
+| [`hidePrepend`](#hidePrepend)           | boolean                   | `false`               |
+| [`hideAppend`](#hideAppend)             | boolean                   | `false`               |
+| [`hover`](#hover)                       | boolean                   | `false`               |
+| [`hoverClass`](#hoverClass)             | string                    | `v-list-item--hover`  |
+| [`shaped`](#shaped)                     | boolean                   | `false`               |
+| [`shapedClass`](#shapedClass)           | string                    | `v-list-item--shaped` |
+| [`rounded`](#rounded)                   | boolean                   | `false`               |
+| [`hideText`](#hideText)                 | boolean                   | `false`               |
+| [`appendText`](#appendText)             | string                    | `''`                  |
+| [`appendTextClass`](#appendTextClass)   | string                    | `false`               |
+| [`tile`](#tile)                         | boolean                   | `false`               |
 
 ## Events
 
-### `ListItem`
+### `VList`
 
-- `(e: 'click:prepend'): void`
+None.
 
-- `(e: 'click:prependIcon'): void`
+### `VListItem`
 
-- `(e: 'click:append'): void`
+| Event                            | Description                                                               |
+| -------------------------------- | ------------------------------------------------------------------------- |
+| `(e: 'click:prepend'): void`     | Emitted when the element wrapped around the `prepend` slot is clicked.    |
+| `(e: 'click:prependIcon'): void` | Emitted when the `prependIcon` element is clicked.                        |
+| `(e: 'click:append'): void`      | Emitted when the element wrapped around the `append` slot is clicked.     |
+| `(e: 'click:appendIcon'): void`  | Emitted when the `appendIcon` element is clicked.                         |
+| `(e: 'click:appendText'): void`  | Emitted when the element wrapped around the `appendText` slot is clicked. |
 
-- `(e: 'click:appendIcon'): void`
-
-- `(e: 'click:appendText'): void`
-
-## Slots
-
-#### `ListItem`
-
-- `prepend`
-
-- `prepend.icon`
-
-- `default`
-
-- `append`
-
-- `append.icon`
-
-- `append.text`
-
-## CSS Variables
-
-None
-
-## Manual Installation
-
-You can also install the `List` component individually via `@gits-id/list` package:
-
-```bash
-yarn install @gits-id/list
-```
+Here is example of listening event in `VListItem` component:
 
 ```vue
 <script setup lang="ts">
-import {List, ListItem} from '@gits-id/list';
+function handleClickPrepend() {
+  // handle click event on prepend slot
+}
 </script>
 
 <template>
-  <List>
-    <ListItem prepend-icon="ic:round-home"> Text </ListItem>
-  </List>
+  <VList>
+    <VListItem @click:prepend="handleClickPrepend">
+      <template #prepend>
+        <div class="text-cyan-500">prepend</div>
+      </template>
+    </VListItem>
+  </VList>
+</template>
+```
+
+## Slots
+
+| Event          | Description                                                      |
+| -------------- | ---------------------------------------------------------------- |
+| `prepend`      | Slot for custom content to be displayed before the main content. |
+| `prepend.icon` | Slot for a custom icon to be displayed before the main content.  |
+| `default`      | The default slot for the main content.                           |
+| `append`       | Slot for custom content to be displayed after the main content.  |
+| `append.icon`  | Slot for a custom icon to be displayed after the main content.   |
+| `append.text`  | Slot for custom text to be displayed after the main content.     |
+
+Here is example of using slot in `VListItem` component:
+
+```vue
+<template>
+  <VList>
+    <VListItem>
+      <template #prepend>
+        <div class="text-cyan-500">prepend</div>
+      </template>
+    </VListItem>
+  </VList>
+</template>
+```
+
+## CSS Variables
+
+```scss
+:root {
+  --v-list-padding-y: theme('padding.1');
+  --v-list-padding-x: theme('padding.1');
+  --v-list-gap: theme('gap.0');
+  --v-list-bg-color: theme('colors.transparent');
+
+  /* item */
+  --v-list-item-bg-color: theme('colors.transparent');
+  --v-list-item-color: inherit;
+  --v-list-item-padding-y: theme('padding.2');
+  --v-list-item-padding-x: theme('padding.3');
+  --v-list-item-border-radius: theme('borderRadius.DEFAULT');
+  --v-list-item-border-width: theme('borderWidth.DEFAULT');
+  --v-list-item-border-color: theme('colors.transparent');
+  --v-list-item-border-style: solid;
+  --v-list-item-gap: theme('gap.4');
+  --v-list-item-font-size: theme('fontSize.base');
+  --v-list-item-font-weight: theme('fontWeight.normal');
+  --v-list-item-line-height: theme('lineHeight.normal');
+  --v-list-item-text-align: left;
+
+  /* item hover */
+  --v-list-item-hover-bg-color: theme('colors.gray.100');
+  --v-list-item-hover-color: theme('colors.gray.700');
+
+  /* append & prepend */
+  --v-list-item-append-prepend-min-width: theme('width.5');
+
+  /* item header */
+  --v-list-item-header-bg-color: var(--v-list-item-bg-color);
+  --v-list-item-header-color: theme('colors.gray.500');
+  --v-list-item-header-padding-y: theme('padding.1');
+  --v-list-item-header-padding-x: var(--v-list-item-padding-x);
+  --v-list-item-header-border-radius: var(--v-list-item-border-radius);
+  --v-list-item-header-border-width: var(--v-list-item-border-width);
+  --v-list-item-header-border-color: var(--v-list-item-border-color);
+  --v-list-item-header-border-style: var(--v-list-item-border-style);
+  --v-list-item-header-gap: var(--v-list-item-gap);
+  --v-list-item-header-font-size: theme('fontSize.sm');
+  --v-list-item-header-font-weight: var(--v-list-item-font-weight);
+  --v-list-item-header-line-height: var(--v-list-item-line-height);
+  --v-list-item-header-text-transform: uppercase;
+  --v-list-item-header-text-align: var(--v-list-item-text-align);
+
+  /* divider */
+  --v-list-item-divider-width: theme('borderWidth.DEFAULT');
+  --v-list-item-divider-color: theme('colors.gray.200');
+  --v-list-item-divider-style: solid;
+}
+```
+
+View full styles [here](https://github.com/gitsindonesia/ui-component/blob/main/packages/list/src/List.scss).
+
+## Manual Installation
+
+You can also install the `VList` component individually via `@gits-id/list` package:
+
+```bash
+npm i @gits-id/list
+```
+
+Then, use it in the template like so:
+
+```vue
+<script setup lang="ts">
+import {VList, VListItem} from '@gits-id/list';
+import '@gits-id/list/dist/style.css';
+// Or use the SCSS styles
+import '@gits-id/list/src/List.scss';
+</script>
+
+<template>
+  <VList>
+    <VListItem prepend-icon="ic:round-home"> Text </VListItem>
+  </VList>
 </template>
 ```
 
