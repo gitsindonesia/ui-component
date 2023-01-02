@@ -1,8 +1,12 @@
 # Input Range
 
+The `VInputRange` component is a Vue.js component that allows users to select a range within a specific minimum and maximum value.
+
 ## Usage
 
 ### Basic Usage
+
+To use the `VInputRange` component, simply add the following template code:
 
 ```vue
 <template>
@@ -11,6 +15,8 @@
 </template>
 ```
 
+This will display a default `VInputRange` component on the page.
+
 <LivePreview src="forms-inputrange--default" height="100" />
 
 ::: info
@@ -18,6 +24,8 @@ The `VInputRange` component is registered globally when you install with `@gits-
 :::
 
 ### With Input
+
+You can also display an input field alongside the `VInputRange` component by adding the `show-input` prop:
 
 ```vue
 <template>
@@ -28,6 +36,8 @@ The `VInputRange` component is registered globally when you install with `@gits-
 <LivePreview src="forms-inputrange--with-input" height="150" />
 
 ### Validation
+
+This example demonstrates how to use the `VInputRange` component with form validation using the `vee-validate` library.
 
 ```vue
 <script setup lang="ts">
@@ -73,6 +83,12 @@ const onSubmit = handleSubmit((values, ctx) => {
 </template>
 ```
 
+The `validationSchema` object specifies the validation rules for the form. In this case, the `score` field is required and must have a minimum value of 25 and a maximum value of 75. The `initialValues` object specifies the initial values for the form inputs.
+
+The `handleSubmit` function handles form submission and the `resetForm` function resets the form to its initial values. The `onSubmit` function is called when the form is submitted and displays an alert with the values of the form inputs as a string.
+
+The errors and values objects contain the validation errors and form input values, respectively, as determined by the `vee-validate` library. These objects are displayed in the pre element for debugging purposes.
+
 <LivePreview src="forms-inputrange--validation" height="510" />
 
 ## Props
@@ -91,23 +107,37 @@ const onSubmit = handleSubmit((values, ctx) => {
 | [`label`](#label)               | `string`                        | `''`           |
 | [`labelClass`](#labelClass)     | `string`                        | `'block mb-1'` |
 
-## Methods
-
-None
-
 ## Events
 
 - `update:modelValue`
+
+The `update:modelValue` event is emitted by the VInputRange component whenever the model value (i.e., the selected range) changes. This event is emitted with the new model value as the argument.
+
+Here is an example of how to use the `update:modelValue` event:
+
+```vue
+<template>
+  <VInputRange @update:modelValue="onModelValueUpdate" />
+</template>
+
+<script>
+export default {
+  methods: {
+    onModelValueUpdate(newValue) {
+      console.log(`Model value updated: ${newValue}`);
+    },
+  },
+};
+</script>
+```
+
+In this example, the `onModelValueUpdate` method is called whenever the model value of the `VInputRange` component changes, and it logs the new model value to the console.
 
 ## Slots
 
 None
 
 ## CSS Variables
-
-None
-
-## Manual Installation
 
 None
 
