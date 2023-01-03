@@ -18,7 +18,7 @@ const source = computed(() => {
   return `https://gits-ui.web.app/iframe.html?args=&id=${props.src}&viewMode=story`;
 });
 
-const tabs = ref(['preview', ...(props.withCode ? ['code'] : [])]);
+const tabs = ref(['preview', 'code']);
 const selectedTab = ref('preview');
 </script>
 
