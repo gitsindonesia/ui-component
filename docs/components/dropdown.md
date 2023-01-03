@@ -12,6 +12,8 @@ You need to pass an array of items to the `items` prop to define the options tha
 
 You can also specify a `divider` property for an item to insert a horizontal line in the dropdown menu.
 
+<LivePreview src="components-dropdown--default" >
+
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
@@ -40,7 +42,7 @@ const items = ref([
 </template>
 ```
 
-<LivePreview src="components-dropdown--default" />
+</LivePreview>
 
 ::: info
 The `VDropdown` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
@@ -50,17 +52,21 @@ The `VDropdown` component is registered globally when you install with `@gits-id
 
 You can use the `right` align the dropdown menu to the top of the component activator.
 
+<LivePreview src="components-dropdown--right" >
+
 ```vue
 <template>
   <VDropdown right />
 </template>
 ```
 
-<LivePreview src="components-dropdown--right" />
+</LivePreview>
 
 ### Top Alignment
 
 You can use the `top` align the dropdown menu to the top of the component activator.
+
+<LivePreview src="components-dropdown--top" >
 
 ```vue
 <template>
@@ -68,11 +74,13 @@ You can use the `top` align the dropdown menu to the top of the component activa
 </template>
 ```
 
-<LivePreview src="components-dropdown--top" />
+</LivePreview>
 
 ### Router Link
 
 You can use the `to` property of an item to specify a Vue Router link that will be navigated to when the item is clicked.
+
+<LivePreview src="components-dropdown--router-link" >
 
 ```vue {7}
 <script setup lang="ts">
@@ -91,11 +99,13 @@ const items = ref([
 </template>
 ```
 
-<LivePreview src="components-dropdown--router-link" />
+</LivePreview>
 
 ### Href Link
 
 Alternatively, you can use the `href` property of an item to specify a regular URL that will be navigated to when the item is clicked.
+
+<LivePreview src="components-dropdown--href" >
 
 ```vue {7}
 <script setup lang="ts">
@@ -114,11 +124,13 @@ const items = ref([
 </template>
 ```
 
-<LivePreview src="components-dropdown--href" />
+</LivePreview>
 
 ### Slots
 
 You can also use slots to specify the items of the dropdown menu directly in the template, like this:
+
+<LivePreview src="components-dropdown--slots" >
 
 ```vue
 <script setup lang="ts">
@@ -135,11 +147,13 @@ import {VDropdown, VDropdownItem} from '@gits-id/dropdown';
 </template>
 ```
 
-<LivePreview src="components-dropdown--slots" />
+</LivePreview>
 
 ### Custom Activator
 
 You can use the `activator` slot to specify a custom element that will act as the activator for the dropdown menu. For example:
+
+<LivePreview src="components-dropdown--custom-activator" >
 
 ```vue
 <script setup lang="ts">
@@ -162,7 +176,7 @@ import {VDropdown, VDropdownItem, VBtn} from '@gits-id/ui';
 </template>
 ```
 
-<LivePreview src="components-dropdown--custom-activator" />
+</LivePreview>
 
 ## Props
 
