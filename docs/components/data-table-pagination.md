@@ -8,6 +8,8 @@ The `VDataTablePagination` component is a pagination component for use with data
 
 To use the `VDataTablePagination` component in its most basic form, you can include it in your template and bind it to a page number variable using the `v-model` directive. You also need to specify the `total-items` prop, which is the total number of items in your data set, and the `items-per-page` prop, which is the number of items to display per page.
 
+<LivePreview src="components-datatablepagination--default" >
+
 ```vue
 <script setup lang="ts">
 import {isOpen} from 'vue';
@@ -20,7 +22,7 @@ const page = ref(1);
 </template>
 ```
 
-<LivePreview src="components-datatablepagination--default" />
+</LivePreview>
 
 ::: info
 The `VDataTablePagination` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
@@ -29,6 +31,8 @@ The `VDataTablePagination` component is registered globally when you install wit
 ### Rows per page slot
 
 You can customize the rows per page dropdown by using the rowsPerPage slot. The slot provides the `value` and `items` data properties, which correspond to the currently selected rows per page value and the available rows per page options, respectively.
+
+<LivePreview src="components-datatablepagination--rows-per-page-slot" >
 
 ```vue
 <template>
@@ -44,11 +48,13 @@ You can customize the rows per page dropdown by using the rowsPerPage slot. The 
 </template>
 ```
 
-<LivePreview src="components-datatablepagination--rows-per-page-slot" />
+</LivePreview>
 
 ### Meta slot
 
 The meta slot allows you to customize the text displayed above the pagination controls. It provides several data properties including `showingText`, `start`, `end`, `fromText`, `totalItems`, and `dataText`.
+
+<LivePreview src="components-datatablepagination--meta-slot" >
 
 ```vue
 <template>
@@ -61,7 +67,7 @@ The meta slot allows you to customize the text displayed above the pagination co
 </template>
 ```
 
-<LivePreview src="components-datatablepagination--meta-slot" />
+</LivePreview>
 
 ## Props
 
