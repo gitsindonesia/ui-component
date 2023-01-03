@@ -1,10 +1,14 @@
 # Menus
 
-Menus component. Usefull to create navigation menus. Triggered on hover.
+The `VMenus` component is used for creating navigation menus that are triggered on click or hover.
 
 ## Usage
 
 ### Basic Usage
+
+To use the `VMenus` component, you can pass in an array of items as a prop and include the component in your template. Each item should have a `text` and a `to` field, like this:
+
+<LivePreview src="components-menus--default">
 
 ```vue
 <script setup lang="ts">
@@ -29,13 +33,17 @@ const items = [
 </template>
 ```
 
-<LivePreview src="components-menus--default" />
+</LivePreview>
 
 ::: info
 The `VMenus` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
-### Right
+### Right-Aligned Menus
+
+You can align the menu to the right by passing in the `right` prop:
+
+<LivePreview src="components-menus--right">
 
 ```vue
 <script setup lang="ts">
@@ -60,9 +68,13 @@ const items = [
 </template>
 ```
 
-<LivePreview src="components-menus--right" />
+</LivePreview>
 
-### Small
+### Small Menus
+
+To create a smaller version of the menu, pass in the `small` prop:
+
+<LivePreview src="components-menus--small">
 
 ```vue
 <script setup lang="ts">
@@ -87,9 +99,13 @@ const items = [
 </template>
 ```
 
-<LivePreview src="components-menus--small" />
+</LivePreview>
 
-### In `AppBar`
+### Menus in the `VAppBar` Component
+
+You can also use the `VMenus` component within the `VAppBar` component:
+
+<LivePreview src="components-menus--in-app-bar">
 
 ```vue
 <script setup lang="ts">
@@ -141,9 +157,13 @@ const items = [
 </template>
 ```
 
-<LivePreview src="components-menus--in-app-bar" />
+</LivePreview>
 
 ### Slots
+
+In addition to the `items` prop, the `VMenus` component also has a slot called `items` that you can use to define your menu items. For example:
+
+<LivePreview src="components-menus--slots">
 
 ```vue
 <template>
@@ -158,15 +178,46 @@ const items = [
 </template>
 ```
 
-<LivePreview src="components-menus--slots" />
+</LivePreview>
+
+You can also use slots to customize the appearance of the menu label and menu items. For example:
+
+```vue
+<template>
+  <VMenus label="Account">
+    <template #label>
+      <div class="font-bold text-xl text-gray-900">Account</div>
+    </template>
+    <template #items>
+      <VMenusItem prepend-icon="ri:user-line">
+        <template #label>
+          <div class="text-lg text-gray-800">Profile</div>
+        </template>
+      </VMenusItem>
+      <VMenusItem prepend-icon="ri:settings-line">
+        <template #label>
+          <div class="text-lg text-gray-800">Settings</div>
+        </template>
+      </VMenusItem>
+      <VMenusItem prepend-icon="ri:logout-box-line">
+        <template #label>
+          <div class="text-lg text-gray-800">Logout</div>
+        </template>
+      </VMenusItem>
+    </template>
+  </VMenus>
+</template>
+```
 
 ## Custom Style
 
-```vue
+You can also customize the menus style using `popper-class`, `items-class`, `items-style` and CSS Properties.
+
+<LivePreview src="components-menus--custom-style">
+
+```vue {10-15}
 <script setup lang="ts">
 import VAppBar from '@gits-id/app-bar';
-import VMenus from '../VMenus.vue';
-import VMenusItem from '../VMenusItem.vue';
 </script>
 
 <template>
@@ -247,7 +298,7 @@ import VMenusItem from '../VMenusItem.vue';
 </style>
 ```
 
-<LivePreview src="components-menus--custom-style" />
+</LivePreview>
 
 ## Props
 
@@ -280,19 +331,15 @@ export interface VMenuItem {
 - ~~propName~~ = deprecated
   :::
 
-## Methods
-
-None
-
 ## Events
 
 None
 
 ## Slots
 
-- [`default`](#default): used as menu activator.
+- [`default`](#default): used to place menu activator.
 
-```vue
+```vue {3}
 <template>
   <VMenus>
     <button>Account</button>
@@ -308,7 +355,7 @@ None
 
 - [`items`](#items): used to place menu items.
 
-```vue
+```vue {3-8}
 <template>
   <VMenus label="Account">
     <template #items>
@@ -381,6 +428,9 @@ pnpm add @gits-id/menus
 ```vue
 <script setup lang="ts">
 import VMenus from '@gits-id/menus';
+import '@gits-id/menus/dist/style.css';
+// or use SCSS styles
+// import '@gits-id/menus/src/VMenus.scss';
 </script>
 
 <template>

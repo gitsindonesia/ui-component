@@ -8,12 +8,11 @@ To use the `VMenu` component, you need to pass it an object that describes the s
 
 ```ts
 interface Menu {
-  text: string,
-  to?: string,
-  icon?: string,
-  children?: Menu[],
+  text: string;
+  to?: string;
+  icon?: string;
+  children?: Menu[];
 }
-
 ```
 
 - `text` is the label that will be displayed for the menu item.
@@ -24,8 +23,6 @@ interface Menu {
 ### Basic Usage
 
 Here is an example of how to use the `VMenu` component with a basic menu object:
-
-
 
 ```vue
 <script setup lang="ts">
@@ -188,7 +185,6 @@ const item = {
 | [`darkBgColor`](#darkBgColor)         | `String`                   | `''`                             |
 | [`classMenuParent`](#classMenuParent) | `String`                   | `'text-primary-500 bg-gray-700'` |
 | [`small`](#small)                     | `Boolean`                  | `false`                          |
-
 
 ## Events
 
