@@ -1,8 +1,12 @@
 # Logo
 
+The `VLogo` component a simple way to display GITS Logo.
+
 ## Usage
 
 ### Basic Usage
+
+To use the logo component, just use it in the template like so:
 
 ```vue
 <template>
@@ -19,6 +23,8 @@ The `VLogo` component is registered globally when you install with `@gits-id/ui`
 
 ### White
 
+Use `white` prop to display white version of Logo.
+
 ```vue
 <template>
   <VLogo white />
@@ -29,6 +35,8 @@ The `VLogo` component is registered globally when you install with `@gits-id/ui`
 
 ### Custom Class
 
+You can add custom class to the image via `img-class` prop.
+
 ```vue
 <template>
   <v-logo img-class="h-10" />
@@ -37,7 +45,19 @@ The `VLogo` component is registered globally when you install with `@gits-id/ui`
 
 <LivePreview src="components-logo--custom-class" height="100" />
 
+### Link
+
+You set link to the logo using `to` prop.
+
+```vue
+<template>
+  <v-logo to="/" />
+</template>
+```
+
 ### Sizes
+
+To change the size of logo, use `size` prop or just use `width` and/or `height` props.
 
 ```vue
 <script setup lang="ts">
@@ -64,10 +84,6 @@ const sizes = ['xxs', 'xs', 'sm', 'md', 'lg'];
 | [`width`](#width)       | `string \| number` | `undefined` |
 | [`height`](#height)     | `string \| number` | `undefined` |
 
-## Methods
-
-None
-
 ## Events
 
 None
@@ -85,12 +101,13 @@ None
 You can also install the `Logo` component individually via `@gits-id/logo` package:
 
 ```bash
-yarn install @gits-id/logo
+npm i @gits-id/logo
 ```
 
 ```vue
 <script setup lang="ts">
 import VLogo from '@gits-id/logo';
+import '@gits-id/logo/dist/style.css';
 </script>
 
 <template>
