@@ -10,6 +10,8 @@ To use the `VDataTable` component, you will need to provide it with an array of 
 
 Here is an example of basic usage of the `VDataTable` component:
 
+<LivePreview src="components-datatable--default">
+
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
@@ -47,7 +49,7 @@ const headers = ref<VDataTableHeader[]>([
 </template>
 ```
 
-<LivePreview src="components-datatable--default" />
+</LivePreview>
 
 ::: info
 The `VDataTable` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
@@ -57,13 +59,15 @@ The `VDataTable` component is registered globally when you install with `@gits-i
 
 To create a striped table, you can use the `striped` prop:
 
+<LivePreview src="components-datatable--striped" >
+
 ```vue
 <template>
   <VDataTable striped />
 </template>
 ```
 
-<LivePreview src="components-datatable--striped" />
+</LivePreview>
 
 This will add alternate background colors to each row of the table, giving it a striped appearance.
 
@@ -71,13 +75,15 @@ This will add alternate background colors to each row of the table, giving it a 
 
 To add a hover effect to the rows of the table, you can use the `hover` prop:
 
+<LivePreview src="components-datatable--hover" >
+
 ```vue
 <template>
   <VDataTable hover />
 </template>
 ```
 
-<LivePreview src="components-datatable--hover" />
+</LivePreview>
 
 This will change the background color of the row when the mouse pointer is hovering over it.
 
@@ -85,17 +91,21 @@ This will change the background color of the row when the mouse pointer is hover
 
 To remove the box shadow and border of the table, you can use the `flat` prop:
 
+<LivePreview src="components-datatable--flat">
+
 ```vue
 <template>
   <VDataTable flat />
 </template>
 ```
 
-<LivePreview src="components-datatable--flat" />
+</LivePreview>
 
 ### Bordered
 
 To add a border around the table, you can use the `bordered` prop:
+
+<LivePreview src="components-datatable--bordered" >
 
 ```vue
 <template>
@@ -103,11 +113,13 @@ To add a border around the table, you can use the `bordered` prop:
 </template>
 ```
 
-<LivePreview src="components-datatable--bordered" />
+</LivePreview>
 
 ### Tile
 
 To remove border radius of the table, you can use the `tile` prop:
+
+<LivePreview src="components-datatable--tile" >
 
 ```vue
 <template>
@@ -115,11 +127,13 @@ To remove border radius of the table, you can use the `tile` prop:
 </template>
 ```
 
-<LivePreview src="components-datatable--tile" />
+</LivePreview>
 
 ### Dense
 
 To make the rows of the table denser, you can use the `dense` prop:
+
+<LivePreview src="components-datatable--dense" >
 
 ```vue
 <template>
@@ -127,12 +141,14 @@ To make the rows of the table denser, you can use the `dense` prop:
 </template>
 ```
 
-<LivePreview src="components-datatable--dense" />
+</LivePreview>
 
 ### Loading
 
 To display a loading state for the table, you can use the `loading` prop.
 This will display a loading spinner and disable the table until the data is loaded.
+
+<LivePreview src="components-datatable--loading" >
 
 ```vue
 <template>
@@ -140,11 +156,13 @@ This will display a loading spinner and disable the table until the data is load
 </template>
 ```
 
-<LivePreview src="components-datatable--loading" />
+</LivePreview>
 
 ### Empty
 
 The `VDataTable` component can display an empty state when the items prop is an empty array. This can be useful if you want to inform the user that there are no data items to display in the table.
+
+<LivePreview src="components-datatable--empty" >
 
 ```vue
 <template>
@@ -152,7 +170,7 @@ The `VDataTable` component can display an empty state when the items prop is an 
 </template>
 ```
 
-<LivePreview src="components-datatable--empty" />
+</LivePreview>
 
 This will display a message indicating that the table is empty.
 
@@ -179,17 +197,21 @@ This will display the empty state with the text "No data available" and the clas
 
 To require that a column be sorted before the table can be displayed, you can use the `must-sort` prop:
 
+<LivePreview src="components-datatable--must-sort" >
+
 ```vue
 <template>
   <VDataTable must-sort />
 </template>
 ```
 
-<LivePreview src="components-datatable--must-sort" />
+</LivePreview>
 
 ### Disable Sorting
 
 To disable sorting for the table, you can use the `disable-sorting` prop:
+
+<LivePreview src="components-datatable--disable-sorting" >
 
 ```vue
 <template>
@@ -197,11 +219,13 @@ To disable sorting for the table, you can use the `disable-sorting` prop:
 </template>
 ```
 
-<LivePreview src="components-datatable--disable-sorting" />
+</LivePreview>
 
 ### Custom Wrapper Class
 
 To add a custom class to the wrapper element of the table, you can use the `wrapper-class` prop:
+
+<LivePreview src="components-datatable--custom-wrapper-class" >
 
 ```vue
 <template>
@@ -209,7 +233,7 @@ To add a custom class to the wrapper element of the table, you can use the `wrap
 </template>
 ```
 
-<LivePreview src="components-datatable--custom-wrapper-class" />
+</LivePreview>
 
 ### Custom Class
 
@@ -254,6 +278,10 @@ To use row selection, you will need to bind the `v-model` directive to a variabl
 
 For example, to enable row selection and bind the `v-model` directive to a `selected` variable, you can use the following code:
 
+This will enable row selection and bind the selected variable to the `v-model` directive.
+
+<LivePreview src="components-datatable--selectable" >
+
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
@@ -266,9 +294,7 @@ const selected = ref([]);
 </template>
 ```
 
-This will enable row selection and bind the selected variable to the `v-model` directive.
-
-<LivePreview src="components-datatable--selectable" />
+</LivePreview>
 
 ### Freezing Columns in the DataTable
 
@@ -276,10 +302,7 @@ The `VDataTable` component allows you to freeze columns in place, so that they r
 
 To freeze a column, you can use the `freeze` prop in the header object for that column. The `positionFreeze` prop can be used to specify whether the column should be frozen to the left or right side of the table.
 
-<LivePreview src="components-datatable--sticky-column" />
-
-<details>
-  <summary>View Code</summary>
+<LivePreview src="components-datatable--sticky-column">
 
 ```vue
 <script setup lang="ts">
@@ -330,7 +353,7 @@ const headers = ref<VDataTableHeader[]>([
 </template>
 ```
 
-</details>
+</LivePreview>
 
 This will freeze the first and last columns of the table, so that they remain visible while the rest of the table is scrolled horizontally.
 
@@ -340,10 +363,7 @@ This is an example of using a `server-side` data table in Vue.js. The data table
 
 The example includes a function to convert ratings to star icons and displays them in the table. It also displays thumbnail images and formats price values with the appropriate currency symbol.
 
-<LivePreview src="components-datatable--server-side" />
-
-<details>
-  <summary>View Code</summary>
+<LivePreview src="components-datatable--server-side" >
 
 ```vue
 <script setup lang="ts">
@@ -445,13 +465,15 @@ watchEffect(fetchData);
 </template>
 ```
 
-</details>
+</LivePreview>
 
 ### Search
 
 The `VDataTable` component allows for searching through its items by binding a search string to its `search` prop.
 
 In this example, this is done by using the `VInput` component to create a search bar that updates the `search` prop of the `VDataTable` component whenever the user inputs a new search query. The `VDataTable` component then filters its items based on this search query.
+
+<LivePreview src="components-datatable--search" >
 
 ```vue
 <script setup lang="ts">
@@ -471,7 +493,7 @@ const search = ref('');
 </template>
 ```
 
-<LivePreview src="components-datatable--search" />
+</LivePreview>
 
 ## Props
 
@@ -754,13 +776,13 @@ The `footer` slot allows you to customize the content of the table footer. It re
 ```ts
 {
   pagination,
-  perPage,
-  serverSide,
-  items,
-  totalItems,
-  footerColor,
-  footerClass,
-  page;
+    perPage,
+    serverSide,
+    items,
+    totalItems,
+    footerColor,
+    footerClass,
+    page;
 }
 ```
 
@@ -832,6 +854,8 @@ npm i @gits-id/table
 <script setup lang="ts">
 import VDataTable from '@gits-id/table';
 import '@gits-id/table/dist/style.css';
+// or load SCSS styles
+// import '@gits-id/table/src/VDataTable.scss';
 </script>
 
 <template>
