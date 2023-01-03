@@ -8,6 +8,8 @@ The `VAutocomplete` component is a customizable autocomplete input based on the 
 
 To use the `VAutocomplete` component, simply add it to your template:
 
+<LivePreview src="components-autocomplete--default">
+
 ```vue
 <template>
   <!-- VAutocomplete is registered globally -->
@@ -15,7 +17,7 @@ To use the `VAutocomplete` component, simply add it to your template:
 </template>
 ```
 
-<LivePreview src="components-autocomplete--default" />
+</LivePreview>
 
 ::: info
 The `VAutocomplete` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
@@ -25,17 +27,21 @@ The `VAutocomplete` component is registered globally when you install with `@git
 
 To make the `VAutocomplete` component clearable, set the `clearable` prop:
 
+<LivePreview src="components-autocomplete--clearable">
+
 ```vue
 <template>
   <VAutocomplete clearable />
 </template>
 ```
 
-<LivePreview src="components-autocomplete--clearable" />
+</LivePreview>
 
 ### Validation
 
 You can use the `VAutocomplete` component with form validation libraries like `vee-validate`. In this example, we'll use the `useForm` hook from `vee-validate` to handle form submission and validation:
+
+<LivePreview src="components-autocomplete--validation" >
 
 ```vue
 <script setup lang="ts">
@@ -93,7 +99,7 @@ const genres = ref<Item[]>([
 </template>
 ```
 
-<LivePreview src="components-autocomplete--validation" />
+</LivePreview>
 
 ## Props
 
@@ -117,7 +123,7 @@ const genres = ref<Item[]>([
 
 ### `update:modelValue`
 
-The `update:modelValue` event is triggered whenever the selected value of the `VAutocomplete` component changes. 
+The `update:modelValue` event is triggered whenever the selected value of the `VAutocomplete` component changes.
 
 Here is an example of using the `update:modelValue` event:
 
@@ -138,7 +144,6 @@ function onModelValueChange(value: Item) {
 ### `update:query`
 
 The `update:query` event is triggered whenever the search query in the `VAutocomplete` component changes.
-
 
 Here is an example of using the `update:query` event:
 
@@ -171,7 +176,6 @@ npm i @gits-id/autocomplete
 ```
 
 You can then use the `VAutocomplete` component in your Vue templates like this:
-
 
 ```vue
 <script setup lang="ts">

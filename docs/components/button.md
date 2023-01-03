@@ -6,6 +6,10 @@ Button component.
 
 ### Basic Usage
 
+To use the `VBtn` component, simply add it to your template.
+
+<LivePreview src="forms-button--default" >
+
 ```vue
 <template>
   <VBtn> default </VBtn>
@@ -18,13 +22,17 @@ Button component.
 </template>
 ```
 
-<LivePreview src="forms-button--default" />
+</LivePreview>
 
 ::: info
 The `VBtn` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
 ### Outlined
+
+Use `outlined` prop to apply outlined style.
+
+<LivePreview src="forms-button--outlined" >
 
 ```vue
 <template>
@@ -38,9 +46,13 @@ The `VBtn` component is registered globally when you install with `@gits-id/ui`.
 </template>
 ```
 
-<LivePreview src="forms-button--outlined" />
+</LivePreview>
 
 ### Text
+
+Use `text` prop to apply text style.
+
+<LivePreview src="forms-button--text" >
 
 ```vue
 <template>
@@ -54,6 +66,8 @@ The `VBtn` component is registered globally when you install with `@gits-id/ui`.
 </template>
 ```
 
+</LivePreview>
+
 ### Flush
 
 - **Prop**: `flush`
@@ -61,6 +75,8 @@ The `VBtn` component is registered globally when you install with `@gits-id/ui`.
 - **Default Value**: `false`
 
 Use `flush` prop to remove button padding. It will also set the width and height button to `auto`;
+
+<LivePreview src="forms-button--flush" >
 
 ```vue
 <template>
@@ -74,9 +90,13 @@ Use `flush` prop to remove button padding. It will also set the width and height
 </template>
 ```
 
-<LivePreview src="forms-button--flush" />
+</LivePreview>
 
 ### Rounded
+
+Use `rounded` prop to apply rounded style.
+
+<LivePreview src="forms-button--rounded" >
 
 ```vue
 <template>
@@ -90,9 +110,13 @@ Use `flush` prop to remove button padding. It will also set the width and height
 </template>
 ```
 
-<LivePreview src="forms-button--rounded" />
+</LivePreview>
 
 ### Tile
+
+Use `tile` prop to apply tile style. This will remove border radius from button.
+
+<LivePreview src="forms-button--tile" >
 
 ```vue
 <template>
@@ -106,13 +130,17 @@ Use `flush` prop to remove button padding. It will also set the width and height
 </template>
 ```
 
-<LivePreview src="forms-button--tile" />
+</LivePreview>
 
 ### Sizes
 
 - Prop: `size`
 - Values: `sm | md | lg`
 - Default Value: `md`
+
+Use `size` prop to change button size.
+
+<LivePreview src="forms-button--sizes" >
 
 ```vue
 <template>
@@ -122,7 +150,7 @@ Use `flush` prop to remove button padding. It will also set the width and height
 </template>
 ```
 
-<LivePreview src="forms-button--sizes" />
+</LivePreview>
 
 You can even roll your own custom sizing with CSS variables:
 
@@ -142,6 +170,10 @@ You can even roll your own custom sizing with CSS variables:
 
 ### Disabled
 
+Use `disabled` prop to disable the button.
+
+<LivePreview src="forms-button--disabled" height="140" >
+
 ```vue
 <template>
   <VBtn disabled> default </VBtn>
@@ -154,9 +186,11 @@ You can even roll your own custom sizing with CSS variables:
 </template>
 ```
 
-<LivePreview src="forms-button--disabled" height="140" />
+</LivePreview>
 
-### Outlined Disabled
+Outlined button have different disabled style.
+
+<LivePreview src="forms-button--outlined-disabled" height="140" >
 
 ```vue
 <template>
@@ -170,9 +204,13 @@ You can even roll your own custom sizing with CSS variables:
 </template>
 ```
 
-<LivePreview src="forms-button--outlined-disabled" height="140" />
+</LivePreview>
 
 ### Loading
+
+Use `loading` prop to set button loading state.
+
+<LivePreview src="forms-button--loading" height="140" >
 
 ```vue
 <template>
@@ -186,9 +224,13 @@ You can even roll your own custom sizing with CSS variables:
 </template>
 ```
 
-<LivePreview src="forms-button--loading" height="140" />
+</LivePreview>
 
 ### Block
+
+Use `block` prop to make button full width.
+
+<LivePreview src="forms-button--block" >
 
 ```vue
 <template>
@@ -202,9 +244,13 @@ You can even roll your own custom sizing with CSS variables:
 </template>
 ```
 
-<LivePreview src="forms-button--block" />
+</LivePreview>
 
 ### Shadow
+
+Use `shadow` prop to add shadow to the button.
+
+<LivePreview src="forms-button--shadow" height="140">
 
 ```vue
 <template>
@@ -218,9 +264,13 @@ You can even roll your own custom sizing with CSS variables:
 </template>
 ```
 
-<LivePreview src="forms-button--shadow" height="140" />
+</LivePreview>
 
 ### No ring effect
+
+Use `no-ring` prop to remove ring effect to the button.
+
+<LivePreview src="forms-button--no-ring-effect" height="140" >
 
 ```vue
 <template>
@@ -234,9 +284,14 @@ You can even roll your own custom sizing with CSS variables:
 </template>
 ```
 
-<LivePreview src="forms-button--no-ring-effect" height="140" />
+</LivePreview>
 
 ### Icon
+
+Use `prefix-icon` prop to add icon to the button before the text.
+Use `suffix-icon` prop to add icon to the button after the text.
+
+<LivePreview src="forms-button--icons" height="100">
 
 ```vue
 <template>
@@ -245,11 +300,13 @@ You can even roll your own custom sizing with CSS variables:
 </template>
 ```
 
-<LivePreview src="forms-button--icons" height="100" />
+</LivePreview>
 
 ### FAB
 
-Floating Action Button (FAB).
+Use `fab` prop to make the button as floating action button (FAB).
+
+<LivePreview src="forms-button--fab" height="100">
 
 ```vue
 <script setup lang="ts">
@@ -258,14 +315,18 @@ import VIcon from '@gits-id/icon';
 
 <template>
   <VBtn icon fab>
-    <VIcon name="ri:home-line" class="w-full" />
+    <VIcon name="ri:home-line" />
   </VBtn>
 </template>
 ```
 
-<LivePreview src="forms-button--fab" height="100" />
+</LivePreview>
 
 ### Button Group
+
+You can group the button using `VBtnGroup` component. You can also wrap the grouped button inside toolbar using `VBtnToolbar` component.
+
+<LivePreview src="forms-button--button-group">
 
 ```vue
 <template>
@@ -333,7 +394,7 @@ import VIcon from '@gits-id/icon';
 </template>
 ```
 
-<LivePreview src="forms-button--button-group" />
+</LivePreview>
 
 ## Props
 
@@ -368,6 +429,8 @@ None
 
 - [`default`](#default)
 
+Use the `default` slot to place the content such as text or icon.
+
 ```vue
 <template>
   <VBtn> Button </VBtn>
@@ -375,6 +438,8 @@ None
 ```
 
 - [`prefix`](#prefix)
+
+Use the `prefix` slot to place the content before the text.
 
 ```vue
 <template>
@@ -387,6 +452,8 @@ None
 
 - [`suffix`](#suffix)
 
+Use the `suffix` slot to place the content after the text.
+
 ```vue
 <template>
   <VBtn>
@@ -398,27 +465,47 @@ None
 
 ## CSS Variables
 
-| Variable                                      | Default Value                   |
-| --------------------------------------------- | ------------------------------- |
-| [`--btn-bg-color`](#--btn-bg-color)           | `theme('colors.gray.200')`      |
-| [`--btn-text-color`](#--btn-text-color)       | `theme('colors.gray.800')`      |
-| [`--btn-border-color`](#--btn-border-color)   | `theme('colors.gray.300')`      |
-| [`--btn-border-radius`](#--btn-border-radius) | `theme('borderRadius.DEFAULT')` |
-| [`--btn-border-width`](#--btn-border-width)   | `theme('borderWidth.DEFAULT')`  |
-| [`--btn-padding-x`](#--btn-padding-x)         | `theme('spacing.3')`            |
-| [`--btn-padding-y`](#--btn-padding-y)         | `theme('spacing.2')`            |
-| [`--btn-line-height`](#--btn-line-height)     | `theme('lineHeight.tight')`     |
-| [`--btn-font-size`](#--btn-font-size)         | `theme('fontSize.base')`        |
-| [`--btn-font-weight`](#--btn-font-weight)     | `theme('fontWeight.medium')`    |
-| [`--btn-shadow`](#--btn-shadow)               | `theme('boxShadow.none')`       |
-| [`--btn-icon-width`](#--btn-icon-width)       | `theme('spacing.5')`            |
-| [`--btn-icon-height`](#--btn-icon-height)     | `theme('spacing.5')`            |
-| [`--btn-width`](#--btn-width)                 | `theme('width.auto')`           |
-| [`--btn-height`](#--btn-height)               | `theme('width.auto')`           |
-| [`--btn-transition'`](#--btn-transition)      | `'all 0.2s ease-in-out'`        |
-| [`--btn-sm-height`](#--btn-sm-height)         | `32`                            |
-| [`--btn-md-height`](#--btn-md-height)         | `44`                            |
-| [`--btn-lg-height`](#--btn-lg-height)         | `52`                            |
+```scss
+:root {
+  --btn-bg-color: theme('colors.gray.200');
+  --btn-text-color: theme('colors.gray.800');
+  --btn-border-color: theme('colors.gray.300');
+  --btn-border-radius: theme('borderRadius.DEFAULT');
+  --btn-border-width: theme('borderWidth.DEFAULT');
+  --btn-padding-x: theme('spacing.3');
+  --btn-padding-y: theme('spacing.2');
+  --btn-line-height: theme('lineHeight.tight');
+  --btn-font-size: theme('fontSize.sm');
+  --btn-font-weight: theme('fontWeight.semibold');
+  --btn-shadow: theme('boxShadow.none');
+  --btn-icon-width: theme('spacing.5');
+  --btn-icon-height: theme('spacing.5');
+  --btn-width: theme('width.auto');
+  --btn-height: theme('width.auto');
+  --btn-transition: all 0.2s ease-in-out;
+
+  // sm
+  --btn-sm-height: 32px;
+  --btn-sm-padding-x: theme('padding.3');
+  --btn-sm-padding-y: theme('padding.1');
+  --btn-sm-icon-width: theme('spacing.4');
+  --btn-sm-icon-height: theme('spacing.4');
+
+  // md
+  --btn-md-height: 44px;
+  --btn-md-padding-x: theme('padding.4');
+  --btn-md-padding-y: theme('padding.3');
+  --btn-md-icon-width: theme('spacing.5');
+  --btn-md-icon-height: theme('spacing.5');
+
+  // lg
+  --btn-lg-height: 52px;
+  --btn-lg-padding-x: theme('padding.6');
+  --btn-lg-padding-y: theme('padding.3');
+  --btn-lg-icon-width: theme('spacing.6');
+  --btn-lg-icon-height: theme('spacing.6');
+}
+```
 
 ## Tailwind Plugin
 
@@ -437,12 +524,15 @@ module.exports = {
 You can also install the `Button` component individually via `@gits-id/button` package:
 
 ```bash
-npm install @gits-id/button
+npm i @gits-id/button
 ```
 
 ```vue
 <script setup lang="ts">
 import VBtn from '@gits-id/button';
+import '@gits-id/button/dist/style.css';
+// or import the SCSS styles
+// import '@gits-id/button/src/VBtn.scss';
 </script>
 
 <template>

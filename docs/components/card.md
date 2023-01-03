@@ -8,6 +8,8 @@ The `VCard` component is a container for displaying content in a card-like forma
 
 To use the `VCard` component, simply wrap your content in the `VCard` element:
 
+<LivePreview src="components-card--default" height="160" >
+
 ```vue
 <template>
   <!-- VCard is registered globally -->
@@ -15,7 +17,7 @@ To use the `VCard` component, simply wrap your content in the `VCard` element:
 </template>
 ```
 
-<LivePreview src="components-card--default" height="160" />
+</LivePreview>
 
 ::: info
 The `VCard` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
@@ -25,17 +27,21 @@ The `VCard` component is registered globally when you install with `@gits-id/ui`
 
 To add a title to your `VCard`, use the `title` prop:
 
+<LivePreview src="components-card--hide-footer" height="120" >
+
 ```vue
 <template>
   <VCard title="Header"> Hello World </VCard>
 </template>
 ```
 
-<LivePreview src="components-card--hide-footer" height="120" />
+</LivePreview>
 
 ### Header and Footer
 
 You can add a header and footer to your `VCard` by using the `title` prop for the header and the `footer` slot for the footer:
+
+<LivePreview src="components-card--default" height="160" >
 
 ```vue {2,4-6}
 <template>
@@ -50,11 +56,13 @@ You can add a header and footer to your `VCard` by using the `title` prop for th
 </template>
 ```
 
-<LivePreview src="components-card--default" height="160" />
+</LivePreview>
 
 ### Hide Header and Footer
 
 To hide the header or footer of your `VCard`, use the `hide-header` or `hide-footer` props, respectively:
+
+<LivePreview src="components-card--body-only" height="90" >
 
 ```vue {2}
 <template>
@@ -69,7 +77,7 @@ To hide the header or footer of your `VCard`, use the `hide-header` or `hide-foo
 </template>
 ```
 
-<LivePreview src="components-card--body-only" height="90" />
+</LivePreview>
 
 ### Colors
 
@@ -79,6 +87,8 @@ To hide the header or footer of your `VCard`, use the `hide-header` or `hide-foo
 - **required**: `false`
 
 You can apply different colors to your `VCard` using the `color` prop. It can take one of the following values: `default`, `primary`, `secondary`, `info`, `warning`, `success`, or `error`. The default value is `default`.
+
+<LivePreview src="components-card--colors" height="480">
 
 ```vue
 <template>
@@ -92,7 +102,7 @@ You can apply different colors to your `VCard` using the `color` prop. It can ta
 </template>
 ```
 
-<LivePreview src="components-card--colors" height="480" />
+</LivePreview>
 
 ### Bordered
 
@@ -105,13 +115,15 @@ You can add a border to your `VCard` by using the `bordered` prop. It is a `bool
 
 To use the `bordered` prop, set it to true like so:
 
+<LivePreview src="components-card--bordered" height="200" >
+
 ```vue{6}
 <template>
   <VCard bordered> Hello World </VCard>
 </template>
 ```
 
-<LivePreview src="components-card--bordered" height="200" />
+</LivePreview>
 
 ### Shadow
 
@@ -121,6 +133,8 @@ To use the `bordered` prop, set it to true like so:
 - **required**: `false`
 
 You can add a shadow to your `VCard` by using the `shadow` prop. It can take one of the following values: `sm`, `md`, `lg`, `xl`, `2xl`, `inner`, `none`. The default value is `none`.
+
+<LivePreview src="components-card--shadow" height="520">
 
 ```vue
 <script setup lang="ts">
@@ -139,7 +153,7 @@ import {ref} from 'vue';
 </template>
 ```
 
-<LivePreview src="components-card--shadow" height="520" />
+</LivePreview>
 
 ## Props
 

@@ -8,6 +8,8 @@ The `VAlert` component is a flexible alert component that can be used to display
 
 To use the `VAlert` component, you can simply include it in your template like this:
 
+<LivePreview src="components-alert--default">
+
 ```vue
 <template>
   <!-- VAlert is registered globally -->
@@ -15,7 +17,7 @@ To use the `VAlert` component, you can simply include it in your template like t
 </template>
 ```
 
-<LivePreview src="components-alert--default" />
+</LivePreview>
 
 ### Colors
 
@@ -34,8 +36,10 @@ You can use the color prop to specify the color style of the alert. The followin
 - `success`
 - `error`
 - `dark`
-  
+
 Here's an example of how to use different colors:
+
+<LivePreview src="components-alert--default">
 
 ```vue
 <template>
@@ -50,7 +54,7 @@ Here's an example of how to use different colors:
 </template>
 ```
 
-<LivePreview src="components-alert--default" />
+</LivePreview>
 
 ### Solid Style
 
@@ -60,6 +64,8 @@ Here's an example of how to use different colors:
 - **required**: `false`
 
 Use `solid` to apply solid style to the alert.
+
+<LivePreview src="components-alert--solid">
 
 ```vue
 <template>
@@ -74,7 +80,7 @@ Use `solid` to apply solid style to the alert.
 </template>
 ```
 
-<LivePreview src="components-alert--solid" />
+</LivePreview>
 
 ### Outlined Style
 
@@ -84,6 +90,8 @@ Use `solid` to apply solid style to the alert.
 - **required**: `false`
 
 Use `outlined` to apply outlined style to the alert.
+
+<LivePreview src="components-alert--outlined">
 
 ```vue
 <template>
@@ -98,7 +106,7 @@ Use `outlined` to apply outlined style to the alert.
 </template>
 ```
 
-<LivePreview src="components-alert--outlined" />
+</LivePreview>
 
 ### Bordered Style
 
@@ -108,6 +116,8 @@ Use `outlined` to apply outlined style to the alert.
 - **required**: `false`
 
 Use `border` to apply bordered style to the alert.
+
+<LivePreview src="components-alert--bordered">
 
 ```vue
 <template>
@@ -122,7 +132,7 @@ Use `border` to apply bordered style to the alert.
 </template>
 ```
 
-<LivePreview src="components-alert--bordered" />
+</LivePreview>
 
 ### `v-model`
 
@@ -132,6 +142,8 @@ Use `border` to apply bordered style to the alert.
 - **required**: `false`
 
 You can use the `v-model` directive to bind the alert to a data model. The `modelValue` prop is used to represent the model value, and it is a boolean that defaults to `true`.
+
+<LivePreview src="components-alert--v-model">
 
 ```vue{10}
 <script setup lang="ts">
@@ -149,7 +161,7 @@ const isOpen = ref(true);
 </template>
 ```
 
-<LivePreview src="components-alert--v-model" />
+</LivePreview>
 
 ### Dismissable
 
@@ -159,6 +171,8 @@ const isOpen = ref(true);
 - **required**: `false`
 
 Use `dismissable` to make alert dismissable.
+
+<LivePreview src="components-alert--dismissable">
 
 ```vue{10}
 <script setup lang="ts">
@@ -174,7 +188,7 @@ const isOpen = ref(true);
 </template>
 ```
 
-<LivePreview src="components-alert--dismissable" />
+</LivePreview>
 
 ### Transition
 
@@ -184,6 +198,8 @@ const isOpen = ref(true);
 - **required**: `false`
 
 Use `transition` prop change the default transition.
+
+<LivePreview src="components-alert--transition">
 
 ```vue{5,17}
 <script setup lang="ts">
@@ -209,7 +225,7 @@ const isOpen = ref(true);
 </template>
 ```
 
-<LivePreview src="components-alert--transition" />
+</LivePreview>
 
 ## Props
 

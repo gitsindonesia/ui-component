@@ -12,6 +12,10 @@ Alternatively, you can also use the `VAvatar` component from the `@gits-id/ui` p
 
 ### Basic Usage
 
+To use the `VAvatar` component, you can simply include it in your template.
+
+<LivePreview src="components-avatar--variants" height="70" >
+
 ```vue
 <template>
   <VAvatar color="primary" name="John Doe" />
@@ -19,7 +23,7 @@ Alternatively, you can also use the `VAvatar` component from the `@gits-id/ui` p
 </template>
 ```
 
-<LivePreview src="components-avatar--variants" height="70" />
+</LivePreview>
 
 ### Initial Name
 
@@ -60,13 +64,15 @@ By default it max to `2` initial name, but you can change it with `max-initial` 
 
 We can also set avatar image with `image` prop. The `image` prop accept string as its value and usually contains full image url of avatar.
 
+<LivePreview src="components-avatar--image" height="70" >
+
 ```vue
 <template>
   <VAvatar src="path-to-image.jpg" alt="John Doe" />
 </template>
 ```
 
-<LivePreview src="components-avatar--image" height="70" />
+</LivePreview>
 
 ### Shape
 
@@ -77,6 +83,8 @@ We can also set avatar image with `image` prop. The `image` prop accept string a
 
 We can change the shape of avatar via `shape` prop. By the default, the shape is `circle`, but you can also change it to `rounded` or `square`.
 
+<LivePreview src="components-avatar--shape" height="70" >
+
 ```vue
 <template>
   <!-- default shape is circle -->
@@ -86,7 +94,7 @@ We can change the shape of avatar via `shape` prop. By the default, the shape is
 </template>
 ```
 
-<LivePreview src="components-avatar--shape" height="70" />
+</LivePreview>
 
 ## Props
 
@@ -111,7 +119,21 @@ None
 
 ## CSS Variables
 
-None
+```scss
+:root {
+  --avatar-width: 28px;
+  --avatar-height: 28px;
+  --avatar-bg-color: theme('colors.gray.200');
+  --avatar-text-color: theme('colors.gray.800');
+  --avatar-border-color: theme('colors.gray.200');
+  --avatar-border-width: theme('borderWidth.DEFAULT');
+  --avatar-border-style: 'solid';
+  --avatar-border-radius: theme('borderRadius.full');
+  --avatar-font-weight: 600;
+  --avatar-font-size: theme('fontSize.base');
+  --avatar-text-transform: uppercase;
+}
+```
 
 ## Manual Installation
 
@@ -134,7 +156,6 @@ import '@gits-id/avatar/dist/style.css';
   <VAvatar color="primary" src="path-to-image.png" />
 </template>
 ```
-
 
 ## Storybook
 

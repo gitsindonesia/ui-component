@@ -28,6 +28,10 @@ Note that the `VBadge` component is registered globally when you install `@gits-
 
 You can use the `color` prop to apply different color styles to the badge:
 
+The available color options are `default`, `primary`, `secondary`, `info`, `warning`, `success`, and `error`.
+
+<LivePreview src="components-badge--variants" height="70">
+
 ```vue
 <template>
   <VBadge> Hello World </VBadge>
@@ -40,9 +44,7 @@ You can use the `color` prop to apply different color styles to the badge:
 </template>
 ```
 
-The available color options are `default`, `primary`, `secondary`, `info`, `warning`, `success`, and `error`.
-
-<LivePreview src="components-badge--variants" height="70" />
+</LivePreview>
 
 ### Outlined
 
@@ -53,13 +55,15 @@ The available color options are `default`, `primary`, `secondary`, `info`, `warn
 
 You can use the `outlined` prop to apply a bordered style to the badge:
 
+<LivePreview src="components-badge--outlined" height="70" >
+
 ```vue{2}
 <template>
   <VBadge outlined> Hello World </VBadge>
 </template>
 ```
 
-<LivePreview src="components-badge--outlined" height="70" />
+</LivePreview>
 
 ### Rounded
 
@@ -69,6 +73,8 @@ You can use the `outlined` prop to apply a bordered style to the badge:
 - **required**: `false`
 
 You can use the `rounded` prop to apply a rounded style to the badge:
+
+<LivePreview src="components-badge--rounded" height="70" >
 
 ```vue
 <script setup lang="ts">
@@ -87,7 +93,7 @@ import {ref} from 'vue';
 </template>
 ```
 
-<LivePreview src="components-badge--rounded" height="70" />
+</LivePreview>
 
 ### Sizes
 
@@ -98,6 +104,8 @@ import {ref} from 'vue';
 
 You can use the `small` or `large` prop to change the size of the badge:
 
+<LivePreview src="components-badge--sizes" height="70" >
+
 ```vue
 <template>
   <VBadge small> small </VBadge>
@@ -106,7 +114,7 @@ You can use the `small` or `large` prop to change the size of the badge:
 </template>
 ```
 
-<LivePreview src="components-badge--sizes" height="70" />
+</LivePreview>
 
 ### Dismissable
 
@@ -117,13 +125,15 @@ You can use the `small` or `large` prop to change the size of the badge:
 
 You can use the `dismissable` prop to show an X button in the badge, which allows the user to dismiss the badge:
 
+<LivePreview src="components-badge--dismissable" height="70" >
+
 ```vue
 <template>
   <VBadge dismissable> Badge </VBadge>
 </template>
 ```
 
-<LivePreview src="components-badge--dismissable" height="70" />
+</LivePreview>
 
 ## Props
 

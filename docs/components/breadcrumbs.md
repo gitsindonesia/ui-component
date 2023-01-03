@@ -8,6 +8,8 @@ The `VBreadcrumbs` component is used to display a list of links that allow the u
 
 To use `VBreadcrumbs`, you will need to import it and pass an array of `VBreadcrumbItem` objects as the items prop. Each `VBreadcrumbItem` should have a `title` and a `to` property, which will be used to display the breadcrumb and link it to a specific page.
 
+<LivePreview src="components-breadcrumbs--default" height="70" >
+
 ```vue
 <script setup lang="ts">
 import VBreadcrumbs, {type VBreadcrumbItem} from '@gits-id/breadcrumbs';
@@ -34,7 +36,7 @@ const items = ref<VBreadcrumbItem[]>([
 </template>
 ```
 
-<LivePreview src="components-breadcrumbs--default" height="70" />
+</LivePreview>
 
 ::: info
 The `VBreadcrumbs` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
@@ -48,6 +50,8 @@ The `VBreadcrumbs` component is registered globally when you install with `@gits
 - **required**: `false`
 
 You can use the `divider` prop to change the character or element used to separate the breadcrumbs.
+
+<LivePreview src="components-breadcrumbs--custom-divider" height="70" >
 
 ```vue
 <script setup lang="ts">
@@ -74,11 +78,13 @@ const items = ref<VBreadcrumbItem[]>([
 </template>
 ```
 
-<LivePreview src="components-breadcrumbs--custom-divider" height="70" />
+</LivePreview>
 
 ### Divider Slots
 
 You can also use slots to customize the content of the divider element.
+
+<LivePreview src="components-breadcrumbs--custom-divider-slots" height="70" >
 
 ```vue
 <script setup lang="ts">
@@ -110,11 +116,13 @@ const items = ref<VBreadcrumbItem[]>([
 </template>
 ```
 
-<LivePreview src="components-breadcrumbs--custom-divider-slots" height="70" />
+</LivePreview>
 
 ### Default Slots
 
 You can use the default slots of `VBreadcrumbs` to define the breadcrumb items and dividers manually. This can be useful if you want to customize the appearance or behavior of each breadcrumb item.
+
+<LivePreview src="components-breadcrumbs--bare" height="70" >
 
 ```vue
 <template>
@@ -130,7 +138,7 @@ You can use the default slots of `VBreadcrumbs` to define the breadcrumb items a
 </template>
 ```
 
-<LivePreview src="components-breadcrumbs--bare" height="70" />
+</LivePreview>
 
 ## Props
 

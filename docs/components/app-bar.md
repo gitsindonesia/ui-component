@@ -6,6 +6,10 @@ The AppBar, also known as a Navigation Bar, is a component used to display conte
 
 ### Basic Usage
 
+To use the `VAppBar` component, you can simply include it in your template like this:
+
+<LivePreview src="components-appbar--default">
+
 ```vue
 <template>
   <!-- VAppBar is registered globally -->
@@ -13,7 +17,7 @@ The AppBar, also known as a Navigation Bar, is a component used to display conte
 </template>
 ```
 
-<LivePreview src="components-appbar--default" />
+</LivePreview>
 
 ::: info
 The `VAppBar` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
@@ -27,6 +31,8 @@ The `VAppBar` component is registered globally when you install with `@gits-id/u
 
 The `color` prop allows you to specify a color for the AppBar. The possible values for this prop are: `default`, `transparent`, `dark`, `primary`, `secondary`, `info`, `warning`, `success`, and `error`.
 
+<LivePreview src="components-appbar--colors">
+
 ```vue
 <template>
   <VAppBar> Hello World </VAppBar>
@@ -39,7 +45,7 @@ The `color` prop allows you to specify a color for the AppBar. The possible valu
 </template>
 ```
 
-<LivePreview src="components-appbar--colors" />
+</LivePreview>
 
 ### Fixed
 
@@ -49,13 +55,15 @@ The `color` prop allows you to specify a color for the AppBar. The possible valu
 
 The `fixed` prop allows you to set a fixed position for the AppBar at the top of the page.
 
+<LivePreview src="components-appbar--fixed">
+
 ```vue
 <template>
   <VAppBar fixed> Hello World </VAppBar>
 </template>
 ```
 
-<LivePreview src="components-appbar--fixed" />
+</LivePreview>
 
 ### Sticky
 
@@ -65,13 +73,15 @@ The `fixed` prop allows you to set a fixed position for the AppBar at the top of
 
 The `sticky` prop allows you to set a sticky position for the AppBar at the top of the page.
 
+<LivePreview src="components-appbar--sticky">
+
 ```vue
 <template>
   <VAppBar sticky> Hello World </VAppBar>
 </template>
 ```
 
-<LivePreview src="components-appbar--sticky" />
+</LivePreview>
 
 ### Bordered
 
@@ -82,13 +92,15 @@ The `sticky` prop allows you to set a sticky position for the AppBar at the top 
 
 The `bordered` prop allows you to apply a border style to the AppBar.
 
+<LivePreview src="components-appbar--bordered" >
+
 ```vue
 <template>
   <VAppBar bordered> Hello World </VAppBar>
 </template>
 ```
 
-<LivePreview src="components-appbar--bordered" />
+</LivePreview>
 
 ### Shadow
 
@@ -97,6 +109,8 @@ The `bordered` prop allows you to apply a border style to the AppBar.
 - **default**: `none`
 
 The `shadow` prop allows you to apply a shadow style to the AppBar. The possible values for this prop are: `true`, `false`, `sm`, `md`, `lg`, `xl`, `2xl`, `inner`, and `none`.
+
+<LivePreview src="components-appbar--shadow" >
 
 ```vue
 <template>
@@ -111,7 +125,7 @@ The `shadow` prop allows you to apply a shadow style to the AppBar. The possible
 </template>
 ```
 
-<LivePreview src="components-appbar--shadow" />
+</LivePreview>
 
 ### Sizes
 
@@ -122,6 +136,8 @@ The `shadow` prop allows you to apply a shadow style to the AppBar. The possible
 
 The `size` prop allows you to specify the size of the AppBar. The possible values for this prop are: `sm`, `md`, and `lg`.
 
+<LivePreview src="components-appbar--sizes" >
+
 ```vue
 <template>
   <VAppBar size="sm"> Hello World </VAppBar>
@@ -130,7 +146,7 @@ The `size` prop allows you to specify the size of the AppBar. The possible value
 </template>
 ```
 
-<LivePreview src="components-appbar--sizes" />
+</LivePreview>
 
 ### `v-model`
 
@@ -140,6 +156,8 @@ The `size` prop allows you to specify the size of the AppBar. The possible value
 - **required**: `false`
 
 Use `v-model` to show or hide the app-bar.
+
+<LivePreview src="components-appbar--toggle" >
 
 ```vue{5,10}
 <script setup lang="ts">
@@ -155,7 +173,7 @@ const isOpen = ref(true);
 </template>
 ```
 
-<LivePreview src="components-appbar--toggle" />
+</LivePreview>
 
 ### Transition
 
@@ -165,6 +183,8 @@ const isOpen = ref(true);
 - **required**: `false`
 
 Use `transition` prop to change the default transition.
+
+<LivePreview src="components-appbar--custom-transition" >
 
 ```vue{5,12}
 <script setup lang="ts">
@@ -182,7 +202,7 @@ const isOpen = ref(true);
 </template>
 ```
 
-<LivePreview src="components-appbar--custom-transition" />
+</LivePreview>
 
 ## Props
 
