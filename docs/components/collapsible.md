@@ -8,6 +8,8 @@ The `Collapsible` component is based on Headless UI and allows you to toggle the
 
 You can use the VCollapsible component in your template like so:
 
+<LivePreview src="components-collapsible--default">
+
 ```vue
 <script setup lang="ts">
 import {isOpen} from 'vue';
@@ -29,7 +31,7 @@ const isOpen = ref(false);
 </template>
 ```
 
-<LivePreview src="components-collapsible--default" />
+</LivePreview>
 
 The `isOpen` variable in the `v-model` directive controls whether the collapsible is open or closed.
 
@@ -41,17 +43,21 @@ The `VCollapsible` component is registered globally when you install with `@gits
 
 You can set the collapsible to open automatically by setting the `modelValue` prop to true:
 
+<LivePreview src="components-collapsible--auto-open" >
+
 ```vue
 <template>
   <VCollapsible :model-value="true" />
 </template>
 ```
 
-<LivePreview src="components-collapsible--auto-open" />
+</LivePreview>
 
 ### Hide Icon
 
 To hide the icon that indicates whether the collapsible is open or closed, set the `hideIcon` prop to true:
+
+<LivePreview src="components-collapsible--auto-open">
 
 ```vue
 <template>
@@ -59,7 +65,7 @@ To hide the icon that indicates whether the collapsible is open or closed, set t
 </template>
 ```
 
-<LivePreview src="components-collapsible--auto-open" />
+</LivePreview>
 
 ### Custom Class
 
@@ -73,6 +79,8 @@ You can customize the appearance of the Collapsible component by setting the fol
 - `panel-class`: Class applied to the panel element.
 
 Here's an example of how you can use these props to apply custom styles:
+
+<LivePreview src="components-collapsible--custom-classes" >
 
 ```vue
 <template>
@@ -88,7 +96,7 @@ Here's an example of how you can use these props to apply custom styles:
 </template>
 ```
 
-<LivePreview src="components-collapsible--custom-classes" />
+</LivePreview>
 
 ## Props
 
@@ -203,7 +211,7 @@ None
 You can also install the `Collapsible` component individually via `@gits-id/collapsible` package:
 
 ```bash
-yarn install @gits-id/collapsible
+npm i @gits-id/collapsible
 ```
 
 ```vue
