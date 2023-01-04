@@ -8,6 +8,8 @@ The List component is a flexible way to display a list of items in your Vue appl
 
 To use the `VList` component, just use the component in your template like so:
 
+<LivePreview src="components-list--basic-list" >
+
 ```vue
 <template>
   <VList>
@@ -22,7 +24,7 @@ To use the `VList` component, just use the component in your template like so:
 </template>
 ```
 
-<LivePreview src="components-list--basic-list" />
+</LivePreview>
 
 ::: info
 The `VList` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
@@ -31,6 +33,8 @@ The `VList` component is registered globally when you install with `@gits-id/ui`
 ### Hover Effect
 
 The Hover variant of the List component allows you to add custom shapes to the list items. You can use the `hover` prop on a ListItem to apply the default hover style, or use the `hover-class` prop to specify a custom `hover` class.
+
+<LivePreview src="components-list--hover" >
 
 ```vue
 <template>
@@ -49,11 +53,13 @@ The Hover variant of the List component allows you to add custom shapes to the l
 </template>
 ```
 
-<LivePreview src="components-list--hover" />
+</LivePreview>
 
 ### Shaped
 
 The Shaped variant of the List component allows you to add custom shapes to the list items. You can use the `shaped` prop on a ListItem to apply the default `shaped` style, or use the `shaped-class` prop to specify a custom `shaped` class.
+
+<LivePreview src="components-list--shaped" >
 
 ```vue
 <template>
@@ -66,11 +72,13 @@ The Shaped variant of the List component allows you to add custom shapes to the 
 </template>
 ```
 
-<LivePreview src="components-list--shaped" />
+</LivePreview>
 
 ### Rounded
 
 The Rounded variant of the List component adds rounded corners to the list items. You can use the `rounded` prop on a `VListItem` to apply the rounded style.
+
+<LivePreview src="components-list--rounded" >
 
 ```vue
 <template>
@@ -80,11 +88,13 @@ The Rounded variant of the List component adds rounded corners to the list items
 </template>
 ```
 
-<LivePreview src="components-list--rounded" />
+</LivePreview>
 
 ### Tile
 
 The Tile variant of the List component displays the list items as tiles. You can use the `tile` prop on a ListItem to apply the tile style.
+
+<LivePreview src="components-list--tile" >
 
 ```vue
 <template>
@@ -94,11 +104,13 @@ The Tile variant of the List component displays the list items as tiles. You can
 </template>
 ```
 
-<LivePreview src="components-list--tile" />
+</LivePreview>
 
 ### Hide Prepend & Hide Append
 
 The List component allows you to hide the prepend and append elements of a `VListItem`. You can use the hide-prepend and hide-append props on a `VListItem` to hide these elements. Alternatively, you can pass the `hide-prepend` and `hide-append` props to the parent `VList` component and bind them to the child `VListItem` components via slot props.
+
+<LivePreview src="components-list--hide-prepend-append" >
 
 ```vue
 <template>
@@ -114,11 +126,13 @@ The List component allows you to hide the prepend and append elements of a `VLis
 </template>
 ```
 
-<LivePreview src="components-list--hide-prepend-append" />
+</LivePreview>
 
 ### Hide Text
 
 The `VList` component allows you to hide the text of a `VListItem`. You can use the `hide-text` prop on a `VListItem` to hide the text. This can be useful for displaying icons only, for example.
+
+<LivePreview src="components-list--hide-text" >
 
 ```vue
 <script setup lang="ts">
@@ -144,11 +158,13 @@ const hideText = ref(true);
 </template>
 ```
 
-<LivePreview src="components-list--hide-text" />
+</LivePreview>
 
 ### Two Line
 
 To display a list with two lines per list item, you can nest elements inside the `VListItem` component:
+
+<LivePreview src="components-list--two-line" >
 
 ```vue
 <template>
@@ -176,11 +192,13 @@ To display a list with two lines per list item, you can nest elements inside the
 </template>
 ```
 
-<LivePreview src="components-list--two-line" />
+</LivePreview>
 
 ### Three Line
 
 To display a list with three lines per list item, you can nest additional elements inside the `VListItem` component:
+
+<LivePreview src="components-list--three-line" >
 
 ```vue
 <template>
@@ -213,11 +231,13 @@ To display a list with three lines per list item, you can nest additional elemen
 </template>
 ```
 
-<LivePreview src="components-list--three-line" />
+</LivePreview>
 
 ### Link
 
 You can use the `to` prop on a `VListItem` to make it a router link, or the `href` prop to make it a regular link:
+
+<LivePreview src="components-list--link" >
 
 ```vue
 <template>
@@ -230,11 +250,13 @@ You can use the `to` prop on a `VListItem` to make it a router link, or the `hre
 </template>
 ```
 
-<LivePreview src="components-list--link" />
+</LivePreview>
 
 ### Slots
 
 The `VListItem` component has `prepend` and `append` slots that allow you to insert custom content at the beginning and end of each list item:
+
+<LivePreview src="components-list--slots" >
 
 ```vue
 <template>
@@ -253,11 +275,13 @@ The `VListItem` component has `prepend` and `append` slots that allow you to ins
 </template>
 ```
 
-<LivePreview src="components-list--slots" />
+</LivePreview>
 
 ### Icons
 
 You can use the `prepend-icon` and `append-icon` props to add icons to your list items. The value for these props should be the name of the icon in the [Icones](https://icones.js.org/) icon set.
+
+<LivePreview src="components-list--icons" >
 
 ```vue
 <template>
@@ -278,11 +302,13 @@ You can use the `prepend-icon` and `append-icon` props to add icons to your list
 </template>
 ```
 
-<LivePreview src="components-list--icons" />
+</LivePreview>
 
 ### Header
 
 You can use the `VListItemHeader` component to add header to the list.
+
+<LivePreview src="components-list--header" >
 
 ```vue
 <template>
@@ -303,16 +329,13 @@ You can use the `VListItemHeader` component to add header to the list.
 </template>
 ```
 
-<LivePreview src="components-list--header" />
+</LivePreview>
 
 ### Collapse
 
 You can use the `VListCollapse` component to add collapsible list.
 
-<LivePreview src="components-list--collapse" />
-
-<details>
-  <summary>View Code</summary>
+<LivePreview src="components-list--collapse">
 
 ```vue
 <template>
@@ -354,16 +377,13 @@ You can use the `VListCollapse` component to add collapsible list.
 </template>
 ```
 
-</details>
+</LivePreview>
 
 ### Image
 
 You can place image to the list using `prepend` slot in the `VListItem` component.
 
-<LivePreview src="components-list--image" />
-
-<details>
-  <summary>View Code</summary>
+<LivePreview src="components-list--image">
 
 ```vue
 <script setup lang="ts">
@@ -420,16 +440,13 @@ const users = ref([
 </template>
 ```
 
-</details>
+</LivePreview>
 
 ### Navigation Drawer VList
 
 This example shows how to use `VList` inside `VNavDrawer` component to create sidebar navigation component.
 
-<LivePreview src="components-list--nav-drawer-list" />
-
-<details>
-  <summary>View Code</summary>
+<LivePreview src="components-list--nav-drawer-list" >
 
 ```vue
 <script setup lang="ts">
@@ -543,16 +560,13 @@ const menus = ref([
 </template>
 ```
 
-</details>
+</LivePreview>
 
 ### IOS Settings
 
 This example shows how to create IOS Settings menu using `VList` component.
 
-<LivePreview src="components-list--ios-settings" />
-
-<details>
-  <summary>View Code</summary>
+<LivePreview src="components-list--ios-settings" >
 
 ```vue
 <template>
@@ -648,16 +662,13 @@ This example shows how to create IOS Settings menu using `VList` component.
 </template>
 ```
 
-</details>
+</LivePreview>
 
 ### Dropdown
 
 This example shows how to use `VList` component in the dropdown component.
 
-<LivePreview src="components-list--list-in-dropdown" />
-
-<details>
-  <summary>View Code</summary>
+<LivePreview src="components-list--list-in-dropdown" >
 
 ```vue
 <template>
@@ -755,16 +766,13 @@ This example shows how to use `VList` component in the dropdown component.
 </template>
 ```
 
-</details>
+</LivePreview>
 
 ### Event
 
 This example demonstrates how to use events in the `VList` component. It shows examples of how to listen for clicks on the `prepend` and `append` icons, the prepend and append icon wrapper areas, and the append text. When one of these elements is clicked, a message is displayed using the `showMessage` function.
 
-<LivePreview src="components-list--event" />
-
-<details>
-  <summary>View Code</summary>
+<LivePreview src="components-list--event" >
 
 ```vue
 <script setup lang="ts">
@@ -811,7 +819,7 @@ const showMessage = (message: string) => alert(`Clicked: ${message}`);
 </template>
 ```
 
-</details>
+</LivePreview>
 
 ## Props
 
@@ -987,7 +995,7 @@ Then, use it in the template like so:
 import {VList, VListItem} from '@gits-id/list';
 import '@gits-id/list/dist/style.css';
 // Or use the SCSS styles
-import '@gits-id/list/src/List.scss';
+// import '@gits-id/list/src/List.scss';
 </script>
 
 <template>
