@@ -1,10 +1,15 @@
 # Checkbox
 
-Form input checkbox component.
+The `VCheckbox` is a form input component that allows the user to select a value from a list of options. It can be used in a basic form, as a disabled input, or as part of a multi-select form with validation.
 
 ## Usage
 
 ### Basic Usage
+
+To use the `VCheckbox` component, you will first need to import the `ref` function from `vue`. Then, create a `checked` variable using the `ref` function.
+Then, in your template, use the VCheckbox component with the v-model directive to bind the checked variable to the checkbox input.
+
+<LivePreview src="forms-checkbox--checkbox">
 
 ```vue
 <script setup lang="ts">
@@ -18,13 +23,17 @@ const checked = ref(false);
 </template>
 ```
 
-<LivePreview src="forms-checkbox--checkbox" />
+</LivePreview>
 
 ::: info
 The `VCheckbox` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
 ### Disabled
+
+To `disable` the component, set the `disabled` prop to `true`.
+
+<LivePreview src="forms-checkbox--disabled" >
 
 ```vue
 <script setup lang="ts">
@@ -38,9 +47,13 @@ const checked = ref(false);
 </template>
 ```
 
-<LivePreview src="forms-checkbox--disabled" />
+</LivePreview>
 
 ### Multiple
+
+To use the `VCheckbox` as part of a multi-select form, you will first need to import the `object` and `array` functions from `yup` and the `useForm` hook from `vee-validate`. Then, create a validation schema using the `object` and `array` functions. Then, in your template, use the `VCheckbox` component with the `name` prop to bind the input to the `genre` field in the form values. You can also use the `value` and `label` props to specify the option value and label, respectively.
+
+<LivePreview src="forms-checkbox--multiple">
 
 ```vue
 <script setup lang="ts">
@@ -108,9 +121,13 @@ const onSubmit = handleSubmit((values) => {
 </template>
 ```
 
-<LivePreview src="forms-checkbox--multiple" />
+</LivePreview>
 
 ### Validation
+
+To use the `VCheckbox` component with a form validation library, you can use the `name` prop to bind the component to a form control. For example, with `VeeValidate`, you can use the `useForm` hook to create a form with validation schema:
+
+<LivePreview src="forms-checkbox--validation" >
 
 ```vue
 <script setup lang="ts">
@@ -150,9 +167,15 @@ const onSubmit = handleSubmit((values) => {
 </template>
 ```
 
-<LivePreview src="forms-checkbox--validation" />
+</LivePreview>
 
 ### Validation Mode
+
+There are 2 modes. The first is `eager` mode, and the second is `aggressive` mode. The `eager` mode validates input when the blur event occurs. Meanwhile, `aggressive` mode validates the input every time the input itself changes. This can be useful when you are validating for example the minimum or maximum limits of an input.
+
+You can change the default value for this validation mode by adding an attribute or property named `validation-mode` to this component.
+
+<LivePreview src="forms-checkbox--validation" >
 
 ```vue
 <script setup lang="ts">
@@ -210,29 +233,29 @@ const onSubmit = handleSubmit((values) => {
 </template>
 ```
 
-<LivePreview src="forms-checkbox--validation" />
+</LivePreview>
 
 ## Props
 
-| Name                                  | Type                         | Default     |
-| ------------------------------------- | ---------------------------- | ----------- |
-| [`modelValue`](#modelValue)           | `Boolean`                    | `false`     |
-| [`label`](#label)                     | `String`                     | `''`        |
-| [`labelClass`](#labelClass)           | `String`                     | `''`        |
-| [`inputClass`](#inputClass)           | `String`                     | `''`        |
-| [`color`](#color)                     | `String as PropType<Colors>` | `'primary'` |
-| [`size`](#size)                       | `String`                     | `''`        |
-| [`validationMode`](#validationMode)   | `String`                     | `''`        |
-| ~~value~~                 | `String`                     | `''`        |
-| [`name`](#name)                       | `String`                     | `''`        |
-| [`id`](#id)                           | `String`                     | `''`        |
-| [`rules`](#rules)                     | `String`                     | `''`        |
-| [`wrapperClass`](#wrapperClass)       | `String`                     | `''`        |
-| [`checkedValue`](#checkedValue)       | `String`                     | `''`        |
-| [`uncheckedValue`](#uncheckedValue)   | `String`                     | `''`        |
-| [`disabled`](#disabled)               | `String`                     | `''`        |
-| ~~disabledClass | `String`                     | `''`        |
-| [`errorClass`](#errorClass)           | `String`                     | `''`        |
+| Name                                | Type                         | Default     |
+| ----------------------------------- | ---------------------------- | ----------- |
+| [`modelValue`](#modelValue)         | `Boolean`                    | `false`     |
+| [`label`](#label)                   | `String`                     | `''`        |
+| [`labelClass`](#labelClass)         | `String`                     | `''`        |
+| [`inputClass`](#inputClass)         | `String`                     | `''`        |
+| [`color`](#color)                   | `String as PropType<Colors>` | `'primary'` |
+| [`size`](#size)                     | `String`                     | `''`        |
+| [`validationMode`](#validationMode) | `String`                     | `''`        |
+| ~~value~~                           | `String`                     | `''`        |
+| [`name`](#name)                     | `String`                     | `''`        |
+| [`id`](#id)                         | `String`                     | `''`        |
+| [`rules`](#rules)                   | `String`                     | `''`        |
+| [`wrapperClass`](#wrapperClass)     | `String`                     | `''`        |
+| [`checkedValue`](#checkedValue)     | `String`                     | `''`        |
+| [`uncheckedValue`](#uncheckedValue) | `String`                     | `''`        |
+| [`disabled`](#disabled)             | `String`                     | `''`        |
+| ~~disabledClass                     | `String`                     | `''`        |
+| [`errorClass`](#errorClass)         | `String`                     | `''`        |
 
 ## Events
 
@@ -258,10 +281,7 @@ const onChange = (val: boolean) => {
 </script>
 
 <template>
-  <VCheckbox
-    v-model="checked"
-    @update:modelValue="onChange"
-  />
+  <VCheckbox v-model="checked" @update:modelValue="onChange" />
 </template>
 ```
 

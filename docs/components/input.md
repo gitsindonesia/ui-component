@@ -296,7 +296,7 @@ You can use slots to insert custom content into the input field, such as icons, 
 
 ### Validation
 
-To use the `VInput` component with a form validation library, you can use the name prop to bind the component to a form control. For example, with `VeeValidate`, you can use the `useForm` hook to create a form with validation schema:
+To use the `VInput` component with a form validation library, you can use the `name` prop to bind the component to a form control. For example, with `VeeValidate`, you can use the `useForm` hook to create a form with validation schema:
 
 <LivePreview src="forms-input--validation" />
 
