@@ -71,17 +71,18 @@ The meta slot allows you to customize the text displayed above the pagination co
 
 ## Props
 
-| Name                                          | Type                                  | Default         |
-| --------------------------------------------- | ------------------------------------- | --------------- |
-| [`modelValue`](#modelValue)                   | `Number`                              | `1`             |
-| [`totalItems`](#totalItems)                   | `Number`                              | `0`             |
-| [`itemsPerPage`](#itemsPerPage)               | `Number`                              | `10`            |
-| [`itemsPerPageOptions`](#itemsPerPageOptions) | `Array as PropType<number[]>`         | `[25, 50, 100]` |
-| [`showingText`](#showingText)                 | `String`                              | `'Showing'`     |
-| [`backgroundColor`](#backgroundColor)         | `String`                              | `''`            |
-| [`dataText`](#dataText)                       | `String`                              | `'data'`        |
-| [`fromText`](#fromText)                       | `String`                              | `'from'`        |
-| [`pagination`](#pagination)                   | `Object as PropType<PaginationProps>` | `{}`            |
+| Name                                          | Type                              | Default         |
+| --------------------------------------------- | --------------------------------- | --------------- |
+| [`modelValue`](#modelValue)                   | `Number`                          | `1`             |
+| [`totalItems`](#totalItems)                   | `Number`                          | `0`             |
+| [`itemsPerPage`](#itemsPerPage)               | `Number`                          | `10`            |
+| [`itemsPerPageOptions`](#itemsPerPageOptions) | `Array as PropType<number[]>`     | `[25, 50, 100]` |
+| [`showingText`](#showingText)                 | `String`                          | `'Showing'`     |
+| [`backgroundColor`](#backgroundColor)         | `String`                          | `''`            |
+| [`dataText`](#dataText)                       | `String`                          | `'data'`        |
+| [`fromText`](#fromText)                       | `String`                          | `'from'`        |
+| [`pagination`](#pagination)                   | `Object as PropType<VPagination>` | `{}`            |
+| [`itemsPerPageProps`](#itemsPerPageProps)     | `Object`                          | `{}`            |
 
 ## Events
 
@@ -102,16 +103,6 @@ The `update:itemsPerPage` event is emitted by the `VDataTablePagination` compone
 ```vue
 <template>
   <VDataTablePagination @update:itemsPerPage="handle" />
-</template>
-```
-
-### `update:perPage`
-
-The `update:perPage` event is emitted by the `VDataTablePagination` component when the `perPage` prop is changed. This prop determines the options that are displayed in the items per page dropdown.
-
-```vue
-<template>
-  <VDataTablePagination @update:perPage="handle" />
 </template>
 ```
 

@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import {computed, PropType, ref, toRefs, watch} from 'vue';
 import Pagination from '@gits-id/pagination';
-import VSelect from '@gits-id/select';
 
 type PaginationProps = InstanceType<typeof Pagination>['$props'];
 
@@ -26,6 +25,9 @@ const props = defineProps({
     type: String,
     default: 'Showing',
   },
+  /**
+   * @deprecated Use `class` instead
+   */
   backgroundColor: {
     type: String,
     default: '',
@@ -42,36 +44,42 @@ const props = defineProps({
     type: Object as PropType<PaginationProps>,
     default: () => ({}),
   },
+  itemsPerPageProps: {
+    type: Object,
+    default: () => ({}),
+  },
 });
 
 const emit = defineEmits([
   'update:modelValue',
   'update:itemsPerPage',
-  'update:perPage',
   'update:itemsPerPageOptions',
 ]);
 
-const {modelValue, totalItems, itemsPerPage, itemsPerPageOptions} =
-  toRefs(props);
-const page = ref(modelValue.value);
+const {
+  modelValue: pageProp,
+  itemsPerPage: itemsPerPageProp,
+  itemsPerPageOptions: itemsPerPageOptionsProp,
+} = toRefs(props);
+
+const page = ref(pageProp.value);
+const itemsPerPage = ref(itemsPerPageProp.value);
+const itemsPerPageOptions = ref(itemsPerPageOptionsProp.value);
+
+watch(pageProp, (v) => (page.value = v));
+watch(itemsPerPageProp, (v) => (itemsPerPage.value = v));
+watch(itemsPerPageOptionsProp, (v) => (itemsPerPageOptions.value = v));
+
+watch(page, (v) => emit('update:modelValue', v));
+watch(itemsPerPage, (v) => emit('update:itemsPerPage', v));
+watch(itemsPerPageOptions, (v) => emit('update:itemsPerPageOptions', v));
 
 const start = computed(() =>
-  totalItems.value > 0 ? (page.value - 1) * itemsPerPage.value + 1 : 1,
+  props.totalItems > 0 ? (page.value - 1) * itemsPerPage.value + 1 : 1,
 );
+
 const end = computed(() =>
-  totalItems.value > 0 ? start.value + itemsPerPage.value - 1 : null,
-);
-
-const emitPage = (page: number) => {
-  emit('update:modelValue', page);
-};
-
-watch(
-  page,
-  (newVal) => {
-    emitPage(newVal);
-  },
-  {immediate: true},
+  props.totalItems > 0 ? start.value + itemsPerPage.value - 1 : null,
 );
 
 const perPageItems = computed(() =>
@@ -80,97 +88,64 @@ const perPageItems = computed(() =>
     value: v,
   })),
 );
-
-const itemsPerPageValue = ref<string | number>(itemsPerPage.value);
-
-watch(itemsPerPageValue, (val) => {
-  emit('update:itemsPerPage', val);
-  emit('update:perPage', val);
-});
-
-watch(
-  itemsPerPage,
-  (val) => {
-    itemsPerPageValue.value = val;
-  },
-  {immediate: true},
-);
-
-watch(
-  modelValue,
-  (val) => {
-    page.value = val;
-  },
-  {immediate: true},
-);
 </script>
 
 <template>
-  <div
-    :class="backgroundColor"
-    class="
-      w-full
-      px-6
-      py-3
-      border-t
-      flex flex-row
-      items-center
-      gap-4
-      justify-center
-      sm:justify-between
-    "
-  >
+  <div :class="backgroundColor" class="v-data-table-pagination">
     <slot
       name="rowsPerPage"
-      v-bind="{value: itemsPerPageValue, items: perPageItems}"
+      v-bind="{value: itemsPerPage, items: perPageItems}"
     >
-      <v-select
-        v-model="itemsPerPageValue"
-        :items="perPageItems"
-        hide-check-icon
-        placeholder="Select"
-        class="w-30 order-1"
-        top
-      />
+      <select
+        v-model="itemsPerPage"
+        class="v-data-table-pagination-items-per-page"
+        v-bind="itemsPerPageProps"
+      >
+        <option
+          v-for="item in perPageItems"
+          :value="item.value"
+          :key="item.text"
+        >
+          {{ item.text }}
+        </option>
+      </select>
     </slot>
 
-    <p
-      class="
-        w-auto
-        hidden
-        sm:flex
-        gap-1
-        items-center
-        text-sm text-gray-700
-        order-2
-      "
-    >
+    <p class="v-data-table-pagination-meta">
       <slot
         name="meta"
         v-bind="{showingText, start, end, fromText, totalItems, dataText}"
       >
-        <span class="hidden sm:inline"> {{ showingText }} </span>
-        <span class="font-semibold">{{ start }}</span>
-        <span>-</span>
-        <span class="font-semibold">{{ end }}</span>
-        <span>{{ fromText }}</span>
-        <span class="font-semibold">{{ totalItems }}</span>
-        <span class="hidden sm:inline"> {{ dataText }} </span>
+        <span class="v-data-table-pagination-meta-showing-text">
+          {{ showingText }}
+        </span>
+        <span class="v-data-table-pagination-meta-start-text">{{ start }}</span>
+        <span class="v-data-table-pagination-meta-separator-text">-</span>
+        <span class="v-data-table-pagination-meta-end-text">{{ end }}</span>
+        <span class="v-data-table-pagination-meta-from-text">{{
+          fromText
+        }}</span>
+        <span class="v-data-table-pagination-meta-total-items-text">{{
+          totalItems
+        }}</span>
+        <span class="v-data-table-pagination-meta-data-text">
+          {{ dataText }}
+        </span>
       </slot>
     </p>
-
-    <div class="flex-grow order-1 sm:order-3">&nbsp;</div>
-    <div class="w-auto flex justify-center sm:justify-end order-3 sm:order-4">
+    <div class="v-data-table-pagination-pagination">
       <Pagination
         v-model="page"
         :total-items="totalItems"
         :items-per-page="itemsPerPage"
         v-bind="pagination"
       >
-        <template v-for="(_, name) in $slots" v-slot:[name]
-          ><slot :name="name"
-        /></template>
+        <template v-for="(_, name) in $slots" v-slot:[name]>
+          <slot :name="name" />
+        </template>
       </Pagination>
     </div>
   </div>
 </template>
+
+<style lang="scss" src="./VDataTablePagination.scss"></style>

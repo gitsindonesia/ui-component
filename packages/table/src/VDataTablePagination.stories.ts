@@ -1,6 +1,10 @@
 import VDataTablePagination from './VDataTablePagination.vue';
 import {themeColors} from '@gits-id/utils/colors';
 import {Args, Meta, Story} from '@storybook/vue3';
+import { useForm } from 'vee-validate';
+import { ref } from 'vue';
+import '@gits-id/forms/src/forms.scss'
+import '@gits-id/pagination/src/VPagination.scss'
 
 export default {
   title: 'Components/DataTablePagination',
@@ -33,10 +37,6 @@ export default {
   args: {
     totalItems: 30,
     itemsPerPage: 10,
-    large: false,
-    small: false,
-    showNumber: true,
-    color: '',
   },
 } as Meta;
 
@@ -123,18 +123,29 @@ export const RowsPerPageSlot: Story = (args) => ({
     VDataTablePagination,
   },
   setup() {
-    return {args};
+    const page = ref(1)
+    const itemsPerPage = ref(10)
+    const {values} = useForm({});
+
+    return {args, values, page, itemsPerPage};
   },
   template: `
-    <v-data-table-pagination v-bind="args">
-      <template #rowsPerPage="{value, items}">
-        <select :value="value">
-          <option v-for="item in items" :value="item.value">
-            {{ item.text }}
-          </option>
-        </select>
-      </template>
-    </v-data-table-pagination>
+    <div>
+      <v-data-table-pagination
+        v-bind="args"
+        v-model="page"
+        v-model:itemsPerPage="itemsPerPage"
+      >
+        <template #rowsPerPage="{value, items}">
+          <select v-model="itemsPerPage">
+            <option v-for="item in items" :value="item.value">
+              {{ item.text }}
+            </option>
+          </select>
+        </template>
+      </v-data-table-pagination>
+      <v-data-table-pagination v-bind='args' v-model="page" v-model:itemsPerPage="itemsPerPage" />
+    </div>
   `,
 });
 RowsPerPageSlot.parameters = {
