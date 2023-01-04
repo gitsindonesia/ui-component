@@ -1,31 +1,37 @@
 # Tabs
 
-Vue tabs component.
+The `VTabs` component is a tabs component that allows users to create a tabbed interface for their applications. It offers a range of customization options, including the ability to specify custom classes for active and inactive tabs, show scroll arrows, center the active tab, and render the tabs vertically. Additionally, it can be used as a header in a VCard component, and its style can be customized through the use of CSS variables.
 
 ## Usage
 
 ### Basic Usage
 
-```ts
-// helpers
-function createItems(len = 20, additionalItem = {}) {
-  return [...Array(len)].map((v, k) => ({
-    text: `Tab Item ${k + 1}`,
-    ...additionalItem,
-  }));
-}
+You can use the `VTabs` component in your template like so:
 
-const items = createItems();
-```
+<LivePreview src="components-tabs--default">
 
 ```vue
+<script setup lang="ts">
+const items = ref([
+  {
+    text: 'Tab Item 1',
+  },
+  {
+    text: 'Tab Item 1',
+  },
+  {
+    text: 'Tab Item 1',
+  },
+  // ...
+]);
+</script>
 
 <template>
   <VTabs :items="items" />
 </template>
 ```
 
-<LivePreview src="components-tabs--default" />
+</LivePreview>
 
 ::: info
 The `VTabs` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it
@@ -34,7 +40,7 @@ manually.
 
 ### `v-model`
 
-Use `v-model `to set selected tab.
+To specify the selected tab, you can use the `v-model` directive to bind the `VTabs` component to a data property:
 
 ```vue
 <script setup lang="ts">
@@ -52,6 +58,8 @@ const selectedTab = ref(0);
 
 Define custom classes to apply when tab is active (`active-class`), inactive (`inactive-class`). Or add common custom class for tabs using `default-class`.
 
+<LivePreview src="components-tabs--custom-active-class" height="150" >
+
 ```vue
 <template>
   <VTabs
@@ -64,11 +72,13 @@ Define custom classes to apply when tab is active (`active-class`), inactive (`i
 </template>
 ```
 
-<LivePreview src="components-tabs--custom-active-class" height="150" />
+</LivePreview>
 
 ### Show Arrow
 
-Use `showArrow` to enable  arrows to scroll the tab list. Only works if the list is scrollable.
+Use `showArrow` to enable arrows to scroll the tab list. Only works if the list is scrollable.
+
+<LivePreview src="components-tabs--show-arrows" height="150" >
 
 ```vue
 <template>
@@ -76,11 +86,13 @@ Use `showArrow` to enable  arrows to scroll the tab list. Only works if the list
 </template>
 ```
 
-<LivePreview src="components-tabs--show-arrows" height="150" />
+</LivePreview>
 
 ### Center Active
 
 Use `centerActive` to allow the active tab to be position as at the center if possible. Works well when the list is scrollable.
+
+<LivePreview src="components-tabs--center-active" height="150">
 
 ```vue
 <template>
@@ -88,11 +100,13 @@ Use `centerActive` to allow the active tab to be position as at the center if po
 </template>
 ```
 
-<LivePreview src="components-tabs--center-active" height="150"/>
+</LivePreview>
 
 ### Vertical
 
 Use `vertical` to render the tabs vertically.
+
+<LivePreview src="components-tabs--vertical" >
 
 ```vue
 <template>
@@ -100,11 +114,13 @@ Use `vertical` to render the tabs vertically.
 </template>
 ```
 
-<LivePreview src="components-tabs--vertical" />
+</LivePreview>
 
 ### Tabs with Card
 
 Use `VTabs` as header in a `VCard` component.
+
+<LivePreview src="components-tabs--tabs-with-card" >
 
 ```vue
 <template>
@@ -115,11 +131,13 @@ Use `VTabs` as header in a `VCard` component.
 </template>
 ```
 
-<LivePreview src="components-tabs--tabs-with-card" />
+</LivePreview>
 
 ### Custom Style
 
 Override CSS variables for `VTabs` inline through `style` prop;
+
+<LivePreview src="components-tabs--custom-style" height="150" >
 
 ```vue
 <template>
@@ -140,12 +158,14 @@ Override CSS variables for `VTabs` inline through `style` prop;
 </template>
 ```
 
-<LivePreview src="components-tabs--custom-style" height="150" />
+</LivePreview>
 
 ### Removeable
 
 Makes tab item removable. To automatically handle side effects, `items` props need to be bound as `v-model`, otherwise
 side effect can be applied manually by listening to either `remove` event or `update:items`.
+
+<LivePreview src="components-tabs--removeable" height="150" >
 
 ```vue
 <template>
@@ -153,12 +173,12 @@ side effect can be applied manually by listening to either `remove` event or `up
 </template>
 ```
 
-<LivePreview src="components-tabs--removeable" height="150" />
+</LivePreview>
 
 ## Props
 
 | Name                                          | Type                                                                                                    | Default                   |
-|-----------------------------------------------|---------------------------------------------------------------------------------------------------------|---------------------------|
+| --------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------- |
 | [`modelValue`](#modelValue)                   | `Number or String`                                                                                      | `0`                       |
 | [`items`](#items)                             | `Array<TabItem[]>`                                                                                      | `[]`                      |
 | [`itemText`](#itemText)                       | `String`                                                                                                | `'text'`                  |
@@ -209,7 +229,7 @@ const onChange = (value: number) => console.log(value);
 
 ### `update:items`
 
-Event emitted when list items change. It provides new `items` as argument. 
+Event emitted when list items change. It provides new `items` as argument.
 
 ```vue
 <script setup lang="ts">
@@ -236,6 +256,8 @@ const onChange = (items: any[]) => console.log(items);
 
 ### `change`
 
+Event emitted when active tab changes. It provides new `value` as argument.
+
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
@@ -260,6 +282,8 @@ const onChange = (value: number) => console.log(value);
 ```
 
 ### `remove`
+
+Event emitted when user click the remove tab buttton.
 
 ```vue
 <script setup lang="ts">
@@ -300,35 +324,43 @@ Define custom tab items rendering
 Slot Props
 
 | Prop          | Value      | Description                |
-|---------------|------------|----------------------------|
+| ------------- | ---------- | -------------------------- |
 | `onClick`     | `function` | Index of current tab       |
 | `registerRef` | `function` | Current tab original value |
 
-```vue
-<VTabs>
-<template v-slot:default="{onClick, registerRef, }">
-  <VTab
-    v-bind="item"
-    v-for="(item, index) in items"
-    :key="index"
-    :index="index"
-    :get-ref="registerRef"
-    :active="index === activeTab"
-    @click="onClick"
-  >
-    <div class="inline-block">
-      {{ item.text }} {{ item.icon }}
+<LivePreview src="components-tabs--custom-tab" height="200" >
 
-      <span v-if="tab  === index" class="text-red-700" style="font-size: 10px; vertical-align: middle;">
-        {{ index }}
-      </span>
-    </div>
-  </VTab>
+```vue
+<template>
+  <VTabs>
+    <template #default="{onClick, registerRef}">
+      <VTab
+        v-bind="item"
+        v-for="(item, index) in items"
+        :key="index"
+        :index="index"
+        :get-ref="registerRef"
+        :active="index === activeTab"
+        @click="onClick"
+      >
+        <div class="inline-block">
+          {{ item.text }} {{ item.icon }}
+
+          <span
+            v-if="tab === index"
+            class="text-red-700"
+            style="font-size: 10px; vertical-align: middle;"
+          >
+            {{ index }}
+          </span>
+        </div>
+      </VTab>
+    </template>
+  </VTabs>
 </template>
-</VTabs>
 ```
 
-<LivePreview src="components-tabs--custom-tab" height="200" />
+</LivePreview>
 
 ### `item`
 
@@ -337,28 +369,35 @@ Define custom content for the tab.
 Slot Props
 
 | Prop     | Value     | Description                              |
-|----------|-----------|------------------------------------------|
+| -------- | --------- | ---------------------------------------- |
 | `index`  | `number`  | Index of current tab                     |
 | `item`   | `any`     | Current tab original value               |
 | `value`  | `any`     | Current tab label                        |
 | `active` | `boolean` | Indication whether current tab is active |
 
+<LivePreview src="components-tabs--custom-tab-content" height="200" >
+
 ```vue
-<VTabs>
-<template v-slot:item="{index, item, value, active}">
-  <div class="inline-block">
-    {{ value }} {{ item.icon }}
+<template>
+  <VTabs>
+    <template v-slot:item="{index, item, value, active}">
+      <div class="inline-block">
+        {{ value }} {{ item.icon }}
 
-    <span v-if="active" class="text-red-700" style="font-size: 10px; vertical-align: middle;">
-        {{ index }}
-      </span>
-  </div>
+        <span
+          v-if="active"
+          class="text-red-700"
+          style="font-size: 10px; vertical-align: middle;"
+        >
+          {{ index }}
+        </span>
+      </div>
+    </template>
+  </VTabs>
 </template>
-</VTabs>
-
 ```
 
-<LivePreview src="components-tabs--custom-tab-content" height="200" />
+</LivePreview>
 
 ### `previous`
 
@@ -367,18 +406,22 @@ Define custom content for the previous arrow. Works when `showArrows` is set to 
 Slot Props
 
 | Prop      | Value      | Description                     |
-|-----------|------------|---------------------------------|
+| --------- | ---------- | ------------------------------- |
 | `onClick` | `function` | Callback to handle click action |
 
+<LivePreview src="components-tabs--previous" height="200" >
+
 ```vue
-<VTabs>
-<template v-slot:previous="{onClick}">
-  <VBtn prefix-icon="ri:arrow-left-s-line" class="mr-2" @click="onClick" />
+<template>
+  <VTabs>
+    <template v-slot:previous="{onClick}">
+      <VBtn prefix-icon="ri:arrow-left-s-line" class="mr-2" @click="onClick" />
+    </template>
+  </VTabs>
 </template>
-</VTabs>
 ```
 
-<LivePreview src="components-tabs--previous" height="200" />
+</LivePreview>
 
 ### `next`
 
@@ -387,28 +430,36 @@ Define custom content for the next arrow. Works when `showArrows` is set to `tru
 Slot Props
 
 | Prop      | Value      | Description                     |
-|-----------|------------|---------------------------------|
+| --------- | ---------- | ------------------------------- |
 | `onClick` | `function` | Callback to handle click action |
 
+<LivePreview src="components-tabs--next" height="200" >
+
 ```vue
-<VTabs>
-<template v-slot:next="{onClick}">
-  <VBtn prefix-icon="ri:arrow-right-s-line" class="mr-2" @click="onClick" />
+<template>
+  <VTabs>
+    <template v-slot:next="{onClick}">
+      <VBtn prefix-icon="ri:arrow-right-s-line" class="mr-2" @click="onClick" />
+    </template>
+  </VTabs>
 </template>
-</VTabs>
 ```
 
-<LivePreview src="components-tabs--next" height="200" />
+</LivePreview>
 
 ### `prepend`
 
 Add an item to the start of the tab list
 
+<LivePreview src="components-tabs--prepend" height="200" >
+
 ```vue
 <template>
   <VTabs>
     <template #prepend>
-      <div class="bg-[yellow] whitespace-nowrap uppercase p-3 mr-2 rounded-full">
+      <div
+        class="bg-[yellow] whitespace-nowrap uppercase p-3 mr-2 rounded-full"
+      >
         🎒
       </div>
     </template>
@@ -416,25 +467,25 @@ Add an item to the start of the tab list
 </template>
 ```
 
-<LivePreview src="components-tabs--prepend" height="200" />
+</LivePreview>
 
 ### `append`
 
 Add an item to the end of the tab list
 
+<LivePreview src="components-tabs--append" height="200" >
+
 ```vue
 <template>
   <VTabs>
     <template #append>
-      <button title="See? I've been appended!">
-        ❓
-      </button>
+      <button title="See? I've been appended!">❓</button>
     </template>
   </VTabs>
 </template>
 ```
 
-<LivePreview src="components-tabs--append" height="200" />
+</LivePreview>
 
 ## CSS Variables
 
