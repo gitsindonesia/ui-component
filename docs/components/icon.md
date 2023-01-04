@@ -12,13 +12,15 @@ You can view a list of available icons [here](https://icones.js.org/).
 
 To use the `VIcon` component, simply include it in your template like this:
 
+<LivePreview src="components-icon--default" height="100">
+
 ```vue
 <template>
   <VIcon name="ic:round-home" />
 </template>
 ```
 
-<LivePreview src="components-icon--default" height="80" />
+</LivePreview>
 
 ::: info
 The `VIcon` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
@@ -27,6 +29,8 @@ The `VIcon` component is registered globally when you install with `@gits-id/ui`
 ### Sizes
 
 The `VIcon` component allows you to specify the size of the icon using the `size` prop. Here are some examples of how to use it:
+
+<LivePreview src="components-icon--sizes" height="100" >
 
 ```vue
 <template>
@@ -41,7 +45,7 @@ The `VIcon` component allows you to specify the size of the icon using the `size
 </template>
 ```
 
-<LivePreview src="components-icon--sizes" height="100" />
+</LivePreview>
 
 ## Props
 
