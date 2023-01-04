@@ -24,6 +24,8 @@ interface Menu {
 
 Here is an example of how to use the `VMenu` component with a basic menu object:
 
+<LivePreview src="components-menu--default" >
+
 ```vue
 <script setup lang="ts">
 const item = {
@@ -48,7 +50,7 @@ const item = {
 </template>
 ```
 
-<LivePreview src="components-menu--default" />
+</LivePreview>
 
 ### Variants
 
@@ -64,6 +66,8 @@ Here is an example of how to use the small variant:
 ### Small
 
 Use `small` prop to make the menu items smaller and reduces the padding.
+
+<LivePreview src="components-menu--small" >
 
 ```vue
 <script setup lang="ts">
@@ -89,11 +93,13 @@ const item = {
 </template>
 ```
 
-<LivePreview src="components-menu--small" />
+</LivePreview>
 
 ### Mini
 
 Use `mini` prop to make the menu items even smaller and reduces the padding even more.
+
+<LivePreview src="components-menu--mini" >
 
 ```vue
 <script setup lang="ts">
@@ -119,11 +125,13 @@ const item = {
 </template>
 ```
 
-<LivePreview src="components-menu--mini" />
+</LivePreview>
 
 ### Custom Active Class
 
 By default, the `VMenu` component applies a blue background and white text to the active menu item. You can customize this behavior by passing a different `active-class` prop:
+
+<LivePreview src="components-menu--custom-active-class" >
 
 ```vue
 <script setup lang="ts">
@@ -149,11 +157,13 @@ const item = {
 </template>
 ```
 
-<LivePreview src="components-menu--custom-active-class" />
+</LivePreview>
 
 ### Icons
 
 You can use icons in the `VMenu` component by specifying the `icon` prop for each menu item. The icon prop should be a string that follows the [Icones](https://icones.js.org/) syntax.
+
+<LivePreview src="components-menu--icons" >
 
 ```vue
 <script setup lang="ts">
@@ -169,7 +179,7 @@ const item = {
 </template>
 ```
 
-<LivePreview src="components-menu--icons" />
+</LivePreview>
 
 ## Props
 
@@ -203,7 +213,7 @@ None
 You can also install the `Menu` component individually via `@gits-id/menu` package:
 
 ```bash
-yarn install @gits-id/menu
+npm i @gits-id/menu
 ```
 
 ```vue
