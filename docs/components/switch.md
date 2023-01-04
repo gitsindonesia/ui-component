@@ -1,10 +1,14 @@
 # Switch
 
-Vue Switch / Toggle component.
+The `VSwitch` component allows you to add a toggle switch to your Vue app.
 
 ## Usage
 
 ### Basic Usage
+
+To use the component, you first need to install it with `@gits-id/ui`. Once installed, the `VSwitch` component will be registered globally, so you don't need to import it manually.
+
+<LivePreview src="components-switch--default" >
 
 ```vue
 <script setup lang="ts">
@@ -18,13 +22,17 @@ const checked = ref(false);
 </template>
 ```
 
-<LivePreview src="components-switch--default" />
+</LivePreview>
 
 ::: info
 The `VSwitch` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
 ### Colors
+
+You can specify the color of the `VSwitch` using the color prop. The available colors are `primary`, `secondary`, `success`, `warning`, `error`, and custom.
+
+<LivePreview src="components-switch--warning" >
 
 ```vue
 <script setup lang="ts">
@@ -38,9 +46,13 @@ const checked = ref(false);
 </template>
 ```
 
-<LivePreview src="components-switch--warning" />
+</LivePreview>
 
 ### No Label
+
+If you don't want to display a label, you can leave out the `label` prop.
+
+<LivePreview src="components-switch--no-label" >
 
 ```vue
 <script setup lang="ts">
@@ -54,9 +66,13 @@ const checked = ref(false);
 </template>
 ```
 
-<LivePreview src="components-switch--no-label" />
+</LivePreview>
 
 ### Custom Class
+
+You can apply custom classes to the `VSwitch` and its individual parts using the `switch-class`, `active-class`, `inactive-class`, and `button-class` props.
+
+<LivePreview src="components-switch--custom-class" >
 
 ```vue
 <script setup lang="ts">
@@ -77,9 +93,13 @@ const checked = ref(false);
 </template>
 ```
 
-<LivePreview src="components-switch--custom-class" />
+</LivePreview>
 
 ### Custom Style
+
+You can also style the component using CSS variables.
+
+<LivePreview src="components-switch--custom-style" >
 
 ```vue
 <script setup lang="ts">
@@ -106,9 +126,13 @@ const checked = ref(false);
 </template>
 ```
 
-<LivePreview src="components-switch--custom-style" />
+</LivePreview>
 
 ### Validation
+
+You can use the `VSwitch` component with form validation libraries like `vee-validate`.
+
+<LivePreview src="components-switch--validation" >
 
 ```vue
 <script setup lang="ts">
@@ -145,7 +169,7 @@ const onSubmit = handleSubmit((values) => {
 </template>
 ```
 
-<LivePreview src="components-switch--validation" />
+</LivePreview>
 
 ## Props
 
@@ -169,7 +193,10 @@ const onSubmit = handleSubmit((values) => {
 
 ### `update:modelValue`
 
-**Type**: 
+The `update:modelValue` event is emitted when the value of the `VSwitch` changes.
+
+**Type**:
+
 ```ts
 (event: 'update:modelValue', value: boolean): void
 ```
