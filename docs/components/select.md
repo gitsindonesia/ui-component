@@ -1,8 +1,14 @@
 # Select
 
+The `VSelect` component is a form control for presenting a list of options to the user. It provides various customization options such as the ability to search for items, display a label, and show or hide a check icon. It can also display in an error state and include a shadow effect.
+
 ## Usage
 
 ### Basic Usage
+
+To use the `VSelect` component, you will need to import the `ref` function from `vue` and the `VSelectItem` type from `@gits-id/select`. Then, create a ref of an array of `VSelectItem` objects and pass it to the `items` prop of the `VSelect` component in your template.
+
+<LivePreview src="components-select--select" >
 
 ```vue
 <script setup lang="ts">
@@ -30,13 +36,17 @@ const items = ref<VSelectItem[]>([
 </template>
 ```
 
-<LivePreview src="components-select--select" />
+</LivePreview>
 
 ::: info
 The `VSelect` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
 ### Searchable
+
+To enable search functionality in the `VSelect` component, pass the `searchable` prop.
+
+<LivePreview src="components-select--searchable" >
 
 ```vue
 <script setup lang="ts">
@@ -64,9 +74,13 @@ const items = ref<VSelectItem[]>([
 </template>
 ```
 
-<LivePreview src="components-select--searchable" />
+</LivePreview>
 
 ### No Check Icon
+
+To hide the check icon in the `VSelect` component, pass the `no-check-icon` prop.
+
+<LivePreview src="components-select--no-check-icon" >
 
 ```vue
 <script setup lang="ts">
@@ -94,9 +108,13 @@ const items = ref<VSelectItem[]>([
 </template>
 ```
 
-<LivePreview src="components-select--no-check-icon" />
+</LivePreview>
 
 ### Label
+
+To display a label for the `VSelect` component, pass the `label` prop.
+
+<LivePreview src="components-select--label" >
 
 ```vue
 <script setup lang="ts">
@@ -124,9 +142,13 @@ const items = ref<VSelectItem[]>([
 </template>
 ```
 
-<LivePreview src="components-select--label" />
+</LivePreview>
 
 ### Shadow
+
+To apply a shadow effect to the `VSelect` component, pass the `shadow` prop.
+
+<LivePreview src="components-select--shadow" >
 
 ```vue
 <script setup lang="ts">
@@ -154,9 +176,13 @@ const items = ref<VSelectItem[]>([
 </template>
 ```
 
-<LivePreview src="components-select--shadow" />
+</LivePreview>
 
 ### Error
+
+To display the `VSelect` component in an error state, pass the `error` prop.
+
+<LivePreview src="components-select--error" >
 
 ```vue
 <script setup lang="ts">
@@ -184,9 +210,13 @@ const items = ref<VSelectItem[]>([
 </template>
 ```
 
-<LivePreview src="components-select--error" />
+</LivePreview>
 
 ### Clearable
+
+To enable the ability to clear the selected value in the `VSelect` component, pass the `clearable` prop.
+
+<LivePreview src="components-select--clearable" >
 
 ```vue
 <script setup lang="ts">
@@ -214,9 +244,13 @@ const items = ref<VSelectItem[]>([
 </template>
 ```
 
-<LivePreview src="components-select--clearable" />
+</LivePreview>
 
 ### Custom Transition
+
+To customize the transition effect of the `VSelect` component, pass the desired transition name to the `transition` prop.
+
+<LivePreview src="components-select--custom-transition">
 
 ```vue
 <script setup lang="ts">
@@ -244,9 +278,13 @@ const items = ref<VSelectItem[]>([
 </template>
 ```
 
-<LivePreview src="components-select--custom-transition" />
+</LivePreview>
 
 ### Return Object
+
+To return the selected item as an object rather than just the value, pass the `return-object` prop.
+
+<LivePreview src="components-select--return-object" >
 
 ```vue
 <script setup lang="ts">
@@ -274,9 +312,13 @@ const items = ref<VSelectItem[]>([
 </template>
 ```
 
-<LivePreview src="components-select--return-object" />
+</LivePreview>
 
 ### Sizes
+
+The `VSelect` component supports three sizes: `sm`, `md`, and `lg`. To specify the size of the component, use the `size` prop.
+
+<LivePreview src="components-select--sizes" >
 
 ```vue
 <script setup lang="ts">
@@ -306,9 +348,13 @@ const items = ref<VSelectItem[]>([
 </template>
 ```
 
-<LivePreview src="components-select--sizes" />
+</LivePreview>
 
 ### Validation
+
+The `VSelect` component can be used with the `vee-validate` library to provide form validation. To use the `VSelect` component in a form with validation, import the `useForm` hook and pass it an object with a `validationSchema` property. Then, bind the `VSelect` component to the form values using the `v-model` directive.
+
+<LivePreview src="components-select--validation" >
 
 ```vue
 <script setup lang="ts">
@@ -377,7 +423,7 @@ const genres = ref([
 </template>
 ```
 
-<LivePreview src="components-select--validation" />
+</LivePreview>
 
 ## Props
 
@@ -420,6 +466,11 @@ const genres = ref([
 
 ### `VSelectItem`
 
+The `VSelectItem` interface represents an item in the list of options. It has the following properties:
+
+- `text`: The text to be displayed for the item.
+- `value`: The value of the item.
+
 ```ts
 export interface VSelectItem = {
   text: string;
@@ -429,63 +480,77 @@ export interface VSelectItem = {
 };
 ```
 
-## Methods
-
-None
-
 ## Events
 
-- [`update:modelValue`](#update:modelValue)
-- [`update:value`](#update:value)
-- [`search`](#search)
+### [`update:modelValue`](#update:modelValue)
+
+Emitted when the selected item changes.
+
+### [`update:value`](#update:value)
+
+Emitted when the selected item changes.
+
+### [`search`](#search)
+
+Emitted when the search input is changed.
 
 ## Slots
 
-- [`selected`](#selected)
+The `VSelect` component provides the following slots for customization:
 
-  ```vue
-  <template>
-    <VSelect>
-      <template #selected="item">
-        {{ item.text.toUpperCase() }}
-      </template>
-    </VSelect>
-  </template>
-  ```
+### [`selected`](#selected)
 
-- [`empty`](#empty)
+Customize the selected item display.
 
-  ```vue
-  <template>
-    <VSelect>
-      <template #empty> No item found. </template>
-    </VSelect>
-  </template>
-  ```
+```vue
+<template>
+  <VSelect>
+    <template #selected="item">
+      {{ item.text.toUpperCase() }}
+    </template>
+  </VSelect>
+</template>
+```
 
-- [`icon`](#icon)
+### [`empty`](#empty)
 
-  ```vue
-  <template>
-    <VSelect>
-      <template #icon="item">
-        <VIcon name="ri:check-line" />
-      </template>
-    </VSelect>
-  </template>
-  ```
+Customize the display for when there are no items.
 
-- [`item`](#item)
+```vue
+<template>
+  <VSelect>
+    <template #empty> No item found. </template>
+  </VSelect>
+</template>
+```
 
-  ```vue
-  <template>
-    <VSelect>
-      <template #item="item">
-        {{ item?.text.toUpperCase() }}
-      </template>
-    </VSelect>
-  </template>
-  ```
+### [`icon`](#icon)
+
+Customize the icon displayed for the selected item.
+
+```vue
+<template>
+  <VSelect>
+    <template #icon="item">
+      <VIcon name="ri:check-line" />
+    </template>
+  </VSelect>
+</template>
+```
+
+### [`item`](#item)
+
+Customize the display for each item in the list.
+
+```vue
+<template>
+  <VSelect>
+    <template #item="item">
+      {{ item?.text.toUpperCase() }}
+    </template>
+  </VSelect>
+</template>
+```
 
 ## CSS Variables
 
