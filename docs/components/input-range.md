@@ -6,7 +6,9 @@ The `VInputRange` component is a Vue.js component that allows users to select a 
 
 ### Basic Usage
 
-To use the `VInputRange` component, simply add the following template code:
+To use the `VInputRange` component, simply add the component to your template. This will display a default `VInputRange` component on the page.
+
+<LivePreview src="forms-inputrange--default" height="100">
 
 ```vue
 <template>
@@ -15,9 +17,7 @@ To use the `VInputRange` component, simply add the following template code:
 </template>
 ```
 
-This will display a default `VInputRange` component on the page.
-
-<LivePreview src="forms-inputrange--default" height="100" />
+</LivePreview>
 
 ::: info
 The `VInputRange` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
@@ -27,17 +27,27 @@ The `VInputRange` component is registered globally when you install with `@gits-
 
 You can also display an input field alongside the `VInputRange` component by adding the `show-input` prop:
 
+<LivePreview src="forms-inputrange--with-input" height="150" >
+
 ```vue
 <template>
   <VInputRange show-input />
 </template>
 ```
 
-<LivePreview src="forms-inputrange--with-input" height="150" />
+</LivePreview>
 
 ### Validation
 
 This example demonstrates how to use the `VInputRange` component with form validation using the `vee-validate` library.
+
+The `validationSchema` object specifies the validation rules for the form. In this case, the `score` field is required and must have a minimum value of 25 and a maximum value of 75. The `initialValues` object specifies the initial values for the form inputs.
+
+The `handleSubmit` function handles form submission and the `resetForm` function resets the form to its initial values. The `onSubmit` function is called when the form is submitted and displays an alert with the values of the form inputs as a string.
+
+The errors and values objects contain the validation errors and form input values, respectively, as determined by the `vee-validate` library. These objects are displayed in the pre element for debugging purposes.
+
+<LivePreview src="forms-inputrange--validation" height="510" >
 
 ```vue
 <script setup lang="ts">
@@ -83,13 +93,7 @@ const onSubmit = handleSubmit((values, ctx) => {
 </template>
 ```
 
-The `validationSchema` object specifies the validation rules for the form. In this case, the `score` field is required and must have a minimum value of 25 and a maximum value of 75. The `initialValues` object specifies the initial values for the form inputs.
-
-The `handleSubmit` function handles form submission and the `resetForm` function resets the form to its initial values. The `onSubmit` function is called when the form is submitted and displays an alert with the values of the form inputs as a string.
-
-The errors and values objects contain the validation errors and form input values, respectively, as determined by the `vee-validate` library. These objects are displayed in the pre element for debugging purposes.
-
-<LivePreview src="forms-inputrange--validation" height="510" />
+</LivePreview>
 
 ## Props
 
