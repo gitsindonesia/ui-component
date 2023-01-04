@@ -1,10 +1,14 @@
 # ProgressBar
 
-Vue Progress Bar / Progress Linear component.
+The `VProgressBar` component is a component that displays the progress of a task or action.
 
 ## Usage
 
 ### Basic Usage
+
+To use the component, you can include it in your template with a given `modelValue`, which determines the progress of the task. You can also specify a color for the progress bar, such as "primary", "secondary", "info", "warning", "success", "error", or "dark".
+
+<LivePreview src="components-progressbar--variants" >
 
 ```vue
 <template>
@@ -19,13 +23,17 @@ Vue Progress Bar / Progress Linear component.
 </template>
 ```
 
-<LivePreview src="components-progressbar--variants" />
+</LivePreview>
 
 ::: info
 The `VProgressbBr` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
 ### Slots
+
+You can also use slots to customize the label displayed in the progress bar.
+
+<LivePreview src="components-progressbar--slots" >
 
 ```vue
 <template>
@@ -43,9 +51,13 @@ The `VProgressbBr` component is registered globally when you install with `@gits
 </template>
 ```
 
-<LivePreview src="components-progressbar--slots" />
+</LivePreview>
 
 ### `v-model`
+
+The component also supports the `v-model` directive, which allows you to bind the value of the progress bar to a data property.
+
+<LivePreview src="components-progressbar--v-model" >
 
 ```vue
 <script setup lang="ts">
@@ -66,9 +78,13 @@ const value = ref(10);
 </template>
 ```
 
-<LivePreview src="components-progressbar--v-model" />
+</LivePreview>
 
 ### Indeterminate
+
+You can also set the `indeterminate` prop to display an indeterminate progress bar, which indicates that a task is in progress but the progress cannot be determined.
+
+<LivePreview src="components-progressbar--indeterminate" >
 
 ```vue
 <template>
@@ -76,7 +92,7 @@ const value = ref(10);
 </template>
 ```
 
-<LivePreview src="components-progressbar--indeterminate" />
+</LivePreview>
 
 ## Props
 
@@ -95,17 +111,53 @@ const value = ref(10);
 | [`labelClass`](#labelClass)       | `String`           | `''`      |
 | [`indeterminate`](#indeterminate) | `Boolean`          | `false`   |
 
-## Methods
-
-None
-
 ## Events
 
-None
+- `update:modelValue`
+
+Emitted when the `modelValue` prop is updated.
+
+```vue
+<template>
+  <VProgressBar @update:modelValue="onModelValueUpdate" />
+</template>
+
+<script>
+export default {
+  methods: {
+    onModelValueUpdate(value) {
+      console.log(`Model value updated: ${value}`);
+    },
+  },
+};
+</script>
+```
 
 ## Slots
 
-None
+- `default`
+
+Slot for custom content to be displayed within the progress bar. Receives an object containing the `value` of the progress bar as a percentage.
+
+```vue
+<template>
+  <VProgressBar>
+    <template v-slot="{value}"> {{ value }}% </template>
+  </VProgressBar>
+</template>
+```
+
+- `label`
+
+Slot for custom label content to be displayed within the progress bar. Receives an object containing the `value` of the progress bar as a percentage. If this slot is not provided, the `label` prop will be used as the label.
+
+```vue
+<template>
+  <VProgressBar>
+    <template #label="{value}"> {{ value }}% </template>
+  </VProgressBar>
+</template>
+```
 
 ## CSS Variables
 
@@ -134,7 +186,7 @@ None
 You can also install the `Progress Bar` component individually via `@gits-id/progress-bar` package:
 
 ```bash
-yarn install @gits-id/progress-bar
+npm i @gits-id/progress-bar
 ```
 
 ```vue
