@@ -1,10 +1,14 @@
 # Radio
 
-Form input radio component.
+The `VRadio` component is a form input element used to allow the user to select one option from a list of choices.
 
 ## Usage
 
 ### Basic Usage
+
+To use the `VRadio` component, you must first import it in your template:
+
+<LivePreview src="forms-radio--radio" >
 
 ```vue
 <script setup lang="ts">
@@ -18,13 +22,17 @@ const selected = ref(false);
 </template>
 ```
 
-<LivePreview src="forms-radio--radio" />
+</LivePreview>
 
 ::: info
 The `VRadio` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
 ### Disabled
+
+To disable the `VRadio` component, you can pass the `disabled` prop:
+
+<LivePreview src="forms-radio--disabled" >
 
 ```vue
 <script setup lang="ts">
@@ -38,9 +46,13 @@ const selected = ref(false);
 </template>
 ```
 
-<LivePreview src="forms-radio--disabled" />
+</LivePreview>
 
 ### Validation
+
+To validate the `VRadio` component, you can use a form validation library such as `vee-validate`.
+
+<LivePreview src="forms-radio--validation" >
 
 ```vue
 <script setup lang="ts">
@@ -81,12 +93,12 @@ const onSubmit = handleSubmit((values) => {
 </template>
 ```
 
-<LivePreview src="forms-radio--validation" />
+</LivePreview>
 
 ## Props
 
-| Name                              | Type    | Default                                              |
-| --------------------------------- | ------- | ---------------------------------------------------- |
+| Name                              | Type      | Default                                                |
+| --------------------------------- | --------- | ------------------------------------------------------ |
 | [`modelValue`](#modelValue)       | `String`  | `''`                                                   |
 | [`value`](#value)                 | `String`  | `''`                                                   |
 | [`label`](#label)                 | `String`  | `''`                                                   |
@@ -105,6 +117,8 @@ const onSubmit = handleSubmit((values) => {
 ## Events
 
 ### `update:modelValue`
+
+Emitted when the value of the v-model directive changes. Can be used to perform an action when the value changes, such as updating other data or displaying a message to the user.
 
 **Type**:
 

@@ -657,7 +657,7 @@ const onSubmit = handleSubmit((values) => {
 
 - [`update:modelValue`](#update:modelValue)
 
-Triggered when the value of the input element changes.
+Emitted when the value of the `v-model` directive changes. Can be used to perform an action when the value changes, such as updating other data or displaying a message to the user.
 
 ```vue
 <script setup lang="ts">
