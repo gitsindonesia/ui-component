@@ -1,8 +1,14 @@
 # TextArea
 
+`VTextarea` is textarea component.
+
 ## Usage
 
 ### Basic Usage
+
+To use the `VTextarea` component, you can include it in your template like this:
+
+<LivePreview height="200" src="forms-textarea--default" >
 
 ```vue
 <template>
@@ -11,9 +17,13 @@
 </template>
 ```
 
-<LivePreview height="200" src="forms-textarea--default" />
+</LivePreview>
 
 ### Label
+
+To add a label to your `VTextarea` component, you can use the `label` prop:
+
+<LivePreview height="250" src="forms-textarea--label">
 
 ```vue
 <template>
@@ -21,9 +31,13 @@
 </template>
 ```
 
-<LivePreview height="250" src="forms-textarea--label" />
+</LivePreview>
 
 ### Readonly
+
+To make a `VTextarea` component readonly, you can use the `readonly` prop:
+
+<LivePreview height="250" src="forms-textarea--readonly">
 
 ```vue
 <template>
@@ -31,9 +45,13 @@
 </template>
 ```
 
-<LivePreview height="250" src="forms-textarea--readonly" />
+</LivePreview>
 
 ### Disabled
+
+To disable a `VTextarea` component, you can use the `disabled` prop:
+
+<LivePreview height="250" src="forms-textarea--disabled">
 
 ```vue
 <template>
@@ -41,9 +59,13 @@
 </template>
 ```
 
-<LivePreview height="250" src="forms-textarea--disabled" />
+</LivePreview>
 
 ### Error
+
+To display an error message for a `VTextarea` component, you can use the `error` prop and the `error-messages` prop:
+
+<LivePreview height="250" src="forms-textarea--error">
 
 ```vue
 <template>
@@ -51,9 +73,13 @@
 </template>
 ```
 
-<LivePreview height="250" src="forms-textarea--error" />
+</LivePreview>
 
 ### Counter
+
+To display a character count for a `VTextarea` component, you can use the `counter` prop:
+
+<LivePreview height="250" src="forms-textarea--counter">
 
 ```vue
 <template>
@@ -61,25 +87,31 @@
 </template>
 ```
 
-<LivePreview height="250" src="forms-textarea--counter" />
+</LivePreview>
 
 ### Validation
 
-The first you need to do is import required package
+To use validation with the `VTextarea` component, you'll need to import the required packages and set up a validation schema.
+
+First, import the `useForm` hook from `vee-validate` and the `object` and `string` functions from `yup`:
 
 ```ts
 import {useForm} from 'vee-validate';
 import {object, string} from 'yup';
 ```
 
-And then
+Then, create a validation schema using the `object` and `string` functions:
 
 ```ts
 const schema = object({
   bio: string().required().label('Bio'),
   message: string().required().label('Message'),
 });
+```
 
+Next, use the `useForm` hook to set up form validation and create a `handleSubmit` function:
+
+```ts
 const {handleSubmit, resetForm} = useForm({
   validationSchema: schema,
 });
@@ -88,6 +120,8 @@ const onSubmit = handleSubmit((values) => {
   alert(JSON.stringify(values));
 });
 ```
+
+Finally, you can use the `VTextarea` component in your form template like this:
 
 ```vue
 <template>
@@ -111,7 +145,48 @@ const onSubmit = handleSubmit((values) => {
 </template>
 ```
 
-<LivePreview src="forms-textarea--validation" />
+<LivePreview src="forms-textarea--validation">
+
+```vue
+<script setup lang="ts">
+import {useForm} from 'vee-validate';
+import {object, string} from 'yup';
+
+const schema = object({
+  bio: string().required().label('Bio'),
+  message: string().required().label('Message'),
+});
+
+const {handleSubmit, resetForm} = useForm({
+  validationSchema: schema,
+});
+
+const onSubmit = handleSubmit((values) => {
+  alert(JSON.stringify(values));
+});
+</script>
+<template>
+  <form @submit="onSubmit" class="border-none">
+    <v-textarea
+      wrapper-class="mb-4"
+      name="message"
+      label="Message"
+      placeholder="Enter your message"
+    />
+    <v-textarea
+      wrapper-class="mb-4"
+      name="bio"
+      label="Bio"
+      placeholder="Enter your bio"
+      input-class="italic"
+    />
+    <v-btn type="submit">Submit</v-btn>
+    <v-btn type="button" text @click="resetForm">Reset</v-btn>
+  </form>
+</template>
+```
+
+</LivePreview>
 
 ### Validation Mode
 
@@ -119,7 +194,10 @@ There are 2 modes. The first is `eager` mode, and the second is `aggressive` mod
 
 You can change the default value for this validation mode by adding an attribute or property named `validation-mode` to this component.
 
-```ts{6}
+<LivePreview src="forms-textarea--validation-mode">
+
+```vue
+<script setup lang="ts">
 const schema = object({
   bio_eager: string().required().min(5).max(150).label('Bio'),
   bio_aggressive: string().required().min(5).max(150).label('Bio'),
@@ -134,9 +212,8 @@ const {handleSubmit, resetForm, values, errors} = useForm({
 const onSubmit = handleSubmit((values) => {
   alert(JSON.stringify(values));
 });
-```
+</script>
 
-```vue{12}
 <template>
   <form @submit="onSubmit" class="border-none">
     <div class="flex flex-wrap gap-4">
@@ -162,7 +239,7 @@ const onSubmit = handleSubmit((values) => {
 </template>
 ```
 
-<LivePreview src="forms-textarea--validation-mode" />
+</LivePreview>
 
 ## Props
 
@@ -185,13 +262,13 @@ const onSubmit = handleSubmit((values) => {
 | [`inputClass`](#inputClass)         | `string`           | `''`           |
 | [`validationMode`](#validationMode) | `string`           | `'aggressive'` |
 
-## Methods
-
-None
-
 ## Events
 
-- [`update:modelValue`](#update:modelValue)
+The `VTextarea` component emits the following events:
+
+### `update:modelValue`
+
+This event is emitted when the value of the `VTextarea` component changes. You can listen to this event using the `@update:modelValue` directive:
 
 ```vue
 <script lang="ts" setup>
@@ -205,7 +282,11 @@ const handle = () => alert('Triggered!');
 
 ## Slots
 
-- [`counter`](#counter-slot)
+The `VTextarea` component has the following slot:
+
+### `counter`
+
+This slot is used to customize the appearance of the character count when the `counter` prop is used. It is passed an object with the `count` property, which contains the current character count.
 
 ```vue
 <template>
@@ -219,26 +300,7 @@ const handle = () => alert('Triggered!');
 
 ### CSS Variables
 
-| Variable                                                          | Default Value                  |
-| ----------------------------------------------------------------- | ------------------------------ |
-| [`--v-input-height`](#--v-input-height)                           | `2.5rem`                       |
-| [`--v-input-border-color`](#--v-input-border-color)               | `theme('colors.gray.300'`      |
-| [`--v-input-placeholder-color`](#--v-input-placeholder-color)     | `theme('colors.gray.500')`     |
-| [`--v-input-border-radius`](#--v-input-border-radius)             | `theme('borderRadius.md')`     |
-| [`--v-input-padding-x`](#--v-input-padding-x)                     | `theme('padding.3')`           |
-| [`--v-input-padding-y`](#--v-input-padding-y)                     | `theme('padding.2')`           |
-| [`--v-input-font-size`](#--v-input-font-size)                     | `theme('fontSize.base')`       |
-| [`--v-input-bg-color`](#--v-input-bg-color)                       | `theme('colors.white')`        |
-| [`--v-input-label-font-size`](#--v-input-label-font-size)         | `theme('fontSize.sm'`          |
-| [`--v-input-label-font-weight`](#--v-input-label-font-weight)     | `theme('fontWeight.semibold')` |
-| [`--v-input-label-display`](#--v-input-label-display)             | `block`                        |
-| [`--v-input-label-margin-bottom`](#--v-input-label-margin-bottom) | `theme('margin.1')`            |
-| [`--v-input-text-color`](#--v-input-text-color)                   | `theme('colors.gray.600')`     |
-| [`--v-input-text-font-size`](#--v-input-text-font-size)           | `theme('fontSize.sm')`         |
-| [`--v-input-text-font-weight`](#--v-input-text-font-weight)       | `theme('fontWeight.normal')`   |
-| [`--v-input-icon-width`](#--v-input-icon-width)                   | `theme('width.5')`             |
-| [`--v-input-icon-height`](#--v-input-icon-height)                 | `theme('height.5')`            |
-| [`--v-input-icon-color`](#--v-input-icon-color)                   | `theme('colors.gray.500')`     |
+None.
 
 ## Manual Installation
 
@@ -247,24 +309,25 @@ You can also install the `VTextarea` component individually via `@gits-id/forms`
 yarn :
 
 ```bash
-yarn install @gits-id/forms
+yarn add @gits-id/forms
 ```
 
 npm :
 
 ```bash
-npm install @gits-id/forms
+npm i @gits-id/forms
 ```
 
 pnpm :
 
 ```bash
-pnpm install @gits-id/forms
+pnpm add @gits-id/forms
 ```
 
 ```vue
 <script setup lang="ts">
 import {VTextarea} from '@gits-id/forms';
+import '@gits-id/forms/dist/style.css';
 </script>
 
 <template>
