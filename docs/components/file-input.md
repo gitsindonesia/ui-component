@@ -6,7 +6,9 @@ The `VFileUpload` component is a form element that allows users to select and up
 
 ### Basic Usage
 
-You can use it in your template as follows:
+You can use it in your template as follows. This will render a basic file input field with the label "Label". The `v-model` directive is used to bind the value of the file input to the value variable, which can be a `ref` or a `computed` value.
+
+<LivePreview src="forms-fileupload--default">
 
 ```vue
 <script setup lang="ts">
@@ -20,9 +22,7 @@ const value = ref();
 </template>
 ```
 
-This will render a basic file input field with the label "Label". The v-model directive is used to bind the value of the file input to the value variable, which can be a ref or a computed value.
-
-<LivePreview src="forms-fileupload--default" />
+</LivePreview>
 
 ::: info
 The `VFileUpload` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
@@ -36,6 +36,8 @@ The `VFileUpload` component supports several themes that can be applied using th
 
 This will render a file input field as a button, with the label "Label" displayed on the button.
 
+<LivePreview src="forms-fileupload--button" >
+
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
@@ -48,13 +50,15 @@ const value = ref();
 </template>
 ```
 
-<LivePreview src="forms-fileupload--button" />
+</LivePreview>
 
 <br>
 
 #### Image Theme
 
 This will render a file input field as an image, with the label "Label" displayed on the image.
+
+<LivePreview src="forms-fileupload--image" >
 
 ```vue
 <script setup lang="ts">
@@ -68,13 +72,15 @@ const value = ref();
 </template>
 ```
 
-<LivePreview src="forms-fileupload--image" />
+</LivePreview>
 
 <br>
 
 #### Image Theme Full Width
 
 This will render a file input field as a full-width image, with the label "Label" displayed on the image.
+
+<LivePreview src="forms-fileupload--image-full" >
 
 ```vue
 <script setup lang="ts">
@@ -88,13 +94,15 @@ const value = ref();
 </template>
 ```
 
-<LivePreview src="forms-fileupload--image-full" />
+</LivePreview>
 
 <br>
 
 #### Dropzone Theme
 
 This will render a file input field as a dropzone, with the label "Label" displayed on the dropzone.
+
+<LivePreview src="forms-fileupload--dropzone" >
 
 ```vue
 <script setup lang="ts">
@@ -108,11 +116,13 @@ const value = ref();
 </template>
 ```
 
-<LivePreview src="forms-fileupload--dropzone" />
+</LivePreview>
 
 ### Validation
 
 You can use the `VFileUpload` component with form validation by using a validation library such as `vee-validate`. Here's an example of how to use the FileUpload component with `vee-validate`:
+
+<LivePreview src="forms-fileupload--validation" >
 
 ```vue
 <script setup lang="ts">
@@ -170,11 +180,13 @@ const onSubmit = handleSubmit((values) => {
 </template>
 ```
 
-<LivePreview src="forms-fileupload--validation" />
+</LivePreview>
 
 ### Initial Error
 
 You can also specify initial errors for the `VFileUpload` component by providing an `initialErrors` object to the useForm hook:
+
+<LivePreview src="forms-fileupload--initial-error" >
 
 ```vue {10-14}
 <script setup lang="ts">
@@ -234,11 +246,13 @@ const onSubmit = handleSubmit((values) => {
 </template>
 ```
 
-<LivePreview src="forms-fileupload--initial-error" />
+</LivePreview>
 
 ### Initial Values
 
 You can also specify initial values for the `VFileUpload` component by providing an `initialValues` object to the `useForm` hook:
+
+<LivePreview src="forms-fileupload--initial-error" >
 
 ```vue {10-14}
 <script setup lang="ts">
@@ -298,7 +312,7 @@ const onSubmit = handleSubmit((values) => {
 </template>
 ```
 
-<LivePreview src="forms-fileupload--initial-error" />
+</LivePreview>
 
 ## Props
 
