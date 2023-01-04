@@ -1,10 +1,14 @@
 # Pagination
 
-Vue pagination component.
+The `VPagination` component is used to create a pagination element for dividing content into multiple pages.
 
 ## Usage
 
 ### Basic Usage
+
+To use `VPagination`, you need to pass in at least two props: `v-model`, which binds the component to a page number, and `total-items`, which specifies the total number of items being paginated. You can also specify how many items are displayed per page using the `items-per-page` prop.
+
+<LivePreview src="components-pagination--default" height="80">
 
 ```vue
 <script setup lang="ts">
@@ -16,7 +20,6 @@ const itemsPerPage = ref(10);
 </script>
 
 <template>
-  <!-- VPagination is registered globally -->
   <VPagination
     v-model="page"
     :total-items="totalItems"
@@ -25,13 +28,17 @@ const itemsPerPage = ref(10);
 </template>
 ```
 
-<LivePreview src="components-pagination--default" />
+</LivePreview>
 
 ::: info
 The `VPagination` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
 ### Sizes
+
+You can customize the size of the pagination element using the size prop, which can be set to `sm`, `md` (default), or `lg`.
+
+<LivePreview src="components-pagination--sizes" height="180">
 
 ```vue
 <template>
@@ -41,9 +48,13 @@ The `VPagination` component is registered globally when you install with `@gits-
 </template>
 ```
 
-<LivePreview src="components-pagination--sizes" />
+</LivePreview>
 
 ### Flat
+
+To create a flat-style pagination element, set the `flat` prop to `true`.
+
+<LivePreview src="components-pagination--flat" height="80">
 
 ```vue
 <template>
@@ -51,9 +62,13 @@ The `VPagination` component is registered globally when you install with `@gits-
 </template>
 ```
 
-<LivePreview src="components-pagination--flat" />
+</LivePreview>
 
 ### Custom Style
+
+You can customize the appearance of the pagination element by passing in a style object using the `style` prop.
+
+<LivePreview src="components-pagination--custom-style" height="80">
 
 ```vue
 <template>
@@ -66,9 +81,18 @@ The `VPagination` component is registered globally when you install with `@gits-
 </template>
 ```
 
-<LivePreview src="components-pagination--custom-style" />
+</LivePreview>
 
 ### Slots
+
+You can customize the text and icons of the pagination buttons using slots. Available slots are:
+
+- `btnPrev`: the "previous" button
+- `btnNext`: the "next" button
+- `btnFirst`: the "first" button
+- `btnLast`: the "last" button
+
+<LivePreview src="components-pagination--slots" height="80">
 
 ```vue
 <template>
@@ -81,40 +105,39 @@ The `VPagination` component is registered globally when you install with `@gits-
 </template>
 ```
 
-<LivePreview src="components-pagination--slots" />
+</LivePreview>
 
 ## Props
 
-| Name                              | Type             | Default                                     |
-| --------------------------------- | ---------------- | ------------------------------------------- |
-| [`modelValue`](#modelValue)       | `number`         | `1`                                         |
-| [`showFirst`](#showFirst)         | `boolean`        | `true`                                      |
-| [`showPrevious`](#showPrevious)   | `boolean`        | `true`                                      |
-| [`showNext`](#showNext)           | `boolean`        | `true`                                      |
-| [`showLast`](#showLast)           | `boolean`        | `true`                                      |
-| [`totalItems`](#totalItems)       | `number`         | `0`                                         |
-| [`siblingCount`](#siblingCount)   | `number`         | `1`                                         |
-| [`boundaryCount`](#boundaryCount) | `number`         | `1`                                         |
-| [`itemsPerPage`](#itemsPerPage)   | `number`         | `10`                                        |
-| [`activeClass`](#activeClass)     | `string`         | `''`                                        |
-| [`defaultClass`](#defaultClass)   | `string`         | `''`                                        |
-| [`simple`](#simple)               | `boolean`        | `false`                                     |
-| [`flat`](#flat)                   | `boolean`        | `false`                                     |
-| [`size`](#size)                   | `sm \| md \| lg` | `md`                                        |
-| [`prevIcon`](#prevIcon)           | `String`         | `'heroicons:chevron-left-20-solid'`         |
-| [`nextIcon`](#nextIcon)           | `String`         | `'heroicons:chevron-right-20-solid'`        |
-| [`firstIcon`](#firstIcon)         | `String`         | `'heroicons:chevron-double-left-20-solid'`  |
-| [`lastIcon`](#lastIcon)           | `String`         | `'heroicons:chevron-double-right-20-solid'` |
-| [`iconSize`](#iconSize)           | `String`         | `'sm'`                                      |
-| [`iconClass`](#iconClass)         | `String`         | `''`                                        |
-
-## Methods
-
-None
+| Name                              | Type             | Default                                     | Description                                                                                |
+| --------------------------------- | ---------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| [`modelValue`](#modelValue)       | `number`         | `1`                                         | The page number that the pagination element is bound to.                                   |
+| [`showFirst`](#showFirst)         | `boolean`        | `true`                                      | Determines whether the "first" button is displayed.                                        |
+| [`showPrevious`](#showPrevious)   | `boolean`        | `true`                                      | Determines whether the "previous" button is displayed.                                     |
+|                                   |
+| [`showNext`](#showNext)           | `boolean`        | `true`                                      | Determines whether the "next" button is displayed.                                         |
+| [`showLast`](#showLast)           | `boolean`        | `true`                                      | Determines whether the "last" button is displayed.                                         |
+| [`totalItems`](#totalItems)       | `number`         | `0`                                         | The total number of items being paginated.                                                 |
+| [`siblingCount`](#siblingCount)   | `number`         | `1`                                         | The number of page numbers displayed to the left and right of the active page number.      |
+| [`boundaryCount`](#boundaryCount) | `number`         | `1`                                         | The number of page numbers displayed at the beginning and end of the list of page numbers. |
+| [`itemsPerPage`](#itemsPerPage)   | `number`         | `10`                                        | The number of items displayed on each page.                                                |
+| [`activeClass`](#activeClass)     | `string`         | `''`                                        | A class name applied to the active page number.                                            |
+| [`defaultClass`](#defaultClass)   | `string`         | `''`                                        | A class name applied to the default page numbers.                                          |
+| [`simple`](#simple)               | `boolean`        | `false`                                     | Determines whether the pagination element is displayed as a simple list of page numbers.   |
+| [`flat`](#flat)                   | `boolean`        | `false`                                     | Determines whether the pagination element has a flat style.                                |
+| [`size`](#size)                   | `sm \| md \| lg` | `md`                                        | The size of the pagination element.                                                        |
+| [`prevIcon`](#prevIcon)           | `String`         | `'heroicons:chevron-left-20-solid'`         | The icon displayed in the "previous" button.                                               |
+| [`nextIcon`](#nextIcon)           | `String`         | `'heroicons:chevron-right-20-solid'`        | The icon displayed in the "next" button.                                                   |
+| [`firstIcon`](#firstIcon)         | `String`         | `'heroicons:chevron-double-left-20-solid'`  | The icon displayed in the "first" button.                                                  |
+| [`lastIcon`](#lastIcon)           | `String`         | `'heroicons:chevron-double-right-20-solid'` | The icon displayed in the "last" button.                                                   |
+| [`iconSize`](#iconSize)           | `String`         | `'sm'`                                      | The size of icon.                                                                          |
+| [`iconClass`](#iconClass)         | `String`         | `''`                                        | A class name applied to the icon number.                                                   |
 
 ## Events
 
 ### `update:modelValue`
+
+Emitted when the `modelValue` prop is changed. You can use this event to respond to changes in the active page number.
 
 ```vue
 <script setup lang="ts">
@@ -132,7 +155,11 @@ const onChange = (val: number) => console.log('Changed!', val);
 
 ## Slots
 
+The `VPagination` component has several slots that allow you to customize the text and icons of the pagination buttons.
+
 ### `ellipsis`
+
+Use this slot to customize the text or icon displayed as an ellipsis.
 
 ```vue
 <template>
@@ -144,6 +171,8 @@ const onChange = (val: number) => console.log('Changed!', val);
 
 ### `btnPrev`
 
+Use this slot to customize the text or icon displayed in the "previous" button.
+
 ```vue
 <template>
   <VPagination>
@@ -153,6 +182,8 @@ const onChange = (val: number) => console.log('Changed!', val);
 ```
 
 ### `btnNext`
+
+Use this slot to customize the text or icon displayed in the "next" button.
 
 ```vue
 <template>
@@ -164,6 +195,8 @@ const onChange = (val: number) => console.log('Changed!', val);
 
 ### `btnFirst`
 
+Use this slot to customize the text or icon displayed in the "first" button.
+
 ```vue
 <template>
   <VPagination>
@@ -173,6 +206,8 @@ const onChange = (val: number) => console.log('Changed!', val);
 ```
 
 ### `btnLast`
+
+Use this slot to customize the text or icon displayed in the "last" button.
 
 ```vue
 <template>
