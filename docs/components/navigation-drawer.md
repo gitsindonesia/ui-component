@@ -1,15 +1,18 @@
 # Navigation Drawer
 
-New and improved Navigation Drawer component.
+The `NavDrawer` component is flexible component to create side navigation panel.
 
 ## Usage
 
 ### Basic Usage
 
+To use the `NavDrawer` component, just import it from `@gits-id/ui` or `@gits-id/nav-drawer` and use it in the template.
+
+<LivePreview src="components-navigationdrawer--default" >
+
 ```vue
 <script setup lang="ts">
 import {NavDrawer} from '@gits-id/nav-drawer';
-import '@gits-id/nav-drawer/dist/style.css';
 </script>
 
 <template>
@@ -19,14 +22,19 @@ import '@gits-id/nav-drawer/dist/style.css';
 </template>
 ```
 
-<LivePreview src="components-navigationdrawer--default" />
+</LivePreview>
 
-### Primary
+### Colors
+
+By default, `NavDrawer` component support 4 colors: `default`, `primary`, `secondary` and `dark`. You can use `color` prop to change the navigation drawer color.
+
+#### Primary
+
+<LivePreview src="components-navigationdrawer--primary">
 
 ```vue
 <script setup lang="ts">
 import {NavDrawer} from '@gits-id/nav-drawer';
-import '@gits-id/nav-drawer/dist/style.css';
 </script>
 
 <template>
@@ -36,14 +44,17 @@ import '@gits-id/nav-drawer/dist/style.css';
 </template>
 ```
 
-<LivePreview src="components-navigationdrawer--primary" />
+</LivePreview>
 
-### Secondary
+<br>
+
+#### Secondary
+
+<LivePreview src="components-navigationdrawer--secondary">
 
 ```vue
 <script setup lang="ts">
 import {NavDrawer} from '@gits-id/nav-drawer';
-import '@gits-id/nav-drawer/dist/style.css';
 </script>
 
 <template>
@@ -53,14 +64,17 @@ import '@gits-id/nav-drawer/dist/style.css';
 </template>
 ```
 
-<LivePreview src="components-navigationdrawer--secondary" />
+</LivePreview>
 
-### Dark
+<br>
+
+#### Dark
+
+<LivePreview src="components-navigationdrawer--dark">
 
 ```vue
 <script setup lang="ts">
 import {NavDrawer} from '@gits-id/nav-drawer';
-import '@gits-id/nav-drawer/dist/style.css';
 </script>
 
 <template>
@@ -70,7 +84,9 @@ import '@gits-id/nav-drawer/dist/style.css';
 </template>
 ```
 
-<LivePreview src="components-navigationdrawer--dark" />
+</LivePreview>
+
+<br>
 
 ### Shadow
 
@@ -79,10 +95,13 @@ import '@gits-id/nav-drawer/dist/style.css';
 - **value**: `sm | md | lg | xl | true | false`
 - **default**: `false`
 
+You can add shadow to the nav-drawer using `shadow` prop.
+
+<LivePreview src="components-navigationdrawer--shadow">
+
 ```vue
 <script setup lang="ts">
 import {NavDrawer} from '@gits-id/nav-drawer';
-import '@gits-id/nav-drawer/dist/style.css';
 </script>
 
 <template>
@@ -92,7 +111,7 @@ import '@gits-id/nav-drawer/dist/style.css';
 </template>
 ```
 
-<LivePreview src="components-navigationdrawer--shadow" />
+</LivePreview>
 
 ### Bordered
 
@@ -100,10 +119,13 @@ import '@gits-id/nav-drawer/dist/style.css';
 - **type**: `boolean`
 - **default**: `false`
 
+You can add border to the nav-drawer using `bordered` prop.
+
+<LivePreview src="components-navigationdrawer--bordered">
+
 ```vue
 <script setup lang="ts">
 import {NavDrawer} from '@gits-id/nav-drawer';
-import '@gits-id/nav-drawer/dist/style.css';
 </script>
 
 <template>
@@ -113,7 +135,7 @@ import '@gits-id/nav-drawer/dist/style.css';
 </template>
 ```
 
-<LivePreview src="components-navigationdrawer--bordered" />
+</LivePreview>
 
 ### Fixed
 
@@ -121,10 +143,13 @@ import '@gits-id/nav-drawer/dist/style.css';
 - **type**: `boolean`
 - **default**: `false`
 
+Use `fixed` prop to apply fixed position to the navigation drawer.
+
+<LivePreview src="components-navigationdrawer--fixed">
+
 ```vue
 <script setup lang="ts">
 import {NavDrawer} from '@gits-id/nav-drawer';
-import '@gits-id/nav-drawer/dist/style.css';
 </script>
 
 <template>
@@ -148,13 +173,17 @@ import '@gits-id/nav-drawer/dist/style.css';
 </template>
 ```
 
-<LivePreview src="components-navigationdrawer--fixed" />
+</LivePreview>
 
 ### Sticky
 
 - **props**: `fixed`
 - **type**: `boolean`
 - **default**: `false`
+
+Use `sticky` prop to apply sticky position to the navigation drawer.
+
+<LivePreview src="components-navigationdrawer--sticky" >
 
 ```vue
 <script setup lang="ts">
@@ -183,13 +212,17 @@ import '@gits-id/nav-drawer/dist/style.css';
 </template>
 ```
 
-<LivePreview src="components-navigationdrawer--sticky" />
+</LivePreview>
 
 ### Toggle
 
 - **props**: `modelValue`
 - **type**: `boolean`
 - **default**: `false`
+
+You can toggle show or hide the navigation drawer using `v-model` or `modelValue` prop.
+
+<LivePreview src="components-navigationdrawer--toggle">
 
 ```vue
 <script setup lang="ts">
@@ -215,7 +248,7 @@ const isOpen = ref(true);
 </template>
 ```
 
-<LivePreview src="components-navigationdrawer--toggle" />
+</LivePreview>
 
 ### Mini
 
@@ -223,10 +256,13 @@ const isOpen = ref(true);
 - **type**: `boolean`
 - **default**: `false`
 
+Use `mini` prop to apply mini style to the navigation drawer.
+
+<LivePreview src="components-navigationdrawer--mini">
+
 ```vue
 <script setup lang="ts">
 import {NavDrawer} from '@gits-id/nav-drawer';
-import '@gits-id/nav-drawer/dist/style.css';
 import {ref} from 'vue';
 import Button from '@gits-id/button';
 
@@ -245,11 +281,13 @@ const isMini = ref(true);
 </template>
 ```
 
-<LivePreview src="components-navigationdrawer--mini" />
+</LivePreview>
 
 ### Expand on Hover
 
 To enable expand on hover effect, you need to apply two props: `expand-on-hover` and `expanded`. The prop `expand-on-hover` tells the nav-drawer to use this effect and the `expanded` prop used as the expand state of the nav-drawer.
+
+<LivePreview src="components-navigationdrawer--expand-on-hover">
 
 ```vue {7,15-16}
 <script setup lang="ts">
@@ -280,7 +318,7 @@ const isExpanded = ref(true);
 </template>
 ```
 
-<LivePreview src="components-navigationdrawer--expand-on-hover" />
+</LivePreview>
 
 ### Overlay
 
@@ -288,10 +326,13 @@ const isExpanded = ref(true);
 - **type**: `boolean`
 - **default**: `false`
 
+Use `overlay` prop to add overlay to the navigation drawer.
+
+<LivePreview src="components-navigationdrawer--overlay" >
+
 ```vue
 <script setup lang="ts">
 import {NavDrawer} from '@gits-id/nav-drawer';
-import '@gits-id/nav-drawer/dist/style.css';
 </script>
 
 <template>
@@ -299,18 +340,21 @@ import '@gits-id/nav-drawer/dist/style.css';
 </template>
 ```
 
-<LivePreview src="components-navigationdrawer--overlay" />
+</LivePreview>
 
-### Right
+### Right Aligned
 
 - **props**: `right`
 - **type**: `boolean`
 - **default**: `false`
 
-```vue {17}
+By default the navigation drawer is placed at the left of the page. You can move it to the right by passing `right` prop.
+
+<LivePreview src="components-navigationdrawer--right" >
+
+```vue {16}
 <script setup lang="ts">
 import {NavDrawer} from '@gits-id/nav-drawer';
-import '@gits-id/nav-drawer/dist/style.css';
 import {ref} from 'vue';
 import Button from '@gits-id/button';
 
@@ -319,14 +363,7 @@ const isOpen = ref(true);
 
 <template>
   <div class="flex">
-    <NavDrawer
-      v-model="isOpen"
-      color="primary"
-      shadow="lg"
-      fixed
-      right
-      v-bind="args"
-    >
+    <NavDrawer v-model="isOpen" color="primary" shadow="lg" fixed right>
       <div class="p-2">
         <p class="font-semibold mb-2">Right NavDrawer + Transition</p>
         <Button @click="isOpen = !isOpen"> Close </Button>
@@ -342,7 +379,7 @@ const isOpen = ref(true);
 </template>
 ```
 
-<LivePreview src="components-navigationdrawer--right" />
+</LivePreview>
 
 ### Custom Transition
 
@@ -350,10 +387,13 @@ const isOpen = ref(true);
 - **type**: `string`
 - **default**: `nav-drawer-transition`
 
-```vue {16}
+You can also customize the default transition using `transition` prop.
+
+<LivePreview src="components-navigationdrawer--custom-transition">
+
+```vue {15}
 <script setup lang="ts">
 import {NavDrawer} from '@gits-id/nav-drawer';
-import '@gits-id/nav-drawer/dist/style.css';
 import {ref} from 'vue';
 import Button from '@gits-id/button';
 
@@ -380,7 +420,7 @@ const isOpen = ref(true);
 </template>
 ```
 
-<LivePreview src="components-navigationdrawer--custom-transition" />
+</LivePreview>
 
 ## Props
 
@@ -402,13 +442,11 @@ const isOpen = ref(true);
 | [`expandOnHover`](#expandOnHover)             | `boolean`                                           | `false`                         |
 | [`expanded`](#expanded)                       | `boolean`                                           | `false`                         |
 
-## Methods
-
-None
-
 ## Events
 
 - `(e: 'update:modelValue', value: string): void;`
+
+Emitted when `modelValue` prop changed. Used for `v-model` directive.
 
 ```vue
 <script setup lang="ts">
@@ -422,6 +460,8 @@ const onUpdate = (value: boolean) => console.log('Updated!', value);
 
 - `(e: 'update:expanded', value: boolean): void;`
 
+Emitted when `expanded` prop changed. Used for `v-model:expanded` directive.
+
 ```vue
 <script setup lang="ts">
 const onUpdate = (value: boolean) => console.log('Expanded!', value);
@@ -433,6 +473,8 @@ const onUpdate = (value: boolean) => console.log('Expanded!', value);
 ```
 
 - `(e: 'clickOverlay'): void;`
+
+Emitted when user click the overlay element.
 
 ```vue
 <script setup lang="ts">
@@ -448,17 +490,27 @@ const onOverlayClicked = () => console.log('Clicked!');
 
 - `default`
 
+The default slot is used to place any content inside navigation drawer.
+
 ## CSS Variables
 
-| Variable                                              | Default Value              |
-| ----------------------------------------------------- | -------------------------- |
-| [`--nav-drawer-width`](#--nav-drawer-width)           | `248px`                    |
-| [`--nav-drawer-transition`](#--nav-drawer-transition) | `all 0.3s ease-out`        |
-| [`--nav-drawer-bg-color`](#--nav-drawer-bg-color)     | `#fff`                     |
-| [`--nav-drawer-text-color`](#--nav-drawer-text-color) | `theme('colors.gray.800')` |
-| [`--nav-drawer-shadow`](#--nav-drawer-shadow)         | `'none'`                   |
+```scss
+:root {
+  --nav-drawer-width: 248px;
+  --nav-drawer-transition: all 0.3s ease-out;
+  --nav-drawer-bg-color: #fff;
+  --nav-drawer-text-color: theme('colors.gray.800');
+  --nav-drawer-shadow: 'none';
+}
+```
 
 ## Customization
+
+You can constumize the navigation drawer via CSS Properties.
+
+Here is the example to create indigo colored navigation drawer.
+
+<LivePreview src="components-navigationdrawer--custom-color" >
 
 ```vue
 <script setup lang="ts">
@@ -478,14 +530,16 @@ import '@gits-id/nav-drawer/dist/style.css';
 </style>
 ```
 
-<LivePreview src="components-navigationdrawer--custom-color" />
+</LivePreview>
+
+In the example above, first, we need to specify the custom color via `color` prop. For example, set to `indigo` and this will set class `nav-drawer-indigo` respectively so you can define your own style by utilizing the CSS Properties like above.
 
 ## Manual Installation
 
 You can also install the `NavDrawer` component individually via `@gits-id/nav-drawer` package:
 
 ```bash
-npm install @gits-id/nav-drawer
+npm i @gits-id/nav-drawer
 ```
 
 ```vue
