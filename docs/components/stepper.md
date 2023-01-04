@@ -1,12 +1,14 @@
-<script setup lang="ts">
-import {VStepper} from '@gits-id/ui';
-</script>
-
 # Stepper
+
+The `VStepper` component allows you to create a stepper that guides users through a series of steps or stages. It can be used to display the progress of a task, or to navigate through different pages or sections.
 
 ## Usage
 
 ### Basic Usage
+
+To use the `VStepper` component, you need to register it globally by installing `@gits-id/ui`. Then, you can include it in your template like this:
+
+<LivePreview src="components-stepper--default" height="250" >
 
 ```vue
 <template>
@@ -15,7 +17,9 @@ import {VStepper} from '@gits-id/ui';
 </template>
 ```
 
-<LivePreview src="components-stepper--default" height="250" />
+</LivePreview>
+
+The `items` prop should be an array of objects, each representing a step in the stepper. Each step object should have at least a `title` property. You can also include a `subtitle` and a `path` property if needed.
 
 ::: info
 The `VStepper` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
@@ -32,6 +36,8 @@ Use `linear` to set the stepper's active state as continuous, meaning to get to 
 When it is set to `true` previous will also be set as `active`.
 When it is set to `false`, only current step will be set as `active`.
 
+<LivePreview src="components-stepper--linear" >
+
 ```vue
 <template>
   <VStepper />
@@ -39,7 +45,7 @@ When it is set to `false`, only current step will be set as `active`.
 </template>
 ```
 
-<LivePreview src="components-stepper--linear" />
+</LivePreview>
 
 ### Disable Route Active
 
@@ -48,8 +54,10 @@ When it is set to `false`, only current step will be set as `active`.
 - **default**: `false`
 - **required**: `false`
 
-By default, this component check active route to determine `active` state. 
+By default, this component check active route to determine `active` state.
 Set `disableRouteActive` to `true` to base stepper active state by `modelValue` instead of active route.
+
+<LivePreview src="components-stepper--disable-route-active" height="200">
 
 ```vue
 <template>
@@ -57,7 +65,7 @@ Set `disableRouteActive` to `true` to base stepper active state by `modelValue` 
 </template>
 ```
 
-<LivePreview src="components-stepper--disable-route-active" height="200"/>
+</LivePreview>
 
 ### Linkable
 
@@ -85,13 +93,15 @@ Use `clickable` to allow `click` event to be emitted, allowing interaction with 
 stepper needs to be rendered inside for example, a modal, which makes `linkable` unfeasible to be used for navigation
 through interaction with the step item.
 
+<LivePreview src="components-stepper--clickable" height="600">
+
 ```vue
 <template>
   <VStepper clickable />
 </template>
 ```
 
-<LivePreview src="components-stepper--clickable" height="600"/>
+</LivePreview>
 
 ### Vertical
 
@@ -102,13 +112,15 @@ through interaction with the step item.
 
 Use `vertical` to render the stepper in vertical mode.
 
+<LivePreview src="components-stepper--vertical" >
+
 ```vue
 <template>
   <VStepper vertical />
 </template>
 ```
 
-<LivePreview src="components-stepper--vertical" />
+</LivePreview>
 
 ### `v-model`
 
@@ -119,22 +131,24 @@ Use `vertical` to render the stepper in vertical mode.
 
 Use `v-model` to set current step.
 
+<LivePreview src="components-stepper--v-model" height="250" >
+
 ```vue{10}
 <script setup lang="ts">
 import {ref} from 'vue';
 
 const currentStep = ref(1);
 const items = [
-    {
-        title: 'Title 1',
-        subtitle: 'Subtitle 1',
-        path: '/step/1',
-    },
-    {
-        title: 'Title 2',
-        subtitle: 'Subtitle 2',
-        path: '/step/2',
-    },
+  {
+    title: 'Title 1',
+    subtitle: 'Subtitle 1',
+    path: '/step/1',
+  },
+  {
+    title: 'Title 2',
+    subtitle: 'Subtitle 2',
+    path: '/step/2',
+  },
 ];
 </script>
 
@@ -144,12 +158,12 @@ const items = [
 </template>
 ```
 
-<LivePreview src="components-stepper--v-model" height="250" />
+</LivePreview>
 
 ## Props
 
 | Name                                        | Type      | Default |
-|---------------------------------------------|-----------|---------|
+| ------------------------------------------- | --------- | ------- |
 | [modelValue](#name)                         | `number`  | `0`     |
 | [items](#items)                             | `array`   | `[]`    |
 | [disableRouteActive](#disable-route-active) | `voolean` | `false` |
@@ -160,17 +174,16 @@ const items = [
 ## Events
 
 | Name                                   | Payload            | Description                                                                                      |
-|----------------------------------------|--------------------|--------------------------------------------------------------------------------------------------|
+| -------------------------------------- | ------------------ | ------------------------------------------------------------------------------------------------ |
 | [update:modelValue](#updateModelValue) | `(value: boolean)` | Fired when step value changed                                                                    |
-| click                                  | `({item, index})`  | Fired when step item is clicked. *Only available when [`clickable`](#clickable) prop is enabled* |
-
+| click                                  | `({item, index})`  | Fired when step item is clicked. _Only available when [`clickable`](#clickable) prop is enabled_ |
 
 ## Manual Installation
 
 You can also install the `Stepper` component individually via `@gits-id/stepper` package:
 
 ```bash
-yarn install @gits-id/stepper
+npm i @gits-id/stepper
 ```
 
 ```vue
