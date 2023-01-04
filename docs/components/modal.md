@@ -1,10 +1,14 @@
 # Modal
 
-Vue modal component. Based on `@headlessui/vue` dialog component.
+The `VModal` component is used to create modal or dialog. It is based on `@headlessui/vue` dialog component.
 
 ## Usage
 
 ### Basic Usage
+
+To use the `VModal` component, just use it in the template.
+
+<LivePreview src="components-modal--default" >
 
 ```vue
 <template>
@@ -18,7 +22,7 @@ Vue modal component. Based on `@headlessui/vue` dialog component.
 </template>
 ```
 
-<LivePreview src="components-modal--default" />
+</LivePreview>
 
 ::: info
 The `VModal` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
@@ -27,6 +31,8 @@ The `VModal` component is registered globally when you install with `@gits-id/ui
 ### Confirm
 
 Use [`confirm`](#confirm) prop to make modal confirmable. You can also customize the confirm text with [`confirmText`](#confirmText) prop, color with [`confirmColor`](#confirmColor) prop and even more with [`confirmProps`](#confirmProps).
+
+<LivePreview src="components-modal--confirm" >
 
 ```vue
 <script setup lang="ts">
@@ -45,11 +51,13 @@ const onConfirm = () => {
 </template>
 ```
 
-<LivePreview src="components-modal--confirm" />
+</LivePreview>
 
 ### Hide Header
 
 Use `hide-header` prop to hide the modal header.
+
+<LivePreview src="components-modal--hide-header" >
 
 ```vue
 <template>
@@ -62,11 +70,13 @@ Use `hide-header` prop to hide the modal header.
 </template>
 ```
 
-<LivePreview src="components-modal--hide-header" />
+</LivePreview>
 
 ### Hide Footer
 
 Use `hide-footer` prop to hide the modal footer.
+
+<LivePreview src="components-modal--hide-footer" >
 
 ```vue
 <template>
@@ -79,11 +89,13 @@ Use `hide-footer` prop to hide the modal footer.
 </template>
 ```
 
-<LivePreview src="components-modal--hide-footer" />
+</LivePreview>
 
 ### Hide X Button
 
 Use `hide-x-button` prop to hide the modal close button.
+
+<LivePreview src="components-modal--hide-x-button" >
 
 ```vue
 <template>
@@ -96,11 +108,13 @@ Use `hide-x-button` prop to hide the modal close button.
 </template>
 ```
 
-<LivePreview src="components-modal--hide-x-button" />
+</LivePreview>
 
 ### Fullscreen
 
 Use `fullscreen` prop to make modal fullscreen.
+
+<LivePreview src="components-modal--fullscreen" >
 
 ```vue
 <script setup lang="ts">
@@ -122,11 +136,13 @@ const isOpen = ref(false);
 </template>
 ```
 
-<LivePreview src="components-modal--fullscreen" />
+</LivePreview>
 
 ### Centered
 
-Use `centered` prop to make the modal centered.
+Use `centered` prop to make the modal centered of the page.
+
+<LivePreview src="components-modal--centered" >
 
 ```vue
 <script setup lang="ts">
@@ -168,11 +184,13 @@ const deleteItem = () => {
 </template>
 ```
 
-<LivePreview src="components-modal--centered" />
+</LivePreview>
 
 ### Loading
 
 Use `loading` prop to set modal loading state. When `loading` is true, modal can not be closed.
+
+<LivePreview src="components-modal--loading" >
 
 ```vue
 <script setup lang="ts">
@@ -190,11 +208,13 @@ const loading = ref(true);
 </template>
 ```
 
-<LivePreview src="components-modal--loading" />
+</LivePreview>
 
 ### Persistent
 
 Use `persistent` prop to prevent closing modal when clicking the overlay.
+
+<LivePreview src="components-modal--persistent" >
 
 ```vue
 <template>
@@ -207,11 +227,13 @@ Use `persistent` prop to prevent closing modal when clicking the overlay.
 </template>
 ```
 
-<LivePreview src="components-modal--persistent" />
+</LivePreview>
 
 ### Custom Width
 
 Use `width` prop set modal width and use `max-width` prop to set modal max width.
+
+<LivePreview src="components-modal--custom-width" >
 
 ```vue
 <template>
@@ -224,7 +246,7 @@ Use `width` prop set modal width and use `max-width` prop to set modal max width
 </template>
 ```
 
-<LivePreview src="components-modal--custom-width" />
+</LivePreview>
 
 ### Custom Class
 
@@ -235,6 +257,8 @@ We can also customize modal via classes props. This is useful when working with 
 - `title-class`: To set class on modal title only
 - `body-class`: To set class on modal body
 - `footer-class`: To set class on modal footer
+
+<LivePreview src="components-modal--custom-class" >
 
 ```vue
 <template>
@@ -247,11 +271,13 @@ We can also customize modal via classes props. This is useful when working with 
 </template>
 ```
 
-<LivePreview src="components-modal--custom-class" />
+</LivePreview>
 
 ### Custom Style via CSS Properties
 
 We can also customize modal via CSS Properties.
+
+<LivePreview src="components-modal--customization" >
 
 ```vue {15-18}
 <template>
@@ -285,7 +311,7 @@ We can also customize modal via CSS Properties.
 </template>
 ```
 
-<LivePreview src="components-modal--customization" />
+</LivePreview>
 
 ## Props
 
