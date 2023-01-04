@@ -1,10 +1,14 @@
 # Shimmer
 
-Shimmer / content placeholder component.
+Shimmer is a content placeholder component that can be used to visually indicate that content is loading.
 
 ## Usage
 
 ### Basic Usage
+
+To use the `VShimmer` component, simply add it to your template:
+
+<LivePreview height="100" src="components-shimmer--default">
 
 ```vue
 <template>
@@ -13,7 +17,7 @@ Shimmer / content placeholder component.
 </template>
 ```
 
-<LivePreview height="100" src="components-shimmer--default" />
+</LivePreview>
 
 ::: info
 The `VShimmer` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
@@ -21,15 +25,23 @@ The `VShimmer` component is registered globally when you install with `@gits-id/
 
 ### Rounded
 
+You can make the shimmer animation rounded by setting the `rounded` prop:
+
+<LivePreview height="100" src="components-shimmer--rounded" >
+
 ```vue
 <template>
   <VShimmer rounded height="20" width="200" />
 </template>
 ```
 
-<LivePreview height="100" src="components-shimmer--rounded" />
+</LivePreview>
 
 ### Circle
+
+To create a circular shimmer animation, set both the `height` and `width` props to the same value and set the `rounded` prop:
+
+<LivePreview height="250" src="components-shimmer--circle" >
 
 ```vue
 <template>
@@ -37,9 +49,13 @@ The `VShimmer` component is registered globally when you install with `@gits-id/
 </template>
 ```
 
-<LivePreview height="250" src="components-shimmer--circle" />
+</LivePreview>
 
 ### Multiple Lines
+
+To create multiple lines in the shimmer animation, set the `lines` prop to the desired number of lines:
+
+<LivePreview height="150" src="components-shimmer--multiple-lines" >
 
 ```vue
 <template>
@@ -47,9 +63,13 @@ The `VShimmer` component is registered globally when you install with `@gits-id/
 </template>
 ```
 
-<LivePreview height="150" src="components-shimmer--multiple-lines" />
+</LivePreview>
 
 ### Card Shimmer
+
+Here is an example of how you can use the shimmer animation within a card layout:
+
+<LivePreview height="200" src="components-shimmer--card-shimmer" >
 
 ```vue
 <template>
@@ -62,7 +82,7 @@ The `VShimmer` component is registered globally when you install with `@gits-id/
 </template>
 ```
 
-<LivePreview height="200" src="components-shimmer--card-shimmer" />
+</LivePreview>
 
 ## Props
 
@@ -71,10 +91,6 @@ The `VShimmer` component is registered globally when you install with `@gits-id/
 | [`width`](#width)   | `number \| string` | `100`   |
 | [`height`](#height) | `string \| number` | `16`    |
 | [`lines`](#lines)   | `string \| number` | `1`     |
-
-## Methods
-
-None
 
 ## Events
 
