@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/select",
-  "version": "0.14.0-alpha.1",
+  "version": "0.14.0-alpha.2",
   "description": "Vue Select Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -17,7 +17,7 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@gits-id/forms": "^0.14.0-alpha.1",
+    "@gits-id/forms": "^0.14.0-alpha.2",
     "@gits-id/icon": "^0.14.0-alpha.1",
     "@gits-id/theme": "^0.13.20",
     "@gits-id/tooltip": "^0.14.0-alpha.1",
