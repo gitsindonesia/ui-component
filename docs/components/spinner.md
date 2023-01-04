@@ -1,27 +1,30 @@
-<script setup lang="ts">
-import {VSpinner} from '@gits-id/ui';
-</script>
-
 # Spinner
+
+The `VSpinner` component is a spinning loader used to indicate that content is loading.
 
 ## Usage
 
 ### Basic Usage
 
+To use the `VSpinner` component, simply include it in your template:
+
+<LivePreview src="components-spinner--default" height="auto" >
+
 ```vue
 <template>
-  <!-- VSpinner is registered globally -->
   <VSpinner />
 </template>
 ```
 
-<LivePreview src="components-spinner--default" height="auto" />
+</LivePreview>
 
 ::: info
 The `VSpinner` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
-### Color
+### Colors
+
+You can customize the color of the spinner using the `color` prop. This prop accepts a string value corresponding to one of the available colors. The default value is `default`.
 
 - **prop**: `color`
 - **type**: `string`
@@ -29,6 +32,8 @@ The `VSpinner` component is registered globally when you install with `@gits-id/
 - **required**: `false`
 
 Use `color` to different color style to the spinner.
+
+<LivePreview src="components-spinner--colors" height="auto">
 
 ```vue
 <template>
@@ -43,11 +48,13 @@ Use `color` to different color style to the spinner.
 </template>
 ```
 
-<LivePreview src="components-spinner--colors" height="auto"/>
+</LivePreview>
 
 ### Size
 
-Use `xSmall`, `small`, `large` or `xLager` prop to easily switch the size of the spinner.
+You can customize the size of the spinner using the `xSmall`, `small`, `large`, or `xLarge` prop. These props are boolean values and should be set to `true` to activate the corresponding size. The default size is `medium`.
+
+<LivePreview src="components-spinner--sizes" height="auto" >
 
 ```vue
 <template>
@@ -59,7 +66,7 @@ Use `xSmall`, `small`, `large` or `xLager` prop to easily switch the size of the
 </template>
 ```
 
-<LivePreview src="components-spinner--sizes" height="auto" />
+</LivePreview>
 
 ## Props
 
@@ -76,7 +83,7 @@ Use `xSmall`, `small`, `large` or `xLager` prop to easily switch the size of the
 You can also install the `Spinner` component individually via `@gits-id/spnner` package:
 
 ```bash
-yarn install @gits-id/spinner
+npm i @gits-id/spinner
 ```
 
 ```vue
