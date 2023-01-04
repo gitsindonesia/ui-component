@@ -8,6 +8,8 @@ The `VFormSelect` component is a form field that allows users to select a value 
 
 To use the `VFormSelect` component, you must first provide it with an array of options. Each option should be an object with `text` and `value` properties, like this:
 
+<LivePreview src="forms-select--default" >
+
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
@@ -33,7 +35,7 @@ const options = ref([
 </template>
 ```
 
-<LivePreview src="forms-select--default" />
+</LivePreview>
 
 ::: info
 The `VFormSelect` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
@@ -42,6 +44,8 @@ The `VFormSelect` component is registered globally when you install with `@gits-
 ### Disabled
 
 To disable the `VFormSelect` component, you can use the `disabled` prop:
+
+<LivePreview src="forms-select--disabled" >
 
 ```vue
 <script setup lang="ts">
@@ -68,11 +72,13 @@ const options = ref([
 </template>
 ```
 
-<LivePreview src="forms-select--disabled" />
+</LivePreview>
 
 ### Error
 
 If you are using the `VFormSelect` component with a form validation library, you can use the `error` prop to indicate that the form field has an error:
+
+<LivePreview src="forms-select--error" >
 
 ```vue
 <script setup lang="ts">
@@ -99,11 +105,13 @@ const options = ref([
 </template>
 ```
 
-<LivePreview src="forms-select--error" />
+</LivePreview>
 
 ### Label
 
 You can use the `label` prop to specify a label for the `VFormSelect` component:
+
+<LivePreview src="forms-select--label" >
 
 ```vue
 <script setup lang="ts">
@@ -130,16 +138,13 @@ const options = ref([
 </template>
 ```
 
-<LivePreview src="forms-select--label" />
+</LivePreview>
 
 ### Validation
 
 To use the `VFormSelect` component with a form validation library, you can use the name prop to bind the component to a form control. For example, with `VeeValidate`, you can use the `useForm` hook to create a form with validation schema:
 
-<LivePreview src="forms-select--validation" />
-
-<details>
-  <summary>View Code</summary>
+<LivePreview src="forms-select--validation">
 
 ```vue
 <script setup lang="ts">
@@ -217,7 +222,7 @@ const genres = ref([
 </template>
 ```
 
-</details>
+</LivePreview>
 
 ### Validation Mode
 
@@ -225,10 +230,7 @@ There are 2 modes. The first is `eager` mode, and the second is `aggressive` mod
 
 You can change the default value for this validation mode by adding an attribute or property named `validation-mode` to this component.
 
-<LivePreview src="forms-select--validation-mode" />
-
-<details>
-  <summary>View Code</summary>
+<LivePreview src="forms-select--validation-mode" >
 
 ```vue
 <script setup lang="ts">
@@ -325,11 +327,13 @@ const onSubmit = handleSubmit((values) => {
 </template>
 ```
 
-</details>
+</LivePreview>
 
 ### Initial Values
 
 To set initial values to the form, use the `initialValues` option in the `useForm` hook.
+
+<LivePreview src="forms-select--intial-values" >
 
 ```vue
 <script setup lang="ts">
@@ -385,7 +389,7 @@ const genres = ref([
 </template>
 ```
 
-<LivePreview src="forms-select--intial-values" />
+</LivePreview>
 
 ## Props
 
