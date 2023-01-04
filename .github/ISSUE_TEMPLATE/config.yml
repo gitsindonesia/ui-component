@@ -1,0 +1,7 @@
+contact_links:
+  - name: 📚 Documentation
+    url: https://gitsindonesia.github.io/ui-component/
+    about: Check documentation for usage
+  - name: 💬 Discussions
+    url: https://github.com/gitsindonesia/ui-component/discussions
+    about: Use discussions if you have an idea for improvement and asking questions
