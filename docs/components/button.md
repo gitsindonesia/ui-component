@@ -1,6 +1,14 @@
 # Button
 
-Button component.
+The `VBtn` component is a button element that can be added to your Vue.js templates. It can be used in a variety of ways, including:
+
+- As a default button
+- With a specified color (primary, secondary, info, warning, error, or dark)
+- With an outlined style
+- With a text style
+- With a flush style, which removes padding and sets the width and height to auto
+- With a rounded style
+- With a tile style, which removes the border radius
 
 ## Usage
 
