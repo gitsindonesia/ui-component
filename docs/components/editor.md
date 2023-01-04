@@ -8,6 +8,8 @@ The `VEditor` component is an integration of the CKEditor component with `vee-va
 
 To use the `VEditor` component, bind it to a `value` using the `v-model` directive:
 
+<LivePreview src="forms-editor--default">
+
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
@@ -20,7 +22,7 @@ const value = ref('');
 </template>
 ```
 
-<LivePreview src="forms-editor--default" />
+</LivePreview>
 
 ::: info
 The `VEditor` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
@@ -29,6 +31,8 @@ The `VEditor` component is registered globally when you install with `@gits-id/u
 ### Label
 
 You can add a label to the `VEditor` component by using the `label` prop:
+
+<LivePreview src="forms-editor--label">
 
 ```vue
 <script setup lang="ts">
@@ -42,11 +46,13 @@ const value = ref('');
 </template>
 ```
 
-<LivePreview src="forms-editor--label" />
+</LivePreview>
 
 ### Validation
 
 To add validation to the `VEditor` component, you can use the `useForm` hook from `vee-validate`. Here's an example of how to set up validation and handle form submission:
+
+<LivePreview src="forms-editor--validation">
 
 ```vue
 <script setup lang="ts">
@@ -83,7 +89,7 @@ const onSubmit = handleSubmit((values) => {
 </template>
 ```
 
-<LivePreview src="forms-editor--validation" />
+</LivePreview>
 
 ## Props
 
