@@ -13,3 +13,4 @@ yarn-error.log
 .idea
 coverage
 __snapshots__
+docs/.vitepress/cache
