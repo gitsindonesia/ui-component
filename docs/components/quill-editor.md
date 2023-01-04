@@ -1,8 +1,16 @@
 # QuillEditor
 
+`VQuillEditor` is a rich text editor that allows users to add formatting and content to text documents. It is based on the [Quill.js](https://quilljs.com/) library and is designed to be easy to use and customize.
+
 ## Usage
 
+To use the `VQuillEditor` component in your Vue.js application, you will need to have the `@gits-id/ui` package installed. The `VQuillEditor` component is registered globally when you install the package, so you don't need to import it manually.
+
 ### Basic Usage
+
+The most basic usage of the `VQuillEditor` component is to add it to a template and bind it to a value variable using the `v-model` directive. The value variable will contain the text entered into the editor.
+
+<LivePreview src="forms-quilleditor--basic" >
 
 ```vue
 <script setup lang="ts">
@@ -16,13 +24,13 @@ const value = ref('');
 </template>
 ```
 
-<LivePreview src="forms-quilleditor--basic" />
-
-::: info
-The `VQuillEditor` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
-:::
+</LivePreview>
 
 ### Label
+
+You can add a label to the `VQuillEditor` component by using the `label` prop. The label will be displayed above the editor and can be used to provide context or instruction for the user.
+
+<LivePreview src="forms-quilleditor--label" >
 
 ```vue
 <script setup lang="ts">
@@ -36,9 +44,13 @@ const value = ref('');
 </template>
 ```
 
-<LivePreview src="forms-quilleditor--label" />
+</LivePreview>
 
 ### Validation
+
+The `VQuillEditor` component can be used with the `vee-validate` library to perform form validation. To do this, you will need to define a validation schema using yup and pass it to the `useForm` hook from `vee-validate`. You can then use the `handleSubmit` function from the hook to handle form submissions.
+
+<LivePreview src="forms-quilleditor--validation" >
 
 ```vue
 <script setup lang="ts">
@@ -75,9 +87,13 @@ const onSubmit = handleSubmit((values) => {
 </template>
 ```
 
-<LivePreview src="forms-quilleditor--validation" />
+</LivePreview>
 
 ### Initial Values
+
+You can set initial values for the form fields by passing an `initialValues` object to the `useForm` hook. The object should have keys that match the names of the form fields, and the values will be used as the default values for those fields.
+
+<LivePreview src="forms-quilleditor--initial-values" >
 
 ```vue
 <script setup lang="ts">
@@ -117,9 +133,13 @@ const onSubmit = handleSubmit((values) => {
 </template>
 ```
 
-<LivePreview src="forms-quilleditor--initial-values" />
+</LivePreview>
 
 ### Initial Errors
+
+You can also set initial errors for the form fields by passing an `initialErrors` object to the `useForm` hook. The object should have keys that match the names of the form fields, and the values will be used as the default error messages for those fields.
+
+<LivePreview src="forms-quilleditor--initial-errors">
 
 ```vue
 <script setup lang="ts">
@@ -159,9 +179,20 @@ const onSubmit = handleSubmit((values) => {
 </template>
 ```
 
-<LivePreview src="forms-quilleditor--initial-errors" />
+</LivePreview>
 
 ### Toolbar
+
+The `VQuillEditor` component includes a toolbar that allows users to apply formatting to the text in the editor. By default, the toolbar includes the most commonly used formatting options, such as bold, italic, and underline.
+
+You can customize the toolbar by using the toolbar prop. There are three built-in toolbar options: default, minimal, and full.
+
+- `default`: The default toolbar includes the most commonly used formatting options.
+- `minimal`: The minimal toolbar includes only the most essential formatting options.
+- `full`: The full toolbar includes all available formatting options.
+
+<LivePreview src="forms-quilleditor--toolbar" >
+
 
 ```vue
 <script setup lang="ts">
@@ -212,7 +243,7 @@ const onSubmit = handleSubmit((values) => {
 </template>
 ```
 
-<LivePreview src="forms-quilleditor--toolbar" />
+</LivePreview>
 
 ## Props
 
@@ -230,9 +261,6 @@ const onSubmit = handleSubmit((values) => {
 | [`labelClass`](#labelClass)   | `string`                                   | `'block mb-2 font-medium'`      |
 | [`errorClass`](#errorClass)   | `string`                                   | `'text-sm mt-1 text-error-500'` |
 
-## Methods
-
-None
 
 ## Events
 
