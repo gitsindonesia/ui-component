@@ -1,0 +1,43 @@
+.v-data-table-pagination {
+  @apply w-full
+    px-6
+    py-3
+    border-t
+    flex flex-row
+    items-center
+    gap-4
+    justify-center
+    sm:justify-between;
+
+  &-items-per-page {
+    border-radius: var(--v-input-border-radius);
+    border: 1px solid var(--v-input-border-color);
+
+    @apply w-20 order-1 focus:ring-1 focus:border-primary-500 focus:ring-primary-500;
+  }
+
+  &-meta {
+    @apply w-auto
+      hidden
+      sm:flex
+      gap-1
+      items-center
+      text-sm text-gray-700
+      order-2 flex-1;
+
+    &-showing-text,
+    &-data-text {
+      @apply hidden sm:inline;
+    }
+
+    &-start-text,
+    &-total-items-text,
+    &-end-text {
+      @apply font-semibold;
+    }
+  }
+
+  &-pagination {
+    @apply w-auto flex justify-center sm:justify-end order-3 sm:order-4;
+  }
+}
