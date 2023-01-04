@@ -233,6 +233,10 @@ const selectedText = computed(() => {
     return item[itemValue.value] === selectedItem.value;
   });
 
+  if (props.returnObject) {
+    return (selectedItem.value as VSelectItem)[props.itemText] || placeholder.value;
+  }
+
   return item?.[props.itemText] || placeholder.value;
 });
 
