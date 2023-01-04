@@ -8,6 +8,8 @@ The `VLogo` component a simple way to display GITS Logo.
 
 To use the logo component, just use it in the template like so:
 
+<LivePreview src="components-logo--default" height="100" >
+
 ```vue
 <template>
   <!-- VLogo is registered globally -->
@@ -15,7 +17,7 @@ To use the logo component, just use it in the template like so:
 </template>
 ```
 
-<LivePreview src="components-logo--default" height="100" />
+</LivePreview>
 
 ::: info
 The `VLogo` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
@@ -25,17 +27,21 @@ The `VLogo` component is registered globally when you install with `@gits-id/ui`
 
 Use `white` prop to display white version of Logo.
 
+<LivePreview src="components-logo--white" height="100" >
+
 ```vue
 <template>
   <VLogo white />
 </template>
 ```
 
-<LivePreview src="components-logo--white" height="100" />
+</LivePreview>
 
 ### Custom Class
 
 You can add custom class to the image via `img-class` prop.
+
+<LivePreview src="components-logo--custom-class" height="100" >
 
 ```vue
 <template>
@@ -43,7 +49,7 @@ You can add custom class to the image via `img-class` prop.
 </template>
 ```
 
-<LivePreview src="components-logo--custom-class" height="100" />
+</LivePreview>
 
 ### Link
 
@@ -59,6 +65,8 @@ You set link to the logo using `to` prop.
 
 To change the size of logo, use `size` prop or just use `width` and/or `height` props.
 
+<LivePreview src="components-logo--sizes" height="250" >
+
 ```vue
 <script setup lang="ts">
 const sizes = ['xxs', 'xs', 'sm', 'md', 'lg'];
@@ -71,7 +79,7 @@ const sizes = ['xxs', 'xs', 'sm', 'md', 'lg'];
 </template>
 ```
 
-<LivePreview src="components-logo--sizes" height="250" />
+</LivePreview>
 
 ## Props
 
