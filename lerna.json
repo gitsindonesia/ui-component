@@ -1,5 +1,6 @@
 {
   "packages": [
+    "starter/*",
     "packages/*"
   ],
   "version": "0.14.0-alpha.4",
