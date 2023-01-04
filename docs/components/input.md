@@ -8,6 +8,8 @@ The `VInput` component is a form control for receiving user input. It can be use
 
 To use the `VInput` component, simply add the component to your template:
 
+<LivePreview src="forms-input--default">
+
 ```vue
 <template>
   <!--VInput is registered globally -->
@@ -15,7 +17,7 @@ To use the `VInput` component, simply add the component to your template:
 </template>
 ```
 
-<LivePreview src="forms-input--default" />
+</LivePreview>
 
 ::: info
 The `VInput` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
@@ -35,6 +37,8 @@ You can also provide a placeholder attribute to display a hint to the user:
 
 You can customize the color of the `VInput` component using the `color` prop. The available color options are: `primary`, `secondary`, `info`, `warning`, `success`, `error`, and `dark`.
 
+<LivePreview src="forms-input--colors" >
+
 ```vue
 <template>
   <VInput />
@@ -48,11 +52,13 @@ You can customize the color of the `VInput` component using the `color` prop. Th
 </template>
 ```
 
-<LivePreview src="forms-input--colors" />
+</LivePreview>
 
 ### Readonly
 
 To make the `VInput` component readonly, set the `readonly` prop to `true`.
+
+<LivePreview src="forms-input--readonly" height="80" >
 
 ```vue
 <template>
@@ -60,11 +66,13 @@ To make the `VInput` component readonly, set the `readonly` prop to `true`.
 </template>
 ```
 
-<LivePreview src="forms-input--readonly" height="80" />
+</LivePreview>
 
 ### Disabled
 
-To `disable` the VInput component, set the `disabled` prop to `true`.
+To disable the `VInput` component, set the `disabled` prop to `true`.
+
+<LivePreview src="forms-input--disabled" height="80" >
 
 ```vue
 <template>
@@ -72,11 +80,13 @@ To `disable` the VInput component, set the `disabled` prop to `true`.
 </template>
 ```
 
-<LivePreview src="forms-input--disabled" height="80" />
+</LivePreview>
 
 ### Shadow
 
 To add a shadow to the `VInput` component, set the `shadow` prop to `true`.
+
+<LivePreview src="forms-input--shadow" height="80" >
 
 ```vue
 <template>
@@ -84,11 +94,13 @@ To add a shadow to the `VInput` component, set the `shadow` prop to `true`.
 </template>
 ```
 
-<LivePreview src="forms-input--shadow" height="80" />
+</LivePreview>
 
 ### Text
 
 To use the `VInput` component as a text input, set the `text` prop to `true` and provide a `model-value` and `label`.
+
+<LivePreview src="forms-input--text" height="80" >
 
 ```vue
 <template>
@@ -96,11 +108,13 @@ To use the `VInput` component as a text input, set the `text` prop to `true` and
 </template>
 ```
 
-<LivePreview src="forms-input--text" height="80" />
+</LivePreview>
 
 ### Error
 
 To display an error message with the `VInput` component, set the `error` prop to `true`.
+
+<LivePreview src="forms-input--error" height="80" >
 
 ```vue
 <template>
@@ -108,7 +122,7 @@ To display an error message with the `VInput` component, set the `error` prop to
 </template>
 ```
 
-<LivePreview src="forms-input--error" height="80" />
+</LivePreview>
 
 ### Icons
 
@@ -116,10 +130,7 @@ You can add icons to the `VInput` component using the `prepend-icon` and `append
 
 To customize the icon classes, use the `prepend-icon-class` and `append-icon-class` props. To customize the wrapper element classes, use the `prepend-class` and `append-class` props.
 
-<LivePreview src="forms-input--icons" />
-
-<details>
-  <summary>View Code</summary>
+<LivePreview src="forms-input--icons" >
 
 ```vue
 <script setup lang="ts">
@@ -177,7 +188,7 @@ const showAlert = (message: string) => alert(message);
 </template>
 ```
 
-</details>
+</LivePreview>
 
 ### Slots
 
@@ -203,10 +214,7 @@ You can use slots to insert custom content into the input field, such as icons, 
 
   You can use the `prepend.outer` and `append.outer` slots to insert button or text content on either side of the input field.
 
-<LivePreview src="forms-input--slots" />
-
-<details>
-  <summary>View Code</summary>
+<LivePreview src="forms-input--slots" >
 
 ```vue
 <template>
@@ -292,16 +300,13 @@ You can use slots to insert custom content into the input field, such as icons, 
 </template>
 ```
 
-</details>
+</LivePreview>
 
 ### Validation
 
 To use the `VInput` component with a form validation library, you can use the `name` prop to bind the component to a form control. For example, with `VeeValidate`, you can use the `useForm` hook to create a form with validation schema:
 
-<LivePreview src="forms-input--validation" />
-
-<details>
-  <summary>View Code</summary>
+<LivePreview src="forms-input--validation" >
 
 ```vue
 <script setup lang="ts">
@@ -344,7 +349,7 @@ const onSubmit = handleSubmit((values) => {
 </template>
 ```
 
-</details>
+</LivePreview>
 
 ### Validation Mode
 
@@ -352,10 +357,7 @@ There are 2 modes. The first is `eager` mode, and the second is `aggressive` mod
 
 You can change the default value for this validation mode by adding an attribute or property named `validation-mode` to this component.
 
-<LivePreview src="forms-input--validation-mode" />
-
-<details>
-  <summary>View Code</summary>
+<LivePreview src="forms-input--validation-mode" >
 
 ```vue
 <script setup lang="ts">
@@ -409,16 +411,13 @@ const onSubmit = handleSubmit((values) => {
 </template>
 ```
 
-</details>
+</LivePreview>
 
 ### Field Array
 
 Here is example of using `VInput` as field array with `vee-validate`.
 
-<LivePreview src="forms-input--field-arrays" />
-
-<details>
-  <summary>View Code</summary>
+<LivePreview src="forms-input--field-arrays" >
 
 ```vue
 <script setup>
@@ -462,16 +461,13 @@ const onSubmit = handleSubmit((values) => {
 </template>
 ```
 
-</details>
+</LivePreview>
 
 ### Field Array of Objects
 
 Here is example of using `VInput` as field array of object with `vee-validate`.
 
-<LivePreview src="forms-input--field-array-of-objects" />
-
-<details>
-  <summary>View Code</summary>
+<LivePreview src="forms-input--field-array-of-objects" >
 
 ```vue
 <script setup>
@@ -525,16 +521,13 @@ const onSubmit = handleSubmit((values) => {
 </template>
 ```
 
-</details>
+</LivePreview>
 
 ### Field Array Nested
 
 Here is example of using `VInput` as nested field array with `vee-validate`.
 
-<LivePreview src="forms-input--field-array-nested" />
-
-<details>
-  <summary>View Code</summary>
+<LivePreview src="forms-input--field-array-nested" >
 
 ```vue
 <script setup>
@@ -628,7 +621,7 @@ const onSubmit = handleSubmit((values) => {
 </template>
 ```
 
-</details>
+</LivePreview>
 
 ## Props
 
