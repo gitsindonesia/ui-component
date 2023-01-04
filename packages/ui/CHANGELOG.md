@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0-alpha.3](https://github.com/gitsindonesia/ui-component/compare/v0.14.0-alpha.2...v0.14.0-alpha.3) (2023-01-04)
+
+### Bug Fixes
+
+- **nuxt:** load v-data-table-pagination styles ([676f009](https://github.com/gitsindonesia/ui-component/commit/676f009bbf11215f048569d5d7646023526b387e))
+
 # [0.14.0-alpha.2](https://github.com/gitsindonesia/ui-component/compare/v0.14.0-alpha.1...v0.14.0-alpha.2) (2023-01-04)
 
 ### Bug Fixes
