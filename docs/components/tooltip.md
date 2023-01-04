@@ -1,24 +1,29 @@
 # Tooltip
 
+The `VTooltip` component displays a small pop-up box with additional information when the user hovers over or clicks an element.
+
 ## Usage
 
 ### Basic Usage
 
+To use the tooltip component, you can use it in your template as follows:
+
+<LivePreview src="components-tooltip--tooltip" >
+
 ```vue
 <template>
-  <!-- VTooltip is registered globally -->
   <VTooltip placement="top">
     <template #activator="{on}">
-      <VBtn v-on="on">
-        {{ place }}
-      </VBtn>
+      <VBtn v-on="on"> Hove me </VBtn>
     </template>
     <span>Hello :)</span>
   </VTooltip>
 </template>
 ```
 
-<LivePreview src="components-tooltip--tooltip" />
+</LivePreview>
+
+The `activator` slot contains the element that will trigger the tooltip when hovered over or clicked. In this example, it is a `VBtn` component. The `VTooltip` component will display the `span` element as the tooltip.
 
 ::: info
 The `VTooltip` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
@@ -26,16 +31,33 @@ The `VTooltip` component is registered globally when you install with `@gits-id/
 
 ## Props
 
-| Name                                | Type     | Default                                                                                  |
-| ----------------------------------- | -------- | ---------------------------------------------------------------------------------------- |
-| [`placement`](#placement)           | `string` | `'top'`                                                                                  |
-| [`options`](#options)               | `object` | `{}`                                                                                     |
-| [`activatorClass`](#activatorClass) | `string` | `''`                                                                                     |
-| [`tooltipClass`](#tooltipClass)     | `string` | `'inline-block shadow px-3 py-2 rounded bg-[#000] text-white p-2 rounded max-w-[300px]'` |
+| Name                                   | Type     | Default |
+| -------------------------------------- | -------- | ------- |
+| [`placement`](#placement)              | `string` | `'top'` |
+| [`options`](#options) ❌               | `object` | `{}`    |
+| [`activatorClass`](#activatorClass) ❌ | `string` | `''`    |
+| [`tooltipClass`](#tooltipClass) ❌     | `string` | `''`    |
 
-## Methods
+❌ = deprecated
 
-None
+## Placements
+
+```ts
+const placements = [
+  'top',
+  'top-start',
+  'top-end',
+  'bottom',
+  'bottom-start',
+  'bottom-end',
+  'right',
+  'right-start',
+  'right-end',
+  'left',
+  'left-start',
+  'left-end',
+];
+```
 
 ## Events
 
@@ -54,7 +76,7 @@ None
 You can also install the `Tooltip` component individually via `@gits-id/tooltip` package:
 
 ```bash
-yarn install @gits-id/tooltip
+npm i @gits-id/tooltip
 ```
 
 ```vue
@@ -63,10 +85,10 @@ import VTooltip from '@gits-id/tooltip';
 </script>
 
 <template>
-  <VTooltip placement="top">
+  <VTooltip>
     <template #activator="{on}">
       <VBtn v-on="on">
-        {{ place }}
+        Hove Me
       </VBtn>
     </template>
     <span>Hello :)</span>
