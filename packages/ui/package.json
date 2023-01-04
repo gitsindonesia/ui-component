@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/ui",
-  "version": "0.14.0-alpha.3",
+  "version": "0.14.0-alpha.4",
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "npm run build",

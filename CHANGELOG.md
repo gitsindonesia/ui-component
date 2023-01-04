@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0-alpha.4](https://github.com/gitsindonesia/ui-component/compare/v0.14.0-alpha.3...v0.14.0-alpha.4) (2023-01-04)
+
+### Bug Fixes
+
+- **ui:** load transition styles ([c65d135](https://github.com/gitsindonesia/ui-component/commit/c65d135a5333cc020bbe03da8276b97976e18702))
+
 # [0.14.0-alpha.3](https://github.com/gitsindonesia/ui-component/compare/v0.14.0-alpha.2...v0.14.0-alpha.3) (2023-01-04)
 
 ### Bug Fixes
