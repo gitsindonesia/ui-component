@@ -1,8 +1,14 @@
-# RadioGroup
+# Radio Group
+
+The `VRadioGroup` component is a form control that allows the user to select a single option from a list of choices presented as radio buttons.
 
 ## Usage
 
 ### Basic Usage
+
+To use the `VRadioGroup` component, pass in a list of objects representing the available options through the items prop. Each object should have a `text` property for the label to be displayed and a `value` property for the underlying value of the option.
+
+<LivePreview src="forms-radiogroup--default">
 
 ```vue
 <script setup lang="ts">
@@ -29,9 +35,13 @@ const items = ref([
 </template>
 ```
 
-<LivePreview src="forms-radiogroup--default" />
+</LivePreview>
 
 ### Inline
+
+To display the radio buttons inline, set the `inline` prop to `true`.
+
+<LivePreview src="forms-radiogroup--inline">
 
 ```vue
 <script setup lang="ts">
@@ -58,9 +68,13 @@ const items = ref([
 </template>
 ```
 
-<LivePreview src="forms-radiogroup--inline" />
+</LivePreview>
 
 ### Error
+
+To display the `VRadioGroup` component in an error state, set the `error` prop to `true`. This will add an error message and apply an error styles to the component.
+
+<LivePreview src="forms-radiogroup--error" >
 
 ```vue
 <script setup lang="ts">
@@ -87,9 +101,13 @@ const items = ref([
 </template>
 ```
 
-<LivePreview src="forms-radiogroup--error" />
+</LivePreview>
 
 ### Disabled
+
+To disable the `VRadioGroup` component and prevent user interaction, set the `disabled` prop to `true`.
+
+<LivePreview src="forms-radiogroup--disabled" >
 
 ```vue
 <script setup lang="ts">
@@ -116,9 +134,15 @@ const items = ref([
 </template>
 ```
 
-<LivePreview src="forms-radiogroup--disabled" />
+</LivePreview>
 
 ### Validation
+
+The `VRadioGroup` component can be used in a form with form validation by using a form handling library such as `VeeValidate`.
+
+Here is an example of using the `VRadioGroup` component with `VeeValidate`:
+
+<LivePreview src="forms-radiogroup--no-label" >
 
 ```vue
 <script setup lang="ts">
@@ -169,9 +193,15 @@ const items = ref([
 </template>
 ```
 
-<LivePreview src="forms-radiogroup--no-label" />
+</LivePreview>
 
 ### Validation Mode
+
+There are 2 modes. The first is `eager` mode, and the second is `aggressive` mode. The `eager` mode validates input when the blur event occurs. Meanwhile, `aggressive` mode validates the input every time the input itself changes. This can be useful when you are validating for example the minimum or maximum limits of an input.
+
+You can change the default value for this validation mode by adding an attribute or property named `validation-mode` to this component.
+
+<LivePreview src="forms-radiogroup--default" >
 
 ```vue
 <script setup lang="ts">
@@ -242,10 +272,8 @@ const onSubmit = handleSubmit((values) => {
 </template>
 ```
 
-<LivePreview src="forms-radiogroup--default" />
+</LivePreview>
 
-::: info
-The `VRadioGroup` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
 ## Props
@@ -276,13 +304,63 @@ The `VRadioGroup` component is registered globally when you install with `@gits-
 
 ### `update:modelValue`
 
-### `update:value`
+This event is emitted whenever the value of the `VRadioGroup` component changes. It is emitted with the new value as the argument.
 
-### `input`
+```vue
+<template>
+  <VRadioGroup @update:modelValue="handleModelValueChange" />
+</template>
+
+<script>
+export default {
+  methods: {
+    handleModelValueChange(newValue) {
+      // handle value change
+    },
+  },
+};
+</script>
+```
 
 ### `change`
 
+This event is emitted whenever the value of the `VRadioGroup` component changes and the input loses focus. It is emitted with the new value as the argument.
+
+```vue
+<template>
+  <VRadioGroup @change="handleChange" />
+</template>
+
+<script>
+export default {
+  methods: {
+    handleChange(newValue) {
+      // handle change
+    },
+  },
+};
+</script>
+```
+
 ### `blur`
+
+This event is emitted whenever the `VRadioGroup` component loses focus. It is emitted with the current value as the argument.
+
+```vue
+<template>
+  <VRadioGroup @blur="handleBlur" />
+</template>
+
+<script>
+export default {
+  methods: {
+    handleBlur(currentValue) {
+      // handle blur
+    },
+  },
+};
+</script>
+```
 
 ## Slots
 
