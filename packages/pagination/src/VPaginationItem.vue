@@ -25,6 +25,7 @@ withDefaults(
 
 <template>
   <button
+    type="button"
     :disabled="disabled"
     :aria-disabled="disabled"
     class="v-pagination-item"
