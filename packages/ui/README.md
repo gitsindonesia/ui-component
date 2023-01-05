@@ -1,4 +1,6 @@
-# GITS UI Component
+# GITS UI
+
+Free and open-source UI Component for Vue 3.
 
 ## Installation
 
@@ -26,6 +28,9 @@ pnpm i @gits-id/ui
 // file: main.ts
 
 import GitsUI from '@gits-id/ui';
+import '@gits-id/ui/styles';
+// or load SCSS styles
+// import '@gits-id/ui/styles.scss';
 
 const app = createApp(App);
 
@@ -34,7 +39,7 @@ app.use(GitsUI);
 
 ## Documentation
 
-View full documentation [here](https://gits-ui.web.app).
+View full documentation here https://gitsindonesia.github.io/ui-component/.
 
 ## License
 
