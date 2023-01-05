@@ -121,8 +121,6 @@ const pagino = computed<any>(() => {
 });
 
 const pages = computed(() => pagino.value.getPages());
-const isFirstPage = computed(() => page.value === 1);
-const isLastPage = computed(() => page.value === totalPages.value);
 const cantNext = computed(() => page.value >= totalPages.value);
 const cantPrev = computed(() => page.value <= 1);
 
@@ -194,7 +192,7 @@ watch(
       </VPaginationItem>
       <VPaginationItem
         v-else-if="item === 'first'"
-        :disabled="isFirstPage"
+        :disabled="cantPrev"
         sr-text="First"
         first
         action
@@ -210,7 +208,7 @@ watch(
       </VPaginationItem>
       <VPaginationItem
         v-else-if="item === 'last'"
-        :disabled="isLastPage"
+        :disabled="cantNext"
         sr-text="Last"
         last
         action
