@@ -150,9 +150,12 @@ onUnmounted(() => {
               backgroundImage: !loading ? `url(${previewURL})` : 'none',
             }"
           ></div>
-          <div v-if="fileName" class="text-gray-500 text-sm">
-            {{ fileName }}
-          </div>
+
+          <slot name='filename' :value='fileName'>
+            <div v-if="fileName" class="text-gray-500 text-sm">
+              {{ fileName }}
+            </div>
+          </slot>
         </div>
       </slot>
 

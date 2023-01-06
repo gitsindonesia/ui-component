@@ -64,4 +64,5 @@ const emit =
       </div>
     </template>
   </VInput>
+  <slot name="filename" :value="fileName" />
 </template>

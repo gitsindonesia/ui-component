@@ -48,10 +48,12 @@ const emit =
           rounded
           hover:border-gray-400
         "
-        :class="[disabledClass, borderClass]"
+        :class='[disabledClass, borderClass]'
         @click="emit('choose')"
       >
-        {{ fileName }}
+        <slot name="filename" :value="filename">
+          {{ fileName }}
+        </slot>
       </div>
       <v-btn
         v-if="readonly"
