@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup lang='ts'>
 import {computed, PropType, ref, toRefs, watch} from 'vue';
 import {
   Listbox,
@@ -178,10 +178,13 @@ const emit =
   defineEmits<{
     (e: 'update:modelValue', value: Val): void;
     (e: 'update:value', value: Val): void;
+    (e: 'change', value: Val): void;
     (e: 'search', value: string): void;
   }>();
 
-const {value: selectedItem, errorMessage} = useField<Val>(name, rules, {
+const uncontrolledValue = ref();
+
+const {value: selectedItem, errorMessage, setValue} = useField<Val>(name, rules, {
   initialValue: modelValue.value || value.value,
   ...props.fieldOptions,
 });
@@ -190,20 +193,22 @@ const findItem = (val: Val) => {
   return items.value.find((item) => item[itemValue.value] === val);
 };
 
-watch(selectedItem, (val) => {
-  if (props.returnObject) {
-    if (typeof val === 'object') {
-      emit('update:modelValue', val);
-      emit('update:value', val);
-    } else {
-      const item = findItem(val) as Val;
-      emit('update:modelValue', item);
-      emit('update:value', item);
-    }
-  } else {
-    emit('update:modelValue', val);
-    emit('update:value', val);
+watch(uncontrolledValue, (val) => {
+  // update v-model and vee validate form value
+  if (name?.value) {
+    setValue(val);
   }
+
+  // emit all value update message
+  emitSelected(val);
+});
+
+watch(modelValue, (val) => {
+  uncontrolledValue.value = val;
+});
+
+watch(selectedItem, (val) => {
+  uncontrolledValue.value = val;
 });
 
 const message = computed(() => {
@@ -230,22 +235,40 @@ watch(search, (val) => emit('search', val));
 
 const selectedText = computed(() => {
   const item = filteredItems.value.find((item) => {
-    return item[itemValue.value] === selectedItem.value;
+    return item[itemValue.value] === uncontrolledValue.value;
   });
 
   if (props.returnObject) {
-    return (selectedItem.value as VSelectItem)[props.itemText] || placeholder.value;
+    return (uncontrolledValue?.value as VSelectItem)[props.itemText] || placeholder.value;
   }
 
   return item?.[props.itemText] || placeholder.value;
 });
 
-const clear = () => (selectedItem.value = '');
+const clear = () => {
+  uncontrolledValue.value = '';
+};
+
+const emitSelected = (val: any) => {
+  let emittedVal = val;
+
+  // look up the matching value entry
+  // if selected value is not an object
+  // but object is expected as emitted value
+  if (props.returnObject && typeof val !== 'object') {
+    emittedVal = findItem(val) as Val;
+  }
+
+  // emit event
+  emit('update:modelValue', emittedVal);
+  emit('update:value', emittedVal);
+  emit('change', emittedVal);
+};
 </script>
 
 <template>
   <div
-    class="v-select"
+    class='v-select'
     :class="[
       `v-select-${color}`,
       `v-select--${size}`,
@@ -256,87 +279,87 @@ const clear = () => (selectedItem.value = '');
       wrapperClass,
     ]"
   >
-    <Listbox v-model="selectedItem">
-      <ListboxLabel v-if="label" class="v-select-label" :class="labelClass">
+    <Listbox v-model='uncontrolledValue'>
+      <ListboxLabel v-if='label' class='v-select-label' :class='labelClass'>
         {{ label }}
       </ListboxLabel>
-      <div class="v-select-panel">
+      <div class='v-select-panel'>
         <ListboxButton
-          class="v-select-button"
-          :class="[
+          class='v-select-button'
+          :class='[
             btnClass,
             {
               [shadowClass]: shadow,
             },
-          ]"
-          :disabled="disabled"
+          ]'
+          :disabled='disabled'
         >
           <div
-            class="v-select-selected"
+            class='v-select-selected'
             :class="{
               'v-select-selected--placeholder': !selectedItem,
             }"
           >
-            <slot name="selected" :item="selectedItem">
+            <slot name='selected' :item='selectedItem'>
               {{ selectedText }}
             </slot>
           </div>
-          <v-tooltip v-if="selectedItem && clearable">
+          <v-tooltip v-if='selectedItem && clearable'>
             <template #activator>
               <button
-                type="button"
-                aria-label="Clear"
-                class="v-select-clearable-button"
-                @click="clear"
+                type='button'
+                aria-label='Clear'
+                class='v-select-clearable-button'
+                @click='clear'
               >
                 <Icon
-                  name="heroicons:x-mark"
-                  class="v-select-clearable-icon"
-                  aria-hidden="true"
+                  name='heroicons:x-mark'
+                  class='v-select-clearable-icon'
+                  aria-hidden='true'
                 />
               </button>
             </template>
             <span> {{ clearText }} </span>
           </v-tooltip>
-          <span class="w-auto">
+          <span class='w-auto'>
             <Icon
-              name="heroicons:chevron-down"
-              :size="iconSize"
-              class="v-select-icon"
-              aria-hidden="true"
+              name='heroicons:chevron-down'
+              :size='iconSize'
+              class='v-select-icon'
+              aria-hidden='true'
             />
           </span>
         </ListboxButton>
 
-        <transition :name="transition">
+        <transition :name='transition'>
           <ListboxOptions
-            class="v-select-options"
+            class='v-select-options'
             :class="top ? 'bottom-10' : ''"
           >
-            <div v-if="searchable" class="v-select-searchable">
+            <div v-if='searchable' class='v-select-searchable'>
               <v-input
-                v-model="search"
-                :size="searchSize"
-                :placeholder="searchPlaceholder"
+                v-model='search'
+                :size='searchSize'
+                :placeholder='searchPlaceholder'
                 clearable
-                v-bind="searchProps"
+                v-bind='searchProps'
               />
             </div>
             <div
-              v-if="searchable && !filteredItems.length"
-              class="px-4 pb-2 pt-3"
+              v-if='searchable && !filteredItems.length'
+              class='px-4 pb-2 pt-3'
             >
-              <slot name="empty"> No results </slot>
+              <slot name='empty'> No results</slot>
             </div>
             <ListboxOption
-              v-for="(item, index) in filteredItems"
-              v-slot="{selected}"
-              :key="index"
-              :value="returnObject ? item : item?.[itemValue]"
-              as="template"
+              v-for='(item, index) in filteredItems'
+              v-slot='{selected}'
+              :key='index'
+              :value='returnObject ? item : item?.[itemValue]'
+              as='template'
             >
               <li
-                class="group v-select-option"
+                class='group v-select-option'
                 :class="[
                   {
                     'v-select-option--active': selected,
@@ -344,23 +367,23 @@ const clear = () => (selectedItem.value = '');
                 ]"
               >
                 <span
-                  v-if="!hideCheckIcon"
-                  class="v-select-option-check"
+                  v-if='!hideCheckIcon'
+                  class='v-select-option-check'
                   :class="{
                     'v-select-option-check--active': selected,
                   }"
                 >
-                  <slot v-if="selected" name="icon">
+                  <slot v-if='selected' name='icon'>
                     <Icon
-                      :name="checkIcon"
-                      :size="checkIconSize"
-                      class="v-select-option-check-icon"
-                      aria-hidden="true"
+                      :name='checkIcon'
+                      :size='checkIconSize'
+                      class='v-select-option-check-icon'
+                      aria-hidden='true'
                     />
                   </slot>
                 </span>
                 <span :class="['v-select-option-text']">
-                  <slot name="item" :item="item">
+                  <slot name='item' :item='item'>
                     {{ item?.[itemText] }}
                   </slot>
                 </span>
@@ -371,10 +394,10 @@ const clear = () => (selectedItem.value = '');
       </div>
     </Listbox>
 
-    <div v-if="message" class="v-select-error" :class="errorClass">
+    <div v-if='message' class='v-select-error' :class='errorClass'>
       {{ message }}
     </div>
   </div>
 </template>
 
-<style src="./VSelect.scss" lang="scss"></style>
+<style src='./VSelect.scss' lang='scss'></style>

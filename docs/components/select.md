@@ -490,6 +490,10 @@ Emitted when the selected item changes.
 
 Emitted when the selected item changes.
 
+### [`change`](#search)
+
+Emitted when the selected item changes.
+
 ### [`search`](#search)
 
 Emitted when the search input is changed.

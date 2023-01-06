@@ -226,3 +226,113 @@ export const Validation: Story<{}> = () => ({
     </form>
 `,
 });
+
+export const TestInoutState: Story<{}> = (args) => ({
+  components: {VBtn, VSelect},
+  setup() {
+    const schema = object({
+      genre: string().required().nullable().label('Genre'),
+      gender: string().required().nullable().label('Gender'),
+    });
+
+    console.log({args})
+    const modelValue = ref('');
+    const {handleSubmit, resetForm, values} = args.useForm ? useForm({
+      validationSchema: schema,
+    }) : {handleSubmit: (cb: any) => null, resetForm: () => null, values: {}};
+
+    const onSubmit = handleSubmit((values: any) => {
+      alert(JSON.stringify(values));
+    });
+
+    const genders = ref([
+      {
+        text: 'Male',
+        value: 'male',
+      },
+      {
+        text: 'Female',
+        value: 'female',
+      },
+    ]);
+
+    const genres = ref([
+      {
+        text: 'Pop',
+        value: 'pop',
+      },
+      {
+        text: 'Rock',
+        value: 'rock',
+      },
+    ]);
+
+    const uncontrolledInput = new Array(5).fill({}).map((_, idx) => ({
+      text: `UI ${idx}`,
+      value: `uncontrolled-${idx}`,
+    }));
+
+    const onChange = (val: any) => {
+      alert(val);
+    };
+
+    return {args, onSubmit, resetForm, values, genders, genres, modelValue, uncontrolledInput, onChange};
+  },
+  template: `
+    <form @submit='onSubmit' class='border-none'>
+    <h1 class='mb-8 font-semibold'>{{args.useForm ? 'with' : 'without'}} VeeValidate Form</h1>
+
+    <div class='mb-4'>
+      <v-select
+        name='gender'
+        label='Only Name - Gender'
+        placeholder='Select your gender'
+        :items='genders'
+      />
+      <div class='text-xs'>When used without vee validate, should not change "Vmodel" value or any other value unless
+        explicitly implemented
+      </div>
+    </div>
+
+    <v-select
+      wrapper-class='mb-4'
+      v-model='modelValue'
+      label='Only VModel - Gender'
+      placeholder='Select your gender'
+      :items='genders'
+    />
+
+    <div class='mb-4'>
+      <v-select
+        v-model='modelValue'
+        name='gender'
+        label='VModel and Name - Gender'
+        placeholder='VModel and name prop'
+        :items='genders'
+      />
+      <div class='text-xs'>Should update form values under "gender" key AND "modelValue"</div>
+    </div>
+
+
+    <div class='mb-4'>
+      <v-select
+        label='Uncontrolled - Gender'
+        placeholder='Uncontrolled input'
+        @change='onChange'
+        :items='genders'
+      />
+      <div class='text-xs'>Should not change any value unless explicitly implemented</div>
+    </div>
+
+    <div class='mt-4'>
+      <v-btn type='submit'>Submit</v-btn>
+      <v-btn type='button' text @click='resetForm'>Reset</v-btn>
+    </div>
+    
+    <pre>{{ {values, modelValue} }}</pre>
+    </form>
+  `,
+});
+TestInoutState.args = {
+  useForm: false,
+};
