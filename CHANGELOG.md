@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0-alpha.5](https://github.com/gitsindonesia/ui-component/compare/v0.14.0-alpha.4...v0.14.0-alpha.5) (2023-01-06)
+
+### Bug Fixes
+
+- **pagination.VPaginationItem:** set button type as button ([9aa82d8](https://github.com/gitsindonesia/ui-component/commit/9aa82d8d0d003521eb28cda3be55d0858b75ec84))
+- **Pagination:** fix logic to disable last or first page shortcut ([61d64fd](https://github.com/gitsindonesia/ui-component/commit/61d64fd78ac35287954e233efe1dd898fb1cd881))
+
+### Features
+
+- **starter:** add new nuxt-minimal starter ([a38b607](https://github.com/gitsindonesia/ui-component/commit/a38b60769c1cff8275603de53d5f683758a11bfe))
+- **VFileUpload:** support slot to override filename display ([835f9cc](https://github.com/gitsindonesia/ui-component/commit/835f9cc49de2b59de19a572a27f85a8c110b0339))
+- **VSelect:** refactor VSelect underlying logic to support uncontrolled input state ([d53e973](https://github.com/gitsindonesia/ui-component/commit/d53e973121489ba7e8212cf799a8ec6e7ce8656c))
+
 # [0.14.0-alpha.4](https://github.com/gitsindonesia/ui-component/compare/v0.14.0-alpha.3...v0.14.0-alpha.4) (2023-01-04)
 
 ### Bug Fixes

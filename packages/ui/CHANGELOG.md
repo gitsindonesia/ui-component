@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0-alpha.5](https://github.com/gitsindonesia/ui-component/compare/v0.14.0-alpha.4...v0.14.0-alpha.5) (2023-01-06)
+
+**Note:** Version bump only for package @gits-id/ui
+
 # [0.14.0-alpha.4](https://github.com/gitsindonesia/ui-component/compare/v0.14.0-alpha.3...v0.14.0-alpha.4) (2023-01-04)
 
 ### Bug Fixes

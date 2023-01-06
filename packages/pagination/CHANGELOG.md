@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0-alpha.5](https://github.com/gitsindonesia/ui-component/compare/v0.14.0-alpha.4...v0.14.0-alpha.5) (2023-01-06)
+
+### Bug Fixes
+
+- **pagination.VPaginationItem:** set button type as button ([9aa82d8](https://github.com/gitsindonesia/ui-component/commit/9aa82d8d0d003521eb28cda3be55d0858b75ec84))
+- **Pagination:** fix logic to disable last or first page shortcut ([61d64fd](https://github.com/gitsindonesia/ui-component/commit/61d64fd78ac35287954e233efe1dd898fb1cd881))
+
 ## [0.13.20](https://github.com/gitsindonesia/ui-component/compare/v0.13.19...v0.13.20) (2022-12-21)
 
 **Note:** Version bump only for package @gits-id/pagination

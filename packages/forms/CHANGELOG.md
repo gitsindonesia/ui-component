@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0-alpha.5](https://github.com/gitsindonesia/ui-component/compare/v0.14.0-alpha.4...v0.14.0-alpha.5) (2023-01-06)
+
+### Features
+
+- **VFileUpload:** support slot to override filename display ([835f9cc](https://github.com/gitsindonesia/ui-component/commit/835f9cc49de2b59de19a572a27f85a8c110b0339))
+
 # [0.14.0-alpha.2](https://github.com/gitsindonesia/ui-component/compare/v0.14.0-alpha.1...v0.14.0-alpha.2) (2023-01-04)
 
 ### Bug Fixes
