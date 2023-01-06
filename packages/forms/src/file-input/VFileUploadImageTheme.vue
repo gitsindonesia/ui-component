@@ -14,6 +14,7 @@ type Props = {
   hasFile?: boolean;
   loadingText?: string;
   browseText?: string;
+  previewClass?: string;
 };
 
 const props = withDefaults(defineProps<Props>(), {
@@ -43,19 +44,22 @@ const backgroundImage = computed(() =>
         cursor-pointer
         flex flex-col
         items-center
+        items-center
         justify-center
         py-10
         bg-no-repeat bg-contain bg-center
         max-w-full
       "
-      :class="[sizeClass, {'rounded-lg': rounded}, borderClass]"
+      :class="[sizeClass, {'rounded-lg': rounded}, borderClass, previewClass]"
       :style="{backgroundImage}"
       type="button"
       @click="emit('choose')"
     >
       <v-spinner v-if="loading" color="primary" large />
       <div v-else-if="hasFile" class="px-2 text-center">
-        {{ image ? '' : fileName }}
+        <slot name="filename" :value="fileName">
+          {{ image ? '' : fileName }}
+        </slot>
       </div>
       <template v-else>
         <Icon

@@ -291,6 +291,21 @@ const fileName = computed(() => {
     return innerValue.value.split('/').pop();
   }
 
+  if((innerValue.value as any)?.length) {
+    let str = '';
+    for(let i = 0; i < (innerValue.value as any)?.length; i+=1) {
+      const f = innerValue?.value ? (innerValue.value as Record<any, any>)[i] as any : {};
+
+      if(i > 0){
+        str += ', ';
+      }
+
+       str += f?.name || '';
+    }
+
+    return str;
+  }
+
   return getFileValue('name', '');
 });
 
@@ -343,7 +358,11 @@ const borderClass = computed(() => {
       }"
       @choose="pickFile"
       @remove="removeFile"
-    />
+    >
+      <template v-slot:filename>
+        <slot name="filename" />
+      </template>
+    </VFileUploadButtonTheme>
 
     <VFileUploadImageTheme
       v-else-if="theme === 'image'"
@@ -358,9 +377,14 @@ const borderClass = computed(() => {
         hasFile,
         loadingText,
         browseText,
+        previewClass,
       }"
       @choose="pickFile"
-    />
+    >
+      <template v-slot:filename="slotData">
+        <slot name="filename" v-bind="slotData"/>
+      </template>
+    </VFileUploadImageTheme>
 
     <VFileUploadDropzoneTheme
       v-else-if="theme === 'dropzone'"
@@ -386,7 +410,11 @@ const borderClass = computed(() => {
       @dropped="handleFiles"
       @choose="pickFile"
       @remove="removeFile"
-    />
+    >
+      <template v-slot:filename="slotData">
+        <slot name="filename" v-bind="slotData"/>
+      </template>
+    </VFileUploadDropzoneTheme>
 
     <VFileUploadDefaultTheme
       v-else
@@ -404,7 +432,11 @@ const borderClass = computed(() => {
       }"
       @choose="pickFile"
       @remove="removeFile"
-    />
+    >
+      <template v-slot:filename="slotData">
+        <slot name="filename" v-bind="slotData"/>
+      </template>
+    </VFileUploadDefaultTheme>
 
     <input
       :id="id"

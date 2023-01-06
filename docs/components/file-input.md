@@ -486,6 +486,18 @@ Use the `hint` slot to add a hint or a description to the file input.
 </template>
 ```
 
+### `filename`
+
+Use the `filename` slot to customize displayed filename text
+
+```vue
+<template>
+  <VFileUpload>
+    <template #filename> A file has been chosen. </template>
+  </VFileUpload>
+</template>
+```
+
 ### `error`
 
 Use the `error` slot to customize the error message displayed when the file input has an error. The slot receives an object with the following properties:
