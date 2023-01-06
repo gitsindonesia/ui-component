@@ -227,7 +227,7 @@ export const Validation: Story<{}> = () => ({
 `,
 });
 
-export const TestInoutState: Story<{}> = (args) => ({
+export const TestInputState: Story<{}> = (args) => ({
   components: {VBtn, VSelect},
   setup() {
     const schema = object({
@@ -333,6 +333,6 @@ export const TestInoutState: Story<{}> = (args) => ({
     </form>
   `,
 });
-TestInoutState.args = {
+TestInputState.args = {
   useForm: false,
 };
