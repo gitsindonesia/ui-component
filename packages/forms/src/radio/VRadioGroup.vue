@@ -118,6 +118,7 @@ const emit = defineEmits([
   'blur',
 ]);
 
+const uncontrolledValue = ref();
 const groupRef = ref();
 
 const isEagerValidation = computed(() => {
@@ -125,10 +126,11 @@ const isEagerValidation = computed(() => {
 });
 
 const {
-  value: selected,
+  value: vvValue,
   errorMessage,
   validate,
   meta,
+  setValue
 } = useField(name, rules, {
   initialValue: modelValue.value || value.value,
   validateOnValueUpdate: !isEagerValidation.value,
@@ -148,7 +150,19 @@ const getText = (item: RadioItem) => {
   return typeof item === 'object' ? item?.[itemText.value] : item;
 };
 
-watch(selected, (val) => {
+watch(modelValue, (val) => {
+  uncontrolledValue.value = val;
+})
+
+watch(vvValue, (val) => {
+  uncontrolledValue.value = val;
+})
+
+watch(uncontrolledValue, (val) => {
+  if(name?.value){
+    setValue(val)
+  }
+
   emit('update:modelValue', val);
   emit('update:value', val);
   emit('input', val);
@@ -156,18 +170,6 @@ watch(selected, (val) => {
 });
 
 const {class: sizeClass} = useTextSize(size.value);
-
-const setInnerValue = (val: Value) => {
-  selected.value = val;
-};
-
-watch(modelValue, (val) => {
-  setInnerValue(val);
-});
-
-watch(value, (val) => {
-  setInnerValue(val);
-});
 
 const onChange = (event: any) => {
   emit('change', event);
@@ -232,7 +234,7 @@ onBeforeUnmount(() => {
       <label v-for="(item, index) in items" :key="index">
         <input
           :id="id || name"
-          v-model="selected"
+          v-model="uncontrolledValue"
           @blur="handleBlur"
           :name="name"
           type="radio"
@@ -248,7 +250,7 @@ onBeforeUnmount(() => {
           :disabled="disabled"
           @change="onChange"
         />
-        <slot name="label" :item="item" :selected="selected">
+        <slot name="label" :item="item" :selected="uncontrolledValue">
           <span :class="[sizeClass, error ? 'text-error' : 'text-gray-700']">
             {{ getText(item) }}
           </span>
