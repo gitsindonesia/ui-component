@@ -244,7 +244,7 @@ const onSubmit = handleSubmit((values) => {
 ## Props
 
 | Name                                | Type               | Default        |
-| ----------------------------------- | ------------------ | -------------- |
+|-------------------------------------| ------------------ | -------------- |
 | [`modelValue`](#modelValue)         | `string`           | `''`           |
 | [`rows`](#rows)                     | `string \| number` | `undefined`    |
 | [`value`](#value)                   | `string`           | `''`           |
@@ -260,6 +260,7 @@ const onSubmit = handleSubmit((values) => {
 | [`rules`](#rules)                   | `string`           | `''`           |
 | [`wrapperClass`](#wrapperClass)     | `string`           | `''`           |
 | [`inputClass`](#inputClass)         | `string`           | `''`           |
+| [`labelClass`](#labelClass)         | `string`           | `''`           |
 | [`validationMode`](#validationMode) | `string`           | `'aggressive'` |
 
 ## Events

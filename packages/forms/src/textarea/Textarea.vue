@@ -70,6 +70,10 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  labelClass: {
+    type: String,
+    default: '',
+  },
   validationMode: {
     type: String as PropType<'aggressive' | 'eager'>,
     default: 'aggressive',
@@ -126,7 +130,7 @@ const validationListeners = computed(() => {
       wrapperClass,
     ]"
   >
-    <label v-if="label" :for="name" class="v-input-label">{{ label }}</label>
+    <label v-if="label" :for="name" class="v-input-label" :class="labelClass">{{ label }}</label>
     <textarea
       :id="name"
       v-model="value"
