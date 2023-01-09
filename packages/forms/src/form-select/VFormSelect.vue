@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {toRefs, PropType, watch, computed} from 'vue';
+import {toRefs, PropType, watch, computed, ref} from 'vue';
 import {useField} from 'vee-validate';
 import type {VFormSelectItem} from './types';
 
@@ -89,6 +89,7 @@ const {
   rules,
   validationMode,
 } = toRefs(props);
+const uncontrolledValue = ref();
 
 const isEagerValidation = computed(() => {
   return validationMode.value === 'eager';
@@ -99,15 +100,20 @@ const message = computed(() => {
 });
 
 const {
-  value: inputValue,
+  value: vvValue,
   errorMessage,
   validate,
+  setValue,
 } = useField(name, rules, {
   initialValue: value.value || modelValue.value,
   validateOnValueUpdate: !isEagerValidation.value,
 });
 
-watch(inputValue, (val) => {
+watch(uncontrolledValue, (val) => {
+  if (name?.value) {
+    setValue(val);
+  }
+
   emit('update:modelValue', val);
 
   if (errorMessage.value && isEagerValidation.value) {
@@ -116,7 +122,11 @@ watch(inputValue, (val) => {
 });
 
 watch(modelValue, (val) => {
-  inputValue.value = val;
+  uncontrolledValue.value = val;
+});
+
+watch(vvValue, (val) => {
+  uncontrolledValue.value = val;
 });
 
 const getValue = (option: string | Record<string, any>) => {
@@ -149,7 +159,7 @@ const handleBlur = () => {
       {{ label }}
     </label>
     <select
-      v-model="inputValue"
+      v-model="uncontrolledValue"
       @blur="handleBlur"
       class="v-input-control"
       :disabled="disabled"
