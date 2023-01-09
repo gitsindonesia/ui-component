@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {toRefs, computed, PropType, watch} from 'vue';
+import {toRefs, computed, PropType, watch, ref} from 'vue';
 import {useField} from 'vee-validate';
 
 type CheckboxValue = any[] | boolean | undefined;
@@ -83,17 +83,23 @@ const emit =
     (e: 'update:modelValue', value: CheckboxValue): void;
   }>();
 
-const {modelValue, label, inputClass, disabled, name, rules, validationMode} =
+const {modelValue, label, inputClass, disabled, id, name, rules, validationMode} =
   toRefs(props);
+const uncontrolledValue = ref();
 
 const isEagerValidation = computed(() => {
   return validationMode.value === 'eager';
 });
 
+const inputId = computed(() => {
+  return id.value || name.value;
+});
+
 const {
-  value: innerValue,
+  value: vvValue,
   errorMessage,
   validate,
+  setValue,
 } = useField<CheckboxValue>(name, rules, {
   type: 'checkbox',
   valueProp: props.value,
@@ -103,10 +109,18 @@ const {
 });
 
 watch(modelValue, (val) => {
-  innerValue.value = val;
+  uncontrolledValue.value = val;
 });
 
-watch(innerValue, (val) => {
+watch(vvValue, (val) => {
+  uncontrolledValue.value = val;
+});
+
+watch(uncontrolledValue, (val) => {
+  if (name.value) {
+    setValue(val);
+  }
+
   emit('update:modelValue', val);
 });
 
@@ -133,8 +147,8 @@ const handleChange = (m: any) => {
       ]"
     >
       <input
-        :id="id || name"
-        v-model="innerValue"
+        :id="inputId"
+        v-model="uncontrolledValue"
         @blur="handleBlur"
         @input="handleChange"
         :name="name"
@@ -148,7 +162,7 @@ const handleChange = (m: any) => {
         v-if="label"
         class="v-checkbox-label"
         :class="labelClass"
-        :for="id || name"
+        :for="inputId"
         @mousedown.prevent="null"
       >
         {{ label }}
