@@ -6,7 +6,7 @@ export default {
 
 <script setup lang="ts">
 import {useField} from 'vee-validate';
-import {toRefs, watch} from 'vue';
+import {ref, toRefs, watch} from 'vue';
 
 const props = defineProps({
   modelValue: {
@@ -75,18 +75,23 @@ const props = defineProps({
 });
 
 const {modelValue, rules, label, inputClass, name, id} = toRefs(props);
+const uncontrolledValue = ref();
 
 const emit = defineEmits(['update:modelValue']);
 
 type RadioValue = string | number | string[] | undefined;
 
-const {value: inputValue, errorMessage} = useField<RadioValue>(name, rules, {
+const {value: vvValue, errorMessage, setValue} = useField<RadioValue>(name, rules, {
   initialValue: modelValue.value,
 });
 
 watch(
-  inputValue,
+  uncontrolledValue,
   (val) => {
+    if (name.value) {
+      setValue(val);
+    }
+
     emit('update:modelValue', val);
   },
   {immediate: true},
@@ -95,7 +100,15 @@ watch(
 watch(
   modelValue,
   (val) => {
-    inputValue.value = val;
+    uncontrolledValue.value = val;
+  },
+  {immediate: true},
+);
+
+watch(
+  vvValue,
+  (val) => {
+    uncontrolledValue.value = val;
   },
   {immediate: true},
 );
@@ -114,7 +127,7 @@ watch(
     <div class="v-radio-group" :class="groupClass">
       <input
         :id="id"
-        v-model="inputValue"
+        v-model="uncontrolledValue"
         type="radio"
         :name="name"
         :value="value"
