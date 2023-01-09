@@ -669,34 +669,6 @@ const handle = () => alert('Triggered!');
 </template>
 ```
 
-- [`blur`](#blur)
-
-Triggered when the input element loses focus.
-
-```vue
-<script setup lang="ts">
-const handle = () => alert('Triggered!');
-</script>
-
-<template>
-  <VInput @blur="handle" />
-</template>
-```
-
-- [`change`](#change)
-
-Triggered when the value of the input element changes and the element loses focus.
-
-```vue
-<script setup lang="ts">
-const handle = () => alert('Triggered!');
-</script>
-
-<template>
-  <VInput @change="handle" />
-</template>
-```
-
 - [`clickPrepend`](#clickPrepend)
 
 Triggered when the element with the `prepend` slot is clicked.
