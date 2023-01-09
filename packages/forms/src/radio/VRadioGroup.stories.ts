@@ -96,6 +96,21 @@ NoLabel.parameters = {
   },
 };
 
+export const Customization = Template.bind({});
+Customization.args = {
+  label: 'Pick an option',
+  labelClass: '!text-purple-500',
+  defaultClass: 'p-2 my-1 hover:bg-primary-50 border-grey-300 border rounded-lg cursor-pointer',
+  selectedClass: '!border-primary-300 !text-primary-500'
+};
+Customization.parameters = {
+  docs: {
+    source: {
+      code: '<v-radio-group default-class="" selected-class="" :items="items" label="" />',
+    },
+  },
+};
+
 export const Validation: Story<{}> = () => ({
   components: {VRadioGroup, VBtn},
   setup() {
