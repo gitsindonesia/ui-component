@@ -136,6 +136,39 @@ const items = ref([
 
 </LivePreview>
 
+### Disabled
+
+To disable the `VRadioGroup` component and prevent user interaction, set the `disabled` prop to `true`.
+
+<LivePreview src="forms-radiogroup--disabled" >
+
+```vue
+<script setup lang="ts">
+import {ref} from 'vue';
+
+const items = ref([
+  {
+    text: 'Item 1',
+    value: 1,
+  },
+  {
+    text: 'Item 2',
+    value: 2,
+  },
+  {
+    text: 'Item 3',
+    value: 3,
+  },
+]);
+</script>
+
+<template>
+  <VRadioGroup label="Select" :items="items" disabled />
+</template>
+```
+
+</LivePreview>
+
 ### Validation
 
 The `VRadioGroup` component can be used in a form with form validation by using a form handling library such as `VeeValidate`.
@@ -276,10 +309,48 @@ const onSubmit = handleSubmit((values) => {
 
 :::
 
+### Styling selected item
+
+To style selected item distinctively, pass your class to `selectedClass` prop, or `defaultClass` to set a default classes
+for the items.
+
+<LivePreview src="forms-radiogroup--customization" />
+
+```vue
+<script setup lang="ts">
+import {ref} from 'vue';
+
+const items = ref([
+  {
+    text: 'Item 1',
+    value: 1,
+  },
+  {
+    text: 'Item 2',
+    value: 2,
+  },
+  {
+    text: 'Item 3',
+    value: 3,
+  },
+]);
+</script>
+
+<template>
+  <VRadioGroup
+    :items="items"
+    label="Pick an option"
+    labelClass="!text-purple-500" ,
+    defaultClass="p-2 my-1 hover=bg-primary-50 border-grey-300 border rounded-lg cursor-pointer" ,
+    selectedClass="!border-primary-300 !text-primary-500"
+  />
+</template>
+```
+
 ## Props
 
 | Name                                | Type                                                   | Default                         |
-| ----------------------------------- | ------------------------------------------------------ | ------------------------------- |
+|-------------------------------------|--------------------------------------------------------|---------------------------------|
 | [`modelValue`](#modelValue)         | `[String, Number, Object, Boolean] as PropType<Value>` | `null`                          |
 | [`value`](#value)                   | `[String, Number, Object, Boolean] as PropType<Value>` | `null`                          |
 | [`label`](#label)                   | `String`                                               | `''`                            |
@@ -295,10 +366,12 @@ const onSubmit = handleSubmit((values) => {
 | [`inline`](#inline)                 | `Boolean`                                              | `false`                         |
 | [`hideError`](#hideError)           | `Boolean`                                              | `false`                         |
 | [`labelClass`](#labelClass)         | `String`                                               | `''`                            |
-| [`errorClass`](#errorClass)         | `String`                                               | `'text-error-600 text-sm mt-1'` |
+| [`errorClass`](#errorClass)         | `String`                                               | `''`                            |
+| [`defaultClass`](#errorClass)       | `String`                                               | `''`                            |
+| [`selectedClass`](#errorClass)      | `String`                                               | `'text-error-600 text-sm mt-1'` |
 | [`rules`](#rules)                   | `String`                                               | `''`                            |
 | [`id`](#id)                         | `String`                                               | `''`                            |
-| [`validationMode`](#validationMode) | `String as PropType<'aggressive' \| 'eager'>`          | `'aggressive'`                  |
+| [`validationMode`](#validationMode) | `'aggressive'` &#x7c; `'eager'`                        | `'aggressive'`                  |
 
 ## Events
 
@@ -364,7 +437,18 @@ export default {
 
 ## Slots
 
-None
+### `label`
+
+Customize radio label text
+
+```vue
+<VRadioGroup>
+  <template #label="{item, selected}">
+    <span>{{ item.title }}</span>
+  </template>
+</VRadioGroup>
+```
+
 
 ## CSS Variables
 

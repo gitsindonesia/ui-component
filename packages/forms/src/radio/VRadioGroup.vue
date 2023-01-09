@@ -72,6 +72,14 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  defaultClass: {
+    type: String,
+    default: '',
+  },
+  selectedClass: {
+    type: String,
+    default: '',
+  },
   labelClass: {
     type: String,
     default: '',
@@ -231,7 +239,11 @@ onBeforeUnmount(() => {
       class="flex gap-y-2 sm:gap-y-0 gap-x-8"
       :class="[inline ? 'flex-row' : 'flex-col']"
     >
-      <label v-for="(item, index) in items" :key="index">
+      <label
+        :class="[uncontrolledValue === getValue(item) ? selectedClass :'', defaultClass]"
+        v-for="(item, index) in items"
+        :key="index"
+      >
         <input
           :id="id || name"
           v-model="uncontrolledValue"
@@ -251,7 +263,7 @@ onBeforeUnmount(() => {
           @change="onChange"
         />
         <slot name="label" :item="item" :selected="uncontrolledValue">
-          <span :class="[sizeClass, error ? 'text-error' : 'text-gray-700']">
+          <span :class="[sizeClass]">
             {{ getText(item) }}
           </span>
         </slot>
