@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {computed, toRefs, PropType, watch} from 'vue';
+import {computed, toRefs, PropType, watch, ref} from 'vue';
 import {useField} from 'vee-validate';
 
 const props = defineProps({
@@ -80,23 +80,39 @@ const props = defineProps({
   },
 });
 
-const {validationMode, name, rules} = toRefs(props);
+const {validationMode, name, rules, modelValue} = toRefs(props);
 
 const emit =
   defineEmits<{
     (e: 'update:modelValue', value: string): void;
   }>();
 
+const uncontrolledValue = ref();
+
 const isEagerValidation = computed(() => {
   return validationMode.value === 'eager';
 });
 
-const {value, errorMessage, handleChange} = useField(name, rules, {
+const {value:vvValue, errorMessage, handleChange, setValue} = useField(name, rules, {
   initialValue: props.modelValue || props.value,
   validateOnValueUpdate: !isEagerValidation.value,
 });
 
-watch(value, (val) => emit('update:modelValue', val));
+watch(modelValue, (val) => {
+  uncontrolledValue.value = val;
+});
+
+watch(vvValue, (val) => {
+  uncontrolledValue.value = val;
+});
+
+watch(uncontrolledValue, (val) => {
+  if(name.value){
+    setValue(val);
+  }
+
+  emit('update:modelValue', val);
+});
 
 const validationListeners = computed(() => {
   // If the field is valid or have not been validated yet
@@ -133,7 +149,7 @@ const validationListeners = computed(() => {
     <label v-if="label" :for="name" class="v-input-label" :class="labelClass">{{ label }}</label>
     <textarea
       :id="name"
-      v-model="value"
+      v-model="uncontrolledValue"
       v-on="validationListeners"
       :class="['v-input-control', inputClass]"
       :readonly="readonly"
@@ -145,8 +161,8 @@ const validationListeners = computed(() => {
     <div class="v-input-footer">
       <div class="v-input-error" v-text="errorMessage" />
       <div v-if="counter" class="v-input-counter">
-        <slot name="counter" :count="value.length">
-          {{ value.length }}
+        <slot name="counter" :count="uncontrolledValue.length">
+          {{ uncontrolledValue.length }}
         </slot>
       </div>
     </div>
