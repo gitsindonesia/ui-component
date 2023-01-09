@@ -159,6 +159,7 @@ const props = defineProps({
 });
 
 const {
+  modelValue,
   type,
   readonly,
   disabled,
@@ -171,8 +172,6 @@ const {
 
 const emit = defineEmits([
   'update:modelValue',
-  'blur',
-  'change',
   'clickPrepend',
   'clickPrependIcon',
   'clickAppend',
@@ -185,18 +184,34 @@ const isEagerValidation = computed(() => {
 });
 
 const input = ref();
+const uncontrolledValue = ref();
 
 const {
-  value: inputValue,
+  value: vvValue,
   errorMessage,
   handleChange,
   resetField,
+  setValue,
 } = useField(name, rules, {
   initialValue: props.modelValue || props.value,
   validateOnValueUpdate: !isEagerValidation.value,
 });
 
-watch(inputValue, (val) => emit('update:modelValue', val));
+watch(modelValue, (val) => {
+  uncontrolledValue.value = val;
+});
+
+watch(vvValue, (val) => {
+  uncontrolledValue.value = val;
+});
+
+watch(uncontrolledValue, (val) => {
+  if (name.value) {
+    setValue(val);
+  }
+
+  emit('update:modelValue', val);
+});
 
 const validationListeners = computed(() => {
   // If the field is valid or have not been validated yet
@@ -241,7 +256,7 @@ const clear = () => {
         {{ label }}
       </label>
     </slot>
-    <div v-if="text" v-bind="$attrs" class="v-input-text">{{ inputValue }}</div>
+    <div v-if="text" v-bind="$attrs" class="v-input-text">{{ uncontrolledValue }}</div>
     <div v-else class="v-input-wrapper">
       <slot name="prepend.outer">
         <div
@@ -263,7 +278,7 @@ const clear = () => {
       </slot>
       <input
         :id="id || name"
-        v-model="inputValue"
+        v-model="uncontrolledValue"
         v-on="validationListeners"
         ref="input"
         class="v-input-control"
@@ -298,7 +313,7 @@ const clear = () => {
           </slot>
         </div>
       </slot>
-      <slot v-if="clearable && inputValue" name="clearable">
+      <slot v-if="clearable && uncontrolledValue" name="clearable">
         <button
           type="button"
           aria-label="Clear"
@@ -316,7 +331,7 @@ const clear = () => {
       </slot>
     </div>
 
-    <div v-if="errorMessage" class="v-input-error" :class='errorClass'>
+    <div v-if="errorMessage" class="v-input-error" :class="errorClass">
       {{ errorMessage }}
     </div>
   </div>
