@@ -8,17 +8,26 @@ colors.info = colors.sky;
 colors.warning = colors.yellow;
 colors.success = colors.emerald;
 colors.error = colors.rose;
+
+const brandColors = [
+  'bg-primary-500',
+  'bg-secondary-500',
+  'bg-info-500',
+  'bg-warning-500',
+  'bg-success-500',
+  'bg-error-500',
+];
 </script>
 
 <template>
   <h1 class="text-3xl font-bold mb-5">Colors</h1>
   <h3 class="text-lg font-semibold mb-3">Brand Colors</h3>
   <div class="grid gap-4 grid-cols-2 sm:grid-cols-6">
-    <div v-for="color in defaultColors" :key="color">
-      <div class="rounded px-3 py-2" :class="`bg-${color}-500`">
-        {{ color }}
+    <div v-for="color in brandColors" :key="color">
+      <div class="rounded px-3 py-2" :class="color">
+        {{ color.replace('bg-', '').replace('-500', '') }}
       </div>
-      <p class="font-mono text-sm mt-1">bg-{{ color }}-500</p>
+      <p class="font-mono text-sm mt-1">{{ color }}</p>
     </div>
   </div>
   <h3 class="text-lg font-semibold mb-3 mt-10">Tailwind Colors</h3>
