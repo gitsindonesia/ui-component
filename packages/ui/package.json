@@ -74,5 +74,14 @@
     "unplugin-vue-components": "^0.21.1",
     "vite": "^3.0.0",
     "vitest": "^0.12.4"
-  }
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gitsindonesia/ui-component"
+  },
+  "bugs": {
+    "url": "https://github.com/gitsindonesia/ui-component/issues/new/choose"
+  },
+  "homepage": "https://github.com/gitsindonesia/ui-component"
 }
