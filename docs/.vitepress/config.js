@@ -32,6 +32,7 @@ export default defineConfig({
           {text: 'Migration', link: '/guide/migration'},
           {text: 'Changelog', link: '/guide/changelog'},
           {text: 'Usage with Nuxt 3', link: '/guide/nuxt'},
+          {text: 'Roadmap', link: '/roadmap'},
         ],
       },
       {
@@ -182,7 +183,7 @@ export default defineConfig({
       {
         text: 'Deprecated',
         collapsible: true,
-        items: [   
+        items: [
           {
             text: 'Navbar',
             link: '/components/navbar',
@@ -191,8 +192,8 @@ export default defineConfig({
             text: 'Nav Drawer',
             link: '/components/nav-drawer',
           },
-        ]
-      }
+        ],
+      },
     ],
     socialLinks: [
       {icon: 'github', link: 'https://github.com/gitsindonesia/ui-component'},
