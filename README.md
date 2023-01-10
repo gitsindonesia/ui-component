@@ -29,11 +29,19 @@ Detailed documentation can be found [here](https://gitsindonesia.github.io/ui-co
 
 ## Starter
 
-Checkout starter of GITS UI in the [starter](/starter/) directory:
+Checkout starter of GITS UI in the [starter](/starter/) director
 
-- [Vue 3](/starter/vue/)
-- [Nuxt 3 + GITS UI Minimal Starter](/starter/nuxt-minimal/)
-- [Nuxt 3 + GITS UI Complete Starter](https://github.com/gitsindonesia/nuxt-starter)
+### [Vue 3](/starter/vue/)
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/gitsindonesia/ui-component/tree/main/starter/vue)
+
+### [Nuxt 3 + GITS UI Minimal Starter](/starter/nuxt-minimal/)
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/gitsindonesia/ui-component/tree/main/starter/nuxt-minimal)
+
+### Nuxt 3 + GITS UI Complete Starter
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/gitsindonesia/nuxt-starter)
 
 ## Development
 
