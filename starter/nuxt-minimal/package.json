@@ -8,7 +8,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@gits-id/ui-nuxt": "^0.14.0-alpha.4"
+    "@gits-id/ui-nuxt": "^0.14.0"
   },
   "devDependencies": {
     "nuxt": "3.0.0",
