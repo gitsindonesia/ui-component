@@ -4,14 +4,14 @@ Get started quickly with these starter kits.
 
 ## Vue 3 Starter
 
-Checkout Vue 3 Starter [here](https://github.com/gitsindonesia/ui-component/tree/main/examples/vue).
+Checkout Vue 3 Starter [here](https://github.com/gitsindonesia/ui-component/tree/main/starter/vue).
 
-Try it online on [Stackblitz](https://stackblitz.com/github/gitsindonesia/ui-component/tree/main/examples/vue).
+Try it online on [Stackblitz](https://stackblitz.com/github/gitsindonesia/ui-component/tree/main/starter/vue).
 
 To create a new project using this starter kit, you can use [`degit`](https://github.com/Rich-Harris/degit):
 
 ```bash
-npx degit gitsindonesia/ui-component/examples/vue my-app
+npx degit gitsindonesia/ui-component/starter/vue my-app
 cd vue-app
 pnpm install --shamefully-hoist
 pnpm dev

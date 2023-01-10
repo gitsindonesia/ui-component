@@ -27,12 +27,13 @@ GITS UI is the official UI Component Library in GITS Indonesia built with Vue 3 
 
 Detailed documentation can be found [here](https://gitsindonesia.github.io/ui-component/).
 
-## Examples
+## Starter
 
-See examples of GITS UI in action in the [examples](/examples/) directory:
+Checkout starter of GITS UI in the [starter](/starter/) directory:
 
-- [Vue 3](/examples/vue/)
-- [Nuxt 3 Starter with GITS UI](https://github.com/gitsindonesia/nuxt-starter)
+- [Vue 3](/starter/vue/)
+- [Nuxt 3 + GITS UI Minimal Starter](/starter/nuxt-minimal/)
+- [Nuxt 3 + GITS UI Complete Starter](https://github.com/gitsindonesia/nuxt-starter)
 
 ## Development
 

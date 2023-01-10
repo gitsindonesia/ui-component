@@ -17,8 +17,8 @@ hero:
       text: View on Storybook
       link: https://gits-ui.web.app
     - theme: alt
-      text: See Examples
-      link: https://github.com/gitsindonesia/ui-component/tree/main/examples
+      text: Starter
+      link: /guide/starter
 features:
   - icon: 🖖
     title: Vue 3

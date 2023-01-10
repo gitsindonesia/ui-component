@@ -10,6 +10,6 @@ GITS UI is also designed for easy integration with Nuxt 3, making it a great cho
 
 In the future, GITS UI will include support for themes, allowing developers to easily change the overall appearance of their applications with a few simple changes.
 
-To get started with GITS UI, visit the [getting started guide](https://chat.openai.com/guide/getting-started). You can also view the components in action on the [Storybook](https://gits-ui.web.app/) or see examples on [GitHub](https://github.com/gitsindonesia/ui-component/tree/main/examples).
+To get started with GITS UI, visit the [getting started guide](https://chat.openai.com/guide/getting-started). You can also view the components in action on the [Storybook](https://gits-ui.web.app/) or see starter on [GitHub](https://github.com/gitsindonesia/ui-component/tree/main/starter).
 
 With GITS UI, you can bring your user interface ideas to life with ease.
