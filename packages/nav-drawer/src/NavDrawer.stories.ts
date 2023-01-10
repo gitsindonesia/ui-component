@@ -4,16 +4,10 @@ import {ref} from 'vue';
 import Button from '@gits-id/button';
 import {colors} from './colors';
 import NavDrawerCustom from './stories/NavDrawerCustom.vue';
-import Docs from './NavDrawer.mdx';
 
 export default {
   title: 'Components/NavigationDrawer',
   component: NavDrawer,
-  parameters: {
-    docs: {
-      page: Docs,
-    },
-  },
 } as Meta<typeof NavDrawer>;
 
 const Template: StoryFn<typeof NavDrawer> = (args) => ({
