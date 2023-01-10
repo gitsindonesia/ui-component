@@ -68,13 +68,13 @@
             </a>
 
             <a
-              href="https://github.com/gitsindonesia/ui-component/tree/main/examples"
+              href="https://github.com/gitsindonesia/ui-component/tree/main/starter"
               target="_blank"
               rel="noopener noreferrer"
             >
               <VCard>
                 <template #header>
-                  <h3>Examples &rarr;</h3>
+                  <h3>Starter &rarr;</h3>
                 </template>
                 <p>Discover and deploy boilerplate example GITS UI projects.</p>
               </VCard>
