@@ -190,6 +190,7 @@ const {
 } = toRefs(props);
 
 // refs
+const uncontrolledValue = ref<VMultiSelectItem[]>([]);
 const target = ref(null);
 const isOpen = ref(false);
 const search = ref('');
@@ -197,7 +198,7 @@ const focus = ref(-1);
 const refItems = ref<HTMLDivElement[]>([]);
 const dropdown = ref<HTMLDivElement | null>(null);
 
-const {value: selected, errorMessage} = useField(name, rules, {
+const {value: vvValue, errorMessage, setValue} = useField(name, rules, {
   initialValue: modelValue.value,
   syncVModel: true,
 });
@@ -229,7 +230,7 @@ const searchItem = (item: VMultiSelectItem) => {
 // computed
 const filteredItems = computed(() => items.value.filter(searchItem));
 const badges = computed(() =>
-  maxBadge.value > 0 ? selected.value.slice(0, maxBadge.value) : selected.value,
+  maxBadge.value > 0 ? uncontrolledValue.value.slice(0, maxBadge.value) : uncontrolledValue.value,
 );
 
 // methods
@@ -244,18 +245,18 @@ onBeforeUpdate(() => {
 const handleSelect = (item: VMultiSelectItem) => {
   const index = findIndex(item);
   if (index > -1) {
-    selected.value.splice(index, 1);
+    uncontrolledValue.value.splice(index, 1);
   } else {
-    selected.value.push(item);
+    uncontrolledValue.value.push(item);
   }
-  emit('selected', selected);
+  emit('selected', uncontrolledValue);
 };
 
-const findIndex = (item: VMultiSelectItem) =>
-  selected.value.findIndex(
+const findIndex = (item: VMultiSelectItem) => {
+  return uncontrolledValue.value?.findIndex(
     (sItem) => sItem[itemValue.value] === item?.[itemValue.value],
   );
-
+};
 const hasItem = (item: VMultiSelectItem) => findIndex(item) > -1;
 
 const isSelected = (item: VMultiSelectItem, index: number) => {
@@ -263,14 +264,14 @@ const isSelected = (item: VMultiSelectItem, index: number) => {
 };
 
 const clearSelected = () => {
-  selected.value = [];
+  uncontrolledValue.value = [];
   focus.value = -1;
 };
 
 const deselect = (item: VMultiSelectItem) => {
   const index = findIndex(item);
   if (index > -1) {
-    selected.value.splice(index, 1);
+    uncontrolledValue.value.splice(index, 1);
   }
 };
 
@@ -283,7 +284,7 @@ const handleSearch = useDebounceFn((event) => {
 }, delay.value);
 
 const isAllSelected = computed(
-  () => selected.value.length === items.value.length,
+  () => uncontrolledValue.value.length === items.value.length,
 );
 
 const toggleSelectAll = () => {
@@ -293,14 +294,13 @@ const toggleSelectAll = () => {
     items.value.forEach((item) => {
       const index = findIndex(item);
       if (index < 0) {
-        selected.value.push(item);
+        uncontrolledValue.value.push(item);
       }
     });
   }
 };
 
 const onInputClick = () => {
-  console.log({readonly, disabled});
   if (!readonly.value && !disabled.value) {
     isOpen.value = true;
   }
@@ -374,18 +374,30 @@ const focusItem = () => {
 watch(
   modelValue,
   (val) => {
-    selected.value = val;
+    uncontrolledValue.value = val;
   },
   {deep: true},
 );
 
 watch(
-  selected,
+  vvValue,
   (val) => {
-    emit('update:modelValue', val);
+    if (name.value) {
+      uncontrolledValue.value = val;
+    }
   },
   {deep: true},
 );
+
+watch(uncontrolledValue, (val) => {
+  if (name.value) {
+    setValue(val);
+  }
+
+  emit('update:modelValue', val);
+}, {
+  deep: true,
+});
 </script>
 
 <template>
@@ -418,7 +430,7 @@ watch(
           @click="onInputClick"
         >
           <div class="v-multi-select-badges">
-            <template v-if="selected.length">
+            <template v-if="uncontrolledValue.length">
               <template v-for="(sItem, index) in badges" :key="sItem.value">
                 <slot
                   name="selection"
@@ -441,9 +453,9 @@ watch(
               </template>
             </template>
 
-            <template v-if="maxBadge > 0 && selected.length > maxBadge">
+            <template v-if="maxBadge > 0 && uncontrolledValue.length > maxBadge">
               <slot name="max-selection">
-                <v-badge small> {{ selected.length - maxBadge }} more </v-badge>
+                <v-badge small> {{ uncontrolledValue.length - maxBadge }} more</v-badge>
               </slot>
             </template>
 
@@ -470,7 +482,7 @@ watch(
           </div>
 
           <div class="v-multi-select-action">
-            <v-tooltip v-if="selected.length > 1">
+            <v-tooltip v-if="uncontrolledValue.length > 1">
               <template #activator="{on}">
                 <v-badge
                   circle
