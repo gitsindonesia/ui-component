@@ -3,17 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [0.13.21](https://github.com/gitsindonesia/ui-component/compare/v0.13.20...v0.13.21) (2022-12-21)
+# [0.14.0](https://github.com/gitsindonesia/ui-component/compare/v0.14.0-alpha.6...v0.14.0) (2023-01-10)
 
+**Note:** Version bump only for package @gits-id/modal
+
+## [0.13.21](https://github.com/gitsindonesia/ui-component/compare/v0.13.20...v0.13.21) (2022-12-21)
 
 ### Features
 
-* **VModal:** more customizable modal ([#74](https://github.com/gitsindonesia/ui-component/issues/74)) ([f30ac69](https://github.com/gitsindonesia/ui-component/commit/f30ac6903ff9de880f9c013f04785c2a468fee72))
-
-
-
-
-
+- **VModal:** more customizable modal ([#74](https://github.com/gitsindonesia/ui-component/issues/74)) ([f30ac69](https://github.com/gitsindonesia/ui-component/commit/f30ac6903ff9de880f9c013f04785c2a468fee72))
 
 ## [0.13.20](https://github.com/gitsindonesia/ui-component/compare/v0.13.19...v0.13.20) (2022-12-21)
 
