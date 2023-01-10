@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0-alpha.6](https://github.com/gitsindonesia/ui-component/compare/v0.14.0-alpha.5...v0.14.0-alpha.6) (2023-01-10)
+
+### Bug Fixes
+
+- **Textarea:** add support for labelClass prop ([d4212ef](https://github.com/gitsindonesia/ui-component/commit/d4212ef716c2c2676199d0b2e9a52487a734dfa2))
+
+### Features
+
+- **Textarea:** refactor underlying logic to support uncontrolled input state ([4a50079](https://github.com/gitsindonesia/ui-component/commit/4a5007994c7a1a53c0ff461e15d5f30e5fd0d7e1))
+- **VCheckbox:** refactor underlying logic to support uncontrolled input state ([9606dff](https://github.com/gitsindonesia/ui-component/commit/9606dff71175440a938880d3b02ee598b155c173))
+- **VFormSelect:** refactor underlying logic to support uncontrolled input state ([35da005](https://github.com/gitsindonesia/ui-component/commit/35da005f49f473f3299ef1de4486762edec17c81))
+- **VInput:** refactor underlying logic to support uncontrolled input state ([b2b5bcf](https://github.com/gitsindonesia/ui-component/commit/b2b5bcf8ea72d9a90185ed9bf744a823df39eea8))
+- **VRadioGroup:** refactor underlying logic to support uncontrolled input state ([160d21e](https://github.com/gitsindonesia/ui-component/commit/160d21e63e6453dca27ed39248c1b7757f4f9797))
+- **VRadio:** refactor underlying logic to support uncontrolled input state ([f842448](https://github.com/gitsindonesia/ui-component/commit/f84244804530efa3855f2dccccb178985095d683))
+
 # [0.14.0-alpha.5](https://github.com/gitsindonesia/ui-component/compare/v0.14.0-alpha.4...v0.14.0-alpha.5) (2023-01-06)
 
 ### Features
