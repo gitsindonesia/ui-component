@@ -124,6 +124,19 @@ Clearable.parameters = {
   },
 };
 
+export const ClearableAndSearchable = Template.bind({});
+ClearableAndSearchable.args = {
+  clearable: true,
+  searchable: true,
+};
+ClearableAndSearchable.parameters = {
+  docs: {
+    source: {
+      code: '<v-select :items="items" clearable searchable />',
+    },
+  },
+};
+
 export const CustomTransition = Template.bind({});
 CustomTransition.args = {
   transition: 'slide-down',
@@ -243,10 +256,17 @@ export const TestInputState: Story<{}> = (args) => ({
       init: 'unw',
     });
 
-    const {handleSubmit, resetForm, values, meta} = args.useForm ? useForm({
-      initialValues,
-      validationSchema: schema,
-    }) : {handleSubmit: (cb: any) => null, resetForm: () => null, values: {}, meta: {}};
+    const {handleSubmit, resetForm, values, meta} = args.useForm
+      ? useForm({
+          initialValues,
+          validationSchema: schema,
+        })
+      : {
+          handleSubmit: (cb: any) => null,
+          resetForm: () => null,
+          values: {},
+          meta: {},
+        };
 
     const onSubmit = handleSubmit((values: any) => {
       alert(JSON.stringify(values));
@@ -286,7 +306,9 @@ export const TestInputState: Story<{}> = (args) => ({
 
     const resetVVForm = () => {
       if (!args.useForm) {
-        alert('Story is not set up with Vee Validate Form. set `useForm` control to true to try this action.');
+        alert(
+          'Story is not set up with Vee Validate Form. set `useForm` control to true to try this action.',
+        );
       }
 
       initialValues.value = {
