@@ -184,7 +184,8 @@ const isEagerValidation = computed(() => {
 });
 
 const input = ref();
-const uncontrolledValue = ref();
+const initialValue = ref(props.modelValue || props.value);
+const uncontrolledValue = ref(initialValue.value);
 
 const {
   value: vvValue,
@@ -192,6 +193,7 @@ const {
   handleChange,
   resetField,
   setValue,
+  meta,
 } = useField(name, rules, {
   initialValue: props.modelValue || props.value,
   validateOnValueUpdate: !isEagerValidation.value,
@@ -202,7 +204,11 @@ watch(modelValue, (val) => {
 });
 
 watch(vvValue, (val) => {
-  uncontrolledValue.value = val;
+  // only use vee validate value if name is defined
+  // to prevent whole form value being passed as field value
+  if (name.value) {
+    uncontrolledValue.value = val;
+  }
 });
 
 watch(uncontrolledValue, (val) => {
@@ -212,6 +218,12 @@ watch(uncontrolledValue, (val) => {
 
   emit('update:modelValue', val);
 });
+
+watch(meta, (val,prev) => {
+  if (name.value && val.initialValue !== initialValue.value) {
+    initialValue.value = val.initialValue || '';
+  }
+}, {deep: true});
 
 const validationListeners = computed(() => {
   // If the field is valid or have not been validated yet
@@ -238,6 +250,12 @@ const clear = () => {
   emit('clear');
   input.value?.focus();
 };
+
+
+// if name is defined, we override uncontrolledValue with initialValue from veeValidate
+if(name.value) {
+  uncontrolledValue.value = meta.initialValue || "";
+}
 </script>
 
 <template>
