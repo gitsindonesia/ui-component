@@ -191,7 +191,6 @@ const {
   value: vvValue,
   errorMessage,
   handleChange,
-  resetField,
   setValue,
   meta,
 } = useField(name, rules, {
@@ -219,11 +218,15 @@ watch(uncontrolledValue, (val) => {
   emit('update:modelValue', val);
 });
 
-watch(meta, (val,prev) => {
-  if (name.value && val.initialValue !== initialValue.value) {
-    initialValue.value = val.initialValue || '';
-  }
-}, {deep: true});
+watch(
+  meta,
+  (val, prev) => {
+    if (name.value && val.initialValue !== initialValue.value) {
+      initialValue.value = val.initialValue || '';
+    }
+  },
+  {deep: true},
+);
 
 const validationListeners = computed(() => {
   // If the field is valid or have not been validated yet
@@ -245,16 +248,15 @@ const validationListeners = computed(() => {
 });
 
 const clear = () => {
-  uncontrolledValue.value = "";
+  uncontrolledValue.value = '';
 
   emit('clear');
   input.value?.focus();
 };
 
-
 // if name is defined, we override uncontrolledValue with initialValue from veeValidate
-if(name.value) {
-  uncontrolledValue.value = meta.initialValue || "";
+if (name.value) {
+  uncontrolledValue.value = meta.initialValue || '';
 }
 </script>
 
@@ -271,11 +273,18 @@ if(name.value) {
     ]"
   >
     <slot v-if="label" name="label" :v-slot="{for: id || name}">
-      <label v-if="label" :for="id || name" class="v-input-label" :class="labelClass">
+      <label
+        v-if="label"
+        :for="id || name"
+        class="v-input-label"
+        :class="labelClass"
+      >
         {{ label }}
       </label>
     </slot>
-    <div v-if="text" v-bind="$attrs" class="v-input-text">{{ uncontrolledValue }}</div>
+    <div v-if="text" v-bind="$attrs" class="v-input-text">
+      {{ uncontrolledValue }}
+    </div>
     <div v-else class="v-input-wrapper">
       <slot name="prepend.outer">
         <div
