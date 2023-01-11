@@ -1,6 +1,18 @@
 <script setup lang="ts">
+const title = 'Nuxt + GITS UI Minimal Starter'
+
 useHead({
-  title: 'Nuxt + GITS UI Minimal Starter',
+  title,
+  htmlAttrs: {
+    lang: 'en'
+  },
+  meta: [
+    {
+      name: 'description',
+      key: 'description',
+      content: title
+    }
+  ]
 });
 </script>
 
