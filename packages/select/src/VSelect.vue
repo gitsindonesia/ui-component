@@ -1,4 +1,4 @@
-<script setup lang='ts'>
+<script setup lang="ts">
 import {computed, PropType, ref, toRefs, watch} from 'vue';
 import {
   Listbox,
@@ -15,7 +15,7 @@ import '@gits-id/tooltip/dist/style.css';
 import '@gits-id/theme/transition.css';
 import {VSelectItem} from './types';
 
-type Val = string | number | boolean | VSelectItem;
+type Val = string | number | boolean | VSelectItem | Record<string, any>;
 
 const props = defineProps({
   /**
@@ -182,9 +182,10 @@ const emit =
     (e: 'search', value: string): void;
   }>();
 
-const uncontrolledValue = ref();
+const initialValue = ref<Val>(props.modelValue || props.value);
+const uncontrolledValue = ref<Val>(initialValue.value);
 
-const {value: selectedItem, errorMessage, setValue} = useField<Val>(name, rules, {
+const {value: vvValue, errorMessage, setValue, meta} = useField<Val>(name, rules, {
   initialValue: modelValue.value || value.value,
   ...props.fieldOptions,
 });
@@ -207,9 +208,19 @@ watch(modelValue, (val) => {
   uncontrolledValue.value = val;
 });
 
-watch(selectedItem, (val) => {
-  uncontrolledValue.value = val;
+watch(vvValue, (val) => {
+  if (name.value) {
+    uncontrolledValue.value = val;
+  }
 });
+
+watch(meta, (val) => {
+  if(name.value && val.initialValue !== initialValue.value) {
+    initialValue.value = val.initialValue as any;
+  }
+}, {
+  deep:true
+})
 
 const message = computed(() => {
   return errorMessage.value || props.errorMessages[0];
@@ -264,11 +275,16 @@ const emitSelected = (val: any) => {
   emit('update:value', emittedVal);
   emit('change', emittedVal);
 };
+
+// setup
+if(name.value) {
+  uncontrolledValue.value = meta.initialValue ?? "";
+}
 </script>
 
 <template>
   <div
-    class='v-select'
+    class="v-select"
     :class="[
       `v-select-${color}`,
       `v-select--${size}`,
@@ -279,87 +295,87 @@ const emitSelected = (val: any) => {
       wrapperClass,
     ]"
   >
-    <Listbox v-model='uncontrolledValue'>
-      <ListboxLabel v-if='label' class='v-select-label' :class='labelClass'>
+    <Listbox v-model="uncontrolledValue">
+      <ListboxLabel v-if="label" class="v-select-label" :class="labelClass">
         {{ label }}
       </ListboxLabel>
-      <div class='v-select-panel'>
+      <div class="v-select-panel">
         <ListboxButton
-          class='v-select-button'
-          :class='[
+          class="v-select-button"
+          :class="[
             btnClass,
             {
               [shadowClass]: shadow,
             },
-          ]'
-          :disabled='disabled'
+          ]"
+          :disabled="disabled"
         >
           <div
-            class='v-select-selected'
+            class="v-select-selected"
             :class="{
-              'v-select-selected--placeholder': !selectedItem,
+              'v-select-selected--placeholder': !uncontrolledValue,
             }"
           >
-            <slot name='selected' :item='selectedItem'>
+            <slot name="selected" :item="uncontrolledValue">
               {{ selectedText }}
             </slot>
           </div>
-          <v-tooltip v-if='selectedItem && clearable'>
+          <v-tooltip v-if="uncontrolledValue && clearable">
             <template #activator>
               <button
-                type='button'
-                aria-label='Clear'
-                class='v-select-clearable-button'
-                @click='clear'
+                type="button"
+                aria-label="Clear"
+                class="v-select-clearable-button"
+                @click="clear"
               >
                 <Icon
-                  name='heroicons:x-mark'
-                  class='v-select-clearable-icon'
-                  aria-hidden='true'
+                  name="heroicons:x-mark"
+                  class="v-select-clearable-icon"
+                  aria-hidden="true"
                 />
               </button>
             </template>
             <span> {{ clearText }} </span>
           </v-tooltip>
-          <span class='w-auto'>
+          <span class="w-auto">
             <Icon
-              name='heroicons:chevron-down'
-              :size='iconSize'
-              class='v-select-icon'
-              aria-hidden='true'
+              name="heroicons:chevron-down"
+              :size="iconSize"
+              class="v-select-icon"
+              aria-hidden="true"
             />
           </span>
         </ListboxButton>
 
-        <transition :name='transition'>
+        <transition :name="transition">
           <ListboxOptions
-            class='v-select-options'
+            class="v-select-options"
             :class="top ? 'bottom-10' : ''"
           >
-            <div v-if='searchable' class='v-select-searchable'>
+            <div v-if="searchable" class="v-select-searchable">
               <v-input
-                v-model='search'
-                :size='searchSize'
-                :placeholder='searchPlaceholder'
+                v-model="search"
+                :size="searchSize"
+                :placeholder="searchPlaceholder"
                 clearable
-                v-bind='searchProps'
+                v-bind="searchProps"
               />
             </div>
             <div
-              v-if='searchable && !filteredItems.length'
-              class='px-4 pb-2 pt-3'
+              v-if="searchable && !filteredItems.length"
+              class="px-4 pb-2 pt-3"
             >
-              <slot name='empty'> No results</slot>
+              <slot name="empty"> No results</slot>
             </div>
             <ListboxOption
-              v-for='(item, index) in filteredItems'
-              v-slot='{selected}'
-              :key='index'
-              :value='returnObject ? item : item?.[itemValue]'
-              as='template'
+              v-for="(item, index) in filteredItems"
+              v-slot="{selected}"
+              :key="index"
+              :value="returnObject ? item : item?.[itemValue]"
+              as="template"
             >
               <li
-                class='group v-select-option'
+                class="group v-select-option"
                 :class="[
                   {
                     'v-select-option--active': selected,
@@ -367,23 +383,23 @@ const emitSelected = (val: any) => {
                 ]"
               >
                 <span
-                  v-if='!hideCheckIcon'
-                  class='v-select-option-check'
+                  v-if="!hideCheckIcon"
+                  class="v-select-option-check"
                   :class="{
                     'v-select-option-check--active': selected,
                   }"
                 >
-                  <slot v-if='selected' name='icon'>
+                  <slot v-if="selected" name="icon">
                     <Icon
-                      :name='checkIcon'
-                      :size='checkIconSize'
-                      class='v-select-option-check-icon'
-                      aria-hidden='true'
+                      :name="checkIcon"
+                      :size="checkIconSize"
+                      class="v-select-option-check-icon"
+                      aria-hidden="true"
                     />
                   </slot>
                 </span>
                 <span :class="['v-select-option-text']">
-                  <slot name='item' :item='item'>
+                  <slot name="item" :item="item">
                     {{ item?.[itemText] }}
                   </slot>
                 </span>
@@ -394,10 +410,10 @@ const emitSelected = (val: any) => {
       </div>
     </Listbox>
 
-    <div v-if='message' class='v-select-error' :class='errorClass'>
+    <div v-if="message" class="v-select-error" :class="errorClass">
       {{ message }}
     </div>
   </div>
 </template>
 
-<style src='./VSelect.scss' lang='scss'></style>
+<style src="./VSelect.scss" lang="scss"></style>

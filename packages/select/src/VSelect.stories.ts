@@ -36,8 +36,8 @@ const Template: Story<typeof VSelect> = (args) => ({
     return {args, value};
   },
   template: `
-  <v-select v-bind="args" v-model="value" />
-  <pre class="mt-2">Model Value: {{ value }}</pre>
+    <v-select v-bind="args" v-model="value" />
+    <pre class="mt-2">Model Value: {{ value }}</pre>
   `,
 });
 
@@ -156,9 +156,9 @@ export const Sizes: Story<typeof VSelect> = (args) => ({
     return {args};
   },
   template: `
-  <v-select v-bind="args" label="Small" wrapper-class="mb-4" size="sm" />
-  <v-select v-bind="args" label="Default" wrapper-class="mb-4" />
-  <v-select v-bind="args" label="Large" wrapper-class="mb-4" size="lg" />
+    <v-select v-bind="args" label="Small" wrapper-class="mb-4" size="sm" />
+    <v-select v-bind="args" label="Default" wrapper-class="mb-4" />
+    <v-select v-bind="args" label="Large" wrapper-class="mb-4" size="lg" />
   `,
 });
 
@@ -204,27 +204,27 @@ export const Validation: Story<{}> = () => ({
   },
   template: `
     <form @submit="onSubmit" class="border-none">
-      <v-select
-        wrapper-class="mb-4"
-        name="genre"
-        label="Genre"
-        placeholder="Select your genre"
-        :items="genres"
-      />
-      <v-select
-        wrapper-class="mb-4"
-        name="gender"
-        label="Gender"
-        placeholder="Select your gender"
-        :items="genders"
-      />
-      <div class="mt-4">
-        <v-btn type="submit">Submit</v-btn>
-        <v-btn type="button" text @click="resetForm">Reset</v-btn>
-      </div>
-      <pre>{{ {values} }}</pre>
+    <v-select
+      wrapper-class="mb-4"
+      name="genre"
+      label="Genre"
+      placeholder="Select your genre"
+      :items="genres"
+    />
+    <v-select
+      wrapper-class="mb-4"
+      name="gender"
+      label="Gender"
+      placeholder="Select your gender"
+      :items="genders"
+    />
+    <div class="mt-4">
+      <v-btn type="submit">Submit</v-btn>
+      <v-btn type="button" text @click="resetForm">Reset</v-btn>
+    </div>
+    <pre>{{ {values} }}</pre>
     </form>
-`,
+  `,
 });
 
 export const TestInputState: Story<{}> = (args) => ({
@@ -235,11 +235,18 @@ export const TestInputState: Story<{}> = (args) => ({
       gender: string().required().nullable().label('Gender'),
     });
 
-    console.log({args})
-    const modelValue = ref('');
-    const {handleSubmit, resetForm, values} = args.useForm ? useForm({
+    const modelValue = ref(args.setupWithInitialValue ? 'and' : undefined);
+    const modelValue2 = ref(args.setupWithInitialValue ? 'female' : undefined);
+    const initialValues = ref({
+      gender: args.setupWithInitialValue ? 'unw' : undefined,
+      gender2: args.setupWithInitialValue ? 'male' : undefined,
+      init: 'unw',
+    });
+
+    const {handleSubmit, resetForm, values, meta} = args.useForm ? useForm({
+      initialValues,
       validationSchema: schema,
-    }) : {handleSubmit: (cb: any) => null, resetForm: () => null, values: {}};
+    }) : {handleSubmit: (cb: any) => null, resetForm: () => null, values: {}, meta: {}};
 
     const onSubmit = handleSubmit((values: any) => {
       alert(JSON.stringify(values));
@@ -254,16 +261,17 @@ export const TestInputState: Story<{}> = (args) => ({
         text: 'Female',
         value: 'female',
       },
-    ]);
-
-    const genres = ref([
       {
-        text: 'Pop',
-        value: 'pop',
+        text: 'Androgynous',
+        value: 'and',
       },
       {
-        text: 'Rock',
-        value: 'rock',
+        text: 'Gender Fluid',
+        value: 'gfl',
+      },
+      {
+        text: 'Not willing to specify',
+        value: 'unw',
       },
     ]);
 
@@ -276,63 +284,156 @@ export const TestInputState: Story<{}> = (args) => ({
       alert(val);
     };
 
-    return {args, onSubmit, resetForm, values, genders, genres, modelValue, uncontrolledInput, onChange};
+    const resetVVForm = () => {
+      if (!args.useForm) {
+        alert('Story is not set up with Vee Validate Form. set `useForm` control to true to try this action.');
+      }
+
+      initialValues.value = {
+        gender: 'gfl',
+        gender2: 'female',
+        init: 'male',
+      };
+
+      resetForm();
+    };
+
+    return {
+      args,
+      onSubmit,
+      resetForm,
+      values,
+      genders,
+      modelValue,
+      modelValue2,
+      uncontrolledInput,
+      onChange,
+      resetVVForm,
+      meta,
+    };
   },
   template: `
-    <form @submit='onSubmit' class='border-none'>
-    <h1 class='mb-8 font-semibold'>{{args.useForm ? 'with' : 'without'}} VeeValidate Form</h1>
+    <form @submit="onSubmit" class="border-none relative pr-[11rem]">
+    <h1 class="mb-8 font-semibold">{{ args.useForm ? 'with' : 'without' }} VeeValidate Form</h1>
 
-    <div class='mb-4'>
+    <button
+      type="button" @click="resetVVForm"
+      class="bg-red-400 text-white text-sm p-2 rounded my-2"
+    >
+      Change Initial Value & Reset Form! <span class="text-[10px]">(Vee Validate only)</span>
+    </button>
+
+    <div class="mb-4">
       <v-select
-        name='gender'
-        label='Only Name - Gender'
-        placeholder='Select your gender'
-        :items='genders'
+        name="gender"
+        label="Only Name"
+        placeholder="Select your gender"
+        :items="genders"
+        :searchable="args.searchable"
+        :clearable="args.clearable"
       />
-      <div class='text-xs'>When used without vee validate, should not change "Vmodel" value or any other value unless
+      <div class="text-xs">When used without vee validate, should not change "Vmodel" value or any other value unless
         explicitly implemented
       </div>
     </div>
 
-    <v-select
-      wrapper-class='mb-4'
-      v-model='modelValue'
-      label='Only VModel - Gender'
-      placeholder='Select your gender'
-      :items='genders'
-    />
-
-    <div class='mb-4'>
+    <div class="mb-4">
       <v-select
-        v-model='modelValue'
-        name='gender'
-        label='VModel and Name - Gender'
-        placeholder='VModel and name prop'
-        :items='genders'
+        v-model="modelValue"
+        label="Only VModel"
+        placeholder="Select your gender"
+        :items="genders"
+        :searchable="args.searchable"
+        :clearable="args.clearable"
       />
-      <div class='text-xs'>Should update form values under "gender" key AND "modelValue"</div>
+      <div class="text-xs">Should update form values under "modelValue" only</div>
     </div>
 
-
-    <div class='mb-4'>
+    <div class="mb-4">
       <v-select
-        label='Uncontrolled - Gender'
-        placeholder='Uncontrolled input'
-        @change='onChange'
-        :items='genders'
+        v-model="modelValue2"
+        name="gender2"
+        label="VModel and Name"
+        placeholder="VModel and name prop"
+        :items="genders"
+        :searchable="args.searchable"
+        :clearable="args.clearable"
       />
-      <div class='text-xs'>Should not change any value unless explicitly implemented</div>
+      <div class="text-xs">Should update form values under "gender2" key (with vee validate) AND "modelValue2"</div>
     </div>
 
-    <div class='mt-4'>
-      <v-btn type='submit'>Submit</v-btn>
-      <v-btn type='button' text @click='resetForm'>Reset</v-btn>
+    <div class="mb-4">
+      <v-select
+        label="Uncontrolled"
+        placeholder="Uncontrolled input"
+        @change="onChange"
+        :items="genders"
+        :searchable="args.searchable"
+        :clearable="args.clearable"
+      />
+      <div class="text-xs">Should not change any value unless explicitly implemented</div>
     </div>
-    
-    <pre>{{ {values, modelValue} }}</pre>
+
+    <hr class="my-4" />
+
+    <blockquote class="bg-gray-800 text-white p-2 text-xs my-4">
+      <strong>CAUTION!</strong> Setting initialValue in VeeValidate won't affect inputs that are defined WITHOUT name
+      prop being defined!
+      <br />For unnamed input, use modelValue or value prop instead
+    </blockquote>
+
+    <div class="flex flex-wrap">
+      <div class="w-1/2 p-1">
+        <v-select
+          label="Initial w/ modelvalue"
+          placeholder="Select an item"
+          model-value="male"
+          :items="genders"
+          :searchable="args.searchable"
+          :clearable="args.clearable"
+        />
+      </div>
+
+      <div class="w-1/2 p-1">
+        <v-select
+          label="Initial w/ value"
+          placeholder="Select an item"
+          value="and"
+          :items="genders"
+          :searchable="args.searchable"
+          :clearable="args.clearable"
+        />
+      </div>
+
+      <div class="w-1/2 p-1">
+        <v-select
+          label="Initial w/ name:init"
+          name="init"
+          placeholder="Select an item"
+          :items="genders"
+          :searchable="args.searchable"
+          :clearable="args.clearable"
+        />
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <v-btn type="submit">Submit</v-btn>
+      <v-btn type="button" text @click="resetForm">Reset</v-btn>
+    </div>
+
+    <pre class="text-xs fixed top-0 right-0 bg-white w-[11rem] max-h-[100%] overflow-auto">{{ {
+      values,
+      modelValue,
+      modelValue2,
+      initialValue: meta?.initialValues
+    } }}</pre>
     </form>
   `,
 });
 TestInputState.args = {
   useForm: false,
+  setupWithInitialValue: false,
+  searchable: false,
+  clearable: false,
 };
