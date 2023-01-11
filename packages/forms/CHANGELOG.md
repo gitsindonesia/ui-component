@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.1](https://github.com/gitsindonesia/ui-component/compare/v0.14.0...v0.14.1) (2023-01-11)
+
+### Bug Fixes
+
+- **VInput:** fix clearable not clearing value ([96adf8e](https://github.com/gitsindonesia/ui-component/commit/96adf8eda9b22e2a98c5e1571bec269341698212))
+- **VInput:** fix unable to set initialValue ([3273a90](https://github.com/gitsindonesia/ui-component/commit/3273a90b9d44d363536c8852b28d3a08ed1cba96))
+
+### Features
+
+- **VRadioGroup:** add selectedClass and defaultClass to style radio items ([43d5459](https://github.com/gitsindonesia/ui-component/commit/43d5459a5a8d8063c9f357099570f559efc64453))
+
 # [0.14.0](https://github.com/gitsindonesia/ui-component/compare/v0.14.0-alpha.6...v0.14.0) (2023-01-10)
 
 **Note:** Version bump only for package @gits-id/forms

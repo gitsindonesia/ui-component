@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.1](https://github.com/gitsindonesia/ui-component/compare/v0.14.0...v0.14.1) (2023-01-11)
+
+### Features
+
+- **VMultiSelect:** refactor underlying logic to support uncontrolled input state ([9c3b6ab](https://github.com/gitsindonesia/ui-component/commit/9c3b6abeea296f0ae0260321807b626eaca55f48))
+
 # [0.14.0](https://github.com/gitsindonesia/ui-component/compare/v0.14.0-alpha.6...v0.14.0) (2023-01-10)
 
 **Note:** Version bump only for package @gits-id/multi-select

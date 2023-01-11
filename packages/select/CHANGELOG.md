@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.1](https://github.com/gitsindonesia/ui-component/compare/v0.14.0...v0.14.1) (2023-01-11)
+
+### Bug Fixes
+
+- decrease `VSelect` bundle size ([baedd2a](https://github.com/gitsindonesia/ui-component/commit/baedd2a34f9934202e8e56eff706a6890300b5d3))
+- lookup selected text from original items ([d7b9257](https://github.com/gitsindonesia/ui-component/commit/d7b9257bab88a8e907076a6e515db8d672f24c36))
+- **VSelect:** clear search input when selected ([9ef0b6b](https://github.com/gitsindonesia/ui-component/commit/9ef0b6ba2d692026c83dd1265c72834338bb70de))
+- **VSelect:** fix unable to set initialValue ([954339f](https://github.com/gitsindonesia/ui-component/commit/954339f95a2e0bfdb73dd9dad9733b39f7d9cf9c))
+
 # [0.14.0](https://github.com/gitsindonesia/ui-component/compare/v0.14.0-alpha.6...v0.14.0) (2023-01-10)
 
 **Note:** Version bump only for package @gits-id/select

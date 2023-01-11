@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.1](https://github.com/gitsindonesia/ui-component/compare/v0.14.0...v0.14.1) (2023-01-11)
+
+### Bug Fixes
+
+- **Colors:** fix brand colors ([d13dd1b](https://github.com/gitsindonesia/ui-component/commit/d13dd1ba28f8ba0d9b7c734797621acc26782ebe))
+- decrease `VSelect` bundle size ([baedd2a](https://github.com/gitsindonesia/ui-component/commit/baedd2a34f9934202e8e56eff706a6890300b5d3))
+- lookup selected text from original items ([d7b9257](https://github.com/gitsindonesia/ui-component/commit/d7b9257bab88a8e907076a6e515db8d672f24c36))
+- **storybook:** load scss styles ([e628be1](https://github.com/gitsindonesia/ui-component/commit/e628be1bd68ab658a0e2f5e2c20fd8ab346d9546))
+- **VInput:** fix clearable not clearing value ([96adf8e](https://github.com/gitsindonesia/ui-component/commit/96adf8eda9b22e2a98c5e1571bec269341698212))
+- **VInput:** fix unable to set initialValue ([3273a90](https://github.com/gitsindonesia/ui-component/commit/3273a90b9d44d363536c8852b28d3a08ed1cba96))
+- **VSelect:** clear search input when selected ([9ef0b6b](https://github.com/gitsindonesia/ui-component/commit/9ef0b6ba2d692026c83dd1265c72834338bb70de))
+- **VSelect:** fix unable to set initialValue ([954339f](https://github.com/gitsindonesia/ui-component/commit/954339f95a2e0bfdb73dd9dad9733b39f7d9cf9c))
+
+### Features
+
+- **VMultiSelect:** refactor underlying logic to support uncontrolled input state ([9c3b6ab](https://github.com/gitsindonesia/ui-component/commit/9c3b6abeea296f0ae0260321807b626eaca55f48))
+- **VRadioGroup:** add selectedClass and defaultClass to style radio items ([43d5459](https://github.com/gitsindonesia/ui-component/commit/43d5459a5a8d8063c9f357099570f559efc64453))
+
 # [0.14.0](https://github.com/gitsindonesia/ui-component/compare/v0.14.0-alpha.6...v0.14.0) (2023-01-10)
 
 **Note:** Version bump only for package gits-ui-monorepo
