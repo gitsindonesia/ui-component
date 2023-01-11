@@ -1,3 +1,7 @@
+---
+title: Roadmap
+---
+
 <script setup>
 import Roadmap from '../roadmap.md'
 </script>
