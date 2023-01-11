@@ -569,11 +569,13 @@ export const TestInputState: Story<{}> = (args) => ({
   setup() {
     const modelValue = ref('');
     const modelValue2 = ref('');
+    const initialValues = ref({
+      text: args.setupWithInitialValue ? 'init' : '',
+      text2: args.setupWithInitialValue ? 'init2' : '',
+    });
+
     const {handleSubmit, resetForm, values} = args.useForm ? useForm({
-      initialValues: {
-        text: '',
-        text2: '',
-      }
+      initialValues,
     }) : {handleSubmit: (cb: any) => null, resetForm: () => null, values: {}};
 
     const onSubmit = handleSubmit((values: any) => {
@@ -584,11 +586,31 @@ export const TestInputState: Story<{}> = (args) => ({
       alert("onChange: " + val);
     };
 
-    return {args, onSubmit, resetForm, values, modelValue, modelValue2, onChange};
+    const resetVVForm = () => {
+      if(!args.useForm){
+        alert('Story is not set up with Vee Validate Form. set `useForm` control to true to try this action.')
+      }
+
+      initialValues.value = {
+        text: 'changes',
+        text2: 'change me too!'
+      };
+
+      resetForm();
+    }
+
+    return {args, onSubmit, resetForm, values, modelValue, modelValue2, onChange, resetVVForm};
   },
   template: `
-    <form @submit='onSubmit' class='border-none'>
-    <h1 class='mb-8 font-semibold'>{{ args.useForm ? 'with' : 'without' }} VeeValidate Form</h1>
+    <form @submit="onSubmit" class="border-none">
+    <h1 class="mb-8 font-semibold">{{ args.useForm ? 'with' : 'without' }} VeeValidate Form</h1>
+
+    <button 
+      type="button" @click="resetVVForm" 
+      class="bg-red-400 text-white text-sm p-2 rounded"
+    >
+      Change Initial Value & Reset Form! <span class="text-[10px]">(Vee Validate only)</span>
+    </button>
 
     <div class="flex flex-wrap">
       <div class="w-1/2 p-2">
@@ -635,6 +657,36 @@ export const TestInputState: Story<{}> = (args) => ({
           :clearable="args.clearable"
         />
         <div class="text-xs">Should not change any value unless explicitly implemented</div>
+      </div>
+
+      <div class="w-1/2 p-2">
+        <v-input
+          value="doremi"
+          label="Initial Value w/ value prop "
+        />
+      </div>
+
+      <div class="w-1/2 p-2">
+        <v-input
+          model-value="fasola"
+          label="Initial Value w/ modelValue prop "
+        />
+      </div>
+
+      <div class="w-1/2 p-2">
+        <v-input
+          value="initival"
+          name="init1"
+          label="Initial Value w/ value prop + name"
+        />
+      </div>
+
+      <div class="w-1/2 p-2">
+        <v-input
+          model-value="modelvalue"
+          name="init2"
+          label="Initial Value w/ modelValue prop + name"
+        />
       </div>
     </div>
 
