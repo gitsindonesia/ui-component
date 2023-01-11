@@ -591,48 +591,56 @@ export const TestInputState: Story<{}> = (args) => ({
     <h1 class='mb-8 font-semibold'>{{ args.useForm ? 'with' : 'without' }} VeeValidate Form</h1>
 
     <div class="flex flex-wrap">
-      <div class='w-1/2 p-2'>
+      <div class="w-1/2 p-2">
         <v-input
-          name='text'
-          label='Only Name'
+          name="text"
+          label="Only Name"
+          :value="args.value"
+          :clearable="args.clearable"
         />
-        <div class='text-xs'>
+        <div class="text-xs">
           When used without vee validate, should not change "Vmodel" value or any other value unless
-          explicitly implemented<br/>
+          explicitly implemented<br />
           With veevalidate, should update form values under "text" key only
         </div>
       </div>
 
       <div class="w-1/2 p-2">
         <v-input
-          v-model='modelValue'
-          label='Only VModel'
+          v-model="modelValue"
+          label="Only VModel"
+          :value="args.value"
+          :clearable="args.clearable"
         />
-        <div class='text-xs'>Should update "modelValue" only</div>
+        <div class="text-xs">Should update "modelValue" only</div>
       </div>
 
-      <div class='w-1/2 p-2'>
+      <div class="w-1/2 p-2">
         <v-input
-          v-model='modelValue2'
-          name='text2'
-          label='VModel and Name'
+          v-model="modelValue2"
+          name="text2"
+          label="VModel and Name"
+          :value="args.value"
+          :clearable="args.clearable"
         />
-        <div class='text-xs'>Should update form values under "text2" (with vee validate) key AND "modelValue2"</div>
+        <div class="text-xs">Should update form values under "text2" (with vee validate) key AND "modelValue2"</div>
       </div>
-      
-      <div class='w-1/2 p-2'>
+
+      <div class="w-1/2 p-2">
         <v-input
-          label='Uncontrolled'
-          placeholder='Uncontrolled input'
+          label="Uncontrolled"
+          placeholder="Uncontrolled input"
           @change="onChange"
+          :value="args.value"
+          :clearable="args.clearable"
         />
-        <div class='text-xs'>Should not change any value unless explicitly implemented</div>
+        <div class="text-xs">Should not change any value unless explicitly implemented</div>
       </div>
     </div>
 
-    <div class='mt-4'>
-      <v-btn type='submit'>Submit</v-btn>
-      <v-btn type='button' text @click='resetForm'>Reset</v-btn>
+    <div class="mt-4">
+      <v-btn type="submit">Submit</v-btn>
+      <v-btn type="button" text @click="resetForm">Reset</v-btn>
     </div>
 
     <pre>{{ {values, modelValue, modelValue2} }}</pre>
@@ -641,4 +649,7 @@ export const TestInputState: Story<{}> = (args) => ({
 });
 TestInputState.args = {
   useForm: false,
+  setupWithInitialValue: false,
+  value: undefined,
+  clearable: true,
 };

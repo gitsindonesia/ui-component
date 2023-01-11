@@ -233,7 +233,8 @@ const validationListeners = computed(() => {
 });
 
 const clear = () => {
-  resetField();
+  uncontrolledValue.value = "";
+
   emit('clear');
   input.value?.focus();
 };
