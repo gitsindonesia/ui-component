@@ -53,284 +53,264 @@ const transpile = [
 const components: AddComponentOptions[] = [
   {
     name: 'VAlert',
-    filePath: '@gits-id/alert',
+    filePath: '@gits-id/alert/src/VAlert.vue',
   },
   {
     name: 'VAppBar',
-    filePath: '@gits-id/app-bar',
+    filePath: '@gits-id/app-bar/src/VAppBar.vue',
   },
   {
     name: 'VAutocomplete',
-    filePath: '@gits-id/autocomplete',
+    filePath: '@gits-id/autocomplete/src/VAutocomplete.vue',
   },
   {
     name: 'VAvatar',
-    filePath: '@gits-id/avatar',
+    filePath: '@gits-id/avatar/src/Avatar.vue',
   },
   {
     name: 'VBadge',
-    filePath: '@gits-id/badge',
+    filePath: '@gits-id/badge/src/VBadge.vue',
   },
   {
     name: 'VBreadcrumbs',
-    filePath: '@gits-id/breadcrumbs',
+    filePath: '@gits-id/breadcrumbs/src/VBreadcrumbs.vue',
   },
   {
     name: 'VBtn',
-    filePath: '@gits-id/button',
+    filePath: '@gits-id/button/src/VBtn.vue',
   },
   {
     name: 'VBtnGroup',
-    export: 'VBtnGroup',
-    filePath: '@gits-id/button',
+    filePath: '@gits-id/button/src/VBtnGroup.vue',
   },
   {
     name: 'VBtnToolbar',
-    export: 'VBtnToolbar',
-    filePath: '@gits-id/button',
+    filePath: '@gits-id/button/src/VBtnToolbar.vue',
   },
   {
     name: 'VCard',
-    filePath: '@gits-id/card',
+    filePath: '@gits-id/card/src/VCard.vue',
   },
   {
     name: 'VCollapsible',
-    filePath: '@gits-id/collapsible',
+    filePath: '@gits-id/collapsible/src/VCollapsible.vue',
   },
   {
+    name: 'VCollapse',
+    filePath: '@gits-id/collapsible/src/VCollapse.vue',
+  },
+  /**
+   * @deprecated
+   */
+  {
     name: 'VContainer',
-    filePath: '@gits-id/container',
+    filePath: '@gits-id/container/src/VContainer.vue',
   },
   {
     name: 'VDropdown',
-    filePath: '@gits-id/dropdown',
+    filePath: '@gits-id/dropdown/src/Dropdown.vue',
   },
   {
     name: 'VDropdownButton',
-    export: 'DropdownButton',
-    filePath: '@gits-id/dropdown',
+    filePath: '@gits-id/dropdown/src/DropdownButton.vue',
   },
   {
     name: 'VDropdownItem',
-    export: 'DropdownItem',
-    filePath: '@gits-id/dropdown',
+    filePath: '@gits-id/dropdown/src/DropdownItem.vue',
   },
   {
     name: 'VEditor',
-    filePath: '@gits-id/editor',
+    filePath: '@gits-id/editor/src/VEditor.vue',
   },
   {
     name: 'VInput',
-    export: 'VInput',
-    filePath: '@gits-id/forms',
+    filePath: '@gits-id/forms/src/input/VInput.vue',
   },
+  /**
+   * @deprecated
+   */
   {
     name: 'VInputGroup',
-    export: 'VInputGroup',
-    filePath: '@gits-id/forms',
+    filePath: '@gits-id/forms/src/input/VInputGroup.vue',
   },
   {
     name: 'VInputRange',
-    export: 'VInputRange',
-    filePath: '@gits-id/forms',
+    filePath: '@gits-id/forms/src/input/VInputRange.vue',
   },
   {
     name: 'VCheckbox',
-    export: 'VCheckbox',
-    filePath: '@gits-id/forms',
+    filePath: '@gits-id/forms/src/checkbox/VCheckbox.vue',
   },
   {
     name: 'VFileUpload',
-    export: 'VFileUpload',
-    filePath: '@gits-id/forms',
+    filePath: '@gits-id/forms/src/file-input/VFileUpload.vue',
   },
   {
     name: 'VFileUploadActions',
-    export: 'VFileUploadActions',
-    filePath: '@gits-id/forms',
+    filePath: '@gits-id/forms/src/file-input/VFileUploadActions.vue',
   },
   {
     name: 'VFileUploadButtonTheme',
-    export: 'VFileUploadButtonTheme',
-    filePath: '@gits-id/forms',
+    filePath: '@gits-id/forms/src/file-input/VFileUploadButtonTheme.vue',
   },
   {
     name: 'VFileUploadDefaultTheme',
-    export: 'VFileUploadDefaultTheme',
-    filePath: '@gits-id/forms',
+    filePath: '@gits-id/forms/src/file-input/VFileUploadDefaultTheme.vue',
   },
   {
     name: 'VFileUploadDropzoneTheme',
-    export: 'VFileUploadDropzoneTheme',
-    filePath: '@gits-id/forms',
+    filePath: '@gits-id/forms/src/file-input/VFileUploadDropzoneTheme.vue',
   },
   {
     name: 'VFileUploadImageTheme',
-    export: 'VFileUploadImageTheme',
-    filePath: '@gits-id/forms',
+    filePath: '@gits-id/forms/src/file-input/VFileUploadImageTheme.vue',
   },
   {
     name: 'VFormGroup',
-    export: 'VFormGroup',
-    filePath: '@gits-id/forms',
+    filePath: '@gits-id/forms/src/from-group/VFormGroup.vue',
   },
   {
     name: 'VFormSelect',
-    export: 'VFormSelect',
-    filePath: '@gits-id/forms',
+    filePath: '@gits-id/forms/src/form-select/VFormSelect.vue',
   },
   {
     name: 'VRadio',
-    export: 'VRadio',
-    filePath: '@gits-id/forms',
+    filePath: '@gits-id/forms/src/radio/VRadio.vue',
   },
   {
     name: 'VRadioGroup',
-    export: 'VRadioGroup',
-    filePath: '@gits-id/forms',
+    filePath: '@gits-id/forms/src/radio/VRadioGroup.vue',
   },
   {
     name: 'VTextarea',
-    export: 'VTextarea',
-    filePath: '@gits-id/forms',
+    filePath: '@gits-id/forms/src/textarea/Textarea.vue',
   },
   {
     name: 'VIcon',
-    filePath: '@gits-id/icon',
+    filePath: '@gits-id/icon/src/Icon.vue',
   },
   {
     name: 'VLogo',
-    filePath: '@gits-id/logo',
+    filePath: '@gits-id/logo/src/VLogo.vue',
   },
   {
     name: 'VList',
-    export: 'List',
-    filePath: '@gits-id/list',
+    filePath: '@gits-id/list/src/List.vue',
   },
   {
     name: 'VListItem',
-    export: 'ListItem',
-    filePath: '@gits-id/list',
+    filePath: '@gits-id/list/src/ListItem.vue',
   },
   {
     name: 'VListCollapse',
-    export: 'ListCollapse',
-    filePath: '@gits-id/list',
+    filePath: '@gits-id/list/src/ListCollapse.vue',
   },
   {
     name: 'VListItemDivider',
-    export: 'ListItemDivider',
-    filePath: '@gits-id/list',
+    filePath: '@gits-id/list/src/ListItemDivider.vue',
   },
   {
     name: 'VListItemHeader',
-    export: 'ListItemHeader',
-    filePath: '@gits-id/list',
+    filePath: '@gits-id/list/src/ListItemHeader.vue',
   },
   {
     name: 'VMenu',
-    filePath: '@gits-id/menu',
+    filePath: '@gits-id/menu/src/VMenu.vue',
   },
   {
     name: 'VMenuItem',
-    export: 'VMenuItem',
-    filePath: '@gits-id/menu',
+    filePath: '@gits-id/menu/src/VMenuItem.vue',
   },
   {
     name: 'VMenuIcon',
-    export: 'VMenuIcon',
-    filePath: '@gits-id/menu',
+    filePath: '@gits-id/menu/VMenuItem.vue',
   },
   {
     name: 'VMenuTooltip',
-    export: 'VMenuTooltip',
-    filePath: '@gits-id/menu',
+    filePath: '@gits-id/menu/src/VMenuTooltip.vue',
   },
   {
     name: 'VMenus',
-    filePath: '@gits-id/menus',
+    filePath: '@gits-id/menus/src/VMenus.vue',
   },
   {
     name: 'VMenusItem',
-    export: 'VMenusItem',
-    filePath: '@gits-id/menus',
+    filePath: '@gits-id/menus/src/VMenusItem.vue',
   },
   {
     name: 'VModal',
-    filePath: '@gits-id/modal',
+    filePath: '@gits-id/modal/src/VModal.vue',
   },
   {
     name: 'VMultiSelect',
-    filePath: '@gits-id/multi-select',
+    filePath: '@gits-id/multi-select/src/VMultiSelect.vue',
   },
   {
     name: 'VNavDrawer',
-    export: 'NavDrawer',
-    filePath: '@gits-id/nav-drawer',
+    filePath: '@gits-id/nav-drawer/src/NavDrawer.vue',
   },
+  /**
+   * @deprecated
+   */
   {
     name: 'VNavbar',
-    filePath: '@gits-id/navbar',
+    filePath: '@gits-id/navbar/src/VNavbar.vue',
   },
   {
     name: 'VPagination',
-    filePath: '@gits-id/pagination',
+    filePath: '@gits-id/pagination/src/VPagination.vue',
   },
   {
     name: 'VPaginationItem',
-    export: 'VPaginationItem',
-    filePath: '@gits-id/pagination',
+    filePath: '@gits-id/pagination/src/VPaginationItem.vue',
   },
   {
     name: 'VProgressBar',
-    filePath: '@gits-id/progress-bar',
+    filePath: '@gits-id/progress-bar/src/VProgressBar.vue',
   },
   {
     name: 'VSelect',
-    filePath: '@gits-id/select',
+    filePath: '@gits-id/select/src/VSelect.vue',
   },
   {
     name: 'VShimmer',
-    filePath: '@gits-id/shimmer',
+    filePath: '@gits-id/shimmer/src/Shimmer.vue',
   },
   {
     name: 'VSpinner',
-    filePath: '@gits-id/spinner',
+    filePath: '@gits-id/spinner/src/VSpinner.vue',
   },
   {
     name: 'VSwitch',
-    filePath: '@gits-id/switch',
+    filePath: '@gits-id/switch/src/VSwitch.vue',
   },
   {
     name: 'VDataTable',
-    filePath: '@gits-id/table',
+    filePath: '@gits-id/table/src/VDataTable.vue',
   },
   {
     name: 'VDataTablePagination',
-    export: 'VDataTablePagination',
-    filePath: '@gits-id/table',
+    filePath: '@gits-id/table/src/VDataTablePagination.vue',
   },
   {
     name: 'VTabs',
-    filePath: '@gits-id/tabs',
+    filePath: '@gits-id/tabs/src/VTabs.vue',
   },
   {
     name: 'VTab',
-    export: 'VTab',
-    filePath: '@gits-id/tabs',
+    filePath: '@gits-id/tabs/src/VTab.vue',
   },
   {
     name: 'VTabsSlider',
-    export: 'VTabsSlider',
-    filePath: '@gits-id/tabs',
+    filePath: '@gits-id/tabs/src/VTabSlider.vue',
   },
   {
     name: 'VToast',
-    filePath: '@gits-id/toast',
+    filePath: '@gits-id/toast/src/VToast.vue',
   },
   {
     name: 'VTooltip',
-    filePath: '@gits-id/tooltip',
+    filePath: '@gits-id/tooltip/src/VTooltip.vue',
   },
 ];
 export interface ModuleOptions {
@@ -338,6 +318,7 @@ export interface ModuleOptions {
   sass?: boolean;
   components?: boolean;
   transpileDeps?: boolean;
+  loadFloatingVueStyles?: boolean;
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -346,10 +327,11 @@ export default defineNuxtModule<ModuleOptions>({
     configKey: 'gitsUi',
   },
   defaults: {
-    css: true,
+    css: false,
     sass: false,
     components: true,
     transpileDeps: true,
+    loadFloatingVueStyles: true,
   },
   setup(options, nuxt) {
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url));
@@ -372,6 +354,11 @@ export default defineNuxtModule<ModuleOptions>({
     // use sass bundle
     if (options.sass) {
       nuxt.options.css.push('@gits-id/ui/styles.scss');
+    }
+
+    // load floating-vue styles
+    if (options.loadFloatingVueStyles) {
+      nuxt.options.css.push('floating-vue/dist/style.css');
     }
 
     // register components
