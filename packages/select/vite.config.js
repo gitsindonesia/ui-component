@@ -21,9 +21,11 @@ export default defineConfig({
       external: [
         'vue',
         '@headlessui/vue',
+        '@gits-id/forms',
         '@gits-id/tooltip',
         '@gits-id/icon',
         '@gits-id/utils',
+        '@gits-id/theme',
         'vee-validate',
       ],
       output: {
