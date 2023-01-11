@@ -185,7 +185,12 @@ const emit =
 const initialValue = ref<Val>(props.modelValue || props.value);
 const uncontrolledValue = ref<Val>(initialValue.value);
 
-const {value: vvValue, errorMessage, setValue, meta} = useField<Val>(name, rules, {
+const {
+  value: vvValue,
+  errorMessage,
+  setValue,
+  meta,
+} = useField<Val>(name, rules, {
   initialValue: modelValue.value || value.value,
   ...props.fieldOptions,
 });
@@ -214,13 +219,17 @@ watch(vvValue, (val) => {
   }
 });
 
-watch(meta, (val) => {
-  if(name.value && val.initialValue !== initialValue.value) {
-    initialValue.value = val.initialValue as any;
-  }
-}, {
-  deep:true
-})
+watch(
+  meta,
+  (val) => {
+    if (name.value && val.initialValue !== initialValue.value) {
+      initialValue.value = val.initialValue as any;
+    }
+  },
+  {
+    deep: true,
+  },
+);
 
 const message = computed(() => {
   return errorMessage.value || props.errorMessages[0];
@@ -245,12 +254,15 @@ const filteredItems = computed(() => {
 watch(search, (val) => emit('search', val));
 
 const selectedText = computed(() => {
-  const item = filteredItems.value.find((item) => {
+  const item = items.value.find((item) => {
     return item[itemValue.value] === uncontrolledValue.value;
   });
 
   if (props.returnObject) {
-    return (uncontrolledValue?.value as VSelectItem)[props.itemText] || placeholder.value;
+    return (
+      (uncontrolledValue?.value as VSelectItem)[props.itemText] ||
+      placeholder.value
+    );
   }
 
   return item?.[props.itemText] || placeholder.value;
@@ -277,12 +289,13 @@ const emitSelected = (val: any) => {
 };
 
 // setup
-if(name.value) {
-  uncontrolledValue.value = meta.initialValue ?? "";
+if (name.value) {
+  uncontrolledValue.value = meta.initialValue ?? '';
 }
 </script>
 
 <template>
+  <pre>{{ {uncontrolledValue, search} }}</pre>
   <div
     class="v-select"
     :class="[
