@@ -207,6 +207,9 @@ watch(uncontrolledValue, (val) => {
 
   // emit all value update message
   emitSelected(val);
+
+  // clear search input
+  search.value = '';
 });
 
 watch(modelValue, (val) => {
@@ -295,7 +298,6 @@ if (name.value) {
 </script>
 
 <template>
-  <pre>{{ {uncontrolledValue, search} }}</pre>
   <div
     class="v-select"
     :class="[
