@@ -1,0 +1,8 @@
+@media (prefers-color-scheme: dark) {
+  .avatar {
+    &-default {
+      --avatar-bg-color: theme('colors.neutral.700');
+      --avatar-text-color: theme('colors.neutral.200');
+    }
+  }
+}
