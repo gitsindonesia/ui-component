@@ -1,10 +1,12 @@
 :root {
   --v-data-table-pagination-bg-color: theme('colors.white');
+  --v-data-table-pagination-border-color: theme('borderColor.DEFAULT');
   --v-data-table-pagination-text-color: theme('colors.gray.700');
 }
 
 .v-data-table-pagination {
   background-color: var(--v-data-table-pagination-bg-color);
+  border-color: var(--v-data-table-pagination-border-color);
 
   @apply w-full
     px-6
