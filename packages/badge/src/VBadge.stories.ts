@@ -2,8 +2,9 @@ import VBadge from './VBadge.vue';
 import type {VBadgeProps} from './types';
 import {Story, Meta} from '@storybook/vue3';
 import {defaultRounded, defaultColors} from '@gits-id/theme/defaultTheme';
+import './VBadge.dark.scss';
 
-const colors = ['default', ...defaultColors];
+const colors = defaultColors;
 
 export default {
   title: 'Components/Badge',
@@ -192,3 +193,30 @@ CustomClass.parameters = {
     },
   },
 };
+
+export const DarkMode = () => ({
+  components: {VBadge},
+  setup() {
+    return {
+      colors,
+      variants: ['default', 'outlined'],
+    };
+  },
+  template: `
+<div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
+  <div v-for="variant in variants" :key="variant" class="mb-5">  
+    <p>{{ variant }}</p>
+    <div class="space-x-2 space-y-2">
+      <VBadge
+        v-for="color in colors"
+        :color="color"
+        :key="color"
+        v-bind:[variant]="true"
+      >
+        {{ color }}
+      </VBadge>
+    </div>
+  </div>
+</div>
+  `,
+});
