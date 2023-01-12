@@ -4,6 +4,7 @@ import DropdownItem from './DropdownItem.vue';
 import DropdownButton from './DropdownButton.vue';
 import type {DropdownItemProps} from './types';
 import Button from '@gits-id/button';
+import './Dropdown.dark.scss';
 
 const genItems = (length = 5): DropdownItemProps[] =>
   Array.from({length}, (_, v) => ({
