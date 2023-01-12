@@ -2,6 +2,7 @@ import {Meta, Story} from '@storybook/vue3';
 import VCard from './VCard.vue';
 import VBtn from '@gits-id/button';
 import {defaultColors} from '@gits-id/theme/defaultTheme';
+import './VCard.dark.scss';
 
 export default {
   title: 'Components/Card',
@@ -112,7 +113,7 @@ export const CustomSlots: Story = (args) => ({
     <v-btn>Cancel</v-btn>
   </template>
   
-  <p class="text-gray-600">lorem ipsum body</p>
+  <p>lorem ipsum body</p>
 </v-card>
 `,
 });
