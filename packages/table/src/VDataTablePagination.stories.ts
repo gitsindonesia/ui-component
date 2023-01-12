@@ -1,10 +1,11 @@
 import VDataTablePagination from './VDataTablePagination.vue';
 import {themeColors} from '@gits-id/utils/colors';
 import {Args, Meta, Story} from '@storybook/vue3';
-import { useForm } from 'vee-validate';
-import { ref } from 'vue';
-import '@gits-id/forms/src/forms.scss'
-import '@gits-id/pagination/src/VPagination.scss'
+import {useForm} from 'vee-validate';
+import {ref} from 'vue';
+import '@gits-id/forms/src/forms.scss';
+import '@gits-id/pagination/src/VPagination.scss';
+import './VDataTablePagination.dark.scss';
 
 export default {
   title: 'Components/DataTablePagination',
@@ -123,8 +124,8 @@ export const RowsPerPageSlot: Story = (args) => ({
     VDataTablePagination,
   },
   setup() {
-    const page = ref(1)
-    const itemsPerPage = ref(10)
+    const page = ref(1);
+    const itemsPerPage = ref(10);
     const {values} = useForm({});
 
     return {args, values, page, itemsPerPage};

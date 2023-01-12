@@ -1,0 +1,6 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    --v-data-table-pagination-bg-color: theme('colors.neutral.800');
+    --v-data-table-pagination-text-color: theme('colors.neutral.300');
+  }
+}
