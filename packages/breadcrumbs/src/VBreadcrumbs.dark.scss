@@ -1,0 +1,12 @@
+@media (prefers-color-scheme: dark) {
+  .breadcrumbs {
+    // item
+    --breadcrumbs-item-color: theme('colors.neutral.200');
+
+    // item disabled
+    --breadcrumbs-item-disabled-color: theme('colors.neutral.500');
+
+    // divider
+    --breadcrumbs-divider-color: theme('colors.neutral.500');
+  }
+}
