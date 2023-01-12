@@ -3,6 +3,8 @@ import {Meta, Story} from '@storybook/vue3';
 import {ref, watchEffect} from 'vue';
 import VDataTable from './VDataTable.vue';
 import type {VDataTableHeader} from './types';
+import './VDataTable.dark.scss';
+import './VDataTablePagination.dark.scss';
 
 const states = ['active', 'inactive'];
 
