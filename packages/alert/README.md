@@ -6,18 +6,20 @@ GITS Alert component is a flexible alert component that can be used to display v
 
 Install with your prefered package manager.
 
-
 With NPM:
+
 ```
 npm i @gits-id/alert
 ```
 
 With Yarn:
+
 ```
 yarn add @gits-id/alert
 ```
 
 With PNPM:
+
 ```
 pnpm i @gits-id/alert
 ```
@@ -30,8 +32,13 @@ To use the component, you can simply include it in your template like this:
 <script setup lang="ts">
 // import component
 import VAlert from '@gits-id/alert';
-// import styles
+// import styles (includes dark mode)
 import '@gits-id/alert/dist/style.css';
+// or import the SASS styles
+import '@gits-id/alert/src/VAlert.scss';
+// if are using SASS bundle and want to add dark mode support,
+// uncomment this line
+// import '@gits-id/alert/src/VAlert.dark.scss';
 </script>
 
 <template>
