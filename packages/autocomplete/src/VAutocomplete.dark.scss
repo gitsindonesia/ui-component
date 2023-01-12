@@ -1,0 +1,47 @@
+@media (prefers-color-scheme: dark) {
+  .autocomplete {
+    &-label {
+      @apply text-neutral-200;
+    }
+
+    &-field {
+      @apply bg-neutral-800 border-neutral-800;
+    }
+
+    &-input {
+      @apply bg-neutral-800 border-neutral-800 text-neutral-200;
+    }
+
+    &-clearable {
+      &-button {
+        @apply
+        text-neutral-200
+        hover:text-neutral-300
+        hover:bg-neutral-300
+      }
+    }
+
+    &-icon {
+      @apply text-neutral-500;
+    }
+
+    &-options {
+      @apply bg-neutral-800
+    }
+
+    &-empty {
+      @apply text-neutral-200;
+    }
+
+    &-item {
+      &--active {
+        @apply bg-neutral-700 text-neutral-200;
+      }
+
+      &--inactive {
+        @apply text-neutral-200;
+      }
+    }
+  }
+}
+
