@@ -1,0 +1,20 @@
+@media (prefers-color-scheme: dark) {
+  .badge {
+    &-default {
+      --badge-bg-color: theme('colors.neutral.800');
+      --badge-color: theme('colors.neutral.200');
+      --badge-border-color: theme('colors.neutral.800');
+    }
+
+    &--outlined {
+      &.badge-default {
+        --badge-color: theme('colors.neutral.200');
+        --badge-border-color: theme('colors.neutral.600');
+      }
+      &.badge-dark {
+        --badge-color: theme('colors.gray.200');
+        --badge-border-color: theme('colors.gray.600');
+      }
+    }
+  }
+}
