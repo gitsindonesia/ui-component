@@ -175,7 +175,7 @@ export const DarkMode = () => ({
     };
   },
   template: `
-<div class="dark">
+<div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
   <div v-for="variant in variants" :key="variant" class="mt-5">
     <p class="font-semibold text-lg mb-2">{{ variant }}</p>
     <v-alert

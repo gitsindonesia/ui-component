@@ -1,12 +1,10 @@
-.dark {
+@media (prefers-color-scheme: dark) {
   .alert {
-    $c: &;
-
     // default variant
     &-default:not(.alert--outlined):not(.alert--bordered):not(.alert--solid) {
-      --alert-bg-color: theme('colors.neutral.100');
-      --alert-text-color: theme('colors.neutral.800');
-      --alert-border-color: theme('colors.neutral.500');
+      --alert-bg-color: theme('colors.neutral.800');
+      --alert-text-color: theme('colors.neutral.200');
+      --alert-border-color: theme('colors.neutral.800');
     }
 
     // solid variant
@@ -21,7 +19,11 @@
     // outlined variant
     &--outlined {
       &.alert-default {
-        --alert-text-color: theme('colors.neutral.800');
+        --alert-text-color: theme('colors.neutral.200');
+      }
+      &.alert-dark {
+        --alert-text-color: theme('colors.neutral.200');
+        --alert-border-color: theme('colors.neutral.700');
       }
     }
 
