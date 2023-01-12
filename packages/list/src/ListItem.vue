@@ -123,6 +123,7 @@ const hoverClasses = computed(() => {
         <slot name="append.text">
           <span
             v-if="appendText"
+            class="v-list-item-append-text"
             :class="appendTextClass"
             @click="emit('click:appendText')"
           >
