@@ -1,0 +1,49 @@
+@media (prefers-color-scheme: dark) {
+  // button
+  .btn {
+    // colors
+    &-default:not(&--outlined):not(&--text):not(:disabled) {
+      --btn-bg-color: theme('colors.neutral.800');
+      --btn-border-color: theme('colors.neutral.800');
+      --btn-text-color: theme('colors.neutral.200');
+
+      &:hover {
+        --btn-bg-color: theme('colors.neutral.700');
+      }
+    }
+
+    // outlined
+    &--outlined {
+      &:disabled {
+        --btn-text-color: theme('colors.neutral.500');
+        --btn-border-color: theme('colors.neutral.200');
+      }
+
+      &.btn-default:not(:disabled) {
+        --btn-text-color: theme('colors.neutral.800');
+        --btn-border-color: theme('colors.neutral.800');
+
+        &:hover:not(:disabled) {
+          --btn-bg-color: theme('colors.neutral.800');
+          --btn-border-color: theme('colors.neutral.800');
+        }
+      }
+    }
+
+    // text
+    &--text {
+      --btn-text-color: theme('colors.neutral.800');
+
+      &:disabled {
+        --btn-text-color: theme('colors.neutral.500');
+      }
+
+      &.btn-default:not(:disabled) {
+        --btn-text-color: theme('colors.neutral.800');
+        &:hover:not(:disabled) {
+          --btn-text-color: theme('colors.neutral.700');
+        }
+      }
+    }
+  }
+}
