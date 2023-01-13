@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/table",
-  "version": "0.14.2",
+  "version": "0.14.3",
   "description": "GITS DataTable Table Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -16,7 +16,7 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@gits-id/forms": "^0.14.2",
+    "@gits-id/forms": "^0.14.3",
     "@gits-id/icon": "^0.14.0",
     "@gits-id/pagination": "^0.14.0",
     "@gits-id/spinner": "^0.14.0",
