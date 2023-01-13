@@ -5,6 +5,7 @@ import VIcon from '@gits-id/icon';
 import {defaultColors} from '@gits-id/theme/defaultTheme';
 import VBtnGroup from './VBtnGroup.vue';
 import VBtnToolbar from './VBtnToolbar.vue';
+import './VBtn.dark.scss';
 
 const colors = defaultColors;
 const defaultSizes = ['sm', 'md', 'lg'];
