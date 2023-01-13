@@ -1,0 +1,20 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    --v-multi-select-text-color: theme('colors.neutral.800');
+
+    /* item */
+    --v-multi-select-item-bg-color: theme('colors.neutral.800');
+    --v-multi-select-item-text-color: theme('colors.neutral.200');
+    --v-multi-select-item-hover-bg-color: theme('colors.primary.500');
+    --v-multi-select-item-hover-text-color: theme('colors.neutral.200');
+
+    /* error */
+    --v-multi-select-error-border-color: theme('colors.error.500');
+
+    /* icon */
+    --v-multi-select-icon-color: theme('colors.neutral.500');
+
+    /* dropdown */
+    --v-multi-select-dropdown-bg-color: theme('colors.neutral.800');
+  }
+}

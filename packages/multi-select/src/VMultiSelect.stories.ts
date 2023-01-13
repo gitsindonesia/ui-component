@@ -5,6 +5,8 @@ import {object, array} from 'yup';
 import {computed, ref, onMounted} from 'vue';
 import {VMultiSelectItem} from './types';
 import {Story} from '@storybook/vue3';
+import './VMultiSelect.dark.scss';
+import '@gits-id/forms/src/forms.dark.scss';
 
 const items = [...Array(200)].map((_, index) => ({
   value: index + 1,
@@ -708,24 +710,27 @@ export const CustomSearchFunction = () => ({
     const genres = ref([
       {
         name: 'Pop',
-        id: 1
+        id: 1,
       },
       {
         name: 'Rock',
-        id: 2
+        id: 2,
       },
       {
         name: 'Jazz',
-        id: 3
+        id: 3,
       },
       {
         name: 'Alternative',
-        id: 4
+        id: 4,
       },
     ]);
 
     const compareGenres = (item: VMultiSelectItem, query: string) => {
-      return +item.id === +query || item.name.toLowerCase().includes(query.toLowerCase());
+      return (
+        +item.id === +query ||
+        item.name.toLowerCase().includes(query.toLowerCase())
+      );
     };
 
     return {onSubmit, resetForm, values, genres, compareGenres};
@@ -755,27 +760,40 @@ export const TestInputState: Story<{}> = (args) => ({
   setup() {
     const modelValue = ref([]);
     const modelValue2 = ref([]);
-    const {handleSubmit, resetForm, values} = args.useForm ? useForm({
-      initialValues: {
-        text: [],
-        text2: [],
-      }
-    }) : {handleSubmit: (cb: any) => null, resetForm: () => null, values: {}};
+    const {handleSubmit, resetForm, values} = args.useForm
+      ? useForm({
+          initialValues: {
+            text: [],
+            text2: [],
+          },
+        })
+      : {handleSubmit: (cb: any) => null, resetForm: () => null, values: {}};
 
-    const items = ref(['seal|🦭', 'otter|🦦', 'giraffe|🦒', 'shark|🦈', 'dodo|🦤'].map((e) => ({
-      text: e.split('|')[1],
-      value:e.split('|')[0],
-    })))
+    const items = ref(
+      ['seal|🦭', 'otter|🦦', 'giraffe|🦒', 'shark|🦈', 'dodo|🦤'].map((e) => ({
+        text: e.split('|')[1],
+        value: e.split('|')[0],
+      })),
+    );
 
     const onSubmit = handleSubmit((values: any) => {
       alert(JSON.stringify(values));
     });
 
     const onChange = (val: any) => {
-      alert("onChange: " + val);
+      alert('onChange: ' + val);
     };
 
-    return {args, onSubmit, resetForm, values, modelValue, modelValue2, items, onChange};
+    return {
+      args,
+      onSubmit,
+      resetForm,
+      values,
+      modelValue,
+      modelValue2,
+      items,
+      onChange,
+    };
   },
   template: `
     <form @submit='onSubmit' class='border-none'>
@@ -836,3 +854,17 @@ export const TestInputState: Story<{}> = (args) => ({
 TestInputState.args = {
   useForm: false,
 };
+
+export const DarkMode = () => ({
+  components: {
+    VMultiSelect,
+  },
+  setup() {
+    return {items};
+  },
+  template: `
+  <div class="dark:bg-neutral-900 p-6">
+    <v-multi-select :items="items" label="Label" placeholder="Placeholder" />
+  </div>
+  `,
+});
