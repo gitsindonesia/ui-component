@@ -3,6 +3,7 @@ import {themeColors} from '@gits-id/utils/colors';
 import {Meta, Story} from '@storybook/vue3';
 import {ref} from 'vue';
 import VBtn from '@gits-id/button';
+import './VProgressBar.dark.scss';
 
 export default {
   title: 'Components/ProgressBar',
@@ -89,5 +90,23 @@ export const Indeterminate: Story = (args) => ({
   },
   template: `
     <VProgressBar color="secondary" indeterminate/>
+  `,
+});
+
+export const DarkMode: Story = (args) => ({
+  components: {VProgressBar},
+  setup() {
+    return {args, themeColors};
+  },
+  template: `
+  <div class="dark:bg-neutral-900 p-6">
+    <VProgressBar
+      v-for="color in themeColors"
+      :key="color"
+      v-bind='args'
+      :color="color"
+      class="mb-4"
+    />
+  </div>
   `,
 });
