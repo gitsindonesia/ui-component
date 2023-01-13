@@ -6,6 +6,7 @@ import {useForm} from 'vee-validate';
 import {object, string} from 'yup';
 import {ref} from 'vue';
 import VBtn from '@gits-id/button';
+import '../forms.dark.scss';
 
 const items = [...Array(5)].map((item, index) => ({
   value: index,
@@ -325,12 +326,14 @@ export const TestInputState: Story<{}> = (args) => ({
   setup() {
     const modelValue = ref();
     const modelValue2 = ref();
-    const {handleSubmit, resetForm, values} = args.useForm ? useForm({
-      initialValues: {
-        choice: '',
-        choice2: '',
-      }
-    }) : {handleSubmit: (cb: any) => null, resetForm: () => null, values: {}};
+    const {handleSubmit, resetForm, values} = args.useForm
+      ? useForm({
+          initialValues: {
+            choice: '',
+            choice2: '',
+          },
+        })
+      : {handleSubmit: (cb: any) => null, resetForm: () => null, values: {}};
 
     const items = ref([
       {
@@ -356,10 +359,19 @@ export const TestInputState: Story<{}> = (args) => ({
     });
 
     const onChange = (val: any) => {
-      alert("onChange: " + val);
+      alert('onChange: ' + val);
     };
 
-    return {args, onSubmit, resetForm, values, modelValue, modelValue2, items, onChange};
+    return {
+      args,
+      onSubmit,
+      resetForm,
+      values,
+      modelValue,
+      modelValue2,
+      items,
+      onChange,
+    };
   },
   template: `
     <form @submit='onSubmit' class='border-none'>
@@ -421,3 +433,15 @@ export const TestInputState: Story<{}> = (args) => ({
 TestInputState.args = {
   useForm: false,
 };
+
+export const DarkMode: Story = (args) => ({
+  components: {VFormSelect},
+  setup() {
+    return {args};
+  },
+  template: `
+  <div class="dark:bg-neutral-900 p-6">
+    <VFormSelect v-bind='args'/>
+  </div>
+  `,
+});
