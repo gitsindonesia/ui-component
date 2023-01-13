@@ -184,8 +184,6 @@ const isEagerValidation = computed(() => {
 });
 
 const input = ref();
-const initialValue = ref(props.modelValue || props.value);
-const uncontrolledValue = ref(initialValue.value);
 
 const {
   value: vvValue,
@@ -197,6 +195,9 @@ const {
   initialValue: props.modelValue || props.value,
   validateOnValueUpdate: !isEagerValidation.value,
 });
+
+const initialValue = ref(props.modelValue || props.value);
+const uncontrolledValue = ref(initialValue.value || (name?.value ? meta.initialValue : initialValue.value));
 
 watch(modelValue, (val) => {
   uncontrolledValue.value = val;
@@ -253,11 +254,6 @@ const clear = () => {
   emit('clear');
   input.value?.focus();
 };
-
-// if name is defined, we override uncontrolledValue with initialValue from veeValidate
-if (name.value) {
-  uncontrolledValue.value = meta.initialValue || '';
-}
 </script>
 
 <template>
