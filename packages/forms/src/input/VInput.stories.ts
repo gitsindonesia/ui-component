@@ -11,6 +11,7 @@ import FieldArrayOfObject from './stories/FieldArrayOfObject.story.vue';
 import FieldArrayNestedComponent from './stories/FieldArrayNested.story.vue';
 import {ref} from 'vue';
 import FormsPlaygroundComponent from './stories/FormsPlayground.vue';
+import '../forms.dark.scss';
 
 const sizes = ['sm', 'md', 'lg'] as const;
 
@@ -574,32 +575,45 @@ export const TestInputState: Story<{}> = (args) => ({
       text2: args.setupWithInitialValue ? 'init2' : '',
     });
 
-    const {handleSubmit, resetForm, values} = args.useForm ? useForm({
-      initialValues,
-    }) : {handleSubmit: (cb: any) => null, resetForm: () => null, values: {}};
+    const {handleSubmit, resetForm, values} = args.useForm
+      ? useForm({
+          initialValues,
+        })
+      : {handleSubmit: (cb: any) => null, resetForm: () => null, values: {}};
 
     const onSubmit = handleSubmit((values: any) => {
       alert(JSON.stringify(values));
     });
 
     const onChange = (val: any) => {
-      alert("onChange: " + val);
+      alert('onChange: ' + val);
     };
 
     const resetVVForm = () => {
-      if(!args.useForm){
-        alert('Story is not set up with Vee Validate Form. set `useForm` control to true to try this action.')
+      if (!args.useForm) {
+        alert(
+          'Story is not set up with Vee Validate Form. set `useForm` control to true to try this action.',
+        );
       }
 
       initialValues.value = {
         text: 'changes',
-        text2: 'change me too!'
+        text2: 'change me too!',
       };
 
       resetForm();
-    }
+    };
 
-    return {args, onSubmit, resetForm, values, modelValue, modelValue2, onChange, resetVVForm};
+    return {
+      args,
+      onSubmit,
+      resetForm,
+      values,
+      modelValue,
+      modelValue2,
+      onChange,
+      resetVVForm,
+    };
   },
   template: `
     <form @submit="onSubmit" class="border-none">
@@ -705,3 +719,21 @@ TestInputState.args = {
   value: undefined,
   clearable: true,
 };
+
+// dark mode VInput story
+export const DarkMode: Story<VInputProps> = (args) => ({
+  components: {VInput},
+  setup() {
+    const modelValue = ref('');
+    return {args, modelValue};
+  },
+  template: `
+    <div class="dark:bg-neutral-900 p-4"> 
+      <v-input
+        v-model="modelValue"
+        label="Label"
+        placeholder="Placeholder"
+      />
+    </div>
+  `,
+});

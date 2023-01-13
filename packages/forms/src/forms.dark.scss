@@ -1,0 +1,15 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* input control */
+    --v-input-border-color: theme('colors.neutral.700');
+    --v-input-placeholder-color: theme('colors.neutral.500');
+    --v-input-bg-color: theme('colors.neutral.800');
+    --v-input-color: theme('colors.neutral.200');
+
+    /* label */
+    --v-input-label-color: theme('colors.neutral.200');
+
+    /* icon */
+    --v-input-icon-color: theme('colors.neutral.500');
+  }
+}
