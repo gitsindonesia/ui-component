@@ -6,6 +6,7 @@ import {useForm} from 'vee-validate';
 import {object, string} from 'yup';
 import VBtn from '@gits-id/button';
 import {ref} from 'vue';
+import './VRadio.dark.scss';
 
 export default {
   title: 'Forms/Radio',
@@ -112,16 +113,18 @@ export const TestInputState: Story<{}> = (args) => ({
   setup() {
     const modelValue = ref();
     const modelValue2 = ref();
-    const {handleSubmit, resetForm, values} = args.useForm ? useForm({
-      initialValues: {
-        radio: false,
-        radio2: false
-      }
-    }) : {
-      handleSubmit: (cb: any) => null,
-      resetForm: () => null,
-      values: {},
-    };
+    const {handleSubmit, resetForm, values} = args.useForm
+      ? useForm({
+          initialValues: {
+            radio: false,
+            radio2: false,
+          },
+        })
+      : {
+          handleSubmit: (cb: any) => null,
+          resetForm: () => null,
+          values: {},
+        };
 
     const onSubmit = handleSubmit((values: any) => {
       alert(JSON.stringify(values));
@@ -131,7 +134,15 @@ export const TestInputState: Story<{}> = (args) => ({
       alert('onChange');
     };
 
-    return {args, onSubmit, resetForm, values, modelValue, modelValue2, onChange};
+    return {
+      args,
+      onSubmit,
+      resetForm,
+      values,
+      modelValue,
+      modelValue2,
+      onChange,
+    };
   },
   template: `
     <form @submit="onSubmit" class="border-none">
@@ -195,3 +206,24 @@ export const TestInputState: Story<{}> = (args) => ({
 TestInputState.args = {
   useForm: false,
 };
+
+// VRadio dark mode
+export const DarkMode: Story<{}> = () => ({
+  components: {VRadio},
+  setup() {
+    const items = ['fire', 'earth', 'wind', 'water'];
+    const modelValue = ref();
+    return {items, modelValue};
+  },
+  template: `
+  <div class="dark:bg-neutral-900 p-6">
+    <VRadio
+      v-for="item in items"
+      v-model="modelValue"
+      :key="item"
+      :label="item"
+      :value="item"
+    />
+  </div>
+  `,
+});
