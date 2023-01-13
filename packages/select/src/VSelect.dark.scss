@@ -1,0 +1,16 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    // options
+    --v-select-options-bg-color: theme('colors.neutral.800');
+
+    /* option item */
+    --v-select-option-bg-color: theme('colors.neutral.800');
+    --v-select-option-text-color: theme('colors.neutral.200');
+  
+    /* option item on hover */
+    --v-select-option-hover-bg-color: theme('colors.neutral.700');
+    --v-select-option-hover-text-color: theme('colors.neutral.200');
+
+    --v-select-icon-hover-color: theme('colors.neutral.200');
+  }
+}
