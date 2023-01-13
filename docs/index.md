@@ -37,5 +37,8 @@ features:
     details: GITS UI comes with TypeScript support out-of-the-box.
   - icon: 🎨
     title: Themes
-    details: GITS UI includes support for theming (soon).
+    details: GITS UI includes support for theming.
+  - icon: 🎨
+    title: Dark Mode
+    details: Support dark mode by default.
 ---
