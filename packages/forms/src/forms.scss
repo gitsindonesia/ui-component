@@ -8,6 +8,7 @@
   --v-input-padding-y: theme('padding.2');
   --v-input-font-size: theme('fontSize.base');
   --v-input-bg-color: theme('colors.white');
+  --v-input-text-color: theme('colors.gray.800');
 
   /* label */
   --v-input-label-font-size: theme('fontSize.sm');
@@ -27,6 +28,7 @@
 }
 
 .v-input-label {
+  color: var(--v-input-label-color);
   font-size: var(--v-input-label-font-size);
   font-weight: var(--v-input-label-font-weight);
   display: var(--v-input-label-display);
@@ -78,24 +80,27 @@
   border-radius: var(--v-input-border-radius);
   font-size: var(--v-input-font-size);
   background-color: transparent;
+  color: var(--v-input-color);
 
   @apply focus:ring-0 border-none focus:border-none focus:outline-none;
-}
-.v-input-control:not(textarea):not(select) {
-  height: var(--v-input-height);
+  
+  &:not(textarea):not(select) {
+    height: var(--v-input-height);
+  }
+
+  &::placeholder {
+    color: var(--v-input-placeholder-color);
+  }
 }
 
 .v-input:has(.v-input-prepend:not(:empty))
   .v-input-control:not(.v-input-control--has-prepend-class) {
   @apply pl-0;
 }
+
 .v-input:has(.v-input-append:not(:empty))
   .v-input-control:not(.v-input-control--has-append-class) {
   @apply pr-0;
-}
-
-.v-input-control::placeholder {
-  color: var(--v-input-placeholder-color);
 }
 
 /* colors */

@@ -11,6 +11,7 @@ import FieldArrayOfObject from './stories/FieldArrayOfObject.story.vue';
 import FieldArrayNestedComponent from './stories/FieldArrayNested.story.vue';
 import {ref} from 'vue';
 import FormsPlaygroundComponent from './stories/FormsPlayground.vue';
+import '../forms.dark.scss';
 
 const sizes = ['sm', 'md', 'lg'] as const;
 
@@ -718,3 +719,21 @@ TestInputState.args = {
   value: undefined,
   clearable: true,
 };
+
+// dark mode VInput story
+export const DarkMode: Story<VInputProps> = (args) => ({
+  components: {VInput},
+  setup() {
+    const modelValue = ref('');
+    return {args, modelValue};
+  },
+  template: `
+    <div class="dark:bg-neutral-900 p-4"> 
+      <v-input
+        v-model="modelValue"
+        label="Label"
+        placeholder="Placeholder"
+      />
+    </div>
+  `,
+});
