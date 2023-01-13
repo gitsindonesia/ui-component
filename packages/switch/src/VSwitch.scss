@@ -15,6 +15,7 @@
   --v-switch-thumb-height: theme('height.5');
   --v-switch-thumb-border-radius: theme('borderRadius.full');
   /* label */
+  --v-switch-label-color: var(--v-input-label-color);
   --v-switch-label-font-size: theme('fontSize.base');
   --v-switch-label-font-weight: theme('fontWeight.normal');
 }
@@ -29,6 +30,7 @@
   }
 
   &-label {
+    color: var(--v-switch-label-color);
     font-size: var(--v-switch-label-font-size);
     font-weight: var(--v-switch-label-font-weight);
   }

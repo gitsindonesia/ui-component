@@ -3,7 +3,10 @@ import {Meta, Story} from '@storybook/vue3';
 import {useForm} from 'vee-validate';
 import {object, boolean} from 'yup';
 import VBtn from '@gits-id/button';
-import { ref } from 'vue';
+import {ref} from 'vue';
+import '@gits-id/forms/src/forms.scss';
+import '@gits-id/forms/src/forms.dark.scss';
+import './VSwitch.dark.scss';
 
 export default {
   title: 'Components/Switch',
@@ -165,7 +168,6 @@ export const CustomStyle: Story<{}> = () => ({
 `,
 });
 
-
 export const Validation: Story<{}> = () => ({
   components: {VSwitch, VBtn},
   setup() {
@@ -201,4 +203,16 @@ export const Validation: Story<{}> = () => ({
       <pre>{{ {errors, values} }}</pre>
     </form>
 `,
+});
+
+export const DarkMode: Story = (args) => ({
+  components: {VSwitch},
+  setup() {
+    return {args};
+  },
+  template: `
+  <div class="dark:bg-neutral-900 p-6">
+    <VSwitch v-bind='args'/>
+  </div>
+  `,
 });
