@@ -4,6 +4,7 @@ import {ref} from 'vue';
 import Button from '@gits-id/button';
 import {colors} from './colors';
 import NavDrawerCustom from './stories/NavDrawerCustom.vue';
+import './NavDrawer.dark.scss';
 
 export default {
   title: 'Components/NavigationDrawer',
@@ -278,5 +279,19 @@ export const CustomColor: StoryFn<typeof NavDrawer> = (args) => ({
   components: {NavDrawerCustom},
   template: `
     <NavDrawerCustom />
+  `,
+});
+
+export const DarkMode: StoryFn<typeof NavDrawer> = (args) => ({
+  components: {NavDrawer},
+  setup() {
+    return {args};
+  },
+  template: `
+  <div class="dark:bg-neutral-900 p-6">
+    <NavDrawer v-bind='args'>
+      <p>Test</p>
+    </NavDrawer>
+  </div>
   `,
 });
