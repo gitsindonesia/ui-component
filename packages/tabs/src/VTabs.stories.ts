@@ -5,6 +5,7 @@ import VCard from '@gits-id/card';
 import {ref} from 'vue';
 import {Story} from '@storybook/vue3';
 import VTabsSlider from './VTabsSlider.vue';
+import './VTabs.dark.scss';
 
 function createItems(len = 20, additionalItem = {}) {
   return [...Array(20)].map((v, k) => ({
@@ -188,7 +189,9 @@ export const Removeable: Story<{}> = (args) => ({
   components: {VTabs, VTab, VTabsSlider},
   setup() {
     const selectedTab = ref(2);
-    const items = ref(new Array(10).fill({}).map((e, idx) => ({text: `Tab ${idx}`})));
+    const items = ref(
+      new Array(10).fill({}).map((e, idx) => ({text: `Tab ${idx}`})),
+    );
     return {args, selectedTab, items};
   },
   template: `
@@ -517,5 +520,17 @@ export const Next: Story<{}> = (args) => ({
       <VBtn prefix-icon="ri:arrow-right-s-line" class="ml-2" @click="onClick" />
     </template>
     </VTabs>
+  `,
+});
+
+export const DarkMode: Story = (args) => ({
+  components: {VTabs},
+  setup() {
+    return {args};
+  },
+  template: `
+  <div class="dark:bg-neutral-900 p-6">
+    <VTabs v-bind='args'/>
+  </div>
   `,
 });
