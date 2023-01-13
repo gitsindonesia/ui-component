@@ -1,5 +1,6 @@
 import type {Meta, StoryFn} from '@storybook/vue3';
 import Shimmer from './Shimmer.vue';
+import './Shimmer.dark.scss';
 
 export default {
   title: 'Components/Shimmer',
@@ -114,3 +115,15 @@ CardShimmer.parameters = {
     },
   },
 };
+
+export const DarkMode: StoryFn<typeof Shimmer> = (args) => ({
+  components: {Shimmer},
+  setup() {
+    return {args};
+  },
+  template: `
+  <div class="dark:bg-neutral-900 p-6">
+    <Shimmer v-bind='args' width="100%" height="40px" />
+  </div>
+  `,
+});
