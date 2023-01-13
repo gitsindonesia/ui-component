@@ -100,8 +100,9 @@ export const Customization = Template.bind({});
 Customization.args = {
   label: 'Pick an option',
   labelClass: '!text-purple-500',
-  defaultClass: 'p-2 my-1 hover:bg-primary-50 border-grey-300 border rounded-lg cursor-pointer',
-  selectedClass: '!border-primary-300 !text-primary-500'
+  defaultClass:
+    'p-2 my-1 hover:bg-primary-50 border-grey-300 border rounded-lg cursor-pointer',
+  selectedClass: '!border-primary-300 !text-primary-500',
 };
 Customization.parameters = {
   docs: {
@@ -227,7 +228,6 @@ export const ValidationMode: Story<{}> = () => ({
   `,
 });
 
-
 export const TestInputState: Story<{}> = (args) => ({
   components: {VBtn, VRadioGroup},
   setup() {
@@ -235,16 +235,18 @@ export const TestInputState: Story<{}> = (args) => ({
 
     const modelValue = ref();
     const modelValue2 = ref();
-    const {handleSubmit, resetForm, values} = args.useForm ? useForm({
-      initialValues: {
-        radio: '',
-        radio2: ''
-      }
-    }) : {
-      handleSubmit: (cb: any) => null,
-      resetForm: () => null,
-      values: {},
-    };
+    const {handleSubmit, resetForm, values} = args.useForm
+      ? useForm({
+          initialValues: {
+            radio: '',
+            radio2: '',
+          },
+        })
+      : {
+          handleSubmit: (cb: any) => null,
+          resetForm: () => null,
+          values: {},
+        };
 
     const onSubmit = handleSubmit((values: any) => {
       alert(JSON.stringify(values));
@@ -254,7 +256,16 @@ export const TestInputState: Story<{}> = (args) => ({
       alert('onChange');
     };
 
-    return {args, onSubmit, resetForm, values, items, modelValue, modelValue2, onChange};
+    return {
+      args,
+      onSubmit,
+      resetForm,
+      values,
+      items,
+      modelValue,
+      modelValue2,
+      onChange,
+    };
   },
   template: `
     <form @submit="onSubmit" class="border-none">
@@ -322,3 +333,15 @@ export const TestInputState: Story<{}> = (args) => ({
 TestInputState.args = {
   useForm: false,
 };
+
+export const DarkMode: Story = (args) => ({
+  components: {VRadioGroup},
+  setup() {
+    return {args};
+  },
+  template: `
+  <div class="dark:bg-neutral-900 p-6">
+    <VRadioGroup v-bind='args'/>
+  </div>
+  `,
+});
