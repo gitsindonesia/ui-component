@@ -358,6 +358,11 @@ export default defineNuxtModule<ModuleOptions>({
       nuxt.options.css.push('@gits-id/ui/styles.scss');
     }
 
+    // load transition styles if css or sass is not used
+    if (!options.css && !options.sass) {
+      nuxt.options.css.push('@gits-id/theme/transition.css');
+    }
+
     // load floating-vue styles
     if (options.loadFloatingVueStyles) {
       nuxt.options.css.push('floating-vue/dist/style.css');
