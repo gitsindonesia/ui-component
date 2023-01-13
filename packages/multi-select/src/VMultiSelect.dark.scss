@@ -1,5 +1,9 @@
-@media (prefers-color-scheme: dark) {
-  :root {
+.dark {
+  .v-multi-select {
+    --v-multi-select-border-color: var(--v-input-border-color);
+    --v-multi-select-border-radius: var(--v-input-border-radius);
+    --v-multi-select-bg-color: var(--v-input-bg-color);
+    --v-multi-select-placeholder-color: var(--v-input-placeholder-color);
     --v-multi-select-text-color: theme('colors.neutral.800');
 
     /* item */

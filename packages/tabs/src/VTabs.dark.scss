@@ -1,5 +1,5 @@
-@media (prefers-color-scheme: dark) {
-  :root {
+.dark {
+  .v-tabs {
     /* item */
     --v-tabs-item-text-color: theme('colors.neutral.400');
 

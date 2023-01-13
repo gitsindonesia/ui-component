@@ -1,5 +1,5 @@
-@media (prefers-color-scheme: dark) {
-  :root {
+.dark {
+  .v-pagination {
     /* item */
     --v-pagination-item-bg-color: theme('colors.neutral.800');
     --v-pagination-item-text-color: theme('colors.neutral.200');
@@ -18,9 +18,7 @@
     --v-pagination-item-disabled-bg-color: theme('colors.neutral.600');
     --v-pagination-item-disabled-border-color: theme('colors.neutral.600');
     --v-pagination-item-disabled-text-color: theme('colors.neutral.400');
-  }
 
-  .v-pagination {
     &-item {
       &--ellipsis {
         --v-pagination-bg-color: var(--v-pagination-item-disabled-bg-color);

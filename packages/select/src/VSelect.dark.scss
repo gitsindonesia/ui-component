@@ -1,5 +1,10 @@
-@media (prefers-color-scheme: dark) {
-  :root {
+.dark {
+  .v-select {
+    /* input control / button */
+    --v-select-border-color: var(--v-input-border-color);
+    --v-select-bg-color: var(--v-input-bg-color);
+    --v-select-placeholder-color: var(--v-input-placeholder-color);
+
     // options
     --v-select-options-bg-color: theme('colors.neutral.800');
 

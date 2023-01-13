@@ -16,16 +16,7 @@ const isOpen = ref(false);
 </script>
 
 <template>
-  <div
-    class="
-      container
-      mx-auto
-      p-6
-      space-y-5
-      dark:bg-neutral-900
-      dark:text-neutral-200
-    "
-  >
+  <div class="container mx-auto p-6 space-y-5">
     <h1 class="text-2xl font-semibold">GITS UI Playground</h1>
 
     <hr class="dark:border-neutral-700" />
@@ -87,14 +78,36 @@ const isOpen = ref(false);
     <h3 class="text-xl font-semibold">Forms</h3>
     <div>
       <form class="space-y-3">
-        <v-input label="Name" />
-        <v-input label="Email" />
-        <v-input label="Password" />
-        <v-input label="Confirm Password" />
-        <v-input label="Phone" />
-        <v-textarea label="Address" />
-        <v-checkbox label="I agree to the terms and conditions" />
-        <v-form-select label="Choose" />
+        <v-input placeholder="Placeholder" label="Name" />
+        <v-input placeholder="Placeholder" label="Email" />
+        <v-input placeholder="Placeholder" label="Password" />
+        <v-input placeholder="Placeholder" label="Confirm Password" />
+        <v-input placeholder="Placeholder" label="Phone" />
+        <v-textarea placeholder="Placeholder" label="Address" />
+        <v-checkbox
+          placeholder="Placeholder"
+          label="I agree to the terms and conditions"
+        />
+        <v-form-select
+          placeholder="Placeholder"
+          label="Choose"
+          :items="[
+            {text: 'Option 1', value: '1'},
+            {text: 'Option 2', value: '2'},
+            {text: 'Option 3', value: '3'},
+          ]"
+        />
+        <v-radio label="Option 1" value="1" />
+        <v-radio label="Option 2" value="2" />
+        <v-radio-group
+          placeholder="Placeholder"
+          label="Choose"
+          :items="[
+            {text: 'Option 1', value: '1'},
+            {text: 'Option 2', value: '2'},
+            {text: 'Option 3', value: '3'},
+          ]"
+        />
         <v-btn color="primary" v-tooltip="'Submit'">Submit</v-btn>
         <v-btn type="reset">Cancel</v-btn>
       </form>
@@ -158,11 +171,24 @@ const isOpen = ref(false);
     </div>
 
     <hr class="dark:border-neutral-700" />
+    <h3 class="text-xl font-semibold">Menus</h3>
+    <div>
+      <VMenus :items="items.slice(1, 6)" label="Menus" placement="top-start" />
+    </div>
+
+    <hr class="dark:border-neutral-700" />
+    <h3 class="text-xl font-semibold">Icon</h3>
+    <div>
+      <VIcon name="ri:home-line" />
+      <VIcon name="ri:user-line" />
+    </div>
+
+    <hr class="dark:border-neutral-700" />
     <h3 class="text-xl font-semibold">List</h3>
     <div>
-      <VList>
+      <VList hover>
         <VListItemHeader>Header</VListItemHeader>
-        <VListItem v-for="i in 5" prefix-icon="ri:donut-chart-line">
+        <VListItem v-for="i in 5" prepend-icon="ri:donut-chart-line">
           Item {{ i }}
         </VListItem>
         <VListItemDivider />
@@ -181,5 +207,95 @@ const isOpen = ref(false);
         adipisci excepturi obcaecati?
       </VModal>
     </div>
+
+    <hr class="dark:border-neutral-700" />
+    <h3 class="text-xl font-semibold">Tabs</h3>
+    <div>
+      <VTabs
+        :items="[
+          {
+            text: 'Tab 1',
+            content: 'Tab 1 Content',
+          },
+          {
+            text: 'Tab 2',
+            content: 'Tab 2 Content',
+          },
+          {
+            text: 'Tab 3',
+            content: 'Tab 3 Content',
+          },
+        ]"
+      />
+    </div>
+
+    <hr class="dark:border-neutral-700" />
+    <h3 class="text-xl font-semibold">Table</h3>
+    <div>
+      <VDataTable
+        :headers="[
+          {
+            text: 'Name',
+            value: 'name',
+          },
+          {
+            text: 'Email',
+            value: 'email',
+          },
+        ]"
+        :items="[
+          {
+            name: 'John',
+            email: 'john@mail.com',
+          },
+          {
+            name: 'Jane',
+            email: 'jane@mail.com',
+          },
+        ]"
+      />
+    </div>
+
+    <hr class="dark:border-neutral-700" />
+    <h3 class="text-xl font-semibold">NavDrawer</h3>
+    <div>
+      <VNavDrawer>
+        <p class="p-4">Content</p>
+
+        <VList hover>
+          <VListItemHeader>Menu</VListItemHeader>
+          <VListItem prepend-icon="ri:home-line">Home</VListItem>
+          <VListItem prepend-icon="ri:user-line">Account</VListItem>
+        </VList>
+      </VNavDrawer>
+    </div>
+
+    <hr class="dark:border-neutral-700" />
+    <h3 class="text-xl font-semibold">Shimmer</h3>
+    <div>
+      <VShimmer width="100%" height="60px" />
+    </div>
+
+    <hr class="dark:border-neutral-700" />
+    <h3 class="text-xl font-semibold">ProgressBar</h3>
+    <div>
+      <VProgressBar :model-value="70" class="mb-2" />
+      <VProgressBar :model-value="60" color="primary" />
+    </div>
+
+    <hr class="dark:border-neutral-700" />
+    <h3 class="text-xl font-semibold">Pagination</h3>
+    <div>
+      <VPagination :model-value="1" :items-per-page="10" :total-items="50" />
+    </div>
   </div>
 </template>
+
+<style>
+body {
+  @apply transition-colors duration-300;
+}
+.dark body {
+  @apply bg-neutral-900 text-neutral-200;
+}
+</style>

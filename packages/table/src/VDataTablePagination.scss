@@ -21,6 +21,7 @@
   &-items-per-page {
     border-radius: var(--v-input-border-radius);
     border: 1px solid var(--v-input-border-color);
+    background-color: var(--v-input-bg-color);
 
     @apply w-20 order-1 focus:ring-1 focus:border-primary-500 focus:ring-primary-500;
   }

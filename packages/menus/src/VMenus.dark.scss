@@ -1,13 +1,15 @@
-@media (prefers-color-scheme: dark) {
-  :root {
-    --v-menus-popper-border: 1px solid theme('colors.neutral.700');
-    /* menus */
-    --v-menus-bg-color: theme('colors.neutral.800');
-    --v-menus-border-color: theme('colors.neutral.700');
+.dark {
+  .v-menus,
+  .v-menus-items {
+    --v-menus-popper-border-color: theme('colors.neutral.700');
 
     /* button */
     --v-menus-button-color: theme('colors.neutral.200');
     --v-menus-button-icon-color: theme('colors.neutral.500');
+
+    /* menus */
+    --v-menus-bg-color: theme('colors.neutral.800');
+    --v-menus-border-color: theme('colors.neutral.700');
 
     /* item */
     --v-menus-item-bg-color: theme('colors.neutral.800');
