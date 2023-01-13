@@ -6,6 +6,7 @@ import {Meta, Story} from '@storybook/vue3';
 import {useForm} from 'vee-validate';
 import {object, boolean, array} from 'yup';
 import VBtn from '@gits-id/button';
+import './VCheckbox.dark.scss';
 
 export default {
   title: 'Forms/Checkbox',
@@ -29,7 +30,7 @@ export default {
 const Template: Story = (args) => ({
   components: {VCheckbox},
   setup() {
-    const value = ref(false)
+    const value = ref(false);
     return {args, value};
   },
   template: `
@@ -70,8 +71,8 @@ export const Multiple: Story<{}> = () => ({
     const {handleSubmit, resetForm, values, errors} = useForm({
       validationSchema: schema,
       initialValues: {
-        genre: [null]
-      }
+        genre: [null],
+      },
     });
 
     const onSubmit = handleSubmit((values) => {
@@ -225,17 +226,18 @@ export const ValidationMode: Story<{}> = () => ({
   `,
 });
 
-
 export const TestInputState: Story<{}> = (args) => ({
   components: {VBtn, VCheckbox},
   setup() {
     const modelValue = ref('');
     const modelValue2 = ref('');
-    const {handleSubmit, resetForm, values} = args.useForm ? useForm({}) : {
-      handleSubmit: (cb: any) => null,
-      resetForm: () => null,
-      values: {},
-    };
+    const {handleSubmit, resetForm, values} = args.useForm
+      ? useForm({})
+      : {
+          handleSubmit: (cb: any) => null,
+          resetForm: () => null,
+          values: {},
+        };
 
     const onSubmit = handleSubmit((values: any) => {
       alert(JSON.stringify(values));
@@ -245,7 +247,15 @@ export const TestInputState: Story<{}> = (args) => ({
       alert('onChange');
     };
 
-    return {args, onSubmit, resetForm, values, modelValue, modelValue2, onChange};
+    return {
+      args,
+      onSubmit,
+      resetForm,
+      values,
+      modelValue,
+      modelValue2,
+      onChange,
+    };
   },
   template: `
     <form @submit="onSubmit" class="border-none">
