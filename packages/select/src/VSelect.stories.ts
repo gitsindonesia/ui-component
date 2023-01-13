@@ -7,6 +7,8 @@ import {object, string} from 'yup';
 import VBtn from '@gits-id/button';
 import '@gits-id/button/src/VBtn.scss';
 import '@gits-id/forms/src/forms.scss';
+import '@gits-id/forms/src/forms.dark.scss';
+import './VSelect.dark.scss';
 
 const items = [...Array(10)].map((_, index) => ({
   value: index + 1,
@@ -459,3 +461,15 @@ TestInputState.args = {
   searchable: false,
   clearable: false,
 };
+
+export const DarkMode: Story = (args) => ({
+  components: {VSelect},
+  setup() {
+    return {args};
+  },
+  template: `
+  <div class="dark:bg-neutral-900 p-6">
+    <VSelect v-bind='args' label="Choose" clearable />
+  </div>
+  `,
+});
