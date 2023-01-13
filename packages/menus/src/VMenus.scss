@@ -15,6 +15,7 @@
   --v-menus-opacity: 1;
 
   /* button */
+  --v-menus-button-color: theme('colors.gray.800');
   --v-menus-button-icon-color: theme('colors.gray.500');
 
   /* item */
@@ -89,6 +90,8 @@
   }
 
   &-button {
+    color: var(--v-menus-button-color);
+
     @apply inline-flex items-center justify-center gap-1;
   }
 
