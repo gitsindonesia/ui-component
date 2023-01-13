@@ -1,0 +1,11 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    --v-checkbox-bg-color: theme('colors.neutral.700');
+    --v-checkbox-border-color: theme('colors.neutral.700');
+    --v-checkbox-label-color: theme('colors.neutral.200');
+
+    // disabled
+    --v-checkbox-disabled-bg-color: theme('colors.neutral.400');
+    --v-checkbox-disabled-border-color: theme('colors.neutral.400');
+  }
+}
