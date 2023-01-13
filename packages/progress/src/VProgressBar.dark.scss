@@ -1,0 +1,7 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    --v-progress-bar-bg-color: theme('colors.neutral.500');
+    --v-progress-bar-fill-color: theme('colors.neutral.700');
+    --v-progress-bar-label-color: theme('colors.neutral.200');
+  }
+}
