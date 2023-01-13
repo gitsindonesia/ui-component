@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.3](https://github.com/gitsindonesia/ui-component/compare/v0.14.2...v0.14.3) (2023-01-13)
+
+**Note:** Version bump only for package @gits-id/forms
+
+## [0.14.2](https://github.com/gitsindonesia/ui-component/compare/v0.14.2-alpha.0...v0.14.2) (2023-01-13)
+
+### Bug Fixes
+
+- **VInput:** change initial value priority to v model ([9c9834b](https://github.com/gitsindonesia/ui-component/commit/9c9834bba1343e8aa0c18e9284cf028c9c45905b))
+
 ## [0.14.1](https://github.com/gitsindonesia/ui-component/compare/v0.14.0...v0.14.1) (2023-01-11)
 
 ### Bug Fixes
