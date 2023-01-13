@@ -4,6 +4,7 @@ import vueRouter from 'storybook-vue3-router';
 import {ref} from 'vue';
 import VBtn from '@gits-id/button';
 import {VModalEvent} from './types';
+import './VModal.dark.scss';
 
 export default {
   title: 'Components/Modal',
@@ -348,5 +349,17 @@ export const Customization: Story = (args) => ({
         Hello World
       </v-modal>
     </div>  
+  `,
+});
+
+export const DarkMode: Story = (args) => ({
+  components: {VModal},
+  setup() {
+    return {args};
+  },
+  template: `
+  <div class="dark:bg-neutral-900 p-6">
+    <VModal v-bind='args'/>
+  </div>
   `,
 });
