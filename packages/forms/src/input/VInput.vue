@@ -197,7 +197,9 @@ const {
 });
 
 const initialValue = ref(props.modelValue || props.value);
-const uncontrolledValue = ref(initialValue.value || (name?.value ? meta.initialValue : initialValue.value));
+const uncontrolledValue = ref(
+  initialValue.value || (name?.value ? meta.initialValue : initialValue.value),
+);
 
 watch(modelValue, (val) => {
   uncontrolledValue.value = val;
@@ -213,7 +215,7 @@ watch(vvValue, (val) => {
 
 watch(uncontrolledValue, (val) => {
   if (name.value) {
-    setValue(val);
+    setValue(val!);
   }
 
   emit('update:modelValue', val);
@@ -221,7 +223,7 @@ watch(uncontrolledValue, (val) => {
 
 watch(
   meta,
-  (val, prev) => {
+  (val, _prev) => {
     if (name.value && val.initialValue !== initialValue.value) {
       initialValue.value = val.initialValue || '';
     }
