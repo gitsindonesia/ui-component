@@ -1,4 +1,4 @@
-@media (prefers-color-scheme: dark) {
+.dark {
   .card {
     &-default {
       --card-bg-color: theme('colors.neutral.800');

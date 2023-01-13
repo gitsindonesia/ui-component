@@ -1,11 +1,9 @@
-@media (prefers-color-scheme: dark) {
-  :root {
+.dark {
+  .v-data-table-pagination {
     --v-data-table-pagination-bg-color: theme('colors.neutral.800');
     --v-data-table-pagination-text-color: theme('colors.neutral.300');
     --v-data-table-pagination-border-color: theme('colors.neutral.700');
-  }
 
-  .v-data-table-pagination {
     .v-pagination {
       --v-pagination-border-radius: theme('borderRadius.lg');
       --v-pagination-gap: theme('gap.1');

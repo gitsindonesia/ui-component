@@ -1,5 +1,5 @@
-@media (prefers-color-scheme: dark) {
-  :root {
+.dark {
+  .v-table {
     /* thead */
     --v-table-thead-bg-color: theme('colors.neutral.800');
 

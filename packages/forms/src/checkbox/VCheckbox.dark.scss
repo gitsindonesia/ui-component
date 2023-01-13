@@ -1,5 +1,5 @@
-@media (prefers-color-scheme: dark) {
-  :root {
+.dark {
+  .v-checkbox {
     --v-checkbox-bg-color: theme('colors.neutral.700');
     --v-checkbox-border-color: theme('colors.neutral.700');
     --v-checkbox-label-color: theme('colors.neutral.200');

@@ -1,4 +1,4 @@
-@media (prefers-color-scheme: dark) {
+.dark {
   .alert {
     // default variant
     &-default:not(.alert--outlined):not(.alert--bordered):not(.alert--solid) {

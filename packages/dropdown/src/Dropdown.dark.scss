@@ -1,12 +1,14 @@
-@media (prefers-color-scheme: dark) {
-  :root {
+.dark {
+  .dropdown {
+
     --dropdown-bg-color: theme('colors.neutral.800');
     --dropdown-button-icon-color: theme('colors.neutral.400');
     --dropdown-item-color: theme('colors.neutral.200');
     --dropdown-item-icon-color: theme('colors.neutral.400');
-  }
 
-  .dropdown {
+    // item hover
+    --dropdown-item-hover-color: theme('colors.neutral.200');
+
     &-panel {
       background-color: theme('colors.neutral.800');
     }

@@ -1,5 +1,5 @@
-@media (prefers-color-scheme: dark) {
-  :root {
+.dark {
+  .shimmer {
     --shimmer-bg-image: linear-gradient(
       to right,
       theme('colors.neutral.600'),

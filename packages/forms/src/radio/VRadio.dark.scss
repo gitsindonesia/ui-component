@@ -1,5 +1,5 @@
-@media (prefers-color-scheme: dark) {
-  :root {
+.dark {
+  .v-radio {
     --v-radio-bg-color: theme('colors.neutral.700');
     --v-radio-border-color: theme('colors.gray.700');
 

@@ -1,5 +1,10 @@
-@media (prefers-color-scheme: dark) {
-  :root {
+.dark {
+  .v-input,
+  .v-multi-select,
+  .v-select,
+  .v-select-button,
+  .v-textarea,
+  .v-data-table-pagination-items-per-page {
     /* input control */
     --v-input-border-color: theme('colors.neutral.700');
     --v-input-placeholder-color: theme('colors.neutral.500');

@@ -1,10 +1,10 @@
-@media (prefers-color-scheme: dark) {
-  :root {
-    --v-list-bg-color: theme('colors.neutral.800');
+.dark {
+  .v-list {
+    --v-list-bg-color: theme('colors.transparent');
 
     /* item */
-  --v-list-item-color: theme('colors.neutral.200');
-  --v-list-item-bg-color: theme('colors.transparent');
+    --v-list-item-color: theme('colors.neutral.200');
+    --v-list-item-bg-color: theme('colors.transparent');
     --v-list-item-border-color: theme('colors.transparent');
 
     /* item hover */
@@ -20,10 +20,7 @@
     // icon
     --v-list-item-icon-color: theme('colors.neutral.300');
 
-  // append text
-  --v-list-item-append-text-color: theme('colors.neutral.500');
-  }
-
-  .v-list {
+    // append text
+    --v-list-item-append-text-color: theme('colors.neutral.500');
   }
 }

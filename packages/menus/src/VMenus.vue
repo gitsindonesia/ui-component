@@ -88,7 +88,7 @@ const menuPlacement = computed(() => {
       </button>
     </slot>
     <template #popper>
-      <List class="v-menus-items" :class="itemsClass" :style="itemsStyle">
+      <div class="v-menus-items" :class="itemsClass" :style="itemsStyle">
         <slot name="items">
           <template v-for="item in items" :key="item.text">
             <VMenusItem
@@ -98,7 +98,7 @@ const menuPlacement = computed(() => {
             />
           </template>
         </slot>
-      </List>
+      </div>
     </template>
   </component>
 </template>
