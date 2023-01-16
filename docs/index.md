@@ -40,5 +40,5 @@ features:
     details: GITS UI includes support for theming.
   - icon: 🎨
     title: Dark Mode
-    details: Support dark mode by default.
+    details: Support dark mode out-of-the-box.
 ---
