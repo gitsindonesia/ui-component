@@ -12,3 +12,15 @@
     </div>
   </div>
 </template>
+
+<style>
+:root {
+  --v-app-bg-color: theme('colors.gray.100');
+  --v-app-color: theme('colors.gray.800');
+}
+
+body {
+  background-color: var(--v-app-bg-color);
+  color: var(--v-app-color);
+}
+</style>
