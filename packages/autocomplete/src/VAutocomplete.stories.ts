@@ -104,7 +104,7 @@ export const DarkMode: Story = (args) => ({
     return {args, selected};
   },
   template: `
-<main class="dark dark:bg-neutral-900 p-6">
+<main class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
   <VAutocomplete
     v-bind="args"
     v-model="selected"

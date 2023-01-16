@@ -193,11 +193,13 @@ export const TestInputState: Story<{}> = (args) => ({
   setup() {
     const modelValue = ref('');
     const modelValue2 = ref('');
-    const {handleSubmit, resetForm, values} = args.useForm ? useForm() : {
-      handleSubmit: (cb: any) => null,
-      resetForm: () => null,
-      values: {},
-    };
+    const {handleSubmit, resetForm, values} = args.useForm
+      ? useForm()
+      : {
+          handleSubmit: (cb: any) => null,
+          resetForm: () => null,
+          values: {},
+        };
 
     const onSubmit = handleSubmit((values: any) => {
       alert(JSON.stringify(values));
@@ -207,7 +209,15 @@ export const TestInputState: Story<{}> = (args) => ({
       alert('onChange');
     };
 
-    return {args, onSubmit, resetForm, values, modelValue, modelValue2, onChange};
+    return {
+      args,
+      onSubmit,
+      resetForm,
+      values,
+      modelValue,
+      modelValue2,
+      onChange,
+    };
   },
   template: `
     <form @submit="onSubmit" class="border-none">
@@ -267,3 +277,15 @@ export const TestInputState: Story<{}> = (args) => ({
 TestInputState.args = {
   useForm: false,
 };
+
+export const DarkMode: Story = (args) => ({
+  components: {VTextarea},
+  setup() {
+    return {args};
+  },
+  template: `
+  <div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
+    <VTextarea v-bind='args' />
+  </div>
+  `,
+});

@@ -122,7 +122,7 @@ export const DarkMode: StoryFn<typeof Shimmer> = (args) => ({
     return {args};
   },
   template: `
-  <div class="dark:bg-neutral-900 p-6">
+  <div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
     <Shimmer v-bind='args' width="100%" height="40px" />
   </div>
   `,
