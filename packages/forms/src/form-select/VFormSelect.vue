@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import {toRefs, PropType, watch, computed, ref} from 'vue';
-import {useField} from 'vee-validate';
+import {PropType} from 'vue';
 import type {VFormSelectItem} from './types';
+import { type ValidationMode, useFormValue } from 'src/composables';
 
 const props = defineProps({
   modelValue: {
@@ -68,7 +68,7 @@ const props = defineProps({
     default: '',
   },
   validationMode: {
-    type: String as PropType<'aggressive' | 'eager'>,
+    type: String as PropType<ValidationMode>,
     default: 'aggressive',
   },
 });
@@ -78,69 +78,16 @@ const emit =
     (e: 'update:modelValue', value: string): void;
   }>();
 
-const {
-  modelValue,
-  value,
-  itemText,
-  itemValue,
-  error,
-  name,
-  disabled,
-  rules,
-  validationMode,
-} = toRefs(props);
-const uncontrolledValue = ref();
 
-const isEagerValidation = computed(() => {
-  return validationMode.value === 'eager';
-});
-
-const message = computed(() => {
-  return errorMessage.value || props.errorMessages[0];
-});
-
-const {
-  value: vvValue,
-  errorMessage,
-  validate,
-  setValue,
-} = useField(name, rules, {
-  initialValue: value.value || modelValue.value,
-  validateOnValueUpdate: !isEagerValidation.value,
-});
-
-watch(uncontrolledValue, (val) => {
-  if (name?.value) {
-    setValue(val);
-  }
-
-  emit('update:modelValue', val);
-
-  if (errorMessage.value && isEagerValidation.value) {
-    validate();
-  }
-});
-
-watch(modelValue, (val) => {
-  uncontrolledValue.value = val;
-});
-
-watch(vvValue, (val) => {
-  uncontrolledValue.value = val;
-});
+const {errorMessage, uncontrolledValue, handleBlur, inputId} =
+  useFormValue(props, emit);
 
 const getValue = (option: string | Record<string, any>) => {
-  return typeof option === 'string' ? option : option[itemValue.value];
+  return typeof option === 'string' ? option : option[props.itemValue];
 };
 
 const getText = (option: string | Record<string, any>) => {
-  return typeof option === 'string' ? option : option[itemText.value];
-};
-
-const handleBlur = () => {
-  if (isEagerValidation.value) {
-    validate();
-  }
+  return typeof option === 'string' ? option : option[props.itemText];
 };
 </script>
 
@@ -155,10 +102,16 @@ const handleBlur = () => {
       wrapperClass,
     ]"
   >
-    <label v-if="label" :for="name" class="v-input-label" :class="labelClass">
+    <label
+      v-if="label"
+      :for="inputId"
+      class="v-input-label"
+      :class="labelClass"
+    >
       {{ label }}
     </label>
     <select
+      :id="inputId"
       v-model="uncontrolledValue"
       @blur="handleBlur"
       class="v-input-control"
@@ -174,8 +127,8 @@ const handleBlur = () => {
         {{ getText(option) }}
       </option>
     </select>
-    <div v-if="message" class="v-input-error" :class="errorClass">
-      {{ message }}
+    <div v-if="errorMessage" class="v-input-error" :class="errorClass">
+      {{ errorMessage }}
     </div>
   </div>
 </template>

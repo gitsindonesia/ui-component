@@ -17,6 +17,9 @@ import VFileUploadImageTheme from './VFileUploadImageTheme.vue';
 import VFileUploadDropzoneTheme from './VFileUploadDropzoneTheme.vue';
 
 const props = defineProps({
+  /**
+   * @deprecated Use `modelValue` instead
+   */
   value: {
     type: Object as PropType<FileValue>,
     default: null,
@@ -291,16 +294,18 @@ const fileName = computed(() => {
     return innerValue.value.split('/').pop();
   }
 
-  if((innerValue.value as any)?.length) {
+  if ((innerValue.value as any)?.length) {
     let str = '';
-    for(let i = 0; i < (innerValue.value as any)?.length; i+=1) {
-      const f = innerValue?.value ? (innerValue.value as Record<any, any>)[i] as any : {};
+    for (let i = 0; i < (innerValue.value as any)?.length; i += 1) {
+      const f = innerValue?.value
+        ? ((innerValue.value as Record<any, any>)[i] as any)
+        : {};
 
-      if(i > 0){
+      if (i > 0) {
         str += ', ';
       }
 
-       str += f?.name || '';
+      str += f?.name || '';
     }
 
     return str;
@@ -382,7 +387,7 @@ const borderClass = computed(() => {
       @choose="pickFile"
     >
       <template v-slot:filename="slotData">
-        <slot name="filename" v-bind="slotData"/>
+        <slot name="filename" v-bind="slotData" />
       </template>
     </VFileUploadImageTheme>
 
@@ -412,7 +417,7 @@ const borderClass = computed(() => {
       @remove="removeFile"
     >
       <template v-slot:filename="slotData">
-        <slot name="filename" v-bind="slotData"/>
+        <slot name="filename" v-bind="slotData" />
       </template>
     </VFileUploadDropzoneTheme>
 
@@ -434,7 +439,7 @@ const borderClass = computed(() => {
       @remove="removeFile"
     >
       <template v-slot:filename="slotData">
-        <slot name="filename" v-bind="slotData"/>
+        <slot name="filename" v-bind="slotData" />
       </template>
     </VFileUploadDefaultTheme>
 
