@@ -6,3 +6,4 @@
 *.config.*
 .storybook
 *.css
+/starter
