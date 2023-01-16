@@ -1,21 +1,23 @@
 <script setup lang="ts">
-const title = 'Nuxt + GITS UI Minimal Starter'
+const title = 'Nuxt + GITS UI Minimal Starter';
 
 useHead({
   title,
   htmlAttrs: {
-    lang: 'en'
+    lang: 'en',
   },
   meta: [
     {
       name: 'description',
       key: 'description',
-      content: title
-    }
-  ]
+      content: title,
+    },
+  ],
 });
 </script>
 
 <template>
-  <Welcome />
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
