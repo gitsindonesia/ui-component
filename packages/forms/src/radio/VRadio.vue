@@ -1,12 +1,6 @@
-<script lang="ts">
-export default {
-  inheritAttrs: false,
-};
-</script>
-
 <script setup lang="ts">
-import {useField} from 'vee-validate';
-import {ref, toRefs, watch} from 'vue';
+import {PropType} from 'vue';
+import {useFormValue, ValidationMode} from '../composables';
 
 const props = defineProps({
   modelValue: {
@@ -72,46 +66,20 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  validationMode: {
+    type: String as PropType<ValidationMode>,
+    default: 'aggressive',
+  },
 });
 
-const {modelValue, rules, label, inputClass, name, id} = toRefs(props);
-const uncontrolledValue = ref();
+type RadioValue = string | number | boolean;
 
-const emit = defineEmits(['update:modelValue']);
+const emit =
+  defineEmits<{
+    (e: 'update:modelValue', value: RadioValue): void;
+  }>();
 
-type RadioValue = string | number | string[] | undefined;
-
-const {value: vvValue, errorMessage, setValue} = useField<RadioValue>(name, rules, {
-  initialValue: modelValue.value,
-});
-
-watch(
-  uncontrolledValue,
-  (val) => {
-    if (name.value) {
-      setValue(val);
-    }
-
-    emit('update:modelValue', val);
-  },
-  {immediate: true},
-);
-
-watch(
-  modelValue,
-  (val) => {
-    uncontrolledValue.value = val;
-  },
-  {immediate: true},
-);
-
-watch(
-  vvValue,
-  (val) => {
-    uncontrolledValue.value = val;
-  },
-  {immediate: true},
-);
+const {errorMessage, uncontrolledValue, inputId} = useFormValue(props, emit);
 </script>
 
 <template>
@@ -139,7 +107,7 @@ watch(
       />
       <label
         v-if="label"
-        :for="id || name"
+        :for="inputId"
         class="v-radio-label"
         :class="labelClass"
       >

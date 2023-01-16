@@ -574,32 +574,45 @@ export const TestInputState: Story<{}> = (args) => ({
       text2: args.setupWithInitialValue ? 'init2' : '',
     });
 
-    const {handleSubmit, resetForm, values} = args.useForm ? useForm({
-      initialValues,
-    }) : {handleSubmit: (cb: any) => null, resetForm: () => null, values: {}};
+    const {handleSubmit, resetForm, values} = args.useForm
+      ? useForm({
+          initialValues,
+        })
+      : {handleSubmit: (cb: any) => null, resetForm: () => null, values: {}};
 
     const onSubmit = handleSubmit((values: any) => {
       alert(JSON.stringify(values));
     });
 
     const onChange = (val: any) => {
-      alert("onChange: " + val);
+      alert('onChange: ' + val);
     };
 
     const resetVVForm = () => {
-      if(!args.useForm){
-        alert('Story is not set up with Vee Validate Form. set `useForm` control to true to try this action.')
+      if (!args.useForm) {
+        alert(
+          'Story is not set up with Vee Validate Form. set `useForm` control to true to try this action.',
+        );
       }
 
       initialValues.value = {
         text: 'changes',
-        text2: 'change me too!'
+        text2: 'change me too!',
       };
 
       resetForm();
-    }
+    };
 
-    return {args, onSubmit, resetForm, values, modelValue, modelValue2, onChange, resetVVForm};
+    return {
+      args,
+      onSubmit,
+      resetForm,
+      values,
+      modelValue,
+      modelValue2,
+      onChange,
+      resetVVForm,
+    };
   },
   template: `
     <form @submit="onSubmit" class="border-none">
@@ -675,7 +688,7 @@ export const TestInputState: Story<{}> = (args) => ({
 
       <div class="w-1/2 p-2">
         <v-input
-          value="initival"
+          value="initial"
           name="init1"
           label="Initial Value w/ value prop + name"
         />
