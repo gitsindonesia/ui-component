@@ -1,5 +1,19 @@
 {
-  "private": true,
+  "name": "@gits-id/nuxt-minimal",
+  "description": "Lightweight Nuxt.js template with GITS UI",
+  "version": "0.0.0",
+  "keywords": [
+    "admin",
+    "dashboard",
+    "template",
+    "nuxt",
+    "nuxt.js",
+    "vue",
+    "vue.js",
+    "gits",
+    "gits-id",
+    "gits-ui"
+  ],
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
