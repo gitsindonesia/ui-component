@@ -1,4 +1,18 @@
 {
+  "name": "@gits-id/nuxt-admin",
+  "description": "Extensible admin template powered by Nuxt.js and GITS UI",
+  "keywords": [
+    "admin",
+    "dashboard",
+    "template",
+    "nuxt",
+    "nuxt.js",
+    "vue",
+    "vue.js",
+    "gits",
+    "gits-id",
+    "gits-ui"
+  ],
   "private": true,
   "scripts": {
     "build": "nuxt build",
