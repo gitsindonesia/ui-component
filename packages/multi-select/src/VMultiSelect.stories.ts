@@ -863,7 +863,7 @@ export const DarkMode = () => ({
     return {items};
   },
   template: `
-  <div class="dark:bg-neutral-900 p-6">
+  <div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
     <v-multi-select :items="items" label="Label" placeholder="Placeholder" />
   </div>
   `,

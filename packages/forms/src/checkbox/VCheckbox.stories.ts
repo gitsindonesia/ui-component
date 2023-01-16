@@ -313,3 +313,15 @@ export const TestInputState: Story<{}> = (args) => ({
 TestInputState.args = {
   useForm: false,
 };
+
+export const DarkMode: Story = (args) => ({
+  components: {VCheckbox},
+  setup() {
+    return {args};
+  },
+  template: `
+  <div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
+    <VCheckbox v-bind='args' />
+  </div>
+  `,
+});

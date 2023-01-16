@@ -357,12 +357,14 @@ export const BackdropBlur: Story<{}> = (args) => ({
 
 export const DarkMode: Story<{}> = () => ({
   components: {VAppBar},
+  setup() {
+    return {defaultColors};
+  },
   template: `
-<main class="dark dark:bg-neutral-800 dark:text-neutral-200">
-  <v-app-bar>
-    Transparent AppBar
-  </v-app-bar>
-  <p>lorem </p>
+<main class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6 space-y-2">
+  <VAppBar v-for="color in defaultColors" :key="color" :color="color">
+    {{ color }}
+  </VAppBar>
 </main>
 `,
 });

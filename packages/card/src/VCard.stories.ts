@@ -187,3 +187,17 @@ export const Shadow: Story<{}> = (args) => ({
 </v-card>
 `,
 });
+
+export const DarkMode: Story<{}> = () => ({
+  components: {VCard},
+  setup() {
+    return {defaultColors};
+  },
+  template: `
+<main class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6 space-y-2">
+  <VCard v-for="color in defaultColors" :key="color" :color="color">
+    {{ color }}
+  </VCard>
+</main>
+`,
+});

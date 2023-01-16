@@ -975,3 +975,24 @@ export const DividerInset: Story = (args) => ({
     </List>
   `,
 });
+
+export const DarkMode: Story<{}> = (args) => ({
+  components: {Dropdown, List, ListItem, ListItemDivider},
+  setup() {
+    return {args};
+  },
+  template: `
+<main class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6 space-y-2">
+  <List
+    v-bind="args"
+    hover
+  >
+    <ListItem prepend-icon="ri:home-line">Item 1</ListItem>
+    <ListItemDivider inset />
+    <ListItem append-icon="ri:add-line">Item 3</ListItem>
+    <ListItemDivider inset />
+    <ListItem>Item 5</ListItem>
+  </List>
+</main>
+`,
+});

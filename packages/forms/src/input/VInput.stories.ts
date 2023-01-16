@@ -728,7 +728,7 @@ export const DarkMode: Story<VInputProps> = (args) => ({
     return {args, modelValue};
   },
   template: `
-    <div class="dark:bg-neutral-900 p-4"> 
+    <div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-4"> 
       <v-input
         v-model="modelValue"
         label="Label"

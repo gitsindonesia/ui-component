@@ -211,8 +211,8 @@ export const DarkMode: Story = (args) => ({
     return {args};
   },
   template: `
-  <div class="dark:bg-neutral-900 p-6">
-    <VSwitch v-bind='args'/>
+  <div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
+    <VSwitch v-bind='args' />
   </div>
   `,
 });

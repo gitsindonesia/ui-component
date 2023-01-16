@@ -5,6 +5,7 @@ import {useForm} from 'vee-validate';
 import {ref} from 'vue';
 import '@gits-id/forms/src/forms.scss';
 import '@gits-id/pagination/src/VPagination.scss';
+import '@gits-id/pagination/src/VPagination.dark.scss';
 import './VDataTablePagination.dark.scss';
 
 export default {
@@ -237,3 +238,15 @@ PassingPaginationProps.parameters = {
     },
   },
 };
+
+export const DarkMode: Story<{}> = (args) => ({
+  components: {VDataTablePagination},
+  setup() {
+    return {args};
+  },
+  template: `
+<main class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6 space-y-2">
+  <VDataTablePagination v-bind="args" />
+</main>
+`,
+});

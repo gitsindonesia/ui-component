@@ -111,3 +111,15 @@ export const CustomActivator: Story = (args, {argTypes}) => ({
     </div>
   `,
 });
+
+export const DarkMode: Story<{}> = (args) => ({
+  components: {Dropdown},
+  setup() {
+    return {args};
+  },
+  template: `
+<main class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6 space-y-2">
+  <Dropdown v-bind="args"/>
+</main>
+`,
+});
