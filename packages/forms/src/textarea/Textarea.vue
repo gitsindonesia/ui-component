@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {PropType} from 'vue';
-import { type ValidationMode, useFormValue } from 'src/composables';
+import { type ValidationMode, useFormValue } from '../composables';
 
 const props = defineProps({
   modelValue: {
