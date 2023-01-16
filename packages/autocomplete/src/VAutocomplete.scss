@@ -1,3 +1,50 @@
+:root {
+  // field
+  --v-autocomplete-field-bg-color: theme('colors.white');
+  --v-autocomplete-field-border-color: theme('borderColor.DEFAULT');
+
+  // field hover
+  --v-autocomplete-field-hover-border-color: theme('borderColor.gray.400');
+
+  // input
+  --v-autocomplete-input-color: theme('colors.gray.600');
+  --v-autocomplete-input-bg-color: theme('colors.transparent');
+
+  // input selected
+  --v-autocomplete-input-selected-color: theme('colors.gray.800');
+
+  // clearable button
+  --v-autocomplete-clearable-button-color: theme('colors.gray.400');
+
+  // clearable button hover
+  --v-autocomplete-clearable-button-hover-color: theme('colors.gray.500');
+  --v-autocomplete-clearable-button-hover-bg-color: theme('colors.gray.100');
+
+  // icon
+  --v-autocomplete-icon-color: theme('colors.gray.400');
+
+  // options
+  --v-autocomplete-options-bg-color: theme('colors.white');
+
+  // empty
+  --v-autocomplete-empty-color: theme('colors.gray.700');
+
+  // item
+  --v-autocomplete-item-color: theme('colors.gray.800');
+
+  // item selected
+  --v-autocomplete-item-selected-color: theme('colors.primary.500');
+
+  // item selected item
+  --v-autocomplete-item-selected-icon-color: theme('colors.primary.500');
+
+  // item inactive
+  --v-autocomplete-item-inactive-color: theme('colors.gray.900');
+
+  // item active
+  --v-autocomplete-item-active-bg-color: theme('colors.gray.100');
+}
+
 .autocomplete {
   position: relative;
 
@@ -10,10 +57,12 @@
   }
 
   &-field {
+    background-color: var(--v-autocomplete-field-bg-color);
+    border: 1px solid var(--v-autocomplete-field-border-color);
+
     @apply relative
     w-full
     text-left
-    bg-white
     border
     rounded-md
     cursor-default
@@ -23,94 +72,124 @@
     overflow-hidden
     transition
     duration-300
-    border-gray-300 hover:border-gray-400 
     focus-within:ring-primary-500 focus-within:border-primary-500;
 
+    &:hover {
+      --v-autocomplete-border-color: var(
+        --v-autocomplete-field-hover-border-color
+      );
+    }
+
     &--error {
-      @apply border-error-500 focus-within:ring-error-500 focus-within:border-error-500;
+      @apply border-error-500 focus-within:ring-error-500
+        focus-within:border-error-500;
     }
   }
 
   &-input {
+    color: var(--v-autocomplete-input-color);
+    background-color: var(--v-autocomplete-input-bg-color);
+
+    &--selected {
+      --v-autocomplete-input-color: var(--v-autocomplete-input-selected-color);
+    }
+
     @apply w-full
-    border-none
-    focus:ring-0
-    py-3
-    pl-3
-    pr-20
-    leading-5
-    text-gray-600;
+      border-none
+      focus:ring-0
+      py-3
+      pl-3
+      pr-20
+      leading-5;
   }
 
   &-clearable {
     @apply absolute inset-y-0 right-0 flex items-center pr-4;
 
     &-button {
-      @apply mr-1
-    text-gray-400
-    hover:text-gray-700
-    hover:bg-gray-100
-    rounded-full
-    p-1
-    transition
-    duration-300;
+      color: var(--v-autocomplete-clearable-button-color);
+      background-color: var(--v-autocomplete-clearable-button-bg-color);
+
+      &:hover {
+        --v-autocomplete-clearable-button-color: var(
+          --v-autocomplete-clearable-button-hover-color);
+        --v-autocomplete-clearable-button-bg-color: var(
+          --v-autocomplete-clearable-button-hover-bg-color);
+      }
+
+      @apply mr-1 rounded-full p-1 transition duration-300;
     }
   }
 
   &-icon {
-    @apply w-6 h-6 fill-current text-gray-400;
+    color: var(--v-autocomplete-icon-color);
+
+    @apply w-6 h-6 fill-current;
   }
 
   &-options {
+    background-color: var(--v-autocomplete-options-bg-color);
+
     @apply absolute
-    z-10
-    w-full
-    py-1
-    mt-1
-    overflow-auto
-    text-base
-    bg-white
-    rounded-md
-    shadow-lg
-    max-h-60
-    ring-1 ring-black ring-opacity-5
-    focus:outline-none
-    sm:text-sm;
+      z-10
+      w-full
+      py-1
+      mt-1
+      overflow-auto
+      text-base
+      rounded-md
+      shadow-lg
+      max-h-60
+      ring-1 ring-black ring-opacity-5
+      focus:outline-none
+      sm:text-sm;
   }
 
   &-empty {
-    @apply cursor-default select-none relative py-2 px-4 text-gray-700;
+    color: var(--v-autocomplete-empty-color);
+
+    @apply cursor-default select-none relative py-2 px-4;
   }
 
   &-item {
+    background-color: var(--v-autocomplete-item-bg-color);
+
     @apply cursor-default select-none relative py-2 pl-10 pr-4;
 
     &-text {
+      color: var(--v-autocomplete-item-color);
+
       @apply block truncate font-normal;
 
       &--selected {
-        @apply font-medium text-primary-500;
+        --v-autocomplete-item-color: var(--v-autocomplete-item-selected-color);
+
+        @apply font-medium;
       }
     }
 
     &--active {
-      @apply bg-gray-100;
+      --v-autocomplete-item-bg-color: var(--v-autocomplete-item-active-bg-color);
     }
 
     &--inactive {
-      @apply text-gray-900;
+      --v-autocomplete-item-color: var(--v-autocomplete-item-inactive-color);
     }
 
     &-selected {
       @apply absolute inset-y-0 left-0 flex items-center pl-3;
 
       &-icon {
-        @apply w-5 h-5 fill-current text-primary-500;
+        color: var(--v-autocomplete-item-selected-icon-color);
+
+        @apply w-5 h-5 fill-current;
       }
     }
   }
 
   &-error {
-    @apply text-error-500 text-sm mt-1;
+    color: var(--v-autocomplete-error-color);
+
+    @apply text-sm mt-1;
   }
 }
