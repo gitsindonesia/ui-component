@@ -181,7 +181,6 @@ const emit = defineEmits([
 const {
   maxBadge,
   items,
-  modelValue,
   placeholder,
   id,
   delay,
@@ -204,7 +203,7 @@ const focus = ref(-1);
 const refItems = ref<HTMLDivElement[]>([]);
 const dropdown = ref<HTMLDivElement | null>(null);
 
-const {errorMessage, uncontrolledValue, clear, setValue} = useFormValue(props, emit, props.fieldOptions);
+const {errorMessage, uncontrolledValue, clear} = useFormValue(props, emit, props.fieldOptions);
 
 const matchBy = (item: VMultiSelectItem, key: string) => {
   return String(item?.[key])
