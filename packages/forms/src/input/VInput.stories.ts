@@ -689,7 +689,7 @@ export const TestInputState: Story<{}> = (args) => ({
 
       <div class="w-1/2 p-2">
         <v-input
-          value="initival"
+          value="initial"
           name="init1"
           label="Initial Value w/ value prop + name"
         />

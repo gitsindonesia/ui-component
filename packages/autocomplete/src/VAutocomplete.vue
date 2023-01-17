@@ -9,8 +9,8 @@ import {
   ComboboxLabel,
   TransitionRoot,
 } from '@headlessui/vue';
-import {useField} from 'vee-validate';
 import {Icon} from '@gits-id/icon';
+import {useFormValue, type ValidationMode} from '@gits-id/forms';
 
 export type Item = {
   text: string;
@@ -33,6 +33,7 @@ export type Props = {
   clearable?: boolean;
   errorClass?: string;
   wrapperClass?: string;
+  validationMode?: ValidationMode
 };
 
 const props = withDefaults(defineProps<Props>(), {
@@ -49,33 +50,28 @@ const props = withDefaults(defineProps<Props>(), {
   clearable: false,
   errorClass: 'autocomplete-error',
   wrapperClass: '',
+  validationMode: 'aggressive'
 });
 
-const emit = defineEmits(['update:modelValue', 'update:query']);
+const emit =
+  defineEmits<{
+    (e: 'update:modelValue', value: Record<string, any>): void;
+    (e: 'update:query', value: string): void;
+  }>();
 
-const {modelValue, searchBy, items, name, rules} = toRefs(props);
-const {value: selected, errorMessage} = useField(name, rules, {
-  initialValue: modelValue.value,
-});
+const {errorMessage, uncontrolledValue, clear: clearField} =
+  useFormValue(props, emit);
+
+const {items} = toRefs(props);
 const query = ref('');
 
-watch(modelValue, (val) => {
-  selected.value = val;
-});
-
-watch(selected, (val) => {
-  emit('update:modelValue', val);
-});
-
-watch(query, (val) => {
-  emit('update:query', val);
-});
+watch(query, (val) => emit('update:query', val));
 
 const filteredItems = computed(() =>
   query.value === ''
     ? items.value
     : items.value.filter((item) =>
-        String(item[searchBy.value])
+        String(item[props.searchBy])
           .toLowerCase()
           .replace(/\s+/g, '')
           .includes(query.value.toLowerCase().replace(/\s+/g, '')),
@@ -83,14 +79,14 @@ const filteredItems = computed(() =>
 );
 
 const clear = () => {
-  selected.value = '';
   query.value = '';
+  clearField()
 };
 </script>
 
 <template>
   <Combobox
-    v-model="selected"
+    v-model="uncontrolledValue"
     class="autocomplete"
     :class="[
       wrapperClass,
@@ -122,7 +118,7 @@ const clear = () => {
         />
         <div class="autocomplete-clearable">
           <button
-            v-if="clearable && selected"
+            v-if="clearable && uncontrolledValue"
             type="button"
             aria-label="Clear"
             class="autocomplete-clearable-button"

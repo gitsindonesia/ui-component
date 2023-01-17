@@ -1,12 +1,15 @@
 <script setup lang="ts">
-import {computed, toRefs, PropType, watch, ref} from 'vue';
-import {useField} from 'vee-validate';
+import {PropType} from 'vue';
+import { type ValidationMode, useFormValue } from '../composables';
 
 const props = defineProps({
   modelValue: {
     type: String,
     default: '',
   },
+  /**
+   * @deprecated Use `modelValue` instead
+   */
   value: {
     type: String,
     default: '',
@@ -75,63 +78,18 @@ const props = defineProps({
     default: '',
   },
   validationMode: {
-    type: String as PropType<'aggressive' | 'eager'>,
+    type: String as PropType<ValidationMode>,
     default: 'aggressive',
   },
 });
-
-const {validationMode, name, rules, modelValue} = toRefs(props);
 
 const emit =
   defineEmits<{
     (e: 'update:modelValue', value: string): void;
   }>();
 
-const uncontrolledValue = ref();
-
-const isEagerValidation = computed(() => {
-  return validationMode.value === 'eager';
-});
-
-const {value:vvValue, errorMessage, handleChange, setValue} = useField(name, rules, {
-  initialValue: props.modelValue || props.value,
-  validateOnValueUpdate: !isEagerValidation.value,
-});
-
-watch(modelValue, (val) => {
-  uncontrolledValue.value = val;
-});
-
-watch(vvValue, (val) => {
-  uncontrolledValue.value = val;
-});
-
-watch(uncontrolledValue, (val) => {
-  if(name.value){
-    setValue(val);
-  }
-
-  emit('update:modelValue', val);
-});
-
-const validationListeners = computed(() => {
-  // If the field is valid or have not been validated yet
-  // lazy
-  if (!errorMessage.value && isEagerValidation.value) {
-    return {
-      blur: handleChange,
-      change: handleChange,
-      // disable `shouldValidate` to avoid validating on input
-      input: (e: any) => handleChange(e, false),
-    };
-  }
-  // Aggressive
-  return {
-    blur: handleChange,
-    change: handleChange,
-    input: handleChange, // only switched this
-  };
-});
+  const {errorMessage, uncontrolledValue, validationListeners, inputId} =
+  useFormValue(props, emit);
 </script>
 
 <template>
@@ -146,9 +104,16 @@ const validationListeners = computed(() => {
       wrapperClass,
     ]"
   >
-    <label v-if="label" :for="name" class="v-input-label" :class="labelClass">{{ label }}</label>
+    <label
+      v-if="label"
+      :for="inputId"
+      class="v-input-label"
+      :class="labelClass"
+    >
+      {{ label }}
+    </label>
     <textarea
-      :id="name"
+      :id="inputId"
       v-model="uncontrolledValue"
       v-on="validationListeners"
       :class="['v-input-control', inputClass]"
