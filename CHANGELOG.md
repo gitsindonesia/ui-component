@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.4](https://github.com/gitsindonesia/ui-component/compare/v0.14.3...v0.14.4) (2023-01-17)
+
+### Bug Fixes
+
+- build ([6166bdd](https://github.com/gitsindonesia/ui-component/commit/6166bdd6b40e6ff9d37e5660212d19fd4b4dcf85))
+
+### Features
+
+- **Autocomplete:** integrate `useFormValue` in v-autocomplete component ([a3d5447](https://github.com/gitsindonesia/ui-component/commit/a3d5447b0eaf1295ca3931ecf94c9cd2fa0768c5))
+- **Forms:** refactor uncontroller value logic into `useFormValue` composable ([182837c](https://github.com/gitsindonesia/ui-component/commit/182837c47d200593ed5ec70e72fafae7561b5fa7))
+- **VMultiSelect:** integrate `useFormValue` in v-multi-select component ([f9b923f](https://github.com/gitsindonesia/ui-component/commit/f9b923f89a977755e41a4db46a83b06bbfc2d60f))
+- **VSelect:** integrate `useFormValue` in v-select component ([8940082](https://github.com/gitsindonesia/ui-component/commit/894008232da77705f6b7ab91f1e88a68e8de0af8))
+
 ## [0.14.3](https://github.com/gitsindonesia/ui-component/compare/v0.14.2...v0.14.3) (2023-01-13)
 
 **Note:** Version bump only for package gits-ui-monorepo
