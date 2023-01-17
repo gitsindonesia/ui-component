@@ -18,8 +18,8 @@ const adminDrawer = useAdminDrawer();
     <div class="flex items-center gap-2 xl:pr-2">
       <AdminNotification />
       <VDropdown
-        :label="appConfig.accountMenuLabel"
-        :items="appConfig.accountMenus"
+        :label="appConfig.accountMenu.label"
+        :items="appConfig.accountMenu.items"
         right
       />
     </div>

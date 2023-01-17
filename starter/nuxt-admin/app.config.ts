@@ -11,14 +11,16 @@ export default defineAppConfig({
       to: '/admin',
     },
   ],
-  accountMenuLabel: 'Account',
-  accountMenus: [
-    {
-      text: 'Profile',
-      icon: 'ic:baseline-person',
-      to: '/admin/profile',
-    },
-  ],
+  accountMenu: {
+    label: 'Accont',
+    items: [
+      {
+        text: 'Profile',
+        icon: 'ic:baseline-person',
+        to: '/admin/profile',
+      },
+    ],
+  },
   notification: {
     label: 'Notification',
     items: [
