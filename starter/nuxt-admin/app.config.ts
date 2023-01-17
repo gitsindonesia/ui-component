@@ -12,7 +12,7 @@ export default defineAppConfig({
     },
   ],
   accountMenu: {
-    label: 'Accont',
+    label: 'Account',
     items: [
       {
         text: 'Profile',
