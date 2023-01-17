@@ -127,11 +127,7 @@ const selected = ref(modelValue.value);
 const tabRefs = ref<HTMLElement[]>([]);
 const tabContent = ref<HTMLDivElement>();
 const tabSlider = ref<HTMLDivElement>();
-const observer = ref(
-  new MutationObserver((event) => {
-    setSlider(selected.value as number);
-  }),
-);
+const observer = ref();
 
 watch(tabContent, (val, prev) => {
   if (prev) {
@@ -219,6 +215,9 @@ const setSlider = (index: number) => {
 };
 
 onMounted(() => {
+  observer.value = new MutationObserver(() => {
+    setSlider(+selected.value);
+  });
   setSlider(+selected.value);
 });
 

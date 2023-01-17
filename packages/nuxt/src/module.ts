@@ -313,12 +313,92 @@ const components: AddComponentOptions[] = [
     filePath: '@gits-id/tooltip/src/VTooltip.vue',
   },
 ];
+
 export interface ModuleOptions {
+  /**
+   * Determine whether to load the css bundle.
+   *
+   * @default false
+   * @example
+   * // nuxt.config.ts
+   * export default defineConfig({
+   *  gitsUi: {
+   *   css: true
+   * })
+   */
   css?: boolean;
+  /**
+   * Determine whether to load the sass bundle.
+   *
+   * @default false
+   * @example
+   * // nuxt.config.ts
+   * export default defineConfig({
+   *  gitsUi: {
+   *   sass: true
+   * })
+   */
   sass?: boolean;
+  /**
+   * Determine whether to auto-imports the components.
+   *
+   * @default true
+   * @example
+   * // nuxt.config.ts
+   * export default defineConfig({
+   *  gitsUi: {
+   *   components: true
+   * })
+   */
   components?: boolean;
+  /**
+   * Determine whether to transpile dependencies.
+   *
+   * @default true
+   * @example
+   * // nuxt.config.ts
+   * export default defineConfig({
+   *  gitsUi: {
+   *   transpileDeps: true
+   * })
+   */
   transpileDeps?: boolean;
+  /**
+   * Determine whether to load floating vue styles.
+   *
+   * @default true
+   * @example
+   * // nuxt.config.ts
+   * export default defineConfig({
+   *  gitsUi: {
+   *   loadFloatingVueStyles: true
+   * })
+   */
   loadFloatingVueStyles?: boolean;
+  /**
+   * Determine whether to load default styles.
+   * Only works when `css` and `scss` is `false`.
+   *
+   * @default true
+   * @example
+   * // nuxt.config.ts
+   * export default defineConfig({
+   *  gitsUi: {
+   *   loadDefaultStyles: false
+   * })
+   */
+  loadDefaultStyles?: boolean;
+  /**
+   * Determine whether to load dark mode styles.
+   *
+   * @default false
+   * @example
+   * // nuxt.config.ts
+   * export default defineConfig({
+   *  gitsUi: {
+   *   darkMode: true
+   * })
+   */
   darkMode?: boolean;
 }
 
@@ -333,6 +413,7 @@ export default defineNuxtModule<ModuleOptions>({
     components: true,
     transpileDeps: true,
     loadFloatingVueStyles: true,
+    loadDefaultStyles: true,
     darkMode: false,
   },
   setup(options, nuxt) {
@@ -358,8 +439,10 @@ export default defineNuxtModule<ModuleOptions>({
       nuxt.options.css.push('@gits-id/ui/styles.scss');
     }
 
-    // load transition styles if css or sass is not used
-    if (!options.css && !options.sass) {
+    // load required styles when not using css bundle and not using sass bundle
+    if (!options.css && !options.sass && options.loadDefaultStyles) {
+      nuxt.options.css.push('@gits-id/menu/dist/style.css');
+      nuxt.options.css.push('@gits-id/tooltip/dist/style.css');
       nuxt.options.css.push('@gits-id/theme/transition.css');
     }
 
