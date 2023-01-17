@@ -1,11 +1,11 @@
 import {Story} from '@storybook/vue3';
 import {ref} from 'vue';
-import MyCollapsible from './VCollapsible.vue';
-import MyCollapsibleGroup from './VCollapsibleGroup.vue';
+import VCollapsible from './VCollapsible.vue';
+import VCollapsibleGroup from './VCollapsibleGroup.vue';
 
 export default {
   title: 'Components/Collapsible',
-  component: MyCollapsible,
+  component: VCollapsible,
   args: {
     modelValue: false,
     hideIcon: false,
@@ -20,15 +20,15 @@ export default {
 };
 
 const Template: Story<{}> = (args) => ({
-  components: {MyCollapsible},
+  components: {VCollapsible},
   setup() {
     const isOpen = ref(false);
 
     return {args, isOpen};
   },
-  template: `<MyCollapsible v-model="isOpen" v-bind='args'>
+  template: `<VCollapsible v-model="isOpen" v-bind='args'>
     Anim eiusmod ea nostrud do incididunt consequat duis adipisicing reprehenderit nisi. Minim mollit eiusmod incididunt fugiat ipsum velit ut consequat est consectetur adipisicing. Nulla duis anim velit magna aute nisi elit nulla deserunt. Fugiat consequat ut magna eiusmod sit incididunt qui. Incididunt velit fugiat sunt sint amet magna est laborum excepteur. Aute aliqua nisi est nulla voluptate enim qui amet labore et consectetur. Est pariatur qui amet cupidatat magna est adipisicing quis ea ea.
-  </MyCollapsible>
+  </VCollapsible>
   `,
 });
 
@@ -92,7 +92,7 @@ CustomClasses.parameters = {
 };
 
 export const Accordion: Story = (args) => ({
-  components: {MyCollapsibleGroup, MyCollapsible},
+  components: {VCollapsibleGroup, VCollapsible},
   setup() {
     const items = Array.from({length: 5}, (v, k) => ({
       title: `Item ${k + 1}`,
@@ -101,13 +101,13 @@ export const Accordion: Story = (args) => ({
     return {args, items};
   },
   template: `
-    <MyCollapsibleGroup accordion :items="items">
+    <VCollapsibleGroup accordion :items="items">
       <!--
-      <MyCollapsible v-for="i in 5" :key="i" title="Item">
+      <VCollapsible v-for="i in 5" :key="i" title="Item">
       Anim eiusmod ea nostrud do incididunt consequat duis adipisicing reprehenderit nisi. Minim mollit eiusmod incididunt fugiat ipsum velit ut consequat est consectetur adipisicing. Nulla duis anim velit magna aute nisi elit nulla deserunt. Fugiat consequat ut magna eiusmod sit incididunt qui. Incididunt velit fugiat sunt sint amet magna est laborum excepteur. Aute aliqua nisi est nulla voluptate enim qui amet labore et consectetur. Est pariatur qui amet cupidatat magna est adipisicing quis ea ea.
-      </MyCollapsible>
+      </VCollapsible>
       -->
-    </MyCollapsibleGroup>
+    </VCollapsibleGroup>
   `,
 });
 Accordion.parameters = {
@@ -117,3 +117,22 @@ Accordion.parameters = {
     },
   },
 };
+
+export const DarkMode: Story<{}> = (args) => ({
+  components: {VCollapsible},
+  setup() {
+    const isOpen = ref(false);
+
+    return {
+      isOpen,
+      args,
+    };
+  },
+  template: `
+<main class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6 space-y-2">
+  <VCollapsible v-model="isOpen" v-bind='args'>
+    Anim eiusmod ea nostrud do incididunt consequat duis adipisicing reprehenderit nisi. Minim mollit eiusmod incididunt fugiat ipsum velit ut consequat est consectetur adipisicing. Nulla duis anim velit magna aute nisi elit nulla deserunt. Fugiat consequat ut magna eiusmod sit incididunt qui. Incididunt velit fugiat sunt sint amet magna est laborum excepteur. Aute aliqua nisi est nulla voluptate enim qui amet labore et consectetur. Est pariatur qui amet cupidatat magna est adipisicing quis ea ea.
+  </VCollapsible>
+</main>
+`,
+});

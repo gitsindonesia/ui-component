@@ -1,5 +1,7 @@
 :root {
   --v-pagination-shadow: theme('boxShadow.sm');
+  --v-pagination-border-radius: theme('borderRadius.none');
+  --v-pagination-gap: theme('gap.0');
 
   /* item */
   --v-pagination-item-padding-x: theme('padding.4');
@@ -23,7 +25,8 @@
   --v-pagination-item-hover-bg-color: theme('colors.gray.50');
 
   /* item disabled */
-  --v-pagination-item-disabled-bg-color: inherit;
+  --v-pagination-item-disabled-bg-color: var(--v-pagination-item-bg-color);
+  --v-pagination-item-disabled-border-color: var(--v-pagination-item-border-color);
   --v-pagination-item-disabled-text-color: theme('colors.gray.400');
 
   /* item action */
@@ -37,8 +40,21 @@
   --v-pagination-lg-item-action-padding-y: theme('padding.4');
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 .v-pagination {
   box-shadow: var(--v-pagination-shadow);
+  gap: var(--v-pagination-gap);
 
   @apply inline-flex items-center -space-x-px;
 
@@ -56,12 +72,14 @@
     font-weight: var(--v-pagination-item-font-weight);
     height: var(--v-pagination-item-height);
     gap: var(--v-pagination-item-gap);
+    border-radius: var(--v-pagination-border-radius);
 
     @apply relative inline-flex items-center;
 
     &:disabled {
       background: var(--v-pagination-item-disabled-bg-color);
       color: var(--v-pagination-item-disabled-text-color);
+      border-color: var(--v-pagination-item-disabled-border-color);
 
       @apply cursor-not-allowed;
     }

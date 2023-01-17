@@ -5,6 +5,7 @@ import Icon from '@gits-id/icon';
 import AlertVModelStory from './stories/AlertVModelStory.vue';
 import AlertTransitionStory from './stories/AlertTransitionStory.vue';
 import AlertCustomStory from './stories/AlertCustomStory.vue';
+import './VAlert.dark.scss';
 
 export default {
   title: 'Components/Alert',
@@ -163,4 +164,30 @@ export const Transition = () => ({
 export const Custom = () => ({
   components: {AlertCustomStory},
   template: `<AlertCustomStory />`,
+});
+
+export const DarkMode = () => ({
+  components: {VAlert, Icon},
+  setup() {
+    return {
+      variants: ['default', 'solid', 'outlined', 'bordered'],
+      themeColors,
+    };
+  },
+  template: `
+<div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
+  <div v-for="variant in variants" :key="variant" class="mt-5">
+    <p class="font-semibold text-lg mb-2">{{ variant }}</p>
+    <v-alert
+      v-for="color in themeColors"
+      :color="color"
+      :key="color"
+      class="mb-2"
+      v-bind:[variant]="true"
+    >
+      Change a few things up and try submitting again.
+    </v-alert>
+  </div>
+</div>
+  `,
 });

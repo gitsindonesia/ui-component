@@ -27,3 +27,16 @@ Default.parameters = {
     },
   },
 };
+
+// dark mode
+export const DarkMode: Story<{}> = (args) => ({
+  components: {VFormGroup},
+  setup() {
+    return {args};
+  },
+  template: `
+  <div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
+    <VFormGroup v-bind='args'>Content</VFormGroup>
+  </div>
+  `,
+});

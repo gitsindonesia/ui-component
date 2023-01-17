@@ -1,5 +1,6 @@
 import {Meta, Story} from '@storybook/vue3';
 import VPagination from './VPagination.vue';
+import './VPagination.dark.scss';
 
 export default {
   title: 'Components/Pagination',
@@ -44,9 +45,7 @@ export default {
 } as Meta;
 
 const Template: Story = (args) => ({
-  components: {
-    'v-pagination': VPagination,
-  },
+  components: {VPagination},
   setup() {
     return {args};
   },
@@ -84,9 +83,7 @@ Flat.parameters = {
 };
 
 export const Sizes: Story = (args) => ({
-  components: {
-    'v-pagination': VPagination,
-  },
+  components: {VPagination},
   setup() {
     return {args};
   },
@@ -98,9 +95,7 @@ export const Sizes: Story = (args) => ({
 });
 
 export const CustomStyle: Story = (args) => ({
-  components: {
-    'v-pagination': VPagination,
-  },
+  components: {VPagination},
   setup() {
     return {args};
   },
@@ -113,9 +108,7 @@ export const CustomStyle: Story = (args) => ({
 });
 
 export const Slots: Story = (args) => ({
-  components: {
-    'v-pagination': VPagination,
-  },
+  components: {VPagination},
   setup() {
     return {args};
   },
@@ -129,5 +122,19 @@ export const Slots: Story = (args) => ({
     <template #btnFirst>First</template>
     <template #btnLast>Last</template>
   </v-pagination>
+  `,
+});
+
+export const DarkMode: Story = (args) => ({
+  components: {
+    VPagination,
+  },
+  setup() {
+    return {args};
+  },
+  template: `
+<div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
+  <v-pagination v-bind="args" />
+</div>
   `,
 });

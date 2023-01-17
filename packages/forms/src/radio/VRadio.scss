@@ -1,10 +1,31 @@
+:root {
+  --v-radio-bg-color: theme('colors.white');
+  --v-radio-border-color: theme('colors.gray.800');
+  --v-radio-border-style: solid;
+  --v-radio-border-width: 1px;
+
+  // label
+  --v-radio-label-color: theme('colors.gray.800');
+}
+
 .v-radio {
   &-group {
     @apply flex w-full items-center gap-2 select-none;
   }
+  
+  &-label {
+    color: var(--v-radio-label-color);
+  }
+
   &-input {
+    background-color: var(--v-radio-bg-color);
+    border-width: var(--v-radio-border-width);
+    border-color: var(--v-radio-border-color);
+    border-style: var(--v-radio-border-style);
+
     @apply transition duration-300;
   }
+
   &-error {
     @apply text-error-500 text-sm;
 

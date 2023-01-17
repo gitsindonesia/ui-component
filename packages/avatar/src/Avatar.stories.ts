@@ -4,6 +4,7 @@ import {
   defaultColors as colors,
   defaultSizes as sizes,
 } from '@gits-id/theme/defaultTheme';
+import './Avatar.dark.scss';
 
 const avatar1 =
   'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';
@@ -221,3 +222,22 @@ CustomSizes.parameters = {
     },
   },
 };
+
+export const DarkMode = () => ({
+  components: {Avatar},
+  setup() {
+    return {
+      colors,
+    };
+  },
+  template: `
+<div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
+  <Avatar
+    v-for="color in colors"
+    :color="color"
+    :key="color"
+    class="mb-2"
+    name="John Doe" />
+</div>
+  `,
+});

@@ -8,6 +8,7 @@ import {VInput} from '@gits-id/forms';
 import '@gits-id/button/src/VBtn.scss';
 import '@gits-id/forms/src/forms.scss';
 import '@gits-id/theme/transition.css';
+import './VAppBar.dark.scss';
 
 export default {
   title: 'Components/AppBar',
@@ -350,6 +351,20 @@ export const BackdropBlur: Story<{}> = (args) => ({
     Transparent AppBar
   </v-app-bar>
   <p>lorem </p>
+</main>
+`,
+});
+
+export const DarkMode: Story<{}> = () => ({
+  components: {VAppBar},
+  setup() {
+    return {defaultColors};
+  },
+  template: `
+<main class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6 space-y-2">
+  <VAppBar v-for="color in defaultColors" :key="color" :color="color">
+    {{ color }}
+  </VAppBar>
 </main>
 `,
 });

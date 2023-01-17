@@ -12,7 +12,7 @@ const props = defineProps({
   },
   labelClass: {
     type: String,
-    default: 'mb-2 font-medium text-sm',
+    default: '',
   },
   inline: {
     type: Boolean,
@@ -34,10 +34,14 @@ defineEmits(['update:label']);
     class="mb-5 flex w-full"
     :class="[inline ? 'flex-col sm:flex-row' : 'flex-col']"
   >
-    <label :for="labelFor" :class="[labelClass, inline ? inlineClass : '']">
+    <label
+      :for="labelFor"
+      class="mb-2 font-medium text-sm text-gray-800 dark:text-neutral-200"
+      :class="[labelClass, inline ? inlineClass : '']"
+    >
       {{ label }}
     </label>
-    <div class="flex-grow">
+    <div class="flex-grow text-gray-700 dark:text-neutral-400">
       <slot />
     </div>
   </div>

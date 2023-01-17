@@ -3,6 +3,9 @@
   --dropdown-button-icon-color: theme('colors.gray.500');
   --dropdown-item-color: theme('colors.gray.800');
   --dropdown-item-icon-color: theme('colors.gray.600');
+
+  // item hover
+  --dropdown-item-hover-color: theme('colors.gray.200');
 }
 
 .dropdown {
@@ -43,10 +46,10 @@
     align-items: center;
     width: 100%;
     padding: theme('spacing.2');
-    color: var(--dropdown-item-color, inherit);
+    color: var(--dropdown-item-color);
 
     &--active {
-      background-color: theme('colors.gray.200');
+      --dropdown-item-color: var(--dropdown-item-hover-color);
     }
 
     &-icon {

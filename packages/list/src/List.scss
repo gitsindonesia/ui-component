@@ -46,6 +46,14 @@
   --v-list-item-divider-width: theme('borderWidth.DEFAULT');
   --v-list-item-divider-color: theme('colors.gray.200');
   --v-list-item-divider-style: solid;
+
+  // icon
+  --v-list-item-icon-color: var(--v-list-item-color);
+
+  // append text
+  --v-list-item-append-text-color: var(--v-list-item-color);
+  --v-list-item-append-font-size: var(--v-list-item-font-size);
+  --v-list-item-append-font-weight: var(--v-list-item-font-weight);
 }
 
 .v-list {
@@ -92,7 +100,15 @@
     @apply flex gap-1 justify-center items-center;
   }
 
+  &-item-append-text {
+    color: var(--v-list-item-append-text-color);
+    font-size: var(--v-list-item-append-font-size);
+    font-weight: var(--v-list-item-append-font-weight);
+  }
+
   &-item-icon {
+    color: var(--v-list-item-icon-color);
+
     @apply transition duration-300 transform;
   }
 

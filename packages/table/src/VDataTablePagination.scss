@@ -1,4 +1,13 @@
+:root {
+  --v-data-table-pagination-bg-color: theme('colors.white');
+  --v-data-table-pagination-border-color: theme('borderColor.DEFAULT');
+  --v-data-table-pagination-text-color: theme('colors.gray.700');
+}
+
 .v-data-table-pagination {
+  background-color: var(--v-data-table-pagination-bg-color);
+  border-color: var(--v-data-table-pagination-border-color);
+
   @apply w-full
     px-6
     py-3
@@ -12,17 +21,20 @@
   &-items-per-page {
     border-radius: var(--v-input-border-radius);
     border: 1px solid var(--v-input-border-color);
+    background-color: var(--v-input-bg-color);
 
     @apply w-20 order-1 focus:ring-1 focus:border-primary-500 focus:ring-primary-500;
   }
 
   &-meta {
+    color: var(--v-data-table-pagination-text-color);
+
     @apply w-auto
       hidden
       sm:flex
       gap-1
       items-center
-      text-sm text-gray-700
+      text-sm
       order-2 flex-1;
 
     &-showing-text,

@@ -10,7 +10,9 @@ import {ref} from 'vue';
 import {NavDrawer as VNavDrawer} from '@gits-id/nav-drawer';
 import VBtn from '@gits-id/button';
 import {Dropdown} from '@gits-id/dropdown';
-import '@gits-id/nav-drawer/dist/style.css';
+import '@gits-id/dropdown/src/Dropdown.scss';
+import '@gits-id/nav-drawer/src/NavDrawer.scss';
+import './List.dark.scss';
 
 export default {
   title: 'Components/List',
@@ -702,6 +704,7 @@ export const IosSettings: Story = (args) => ({
         hover
         tile
         prepend-icon="ion:ios-airplane"
+        prepend-icon-class="!text-white"
         prepend-class="p-1 bg-orange-500 text-white rounded"
         append-icon="ri:arrow-right-s-line"
         append-icon-class="text-gray-500"
@@ -712,6 +715,7 @@ export const IosSettings: Story = (args) => ({
         hover
         tile
         prepend-icon="ic:outline-wifi"
+        prepend-icon-class="!text-white"
         prepend-class="p-1 bg-blue-500 text-white rounded"
         append-icon="ri:arrow-right-s-line"
         append-icon-class="text-gray-500"
@@ -724,6 +728,7 @@ export const IosSettings: Story = (args) => ({
         hover
         tile
         prepend-icon="ri:bluetooth-line"
+        prepend-icon-class="!text-white"
         prepend-class="p-1 bg-blue-500 text-white rounded"
         append-icon="ri:arrow-right-s-line"
         append-icon-class="text-gray-500"
@@ -736,6 +741,7 @@ export const IosSettings: Story = (args) => ({
         hover
         tile
         prepend-icon="ic:sharp-cell-tower"
+        prepend-icon-class="!text-white"
         prepend-class="p-1 bg-green-500 text-white rounded"
         append-icon="ri:arrow-right-s-line"
         append-icon-class="text-gray-500"
@@ -746,6 +752,7 @@ export const IosSettings: Story = (args) => ({
         hover
         tile
         prepend-icon="ri:hotspot-line"
+        prepend-icon-class="!text-white"
         prepend-class="p-1 bg-green-500 text-white rounded"
         append-icon="ri:arrow-right-s-line"
         append-icon-class="text-gray-500"
@@ -756,6 +763,7 @@ export const IosSettings: Story = (args) => ({
         hover
         tile
         prepend-icon="material-symbols:vpn-lock"
+        prepend-icon-class="!text-white"
         prepend-class="p-1 bg-blue-500 text-white rounded"
         append-icon="ri:arrow-right-s-line"
         append-icon-class="text-gray-500"
@@ -808,6 +816,7 @@ export const ListInDropdown: Story = (args) => ({
         hover
         tile
         prepend-icon="ion:ios-airplane"
+        prepend-icon-class="!text-white"
         prepend-class="p-1 bg-orange-500 text-white rounded"
         append-icon="ri:arrow-right-s-line"
         append-icon-class="text-gray-500"
@@ -818,6 +827,7 @@ export const ListInDropdown: Story = (args) => ({
         hover
         tile
         prepend-icon="ic:outline-wifi"
+        prepend-icon-class="!text-white"
         prepend-class="p-1 bg-blue-500 text-white rounded"
         append-icon="ri:arrow-right-s-line"
         append-icon-class="text-gray-500"
@@ -830,6 +840,7 @@ export const ListInDropdown: Story = (args) => ({
         hover
         tile
         prepend-icon="ri:bluetooth-line"
+        prepend-icon-class="!text-white"
         prepend-class="p-1 bg-blue-500 text-white rounded"
         append-icon="ri:arrow-right-s-line"
         append-icon-class="text-gray-500"
@@ -842,6 +853,7 @@ export const ListInDropdown: Story = (args) => ({
         hover
         tile
         prepend-icon="ic:sharp-cell-tower"
+        prepend-icon-class="!text-white"
         prepend-class="p-1 bg-green-500 text-white rounded"
         append-icon="ri:arrow-right-s-line"
         append-icon-class="text-gray-500"
@@ -852,6 +864,7 @@ export const ListInDropdown: Story = (args) => ({
         hover
         tile
         prepend-icon="ri:hotspot-line"
+        prepend-icon-class="!text-white"
         prepend-class="p-1 bg-green-500 text-white rounded"
         append-icon="ri:arrow-right-s-line"
         append-icon-class="text-gray-500"
@@ -862,6 +875,7 @@ export const ListInDropdown: Story = (args) => ({
         hover
         tile
         prepend-icon="material-symbols:vpn-lock"
+        prepend-icon-class="!text-white"
         prepend-class="p-1 bg-blue-500 text-white rounded"
         append-icon="ri:arrow-right-s-line"
         append-icon-class="text-gray-500"
@@ -960,4 +974,25 @@ export const DividerInset: Story = (args) => ({
       <ListItem>Item 5</ListItem>
     </List>
   `,
+});
+
+export const DarkMode: Story<{}> = (args) => ({
+  components: {Dropdown, List, ListItem, ListItemDivider},
+  setup() {
+    return {args};
+  },
+  template: `
+<main class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6 space-y-2">
+  <List
+    v-bind="args"
+    hover
+  >
+    <ListItem prepend-icon="ri:home-line">Item 1</ListItem>
+    <ListItemDivider inset />
+    <ListItem append-icon="ri:add-line">Item 3</ListItem>
+    <ListItemDivider inset />
+    <ListItem>Item 5</ListItem>
+  </List>
+</main>
+`,
 });

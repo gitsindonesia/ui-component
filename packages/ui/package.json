@@ -65,6 +65,7 @@
     "./editor": "./editor.js",
     "./styles": "./dist/style.css",
     "./styles.scss": "./src/style.scss",
+    "./styles.dark": "./src/style.dark.scss",
     "./src/*": "./src/*",
     "./*": "./*"
   },

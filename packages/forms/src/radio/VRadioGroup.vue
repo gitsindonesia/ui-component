@@ -110,7 +110,6 @@ const emit = defineEmits([
 
 const groupRef = ref();
 
-
 const {errorMessage, uncontrolledValue, isEagerValidation, validate, meta} =
   useFormValue(props, emit);
 
@@ -181,7 +180,10 @@ onBeforeUnmount(() => {
       v-if="label"
       :for="name"
       class="font-medium mb-1 block"
-      :class="[error ? 'text-error-500' : 'text-gray-700', labelClass]"
+      :class="[
+        error ? 'text-error-500' : 'text-gray-700 dark:text-neutral-200',
+        labelClass,
+      ]"
     >
       {{ label }}
     </label>
@@ -211,13 +213,19 @@ onBeforeUnmount(() => {
             duration-300
             disabled:cursor-not-allowed
             disabled:border-gray-300
+            dark:bg-neutral-800
+            dark:border-neutral-700
+            dark:disabled:bg-neutral-300
           "
           :class="classes"
           :disabled="disabled"
           @change="onChange"
         />
         <slot name="label" :item="item" :selected="uncontrolledValue">
-          <span :class="[sizeClass]">
+          <span
+            class="text-gray-800 dark:text-neutral-200"
+            :class="[sizeClass]"
+          >
             {{ getText(item) }}
           </span>
         </slot>

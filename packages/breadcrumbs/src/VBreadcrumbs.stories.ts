@@ -6,11 +6,27 @@ import type {VBreadcrumbItem} from './types';
 import {ref} from 'vue';
 import VBreadcrumbsDivider from './VBreadcrumbsDivider.vue';
 import VBreadcrumbsItem from './VBreadcrumbsItem.vue';
+import './VBreadcrumbs.dark.scss';
 
-const items = [...Array(5)].map((v, k) => ({
-  title: `Link ${k + 1}`,
-  to: '/',
-}));
+const items = [
+  {
+    title: 'Home',
+    to: '/',
+  },
+  {
+    title: 'Account',
+    to: '/account',
+  },
+  {
+    title: 'Profile',
+    to: '/account/profile',
+  },
+  {
+    title: 'Settings',
+    to: '/account/profile/settings',
+    disabled: true,
+  },
+];
 
 export default {
   title: 'Components/Breadcrumbs',
@@ -62,7 +78,7 @@ export const CustomDividerSlots: Story = (args) => ({
   template: `<div class="container mx-auto">
   <v-breadcrumbs v-bind="args">
     <template #divider>
-      <Icon name="ri:arrow-right-s-line" class="w-5 h-5 text-gray-500" />
+      <Icon name="ri:arrow-right-s-line" size="sm" class="breadcrumbs-divider-icon" />
     </template>
   </v-breadcrumbs>
 </div>`,
@@ -172,3 +188,17 @@ const items = ref<VBreadcrumbItem[]>([
     },
   },
 };
+
+export const DarkMode = () => ({
+  components: {VBreadcrumbs},
+  setup() {
+    return {
+      items,
+    };
+  },
+  template: `
+<div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
+  <VBreadcrumbs :items="items" />
+</div>
+  `,
+});

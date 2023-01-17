@@ -23,6 +23,10 @@ defineProps({
     type: Boolean,
     default: false,
   },
+  active: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const RouterLink = resolveComponent('RouterLink');
@@ -32,8 +36,11 @@ const RouterLink = resolveComponent('RouterLink');
   <component
     :is="to ? RouterLink : tag"
     :to="to"
-    class="breadbrumbs-item"
-    :class="{'breadbrumbs-item--disabled': disabled}"
+    class="breadcrumbs-item"
+    :class="{
+      'breadcrumbs-item--disabled': disabled,
+      [activeClass]: active,
+    }"
     :exact-active-class="activeClass"
   >
     <slot>
