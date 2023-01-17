@@ -4,6 +4,7 @@ import {Args, Meta, Story} from '@storybook/vue3';
 import {useForm} from 'vee-validate';
 import {ref} from 'vue';
 import '@gits-id/forms/src/forms.scss';
+import '@gits-id/forms/src/forms.dark.scss';
 import '@gits-id/pagination/src/VPagination.scss';
 import '@gits-id/pagination/src/VPagination.dark.scss';
 import './VDataTablePagination.dark.scss';
