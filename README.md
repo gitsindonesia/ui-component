@@ -20,8 +20,9 @@ GITS UI is the official UI Component Library in GITS Indonesia built with Vue 3 
 - 🚀 Provides [TypeScript](https://www.typescriptlang.org/) support by default
 - 🎨 Allows for customization with CSS properties
 - 🔌 Modular design: allows for use as a complete UI framework or as individual plugins
-- 🏷 Headless by default
-- 🌈 Theming support (coming soon)
+- 🏷 Headless component by default
+- 🎨 Dark mode: ships with dark mode styles out-of-the-box
+- 🌈 Theming support: create your own custom theme easily
 
 ## Documentation
 

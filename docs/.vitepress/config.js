@@ -28,6 +28,7 @@ export default defineConfig({
           {text: 'Getting Started', link: '/guide/getting-started'},
           {text: 'Customization', link: '/guide/customization'},
           {text: 'Default Theme', link: '/guide/theme'},
+          {text: 'Dark Mode', link: '/guide/dark-mode'},
           {text: 'Starter', link: '/guide/starter'},
           {text: 'Migration', link: '/guide/migration'},
           {text: 'Changelog', link: '/guide/changelog'},

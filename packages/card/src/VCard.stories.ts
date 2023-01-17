@@ -2,6 +2,7 @@ import {Meta, Story} from '@storybook/vue3';
 import VCard from './VCard.vue';
 import VBtn from '@gits-id/button';
 import {defaultColors} from '@gits-id/theme/defaultTheme';
+import './VCard.dark.scss';
 
 export default {
   title: 'Components/Card',
@@ -112,7 +113,7 @@ export const CustomSlots: Story = (args) => ({
     <v-btn>Cancel</v-btn>
   </template>
   
-  <p class="text-gray-600">lorem ipsum body</p>
+  <p>lorem ipsum body</p>
 </v-card>
 `,
 });
@@ -184,5 +185,19 @@ export const Shadow: Story<{}> = (args) => ({
   >
   Shadow: {{ shadow }}
 </v-card>
+`,
+});
+
+export const DarkMode: Story<{}> = () => ({
+  components: {VCard},
+  setup() {
+    return {defaultColors};
+  },
+  template: `
+<main class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6 space-y-2">
+  <VCard v-for="color in defaultColors" :key="color" :color="color">
+    {{ color }}
+  </VCard>
+</main>
 `,
 });

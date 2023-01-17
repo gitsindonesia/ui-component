@@ -42,31 +42,24 @@
 
   /* colors */
   &-primary {
-    --v-progress-bar-bg-color: theme('colors.gray.200');
     --v-progress-bar-fill-color: theme('colors.primary.500');
   }
   &-secondary {
-    --v-progress-bar-bg-color: theme('colors.gray.200');
     --v-progress-bar-fill-color: theme('colors.secondary.500');
   }
   &-info {
-    --v-progress-bar-bg-color: theme('colors.gray.200');
     --v-progress-bar-fill-color: theme('colors.info.500');
   }
   &-warning {
-    --v-progress-bar-bg-color: theme('colors.gray.200');
     --v-progress-bar-fill-color: theme('colors.warning.500');
   }
   &-success {
-    --v-progress-bar-bg-color: theme('colors.gray.200');
     --v-progress-bar-fill-color: theme('colors.success.500');
   }
   &-error {
-    --v-progress-bar-bg-color: theme('colors.gray.200');
     --v-progress-bar-fill-color: theme('colors.error.500');
   }
   &-dark {
-    --v-progress-bar-bg-color: theme('colors.gray.200');
     --v-progress-bar-fill-color: theme('colors.gray.800');
   }
 

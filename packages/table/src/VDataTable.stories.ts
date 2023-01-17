@@ -3,6 +3,10 @@ import {Meta, Story} from '@storybook/vue3';
 import {ref, watchEffect} from 'vue';
 import VDataTable from './VDataTable.vue';
 import type {VDataTableHeader} from './types';
+import '@gits-id/forms/src/forms.dark.scss';
+import '@gits-id/pagination/src/VPagination.dark.scss';
+import './VDataTable.dark.scss';
+import './VDataTablePagination.dark.scss';
 
 const states = ['active', 'inactive'];
 
@@ -462,4 +466,16 @@ export const StickyColumn: Story = (args) => ({
   </template>
 </v-data-table>
   `,
+});
+
+export const DarkMode: Story<{}> = (args) => ({
+  components: {VDataTable},
+  setup() {
+    return {args};
+  },
+  template: `
+<main class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6 space-y-2">
+  <VDataTable v-bind="args" />
+</main>
+`,
 });

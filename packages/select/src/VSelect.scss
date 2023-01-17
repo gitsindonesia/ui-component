@@ -11,6 +11,7 @@
   --v-select-font-size: var(--v-input-font-size);
 
   /* label */
+  --v-select-label-color: var(--v-input-label-color);
   --v-select-label-font-size: var(--v-input-label-font-size);
   --v-select-label-font-weight: var(--v-input-label-font-weight);
   --v-select-label-display: var(--v-input-label-display);
@@ -26,6 +27,9 @@
   --v-select-icon-height: theme('width.5');
   --v-select-icon-color: var(--v-input-icon-color);
 
+  // options
+  --v-select-options-bg-color: theme('colors.white');
+
   /* option item */
   --v-select-option-padding-x: theme('spacing.4');
   --v-select-option-padding-y: theme('spacing.2');
@@ -35,6 +39,9 @@
   /* option item on hover */
   --v-select-option-hover-bg-color: theme('colors.primary.500');
   --v-select-option-hover-text-color: theme('colors.white');
+
+  // selected
+  --v-select-selected-color: var(--v-input-label-color);
 }
 
 .v-select {
@@ -65,6 +72,8 @@
   }
 
   &-selected {
+    color: var(--v-select-selected-color);
+
     @apply block flex-grow w-full truncate mr-2;
 
     &--placeholder {
@@ -73,13 +82,14 @@
   }
 
   &-options {
+    background-color: var(--v-select-options-bg-color);
+
     @apply absolute
       w-full
       py-1
       mt-1
       overflow-auto
       text-base
-      bg-white
       rounded-md
       shadow-lg
       max-h-60
@@ -150,6 +160,7 @@
   }
 
   &-label {
+    color: var(--v-select-label-color);
     font-size: var(--v-select-label-font-size);
     font-weight: var(--v-select-label-font-weight);
     display: var(--v-select-label-display);

@@ -4,6 +4,7 @@ import {mixed, object} from 'yup';
 import {VInput} from '..';
 import VBtn from '@gits-id/button';
 import VFileUpload from './VFileUpload.vue';
+import '@gits-id/forms/src/forms.dark.scss';
 
 export default {
   title: 'Forms/FileUpload',
@@ -372,4 +373,16 @@ export const SlotFilename: Story<{}> = () => ({
       <pre>{{ {values} }}</pre>
     </form>
 `,
+});
+
+export const DarkMode: Story = (args) => ({
+  components: {VFileUpload},
+  setup() {
+    return {args};
+  },
+  template: `
+  <div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
+    <VFileUpload v-bind='args' />
+  </div>
+  `,
 });

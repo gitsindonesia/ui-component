@@ -1,5 +1,6 @@
 :root {
-  --v-menus-popper-border: 1px solid #ddd;
+  --v-menus-popper-border-color: #ddd;
+  --v-menus-popper-border: 1px solid var(--v-menus-popper-border-color);
   /* menus */
   --v-menus-margin-y: theme('margin.0');
   --v-menus-margin-x: theme('margin.0');
@@ -15,6 +16,7 @@
   --v-menus-opacity: 1;
 
   /* button */
+  --v-menus-button-color: theme('colors.gray.800');
   --v-menus-button-icon-color: theme('colors.gray.500');
 
   /* item */
@@ -71,6 +73,7 @@
     justify-content: var(--v-menus-item-justify-content);
     gap: var(--v-menus-item-gap);
     border-radius: var(--v-menus-item-border-radius);
+    width: 100%;
   }
 
   &-item-text {
@@ -89,6 +92,8 @@
   }
 
   &-button {
+    color: var(--v-menus-button-color);
+
     @apply inline-flex items-center justify-center gap-1;
   }
 

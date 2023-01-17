@@ -88,7 +88,13 @@ const clear = () => {
   <Combobox
     v-model="uncontrolledValue"
     class="autocomplete"
-    :class="wrapperClass"
+    :class="[
+      wrapperClass,
+      {
+        'autocomplete--error': !!errorMessage,
+        'autocomplete--selected': !!selected,
+      },
+    ]"
     as="div"
   >
     <ComboboxLabel v-if="label" class="autocomplete-label">
@@ -103,6 +109,9 @@ const clear = () => {
       >
         <ComboboxInput
           class="autocomplete-input"
+          :class="{
+            'autocomplete-input--selected': !!selected,
+          }"
           :display-value="(item: any) => item?.[displayText] || ''"
           :placeholder="placeholder"
           @change="query = $event.target.value"

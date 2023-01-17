@@ -1,5 +1,6 @@
 import {Story} from '@storybook/vue3';
 import Icon from './Icon.vue';
+import './Icon.dark.scss';
 
 export default {
   title: 'Components/Icon',
@@ -66,3 +67,15 @@ CustomClass.parameters = {
     },
   },
 };
+
+export const DarkMode: Story = (args) => ({
+  components: {Icon},
+  setup() {
+    return {args};
+  },
+  template: `
+  <div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
+    <Icon v-bind='args'/>
+  </div>
+  `,
+});

@@ -4,6 +4,7 @@ import {object} from 'yup';
 import VAutocomplete from './VAutocomplete.vue';
 import VBtn from '@gits-id/button';
 import {Story} from '@storybook/vue3';
+import './VAutocomplete.dark.scss';
 
 const items = [
   {value: 1, text: 'Wade Cooper'},
@@ -94,6 +95,23 @@ export const Validation: Story = (args) => ({
       <pre>{{ {values} }}</pre>
     </form>
 `,
+});
+
+export const DarkMode: Story = (args) => ({
+  components: {VAutocomplete},
+  setup() {
+    const selected = ref();
+    return {args, selected};
+  },
+  template: `
+<main class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
+  <VAutocomplete
+    v-bind="args"
+    v-model="selected"
+    label="Dark Mode"
+  />
+</main>
+  `,
 });
 
 export const TestInputState: Story<{}> = (args) => ({
@@ -240,3 +258,20 @@ TestInputState.args = {
   value: undefined,
   clearable: true,
 };
+
+export const DarkMode: Story = (args) => ({
+  components: {VAutocomplete},
+  setup() {
+    const selected = ref();
+    return {args, selected};
+  },
+  template: `
+<main class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
+  <VAutocomplete
+    v-bind="args"
+    v-model="selected"
+    label="Dark Mode"
+  />
+</main>
+  `,
+});

@@ -4,6 +4,7 @@ import VMenusItem from './VMenusItem.vue';
 import vueRouter from 'storybook-vue3-router';
 import VAppBar from '@gits-id/app-bar';
 import VMenusCustom from './stories/VMenusCustom.vue';
+import './VMenus.dark.scss';
 
 const items = [
   {
@@ -252,5 +253,17 @@ export const CustomStyle: Story = (args) => ({
   },
   template: `
   <VMenusCustom />
+  `,
+});
+
+export const DarkMode: Story = (args) => ({
+  components: {VMenus},
+  setup() {
+    return {args};
+  },
+  template: `
+  <div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
+    <VMenus v-bind='args'/>
+  </div>
   `,
 });

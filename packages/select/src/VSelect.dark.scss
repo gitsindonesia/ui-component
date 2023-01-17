@@ -1,0 +1,21 @@
+.dark {
+  .v-select {
+    /* input control / button */
+    --v-select-border-color: var(--v-input-border-color);
+    --v-select-bg-color: var(--v-input-bg-color);
+    --v-select-placeholder-color: var(--v-input-placeholder-color);
+
+    // options
+    --v-select-options-bg-color: theme('colors.neutral.800');
+
+    /* option item */
+    --v-select-option-bg-color: theme('colors.neutral.800');
+    --v-select-option-text-color: theme('colors.neutral.200');
+  
+    /* option item on hover */
+    --v-select-option-hover-bg-color: theme('colors.neutral.700');
+    --v-select-option-hover-text-color: theme('colors.neutral.200');
+
+    --v-select-icon-hover-color: theme('colors.neutral.200');
+  }
+}

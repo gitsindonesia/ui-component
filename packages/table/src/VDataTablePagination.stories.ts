@@ -1,10 +1,13 @@
 import VDataTablePagination from './VDataTablePagination.vue';
 import {themeColors} from '@gits-id/utils/colors';
 import {Args, Meta, Story} from '@storybook/vue3';
-import { useForm } from 'vee-validate';
-import { ref } from 'vue';
-import '@gits-id/forms/src/forms.scss'
-import '@gits-id/pagination/src/VPagination.scss'
+import {useForm} from 'vee-validate';
+import {ref} from 'vue';
+import '@gits-id/forms/src/forms.scss';
+import '@gits-id/forms/src/forms.dark.scss';
+import '@gits-id/pagination/src/VPagination.scss';
+import '@gits-id/pagination/src/VPagination.dark.scss';
+import './VDataTablePagination.dark.scss';
 
 export default {
   title: 'Components/DataTablePagination',
@@ -123,8 +126,8 @@ export const RowsPerPageSlot: Story = (args) => ({
     VDataTablePagination,
   },
   setup() {
-    const page = ref(1)
-    const itemsPerPage = ref(10)
+    const page = ref(1);
+    const itemsPerPage = ref(10);
     const {values} = useForm({});
 
     return {args, values, page, itemsPerPage};
@@ -236,3 +239,15 @@ PassingPaginationProps.parameters = {
     },
   },
 };
+
+export const DarkMode: Story<{}> = (args) => ({
+  components: {VDataTablePagination},
+  setup() {
+    return {args};
+  },
+  template: `
+<main class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6 space-y-2">
+  <VDataTablePagination v-bind="args" />
+</main>
+`,
+});

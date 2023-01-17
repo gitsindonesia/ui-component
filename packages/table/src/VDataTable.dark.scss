@@ -1,0 +1,57 @@
+.dark {
+  .v-table {
+    /* thead */
+    --v-table-thead-bg-color: theme('colors.neutral.800');
+
+    // tr
+    --v-table-tr-bg-color: theme('colors.neutral.800');
+
+    /* th */
+    --v-table-th-color: theme('colors.neutral.200');
+
+    /* th active */
+    --v-table-th-active-color: theme('colors.primary.500');
+
+    /* th active hover */
+    --v-table-th-active-hover-color: theme('colors.primary.600');
+
+    /* td */
+    --v-table-td-color: theme('colors.neutral.200');
+    --v-table-td-bg-color: theme('colors.neutral.800');
+
+    /* striped */
+    --v-table-striped-bg-color: theme('colors.neutral.700');
+
+    /* hover */
+    --v-table-hover-bg-color: theme('colors.neutral.700');
+  }
+
+  .v-table {
+    &-table,
+    &-tbody,
+    &--striped &-tbody {
+      @apply divide-neutral-700;
+    }
+
+    &--selectable &-td,
+    &--striped &-td,
+    &--hover &-td {
+      --v-table-td-bg-color: transparent;
+    }
+
+    /* loading */
+    &--loading &-td,
+    &--empty &-td {
+      --v-table-td-color: theme('colors.neutral.300');
+    }
+
+    &--bordered &-tr {
+      @apply divide-neutral-700;
+    }
+
+    &-th--sticky,
+    &-td--sticky {
+      @apply bg-neutral-800 drop-shadow-lg;
+    }
+  }
+}
