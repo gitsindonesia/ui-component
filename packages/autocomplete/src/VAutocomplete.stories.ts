@@ -97,6 +97,23 @@ export const Validation: Story = (args) => ({
 `,
 });
 
+export const DarkMode: Story = (args) => ({
+  components: {VAutocomplete},
+  setup() {
+    const selected = ref();
+    return {args, selected};
+  },
+  template: `
+<main class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
+  <VAutocomplete
+    v-bind="args"
+    v-model="selected"
+    label="Dark Mode"
+  />
+</main>
+  `,
+});
+
 export const TestInputState: Story<{}> = (args) => ({
   components: {VBtn, VAutocomplete},
   setup() {
