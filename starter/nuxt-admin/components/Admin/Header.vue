@@ -17,10 +17,10 @@ const adminDrawer = useAdminDrawer();
     </NuxtLink>
     <div class="flex items-center gap-2 xl:pr-2">
       <AdminNotification />
-      <VDropdown
+      <VMenus
         :label="appConfig.accountMenu.label"
         :items="appConfig.accountMenu.items"
-        right
+        placement="bottom-end"
       />
     </div>
   </VAppBar>
