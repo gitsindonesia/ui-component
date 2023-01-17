@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@gits-id/ui': ^0.14.0
+  '@gits-id/ui': ^0.14.4
   '@rushstack/eslint-patch': ^1.1.4
   '@types/jsdom': ^20.0.0
   '@types/node': ^16.11.56
@@ -29,7 +29,7 @@ specifiers:
   vue-tsc: ^0.40.7
 
 dependencies:
-  '@gits-id/ui': 0.14.0_typescript@4.7.4
+  '@gits-id/ui': 0.14.4_typescript@4.7.4
   pinia: 2.0.22_uxrvejtcwrakwzzo6hlouuo2vq
   vue: 3.2.39
   vue-router: 4.1.5_vue@3.2.39
@@ -709,10 +709,11 @@ packages:
       - ts-node
     dev: false
 
-  /@gits-id/autocomplete/0.14.0:
-    resolution: {integrity: sha512-uBvqbUvqldwosHirc7DR3v9fv/M3tlY/GSmaEzFgXQ4Bs+L0RYJc+n5wrY8tWMuBPTN1mKCKNtY1evPgd2lGBg==}
+  /@gits-id/autocomplete/0.14.4:
+    resolution: {integrity: sha512-SeA1I+XUrGWANtx1c6EkSrtOEuvpXbtoF6ASYHfAd0z6tg9y5EhdWgCkx0xns569yRU2iq1xMt5TCKrlmX/N9Q==}
     dependencies:
       '@gits-id/button': 0.14.0
+      '@gits-id/forms': 0.14.4
       '@gits-id/icon': 0.14.0
       '@headlessui/vue': 1.7.7_vue@3.2.39
       tailwindcss: 3.1.8
@@ -801,8 +802,8 @@ packages:
       vue: 3.2.39
     dev: false
 
-  /@gits-id/forms/0.14.0:
-    resolution: {integrity: sha512-irx2Z3VQszpdXxmng1hZZGWJO2R34NDApTtxL7SUKE/pt3Aj3VR2E/SMA4nFmmrqvGvWNpd6g0Zgc3e4zqn45A==}
+  /@gits-id/forms/0.14.4:
+    resolution: {integrity: sha512-CTjSdm/Xrqgt6sY5MkRe0jE8zlJN/Llo40utBx9/0yMpSSzNSMvISFQnmMUHLQt9sCmJSfGOJGXwdpgKRtyVpg==}
     dependencies:
       '@gits-id/button': 0.14.0
       '@gits-id/icon': 0.11.10
@@ -840,8 +841,8 @@ packages:
       vue: 3.2.39
     dev: false
 
-  /@gits-id/list/0.14.0:
-    resolution: {integrity: sha512-GgiDwD6rLY676zJs4EkdfhJp1UasiLs3yDO2Q4JcwEbP1bvlRmrFQ5Voi8oFB21YeDV7lrDA7qDRnciWoPf3Jg==}
+  /@gits-id/list/0.14.1:
+    resolution: {integrity: sha512-7bWWCIy2NUfPYQfioUHSTr5j6VJ1cwcZC89s7RmyDAeefQopvPC9yiA6gcv3639QSGudqCt2yNFeGC0aIUZhEQ==}
     dependencies:
       '@gits-id/collapsible': 0.13.9
       vue: 3.2.39
@@ -863,11 +864,11 @@ packages:
       vue-router: 4.1.5_vue@3.2.39
     dev: false
 
-  /@gits-id/menus/0.14.0:
-    resolution: {integrity: sha512-OIEIi3zHK3pILsdvsCN6+6x1vf3qKxff1regzE/T/Uq3zBFe60iR2Kg7Mye2P89sLZ3eVvojD7EbtT8dFOamPw==}
+  /@gits-id/menus/0.14.1:
+    resolution: {integrity: sha512-pqej+x/3Bauf+WCzsfZMo5k7FwcowKptdJO27SfGQo3RhXhL5Q5bidVfyxJTVT8VDjFl/G5hWLOxsqQhhWGbbw==}
     dependencies:
       '@gits-id/icon': 0.14.0
-      '@gits-id/list': 0.14.0
+      '@gits-id/list': 0.14.1
       floating-vue: 2.0.0-beta.20_vue@3.2.39
       vue: 3.2.39
     transitivePeerDependencies:
@@ -883,11 +884,11 @@ packages:
       - ts-node
     dev: false
 
-  /@gits-id/multi-select/0.14.0:
-    resolution: {integrity: sha512-oaQSW5ynPdUofE6T7Ywu7iDktLNUywBlG1u5nLkiGebGNRy0z5Gp4LCgV4RX4F12zNaLE7Kj2K7wEAsgY/fd0A==}
+  /@gits-id/multi-select/0.14.4:
+    resolution: {integrity: sha512-s1xG2qfuLZWBNYCqXoO4qRXOd2LxODs0JyQ82p790fSoxZGrqwpyfQ7b9H1/hvJ5/0K5m8iWR4oInEU0jafDyQ==}
     dependencies:
       '@gits-id/badge': 0.14.0
-      '@gits-id/forms': 0.14.0
+      '@gits-id/forms': 0.14.4
       '@gits-id/icon': 0.14.0
       '@gits-id/tooltip': 0.14.0
       '@vueuse/core': 7.7.1_vue@3.2.39
@@ -898,8 +899,8 @@ packages:
       - ts-node
     dev: false
 
-  /@gits-id/nav-drawer/0.14.0:
-    resolution: {integrity: sha512-aYZ1rBaKiG4cBIigcoFTDRIEvv4ziXGTwu4LFMJkA5hRmqJ8XzSRRB6NbwTPF6RFjcg5IKAG4D1iquPVAV7ohA==}
+  /@gits-id/nav-drawer/0.14.1:
+    resolution: {integrity: sha512-fajav8su7B3mJiCg3Cf1K7dIoTLX3cKVr8YCCvpU1UG009h+AgkDPRozlmwGXSDvGuoDr+OLsbHl6gwqno3Ntg==}
     dependencies:
       '@gits-id/button': 0.14.0
       '@gits-id/logo': 0.14.0
@@ -910,23 +911,23 @@ packages:
       - ts-node
     dev: false
 
-  /@gits-id/navbar/0.14.0:
-    resolution: {integrity: sha512-V5rECXJB6m3xUUDjB05kj7Nvmt8OyZZcBWJtuZt6rpQy8fo0zn9Nb8h5EfR5egFi14SSMhgmvzb9wTwqrj0yaQ==}
+  /@gits-id/navbar/0.14.1:
+    resolution: {integrity: sha512-Z+JDuH6zwEUKeCgo0Tq3ehd9jd0acRoca6HhvCZazsMOMDUGD3/CI+z544FRxC0nInxhBfdF9022hs5FTjIKhg==}
     dependencies:
       '@gits-id/button': 0.14.0
       '@gits-id/logo': 0.14.0
-      '@gits-id/menus': 0.14.0
+      '@gits-id/menus': 0.14.1
       vue: 3.2.39
     transitivePeerDependencies:
       - ts-node
     dev: false
 
-  /@gits-id/pages/0.14.0:
-    resolution: {integrity: sha512-VBqgNv7od/3uETzb3SyWqDrCviG88G2/RekEldOe1i7/ilBeBziXePwl/FljpdLsUYadQeKUFRwN2thQKNBPjA==}
+  /@gits-id/pages/0.14.4:
+    resolution: {integrity: sha512-IryqOk7RFvIY4GXsbXKbTtRNX98AtCs/eAW+IRfMrKsGXdhmJvFHAYlC8DX79+w7xKAy8oLRgUQbWwR0arANRw==}
     dependencies:
       '@gits-id/alert': 0.14.0
       '@gits-id/button': 0.14.0
-      '@gits-id/forms': 0.14.0
+      '@gits-id/forms': 0.14.4
       '@iconify/vue': 3.2.1_vue@3.2.39
       vue: 3.2.39
       yup: 0.32.11
@@ -948,10 +949,10 @@ packages:
       vue: 3.2.39
     dev: false
 
-  /@gits-id/select/0.14.0:
-    resolution: {integrity: sha512-HsX1ZsVe4vPk/Hpj3X66j6ZJ8sjea4NwBpqSxr2i7K3aJ+5gjVx9NVqj/0unfhXdkof3rV6tr61mavG1To1i/A==}
+  /@gits-id/select/0.14.4:
+    resolution: {integrity: sha512-f5ai/wadZnPK6e8J4IL5q72+INx8zm5pEaP3EO9LJshCAeAqSHPOZjJWeSLR+NfFNc8GRrSvWZVC2aGUAZaN7A==}
     dependencies:
-      '@gits-id/forms': 0.14.0
+      '@gits-id/forms': 0.14.4
       '@gits-id/icon': 0.14.0
       '@gits-id/theme': 0.13.20
       '@gits-id/tooltip': 0.14.0
@@ -1003,10 +1004,10 @@ packages:
       vue: 3.2.39
     dev: false
 
-  /@gits-id/table/0.14.0:
-    resolution: {integrity: sha512-TtwR+tLSqWRqHdTWIVBLie40Ju5a7Ggd2TgUmv+Qf6K5NFs4ftOXkgf45zoY76IFj7Va1xXAsGIAqsIRIW7MSw==}
+  /@gits-id/table/0.14.4:
+    resolution: {integrity: sha512-n3kqpEktpJG1aq3tXsJ+UEgKg9snuawcZGcemjaHhoiCBG0YWS7taxkViYBb2QepRtGh/okBMuwyRtu19yLUpA==}
     dependencies:
-      '@gits-id/forms': 0.14.0
+      '@gits-id/forms': 0.14.4
       '@gits-id/icon': 0.14.0
       '@gits-id/pagination': 0.14.0
       '@gits-id/spinner': 0.14.0
@@ -1097,12 +1098,12 @@ packages:
       vue: 3.2.39
     dev: false
 
-  /@gits-id/ui/0.14.0_typescript@4.7.4:
-    resolution: {integrity: sha512-ko3F/sK6lGa8Ib+ThwgQ04FPH6VlXVpN4HegZ+5wKJlT+I0UuD0dQ8IbQSk0jDq8K+MsO+Qiuoj1ef9GGchpXA==}
+  /@gits-id/ui/0.14.4_typescript@4.7.4:
+    resolution: {integrity: sha512-X6FSIiWy3jEfv64aH8hJzu4LVGxHsNFCbDsUtTRzZWjmxUm027uwTFBa7x/1gG2h4Q/o75HO2RRLDcpbxA3pDA==}
     dependencies:
       '@gits-id/alert': 0.14.0
       '@gits-id/app-bar': 0.14.0
-      '@gits-id/autocomplete': 0.14.0
+      '@gits-id/autocomplete': 0.14.4
       '@gits-id/avatar': 0.14.0
       '@gits-id/badge': 0.14.0
       '@gits-id/breadcrumbs': 0.14.0
@@ -1112,27 +1113,27 @@ packages:
       '@gits-id/container': 0.13.0
       '@gits-id/dropdown': 0.14.0
       '@gits-id/editor': 0.14.0
-      '@gits-id/forms': 0.14.0
+      '@gits-id/forms': 0.14.4
       '@gits-id/icon': 0.14.0
       '@gits-id/layouts': 0.14.0
-      '@gits-id/list': 0.14.0
+      '@gits-id/list': 0.14.1
       '@gits-id/logo': 0.14.0
       '@gits-id/menu': 0.14.0
-      '@gits-id/menus': 0.14.0
+      '@gits-id/menus': 0.14.1
       '@gits-id/modal': 0.14.0
-      '@gits-id/multi-select': 0.14.0
-      '@gits-id/nav-drawer': 0.14.0
-      '@gits-id/navbar': 0.14.0
-      '@gits-id/pages': 0.14.0
+      '@gits-id/multi-select': 0.14.4
+      '@gits-id/nav-drawer': 0.14.1
+      '@gits-id/navbar': 0.14.1
+      '@gits-id/pages': 0.14.4
       '@gits-id/pagination': 0.14.0
       '@gits-id/progress-bar': 0.14.0
-      '@gits-id/select': 0.14.0
+      '@gits-id/select': 0.14.4
       '@gits-id/services': 0.14.0
       '@gits-id/shimmer': 0.14.0
       '@gits-id/spinner': 0.14.0
       '@gits-id/stats': 0.14.0
       '@gits-id/switch': 0.14.0
-      '@gits-id/table': 0.14.0
+      '@gits-id/table': 0.14.4
       '@gits-id/tabs': 0.14.0
       '@gits-id/tailwind-components': 0.13.20
       '@gits-id/tailwind-config': 0.14.0
