@@ -16,7 +16,7 @@ const isOpen = ref(false);
 </script>
 
 <template>
-  <div class="container mx-auto p-6 space-y-5">
+  <div class="container mx-auto p-6 pb-20 space-y-5">
     <h1 class="text-2xl font-semibold">GITS UI Playground</h1>
 
     <hr class="dark:border-neutral-700" />
@@ -144,7 +144,7 @@ const isOpen = ref(false);
     <hr class="dark:border-neutral-700" />
     <h3 class="text-xl font-semibold">Select</h3>
     <div>
-      <VSelect :items="items" />
+      <!-- <VSelect :items="items" /> -->
     </div>
 
     <hr class="dark:border-neutral-700" />
