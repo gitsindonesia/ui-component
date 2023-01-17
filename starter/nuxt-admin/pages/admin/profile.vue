@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import {useForm} from 'vee-validate';
 
+definePageMeta({
+  layout: 'admin',
+});
+
 useForm({
   initialValues: {
     name: 'John Doe',
