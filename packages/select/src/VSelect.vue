@@ -9,7 +9,7 @@ import {
 } from '@headlessui/vue';
 import {VInput} from '@gits-id/forms';
 import VTooltip from '@gits-id/tooltip';
-import {FieldOptions, useField} from 'vee-validate';
+import {FieldOptions} from 'vee-validate';
 import Icon from '@gits-id/icon';
 import '@gits-id/tooltip/dist/style.css';
 import '@gits-id/theme/transition.css';

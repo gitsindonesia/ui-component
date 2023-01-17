@@ -63,17 +63,23 @@ export function useFormValue<TValue extends any>(
     {immediate: true},
   );
 
-  watch(uncontrolledValue, (val) => {
-    if (name.value) {
-      setValue(val!);
-    }
+  watch(
+    uncontrolledValue,
+    (val) => {
+      if (name.value) {
+        setValue(val!);
+      }
 
-    if (onUncontrolledValueChange) {
-      onUncontrolledValueChange(val);
-    } else {
-      emit('update:modelValue', val);
-    }
-  });
+      if (onUncontrolledValueChange) {
+        onUncontrolledValueChange(val);
+      } else {
+        emit('update:modelValue', val);
+      }
+    },
+    {
+      deep: true,
+    },
+  );
 
   const validationListeners = computed(() => {
     // If the field is valid or have not been validated yet
