@@ -319,6 +319,7 @@ export interface ModuleOptions {
   components?: boolean;
   transpileDeps?: boolean;
   loadFloatingVueStyles?: boolean;
+  loadDefaultStyles?: boolean;
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -332,6 +333,7 @@ export default defineNuxtModule<ModuleOptions>({
     components: true,
     transpileDeps: true,
     loadFloatingVueStyles: true,
+    loadDefaultStyles: true,
   },
   setup(options, nuxt) {
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url));
@@ -357,7 +359,7 @@ export default defineNuxtModule<ModuleOptions>({
     }
 
     // load required styles when not using css bundle and not using sass bundle
-    if (!options.css && !options.sass) {
+    if (!options.css && !options.sass && options.loadDefaultStyles) {
       nuxt.options.css.push('@gits-id/menu/dist/style.css');
       nuxt.options.css.push('@gits-id/tooltip/dist/style.css');
       nuxt.options.css.push('@gits-id/theme/transition.css');

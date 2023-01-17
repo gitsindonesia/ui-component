@@ -8,7 +8,7 @@ const items = Array.from({length: 50}, (_, index) => ({
 </script>
 
 <template>
-  <div class="container mx-auto p-6 space-y-5">
+  <div class="container mx-auto p-6 pb-20 space-y-5">
     <h1 class="text-2xl font-semibold">GITS UI Playground</h1>
 
     <hr />
@@ -77,13 +77,57 @@ const items = Array.from({length: 50}, (_, index) => ({
     <hr />
     <h3 class="text-xl font-semibold">Select</h3>
     <div>
-      <VSelect :items="items" />
+      <!-- <VSelect :items="items" /> -->
     </div>
 
     <hr />
     <h3 class="text-xl font-semibold">Multi Select</h3>
     <div>
       <VMultiSelect :items="items" />
+    </div>
+
+    <hr />
+    <h3 class="text-xl font-semibold">Dropdown</h3>
+    <div>
+      <VDropdown
+        :items="[
+          {
+            text: 'Profile',
+            icon: 'mdi-account',
+          },
+          {
+            text: 'Settings',
+            icon: 'mdi-cog',
+          },
+          {
+            text: 'Logout',
+            icon: 'mdi-logout',
+          },
+        ]"
+      />
+    </div>
+
+    <hr />
+    <h3 class="text-xl font-semibold">Menus</h3>
+    <div>
+      <ClientOnly>
+        <VMenus
+          :items="[
+            {
+              text: 'Profile',
+              to: '/',
+            },
+            {
+              text: 'Settings',
+              to: '/',
+            },
+            {
+              text: 'Logout',
+              to: '/',
+            },
+          ]"
+        />
+      </ClientOnly>
     </div>
   </div>
 </template>
