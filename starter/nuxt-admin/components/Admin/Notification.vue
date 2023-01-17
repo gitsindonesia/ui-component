@@ -27,21 +27,11 @@ const appConfig = useAppConfig();
     <VList hover>
       <VListItemHeader class="!font-semibold">Notification</VListItemHeader>
       <VListItemDivider />
-      <template
+      <AdminNotificationItem
         v-for="notif in appConfig.notification.items"
         :key="notif.title"
-      >
-        <VListItem prepend-icon="ic:round-verified-user">
-          <div>
-            <h3 class="font-medium">
-              {{ notif.title }}
-            </h3>
-            <p class="text-gray-600 text-sm truncate" :title="notif.message">
-              {{ notif.message }}
-            </p>
-          </div>
-        </VListItem>
-      </template>
+        :notif="notif"
+      />
       <VListItemDivider />
       <VBtn block text color="primary">View all notifications</VBtn>
     </VList>
