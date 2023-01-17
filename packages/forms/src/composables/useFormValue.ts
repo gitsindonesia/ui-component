@@ -13,6 +13,7 @@ export function useFormValue<TValue extends any>(
   props: Props,
   emit: Emit,
   veeValidateOptions?: Partial<FieldOptions<TValue>>,
+  onUncontrolledValueChange?: (value: any) => void,
 ) {
   const {modelValue, name, rules} = toRefs(props);
 
@@ -67,7 +68,11 @@ export function useFormValue<TValue extends any>(
       setValue(val!);
     }
 
-    emit('update:modelValue', val);
+    if (onUncontrolledValueChange) {
+      onUncontrolledValueChange(val);
+    } else {
+      emit('update:modelValue', val);
+    }
   });
 
   const validationListeners = computed(() => {

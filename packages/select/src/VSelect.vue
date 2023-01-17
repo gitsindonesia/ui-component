@@ -14,6 +14,7 @@ import Icon from '@gits-id/icon';
 import '@gits-id/tooltip/dist/style.css';
 import '@gits-id/theme/transition.css';
 import {VSelectItem} from './types';
+import {useFormValue, type ValidationMode} from '@gits-id/forms';
 
 type Val = string | number | boolean | VSelectItem | Record<string, any>;
 
@@ -161,18 +162,11 @@ const props = defineProps({
     type: String,
     default: 'sm',
   },
+  validationMode: {
+    type: String as PropType<ValidationMode>,
+    default: 'aggressive',
+  }
 });
-
-const {
-  modelValue,
-  value,
-  name,
-  rules,
-  items,
-  itemText,
-  itemValue,
-  placeholder,
-} = toRefs(props);
 
 const emit =
   defineEmits<{
@@ -182,57 +176,32 @@ const emit =
     (e: 'search', value: string): void;
   }>();
 
-const initialValue = ref<Val>(props.modelValue || props.value);
-const uncontrolledValue = ref<Val>(initialValue.value);
-
 const {
-  value: vvValue,
-  errorMessage,
-  setValue,
-  meta,
-} = useField<Val>(name, rules, {
-  initialValue: modelValue.value || value.value,
-  ...props.fieldOptions,
+  items,
+  itemText,
+  itemValue,
+  placeholder,
+} = toRefs(props);
+
+const {errorMessage, uncontrolledValue, clear} = useFormValue(props, emit, props.fieldOptions, (val: any) => {
+  emitSelected(val)
 });
 
 const findItem = (val: Val) => {
   return items.value.find((item) => item[itemValue.value] === val);
 };
 
-watch(uncontrolledValue, (val) => {
-  // update v-model and vee validate form value
-  if (name?.value) {
-    setValue(val);
-  }
-
-  // emit all value update message
-  emitSelected(val);
-
-  // clear search input
-  search.value = '';
-});
-
-watch(modelValue, (val) => {
-  uncontrolledValue.value = val;
-});
-
-watch(vvValue, (val) => {
-  if (name.value) {
-    uncontrolledValue.value = val;
-  }
-});
-
-watch(
-  meta,
-  (val) => {
-    if (name.value && val.initialValue !== initialValue.value) {
-      initialValue.value = val.initialValue as any;
-    }
-  },
-  {
-    deep: true,
-  },
-);
+// watch(
+//   meta,
+//   (val) => {
+//     if (name.value && val.initialValue !== initialValue.value) {
+//       initialValue.value = val.initialValue as any;
+//     }
+//   },
+//   {
+//     deep: true,
+//   },
+// );
 
 const message = computed(() => {
   return errorMessage.value || props.errorMessages[0];
@@ -271,10 +240,6 @@ const selectedText = computed(() => {
   return item?.[props.itemText] || placeholder.value;
 });
 
-const clear = () => {
-  uncontrolledValue.value = '';
-};
-
 const emitSelected = (val: any) => {
   let emittedVal = val;
 
@@ -285,16 +250,14 @@ const emitSelected = (val: any) => {
     emittedVal = findItem(val) as Val;
   }
 
+  // clear search input
+  search.value = '';
+
   // emit event
   emit('update:modelValue', emittedVal);
   emit('update:value', emittedVal);
   emit('change', emittedVal);
 };
-
-// setup
-if (name.value) {
-  uncontrolledValue.value = meta.initialValue ?? '';
-}
 </script>
 
 <template>
