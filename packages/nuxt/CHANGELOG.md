@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.15.0](https://github.com/gitsindonesia/ui-component/compare/v0.14.4...v0.15.0) (2023-01-17)
+
+### Bug Fixes
+
+- **nuxt:** load required styles when not using CSS or SASS bundle ([452e3f9](https://github.com/gitsindonesia/ui-component/commit/452e3f9abd9046a31ad2cef19341390a608a2a9b))
+
+### Features
+
+- add dark mode support ([#102](https://github.com/gitsindonesia/ui-component/issues/102)) ([2168185](https://github.com/gitsindonesia/ui-component/commit/2168185195df07f8561b9229da7f23152a43f543))
+- add module options docs ([407f1ee](https://github.com/gitsindonesia/ui-component/commit/407f1eec168b46d0d3aab2e157f4d1ab0a18dc65))
+- **nuxt:** add option`loadDefaultStyles` with default `true` to toggle loading of default styles ([aaa574d](https://github.com/gitsindonesia/ui-component/commit/aaa574df33a049ae07647aacbe9efc042b1eab60))
+
 ## [0.14.4](https://github.com/gitsindonesia/ui-component/compare/v0.14.3...v0.14.4) (2023-01-17)
 
 **Note:** Version bump only for package @gits-id/ui-nuxt

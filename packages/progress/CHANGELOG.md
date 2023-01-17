@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.15.0](https://github.com/gitsindonesia/ui-component/compare/v0.14.4...v0.15.0) (2023-01-17)
+
+### Features
+
+- add dark mode support ([#102](https://github.com/gitsindonesia/ui-component/issues/102)) ([2168185](https://github.com/gitsindonesia/ui-component/commit/2168185195df07f8561b9229da7f23152a43f543))
+
 # [0.14.0](https://github.com/gitsindonesia/ui-component/compare/v0.14.0-alpha.6...v0.14.0) (2023-01-10)
 
 **Note:** Version bump only for package @gits-id/progress-bar

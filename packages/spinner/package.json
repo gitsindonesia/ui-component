@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/spinner",
-  "version": "0.14.0",
+  "version": "0.15.0",
   "description": "GITS Spinner Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -17,8 +17,8 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@gits-id/tailwind-config": "^0.14.0",
-    "@gits-id/utils": "^0.13.0",
+    "@gits-id/tailwind-config": "^0.15.0",
+    "@gits-id/utils": "^0.15.0",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
     "vite": "^3.0.0",

@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.15.0](https://github.com/gitsindonesia/ui-component/compare/v0.14.4...v0.15.0) (2023-01-17)
+
+**Note:** Version bump only for package @gits-id/iconsax
+
 # [0.13.0](https://github.com/gitsindonesia/ui-component/compare/v0.12.0...v0.13.0) (2022-11-24)
 
 **Note:** Version bump only for package @gits-id/iconsax

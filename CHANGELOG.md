@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.15.0](https://github.com/gitsindonesia/ui-component/compare/v0.14.4...v0.15.0) (2023-01-17)
+
+### Bug Fixes
+
+- **nuxt:** load required styles when not using CSS or SASS bundle ([452e3f9](https://github.com/gitsindonesia/ui-component/commit/452e3f9abd9046a31ad2cef19341390a608a2a9b))
+- **SSR:** fix undefined MutationObserver on VTabs when in SSR mode ([a3b00c5](https://github.com/gitsindonesia/ui-component/commit/a3b00c57134cd846c7eeb3f471a6975a76994244))
+- **starter/nuxt-admin:** add sass dep ([fb43396](https://github.com/gitsindonesia/ui-component/commit/fb43396a7ab66b4eebca584aee25a4beb2f77ed6))
+- **starter/nuxt-admin:** move css to layout ([7a0a507](https://github.com/gitsindonesia/ui-component/commit/7a0a507132878b403b60a08868b5a48729cc4949))
+- **starter/nuxt-minimal:** add pages ([76da0ca](https://github.com/gitsindonesia/ui-component/commit/76da0caa9d5f97f70e8a2c835d88320e34d36e89))
+- **VAppBar:** fix transition value ([ba5f4fe](https://github.com/gitsindonesia/ui-component/commit/ba5f4fe710437b7b6f35e8544ce39d723b6e52f3))
+- **VModal:** make `width` and `maxWidth` props optional ([5fed047](https://github.com/gitsindonesia/ui-component/commit/5fed047434771cd984d42b74cc9b5940c4d45456))
+
+### Features
+
+- add admin notification ([1712813](https://github.com/gitsindonesia/ui-component/commit/171281330fe34d1c6758a05255f554d9a7fbee0d))
+- add dark mode support ([#102](https://github.com/gitsindonesia/ui-component/issues/102)) ([2168185](https://github.com/gitsindonesia/ui-component/commit/2168185195df07f8561b9229da7f23152a43f543))
+- add module options docs ([407f1ee](https://github.com/gitsindonesia/ui-component/commit/407f1eec168b46d0d3aab2e157f4d1ab0a18dc65))
+- **nuxt:** add option`loadDefaultStyles` with default `true` to toggle loading of default styles ([aaa574d](https://github.com/gitsindonesia/ui-component/commit/aaa574df33a049ae07647aacbe9efc042b1eab60))
+- **starter/nuxt-admin:** set package name ([9109d7a](https://github.com/gitsindonesia/ui-component/commit/9109d7ae9dfa2011719993e0f57d12930e196aa4))
+- **starter:** add new `nuxt-admin` starter ([0918236](https://github.com/gitsindonesia/ui-component/commit/0918236d2c83dccb688c7b8e3f2157b6e3492a25))
+
 ## [0.14.4](https://github.com/gitsindonesia/ui-component/compare/v0.14.3...v0.14.4) (2023-01-17)
 
 ### Bug Fixes
