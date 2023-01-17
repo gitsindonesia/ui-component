@@ -95,3 +95,148 @@ export const Validation: Story = (args) => ({
     </form>
 `,
 });
+
+export const TestInputState: Story<{}> = (args) => ({
+  components: {VBtn, VAutocomplete},
+  setup() {
+    const modelValue = ref();
+    const modelValue2 = ref();
+    const initialValues = ref({
+      text: args.setupWithInitialValue ? 'init' : '',
+      text2: args.setupWithInitialValue ? 'init2' : '',
+    });
+
+    const {handleSubmit, resetForm, values} = args.useForm
+      ? useForm({
+          initialValues,
+        })
+      : {handleSubmit: (cb: any) => null, resetForm: () => null, values: {}};
+
+    const onSubmit = handleSubmit((values: any) => {
+      alert(JSON.stringify(values));
+    });
+
+    const onChange = (val: any) => {
+      alert('onChange: ' + val);
+    };
+
+    const resetVVForm = () => {
+      if (!args.useForm) {
+        alert(
+          'Story is not set up with Vee Validate Form. set `useForm` control to true to try this action.',
+        );
+      }
+
+      initialValues.value = {
+        text: items[0],
+        text2: items[1],
+      };
+
+      resetForm();
+    };
+
+    return {
+      args,
+      onSubmit,
+      resetForm,
+      values,
+      modelValue,
+      modelValue2,
+      onChange,
+      resetVVForm,
+      items,
+    };
+  },
+  template: `
+    <form @submit="onSubmit" class="border-none">
+    <h1 class="mb-8 font-semibold">{{ args.useForm ? 'with' : 'without' }} VeeValidate Form</h1>
+
+    <button 
+      type="button" @click="resetVVForm" 
+      class="bg-red-400 text-white text-sm p-2 rounded"
+    >
+      Change Initial Value & Reset Form! <span class="text-[10px]">(Vee Validate only)</span>
+    </button>
+
+    <div class="flex flex-wrap">
+      <div class="w-1/2 p-2">
+        <VAutocomplete
+          :items="items"
+          name="text"
+          label="Only Name"
+          :value="args.value"
+          :clearable="args.clearable"
+        />
+        <div class="text-xs">
+          When used without vee validate, should not change "Vmodel" value or any other value unless
+          explicitly implemented<br />
+          With veevalidate, should update form values under "text" key only
+        </div>
+      </div>
+
+      <div class="w-1/2 p-2">
+        <VAutocomplete
+          :items="items"
+          v-model="modelValue"
+          label="Only VModel"
+          :value="args.value"
+          :clearable="args.clearable"
+        />
+        <div class="text-xs">Should update "modelValue" only</div>
+      </div>
+
+      <div class="w-1/2 p-2">
+        <VAutocomplete
+          :items="items"
+          v-model="modelValue2"
+          name="text2"
+          label="VModel and Name"
+          :clearable="args.clearable"
+        />
+        <div class="text-xs">Should update form values under "text2" (with vee validate) key AND "modelValue2"</div>
+      </div>
+
+      <div class="w-1/2 p-2">
+        <VAutocomplete
+          :items="items"
+          label="Uncontrolled"
+          placeholder="Uncontrolled input"
+          @change="onChange"
+          :clearable="args.clearable"
+        />
+        <div class="text-xs">Should not change any value unless explicitly implemented</div>
+      </div>
+
+      <div class="w-1/2 p-2">
+        <VAutocomplete
+          :items="items"
+          :model-value="items[0]"
+          label="Initial Value w/ modelValue prop "
+        />
+      </div>
+
+      <div class="w-1/2 p-2">
+        <VAutocomplete
+          :items="items"
+          :model-value="modelvalue"
+          name="init2"
+          label="Initial Value w/ modelValue prop + name"
+        />
+      </div>
+    </div>
+
+    <div class="mt-4">
+      <v-btn type="submit">Submit</v-btn>
+      <v-btn type="button" text @click="resetForm">Reset</v-btn>
+    </div>
+
+    <pre>{{ {values, modelValue, modelValue2} }}</pre>
+    </form>
+  `,
+});
+TestInputState.args = {
+  useForm: false,
+  setupWithInitialValue: false,
+  value: undefined,
+  clearable: true,
+};
