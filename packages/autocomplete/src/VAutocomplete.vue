@@ -65,7 +65,6 @@ const {errorMessage, uncontrolledValue, clear: clearField} =
 const {items} = toRefs(props);
 const query = ref('');
 
-
 watch(query, (val) => emit('update:query', val));
 
 const filteredItems = computed(() =>
