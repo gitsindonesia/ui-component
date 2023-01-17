@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+definePageMeta({
+  layout: 'admin',
+});
+</script>
 
 <template>
   <div>
@@ -11,28 +15,22 @@
     <div class="grid gap-4 grid-cols-1 md:grid-cols-2">
       <VCard title="Get Started">
         <p>
-          Start by editing this page on
-          <code class="px-2 py-1 bg-gray-100 rounded text-sm"
-            >pages/admin/index.vue</code
-          >.
+          Start by editing this page in
+          <code class="code">pages/admin/index.vue</code>.
         </p>
       </VCard>
 
       <VCard title="Menus">
         <p>
-          Add or update menus on
-          <code class="px-2 py-1 bg-gray-100 rounded text-sm"
-            >./app.config.ts</code
-          >.
+          Add or update menus in
+          <code class="code">./app.config.ts</code>.
         </p>
       </VCard>
 
       <VCard title="Layout">
         <p>
-          Checkout the default layout on
-          <code class="px-2 py-1 bg-gray-100 rounded text-sm"
-            >layouts/default.vue</code
-          >.
+          This template comes with <code class="code">admin</code> layout in
+          <code class="code">layouts/admin.vue</code>.
         </p>
       </VCard>
 
@@ -40,12 +38,16 @@
         <p>
           This template comes with a few components that you can use on your
           pages. Checkout the
-          <code class="px-2 py-1 bg-gray-100 rounded text-sm"
-            >./components</code
-          >
+          <code class="code"> ./components </code>
           folder.
         </p>
       </VCard>
     </div>
   </div>
 </template>
+
+<style scoped>
+.code {
+  @apply px-2 py-1 bg-gray-100 rounded text-sm;
+}
+</style>
