@@ -313,12 +313,80 @@ const components: AddComponentOptions[] = [
     filePath: '@gits-id/tooltip/src/VTooltip.vue',
   },
 ];
+
 export interface ModuleOptions {
+  /**
+   * Determine whether to load the css bundle.
+   *
+   * @default false
+   * @example
+   * // nuxt.config.ts
+   * export default defineConfig({
+   *  gitsUi: {
+   *   css: true
+   * })
+   */
   css?: boolean;
+  /**
+   * Determine whether to load the sass bundle.
+   *
+   * @default false
+   * @example
+   * // nuxt.config.ts
+   * export default defineConfig({
+   *  gitsUi: {
+   *   sass: true
+   * })
+   */
   sass?: boolean;
+  /**
+   * Determine whether to auto-imports the components.
+   *
+   * @default true
+   * @example
+   * // nuxt.config.ts
+   * export default defineConfig({
+   *  gitsUi: {
+   *   components: true
+   * })
+   */
   components?: boolean;
+  /**
+   * Determine whether to transpile dependencies.
+   *
+   * @default true
+   * @example
+   * // nuxt.config.ts
+   * export default defineConfig({
+   *  gitsUi: {
+   *   transpileDeps: true
+   * })
+   */
   transpileDeps?: boolean;
+  /**
+   * Determine whether to load floating vue styles.
+   *
+   * @default true
+   * @example
+   * // nuxt.config.ts
+   * export default defineConfig({
+   *  gitsUi: {
+   *   loadFloatingVueStyles: true
+   * })
+   */
   loadFloatingVueStyles?: boolean;
+  /**
+   * Determine whether to load default styles.
+   * Only works when `css` and `scss` is `false`.
+   *
+   * @default true
+   * @example
+   * // nuxt.config.ts
+   * export default defineConfig({
+   *  gitsUi: {
+   *   loadDefaultStyles: false
+   * })
+   */
   loadDefaultStyles?: boolean;
 }
 
