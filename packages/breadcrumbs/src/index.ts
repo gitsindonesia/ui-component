@@ -1,4 +1,5 @@
 import VBreadcrumbs from './VBreadcrumbs.vue';
+import './VBreadcrumbs.dark.scss';
 
 export * from './types';
 export {VBreadcrumbs};

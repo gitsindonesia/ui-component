@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.4](https://github.com/gitsindonesia/ui-component/compare/v0.14.3...v0.14.4) (2023-01-17)
+
+### Bug Fixes
+
+- build ([6166bdd](https://github.com/gitsindonesia/ui-component/commit/6166bdd6b40e6ff9d37e5660212d19fd4b4dcf85))
+
+### Features
+
+- **VMultiSelect:** integrate `useFormValue` in v-multi-select component ([f9b923f](https://github.com/gitsindonesia/ui-component/commit/f9b923f89a977755e41a4db46a83b06bbfc2d60f))
+
 ## [0.14.3](https://github.com/gitsindonesia/ui-component/compare/v0.14.2...v0.14.3) (2023-01-13)
 
 **Note:** Version bump only for package @gits-id/multi-select

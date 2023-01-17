@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import {Menu, Dropdown, options} from 'floating-vue';
-import {List} from '@gits-id/list';
 import {computed} from 'vue';
 import Icon from '@gits-id/icon';
 import VMenusItem from './VMenusItem.vue';
-import 'floating-vue/dist/style.css';
 
 export type VMenuItem = InstanceType<typeof VMenusItem>['$props'];
 export type Placement = InstanceType<typeof Menu>['$props']['placement'];
@@ -88,7 +86,7 @@ const menuPlacement = computed(() => {
       </button>
     </slot>
     <template #popper>
-      <List class="v-menus-items" :class="itemsClass" :style="itemsStyle">
+      <div class="v-menus-items" :class="itemsClass" :style="itemsStyle">
         <slot name="items">
           <template v-for="item in items" :key="item.text">
             <VMenusItem
@@ -98,7 +96,7 @@ const menuPlacement = computed(() => {
             />
           </template>
         </slot>
-      </List>
+      </div>
     </template>
   </component>
 </template>

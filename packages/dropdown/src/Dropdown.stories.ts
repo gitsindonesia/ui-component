@@ -4,6 +4,7 @@ import DropdownItem from './DropdownItem.vue';
 import DropdownButton from './DropdownButton.vue';
 import type {DropdownItemProps} from './types';
 import Button from '@gits-id/button';
+import './Dropdown.dark.scss';
 
 const genItems = (length = 5): DropdownItemProps[] =>
   Array.from({length}, (_, v) => ({
@@ -109,4 +110,16 @@ export const CustomActivator: Story = (args, {argTypes}) => ({
       </Dropdown>
     </div>
   `,
+});
+
+export const DarkMode: Story<{}> = (args) => ({
+  components: {Dropdown},
+  setup() {
+    return {args};
+  },
+  template: `
+<main class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6 space-y-2">
+  <Dropdown v-bind="args"/>
+</main>
+`,
 });

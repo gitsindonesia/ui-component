@@ -1,3 +1,4 @@
+<!-- @deprecated component. use `VInput` instead -->
 <script setup lang="ts">
 import {ref, toRefs, computed, watch} from 'vue';
 import VInput from './VInput.vue';

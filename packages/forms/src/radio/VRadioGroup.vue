@@ -1,15 +1,13 @@
 <script setup lang="ts">
 import {
   computed,
-  toRefs,
-  watch,
   PropType,
   ref,
   onMounted,
   onBeforeUnmount,
 } from 'vue';
-import {useField} from 'vee-validate';
 import {useTextSize} from '@gits-id/utils';
+import { type ValidationMode, useFormValue } from '../composables';
 
 type Value = string | number | object | boolean | Record<string, any>;
 
@@ -97,26 +95,10 @@ const props = defineProps({
     default: '',
   },
   validationMode: {
-    type: String as PropType<'aggressive' | 'eager'>,
+    type: String as PropType<ValidationMode>,
     default: 'aggressive',
   },
 });
-
-const {
-  modelValue,
-  error,
-  value,
-  disabled,
-  label,
-  items,
-  itemValue,
-  itemText,
-  size,
-  inline,
-  name,
-  rules,
-  validationMode,
-} = toRefs(props);
 
 const emit = defineEmits([
   'update:modelValue',
@@ -126,58 +108,26 @@ const emit = defineEmits([
   'blur',
 ]);
 
-const uncontrolledValue = ref();
 const groupRef = ref();
 
-const isEagerValidation = computed(() => {
-  return validationMode.value === 'eager';
-});
-
-const {
-  value: vvValue,
-  errorMessage,
-  validate,
-  meta,
-  setValue
-} = useField(name, rules, {
-  initialValue: modelValue.value || value.value,
-  validateOnValueUpdate: !isEagerValidation.value,
-});
+const {errorMessage, uncontrolledValue, isEagerValidation, validate, meta} =
+  useFormValue(props, emit);
 
 const classes = computed(() =>
-  error.value
+  props.error
     ? 'text-error-600 focus:ring-error-600'
     : 'text-primary-600 focus:ring-primary-600',
 );
 
 const getValue = (item: RadioItem) => {
-  return typeof item === 'object' ? item?.[itemValue.value] : item;
+  return typeof item === 'object' ? item?.[props.itemValue] : item;
 };
 
 const getText = (item: RadioItem) => {
-  return typeof item === 'object' ? item?.[itemText.value] : item;
+  return typeof item === 'object' ? item?.[props.itemText] : item;
 };
 
-watch(modelValue, (val) => {
-  uncontrolledValue.value = val;
-})
-
-watch(vvValue, (val) => {
-  uncontrolledValue.value = val;
-})
-
-watch(uncontrolledValue, (val) => {
-  if(name?.value){
-    setValue(val)
-  }
-
-  emit('update:modelValue', val);
-  emit('update:value', val);
-  emit('input', val);
-  emit('change', val);
-});
-
-const {class: sizeClass} = useTextSize(size.value);
+const {class: sizeClass} = useTextSize(props.size);
 
 const onChange = (event: any) => {
   emit('change', event);
@@ -230,7 +180,10 @@ onBeforeUnmount(() => {
       v-if="label"
       :for="name"
       class="font-medium mb-1 block"
-      :class="[error ? 'text-error-500' : 'text-gray-700', labelClass]"
+      :class="[
+        error ? 'text-error-500' : 'text-gray-700 dark:text-neutral-200',
+        labelClass,
+      ]"
     >
       {{ label }}
     </label>
@@ -240,7 +193,10 @@ onBeforeUnmount(() => {
       :class="[inline ? 'flex-row' : 'flex-col']"
     >
       <label
-        :class="[uncontrolledValue === getValue(item) ? selectedClass :'', defaultClass]"
+        :class="[
+          uncontrolledValue === getValue(item) ? selectedClass : '',
+          defaultClass,
+        ]"
         v-for="(item, index) in items"
         :key="index"
       >
@@ -257,13 +213,19 @@ onBeforeUnmount(() => {
             duration-300
             disabled:cursor-not-allowed
             disabled:border-gray-300
+            dark:bg-neutral-800
+            dark:border-neutral-700
+            dark:disabled:bg-neutral-300
           "
           :class="classes"
           :disabled="disabled"
           @change="onChange"
         />
         <slot name="label" :item="item" :selected="uncontrolledValue">
-          <span :class="[sizeClass]">
+          <span
+            class="text-gray-800 dark:text-neutral-200"
+            :class="[sizeClass]"
+          >
             {{ getText(item) }}
           </span>
         </slot>

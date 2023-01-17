@@ -93,7 +93,7 @@ const classes = computed(() => {
 </script>
 
 <template>
-  <span class="badge" :class="classes">
+  <span :class="classes">
     <slot />
     <slot name="dismissable" :dismiss="onDismiss">
       <button

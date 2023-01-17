@@ -120,6 +120,11 @@
     --badge-color: theme('colors.white');
     --badge-border-color: theme('colors.error.500');
   }
+  &-dark {
+    --badge-bg-color: theme('colors.gray.800');
+    --badge-color: theme('colors.white');
+    --badge-border-color: theme('colors.gray.800');
+  }
 
   /* Outlined Colors */
   &--outlined.badge-default {

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import {toRefs, computed, PropType, watch, ref} from 'vue';
-import {useField} from 'vee-validate';
+import {computed, PropType} from 'vue';
+import {useFormValue, ValidationMode} from '../composables';
 
 type CheckboxValue = any[] | boolean | undefined;
 
@@ -26,7 +26,7 @@ const props = defineProps({
     default: '',
   },
   validationMode: {
-    type: String,
+    type: String as PropType<ValidationMode>,
     default: 'aggressive',
   },
   value: {
@@ -83,58 +83,21 @@ const emit =
     (e: 'update:modelValue', value: CheckboxValue): void;
   }>();
 
-const {modelValue, label, inputClass, disabled, id, name, rules, validationMode} =
-  toRefs(props);
-const uncontrolledValue = ref();
-
 const isEagerValidation = computed(() => {
-  return validationMode.value === 'eager';
+  return props.validationMode === 'eager';
 });
 
-const inputId = computed(() => {
-  return id.value || name.value;
-});
-
-const {
-  value: vvValue,
-  errorMessage,
-  validate,
-  setValue,
-} = useField<CheckboxValue>(name, rules, {
-  type: 'checkbox',
-  valueProp: props.value,
-  checkedValue: props.checkedValue,
-  uncheckedValue: props.uncheckedValue,
-  validateOnValueUpdate: !isEagerValidation.value,
-});
-
-watch(modelValue, (val) => {
-  uncontrolledValue.value = val;
-});
-
-watch(vvValue, (val) => {
-  uncontrolledValue.value = val;
-});
-
-watch(uncontrolledValue, (val) => {
-  if (name.value) {
-    setValue(val);
-  }
-
-  emit('update:modelValue', val);
-});
-
-const handleBlur = (m: any) => {
-  if (isEagerValidation.value) {
-    validate();
-  }
-};
-
-const handleChange = (m: any) => {
-  if (errorMessage.value && isEagerValidation.value) {
-    validate();
-  }
-};
+const {errorMessage, uncontrolledValue, inputId, handleChange} = useFormValue(
+  props,
+  emit,
+  {
+    type: 'checkbox',
+    valueProp: props.value,
+    checkedValue: props.checkedValue,
+    uncheckedValue: props.uncheckedValue,
+    validateOnValueUpdate: !isEagerValidation.value,
+  },
+);
 </script>
 
 <template>

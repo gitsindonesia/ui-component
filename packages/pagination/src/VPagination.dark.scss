@@ -1,0 +1,32 @@
+.dark {
+  .v-pagination {
+    /* item */
+    --v-pagination-item-bg-color: theme('colors.neutral.800');
+    --v-pagination-item-text-color: theme('colors.neutral.200');
+    --v-pagination-item-border-color: theme('colors.neutral.800');
+
+    /* item active */
+    --v-pagination-item-active-bg-color: theme('colors.primary.500');
+    --v-pagination-item-active-border-color: theme('colors.primary.500');
+    --v-pagination-item-active-text-color: theme('colors.neutral.200');
+
+    /* item hover */
+    --v-pagination-item-hover-bg-color: theme('colors.neutral.700');
+    --v-pagination-item-hover-text-color: theme('colors.neutral.200');
+
+    /* item disabled */
+    --v-pagination-item-disabled-bg-color: theme('colors.neutral.600');
+    --v-pagination-item-disabled-border-color: theme('colors.neutral.600');
+    --v-pagination-item-disabled-text-color: theme('colors.neutral.400');
+
+    &-item {
+      &--ellipsis {
+        --v-pagination-bg-color: var(--v-pagination-item-disabled-bg-color);
+        --v-pagination-text-color: var(--v-pagination-item-disabled-text-color);
+        --v-pagination-border-color: var(
+          --v-pagination-item-disabled-border-color
+        );
+      }
+    }
+  }
+}

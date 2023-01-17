@@ -15,6 +15,7 @@
   --v-multi-select-label-font-weight: var(--v-input-label-font-weight);
   --v-multi-select-label-display: var(--v-input-label-display);
   --v-multi-select-label-margin-bottom: var(--v-input-label-margin-bottom);
+  --v-multi-select-label-color: var(--v-input-label-color);
 
   /* item */
   --v-multi-select-item-font-size: theme('fontSize.base');
@@ -67,6 +68,7 @@
   }
 
   &-label {
+    color: var(--v-multi-select-label-color);
     font-size: var(--v-multi-select-label-font-size);
     font-weight: var(--v-multi-select-label-font-weight);
     display: var(--v-multi-select-label-display);

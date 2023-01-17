@@ -34,8 +34,8 @@ defineProps({
       <template v-for="(item, index) in items" :key="index">
         <slot :name="`item.${index}`">
           <VBreadcrumbsItem
+            v-bind="item"
             :to="item.to"
-            :title="item.title"
             :active-class="activeColor"
             :tag="tag"
           />

@@ -5,6 +5,7 @@ import VIcon from '@gits-id/icon';
 import {defaultColors} from '@gits-id/theme/defaultTheme';
 import VBtnGroup from './VBtnGroup.vue';
 import VBtnToolbar from './VBtnToolbar.vue';
+import './VBtn.dark.scss';
 
 const colors = defaultColors;
 const defaultSizes = ['sm', 'md', 'lg'];
@@ -388,5 +389,74 @@ export const ButtonGroup: Story<VBtnProps> = () => ({
       </VBtnGroup>
       <VBtn prefix-icon="ri:format-clear"></VBtn>
     </VBtnToolbar>
+  `,
+});
+
+export const DarkMode: Story<VBtnProps> = () => ({
+  components: {VBtnGroup, VBtnToolbar, VBtn},
+  template: `
+  <div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
+    <h3 class="font-semibold">Default</h3>
+    <VBtnGroup class="w-full mt-2">
+      <VBtn>Button</VBtn>
+      <VBtn>Button</VBtn>
+      <VBtn>Button</VBtn>
+    </VBtnGroup>
+    <h3 class="font-semibold mt-5">Sizes:</h3>
+    <VBtnGroup class="w-full mt-2">
+      <VBtn size="sm">sm</VBtn>
+      <VBtn size="sm">sm</VBtn>
+      <VBtn size="sm">sm</VBtn>
+    </VBtnGroup>
+    <VBtnGroup class="w-full mt-2">
+      <VBtn size="lg">lg</VBtn>
+      <VBtn size="lg">lg</VBtn>
+      <VBtn size="lg">lg</VBtn>
+    </VBtnGroup>
+    <VBtnGroup class="w-full mt-5">
+      <VBtn color="primary">Button</VBtn>
+      <VBtn color="primary">Button</VBtn>
+      <VBtn color="primary">Button</VBtn>
+    </VBtnGroup>
+    <VBtnGroup class="w-full mt-5">
+      <VBtn color="primary">Button</VBtn>
+      <VBtn color="secondary">Button</VBtn>
+      <VBtn color="error">Button</VBtn>
+    </VBtnGroup>
+    <VBtnGroup class="w-full mt-5">
+      <VBtn outlined color="primary">Button</VBtn>
+      <VBtn outlined color="secondary">Button</VBtn>
+      <VBtn outlined color="error">Button</VBtn>
+    </VBtnGroup>
+    <VBtnGroup class="w-full mt-5">
+      <VBtn text color="primary">Button</VBtn>
+      <VBtn text color="secondary">Button</VBtn>
+      <VBtn text color="error">Button</VBtn>
+    </VBtnGroup>
+    <VBtnGroup class="mt-5">
+      <VBtn prefix-icon="ri:search-2-line"></VBtn>
+      <VBtn suffix-icon="ri:add-line"></VBtn>
+      <VBtn prefix-icon="ri:edit-line"></VBtn>
+    </VBtnGroup>
+
+    <VBtnToolbar class="mt-5">
+      <VBtnGroup>
+        <VBtn prefix-icon="ri:bold"></VBtn>
+        <VBtn suffix-icon="ri:italic"></VBtn>
+        <VBtn prefix-icon="ri:underline"></VBtn>
+      </VBtnGroup>
+      <VBtnGroup>
+        <VBtn suffix-icon="ri:list-ordered"></VBtn>
+        <VBtn prefix-icon="ri:list-check"></VBtn>
+        <VBtn prefix-icon="ri:align-left"></VBtn>
+      </VBtnGroup>
+      <VBtnGroup>
+        <VBtn prefix-icon="ri:link"></VBtn>
+        <VBtn suffix-icon="ri:image-line"></VBtn>
+        <VBtn prefix-icon="ri:video-line"></VBtn>
+      </VBtnGroup>
+      <VBtn prefix-icon="ri:format-clear"></VBtn>
+    </VBtnToolbar>
+</div>
   `,
 });

@@ -5,9 +5,9 @@ export default {
 </script>
 
 <script setup lang="ts">
-import {toRefs, computed, watch, PropType, ref} from 'vue';
-import {useField} from 'vee-validate';
+import {PropType} from 'vue';
 import Icon from '@gits-id/icon';
+import {useFormValue, ValidationMode} from '../composables';
 
 type IconSize = InstanceType<typeof Icon>['$props']['size'];
 
@@ -76,7 +76,7 @@ const props = defineProps({
     default: false,
   },
   validationMode: {
-    type: String,
+    type: String as PropType<ValidationMode>,
     default: 'aggressive',
   },
   classes: {
@@ -158,18 +158,6 @@ const props = defineProps({
   },
 });
 
-const {
-  modelValue,
-  type,
-  readonly,
-  disabled,
-  placeholder,
-  prependIcon,
-  name,
-  rules,
-  validationMode,
-} = toRefs(props);
-
 const emit = defineEmits([
   'update:modelValue',
   'clickPrepend',
@@ -179,83 +167,8 @@ const emit = defineEmits([
   'clear',
 ]);
 
-const isEagerValidation = computed(() => {
-  return validationMode.value === 'eager';
-});
-
-const input = ref();
-
-const {
-  value: vvValue,
-  errorMessage,
-  handleChange,
-  setValue,
-  meta,
-} = useField(name, rules, {
-  initialValue: props.modelValue || props.value,
-  validateOnValueUpdate: !isEagerValidation.value,
-});
-
-const initialValue = ref(props.modelValue || props.value);
-const uncontrolledValue = ref(
-  initialValue.value || (name?.value ? meta.initialValue : initialValue.value),
-);
-
-watch(modelValue, (val) => {
-  uncontrolledValue.value = val;
-});
-
-watch(vvValue, (val) => {
-  // only use vee validate value if name is defined
-  // to prevent whole form value being passed as field value
-  if (name.value) {
-    uncontrolledValue.value = val;
-  }
-});
-
-watch(uncontrolledValue, (val) => {
-  if (name.value) {
-    setValue(val!);
-  }
-
-  emit('update:modelValue', val);
-});
-
-watch(
-  meta,
-  (val, _prev) => {
-    if (name.value && val.initialValue !== initialValue.value) {
-      initialValue.value = val.initialValue || '';
-    }
-  },
-  {deep: true},
-);
-
-const validationListeners = computed(() => {
-  // If the field is valid or have not been validated yet
-  // lazy
-  if (!errorMessage.value && isEagerValidation.value) {
-    return {
-      blur: handleChange,
-      change: handleChange,
-      // disable `shouldValidate` to avoid validating on input
-      input: (e: any) => handleChange(e, false),
-    };
-  }
-  // Aggressive
-  return {
-    blur: handleChange,
-    change: handleChange,
-    input: handleChange, // only switched this
-  };
-});
-
-const clear = () => {
-  uncontrolledValue.value = '';
-
-  emit('clear');
-  input.value?.focus();
-};
+const {errorMessage, uncontrolledValue, validationListeners, inputId, clear} =
+  useFormValue(props, emit);
 </script>
 
 <template>
@@ -270,10 +183,10 @@ const clear = () => {
       wrapperClass,
     ]"
   >
-    <slot v-if="label" name="label" :v-slot="{for: id || name}">
+    <slot v-if="label" name="label" :v-slot="{for: inputId}">
       <label
         v-if="label"
-        :for="id || name"
+        :for="inputId"
         class="v-input-label"
         :class="labelClass"
       >

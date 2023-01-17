@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.4](https://github.com/gitsindonesia/ui-component/compare/v0.14.3...v0.14.4) (2023-01-17)
+
+### Features
+
+- **Autocomplete:** integrate `useFormValue` in v-autocomplete component ([a3d5447](https://github.com/gitsindonesia/ui-component/commit/a3d5447b0eaf1295ca3931ecf94c9cd2fa0768c5))
+- **VSelect:** integrate `useFormValue` in v-select component ([8940082](https://github.com/gitsindonesia/ui-component/commit/894008232da77705f6b7ab91f1e88a68e8de0af8))
+
 # [0.14.0](https://github.com/gitsindonesia/ui-component/compare/v0.14.0-alpha.6...v0.14.0) (2023-01-10)
 
 **Note:** Version bump only for package @gits-id/autocomplete

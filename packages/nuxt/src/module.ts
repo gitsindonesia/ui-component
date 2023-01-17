@@ -319,6 +319,7 @@ export interface ModuleOptions {
   components?: boolean;
   transpileDeps?: boolean;
   loadFloatingVueStyles?: boolean;
+  darkMode?: boolean;
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -332,6 +333,7 @@ export default defineNuxtModule<ModuleOptions>({
     components: true,
     transpileDeps: true,
     loadFloatingVueStyles: true,
+    darkMode: false,
   },
   setup(options, nuxt) {
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url));
@@ -356,9 +358,19 @@ export default defineNuxtModule<ModuleOptions>({
       nuxt.options.css.push('@gits-id/ui/styles.scss');
     }
 
+    // load transition styles if css or sass is not used
+    if (!options.css && !options.sass) {
+      nuxt.options.css.push('@gits-id/theme/transition.css');
+    }
+
     // load floating-vue styles
     if (options.loadFloatingVueStyles) {
       nuxt.options.css.push('floating-vue/dist/style.css');
+    }
+
+    // load dark mode styles
+    if (options.darkMode) {
+      nuxt.options.css.push('@gits-id/ui/styles.dark');
     }
 
     // register components

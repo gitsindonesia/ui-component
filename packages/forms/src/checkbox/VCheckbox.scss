@@ -5,6 +5,10 @@
   --v-checkbox-border-color: theme('colors.gray.500');
   --v-checkbox-border-radius: theme('borderRadius.DEFAULT');
 
+  // disabled
+  --v-checkbox-disabled-bg-color: theme('colors.gray.200');
+  --v-checkbox-disabled-border-color: theme('colors.gray.200');
+
   /* label */
   --v-checkbox-label-font-size: var(
     --input-label-font-size,
@@ -13,6 +17,7 @@
   --v-checkbox-label-font-weight: theme('fontWeight.normal');
   --v-checkbox-label-display: var(--v-input-label-display, block);
   --v-checkbox-label-margin-top: 1px;
+  --v-checkbox-label-color: theme('colors.gray.800');
 }
 
 .v-checkbox {
@@ -24,8 +29,12 @@
     border: var(--v-checkbox-border-width) var(--v-checkbox-border-style)
       var(--v-checkbox-border-color);
 
-    @apply transition duration-300
-    disabled:bg-gray-100 disabled:border-gray-200 disabled:cursor-not-allowed;
+    @apply transition duration-300 disabled:cursor-not-allowed;
+
+    &:disabled {
+      --v-checkbox-bg-color: var(--v-checkbox-disabled-bg-color);
+      --v-checkbox-border-color: var(--v-checkbox-disabled-border-color);
+    }
   }
 
   &-label {
@@ -33,6 +42,7 @@
     font-weight: var(--v-checkbox-label-font-weight);
     display: var(--v-checkbox-label-display);
     margin-top: var(--v-checkbox-label-margin-top);
+    color: var(--v-checkbox-label-color);
 
     @apply select-none;
   }
