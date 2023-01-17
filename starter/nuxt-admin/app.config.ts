@@ -18,13 +18,28 @@ export default defineAppConfig({
       icon: 'ic:baseline-person',
       to: '/admin/profile',
     },
-    // {
-    //   divider: true
-    // },
-    // {
-    //   text: 'Logout',
-    //   icon: 'ic:baseline-logout',
-    //   to: '/admin/logout',
-    // },
   ],
+  notification: {
+    label: 'Notification',
+    items: [
+      {
+        title: 'Notification 1',
+        message: 'This is a notification',
+        icon: 'ic:baseline-person',
+        to: '/admin/profile',
+      },
+      {
+        title: 'Notification 2',
+        message: 'This is a notification',
+        icon: 'ic:baseline-person',
+        to: '/admin/profile',
+      },
+      {
+        title: 'Notification 3',
+        message: 'This is a notification',
+        icon: 'ic:baseline-person',
+        to: '/admin/profile',
+      },
+    ],
+  },
 });
