@@ -356,6 +356,13 @@ export default defineNuxtModule<ModuleOptions>({
       nuxt.options.css.push('@gits-id/ui/styles.scss');
     }
 
+    // load required styles when not using css bundle and not using sass bundle
+    if (!options.css && !options.sass) {
+      nuxt.options.css.push('@gits-id/menu/dist/style.css');
+      nuxt.options.css.push('@gits-id/tooltip/dist/style.css');
+      nuxt.options.css.push('@gits-id/theme/transition.css');
+    }
+
     // load floating-vue styles
     if (options.loadFloatingVueStyles) {
       nuxt.options.css.push('floating-vue/dist/style.css');
