@@ -44,8 +44,8 @@ export interface Props {
   hideXButton?: boolean;
   xButtonProps?: Record<string, any>;
   xIconClass?: string;
-  width: string | number;
-  maxWidth: string | number;
+  width?: string | number;
+  maxWidth?: string | number;
 }
 
 const props = withDefaults(defineProps<Props>(), {
