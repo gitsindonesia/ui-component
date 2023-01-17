@@ -10,17 +10,17 @@ import {
   ref,
   toRefs,
   onBeforeUpdate,
-  watch,
   nextTick,
   PropType,
 } from 'vue';
 import VBadge from '@gits-id/badge';
 import VTooltip from '@gits-id/tooltip';
 import {onClickOutside, useDebounceFn} from '@vueuse/core';
-import {ErrorMessage, useField} from 'vee-validate';
+import {ErrorMessage, FieldOptions} from 'vee-validate';
 import Icon from '@gits-id/icon';
 import '@gits-id/tooltip/dist/style.css';
 import {VMultiSelectItem} from './types';
+import {useFormValue, type ValidationMode} from '@gits-id/forms';
 
 type SearchByFunction = (item: VMultiSelectItem, search: string) => boolean;
 
@@ -161,6 +161,14 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  validationMode: {
+    type: String as PropType<ValidationMode>,
+    default: 'aggressive',
+  },
+  fieldOptions: {
+    type: Object as PropType<FieldOptions<any>>,
+    default: () => ({}),
+  }
 });
 
 const emit = defineEmits([
@@ -184,13 +192,11 @@ const {
   searchBy,
   selectAll,
   loading,
-  rules,
   disabled,
   readonly,
 } = toRefs(props);
 
 // refs
-const uncontrolledValue = ref<VMultiSelectItem[]>([]);
 const target = ref(null);
 const isOpen = ref(false);
 const search = ref('');
@@ -198,10 +204,7 @@ const focus = ref(-1);
 const refItems = ref<HTMLDivElement[]>([]);
 const dropdown = ref<HTMLDivElement | null>(null);
 
-const {value: vvValue, errorMessage, setValue} = useField(name, rules, {
-  initialValue: modelValue.value,
-  syncVModel: true,
-});
+const {errorMessage, uncontrolledValue, clear, setValue} = useFormValue(props, emit, props.fieldOptions);
 
 const matchBy = (item: VMultiSelectItem, key: string) => {
   return String(item?.[key])
@@ -254,7 +257,7 @@ const handleSelect = (item: VMultiSelectItem) => {
 
 const findIndex = (item: VMultiSelectItem) => {
   return uncontrolledValue.value?.findIndex(
-    (sItem) => sItem[itemValue.value] === item?.[itemValue.value],
+    (sItem: VMultiSelectItem) => sItem[itemValue.value] === item?.[itemValue.value],
   );
 };
 const hasItem = (item: VMultiSelectItem) => findIndex(item) > -1;
@@ -266,6 +269,7 @@ const isSelected = (item: VMultiSelectItem, index: number) => {
 const clearSelected = () => {
   uncontrolledValue.value = [];
   focus.value = -1;
+  clear()
 };
 
 const deselect = (item: VMultiSelectItem) => {
@@ -369,35 +373,6 @@ const focusItem = () => {
     dropdown.value?.scrollTo({top, behavior: 'smooth'});
   });
 };
-
-// watcher
-watch(
-  modelValue,
-  (val) => {
-    uncontrolledValue.value = val;
-  },
-  {deep: true},
-);
-
-watch(
-  vvValue,
-  (val) => {
-    if (name.value) {
-      uncontrolledValue.value = val;
-    }
-  },
-  {deep: true},
-);
-
-watch(uncontrolledValue, (val) => {
-  if (name.value) {
-    setValue(val);
-  }
-
-  emit('update:modelValue', val);
-}, {
-  deep: true,
-});
 </script>
 
 <template>
@@ -453,9 +428,13 @@ watch(uncontrolledValue, (val) => {
               </template>
             </template>
 
-            <template v-if="maxBadge > 0 && uncontrolledValue.length > maxBadge">
+            <template
+              v-if="maxBadge > 0 && uncontrolledValue.length > maxBadge"
+            >
               <slot name="max-selection">
-                <v-badge small> {{ uncontrolledValue.length - maxBadge }} more</v-badge>
+                <v-badge small>
+                  {{ uncontrolledValue.length - maxBadge }} more</v-badge
+                >
               </slot>
             </template>
 
