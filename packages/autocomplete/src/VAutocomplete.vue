@@ -92,7 +92,7 @@ const clear = () => {
       wrapperClass,
       {
         'autocomplete--error': !!errorMessage,
-        'autocomplete--selected': !!selected,
+        'autocomplete--selected': !!uncontrolledValue,
       },
     ]"
     as="div"
@@ -110,7 +110,7 @@ const clear = () => {
         <ComboboxInput
           class="autocomplete-input"
           :class="{
-            'autocomplete-input--selected': !!selected,
+            'autocomplete-input--selected': !!uncontrolledValue,
           }"
           :display-value="(item: any) => item?.[displayText] || ''"
           :placeholder="placeholder"
