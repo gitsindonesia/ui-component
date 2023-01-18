@@ -1,137 +1,41 @@
 # Getting Started
 
-This section will help you build a basic Vue app with GITS UI from ground up. If you already have an existing project and would like to keep documentation inside the project, start from Step 2.
+There are several ways to get started with GITS UI:
 
-::: tip
-Checkout [Nuxt Starter](https://github.com/gitsindonesia/nuxt-starter) or other [starter](https://github.com/gitsindonesia/ui-component/tree/main/starter) to get you started faster.
-:::
+- Via GITS CLI (recommended)
+- Via Online Playground
+- Manual Setup
 
-::: info
-We recommend using `yarn` or `pnpm` as the package manager. The default `npm` should also works fine.
-:::
+## Via GITS CLI
 
-## Step 1. Create new project
+The fastest way to get started with GITS UI is through our GITS CLI called `create-gits-app`. With this CLI, you create your project quickly with pre-made templates and even choose which module to add to your project.
 
-Create your Vue 3 project via `create-vue` CLI and install the dependencies.
-
-```bash
-npm init vue@3 my-app
-cd my-app
-yarn install
-```
-
-![Step 1](/getting-started-1.png)
-
-## Step 2. Install Tailwind CSS and GITS UI
-
-Install `@gits-id/ui` and `tailwindcss` package:
-
-```bash
-yarn add @gits-id/ui tailwindcss postcss autoprefixer
-```
-
-::: info
-If you want to use the SASS version of styling, you need to install the `sass` package.
-
-```bash
-yarn add -D sass
-```
-
-:::
-
-Next, generate the tailwind config files:
-
-```bash
-npx tailwindcss init -p
-```
-
-Next, register the GITS UI preset and add the component folders the `content` section in the `tailwind.config.cjs` file:
-
-```js{6,12}
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx,vue}",
-    "./node_modules/@gits-id/**/src/**/*.{vue,js,ts,jsx,tsx}",
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-  presets: [require("@gits-id/tailwind-config/preset")],
-};
-```
-
-Next, add the Tailwind directives to `src/assets/main.css`:
-
-```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
-
-Next, open `src/main.ts`. Import and use the `GitsUi` plugin from `@gits-id/ui` and also load the styles from `@gits-id/ui/styles` for CSS bundle or use `@gits-id/ui/styles.scss` if you want to use the SCSS version instead.
-
-```ts{7,10}
-// main.ts
-import { createApp } from "vue";
-
-import App from "./App.vue";
-import router from "./router";
-
-import GitsUi from "@gits-id/ui";
-
-// load CSS bundle
-import '@gits-id/ui/styles';
-
-// or uncomment this line to load SCSS styles
-// import '@gits-id/ui/styles.scss';
-
-const app = createApp(App);
-
-app.use(router);
-app.use(GitsUi);
-
-app.mount("#app");
-```
-
-## Step 3. Use the component
-
-Open `src/views/HomeView.vue` and replace the existing content with the code below:
-
-```vue
-<template>
-  <div class="container mx-auto p-6 space-y-3">
-    <h1 class="text-3xl font-bold text-gray-800">GITS UI</h1>
-
-    <VAlert color="error"> Alert text </VAlert>
-
-    <VBtn color="primary"> Click me </VBtn>
-
-    <VInput placeholder="Type something..." />
-  </div>
-</template>
-```
-
-::: info
-The component `VAlert`, `VBtn` and `VInput` are registered globally.
-:::
-
-## Step 4. Boot up dev server
-
-Run `dev` scripts and open http://localhost:5173.
+To get started with GITS CLI, run this command in the terminal:
 
 ```
-yarn dev
+npx create-gits-app@latest
 ```
 
-If everything goes well, you should see something like in the browser:
+![](/create-gits-app.png)
 
-![Getting Started 2](/getting-started-2.png)
+Then, choose your prefered starter template or choose `Custom` to customize the module you want to add.
 
-## What's Next ?
+## Online Playground
 
-Congratulation! You have completed setup your application with GITS UI! Now you can start creating your application with ease.
+You can also try the online playground on Stackblitz.
 
-If you don't want to repeat this step in the future, you can save and push the project to your GitHub or somewhere else as your personal starter kit and use it when needed. You can also you the official [Nuxt Starter](https://github.com/gitsindonesia/nuxt-starter) and Vue Starter [here](https://github.com/gitsindonesia/ui-component/tree/main/starter/vue).
+### Vue Starter
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/gitsindonesia/ui-component/tree/main/starter/vue)
+
+### Nuxt + GITS UI Minimal
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/gitsindonesia/ui-component/tree/main/starter/nuxt-minimal)
+
+### Nuxt + GITS UI Complete Starter
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/gitsindonesia/nuxt-starter)
+
+## Manual Setup
+
+[Follow this instruction](/guide/installation) to setup GITS UI step-by-step to Vue project.
