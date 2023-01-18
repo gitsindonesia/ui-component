@@ -2,32 +2,58 @@
 
 Get started quickly with these starter kits.
 
-## Vue 3 Starter
+## Vue Starter
 
-Checkout Vue 3 Starter [here](https://github.com/gitsindonesia/ui-component/tree/main/starter/vue).
+Checkout Vue Starter [here](https://github.com/gitsindonesia/ui-component/tree/main/starter/vue).
 
 Try it online on [Stackblitz](https://stackblitz.com/github/gitsindonesia/ui-component/tree/main/starter/vue).
 
-To create a new project using this starter kit, you can use [`degit`](https://github.com/Rich-Harris/degit):
+You can also setup your project with this template using GITS CLI:
 
-```bash
-npx degit gitsindonesia/ui-component/starter/vue my-app
-cd vue-app
-pnpm install --shamefully-hoist
-pnpm dev
+```
+npx create-gits-app@latest
 ```
 
-## Nuxt 3 Starter
+Then, choose `Vue` template.
 
-Checkout Nuxt 3 Starter [here](https://github.com/gitsindonesia/nuxt-starter).
+## Nuxt Minimal Starter
+
+Checkout Nuxt Minimal Starter [here](https://github.com/gitsindonesia/ui-component/tree/main/starter/nuxt-minimal).
+
+Try it online on [Stackblitz](https://stackblitz.com/github/gitsindonesia/ui-component/tree/main/starter/vue).
+
+You can also setup your project with this template using GITS CLI:
+
+```
+npx create-gits-app@latest
+```
+
+Then, choose `Nuxt Minimal` template.
+
+## Nuxt Complete Starter
+
+Checkout Nuxt Starter [here](https://github.com/gitsindonesia/nuxt-starter).
 
 Try it online on [Stackblitz](https://stackblitz.com/github/gitsindonesia/nuxt-starter).
 
-To create a new project using this starter kit, you can use `nuxi`:
+You can also setup your project with this template using GITS CLI:
 
-```bash
-npx nuxi init -t gh:gitsindonesia/nuxt-starter my-app
-cd my-app
-yarn
-yarn dev
 ```
+npx create-gits-app@latest
+```
+
+Then, choose `Nuxt Starter` template.
+
+## Nuxt Admin
+
+Checkout Nuxt Admin [here](https://github.com/gitsindonesia/ui-component/tree/main/starter/nuxt-admin).
+
+Try it online on [Stackblitz](https://stackblitz.com/github/gitsindonesia/ui-component/tree/main/starter/vue).
+
+You can also setup your project with this template using GITS CLI:
+
+```
+npx create-gits-app@latest
+```
+
+Then, choose `Nuxt Admin` template.
