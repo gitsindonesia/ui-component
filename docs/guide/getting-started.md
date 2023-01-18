@@ -36,6 +36,10 @@ You can also try the online playground on Stackblitz.
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/gitsindonesia/nuxt-starter)
 
+### Nuxt Admin Starter
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/gitsindonesia/ui-component/tree/main/starter/nuxt-admin)
+
 ## Manual Setup
 
 [Follow this instruction](/guide/installation) to setup GITS UI step-by-step to Vue project.
