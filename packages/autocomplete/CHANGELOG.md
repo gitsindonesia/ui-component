@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.1](https://github.com/gitsindonesia/ui-component/compare/v0.15.0...v0.15.1) (2023-01-18)
+
+### Bug Fixes
+
+- **VAutocomplete:** fix missing `clear` event ([1a321a1](https://github.com/gitsindonesia/ui-component/commit/1a321a1d7f31fbaa9fa6cab9c1635e1c10bbfe4e))
+- **VAutocomplete:** fix missing error color variable ([aab269c](https://github.com/gitsindonesia/ui-component/commit/aab269c09d3d93da6e2558f16a1e5ce149fd840c))
+- **VAutocomplete:** fix undefined `selected` property ([b54eb16](https://github.com/gitsindonesia/ui-component/commit/b54eb16ea7220ba9c1fc1c4f694f79ac806b5acf))
+
 # [0.15.0](https://github.com/gitsindonesia/ui-component/compare/v0.14.4...v0.15.0) (2023-01-17)
 
 ### Features

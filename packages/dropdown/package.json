@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/dropdown",
-  "version": "0.15.0",
+  "version": "0.15.1",
   "description": "GITS Dropdown Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",

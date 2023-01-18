@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.1](https://github.com/gitsindonesia/ui-component/compare/v0.15.0...v0.15.1) (2023-01-18)
+
+### Features
+
+- **VInput:** add new `rounded` styled ([50b15f1](https://github.com/gitsindonesia/ui-component/commit/50b15f15b4f062147c7389ace7b82874555793ec))
+
 # [0.15.0](https://github.com/gitsindonesia/ui-component/compare/v0.14.4...v0.15.0) (2023-01-17)
 
 ### Features

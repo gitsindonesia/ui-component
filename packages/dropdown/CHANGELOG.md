@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.1](https://github.com/gitsindonesia/ui-component/compare/v0.15.0...v0.15.1) (2023-01-18)
+
+### Features
+
+- **VDropdown:** add new `prefixIcon` props for adding prefix icon before label ([1413f6b](https://github.com/gitsindonesia/ui-component/commit/1413f6b9a85a8d491a2c0aba0858c8bf00135576))
+- **VDropdown:** improved CSS Properties on v-dropdown ([c2315af](https://github.com/gitsindonesia/ui-component/commit/c2315af8a474b20d27b41c80c6457ea6da635ecd))
+- **VDropdownItem:** add new `nuxt` props for rendering item as NuxtLink ([b36fc32](https://github.com/gitsindonesia/ui-component/commit/b36fc322ea602e0d5d8cffadb344a25aee846353))
+
 # [0.15.0](https://github.com/gitsindonesia/ui-component/compare/v0.14.4...v0.15.0) (2023-01-17)
 
 ### Features

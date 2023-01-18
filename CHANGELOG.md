@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.1](https://github.com/gitsindonesia/ui-component/compare/v0.15.0...v0.15.1) (2023-01-18)
+
+### Bug Fixes
+
+- **VAutocomplete:** fix missing `clear` event ([1a321a1](https://github.com/gitsindonesia/ui-component/commit/1a321a1d7f31fbaa9fa6cab9c1635e1c10bbfe4e))
+- **VAutocomplete:** fix missing error color variable ([aab269c](https://github.com/gitsindonesia/ui-component/commit/aab269c09d3d93da6e2558f16a1e5ce149fd840c))
+- **VAutocomplete:** fix undefined `selected` property ([b54eb16](https://github.com/gitsindonesia/ui-component/commit/b54eb16ea7220ba9c1fc1c4f694f79ac806b5acf))
+- **VAutocomplete:** fix undefined `selected` property ([726010e](https://github.com/gitsindonesia/ui-component/commit/726010edcd597b977d505db0cf2cff86336ddcb9))
+- **VMenus:** fix floating vue extend options ([e5f925f](https://github.com/gitsindonesia/ui-component/commit/e5f925f7cf598c00eb799d9f32818e74be99c99e))
+
+### Features
+
+- **VDropdown:** add new `prefixIcon` props for adding prefix icon before label ([1413f6b](https://github.com/gitsindonesia/ui-component/commit/1413f6b9a85a8d491a2c0aba0858c8bf00135576))
+- **VDropdown:** improved CSS Properties on v-dropdown ([c2315af](https://github.com/gitsindonesia/ui-component/commit/c2315af8a474b20d27b41c80c6457ea6da635ecd))
+- **VDropdownItem:** add new `nuxt` props for rendering item as NuxtLink ([b36fc32](https://github.com/gitsindonesia/ui-component/commit/b36fc322ea602e0d5d8cffadb344a25aee846353))
+- **VInput:** add new `rounded` styled ([50b15f1](https://github.com/gitsindonesia/ui-component/commit/50b15f15b4f062147c7389ace7b82874555793ec))
+
 # [0.15.0](https://github.com/gitsindonesia/ui-component/compare/v0.14.4...v0.15.0) (2023-01-17)
 
 ### Bug Fixes

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.1](https://github.com/gitsindonesia/ui-component/compare/v0.15.0...v0.15.1) (2023-01-18)
+
+### Bug Fixes
+
+- **VMenus:** fix floating vue extend options ([e5f925f](https://github.com/gitsindonesia/ui-component/commit/e5f925f7cf598c00eb799d9f32818e74be99c99e))
+
 # [0.15.0](https://github.com/gitsindonesia/ui-component/compare/v0.14.4...v0.15.0) (2023-01-17)
 
 ### Features
