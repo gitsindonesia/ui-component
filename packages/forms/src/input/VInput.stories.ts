@@ -168,6 +168,20 @@ Shadow.parameters = {
   },
 };
 
+export const Rounded = Template.bind({});
+Rounded.args = {
+  rounded: true,
+  label: 'Rounded Input',
+  prependIcon: 'mdi-search',
+};
+Rounded.parameters = {
+  docs: {
+    source: {
+      code: '<v-input rounded />',
+    },
+  },
+};
+
 export const Text = Template.bind({});
 Text.args = {
   text: true,
@@ -215,6 +229,9 @@ export const Icons: Story<VInputProps> = (args) => ({
   <VInput append-class="bg-gray-100 border-gray-200 border-l" append-icon="ri:search-line" placeholder="Search..." @clickAppend="showAlert('append click')"/>
   <VInput prepend-icon-class="text-primary" prepend-icon="ic:baseline-add-reaction" placeholder="Search..." @clickPrependIcon="showAlert('prepend icon click')"/>
   <VInput append-icon-class="text-primary" append-icon="ic:baseline-add-reaction" placeholder="Search..." @clickAppendIcon="showAlert('append icon click')"/>
+  <p>Rounded</p>
+  <VInput prepend-icon="mdi-account" />
+  <VInput rounded prepend-icon="mdi-account" />
 </div>
 `,
 });
