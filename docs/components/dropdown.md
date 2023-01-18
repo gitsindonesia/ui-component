@@ -195,6 +195,38 @@ import {VDropdown, VDropdownItem, VBtn} from '@gits-id/ui';
 | [`rightClass`](#rightClass)                 | `string`               | `'left-0'`               |
 | [`leftClass`](#leftClass)                   | `string`               | `'right-0'`              |
 | [`transition`](#transition)                 | `string`               | `'fade'`                 |
+| [`icon`](#icon)                             | `string`               | `'ri:arrow-down-s-line'` |
+| [`iconSize`](#iconSize)                     | `string`               | `'md'`                   |
+| [`iconClass`](#iconClass)                   | `string`               | `''`                     |
+| [`prefixIcon`](#prefixIcon)                 | `string`               | `''`                     |
+| [`prefixIconSize`](#prefixIconSize)         | `string`               | `'md'`                   |
+| [`prefixIconClass`](#prefixIconClass)       | `string`               | `''`                     |
+
+Prop Types:
+
+```ts
+export interface Props {
+  modelValue?: boolean;
+  btnProps?: Record<string, any>;
+  label?: string;
+  right?: boolean;
+  items?: DropdownItemProps[];
+  top?: boolean;
+  topClass?: string;
+  bottomClass?: string;
+  panelClass?: string;
+  buttonWrapperClass?: string;
+  rightClass?: string;
+  leftClass?: string;
+  transition?: string;
+  icon?: string;
+  iconSize?: string;
+  iconClass?: string;
+  prefixIcon?: string;
+  prefixIconSize?: string;
+  prefixIconClass?: string;
+}
+```
 
 ## Events
 
