@@ -43,6 +43,9 @@
 
   // item active
   --v-autocomplete-item-active-bg-color: theme('colors.gray.100');
+
+  // error
+  --v-autocomplete-error-color: theme('colors.error.500');
 }
 
 .autocomplete {
