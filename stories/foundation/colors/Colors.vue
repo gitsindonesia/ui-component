@@ -17,6 +17,10 @@ const brandColors = [
   'bg-success-500',
   'bg-error-500',
 ];
+
+const copy = (color: string) => {
+  navigator.clipboard.writeText(color);
+};
 </script>
 
 <template>
@@ -24,10 +28,17 @@ const brandColors = [
   <h3 class="text-lg font-semibold mb-3">Brand Colors</h3>
   <div class="grid gap-4 grid-cols-2 sm:grid-cols-6">
     <div v-for="color in brandColors" :key="color">
-      <div class="rounded px-3 py-2" :class="color">
+      <div
+        class="rounded h-10 cursor-pointer"
+        :class="color"
+        @click="copy(colors[color.replace('bg-', '').replace('-500', '')][500])"
+      ></div>
+      <p class="text-sm mt-1">
         {{ color.replace('bg-', '').replace('-500', '') }}
-      </div>
-      <p class="font-mono text-sm mt-1">{{ color }}</p>
+        <span class="font-mono text-gray-500 ml-1">
+          {{ colors[color.replace('bg-', '').replace('-500', '')][500] }}
+        </span>
+      </p>
     </div>
   </div>
   <h3 class="text-lg font-semibold mb-3 mt-10">Tailwind Colors</h3>
@@ -39,7 +50,11 @@ const brandColors = [
         </h4>
         <div class="rounded px-3 py-2 w-10/12 grid grid-cols-5 gap-4">
           <div v-for="(c, shade) in color" :key="c">
-            <div :style="{backgroundColor: c}" class="h-10 rounded"></div>
+            <div
+              :style="{backgroundColor: c}"
+              class="h-10 rounded cursor-pointer"
+              @click="copy(c)"
+            ></div>
             <div class="text-sm mt-1">
               {{ shade }} <span class="text-gray-500">{{ c }}</span>
             </div>
