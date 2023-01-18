@@ -156,6 +156,10 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  rounded: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const emit = defineEmits([
@@ -179,6 +183,7 @@ const {errorMessage, uncontrolledValue, validationListeners, inputId, clear} =
         'v-input--error': error || !!errorMessage,
         'v-input--disabled': disabled,
         'v-input--shadow': shadow,
+        'v-input--rounded': rounded,
       },
       wrapperClass,
     ]"

@@ -27,6 +27,12 @@
   --v-input-icon-color: theme('colors.gray.500');
 }
 
+.v-input {
+  &--rounded {
+    --v-input-border-radius: theme('borderRadius.full');
+  }
+}
+
 .v-input-label {
   color: var(--v-input-label-color);
   font-size: var(--v-input-label-font-size);
@@ -83,7 +89,7 @@
   color: var(--v-input-color);
 
   @apply focus:ring-0 border-none focus:border-none focus:outline-none;
-  
+
   &:not(textarea):not(select) {
     height: var(--v-input-height);
   }
@@ -95,12 +101,12 @@
 
 .v-input:has(.v-input-prepend:not(:empty))
   .v-input-control:not(.v-input-control--has-prepend-class) {
-  @apply pl-0;
+  @apply pl-1;
 }
 
 .v-input:has(.v-input-append:not(:empty))
   .v-input-control:not(.v-input-control--has-append-class) {
-  @apply pr-0;
+  @apply pr-1;
 }
 
 /* colors */
