@@ -94,6 +94,18 @@ To add a shadow to the `VInput` component, set the `shadow` prop to `true`.
 </template>
 ```
 
+## Rounded
+
+To add a shadow to the `VInput` component, set the `rounded` prop to `true`.
+
+<LivePreview src="forms-input--rounded" height="80" >
+
+```vue
+<template>
+  <VInput rounded />
+</template>
+```
+
 </LivePreview>
 
 ## Text
@@ -641,6 +653,7 @@ const onSubmit = handleSubmit((values) => {
 | [`color`](#color)                       | `String`                                   | `'default'`    |
 | [`text`](#text)                         | `Boolean`                                  | `false`        |
 | [`shadow`](#shadow)                     | `Boolean`                                  | `false`        |
+| [`rounded`](#rounded)                   | `Boolean`                                  | `false`        |
 | [`validationMode`](#validationMode)     | `String`                                   | `'aggressive'` |
 | [`classes`](#classes)                   | `Object`                                   | `{}`           |
 | [`label`](#label)                       | `String`                                   | `''`           |
