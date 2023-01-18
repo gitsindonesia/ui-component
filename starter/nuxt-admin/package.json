@@ -22,7 +22,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@gits-id/ui-nuxt": "^0.14.4"
+    "@gits-id/ui-nuxt": "^0.15.0"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.2.0",
