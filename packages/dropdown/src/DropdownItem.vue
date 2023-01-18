@@ -43,7 +43,12 @@ const attributes = computed(() => {
     <component
       v-else
       :is="computedComponent"
-      :class="[active ? 'dropdown-item--active' : '', 'group dropdown-item']"
+      :class="[
+        'group dropdown-item',
+        {
+          'dropdown-item--active': active,
+        },
+      ]"
       v-bind="attributes"
     >
       <slot name="icon">

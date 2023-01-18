@@ -240,12 +240,71 @@ import {VDropdown, VDropdownItem, VBtn} from '@gits-id/ui';
 
 ## CSS Variables
 
+Default:
+
 ```css
 :root {
   --dropdown-bg-color: theme('colors.white');
+
+  // button
   --dropdown-button-icon-color: theme('colors.gray.500');
+
+  // button activator
+  --dropdown-button-activator-gap: theme('spacing.2');
+
+  // item
   --dropdown-item-color: theme('colors.gray.800');
   --dropdown-item-icon-color: theme('colors.gray.600');
+  --dropdown-item-gap: theme('spacing.2');
+  --dropdown-item-border-radius: theme('borderRadius.md');
+  --dropdown-item-padding: theme('spacing.2');
+
+  // item active
+  --dropdown-item-active-color: currentColor;
+  --dropdown-item-active-bg-color: theme('colors.gray.200');
+
+  // item icon
+  --dropdown-item-icon-width: theme('width.5');
+  --dropdown-item-icon-height: theme('height.5');
+  --dropdown-item-icon-color: currentColor;
+
+  // panel
+  --dropdown-panel-bg-color: theme('colors.white');
+  --dropdown-panel-border-radius: theme('borderRadius.md');
+  --dropdown-panel-box-shadow: theme('boxShadow.lg');
+  --dropdown-panel-z-index: theme('zIndex.10');
+  --dropdown-panel-padding: theme('spacing.1');
+  --dropdown-panel-width: theme('width.56');
+  --dropdown-panel-margin-top: theme('spacing.2');
+
+  // divider
+  --dropdown-divider-border-color: theme('colors.gray.200');
+}
+```
+
+Dark Mode:
+
+```scss
+.dark {
+  .dropdown {
+    --dropdown-bg-color: theme('colors.neutral.800');
+    --dropdown-button-icon-color: theme('colors.neutral.400');
+    --dropdown-item-color: theme('colors.neutral.200');
+    --dropdown-item-icon-color: theme('colors.neutral.400');
+
+    // item active
+    --dropdown-item-active-color: theme('colors.neutral.200');
+    --dropdown-item-active-bg-color: theme('colors.neutral.700');
+
+    // panel
+    --dropdown-panel-bg-color: theme('colors.neutral.800');
+
+    // divider
+    --dropdown-divider-border-color: theme('colors.neutral.700');
+
+    // item active
+    --dropdown-item-active-bg-color: theme('colors.neutral.700');
+  }
 }
 ```
 

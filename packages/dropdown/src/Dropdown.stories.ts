@@ -9,6 +9,7 @@ import './Dropdown.dark.scss';
 const genItems = (length = 5): DropdownItemProps[] =>
   Array.from({length}, (_, v) => ({
     text: `Item ${v + 1}`,
+    icon: 'ri:home-line',
   }));
 
 const items = [...genItems(2), {divider: true}, ...genItems(3)];

@@ -1,26 +1,21 @@
 .dark {
   .dropdown {
-
     --dropdown-bg-color: theme('colors.neutral.800');
     --dropdown-button-icon-color: theme('colors.neutral.400');
     --dropdown-item-color: theme('colors.neutral.200');
     --dropdown-item-icon-color: theme('colors.neutral.400');
 
-    // item hover
-    --dropdown-item-hover-color: theme('colors.neutral.200');
+    // item active
+    --dropdown-item-active-color: theme('colors.neutral.200');
+    --dropdown-item-active-bg-color: theme('colors.neutral.700');
+    
+    // panel
+    --dropdown-panel-bg-color: theme('colors.neutral.800');
 
-    &-panel {
-      background-color: theme('colors.neutral.800');
-    }
+    // divider
+    --dropdown-divider-border-color: theme('colors.neutral.700');
 
-    &-divider {
-      border-bottom-color: theme('colors.neutral.700');
-    }
-
-    &-item {
-      &--active {
-        background-color: theme('colors.neutral.700');
-      }
-    }
+    // item active
+    --dropdown-item-active-bg-color: theme('colors.neutral.700');
   }
 }
