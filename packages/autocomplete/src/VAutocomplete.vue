@@ -57,6 +57,7 @@ const emit =
   defineEmits<{
     (e: 'update:modelValue', value: Record<string, any>): void;
     (e: 'update:query', value: string): void;
+    (e: 'clear'): void;
   }>();
 
 const {errorMessage, uncontrolledValue, clear: clearField} =
