@@ -4,11 +4,13 @@ Get started quickly with these starter kits.
 
 ## Vue Starter
 
-Checkout Vue Starter [here](https://github.com/gitsindonesia/ui-component/tree/main/starter/vue).
+Vue Starter is a minimal starter to get you started with Vue, Tailwind CSS, and GITS UI.
 
-Try it online on [Stackblitz](https://stackblitz.com/github/gitsindonesia/ui-component/tree/main/starter/vue).
+- Online demo
+- [Source code](https://github.com/gitsindonesia/ui-component/tree/main/starter/vue)
+- Try it online on [Stackblitz](https://stackblitz.com/github/gitsindonesia/ui-component/tree/main/starter/vue)
 
-You can also setup your project with this template using GITS CLI:
+Setup a new project with this template using GITS CLI:
 
 ```
 npx create-gits-app@latest
@@ -18,11 +20,13 @@ Then, choose `Vue` template.
 
 ## Nuxt Minimal Starter
 
-Checkout Nuxt Minimal Starter [here](https://github.com/gitsindonesia/ui-component/tree/main/starter/nuxt-minimal).
+Nuxt Minimal Starter is a minimal starter for Nuxt with Tailwind CSS and GITS UI. This starter is fit for quick prototyping, creating reproduction issues, or for those who don't need other plugins like Pinia, ESLint, etc installed by default. That means if you need those plugins, you need to install them yourself.
 
-Try it online on [Stackblitz](https://stackblitz.com/github/gitsindonesia/ui-component/tree/main/starter/vue).
+- [Online demo](https://gits-ui-nuxt-minimal-starter.vercel.app/)
+- [Source code](https://github.com/gitsindonesia/ui-component/tree/main/starter/nuxt-minimal)
+- Try it online on [Stackblitz](https://stackblitz.com/github/gitsindonesia/ui-component/tree/main/starter/vue)
 
-You can also setup your project with this template using GITS CLI:
+Setup a new project with this template using GITS CLI:
 
 ```
 npx create-gits-app@latest
@@ -32,11 +36,13 @@ Then, choose `Nuxt Minimal` template.
 
 ## Nuxt Complete Starter
 
-Checkout Nuxt Starter [here](https://github.com/gitsindonesia/nuxt-starter).
+Nuxt Complete Starter is a full-featured Nuxt starter that includes everything you need to make a modern web application with Nuxt, Tailwind CSS, and GITS UI.
 
-Try it online on [Stackblitz](https://stackblitz.com/github/gitsindonesia/nuxt-starter).
+- Online demo
+- [Source code](https://github.com/gitsindonesia/nuxt-starter)
+- Try it online on [Stackblitz](https://stackblitz.com/github/gitsindonesia/nuxt-starter)
 
-You can also setup your project with this template using GITS CLI:
+Setup a new project with this template using GITS CLI:
 
 ```
 npx create-gits-app@latest
@@ -46,11 +52,11 @@ Then, choose `Nuxt Starter` template.
 
 ## Nuxt Admin
 
-Checkout Nuxt Admin [here](https://github.com/gitsindonesia/ui-component/tree/main/starter/nuxt-admin).
+- [Online demo](https://gits-nuxt-admin.vercel.app/admin)
+- [Source code](https://github.com/gitsindonesia/ui-component/tree/main/starter/nuxt-admin)
+- Try it online on [Stackblitz](https://stackblitz.com/github/gitsindonesia/ui-component/tree/main/starter/vue)
 
-Try it online on [Stackblitz](https://stackblitz.com/github/gitsindonesia/ui-component/tree/main/starter/vue).
-
-You can also setup your project with this template using GITS CLI:
+Setup a new project with this template using GITS CLI:
 
 ```
 npx create-gits-app@latest
