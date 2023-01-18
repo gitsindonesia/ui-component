@@ -170,11 +170,11 @@ const isOpen = ref(false);
       <VDropdown :items="items.slice(1, 6)" label="Dropdown" />
     </div>
 
-    <!-- <hr class="dark:border-neutral-700" />
+    <hr class="dark:border-neutral-700" />
     <h3 class="text-xl font-semibold">Menus</h3>
     <div>
       <VMenus :items="items.slice(1, 6)" label="Menus" placement="top-start" />
-    </div> -->
+    </div>
 
     <hr class="dark:border-neutral-700" />
     <h3 class="text-xl font-semibold">Icon</h3>
