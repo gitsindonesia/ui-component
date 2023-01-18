@@ -4,6 +4,8 @@ on:
   #   branches:
   #     - main
   push:
+    paths:
+      - 'starter/nuxt-minimal/**'
     branches:
       - main
 jobs:

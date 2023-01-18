@@ -4,6 +4,8 @@ on:
   #   branches:
   #     - main
   push:
+    paths:
+      - 'starter/vue/**'
     branches:
       - main
 jobs:
