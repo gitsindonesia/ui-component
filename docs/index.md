@@ -1,10 +1,10 @@
 ---
 layout: home
-title: GITS UI - Vue Component Library
+title: GITS UI - Free and Open-Source Vue Component Library
 
 hero:
   name: GITS UI
-  text: A beautiful and customizable Vue component library
+  tagline: A beautiful and customizable Vue component library
   image:
     src: https://gits.id/wp-content/uploads/2022/06/Logo-Main-1.png
     alt: GITS
@@ -16,9 +16,6 @@ hero:
     - theme: alt
       text: View on Storybook
       link: https://gits-ui.web.app
-    - theme: alt
-      text: Starter
-      link: /guide/starter
 features:
   - icon: 🖖
     title: Vue 3

@@ -1,10 +1,15 @@
 :root {
+  --vp-primary: #28a0f6;
   --vp-home-hero-name-color: transparent;
   --vp-home-hero-name-background: -webkit-linear-gradient(
     120deg,
     #bd34fe,
-    #41d1ff
+    var(--vp-primary)
   );
+  --vp-c-brand: var(--vp-primary);
+  --vp-c-brand-lighter: #4fb1f8;
+  --vp-c-brand-darker: #0984dd;
+  --vp-c-brand-dark: #0984dd;
 }
 
 h4,
