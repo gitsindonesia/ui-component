@@ -48,6 +48,12 @@ Top.args = {
   top: true,
 };
 
+export const PrefixIcon = Template.bind({});
+PrefixIcon.args = {
+  prefixIcon: 'ic:round-person',
+  label: 'Account',
+};
+
 export const RouterLink = Template.bind({});
 RouterLink.args = {
   items: [

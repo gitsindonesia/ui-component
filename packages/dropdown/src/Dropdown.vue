@@ -21,6 +21,9 @@ export interface Props {
   icon?: string;
   iconSize?: string;
   iconClass?: string;
+  prefixIcon?: string;
+  prefixIconSize?: string;
+  prefixIconClass?: string;
 }
 
 withDefaults(defineProps<Props>(), {
@@ -42,6 +45,8 @@ withDefaults(defineProps<Props>(), {
   icon: 'ri:arrow-down-s-line',
   iconSize: 'sm',
   iconClass: '',
+  prefixIcon: '',
+  prefixIconSize: 'sm',
 });
 </script>
 
@@ -54,6 +59,13 @@ withDefaults(defineProps<Props>(), {
           class="dropdown-button-activator"
           v-bind="btnProps"
         >
+          <Icon
+            :name="prefixIcon"
+            :size="prefixIconSize"
+            :class="prefixIconClass"
+            class="dropdown-button-icon"
+            aria-hidden="true"
+          />
           {{ label }}
           <Icon
             :name="icon"
