@@ -4,7 +4,7 @@ The `VLogo` component a simple way to display GITS Logo.
 
 ## Usage
 
-### Basic Usage
+## Basic Usage
 
 To use the logo component, just use it in the template like so:
 
@@ -23,7 +23,7 @@ To use the logo component, just use it in the template like so:
 The `VLogo` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
-### White
+## White
 
 Use `white` prop to display white version of Logo.
 
@@ -37,7 +37,7 @@ Use `white` prop to display white version of Logo.
 
 </LivePreview>
 
-### Custom Class
+## Custom Class
 
 You can add custom class to the image via `img-class` prop.
 
@@ -51,7 +51,7 @@ You can add custom class to the image via `img-class` prop.
 
 </LivePreview>
 
-### Link
+## Link
 
 You set link to the logo using `to` prop.
 
@@ -61,7 +61,7 @@ You set link to the logo using `to` prop.
 </template>
 ```
 
-### Sizes
+## Sizes
 
 To change the size of logo, use `size` prop or just use `width` and/or `height` props.
 

@@ -6,7 +6,7 @@
 
 To use the `VQuillEditor` component in your Vue.js application, you will need to have the `@gits-id/ui` package installed. The `VQuillEditor` component is registered globally when you install the package, so you don't need to import it manually.
 
-### Basic Usage
+## Basic Usage
 
 The most basic usage of the `VQuillEditor` component is to add it to a template and bind it to a value variable using the `v-model` directive. The value variable will contain the text entered into the editor.
 
@@ -26,7 +26,7 @@ const value = ref('');
 
 </LivePreview>
 
-### Label
+## Label
 
 You can add a label to the `VQuillEditor` component by using the `label` prop. The label will be displayed above the editor and can be used to provide context or instruction for the user.
 
@@ -46,7 +46,7 @@ const value = ref('');
 
 </LivePreview>
 
-### Validation
+## Validation
 
 The `VQuillEditor` component can be used with the `vee-validate` library to perform form validation. To do this, you will need to define a validation schema using yup and pass it to the `useForm` hook from `vee-validate`. You can then use the `handleSubmit` function from the hook to handle form submissions.
 
@@ -89,7 +89,7 @@ const onSubmit = handleSubmit((values) => {
 
 </LivePreview>
 
-### Initial Values
+## Initial Values
 
 You can set initial values for the form fields by passing an `initialValues` object to the `useForm` hook. The object should have keys that match the names of the form fields, and the values will be used as the default values for those fields.
 
@@ -135,7 +135,7 @@ const onSubmit = handleSubmit((values) => {
 
 </LivePreview>
 
-### Initial Errors
+## Initial Errors
 
 You can also set initial errors for the form fields by passing an `initialErrors` object to the `useForm` hook. The object should have keys that match the names of the form fields, and the values will be used as the default error messages for those fields.
 
@@ -181,7 +181,7 @@ const onSubmit = handleSubmit((values) => {
 
 </LivePreview>
 
-### Toolbar
+## Toolbar
 
 The `VQuillEditor` component includes a toolbar that allows users to apply formatting to the text in the editor. By default, the toolbar includes the most commonly used formatting options, such as bold, italic, and underline.
 
@@ -192,7 +192,6 @@ You can customize the toolbar by using the toolbar prop. There are three built-i
 - `full`: The full toolbar includes all available formatting options.
 
 <LivePreview src="forms-quilleditor--toolbar" >
-
 
 ```vue
 <script setup lang="ts">
@@ -260,7 +259,6 @@ const onSubmit = handleSubmit((values) => {
 | [`readOnly`](#readOnly)       | `boolean`                                  | `false`                         |
 | [`labelClass`](#labelClass)   | `string`                                   | `'block mb-2 font-medium'`      |
 | [`errorClass`](#errorClass)   | `string`                                   | `'text-sm mt-1 text-error-500'` |
-
 
 ## Events
 

@@ -4,7 +4,7 @@ The `Collapsible` component is based on Headless UI and allows you to toggle the
 
 ## Usage
 
-### Basic Usage
+## Basic Usage
 
 You can use the VCollapsible component in your template like so:
 
@@ -39,7 +39,7 @@ The `isOpen` variable in the `v-model` directive controls whether the collapsibl
 The `VCollapsible` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
-### Auto Open
+## Auto Open
 
 You can set the collapsible to open automatically by setting the `modelValue` prop to true:
 
@@ -53,7 +53,7 @@ You can set the collapsible to open automatically by setting the `modelValue` pr
 
 </LivePreview>
 
-### Hide Icon
+## Hide Icon
 
 To hide the icon that indicates whether the collapsible is open or closed, set the `hideIcon` prop to true:
 
@@ -67,7 +67,7 @@ To hide the icon that indicates whether the collapsible is open or closed, set t
 
 </LivePreview>
 
-### Custom Class
+## Custom Class
 
 You can customize the appearance of the Collapsible component by setting the following props:
 
@@ -114,11 +114,11 @@ Here's an example of how you can use these props to apply custom styles:
 
 ## Events
 
-### `update:modelValue`
+## `update:modelValue`
 
 The `update:modelValue` event is emitted when the value of the `modelValue` prop is changed. This can be used to update the state of your component or trigger other actions.
 
-### `change`
+## `change`
 
 The `change` event is emitted when the collapsible is opened or closed. This can also be used to update the state of your component or trigger other actions.
 
@@ -151,7 +151,7 @@ export default {
 
 The Collapsible component has several slots that allow you to customize the content of the header and panel elements.
 
-### `header` slot
+## `header` slot
 
 The header slot allows you to customize the content of the header element. It has a `isOpen` prop that you can use to toggle the appearance of the header based on whether the collapsible is open or closed.
 
@@ -172,7 +172,7 @@ Here's an example of how you can use the header slot:
 </template>
 ```
 
-### `icon` slot
+## `icon` slot
 
 The icon slot allows you to customize the icon that indicates whether the collapsible is open or closed. It is only displayed if the hideIcon prop is not set to true.
 
@@ -188,7 +188,7 @@ Here's an example of how you can use the icon slot:
 </template>
 ```
 
-### Default slot
+## Default slot
 
 The default slot allows you to add content to the panel element. This is the content that will be revealed or hidden when the collapsible is opened or closed.
 

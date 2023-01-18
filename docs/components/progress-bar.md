@@ -4,7 +4,7 @@ The `VProgressBar` component is a component that displays the progress of a task
 
 ## Usage
 
-### Basic Usage
+## Basic Usage
 
 To use the component, you can include it in your template with a given `modelValue`, which determines the progress of the task. You can also specify a color for the progress bar, such as "primary", "secondary", "info", "warning", "success", "error", or "dark".
 
@@ -29,7 +29,7 @@ To use the component, you can include it in your template with a given `modelVal
 The `VProgressbBr` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
-### Slots
+## Slots
 
 You can also use slots to customize the label displayed in the progress bar.
 
@@ -53,7 +53,7 @@ You can also use slots to customize the label displayed in the progress bar.
 
 </LivePreview>
 
-### `v-model`
+## `v-model`
 
 The component also supports the `v-model` directive, which allows you to bind the value of the progress bar to a data property.
 
@@ -80,7 +80,7 @@ const value = ref(10);
 
 </LivePreview>
 
-### Indeterminate
+## Indeterminate
 
 You can also set the `indeterminate` prop to display an indeterminate progress bar, which indicates that a task is in progress but the progress cannot be determined.
 

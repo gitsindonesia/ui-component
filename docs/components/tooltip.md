@@ -4,7 +4,7 @@ The `VTooltip` component displays a small pop-up box with additional information
 
 ## Usage
 
-### Basic Usage
+## Basic Usage
 
 To use the tooltip component, you can use it in your template as follows:
 
@@ -87,9 +87,7 @@ import VTooltip from '@gits-id/tooltip';
 <template>
   <VTooltip>
     <template #activator="{on}">
-      <VBtn v-on="on">
-        Hove Me
-      </VBtn>
+      <VBtn v-on="on"> Hove Me </VBtn>
     </template>
     <span>Hello :)</span>
   </VTooltip>

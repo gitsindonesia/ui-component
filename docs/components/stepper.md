@@ -4,7 +4,7 @@ The `VStepper` component allows you to create a stepper that guides users throug
 
 ## Usage
 
-### Basic Usage
+## Basic Usage
 
 To use the `VStepper` component, you need to register it globally by installing `@gits-id/ui`. Then, you can include it in your template like this:
 
@@ -25,7 +25,7 @@ The `items` prop should be an array of objects, each representing a step in the 
 The `VStepper` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
-### Linear
+## Linear
 
 - **prop**: `linear`
 - **type**: `boolean`
@@ -47,7 +47,7 @@ When it is set to `false`, only current step will be set as `active`.
 
 </LivePreview>
 
-### Disable Route Active
+## Disable Route Active
 
 - **prop**: `disableRouteActive`
 - **type**: `boolean`
@@ -67,7 +67,7 @@ Set `disableRouteActive` to `true` to base stepper active state by `modelValue` 
 
 </LivePreview>
 
-### Linkable
+## Linkable
 
 - **prop**: `linkable`
 - **type**: `boolean`
@@ -82,7 +82,7 @@ Use `linkable` to make the step item to be clickable as route. This works well w
 </template>
 ```
 
-### Clickable
+## Clickable
 
 - **prop**: `clickable`
 - **type**: `boolean`
@@ -103,7 +103,7 @@ through interaction with the step item.
 
 </LivePreview>
 
-### Vertical
+## Vertical
 
 - **prop**: `vertical`
 - **type**: `boolean`
@@ -122,7 +122,7 @@ Use `vertical` to render the stepper in vertical mode.
 
 </LivePreview>
 
-### `v-model`
+## `v-model`
 
 - **prop**: `modelValue`
 - **type**: `boolean`

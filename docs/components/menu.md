@@ -20,7 +20,7 @@ interface Menu {
 - `icon` is an optional icon that will be displayed next to the menu item. It can be specified using a string that follows the Ricon or Material Design Icon syntax.
 - `children` is an optional array of child Menu objects that will be displayed as submenus under the current menu item.
 
-### Basic Usage
+## Basic Usage
 
 Here is an example of how to use the `VMenu` component with a basic menu object:
 
@@ -52,7 +52,7 @@ const item = {
 
 </LivePreview>
 
-### Variants
+## Variants
 
 The `VMenu` component supports several variations that can be enabled by passing boolean props:
 
@@ -63,7 +63,7 @@ The `VMenu` component supports several variations that can be enabled by passing
 
 Here is an example of how to use the small variant:
 
-### Small
+## Small
 
 Use `small` prop to make the menu items smaller and reduces the padding.
 
@@ -95,7 +95,7 @@ const item = {
 
 </LivePreview>
 
-### Mini
+## Mini
 
 Use `mini` prop to make the menu items even smaller and reduces the padding even more.
 
@@ -127,7 +127,7 @@ const item = {
 
 </LivePreview>
 
-### Custom Active Class
+## Custom Active Class
 
 By default, the `VMenu` component applies a blue background and white text to the active menu item. You can customize this behavior by passing a different `active-class` prop:
 
@@ -159,7 +159,7 @@ const item = {
 
 </LivePreview>
 
-### Icons
+## Icons
 
 You can use icons in the `VMenu` component by specifying the `icon` prop for each menu item. The icon prop should be a string that follows the [Icones](https://icones.js.org/) syntax.
 

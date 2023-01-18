@@ -4,7 +4,7 @@ The `VModal` component is used to create modal or dialog. It is based on `@headl
 
 ## Usage
 
-### Basic Usage
+## Basic Usage
 
 To use the `VModal` component, just use it in the template.
 
@@ -28,7 +28,7 @@ To use the `VModal` component, just use it in the template.
 The `VModal` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
-### Confirm
+## Confirm
 
 Use [`confirm`](#confirm) prop to make modal confirmable. You can also customize the confirm text with [`confirmText`](#confirmText) prop, color with [`confirmColor`](#confirmColor) prop and even more with [`confirmProps`](#confirmProps).
 
@@ -53,7 +53,7 @@ const onConfirm = () => {
 
 </LivePreview>
 
-### Hide Header
+## Hide Header
 
 Use `hide-header` prop to hide the modal header.
 
@@ -72,7 +72,7 @@ Use `hide-header` prop to hide the modal header.
 
 </LivePreview>
 
-### Hide Footer
+## Hide Footer
 
 Use `hide-footer` prop to hide the modal footer.
 
@@ -91,7 +91,7 @@ Use `hide-footer` prop to hide the modal footer.
 
 </LivePreview>
 
-### Hide X Button
+## Hide X Button
 
 Use `hide-x-button` prop to hide the modal close button.
 
@@ -110,7 +110,7 @@ Use `hide-x-button` prop to hide the modal close button.
 
 </LivePreview>
 
-### Fullscreen
+## Fullscreen
 
 Use `fullscreen` prop to make modal fullscreen.
 
@@ -138,7 +138,7 @@ const isOpen = ref(false);
 
 </LivePreview>
 
-### Centered
+## Centered
 
 Use `centered` prop to make the modal centered of the page.
 
@@ -186,7 +186,7 @@ const deleteItem = () => {
 
 </LivePreview>
 
-### Loading
+## Loading
 
 Use `loading` prop to set modal loading state. When `loading` is true, modal can not be closed.
 
@@ -210,7 +210,7 @@ const loading = ref(true);
 
 </LivePreview>
 
-### Persistent
+## Persistent
 
 Use `persistent` prop to prevent closing modal when clicking the overlay.
 
@@ -229,7 +229,7 @@ Use `persistent` prop to prevent closing modal when clicking the overlay.
 
 </LivePreview>
 
-### Custom Width
+## Custom Width
 
 Use `width` prop set modal width and use `max-width` prop to set modal max width.
 
@@ -248,7 +248,7 @@ Use `width` prop set modal width and use `max-width` prop to set modal max width
 
 </LivePreview>
 
-### Custom Class
+## Custom Class
 
 We can also customize modal via classes props. This is useful when working with Tailwind CSS.
 
@@ -273,7 +273,7 @@ We can also customize modal via classes props. This is useful when working with 
 
 </LivePreview>
 
-### Custom Style via CSS Properties
+## Custom Style via CSS Properties
 
 We can also customize modal via CSS Properties.
 
@@ -335,7 +335,7 @@ We can also customize modal via CSS Properties.
 
 ## Events
 
-### `onConfirm`
+## `onConfirm`
 
 Event for confirmation modal.
 
@@ -371,7 +371,7 @@ const approveRequest = () => {
 
 ## Slots
 
-### `default`
+## `default`
 
 The `default` slot is used to place modal content/body. You can put your text or even HTML tags on it.
 
@@ -383,7 +383,7 @@ The `default` slot is used to place modal content/body. You can put your text or
 </template>
 ```
 
-### `activator`
+## `activator`
 
 The `activator` slot is used to place modal activator. You can place button that trigger modal to open here.
 
@@ -409,7 +409,7 @@ Example:
 </template>
 ```
 
-### `header`
+## `header`
 
 The `header` slot is used to place modal header. Use this slot to customize modal header content.
 
@@ -425,7 +425,7 @@ The `header` slot is used to place modal header. Use this slot to customize moda
 </template>
 ```
 
-### `footer`
+## `footer`
 
 The `footer` slot is used to place modal footer. Use this slot to customize modal footer content.
 

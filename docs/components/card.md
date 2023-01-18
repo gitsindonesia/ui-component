@@ -4,7 +4,7 @@ The `VCard` component is a container for displaying content in a card-like forma
 
 ## Usage
 
-### Basic Usage
+## Basic Usage
 
 To use the `VCard` component, simply wrap your content in the `VCard` element:
 
@@ -23,7 +23,7 @@ To use the `VCard` component, simply wrap your content in the `VCard` element:
 The `VCard` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
-### With Title
+## With Title
 
 To add a title to your `VCard`, use the `title` prop:
 
@@ -37,7 +37,7 @@ To add a title to your `VCard`, use the `title` prop:
 
 </LivePreview>
 
-### Header and Footer
+## Header and Footer
 
 You can add a header and footer to your `VCard` by using the `title` prop for the header and the `footer` slot for the footer:
 
@@ -58,7 +58,7 @@ You can add a header and footer to your `VCard` by using the `title` prop for th
 
 </LivePreview>
 
-### Hide Header and Footer
+## Hide Header and Footer
 
 To hide the header or footer of your `VCard`, use the `hide-header` or `hide-footer` props, respectively:
 
@@ -79,7 +79,7 @@ To hide the header or footer of your `VCard`, use the `hide-header` or `hide-foo
 
 </LivePreview>
 
-### Colors
+## Colors
 
 - **prop**: `color`
 - **type**: `string`
@@ -104,7 +104,7 @@ You can apply different colors to your `VCard` using the `color` prop. It can ta
 
 </LivePreview>
 
-### Bordered
+## Bordered
 
 - **prop**: `bordered`
 - **type**: `boolean`
@@ -125,7 +125,7 @@ To use the `bordered` prop, set it to true like so:
 
 </LivePreview>
 
-### Shadow
+## Shadow
 
 - **prop**: `shadow`
 - **type**: `boolean | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'inner' | 'none'`
@@ -191,7 +191,7 @@ None
 | [header.prepend](#header.prepend) | A slot to prepend before the actual header |
 | [footer](#default)                | The card footer                            |
 
-### Default
+## Default
 
 The `default` slot is the main content area of the `VCard`. It is where you can place your card body content.
 
@@ -204,7 +204,7 @@ The `default` slot is the main content area of the `VCard`. It is where you can 
 </template>
 ```
 
-### Header
+## Header
 
 The `header` slot is used to add a header to the `VCard`. It can contain any content you want to display in the header.
 
@@ -221,7 +221,7 @@ The `header` slot is used to add a header to the `VCard`. It can contain any con
 </template>
 ```
 
-### `header.append`
+## `header.append`
 
 The `header.append` slot is used to add content to the end of the header slot. It can be used to add buttons or other elements to the header.
 
@@ -238,7 +238,7 @@ The `header.append` slot is used to add content to the end of the header slot. I
 </template>
 ```
 
-### `header.prepend`
+## `header.prepend`
 
 The `header.prepend` slot is used to add content to the beginning of the header slot. It can be used to add icons or other elements to the header.
 
@@ -255,7 +255,7 @@ The `header.prepend` slot is used to add content to the beginning of the header 
 </template>
 ```
 
-### Footer
+## Footer
 
 The `footer` slot is used to add a footer to the `VCard`. It can contain any content you want to display in the footer.
 

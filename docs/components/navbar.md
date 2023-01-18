@@ -8,7 +8,7 @@ This component is **deprecated**. You can replace it with the new [`VAppBar`](/c
 
 ## Usage
 
-### Basic Usage
+## Basic Usage
 
 ```vue
 <template>
@@ -22,7 +22,7 @@ This component is **deprecated**. You can replace it with the new [`VAppBar`](/c
 The `VNavbar` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
-### Small
+## Small
 
 ```vue
 <template>
@@ -32,7 +32,7 @@ The `VNavbar` component is registered globally when you install with `@gits-id/u
 
 <LivePreview src="components-navbar--small" />
 
-### User Data
+## User Data
 
 ```vue
 <script setup lang="ts">
@@ -46,7 +46,7 @@ const user = {name: 'Admin'};
 
 <LivePreview src="components-navbar--user" />
 
-### With Menus
+## With Menus
 
 ```vue
 <script setup lang="ts">

@@ -8,7 +8,7 @@ This component is **deprecated** and will be replaced by [Navigation Drawer](/co
 
 ## Usage
 
-### Basic Usage
+## Basic Usage
 
 ```vue
 <script setup lang="ts">
@@ -46,7 +46,7 @@ const menus = [
 The `VNavDrawer` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
-### Expand on hover
+## Expand on hover
 
 ```vue
 <script setup lang="ts">
@@ -80,7 +80,7 @@ const menus = [
 
 <LivePreview src="components-navdrawer--expand-hover" />
 
-### Custom Class
+## Custom Class
 
 ```vue
 <script setup lang="ts">

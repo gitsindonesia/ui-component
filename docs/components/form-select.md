@@ -4,7 +4,7 @@ The `VFormSelect` component is a form field that allows users to select a value 
 
 ## Usage
 
-### Basic Usage
+## Basic Usage
 
 To use the `VFormSelect` component, you must first provide it with an array of options. Each option should be an object with `text` and `value` properties, like this:
 
@@ -41,7 +41,7 @@ const options = ref([
 The `VFormSelect` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
-### Disabled
+## Disabled
 
 To disable the `VFormSelect` component, you can use the `disabled` prop:
 
@@ -74,7 +74,7 @@ const options = ref([
 
 </LivePreview>
 
-### Error
+## Error
 
 If you are using the `VFormSelect` component with a form validation library, you can use the `error` prop to indicate that the form field has an error:
 
@@ -107,7 +107,7 @@ const options = ref([
 
 </LivePreview>
 
-### Label
+## Label
 
 You can use the `label` prop to specify a label for the `VFormSelect` component:
 
@@ -140,7 +140,7 @@ const options = ref([
 
 </LivePreview>
 
-### Validation
+## Validation
 
 To use the `VFormSelect` component with a form validation library, you can use the name prop to bind the component to a form control. For example, with `VeeValidate`, you can use the `useForm` hook to create a form with validation schema:
 
@@ -224,7 +224,7 @@ const genres = ref([
 
 </LivePreview>
 
-### Validation Mode
+## Validation Mode
 
 There are 2 modes. The first is `eager` mode, and the second is `aggressive` mode. The `eager` mode validates input when the blur event occurs. Meanwhile, `aggressive` mode validates the input every time the input itself changes. This can be useful when you are validating for example the minimum or maximum limits of an input.
 
@@ -329,7 +329,7 @@ const onSubmit = handleSubmit((values) => {
 
 </LivePreview>
 
-### Initial Values
+## Initial Values
 
 To set initial values to the form, use the `initialValues` option in the `useForm` hook.
 
@@ -413,7 +413,7 @@ const genres = ref([
 
 ## Events
 
-### `update:modelValue`
+## `update:modelValue`
 
 You can listen for the `update:modelValue` event to get notified when the value of the `VFormSelect` component changes.
 

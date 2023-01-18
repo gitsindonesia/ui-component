@@ -4,7 +4,7 @@ The `VBadge` component is a small component that is used to display a small piec
 
 ## Usage
 
-### Basic Usage
+## Basic Usage
 
 To use the `VBadge` component, you can simply include it in your template like this:
 
@@ -19,7 +19,7 @@ To use the `VBadge` component, you can simply include it in your template like t
 Note that the `VBadge` component is registered globally when you install `@gits-id/ui`, so you don't need to import it manually.
 :::
 
-### Colors
+## Colors
 
 - **prop**: `color`
 - **type**: `string`
@@ -46,7 +46,7 @@ The available color options are `default`, `primary`, `secondary`, `info`, `warn
 
 </LivePreview>
 
-### Outlined
+## Outlined
 
 - **prop**: `outlined`
 - **type**: `boolean`
@@ -65,7 +65,7 @@ You can use the `outlined` prop to apply a bordered style to the badge:
 
 </LivePreview>
 
-### Rounded
+## Rounded
 
 - **prop**: `rounded`
 - **type**: `boolean | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | 'none'`
@@ -95,7 +95,7 @@ import {ref} from 'vue';
 
 </LivePreview>
 
-### Sizes
+## Sizes
 
 - **prop**: `small` or `large`
 - **type**: `boolean`
@@ -116,7 +116,7 @@ You can use the `small` or `large` prop to change the size of the badge:
 
 </LivePreview>
 
-### Dismissable
+## Dismissable
 
 - **prop**: `dismissable`
 - **type**: `boolean`
@@ -150,7 +150,7 @@ You can use the `dismissable` prop to show an X button in the badge, which allow
 
 ## Events
 
-### `dismiss`
+## `dismiss`
 
 The `VBadge` component provides a `dismiss` event, which is fired when the dismissable button is clicked. This can be useful if you want to perform an action, such as hiding or removing the badge, when it is dismissed by the user.
 

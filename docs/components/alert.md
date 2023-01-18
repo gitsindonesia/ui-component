@@ -4,7 +4,7 @@ The `VAlert` component is a flexible alert component that can be used to display
 
 ## Usage
 
-### Basic Usage
+## Basic Usage
 
 To use the `VAlert` component, you can simply include it in your template like this:
 
@@ -19,7 +19,7 @@ To use the `VAlert` component, you can simply include it in your template like t
 
 </LivePreview>
 
-### Colors
+## Colors
 
 - **prop**: `color`
 - **type**: `string`
@@ -56,7 +56,7 @@ Here's an example of how to use different colors:
 
 </LivePreview>
 
-### Solid Style
+## Solid Style
 
 - **prop**: `solid`
 - **type**: `boolean`
@@ -82,7 +82,7 @@ Use `solid` to apply solid style to the alert.
 
 </LivePreview>
 
-### Outlined Style
+## Outlined Style
 
 - **prop**: `outlined`
 - **type**: `boolean`
@@ -108,7 +108,7 @@ Use `outlined` to apply outlined style to the alert.
 
 </LivePreview>
 
-### Bordered Style
+## Bordered Style
 
 - **prop**: `border`
 - **type**: `boolean`
@@ -134,7 +134,7 @@ Use `border` to apply bordered style to the alert.
 
 </LivePreview>
 
-### `v-model`
+## `v-model`
 
 - **prop**: `modelValue`
 - **type**: `boolean`
@@ -163,7 +163,7 @@ const isOpen = ref(true);
 
 </LivePreview>
 
-### Dismissable
+## Dismissable
 
 - **prop**: `dismissable`
 - **type**: `boolean`
@@ -190,7 +190,7 @@ const isOpen = ref(true);
 
 </LivePreview>
 
-### Transition
+## Transition
 
 - **prop**: `transition`
 - **type**: `string`
@@ -273,19 +273,19 @@ function handleDismissed() {
 
 ## Slots
 
-### `default`
+## `default`
 
 A slot for placing the alert content/message.
 
-### `icon`
+## `icon`
 
 A slot for customizing the icon. Receives an icon prop with the name of the current icon.
 
-### `x-button`
+## `x-button`
 
 A slot for customizing the dismiss button. Receives a dismiss prop with a function that dismisses the alert.
 
-### `x-icon`
+## `x-icon`
 
 A slot for customizing the icon in the dismiss button.
 

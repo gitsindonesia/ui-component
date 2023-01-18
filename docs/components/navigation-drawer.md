@@ -4,7 +4,7 @@ The `NavDrawer` component is flexible component to create side navigation panel.
 
 ## Usage
 
-### Basic Usage
+## Basic Usage
 
 To use the `NavDrawer` component, just import it from `@gits-id/ui` or `@gits-id/nav-drawer` and use it in the template.
 
@@ -24,11 +24,11 @@ import {NavDrawer} from '@gits-id/nav-drawer';
 
 </LivePreview>
 
-### Colors
+## Colors
 
 By default, `NavDrawer` component support 4 colors: `default`, `primary`, `secondary` and `dark`. You can use `color` prop to change the navigation drawer color.
 
-#### Primary
+### Primary
 
 <LivePreview src="components-navigationdrawer--primary">
 
@@ -48,7 +48,7 @@ import {NavDrawer} from '@gits-id/nav-drawer';
 
 <br>
 
-#### Secondary
+### Secondary
 
 <LivePreview src="components-navigationdrawer--secondary">
 
@@ -68,7 +68,7 @@ import {NavDrawer} from '@gits-id/nav-drawer';
 
 <br>
 
-#### Dark
+### Dark
 
 <LivePreview src="components-navigationdrawer--dark">
 
@@ -88,7 +88,7 @@ import {NavDrawer} from '@gits-id/nav-drawer';
 
 <br>
 
-### Shadow
+## Shadow
 
 - **props**: `shadow`
 - **type**: `string | boolean`
@@ -113,7 +113,7 @@ import {NavDrawer} from '@gits-id/nav-drawer';
 
 </LivePreview>
 
-### Bordered
+## Bordered
 
 - **props**: `bordered`
 - **type**: `boolean`
@@ -137,7 +137,7 @@ import {NavDrawer} from '@gits-id/nav-drawer';
 
 </LivePreview>
 
-### Fixed
+## Fixed
 
 - **props**: `fixed`
 - **type**: `boolean`
@@ -175,7 +175,7 @@ import {NavDrawer} from '@gits-id/nav-drawer';
 
 </LivePreview>
 
-### Sticky
+## Sticky
 
 - **props**: `fixed`
 - **type**: `boolean`
@@ -214,7 +214,7 @@ import '@gits-id/nav-drawer/dist/style.css';
 
 </LivePreview>
 
-### Toggle
+## Toggle
 
 - **props**: `modelValue`
 - **type**: `boolean`
@@ -250,7 +250,7 @@ const isOpen = ref(true);
 
 </LivePreview>
 
-### Mini
+## Mini
 
 - **props**: `mini`
 - **type**: `boolean`
@@ -283,7 +283,7 @@ const isMini = ref(true);
 
 </LivePreview>
 
-### Expand on Hover
+## Expand on Hover
 
 To enable expand on hover effect, you need to apply two props: `expand-on-hover` and `expanded`. The prop `expand-on-hover` tells the nav-drawer to use this effect and the `expanded` prop used as the expand state of the nav-drawer.
 
@@ -320,7 +320,7 @@ const isExpanded = ref(true);
 
 </LivePreview>
 
-### Overlay
+## Overlay
 
 - **props**: `overlay`
 - **type**: `boolean`
@@ -342,7 +342,7 @@ import {NavDrawer} from '@gits-id/nav-drawer';
 
 </LivePreview>
 
-### Right Aligned
+## Right Aligned
 
 - **props**: `right`
 - **type**: `boolean`
@@ -381,7 +381,7 @@ const isOpen = ref(true);
 
 </LivePreview>
 
-### Custom Transition
+## Custom Transition
 
 - **props**: `transition`
 - **type**: `string`

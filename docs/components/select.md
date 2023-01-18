@@ -4,7 +4,7 @@ The `VSelect` component is a form control for presenting a list of options to th
 
 ## Usage
 
-### Basic Usage
+## Basic Usage
 
 To use the `VSelect` component, you will need to import the `ref` function from `vue` and the `VSelectItem` type from `@gits-id/select`. Then, create a ref of an array of `VSelectItem` objects and pass it to the `items` prop of the `VSelect` component in your template.
 
@@ -42,7 +42,7 @@ const items = ref<VSelectItem[]>([
 The `VSelect` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
-### Searchable
+## Searchable
 
 To enable search functionality in the `VSelect` component, pass the `searchable` prop.
 
@@ -76,7 +76,7 @@ const items = ref<VSelectItem[]>([
 
 </LivePreview>
 
-### No Check Icon
+## No Check Icon
 
 To hide the check icon in the `VSelect` component, pass the `no-check-icon` prop.
 
@@ -110,7 +110,7 @@ const items = ref<VSelectItem[]>([
 
 </LivePreview>
 
-### Label
+## Label
 
 To display a label for the `VSelect` component, pass the `label` prop.
 
@@ -144,7 +144,7 @@ const items = ref<VSelectItem[]>([
 
 </LivePreview>
 
-### Shadow
+## Shadow
 
 To apply a shadow effect to the `VSelect` component, pass the `shadow` prop.
 
@@ -178,7 +178,7 @@ const items = ref<VSelectItem[]>([
 
 </LivePreview>
 
-### Error
+## Error
 
 To display the `VSelect` component in an error state, pass the `error` prop.
 
@@ -212,7 +212,7 @@ const items = ref<VSelectItem[]>([
 
 </LivePreview>
 
-### Clearable
+## Clearable
 
 To enable the ability to clear the selected value in the `VSelect` component, pass the `clearable` prop.
 
@@ -246,7 +246,7 @@ const items = ref<VSelectItem[]>([
 
 </LivePreview>
 
-### Custom Transition
+## Custom Transition
 
 To customize the transition effect of the `VSelect` component, pass the desired transition name to the `transition` prop.
 
@@ -280,7 +280,7 @@ const items = ref<VSelectItem[]>([
 
 </LivePreview>
 
-### Return Object
+## Return Object
 
 To return the selected item as an object rather than just the value, pass the `return-object` prop.
 
@@ -314,7 +314,7 @@ const items = ref<VSelectItem[]>([
 
 </LivePreview>
 
-### Sizes
+## Sizes
 
 The `VSelect` component supports three sizes: `sm`, `md`, and `lg`. To specify the size of the component, use the `size` prop.
 
@@ -350,7 +350,7 @@ const items = ref<VSelectItem[]>([
 
 </LivePreview>
 
-### Validation
+## Validation
 
 The `VSelect` component can be used with the `vee-validate` library to provide form validation. To use the `VSelect` component in a form with validation, import the `useForm` hook and pass it an object with a `validationSchema` property. Then, bind the `VSelect` component to the form values using the `v-model` directive.
 
@@ -464,7 +464,7 @@ const genres = ref([
 
 ## Types
 
-### `VSelectItem`
+## `VSelectItem`
 
 The `VSelectItem` interface represents an item in the list of options. It has the following properties:
 
@@ -482,19 +482,19 @@ export interface VSelectItem = {
 
 ## Events
 
-### [`update:modelValue`](#update:modelValue)
+## [`update:modelValue`](#update:modelValue)
 
 Emitted when the selected item changes.
 
-### [`update:value`](#update:value)
+## [`update:value`](#update:value)
 
 Emitted when the selected item changes.
 
-### [`change`](#search)
+## [`change`](#search)
 
 Emitted when the selected item changes.
 
-### [`search`](#search)
+## [`search`](#search)
 
 Emitted when the search input is changed.
 
@@ -502,7 +502,7 @@ Emitted when the search input is changed.
 
 The `VSelect` component provides the following slots for customization:
 
-### [`selected`](#selected)
+## [`selected`](#selected)
 
 Customize the selected item display.
 
@@ -516,7 +516,7 @@ Customize the selected item display.
 </template>
 ```
 
-### [`empty`](#empty)
+## [`empty`](#empty)
 
 Customize the display for when there are no items.
 
@@ -528,7 +528,7 @@ Customize the display for when there are no items.
 </template>
 ```
 
-### [`icon`](#icon)
+## [`icon`](#icon)
 
 Customize the icon displayed for the selected item.
 
@@ -542,7 +542,7 @@ Customize the icon displayed for the selected item.
 </template>
 ```
 
-### [`item`](#item)
+## [`item`](#item)
 
 Customize the display for each item in the list.
 

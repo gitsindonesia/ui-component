@@ -4,7 +4,7 @@ The `VSwitch` component allows you to add a toggle switch to your Vue app.
 
 ## Usage
 
-### Basic Usage
+## Basic Usage
 
 To use the component, you first need to install it with `@gits-id/ui`. Once installed, the `VSwitch` component will be registered globally, so you don't need to import it manually.
 
@@ -28,7 +28,7 @@ const checked = ref(false);
 The `VSwitch` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
-### Colors
+## Colors
 
 You can specify the color of the `VSwitch` using the color prop. The available colors are `primary`, `secondary`, `success`, `warning`, `error`, and custom.
 
@@ -48,7 +48,7 @@ const checked = ref(false);
 
 </LivePreview>
 
-### No Label
+## No Label
 
 If you don't want to display a label, you can leave out the `label` prop.
 
@@ -68,7 +68,7 @@ const checked = ref(false);
 
 </LivePreview>
 
-### Custom Class
+## Custom Class
 
 You can apply custom classes to the `VSwitch` and its individual parts using the `switch-class`, `active-class`, `inactive-class`, and `button-class` props.
 
@@ -95,7 +95,7 @@ const checked = ref(false);
 
 </LivePreview>
 
-### Custom Style
+## Custom Style
 
 You can also style the component using CSS variables.
 
@@ -128,7 +128,7 @@ const checked = ref(false);
 
 </LivePreview>
 
-### Validation
+## Validation
 
 You can use the `VSwitch` component with form validation libraries like `vee-validate`.
 
@@ -191,7 +191,7 @@ const onSubmit = handleSubmit((values) => {
 
 ## Events
 
-### `update:modelValue`
+## `update:modelValue`
 
 The `update:modelValue` event is emitted when the value of the `VSwitch` changes.
 

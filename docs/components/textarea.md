@@ -4,7 +4,7 @@
 
 ## Usage
 
-### Basic Usage
+## Basic Usage
 
 To use the `VTextarea` component, you can include it in your template like this:
 
@@ -19,7 +19,7 @@ To use the `VTextarea` component, you can include it in your template like this:
 
 </LivePreview>
 
-### Label
+## Label
 
 To add a label to your `VTextarea` component, you can use the `label` prop:
 
@@ -33,7 +33,7 @@ To add a label to your `VTextarea` component, you can use the `label` prop:
 
 </LivePreview>
 
-### Readonly
+## Readonly
 
 To make a `VTextarea` component readonly, you can use the `readonly` prop:
 
@@ -47,7 +47,7 @@ To make a `VTextarea` component readonly, you can use the `readonly` prop:
 
 </LivePreview>
 
-### Disabled
+## Disabled
 
 To disable a `VTextarea` component, you can use the `disabled` prop:
 
@@ -61,7 +61,7 @@ To disable a `VTextarea` component, you can use the `disabled` prop:
 
 </LivePreview>
 
-### Error
+## Error
 
 To display an error message for a `VTextarea` component, you can use the `error` prop and the `error-messages` prop:
 
@@ -75,7 +75,7 @@ To display an error message for a `VTextarea` component, you can use the `error`
 
 </LivePreview>
 
-### Counter
+## Counter
 
 To display a character count for a `VTextarea` component, you can use the `counter` prop:
 
@@ -89,7 +89,7 @@ To display a character count for a `VTextarea` component, you can use the `count
 
 </LivePreview>
 
-### Validation
+## Validation
 
 To use validation with the `VTextarea` component, you'll need to import the required packages and set up a validation schema.
 
@@ -188,7 +188,7 @@ const onSubmit = handleSubmit((values) => {
 
 </LivePreview>
 
-### Validation Mode
+## Validation Mode
 
 There are 2 modes. The first is `eager` mode, and the second is `aggressive` mode. The `eager` mode validates input when the blur event occurs. Meanwhile, `aggressive` mode validates the input every time the input itself changes. This can be useful when you are validating for example the minimum or maximum limits of an input.
 
@@ -244,7 +244,7 @@ const onSubmit = handleSubmit((values) => {
 ## Props
 
 | Name                                | Type               | Default        |
-|-------------------------------------| ------------------ | -------------- |
+| ----------------------------------- | ------------------ | -------------- |
 | [`modelValue`](#modelValue)         | `string`           | `''`           |
 | [`rows`](#rows)                     | `string \| number` | `undefined`    |
 | [`value`](#value)                   | `string`           | `''`           |
@@ -267,7 +267,7 @@ const onSubmit = handleSubmit((values) => {
 
 The `VTextarea` component emits the following events:
 
-### `update:modelValue`
+## `update:modelValue`
 
 This event is emitted when the value of the `VTextarea` component changes. You can listen to this event using the `@update:modelValue` directive:
 
@@ -285,7 +285,7 @@ const handle = () => alert('Triggered!');
 
 The `VTextarea` component has the following slot:
 
-### `counter`
+## `counter`
 
 This slot is used to customize the appearance of the character count when the `counter` prop is used. It is passed an object with the `count` property, which contains the current character count.
 
@@ -299,7 +299,7 @@ This slot is used to customize the appearance of the character count when the `c
 </template>
 ```
 
-### CSS Variables
+## CSS Variables
 
 None.
 

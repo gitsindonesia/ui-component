@@ -4,7 +4,7 @@ The `VCheckbox` is a form input component that allows the user to select a value
 
 ## Usage
 
-### Basic Usage
+## Basic Usage
 
 To use the `VCheckbox` component, you will first need to import the `ref` function from `vue`. Then, create a `checked` variable using the `ref` function.
 Then, in your template, use the VCheckbox component with the v-model directive to bind the checked variable to the checkbox input.
@@ -29,7 +29,7 @@ const checked = ref(false);
 The `VCheckbox` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
-### Disabled
+## Disabled
 
 To `disable` the component, set the `disabled` prop to `true`.
 
@@ -49,7 +49,7 @@ const checked = ref(false);
 
 </LivePreview>
 
-### Multiple
+## Multiple
 
 To use the `VCheckbox` as part of a multi-select form, you will first need to import the `object` and `array` functions from `yup` and the `useForm` hook from `vee-validate`. Then, create a validation schema using the `object` and `array` functions. Then, in your template, use the `VCheckbox` component with the `name` prop to bind the input to the `genre` field in the form values. You can also use the `value` and `label` props to specify the option value and label, respectively.
 
@@ -123,7 +123,7 @@ const onSubmit = handleSubmit((values) => {
 
 </LivePreview>
 
-### Validation
+## Validation
 
 To use the `VCheckbox` component with a form validation library, you can use the `name` prop to bind the component to a form control. For example, with `VeeValidate`, you can use the `useForm` hook to create a form with validation schema:
 
@@ -169,7 +169,7 @@ const onSubmit = handleSubmit((values) => {
 
 </LivePreview>
 
-### Validation Mode
+## Validation Mode
 
 There are 2 modes. The first is `eager` mode, and the second is `aggressive` mode. The `eager` mode validates input when the blur event occurs. Meanwhile, `aggressive` mode validates the input every time the input itself changes. This can be useful when you are validating for example the minimum or maximum limits of an input.
 
@@ -259,7 +259,7 @@ const onSubmit = handleSubmit((values) => {
 
 ## Events
 
-### `update:modelValue`
+## `update:modelValue`
 
 **Type**:
 

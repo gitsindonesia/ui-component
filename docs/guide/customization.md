@@ -10,15 +10,14 @@ GITS UI includes 6 named colors with shades ranging from 50 to 900, similar to T
 - warning
 - success
 - error
-  
-  
+
 You can view the full set of colors [here](https://gits-ui.web.app/?path=/story/foundation-colors--colors).
 
 ## Tailwind Preset
 
 GITS UI comes with a default GITS Design as a Tailwind Preset via `@gits-id/tailwind-config/preset`.
 
-### Creating Your Own Preset
+## Creating Your Own Preset
 
 To create your own preset, you can copy the default preset to your project with the following command:
 
@@ -74,9 +73,7 @@ module.exports = {
       },
     },
   },
-  presets: [
-    require('@gits-id/tailwind-config/preset'),
-  ],
+  presets: [require('@gits-id/tailwind-config/preset')],
 };
 ```
 

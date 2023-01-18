@@ -12,7 +12,7 @@ The `VBtn` component is a button element that can be added to your Vue.js templa
 
 ## Usage
 
-### Basic Usage
+## Basic Usage
 
 To use the `VBtn` component, simply add it to your template.
 
@@ -36,7 +36,7 @@ To use the `VBtn` component, simply add it to your template.
 The `VBtn` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
-### Outlined
+## Outlined
 
 Use `outlined` prop to apply outlined style.
 
@@ -56,7 +56,7 @@ Use `outlined` prop to apply outlined style.
 
 </LivePreview>
 
-### Text
+## Text
 
 Use `text` prop to apply text style.
 
@@ -76,7 +76,7 @@ Use `text` prop to apply text style.
 
 </LivePreview>
 
-### Flush
+## Flush
 
 - **Prop**: `flush`
 - **Type**: `boolean`
@@ -100,7 +100,7 @@ Use `flush` prop to remove button padding. It will also set the width and height
 
 </LivePreview>
 
-### Rounded
+## Rounded
 
 Use `rounded` prop to apply rounded style.
 
@@ -120,7 +120,7 @@ Use `rounded` prop to apply rounded style.
 
 </LivePreview>
 
-### Tile
+## Tile
 
 Use `tile` prop to apply tile style. This will remove border radius from button.
 
@@ -140,7 +140,7 @@ Use `tile` prop to apply tile style. This will remove border radius from button.
 
 </LivePreview>
 
-### Sizes
+## Sizes
 
 - Prop: `size`
 - Values: `sm | md | lg`
@@ -176,7 +176,7 @@ You can even roll your own custom sizing with CSS variables:
 </template>
 ```
 
-### Disabled
+## Disabled
 
 Use `disabled` prop to disable the button.
 
@@ -214,7 +214,7 @@ Outlined button have different disabled style.
 
 </LivePreview>
 
-### Loading
+## Loading
 
 Use `loading` prop to set button loading state.
 
@@ -234,7 +234,7 @@ Use `loading` prop to set button loading state.
 
 </LivePreview>
 
-### Block
+## Block
 
 Use `block` prop to make button full width.
 
@@ -254,7 +254,7 @@ Use `block` prop to make button full width.
 
 </LivePreview>
 
-### Shadow
+## Shadow
 
 Use `shadow` prop to add shadow to the button.
 
@@ -274,7 +274,7 @@ Use `shadow` prop to add shadow to the button.
 
 </LivePreview>
 
-### No ring effect
+## No ring effect
 
 Use `no-ring` prop to remove ring effect to the button.
 
@@ -294,7 +294,7 @@ Use `no-ring` prop to remove ring effect to the button.
 
 </LivePreview>
 
-### Icon
+## Icon
 
 Use `prefix-icon` prop to add icon to the button before the text.
 Use `suffix-icon` prop to add icon to the button after the text.
@@ -310,7 +310,7 @@ Use `suffix-icon` prop to add icon to the button after the text.
 
 </LivePreview>
 
-### FAB
+## FAB
 
 Use `fab` prop to make the button as floating action button (FAB).
 
@@ -330,7 +330,7 @@ import VIcon from '@gits-id/icon';
 
 </LivePreview>
 
-### Button Group
+## Button Group
 
 You can group the button using `VBtnGroup` component. You can also wrap the grouped button inside toolbar using `VBtnToolbar` component.
 

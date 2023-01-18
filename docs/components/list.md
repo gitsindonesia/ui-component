@@ -4,7 +4,7 @@ The List component is a flexible way to display a list of items in your Vue appl
 
 ## Usage
 
-### Basic Usage
+## Basic Usage
 
 To use the `VList` component, just use the component in your template like so:
 
@@ -30,7 +30,7 @@ To use the `VList` component, just use the component in your template like so:
 The `VList` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
-### Hover Effect
+## Hover Effect
 
 The Hover variant of the List component allows you to add custom shapes to the list items. You can use the `hover` prop on a ListItem to apply the default hover style, or use the `hover-class` prop to specify a custom `hover` class.
 
@@ -55,7 +55,7 @@ The Hover variant of the List component allows you to add custom shapes to the l
 
 </LivePreview>
 
-### Shaped
+## Shaped
 
 The Shaped variant of the List component allows you to add custom shapes to the list items. You can use the `shaped` prop on a ListItem to apply the default `shaped` style, or use the `shaped-class` prop to specify a custom `shaped` class.
 
@@ -74,7 +74,7 @@ The Shaped variant of the List component allows you to add custom shapes to the 
 
 </LivePreview>
 
-### Rounded
+## Rounded
 
 The Rounded variant of the List component adds rounded corners to the list items. You can use the `rounded` prop on a `VListItem` to apply the rounded style.
 
@@ -90,7 +90,7 @@ The Rounded variant of the List component adds rounded corners to the list items
 
 </LivePreview>
 
-### Tile
+## Tile
 
 The Tile variant of the List component displays the list items as tiles. You can use the `tile` prop on a ListItem to apply the tile style.
 
@@ -106,7 +106,7 @@ The Tile variant of the List component displays the list items as tiles. You can
 
 </LivePreview>
 
-### Hide Prepend & Hide Append
+## Hide Prepend & Hide Append
 
 The List component allows you to hide the prepend and append elements of a `VListItem`. You can use the hide-prepend and hide-append props on a `VListItem` to hide these elements. Alternatively, you can pass the `hide-prepend` and `hide-append` props to the parent `VList` component and bind them to the child `VListItem` components via slot props.
 
@@ -128,7 +128,7 @@ The List component allows you to hide the prepend and append elements of a `VLis
 
 </LivePreview>
 
-### Hide Text
+## Hide Text
 
 The `VList` component allows you to hide the text of a `VListItem`. You can use the `hide-text` prop on a `VListItem` to hide the text. This can be useful for displaying icons only, for example.
 
@@ -160,7 +160,7 @@ const hideText = ref(true);
 
 </LivePreview>
 
-### Two Line
+## Two Line
 
 To display a list with two lines per list item, you can nest elements inside the `VListItem` component:
 
@@ -194,7 +194,7 @@ To display a list with two lines per list item, you can nest elements inside the
 
 </LivePreview>
 
-### Three Line
+## Three Line
 
 To display a list with three lines per list item, you can nest additional elements inside the `VListItem` component:
 
@@ -233,7 +233,7 @@ To display a list with three lines per list item, you can nest additional elemen
 
 </LivePreview>
 
-### Link
+## Link
 
 You can use the `to` prop on a `VListItem` to make it a router link, or the `href` prop to make it a regular link:
 
@@ -252,7 +252,7 @@ You can use the `to` prop on a `VListItem` to make it a router link, or the `hre
 
 </LivePreview>
 
-### Slots
+## Slots
 
 The `VListItem` component has `prepend` and `append` slots that allow you to insert custom content at the beginning and end of each list item:
 
@@ -277,7 +277,7 @@ The `VListItem` component has `prepend` and `append` slots that allow you to ins
 
 </LivePreview>
 
-### Icons
+## Icons
 
 You can use the `prepend-icon` and `append-icon` props to add icons to your list items. The value for these props should be the name of the icon in the [Icones](https://icones.js.org/) icon set.
 
@@ -304,7 +304,7 @@ You can use the `prepend-icon` and `append-icon` props to add icons to your list
 
 </LivePreview>
 
-### Header
+## Header
 
 You can use the `VListItemHeader` component to add header to the list.
 
@@ -331,7 +331,7 @@ You can use the `VListItemHeader` component to add header to the list.
 
 </LivePreview>
 
-### Collapse
+## Collapse
 
 You can use the `VListCollapse` component to add collapsible list.
 
@@ -379,7 +379,7 @@ You can use the `VListCollapse` component to add collapsible list.
 
 </LivePreview>
 
-### Image
+## Image
 
 You can place image to the list using `prepend` slot in the `VListItem` component.
 
@@ -442,7 +442,7 @@ const users = ref([
 
 </LivePreview>
 
-### Navigation Drawer VList
+## Navigation Drawer VList
 
 This example shows how to use `VList` inside `VNavDrawer` component to create sidebar navigation component.
 
@@ -562,7 +562,7 @@ const menus = ref([
 
 </LivePreview>
 
-### IOS Settings
+## IOS Settings
 
 This example shows how to create IOS Settings menu using `VList` component.
 
@@ -664,7 +664,7 @@ This example shows how to create IOS Settings menu using `VList` component.
 
 </LivePreview>
 
-### Dropdown
+## Dropdown
 
 This example shows how to use `VList` component in the dropdown component.
 
@@ -768,7 +768,7 @@ This example shows how to use `VList` component in the dropdown component.
 
 </LivePreview>
 
-### Event
+## Event
 
 This example demonstrates how to use events in the `VList` component. It shows examples of how to listen for clicks on the `prepend` and `append` icons, the prepend and append icon wrapper areas, and the append text. When one of these elements is clicked, a message is displayed using the `showMessage` function.
 
@@ -823,7 +823,7 @@ const showMessage = (message: string) => alert(`Clicked: ${message}`);
 
 ## Props
 
-### `VList`
+## `VList`
 
 | Property      | Type      | Description                                        |
 | ------------- | --------- | -------------------------------------------------- |
@@ -837,7 +837,7 @@ const showMessage = (message: string) => alert(`Clicked: ${message}`);
 | `dense`       | `boolean` | Whether to reduce the padding on the list item.    |
 | `small`       | `boolean` | Whether to apply small styling to the list item.   |
 
-### `VListItem`
+## `VListItem`
 
 | Name                                    | Type                      | Default               |
 | --------------------------------------- | ------------------------- | --------------------- |
@@ -865,11 +865,11 @@ const showMessage = (message: string) => alert(`Clicked: ${message}`);
 
 ## Events
 
-### `VList`
+## `VList`
 
 None.
 
-### `VListItem`
+## `VListItem`
 
 | Event                            | Description                                                               |
 | -------------------------------- | ------------------------------------------------------------------------- |

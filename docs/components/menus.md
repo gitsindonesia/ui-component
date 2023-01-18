@@ -4,7 +4,7 @@ The `VMenus` component is used for creating navigation menus that are triggered 
 
 ## Usage
 
-### Basic Usage
+## Basic Usage
 
 To use the `VMenus` component, you can pass in an array of items as a prop and include the component in your template. Each item should have a `text` and a `to` field, like this:
 
@@ -39,7 +39,7 @@ const items = [
 The `VMenus` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
-### Right-Aligned Menus
+## Right-Aligned Menus
 
 You can align the menu to the right by passing in the `right` prop:
 
@@ -70,7 +70,7 @@ const items = [
 
 </LivePreview>
 
-### Small Menus
+## Small Menus
 
 To create a smaller version of the menu, pass in the `small` prop:
 
@@ -101,7 +101,7 @@ const items = [
 
 </LivePreview>
 
-### Menus in the `VAppBar` Component
+## Menus in the `VAppBar` Component
 
 You can also use the `VMenus` component within the `VAppBar` component:
 
@@ -159,7 +159,7 @@ const items = [
 
 </LivePreview>
 
-### Slots
+## Slots
 
 In addition to the `items` prop, the `VMenus` component also has a slot called `items` that you can use to define your menu items. For example:
 

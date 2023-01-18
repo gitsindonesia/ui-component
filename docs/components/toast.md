@@ -4,7 +4,7 @@ The `VToast` component is a Vue component for displaying temporary, dismissible 
 
 ## Usage
 
-### Basic Usage
+## Basic Usage
 
 To use the `VToast` component, you will need to import `ref` from `vue` and create a reactive data property to control the `isOpen` state of the toast. You can then bind this property to the `v-model` directive of the `VToast` component.
 
@@ -29,7 +29,7 @@ const isOpen = ref(false);
 The `VToast` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
-### Icon
+## Icon
 
 You can display an icon in the `VToast` component by setting the `icon` prop to the desired icon name.
 
@@ -50,7 +50,7 @@ const isOpen = ref(false);
 
 </LivePreview>
 
-### Placement
+## Placement
 
 You can control the placement of the `VToast` component using the placement prop. The possible values are `top`, `bottom`, `left`, and `right`.
 
@@ -88,7 +88,7 @@ const changePlacement = (position: string) => {
 
 </LivePreview>
 
-### Colors
+## Colors
 
 You can set the color of the `VToast` component using the `color` prop. The possible values are the default theme colors, which are `primary`, `secondary`, `success`, `warning`, `error`, and `info`, as well as `white`.
 
@@ -132,7 +132,7 @@ const colors = [...defaultColors, 'white'];
 
 </LivePreview>
 
-### Slots
+## Slots
 
 You can use slots to customize the content of the `VToast` component. The `VToast` component has a `default` slot for the main content and an `action` slot for an optional action button. The `action` slot provides a `close` function that can be called to close the toast.
 
@@ -204,7 +204,7 @@ const actionHandler = () => {
 
 The `VToast` component emits the following event:
 
-### `update:modelValue`
+## `update:modelValue`
 
 This event is emitted when the `v-model` directive of the `VToast` component is updated. It is triggered whenever the `isOpen` state of the toast changes.
 
@@ -216,7 +216,7 @@ The payload of the event is an object with a single property:
 
 The `VToast` component has the following slots:
 
-### `default`
+## `default`
 
 The default slot is used to specify the main content of the toast. It can be used to display a message or any other content you want to show in the toast.
 
@@ -224,7 +224,7 @@ The default slot also receives a prop with a single function:
 
 - `close`: A function that can be called to close the toast.
 
-### `action`
+## `action`
 
 The action slot is used to specify an optional action button for the toast. It is useful when you want to provide a way for the user to interact with the toast, such as by confirming an action or dismissing the toast.
 

@@ -4,7 +4,7 @@ The `VBreadcrumbs` component is used to display a list of links that allow the u
 
 ## Usage
 
-### Basic Usage
+## Basic Usage
 
 To use `VBreadcrumbs`, you will need to import it and pass an array of `VBreadcrumbItem` objects as the items prop. Each `VBreadcrumbItem` should have a `title` and a `to` property, which will be used to display the breadcrumb and link it to a specific page.
 
@@ -42,7 +42,7 @@ const items = ref<VBreadcrumbItem[]>([
 The `VBreadcrumbs` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
-### Divider
+## Divider
 
 - **prop**: `divider`
 - **type**: `string`
@@ -80,7 +80,7 @@ const items = ref<VBreadcrumbItem[]>([
 
 </LivePreview>
 
-### Divider Slots
+## Divider Slots
 
 You can also use slots to customize the content of the divider element.
 
@@ -118,7 +118,7 @@ const items = ref<VBreadcrumbItem[]>([
 
 </LivePreview>
 
-### Default Slots
+## Default Slots
 
 You can use the default slots of `VBreadcrumbs` to define the breadcrumb items and dividers manually. This can be useful if you want to customize the appearance or behavior of each breadcrumb item.
 
@@ -158,7 +158,7 @@ None
 
 The `VBreadcrumbs` component has the following slots:
 
-### default
+## default
 
 The `default` slot is the default Vue slot. You can use this slot to define the breadcrumb items and dividers manually using `VBreadcrumbItem` and `VBreadcrumbDivider` components.
 
@@ -174,7 +174,7 @@ The `default` slot is the default Vue slot. You can use this slot to define the 
 </template>
 ```
 
-### divider
+## divider
 
 The `divider` slot allows you to customize the content of the divider element. This can be useful if you want to use a custom icon or element as the divider.
 

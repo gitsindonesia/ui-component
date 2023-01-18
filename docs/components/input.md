@@ -4,7 +4,7 @@ The `VInput` component is a form control for receiving user input. It can be use
 
 ## Usage
 
-### Basic Usage
+## Basic Usage
 
 To use the `VInput` component, simply add the component to your template:
 
@@ -23,7 +23,7 @@ To use the `VInput` component, simply add the component to your template:
 The `VInput` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
-### Placeholder
+## Placeholder
 
 You can also provide a placeholder attribute to display a hint to the user:
 
@@ -33,7 +33,7 @@ You can also provide a placeholder attribute to display a hint to the user:
 </template>
 ```
 
-### Colors
+## Colors
 
 You can customize the color of the `VInput` component using the `color` prop. The available color options are: `primary`, `secondary`, `info`, `warning`, `success`, `error`, and `dark`.
 
@@ -54,7 +54,7 @@ You can customize the color of the `VInput` component using the `color` prop. Th
 
 </LivePreview>
 
-### Readonly
+## Readonly
 
 To make the `VInput` component readonly, set the `readonly` prop to `true`.
 
@@ -68,7 +68,7 @@ To make the `VInput` component readonly, set the `readonly` prop to `true`.
 
 </LivePreview>
 
-### Disabled
+## Disabled
 
 To disable the `VInput` component, set the `disabled` prop to `true`.
 
@@ -82,7 +82,7 @@ To disable the `VInput` component, set the `disabled` prop to `true`.
 
 </LivePreview>
 
-### Shadow
+## Shadow
 
 To add a shadow to the `VInput` component, set the `shadow` prop to `true`.
 
@@ -96,7 +96,7 @@ To add a shadow to the `VInput` component, set the `shadow` prop to `true`.
 
 </LivePreview>
 
-### Text
+## Text
 
 To use the `VInput` component as a text input, set the `text` prop to `true` and provide a `model-value` and `label`.
 
@@ -110,7 +110,7 @@ To use the `VInput` component as a text input, set the `text` prop to `true` and
 
 </LivePreview>
 
-### Error
+## Error
 
 To display an error message with the `VInput` component, set the `error` prop to `true`.
 
@@ -124,7 +124,7 @@ To display an error message with the `VInput` component, set the `error` prop to
 
 </LivePreview>
 
-### Icons
+## Icons
 
 You can add icons to the `VInput` component using the `prepend-icon` and `append-icon` props.
 
@@ -190,7 +190,7 @@ const showAlert = (message: string) => alert(message);
 
 </LivePreview>
 
-### Slots
+## Slots
 
 You can use slots to insert custom content into the input field, such as icons, text, or buttons.
 
@@ -302,7 +302,7 @@ You can use slots to insert custom content into the input field, such as icons, 
 
 </LivePreview>
 
-### Validation
+## Validation
 
 To use the `VInput` component with a form validation library, you can use the `name` prop to bind the component to a form control. For example, with `VeeValidate`, you can use the `useForm` hook to create a form with validation schema:
 
@@ -351,7 +351,7 @@ const onSubmit = handleSubmit((values) => {
 
 </LivePreview>
 
-### Validation Mode
+## Validation Mode
 
 There are 2 modes. The first is `eager` mode, and the second is `aggressive` mode. The `eager` mode validates input when the blur event occurs. Meanwhile, `aggressive` mode validates the input every time the input itself changes. This can be useful when you are validating for example the minimum or maximum limits of an input.
 
@@ -413,7 +413,7 @@ const onSubmit = handleSubmit((values) => {
 
 </LivePreview>
 
-### Field Array
+## Field Array
 
 Here is example of using `VInput` as field array with `vee-validate`.
 
@@ -463,7 +463,7 @@ const onSubmit = handleSubmit((values) => {
 
 </LivePreview>
 
-### Field Array of Objects
+## Field Array of Objects
 
 Here is example of using `VInput` as field array of object with `vee-validate`.
 
@@ -523,7 +523,7 @@ const onSubmit = handleSubmit((values) => {
 
 </LivePreview>
 
-### Field Array Nested
+## Field Array Nested
 
 Here is example of using `VInput` as nested field array with `vee-validate`.
 
