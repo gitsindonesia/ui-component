@@ -94,6 +94,8 @@ To add a shadow to the `VInput` component, set the `shadow` prop to `true`.
 </template>
 ```
 
+</LivePreview>
+
 ## Rounded
 
 To add a shadow to the `VInput` component, set the `rounded` prop to `true`.
