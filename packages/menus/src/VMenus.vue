@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import {Menu, Dropdown, options} from 'floating-vue';
+import {Menu, Dropdown} from 'floating-vue';
 import {computed} from 'vue';
 import Icon from '@gits-id/icon';
 import VMenusItem from './VMenusItem.vue';
+import FloatingVue from 'floating-vue';
 
 export type VMenuItem = InstanceType<typeof VMenusItem>['$props'];
 export type Placement = InstanceType<typeof Menu>['$props']['placement'];
@@ -46,14 +47,10 @@ const props = withDefaults(defineProps<Props>(), {
   iconSize: 'sm',
 });
 
-Object.assign(options, {
-  themes: {
-    menus: {
-      $extend: 'dropdown',
-      $resetCss: false,
-    },
-  },
-});
+FloatingVue.options.themes.menus = {
+  $extend: 'dropdown',
+  $resetCss: false,
+};
 
 const menuPlacement = computed(() => {
   return props.right ? 'bottom-end' : props.placement;
