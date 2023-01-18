@@ -13,6 +13,7 @@ const props = withDefaults(
     iconClass?: string;
     newTab?: boolean;
     divider?: boolean;
+    nuxt?: boolean;
   }>(),
   {
     iconClass: '',
@@ -21,6 +22,8 @@ const props = withDefaults(
 );
 
 const computedComponent = computed(() => {
+  if (props.nuxt) return resolveComponent('NuxtLink');
+
   if (props.href) return 'a';
 
   return props.to ? resolveComponent('RouterLink') : 'button';
