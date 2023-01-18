@@ -1,8 +1,8 @@
 name: Deploy Starter Vue
 on:
-  pull_request:
-    branches:
-      - main
+  # pull_request:
+  #   branches:
+  #     - main
   push:
     branches:
       - main
