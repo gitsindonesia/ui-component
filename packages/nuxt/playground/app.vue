@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import {defaultColors} from '@gits-id/theme/defaultTheme';
 
+useHead({
+  title: 'GITS UI Playground',
+});
+
 const items = Array.from({length: 50}, (_, index) => ({
   text: `Item ${index}`,
   value: index,
@@ -13,6 +17,8 @@ const toggleDarkMode = () => {
 
 const darkMode = ref(false);
 const isOpen = ref(false);
+
+const buttonVariants = ['default', 'outlined', 'text', 'disabled', 'loading'];
 </script>
 
 <template>
@@ -63,12 +69,13 @@ const isOpen = ref(false);
 
     <hr class="dark:border-neutral-700" />
     <h3 class="text-xl font-semibold">Button</h3>
-    <div class="space-x-2">
+    <div class="space-x-2" v-for="variant in buttonVariants" :key="variant">
       <v-btn
         v-for="color in defaultColors"
         :color="color"
         :key="color"
         v-tooltip="'Click Me'"
+        v-bind:[variant]="true"
       >
         {{ color }}
       </v-btn>
@@ -108,15 +115,61 @@ const isOpen = ref(false);
             {text: 'Option 3', value: '3'},
           ]"
         />
-        <v-btn color="primary" v-tooltip="'Submit'">Submit</v-btn>
-        <v-btn type="reset">Cancel</v-btn>
+        <VAutocomplete :items="items" label="Autocomplete" />
+        <VSelect :items="items" label="Select" />
+        <VMultiSelect :items="items" label="Multi Select" />
+        <VBtnToolbar>
+          <v-btn color="primary" v-tooltip="'Submit'">Submit</v-btn>
+          <v-btn type="reset">Cancel</v-btn>
+        </VBtnToolbar>
       </form>
     </div>
 
     <hr class="dark:border-neutral-700" />
-    <h3 class="text-xl font-semibold">Autocomplete</h3>
+    <h3 class="text-xl font-semibold">Forms Disabled</h3>
     <div>
-      <VAutocomplete :items="items" />
+      <form class="space-y-3">
+        <v-input disabled placeholder="Placeholder" label="Name" />
+        <v-input disabled placeholder="Placeholder" label="Email" />
+        <v-input disabled placeholder="Placeholder" label="Password" />
+        <v-input disabled placeholder="Placeholder" label="Confirm Password" />
+        <v-input disabled placeholder="Placeholder" label="Phone" />
+        <v-textarea disabled placeholder="Placeholder" label="Address" />
+        <v-checkbox
+          disabled
+          placeholder="Placeholder"
+          label="I agree to the terms and conditions"
+        />
+        <v-form-select
+          disabled
+          placeholder="Placeholder"
+          label="Choose"
+          :items="[
+            {text: 'Option 1', value: '1'},
+            {text: 'Option 2', value: '2'},
+            {text: 'Option 3', value: '3'},
+          ]"
+        />
+        <v-radio disabled label="Option 1" value="1" />
+        <v-radio disabled label="Option 2" value="2" />
+        <v-radio-group
+          disabled
+          placeholder="Placeholder"
+          label="Choose"
+          :items="[
+            {text: 'Option 1', value: '1'},
+            {text: 'Option 2', value: '2'},
+            {text: 'Option 3', value: '3'},
+          ]"
+        />
+        <VAutocomplete :items="items" disabled label="Autocomplete" />
+        <VSelect :items="items" disabled label="Select" />
+        <VMultiSelect :items="items" disabled label="Multi Select" />
+        <VBtnToolbar>
+          <v-btn color="primary" v-tooltip="'Submit'">Submit</v-btn>
+          <v-btn type="reset">Cancel</v-btn>
+        </VBtnToolbar>
+      </form>
     </div>
 
     <hr class="dark:border-neutral-700" />
@@ -142,18 +195,6 @@ const isOpen = ref(false);
     </div>
 
     <hr class="dark:border-neutral-700" />
-    <h3 class="text-xl font-semibold">Select</h3>
-    <div>
-      <!-- <VSelect :items="items" /> -->
-    </div>
-
-    <hr class="dark:border-neutral-700" />
-    <h3 class="text-xl font-semibold">Multi Select</h3>
-    <div>
-      <VMultiSelect :items="items" />
-    </div>
-
-    <hr class="dark:border-neutral-700" />
     <h3 class="text-xl font-semibold">Card</h3>
     <div>
       <VCard>
@@ -173,7 +214,7 @@ const isOpen = ref(false);
     <hr class="dark:border-neutral-700" />
     <h3 class="text-xl font-semibold">Menus</h3>
     <div>
-      <VMenus :items="items.slice(1, 6)" label="Menus" placement="top-start" />
+      <VMenus :items="items.slice(1, 6)" label="Menus" />
     </div>
 
     <hr class="dark:border-neutral-700" />

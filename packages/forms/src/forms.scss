@@ -25,11 +25,26 @@
   --v-input-icon-width: theme('width.5');
   --v-input-icon-height: theme('height.5');
   --v-input-icon-color: theme('colors.gray.500');
+
+  // disabled
+  --v-input-disabled-bg-color: theme('colors.gray.100');
+  --v-input-disabled-color: theme('colors.gray.400');
+  --v-input-disabled-border-color: theme('colors.gray.200');
+  --v-input-disabled-placeholder-color: theme('colors.gray.400');
+  --v-input-disabled-icon-color: theme('colors.gray.400');
 }
 
 .v-input {
   &--rounded {
     --v-input-border-radius: theme('borderRadius.full');
+  }
+
+  &--disabled {
+    --v-input-bg-color: var(--v-input-disabled-bg-color);
+    --v-input-color: var(--v-input-disabled-color);
+    --v-input-border-color: var(--v-input-disabled-border-color);
+    --v-input-placeholder-color: var(--v-input-disabled-placeholder-color);
+    --v-input-icon-color: var(--v-input-disabled-icon-color);
   }
 }
 
@@ -52,6 +67,7 @@
   border: 1px solid var(--v-input-border-color);
   border-radius: var(--v-input-border-radius);
   background-color: var(--v-input-bg-color);
+  color: var(--v-input-color);
 
   @apply relative flex items-center transition duration-300;
 }
@@ -85,8 +101,8 @@
   flex: 1;
   border-radius: var(--v-input-border-radius);
   font-size: var(--v-input-font-size);
-  background-color: transparent;
   color: var(--v-input-color);
+  background-color: transparent;
 
   @apply focus:ring-0 border-none focus:border-none focus:outline-none;
 
@@ -142,12 +158,16 @@
 }
 
 /* disabled */
-.v-input.v-input--disabled.v-input--textarea .v-input-control,
-.v-input.v-input--disabled.v-input--select .v-input-control,
-.v-input.v-input--disabled .v-input-wrapper {
-  @apply border-gray-200 bg-gray-100;
-}
-.v-input.v-input--disabled .v-input-control {
+// .v-input--disabled.v-input--textarea .v-input-control,
+// .v-input--disabled.v-input--select .v-input-control,
+// .v-input--disabled .v-input-wrapper {
+//   --v-input-color: var(--v-input-disabled-color);
+//   --v-input-bg-color: var(--v-input-disabled-bg-color);
+//   --v-input-border-color: var(--v-input-disabled-border-color);
+//   --v-input-icon-color: var(--v-input-disabled-icon-color);
+//   --v-input-placeholder-color: var(--v-input-disabled-placeholder-color);
+// }
+.v-input--disabled .v-input-control {
   @apply cursor-not-allowed;
 }
 /* shadow */

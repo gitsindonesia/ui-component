@@ -46,6 +46,9 @@
 
   // error
   --v-autocomplete-error-color: theme('colors.error.500');
+
+  // disabled
+  --v-autocomplete-input-disabled-color: var(--v-input-disabled-bg-color)
 }
 
 .autocomplete {
@@ -95,6 +98,11 @@
 
     &--selected {
       --v-autocomplete-input-color: var(--v-autocomplete-input-selected-color);
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      --v-autocomplete-input-color: var(--v-autocomplete-input-disabled-color);
     }
 
     @apply w-full

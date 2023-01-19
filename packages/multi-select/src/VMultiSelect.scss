@@ -119,6 +119,10 @@
     min-width: 0;
     max-width: 100%;
 
+    &:disabled {
+      cursor: not-allowed;
+    }
+
     @apply border-none bg-transparent
       p-1
       focus:outline-none
