@@ -22,7 +22,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@gits-id/ui-nuxt": "^0.15.0"
+    "@gits-id/ui-nuxt": "^0.15.1"
   },
   "devDependencies": {
     "nuxt": "3.0.0",
