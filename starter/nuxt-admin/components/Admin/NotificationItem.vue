@@ -14,7 +14,10 @@ defineProps<{
       <h3 class="font-medium">
         {{ notif.title }}
       </h3>
-      <p class="text-gray-600 text-sm truncate" :title="notif.message">
+      <p
+        class="text-gray-600 dark:text-neutral-400 text-sm truncate"
+        :title="notif.message"
+      >
         {{ notif.message }}
       </p>
     </div>

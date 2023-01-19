@@ -16,5 +16,9 @@ export default defineNuxtConfig({
   typescript: {
     shim: false,
   },
-  gitsUi: {},
+  // https://gitsindonesia.github.io/ui-component/guide/nuxt.html#options
+  gitsUi: {
+    // enable dark mode
+    darkMode: true,
+  },
 });

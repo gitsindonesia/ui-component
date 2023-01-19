@@ -14,13 +14,7 @@
 </template>
 
 <style>
-:root {
-  --v-app-bg-color: theme('colors.gray.100');
-  --v-app-color: theme('colors.gray.800');
-}
-
 body {
-  background-color: var(--v-app-bg-color);
-  color: var(--v-app-color);
+  @apply bg-gray-100 dark:bg-neutral-900 text-gray-800 dark:text-neutral-200;
 }
 </style>

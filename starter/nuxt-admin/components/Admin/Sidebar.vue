@@ -20,8 +20,9 @@ watchEffect(() => {
     :overlay="isMobile"
     :close-on-overlay-click="isMobile"
     :class="{'z-20': isMobile}"
+    class="!h-[calc(100vh-54px)]"
   >
-    <VList hover>
+    <VList hover class="flex-1">
       <template v-for="menu in appConfig.menus" :key="menu.text">
         <VListItemHeader v-if="menu.header">{{ menu.header }}</VListItemHeader>
         <VListItem v-else :to="menu.to" :prepend-icon="menu.icon">
@@ -29,5 +30,8 @@ watchEffect(() => {
         </VListItem>
       </template>
     </VList>
+    <div v-if="appConfig.darkMode" class="px-4 py-2">
+      <DarkModeSwitcher />
+    </div>
   </VNavDrawer>
 </template>

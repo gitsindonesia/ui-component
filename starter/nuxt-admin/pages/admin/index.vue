@@ -48,6 +48,6 @@ definePageMeta({
 
 <style scoped>
 .code {
-  @apply px-2 py-1 bg-gray-100 rounded text-sm;
+  @apply px-2 py-1 bg-gray-100 dark:bg-neutral-700 dark:text-neutral-200 rounded text-sm;
 }
 </style>

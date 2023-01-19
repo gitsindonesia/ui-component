@@ -44,4 +44,6 @@ export default defineAppConfig({
       },
     ],
   },
+  // enable dark mode
+  darkMode: true,
 });
