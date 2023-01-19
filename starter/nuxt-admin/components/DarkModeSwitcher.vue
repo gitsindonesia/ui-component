@@ -4,13 +4,18 @@ const isDarkMode = ref(false);
 watch(isDarkMode, () => {
   document.documentElement.classList.toggle('dark', isDarkMode.value);
 });
+
+const colorModeIcon = computed(() => {
+  return isDarkMode.value ? 'ri:moon-line' : 'ri:sun-line';
+});
 </script>
 
 <template>
-  <VSwitch
-    v-model="isDarkMode"
-    label="Dark Mode"
-    label-class="text-gray-600 dark:!text-neutral-200"
-    switch-group-class="!w-full justify-between items-center"
+  <VBtn
+    aria-label="Color Mode"
+    fab
+    text
+    :prefix-icon="colorModeIcon"
+    @click="isDarkMode = !isDarkMode"
   />
 </template>

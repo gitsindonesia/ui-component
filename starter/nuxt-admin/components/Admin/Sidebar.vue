@@ -30,8 +30,5 @@ watchEffect(() => {
         </VListItem>
       </template>
     </VList>
-    <div v-if="appConfig.darkMode" class="px-4 py-2">
-      <DarkModeSwitcher />
-    </div>
   </VNavDrawer>
 </template>
