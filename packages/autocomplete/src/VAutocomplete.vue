@@ -34,6 +34,7 @@ export type Props = {
   errorClass?: string;
   wrapperClass?: string;
   validationMode?: ValidationMode
+  disabled?: boolean
 };
 
 const props = withDefaults(defineProps<Props>(), {
@@ -94,6 +95,7 @@ const clear = () => {
       {
         'autocomplete--error': !!errorMessage,
         'autocomplete--selected': !!uncontrolledValue,
+        'autocomplete--disabled': disabled,
       },
     ]"
     as="div"
@@ -115,6 +117,7 @@ const clear = () => {
           }"
           :display-value="(item: any) => item?.[displayText] || ''"
           :placeholder="placeholder"
+          :disabled="disabled"
           @change="query = $event.target.value"
         />
         <div class="autocomplete-clearable">
@@ -123,6 +126,7 @@ const clear = () => {
             type="button"
             aria-label="Clear"
             class="autocomplete-clearable-button"
+            :disabled="disabled"
             @click="clear"
           >
             <Icon
@@ -131,7 +135,7 @@ const clear = () => {
               aria-hidden="true"
             />
           </button>
-          <ComboboxButton>
+          <ComboboxButton :disabled="disabled">
             <Icon
               name="ri:arrow-down-s-line"
               class="autocomplete-icon"

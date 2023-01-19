@@ -54,6 +54,10 @@
     font-size: var(--v-select-font-size);
     font-weight: var(--v-select-font-weight);
 
+    &:disabled {
+      cursor: not-allowed;
+    }
+
     @apply relative
       w-full
       text-left

@@ -44,6 +44,16 @@ Clearable.args = {
   clearable: true,
 };
 
+export const Disabled = Template.bind({});
+Disabled.args = {
+  disabled: true,
+};
+
+export const Readonly = Template.bind({});
+Readonly.args = {
+  readonly: true,
+};
+
 export const Validation: Story = (args) => ({
   components: {VBtn, VAutocomplete},
   setup() {
