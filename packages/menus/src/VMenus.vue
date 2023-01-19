@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import {Menu, Dropdown} from 'floating-vue';
 import {computed} from 'vue';
 import Icon from '@gits-id/icon';
 import VMenusItem from './VMenusItem.vue';
-import FloatingVue from 'floating-vue';
+import FloatingVue, {Menu, Dropdown} from 'floating-vue';
 
 export type VMenuItem = InstanceType<typeof VMenusItem>['$props'];
 export type Placement = InstanceType<typeof Menu>['$props']['placement'];
