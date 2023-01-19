@@ -17,6 +17,8 @@ const toggleDarkMode = () => {
 
 const darkMode = ref(false);
 const isOpen = ref(false);
+
+const buttonVariants = ['default', 'outlined', 'text', 'disabled', 'loading'];
 </script>
 
 <template>
@@ -67,12 +69,13 @@ const isOpen = ref(false);
 
     <hr class="dark:border-neutral-700" />
     <h3 class="text-xl font-semibold">Button</h3>
-    <div class="space-x-2">
+    <div class="space-x-2" v-for="variant in buttonVariants" :key="variant">
       <v-btn
         v-for="color in defaultColors"
         :color="color"
         :key="color"
         v-tooltip="'Click Me'"
+        v-bind:[variant]="true"
       >
         {{ color }}
       </v-btn>

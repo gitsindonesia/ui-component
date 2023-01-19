@@ -15,12 +15,12 @@ $colors: primary, secondary, success, error, warning, info;
 
 @mixin outlinedVariant($color) {
   &.btn--outlined.btn-#{$color}:not(:disabled) {
-    --btn-bg-color: theme('colors.white');
+    --btn-bg-color: transparent;
     --btn-text-color: theme('colors.#{$color}.500');
     --btn-border-color: theme('colors.#{$color}.500');
     &:hover:not(:disabled) {
-      --btn-bg-color: theme('colors.#{$color}.700');
-      --btn-border-color: theme('colors.#{$color}.700');
+      --btn-bg-color: theme('colors.#{$color}.500');
+      --btn-border-color: theme('colors.#{$color}.500');
       --btn-text-color: theme('colors.white');
     }
   }
@@ -39,11 +39,13 @@ $colors: primary, secondary, success, error, warning, info;
 }
 
 @mixin disabledVariant {
-  &:disabled:not(.btn--outlined) {
+  &:disabled {
     cursor: not-allowed;
-    --btn-bg-color: theme('colors.gray.200');
-    --btn-text-color: theme('colors.gray.500');
-    --btn-border-color: theme('colors.gray.200');
+    &:not(.btn--outlined) {
+      --btn-bg-color: theme('colors.gray.200');
+      --btn-text-color: theme('colors.gray.500');
+      --btn-border-color: theme('colors.gray.200');
+    }
   }
 }
 
@@ -119,9 +121,7 @@ $colors: primary, secondary, success, error, warning, info;
   }
 
   // disabled
-  &:disabled {
-    @include disabledVariant();
-  }
+  @include disabledVariant();
 
   // colors
   &-default:not(&--outlined):not(&--text):not(:disabled) {
