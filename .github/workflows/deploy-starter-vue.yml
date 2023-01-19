@@ -23,4 +23,4 @@ jobs:
           vercel-args: --prod # Optional
           vercel-org-id: ${{ secrets.STARTER_VUE_ORG_ID }} # Required
           vercel-project-id: ${{ secrets.STARTER_VUE_PROJECT_ID }} # Required
-          working-directory: ./starter/nuxt-minimal
+          working-directory: ./starter/vue
