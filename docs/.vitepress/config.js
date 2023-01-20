@@ -9,6 +9,7 @@ export default defineConfig({
     logo: 'https://gits.id/wp-content/uploads/2022/06/Logo-Main-1.png',
     nav: [
       {text: 'Guide', link: '/guide/getting-started'},
+      {text: 'Blocks', link: '/blocks/'},
       {text: 'Storybook', link: 'https://gits-ui.web.app'},
       // {
       //   text: 'Ecosystem',
@@ -19,190 +20,224 @@ export default defineConfig({
       //   ]
       // }
     ],
-    sidebar: [
-      {
-        text: 'Guide',
-        collapsible: true,
-        items: [
-          {text: 'Introduction', link: '/guide/introduction'},
-          {text: 'Getting Started', link: '/guide/getting-started'},
-          {text: 'Installation', link: '/guide/installation'},
-          {text: 'Usage with Vue', link: '/guide/vue'},
-          {text: 'Usage with Nuxt', link: '/guide/nuxt'},
-          {text: 'Customization', link: '/guide/customization'},
-          {text: 'Default Theme', link: '/guide/theme'},
-          {text: 'Dark Mode', link: '/guide/dark-mode'},
-          {text: 'Starter', link: '/guide/starter'},
-          {text: 'Migration', link: '/guide/migration'},
-          {text: 'Changelog', link: '/guide/changelog'},
-          {text: 'Roadmap', link: '/roadmap'},
-        ],
-      },
-      {
-        text: 'Tools',
-        collapsible: true,
-        items: [{text: 'create-gits-app', link: '/tools/create-gits-app'}],
-      },
-      {
-        text: 'Components',
-        collapsible: true,
-        items: [
-          {text: 'Alert', link: '/components/alert'},
-          {text: 'AppBar', link: '/components/app-bar'},
-          {text: 'Autocomplete', link: '/components/autocomplete'},
-          {text: 'Avatar', link: '/components/avatar'},
-          {text: 'Badge', link: '/components/badge'},
-          {text: 'Breadcrumbs', link: '/components/breadcrumbs'},
-          {text: 'Card', link: '/components/card'},
-          {text: 'Collapsible', link: '/components/collapsible'},
-          {text: 'DataTable', link: '/components/data-table'},
-          {
-            text: 'DataTablePagination',
-            link: '/components/data-table-pagination',
-          },
-          {
-            text: 'Dropdown',
-            link: '/components/dropdown',
-          },
-          {
-            text: 'Icon',
-            link: '/components/icon',
-          },
-          {
-            text: 'List',
-            link: '/components/list',
-          },
-          {
-            text: 'Logo',
-            link: '/components/logo',
-          },
-          {
-            text: 'Menu',
-            link: '/components/menu',
-          },
-          {
-            text: 'Menus',
-            link: '/components/menus',
-          },
-          {
-            text: 'Modal',
-            link: '/components/modal',
-          },
-          {
-            text: 'Navigation Drawer',
-            link: '/components/navigation-drawer',
-          },
-          {
-            text: 'Pagination',
-            link: '/components/pagination',
-          },
-          {
-            text: 'Progress Bar',
-            link: '/components/progress-bar',
-          },
-          {
-            text: 'Select',
-            link: '/components/select',
-          },
-          {
-            text: 'Shimmer',
-            link: '/components/shimmer',
-          },
-          {
-            text: 'Spinner',
-            link: '/components/spinner',
-          },
-          {
-            text: 'Stepper',
-            link: '/components/stepper',
-          },
-          {
-            text: 'Switch',
-            link: '/components/switch',
-          },
-          {
-            text: 'Tabs',
-            link: '/components/tabs',
-          },
-          {
-            text: 'Toast',
-            link: '/components/toast',
-          },
-          {
-            text: 'Tooltip',
-            link: '/components/tooltip',
-          },
-        ],
-      },
-      {
-        text: 'Forms',
-        collapsible: true,
-        items: [
-          {
-            text: 'Button',
-            link: '/components/button',
-          },
-          {
-            text: 'Checkbox',
-            link: '/components/checkbox',
-          },
-          {
-            text: 'Editor',
-            link: '/components/editor',
-          },
-          {
-            text: 'FileInput',
-            link: '/components/file-input',
-          },
-          {
-            text: 'FormSelect',
-            link: '/components/form-select',
-          },
-          {
-            text: 'Input',
-            link: '/components/input',
-          },
-          {
-            text: 'Input Range',
-            link: '/components/input-range',
-          },
-          {
-            text: 'Multi Select',
-            link: '/components/multi-select',
-          },
-          {
-            text: 'QuillEditor',
-            link: '/components/quill-editor',
-          },
-          {
-            text: 'Radio',
-            link: '/components/radio',
-          },
-          {
-            text: 'RadioGroup',
-            link: '/components/radio-group',
-          },
-          {
-            text: 'TextArea',
-            link: '/components/textarea',
-          },
-        ],
-      },
-      {
-        text: 'Deprecated',
-        collapsible: true,
-        items: [
-          {
-            text: 'Navbar',
-            link: '/components/navbar',
-          },
-          {
-            text: 'Nav Drawer',
-            link: '/components/nav-drawer',
-          },
-        ],
-      },
-    ],
+    sidebar: {
+      '/blocks': [
+        {
+          text: 'Application UI',
+          collapsible: true,
+          items: [
+            {
+              text: 'Application Shells',
+              link: '/blocks/application-ui/application-ui',
+              items: [
+                {
+                  text: 'Sidebar Layouts',
+                  link: '/blocks/application-ui/application-shells/sidebar-layouts',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          text: 'Marketing',
+          collapsible: true,
+          items: [
+            // {text: 'Introduction', link: '/blocks/marketing'},
+          ],
+        },
+        {
+          text: 'Ecommerce',
+          collapsible: true,
+          items: [
+            // {text: 'Introduction', link: '/blocks/ecommerce'},
+          ],
+        },
+      ],
+      '/': [
+        {
+          text: 'Guide',
+          collapsible: true,
+          items: [
+            {text: 'Introduction', link: '/guide/introduction'},
+            {text: 'Getting Started', link: '/guide/getting-started'},
+            {text: 'Installation', link: '/guide/installation'},
+            {text: 'Usage with Vue', link: '/guide/vue'},
+            {text: 'Usage with Nuxt', link: '/guide/nuxt'},
+            {text: 'Customization', link: '/guide/customization'},
+            {text: 'Default Theme', link: '/guide/theme'},
+            {text: 'Dark Mode', link: '/guide/dark-mode'},
+            {text: 'Starter', link: '/guide/starter'},
+            {text: 'Migration', link: '/guide/migration'},
+            {text: 'Changelog', link: '/guide/changelog'},
+            {text: 'Roadmap', link: '/roadmap'},
+          ],
+        },
+        {
+          text: 'Tools',
+          collapsible: true,
+          items: [{text: 'create-gits-app', link: '/tools/create-gits-app'}],
+        },
+        {
+          text: 'Components',
+          collapsible: true,
+          items: [
+            {text: 'Alert', link: '/components/alert'},
+            {text: 'AppBar', link: '/components/app-bar'},
+            {text: 'Autocomplete', link: '/components/autocomplete'},
+            {text: 'Avatar', link: '/components/avatar'},
+            {text: 'Badge', link: '/components/badge'},
+            {text: 'Breadcrumbs', link: '/components/breadcrumbs'},
+            {text: 'Card', link: '/components/card'},
+            {text: 'Collapsible', link: '/components/collapsible'},
+            {text: 'DataTable', link: '/components/data-table'},
+            {
+              text: 'DataTablePagination',
+              link: '/components/data-table-pagination',
+            },
+            {
+              text: 'Dropdown',
+              link: '/components/dropdown',
+            },
+            {
+              text: 'Icon',
+              link: '/components/icon',
+            },
+            {
+              text: 'List',
+              link: '/components/list',
+            },
+            {
+              text: 'Logo',
+              link: '/components/logo',
+            },
+            {
+              text: 'Menu',
+              link: '/components/menu',
+            },
+            {
+              text: 'Menus',
+              link: '/components/menus',
+            },
+            {
+              text: 'Modal',
+              link: '/components/modal',
+            },
+            {
+              text: 'Navigation Drawer',
+              link: '/components/navigation-drawer',
+            },
+            {
+              text: 'Pagination',
+              link: '/components/pagination',
+            },
+            {
+              text: 'Progress Bar',
+              link: '/components/progress-bar',
+            },
+            {
+              text: 'Select',
+              link: '/components/select',
+            },
+            {
+              text: 'Shimmer',
+              link: '/components/shimmer',
+            },
+            {
+              text: 'Spinner',
+              link: '/components/spinner',
+            },
+            {
+              text: 'Stepper',
+              link: '/components/stepper',
+            },
+            {
+              text: 'Switch',
+              link: '/components/switch',
+            },
+            {
+              text: 'Tabs',
+              link: '/components/tabs',
+            },
+            {
+              text: 'Toast',
+              link: '/components/toast',
+            },
+            {
+              text: 'Tooltip',
+              link: '/components/tooltip',
+            },
+          ],
+        },
+        {
+          text: 'Forms',
+          collapsible: true,
+          items: [
+            {
+              text: 'Button',
+              link: '/components/button',
+            },
+            {
+              text: 'Checkbox',
+              link: '/components/checkbox',
+            },
+            {
+              text: 'Editor',
+              link: '/components/editor',
+            },
+            {
+              text: 'FileInput',
+              link: '/components/file-input',
+            },
+            {
+              text: 'FormSelect',
+              link: '/components/form-select',
+            },
+            {
+              text: 'Input',
+              link: '/components/input',
+            },
+            {
+              text: 'Input Range',
+              link: '/components/input-range',
+            },
+            {
+              text: 'Multi Select',
+              link: '/components/multi-select',
+            },
+            {
+              text: 'QuillEditor',
+              link: '/components/quill-editor',
+            },
+            {
+              text: 'Radio',
+              link: '/components/radio',
+            },
+            {
+              text: 'RadioGroup',
+              link: '/components/radio-group',
+            },
+            {
+              text: 'TextArea',
+              link: '/components/textarea',
+            },
+          ],
+        },
+        {
+          text: 'Deprecated',
+          collapsible: true,
+          items: [
+            {
+              text: 'Navbar',
+              link: '/components/navbar',
+            },
+            {
+              text: 'Nav Drawer',
+              link: '/components/nav-drawer',
+            },
+          ],
+        },
+      ],
+    },
     socialLinks: [
       {icon: 'github', link: 'https://github.com/gitsindonesia/ui-component'},
     ],
