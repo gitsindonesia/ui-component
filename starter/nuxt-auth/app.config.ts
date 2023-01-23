@@ -3,9 +3,6 @@ import {string, boolean, ref} from 'yup';
 export default defineAppConfig({
   auth: {
     redirect: {
-      login: '/login',
-      logout: '/',
-      callback: '/login',
       home: '/',
     },
     head: {
