@@ -6,5 +6,13 @@ export default defineAppConfig({
       callback: '/login',
       home: '/',
     },
+    head: {
+      login: {
+        title: 'Login',
+      },
+      protected: {
+        title: 'Protected',
+      },
+    },
   },
 });

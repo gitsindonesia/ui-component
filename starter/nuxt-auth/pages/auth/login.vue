@@ -7,6 +7,8 @@ const router = useRouter();
 const route = useRoute();
 const {signIn, status} = useSession();
 
+useHead(appConfig.auth.head.login);
+
 const error = ref();
 
 const {handleSubmit} = useForm({
