@@ -45,38 +45,48 @@ const onSubmit = handleSubmit(async (values) => {
     <form class="md:w-[400px]" @submit="onSubmit">
       <VLogo img-class="mb-6" />
       <div class="space-y-2 mb-4">
-        <h1 class="text-2xl font-semibold text-gray-900">Masuk</h1>
+        <h1 class="text-2xl font-semibold text-gray-900">
+          {{ appConfig.auth.login.title }}
+        </h1>
         <p class="text-sm text-gray-700">
-          Silahkan login untuk mengakses semua fitur!
+          {{ appConfig.auth.login.description }}
         </p>
       </div>
       <VAlert v-if="error" color="error" class="mb-4"> {{ error }} </VAlert>
       <VInput
         wrapper-class="mb-4"
-        label="Username"
-        placeholder="Username"
         name="username"
+        v-bind="appConfig.auth.login.usernameProps"
       />
       <VInput
         wrapper-class="mb-4"
-        label="Password"
-        placeholder="Password"
         name="password"
         type="password"
+        v-bind="appConfig.auth.login.passwordProps"
       />
       <div class="mb-4 flex gap-4 justify-between">
-        <VCheckbox label="Ingat saya" name="remember" />
+        <VCheckbox
+          v-if="appConfig.auth.login.rememberMe.enable"
+          :label="appConfig.auth.login.rememberMe.label"
+          name="rememberMe"
+        />
         <VBtn to="/auth/forgot-password" color="primary" text flush>
-          Forgot Password?
+          {{ appConfig.auth.login.forgotPasswordLinkText }}
         </VBtn>
       </div>
-      <VBtn :loading="status === 'loading'" type="submit" color="primary" block>
-        Login
+      <VBtn
+        :loading="status === 'loading'"
+        type="submit"
+        v-bind="appConfig.auth.login.buttonProps"
+      >
+        {{ appConfig.auth.login.buttonText }}
       </VBtn>
 
       <p class="text-sm text-gray-700 text-center mt-5">
-        Don't have an account yet?
-        <VBtn to="/auth/register" color="primary" text flush> Register </VBtn>
+        {{ appConfig.auth.login.registerText }}
+        <VBtn to="/auth/register" color="primary" text flush>
+          {{ appConfig.auth.login.registerLinkText }}
+        </VBtn>
       </p>
     </form>
   </div>

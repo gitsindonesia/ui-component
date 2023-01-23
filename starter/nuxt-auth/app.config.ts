@@ -17,6 +17,30 @@ export default defineAppConfig({
         title: 'Forgot Password',
       },
     },
+    login: {
+      title: 'Login',
+      description: 'Enter your username and password to login.',
+      usernameProps: {
+        label: 'Username',
+        placeholder: 'Username',
+      },
+      passwordProps: {
+        label: 'Password',
+        placeholder: 'Password',
+      },
+      rememberMe: {
+        enable: true,
+        label: 'Remember Me',
+      },
+      buttonText: 'Login',
+      buttonProps: {
+        color: 'primary',
+        block: true,
+      },
+      forgotPasswordLinkText: 'Forgot Password?',
+      registerLinkText: 'Register',
+      registerText: "Don't have an account?",
+    },
     forgotPassword: {
       title: 'Forgot Password',
       description:

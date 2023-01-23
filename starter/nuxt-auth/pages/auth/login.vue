@@ -1,6 +1,6 @@
 <template>
   <AuthShell>
     <AuthSidebar />
-    <AuthForm />
+    <AuthLogin />
   </AuthShell>
 </template>
