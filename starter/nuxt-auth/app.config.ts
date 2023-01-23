@@ -93,7 +93,7 @@ export default defineAppConfig({
           type: 'password',
           validation: string()
             .required()
-            .oneOf([ref('password')]),
+            .oneOf([ref('password')], 'Password does not match'),
         },
         {
           name: 'agree_to_toc',
