@@ -26,8 +26,6 @@ const onSubmit = handleSubmit(async (values) => {
     redirect: false,
   });
 
-  console.log(res);
-
   if (res.error) {
     error.value = 'Invalid credentials';
     return;
