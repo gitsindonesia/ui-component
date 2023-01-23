@@ -6,6 +6,7 @@ on:
   push:
     paths:
       - 'starter/nuxt-auth/**'
+      - '.github/workflows/deploy-starter-nuxt-auth.yml'
     branches:
       - main
 jobs:
@@ -23,4 +24,4 @@ jobs:
           vercel-args: --prod # Optional
           vercel-org-id: ${{ secrets.STARTER_NUXT_AUTH_ORG_ID }} # Required
           vercel-project-id: ${{ secrets.STARTER_NUXT_AUTH_PROJECT_ID }} # Required
-          working-directory: ./starter/nuxt-admin
+          working-directory: ./starter/nuxt-auth
