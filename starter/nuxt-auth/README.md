@@ -2,6 +2,17 @@
 
 A Nuxt theme to get authentication ready with [nuxt-auth](https://sidebase.io/nuxt-auth/getting-started) and GITS UI.
 
+## Features
+
+- Integrated with [GITS UI](https://gitsindonesia.github.io/ui-component/)
+- Authentication with [nuxt-auth](https://sidebase.io/nuxt-auth/getting-started)
+- Built-in Pages:
+  - Login
+  - Register
+  - Forgot Password
+- Customizable via Nuxt Layer
+- Configurable via `app.config.ts`
+
 ## Installation
 
 ```bash
