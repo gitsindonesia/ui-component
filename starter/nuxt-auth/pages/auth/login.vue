@@ -1,6 +1,5 @@
 <template>
-  <AuthShell>
-    <AuthSidebar />
+  <AuthLayout>
     <AuthLogin />
-  </AuthShell>
+  </AuthLayout>
 </template>
