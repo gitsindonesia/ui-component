@@ -1,9 +1,9 @@
 {
   "name": "@gits-id/nuxt-auth",
-  "description": "Extensible Nuxt.js Auth template with GITS UI",
+  "description": "A Nuxt theme to get authentication ready with @sidebase/nuxt-auth and GITS UI.",
   "version": "0.0.0",
   "keywords": [
-    "admin",
+    "auth",
     "dashboard",
     "template",
     "nuxt",
