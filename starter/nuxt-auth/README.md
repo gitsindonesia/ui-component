@@ -1,51 +1,95 @@
-# nuxt-auth-app
+# nuxt-auth
 
-This is a custom app created by running `npx create-gits-app`. This project uses the following technologies for a great developer and user-experience:
+A Nuxt theme to get authentication ready with [nuxt-auth](https://sidebase.io/nuxt-auth/getting-started) and GITS UI.
 
-- [TypeScript](https://www.typescriptlang.org/)
-- [Nuxt 3](https://nuxt.com)
-- nuxt-auth
-
-## How to get going?
-
-This is a straight-forward setup with minimal templating and scaffolding. The options you selected during the sidebase CLI setup are all here though. Good places to continue reading are:
-
-- [the First Steps documentation](https://gitsindonesia.github.io/ui-component/)
-
-Some tasks you should probably do in the beginning are:
-
-- [ ] replace this generic README with a more specific one
-- [ ] install the Vue Volar extension
-- [ ] enable [Volar takeover mode](https://nuxt.com/docs/getting-started/installation#prerequisites) to ensure a smooth editor setup
-- [ ] Auth: Configure your auth providers to the [NuxtAuthHandler](./server/api/auth/[...].ts)
-- [ ] Auth, optional: Enable global protection by setting `enableGlobalAppMiddleware: true` in [your nuxt.config.ts](./nuxt.config.ts). Delete the logal middleware in the [protected.vue](./pages/protected.vue) page if you do
-
-### Setup
-
-Make sure to install the dependencies:
+## Installation
 
 ```bash
-npm install
+npm i -D @gits-id/nuxt-auth
 ```
 
-### Development Server
+## Usage
 
-Start the development server on http://localhost:3000
+Add it to the `nuxt.config.ts`:
 
-```bash
-npm run dev
+```ts
+export default defineNuxtConfig({
+  extends: '@gits-id/nuxt-auth',
+});
 ```
 
-### Production
+## Configuration
 
-Build the application for production:
+You can change the default options for auth pages like redirect url and head options via `app.config.ts`.
 
-```bash
-npm run build
+You can checkout the default configuration in the [source of this file](https://github.com/gitsindonesia/ui-component/tree/main/starter/nuxt-auth/app.config.ts).
+
+### Configuration example
+
+```ts
+export default defineAppConfig({
+  auth: {
+    redirect: {
+      login: '/auth/login',
+      logout: '/',
+      callback: '/auth/login',
+      home: '/',
+    },
+    head: {
+      login: {
+        title: 'Login',
+      },
+      protected: {
+        title: 'Profile Page',
+      },
+    },
+  },
+});
 ```
 
-Locally preview production build:
+## Auth Handler
 
-```bash
-npm run preview
-```
+The auth handle is located at `servers/api/auth/[...].ts`. Feel free to override the file if you want to customize the authentication methods or providers.
+
+## Components
+
+This theme comes with three components under `Auth` namespace.
+
+- `AuthShell`: Two column layout to wrap the authentication page.
+- `AuthSidebar`: Left side of the container to place such as illustration or image. By default comes with gradient background.
+- `AuthForm`: Authentication form that include logic to login the user to the application.
+
+### Customizating the components
+
+To customize the components, just override the default components by creating file in your Nuxt app with the same as the theme.
+
+| Component     | Path                              |
+| ------------- | --------------------------------- |
+| `AuthShell`   | `components/auth/AuthShell.vue`   |
+| `AuthForm`    | `components/auth/AuthForm.vue`    |
+| `AuthSidebar` | `components/auth/AuthSidebar.vue` |
+
+## Pages
+
+This theme comes with three pages as described as bellow:
+
+| Path                   | Description                                       |
+| ---------------------- | ------------------------------------------------- |
+| `pages/auth/login.vue` | The login page                                    |
+| `pages/protected.vue`  | The page that is protected with `auth` middleware |
+| `pages/index.vue`      | The home page                                     |
+
+To customize the pages, just override the default pages by creating page with the same file name.
+
+## Authentication
+
+Checkout the [official documentation](https://sidebase.io/nuxt-auth/getting-started) to learn more about `nuxt-auth`.
+
+## GITS UI
+
+Checkout the [official documentation](https://gitsindonesia.github.io/ui-component/) to
+learn more about `GITS UI`.
+
+## License
+
+MIT
