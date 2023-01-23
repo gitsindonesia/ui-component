@@ -1,0 +1,26 @@
+name: Deploy Starter Nuxt Auth
+on:
+  # pull_request:
+  #   branches:
+  #     - main
+  push:
+    paths:
+      - 'starter/nuxt-auth/**'
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      #  your build commands
+      # - run: |
+      #    ng build --prod
+      - uses: amondnet/vercel-action@v20 # deploy
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
+          github-token: ${{ secrets.GITHUB_TOKEN }} # Optional
+          vercel-args: --prod # Optional
+          vercel-org-id: ${{ secrets.STARTER_NUXT_AUTH_ORG_ID }} # Required
+          vercel-project-id: ${{ secrets.STARTER_NUXT_AUTH_PROJECT_ID }} # Required
+          working-directory: ./starter/nuxt-admin
