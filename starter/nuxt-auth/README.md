@@ -85,7 +85,7 @@ To customize the components, just override the default components by creating fi
 
 ## Pages
 
-This theme comes with three pages as described as bellow:
+To customize the pages, just override the default pages by creating file in your Nuxt app with the same as the theme.
 
 | Path                             | Description                                       |
 | -------------------------------- | ------------------------------------------------- |
@@ -94,8 +94,6 @@ This theme comes with three pages as described as bellow:
 | `pages/auth/forgot-password.vue` | The forgot password page                          |
 | `pages/protected.vue`            | The page that is protected with `auth` middleware |
 | `pages/index.vue`                | The home page                                     |
-
-To customize the pages, just override the default pages by creating page with the same file name.
 
 ## Authentication
 
