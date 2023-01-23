@@ -38,7 +38,7 @@ Then, choose `Nuxt Minimal` template.
 
 Nuxt Complete Starter is a full-featured Nuxt starter that includes everything you need to make a modern web application with Nuxt, Tailwind CSS, and GITS UI.
 
-- Online demo
+- [Online demo](https://gits-nuxt-starter.vercel.app/)
 - [Source code](https://github.com/gitsindonesia/nuxt-starter)
 - Try it online on [Stackblitz](https://stackblitz.com/github/gitsindonesia/nuxt-starter)
 
