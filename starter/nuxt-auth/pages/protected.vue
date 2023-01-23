@@ -1,6 +1,4 @@
 <script setup lang="ts">
-definePageMeta({middleware: 'auth'});
-
 const appConfig = useAppConfig();
 
 useHead(appConfig.auth.head.protected);

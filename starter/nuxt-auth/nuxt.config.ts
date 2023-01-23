@@ -6,5 +6,6 @@ export default defineNuxtConfig({
   },
   auth: {
     origin: process.env.AUTH_ORIGIN,
+    enableGlobalAppMiddleware: true,
   },
 });
