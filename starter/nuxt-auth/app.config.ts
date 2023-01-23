@@ -45,6 +45,8 @@ export default defineAppConfig({
       forgotPasswordLinkText: 'Forgot Password?',
       registerLinkText: 'Register',
       registerText: "Don't have an account?",
+      loginWithText: 'Login with',
+      orText: 'or',
     },
     forgotPassword: {
       title: 'Forgot Password',
@@ -110,5 +112,8 @@ export default defineAppConfig({
       successMessage: 'Account created successfully.',
       loginButtonText: 'Back to Login',
     },
+    providerButtonColors: {
+      github: 'dark',
+    } as Record<string, string>,
   },
 });

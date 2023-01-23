@@ -5,7 +5,8 @@ import {object, string} from 'yup';
 const appConfig = useAppConfig();
 const router = useRouter();
 const route = useRoute();
-const {signIn, status} = useSession();
+const {signIn, status, getProviders} = useSession();
+const providers = await getProviders();
 
 useHead(appConfig.auth.head.login);
 
@@ -88,6 +89,24 @@ const onSubmit = handleSubmit(async (values) => {
           {{ appConfig.auth.login.registerLinkText }}
         </VBtn>
       </p>
+
+      <div class="flex gap-4 items-center mt-5 mb-4">
+        <div class="border-t flex-1"></div>
+        <span class="text-sm text-gray-600">
+          {{ appConfig.auth.login.orText }}
+        </span>
+        <div class="border-t flex-1"></div>
+      </div>
+
+      <template v-for="provider in providers" :key="provider?.id">
+        <VBtn
+          v-if="provider?.id !== 'credentials'"
+          block
+          :color="appConfig.auth.providerButtonColors[String(provider?.id)]"
+        >
+          {{ appConfig.auth.login.loginWithText }} {{ provider?.name }}
+        </VBtn>
+      </template>
     </form>
   </div>
 </template>
