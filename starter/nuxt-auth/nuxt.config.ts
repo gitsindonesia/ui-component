@@ -4,4 +4,7 @@ export default defineNuxtConfig({
   typescript: {
     shim: false,
   },
+  auth: {
+    origin: process.env.AUTH_ORIGIN,
+  },
 });
