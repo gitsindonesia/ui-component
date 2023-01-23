@@ -49,7 +49,7 @@ const inputComponent = (component: any) => {
 
 <template>
   <div class="p-6 grid items-center justify-center">
-    <div>
+    <div class="md:w-[400px]">
       <VLogo img-class="mb-6" />
       <div class="space-y-2 mb-4">
         <h1 class="text-2xl font-semibold text-gray-900">
@@ -67,7 +67,7 @@ const inputComponent = (component: any) => {
           {{ appConfig.auth.register.loginButtonText }}
         </VBtn>
       </template>
-      <form v-else class="md:w-[400px]" @submit="onSubmit">
+      <form v-else @submit="onSubmit">
         <VAlert v-if="error" color="error" class="mb-4"> {{ error }} </VAlert>
         <template
           v-for="input in appConfig.auth.register.inputs"
