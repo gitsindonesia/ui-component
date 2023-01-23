@@ -44,6 +44,11 @@ export default defineConfig({
         items: [{text: 'create-gits-app', link: '/tools/create-gits-app'}],
       },
       {
+        text: 'Themes',
+        collapsible: true,
+        items: [{text: 'nuxt-auth', link: '/themes/nuxt-auth'}],
+      },
+      {
         text: 'Components',
         collapsible: true,
         items: [
