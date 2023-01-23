@@ -13,6 +13,12 @@ A Nuxt theme to get authentication ready with [nuxt-auth](https://sidebase.io/nu
 - Customizable via Nuxt Layer
 - Configurable via `app.config.ts`
 
+## Demo
+
+- [Online demo](https://gits-nuxt-auth.vercel.app/)
+- [Source code](https://github.com/gitsindonesia/ui-component/tree/main/starter/nuxt-auth)
+- Try it online on [Stackblitz](https://stackblitz.com/github/gitsindonesia/ui-component/tree/main/starter/nuxt-auth)
+
 ## Installation
 
 ```bash
