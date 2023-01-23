@@ -1,3 +1,5 @@
+import {string, boolean, ref} from 'yup';
+
 export default defineAppConfig({
   auth: {
     redirect: {
@@ -15,6 +17,9 @@ export default defineAppConfig({
       },
       forgotPassword: {
         title: 'Forgot Password',
+      },
+      register: {
+        title: 'Register',
       },
     },
     login: {
@@ -55,6 +60,54 @@ export default defineAppConfig({
         block: true,
       },
       successMessage: 'Password reset link sent to your email.',
+      loginButtonText: 'Back to Login',
+    },
+    register: {
+      title: 'Register',
+      description: 'Enter your details to create your account.',
+      inputs: [
+        {
+          name: 'name',
+          label: 'Name',
+          placeholder: 'Name',
+          validation: string().required(),
+        },
+        {
+          name: 'email',
+          label: 'Email',
+          placeholder: 'Email',
+          type: 'email',
+          validation: string().email().required(),
+        },
+        {
+          name: 'password',
+          label: 'Password',
+          placeholder: 'Password',
+          type: 'password',
+          validation: string().required(),
+        },
+        {
+          name: 'password_confirmation',
+          label: 'Password Confirmation',
+          placeholder: 'Password Confirmation',
+          type: 'password',
+          validation: string()
+            .required()
+            .oneOf([ref('password')]),
+        },
+        {
+          name: 'agree_to_toc',
+          label: 'Agree to Terms and Conditions',
+          component: 'checkbox',
+          validation: boolean().required(),
+        },
+      ],
+      buttonText: 'Register',
+      buttonProps: {
+        color: 'primary',
+        block: true,
+      },
+      successMessage: 'Account created successfully.',
       loginButtonText: 'Back to Login',
     },
   },
