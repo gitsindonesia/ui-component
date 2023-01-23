@@ -103,6 +103,7 @@ const onSubmit = handleSubmit(async (values) => {
           v-if="provider?.id !== 'credentials'"
           block
           :color="appConfig.auth.providerButtonColors[String(provider?.id)]"
+          @click="signIn(provider?.id)"
         >
           {{ appConfig.auth.login.loginWithText }} {{ provider?.name }}
         </VBtn>
