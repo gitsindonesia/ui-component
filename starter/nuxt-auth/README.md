@@ -74,21 +74,26 @@ This theme comes with three components under `Auth` namespace.
 
 To customize the components, just override the default components by creating file in your Nuxt app with the same as the theme.
 
-| Component     | Path                              |
-| ------------- | --------------------------------- |
-| `AuthShell`   | `components/auth/AuthShell.vue`   |
-| `AuthForm`    | `components/auth/AuthForm.vue`    |
-| `AuthSidebar` | `components/auth/AuthSidebar.vue` |
+| Component            | Path                                     |
+| -------------------- | ---------------------------------------- |
+| `AuthShell`          | `components/auth/AuthShell.vue`          |
+| `AuthForm`           | `components/auth/AuthForm.vue`           |
+| `AuthSidebar`        | `components/auth/AuthSidebar.vue`        |
+| `AuthForgotPassword` | `components/auth/AuthForgotPassword.vue` |
+| `AuthRegister`       | `components/auth/AuthRegister.vue`       |
+| `AuthLayout`         | `components/auth/AuthLayout.vue`         |
 
 ## Pages
 
 This theme comes with three pages as described as bellow:
 
-| Path                   | Description                                       |
-| ---------------------- | ------------------------------------------------- |
-| `pages/auth/login.vue` | The login page                                    |
-| `pages/protected.vue`  | The page that is protected with `auth` middleware |
-| `pages/index.vue`      | The home page                                     |
+| Path                             | Description                                       |
+| -------------------------------- | ------------------------------------------------- |
+| `pages/auth/login.vue`           | The login page                                    |
+| `pages/auth/register.vue`        | The register page                                 |
+| `pages/auth/forgot-password.vue` | The forgot password page                          |
+| `pages/protected.vue`            | The page that is protected with `auth` middleware |
+| `pages/index.vue`                | The home page                                     |
 
 To customize the pages, just override the default pages by creating page with the same file name.
 
