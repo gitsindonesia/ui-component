@@ -13,6 +13,7 @@
     "@gits-id/avatar": "^0.15.0",
     "@gits-id/badge": "^0.15.0",
     "@gits-id/breadcrumbs": "^0.15.0",
+    "@gits-id/bottom-sheet": "^0.15.0",
     "@gits-id/button": "^0.15.2",
     "@gits-id/card": "^0.15.2",
     "@gits-id/collapsible": "^0.15.0",

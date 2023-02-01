@@ -16,6 +16,7 @@ const transpile = [
   '@gits-id/badge',
   '@gits-id/breadcrumbs',
   '@gits-id/button',
+  '@gits-id/bottom-sheet',
   '@gits-id/card',
   '@gits-id/collapsible',
   '@gits-id/container',
@@ -315,6 +316,30 @@ const components: AddComponentOptions[] = [
   {
     name: 'VRating',
     filePath: '@gits-id/rating/src/VRating.vue',
+  },
+  {
+    name: 'VBottomSheet',
+    filePath: '@gits-id/bottom-sheet/src/BottomSheet.vue',
+  },
+  {
+    name: 'VBottomSheetBody',
+    filePath: '@gits-id/bottom-sheet/src/BottomSheetBody.vue',
+  },
+  {
+    name: 'VBottomSheetFooter',
+    filePath: '@gits-id/bottom-sheet/src/BottomSheetFooter.vue',
+  },
+  {
+    name: 'VBottomSheetHeader',
+    filePath: '@gits-id/bottom-sheet/src/BottomSheetHeader.vue',
+  },
+  {
+    name: 'VBottomSheetMenus',
+    filePath: '@gits-id/bottom-sheet/src/BottomSheetMenus.vue',
+  },
+  {
+    name: 'VBottomSheetOverlay',
+    filePath: '@gits-id/bottom-sheet/src/BottomSheetOverlay.vue',
   },
 ];
 

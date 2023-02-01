@@ -63,6 +63,14 @@ import Shimmer from '@gits-id/shimmer';
 import VAutocomplete from '@gits-id/autocomplete';
 import './style.scss';
 import {Rating} from '@gits-id/rating';
+import {
+  BottomSheet,
+  BottomSheetHeader,
+  BottomSheetBody,
+  BottomSheetFooter,
+  BottomSheetMenus,
+  BottomSheetOverlay,
+} from '@gits-id/bottom-sheet';
 
 const plugin: Plugin = {
   install: (app) => {
@@ -117,6 +125,12 @@ const plugin: Plugin = {
     app.component('VShimmer', Shimmer);
     app.component('VAutocomplete', VAutocomplete);
     app.component('VRating', Rating);
+    app.component('VBottomSheet', BottomSheet);
+    app.component('VBottomSheetHeader', BottomSheetHeader);
+    app.component('VBottomSheetBody', BottomSheetBody);
+    app.component('VBottomSheetFooter', BottomSheetFooter);
+    app.component('VBottomSheetMenus', BottomSheetMenus);
+    app.component('VBottomSheetOverlay', BottomSheetOverlay);
   },
 };
 
@@ -196,6 +210,7 @@ export * from '@gits-id/navbar/src/types';
 export * from '@gits-id/tabs/src/types';
 export * from '@gits-id/modal/src/types';
 export * from '@gits-id/dropdown/src/types';
+export * from '@gits-id/bottom-sheet/src/types';
 export * from './component-resolver';
 export * from './colors';
 export * from './plugin';

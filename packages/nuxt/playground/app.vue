@@ -19,6 +19,8 @@ const darkMode = ref(false);
 const isOpen = ref(false);
 
 const buttonVariants = ['default', 'outlined', 'text', 'disabled', 'loading'];
+
+const sheetOpen = ref(false);
 </script>
 
 <template>
@@ -328,6 +330,30 @@ const buttonVariants = ['default', 'outlined', 'text', 'disabled', 'loading'];
     <h3 class="text-xl font-semibold">Pagination</h3>
     <div>
       <VPagination :model-value="1" :items-per-page="10" :total-items="50" />
+    </div>
+    <hr class="dark:border-neutral-700" />
+    <h3 class="text-xl font-semibold">BottomSheet</h3>
+    <div>
+      <VBtn @click="sheetOpen = !sheetOpen">Open Bottom Sheet</VBtn>
+      <VBottomSheet v-model="sheetOpen" v-slot="{close}">
+        <VBottomSheetHeader>Sheet Title</VBottomSheetHeader>
+        <VBottomSheetBody> Hello :) </VBottomSheetBody>
+        <VBottomSheetMenus
+          :items="[
+            {
+              text: 'Menu 1',
+              prependIcon: 'ri:home-line',
+            },
+            {
+              text: 'Menu 2',
+              prependIcon: 'ri:user-line',
+            },
+          ]"
+        />
+        <VBottomSheetFooter>
+          <VBtn @click="close">Close</VBtn>
+        </VBottomSheetFooter>
+      </VBottomSheet>
     </div>
   </div>
 </template>
