@@ -8,6 +8,7 @@ const props = withDefaults(
     width?: string | number;
     height?: string | number;
     withCode?: boolean;
+    sourceLink?: boolean;
   }>(),
   {
     height: 400,
@@ -52,9 +53,19 @@ const selectedTab = ref('preview');
       </div>
     </div>
   </div>
+
+  <div v-if="sourceLink" class="source-container">
+    <a :href="source" target="_blank" rel="noopener noreferrer">
+      Open in new tab
+    </a>
+  </div>
 </template>
 
 <style lang="scss">
+.source-container {
+  margin-top: 1rem;
+}
+
 .live-preview-iframe {
   width: 100%;
   margin-top: 0.5em;
