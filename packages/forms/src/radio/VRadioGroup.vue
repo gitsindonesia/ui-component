@@ -6,7 +6,6 @@ import {
   onMounted,
   onBeforeUnmount,
 } from 'vue';
-import {useTextSize} from '@gits-id/utils';
 import { type ValidationMode, useFormValue } from '../composables';
 
 type Value = string | number | object | boolean | Record<string, any>;
@@ -84,7 +83,7 @@ const props = defineProps({
   },
   errorClass: {
     type: String,
-    default: 'text-error-600 text-sm mt-1',
+    default: '',
   },
   rules: {
     type: String,
@@ -113,12 +112,6 @@ const groupRef = ref();
 const {errorMessage, uncontrolledValue, isEagerValidation, validate, meta} =
   useFormValue(props, emit);
 
-const classes = computed(() =>
-  props.error
-    ? 'text-error-600 focus:ring-error-600'
-    : 'text-primary-600 focus:ring-primary-600',
-);
-
 const getValue = (item: RadioItem) => {
   return typeof item === 'object' ? item?.[props.itemValue] : item;
 };
@@ -126,8 +119,6 @@ const getValue = (item: RadioItem) => {
 const getText = (item: RadioItem) => {
   return typeof item === 'object' ? item?.[props.itemText] : item;
 };
-
-const {class: sizeClass} = useTextSize(props.size);
 
 const onChange = (event: any) => {
   emit('change', event);
@@ -175,25 +166,25 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div>
+  <div
+    class="v-radio-group"
+    :class="{
+      'v-radio-group--error': error,
+      'v-radio-group--inline': inline,
+    }"
+  >
     <label
       v-if="label"
       :for="name"
-      class="font-medium mb-1 block"
-      :class="[
-        error ? 'text-error-500' : 'text-gray-700 dark:text-neutral-200',
-        labelClass,
-      ]"
+      class="v-radio-group-label"
+      :class="labelClass"
     >
       {{ label }}
     </label>
-    <div
-      ref="groupRef"
-      class="flex gap-y-2 sm:gap-y-0 gap-x-8"
-      :class="[inline ? 'flex-row' : 'flex-col']"
-    >
+    <div ref="groupRef" class="v-radio-group-items">
       <label
         :class="[
+          'v-radio-group-items-label',
           uncontrolledValue === getValue(item) ? selectedClass : '',
           defaultClass,
         ]"
@@ -207,32 +198,25 @@ onBeforeUnmount(() => {
           :name="name"
           type="radio"
           :value="getValue(item)"
-          class="
-            mr-2
-            transition
-            duration-300
-            disabled:cursor-not-allowed
-            disabled:border-gray-300
-            dark:bg-neutral-800
-            dark:border-neutral-700
-            dark:disabled:bg-neutral-300
-          "
-          :class="classes"
+          class="v-radio-group-items-input"
           :disabled="disabled"
           @change="onChange"
         />
         <slot name="label" :item="item" :selected="uncontrolledValue">
-          <span
-            class="text-gray-800 dark:text-neutral-200"
-            :class="[sizeClass]"
-          >
+          <span class="v-radio-group-items-text">
             {{ getText(item) }}
           </span>
         </slot>
       </label>
     </div>
-    <div v-if="errorMessage && !hideError" :class="errorClass">
+    <div
+      v-if="errorMessage && !hideError"
+      class="v-radio-group-error"
+      :class="errorClass"
+    >
       {{ errorMessage }}
     </div>
   </div>
 </template>
+
+<style src="./VRadioGroup.scss" lang="scss"></style>

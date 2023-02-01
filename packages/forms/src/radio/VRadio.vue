@@ -92,7 +92,7 @@ const {errorMessage, uncontrolledValue, inputId} = useFormValue(props, emit);
       },
     ]"
   >
-    <div class="v-radio-group" :class="groupClass">
+    <div class="v-radio-wrapper" :class="groupClass">
       <input
         :id="id"
         v-model="uncontrolledValue"

@@ -1,0 +1,16 @@
+.dark {
+  .v-radio-group {
+    --v-radio-group-label-color: var(--v-input-label-color);
+
+    // input
+    --v-radio-group-border-color: theme('colors.neutral.600');
+    --v-radio-group-bg-color: theme('colors.neutral.700');
+
+    // disabled
+    --v-radio-group-disabled-border-color: theme('colors.neutral.500');
+    --v-radio-group-disabled-bg-color: theme('colors.neutral.500');
+
+    // items text
+    --v-radio-group-items-text-color: theme('colors.neutral.200');
+  }
+}
