@@ -25,8 +25,8 @@
     "@gits-id/ui-nuxt": "^0.15.2"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.2.0",
+    "@nuxtjs/tailwindcss": "^6.3.0",
     "nuxt": "^3.1.1",
-    "sass": "^1.57.1"
+    "sass": "^1.58.0"
   }
 }
