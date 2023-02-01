@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@gits-id/ui": "^0.15.1",
-    "@nuxt/kit": "^3.0.0"
+    "@nuxt/kit": "^3.1.1"
   },
   "devDependencies": {
     "@nuxt/module-builder": "latest",
@@ -32,7 +32,7 @@
     "@nuxtjs/eslint-config-typescript": "latest",
     "@nuxtjs/tailwindcss": "^6.1.3",
     "eslint": "latest",
-    "nuxt": "^3.0.0",
+    "nuxt": "^3.1.1",
     "postcss-custom-properties": "^10.0.0"
   },
   "gitHead": "b20f0532383a5722449aeb41788a2eb47032e124"
