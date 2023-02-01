@@ -1,0 +1,45 @@
+{
+  "name": "@gits-id/rating",
+  "version": "0.15.0",
+  "description": "Vue Rating Component",
+  "scripts": {
+    "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
+    "prepublishOnly": "npm run build",
+    "test": "vitest"
+  },
+  "keywords": [
+    "rating",
+    "vue-rating",
+    "gits",
+    "gits-id",
+    "ui-component"
+  ],
+  "author": "Warsono <warsono16694@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^3.2.31"
+  },
+  "devDependencies": {
+    "@gits-id/tailwind-config": "^0.15.0",
+    "@vue/test-utils": "^2.0.0-rc.17",
+    "c8": "^7.11.3",
+    "tailwindcss": "^3.0.23",
+    "vite": "^3.0.0",
+    "vitest": "^0.12.4"
+  },
+  "main": "dist/rating.umd.js",
+  "unpkg": "dist/rating.iife.js",
+  "jsdelivr": "dist/rating.iife.js",
+  "module": "./dist/rating.mjs",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/rating.mjs",
+      "require": "./dist/rating.js"
+    },
+    "./package.json": "./package.json",
+    "./src/*": "./src/*",
+    "./*": "./*"
+  },
+  "gitHead": "8104720a06b60ca92b79f9b6ce89108faa68bba5"
+}
