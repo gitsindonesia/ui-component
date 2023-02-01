@@ -368,3 +368,14 @@ export const DarkMode: Story<{}> = () => ({
 </main>
 `,
 });
+
+export const ElevateOnScroll: Story<{}> = () => ({
+  components: {VAppBar},
+  template: `
+  <main class="mt-5 h-screen bg-gray-50 text-white">
+    <VAppBar fixed elevate-on-scroll="md">
+      AppBar Elevate On Scroll
+    </VAppBar>
+  </main>
+`,
+});

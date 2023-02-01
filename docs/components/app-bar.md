@@ -204,18 +204,45 @@ const isOpen = ref(true);
 
 </LivePreview>
 
+## Elevate on Scroll
+
+- **prop**: `elevate-on-scroll`
+- **type**: `string | boolean`
+- **default**: `false`
+
+Use `elevate-on-scroll` prop to add shadow effect on app-bar when user scroll the page.
+
+<LivePreview src="components-appbar--elevate-on-scroll" >
+
+```vue
+<template>
+  <VAppBar elevate-on-scroll> Brand </VAppBar>
+</template>
+```
+
+</LivePreview>
+
+You can also change the size of shadow by setting the value of `elevate-on-scroll` prop with the shadow name like `sm`, `md`, `lg` and so on.
+
+```vue
+<template>
+  <VAppBar elevate-on-scroll="lg"> Brand </VAppBar>
+</template>
+```
+
 ## Props
 
-| Name                      | Type                                               | Default   |
-| ------------------------- | -------------------------------------------------- | --------- |
-| [modelValue](#name)       | `boolean`                                          | `true`    |
-| [color](#color)           | `string` , [available colors](/guide/theme#colors) | `default` |
-| [size](#size)             | `string`                                           | `fade`    |
-| [fixed](#fixed)           | `boolean`                                          | `false`   |
-| [sticky](#sticky)         | `boolean`                                          | `false`   |
-| [shadow](#shadow)         | `boolean`                                          | `false`   |
-| [bordered](#bordered)     | `boolean`                                          | `false`   |
-| [transition](#transition) | `string`                                           | `fade`    |
+| Name                                    | Type                                               | Default   |
+| --------------------------------------- | -------------------------------------------------- | --------- |
+| [modelValue](#name)                     | `boolean`                                          | `true`    |
+| [color](#color)                         | `string` , [available colors](/guide/theme#colors) | `default` |
+| [size](#size)                           | `string`                                           | `fade`    |
+| [fixed](#fixed)                         | `boolean`                                          | `false`   |
+| [sticky](#sticky)                       | `boolean`                                          | `false`   |
+| [shadow](#shadow)                       | `boolean`                                          | `false`   |
+| [bordered](#bordered)                   | `boolean`                                          | `false`   |
+| [transition](#transition)               | `string`                                           | `fade`    |
+| [elevate-on-scroll](#elevate-on-scroll) | `boolean \| string`                                | `false`   |
 
 ## Methods
 
