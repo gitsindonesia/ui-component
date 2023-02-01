@@ -4,6 +4,9 @@ import {object, number, string} from 'yup';
 import VRadioGroup from './VRadioGroup.vue';
 import VBtn from '@gits-id/button';
 import {ref} from 'vue';
+import '@gits-id/forms/src/forms.scss';
+import '@gits-id/forms/src/forms.dark.scss';
+import './VRadioGroup.dark.scss';
 
 const items = [...Array(5)].map((v, k) => ({
   text: `Item ${k + 1}`,
@@ -341,7 +344,8 @@ export const DarkMode: Story = (args) => ({
   },
   template: `
   <div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
-    <VRadioGroup v-bind='args'/>
+    <VRadioGroup v-bind='args' />
+    <VRadioGroup v-bind='args' disabled label="Disabled" class="mt-5" />
   </div>
   `,
 });
