@@ -25,9 +25,9 @@
     "@gits-id/ui-nuxt": "^0.15.2"
   },
   "devDependencies": {
-    "@sidebase/nuxt-auth": "^0.3.2",
-    "@nuxtjs/tailwindcss": "^6.2.0",
+    "@nuxtjs/tailwindcss": "^6.3.0",
+    "@sidebase/nuxt-auth": "^0.4.0-alpha.5",
     "nuxt": "^3.1.1",
-    "sass": "^1.57.1"
+    "sass": "^1.58.0"
   }
 }
