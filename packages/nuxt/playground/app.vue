@@ -150,8 +150,8 @@ const buttonVariants = ['default', 'outlined', 'text', 'disabled', 'loading'];
             {text: 'Option 3', value: '3'},
           ]"
         />
-        <v-radio disabled label="Option 1" value="1" />
-        <v-radio disabled label="Option 2" value="2" />
+        <v-radio disabled label="Option 1" value="1" name="gender" />
+        <v-radio disabled label="Option 2" value="2" name="gender" />
         <v-radio-group
           disabled
           placeholder="Placeholder"
