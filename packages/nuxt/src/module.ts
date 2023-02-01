@@ -314,6 +314,10 @@ const components: AddComponentOptions[] = [
     filePath: '@gits-id/tooltip/src/VTooltip.vue',
   },
   {
+    name: 'VRating',
+    filePath: '@gits-id/rating/src/VRating.vue',
+  },
+  {
     name: 'VBottomSheet',
     filePath: '@gits-id/bottom-sheet/src/BottomSheet.vue',
   },

@@ -107,6 +107,10 @@ export default defineConfig({
             link: '/components/progress-bar',
           },
           {
+            text: 'Rating',
+            link: '/components/rating',
+          },
+          {
             text: 'Select',
             link: '/components/select',
           },

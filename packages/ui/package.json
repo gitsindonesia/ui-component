@@ -34,6 +34,7 @@
     "@gits-id/pages": "^0.15.2",
     "@gits-id/pagination": "^0.15.0",
     "@gits-id/progress-bar": "^0.15.0",
+    "@gits-id/rating": "^0.15.0",
     "@gits-id/select": "^0.15.2",
     "@gits-id/services": "^0.15.2",
     "@gits-id/shimmer": "^0.15.0",
