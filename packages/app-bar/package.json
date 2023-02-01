@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/app-bar",
-  "version": "0.15.0",
+  "version": "0.15.2",
   "description": "The AppBar, also known as a Navigation Bar, is a component used to display content at the top of a page.",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -19,7 +19,7 @@
     "vue": "^3.2.33"
   },
   "devDependencies": {
-    "@gits-id/button": "^0.15.0",
+    "@gits-id/button": "^0.15.2",
     "@gits-id/icon": "^0.15.0",
     "@gits-id/tailwind-config": "^0.15.0",
     "@vue/test-utils": "^2.0.0-rc.17",
