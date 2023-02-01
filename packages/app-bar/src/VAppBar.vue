@@ -5,10 +5,18 @@ export default {
 </script>
 
 <script setup lang="ts">
-import {toRefs, ref, watch, PropType} from 'vue';
+import {
+  toRefs,
+  ref,
+  watch,
+  PropType,
+  onMounted,
+  onBeforeUnmount,
+  computed,
+} from 'vue';
 import type {DefaultColors, DefaultShadows} from '@gits-id/theme/defaultTheme';
 
-export type AppBarColors = DefaultColors | 'transparent' | string
+export type AppBarColors = DefaultColors | 'transparent' | string;
 
 const props = defineProps({
   modelValue: {
@@ -43,6 +51,10 @@ const props = defineProps({
     type: String as PropType<'sm' | 'md' | 'lg'>,
     default: 'md',
   },
+  elevateOnScroll: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const emit =
@@ -53,6 +65,7 @@ const emit =
 const {modelValue} = toRefs(props);
 
 const isOpen = ref(modelValue.value);
+const isElevated = ref(false);
 
 watch(isOpen, (val) => {
   emit('update:modelValue', val);
@@ -65,6 +78,41 @@ watch(modelValue, (val) => {
 const toggle = () => (isOpen.value = !isOpen.value);
 
 defineExpose(toggle);
+
+// elevate on scroll
+if (props.elevateOnScroll) {
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      isElevated.value = true;
+    } else {
+      isElevated.value = false;
+    }
+  };
+
+  onMounted(() => {
+    window.addEventListener('scroll', handleScroll);
+  });
+
+  onBeforeUnmount(() => {
+    window.removeEventListener('scroll', handleScroll);
+  });
+}
+
+const getShadowClass = (shadow: DefaultShadows) => {
+  return typeof shadow === 'string'
+    ? `app-bar--shadow-${shadow}`
+    : shadow
+    ? 'app-bar--shadow'
+    : '';
+};
+
+const shadowClass = computed(() => {
+  if (props.elevateOnScroll && isElevated.value) {
+    return getShadowClass(props.elevateOnScroll);
+  }
+
+  return getShadowClass(props.shadow);
+});
 </script>
 
 <template>
@@ -74,11 +122,7 @@ defineExpose(toggle);
       class="app-bar"
       :class="[
         `app-bar-${color}`,
-        typeof shadow === 'string'
-          ? `app-bar--shadow-${shadow}`
-          : shadow
-          ? 'app-bar--shadow'
-          : '',
+        shadowClass,
         size ? `app-bar--${size}` : '',
         {
           'app-bar--fixed': fixed,
