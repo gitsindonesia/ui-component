@@ -852,32 +852,32 @@
   dependencies:
     "@floating-ui/core" "^0.3.0"
 
-"@gits-id/alert@^0.15.0":
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/@gits-id/alert/-/alert-0.15.0.tgz#f1277d983c1461e5c2906ba2cac5c05fe9d489bd"
-  integrity sha512-sWoU8RDDziCYhpZCD7v8L7EvLOGO04LW29rje1l2KLQugggeE7t/vtn3+55XJcnGihJiS9cQqHapxztixFnbAw==
+"@gits-id/alert@^0.15.2":
+  version "0.15.2"
+  resolved "https://registry.yarnpkg.com/@gits-id/alert/-/alert-0.15.2.tgz#9637f8fe15ac2c6b4a8aa00ad7c0fd55d7626eb0"
+  integrity sha512-zOU75zV+EWP1z6qR/ExWPrFjqOOg4nyHU/bXVSjgbLHBdtcQsAIPN8VpvaVKNd4sKTcolA6lpkVTROt4mop2WQ==
   dependencies:
-    "@gits-id/button" "^0.15.0"
+    "@gits-id/button" "^0.15.2"
     "@gits-id/icon" "^0.15.0"
     "@gits-id/theme" "^0.15.0"
     "@gits-id/utils" "^0.15.0"
     vue "^3.2.33"
 
-"@gits-id/app-bar@^0.15.0":
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/@gits-id/app-bar/-/app-bar-0.15.0.tgz#eef68dce5fe744d9377d269dc01a501fe3552fde"
-  integrity sha512-/yJP2eoso5LCoF2Jh2hD7uZ4Pxo0rxGmF/THoaBiWMpeVmmA6JmwdU3CM6XdZC9Wsv7sqFZnfoMQQ4ATJvOzEA==
+"@gits-id/app-bar@^0.15.2":
+  version "0.15.2"
+  resolved "https://registry.yarnpkg.com/@gits-id/app-bar/-/app-bar-0.15.2.tgz#d01a9be1d006bd0e336ffe86d2b8bb30b3c6a2ca"
+  integrity sha512-0ARV/5dohiy5AI0M+9x5PBLVsXmNxx3iIcanaibXs//nCO2PpU4hyiwV01d1lcE5lkwrJKg9XuwBR4K4SPsmDA==
   dependencies:
     "@gits-id/theme" "^0.15.0"
     vue "^3.2.33"
 
-"@gits-id/autocomplete@^0.15.1":
-  version "0.15.1"
-  resolved "https://registry.yarnpkg.com/@gits-id/autocomplete/-/autocomplete-0.15.1.tgz#2564dbdf9c25c9e4f99ec077fec97f53278a31cb"
-  integrity sha512-BWdDee/iFZ4hc46Sq0VYeaKuKSK84j+8bRr0o09d/RloxzZTsnIbzMiFqzbtSlX6eSV8Ra17IJ0yUJ6e++jbcg==
+"@gits-id/autocomplete@^0.15.2":
+  version "0.15.2"
+  resolved "https://registry.yarnpkg.com/@gits-id/autocomplete/-/autocomplete-0.15.2.tgz#57a42c1f791f8202f22688ab5dc3896072330c66"
+  integrity sha512-ABP2MqhDCJx9FHYZA4YuV3bmSS2FwizcuRcStzjCQPSXrp7OzwARG0GRHaeu6k8zV6Ve4ZMBAI9em5h10SYIXA==
   dependencies:
-    "@gits-id/button" "^0.15.0"
-    "@gits-id/forms" "^0.15.1"
+    "@gits-id/button" "^0.15.2"
+    "@gits-id/forms" "^0.15.2"
     "@gits-id/icon" "^0.15.0"
     "@headlessui/vue" "^1.6.0"
     tailwindcss "^3.0.23"
@@ -908,10 +908,10 @@
     vue "^3.2.33"
     vue-router "^4.1.5"
 
-"@gits-id/button@^0.15.0":
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/@gits-id/button/-/button-0.15.0.tgz#d3878842e267bdb512de44f75bd988d6a0c93bc8"
-  integrity sha512-pSuAa+uGYmwNu5PAurTwIMj6FgHkLAbco8lnP0SKR/74Bw3IiUWYZDKjPoHsb0TrBOoe9Hhdb3QOPSjMkkNYuw==
+"@gits-id/button@^0.15.2":
+  version "0.15.2"
+  resolved "https://registry.yarnpkg.com/@gits-id/button/-/button-0.15.2.tgz#88c7d18bfd14cdd1e6ca529aa4d94baa9ee9213f"
+  integrity sha512-IvpUrPfOxfND6xcGvgOAfg4DV6dY6KFz1HViySndngJJE1gqvPZz9NM+wnsz02knbKKXBQbnEkH4IL/vqxuYlA==
   dependencies:
     "@gits-id/icon" "^0.15.0"
     "@gits-id/spinner" "^0.15.0"
@@ -920,10 +920,10 @@
     vue "^3.2.33"
     vue-router "^4.1.5"
 
-"@gits-id/card@^0.15.0":
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/@gits-id/card/-/card-0.15.0.tgz#1e1fee5efa1fc9d1312093ca5f96263fe4e3e702"
-  integrity sha512-4pb/MJSFsul98T7Uncha6owvf+ADlFRQ3Gh7qo/TIAVzrkclITJhi4y7Ut8hsAnUVhcgnO1sZZVp8byDAiYUXg==
+"@gits-id/card@^0.15.2":
+  version "0.15.2"
+  resolved "https://registry.yarnpkg.com/@gits-id/card/-/card-0.15.2.tgz#707885bdb0f17400a22dd4895ac9e569693c20d6"
+  integrity sha512-IVavJ/wilZ6aMgu5kAAcTyhnVqTS3XJ5SH2YBnW03TJGmJuTNCFX9UTWBCB6WJRRLigEocDE33+uWzmRWCpnfA==
   dependencies:
     vue "^3.2.33"
 
@@ -941,33 +941,33 @@
   dependencies:
     vue "^3.2.33"
 
-"@gits-id/dropdown@^0.15.1":
-  version "0.15.1"
-  resolved "https://registry.yarnpkg.com/@gits-id/dropdown/-/dropdown-0.15.1.tgz#a442c9b0575d9154a36c01e99803e3ad71fba2fc"
-  integrity sha512-8wjIa8RtdMD5QuOlIDFkOXAGGC2AdrzqQQ4ctLjTJ1ljbCuN2gGQjnOM6TVs0AE9XFLSWjtyubw4OtVRgDqscA==
+"@gits-id/dropdown@^0.15.2":
+  version "0.15.2"
+  resolved "https://registry.yarnpkg.com/@gits-id/dropdown/-/dropdown-0.15.2.tgz#b295d77dc702ce27d978736659f289399159cd9f"
+  integrity sha512-lCMTWjcKWIEa4O6tqnsPpna5fEWpKzqjiyHkFxcX/36b1igHvXUoOEG3BTB/6HGBU1R2hsFNkkbQRLbYjQxP4Q==
   dependencies:
-    "@gits-id/button" "^0.15.0"
+    "@gits-id/button" "^0.15.2"
     "@gits-id/icon" "^0.15.0"
     "@headlessui/vue" "^1.6.0"
     tailwindcss "^3.0.23"
     vue "^3.2.31"
 
-"@gits-id/editor@^0.15.0":
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/@gits-id/editor/-/editor-0.15.0.tgz#8aa7587a8ec996de11f2a07f9536445c86c8ccde"
-  integrity sha512-0LghChT9OjV8DbFZi3bqzvznOGWhM81YPzaJtsOxLjGoA7jDPqH7/Ck5MS1ByQAahRPFyMswhnf5Kef0tH4QZQ==
+"@gits-id/editor@^0.15.2":
+  version "0.15.2"
+  resolved "https://registry.yarnpkg.com/@gits-id/editor/-/editor-0.15.2.tgz#1c958887a148f4cd825fcd21779cdd003804d14f"
+  integrity sha512-yV6HzSDpT2P+pRO1uxi/Ux3hXMzivuEoLSUXJ5m7W4nHJ1wxum88CPDYmPk3gsz2s22DYA2ZDNNzcIRYo8H50Q==
   dependencies:
     "@ckeditor/ckeditor5-build-classic" "^35.3.2"
     "@ckeditor/ckeditor5-vue" "^4.0.1"
     vee-validate "^4.5.9"
     vue "^3.2.31"
 
-"@gits-id/forms@^0.15.1":
-  version "0.15.1"
-  resolved "https://registry.yarnpkg.com/@gits-id/forms/-/forms-0.15.1.tgz#e31888ee048342c7853d0ffbc5ee00eef44474a0"
-  integrity sha512-POd6NoENfEQApyt7kxSF7Qn3lz0IDQ5FZVd8oJ1O9DuXSoJr6NnJnuD/jHx9lP+9FE5281HMTDElfXepFWvO6A==
+"@gits-id/forms@^0.15.2":
+  version "0.15.2"
+  resolved "https://registry.yarnpkg.com/@gits-id/forms/-/forms-0.15.2.tgz#901e6956cd873ecc8237e6d59975c9b97d18161b"
+  integrity sha512-H9KBKNmhcGTkBvETJj3U14R5FR2Hbn1Z16CRZNVqnVqPB/UypbIHbX1wgbOb7308w81vvVSunosaqf1bFzOcmQ==
   dependencies:
-    "@gits-id/button" "^0.15.0"
+    "@gits-id/button" "^0.15.2"
     "@gits-id/icon" "^0.11.10"
     "@gits-id/spinner" "^0.15.0"
     "@gits-id/utils" "^0.15.0"
@@ -999,10 +999,10 @@
   dependencies:
     vue "^3.2.31"
 
-"@gits-id/list@^0.15.1":
-  version "0.15.1"
-  resolved "https://registry.yarnpkg.com/@gits-id/list/-/list-0.15.1.tgz#5dcf5d5ef2c689acd408ccd1a701a3d85ddef7ed"
-  integrity sha512-1g7s/P3TXD4zMz2g+IbnppJovoAbTAENXBosm6y/QjLX8N/kSOvgRRvs2Anm0HFEHEiLWHBXLJoxNeXcND457w==
+"@gits-id/list@^0.15.2":
+  version "0.15.2"
+  resolved "https://registry.yarnpkg.com/@gits-id/list/-/list-0.15.2.tgz#3197c3c8e0516315abd7fd1220829963a7515b35"
+  integrity sha512-LZKLkycB2EJQZ68mbiKko9/lBwyaCdUoSMK0jEs4YB19dNC5Dp8nRHdhj9UtLrqLap9lSHxESK0+Pg4PflIjKg==
   dependencies:
     "@gits-id/collapsible" "^0.15.0"
     vue "^3.2.33"
@@ -1025,66 +1025,66 @@
     vue "^3.2.31"
     vue-router "^4.0.13"
 
-"@gits-id/menus@^0.15.1":
-  version "0.15.1"
-  resolved "https://registry.yarnpkg.com/@gits-id/menus/-/menus-0.15.1.tgz#54f1fe85cc89c5e841a71e330ef2336e05bf0320"
-  integrity sha512-zAQ1uHK4qyykm02hIH0/H6xw6fsVDd2KOx72tJpQ3d7OCjQnvf1ejScBnbQWemBskKHKbM8RG8p5JjrTGZLZTQ==
+"@gits-id/menus@^0.15.2":
+  version "0.15.2"
+  resolved "https://registry.yarnpkg.com/@gits-id/menus/-/menus-0.15.2.tgz#11e6517f431f6c8c9fe145eafd65e6d35efd0973"
+  integrity sha512-khgyeaOoEg9EZVgIzk7JzMOU3K+0ftgktg/eLCXLsERKnpk4P5my0TRl7bIMu1YNGO6L6BGyAFhBvhC8gxkRxQ==
   dependencies:
     "@gits-id/icon" "^0.15.0"
-    "@gits-id/list" "^0.15.1"
+    "@gits-id/list" "^0.15.2"
     floating-vue "^2.0.0-beta.20"
     vue "^3.2.31"
 
-"@gits-id/modal@^0.15.0":
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/@gits-id/modal/-/modal-0.15.0.tgz#7e2549ce30a98e19c7c27618dd60d3bb7e26b5d7"
-  integrity sha512-sT6TM9WKir7kb7dOoABkMEqy+KaGpXBtbvxMMu0xzR+th/5pBU98CAKv85495kZv+6k1lNqCzoMW32kAH4RwZg==
+"@gits-id/modal@^0.15.2":
+  version "0.15.2"
+  resolved "https://registry.yarnpkg.com/@gits-id/modal/-/modal-0.15.2.tgz#8f65e40d04ebda6a1a91f3a9cfbf9370224bbdaf"
+  integrity sha512-i/6K4Bf24PbnoD8qoQjdjDapBYAFoUQWVMb5jNOBhYDLMT35dH9hjdLDA2BzOTVsSavKmQeRvlYm2jN9tp16qA==
   dependencies:
-    "@gits-id/button" "^0.15.0"
+    "@gits-id/button" "^0.15.2"
     vue "^3.2.31"
 
-"@gits-id/multi-select@^0.15.1":
-  version "0.15.1"
-  resolved "https://registry.yarnpkg.com/@gits-id/multi-select/-/multi-select-0.15.1.tgz#ff773807bfdce386f232e016b6eb5e01f1aec9bf"
-  integrity sha512-KQuVZZ3029+1DJFzmrPluhNen63MIUGeI4XhOeJL417Qh9cLreBVCkr6/ZmjKl4Pba1mtoLMrbmONehDJoP2XA==
+"@gits-id/multi-select@^0.15.2":
+  version "0.15.2"
+  resolved "https://registry.yarnpkg.com/@gits-id/multi-select/-/multi-select-0.15.2.tgz#9eef90adfb56c0d5264a35743038f37952270c00"
+  integrity sha512-sS31ywG3f0q38FM/nSoBhYji3/8owlr1CBVx8qTu5+lmdpZ4Czh1iQkkeKJ0fdhshJlBY9YaEyZf+ku3Fa0R9Q==
   dependencies:
     "@gits-id/badge" "^0.15.0"
-    "@gits-id/forms" "^0.15.1"
+    "@gits-id/forms" "^0.15.2"
     "@gits-id/icon" "^0.15.0"
-    "@gits-id/tooltip" "^0.15.0"
+    "@gits-id/tooltip" "^0.15.2"
     "@vueuse/core" "^7.7.1"
     vee-validate "^4.6.1"
     vue "^3.2.31"
 
-"@gits-id/nav-drawer@^0.15.0":
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/@gits-id/nav-drawer/-/nav-drawer-0.15.0.tgz#ce37e07818e5a7bfae2864784455ff92b39f0715"
-  integrity sha512-WbgPO7A1p5MkKQ7AiZbk+HQ11Tbdjqs1ELvWl+oEhzEarzqePI6S5m9USUAKdeS3kh5lRy5BY7bfjy0sbUuUHA==
+"@gits-id/nav-drawer@^0.15.2":
+  version "0.15.2"
+  resolved "https://registry.yarnpkg.com/@gits-id/nav-drawer/-/nav-drawer-0.15.2.tgz#32432c9306d3c82bda42c0ee4a307450b75aa639"
+  integrity sha512-NMtdwVFtedVeHBN3v2SCyJfVvVGZ64Iv+9Qdw/qCJ8HnRjDo5sFdesTrnVZgSgOvtFFI4EUvV7CayLQmOpV7nA==
   dependencies:
-    "@gits-id/button" "^0.15.0"
+    "@gits-id/button" "^0.15.2"
     "@gits-id/logo" "^0.15.0"
     "@gits-id/menu" "^0.15.0"
     "@gits-id/utils" "^0.15.0"
     vue "^3.2.31"
 
-"@gits-id/navbar@^0.15.1":
-  version "0.15.1"
-  resolved "https://registry.yarnpkg.com/@gits-id/navbar/-/navbar-0.15.1.tgz#06cc644801c2e42c405f169565ba10c4ee280721"
-  integrity sha512-uklGGjsg/Oi4GH/9gyEEz2aj8i3JSatZm5uDlqDJMJsI+TqeYBafeHQ1PPXGrV6EdSguoB4Y+HAlpNx4J0cK5Q==
+"@gits-id/navbar@^0.15.2":
+  version "0.15.2"
+  resolved "https://registry.yarnpkg.com/@gits-id/navbar/-/navbar-0.15.2.tgz#498b7f4d3d35bc2153cedc5ee8e753794d9cd475"
+  integrity sha512-U1Z4y6Ynzvr0xF045oaOsKEDoHyOP2Rj/llDVCuDzb9JLk/o8vnM3bnVRX+t5xPlg74GeKreem9JAmqx37UwGg==
   dependencies:
-    "@gits-id/button" "^0.15.0"
+    "@gits-id/button" "^0.15.2"
     "@gits-id/logo" "^0.15.0"
-    "@gits-id/menus" "^0.15.1"
+    "@gits-id/menus" "^0.15.2"
     vue "^3.2.31"
 
-"@gits-id/pages@^0.15.1":
-  version "0.15.1"
-  resolved "https://registry.yarnpkg.com/@gits-id/pages/-/pages-0.15.1.tgz#d49b4691b6137616d24164825bdde2f4ee85374b"
-  integrity sha512-jl6ggmC1J6jIBq4M95NV9FgzJ1LES3emDJtgmDwtk+t+fC5UtHIgpwtCjk+p+QRN2uvnV+ODoWiWZob4VS8KGw==
+"@gits-id/pages@^0.15.2":
+  version "0.15.2"
+  resolved "https://registry.yarnpkg.com/@gits-id/pages/-/pages-0.15.2.tgz#94a79ae9dcc5d733a2b8400cf237aa2223972cfc"
+  integrity sha512-IqxOipUTrsFY5EV0UpAJXoh5LbdPdN1Kze+EYONiI01iS3A51Ly1dwqT5Z0P+o5qG7gFfdgVWFiGf3FDDpsWOw==
   dependencies:
-    "@gits-id/alert" "^0.15.0"
-    "@gits-id/button" "^0.15.0"
-    "@gits-id/forms" "^0.15.1"
+    "@gits-id/alert" "^0.15.2"
+    "@gits-id/button" "^0.15.2"
+    "@gits-id/forms" "^0.15.2"
     "@iconify/vue" "^3.2.1"
     vue "^3.2.31"
     yup "^0.32.11"
@@ -1105,24 +1105,24 @@
     "@gits-id/utils" "^0.15.0"
     vue "^3.2.31"
 
-"@gits-id/select@^0.15.1":
-  version "0.15.1"
-  resolved "https://registry.yarnpkg.com/@gits-id/select/-/select-0.15.1.tgz#051dd7eef1870468eb79da5ad1b86e26ae0745da"
-  integrity sha512-0yIR10ZSy9760GFv7D9n+DUuTCSdtDS7mMrJYqgAmDittyzVLn2JtLCmA4So7QzqyDf9O9zXH2MQCTkgioxu5g==
+"@gits-id/select@^0.15.2":
+  version "0.15.2"
+  resolved "https://registry.yarnpkg.com/@gits-id/select/-/select-0.15.2.tgz#45d1cb877feb3595cd720d81bbf7fe09e52c8d82"
+  integrity sha512-VMZKqSbtazByO3zj2XoKIaM4R410K1QSpLswfdLpNfNU0bshlqZoJASm1jXtTRqTGLhW1CCfB7ww9JzbFsPIlA==
   dependencies:
-    "@gits-id/forms" "^0.15.1"
+    "@gits-id/forms" "^0.15.2"
     "@gits-id/icon" "^0.15.0"
     "@gits-id/theme" "^0.15.0"
-    "@gits-id/tooltip" "^0.15.0"
+    "@gits-id/tooltip" "^0.15.2"
     "@gits-id/utils" "^0.15.0"
     vue "^3.2.31"
 
-"@gits-id/services@^0.15.0":
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/@gits-id/services/-/services-0.15.0.tgz#fffb1300c822e42a3a9c28376976c39795530f19"
-  integrity sha512-+ZnSqj6FUguegAs3XzoXdT8niYCiz8O25NKxBJJ0fJgPJLppJK9k6y1lVxJzxuaBoOkwNLC4bZjFlxjYyIXnhw==
+"@gits-id/services@^0.15.2":
+  version "0.15.2"
+  resolved "https://registry.yarnpkg.com/@gits-id/services/-/services-0.15.2.tgz#37ac6ba4623c78aea8dfb64b2a7ebd28a655adc3"
+  integrity sha512-scOjCOG1tI5ZF3TthwwCa5RF1xP94fEUWHqFZCOez8vCbE8Y02/O43ey6Uf7cWJGGJ6GaODfzIUAQJJ/lzhiMA==
   dependencies:
-    "@gits-id/button" "^0.15.0"
+    "@gits-id/button" "^0.15.2"
     axios "^0.26.0"
     vue "^3.2.33"
 
@@ -1140,44 +1140,44 @@
   dependencies:
     vue "^3.2.33"
 
-"@gits-id/stats@^0.15.0":
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/@gits-id/stats/-/stats-0.15.0.tgz#aef84836380824b3341fefd4d20bc2ea0437317a"
-  integrity sha512-0UxqojxH2bQejwxlAqFDSuBPS53360/3LV2ZHaB4xdudQCgTSgT7FkpIhiN8bK8ojyXbjehnNwRT/0KH5uUkiw==
+"@gits-id/stats@^0.15.2":
+  version "0.15.2"
+  resolved "https://registry.yarnpkg.com/@gits-id/stats/-/stats-0.15.2.tgz#f85d98b713b02d924f1aa49f84322b3d307b6790"
+  integrity sha512-roWoSDrEKK8d1h5rXXkoW7ib7a+TESf9gEimDvtCkCJYGK8hZOP0sxbzZWcE299BqAE7qWK8xROD1fuSuAFwsw==
   dependencies:
     "@gits-id/badge" "^0.15.0"
-    "@gits-id/card" "^0.15.0"
+    "@gits-id/card" "^0.15.2"
     "@gits-id/icon" "^0.15.0"
     "@iconify/vue" "^3.2.1"
     vue "^3.2.31"
 
-"@gits-id/switch@^0.15.0":
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/@gits-id/switch/-/switch-0.15.0.tgz#4351bf830dfa67201d201a5fba2fae29a41928d8"
-  integrity sha512-yS4M/C9q9/7TbgKoVzckWlXxguDeRrzZcuj2hXmJrZ9hEE2xuixZQ+gny7ZqUDyFaDseGfU9kyevCmbVgDBCog==
+"@gits-id/switch@^0.15.2":
+  version "0.15.2"
+  resolved "https://registry.yarnpkg.com/@gits-id/switch/-/switch-0.15.2.tgz#f6427884df28e245a870d3997479d0213e1f23ea"
+  integrity sha512-fJdIXE1l3dacBL6xvkyzBubApfgQPsn78SWrX2/+F4QiUTt7iuHy1ryJiZriiXQ4mf5bP0ylERXLRbLSsVs+cg==
   dependencies:
     vee-validate "^4.5.11"
     vue "^3.2.31"
 
-"@gits-id/table@^0.15.1":
-  version "0.15.1"
-  resolved "https://registry.yarnpkg.com/@gits-id/table/-/table-0.15.1.tgz#9fc3afef989dbfb0c4312888c69be3c2e366d989"
-  integrity sha512-fmsJqiy4VT2pdtOf8KZ4E5rCKuidTKC8+xCeL/3cGumR8JyvL+kqoePN00989Wvsl2RPKfuBX8eP4iZlMuwNqg==
+"@gits-id/table@^0.15.2":
+  version "0.15.2"
+  resolved "https://registry.yarnpkg.com/@gits-id/table/-/table-0.15.2.tgz#648a79a1ffe9f37e6f2d236afb4d381f6631db8d"
+  integrity sha512-WszE4fyXhtoJl/BnB4gNWbVaNSoSFlc2sD/77bdtISjqK55uvr72VJWBZZ3zz4ddhRO/yEYu5wWWjfQwyp3RSg==
   dependencies:
-    "@gits-id/forms" "^0.15.1"
+    "@gits-id/forms" "^0.15.2"
     "@gits-id/icon" "^0.15.0"
     "@gits-id/pagination" "^0.15.0"
     "@gits-id/spinner" "^0.15.0"
     "@gits-id/utils" "^0.15.0"
     vue "^3.2.33"
 
-"@gits-id/tabs@^0.15.0":
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/@gits-id/tabs/-/tabs-0.15.0.tgz#45c210eb11cbb1e65846fad348290ae58b1dadef"
-  integrity sha512-FkHnmMAu5+CWgRRK5MQ/X3sHGPI8bprrKrSck3FvhXi2VrT+dpGfeGLhT1NbrjYwGc8xYL5HvFCHFUya0QHELQ==
+"@gits-id/tabs@^0.15.2":
+  version "0.15.2"
+  resolved "https://registry.yarnpkg.com/@gits-id/tabs/-/tabs-0.15.2.tgz#7a8d3543ace43cd4e0c59eef1ee0697047de7329"
+  integrity sha512-PsypC8Ezskf3ukXRyfoGz8YKKv0h1oZ4058R3EWzqXyn0myBzbh9nSdXOIP9s1yTk1VcfFU1tMp5pETZ67uDIQ==
   dependencies:
-    "@gits-id/button" "^0.15.0"
-    "@gits-id/card" "^0.15.0"
+    "@gits-id/button" "^0.15.2"
+    "@gits-id/card" "^0.15.2"
     "@gits-id/icon" "^0.11.10"
     "@gits-id/utils" "^0.15.0"
     vue "^3.2.31"
@@ -1227,80 +1227,80 @@
     tailwindcss "^3.0.23"
     vue "^3.2.33"
 
-"@gits-id/toast@^0.15.0":
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/@gits-id/toast/-/toast-0.15.0.tgz#0b0d20641c639fdbe38a11b6b5614365a23c0847"
-  integrity sha512-MNHiMHgqixJs9iwlZ5cNJLInQTxa0z51NKmNlqVnE1Xle8VeVSH2wt5LZWKXv15UjsZ2dLI5uuLEJR+CL3oeGg==
+"@gits-id/toast@^0.15.2":
+  version "0.15.2"
+  resolved "https://registry.yarnpkg.com/@gits-id/toast/-/toast-0.15.2.tgz#f90b361342c286e2ff5e977faaed4a3e797f2375"
+  integrity sha512-x74tW9IZUOtT68NHpZJPjFzXtD7F2xokxYvdo3J2+xBJEpPy5wPSikgEjWFrg5NktQO4AFz1BbONZDCKJKfa2A==
   dependencies:
-    "@gits-id/button" "^0.15.0"
+    "@gits-id/button" "^0.15.2"
     "@gits-id/icon" "^0.15.0"
     pinia "^2.0.11"
     vee-validate "^4.5.9"
     vue "^3.2.31"
     vuex "^4.0.2"
 
-"@gits-id/tooltip@^0.15.0":
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/@gits-id/tooltip/-/tooltip-0.15.0.tgz#8cdb02e5ec7d0d36d4f020f24153751274a6c352"
-  integrity sha512-gZh1dYRztDVaBy5f4nXbfuPoxrPYf+75eZaGJ7/AMKnJBJZz7B+td7ccZXP7YFPe1E8eH+NtQPL5L89xTS6zug==
+"@gits-id/tooltip@^0.15.2":
+  version "0.15.2"
+  resolved "https://registry.yarnpkg.com/@gits-id/tooltip/-/tooltip-0.15.2.tgz#de7de98774d612c3c369a1314b3126834af0f8ce"
+  integrity sha512-7m2kNHI47CmnyiQtEwA1UMNY6jeTb0nUk9I7fbJTRC+VJiwDHUCbElGhANvCinfxOJ5kScV6dWQlNkewPkUS8g==
   dependencies:
     floating-vue "^2.0.0-beta.20"
     vee-validate "^4.5.9"
     vue "^3.2.31"
 
-"@gits-id/ui-nuxt@^0.15.1":
-  version "0.15.1"
-  resolved "https://registry.yarnpkg.com/@gits-id/ui-nuxt/-/ui-nuxt-0.15.1.tgz#462360ad8b2f89018ce2464e6d6204986d539ae2"
-  integrity sha512-enH3Xrj8XTw0+iSp9+7d8l5PzztQ7eq2Ok/KwPy3xfO23nik/620UpUf0YUeA0nojh2y0ZHCuhsaCnB/XjcQ0g==
+"@gits-id/ui-nuxt@^0.15.2":
+  version "0.15.2"
+  resolved "https://registry.yarnpkg.com/@gits-id/ui-nuxt/-/ui-nuxt-0.15.2.tgz#bae3e095947805b47fdd6d9647f57cb67327ba83"
+  integrity sha512-mrObFPM20kKjwx5CzV2ZEjFbloKRokyVYgNu4h91HNo2sYFv3me6sSyV6M2JyzjZcWM0f9K2GkrzLOXtTKRP/g==
   dependencies:
-    "@gits-id/ui" "^0.15.1"
-    "@nuxt/kit" "^3.0.0"
+    "@gits-id/ui" "^0.15.2"
+    "@nuxt/kit" "^3.1.1"
 
-"@gits-id/ui@^0.15.1":
-  version "0.15.1"
-  resolved "https://registry.yarnpkg.com/@gits-id/ui/-/ui-0.15.1.tgz#6a00c538d1c52d9ef6aa46bfc9ae9820430515ff"
-  integrity sha512-OWkvHRmv+liIcEIN1mKigFrrYWzjCp9vM0AA2OFyUMLQTDu4Kv8BPnGQEeggw+ooV2trJLdFau7hUwz9FLgzmw==
+"@gits-id/ui@^0.15.2":
+  version "0.15.2"
+  resolved "https://registry.yarnpkg.com/@gits-id/ui/-/ui-0.15.2.tgz#945b403132912f11a0bc81f7aed6a075e26dd7a1"
+  integrity sha512-ObLPh9Ulu4qtZccrZx4y7Vo6Y6BW0NSc3BPcfJIYkIJiPBSAsi5mA654LFFWQmPONkHUG32idbK4AX/f8E2JMw==
   dependencies:
-    "@gits-id/alert" "^0.15.0"
-    "@gits-id/app-bar" "^0.15.0"
-    "@gits-id/autocomplete" "^0.15.1"
+    "@gits-id/alert" "^0.15.2"
+    "@gits-id/app-bar" "^0.15.2"
+    "@gits-id/autocomplete" "^0.15.2"
     "@gits-id/avatar" "^0.15.0"
     "@gits-id/badge" "^0.15.0"
     "@gits-id/breadcrumbs" "^0.15.0"
-    "@gits-id/button" "^0.15.0"
-    "@gits-id/card" "^0.15.0"
+    "@gits-id/button" "^0.15.2"
+    "@gits-id/card" "^0.15.2"
     "@gits-id/collapsible" "^0.15.0"
     "@gits-id/container" "^0.15.0"
-    "@gits-id/dropdown" "^0.15.1"
-    "@gits-id/editor" "^0.15.0"
-    "@gits-id/forms" "^0.15.1"
+    "@gits-id/dropdown" "^0.15.2"
+    "@gits-id/editor" "^0.15.2"
+    "@gits-id/forms" "^0.15.2"
     "@gits-id/icon" "^0.15.0"
     "@gits-id/layouts" "^0.15.0"
-    "@gits-id/list" "^0.15.1"
+    "@gits-id/list" "^0.15.2"
     "@gits-id/logo" "^0.15.0"
     "@gits-id/menu" "^0.15.0"
-    "@gits-id/menus" "^0.15.1"
-    "@gits-id/modal" "^0.15.0"
-    "@gits-id/multi-select" "^0.15.1"
-    "@gits-id/nav-drawer" "^0.15.0"
-    "@gits-id/navbar" "^0.15.1"
-    "@gits-id/pages" "^0.15.1"
+    "@gits-id/menus" "^0.15.2"
+    "@gits-id/modal" "^0.15.2"
+    "@gits-id/multi-select" "^0.15.2"
+    "@gits-id/nav-drawer" "^0.15.2"
+    "@gits-id/navbar" "^0.15.2"
+    "@gits-id/pages" "^0.15.2"
     "@gits-id/pagination" "^0.15.0"
     "@gits-id/progress-bar" "^0.15.0"
-    "@gits-id/select" "^0.15.1"
-    "@gits-id/services" "^0.15.0"
+    "@gits-id/select" "^0.15.2"
+    "@gits-id/services" "^0.15.2"
     "@gits-id/shimmer" "^0.15.0"
     "@gits-id/spinner" "^0.15.0"
-    "@gits-id/stats" "^0.15.0"
-    "@gits-id/switch" "^0.15.0"
-    "@gits-id/table" "^0.15.1"
-    "@gits-id/tabs" "^0.15.0"
+    "@gits-id/stats" "^0.15.2"
+    "@gits-id/switch" "^0.15.2"
+    "@gits-id/table" "^0.15.2"
+    "@gits-id/tabs" "^0.15.2"
     "@gits-id/tailwind-components" "^0.15.0"
     "@gits-id/tailwind-config" "^0.15.0"
     "@gits-id/textarea" "^0.3.0"
     "@gits-id/theme" "^0.15.0"
-    "@gits-id/toast" "^0.15.0"
-    "@gits-id/tooltip" "^0.15.0"
+    "@gits-id/toast" "^0.15.2"
+    "@gits-id/tooltip" "^0.15.2"
     "@gits-id/utils" "^0.15.0"
     "@headlessui/vue" "^1.6.0"
     "@vue/test-utils" "^2.0.0-rc.17"
@@ -1447,7 +1447,7 @@
   resolved "https://registry.yarnpkg.com/@nuxt/devalue/-/devalue-2.0.0.tgz#c7bd7e9a516514e612d5d2e511ffc399e0eac322"
   integrity sha512-YBI/6o2EBz02tdEJRBK8xkt3zvOFOWlLBf7WKYGBsSYSRtjjgrqPe2skp6VLLmKx5WbHHDNcW+6oACaurxGzeA==
 
-"@nuxt/kit@3.1.1":
+"@nuxt/kit@3.1.1", "@nuxt/kit@^3.1.1":
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/@nuxt/kit/-/kit-3.1.1.tgz#7641afe192297db02d3585234e9d2a71caf164df"
   integrity sha512-wmqVCIuD/te6BKf3YiqWyMumKI5JIpkiv0li/1Y3QHnTkoxyIhLkbFgNcQHuBxJ3eMlk2UjAjAqWiqBHTX54vQ==
