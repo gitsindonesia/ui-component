@@ -52,7 +52,7 @@ const props = defineProps({
     default: 'md',
   },
   elevateOnScroll: {
-    type: Boolean,
+    type: [Boolean, String] as PropType<DefaultShadows>,
     default: false,
   },
   scrollDistance: {
