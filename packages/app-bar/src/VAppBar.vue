@@ -59,6 +59,10 @@ const props = defineProps({
     type: Number,
     default: 0,
   },
+  hideOnScroll: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const emit =
@@ -117,6 +121,25 @@ const shadowClass = computed(() => {
 
   return getShadowClass(props.shadow);
 });
+
+// hide on scroll
+if (props.hideOnScroll) {
+  const handleScroll = () => {
+    if (window.scrollY > props.scrollDistance) {
+      isOpen.value = false;
+    } else {
+      isOpen.value = true;
+    }
+  };
+
+  onMounted(() => {
+    window.addEventListener('scroll', handleScroll);
+  });
+
+  onBeforeUnmount(() => {
+    window.removeEventListener('scroll', handleScroll);
+  });
+}
 </script>
 
 <template>

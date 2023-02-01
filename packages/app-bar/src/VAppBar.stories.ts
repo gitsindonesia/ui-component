@@ -379,3 +379,14 @@ export const ElevateOnScroll: Story<{}> = () => ({
   </main>
 `,
 });
+
+export const HideOnScroll: Story<{}> = () => ({
+  components: {VAppBar},
+  template: `
+  <main class="mt-5 h-screen bg-gray-50 text-white">
+    <VAppBar fixed hide-on-scroll transition="slide-down">
+      AppBar Hide On Scroll
+    </VAppBar>
+  </main>
+`,
+});

@@ -230,6 +230,24 @@ You can also change the size of shadow by setting the value of `elevate-on-scrol
 </template>
 ```
 
+## Hide on Scroll
+
+- **prop**: `hide-on-scroll`
+- **type**: `boolean`
+- **default**: `false`
+
+Use `hide-on-scroll` prop to hide app-bar when user scroll the page.
+
+<LivePreview src="components-appbar--elevate-on-scroll" >
+
+```vue
+<template>
+  <VAppBar fixed hide-on-scroll transition="slide-down"> Brand </VAppBar>
+</template>
+```
+
+</LivePreview>
+
 ## Props
 
 | Name                                    | Type                                               | Default   |
@@ -243,6 +261,7 @@ You can also change the size of shadow by setting the value of `elevate-on-scrol
 | [bordered](#bordered)                   | `boolean`                                          | `false`   |
 | [transition](#transition)               | `string`                                           | `fade`    |
 | [elevate-on-scroll](#elevate-on-scroll) | `boolean \| string`                                | `false`   |
+| [hide-on-scroll](#hide-on-scroll)       | `boolean`                                          | `false`   |
 
 ## Methods
 
