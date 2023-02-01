@@ -18,6 +18,7 @@
   "dependencies": {
     "@gits-id/button": "^0.16.0",
     "@gits-id/icon": "^0.16.0",
+    "@gits-id/list": "^0.16.0",
     "vue": "^3.2.33"
   },
   "devDependencies": {
