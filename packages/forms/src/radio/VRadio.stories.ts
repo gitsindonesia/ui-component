@@ -13,30 +13,18 @@ import './VRadio.dark.scss';
 export default {
   title: 'Forms/Radio',
   component: VRadio,
-  argTypes: {
-    size: {
-      control: 'select',
-      options: sizes,
-    },
-    color: {
-      control: 'select',
-      options: themeColors,
-    },
-  },
-  args: {
-    modelValue: '',
-    label: 'Radio',
-    color: '',
-    size: '',
-  },
 } as Meta;
 
 const Template: Story = (args) => ({
   components: {VRadio},
   setup() {
-    return {args};
+    const value = ref('1');
+    return {args, value};
   },
-  template: `<VRadio v-bind='args'>${args.label}</VRadio>`,
+  template: `
+  <VRadio v-model="value" value="1" label="Choose 1" id="1" />
+  <VRadio v-model="value" value="0" label="Choose 0" id="0" />
+  `,
 });
 
 export const Radio = Template.bind({});
@@ -214,31 +202,14 @@ TestInputState.args = {
 export const DarkMode: Story<{}> = () => ({
   components: {VRadio},
   setup() {
-    const items = ['fire', 'earth', 'wind', 'water'];
-    const modelValue = ref();
-    return {items, modelValue};
+    const value = ref('1');
+    return {value};
   },
   template: `
   <div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
-    <p>Default</p>
-    <VRadio
-      v-for="item in items"
-      v-model="modelValue"
-      :key="item"
-      :id="item"
-      :label="item"
-      :value="item"
-    />
-    <p class="mt-5 mb-2">Disabled</p>
-    <VRadio
-      v-for="item in items"
-      v-model="modelValue"
-      :key="item"
-      :id="item"
-      :label="item"
-      :value="item"
-      disabled
-    />
+    <VRadio v-model="value" value="1" label="Choose 1" id="1" />
+    <VRadio v-model="value" value="0" label="Choose 0" id="0" />
+    <VRadio v-model="value" value="2" label="Disabled" disabled />
   </div>
   `,
 });

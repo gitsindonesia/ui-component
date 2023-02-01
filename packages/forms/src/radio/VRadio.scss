@@ -31,8 +31,8 @@
 
     &:disabled {
       @apply cursor-not-allowed;
-      border-color: var(--v-radio-disabled-border-color);
-      background-color: var(--v-radio-disabled-bg-color);
+      --v-radio-bg-color: var(--v-radio-disabled-border-color);
+      --v-radio-border-color: var(--v-radio-disabled-bg-color);
     }
   }
 
