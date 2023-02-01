@@ -55,6 +55,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  scrollDistance: {
+    type: Number,
+    default: 0,
+  },
 });
 
 const emit =
@@ -82,7 +86,7 @@ defineExpose(toggle);
 // elevate on scroll
 if (props.elevateOnScroll) {
   const handleScroll = () => {
-    if (window.scrollY > 0) {
+    if (window.scrollY > props.scrollDistance) {
       isElevated.value = true;
     } else {
       isElevated.value = false;
