@@ -16,7 +16,7 @@
   "dependencies": {
     "vue": "^3.2.31"
   },
-  "gitHead": "b5a78473960cae120ca3396a242f6fb241970de4",
+  "gitHead": "8aafa41bf181f6bfa091c9715a71a8b81c61440d",
   "devDependencies": {
     "c8": "^7.11.3",
     "vite": "^3.0.0",

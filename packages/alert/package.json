@@ -30,7 +30,7 @@
     "vite": "^3.0.0",
     "vitest": "^0.12.4"
   },
-  "gitHead": "8104720a06b60ca92b79f9b6ce89108faa68bba5",
+  "gitHead": "8aafa41bf181f6bfa091c9715a71a8b81c61440d",
   "main": "dist/alert.umd.js",
   "unpkg": "dist/alert.iife.js",
   "jsdelivr": "dist/alert.iife.js",

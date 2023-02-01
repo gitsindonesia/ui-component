@@ -10,7 +10,7 @@
   ],
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
-  "gitHead": "8104720a06b60ca92b79f9b6ce89108faa68bba5",
+  "gitHead": "8aafa41bf181f6bfa091c9715a71a8b81c61440d",
   "main": "src/index.js",
   "devDependencies": {
     "tailwindcss": "^3.2.3"
