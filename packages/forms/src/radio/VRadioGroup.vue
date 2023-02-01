@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import {
-  computed,
   PropType,
   ref,
   onMounted,
