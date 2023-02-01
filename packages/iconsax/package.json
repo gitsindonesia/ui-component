@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/iconsax",
-  "version": "0.16.0",
+  "version": "0.16.1",
   "description": "Vue Iconsax",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
