@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.2](https://github.com/gitsindonesia/ui-component/compare/v0.15.1...v0.15.2) (2023-02-01)
+
+### Bug Fixes
+
+- **Dark Mode:** improve disabled state on dark mode ([#113](https://github.com/gitsindonesia/ui-component/issues/113)) ([917b5bf](https://github.com/gitsindonesia/ui-component/commit/917b5bfc81499cd730edea05b2be6478cf053947))
+
 ## [0.15.1](https://github.com/gitsindonesia/ui-component/compare/v0.15.0...v0.15.1) (2023-01-18)
 
 **Note:** Version bump only for package @gits-id/multi-select

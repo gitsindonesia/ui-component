@@ -174,13 +174,17 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  multiSort: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const emit =
   defineEmits<{
     (e: 'update:search', value: string): void;
-    (e: 'update:sortBy', value: string): void;
-    (e: 'update:sortDirection', value: SortDirection): void;
+    (e: 'update:sortBy', value: string | string[]): void;
+    (e: 'update:sortDirection', value: SortDirection | SortDirection[]): void;
     (e: 'update:page', value: number): void;
     (e: 'update:itemsPerPage', value: number): void;
     (e: 'update:totalItems', value: number): void;
@@ -190,7 +194,13 @@ const emit =
     (e: 'pagination:change', value: Record<string, any>): void;
     (e: 'update:modelValue', value: any): void;
     (e: 'update:value', value: any): void;
-    (e: 'sort', payload: {sortBy: string; direction: SortDirection}): void;
+    (
+      e: 'sort',
+      payload: {
+        sortBy: string | string[];
+        direction: SortDirection | SortDirection[];
+      },
+    ): void;
     (e: 'row:click', item: VDataTableItem): void;
   }>();
 
@@ -215,13 +225,24 @@ const {
   modelValue,
   sortBy: sortByProp,
   sortDirection: sortDirectionProp,
+  multiSort,
 } = toRefs(props);
 
 const page = ref(paginationPage.value);
 const perPage = ref(itemsPerPage.value);
 const offset = computed(() => (page.value - 1) * Number(perPage.value));
-const sortBy = ref(sortByProp.value);
-const sortDirection = ref<SortDirection>(sortDirectionProp.value);
+const sortBy = ref<string | string[]>(
+  multiSort.value && !Array.isArray(sortByProp.value)
+    ? [sortByProp.value]
+    : sortByProp.value,
+);
+const sortDirection = ref<SortDirection | SortDirection[]>(
+  multiSort.value && !Array.isArray(sortDirectionProp.value)
+    ? [sortDirectionProp.value]
+    : sortDirectionProp.value,
+);
+
+const sortMap = ref<Map<string, SortDirection>>(new Map());
 
 const defaultSearchBy = computed(() => headers.value.map((item) => item.value));
 
@@ -231,18 +252,35 @@ const paginatedItems = computed(() => {
   if (serverSide.value) return clonedItems;
 
   // sorting
-  if (sortBy.value && !serverSide.value) {
+  const sortByKey = Array.from(sortMap.value.keys());
+  if (sortByKey.length && !serverSide.value) {
     clonedItems.sort((a, b) => {
-      const aValue = +a[sortBy.value];
-      const bValue = +b[sortBy.value];
-      if (!isNaN(aValue) && !isNaN(bValue))
-        return Number(aValue) - Number(bValue);
+      let sortVal = 0;
 
-      return String(aValue).localeCompare(String(bValue));
+      // loop each sort key
+      sortByKey?.forEach((key: string) => {
+        // get value from path ie. user.name.first
+        const valA = get(a, key);
+        const valB = get(b, key);
+
+        // only do sort if sort value is 0 (meaning, no sort has been done for previous key)
+        // if multiSort is supported, this will sort next key only if previous key result is a === b,
+        // allowing correct sort order result instead of giving last-key order result.
+        if (sortVal === 0) {
+          if (!isNaN(+valA) && !isNaN(+valB)) {
+            sortVal = +valA - +valB;
+          } else {
+            sortVal = valA.localeCompare(valB);
+          }
+
+          if (sortMap.value.get(key) === 'desc') {
+            sortVal = sortVal !== 0 ? -sortVal : 0;
+          }
+        }
+      });
+
+      return sortVal;
     });
-    if (sortDirection.value === 'desc') {
-      clonedItems.reverse();
-    }
   }
   // filter
   if (search.value && !serverSide.value) {
@@ -272,7 +310,7 @@ const computedHeaders = computed(() =>
 );
 
 const getThClass = (header: VDataTableHeader) => {
-  const isActive = header.sorting && sortBy.value === header.value;
+  const isActive = sortMap.value.get(header.value);
   return [
     {
       [`v-table-th--${header.align}`]: !!header.align,
@@ -301,37 +339,49 @@ const handleSort = (header: VDataTableHeader) => {
   if (!header) return;
 
   let direction: SortDirection = '';
-  if (mustSort.value) {
-    if (sortDirection.value === 'asc') {
-      direction = 'desc';
-    } else {
-      direction = 'asc';
-    }
-  } else {
-    if (sortDirection.value === '') {
-      direction = 'asc';
-    } else if (sortDirection.value === 'asc') {
-      direction = 'desc';
-    } else if (sortDirection.value === 'desc') {
-      direction = '';
-    }
+  let initDir = sortMap?.value?.get(header.value);
+
+  if (!initDir) {
+    direction = 'asc';
+  } else if (initDir === 'asc') {
+    direction = 'desc';
+  } else if (initDir === 'desc') {
+    direction = mustSort.value ? 'asc' : '';
   }
 
-  header.sorting = direction;
+  if (direction) {
+    if (multiSort.value) {
+      sortMap.value?.set(header.value, direction);
+    } else {
+      sortMap.value?.clear();
+      sortMap.value?.set(header.value, direction);
+    }
+  } else {
+    sortMap.value?.delete(header.value);
+  }
 
-  sortBy.value = header.value;
-  sortDirection.value = direction;
+  sortBy.value = multiSort.value
+    ? Array.from(sortMap.value.keys())
+    : header.value;
+  sortDirection.value = multiSort.value
+    ? Array.from(sortMap.value.values())
+    : direction;
 };
 
 // watch sorting
-watch([sortBy, sortDirection], ([newSortBy, newDirection]) => {
-  emit('update:sortBy', newSortBy);
-  emit('update:sortDirection', newDirection);
-  emit('sort', {
-    sortBy: newSortBy,
-    direction: newDirection,
-  });
-});
+watch(
+  [sortBy, sortDirection, sortMap],
+  ([newSortBy, newDirection, newSortMap]) => {
+    emit('update:sortBy', newSortBy);
+    emit('update:sortDirection', newDirection);
+    emit('sort', {
+      sortBy: multiSort.value ? Array.from(newSortMap.keys()) : newSortBy,
+      direction: multiSort.value
+        ? Array.from(newSortMap.values())
+        : newDirection,
+    });
+  },
+);
 
 const onPaginationChange = (params = {}) => {
   emit('pagination:change', {
@@ -473,12 +523,12 @@ const handleRowClick = (item: VDataTableItem, index: number) => {
                   </span>
                   <Icon
                     name="heroicons:chevron-down"
-                    v-if="header.sorting === 'desc'"
+                    v-if="sortMap.get(header.value) === 'desc'"
                     class="v-table-sort-icon"
                   />
                   <Icon
                     name="heroicons:chevron-up"
-                    v-if="header.sorting === 'asc'"
+                    v-if="sortMap.get(header.value) === 'asc'"
                     class="v-table-sort-icon"
                   />
                 </button>

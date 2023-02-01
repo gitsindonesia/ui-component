@@ -4,12 +4,16 @@
   --v-radio-border-style: solid;
   --v-radio-border-width: 1px;
 
+  // disabled
+  --v-radio-disabled-border-color: var(--v-input-disabled-border-color);
+  --v-radio-disabled-bg-color: var(--v-input-disabled-bg-color);
+
   // label
   --v-radio-label-color: theme('colors.gray.800');
 }
 
 .v-radio {
-  &-group {
+  &-wrapper {
     @apply flex w-full items-center gap-2 select-none;
   }
   
@@ -24,6 +28,12 @@
     border-style: var(--v-radio-border-style);
 
     @apply transition duration-300;
+
+    &:disabled {
+      @apply cursor-not-allowed;
+      --v-radio-bg-color: var(--v-radio-disabled-border-color);
+      --v-radio-border-color: var(--v-radio-disabled-bg-color);
+    }
   }
 
   &-error {

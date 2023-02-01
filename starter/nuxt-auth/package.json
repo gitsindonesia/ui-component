@@ -1,0 +1,34 @@
+{
+  "name": "@gits-id/nuxt-auth",
+  "description": "A Nuxt theme to get authentication ready with @sidebase/nuxt-auth and GITS UI.",
+  "version": "0.1.0",
+  "keywords": [
+    "auth",
+    "dashboard",
+    "template",
+    "nuxt",
+    "nuxt.js",
+    "vue",
+    "vue.js",
+    "gits",
+    "gits-id",
+    "gits-ui"
+  ],
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@gits-id/ui-nuxt": "^0.15.2",
+    "next-auth": "^4.19.1"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.3.0",
+    "@sidebase/nuxt-auth": "^0.4.0-alpha.5",
+    "nuxt": "^3.1.1",
+    "sass": "^1.58.0"
+  }
+}

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.2](https://github.com/gitsindonesia/ui-component/compare/v0.15.1...v0.15.2) (2023-02-01)
+
+### Bug Fixes
+
+- **Dark Mode:** improve disabled state on dark mode ([#113](https://github.com/gitsindonesia/ui-component/issues/113)) ([917b5bf](https://github.com/gitsindonesia/ui-component/commit/917b5bfc81499cd730edea05b2be6478cf053947))
+
+### Features
+
+- **dark mode:** fix dark mode radio & radio group ([d9267f1](https://github.com/gitsindonesia/ui-component/commit/d9267f1d18be433402ae4397152044ade3578698))
+- **nuxt:** upgrade to nuxt 3.1.1 ([2b3c09f](https://github.com/gitsindonesia/ui-component/commit/2b3c09fb3d562c99e4db2a87aad9cebd5d2a5307))
+
 ## [0.15.1](https://github.com/gitsindonesia/ui-component/compare/v0.15.0...v0.15.1) (2023-01-18)
 
 **Note:** Version bump only for package @gits-id/ui-nuxt

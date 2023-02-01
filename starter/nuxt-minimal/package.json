@@ -22,11 +22,11 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@gits-id/ui-nuxt": "^0.15.1"
+    "@gits-id/ui-nuxt": "^0.15.2"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.2.0",
-    "nuxt": "3.0.0",
-    "sass": "^1.57.1"
+    "@nuxtjs/tailwindcss": "^6.3.0",
+    "nuxt": "^3.1.1",
+    "sass": "^1.58.0"
   }
 }

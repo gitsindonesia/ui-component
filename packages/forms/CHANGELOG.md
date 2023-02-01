@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.2](https://github.com/gitsindonesia/ui-component/compare/v0.15.1...v0.15.2) (2023-02-01)
+
+### Bug Fixes
+
+- **Dark Mode:** improve disabled state on dark mode ([#113](https://github.com/gitsindonesia/ui-component/issues/113)) ([917b5bf](https://github.com/gitsindonesia/ui-component/commit/917b5bfc81499cd730edea05b2be6478cf053947))
+- **VRadio:** fix radio disabled color ([9d6e624](https://github.com/gitsindonesia/ui-component/commit/9d6e624e5b62623d748da01fd0d74bc73f1dfc84))
+
+### Features
+
+- **dark mode:** fix dark mode radio & radio group ([d9267f1](https://github.com/gitsindonesia/ui-component/commit/d9267f1d18be433402ae4397152044ade3578698))
+- **VRadioGroup:** improve styling for v-radio-group with dark mode support ([66a0a8b](https://github.com/gitsindonesia/ui-component/commit/66a0a8b8d6d22bd0b640806cf54ad4575e443675))
+
 ## [0.15.1](https://github.com/gitsindonesia/ui-component/compare/v0.15.0...v0.15.1) (2023-01-18)
 
 ### Features

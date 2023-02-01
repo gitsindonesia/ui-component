@@ -1,0 +1,76 @@
+:root {
+  /* label */
+  --v-radio-group-label-color: var(--v-input-label-color);
+  --v-radio-group-label-font-size: var(--v-input-label-font-size);
+  --v-radio-group-label-font-weight: var(--v-input-label-font-weight);
+  --v-radio-group-label-display: var(--v-input-label-display);
+  --v-radio-group-label-margin-bottom: var(--v-input-label-margin-bottom);
+
+  // input
+  --v-radio-group-border-color: theme('colors.gray.800');
+  --v-radio-group-bg-color: theme('colors.white');
+
+  // disabled
+  --v-radio-group-disabled-border-color: var(--v-input-disabled-border-color);
+  --v-radio-group-disabled-bg-color: var(--v-input-disabled-bg-color);
+
+  // items text
+  --v-radio-group-items-text-color: theme('colors.gray.800');
+}
+
+.v-radio-group {
+  $c: &;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  &-label {
+    color: var(--v-radio-group-label-color);
+    font-size: var(--v-radio-group-label-font-size);
+    font-weight: var(--v-radio-group-label-font-weight);
+    display: var(--v-radio-group-label-display);
+    margin-bottom: var(--v-radio-group-label-margin-bottom);
+  }
+
+  &-items {
+    @apply flex gap-y-2 sm:gap-x-8 flex-col;
+
+    &-input {
+      @apply transition duration-300 text-primary-500 focus:ring-primary-500;
+      border-color: var(--v-radio-group-border-color);
+      background-color: var(--v-radio-group-bg-color);
+
+      &:disabled {
+        @apply cursor-not-allowed;
+        border-color: var(--v-radio-group-disabled-border-color);
+        background-color: var(--v-radio-group-disabled-bg-color);
+      }
+    }
+
+    &-label {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      gap: 0.5rem;
+    }
+
+    &-text {
+      color: var(--v-radio-group-items-text-color);
+    }
+  }
+
+  // inline
+  &--inline {
+    #{$c}-items {
+      @apply flex-row;
+    }
+  }
+
+  // error
+  &--error {
+    #{$c}-label {
+      --v-radio-group-label-color: var(--v-input-error-color);
+    }
+  }
+}

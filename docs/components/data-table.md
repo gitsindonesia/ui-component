@@ -522,6 +522,7 @@ const search = ref('');
 | [`totalItems`](#totalItems)                   | `Number`                                | `0`                      |
 | [`page`](#page)                               | `Number`                                | `1`                      |
 | [`mustSort`](#mustSort)                       | `Boolean`                               | `false`                  |
+| [`multiSort`](#multiSort)                     | `Boolean`                               | `false`                  |
 | [`noShadow`](#noShadow)                       | `Boolean`                               | `false`                  |
 | [`selectable`](#selectable)                   | `Boolean`                               | `false`                  |
 | [`headerClass`](#headerClass)                 | `String`                                | `''`                     |

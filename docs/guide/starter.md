@@ -38,7 +38,7 @@ Then, choose `Nuxt Minimal` template.
 
 Nuxt Complete Starter is a full-featured Nuxt starter that includes everything you need to make a modern web application with Nuxt, Tailwind CSS, and GITS UI.
 
-- Online demo
+- [Online demo](https://gits-nuxt-starter.vercel.app/)
 - [Source code](https://github.com/gitsindonesia/nuxt-starter)
 - Try it online on [Stackblitz](https://stackblitz.com/github/gitsindonesia/nuxt-starter)
 
@@ -54,7 +54,7 @@ Then, choose `Nuxt Starter` template.
 
 - [Online demo](https://gits-nuxt-admin.vercel.app/admin)
 - [Source code](https://github.com/gitsindonesia/ui-component/tree/main/starter/nuxt-admin)
-- Try it online on [Stackblitz](https://stackblitz.com/github/gitsindonesia/ui-component/tree/main/starter/vue)
+- Try it online on [Stackblitz](https://stackblitz.com/github/gitsindonesia/ui-component/tree/main/starter/nuxt-admin)
 
 Setup a new project with this template using GITS CLI:
 
@@ -63,3 +63,17 @@ npx create-gits-app@latest
 ```
 
 Then, choose `Nuxt Admin` template.
+
+## Nuxt Auth
+
+- [Online demo](https://gits-nuxt-auth.vercel.app)
+- [Source code](https://github.com/gitsindonesia/ui-component/tree/main/starter/nuxt-auth)
+- Try it online on [Stackblitz](https://stackblitz.com/github/gitsindonesia/ui-component/tree/main/starter/nuxt-auth)
+
+Setup a new project with this template using GITS CLI:
+
+```
+npx create-gits-app@latest
+```
+
+Then, choose `Nuxt Auth` template.

@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.2](https://github.com/gitsindonesia/ui-component/compare/v0.15.1...v0.15.2) (2023-02-01)
+
+### Bug Fixes
+
+- **Dark Mode:** improve disabled state on dark mode ([#113](https://github.com/gitsindonesia/ui-component/issues/113)) ([917b5bf](https://github.com/gitsindonesia/ui-component/commit/917b5bfc81499cd730edea05b2be6478cf053947))
+- **VRadio:** fix radio disabled color ([c1432ee](https://github.com/gitsindonesia/ui-component/commit/c1432ee868eca2862678bd36268842ee22ac3afd))
+- **VRadio:** fix radio disabled color ([9d6e624](https://github.com/gitsindonesia/ui-component/commit/9d6e624e5b62623d748da01fd0d74bc73f1dfc84))
+
+### Features
+
+- **dark mode:** fix dark mode radio & radio group ([ef00512](https://github.com/gitsindonesia/ui-component/commit/ef005124605e64eea004e3b039f1489b1ea509b6))
+- **dark mode:** fix dark mode radio & radio group ([d9267f1](https://github.com/gitsindonesia/ui-component/commit/d9267f1d18be433402ae4397152044ade3578698))
+- **nuxt:** upgrade to nuxt 3.1.1 ([2b3c09f](https://github.com/gitsindonesia/ui-component/commit/2b3c09fb3d562c99e4db2a87aad9cebd5d2a5307))
+- **starter/nuxt-admin:** add dark mode ([11f4feb](https://github.com/gitsindonesia/ui-component/commit/11f4febb18bbc14782ac1c31cdd926a204363ee7))
+- **starter/nuxt-auth:** add `AuthLayout` component ([11da990](https://github.com/gitsindonesia/ui-component/commit/11da990777465fc62133d6cd8e015f692b35c77f))
+- **starter/nuxt-auth:** add `guest` middleware ([e49eda3](https://github.com/gitsindonesia/ui-component/commit/e49eda3f244ce1be2990ab9a48643b34c12ed23c))
+- **starter/nuxt-auth:** add forgot password page ([ab1d20a](https://github.com/gitsindonesia/ui-component/commit/ab1d20af30146c285fbd291cf8b08f92e37bd517))
+- **starter/nuxt-auth:** add register api ([bee1d17](https://github.com/gitsindonesia/ui-component/commit/bee1d172cd2a8ea368a5b0a1a5e0f62babc33cc4))
+- **starter/nuxt-auth:** add register page ([5fc4f55](https://github.com/gitsindonesia/ui-component/commit/5fc4f552b33c249355515e9f658198dd389861bd))
+- **starter/nuxt-auth:** configurable auth login page ([b9d2bed](https://github.com/gitsindonesia/ui-component/commit/b9d2bed1caafe9a9820d3c10f8c9aec72b044ef2))
+- **starter/nuxt-auth:** configurable head for each auth pages ([21b1003](https://github.com/gitsindonesia/ui-component/commit/21b1003b8df0b32717d3f7e1bb7048a2a690b0da))
+- **starter/nuxt-auth:** enable global middleware ([d4b23bc](https://github.com/gitsindonesia/ui-component/commit/d4b23bc5684c9c650db6d94605a17783bf1e4867))
+- **starter/nuxt-auth:** get auth secret and auth origin from env ([6fbb10e](https://github.com/gitsindonesia/ui-component/commit/6fbb10eed27d2466712c5216a82422351d706a1a))
+- **starter/nuxt-auth:** implement login with providers ([8c15f43](https://github.com/gitsindonesia/ui-component/commit/8c15f43ffe8bce0e8c3636efebdaf16ebe37935f))
+- **starter/nuxt-auth:** implement sign in with provider ([988bcb6](https://github.com/gitsindonesia/ui-component/commit/988bcb6e45540d2bb98b8802da83891c269d6646))
+- **starter/nuxt-auth:** init nuxt auth ([4cd410d](https://github.com/gitsindonesia/ui-component/commit/4cd410dcebf112c3c79560e984dd01a818737e61))
+- **starter/nuxt-auth:** update default pages design ([315b756](https://github.com/gitsindonesia/ui-component/commit/315b756dd50d186a9a7cc0d462b4f45e1251d4af))
+- **starter:** upgrade to nuxt 3.1.1 ([d315849](https://github.com/gitsindonesia/ui-component/commit/d31584922e56d5be2963aabd0eddb810203773bf))
+- **VDataTable:** support multisort ([ebe745c](https://github.com/gitsindonesia/ui-component/commit/ebe745c2c1f071fd9ee97847538e06ec1fb293ff))
+- **VRadioGroup:** improve styling for v-radio-group with dark mode support ([6ec6233](https://github.com/gitsindonesia/ui-component/commit/6ec6233e2a56953afdc6de7884a8c8ec183815bc))
+- **VRadioGroup:** improve styling for v-radio-group with dark mode support ([66a0a8b](https://github.com/gitsindonesia/ui-component/commit/66a0a8b8d6d22bd0b640806cf54ad4575e443675))
+
 ## [0.15.1](https://github.com/gitsindonesia/ui-component/compare/v0.15.0...v0.15.1) (2023-01-18)
 
 ### Bug Fixes

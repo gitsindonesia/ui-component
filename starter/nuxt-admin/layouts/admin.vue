@@ -1,20 +1,14 @@
 <template>
-  <div class="flex flex-col">
-    <AdminHeader />
-    <div class="flex-1 flex">
+  <AdminShell>
+    <template #header>
+      <AdminHeader />
+    </template>
+    <template #sidebar>
       <AdminSidebar />
-      <div class="p-6 flex flex-col flex-1">
-        <main class="flex-1">
-          <slot />
-        </main>
-        <AdminFooter />
-      </div>
-    </div>
-  </div>
+    </template>
+    <template #footer>
+      <AdminFooter />
+    </template>
+    <slot />
+  </AdminShell>
 </template>
-
-<style>
-body {
-  @apply bg-gray-100 dark:bg-neutral-900 text-gray-800 dark:text-neutral-200;
-}
-</style>

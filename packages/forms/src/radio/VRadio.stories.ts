@@ -6,35 +6,25 @@ import {useForm} from 'vee-validate';
 import {object, string} from 'yup';
 import VBtn from '@gits-id/button';
 import {ref} from 'vue';
+import '@gits-id/forms/src/forms.scss';
+import '@gits-id/forms/src/forms.dark.scss';
 import './VRadio.dark.scss';
 
 export default {
   title: 'Forms/Radio',
   component: VRadio,
-  argTypes: {
-    size: {
-      control: 'select',
-      options: sizes,
-    },
-    color: {
-      control: 'select',
-      options: themeColors,
-    },
-  },
-  args: {
-    modelValue: '',
-    label: 'Radio',
-    color: '',
-    size: '',
-  },
 } as Meta;
 
 const Template: Story = (args) => ({
   components: {VRadio},
   setup() {
-    return {args};
+    const value = ref('1');
+    return {args, value};
   },
-  template: `<VRadio v-bind='args'>${args.label}</VRadio>`,
+  template: `
+  <VRadio v-model="value" value="1" label="Choose 1" id="1" />
+  <VRadio v-model="value" value="0" label="Choose 0" id="0" />
+  `,
 });
 
 export const Radio = Template.bind({});
@@ -47,17 +37,18 @@ Radio.parameters = {
   },
 };
 
-export const Disabled = Template.bind({});
-Disabled.args = {
-  disabled: true,
-};
-Disabled.parameters = {
-  docs: {
-    source: {
-      code: '<v-radio disabled />',
-    },
+export const Disabled: Story = (args) => ({
+  components: {VRadio},
+  setup() {
+    const value = ref('1');
+    return {args, value};
   },
-};
+  template: `
+  <VRadio v-model="value" value="1" label="Choose 1" id="1" />
+  <VRadio v-model="value" value="0" label="Choose 0" id="0" />
+  <VRadio v-model="value" value="2" label="Disabled" disabled />
+  `,
+});
 
 export const Validation: Story<{}> = () => ({
   components: {VRadio, VBtn},
@@ -211,19 +202,14 @@ TestInputState.args = {
 export const DarkMode: Story<{}> = () => ({
   components: {VRadio},
   setup() {
-    const items = ['fire', 'earth', 'wind', 'water'];
-    const modelValue = ref();
-    return {items, modelValue};
+    const value = ref('1');
+    return {value};
   },
   template: `
   <div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
-    <VRadio
-      v-for="item in items"
-      v-model="modelValue"
-      :key="item"
-      :label="item"
-      :value="item"
-    />
+    <VRadio v-model="value" value="1" label="Choose 1" id="1" />
+    <VRadio v-model="value" value="0" label="Choose 0" id="0" />
+    <VRadio v-model="value" value="2" label="Disabled" disabled />
   </div>
   `,
 });
