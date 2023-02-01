@@ -6,7 +6,6 @@ import BottomSheetHeader from './BottomSheetHeader.vue';
 import BottomSheetMenus from './BottomSheetMenus.vue';
 import BottomSheetBody from './BottomSheetBody.vue';
 import BottomSheetFooter from './BottomSheetFooter.vue';
-import BottomSheetOverlay from './BottomSheetOverlay.vue';
 import '@gits-id/button/src/VBtn.dark.scss';
 import './BottomSheet.dark.scss';
 
@@ -60,7 +59,7 @@ export default {
 };
 
 export const Default: Story = (args, {argTypes}) => ({
-  components: {BottomSheet, BottomSheetBody, BottomSheetOverlay, Button},
+  components: {BottomSheet, BottomSheetBody, Button},
   setup() {
     const isOpen = ref(false);
     return {args, argTypes, isOpen};
@@ -68,7 +67,6 @@ export const Default: Story = (args, {argTypes}) => ({
   template: `
     <Button @click="isOpen = !isOpen">Open BottomSheet</Button>
     <BottomSheet v-model="isOpen" v-bind="args">
-      <BottomSheetOverlay />
       <BottomSheetBody>
         A quick brown fox leaps over the lazy dog.
       </BottomSheetBody>
