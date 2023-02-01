@@ -1,0 +1,45 @@
+{
+  "name": "@gits-id/bottom-sheet",
+  "version": "0.15.0",
+  "description": "GITS UI Bottom Sheet Component",
+  "scripts": {
+    "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
+    "prepublishOnly": "npm run build",
+    "test": "vitest"
+  },
+  "keywords": [
+    "bottom-sheet",
+    "gits",
+    "gits-ui",
+    "ui-component"
+  ],
+  "author": "Warsono <warsono16694@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@gits-id/icon": "^0.15.0",
+    "@gits-id/button": "^0.15.0",
+    "vue": "^3.2.33"
+  },
+  "devDependencies": {
+    "@vue/test-utils": "^2.0.0-rc.17",
+    "c8": "^7.11.3",
+    "tailwindcss": "^3.0.23",
+    "vite": "^3.0.0",
+    "vitest": "^0.12.4"
+  },
+  "main": "dist/bottom-sheet.umd.js",
+  "unpkg": "dist/bottom-sheet.iife.js",
+  "jsdelivr": "dist/bottom-sheet.iife.js",
+  "module": "./dist/bottom-sheet.mjs",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/bottom-sheet.mjs",
+      "require": "./dist/bottom-sheet.js"
+    },
+    "./package.json": "./package.json",
+    "./src/*": "./src/*",
+    "./*": "./*"
+  },
+  "gitHead": "8104720a06b60ca92b79f9b6ce89108faa68bba5"
+}
