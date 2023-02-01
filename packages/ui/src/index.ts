@@ -62,6 +62,7 @@ import Avatar from '@gits-id/avatar';
 import Shimmer from '@gits-id/shimmer';
 import VAutocomplete from '@gits-id/autocomplete';
 import './style.scss';
+import {Rating} from '@gits-id/rating';
 
 const plugin: Plugin = {
   install: (app) => {
@@ -115,6 +116,7 @@ const plugin: Plugin = {
     app.component('VAvatar', Avatar);
     app.component('VShimmer', Shimmer);
     app.component('VAutocomplete', VAutocomplete);
+    app.component('VRating', Rating);
   },
 };
 
