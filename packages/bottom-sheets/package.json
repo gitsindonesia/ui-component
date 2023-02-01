@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/bottom-sheet",
-  "version": "0.15.0",
+  "version": "0.16.0",
   "description": "GITS UI Bottom Sheet Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -16,8 +16,8 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@gits-id/icon": "^0.15.0",
-    "@gits-id/button": "^0.15.0",
+    "@gits-id/button": "^0.16.0",
+    "@gits-id/icon": "^0.16.0",
     "vue": "^3.2.33"
   },
   "devDependencies": {
