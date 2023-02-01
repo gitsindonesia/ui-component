@@ -4,6 +4,10 @@
   --v-radio-border-style: solid;
   --v-radio-border-width: 1px;
 
+  // disabled
+  --v-radio-disabled-border-color: var(--v-input-disabled-border-color);
+  --v-radio-disabled-bg-color: var(--v-input-disabled-bg-color);
+
   // label
   --v-radio-label-color: theme('colors.gray.800');
 }
@@ -24,6 +28,12 @@
     border-style: var(--v-radio-border-style);
 
     @apply transition duration-300;
+
+    &:disabled {
+      @apply cursor-not-allowed;
+      border-color: var(--v-radio-disabled-border-color);
+      background-color: var(--v-radio-disabled-bg-color);
+    }
   }
 
   &-error {

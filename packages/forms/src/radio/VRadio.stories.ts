@@ -6,6 +6,8 @@ import {useForm} from 'vee-validate';
 import {object, string} from 'yup';
 import VBtn from '@gits-id/button';
 import {ref} from 'vue';
+import '@gits-id/forms/src/forms.scss';
+import '@gits-id/forms/src/forms.dark.scss';
 import './VRadio.dark.scss';
 
 export default {
@@ -47,17 +49,18 @@ Radio.parameters = {
   },
 };
 
-export const Disabled = Template.bind({});
-Disabled.args = {
-  disabled: true,
-};
-Disabled.parameters = {
-  docs: {
-    source: {
-      code: '<v-radio disabled />',
-    },
+export const Disabled: Story = (args) => ({
+  components: {VRadio},
+  setup() {
+    const value = ref('1');
+    return {args, value};
   },
-};
+  template: `
+  <VRadio v-model="value" value="1" label="Choose 1" id="1" />
+  <VRadio v-model="value" value="0" label="Choose 0" id="0" />
+  <VRadio v-model="value" value="2" label="Disabled" disabled />
+  `,
+});
 
 export const Validation: Story<{}> = () => ({
   components: {VRadio, VBtn},
@@ -217,12 +220,24 @@ export const DarkMode: Story<{}> = () => ({
   },
   template: `
   <div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
+    <p>Default</p>
     <VRadio
       v-for="item in items"
       v-model="modelValue"
       :key="item"
+      :id="item"
       :label="item"
       :value="item"
+    />
+    <p class="mt-5 mb-2">Disabled</p>
+    <VRadio
+      v-for="item in items"
+      v-model="modelValue"
+      :key="item"
+      :id="item"
+      :label="item"
+      :value="item"
+      disabled
     />
   </div>
   `,
