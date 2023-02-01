@@ -1,3 +1,8 @@
+:root {
+  --v-bottom-sheet-bg-color: #fff;
+  --v-bottom-sheet-body-color: theme('colors.gray.800');
+}
+
 .v-bottom-sheet {
   display: flex;
   justify-content: center;
@@ -10,6 +15,7 @@
 
   &-panel {
     background-color: var(--v-bottom-sheet-bg-color, #fff);
+    color: var(--v-bottom-sheet-body-color);
     overflow: hidden;
     border-top-right-radius: 0.75rem/* 12px */;
     border-top-left-radius: 0.75rem/* 12px */;

@@ -1,12 +1,14 @@
 import type {Story} from '@storybook/vue3';
 import BottomSheet from './BottomSheet.vue';
-import {ref} from 'vue';
+import {onMounted, ref} from 'vue';
 import Button from '@gits-id/button';
 import BottomSheetHeader from './BottomSheetHeader.vue';
 import BottomSheetMenus from './BottomSheetMenus.vue';
 import BottomSheetBody from './BottomSheetBody.vue';
 import BottomSheetFooter from './BottomSheetFooter.vue';
 import BottomSheetOverlay from './BottomSheetOverlay.vue';
+import '@gits-id/button/src/VBtn.dark.scss';
+import './BottomSheet.dark.scss';
 
 const menus = ref([
   {
@@ -259,5 +261,27 @@ export const NestedSheet: Story = (args, {argTypes}) => ({
         </BottomSheetBody>
       </BottomSheet>
     </BottomSheet>
+  `,
+});
+
+export const DarkMode: Story = (args, {argTypes}) => ({
+  components: {BottomSheet, BottomSheetBody, BottomSheetHeader, Button},
+  setup() {
+    const isOpen = ref(false);
+    onMounted(() => {
+      document.documentElement.classList.add('dark');
+    });
+    return {args, argTypes, isOpen};
+  },
+  template: `
+  <div class="dark:bg-neutral-900 dark:text-neutral-200 p-6">
+    <Button @click="isOpen = !isOpen">Open BottomSheet</Button>
+    <BottomSheet v-model="isOpen" v-bind="args">
+      <BottomSheetHeader>Sheet Title</BottomSheetHeader>
+      <BottomSheetBody>
+        A quick brown fox leaps over the lazy dog.
+      </BottomSheetBody>
+    </BottomSheet>
+  </div>
   `,
 });
