@@ -19,7 +19,7 @@ const adminDrawer = useAdminDrawer();
     </div>
     <div class="flex items-center gap-2 xl:pr-2">
       <DarkModeSwitcher v-if="appConfig.darkMode" />
-      <AdminNotification />
+      <AdminNotification v-if="appConfig.notification.enable" />
       <VMenus
         :label="appConfig.accountMenu.label"
         :items="appConfig.accountMenu.items"

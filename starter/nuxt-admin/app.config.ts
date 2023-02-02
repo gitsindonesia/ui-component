@@ -1,48 +1,22 @@
 export default defineAppConfig({
   adminTitle: 'Nuxt Admin',
   companyName: 'PT. GITS Indonesia',
-  menus: [
-    {
-      header: 'Menu',
-    },
-    {
-      text: 'Dashboard',
-      icon: 'ic:round-home',
-      to: '/admin',
-    },
-  ],
+  menus: [],
   accountMenu: {
     label: 'Account',
-    items: [
-      {
-        text: 'Profile',
-        icon: 'ic:baseline-person',
-        to: '/admin/profile',
-      },
-    ],
+    items: [],
   },
   notification: {
+    enable: true,
     label: 'Notification',
-    items: [
-      {
-        title: 'Notification 1',
-        message: 'This is a notification',
-        icon: 'ic:baseline-person',
-        to: '/admin/profile',
-      },
-      {
-        title: 'Notification 2',
-        message: 'This is a notification',
-        icon: 'ic:baseline-person',
-        to: '/admin/profile',
-      },
-      {
-        title: 'Notification 3',
-        message: 'This is a notification',
-        icon: 'ic:baseline-person',
-        to: '/admin/profile',
-      },
-    ],
+    items: [],
+    emptyText: 'No notifications',
+    seeAll: {
+      text: 'View all notifications',
+      props: {
+        to: '/notifications'
+      }
+    }
   },
   // enable dark mode
   darkMode: true,

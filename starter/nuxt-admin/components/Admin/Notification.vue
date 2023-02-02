@@ -25,15 +25,31 @@ const appConfig = useAppConfig();
       </VDropdownButton>
     </template>
     <VList hover>
-      <VListItemHeader class="!font-semibold">Notification</VListItemHeader>
+      <VListItemHeader class="!font-semibold">
+        {{ appConfig.notification.label }}
+      </VListItemHeader>
       <VListItemDivider />
-      <AdminNotificationItem
-        v-for="notif in appConfig.notification.items"
-        :key="notif.title"
-        :notif="notif"
-      />
-      <VListItemDivider />
-      <VBtn block text color="primary">View all notifications</VBtn>
+      <template v-if="appConfig.notification.items.length === 0">
+        <VListItem hide-prepend>
+          {{ appConfig.notification.emptyText }}
+        </VListItem>
+      </template>
+      <template v-else>
+        <AdminNotificationItem
+          v-for="(notif, idx) in appConfig.notification.items"
+          :key="idx"
+          :notif="notif"
+        />
+        <VListItemDivider />
+        <VBtn
+          block
+          text
+          color="primary"
+          v-bind="appConfig.notification.seeAll.props"
+        >
+          {{ appConfig.notification.seeAll.text }}
+        </VBtn>
+      </template>
     </VList>
   </VDropdown>
 </template>
