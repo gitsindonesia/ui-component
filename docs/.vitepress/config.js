@@ -46,7 +46,10 @@ export default defineConfig({
       {
         text: 'Themes',
         collapsible: true,
-        items: [{text: 'nuxt-auth', link: '/themes/nuxt-auth'}],
+        items: [
+          {text: 'nuxt-auth', link: '/themes/nuxt-auth'},
+          {text: 'nuxt-admin', link: '/themes/nuxt-admin'},
+        ],
       },
       {
         text: 'Components',
