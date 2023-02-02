@@ -23,11 +23,11 @@
   },
   "dependencies": {
     "@gits-id/ui-nuxt": "^0.15.2",
+    "@sidebase/nuxt-auth": "^0.4.0-alpha.5",
     "next-auth": "^4.19.1"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.3.0",
-    "@sidebase/nuxt-auth": "^0.4.0-alpha.5",
     "nuxt": "^3.1.1",
     "sass": "^1.58.0"
   }
