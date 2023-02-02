@@ -1,7 +1,7 @@
 {
   "name": "@gits-id/nuxt-minimal",
   "description": "Lightweight Nuxt.js template with GITS UI",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "keywords": [
     "admin",
     "dashboard",
@@ -28,5 +28,15 @@
     "@nuxtjs/tailwindcss": "^6.3.0",
     "nuxt": "^3.1.1",
     "sass": "^1.58.0"
-  }
+  },
+  "type": "module",
+  "main": "./nuxt.config.ts",
+  "files": [
+    "components/",
+    "pages/",
+    "app.vue",
+    "app.config.ts",
+    "nuxt.config.ts",
+    "tailwind.config.js"
+  ]
 }
