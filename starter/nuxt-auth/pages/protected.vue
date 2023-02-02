@@ -1,7 +1,16 @@
 <script setup lang="ts">
 const appConfig = useAppConfig();
 
-useHead(appConfig.auth.head.protected);
+useHead({
+  title: 'Protected',
+  meta: [
+    {
+      key: 'description',
+      name: 'description',
+      content: 'Protected page',
+    },
+  ],
+});
 
 const {data, signOut} = useSession();
 </script>

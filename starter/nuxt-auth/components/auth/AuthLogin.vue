@@ -2,13 +2,61 @@
 import {useForm} from 'vee-validate';
 import {object, string} from 'yup';
 
-const appConfig = useAppConfig();
+const props = withDefaults(
+  defineProps<{
+    redirect?: string;
+    title?: string;
+    description?: string;
+    usernameProps?: Record<string, any>;
+    passwordProps?: Record<string, any>;
+    rememberMe?: boolean;
+    rememberMeLabel?: string;
+    submitText?: string;
+    submitProps?: Record<string, any>;
+    forgotPasswordLinkText?: string;
+    registerLinkText?: string;
+    registerText?: string;
+    loginWithText?: string;
+    orText?: string;
+    providerButtonColors?: Record<string, string>;
+  }>(),
+  {
+    redirect: '/',
+    title: 'Login',
+    description: 'Enter your username and password to login.',
+    usernameProps: () => ({
+      label: 'Username',
+      placeholder: 'Username',
+    }),
+    passwordProps: () => ({
+      label: 'Password',
+      placeholder: 'Password',
+    }),
+    rememberMe: true,
+    rememberMeLabel: 'Remember Me',
+    submitText: 'Login',
+    submitProps: () => ({
+      color: 'primary',
+      block: true,
+    }),
+    forgotPasswordLinkText: 'Forgot Password?',
+    registerLinkText: 'Register',
+    registerText: "Don't have an account?",
+    loginWithText: 'Login with',
+    orText: 'or',
+    providerButtonColors: () => ({
+      google: 'danger',
+      facebook: 'primary',
+      twitter: 'info',
+      github: 'dark',
+    }),
+  },
+);
+
 const router = useRouter();
 const route = useRoute();
 const {signIn, status, getProviders} = useSession();
 const providers = await getProviders();
-
-useHead(appConfig.auth.head.login);
 
 const error = ref();
 
@@ -35,9 +83,7 @@ const onSubmit = handleSubmit(async (values) => {
   // get path name from callback url
   const callbackUrl = new URL(String(route.query.callbackUrl)).pathname;
 
-  router.push(
-    String(route.query.next || callbackUrl || appConfig.auth.redirect.home),
-  );
+  router.push(String(route.query.next || callbackUrl || props.redirect));
 });
 </script>
 
@@ -47,53 +93,45 @@ const onSubmit = handleSubmit(async (values) => {
       <VLogo img-class="mb-6" />
       <div class="space-y-2 mb-4">
         <h1 class="text-2xl font-semibold text-gray-900">
-          {{ appConfig.auth.login.title }}
+          {{ title }}
         </h1>
         <p class="text-sm text-gray-700">
-          {{ appConfig.auth.login.description }}
+          {{ description }}
         </p>
       </div>
       <VAlert v-if="error" color="error" class="mb-4"> {{ error }} </VAlert>
-      <VInput
-        wrapper-class="mb-4"
-        name="username"
-        v-bind="appConfig.auth.login.usernameProps"
-      />
+      <VInput wrapper-class="mb-4" name="username" v-bind="usernameProps" />
       <VInput
         wrapper-class="mb-4"
         name="password"
         type="password"
-        v-bind="appConfig.auth.login.passwordProps"
+        v-bind="passwordProps"
       />
       <div class="mb-4 flex gap-4 justify-between">
         <VCheckbox
-          v-if="appConfig.auth.login.rememberMe.enable"
-          :label="appConfig.auth.login.rememberMe.label"
+          v-if="rememberMe"
+          :label="rememberMeLabel"
           name="rememberMe"
         />
         <VBtn to="/auth/forgot-password" color="primary" text flush>
-          {{ appConfig.auth.login.forgotPasswordLinkText }}
+          {{ forgotPasswordLinkText }}
         </VBtn>
       </div>
-      <VBtn
-        :loading="status === 'loading'"
-        type="submit"
-        v-bind="appConfig.auth.login.buttonProps"
-      >
-        {{ appConfig.auth.login.buttonText }}
+      <VBtn :loading="status === 'loading'" type="submit" v-bind="submitProps">
+        {{ submitText }}
       </VBtn>
 
       <p class="text-sm text-gray-700 text-center mt-5">
-        {{ appConfig.auth.login.registerText }}
+        {{ registerText }}
         <VBtn to="/auth/register" color="primary" text flush>
-          {{ appConfig.auth.login.registerLinkText }}
+          {{ registerLinkText }}
         </VBtn>
       </p>
 
       <div class="flex gap-4 items-center mt-5 mb-4">
         <div class="border-t flex-1"></div>
         <span class="text-sm text-gray-600">
-          {{ appConfig.auth.login.orText }}
+          {{ orText }}
         </span>
         <div class="border-t flex-1"></div>
       </div>
@@ -102,10 +140,10 @@ const onSubmit = handleSubmit(async (values) => {
         <VBtn
           v-if="provider?.id !== 'credentials'"
           block
-          :color="appConfig.auth.providerButtonColors[String(provider?.id)]"
+          :color="providerButtonColors[String(provider?.id)]"
           @click="signIn(provider?.id)"
         >
-          {{ appConfig.auth.login.loginWithText }} {{ provider?.name }}
+          {{ loginWithText }} {{ provider?.name }}
         </VBtn>
       </template>
     </form>

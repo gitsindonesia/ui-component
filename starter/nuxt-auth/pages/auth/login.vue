@@ -3,6 +3,10 @@ definePageMeta({
   auth: false,
   middleware: 'guest',
 });
+
+useHead({
+  title: 'Login',
+});
 </script>
 
 <template>
