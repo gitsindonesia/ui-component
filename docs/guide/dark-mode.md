@@ -56,12 +56,11 @@ You can toggle between `dark` and `light` mode by toggling the `class` of the pa
 
 ```vue
 <script setup lang="ts">
-const toggleDarkMode = () => {
-  const html = document.querySelector('html');
-  html?.classList?.toggle('dark');
-};
-
 const darkMode = ref(false);
+
+watch(darkMode, () => {
+  document.documentElement.classList.toggle('dark', darkMode.value);
+});
 </script>
 
 <template>
