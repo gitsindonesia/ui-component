@@ -19,8 +19,9 @@ const menus = [
     <div
       class="container mx-auto flex items-center gap-4 justify-between md:p-4"
     >
-      <div class="flex items-center gap-1 -ml-3">
+      <div class="flex items-center gap-1 -ml-3 sm:ml-0">
         <VBtn
+          class="sm:!hidden"
           prefix-icon="ri:menu-line"
           text
           fab
