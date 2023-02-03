@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const title = 'Nuxt + GITS UI Minimal Starter';
+const title = useAppConfig().store.title;
 
 useHead({
   title,

@@ -4,4 +4,5 @@ export default defineNuxtConfig({
   typescript: {
     shim: false,
   },
+  css: ['~/assets/css/globals.scss'],
 });
