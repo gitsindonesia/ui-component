@@ -4,9 +4,9 @@ definePageMeta({
   middleware: 'guest',
 });
 
-useHead({
-  title: 'Forgot Password',
-});
+const appConfig = useAppConfig();
+
+useHead(appConfig.auth.forgotPassword.head);
 </script>
 
 <template>

@@ -4,9 +4,9 @@ definePageMeta({
   middleware: 'guest',
 });
 
-useHead({
-  title: 'Login',
-});
+const appConfig = useAppConfig();
+
+useHead(appConfig.auth.login.head);
 </script>
 
 <template>

@@ -4,9 +4,9 @@ definePageMeta({
   middleware: 'guest',
 });
 
-useHead({
-  title: 'Register',
-});
+const appConfig = useAppConfig();
+
+useHead(appConfig.auth.register.head);
 </script>
 
 <template>
