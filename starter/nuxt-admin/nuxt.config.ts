@@ -12,6 +12,7 @@ export default defineNuxtConfig({
         ],
       },
     ],
+    '@nuxtjs/color-mode',
   ],
   typescript: {
     shim: false,
@@ -20,5 +21,9 @@ export default defineNuxtConfig({
   gitsUi: {
     // enable dark mode
     darkMode: true,
+  },
+  // https://color-mode.nuxtjs.org
+  colorMode: {
+    classSuffix: '',
   },
 });

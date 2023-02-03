@@ -18,7 +18,7 @@ const adminDrawer = useAdminDrawer();
       </NuxtLink>
     </div>
     <div class="flex items-center gap-2 xl:pr-2">
-      <DarkModeSwitcher v-if="appConfig.admin.darkMode" />
+      <ColorModeSwitcher v-if="appConfig.admin.darkMode" />
       <AdminNotification v-if="appConfig.admin.notification.enable" />
       <VMenus
         :label="appConfig.admin.accountMenu.label"
