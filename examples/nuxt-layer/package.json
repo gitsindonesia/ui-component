@@ -1,5 +1,6 @@
 {
-  "name": "@gits-id/nuxt-minimal",
+  "name": "@gits-id/nuxt-layer-example",
+  "private": true,
   "description": "Lightweight Nuxt.js template with GITS UI",
   "version": "0.1.0",
   "keywords": [
