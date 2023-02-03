@@ -94,7 +94,8 @@
     "preset.js"
   ],
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "starter/*"
   ],
   "private": true,
   "lint-staged": {

@@ -13,10 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: npm i -g lerna
+      - run: npm i -g lerna pnpm
       - run: lerna bootstrap
       - run: lerna run build
-      - run: yarn build-storybook
+      - run: pnpm build-storybook
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
