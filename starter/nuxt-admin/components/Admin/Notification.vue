@@ -6,7 +6,7 @@ const appConfig = useAppConfig();
 
 <template>
   <VDropdown
-    :label="appConfig.notification.label"
+    :label="appConfig.admin.notification.label"
     right
     panel-class="!w-80 !p-0"
   >
@@ -19,24 +19,24 @@ const appConfig = useAppConfig();
         class="relative"
       >
         <span
-          v-if="appConfig.notification.items.length > 0"
+          v-if="appConfig.admin.notification.items.length > 0"
           class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full"
         />
       </VDropdownButton>
     </template>
     <VList hover>
       <VListItemHeader class="!font-semibold">
-        {{ appConfig.notification.label }}
+        {{ appConfig.admin.notification.label }}
       </VListItemHeader>
       <VListItemDivider />
-      <template v-if="appConfig.notification.items.length === 0">
+      <template v-if="appConfig.admin.notification.items.length === 0">
         <VListItem hide-prepend>
-          {{ appConfig.notification.emptyText }}
+          {{ appConfig.admin.notification.emptyText }}
         </VListItem>
       </template>
       <template v-else>
         <AdminNotificationItem
-          v-for="(notif, idx) in appConfig.notification.items"
+          v-for="(notif, idx) in appConfig.admin.notification.items"
           :key="idx"
           :notif="notif"
         />
@@ -45,9 +45,9 @@ const appConfig = useAppConfig();
           block
           text
           color="primary"
-          v-bind="appConfig.notification.seeAll.props"
+          v-bind="appConfig.admin.notification.seeAll.props"
         >
-          {{ appConfig.notification.seeAll.text }}
+          {{ appConfig.admin.notification.seeAll.text }}
         </VBtn>
       </template>
     </VList>

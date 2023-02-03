@@ -14,15 +14,15 @@ const adminDrawer = useAdminDrawer();
         @click="adminDrawer = !adminDrawer"
       />
       <NuxtLink to="/admin" class="font-semibold">
-        {{ appConfig.adminTitle }}
+        {{ appConfig.admin.title }}
       </NuxtLink>
     </div>
     <div class="flex items-center gap-2 xl:pr-2">
-      <DarkModeSwitcher v-if="appConfig.darkMode" />
-      <AdminNotification v-if="appConfig.notification.enable" />
+      <DarkModeSwitcher v-if="appConfig.admin.darkMode" />
+      <AdminNotification v-if="appConfig.admin.notification.enable" />
       <VMenus
-        :label="appConfig.accountMenu.label"
-        :items="appConfig.accountMenu.items"
+        :label="appConfig.admin.accountMenu.label"
+        :items="appConfig.admin.accountMenu.items"
         placement="bottom-end"
       >
         <VBtn fab text prefix-icon="ic:round-person" />

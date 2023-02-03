@@ -5,6 +5,6 @@ const appConfig = useAppConfig();
 <template>
   <footer class="py-2 text-xs text-gray-500 px-4">
     Copyright &copy; {{ new Date().getFullYear() }}.
-    {{ appConfig.companyName }}.
+    {{ appConfig.admin.companyName }}.
   </footer>
 </template>

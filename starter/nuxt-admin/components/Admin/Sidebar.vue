@@ -22,7 +22,7 @@ watchEffect(() => {
     :class="{'z-20': isMobile}"
   >
     <VList hover class="flex-1">
-      <template v-for="menu in appConfig.menus" :key="menu.text">
+      <template v-for="menu in appConfig.admin.menus" :key="menu.text">
         <VListItemHeader v-if="menu.header">{{ menu.header }}</VListItemHeader>
         <VListItem v-else :to="menu.to" :prepend-icon="menu.icon">
           {{ menu.text }}
