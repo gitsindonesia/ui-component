@@ -21,5 +21,5 @@ export type BottomSheetApi = {
   open: () => void;
   getHeight: () => number;
   setHeight: (height: string | number) => void;
-  el: Ref<HTMLDivElement>
+  el: Ref<HTMLDivElement | undefined>
 };

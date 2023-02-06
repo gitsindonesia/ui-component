@@ -19,7 +19,7 @@ let dragPosition: number | undefined;
 const onDragStart = (event: Event) => {
   dragPosition = touchPosition(event).pageY;
   draggableArea.value.style.cursor = document.body.style.cursor = 'grabbing';
-  api?.el.value.classList.add('v-bottom-sheet--dragging')
+  api?.el?.value?.classList?.add('v-bottom-sheet--dragging')
 };
 
 const onDragMove = (event: Event) => {
@@ -45,7 +45,7 @@ const onDragEnd = () => {
     setSheetHeight(sheetHeight)
   }
 
-  api?.el.value.classList.remove('v-bottom-sheet--dragging')
+  api?.el?.value?.classList?.remove('v-bottom-sheet--dragging')
 };
 
 onMounted(() => {
