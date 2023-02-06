@@ -43,7 +43,34 @@ const isOpen = ref(false);
 <template>
   <VBtn @click="isOpen = !isOpen">Open BottomSheet</VBtn>
   <VBottomSheet v-model="isOpen">
-    <BottomSheetHeader> Sheet Title </BottomSheetHeader>
+    <VBottomSheetHeader> Sheet Title </VBottomSheetHeader>
+    <VBottomSheetBody>
+      A quick brown fox leaps over the lazy dog.
+    </VBottomSheetBody>
+  </VBottomSheet>
+</template>
+```
+
+</LivePreview>
+
+## With Handle
+
+To add handle to the bottom sheet, add `VBottomSheetHandle` as child of `VBottomSheet`.
+
+<LivePreview src="components-bottomsheet--with-handle">
+
+```vue {10}
+<script setup lang="ts">
+import {ref} from 'vue';
+
+const isOpen = ref(false);
+</script>
+
+<template>
+  <VBtn @click="isOpen = !isOpen">Open BottomSheet</VBtn>
+  <VBottomSheet v-model="isOpen">
+    <VBottomSheetHandle />
+    <VBottomSheetHeader> Sheet Title </VBottomSheetHeader>
     <VBottomSheetBody>
       A quick brown fox leaps over the lazy dog.
     </VBottomSheetBody>
@@ -69,7 +96,7 @@ const isOpen = ref(false);
 <template>
   <VBtn @click="isOpen = !isOpen">Open BottomSheet</VBtn>
   <VBottomSheet v-model="isOpen" v-slot="{close}">
-    <BottomSheetHeader> Sheet Title </BottomSheetHeader>
+    <VBottomSheetHeader> Sheet Title </VBottomSheetHeader>
     <VBottomSheetBody>
       A quick brown fox leaps over the lazy dog.
     </VBottomSheetBody>
@@ -86,7 +113,7 @@ const isOpen = ref(false);
 
 To add menus to the bottom sheet, add `VBottomSheetMenus` as child of `VBottomSheet`.
 
-<LivePreview src="components-bottomsheet--with-menus">
+<LivePreview src="components-bottomsheet--menus">
 
 ```vue {10-13}
 <script setup lang="ts">
@@ -232,18 +259,18 @@ const sheet2 = ref(false);
   <VBtn @click="sheet1 = !sheet1">Open BottomSheet 1</VBtn>
   <VBtn @click="sheet2 = !sheet2">Open BottomSheet 2</VBtn>
 
-  <BottomSheet v-model="sheet1">
-    <BottomSheetHeader> Sheet 1 </BottomSheetHeader>
-    <BottomSheetBody>
+  <VBottomSheet v-model="sheet1">
+    <VBottomSheetHeader> Sheet 1 </VBottomSheetHeader>
+    <VBottomSheetBody>
       A quick brown fox leaps over the lazy dog.
-    </BottomSheetBody>
+    </VBottomSheetBody>
   </BottomSheet>
 
-  <BottomSheet v-model="sheet2">
-    <BottomSheetHeader> Sheet 2 </BottomSheetHeader>
-    <BottomSheetBody>
+  <VBottomSheet v-model="sheet2">
+    <VBottomSheetHeader> Sheet 2 </VBottomSheetHeader>
+    <VBottomSheetBody>
       A quick brown fox leaps over the lazy dog.
-    </BottomSheetBody>
+    </VBottomSheetBody>
   </BottomSheet>
 </template>
 ```
@@ -337,17 +364,24 @@ A slot for placing the content such as `VBottomSheetHeader`, `VBottomSheetFooter
 You can also install the `BottomSheet` component individually via `@gits-id/bottom-sheet` package:
 
 ```bash
-yarn install @gits-id/bottom-sheet
+npm i @gits-id/bottom-sheet
 ```
 
 ```vue
 <script setup lang="ts">
 import {BottomSheet, BottomSheetBody} from '@gits-id/bottom-sheet';
+import '@gits-id/bottom-sheet/dist/style.css'
+
+// or load SASS styles
+// import '@gits-id/bottom-sheet/src/BottomSheet.scss'
+
+// load dark mode styles if you want to support dark mode
+// import '@gits-id/bottom-sheet/src/BottomSheet.dark.scss'
 </script>
 
 <template>
-  <BottomSheet>
-    <BottomSheetBody> Hello World </BottomSheetBody>
+  <VBottomSheet>
+    <VBottomSheetBody> Hello World </VBottomSheetBody>
   </BottomSheet>
 </template>
 ```
