@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.2](https://github.com/gitsindonesia/ui-component/compare/v0.16.1...v0.16.2) (2023-02-06)
+
+
+### Bug Fixes
+
+* move nuxt-auth as deps instead of devDeps ([3783b1a](https://github.com/gitsindonesia/ui-component/commit/3783b1ae8c3a762b98c8ccceff270c9bcb1af34c))
+* **nuxt-admin:** fix entry point and files ([d0499ee](https://github.com/gitsindonesia/ui-component/commit/d0499eed9ed6de5942a0398bbf5c4fcf8c016ace))
+* **nuxt-auth:** fix entry point and files ([7a9c543](https://github.com/gitsindonesia/ui-component/commit/7a9c543f28bdfdde8e298471e4ab63d451d15bdb))
+* **nuxt-auth:** move app config to component props ([ae48f0b](https://github.com/gitsindonesia/ui-component/commit/ae48f0b1b864508a631b290e5b09be6c95d32899))
+
+
+### Features
+
+* **Bottom Sheet:** add bottom sheet handle ([#123](https://github.com/gitsindonesia/ui-component/issues/123)) ([1d9eab0](https://github.com/gitsindonesia/ui-component/commit/1d9eab01803a72a5428956a20d0ae4233860e679))
+* **examples:** add nuxt-layer example ([c6aafd9](https://github.com/gitsindonesia/ui-component/commit/c6aafd9eb0ca404b42ec101657aad04a92d6de7c))
+* **nuxt-admin:** add admin prefix for app config ([7a0e706](https://github.com/gitsindonesia/ui-component/commit/7a0e706ecc8448e0b0e89a3c927d75c876767ee2))
+* **nuxt-admin:** add default home page ([fd8a57e](https://github.com/gitsindonesia/ui-component/commit/fd8a57ebcf04f4c8dcc6ba403feb9be9c7c2a677))
+* **nuxt-admin:** add default page title ([5c5302c](https://github.com/gitsindonesia/ui-component/commit/5c5302cef48bd96fdc0026786a36e9aadda8be78))
+* **nuxt-admin:** improve dark mode with @nuxtjs/color-mode ([548ca01](https://github.com/gitsindonesia/ui-component/commit/548ca01e0e45853a0c4d90bb5185da3caac2d968))
+* **nuxt-admin:** more configurable notification ([20407e3](https://github.com/gitsindonesia/ui-component/commit/20407e38985f38e553261b7f4119c6dd9292cc46))
+* **nuxt-auth:** configurable auth components via app config ([bfa2de7](https://github.com/gitsindonesia/ui-component/commit/bfa2de7c7c2f7c1099c9b13a7935a3438699bedd))
+* **nuxt-commerce:** add multi level categories menus ([c249c78](https://github.com/gitsindonesia/ui-component/commit/c249c78d8baf1069d6ce06a205f99de3ef3e9314))
+* **nuxt-commerce:** add product detail page ([3617a48](https://github.com/gitsindonesia/ui-component/commit/3617a48b96ef11ac3411dab8877571fa4ee8fec0))
+* **nuxt-commerce:** initial dev for nuxt-commerce ([f0970ff](https://github.com/gitsindonesia/ui-component/commit/f0970ff4fc8fdd018f4ead1f930b720bfb235497))
+* **VBottomSheet:** add bottom sheet handle ([d611cc2](https://github.com/gitsindonesia/ui-component/commit/d611cc24541d63b2e6e02098d06f78a8a4e80406))
+
+
+
+
+
+
 ## [0.16.1](https://github.com/gitsindonesia/ui-component/compare/v0.16.0...v0.16.1) (2023-02-01)
 
 ### Bug Fixes

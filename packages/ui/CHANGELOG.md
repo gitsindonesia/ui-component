@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.2](https://github.com/gitsindonesia/ui-component/compare/v0.16.1...v0.16.2) (2023-02-06)
+
+
+### Features
+
+* **Bottom Sheet:** add bottom sheet handle ([#123](https://github.com/gitsindonesia/ui-component/issues/123)) ([1d9eab0](https://github.com/gitsindonesia/ui-component/commit/1d9eab01803a72a5428956a20d0ae4233860e679))
+
+
+
+
+
+
 ## [0.16.1](https://github.com/gitsindonesia/ui-component/compare/v0.16.0...v0.16.1) (2023-02-01)
 
 **Note:** Version bump only for package @gits-id/ui

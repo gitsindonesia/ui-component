@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/ui",
-  "version": "0.16.1",
+  "version": "0.16.2",
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "npm run build",
@@ -12,7 +12,7 @@
     "@gits-id/autocomplete": "^0.16.1",
     "@gits-id/avatar": "^0.16.1",
     "@gits-id/badge": "^0.16.1",
-    "@gits-id/bottom-sheet": "^0.16.1",
+    "@gits-id/bottom-sheet": "^0.16.2",
     "@gits-id/breadcrumbs": "^0.16.1",
     "@gits-id/button": "^0.16.1",
     "@gits-id/card": "^0.16.1",
