@@ -18,7 +18,7 @@ A rating component is a user interface element that allows users to rate a produ
 
 The component also supports the `v-model` directive, which allows you to bind the value of the progress bar to a data property.
 
-<LivePreview src="components-rating--v-model" >
+<LivePreview src="components-rating--default-value" >
 
 ```vue
 <script setup lang="ts">
@@ -97,6 +97,7 @@ npm i @gits-id/rating
 ```vue
 <script setup lang="ts">
 import {Rating as VRating} from '@gits-id/rating';
+import '@gits-id/rating/dist/style.css';
 </script>
 
 <template>
