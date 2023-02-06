@@ -4,4 +4,5 @@ export {default as BottomSheetMenus} from './BottomSheetMenus.vue';
 export {default as BottomSheetBody} from './BottomSheetBody.vue';
 export {default as BottomSheetOverlay} from './BottomSheetOverlay.vue';
 export {default as BottomSheetFooter} from './BottomSheetFooter.vue';
+export {default as BottomSheetHandle} from './BottomSheetHandle.vue';
 export * from './types';

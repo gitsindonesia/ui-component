@@ -70,6 +70,7 @@ import {
   BottomSheetFooter,
   BottomSheetMenus,
   BottomSheetOverlay,
+  BottomSheetHandle
 } from '@gits-id/bottom-sheet';
 
 const plugin: Plugin = {
@@ -131,6 +132,7 @@ const plugin: Plugin = {
     app.component('VBottomSheetFooter', BottomSheetFooter);
     app.component('VBottomSheetMenus', BottomSheetMenus);
     app.component('VBottomSheetOverlay', BottomSheetOverlay);
+    app.component('VBottomSheetHandle', BottomSheetHandle);
   },
 };
 
