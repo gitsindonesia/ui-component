@@ -18,4 +18,8 @@ export interface BottomSheetMenusProps extends Record<string, any> {}
 export type BottomSheetApi = {
   isOpen: Ref<boolean>;
   close: () => void;
+  open: () => void;
+  getHeight: () => number;
+  setHeight: (height: string | number) => void;
+  el: Ref<HTMLDivElement>
 };

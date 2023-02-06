@@ -5,7 +5,7 @@ export default {
 </script>
 
 <script lang="ts" setup>
-import {ref, provide, toRefs, watch} from 'vue';
+import {ref, provide, toRefs, watch, onMounted} from 'vue';
 import type {BottomSheetApi} from './types';
 
 export interface Props {
@@ -28,15 +28,30 @@ const emit =
 
 const {modelValue} = toRefs(props);
 const isOpen = ref(modelValue.value);
+const bottomSheetRef = ref<HTMLDivElement>()
 
 watch(modelValue, (val) => (isOpen.value = val));
 watch(isOpen, (val) => emit('update:modelValue', val));
 
+const open = () => (isOpen.value = true);
 const close = () => (isOpen.value = false);
+
+const setHeight = (height: string | number) => {
+  bottomSheetRef.value!.style.height = height as string
+}
+
+const getHeight = () => {
+  const height = bottomSheetRef.value!.clientHeight
+  return (height / window.innerHeight) * 100
+}
 
 const api: BottomSheetApi = {
   isOpen,
   close,
+  open,
+  setHeight,
+  getHeight,
+  el: bottomSheetRef
 };
 
 provide('bottom-sheet', api);
@@ -52,7 +67,7 @@ provide('bottom-sheet', api);
       />
     </transition>
     <transition :name="transition">
-      <div v-if="isOpen" class="v-bottom-sheet" v-bind="$attrs">
+      <div ref="bottomSheetRef" v-if="isOpen" class="v-bottom-sheet" v-bind="$attrs">
         <div class="v-bottom-sheet-panel" :style="{maxWidth}">
           <slot :close="close" />
         </div>

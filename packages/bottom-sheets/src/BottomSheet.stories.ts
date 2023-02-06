@@ -6,6 +6,7 @@ import BottomSheetHeader from './BottomSheetHeader.vue';
 import BottomSheetMenus from './BottomSheetMenus.vue';
 import BottomSheetBody from './BottomSheetBody.vue';
 import BottomSheetFooter from './BottomSheetFooter.vue';
+import BottomSheetHandle from './BottomSheetHandle.vue';
 import '@gits-id/button/src/VBtn.dark.scss';
 import './BottomSheet.dark.scss';
 
@@ -83,6 +84,26 @@ export const WithHeader: Story = (args, {argTypes}) => ({
   template: `
     <Button @click="isOpen = !isOpen">Open BottomSheet</Button>
     <BottomSheet v-model="isOpen" v-bind="args">
+      <BottomSheetHeader>
+        Sheet Title
+      </BottomSheetHeader>
+      <BottomSheetBody>
+        A quick brown fox leaps over the lazy dog.
+      </BottomSheetBody>
+    </BottomSheet>
+  `,
+});
+
+export const WithHandle: Story = (args, {argTypes}) => ({
+  components: {BottomSheet, BottomSheetHandle, BottomSheetHeader, BottomSheetBody, Button},
+  setup() {
+    const isOpen = ref(false);
+    return {args, argTypes, isOpen};
+  },
+  template: `
+    <Button @click="isOpen = !isOpen">Open BottomSheet</Button>
+    <BottomSheet v-model="isOpen" v-bind="args">
+      <BottomSheetHandle />
       <BottomSheetHeader>
         Sheet Title
       </BottomSheetHeader>

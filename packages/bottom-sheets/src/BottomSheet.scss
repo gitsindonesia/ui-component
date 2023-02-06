@@ -1,6 +1,12 @@
 :root {
   --v-bottom-sheet-bg-color: #fff;
   --v-bottom-sheet-body-color: theme('colors.gray.800');
+
+  // handle
+  --v-bottom-sheet-handle-width: 3rem;
+  --v-bottom-sheet-handle-height: 8px;
+  --v-bottom-sheet-handle-bg-color: theme('colors.gray.300');
+  --v-bottom-sheet-handle-border-radius: theme('borderRadius.lg');
 }
 
 .v-bottom-sheet {
@@ -12,6 +18,20 @@
   left: 0;
   right: 0;
   z-index: 20;
+  transition: height 0.3s ease;
+
+  &--dragging {
+    @apply select-none;
+  }
+
+  &-handle {
+    width: var(--v-bottom-sheet-handle-width);
+    height: var(--v-bottom-sheet-handle-height);
+    background-color: var(--v-bottom-sheet-handle-bg-color);
+    border-radius: var(--v-bottom-sheet-handle-border-radius);
+    margin: 0.5rem auto;
+    cursor: grab;
+  }
 
   &-panel {
     background-color: var(--v-bottom-sheet-bg-color, #fff);
