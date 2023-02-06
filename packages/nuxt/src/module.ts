@@ -341,6 +341,10 @@ const components: AddComponentOptions[] = [
     name: 'VBottomSheetOverlay',
     filePath: '@gits-id/bottom-sheet/src/BottomSheetOverlay.vue',
   },
+  {
+    name: 'VBottomSheetHandle',
+    filePath: '@gits-id/bottom-sheet/src/BottomSheetHandle.vue',
+  },
 ];
 
 export interface ModuleOptions {
