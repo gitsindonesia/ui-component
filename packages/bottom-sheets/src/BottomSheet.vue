@@ -5,7 +5,7 @@ export default {
 </script>
 
 <script lang="ts" setup>
-import {ref, provide, toRefs, watch, onMounted} from 'vue';
+import {ref, provide, toRefs, watch} from 'vue';
 import type {BottomSheetApi} from './types';
 
 export interface Props {
