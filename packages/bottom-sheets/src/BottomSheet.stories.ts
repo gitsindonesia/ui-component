@@ -284,7 +284,7 @@ export const NestedSheet: Story = (args, {argTypes}) => ({
 });
 
 export const DarkMode: Story = (args, {argTypes}) => ({
-  components: {BottomSheet, BottomSheetBody, BottomSheetHeader, Button},
+  components: {BottomSheet, BottomSheetHandle, BottomSheetBody, BottomSheetHeader, Button},
   setup() {
     const isOpen = ref(false);
     onMounted(() => {
@@ -296,6 +296,7 @@ export const DarkMode: Story = (args, {argTypes}) => ({
   <div class="dark:bg-neutral-900 dark:text-neutral-200 p-6">
     <Button @click="isOpen = !isOpen">Open BottomSheet</Button>
     <BottomSheet v-model="isOpen" v-bind="args">
+      <BottomSheetHandle />
       <BottomSheetHeader>Sheet Title</BottomSheetHeader>
       <BottomSheetBody>
         A quick brown fox leaps over the lazy dog.
