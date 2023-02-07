@@ -1,0 +1,1 @@
+export const BottomSheetInjectionKey = Symbol('bottom-sheet')

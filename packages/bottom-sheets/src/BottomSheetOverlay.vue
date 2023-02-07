@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import {inject} from 'vue';
+import {BottomSheetInjectionKey} from './api';
 import type {BottomSheetApi} from './types';
 
 withDefaults(
@@ -11,7 +12,7 @@ withDefaults(
   },
 );
 
-const api = inject<BottomSheetApi>('bottom-sheet');
+const api = inject<BottomSheetApi>(BottomSheetInjectionKey);
 </script>
 
 <template>

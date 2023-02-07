@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import Icon from '@gits-id/icon';
 import {inject} from 'vue';
+import {BottomSheetInjectionKey} from './api';
 import type {BottomSheetApi} from './types';
 
-const api = inject<BottomSheetApi>('bottom-sheet');
+const api = inject<BottomSheetApi>(BottomSheetInjectionKey);
 </script>
 
 <template>

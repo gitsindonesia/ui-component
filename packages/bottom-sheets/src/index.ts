@@ -6,3 +6,4 @@ export {default as BottomSheetOverlay} from './BottomSheetOverlay.vue';
 export {default as BottomSheetFooter} from './BottomSheetFooter.vue';
 export {default as BottomSheetHandle} from './BottomSheetHandle.vue';
 export * from './types';
+export * from './api';

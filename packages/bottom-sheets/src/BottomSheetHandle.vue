@@ -1,25 +1,27 @@
 <script setup lang="ts">
 import {inject, onMounted, onUnmounted, ref} from 'vue';
+import {BottomSheetInjectionKey} from './api';
 import type {BottomSheetApi} from './types';
 
-const api = inject<BottomSheetApi>('bottom-sheet');
-const draggableArea = ref()
+const api = inject<BottomSheetApi>(BottomSheetInjectionKey);
+const draggableArea = ref();
 
-let sheetHeight: number | string
+let sheetHeight: number | string;
 
 const setSheetHeight = (value: number | string) => {
   sheetHeight = Math.max(0, Math.min(100, +value));
-  api?.setHeight(`${sheetHeight}vh`)
+  api?.setHeight(`${sheetHeight}vh`);
 };
 
-const touchPosition = (event: any) => (event.touches ? event.touches[0] : event);
+const touchPosition = (event: any) =>
+  event.touches ? event.touches[0] : event;
 
 let dragPosition: number | undefined;
 
 const onDragStart = (event: Event) => {
   dragPosition = touchPosition(event).pageY;
   draggableArea.value.style.cursor = document.body.style.cursor = 'grabbing';
-  api?.el?.value?.classList?.add('v-bottom-sheet--dragging')
+  api?.el?.value?.classList?.add('v-bottom-sheet--dragging');
 };
 
 const onDragMove = (event: Event) => {
@@ -38,18 +40,18 @@ const onDragEnd = () => {
   draggableArea.value.style.cursor = document.body.style.cursor = '';
 
   if (sheetHeight < 25) {
-    api?.close()
+    api?.close();
   } else if (sheetHeight > 75) {
     setSheetHeight(100);
   } else {
-    setSheetHeight(sheetHeight)
+    setSheetHeight(sheetHeight);
   }
 
-  api?.el?.value?.classList?.remove('v-bottom-sheet--dragging')
+  api?.el?.value?.classList?.remove('v-bottom-sheet--dragging');
 };
 
 onMounted(() => {
-  sheetHeight = api?.getHeight() as number
+  sheetHeight = api?.getHeight() as number;
 
   draggableArea.value.addEventListener('mousedown', onDragStart);
   draggableArea.value.addEventListener('touchstart', onDragStart);
@@ -69,10 +71,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div
-    ref="draggableArea"
-    class="v-bottom-sheet-handle"
-  >
+  <div ref="draggableArea" class="v-bottom-sheet-handle">
     <slot />
   </div>
 </template>
