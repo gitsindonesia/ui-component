@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.3](https://github.com/gitsindonesia/ui-component/compare/v0.16.2...v0.16.3) (2023-02-07)
+
+
+### Bug Fixes
+
+* **VAppBar:** fix defineExpose syntax ([9b5f5ed](https://github.com/gitsindonesia/ui-component/commit/9b5f5edd7c3d461821cf0b5991dd6bd29d76646e))
+
+
+
+
+
+
 ## [0.16.1](https://github.com/gitsindonesia/ui-component/compare/v0.16.0...v0.16.1) (2023-02-01)
 
 **Note:** Version bump only for package @gits-id/app-bar

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.3](https://github.com/gitsindonesia/ui-component/compare/v0.16.2...v0.16.3) (2023-02-07)
+
+
+### Bug Fixes
+
+* **nuxt:** fix FormGroup path ([b5632fc](https://github.com/gitsindonesia/ui-component/commit/b5632fc97931da7531219f050b07a409b8818c24))
+
+
+
+
+
 ## [0.16.2](https://github.com/gitsindonesia/ui-component/compare/v0.16.1...v0.16.2) (2023-02-06)
 
 

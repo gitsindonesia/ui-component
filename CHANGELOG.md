@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.16.3](https://github.com/gitsindonesia/ui-component/compare/v0.16.2...v0.16.3) (2023-02-07)
+
+
+### Bug Fixes
+
+* **BottomSheet:** change bottom sheet handle color on dark mode ([0aea41e](https://github.com/gitsindonesia/ui-component/commit/0aea41ed65aee1b08ba7de7d85d40a9c40717468))
+* **nuxt:** fix FormGroup path ([b5632fc](https://github.com/gitsindonesia/ui-component/commit/b5632fc97931da7531219f050b07a409b8818c24))
+* **VAppBar:** fix defineExpose syntax ([9b5f5ed](https://github.com/gitsindonesia/ui-component/commit/9b5f5edd7c3d461821cf0b5991dd6bd29d76646e))
+
+
+### Features
+
+* **BottomSheet:** use Symbol for bottom sheet injection key ([a87a1a7](https://github.com/gitsindonesia/ui-component/commit/a87a1a7f97309f07deda9f26fa95cd6505250db6))
+
+
+
+
+
 ## [0.16.2](https://github.com/gitsindonesia/ui-component/compare/v0.16.1...v0.16.2) (2023-02-06)
 
 
