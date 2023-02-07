@@ -168,7 +168,7 @@ const components: AddComponentOptions[] = [
   },
   {
     name: 'VFormGroup',
-    filePath: '@gits-id/forms/src/from-group/VFormGroup.vue',
+    filePath: '@gits-id/forms/src/form-group/VFormGroup.vue',
   },
   {
     name: 'VFormSelect',
