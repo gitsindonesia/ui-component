@@ -85,7 +85,9 @@ watch(modelValue, (val) => {
 
 const toggle = () => (isOpen.value = !isOpen.value);
 
-defineExpose(toggle);
+defineExpose({
+  toggle,
+});
 
 // elevate on scroll
 if (props.elevateOnScroll) {
