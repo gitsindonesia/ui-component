@@ -1,10 +1,10 @@
 import VAppBar from './VAppBar.vue';
-import {Story, Meta} from '@storybook/vue3';
-import {defaultColors, defaultShadows} from '@gits-id/theme/defaultTheme';
-import {ref} from 'vue';
+import { Story, Meta } from '@storybook/vue3';
+import { defaultColors, defaultShadows } from '@gits-id/theme/defaultTheme';
+import { ref } from 'vue';
 import Icon from '@gits-id/icon';
 import Button from '@gits-id/button';
-import {VInput} from '@gits-id/forms';
+import { VInput } from '@gits-id/forms';
 import '@gits-id/button/src/VBtn.scss';
 import '@gits-id/forms/src/forms.scss';
 import '@gits-id/theme/transition.css';
@@ -16,9 +16,9 @@ export default {
 } as Meta;
 
 const Template: Story<{}> = (args) => ({
-  components: {VAppBar},
+  components: { VAppBar },
   setup() {
-    return {args};
+    return { args };
   },
   template: `
   <div>
@@ -78,11 +78,11 @@ Bordered.parameters = {
 };
 
 export const Shadow: Story<{}> = (args) => ({
-  components: {VAppBar},
+  components: { VAppBar },
   setup() {
     const shadows = defaultShadows;
 
-    return {args, shadows};
+    return { args, shadows };
   },
   template: `
 <VAppBar
@@ -97,9 +97,9 @@ export const Shadow: Story<{}> = (args) => ({
 });
 
 export const Colors: Story<{}> = (args) => ({
-  components: {VAppBar},
+  components: { VAppBar },
   setup() {
-    return {args, defaultColors};
+    return { args, defaultColors };
   },
   template: `
 <v-app-bar
@@ -116,10 +116,10 @@ export const Colors: Story<{}> = (args) => ({
 const sizes = ['sm', 'md', 'lg'];
 
 export const Sizes: Story<{}> = (args) => ({
-  components: {VAppBar, Button, Icon, VInput},
+  components: { VAppBar, Button, Icon, VInput },
   setup() {
     const isOpen = ref(true);
-    return {args, isOpen, sizes};
+    return { args, isOpen, sizes };
   },
   template: `
 <v-app-bar
@@ -184,6 +184,24 @@ export const Sizes: Story<{}> = (args) => ({
     <h3 class="text-lg font-semibold">Page Title</h3>
   </div>
 </v-app-bar>
+
+<v-app-bar
+  v-model="isOpen"
+  shadow
+  size="auto"
+  class="mb-5 py-5"
+>
+  <div class="flex w-full justify-between items-center">
+    <div class="flex items-center gap-2">
+      <Button text icon fab rounded prefix-icon="ri:menu-line" />
+      <span class="font-semibold">AppBar: auto</span>
+    </div>
+    <nav aria-label="Mobile Nav" class="flex items-center sm:gap-2">
+      <Button text icon fab rounded prefix-icon="ri:search-line" />
+      <Button text icon fab rounded prefix-icon="ri:shopping-cart-line" />
+    </nav>
+  </div>
+</v-app-bar>
 `,
 });
 
@@ -201,10 +219,10 @@ CustomClass.parameters = {
 };
 
 export const Toggle: Story<{}> = (args) => ({
-  components: {VAppBar, Button},
+  components: { VAppBar, Button },
   setup() {
     const isOpen = ref(true);
-    return {args, isOpen};
+    return { args, isOpen };
   },
   template: `
 <v-app-bar
@@ -221,10 +239,10 @@ export const Toggle: Story<{}> = (args) => ({
 });
 
 export const CustomTransition: Story<{}> = (args) => ({
-  components: {VAppBar, Button},
+  components: { VAppBar, Button },
   setup() {
     const isOpen = ref(true);
-    return {args, isOpen};
+    return { args, isOpen };
   },
   template: `
 <v-app-bar
@@ -242,10 +260,10 @@ export const CustomTransition: Story<{}> = (args) => ({
 });
 
 export const MobileNavigation: Story<{}> = (args) => ({
-  components: {VAppBar, Button, Icon},
+  components: { VAppBar, Button, Icon },
   setup() {
     const isOpen = ref(true);
-    return {args, isOpen};
+    return { args, isOpen };
   },
   template: `
 <v-app-bar
@@ -279,10 +297,10 @@ export const MobileNavigation: Story<{}> = (args) => ({
 });
 
 export const WithSearchBar: Story<{}> = (args) => ({
-  components: {VAppBar, Button, Icon, VInput},
+  components: { VAppBar, Button, Icon, VInput },
   setup() {
     const isOpen = ref(true);
-    return {args, isOpen};
+    return { args, isOpen };
   },
   template: `
 <v-app-bar
@@ -324,7 +342,7 @@ export const WithSearchBar: Story<{}> = (args) => ({
 });
 
 export const Transparent: Story<{}> = (args) => ({
-  components: {VAppBar},
+  components: { VAppBar },
   template: `
 <main class="mt-5 h-screen bg-primary-500 text-white">
   <v-app-bar
@@ -340,7 +358,7 @@ export const Transparent: Story<{}> = (args) => ({
 });
 
 export const BackdropBlur: Story<{}> = (args) => ({
-  components: {VAppBar},
+  components: { VAppBar },
   template: `
 <main class="mt-5 h-screen bg-primary-500 text-white">
   <v-app-bar
@@ -356,9 +374,9 @@ export const BackdropBlur: Story<{}> = (args) => ({
 });
 
 export const DarkMode: Story<{}> = () => ({
-  components: {VAppBar},
+  components: { VAppBar },
   setup() {
-    return {defaultColors};
+    return { defaultColors };
   },
   template: `
 <main class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6 space-y-2">
@@ -370,7 +388,7 @@ export const DarkMode: Story<{}> = () => ({
 });
 
 export const ElevateOnScroll: Story<{}> = () => ({
-  components: {VAppBar},
+  components: { VAppBar },
   template: `
   <main class="mt-5 h-screen bg-gray-50 text-white">
     <VAppBar fixed elevate-on-scroll="md">
@@ -381,7 +399,7 @@ export const ElevateOnScroll: Story<{}> = () => ({
 });
 
 export const HideOnScroll: Story<{}> = () => ({
-  components: {VAppBar},
+  components: { VAppBar },
   template: `
   <main class="mt-5 h-screen bg-gray-50 text-white">
     <VAppBar fixed hide-on-scroll transition="slide-down">
