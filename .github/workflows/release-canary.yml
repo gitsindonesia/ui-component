@@ -28,6 +28,7 @@ jobs:
         run: |
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor}}@users.noreply.github.com"
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
           npx lerna bootstrap
           npx lerna run build
           npx lerna version --conventional-commits --conventional-prerelease --preid beta --yes
