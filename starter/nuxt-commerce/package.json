@@ -1,6 +1,6 @@
 {
-  "name": "@gits-id/nuxt-minimal",
-  "description": "Lightweight Nuxt.js template with GITS UI",
+  "name": "@gits-id/nuxt-commerce",
+  "description": "E-Commerce template built with Nuxt.js and GITS UI",
   "version": "0.1.0",
   "keywords": [
     "admin",
