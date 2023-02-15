@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.17.0-beta.0](https://github.com/gitsindonesia/ui-component/compare/v0.16.3...v0.17.0-beta.0) (2023-02-15)
+
+
+### Bug Fixes
+
+* **nuxt-commerce:** add image alt ([7497275](https://github.com/gitsindonesia/ui-component/commit/74972758b085db5d96348157140e9ff620be6495))
+* **nuxt-commerce:** change package name ([8208785](https://github.com/gitsindonesia/ui-component/commit/8208785bf399cf11f24db5756c9efe3972c83b7f))
+
+
+### Features
+
+* **VAppBar:** new `auto` size ([#126](https://github.com/gitsindonesia/ui-component/issues/126)) ([c32bae5](https://github.com/gitsindonesia/ui-component/commit/c32bae572a772d887723610fe22aa7279fbed43b))
+
+
+
+
+
 ## [0.16.3](https://github.com/gitsindonesia/ui-component/compare/v0.16.2...v0.16.3) (2023-02-07)
 
 
