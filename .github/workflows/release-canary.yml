@@ -1,6 +1,9 @@
 name: Publish
 on:
   push:
+    # paths:
+    #   - 'packages/**'
+    #   - 'starter/**'
     branches:
       - main
 
@@ -27,6 +30,6 @@ jobs:
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor}}@users.noreply.github.com"
           npx lerna bootstrap
-          npx leran run build
+          npx lerna run build
           npx lerna version --conventional-commits --canary --yes
           npx lerna publish from-git --yes
