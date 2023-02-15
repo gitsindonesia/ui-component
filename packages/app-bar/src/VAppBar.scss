@@ -15,13 +15,16 @@
   display: flex;
   align-items: center;
   height: var(--app-bar-height);
-  padding: var(--app-bar-padding-y) var(--app-bar-padding-x);
   background: var(--app-bar-bg-color);
   color: var(--app-bar-color);
   box-shadow: var(--app-bar-shadow);
   transition: var(--app-bar-transition);
   border-bottom: var(--app-bar-border-width) var(--app-bar-border-style)
     var(--app-bar-border-color);
+
+  &:not(&--auto) {
+    padding: var(--app-bar-padding-y) var(--app-bar-padding-x);
+  }
 
   // fixed
   &--fixed {
@@ -122,6 +125,10 @@
   /* sizes */
   &--sm {
     --app-bar-height: 48px;
+  }
+
+  &--auto {
+    --app-bar-height: auto;
   }
 
   &--md {

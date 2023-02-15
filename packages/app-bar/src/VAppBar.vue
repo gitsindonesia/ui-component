@@ -48,7 +48,7 @@ const props = defineProps({
     default: 'fade',
   },
   size: {
-    type: String as PropType<'sm' | 'md' | 'lg'>,
+    type: String as PropType<'sm' | 'md' | 'lg' | 'auto'>,
     default: 'md',
   },
   elevateOnScroll: {
