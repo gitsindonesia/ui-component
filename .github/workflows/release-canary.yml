@@ -31,5 +31,5 @@ jobs:
           git config user.email "${{ github.actor}}@users.noreply.github.com"
           npx lerna bootstrap
           npx lerna run build
-          npx lerna version --conventional-commits --conventional-prerelease --preid canary --yes
+          npx lerna version --conventional-commits --conventional-prerelease --preid beta --yes
           npx lerna publish from-git --yes
