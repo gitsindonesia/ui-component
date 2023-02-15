@@ -15,6 +15,7 @@ const {data: product} = useAsyncData(() => $api(`/products/${id}`));
     <div>
       <img
         :src="product.images[0]"
+        :alt="product.title"
         class="max-w-full rounded-lg object-contain w-auto"
       />
     </div>
