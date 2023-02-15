@@ -130,7 +130,7 @@ The `shadow` prop allows you to apply a shadow style to the AppBar. The possible
 ## Sizes
 
 - **prop**: `size`
-- **type**: `sm | md | lg`
+- **type**: `sm | md | lg auto`
 - **default**: `md`
 - **required**: `false`
 
@@ -143,6 +143,7 @@ The `size` prop allows you to specify the size of the AppBar. The possible value
   <VAppBar size="sm"> Hello World </VAppBar>
   <VAppBar size="md"> Hello World </VAppBar>
   <VAppBar size="lg"> Hello World </VAppBar>
+  <VAppBar size="auto"> Hello World </VAppBar>
 </template>
 ```
 
@@ -254,7 +255,7 @@ Use `hide-on-scroll` prop to hide app-bar when user scroll the page.
 | --------------------------------------- | -------------------------------------------------- | --------- |
 | [modelValue](#name)                     | `boolean`                                          | `true`    |
 | [color](#color)                         | `string` , [available colors](/guide/theme#colors) | `default` |
-| [size](#size)                           | `string`                                           | `fade`    |
+| [size](#size)                           | `string`                                           | `md`      |
 | [fixed](#fixed)                         | `boolean`                                          | `false`   |
 | [sticky](#sticky)                       | `boolean`                                          | `false`   |
 | [shadow](#shadow)                       | `boolean`                                          | `false`   |
