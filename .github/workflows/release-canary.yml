@@ -1,9 +1,8 @@
 name: Publish
 on:
   push:
-    # paths:
-    #   - 'packages/**'
-    #   - 'starter/**'
+    paths:
+      - 'packages/**'
     branches:
       - main
 
