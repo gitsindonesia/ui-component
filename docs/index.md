@@ -17,25 +17,16 @@ hero:
       text: View on Storybook
       link: https://gits-ui.web.app
 features:
-  - icon: 🖖
-    title: Vue 3
-    details: The latest and greatest version of Vue is used to build GITS UI.
-  - icon: 💨
-    title: Tailwind CSS
-    details: GITS UI makes use of the popular CSS framework, Tailwind CSS, to allow for fast prototyping.
-  - icon: 🛠️
-    title: Customizable
-    details: GITS UI components are easy to customize with CSS properties.
   - icon: ⛰️
-    title: Nuxt 3 integration
-    details: GITS UI is easy to integrate with Nuxt 3.
+    title: Vue 3
+    details: Built with Vue 3 and easy to integrate with Nuxt 3
   - icon: 🔐
     title: TypeScript
-    details: GITS UI comes with TypeScript support out-of-the-box.
+    details: Comes with TypeScript support out-of-the-box.
+  - icon: 🛠️
+    title: Customizable
+    details: Components are easy to customize with CSS properties.
   - icon: 🎨
     title: Themes
-    details: GITS UI includes support for theming.
-  - icon: 🎨
-    title: Dark Mode
-    details: Support dark mode out-of-the-box.
+    details: Support theming and ships dark mode out-of-the-box
 ---
