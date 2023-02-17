@@ -17,6 +17,8 @@ const emit =
   defineEmits<{
     (e: 'click:menu'): void;
   }>();
+
+const viewCart = ref(false)
 </script>
 
 <template>
@@ -219,9 +221,13 @@ const emit =
             </a>
           </div>
 
+          <Teleport to="body">
+            <StoreCart v-model="viewCart" />
+          </Teleport>
+
           <!-- Cart -->
           <div class="ml-4 flow-root lg:ml-6">
-            <a href="#" class="group -m-2 flex items-center p-2">
+            <button aria-label="View bag" @click="viewCart = true" class="group -m-2 flex items-center p-2">
               <ShoppingBagIcon
                 class="
                   h-6
@@ -243,7 +249,7 @@ const emit =
                 >0</span
               >
               <span class="sr-only">items in cart, view bag</span>
-            </a>
+            </button>
           </div>
         </div>
       </div>
