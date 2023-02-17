@@ -1,8 +1,14 @@
+---
+outline: deep
+---
+
 # Bottom Sheet
 
 A Bottom Sheet is a user interface component that slides up from the bottom of the screen to display content that complements the main screen. It can either be a full-screen or partially visible, allowing users to interact with the underlying content while still having access to the main screen. Bottom sheets are used to provide additional context, options, or functionality related to the main screen and can be dismissed by dragging it down or tapping outside of it.
 
-## Basic Usage
+## Usage
+
+### Basic Usage
 
 To use the `VBottomSheet` component, you can simply include it in your template like this:
 
@@ -27,7 +33,7 @@ const isOpen = ref(false);
 
 </LivePreview>
 
-## With Header
+### With Header
 
 To add header to the bottom sheet, add `VBottomSheetHeader` as child of `VBottomSheet`.
 
@@ -53,7 +59,7 @@ const isOpen = ref(false);
 
 </LivePreview>
 
-## With Handle
+### With Handle
 
 To add handle to the bottom sheet, add `VBottomSheetHandle` as child of `VBottomSheet`.
 
@@ -80,9 +86,9 @@ const isOpen = ref(false);
 
 </LivePreview>
 
-## With Action/Footer
+### With Footer
 
-To add action/footer to the bottom sheet, add `VBottomSheetFooter` as child of `VBottomSheet`.
+To add footer to the bottom sheet, add `VBottomSheetFooter` as child of `VBottomSheet`.
 
 <LivePreview src="components-bottomsheet--with-action">
 
@@ -109,7 +115,7 @@ const isOpen = ref(false);
 
 </LivePreview>
 
-## Menus
+### Menus
 
 To add menus to the bottom sheet, add `VBottomSheetMenus` as child of `VBottomSheet`.
 
@@ -135,7 +141,7 @@ const isOpen = ref(false);
 
 </LivePreview>
 
-## Selectable Menus
+### Selectable Menus
 
 To add selectable menus to the bottom sheet, add `VBottomSheetMenus` and set `v-model` to a ref to it.
 
@@ -163,7 +169,7 @@ const selected = ref([]);
 
 </LivePreview>
 
-## Multiple Selection Menus
+### Multiple Selection Menus
 
 You can also add multiple selection to bottom sheet menus by adding `multiple` props to the `VBottomSheetMenus` component.
 
@@ -191,7 +197,7 @@ const selected = ref([]);
 
 </LivePreview>
 
-## Max Width
+### Max Width
 
 You can set max width of bottom sheet via `maxWidth` prop.
 
@@ -217,7 +223,7 @@ const isOpen = ref(false);
 
 </LivePreview>
 
-## Hide Overlay
+### Hide Overlay
 
 You can hide bottom sheet overlay by setting `overlay` prop value to `false`.
 
@@ -243,7 +249,7 @@ const isOpen = ref(false);
 
 </LivePreview>
 
-## Multiple Bottom Sheet
+### Multiple Bottom Sheet
 
 <LivePreview src="components-bottomsheet--multiple-instance">
 
@@ -277,7 +283,7 @@ const sheet2 = ref(false);
 
 </LivePreview>
 
-## Nested Bottom Sheet
+### Nested Bottom Sheet
 
 <LivePreview src="components-bottomsheet--nested-sheet">
 

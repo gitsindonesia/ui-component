@@ -1,3 +1,7 @@
+---
+outline: deep
+---
+
 # Avatar
 
 The `Avatar` component is a visual representation of a user or an entity. It can be displayed in various shapes (e.g. circle, square, rounded) and can be initialized with either an image or a name.
@@ -10,7 +14,7 @@ Alternatively, you can also use the `VAvatar` component from the `@gits-id/ui` p
 
 ## Usage
 
-## Basic Usage
+### Basic Usage
 
 To use the `VAvatar` component, you can simply include it in your template.
 
@@ -25,7 +29,7 @@ To use the `VAvatar` component, you can simply include it in your template.
 
 </LivePreview>
 
-## Initial Name
+### Initial Name
 
 - **prop**: `name`
 - **type**: `string`
@@ -40,7 +44,7 @@ Use prop `name` to show the user initial name. You can pass the full name to the
 </template>
 ```
 
-## Max Initial
+### Max Initial
 
 - **prop**: `max-initial`
 - **type**: `number`
@@ -55,7 +59,7 @@ By default it max to `2` initial name, but you can change it with `max-initial` 
 </template>
 ```
 
-## Image
+### Image
 
 - **prop**: `image`
 - **type**: `string`
@@ -74,7 +78,7 @@ We can also set avatar image with `image` prop. The `image` prop accept string a
 
 </LivePreview>
 
-## Shape
+### Shape
 
 - **prop**: `shape`
 - **type**: `string`. Available values: `circle`, `rounded`, `square`.
@@ -96,7 +100,7 @@ We can change the shape of avatar via `shape` prop. By the default, the shape is
 
 </LivePreview>
 
-## Props
+### Props
 
 | Name                      | Type                                                      | Default  | Description               |
 | ------------------------- | --------------------------------------------------------- | -------- | ------------------------- |

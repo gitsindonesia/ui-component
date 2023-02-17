@@ -1,10 +1,14 @@
+---
+outline: deep
+---
+
 # Editor
 
 The `VEditor` component is an integration of the CKEditor component with `vee-validate` for validation.
 
 ## Usage
 
-## Basic Usage
+### Basic Usage
 
 To use the `VEditor` component, bind it to a `value` using the `v-model` directive:
 
@@ -28,7 +32,7 @@ const value = ref('');
 The `VEditor` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
-## Label
+### Label
 
 You can add a label to the `VEditor` component by using the `label` prop:
 
@@ -48,7 +52,7 @@ const value = ref('');
 
 </LivePreview>
 
-## Validation
+### Validation
 
 To add validation to the `VEditor` component, you can use the `useForm` hook from `vee-validate`. Here's an example of how to set up validation and handle form submission:
 
@@ -111,7 +115,7 @@ const onSubmit = handleSubmit((values) => {
 
 The `VEditor` component emits several Vue events that can be listened to and acted upon.
 
-## `update:modelValue` event
+### `update:modelValue`
 
 This event is emitted when the `modelValue` prop of the `VEditor` component is updated. It passes the updated value as an argument.
 
@@ -131,7 +135,7 @@ function onModelValueUpdate(value: string) {
 </template>
 ```
 
-## `change` event
+### `change`
 
 This event is emitted when the value of the `VEditor` component is changed. It passes the updated value as an argument.
 
@@ -151,7 +155,7 @@ function onChange(value: string) {
 </template>
 ```
 
-## `blur` event
+### `blur`
 
 This event is emitted when the VEditor component loses focus. It passes the event object as an argument.
 

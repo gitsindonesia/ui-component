@@ -1,10 +1,14 @@
+---
+outline: deep
+---
+
 # Autocomplete
 
 The `VAutocomplete` component is a customizable autocomplete input based on the Headless UI Autocomplete component.
 
 ## Usage
 
-## Basic Usage
+### Basic Usage
 
 To use the `VAutocomplete` component, simply add it to your template:
 
@@ -23,7 +27,7 @@ To use the `VAutocomplete` component, simply add it to your template:
 The `VAutocomplete` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
-## Clearable
+### Clearable
 
 To make the `VAutocomplete` component clearable, set the `clearable` prop:
 
@@ -37,7 +41,7 @@ To make the `VAutocomplete` component clearable, set the `clearable` prop:
 
 </LivePreview>
 
-## Validation
+### Validation
 
 You can use the `VAutocomplete` component with form validation libraries like `vee-validate`. In this example, we'll use the `useForm` hook from `vee-validate` to handle form submission and validation:
 
@@ -121,7 +125,7 @@ const genres = ref<Item[]>([
 
 ## Events
 
-## `update:modelValue`
+### `update:modelValue`
 
 The `update:modelValue` event is triggered whenever the selected value of the `VAutocomplete` component changes.
 
@@ -141,7 +145,7 @@ function onModelValueChange(value: Item) {
 </template>
 ```
 
-## `update:query`
+### `update:query`
 
 The `update:query` event is triggered whenever the search query in the `VAutocomplete` component changes.
 

@@ -1,10 +1,14 @@
+---
+outline: deep
+---
+
 # DataTable
 
 The `VDataTable` component is used for displaying tabular data. Features include sorting, searching, pagination, and row selection.
 
 ## Usage
 
-## Basic Usage
+### Basic Usage
 
 To use the `VDataTable` component, you will need to provide it with an array of items to display and an array of headers, which define the columns of the table.
 
@@ -55,7 +59,7 @@ const headers = ref<VDataTableHeader[]>([
 The `VDataTable` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
-## Striped
+### Striped
 
 To create a striped table, you can use the `striped` prop:
 
@@ -71,7 +75,7 @@ To create a striped table, you can use the `striped` prop:
 
 This will add alternate background colors to each row of the table, giving it a striped appearance.
 
-## Hover
+### Hover
 
 To add a hover effect to the rows of the table, you can use the `hover` prop:
 
@@ -87,7 +91,7 @@ To add a hover effect to the rows of the table, you can use the `hover` prop:
 
 This will change the background color of the row when the mouse pointer is hovering over it.
 
-## Flat
+### Flat
 
 To remove the box shadow and border of the table, you can use the `flat` prop:
 
@@ -101,7 +105,7 @@ To remove the box shadow and border of the table, you can use the `flat` prop:
 
 </LivePreview>
 
-## Bordered
+### Bordered
 
 To add a border around the table, you can use the `bordered` prop:
 
@@ -115,7 +119,7 @@ To add a border around the table, you can use the `bordered` prop:
 
 </LivePreview>
 
-## Tile
+### Tile
 
 To remove border radius of the table, you can use the `tile` prop:
 
@@ -129,7 +133,7 @@ To remove border radius of the table, you can use the `tile` prop:
 
 </LivePreview>
 
-## Dense
+### Dense
 
 To make the rows of the table denser, you can use the `dense` prop:
 
@@ -143,7 +147,7 @@ To make the rows of the table denser, you can use the `dense` prop:
 
 </LivePreview>
 
-## Loading
+### Loading
 
 To display a loading state for the table, you can use the `loading` prop.
 This will display a loading spinner and disable the table until the data is loaded.
@@ -158,7 +162,7 @@ This will display a loading spinner and disable the table until the data is load
 
 </LivePreview>
 
-## Empty
+### Empty
 
 The `VDataTable` component can display an empty state when the items prop is an empty array. This can be useful if you want to inform the user that there are no data items to display in the table.
 
@@ -193,7 +197,7 @@ For example, to customize the text displayed in the empty state and add a custom
 
 This will display the empty state with the text "No data available" and the class "text-red-500" applied.
 
-## Must Sort
+### Must Sort
 
 To require that a column be sorted before the table can be displayed, you can use the `must-sort` prop:
 
@@ -207,7 +211,7 @@ To require that a column be sorted before the table can be displayed, you can us
 
 </LivePreview>
 
-## Disable Sorting
+### Disable Sorting
 
 To disable sorting for the table, you can use the `disable-sorting` prop:
 
@@ -221,7 +225,7 @@ To disable sorting for the table, you can use the `disable-sorting` prop:
 
 </LivePreview>
 
-## Custom Wrapper Class
+### Custom Wrapper Class
 
 To add a custom class to the wrapper element of the table, you can use the `wrapper-class` prop:
 
@@ -235,7 +239,7 @@ To add a custom class to the wrapper element of the table, you can use the `wrap
 
 </LivePreview>
 
-## Custom Class
+### Custom Class
 
 To add custom classes to the various components of the table, you can use the following props:
 
@@ -270,7 +274,7 @@ This will add the classes `bg-blue-600` to the header element, `bg-gray-100` to 
 
 <LivePreview src="components-datatable--custom-class" />
 
-## Selecting Rows in the DataTable
+### Selecting Rows in the DataTable
 
 The `VDataTable` component provides the `selectable` prop that allows you to enable row selection in the table. When the `selectable` prop is set to `true`, a checkbox will be displayed in the first column of each row, and the user will be able to select multiple rows by clicking on the checkboxes.
 
@@ -296,7 +300,7 @@ const selected = ref([]);
 
 </LivePreview>
 
-## Freezing Columns in the DataTable
+### Freezing Columns in the DataTable
 
 The `VDataTable` component allows you to freeze columns in place, so that they remain visible while the rest of the table is scrolled horizontally. This can be useful if you want to keep important columns, such as the first and last columns, visible at all times.
 
@@ -357,7 +361,7 @@ const headers = ref<VDataTableHeader[]>([
 
 This will freeze the first and last columns of the table, so that they remain visible while the rest of the table is scrolled horizontally.
 
-## Server Side
+### Server Side
 
 This is an example of using a `server-side` data table in Vue.js. The data table is connected to a server-side API to retrieve data and handle pagination, sorting, and filtering.
 
@@ -467,7 +471,7 @@ watchEffect(fetchData);
 
 </LivePreview>
 
-## Search
+### Search
 
 The `VDataTable` component allows for searching through its items by binding a search string to its `search` prop.
 
@@ -498,7 +502,7 @@ const search = ref('');
 ## Props
 
 | Name                                          | Type                                    | Default                  |
-|-----------------------------------------------| --------------------------------------- | ------------------------ |
+| --------------------------------------------- | --------------------------------------- | ------------------------ |
 | [`modelValue`](#modelValue)                   | `Array`                                 | `[]`                     |
 | [`value`](#value)                             | `Array`                                 | `[]`                     |
 | [`headers`](#headers)                         | `Array as PropType<VDataTableHeader[]>` | `[]`                     |
@@ -542,7 +546,7 @@ const search = ref('');
 
 ## Events
 
-## `update:search`
+### `update:search`
 
 This event is emitted when the search string changes. The value parameter contains the new search string.
 
@@ -552,7 +556,7 @@ Type:
 (e: 'update:search', value: string): void;
 ```
 
-## `update:sortBy`
+### `update:sortBy`
 
 This event is emitted when the sortBy value changes. The value parameter contains the new sortBy value.
 
@@ -562,7 +566,7 @@ Type:
 (e: 'update:sortBy', value: string): void;
 ```
 
-## `update:sortDirection`
+### `update:sortDirection`
 
 This event is emitted when the sortDirection value changes. The value parameter contains the new sortDirection value.
 
@@ -572,7 +576,7 @@ Type:
 (e: 'update:sortDirection', value: SortDirection): void;
 ```
 
-## `update:page`
+### `update:page`
 
 This event is emitted when the page value changes. The value parameter contains the new page value.
 
@@ -582,7 +586,7 @@ Type:
 (e: 'update:page', value: number): void;
 ```
 
-## `update:itemsPerPage`
+### `update:itemsPerPage`
 
 This event is emitted when the itemsPerPage value changes. The value parameter contains the new itemsPerPage value.
 
@@ -592,7 +596,7 @@ Type:
 (e: 'update:itemsPerPage', value: number): void;
 ```
 
-## `update:totalItems`
+### `update:totalItems`
 
 This event is emitted when the totalItems value changes. The value parameter contains the new totalItems value.
 
@@ -602,7 +606,7 @@ Type:
 (e: 'update:totalItems', value: number): void;
 ```
 
-## `update:pagination`
+### `update:pagination`
 
 This event is emitted when any of the pagination values (page, items per page, or total items) change. The `value` parameter contains an object with the updated pagination values.
 
@@ -612,7 +616,7 @@ Type:
 (e: 'update:pagination', value: Record<string, any>): void;
 ```
 
-## `page:change`
+### `page:change`
 
 This event is emitted when the page number changes. The `value` parameter contains the new page number.
 
@@ -622,7 +626,7 @@ Type:
 (e: 'page:change', value: number): void;
 ```
 
-## `itemsPerPage:change`
+### `itemsPerPage:change`
 
 This event is emitted when the number of items per page changes. The `value` parameter contains the new number of items per page.
 
@@ -632,7 +636,7 @@ Type:
 (e: 'itemsPerPage:change', value: number): void;
 ```
 
-## `pagination:change`
+### `pagination:change`
 
 This event is emitted when any of the pagination values (page, items per page, or total items) change. The `value` parameter contains an object with the updated pagination values.
 
@@ -642,7 +646,7 @@ Type:
 (e: 'pagination:change', value: Record<string, any>): void;
 ```
 
-## `update:modelValue`
+### `update:modelValue`
 
 This event is emitted when the value of the `v-model` directive changes. The `value` parameter contains the new value.
 
@@ -652,7 +656,7 @@ Type:
 (e: 'update:modelValue', value: any): void;
 ```
 
-## `sort`
+### `sort`
 
 The `sort` event is emitted when the user sorts a table by a particular column. The payload for this event includes the name of the column that the table is being sorted by (`sortBy`) and the direction of the sort (`direction`).
 
@@ -662,7 +666,7 @@ Type:
 (e: 'sort', payload: {sortBy: string; direction: SortDirection}): void;
 ```
 
-## `row:click`
+### `row:click`
 
 The `row:click` event is emitted when the user clicks on a row in the table. The payload for this event includes the data for the clicked row (`item`) and the index of the row in the table (`index`).
 
@@ -674,7 +678,7 @@ Type:
 
 ## Slots
 
-## `loading`
+### `loading`
 
 The `loading` slot allows you to customize the content shown when the table is loading data.
 
@@ -686,7 +690,7 @@ The `loading` slot allows you to customize the content shown when the table is l
 </template>
 ```
 
-## `header.selectable`
+### `header.selectable`
 
 The `header.selectable` slot allows you to customize the content of the selectable column in the table header. It receives a `selectAll` payload that indicates whether all rows are currently selected.
 
@@ -702,7 +706,7 @@ The `header.selectable` slot allows you to customize the content of the selectab
 </template>
 ```
 
-## `empty`
+### `empty`
 
 The `empty` slot allows you to customize the content shown when the table has no data.
 
@@ -714,7 +718,7 @@ The `empty` slot allows you to customize the content shown when the table has no
 </template>
 ```
 
-## `item.selected`
+### `item.selected`
 
 The `item.selected` slot allows you to customize the content of the selected column for each row in the table. It receives a `selected` payload that indicates whether the current row is selected.
 
@@ -730,7 +734,7 @@ The `item.selected` slot allows you to customize the content of the selected col
 </template>
 ```
 
-## `item.index`
+### `item.index`
 
 The `item.index` slot allows you to customize the content of the index column for each row in the table. It receives an `index` payload that indicates the index of the current row.
 
@@ -746,7 +750,7 @@ The `item.index` slot allows you to customize the content of the index column fo
 </template>
 ```
 
-## `item.{value}`
+### `item.{value}`
 
 The `item.{value}` slot allows you to customize the content of a particular column for each row in the table. The value in the slot name corresponds to the name of the column. It receives an `item` payload that contains the data for the current row and an `index` payload that indicates the index of the current row.
 
@@ -768,7 +772,7 @@ The `item.{value}` slot allows you to customize the content of a particular colu
 </template>
 ```
 
-## `footer`
+### `footer`
 
 The `footer` slot allows you to customize the content of the table footer. It receives a `pagination` payload that indicates whether pagination is enabled, a `perPage` payload that indicates the number of items per page, a `serverSide` payload that indicates whether the table is using server-side data, an `items` payload that contains the data for the current page, a `totalItems` payload that indicates the total number of items in the table, a `footerColor` payload that indicates the color of the footer, a `footerClass` payload that indicates the class of the footer, and a `page` payload that indicates the current page.
 
