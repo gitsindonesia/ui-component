@@ -1,10 +1,14 @@
+---
+outline: deep
+---
+
 # Radio
 
 The `VRadio` component is a form input element used to allow the user to select one option from a list of choices.
 
 ## Usage
 
-## Basic Usage
+### Basic Usage
 
 To use the `VRadio` component, you must first import it in your template:
 
@@ -28,7 +32,7 @@ const selected = ref(false);
 The `VRadio` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
-## Disabled
+### Disabled
 
 To disable the `VRadio` component, you can pass the `disabled` prop:
 
@@ -48,7 +52,7 @@ const selected = ref(false);
 
 </LivePreview>
 
-## Validation
+### Validation
 
 To validate the `VRadio` component, you can use a form validation library such as `vee-validate`.
 
@@ -116,7 +120,7 @@ const onSubmit = handleSubmit((values) => {
 
 ## Events
 
-## `update:modelValue`
+### `update:modelValue`
 
 Emitted when the value of the v-model directive changes. Can be used to perform an action when the value changes, such as updating other data or displaying a message to the user.
 

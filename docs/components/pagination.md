@@ -1,10 +1,14 @@
+---
+outline: deep
+---
+
 # Pagination
 
 The `VPagination` component is used to create a pagination element for dividing content into multiple pages.
 
 ## Usage
 
-## Basic Usage
+### Basic Usage
 
 To use `VPagination`, you need to pass in at least two props: `v-model`, which binds the component to a page number, and `total-items`, which specifies the total number of items being paginated. You can also specify how many items are displayed per page using the `items-per-page` prop.
 
@@ -34,7 +38,7 @@ const itemsPerPage = ref(10);
 The `VPagination` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
-## Sizes
+### Sizes
 
 You can customize the size of the pagination element using the size prop, which can be set to `sm`, `md` (default), or `lg`.
 
@@ -50,7 +54,7 @@ You can customize the size of the pagination element using the size prop, which 
 
 </LivePreview>
 
-## Flat
+### Flat
 
 To create a flat-style pagination element, set the `flat` prop to `true`.
 
@@ -64,7 +68,7 @@ To create a flat-style pagination element, set the `flat` prop to `true`.
 
 </LivePreview>
 
-## Custom Style
+### Custom Style
 
 You can customize the appearance of the pagination element by passing in a style object using the `style` prop.
 
@@ -83,7 +87,7 @@ You can customize the appearance of the pagination element by passing in a style
 
 </LivePreview>
 
-## Slots
+### Slots
 
 You can customize the text and icons of the pagination buttons using slots. Available slots are:
 
@@ -135,7 +139,7 @@ You can customize the text and icons of the pagination buttons using slots. Avai
 
 ## Events
 
-## `update:modelValue`
+### `update:modelValue`
 
 Emitted when the `modelValue` prop is changed. You can use this event to respond to changes in the active page number.
 
@@ -157,7 +161,7 @@ const onChange = (val: number) => console.log('Changed!', val);
 
 The `VPagination` component has several slots that allow you to customize the text and icons of the pagination buttons.
 
-## `ellipsis`
+### `ellipsis`
 
 Use this slot to customize the text or icon displayed as an ellipsis.
 
@@ -169,7 +173,7 @@ Use this slot to customize the text or icon displayed as an ellipsis.
 </template>
 ```
 
-## `btnPrev`
+### `btnPrev`
 
 Use this slot to customize the text or icon displayed in the "previous" button.
 
@@ -181,7 +185,7 @@ Use this slot to customize the text or icon displayed in the "previous" button.
 </template>
 ```
 
-## `btnNext`
+### `btnNext`
 
 Use this slot to customize the text or icon displayed in the "next" button.
 
@@ -193,7 +197,7 @@ Use this slot to customize the text or icon displayed in the "next" button.
 </template>
 ```
 
-## `btnFirst`
+### `btnFirst`
 
 Use this slot to customize the text or icon displayed in the "first" button.
 
@@ -205,7 +209,7 @@ Use this slot to customize the text or icon displayed in the "first" button.
 </template>
 ```
 
-## `btnLast`
+### `btnLast`
 
 Use this slot to customize the text or icon displayed in the "last" button.
 

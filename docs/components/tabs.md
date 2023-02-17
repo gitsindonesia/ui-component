@@ -1,10 +1,14 @@
+---
+outline: deep
+---
+
 # Tabs
 
 The `VTabs` component is a tabs component that allows users to create a tabbed interface for their applications. It offers a range of customization options, including the ability to specify custom classes for active and inactive tabs, show scroll arrows, center the active tab, and render the tabs vertically. Additionally, it can be used as a header in a VCard component, and its style can be customized through the use of CSS variables.
 
 ## Usage
 
-## Basic Usage
+### Basic Usage
 
 You can use the `VTabs` component in your template like so:
 
@@ -38,7 +42,7 @@ The `VTabs` component is registered globally when you install with `@gits-id/ui`
 manually.
 :::
 
-## `v-model`
+### `v-model`
 
 To specify the selected tab, you can use the `v-model` directive to bind the `VTabs` component to a data property:
 
@@ -54,7 +58,7 @@ const selectedTab = ref(0);
 </template>
 ```
 
-## Custom Active Class
+### Custom Active Class
 
 Define custom classes to apply when tab is active (`active-class`), inactive (`inactive-class`). Or add common custom class for tabs using `default-class`.
 
@@ -74,7 +78,7 @@ Define custom classes to apply when tab is active (`active-class`), inactive (`i
 
 </LivePreview>
 
-## Show Arrow
+### Show Arrow
 
 Use `showArrow` to enable arrows to scroll the tab list. Only works if the list is scrollable.
 
@@ -88,7 +92,7 @@ Use `showArrow` to enable arrows to scroll the tab list. Only works if the list 
 
 </LivePreview>
 
-## Center Active
+### Center Active
 
 Use `centerActive` to allow the active tab to be position as at the center if possible. Works well when the list is scrollable.
 
@@ -102,7 +106,7 @@ Use `centerActive` to allow the active tab to be position as at the center if po
 
 </LivePreview>
 
-## Vertical
+### Vertical
 
 Use `vertical` to render the tabs vertically.
 
@@ -116,7 +120,7 @@ Use `vertical` to render the tabs vertically.
 
 </LivePreview>
 
-## Tabs with Card
+### Tabs with Card
 
 Use `VTabs` as header in a `VCard` component.
 
@@ -133,7 +137,7 @@ Use `VTabs` as header in a `VCard` component.
 
 </LivePreview>
 
-## Custom Style
+### Custom Style
 
 Override CSS variables for `VTabs` inline through `style` prop;
 
@@ -160,7 +164,7 @@ Override CSS variables for `VTabs` inline through `style` prop;
 
 </LivePreview>
 
-## Removeable
+### Removeable
 
 Makes tab item removable. To automatically handle side effects, `items` props need to be bound as `v-model`, otherwise
 side effect can be applied manually by listening to either `remove` event or `update:items`.
@@ -200,7 +204,7 @@ side effect can be applied manually by listening to either `remove` event or `up
 
 ## Events
 
-## `update:modelValue`
+### `update:modelValue`
 
 Event emitted when active tab changes. It provides new `value` as argument.
 
@@ -227,7 +231,7 @@ const onChange = (value: number) => console.log(value);
 </template>
 ```
 
-## `update:items`
+### `update:items`
 
 Event emitted when list items change. It provides new `items` as argument.
 
@@ -254,7 +258,7 @@ const onChange = (items: any[]) => console.log(items);
 </template>
 ```
 
-## `change`
+### `change`
 
 Event emitted when active tab changes. It provides new `value` as argument.
 
@@ -281,7 +285,7 @@ const onChange = (value: number) => console.log(value);
 </template>
 ```
 
-## `remove`
+### `remove`
 
 Event emitted when user click the remove tab buttton.
 
@@ -317,7 +321,7 @@ const onRemove = (index: number) => {
 
 ## Slots
 
-## `default`
+### `default`
 
 Define custom tab items rendering
 
@@ -362,7 +366,7 @@ Slot Props
 
 </LivePreview>
 
-## `item`
+### `item`
 
 Define custom content for the tab.
 
@@ -399,7 +403,7 @@ Slot Props
 
 </LivePreview>
 
-## `previous`
+### `previous`
 
 Define custom content for the previous arrow. Works when `showArrows` is set to `true`.
 
@@ -423,7 +427,7 @@ Slot Props
 
 </LivePreview>
 
-## `next`
+### `next`
 
 Define custom content for the next arrow. Works when `showArrows` is set to `true`.
 
@@ -447,7 +451,7 @@ Slot Props
 
 </LivePreview>
 
-## `prepend`
+### `prepend`
 
 Add an item to the start of the tab list
 
@@ -469,7 +473,7 @@ Add an item to the start of the tab list
 
 </LivePreview>
 
-## `append`
+### `append`
 
 Add an item to the end of the tab list
 

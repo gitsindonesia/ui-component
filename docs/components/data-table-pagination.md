@@ -1,10 +1,14 @@
+---
+outline: deep
+---
+
 # Data Table Pagination
 
 The `VDataTablePagination` component is a pagination component for use with data table. It allows you to easily paginate through large data sets and customize the number of items displayed per page.
 
 ## Usage
 
-## Basic Usage
+### Basic Usage
 
 To use the `VDataTablePagination` component in its most basic form, you can include it in your template and bind it to a page number variable using the `v-model` directive. You also need to specify the `total-items` prop, which is the total number of items in your data set, and the `items-per-page` prop, which is the number of items to display per page.
 
@@ -28,7 +32,7 @@ const page = ref(1);
 The `VDataTablePagination` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
-## Rows per page slot
+### Rows per page slot
 
 You can customize the rows per page dropdown by using the rowsPerPage slot. The slot provides the `value` and `items` data properties, which correspond to the currently selected rows per page value and the available rows per page options, respectively.
 
@@ -50,7 +54,7 @@ You can customize the rows per page dropdown by using the rowsPerPage slot. The 
 
 </LivePreview>
 
-## Meta slot
+### Meta slot
 
 The meta slot allows you to customize the text displayed above the pagination controls. It provides several data properties including `showingText`, `start`, `end`, `fromText`, `totalItems`, and `dataText`.
 
@@ -86,7 +90,7 @@ The meta slot allows you to customize the text displayed above the pagination co
 
 ## Events
 
-## `update:modelValue`
+### `update:modelValue`
 
 The `update:modelValue` event is emitted by the `VDataTablePagination` component when the current page number is updated. This can occur when the user clicks on a page number in the pagination control or when the modelValue prop is changed programmatically.
 
@@ -96,7 +100,7 @@ The `update:modelValue` event is emitted by the `VDataTablePagination` component
 </template>
 ```
 
-## `update:itemsPerPage`
+### `update:itemsPerPage`
 
 The `update:itemsPerPage` event is emitted by the `VDataTablePagination` component when the number of items per page is updated. This can occur when the user selects a different value from the items per page dropdown or when the itemsPerPage prop is changed programmatically.
 
@@ -118,7 +122,7 @@ The `update:itemsPerPageOptions` event is emitted by the `VDataTablePagination` 
 
 ## Slots
 
-## `rowsPerPage`
+### `rowsPerPage`
 
 The `rowsPerPage` slot is a scoped slot provided by the `VDataTablePagination` component that allows you to customize the rows per page dropdown. The `value` prop contains the current value of the rows per page and the `items` prop contains the available options for the rows per page dropdown. You can use this slot to customize the display or behavior of the rows per page dropdown.
 
@@ -130,7 +134,7 @@ The `rowsPerPage` slot is a scoped slot provided by the `VDataTablePagination` c
 </template>
 ```
 
-## `meta`
+### `meta`
 
 The `meta` slot is also a scoped slot provided by the `VDataTablePagination` component that allows you to customize the display of the pagination meta information. The `showingText` prop contains the text to display before the range of items being shown (e.g. "Showing"). The `start` prop contains the index of the first item being shown. The `end` prop contains the index of the last item being shown. The `fromText` prop contains the text to display between the range of items being shown and the total number of items (e.g. "of"). The `totalItems` prop contains the total number of items. The `dataText` prop contains the text to display after the total number of items (e.g. "items"). You can use this slot to customize the display of the pagination meta information.
 
@@ -144,7 +148,7 @@ The `meta` slot is also a scoped slot provided by the `VDataTablePagination` com
 </template>
 ```
 
-## `default`
+### `default`
 
 The `default` slot allows you to customize the default content of the `VDataTablePagination` component. This can be used to add additional pagination controls or to override the default pagination controls provided by the component.
 

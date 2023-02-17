@@ -1,3 +1,7 @@
+---
+outline: deep
+---
+
 # Icon
 
 `VIcon` component is based on [`@iconify/vue`](https://docs.iconify.design/icon-components/vue/). It allows you to easily display icons in your Vue.js application.
@@ -8,7 +12,7 @@ You can view a list of available icons [here](https://icones.js.org/).
 
 ## Usage
 
-## Basic Usage
+### Basic Usage
 
 To use the `VIcon` component, simply include it in your template like this:
 
@@ -26,7 +30,7 @@ To use the `VIcon` component, simply include it in your template like this:
 The `VIcon` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
-## Sizes
+### Sizes
 
 The `VIcon` component allows you to specify the size of the icon using the `size` prop. Here are some examples of how to use it:
 
@@ -49,10 +53,10 @@ The `VIcon` component allows you to specify the size of the icon using the `size
 
 ## Props
 
-| Name            | Type                                  | Default |
-| --------------- | ------------------------------------- | ------- |
-| [`name`](#name) | `string`                              | ` `     |
-| [`size`](#size) | `'xxs', 'xs', 'sm', 'md', 'lg', 'xl'` | `'md'`  |
+| Name            | Type                                                                | Default |
+| --------------- | ------------------------------------------------------------------- | ------- |
+| [`name`](#name) | `string`                                                            | ` `     |
+| [`size`](#size) | `'xxs' \| 'xs' \| 'sm' \| 'md' \| 'lg' \| 'xl' \| string \| number` | `'md'`  |
 
 ## Events
 

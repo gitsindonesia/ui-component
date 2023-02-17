@@ -1,10 +1,14 @@
+---
+outline: deep
+---
+
 # AppBar
 
 The AppBar, also known as a Navigation Bar, is a component used to display content at the top of a page.
 
 ## Usage
 
-## Basic Usage
+### Basic Usage
 
 To use the `VAppBar` component, you can simply include it in your template like this:
 
@@ -23,7 +27,7 @@ To use the `VAppBar` component, you can simply include it in your template like 
 The `VAppBar` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
-## Colors
+### Colors
 
 - **prop**: `color`
 - **type**: `VAppBarColors | string`
@@ -47,7 +51,7 @@ The `color` prop allows you to specify a color for the AppBar. The possible valu
 
 </LivePreview>
 
-## Fixed
+### Fixed
 
 - **prop**: `fixed`
 - **type**: `boolean`
@@ -65,7 +69,7 @@ The `fixed` prop allows you to set a fixed position for the AppBar at the top of
 
 </LivePreview>
 
-## Sticky
+### Sticky
 
 - **prop**: `sticky`
 - **type**: `boolean`
@@ -83,7 +87,7 @@ The `sticky` prop allows you to set a sticky position for the AppBar at the top 
 
 </LivePreview>
 
-## Bordered
+### Bordered
 
 - **prop**: `bordered`
 - **type**: `boolean`
@@ -102,7 +106,7 @@ The `bordered` prop allows you to apply a border style to the AppBar.
 
 </LivePreview>
 
-## Shadow
+### Shadow
 
 - **prop**: `shadow`
 - **type**: `boolean | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'inner' | 'none'`
@@ -127,7 +131,7 @@ The `shadow` prop allows you to apply a shadow style to the AppBar. The possible
 
 </LivePreview>
 
-## Sizes
+### Sizes
 
 - **prop**: `size`
 - **type**: `sm | md | lg auto`
@@ -149,7 +153,7 @@ The `size` prop allows you to specify the size of the AppBar. The possible value
 
 </LivePreview>
 
-## `v-model`
+### `v-model`
 
 - **prop**: `modelValue`
 - **type**: `boolean`
@@ -176,7 +180,7 @@ const isOpen = ref(true);
 
 </LivePreview>
 
-## Transition
+### Transition
 
 - **prop**: `transition`
 - **type**: `string`
@@ -205,7 +209,7 @@ const isOpen = ref(true);
 
 </LivePreview>
 
-## Elevate on Scroll
+### Elevate on Scroll
 
 - **prop**: `elevate-on-scroll`
 - **type**: `string | boolean`
@@ -231,7 +235,7 @@ You can also change the size of shadow by setting the value of `elevate-on-scrol
 </template>
 ```
 
-## Hide on Scroll
+### Hide on Scroll
 
 - **prop**: `hide-on-scroll`
 - **type**: `boolean`
@@ -266,7 +270,7 @@ Use `hide-on-scroll` prop to hide app-bar when user scroll the page.
 
 ## Methods
 
-## `toggle`
+### `toggle`
 
 - Type: `toggle: () => void`
 

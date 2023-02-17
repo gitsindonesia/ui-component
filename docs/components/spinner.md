@@ -1,10 +1,14 @@
+---
+outline: deep
+---
+
 # Spinner
 
 The `VSpinner` component is a spinning loader used to indicate that content is loading.
 
 ## Usage
 
-## Basic Usage
+### Basic Usage
 
 To use the `VSpinner` component, simply include it in your template:
 
@@ -22,7 +26,7 @@ To use the `VSpinner` component, simply include it in your template:
 The `VSpinner` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
-## Colors
+### Colors
 
 You can customize the color of the spinner using the `color` prop. This prop accepts a string value corresponding to one of the available colors. The default value is `default`.
 
@@ -50,7 +54,7 @@ Use `color` to different color style to the spinner.
 
 </LivePreview>
 
-## Size
+### Size
 
 You can customize the size of the spinner using the `xSmall`, `small`, `large`, or `xLarge` prop. These props are boolean values and should be set to `true` to activate the corresponding size. The default size is `medium`.
 

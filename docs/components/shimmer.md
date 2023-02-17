@@ -1,10 +1,14 @@
+---
+outline: deep
+---
+
 # Shimmer
 
 Shimmer is a content placeholder component that can be used to visually indicate that content is loading.
 
 ## Usage
 
-## Basic Usage
+### Basic Usage
 
 To use the `VShimmer` component, simply add it to your template:
 
@@ -23,7 +27,7 @@ To use the `VShimmer` component, simply add it to your template:
 The `VShimmer` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
-## Rounded
+### Rounded
 
 You can make the shimmer animation rounded by setting the `rounded` prop:
 
@@ -37,7 +41,7 @@ You can make the shimmer animation rounded by setting the `rounded` prop:
 
 </LivePreview>
 
-## Circle
+### Circle
 
 To create a circular shimmer animation, set both the `height` and `width` props to the same value and set the `rounded` prop:
 
@@ -51,7 +55,7 @@ To create a circular shimmer animation, set both the `height` and `width` props 
 
 </LivePreview>
 
-## Multiple Lines
+### Multiple Lines
 
 To create multiple lines in the shimmer animation, set the `lines` prop to the desired number of lines:
 
@@ -65,7 +69,7 @@ To create multiple lines in the shimmer animation, set the `lines` prop to the d
 
 </LivePreview>
 
-## Card Shimmer
+### Card Shimmer
 
 Here is an example of how you can use the shimmer animation within a card layout:
 

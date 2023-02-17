@@ -1,10 +1,14 @@
+---
+outline: deep
+---
+
 # Radio Group
 
 The `VRadioGroup` component is a form control that allows the user to select a single option from a list of choices presented as radio buttons.
 
 ## Usage
 
-## Basic Usage
+### Basic Usage
 
 To use the `VRadioGroup` component, pass in a list of objects representing the available options through the items prop. Each object should have a `text` property for the label to be displayed and a `value` property for the underlying value of the option.
 
@@ -37,7 +41,7 @@ const items = ref([
 
 </LivePreview>
 
-## Inline
+### Inline
 
 To display the radio buttons inline, set the `inline` prop to `true`.
 
@@ -70,7 +74,7 @@ const items = ref([
 
 </LivePreview>
 
-## Error
+### Error
 
 To display the `VRadioGroup` component in an error state, set the `error` prop to `true`. This will add an error message and apply an error styles to the component.
 
@@ -103,7 +107,7 @@ const items = ref([
 
 </LivePreview>
 
-## Disabled
+### Disabled
 
 To disable the `VRadioGroup` component and prevent user interaction, set the `disabled` prop to `true`.
 
@@ -136,7 +140,7 @@ const items = ref([
 
 </LivePreview>
 
-## Disabled
+### Disabled
 
 To disable the `VRadioGroup` component and prevent user interaction, set the `disabled` prop to `true`.
 
@@ -169,7 +173,7 @@ const items = ref([
 
 </LivePreview>
 
-## Validation
+### Validation
 
 The `VRadioGroup` component can be used in a form with form validation by using a form handling library such as `VeeValidate`.
 
@@ -228,7 +232,7 @@ const items = ref([
 
 </LivePreview>
 
-## Validation Mode
+### Validation Mode
 
 There are 2 modes. The first is `eager` mode, and the second is `aggressive` mode. The `eager` mode validates input when the blur event occurs. Meanwhile, `aggressive` mode validates the input every time the input itself changes. This can be useful when you are validating for example the minimum or maximum limits of an input.
 
@@ -309,7 +313,7 @@ const onSubmit = handleSubmit((values) => {
 
 :::
 
-## Styling selected item
+### Styling selected item
 
 To style selected item distinctively, pass your class to `selectedClass` prop, or `defaultClass` to set a default classes
 for the items.
@@ -349,7 +353,7 @@ const items = ref([
 </template>
 ```
 
-## Props
+### Props
 
 | Name                                | Type                                                   | Default                         |
 | ----------------------------------- | ------------------------------------------------------ | ------------------------------- |
@@ -377,7 +381,7 @@ const items = ref([
 
 ## Events
 
-## `update:modelValue`
+### `update:modelValue`
 
 This event is emitted whenever the value of the `VRadioGroup` component changes. It is emitted with the new value as the argument.
 
@@ -397,7 +401,7 @@ export default {
 </script>
 ```
 
-## `change`
+### `change`
 
 This event is emitted whenever the value of the `VRadioGroup` component changes and the input loses focus. It is emitted with the new value as the argument.
 
@@ -417,7 +421,7 @@ export default {
 </script>
 ```
 
-## `blur`
+### `blur`
 
 This event is emitted whenever the `VRadioGroup` component loses focus. It is emitted with the current value as the argument.
 
@@ -439,7 +443,7 @@ export default {
 
 ## Slots
 
-## `label`
+### `label`
 
 Customize radio label text
 
