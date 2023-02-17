@@ -3,6 +3,6 @@
 </script>
 
 <template>
-  <StoreNav />
+  <StoreHeader />
   <slot />
 </template>
