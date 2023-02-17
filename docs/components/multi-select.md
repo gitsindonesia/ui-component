@@ -1,10 +1,14 @@
+---
+outline: deep
+---
+
 # Multi Select
 
 The `VMultiSelect` component is a customizable multiselect dropdown for Vue. It allows users to select multiple items from a list and displays the selected items in the form of badges.
 
 ## Usage
 
-## Basic Usage
+### Basic Usage
 
 To use the `VMultiSelect` component, just use it in the template.
 
@@ -36,7 +40,7 @@ const items = [
 The `VMultiSelect` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
-## Clearable
+### Clearable
 
 To enable the clearable feature, which allows users to clear their selections, add the `clearable` prop to the `VMultiSelect` component.
 
@@ -50,7 +54,7 @@ To enable the clearable feature, which allows users to clear their selections, a
 
 </LivePreview>
 
-## Max Badge
+### Max Badge
 
 To limit the number of badges displayed, you can use the `max-badge` prop. This prop specifies the maximum number of badges that will be displayed before a "and X more" badge is shown.
 
@@ -64,7 +68,7 @@ To limit the number of badges displayed, you can use the `max-badge` prop. This 
 
 </LivePreview>
 
-## Label
+### Label
 
 You can add a label to the `VMultiSelect` component by using the `label` prop.
 
@@ -78,7 +82,7 @@ You can add a label to the `VMultiSelect` component by using the `label` prop.
 
 </LivePreview>
 
-## Custom Style
+### Custom Style
 
 You can customize the style of the `VMultiSelect` component using various props.
 
@@ -100,7 +104,7 @@ You can customize the style of the `VMultiSelect` component using various props.
 
 </LivePreview>
 
-## Initial Errors
+### Initial Errors
 
 You can display initial errors for the `VMultiSelect` component by using the `initialErrors` prop in the `useForm` hook.
 
@@ -162,7 +166,7 @@ const genres = ref([
 
 </LivePreview>
 
-## Custom Compare Function
+### Custom Compare Function
 
 You can use a custom compare function for the search feature of the `VMultiSelect` component by using the `search-by` prop.
 
@@ -270,7 +274,7 @@ const compareGenres = (item: VMultiSelectItem, query: string) => {
 
 ## Events
 
-## `click:outside`
+### `click:outside`
 
 This event is emitted when the user clicks outside of the `VMultiSelect` component. It can be useful for closing the dropdown menu when the user clicks outside of it.
 
@@ -290,7 +294,7 @@ export default {
 </script>
 ```
 
-## `update:modelValue`
+### `update:modelValue`
 
 This event is emitted when the selected values of the `VMultiSelect` component are updated. It is emitted with an array of the selected values.
 
@@ -310,7 +314,7 @@ export default {
 </script>
 ```
 
-## `search`
+### `search`
 
 This event is emitted when the user performs a search in the `VMultiSelect` component. It is emitted with the search query string.
 
@@ -330,7 +334,7 @@ export default {
 </script>
 ```
 
-## `selected`
+### `selected`
 
 This event is emitted when the user selects an item from the `VMultiSelect` component. It is emitted with the selected item.
 
@@ -350,9 +354,9 @@ export default {
 </script>
 ```
 
-## Slots
+### Slots
 
-## selection
+### selection
 
 Allow customized selection rendering. Will only be run when there is selected value.
 If [`maxBadge`](#maxBadge) is set to valid value, it will only be run for items within the set limit.
@@ -382,7 +386,7 @@ Slot Props
 
 </LivePreview>
 
-## max-selection
+### max-selection
 
 Allows customized rendering for max-selection rendering. This will only be run if [`maxBadge`](#maxBadge) props is set to valid value.
 
@@ -406,7 +410,7 @@ Slot Props
 
 </LivePreview>
 
-## select-all
+### select-all
 
 Allows custom render for select all option. This will only be run if [`selectAll`](#selectAll) props is set to valid value.
 
@@ -438,7 +442,7 @@ Slot Props
 
 </LivePreview>
 
-## prepend.item
+### prepend.item
 
 Add custom element before option list
 
@@ -458,7 +462,7 @@ Add custom element before option list
 
 </LivePreview>
 
-## append.item
+### append.item
 
 Add custom element after option list
 
@@ -476,7 +480,7 @@ Add custom element after option list
 
 </LivePreview>
 
-## item.label
+### item.label
 
 Allows custom render for option item.
 

@@ -1,10 +1,14 @@
+---
+outline: deep
+---
+
 # Tooltip
 
 The `VTooltip` component displays a small pop-up box with additional information when the user hovers over or clicks an element.
 
 ## Usage
 
-## Basic Usage
+### Basic Usage
 
 To use the tooltip component, you can use it in your template as follows:
 
@@ -31,9 +35,9 @@ The `VTooltip` component is registered globally when you install with `@gits-id/
 
 ## Props
 
-| Name                                   | Type     | Default |
-| -------------------------------------- | -------- | ------- |
-| [`placement`](#placement)              | `string` | `'top'` |
+| Name                                  | Type     | Default |
+| ------------------------------------- | -------- | ------- |
+| [`placement`](#placement)             | `string` | `'top'` |
 | [`options`](#options) ❌               | `object` | `{}`    |
 | [`activatorClass`](#activatorClass) ❌ | `string` | `''`    |
 | [`tooltipClass`](#tooltipClass) ❌     | `string` | `''`    |

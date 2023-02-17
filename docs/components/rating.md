@@ -1,8 +1,16 @@
+---
+outline: deep
+---
+
 # Rating
 
 A rating component is a user interface element that allows users to rate a product, service, or experience by selecting a number of stars or another similar symbol. It's commonly used in e-commerce websites, review platforms, and feedback systems to gather user opinions and provide an overall score for a particular item. The rating component is typically displayed as a visual representation, such as a series of stars, and users can select the number of stars that corresponds to their rating. The average rating is then calculated based on the ratings provided by multiple users.
 
 ## Usage
+
+### Basic Usage
+
+<br>
 
 <LivePreview src="components-rating--default" >
 
@@ -14,7 +22,7 @@ A rating component is a user interface element that allows users to rate a produ
 
 </LivePreview>
 
-## `v-model`
+### `v-model`
 
 The component also supports the `v-model` directive, which allows you to bind the value of the progress bar to a data property.
 
@@ -34,7 +42,7 @@ const rating = ref(3);
 
 </LivePreview>
 
-## Half Stars
+### Half Stars
 
 <LivePreview src="components-rating--half-stars" >
 

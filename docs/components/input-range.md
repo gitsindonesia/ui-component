@@ -1,10 +1,14 @@
+---
+outline: deep
+---
+
 # Input Range
 
 The `VInputRange` component is a Vue.js component that allows users to select a range within a specific minimum and maximum value.
 
 ## Usage
 
-## Basic Usage
+### Basic Usage
 
 To use the `VInputRange` component, simply add the component to your template. This will display a default `VInputRange` component on the page.
 
@@ -23,7 +27,7 @@ To use the `VInputRange` component, simply add the component to your template. T
 The `VInputRange` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
-## With Input
+### With Input
 
 You can also display an input field alongside the `VInputRange` component by adding the `show-input` prop:
 
@@ -37,7 +41,7 @@ You can also display an input field alongside the `VInputRange` component by add
 
 </LivePreview>
 
-## Validation
+### Validation
 
 This example demonstrates how to use the `VInputRange` component with form validation using the `vee-validate` library.
 
@@ -113,7 +117,7 @@ const onSubmit = handleSubmit((values, ctx) => {
 
 ## Events
 
-- `update:modelValue`
+### `update:modelValue`
 
 The `update:modelValue` event is emitted by the VInputRange component whenever the model value (i.e., the selected range) changes. This event is emitted with the new model value as the argument.
 

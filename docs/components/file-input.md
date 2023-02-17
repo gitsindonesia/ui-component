@@ -1,10 +1,14 @@
+---
+outline: deep
+---
+
 # FileUpload
 
 The `VFileUpload` component is a form element that allows users to select and upload a file. It can be used with different themes, including a basic input field, a button, an image, or a dropzone.
 
 ## Usage
 
-## Basic Usage
+### Basic Usage
 
 You can use it in your template as follows. This will render a basic file input field with the label "Label". The `v-model` directive is used to bind the value of the file input to the value variable, which can be a `ref` or a `computed` value.
 
@@ -28,7 +32,7 @@ const value = ref();
 The `VFileUpload` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
 :::
 
-## Themes
+### Themes
 
 The `VFileUpload` component supports several themes that can be applied using the theme prop. Here are some examples of how to use each theme:
 
@@ -118,7 +122,7 @@ const value = ref();
 
 </LivePreview>
 
-## Validation
+### Validation
 
 You can use the `VFileUpload` component with form validation by using a validation library such as `vee-validate`. Here's an example of how to use the FileUpload component with `vee-validate`:
 
@@ -182,7 +186,7 @@ const onSubmit = handleSubmit((values) => {
 
 </LivePreview>
 
-## Initial Error
+### Initial Error
 
 You can also specify initial errors for the `VFileUpload` component by providing an `initialErrors` object to the useForm hook:
 
@@ -248,7 +252,7 @@ const onSubmit = handleSubmit((values) => {
 
 </LivePreview>
 
-## Initial Values
+### Initial Values
 
 You can also specify initial values for the `VFileUpload` component by providing an `initialValues` object to the `useForm` hook:
 
@@ -358,8 +362,6 @@ const onSubmit = handleSubmit((values) => {
 
 ## Types
 
-## `FileValue`
-
 ```ts
 export type FileValue =
   | string
@@ -374,7 +376,7 @@ export type FileValue =
 
 The `VFileUpload` component emits several events that you can listen to and handle in your application.
 
-## `update:modelValue`
+### `update:modelValue`
 
 This event is emitted when the value of the file input is updated. It passes the new value as an argument.
 
@@ -398,7 +400,7 @@ const onChange = (val: FileValue) => {
 </template>
 ```
 
-## `change`
+### `change`
 
 This event is emitted when the value of the file input is changed. It passes the new value as an argument.
 
@@ -422,7 +424,7 @@ const onChange = (val: FileValue) => {
 </template>
 ```
 
-## `blur`
+### `blur`
 
 This event is emitted when the file input loses focus. It passes the event object as an argument.
 
@@ -446,7 +448,7 @@ const onBlur = (e: Event) => {
 </template>
 ```
 
-## `removed`
+### `removed`
 
 This event is emitted when a file is removed from the file input.
 
@@ -474,7 +476,7 @@ const onRemoved = () => {
 
 The `VFileUpload` component has two slots that you can use to customize its content.
 
-## `hint`
+### `hint`
 
 Use the `hint` slot to add a hint or a description to the file input.
 
@@ -486,7 +488,7 @@ Use the `hint` slot to add a hint or a description to the file input.
 </template>
 ```
 
-## `filename`
+### `filename`
 
 Use the `filename` slot to customize displayed filename text
 
@@ -498,7 +500,7 @@ Use the `filename` slot to customize displayed filename text
 </template>
 ```
 
-## `error`
+### `error`
 
 Use the `error` slot to customize the error message displayed when the file input has an error. The slot receives an object with the following properties:
 
