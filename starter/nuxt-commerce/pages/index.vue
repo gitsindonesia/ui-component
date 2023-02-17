@@ -18,7 +18,11 @@ const {data} = await useAsyncData(() => $api('/products'));
 </script>
 
 <template>
-  <div
+  <StoreHero />
+  <StoreCategories />
+  <ProductList />
+  <ProductGrid />
+  <!-- <div
     class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"
   >
     <ProductCard
@@ -26,5 +30,5 @@ const {data} = await useAsyncData(() => $api('/products'));
       :key="product.id"
       :product="product"
     />
-  </div>
+  </div> -->
 </template>

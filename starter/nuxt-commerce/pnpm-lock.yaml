@@ -2,12 +2,14 @@ lockfileVersion: 5.4
 
 specifiers:
   '@gits-id/ui-nuxt': ^0.16.1
+  '@heroicons/vue': ^2.0.15
   '@nuxtjs/tailwindcss': ^6.3.0
   nuxt: ^3.2.0
   sass: ^1.58.0
 
 dependencies:
   '@gits-id/ui-nuxt': 0.16.3
+  '@heroicons/vue': 2.0.15
 
 devDependencies:
   '@nuxtjs/tailwindcss': 6.4.0
@@ -1556,6 +1558,12 @@ packages:
       vue: '>= 3'
     dependencies:
       vue: 3.2.47
+    dev: false
+
+  /@heroicons/vue/2.0.15:
+    resolution: {integrity: sha512-Ab98jXcuYPCDtwOmdr5REtUfJCrZf7cnOnh9bD99bM5h1yfTnCPBKjMmJ9gcmyGu51Dzf11Mx/A7rKxAXjccvg==}
+    peerDependencies:
+      vue: '>= 3'
     dev: false
 
   /@iconify/vue/3.2.1_vue@3.2.47:
