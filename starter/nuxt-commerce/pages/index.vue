@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import {Product} from '~~/types/product';
-
 definePageMeta({
   layout: 'store',
   auth: false,

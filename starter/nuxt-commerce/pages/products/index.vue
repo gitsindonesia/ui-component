@@ -85,10 +85,9 @@ const filters = [
 
 const mobileFiltersOpen = ref(false);
 
-const {data: products} = await useFetch<Product[]>('/api/products', {
-  params: {
-    sortBy,
-  },
+const {data} = await useAsyncData(() => $api('/products'));
+const products = computed(() => {
+  return mapProducts((data.value as any).products)
 });
 </script>
 
