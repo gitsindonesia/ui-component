@@ -255,7 +255,7 @@ const products = computed(() => {
             items-baseline
             justify-between
             border-b border-gray-200
-            pt-24
+            pt-8
             pb-6
           "
         >
