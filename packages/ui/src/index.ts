@@ -38,19 +38,6 @@ import VStats from '@gits-id/stats';
 import { VCollapsible, VCollapse, VCollapsibleGroup } from '@gits-id/collapsible';
 import VMultiSelect from '@gits-id/multi-select';
 import {
-  Auth as AuthLayout,
-  Base as BaseLayout,
-  Default as DefaultLayout,
-} from '@gits-id/layouts';
-import {
-  Activation,
-  Auth,
-  ForgotPassword,
-  Login,
-  ResetPassword,
-  NotFound,
-} from '@gits-id/pages';
-import {
   List,
   ListItem,
   ListItemDivider,
@@ -175,15 +162,6 @@ export {
   VToast,
   VSpinner,
   VStats,
-  AuthLayout,
-  BaseLayout,
-  DefaultLayout,
-  Activation,
-  Auth,
-  ForgotPassword,
-  Login,
-  ResetPassword,
-  NotFound,
   VCollapse,
   VCollapsible,
   VCollapsibleGroup,
@@ -204,8 +182,6 @@ export {
 };
 
 export * from '@gits-id/utils';
-export * from '@gits-id/pages';
-export * from '@gits-id/services';
 export * from '@gits-id/toast';
 export * from '@gits-id/app-bar/src/types';
 export * from '@gits-id/badge/src/types';
