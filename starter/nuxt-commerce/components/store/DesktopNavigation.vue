@@ -40,7 +40,7 @@ const viewCart = ref(false);
 
         <!-- Logo -->
         <div class="ml-4 flex lg:ml-0">
-          <VLogo />
+          <Logo />
         </div>
 
         <!-- Flyout menus -->
