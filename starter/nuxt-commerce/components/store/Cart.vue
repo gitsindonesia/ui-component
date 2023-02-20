@@ -78,7 +78,7 @@ const products = [
               right-0
               flex
               max-w-full
-              pl-10
+              lg:pl-10
             "
           >
             <TransitionChild
