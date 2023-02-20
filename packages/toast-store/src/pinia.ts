@@ -1,5 +1,5 @@
-import {defineStore} from 'pinia';
-import type {VToastProps} from './types';
+import { defineStore } from 'pinia';
+import type { VToastProps } from '@gits-id/toast';
 
 export const useToastStore = defineStore('toast', {
   state: () => ({
@@ -15,7 +15,7 @@ export const useToastStore = defineStore('toast', {
     show(message: string, options?: Partial<VToastProps>) {
       this.message = message;
       this.isOpen = true;
-      this.options = {...this.options, ...options};
+      this.options = { ...this.options, ...options };
     },
     confirm(message: string, options?: Partial<VToastProps>) {
       return this.show(message, {
