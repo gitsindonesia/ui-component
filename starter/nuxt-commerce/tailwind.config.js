@@ -43,6 +43,9 @@ module.exports = {
         warning: colors.yellow,
         error: colors.rose,
       },
+      gridTemplateRows: {
+        '[auto,auto,1fr]': 'auto auto 1fr',
+      },
     },
   },
   presets: [require('@gits-id/tailwind-config/preset')],
