@@ -40,6 +40,7 @@
     "@gits-id/shimmer": "^0.16.1",
     "@gits-id/spinner": "^0.16.1",
     "@gits-id/stats": "^0.16.1",
+    "@gits-id/stepper": "^0.16.1",
     "@gits-id/switch": "^0.16.1",
     "@gits-id/table": "^0.16.1",
     "@gits-id/tabs": "^0.16.1",
