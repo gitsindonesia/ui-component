@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/toast-store",
-  "version": "0.16.1",
+  "version": "0.17.0-beta.1",
   "description": "Store module for @gits-id/toast.",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,7 +15,7 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@gits-id/toast": "^0.16.1",
+    "@gits-id/toast": "^0.17.0-beta.1",
     "pinia": "^2.0.11",
     "vue": "^3.2.31",
     "vuex": "^4.0.2"
