@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/menus",
-  "version": "0.17.0-beta.0",
+  "version": "0.17.0-beta.1",
   "description": "Menus component for Vue.js",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -23,7 +23,7 @@
     "vue": "^3.2.31"
   },
   "devDependencies": {
-    "@gits-id/app-bar": "^0.17.0-beta.0",
+    "@gits-id/app-bar": "^0.17.0-beta.1",
     "@gits-id/button": "^0.16.1",
     "@gits-id/tailwind-config": "^0.16.1",
     "@gits-id/utils": "^0.16.1",
