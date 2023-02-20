@@ -4,8 +4,12 @@ import {
   PopoverButton,
   PopoverGroup,
   PopoverPanel,
-} from '@headlessui/vue'
-import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon } from '@heroicons/vue/24/outline'
+} from '@headlessui/vue';
+import {
+  Bars3Icon,
+  MagnifyingGlassIcon,
+  ShoppingBagIcon,
+} from '@heroicons/vue/24/outline';
 
 interface Props {
   navigation: Record<string, any>;
@@ -18,7 +22,7 @@ const emit =
     (e: 'click:menu'): void;
   }>();
 
-const viewCart = ref(false)
+const viewCart = ref(false);
 </script>
 
 <template>
@@ -101,8 +105,8 @@ const viewCart = ref(false)
                                 class="object-cover object-center"
                               />
                             </div>
-                            <a
-                              :href="item.href"
+                            <NuxtLink
+                              :to="item.href"
                               class="mt-6 block font-medium text-gray-900"
                             >
                               <span
@@ -110,7 +114,7 @@ const viewCart = ref(false)
                                 aria-hidden="true"
                               />
                               {{ item.name }}
-                            </a>
+                            </NuxtLink>
                             <p aria-hidden="true" class="mt-1">Shop now</p>
                           </div>
                         </div>
@@ -142,11 +146,12 @@ const viewCart = ref(false)
                                 :key="item.name"
                                 class="flex"
                               >
-                                <a
-                                  :href="item.href"
+                                <NuxtLink
+                                  :to="item.href"
                                   class="hover:text-gray-800"
-                                  >{{ item.name }}</a
                                 >
+                                  {{ item.name }}
+                                </NuxtLink>
                               </li>
                             </ul>
                           </div>
@@ -158,10 +163,10 @@ const viewCart = ref(false)
               </transition>
             </Popover>
 
-            <a
+            <NuxtLink
               v-for="page in navigation.pages"
               :key="page.name"
-              :href="page.href"
+              :to="page.href"
               class="
                 flex
                 items-center
@@ -170,8 +175,9 @@ const viewCart = ref(false)
                 text-gray-700
                 hover:text-gray-800
               "
-              >{{ page.name }}</a
             >
+              {{ page.name }}
+            </NuxtLink>
           </div>
         </PopoverGroup>
 
@@ -227,7 +233,11 @@ const viewCart = ref(false)
 
           <!-- Cart -->
           <div class="ml-4 flow-root lg:ml-6">
-            <button aria-label="View bag" @click="viewCart = true" class="group -m-2 flex items-center p-2">
+            <button
+              aria-label="View bag"
+              @click="viewCart = true"
+              class="group -m-2 flex items-center p-2"
+            >
               <ShoppingBagIcon
                 class="
                   h-6

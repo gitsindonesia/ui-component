@@ -9,11 +9,11 @@ import {
   TabPanels,
   TransitionChild,
   TransitionRoot,
-} from '@headlessui/vue'
-import { XMarkIcon } from '@heroicons/vue/24/outline'
+} from '@headlessui/vue';
+import {XMarkIcon} from '@heroicons/vue/24/outline';
 
 interface Props {
-  open: boolean
+  open: boolean;
   navigation: Record<string, any>;
 }
 
@@ -132,8 +132,8 @@ const emit =
                           class="object-cover object-center"
                         />
                       </div>
-                      <a
-                        :href="item.href"
+                      <NuxtLink
+                        :to="item.href"
                         class="mt-6 block font-medium text-gray-900"
                       >
                         <span
@@ -141,7 +141,7 @@ const emit =
                           aria-hidden="true"
                         />
                         {{ item.name }}
-                      </a>
+                      </NuxtLink>
                       <p aria-hidden="true" class="mt-1">Shop now</p>
                     </div>
                   </div>
@@ -162,11 +162,12 @@ const emit =
                         :key="item.name"
                         class="flow-root"
                       >
-                        <a
-                          :href="item.href"
+                        <NuxtLink
+                          :to="item.href"
                           class="-m-2 block p-2 text-gray-500"
-                          >{{ item.name }}</a
                         >
+                          {{ item.name }}
+                        </NuxtLink>
                       </li>
                     </ul>
                   </div>
@@ -180,11 +181,12 @@ const emit =
                 :key="page.name"
                 class="flow-root"
               >
-                <a
-                  :href="page.href"
+                <NuxtLink
+                  :to="page.href"
                   class="-m-2 block p-2 font-medium text-gray-900"
-                  >{{ page.name }}</a
                 >
+                  {{ page.name }}
+                </NuxtLink>
               </div>
             </div>
 
