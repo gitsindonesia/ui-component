@@ -205,9 +205,7 @@ const mobileFiltersOpen = ref(false)
 
             <!-- Product grid -->
             <div class="lg:col-span-3">
-              <!-- Replace with your content -->
-              <div class="h-96 rounded-lg border-4 border-dashed border-gray-200 lg:h-full" />
-              <!-- /End replace -->
+              <ProductGrid />
             </div>
           </div>
         </section>
