@@ -53,7 +53,8 @@
     "@gits-id/utils": "^0.16.1",
     "@headlessui/vue": "^1.6.0",
     "@vue/test-utils": "^2.0.0-rc.17",
-    "vue": "^3.2.33"
+    "vue": "^3.2.33",
+    "sass": "^1.58.3"
   },
   "main": "./dist/ui.umd.js",
   "unpkg": "./dist/ui.iife.js",
