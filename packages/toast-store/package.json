@@ -1,42 +1,43 @@
 {
-  "name": "@gits-id/app-bar",
-  "version": "0.17.0-beta.1",
-  "description": "The AppBar, also known as a Navigation Bar, is a component used to display content at the top of a page.",
+  "name": "@gits-id/toast-store",
+  "version": "1.0.0-beta.0",
+  "description": "Store module for @gits-id/toast.",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "npm run build",
     "test": "vitest"
   },
   "keywords": [
-    "app-bar",
-    "nav-bar",
-    "tailwind-config"
+    "toast",
+    "gits",
+    "ui-component"
   ],
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@gits-id/theme": "^0.16.1",
-    "vue": "^3.2.33"
+    "@gits-id/toast": "^1.0.0-beta.0",
+    "pinia": "^2.0.11",
+    "vue": "^3.2.31",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
-    "@gits-id/button": "^0.16.1",
-    "@gits-id/icon": "^0.16.1",
     "@gits-id/tailwind-config": "^0.16.1",
+    "@gits-id/utils": "^0.16.1",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
     "tailwindcss": "^3.0.23",
     "vite": "^3.0.0",
     "vitest": "^0.12.4"
   },
-  "main": "dist/app-bar.umd.js",
-  "unpkg": "dist/app-bar.iife.js",
-  "jsdelivr": "dist/app-bar.iife.js",
-  "module": "./dist/app-bar.mjs",
+  "main": "dist/toast-store.umd.js",
+  "unpkg": "dist/toast-store.iife.js",
+  "jsdelivr": "dist/toast-store.iife.js",
+  "module": "./dist/toast-store.mjs",
   "types": "./dist/types/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/app-bar.mjs",
-      "require": "./dist/app-bar.js"
+      "import": "./dist/toast-store.mjs",
+      "require": "./dist/toast-store.js"
     },
     "./package.json": "./package.json",
     "./src/*": "./src/*",

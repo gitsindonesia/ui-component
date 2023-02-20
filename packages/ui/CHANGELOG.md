@@ -3,6 +3,47 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.0](https://github.com/gitsindonesia/ui-component/compare/v0.17.0-beta.2...v1.0.0-beta.0) (2023-02-20)
+
+
+### Bug Fixes
+
+* **ui:** drop `services`, `pages` and `layouts` from `ui`, fix external deps and move snippets directory ([#130](https://github.com/gitsindonesia/ui-component/issues/130)) ([d5c00eb](https://github.com/gitsindonesia/ui-component/commit/d5c00eb4f36921400a34526dd9dd8286231ddef5))
+
+
+### BREAKING CHANGES
+
+* **ui:** dropped `services`, `pages`, `layouts` from `ui`, install manually if you use it
+
+* chore(ui): moved `snippets` folder to `packages`
+
+* fix(toast): fix storybook path
+
+* fix(ui): fix external deps bundle
+
+
+
+
+
+# [0.17.0-beta.2](https://github.com/gitsindonesia/ui-component/compare/v0.17.0-beta.1...v0.17.0-beta.2) (2023-02-20)
+
+
+### Features
+
+* **ui:** register stepper components ([#129](https://github.com/gitsindonesia/ui-component/issues/129)) ([f8ccce1](https://github.com/gitsindonesia/ui-component/commit/f8ccce18e634180e095454e39414a9424da409a2))
+
+
+
+
+
+# [0.17.0-beta.1](https://github.com/gitsindonesia/ui-component/compare/v0.17.0-beta.0...v0.17.0-beta.1) (2023-02-20)
+
+**Note:** Version bump only for package @gits-id/ui
+
+
+
+
+
 # [0.17.0-beta.0](https://github.com/gitsindonesia/ui-component/compare/v0.16.3...v0.17.0-beta.0) (2023-02-15)
 
 **Note:** Version bump only for package @gits-id/ui
