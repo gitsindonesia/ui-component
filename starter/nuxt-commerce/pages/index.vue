@@ -19,14 +19,7 @@ useHead({
 
 const {data} = await useAsyncData(() => $api('/products'));
 const products = computed(() => {
-  return data.value.products.map<Product[]>((product) => ({
-    id: product.id,
-    name: product.title,
-    href: product.id,
-    price: product.price,
-    imageSrc: product.thumbnail,
-    imageAlt: product.name,
-  }));
+  return mapProducts((data.value as any).products)
 });
 </script>
 

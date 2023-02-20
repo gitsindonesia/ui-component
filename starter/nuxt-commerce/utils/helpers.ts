@@ -1,3 +1,5 @@
+import { Product } from "~~/types/product";
+
 export const $api = <T = unknown>(...options: Parameters<typeof $fetch>) => {
   const config = useAppConfig();
   const baseURL = config.store.apiUrl;
@@ -35,3 +37,14 @@ export const starRating = (rating: number) => {
 export const getDiscountedPrice = (price: number, discount: number) => {
   return price - (price * discount) / 100;
 };
+
+export const mapProducts = (products: Record<string, any>[]) => {
+  return products.map((product) => ({
+    id: product.id,
+    name: product.title,
+    href: product.id,
+    price: product.price,
+    imageSrc: product.thumbnail,
+    imageAlt: product.name,
+  })) as Product[];
+}
