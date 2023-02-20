@@ -19,9 +19,8 @@ import {
   FunnelIcon,
   MinusIcon,
   PlusIcon,
-  Squares2X2Icon,
+  // Squares2X2Icon,
 } from '@heroicons/vue/20/solid';
-import {Product} from '~~/types/product';
 
 definePageMeta({
   layout: 'store',
@@ -278,7 +277,7 @@ const products = computed(() => {
                     hover:text-gray-900
                   "
                 >
-                  Sort : {{ sortBy }}
+                  Sort
                   <ChevronDownIcon
                     class="
                       -mr-1
