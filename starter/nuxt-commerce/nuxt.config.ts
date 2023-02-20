@@ -10,11 +10,11 @@ export default defineNuxtConfig({
   },
   css: ['~/assets/css/globals.scss'],
   extends: [
-    '@gits-id/nuxt-auth'
+    // '@gits-id/nuxt-auth'
   ],
-  vite: {
-    optimizeDeps: {
-      include: ['yup'],
-    },
-  }
+  // vite: {
+  //   optimizeDeps: {
+  //     include: ['yup'],
+  //   },
+  // }
 });
