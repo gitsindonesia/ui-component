@@ -1,12 +1,5 @@
 <script setup lang="ts">
-export interface Product {
-  id: number;
-  name: string;
-  href: string;
-  price: string;
-  imageSrc: string;
-  imageAlt?: string;
-}
+import {Product} from '~~/types/product';
 
 defineProps<{
   product: Product;
