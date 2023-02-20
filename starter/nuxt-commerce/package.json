@@ -24,7 +24,8 @@
   "dependencies": {
     "@gits-id/ui-nuxt": "^0.16.1",
     "@heroicons/vue": "^2.0.15",
-    "@nuxt/image-edge": "1.0.0-27919678.2f5b64b"
+    "@nuxt/image-edge": "1.0.0-27919678.2f5b64b",
+    "@gits-id/nuxt-auth": "^0.2.0"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.3.0",

@@ -9,4 +9,12 @@ export default defineNuxtConfig({
     shim: false,
   },
   css: ['~/assets/css/globals.scss'],
+  extends: [
+    '@gits-id/nuxt-auth'
+  ],
+  vite: {
+    optimizeDeps: {
+      include: ['yup'],
+    },
+  }
 });

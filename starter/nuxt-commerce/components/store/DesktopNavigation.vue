@@ -191,17 +191,20 @@ const viewCart = ref(false);
               lg:space-x-6
             "
           >
-            <a
-              href="#"
+            <NuxtLink
+              to="/auth/login"
               class="text-sm font-medium text-gray-700 hover:text-gray-800"
-              >Sign in</a
             >
+              Sign in
+            </NuxtLink>
             <span class="h-6 w-px bg-gray-200" aria-hidden="true" />
-            <a
-              href="#"
+
+            <NuxtLink
+              to="/auth/register"
               class="text-sm font-medium text-gray-700 hover:text-gray-800"
-              >Create account</a
             >
+              Create account
+            </NuxtLink>
           </div>
 
           <div class="hidden lg:ml-8 lg:flex">
