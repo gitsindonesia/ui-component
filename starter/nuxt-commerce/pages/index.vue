@@ -21,15 +21,6 @@ const {data} = await useAsyncData(() => $api('/products'));
 <template>
   <StoreHero />
   <StoreCategories />
-  <ProductList />
-  <ProductGrid />
-  <!-- <div
-    class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"
-  >
-    <ProductCard
-      v-for="product in data.products"
-      :key="product.id"
-      :product="product"
-    />
-  </div> -->
+  <ProductGrid class="py-16" title="Flash Sale" :limit="4" />
+  <ProductGrid class="py-16" title="Recommendations" />
 </template>

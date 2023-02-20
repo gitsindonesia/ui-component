@@ -1,5 +1,10 @@
-<script setup>
-const products = [
+<script setup lang="ts">
+const props = defineProps<{
+  title?: string;
+  limit?: number
+}>()
+
+const productList = [
   {
     id: 1,
     name: 'Earthen Bottle',
@@ -82,13 +87,20 @@ const products = [
   },
   // More products...
 ];
+
+const products = computed(() => {
+  if (props.limit) {
+    return productList.slice(0, props.limit)
+  }
+  return productList
+})
 </script>
 
 <template>
   <div class="bg-white">
     <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-      <h2 class="text-2xl font-bold tracking-tight text-gray-900">
-        Recommendations
+      <h2 v-if="title" class="text-2xl font-bold tracking-tight text-gray-900">
+        {{ title }}
       </h2>
 
       <div
@@ -102,39 +114,11 @@ const products = [
           xl:gap-x-8
         "
       >
-        <NuxtLink
-          :to="`/products/${product.id}`"
-          v-for="(product, key) in products"
-          :key="key"
-          :href="product.href"
-          class="group"
-        >
-          <div
-            class="
-              aspect-w-1 aspect-h-1
-              w-full
-              overflow-hidden
-              rounded-lg
-              bg-gray-200
-              xl:aspect-w-7 xl:aspect-h-8
-            "
-          >
-            <img
-              :src="product.imageSrc"
-              :alt="product.imageAlt"
-              class="
-                h-full
-                w-full
-                object-cover object-center
-                group-hover:opacity-75
-              "
-            />
-          </div>
-          <h3 class="mt-4 text-sm text-gray-700">{{ product.name }}</h3>
-          <p class="mt-1 text-lg font-medium text-gray-900">
-            {{ product.price }}
-          </p>
-        </NuxtLink>
+        <ProductCard
+          v-for="product in products"
+          :key="product.id"
+          :product="product"
+        />
       </div>
     </div>
   </div>

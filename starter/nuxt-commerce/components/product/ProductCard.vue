@@ -1,11 +1,11 @@
 <script setup lang="ts">
 export interface Product {
-  id: string;
-  title: string;
-  price: number;
-  discountPercentage: number;
-  rating: number;
-  images: string[];
+  id: number;
+  name: string;
+  href: string;
+  price: string;
+  imageSrc: string;
+  imageAlt?: string;
 }
 
 defineProps<{
@@ -14,26 +14,26 @@ defineProps<{
 </script>
 
 <template>
-  <VCard :title="product.title" :to="`/products/${product.id}`">
-    <template #image>
+  <NuxtLink :to="`/products/${product.id}`" :href="product.href" class="group">
+    <div
+      class="
+        aspect-w-1 aspect-h-1
+        w-full
+        overflow-hidden
+        rounded-lg
+        bg-gray-200
+        xl:aspect-w-7 xl:aspect-h-8
+      "
+    >
       <img
-        :src="product.images[0]"
-        class="rounded-t-lg object-cover h-[200px] border-b"
-        :alt="product.title"
+        :src="product.imageSrc"
+        :alt="product.imageAlt || product.name"
+        class="h-full w-full object-cover object-center group-hover:opacity-75"
       />
-    </template>
-    <div class="font-semibold flex items-center gap-2 text-sm">
-      <span class="line-through text-gray-600">
-        {{ toCurrency(product.price) }}
-      </span>
-      <span class="text-primary-500">
-        {{
-          toCurrency(
-            getDiscountedPrice(product.price, product.discountPercentage),
-          )
-        }}
-      </span>
     </div>
-    <div class="mt-2 text-warning-500">{{ starRating(product.rating) }}</div>
-  </VCard>
+    <h3 class="mt-4 text-sm text-gray-700">{{ product.name }}</h3>
+    <p class="mt-1 text-lg font-medium text-gray-900">
+      {{ product.price }}
+    </p>
+  </NuxtLink>
 </template>
