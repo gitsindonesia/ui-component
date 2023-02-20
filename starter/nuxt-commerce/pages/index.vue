@@ -17,24 +17,21 @@ useHead({
   ],
 });
 
-const [{data: flashSale}, {data: recommendations}] = await Promise.all([
-  useFetch<Product[]>('/api/products', {
-    params: {
-      limit: 4,
-      type: 'flash-sale'
-    },
-  }),
-  useFetch<Product[]>('/api/products'),
-]);
+const {data} = await useAsyncData(() => $api('/products'));
+const products = computed(() => {
+  return data.value.products.map<Product[]>((product) => ({
+    id: product.id,
+    name: product.title,
+    href: product.id,
+    price: product.price,
+    imageSrc: product.thumbnail,
+    imageAlt: product.name,
+  }));
+});
 </script>
 
 <template>
   <StoreHero />
   <StoreCategories />
-  <ProductGrid class="py-16" title="Flash Sale" :products="flashSale!" />
-  <ProductGrid
-    class="py-16"
-    title="Recommendations"
-    :products="recommendations!"
-  />
+  <ProductGrid class="py-16" title="Recommendations" :products="products!" />
 </template>
