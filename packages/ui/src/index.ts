@@ -1,4 +1,4 @@
-import type {Plugin} from 'vue';
+import type { Plugin } from 'vue';
 import VBtn from '@gits-id/button';
 import VAlert from '@gits-id/alert';
 import VSpinner from '@gits-id/spinner';
@@ -18,8 +18,8 @@ import {
   VFormGroup,
   VTextarea,
 } from '@gits-id/forms';
-import {VDataTable, VDataTablePagination} from '@gits-id/table';
-import {Dropdown, DropdownItem, DropdownButton} from '@gits-id/dropdown';
+import { VDataTable, VDataTablePagination } from '@gits-id/table';
+import { Dropdown, DropdownItem, DropdownButton } from '@gits-id/dropdown';
 import VModal from '@gits-id/modal';
 import VPagination from '@gits-id/pagination';
 import VProgressBar from '@gits-id/progress-bar';
@@ -35,7 +35,7 @@ import VContainer from '@gits-id/container';
 import VLogo from '@gits-id/logo';
 import VToast from '@gits-id/toast';
 import VStats from '@gits-id/stats';
-import {VCollapsible, VCollapse, VCollapsibleGroup} from '@gits-id/collapsible';
+import { VCollapsible, VCollapse, VCollapsibleGroup } from '@gits-id/collapsible';
 import VMultiSelect from '@gits-id/multi-select';
 import {
   Auth as AuthLayout,
@@ -57,12 +57,12 @@ import {
   ListCollapse,
   ListItemHeader,
 } from '@gits-id/list';
-import {Icon} from '@gits-id/icon';
+import { Icon } from '@gits-id/icon';
 import Avatar from '@gits-id/avatar';
 import Shimmer from '@gits-id/shimmer';
 import VAutocomplete from '@gits-id/autocomplete';
 import './style.scss';
-import {Rating} from '@gits-id/rating';
+import { Rating } from '@gits-id/rating';
 import {
   BottomSheet,
   BottomSheetHeader,
@@ -72,6 +72,7 @@ import {
   BottomSheetOverlay,
   BottomSheetHandle
 } from '@gits-id/bottom-sheet';
+import { Stepper, StepperItem, StepperDivider, StepperNumber } from '@gits-id/stepper'
 
 const plugin: Plugin = {
   install: (app) => {
@@ -133,6 +134,10 @@ const plugin: Plugin = {
     app.component('VBottomSheetMenus', BottomSheetMenus);
     app.component('VBottomSheetOverlay', BottomSheetOverlay);
     app.component('VBottomSheetHandle', BottomSheetHandle);
+    app.component('VStepper', Stepper);
+    app.component('VStepperItem', StepperItem);
+    app.component('VStepperDivider', StepperDivider);
+    app.component('VStepperNumber', StepperNumber);
   },
 };
 
