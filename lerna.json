@@ -3,7 +3,7 @@
     "starter/*",
     "packages/*"
   ],
-  "version": "0.17.0-beta.2",
+  "version": "1.0.0-beta.0",
   "npmClient": "yarn",
   "useWorkspaces": true
 }

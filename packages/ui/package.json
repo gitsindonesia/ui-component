@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/ui",
-  "version": "0.17.0-beta.2",
+  "version": "1.0.0-beta.0",
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "npm run build",
@@ -45,13 +45,13 @@
     "@gits-id/tailwind-config": "^0.16.1",
     "@gits-id/textarea": "^0.3.0",
     "@gits-id/theme": "^0.16.1",
-    "@gits-id/toast": "^0.17.0-beta.1",
+    "@gits-id/toast": "^1.0.0-beta.0",
     "@gits-id/tooltip": "^0.16.1",
     "@gits-id/utils": "^0.16.1",
     "@headlessui/vue": "^1.6.0",
     "@vue/test-utils": "^2.0.0-rc.17",
-    "vue": "^3.2.33",
-    "sass": "^1.58.3"
+    "sass": "^1.58.3",
+    "vue": "^3.2.33"
   },
   "main": "./dist/ui.umd.js",
   "unpkg": "./dist/ui.iife.js",
