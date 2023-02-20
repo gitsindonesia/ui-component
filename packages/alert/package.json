@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/alert",
-  "version": "0.16.1",
+  "version": "1.0.0-beta.1",
   "description": "GITS Alert component is a flexible alert component that can be used to display various types of messages to the user.",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,10 +15,10 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@gits-id/button": "^0.16.1",
-    "@gits-id/icon": "^0.16.1",
-    "@gits-id/theme": "^0.16.1",
-    "@gits-id/utils": "^0.16.1",
+    "@gits-id/button": "^1.0.0-beta.1",
+    "@gits-id/icon": "^1.0.0-beta.1",
+    "@gits-id/theme": "^1.0.0-beta.1",
+    "@gits-id/utils": "^1.0.0-beta.1",
     "vue": "^3.2.33"
   },
   "devDependencies": {
@@ -30,7 +30,7 @@
     "vite": "^3.0.0",
     "vitest": "^0.12.4"
   },
-  "gitHead": "8aafa41bf181f6bfa091c9715a71a8b81c61440d",
+  "gitHead": "f584bc75f62ffdd381a5e55e89b2fe626584f85f",
   "main": "dist/alert.umd.js",
   "unpkg": "dist/alert.iife.js",
   "jsdelivr": "dist/alert.iife.js",

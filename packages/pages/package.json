@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/pages",
-  "version": "0.16.1",
+  "version": "1.0.0-beta.1",
   "description": "GITS Pages Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,16 +15,16 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@gits-id/alert": "^0.16.1",
-    "@gits-id/button": "^0.16.1",
-    "@gits-id/forms": "^0.16.1",
+    "@gits-id/alert": "^1.0.0-beta.1",
+    "@gits-id/button": "^1.0.0-beta.1",
+    "@gits-id/forms": "^1.0.0-beta.1",
     "@iconify/vue": "^3.2.1",
     "vue": "^3.2.31",
     "yup": "^0.32.11"
   },
   "devDependencies": {
-    "@gits-id/tailwind-config": "^0.16.1",
-    "@gits-id/utils": "^0.16.1",
+    "@gits-id/tailwind-config": "^1.0.0-beta.1",
+    "@gits-id/utils": "^1.0.0-beta.1",
     "@headlessui/vue": "^1.6.0",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
@@ -47,5 +47,5 @@
     "./src/*": "./src/*",
     "./*": "./*"
   },
-  "gitHead": "8aafa41bf181f6bfa091c9715a71a8b81c61440d"
+  "gitHead": "f584bc75f62ffdd381a5e55e89b2fe626584f85f"
 }

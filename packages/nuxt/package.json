@@ -1,7 +1,7 @@
 {
   "name": "@gits-id/ui-nuxt",
   "description": "Nuxt module for GITS UI Component",
-  "version": "1.0.0-beta.0",
+  "version": "1.0.0-beta.1",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -26,12 +26,12 @@
     "@gits-id/ui": "^0.16.3"
   },
   "devDependencies": {
+    "@nuxt/kit": "^3.2.0",
     "@nuxt/module-builder": "latest",
     "@nuxtjs/eslint-config-typescript": "latest",
     "@nuxtjs/tailwindcss": "^6.4.1",
     "eslint": "latest",
-    "nuxt": "^3.2.0",
-    "@nuxt/kit": "^3.2.0"
+    "nuxt": "^3.2.0"
   },
-  "gitHead": "8aafa41bf181f6bfa091c9715a71a8b81c61440d"
+  "gitHead": "f584bc75f62ffdd381a5e55e89b2fe626584f85f"
 }
