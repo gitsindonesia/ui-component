@@ -18,15 +18,17 @@ const adminDrawer = useAdminDrawer();
       </NuxtLink>
     </div>
     <div class="flex items-center gap-2 xl:pr-2">
-      <ColorModeSwitcher v-if="appConfig.admin.darkMode" />
-      <AdminNotification v-if="appConfig.admin.notification.enable" />
-      <VMenus
-        :label="appConfig.admin.accountMenu.label"
-        :items="appConfig.admin.accountMenu.items"
-        placement="bottom-end"
-      >
-        <VBtn fab text prefix-icon="ic:round-person" />
-      </VMenus>
+      <slot name="nav">
+        <ColorModeSwitcher v-if="appConfig.admin.darkMode" />
+        <AdminNotification v-if="appConfig.admin.notification.enable" />
+        <VMenus
+          :label="appConfig.admin.accountMenu.label"
+          :items="appConfig.admin.accountMenu.items"
+          placement="bottom-end"
+        >
+          <VBtn fab text prefix-icon="ic:round-person" />
+        </VMenus>
+      </slot>
     </div>
   </VAppBar>
 </template>
