@@ -41,7 +41,7 @@ const menus = props.menus || appConfig.admin.menus;
 
     <AsideMenus :menus="menus" />
 
-    <AdminAnnoucement v-bind="appConfig.admin.announcement" />
+    <AdminAnnouncement v-bind="appConfig.admin.announcement" />
 
     <Separator class="mx-4 py-2" />
     <AsideAccount />
