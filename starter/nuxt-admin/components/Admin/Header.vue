@@ -4,7 +4,7 @@ const adminDrawer = useAdminDrawer();
 </script>
 
 <template>
-  <VAppBar bordered class="justify-between">
+  <VAppBar bordered class="justify-between md:!hidden">
     <div class="flex items-center">
       <VBtn
         class="inline-flex xl:!hidden -ml-2"
@@ -19,7 +19,6 @@ const adminDrawer = useAdminDrawer();
     </div>
     <div class="flex items-center gap-2 xl:pr-2">
       <slot name="nav">
-        <ColorModeSwitcher v-if="appConfig.admin.darkMode" />
         <AdminNotification v-if="appConfig.admin.notification.enable" />
         <VMenus
           :label="appConfig.admin.accountMenu.label"
