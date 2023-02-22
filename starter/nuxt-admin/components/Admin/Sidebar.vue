@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {breakpointsTailwind, useBreakpoints} from '@vueuse/core';
-import { Menu } from '../Aside/Menus.vue';
+import {Menu} from '../Aside/Menus.vue';
 
 const adminDrawer = useAdminDrawer();
 
@@ -10,7 +10,6 @@ const isMobile = $breakpoints.smaller('sm'); // only smaller than lg
 watchEffect(() => {
   adminDrawer.value = !isMobile.value;
 });
-
 
 const menus = shallowRef<Menu[]>([
   {
@@ -30,10 +29,11 @@ const menus = shallowRef<Menu[]>([
   <VNavDrawer
     v-model="adminDrawer"
     :fixed="isMobile"
-    :shadow="isMobile"
     :overlay="isMobile"
     :close-on-overlay-click="isMobile"
+    class="!shadow"
     :class="{'z-20': isMobile}"
+    sticky
   >
     <AsideHeader />
 

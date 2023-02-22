@@ -33,5 +33,8 @@ export default defineNuxtConfig({
     optimizeDeps: {
       include: ['yup']
     }
-  }
+  },
+  css: [
+    '~/assets/css/main.css'
+  ],
 });

@@ -1,45 +1,39 @@
 <script setup lang="ts">
-definePageMeta({
-  //
-});
+import {MetricItem} from '~~/components/MetridGrid.vue';
 
 useHead({
   title: 'Dashboard',
 });
 
-const options = ref({
-  chart: {
-    id: 'vuechart-example',
-  },
-  xaxis: {
-    categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
-  },
-});
-
-const series = ref([
+const stats = ref<MetricItem[]>([
   {
-    name: 'series-1',
-    data: [30, 40, 45, 50, 49, 60, 70, 91],
+    title: 'Total customers',
+    value: 2420,
+    state: 'up',
+    change: 40,
+    series: [30, 40, 50],
+  },
+  {
+    title: 'Members',
+    value: 1210,
+    state: 'down',
+    change: 10,
+    series: [30, 60, 50],
+  },
+  {
+    title: 'Active now',
+    value: 316,
+    state: 'up',
+    change: 20,
+    series: [60, 80, 100],
   },
 ]);
-
-const {data: session} = useSession();
 </script>
 
 <template>
   <div>
-    <AdminPageHeader
-      :title="`Welcome back, ${session?.user?.name}`"
-      subtitle="Track, manage and forecast your customers and orders."
-    />
-
-    <ClientOnly>
-      <apexchart
-        width="500"
-        type="bar"
-        :options="options"
-        :series="series"
-      ></apexchart>
-    </ClientOnly>
+    <DashboardHeader />
+    <MetridGrid :items="stats" />
+    <DashboardTable />
   </div>
 </template>
