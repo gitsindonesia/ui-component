@@ -310,10 +310,12 @@ const statusColor: Record<string, string> = {
 
   <VDataTable :headers="headers" :items="items" class="mt-6" disable-sorting>
     <template #item.company="{item}">
-      <div class="text-gray-900 font-semibold text-sm">
+      <div class="text-gray-900 dark:text-neutral-200 font-semibold text-sm">
         {{ item.company.name }}
       </div>
-      <div class="text-gray-600 text-sm">{{ item.company.domain }}</div>
+      <div class="text-gray-600 dark:text-neutral-500 text-sm">
+        {{ item.company.domain }}
+      </div>
     </template>
     <template #item.license="{item}">
       <VProgressBar color="primary" :model-value="item.license" :max="100" />
@@ -337,28 +339,23 @@ const statusColor: Record<string, string> = {
       </div>
     </template>
     <template #item.about="{item}">
-      <div class="font-semibold text-sm text-gray-900 truncate">
+      <div
+        class="
+          font-semibold
+          text-sm text-gray-900
+          dark:text-neutral-200
+          truncate
+        "
+      >
         {{ item.about.title }}
       </div>
-      <div class="text-sm text-gray-600 truncate">
+      <div class="text-sm text-gray-600 dark:text-neutral-500 truncate">
         {{ item.about.description }}
       </div>
     </template>
     <template #item.action>
-      <VBtn
-        text
-        fab
-        class="!text-gray-700"
-        size="sm"
-        prefix-icon="ic:round-edit"
-      ></VBtn>
-      <VBtn
-        text
-        fab
-        class="!text-gray-700"
-        size="sm"
-        prefix-icon="ic:round-delete"
-      ></VBtn>
+      <VBtn text fab size="sm" prefix-icon="ic:round-edit"></VBtn>
+      <VBtn text fab size="sm" prefix-icon="ic:round-delete"></VBtn>
     </template>
   </VDataTable>
 </template>

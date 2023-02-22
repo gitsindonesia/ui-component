@@ -54,12 +54,27 @@ const options = ref({
 </script>
 
 <template>
-  <div class="border shadow-md rounded-md bg-white px-4 py-3">
+  <div
+    class="
+      border
+      shadow-md
+      rounded-md
+      bg-white
+      dark:bg-neutral-800
+      dark:border-neutral-900
+      px-4
+      py-3
+    "
+  >
     <div class="flex items-center justify-between">
-      <div class="text-gray-900 font-semibold">
+      <div class="text-gray-900 dark:text-neutral-200 font-semibold">
         {{ title }}
       </div>
-      <VIcon name="ic:round-more-vert" size="20" class="text-gray-400" />
+      <VIcon
+        name="ic:round-more-vert"
+        size="20"
+        class="text-gray-400 dark:text-neutral-400"
+      />
     </div>
 
     <div class="flex gap-4 mt-5">

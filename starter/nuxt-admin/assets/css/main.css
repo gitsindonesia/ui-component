@@ -10,7 +10,7 @@ body {
 .v-table-header-text {
   text-transform: none !important;
 
-  @apply text-xs font-medium text-gray-600;
+  @apply text-xs font-medium text-gray-600 dark:text-neutral-200;
 }
 
 .v-table {
