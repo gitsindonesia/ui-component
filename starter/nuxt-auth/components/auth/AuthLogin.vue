@@ -32,7 +32,7 @@ const onSubmit = handleSubmit(async (values) => {
   }
 
   // get path name from callback url
-  const callbackUrl = new URL(String(route.query.callbackUrl)).pathname;
+  const callbackUrl = new URL(String(route.query?.callbackUrl)).pathname;
 
   router.push(
     String(route.query.next || callbackUrl || appConfig.auth.redirect.home),
