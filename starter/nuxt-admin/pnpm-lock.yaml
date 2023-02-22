@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@gits-id/nuxt-auth': ^0.2.3
+  '@gits-id/nuxt-auth': ^0.2.4
   '@gits-id/ui-nuxt': ^1.0.0-beta.1
   '@nuxtjs/color-mode': ^3.2.0
   '@nuxtjs/tailwindcss': ^6.3.0
@@ -11,7 +11,7 @@ specifiers:
   sass: ^1.58.0
 
 dependencies:
-  '@gits-id/nuxt-auth': 0.2.3
+  '@gits-id/nuxt-auth': 0.2.4
   '@gits-id/ui-nuxt': 1.0.0-beta.1
   '@pinia/nuxt': 0.4.6
   pinia: 2.0.30
@@ -1262,8 +1262,8 @@ packages:
       - ts-node
     dev: false
 
-  /@gits-id/nuxt-auth/0.2.3:
-    resolution: {integrity: sha512-y42Z5RyBZA383gKs36FL8W75cRdJjVRdQrpUlOewXc57jhH1HhRMWrNrBXcLd06GnqeYP7DmaBRaaecbo27ezg==}
+  /@gits-id/nuxt-auth/0.2.4:
+    resolution: {integrity: sha512-pM7nYNvJNJiC1SrxoY9fC0ZRo6gUvRmqqumGW9cMuOFltUpnaoBrg5HuiVfoBKJuPP+jaMuuisNR3t2IRg3Apg==}
     dependencies:
       '@gits-id/ui-nuxt': 1.0.0-beta.1
       '@sidebase/nuxt-auth': 0.4.2_next-auth@4.19.2

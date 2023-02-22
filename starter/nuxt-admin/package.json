@@ -22,7 +22,7 @@
     "prep": "nuxt prepare"
   },
   "dependencies": {
-    "@gits-id/nuxt-auth": "^0.2.3",
+    "@gits-id/nuxt-auth": "^0.2.4",
     "@gits-id/ui-nuxt": "^1.0.0-beta.1",
     "@pinia/nuxt": "^0.4.6",
     "pinia": "^2.0.29"
