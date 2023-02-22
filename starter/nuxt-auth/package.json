@@ -1,7 +1,7 @@
 {
   "name": "@gits-id/nuxt-auth",
   "description": "A Nuxt theme to get authentication ready with @sidebase/nuxt-auth and GITS UI.",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "keywords": [
     "auth",
     "dashboard",
@@ -22,7 +22,7 @@
     "prep": "nuxt prepare"
   },
   "dependencies": {
-    "@gits-id/ui-nuxt": "^0.16.1",
+    "@gits-id/ui-nuxt": "^1.0.0-beta.1",
     "@sidebase/nuxt-auth": "^0.4.0-alpha.5",
     "next-auth": "^4.19.1"
   },
@@ -35,6 +35,7 @@
   "main": "./nuxt.config.ts",
   "files": [
     "components/",
+    "layouts/",
     "middleware/",
     "pages/",
     "server/",

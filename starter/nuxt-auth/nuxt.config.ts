@@ -5,7 +5,11 @@ export default defineNuxtConfig({
     shim: false,
   },
   auth: {
-    origin: process.env.AUTH_ORIGIN,
     enableGlobalAppMiddleware: true,
   },
+  vite: {
+    optimizeDeps: {
+      include: ['yup'],
+    },
+  }
 });
