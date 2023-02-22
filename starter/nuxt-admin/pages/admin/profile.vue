@@ -2,8 +2,12 @@
 import {useForm} from 'vee-validate';
 
 definePageMeta({
-  layout: 'admin',
+  //
 });
+
+useHead({
+  title: 'Profile',
+})
 
 useForm({
   initialValues: {
