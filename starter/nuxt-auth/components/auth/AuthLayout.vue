@@ -1,6 +1,8 @@
 <template>
   <AuthShell>
-    <AuthSidebar />
+    <slot name="sidebar">
+      <AuthSidebar />
+    </slot>
     <slot />
   </AuthShell>
 </template>
