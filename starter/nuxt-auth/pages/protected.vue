@@ -1,6 +1,4 @@
 <script setup lang="ts">
-const appConfig = useAppConfig();
-
 useHead({
   title: 'Protected',
   meta: [

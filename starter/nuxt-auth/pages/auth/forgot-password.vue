@@ -2,6 +2,7 @@
 definePageMeta({
   auth: false,
   middleware: 'guest',
+  layout: 'auth',
 });
 
 const appConfig = useAppConfig();
@@ -10,7 +11,5 @@ useHead(appConfig.auth.forgotPassword.head);
 </script>
 
 <template>
-  <AuthLayout>
-    <AuthForgotPassword />
-  </AuthLayout>
+  <AuthForgotPassword />
 </template>
