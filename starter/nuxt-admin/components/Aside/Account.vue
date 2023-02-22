@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const {signOut} = useSession();
+const {signOut, data: session} = useSession();
 
 function logout() {
   signOut();
@@ -9,6 +9,7 @@ function logout() {
 <template>
   <footer class="py-3 px-2 flex w-full items-center justify-between">
     <VBtn
+      v-if="session?.user"
       text
       flush
       no-ring
@@ -21,14 +22,15 @@ function logout() {
         !font-normal
         !px-1
         !rounded-md
+        flex-1
       "
     >
-      <Avatar
-        src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=80"
-      />
+      <Avatar :src="session?.user?.image" />
       <div class="text-sm text-left w-8/12">
-        <AsideAccountTitle> Olivia Rhye </AsideAccountTitle>
-        <AsideAccountSubtitle> olivia@untitledui.com </AsideAccountSubtitle>
+        <AsideAccountTitle> {{ session?.user?.name }} </AsideAccountTitle>
+        <AsideAccountSubtitle>
+          {{ session?.user?.email }}
+        </AsideAccountSubtitle>
       </div>
     </VBtn>
     <VBtn
