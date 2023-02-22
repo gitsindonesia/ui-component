@@ -1,3 +1,11 @@
+<script setup lang="ts">
+const {signOut} = useSession();
+
+function logout() {
+  signOut();
+}
+</script>
+
 <template>
   <footer class="py-3 px-2 flex w-full items-center justify-between">
     <VBtn
@@ -29,6 +37,7 @@
       no-ring
       prefix-icon="ic:round-logout"
       class="!rounded-md"
+      @click="logout"
     />
   </footer>
 </template>
