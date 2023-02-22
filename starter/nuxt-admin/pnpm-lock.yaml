@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@gits-id/ui-nuxt': ^0.16.1
+  '@gits-id/ui-nuxt': ^1.0.0-beta.1
   '@nuxtjs/color-mode': ^3.2.0
   '@nuxtjs/tailwindcss': ^6.3.0
   '@pinia/nuxt': ^0.4.6
@@ -10,7 +10,7 @@ specifiers:
   sass: ^1.58.0
 
 dependencies:
-  '@gits-id/ui-nuxt': 0.16.3
+  '@gits-id/ui-nuxt': 1.0.0-beta.1
   '@pinia/nuxt': 0.4.6
   pinia: 2.0.30
 
@@ -1465,16 +1465,13 @@ packages:
       vue: 3.2.47
     dev: false
 
-  /@gits-id/ui-nuxt/0.16.3:
-    resolution: {integrity: sha512-p8C/AhPIC4vT3CLNv1tIbYUL+KpvFnNjPDxVG0PBhWk3AGIafGWg4t685Gf6fvOilaoEVhFbIu1t7Kpx0MvjRA==}
+  /@gits-id/ui-nuxt/1.0.0-beta.1:
+    resolution: {integrity: sha512-PH1pwnhlnQu1ckEPq2B9/cXMVcIdJILzwAKb1PsYP0h7KPXLqVRCrx9seHGUh9cv1l+9/Ak2aVpWR6tyFouteQ==}
     dependencies:
       '@gits-id/ui': 0.16.3
-      '@nuxt/kit': 3.2.0
     transitivePeerDependencies:
       - '@vue/composition-api'
       - debug
-      - rollup
-      - supports-color
       - ts-node
       - typescript
     dev: false
