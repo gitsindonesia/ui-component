@@ -7,7 +7,7 @@ defineProps<{
 
 <template>
   <div class="mb-5">
-    <h1 class="text-xl font-semibold mb-1">{{ title }}</h1>
+    <h1 class="text-3xl font-semibold mb-1">{{ title }}</h1>
     <p class="text-gray-500">{{ subtitle }}</p>
   </div>
 </template>

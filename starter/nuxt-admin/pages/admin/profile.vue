@@ -23,7 +23,7 @@ const save = handleSubmit((values) => {
 
 <template>
   <div>
-    <AdminPageTitle
+    <AdminPageHeader
       title="Profile"
       subtitle="Manage your profile information"
     />

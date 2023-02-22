@@ -4,7 +4,7 @@
 
 <template>
   <div>
-    <AdminPageTitle title="Dashboard" subtitle="Welcome to your dashboard!" />
+    <AdminPageHeader title="Dashboard" subtitle="Welcome to your dashboard!" />
 
     <VAlert color="info" solid icon="ic:sharp-info" class="mb-5">
       Welcome to your new Nuxt app!
