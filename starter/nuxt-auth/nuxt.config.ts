@@ -8,4 +8,9 @@ export default defineNuxtConfig({
     origin: process.env.AUTH_ORIGIN,
     enableGlobalAppMiddleware: true,
   },
+  vite: {
+    optimizeDeps: {
+      include: ['yup'],
+    },
+  }
 });
