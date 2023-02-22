@@ -36,13 +36,13 @@ export default defineNuxtConfig({
 
 ## Configuration
 
-You can change the default options for admin pages like redirect url and head options via `app.config.ts`.
+You can change the default options for admin pages like redirect URL and head options via `app.config.ts`.
 
-You can checkout the default configuration in the [source of this file](https://github.com/gitsindonesia/ui-component/tree/main/starter/nuxt-admin/app.config.ts).
+You can check out the default configuration in the [source of this file](https://github.com/gitsindonesia/ui-component/tree/main/starter/nuxt-admin/app.config.ts).
 
 ## Components
 
-To customize the components, just override the default components by creating file in your Nuxt app with the same as the theme.
+To customize the components, just override the default components by creating a file in your Nuxt app with the same name.
 
 | Component               | Path                                    |
 | ----------------------- | --------------------------------------- |
@@ -50,14 +50,14 @@ To customize the components, just override the default components by creating fi
 | `AdminHeader`           | `components/admin/Header.vue`           |
 | `AdminNotification`     | `components/admin/Notification.vue`     |
 | `AdminNotificationItem` | `components/admin/NotificationItem.vue` |
-| `AdminPageTitle`        | `components/admin/PageTitle.vue`        |
+| `AdminPageHeader`       | `components/admin/PageHeader.vue`       |
 | `AdminShell`            | `components/admin/Shell.vue`            |
 | `AdminSidebar`          | `components/admin/Sidebar.vue`          |
 | `DarkModeSwitcher`      | `components/DarkModeSwitcher.vue`       |
 
 ## Pages
 
-To customize the pages, just override the default pages by creating file in your Nuxt app with the same as the theme.
+To customize the pages, just override the default pages by creating a file in your Nuxt app with the same name.
 
 | Path                      | Description            |
 | ------------------------- | ---------------------- |
@@ -70,7 +70,7 @@ Combine with [`nuxt-auth`](/themes/nuxt-auth) to add authentication to the admin
 
 ## GITS UI
 
-Checkout the [official documentation](https://gitsindonesia.github.io/ui-component/) to
+Check out the [official documentation](https://gitsindonesia.github.io/ui-component/) to
 learn more about `GITS UI`.
 
 ## License

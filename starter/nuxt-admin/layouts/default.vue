@@ -6,9 +6,6 @@
     <template #sidebar>
       <AdminSidebar />
     </template>
-    <template #footer>
-      <AdminFooter />
-    </template>
     <slot />
   </AdminShell>
 </template>

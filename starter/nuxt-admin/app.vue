@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const appConfig = useAppConfig();
-const title = appConfig.adminTitle;
+const title = appConfig.admin.title;
 
 useHead({
   title,
@@ -14,10 +14,14 @@ useHead({
       content: title,
     },
   ],
+  titleTemplate: (titleChunk) => {
+    return titleChunk ? `${titleChunk} - ${title}` : title;
+  },
 });
 </script>
 
 <template>
+  <NuxtLoadingIndicator />
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>

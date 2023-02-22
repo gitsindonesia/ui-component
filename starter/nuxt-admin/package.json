@@ -22,9 +22,12 @@
     "prep": "nuxt prepare"
   },
   "dependencies": {
-    "@gits-id/ui-nuxt": "^0.16.1",
+    "@gits-id/nuxt-auth": "^0.2.4",
+    "@gits-id/ui-nuxt": "^1.0.0-beta.1",
     "@pinia/nuxt": "^0.4.6",
-    "pinia": "^2.0.29"
+    "apexcharts": "^3.37.0",
+    "pinia": "^2.0.29",
+    "vue3-apexcharts": "^1.4.1"
   },
   "devDependencies": {
     "@nuxtjs/color-mode": "^3.2.0",
@@ -39,6 +42,8 @@
     "composables/",
     "layouts/",
     "pages/",
+    "plugins/",
+    "public/",
     "app.vue",
     "app.config.ts",
     "nuxt.config.ts",
