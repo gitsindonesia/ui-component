@@ -31,9 +31,7 @@ const stats = ref<MetricItem[]>([
 </script>
 
 <template>
-  <div>
-    <DashboardHeader />
-    <MetridGrid :items="stats" />
-    <DashboardTable />
-  </div>
+  <DashboardHeader />
+  <MetridGrid :items="stats" />
+  <DashboardTable />
 </template>

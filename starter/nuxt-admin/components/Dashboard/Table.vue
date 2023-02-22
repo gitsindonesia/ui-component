@@ -308,12 +308,7 @@ const statusColor: Record<string, string> = {
     </div>
   </div>
 
-  <VDataTable
-    :headers="headers"
-    :items="items"
-    class="mt-6 !w-[270px] lg:!w-full"
-    disable-sorting
-  >
+  <VDataTable :headers="headers" :items="items" class="mt-6" disable-sorting>
     <template #item.company="{item}">
       <div class="text-gray-900 font-semibold text-sm">
         {{ item.company.name }}

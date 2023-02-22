@@ -1,5 +1,22 @@
 <script setup lang="ts">
-const isOpen = ref(true);
+interface Props {
+  enable: boolean;
+  title: string;
+  message: string;
+  url?: string;
+  dismiss: {
+    text: string;
+    enable: boolean;
+  };
+  cta: {
+    text: string;
+    enable: boolean;
+  };
+}
+
+const props = defineProps<Props>();
+
+const isOpen = ref(props.enable);
 </script>
 
 <template>
@@ -22,15 +39,19 @@ const isOpen = ref(true);
       <VIcon name="ri:close-line" />
     </button>
     <h3 class="font-semibold mb-2 text-sm text-gray-900 dark:text-neutral-200">
-      New features available!
+      {{ title }}
     </h3>
     <p class="text-sm mb-4 text-gray-600 dark:text-neutral-300">
-      Check out the new dashboard view. Pages now load faster.
+      {{ message }}
     </p>
     <img src="/new-feature.png" alt="New features" class="w-full rounded-md" />
     <div class="flex gap-4 items-center mt-4 mb-1">
-      <VBtn flush text @click="isOpen = !isOpen">Dismiss</VBtn>
-      <VBtn flush color="primary" text>What's New?</VBtn>
+      <VBtn v-if="dismiss.enable" flush text @click="isOpen = !isOpen">
+        {{ dismiss.text }}
+      </VBtn>
+      <VBtn v-if="cta.enable" :to="url" flush color="primary" text>
+        {{ cta.text }}
+      </VBtn>
     </div>
   </div>
 </template>

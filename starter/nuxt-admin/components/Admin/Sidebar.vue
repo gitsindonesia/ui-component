@@ -2,6 +2,12 @@
 import {breakpointsTailwind, useBreakpoints} from '@vueuse/core';
 import {Menu} from '../Aside/Menus.vue';
 
+const props =
+  defineProps<{
+    menus?: Menu[];
+  }>();
+
+const appConfig = useAppConfig();
 const adminDrawer = useAdminDrawer();
 
 const $breakpoints = useBreakpoints(breakpointsTailwind);
@@ -11,18 +17,7 @@ watchEffect(() => {
   adminDrawer.value = !isMobile.value;
 });
 
-const menus = shallowRef<Menu[]>([
-  {
-    text: 'Dashboard',
-    to: '/admin',
-    prependIcon: 'ic:baseline-insert-chart-outlined',
-  },
-  {
-    text: 'Projects',
-    to: '/admin/projects',
-    prependIcon: 'ic:baseline-assignment',
-  },
-]);
+const menus = props.menus || appConfig.admin.menus;
 </script>
 
 <template>
@@ -38,6 +33,7 @@ const menus = shallowRef<Menu[]>([
     <AsideHeader />
 
     <VInput
+      v-if="appConfig.admin.search.enable"
       wrapper-class="w-full px-4 mb-4"
       placeholder="Search"
       prepend-icon="ri:search-line"
@@ -45,10 +41,9 @@ const menus = shallowRef<Menu[]>([
 
     <AsideMenus :menus="menus" />
 
-    <AdminNewFeaturesInfo />
+    <AdminAnnoucement v-bind="appConfig.admin.announcement" />
 
     <Separator class="mx-4 py-2" />
-
     <AsideAccount />
   </VNavDrawer>
 </template>
