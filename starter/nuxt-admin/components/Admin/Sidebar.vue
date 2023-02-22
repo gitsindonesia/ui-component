@@ -34,7 +34,7 @@ const menus = props.menus || appConfig.admin.menus;
 
     <VInput
       v-if="appConfig.admin.search.enable"
-      wrapper-class="w-full px-4 mb-4"
+      wrapper-class="w-full px-4 mb-4 mt-2"
       placeholder="Search"
       prepend-icon="ri:search-line"
     />
