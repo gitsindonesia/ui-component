@@ -44,25 +44,13 @@ You can check out the default configuration in the [source of this file](https:/
 
 To customize the components, just override the default components by creating a file in your Nuxt app with the same name.
 
-| Component               | Path                                    |
-| ----------------------- | --------------------------------------- |
-| `AdminFooter`           | `components/admin/Footer.vue`           |
-| `AdminHeader`           | `components/admin/Header.vue`           |
-| `AdminNotification`     | `components/admin/Notification.vue`     |
-| `AdminNotificationItem` | `components/admin/NotificationItem.vue` |
-| `AdminPageHeader`       | `components/admin/PageHeader.vue`       |
-| `AdminShell`            | `components/admin/Shell.vue`            |
-| `AdminSidebar`          | `components/admin/Sidebar.vue`          |
-| `DarkModeSwitcher`      | `components/DarkModeSwitcher.vue`       |
+Check out the full list of components [here](https://github.com/gitsindonesia/ui-component/tree/main/starter/nuxt-admin/components).
 
 ## Pages
 
 To customize the pages, just override the default pages by creating a file in your Nuxt app with the same name.
 
-| Path                      | Description            |
-| ------------------------- | ---------------------- |
-| `pages/admin/index.vue`   | The admin home page    |
-| `pages/admin/profile.vue` | The admin profile page |
+Check out the full list of pages [here](https://github.com/gitsindonesia/ui-component/tree/main/starter/nuxt-admin/pages).
 
 ## Authentication
 
