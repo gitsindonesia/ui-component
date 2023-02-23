@@ -32,6 +32,6 @@ const stats = ref<MetricItem[]>([
 
 <template>
   <DashboardHeader />
-  <MetridGrid :items="stats" />
+  <MetricGrid :items="stats" />
   <DashboardTable />
 </template>
