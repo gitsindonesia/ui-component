@@ -11,46 +11,6 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   categories: () => ['Dec', 'Jan', 'Feb'],
 });
-
-const options = ref({
-  chart: {
-    id: 'vuechart-example',
-    toolbar: {
-      show: false,
-    },
-  },
-  xaxis: {
-    categories: props.categories,
-    labels: {
-      show: false,
-    },
-    axisTicks: {
-      show: false,
-    },
-  },
-  yaxis: {
-    labels: {
-      show: false,
-    },
-  },
-  stroke: {
-    curve: 'smooth',
-  },
-  fill: {
-    // type: 'gradient',
-  },
-  grid: {
-    show: false,
-  },
-  tooltip: {
-    x: {
-      show: false,
-    },
-    marker: {
-      show: false,
-    },
-  },
-});
 </script>
 
 <template>
@@ -106,19 +66,11 @@ const options = ref({
         </div>
       </div>
       <div>
-        <ClientOnly>
-          <apexchart
-            width="128"
-            type="line"
-            :options="options"
-            :series="[
-              {
-                name: title,
-                data: series,
-              },
-            ]"
-          ></apexchart>
-        </ClientOnly>
+        <MetricLineChart
+          :title="title"
+          :series="series"
+          :categories="categories"
+        />
       </div>
     </div>
   </div>
