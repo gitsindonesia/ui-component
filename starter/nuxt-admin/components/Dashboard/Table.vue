@@ -334,7 +334,7 @@ const statusColor: Record<string, string> = {
           :alt="user.name"
           width="32"
           height="32"
-          class="border-4 border-white w-8 h-8"
+          class="border-4 border-white dark:border-neutral-700 w-8 h-8"
         />
       </div>
     </template>
