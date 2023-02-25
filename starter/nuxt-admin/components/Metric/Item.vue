@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {VBtn} from '@gits-id/button';
+
 interface Props {
   title: string;
   value: number;
@@ -8,7 +10,7 @@ interface Props {
   categories?: string[];
 }
 
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
   categories: () => ['Dec', 'Jan', 'Feb'],
 });
 </script>
@@ -30,11 +32,23 @@ const props = withDefaults(defineProps<Props>(), {
       <div class="text-gray-900 dark:text-neutral-200 font-semibold">
         {{ title }}
       </div>
-      <VIcon
-        name="ic:round-more-vert"
-        size="20"
-        class="text-gray-400 dark:text-neutral-400"
-      />
+      <VDropdown
+        right
+        panel-class="border shadow shadow-neutral-900 dark:border-neutral-700"
+      >
+        <template #activator>
+          <VDropdownButton
+            :as="VBtn"
+            prefix-icon="ic:round-more-vert"
+            size="20"
+            class="text-gray-400 dark:text-neutral-400"
+            flush
+          />
+        </template>
+        <VDropdownItem>View details</VDropdownItem>
+        <VDropdownItem>Download as PDF</VDropdownItem>
+        <VDropdownItem>Download as Image</VDropdownItem>
+      </VDropdown>
     </div>
 
     <div class="flex gap-4 mt-5">
