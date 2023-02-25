@@ -3,7 +3,7 @@
 import '@gits-id/pagination/src/VPagination.scss';
 import '@gits-id/table/src/VDataTable.scss';
 import '@gits-id/table/src/VDataTablePagination.scss';
-import type {VDataTableHeader} from '@gits-id/ui';
+import type {VDataTableHeader, VDataTableItem} from '@gits-id/ui';
 
 const headers = ref<VDataTableHeader[]>([
   {
@@ -271,6 +271,22 @@ const statusColor: Record<string, string> = {
   Customer: 'success',
   Churned: 'default',
 };
+
+const selectedItem = ref();
+const dialogDelete = ref(false);
+
+const deleteItem = (item: VDataTableItem) => {
+  selectedItem.value = item;
+  dialogDelete.value = true;
+};
+
+const onItemDeleted = () => {
+  const index = items.value.findIndex(
+    (item) => item.company.name === selectedItem.value.company.name,
+  );
+  items.value.splice(index, 1);
+  dialogDelete.value = false;
+};
 </script>
 
 <template>
@@ -353,9 +369,17 @@ const statusColor: Record<string, string> = {
         {{ item.about.description }}
       </div>
     </template>
-    <template #item.action>
+    <template #item.action="{item}">
       <VBtn text fab size="sm" prefix-icon="ic:round-edit"></VBtn>
-      <VBtn text fab size="sm" prefix-icon="ic:round-delete"></VBtn>
+      <VBtn
+        text
+        fab
+        size="sm"
+        prefix-icon="ic:round-delete"
+        @click="deleteItem(item)"
+      ></VBtn>
     </template>
   </VDataTable>
+
+  <ModalDelete v-model="dialogDelete" @yes="onItemDeleted" />
 </template>
