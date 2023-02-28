@@ -44,5 +44,5 @@
     "./src/*": "./src/*",
     "./*": "./*"
   },
-  "gitHead": "f584bc75f62ffdd381a5e55e89b2fe626584f85f"
+  "gitHead": "92215d91d1e3a2b1b804e52b55dcfd0ed5274475"
 }
