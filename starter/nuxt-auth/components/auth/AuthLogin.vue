@@ -36,11 +36,10 @@ const onSubmit = handleSubmit(async (values) => {
     return;
   }
 
-  // get path name from callback url
-  const callbackUrl = new URL(String(route.query?.callbackUrl)).pathname;
+  const callbackUrl = String(route.query?.callbackUrl);
 
   router.push(
-    String(route.query.next || callbackUrl || appConfig.auth.redirect.home),
+    String(route.query?.next || callbackUrl || appConfig.auth.redirect.home),
   );
 });
 
