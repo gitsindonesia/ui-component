@@ -160,6 +160,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  hideError: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const emit = defineEmits([
@@ -275,7 +279,11 @@ const {errorMessage, uncontrolledValue, validationListeners, inputId, clear} =
       </slot>
     </div>
 
-    <div v-if="errorMessage" class="v-input-error" :class="errorClass">
+    <div
+      v-if="errorMessage && !hideError"
+      class="v-input-error"
+      :class="errorClass"
+    >
       {{ errorMessage }}
     </div>
   </div>
