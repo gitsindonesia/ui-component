@@ -6,10 +6,11 @@ const appConfig = useAppConfig();
 
 const router = useRouter();
 const route = useRoute();
-const {signIn, status, getProviders} = useSession();
+const {signIn, getProviders} = useSession();
 const providers = await getProviders();
 
 const error = ref();
+const loading = ref(false);
 
 const {handleSubmit} = useForm({
   validationSchema: object({
@@ -20,11 +21,15 @@ const {handleSubmit} = useForm({
 
 const onSubmit = handleSubmit(async (values) => {
   error.value = null;
+  loading.value = true;
+
   const res = await signIn('credentials', {
     username: values.username,
     password: values.password,
     redirect: false,
   });
+
+  loading.value = false;
 
   if (res.error) {
     error.value = 'Invalid credentials';
@@ -37,6 +42,12 @@ const onSubmit = handleSubmit(async (values) => {
   router.push(
     String(route.query.next || callbackUrl || appConfig.auth.redirect.home),
   );
+});
+
+const socialProviders = computed(() => {
+  return Object.keys(providers)
+    .map((name) => name !== 'credentials')
+    .filter(Boolean);
 });
 </script>
 
@@ -80,7 +91,7 @@ const onSubmit = handleSubmit(async (values) => {
         </VBtn>
       </div>
       <VBtn
-        :loading="status === 'loading'"
+        :loading="loading"
         type="submit"
         v-bind="appConfig.auth.login.submitProps"
       >
@@ -94,7 +105,10 @@ const onSubmit = handleSubmit(async (values) => {
         </VBtn>
       </p>
 
-      <div class="flex gap-4 items-center mt-5 mb-4">
+      <div
+        v-if="socialProviders.length > 0"
+        class="flex gap-4 items-center mt-5 mb-4"
+      >
         <div class="border-t flex-1"></div>
         <span class="text-sm text-gray-600">
           {{ appConfig.auth.login.orText }}
