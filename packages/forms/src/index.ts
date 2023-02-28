@@ -16,6 +16,7 @@ export {default as VInputGroup} from './input/VInputGroup.vue';
 export {default as VInputRange} from './input/VInputRange.vue';
 export {default as VRadio} from './radio/VRadio.vue';
 export {default as VRadioGroup} from './radio/VRadioGroup.vue';
+export {default as VErrorMessage} from './ErrorMessage.vue';
 export * from './composables';
 export * from './form-select/types';
 export * from './file-input/types';
