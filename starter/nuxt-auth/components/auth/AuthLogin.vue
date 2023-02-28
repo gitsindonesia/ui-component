@@ -36,9 +36,15 @@ const onSubmit = handleSubmit(async (values) => {
     return;
   }
 
-  const callbackUrl: any = route.query?.next || route.query?.callbackUrl;
+  const nextUrl: any = route.query?.next || route.query?.callbackUrl;
+  const callbackUrl = nextUrl || appConfig.auth?.redirect?.home || '/';
 
-  router.push(callbackUrl || appConfig.auth?.redirect?.home || '/');
+  if (callbackUrl.startsWith('http')) {
+    location.href = callbackUrl;
+    return;
+  }
+
+  router.push(callbackUrl);
 });
 
 const socialProviders = computed(() => {
