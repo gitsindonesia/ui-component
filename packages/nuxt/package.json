@@ -1,7 +1,7 @@
 {
   "name": "@gits-id/ui-nuxt",
   "description": "Nuxt module for GITS UI Component",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "license": "MIT",
   "type": "module",
   "exports": {

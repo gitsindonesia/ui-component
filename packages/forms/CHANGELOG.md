@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.2](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2023-02-28)
+
+
+### Features
+
+* **Forms:** add `hideError` prop on `VInput` and new `ErrorMessage` component ([#134](https://github.com/gitsindonesia/ui-component/issues/134)) ([ccb54a5](https://github.com/gitsindonesia/ui-component/commit/ccb54a59d3adfab6fa5daa123972bed6a7458240))
+
+
+
+
+
 # [1.0.0-beta.1](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.0...v1.0.0-beta.1) (2023-02-20)
 
 **Note:** Version bump only for package @gits-id/forms

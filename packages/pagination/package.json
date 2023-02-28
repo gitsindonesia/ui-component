@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/pagination",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "description": "GITS Pagination Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -19,8 +19,8 @@
     "vue": "^3.2.31"
   },
   "devDependencies": {
-    "@gits-id/tailwind-config": "^1.0.0-beta.1",
-    "@gits-id/utils": "^1.0.0-beta.1",
+    "@gits-id/tailwind-config": "^1.0.0-beta.2",
+    "@gits-id/utils": "^1.0.0-beta.2",
     "@headlessui/vue": "^1.6.0",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",

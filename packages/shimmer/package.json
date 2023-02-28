@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/shimmer",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "description": "Shimmer Component / Loading Animation",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -20,8 +20,8 @@
     "vue": "^3.2.33"
   },
   "devDependencies": {
-    "@gits-id/tailwind-config": "^1.0.0-beta.1",
-    "@gits-id/utils": "^1.0.0-beta.1",
+    "@gits-id/tailwind-config": "^1.0.0-beta.2",
+    "@gits-id/utils": "^1.0.0-beta.2",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
     "vite": "^3.0.0",

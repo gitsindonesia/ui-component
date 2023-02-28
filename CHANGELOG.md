@@ -3,6 +3,35 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.2](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2023-02-28)
+
+
+### Bug Fixes
+
+* **nuxt-admin:** fix dark mode avatar border ([2161e7c](https://github.com/gitsindonesia/ui-component/commit/2161e7ce4f4107725b72a19126ce0402e9fb31e1))
+* **nuxt-admin:** improve dark mode ([74d255d](https://github.com/gitsindonesia/ui-component/commit/74d255d26bcf7003eaed508250b6b08761f01240))
+* **nuxt-auth:** add fallback url ([6a128d3](https://github.com/gitsindonesia/ui-component/commit/6a128d3bfc06fac4dbbab33a7ab2f87cf5f72a36))
+* **nuxt-auth:** fix callback url ([a71ced4](https://github.com/gitsindonesia/ui-component/commit/a71ced41a134765b9e837f322ba1113f7136b7fa))
+* **nuxt-auth:** fix error when getting callback url ([fdb35dd](https://github.com/gitsindonesia/ui-component/commit/fdb35ddfc05b8cb017a58b9c79b358d5d16e2e32))
+* **nuxt-auth:** optimize yup ([9c7ccc5](https://github.com/gitsindonesia/ui-component/commit/9c7ccc59f53ee2ce9f54f0583c8dd094596b7a8f))
+* **nuxt-auth:** remove unnecessary value from env ([ddc09ea](https://github.com/gitsindonesia/ui-component/commit/ddc09ea1f2f5bb56112241238472e40152c86efc))
+
+
+### Features
+
+* **Forms:** add `hideError` prop on `VInput` and new `ErrorMessage` component ([#134](https://github.com/gitsindonesia/ui-component/issues/134)) ([ccb54a5](https://github.com/gitsindonesia/ui-component/commit/ccb54a59d3adfab6fa5daa123972bed6a7458240))
+* **nuxt-admin:** add dark mode switcher ([1f01015](https://github.com/gitsindonesia/ui-component/commit/1f01015936e44832ab5abf2b2ee11832d881c00e))
+* **nuxt-admin:** add metric action ([f338d87](https://github.com/gitsindonesia/ui-component/commit/f338d8784143609c6a111dfa1c29524b333f5425))
+* **nuxt-admin:** add modal delete confirmation ([77a6669](https://github.com/gitsindonesia/ui-component/commit/77a6669eb4264fa9a374ad62ccc991e89afbac71))
+* **nuxt-admin:** revamp admin ([#132](https://github.com/gitsindonesia/ui-component/issues/132)) ([8580c06](https://github.com/gitsindonesia/ui-component/commit/8580c0655d5ade8d655780e76135bbae2bb01736))
+* **nuxt-auth:** add loading state and auto hide orText based on providers ([758a35f](https://github.com/gitsindonesia/ui-component/commit/758a35f936674d933d524add3f65a951c687f3bd))
+* **nuxt-auth:** add new layout `auth` ([337abfa](https://github.com/gitsindonesia/ui-component/commit/337abfae7a4e50e23bbe788da029b10d9c14fee7))
+* **nuxt-auth:** new `sidebar` slot in `AuthLayout` component ([616ec92](https://github.com/gitsindonesia/ui-component/commit/616ec9296ac0332f83a9e8d9092ef5e1d5559b89))
+
+
+
+
+
 # [1.0.0-beta.1](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.0...v1.0.0-beta.1) (2023-02-20)
 
 
