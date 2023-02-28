@@ -36,13 +36,9 @@ const onSubmit = handleSubmit(async (values) => {
     return;
   }
 
-  const callbackUrl = String(route.query?.callbackUrl);
+  const callbackUrl: any = route.query?.next || route.query?.callbackUrl;
 
-  router.push(
-    String(
-      route.query?.next || callbackUrl || appConfig.auth?.redirect?.home || '/',
-    ),
-  );
+  router.push(callbackUrl || appConfig.auth?.redirect?.home || '/');
 });
 
 const socialProviders = computed(() => {
