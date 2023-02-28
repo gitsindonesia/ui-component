@@ -39,7 +39,9 @@ const onSubmit = handleSubmit(async (values) => {
   const callbackUrl = String(route.query?.callbackUrl);
 
   router.push(
-    String(route.query?.next || callbackUrl || appConfig.auth.redirect.home),
+    String(
+      route.query?.next || callbackUrl || appConfig.auth?.redirect?.home || '/',
+    ),
   );
 });
 
