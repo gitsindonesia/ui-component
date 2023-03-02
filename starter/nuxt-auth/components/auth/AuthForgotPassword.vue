@@ -35,15 +35,7 @@ const onSubmit = handleSubmit(async (values) => {
   <div class="p-6 grid items-center justify-center">
     <div class="md:w-[400px]">
       <slot name="logo">
-        <VLogo
-          v-if="appConfig.auth.logo || appConfig.auth.forgotPassword.logo"
-          img-class="mb-6 dark:hidden block"
-        />
-        <VLogo
-          v-if="appConfig.auth.logo || appConfig.auth.forgotPassword.logo"
-          img-class="mb-6 dark:block hidden"
-          white
-        />
+        <AuthLogo />
       </slot>
       <div class="space-y-2 mb-4">
         <h1 class="text-2xl font-semibold text-gray-900 dark:text-neutral-200">
