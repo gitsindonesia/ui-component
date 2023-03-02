@@ -27,7 +27,7 @@ const menus = props.menus || appConfig.admin.menus;
     :overlay="isMobile"
     :close-on-overlay-click="isMobile"
     class="!shadow"
-    :class="{'z-20': isMobile}"
+    :class="{'z-20 !w-10/12 sidebar': isMobile}"
     sticky
   >
     <AsideHeader />
@@ -47,3 +47,10 @@ const menus = props.menus || appConfig.admin.menus;
     <AsideAccount />
   </VNavDrawer>
 </template>
+
+<style>
+.sidebar {
+  height: 100vh;
+  height: 100dvh;
+}
+</style>
