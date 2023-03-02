@@ -10,6 +10,7 @@ A Nuxt theme to get authentication ready with [nuxt-auth](https://sidebase.io/nu
   - Login
   - Register
   - Forgot Password
+  - Profile page
 - Dark mode ready
 - Customizable via Nuxt Layer
 - Configurable via `app.config.ts`
