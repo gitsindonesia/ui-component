@@ -10,6 +10,7 @@ A Nuxt theme to get authentication ready with [nuxt-auth](https://sidebase.io/nu
   - Login
   - Register
   - Forgot Password
+- Dark mode ready
 - Customizable via Nuxt Layer
 - Configurable via `app.config.ts`
 
@@ -109,6 +110,37 @@ Checkout the [official documentation](https://sidebase.io/nuxt-auth/getting-star
 
 Checkout the [official documentation](https://gitsindonesia.github.io/ui-component/) to
 learn more about `GITS UI`.
+
+## Dark Mode
+
+Basically, to enable dark mode, the only thing to do is change the value of `gitsUi.darkMode` to `true` in `nuxt.config.ts`:
+  
+```ts
+export default defineNuxtConfig({
+  gitsUi: {
+    darkMode: true, // <--
+  },
+});
+```
+
+And then, add class `dark` to the `html` attribute.
+
+**Tips**: to test dark mode, you set `dark` class to the `html` using `useHead` in the `app.vue`.
+
+```vue
+<!-- app.vue -->
+<script setup lang="ts">
+useHead({
+  title: 'GITS Nuxt Auth',
+  htmlAttrs: {
+    // uncomment this line to simulate dark mode
+    class: 'dark', // <--
+  },
+});
+</script>
+```
+
+
 
 ## License
 
