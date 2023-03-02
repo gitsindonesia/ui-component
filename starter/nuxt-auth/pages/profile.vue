@@ -1,11 +1,11 @@
 <script setup lang="ts">
 useHead({
-  title: 'Protected',
+  title: 'Profile',
   meta: [
     {
       key: 'description',
       name: 'description',
-      content: 'Protected page',
+      content: 'Profile page',
     },
   ],
 });
@@ -27,6 +27,8 @@ const {data, signOut} = useSession();
     <h3 class="font-semibold text-xl text-gray-900">
       Welcome back, {{ data?.user?.name }}!
     </h3>
-    <p class="mt-2 text-gray-700">This is protected page!</p>
+    <p class="mt-2 text-gray-700">
+      This is a profle page. You can only see this page if you are signed in.
+    </p>
   </div>
 </template>
