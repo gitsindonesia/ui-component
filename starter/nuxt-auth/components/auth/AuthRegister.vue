@@ -51,14 +51,19 @@ const inputComponent = (component: any) => {
       <slot name="logo">
         <VLogo
           v-if="appConfig.auth.logo || appConfig.auth.register.logo"
-          img-class="mb-6"
+          img-class="mb-6 dark:hidden block"
+        />
+        <VLogo
+          v-if="appConfig.auth.logo || appConfig.auth.register.logo"
+          img-class="mb-6 dark:block hidden"
+          white
         />
       </slot>
       <div class="space-y-2 mb-4">
-        <h1 class="text-2xl font-semibold text-gray-900">
+        <h1 class="text-2xl font-semibold text-gray-900 dark:text-neutral-200">
           {{ appConfig.auth.register.title }}
         </h1>
-        <p class="text-sm text-gray-700">
+        <p class="text-sm text-gray-700 dark:text-neutral-400">
           {{ appConfig.auth.register.description }}
         </p>
       </div>

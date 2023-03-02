@@ -11,5 +11,9 @@ export default defineNuxtConfig({
     optimizeDeps: {
       include: ['yup'],
     },
-  }
+  },
+  gitsUi: {
+    // uncomment to enable dark mode
+    // darkMode: true,
+  },
 });

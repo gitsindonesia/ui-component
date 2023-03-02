@@ -60,14 +60,19 @@ const socialProviders = computed(() => {
       <slot name="logo">
         <VLogo
           v-if="appConfig.auth.logo || appConfig.auth.login.logo"
-          img-class="mb-6"
+          img-class="mb-6 dark:hidden block"
+        />
+        <VLogo
+          v-if="appConfig.auth.logo || appConfig.auth.login.logo"
+          img-class="mb-6 dark:block hidden"
+          white
         />
       </slot>
       <div class="space-y-2 mb-4">
-        <h1 class="text-2xl font-semibold text-gray-900">
+        <h1 class="text-2xl font-semibold text-gray-900 dark:text-neutral-200">
           {{ appConfig.auth.login.title }}
         </h1>
-        <p class="text-sm text-gray-700">
+        <p class="text-sm text-gray-700 dark:text-neutral-400">
           {{ appConfig.auth.login.description }}
         </p>
       </div>
@@ -101,7 +106,7 @@ const socialProviders = computed(() => {
         {{ appConfig.auth.login.submitText }}
       </VBtn>
 
-      <p class="text-sm text-gray-700 text-center mt-5">
+      <p class="text-sm text-gray-700 dark:text-neutral-400 text-center mt-5">
         {{ appConfig.auth.login.registerText }}
         <VBtn to="/auth/register" color="primary" text flush>
           {{ appConfig.auth.login.registerLinkText }}
@@ -112,11 +117,11 @@ const socialProviders = computed(() => {
         v-if="socialProviders.length > 0"
         class="flex gap-4 items-center mt-5 mb-4"
       >
-        <div class="border-t flex-1"></div>
-        <span class="text-sm text-gray-600">
+        <div class="border-t dark:border-neutral-700 flex-1"></div>
+        <span class="text-sm text-gray-600 dark:text-neutral-400">
           {{ appConfig.auth.login.orText }}
         </span>
-        <div class="border-t flex-1"></div>
+        <div class="border-t dark:border-neutral-700 flex-1"></div>
       </div>
 
       <template v-for="provider in providers" :key="provider?.id">

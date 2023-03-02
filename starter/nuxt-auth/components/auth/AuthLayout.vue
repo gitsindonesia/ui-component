@@ -3,7 +3,7 @@
     <slot name="sidebar">
       <AuthSidebar />
     </slot>
-    <div class="bg-white grid place-items-center">
+    <div class="bg-white dark:bg-neutral-900 grid place-items-center">
       <slot />
     </div>
   </AuthShell>
