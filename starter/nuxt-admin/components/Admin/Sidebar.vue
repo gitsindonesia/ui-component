@@ -51,6 +51,6 @@ const menus = props.menus || appConfig.admin.menus;
 <style>
 .sidebar {
   height: 100vh;
-  height: 100dvh;
+  height: 100svh;
 }
 </style>
