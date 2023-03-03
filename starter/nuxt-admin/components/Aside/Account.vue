@@ -4,8 +4,6 @@ const {signOut, data: session} = useSession();
 function logout() {
   signOut();
 }
-
-const adminDrawer = useAdminDrawer();
 </script>
 
 <template>
@@ -26,7 +24,7 @@ const adminDrawer = useAdminDrawer();
         !rounded-md
         flex-1
       "
-      @click="adminDrawer = false"
+      @click="hideDrawerOnMobile"
     >
       <Avatar :src="session?.user?.image" />
       <div class="text-sm text-left w-8/12">

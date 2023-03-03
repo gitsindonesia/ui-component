@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import {breakpointsTailwind, useBreakpoints} from '@vueuse/core';
 import {Menu} from '../Aside/Menus.vue';
 
 const props =
@@ -9,9 +8,6 @@ const props =
 
 const appConfig = useAppConfig();
 const adminDrawer = useAdminDrawer();
-
-const $breakpoints = useBreakpoints(breakpointsTailwind);
-const isMobile = $breakpoints.smaller('sm'); // only smaller than lg
 
 watchEffect(() => {
   adminDrawer.value = !isMobile.value;
