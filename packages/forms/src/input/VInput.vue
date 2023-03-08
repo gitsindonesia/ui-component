@@ -185,7 +185,7 @@ const {errorMessage, uncontrolledValue, validationListeners, inputId, clear} =
     :class="[
       `v-input v-input-${color} v-input--${size}`,
       {
-        'v-input--error': error || !!errorMessage,
+        'v-input--error': error || errorMessages.length > 0 || !!errorMessage,
         'v-input--disabled': disabled,
         'v-input--shadow': shadow,
         'v-input--rounded': rounded,
