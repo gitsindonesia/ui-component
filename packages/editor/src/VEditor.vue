@@ -18,6 +18,7 @@ type Props = {
   errorMessages?: string[];
   readonly?: string;
   config?: Record<string, any>;
+  hideError?: boolean;
 };
 
 const props = withDefaults(defineProps<Props>(), {
@@ -75,7 +76,11 @@ const message = computed(() => props.errorMessages[0] || errorMessage.value);
       :editor="ClassicEditor"
       :config="config"
     />
-    <div v-if="hasError" class="v-editor-error" :class="errorClass">
+    <div
+      v-if="hasError && !hideError"
+      class="v-editor-error"
+      :class="errorClass"
+    >
       {{ message }}
     </div>
   </div>
