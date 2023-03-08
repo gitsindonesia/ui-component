@@ -165,6 +165,10 @@ const props = defineProps({
   validationMode: {
     type: String as PropType<ValidationMode>,
     default: 'aggressive',
+  },
+  hideError: {
+    type: Boolean,
+    default: false,
   }
 });
 
@@ -388,7 +392,11 @@ const emitSelected = (val: any) => {
       </div>
     </Listbox>
 
-    <div v-if="message" class="v-select-error" :class="errorClass">
+    <div
+      v-if="message && !hideError"
+      class="v-select-error"
+      :class="errorClass"
+    >
       {{ message }}
     </div>
   </div>

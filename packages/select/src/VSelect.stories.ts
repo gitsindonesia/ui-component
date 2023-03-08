@@ -177,7 +177,7 @@ export const Sizes: Story<typeof VSelect> = (args) => ({
   `,
 });
 
-export const Validation: Story<{}> = () => ({
+export const Validation: Story<{}> = (args) => ({
   components: {VBtn, VSelect},
   setup() {
     const schema = object({
@@ -215,7 +215,7 @@ export const Validation: Story<{}> = () => ({
       },
     ]);
 
-    return {onSubmit, resetForm, values, genders, genres};
+    return {onSubmit, resetForm, values, genders, genres, args};
   },
   template: `
     <form @submit="onSubmit" class="border-none">
@@ -225,6 +225,7 @@ export const Validation: Story<{}> = () => ({
       label="Genre"
       placeholder="Select your genre"
       :items="genres"
+      v-bind="args"
     />
     <v-select
       wrapper-class="mb-4"
@@ -232,6 +233,7 @@ export const Validation: Story<{}> = () => ({
       label="Gender"
       placeholder="Select your gender"
       :items="genders"
+      v-bind="args"
     />
     <div class="mt-4">
       <v-btn type="submit">Submit</v-btn>
@@ -241,6 +243,11 @@ export const Validation: Story<{}> = () => ({
     </form>
   `,
 });
+
+export const HideError = Validation.bind({});
+HideError.args = {
+  hideError: true,
+};
 
 export const TestInputState: Story<{}> = (args) => ({
   components: {VBtn, VSelect},
