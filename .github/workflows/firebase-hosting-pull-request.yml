@@ -7,6 +7,9 @@ on:
     paths:
       - 'packages/**/*.stories.{ts,js}'
       - 'stories/**/*.stories.{ts,js}'
+env:
+  NODE_OPTIONS: --openssl-legacy-provider
+
 jobs:
   build_and_preview:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
