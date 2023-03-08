@@ -224,7 +224,7 @@ const components: AddComponentOptions[] = [
   },
   {
     name: 'VMenuIcon',
-    filePath: '@gits-id/menu/VMenuItem.vue',
+    filePath: '@gits-id/menu/src/VMenuIcon.vue',
   },
   {
     name: 'VMenuTooltip',
