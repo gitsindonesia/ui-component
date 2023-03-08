@@ -136,7 +136,6 @@ export const Validation: Story<{}> = () => ({
         preview
       />
       <v-file-upload
-        wrapper-class="mb-4"
         name="document"
         label="Document"
         placeholder="Pick PDF File"

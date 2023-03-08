@@ -236,7 +236,7 @@ export const Validation = (args) => ({
       genre: array().required().min(1).label('Genre'),
     });
 
-    const {handleSubmit, resetForm, values} = useForm({
+    const {handleSubmit, resetForm, values, errors} = useForm({
       validationSchema: schema,
     });
 
@@ -263,7 +263,7 @@ export const Validation = (args) => ({
       },
     ]);
 
-    return {onSubmit, resetForm, values, genres, args};
+    return {onSubmit, resetForm, values, genres, args, errors};
   },
   template: `
     <form @submit="onSubmit" class="border-none">
@@ -278,7 +278,7 @@ export const Validation = (args) => ({
         <v-btn type="submit">Submit</v-btn>
         <v-btn type="button" text @click="resetForm">Reset</v-btn>
       </div>
-      <pre>{{ {values} }}</pre>
+      <pre>{{ {values, errors} }}</pre>
     </form>
 `,
 });

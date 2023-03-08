@@ -19,6 +19,7 @@ type Props = {
   browseText?: string;
   hideRemove?: boolean;
   removeText?: string;
+  error?: boolean;
 };
 
 withDefaults(defineProps<Props>(), {
@@ -39,6 +40,7 @@ const emit =
     readonly
     :model-value="fileName"
     :placeholder="fileName ? '' : placeholder"
+    :error="error"
     @click="emit('choose')"
   >
     <template #append>

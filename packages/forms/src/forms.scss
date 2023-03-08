@@ -150,7 +150,9 @@
   @apply focus-within:border-gray-500 focus-within:ring-gray-500;
 }
 /* error */
-.v-input.v-input--error .v-input-wrapper {
+.v-input.v-input--error .v-input-wrapper,
+.v-input.v-input--select.v-input--error .v-input-control,
+.v-input.v-input--textarea.v-input--error .v-input-control {
   @apply border-error-500 focus-within:border-error-500 focus-within:ring-error-500;
 }
 .v-input-error {
