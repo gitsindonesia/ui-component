@@ -391,7 +391,8 @@ const focusItem = () => {
     ref="target"
     class="v-multi-select"
     :class="{
-      'v-multi-select--error': !!errorMessage || error,
+      'v-multi-select--error':
+        error || errorMessages.length > 0 || !!errorMessage,
     }"
     v-bind="$attrs"
   >
