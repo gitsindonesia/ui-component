@@ -168,6 +168,10 @@ const props = defineProps({
   fieldOptions: {
     type: Object as PropType<FieldOptions<any>>,
     default: () => ({}),
+  },
+  hideError: {
+    type: Boolean,
+    default: false,
   }
 });
 
@@ -591,7 +595,7 @@ const focusItem = () => {
     </div>
   </div>
   <ErrorMessage
-    v-if="errorMessages.length"
+    v-if="errorMessages.length && !hideError"
     class="text-error-500 text-sm"
     :name="name"
   />

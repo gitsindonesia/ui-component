@@ -263,7 +263,7 @@ export const Validation = (args) => ({
       },
     ]);
 
-    return {onSubmit, resetForm, values, genres};
+    return {onSubmit, resetForm, values, genres, args};
   },
   template: `
     <form @submit="onSubmit" class="border-none">
@@ -272,6 +272,7 @@ export const Validation = (args) => ({
         label="Genre"
         placeholder="Choose your prefered genres"
         :items="genres"
+        v-bind="args"
       />
       <div class="mt-4">
         <v-btn type="submit">Submit</v-btn>
@@ -281,6 +282,11 @@ export const Validation = (args) => ({
     </form>
 `,
 });
+
+export const HideError = Validation.bind({});
+HideError.args = {
+  hideError: true,
+};
 
 export const InitialValues = () => ({
   components: {VBtn, VMultiSelect},
