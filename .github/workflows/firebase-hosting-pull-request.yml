@@ -7,8 +7,9 @@ on:
     paths:
       - 'packages/**/*.stories.{ts,js}'
       - 'stories/**/*.stories.{ts,js}'
-env:
-  NODE_OPTIONS: --openssl-legacy-provider
+
+runs:
+  using: 'node16'
 
 jobs:
   build_and_preview:
