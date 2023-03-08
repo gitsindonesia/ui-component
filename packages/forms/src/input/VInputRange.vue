@@ -49,6 +49,10 @@ const props = defineProps({
     type: String,
     default: 'aggressive',
   },
+  hideError: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const {modelValue, showInput, name, rules, validationMode} = toRefs(props);
@@ -257,7 +261,7 @@ const handleBlur = () => {
       </div>
     </div>
 
-    <div v-if="errorMessage" :class="errorClass">
+    <div v-if="errorMessage && !hideError" :class="errorClass">
       {{ errorMessage }}
     </div>
   </div>
