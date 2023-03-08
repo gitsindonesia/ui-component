@@ -35,6 +35,7 @@ export type Props = {
   wrapperClass?: string;
   validationMode?: ValidationMode
   disabled?: boolean
+  hideError?: boolean
 };
 
 const props = withDefaults(defineProps<Props>(), {
@@ -193,7 +194,7 @@ const clear = () => {
       </TransitionRoot>
     </div>
   </Combobox>
-  <div v-if="errorMessage" :class="errorClass">
+  <div v-if="errorMessage && !hideError" :class="errorClass">
     {{ errorMessage }}
   </div>
 </template>

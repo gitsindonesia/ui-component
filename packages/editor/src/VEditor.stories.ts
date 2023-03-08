@@ -35,11 +35,10 @@ Default.parameters = {
   },
 };
 
-
 export const VModel: Story<{}> = (args) => ({
   components: {VEditor},
   setup() {
-    const content = ref('')
+    const content = ref('');
     return {args, content};
   },
   template: `
@@ -50,7 +49,7 @@ export const VModel: Story<{}> = (args) => ({
 
 export const Label = Template.bind({});
 Label.args = {
-  label: 'Blog Content'
+  label: 'Blog Content',
 };
 Label.parameters = {
   docs: {
@@ -87,7 +86,7 @@ export const Validation: Story<{}> = (args) => ({
       alert(JSON.stringify(values));
     });
 
-    return {onSubmit, resetForm, values, errors};
+    return {onSubmit, resetForm, values, errors, args};
   },
   template: `
     <form @submit="onSubmit" class="border-none">
@@ -96,6 +95,7 @@ export const Validation: Story<{}> = (args) => ({
         name="content"
         label="Content"
         placeholder="Content"
+        v-bind="args"
       />
       <div class="mt-4">
         <v-btn type="submit">Submit</v-btn>
@@ -106,3 +106,8 @@ export const Validation: Story<{}> = (args) => ({
     </form>
 `,
 });
+
+export const HideError = Validation.bind({});
+HideError.args = {
+  hideError: true,
+};

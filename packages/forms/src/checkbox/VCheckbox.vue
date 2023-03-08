@@ -76,6 +76,10 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  hideError: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const emit =
@@ -131,7 +135,11 @@ const {errorMessage, uncontrolledValue, inputId, handleChange} = useFormValue(
         {{ label }}
       </label>
     </div>
-    <div v-if="errorMessage" class="v-checkbox-error" :class="errorClass">
+    <div
+      v-if="errorMessage && !hideError"
+      class="v-checkbox-error"
+      :class="errorClass"
+    >
       {{ errorMessage }}
     </div>
   </div>

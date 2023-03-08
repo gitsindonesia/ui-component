@@ -99,7 +99,7 @@ Counter.parameters = {
   },
 };
 
-export const Validation: Story<{}> = () => ({
+export const Validation: Story<{}> = (args) => ({
   components: {VTextarea, VBtn},
   setup() {
     const schema = object({
@@ -107,7 +107,7 @@ export const Validation: Story<{}> = () => ({
       message: string().required().label('Message'),
     });
 
-    const {handleSubmit, resetForm} = useForm({
+    const {handleSubmit, resetForm, values, errors} = useForm({
       validationSchema: schema,
     });
 
@@ -115,7 +115,7 @@ export const Validation: Story<{}> = () => ({
       alert(JSON.stringify(values));
     });
 
-    return {onSubmit, resetForm};
+    return {onSubmit, resetForm, args, values, errors};
   },
   template: `
     <form @submit="onSubmit" class="border-none">
@@ -124,6 +124,7 @@ export const Validation: Story<{}> = () => ({
         name="message"
         label="Message"
         placeholder="Enter your message"
+        v-bind="args"
       />
       <v-textarea
         wrapper-class="mb-4"
@@ -131,10 +132,12 @@ export const Validation: Story<{}> = () => ({
         label="Bio"
         placeholder="Enter your bio"
         input-class="italic"
+        v-bind="args"
       />
       <v-btn type="submit">Submit</v-btn>
       <v-btn type="button" text @click="resetForm">Reset</v-btn>
     </form>
+    <pre>{{ {values, errors} }}</pre>
 `,
 });
 
@@ -289,3 +292,8 @@ export const DarkMode: Story = (args) => ({
   </div>
   `,
 });
+
+export const HideError = Validation.bind({});
+HideError.args = {
+  hideError: true,
+};

@@ -81,6 +81,10 @@ const props = defineProps({
     type: String as PropType<ValidationMode>,
     default: 'aggressive',
   },
+  hideError: {
+    type: Boolean,
+    default: false,
+  }
 });
 
 const emit =
@@ -124,7 +128,7 @@ const emit =
       v-bind="$attrs"
     />
     <div class="v-input-footer">
-      <div class="v-input-error" v-text="errorMessage" />
+      <div v-if="!hideError" class="v-input-error" v-text="errorMessage" />
       <div v-if="counter" class="v-input-counter">
         <slot name="counter" :count="uncontrolledValue.length">
           {{ uncontrolledValue.length }}

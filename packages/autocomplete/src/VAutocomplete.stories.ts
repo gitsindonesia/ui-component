@@ -88,7 +88,7 @@ export const Validation: Story = (args) => ({
       },
     ]);
 
-    return {onSubmit, resetForm, values, genres};
+    return {onSubmit, resetForm, values, genres, args};
   },
   template: `
     <form @submit="onSubmit" class="border-none">
@@ -97,6 +97,7 @@ export const Validation: Story = (args) => ({
         label="Genre"
         placeholder="Choose your prefered genres"
         :items="genres"
+        v-bind="args"
       />
       <div class="mt-4">
         <v-btn type="submit">Submit</v-btn>
@@ -106,6 +107,11 @@ export const Validation: Story = (args) => ({
     </form>
 `,
 });
+
+export const HideError = Validation.bind({});
+HideError.args = {
+  hideError: true,
+};
 
 export const TestInputState: Story<{}> = (args) => ({
   components: {VBtn, VAutocomplete},

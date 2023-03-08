@@ -17,6 +17,7 @@ const props = withDefaults(
     readOnly?: boolean;
     labelClass?: string;
     errorClass?: string;
+    hideError?: boolean;
   }>(),
   {
     toolbar: 'essential',
@@ -76,7 +77,7 @@ watch(
       :read-only="readOnly"
       v-bind="$attrs"
     />
-    <div v-if="errorMessage" :class="errorClass">
+    <div v-if="errorMessage && !hideError" :class="errorClass">
       {{ errorMessage }}
     </div>
   </div>

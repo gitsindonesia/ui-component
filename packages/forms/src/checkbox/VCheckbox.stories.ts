@@ -21,10 +21,10 @@ export default {
       options: themeColors,
     },
   },
-  args: {
-    label: 'Checkbox',
-    name: 'myCheckbox',
-  },
+  // args: {
+  //   label: 'Checkbox',
+  //   name: 'myCheckbox',
+  // },
 } as Meta;
 
 const Template: Story = (args) => ({
@@ -128,7 +128,7 @@ export const Multiple: Story<{}> = () => ({
 `,
 });
 
-export const Validation: Story<{}> = () => ({
+export const Validation: Story<{}> = (args) => ({
   components: {VCheckbox: VCheckbox, VBtn},
   setup() {
     const schema = object({
@@ -149,7 +149,7 @@ export const Validation: Story<{}> = () => ({
       alert(JSON.stringify(values));
     });
 
-    return {onSubmit, resetForm, values, errors};
+    return {onSubmit, resetForm, values, errors, args};
   },
   template: `
     <form @submit="onSubmit" class="border-none">
@@ -157,6 +157,7 @@ export const Validation: Story<{}> = () => ({
         wrapper-class="mb-4"
         name="agreement"
         label="Agreement"
+        v-bind="args"
       />
       <div class="mt-4">
         <v-btn type="submit">Submit</v-btn>
@@ -167,6 +168,11 @@ export const Validation: Story<{}> = () => ({
     </form>
 `,
 });
+
+export const HideError = Validation.bind({});
+HideError.args = {
+  hideError: true,
+};
 
 export const ValidationMode: Story<{}> = () => ({
   components: {VCheckbox: VCheckbox, VBtn},
