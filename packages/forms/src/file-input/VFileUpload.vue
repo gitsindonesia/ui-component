@@ -170,6 +170,10 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  hideError: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const emit = defineEmits(['removed', 'update:modelValue', 'change', 'blur']);
@@ -483,11 +487,11 @@ const borderClass = computed(() => {
       :error-messages="errorMessages"
       :field-name="name"
     >
-      <div v-if="errorMessage" :class="errorClass">
+      <div v-if="errorMessage && !hideError" :class="errorClass">
         {{ errorMessage }}
       </div>
       <ErrorMessage
-        v-else-if="errorMessages.length"
+        v-else-if="errorMessages.length && !hideError"
         :class="errorClass"
         :name="name"
       />
