@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.3](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2023-03-08)
+
+
+### Bug Fixes
+
+* fix error border style not applied on some input components ([#139](https://github.com/gitsindonesia/ui-component/issues/139)) ([00c40f4](https://github.com/gitsindonesia/ui-component/commit/00c40f43f86e5c406f8b34a0420aedd6a5d7edcb))
+
+
+### Features
+
+* **Forms:** add the ability to hide error messages via `hideError` prop ([#138](https://github.com/gitsindonesia/ui-component/issues/138)) ([2065a21](https://github.com/gitsindonesia/ui-component/commit/2065a21d7fe0f9d43b2d58378080fb3d44cda036))
+
+
+
+
+
 # [1.0.0-beta.2](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2023-02-28)
 
 **Note:** Version bump only for package @gits-id/select

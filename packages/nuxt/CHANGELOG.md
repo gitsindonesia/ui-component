@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.3](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2023-03-08)
+
+
+### Bug Fixes
+
+* **nuxt:** fix `VMenuIcon` export path ([#137](https://github.com/gitsindonesia/ui-component/issues/137)) ([ff0ad45](https://github.com/gitsindonesia/ui-component/commit/ff0ad453c199c347d8882619a382cdbeb2b6666e))
+
+
+
+
+
 # [1.0.0-beta.2](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2023-02-28)
 
 **Note:** Version bump only for package @gits-id/ui-nuxt
