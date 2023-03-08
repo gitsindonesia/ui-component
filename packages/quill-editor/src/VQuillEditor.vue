@@ -18,6 +18,7 @@ const props = withDefaults(
     labelClass?: string;
     errorClass?: string;
     hideError?: boolean;
+    autoFixCursor?: boolean;
   }>(),
   {
     toolbar: 'essential',
@@ -27,6 +28,7 @@ const props = withDefaults(
     readOnly: false,
     labelClass: 'block mb-2 font-medium',
     errorClass: 'text-sm mt-1 text-error-500',
+    autoFixCursor: false,
   },
 );
 
@@ -47,15 +49,16 @@ watch(modelValue, (value) => {
 watch(
   content,
   (val: any) => {
-    editor.value?.setHTML(val);
-
-    nextTick(() => {
-      let q = editor.value?.getQuill();
-      if (q) {
-        q.setSelection(val.length, 0, 'api');
-        q.focus();
-      }
-    });
+    if (props.autoFixCursor) {
+      editor.value?.setHTML(val);
+      nextTick(() => {
+        let q = editor.value?.getQuill();
+        if (q) {
+          q.setSelection(val.length, 0, 'api');
+          q.focus();
+        }
+      });
+    }
   },
   {immediate: true},
 );
