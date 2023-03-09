@@ -21,6 +21,8 @@ const isOpen = ref(false);
 const buttonVariants = ['default', 'outlined', 'text', 'disabled', 'loading'];
 
 const sheetOpen = ref(false);
+
+const rating = ref(2);
 </script>
 
 <template>
@@ -270,6 +272,10 @@ const sheetOpen = ref(false);
           },
         ]"
       />
+
+      <VTabs>
+        <VTabsSlider />
+      </VTabs>
     </div>
 
     <hr class="dark:border-neutral-700" />
@@ -331,6 +337,7 @@ const sheetOpen = ref(false);
     <div>
       <VPagination :model-value="1" :items-per-page="10" :total-items="50" />
     </div>
+
     <hr class="dark:border-neutral-700" />
     <h3 class="text-xl font-semibold">BottomSheet</h3>
     <div>
@@ -354,6 +361,12 @@ const sheetOpen = ref(false);
           <VBtn @click="close">Close</VBtn>
         </VBottomSheetFooter>
       </VBottomSheet>
+    </div>
+
+    <hr class="dark:border-neutral-700" />
+    <h3 class="text-xl font-semibold">Rating</h3>
+    <div>
+      <VRating v-model:rating="rating" />
     </div>
   </div>
 </template>
