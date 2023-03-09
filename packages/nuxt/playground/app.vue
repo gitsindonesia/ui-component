@@ -23,6 +23,9 @@ const buttonVariants = ['default', 'outlined', 'text', 'disabled', 'loading'];
 const sheetOpen = ref(false);
 
 const rating = ref(2);
+
+const ckeditorContent = ref('');
+const quillContent = ref('');
 </script>
 
 <template>
@@ -367,6 +370,22 @@ const rating = ref(2);
     <h3 class="text-xl font-semibold">Rating</h3>
     <div>
       <VRating v-model:rating="rating" />
+    </div>
+
+    <hr class="dark:border-neutral-700" />
+    <h3 class="text-xl font-semibold">CKEditor</h3>
+    <div>
+      <ClientOnly>
+        <VEditor v-model="ckeditorContent" />
+      </ClientOnly>
+    </div>
+
+    <hr class="dark:border-neutral-700" />
+    <h3 class="text-xl font-semibold">Quill Editor</h3>
+    <div>
+      <ClientOnly>
+        <VQuillEditor v-model="quillContent" />
+      </ClientOnly>
     </div>
   </div>
 </template>

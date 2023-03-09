@@ -124,6 +124,10 @@ const components: AddComponentOptions[] = [
     filePath: '@gits-id/editor/src/VEditor.vue',
   },
   {
+    name: 'VQuillEditor',
+    filePath: '@gits-id/quill-editor/src/VQuillEditor.vue',
+  },
+  {
     name: 'VInput',
     filePath: '@gits-id/forms/src/input/VInput.vue',
   },
