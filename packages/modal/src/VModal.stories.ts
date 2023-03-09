@@ -1,6 +1,6 @@
-import {Meta, Story} from '@storybook/vue3';
+import {Meta, StoryFn} from '@storybook/vue3';
 import VModal from './VModal.vue';
-import vueRouter from 'storybook-vue3-router';
+// import vueRouter from 'storybook-vue3-router';
 import {ref} from 'vue';
 import VBtn from '@gits-id/button';
 import {VModalEvent} from './types';
@@ -33,7 +33,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => ({
+const Template: StoryFn = (args) => ({
   components: {
     VModal,
     VBtn,
@@ -52,10 +52,10 @@ const Template: Story = (args) => ({
   `,
 });
 
-Template.decorators = [
-  /* this is the basic setup with no params passed to the decorator */
-  vueRouter(),
-];
+// Template.decorators = [
+//   /* this is the basic setup with no params passed to the decorator */
+//   vueRouter(),
+// ];
 
 export const Default = Template.bind({});
 Default.args = {};
@@ -150,7 +150,7 @@ HideXButton.parameters = {
   },
 };
 
-export const Fullscreen: Story = (args) => ({
+export const Fullscreen: StoryFn = (args) => ({
   components: {
     VModal,
     VBtn,
@@ -175,7 +175,7 @@ export const Fullscreen: Story = (args) => ({
   `,
 });
 
-export const Centered: Story = (args) => ({
+export const Centered: StoryFn = (args) => ({
   components: {
     VModal,
     VBtn,
@@ -220,7 +220,7 @@ export const Centered: Story = (args) => ({
   `,
 });
 
-export const Loading: Story = (args) => ({
+export const Loading: StoryFn = (args) => ({
   components: {
     VModal,
     VBtn,
@@ -245,7 +245,7 @@ export const Loading: Story = (args) => ({
   `,
 });
 
-export const Persistent: Story = (args) => ({
+export const Persistent: StoryFn = (args) => ({
   components: {
     VModal,
     VBtn,
@@ -264,7 +264,7 @@ export const Persistent: Story = (args) => ({
   `,
 });
 
-export const CustomClass: Story = (args) => ({
+export const CustomClass: StoryFn = (args) => ({
   components: {
     VModal,
     VBtn,
@@ -287,7 +287,7 @@ export const CustomClass: Story = (args) => ({
   `,
 });
 
-export const CustomWidth: Story = (args) => ({
+export const CustomWidth: StoryFn = (args) => ({
   components: {
     VModal,
     VBtn,
@@ -311,7 +311,7 @@ export const CustomWidth: Story = (args) => ({
   `,
 });
 
-export const Customization: Story = (args) => ({
+export const Customization: StoryFn = (args) => ({
   components: {
     VModal,
     VBtn,
@@ -352,7 +352,7 @@ export const Customization: Story = (args) => ({
   `,
 });
 
-export const DarkMode: Story = (args) => ({
+export const DarkMode: StoryFn = (args) => ({
   components: {VModal},
   setup() {
     return {args};

@@ -1,7 +1,7 @@
 import VBreadcrumbs from './VBreadcrumbs.vue';
-import {Meta, Story} from '@storybook/vue3';
+import {Meta, StoryFn} from '@storybook/vue3';
 import Icon from '@gits-id/icon';
-import vueRouter from 'storybook-vue3-router';
+// import vueRouter from 'storybook-vue3-router';
 import type {VBreadcrumbItem} from './types';
 import {ref} from 'vue';
 import VBreadcrumbsDivider from './VBreadcrumbsDivider.vue';
@@ -38,7 +38,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => ({
+const Template: StoryFn = (args) => ({
   components: {VBreadcrumbs},
   setup() {
     return {args};
@@ -46,7 +46,7 @@ const Template: Story = (args) => ({
   template: `<VBreadcrumbs v-bind='args'/>`,
 });
 
-Template.decorators = [vueRouter()];
+// Template.decorators = [vueRouter()];
 
 export const Default = Template.bind({});
 Default.args = {};
@@ -70,7 +70,7 @@ CustomDivider.parameters = {
   },
 };
 
-export const CustomDividerSlots: Story = (args) => ({
+export const CustomDividerSlots: StoryFn = (args) => ({
   components: {VBreadcrumbs, Icon},
   setup() {
     return {args};
@@ -97,9 +97,9 @@ CustomDividerSlots.parameters = {
   },
 };
 
-CustomDividerSlots.decorators = [vueRouter()];
+// CustomDividerSlots.decorators = [vueRouter()];
 
-export const OptionalRouterLink: Story = (args) => ({
+export const OptionalRouterLink: StoryFn = (args) => ({
   components: {VBreadcrumbs, Icon},
   setup() {
     const items = ref<VBreadcrumbItem[]>([
@@ -142,7 +142,7 @@ const items = ref<VBreadcrumbItem[]>([
   },
 };
 
-export const Bare: Story = (args) => ({
+export const Bare: StoryFn = (args) => ({
   components: {VBreadcrumbs, VBreadcrumbsItem, VBreadcrumbsDivider, Icon},
   setup() {
     return {args};

@@ -1,7 +1,7 @@
-import {Meta, Story} from '@storybook/vue3';
+import {Meta, StoryFn} from '@storybook/vue3';
 import VMenus from './VMenus.vue';
 import VMenusItem from './VMenusItem.vue';
-import vueRouter from 'storybook-vue3-router';
+// import vueRouter from 'storybook-vue3-router';
 import VAppBar from '@gits-id/app-bar';
 import VMenusCustom from './stories/VMenusCustom.vue';
 import './VMenus.dark.scss';
@@ -30,7 +30,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => ({
+const Template: StoryFn = (args) => ({
   components: {
     VMenus,
   },
@@ -42,7 +42,7 @@ const Template: Story = (args) => ({
   `,
 });
 
-Template.decorators = [vueRouter()];
+// Template.decorators = [vueRouter()];
 
 export const Default = Template.bind({});
 Default.args = {};
@@ -84,7 +84,7 @@ Hover.parameters = {
   },
 };
 
-export const MenuIcons: Story = (args) => ({
+export const MenuIcons: StoryFn = (args) => ({
   components: {
     VMenus,
   },
@@ -126,7 +126,7 @@ export const MenuIcons: Story = (args) => ({
   `,
 });
 
-export const Href: Story = (args) => ({
+export const Href: StoryFn = (args) => ({
   components: {
     VMenus,
   },
@@ -150,28 +150,28 @@ export const Href: Story = (args) => ({
   `,
 });
 
-Template.decorators = [
-  vueRouter([
-    {
-      component: {
-        template: '<div>Home</div>',
-      },
-      path: '/',
-    },
-    {
-      component: {
-        template: '<div>About</div>',
-      },
-      path: '/about',
-    },
-    {
-      component: {
-        template: '<div>FAQ</div>',
-      },
-      path: '/faq',
-    },
-  ]),
-];
+// Template.decorators = [
+//   vueRouter([
+//     {
+//       component: {
+//         template: '<div>Home</div>',
+//       },
+//       path: '/',
+//     },
+//     {
+//       component: {
+//         template: '<div>About</div>',
+//       },
+//       path: '/about',
+//     },
+//     {
+//       component: {
+//         template: '<div>FAQ</div>',
+//       },
+//       path: '/faq',
+//     },
+//   ]),
+// ];
 
 export const CustomIcon = Template.bind({});
 CustomIcon.args = {'btn-icon': 'ri:arrow-down-line'};
@@ -183,7 +183,7 @@ CustomIcon.parameters = {
   },
 };
 
-export const InAppBar: Story = (args) => ({
+export const InAppBar: StoryFn = (args) => ({
   components: {
     VMenus,
     VAppBar,
@@ -221,7 +221,7 @@ export const InAppBar: Story = (args) => ({
   `,
 });
 
-export const Slots: Story = (args) => ({
+export const Slots: StoryFn = (args) => ({
   components: {
     VAppBar,
     VMenus,
@@ -244,7 +244,7 @@ export const Slots: Story = (args) => ({
   `,
 });
 
-export const CustomStyle: Story = (args) => ({
+export const CustomStyle: StoryFn = (args) => ({
   components: {
     VMenusCustom,
   },
@@ -256,7 +256,7 @@ export const CustomStyle: Story = (args) => ({
   `,
 });
 
-export const DarkMode: Story = (args) => ({
+export const DarkMode: StoryFn = (args) => ({
   components: {VMenus},
   setup() {
     return {args};

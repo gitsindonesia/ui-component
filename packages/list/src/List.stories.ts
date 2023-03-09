@@ -5,7 +5,7 @@ import ListItem from './ListItem.vue';
 import ListItemDivider from './ListItemDivider.vue';
 import ListItemHeader from './ListItemHeader.vue';
 import ListCollapse from './ListCollapse.vue';
-import vueRouter from 'storybook-vue3-router';
+// import vueRouter from 'storybook-vue3-router';
 import {ref} from 'vue';
 import {NavDrawer as VNavDrawer} from '@gits-id/nav-drawer';
 import VBtn from '@gits-id/button';
@@ -305,7 +305,7 @@ export const Link: Story = (args) => ({
   `,
 });
 
-Link.decorators = [vueRouter()];
+// Link.decorators = [vueRouter()];
 
 export const Slots: Story = (args) => ({
   components: {
