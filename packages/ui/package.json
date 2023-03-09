@@ -20,6 +20,7 @@
     "@gits-id/container": "^1.0.0-beta.3",
     "@gits-id/dropdown": "^1.0.0-beta.3",
     "@gits-id/editor": "^1.0.0-beta.3",
+    "@gits-id/quill-editor": "^1.0.0-beta.3",
     "@gits-id/forms": "^1.0.0-beta.3",
     "@gits-id/icon": "^1.0.0-beta.3",
     "@gits-id/list": "^1.0.0-beta.3",
@@ -64,6 +65,7 @@
       "require": "./dist/ui.js"
     },
     "./editor": "./editor.js",
+    "./quill-editor": "./editor.js",
     "./styles": "./dist/style.css",
     "./styles.scss": "./src/style.scss",
     "./styles.dark": "./src/style.dark.scss",
