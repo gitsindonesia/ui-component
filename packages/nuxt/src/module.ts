@@ -303,7 +303,7 @@ const components: AddComponentOptions[] = [
   },
   {
     name: 'VTabsSlider',
-    filePath: '@gits-id/tabs/src/VTabSlider.vue',
+    filePath: '@gits-id/tabs/src/VTabsSlider.vue',
   },
   {
     name: 'VToast',
@@ -315,7 +315,7 @@ const components: AddComponentOptions[] = [
   },
   {
     name: 'VRating',
-    filePath: '@gits-id/rating/src/VRating.vue',
+    filePath: '@gits-id/rating/src/Rating.vue',
   },
   {
     name: 'VBottomSheet',
