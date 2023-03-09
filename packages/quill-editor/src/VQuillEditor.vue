@@ -9,7 +9,7 @@ const props = withDefaults(
     modelValue?: string | Delta;
     value?: string | Delta;
     name: string;
-    label: string;
+    label?: string;
     toolbar?: 'essential' | 'minimal' | 'full' | '';
     rules?: string | Record<string, any>;
     contentType?: 'html' | 'text' | 'delta';
@@ -29,6 +29,7 @@ const props = withDefaults(
     labelClass: 'block mb-2 font-medium',
     errorClass: 'text-sm mt-1 text-error-500',
     autoFixCursor: false,
+    label: '',
   },
 );
 
