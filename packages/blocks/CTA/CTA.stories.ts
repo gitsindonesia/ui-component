@@ -2,7 +2,7 @@ import {Meta, Story} from '@storybook/vue3';
 import Cta from './Cta.vue';
 
 export default {
-  title: 'Snippets/CTA Sections',
+  title: 'Blocks/CTA Sections',
 } as Meta;
 
 export const CTASections: Story = () => ({

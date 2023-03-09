@@ -22,15 +22,7 @@ export const parameters = {
   options: {
     storySort: {
       method: 'alphabetical',
-      order: [
-        'Get Started',
-        'Foundation',
-        'Components',
-        'Forms',
-        'Layouts',
-        'Pages',
-        'Snippets',
-      ],
+      order: ['Get Started', 'Foundation', 'Components', 'Forms', 'Blocks'],
       // locales: '',
     },
   },

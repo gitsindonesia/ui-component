@@ -3,7 +3,7 @@ import LoginSnippet from './Login.vue';
 import ForgotPasswordSnippet from './ForgotPassword.vue';
 
 export default {
-  title: 'Snippets/Auth',
+  title: 'Blocks/Auth',
 } as Meta;
 
 export const Login: Story = () => ({

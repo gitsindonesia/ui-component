@@ -8,7 +8,7 @@ import FooterSimpleCentered from './SimpleCentered.vue';
 import FooterSocialLinksOnly from './SocialLinksOnly.vue';
 
 export default {
-  title: 'Snippets/Footer',
+  title: 'Blocks/Footer',
 } as Meta;
 
 export const Light: Story = () => ({
