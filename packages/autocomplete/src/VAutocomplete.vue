@@ -48,7 +48,6 @@ const props = withDefaults(defineProps<Props>(), {
   name: '',
   items: () => [],
   noDataText: 'No data.',
-  notFoundText: 'Nothing found.',
   clearable: false,
   errorClass: 'autocomplete-error',
   wrapperClass: '',
@@ -152,10 +151,7 @@ const clear = () => {
         @after-leave="query = ''"
       >
         <ComboboxOptions class="autocomplete-options">
-          <div
-            v-if="filteredItems.length === 0 && query === ''"
-            class="autocomplete-empty"
-          >
+          <div v-if="filteredItems.length === 0" class="autocomplete-empty">
             {{ noDataText }}
           </div>
 

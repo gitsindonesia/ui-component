@@ -20,6 +20,7 @@
     "@gits-id/icon": "^1.0.0-beta.3",
     "@headlessui/vue": "^1.6.0",
     "tailwindcss": "^3.0.23",
+    "wait-for-expect": "^3.0.2",
     "vue": "^3.2.31"
   },
   "devDependencies": {
