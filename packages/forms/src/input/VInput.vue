@@ -165,6 +165,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  hint: {
+    type: String,
+    default: '',
+  },
 });
 
 const emit = defineEmits([
@@ -279,7 +283,11 @@ const {errorMessage, uncontrolledValue, validationListeners, inputId, clear} =
         </button>
       </slot>
     </div>
-
+    <p v-if="hint" class="v-input-hint">
+      <slot name="hint">
+        {{ hint }}
+      </slot>
+    </p>
     <ErrorMessage v-if="errorMessage && !hideError" :class="errorClass">
       {{ errorMessage }}
     </ErrorMessage>
