@@ -51,6 +51,18 @@ Default.parameters = {
   },
 };
 
+export const Hint = Template.bind({});
+Hint.args = {
+  hint: 'This is a hint',
+};
+Hint.parameters = {
+  docs: {
+    source: {
+      code: '<v-radio-group :items="items" hint="This is a hint" />',
+    },
+  },
+};
+
 export const Inline = Template.bind({});
 Inline.args = {
   inline: true,
