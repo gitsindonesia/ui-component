@@ -36,6 +36,7 @@ export type Props = {
   validationMode?: ValidationMode
   disabled?: boolean
   hideError?: boolean
+  hint?: string
 };
 
 const props = withDefaults(defineProps<Props>(), {
@@ -190,6 +191,11 @@ const clear = () => {
       </TransitionRoot>
     </div>
   </Combobox>
+  <p class="autocomplete-hint">
+    <slot name="hint">
+      {{ hint }}
+    </slot>
+  </p>
   <div v-if="errorMessage && !hideError" :class="errorClass">
     {{ errorMessage }}
   </div>

@@ -45,5 +45,8 @@
 
     // item active
     --v-autocomplete-item-active-bg-color: theme('colors.neutral.700');
+
+    // hint
+    --v-autocomplete-hint-color: theme('colors.neutral.500');
   }
 }

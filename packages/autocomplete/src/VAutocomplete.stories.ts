@@ -54,6 +54,11 @@ Readonly.args = {
   readonly: true,
 };
 
+export const Hint = Template.bind({});
+Hint.args = {
+  hint: 'This is a hint',
+};
+
 export const Validation: Story = (args) => ({
   components: {VBtn, VAutocomplete},
   setup() {
@@ -270,6 +275,8 @@ export const DarkMode: Story = (args) => ({
     v-bind="args"
     v-model="selected"
     label="Dark Mode"
+    hint="This is a hint"
+    clearable
   />
 </main>
   `,

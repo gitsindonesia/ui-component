@@ -48,7 +48,11 @@
   --v-autocomplete-error-color: theme('colors.error.500');
 
   // disabled
-  --v-autocomplete-input-disabled-color: var(--v-input-disabled-bg-color)
+  --v-autocomplete-input-disabled-color: var(--v-input-disabled-bg-color);
+
+  // hint
+  --v-autocomplete-hint-font-size: var(--v-input-hint-font-size, 14px);
+  --v-autocomplete-hint-color: theme('colors.gray.500');
 }
 
 .autocomplete {
@@ -123,9 +127,11 @@
 
       &:hover {
         --v-autocomplete-clearable-button-color: var(
-          --v-autocomplete-clearable-button-hover-color);
+          --v-autocomplete-clearable-button-hover-color
+        );
         --v-autocomplete-clearable-button-bg-color: var(
-          --v-autocomplete-clearable-button-hover-bg-color);
+          --v-autocomplete-clearable-button-hover-bg-color
+        );
       }
 
       @apply mr-1 rounded-full p-1 transition duration-300;
@@ -180,7 +186,9 @@
     }
 
     &--active {
-      --v-autocomplete-item-bg-color: var(--v-autocomplete-item-active-bg-color);
+      --v-autocomplete-item-bg-color: var(
+        --v-autocomplete-item-active-bg-color
+      );
     }
 
     &--inactive {
@@ -202,5 +210,11 @@
     color: var(--v-autocomplete-error-color);
 
     @apply text-sm mt-1;
+  }
+
+  &-hint {
+    font-size: var(--v-autocomplete-hint-font-size);
+    color: var(--v-autocomplete-hint-color);
+    margin-top: theme('spacing.1');
   }
 }
