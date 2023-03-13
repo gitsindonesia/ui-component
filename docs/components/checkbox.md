@@ -260,6 +260,7 @@ const onSubmit = handleSubmit((values) => {
 | [`disabled`](#disabled)             | `String`                     | `''`        |
 | ~~disabledClass~~                   | `String`                     | `''`        |
 | [`errorClass`](#errorClass)         | `String`                     | `''`        |
+| [`hint`](#hint)                     | `String`                     | `''`        |
 
 ## Events
 

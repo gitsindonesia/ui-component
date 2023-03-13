@@ -263,6 +263,7 @@ const onSubmit = handleSubmit((values) => {
 | [`readOnly`](#readOnly)       | `boolean`                                  | `false`                         |
 | [`labelClass`](#labelClass)   | `string`                                   | `'block mb-2 font-medium'`      |
 | [`errorClass`](#errorClass)   | `string`                                   | `'text-sm mt-1 text-error-500'` |
+| [`hint`](#hint)               | `String`                                   | `''`                            |
 
 ## Events
 
