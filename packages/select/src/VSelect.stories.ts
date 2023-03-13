@@ -114,6 +114,18 @@ Error.parameters = {
   },
 };
 
+export const Hint = Template.bind({});
+Hint.args = {
+  hint: 'This is a hint',
+};
+Hint.parameters = {
+  docs: {
+    source: {
+      code: '<v-select :items="items" hint="This is a hint" />',
+    },
+  },
+};
+
 export const Clearable = Template.bind({});
 Clearable.args = {
   clearable: true,
@@ -476,7 +488,7 @@ export const DarkMode: Story = (args) => ({
   },
   template: `
   <div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
-    <VSelect v-bind='args' label="Choose" clearable />
+    <VSelect v-bind='args' label="Choose" clearable hint="This is a hint" />
   </div>
   `,
 });
