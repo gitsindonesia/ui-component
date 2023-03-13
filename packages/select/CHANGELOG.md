@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.4](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2023-03-13)
+
+
+### Features
+
+* **Forms:** add a new `hint` prop to all form inputs ([#151](https://github.com/gitsindonesia/ui-component/issues/151)) ([bf7abc2](https://github.com/gitsindonesia/ui-component/commit/bf7abc29673b96f9550b55f6002c6743705dff9e))
+
+
+
+
+
+
 # [1.0.0-beta.3](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2023-03-08)
 
 

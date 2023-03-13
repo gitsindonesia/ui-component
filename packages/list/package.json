@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/list",
-  "version": "1.0.0-beta.3",
+  "version": "1.0.0-beta.4",
   "description": "GITS List Component",
   "scripts": {
     "build": "vite build && npm run build-types && npm run move-types",
@@ -27,7 +27,7 @@
   "devDependencies": {
     "@gits-id/button": "^1.0.0-beta.3",
     "@gits-id/dropdown": "^1.0.0-beta.3",
-    "@gits-id/nav-drawer": "^1.0.0-beta.3",
+    "@gits-id/nav-drawer": "^1.0.0-beta.4",
     "@iconify/vue": "^3.2.1",
     "autoprefixer": "^10.4.2",
     "c8": "^7.11.3",

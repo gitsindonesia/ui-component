@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.4](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2023-03-13)
+
+
+### Bug Fixes
+
+* **nuxt:** fix component path ([#144](https://github.com/gitsindonesia/ui-component/issues/144)) ([7c358ad](https://github.com/gitsindonesia/ui-component/commit/7c358ada9634d325ec22f13055993ab5deeb1d75))
+* **VDataTable:** fix load dependency styles when installed as independent package ([#152](https://github.com/gitsindonesia/ui-component/issues/152)) ([3675578](https://github.com/gitsindonesia/ui-component/commit/3675578296ec2483f5a38f67fb8f449bb2d8e518))
+* **VQuillEditor:** make `label` prop optional ([e05af87](https://github.com/gitsindonesia/ui-component/commit/e05af8718256854afe2d80339a2a36bad3605c97))
+* **VQuillEditor:** make `label` prop optional ([#146](https://github.com/gitsindonesia/ui-component/issues/146)) ([badd9b3](https://github.com/gitsindonesia/ui-component/commit/badd9b39e1ba910d88a0138f4c26b1ee382c06eb))
+
+
+### Features
+
+* **Forms:** add a new `hint` prop to all form inputs ([#151](https://github.com/gitsindonesia/ui-component/issues/151)) ([bf7abc2](https://github.com/gitsindonesia/ui-component/commit/bf7abc29673b96f9550b55f6002c6743705dff9e))
+* **nuxt:** auto-import `VQuillEditor` component & improve playground ([#145](https://github.com/gitsindonesia/ui-component/issues/145)) ([3f8eb56](https://github.com/gitsindonesia/ui-component/commit/3f8eb5693cd5f50776dbd37cd0cc65de0cf8e849))
+
+
+
+
+
+
 # [1.0.0-beta.3](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2023-03-08)
 
 

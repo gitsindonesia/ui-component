@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/pages",
-  "version": "1.0.0-beta.3",
+  "version": "1.0.0-beta.4",
   "description": "GITS Pages Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -17,7 +17,7 @@
   "dependencies": {
     "@gits-id/alert": "^1.0.0-beta.3",
     "@gits-id/button": "^1.0.0-beta.3",
-    "@gits-id/forms": "^1.0.0-beta.3",
+    "@gits-id/forms": "^1.0.0-beta.4",
     "@iconify/vue": "^3.2.1",
     "vue": "^3.2.31",
     "yup": "^0.32.11"

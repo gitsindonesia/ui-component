@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/navbar",
-  "version": "1.0.0-beta.3",
+  "version": "1.0.0-beta.4",
   "description": "GITS Navbar Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -17,7 +17,7 @@
   "dependencies": {
     "@gits-id/button": "^1.0.0-beta.3",
     "@gits-id/logo": "^1.0.0-beta.3",
-    "@gits-id/menus": "^1.0.0-beta.3",
+    "@gits-id/menus": "^1.0.0-beta.4",
     "vue": "^3.2.31"
   },
   "devDependencies": {

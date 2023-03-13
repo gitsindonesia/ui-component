@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/quill-editor",
-  "version": "1.0.0-beta.3",
+  "version": "1.0.0-beta.4",
   "description": "Quill Editor Vue Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",

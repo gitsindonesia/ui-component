@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.4](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2023-03-13)
+
+
+### Features
+
+* **nuxt:** auto-import `VQuillEditor` component & improve playground ([#145](https://github.com/gitsindonesia/ui-component/issues/145)) ([3f8eb56](https://github.com/gitsindonesia/ui-component/commit/3f8eb5693cd5f50776dbd37cd0cc65de0cf8e849))
+
+
+
+
+
+
 # [1.0.0-beta.3](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2023-03-08)
 
 **Note:** Version bump only for package @gits-id/ui
