@@ -16,7 +16,7 @@ const items = [...Array(10)].map((_, index) => ({
 }));
 
 export default {
-  title: 'Components/Select',
+  title: 'Forms/Select',
   component: VSelect,
   argTypes: {
     color: {

@@ -9,7 +9,7 @@ import '@gits-id/forms/src/forms.dark.scss';
 import './VSwitch.dark.scss';
 
 export default {
-  title: 'Components/Switch',
+  title: 'Forms/Switch',
   component: VSwitch,
   args: {
     label: 'Label',

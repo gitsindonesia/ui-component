@@ -16,7 +16,7 @@ const items = [
 ];
 
 export default {
-  title: 'Components/Autocomplete',
+  title: 'Forms/Autocomplete',
   component: VAutocomplete,
   argTypes: {},
   args: {
