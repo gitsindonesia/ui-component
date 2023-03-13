@@ -379,6 +379,7 @@ const items = ref([
 | [`id`](#id)                         | `String`                                               | `''`                            |
 | [`validationMode`](#validationMode) | `'aggressive'` &#x7c; `'eager'`                        | `'aggressive'`                  |
 | [`hint`](#hint)                     | `String`                                               | `''`                            |
+| [`hideError`](#hideError)           | `Boolean`                                              | `false`                         |
 
 ## Events
 

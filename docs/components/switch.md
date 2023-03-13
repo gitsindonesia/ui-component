@@ -193,6 +193,7 @@ const onSubmit = handleSubmit((values) => {
 | [`rules`](#rules)                       | `String`                     | `''`        |
 | [`errorClass`](#errorClass)             | `String`                     | `''`        |
 | [`hint`](#hint)                         | `String`                     | `''`        |
+| [`hideError`](#hideError)               | `Boolean`                    | `false`     |
 
 ## Events
 

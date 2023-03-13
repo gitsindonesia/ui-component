@@ -114,6 +114,8 @@ const onSubmit = handleSubmit((values, ctx) => {
 | [`errorClass`](#errorClass)     | `'text-error-600 text-sm mt-1'` | `false`        |
 | [`label`](#label)               | `string`                        | `''`           |
 | [`labelClass`](#labelClass)     | `string`                        | `'block mb-1'` |
+| [`hint`](#hint)                 | `String`                        | `''`           |
+| [`hideError`](#hideError)       | `Boolean`                       | `false`        |
 
 ## Events
 

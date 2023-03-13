@@ -123,6 +123,7 @@ const genres = ref<Item[]>([
 | [`errorClass`](#errorClass)     | `string`  | `'autocomplete-error'` |
 | [`wrapperClass`](#wrapperClass) | `string`  | `''`                   |
 | [`hint`](#hint)                 | `String`  | `''`                   |
+| [`hideError`](#hideError)       | `Boolean` | `false`                |
 
 ## Events
 

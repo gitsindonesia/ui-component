@@ -672,6 +672,7 @@ const onSubmit = handleSubmit((values) => {
 | [`appendClass`](#appendClass)           | `String`                                   | `''`           |
 | [`appendIconClass`](#appendIconClass)   | `String`                                   | `''`           |
 | [`hint`](#hint)                         | `String`                                   | `''`           |
+| [`hideError`](#hideError)               | `Boolean`                                  | `false`        |
 
 ## Events
 
