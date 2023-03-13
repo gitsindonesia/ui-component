@@ -2,7 +2,7 @@ import {Meta, Story} from '@storybook/vue3';
 import VContainer from './VContainer.vue';
 
 export default {
-  title: 'Components/Container',
+  title: 'Deprecated/Container',
   component: VContainer,
   argTypes: {},
   args: {

@@ -105,7 +105,7 @@ const menus = [
 ];
 
 export default {
-  title: 'Components/NavDrawer',
+  title: 'Deprecated/NavDrawer',
   component: VNavDrawer,
   argTypes: {},
   args: {
