@@ -84,6 +84,10 @@ const props = defineProps({
   hideError: {
     type: Boolean,
     default: false,
+  },
+  hint: {
+    type: String,
+    default: ''
   }
 });
 
@@ -128,6 +132,11 @@ const emit =
       v-bind="$attrs"
     />
     <div class="v-input-footer">
+      <p v-if="hint" class="v-input-hint">
+        <slot name="hint">
+          {{ hint }}
+        </slot>
+      </p>
       <div v-if="!hideError" class="v-input-error" v-text="errorMessage" />
       <div v-if="counter" class="v-input-counter">
         <slot name="counter" :count="uncontrolledValue.length">
