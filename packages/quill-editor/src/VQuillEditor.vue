@@ -82,7 +82,7 @@ watch(
       :read-only="readOnly"
       v-bind="$attrs"
     />
-    <p v-if="hint" class="v-editor-hint">
+    <p v-if="hint" class="v-quill-editor-hint">
       <slot name="hint">
         {{ hint }}
       </slot>
@@ -95,9 +95,9 @@ watch(
 
 <style>
 :root {
-  --v-editor-hint-font-size: var(--v-input-hint-font-size, 14px);
-  --v-editor-hint-color: theme('colors.gray.500');
-  --v-editor-hint-margin-top: theme('spacing.1');
+  --v-quill-editor-hint-font-size: var(--v-input-hint-font-size, 14px);
+  --v-quill-editor-hint-color: theme('colors.gray.500');
+  --v-quill-editor-hint-margin-top: theme('spacing.1');
 }
 
 .ql-toolbar {
@@ -112,9 +112,9 @@ watch(
   height: 250px;
 }
 
-.v-editor-hint {
-  font-size: var(--v-editor-hint-font-size);
-  color: var(--v-editor-hint-color);
-  margin-top: var(--v-editor-hint-margin-top);
+.v-quill-editor-hint {
+  font-size: var(--v-quill-editor-hint-font-size);
+  color: var(--v-quill-editor-hint-color);
+  margin-top: var(--v-quill-editor-hint-margin-top);
 }
 </style>
