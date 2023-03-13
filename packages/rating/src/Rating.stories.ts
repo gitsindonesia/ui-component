@@ -40,6 +40,21 @@ const value = ref(0);
   },
 };
 
+export const Hint = Default.bind({});
+Hint.args = {
+  hint: 'This is a hint',
+};
+
+export const Inline = Default.bind({});
+Inline.args = {
+  inline: true,
+};
+
+export const Rtl = Default.bind({});
+Rtl.args = {
+  rtl: true,
+};
+
 export const DefaultValue = Default.bind({});
 DefaultValue.args = {
   rating: 4,

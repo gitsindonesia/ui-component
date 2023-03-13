@@ -105,6 +105,10 @@ export default defineComponent({
       type: Boolean,
       default: false,
     },
+    hint: {
+      type: String,
+      default: '',
+    },
   },
   emits: ['update:rating', 'hover:rating'],
 
@@ -266,7 +270,7 @@ export default defineComponent({
       </slot>
     </div>
 
-    <div class="v-star-rating" @mouseleave="resetRating">
+    <div class="v-star-rating-stars" @mouseleave="resetRating">
       <span
         v-for="n in maxRating"
         :key="n"
@@ -297,6 +301,11 @@ export default defineComponent({
         {{ formattedRating }}</span
       >
     </div>
+    <p v-if="hint" class="v-star-rating-hint">
+      <slot name="hint">
+        {{ hint }}
+      </slot>
+    </p>
   </div>
 </template>
 
