@@ -356,8 +356,8 @@ export const DarkMode: Story = (args) => ({
   },
   template: `
   <div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
-    <VRadioGroup v-bind='args' />
-    <VRadioGroup v-bind='args' disabled label="Disabled" class="mt-5" />
+    <VRadioGroup v-bind='args' hint="This is a hint" />
+    <VRadioGroup v-bind='args' disabled label="Disabled" class="mt-5" hint="This is a hint" />
   </div>
   `,
 });
