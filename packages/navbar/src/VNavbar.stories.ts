@@ -2,7 +2,7 @@ import {Meta, Story} from '@storybook/vue3';
 import VNavbar from './VNavbar.vue';
 
 export default {
-  title: 'Components/Navbar',
+  title: 'Deprecated/Navbar',
   component: VNavbar,
   argTypes: {},
   args: {

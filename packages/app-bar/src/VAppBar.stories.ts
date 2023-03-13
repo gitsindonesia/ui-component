@@ -1,10 +1,10 @@
 import VAppBar from './VAppBar.vue';
-import { Story, Meta } from '@storybook/vue3';
-import { defaultColors, defaultShadows } from '@gits-id/theme/defaultTheme';
-import { ref } from 'vue';
+import {Story, Meta} from '@storybook/vue3';
+import {defaultColors, defaultShadows} from '@gits-id/theme/defaultTheme';
+import {ref} from 'vue';
 import Icon from '@gits-id/icon';
 import Button from '@gits-id/button';
-import { VInput } from '@gits-id/forms';
+import {VInput} from '@gits-id/forms';
 import '@gits-id/button/src/VBtn.scss';
 import '@gits-id/forms/src/forms.scss';
 import '@gits-id/theme/transition.css';
@@ -16,12 +16,12 @@ export default {
 } as Meta;
 
 const Template: Story<{}> = (args) => ({
-  components: { VAppBar },
+  components: {VAppBar},
   setup() {
-    return { args };
+    return {args};
   },
   template: `
-  <div>
+  <div class="bg-gray-100">
 <VAppBar v-bind="args">Hello</VAppBar>
 <main class="container mx-auto p-6 space-y-2 mt-2">
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pellentesque diam, ac sollicitudin urna. Integer blandit quam quis arcu tempus, non consequat leo consectetur. Aliquam id consectetur nibh. Pellentesque tincidunt dolor eu malesuada sagittis. Nam eu porttitor libero. Pellentesque aliquam, metus ac sagittis tincidunt, quam eros vehicula lacus, sed rhoncus nulla mauris a eros. Suspendisse imperdiet blandit risus vitae hendrerit. Nunc eget nisl ut tellus efficitur hendrerit ac sed nisl. Nunc sed blandit nulla, at scelerisque justo. Duis mollis interdum orci. Cras pulvinar laoreet massa, at iaculis enim efficitur eu. Nam et lacus at turpis gravida aliquam nec nec arcu. Sed venenatis enim nec velit feugiat, vitae ullamcorper tellus lacinia.</p>
@@ -78,11 +78,11 @@ Bordered.parameters = {
 };
 
 export const Shadow: Story<{}> = (args) => ({
-  components: { VAppBar },
+  components: {VAppBar},
   setup() {
     const shadows = defaultShadows;
 
-    return { args, shadows };
+    return {args, shadows};
   },
   template: `
 <VAppBar
@@ -97,9 +97,9 @@ export const Shadow: Story<{}> = (args) => ({
 });
 
 export const Colors: Story<{}> = (args) => ({
-  components: { VAppBar },
+  components: {VAppBar},
   setup() {
-    return { args, defaultColors };
+    return {args, defaultColors};
   },
   template: `
 <v-app-bar
@@ -116,10 +116,10 @@ export const Colors: Story<{}> = (args) => ({
 const sizes = ['sm', 'md', 'lg'];
 
 export const Sizes: Story<{}> = (args) => ({
-  components: { VAppBar, Button, Icon, VInput },
+  components: {VAppBar, Button, Icon, VInput},
   setup() {
     const isOpen = ref(true);
-    return { args, isOpen, sizes };
+    return {args, isOpen, sizes};
   },
   template: `
 <v-app-bar
@@ -219,10 +219,10 @@ CustomClass.parameters = {
 };
 
 export const Toggle: Story<{}> = (args) => ({
-  components: { VAppBar, Button },
+  components: {VAppBar, Button},
   setup() {
     const isOpen = ref(true);
-    return { args, isOpen };
+    return {args, isOpen};
   },
   template: `
 <v-app-bar
@@ -239,10 +239,10 @@ export const Toggle: Story<{}> = (args) => ({
 });
 
 export const CustomTransition: Story<{}> = (args) => ({
-  components: { VAppBar, Button },
+  components: {VAppBar, Button},
   setup() {
     const isOpen = ref(true);
-    return { args, isOpen };
+    return {args, isOpen};
   },
   template: `
 <v-app-bar
@@ -260,10 +260,10 @@ export const CustomTransition: Story<{}> = (args) => ({
 });
 
 export const MobileNavigation: Story<{}> = (args) => ({
-  components: { VAppBar, Button, Icon },
+  components: {VAppBar, Button, Icon},
   setup() {
     const isOpen = ref(true);
-    return { args, isOpen };
+    return {args, isOpen};
   },
   template: `
 <v-app-bar
@@ -297,10 +297,10 @@ export const MobileNavigation: Story<{}> = (args) => ({
 });
 
 export const WithSearchBar: Story<{}> = (args) => ({
-  components: { VAppBar, Button, Icon, VInput },
+  components: {VAppBar, Button, Icon, VInput},
   setup() {
     const isOpen = ref(true);
-    return { args, isOpen };
+    return {args, isOpen};
   },
   template: `
 <v-app-bar
@@ -342,7 +342,7 @@ export const WithSearchBar: Story<{}> = (args) => ({
 });
 
 export const Transparent: Story<{}> = (args) => ({
-  components: { VAppBar },
+  components: {VAppBar},
   template: `
 <main class="mt-5 h-screen bg-primary-500 text-white">
   <v-app-bar
@@ -358,7 +358,7 @@ export const Transparent: Story<{}> = (args) => ({
 });
 
 export const BackdropBlur: Story<{}> = (args) => ({
-  components: { VAppBar },
+  components: {VAppBar},
   template: `
 <main class="mt-5 h-screen bg-primary-500 text-white">
   <v-app-bar
@@ -374,9 +374,9 @@ export const BackdropBlur: Story<{}> = (args) => ({
 });
 
 export const DarkMode: Story<{}> = () => ({
-  components: { VAppBar },
+  components: {VAppBar},
   setup() {
-    return { defaultColors };
+    return {defaultColors};
   },
   template: `
 <main class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6 space-y-2">
@@ -388,7 +388,7 @@ export const DarkMode: Story<{}> = () => ({
 });
 
 export const ElevateOnScroll: Story<{}> = () => ({
-  components: { VAppBar },
+  components: {VAppBar},
   template: `
   <main class="mt-5 h-screen bg-gray-50 text-white">
     <VAppBar fixed elevate-on-scroll="md">
@@ -399,7 +399,7 @@ export const ElevateOnScroll: Story<{}> = () => ({
 });
 
 export const HideOnScroll: Story<{}> = () => ({
-  components: { VAppBar },
+  components: {VAppBar},
   template: `
   <main class="mt-5 h-screen bg-gray-50 text-white">
     <VAppBar fixed hide-on-scroll transition="slide-down">
