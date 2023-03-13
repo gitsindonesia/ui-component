@@ -37,6 +37,23 @@ Radio.parameters = {
   },
 };
 
+export const Hint: Story = (args) => ({
+  components: {VRadio},
+  setup() {
+    const value = ref('1');
+    return {args, value};
+  },
+  template: `
+  <VRadio
+    v-model="value"
+    value="1"
+    label="Choose 1"
+    id="1"
+    hint="This is a hint"
+    />
+  `,
+});
+
 export const Disabled: Story = (args) => ({
   components: {VRadio},
   setup() {
