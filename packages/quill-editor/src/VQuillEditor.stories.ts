@@ -33,6 +33,11 @@ Label.args = {
   label: 'Content',
 };
 
+export const Hint = Template.bind({});
+Hint.args = {
+  hint: 'This is a hint',
+};
+
 export const Validation: Story = (args) => ({
   components: {VBtn, VQuillEditor},
   setup() {

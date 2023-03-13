@@ -19,6 +19,7 @@ const props = withDefaults(
     errorClass?: string;
     hideError?: boolean;
     autoFixCursor?: boolean;
+    hint?: string;
   }>(),
   {
     toolbar: 'essential',
@@ -81,6 +82,11 @@ watch(
       :read-only="readOnly"
       v-bind="$attrs"
     />
+    <p v-if="hint" class="v-editor-hint">
+      <slot name="hint">
+        {{ hint }}
+      </slot>
+    </p>
     <div v-if="errorMessage && !hideError" :class="errorClass">
       {{ errorMessage }}
     </div>
@@ -88,6 +94,12 @@ watch(
 </template>
 
 <style>
+:root {
+  --v-editor-hint-font-size: var(--v-input-hint-font-size, 14px);
+  --v-editor-hint-color: theme('colors.gray.500');
+  --v-editor-hint-margin-top: theme('spacing.1');
+}
+
 .ql-toolbar {
   @apply rounded-t-md;
 }
@@ -98,5 +110,11 @@ watch(
 
 .ql-editor {
   height: 250px;
+}
+
+.v-editor-hint {
+  font-size: var(--v-editor-hint-font-size);
+  color: var(--v-editor-hint-color);
+  margin-top: var(--v-editor-hint-margin-top);
 }
 </style>
