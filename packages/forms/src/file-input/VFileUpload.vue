@@ -491,7 +491,7 @@ const borderClass = computed(() => {
     />
 
     <slot name="hint">
-      <div v-if="hint" class="text-xs mt-2 text-black">
+      <div v-if="hint" class="text-sm mt-1 text-gray-500">
         {{ hint }}
       </div>
     </slot>
