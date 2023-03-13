@@ -395,7 +395,7 @@ const emitSelected = (val: any) => {
         </transition>
       </div>
     </Listbox>
-    <p class="v-select-hint">
+    <p v-if="hint" class="v-select-hint">
       <slot name="hint">
         {{ hint }}
       </slot>

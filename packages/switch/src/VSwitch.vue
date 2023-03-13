@@ -107,7 +107,7 @@ watch(modelValue, (val) => {
         <span class="v-switch-thumb" :class="[buttonClass]" />
       </Switch>
     </SwitchGroup>
-    <p class="v-switch-hint">
+    <p v-if="hint" class="v-switch-hint">
       <slot name="hint">
         {{ hint }}
       </slot>

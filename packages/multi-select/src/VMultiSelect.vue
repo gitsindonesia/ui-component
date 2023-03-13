@@ -601,7 +601,7 @@ const focusItem = () => {
       </div>
     </div>
   </div>
-  <p class="v-multi-select-hint">
+  <p v-if="hint" class="v-multi-select-hint">
     <slot name="hint">
       {{ hint }}
     </slot>

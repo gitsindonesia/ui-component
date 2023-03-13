@@ -191,7 +191,7 @@ const clear = () => {
       </TransitionRoot>
     </div>
   </Combobox>
-  <p class="autocomplete-hint">
+  <p v-if="hint" class="autocomplete-hint">
     <slot name="hint">
       {{ hint }}
     </slot>
