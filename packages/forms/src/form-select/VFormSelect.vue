@@ -71,6 +71,10 @@ const props = defineProps({
     type: String as PropType<ValidationMode>,
     default: 'aggressive',
   },
+  hint: {
+    type: String,
+    default: ''
+  }
 });
 
 const emit =
@@ -127,6 +131,11 @@ const getText = (option: string | Record<string, any>) => {
         {{ getText(option) }}
       </option>
     </select>
+    <p v-if="hint" class="v-input-hint">
+      <slot name="hint">
+        {{ hint }}
+      </slot>
+    </p>
     <div v-if="errorMessage" class="v-input-error" :class="errorClass">
       {{ errorMessage }}
     </div>
