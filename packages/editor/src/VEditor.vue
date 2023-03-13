@@ -19,6 +19,7 @@ type Props = {
   readonly?: string;
   config?: Record<string, any>;
   hideError?: boolean;
+  hint?: string;
 };
 
 const props = withDefaults(defineProps<Props>(), {
@@ -76,6 +77,11 @@ const message = computed(() => props.errorMessages[0] || errorMessage.value);
       :editor="ClassicEditor"
       :config="config"
     />
+    <p v-if="hint" class="v-editor-hint">
+      <slot name="hint">
+        {{ hint }}
+      </slot>
+    </p>
     <div
       v-if="hasError && !hideError"
       class="v-editor-error"

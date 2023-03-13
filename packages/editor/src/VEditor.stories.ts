@@ -35,6 +35,18 @@ Default.parameters = {
   },
 };
 
+export const Hint = Template.bind({});
+Hint.args = {
+  hint: 'This is a hint',
+};
+Hint.parameters = {
+  docs: {
+    source: {
+      code: '<v-editor hint="This is a hint" />',
+    },
+  },
+};
+
 export const VModel: Story<{}> = (args) => ({
   components: {VEditor},
   setup() {
