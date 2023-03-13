@@ -172,6 +172,10 @@ const props = defineProps({
   hideError: {
     type: Boolean,
     default: false,
+  },
+  hint: {
+    type: String,
+    default: ''
   }
 });
 
@@ -597,6 +601,11 @@ const focusItem = () => {
       </div>
     </div>
   </div>
+  <p class="v-multi-select-hint">
+    <slot name="hint">
+      {{ hint }}
+    </slot>
+  </p>
   <ErrorMessage
     v-if="errorMessages.length && !hideError"
     class="text-error-500 text-sm"

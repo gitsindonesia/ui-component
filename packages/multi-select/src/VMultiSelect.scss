@@ -37,6 +37,11 @@
   /* dropdown */
   --v-multi-select-dropdown-bg-color: theme('colors.white');
   --v-multi-select-dropdown-border-radius: theme('borderRadius.md');
+
+  // hint
+  --v-multi-select-hint-font-size: var(--v-input-hint-font-size, 14px);
+  --v-multi-select-hint-color: theme('colors.gray.500');
+  --v-multi-select-hint-margin-top: theme('spacing.1');
 }
 
 .v-multi-select {
@@ -177,5 +182,11 @@
 
   &-icon {
     color: var(--v-multi-select-icon-color);
+  }
+
+  &-hint {
+    font-size: var(--v-multi-select-hint-font-size);
+    color: var(--v-multi-select-hint-color);
+    margin-top: var(--v-multi-select-hint-margin-top);
   }
 }
