@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@gits-id/nuxt-auth': ^0.3.0
-  '@gits-id/ui-nuxt': ^1.0.0-beta.1
+  '@gits-id/ui-nuxt': ^1.0.0-beta.3
   '@nuxtjs/color-mode': ^3.2.0
   '@nuxtjs/tailwindcss': ^6.3.0
   '@pinia/nuxt': ^0.4.6
@@ -14,7 +14,7 @@ specifiers:
 
 dependencies:
   '@gits-id/nuxt-auth': 0.3.0
-  '@gits-id/ui-nuxt': 1.0.0-beta.1
+  '@gits-id/ui-nuxt': 1.0.0-beta.3
   '@pinia/nuxt': 0.4.6
   apexcharts: 3.37.0
   pinia: 2.0.30
@@ -1269,7 +1269,7 @@ packages:
   /@gits-id/nuxt-auth/0.3.0:
     resolution: {integrity: sha512-jVAKDGHwrsqrQlpK65rANhMH0TaKoK9rH6ueA541977nIw+YzO0bUPZjjUU8RIJuyFYJneym966oqprosSp2MA==}
     dependencies:
-      '@gits-id/ui-nuxt': 1.0.0-beta.1
+      '@gits-id/ui-nuxt': 1.0.0-beta.3
       '@sidebase/nuxt-auth': 0.4.2_next-auth@4.19.2
       next-auth: 4.19.2
     transitivePeerDependencies:
@@ -1470,8 +1470,8 @@ packages:
       vue: 3.2.47
     dev: false
 
-  /@gits-id/ui-nuxt/1.0.0-beta.1:
-    resolution: {integrity: sha512-PH1pwnhlnQu1ckEPq2B9/cXMVcIdJILzwAKb1PsYP0h7KPXLqVRCrx9seHGUh9cv1l+9/Ak2aVpWR6tyFouteQ==}
+  /@gits-id/ui-nuxt/1.0.0-beta.3:
+    resolution: {integrity: sha512-qm92FQsqQyxR9AeyICAs9Okwv7uA9fSxaYpoyXBrn9V3wCZ0GHB41pMf9A/4ovuvMnKwpkaROSpIbKx1HZZ8RQ==}
     dependencies:
       '@gits-id/ui': 0.16.3
     transitivePeerDependencies:
