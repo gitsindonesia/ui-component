@@ -18,6 +18,11 @@
   --v-checkbox-label-display: var(--v-input-label-display, block);
   --v-checkbox-label-margin-top: 1px;
   --v-checkbox-label-color: theme('colors.gray.800');
+
+  // hint
+  --v-checkbox-hint-font-size: var(--v-input-hint-font-size, 14px);
+  --v-checkbox-hint-color: theme('colors.gray.500');
+  --v-checkbox-hint-margin-top: theme('spacing.1');
 }
 
 .v-checkbox {
@@ -47,6 +52,12 @@
     @apply select-none;
   }
 
+  &-hint {
+    font-size: var(--v-checkbox-hint-font-size);
+    color: var(--v-checkbox-hint-color);
+    margin-top: var(--v-checkbox-hint-margin-top);
+  }
+
   &-error {
     @apply text-sm text-error-500;
   }
@@ -74,7 +85,7 @@
   &-error &-input {
     @apply text-error-500 focus:border-error-500 focus:ring-error-500;
   }
-  
+
   &--error &-input {
     @apply text-error-500 border-error-500 ring-error-500 focus:border-error-500 focus:ring-error-500;
   }

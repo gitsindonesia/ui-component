@@ -21,10 +21,9 @@ export default {
       options: themeColors,
     },
   },
-  // args: {
-  //   label: 'Checkbox',
-  //   name: 'myCheckbox',
-  // },
+  args: {
+    label: 'Label',
+  },
 } as Meta;
 
 const Template: Story = (args) => ({
@@ -45,6 +44,18 @@ Checkbox.parameters = {
   docs: {
     source: {
       code: `<v-checkbox label="Checkbox" />`,
+    },
+  },
+};
+
+export const Hint = Template.bind({});
+Hint.args = {
+  hint: 'This is a hint',
+};
+Hint.parameters = {
+  docs: {
+    source: {
+      code: `<v-checkbox label="Label" hint="This is a hint" />`,
     },
   },
 };
@@ -327,7 +338,7 @@ export const DarkMode: Story = (args) => ({
   },
   template: `
   <div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
-    <VCheckbox v-bind='args' />
+    <VCheckbox v-bind='args' hint="This is a hint" />
   </div>
   `,
 });
