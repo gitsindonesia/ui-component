@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@gits-id/ui-nuxt': ^1.0.0-beta.3
+  '@gits-id/ui-nuxt': ^1.0.0-beta.4
   '@nuxtjs/tailwindcss': ^6.3.0
   '@sidebase/nuxt-auth': ^0.4.0-alpha.5
   next-auth: ^4.19.1
@@ -9,7 +9,7 @@ specifiers:
   sass: ^1.58.0
 
 dependencies:
-  '@gits-id/ui-nuxt': 1.0.0-beta.3
+  '@gits-id/ui-nuxt': 1.0.0-beta.4
   '@sidebase/nuxt-auth': 0.4.1_next-auth@4.19.2
   next-auth: 4.19.2
 
@@ -1440,8 +1440,8 @@ packages:
       vue: 3.2.47
     dev: false
 
-  /@gits-id/ui-nuxt/1.0.0-beta.3:
-    resolution: {integrity: sha512-qm92FQsqQyxR9AeyICAs9Okwv7uA9fSxaYpoyXBrn9V3wCZ0GHB41pMf9A/4ovuvMnKwpkaROSpIbKx1HZZ8RQ==}
+  /@gits-id/ui-nuxt/1.0.0-beta.4:
+    resolution: {integrity: sha512-HyGFh9cPEB+8KAehgfB8Ib/E7XE4i9URgjW40tZNLWlryahET+r5/HsPaWZFbnyN9xGNfKjFAohwN6xaDURmDw==}
     dependencies:
       '@gits-id/ui': 0.16.3
     transitivePeerDependencies:

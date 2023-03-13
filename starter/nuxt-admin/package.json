@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@gits-id/nuxt-auth": "^0.3.0",
-    "@gits-id/ui-nuxt": "^1.0.0-beta.3",
+    "@gits-id/ui-nuxt": "^1.0.0-beta.4",
     "@pinia/nuxt": "^0.4.6",
     "apexcharts": "^3.37.0",
     "pinia": "^2.0.29",
