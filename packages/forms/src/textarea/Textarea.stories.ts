@@ -49,6 +49,19 @@ Label.parameters = {
   },
 };
 
+export const Hint = Template.bind({});
+Hint.args = {
+  label: 'Label',
+  hint: 'This is a hint',
+};
+Hint.parameters = {
+  docs: {
+    source: {
+      code: '<v-textarea label="My Hint" hint="This is a hint" />',
+    },
+  },
+};
+
 export const Readonly = Template.bind({});
 Readonly.args = {
   readonly: true,

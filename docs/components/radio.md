@@ -117,6 +117,8 @@ const onSubmit = handleSubmit((values) => {
 | [`hideError`](#hideError)         | `Boolean` | `false`                                                |
 | [`disabled`](#disabled)           | `Boolean` | `false`                                                |
 | [`disabledClass`](#disabledClass) | `String`  | `'disabled:text-gray-200 disabled:cursor-not-allowed'` |
+| [`hint`](#hint)                   | `String`  | `''`                                                   |
+| [`hideError`](#hideError)         | `Boolean` | `false`                                                |
 
 ## Events
 

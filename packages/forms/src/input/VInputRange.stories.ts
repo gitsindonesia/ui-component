@@ -28,6 +28,19 @@ Default.parameters = {
   },
 };
 
+export const Hint = Default.bind({});
+Hint.args = {
+  label: 'Label',
+  hint: 'This is a hint',
+};
+Hint.parameters = {
+  docs: {
+    source: {
+      code: `<v-input label="Label" hint="This is a hint" />`,
+    },
+  },
+};
+
 export const WithInput: Story = (args) => ({
   components: {VInputRange},
   setup() {

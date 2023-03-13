@@ -18,6 +18,10 @@
   --v-switch-label-color: var(--v-input-label-color);
   --v-switch-label-font-size: theme('fontSize.base');
   --v-switch-label-font-weight: theme('fontWeight.normal');
+  // hint
+  --v-switch-hint-font-size: var(--v-input-hint-font-size, 14px);
+  --v-switch-hint-color: theme('colors.gray.500');
+  --v-switch-hint-margin-top: theme('spacing.1');
 }
 
 .v-switch {
@@ -75,12 +79,18 @@
     @apply text-error-600 mt-1 text-sm;
   }
 
+  &-hint {
+    font-size: var(--v-switch-hint-font-size);
+    color: var(--v-switch-hint-color);
+    margin-top: var(--v-switch-hint-margin-top);
+  }
+
   /* checked */
   &--checked {
     #{$c}-thumb {
       @apply translate-x-5;
     }
-    
+
     #{$c}-button {
       background: var(--v-switch-button-checked-bg-color);
       border-color: var(--v-switch-button-checked-border-color);

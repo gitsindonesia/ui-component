@@ -271,6 +271,8 @@ const compareGenres = (item: VMultiSelectItem, query: string) => {
 | [`rules`](#rules)                         | `string`                                  | `''`                            |
 | [`errorClass`](#errorClass)               | `string`                                  | `'text-error-600 mt-1 text-sm'` |
 | [`transition`](#transition)               | `string`                                  | `'fade'`                        |
+| [`hint`](#hint)                           | `String`                                  | `''`                            |
+| [`hideError`](#hideError)                 | `Boolean`                                 | `false`                         |
 
 ## Events
 

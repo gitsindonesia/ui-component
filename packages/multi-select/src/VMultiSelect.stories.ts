@@ -140,27 +140,7 @@ const userItems = [
 export default {
   title: 'Forms/MultiSelect',
   component: VMultiSelect,
-  argTypes: {},
-  args: {
-    items,
-    modelValue: [],
-    itemText: 'text',
-    itemValue: 'value',
-    searchBy: '',
-    placeholder: 'Search...',
-    name: '',
-    error: false,
-    errorMessages: [],
-    clearable: false,
-    maxBadge: 0,
-    delay: 500,
-    id: '',
-    inputProps: {},
-    selectAll: false,
-    loading: false,
-    disabled: false,
-    readonly: false,
-  },
+  args: {items},
 };
 
 const Template = (args) => ({
@@ -191,6 +171,18 @@ Clearable.parameters = {
   docs: {
     source: {
       code: '<v-multi-select :items="items" clearable />',
+    },
+  },
+};
+
+export const Hint = Template.bind({});
+Hint.args = {
+  hint: 'This is a hint',
+};
+Hint.parameters = {
+  docs: {
+    source: {
+      code: '<v-multi-select :items="items" hint="This is a hint" />',
     },
   },
 };

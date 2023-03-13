@@ -80,6 +80,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  hint: {
+    type: String,
+    default: '',
+  },
 });
 
 const emit =
@@ -135,6 +139,11 @@ const {errorMessage, uncontrolledValue, inputId, handleChange} = useFormValue(
         {{ label }}
       </label>
     </div>
+    <p v-if="hint" class="v-checkbox-hint">
+      <slot name="hint">
+        {{ hint }}
+      </slot>
+    </p>
     <div
       v-if="errorMessage && !hideError"
       class="v-checkbox-error"

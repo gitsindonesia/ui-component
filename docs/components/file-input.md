@@ -359,6 +359,7 @@ const onSubmit = handleSubmit((values) => {
 | [`label`](#label)                     | `String`                                                                   | `''`                              |
 | [`labelClass`](#labelClass)           | `String`                                                                   | `'block mb-1'`                    |
 | [`wrapperClass`](#wrapperClass)       | `String`                                                                   | `''`                              |
+| [`hideError`](#hideError)             | `Boolean`                                                                  | `false`                           |
 
 ## Types
 

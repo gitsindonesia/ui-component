@@ -169,6 +169,10 @@ const props = defineProps({
   hideError: {
     type: Boolean,
     default: false,
+  },
+  hint: {
+    type: String,
+    default: ''
   }
 });
 
@@ -391,7 +395,11 @@ const emitSelected = (val: any) => {
         </transition>
       </div>
     </Listbox>
-
+    <p v-if="hint" class="v-select-hint">
+      <slot name="hint">
+        {{ hint }}
+      </slot>
+    </p>
     <div
       v-if="message && !hideError"
       class="v-select-error"

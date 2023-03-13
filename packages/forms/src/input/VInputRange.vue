@@ -53,6 +53,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  hint: {
+    type: String,
+    default: '',
+  },
 });
 
 const {modelValue, showInput, name, rules, validationMode} = toRefs(props);
@@ -260,7 +264,11 @@ const handleBlur = () => {
         </div>
       </div>
     </div>
-
+    <p v-if="hint" class="v-input-hint">
+      <slot name="hint">
+        {{ hint }}
+      </slot>
+    </p>
     <div v-if="errorMessage && !hideError" :class="errorClass">
       {{ errorMessage }}
     </div>

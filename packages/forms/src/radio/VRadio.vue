@@ -70,6 +70,10 @@ const props = defineProps({
     type: String as PropType<ValidationMode>,
     default: 'aggressive',
   },
+  hint: {
+    type: String,
+    default: '',
+  },
 });
 
 type RadioValue = string | number | boolean;
@@ -114,6 +118,11 @@ const {errorMessage, uncontrolledValue, inputId} = useFormValue(props, emit);
         {{ label }}
       </label>
     </div>
+    <p v-if="hint" class="v-radio-hint">
+      <slot name="hint">
+        {{ hint }}
+      </slot>
+    </p>
     <div
       v-if="errorMessage && !hideError"
       class="v-radio-error"

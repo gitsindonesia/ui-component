@@ -14,7 +14,7 @@ const items = [...Array(5)].map((item, index) => ({
 }));
 
 export default {
-  title: 'Forms/Select',
+  title: 'Forms/FormSelect',
   component: VFormSelect,
   argTypes: {
     size: {
@@ -89,6 +89,19 @@ Label.parameters = {
   docs: {
     source: {
       code: `<v-form-select :items="items" label="My Label" />`,
+    },
+  },
+};
+
+export const Hint = Template.bind({});
+Hint.args = {
+  label: 'Label',
+  hint: 'This is a hint',
+};
+Hint.parameters = {
+  docs: {
+    source: {
+      code: `<v-form-select :items="items" label="My Label" hint="This is a hint" />`,
     },
   },
 };

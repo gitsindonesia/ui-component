@@ -16,6 +16,11 @@
 
   // items text
   --v-radio-group-items-text-color: theme('colors.gray.800');
+
+  // hint
+  --v-radio-group-hint-font-size: var(--v-input-hint-font-size, 14px);
+  --v-radio-group-hint-color: theme('colors.gray.500');
+  --v-radio-group-hint-margin-top: theme('spacing.1');
 }
 
 .v-radio-group {
@@ -31,6 +36,12 @@
     font-weight: var(--v-radio-group-label-font-weight);
     display: var(--v-radio-group-label-display);
     margin-bottom: var(--v-radio-group-label-margin-bottom);
+  }
+
+  &-hint {
+    font-size: var(--v-radio-group-hint-font-size);
+    color: var(--v-radio-group-hint-color);
+    margin-top: var(--v-radio-group-hint-margin-top);
   }
 
   &-items {

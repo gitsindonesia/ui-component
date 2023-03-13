@@ -16,7 +16,7 @@ const items = [
 ];
 
 export default {
-  title: 'Components/Autocomplete',
+  title: 'Forms/Autocomplete',
   component: VAutocomplete,
   argTypes: {},
   args: {
@@ -52,6 +52,11 @@ Disabled.args = {
 export const Readonly = Template.bind({});
 Readonly.args = {
   readonly: true,
+};
+
+export const Hint = Template.bind({});
+Hint.args = {
+  hint: 'This is a hint',
 };
 
 export const Validation: Story = (args) => ({
@@ -270,6 +275,8 @@ export const DarkMode: Story = (args) => ({
     v-bind="args"
     v-model="selected"
     label="Dark Mode"
+    hint="This is a hint"
+    clearable
   />
 </main>
   `,
