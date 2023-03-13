@@ -53,6 +53,7 @@
   // hint
   --v-autocomplete-hint-font-size: var(--v-input-hint-font-size, 14px);
   --v-autocomplete-hint-color: theme('colors.gray.500');
+  --v-autocomplete-hint-margin-top: theme('spacing.1');
 }
 
 .autocomplete {
@@ -215,6 +216,6 @@
   &-hint {
     font-size: var(--v-autocomplete-hint-font-size);
     color: var(--v-autocomplete-hint-color);
-    margin-top: theme('spacing.1');
+    margin-top: var(--v-autocomplete-hint-margin-top);
   }
 }
