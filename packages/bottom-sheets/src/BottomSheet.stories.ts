@@ -7,6 +7,7 @@ import BottomSheetMenus from './BottomSheetMenus.vue';
 import BottomSheetBody from './BottomSheetBody.vue';
 import BottomSheetFooter from './BottomSheetFooter.vue';
 import BottomSheetHandle from './BottomSheetHandle.vue';
+import '@gits-id/button/src/VBtn.scss';
 import '@gits-id/button/src/VBtn.dark.scss';
 import './BottomSheet.dark.scss';
 
@@ -95,7 +96,13 @@ export const WithHeader: Story = (args, {argTypes}) => ({
 });
 
 export const WithHandle: Story = (args, {argTypes}) => ({
-  components: {BottomSheet, BottomSheetHandle, BottomSheetHeader, BottomSheetBody, Button},
+  components: {
+    BottomSheet,
+    BottomSheetHandle,
+    BottomSheetHeader,
+    BottomSheetBody,
+    Button,
+  },
   setup() {
     const isOpen = ref(false);
     return {args, argTypes, isOpen};
@@ -284,7 +291,13 @@ export const NestedSheet: Story = (args, {argTypes}) => ({
 });
 
 export const DarkMode: Story = (args, {argTypes}) => ({
-  components: {BottomSheet, BottomSheetHandle, BottomSheetBody, BottomSheetHeader, Button},
+  components: {
+    BottomSheet,
+    BottomSheetHandle,
+    BottomSheetBody,
+    BottomSheetHeader,
+    Button,
+  },
   setup() {
     const isOpen = ref(false);
     onMounted(() => {
