@@ -122,6 +122,11 @@ NoLabel.parameters = {
   },
 };
 
+export const Hint = Template.bind({});
+Hint.args = {
+  hint: 'This is a hint',
+};
+
 export const CustomClass = Template.bind({});
 CustomClass.args = {
   color: '',

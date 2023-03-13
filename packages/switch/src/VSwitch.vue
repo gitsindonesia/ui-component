@@ -57,6 +57,10 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  hint: {
+    type: String,
+    default: '',
+  },
 });
 
 const emit =
@@ -103,6 +107,11 @@ watch(modelValue, (val) => {
         <span class="v-switch-thumb" :class="[buttonClass]" />
       </Switch>
     </SwitchGroup>
+    <p class="v-switch-hint">
+      <slot name="hint">
+        {{ hint }}
+      </slot>
+    </p>
     <div v-if="errorMessage" class="v-switch--error" :class="errorClass">
       {{ errorMessage }}
     </div>
