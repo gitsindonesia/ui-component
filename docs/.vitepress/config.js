@@ -42,7 +42,7 @@ export default defineConfig({
       {
         text: 'Tools',
         collapsible: true,
-        items: [{text: 'create-gits-app', link: '/tools/create-gits-app'}],
+        items: [{text: 'CLI', link: '/tools/cli'}],
       },
       {
         text: 'Themes',

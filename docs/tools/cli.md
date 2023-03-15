@@ -1,4 +1,4 @@
-# create-gits-app
+# Morpheme CLI
 
 ![](/create-gits-app.png)
 
