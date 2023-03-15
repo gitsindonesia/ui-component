@@ -2,7 +2,7 @@
 import {computed, ref, toRefs, watch} from 'vue';
 import Pagino from 'pagino';
 import VPaginationItem from './VPaginationItem.vue';
-import VIcon from '@gits-id/icon';
+import VIcon from '@morpheme/icon';
 
 const props = defineProps({
   modelValue: {

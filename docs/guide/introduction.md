@@ -1,15 +1,29 @@
 # Introduction
 
-GITS UI is a Vue component library that provides developers with a range of customizable and visually appealing user interface elements. Built using the latest version of Vue (Vue 3), GITS UI is designed for ease of use and customization, making it a powerful tool for creating engaging and professional-looking applications.
+Morpheme UI is A free and open-source Vue UI Library based on Morpheme Design System.
 
-One of the key features of GITS UI is its integration with the popular CSS framework, Tailwind CSS. This allows developers to quickly prototype and build out the design of their applications, with a range of pre-designed styles and layouts to choose from.
+## Features
 
-In addition to its design capabilities, GITS UI is also built with customization in mind. Components can be easily modified using CSS properties, giving developers the ability to fine-tune the look and feel of their applications to meet their specific needs.
+- 💻 Built with [Vue 3](https://vuejs.org/)
+- 🎨 [Tailwind CSS](https://tailwindcss.com/)
+- 💎 Includes [Iconify Vue](https://icones.js.org/) for customizable icon support
+- 📦 Offers a first-party [Nuxt 3](https://nuxt.com/) module for easy integration into Nuxt projects
+- 🚀 Provides [TypeScript](https://www.typescriptlang.org/) support by default
+- 🎨 Allows for customization with CSS properties
+- 🔌 Modular design: allows for use as a complete UI framework or as individual plugins
+- 🏷 Headless component by default
+- 🎨 Dark mode: ships with dark mode styles out-of-the-box
+- 🌈 Theming support: create your own custom theme easily via CSS Variables
 
-GITS UI is also designed for easy integration with Nuxt 3, making it a great choice for developers working on Vue-based projects. The library comes with TypeScript support out-of-the-box, providing an additional level of type safety and code organization.
+## Styling
 
-In the future, GITS UI will include support for themes, allowing developers to easily change the overall appearance of their applications with a few simple changes.
+Morpheme UI uses SASS and CSS Variables as main styles.
 
-To get started with GITS UI, visit the [getting started guide](https://chat.openai.com/guide/getting-started). You can also view the components in action on the [Storybook](https://gits-ui.web.app/) or see starter on [GitHub](https://github.com/gitsindonesia/ui-component/tree/main/starter).
+## Browser Support
 
-With GITS UI, you can bring your user interface ideas to life with ease.
+Morpheme UI supports all major browsers except IE 11 and Opera Mini.
+
+
+## Vue and Nuxt
+
+Morpheme UI **only** support Vue 3 and Nuxt 3. No plan to support Vue 2 for now.

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {ref, watch, toRefs} from 'vue';
 import VCollapse from './VCollapse.vue';
-import Icon from '@gits-id/icon';
+import Icon from '@morpheme/icon';
 
 const props = defineProps({
   modelValue: {

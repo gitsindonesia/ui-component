@@ -1,7 +1,7 @@
 import VBadge from './VBadge.vue';
 import type {VBadgeProps} from './types';
 import {Story, Meta} from '@storybook/vue3';
-import {defaultRounded, defaultColors} from '@gits-id/theme/defaultTheme';
+import {defaultRounded, defaultColors} from '@morpheme/theme/defaultTheme';
 import './VBadge.dark.scss';
 
 const colors = defaultColors;

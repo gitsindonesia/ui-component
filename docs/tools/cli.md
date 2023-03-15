@@ -1,12 +1,12 @@
-# create-gits-app
+# Morpheme CLI
 
 ![](/create-gits-app.png)
 
-`create-gits-app` is an interactive CLI to kickstart your Vue.js project with Vue/Nuxt and GITS UI. It includes four options to get you started with GITS UI:
+`create-gits-app` is an interactive CLI to kickstart your Vue.js project with Vue/Nuxt and Morpheme UI. It includes four options to get you started with Morpheme UI:
 
-- **Nuxt Minimal**: A new minimal starter for Nuxt with Tailwind CSS and GITS UI.
-- **Nuxt Starter**: A full-featured Nuxt starter that includes everything you need to make a modern web application with Nuxt, Tailwind CSS, and GITS UI.
-- **Vue**: A minimal starter to get you started with Vue, Tailwind CSS, and GITS UI.
+- **Nuxt Minimal**: A new minimal starter for Nuxt with Tailwind CSS and Morpheme UI.
+- **Nuxt Starter**: A full-featured Nuxt starter that includes everything you need to make a modern web application with Nuxt, Tailwind CSS, and Morpheme UI.
+- **Vue**: A minimal starter to get you started with Vue, Tailwind CSS, and Morpheme UI.
 - **Custom**: Start from Nuxt Minimal and adds what you need. Currently, support the following modules:
   - **Prisma ORM**: Next-generation Node.js and TypeScript ORM. See more: [https://www.prisma.io/](https://www.prisma.io/)
   - **nuxt-auth**: Authentication via OAuth, Credentials and magic email flows. Wraps the popular NextAuth.js with 12k stars. See more: [https://sidebase.io/nuxt-auth](https://sidebase.io/nuxt-auth)

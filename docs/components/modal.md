@@ -29,7 +29,7 @@ To use the `VModal` component, just use it in the template.
 </LivePreview>
 
 ::: info
-The `VModal` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
+The `VModal` component is registered globally when you install with `@morpheme/ui`. So you don't need to import it manually.
 :::
 
 ### Confirm
@@ -504,16 +504,16 @@ The `footer` slot is used to place modal footer. Use this slot to customize moda
 
 ## Manual Installation
 
-You can also install the `Modal` component individually via `@gits-id/modal` package:
+You can also install the `Modal` component individually via `@morpheme/modal` package:
 
 ```bash
-npm i @gits-id/modal
+npm i @morpheme/modal
 ```
 
 ```vue
 <script setup lang="ts">
-import VModal from '@gits-id/modal';
-import '@gits-id/modal/dist/style.css';
+import VModal from '@morpheme/modal';
+import '@morpheme/modal/dist/style.css';
 </script>
 
 <template>

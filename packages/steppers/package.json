@@ -1,5 +1,5 @@
 {
-  "name": "@gits-id/stepper",
+  "name": "@morpheme/stepper",
   "version": "1.0.0-beta.3",
   "description": "GITS Stepper Component",
   "scripts": {
@@ -19,7 +19,7 @@
     "vue": "^3.2.31"
   },
   "devDependencies": {
-    "@gits-id/tailwind-config": "^1.0.0-beta.3",
+    "@morpheme/tailwind-config": "^1.0.0-beta.3",
     "@vue/compiler-dom": "^3.2.31",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",

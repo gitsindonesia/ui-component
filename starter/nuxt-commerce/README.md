@@ -21,7 +21,7 @@ An extensible e-commerce template powered by Nuxt.js and GITS UI.
 ## Installation
 
 ```bash
-npm i -D @gits-id/nuxt-commerce
+npm i -D @morpheme/nuxt-commerce
 ```
 
 ## Usage
@@ -30,7 +30,7 @@ Add it to the `nuxt.config.ts`:
 
 ```ts
 export default defineNuxtConfig({
-  extends: '@gits-id/nuxt-commerce',
+  extends: '@morpheme/nuxt-commerce',
 });
 ```
 
@@ -56,7 +56,7 @@ To customize the pages, just override the default pages by creating file in your
 
 ## Authentication
 
-Authentication is extended from [`@gits-id/nuxt-auth`](../nuxt-auth/) package.
+Authentication is extended from [`@morpheme/nuxt-auth`](../nuxt-auth/) package.
 
 ## GITS UI
 

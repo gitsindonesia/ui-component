@@ -3,7 +3,7 @@ import {useForm} from 'vee-validate';
 import {ref} from 'vue';
 import {object} from 'yup';
 import VInputRange from './VInputRange.vue';
-import VBtn from '@gits-id/button';
+import VBtn from '@morpheme/button';
 
 export default {
   title: 'Forms/InputRange',

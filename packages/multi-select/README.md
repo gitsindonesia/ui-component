@@ -7,19 +7,19 @@ Vue Multi Select Component.
 npm
 
 ```
-npm i @gits-id/multi-select
+npm i @morpheme/multi-select
 ```
 
 yarn
 
 ```
-yarn add @gits-id/multi-select
+yarn add @morpheme/multi-select
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/multi-select
+pnpm i @morpheme/multi-select
 ```
 
 ## Usage
@@ -27,8 +27,8 @@ pnpm i @gits-id/multi-select
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
-import VMultiSelect from '@gits-id/multi-select';
-import '@gits-id/multi-select/dist/style.css';
+import VMultiSelect from '@morpheme/multi-select';
+import '@morpheme/multi-select/dist/style.css';
 
 const items = ref([
   {

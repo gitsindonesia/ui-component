@@ -35,7 +35,7 @@ module.exports = {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx,vue}",
-    "./node_modules/@gits-id/**/src/**/*.{vue,js,ts,jsx,tsx}",
+    "./node_modules/@morpheme/**/src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -50,5 +50,5 @@ module.exports = {
     },
   },
   plugins: [],
-  presets: [require("@gits-id/tailwind-config/preset")],
+  presets: [require("@morpheme/tailwind-config/preset")],
 };

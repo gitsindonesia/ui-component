@@ -24,7 +24,7 @@ To use the `VInputRange` component, simply add the component to your template. T
 </LivePreview>
 
 ::: info
-The `VInputRange` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
+The `VInputRange` component is registered globally when you install with `@morpheme/ui`. So you don't need to import it manually.
 :::
 
 ### With Input

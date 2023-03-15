@@ -1,5 +1,5 @@
 {
-  "name": "@gits-id/bottom-sheet",
+  "name": "@morpheme/bottom-sheet",
   "version": "1.0.0-beta.4",
   "description": "GITS UI Bottom Sheet Component",
   "scripts": {
@@ -16,9 +16,9 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@gits-id/button": "^1.0.0-beta.3",
-    "@gits-id/icon": "^1.0.0-beta.3",
-    "@gits-id/list": "^1.0.0-beta.4",
+    "@morpheme/button": "^1.0.0-beta.3",
+    "@morpheme/icon": "^1.0.0-beta.3",
+    "@morpheme/list": "^1.0.0-beta.4",
     "vue": "^3.2.33"
   },
   "devDependencies": {

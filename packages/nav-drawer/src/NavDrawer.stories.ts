@@ -1,7 +1,7 @@
 import NavDrawer from './NavDrawer.vue';
 import type {Meta, StoryFn} from '@storybook/vue3';
 import {ref} from 'vue';
-import Button from '@gits-id/button';
+import Button from '@morpheme/button';
 import {colors} from './colors';
 import NavDrawerCustom from './stories/NavDrawerCustom.vue';
 import './NavDrawer.dark.scss';

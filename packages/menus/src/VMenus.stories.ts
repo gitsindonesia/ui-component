@@ -2,7 +2,7 @@ import {Meta, Story} from '@storybook/vue3';
 import VMenus from './VMenus.vue';
 import VMenusItem from './VMenusItem.vue';
 import vueRouter from 'storybook-vue3-router';
-import VAppBar from '@gits-id/app-bar';
+import VAppBar from '@morpheme/app-bar';
 import VMenusCustom from './stories/VMenusCustom.vue';
 import './VMenus.dark.scss';
 

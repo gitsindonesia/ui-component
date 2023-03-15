@@ -1,6 +1,6 @@
 # Default Theme
 
-The default theme in GITS UI provides a set of default values for various elements of the user interface. This includes colors and sizes for various components.
+The default theme in Morpheme UI provides a set of default values for various elements of the user interface. This includes colors and sizes for various components.
 
 ## Colors
 

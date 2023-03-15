@@ -7,26 +7,26 @@
 via npm
 
 ```
-npm i @gits-id/button
+npm i @morpheme/button
 ```
 
 via yarn
 
 ```
-yarn add @gits-id/button
+yarn add @morpheme/button
 ```
 
 via pnpm
 
 ```
-pnpm i @gits-id/button
+pnpm i @morpheme/button
 ```
 
 ## Usage
 
 ```html
 <script setup lang="ts">
-  import Button from '@gits-id/button';
+  import Button from '@morpheme/button';
 </script>
 
 <button color="primary">Click Me</button>

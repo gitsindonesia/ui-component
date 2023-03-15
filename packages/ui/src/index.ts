@@ -1,11 +1,11 @@
-import type { Plugin } from 'vue';
-import VBtn from '@gits-id/button';
-import VAlert from '@gits-id/alert';
-import VSpinner from '@gits-id/spinner';
-import VAppBar from '@gits-id/app-bar';
-import VBadge from '@gits-id/badge';
-import VBreadcrumbs from '@gits-id/breadcrumbs';
-import VCard from '@gits-id/card';
+import type {Plugin} from 'vue';
+import VBtn from '@morpheme/button';
+import VAlert from '@morpheme/alert';
+import VSpinner from '@morpheme/spinner';
+import VAppBar from '@morpheme/app-bar';
+import VBadge from '@morpheme/badge';
+import VBreadcrumbs from '@morpheme/breadcrumbs';
+import VCard from '@morpheme/card';
 import {
   VCheckbox,
   VFileUpload,
@@ -17,39 +17,43 @@ import {
   VRadioGroup,
   VFormGroup,
   VTextarea,
-} from '@gits-id/forms';
-import { VDataTable, VDataTablePagination } from '@gits-id/table';
-import { Dropdown, DropdownItem, DropdownButton } from '@gits-id/dropdown';
-import VModal from '@gits-id/modal';
-import VPagination from '@gits-id/pagination';
-import VProgressBar from '@gits-id/progress-bar';
-import VSelect from '@gits-id/select';
-import VSwitch from '@gits-id/switch';
-import VTabs from '@gits-id/tabs';
-import VTooltip from '@gits-id/tooltip';
-import VNavbar from '@gits-id/navbar';
-import VNavDrawer from '@gits-id/nav-drawer';
-import VMenu from '@gits-id/menu';
-import VMenus from '@gits-id/menus';
-import VContainer from '@gits-id/container';
-import VLogo from '@gits-id/logo';
-import VToast from '@gits-id/toast';
-import VStats from '@gits-id/stats';
-import { VCollapsible, VCollapse, VCollapsibleGroup } from '@gits-id/collapsible';
-import VMultiSelect from '@gits-id/multi-select';
+} from '@morpheme/forms';
+import {VDataTable, VDataTablePagination} from '@morpheme/table';
+import {Dropdown, DropdownItem, DropdownButton} from '@morpheme/dropdown';
+import VModal from '@morpheme/modal';
+import VPagination from '@morpheme/pagination';
+import VProgressBar from '@morpheme/progress-bar';
+import VSelect from '@morpheme/select';
+import VSwitch from '@morpheme/switch';
+import VTabs from '@morpheme/tabs';
+import VTooltip from '@morpheme/tooltip';
+import VNavbar from '@morpheme/navbar';
+import VNavDrawer from '@morpheme/nav-drawer';
+import VMenu from '@morpheme/menu';
+import VMenus from '@morpheme/menus';
+import VContainer from '@morpheme/container';
+import VLogo from '@morpheme/logo';
+import VToast from '@morpheme/toast';
+import VStats from '@morpheme/stats';
+import {
+  VCollapsible,
+  VCollapse,
+  VCollapsibleGroup,
+} from '@morpheme/collapsible';
+import VMultiSelect from '@morpheme/multi-select';
 import {
   List,
   ListItem,
   ListItemDivider,
   ListCollapse,
   ListItemHeader,
-} from '@gits-id/list';
-import { Icon } from '@gits-id/icon';
-import Avatar from '@gits-id/avatar';
-import Shimmer from '@gits-id/shimmer';
-import VAutocomplete from '@gits-id/autocomplete';
+} from '@morpheme/list';
+import {Icon} from '@morpheme/icon';
+import Avatar from '@morpheme/avatar';
+import Shimmer from '@morpheme/shimmer';
+import VAutocomplete from '@morpheme/autocomplete';
 import './style.scss';
-import { Rating } from '@gits-id/rating';
+import {Rating} from '@morpheme/rating';
 import {
   BottomSheet,
   BottomSheetHeader,
@@ -57,9 +61,14 @@ import {
   BottomSheetFooter,
   BottomSheetMenus,
   BottomSheetOverlay,
-  BottomSheetHandle
-} from '@gits-id/bottom-sheet';
-import { Stepper, StepperItem, StepperDivider, StepperNumber } from '@gits-id/stepper'
+  BottomSheetHandle,
+} from '@morpheme/bottom-sheet';
+import {
+  Stepper,
+  StepperItem,
+  StepperDivider,
+  StepperNumber,
+} from '@morpheme/stepper';
 
 const plugin: Plugin = {
   install: (app) => {
@@ -181,19 +190,19 @@ export {
   VAutocomplete,
 };
 
-export * from '@gits-id/utils';
-export * from '@gits-id/toast';
-export * from '@gits-id/app-bar/src/types';
-export * from '@gits-id/badge/src/types';
-export * from '@gits-id/breadcrumbs/src/types';
-export * from '@gits-id/table/src/types';
-export * from '@gits-id/dropdown/src/types';
-export * from '@gits-id/forms/src/input/types';
-export * from '@gits-id/navbar/src/types';
-export * from '@gits-id/tabs/src/types';
-export * from '@gits-id/modal/src/types';
-export * from '@gits-id/dropdown/src/types';
-export * from '@gits-id/bottom-sheet/src/types';
+export * from '@morpheme/utils';
+export * from '@morpheme/toast';
+export * from '@morpheme/app-bar/src/types';
+export * from '@morpheme/badge/src/types';
+export * from '@morpheme/breadcrumbs/src/types';
+export * from '@morpheme/table/src/types';
+export * from '@morpheme/dropdown/src/types';
+export * from '@morpheme/forms/src/input/types';
+export * from '@morpheme/navbar/src/types';
+export * from '@morpheme/tabs/src/types';
+export * from '@morpheme/modal/src/types';
+export * from '@morpheme/dropdown/src/types';
+export * from '@morpheme/bottom-sheet/src/types';
 export * from './component-resolver';
 export * from './colors';
 export * from './plugin';

@@ -10,7 +10,7 @@ The `VStepper` component allows you to create a stepper that guides users throug
 
 ### Basic Usage
 
-To use the `VStepper` component, you need to register it globally by installing `@gits-id/ui`. Then, you can include it in your template like this:
+To use the `VStepper` component, you need to register it globally by installing `@morpheme/ui`. Then, you can include it in your template like this:
 
 <LivePreview src="components-stepper--default" height="250" >
 
@@ -26,7 +26,7 @@ To use the `VStepper` component, you need to register it globally by installing 
 The `items` prop should be an array of objects, each representing a step in the stepper. Each step object should have at least a `title` property. You can also include a `subtitle` and a `path` property if needed.
 
 ::: info
-The `VStepper` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
+The `VStepper` component is registered globally when you install with `@morpheme/ui`. So you don't need to import it manually.
 :::
 
 ### Linear
@@ -184,15 +184,15 @@ const items = [
 
 ## Manual Installation
 
-You can also install the `Stepper` component individually via `@gits-id/stepper` package:
+You can also install the `Stepper` component individually via `@morpheme/stepper` package:
 
 ```bash
-npm i @gits-id/stepper
+npm i @morpheme/stepper
 ```
 
 ```vue
 <script setup lang="ts">
-import VStepper from '@gits-id/stepper';
+import VStepper from '@morpheme/stepper';
 </script>
 
 <template>

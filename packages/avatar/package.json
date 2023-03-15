@@ -1,5 +1,5 @@
 {
-  "name": "@gits-id/avatar",
+  "name": "@morpheme/avatar",
   "version": "1.0.0-beta.4",
   "description": "Avatar Component",
   "scripts": {
@@ -15,12 +15,12 @@
   "author": "Warsono <warsono@gits.id>",
   "license": "MIT",
   "dependencies": {
-    "@gits-id/theme": "^1.0.0-beta.3",
+    "@morpheme/theme": "^1.0.0-beta.3",
     "vue": "^3.2.33"
   },
   "devDependencies": {
-    "@gits-id/tailwind-config": "^1.0.0-beta.3",
-    "@gits-id/utils": "^1.0.0-beta.3",
+    "@morpheme/tailwind-config": "^1.0.0-beta.3",
+    "@morpheme/utils": "^1.0.0-beta.3",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
     "tailwindcss": "^3.0.23",

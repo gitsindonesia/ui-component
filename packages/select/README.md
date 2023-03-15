@@ -7,19 +7,19 @@ Vue Select Component.
 npm
 
 ```
-npm i @gits-id/select
+npm i @morpheme/select
 ```
 
 yarn
 
 ```
-yarn add @gits-id/select
+yarn add @morpheme/select
 ```
 
 pnpm
 
 ```
-pnpm add @gits-id/select
+pnpm add @morpheme/select
 ```
 
 ## Usage
@@ -27,8 +27,8 @@ pnpm add @gits-id/select
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
-import VSelect from '@gits-id/select';
-import '@gits-id/select/dist/style.css';
+import VSelect from '@morpheme/select';
+import '@morpheme/select/dist/style.css';
 
 const items = ref([
   {

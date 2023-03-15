@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Icon from '@gits-id/icon';
+import Icon from '@morpheme/icon';
 import {computed, resolveComponent, useAttrs} from 'vue';
 import {RouteLocation} from 'vue-router';
 

@@ -10,14 +10,14 @@ The `VSelect` component is a form control for presenting a list of options to th
 
 ### Basic Usage
 
-To use the `VSelect` component, you will need to import the `ref` function from `vue` and the `VSelectItem` type from `@gits-id/select`. Then, create a ref of an array of `VSelectItem` objects and pass it to the `items` prop of the `VSelect` component in your template.
+To use the `VSelect` component, you will need to import the `ref` function from `vue` and the `VSelectItem` type from `@morpheme/select`. Then, create a ref of an array of `VSelectItem` objects and pass it to the `items` prop of the `VSelect` component in your template.
 
 <LivePreview src="components-select--select" >
 
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
-import type {VSelectItem} from '@gits-id/select';
+import type {VSelectItem} from '@morpheme/select';
 
 const items = ref<VSelectItem[]>([
   {
@@ -43,7 +43,7 @@ const items = ref<VSelectItem[]>([
 </LivePreview>
 
 ::: info
-The `VSelect` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
+The `VSelect` component is registered globally when you install with `@morpheme/ui`. So you don't need to import it manually.
 :::
 
 ### Searchable
@@ -55,7 +55,7 @@ To enable search functionality in the `VSelect` component, pass the `searchable`
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
-import type {VSelectItem} from '@gits-id/select';
+import type {VSelectItem} from '@morpheme/select';
 
 const items = ref<VSelectItem[]>([
   {
@@ -89,7 +89,7 @@ To hide the check icon in the `VSelect` component, pass the `no-check-icon` prop
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
-import type {VSelectItem} from '@gits-id/select';
+import type {VSelectItem} from '@morpheme/select';
 
 const items = ref<VSelectItem[]>([
   {
@@ -123,7 +123,7 @@ To display a label for the `VSelect` component, pass the `label` prop.
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
-import type {VSelectItem} from '@gits-id/select';
+import type {VSelectItem} from '@morpheme/select';
 
 const items = ref<VSelectItem[]>([
   {
@@ -157,7 +157,7 @@ To apply a shadow effect to the `VSelect` component, pass the `shadow` prop.
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
-import type {VSelectItem} from '@gits-id/select';
+import type {VSelectItem} from '@morpheme/select';
 
 const items = ref<VSelectItem[]>([
   {
@@ -191,7 +191,7 @@ To display the `VSelect` component in an error state, pass the `error` prop.
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
-import type {VSelectItem} from '@gits-id/select';
+import type {VSelectItem} from '@morpheme/select';
 
 const items = ref<VSelectItem[]>([
   {
@@ -225,7 +225,7 @@ To enable the ability to clear the selected value in the `VSelect` component, pa
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
-import type {VSelectItem} from '@gits-id/select';
+import type {VSelectItem} from '@morpheme/select';
 
 const items = ref<VSelectItem[]>([
   {
@@ -259,7 +259,7 @@ To customize the transition effect of the `VSelect` component, pass the desired 
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
-import type {VSelectItem} from '@gits-id/select';
+import type {VSelectItem} from '@morpheme/select';
 
 const items = ref<VSelectItem[]>([
   {
@@ -293,7 +293,7 @@ To return the selected item as an object rather than just the value, pass the `r
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
-import type {VSelectItem} from '@gits-id/select';
+import type {VSelectItem} from '@morpheme/select';
 
 const items = ref<VSelectItem[]>([
   {
@@ -327,7 +327,7 @@ The `VSelect` component supports three sizes: `sm`, `md`, and `lg`. To specify t
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
-import type {VSelectItem} from '@gits-id/select';
+import type {VSelectItem} from '@morpheme/select';
 
 const items = ref<VSelectItem[]>([
   {
@@ -605,16 +605,16 @@ Customize the display for each item in the list.
 
 ## Manual Installation
 
-You can also install the `Select` component individually via `@gits-id/select` package:
+You can also install the `Select` component individually via `@morpheme/select` package:
 
 ```bash
-npm i @gits-id/select
+npm i @morpheme/select
 ```
 
 ```vue
 <script setup lang="ts">
-import VSelect from '@gits-id/select';
-import '@gits-id/select/dist/style.css';
+import VSelect from '@morpheme/select';
+import '@morpheme/select/dist/style.css';
 
 const items = ref([
   {

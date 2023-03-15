@@ -24,7 +24,7 @@ To use the `VAppBar` component, you can simply include it in your template like 
 </LivePreview>
 
 ::: info
-The `VAppBar` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
+The `VAppBar` component is registered globally when you install with `@morpheme/ui`. So you don't need to import it manually.
 :::
 
 ### Colors
@@ -167,7 +167,7 @@ Use `v-model` to show or hide the app-bar.
 ```vue{5,10}
 <script setup lang="ts">
 import {ref} from 'vue';
-import Button from '@gits-id/button';
+import Button from '@morpheme/button';
 
 const isOpen = ref(true);
 </script>
@@ -194,9 +194,9 @@ Use `transition` prop to change the default transition.
 ```vue{5,12}
 <script setup lang="ts">
 import {ref} from 'vue';
-import Button from '@gits-id/button';
+import Button from '@morpheme/button';
 // import transition styles
-import '@gits-id/ui/src/assets/transition.css';
+import '@morpheme/ui/src/assets/transition.css';
 
 const isOpen = ref(true);
 </script>
@@ -277,7 +277,7 @@ Use `hide-on-scroll` prop to hide app-bar when user scroll the page.
 ```vue{5,8,15}
 <script setup lang="ts">
 import {ref} from 'vue';
-import Button from '@gits-id/button';
+import Button from '@morpheme/button';
 
 const appBarRef = ref();
 
@@ -346,19 +346,19 @@ The `color` prop on the `VAppBar` component specifies the color for the AppBar. 
 
 ## Manual Installation
 
-You can install the `AppBar` component individually using the `@gits-id/app-bar` package.
+You can install the `AppBar` component individually using the `@morpheme/app-bar` package.
 
 To install the package using NPM, run the following command:
 
 ```bash
-npm i @gits-id/app-bar
+npm i @morpheme/app-bar
 ```
 
 To use the `AppBar` component, you will need to import it in your code:
 
 ```vue {2,6}
 <script setup lang="ts">
-import VAppBar from '@gits-id/app-bar';
+import VAppBar from '@morpheme/app-bar';
 </script>
 
 <template>
@@ -370,13 +370,13 @@ This will include the `AppBar` component in your project and allow you to use it
 
 ## Tailwind Plugin
 
-This package includes a custom Tailwind plugin for styling the `AppBar` component. If you are installing this package separately from the `@gits-id/ui` package, you will need to include the plugin in the `plugins` section of your Tailwind configuration file.
+This package includes a custom Tailwind plugin for styling the `AppBar` component. If you are installing this package separately from the `@morpheme/ui` package, you will need to include the plugin in the `plugins` section of your Tailwind configuration file.
 
 ```js{4}
 // tailwind.config.js
 module.exports = {
   content: [],
-  plugins: [require('@gits-id/tailwind-components/app-bar')],
+  plugins: [require('@morpheme/tailwind-components/app-bar')],
 };
 ```
 

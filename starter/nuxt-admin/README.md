@@ -21,7 +21,7 @@ An extensible admin template powered by Nuxt.js and GITS UI.
 ## Installation
 
 ```bash
-npm i -D @gits-id/nuxt-admin
+npm i -D @morpheme/nuxt-admin
 ```
 
 ## Usage
@@ -30,7 +30,7 @@ Add it to the `nuxt.config.ts`:
 
 ```ts
 export default defineNuxtConfig({
-  extends: '@gits-id/nuxt-admin',
+  extends: '@morpheme/nuxt-admin',
 });
 ```
 

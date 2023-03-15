@@ -3,7 +3,7 @@ import type {Meta, StoryFn} from '@storybook/vue3';
 import {
   defaultColors as colors,
   defaultSizes as sizes,
-} from '@gits-id/theme/defaultTheme';
+} from '@morpheme/theme/defaultTheme';
 import './Avatar.dark.scss';
 
 const avatar1 =
@@ -44,7 +44,7 @@ Variants.parameters = {
     source: {
       code: `
 <script setup lang="ts">
-import Avatar from '@gits-id/avatar';
+import Avatar from '@morpheme/avatar';
 </script>
 
 <template>

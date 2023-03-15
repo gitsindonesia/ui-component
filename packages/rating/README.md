@@ -5,7 +5,7 @@ Based on [vue-star-rating](https://github.com/craigh411/vue-star-rating) to work
 ## Installation
 
 ```bash
-npm i @gits-id/rating
+npm i @morpheme/rating
 ```
 
 ## Usage
@@ -13,7 +13,7 @@ npm i @gits-id/rating
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
-import {Rating} from '@gits-id/rating';
+import {Rating} from '@morpheme/rating';
 
 const value = ref(0);
 </script>

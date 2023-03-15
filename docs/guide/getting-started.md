@@ -1,22 +1,22 @@
 # Getting Started
 
-There are several ways to get started with GITS UI:
+There are several ways to get started with Morpheme UI:
 
-- Via GITS CLI (recommended)
+- Via Morpheme CLI (recommended)
 - Via Online Playground
 - Manual Setup
 
-## Via GITS CLI
+## Via Morpheme CLI
 
-The fastest way to get started with GITS UI is through our GITS CLI called `create-gits-app`. With this CLI, you create your project quickly with pre-made templates and even choose which module to add to your project.
+The fastest way to get started with Morpheme UI is through our Morpheme CLI called `create-morpheme-app`. With this CLI, you create your project quickly with pre-made templates and even choose which module to add to your project.
 
-To get started with GITS CLI, run this command in the terminal:
+To get started with Morpheme CLI, run this command in the terminal:
 
 ```
-npx create-gits-app@latest
+npx create-morpheme-app@latest
 ```
 
-![](/create-gits-app.png)
+![](/create-morpheme-app.png)
 
 Then, choose your prefered starter template or choose `Custom` to customize the module you want to add.
 
@@ -28,11 +28,11 @@ You can also try the online playground on Stackblitz.
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/gitsindonesia/ui-component/tree/main/starter/vue)
 
-### Nuxt + GITS UI Minimal
+### Nuxt + Morpheme UI Minimal
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/gitsindonesia/ui-component/tree/main/starter/nuxt-minimal)
 
-### Nuxt + GITS UI Complete Starter
+### Nuxt + Morpheme UI Complete Starter
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/gitsindonesia/nuxt-starter)
 
@@ -42,4 +42,4 @@ You can also try the online playground on Stackblitz.
 
 ## Manual Setup
 
-[Follow this instruction](/guide/installation) to setup GITS UI step-by-step to Vue project.
+[Follow this instruction](/guide/installation) to setup Morpheme UI step-by-step to Vue project.

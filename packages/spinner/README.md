@@ -7,26 +7,26 @@
 npm
 
 ```
-npm i @gits-id/spinner
+npm i @morpheme/spinner
 ```
 
 yarn
 
 ```
-yarn add @gits-id/spinner
+yarn add @morpheme/spinner
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/spinner
+pnpm i @morpheme/spinner
 ```
 
 ## Usage
 
 ```vue
 <script setup lang="ts">
-import Spinner from '@gits-id/spinner';
+import Spinner from '@morpheme/spinner';
 </script>
 
 <template>

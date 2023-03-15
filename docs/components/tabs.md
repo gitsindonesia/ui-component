@@ -38,7 +38,7 @@ const items = ref([
 </LivePreview>
 
 ::: info
-The `VTabs` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it
+The `VTabs` component is registered globally when you install with `@morpheme/ui`. So you don't need to import it
 manually.
 :::
 
@@ -543,16 +543,16 @@ Add an item to the end of the tab list
 
 ## Manual Installation
 
-You can also install the `Tabs` component individually via `@gits-id/tabs` package:
+You can also install the `Tabs` component individually via `@morpheme/tabs` package:
 
 ```bash
-npm i @gits-id/tabs
+npm i @morpheme/tabs
 ```
 
 ```vue
 <script setup lang="ts">
-import VTabs from '@gits-id/tabs';
-import '@gits-id/tabs/dist/style.css';
+import VTabs from '@morpheme/tabs';
+import '@morpheme/tabs/dist/style.css';
 </script>
 
 <template>

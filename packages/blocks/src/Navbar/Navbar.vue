@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import {ref} from 'vue';
-import Logo from '@gits-id/logo';
-import VBtn from '@gits-id/button';
-import Icon from '@gits-id/icon';
-import '@gits-id/logo/src/VLogo.scss';
+import Logo from '@morpheme/logo';
+import VBtn from '@morpheme/button';
+import Icon from '@morpheme/icon';
+import '@morpheme/logo/src/VLogo.scss';
 
 const menus = ref([
   {
@@ -89,5 +89,5 @@ const isOpen = ref(false);
 </template>
 
 <style>
-@import '@gits-id/theme/transition.css';
+@import '@morpheme/theme/transition.css';
 </style>

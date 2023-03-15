@@ -5,27 +5,27 @@
 npm
 
 ```
-npm i @gits-id/logo
+npm i @morpheme/logo
 ```
 
 yarn
 
 ```
-yarn add @gits-id/logo
+yarn add @morpheme/logo
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/logo
+pnpm i @morpheme/logo
 ```
 
 ## Usage
 
 ```vue
 <script setup lang="ts">
-import VLogo from '@gits-id/logo';
-import '@gits-id/logo/dist/style.css';
+import VLogo from '@morpheme/logo';
+import '@morpheme/logo/dist/style.css';
 </script>
 
 <template>

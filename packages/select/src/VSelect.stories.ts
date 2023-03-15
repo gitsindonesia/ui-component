@@ -1,13 +1,13 @@
 import {Story, Meta} from '@storybook/vue3';
-import {themeColors} from '@gits-id/utils';
+import {themeColors} from '@morpheme/utils';
 import VSelect from './VSelect.vue';
 import {useForm} from 'vee-validate';
 import {ref} from 'vue';
 import {object, string} from 'yup';
-import VBtn from '@gits-id/button';
-import '@gits-id/button/src/VBtn.scss';
-import '@gits-id/forms/src/forms.scss';
-import '@gits-id/forms/src/forms.dark.scss';
+import VBtn from '@morpheme/button';
+import '@morpheme/button/src/VBtn.scss';
+import '@morpheme/forms/src/forms.scss';
+import '@morpheme/forms/src/forms.dark.scss';
 import './VSelect.dark.scss';
 
 const items = [...Array(10)].map((_, index) => ({

@@ -24,7 +24,7 @@ A Nuxt theme to get authentication ready with [nuxt-auth](https://sidebase.io/nu
 ## Installation
 
 ```bash
-npm i -D @gits-id/nuxt-auth
+npm i -D @morpheme/nuxt-auth
 ```
 
 ## Usage
@@ -33,7 +33,7 @@ Add it to the `nuxt.config.ts`:
 
 ```ts
 export default defineNuxtConfig({
-  extends: '@gits-id/nuxt-auth',
+  extends: '@morpheme/nuxt-auth',
 });
 ```
 

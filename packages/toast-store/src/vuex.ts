@@ -1,5 +1,5 @@
-import { Module } from 'vuex';
-import type { VToastProps } from '@gits-id/toast';
+import {Module} from 'vuex';
+import type {VToastProps} from '@morpheme/toast';
 
 export interface ToastState {
   show: boolean;
@@ -18,10 +18,10 @@ export const toastModule = <R>(): Module<ToastState, R> => ({
     },
   }),
   mutations: {
-    show(state, { message, options }: { message: string; options: VToastProps }) {
+    show(state, {message, options}: {message: string; options: VToastProps}) {
       state.message = message;
       state.show = true;
-      state.options = { ...state.options, ...options };
+      state.options = {...state.options, ...options};
     },
     reset(state) {
       state.show = false;

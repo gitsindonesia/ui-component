@@ -7,19 +7,19 @@ Rich Text Editor Based on Vue 3 CKEditor.
 via npm
 
 ```
-npm i @gits-id/editor
+npm i @morpheme/editor
 ```
 
 via yarn
 
 ```
-yarn add @gits-id/editor
+yarn add @morpheme/editor
 ```
 
 via pnpm
 
 ```
-pnpm i @gits-id/editor
+pnpm i @morpheme/editor
 ```
 
 ## Usage
@@ -27,8 +27,8 @@ pnpm i @gits-id/editor
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
-import VEditor from '@gits-id/editor';
-import '@gits-id/editor/dist/style.css';
+import VEditor from '@morpheme/editor';
+import '@morpheme/editor/dist/style.css';
 
 const content = ref('');
 </script>

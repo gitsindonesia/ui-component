@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {computed, toRefs, ref, watch} from 'vue';
-import Icon from '@gits-id/icon';
+import Icon from '@morpheme/icon';
 
 const props = defineProps({
   modelValue: {

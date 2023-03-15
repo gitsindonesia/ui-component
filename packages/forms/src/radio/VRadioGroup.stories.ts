@@ -2,10 +2,10 @@ import {Meta, Story} from '@storybook/vue3';
 import {useForm} from 'vee-validate';
 import {object, number, string} from 'yup';
 import VRadioGroup from './VRadioGroup.vue';
-import VBtn from '@gits-id/button';
+import VBtn from '@morpheme/button';
 import {ref} from 'vue';
-import '@gits-id/forms/src/forms.scss';
-import '@gits-id/forms/src/forms.dark.scss';
+import '@morpheme/forms/src/forms.scss';
+import '@morpheme/forms/src/forms.dark.scss';
 import './VRadioGroup.dark.scss';
 
 const items = [...Array(5)].map((v, k) => ({

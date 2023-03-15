@@ -18,7 +18,7 @@ export default defineConfig({
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
-      external: ['vue', '@gits-id/toast', 'pinia', 'vuex'],
+      external: ['vue', '@morpheme/toast', 'pinia', 'vuex'],
       output: {
         // Provide global variables to use in the UMD build
         // for externalized deps

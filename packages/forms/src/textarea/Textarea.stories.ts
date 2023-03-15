@@ -1,7 +1,7 @@
 import {Meta, Story} from '@storybook/vue3';
-import {sizes} from '@gits-id/utils';
+import {sizes} from '@morpheme/utils';
 import VTextarea from './Textarea.vue';
-import VBtn from '@gits-id/button';
+import VBtn from '@morpheme/button';
 import {object, string} from 'yup';
 import {useForm} from 'vee-validate';
 import {ref} from 'vue';

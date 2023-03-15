@@ -40,7 +40,7 @@ const items = [
 </LivePreview>
 
 ::: info
-The `VMenus` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
+The `VMenus` component is registered globally when you install with `@morpheme/ui`. So you don't need to import it manually.
 :::
 
 ### Right-Aligned Menus
@@ -113,7 +113,7 @@ You can also use the `VMenus` component within the `VAppBar` component:
 
 ```vue
 <script setup lang="ts">
-import VAppBar from '@gits-id/app-bar';
+import VAppBar from '@morpheme/app-bar';
 
 const items = [
   {
@@ -221,7 +221,7 @@ You can also customize the menus style using `popper-class`, `items-class`, `ite
 
 ```vue {10-15}
 <script setup lang="ts">
-import VAppBar from '@gits-id/app-bar';
+import VAppBar from '@morpheme/app-bar';
 </script>
 
 <template>
@@ -418,23 +418,23 @@ None
 
 ## Manual Installation
 
-You can also install the `Menus` component individually via `@gits-id/menus` package:
+You can also install the `Menus` component individually via `@morpheme/menus` package:
 
 ```bash
 # with npm
-npm install @gits-id/menus
+npm install @morpheme/menus
 # or with yarn
-yarn add @gits-id/menus
+yarn add @morpheme/menus
 # or with pnpm
-pnpm add @gits-id/menus
+pnpm add @morpheme/menus
 ```
 
 ```vue
 <script setup lang="ts">
-import VMenus from '@gits-id/menus';
-import '@gits-id/menus/dist/style.css';
+import VMenus from '@morpheme/menus';
+import '@morpheme/menus/dist/style.css';
 // or use SCSS styles
-// import '@gits-id/menus/src/VMenus.scss';
+// import '@morpheme/menus/src/VMenus.scss';
 </script>
 
 <template>

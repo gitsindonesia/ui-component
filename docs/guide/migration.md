@@ -10,14 +10,14 @@
 
 ## How to upgrade
 
-Bump `@gits-id/ui` or `@gits-id/ui-nuxt` (for Nuxt 3) version to latest `^0.11.2` and run `yarn install` or `npm install`
+Bump `@morpheme/ui` or `@morpheme/ui-nuxt` (for Nuxt 3) version to latest `^0.11.2` and run `yarn install` or `npm install`
 
 Vue:
 
 ```json
 {
   "dependencies": {
-    "@gits-id/ui": "^0.11.2"
+    "@morpheme/ui": "^0.11.2"
   }
 }
 ```
@@ -27,7 +27,7 @@ Nuxt:
 ```json
 {
   "dependencies": {
-    "@gits-id/ui-nuxt": "^0.11.2"
+    "@morpheme/ui-nuxt": "^0.11.2"
   }
 }
 ```
@@ -36,13 +36,13 @@ Nuxt:
 
 ## BREAKING CHANGE
 
-Since `v0.10.5`, in order add SSR Support, `VEditor` must be imported from `@gits-id/editor`.
+Since `v0.10.5`, in order add SSR Support, `VEditor` must be imported from `@morpheme/editor`.
 
-To upgrade, change `VEditor` import from `@gits-id/ui` to `@gits-id/editor`.
+To upgrade, change `VEditor` import from `@morpheme/ui` to `@morpheme/editor`.
 
 ```
-- import {VEditor} from '@gits-id/ui/editor';
-+ import {VEditor} from '@gits-id/editor';
+- import {VEditor} from '@morpheme/ui/editor';
++ import {VEditor} from '@morpheme/editor';
 ```
 
 **Optimizing bundle size**
@@ -53,7 +53,7 @@ To optimize bundle size of `VEditor` you can code-split the component using `def
 <script setup lang="ts">
   import {defineAsyncComponent} from 'vue';
 
-  const VEditor = defineAsyncComponent(() => import('@gits-id/editor'));
+  const VEditor = defineAsyncComponent(() => import('@morpheme/editor'));
 </script>
 
 <template>
@@ -63,9 +63,9 @@ To optimize bundle size of `VEditor` you can code-split the component using `def
 
 ## `v0.10.4`
 
-- As of an experimental SSR support, change `VEditor` import from `@gits-id/ui` to `@gits-id/ui/editor`.
+- As of an experimental SSR support, change `VEditor` import from `@morpheme/ui` to `@morpheme/ui/editor`.
 
 ```
-- import {VEditor} from '@gits-id/ui';
-+ import {VEditor} from '@gits-id/ui/editor';
+- import {VEditor} from '@morpheme/ui';
++ import {VEditor} from '@morpheme/ui/editor';
 ```

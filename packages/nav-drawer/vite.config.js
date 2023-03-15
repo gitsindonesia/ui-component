@@ -20,12 +20,12 @@ export default defineConfig({
       // into your library
       external: [
         'vue',
-        '@gits-id/menu',
-        '@gits-id/logo',
-        '@gits-id/utils',
-        '@gits-id/navbar',
-        '@gits-id/button',
-        '@gits-id/icon',
+        '@morpheme/menu',
+        '@morpheme/logo',
+        '@morpheme/utils',
+        '@morpheme/navbar',
+        '@morpheme/button',
+        '@morpheme/icon',
       ],
       output: {
         // Provide global variables to use in the UMD build

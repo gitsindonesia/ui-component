@@ -2,7 +2,7 @@
 import {Icon as Iconify} from '@iconify/vue/dist/offline';
 import {loadIcon} from '@iconify/vue';
 import {computed, ref, watch} from 'vue';
-import {type DefaultSizes, defaultSizes} from '@gits-id/theme/defaultTheme';
+import {type DefaultSizes, defaultSizes} from '@morpheme/theme/defaultTheme';
 
 export type Props = {
   name: string;

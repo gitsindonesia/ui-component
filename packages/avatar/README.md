@@ -5,19 +5,19 @@
 npm
 
 ```
-npm i @gits-id/avatar
+npm i @morpheme/avatar
 ```
 
 yarn
 
 ```
-yarn add @gits-id/avatar
+yarn add @morpheme/avatar
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/avatar
+pnpm i @morpheme/avatar
 ```
 
 ## Usage
@@ -25,9 +25,9 @@ pnpm i @gits-id/avatar
 ```vue
 <script setup lang="ts">
 // import component
-import Avatar from '@gits-id/avatar';
+import Avatar from '@morpheme/avatar';
 // import style
-import '@gits-id/avatar/dist/style.css';
+import '@morpheme/avatar/dist/style.css';
 </script>
 
 <template>

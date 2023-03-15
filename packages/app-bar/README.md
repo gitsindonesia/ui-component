@@ -9,19 +9,19 @@ Install with your prefered package manager.
 With NPM:
 
 ```
-npm i @gits-id/alert
+npm i @morpheme/alert
 ```
 
 With Yarn:
 
 ```
-yarn add @gits-id/alert
+yarn add @morpheme/alert
 ```
 
 With PNPM:
 
 ```
-pnpm i @gits-id/alert
+pnpm i @morpheme/alert
 ```
 
 ## Usage
@@ -31,9 +31,9 @@ To use the component, you can simply include it in your template like this:
 ```vue
 <script setup lang="ts">
 // import component
-import AppBar from '@gits-id/app-bar';
+import AppBar from '@morpheme/app-bar';
 // import styles
-import '@gits-id/app-bar/dist/style.css';
+import '@morpheme/app-bar/dist/style.css';
 </script>
 
 <template>

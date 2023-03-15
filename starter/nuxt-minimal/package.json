@@ -1,5 +1,5 @@
 {
-  "name": "@gits-id/nuxt-minimal",
+  "name": "@morpheme/nuxt-minimal",
   "description": "Lightweight Nuxt.js template with GITS UI",
   "version": "0.2.0",
   "keywords": [
@@ -22,7 +22,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@gits-id/ui-nuxt": "^1.0.0-beta.4"
+    "@morpheme/ui-nuxt": "^1.0.0-beta.4"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.4.1",

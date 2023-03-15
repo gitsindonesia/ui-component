@@ -33,7 +33,7 @@ const secondary = {
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
-  content: ['./node_modules/@gits-id/**/src/**/*.{vue,js,ts,jsx,tsx,css}'],
+  content: ['./node_modules/@morpheme/**/src/**/*.{vue,js,ts,jsx,tsx,css}'],
   theme: {
     extend: {
       colors: {
@@ -46,5 +46,5 @@ module.exports = {
       },
     },
   },
-  presets: [require('@gits-id/tailwind-config/preset')],
+  presets: [require('@morpheme/tailwind-config/preset')],
 };

@@ -37,7 +37,7 @@ const items = [
 </LivePreview>
 
 ::: info
-The `VMultiSelect` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
+The `VMultiSelect` component is registered globally when you install with `@morpheme/ui`. So you don't need to import it manually.
 :::
 
 ### Clearable
@@ -563,10 +563,10 @@ Slot Props
 
 ## Manual Installation
 
-You can also install the `Multi Select` component individually via `@gits-id/multi-select` package:
+You can also install the `Multi Select` component individually via `@morpheme/multi-select` package:
 
 ```bash
-npm i @gits-id/multi-select
+npm i @morpheme/multi-select
 ```
 
 Then, use it in your component:
@@ -574,8 +574,8 @@ Then, use it in your component:
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
-import VMultiSelect from '@gits-id/multi-select';
-import '@gits-id/multi-select/dist/style.css';
+import VMultiSelect from '@morpheme/multi-select';
+import '@morpheme/multi-select/dist/style.css';
 
 const items = ref([
   {

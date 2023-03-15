@@ -14,7 +14,7 @@ import {
   onBeforeUnmount,
   computed,
 } from 'vue';
-import type {DefaultColors, DefaultShadows} from '@gits-id/theme/defaultTheme';
+import type {DefaultColors, DefaultShadows} from '@morpheme/theme/defaultTheme';
 
 export type AppBarColors = DefaultColors | 'transparent' | string;
 

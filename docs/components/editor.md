@@ -29,7 +29,7 @@ const value = ref('');
 </LivePreview>
 
 ::: info
-The `VEditor` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
+The `VEditor` component is registered globally when you install with `@morpheme/ui`. So you don't need to import it manually.
 :::
 
 ### Label
@@ -199,15 +199,15 @@ None
 
 ## Manual Installation
 
-You can also install the `Editor` component individually via `@gits-id/editor` package:
+You can also install the `Editor` component individually via `@morpheme/editor` package:
 
 ```bash
-yarn install @gits-id/editor
+yarn install @morpheme/editor
 ```
 
 ```vue
 <script setup lang="ts">
-import VEditor from '@gits-id/editor';
+import VEditor from '@morpheme/editor';
 </script>
 
 <template>

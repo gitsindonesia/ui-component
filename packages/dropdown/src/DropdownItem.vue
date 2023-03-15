@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {MenuItem} from '@headlessui/vue';
 import {computed, resolveComponent, useAttrs} from 'vue';
-import VIcon from '@gits-id/icon';
+import VIcon from '@morpheme/icon';
 
 const props = withDefaults(
   defineProps<{

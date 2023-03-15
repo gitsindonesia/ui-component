@@ -1,7 +1,7 @@
 <script setup>
 import {toRefs} from 'vue';
-import VBtn from '@gits-id/button';
-import {VInput} from '@gits-id/forms';
+import VBtn from '@morpheme/button';
+import {VInput} from '@morpheme/forms';
 import {string, object, ref as YupRef} from 'yup';
 import {useForm} from 'vee-validate';
 

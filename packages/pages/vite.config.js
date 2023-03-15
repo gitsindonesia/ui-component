@@ -20,10 +20,10 @@ export default defineConfig({
       // into your library
       external: [
         'vue',
-        '@gits-id/icon',
-        '@gits-id/button',
-        '@gits-id/forms',
-        '@gits-id/alert',
+        '@morpheme/icon',
+        '@morpheme/button',
+        '@morpheme/forms',
+        '@morpheme/alert',
         'vee-validate',
         'yup',
         '@iconify/vue',

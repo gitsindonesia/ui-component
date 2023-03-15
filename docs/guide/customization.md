@@ -2,7 +2,7 @@
 
 ## Brand Colors
 
-GITS UI includes 6 named colors with shades ranging from 50 to 900, similar to Tailwind CSS. These colors are:
+Morpheme UI includes 6 named colors with shades ranging from 50 to 900, similar to Tailwind CSS. These colors are:
 
 - primary
 - secondary
@@ -15,14 +15,14 @@ You can view the full set of colors [here](https://gits-ui.web.app/?path=/story/
 
 ## Tailwind Preset
 
-GITS UI comes with a default GITS Design as a Tailwind Preset via `@gits-id/tailwind-config/preset`.
+Morpheme UI comes with a default Morpheme Design as a Tailwind Preset via `@morpheme/tailwind-config/preset`.
 
 ## Creating Your Own Preset
 
 To create your own preset, you can copy the default preset to your project with the following command:
 
 ```bash
-cp ./node_modules/@gits-id/tailwind-config/preset.js ./src/preset.js
+cp ./node_modules/@morpheme/tailwind-config/preset.js ./src/preset.js
 ```
 
 This will create a `preset.js` file in the `src` directory that you can then modify to fit your needs. For example, you can customize the colors as follows:
@@ -30,7 +30,7 @@ This will create a `preset.js` file in the `src` directory that you can then mod
 ```js
 const colors = require('tailwindcss/colors');
 
-// default GITS Color
+// default Morpheme Color
 const primary = {
   DEFAULT: '#28A0F6',
   50: '#D8EEFD',
@@ -45,7 +45,7 @@ const primary = {
   900: '#02233B',
 };
 
-// default GITS Color
+// default Morpheme Color
 const secondary = {
   DEFAULT: '#FF8B49',
   50: '#FFFFFF',
@@ -73,7 +73,7 @@ module.exports = {
       },
     },
   },
-  presets: [require('@gits-id/tailwind-config/preset')],
+  presets: [require('@morpheme/tailwind-config/preset')],
 };
 ```
 
@@ -85,7 +85,7 @@ module.exports = {
   content: [
     './index.html',
     './src/**/*.{js,ts,jsx,tsx,vue}',
-    './node_modules/@gits-id/**/src/**/*.{vue,js,ts,jsx,tsx}',
+    './node_modules/@morpheme/**/src/**/*.{vue,js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {},

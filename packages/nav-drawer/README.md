@@ -8,13 +8,13 @@ Install with your own prefered package manager:
 
 ```
 # with NPM
-npm i @gits-id/nav-drawer
+npm i @morpheme/nav-drawer
 
 # Or with Yarn
-yarn add @gits-id/nav-drawer
+yarn add @morpheme/nav-drawer
 
 # Or with PNPM
-pnpm i @gits-id/nav-drawer
+pnpm i @morpheme/nav-drawer
 ```
 
 ## Usage
@@ -22,8 +22,8 @@ pnpm i @gits-id/nav-drawer
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
-import VNavDrawer from '@gits-id/nav-drawer';
-import '@gits-id/nav-drawer/dist/style.css';
+import VNavDrawer from '@morpheme/nav-drawer';
+import '@morpheme/nav-drawer/dist/style.css';
 
 const isOpen = ref(true);
 </script>

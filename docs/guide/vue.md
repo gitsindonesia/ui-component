@@ -1,6 +1,6 @@
 # Vue Setup Guide
 
-This section will help you build a basic Vue app with GITS UI from ground up. If you already have an existing project and would like to keep documentation inside the project, start from Step 2.
+This section will help you build a basic Vue app with Morpheme UI from ground up. If you already have an existing project and would like to keep documentation inside the project, start from Step 2.
 
 ::: tip
 Checkout `create-gits-app` to setup your application quickly
@@ -22,12 +22,12 @@ yarn install
 
 ![Step 1](/getting-started-1.png)
 
-## Step 2. Install Tailwind CSS and GITS UI
+## Step 2. Install Tailwind CSS and Morpheme UI
 
-Install `@gits-id/ui` and `tailwindcss` package:
+Install `@morpheme/ui` and `tailwindcss` package:
 
 ```bash
-yarn add @gits-id/ui tailwindcss postcss autoprefixer
+yarn add @morpheme/ui tailwindcss postcss autoprefixer
 ```
 
 ::: info
@@ -45,7 +45,7 @@ Next, generate the tailwind config files:
 npx tailwindcss init -p
 ```
 
-Next, register the GITS UI preset and add the component folders the `content` section in the `tailwind.config.cjs` file:
+Next, register the Morpheme UI preset and add the component folders the `content` section in the `tailwind.config.cjs` file:
 
 ```js{6,12}
 /** @type {import('tailwindcss').Config} */
@@ -53,13 +53,13 @@ module.exports = {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx,vue}",
-    "./node_modules/@gits-id/**/src/**/*.{vue,js,ts,jsx,tsx}",
+    "./node_modules/@morpheme/**/src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {},
   },
   plugins: [],
-  presets: [require("@gits-id/tailwind-config/preset")],
+  presets: [require("@morpheme/tailwind-config/preset")],
 };
 ```
 
@@ -71,7 +71,7 @@ Next, add the Tailwind directives to `src/assets/main.css`:
 @tailwind utilities;
 ```
 
-Next, open `src/main.ts`. Import and use the `GitsUi` plugin from `@gits-id/ui` and also load the styles from `@gits-id/ui/styles` for CSS bundle or use `@gits-id/ui/styles.scss` if you want to use the SCSS version instead.
+Next, open `src/main.ts`. Import and use the `GitsUi` plugin from `@morpheme/ui` and also load the styles from `@morpheme/ui/styles` for CSS bundle or use `@morpheme/ui/styles.scss` if you want to use the SCSS version instead.
 
 ```ts{7,10}
 // main.ts
@@ -80,13 +80,13 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 
-import GitsUi from "@gits-id/ui";
+import GitsUi from "@morpheme/ui";
 
 // load CSS bundle
-import '@gits-id/ui/styles';
+import '@morpheme/ui/styles';
 
 // or uncomment this line to load SCSS styles
-// import '@gits-id/ui/styles.scss';
+// import '@morpheme/ui/styles.scss';
 
 const app = createApp(App);
 
@@ -103,7 +103,7 @@ Open `src/views/HomeView.vue` and replace the existing content with the code bel
 ```vue
 <template>
   <div class="container mx-auto p-6 space-y-3">
-    <h1 class="text-3xl font-bold text-gray-800">GITS UI</h1>
+    <h1 class="text-3xl font-bold text-gray-800">Morpheme UI</h1>
 
     <VAlert color="error"> Alert text </VAlert>
 
@@ -132,6 +132,6 @@ If everything goes well, you should see something like in the browser:
 
 ## What's Next ?
 
-Congratulation! You have completed setup your application with GITS UI! Now you can start creating your application with ease.
+Congratulation! You have completed setup your application with Morpheme UI! Now you can start creating your application with ease.
 
 If you don't want to repeat this step in the future, you can save and push the project to your GitHub or somewhere else as your personal starter kit and use it when needed. You can also you the official [Nuxt Starter](https://github.com/gitsindonesia/nuxt-starter) and Vue Starter [here](https://github.com/gitsindonesia/ui-component/tree/main/starter/vue).

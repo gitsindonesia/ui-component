@@ -367,22 +367,22 @@ A slot for placing the content such as `VBottomSheetHeader`, `VBottomSheetFooter
 
 ## Manual Installation
 
-You can also install the `BottomSheet` component individually via `@gits-id/bottom-sheet` package:
+You can also install the `BottomSheet` component individually via `@morpheme/bottom-sheet` package:
 
 ```bash
-npm i @gits-id/bottom-sheet
+npm i @morpheme/bottom-sheet
 ```
 
 ```vue
 <script setup lang="ts">
-import {BottomSheet, BottomSheetBody} from '@gits-id/bottom-sheet';
-import '@gits-id/bottom-sheet/dist/style.css'
+import {BottomSheet, BottomSheetBody} from '@morpheme/bottom-sheet';
+import '@morpheme/bottom-sheet/dist/style.css'
 
 // or load SASS styles
-// import '@gits-id/bottom-sheet/src/BottomSheet.scss'
+// import '@morpheme/bottom-sheet/src/BottomSheet.scss'
 
 // load dark mode styles if you want to support dark mode
-// import '@gits-id/bottom-sheet/src/BottomSheet.dark.scss'
+// import '@morpheme/bottom-sheet/src/BottomSheet.dark.scss'
 </script>
 
 <template>

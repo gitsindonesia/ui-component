@@ -2,10 +2,10 @@ import VSwitch from '../src/VSwitch.vue';
 import {Meta, Story} from '@storybook/vue3';
 import {useForm} from 'vee-validate';
 import {object, boolean} from 'yup';
-import VBtn from '@gits-id/button';
+import VBtn from '@morpheme/button';
 import {ref} from 'vue';
-import '@gits-id/forms/src/forms.scss';
-import '@gits-id/forms/src/forms.dark.scss';
+import '@morpheme/forms/src/forms.scss';
+import '@morpheme/forms/src/forms.dark.scss';
 import './VSwitch.dark.scss';
 
 export default {

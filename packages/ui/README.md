@@ -7,19 +7,19 @@ Free and open-source UI Component for Vue 3.
 npm
 
 ```
-npm i @gits-id/ui
+npm i @morpheme/ui
 ```
 
 yarn
 
 ```
-yarn add @gits-id/ui
+yarn add @morpheme/ui
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/ui
+pnpm i @morpheme/ui
 ```
 
 ## Usage
@@ -27,10 +27,10 @@ pnpm i @gits-id/ui
 ```ts
 // file: main.ts
 
-import GitsUI from '@gits-id/ui';
-import '@gits-id/ui/styles';
+import GitsUI from '@morpheme/ui';
+import '@morpheme/ui/styles';
 // or load SCSS styles
-// import '@gits-id/ui/styles.scss';
+// import '@morpheme/ui/styles.scss';
 
 const app = createApp(App);
 

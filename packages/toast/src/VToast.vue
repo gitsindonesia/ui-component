@@ -6,8 +6,8 @@ export default {
 
 <script setup lang="ts">
 import {computed, PropType, ref, toRefs, watch} from 'vue';
-import Icon from '@gits-id/icon';
-import {DefaultColors} from '@gits-id/theme/defaultTheme';
+import Icon from '@morpheme/icon';
+import {DefaultColors} from '@morpheme/theme/defaultTheme';
 import {ToastPlacement} from './types';
 
 export type ToastTypes = 'success' | 'error' | 'warning' | 'question';

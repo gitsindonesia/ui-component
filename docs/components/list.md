@@ -31,7 +31,7 @@ To use the `VList` component, just use the component in your template like so:
 </LivePreview>
 
 ::: info
-The `VList` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
+The `VList` component is registered globally when you install with `@morpheme/ui`. So you don't need to import it manually.
 :::
 
 ### Hover Effect
@@ -140,9 +140,9 @@ The `VList` component allows you to hide the text of a `VListItem`. You can use 
 
 ```vue
 <script setup lang="ts">
-import {VList, VListItem} from '@gits-id/ui';
+import {VList, VListItem} from '@morpheme/ui';
 import {ref} from 'vue';
-import VBtn from '@gits-id/button';
+import VBtn from '@morpheme/button';
 
 const hideText = ref(true);
 </script>
@@ -454,7 +454,7 @@ This example shows how to use `VList` inside `VNavDrawer` component to create si
 
 ```vue
 <script setup lang="ts">
-import {VList, VListItem, VListCollapse, VNavDrawer} from '@gits-id/ui';
+import {VList, VListItem, VListCollapse, VNavDrawer} from '@morpheme/ui';
 import {ref} from 'vue';
 
 const isOpen = ref(false);
@@ -516,7 +516,7 @@ const menus = ref([
     class="absolute"
   >
     <template #logo.mini>
-      <div class="text-center font-semibold">GITS</div>
+      <div class="text-center font-semibold">Morpheme</div>
     </template>
     <template #menus>
       <VList>
@@ -986,20 +986,20 @@ View full styles [here](https://github.com/gitsindonesia/ui-component/blob/main/
 
 ## Manual Installation
 
-You can also install the `VList` component individually via `@gits-id/list` package:
+You can also install the `VList` component individually via `@morpheme/list` package:
 
 ```bash
-npm i @gits-id/list
+npm i @morpheme/list
 ```
 
 Then, use it in the template like so:
 
 ```vue
 <script setup lang="ts">
-import {VList, VListItem} from '@gits-id/list';
-import '@gits-id/list/dist/style.css';
+import {VList, VListItem} from '@morpheme/list';
+import '@morpheme/list/dist/style.css';
 // Or use the SCSS styles
-// import '@gits-id/list/src/List.scss';
+// import '@morpheme/list/src/List.scss';
 </script>
 
 <template>

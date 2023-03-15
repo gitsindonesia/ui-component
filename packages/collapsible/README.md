@@ -7,19 +7,19 @@
 npm
 
 ```
-npm i @gits-id/collapsible
+npm i @morpheme/collapsible
 ```
 
 yarn
 
 ```
-yarn add @gits-id/collapsible
+yarn add @morpheme/collapsible
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/collapsible
+pnpm i @morpheme/collapsible
 ```
 
 ## Usage
@@ -27,7 +27,7 @@ pnpm i @gits-id/collapsible
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
-import Collapsible from '@gits-id/collapsible';
+import Collapsible from '@morpheme/collapsible';
 
 const isOpen = ref(false);
 </script>

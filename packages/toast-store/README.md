@@ -1,16 +1,16 @@
 # Toast Store
 
-Store module for @gits-id/toast.
+Store module for @morpheme/toast.
 
 ## Installation
 
 ```
 # With NPM
-npm i @gits-id/toast
+npm i @morpheme/toast
 # With Yarn
-yarn add @gits-id/toast
+yarn add @morpheme/toast
 # With PNPM
-pnpm add @gits-id/toast
+pnpm add @morpheme/toast
 ```
 
 ## Usage
@@ -18,7 +18,7 @@ pnpm add @gits-id/toast
 ### Composition API
 
 ```ts
-import {useToast} from '@gits-id/toast-store'
+import {useToast} from '@morpheme/toast-store'
 
 const toast = useToast()
 toast.show()
@@ -31,7 +31,7 @@ toast.confirmDelete()
 ```ts
 // file: stores/toast.ts
 
-import {useToastStore} from '@gits-id/toast-store'
+import {useToastStore} from '@morpheme/toast-store'
 
 const toast = useToastStore()
 
@@ -44,7 +44,7 @@ toast.confirmDelete()
 
 ```ts
 // file: store/index.ts
-import {toastModule} from '@gits-id/toast-store'
+import {toastModule} from '@morpheme/toast-store'
 
 export default new Vuex({
   modules: {

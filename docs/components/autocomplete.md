@@ -24,7 +24,7 @@ To use the `VAutocomplete` component, simply add it to your template:
 </LivePreview>
 
 ::: info
-The `VAutocomplete` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
+The `VAutocomplete` component is registered globally when you install with `@morpheme/ui`. So you don't need to import it manually.
 :::
 
 ### Clearable
@@ -52,7 +52,7 @@ You can use the `VAutocomplete` component with form validation libraries like `v
 import {ref} from 'vue';
 import {useForm} from 'vee-validate';
 import {object} from 'yup';
-import type {Item} from '@gits-id/autocomplete';
+import type {Item} from '@morpheme/autocomplete';
 
 const schema = object({
   genre: object().required().label('Genre'),
@@ -135,7 +135,7 @@ Here is an example of using the `update:modelValue` event:
 
 ```vue
 <script setup lang="ts">
-import type {Item} from '@gits-id/autocomplete';
+import type {Item} from '@morpheme/autocomplete';
 
 function onModelValueChange(value: Item) {
   console.log('Selected item:', value);
@@ -175,18 +175,18 @@ None
 
 ## Manual Installation
 
-To install the `VAutocomplete` component individually, you can use the `@gits-id/autocomplete` package:
+To install the `VAutocomplete` component individually, you can use the `@morpheme/autocomplete` package:
 
 ```bash
-npm i @gits-id/autocomplete
+npm i @morpheme/autocomplete
 ```
 
 You can then use the `VAutocomplete` component in your Vue templates like this:
 
 ```vue
 <script setup lang="ts">
-import VAutocomplete from '@gits-id/autocomplete';
-import '@gits-id/autocomplete/dist/style.css';
+import VAutocomplete from '@morpheme/autocomplete';
+import '@morpheme/autocomplete/dist/style.css';
 </script>
 
 <template>

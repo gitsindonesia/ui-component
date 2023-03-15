@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Icon from '@gits-id/icon';
+import Icon from '@morpheme/icon';
 </script>
 
 <template>

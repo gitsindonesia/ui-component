@@ -1,17 +1,17 @@
-# Using GITS UI with Nuxt
+# Using Morpheme UI with Nuxt
 
-GITS UI is designed to work seamlessly with Nuxt projects. You can easily install it in a new or existing Nuxt project, or use our starter project to get started faster.
+Morpheme UI is designed to work seamlessly with Nuxt projects. You can easily install it in a new or existing Nuxt project, or use our starter project to get started faster.
 
 ## Compatibility
 
-Currently, **GITS UI only support Nuxt 3**.
+Currently, **Morpheme UI only support Nuxt 3**.
 
 ## Installation
 
-1. Install Nuxt GITS UI by running the following command:
+1. Install Nuxt Morpheme UI by running the following command:
 
 ```bash
-yarn add @gits-id/ui-nuxt
+yarn add @morpheme/ui-nuxt
 ```
 
 2. Install `@nuxtjs/tailwindcss`:
@@ -30,9 +30,9 @@ yarn add --dev sass
 
 ```ts
 export default defineNuxtConfig({
-  modules: ['@gits-id/ui-nuxt', '@nuxtjs/tailwindcss'],
+  modules: ['@morpheme/ui-nuxt', '@nuxtjs/tailwindcss'],
   gitsUi: {
-    // configuration options for GITS UI go here
+    // configuration options for Morpheme UI go here
   },
 });
 ```
@@ -43,12 +43,12 @@ export default defineNuxtConfig({
 npx tailwindcss init
 ```
 
-6. Scan the `@gits-id/*` folders inside the `node_modules` by adding `'./node_modules/@gits-id/**/src/**/*.{vue,js,ts,jsx,tsx,css}'` to the `content` block in your Tailwind config. Also, add the default preset to the `presets` option.
+6. Scan the `@morpheme/*` folders inside the `node_modules` by adding `'./node_modules/@morpheme/**/src/**/*.{vue,js,ts,jsx,tsx,css}'` to the `content` block in your Tailwind config. Also, add the default preset to the `presets` option.
 
 ```js {2,3}
 module.exports = {
-  content: ['./node_modules/@gits-id/**/src/**/*.{vue,js,ts,jsx,tsx,css}'],
-  presets: [require('@gits-id/tailwind-config/preset')],
+  content: ['./node_modules/@morpheme/**/src/**/*.{vue,js,ts,jsx,tsx,css}'],
+  presets: [require('@morpheme/tailwind-config/preset')],
 };
 ```
 

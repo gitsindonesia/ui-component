@@ -9,19 +9,19 @@ Install with your prefered Package Manager.
 npm
 
 ```
-npm i @gits-id/quill-editor
+npm i @morpheme/quill-editor
 ```
 
 yarn
 
 ```
-yarn add @gits-id/quill-editor
+yarn add @morpheme/quill-editor
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/quill-editor
+pnpm i @morpheme/quill-editor
 ```
 
 ## Usage
@@ -30,8 +30,8 @@ pnpm i @gits-id/quill-editor
 
 ```html
 <script setup lang="ts">
-  import {VQuillEditor} from '@gits-id/quill-editor';
-  import '@gits-id/quill-editor/dist/style.css';
+  import {VQuillEditor} from '@morpheme/quill-editor';
+  import '@morpheme/quill-editor/dist/style.css';
 
   const content = ref('');
 </script>
@@ -51,11 +51,11 @@ pnpm i @gits-id/quill-editor
 
 ```html
 <script setup lang="ts">
-  import {VQuillEditor} from '@gits-id/quill-editor';
+  import {VQuillEditor} from '@morpheme/quill-editor';
   import {useForm} from 'vee-validate';
   import {object, string} from 'yup';
-  import VBtn from '@gits-id/button';
-  import '@gits-id/quill-editor/dist/style.css';
+  import VBtn from '@morpheme/button';
+  import '@morpheme/quill-editor/dist/style.css';
 
   const schema = object({
     content: string().required().label('Content'),

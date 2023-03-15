@@ -1,11 +1,11 @@
-import { useStore } from 'vuex';
-import { VToastProps } from '@gits-id/toast';
+import {useStore} from 'vuex';
+import {VToastProps} from '@morpheme/toast';
 
 export const useToast = () => {
   const store = useStore();
 
   const show = (message: string, options?: Partial<VToastProps>) => {
-    store.commit('toast/show', { message, options });
+    store.commit('toast/show', {message, options});
   };
 
   const reset = () => {
@@ -36,5 +36,5 @@ export const useToast = () => {
     });
   };
 
-  return { show, reset, confirm, confirmDelete };
+  return {show, reset, confirm, confirmDelete};
 };

@@ -27,7 +27,7 @@ To use the `VIcon` component, simply include it in your template like this:
 </LivePreview>
 
 ::: info
-The `VIcon` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
+The `VIcon` component is registered globally when you install with `@morpheme/ui`. So you don't need to import it manually.
 :::
 
 ### Sizes
@@ -72,18 +72,18 @@ None
 
 ## Manual Installation
 
-If you want to install the Icon component individually, you can use the `@gits-id/icon` package:
+If you want to install the Icon component individually, you can use the `@morpheme/icon` package:
 
 ```bash
-npm i @gits-id/icon
+npm i @morpheme/icon
 ```
 
 Then, you can use it in your Vue.js application like this:
 
 ```vue
 <script setup lang="ts">
-import VIcon from '@gits-id/icon';
-import '@gits-id/icon/dist/style.css';
+import VIcon from '@morpheme/icon';
+import '@morpheme/icon/dist/style.css';
 </script>
 
 <template>

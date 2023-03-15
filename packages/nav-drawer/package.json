@@ -1,5 +1,5 @@
 {
-  "name": "@gits-id/nav-drawer",
+  "name": "@morpheme/nav-drawer",
   "version": "1.0.0-beta.4",
   "description": "Vue Navigation Drawer Component",
   "scripts": {
@@ -15,14 +15,14 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@gits-id/button": "^1.0.0-beta.3",
-    "@gits-id/logo": "^1.0.0-beta.3",
-    "@gits-id/menu": "^1.0.0-beta.3",
-    "@gits-id/utils": "^1.0.0-beta.3",
+    "@morpheme/button": "^1.0.0-beta.3",
+    "@morpheme/logo": "^1.0.0-beta.3",
+    "@morpheme/menu": "^1.0.0-beta.3",
+    "@morpheme/utils": "^1.0.0-beta.3",
     "vue": "^3.2.31"
   },
   "devDependencies": {
-    "@gits-id/tailwind-config": "^1.0.0-beta.3",
+    "@morpheme/tailwind-config": "^1.0.0-beta.3",
     "@headlessui/vue": "^1.6.0",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",

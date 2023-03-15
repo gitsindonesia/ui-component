@@ -1,5 +1,5 @@
 {
-  "name": "@gits-id/button",
+  "name": "@morpheme/button",
   "version": "1.0.0-beta.3",
   "description": "GITS Button Component",
   "scripts": {
@@ -16,15 +16,15 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@gits-id/icon": "^1.0.0-beta.3",
-    "@gits-id/spinner": "^1.0.0-beta.3",
-    "@gits-id/theme": "^1.0.0-beta.3",
-    "@gits-id/utils": "^1.0.0-beta.3",
+    "@morpheme/icon": "^1.0.0-beta.3",
+    "@morpheme/spinner": "^1.0.0-beta.3",
+    "@morpheme/theme": "^1.0.0-beta.3",
+    "@morpheme/utils": "^1.0.0-beta.3",
     "vue": "^3.2.33",
     "vue-router": "^4.1.5"
   },
   "devDependencies": {
-    "@gits-id/tailwind-config": "^1.0.0-beta.3",
+    "@morpheme/tailwind-config": "^1.0.0-beta.3",
     "@vitejs/plugin-vue": "^2.2.4",
     "@vue/test-utils": "^2.0.0-rc.17",
     "autoprefixer": "^10.4.2",

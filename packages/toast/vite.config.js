@@ -20,9 +20,9 @@ export default defineConfig({
       // into your library
       external: [
         'vue',
-        '@gits-id/button',
-        '@gits-id/icon',
-        '@gits-id/utils',
+        '@morpheme/button',
+        '@morpheme/icon',
+        '@morpheme/utils',
         '@headlessui/vue',
       ],
       output: {

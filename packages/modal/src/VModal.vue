@@ -13,8 +13,8 @@ import {
   DialogTitle,
   DialogPanel,
 } from '@headlessui/vue';
-import VBtn from '@gits-id/button';
-import Icon from '@gits-id/icon';
+import VBtn from '@morpheme/button';
+import Icon from '@morpheme/icon';
 
 export type ConfirmEventPayload = {
   open: () => void;

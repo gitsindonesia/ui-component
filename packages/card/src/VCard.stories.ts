@@ -1,7 +1,7 @@
 import {Meta, Story} from '@storybook/vue3';
 import VCard from './VCard.vue';
-import VBtn from '@gits-id/button';
-import {defaultColors} from '@gits-id/theme/defaultTheme';
+import VBtn from '@morpheme/button';
+import {defaultColors} from '@morpheme/theme/defaultTheme';
 import './VCard.dark.scss';
 
 export default {

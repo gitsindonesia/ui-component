@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {ref, toRefs, watch} from 'vue';
-import {VCollapse} from '@gits-id/collapsible';
+import {VCollapse} from '@morpheme/collapsible';
 
 type Props = {
   modelValue?: boolean;

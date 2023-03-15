@@ -1,13 +1,13 @@
 import VRadio from './VRadio.vue';
-import {themeColors} from '@gits-id/utils/colors';
-import {sizes} from '@gits-id/utils/sizes';
+import {themeColors} from '@morpheme/utils/colors';
+import {sizes} from '@morpheme/utils/sizes';
 import {Meta, Story} from '@storybook/vue3';
 import {useForm} from 'vee-validate';
 import {object, string} from 'yup';
-import VBtn from '@gits-id/button';
+import VBtn from '@morpheme/button';
 import {ref} from 'vue';
-import '@gits-id/forms/src/forms.scss';
-import '@gits-id/forms/src/forms.dark.scss';
+import '@morpheme/forms/src/forms.scss';
+import '@morpheme/forms/src/forms.dark.scss';
 import './VRadio.dark.scss';
 
 export default {

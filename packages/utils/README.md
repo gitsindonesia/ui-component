@@ -7,19 +7,19 @@
 npm
 
 ```
-npm i @gits-id/utils
+npm i @morpheme/utils
 ```
 
 yarn
 
 ```
-yarn add @gits-id/utils
+yarn add @morpheme/utils
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/utils
+pnpm i @morpheme/utils
 ```
 
 ## License

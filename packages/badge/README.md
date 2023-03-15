@@ -7,26 +7,26 @@
 npm
 
 ```
-npm i @gits-id/badge
+npm i @morpheme/badge
 ```
 
 yarn
 
 ```
-yarn add @gits-id/badge
+yarn add @morpheme/badge
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/badge
+pnpm i @morpheme/badge
 ```
 
 ## Usage
 
 ```vue
 <script setup lang="ts">
-import Badge from '@gits-id/badge';
+import Badge from '@morpheme/badge';
 </script>
 
 <template>

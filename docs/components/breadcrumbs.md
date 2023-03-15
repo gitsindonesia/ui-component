@@ -16,7 +16,7 @@ To use `VBreadcrumbs`, you will need to import it and pass an array of `VBreadcr
 
 ```vue
 <script setup lang="ts">
-import VBreadcrumbs, {type VBreadcrumbItem} from '@gits-id/breadcrumbs';
+import VBreadcrumbs, {type VBreadcrumbItem} from '@morpheme/breadcrumbs';
 
 const items = ref<VBreadcrumbItem[]>([
   {
@@ -43,7 +43,7 @@ const items = ref<VBreadcrumbItem[]>([
 </LivePreview>
 
 ::: info
-The `VBreadcrumbs` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
+The `VBreadcrumbs` component is registered globally when you install with `@morpheme/ui`. So you don't need to import it manually.
 :::
 
 ### Divider
@@ -59,7 +59,7 @@ You can use the `divider` prop to change the character or element used to separa
 
 ```vue
 <script setup lang="ts">
-import VBreadcrumbs, {type VBreadcrumbItem} from '@gits-id/breadcrumbs';
+import VBreadcrumbs, {type VBreadcrumbItem} from '@morpheme/breadcrumbs';
 
 const items = ref<VBreadcrumbItem[]>([
   {
@@ -92,8 +92,8 @@ You can also use slots to customize the content of the divider element.
 
 ```vue
 <script setup lang="ts">
-import Icon from '@gits-id/icon';
-import VBreadcrumbs, {type VBreadcrumbItem} from '@gits-id/breadcrumbs';
+import Icon from '@morpheme/icon';
+import VBreadcrumbs, {type VBreadcrumbItem} from '@morpheme/breadcrumbs';
 
 const items = ref<VBreadcrumbItem[]>([
   {
@@ -248,15 +248,15 @@ Here is an example of how you can customize the font size and color of the bread
 
 ## Manual Installation
 
-You can also install the `Breadcrumbs` component individually via `@gits-id/breadcrumbs` package:
+You can also install the `Breadcrumbs` component individually via `@morpheme/breadcrumbs` package:
 
 ```bash
-npm install @gits-id/breadcrumbs
+npm install @morpheme/breadcrumbs
 ```
 
 ```vue
 <script setup lang="ts">
-import VBreadcrumbs, {type VBreadcrumbItem} from '@gits-id/breadcrumbs';
+import VBreadcrumbs, {type VBreadcrumbItem} from '@morpheme/breadcrumbs';
 
 const items = ref<VBreadcrumbItem[]>([
   {
@@ -281,13 +281,13 @@ const items = ref<VBreadcrumbItem[]>([
 
 ## Tailwind Plugin
 
-This package comes with custom tailwind plugin for styling. If you are installing this package separately from `@gits-id/ui` package, you need to include the plugin in `plugins` section in your Tailwind config file.
+This package comes with custom tailwind plugin for styling. If you are installing this package separately from `@morpheme/ui` package, you need to include the plugin in `plugins` section in your Tailwind config file.
 
 ```js{4}
 // tailwind.config.js
 module.exports = {
   content: [],
-  plugins: [require('@gits-id/tailwind-components/breadcrumbs')],
+  plugins: [require('@morpheme/tailwind-components/breadcrumbs')],
 };
 ```
 

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {ref, toRefs, watch} from 'vue';
 import type {BottomSheetMenu} from './types';
-import {List, ListItem} from '@gits-id/list';
+import {List, ListItem} from '@morpheme/list';
 
 export type Props = {
   modelValue?: BottomSheetMenu[];

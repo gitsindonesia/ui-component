@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {VBtn} from '@gits-id/ui';
+import {VBtn} from '@morpheme/ui';
 
 const appConfig = useAppConfig();
 </script>

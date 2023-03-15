@@ -9,8 +9,8 @@ import {
   ComboboxLabel,
   TransitionRoot,
 } from '@headlessui/vue';
-import {Icon} from '@gits-id/icon';
-import {useFormValue, type ValidationMode} from '@gits-id/forms';
+import {Icon} from '@morpheme/icon';
+import {useFormValue, type ValidationMode} from '@morpheme/forms';
 
 export type Item = {
   text: string;

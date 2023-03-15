@@ -1,9 +1,9 @@
 <script setup lang="ts">
 // workaround: load pagination CSS
-import '@gits-id/pagination/src/VPagination.scss';
-import '@gits-id/table/src/VDataTable.scss';
-import '@gits-id/table/src/VDataTablePagination.scss';
-import type {VDataTableHeader, VDataTableItem} from '@gits-id/ui';
+import '@morpheme/pagination/src/VPagination.scss';
+import '@morpheme/table/src/VDataTable.scss';
+import '@morpheme/table/src/VDataTablePagination.scss';
+import type {VDataTableHeader, VDataTableItem} from '@morpheme/ui';
 
 const headers = ref<VDataTableHeader[]>([
   {

@@ -1,5 +1,5 @@
 {
-  "name": "@gits-id/tailwind-components",
+  "name": "@morpheme/tailwind-components",
   "version": "1.0.0-beta.3",
   "description": "GITS UI Tailwind Plugin",
   "scripts": {},

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {computed, ref, toRefs, watch, PropType} from 'vue';
-import VBtn from '@gits-id/button';
+import VBtn from '@morpheme/button';
 import {
   Disclosure,
   DisclosureButton,
@@ -8,10 +8,10 @@ import {
   Menu,
   MenuItem,
 } from '@headlessui/vue';
-import VMenus from '@gits-id/menus';
-import VLogo from '@gits-id/logo';
+import VMenus from '@morpheme/menus';
+import VLogo from '@morpheme/logo';
 import type {VNavbarMenuItem} from './types';
-import Icon from '@gits-id/icon';
+import Icon from '@morpheme/icon';
 
 const props = defineProps({
   modelValue: {

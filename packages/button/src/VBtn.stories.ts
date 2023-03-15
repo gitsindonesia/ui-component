@@ -1,8 +1,8 @@
 import {Meta, Story} from '@storybook/vue3';
 import VBtn from './VBtn.vue';
 import type {Props as VBtnProps} from './VBtn.vue';
-import VIcon from '@gits-id/icon';
-import {defaultColors} from '@gits-id/theme/defaultTheme';
+import VIcon from '@morpheme/icon';
+import {defaultColors} from '@morpheme/theme/defaultTheme';
 import VBtnGroup from './VBtnGroup.vue';
 import VBtnToolbar from './VBtnToolbar.vue';
 import './VBtn.dark.scss';

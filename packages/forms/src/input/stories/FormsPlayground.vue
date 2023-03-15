@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import VInput from '../VInput.vue';
-import {VBtn} from '@gits-id/button';
+import {VBtn} from '@morpheme/button';
 </script>
 
 <template>

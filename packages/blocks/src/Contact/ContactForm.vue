@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import VBtn from '@gits-id/button';
-import {VInput} from '@gits-id/forms';
-import {Icon} from '@gits-id/icon';
+import VBtn from '@morpheme/button';
+import {VInput} from '@morpheme/forms';
+import {Icon} from '@morpheme/icon';
 import {object, string} from 'yup';
 import {useForm} from 'vee-validate';
 

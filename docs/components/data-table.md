@@ -19,7 +19,7 @@ Here is an example of basic usage of the `VDataTable` component:
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
-import type {VDataTableHeader} from '@gits-id/table';
+import type {VDataTableHeader} from '@morpheme/table';
 
 const states = ['active', 'inactive'];
 
@@ -56,7 +56,7 @@ const headers = ref<VDataTableHeader[]>([
 </LivePreview>
 
 ::: info
-The `VDataTable` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
+The `VDataTable` component is registered globally when you install with `@morpheme/ui`. So you don't need to import it manually.
 :::
 
 ### Striped
@@ -849,18 +849,18 @@ Example:
 
 ## Manual Installation
 
-You can also install the `DataTable` component individually via `@gits-id/table` package:
+You can also install the `DataTable` component individually via `@morpheme/table` package:
 
 ```bash
-npm i @gits-id/table
+npm i @morpheme/table
 ```
 
 ```vue
 <script setup lang="ts">
-import VDataTable from '@gits-id/table';
-import '@gits-id/table/dist/style.css';
+import VDataTable from '@morpheme/table';
+import '@morpheme/table/dist/style.css';
 // or load SCSS styles
-// import '@gits-id/table/src/VDataTable.scss';
+// import '@morpheme/table/src/VDataTable.scss';
 </script>
 
 <template>

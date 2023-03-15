@@ -9,19 +9,19 @@ Install with your prefered package manager.
 With NPM:
 
 ```
-npm i @gits-id/alert
+npm i @morpheme/alert
 ```
 
 With Yarn:
 
 ```
-yarn add @gits-id/alert
+yarn add @morpheme/alert
 ```
 
 With PNPM:
 
 ```
-pnpm i @gits-id/alert
+pnpm i @morpheme/alert
 ```
 
 ## Usage
@@ -31,14 +31,14 @@ To use the component, you can simply include it in your template like this:
 ```vue
 <script setup lang="ts">
 // import component
-import VAlert from '@gits-id/alert';
+import VAlert from '@morpheme/alert';
 // import styles (includes dark mode)
-import '@gits-id/alert/dist/style.css';
+import '@morpheme/alert/dist/style.css';
 // or import the SASS styles
-import '@gits-id/alert/src/VAlert.scss';
+import '@morpheme/alert/src/VAlert.scss';
 // if are using SASS bundle and want to add dark mode support,
 // uncomment this line
-// import '@gits-id/alert/src/VAlert.dark.scss';
+// import '@morpheme/alert/src/VAlert.dark.scss';
 </script>
 
 <template>

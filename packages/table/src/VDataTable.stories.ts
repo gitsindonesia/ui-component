@@ -1,29 +1,42 @@
-import {VInput} from '@gits-id/forms';
+import {VInput} from '@morpheme/forms';
 import {Meta, Story} from '@storybook/vue3';
 import {ref, watchEffect} from 'vue';
 import VDataTable from './VDataTable.vue';
 import type {VDataTableHeader} from './types';
-import '@gits-id/forms/src/forms.dark.scss';
-import '@gits-id/pagination/src/VPagination.dark.scss';
+import '@morpheme/forms/src/forms.dark.scss';
+import '@morpheme/pagination/src/VPagination.dark.scss';
 import './VDataTable.dark.scss';
 import './VDataTablePagination.dark.scss';
 
 const states = ['active', 'inactive'];
 
 const items = [...Array(30)].map((_, index) => {
-  const fName = ['Cory', 'Peppa', 'Gallagher', 'Caleb', 'Thomas'].at(Math.floor(Math.random()*5));
-  const lName = ['Smith', 'Woods', 'Stein', 'Bauer', 'Gordon'].at(Math.floor(Math.random()*5));
-  return ({
+  const fName = ['Cory', 'Peppa', 'Gallagher', 'Caleb', 'Thomas'].at(
+    Math.floor(Math.random() * 5),
+  );
+  const lName = ['Smith', 'Woods', 'Stein', 'Bauer', 'Gordon'].at(
+    Math.floor(Math.random() * 5),
+  );
+  return {
     index,
     name: [fName, lName].join(' '),
     email: `user-${index}@example.com`,
     age: index + 1 * 10,
     state: states[Math.floor(Math.random() * states.length)],
     address: {
-      city: ['Jakarta', 'Melbourne', 'London', 'Washington', 'Stockholm', 'Seoul', 'Moscoe', 'Cape Town'].at(index % 8),
+      city: [
+        'Jakarta',
+        'Melbourne',
+        'London',
+        'Washington',
+        'Stockholm',
+        'Seoul',
+        'Moscoe',
+        'Cape Town',
+      ].at(index % 8),
       street: '241 Lorem Street',
     },
-  });
+  };
 });
 
 const headers = [

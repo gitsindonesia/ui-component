@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import {List, ListItem, ListItemHeader} from '@gits-id/list';
-import {Dropdown, DropdownItemProps} from '@gits-id/dropdown';
-import Icon from '@gits-id/icon';
+import {List, ListItem, ListItemHeader} from '@morpheme/list';
+import {Dropdown, DropdownItemProps} from '@morpheme/dropdown';
+import Icon from '@morpheme/icon';
 import {ref, watch} from 'vue';
-import VBtn from '@gits-id/button';
-import {VInput} from '@gits-id/forms';
-import '@gits-id/forms/src/forms.scss';
-import '@gits-id/list/src/List.scss';
-import '@gits-id/button/src/VBtn.scss';
-import '@gits-id/dropdown/src/Dropdown.scss';
-import '@gits-id/theme/transition.css';
+import VBtn from '@morpheme/button';
+import {VInput} from '@morpheme/forms';
+import '@morpheme/forms/src/forms.scss';
+import '@morpheme/list/src/List.scss';
+import '@morpheme/button/src/VBtn.scss';
+import '@morpheme/dropdown/src/Dropdown.scss';
+import '@morpheme/theme/transition.css';
 
 const accountMenus = ref<DropdownItemProps[]>([
   {

@@ -4,7 +4,7 @@ import {
   DefaultColors,
   defaultSizes,
   DefaultSizes,
-} from '@gits-id/theme/defaultTheme';
+} from '@morpheme/theme/defaultTheme';
 
 export type Props = {
   color?: DefaultColors | string;

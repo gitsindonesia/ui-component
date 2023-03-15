@@ -4,7 +4,7 @@ outline: deep
 
 # Alert
 
-The `VAlert` component is a flexible alert component that can be used to display various types of messages to the user. It is registered globally when you install` @gits-id/ui`, so you don't need to import it manually.
+The `VAlert` component is a flexible alert component that can be used to display various types of messages to the user. It is registered globally when you install` @morpheme/ui`, so you don't need to import it manually.
 
 ## Usage
 
@@ -152,7 +152,7 @@ You can use the `v-model` directive to bind the alert to a data model. The `mode
 ```vue{10}
 <script setup lang="ts">
 import {ref} from 'vue';
-import Button from '@gits-id/button';
+import Button from '@morpheme/button';
 
 const isOpen = ref(true);
 </script>
@@ -181,7 +181,7 @@ Use `dismissable` to make alert dismissable.
 ```vue{10}
 <script setup lang="ts">
 import {ref} from 'vue';
-import Button from '@gits-id/button';
+import Button from '@morpheme/button';
 
 const isOpen = ref(true);
 </script>
@@ -208,9 +208,9 @@ Use `transition` prop change the default transition.
 ```vue{5,17}
 <script setup lang="ts">
 import {ref} from 'vue';
-import Button from '@gits-id/button';
+import Button from '@morpheme/button';
 // import transition styles
-import '@gits-id/ui/src/assets/transition.css';
+import '@morpheme/ui/src/assets/transition.css';
 
 const isOpen = ref(true);
 </script>
@@ -337,15 +337,15 @@ const isOpen = ref(true);
 
 ## Manual Installation
 
-You can also install the `Alert` component individually via `@gits-id/alert` package:
+You can also install the `Alert` component individually via `@morpheme/alert` package:
 
 ```bash
-yarn install @gits-id/alert
+yarn install @morpheme/alert
 ```
 
 ```vue
 <script setup lang="ts">
-import VAlert from '@gits-id/alert';
+import VAlert from '@morpheme/alert';
 </script>
 
 <template>
@@ -355,13 +355,13 @@ import VAlert from '@gits-id/alert';
 
 ## Tailwind Plugin
 
-This package comes with custom tailwind plugin for styling. If you are installing this package separately from `@gits-id/ui` package, you need to include the plugin in `plugins` section in your Tailwind config file.
+This package comes with custom tailwind plugin for styling. If you are installing this package separately from `@morpheme/ui` package, you need to include the plugin in `plugins` section in your Tailwind config file.
 
 ```js{4}
 // tailwind.config.js
 module.exports = {
   content: [],
-  plugins: [require('@gits-id/tailwind-components/alert')],
+  plugins: [require('@morpheme/tailwind-components/alert')],
 };
 ```
 

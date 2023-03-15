@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import {useForm} from 'vee-validate';
 import {ref} from 'vue';
-import VBtn from '@gits-id/button';
-import VLogo from '@gits-id/logo';
-import {VInput} from '@gits-id/forms';
-import Card from '@gits-id/card';
+import VBtn from '@morpheme/button';
+import VLogo from '@morpheme/logo';
+import {VInput} from '@morpheme/forms';
+import Card from '@morpheme/card';
 
 const sent = ref(false);
 const showAlert = ref(false);

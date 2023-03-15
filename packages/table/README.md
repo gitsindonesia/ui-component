@@ -7,27 +7,27 @@ DataTable component.
 npm
 
 ```
-npm i @gits-id/table
+npm i @morpheme/table
 ```
 
 yarn
 
 ```
-yarn add @gits-id/table
+yarn add @morpheme/table
 ```
 
 pnpm
 
 ```
-pnpm add @gits-id/table
+pnpm add @morpheme/table
 ```
 
 ## Usage
 
 ```vue
 <script setup lang="ts">
-import VDataTable from '@gits-id/table';
-import '@gits-id/table/dist/style.css';
+import VDataTable from '@morpheme/table';
+import '@morpheme/table/dist/style.css';
 
 const states = ['active', 'inactive'];
 

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import {ref} from 'vue';
-import Button from '@gits-id/button';
+import Button from '@morpheme/button';
 import VAlert from '../VAlert.vue';
-import '@gits-id/button/src/VBtn.scss';
+import '@morpheme/button/src/VBtn.scss';
 
 const isOpen = ref(true);
 </script>

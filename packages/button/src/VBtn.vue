@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import {computed, resolveComponent} from 'vue';
-import type {DefaultColors} from '@gits-id/theme/defaultTheme';
+import type {DefaultColors} from '@morpheme/theme/defaultTheme';
 import type {RouteLocationRaw} from 'vue-router';
-import VIcon from '@gits-id/icon';
+import VIcon from '@morpheme/icon';
 
 export type ButtonColors = DefaultColors | string;
 

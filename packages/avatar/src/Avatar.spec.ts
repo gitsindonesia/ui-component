@@ -1,7 +1,7 @@
 import {describe, it, expect} from 'vitest';
 import {mount} from '@vue/test-utils';
 import Avatar from './Avatar.vue';
-import {defaultColors, defaultSizes} from '@gits-id/theme/defaultTheme';
+import {defaultColors, defaultSizes} from '@morpheme/theme/defaultTheme';
 
 describe('Avatar', () => {
   it('render properly with initial name', () => {

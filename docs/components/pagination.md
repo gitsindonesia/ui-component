@@ -35,7 +35,7 @@ const itemsPerPage = ref(10);
 </LivePreview>
 
 ::: info
-The `VPagination` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
+The `VPagination` component is registered globally when you install with `@morpheme/ui`. So you don't need to import it manually.
 :::
 
 ### Sizes
@@ -266,16 +266,16 @@ Use this slot to customize the text or icon displayed in the "last" button.
 
 ## Manual Installation
 
-You can also install the `Pagination` component individually via `@gits-id/pagination` package:
+You can also install the `Pagination` component individually via `@morpheme/pagination` package:
 
 ```bash
-npm i @gits-id/pagination
+npm i @morpheme/pagination
 ```
 
 ```vue
 <script setup lang="ts">
-import VPagination from '@gits-id/pagination';
-import '@gits-id/pagination/dist/style.css';
+import VPagination from '@morpheme/pagination';
+import '@morpheme/pagination/dist/style.css';
 </script>
 
 <template>

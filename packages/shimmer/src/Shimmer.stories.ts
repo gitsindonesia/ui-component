@@ -23,7 +23,7 @@ Default.parameters = {
       language: 'html',
       code: `
 <script setup lang="ts">
-import { Shimmer } from '@gits-id/shimmer';
+import { Shimmer } from '@morpheme/shimmer';
 </script>
 
 <template>

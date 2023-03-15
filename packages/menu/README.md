@@ -7,19 +7,19 @@
 npm
 
 ```
-npm i @gits-id/menu
+npm i @morpheme/menu
 ```
 
 yarn
 
 ```
-yarn add @gits-id/menu
+yarn add @morpheme/menu
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/menu
+pnpm i @morpheme/menu
 ```
 
 ## Usage
@@ -27,9 +27,9 @@ pnpm i @gits-id/menu
 ```vue
 <script setup lang="ts">
 // import styles
-import '@gits-id/menu/dist/style.css';
+import '@morpheme/menu/dist/style.css';
 // import component
-import VMenu from '@gits-id/menu';
+import VMenu from '@morpheme/menu';
 </script>
 
 <template>

@@ -29,7 +29,7 @@ const selected = ref(false);
 </LivePreview>
 
 ::: info
-The `VRadio` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
+The `VRadio` component is registered globally when you install with `@morpheme/ui`. So you don't need to import it manually.
 :::
 
 ### Disabled
@@ -160,16 +160,16 @@ None
 
 ## Manual Installation
 
-You can also install the `Radio` component individually via `@gits-id/forms` package:
+You can also install the `Radio` component individually via `@morpheme/forms` package:
 
 ```bash
-npm i @gits-id/forms
+npm i @morpheme/forms
 ```
 
 ```vue
 <script setup lang="ts">
-import {VRadio} from '@gits-id/forms';
-import '@gits-id/forms/dist/style.css';
+import {VRadio} from '@morpheme/forms';
+import '@morpheme/forms/dist/style.css';
 
 import {ref} from 'vue';
 

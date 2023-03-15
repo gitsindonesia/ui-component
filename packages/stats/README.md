@@ -7,26 +7,26 @@
 npm
 
 ```
-npm i @gits-id/stats
+npm i @morpheme/stats
 ```
 
 yarn
 
 ```
-yarn add @gits-id/stats
+yarn add @morpheme/stats
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/stats
+pnpm i @morpheme/stats
 ```
 
 ## Usage
 
 ```vue
 <script setup lang="ts">
-import Stats from '@gits-id/stats';
+import Stats from '@morpheme/stats';
 </script>
 
 <template>

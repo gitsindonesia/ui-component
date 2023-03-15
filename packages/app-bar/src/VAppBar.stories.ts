@@ -1,13 +1,13 @@
 import VAppBar from './VAppBar.vue';
 import {Story, Meta} from '@storybook/vue3';
-import {defaultColors, defaultShadows} from '@gits-id/theme/defaultTheme';
+import {defaultColors, defaultShadows} from '@morpheme/theme/defaultTheme';
 import {ref} from 'vue';
-import Icon from '@gits-id/icon';
-import Button from '@gits-id/button';
-import {VInput} from '@gits-id/forms';
-import '@gits-id/button/src/VBtn.scss';
-import '@gits-id/forms/src/forms.scss';
-import '@gits-id/theme/transition.css';
+import Icon from '@morpheme/icon';
+import Button from '@morpheme/button';
+import {VInput} from '@morpheme/forms';
+import '@morpheme/button/src/VBtn.scss';
+import '@morpheme/forms/src/forms.scss';
+import '@morpheme/theme/transition.css';
 import './VAppBar.dark.scss';
 
 export default {

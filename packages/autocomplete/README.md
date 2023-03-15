@@ -7,26 +7,26 @@ Autocomplete Component.
 npm
 
 ```bash
-npm i @gits-id/autocomplete
+npm i @morpheme/autocomplete
 ```
 
 yarn
 
 ```bash
-yarn add @gits-id/autocomplete
+yarn add @morpheme/autocomplete
 ```
 
 pnpm
 
 ```bash
-pnpm i @gits-id/autocomplete
+pnpm i @morpheme/autocomplete
 ```
 
 ## Usage
 
 ```html
 <script setup lang="ts">
-  import Autocomplete from '@gits-id/autocomplete';
+  import Autocomplete from '@morpheme/autocomplete';
   import {ref} from 'vue';
 
   const items = [
