@@ -1,7 +1,7 @@
 {
   "name": "@gits-id/nuxt-minimal",
   "description": "Lightweight Nuxt.js template with GITS UI",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "keywords": [
     "admin",
     "dashboard",
