@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "@vue/test-utils": "^2.0.0-rc.17",
+    "@morpheme/tailwind-config": "workspace:*",
     "c8": "^7.11.3",
     "vite": "^3.0.0",
     "vitest": "^0.12.4"

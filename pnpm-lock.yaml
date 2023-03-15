@@ -536,6 +536,7 @@ importers:
 
   packages/iconsax:
     specifiers:
+      '@morpheme/tailwind-config': workspace:*
       '@vue/test-utils': ^2.0.0-rc.17
       c8: ^7.11.3
       vite: ^3.0.0
@@ -544,6 +545,7 @@ importers:
     dependencies:
       vue: 3.2.47
     devDependencies:
+      '@morpheme/tailwind-config': link:../tailwind-config
       '@vue/test-utils': 2.3.1_vue@3.2.47
       c8: 7.13.0
       vite: 3.2.5
