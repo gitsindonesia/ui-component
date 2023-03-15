@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/services",
-  "version": "1.0.0-beta.3",
+  "version": "1.0.0-beta.5",
   "description": "GITS Services",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly",
@@ -15,13 +15,13 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@morpheme/button": "^1.0.0-beta.3",
+    "@morpheme/button": "^1.0.0-beta.5",
     "axios": "^0.26.0",
     "vue": "^3.2.33"
   },
   "devDependencies": {
-    "@morpheme/tailwind-config": "^1.0.0-beta.3",
-    "@morpheme/utils": "^1.0.0-beta.3",
+    "@morpheme/tailwind-config": "^1.0.0-beta.5",
+    "@morpheme/utils": "^1.0.0-beta.5",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
     "vite": "^3.0.0",

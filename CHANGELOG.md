@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.5](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.4...v1.0.0-beta.5) (2023-03-15)
+
+
+### Bug Fixes
+
+* **nuxt-admin:** remove default auth pages ([d02876f](https://github.com/gitsindonesia/ui-component/commit/d02876f168bb272b7c78a90a5298a83f46d534ff))
+* **nuxt-auth:** fix projected path ([947d354](https://github.com/gitsindonesia/ui-component/commit/947d354f0d2bfcd9a99ede9ded04ad42b6cdc34c))
+* **nuxt-commerce:** replace heroicons component with gits icons ([a153e65](https://github.com/gitsindonesia/ui-component/commit/a153e659e4b5604ef09024046953386c43cf847f))
+
+
+### Features
+
+* **nuxt-commerce:** revamp commerce ([#154](https://github.com/gitsindonesia/ui-component/issues/154)) ([5b359cf](https://github.com/gitsindonesia/ui-component/commit/5b359cf646d9428117a973a413f30efe0d9670f2))
+
+
+
+
+
+
 # [1.0.0-beta.4](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2023-03-13)
 
 

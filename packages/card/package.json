@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/card",
-  "version": "1.0.0-beta.3",
+  "version": "1.0.0-beta.5",
   "description": "GITS Card Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -18,9 +18,9 @@
     "vue": "^3.2.33"
   },
   "devDependencies": {
-    "@morpheme/button": "^1.0.0-beta.3",
-    "@morpheme/theme": "^1.0.0-beta.3",
-    "@morpheme/utils": "^1.0.0-beta.3",
+    "@morpheme/button": "^1.0.0-beta.5",
+    "@morpheme/theme": "^1.0.0-beta.5",
+    "@morpheme/utils": "^1.0.0-beta.5",
     "@vitejs/plugin-vue": "^2.2.4",
     "@vue/test-utils": "^2.0.0-rc.17",
     "autoprefixer": "^10.4.2",
