@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@gits-id/nuxt-auth': ^0.3.0
+  '@gits-id/nuxt-auth': ^0.4.0
   '@gits-id/ui-nuxt': ^1.0.0-beta.4
   '@nuxtjs/color-mode': ^3.2.0
   '@nuxtjs/tailwindcss': ^6.3.0
@@ -13,7 +13,7 @@ specifiers:
   vue3-apexcharts: ^1.4.1
 
 dependencies:
-  '@gits-id/nuxt-auth': 0.3.0
+  '@gits-id/nuxt-auth': 0.4.0
   '@gits-id/ui-nuxt': 1.0.0-beta.4
   '@pinia/nuxt': 0.4.7
   apexcharts: 3.37.1
@@ -1575,8 +1575,8 @@ packages:
       - ts-node
     dev: false
 
-  /@gits-id/nuxt-auth/0.3.0:
-    resolution: {integrity: sha512-jVAKDGHwrsqrQlpK65rANhMH0TaKoK9rH6ueA541977nIw+YzO0bUPZjjUU8RIJuyFYJneym966oqprosSp2MA==}
+  /@gits-id/nuxt-auth/0.4.0:
+    resolution: {integrity: sha512-ftAnkrI243Yn+ZBfogUWyMka28m+GUJv/UuUk9hxGxWRdHqbASef3qPaqCqdNT2mXQ9IfEcb1eVI/F2w3ichvA==}
     dependencies:
       '@gits-id/ui-nuxt': 1.0.0-beta.4
       '@sidebase/nuxt-auth': 0.4.3_next-auth@4.20.1
