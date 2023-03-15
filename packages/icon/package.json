@@ -1,5 +1,5 @@
 {
-  "name": "@gits-id/icon",
+  "name": "@morpheme/icon",
   "version": "1.0.0-beta.3",
   "description": "GITS Icon Component",
   "scripts": {
@@ -15,13 +15,13 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@gits-id/theme": "^1.0.0-beta.3",
+    "@morpheme/theme": "^1.0.0-beta.3",
     "@heroicons/vue": "^1.0.6",
     "@iconify/vue": "^3.2.1",
     "vue": "^3.2.31"
   },
   "devDependencies": {
-    "@gits-id/tailwind-config": "^1.0.0-beta.3",
+    "@morpheme/tailwind-config": "^1.0.0-beta.3",
     "vite": "^3.0.0",
     "vitest": "^0.12.4",
     "vue-tsc": "^0.40.1"

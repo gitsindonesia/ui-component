@@ -1,5 +1,5 @@
 {
-  "name": "@gits-id/nuxt-layer-example",
+  "name": "@morpheme/nuxt-layer-example",
   "private": true,
   "description": "Lightweight Nuxt.js template with GITS UI",
   "version": "0.1.0",
@@ -23,9 +23,9 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@gits-id/nuxt-admin": "^0.1.2",
-    "@gits-id/nuxt-auth": "^0.1.3",
-    "@gits-id/ui-nuxt": "^0.15.2"
+    "@morpheme/nuxt-admin": "^0.1.2",
+    "@morpheme/nuxt-auth": "^0.1.3",
+    "@morpheme/ui-nuxt": "^0.15.2"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.3.0",

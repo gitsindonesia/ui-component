@@ -1,5 +1,5 @@
 {
-  "name": "@gits-id/quill-editor",
+  "name": "@morpheme/quill-editor",
   "version": "1.0.0-beta.4",
   "description": "Quill Editor Vue Component",
   "scripts": {
@@ -25,7 +25,7 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
-    "@gits-id/tailwind-config": "^1.0.0-beta.3",
+    "@morpheme/tailwind-config": "^1.0.0-beta.3",
     "@types/quill": "^2.0.9",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",

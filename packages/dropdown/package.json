@@ -1,5 +1,5 @@
 {
-  "name": "@gits-id/dropdown",
+  "name": "@morpheme/dropdown",
   "version": "1.0.0-beta.3",
   "description": "GITS Dropdown Component",
   "scripts": {
@@ -15,15 +15,15 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@gits-id/button": "^1.0.0-beta.3",
-    "@gits-id/icon": "^1.0.0-beta.3",
+    "@morpheme/button": "^1.0.0-beta.3",
+    "@morpheme/icon": "^1.0.0-beta.3",
     "@headlessui/vue": "^1.6.0",
     "tailwindcss": "^3.0.23",
     "vue": "^3.2.31"
   },
   "devDependencies": {
-    "@gits-id/tailwind-config": "^1.0.0-beta.3",
-    "@gits-id/utils": "^1.0.0-beta.3",
+    "@morpheme/tailwind-config": "^1.0.0-beta.3",
+    "@morpheme/utils": "^1.0.0-beta.3",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
     "vite": "^3.0.0",

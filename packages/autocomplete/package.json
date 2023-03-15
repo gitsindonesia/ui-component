@@ -1,5 +1,5 @@
 {
-  "name": "@gits-id/autocomplete",
+  "name": "@morpheme/autocomplete",
   "version": "1.0.0-beta.4",
   "description": "GITS Autocomplete Component",
   "scripts": {
@@ -15,17 +15,17 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@gits-id/button": "^1.0.0-beta.3",
-    "@gits-id/forms": "^1.0.0-beta.4",
-    "@gits-id/icon": "^1.0.0-beta.3",
+    "@morpheme/button": "^1.0.0-beta.3",
+    "@morpheme/forms": "^1.0.0-beta.4",
+    "@morpheme/icon": "^1.0.0-beta.3",
     "@headlessui/vue": "^1.6.0",
     "tailwindcss": "^3.0.23",
     "vue": "^3.2.31",
     "wait-for-expect": "^3.0.2"
   },
   "devDependencies": {
-    "@gits-id/tailwind-config": "^1.0.0-beta.3",
-    "@gits-id/utils": "^1.0.0-beta.3",
+    "@morpheme/tailwind-config": "^1.0.0-beta.3",
+    "@morpheme/utils": "^1.0.0-beta.3",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
     "vite": "^3.0.0",

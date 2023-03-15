@@ -1,5 +1,5 @@
 {
-  "name": "@gits-id/collapsible",
+  "name": "@morpheme/collapsible",
   "version": "1.0.0-beta.3",
   "description": "GITS Collapsible Component",
   "scripts": {
@@ -15,8 +15,8 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@gits-id/icon": "^0.11.10",
-    "@gits-id/utils": "^1.0.0-beta.3",
+    "@morpheme/icon": "^0.11.10",
+    "@morpheme/utils": "^1.0.0-beta.3",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
     "vite": "^3.0.0",

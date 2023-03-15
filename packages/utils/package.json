@@ -1,5 +1,5 @@
 {
-  "name": "@gits-id/utils",
+  "name": "@morpheme/utils",
   "version": "1.0.0-beta.3",
   "description": "GITS Utilities",
   "scripts": {
