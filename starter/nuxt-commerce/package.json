@@ -22,7 +22,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@morpheme/ui-nuxt": "^1.0.0-beta.4",
+    "@morpheme/nuxt": "^1.0.0-beta.5",
     "@nuxt/image-edge": "1.0.0-27919678.2f5b64b"
   },
   "devDependencies": {

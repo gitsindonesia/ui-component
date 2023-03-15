@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/tailwindcss', '@morpheme/ui-nuxt', '@sidebase/nuxt-auth'],
+  modules: ['@nuxtjs/tailwindcss', '@morpheme/nuxt', '@sidebase/nuxt-auth'],
   typescript: {
     shim: false,
   },

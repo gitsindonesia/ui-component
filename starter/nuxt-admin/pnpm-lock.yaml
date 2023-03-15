@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@morpheme/nuxt-auth': ^0.4.0
-  '@morpheme/ui-nuxt': ^1.0.0-beta.4
+  '@morpheme/nuxt': ^1.0.0-beta.4
   '@nuxtjs/color-mode': ^3.2.0
   '@nuxtjs/tailwindcss': ^6.3.0
   '@pinia/nuxt': ^0.4.6
@@ -14,7 +14,7 @@ specifiers:
 
 dependencies:
   '@morpheme/nuxt-auth': 0.4.0
-  '@morpheme/ui-nuxt': 1.0.0-beta.4
+  '@morpheme/nuxt': 1.0.0-beta.4
   '@pinia/nuxt': 0.4.7
   apexcharts: 3.37.1
   pinia: 2.0.33
@@ -2081,7 +2081,7 @@ packages:
         integrity: sha512-ftAnkrI243Yn+ZBfogUWyMka28m+GUJv/UuUk9hxGxWRdHqbASef3qPaqCqdNT2mXQ9IfEcb1eVI/F2w3ichvA==,
       }
     dependencies:
-      '@morpheme/ui-nuxt': 1.0.0-beta.4
+      '@morpheme/nuxt': 1.0.0-beta.4
       '@sidebase/nuxt-auth': 0.4.3_next-auth@4.20.1
       next-auth: 4.20.1
     transitivePeerDependencies:
@@ -2337,7 +2337,7 @@ packages:
       vue: 3.2.47
     dev: false
 
-  /@morpheme/ui-nuxt/1.0.0-beta.4:
+  /@morpheme/nuxt/1.0.0-beta.4:
     resolution:
       {
         integrity: sha512-HyGFh9cPEB+8KAehgfB8Ib/E7XE4i9URgjW40tZNLWlryahET+r5/HsPaWZFbnyN9xGNfKjFAohwN6xaDURmDw==,
