@@ -8,7 +8,7 @@ outline: deep
 
 ## Usage
 
-To use the `VQuillEditor` component in your Vue.js application, you will need to have the `@gits-id/ui` package installed. The `VQuillEditor` component is registered globally when you install the package, so you don't need to import it manually.
+To use the `VQuillEditor` component in your Vue.js application, you will need to have the `@morpheme/ui` package installed. The `VQuillEditor` component is registered globally when you install the package, so you don't need to import it manually.
 
 ### Basic Usage
 
@@ -280,15 +280,15 @@ None
 
 ## Manual Installation
 
-You can also install the `QuillEditor` component individually via `@gits-id/quill-editor` package:
+You can also install the `QuillEditor` component individually via `@morpheme/quill-editor` package:
 
 ```bash
-yarn install @gits-id/quill-editor
+yarn install @morpheme/quill-editor
 ```
 
 ```vue
 <script setup lang="ts">
-import VQuillEditor from '@gits-id/quill-editor';
+import VQuillEditor from '@morpheme/quill-editor';
 </script>
 
 <template>

@@ -10,7 +10,7 @@ The `VSwitch` component allows you to add a toggle switch to your Vue app.
 
 ### Basic Usage
 
-To use the component, you first need to install it with `@gits-id/ui`. Once installed, the `VSwitch` component will be registered globally, so you don't need to import it manually.
+To use the component, you first need to install it with `@morpheme/ui`. Once installed, the `VSwitch` component will be registered globally, so you don't need to import it manually.
 
 <LivePreview src="components-switch--default" >
 
@@ -29,7 +29,7 @@ const checked = ref(false);
 </LivePreview>
 
 ::: info
-The `VSwitch` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
+The `VSwitch` component is registered globally when you install with `@morpheme/ui`. So you don't need to import it manually.
 :::
 
 ### Colors
@@ -258,16 +258,16 @@ None
 
 ## Manual Installation
 
-You can also install the `Switch` component individually via `@gits-id/switch` package:
+You can also install the `Switch` component individually via `@morpheme/switch` package:
 
 ```bash
-npm i @gits-id/switch
+npm i @morpheme/switch
 ```
 
 ```vue
 <script setup lang="ts">
-import VSwitch from '@gits-id/switch';
-import '@gits-id/switch/dist/style.css';
+import VSwitch from '@morpheme/switch';
+import '@morpheme/switch/dist/style.css';
 
 import {ref} from 'vue';
 

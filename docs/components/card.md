@@ -24,7 +24,7 @@ To use the `VCard` component, simply wrap your content in the `VCard` element:
 </LivePreview>
 
 ::: info
-The `VCard` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
+The `VCard` component is registered globally when you install with `@morpheme/ui`. So you don't need to import it manually.
 :::
 
 ### With Title
@@ -315,15 +315,15 @@ To customize the `VCard`, you can define your own CSS class and set the desired 
 
 ## Manual Installation
 
-You can also install the `Card` component individually via `@gits-id/card` package:
+You can also install the `Card` component individually via `@morpheme/card` package:
 
 ```bash
-yarn install @gits-id/card
+yarn install @morpheme/card
 ```
 
 ```vue
 <script setup lang="ts">
-import VCard from '@gits-id/card';
+import VCard from '@morpheme/card';
 </script>
 
 <template>
@@ -333,13 +333,13 @@ import VCard from '@gits-id/card';
 
 ## Tailwind Plugin
 
-This package comes with custom tailwind plugin for styling. If you are installing this package separately from `@gits-id/ui` package, you need to include the plugin in `plugins` section in your Tailwind config file.
+This package comes with custom tailwind plugin for styling. If you are installing this package separately from `@morpheme/ui` package, you need to include the plugin in `plugins` section in your Tailwind config file.
 
 ```js{4}
 // tailwind.config.js
 module.exports = {
   content: [],
-  plugins: [require('@gits-id/tailwind-components/card')],
+  plugins: [require('@morpheme/tailwind-components/card')],
 };
 ```
 

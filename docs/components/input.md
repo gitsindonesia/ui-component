@@ -24,7 +24,7 @@ To use the `VInput` component, simply add the component to your template:
 </LivePreview>
 
 ::: info
-The `VInput` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
+The `VInput` component is registered globally when you install with `@morpheme/ui`. So you don't need to import it manually.
 :::
 
 ### Placeholder
@@ -441,7 +441,7 @@ Here is example of using `VInput` as field array with `vee-validate`.
 <script setup>
 import {Field, useForm, useFieldArray} from 'vee-validate';
 import VInput from '../VInput.vue';
-import VBtn from '@gits-id/button';
+import VBtn from '@morpheme/button';
 
 const {handleSubmit, values, errors} = useForm({
   initialValues: {
@@ -491,7 +491,7 @@ Here is example of using `VInput` as field array of object with `vee-validate`.
 <script setup>
 import {Field, useForm, useFieldArray} from 'vee-validate';
 import VInput from '../VInput.vue';
-import VBtn from '@gits-id/button';
+import VBtn from '@morpheme/button';
 
 const {handleSubmit, values, errors} = useForm({
   initialValues: {
@@ -551,7 +551,7 @@ Here is example of using `VInput` as nested field array with `vee-validate`.
 <script setup>
 import {Field, useForm, useFieldArray, FieldArray} from 'vee-validate';
 import VInput from '../VInput.vue';
-import VBtn from '@gits-id/button';
+import VBtn from '@morpheme/button';
 
 const {handleSubmit, values, errors, resetForm} = useForm({
   initialValues: {
@@ -842,18 +842,18 @@ Allows you to customize the append slot.
 
 ## Manual Installation
 
-You can also install the `VInput` component individually via `@gits-id/forms` package:
+You can also install the `VInput` component individually via `@morpheme/forms` package:
 
 ```bash
-npm i @gits-id/forms
+npm i @morpheme/forms
 ```
 
 ```vue
 <script setup lang="ts">
-import {VInput} from '@gits-id/forms';
-import '@gits-id/forms/dist/style.css';
+import {VInput} from '@morpheme/forms';
+import '@morpheme/forms/dist/style.css';
 // OR load SCSS styles
-// import '@gits-id/forms/src/forms.scss';
+// import '@morpheme/forms/src/forms.scss';
 </script>
 
 <template>

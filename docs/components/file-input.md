@@ -29,7 +29,7 @@ const value = ref();
 </LivePreview>
 
 ::: info
-The `VFileUpload` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
+The `VFileUpload` component is registered globally when you install with `@morpheme/ui`. So you don't need to import it manually.
 :::
 
 ### Themes
@@ -537,18 +537,18 @@ None
 
 ## Manual Installation
 
-You can also install the `FileUpload` component individually via `@gits-id/forms` package:
+You can also install the `FileUpload` component individually via `@morpheme/forms` package:
 
 ```bash
-npm i @gits-id/forms
+npm i @morpheme/forms
 ```
 
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
 
-import {VFileUpload} from '@gits-id/forms';
-import '@gits-id/forms/dist/style.css';
+import {VFileUpload} from '@morpheme/forms';
+import '@morpheme/forms/dist/style.css';
 
 const value = ref();
 </script>

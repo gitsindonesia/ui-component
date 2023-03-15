@@ -42,7 +42,7 @@ const options = ref([
 </LivePreview>
 
 ::: info
-The `VFormSelect` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
+The `VFormSelect` component is registered globally when you install with `@morpheme/ui`. So you don't need to import it manually.
 :::
 
 ### Disabled
@@ -451,16 +451,16 @@ None
 
 ## Manual Installation
 
-You can also install the `VFormSelect` component individually via `@gits-id/forms` package:
+You can also install the `VFormSelect` component individually via `@morpheme/forms` package:
 
 ```bash
-yarn install @gits-id/forms
+yarn install @morpheme/forms
 ```
 
 ```vue
 <script setup lang="ts">
-import {VFormSelect} from '@gits-id/forms';
-import '@gits-id/forms/dist/style.css';
+import {VFormSelect} from '@morpheme/forms';
+import '@morpheme/forms/dist/style.css';
 </script>
 
 <template>

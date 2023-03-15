@@ -24,7 +24,7 @@ To use the `VShimmer` component, simply add it to your template:
 </LivePreview>
 
 ::: info
-The `VShimmer` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
+The `VShimmer` component is registered globally when you install with `@morpheme/ui`. So you don't need to import it manually.
 :::
 
 ### Rounded
@@ -123,30 +123,30 @@ None
 
 ## Manual Installation
 
-You can also install the `Shimmer` component individually via `@gits-id/shimmer` package:
+You can also install the `Shimmer` component individually via `@morpheme/shimmer` package:
 
 yarn:
 
 ```bash
-yarn add @gits-id/shimmer
+yarn add @morpheme/shimmer
 ```
 
 npm:
 
 ```bash
-npm i @gits-id/shimmer
+npm i @morpheme/shimmer
 ```
 
 pnpm :
 
 ```bash
-pnpm add @gits-id/shimmer
+pnpm add @morpheme/shimmer
 ```
 
 ```vue
 <script setup lang="ts">
-import Shimmer from '@gits-id/shimmer';
-import '@gits-id/shimmer/dist/style.css';
+import Shimmer from '@morpheme/shimmer';
+import '@morpheme/shimmer/dist/style.css';
 </script>
 
 <template>

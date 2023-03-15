@@ -311,30 +311,30 @@ None.
 
 ## Manual Installation
 
-You can also install the `VTextarea` component individually via `@gits-id/forms` package:
+You can also install the `VTextarea` component individually via `@morpheme/forms` package:
 
 yarn :
 
 ```bash
-yarn add @gits-id/forms
+yarn add @morpheme/forms
 ```
 
 npm :
 
 ```bash
-npm i @gits-id/forms
+npm i @morpheme/forms
 ```
 
 pnpm :
 
 ```bash
-pnpm add @gits-id/forms
+pnpm add @morpheme/forms
 ```
 
 ```vue
 <script setup lang="ts">
-import {VTextarea} from '@gits-id/forms';
-import '@gits-id/forms/dist/style.css';
+import {VTextarea} from '@morpheme/forms';
+import '@morpheme/forms/dist/style.css';
 </script>
 
 <template>

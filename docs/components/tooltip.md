@@ -30,7 +30,7 @@ To use the tooltip component, you can use it in your template as follows:
 The `activator` slot contains the element that will trigger the tooltip when hovered over or clicked. In this example, it is a `VBtn` component. The `VTooltip` component will display the `span` element as the tooltip.
 
 ::: info
-The `VTooltip` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
+The `VTooltip` component is registered globally when you install with `@morpheme/ui`. So you don't need to import it manually.
 :::
 
 ## Props
@@ -77,15 +77,15 @@ None
 
 ## Manual Installation
 
-You can also install the `Tooltip` component individually via `@gits-id/tooltip` package:
+You can also install the `Tooltip` component individually via `@morpheme/tooltip` package:
 
 ```bash
-npm i @gits-id/tooltip
+npm i @morpheme/tooltip
 ```
 
 ```vue
 <script setup lang="ts">
-import VTooltip from '@gits-id/tooltip';
+import VTooltip from '@morpheme/tooltip';
 </script>
 
 <template>

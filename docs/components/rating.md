@@ -96,16 +96,16 @@ None.
 
 ## Manual Installation
 
-You can also install the `Rating` component individually via `@gits-id/rating` package:
+You can also install the `Rating` component individually via `@morpheme/rating` package:
 
 ```bash
-npm i @gits-id/rating
+npm i @morpheme/rating
 ```
 
 ```vue
 <script setup lang="ts">
-import {Rating as VRating} from '@gits-id/rating';
-import '@gits-id/rating/dist/style.css';
+import {Rating as VRating} from '@morpheme/rating';
+import '@morpheme/rating/dist/style.css';
 </script>
 
 <template>

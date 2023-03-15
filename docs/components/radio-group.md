@@ -463,16 +463,16 @@ None
 
 ## Manual Installation
 
-You can also install the `VRadioGroup` component individually via `@gits-id/forms` package:
+You can also install the `VRadioGroup` component individually via `@morpheme/forms` package:
 
 ```bash
-npm i @gits-id/forms
+npm i @morpheme/forms
 ```
 
 ```vue
 <script setup lang="ts">
-import {VRadioGroup} from '@gits-id/forms';
-import '@gits-id/forms/dist/style.css';
+import {VRadioGroup} from '@morpheme/forms';
+import '@morpheme/forms/dist/style.css';
 </script>
 
 <template>

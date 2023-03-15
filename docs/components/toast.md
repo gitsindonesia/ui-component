@@ -30,7 +30,7 @@ const isOpen = ref(false);
 </LivePreview>
 
 ::: info
-The `VToast` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
+The `VToast` component is registered globally when you install with `@morpheme/ui`. So you don't need to import it manually.
 :::
 
 ### Icon
@@ -101,7 +101,7 @@ You can set the color of the `VToast` component using the `color` prop. The poss
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
-import {defaultColors} from '@gits-id/theme/defaultTheme';
+import {defaultColors} from '@morpheme/theme/defaultTheme';
 
 const isOpen = ref(true);
 const color = ref('default');
@@ -275,16 +275,16 @@ Here is an example of how to use the action slot:
 
 ## Manual Installation
 
-You can also install the `Toast` component individually via `@gits-id/toast` package:
+You can also install the `Toast` component individually via `@morpheme/toast` package:
 
 ```bash
-npm i @gits-id/toast
+npm i @morpheme/toast
 ```
 
 ```vue
 <script setup lang="ts">
-import VToast from '@gits-id/toast';
-import '@gits-id/toast/dist/style.css';
+import VToast from '@morpheme/toast';
+import '@morpheme/toast/dist/style.css';
 </script>
 
 <template>

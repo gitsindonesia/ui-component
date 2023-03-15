@@ -30,7 +30,7 @@ To use the component, you can include it in your template with a given `modelVal
 </LivePreview>
 
 ::: info
-The `VProgressbBr` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
+The `VProgressbBr` component is registered globally when you install with `@morpheme/ui`. So you don't need to import it manually.
 :::
 
 ### Slots
@@ -187,16 +187,16 @@ Slot for custom label content to be displayed within the progress bar. Receives 
 
 ## Manual Installation
 
-You can also install the `Progress Bar` component individually via `@gits-id/progress-bar` package:
+You can also install the `Progress Bar` component individually via `@morpheme/progress-bar` package:
 
 ```bash
-npm i @gits-id/progress-bar
+npm i @morpheme/progress-bar
 ```
 
 ```vue
 <script setup lang="ts">
-import VProgressBar from '@gits-id/progress-bar';
-import '@gits-id/progress-bar/dist/style.css';
+import VProgressBar from '@morpheme/progress-bar';
+import '@morpheme/progress-bar/dist/style.css';
 </script>
 
 <template>

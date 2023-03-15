@@ -40,7 +40,7 @@ const isOpen = ref(false);
 The `isOpen` variable in the `v-model` directive controls whether the collapsible is open or closed.
 
 ::: info
-The `VCollapsible` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
+The `VCollapsible` component is registered globally when you install with `@morpheme/ui`. So you don't need to import it manually.
 :::
 
 ### Auto Open
@@ -212,15 +212,15 @@ None
 
 ## Manual Installation
 
-You can also install the `Collapsible` component individually via `@gits-id/collapsible` package:
+You can also install the `Collapsible` component individually via `@morpheme/collapsible` package:
 
 ```bash
-npm i @gits-id/collapsible
+npm i @morpheme/collapsible
 ```
 
 ```vue
 <script setup lang="ts">
-import VCollapsible from '@gits-id/collapsible';
+import VCollapsible from '@morpheme/collapsible';
 </script>
 
 <template>

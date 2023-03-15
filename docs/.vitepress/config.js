@@ -1,8 +1,9 @@
 import {defineConfig} from 'vitepress';
 
 export default defineConfig({
-  title: 'GITS UI',
-  description: 'GITS UI Component Library',
+  title: 'Morpheme UI',
+  description:
+    'A free and open-source Vue UI Library based on Morpheme Design System',
   ignoreDeadLinks: true,
   base: '/ui-component/',
   themeConfig: {

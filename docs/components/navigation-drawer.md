@@ -10,13 +10,13 @@ The `NavDrawer` component is flexible component to create side navigation panel.
 
 ### Basic Usage
 
-To use the `NavDrawer` component, just import it from `@gits-id/ui` or `@gits-id/nav-drawer` and use it in the template.
+To use the `NavDrawer` component, just import it from `@morpheme/ui` or `@morpheme/nav-drawer` and use it in the template.
 
 <LivePreview src="components-navigationdrawer--default" >
 
 ```vue
 <script setup lang="ts">
-import {NavDrawer} from '@gits-id/nav-drawer';
+import {NavDrawer} from '@morpheme/nav-drawer';
 </script>
 
 <template>
@@ -38,7 +38,7 @@ By default, `NavDrawer` component support 4 colors: `default`, `primary`, `secon
 
 ```vue
 <script setup lang="ts">
-import {NavDrawer} from '@gits-id/nav-drawer';
+import {NavDrawer} from '@morpheme/nav-drawer';
 </script>
 
 <template>
@@ -58,7 +58,7 @@ import {NavDrawer} from '@gits-id/nav-drawer';
 
 ```vue
 <script setup lang="ts">
-import {NavDrawer} from '@gits-id/nav-drawer';
+import {NavDrawer} from '@morpheme/nav-drawer';
 </script>
 
 <template>
@@ -78,7 +78,7 @@ import {NavDrawer} from '@gits-id/nav-drawer';
 
 ```vue
 <script setup lang="ts">
-import {NavDrawer} from '@gits-id/nav-drawer';
+import {NavDrawer} from '@morpheme/nav-drawer';
 </script>
 
 <template>
@@ -105,7 +105,7 @@ You can add shadow to the nav-drawer using `shadow` prop.
 
 ```vue
 <script setup lang="ts">
-import {NavDrawer} from '@gits-id/nav-drawer';
+import {NavDrawer} from '@morpheme/nav-drawer';
 </script>
 
 <template>
@@ -129,7 +129,7 @@ You can add border to the nav-drawer using `bordered` prop.
 
 ```vue
 <script setup lang="ts">
-import {NavDrawer} from '@gits-id/nav-drawer';
+import {NavDrawer} from '@morpheme/nav-drawer';
 </script>
 
 <template>
@@ -153,7 +153,7 @@ Use `fixed` prop to apply fixed position to the navigation drawer.
 
 ```vue
 <script setup lang="ts">
-import {NavDrawer} from '@gits-id/nav-drawer';
+import {NavDrawer} from '@morpheme/nav-drawer';
 </script>
 
 <template>
@@ -191,8 +191,8 @@ Use `sticky` prop to apply sticky position to the navigation drawer.
 
 ```vue
 <script setup lang="ts">
-import {NavDrawer} from '@gits-id/nav-drawer';
-import '@gits-id/nav-drawer/dist/style.css';
+import {NavDrawer} from '@morpheme/nav-drawer';
+import '@morpheme/nav-drawer/dist/style.css';
 </script>
 
 <template>
@@ -230,10 +230,10 @@ You can toggle show or hide the navigation drawer using `v-model` or `modelValue
 
 ```vue
 <script setup lang="ts">
-import {NavDrawer} from '@gits-id/nav-drawer';
-import '@gits-id/nav-drawer/dist/style.css';
+import {NavDrawer} from '@morpheme/nav-drawer';
+import '@morpheme/nav-drawer/dist/style.css';
 import {ref} from 'vue';
-import Button from '@gits-id/button';
+import Button from '@morpheme/button';
 
 const isOpen = ref(true);
 </script>
@@ -266,9 +266,9 @@ Use `mini` prop to apply mini style to the navigation drawer.
 
 ```vue
 <script setup lang="ts">
-import {NavDrawer} from '@gits-id/nav-drawer';
+import {NavDrawer} from '@morpheme/nav-drawer';
 import {ref} from 'vue';
-import Button from '@gits-id/button';
+import Button from '@morpheme/button';
 
 const isMini = ref(true);
 </script>
@@ -295,10 +295,10 @@ To enable expand on hover effect, you need to apply two props: `expand-on-hover`
 
 ```vue {7,15-16}
 <script setup lang="ts">
-import {NavDrawer} from '@gits-id/nav-drawer';
-import '@gits-id/nav-drawer/dist/style.css';
+import {NavDrawer} from '@morpheme/nav-drawer';
+import '@morpheme/nav-drawer/dist/style.css';
 import {ref} from 'vue';
-import Button from '@gits-id/button';
+import Button from '@morpheme/button';
 
 const isExpanded = ref(true);
 </script>
@@ -336,7 +336,7 @@ Use `overlay` prop to add overlay to the navigation drawer.
 
 ```vue
 <script setup lang="ts">
-import {NavDrawer} from '@gits-id/nav-drawer';
+import {NavDrawer} from '@morpheme/nav-drawer';
 </script>
 
 <template>
@@ -358,9 +358,9 @@ By default the navigation drawer is placed at the left of the page. You can move
 
 ```vue {16}
 <script setup lang="ts">
-import {NavDrawer} from '@gits-id/nav-drawer';
+import {NavDrawer} from '@morpheme/nav-drawer';
 import {ref} from 'vue';
-import Button from '@gits-id/button';
+import Button from '@morpheme/button';
 
 const isOpen = ref(true);
 </script>
@@ -397,9 +397,9 @@ You can also customize the default transition using `transition` prop.
 
 ```vue {15}
 <script setup lang="ts">
-import {NavDrawer} from '@gits-id/nav-drawer';
+import {NavDrawer} from '@morpheme/nav-drawer';
 import {ref} from 'vue';
-import Button from '@gits-id/button';
+import Button from '@morpheme/button';
 
 const isOpen = ref(true);
 </script>
@@ -518,8 +518,8 @@ Here is the example to create indigo colored navigation drawer.
 
 ```vue
 <script setup lang="ts">
-import {NavDrawer} from '@gits-id/nav-drawer';
-import '@gits-id/nav-drawer/dist/style.css';
+import {NavDrawer} from '@morpheme/nav-drawer';
+import '@morpheme/nav-drawer/dist/style.css';
 </script>
 
 <template>
@@ -540,16 +540,16 @@ In the example above, first, we need to specify the custom color via `color` pro
 
 ## Manual Installation
 
-You can also install the `NavDrawer` component individually via `@gits-id/nav-drawer` package:
+You can also install the `NavDrawer` component individually via `@morpheme/nav-drawer` package:
 
 ```bash
-npm i @gits-id/nav-drawer
+npm i @morpheme/nav-drawer
 ```
 
 ```vue
 <script setup lang="ts">
-import {NavDrawer} from '@gits-id/nav-drawer';
-import '@gits-id/nav-drawer/dist/style.css';
+import {NavDrawer} from '@morpheme/nav-drawer';
+import '@morpheme/nav-drawer/dist/style.css';
 </script>
 
 <template>

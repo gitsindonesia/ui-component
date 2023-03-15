@@ -43,7 +43,7 @@ const menus = [
 <LivePreview src="components-navdrawer--nav-drawer" />
 
 ::: info
-The `VNavDrawer` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
+The `VNavDrawer` component is registered globally when you install with `@morpheme/ui`. So you don't need to import it manually.
 :::
 
 ## Expand on hover
@@ -152,15 +152,15 @@ None
 
 ## Manual Installation
 
-You can also install the `NavDrawer` component individually via `@gits-id/nav-drawer` package:
+You can also install the `NavDrawer` component individually via `@morpheme/nav-drawer` package:
 
 ```bash
-yarn install @gits-id/nav-drawer
+yarn install @morpheme/nav-drawer
 ```
 
 ```vue
 <script setup lang="ts">
-import VNavDrawer from '@gits-id/nav-drawer';
+import VNavDrawer from '@morpheme/nav-drawer';
 </script>
 
 <template>

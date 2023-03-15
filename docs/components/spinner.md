@@ -23,7 +23,7 @@ To use the `VSpinner` component, simply include it in your template:
 </LivePreview>
 
 ::: info
-The `VSpinner` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
+The `VSpinner` component is registered globally when you install with `@morpheme/ui`. So you don't need to import it manually.
 :::
 
 ### Colors
@@ -84,15 +84,15 @@ You can customize the size of the spinner using the `xSmall`, `small`, `large`, 
 
 ## Manual Installation
 
-You can also install the `Spinner` component individually via `@gits-id/spnner` package:
+You can also install the `Spinner` component individually via `@morpheme/spnner` package:
 
 ```bash
-npm i @gits-id/spinner
+npm i @morpheme/spinner
 ```
 
 ```vue
 <script setup lang="ts">
-import VSpinner from '@gits-id/spinner';
+import VSpinner from '@morpheme/spinner';
 </script>
 
 <template>

@@ -49,7 +49,7 @@ const items = ref([
 </LivePreview>
 
 ::: info
-The `VDropdown` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
+The `VDropdown` component is registered globally when you install with `@morpheme/ui`. So you don't need to import it manually.
 :::
 
 ### Right Alignment
@@ -138,7 +138,7 @@ You can also use slots to specify the items of the dropdown menu directly in the
 
 ```vue
 <script setup lang="ts">
-import {VDropdown, VDropdownItem} from '@gits-id/dropdown';
+import {VDropdown, VDropdownItem} from '@morpheme/dropdown';
 </script>
 
 <template>
@@ -161,7 +161,7 @@ You can use the `activator` slot to specify a custom element that will act as th
 
 ```vue
 <script setup lang="ts">
-import {VDropdown, VDropdownItem, VBtn} from '@gits-id/ui';
+import {VDropdown, VDropdownItem, VBtn} from '@morpheme/ui';
 </script>
 
 <template>
@@ -244,7 +244,7 @@ The `activator` slot in a Vue component allows you to specify custom content to 
 
 ```vue
 <script setup lang="ts">
-import {VDropdown, VDropdownItem, VBtn} from '@gits-id/ui';
+import {VDropdown, VDropdownItem, VBtn} from '@morpheme/ui';
 </script>
 
 <template>
@@ -264,7 +264,7 @@ The `default` slot, on the other hand, is a catch-all slot that allows you to sp
 
 ```vue
 <script setup lang="ts">
-import {VDropdown, VDropdownItem, VBtn} from '@gits-id/ui';
+import {VDropdown, VDropdownItem, VBtn} from '@morpheme/ui';
 </script>
 
 <template>
@@ -346,27 +346,27 @@ Dark Mode:
 
 ## Tailwind Plugin
 
-This package comes with custom tailwind plugin for styling. If you are installing this package separately from `@gits-id/ui` package, you need to include the plugin in `plugins` section in your Tailwind config file.
+This package comes with custom tailwind plugin for styling. If you are installing this package separately from `@morpheme/ui` package, you need to include the plugin in `plugins` section in your Tailwind config file.
 
 ```js{4}
 // tailwind.config.js
 module.exports = {
   content: [],
-  plugins: [require('@gits-id/tailwind-components/dropdown')],
+  plugins: [require('@morpheme/tailwind-components/dropdown')],
 };
 ```
 
 ## Manual Installation
 
-You can also install the `VDropdown` component individually via `@gits-id/dropdown` package:
+You can also install the `VDropdown` component individually via `@morpheme/dropdown` package:
 
 ```bash
-npm i @gits-id/dropdown
+npm i @morpheme/dropdown
 ```
 
 ```vue
 <script setup lang="ts">
-import {VDropdown, VDropdownItem} from '@gits-id/dropdown';
+import {VDropdown, VDropdownItem} from '@morpheme/dropdown';
 </script>
 
 <template>

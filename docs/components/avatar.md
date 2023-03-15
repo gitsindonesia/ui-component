@@ -8,9 +8,9 @@ The `Avatar` component is a visual representation of a user or an entity. It can
 
 ## Installation
 
-To use the `Avatar` component, you will need to install the `@gits-id/avatar` package and import the styles from `@gits-id/avatar/dist/style.css`.
+To use the `Avatar` component, you will need to install the `@morpheme/avatar` package and import the styles from `@morpheme/avatar/dist/style.css`.
 
-Alternatively, you can also use the `VAvatar` component from the `@gits-id/ui` package, which is registered globally and does not require manual importing.
+Alternatively, you can also use the `VAvatar` component from the `@morpheme/ui` package, which is registered globally and does not require manual importing.
 
 ## Usage
 
@@ -141,18 +141,18 @@ None
 
 ## Manual Installation
 
-To install the `Avatar` component individually, you can use the `@gits-id/avatar` package. Here's how to install it using NPM:
+To install the `Avatar` component individually, you can use the `@morpheme/avatar` package. Here's how to install it using NPM:
 
 ```bash
-npm i @gits-id/avatar
+npm i @morpheme/avatar
 ```
 
 To use the `Avatar` component, you will need to import it and then add it to your template:
 
 ```vue
 <script setup lang="ts">
-import VAvatar from '@gits-id/avatar';
-import '@gits-id/avatar/dist/style.css';
+import VAvatar from '@morpheme/avatar';
+import '@morpheme/avatar/dist/style.css';
 </script>
 
 <template>

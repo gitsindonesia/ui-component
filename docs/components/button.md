@@ -37,7 +37,7 @@ To use the `VBtn` component, simply add it to your template.
 </LivePreview>
 
 ::: info
-The `VBtn` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
+The `VBtn` component is registered globally when you install with `@morpheme/ui`. So you don't need to import it manually.
 :::
 
 ### Outlined
@@ -322,7 +322,7 @@ Use `fab` prop to make the button as floating action button (FAB).
 
 ```vue
 <script setup lang="ts">
-import VIcon from '@gits-id/icon';
+import VIcon from '@morpheme/icon';
 </script>
 
 <template>
@@ -521,30 +521,30 @@ Use the `suffix` slot to place the content after the text.
 
 ## Tailwind Plugin
 
-This package comes with custom tailwind plugin for styling. If you are installing this package separately from `@gits-id/ui` package, you need to include the plugin in `plugins` section in your Tailwind config file.
+This package comes with custom tailwind plugin for styling. If you are installing this package separately from `@morpheme/ui` package, you need to include the plugin in `plugins` section in your Tailwind config file.
 
 ```js{4}
 // tailwind.config.js
 module.exports = {
   content: [],
-  plugins: [require('@gits-id/tailwind-components/button')],
+  plugins: [require('@morpheme/tailwind-components/button')],
 };
 ```
 
 ## Manual Installation
 
-You can also install the `Button` component individually via `@gits-id/button` package:
+You can also install the `Button` component individually via `@morpheme/button` package:
 
 ```bash
-npm i @gits-id/button
+npm i @morpheme/button
 ```
 
 ```vue
 <script setup lang="ts">
-import VBtn from '@gits-id/button';
-import '@gits-id/button/dist/style.css';
+import VBtn from '@morpheme/button';
+import '@morpheme/button/dist/style.css';
 // or import the SCSS styles
-// import '@gits-id/button/src/VBtn.scss';
+// import '@morpheme/button/src/VBtn.scss';
 </script>
 
 <template>

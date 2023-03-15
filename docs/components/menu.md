@@ -214,16 +214,16 @@ None
 
 ## Manual Installation
 
-You can also install the `Menu` component individually via `@gits-id/menu` package:
+You can also install the `Menu` component individually via `@morpheme/menu` package:
 
 ```bash
-npm i @gits-id/menu
+npm i @morpheme/menu
 ```
 
 ```vue
 <script setup lang="ts">
-import VMenu from '@gits-id/menu';
-import '@gits-id/menu/dist/style.css';
+import VMenu from '@morpheme/menu';
+import '@morpheme/menu/dist/style.css';
 </script>
 
 <template>

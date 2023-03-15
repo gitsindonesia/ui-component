@@ -1,6 +1,6 @@
 # Dark Mode
 
-The GITS UI includes dark mode support by default, however, to enable it, you will need to load the styles explicitly.
+The Morpheme UI includes dark mode support by default, however, to enable it, you will need to load the styles explicitly.
 
 ## Tailwind Configuration
 
@@ -21,12 +21,12 @@ import {createApp} from 'vue';
 import {createPinia} from 'pinia';
 import App from './App.vue';
 import router from './router';
-import GitsUi from '@gits-id/ui';
+import GitsUi from '@morpheme/ui';
 import './assets/index.css';
-import '@gits-id/ui/styles.scss';
+import '@morpheme/ui/styles.scss';
 
 // load dark mode styles
-import '@gits-id/ui/styles.dark';
+import '@morpheme/ui/styles.dark';
 
 const app = createApp(App);
 
@@ -43,7 +43,7 @@ To enable dark mode on a Nuxt application, set the value of `darkMode` option to
 
 ```ts {4}
 export default defineNuxtConfig({
-  modules: ['@gits-id/ui-nuxt', '@nuxtjs/tailwindcss'],
+  modules: ['@morpheme/ui-nuxt', '@nuxtjs/tailwindcss'],
   gitsUi: {
     darkMode: true,
   },

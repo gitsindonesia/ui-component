@@ -1,13 +1,13 @@
 ---
 layout: home
-title: GITS UI - Free and Open-Source Vue Component Library
+title: Morpheme UI (Morpheme UI) - A free and open-source Vue UI Library based on Morpheme Design System
 
 hero:
-  name: GITS UI
-  tagline: A beautiful and customizable Vue component library
+  name: Morpheme (Morpheme UI)
+  tagline: A free and open-source Vue UI Library based on Morpheme Design System
   image:
     src: https://gits.id/wp-content/uploads/2022/06/Logo-Main-1.png
-    alt: GITS
+    alt: Morpheme
   # tagline: Beautiful yet costumizable Vue Components
   actions:
     - theme: brand

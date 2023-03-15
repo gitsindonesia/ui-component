@@ -4,7 +4,7 @@ outline: deep
 
 # Logo
 
-The `VLogo` component a simple way to display GITS Logo.
+The `VLogo` component a simple way to display Morpheme Logo.
 
 ## Usage
 
@@ -24,7 +24,7 @@ To use the logo component, just use it in the template like so:
 </LivePreview>
 
 ::: info
-The `VLogo` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
+The `VLogo` component is registered globally when you install with `@morpheme/ui`. So you don't need to import it manually.
 :::
 
 ### White
@@ -110,16 +110,16 @@ None
 
 ## Manual Installation
 
-You can also install the `Logo` component individually via `@gits-id/logo` package:
+You can also install the `Logo` component individually via `@morpheme/logo` package:
 
 ```bash
-npm i @gits-id/logo
+npm i @morpheme/logo
 ```
 
 ```vue
 <script setup lang="ts">
-import VLogo from '@gits-id/logo';
-import '@gits-id/logo/dist/style.css';
+import VLogo from '@morpheme/logo';
+import '@morpheme/logo/dist/style.css';
 </script>
 
 <template>

@@ -19,7 +19,7 @@ This component is **deprecated**. You can replace it with the new [`VAppBar`](/c
 <LivePreview src="components-navbar--default" />
 
 ::: info
-The `VNavbar` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
+The `VNavbar` component is registered globally when you install with `@morpheme/ui`. So you don't need to import it manually.
 :::
 
 ## Small
@@ -109,15 +109,15 @@ None
 
 ## Manual Installation
 
-You can also install the `Navbar` component individually via `@gits-id/navbar` package:
+You can also install the `Navbar` component individually via `@morpheme/navbar` package:
 
 ```bash
-yarn install @gits-id/navbar
+yarn install @morpheme/navbar
 ```
 
 ```vue
 <script setup lang="ts">
-import VNavbar from '@gits-id/navbar';
+import VNavbar from '@morpheme/navbar';
 </script>
 
 <template>

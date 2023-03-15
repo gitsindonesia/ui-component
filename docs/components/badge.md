@@ -20,7 +20,7 @@ To use the `VBadge` component, you can simply include it in your template like t
 ```
 
 ::: info
-Note that the `VBadge` component is registered globally when you install `@gits-id/ui`, so you don't need to import it manually.
+Note that the `VBadge` component is registered globally when you install `@morpheme/ui`, so you don't need to import it manually.
 :::
 
 ### Colors
@@ -222,19 +222,19 @@ Note that you can also customize the other visual aspects of the `VBadge` compon
 
 ## Manual Installation
 
-In addition to installing the `VBadge` component as part of the `@gits-id/ui` package, you can also install it individually using the `@gits-id/badge` package.
+In addition to installing the `VBadge` component as part of the `@morpheme/ui` package, you can also install it individually using the `@morpheme/badge` package.
 
-To install the `@gits-id/badge` package, run the following command:
+To install the `@morpheme/badge` package, run the following command:
 
 ```bash
-npm i @gits-id/badge
+npm i @morpheme/badge
 ```
 
 Then, you can import and use the `VBadge` component in your application like this:
 
 ```vue
 <script setup lang="ts">
-import VBadge from '@gits-id/badge';
+import VBadge from '@morpheme/badge';
 </script>
 
 <template>
@@ -244,15 +244,15 @@ import VBadge from '@gits-id/badge';
 
 ## Tailwind Plugin
 
-The `@gits-id/badge` package comes with a custom Tailwind CSS plugin that provides various utility classes for styling the `VBadge` component. If you are installing the `@gits-id/badge` package separately from the `@gits-id/ui` package, you will need to include this plugin in the `plugins` section of your Tailwind CSS configuration file.
+The `@morpheme/badge` package comes with a custom Tailwind CSS plugin that provides various utility classes for styling the `VBadge` component. If you are installing the `@morpheme/badge` package separately from the `@morpheme/ui` package, you will need to include this plugin in the `plugins` section of your Tailwind CSS configuration file.
 
-Here's an example of how to include the `@gits-id/badge` plugin in your Tailwind CSS configuration file:
+Here's an example of how to include the `@morpheme/badge` plugin in your Tailwind CSS configuration file:
 
 ```js{4}
 // tailwind.config.js
 module.exports = {
   content: [],
-  plugins: [require('@gits-id/tailwind-components/badge')],
+  plugins: [require('@morpheme/tailwind-components/badge')],
 };
 ```
 

@@ -29,7 +29,7 @@ const page = ref(1);
 </LivePreview>
 
 ::: info
-The `VDataTablePagination` component is registered globally when you install with `@gits-id/ui`. So you don't need to import it manually.
+The `VDataTablePagination` component is registered globally when you install with `@morpheme/ui`. So you don't need to import it manually.
 :::
 
 ### Rows per page slot
