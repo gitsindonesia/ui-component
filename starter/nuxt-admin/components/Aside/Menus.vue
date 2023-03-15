@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {VListItem} from '@gits-id/ui';
+import {VListItem} from '@morpheme/ui';
 
 export type Menu = InstanceType<typeof VListItem>['$props'] & {
   header?: string;

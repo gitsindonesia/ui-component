@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
-    '@gits-id/ui-nuxt',
+    '@morpheme/ui-nuxt',
     '@nuxtjs/tailwindcss',
     [
       '@pinia/nuxt',
@@ -26,15 +26,11 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: '',
   },
-  extends: [
-    '@gits-id/nuxt-auth'
-  ],
+  extends: ['@morpheme/nuxt-auth'],
   vite: {
     optimizeDeps: {
-      include: ['yup']
-    }
+      include: ['yup'],
+    },
   },
-  css: [
-    '~/assets/css/main.css'
-  ],
+  css: ['~/assets/css/main.css'],
 });
