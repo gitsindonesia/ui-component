@@ -1,4 +1,4 @@
-# GITS UI
+# Morpheme UI (GITS UI)
 
 <div align="center">
 
@@ -9,7 +9,7 @@
 
 </div>
 
-GITS UI is the official UI Component Library in GITS Indonesia built with Vue 3 and Tailwind CSS.
+Morpheme UI (GITS UI) - A free and open-source Vue UI Library based on Morpheme Design System.
 
 ## Features
 
@@ -30,23 +30,23 @@ Detailed documentation can be found [here](https://gitsindonesia.github.io/ui-co
 
 ## Starter
 
-Checkout starter of GITS UI in the [starter](/starter/) director
+Checkout starter of Morpheme UI in the [starter](/starter/) director
 
 ### [Vue 3](/starter/vue/)
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/gitsindonesia/ui-component/tree/main/starter/vue)
 
-### [Nuxt 3 + GITS UI Minimal Starter](/starter/nuxt-minimal/)
+### [Nuxt 3 + Minimal Starter](/starter/nuxt-minimal/)
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/gitsindonesia/ui-component/tree/main/starter/nuxt-minimal)
 
-### Nuxt 3 + GITS UI Complete Starter
+### Nuxt 3 + Complete Starter
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/gitsindonesia/nuxt-starter)
 
 ## Development
 
-To set up GITS UI for development:
+To set up Morpheme UI for development:
 
 - Install [lerna](https://lerna.js.org/) and [yarn](https://yarnpkg.com/) globally:
   ```bash
@@ -82,4 +82,4 @@ yarn docs:build
 
 ## License
 
-GITS UI is licensed under the MIT license.
+Morpheme UI is licensed under the MIT license.
