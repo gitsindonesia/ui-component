@@ -1,8 +1,8 @@
 import VProgressBar from './VProgressBar.vue';
-import {themeColors} from '@gits-id/utils/colors';
+import {themeColors} from '@morpheme/utils/colors';
 import {Meta, Story} from '@storybook/vue3';
 import {ref} from 'vue';
-import VBtn from '@gits-id/button';
+import VBtn from '@morpheme/button';
 import './VProgressBar.dark.scss';
 
 export default {

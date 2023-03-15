@@ -2,7 +2,7 @@ import VQuillEditor from './VQuillEditor.vue';
 import {Meta, Story} from '@storybook/vue3';
 import {useForm} from 'vee-validate';
 import {object, string} from 'yup';
-import VBtn from '@gits-id/button';
+import VBtn from '@morpheme/button';
 import {ref} from 'vue';
 
 export default {

@@ -6,7 +6,7 @@ export default {
 
 <script setup lang="ts">
 import {PropType} from 'vue';
-import Icon from '@gits-id/icon';
+import Icon from '@morpheme/icon';
 import {useFormValue, ValidationMode} from '../composables';
 import ErrorMessage from '../ErrorMessage.vue';
 

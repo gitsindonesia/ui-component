@@ -9,26 +9,26 @@ Layouts Component.
 npm
 
 ```
-npm i @gits-id/layouts
+npm i @morpheme/layouts
 ```
 
 yarn
 
 ```
-yarn add @gits-id/layouts
+yarn add @morpheme/layouts
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/layouts
+pnpm i @morpheme/layouts
 ```
 
 ## Usage
 
 ```vue
 <script setup lang="ts">
-import {Auth, Base, Default, SidebarMenu} from '@gits-id/layouts';
+import {Auth, Base, Default, SidebarMenu} from '@morpheme/layouts';
 </script>
 
 <template>

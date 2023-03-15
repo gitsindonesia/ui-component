@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {computed, PropType} from 'vue';
-import Icon from '@gits-id/icon';
-import {DefaultColors, DefaultRounded} from '@gits-id/theme/defaultTheme';
+import Icon from '@morpheme/icon';
+import {DefaultColors, DefaultRounded} from '@morpheme/theme/defaultTheme';
 
 export type BadgeColors = DefaultColors | string;
 

@@ -7,19 +7,19 @@ Vue Toast Component.
 npm
 
 ```
-npm i @gits-id/toast
+npm i @morpheme/toast
 ```
 
 yarn
 
 ```
-yarn add @gits-id/toast
+yarn add @morpheme/toast
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/toast
+pnpm i @morpheme/toast
 ```
 
 ## Usage
@@ -27,8 +27,8 @@ pnpm i @gits-id/toast
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
-import VToast from '@gits-id/toast';
-import '@gits-id/toast/dist/style.css';
+import VToast from '@morpheme/toast';
+import '@morpheme/toast/dist/style.css';
 
 const isOpen = ref(true)
 </script>

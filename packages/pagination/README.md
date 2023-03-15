@@ -13,27 +13,27 @@ Vue Pagination Component.
 npm
 
 ```
-npm i @gits-id/pagination
+npm i @morpheme/pagination
 ```
 
 yarn
 
 ```
-yarn add @gits-id/pagination
+yarn add @morpheme/pagination
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/pagination
+pnpm i @morpheme/pagination
 ```
 
 ## Usage
 
 ```vue
 <script setup lang="ts">
-import VPagination from '@gits-id/pagination';
-import '@gits-id/pagination/dist/style.css';
+import VPagination from '@morpheme/pagination';
+import '@morpheme/pagination/dist/style.css';
 </script>
 
 <template>

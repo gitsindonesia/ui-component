@@ -2,9 +2,9 @@ import {Story} from '@storybook/vue3';
 import {useForm} from 'vee-validate';
 import {mixed, object} from 'yup';
 import {VInput} from '..';
-import VBtn from '@gits-id/button';
+import VBtn from '@morpheme/button';
 import VFileUpload from './VFileUpload.vue';
-import '@gits-id/forms/src/forms.dark.scss';
+import '@morpheme/forms/src/forms.dark.scss';
 
 export default {
   title: 'Forms/FileUpload',

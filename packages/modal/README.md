@@ -7,27 +7,27 @@ Vue modal component. Based on `@headlessui/vue` dialog.
 npm
 
 ```
-npm i @gits-id/modal
+npm i @morpheme/modal
 ```
 
 yarn
 
 ```
-yarn add @gits-id/modal
+yarn add @morpheme/modal
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/modal
+pnpm i @morpheme/modal
 ```
 
 ## Basic Usage
 
 ```vue
 <script setup lang="ts">
-import VModal from '@gits-id/modal';
-import '@gits-id/modal/dist/style.css';
+import VModal from '@morpheme/modal';
+import '@morpheme/modal/dist/style.css';
 </script>
 
 <template>

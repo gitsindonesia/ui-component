@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import {computed, ref, toRefs, watch} from 'vue';
-import {VInput, VCheckbox} from '@gits-id/forms';
-import VBtn from '@gits-id/button';
+import {VInput, VCheckbox} from '@morpheme/forms';
+import VBtn from '@morpheme/button';
 import {useForm} from 'vee-validate';
 import {object, string} from 'yup';
-import VAlert from '@gits-id/alert';
+import VAlert from '@morpheme/alert';
 
 const props = defineProps({
   message: {

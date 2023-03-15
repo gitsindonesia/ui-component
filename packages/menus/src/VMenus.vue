@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {computed} from 'vue';
-import Icon from '@gits-id/icon';
+import Icon from '@morpheme/icon';
 import VMenusItem from './VMenusItem.vue';
 import FloatingVue, {Menu, Dropdown} from 'floating-vue';
 

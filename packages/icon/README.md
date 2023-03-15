@@ -5,26 +5,26 @@
 npm
 
 ```
-npm i @gits-id/icon
+npm i @morpheme/icon
 ```
 
 yarn
 
 ```
-yarn add @gits-id/icon
+yarn add @morpheme/icon
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/icon
+pnpm i @morpheme/icon
 ```
 
 ## Usage
 
 ```vue
 <script setup lang="ts">
-import {Icon} from '@gits-id/icon';
+import {Icon} from '@morpheme/icon';
 </script>
 
 <template>

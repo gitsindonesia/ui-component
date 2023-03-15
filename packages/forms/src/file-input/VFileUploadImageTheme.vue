@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import VSpinner from '@gits-id/spinner';
+import VSpinner from '@morpheme/spinner';
 import {computed} from 'vue';
-import Icon from '@gits-id/icon';
+import Icon from '@morpheme/icon';
 
 type Props = {
   rounded?: boolean;
@@ -43,8 +43,7 @@ const backgroundImage = computed(() =>
         border
         cursor-pointer
         flex flex-col
-        items-center
-        items-center
+        items-center items-center
         justify-center
         py-10
         bg-no-repeat bg-contain bg-center

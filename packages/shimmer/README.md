@@ -7,19 +7,19 @@ Shimmer component AKA loading animation AKA content placeholder.
 via npm:
 
 ```
-npm i @gits-id/shimmer
+npm i @morpheme/shimmer
 ```
 
 via yarn:
 
 ```
-yarn add @gits-id/shimmer
+yarn add @morpheme/shimmer
 ```
 
 via pnpm:
 
 ```
-pnpm i @gits-id/shimmer
+pnpm i @morpheme/shimmer
 ```
 
 ## Usage
@@ -27,9 +27,9 @@ pnpm i @gits-id/shimmer
 ```vue
 <script setup lang="ts">
 // import component
-import Shimmer from '@gits-id/shimmer';
+import Shimmer from '@morpheme/shimmer';
 // import style
-import '@gits-id/shimmer/dist/style.css';
+import '@morpheme/shimmer/dist/style.css';
 </script>
 
 <template>

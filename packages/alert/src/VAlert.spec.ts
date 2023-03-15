@@ -1,7 +1,7 @@
 import {mount} from '@vue/test-utils';
 import {describe, expect, it} from 'vitest';
 import VAlert from './VAlert.vue';
-import Icon from '@gits-id/icon';
+import Icon from '@morpheme/icon';
 
 const ALERT_TEXT = 'Alert text';
 

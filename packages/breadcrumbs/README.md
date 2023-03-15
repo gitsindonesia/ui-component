@@ -7,19 +7,19 @@
 npm
 
 ```
-npm i @gits-id/breadcrumbs
+npm i @morpheme/breadcrumbs
 ```
 
 yarn
 
 ```
-yarn add @gits-id/breadcrumbs
+yarn add @morpheme/breadcrumbs
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/breadcrumbs
+pnpm i @morpheme/breadcrumbs
 ```
 
 ## Usage
@@ -27,7 +27,7 @@ pnpm i @gits-id/breadcrumbs
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
-import Breadcrumbs from '@gits-id/breadcrumbs';
+import Breadcrumbs from '@morpheme/breadcrumbs';
 
 const items = ref([
   {

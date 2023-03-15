@@ -7,14 +7,14 @@ import {
   ListboxOption,
   ListboxLabel,
 } from '@headlessui/vue';
-import {VInput} from '@gits-id/forms';
-import VTooltip from '@gits-id/tooltip';
+import {VInput} from '@morpheme/forms';
+import VTooltip from '@morpheme/tooltip';
 import {FieldOptions} from 'vee-validate';
-import Icon from '@gits-id/icon';
-import '@gits-id/tooltip/dist/style.css';
-import '@gits-id/theme/transition.css';
+import Icon from '@morpheme/icon';
+import '@morpheme/tooltip/dist/style.css';
+import '@morpheme/theme/transition.css';
 import {VSelectItem} from './types';
-import {useFormValue, type ValidationMode} from '@gits-id/forms';
+import {useFormValue, type ValidationMode} from '@morpheme/forms';
 
 type Val = string | number | boolean | VSelectItem | Record<string, any>;
 

@@ -1,7 +1,7 @@
 import {Meta, Story} from '@storybook/vue3';
 import {ref} from 'vue';
 import VNavDrawer from './VNavDrawer.vue';
-import VBtn from '@gits-id/button';
+import VBtn from '@morpheme/button';
 
 const menus = [
   {

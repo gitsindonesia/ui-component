@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {toRefs} from 'vue';
-import VBtn from '@gits-id/button';
+import VBtn from '@morpheme/button';
 
 const props = defineProps({
   fillHeight: {

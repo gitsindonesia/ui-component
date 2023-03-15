@@ -7,26 +7,26 @@
 via npm
 
 ```
-npm i @gits-id/card
+npm i @morpheme/card
 ```
 
 via yarn
 
 ```
-yarn add @gits-id/card
+yarn add @morpheme/card
 ```
 
 via pnpm
 
 ```
-pnpm i @gits-id/card
+pnpm i @morpheme/card
 ```
 
 ## Usage
 
 ```vue
 <script setup lang="ts">
-import Card from '@gits-id/card';
+import Card from '@morpheme/card';
 </script>
 
 <template>

@@ -11,8 +11,8 @@ import {
   watch,
   readonly,
 } from 'vue';
-import VBtn from '@gits-id/button';
-import Icon from '@gits-id/icon';
+import VBtn from '@morpheme/button';
+import Icon from '@morpheme/icon';
 import VTab from './VTab.vue';
 import VTabsSlider from './VTabsSlider.vue';
 

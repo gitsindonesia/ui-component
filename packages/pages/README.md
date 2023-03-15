@@ -7,19 +7,19 @@
 npm
 
 ```
-npm i @gits-id/pages
+npm i @morpheme/pages
 ```
 
 yarn
 
 ```
-yarn add @gits-id/pages
+yarn add @morpheme/pages
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/pages
+pnpm i @morpheme/pages
 ```
 
 ## Usage
@@ -36,7 +36,7 @@ import {
   ResetPassword,
   // NotFound component no requires Auth as its parent
   NotFound,
-} from '@gits-id/pages';
+} from '@morpheme/pages';
 </script>
 
 <template>

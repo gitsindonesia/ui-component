@@ -7,7 +7,7 @@ GITS UI Component + Nuxt 3.
 - Install Nuxt GITS UI
 
 ```bash
-yarn add @gits-id/ui-nuxt
+yarn add @morpheme/ui-nuxt
 ```
 
 - Install `@nuxtjs/tailwindcss`
@@ -22,7 +22,7 @@ yarn add --dev @nuxtjs/tailwindcss
 import {defineNuxtConfig} from 'nuxt';
 
 export default defineNuxtConfig({
-  modules: ['@gits-id/ui-nuxt', '@nuxtjs/tailwindcss'],
+  modules: ['@morpheme/ui-nuxt', '@nuxtjs/tailwindcss'],
   gitsUi: {
     //
   },
@@ -39,8 +39,8 @@ Update your `tailwind.config.js`:
 
 ```js
 module.exports = {
-  content: ['./node_modules/@gits-id/**/src/**/*.{vue,js,ts,jsx,tsx,css}'],
-  presets: [require('@gits-id/tailwind-config/preset')],
+  content: ['./node_modules/@morpheme/**/src/**/*.{vue,js,ts,jsx,tsx,css}'],
+  presets: [require('@morpheme/tailwind-config/preset')],
 };
 ```
 

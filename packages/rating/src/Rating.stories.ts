@@ -27,7 +27,7 @@ Default.parameters = {
       code: `
 <script setup lang="ts">
 import { ref } from 'vue';
-import { Rating } from '@gits-id/ui';
+import { Rating } from '@morpheme/ui';
 
 const value = ref(0);
 </script>

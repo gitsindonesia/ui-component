@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import VAppBar from '@gits-id/app-bar';
+import VAppBar from '@morpheme/app-bar';
 import VMenus from '../VMenus.vue';
 import VMenusItem from '../VMenusItem.vue';
 </script>

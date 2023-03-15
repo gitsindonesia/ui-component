@@ -13,14 +13,14 @@ import {
   nextTick,
   PropType,
 } from 'vue';
-import VBadge from '@gits-id/badge';
-import VTooltip from '@gits-id/tooltip';
+import VBadge from '@morpheme/badge';
+import VTooltip from '@morpheme/tooltip';
 import {onClickOutside, useDebounceFn} from '@vueuse/core';
 import {ErrorMessage, FieldOptions} from 'vee-validate';
-import Icon from '@gits-id/icon';
-import '@gits-id/tooltip/dist/style.css';
+import Icon from '@morpheme/icon';
+import '@morpheme/tooltip/dist/style.css';
 import {VMultiSelectItem} from './types';
-import {useFormValue, type ValidationMode} from '@gits-id/forms';
+import {useFormValue, type ValidationMode} from '@morpheme/forms';
 
 type SearchByFunction = (item: VMultiSelectItem, search: string) => boolean;
 

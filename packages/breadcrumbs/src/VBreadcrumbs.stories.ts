@@ -1,6 +1,6 @@
 import VBreadcrumbs from './VBreadcrumbs.vue';
 import {Meta, Story} from '@storybook/vue3';
-import Icon from '@gits-id/icon';
+import Icon from '@morpheme/icon';
 import vueRouter from 'storybook-vue3-router';
 import type {VBreadcrumbItem} from './types';
 import {ref} from 'vue';

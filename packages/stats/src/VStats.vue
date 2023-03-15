@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import {computed, toRefs} from 'vue';
-import VCard from '@gits-id/card';
-import VBadge from '@gits-id/badge';
-import Icon from '@gits-id/icon';
+import VCard from '@morpheme/card';
+import VBadge from '@morpheme/badge';
+import Icon from '@morpheme/icon';
 
 type BadgeProps = InstanceType<typeof VBadge>['$props'];
 

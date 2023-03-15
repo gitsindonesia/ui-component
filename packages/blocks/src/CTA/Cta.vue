@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import VBtn from '@gits-id/button';
+import VBtn from '@morpheme/button';
 </script>
 
 <template>

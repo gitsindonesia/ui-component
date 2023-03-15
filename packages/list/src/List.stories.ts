@@ -7,11 +7,11 @@ import ListItemHeader from './ListItemHeader.vue';
 import ListCollapse from './ListCollapse.vue';
 import vueRouter from 'storybook-vue3-router';
 import {ref} from 'vue';
-import {NavDrawer as VNavDrawer} from '@gits-id/nav-drawer';
-import VBtn from '@gits-id/button';
-import {Dropdown} from '@gits-id/dropdown';
-import '@gits-id/dropdown/src/Dropdown.scss';
-import '@gits-id/nav-drawer/src/NavDrawer.scss';
+import {NavDrawer as VNavDrawer} from '@morpheme/nav-drawer';
+import VBtn from '@morpheme/button';
+import {Dropdown} from '@morpheme/dropdown';
+import '@morpheme/dropdown/src/Dropdown.scss';
+import '@morpheme/nav-drawer/src/NavDrawer.scss';
 import './List.dark.scss';
 
 export default {

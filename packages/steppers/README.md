@@ -5,26 +5,26 @@
 npm
 
 ```
-npm i @gits-id/stepper
+npm i @morpheme/stepper
 ```
 
 yarn
 
 ```
-yarn add @gits-id/stepper
+yarn add @morpheme/stepper
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/stepper
+pnpm i @morpheme/stepper
 ```
 
 ## Usage
 
 ```vue
 <script setup lang="ts">
-import Stepper from '@gits-id/stepper';
+import Stepper from '@morpheme/stepper';
 
 const items = Array.from({length: 5}, (v, k) => ({
   title: 'Title',

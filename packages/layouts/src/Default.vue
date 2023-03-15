@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {inject, onMounted, ref} from 'vue';
 import SidebarMenu from './SidebarMenu.vue';
-import Icon from '@gits-id/icon';
+import Icon from '@morpheme/icon';
 
 const title = inject('appTitle') || 'GITS';
 const subtitle = inject('appSubtitle') || 'Panel';

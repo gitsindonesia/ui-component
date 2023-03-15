@@ -1,4 +1,4 @@
-const colors = require('@gits-id/theme');
+const colors = require('@morpheme/theme');
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {

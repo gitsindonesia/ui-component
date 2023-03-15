@@ -1,9 +1,9 @@
 import VInput from './VInput.vue';
 import {Meta, Story} from '@storybook/vue3';
 import type {VInputProps} from './types';
-import Icon from '@gits-id/icon';
-import {themeColors} from '@gits-id/utils';
-import VBtn from '@gits-id/button';
+import Icon from '@morpheme/icon';
+import {themeColors} from '@morpheme/utils';
+import VBtn from '@morpheme/button';
 import {useForm} from 'vee-validate';
 import {object, string} from 'yup';
 import FieldArrayStory from './stories/FieldArray.story.vue';

@@ -7,26 +7,26 @@ Container Component.
 npm
 
 ```
-npm i @gits-id/container
+npm i @morpheme/container
 ```
 
 yarn
 
 ```
-yarn add @gits-id/container
+yarn add @morpheme/container
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/container
+pnpm i @morpheme/container
 ```
 
 ## Usage
 
 ```vue
 <script setup lang="ts">
-import Container from '@gits-id/container';
+import Container from '@morpheme/container';
 </script>
 
 <template>

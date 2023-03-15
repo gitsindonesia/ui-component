@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import {ref, toRefs, watch} from 'vue';
-import {VInput} from '@gits-id/forms';
-import Button from '@gits-id/button';
+import {VInput} from '@morpheme/forms';
+import Button from '@morpheme/button';
 import {useForm} from 'vee-validate';
 import {string, object, ref as YupRef} from 'yup';
-import Alert from '@gits-id/alert';
+import Alert from '@morpheme/alert';
 import {Icon} from '@iconify/vue';
-import '@gits-id/button/src/VBtn.scss';
+import '@morpheme/button/src/VBtn.scss';
 
 const props = defineProps({
   title: {

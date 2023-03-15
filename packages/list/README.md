@@ -7,19 +7,19 @@ Use `List` component for creating list, grouping list and creating menus.
 npm
 
 ```
-npm i @gits-id/list
+npm i @morpheme/list
 ```
 
 yarn
 
 ```
-yarn add @gits-id/list
+yarn add @morpheme/list
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/list
+pnpm i @morpheme/list
 ```
 
 ## Usage
@@ -30,8 +30,8 @@ This package provides 5 components: `List`, `ListItem`, `ListItemDivider`, `List
 
 ```vue
 <script setup lang="ts">
-import {List, ListItem, ListItemDivider} from '@gits-id/list';
-import '@gits-id/list/dist/style.css';
+import {List, ListItem, ListItemDivider} from '@morpheme/list';
+import '@morpheme/list/dist/style.css';
 </script>
 
 <template>

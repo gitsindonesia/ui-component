@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {defaultColors} from '@gits-id/theme/defaultTheme';
+import {defaultColors} from '@morpheme/theme/defaultTheme';
 
 useHead({
   title: 'GITS UI Playground',

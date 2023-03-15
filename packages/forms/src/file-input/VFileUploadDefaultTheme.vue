@@ -5,7 +5,7 @@ export default {
 </script>
 
 <script setup lang="ts">
-import VBtn from '@gits-id/button';
+import VBtn from '@morpheme/button';
 import VInput from '../input/VInput.vue';
 
 type Props = {

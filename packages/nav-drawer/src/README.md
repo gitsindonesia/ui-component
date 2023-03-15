@@ -4,13 +4,13 @@ Navigation Drawer Component.
 
 ## Usage
 
-- Import `NavDrawer` from `@gits-id/nav-drawer`
-- Import NavDrawer's styles from `@gits-id/nav-drawer/dist/style.css`
+- Import `NavDrawer` from `@morpheme/nav-drawer`
+- Import NavDrawer's styles from `@morpheme/nav-drawer/dist/style.css`
 
 ```vue
 <script setup lang="ts">
-import {NavDrawer} from '@gits-id/nav-drawer';
-import '@gits-id/nav-drawer/dist/style.css';
+import {NavDrawer} from '@morpheme/nav-drawer';
+import '@morpheme/nav-drawer/dist/style.css';
 </script>
 
 <template>
@@ -24,7 +24,7 @@ Available colors: `default`, `primary`, `secondary`, `dark`.
 
 ```vue
 <script setup lang="ts">
-import {NavDrawer} from '@gits-id/nav-drawer';
+import {NavDrawer} from '@morpheme/nav-drawer';
 </script>
 
 <template>
@@ -124,7 +124,7 @@ import {NavDrawer} from '@gits-id/nav-drawer';
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
-import {NavDrawer} from '@gits-id/nav-drawer';
+import {NavDrawer} from '@morpheme/nav-drawer';
 
 const isOpen = ref(true);
 </script>

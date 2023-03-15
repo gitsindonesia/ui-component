@@ -1,7 +1,7 @@
 <script setup>
 import {ref, watch, toRefs, onMounted, computed} from 'vue';
 import {useRange} from './useRange';
-import {useInputClasses} from '@gits-id/utils';
+import {useInputClasses} from '@morpheme/utils';
 import {useField} from 'vee-validate';
 
 const props = defineProps({

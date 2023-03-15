@@ -2,7 +2,7 @@ import {Meta, Story} from '@storybook/vue3';
 import VModal from './VModal.vue';
 import vueRouter from 'storybook-vue3-router';
 import {ref} from 'vue';
-import VBtn from '@gits-id/button';
+import VBtn from '@morpheme/button';
 import {VModalEvent} from './types';
 import './VModal.dark.scss';
 

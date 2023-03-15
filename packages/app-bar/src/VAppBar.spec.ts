@@ -3,7 +3,7 @@ import {
   defaultColors,
   defaultShadows,
   defaultSizes,
-} from '@gits-id/theme/defaultTheme';
+} from '@morpheme/theme/defaultTheme';
 import {describe, expect, it, test} from 'vitest';
 import VAppBar from './VAppBar.vue';
 import {defineComponent, ref} from 'vue';

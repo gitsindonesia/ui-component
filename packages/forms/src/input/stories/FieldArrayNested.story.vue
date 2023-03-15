@@ -1,7 +1,7 @@
 <script setup>
 import {Field, useForm, useFieldArray, FieldArray} from 'vee-validate';
 import VInput from '../VInput.vue';
-import VBtn from '@gits-id/button';
+import VBtn from '@morpheme/button';
 
 const {handleSubmit, values, errors, resetForm} = useForm({
   initialValues: {

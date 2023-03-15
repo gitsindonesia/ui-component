@@ -21,10 +21,10 @@ export default defineConfig({
       external: [
         'vue',
         '@headlessui/vue',
-        '@gits-id/menus',
-        '@gits-id/logo',
-        '@gits-id/button',
-        '@gits-id/icon',
+        '@morpheme/menus',
+        '@morpheme/logo',
+        '@morpheme/button',
+        '@morpheme/icon',
       ],
       output: {
         // Provide global variables to use in the UMD build

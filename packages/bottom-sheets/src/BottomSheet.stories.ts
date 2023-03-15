@@ -1,14 +1,14 @@
 import type {Story} from '@storybook/vue3';
 import BottomSheet from './BottomSheet.vue';
 import {onMounted, ref} from 'vue';
-import Button from '@gits-id/button';
+import Button from '@morpheme/button';
 import BottomSheetHeader from './BottomSheetHeader.vue';
 import BottomSheetMenus from './BottomSheetMenus.vue';
 import BottomSheetBody from './BottomSheetBody.vue';
 import BottomSheetFooter from './BottomSheetFooter.vue';
 import BottomSheetHandle from './BottomSheetHandle.vue';
-import '@gits-id/button/src/VBtn.scss';
-import '@gits-id/button/src/VBtn.dark.scss';
+import '@morpheme/button/src/VBtn.scss';
+import '@morpheme/button/src/VBtn.dark.scss';
 import './BottomSheet.dark.scss';
 
 const menus = ref([

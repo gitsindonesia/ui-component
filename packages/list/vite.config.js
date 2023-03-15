@@ -22,8 +22,8 @@ export default defineConfig({
         'vue',
         '@iconify/vue',
         'vue-router',
-        '@gits-id/collapsible',
-        '@gits-id/icon',
+        '@morpheme/collapsible',
+        '@morpheme/icon',
       ],
       output: {
         // Provide global variables to use in the UMD build

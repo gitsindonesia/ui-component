@@ -1,11 +1,11 @@
-import { placements } from './types';
+import {placements} from './types';
 import VToast from './VToast.vue';
-import VBtn, {VBtnGroup} from '@gits-id/button';
-import {themeColors} from '@gits-id/utils/colors';
+import VBtn, {VBtnGroup} from '@morpheme/button';
+import {themeColors} from '@morpheme/utils/colors';
 import {Story} from '@storybook/vue3';
 import {ref} from 'vue';
-import '@gits-id/icon/dist/style.css';
-import { defaultColors } from '@gits-id/theme/defaultTheme';
+import '@morpheme/icon/dist/style.css';
+import {defaultColors} from '@morpheme/theme/defaultTheme';
 
 export default {
   title: 'Components/Toast',
@@ -76,11 +76,11 @@ export const Placement: Story<{}> = (args) => ({
     const placement = ref('bottom');
     const changePlacement = (position: string) => {
       placement.value = position;
-      isOpen.value = false
+      isOpen.value = false;
       setTimeout(() => {
-        isOpen.value = true
-      }, 200)
-    }
+        isOpen.value = true;
+      }, 200);
+    };
     return {args, isOpen, placements, placement, changePlacement};
   },
   template: `
@@ -110,11 +110,11 @@ export const Colors: Story<{}> = (args) => ({
     const color = ref('default');
     const changecolor = (position: string) => {
       color.value = position;
-      isOpen.value = false
+      isOpen.value = false;
       setTimeout(() => {
-        isOpen.value = true
-      }, 200)
-    }
+        isOpen.value = true;
+      }, 200);
+    };
     const colors = [...defaultColors, 'white'];
     return {args, isOpen, colors, color, changecolor};
   },
@@ -149,7 +149,7 @@ export const Slots: Story<{}> = (args) => ({
     const isOpen = ref(false);
     const actionHandler = () => {
       alert('Confirmed!');
-    }
+    };
     return {args, isOpen, actionHandler};
   },
   template: `

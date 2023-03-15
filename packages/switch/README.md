@@ -7,27 +7,27 @@ Vue Switch Component.
 npm
 
 ```
-npm i @gits-id/switch
+npm i @morpheme/switch
 ```
 
 yarn
 
 ```
-yarn add @gits-id/switch
+yarn add @morpheme/switch
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/switch
+pnpm i @morpheme/switch
 ```
 
 ## Usage
 
 ```vue
 <script setup lang="ts">
-import VSwitch from '@gits-id/switch';
-import '@gits-id/switch/dist/style.css';
+import VSwitch from '@morpheme/switch';
+import '@morpheme/switch/dist/style.css';
 </script>
 
 <template>

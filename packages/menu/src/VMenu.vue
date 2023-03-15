@@ -8,7 +8,7 @@ export default {
 import {computed, PropType, toRefs} from 'vue';
 import VMenuTooltip from './VMenuTooltip.vue';
 import VMenuItem from './VMenuItem.vue';
-import VCollapsible from '@gits-id/collapsible';
+import VCollapsible from '@morpheme/collapsible';
 import {useRoute} from 'vue-router';
 import VMenuIcon from './VMenuIcon.vue';
 import {Menu} from './types';

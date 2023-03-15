@@ -7,19 +7,19 @@ Vue Tabs Component.
 npm
 
 ```
-npm i @gits-id/tabs
+npm i @morpheme/tabs
 ```
 
 yarn
 
 ```
-yarn add @gits-id/tabs
+yarn add @morpheme/tabs
 ```
 
 pnpm
 
 ```
-pnpm add @gits-id/tabs
+pnpm add @morpheme/tabs
 ```
 
 ## Usage
@@ -27,9 +27,9 @@ pnpm add @gits-id/tabs
 ```vue
 <script setup lang="ts">
 // import component
-import Tabs from '@gits-id/tabs';
+import Tabs from '@morpheme/tabs';
 // import styles
-import '@gits-id/tabs/dist/style.css';
+import '@morpheme/tabs/dist/style.css';
 
 const items = ref([
   {

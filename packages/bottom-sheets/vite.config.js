@@ -16,7 +16,7 @@ export default defineConfig({
       formats: ['es', 'cjs', 'iife', 'umd'],
     },
     rollupOptions: {
-      external: ['vue', '@gits-id/icon', '@gits-id/list', '@gits-id/button'],
+      external: ['vue', '@morpheme/icon', '@morpheme/list', '@morpheme/button'],
       output: {
         globals: {
           vue: 'Vue',

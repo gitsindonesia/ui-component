@@ -2,7 +2,7 @@
 import {Menu, MenuButton, MenuItems} from '@headlessui/vue';
 import type {DropdownItemProps} from './types';
 import DropdownItem from './DropdownItem.vue';
-import {Icon} from '@gits-id/icon';
+import {Icon} from '@morpheme/icon';
 
 export interface Props {
   modelValue?: boolean;

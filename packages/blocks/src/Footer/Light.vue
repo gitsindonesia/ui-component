@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Logo from '@gits-id/logo';
-import Icon from '@gits-id/icon';
+import Logo from '@morpheme/logo';
+import Icon from '@morpheme/icon';
 </script>
 
 <template>

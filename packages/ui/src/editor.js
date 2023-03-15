@@ -1,1 +1,1 @@
-export * from '@gits-id/editor';
+export * from '@morpheme/editor';

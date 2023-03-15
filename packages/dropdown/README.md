@@ -7,26 +7,26 @@ Dropdown Component.
 npm
 
 ```
-npm i @gits-id/dropdown
+npm i @morpheme/dropdown
 ```
 
 yarn
 
 ```
-yarn add @gits-id/dropdown
+yarn add @morpheme/dropdown
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/dropdown
+pnpm i @morpheme/dropdown
 ```
 
 ## Usage
 
 ```vue
 <script setup lang="ts">
-import Dropdown from '@gits-id/dropdown';
+import Dropdown from '@morpheme/dropdown';
 </script>
 
 <template>

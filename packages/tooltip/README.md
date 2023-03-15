@@ -7,19 +7,19 @@
 npm
 
 ```
-npm i @gits-id/tooltip
+npm i @morpheme/tooltip
 ```
 
 yarn
 
 ```
-yarn add @gits-id/tooltip
+yarn add @morpheme/tooltip
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/tooltip
+pnpm i @morpheme/tooltip
 ```
 
 ## Usage
@@ -27,9 +27,9 @@ pnpm i @gits-id/tooltip
 ```vue
 <script setup lang="ts">
 // import styles
-import '@gits-id/tooltip/dist/style.css';
+import '@morpheme/tooltip/dist/style.css';
 // import component
-import Tooltip from '@gits-id/tooltip';
+import Tooltip from '@morpheme/tooltip';
 </script>
 
 <template>

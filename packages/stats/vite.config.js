@@ -21,9 +21,9 @@ export default defineConfig({
       external: [
         'vue',
         '@iconify/vue',
-        '@gits-id/card',
-        '@gits-id/badge',
-        '@gits-id/icon',
+        '@morpheme/card',
+        '@morpheme/badge',
+        '@morpheme/icon',
       ],
       output: {
         // Provide global variables to use in the UMD build

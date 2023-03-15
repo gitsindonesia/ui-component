@@ -5,26 +5,26 @@
 npm
 
 ```
-npm i @gits-id/iconsax
+npm i @morpheme/iconsax
 ```
 
 yarn
 
 ```
-yarn add @gits-id/iconsax
+yarn add @morpheme/iconsax
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/iconsax
+pnpm i @morpheme/iconsax
 ```
 
 ## Usage
 
 ```vue
 <script setup lang="ts">
-import Iconsax from '@gits-id/iconsax';
+import Iconsax from '@morpheme/iconsax';
 </script>
 
 <template>

@@ -7,26 +7,26 @@
 npm
 
 ```
-npm i @gits-id/navbar
+npm i @morpheme/navbar
 ```
 
 yarn
 
 ```
-yarn add @gits-id/navbar
+yarn add @morpheme/navbar
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/navbar
+pnpm i @morpheme/navbar
 ```
 
 ## Usage
 
 ```vue
 <script setup lang="ts">
-import Navbar from '@gits-id/navbar';
+import Navbar from '@morpheme/navbar';
 </script>
 
 <template>

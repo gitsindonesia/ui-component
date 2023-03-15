@@ -22,7 +22,7 @@ export default defineConfig({
         'vue',
         '@headlessui/vue',
         'vue-router',
-        '@gits-id/collapsible',
+        '@morpheme/collapsible',
         '@iconify/vue',
       ],
       output: {

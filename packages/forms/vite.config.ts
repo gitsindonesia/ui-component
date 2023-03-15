@@ -21,11 +21,11 @@ export default defineConfig({
       external: [
         'vue',
         'vee-validate',
-        '@gits-id/button',
-        '@gits-id/spinner',
-        '@gits-id/utils',
-        '@gits-id/tailwind-config',
-        '@gits-id/icon',
+        '@morpheme/button',
+        '@morpheme/spinner',
+        '@morpheme/utils',
+        '@morpheme/tailwind-config',
+        '@morpheme/icon',
         '@iconify/vue',
       ],
       output: {

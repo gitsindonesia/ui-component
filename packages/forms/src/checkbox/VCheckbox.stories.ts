@@ -1,11 +1,11 @@
 import VCheckbox from './VCheckbox.vue';
 import {ref} from 'vue';
-import {themeColors} from '@gits-id/utils/colors';
-import {sizes} from '@gits-id/utils/sizes';
+import {themeColors} from '@morpheme/utils/colors';
+import {sizes} from '@morpheme/utils/sizes';
 import {Meta, Story} from '@storybook/vue3';
 import {useForm} from 'vee-validate';
 import {object, boolean, array} from 'yup';
-import VBtn from '@gits-id/button';
+import VBtn from '@morpheme/button';
 import './VCheckbox.dark.scss';
 
 export default {

@@ -20,10 +20,10 @@ export default defineConfig({
       // into your library
       external: [
         'vue',
-        '@gits-id/spinner',
-        '@gits-id/utils',
-        '@gits-id/theme',
-        '@gits-id/icon',
+        '@morpheme/spinner',
+        '@morpheme/utils',
+        '@morpheme/theme',
+        '@morpheme/icon',
         'vue-router',
       ],
       output: {

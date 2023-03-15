@@ -7,19 +7,19 @@ Bottom Sheet Component.
 npm
 
 ```
-npm i @gits-id/bottom-sheet
+npm i @morpheme/bottom-sheet
 ```
 
 yarn
 
 ```
-yarn add @gits-id/bottom-sheet
+yarn add @morpheme/bottom-sheet
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/bottom-sheet
+pnpm i @morpheme/bottom-sheet
 ```
 
 ## Basic Usage
@@ -27,7 +27,7 @@ pnpm i @gits-id/bottom-sheet
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
-import {BottomSheet, BottomSheetBody} from '@gits-id/bottom-sheet';
+import {BottomSheet, BottomSheetBody} from '@morpheme/bottom-sheet';
 
 const isOpen = ref(false);
 </script>

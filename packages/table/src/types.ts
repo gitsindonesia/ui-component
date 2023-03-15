@@ -1,4 +1,4 @@
-import Pagination from '@gits-id/pagination';
+import Pagination from '@morpheme/pagination';
 
 type VPagination = InstanceType<typeof Pagination>['$props'];
 

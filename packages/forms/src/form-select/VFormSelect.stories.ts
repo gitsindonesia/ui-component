@@ -1,11 +1,11 @@
 import {Story, Meta} from '@storybook/vue3';
-import {sizes} from '@gits-id/utils/sizes';
+import {sizes} from '@morpheme/utils/sizes';
 import type {VFormSelectItem as VFormSelectProps} from './types';
 import VFormSelect from './VFormSelect.vue';
 import {useForm} from 'vee-validate';
 import {object, string} from 'yup';
 import {ref} from 'vue';
-import VBtn from '@gits-id/button';
+import VBtn from '@morpheme/button';
 import '../forms.dark.scss';
 
 const items = [...Array(5)].map((item, index) => ({

@@ -1,7 +1,7 @@
 import VAlert from './VAlert.vue';
-import {themeColors} from '@gits-id/utils/colors';
+import {themeColors} from '@morpheme/utils/colors';
 import {Meta, Story} from '@storybook/vue3';
-import Icon from '@gits-id/icon';
+import Icon from '@morpheme/icon';
 import AlertVModelStory from './stories/AlertVModelStory.vue';
 import AlertTransitionStory from './stories/AlertTransitionStory.vue';
 import AlertCustomStory from './stories/AlertCustomStory.vue';

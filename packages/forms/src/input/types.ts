@@ -1,4 +1,4 @@
-import type {Sizes} from '@gits-id/utils';
+import type {Sizes} from '@morpheme/utils';
 
 export type VInputProps = {
   value: string | number;

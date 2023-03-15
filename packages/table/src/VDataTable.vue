@@ -3,10 +3,10 @@ import {computed, watch, ref, toRefs} from 'vue';
 import type {PropType} from 'vue';
 import VDataTablePagination from './VDataTablePagination.vue';
 import type {SortDirection, VDataTableHeader, VDataTableItem} from './types';
-import VSpinner from '@gits-id/spinner';
-import {VCheckbox} from '@gits-id/forms';
-import {get} from '@gits-id/utils';
-import Icon from '@gits-id/icon';
+import VSpinner from '@morpheme/spinner';
+import {VCheckbox} from '@morpheme/forms';
+import {get} from '@morpheme/utils';
+import Icon from '@morpheme/icon';
 
 type VDataTablePaginationProps = InstanceType<
   typeof VDataTablePagination
@@ -177,14 +177,14 @@ const props = defineProps({
   multiSort: {
     type: Boolean,
     default: false,
-  }
+  },
 });
 
 const emit =
   defineEmits<{
     (e: 'update:search', value: string): void;
-    (e: 'update:sortBy', value: string|string[]): void;
-    (e: 'update:sortDirection', value: SortDirection|SortDirection[]): void;
+    (e: 'update:sortBy', value: string | string[]): void;
+    (e: 'update:sortDirection', value: SortDirection | SortDirection[]): void;
     (e: 'update:page', value: number): void;
     (e: 'update:itemsPerPage', value: number): void;
     (e: 'update:totalItems', value: number): void;
@@ -194,7 +194,13 @@ const emit =
     (e: 'pagination:change', value: Record<string, any>): void;
     (e: 'update:modelValue', value: any): void;
     (e: 'update:value', value: any): void;
-    (e: 'sort', payload: {sortBy: string|string[]; direction: SortDirection|SortDirection[]}): void;
+    (
+      e: 'sort',
+      payload: {
+        sortBy: string | string[];
+        direction: SortDirection | SortDirection[];
+      },
+    ): void;
     (e: 'row:click', item: VDataTableItem): void;
   }>();
 
@@ -225,8 +231,16 @@ const {
 const page = ref(paginationPage.value);
 const perPage = ref(itemsPerPage.value);
 const offset = computed(() => (page.value - 1) * Number(perPage.value));
-const sortBy = ref<string|string[]>(multiSort.value && !Array.isArray(sortByProp.value) ? [sortByProp.value] : sortByProp.value);
-const sortDirection = ref<SortDirection|SortDirection[]>(multiSort.value && !Array.isArray(sortDirectionProp.value) ? [sortDirectionProp.value] :  sortDirectionProp.value);
+const sortBy = ref<string | string[]>(
+  multiSort.value && !Array.isArray(sortByProp.value)
+    ? [sortByProp.value]
+    : sortByProp.value,
+);
+const sortDirection = ref<SortDirection | SortDirection[]>(
+  multiSort.value && !Array.isArray(sortDirectionProp.value)
+    ? [sortDirectionProp.value]
+    : sortDirectionProp.value,
+);
 
 const sortMap = ref<Map<string, SortDirection>>(new Map());
 
@@ -252,9 +266,9 @@ const paginatedItems = computed(() => {
         // only do sort if sort value is 0 (meaning, no sort has been done for previous key)
         // if multiSort is supported, this will sort next key only if previous key result is a === b,
         // allowing correct sort order result instead of giving last-key order result.
-        if(sortVal === 0) {
+        if (sortVal === 0) {
           if (!isNaN(+valA) && !isNaN(+valB)) {
-            sortVal = (+valA) - (+valB);
+            sortVal = +valA - +valB;
           } else {
             sortVal = valA.localeCompare(valB);
           }
@@ -335,8 +349,8 @@ const handleSort = (header: VDataTableHeader) => {
     direction = mustSort.value ? 'asc' : '';
   }
 
-  if(direction) {
-    if(multiSort.value) {
+  if (direction) {
+    if (multiSort.value) {
       sortMap.value?.set(header.value, direction);
     } else {
       sortMap.value?.clear();
@@ -346,19 +360,28 @@ const handleSort = (header: VDataTableHeader) => {
     sortMap.value?.delete(header.value);
   }
 
-  sortBy.value = multiSort.value ? Array.from(sortMap.value.keys()) : header.value;
-  sortDirection.value = multiSort.value ? Array.from(sortMap.value.values()) : direction;
+  sortBy.value = multiSort.value
+    ? Array.from(sortMap.value.keys())
+    : header.value;
+  sortDirection.value = multiSort.value
+    ? Array.from(sortMap.value.values())
+    : direction;
 };
 
 // watch sorting
-watch([sortBy, sortDirection, sortMap], ([newSortBy, newDirection, newSortMap]) => {
-  emit('update:sortBy', newSortBy);
-  emit('update:sortDirection', newDirection);
-  emit('sort', {
-    sortBy: multiSort.value ? Array.from(newSortMap.keys()) : newSortBy,
-    direction: multiSort.value ? Array.from(newSortMap.values()) : newDirection,
-  });
-});
+watch(
+  [sortBy, sortDirection, sortMap],
+  ([newSortBy, newDirection, newSortMap]) => {
+    emit('update:sortBy', newSortBy);
+    emit('update:sortDirection', newDirection);
+    emit('sort', {
+      sortBy: multiSort.value ? Array.from(newSortMap.keys()) : newSortBy,
+      direction: multiSort.value
+        ? Array.from(newSortMap.values())
+        : newDirection,
+    });
+  },
+);
 
 const onPaginationChange = (params = {}) => {
   emit('pagination:change', {

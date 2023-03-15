@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import VBtn from '@gits-id/button';
-import Icon from '@gits-id/icon';
+import VBtn from '@morpheme/button';
+import Icon from '@morpheme/icon';
 
 type Props = {
   hasFile?: boolean;
@@ -48,7 +48,7 @@ const emit =
           rounded
           hover:border-gray-400
         "
-        :class='[disabledClass, borderClass]'
+        :class="[disabledClass, borderClass]"
         @click="emit('choose')"
       >
         <slot name="filename" :value="filename">

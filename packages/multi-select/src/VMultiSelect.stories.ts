@@ -1,12 +1,12 @@
 import VMultiSelect from './VMultiSelect.vue';
-import VBtn from '@gits-id/button';
+import VBtn from '@morpheme/button';
 import {useForm} from 'vee-validate';
 import {object, array} from 'yup';
 import {computed, ref, onMounted} from 'vue';
 import {VMultiSelectItem} from './types';
 import {Story} from '@storybook/vue3';
 import './VMultiSelect.dark.scss';
-import '@gits-id/forms/src/forms.dark.scss';
+import '@morpheme/forms/src/forms.dark.scss';
 
 const items = [...Array(200)].map((_, index) => ({
   value: index + 1,

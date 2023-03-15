@@ -9,7 +9,7 @@ export function GITSUIResolver(): ComponentResolver {
   return {
     type: 'component',
     resolve: (name: string) => {
-      if (name.match(/^V[A-Z]/)) return {name, from: '@gits-id/ui'};
+      if (name.match(/^V[A-Z]/)) return {name, from: '@morpheme/ui'};
     },
   };
 }

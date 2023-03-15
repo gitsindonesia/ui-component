@@ -7,26 +7,26 @@
 npm
 
 ```
-npm i @gits-id/forms
+npm i @morpheme/forms
 ```
 
 yarn
 
 ```
-yarn add @gits-id/forms
+yarn add @morpheme/forms
 ```
 
 pnpm
 
 ```
-pnpm i @gits-id/forms
+pnpm i @morpheme/forms
 ```
 
 ## Usage
 
 ```vue
 <script setup lang="ts">
-import {Textarea} from '@gits-id/forms';
+import {Textarea} from '@morpheme/forms';
 </script>
 
 <template>

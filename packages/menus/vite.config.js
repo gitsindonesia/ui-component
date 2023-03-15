@@ -21,9 +21,9 @@ export default defineConfig({
       external: [
         'vue',
         '@headlessui/vue',
-        '@gits-id/button',
-        '@gits-id/icon',
-        '@gits-id/list',
+        '@morpheme/button',
+        '@morpheme/icon',
+        '@morpheme/list',
         'vue-router',
       ],
       output: {
