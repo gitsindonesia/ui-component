@@ -1,7 +1,7 @@
 {
   "name": "@gits-id/nuxt-minimal",
   "description": "Lightweight Nuxt.js template with GITS UI",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "keywords": [
     "admin",
     "dashboard",
@@ -22,11 +22,11 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@gits-id/ui-nuxt": "^0.16.1"
+    "@gits-id/ui-nuxt": "^1.0.0-beta.4"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.3.0",
-    "nuxt": "^3.2.0",
+    "@nuxtjs/tailwindcss": "^6.4.1",
+    "nuxt": "^3.3.1",
     "sass": "^1.58.0"
   },
   "type": "module",

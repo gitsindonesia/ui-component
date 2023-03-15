@@ -16,7 +16,7 @@ const items = [...Array(10)].map((_, index) => ({
 }));
 
 export default {
-  title: 'Components/Select',
+  title: 'Forms/Select',
   component: VSelect,
   argTypes: {
     color: {
@@ -114,6 +114,18 @@ Error.parameters = {
   },
 };
 
+export const Hint = Template.bind({});
+Hint.args = {
+  hint: 'This is a hint',
+};
+Hint.parameters = {
+  docs: {
+    source: {
+      code: '<v-select :items="items" hint="This is a hint" />',
+    },
+  },
+};
+
 export const Clearable = Template.bind({});
 Clearable.args = {
   clearable: true,
@@ -177,7 +189,7 @@ export const Sizes: Story<typeof VSelect> = (args) => ({
   `,
 });
 
-export const Validation: Story<{}> = () => ({
+export const Validation: Story<{}> = (args) => ({
   components: {VBtn, VSelect},
   setup() {
     const schema = object({
@@ -215,7 +227,7 @@ export const Validation: Story<{}> = () => ({
       },
     ]);
 
-    return {onSubmit, resetForm, values, genders, genres};
+    return {onSubmit, resetForm, values, genders, genres, args};
   },
   template: `
     <form @submit="onSubmit" class="border-none">
@@ -225,6 +237,7 @@ export const Validation: Story<{}> = () => ({
       label="Genre"
       placeholder="Select your genre"
       :items="genres"
+      v-bind="args"
     />
     <v-select
       wrapper-class="mb-4"
@@ -232,6 +245,7 @@ export const Validation: Story<{}> = () => ({
       label="Gender"
       placeholder="Select your gender"
       :items="genders"
+      v-bind="args"
     />
     <div class="mt-4">
       <v-btn type="submit">Submit</v-btn>
@@ -241,6 +255,11 @@ export const Validation: Story<{}> = () => ({
     </form>
   `,
 });
+
+export const HideError = Validation.bind({});
+HideError.args = {
+  hideError: true,
+};
 
 export const TestInputState: Story<{}> = (args) => ({
   components: {VBtn, VSelect},
@@ -469,7 +488,7 @@ export const DarkMode: Story = (args) => ({
   },
   template: `
   <div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
-    <VSelect v-bind='args' label="Choose" clearable />
+    <VSelect v-bind='args' label="Choose" clearable hint="This is a hint" />
   </div>
   `,
 });

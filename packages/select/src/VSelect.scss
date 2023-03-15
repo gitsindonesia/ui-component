@@ -42,6 +42,14 @@
 
   // selected
   --v-select-selected-color: var(--v-input-label-color);
+
+  // error
+  --v-select-error-border-color: theme('colors.error.500');
+
+  // hint
+  --v-select-hint-font-size: var(--v-input-hint-font-size, 14px);
+  --v-select-hint-color: theme('colors.gray.500');
+  --v-select-hint-margin-top: theme('spacing.1');
 }
 
 .v-select {
@@ -72,7 +80,7 @@
   }
 
   &--error &-button {
-    @apply border-error-500;
+    --v-select-border-color: var(--v-select-error-border-color);
   }
 
   &-selected {
@@ -173,6 +181,12 @@
 
   &-panel {
     @apply relative;
+  }
+
+  &-hint {
+    font-size: var(--v-select-hint-font-size);
+    color: var(--v-select-hint-color);
+    margin-top: var(--v-select-hint-margin-top);
   }
 
   /* sizes */

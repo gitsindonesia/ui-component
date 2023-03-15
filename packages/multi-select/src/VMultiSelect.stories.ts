@@ -12,6 +12,7 @@ const items = [...Array(200)].map((_, index) => ({
   value: index + 1,
   text: `Option ${index + 1}`,
 }));
+
 const genreItems = [
   'pop',
   'rock',
@@ -22,6 +23,7 @@ const genreItems = [
   'hiphop',
   'blues',
 ].map((e) => ({text: e.toUpperCase(), value: e}));
+
 const userItems = [
   {
     name: {
@@ -138,27 +140,7 @@ const userItems = [
 export default {
   title: 'Forms/MultiSelect',
   component: VMultiSelect,
-  argTypes: {},
-  args: {
-    items,
-    modelValue: [],
-    itemText: 'text',
-    itemValue: 'value',
-    searchBy: '',
-    placeholder: 'Search...',
-    name: '',
-    error: false,
-    errorMessages: [],
-    clearable: false,
-    maxBadge: 0,
-    delay: 500,
-    id: '',
-    inputProps: {},
-    selectAll: false,
-    loading: false,
-    disabled: false,
-    readonly: false,
-  },
+  args: {items},
 };
 
 const Template = (args) => ({
@@ -189,6 +171,18 @@ Clearable.parameters = {
   docs: {
     source: {
       code: '<v-multi-select :items="items" clearable />',
+    },
+  },
+};
+
+export const Hint = Template.bind({});
+Hint.args = {
+  hint: 'This is a hint',
+};
+Hint.parameters = {
+  docs: {
+    source: {
+      code: '<v-multi-select :items="items" hint="This is a hint" />',
     },
   },
 };
@@ -236,7 +230,7 @@ export const Validation = (args) => ({
       genre: array().required().min(1).label('Genre'),
     });
 
-    const {handleSubmit, resetForm, values} = useForm({
+    const {handleSubmit, resetForm, values, errors} = useForm({
       validationSchema: schema,
     });
 
@@ -263,7 +257,7 @@ export const Validation = (args) => ({
       },
     ]);
 
-    return {onSubmit, resetForm, values, genres};
+    return {onSubmit, resetForm, values, genres, args, errors};
   },
   template: `
     <form @submit="onSubmit" class="border-none">
@@ -272,15 +266,21 @@ export const Validation = (args) => ({
         label="Genre"
         placeholder="Choose your prefered genres"
         :items="genres"
+        v-bind="args"
       />
       <div class="mt-4">
         <v-btn type="submit">Submit</v-btn>
         <v-btn type="button" text @click="resetForm">Reset</v-btn>
       </div>
-      <pre>{{ {values} }}</pre>
+      <pre>{{ {values, errors} }}</pre>
     </form>
 `,
 });
+
+export const HideError = Validation.bind({});
+HideError.args = {
+  hideError: true,
+};
 
 export const InitialValues = () => ({
   components: {VBtn, VMultiSelect},

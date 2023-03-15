@@ -3,6 +3,88 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.4](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2023-03-13)
+
+
+### Bug Fixes
+
+* **nuxt:** fix component path ([#144](https://github.com/gitsindonesia/ui-component/issues/144)) ([7c358ad](https://github.com/gitsindonesia/ui-component/commit/7c358ada9634d325ec22f13055993ab5deeb1d75))
+* **VDataTable:** fix load dependency styles when installed as independent package ([#152](https://github.com/gitsindonesia/ui-component/issues/152)) ([3675578](https://github.com/gitsindonesia/ui-component/commit/3675578296ec2483f5a38f67fb8f449bb2d8e518))
+* **VQuillEditor:** make `label` prop optional ([e05af87](https://github.com/gitsindonesia/ui-component/commit/e05af8718256854afe2d80339a2a36bad3605c97))
+* **VQuillEditor:** make `label` prop optional ([#146](https://github.com/gitsindonesia/ui-component/issues/146)) ([badd9b3](https://github.com/gitsindonesia/ui-component/commit/badd9b39e1ba910d88a0138f4c26b1ee382c06eb))
+
+
+### Features
+
+* **Forms:** add a new `hint` prop to all form inputs ([#151](https://github.com/gitsindonesia/ui-component/issues/151)) ([bf7abc2](https://github.com/gitsindonesia/ui-component/commit/bf7abc29673b96f9550b55f6002c6743705dff9e))
+* **nuxt:** auto-import `VQuillEditor` component & improve playground ([#145](https://github.com/gitsindonesia/ui-component/issues/145)) ([3f8eb56](https://github.com/gitsindonesia/ui-component/commit/3f8eb5693cd5f50776dbd37cd0cc65de0cf8e849))
+
+
+
+
+
+
+# [1.0.0-beta.3](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2023-03-08)
+
+
+### Bug Fixes
+
+* fix error border style not applied on some input components ([#139](https://github.com/gitsindonesia/ui-component/issues/139)) ([00c40f4](https://github.com/gitsindonesia/ui-component/commit/00c40f43f86e5c406f8b34a0420aedd6a5d7edcb))
+* **NavDrawer:** fix default shadow value ([#135](https://github.com/gitsindonesia/ui-component/issues/135)) ([c2333b6](https://github.com/gitsindonesia/ui-component/commit/c2333b61d9f7aef4c9eaa9c39e6bea88111bc928))
+* **nuxt-admin:** close drawer when page change ([026c720](https://github.com/gitsindonesia/ui-component/commit/026c72002e38aaf15b79c44deca5fef08c66d099))
+* **nuxt-admin:** dynamic sidebar height ([17908fd](https://github.com/gitsindonesia/ui-component/commit/17908fd9b4da0c3b492e75105e6d23b2202ccb20))
+* **nuxt-admin:** hide drawer on mobile only ([5696bdf](https://github.com/gitsindonesia/ui-component/commit/5696bdfd5e88bf0dbf4474c2b691a34e809f098e))
+* **nuxt-admin:** use svh instead of dvh ([f5d696f](https://github.com/gitsindonesia/ui-component/commit/f5d696f0a1976bf45a785e353339a96a94a5086d))
+* **nuxt-auth:** fix redirect callback ([22d9c96](https://github.com/gitsindonesia/ui-component/commit/22d9c964cc28974090121b5989baa7ad3a05a33b))
+* **nuxt-auth:** fix redirect with protocol ([609af43](https://github.com/gitsindonesia/ui-component/commit/609af43ef8b2c5c4d63bc5c38c0e8598ede3a81e))
+* **nuxt:** fix `VMenuIcon` export path ([#137](https://github.com/gitsindonesia/ui-component/issues/137)) ([ff0ad45](https://github.com/gitsindonesia/ui-component/commit/ff0ad453c199c347d8882619a382cdbeb2b6666e))
+* **VMultiSelect:** fix bug error when clearing value ([4c36479](https://github.com/gitsindonesia/ui-component/commit/4c36479f627235de1eb085551ee3c5a7eab439ce))
+* **VMultiSelect:** fix bug error when clearing value ([#140](https://github.com/gitsindonesia/ui-component/issues/140)) ([0a3d616](https://github.com/gitsindonesia/ui-component/commit/0a3d616874bd447abedc270a757c99c2dc61cff4))
+* **VQuillEditor:** disable auto fix cursor by default via `autoFixCursor` prop ([#141](https://github.com/gitsindonesia/ui-component/issues/141)) ([9a809b6](https://github.com/gitsindonesia/ui-component/commit/9a809b6c993a29cfc18d5a3194103dfca78bcce6))
+
+
+### Features
+
+* **Forms:** add the ability to hide error messages via `hideError` prop ([#138](https://github.com/gitsindonesia/ui-component/issues/138)) ([2065a21](https://github.com/gitsindonesia/ui-component/commit/2065a21d7fe0f9d43b2d58378080fb3d44cda036))
+* **nuxt-admin:** change default bg color ([9014f92](https://github.com/gitsindonesia/ui-component/commit/9014f92028f1ca8b9061c268f71566a1be529b30))
+* **nuxt-auth:** add centered layout ([57ec196](https://github.com/gitsindonesia/ui-component/commit/57ec19601b82a2413b7f1846d0230e7b916c754d))
+* **nuxt-auth:** add dark mode support ([0f7ed6e](https://github.com/gitsindonesia/ui-component/commit/0f7ed6e822e17c4b3a9aa6761c25a57b033ff412))
+* **nuxt-auth:** add new `AuthLogo` component ([77cebf5](https://github.com/gitsindonesia/ui-component/commit/77cebf5e560d3cf103e12b764a58c548db15561c))
+* **nuxt-auth:** rename protected page to profile ([4b86ac9](https://github.com/gitsindonesia/ui-component/commit/4b86ac93d583594a9c08b87576b31fec4f3257dc))
+
+
+
+
+
+# [1.0.0-beta.2](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2023-02-28)
+
+
+### Bug Fixes
+
+* **nuxt-admin:** fix dark mode avatar border ([2161e7c](https://github.com/gitsindonesia/ui-component/commit/2161e7ce4f4107725b72a19126ce0402e9fb31e1))
+* **nuxt-admin:** improve dark mode ([74d255d](https://github.com/gitsindonesia/ui-component/commit/74d255d26bcf7003eaed508250b6b08761f01240))
+* **nuxt-auth:** add fallback url ([6a128d3](https://github.com/gitsindonesia/ui-component/commit/6a128d3bfc06fac4dbbab33a7ab2f87cf5f72a36))
+* **nuxt-auth:** fix callback url ([a71ced4](https://github.com/gitsindonesia/ui-component/commit/a71ced41a134765b9e837f322ba1113f7136b7fa))
+* **nuxt-auth:** fix error when getting callback url ([fdb35dd](https://github.com/gitsindonesia/ui-component/commit/fdb35ddfc05b8cb017a58b9c79b358d5d16e2e32))
+* **nuxt-auth:** optimize yup ([9c7ccc5](https://github.com/gitsindonesia/ui-component/commit/9c7ccc59f53ee2ce9f54f0583c8dd094596b7a8f))
+* **nuxt-auth:** remove unnecessary value from env ([ddc09ea](https://github.com/gitsindonesia/ui-component/commit/ddc09ea1f2f5bb56112241238472e40152c86efc))
+
+
+### Features
+
+* **Forms:** add `hideError` prop on `VInput` and new `ErrorMessage` component ([#134](https://github.com/gitsindonesia/ui-component/issues/134)) ([ccb54a5](https://github.com/gitsindonesia/ui-component/commit/ccb54a59d3adfab6fa5daa123972bed6a7458240))
+* **nuxt-admin:** add dark mode switcher ([1f01015](https://github.com/gitsindonesia/ui-component/commit/1f01015936e44832ab5abf2b2ee11832d881c00e))
+* **nuxt-admin:** add metric action ([f338d87](https://github.com/gitsindonesia/ui-component/commit/f338d8784143609c6a111dfa1c29524b333f5425))
+* **nuxt-admin:** add modal delete confirmation ([77a6669](https://github.com/gitsindonesia/ui-component/commit/77a6669eb4264fa9a374ad62ccc991e89afbac71))
+* **nuxt-admin:** revamp admin ([#132](https://github.com/gitsindonesia/ui-component/issues/132)) ([8580c06](https://github.com/gitsindonesia/ui-component/commit/8580c0655d5ade8d655780e76135bbae2bb01736))
+* **nuxt-auth:** add loading state and auto hide orText based on providers ([758a35f](https://github.com/gitsindonesia/ui-component/commit/758a35f936674d933d524add3f65a951c687f3bd))
+* **nuxt-auth:** add new layout `auth` ([337abfa](https://github.com/gitsindonesia/ui-component/commit/337abfae7a4e50e23bbe788da029b10d9c14fee7))
+* **nuxt-auth:** new `sidebar` slot in `AuthLayout` component ([616ec92](https://github.com/gitsindonesia/ui-component/commit/616ec9296ac0332f83a9e8d9092ef5e1d5559b89))
+
+
+
+
+
 # [1.0.0-beta.1](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.0...v1.0.0-beta.1) (2023-02-20)
 
 

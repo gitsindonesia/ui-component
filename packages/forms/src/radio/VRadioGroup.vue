@@ -96,6 +96,10 @@ const props = defineProps({
     type: String as PropType<ValidationMode>,
     default: 'aggressive',
   },
+  hint: {
+    type: String,
+    default: ''
+  }
 });
 
 const emit = defineEmits([
@@ -208,6 +212,11 @@ onBeforeUnmount(() => {
         </slot>
       </label>
     </div>
+    <p v-if="hint" class="v-radio-group-hint">
+      <slot name="hint">
+        {{ hint }}
+      </slot>
+    </p>
     <div
       v-if="errorMessage && !hideError"
       class="v-radio-group-error"

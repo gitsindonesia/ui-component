@@ -1,24 +1,32 @@
 <script setup lang="ts">
 import {useForm} from 'vee-validate';
 
-definePageMeta({
-  layout: 'admin',
+const {data: session} = useSession();
+
+useHead({
+  title: 'Profile',
 });
 
-useForm({
+const {handleSubmit} = useForm({
   initialValues: {
-    name: 'John Doe',
-    email: 'john.doe@gits.id',
-    role: 'Admin',
+    name: session.value?.user?.name,
+    email: session.value?.user?.email,
   },
 });
 
 const isEditing = ref(false);
+
+const save = handleSubmit((values) => {
+  console.log(values);
+});
 </script>
 
 <template>
   <div>
-    <AdminPageTitle title="Profile" />
+    <AdminPageHeader
+      title="Profile"
+      subtitle="Manage your profile information"
+    />
 
     <VCard
       title="Basic Information"
@@ -26,7 +34,9 @@ const isEditing = ref(false);
     >
       <template #header.append>
         <div class="flex gap-2 items-center">
-          <VBtn v-if="isEditing" size="sm" color="primary">Save</VBtn>
+          <VBtn v-if="isEditing" size="sm" color="primary" @click="save">
+            Save
+          </VBtn>
           <VBtn @click="isEditing = !isEditing" size="sm">
             {{ isEditing ? 'Cancel' : 'Edit' }}
           </VBtn>
@@ -44,13 +54,6 @@ const isEditing = ref(false);
         label="Email"
         name="email"
         prepend-icon="ic:round-email"
-        :disabled="!isEditing"
-      />
-      <VInput
-        wrapper-class="mb-4"
-        label="Role"
-        name="role"
-        prepend-icon="ic:round-supervisor-account"
         :disabled="!isEditing"
       />
     </VCard>

@@ -9,7 +9,7 @@ const props = withDefaults(
     modelValue?: string | Delta;
     value?: string | Delta;
     name: string;
-    label: string;
+    label?: string;
     toolbar?: 'essential' | 'minimal' | 'full' | '';
     rules?: string | Record<string, any>;
     contentType?: 'html' | 'text' | 'delta';
@@ -17,6 +17,9 @@ const props = withDefaults(
     readOnly?: boolean;
     labelClass?: string;
     errorClass?: string;
+    hideError?: boolean;
+    autoFixCursor?: boolean;
+    hint?: string;
   }>(),
   {
     toolbar: 'essential',
@@ -26,6 +29,8 @@ const props = withDefaults(
     readOnly: false,
     labelClass: 'block mb-2 font-medium',
     errorClass: 'text-sm mt-1 text-error-500',
+    autoFixCursor: false,
+    label: '',
   },
 );
 
@@ -46,15 +51,16 @@ watch(modelValue, (value) => {
 watch(
   content,
   (val: any) => {
-    editor.value?.setHTML(val);
-
-    nextTick(() => {
-      let q = editor.value?.getQuill();
-      if (q) {
-        q.setSelection(val.length, 0, 'api');
-        q.focus();
-      }
-    });
+    if (props.autoFixCursor) {
+      editor.value?.setHTML(val);
+      nextTick(() => {
+        let q = editor.value?.getQuill();
+        if (q) {
+          q.setSelection(val.length, 0, 'api');
+          q.focus();
+        }
+      });
+    }
   },
   {immediate: true},
 );
@@ -76,13 +82,24 @@ watch(
       :read-only="readOnly"
       v-bind="$attrs"
     />
-    <div v-if="errorMessage" :class="errorClass">
+    <p v-if="hint" class="v-quill-editor-hint">
+      <slot name="hint">
+        {{ hint }}
+      </slot>
+    </p>
+    <div v-if="errorMessage && !hideError" :class="errorClass">
       {{ errorMessage }}
     </div>
   </div>
 </template>
 
 <style>
+:root {
+  --v-quill-editor-hint-font-size: var(--v-input-hint-font-size, 14px);
+  --v-quill-editor-hint-color: theme('colors.gray.500');
+  --v-quill-editor-hint-margin-top: theme('spacing.1');
+}
+
 .ql-toolbar {
   @apply rounded-t-md;
 }
@@ -93,5 +110,11 @@ watch(
 
 .ql-editor {
   height: 250px;
+}
+
+.v-quill-editor-hint {
+  font-size: var(--v-quill-editor-hint-font-size);
+  color: var(--v-quill-editor-hint-color);
+  margin-top: var(--v-quill-editor-hint-margin-top);
 }
 </style>

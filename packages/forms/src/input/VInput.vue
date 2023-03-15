@@ -8,6 +8,7 @@ export default {
 import {PropType} from 'vue';
 import Icon from '@gits-id/icon';
 import {useFormValue, ValidationMode} from '../composables';
+import ErrorMessage from '../ErrorMessage.vue';
 
 type IconSize = InstanceType<typeof Icon>['$props']['size'];
 
@@ -160,6 +161,14 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  hideError: {
+    type: Boolean,
+    default: false,
+  },
+  hint: {
+    type: String,
+    default: '',
+  },
 });
 
 const emit = defineEmits([
@@ -180,7 +189,7 @@ const {errorMessage, uncontrolledValue, validationListeners, inputId, clear} =
     :class="[
       `v-input v-input-${color} v-input--${size}`,
       {
-        'v-input--error': error || !!errorMessage,
+        'v-input--error': error || errorMessages.length > 0 || !!errorMessage,
         'v-input--disabled': disabled,
         'v-input--shadow': shadow,
         'v-input--rounded': rounded,
@@ -274,10 +283,14 @@ const {errorMessage, uncontrolledValue, validationListeners, inputId, clear} =
         </button>
       </slot>
     </div>
-
-    <div v-if="errorMessage" class="v-input-error" :class="errorClass">
+    <p v-if="hint" class="v-input-hint">
+      <slot name="hint">
+        {{ hint }}
+      </slot>
+    </p>
+    <ErrorMessage v-if="errorMessage && !hideError" :class="errorClass">
       {{ errorMessage }}
-    </div>
+    </ErrorMessage>
   </div>
 </template>
 

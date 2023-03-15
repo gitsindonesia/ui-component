@@ -465,6 +465,8 @@ const genres = ref([
 | [`searchPlaceholder`](#searchPlaceholder) | `String`                                                    | `'Search...'`                   |
 | [`searchProps`](#searchProps)             | `Object as PropType<InstanceType<typeof VInput>['$props']>` | `{}`                            |
 | [`fieldOptions`](#fieldOptions)           | `Object as PropType<Partial<FieldOptions<any>>>`            | `{}`                            |
+| [`hint`](#hint)                           | `String`                                                    | `''`                            |
+| [`hideError`](#hideError)                 | `Boolean`                                                   | `false`                         |
 
 ## Types
 

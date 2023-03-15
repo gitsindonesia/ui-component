@@ -22,8 +22,7 @@ export default {
     },
   },
   args: {
-    label: 'Checkbox',
-    name: 'myCheckbox',
+    label: 'Label',
   },
 } as Meta;
 
@@ -45,6 +44,18 @@ Checkbox.parameters = {
   docs: {
     source: {
       code: `<v-checkbox label="Checkbox" />`,
+    },
+  },
+};
+
+export const Hint = Template.bind({});
+Hint.args = {
+  hint: 'This is a hint',
+};
+Hint.parameters = {
+  docs: {
+    source: {
+      code: `<v-checkbox label="Label" hint="This is a hint" />`,
     },
   },
 };
@@ -128,7 +139,7 @@ export const Multiple: Story<{}> = () => ({
 `,
 });
 
-export const Validation: Story<{}> = () => ({
+export const Validation: Story<{}> = (args) => ({
   components: {VCheckbox: VCheckbox, VBtn},
   setup() {
     const schema = object({
@@ -149,7 +160,7 @@ export const Validation: Story<{}> = () => ({
       alert(JSON.stringify(values));
     });
 
-    return {onSubmit, resetForm, values, errors};
+    return {onSubmit, resetForm, values, errors, args};
   },
   template: `
     <form @submit="onSubmit" class="border-none">
@@ -157,6 +168,7 @@ export const Validation: Story<{}> = () => ({
         wrapper-class="mb-4"
         name="agreement"
         label="Agreement"
+        v-bind="args"
       />
       <div class="mt-4">
         <v-btn type="submit">Submit</v-btn>
@@ -167,6 +179,11 @@ export const Validation: Story<{}> = () => ({
     </form>
 `,
 });
+
+export const HideError = Validation.bind({});
+HideError.args = {
+  hideError: true,
+};
 
 export const ValidationMode: Story<{}> = () => ({
   components: {VCheckbox: VCheckbox, VBtn},
@@ -321,7 +338,7 @@ export const DarkMode: Story = (args) => ({
   },
   template: `
   <div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
-    <VCheckbox v-bind='args' />
+    <VCheckbox v-bind='args' hint="This is a hint" />
   </div>
   `,
 });

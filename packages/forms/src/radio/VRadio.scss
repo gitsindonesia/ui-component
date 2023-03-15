@@ -10,15 +10,26 @@
 
   // label
   --v-radio-label-color: theme('colors.gray.800');
+
+  // hint
+  --v-radio-hint-font-size: var(--v-input-hint-font-size, 14px);
+  --v-radio-hint-color: theme('colors.gray.500');
+  --v-radio-hint-margin-top: theme('spacing.1');
 }
 
 .v-radio {
   &-wrapper {
     @apply flex w-full items-center gap-2 select-none;
   }
-  
+
   &-label {
     color: var(--v-radio-label-color);
+  }
+
+  &-hint {
+    font-size: var(--v-radio-hint-font-size);
+    color: var(--v-radio-hint-color);
+    margin-top: var(--v-radio-hint-margin-top);
   }
 
   &-input {

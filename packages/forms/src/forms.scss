@@ -32,6 +32,11 @@
   --v-input-disabled-border-color: theme('colors.gray.200');
   --v-input-disabled-placeholder-color: theme('colors.gray.400');
   --v-input-disabled-icon-color: theme('colors.gray.400');
+
+  // hint
+  --v-input-hint-font-size: theme('fontSize.sm');
+  --v-input-hint-color: theme('colors.gray.500');
+  --v-input-hint-margin-top: theme('spacing.1');
 }
 
 .v-input {
@@ -45,6 +50,12 @@
     --v-input-border-color: var(--v-input-disabled-border-color);
     --v-input-placeholder-color: var(--v-input-disabled-placeholder-color);
     --v-input-icon-color: var(--v-input-disabled-icon-color);
+  }
+
+  &-hint {
+    font-size: var(--v-input-hint-font-size);
+    color: var(--v-input-hint-color);
+    margin-top: var(--v-input-hint-margin-top);
   }
 }
 
@@ -150,7 +161,9 @@
   @apply focus-within:border-gray-500 focus-within:ring-gray-500;
 }
 /* error */
-.v-input.v-input--error .v-input-wrapper {
+.v-input.v-input--error .v-input-wrapper,
+.v-input.v-input--select.v-input--error .v-input-control,
+.v-input.v-input--textarea.v-input--error .v-input-control {
   @apply border-error-500 focus-within:border-error-500 focus-within:ring-error-500;
 }
 .v-input-error {

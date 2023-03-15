@@ -5,4 +5,9 @@ export default defineNuxtConfig({
   gitsUi: {
     darkMode: true,
   },
+  vite: {
+    optimizeDeps: {
+      include: ['@ckeditor/ckeditor5-build-classic', '@ckeditor/ckeditor5-vue'],
+    },
+  },
 });

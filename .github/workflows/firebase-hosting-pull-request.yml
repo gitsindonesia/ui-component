@@ -7,12 +7,17 @@ on:
     paths:
       - 'packages/**/*.stories.{ts,js}'
       - 'stories/**/*.stories.{ts,js}'
+
 jobs:
   build_and_preview:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
       - run: npm i -g lerna
       - run: lerna bootstrap
       - run: lerna run build

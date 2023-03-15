@@ -110,6 +110,7 @@ const onSubmit = handleSubmit((values) => {
 | [`errorClass`](#errorClass)       | string   | `''`      |
 | [`errorMessages`](#errorMessages) | string[] | `[]`      |
 | [`readonly`](#readonly)           | string   | `''`      |
+| [`hint`](#hint)                   | `String` | `''`      |
 
 ## Events
 

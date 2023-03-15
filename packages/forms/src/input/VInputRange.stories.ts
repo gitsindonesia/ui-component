@@ -4,16 +4,12 @@ import {ref} from 'vue';
 import {object} from 'yup';
 import VInputRange from './VInputRange.vue';
 import VBtn from '@gits-id/button';
-import MyCheckbox from '../checkbox/VCheckbox.vue';
 
 export default {
   title: 'Forms/InputRange',
   component: VInputRange,
   argTypes: {},
-  args: {
-    modelValue: 1,
-    showInput: false,
-  },
+  args: {},
 } as Meta;
 
 export const Default: Story = (args) => ({
@@ -28,6 +24,19 @@ Default.parameters = {
   docs: {
     source: {
       code: '<v-input-range />',
+    },
+  },
+};
+
+export const Hint = Default.bind({});
+Hint.args = {
+  label: 'Label',
+  hint: 'This is a hint',
+};
+Hint.parameters = {
+  docs: {
+    source: {
+      code: `<v-input label="Label" hint="This is a hint" />`,
     },
   },
 };
@@ -50,7 +59,7 @@ WithInput.parameters = {
   },
 };
 
-export const Validation: Story<{}> = () => ({
+export const Validation: Story<{}> = (args) => ({
   components: {VInputRange, VBtn},
   setup() {
     const schema = object({
@@ -80,7 +89,7 @@ export const Validation: Story<{}> = () => ({
       alert(JSON.stringify(values));
     });
 
-    return {onSubmit, resetForm, values, errors};
+    return {onSubmit, resetForm, values, errors, args};
   },
   template: `
     <form @submit="onSubmit" class="border-none">
@@ -88,6 +97,7 @@ export const Validation: Story<{}> = () => ({
         wrapper-class="mb-4"
         name="score"
         label="Select Your Score"
+        v-bind="args"
       />
       <div class="mt-4">
         <v-btn type="submit">Submit</v-btn>
@@ -175,3 +185,8 @@ export const ValidationMode: Story<{}> = () => ({
     </form>
   `,
 });
+
+export const HideError = Validation.bind({});
+HideError.args = {
+  hideError: true,
+};

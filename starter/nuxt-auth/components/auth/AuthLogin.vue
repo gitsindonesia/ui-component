@@ -6,10 +6,11 @@ const appConfig = useAppConfig();
 
 const router = useRouter();
 const route = useRoute();
-const {signIn, status, getProviders} = useSession();
+const {signIn, getProviders} = useSession();
 const providers = await getProviders();
 
 const error = ref();
+const loading = ref(false);
 
 const {handleSubmit} = useForm({
   validationSchema: object({
@@ -20,23 +21,36 @@ const {handleSubmit} = useForm({
 
 const onSubmit = handleSubmit(async (values) => {
   error.value = null;
+  loading.value = true;
+
   const res = await signIn('credentials', {
     username: values.username,
     password: values.password,
     redirect: false,
   });
 
+  loading.value = false;
+
   if (res.error) {
     error.value = 'Invalid credentials';
     return;
   }
 
-  // get path name from callback url
-  const callbackUrl = new URL(String(route.query?.callbackUrl)).pathname;
+  const nextUrl: any = route.query?.next || route.query?.callbackUrl;
+  const callbackUrl = nextUrl || appConfig.auth?.redirect?.home || '/';
 
-  router.push(
-    String(route.query.next || callbackUrl || appConfig.auth.redirect.home),
-  );
+  if (callbackUrl.startsWith('http')) {
+    location.href = callbackUrl;
+    return;
+  }
+
+  router.push(callbackUrl);
+});
+
+const socialProviders = computed(() => {
+  return Object.keys(providers)
+    .map((name) => name !== 'credentials')
+    .filter(Boolean);
 });
 </script>
 
@@ -44,16 +58,13 @@ const onSubmit = handleSubmit(async (values) => {
   <div class="p-6 grid items-center justify-center">
     <form class="md:w-[400px]" @submit="onSubmit">
       <slot name="logo">
-        <VLogo
-          v-if="appConfig.auth.logo || appConfig.auth.login.logo"
-          img-class="mb-6"
-        />
+        <AuthLogo />
       </slot>
       <div class="space-y-2 mb-4">
-        <h1 class="text-2xl font-semibold text-gray-900">
+        <h1 class="text-2xl font-semibold text-gray-900 dark:text-neutral-200">
           {{ appConfig.auth.login.title }}
         </h1>
-        <p class="text-sm text-gray-700">
+        <p class="text-sm text-gray-700 dark:text-neutral-400">
           {{ appConfig.auth.login.description }}
         </p>
       </div>
@@ -80,26 +91,29 @@ const onSubmit = handleSubmit(async (values) => {
         </VBtn>
       </div>
       <VBtn
-        :loading="status === 'loading'"
+        :loading="loading"
         type="submit"
         v-bind="appConfig.auth.login.submitProps"
       >
         {{ appConfig.auth.login.submitText }}
       </VBtn>
 
-      <p class="text-sm text-gray-700 text-center mt-5">
+      <p class="text-sm text-gray-700 dark:text-neutral-400 text-center mt-5">
         {{ appConfig.auth.login.registerText }}
         <VBtn to="/auth/register" color="primary" text flush>
           {{ appConfig.auth.login.registerLinkText }}
         </VBtn>
       </p>
 
-      <div class="flex gap-4 items-center mt-5 mb-4">
-        <div class="border-t flex-1"></div>
-        <span class="text-sm text-gray-600">
+      <div
+        v-if="socialProviders.length > 0"
+        class="flex gap-4 items-center mt-5 mb-4"
+      >
+        <div class="border-t dark:border-neutral-700 flex-1"></div>
+        <span class="text-sm text-gray-600 dark:text-neutral-400">
           {{ appConfig.auth.login.orText }}
         </span>
-        <div class="border-t flex-1"></div>
+        <div class="border-t dark:border-neutral-700 flex-1"></div>
       </div>
 
       <template v-for="provider in providers" :key="provider?.id">

@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.4](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2023-03-13)
+
+**Note:** Version bump only for package @gits-id/nav-drawer
+
+
+
+
+
+
+# [1.0.0-beta.3](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2023-03-08)
+
+
+### Bug Fixes
+
+* **NavDrawer:** fix default shadow value ([#135](https://github.com/gitsindonesia/ui-component/issues/135)) ([c2333b6](https://github.com/gitsindonesia/ui-component/commit/c2333b61d9f7aef4c9eaa9c39e6bea88111bc928))
+
+
+
+
+
+# [1.0.0-beta.2](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2023-02-28)
+
+**Note:** Version bump only for package @gits-id/nav-drawer
+
+
+
+
+
 # [1.0.0-beta.1](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.0...v1.0.0-beta.1) (2023-02-20)
 
 **Note:** Version bump only for package @gits-id/nav-drawer

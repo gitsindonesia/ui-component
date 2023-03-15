@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/tailwind-components",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.3",
   "description": "GITS UI Tailwind Plugin",
   "scripts": {},
   "keywords": [
@@ -10,7 +10,7 @@
   ],
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
-  "gitHead": "f584bc75f62ffdd381a5e55e89b2fe626584f85f",
+  "gitHead": "92215d91d1e3a2b1b804e52b55dcfd0ed5274475",
   "main": "src/index.js",
   "devDependencies": {
     "tailwindcss": "^3.2.3"

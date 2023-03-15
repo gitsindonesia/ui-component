@@ -3,6 +3,47 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.4](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2023-03-13)
+
+
+### Bug Fixes
+
+* **VQuillEditor:** make `label` prop optional ([e05af87](https://github.com/gitsindonesia/ui-component/commit/e05af8718256854afe2d80339a2a36bad3605c97))
+
+
+### Features
+
+* **Forms:** add a new `hint` prop to all form inputs ([#151](https://github.com/gitsindonesia/ui-component/issues/151)) ([bf7abc2](https://github.com/gitsindonesia/ui-component/commit/bf7abc29673b96f9550b55f6002c6743705dff9e))
+
+
+
+
+
+
+# [1.0.0-beta.3](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2023-03-08)
+
+
+### Bug Fixes
+
+* **VQuillEditor:** disable auto fix cursor by default via `autoFixCursor` prop ([#141](https://github.com/gitsindonesia/ui-component/issues/141)) ([9a809b6](https://github.com/gitsindonesia/ui-component/commit/9a809b6c993a29cfc18d5a3194103dfca78bcce6))
+
+
+### Features
+
+* **Forms:** add the ability to hide error messages via `hideError` prop ([#138](https://github.com/gitsindonesia/ui-component/issues/138)) ([2065a21](https://github.com/gitsindonesia/ui-component/commit/2065a21d7fe0f9d43b2d58378080fb3d44cda036))
+
+
+
+
+
+# [1.0.0-beta.2](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2023-02-28)
+
+**Note:** Version bump only for package @gits-id/quill-editor
+
+
+
+
+
 # [1.0.0-beta.1](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.0...v1.0.0-beta.1) (2023-02-20)
 
 **Note:** Version bump only for package @gits-id/quill-editor

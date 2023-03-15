@@ -1,4 +1,9 @@
 <script setup lang="ts">
+definePageMeta({
+  layout: 'blank',
+  auth: false,
+});
+
 useHead({
   title: useAppConfig().admin.title,
 });

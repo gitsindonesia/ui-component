@@ -35,6 +35,8 @@ export type Props = {
   wrapperClass?: string;
   validationMode?: ValidationMode
   disabled?: boolean
+  hideError?: boolean
+  hint?: string
 };
 
 const props = withDefaults(defineProps<Props>(), {
@@ -47,7 +49,6 @@ const props = withDefaults(defineProps<Props>(), {
   name: '',
   items: () => [],
   noDataText: 'No data.',
-  notFoundText: 'Nothing found.',
   clearable: false,
   errorClass: 'autocomplete-error',
   wrapperClass: '',
@@ -151,10 +152,7 @@ const clear = () => {
         @after-leave="query = ''"
       >
         <ComboboxOptions class="autocomplete-options">
-          <div
-            v-if="filteredItems.length === 0 && query === ''"
-            class="autocomplete-empty"
-          >
+          <div v-if="filteredItems.length === 0" class="autocomplete-empty">
             {{ noDataText }}
           </div>
 
@@ -193,7 +191,12 @@ const clear = () => {
       </TransitionRoot>
     </div>
   </Combobox>
-  <div v-if="errorMessage" :class="errorClass">
+  <p v-if="hint" class="autocomplete-hint">
+    <slot name="hint">
+      {{ hint }}
+    </slot>
+  </p>
+  <div v-if="errorMessage && !hideError" :class="errorClass">
     {{ errorMessage }}
   </div>
 </template>

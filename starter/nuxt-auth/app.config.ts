@@ -2,7 +2,14 @@ import {string, boolean, ref as YupRef} from 'yup';
 
 export default defineAppConfig({
   auth: {
-    logo: true,
+    logo: {
+      enable: true,
+      light: '/logo-type.svg',
+      dark: '/logo-type-white.svg',
+      alt: 'Logo',
+      width: 80,
+      height: 36,
+    },
     redirect: {
       home: '/', // redirect to home page after login
     },

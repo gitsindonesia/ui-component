@@ -266,6 +266,8 @@ const onSubmit = handleSubmit((values) => {
 | [`inputClass`](#inputClass)         | `string`           | `''`           |
 | [`labelClass`](#labelClass)         | `string`           | `''`           |
 | [`validationMode`](#validationMode) | `string`           | `'aggressive'` |
+| [`hint`](#hint)                     | `String`           | `''`           |
+| [`hideError`](#hideError)           | `Boolean`          | `false`        |
 
 ## Events
 

@@ -5,7 +5,15 @@ export default defineNuxtConfig({
     shim: false,
   },
   auth: {
-    origin: process.env.AUTH_ORIGIN,
     enableGlobalAppMiddleware: true,
+  },
+  vite: {
+    optimizeDeps: {
+      include: ['yup'],
+    },
+  },
+  gitsUi: {
+    // uncomment to enable dark mode
+    // darkMode: true,
   },
 });

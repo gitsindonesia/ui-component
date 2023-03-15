@@ -1,6 +1,6 @@
 {
   "name": "@gits-id/utils",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.3",
   "description": "GITS Utilities",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly",
@@ -16,7 +16,7 @@
   "dependencies": {
     "vue": "^3.2.31"
   },
-  "gitHead": "f584bc75f62ffdd381a5e55e89b2fe626584f85f",
+  "gitHead": "92215d91d1e3a2b1b804e52b55dcfd0ed5274475",
   "devDependencies": {
     "c8": "^7.11.3",
     "vite": "^3.0.0",

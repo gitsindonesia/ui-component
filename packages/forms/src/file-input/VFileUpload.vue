@@ -1,10 +1,7 @@
 <script lang="ts">
-import {defineComponent} from 'vue';
-import {FileValue} from './types';
-
-export default defineComponent({
+export default {
   inheritAttrs: false,
-});
+};
 </script>
 
 <script setup lang="ts">
@@ -15,6 +12,7 @@ import VFileUploadDefaultTheme from './VFileUploadDefaultTheme.vue';
 import VFileUploadButtonTheme from './VFileUploadButtonTheme.vue';
 import VFileUploadImageTheme from './VFileUploadImageTheme.vue';
 import VFileUploadDropzoneTheme from './VFileUploadDropzoneTheme.vue';
+import {FileValue} from './types';
 
 const props = defineProps({
   /**
@@ -169,6 +167,10 @@ const props = defineProps({
   wrapperClass: {
     type: String,
     default: '',
+  },
+  hideError: {
+    type: Boolean,
+    default: false,
   },
 });
 
@@ -338,7 +340,20 @@ const borderClass = computed(() => {
 </script>
 
 <template>
-  <div :class="[customLayout, wrapperClass]">
+  <div
+    :class="[
+      'v-file-upload',
+      customLayout,
+      wrapperClass,
+      {
+        'v-file-upload--disabled': disabled,
+        'v-file-upload--readonly': readonly,
+        'v-file-upload--has-file': hasFile,
+        'v-file-upload--has-error': hasError,
+        'v-file-upload--is-dropzone': isDropzone,
+      },
+    ]"
+  >
     <label v-if="label" :for="name" :class="labelClass">
       {{ label }}
     </label>
@@ -360,6 +375,7 @@ const borderClass = computed(() => {
         hideRemove,
         disabled,
         browseText,
+        error: hasError,
       }"
       @choose="pickFile"
       @remove="removeFile"
@@ -383,6 +399,7 @@ const borderClass = computed(() => {
         loadingText,
         browseText,
         previewClass,
+        error: hasError,
       }"
       @choose="pickFile"
     >
@@ -411,6 +428,7 @@ const borderClass = computed(() => {
         hint,
         previewClass,
         loading,
+        error: hasError,
       }"
       @dropped="handleFiles"
       @choose="pickFile"
@@ -434,6 +452,7 @@ const borderClass = computed(() => {
         browseText,
         hideRemove,
         removeText,
+        error: hasError,
       }"
       @choose="pickFile"
       @remove="removeFile"
@@ -472,7 +491,7 @@ const borderClass = computed(() => {
     />
 
     <slot name="hint">
-      <div v-if="hint" class="text-xs mt-2 text-black">
+      <div v-if="hint" class="text-sm mt-1 text-gray-500">
         {{ hint }}
       </div>
     </slot>
@@ -483,11 +502,11 @@ const borderClass = computed(() => {
       :error-messages="errorMessages"
       :field-name="name"
     >
-      <div v-if="errorMessage" :class="errorClass">
+      <div v-if="errorMessage && !hideError" :class="errorClass">
         {{ errorMessage }}
       </div>
       <ErrorMessage
-        v-else-if="errorMessages.length"
+        v-else-if="errorMessages.length && !hideError"
         :class="errorClass"
         :name="name"
       />

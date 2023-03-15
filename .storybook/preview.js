@@ -2,7 +2,7 @@ import {app} from '@storybook/vue3';
 import {createMemoryHistory, createRouter} from 'vue-router';
 import '../packages/tailwind-config/tailwind.css';
 import '../packages/theme/transition.css';
-import '../packages/ui/src/style.scss';
+// import '../packages/ui/src/style.scss';
 
 const router = createRouter({
   history: createMemoryHistory(),
@@ -22,15 +22,7 @@ export const parameters = {
   options: {
     storySort: {
       method: 'alphabetical',
-      order: [
-        'Get Started',
-        'Foundation',
-        'Components',
-        'Forms',
-        'Layouts',
-        'Pages',
-        'Snippets',
-      ],
+      order: ['Get Started', 'Foundation', 'Components', 'Forms', 'Blocks'],
       // locales: '',
     },
   },

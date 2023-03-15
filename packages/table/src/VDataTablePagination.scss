@@ -1,3 +1,6 @@
+@import '@gits-id/forms/src/forms';
+@import '@gits-id/pagination/src/VPagination';
+
 :root {
   --v-data-table-pagination-bg-color: theme('colors.white');
   --v-data-table-pagination-border-color: theme('borderColor.DEFAULT');

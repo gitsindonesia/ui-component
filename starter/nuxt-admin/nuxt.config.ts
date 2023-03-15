@@ -26,4 +26,15 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: '',
   },
+  extends: [
+    '@gits-id/nuxt-auth'
+  ],
+  vite: {
+    optimizeDeps: {
+      include: ['yup']
+    }
+  },
+  css: [
+    '~/assets/css/main.css'
+  ],
 });

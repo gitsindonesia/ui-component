@@ -47,6 +47,18 @@ Default.parameters = {
   },
 };
 
+export const Hint = Template.bind({});
+Hint.args = {
+  hint: 'This is a hint',
+};
+Hint.parameters = {
+  docs: {
+    source: {
+      code: '<v-file-upload hint="This is a hint" />',
+    },
+  },
+};
+
 export const Button = Template.bind({});
 Button.args = {
   theme: 'button',
@@ -136,7 +148,6 @@ export const Validation: Story<{}> = () => ({
         preview
       />
       <v-file-upload
-        wrapper-class="mb-4"
         name="document"
         label="Document"
         placeholder="Pick PDF File"

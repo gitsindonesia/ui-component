@@ -122,6 +122,8 @@ const genres = ref<Item[]>([
 | [`clearable`](#clearable)       | `boolean` | `false`                |
 | [`errorClass`](#errorClass)     | `string`  | `'autocomplete-error'` |
 | [`wrapperClass`](#wrapperClass) | `string`  | `''`                   |
+| [`hint`](#hint)                 | `String`  | `''`                   |
+| [`hideError`](#hideError)       | `Boolean` | `false`                |
 
 ## Events
 

@@ -168,6 +168,14 @@ const props = defineProps({
   fieldOptions: {
     type: Object as PropType<FieldOptions<any>>,
     default: () => ({}),
+  },
+  hideError: {
+    type: Boolean,
+    default: false,
+  },
+  hint: {
+    type: String,
+    default: ''
   }
 });
 
@@ -176,6 +184,7 @@ const emit = defineEmits([
   'update:modelValue',
   'search',
   'selected',
+  'clear'
 ]);
 
 const {
@@ -203,7 +212,7 @@ const focus = ref(-1);
 const refItems = ref<HTMLDivElement[]>([]);
 const dropdown = ref<HTMLDivElement | null>(null);
 
-const {errorMessage, uncontrolledValue, clear} = useFormValue(props, emit, props.fieldOptions);
+const {errorMessage, uncontrolledValue} = useFormValue(props, emit, props.fieldOptions);
 
 const matchBy = (item: VMultiSelectItem, key: string) => {
   return String(item?.[key])
@@ -259,6 +268,7 @@ const findIndex = (item: VMultiSelectItem) => {
     (sItem: VMultiSelectItem) => sItem[itemValue.value] === item?.[itemValue.value],
   );
 };
+
 const hasItem = (item: VMultiSelectItem) => findIndex(item) > -1;
 
 const isSelected = (item: VMultiSelectItem, index: number) => {
@@ -268,7 +278,7 @@ const isSelected = (item: VMultiSelectItem, index: number) => {
 const clearSelected = () => {
   uncontrolledValue.value = [];
   focus.value = -1;
-  clear()
+  emit('clear')
 };
 
 const deselect = (item: VMultiSelectItem) => {
@@ -387,7 +397,8 @@ const focusItem = () => {
     ref="target"
     class="v-multi-select"
     :class="{
-      'v-multi-select--error': !!errorMessage || error,
+      'v-multi-select--error':
+        error || errorMessages.length > 0 || !!errorMessage,
     }"
     v-bind="$attrs"
   >
@@ -590,8 +601,13 @@ const focusItem = () => {
       </div>
     </div>
   </div>
+  <p v-if="hint" class="v-multi-select-hint">
+    <slot name="hint">
+      {{ hint }}
+    </slot>
+  </p>
   <ErrorMessage
-    v-if="errorMessages.length"
+    v-if="errorMessages.length && !hideError"
     class="text-error-500 text-sm"
     :name="name"
   />

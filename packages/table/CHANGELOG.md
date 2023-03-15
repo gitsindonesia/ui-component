@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.4](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2023-03-13)
+
+
+### Bug Fixes
+
+* **VDataTable:** fix load dependency styles when installed as independent package ([#152](https://github.com/gitsindonesia/ui-component/issues/152)) ([3675578](https://github.com/gitsindonesia/ui-component/commit/3675578296ec2483f5a38f67fb8f449bb2d8e518))
+
+
+
+
+
+
+# [1.0.0-beta.3](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2023-03-08)
+
+**Note:** Version bump only for package @gits-id/table
+
+
+
+
+
+# [1.0.0-beta.2](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2023-02-28)
+
+**Note:** Version bump only for package @gits-id/table
+
+
+
+
+
 # [1.0.0-beta.1](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.0...v1.0.0-beta.1) (2023-02-20)
 
 **Note:** Version bump only for package @gits-id/table

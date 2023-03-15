@@ -165,6 +165,14 @@ const props = defineProps({
   validationMode: {
     type: String as PropType<ValidationMode>,
     default: 'aggressive',
+  },
+  hideError: {
+    type: Boolean,
+    default: false,
+  },
+  hint: {
+    type: String,
+    default: ''
   }
 });
 
@@ -267,7 +275,7 @@ const emitSelected = (val: any) => {
       `v-select-${color}`,
       `v-select--${size}`,
       {
-        'v-select--error': error || !!errorMessages[0],
+        'v-select--error': error || !!errorMessages[0] || !!errorMessage,
         'v-select--disabled': disabled,
       },
       wrapperClass,
@@ -387,8 +395,16 @@ const emitSelected = (val: any) => {
         </transition>
       </div>
     </Listbox>
-
-    <div v-if="message" class="v-select-error" :class="errorClass">
+    <p v-if="hint" class="v-select-hint">
+      <slot name="hint">
+        {{ hint }}
+      </slot>
+    </p>
+    <div
+      v-if="message && !hideError"
+      class="v-select-error"
+      :class="errorClass"
+    >
       {{ message }}
     </div>
   </div>

@@ -10,6 +10,8 @@ A Nuxt theme to get authentication ready with [nuxt-auth](https://sidebase.io/nu
   - Login
   - Register
   - Forgot Password
+  - Profile page
+- Dark mode ready
 - Customizable via Nuxt Layer
 - Configurable via `app.config.ts`
 
@@ -70,36 +72,15 @@ The auth handle is located at `servers/api/auth/[...].ts`. Feel free to override
 
 ## Components
 
-This theme comes with three components under `Auth` namespace.
+To customize the components, just override the default components by creating a file in your Nuxt app with the same name.
 
-- `AuthShell`: Two column layout to wrap the authentication page.
-- `AuthSidebar`: Left side of the container to place such as illustration or image. By default comes with gradient background.
-- `AuthForm`: Authentication form that include logic to login the user to the application.
-
-### Customizating the components
-
-To customize the components, just override the default components by creating file in your Nuxt app with the same as the theme.
-
-| Component            | Path                                     |
-| -------------------- | ---------------------------------------- |
-| `AuthShell`          | `components/auth/AuthShell.vue`          |
-| `AuthForm`           | `components/auth/AuthForm.vue`           |
-| `AuthSidebar`        | `components/auth/AuthSidebar.vue`        |
-| `AuthForgotPassword` | `components/auth/AuthForgotPassword.vue` |
-| `AuthRegister`       | `components/auth/AuthRegister.vue`       |
-| `AuthLayout`         | `components/auth/AuthLayout.vue`         |
+Check out the full list of components [here](https://github.com/gitsindonesia/ui-component/tree/main/starter/nuxt-auth/components).
 
 ## Pages
 
-To customize the pages, just override the default pages by creating file in your Nuxt app with the same as the theme.
+To customize the pages, just override the default pages by creating a file in your Nuxt app with the same name.
 
-| Path                             | Description                                       |
-| -------------------------------- | ------------------------------------------------- |
-| `pages/auth/login.vue`           | The login page                                    |
-| `pages/auth/register.vue`        | The register page                                 |
-| `pages/auth/forgot-password.vue` | The forgot password page                          |
-| `pages/protected.vue`            | The page that is protected with `auth` middleware |
-| `pages/index.vue`                | The home page                                     |
+Check out the full list of pages [here](https://github.com/gitsindonesia/ui-component/tree/main/starter/nuxt-auth/pages).
 
 ## Authentication
 
@@ -109,6 +90,37 @@ Checkout the [official documentation](https://sidebase.io/nuxt-auth/getting-star
 
 Checkout the [official documentation](https://gitsindonesia.github.io/ui-component/) to
 learn more about `GITS UI`.
+
+## Dark Mode
+
+Basically, to enable dark mode, the only thing to do is change the value of `gitsUi.darkMode` to `true` in `nuxt.config.ts`:
+  
+```ts
+export default defineNuxtConfig({
+  gitsUi: {
+    darkMode: true, // <--
+  },
+});
+```
+
+And then, add class `dark` to the `html` attribute.
+
+**Tips**: to test dark mode, you set `dark` class to the `html` using `useHead` in the `app.vue`.
+
+```vue
+<!-- app.vue -->
+<script setup lang="ts">
+useHead({
+  title: 'GITS Nuxt Auth',
+  htmlAttrs: {
+    // uncomment this line to simulate dark mode
+    class: 'dark', // <--
+  },
+});
+</script>
+```
+
+
 
 ## License
 

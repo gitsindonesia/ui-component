@@ -414,6 +414,8 @@ const genres = ref([
 | [`labelClass`](#labelClass)         | `String`                                      | `''`           |
 | [`wrapperClass`](#wrapperClass)     | `String`                                      | `''`           |
 | [`validationMode`](#validationMode) | `String as PropType<'aggressive' \| 'eager'>` | `'aggressive'` |
+| [`hint`](#hint)                     | `String`                                      | `''`           |
+| [`hideError`](#hideError)           | `Boolean`                                     | `false`        |
 
 ## Events
 

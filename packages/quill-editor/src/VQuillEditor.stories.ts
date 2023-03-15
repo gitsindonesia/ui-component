@@ -33,7 +33,12 @@ Label.args = {
   label: 'Content',
 };
 
-export const Validation: Story = () => ({
+export const Hint = Template.bind({});
+Hint.args = {
+  hint: 'This is a hint',
+};
+
+export const Validation: Story = (args) => ({
   components: {VBtn, VQuillEditor},
   setup() {
     const schema = object({
@@ -48,7 +53,7 @@ export const Validation: Story = () => ({
       alert(JSON.stringify(values));
     });
 
-    return {onSubmit, resetForm, values};
+    return {onSubmit, resetForm, values, args};
   },
   template: `
     <form @submit="onSubmit" class="border-none">
@@ -56,6 +61,7 @@ export const Validation: Story = () => ({
         name="content"
         label="Content"
         placeholder="Input your content"
+        v-bind="args"
       />
       <div class="mt-4">
         <v-btn type="submit">Submit</v-btn>
@@ -184,3 +190,8 @@ export const Toolbar: Story = () => ({
     </form>
 `,
 });
+
+export const HideError = Validation.bind({});
+HideError.args = {
+  hideError: true,
+};

@@ -118,6 +118,20 @@ Label.parameters = {
   },
 };
 
+export const Hint = Template.bind({});
+Hint.args = {
+  label: 'Name',
+  id: 'name',
+  hint: 'This is a hint',
+};
+Hint.parameters = {
+  docs: {
+    source: {
+      code: `<v-input label="Name" id="name" hint="This is a hint" />`,
+    },
+  },
+};
+
 export const Email = Template.bind({});
 Email.args = {
   type: 'email',
@@ -750,6 +764,7 @@ export const DarkMode: Story<VInputProps> = (args) => ({
         v-model="modelValue"
         label="Label"
         placeholder="Placeholder"
+        hint="This is a hint"
       />
     </div>
   `,

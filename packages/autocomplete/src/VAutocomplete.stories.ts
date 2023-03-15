@@ -16,7 +16,7 @@ const items = [
 ];
 
 export default {
-  title: 'Components/Autocomplete',
+  title: 'Forms/Autocomplete',
   component: VAutocomplete,
   argTypes: {},
   args: {
@@ -54,6 +54,11 @@ Readonly.args = {
   readonly: true,
 };
 
+export const Hint = Template.bind({});
+Hint.args = {
+  hint: 'This is a hint',
+};
+
 export const Validation: Story = (args) => ({
   components: {VBtn, VAutocomplete},
   setup() {
@@ -88,7 +93,7 @@ export const Validation: Story = (args) => ({
       },
     ]);
 
-    return {onSubmit, resetForm, values, genres};
+    return {onSubmit, resetForm, values, genres, args};
   },
   template: `
     <form @submit="onSubmit" class="border-none">
@@ -97,6 +102,7 @@ export const Validation: Story = (args) => ({
         label="Genre"
         placeholder="Choose your prefered genres"
         :items="genres"
+        v-bind="args"
       />
       <div class="mt-4">
         <v-btn type="submit">Submit</v-btn>
@@ -106,6 +112,11 @@ export const Validation: Story = (args) => ({
     </form>
 `,
 });
+
+export const HideError = Validation.bind({});
+HideError.args = {
+  hideError: true,
+};
 
 export const TestInputState: Story<{}> = (args) => ({
   components: {VBtn, VAutocomplete},
@@ -264,6 +275,8 @@ export const DarkMode: Story = (args) => ({
     v-bind="args"
     v-model="selected"
     label="Dark Mode"
+    hint="This is a hint"
+    clearable
   />
 </main>
   `,
