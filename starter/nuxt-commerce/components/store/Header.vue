@@ -1,127 +1,153 @@
 <script setup lang="ts">
-const appConfig = useAppConfig();
-const storeDrawer = useStoreDrawer();
+import {ref} from 'vue';
 
-const menus = [
-  {
-    text: 'Home',
-    to: '/',
-  },
-  {
-    text: 'Products',
-    to: '/products',
-  },
-  {
-    text: 'Categories',
-    to: '/categories',
-    children: [
-      {
-        text: 'Category 1',
-        to: '/categories/category-1',
-        children: [
-          {
-            text: 'Sub Category 1',
-            to: '/categories/category-1/sub-category-1',
-          },
-          {
-            text: 'Sub Category 2',
-            to: '/categories/category-1/sub-category-2',
-          },
-          {
-            text: 'Sub Category 3',
-            to: '/categories/category-1/sub-category-3',
-          },
-        ],
-      },
-      {
-        text: 'Category 2',
-        to: '/categories/category-2',
-      },
-      {
-        text: 'Category 3',
-        to: '/categories/category-3',
-      },
-    ],
-  },
-];
+const navigation = {
+  categories: [
+    {
+      id: 'women',
+      name: 'Women',
+      featured: [
+        {
+          name: 'New Arrivals',
+          href: '#',
+          imageSrc:
+            'https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg',
+          imageAlt:
+            'Models sitting back to back, wearing Basic Tee in black and bone.',
+        },
+        {
+          name: 'Basic Tees',
+          href: '#',
+          imageSrc:
+            'https://tailwindui.com/img/ecommerce-images/mega-menu-category-02.jpg',
+          imageAlt:
+            'Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.',
+        },
+      ],
+      sections: [
+        {
+          id: 'clothing',
+          name: 'Clothing',
+          items: [
+            {name: 'Tops', href: '#'},
+            {name: 'Dresses', href: '#'},
+            {name: 'Pants', href: '#'},
+            {name: 'Denim', href: '#'},
+            {name: 'Sweaters', href: '#'},
+            {name: 'T-Shirts', href: '#'},
+            {name: 'Jackets', href: '#'},
+            {name: 'Activewear', href: '#'},
+            {name: 'Browse All', href: '#'},
+          ],
+        },
+        {
+          id: 'accessories',
+          name: 'Accessories',
+          items: [
+            {name: 'Watches', href: '#'},
+            {name: 'Wallets', href: '#'},
+            {name: 'Bags', href: '#'},
+            {name: 'Sunglasses', href: '#'},
+            {name: 'Hats', href: '#'},
+            {name: 'Belts', href: '#'},
+          ],
+        },
+        {
+          id: 'brands',
+          name: 'Brands',
+          items: [
+            {name: 'Full Nelson', href: '#'},
+            {name: 'My Way', href: '#'},
+            {name: 'Re-Arranged', href: '#'},
+            {name: 'Counterfeit', href: '#'},
+            {name: 'Significant Other', href: '#'},
+          ],
+        },
+      ],
+    },
+    {
+      id: 'men',
+      name: 'Men',
+      featured: [
+        {
+          name: 'New Arrivals',
+          href: '#',
+          imageSrc:
+            'https://tailwindui.com/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg',
+          imageAlt:
+            'Drawstring top with elastic loop closure and textured interior padding.',
+        },
+        {
+          name: 'Artwork Tees',
+          href: '#',
+          imageSrc:
+            'https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-06.jpg',
+          imageAlt:
+            'Three shirts in gray, white, and blue arranged on table with same line drawing of hands and shapes overlapping on front of shirt.',
+        },
+      ],
+      sections: [
+        {
+          id: 'clothing',
+          name: 'Clothing',
+          items: [
+            {name: 'Tops', href: '#'},
+            {name: 'Pants', href: '#'},
+            {name: 'Sweaters', href: '#'},
+            {name: 'T-Shirts', href: '#'},
+            {name: 'Jackets', href: '#'},
+            {name: 'Activewear', href: '#'},
+            {name: 'Browse All', href: '#'},
+          ],
+        },
+        {
+          id: 'accessories',
+          name: 'Accessories',
+          items: [
+            {name: 'Watches', href: '#'},
+            {name: 'Wallets', href: '#'},
+            {name: 'Bags', href: '#'},
+            {name: 'Sunglasses', href: '#'},
+            {name: 'Hats', href: '#'},
+            {name: 'Belts', href: '#'},
+          ],
+        },
+        {
+          id: 'brands',
+          name: 'Brands',
+          items: [
+            {name: 'Re-Arranged', href: '#'},
+            {name: 'Counterfeit', href: '#'},
+            {name: 'Full Nelson', href: '#'},
+            {name: 'My Way', href: '#'},
+          ],
+        },
+      ],
+    },
+  ],
+  pages: [
+    {name: 'Company', href: '#'},
+    {name: 'Stores', href: '/products'},
+  ],
+};
+
+const open = ref(false);
 </script>
 
 <template>
-  <VAppBar bordered>
-    <div
-      class="container mx-auto flex items-center gap-4 justify-between md:p-4"
-    >
-      <div class="flex items-center gap-1 -ml-3 sm:ml-0">
-        <VBtn
-          class="sm:!hidden"
-          prefix-icon="ri:menu-line"
-          text
-          fab
-          @click="storeDrawer = !storeDrawer"
-        />
-        <NuxtLink class="font-semibold" to="/">
-          {{ appConfig.store.title }}
-        </NuxtLink>
-      </div>
-
-      <nav class="md:flex gap-6 items-center hidden">
-        <template v-for="menu in menus" :key="menu.text">
-          <VMenus v-if="menu.children" :label="menu.text">
-            <template #items>
-              <template v-for="child in menu.children" :key="child.text">
-                <VMenus
-                  :items="child.children"
-                  v-if="child.children"
-                  placement="right-start"
-                >
-                  <VMenusItem class="flex justify-between">
-                    {{ child.text }}
-                    <VIcon name="ri:arrow-right-s-fill" class="ml-auto" />
-                  </VMenusItem>
-                  <template #items>
-                    <template
-                      v-for="subChild in child.children"
-                      :key="subChild.text"
-                    >
-                      <VMenusItem :to="subChild.to">
-                        {{ subChild.text }}
-                      </VMenusItem>
-                    </template>
-                  </template>
-                </VMenus>
-                <VMenusItem v-else :to="child.to">
-                  {{ child.text }}
-                </VMenusItem>
-              </template>
-            </template>
-          </VMenus>
-          <NuxtLink
-            v-else
-            exact-active-class="text-primary-500 font-semibold"
-            class="hover:text-primary-500"
-            :to="menu.to"
-          >
-            {{ menu.text }}
-          </NuxtLink>
-        </template>
-      </nav>
-
-      <div>
-        <VBtn prefix-icon="ri:search-line" text icon fab></VBtn>
-        <VBtn prefix-icon="ri:shopping-cart-line" text icon fab></VBtn>
-        <VBtn prefix-icon="ri:heart-line" text icon fab></VBtn>
-        <VBtn prefix-icon="ri:user-line" text icon fab></VBtn>
-      </div>
-    </div>
-  </VAppBar>
-
-  <VNavDrawer v-model="storeDrawer" fixed overlay class="z-20">
-    <VList>
-      <VListItem class="!font-semibold">{{ appConfig.store.title }}</VListItem>
-      <VListItemDivider />
-      <VListItem v-for="menu in menus" :key="menu.text" :to="menu.to">
-        {{ menu.text }}
-      </VListItem>
-    </VList>
-  </VNavDrawer>
+  <div class="bg-white">
+    <!-- Mobile menu -->
+    <StoreMobileMenu
+      :navigation="navigation"
+      :open="open"
+      @close="open = false"
+    />
+    <header class="relative bg-white">
+      <StoreBanner />
+      <StoreDesktopNavigation
+        :navigation="navigation"
+        @click:menu="open = true"
+      />
+    </header>
+  </div>
 </template>

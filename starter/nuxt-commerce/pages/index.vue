@@ -1,6 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
   layout: 'store',
+  auth: false,
 });
 
 useHead({
@@ -15,16 +16,13 @@ useHead({
 });
 
 const {data} = await useAsyncData(() => $api('/products'));
+const products = computed(() => {
+  return mapProducts((data.value as any).products)
+});
 </script>
 
 <template>
-  <div
-    class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"
-  >
-    <ProductCard
-      v-for="product in data.products"
-      :key="product.id"
-      :product="product"
-    />
-  </div>
+  <StoreHero />
+  <StoreCategories />
+  <ProductGrid class="py-16" title="Recommendations" :products="products!" />
 </template>

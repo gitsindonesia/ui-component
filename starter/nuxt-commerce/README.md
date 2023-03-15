@@ -1,51 +1,68 @@
-# nuxt-commerce-app
+# nuxt-commerce
 
-This is a minimal app created by running `npx create-gits-app`. This project uses the following technologies for a great developer and user-experience:
+An extensible e-commerce template powered by Nuxt.js and GITS UI.
 
-- [TypeScript](https://www.typescriptlang.org/)
-- [Nuxt 3](https://nuxt.com)
-- Nuxt 3
-- Tailwind CSS
-- GITS UI
+## Features
 
-## How to get going?
+- Integrated with [GITS UI](https://gitsindonesia.github.io/ui-component/)
+- Built-in Pages:
+  - `/`
+  - `/products`
+  - `/products/:id`
+- Customizable via Nuxt Layer
+- Configurable via `app.config.ts`
 
-This is a straight-forward setup with minimal templating and scaffolding. The options you selected during the sidebase CLI setup are all here though. Good places to continue reading are:
+## Demo
 
-- [the First Steps documentation](https://gitsindonesia.github.io/ui-component/)
+- [Online demo](https://gits-nuxt-commerce.vercel.app/commerce)
+- [Source code](https://github.com/gitsindonesia/ui-component/tree/main/starter/nuxt-commerce)
+- Try it online on [Stackblitz](https://stackblitz.com/github/gitsindonesia/ui-component/tree/main/starter/nuxt-commerce)
 
-Some tasks you should probably do in the beginning are:
-
-- [ ] replace this generic README with a more specific one
-- [ ] install the Vue Volar extension
-- [ ] enable [Volar takeover mode](https://nuxt.com/docs/getting-started/installation#prerequisites) to ensure a smooth editor setup
-
-### Setup
-
-Make sure to install the dependencies:
+## Installation
 
 ```bash
-npm install
+npm i -D @gits-id/nuxt-commerce
 ```
 
-### Development Server
+## Usage
 
-Start the development server on http://localhost:3000
+Add it to the `nuxt.config.ts`:
 
-```bash
-npm run dev
+```ts
+export default defineNuxtConfig({
+  extends: '@gits-id/nuxt-commerce',
+});
 ```
 
-### Production
+## Configuration
 
-Build the application for production:
+You can change the default options for commerce pages like redirect url and head options via `app.config.ts`.
 
-```bash
-npm run build
-```
+You can checkout the default configuration in the [source of this file](https://github.com/gitsindonesia/ui-component/tree/main/starter/nuxt-commerce/app.config.ts).
 
-Locally preview production build:
+## Components
 
-```bash
-npm run preview
-```
+Checkout the list of available components [here](https://github.com/gitsindonesia/ui-component/tree/main/starter/nuxt-commerce/components).
+
+## Pages
+
+To customize the pages, just override the default pages by creating file in your Nuxt app with the same as the theme.
+
+| Path                       | Description             |
+| -------------------------- | ----------------------- |
+| `pages/index.vue`          | The home page           |
+| `pages/products/index.vue` | The product list page   |
+| `pages/products/[id].vue`  | The product detail page |
+
+## Authentication
+
+Authentication is extended from [`@gits-id/nuxt-auth`](../nuxt-auth/) package.
+
+## GITS UI
+
+Checkout the [official documentation](https://gitsindonesia.github.io/ui-component/) to
+learn more about `GITS UI`.
+
+## License
+
+MIT
