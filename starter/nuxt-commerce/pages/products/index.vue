@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import {ref} from 'vue';
 import {
-  Dialog,
-  DialogPanel,
   Disclosure,
   DisclosureButton,
   DisclosurePanel,
@@ -10,17 +8,7 @@ import {
   MenuButton,
   MenuItem,
   MenuItems,
-  TransitionChild,
-  TransitionRoot,
 } from '@headlessui/vue';
-import {XMarkIcon} from '@heroicons/vue/24/outline';
-import {
-  ChevronDownIcon,
-  FunnelIcon,
-  MinusIcon,
-  PlusIcon,
-  // Squares2X2Icon,
-} from '@heroicons/vue/20/solid';
 
 definePageMeta({
   layout: 'store',
@@ -82,7 +70,7 @@ const filters = [
   },
 ];
 
-const mobileFiltersOpen = useMobileFilterDialog()
+const mobileFiltersOpen = useMobileFilterDialog();
 
 const {data} = await useAsyncData(() => $api('/products'));
 const products = computed(() => {
@@ -129,7 +117,8 @@ const products = computed(() => {
                   "
                 >
                   Sort
-                  <ChevronDownIcon
+                  <VIcon
+                    name="heroicons:chevron-down"
                     class="
                       -mr-1
                       ml-1
@@ -214,7 +203,11 @@ const products = computed(() => {
               @click="mobileFiltersOpen = true"
             >
               <span class="sr-only">Filters</span>
-              <FunnelIcon class="h-5 w-5" aria-hidden="true" />
+              <VIcon
+                name="heroicons:funnel"
+                class="h-5 w-5"
+                aria-hidden="true"
+              />
             </button>
           </div>
         </div>
@@ -266,12 +259,18 @@ const products = computed(() => {
                       section.name
                     }}</span>
                     <span class="ml-6 flex items-center">
-                      <PlusIcon
+                      <VIcon
+                        name="heroicons:plus"
                         v-if="!open"
                         class="h-5 w-5"
                         aria-hidden="true"
                       />
-                      <MinusIcon v-else class="h-5 w-5" aria-hidden="true" />
+                      <VIcon
+                        name="heroicons:minus"
+                        v-else
+                        class="h-5 w-5"
+                        aria-hidden="true"
+                      />
                     </span>
                   </DisclosureButton>
                 </h3>

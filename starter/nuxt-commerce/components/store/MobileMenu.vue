@@ -10,7 +10,6 @@ import {
   TransitionChild,
   TransitionRoot,
 } from '@headlessui/vue';
-import {XMarkIcon} from '@heroicons/vue/24/outline';
 
 interface Props {
   open: boolean;
@@ -78,7 +77,11 @@ const emit =
                 @click="emit('close')"
               >
                 <span class="sr-only">Close menu</span>
-                <XMarkIcon class="h-6 w-6" aria-hidden="true" />
+                <VIcon
+                  name="heroicons:x-mark"
+                  class="h-6 w-6"
+                  aria-hidden="true"
+                />
               </button>
             </div>
 

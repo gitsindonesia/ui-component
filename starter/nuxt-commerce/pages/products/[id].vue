@@ -1,11 +1,10 @@
 <script setup lang="ts">
 import {ref} from 'vue';
-import {StarIcon} from '@heroicons/vue/20/solid';
 import {RadioGroup, RadioGroupLabel, RadioGroupOption} from '@headlessui/vue';
 
 definePageMeta({
-  layout: 'store'
-})
+  layout: 'store',
+});
 
 const product = {
   name: 'Basic Tee 6-Pack',
@@ -212,9 +211,10 @@ const selectedSize = ref(product.sizes[2]);
             <h3 class="sr-only">Reviews</h3>
             <div class="flex items-center">
               <div class="flex items-center">
-                <StarIcon
+                <VIcon
                   v-for="rating in [0, 1, 2, 3, 4]"
                   :key="rating"
+                  name="heroicons:star"
                   :class="[
                     reviews.average > rating
                       ? 'text-gray-900'

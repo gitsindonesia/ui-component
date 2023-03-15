@@ -5,11 +5,6 @@ import {
   PopoverGroup,
   PopoverPanel,
 } from '@headlessui/vue';
-import {
-  Bars3Icon,
-  MagnifyingGlassIcon,
-  ShoppingBagIcon,
-} from '@heroicons/vue/24/outline';
 
 interface Props {
   navigation: Record<string, any>;
@@ -35,7 +30,7 @@ const viewCart = ref(false);
           @click="emit('click:menu')"
         >
           <span class="sr-only">Open menu</span>
-          <Bars3Icon class="h-6 w-6" aria-hidden="true" />
+          <VIcon name="heroicons:bars-3" class="h-6 w-6" aria-hidden="true" />
         </button>
 
         <!-- Logo -->
@@ -226,7 +221,11 @@ const viewCart = ref(false);
           <div class="flex lg:ml-6">
             <a href="#" class="p-2 text-gray-400 hover:text-gray-500">
               <span class="sr-only">Search</span>
-              <MagnifyingGlassIcon class="h-6 w-6" aria-hidden="true" />
+              <VIcon
+                name="heroicons:magnifying-glass"
+                class="h-6 w-6"
+                aria-hidden="true"
+              />
             </a>
           </div>
 
@@ -241,7 +240,8 @@ const viewCart = ref(false);
               @click="viewCart = true"
               class="group -m-2 flex items-center p-2"
             >
-              <ShoppingBagIcon
+              <VIcon
+                name="heroicons:shopping-bag"
                 class="
                   h-6
                   w-6

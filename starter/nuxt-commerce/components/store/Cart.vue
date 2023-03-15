@@ -6,7 +6,6 @@ import {
   TransitionChild,
   TransitionRoot,
 } from '@headlessui/vue';
-import {XMarkIcon} from '@heroicons/vue/24/outline';
 import {useVModel} from '@vueuse/core';
 
 interface Props {
@@ -113,7 +112,11 @@ const products = [
                           @click="open = false"
                         >
                           <span class="sr-only">Close panel</span>
-                          <XMarkIcon class="h-6 w-6" aria-hidden="true" />
+                          <VIcon
+                            name="heroicons:x-mark"
+                            class="h-6 w-6"
+                            aria-hidden="true"
+                          />
                         </button>
                       </div>
                     </div>
