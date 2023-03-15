@@ -16,16 +16,16 @@
   "license": "MIT",
   "dependencies": {
     "@headlessui/vue": "^1.6.0",
-    "@morpheme/button": "^1.0.0-beta.5",
-    "@morpheme/forms": "^1.0.0-beta.5",
-    "@morpheme/icon": "^1.0.0-beta.5",
+    "@morpheme/button": "workspace:*",
+    "@morpheme/forms": "workspace:*",
+    "@morpheme/icon": "workspace:*",
     "tailwindcss": "^3.0.23",
     "vue": "^3.2.31",
     "wait-for-expect": "^3.0.2"
   },
   "devDependencies": {
-    "@morpheme/tailwind-config": "^1.0.0-beta.5",
-    "@morpheme/utils": "^1.0.0-beta.5",
+    "@morpheme/tailwind-config": "workspace:*",
+    "@morpheme/utils": "workspace:*",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
     "vite": "^3.0.0",

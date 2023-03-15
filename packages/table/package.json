@@ -16,15 +16,15 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@morpheme/forms": "^1.0.0-beta.5",
-    "@morpheme/icon": "^1.0.0-beta.5",
-    "@morpheme/pagination": "^1.0.0-beta.5",
-    "@morpheme/spinner": "^1.0.0-beta.5",
-    "@morpheme/utils": "^1.0.0-beta.5",
+    "@morpheme/forms": "workspace:*",
+    "@morpheme/icon": "workspace:*",
+    "@morpheme/pagination": "workspace:*",
+    "@morpheme/spinner": "workspace:*",
+    "@morpheme/utils": "workspace:*",
     "vue": "^3.2.33"
   },
   "devDependencies": {
-    "@morpheme/tailwind-config": "^1.0.0-beta.5",
+    "@morpheme/tailwind-config": "workspace:*",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
     "tailwindcss": "^3.0.23",

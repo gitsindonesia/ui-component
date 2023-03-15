@@ -15,13 +15,14 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@morpheme/icon": "^1.0.0-beta.5",
+    "@morpheme/icon": "workspace:*",
     "vue": "^3.2.33",
     "vue-router": "^4.1.5"
   },
   "devDependencies": {
-    "@morpheme/theme": "^1.0.0-beta.5",
-    "@morpheme/utils": "^1.0.0-beta.5",
+    "@morpheme/theme": "workspace:*",
+    "@morpheme/tailwind-config": "workspace:*",
+    "@morpheme/utils": "workspace:*",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
     "tailwindcss": "^3.0.23",

@@ -17,16 +17,16 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@morpheme/icon": "^1.0.0-beta.5",
-    "@morpheme/list": "^1.0.0-beta.5",
+    "@morpheme/icon": "workspace:*",
+    "@morpheme/list": "workspace:*",
     "floating-vue": "^2.0.0-beta.20",
     "vue": "^3.2.31"
   },
   "devDependencies": {
-    "@morpheme/app-bar": "^1.0.0-beta.5",
-    "@morpheme/button": "^1.0.0-beta.5",
-    "@morpheme/tailwind-config": "^1.0.0-beta.5",
-    "@morpheme/utils": "^1.0.0-beta.5",
+    "@morpheme/app-bar": "workspace:*",
+    "@morpheme/button": "workspace:*",
+    "@morpheme/tailwind-config": "workspace:*",
+    "@morpheme/utils": "workspace:*",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
     "tailwindcss": "^3.0.23",

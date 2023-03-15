@@ -43,7 +43,6 @@ const transpile = [
   '@morpheme/switch',
   '@morpheme/table',
   '@morpheme/tabs',
-  '@morpheme/textarea',
   '@morpheme/theme',
   '@morpheme/toast',
   '@morpheme/tooltip',

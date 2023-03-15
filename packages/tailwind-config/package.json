@@ -11,9 +11,9 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@morpheme/tailwind-components": "^1.0.0-beta.5",
-    "@morpheme/theme": "^1.0.0-beta.5",
-    "@morpheme/utils": "^1.0.0-beta.5",
+    "@morpheme/tailwind-components": "workspace:*",
+    "@morpheme/theme": "workspace:*",
+    "@morpheme/utils": "workspace:*",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/forms": "^0.5.0",
     "@tailwindcss/line-clamp": "^0.3.1",
