@@ -30,7 +30,7 @@ Detailed documentation can be found [here](https://gitsindonesia.github.io/ui-co
 
 ## Starter
 
-Checkout starter of Morpheme UI in the [starter](/starter/) director
+Checkout starter of Morpheme UI in the [starter](/starter/) directory.
 
 ### [Vue 3](/starter/vue/)
 
