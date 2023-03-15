@@ -1,6 +1,6 @@
-# GITS Badge Component
+# Morpheme Badge
 
-> Badge Component
+Morpheme Badge.
 
 ## Installation
 

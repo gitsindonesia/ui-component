@@ -1,10 +1,10 @@
 # nuxt-auth
 
-A Nuxt theme to get authentication ready with [nuxt-auth](https://sidebase.io/nuxt-auth/getting-started) and GITS UI.
+A Nuxt theme to get authentication ready with [nuxt-auth](https://sidebase.io/nuxt-auth/getting-started) and Morpheme UI.
 
 ## Features
 
-- Integrated with [GITS UI](https://gitsindonesia.github.io/ui-component/)
+- Integrated with [Morpheme UI](https://gitsindonesia.github.io/ui-component/)
 - Authentication with [nuxt-auth](https://sidebase.io/nuxt-auth/getting-started)
 - Built-in Pages:
   - Login
@@ -86,10 +86,10 @@ Check out the full list of pages [here](https://github.com/gitsindonesia/ui-comp
 
 Checkout the [official documentation](https://sidebase.io/nuxt-auth/getting-started) to learn more about `nuxt-auth`.
 
-## GITS UI
+## Morpheme UI
 
 Checkout the [official documentation](https://gitsindonesia.github.io/ui-component/) to
-learn more about `GITS UI`.
+learn more about `Morpheme UI`.
 
 ## Dark Mode
 
@@ -111,7 +111,7 @@ And then, add class `dark` to the `html` attribute.
 <!-- app.vue -->
 <script setup lang="ts">
 useHead({
-  title: 'GITS Nuxt Auth',
+  title: 'Morpheme Nuxt Auth',
   htmlAttrs: {
     // uncomment this line to simulate dark mode
     class: 'dark', // <--

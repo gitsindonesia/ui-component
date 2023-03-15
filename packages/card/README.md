@@ -1,6 +1,6 @@
-# GITS Card Component
+# Morpheme Card
 
-> Reusable Card Component
+Morpheme Card Component.
 
 ## Installation
 

@@ -109,7 +109,7 @@ import Icon from '@morpheme/icon';
         </a>
       </div>
       <p class="text-center text-gray-400 dark:text-gray-400">
-        &copy; 2022 GITS Indonesia. All rights reserved.
+        &copy; 2022 Morpheme Indonesia. All rights reserved.
       </p>
     </div>
   </footer>

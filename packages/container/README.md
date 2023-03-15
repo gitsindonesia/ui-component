@@ -1,6 +1,6 @@
-# GITS Container Component
+# Morpheme Container
 
-Container Component.
+Morpheme Container Component.
 
 ## Installation
 

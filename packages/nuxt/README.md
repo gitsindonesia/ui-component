@@ -1,10 +1,10 @@
-# Nuxt GITS UI
+# Nuxt Morpheme UI
 
-GITS UI Component + Nuxt 3.
+Morpheme UI Component + Nuxt 3.
 
 ## Installation
 
-- Install Nuxt GITS UI
+- Install Nuxt Morpheme UI
 
 ```bash
 yarn add @morpheme/ui-nuxt

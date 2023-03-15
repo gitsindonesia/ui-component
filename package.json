@@ -10,7 +10,7 @@
     "sb": "npm run storybook",
     "dev": "run-p storybook docs:dev dev:playground",
     "dev:playground": "npx nuxi dev packages/nuxt/playground",
-    "build:playground": "lerna run build --scope @gits-id/playground --stream",
+    "build:playground": "lerna run build --scope @morpheme/playground --stream",
     "deploy:ui": "firebase deploy --only hosting:ui",
     "deploy:playground": "firebase deploy --only hosting:playground",
     "test": "vitest",

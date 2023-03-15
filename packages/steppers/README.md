@@ -1,4 +1,4 @@
-# GITS Steppers Component
+# Morpheme Steppers Component
 
 ## Installation
 

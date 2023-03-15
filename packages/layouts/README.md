@@ -1,8 +1,8 @@
-# GITS Layouts Component
+# Morpheme Layouts
 
 > Deprecated
 
-Layouts Component.
+Morpheme Layouts Component.
 
 ## Installation
 

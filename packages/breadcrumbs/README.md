@@ -1,6 +1,6 @@
-# GITS Breadcrumbs Component
+# Morpheme Breadcrumbs
 
-> Breadcrumbs Component
+Morpheme Breadcrumbs Component.
 
 ## Installation
 

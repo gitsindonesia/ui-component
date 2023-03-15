@@ -1,7 +1,7 @@
 {
   "name": "@morpheme/alert",
   "version": "1.0.0-beta.5",
-  "description": "GITS Alert component is a flexible alert component that can be used to display various types of messages to the user.",
+  "description": "Morpheme Alert - a flexible Vue alert component that can be used to display various types of messages to the user.",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "npm run build",
@@ -10,7 +10,9 @@
   "keywords": [
     "alert",
     "ui-component",
-    "ui"
+    "ui",
+    "vue",
+    "morpheme"
   ],
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",

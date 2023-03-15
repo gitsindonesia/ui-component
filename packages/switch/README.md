@@ -1,4 +1,4 @@
-# GITS Switch
+# Morpheme Switch
 
 Vue Switch Component.
 

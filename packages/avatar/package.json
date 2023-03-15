@@ -1,7 +1,7 @@
 {
   "name": "@morpheme/avatar",
   "version": "1.0.0-beta.5",
-  "description": "Avatar Component",
+  "description": "Morpheme Avatar",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "npm run build",
@@ -9,10 +9,10 @@
   },
   "keywords": [
     "avatar",
-    "gits",
-    "ui-component"
+    "ui-component",
+    "morpheme"
   ],
-  "author": "Warsono <warsono@gits.id>",
+  "author": "Warsono <warsono@morpheme.id>",
   "license": "MIT",
   "dependencies": {
     "@morpheme/theme": "workspace:*",

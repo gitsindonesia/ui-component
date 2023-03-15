@@ -3,7 +3,7 @@ import {inject, onMounted, ref} from 'vue';
 import SidebarMenu from './SidebarMenu.vue';
 import Icon from '@morpheme/icon';
 
-const title = inject('appTitle') || 'GITS';
+const title = inject('appTitle') || 'Morpheme';
 const subtitle = inject('appSubtitle') || 'Panel';
 const authUser = inject('authUser');
 const logoutPath = inject('logoutPath');

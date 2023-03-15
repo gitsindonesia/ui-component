@@ -1,4 +1,4 @@
-# GITS Spinner Component
+# Morpheme Spinner Component
 
 > Reusable Spinner Component
 

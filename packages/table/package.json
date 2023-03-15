@@ -1,7 +1,7 @@
 {
   "name": "@morpheme/table",
   "version": "1.0.0-beta.5",
-  "description": "GITS DataTable Table Component",
+  "description": "Morpheme DataTable Table Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "npm run build",
@@ -10,7 +10,7 @@
   "keywords": [
     "table",
     "data-table",
-    "gits",
+    "morpheme",
     "ui-component"
   ],
   "author": "Warsono <warsono16694@gmail.com>",

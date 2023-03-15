@@ -1,4 +1,4 @@
-# GITS Modal
+# Morpheme Modal
 
 Vue modal component. Based on `@headlessui/vue` dialog.
 

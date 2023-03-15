@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "gits-ui-nuxt-playground",
+  "name": "morpheme-nuxt-playground",
   "scripts": {
     "dev": "nuxi dev",
     "build": "nuxi build"

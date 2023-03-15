@@ -1,4 +1,4 @@
-# GITS Tooltip Component
+# Morpheme Tooltip Component
 
 > Reusable Tooltip Component
 

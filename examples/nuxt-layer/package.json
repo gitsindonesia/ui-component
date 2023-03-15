@@ -1,7 +1,7 @@
 {
   "name": "@morpheme/nuxt-layer-example",
   "private": true,
-  "description": "Lightweight Nuxt.js template with GITS UI",
+  "description": "Lightweight Nuxt.js template with Morpheme UI",
   "version": "0.1.0",
   "keywords": [
     "admin",
@@ -11,9 +11,9 @@
     "nuxt.js",
     "vue",
     "vue.js",
-    "gits",
-    "gits-id",
-    "gits-ui"
+    "morpheme",
+    "morpheme",
+    "morpheme"
   ],
   "scripts": {
     "build": "nuxt build",

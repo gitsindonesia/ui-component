@@ -1,4 +1,4 @@
-# GITS Editor
+# Morpheme Editor
 
 Rich Text Editor Based on Vue 3 CKEditor.
 

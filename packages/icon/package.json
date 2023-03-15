@@ -1,14 +1,14 @@
 {
   "name": "@morpheme/icon",
   "version": "1.0.0-beta.5",
-  "description": "GITS Icon Component",
+  "description": "Morpheme Icon Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "npm run build",
     "test": "vitest"
   },
   "keywords": [
-    "gits",
+    "morpheme",
     "icon",
     "iconify"
   ],

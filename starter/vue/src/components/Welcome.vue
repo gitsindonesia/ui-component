@@ -7,31 +7,19 @@
         <div class="space-y-3 text-center">
           <h1 class="font-bold text-5xl space-x-3">
             <span
-              class="
-                bg-gradient-to-r
-                from-green-500
-                to-cyan-500
-                bg-clip-text
-                text-transparent
-              "
+              class="bg-gradient-to-r from-green-500 to-cyan-500 bg-clip-text text-transparent"
             >
               Vue.js
             </span>
             <span class="font-thin text-gray-700">+</span>
             <span
-              class="
-                bg-gradient-to-r
-                from-primary-500
-                to-indigo-500
-                bg-clip-text
-                text-transparent
-              "
+              class="bg-gradient-to-r from-primary-500 to-indigo-500 bg-clip-text text-transparent"
             >
-              GITS UI
+              Morpheme UI
             </span>
           </h1>
           <p class="text-gray-600 text-lg">
-            A minimal Vue.js + GITS UI starter template
+            A minimal Vue.js + Morpheme UI starter template
           </p>
         </div>
 
@@ -50,7 +38,9 @@
                 <template #header>
                   <h3>Documentation &rarr;</h3>
                 </template>
-                <p>Find in-depth information about GITS UI features and API.</p>
+                <p>
+                  Find in-depth information about Morpheme UI features and API.
+                </p>
               </VCard>
             </a>
 
@@ -76,7 +66,9 @@
                 <template #header>
                   <h3>Starter &rarr;</h3>
                 </template>
-                <p>Discover and deploy boilerplate example GITS UI projects.</p>
+                <p>
+                  Discover and deploy boilerplate example Morpheme UI projects.
+                </p>
               </VCard>
             </a>
 

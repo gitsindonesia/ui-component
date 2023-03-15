@@ -1,4 +1,4 @@
-# GITS UI
+# Morpheme UI
 
 Free and open-source UI Component for Vue 3.
 

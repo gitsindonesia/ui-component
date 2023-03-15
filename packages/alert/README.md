@@ -1,6 +1,6 @@
-# GITS Alert
+# Morpheme Alert
 
-GITS Alert component is a flexible alert component that can be used to display various types of messages to the user.
+Morpheme Alert - a flexible Vue alert component that can be used to display various types of messages to the user.
 
 ## Installation
 

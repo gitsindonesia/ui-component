@@ -4,7 +4,7 @@ This is a minimal app created by running `npx create-gits-app`. This project use
 
 - [TypeScript](https://www.typescriptlang.org/)
 - [Nuxt 3](https://nuxt.com)
-- GITS UI
+- Morpheme UI
 
 ### Setup
 

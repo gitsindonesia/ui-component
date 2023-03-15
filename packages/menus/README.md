@@ -1,6 +1,6 @@
-# GITS Menus Component
+# Morpheme Menus
 
-> Reusable Menus Component
+Morpheme Menus Component.
 
 ## Installation
 

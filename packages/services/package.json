@@ -1,7 +1,7 @@
 {
   "name": "@morpheme/services",
   "version": "1.0.0-beta.5",
-  "description": "GITS Services",
+  "description": "Morpheme Services",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly",
     "prepublishOnly": "npm run build",

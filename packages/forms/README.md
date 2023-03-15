@@ -1,6 +1,6 @@
-# GITS Form Component
+# Morpheme Forms
 
-> Reusable Form Component
+Morpheme Forms Component. 
 
 ## Installation
 

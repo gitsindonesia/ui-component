@@ -1,4 +1,4 @@
-# GITS Pagination
+# Morpheme Pagination
 
 Vue Pagination Component.
 

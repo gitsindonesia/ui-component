@@ -1,7 +1,7 @@
 {
   "name": "@morpheme/spinner",
   "version": "1.0.0-beta.5",
-  "description": "GITS Spinner Component",
+  "description": "Morpheme Spinner Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "npm run build",

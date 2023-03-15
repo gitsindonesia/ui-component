@@ -1,4 +1,4 @@
-# GITS UI Contributing Guide
+# Contributing Guide
 
 Hi! I'm really excited that you are interested in contributing to Vue.js. Before submitting your contribution, please make sure to take a moment and read through the following guidelines:
 
@@ -73,4 +73,4 @@ Unit tests are collocated with the code being tested in each package, inside dir
 
 ## Credits
 
-Thank you to all the people who have already contributed to GITS UI!
+Thank you to all the people who have already contributed to Morpheme UI!

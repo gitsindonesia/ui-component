@@ -1,7 +1,7 @@
 {
   "name": "@morpheme/utils",
   "version": "1.0.0-beta.5",
-  "description": "GITS Utilities",
+  "description": "Morpheme Utilities",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly",
     "prepublishOnly": "npm run build",

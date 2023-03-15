@@ -2,7 +2,7 @@
 import {defaultColors} from '@morpheme/theme/defaultTheme';
 
 useHead({
-  title: 'GITS UI Playground',
+  title: 'Morpheme UI Playground',
 });
 
 const items = Array.from({length: 50}, (_, index) => ({

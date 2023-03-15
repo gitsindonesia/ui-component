@@ -27,11 +27,11 @@
                 text-transparent
               "
             >
-              GITS UI
+              Morpheme UI
             </span>
           </h1>
           <p class="text-gray-600 text-lg">
-            A minimal Nuxt.js + GITS UI starter template
+            A minimal Nuxt.js + Morpheme UI starter template
           </p>
         </div>
 
@@ -50,7 +50,9 @@
                 <template #header>
                   <h3>Documentation &rarr;</h3>
                 </template>
-                <p>Find in-depth information about GITS UI features and API.</p>
+                <p>
+                  Find in-depth information about Morpheme UI features and API.
+                </p>
               </VCard>
             </a>
 
@@ -76,7 +78,9 @@
                 <template #header>
                   <h3>Starter &rarr;</h3>
                 </template>
-                <p>Discover and deploy boilerplate example GITS UI projects.</p>
+                <p>
+                  Discover and deploy boilerplate example Morpheme UI projects.
+                </p>
               </VCard>
             </a>
 

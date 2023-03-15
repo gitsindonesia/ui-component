@@ -1,6 +1,6 @@
 const colors = require('tailwindcss/colors');
 
-// default GITS Color
+// default Morpheme Color
 const primary = {
   DEFAULT: '#28A0F6',
   50: '#D8EEFD',
@@ -15,7 +15,7 @@ const primary = {
   900: '#02233B',
 };
 
-// default GITS Color
+// default Morpheme Color
 const secondary = {
   DEFAULT: '#FF8B49',
   50: '#FFFFFF',

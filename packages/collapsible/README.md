@@ -1,6 +1,6 @@
-# GITS Collapsible Component
+# Morpheme Collapsible
 
-> Collapsible Component
+Morpheme Collapsible Component.
 
 ## Installation
 

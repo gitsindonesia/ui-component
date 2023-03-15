@@ -1,10 +1,10 @@
 # nuxt-commerce
 
-An extensible e-commerce template powered by Nuxt.js and GITS UI.
+An extensible e-commerce template powered by Nuxt.js and Morpheme UI.
 
 ## Features
 
-- Integrated with [GITS UI](https://gitsindonesia.github.io/ui-component/)
+- Integrated with [Morpheme UI](https://gitsindonesia.github.io/ui-component/)
 - Built-in Pages:
   - `/`
   - `/products`
@@ -58,10 +58,10 @@ To customize the pages, just override the default pages by creating file in your
 
 Authentication is extended from [`@morpheme/nuxt-auth`](../nuxt-auth/) package.
 
-## GITS UI
+## Morpheme UI
 
 Checkout the [official documentation](https://gitsindonesia.github.io/ui-component/) to
-learn more about `GITS UI`.
+learn more about `Morpheme UI`.
 
 ## License
 

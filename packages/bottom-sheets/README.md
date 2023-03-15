@@ -1,6 +1,6 @@
-# GITS UI - Bottom Sheet
+# Morpheme Bottom Sheet
 
-Bottom Sheet Component.
+Morpheme Bottom Sheet Component.
 
 ## Installation
 

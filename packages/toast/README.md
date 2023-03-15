@@ -1,4 +1,4 @@
-# GITS Toast
+# Morpheme Toast
 
 Vue Toast Component.
 

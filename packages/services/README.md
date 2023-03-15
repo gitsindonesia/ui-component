@@ -1,4 +1,4 @@
-# GITS Services Component
+# Morpheme Services Component
 
 > Reusable Services Component
 

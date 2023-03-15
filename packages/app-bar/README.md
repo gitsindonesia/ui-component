@@ -1,6 +1,6 @@
-# GITS AppBar
+# Morpheme AppBar
 
-The AppBar, also known as a Navigation Bar, is a component used to display content at the top of a page.
+Morpheme AppBar is a Vue component used to display content at the top of a page.
 
 ## Installation
 

@@ -19,7 +19,7 @@ onUnmounted(() => {
             to="/cms/auth/login"
             class="font-semibold text-2xl text-white"
           >
-            GITS Indonesia
+            Morpheme Indonesia
           </router-link>
         </div>
         <div class="flex-none"></div>
@@ -27,7 +27,17 @@ onUnmounted(() => {
     </header>
 
     <div
-      class="flex-grow flex items-center justify-center w-full xl:w-10/12 mx-auto px-4 md:px-8 py-2"
+      class="
+        flex-grow flex
+        items-center
+        justify-center
+        w-full
+        xl:w-10/12
+        mx-auto
+        px-4
+        md:px-8
+        py-2
+      "
     >
       <div class="flex flex-col md:flex-row w-full justify-center">
         <div class="flex-auto md:w-6/12 px-4 flex items-center">
@@ -2747,7 +2757,7 @@ onUnmounted(() => {
         class="flex flex-col md:flex-row items-center justify-between mx-auto"
       >
         <div class="flex-none text-gray-50 text-sm">
-          Developed by GITS Indonesia
+          Developed by Morpheme Indonesia
         </div>
         <div class="flex-none text-gray-50 text-sm">
           Copyright &copy; {{ new Date().getFullYear() }}

@@ -1,6 +1,6 @@
-# GITS Autocomplete Component
+# Morpheme Autocomplete
 
-Autocomplete Component.
+Morpheme Autocomplete.
 
 ## Installation
 

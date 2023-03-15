@@ -251,7 +251,7 @@ import '@morpheme/forms/src/forms.scss';
       <hr class="mt-5 mb-5 dark:border-gray-700" />
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <p class="text-center sm:text-left text-gray-500 dark:text-gray-400">
-          &copy; 2022-Present GITS Indonesia. All rights reserved.
+          &copy; 2022-Present Morpheme Indonesia. All rights reserved.
         </p>
         <div
           class="flex gap-4 space-between justify-center sm:justify-end w-full"

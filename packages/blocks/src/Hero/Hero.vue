@@ -29,7 +29,7 @@ import VBtn from '@morpheme/button';
     >
       <div class="w-full sm:w-7/12">
         <h1 class="text-4xl font-semibold mb-3 text-gray-800">
-          Welcome to <span class="text-primary">GITS Starter</span>
+          Welcome to <span class="text-primary">Morpheme Starter</span>
         </h1>
         <p class="text-base mb-7 leading-6 text-gray-500">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis

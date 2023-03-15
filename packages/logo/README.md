@@ -1,4 +1,6 @@
-# GITS Logo Component
+# Morpheme Logo
+
+Morpheme Logo Component.
 
 ## Installation
 

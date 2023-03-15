@@ -1,6 +1,6 @@
-# GITS List Component
+# Morpheme List
 
-Use `List` component for creating list, grouping list and creating menus.
+Morpheme List component is used for creating list, grouping list and creating menus.
 
 ## Installation
 

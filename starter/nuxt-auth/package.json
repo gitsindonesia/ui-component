@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/nuxt-auth",
-  "description": "A Nuxt theme to get authentication ready with @sidebase/nuxt-auth and GITS UI.",
+  "description": "A Nuxt theme to get authentication ready with @sidebase/nuxt-auth and Morpheme UI.",
   "version": "0.4.0",
   "keywords": [
     "auth",
@@ -10,9 +10,9 @@
     "nuxt.js",
     "vue",
     "vue.js",
-    "gits",
-    "gits-id",
-    "gits-ui"
+    "morpheme",
+    "morpheme",
+    "morpheme"
   ],
   "scripts": {
     "build": "nuxt build",

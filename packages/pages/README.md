@@ -1,4 +1,4 @@
-# GITS Pages Component
+# Morpheme Pages Component
 
 > Reusable Pages Component
 

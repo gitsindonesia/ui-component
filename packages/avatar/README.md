@@ -1,4 +1,6 @@
-# Avatar Component
+# Morpheme Avatar
+
+Morpheme Avatar.
 
 ## Installation
 

@@ -1,6 +1,6 @@
-# Nuxt 3 + GITS UI Minimal Starter
+# Nuxt 3 + Morpheme UI Minimal Starter
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) and [GITS UI documentation](https://gitsindonesia.github.io/ui-component/) to learn more.
+Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) and [Morpheme UI documentation](https://gitsindonesia.github.io/ui-component/) to learn more.
 
 ## Setup
 

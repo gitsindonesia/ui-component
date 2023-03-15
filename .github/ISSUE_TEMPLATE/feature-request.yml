@@ -1,6 +1,6 @@
-name: "🚀 Feature request"
-description: Suggest a feature that will improve GITS UI
-labels: ["pending triage"]
+name: '🚀 Feature request'
+description: Suggest a feature that will improve Morpheme UI
+labels: ['pending triage']
 body:
   - type: markdown
     attributes:
@@ -12,7 +12,7 @@ body:
     id: feature-description
     attributes:
       label: Describe the feature
-      description: A clear and concise description of what you think would be a helpful addition to GITS UI, including the possible use cases and alternatives you have considered. If you have a working prototype or module that implements it, please include a link.
+      description: A clear and concise description of what you think would be a helpful addition to Morpheme UI, including the possible use cases and alternatives you have considered. If you have a working prototype or module that implements it, please include a link.
       placeholder: Feature description
     validations:
       required: true

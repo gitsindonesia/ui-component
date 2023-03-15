@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Morpheme UI (GITS UI) - A free and open-source Vue UI Library based on Morpheme Design System
+title: Morpheme UI (Morpheme UI) - A free and open-source Vue UI Library based on Morpheme Design System
 
 hero:
   name: Morpheme (Morpheme UI)

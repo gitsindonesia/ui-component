@@ -10,6 +10,6 @@ describe('Auth', () => {
       props: {},
     });
 
-    expect(wrapper.text()).toContain('GITS Indonesia');
+    expect(wrapper.text()).toContain('Morpheme Indonesia');
   });
 });

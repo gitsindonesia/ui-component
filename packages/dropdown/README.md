@@ -1,6 +1,6 @@
-# GITS Dropdown Component
+# Morpheme Dropdown
 
-Dropdown Component.
+Morpheme Dropdown Component.
 
 ## Installation
 

@@ -1,10 +1,10 @@
 {
   "name": "@morpheme/tailwind-components",
   "version": "1.0.0-beta.5",
-  "description": "GITS UI Tailwind Plugin",
+  "description": "Morpheme UI Tailwind Plugin",
   "scripts": {},
   "keywords": [
-    "gits",
+    "morpheme",
     "tailwind-plugin",
     "ui-component"
   ],

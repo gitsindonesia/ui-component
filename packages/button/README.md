@@ -1,4 +1,4 @@
-# GITS Button Component
+# Morpheme Button Component
 
 > Button Component
 

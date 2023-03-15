@@ -26,7 +26,7 @@ const onSubmit = handleSubmit((values) => {
     <div class="container mx-auto">
       <div class="flex flex-col sm:flex-row gap-10 sm:gap-4">
         <div class="w-full sm:w-6/12">
-          <h3 class="font-semibold text-3xl mb-1">Product by GITS</h3>
+          <h3 class="font-semibold text-3xl mb-1">Product by Morpheme</h3>
           <div class="text-gray-500 mb-3 sm:mb-5">
             Give us a call or drop by anytime, we endeavour to answer all
             enquiries within 24 hours on business days.

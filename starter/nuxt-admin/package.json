@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/nuxt-admin",
-  "description": "Extensible admin template powered by Nuxt.js and GITS UI",
+  "description": "Extensible admin template powered by Nuxt.js and Morpheme UI",
   "version": "0.4.0",
   "keywords": [
     "admin",
@@ -10,9 +10,9 @@
     "nuxt.js",
     "vue",
     "vue.js",
-    "gits",
-    "gits-id",
-    "gits-ui"
+    "morpheme",
+    "morpheme",
+    "morpheme"
   ],
   "scripts": {
     "build": "nuxt build",

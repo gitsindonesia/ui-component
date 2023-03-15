@@ -16,7 +16,7 @@ import Icon from '@morpheme/icon';
       "
     >
       <p class="text-left text-gray-400 dark:text-gray-400">
-        &copy; 2022 GITS Indonesia. All rights reserved.
+        &copy; 2022 Morpheme Indonesia. All rights reserved.
       </p>
       <div class="flex gap-4 space-between justify-end">
         <a

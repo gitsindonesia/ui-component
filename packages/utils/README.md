@@ -1,4 +1,4 @@
-# GITS Utils Component
+# Morpheme Utils Component
 
 > Reusable Utils Component
 

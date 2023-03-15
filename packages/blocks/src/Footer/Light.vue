@@ -125,7 +125,7 @@ import Icon from '@morpheme/icon';
       </div>
       <hr class="mt-10 mb-5" />
       <p class="text-center text-gray-500">
-        &copy; 2022-Present GITS Indonesia. All rights reserved.
+        &copy; 2022-Present Morpheme Indonesia. All rights reserved.
       </p>
     </div>
   </footer>

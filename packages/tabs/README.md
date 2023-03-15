@@ -1,4 +1,4 @@
-# GITS Tabs
+# Morpheme Tabs
 
 Vue Tabs Component.
 

@@ -105,7 +105,7 @@ const components = [
 <template>
   <VAppBar bordered sticky>
     <div class="flex justify-between items-center w-full">
-      <div class="font-semibold flex-1">GITS UI Playground</div>
+      <div class="font-semibold flex-1">Morpheme UI Playground</div>
       <div>
         <VSwitch
           v-model="darkMode"

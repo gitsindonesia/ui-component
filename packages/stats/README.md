@@ -1,4 +1,4 @@
-# GITS Stats Component
+# Morpheme Stats Component
 
 > Reusable Stats Component
 

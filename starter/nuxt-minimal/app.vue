@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const title = 'Nuxt + GITS UI Minimal Starter';
+const title = 'Nuxt + Morpheme UI Minimal Starter';
 
 useHead({
   title,

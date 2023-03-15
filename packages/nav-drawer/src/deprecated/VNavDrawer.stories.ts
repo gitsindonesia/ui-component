@@ -123,7 +123,7 @@ const Template: Story = (args) => ({
   <div class="flex">
     <VNavDrawer v-bind="args" v-model="isOpen">
       <template #logo.mini>
-        <div class="text-center font-semibold">GITS</div>
+        <div class="text-center font-semibold">Morpheme</div>
       </template>
     </VNavDrawer>
     <div>

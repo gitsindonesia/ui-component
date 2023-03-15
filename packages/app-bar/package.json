@@ -1,7 +1,7 @@
 {
   "name": "@morpheme/app-bar",
   "version": "1.0.0-beta.5",
-  "description": "The AppBar, also known as a Navigation Bar, is a component used to display content at the top of a page.",
+  "description": "Morpheme AppBar is a Vue component used to display content at the top of a page.",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "npm run build",
@@ -10,7 +10,8 @@
   "keywords": [
     "app-bar",
     "nav-bar",
-    "tailwind-config"
+    "tailwind-config",
+    "morpheme"
   ],
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",

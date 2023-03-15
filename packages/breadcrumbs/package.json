@@ -1,7 +1,7 @@
 {
   "name": "@morpheme/breadcrumbs",
   "version": "1.0.0-beta.5",
-  "description": "GITS Breadcrumbs Component",
+  "description": "Morpheme Breadcrumbs Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "npm run build",
@@ -9,7 +9,7 @@
   },
   "keywords": [
     "breadcrumbs",
-    "gits",
+    "morpheme",
     "ui-component"
   ],
   "author": "Warsono <warsono16694@gmail.com>",

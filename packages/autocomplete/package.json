@@ -1,7 +1,7 @@
 {
   "name": "@morpheme/autocomplete",
   "version": "1.0.0-beta.5",
-  "description": "GITS Autocomplete Component",
+  "description": "Morpheme Autocomplete",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "npm run build",
@@ -9,8 +9,8 @@
   },
   "keywords": [
     "autocomplete",
-    "gits",
-    "ui-component"
+    "ui-component",
+    "morpheme"
   ],
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",

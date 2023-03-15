@@ -1,4 +1,4 @@
-# GITS Navbar Component
+# Morpheme Navbar Component
 
 > Reusable Navbar Component
 

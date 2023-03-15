@@ -1,10 +1,10 @@
 # nuxt-admin
 
-An extensible admin template powered by Nuxt.js and GITS UI.
+An extensible admin template powered by Nuxt.js and Morpheme UI.
 
 ## Features
 
-- Integrated with [GITS UI](https://gitsindonesia.github.io/ui-component/)
+- Integrated with [Morpheme UI](https://gitsindonesia.github.io/ui-component/)
 - Dark mode ready
 - Built-in Pages:
   - `/admin`
@@ -56,10 +56,10 @@ Check out the full list of pages [here](https://github.com/gitsindonesia/ui-comp
 
 Combine with [`nuxt-auth`](/themes/nuxt-auth) to add authentication to the admin page.
 
-## GITS UI
+## Morpheme UI
 
 Check out the [official documentation](https://gitsindonesia.github.io/ui-component/) to
-learn more about `GITS UI`.
+learn more about `Morpheme UI`.
 
 ## License
 

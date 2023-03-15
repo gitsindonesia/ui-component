@@ -1,4 +1,4 @@
-# GITS Progress Component
+# Morpheme Progress Component
 
 > Reusable Progress Component
 

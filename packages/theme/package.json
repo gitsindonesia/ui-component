@@ -1,7 +1,7 @@
 {
   "name": "@morpheme/theme",
   "version": "1.0.0-beta.5",
-  "description": "GITS Default Tailwind Colors",
+  "description": "Morpheme Default Tailwind Colors",
   "main": "colors.js",
   "scripts": {},
   "keywords": [

@@ -4,18 +4,18 @@ const menus = [
     to: '/admin',
     prependIcon: 'ic:baseline-insert-chart',
   },
-]
+];
 
 export default defineAppConfig({
   admin: {
     title: 'Nuxt Admin',
-    companyName: 'PT. GITS Indonesia',
+    companyName: 'PT. Morpheme Indonesia',
     menus,
     // enable dark mode
     darkMode: true,
     // search input
     search: {
-      enable: true
+      enable: true,
     },
     // announcement
     announcement: {
@@ -25,12 +25,12 @@ export default defineAppConfig({
       url: '',
       dismiss: {
         enable: true,
-        text: 'Dismiss'
+        text: 'Dismiss',
       },
       cta: {
         enable: true,
-        text: 'What\'s New?'
-      }
-    }
+        text: "What's New?",
+      },
+    },
   },
 });
