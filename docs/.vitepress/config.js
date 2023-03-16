@@ -22,21 +22,33 @@ export default defineConfig({
     ],
     sidebar: [
       {
-        text: 'Guide',
+        text: 'Introduction',
         collapsed: false,
         items: [
           {text: 'Introduction', link: '/guide/introduction'},
           {text: 'Getting Started', link: '/guide/getting-started'},
           {text: 'Installation', link: '/guide/installation'},
-          {text: 'Usage with Vue', link: '/guide/vue'},
-          {text: 'Usage with Nuxt', link: '/guide/nuxt'},
-          {text: 'Customization', link: '/guide/customization'},
-          {text: 'Default Theme', link: '/guide/theme'},
-          {text: 'Dark Mode', link: '/guide/dark-mode'},
+          {text: 'Vue Usage', link: '/guide/vue'},
+          {text: 'Nuxt Usage', link: '/guide/nuxt'},
           {text: 'Starter', link: '/guide/starter'},
+        ],
+      },
+      {
+        text: 'Releases',
+        collapsed: false,
+        items: [
           {text: 'Migration', link: '/guide/migration'},
           {text: 'Changelog', link: '/guide/changelog'},
           {text: 'Roadmap', link: '/roadmap'},
+        ],
+      },
+      {
+        text: 'Customization',
+        collapsed: false,
+        items: [
+          {text: 'Customization', link: '/guide/customization'},
+          {text: 'Default Theme', link: '/guide/theme'},
+          {text: 'Dark Mode', link: '/guide/dark-mode'},
         ],
       },
       {
@@ -204,7 +216,7 @@ export default defineConfig({
       },
       {
         text: 'Deprecated',
-        collapsed: false,
+        collapsed: true,
         items: [
           {
             text: 'Navbar',
