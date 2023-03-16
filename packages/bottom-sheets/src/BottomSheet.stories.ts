@@ -297,13 +297,15 @@ export const DarkMode: Story = (args, {argTypes}) => ({
     BottomSheetBody,
     BottomSheetHeader,
     Button,
+    BottomSheetMenus,
   },
   setup() {
     const isOpen = ref(false);
     onMounted(() => {
       document.documentElement.classList.add('dark');
     });
-    return {args, argTypes, isOpen};
+    const selected = ref();
+    return {args, argTypes, isOpen, menus, selected};
   },
   template: `
   <div class="dark:bg-neutral-900 dark:text-neutral-200 p-6">
@@ -314,6 +316,12 @@ export const DarkMode: Story = (args, {argTypes}) => ({
       <BottomSheetBody>
         A quick brown fox leaps over the lazy dog.
       </BottomSheetBody>
+      <BottomSheetMenus
+        v-model="selected"
+        :items="menus"
+        selectable
+        hover
+      />
     </BottomSheet>
   </div>
   `,
