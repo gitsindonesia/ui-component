@@ -2,7 +2,7 @@
 
 ![](/create-morpheme-app.png)
 
-`create-gits-app` is an interactive CLI to kickstart your Vue.js project with Vue/Nuxt and Morpheme UI. It includes four options to get you started with Morpheme UI:
+`create-morpheme-app` is an interactive CLI to kickstart your Vue.js project with Vue/Nuxt and Morpheme UI. It includes four options to get you started with Morpheme UI:
 
 - **Nuxt Minimal**: A new minimal starter for Nuxt with Tailwind CSS and Morpheme UI.
 - **Nuxt Starter**: A full-featured Nuxt starter that includes everything you need to make a modern web application with Nuxt, Tailwind CSS, and Morpheme UI.
@@ -19,10 +19,10 @@
 Try it out now:
 
 ```bash
-npx create-gits-app@latest
+npx create-morpheme-app@latest
 ```
 
 ## Links
 
-- Repo: https://github.com/gitsindonesia/create-gits-app
-- NPM: https://www.npmjs.com/package/create-gits-app
+- Repo: https://github.com/gitsindonesia/create-morpheme-app
+- NPM: https://www.npmjs.com/package/create-morpheme-app
