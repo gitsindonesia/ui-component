@@ -23,7 +23,7 @@ export default defineConfig({
     sidebar: [
       {
         text: 'Guide',
-        collapsible: true,
+        collapsed: false,
         items: [
           {text: 'Introduction', link: '/guide/introduction'},
           {text: 'Getting Started', link: '/guide/getting-started'},
@@ -41,12 +41,12 @@ export default defineConfig({
       },
       {
         text: 'Tools',
-        collapsible: true,
+        collapsed: false,
         items: [{text: 'CLI', link: '/tools/cli'}],
       },
       {
         text: 'Themes',
-        collapsible: true,
+        collapsed: false,
         items: [
           {text: 'nuxt-auth', link: '/themes/nuxt-auth'},
           {text: 'nuxt-admin', link: '/themes/nuxt-admin'},
@@ -54,7 +54,7 @@ export default defineConfig({
       },
       {
         text: 'Components',
-        collapsible: true,
+        collapsed: false,
         items: [
           {text: 'Alert', link: '/components/alert'},
           {text: 'AppBar', link: '/components/app-bar'},
@@ -150,7 +150,7 @@ export default defineConfig({
       },
       {
         text: 'Forms',
-        collapsible: true,
+        collapsed: false,
         items: [
           {
             text: 'Button',
@@ -204,7 +204,7 @@ export default defineConfig({
       },
       {
         text: 'Deprecated',
-        collapsible: true,
+        collapsed: false,
         items: [
           {
             text: 'Navbar',
