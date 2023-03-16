@@ -17,11 +17,11 @@
   "dependencies": {
     "@heroicons/vue": "^1.0.6",
     "@iconify/vue": "^3.2.1",
-    "@morpheme/theme": "workspace:*",
+    "@morpheme/theme": "^1.0.0-beta.5",
     "vue": "^3.2.31"
   },
   "devDependencies": {
-    "@morpheme/tailwind-config": "workspace:*",
+    "@morpheme/tailwind-config": "^1.0.0-beta.5",
     "vite": "^3.0.0",
     "vitest": "^0.12.4",
     "vue-tsc": "^0.40.1"
