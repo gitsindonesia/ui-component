@@ -1,4 +1,4 @@
-# Morpheme UI (Morpheme UI)
+# Morpheme UI (GITS UI)
 
 <div align="center">
 
@@ -9,7 +9,7 @@
 
 </div>
 
-Morpheme UI (Morpheme UI) - A free and open-source Vue UI Library based on Morpheme Design System.
+Morpheme UI (GITS UI) - A free and open-source Vue UI Library based on Morpheme Design System.
 
 ## Features
 
