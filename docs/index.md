@@ -3,7 +3,7 @@ layout: home
 title: Morpheme UI (Morpheme UI) - A free and open-source Vue UI Library based on Morpheme Design System
 
 hero:
-  name: Morpheme (Morpheme UI)
+  name: Morpheme (GITS UI)
   tagline: A free and open-source Vue UI Library based on Morpheme Design System
   image:
     src: https://gits.id/wp-content/uploads/2022/06/Logo-Main-1.png
