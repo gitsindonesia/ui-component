@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {defaultColors, primary, secondary} from '@gits-id/theme/defaultTheme';
+import {primary, secondary} from '@morpheme/theme/defaultTheme';
 import colors from 'tailwindcss/colors';
 
 colors.primary = primary;
