@@ -1,4 +1,6 @@
-:root {
+@import '@morpheme/list/src/List.scss';
+
+:root  {
   --v-bottom-sheet-bg-color: #fff;
   --v-bottom-sheet-body-color: theme('colors.gray.800');
 
@@ -37,8 +39,8 @@
     background-color: var(--v-bottom-sheet-bg-color, #fff);
     color: var(--v-bottom-sheet-body-color);
     overflow: hidden;
-    border-top-right-radius: 0.75rem/* 12px */;
-    border-top-left-radius: 0.75rem/* 12px */;
+    border-top-right-radius: 0.75rem /* 12px */;
+    border-top-left-radius: 0.75rem /* 12px */;
     width: 100%;
     box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
   }
