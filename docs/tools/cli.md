@@ -1,6 +1,6 @@
 # Morpheme CLI
 
-![](/create-gits-app.png)
+![](/create-morpheme-app.png)
 
 `create-gits-app` is an interactive CLI to kickstart your Vue.js project with Vue/Nuxt and Morpheme UI. It includes four options to get you started with Morpheme UI:
 
