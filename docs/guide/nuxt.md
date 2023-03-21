@@ -137,6 +137,30 @@ export interface ModuleOptions {
    * })
    */
   loadDefaultStyles?: boolean;
+  /**
+   * Determine whether to load dark mode styles.
+   *
+   * @default false
+   * @example
+   * // nuxt.config.ts
+   * export default defineConfig({
+   *  gitsUi: {
+   *   darkMode: true
+   * })
+   */
+  darkMode?: boolean;
+  /**
+   * Determine whether to optimize default deps.
+   *
+   * @default false
+   * @example
+   * // nuxt.config.ts
+   * export default defineConfig({
+   *  gitsUi: {
+   *   optimizeDeps: true
+   * })
+   */
+  optimizeDeps?: boolean;
 }
 ```
 
@@ -150,6 +174,8 @@ defaults: {
   transpileDeps: true,
   loadFloatingVueStyles: true,
   loadDefaultStyles: true,
+  darkMode: false,
+  optimizeDeps: true,
 },
 ```
 
