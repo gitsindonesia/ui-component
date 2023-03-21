@@ -360,7 +360,7 @@ export interface ModuleOptions {
    * @example
    * // nuxt.config.ts
    * export default defineConfig({
-   *  gitsUi: {
+   *  morpheme: {
    *   css: true
    * })
    */
@@ -372,7 +372,7 @@ export interface ModuleOptions {
    * @example
    * // nuxt.config.ts
    * export default defineConfig({
-   *  gitsUi: {
+   *  morpheme: {
    *   sass: true
    * })
    */
@@ -384,7 +384,7 @@ export interface ModuleOptions {
    * @example
    * // nuxt.config.ts
    * export default defineConfig({
-   *  gitsUi: {
+   *  morpheme: {
    *   components: true
    * })
    */
@@ -396,7 +396,7 @@ export interface ModuleOptions {
    * @example
    * // nuxt.config.ts
    * export default defineConfig({
-   *  gitsUi: {
+   *  morpheme: {
    *   transpileDeps: true
    * })
    */
@@ -408,7 +408,7 @@ export interface ModuleOptions {
    * @example
    * // nuxt.config.ts
    * export default defineConfig({
-   *  gitsUi: {
+   *  morpheme: {
    *   loadFloatingVueStyles: true
    * })
    */
@@ -421,7 +421,7 @@ export interface ModuleOptions {
    * @example
    * // nuxt.config.ts
    * export default defineConfig({
-   *  gitsUi: {
+   *  morpheme: {
    *   loadDefaultStyles: false
    * })
    */
@@ -433,7 +433,7 @@ export interface ModuleOptions {
    * @example
    * // nuxt.config.ts
    * export default defineConfig({
-   *  gitsUi: {
+   *  morpheme: {
    *   darkMode: true
    * })
    */
@@ -445,7 +445,7 @@ export interface ModuleOptions {
    * @example
    * // nuxt.config.ts
    * export default defineConfig({
-   *  gitsUi: {
+   *  morpheme: {
    *   optimizeDeps: true
    * })
    */
@@ -454,8 +454,8 @@ export interface ModuleOptions {
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: 'gits-ui',
-    configKey: 'gitsUi',
+    name: 'morpheme',
+    configKey: 'morpheme',
   },
   defaults: {
     css: false,
