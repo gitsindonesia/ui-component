@@ -179,6 +179,22 @@ defaults: {
 },
 ```
 
+Config example:
+```ts {8-11}
+// https://nuxt.com/docs/api/configuration/nuxt-config
+export default defineNuxtConfig({
+  modules: [
+    '@morpheme/nuxt',
+    '@nuxtjs/tailwindcss',
+  ],
+  // https://gitsindonesia.github.io/ui-component/guide/nuxt.html#options
+  morpheme: {
+    // enable dark mode
+    darkMode: true,
+  },
+});
+```
+
 ## Starter
 
 Checkout [starter](/guide/starter) page to quickly setup your project with Nuxt.js.
