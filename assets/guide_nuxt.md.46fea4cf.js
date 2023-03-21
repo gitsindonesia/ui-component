@@ -87,6 +87,30 @@ import{_ as s,o as n,c as a,N as l}from"./chunks/framework.0c1fa351.js";const f=
 <span class="line"><span style="color:#676E95;font-style:italic;">   * })</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   */</span></span>
 <span class="line"><span style="color:#A6ACCD;">  </span><span style="color:#F07178;">loadDefaultStyles</span><span style="color:#89DDFF;">?:</span><span style="color:#A6ACCD;"> </span><span style="color:#FFCB6B;">boolean</span><span style="color:#89DDFF;">;</span></span>
+<span class="line"><span style="color:#A6ACCD;">  </span><span style="color:#676E95;font-style:italic;">/**</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">   * Determine whether to load dark mode styles.</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">   *</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">   * </span><span style="color:#89DDFF;font-style:italic;">@</span><span style="color:#C792EA;font-style:italic;">default</span><span style="color:#676E95;font-style:italic;"> </span><span style="color:#A6ACCD;font-style:italic;">false</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">   * </span><span style="color:#89DDFF;font-style:italic;">@</span><span style="color:#C792EA;font-style:italic;">example</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">   * // nuxt.config.ts</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">   * export default defineConfig({</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">   *  gitsUi: {</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">   *   darkMode: true</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">   * })</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">   */</span></span>
+<span class="line"><span style="color:#A6ACCD;">  </span><span style="color:#F07178;">darkMode</span><span style="color:#89DDFF;">?:</span><span style="color:#A6ACCD;"> </span><span style="color:#FFCB6B;">boolean</span><span style="color:#89DDFF;">;</span></span>
+<span class="line"><span style="color:#A6ACCD;">  </span><span style="color:#676E95;font-style:italic;">/**</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">   * Determine whether to optimize default deps.</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">   *</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">   * </span><span style="color:#89DDFF;font-style:italic;">@</span><span style="color:#C792EA;font-style:italic;">default</span><span style="color:#676E95;font-style:italic;"> </span><span style="color:#A6ACCD;font-style:italic;">false</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">   * </span><span style="color:#89DDFF;font-style:italic;">@</span><span style="color:#C792EA;font-style:italic;">example</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">   * // nuxt.config.ts</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">   * export default defineConfig({</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">   *  gitsUi: {</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">   *   optimizeDeps: true</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">   * })</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">   */</span></span>
+<span class="line"><span style="color:#A6ACCD;">  </span><span style="color:#F07178;">optimizeDeps</span><span style="color:#89DDFF;">?:</span><span style="color:#A6ACCD;"> </span><span style="color:#FFCB6B;">boolean</span><span style="color:#89DDFF;">;</span></span>
 <span class="line"><span style="color:#89DDFF;">}</span></span>
 <span class="line"></span></code></pre></div><p>Default Options:</p><div class="language-ts"><button title="Copy Code" class="copy"></button><span class="lang">ts</span><pre class="shiki material-theme-palenight"><code><span class="line"><span style="color:#FFCB6B;">defaults</span><span style="color:#89DDFF;">:</span><span style="color:#A6ACCD;"> </span><span style="color:#89DDFF;">{</span></span>
 <span class="line"><span style="color:#F07178;">  </span><span style="color:#FFCB6B;">css</span><span style="color:#89DDFF;">:</span><span style="color:#F07178;"> </span><span style="color:#FF9CAC;">false</span><span style="color:#89DDFF;">,</span></span>
@@ -95,5 +119,7 @@ import{_ as s,o as n,c as a,N as l}from"./chunks/framework.0c1fa351.js";const f=
 <span class="line"><span style="color:#F07178;">  </span><span style="color:#FFCB6B;">transpileDeps</span><span style="color:#89DDFF;">:</span><span style="color:#F07178;"> </span><span style="color:#FF9CAC;">true</span><span style="color:#89DDFF;">,</span></span>
 <span class="line"><span style="color:#F07178;">  </span><span style="color:#FFCB6B;">loadFloatingVueStyles</span><span style="color:#89DDFF;">:</span><span style="color:#F07178;"> </span><span style="color:#FF9CAC;">true</span><span style="color:#89DDFF;">,</span></span>
 <span class="line"><span style="color:#F07178;">  </span><span style="color:#FFCB6B;">loadDefaultStyles</span><span style="color:#89DDFF;">:</span><span style="color:#F07178;"> </span><span style="color:#FF9CAC;">true</span><span style="color:#89DDFF;">,</span></span>
+<span class="line"><span style="color:#F07178;">  </span><span style="color:#FFCB6B;">darkMode</span><span style="color:#89DDFF;">:</span><span style="color:#F07178;"> </span><span style="color:#FF9CAC;">false</span><span style="color:#89DDFF;">,</span></span>
+<span class="line"><span style="color:#F07178;">  </span><span style="color:#FFCB6B;">optimizeDeps</span><span style="color:#89DDFF;">:</span><span style="color:#F07178;"> </span><span style="color:#FF9CAC;">true</span><span style="color:#89DDFF;">,</span></span>
 <span class="line"><span style="color:#89DDFF;">},</span></span>
 <span class="line"></span></code></pre></div><h2 id="starter" tabindex="-1">Starter <a class="header-anchor" href="#starter" aria-label="Permalink to &quot;Starter&quot;">​</a></h2><p>Checkout <a href="/ui-component/guide/starter.html">starter</a> page to quickly setup your project with Nuxt.js.</p>`,26),p=[o];function e(c,i,r,y,D,F){return n(),a("div",null,p)}const d=s(t,[["render",e]]);export{f as __pageData,d as default};
