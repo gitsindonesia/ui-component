@@ -1,9 +1,9 @@
-import{_ as s,o as n,c as a,N as l}from"./chunks/framework.0c1fa351.js";const f=JSON.parse('{"title":"Using Morpheme UI with Nuxt","description":"","frontmatter":{},"headers":[],"relativePath":"guide/nuxt.md"}'),t={name:"guide/nuxt.md"},o=l(`<h1 id="using-morpheme-ui-with-nuxt" tabindex="-1">Using Morpheme UI with Nuxt <a class="header-anchor" href="#using-morpheme-ui-with-nuxt" aria-label="Permalink to &quot;Using Morpheme UI with Nuxt&quot;">​</a></h1><p>Morpheme UI is designed to work seamlessly with Nuxt projects. You can easily install it in a new or existing Nuxt project, or use our starter project to get started faster.</p><h2 id="compatibility" tabindex="-1">Compatibility <a class="header-anchor" href="#compatibility" aria-label="Permalink to &quot;Compatibility&quot;">​</a></h2><p>Currently, <strong>Morpheme UI only support Nuxt 3</strong>.</p><h2 id="installation" tabindex="-1">Installation <a class="header-anchor" href="#installation" aria-label="Permalink to &quot;Installation&quot;">​</a></h2><ol><li>Install Nuxt Morpheme UI by running the following command:</li></ol><div class="language-bash"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki material-theme-palenight"><code><span class="line"><span style="color:#FFCB6B;">yarn</span><span style="color:#A6ACCD;"> </span><span style="color:#C3E88D;">add</span><span style="color:#A6ACCD;"> </span><span style="color:#C3E88D;">@morpheme/ui-nuxt</span></span>
+import{_ as s,o as n,c as a,N as l}from"./chunks/framework.0c1fa351.js";const f=JSON.parse('{"title":"Using Morpheme UI with Nuxt","description":"","frontmatter":{},"headers":[],"relativePath":"guide/nuxt.md"}'),o={name:"guide/nuxt.md"},t=l(`<h1 id="using-morpheme-ui-with-nuxt" tabindex="-1">Using Morpheme UI with Nuxt <a class="header-anchor" href="#using-morpheme-ui-with-nuxt" aria-label="Permalink to &quot;Using Morpheme UI with Nuxt&quot;">​</a></h1><p>Morpheme UI is designed to work seamlessly with Nuxt projects. You can easily install it in a new or existing Nuxt project, or use our starter project to get started faster.</p><h2 id="compatibility" tabindex="-1">Compatibility <a class="header-anchor" href="#compatibility" aria-label="Permalink to &quot;Compatibility&quot;">​</a></h2><p>Currently, <strong>Morpheme UI only support Nuxt 3</strong>.</p><h2 id="installation" tabindex="-1">Installation <a class="header-anchor" href="#installation" aria-label="Permalink to &quot;Installation&quot;">​</a></h2><ol><li>Install Nuxt Morpheme UI by running the following command:</li></ol><div class="language-bash"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki material-theme-palenight"><code><span class="line"><span style="color:#FFCB6B;">yarn</span><span style="color:#A6ACCD;"> </span><span style="color:#C3E88D;">add</span><span style="color:#A6ACCD;"> </span><span style="color:#C3E88D;">@morpheme/ui-nuxt</span></span>
 <span class="line"></span></code></pre></div><ol start="2"><li>Install <code>@nuxtjs/tailwindcss</code>:</li></ol><div class="language-bash"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki material-theme-palenight"><code><span class="line"><span style="color:#FFCB6B;">yarn</span><span style="color:#A6ACCD;"> </span><span style="color:#C3E88D;">add</span><span style="color:#A6ACCD;"> </span><span style="color:#C3E88D;">--dev</span><span style="color:#A6ACCD;"> </span><span style="color:#C3E88D;">@nuxtjs/tailwindcss</span></span>
 <span class="line"></span></code></pre></div><ol start="3"><li>Optional: Install <code>sass</code> if you want to use SASS bundle:</li></ol><div class="language-bash"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki material-theme-palenight"><code><span class="line"><span style="color:#FFCB6B;">yarn</span><span style="color:#A6ACCD;"> </span><span style="color:#C3E88D;">add</span><span style="color:#A6ACCD;"> </span><span style="color:#C3E88D;">--dev</span><span style="color:#A6ACCD;"> </span><span style="color:#C3E88D;">sass</span></span>
 <span class="line"></span></code></pre></div><ol start="4"><li>Add the modules to your <code>nuxt.config.ts</code> file:</li></ol><div class="language-ts"><button title="Copy Code" class="copy"></button><span class="lang">ts</span><pre class="shiki material-theme-palenight"><code><span class="line"><span style="color:#89DDFF;font-style:italic;">export</span><span style="color:#A6ACCD;"> </span><span style="color:#89DDFF;font-style:italic;">default</span><span style="color:#A6ACCD;"> </span><span style="color:#82AAFF;">defineNuxtConfig</span><span style="color:#A6ACCD;">(</span><span style="color:#89DDFF;">{</span></span>
 <span class="line"><span style="color:#A6ACCD;">  </span><span style="color:#F07178;">modules</span><span style="color:#89DDFF;">:</span><span style="color:#A6ACCD;"> [</span><span style="color:#89DDFF;">&#39;</span><span style="color:#C3E88D;">@morpheme/ui-nuxt</span><span style="color:#89DDFF;">&#39;</span><span style="color:#89DDFF;">,</span><span style="color:#A6ACCD;"> </span><span style="color:#89DDFF;">&#39;</span><span style="color:#C3E88D;">@nuxtjs/tailwindcss</span><span style="color:#89DDFF;">&#39;</span><span style="color:#A6ACCD;">]</span><span style="color:#89DDFF;">,</span></span>
-<span class="line"><span style="color:#A6ACCD;">  </span><span style="color:#F07178;">gitsUi</span><span style="color:#89DDFF;">:</span><span style="color:#A6ACCD;"> </span><span style="color:#89DDFF;">{</span></span>
+<span class="line"><span style="color:#A6ACCD;">  </span><span style="color:#F07178;">morpheme</span><span style="color:#89DDFF;">:</span><span style="color:#A6ACCD;"> </span><span style="color:#89DDFF;">{</span></span>
 <span class="line"><span style="color:#89DDFF;">    </span><span style="color:#676E95;font-style:italic;">// configuration options for Morpheme UI go here</span></span>
 <span class="line"><span style="color:#A6ACCD;">  </span><span style="color:#89DDFF;">},</span></span>
 <span class="line"><span style="color:#89DDFF;">}</span><span style="color:#A6ACCD;">)</span><span style="color:#89DDFF;">;</span></span>
@@ -21,7 +21,7 @@ import{_ as s,o as n,c as a,N as l}from"./chunks/framework.0c1fa351.js";const f=
 <span class="line"><span style="color:#676E95;font-style:italic;">   * </span><span style="color:#89DDFF;font-style:italic;">@</span><span style="color:#C792EA;font-style:italic;">example</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   * // nuxt.config.ts</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   * export default defineConfig({</span></span>
-<span class="line"><span style="color:#676E95;font-style:italic;">   *  gitsUi: {</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">   *  morpheme: {</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   *   css: true</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   * })</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   */</span></span>
@@ -33,7 +33,7 @@ import{_ as s,o as n,c as a,N as l}from"./chunks/framework.0c1fa351.js";const f=
 <span class="line"><span style="color:#676E95;font-style:italic;">   * </span><span style="color:#89DDFF;font-style:italic;">@</span><span style="color:#C792EA;font-style:italic;">example</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   * // nuxt.config.ts</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   * export default defineConfig({</span></span>
-<span class="line"><span style="color:#676E95;font-style:italic;">   *  gitsUi: {</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">   *  morpheme: {</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   *   sass: true</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   * })</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   */</span></span>
@@ -45,7 +45,7 @@ import{_ as s,o as n,c as a,N as l}from"./chunks/framework.0c1fa351.js";const f=
 <span class="line"><span style="color:#676E95;font-style:italic;">   * </span><span style="color:#89DDFF;font-style:italic;">@</span><span style="color:#C792EA;font-style:italic;">example</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   * // nuxt.config.ts</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   * export default defineConfig({</span></span>
-<span class="line"><span style="color:#676E95;font-style:italic;">   *  gitsUi: {</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">   *  morpheme: {</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   *   components: true</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   * })</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   */</span></span>
@@ -57,7 +57,7 @@ import{_ as s,o as n,c as a,N as l}from"./chunks/framework.0c1fa351.js";const f=
 <span class="line"><span style="color:#676E95;font-style:italic;">   * </span><span style="color:#89DDFF;font-style:italic;">@</span><span style="color:#C792EA;font-style:italic;">example</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   * // nuxt.config.ts</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   * export default defineConfig({</span></span>
-<span class="line"><span style="color:#676E95;font-style:italic;">   *  gitsUi: {</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">   *  morpheme: {</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   *   transpileDeps: true</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   * })</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   */</span></span>
@@ -69,7 +69,7 @@ import{_ as s,o as n,c as a,N as l}from"./chunks/framework.0c1fa351.js";const f=
 <span class="line"><span style="color:#676E95;font-style:italic;">   * </span><span style="color:#89DDFF;font-style:italic;">@</span><span style="color:#C792EA;font-style:italic;">example</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   * // nuxt.config.ts</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   * export default defineConfig({</span></span>
-<span class="line"><span style="color:#676E95;font-style:italic;">   *  gitsUi: {</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">   *  morpheme: {</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   *   loadFloatingVueStyles: true</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   * })</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   */</span></span>
@@ -82,7 +82,7 @@ import{_ as s,o as n,c as a,N as l}from"./chunks/framework.0c1fa351.js";const f=
 <span class="line"><span style="color:#676E95;font-style:italic;">   * </span><span style="color:#89DDFF;font-style:italic;">@</span><span style="color:#C792EA;font-style:italic;">example</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   * // nuxt.config.ts</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   * export default defineConfig({</span></span>
-<span class="line"><span style="color:#676E95;font-style:italic;">   *  gitsUi: {</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">   *  morpheme: {</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   *   loadDefaultStyles: false</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   * })</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   */</span></span>
@@ -94,7 +94,7 @@ import{_ as s,o as n,c as a,N as l}from"./chunks/framework.0c1fa351.js";const f=
 <span class="line"><span style="color:#676E95;font-style:italic;">   * </span><span style="color:#89DDFF;font-style:italic;">@</span><span style="color:#C792EA;font-style:italic;">example</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   * // nuxt.config.ts</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   * export default defineConfig({</span></span>
-<span class="line"><span style="color:#676E95;font-style:italic;">   *  gitsUi: {</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">   *  morpheme: {</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   *   darkMode: true</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   * })</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   */</span></span>
@@ -106,7 +106,7 @@ import{_ as s,o as n,c as a,N as l}from"./chunks/framework.0c1fa351.js";const f=
 <span class="line"><span style="color:#676E95;font-style:italic;">   * </span><span style="color:#89DDFF;font-style:italic;">@</span><span style="color:#C792EA;font-style:italic;">example</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   * // nuxt.config.ts</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   * export default defineConfig({</span></span>
-<span class="line"><span style="color:#676E95;font-style:italic;">   *  gitsUi: {</span></span>
+<span class="line"><span style="color:#676E95;font-style:italic;">   *  morpheme: {</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   *   optimizeDeps: true</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   * })</span></span>
 <span class="line"><span style="color:#676E95;font-style:italic;">   */</span></span>
@@ -122,4 +122,16 @@ import{_ as s,o as n,c as a,N as l}from"./chunks/framework.0c1fa351.js";const f=
 <span class="line"><span style="color:#F07178;">  </span><span style="color:#FFCB6B;">darkMode</span><span style="color:#89DDFF;">:</span><span style="color:#F07178;"> </span><span style="color:#FF9CAC;">false</span><span style="color:#89DDFF;">,</span></span>
 <span class="line"><span style="color:#F07178;">  </span><span style="color:#FFCB6B;">optimizeDeps</span><span style="color:#89DDFF;">:</span><span style="color:#F07178;"> </span><span style="color:#FF9CAC;">true</span><span style="color:#89DDFF;">,</span></span>
 <span class="line"><span style="color:#89DDFF;">},</span></span>
-<span class="line"></span></code></pre></div><h2 id="starter" tabindex="-1">Starter <a class="header-anchor" href="#starter" aria-label="Permalink to &quot;Starter&quot;">​</a></h2><p>Checkout <a href="/ui-component/guide/starter.html">starter</a> page to quickly setup your project with Nuxt.js.</p>`,26),p=[o];function e(c,i,r,y,D,F){return n(),a("div",null,p)}const d=s(t,[["render",e]]);export{f as __pageData,d as default};
+<span class="line"></span></code></pre></div><p>Config example:</p><div class="language-ts"><button title="Copy Code" class="copy"></button><span class="lang">ts</span><pre class="shiki material-theme-palenight has-highlighted-lines"><code><span class="line"><span style="color:#676E95;font-style:italic;">// https://nuxt.com/docs/api/configuration/nuxt-config</span></span>
+<span class="line"><span style="color:#89DDFF;font-style:italic;">export</span><span style="color:#A6ACCD;"> </span><span style="color:#89DDFF;font-style:italic;">default</span><span style="color:#A6ACCD;"> </span><span style="color:#82AAFF;">defineNuxtConfig</span><span style="color:#A6ACCD;">(</span><span style="color:#89DDFF;">{</span></span>
+<span class="line"><span style="color:#A6ACCD;">  </span><span style="color:#F07178;">modules</span><span style="color:#89DDFF;">:</span><span style="color:#A6ACCD;"> [</span></span>
+<span class="line"><span style="color:#A6ACCD;">    </span><span style="color:#89DDFF;">&#39;</span><span style="color:#C3E88D;">@morpheme/nuxt</span><span style="color:#89DDFF;">&#39;</span><span style="color:#89DDFF;">,</span></span>
+<span class="line"><span style="color:#A6ACCD;">    </span><span style="color:#89DDFF;">&#39;</span><span style="color:#C3E88D;">@nuxtjs/tailwindcss</span><span style="color:#89DDFF;">&#39;</span><span style="color:#89DDFF;">,</span></span>
+<span class="line"><span style="color:#A6ACCD;">  ]</span><span style="color:#89DDFF;">,</span></span>
+<span class="line"><span style="color:#89DDFF;">  </span><span style="color:#676E95;font-style:italic;">// https://gitsindonesia.github.io/ui-component/guide/nuxt.html#options</span></span>
+<span class="line highlighted"><span style="color:#A6ACCD;">  </span><span style="color:#F07178;">morpheme</span><span style="color:#89DDFF;">:</span><span style="color:#A6ACCD;"> </span><span style="color:#89DDFF;">{</span></span>
+<span class="line highlighted"><span style="color:#89DDFF;">    </span><span style="color:#676E95;font-style:italic;">// enable dark mode</span></span>
+<span class="line highlighted"><span style="color:#A6ACCD;">    </span><span style="color:#F07178;">darkMode</span><span style="color:#89DDFF;">:</span><span style="color:#A6ACCD;"> </span><span style="color:#FF9CAC;">true</span><span style="color:#89DDFF;">,</span></span>
+<span class="line highlighted"><span style="color:#A6ACCD;">  </span><span style="color:#89DDFF;">},</span></span>
+<span class="line"><span style="color:#89DDFF;">}</span><span style="color:#A6ACCD;">)</span><span style="color:#89DDFF;">;</span></span>
+<span class="line"></span></code></pre></div><h2 id="starter" tabindex="-1">Starter <a class="header-anchor" href="#starter" aria-label="Permalink to &quot;Starter&quot;">​</a></h2><p>Checkout <a href="/ui-component/guide/starter.html">starter</a> page to quickly setup your project with Nuxt.js.</p>`,28),p=[t];function e(c,i,r,y,D,F){return n(),a("div",null,p)}const d=s(o,[["render",e]]);export{f as __pageData,d as default};
