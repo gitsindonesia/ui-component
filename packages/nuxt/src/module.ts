@@ -50,6 +50,8 @@ const transpile = [
   'floating-vue',
 ];
 
+const optimizeDeps = ['yup'];
+
 const components: AddComponentOptions[] = [
   {
     name: 'VAlert',
@@ -436,6 +438,18 @@ export interface ModuleOptions {
    * })
    */
   darkMode?: boolean;
+  /**
+   * Determine whether to optimize default deps.
+   *
+   * @default false
+   * @example
+   * // nuxt.config.ts
+   * export default defineConfig({
+   *  gitsUi: {
+   *   optimizeDeps: true
+   * })
+   */
+  optimizeDeps?: boolean;
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -451,6 +465,7 @@ export default defineNuxtModule<ModuleOptions>({
     loadFloatingVueStyles: true,
     loadDefaultStyles: true,
     darkMode: false,
+    optimizeDeps: true,
   },
   setup(options, nuxt) {
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url));
@@ -463,6 +478,16 @@ export default defineNuxtModule<ModuleOptions>({
         ...nuxt.options.build.transpile,
         ...transpile,
       ];
+    }
+
+    // optimize deps
+    if (options.optimizeDeps) {
+      if (nuxt.options.vite.optimizeDeps?.include) {
+        nuxt.options.vite.optimizeDeps.include = [
+          ...nuxt.options.vite.optimizeDeps?.include,
+          ...optimizeDeps,
+        ];
+      }
     }
 
     // use css bundle
