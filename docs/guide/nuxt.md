@@ -31,7 +31,7 @@ yarn add --dev sass
 ```ts
 export default defineNuxtConfig({
   modules: ['@morpheme/ui-nuxt', '@nuxtjs/tailwindcss'],
-  gitsUi: {
+  morpheme: {
     // configuration options for Morpheme UI go here
   },
 });
@@ -71,7 +71,7 @@ export interface ModuleOptions {
    * @example
    * // nuxt.config.ts
    * export default defineConfig({
-   *  gitsUi: {
+   *  morpheme: {
    *   css: true
    * })
    */
@@ -83,7 +83,7 @@ export interface ModuleOptions {
    * @example
    * // nuxt.config.ts
    * export default defineConfig({
-   *  gitsUi: {
+   *  morpheme: {
    *   sass: true
    * })
    */
@@ -95,7 +95,7 @@ export interface ModuleOptions {
    * @example
    * // nuxt.config.ts
    * export default defineConfig({
-   *  gitsUi: {
+   *  morpheme: {
    *   components: true
    * })
    */
@@ -107,7 +107,7 @@ export interface ModuleOptions {
    * @example
    * // nuxt.config.ts
    * export default defineConfig({
-   *  gitsUi: {
+   *  morpheme: {
    *   transpileDeps: true
    * })
    */
@@ -119,7 +119,7 @@ export interface ModuleOptions {
    * @example
    * // nuxt.config.ts
    * export default defineConfig({
-   *  gitsUi: {
+   *  morpheme: {
    *   loadFloatingVueStyles: true
    * })
    */
@@ -132,7 +132,7 @@ export interface ModuleOptions {
    * @example
    * // nuxt.config.ts
    * export default defineConfig({
-   *  gitsUi: {
+   *  morpheme: {
    *   loadDefaultStyles: false
    * })
    */
@@ -144,7 +144,7 @@ export interface ModuleOptions {
    * @example
    * // nuxt.config.ts
    * export default defineConfig({
-   *  gitsUi: {
+   *  morpheme: {
    *   darkMode: true
    * })
    */
@@ -156,7 +156,7 @@ export interface ModuleOptions {
    * @example
    * // nuxt.config.ts
    * export default defineConfig({
-   *  gitsUi: {
+   *  morpheme: {
    *   optimizeDeps: true
    * })
    */
