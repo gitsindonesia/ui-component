@@ -10,6 +10,7 @@
   --avatar-font-weight: 600;
   --avatar-font-size: theme('fontSize.base');
   --avatar-text-transform: uppercase;
+  --avatar-group-spacing: -4px;
 }
 
 .avatar {
@@ -28,6 +29,34 @@
   color: var(--avatar-text-color);
   font-size: var(--avatar-font-size);
   text-transform: var(--avatar-text-transform);
+
+  &-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    & > * {
+      margin: 0 var(--avatar-group-spacing);
+    }
+    &--xs > * {
+      --avatar-group-spacing: -8px;
+    }
+    &--sm > * {
+      --avatar-group-spacing: -6px;
+    }
+    &--md > * {
+      --avatar-group-spacing: -4px;
+    }
+    &--lg > * {
+      --avatar-group-spacing: -2px;
+    }
+    &--xl > * {
+      --avatar-group-spacing: 2px;
+    }
+    &--2xl > * {
+      --avatar-group-spacing: 4px;
+    }
+  }
 
   /* shapes */
   &-square,

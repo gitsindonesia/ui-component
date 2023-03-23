@@ -5,6 +5,7 @@ import {
   defaultSizes as sizes,
 } from '@morpheme/theme/defaultTheme';
 import './Avatar.dark.scss';
+import AvatarGroup from './AvatarGroup.vue';
 
 const avatar1 =
   'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';
@@ -239,5 +240,94 @@ export const DarkMode = () => ({
     class="mb-2"
     name="John Doe" />
 </div>
+  `,
+});
+
+export const AvatarGroups: StoryFn<typeof Avatar> = (args) => ({
+  components: {Avatar, AvatarGroup},
+  setup() {
+    return {args, colors, avatar1, avatar2};
+  },
+  template: `
+    <div class="space-y-2 flex flex-col gap-2 items-start">
+      <AvatarGroup spacing="xs">
+        <Avatar
+          :src="avatar1"
+          size="xl"
+        />
+        <Avatar
+          :src="avatar2"
+          size="xl"
+        />
+        <Avatar color="primary" size="xl">W</Avatar>
+        <Avatar color="secondary" size="xl">AP</Avatar>
+        <Avatar size="xl">+5</Avatar>
+      </AvatarGroup>
+      <AvatarGroup spacing="sm">
+        <Avatar
+          :src="avatar1"
+          size="xl"
+        />
+        <Avatar
+          :src="avatar2"
+          size="xl"
+        />
+        <Avatar color="primary" size="xl">W</Avatar>
+        <Avatar color="secondary" size="xl">AP</Avatar>
+        <Avatar size="xl">+5</Avatar>
+      </AvatarGroup>
+      <AvatarGroup spacing="md">
+        <Avatar
+          :src="avatar1"
+          size="xl"
+        />
+        <Avatar
+          :src="avatar2"
+          size="xl"
+        />
+        <Avatar color="primary" size="xl">W</Avatar>
+        <Avatar color="secondary" size="xl">AP</Avatar>
+        <Avatar size="xl">+5</Avatar>
+      </AvatarGroup>
+      <AvatarGroup spacing="lg">
+        <Avatar
+          :src="avatar1"
+          size="xl"
+        />
+        <Avatar
+          :src="avatar2"
+          size="xl"
+        />
+        <Avatar color="primary" size="xl">W</Avatar>
+        <Avatar color="secondary" size="xl">AP</Avatar>
+        <Avatar size="xl">+5</Avatar>
+      </AvatarGroup>
+      <AvatarGroup spacing="xl">
+        <Avatar
+          :src="avatar1"
+          size="xl"
+        />
+        <Avatar
+          :src="avatar2"
+          size="xl"
+        />
+        <Avatar color="primary" size="xl">W</Avatar>
+        <Avatar color="secondary" size="xl">AP</Avatar>
+        <Avatar size="xl">+5</Avatar>
+      </AvatarGroup>
+      <AvatarGroup spacing="2xl">
+        <Avatar
+          :src="avatar1"
+          size="xl"
+        />
+        <Avatar
+          :src="avatar2"
+          size="xl"
+        />
+        <Avatar color="primary" size="xl">W</Avatar>
+        <Avatar color="secondary" size="xl">AP</Avatar>
+        <Avatar size="xl">+5</Avatar>
+      </AvatarGroup>
+    </div>
   `,
 });
