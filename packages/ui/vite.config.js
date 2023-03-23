@@ -60,6 +60,7 @@ export default defineConfig({
         '@morpheme/toast',
         '@morpheme/tooltip',
         '@morpheme/utils',
+        '@morpheme/text',
         '@headlessui/vue',
         '@vue/test-utils',
         'vue',
