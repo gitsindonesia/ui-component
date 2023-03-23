@@ -155,6 +155,10 @@ export default defineConfig({
             link: '/components/toast',
           },
           {
+            text: 'Text',
+            link: '/components/text',
+          },
+          {
             text: 'Tooltip',
             link: '/components/tooltip',
           },
