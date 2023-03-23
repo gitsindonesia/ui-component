@@ -343,7 +343,7 @@ export const CalloutExample = () => ({
   template: `
 <button
   aria-label="User info"
-  class="flex w-full justify-start text-left gap-4 items-center hover:bg-gray-100 px-2 py-1 rounded-lg"
+  class="flex w-full justify-start text-left gap-3 items-center hover:bg-gray-100 px-3 py-1 rounded-lg"
 >
   <Avatar
     :src="avatar1"
