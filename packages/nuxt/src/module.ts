@@ -70,6 +70,10 @@ const components: AddComponentOptions[] = [
     filePath: '@morpheme/avatar/src/Avatar.vue',
   },
   {
+    name: 'VAvatarGroup',
+    filePath: '@morpheme/avatar/src/AvatarGroup.vue',
+  },
+  {
     name: 'VBadge',
     filePath: '@morpheme/badge/src/VBadge.vue',
   },
