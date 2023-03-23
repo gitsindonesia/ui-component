@@ -100,6 +100,33 @@ We can change the shape of avatar via `shape` prop. By the default, the shape is
 
 </LivePreview>
 
+### Avatar Group
+
+We can group the avatar with `VAvatarGroup` component.
+
+<LivePreview src="components-avatar--avatar-groups">
+
+```vue
+<script setup>
+const avatar1 =
+  'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';
+const avatar2 =
+  'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80';
+</script>
+
+<template>
+  <VAvatarGroup spacing="xs">
+    <VAvatar :src="avatar1" size="xl" />
+    <VAvatar :src="avatar2" size="xl" />
+    <VAvatar color="primary" size="xl">W</VAvatar>
+    <VAvatar color="secondary" size="xl">AP</VAvatar>
+    <VAvatar size="xl">+5</VAvatar>
+  </VAvatarGroup>
+</template>
+```
+
+</LivePreview>
+
 ### Props
 
 | Name                      | Type                                                      | Default  | Description               |
