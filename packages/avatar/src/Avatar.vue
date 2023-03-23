@@ -20,6 +20,7 @@ const props = withDefaults(defineProps<Props>(), {
   size: 'md',
   shape: 'circle',
   maxInitial: 2,
+  color: 'default',
 });
 
 const classes = computed(() => [
@@ -67,7 +68,11 @@ const computedStyle = computed(() => {
       class="avatar-image"
       v-bind="computedSize"
     />
-    <div v-else class="avatar-initial">{{ initial }}</div>
+    <div v-else class="avatar-initial">
+      <slot>
+        {{ initial }}
+      </slot>
+    </div>
   </div>
 </template>
 
