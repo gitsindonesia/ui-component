@@ -34,7 +34,7 @@ export const colorVariants = [
   'success',
 ] as const;
 
-export type ColorVariants = typeof colorVariants[number];
+export type ColorVariants = typeof colorVariants[number] | string;
 
 export const mappedColors: Record<ColorVariants | string, string> = {
   primary: 'primary.500',

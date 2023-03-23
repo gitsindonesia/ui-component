@@ -1,31 +1,24 @@
 <script setup lang="ts">
-import {type Component, type PropType, computed} from 'vue';
+import {type Component, computed} from 'vue';
 import { FontWeightVariants, TextVariants, ColorVariants, mappedColors } from './variants';
-import {colorVariants} from './variants'
 import {colors} from '@morpheme/design-tokens/js/tailwind';
 import { get } from './helpers';
 
-const props = defineProps({
-  variant: {
-    type: String as PropType<TextVariants>,
-    required: true
-  },
-  fontWeight: {
-    type: String as PropType<FontWeightVariants>,
-    default: 'normal',
-  },
-  color: {
-    type: String as PropType<ColorVariants | string>,
-    default: 'text',
-  },
-  as: {
-    type: String as PropType<string | Component>,
-    default: 'p',
-  },
-});
+type Props = {
+  variant?: TextVariants
+  fontWeight?: FontWeightVariants
+  color?: ColorVariants
+  as?: string | Component
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  fontWeight: 'normal',
+  color: '',
+  as: 'p',
+})
 
 const isCustomColor = computed(() => {
-  return !colorVariants.includes(props.color)
+  return !Object.keys(mappedColors).includes(props.color)
 })
 
 const computedStyles = computed(() => {
