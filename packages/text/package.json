@@ -39,5 +39,8 @@
     "./package.json": "./package.json",
     "./src/*": "./src/*",
     "./*": "./*"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
