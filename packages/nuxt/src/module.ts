@@ -354,6 +354,10 @@ const components: AddComponentOptions[] = [
     name: 'VBottomSheetHandle',
     filePath: '@morpheme/bottom-sheet/src/BottomSheetHandle.vue',
   },
+  {
+    name: 'VText',
+    filePath: '@morpheme/text/src/VText.vue',
+  },
 ];
 
 export interface ModuleOptions {
