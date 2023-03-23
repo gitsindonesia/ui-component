@@ -3,7 +3,7 @@
 
 name: Deploy to Firebase Hosting on PR
 on:
-  pull_request:
+  pull_request_target:
     paths:
       - 'packages/**/*.stories.{ts,js}'
       - 'stories/**/*.stories.{ts,js}'
