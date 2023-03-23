@@ -129,6 +129,10 @@ const avatar2 =
 
 ### Props
 
+<br>
+
+#### Avatar
+
 | Name                      | Type                                                      | Default  | Description               |
 | ------------------------- | --------------------------------------------------------- | -------- | ------------------------- |
 | [name](#name)             | `string`                                                  | `-`      | Avatar color              |
@@ -137,6 +141,12 @@ const avatar2 =
 | [size](#size)             | `string`, `number`, [available sizes](/guide/theme#sizes) | `md`     | Avatar size               |
 | [shape](#shape)           | `square` , `circle` , `rounded`                           | `circle` | Avatar shape              |
 | [alt](#alt)               | `string`                                                  | `-`      | Image alt                 |
+
+#### Avatar Group
+
+| Name                | Type                                                      | Default | Description |
+| ------------------- | --------------------------------------------------------- | ------- | ----------- |
+| [spacing](#spacing) | `number \| 'xs' \| 'sm' \| 'md' \| 'lg' \| 'xl' \| '2xl'` | `'md'`  | Spacing     |
 
 ## Events
 
