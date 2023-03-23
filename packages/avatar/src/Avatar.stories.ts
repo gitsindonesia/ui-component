@@ -329,6 +329,19 @@ export const AvatarGroups: StoryFn<typeof Avatar> = (args) => ({
         <Avatar color="secondary" size="xl">AP</Avatar>
         <Avatar size="xl">+5</Avatar>
       </AvatarGroup>
+      <AvatarGroup :spacing="10">
+        <Avatar
+          :src="avatar1"
+          size="xl"
+        />
+        <Avatar
+          :src="avatar2"
+          size="xl"
+        />
+        <Avatar color="primary" size="xl">W</Avatar>
+        <Avatar color="secondary" size="xl">AP</Avatar>
+        <Avatar size="xl">+5</Avatar>
+      </AvatarGroup>
     </div>
   `,
 });

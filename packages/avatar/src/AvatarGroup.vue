@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {PropType} from 'vue';
+import {computed, PropType} from 'vue';
 
 export type AvatarGroupSpacing =
   | number
@@ -10,11 +10,29 @@ export type AvatarGroupSpacing =
   | 'xl'
   | '2xl';
 
-defineProps({
+const defaultSpacing = ['xs', 'sm', 'md', 'lg', 'xl', '2xl'];
+
+const props = defineProps({
   spacing: {
     type: [String, Number] as PropType<AvatarGroupSpacing>,
     default: 'md',
   },
+});
+
+const isCustomSpacing = computed(() => {
+  return defaultSpacing.includes(props.spacing as any);
+});
+
+const computedStyles = computed(() => {
+  if (!isCustomSpacing.value) {
+    const spacing =
+      typeof props.spacing === 'number' ? `${props.spacing}px` : props.spacing;
+    return {
+      '--avatar-group-spacing': spacing,
+    };
+  }
+
+  return {};
 });
 </script>
 
@@ -24,6 +42,7 @@ defineProps({
     :class="{
       [`avatar-group--${spacing}`]: spacing,
     }"
+    :style="computedStyles"
   >
     <slot />
   </div>
