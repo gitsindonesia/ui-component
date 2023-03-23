@@ -6,6 +6,7 @@ import {
 } from '@morpheme/theme/defaultTheme';
 import './Avatar.dark.scss';
 import AvatarGroup from './AvatarGroup.vue';
+import VIcon from '@morpheme/icon';
 
 const avatar1 =
   'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';
@@ -15,7 +16,7 @@ const avatar2 =
 export default {
   title: 'Components/Avatar',
   component: Avatar,
-  args: {},
+  subcomponents: {AvatarGroup},
 } as Meta<typeof Avatar>;
 
 const Template: StoryFn<typeof Avatar> = (args) => ({
@@ -329,5 +330,34 @@ export const AvatarGroups: StoryFn<typeof Avatar> = (args) => ({
         <Avatar size="xl">+5</Avatar>
       </AvatarGroup>
     </div>
+  `,
+});
+
+export const CalloutExample = () => ({
+  components: {Avatar, VIcon},
+  setup() {
+    return {
+      avatar1,
+    };
+  },
+  template: `
+<button
+  aria-label="User info"
+  class="flex w-full justify-start text-left gap-4 items-center hover:bg-gray-100 px-2 py-1 rounded-lg"
+>
+  <Avatar
+    :src="avatar1"
+    size="xl"
+  />
+  <div class="flex-1">
+    <div class="font-semibold">
+      Jane Foster
+    </div>
+    <p class="text-sm text-gray-500">
+      jane@asgard.com
+    </p>
+  </div>
+  <VIcon name="heroicons:chevron-right" class="text-gray-600" />
+</button>
   `,
 });
