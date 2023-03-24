@@ -1,5 +1,7 @@
 # Morpheme UI (GITS UI)
 
+> GITS UI is now Morpheme UI. Check out migration guide [here](https://gitsindonesia.github.io/ui-component/guide/migration.html).
+
 <div align="center">
 
 ![Morpheme.ID](https://gits.id/wp-content/uploads/2022/06/Logo-Main-1.png)
