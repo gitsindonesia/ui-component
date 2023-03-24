@@ -83,6 +83,18 @@ For Nuxt user, change `@gits-id/ui-nuxt` to `@morpheme/nuxt`:
 }
 ```
 
+Then, change the Nuxt module usage in your `nuxt.config.ts`:
+
+```ts
+export default defineNuxtConfig({
+  modules: [
+    '@gits-id/ui-nuxt', // [!code --]
+    '@morpheme/nuxt', // [!code ++]
+  ],
+});
+```
+
+
 Then, run install the dependencies:
 
 ```bash
