@@ -100,6 +100,45 @@ We can change the shape of avatar via `shape` prop. By the default, the shape is
 
 </LivePreview>
 
+### Avatar Indicator
+
+We can display indicator to avatar component like online state or verified mark using `indicator` prop.
+
+<LivePreview src="components-avatar--indicator">
+
+```vue
+<script setup>
+const avatar1 =
+  'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80';
+</script>
+
+<template>
+  <Avatar :src="avatar1" size="xl" indicator="online" />
+  <Avatar :src="avatar1" size="xl" indicator="verified" />
+  <Avatar
+    :src="avatar1"
+    size="xl"
+    indicator="ic:outline-offline-bolt"
+    indicator-class="text-amber-500"
+  />
+</template>
+```
+
+</LivePreview>
+
+We can also use icon as the indicator by leveraging icon from `@morpheme/icon`. Just pass the icon name to the `indicator` prop and you good to go. You can also add custom class to indicator element using `indicator-class`. This is useful for example to change the icon color with Tailwind class.
+
+```vue {5,6}
+<template>
+  <Avatar
+    :src="avatar1"
+    size="xl"
+    indicator="ic:outline-offline-bolt"
+    indicator-class="text-amber-500"
+  />
+</template>
+```
+
 ### Avatar Group
 
 We can group the avatar with `VAvatarGroup` component.

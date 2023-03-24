@@ -379,7 +379,7 @@ export const Indicator = () => ({
   size="xl"
   indicator="ic:outline-offline-bolt"
   indicator-class="text-amber-500"
-  />
+/>
   `,
 });
 
