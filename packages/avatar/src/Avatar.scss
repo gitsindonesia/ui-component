@@ -14,21 +14,32 @@
 }
 
 .avatar {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  font-weight: var(--avatar-font-weight);
-  border-width: var(--avatar-border-width);
-  border-color: var(--avatar-border-color);
-  border-style: var(--avatar-border-style);
-  width: var(--avatar-width);
-  height: var(--avatar-height);
-  border-radius: var(--avatar-border-radius);
-  background-color: var(--avatar-bg-color);
-  color: var(--avatar-text-color);
-  font-size: var(--avatar-font-size);
-  text-transform: var(--avatar-text-transform);
+  position: relative;
+
+  &-indicator {
+    border-radius: 8px;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--online {
+      border: 1.5px solid white;
+      background-color: #12b76a;
+    }
+
+    &--verified {
+      color: #0788f5;
+    }
+  }
 
   &-group {
     display: flex;
@@ -145,9 +156,30 @@
   /* image */
   &-image {
     object-fit: cover;
+    border-width: var(--avatar-border-width);
+    border-color: var(--avatar-border-color);
+    border-style: var(--avatar-border-style);
+    width: var(--avatar-width);
+    height: var(--avatar-height);
+    border-radius: var(--avatar-border-radius);
+    background-color: var(--avatar-bg-color);
   }
   // initial
   &-initial {
     --avatar-font-weight: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: var(--avatar-font-weight);
+    border-width: var(--avatar-border-width);
+    border-color: var(--avatar-border-color);
+    border-style: var(--avatar-border-style);
+    width: var(--avatar-width);
+    height: var(--avatar-height);
+    border-radius: var(--avatar-border-radius);
+    background-color: var(--avatar-bg-color);
+    color: var(--avatar-text-color);
+    font-size: var(--avatar-font-size);
+    text-transform: var(--avatar-text-transform);
   }
 }

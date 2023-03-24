@@ -225,25 +225,6 @@ CustomSizes.parameters = {
   },
 };
 
-export const DarkMode = () => ({
-  components: {Avatar},
-  setup() {
-    return {
-      colors,
-    };
-  },
-  template: `
-<div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
-  <Avatar
-    v-for="color in colors"
-    :color="color"
-    :key="color"
-    class="mb-2"
-    name="John Doe" />
-</div>
-  `,
-});
-
 export const AvatarGroups: StoryFn<typeof Avatar> = (args) => ({
   components: {Avatar, AvatarGroup},
   setup() {
@@ -372,5 +353,69 @@ export const CalloutExample = () => ({
   </div>
   <VIcon name="heroicons:chevron-right" class="text-gray-600" />
 </button>
+  `,
+});
+
+export const Indicator = () => ({
+  components: {Avatar, VIcon},
+  setup() {
+    return {
+      avatar1,
+    };
+  },
+  template: `
+<Avatar
+  :src="avatar1"
+  size="xl"
+  indicator="online"
+/>
+<Avatar
+  :src="avatar1"
+  size="xl"
+  indicator="verified"
+/>
+<Avatar
+  :src="avatar1"
+  size="xl"
+  indicator="ic:outline-offline-bolt"
+  indicator-class="text-amber-500"
+  />
+  `,
+});
+
+export const DarkMode = () => ({
+  components: {Avatar},
+  setup() {
+    return {
+      colors,
+      avatar1,
+    };
+  },
+  template: `
+<div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6 space-x-2 space-y-2">
+  <Avatar
+    v-for="color in colors"
+    :color="color"
+    :key="color"
+    class="mb-2"
+    name="John Doe"
+  />
+  <Avatar
+    :src="avatar1"
+    size="xl"
+    indicator="online"
+  />
+  <Avatar
+    :src="avatar1"
+    size="xl"
+    indicator="verified"
+  />
+  <Avatar
+    :src="avatar1"
+    size="xl"
+    indicator="ic:outline-offline-bolt"
+    indicator-class="text-amber-500"
+  />
+</div>
   `,
 });

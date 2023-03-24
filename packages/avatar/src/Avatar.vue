@@ -5,6 +5,7 @@ import {
   defaultSizes,
   DefaultSizes,
 } from '@morpheme/theme/defaultTheme';
+import VIcon from '@morpheme/icon';
 
 export type Props = {
   color?: DefaultColors | string;
@@ -14,6 +15,10 @@ export type Props = {
   src?: string;
   name?: string;
   maxInitial?: number;
+  indicator?: 'online' | 'verified' | string;
+  indicatorClass?: string;
+  width?: string | number;
+  height?: string | number;
 };
 
 const props = withDefaults(defineProps<Props>(), {
@@ -65,6 +70,8 @@ const computedStyle = computed(() => {
       v-if="src"
       :src="src"
       :alt="name || alt"
+      :width="width"
+      :height="height"
       class="avatar-image"
       v-bind="computedSize"
     />
@@ -73,6 +80,31 @@ const computedStyle = computed(() => {
         {{ initial }}
       </slot>
     </div>
+    <slot name="indicator" :indicator="indicator">
+      <div
+        v-if="indicator"
+        class="avatar-indicator"
+        :class="[
+          {
+            'avatar-indicator--online': indicator === 'online',
+            'avatar-indicator--verified': indicator === 'verified',
+          },
+          indicatorClass,
+        ]"
+      >
+        <img
+          v-if="indicator === 'verified'"
+          src="./verified.svg"
+          alt="Verified Mark"
+          width="16"
+          height="16"
+        />
+        <VIcon
+          v-else-if="indicator && indicator !== 'online'"
+          :name="indicator"
+        />
+      </div>
+    </slot>
   </div>
 </template>
 
