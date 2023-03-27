@@ -1,5 +1,11 @@
 <script setup lang="ts">
 const appConfig = useAppConfig();
+
+const imageProps = {
+  width: appConfig.auth.logo.width,
+  height: appConfig.auth.logo.height,
+  alt: 'Logo',
+};
 </script>
 
 <template>
@@ -7,14 +13,12 @@ const appConfig = useAppConfig();
     v-if="appConfig.auth.logo.enable"
     :src="appConfig.auth.logo.light"
     class="mb-6 dark:hidden block"
-    :width="appConfig.auth.logo.width"
-    :height="appConfig.auth.logo.height"
+    v-bind="imageProps"
   />
   <img
     v-if="appConfig.auth.logo.enable"
     :src="appConfig.auth.logo.dark"
     class="mb-6 dark:block hidden"
-    :width="appConfig.auth.logo.width"
-    :height="appConfig.auth.logo.height"
+    v-bind="imageProps"
   />
 </template>
