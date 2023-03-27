@@ -1,13 +1,11 @@
 # Morpheme UI (GITS UI)
 
+![npm](https://img.shields.io/npm/v/@morpheme/ui)
+![npm](https://img.shields.io/npm/dw/@morpheme/ui)
+[![Coverage](https://sonar.gits.id/api/project_badges/measure?project=gits-ui&metric=coverage&token=4eb076c49cd76f7e9ec5834aae3c1eee57160330)](https://sonar.gits.id/dashboard?id=gits-ui)
+[![Quality Gate Status](https://sonar.gits.id/api/project_badges/measure?project=gits-ui&metric=alert_status&token=4eb076c49cd76f7e9ec5834aae3c1eee57160330)](https://sonar.gits.id/dashboard?id=gits-ui)
+
 > GITS UI is now Morpheme UI. Check out migration guide [here](https://gitsindonesia.github.io/ui-component/guide/migration.html).
-
-<!-- ![Morpheme.ID](https://gits.id/wp-content/uploads/2022/06/Logo-Main-1.png) -->
-
-[![npm version][npm-version-src]][npm-version-href]
-[![npm downloads][npm-downloads-src]][npm-downloads-href]
-[![Github Actions][github-actions-src]][github-actions-href]
-[![Codecov][codecov-src]][codecov-href]
 
 Morpheme UI (GITS UI) - A free and open-source Vue UI Library based on Morpheme Design System.
 
