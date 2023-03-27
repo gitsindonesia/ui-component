@@ -30,5 +30,6 @@ jobs:
           git config user.email "${{ github.actor}}@users.noreply.github.com"
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
           npx lerna bootstrap
+          cd packages/nuxt && yarn
           npx lerna run build
           npx lerna publish --canary --yes
