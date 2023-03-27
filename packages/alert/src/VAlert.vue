@@ -85,7 +85,7 @@ const mappedIcons: Record<string, string> = {
 
 <template>
   <transition :name="transition">
-    <div v-if="isOpen" class="alert" :class="classes">
+    <div v-if="isOpen" class="alert" role="alert" :class="classes">
       <slot name="icon" :icon="icon">
         <Icon
           v-if="icon"
