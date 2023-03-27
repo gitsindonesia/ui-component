@@ -10,6 +10,6 @@ describe('VMenus', () => {
       props: {},
     });
 
-    expect(wrapper.html()).toContain('relative');
+    expect(wrapper.html()).toContain('v-menus');
   });
 });

@@ -12,6 +12,6 @@ describe('VInput', () => {
       },
     });
 
-    expect(wrapper.html()).toContain('relative');
+    expect(wrapper.html()).toContain('v-input');
   });
 });
