@@ -6,7 +6,7 @@ In roadmap below are the major expected features that are coming soon with Morph
 
 | Milestone                      | Expected date               | Notes                                | Description                                                                      |
 | ------------------------------ | --------------------------- | ------------------------------------ | -------------------------------------------------------------------------------- |
-| create-gits-app                | Released at Jan, 10 2023    | [Link](/tools/create-gits-app)       | CLI for generating app with Vue/Nuxt + Morpheme UI                               |
+| create-morpheme-app            | Released at Jan, 10 2023    | [Link](/tools/create-morpheme-app)   | CLI for generating app with Vue/Nuxt + Morpheme UI                               |
 | Themes: Dark Mode              | Released at Jan, 17 2023    | [Link](/guide/dark-mode)             | Dark mode themes                                                                 |
 | New Starter: Morpheme Admin    | Pre-release at Jan, 17 2023 | [Preview](/guide/starter#nuxt-admin) | Full featured Admin panel with Morpheme UI                                       |
 | New Starter: Morpheme Commerce | Q1 2023                     | 🚧                                    | Full featured E-Commerce application with Morpheme UI                            |
