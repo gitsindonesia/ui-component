@@ -35,11 +35,6 @@ const menus = ref([
     text: 'Share',
     value: 'share',
     onClick() {
-      // navigator?.share({
-      //   title: 'MDN',
-      //   text: 'Learn web development on MDN!',
-      //   url: 'https://developer.mozilla.org',
-      // });
       console.log('Share');
     },
   },
