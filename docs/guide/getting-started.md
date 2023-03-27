@@ -24,22 +24,6 @@ Then, choose your prefered starter template or choose `Custom` to customize the 
 
 You can also try the online playground on Stackblitz.
 
-### Vue Starter
+### Starter Kits
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/gitsindonesia/ui-component/tree/main/starter/vue)
-
-### Nuxt + Morpheme UI Minimal
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/gitsindonesia/ui-component/tree/main/starter/nuxt-minimal)
-
-### Nuxt + Morpheme UI Complete Starter
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/gitsindonesia/nuxt-starter)
-
-### Nuxt Admin Starter
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/gitsindonesia/ui-component/tree/main/starter/nuxt-admin)
-
-## Manual Setup
-
-[Follow this instruction](/guide/installation) to setup Morpheme UI step-by-step to Vue project.
+Check out these [starters](/guide/starter) to get you started quickly.
