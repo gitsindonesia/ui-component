@@ -16,6 +16,5 @@ describe('VBtn', () => {
     });
 
     expect(wrapper.text()).toContain(BUTTON_TEXT);
-    // expect(wrapper.html()).toMatchSnapshot();
   });
 });
