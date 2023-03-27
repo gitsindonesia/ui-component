@@ -1,5 +1,5 @@
 <template>
-  <li
+  <div
     class="
       flex
       items-center
@@ -16,5 +16,5 @@
       <slot />
     </span>
     <VBtn color="primary" flush text prefix-icon="ic:round-close" />
-  </li>
+  </div>
 </template>
