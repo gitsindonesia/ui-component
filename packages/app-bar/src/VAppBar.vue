@@ -109,11 +109,11 @@ if (props.elevateOnScroll) {
 }
 
 const getShadowClass = (shadow: DefaultShadows) => {
-  return typeof shadow === 'string'
-    ? `app-bar--shadow-${shadow}`
-    : shadow
-    ? 'app-bar--shadow'
-    : '';
+  if (typeof shadow === 'string') {
+    return `app-bar--shadow-${shadow}`;
+  }
+
+  return shadow ? 'app-bar--shadow' : '';
 };
 
 const shadowClass = computed(() => {
