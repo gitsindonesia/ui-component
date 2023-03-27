@@ -35,6 +35,7 @@
     "@commitlint/config-conventional": "^17.0.3",
     "@headlessui/vue": "1.4.1",
     "@iconify-json/heroicons-solid": "^1.1.1",
+    "@nuxt/kit": "^3.3.2",
     "@storybook/addon-actions": "^6.5.15",
     "@storybook/addon-docs": "^6.5.15",
     "@storybook/addon-essentials": "^6.5.15",
