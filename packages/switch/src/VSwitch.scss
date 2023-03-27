@@ -108,11 +108,6 @@
     --v-switch-button-checked-border-color: theme('colors.secondary.500');
   }
 
-  &-secondary &-button {
-    --v-switch-button-checked-bg-color: theme('colors.secondary.500');
-    --v-switch-button-checked-border-color: theme('colors.secondary.500');
-  }
-
   &-success &-button {
     --v-switch-button-checked-bg-color: theme('colors.success.500');
     --v-switch-button-checked-border-color: theme('colors.success.500');
