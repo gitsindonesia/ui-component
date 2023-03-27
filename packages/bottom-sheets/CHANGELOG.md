@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.6](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2023-03-27)
+
+
+### Bug Fixes
+
+* **VBottomSheet:** import dependency styles ([#156](https://github.com/gitsindonesia/ui-component/issues/156)) ([649f4a3](https://github.com/gitsindonesia/ui-component/commit/649f4a3c491f565571db142b5c8e39fde51a5471))
+
+
+
+
+
 # [1.0.0-beta.5](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.4...v1.0.0-beta.5) (2023-03-15)
 
 **Note:** Version bump only for package @morpheme/bottom-sheet

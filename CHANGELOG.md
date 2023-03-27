@@ -3,6 +3,40 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.6](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2023-03-27)
+
+
+### Bug Fixes
+
+* **nuxt-admin:** change list with div ([3348c39](https://github.com/gitsindonesia/ui-component/commit/3348c3936b3e8c639f0e8fc557fe2c263d8a0104))
+* **nuxt-admin:** fix image alt ([55f5b6b](https://github.com/gitsindonesia/ui-component/commit/55f5b6b90529b81ff7a62301ae05612f9dcae95c))
+* **nuxt-auth:** fix image alt ([7c3c910](https://github.com/gitsindonesia/ui-component/commit/7c3c910bac0a5af8c12a33ff2de6aba44b4568dc))
+* **VAlert:** improve alert accessibility ([#162](https://github.com/gitsindonesia/ui-component/issues/162)) ([89f8001](https://github.com/gitsindonesia/ui-component/commit/89f8001728c415feeb43f7414299fc2ff88bfcc1))
+* **VBottomSheet:** import dependency styles ([#156](https://github.com/gitsindonesia/ui-component/issues/156)) ([649f4a3](https://github.com/gitsindonesia/ui-component/commit/649f4a3c491f565571db142b5c8e39fde51a5471))
+* **VSwitch:** fix duplicate secondary selector ([816082a](https://github.com/gitsindonesia/ui-component/commit/816082a5b50c418ef32174b332c0e5e84d62e10a))
+
+
+* BREAKING CHANGE(nuxt)!: change option name to `morpheme` (#158) ([7087378](https://github.com/gitsindonesia/ui-component/commit/70873786d5fc49eee6a0bc44178029494c1ef6e5)), closes [#158](https://github.com/gitsindonesia/ui-component/issues/158)
+
+
+### Features
+
+* **Avatar:** add avatar indicator ([#161](https://github.com/gitsindonesia/ui-component/issues/161)) ([e05cdd5](https://github.com/gitsindonesia/ui-component/commit/e05cdd503a89eac4f0070a95347452d87bbe7fb6))
+* **Avatar:** add new `VAvatarGroup` component ([#159](https://github.com/gitsindonesia/ui-component/issues/159)) ([b64ec5f](https://github.com/gitsindonesia/ui-component/commit/b64ec5f22f8e5f61ce5b5814939cf8edf8ef9761))
+* **nuxt:** add new `optimizeDeps` option ([#157](https://github.com/gitsindonesia/ui-component/issues/157)) ([84ef13a](https://github.com/gitsindonesia/ui-component/commit/84ef13ae01c7a3ad6e60e3044a9bc5a0a5b12b5a))
+* **VText:** add new `VText` component ([#160](https://github.com/gitsindonesia/ui-component/issues/160)) ([56551ce](https://github.com/gitsindonesia/ui-component/commit/56551ce2c29d2065169f6fa33fed4f7d8b9fb684))
+
+
+### BREAKING CHANGES
+
+* nuxt option renamed from `gitsUi` to `morpheme`
+
+* docs(nuxt): add nuxt config example
+
+
+
+
+
 # [1.0.0-beta.5](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.4...v1.0.0-beta.5) (2023-03-15)
 
 

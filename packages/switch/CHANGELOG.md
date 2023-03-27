@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.6](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2023-03-27)
+
+
+### Bug Fixes
+
+* **VSwitch:** fix duplicate secondary selector ([816082a](https://github.com/gitsindonesia/ui-component/commit/816082a5b50c418ef32174b332c0e5e84d62e10a))
+
+
+
+
+
 # [1.0.0-beta.5](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.4...v1.0.0-beta.5) (2023-03-15)
 
 **Note:** Version bump only for package @morpheme/switch

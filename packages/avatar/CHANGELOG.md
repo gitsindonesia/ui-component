@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.6](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2023-03-27)
+
+
+### Features
+
+* **Avatar:** add avatar indicator ([#161](https://github.com/gitsindonesia/ui-component/issues/161)) ([e05cdd5](https://github.com/gitsindonesia/ui-component/commit/e05cdd503a89eac4f0070a95347452d87bbe7fb6))
+* **Avatar:** add new `VAvatarGroup` component ([#159](https://github.com/gitsindonesia/ui-component/issues/159)) ([b64ec5f](https://github.com/gitsindonesia/ui-component/commit/b64ec5f22f8e5f61ce5b5814939cf8edf8ef9761))
+
+
+
+
+
 # [1.0.0-beta.5](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.4...v1.0.0-beta.5) (2023-03-15)
 
 **Note:** Version bump only for package @morpheme/avatar

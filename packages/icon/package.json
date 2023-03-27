@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/icon",
-  "version": "1.0.0-beta.5",
+  "version": "1.0.0-beta.6",
   "description": "Morpheme Icon Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -17,11 +17,11 @@
   "dependencies": {
     "@heroicons/vue": "^1.0.6",
     "@iconify/vue": "^3.2.1",
-    "@morpheme/theme": "^1.0.0-beta.5",
+    "@morpheme/theme": "^1.0.0-beta.6",
     "vue": "^3.2.31"
   },
   "devDependencies": {
-    "@morpheme/tailwind-config": "^1.0.0-beta.5",
+    "@morpheme/tailwind-config": "^1.0.0-beta.6",
     "vite": "^3.0.0",
     "vitest": "^0.12.4",
     "vue-tsc": "^0.40.1"

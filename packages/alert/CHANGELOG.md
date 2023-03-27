@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.6](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2023-03-27)
+
+
+### Bug Fixes
+
+* **VAlert:** improve alert accessibility ([#162](https://github.com/gitsindonesia/ui-component/issues/162)) ([89f8001](https://github.com/gitsindonesia/ui-component/commit/89f8001728c415feeb43f7414299fc2ff88bfcc1))
+
+
+
+
+
 # [1.0.0-beta.5](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.4...v1.0.0-beta.5) (2023-03-15)
 
 **Note:** Version bump only for package @morpheme/alert

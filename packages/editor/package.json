@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/editor",
-  "version": "1.0.0-beta.5",
+  "version": "1.0.0-beta.6",
   "description": "Morpheme Rich Text Editor Component",
   "scripts": {
     "build": "vite build && npm run build-types && npm run move-types",
@@ -27,9 +27,9 @@
   },
   "devDependencies": {
     "@headlessui/vue": "^1.6.0",
-    "@morpheme/button": "^1.0.0-beta.5",
-    "@morpheme/tailwind-config": "^1.0.0-beta.5",
-    "@morpheme/utils": "^1.0.0-beta.5",
+    "@morpheme/button": "^1.0.0-beta.6",
+    "@morpheme/tailwind-config": "^1.0.0-beta.6",
+    "@morpheme/utils": "^1.0.0-beta.6",
     "@types/ckeditor__ckeditor5-build-classic": "^29.0.1",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
