@@ -5,12 +5,12 @@ name: Run tests
 
 on:
   push:
-    paths:
-      - '**.{spec,test}.{js,ts}'
+    # paths:
+    #   - 'packages/**/*.{spec,test}.{js,ts}'
     branches: [main]
   pull_request:
-    paths:
-      - '**.{spec,test}.{js,ts}'
+    # paths:
+    #   - 'packages/**/*.{spec,test}.{js,ts}'
     branches: [main]
 
 jobs:
@@ -19,7 +19,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.x, 17.x]
+        node-version: [16.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
