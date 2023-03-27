@@ -4,10 +4,12 @@
 
 <div align="center">
 
-![Morpheme.ID](https://gits.id/wp-content/uploads/2022/06/Logo-Main-1.png)
+<!-- ![Morpheme.ID](https://gits.id/wp-content/uploads/2022/06/Logo-Main-1.png) -->
 
-[![npm version](https://badge.fury.io/js/@gits-id%2Fui.svg)](https://badge.fury.io/js/@gits-id%2Fui)
-![npm](https://img.shields.io/npm/dm/@gits-id/ui)
+[![npm version][npm-version-src]][npm-version-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
+[![Github Actions][github-actions-src]][github-actions-href]
+[![Codecov][codecov-src]][codecov-href]
 
 </div>
 
