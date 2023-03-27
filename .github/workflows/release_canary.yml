@@ -1,4 +1,4 @@
-name: Publish
+name: Publish Canary
 on:
   push:
     paths:
@@ -17,10 +17,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: 'Use NodeJS 14'
+      - name: 'Use NodeJS 16'
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '16'
 
       - name: 'Version and publish' # Interesting step
         env:
@@ -31,5 +31,4 @@ jobs:
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
           npx lerna bootstrap
           npx lerna run build
-          npx lerna version --conventional-commits --conventional-prerelease --preid beta --yes
-          npx lerna publish from-git --yes
+          npx lerna publish --canary --yes
