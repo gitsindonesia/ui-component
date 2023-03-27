@@ -55,7 +55,7 @@ Fixed.parameters = {
 
 export const Sticky = Template.bind({});
 Sticky.args = {
-  mini: true,
+  sticky: true,
 };
 Sticky.parameters = {
   docs: {
