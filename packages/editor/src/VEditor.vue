@@ -2,7 +2,7 @@
 import {computed, toRefs, watch} from 'vue';
 import {useField} from 'vee-validate';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import {component as ckeditor} from '@ckeditor/ckeditor5-vue';
+import {component as CKEditor} from '@ckeditor/ckeditor5-vue';
 import editorConfig from './config';
 
 type Props = {
@@ -70,7 +70,7 @@ const message = computed(() => props.errorMessages[0] || errorMessage.value);
     <label v-if="label" :for="name" class="v-editor-label" :class="labelClass">
       {{ label }}
     </label>
-    <ckeditor
+    <CKEditor
       :id="name"
       v-model="content"
       class="v-editor"
