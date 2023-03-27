@@ -2,16 +2,12 @@
 
 > GITS UI is now Morpheme UI. Check out migration guide [here](https://gitsindonesia.github.io/ui-component/guide/migration.html).
 
-<div align="center">
-
 <!-- ![Morpheme.ID](https://gits.id/wp-content/uploads/2022/06/Logo-Main-1.png) -->
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![Github Actions][github-actions-src]][github-actions-href]
 [![Codecov][codecov-src]][codecov-href]
-
-</div>
 
 Morpheme UI (GITS UI) - A free and open-source Vue UI Library based on Morpheme Design System.
 
