@@ -1,4 +1,4 @@
-import {mount} from '@vue/test-utils';
+import {mount, RouterLinkStub} from '@vue/test-utils';
 import {describe, expect, test} from 'vitest';
 import Auth from './Auth.vue';
 
@@ -7,6 +7,12 @@ describe('Auth', () => {
     expect(Auth).toBeTruthy();
 
     const wrapper = mount(Auth, {
+      global: {
+        stubs: {
+          RouterLink: RouterLinkStub,
+          RouterView: true,
+        }
+      },
       props: {},
     });
 

@@ -1,4 +1,4 @@
-import {mount} from '@vue/test-utils';
+import {mount, RouterLinkStub} from '@vue/test-utils';
 import {describe, expect, test} from 'vitest';
 import VBreadcrumbs from './VBreadcrumbs.vue';
 
@@ -7,6 +7,11 @@ describe('VBreadcrumbs', () => {
     expect(VBreadcrumbs).toBeTruthy();
 
     const wrapper = mount(VBreadcrumbs, {
+      global: {
+        stubs: {
+          RouterLink: RouterLinkStub,
+        },
+      },
       props: {
         items: [
           {
