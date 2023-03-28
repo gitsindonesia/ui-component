@@ -8,7 +8,7 @@
     "test": "vitest"
   },
   "keywords": [
-    "typography",
+    "text",
     "morpheme",
     "ui-component"
   ],
@@ -26,15 +26,15 @@
     "vite": "^3.0.0",
     "vitest": "^0.12.4"
   },
-  "main": "dist/typography.umd.js",
-  "unpkg": "dist/typography.iife.js",
-  "jsdelivr": "dist/typography.iife.js",
-  "module": "./dist/typography.mjs",
+  "main": "dist/text.umd.js",
+  "unpkg": "dist/text.iife.js",
+  "jsdelivr": "dist/text.iife.js",
+  "module": "./dist/text.mjs",
   "types": "./dist/types/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/typography.mjs",
-      "require": "./dist/typography.js"
+      "import": "./dist/text.mjs",
+      "require": "./dist/text.js"
     },
     "./package.json": "./package.json",
     "./src/*": "./src/*",
