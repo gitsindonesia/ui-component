@@ -1,11 +1,12 @@
 <script setup lang="ts">
-interface Props {
-  padded?: boolean;
-}
-
-withDefaults(defineProps<Props>(), {
-  padded: true,
-});
+withDefaults(
+  defineProps<{
+    padded?: boolean;
+  }>(),
+  {
+    padded: true,
+  },
+);
 </script>
 
 <template>
