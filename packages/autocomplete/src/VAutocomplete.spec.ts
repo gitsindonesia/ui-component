@@ -177,96 +177,114 @@ describe('VAutocomplete', () => {
         );
       });
     });
+  });
 
-    describe('when label provided', () => {
-      it('render label', () => {
-        const wrapper = mount(VAutocomplete, {
-          props: {
-            searchBy: 'text',
-            displayText: 'text',
-            placeholder: 'Search...',
-            items,
-            label: 'Label test',
-          },
-        });
-
-        const label = wrapper.findComponent(ComboboxLabel);
-
-        expect(wrapper.html()).toContain('autocomplete-label');
-        expect(label).toBeTruthy();
-        expect(label.html()).toContain('Label test');
+  describe('when label provided', () => {
+    it('render label', () => {
+      const wrapper = mount(VAutocomplete, {
+        props: {
+          searchBy: 'text',
+          displayText: 'text',
+          placeholder: 'Search...',
+          items,
+          label: 'Label test',
+        },
       });
+
+      const label = wrapper.findComponent(ComboboxLabel);
+
+      expect(wrapper.html()).toContain('autocomplete-label');
+      expect(label).toBeTruthy();
+      expect(label.html()).toContain('Label test');
     });
+  });
 
-    describe('when searched empty', () => {
-      it('show no data text', async () => {
-        const wrapper = mount(VAutocomplete, {
-          props: {
-            searchBy: 'text',
-            displayText: 'text',
-            placeholder: 'Search...',
-            items,
-            label: 'Label test',
-            noDataText: 'Data tidak ditemukan',
-          },
-        });
+  describe('when searched empty', () => {
+    it('show no data text', async () => {
+      const wrapper = mount(VAutocomplete, {
+        props: {
+          searchBy: 'text',
+          displayText: 'text',
+          placeholder: 'Search...',
+          items,
+          label: 'Label test',
+          noDataText: 'Data tidak ditemukan',
+        },
+      });
 
-        await wrapper.find('input').setValue('za');
+      await wrapper.find('input').setValue('za');
 
-        expect(wrapper.html()).toContain('autocomplete-empty');
-        expect(wrapper.find('.autocomplete-empty').text()).toContain(
-          wrapper.vm.noDataText,
+      expect(wrapper.html()).toContain('autocomplete-empty');
+      expect(wrapper.find('.autocomplete-empty').text()).toContain(
+        wrapper.vm.noDataText,
+      );
+    });
+  });
+
+  describe('when use with validation', () => {
+    it('can show error message when error appear', async () => {
+      const WrapperComponent = defineComponent({
+        components: {
+          VAutocomplete,
+        },
+        setup() {
+          const schema = object({
+            test: object().required().label('Test'),
+          });
+
+          const {handleSubmit} = useForm({
+            validationSchema: schema,
+          });
+
+          const onSubmit = handleSubmit((values) => {
+            alert(JSON.stringify(values));
+          });
+          return {
+            onSubmit,
+          };
+        },
+        template: `<form @submit="onSubmit" class="border-none">
+          <VAutocomplete
+            name="test"
+            label="Test"
+            placeholder="Choose name"
+            :items="items"
+          />
+          <div class="mt-4">
+            <button type="submit">Submit</button>
+          </div>
+        </form>`,
+      });
+
+      const wrapper = mount(WrapperComponent);
+
+      await wrapper.find('form').trigger('submit');
+
+      await flushPromises();
+      await waitForExpect(() => {
+        expect(wrapper.html()).toContain('autocomplete-error');
+        expect(wrapper.find('.autocomplete-error').text()).toContain(
+          'Test is a required field',
         );
       });
     });
-
-    describe('when use with validation', () => {
-      it('can show error message when error appear', async () => {
-        const WrapperComponent = defineComponent({
-          components: {
-            VAutocomplete,
-          },
-          setup() {
-            const schema = object({
-              test: object().required().label('Test'),
-            });
-
-            const {handleSubmit} = useForm({
-              validationSchema: schema,
-            });
-
-            const onSubmit = handleSubmit((values) => {
-              alert(JSON.stringify(values));
-            });
-            return {
-              onSubmit,
-            };
-          },
-          template: `<form @submit="onSubmit" class="border-none">
-            <VAutocomplete
-              name="test"
-              label="Test"
-              placeholder="Choose name"
-              :items="items"
-            />
-            <div class="mt-4">
-              <button type="submit">Submit</button>
-            </div>
-          </form>`,
-        });
-
-        const wrapper = mount(WrapperComponent);
-
-        await wrapper.find('form').trigger('submit');
-
-        await flushPromises();
-        await waitForExpect(() => {
-          expect(wrapper.html()).toContain('autocomplete-error');
-          expect(wrapper.find('.autocomplete-error').text()).toContain(
-            'Test is a required field',
-          );
-        });
-      });
-    });
   });
+
+  describe('when use with hints', () => {
+    it('render hint', () => {
+      const wrapper = mount(VAutocomplete, {
+        props: {
+          searchBy: 'text',
+          displayText: 'text',
+          placeholder: 'Search...',
+          items,
+          label: 'Label test',
+          hint: 'Hint Test'
+        },
+      });
+      
+      expect(wrapper.text()).toContain('Hint Test')
+    })
+
+  })
 });
