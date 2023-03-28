@@ -61,6 +61,9 @@ describe('VSwitch', () => {
   });
 
   test('can show error message when error appear', async () => {
+    const errorClass = 'v-switch--error'
+    const errorMessage = 'You must agree to terms and condition'
+
     const WrapperComponent = defineComponent({
       components: {
         VSwitch,
@@ -68,7 +71,7 @@ describe('VSwitch', () => {
       setup() {
         const schema = object({
           test: boolean()
-            .oneOf([true], 'You must agree to terms and condition')
+            .oneOf([true], errorMessage)
             .required()
             .label('Test'),
         });
@@ -77,9 +80,7 @@ describe('VSwitch', () => {
           validationSchema: schema,
         });
 
-        const onSubmit = handleSubmit((values) => {
-          // alert(JSON.stringify(values));
-        });
+        const onSubmit = handleSubmit((values) => {});
 
         return {
           onSubmit,
@@ -99,10 +100,8 @@ describe('VSwitch', () => {
 
     await flushPromises();
     await waitForExpect(() => {
-      expect(wrapper.html()).toContain('v-switch--error');
-      expect(wrapper.find('.v-switch--error').text()).toContain(
-        'You must agree to terms and condition',
-      );
+      expect(wrapper.html()).toContain(errorClass);
+      expect(wrapper.find(`.${errorClass}`).text()).toContain(errorMessage);
     });
   });
 });
