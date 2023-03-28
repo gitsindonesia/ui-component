@@ -24,6 +24,7 @@ describe('VMenu', () => {
         menu: {
           text: 'Text',
           to: '/',
+          icon: 'test-icon'
         },
       },
       global: {

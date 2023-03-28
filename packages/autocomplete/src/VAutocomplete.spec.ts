@@ -241,6 +241,7 @@ describe('VAutocomplete', () => {
           });
           return {
             onSubmit,
+            items,
           };
         },
         template: `<form @submit="onSubmit" class="border-none">

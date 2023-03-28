@@ -1,4 +1,4 @@
-import {mount} from '@vue/test-utils';
+import {mount, RouterLinkStub} from '@vue/test-utils';
 import {describe, expect, test} from 'vitest';
 import VLogo from './VLogo.vue';
 
@@ -7,6 +7,11 @@ describe('VLogo', () => {
     expect(VLogo).toBeTruthy();
 
     const wrapper = mount(VLogo, {
+      global: {
+        stubs: {
+          RouterLink: RouterLinkStub
+        }
+      },
       props: {},
     });
 
@@ -17,6 +22,11 @@ describe('VLogo', () => {
     expect(VLogo).toBeTruthy();
 
     const wrapper = mount(VLogo, {
+      global: {
+        stubs: {
+          RouterLink: RouterLinkStub
+        }
+      },
       props: {
         white: true,
       },

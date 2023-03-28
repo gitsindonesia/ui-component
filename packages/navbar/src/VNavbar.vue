@@ -157,7 +157,7 @@ const userFirstName = computed(() => user.value?.name?.split(' ')?.[0]);
                     />
                     <span>{{ user.name }}</span>
                   </span>
-                  <ChevronDownIcon class="w-5 h-5" />
+                  <Icon name="heroicons:chevron-down" class="w-5 h-5" />
                 </DisclosureButton>
                 <DisclosurePanel class="px-4 pt-2">
                   <VBtn
