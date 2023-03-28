@@ -8,7 +8,7 @@ describe('VInputRange', () => {
 
     const wrapper = mount(VInputRange, {
       props: {
-        modelValue: 0,
+        modelValue: {min: 0, max: 0},
       },
     });
 

@@ -1,4 +1,4 @@
-import {mount} from '@vue/test-utils';
+import {mount, RouterLinkStub} from '@vue/test-utils';
 import {describe, expect, test} from 'vitest';
 import NotFound from './NotFound.vue';
 
@@ -7,6 +7,11 @@ describe('NotFound', () => {
     expect(NotFound).toBeTruthy();
 
     const wrapper = mount(NotFound, {
+      global: {
+        stubs: {
+          RouterLink: RouterLinkStub
+        }
+      },
       props: {},
     });
 

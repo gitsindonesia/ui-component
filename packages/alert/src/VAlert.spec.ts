@@ -141,7 +141,7 @@ describe('VAlert', () => {
         slots: {
           default: ALERT_TEXT,
           'x-button': '<button>Custom x button</button>',
-          icon: '<Icon name="custom-icon-slot" />',
+          icon: '<div name="custom-icon-slot" />',
         },
       });
 
