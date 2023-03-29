@@ -70,6 +70,7 @@ export default defineConfig({
         items: [
           {text: 'Alert', link: '/components/alert'},
           {text: 'AppBar', link: '/components/app-bar'},
+          {text: 'AppShell', link: '/components/app-shell'},
           {text: 'Autocomplete', link: '/components/autocomplete'},
           {text: 'Avatar', link: '/components/avatar'},
           {text: 'Badge', link: '/components/badge'},
