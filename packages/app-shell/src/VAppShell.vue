@@ -2,10 +2,11 @@
 withDefaults(
   defineProps<{
     fluid?: boolean;
-    stacked?: boolean;
+    paddedContainer?: boolean;
     mainClass?: string;
     contentClass?: string;
     containerClass?: string;
+    paddedContent?: boolean;
   }>(),
   {},
 );
@@ -19,7 +20,6 @@ withDefaults(
       :class="[
         mainClass,
         {
-          'v-app-shell--stacked': stacked,
           'v-app-shell--fluid': fluid,
         },
       ]"
@@ -27,7 +27,7 @@ withDefaults(
       <slot name="aside" />
       <div
         class="flex-1 flex flex-col v-app-shell-content"
-        :class="[{'px-4 lg:px-6 py-4': !stacked}, contentClass]"
+        :class="[{'px-4 lg:px-6 py-4': paddedContent}, contentClass]"
       >
         <slot name="navbar" />
         <div
@@ -35,14 +35,15 @@ withDefaults(
           :class="[
             {
               'container mx-auto': !fluid,
-              'px-4 py-4': stacked,
+              'px-4 py-4': paddedContainer,
             },
             containerClass,
           ]"
         >
           <slot />
+          <slot name="container.after" />
         </div>
-        <slot name="innerFooter" />
+        <slot name="content.after" />
       </div>
     </main>
     <slot name="footer" />
