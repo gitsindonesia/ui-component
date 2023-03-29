@@ -54,5 +54,8 @@
     "./src/*": "./src/*",
     "./*": "./*"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "gitHead": "92215d91d1e3a2b1b804e52b55dcfd0ed5274475"
 }
