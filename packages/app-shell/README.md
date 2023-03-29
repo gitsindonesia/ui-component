@@ -1,6 +1,6 @@
 # Morpheme AppShell
 
-Morpheme Application Component.
+Morpheme Application Shell Component.
 
 ## Installation
 
@@ -26,7 +26,7 @@ pnpm i @morpheme/app-shell
 
 ```vue
 <script setup lang="ts">
-import VAppShell from '@morpheme/layouts';
+import VAppShell from '@morpheme/app-shell';
 </script>
 
 <template>
@@ -38,7 +38,7 @@ import VAppShell from '@morpheme/layouts';
 
 ## Documentation
 
-View `Layouts` documentation [here](https://gits-ui.web.app/?path=/story/components-app-shell--default).
+Check out storybook documentation [here](https://gits-ui.web.app/?path=/story/components-app-shell--default).
 
 ## License
 
