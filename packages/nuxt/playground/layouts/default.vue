@@ -103,40 +103,41 @@ const components = [
 </script>
 
 <template>
-  <VAppBar bordered sticky>
-    <div class="flex justify-between items-center w-full">
-      <div class="font-semibold flex-1">Morpheme UI Playground</div>
-      <div>
-        <VSwitch
-          v-model="darkMode"
-          label="Dark Mode"
-          @update:model-value="toggleDarkMode"
-        />
-      </div>
-    </div>
-  </VAppBar>
-  <div class="flex gap-4">
-    <VNavDrawer sticky class="!top-14 pr-3" bordered>
-      <div class="overflow-y-auto">
-        <VList hover shaped flush>
-          <VListItemHeader>Menu</VListItemHeader>
-          <VListItem
-            v-for="component in components"
-            :key="component.name"
-            :href="component.href"
-            :class="{
-              '!bg-primary-500 !font-semibold !text-white':
-                $route.hash === component.href,
-            }"
-          >
-            {{ component.name }}
-          </VListItem>
-        </VList>
-      </div>
-    </VNavDrawer>
-
-    <div class="flex-1">
-      <slot />
-    </div>
-  </div>
+  <VAppShell>
+    <template #header>
+      <VAppBar bordered sticky>
+        <div class="flex justify-between items-center w-full">
+          <div class="font-semibold flex-1">Morpheme UI Playground</div>
+          <div>
+            <VSwitch
+              v-model="darkMode"
+              label="Dark Mode"
+              @update:model-value="toggleDarkMode"
+            />
+          </div>
+        </div>
+      </VAppBar>
+    </template>
+    <template #aside>
+      <VNavDrawer sticky class="!top-14 pr-3" bordered>
+        <div class="overflow-y-auto">
+          <VList hover shaped flush>
+            <VListItemHeader>Menu</VListItemHeader>
+            <VListItem
+              v-for="component in components"
+              :key="component.name"
+              :href="component.href"
+              :class="{
+                '!bg-primary-500 !font-semibold !text-white':
+                  $route.hash === component.href,
+              }"
+            >
+              {{ component.name }}
+            </VListItem>
+          </VList>
+        </div>
+      </VNavDrawer>
+    </template>
+    <slot />
+  </VAppShell>
 </template>
