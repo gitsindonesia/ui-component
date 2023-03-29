@@ -70,6 +70,7 @@ import {
   StepperNumber,
 } from '@morpheme/stepper';
 import VText from '@morpheme/text';
+import VAppShell from '@morpheme/app-shell';
 
 const plugin: Plugin = {
   install: (app) => {
@@ -136,6 +137,7 @@ const plugin: Plugin = {
     app.component('VStepperDivider', StepperDivider);
     app.component('VStepperNumber', StepperNumber);
     app.component('VText', VText);
+    app.component('VAppShell', VAppShell);
   },
 };
 
