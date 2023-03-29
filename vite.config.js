@@ -47,8 +47,18 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'happy-dom',
+    // setupFiles: "./test/unit/setup-test.ts",
     coverage: {
-      reporter: ['text', 'json', 'html', 'lcov', 'lcovonly'],
+      provider: 'c8',
+      reporter: ['text', 'html', 'lcov', 'json'],
+    },
+    reporters: [
+      'json',
+      // 'vitest-sonar-reporter'
+    ],
+    outputFile: {
+      json: 'coverage/test-report.json',
+      'vitest-sonar-reporter': 'coverage/test-report.xml',
     },
   },
 });

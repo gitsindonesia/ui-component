@@ -19012,6 +19012,11 @@ vitepress@^1.0.0-alpha.60:
     vite "^4.1.4"
     vue "^3.2.47"
 
+vitest-sonar-reporter@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/vitest-sonar-reporter/-/vitest-sonar-reporter-0.4.0.tgz#78eb473029f5bf4da4a178e1efec6e1460d790fa"
+  integrity sha512-7ez/oMebg+oWY1sdw1R239aNLWGCdRpzoiw+bBZgwZJGlr6YRYQTC09KMkf+tQ69398uURhiYcs7cAsGHV4Cjw==
+
 vitest@^0.12.4:
   version "0.12.10"
   resolved "https://registry.yarnpkg.com/vitest/-/vitest-0.12.10.tgz#c40204dce19eb713af6dfa2b75301940cb1259f0"

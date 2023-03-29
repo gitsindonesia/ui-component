@@ -79,6 +79,7 @@
     "vite": "^3.0.0",
     "vitepress": "^1.0.0-alpha.60",
     "vitest": "^0.12.4",
+    "vitest-sonar-reporter": "^0.4.0",
     "vue-gtag": "^2.0.1",
     "vue-loader": "^16.8.3",
     "vue-tsc": "^0.37.3",
