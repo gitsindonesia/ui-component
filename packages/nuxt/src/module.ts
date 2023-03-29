@@ -47,6 +47,8 @@ const transpile = [
   '@morpheme/toast',
   '@morpheme/tooltip',
   '@morpheme/utils',
+  '@morpheme/text',
+  '@morpheme/app-shell',
   'floating-vue',
 ];
 
@@ -357,6 +359,10 @@ const components: AddComponentOptions[] = [
   {
     name: 'VText',
     filePath: '@morpheme/text/src/VText.vue',
+  },
+  {
+    name: 'VAppShell',
+    filePath: '@morpheme/app-shell/src/VAppShell.vue',
   },
 ];
 
