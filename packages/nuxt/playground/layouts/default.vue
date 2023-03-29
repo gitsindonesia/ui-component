@@ -105,7 +105,7 @@ const components = [
 <template>
   <VAppShell>
     <template #header>
-      <VAppBar bordered sticky>
+      <VAppBar bordered fixed>
         <div class="flex justify-between items-center w-full">
           <div class="font-semibold flex-1">Morpheme UI Playground</div>
           <div>
