@@ -304,8 +304,8 @@ export const SidebarInnerHeader: Story<{}> = (args) => ({
   },
   template: `
 <VAppShell v-bind="args" padded-container>
-  <!-- navbar -->
-  <template #navbar>
+  <!-- navigation -->
+  <template #navigation>
     <AppHeader @click:menu="isAsideOpen = !isAsideOpen" hide-logo>
       <VInput placeholder="Search" prepend-icon="ic:round-search" />
     </AppHeader>
