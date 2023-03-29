@@ -85,6 +85,24 @@ const NavDrawerContent = defineComponent({
   `,
 });
 
+const MainContent = defineComponent({
+  components: {VText, VCard},
+  template: `
+<div class="mb-4">
+  <VText variant="display-xs" color="gray.900" font-weight="semibold">
+    Dashboard
+  </VText>
+  <VText variant="sm" color="gray.500">
+    Overview of your account
+  </VText>
+</div>
+
+<div class="border-2 border-dashed border-gray-300 p-8 rounded-xl h-80">
+  
+</div>
+  `,
+});
+
 export const Default: Story<{}> = (args) => ({
   setup() {
     const breakpoints = useBreakpoints(breakpointsTailwind);
@@ -101,11 +119,11 @@ export const Default: Story<{}> = (args) => ({
     VAppShell,
     VAppBar,
     VNavDrawer,
-    VCard,
     VBtn,
     VText,
     NavDrawerContent,
     AppHeader,
+    MainContent,
   },
   template: `
 <VAppShell v-bind="args">
@@ -129,30 +147,62 @@ export const Default: Story<{}> = (args) => ({
   </template>
 
   <!-- footer -->
-  <template #footer>
+  <template #innerFooter>
     <VText variant="sm" color="gray.500" class="mt-4">
       Copyright &copy; 2023 &middot; All rights reserved.
     </VText>
   </template>
 
   <!-- content -->
-  <div class="mb-4">
-    <VText variant="display-xs" color="gray.900" font-weight="semibold">
-      Dashboard
-    </VText>
-    <VText variant="sm" color="gray.500">
-      Overview of your account
-    </VText>
-  </div>
-
-  <VCard title="Welcome" hide-footer>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  </VCard>
+  <MainContent />
 </VAppShell>
   `,
 });
 
-export const CenteredContainer = Default.bind({});
-CenteredContainer.args = {
-  centeredContainer: true,
+export const Fluid = Default.bind({});
+Fluid.args = {
+  fluid: true,
 };
+
+export const Stacked: Story<{}> = (args) => ({
+  setup() {
+    const breakpoints = useBreakpoints(breakpointsTailwind);
+    const isMobile = breakpoints.smaller('sm'); // only smaller than lg
+    const isAsideOpen = ref(true);
+
+    watchEffect(() => {
+      isAsideOpen.value = !isMobile.value;
+    });
+
+    return {args, isMobile, isAsideOpen};
+  },
+  components: {
+    VAppShell,
+    VAppBar,
+    VNavDrawer,
+    VText,
+    NavDrawerContent,
+    AppHeader,
+    MainContent,
+  },
+  template: `
+<VAppShell v-bind="args" stacked>
+  <!-- header -->
+  <template #header>
+    <AppHeader @click:menu="isAsideOpen = !isAsideOpen" />
+  </template>
+
+  <!-- footer -->
+  <template #footer>
+    <footer class="px-4 py-3">
+      <VText variant="sm" color="gray.500">
+        Copyright &copy; 2023 &middot; All rights reserved.
+      </VText>
+    </footer>
+  </template>
+
+  <!-- content -->
+  <MainContent />
+</VAppShell>
+  `,
+});
