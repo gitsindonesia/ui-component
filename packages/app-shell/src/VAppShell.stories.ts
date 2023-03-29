@@ -152,7 +152,7 @@ export const Default: Story<{}> = (args) => ({
   `,
 });
 
-// Default.parameters = {
-//   // remove storybook padding
-//   layout: 'fullscreen',
-// };
+export const CenteredContainer = Default.bind({});
+CenteredContainer.args = {
+  centeredContainer: true,
+};

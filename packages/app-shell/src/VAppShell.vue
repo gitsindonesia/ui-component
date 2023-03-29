@@ -2,9 +2,11 @@
 withDefaults(
   defineProps<{
     padded?: boolean;
+    centeredContainer?: boolean;
   }>(),
   {
     padded: true,
+    centeredContainer: false,
   },
 );
 </script>
@@ -19,7 +21,12 @@ withDefaults(
         :class="{'px-4 lg:px-6 py-4': padded}"
       >
         <slot name="navbar" />
-        <div class="flex-1 v-app-shell-content-inner">
+        <div
+          class="flex-1 v-app-shell-container"
+          :class="{
+            'container mx-auto': centeredContainer,
+          }"
+        >
           <slot />
         </div>
         <slot name="footer" />
