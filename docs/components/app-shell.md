@@ -4,7 +4,7 @@ outline: deep
 
 # AppShell
 
-Application Shell Component.
+The `VAppShell` component is a Vue component that provides a layout shell for a web application. It includes slots for different sections of the layout, such as the header, footer, navbar, main content, and aside content.
 
 ## Usage
 
@@ -212,24 +212,36 @@ watchEffect(() => {
 
 ## Props
 
-| Name                                  | Type      | Default |
-| ------------------------------------- | --------- | ------- |
-| [`fluid`](#fluid)                     | `boolean` | `false` |
-| [`paddedContainer`](#paddedContainer) | `boolean` | `false` |
-| [`paddedContent`](#paddedContent)     | `boolean` | `false` |
-| [`mainClass`](#mainClass)             | `string`  | `''`    |
-| [`contentClass`](#contentClass)       | `string`  | `''`    |
-| [`containerClass`](#containerClass)   | `string`  | `''`    |
-
-## Events
-
-None
+| Name                                  | Type      | Default     | Description                                                                                          |
+| ------------------------------------- | --------- | ----------- | ---------------------------------------------------------------------------------------------------- |
+| [`fluid`](#fluid)                     | `boolean` | `false`     | If `true`, the main content area will have no padding and will take up the full width of the screen. |
+| [`paddedContainer`](#paddedContainer) | `boolean` | `false`     | If `true`, the main content area's container will have padding.                                      |
+| [`paddedContent`](#paddedContent)     | `boolean` | `false`     | If `true`, the main content area's content wrapper will have padding.                                |
+|                                       |
+| [`mainClass`](#mainClass)             | `string`  | `undefined` | A CSS class to apply to the main content area.                                                       |
+| [`contentClass`](#contentClass)       | `string`  | `undefined` | A CSS class to apply to the main content area's content wrapper.                                     |
+|                                       |
+| [`containerClass`](#containerClass)   | `string`  | `undefined` | A CSS class to apply to the main content area's container.                                           |
+|                                       |
 
 ## Slots
 
-| Name                  | Props | Description          |
-| --------------------- | ----- | -------------------- |
-| [`default`](#default) | None  | The default Vue slot |
+| Name              | Description                                                                   |
+| ----------------- | ----------------------------------------------------------------------------- |
+| `default`         | This slot is used to add content to the main section of the app shell.        |
+|                   |
+| `header`          | This slot is used to add content to the header section of the app shell.      |
+| `aside`           | This slot is used to add content to the aside section of the app shell.       |
+|                   |
+| `navigation`      | This slot is used to add content to the navigation section of the app shell.  |
+|                   |
+| `container.after` | This slot is used to add content after the container section of the app shell |
+|                   |
+| `content.after`   | This slot is used to add content after the content section of the app shell.  |
+|                   |
+| `footer`          | This slot is used to add content to the footer section of the app shell.      |
+|                   |
+
 
 ## Storybook
 
