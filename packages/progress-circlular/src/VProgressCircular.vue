@@ -1,109 +1,159 @@
+<script setup lang="ts">
+import {getColor} from '@morpheme/utils';
+import {computed, ref} from 'vue';
+
+const props = defineProps({
+  modelValue: {
+    type: Number,
+    required: true,
+  },
+  size: {
+    type: Number,
+    default: 100,
+  },
+  width: {
+    type: Number,
+    default: 10,
+  },
+  color: {
+    type: String,
+    default: 'primary.600',
+  },
+  indeterminate: {
+    type: Boolean,
+    default: false,
+  },
+  underlayColor: {
+    type: String,
+    default: 'gray.200',
+  },
+  underlayWidth: {
+    type: Number,
+  },
+  underlayFill: {
+    type: String,
+    default: 'transparent',
+  },
+  textFontSize: {
+    type: String,
+    default: '1rem',
+  },
+  textFontWeight: {
+    type: [String, Number],
+    default: 600,
+  },
+});
+
+defineEmits<{
+  (e: 'update:modelValue', value: number): void;
+}>();
+
+const radius = ref((props.size - props.width) / 2);
+const center = ref(props.size / 2);
+const circumference = ref(2 * Math.PI * radius.value);
+
+const progressStyle = computed<any>(() => {
+  const dashOffset =
+    circumference.value - (props.modelValue / 100) * circumference.value;
+  return {
+    strokeDasharray: `${circumference.value}px`,
+    strokeDashoffset: `${dashOffset}px`,
+    stroke: strokeColor.value,
+    strokeWidth: `${props.width}px`,
+    fill: 'transparent',
+  };
+});
+
+const computedUnderlayWidth = computed(() => {
+  return props.underlayWidth || props.width;
+});
+
+const strokeColor = computed(() => {
+  return getColor(props.color);
+});
+
+const underlayStrokeColor = computed(() => {
+  return getColor(props.underlayColor);
+});
+</script>
+
 <template>
-  <div class="progress-ring">
+  <div
+    class="v-progress-circular"
+    :class="{
+      'v-progress-circular--indeterminate': indeterminate,
+    }"
+  >
     <svg :width="size" :height="size">
       <circle
-        class="progress-background"
-        :stroke-width="strokeWidth"
         :r="radius"
         :cx="center"
         :cy="center"
-        fill="transparent"
-        :style="{stroke: 'rgba(0, 0, 0, 0.1)'}"
+        class="v-progress-circular-underlay"
+        v-if="!indeterminate"
       />
       <circle
-        class="progress"
-        :class="{indeterminate}"
-        :stroke-width="strokeWidth"
         :r="radius"
         :cx="center"
         :cy="center"
-        :stroke-dasharray="[circumference, circumference]"
-        :stroke-dashoffset="offset"
-        :stroke="color"
-        fill="none"
+        class="v-progress-circular-overlay"
+        :style="progressStyle"
       />
-      <text
-        class="progress-text"
-        :x="center"
-        :y="center"
-        alignment-baseline="central"
-      >
-        {{ text }}
+      <text :x="center" :y="center" class="v-progress-circular-text">
+        <slot :value="modelValue" />
       </text>
     </svg>
   </div>
 </template>
 
-<script setup lang="ts">
-import {computed, defineProps, ref, watchEffect} from 'vue';
-
-const props = defineProps({
-  value: {type: Number, default: 0},
-  size: {type: Number, default: 60},
-  strokeWidth: {type: Number, default: 6},
-  color: {type: String, default: '#42b983'},
-  indeterminate: {type: Boolean, default: false},
-  text: {type: String, default: ''},
-});
-
-const radius = computed(() => (props.size - props.strokeWidth) / 2);
-const circumference = computed(() => 2 * Math.PI * radius.value);
-const center = computed(() => props.size / 2);
-
-const offset = ref(0);
-
-watchEffect(() => {
-  if (props.indeterminate) {
-    const interval = setInterval(() => {
-      offset.value = offset.value - 1;
-    }, 10);
-    return () => clearInterval(interval);
-  } else {
-    offset.value = `${
-      circumference.value - (props.value / 100) * circumference.value
-    }px`;
-  }
-});
-
-const indeterminate = computed(() => props.indeterminate && props.value === 0);
-</script>
-
-<style>
-.progress-ring {
+<style lang="scss" scoped>
+.v-progress-circular {
   display: inline-block;
   position: relative;
-}
+  width: 100%;
+  height: 100%;
 
-.progress {
-  transition: stroke-dashoffset 0.35s;
-  transform: rotate(-90deg);
-  transform-origin: 50% 50%;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.progress-background {
-  stroke-dasharray: var(--circumference) var(--circumference);
-  stroke-dashoffset: 0;
-  --circumference: {{ circumference }};
-}
-
-.progress.indeterminate {
-  animation: indeterminate 2s linear infinite;
-}
-
-@keyframes indeterminate {
-  from {
-    stroke-dashoffset: 0;
+  &-underlay {
+    stroke: v-bind(underlayStrokeColor);
+    stroke-width: v-bind(computedUnderlayWidth);
+    fill: v-bind(underlayFill);
   }
-  to {
-    stroke-dashoffset: v-bind(circumference) px;
+
+  &-overlay {
+    stroke-linecap: round;
+    transform-origin: center center;
+    transform: rotate(-90deg);
+    transition: stroke-dashoffset 0.5s ease 0s;
+  }
+
+  &-text {
+    font-size: v-bind(textFontSize);
+    font-weight: v-bind(textFontWeight);
+    text-anchor: middle;
+    dominant-baseline: middle;
+  }
+
+  &--indeterminate &-overlay {
+    stroke-dasharray: 80px;
+    stroke-dashoffset: 0px;
+    stroke-linecap: round;
+    transform-origin: center center;
+    animation: v-progress-circular-animation 1s linear infinite;
   }
 }
 
-.progress-text {
-  fill: #333;
-  font-size: 0.3em;
-  font-weight: bold;
-  text-anchor: middle;
+@keyframes v-progress-circular-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
 }
 </style>

@@ -15,7 +15,8 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "vue": "^3.2.31"
+    "vue": "^3.2.31",
+    "@morpheme/utils": "^1.0.0-beta.6"
   },
   "devDependencies": {
     "@headlessui/vue": "^1.6.0",
