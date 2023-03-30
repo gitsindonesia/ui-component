@@ -83,6 +83,10 @@ const underlayStrokeColor = computed(() => {
     :class="{
       'v-progress-circular--indeterminate': indeterminate,
     }"
+    :aria-valuemin="0"
+    :aria-valuemax="100"
+    :aria-valuenow="modelValue"
+    role="progressbar"
   >
     <svg :width="size" :height="size">
       <circle
