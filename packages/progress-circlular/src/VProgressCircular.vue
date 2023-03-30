@@ -5,7 +5,6 @@ import {computed, ref} from 'vue';
 const props = defineProps({
   modelValue: {
     type: Number,
-    required: true,
   },
   size: {
     type: Number,
