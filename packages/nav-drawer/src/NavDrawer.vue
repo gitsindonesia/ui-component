@@ -90,7 +90,7 @@ const onMouseOut = () => {
   if (props.expandOnHover) isExpanded.value = false;
 };
 
-const NAV_DRAWER_HEIGHT: Record<string, string> = {
+const NAV_DRAWER_HEIGHT: Record<string, string | undefined> = {
   screen: '100vh',
   auto: 'auto',
   fit: 'fit-content',

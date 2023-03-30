@@ -260,8 +260,8 @@ const paginatedItems = computed(() => {
       // loop each sort key
       sortByKey?.forEach((key: string) => {
         // get value from path ie. user.name.first
-        const valA = get(a, key);
-        const valB = get(b, key);
+        const valA = get(a, key) as any;
+        const valB = get(b, key) as any;
 
         // only do sort if sort value is 0 (meaning, no sort has been done for previous key)
         // if multiSort is supported, this will sort next key only if previous key result is a === b,
