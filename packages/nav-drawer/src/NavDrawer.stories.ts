@@ -6,6 +6,7 @@ import Button from '@morpheme/button';
 import {colors} from './colors';
 import NavDrawerCustom from './stories/NavDrawerCustom.vue';
 import './NavDrawer.dark.scss';
+import '@morpheme/button/src/VBtn.scss';
 
 export default {
   title: 'Components/NavigationDrawer',
