@@ -428,24 +428,24 @@ const isOpen = ref(true);
 
 ## Props
 
-| Name                                          | Type                                                                    | Default                         |
-| --------------------------------------------- | ----------------------------------------------------------------------- | ------------------------------- |
-| [`color`](#color)                             | `string \| default \| primary \| secondary \| dark`                     | `default`                       |
-| [`modelValue`](#modelValue)                   | `boolean`                                                               | `true`                          |
-| [`shadow`](#shadow)                           | `'sm' \| 'md' \| 'lg' \| 'xl' \| boolean`                               | `false`                         |
-| [`bordered`](#bordered)                       | `boolean`                                                               | `false`                         |
-| [`sticky`](#sticky)                           | `boolean`                                                               | `false`                         |
-| [`fixed`](#fixed)                             | `boolean`                                                               | `false`                         |
-| [`right`](#right)                             | `boolean`                                                               | `false`                         |
-| [`left`](#left)                               | `boolean`                                                               | `false`                         |
-| [`transition`](#transition)                   | `string`                                                                | `nav-drawer-transition`         |
-| [`overlay`](#overlay)                         | `boolean`                                                               | `false`                         |
-| [`overlayTransition`](#overlayTransition)     | `string`                                                                | `nav-drawer-overlay-transition` |
-| [`closeOnOverlayClick`](#closeOnOverlayClick) | `boolean`                                                               | `true`                          |
-| [`mini`](#mini)                               | `boolean`                                                               | `false`                         |
-| [`expandOnHover`](#expandOnHover)             | `boolean`                                                               | `false`                         |
-| [`expanded`](#expanded)                       | `boolean`                                                               | `false`                         |
-| [`height`](#height)                           | `screen \| fit \| auto \| max \| screen-dvh \| screen-svh \|screen-lvh` | `screen`                        |
+| Name                                          | Type                                                                                                                                     | Default                         |
+| --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
+| [`color`](#color)                             | `string \| default \| primary \| secondary \| dark`                                                                                      | `default`                       |
+| [`modelValue`](#modelValue)                   | `boolean`                                                                                                                                | `true`                          |
+| [`shadow`](#shadow)                           | `'sm' \| 'md' \| 'lg' \| 'xl' \| boolean`                                                                                                | `false`                         |
+| [`bordered`](#bordered)                       | `boolean`                                                                                                                                | `false`                         |
+| [`sticky`](#sticky)                           | `boolean`                                                                                                                                | `false`                         |
+| [`fixed`](#fixed)                             | `boolean`                                                                                                                                | `false`                         |
+| [`right`](#right)                             | `boolean`                                                                                                                                | `false`                         |
+| [`left`](#left)                               | `boolean`                                                                                                                                | `false`                         |
+| [`transition`](#transition)                   | `string`                                                                                                                                 | `nav-drawer-transition`         |
+| [`overlay`](#overlay)                         | `boolean`                                                                                                                                | `false`                         |
+| [`overlayTransition`](#overlayTransition)     | `string`                                                                                                                                 | `nav-drawer-overlay-transition` |
+| [`closeOnOverlayClick`](#closeOnOverlayClick) | `boolean`                                                                                                                                | `true`                          |
+| [`mini`](#mini)                               | `boolean`                                                                                                                                | `false`                         |
+| [`expandOnHover`](#expandOnHover)             | `boolean`                                                                                                                                | `false`                         |
+| [`expanded`](#expanded)                       | `boolean`                                                                                                                                | `false`                         |
+| [`height`](#height)                           | `screen \| fit \| auto \| max \| screen-dvh \| screen-svh \|screen-lvh \|  unset \| initial \| inherit \| min-content \| revert \| none` | `screen`                        |
 
 ## Events
 
