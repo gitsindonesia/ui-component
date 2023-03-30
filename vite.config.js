@@ -58,6 +58,6 @@ export default defineConfig({
       json: 'coverage/test-report.json',
       'vitest-sonar-reporter': 'coverage/test-report.xml',
     },
-    // threads: false,
+    threads: false,
   },
 });
