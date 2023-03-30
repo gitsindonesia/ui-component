@@ -17,6 +17,7 @@ jobs:
           node-version: '16.x'
       - run: npm i -g lerna
       - run: lerna bootstrap
+      - run: lerna run build
       - run: yarn coverage
       - uses: sonarsource/sonarqube-scan-action@master
         env:
