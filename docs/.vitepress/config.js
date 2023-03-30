@@ -124,6 +124,10 @@ export default defineConfig({
             link: '/components/progress-bar',
           },
           {
+            text: 'Progress Circular',
+            link: '/components/progress-circular',
+          },
+          {
             text: 'Rating',
             link: '/components/rating',
           },

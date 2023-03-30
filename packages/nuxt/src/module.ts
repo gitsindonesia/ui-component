@@ -364,6 +364,10 @@ const components: AddComponentOptions[] = [
     name: 'VAppShell',
     filePath: '@morpheme/app-shell/src/VAppShell.vue',
   },
+  {
+    name: 'VProgressCircular',
+    filePath: '@morpheme/progress-circular/src/VProgressCircular.vue',
+  },
 ];
 
 export interface ModuleOptions {
