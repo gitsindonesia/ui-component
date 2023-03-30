@@ -71,6 +71,7 @@ import {
 } from '@morpheme/stepper';
 import VText from '@morpheme/text';
 import VAppShell from '@morpheme/app-shell';
+import VProgressCircular from '@morpheme/progress-circular';
 
 const plugin: Plugin = {
   install: (app) => {
@@ -138,6 +139,7 @@ const plugin: Plugin = {
     app.component('VStepperNumber', StepperNumber);
     app.component('VText', VText);
     app.component('VAppShell', VAppShell);
+    app.component('VProgressCircular', VProgressCircular);
   },
 };
 
@@ -193,6 +195,8 @@ export {
   Shimmer as VShimmer,
   VAutocomplete,
   VText,
+  VAppShell,
+  VProgressCircular,
 };
 
 export * from '@morpheme/utils';

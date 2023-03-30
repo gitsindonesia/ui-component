@@ -106,7 +106,7 @@ const underlayStrokeColor = computed(() => {
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .v-progress-circular {
   display: inline-block;
   position: relative;

@@ -16,7 +16,8 @@
   "license": "MIT",
   "dependencies": {
     "vue": "^3.2.31",
-    "@morpheme/utils": "^1.0.0-beta.6"
+    "@morpheme/utils": "^1.0.0-beta.6",
+    "@morpheme/design-tokens": "^0.1.0-alpha.2"
   },
   "devDependencies": {
     "@headlessui/vue": "^1.6.0",

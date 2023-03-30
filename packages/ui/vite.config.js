@@ -61,6 +61,8 @@ export default defineConfig({
         '@morpheme/tooltip',
         '@morpheme/utils',
         '@morpheme/text',
+        '@morpheme/app-shell',
+        '@morpheme/progress-circular',
         '@headlessui/vue',
         '@vue/test-utils',
         'vue',
