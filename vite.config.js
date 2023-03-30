@@ -53,7 +53,7 @@ export default defineConfig({
       provider: 'c8',
       reporter: ['text', 'html', 'lcov', 'json'],
     },
-    reporters: ['json', 'vitest-sonar-reporter'],
+    reporters: ['html', 'verbose', 'json', 'vitest-sonar-reporter'],
     outputFile: {
       json: 'coverage/test-report.json',
       'vitest-sonar-reporter': 'coverage/test-report.xml',

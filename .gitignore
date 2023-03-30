@@ -15,3 +15,4 @@ coverage
 __snapshots__
 docs/.vitepress/cache
 .vercel
+html

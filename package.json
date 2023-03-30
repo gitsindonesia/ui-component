@@ -21,15 +21,15 @@
     "docs:serve": "vitepress serve docs"
   },
   "dependencies": {
+    "@headlessui/vue": "1.4.1",
     "@vueuse/core": "^7.7.1",
+    "floating-vue": "^2.0.0-beta.20",
     "pagino": "^1.4.1",
     "vee-validate": "^4.5.10",
     "vue": "^3.2.31",
     "vue-router": "^4.0.14",
     "vuex": "^4.0.2",
-    "yup": "^0.32.11",
-    "@headlessui/vue": "1.4.1",
-    "floating-vue": "^2.0.0-beta.20"
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
@@ -49,10 +49,11 @@
     "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.6",
     "@vitejs/plugin-vue": "^1.10.2",
+    "@vitest/coverage-c8": "^0.28.4",
+    "@vitest/ui": "^0.29.8",
     "@vue/compiler-sfc": "^3.2.31",
     "@vue/test-utils": "^2.0.0-rc.17",
     "autoprefixer": "^10.4.4",
-    "@vitest/coverage-c8": "^0.28.4",
     "conventional-changelog-cli": "^2.2.2",
     "eslint": ">=5.16.0",
     "eslint-plugin-storybook": "^0.6.10",
