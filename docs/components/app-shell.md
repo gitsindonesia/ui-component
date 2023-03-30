@@ -208,6 +208,8 @@ watchEffect(() => {
 </template>
 ```
 
+</LivePreview>
+
 ### Three Column
 
 Here's an example of three column layout.
