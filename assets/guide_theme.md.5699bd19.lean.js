@@ -1,0 +1,1 @@
+import{_ as e,o as s,c as a,N as o}from"./chunks/framework.ea512023.js";const D=JSON.parse('{"title":"Default Theme","description":"","frontmatter":{},"headers":[],"relativePath":"guide/theme.md"}'),l={name:"guide/theme.md"},t=o("",12),n=[t];function r(c,i,p,d,h,u){return s(),a("div",null,n)}const F=e(l,[["render",r]]);export{D as __pageData,F as default};

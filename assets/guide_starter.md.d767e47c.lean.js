@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as a,N as r}from"./chunks/framework.ea512023.js";const g=JSON.parse('{"title":"Starter Kits","description":"","frontmatter":{},"headers":[],"relativePath":"guide/starter.md"}'),n={name:"guide/starter.md"},i=r("",32),s=[i];function l(o,p,c,u,h,d){return t(),a("div",null,s)}const b=e(n,[["render",l]]);export{g as __pageData,b as default};
