@@ -337,3 +337,97 @@ export const SidebarInnerHeader: Story<{}> = (args) => ({
 </VAppShell>
   `,
 });
+
+export const ThreeColumn: Story<{}> = (args) => ({
+  setup() {
+    const breakpoints = useBreakpoints(breakpointsTailwind);
+    const isMobile = breakpoints.smaller('sm'); // only smaller than lg
+    const isAsideOpen = ref(true);
+
+    watchEffect(() => {
+      isAsideOpen.value = !isMobile.value;
+    });
+
+    return {args, isMobile, isAsideOpen};
+  },
+  components: {
+    VAppShell,
+    VAppBar,
+    VNavDrawer,
+    VBtn,
+    VText,
+    NavDrawerContent,
+    AppHeader,
+    MainContent,
+    VInput,
+    VList,
+    VListItem,
+    VAvatar,
+  },
+  template: `
+<VAppShell v-bind="args" fluid>
+  <!-- aside -->
+  <template #aside>
+    <VNavDrawer
+      v-model="isAsideOpen"
+      :fixed="isMobile"
+      :overlay="isMobile"
+      :close-on-overlay-click="isMobile"
+      :class="{'z-20 !w-10/12 sidebar': isMobile}"
+      bordered
+      mini
+    >
+      <div class="flex flex-col gap-2 mt-2">
+        <VAvatar size="xl">D</VAvatar>
+        <VAvatar size="xl">A</VAvatar>
+        <VAvatar size="xl">T</VAvatar>
+      </div>
+    </VNavDrawer>
+  </template>
+
+  <!-- footer -->
+  <template #innerFooter>
+    <VText variant="sm" color="gray.500" class="m-4">
+      Copyright &copy; 2023 &middot; All rights reserved.
+    </VText>
+  </template>
+
+  <div class="flex flex-1">
+    <div class="w-72 border-r h-[100dvh] overflow-x-auto">
+      <VList hover small>
+        <VListItem prepend-icon-size="sm" prepend-icon="ph:chat-centered-text-thin">Threads</VListItem>
+        <VListItem prepend-icon-size="sm" prepend-icon="ph:chats-circle-thin">Direct Messages</VListItem>
+        <VListItem prepend-icon-size="sm" prepend-icon="ri:at-line">Mentions and Reactions</VListItem>
+        <VListItem prepend-icon-size="sm" prepend-icon="ic:round-send">Drafts and sent</VListItem>
+        <VListItem prepend-icon-size="sm" prepend-icon="ic:round-bookmark">Saved items</VListItem>
+        <VListItem prepend-icon-size="sm" prepend-icon="ri:building-4-line">Connect</VListItem>
+        <VListItem prepend-icon-size="sm" prepend-icon="ic:round-more-vert">More</VListItem>
+      </VList>
+      <VList hover small class="mt-4">
+        <VText font-weight="semibold" color="gray.500" class="px-2" variant="sm">Channels</VText>
+        <VListItem v-for="i in 20" :key="i" prepend-icon-size="sm" prepend-icon="ph:chat-centered-text-thin">
+          Channel {{ i }}
+        </VListItem>
+      </VList>
+      <VList hover small class="mt-4">
+        <VText font-weight="semibold" color="gray.500" class="px-2" variant="sm">Direct Messsages</VText>
+        <VListItem v-for="i in 5" :key="i" prepend-icon-size="sm" prepend-icon="ph:chat-centered-text-thin">
+          User {{ i }}
+        </VListItem>
+      </VList>
+      <VList hover small class="mt-4">
+        <VText font-weight="semibold" color="gray.500" class="px-2" variant="sm">
+          Apps
+        </VText>
+        <VListItem v-for="i in 5" :key="i" prepend-icon-size="sm" prepend-icon="ph:chat-centered-text-thin">
+          App {{ i }}
+        </VListItem>
+      </VList>
+    </div>
+    <div class="flex-1 px-6 py-4">
+      <MainContent />
+    </div>
+  </div>
+</VAppShell>
+  `,
+});
