@@ -9,6 +9,7 @@
   --app-bar-border-width: theme('borderWidth.0');
   --app-bar-border-color: theme('borderColor.DEFAULT');
   --app-bar-shadow: theme('boxShadow.none');
+  --app-bar-z-index: 10;
 }
 
 .app-bar {
@@ -32,7 +33,7 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1;
+    z-index: var(--app-bar-z-index);
   }
 
   // sticky
@@ -41,7 +42,7 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1;
+    z-index: var(--app-bar-z-index);
   }
 
   // bordered
