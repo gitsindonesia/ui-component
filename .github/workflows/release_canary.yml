@@ -31,5 +31,7 @@ jobs:
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
           npx lerna bootstrap
           cd packages/nuxt && yarn
+          cd packages/nuxt && yarn dev:prepare
+          cd packages/nuxt && yarn prepack
           npx lerna run build
           npx lerna publish --canary --yes
