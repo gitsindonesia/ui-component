@@ -42,6 +42,10 @@ const props = defineProps({
     type: [String, Number],
     default: 600,
   },
+  textColor: {
+    type: String,
+    default: 'currentColor',
+  },
 });
 
 defineEmits<{
@@ -130,6 +134,7 @@ const underlayStrokeColor = computed(() => {
   &-text {
     font-size: v-bind(textFontSize);
     font-weight: v-bind(textFontWeight);
+    color: v-bind(textColor);
     text-anchor: middle;
     dominant-baseline: middle;
   }
