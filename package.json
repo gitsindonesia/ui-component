@@ -78,7 +78,7 @@
     "typescript": "^4.6.2",
     "unplugin-icons": "^0.13.4",
     "vite": "^3.0.0",
-    "vitepress": "^1.0.0-alpha.60",
+    "vitepress": "^1.0.0-alpha.64",
     "vitest": "^0.28.4",
     "vitest-sonar-reporter": "^0.3.4",
     "vue-gtag": "^2.0.1",
