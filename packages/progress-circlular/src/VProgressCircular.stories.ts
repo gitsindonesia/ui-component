@@ -40,10 +40,25 @@ Indeterminate.args = {
   indeterminate: true,
 };
 
-export const CustomColor = Default.bind({});
-CustomColor.args = {
-  color: 'rose.500',
-};
+export const CustomColor: Story<{}> = (args) => ({
+  components: {
+    VProgressCircular,
+  },
+  setup() {
+    const value = ref(50);
+    return {args, value};
+  },
+  template: `
+    <VProgressCircular
+      v-bind="args"
+      v-model="value"
+      color="rose.500"
+      textColor="warning.500"
+    >
+      {{ value }}%
+    </VProgressCircular>
+  `,
+});
 
 export const CustomSize = Default.bind({});
 CustomSize.args = {

@@ -79,6 +79,10 @@ const strokeColor = computed(() => {
 const underlayStrokeColor = computed(() => {
   return getColor(props.underlayColor);
 });
+
+const computedTextColor = computed(() => {
+  return getColor(props.textColor);
+});
 </script>
 
 <template>
@@ -134,7 +138,7 @@ const underlayStrokeColor = computed(() => {
   &-text {
     font-size: v-bind(textFontSize);
     font-weight: v-bind(textFontWeight);
-    color: v-bind(textColor);
+    fill: v-bind(computedTextColor);
     text-anchor: middle;
     dominant-baseline: middle;
   }
