@@ -13,10 +13,39 @@
   color: var(--nav-drawer-text-color);
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: var(--nav-drawer-height);
   flex-shrink: 0;
   box-shadow: var(--nav-drawer-shadow);
   border: var(--nav-drawer-border);
+
+  // height
+  &--screen {
+    --nav-drawer-height: 100vh;
+  }
+
+  &--fit {
+    --nav-drawer-height: fit-content;
+  }
+
+  &--max {
+    --nav-drawer-height: max-content;
+  }
+
+  &--auto {
+    --nav-drawer-height: auto;
+  }
+
+  &--screen-dvh {
+    --nav-drawer-height: 100dvh;
+  }
+
+  &--screen-svh {
+    --nav-drawer-height: 100svh;
+  }
+
+  &--screen-lvh {
+    --nav-drawer-height: 100lvh;
+  }
 
   /* variants */
   &-default {

@@ -1,3 +1,4 @@
+import {navDrawerHeights} from './types';
 import NavDrawer from './NavDrawer.vue';
 import type {Meta, StoryFn} from '@storybook/vue3';
 import {ref} from 'vue';
@@ -293,5 +294,26 @@ export const DarkMode: StoryFn<typeof NavDrawer> = (args) => ({
       <p>Test</p>
     </NavDrawer>
   </div>
+  `,
+});
+
+export const HeightVariants: StoryFn<typeof NavDrawer> = (args) => ({
+  components: {NavDrawer},
+  setup() {
+    return {args, navDrawerHeights};
+  },
+  template: `
+    <NavDrawer
+      v-bind='args'
+      v-for="height in navDrawerHeights"
+      :key="height"
+      :height="height"
+      color="dark"
+      class="mb-4"
+    >
+      <p class="p-4">
+        {{ height }}
+      </p>
+    </NavDrawer>
   `,
 });
