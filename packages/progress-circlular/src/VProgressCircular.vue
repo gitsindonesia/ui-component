@@ -5,6 +5,7 @@ import {computed, ref} from 'vue';
 const props = defineProps({
   modelValue: {
     type: Number,
+    required: true,
   },
   size: {
     type: Number,
@@ -108,9 +109,6 @@ const underlayStrokeColor = computed(() => {
 <style lang="scss">
 .v-progress-circular {
   display: inline-block;
-  position: relative;
-  width: 100%;
-  height: 100%;
 
   &-underlay {
     stroke: v-bind(underlayStrokeColor);
