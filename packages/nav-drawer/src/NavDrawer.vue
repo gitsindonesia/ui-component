@@ -8,6 +8,7 @@ export default {
 import {useVModel} from '@vueuse/core';
 import {computed} from 'vue';
 import {Colors} from './colors';
+import {navDrawerHeights, NavDrawerHeights} from './types';
 
 export interface Props {
   color?: Colors | string;
@@ -25,6 +26,7 @@ export interface Props {
   mini?: boolean;
   expandOnHover?: boolean;
   expanded?: boolean;
+  height?: NavDrawerHeights | string;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -34,6 +36,7 @@ const props = withDefaults(defineProps<Props>(), {
   overlayTransition: 'nav-drawer-overlay-transition',
   closeOnOverlayClick: true,
   mini: false,
+  height: 'screen',
 });
 
 const emit =
@@ -86,6 +89,34 @@ const onMouseOver = () => {
 const onMouseOut = () => {
   if (props.expandOnHover) isExpanded.value = false;
 };
+
+const NAV_DRAWER_HEIGHT: Record<string, string> = {
+  screen: '100vh',
+  auto: 'auto',
+  fit: 'fit-content',
+  max: 'max-content',
+  'screen-dvh': '100dvh',
+  'screen-lvh': '100lvh',
+  'screen-svh': '100svh',
+  unset: 'unset',
+  initial: 'initial',
+  inherit: 'inherit',
+  'min-content': 'min-content',
+  revert: 'revert',
+  none: undefined,
+};
+
+const styles = computed(() => {
+  const styles: Partial<HTMLDivElement['style']> = {};
+
+  if (navDrawerHeights.includes(props.height as any)) {
+    styles.height = NAV_DRAWER_HEIGHT[props.height];
+  } else if (props.height) {
+    styles.height = props.height;
+  }
+
+  return styles;
+});
 </script>
 
 <template>
@@ -104,6 +135,7 @@ const onMouseOut = () => {
       v-if="isOpen"
       :class="classes"
       v-bind="$attrs"
+      :style="styles"
       @mouseover="onMouseOver"
       @mouseout="onMouseOut"
     >

@@ -1,3 +1,4 @@
+import {navDrawerHeights} from './types';
 import NavDrawer from './NavDrawer.vue';
 import type {Meta, StoryFn} from '@storybook/vue3';
 import {ref} from 'vue';
@@ -5,6 +6,7 @@ import Button from '@morpheme/button';
 import {colors} from './colors';
 import NavDrawerCustom from './stories/NavDrawerCustom.vue';
 import './NavDrawer.dark.scss';
+import '@morpheme/button/src/VBtn.scss';
 
 export default {
   title: 'Components/NavigationDrawer',
@@ -293,5 +295,53 @@ export const DarkMode: StoryFn<typeof NavDrawer> = (args) => ({
       <p>Test</p>
     </NavDrawer>
   </div>
+  `,
+});
+
+export const HeightVariants: StoryFn<typeof NavDrawer> = (args) => ({
+  components: {NavDrawer},
+  setup() {
+    return {args, navDrawerHeights};
+  },
+  template: `
+    <NavDrawer
+      v-bind='args'
+      v-for="height in navDrawerHeights"
+      :key="height"
+      :height="height"
+      color="dark"
+      class="mb-4"
+    >
+      <p class="p-4">
+        {{ height }}
+      </p>
+    </NavDrawer>
+    <NavDrawer
+      height="200px"
+      color="dark"
+      class="mb-4"
+    >
+      <p class="p-4">
+        Custom Prop: 200px
+      </p>
+    </NavDrawer>
+    <NavDrawer
+      color="dark"
+      height="none"
+      class="mb-4 h-[200px]"
+    >
+      <p class="p-4">
+        With custom class: h-[200px]
+      </p>
+    </NavDrawer>
+    <NavDrawer
+      height="none"
+      color="dark h-[calc(100vh-100px)]"
+      class="mb-4"
+    >
+      <p class="p-4">
+        Custom Class: h-[calc(100vh-100px)]
+      </p>
+    </NavDrawer>
   `,
 });
