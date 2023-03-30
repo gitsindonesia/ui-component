@@ -99,6 +99,10 @@ const components = [
     name: 'QuillEditor',
     href: '#quill-editor',
   },
+  {
+    name: 'ProgressCircular',
+    href: '#progress-circular',
+  },
 ];
 </script>
 

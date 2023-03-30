@@ -371,6 +371,28 @@ const quillContent = ref('');
         <VQuillEditor v-model="quillContent" />
       </ClientOnly>
     </div>
+
+    <hr class="dark:border-neutral-700" />
+    <h3 id="quill-editor" class="text-xl font-semibold">Progress Circular</h3>
+    <div>
+      <VProgressCircular :model-value="50" />
+      <VProgressCircular :model-value="50" indeterminate />
+      <VProgressCircular :model-value="50" v-slot="{value}">
+        {{ value }}%
+      </VProgressCircular>
+      <VProgressCircular color="rose.500" :model-value="50" v-slot="{value}">
+        {{ value }}%
+      </VProgressCircular>
+      <VProgressCircular
+        color="rose.500"
+        :size="80"
+        :width="8"
+        :model-value="50"
+        v-slot="{value}"
+      >
+        {{ value }}%
+      </VProgressCircular>
+    </div>
   </div>
 </template>
 
