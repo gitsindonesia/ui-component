@@ -49,14 +49,6 @@ const emit =
 const isOpen = useVModel(props, 'modelValue', emit);
 const isExpanded = useVModel(props, 'expanded', emit);
 
-const heightClass = computed(() => {
-  if (navDrawerHeights.includes(props.height as any)) {
-    return `nav-drawer--${props.height}`;
-  }
-
-  return '';
-});
-
 const classes = computed(() => {
   const shadowClass =
     typeof props.shadow === 'string'
@@ -66,7 +58,6 @@ const classes = computed(() => {
   return [
     'nav-drawer',
     `nav-drawer-${props.color}`,
-    heightClass.value,
     {
       [shadowClass]: !!props.shadow,
       'nav-drawer--bordered': props.bordered,
@@ -99,14 +90,32 @@ const onMouseOut = () => {
   if (props.expandOnHover) isExpanded.value = false;
 };
 
-const heightAttrs = computed(() => {
-  if (!navDrawerHeights.includes(props.height as any)) {
-    return {
-      height: props.height,
-    };
+const NAV_DRAWER_HEIGHT: Record<string, string> = {
+  screen: '100vh',
+  auto: 'auto',
+  fit: 'fit-content',
+  max: 'max-content',
+  'screen-dvh': '100dvh',
+  'screen-lvh': '100lvh',
+  'screen-svh': '100svh',
+  unset: 'unset',
+  initial: 'initial',
+  inherit: 'inherit',
+  'min-content': 'min-content',
+  revert: 'revert',
+  none: undefined,
+};
+
+const styles = computed(() => {
+  const styles: Partial<HTMLDivElement['style']> = {};
+
+  if (navDrawerHeights.includes(props.height as any)) {
+    styles.height = NAV_DRAWER_HEIGHT[props.height];
+  } else if (props.height) {
+    styles.height = props.height;
   }
 
-  return {};
+  return styles;
 });
 </script>
 
@@ -125,7 +134,8 @@ const heightAttrs = computed(() => {
     <aside
       v-if="isOpen"
       :class="classes"
-      v-bind="{...$attrs, ...heightAttrs}"
+      v-bind="$attrs"
+      :style="styles"
       @mouseover="onMouseOver"
       @mouseout="onMouseOut"
     >

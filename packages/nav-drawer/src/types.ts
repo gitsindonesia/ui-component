@@ -6,6 +6,12 @@ export const navDrawerHeights = [
   'screen-dvh',
   'screen-svh',
   'screen-lvh',
+  'unset',
+  'initial',
+  'inherit',
+  'min-content',
+  'revert',
+  'none',
 ] as const;
 
 export type NavDrawerHeights = typeof navDrawerHeights[number];

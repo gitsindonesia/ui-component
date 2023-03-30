@@ -316,5 +316,32 @@ export const HeightVariants: StoryFn<typeof NavDrawer> = (args) => ({
         {{ height }}
       </p>
     </NavDrawer>
+    <NavDrawer
+      height="200px"
+      color="dark"
+      class="mb-4"
+    >
+      <p class="p-4">
+        Custom Prop: 200px
+      </p>
+    </NavDrawer>
+    <NavDrawer
+      color="dark"
+      height="none"
+      class="mb-4 h-[200px]"
+    >
+      <p class="p-4">
+        With custom class: h-[200px]
+      </p>
+    </NavDrawer>
+    <NavDrawer
+      height="none"
+      color="dark h-[calc(100vh-100px)]"
+      class="mb-4"
+    >
+      <p class="p-4">
+        Custom Class: h-[calc(100vh-100px)]
+      </p>
+    </NavDrawer>
   `,
 });
