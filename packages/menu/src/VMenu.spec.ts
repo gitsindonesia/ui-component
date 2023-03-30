@@ -1,5 +1,5 @@
 import {mount} from '@vue/test-utils';
-import {describe, expect, test} from 'vitest';
+
 import VMenu from './VMenu.vue';
 import {createRouter, createWebHistory} from 'vue-router';
 
@@ -24,7 +24,7 @@ describe('VMenu', () => {
         menu: {
           text: 'Text',
           to: '/',
-          icon: 'test-icon'
+          icon: 'test-icon',
         },
       },
       global: {

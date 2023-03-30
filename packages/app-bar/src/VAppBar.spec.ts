@@ -4,7 +4,7 @@ import {
   defaultShadows,
   defaultSizes,
 } from '@morpheme/theme/defaultTheme';
-import {describe, expect, it, test} from 'vitest';
+
 import VAppBar from './VAppBar.vue';
 import {defineComponent, ref} from 'vue';
 import {createRouter, createWebHistory} from 'vue-router';
@@ -166,7 +166,7 @@ describe('VAppBar', () => {
       </div>
     `;
 
-    it('hide app bar on scroll', async () => {
+    test('hide app bar on scroll', async () => {
       const WrapperComponent = defineComponent({
         components: {
           VAppBar,
@@ -191,7 +191,7 @@ describe('VAppBar', () => {
   });
 
   describe('when elevateOnScroll true', () => {
-    it('add shadow to app bar', async () => {
+    test('add shadow to app bar', async () => {
       const WrapperComponent = defineComponent({
         components: {
           VAppBar,

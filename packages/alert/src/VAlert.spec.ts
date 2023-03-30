@@ -1,12 +1,11 @@
 import {mount} from '@vue/test-utils';
-import {describe, expect, it} from 'vitest';
 import VAlert from './VAlert.vue';
 import Icon from '@morpheme/icon';
 
 const ALERT_TEXT = 'Alert text';
 
 describe('VAlert', () => {
-  it('render properly with default props and slot', () => {
+  test('render properly with default props and slot', () => {
     const wrapper = mount(VAlert);
 
     expect(wrapper).toBeDefined();
@@ -14,7 +13,7 @@ describe('VAlert', () => {
   });
 
   describe('when color props changed', () => {
-    it('is return provided color props value', () => {
+    test('is return provided color props value', () => {
       const wrapper = mount(VAlert, {
         props: {
           color: 'primary',
@@ -26,7 +25,7 @@ describe('VAlert', () => {
   });
 
   describe('when icon props provided', () => {
-    it('is render icon component', () => {
+    test('is render icon component', () => {
       const wrapper = mount(VAlert, {
         props: {
           icon: 'test-icon',
@@ -41,7 +40,7 @@ describe('VAlert', () => {
   });
 
   describe('when iconClass props provided', () => {
-    it('will be add custom class on icon component', () => {
+    test('will be add custom class on icon component', () => {
       const wrapper = mount(VAlert, {
         props: {
           icon: 'test-icon',
@@ -58,7 +57,7 @@ describe('VAlert', () => {
     });
 
     describe('when dismissable is true', () => {
-      it('render dismissable button', () => {
+      test('render dismissable button', () => {
         const wrapper = mount(VAlert, {
           props: {
             icon: 'test-icon',
@@ -74,7 +73,7 @@ describe('VAlert', () => {
       });
 
       describe('and when button dismissable clicked', () => {
-        it('hide the alert component', async () => {
+        test('hide the alert component', async () => {
           const wrapper = mount(VAlert, {
             props: {
               icon: 'test-icon',
@@ -96,7 +95,7 @@ describe('VAlert', () => {
     });
 
     describe('when outlined props is true', () => {
-      it('render outlined class', () => {
+      test('render outlined class', () => {
         const wrapper = mount(VAlert, {
           props: {
             outlined: true,
@@ -108,7 +107,7 @@ describe('VAlert', () => {
     });
 
     describe('when solid props is true', () => {
-      it('render solid class', () => {
+      test('render solid class', () => {
         const wrapper = mount(VAlert, {
           props: {
             solid: true,
@@ -120,7 +119,7 @@ describe('VAlert', () => {
     });
 
     describe('when border props is true', () => {
-      it('render bordered class', () => {
+      test('render bordered class', () => {
         const wrapper = mount(VAlert, {
           props: {
             border: true,
@@ -133,7 +132,7 @@ describe('VAlert', () => {
   });
 
   describe('when default slot replaced', () => {
-    it('render with new slot', () => {
+    test('render with new slot', () => {
       const wrapper = mount(VAlert, {
         props: {
           dismissable: true,

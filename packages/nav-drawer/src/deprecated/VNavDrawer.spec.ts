@@ -1,5 +1,5 @@
 import {mount, RouterLinkStub} from '@vue/test-utils';
-import {describe, expect, test} from 'vitest';
+
 import VNavDrawer from './VNavDrawer.vue';
 
 describe('VNavDrawer', () => {
@@ -9,8 +9,8 @@ describe('VNavDrawer', () => {
     const wrapper = mount(VNavDrawer, {
       global: {
         stubs: {
-          RouterLink: RouterLinkStub
-        }
+          RouterLink: RouterLinkStub,
+        },
       },
       props: {
         modelValue: true,

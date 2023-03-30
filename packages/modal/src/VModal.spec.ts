@@ -1,5 +1,3 @@
-import {mount} from '@vue/test-utils';
-import {describe, expect, test, beforeEach} from 'vitest';
 import VModal from './VModal.vue';
 
 describe('VModal', () => {

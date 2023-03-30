@@ -1,5 +1,5 @@
 import {mount, flushPromises} from '@vue/test-utils';
-import {describe, expect, test} from 'vitest';
+
 import VCheckbox from './VCheckbox.vue';
 import {defineComponent, ref} from 'vue';
 import waitForExpect from 'wait-for-expect';
@@ -16,7 +16,7 @@ describe('VCheckbox', () => {
       },
     });
 
-    expect(wrapper).toBeDefined()
+    expect(wrapper).toBeDefined();
   });
 
   test('render label', () => {
@@ -28,32 +28,29 @@ describe('VCheckbox', () => {
     });
 
     expect(wrapper.text()).toContain('Label');
-  })
+  });
 
   test('render hint', () => {
     const wrapper = mount(VCheckbox, {
       props: {
         modelValue: false,
-        hint: 'Hint'
+        hint: 'Hint',
       },
     });
 
     expect(wrapper.text()).toContain('Hint');
-  })
+  });
 
   test('can show error message when validation error', async () => {
-    const errorClass = 'v-checkbox-error'
-    const errorMessage = 'You must agree to terms and condition'
+    const errorClass = 'v-checkbox-error';
+    const errorMessage = 'You must agree to terms and condition';
     const WrapperComponent = defineComponent({
       components: {
         VCheckbox,
       },
       setup() {
         const schema = object({
-          test: boolean()
-            .oneOf([true], errorMessage)
-            .required()
-            .label('Test'),
+          test: boolean().oneOf([true], errorMessage).required().label('Test'),
         });
 
         const {handleSubmit} = useForm({

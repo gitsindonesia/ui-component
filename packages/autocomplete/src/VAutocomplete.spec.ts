@@ -1,5 +1,5 @@
 import {flushPromises, mount} from '@vue/test-utils';
-import {describe, expect, it, test} from 'vitest';
+
 import VAutocomplete from './VAutocomplete.vue';
 import {ComboboxLabel, ComboboxOption} from '@headlessui/vue';
 import {defineComponent} from 'vue';
@@ -50,7 +50,7 @@ describe('VAutocomplete', () => {
   });
 
   describe('when typing an input', () => {
-    it('show list filtered', async () => {
+    test('show list filtered', async () => {
       const wrapper = mount(VAutocomplete, {
         props: {
           modelValue: undefined,
@@ -99,7 +99,7 @@ describe('VAutocomplete', () => {
   });
 
   describe('when one of list clicked', () => {
-    it('is item selected', async () => {
+    test('is item selected', async () => {
       const wrapper = mount(VAutocomplete, {
         props: {
           searchBy: 'text',
@@ -125,7 +125,7 @@ describe('VAutocomplete', () => {
   });
 
   describe('when clearable is true', () => {
-    it('button to clear is appear on selected', async () => {
+    test('button to clear is appear on selected', async () => {
       const wrapper = mount(VAutocomplete, {
         props: {
           searchBy: 'text',
@@ -148,7 +148,7 @@ describe('VAutocomplete', () => {
     });
 
     describe.skip('and when the clear button clicked', () => {
-      it('remove selected', async () => {
+      test('remove selected', async () => {
         const wrapper = mount(VAutocomplete, {
           attachTo: document.body,
           props: {
@@ -180,7 +180,7 @@ describe('VAutocomplete', () => {
   });
 
   describe('when label provided', () => {
-    it('render label', () => {
+    test('render label', () => {
       const wrapper = mount(VAutocomplete, {
         props: {
           searchBy: 'text',
@@ -200,7 +200,7 @@ describe('VAutocomplete', () => {
   });
 
   describe('when searched empty', () => {
-    it('show no data text', async () => {
+    test('show no data text', async () => {
       const wrapper = mount(VAutocomplete, {
         props: {
           searchBy: 'text',
@@ -222,7 +222,7 @@ describe('VAutocomplete', () => {
   });
 
   describe('when use with validation', () => {
-    it('can show error message when error appear', async () => {
+    test('can show error message when error appear', async () => {
       const WrapperComponent = defineComponent({
         components: {
           VAutocomplete,
@@ -272,7 +272,7 @@ describe('VAutocomplete', () => {
   });
 
   describe('when use with hints', () => {
-    it('render hint', () => {
+    test('render hint', () => {
       const wrapper = mount(VAutocomplete, {
         props: {
           searchBy: 'text',
@@ -280,12 +280,11 @@ describe('VAutocomplete', () => {
           placeholder: 'Search...',
           items,
           label: 'Label test',
-          hint: 'Hint Test'
+          hint: 'Hint Test',
         },
       });
-      
-      expect(wrapper.text()).toContain('Hint Test')
-    })
 
-  })
+      expect(wrapper.text()).toContain('Hint Test');
+    });
+  });
 });

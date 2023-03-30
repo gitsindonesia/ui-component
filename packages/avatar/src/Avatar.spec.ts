@@ -1,10 +1,9 @@
-import {describe, it, expect} from 'vitest';
 import {mount} from '@vue/test-utils';
 import Avatar from './Avatar.vue';
 import {defaultColors, defaultSizes} from '@morpheme/theme/defaultTheme';
 
 describe('Avatar', () => {
-  it('render properly with initial name', () => {
+  test('render properly with initial name', () => {
     const wrapper = mount(Avatar, {
       props: {
         color: 'primary',
@@ -16,7 +15,7 @@ describe('Avatar', () => {
     expect(wrapper.text()).toContain('T');
   });
 
-  it('render properly with provided colors', () => {
+  test('render properly with provided colors', () => {
     defaultColors.forEach((color) => {
       const wrapper = mount(Avatar, {
         props: {
@@ -30,7 +29,7 @@ describe('Avatar', () => {
   });
 
   describe('when size is provided', () => {
-    it('render properly with default size list', () => {
+    test('render properly with default size list', () => {
       defaultSizes.forEach((size) => {
         const wrapper = mount(Avatar, {
           props: {
@@ -43,7 +42,7 @@ describe('Avatar', () => {
       });
     });
 
-    it('render properly with width and height from size props', () => {
+    test('render properly with width and height from size props', () => {
       const wrapper = mount(Avatar, {
         props: {
           color: 'primary',
@@ -59,7 +58,7 @@ describe('Avatar', () => {
   });
 
   describe('when avatar is an image', () => {
-    it('render avatar image with provided size', () => {
+    test('render avatar image with provided size', () => {
       const wrapper = mount(Avatar, {
         props: {
           src: '/test.png',
@@ -72,7 +71,7 @@ describe('Avatar', () => {
       expect(wrapper.find('.avatar-image').attributes('height')).toEqual('30');
     });
 
-    it('render avatar image without provided size', () => {
+    test('render avatar image without provided size', () => {
       const wrapper = mount(Avatar, {
         props: {
           src: '/test.png',

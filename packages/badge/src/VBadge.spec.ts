@@ -1,5 +1,5 @@
 import {mount} from '@vue/test-utils';
-import {describe, expect, test} from 'vitest';
+
 import VBadge from './VBadge.vue';
 
 describe('VBadge', () => {

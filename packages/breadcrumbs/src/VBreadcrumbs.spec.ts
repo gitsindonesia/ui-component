@@ -1,5 +1,5 @@
 import {mount, RouterLinkStub} from '@vue/test-utils';
-import {describe, expect, test} from 'vitest';
+
 import VBreadcrumbs from './VBreadcrumbs.vue';
 
 describe('VBreadcrumbs', () => {

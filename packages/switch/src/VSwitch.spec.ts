@@ -1,6 +1,5 @@
 import {flushPromises, mount} from '@vue/test-utils';
 import VSwitch from './VSwitch.vue';
-import {test, expect, describe} from 'vitest';
 import {defineComponent, ref} from 'vue';
 import waitForExpect from 'wait-for-expect';
 import {boolean, object} from 'yup';
@@ -61,8 +60,8 @@ describe('VSwitch', () => {
   });
 
   test('can show error message when error appear', async () => {
-    const errorClass = 'v-switch--error'
-    const errorMessage = 'You must agree to terms and condition'
+    const errorClass = 'v-switch--error';
+    const errorMessage = 'You must agree to terms and condition';
 
     const WrapperComponent = defineComponent({
       components: {
@@ -70,10 +69,7 @@ describe('VSwitch', () => {
       },
       setup() {
         const schema = object({
-          test: boolean()
-            .oneOf([true], errorMessage)
-            .required()
-            .label('Test'),
+          test: boolean().oneOf([true], errorMessage).required().label('Test'),
         });
 
         const {handleSubmit} = useForm({

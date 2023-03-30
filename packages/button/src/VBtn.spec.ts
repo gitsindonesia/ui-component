@@ -1,6 +1,5 @@
 import {mount} from '@vue/test-utils';
 import VBtn from './VBtn.vue';
-import {test, expect, describe} from 'vitest';
 
 const BUTTON_TEXT = 'My Button';
 

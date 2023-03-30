@@ -1,5 +1,5 @@
 import {mount, RouterLinkStub} from '@vue/test-utils';
-import {describe, expect, test} from 'vitest';
+
 import Default from './Default.vue';
 
 describe('Default', () => {
@@ -17,7 +17,7 @@ describe('Default', () => {
         stubs: {
           RouterLink: RouterLinkStub,
           RouterView: true,
-        }
+        },
       },
       props: {},
     });

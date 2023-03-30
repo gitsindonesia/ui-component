@@ -1,10 +1,8 @@
-import {describe, it, expect} from 'vitest';
-
 import {mount} from '@vue/test-utils';
 import BottomSheet from './BottomSheet.vue';
 
 describe('BottomSheet', () => {
-  it('renders properly', () => {
+  test('renders properly', () => {
     const wrapper = mount(BottomSheet, {
       props: {
         modelValue: true,

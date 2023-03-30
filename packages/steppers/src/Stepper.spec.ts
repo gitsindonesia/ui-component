@@ -1,4 +1,3 @@
-import {test, expect} from 'vitest';
 import {mount} from '@vue/test-utils';
 import Stepper from '../src/Stepper.vue';
 import {createRouter, createWebHistory} from 'vue-router';

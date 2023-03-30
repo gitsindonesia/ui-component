@@ -1,18 +1,16 @@
 import {defineConfig} from 'vite';
 import vue from '@vitejs/plugin-vue';
 import {resolve} from 'path';
-import Icons from 'unplugin-icons/vite';
-import {configDefaults} from 'vitest/config';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
-    Icons({
-      compiler: 'vue3',
-      // expiremental
-      autoInstall: true,
-    }),
+    // Icons({
+    //   compiler: 'vue3',
+    //   // expiremental
+    //   autoInstall: true,
+    // }),
   ],
   esbuild: {
     exclude: ['./src/**/**.stories.ts'],
@@ -48,14 +46,8 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    include: ['packages/**/*.{test,spec}.{js,ts}'],
-    exclude: [
-      ...configDefaults.exclude,
-      'dist',
-      '!**/dist/**/*',
-      'node_modules',
-      '!**/node_modules/**/*',
-    ],
+    // include: ['packages/**/*.{test,spec}.{js,ts}'],
+    // exclude: [...configDefaults.exclude, 'dist', 'examples', 'docs', 'starter'],
     // setupFiles: "./test/unit/setup-test.ts",
     coverage: {
       provider: 'c8',
@@ -66,6 +58,6 @@ export default defineConfig({
       json: 'coverage/test-report.json',
       'vitest-sonar-reporter': 'coverage/test-report.xml',
     },
-    threads: false,
+    // threads: false,
   },
 });

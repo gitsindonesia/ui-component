@@ -1,5 +1,5 @@
 import {mount, RouterLinkStub} from '@vue/test-utils';
-import {describe, expect, test} from 'vitest';
+
 import Login from './Login.vue';
 
 describe('Login', () => {
@@ -9,8 +9,8 @@ describe('Login', () => {
     const wrapper = mount(Login, {
       global: {
         stubs: {
-          RouterLink: RouterLinkStub
-        }
+          RouterLink: RouterLinkStub,
+        },
       },
       props: {},
     });
