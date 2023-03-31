@@ -1,19 +1,39 @@
 import {mount} from '@vue/test-utils';
 import VBtn from './VBtn.vue';
 
-const BUTTON_TEXT = 'My Button';
-
 describe('VBtn', () => {
-  test('mount component', async () => {
-    expect(VBtn).toBeTruthy();
-
+  it('renders button text when passed', () => {
     const wrapper = mount(VBtn, {
-      props: {},
+      props: {
+        text: true,
+      },
       slots: {
-        default: BUTTON_TEXT,
+        default: 'Click me',
       },
     });
 
-    expect(wrapper.text()).toContain(BUTTON_TEXT);
+    expect(wrapper.text()).toMatch('Click me');
+  });
+
+  it('emits click event when clicked', async () => {
+    const wrapper = mount(VBtn);
+
+    await wrapper.trigger('click');
+
+    expect(wrapper.emitted('click')).toHaveLength(1);
+  });
+
+  it('disables the button when passed the disabled prop', async () => {
+    const wrapper = mount(VBtn, {
+      props: {
+        disabled: true,
+      },
+    });
+
+    expect(wrapper.attributes('disabled')).toBeDefined();
+
+    await wrapper.trigger('click');
+
+    expect(wrapper.emitted('click')).toBeUndefined();
   });
 });
