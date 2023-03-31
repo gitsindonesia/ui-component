@@ -39,12 +39,22 @@ const style = computed(() => {
 });
 
 loadIconComponent();
+
+const ariaProps = {
+  'aria-hidden': true
+}
 </script>
 
 <template>
-  <span v-if="isFetching" :class="classes" :style="style" />
-  <Iconify v-else-if="icon" :icon="icon" :class="classes" :style="style" />
-  <span v-else>{{ name }}</span>
+  <span v-if="isFetching" :class="classes" :style="style" v-bind="ariaProps" />
+  <Iconify
+    v-else-if="icon"
+    :icon="icon"
+    :class="classes"
+    :style="style"
+    v-bind="ariaProps"
+  />
+  <span v-else v-bind="ariaProps">{{ name }}</span>
 </template>
 
 <style src="./Icon.scss" lang="scss"></style>
