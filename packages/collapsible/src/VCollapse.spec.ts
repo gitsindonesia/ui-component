@@ -1,18 +1,23 @@
 import {mount} from '@vue/test-utils';
-
 import VCollapse from './VCollapse.vue';
 
 describe('VCollapse', () => {
-  test('mount component', () => {
-    expect(VCollapse).toBeTruthy();
-
+  it('should toggle the visibility of the content', async () => {
     const wrapper = mount(VCollapse, {
-      props: {},
       slots: {
-        default: 'Text',
+        default: '<div class="content">Content</div>',
       },
     });
 
-    expect(wrapper.text()).toContain('Text');
+    // Trigger toggle
+    wrapper.setProps({show: false});
+    await wrapper.vm.$nextTick();
+
+    // Content should be hidden
+    expect(wrapper.find('.content').isVisible()).toBe(false);
+
+    // Trigger toggle again
+    wrapper.setProps({show: true});
+    await wrapper.vm.$nextTick();
   });
 });
