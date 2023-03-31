@@ -38,11 +38,15 @@ const open = () => (isOpen.value = true);
 const close = () => (isOpen.value = false);
 
 const setHeight = (height: string | number) => {
+  if (!bottomSheetRef.value) return;
+
   bottomSheetRef.value!.style.height = height as string;
 };
 
 const getHeight = () => {
-  const height = bottomSheetRef.value!.clientHeight;
+  if (!bottomSheetRef.value) return 0;
+
+  const height = bottomSheetRef.value.clientHeight;
   return (height / window.innerHeight) * 100;
 };
 
@@ -56,6 +60,13 @@ const api: BottomSheetApi = {
 };
 
 provide(BottomSheetInjectionKey, api);
+
+defineExpose({
+  close,
+  open,
+  setHeight,
+  getHeight,
+});
 </script>
 
 <template>
