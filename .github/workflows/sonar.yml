@@ -5,7 +5,7 @@ on:
       - main # or the name of your main branch
 jobs:
   build:
-    name: Build
+    name: Coverage and Sonar
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -15,9 +15,15 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16.x'
-      - run: npm i -g lerna
+      - run: npm i -g lerna pnpm
       - run: lerna bootstrap
       - run: lerna run build
+      - run: cd starter/nuxt-admin && pnpm install
+      - run: cd starter/nuxt-auth && pnpm install
+      - run: cd starter/nuxt-commerce && pnpm install
+      - run: cd starter/nuxt-minimal && pnpm install
+      - run: cd starter/vue && pnpm install
+      - run: cd examples/nuxt-layer && pnpm install
       - run: yarn coverage
       - uses: sonarsource/sonarqube-scan-action@master
         env:
