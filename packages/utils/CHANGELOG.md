@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.7](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.6...v1.0.0-beta.7) (2023-04-03)
+
+
+### Features
+
+* **VProgressCircular:** add new `VProgressCircular` component ([#167](https://github.com/gitsindonesia/ui-component/issues/167)) ([be7031a](https://github.com/gitsindonesia/ui-component/commit/be7031a1c5995ce77b8611cc709886056ffa36f3))
+* **VTimeline:** add a new `VTimeline` component ([#171](https://github.com/gitsindonesia/ui-component/issues/171)) ([93e3105](https://github.com/gitsindonesia/ui-component/commit/93e3105ce917c300e1afc7f3870a0b09cfd93145))
+
+
+
+
+
 # [1.0.0-beta.6](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2023-03-27)
 
 **Note:** Version bump only for package @morpheme/utils

@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.7](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.6...v1.0.0-beta.7) (2023-04-03)
+
+
+### Bug Fixes
+
+* **VBottomSheet:** handle possible nullish value ([6ec539f](https://github.com/gitsindonesia/ui-component/commit/6ec539f862694afd34e0ef6edc551ceee1d88f1a))
+* **VText:** fix package export ([#164](https://github.com/gitsindonesia/ui-component/issues/164)) ([c17b8c3](https://github.com/gitsindonesia/ui-component/commit/c17b8c3511aca13bcae7c81cbf618702b00fd45e))
+
+
+### Features
+
+* **VAppBar:** configurable `VAppBar` z-index ([40a90bd](https://github.com/gitsindonesia/ui-component/commit/40a90bd0601646ff347c5c53bd64779635775cd0))
+* **VAppShell:** add new `VAppShell` component ([#165](https://github.com/gitsindonesia/ui-component/issues/165)) ([a73e4d3](https://github.com/gitsindonesia/ui-component/commit/a73e4d3a4c85983982fdbf63e8e3f5b6678e4174))
+* **VIcon:** add aria-hidden attribute & add test ([#168](https://github.com/gitsindonesia/ui-component/issues/168)) ([638996d](https://github.com/gitsindonesia/ui-component/commit/638996d74b0aab67da606caf15cbb54fff80d97f))
+* **VNavDrawer:** add new NavDrawer height variants ([#166](https://github.com/gitsindonesia/ui-component/issues/166)) ([839cac8](https://github.com/gitsindonesia/ui-component/commit/839cac8487fefc4f492c992b6a17bb4de82f530c))
+* **VProgressCircular:** add new `VProgressCircular` component ([#167](https://github.com/gitsindonesia/ui-component/issues/167)) ([be7031a](https://github.com/gitsindonesia/ui-component/commit/be7031a1c5995ce77b8611cc709886056ffa36f3))
+* **VTimeline:** add a new `VTimeline` component ([#171](https://github.com/gitsindonesia/ui-component/issues/171)) ([93e3105](https://github.com/gitsindonesia/ui-component/commit/93e3105ce917c300e1afc7f3870a0b09cfd93145))
+
+
+
+
+
 # [1.0.0-beta.6](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2023-03-27)
 
 

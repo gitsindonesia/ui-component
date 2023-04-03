@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/text",
-  "version": "1.0.0-beta.6",
+  "version": "1.0.0-beta.7",
   "description": "Morpheme Text Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -19,7 +19,7 @@
     "vue": "^3.2.31"
   },
   "devDependencies": {
-    "@morpheme/tailwind-config": "^1.0.0-beta.6",
+    "@morpheme/tailwind-config": "^1.0.0-beta.7",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
     "tailwindcss": "^3.0.23",

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.7](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.6...v1.0.0-beta.7) (2023-04-03)
+
+
+### Bug Fixes
+
+* **VText:** fix package export ([#164](https://github.com/gitsindonesia/ui-component/issues/164)) ([c17b8c3](https://github.com/gitsindonesia/ui-component/commit/c17b8c3511aca13bcae7c81cbf618702b00fd45e))
+
+
+
+
+
 # [1.0.0-beta.6](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2023-03-27)
 
 
