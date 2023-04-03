@@ -1,0 +1,75 @@
+.v-timeline {
+  $c: &;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 1rem; // 16px
+
+  &-divider {
+    position: absolute;
+    top: 0;
+    left: 1.2rem;
+    width: 1px;
+    height: 100%;
+    border-right: 2px solid #eaecf0; // gray.200;
+    z-index: -1;
+  }
+
+  &-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem; // 14px
+
+    &-dot {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      position: relative;
+      top: -4px;
+      border: 4px solid white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.25rem;
+    }
+
+    &-content {
+      flex: 1;
+    }
+  }
+
+  // dashed style
+  &--dashed {
+    #{$c}-divider {
+      border-style: dashed;
+    }
+  }
+
+  // horizontal style
+  &--horizontal {
+    flex-direction: row;
+    gap: 1.5rem; // 24px
+
+    #{$c}-divider {
+      top: 1.2rem;
+      left: 1rem;
+      width: calc(100% - 2rem);
+      height: 1px;
+      border-right: none;
+      border-bottom: 2px solid #eaecf0; // gray.200;
+    }
+
+    #{$c}-item {
+      flex-direction: column;
+      gap: 0.5rem; // 14px
+
+      &-dot {
+        margin-left: 0.5rem;
+      }
+
+      &-content {
+        padding: 0 1rem;
+      }
+    }
+  }
+}

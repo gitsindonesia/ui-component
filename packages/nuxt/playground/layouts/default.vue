@@ -103,6 +103,10 @@ const components = [
     name: 'ProgressCircular',
     href: '#progress-circular',
   },
+  {
+    name: 'Timeline',
+    href: '#timeline',
+  },
 ];
 </script>
 

@@ -22,7 +22,9 @@ export const mappedColors: Record<ColorVariants | string, string> = {
  *
  * @param colorName string
  */
-export function getColor(colorName: string) {
+export function getColor(colorName?: string) {
+  if (!colorName) return;
+
   const isCustomColor = !Object.keys(mappedColors).includes(colorName);
 
   let defaultColor = colorName ?? undefined;
