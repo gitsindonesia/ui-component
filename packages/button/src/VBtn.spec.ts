@@ -1,4 +1,4 @@
-import {mount, RouterLinkStub} from '@vue/test-utils';
+import {mount} from '@vue/test-utils';
 import VBtn from './VBtn.vue';
 
 describe('VBtn', () => {
