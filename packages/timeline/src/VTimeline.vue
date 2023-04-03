@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import VTimelineDivider from './VTimelineDivider.vue';
+
 withDefaults(
   defineProps<{
     dashed?: boolean;
@@ -17,7 +19,7 @@ withDefaults(
     }"
   >
     <slot name="divider">
-      <li class="v-timeline-divider" />
+      <VTimelineDivider />
     </slot>
     <slot />
   </ol>
