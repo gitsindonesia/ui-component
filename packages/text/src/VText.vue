@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import {type Component, computed} from 'vue';
-import { FontWeightVariants, TextVariants, ColorVariants, mappedColors } from './variants';
-import {colors} from '@morpheme/design-tokens/js/tailwind';
-import { get } from './helpers';
+import type { FontWeightVariants, TextVariants } from './variants';
+import {getColor, type ColorVariants, mappedColors} from '@morpheme/utils'
 
 type Props = {
   variant?: TextVariants
@@ -22,14 +21,7 @@ const isCustomColor = computed(() => {
 })
 
 const computedStyles = computed(() => {
-  let defaultColor = props.color ?? undefined
-
-  if (isCustomColor.value) {
-    const color = get(colors, props.color, defaultColor)
-    return {color}
-  }
-
-  const color = get(colors, mappedColors[props.color], defaultColor)
+  const color = getColor(props.color)
   return {color}
 })
 </script>

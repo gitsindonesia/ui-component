@@ -1,6 +1,7 @@
 import VText from './VText.vue';
 import {Meta, StoryFn} from '@storybook/vue3';
-import {textVariants, fontWeightVariants, colorVariants} from './variants';
+import {textVariants, fontWeightVariants} from './variants';
+import {colorVariants} from '@morpheme/utils';
 
 export default {
   title: 'Components/Text',

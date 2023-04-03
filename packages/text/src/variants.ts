@@ -26,19 +26,3 @@ export const fontWeightVariants = [
 ] as const;
 
 export type FontWeightVariants = typeof fontWeightVariants[number];
-
-export const colorVariants = [
-  'primary',
-  'warning',
-  'error',
-  'success',
-] as const;
-
-export type ColorVariants = typeof colorVariants[number] | string;
-
-export const mappedColors: Record<ColorVariants | string, string> = {
-  primary: 'primary.500',
-  warning: 'warning.500',
-  error: 'error.500',
-  success: 'success.500',
-};

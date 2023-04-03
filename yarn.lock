@@ -2744,10 +2744,10 @@
   resolved "https://registry.yarnpkg.com/@mdx-js/util/-/util-1.6.22.tgz#219dfd89ae5b97a8801f015323ffa4b62f45718b"
   integrity sha512-H1rQc1ZOHANWBvPcW+JpGwr+juXSxM8Q8YCkm3GhZd8REu1fHR3z99CErO1p9pkcfcxZnMdIZdIsXkOHY0NilA==
 
-"@morpheme/design-tokens@^0.1.0-alpha.2":
-  version "0.1.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/@morpheme/design-tokens/-/design-tokens-0.1.0-alpha.2.tgz#fde48e2eadae8b3aeafea62516ba22bbab2fdecd"
-  integrity sha512-fxgM9//m5vxnaG/hc7HTJNPXyRDuBjgd0RpeRQAIHAV7SBwi+QWzgeUqaIiOgnwW2i+R1tLAB1Cx02uUMIHLdQ==
+"@morpheme/design-tokens@^0.1.0-alpha.3":
+  version "0.1.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/@morpheme/design-tokens/-/design-tokens-0.1.0-alpha.3.tgz#739e9450f383ca14c14a21c54aa6e5c5556720d2"
+  integrity sha512-4nrLUXn0hfrGsso2xR6+e0b1A+QVnl9qkgEF2+INddiJxAeHcnpo6KVAk1aCnvEz2qpNjmYxMSGN0jYafYgA3A==
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
