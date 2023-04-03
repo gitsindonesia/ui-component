@@ -10,6 +10,7 @@ import '@morpheme/text/dist/style.css';
 import '@morpheme/icon/dist/style.css';
 import '@morpheme/button/dist/style.css';
 import './VTimeline.scss';
+import './VTimeline.dark.scss';
 
 export default {
   title: 'Components/Timeline',
@@ -85,27 +86,29 @@ export const Default: Story<{}> = (args) => ({
     VBtn,
   },
   template: `
-<VTimeline v-bind="args">
-  <VTimelineItem v-for="item in items" :key="item.title">
-    <VTimelineItemDot v-bind="item.dot">
-      <VIcon :name="item.icon" size="xs" />
-    </VTimelineItemDot>
-    <VTimelineItemContent>
-      <VText font-weight="semibold">
-        {{ item.title }}
-      </VText>
-      <VText variant="sm" color="gray.500" class="mt-1">
-        Published on {{ item.date }}
-      </VText>
-      <VText color="gray.600" class="mt-1">
-        {{ item.description }}
-      </VText>
-      <VBtn v-if="item.button" class="mt-4">
-        {{ item.button }}
-      </VBtn>
-    </VTimelineItemContent>
-  </VTimelineItem>
-</VTimeline>
+<div :class="args.dark ? 'dark dark:bg-neutral-900 dark:text-neutral-200 p-6' : ''">
+  <VTimeline v-bind="args">
+    <VTimelineItem v-for="item in items" :key="item.title">
+      <VTimelineItemDot v-bind="item.dot">
+        <VIcon :name="item.icon" size="xs" :class="args.dark ? '!text-current' : ''" />
+      </VTimelineItemDot>
+      <VTimelineItemContent>
+        <VText font-weight="semibold">
+          {{ item.title }}
+        </VText>
+        <VText variant="sm" color="gray.500" class="mt-1">
+          Published on {{ item.date }}
+        </VText>
+        <VText color="gray.600" class="mt-1">
+          {{ item.description }}
+        </VText>
+        <VBtn v-if="item.button" class="mt-4">
+          {{ item.button }}
+        </VBtn>
+      </VTimelineItemContent>
+    </VTimelineItem>
+  </VTimeline>
+</div>
   `,
 });
 
@@ -211,3 +214,8 @@ export const StyledContent: Story<{}> = (args) => ({
 </VTimeline>
   `,
 });
+
+export const Dark = Default.bind({});
+Dark.args = {
+  dark: true,
+};
