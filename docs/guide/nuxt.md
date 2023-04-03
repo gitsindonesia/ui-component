@@ -30,7 +30,7 @@ yarn add --dev sass
 
 ```ts
 export default defineNuxtConfig({
-  modules: ['@morpheme/ui-nuxt', '@nuxtjs/tailwindcss'],
+  modules: ['@morpheme/nuxt', '@nuxtjs/tailwindcss'],
   morpheme: {
     // configuration options for Morpheme UI go here
   },
@@ -180,13 +180,11 @@ defaults: {
 ```
 
 Config example:
+
 ```ts {8-11}
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: [
-    '@morpheme/nuxt',
-    '@nuxtjs/tailwindcss',
-  ],
+  modules: ['@morpheme/nuxt', '@nuxtjs/tailwindcss'],
   // https://gitsindonesia.github.io/ui-component/guide/nuxt.html#options
   morpheme: {
     // enable dark mode
