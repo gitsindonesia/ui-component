@@ -1,5 +1,16 @@
 # Migration Guide
 
+## 1.0.0-beta.6
+
+**BREAKING CHANGE**: nuxt option renamed from `gitsUi` to `morpheme`
+
+```ts
+export default defineNuxtConfig({
+  modules: ['@morpheme/nuxt'],
+  gitsUi: {}, // [!code --]
+  morpheme: {}, // [!code ++]
+});
+```
 
 ## From GITS UI to Morpheme UI (`1.0.0-beta.5`)
 
@@ -94,7 +105,6 @@ export default defineNuxtConfig({
 });
 ```
 
-
 Then, run install the dependencies:
 
 ```bash
@@ -120,9 +130,7 @@ import {VBtn} from '@morpheme/ui'; // [!code ++]
 </script>
 
 <template>
-  <div>
-    ...
-  </div>
+  <div>...</div>
 </template>
 ```
 
@@ -139,7 +147,6 @@ module.exports = {
   presets: [require('@morpheme/tailwind-config/preset')], // [!code ++]
 };
 ```
-
 
 ## `0.11.0`...`0.11.2`
 
