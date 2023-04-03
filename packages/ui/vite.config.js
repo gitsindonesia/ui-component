@@ -63,6 +63,7 @@ export default defineConfig({
         '@morpheme/text',
         '@morpheme/app-shell',
         '@morpheme/progress-circular',
+        '@morpheme/timeline',
         '@headlessui/vue',
         '@vue/test-utils',
         'vue',
