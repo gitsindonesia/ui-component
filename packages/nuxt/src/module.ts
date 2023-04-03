@@ -368,6 +368,26 @@ const components: AddComponentOptions[] = [
     name: 'VProgressCircular',
     filePath: '@morpheme/progress-circular/src/VProgressCircular.vue',
   },
+  {
+    name: 'VTimeline',
+    filePath: '@morpheme/timeline/src/VTimeline.vue',
+  },
+  {
+    name: 'VTimelineDivider',
+    filePath: '@morpheme/timeline/src/VTimelineDivider.vue',
+  },
+  {
+    name: 'VTimelineItem',
+    filePath: '@morpheme/timeline/src/VTimelineItem.vue',
+  },
+  {
+    name: 'VTimelineItemDot',
+    filePath: '@morpheme/timeline/src/VTimelineItemDot.vue',
+  },
+  {
+    name: 'VTimelineItemContent',
+    filePath: '@morpheme/timeline/src/VTimelineItemContent.vue',
+  },
 ];
 
 export interface ModuleOptions {

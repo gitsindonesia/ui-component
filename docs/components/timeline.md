@@ -73,11 +73,7 @@ const items = [
   <VTimeline>
     <VTimelineItem v-for="item in items" :key="item.title">
       <VTimelineItemDot v-bind="item.dot">
-        <VIcon
-          :name="item.icon"
-          size="xs"
-          :class="args.dark ? '!text-current' : ''"
-        />
+        <VIcon :name="item.icon" size="xs" />
       </VTimelineItemDot>
       <VTimelineItemContent>
         <VText font-weight="semibold">
