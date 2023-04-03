@@ -14,7 +14,7 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@morpheme/design-tokens": "^0.1.0-alpha.2",
+    "@morpheme/design-tokens": "^0.1.0-alpha.3",
     "vue": "^3.2.31"
   },
   "gitHead": "92215d91d1e3a2b1b804e52b55dcfd0ed5274475",

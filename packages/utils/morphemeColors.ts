@@ -1,5 +1,7 @@
-import {colors} from '@morpheme/design-tokens/js/tailwind';
+import tokens from '@morpheme/design-tokens/js/tailwind';
 import {get} from './helpers';
+
+const colors = tokens.colors;
 
 export const colorVariants = [
   'primary',
