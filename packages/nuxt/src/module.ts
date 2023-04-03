@@ -49,10 +49,12 @@ const transpile = [
   '@morpheme/utils',
   '@morpheme/text',
   '@morpheme/app-shell',
+  '@morpheme/progress-circular',
+  '@morpheme/design-tokens',
   'floating-vue',
 ];
 
-const optimizeDeps = ['yup'];
+const optimizeDeps = ['yup', '@morpheme/design-tokens'];
 
 const components: AddComponentOptions[] = [
   {
