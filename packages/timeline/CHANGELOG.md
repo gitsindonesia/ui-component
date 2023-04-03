@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.8](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2023-04-03)
+
+
+### Bug Fixes
+
+* **VTimeline:** improve timeline content width ([9d3a43f](https://github.com/gitsindonesia/ui-component/commit/9d3a43f9563545f109ce297413e59429f6540fac))
+
+
+
+
+
 # [1.0.0-beta.7](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.6...v1.0.0-beta.7) (2023-04-03)
 
 

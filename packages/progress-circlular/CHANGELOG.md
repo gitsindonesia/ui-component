@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.8](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2023-04-03)
+
+
+### Bug Fixes
+
+* **VProgressCircular:** fix deps ([ad90764](https://github.com/gitsindonesia/ui-component/commit/ad907647e03405416ccb21e9bf12685ae1897eac))
+
+
+
+
+
 # [1.0.0-beta.7](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.6...v1.0.0-beta.7) (2023-04-03)
 
 

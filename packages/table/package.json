@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/table",
-  "version": "1.0.0-beta.7",
+  "version": "1.0.0-beta.8",
   "description": "Morpheme DataTable Table Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -16,15 +16,15 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@morpheme/forms": "^1.0.0-beta.7",
-    "@morpheme/icon": "^1.0.0-beta.7",
-    "@morpheme/pagination": "^1.0.0-beta.7",
-    "@morpheme/spinner": "^1.0.0-beta.7",
-    "@morpheme/utils": "^1.0.0-beta.7",
+    "@morpheme/forms": "^1.0.0-beta.8",
+    "@morpheme/icon": "^1.0.0-beta.8",
+    "@morpheme/pagination": "^1.0.0-beta.8",
+    "@morpheme/spinner": "^1.0.0-beta.8",
+    "@morpheme/utils": "^1.0.0-beta.8",
     "vue": "^3.2.33"
   },
   "devDependencies": {
-    "@morpheme/tailwind-config": "^1.0.0-beta.7",
+    "@morpheme/tailwind-config": "^1.0.0-beta.8",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
     "tailwindcss": "^3.0.23",

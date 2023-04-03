@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/progress-circular",
-  "version": "1.0.0-beta.7",
+  "version": "1.0.0-beta.8",
   "description": "Morpheme Progress Circular Shell Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,7 +15,7 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@morpheme/utils": "^1.0.0-beta.7",
+    "@morpheme/utils": "^1.0.0-beta.8",
     "vue": "^3.2.31"
   },
   "devDependencies": {

@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/modal",
-  "version": "1.0.0-beta.7",
+  "version": "1.0.0-beta.8",
   "description": "Morpheme Modal Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,14 +15,14 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@morpheme/button": "^1.0.0-beta.7",
+    "@morpheme/button": "^1.0.0-beta.8",
     "vue": "^3.2.31"
   },
   "devDependencies": {
     "@headlessui/vue": "^1.6.0",
-    "@morpheme/icon": "^1.0.0-beta.7",
-    "@morpheme/tailwind-config": "^1.0.0-beta.7",
-    "@morpheme/utils": "^1.0.0-beta.7",
+    "@morpheme/icon": "^1.0.0-beta.8",
+    "@morpheme/tailwind-config": "^1.0.0-beta.8",
+    "@morpheme/utils": "^1.0.0-beta.8",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
     "tailwindcss": "^3.0.23",

@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.8](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2023-04-03)
+
+
+### Bug Fixes
+
+* **utils:** upgrade design tokens ([022ea5e](https://github.com/gitsindonesia/ui-component/commit/022ea5ecda5e3866d3dc13b9e6b4f52a84b7b48c))
+* **VProgressCircular:** fix deps ([ad90764](https://github.com/gitsindonesia/ui-component/commit/ad907647e03405416ccb21e9bf12685ae1897eac))
+* **VText:** refactor to use @morpheme/utils ([d43045e](https://github.com/gitsindonesia/ui-component/commit/d43045e9c4219e69e3a1fd7a21b8f7af74c9c75c))
+* **VTimeline:** improve timeline content width ([9d3a43f](https://github.com/gitsindonesia/ui-component/commit/9d3a43f9563545f109ce297413e59429f6540fac))
+
+
+### Features
+
+* **nuxt:** transpile and optimize some deps ([effbca1](https://github.com/gitsindonesia/ui-component/commit/effbca134b0a6079bbba9011c5d41703cdb3a959))
+
+
+
+
+
 # [1.0.0-beta.7](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.6...v1.0.0-beta.7) (2023-04-03)
 
 
