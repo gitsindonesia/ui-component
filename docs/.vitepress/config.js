@@ -156,6 +156,10 @@ export default defineConfig({
             link: '/components/tabs',
           },
           {
+            text: 'Timeline',
+            link: '/components/timeline',
+          },
+          {
             text: 'Toast',
             link: '/components/toast',
           },
