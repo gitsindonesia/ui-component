@@ -1,4 +1,4 @@
-import {mount} from '@vue/test-utils';
+import {mount, RouterLinkStub} from '@vue/test-utils';
 import VBtn from './VBtn.vue';
 
 describe('VBtn', () => {
@@ -36,4 +36,31 @@ describe('VBtn', () => {
 
     expect(wrapper.emitted('click')).toBeUndefined();
   });
+
+  it('render router link when to props provided', () => {
+    const wrapper = mount(VBtn, {
+      global: {
+        stubs: {
+          RouterLink: true,
+        }
+      },
+      props: {
+        to: '/some-link'
+      }
+    })
+
+    expect(wrapper.html()).toContain('router-link')
+  })
+
+  it('render a tag when href props provided', () => {
+    const HREF = 'https://google.com'
+
+    const wrapper = mount(VBtn, {
+      props: {
+        href: HREF
+      }
+    })
+
+    expect(wrapper.attributes('href')).toEqual(HREF)
+  })
 });
