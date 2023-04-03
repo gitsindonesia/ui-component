@@ -52,6 +52,7 @@
     "@morpheme/utils": "^1.0.0-beta.6",
     "@morpheme/app-shell": "^1.0.0-beta.6",
     "@morpheme/progress-circular": "^1.0.0-beta.6",
+    "@morpheme/timeline": "^1.0.0-beta.6",
     "@vue/test-utils": "^2.0.0-rc.17",
     "sass": "^1.58.3",
     "vue": "^3.2.33"
