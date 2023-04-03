@@ -100,7 +100,7 @@ const items = [
 
 To apply dashed style to the timeline divider, add `dashed` prop.
 
-<LivePreview src="components-timeline--default">
+<LivePreview src="components-timeline--dashed">
 
 ```vue {4}
 <!-- more code -->
@@ -118,7 +118,7 @@ To apply dashed style to the timeline divider, add `dashed` prop.
 
 To change the timeline layout to horizontal, add `horizontal` prop.
 
-<LivePreview src="components-timeline--default">
+<LivePreview src="components-timeline--horizontal">
 
 ```vue {4}
 <!-- more code -->
