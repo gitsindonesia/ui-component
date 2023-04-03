@@ -72,6 +72,13 @@ import {
 import VText from '@morpheme/text';
 import VAppShell from '@morpheme/app-shell';
 import VProgressCircular from '@morpheme/progress-circular';
+import {
+  VTimeline,
+  VTimelineItem,
+  VTimelineDivider,
+  VTimelineItemDot,
+  VTimelineItemContent,
+} from '@morpheme/timeline';
 
 const plugin: Plugin = {
   install: (app) => {
@@ -140,6 +147,11 @@ const plugin: Plugin = {
     app.component('VText', VText);
     app.component('VAppShell', VAppShell);
     app.component('VProgressCircular', VProgressCircular);
+    app.component('VTimeline', VTimeline);
+    app.component('VTimelineDivider', VTimelineDivider);
+    app.component('VTimelineItem', VTimelineItem);
+    app.component('VTimelineItemDot', VTimelineItemDot);
+    app.component('VTimelineItemContent', VTimelineItemContent);
   },
 };
 
@@ -215,4 +227,5 @@ export * from '@morpheme/bottom-sheet/src/types';
 export * from './component-resolver';
 export * from './colors';
 export * from './plugin';
+export * from '@morpheme/timeline';
 export default plugin;
