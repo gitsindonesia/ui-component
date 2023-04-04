@@ -26,8 +26,8 @@
     "@nuxt/image-edge": "1.0.0-27919678.2f5b64b"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.6.4",
-    "nuxt": "^3.3.2",
+    "@nuxtjs/tailwindcss": "^6.6.5",
+    "nuxt": "^3.3.3",
     "sass": "^1.60.0"
   },
   "type": "module",
