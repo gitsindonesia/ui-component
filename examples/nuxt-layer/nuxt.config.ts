@@ -7,7 +7,7 @@ export default defineNuxtConfig({
   extends: ['@morpheme/nuxt-auth', '@morpheme/nuxt-admin'],
   vite: {
     optimizeDeps: {
-      include: ['yup'],
+      include: ['vue3-apexcharts'],
     },
   },
 });
