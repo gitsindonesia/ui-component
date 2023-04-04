@@ -5,7 +5,9 @@ import {themeColors} from '@morpheme/utils/colors';
 import {Story} from '@storybook/vue3';
 import {ref} from 'vue';
 import '@morpheme/icon/dist/style.css';
+import '@morpheme/button/dist/style.css';
 import {defaultColors} from '@morpheme/theme/defaultTheme';
+import VToastGroup from './VToastGroup.vue';
 
 export default {
   title: 'Components/Toast',
@@ -32,6 +34,7 @@ export default {
       ],
     },
   },
+  subcomponents: {VToastGroup},
 };
 
 const Template: Story<{}> = (args) => ({
@@ -161,5 +164,46 @@ export const Slots: Story<{}> = (args) => ({
         <VBtn text fab size="sm" color="primary" prefix-icon="ri:close-line" @click="close"></VBtn>
       </template>
     </v-toast>
+  `,
+});
+
+export const ToastGroup: Story<{}> = (args) => ({
+  components: {
+    VBtn,
+    VToast,
+    VToastGroup,
+  },
+  setup() {
+    const isOpen = ref(false);
+    const actionHandler = () => {
+      alert('Confirmed!');
+    };
+    const items = ref([]);
+    function add() {
+      items.value.push({
+        message: 'Hello toast',
+      });
+    }
+    function remove() {
+      items.value.pop();
+    }
+    return {args, isOpen, actionHandler, items, add, remove};
+  },
+  template: `
+    <v-btn @click="add">
+      Add Toast
+    </v-btn>
+    <v-btn @click="remove">
+      Remove Toast
+    </v-btn>
+    <VToastGroup>
+      <v-toast v-for="(item, index) in items" :key="index" v-bind="item">
+        {{ toast.message }}
+        <template #action="{close}">
+          <VBtn text size="sm" color="primary" @click="actionHandler">Action</VBtn>
+          <VBtn text fab size="sm" color="primary" prefix-icon="ri:close-line" @click="close"></VBtn>
+        </template>
+      </v-toast>
+    </VToastGroup>
   `,
 });
