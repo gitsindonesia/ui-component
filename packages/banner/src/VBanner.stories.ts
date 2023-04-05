@@ -66,11 +66,6 @@ Bottom.args = {
   bottom: true,
 };
 
-export const Dismissible = Default.bind({});
-Dismissible.args = {
-  dismissible: true,
-};
-
 export const Primary = Default.bind({});
 Primary.args = {
   color: 'primary',

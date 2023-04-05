@@ -74,6 +74,7 @@ export default defineConfig({
           {text: 'Autocomplete', link: '/components/autocomplete'},
           {text: 'Avatar', link: '/components/avatar'},
           {text: 'Badge', link: '/components/badge'},
+          {text: 'Banner', link: '/components/banner'},
           {text: 'BottomSheet', link: '/components/bottom-sheet'},
           {text: 'Breadcrumbs', link: '/components/breadcrumbs'},
           {text: 'Card', link: '/components/card'},
