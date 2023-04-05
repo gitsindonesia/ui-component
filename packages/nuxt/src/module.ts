@@ -51,6 +51,7 @@ const transpile = [
   '@morpheme/app-shell',
   '@morpheme/progress-circular',
   '@morpheme/design-tokens',
+  '@morpheme/banner',
   'floating-vue',
 ];
 
@@ -389,6 +390,14 @@ const components: AddComponentOptions[] = [
   {
     name: 'VTimelineItemContent',
     filePath: '@morpheme/timeline/src/VTimelineItemContent.vue',
+  },
+  {
+    name: 'VBanner',
+    filePath: '@morpheme/banner/src/VBanner.vue',
+  },
+  {
+    name: 'VBannerText',
+    filePath: '@morpheme/banner/src/VBannerText.vue',
   },
 ];
 
