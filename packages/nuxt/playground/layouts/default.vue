@@ -107,27 +107,45 @@ const components = [
     name: 'Timeline',
     href: '#timeline',
   },
+  {
+    name: 'Banner',
+    href: '#banner',
+  },
 ];
 </script>
 
 <template>
   <VAppShell>
     <template #header>
-      <VAppBar bordered fixed>
-        <div class="flex justify-between items-center w-full">
-          <div class="font-semibold flex-1">Morpheme UI Playground</div>
-          <div>
-            <VSwitch
-              v-model="darkMode"
-              label="Dark Mode"
-              @update:model-value="toggleDarkMode"
+      <div class="fixed w-full z-20">
+        <VBanner color="primary">
+          <VBannerText> Welcome to the Morpheme UI Playground </VBannerText>
+          <template #actions="{close}">
+            <VBtn
+              text
+              flush
+              prefix-icon="ic:round-close"
+              class="!text-white"
+              @click="close"
             />
+          </template>
+        </VBanner>
+        <VAppBar bordered>
+          <div class="flex justify-between items-center w-full">
+            <div class="font-semibold flex-1">Morpheme UI Playground</div>
+            <div>
+              <VSwitch
+                v-model="darkMode"
+                label="Dark Mode"
+                @update:model-value="toggleDarkMode"
+              />
+            </div>
           </div>
-        </div>
-      </VAppBar>
+        </VAppBar>
+      </div>
     </template>
     <template #aside>
-      <VNavDrawer sticky class="!top-14 pr-3" bordered>
+      <VNavDrawer sticky class="!top-28 pr-3" bordered>
         <div class="overflow-y-auto">
           <VList hover shaped flush>
             <VListItemHeader>Menu</VListItemHeader>

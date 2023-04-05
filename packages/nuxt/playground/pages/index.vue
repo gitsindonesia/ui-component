@@ -75,7 +75,7 @@ const timelineItems = [
 </script>
 
 <template>
-  <div class="container mx-auto p-6 pb-10 space-y-5">
+  <div class="container mx-auto p-6 pb-10 space-y-5 mt-24">
     <h3 id="app-bar" class="text-xl font-semibold">AppBar</h3>
     <div class="space-y-2">
       <VAppBar v-for="color in defaultColors" :color="color" :key="color">
@@ -472,6 +472,23 @@ const timelineItems = [
           </VTimelineItemContent>
         </VTimelineItem>
       </VTimeline>
+    </div>
+
+    <hr class="dark:border-neutral-700" />
+    <h3 id="banner" class="text-xl font-semibold">Banner</h3>
+    <div>
+      <VBanner color="primary">
+        <VBannerText> Welcome to the Morpheme UI Playground </VBannerText>
+        <template #actions="{close}">
+          <VBtn
+            text
+            flush
+            prefix-icon="ic:round-close"
+            class="!text-white"
+            @click="close"
+          />
+        </template>
+      </VBanner>
     </div>
   </div>
 </template>
