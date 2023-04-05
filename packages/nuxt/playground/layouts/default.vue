@@ -145,7 +145,12 @@ const components = [
       </div>
     </template>
     <template #aside>
-      <VNavDrawer sticky class="!top-28 pr-3" bordered>
+      <VNavDrawer
+        class="pr-3 lg:mt-32 lg:!top-32"
+        sticky
+        bordered
+        height="screen-dvh"
+      >
         <div class="overflow-y-auto">
           <VList hover shaped flush>
             <VListItemHeader>Menu</VListItemHeader>
