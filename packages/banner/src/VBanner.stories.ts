@@ -91,6 +91,11 @@ Error.args = {
   color: 'error',
 };
 
+export const Success = Default.bind({});
+Success.args = {
+  color: 'success',
+};
+
 export const Light = Default.bind({});
 Light.args = {
   color: 'light',
