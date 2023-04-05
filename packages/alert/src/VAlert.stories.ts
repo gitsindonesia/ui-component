@@ -1,11 +1,15 @@
 import VAlert from './VAlert.vue';
 import {themeColors} from '@morpheme/utils/colors';
-import {Meta, Story} from '@storybook/vue3';
+import {Meta, Story, StoryFn} from '@storybook/vue3';
 import Icon from '@morpheme/icon';
 import AlertVModelStory from './stories/AlertVModelStory.vue';
 import AlertTransitionStory from './stories/AlertTransitionStory.vue';
 import AlertCustomStory from './stories/AlertCustomStory.vue';
 import './VAlert.dark.scss';
+import {ref} from 'vue';
+import VBtn from '@morpheme/button';
+import '@morpheme/button/dist/style.css';
+import VAlertGroup from './VAlertGroup.vue';
 
 export default {
   title: 'Components/Alert',
@@ -189,5 +193,68 @@ export const DarkMode = () => ({
     </v-alert>
   </div>
 </div>
+  `,
+});
+
+export const Group: StoryFn<typeof VAlert> = (args) => ({
+  components: {VAlert, VAlertGroup, VBtn},
+  setup() {
+    const messages = ref([
+      {
+        text: 'This is a message',
+      },
+    ]);
+
+    const add = () => {
+      messages.value.push({
+        text: 'This is a message',
+      });
+    };
+
+    const addPrepend = () => {
+      messages.value.unshift({
+        text: 'This is a message',
+      });
+    };
+
+    const remove = () => {
+      messages.value.pop();
+    };
+
+    function removeAlert(index: number) {
+      messages.value.splice(index, 1);
+    }
+
+    return {args, messages, add, addPrepend, remove, removeAlert};
+  },
+  template: `
+    <div class="flex gap-2">
+      <VBtn @click="add">
+        Add
+      </VBtn>
+      <VBtn @click="addPrepend">
+        Add Prepend
+      </VBtn>
+      <VBtn @click="remove">
+        Remove
+      </VBtn>
+    </div>
+    <div
+      class="absolute top-0 right-0 w-80 p-6 min-h-screen overflow-y-auto overflow-x-hidden"
+    >
+      <VAlertGroup>
+        <VAlert
+          v-for="message in messages"
+          :key="message.text"
+          v-bind="args"
+          color="success"
+          class="mb-2"
+          dismissable
+          @dismissed="removeAlert"
+        >
+          {{ message.text }}
+        </VAlert>
+      </VAlertGroup>
+    </div>
   `,
 });
