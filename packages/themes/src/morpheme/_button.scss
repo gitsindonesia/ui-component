@@ -1,5 +1,6 @@
 :root {
   --btn-border-radius: 8px;
+  --btn-group-border-radius: var(--btn-border-radius);
   --btn-border-width: 1px;
   --btn-padding-x: 14px;
   --btn-padding-y: 0;
@@ -28,6 +29,8 @@
 }
 
 .btn {
+  $c: &;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -42,6 +45,27 @@
   border-color: var(--btn-border-color);
   transition: var(--btn-transition);
 
+  // disabled
+  &:disabled,
+  &:disabled:hover {
+    cursor: not-allowed;
+    --btn-bg-color: #{$color-base-gray-200};
+    --btn-border-color: #{$color-base-gray-200};
+    --btn-text-color: #{$color-base-gray-400};
+
+    &.btn--text {
+      --btn-bg-color: transparent;
+      --btn-border-color: transparent;
+      --btn-text-color: #{$color-base-gray-400};
+    }
+
+    &.btn--outlined {
+      --btn-bg-color: transparent;
+      --btn-border-color: #{$color-base-gray-200};
+      --btn-text-color: #{$color-base-gray-400};
+    }
+  }
+
   // hierarchy
   &-primary {
     --btn-bg-color: #{$color-brand-primary-600};
@@ -52,8 +76,33 @@
       --btn-bg-color: #{$color-brand-primary-700};
       --btn-border-color: #{$color-brand-primary-700};
     }
+
+    // outlined
+    &.btn--outlined {
+      --btn-bg-color: transparent;
+      --btn-border-color: #{$color-brand-primary-600};
+      --btn-text-color: #{$color-brand-primary-600};
+
+      &:hover {
+        --btn-bg-color: #{$color-brand-primary-600};
+        --btn-border-color: #{$color-brand-primary-600};
+        --btn-text-color: #{$color-base-white};
+      }
+    }
+
+    // text
+    &.btn--text {
+      --btn-bg-color: transparent;
+      --btn-border-color: transparent;
+      --btn-text-color: #{$color-brand-primary-600};
+
+      &:hover {
+        --btn-text-color: #{$color-brand-primary-700};
+      }
+    }
   }
 
+  &-default,
   &-secondary {
     --btn-bg-color: #{$color-base-white};
     --btn-border-color: #{$color-base-gray-300};
@@ -61,6 +110,204 @@
 
     &:hover {
       --btn-bg-color: #{$color-base-gray-50};
+    }
+
+    // outlined
+    &.btn--outlined {
+      --btn-bg-color: transparent;
+      --btn-border-color: #{$color-base-gray-300};
+      --btn-text-color: #{$color-base-gray-800};
+
+      &:hover {
+        --btn-bg-color: #{$color-base-gray-300};
+        --btn-border-color: #{$color-base-gray-300};
+      }
+    }
+
+    // text
+    &.btn--text {
+      --btn-bg-color: transparent;
+      --btn-border-color: transparent;
+      --btn-text-color: #{$color-base-gray-800};
+
+      &:hover {
+        --btn-text-color: #{$color-base-gray-900};
+      }
+    }
+  }
+
+  &-info {
+    --btn-bg-color: #{$color-base-blue-light-600};
+    --btn-border-color: #{$color-base-blue-light-600};
+    --btn-text-color: #{$color-base-white};
+
+    &:hover {
+      --btn-bg-color: #{$color-base-blue-light-700};
+      --btn-border-color: #{$color-base-blue-light-700};
+    }
+
+    // outlined
+    &.btn--outlined {
+      --btn-bg-color: transparent;
+      --btn-border-color: #{$color-base-blue-light-600};
+      --btn-text-color: #{$color-base-blue-light-600};
+
+      &:hover {
+        --btn-bg-color: #{$color-base-blue-light-600};
+        --btn-border-color: #{$color-base-blue-light-600};
+        --btn-text-color: #{$color-base-white};
+      }
+    }
+
+    // text
+    &.btn--text {
+      --btn-bg-color: transparent;
+      --btn-border-color: transparent;
+      --btn-text-color: #{$color-base-blue-light-600};
+
+      &:hover {
+        --btn-text-color: #{$color-base-blue-light-700};
+      }
+    }
+  }
+
+  &-warning {
+    --btn-bg-color: #{$color-base-warning-600};
+    --btn-border-color: #{$color-base-warning-600};
+    --btn-text-color: #{$color-base-white};
+
+    &:hover {
+      --btn-bg-color: #{$color-base-warning-700};
+      --btn-border-color: #{$color-base-warning-700};
+    }
+
+    // outlined
+    &.btn--outlined {
+      --btn-bg-color: transparent;
+      --btn-border-color: #{$color-base-warning-600};
+      --btn-text-color: #{$color-base-warning-600};
+
+      &:hover {
+        --btn-bg-color: #{$color-base-warning-600};
+        --btn-border-color: #{$color-base-warning-600};
+        --btn-text-color: #{$color-base-white};
+      }
+    }
+
+    // text
+    &.btn--text {
+      --btn-bg-color: transparent;
+      --btn-border-color: transparent;
+      --btn-text-color: #{$color-base-warning-600};
+
+      &:hover {
+        --btn-text-color: #{$color-base-warning-700};
+      }
+    }
+  }
+
+  &-success {
+    --btn-bg-color: #{$color-base-success-600};
+    --btn-border-color: #{$color-base-success-600};
+    --btn-text-color: #{$color-base-white};
+
+    &:hover {
+      --btn-bg-color: #{$color-base-success-700};
+      --btn-border-color: #{$color-base-success-700};
+    }
+
+    // outlined
+    &.btn--outlined {
+      --btn-bg-color: transparent;
+      --btn-border-color: #{$color-base-success-600};
+      --btn-text-color: #{$color-base-success-600};
+
+      &:hover {
+        --btn-bg-color: #{$color-base-success-600};
+        --btn-border-color: #{$color-base-success-600};
+        --btn-text-color: #{$color-base-white};
+      }
+    }
+
+    // text
+    &.btn--text {
+      --btn-bg-color: transparent;
+      --btn-border-color: transparent;
+      --btn-text-color: #{$color-base-success-600};
+
+      &:hover {
+        --btn-text-color: #{$color-base-success-700};
+      }
+    }
+  }
+
+  &-error {
+    --btn-bg-color: #{$color-base-error-600};
+    --btn-border-color: #{$color-base-error-600};
+    --btn-text-color: #{$color-base-white};
+
+    &:hover {
+      --btn-bg-color: #{$color-base-error-700};
+      --btn-border-color: #{$color-base-error-700};
+    }
+
+    // outlined
+    &.btn--outlined {
+      --btn-bg-color: transparent;
+      --btn-border-color: #{$color-base-error-600};
+      --btn-text-color: #{$color-base-error-600};
+
+      &:hover {
+        --btn-bg-color: #{$color-base-error-600};
+        --btn-border-color: #{$color-base-error-600};
+        --btn-text-color: #{$color-base-white};
+      }
+    }
+
+    // text
+    &.btn--text {
+      --btn-bg-color: transparent;
+      --btn-border-color: transparent;
+      --btn-text-color: #{$color-base-error-600};
+
+      &:hover {
+        --btn-text-color: #{$color-base-error-700};
+      }
+    }
+  }
+
+  &-dark {
+    --btn-bg-color: #{$color-base-gray-800};
+    --btn-border-color: #{$color-base-gray-800};
+    --btn-text-color: #{$color-base-white};
+
+    &:hover {
+      --btn-bg-color: #{$color-base-gray-900};
+      --btn-border-color: #{$color-base-gray-900};
+    }
+
+    // outlined
+    &.btn--outlined {
+      --btn-bg-color: transparent;
+      --btn-border-color: #{$color-base-gray-800};
+      --btn-text-color: #{$color-base-gray-800};
+
+      &:hover {
+        --btn-bg-color: #{$color-base-gray-800};
+        --btn-border-color: #{$color-base-gray-800};
+        --btn-text-color: #{$color-base-white};
+      }
+    }
+
+    // text
+    &.btn--text {
+      --btn-bg-color: transparent;
+      --btn-border-color: transparent;
+      --btn-text-color: #{$color-base-gray-800};
+
+      &:hover {
+        --btn-text-color: #{$color-base-gray-900};
+      }
     }
   }
 
@@ -159,17 +406,17 @@
   display: inline-flex;
 
   & > .btn {
-    --btn-border-radius: theme('borderRadius.none');
+    --btn-border-radius: none;
     margin-left: -1px;
 
     &:first-child {
-      --btn-border-radius: theme('borderRadius.DEFAULT') 0 0
-        theme('borderRadius.DEFAULT');
+      --btn-border-radius: var(--btn-group-border-radius) 0 0
+        var(--btn-group-border-radius);
     }
 
     &:last-child {
-      --btn-border-radius: 0 theme('borderRadius.DEFAULT')
-        theme('borderRadius.DEFAULT') 0;
+      --btn-border-radius: 0 var(--btn-group-border-radius)
+        var(--btn-group-border-radius) 0;
     }
 
     &:not(:first-child):not(:last-child) {

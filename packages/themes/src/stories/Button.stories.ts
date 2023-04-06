@@ -1,62 +1,456 @@
 import {Meta, Story} from '@storybook/vue3';
+import VIcon from '@morpheme/icon';
+import {defaultColors} from '@morpheme/theme/defaultTheme';
+import {VBtn, VBtnGroup, VBtnToolbar} from '@morpheme/button';
 import '../morpheme/main.scss';
-import VBtn from '@morpheme/button/src/VBtn.vue';
+import '../morpheme/_button.dark.scss';
+
+type VBtnProps = typeof VBtn;
+
+const colors = defaultColors;
+const defaultSizes = ['sm', 'md', 'lg', 'xl', '2xl'];
 
 export default {
+  component: VBtn,
   title: 'Themes/Button',
+  argTypes: {
+    color: {
+      control: 'select',
+      options: colors,
+    },
+    size: {
+      control: 'select',
+      options: defaultSizes,
+    },
+  },
   parameters: {
     layout: 'padded',
+    docs: {
+      source: {
+        type: 'code',
+      },
+    },
   },
 } as Meta;
 
-export const Hierarchies: Story<{}> = (args) => ({
+const Template: Story<VBtnProps> = (args) => ({
   components: {VBtn},
   setup() {
-    return {args};
+    return {args, colors};
   },
-  template: `
-    <div class="space-x-2">
-      <VBtn color="primary">
-        Primary
-      </VBtn>
-      <VBtn color="secondary">
-        Secondary
-      </VBtn>
-      <VBtn color="tertiary">
-        Tertiary
-      </VBtn>
-      <VBtn color="link">
-        Link
-      </VBtn>
-      <VBtn color="destructive">
-        Destructive
-      </VBtn>
-    </div>
+  template: `<div class="space-x-2 space-y-2">
+    <VBtn v-for="color in colors" :key="color" v-bind="args" :color="color">
+      <span>{{ args.label || color }}</span>
+    </VBtn>
+  </div>
   `,
 });
 
-export const Sizes: Story<{}> = (args) => ({
-  components: {VBtn},
+export const Default = Template.bind({});
+Default.args = {};
+Default.parameters = {
+  docs: {
+    source: {
+      code: `<v-btn>Button</v-btn>
+<v-btn color="primary">Button</v-btn>
+<v-btn color="secondary">Button</v-btn>
+<v-btn color="info">Button</v-btn>
+<v-btn color="warning">Button</v-btn>
+<v-btn color="success">Button</v-btn>
+<v-btn color="error">Button</v-btn>
+<v-btn color="dark">Button</v-btn>
+      `,
+    },
+  },
+};
+
+export const Outlined = Template.bind({});
+Outlined.args = {color: 'primary', outlined: true};
+Outlined.parameters = {
+  docs: {
+    source: {
+      code: '<v-btn color="primary" outlined>Button</v-btn>',
+    },
+  },
+};
+
+export const Text = Template.bind({});
+Text.args = {color: 'primary', text: true};
+Text.parameters = {
+  docs: {
+    source: {
+      code: '<v-btn color="primary" text>Button</v-btn>',
+    },
+  },
+};
+
+export const Rounded = Template.bind({});
+Rounded.args = {color: 'primary', rounded: true};
+Rounded.parameters = {
+  docs: {
+    source: {
+      code: '<v-btn color="primary" rounded>Button</v-btn>',
+    },
+  },
+};
+
+export const Tile = Template.bind({});
+Tile.args = {color: 'primary', tile: true};
+Tile.parameters = {
+  docs: {
+    source: {
+      code: '<v-btn color="primary" tile>Button</v-btn>',
+    },
+  },
+};
+
+export const Flush = Template.bind({});
+Flush.args = {color: 'primary', flush: true, text: true};
+Flush.parameters = {
+  docs: {
+    source: {
+      code: '<v-btn color="primary" flush text>Button</v-btn>',
+    },
+  },
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {color: 'primary', disabled: true};
+Disabled.parameters = {
+  docs: {
+    source: {
+      code: '<v-btn color="primary" disabled>Button</v-btn>',
+    },
+  },
+};
+
+export const OutlinedDisabled = Template.bind({});
+OutlinedDisabled.args = {color: 'primary', disabled: true, outlined: true};
+OutlinedDisabled.parameters = {
+  docs: {
+    source: {
+      code: '<v-btn color="primary" disabled outlined>Button</v-btn>',
+    },
+  },
+};
+
+export const Loading = Template.bind({});
+Loading.args = {color: 'primary', loading: true};
+Loading.parameters = {
+  docs: {
+    source: {
+      code: '<v-btn color="primary" loading>Button</v-btn>',
+    },
+  },
+};
+
+export const Block = Template.bind({});
+Block.args = {color: 'primary', block: true};
+Block.parameters = {
+  docs: {
+    source: {
+      code: '<v-btn color="primary" block>Button</v-btn>',
+    },
+  },
+};
+
+export const Shadow = Template.bind({});
+Shadow.args = {color: 'primary', shadow: true};
+Shadow.parameters = {
+  docs: {
+    source: {
+      code: '<v-btn color="primary" shadow>Button</v-btn>',
+    },
+  },
+};
+
+export const NoRingEffect = Template.bind({});
+NoRingEffect.args = {color: 'primary', noRing: true};
+NoRingEffect.parameters = {
+  docs: {
+    source: {
+      code: '<v-btn color="primary" no-ring>Button</v-btn>',
+    },
+  },
+};
+
+export const Sizes: Story<VBtnProps> = (args) => ({
+  components: {Button: VBtn},
   setup() {
-    return {args};
+    return {args, sizes: defaultSizes, defaultColors};
   },
   template: `
-    <div class="space-x-2">
-      <VBtn size="sm" color="primary">
-        Button: sm
-      </VBtn>
-      <VBtn size="md" color="primary">
-        Button: md
-      </VBtn>
-      <VBtn size="lg" color="primary">
-        Button: lg
-      </VBtn>
-      <VBtn size="xl" color="primary">
-        Button: xl
-      </VBtn>
-      <VBtn size="2xl" color="primary">
-        Button: 2xl
-      </VBtn>
+<div v-for="color in defaultColors" :key="color" class="mb-6">
+  <div>
+    <div class="font-semibold text-lg mb-2">{{color}}</div>
+    <div class="flex items-end gap-2">
+      <Button v-for="size in sizes" :key="size" v-bind="args" :color="color" :size="size">
+        {{ size }}
+      </Button>
     </div>
+  </div>
+</div>`,
+});
+Sizes.parameters = {
+  docs: {
+    source: {
+      code: `
+<v-btn size="xs"> Button </v-btn>
+<v-btn size="sm"> Button </v-btn>
+<v-btn size="md"> Button </v-btn>
+<v-btn size="lg"> Button </v-btn>
+<v-btn size="xl"> Button </v-btn>
+      `,
+    },
+  },
+};
+
+export const Icons: Story<VBtnProps> = (args) => ({
+  components: {VBtn},
+  template: `
+<div class="flex gap-2">
+    <VBtn prefix-icon="ri:search-2-line">
+    </VBtn>
+    <VBtn prefix-icon="ri:search-2-line">
+      Search
+    </VBtn>
+    <VBtn color="primary" suffix-icon="ri:download-2-line">
+    </VBtn>
+    <VBtn color="primary" suffix-icon="ri:download-2-line">
+      Download
+    </VBtn>
+</div>
+  `,
+});
+Icons.parameters = {
+  docs: {
+    source: {
+      code: `  
+<VBtn prefix-icon="ri:search-2-line" />
+<VBtn prefix-icon="ri:search-2-line">
+  Search
+</VBtn>
+<VBtn suffix-icon="ri:download-2-line" />
+<VBtn suffix-icon="ri:download-2-line">
+  Download
+</VBtn>
+      `,
+    },
+  },
+};
+
+export const Fab: Story<VBtnProps> = (args) => ({
+  components: {VBtn},
+  template: `
+<div class="flex gap-2 items-end">
+  <VBtn size="sm" color="primary" prefix-icon="ri:search-2-line" fab />
+  <VBtn color="primary" prefix-icon="ri:search-2-line" fab />
+  <VBtn size="lg" color="primary" prefix-icon="ri:search-2-line" fab />
+  <VBtn size="xl" color="primary" prefix-icon="ri:search-2-line" fab />
+  <VBtn size="2xl" color="primary" prefix-icon="ri:search-2-line" fab />
+</div>
+  `,
+});
+Fab.parameters = {
+  docs: {
+    source: {
+      code: `
+<div class="flex gap-2 items-end">
+  <VBtn size="sm" color="primary" prefix-icon="ri:search-2-line" fab />
+  <VBtn color="primary" prefix-icon="ri:search-2-line" fab />
+  <VBtn size="lg" color="primary" prefix-icon="ri:search-2-line" fab />
+  <VBtn size="xl" color="primary" prefix-icon="ri:search-2-line" fab />
+  <VBtn size="2xl" color="primary" prefix-icon="ri:search-2-line" fab />
+</div>
+      `,
+    },
+  },
+};
+
+export const DynamicProps: Story<VBtnProps> = () => ({
+  components: {VIcon, VBtn},
+  template: `
+<VBtn>Default</VBtn>
+<VBtn disabled>Disabled</VBtn>
+<VBtn to="/">Router Link</VBtn>
+<VBtn href="https://google.com">Href Link</VBtn>
+<VBtn href="https://google.com" new-tab>Href Link (New Tab)</VBtn>
+  `,
+});
+
+export const ButtonGroup: Story<VBtnProps> = () => ({
+  components: {VBtnGroup, VBtnToolbar, VBtn},
+  template: `
+    <h3 class="font-semibold">Disabled:</h3>
+    <VBtnGroup class="w-full mt-2">
+      <VBtn disabled>Button</VBtn>
+      <VBtn disabled>Button</VBtn>
+      <VBtn disabled>Button</VBtn>
+    </VBtnGroup>
+    <h3 class="font-semibold mt-5">Sizes:</h3>
+    <VBtnGroup class="w-full mt-2">
+      <VBtn size="sm">sm</VBtn>
+      <VBtn size="sm">sm</VBtn>
+      <VBtn size="sm">sm</VBtn>
+    </VBtnGroup>
+    <VBtnGroup class="w-full mt-2">
+      <VBtn>Button</VBtn>
+      <VBtn>Button</VBtn>
+      <VBtn>Button</VBtn>
+    </VBtnGroup>
+    <VBtnGroup class="w-full mt-2">
+      <VBtn size="lg">lg</VBtn>
+      <VBtn size="lg">lg</VBtn>
+      <VBtn size="lg">lg</VBtn>
+    </VBtnGroup>
+    <VBtnGroup class="w-full mt-5">
+      <VBtn color="primary">Button</VBtn>
+      <VBtn color="primary">Button</VBtn>
+      <VBtn color="primary">Button</VBtn>
+    </VBtnGroup>
+    <VBtnGroup class="w-full mt-5">
+      <VBtn color="primary">Button</VBtn>
+      <VBtn color="secondary">Button</VBtn>
+      <VBtn color="error">Button</VBtn>
+    </VBtnGroup>
+    <VBtnGroup class="w-full mt-5">
+      <VBtn outlined color="primary">Button</VBtn>
+      <VBtn outlined color="secondary">Button</VBtn>
+      <VBtn outlined color="error">Button</VBtn>
+    </VBtnGroup>
+    <VBtnGroup class="w-full mt-5">
+      <VBtn text color="primary">Button</VBtn>
+      <VBtn text color="secondary">Button</VBtn>
+      <VBtn text color="error">Button</VBtn>
+    </VBtnGroup>
+    <VBtnGroup class="mt-5">
+      <VBtn prefix-icon="ri:search-2-line"></VBtn>
+      <VBtn suffix-icon="ri:add-line"></VBtn>
+      <VBtn prefix-icon="ri:edit-line"></VBtn>
+    </VBtnGroup>
+
+    <VBtnToolbar class="mt-5">
+      <VBtnGroup>
+        <VBtn prefix-icon="ri:bold"></VBtn>
+        <VBtn suffix-icon="ri:italic"></VBtn>
+        <VBtn prefix-icon="ri:underline"></VBtn>
+      </VBtnGroup>
+      <VBtnGroup>
+        <VBtn suffix-icon="ri:list-ordered"></VBtn>
+        <VBtn prefix-icon="ri:list-check"></VBtn>
+        <VBtn prefix-icon="ri:align-left"></VBtn>
+      </VBtnGroup>
+      <VBtnGroup>
+        <VBtn prefix-icon="ri:link"></VBtn>
+        <VBtn suffix-icon="ri:image-line"></VBtn>
+        <VBtn prefix-icon="ri:video-line"></VBtn>
+      </VBtnGroup>
+      <VBtn prefix-icon="ri:format-clear"></VBtn>
+    </VBtnToolbar>
+    <VBtnToolbar class="mt-5">
+      <VBtnGroup>
+        <VBtn prefix-icon="ri:bold"></VBtn>
+        <VBtn suffix-icon="ri:italic"></VBtn>
+        <VBtn prefix-icon="ri:underline"></VBtn>
+      </VBtnGroup>
+      <VBtnGroup>
+        <VBtn suffix-icon="ri:list-ordered"></VBtn>
+        <VBtn prefix-icon="ri:list-check"></VBtn>
+        <VBtn prefix-icon="ri:align-left"></VBtn>
+      </VBtnGroup>
+      <VBtnGroup>
+        <VBtn prefix-icon="ri:link"></VBtn>
+        <VBtn suffix-icon="ri:image-line"></VBtn>
+        <VBtn prefix-icon="ri:video-line"></VBtn>
+      </VBtnGroup>
+      <VBtn prefix-icon="ri:format-clear"></VBtn>
+    </VBtnToolbar>
+  `,
+});
+
+export const DarkMode: Story<VBtnProps> = () => ({
+  components: {VBtnGroup, VBtnToolbar, VBtn},
+  template: `
+  <div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
+    <h3 class="font-semibold">Default</h3>
+    <VBtnGroup class="w-full mt-2">
+      <VBtn>Button</VBtn>
+      <VBtn>Button</VBtn>
+      <VBtn>Button</VBtn>
+    </VBtnGroup>
+    <h3 class="font-semibold">Outlined</h3>
+    <VBtnGroup class="w-full mt-2">
+      <VBtn outlined>Button</VBtn>
+      <VBtn outlined>Button</VBtn>
+      <VBtn outlined>Button</VBtn>
+    </VBtnGroup>
+    <h3 class="font-semibold">Text</h3>
+    <VBtnGroup class="w-full mt-2">
+      <VBtn text>Button</VBtn>
+      <VBtn text>Button</VBtn>
+      <VBtn text>Button</VBtn>
+    </VBtnGroup>
+    <h3 class="font-semibold">Disabled</h3>
+    <VBtnGroup class="w-full mt-2">
+      <VBtn disabled>Button</VBtn>
+      <VBtn disabled>Button</VBtn>
+      <VBtn disabled>Button</VBtn>
+    </VBtnGroup>
+    <h3 class="font-semibold mt-5">Sizes:</h3>
+    <VBtnGroup class="w-full mt-2">
+      <VBtn size="sm">sm</VBtn>
+      <VBtn size="sm">sm</VBtn>
+      <VBtn size="sm">sm</VBtn>
+    </VBtnGroup>
+    <VBtnGroup class="w-full mt-2">
+      <VBtn size="lg">lg</VBtn>
+      <VBtn size="lg">lg</VBtn>
+      <VBtn size="lg">lg</VBtn>
+    </VBtnGroup>
+    <VBtnGroup class="w-full mt-5">
+      <VBtn color="primary">Button</VBtn>
+      <VBtn color="primary">Button</VBtn>
+      <VBtn color="primary">Button</VBtn>
+    </VBtnGroup>
+    <VBtnGroup class="w-full mt-5">
+      <VBtn color="primary">Button</VBtn>
+      <VBtn color="secondary">Button</VBtn>
+      <VBtn color="error">Button</VBtn>
+    </VBtnGroup>
+    <VBtnGroup class="w-full mt-5">
+      <VBtn outlined color="primary">Button</VBtn>
+      <VBtn outlined color="secondary">Button</VBtn>
+      <VBtn outlined color="error">Button</VBtn>
+    </VBtnGroup>
+    <VBtnGroup class="w-full mt-5">
+      <VBtn text color="primary">Button</VBtn>
+      <VBtn text color="secondary">Button</VBtn>
+      <VBtn text color="error">Button</VBtn>
+    </VBtnGroup>
+    <VBtnGroup class="mt-5">
+      <VBtn prefix-icon="ri:search-2-line"></VBtn>
+      <VBtn suffix-icon="ri:add-line"></VBtn>
+      <VBtn prefix-icon="ri:edit-line"></VBtn>
+    </VBtnGroup>
+
+    <VBtnToolbar class="mt-5">
+      <VBtnGroup>
+        <VBtn prefix-icon="ri:bold"></VBtn>
+        <VBtn suffix-icon="ri:italic"></VBtn>
+        <VBtn prefix-icon="ri:underline"></VBtn>
+      </VBtnGroup>
+      <VBtnGroup>
+        <VBtn suffix-icon="ri:list-ordered"></VBtn>
+        <VBtn prefix-icon="ri:list-check"></VBtn>
+        <VBtn prefix-icon="ri:align-left"></VBtn>
+      </VBtnGroup>
+      <VBtnGroup>
+        <VBtn prefix-icon="ri:link"></VBtn>
+        <VBtn suffix-icon="ri:image-line"></VBtn>
+        <VBtn prefix-icon="ri:video-line"></VBtn>
+      </VBtnGroup>
+      <VBtn prefix-icon="ri:format-clear"></VBtn>
+    </VBtnToolbar>
+</div>
   `,
 });
