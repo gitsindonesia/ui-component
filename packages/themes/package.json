@@ -1,0 +1,45 @@
+{
+  "name": "@morpheme/themes",
+  "version": "1.0.0-beta.8",
+  "description": "Morpheme Themes",
+  "scripts": {
+    "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
+    "prepublishOnly": "npm run build",
+    "test": "vitest"
+  },
+  "keywords": [
+    "themes",
+    "morpheme",
+    "ui-component"
+  ],
+  "author": "Warsono <warsono16694@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@morpheme/design-tokens": "^0.1.0-alpha.4",
+    "vue": "^3.2.31"
+  },
+  "devDependencies": {
+    "@vue/test-utils": "^2.0.0-rc.17",
+    "c8": "^7.11.3",
+    "vite": "^3.0.0",
+    "vitest": "^0.12.4"
+  },
+  "main": "dist/themes.umd.js",
+  "unpkg": "dist/themes.iife.js",
+  "jsdelivr": "dist/themes.iife.js",
+  "module": "./dist/themes.mjs",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/themes.mjs",
+      "require": "./dist/themes.js"
+    },
+    "./package.json": "./package.json",
+    "./src/*": "./src/*",
+    "./*": "./*"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "92215d91d1e3a2b1b804e52b55dcfd0ed5274475"
+}

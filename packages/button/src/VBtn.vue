@@ -8,7 +8,7 @@ export type ButtonColors = DefaultColors | string;
 
 export interface Props {
   color?: ButtonColors;
-  size?: 'sm' | 'md' | 'lg' | string;
+  size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | string;
   to?: RouteLocationRaw;
   href?: string;
   text?: boolean;
@@ -163,5 +163,3 @@ const attributes = computed(() => {
     </slot>
   </component>
 </template>
-
-<style src="./VBtn.scss" lang="scss"></style>
