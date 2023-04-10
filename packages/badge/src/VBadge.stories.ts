@@ -2,9 +2,18 @@ import VBadge from './VBadge.vue';
 import type {VBadgeProps} from './types';
 import {Story, Meta} from '@storybook/vue3';
 import {defaultRounded, defaultColors} from '@morpheme/theme/defaultTheme';
-import './VBadge.dark.scss';
 
-const colors = defaultColors;
+const colors = [
+  ...defaultColors,
+  'purple',
+  'indigo',
+  'blue',
+  'blue-light',
+  'pink',
+  'rose',
+  'orange',
+  'blue-gray',
+];
 
 export default {
   title: 'Components/Badge',

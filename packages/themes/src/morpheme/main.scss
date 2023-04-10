@@ -1,6 +1,7 @@
 @import '@morpheme/design-tokens/scss/_variables.scss';
 @import 'alert';
 @import 'button';
+@import 'badge';
 
 // CSS
 @import '@morpheme/editor/dist/style.css';
@@ -13,7 +14,6 @@
 @import '@morpheme/app-bar/src/VAppBar.scss';
 @import '@morpheme/autocomplete/src/VAutocomplete.scss';
 @import '@morpheme/avatar/src/Avatar.scss';
-@import '@morpheme/badge/src/VBadge.scss';
 @import '@morpheme/breadcrumbs/src/VBreadcrumbs.scss';
 @import '@morpheme/bottom-sheet/src/BottomSheet.scss';
 @import '@morpheme/card/src/VCard.scss';
