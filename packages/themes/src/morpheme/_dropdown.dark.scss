@@ -1,0 +1,23 @@
+@import '@morpheme/design-tokens/scss/_variables.scss';
+
+.dark {
+  .dropdown {
+    --dropdown-bg-color: #{$color-base-gray-neutral-800};
+    --dropdown-button-icon-color: #{$color-base-gray-neutral-400};
+    --dropdown-item-color: #{$color-base-gray-neutral-200};
+    --dropdown-item-icon-color: #{$color-base-gray-neutral-400};
+
+    // item active
+    --dropdown-item-active-color: #{$color-base-gray-neutral-200};
+    --dropdown-item-active-bg-color: #{$color-base-gray-neutral-700};
+
+    // panel
+    --dropdown-panel-bg-color: #{$color-base-gray-neutral-800};
+
+    // divider
+    --dropdown-divider-border-color: #{$color-base-gray-neutral-700};
+
+    // item active
+    --dropdown-item-active-bg-color: #{$color-base-gray-neutral-700};
+  }
+}

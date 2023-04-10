@@ -2,6 +2,7 @@
 @import 'alert';
 @import 'button';
 @import 'badge';
+@import 'dropdown';
 
 // CSS
 @import '@morpheme/editor/dist/style.css';
@@ -17,7 +18,6 @@
 @import '@morpheme/breadcrumbs/src/VBreadcrumbs.scss';
 @import '@morpheme/bottom-sheet/src/BottomSheet.scss';
 @import '@morpheme/card/src/VCard.scss';
-@import '@morpheme/dropdown/src/Dropdown.scss';
 @import '@morpheme/editor/src/VEditor.scss';
 @import '@morpheme/forms/src/forms.scss';
 @import '@morpheme/forms/src/checkbox/VCheckbox.scss';
