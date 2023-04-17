@@ -26,5 +26,4 @@ export const parameters = {
       // locales: '',
     },
   },
-  layout: 'fullscreen',
 };
