@@ -1,12 +1,16 @@
 module.exports = {
   stories: [
-    '../packages/*/src/**/*.stories.@(js|jsx|ts|tsx|mdx)',
-    '../stories/**/*.stories.@(js|jsx|ts|tsx|mdx)',
+    '../packages/*/src/**/*.stories.@(js|jsx|ts|tsx)',
+    '../stories/**/*.stories.@(js|jsx|ts|tsx)',
   ],
-  addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
-  framework: '@storybook/vue3',
-  core: {
-    builder: '@storybook/builder-vite',
+  addons: [
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
+    '@storybook/addon-mdx-gfm',
+  ],
+  framework: {
+    name: '@storybook/vue3-vite',
+    options: {},
   },
   features: {
     storyStoreV7: true,
@@ -20,5 +24,8 @@ module.exports = {
         // target: ['es2020'],
       },
     };
+  },
+  docs: {
+    autodocs: true,
   },
 };
