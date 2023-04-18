@@ -7,6 +7,9 @@ export default defineConfig({
   ignoreDeadLinks: true,
   base: '/ui-component/',
   themeConfig: {
+    search: {
+      provider: 'local'
+    },
     logo: 'https://gits.id/wp-content/uploads/2022/06/Logo-Main-1.png',
     nav: [
       {text: 'Guide', link: '/guide/getting-started'},
