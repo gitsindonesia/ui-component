@@ -1,5 +1,9 @@
 # Getting Started
 
+::: tip INFO
+GITS UI is now **Morpheme UI**. Check out migration guide [here](/guide/migration).
+:::
+
 There are several ways to get started with Morpheme UI:
 
 - Via Morpheme CLI (recommended)
