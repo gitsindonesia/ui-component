@@ -8,7 +8,6 @@ import AlertCustomStory from './stories/AlertCustomStory.vue';
 import './VAlert.dark.scss';
 import {ref} from 'vue';
 import VBtn from '@morpheme/button';
-import '@morpheme/button/dist/style.css';
 import VAlertGroup from './VAlertGroup.vue';
 
 export default {

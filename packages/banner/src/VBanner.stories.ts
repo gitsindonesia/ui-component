@@ -3,8 +3,6 @@ import {Story} from '@storybook/vue3';
 import VBanner from './VBanner.vue';
 import VBannerText from './VBannerText.vue';
 import VText from '@morpheme/text';
-import '@morpheme/text/dist/style.css';
-import '@morpheme/button/dist/style.css';
 import './VBanner.scss';
 import {ref} from 'vue';
 
