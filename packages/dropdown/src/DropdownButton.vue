@@ -3,7 +3,7 @@ import {MenuButton} from '@headlessui/vue';
 </script>
 
 <template>
-  <MenuButton class="dropdown-button-activator" v-slot="props">
+  <MenuButton v-slot="props">
     <slot v-bind="props" />
   </MenuButton>
 </template>
