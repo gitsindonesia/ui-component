@@ -103,18 +103,21 @@
 .v-input-append:empty {
   display: none;
 }
+
 .v-input-prepend:not(:empty) {
   border-top-left-radius: var(--v-input-border-radius);
   border-bottom-left-radius: var(--v-input-border-radius);
-
-  @apply px-3;
+  padding-left: 0.75rem/* 12px */;
+  padding-right: 0.75rem/* 12px */;
 }
+
 .v-input-append:not(:empty) {
   border-top-right-radius: var(--v-input-border-radius);
   border-bottom-right-radius: var(--v-input-border-radius);
-
-  @apply px-3;
+  padding-left: 0.75rem/* 12px */;
+  padding-right: 0.75rem/* 12px */;
 }
+
 .v-input-prepend,
 .v-input-append {
   @apply self-stretch flex items-center;
@@ -197,19 +200,19 @@
   --v-input-effect-shadow-color: #{$color-base-gray-true-100};
 }
 
-/* error */
-// .v-input.v-input--select.v-input--error .v-input-control,
-// .v-input.v-input--textarea.v-input--error .v-input-control {
-//   @apply border-error-500 focus-within:border-error-500 focus-within:ring-error-500;
-// }
-
 .v-input-error {
-  @apply text-error-500 text-sm mt-1 transition duration-300;
+  color: $color-base-error-500;
+  margin-top: 0.25rem;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
 }
+
 /* shadow */
 .v-input.v-input--shadow .v-input-wrapper {
-  @apply shadow-sm;
+  box-shadow: $effect-shadow-md;
 }
+
 /* text */
 .v-input-text {
   color: var(--v-input-text-color);
@@ -236,8 +239,10 @@
   --v-input-icon-width: theme('width.4');
   --v-input-icon-height: theme('height.4');
 }
+
 .v-input.v-input--sm .v-input-prepend:not(:empty) {
-  @apply px-2;
+  padding-left: 0.5rem/* 8px */;
+  padding-right: 0.5rem/* 8px */;
 }
 
 .v-input.v-input--lg {
@@ -253,18 +258,32 @@
 }
 
 .v-input-clearable {
-  @apply cursor-pointer w-7 h-7 flex items-center justify-center
-  hover:bg-gray-100 active:bg-gray-50 rounded-full mr-2;
+  cursor: pointer;
+  width: 1.75rem;
+  height: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $border-radius-full;
+  margin-right: 0.5rem;
+
+  &:hover {
+    background-color: $color-base-gray-100;
+  }
+
+  &:active {
+    background-color: $color-base-gray-50;
+  }
 }
 
 .v-input-footer {
-  @apply flex justify-between mt-1;
-}
-
-.v-input-counter {
-  /*  */
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
 }
 
 .v-input-action {
-  @apply flex items-center gap-2;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
