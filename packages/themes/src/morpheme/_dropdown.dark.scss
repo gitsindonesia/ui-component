@@ -2,22 +2,31 @@
 
 .dark {
   .dropdown {
-    --dropdown-bg-color: #{$color-base-gray-neutral-800};
-    --dropdown-button-icon-color: #{$color-base-gray-neutral-400};
-    --dropdown-item-color: #{$color-base-gray-neutral-200};
-    --dropdown-item-icon-color: #{$color-base-gray-neutral-400};
+    --dropdown-bg-color: #{$color-base-gray-true-900};
+
+    // button icon
+    --dropdown-button-icon-color: #{$color-base-gray-true-500};
+
+    // item
+    --dropdown-item-color: #{$color-base-gray-true-200};
+    --dropdown-item-icon-color: #{$color-base-gray-true-200};
 
     // item active
-    --dropdown-item-active-color: #{$color-base-gray-neutral-200};
-    --dropdown-item-active-bg-color: #{$color-base-gray-neutral-700};
+    --dropdown-item-active-color: currentColor;
+    --dropdown-item-active-bg-color: #{$color-base-gray-true-800};
+
+    // item icon
+    --dropdown-item-icon-color: currentColor;
 
     // panel
-    --dropdown-panel-bg-color: #{$color-base-gray-neutral-800};
+    --dropdown-panel-bg-color: #{$color-base-gray-true-900};
+    --dropdown-panel-border-color: #{$color-base-gray-true-700};
 
     // divider
-    --dropdown-divider-border-color: #{$color-base-gray-neutral-700};
+    --dropdown-divider-border-color: #{$color-base-gray-true-800};
 
-    // item active
-    --dropdown-item-active-bg-color: #{$color-base-gray-neutral-700};
+    // button activator
+    --dropdown-button-activator-border-color: #{$color-base-gray-true-700};
+    --dropdown-button-activator-color: #{$color-base-gray-true-300};
   }
 }
