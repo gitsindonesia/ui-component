@@ -1,6 +1,3 @@
-import './forms.scss';
-import './checkbox/VCheckbox.dark.scss';
-
 export {default as VTextarea} from './textarea/Textarea.vue';
 export {default as VCheckbox} from './checkbox/VCheckbox.vue';
 export {default as VFileUpload} from './file-input/VFileUpload.vue';

@@ -6,7 +6,6 @@ import Icon from '@morpheme/icon';
 import Button from '@morpheme/button';
 import {VInput} from '@morpheme/forms';
 import '@morpheme/button/src/VBtn.scss';
-import '@morpheme/forms/src/forms.scss';
 import '@morpheme/theme/transition.css';
 import './VAppBar.dark.scss';
 

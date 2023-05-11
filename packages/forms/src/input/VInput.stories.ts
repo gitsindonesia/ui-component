@@ -11,7 +11,6 @@ import FieldArrayOfObject from './stories/FieldArrayOfObject.story.vue';
 import FieldArrayNestedComponent from './stories/FieldArrayNested.story.vue';
 import {ref} from 'vue';
 import FormsPlaygroundComponent from './stories/FormsPlayground.vue';
-import '../forms.dark.scss';
 
 const sizes = ['sm', 'md', 'lg'] as const;
 

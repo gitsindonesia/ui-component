@@ -23,7 +23,6 @@ import '@morpheme/card/dist/style.css';
 import '@morpheme/button/dist/style.css';
 import '@morpheme/logo/dist/style.css';
 import '@morpheme/avatar/dist/style.css';
-import '@morpheme/forms/dist/style.css';
 import '@morpheme/icon/dist/style.css';
 import '@morpheme/dropdown/dist/style.css';
 import {ref, watchEffect, defineComponent} from 'vue';

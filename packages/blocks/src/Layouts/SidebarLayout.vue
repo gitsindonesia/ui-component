@@ -5,7 +5,6 @@ import Icon from '@morpheme/icon';
 import {ref, watch} from 'vue';
 import VBtn from '@morpheme/button';
 import {VInput} from '@morpheme/forms';
-import '@morpheme/forms/src/forms.scss';
 import '@morpheme/list/src/List.scss';
 import '@morpheme/button/src/VBtn.scss';
 import '@morpheme/dropdown/src/Dropdown.scss';

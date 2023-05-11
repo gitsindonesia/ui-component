@@ -4,8 +4,6 @@ import {useForm} from 'vee-validate';
 import {object, boolean} from 'yup';
 import VBtn from '@morpheme/button';
 import {ref} from 'vue';
-import '@morpheme/forms/src/forms.scss';
-import '@morpheme/forms/src/forms.dark.scss';
 import './VSwitch.dark.scss';
 
 export default {

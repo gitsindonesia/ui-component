@@ -3,6 +3,7 @@
 @import 'button';
 @import 'badge';
 @import 'dropdown';
+@import 'forms';
 
 // CSS
 @import '@morpheme/editor/dist/style.css';
@@ -19,7 +20,6 @@
 @import '@morpheme/bottom-sheet/src/BottomSheet.scss';
 @import '@morpheme/card/src/VCard.scss';
 @import '@morpheme/editor/src/VEditor.scss';
-@import '@morpheme/forms/src/forms.scss';
 @import '@morpheme/forms/src/checkbox/VCheckbox.scss';
 @import '@morpheme/forms/src/radio/VRadio.scss';
 @import '@morpheme/icon/src/Icon.scss';

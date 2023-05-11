@@ -141,5 +141,3 @@ const getText = (option: string | Record<string, any>) => {
     </div>
   </div>
 </template>
-
-<style src="../forms.scss" lang="scss"></style>

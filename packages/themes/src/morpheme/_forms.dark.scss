@@ -1,0 +1,30 @@
+.dark {
+  .v-input,
+  .v-multi-select,
+  .v-select,
+  .v-select-button,
+  .v-textarea,
+  .v-data-table-pagination-items-per-page {
+    /* input control */
+    --v-input-border-color: theme('colors.neutral.700');
+    --v-input-placeholder-color: theme('colors.neutral.500');
+    --v-input-bg-color: theme('colors.neutral.800');
+    --v-input-color: theme('colors.neutral.200');
+
+    /* label */
+    --v-input-label-color: theme('colors.neutral.200');
+
+    /* icon */
+    --v-input-icon-color: theme('colors.neutral.500');
+
+    // disabled
+    --v-input-disabled-bg-color: theme('colors.neutral.700');
+    --v-input-disabled-border-color: theme('colors.neutral.700');
+    --v-input-disabled-color: theme('colors.neutral.200');
+    --v-input-disabled-placeholder-color: theme('colors.neutral.600');
+    --v-input-disabled-icon-color: theme('colors.neutral.600');
+
+    // hint
+    --v-input-hint-color: theme('colors.neutral.500');
+  }
+}
