@@ -40,6 +40,10 @@
   --v-input-hint-font-size: #{$size-font-sm};
   --v-input-hint-color: #{$color-base-gray-600};
   --v-input-hint-margin-top: #{$size-spacing-1};
+
+  // focus effect
+  --v-input-effect-border-color: #{$color-brand-primary-300};
+  --v-input-effect-shadow-color: #{$color-brand-primary-100};
 }
 
 .v-input {
@@ -60,19 +64,24 @@
     color: var(--v-input-hint-color);
     margin-top: var(--v-input-hint-margin-top);
   }
-}
 
-.v-input-label {
-  color: var(--v-input-label-color);
-  font-size: var(--v-input-label-font-size);
-  font-weight: var(--v-input-label-font-weight);
-  display: var(--v-input-label-display);
-  margin-bottom: var(--v-input-label-margin-bottom);
+  &-label {
+    color: var(--v-input-label-color);
+    font-size: var(--v-input-label-font-size);
+    font-weight: var(--v-input-label-font-weight);
+    display: var(--v-input-label-display);
+    margin-bottom: var(--v-input-label-margin-bottom);
+  }
 }
 
 .v-input.v-input--select .v-input-control,
 .v-input.v-input--textarea .v-input-control {
-  @apply w-full focus:ring-1 focus:border-primary-500 focus:ring-primary-500;
+  width: 100%;
+
+  &:focus {    
+    border: 1px solid var(--v-input-effect-border-color);
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px var(--v-input-effect-shadow-color);
+  }
 }
 
 .v-input.v-input--textarea .v-input-control,
@@ -82,12 +91,12 @@
   border-radius: var(--v-input-border-radius);
   background-color: var(--v-input-bg-color);
   color: var(--v-input-color);
-
-  @apply relative flex items-center transition duration-300;
-}
-
-.v-input:not(.v-input--textarea) .v-input-wrapper {
-  @apply focus-within:ring-1;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
 .v-input-prepend:empty,
@@ -118,8 +127,15 @@
   line-height: var(--v-input-line-height);
   color: var(--v-input-color);
   background-color: transparent;
+  transition: all 0.3s ease-in-out;
+  border: none;
+  outline: none;
 
-  @apply focus:ring-0 border-none focus:border-none focus:outline-none;
+  // reset tailwind ring
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
 
   &:not(textarea):not(select) {
     height: var(--v-input-height);
@@ -140,52 +156,55 @@
   @apply pr-1;
 }
 
-/* colors */
+/* box shadow effect colors */
+.v-input {
+  .v-input-wrapper:focus-within {
+    border: 1px solid var(--v-input-effect-border-color);
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px var(--v-input-effect-shadow-color);
+  }
+}
 
-.v-input.v-input-default .v-input-wrapper,
-.v-input.v-input-primary .v-input-wrapper {
-  @apply focus-within:border-primary-500 focus-within:ring-primary-500;
+.v-input-default,
+.v-input-primary {
+  --v-input-effect-border-color: #{$color-brand-primary-300};
+  --v-input-effect-shadow-color: #{$color-brand-primary-100};
 }
-.v-input.v-input-secondary .v-input-wrapper {
-  @apply focus-within:border-secondary-500 focus-within:ring-secondary-500;
+
+.v-input-secondary {
+  --v-input-effect-border-color: #{$color-base-gray-300};
+  --v-input-effect-shadow-color: #{$color-base-gray-100};
 }
-.v-input.v-input-info .v-input-wrapper {
-  @apply focus-within:border-info-500 focus-within:ring-info-500;
+.v-input-info {
+  --v-input-effect-border-color: #{$color-base-blue-light-300};
+  --v-input-effect-shadow-color: #{$color-base-blue-light-100};
 }
-.v-input.v-input-warning .v-input-wrapper {
-  @apply focus-within:border-warning-500 focus-within:ring-warning-500;
+.v-input-warning {
+  --v-input-effect-border-color: #{$color-base-warning-300};
+  --v-input-effect-shadow-color: #{$color-base-warning-100};
 }
-.v-input.v-input-success .v-input-wrapper {
-  @apply focus-within:border-success-500 focus-within:ring-success-500;
+.v-input-success {
+  --v-input-effect-border-color: #{$color-base-success-300};
+  --v-input-effect-shadow-color: #{$color-base-success-100};
 }
-.v-input.v-input-error .v-input-wrapper {
-  @apply focus-within:border-error-500 focus-within:ring-error-500;
+
+.v-input--error,
+.v-input-error {
+  --v-input-effect-border-color: #{$color-base-error-300};
+  --v-input-effect-shadow-color: #{$color-base-error-100};
 }
-.v-input.v-input-dark .v-input-wrapper {
-  @apply focus-within:border-gray-500 focus-within:ring-gray-500;
+.v-input-dark {
+  --v-input-effect-border-color: #{$color-base-gray-true-300};
+  --v-input-effect-shadow-color: #{$color-base-gray-true-100};
 }
+
 /* error */
-.v-input.v-input--error .v-input-wrapper,
-.v-input.v-input--select.v-input--error .v-input-control,
-.v-input.v-input--textarea.v-input--error .v-input-control {
-  @apply border-error-500 focus-within:border-error-500 focus-within:ring-error-500;
-}
+// .v-input.v-input--select.v-input--error .v-input-control,
+// .v-input.v-input--textarea.v-input--error .v-input-control {
+//   @apply border-error-500 focus-within:border-error-500 focus-within:ring-error-500;
+// }
+
 .v-input-error {
   @apply text-error-500 text-sm mt-1 transition duration-300;
-}
-
-/* disabled */
-// .v-input--disabled.v-input--textarea .v-input-control,
-// .v-input--disabled.v-input--select .v-input-control,
-// .v-input--disabled .v-input-wrapper {
-//   --v-input-color: var(--v-input-disabled-color);
-//   --v-input-bg-color: var(--v-input-disabled-bg-color);
-//   --v-input-border-color: var(--v-input-disabled-border-color);
-//   --v-input-icon-color: var(--v-input-disabled-icon-color);
-//   --v-input-placeholder-color: var(--v-input-disabled-placeholder-color);
-// }
-.v-input--disabled .v-input-control {
-  @apply cursor-not-allowed;
 }
 /* shadow */
 .v-input.v-input--shadow .v-input-wrapper {
