@@ -35,12 +35,12 @@ withDefaults(defineProps<Props>(), {
   right: false,
   items: () => [],
   top: false,
-  topClass: 'bottom-10',
-  bottomClass: 'top-6',
+  topClass: '',
+  bottomClass: '',
   panelClass: '',
   buttonWrapperClass: '',
-  leftClass: 'left-0',
-  rightClass: 'right-0',
+  leftClass: '',
+  rightClass: '',
   transition: 'fade-scale',
   icon: 'ri:arrow-down-s-line',
   iconSize: 'sm',
@@ -81,8 +81,12 @@ withDefaults(defineProps<Props>(), {
       <MenuItems
         class="dropdown-panel"
         :class="[
-          right ? rightClass : leftClass,
-          top ? topClass : bottomClass,
+          {
+            'dropdown-panel--right': right,
+            'dropdown-panel--left': !right,
+            'dropdown-panel--top': top,
+            'dropdown-panel--bottom': !top,
+          },
           panelClass,
         ]"
       >
@@ -93,5 +97,3 @@ withDefaults(defineProps<Props>(), {
     </transition>
   </Menu>
 </template>
-
-<style src="./Dropdown.scss" lang="scss"></style>
