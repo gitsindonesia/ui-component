@@ -5,6 +5,7 @@
 @import 'dropdown';
 @import 'forms';
 @import 'autocomplete';
+@import 'select';
 
 // CSS
 @import '@morpheme/editor/dist/style.css';
@@ -31,7 +32,6 @@
 @import '@morpheme/nav-drawer/src/NavDrawer.scss';
 @import '@morpheme/pagination/src/VPagination.scss';
 @import '@morpheme/progress-bar/src/VProgressBar.scss';
-@import '@morpheme/select/src/VSelect.scss';
 @import '@morpheme/shimmer/src/Shimmer.scss';
 @import '@morpheme/switch/src/VSwitch.scss';
 @import '@morpheme/table/src/VDataTable.scss';

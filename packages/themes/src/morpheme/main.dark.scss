@@ -4,6 +4,7 @@
 @import 'dropdown.dark';
 @import 'forms.dark';
 @import 'autocomplete.dark';
+@import 'select.dark';
 
 // CSS
 @import '@morpheme/editor/dist/style.css';
@@ -29,7 +30,6 @@
 @import '@morpheme/nav-drawer/src/NavDrawer.dark.scss';
 @import '@morpheme/pagination/src/VPagination.dark.scss';
 @import '@morpheme/progress-bar/src/VProgressBar.dark.scss';
-@import '@morpheme/select/src/VSelect.dark.scss';
 @import '@morpheme/shimmer/src/Shimmer.dark.scss';
 @import '@morpheme/switch/src/VSwitch.dark.scss';
 @import '@morpheme/table/src/VDataTable.dark.scss';

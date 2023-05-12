@@ -408,5 +408,3 @@ const emitSelected = (val: any) => {
     </div>
   </div>
 </template>
-
-<style src="./VSelect.scss" lang="scss"></style>
