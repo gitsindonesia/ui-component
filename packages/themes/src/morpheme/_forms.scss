@@ -2,10 +2,10 @@
 
 :root {
   /* input control */
-  --v-input-height: 44px;
+  --v-input-height: auto;
   --v-input-border-color: #{$color-base-gray-300};
   --v-input-placeholder-color: #{$color-base-gray-500};
-  --v-input-border-radius: #{$border-radius-lg};
+  --v-input-border-radius: 12px;
   --v-input-padding-x: #{$size-spacing-3};
   --v-input-padding-y: #{$size-spacing-3};
   --v-input-font-size: #{$size-font-sm};
@@ -72,15 +72,47 @@
     display: var(--v-input-label-display);
     margin-bottom: var(--v-input-label-margin-bottom);
   }
+
+  &-clearable {
+    cursor: pointer;
+    width: 1.75rem;
+    height: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $border-radius-full;
+    margin-right: 0.5rem;
+
+    &:hover {
+      background-color: $color-base-gray-100;
+    }
+
+    &:active {
+      background-color: $color-base-gray-50;
+    }
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+  }
+
+  &-action {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
 }
 
 .v-input.v-input--select .v-input-control,
 .v-input.v-input--textarea .v-input-control {
   width: 100%;
 
-  &:focus {    
+  &:focus {
     border: 1px solid var(--v-input-effect-border-color);
-    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px var(--v-input-effect-shadow-color);
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05),
+      0px 0px 0px 4px var(--v-input-effect-shadow-color);
   }
 }
 
@@ -91,7 +123,9 @@
   border-radius: var(--v-input-border-radius);
   background-color: var(--v-input-bg-color);
   color: var(--v-input-color);
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+    backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
   display: flex;
@@ -107,15 +141,15 @@
 .v-input-prepend:not(:empty) {
   border-top-left-radius: var(--v-input-border-radius);
   border-bottom-left-radius: var(--v-input-border-radius);
-  padding-left: 0.75rem/* 12px */;
-  padding-right: 0.75rem/* 12px */;
+  padding-left: 0.75rem /* 12px */;
+  padding-right: 0.75rem /* 12px */;
 }
 
 .v-input-append:not(:empty) {
   border-top-right-radius: var(--v-input-border-radius);
   border-bottom-right-radius: var(--v-input-border-radius);
-  padding-left: 0.75rem/* 12px */;
-  padding-right: 0.75rem/* 12px */;
+  padding-left: 0.75rem /* 12px */;
+  padding-right: 0.75rem /* 12px */;
 }
 
 .v-input-prepend,
@@ -151,19 +185,20 @@
 
 .v-input:has(.v-input-prepend:not(:empty))
   .v-input-control:not(.v-input-control--has-prepend-class) {
-  @apply pl-1;
+    padding-left: 2px;
 }
 
 .v-input:has(.v-input-append:not(:empty))
   .v-input-control:not(.v-input-control--has-append-class) {
-  @apply pr-1;
+    padding-right: 2px;
 }
 
 /* box shadow effect colors */
 .v-input {
   .v-input-wrapper:focus-within {
     border: 1px solid var(--v-input-effect-border-color);
-    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px var(--v-input-effect-shadow-color);
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05),
+      0px 0px 0px 4px var(--v-input-effect-shadow-color);
   }
 }
 
@@ -203,7 +238,9 @@
 .v-input-error {
   color: $color-base-error-500;
   margin-top: 0.25rem;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+    backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
 }
@@ -241,10 +278,11 @@
 }
 
 .v-input.v-input--sm .v-input-prepend:not(:empty) {
-  padding-left: 0.5rem/* 8px */;
-  padding-right: 0.5rem/* 8px */;
+  padding-left: 0.5rem /* 8px */;
+  padding-right: 0.5rem /* 8px */;
 }
 
+// lg
 .v-input.v-input--lg {
   --v-input-height: 50px;
   --v-input-padding-x: theme('padding.5');
@@ -257,33 +295,17 @@
   --v-input-icon-height: theme('height.7');
 }
 
-.v-input-clearable {
-  cursor: pointer;
-  width: 1.75rem;
-  height: 1.75rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: $border-radius-full;
-  margin-right: 0.5rem;
 
-  &:hover {
-    background-color: $color-base-gray-100;
+// md / default
+.v-input.v-input--md {
+  --v-input-height: 44px;
+  --v-input-padding-x: #{$size-spacing-3};
+  --v-input-padding-y: #{$size-spacing-3};
+  --v-input-font-size: #{$size-font-sm};
+  --v-input-label-font-size: #{$size-font-sm};
+
+  .v-input-icon {
+    --v-input-icon-width: #{$size-spacing-5};
+    --v-input-icon-height: #{$size-spacing-5};
   }
-
-  &:active {
-    background-color: $color-base-gray-50;
-  }
-}
-
-.v-input-footer {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 0.5rem;
-}
-
-.v-input-action {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
 }

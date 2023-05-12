@@ -1,10 +1,11 @@
 :root {
-  --btn-border-radius: 8px;
+  --btn-border-radius: 12px;
   --btn-group-border-radius: var(--btn-border-radius);
   --btn-border-width: 1px;
   --btn-padding-x: 14px;
   --btn-padding-y: 0;
   --btn-font-size: #{$size-font-sm};
+  --btn-line-height: 20px;
   --btn-font-weight: 600;
   --btn-shadow: none;
   --btn-icon-width: 20px;
