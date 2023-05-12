@@ -3,6 +3,7 @@
 @import 'button.dark';
 @import 'dropdown.dark';
 @import 'forms.dark';
+@import 'autocomplete.dark';
 
 // CSS
 @import '@morpheme/editor/dist/style.css';
@@ -13,7 +14,6 @@
 // @import '@morpheme/stepper/dist/style.css';
 // SCSS
 @import '@morpheme/app-bar/src/VAppBar.dark.scss';
-@import '@morpheme/autocomplete/src/VAutocomplete.dark.scss';
 @import '@morpheme/avatar/src/Avatar.dark.scss';
 @import '@morpheme/breadcrumbs/src/VBreadcrumbs.dark.scss';
 @import '@morpheme/bottom-sheet/src/BottomSheet.dark.scss';

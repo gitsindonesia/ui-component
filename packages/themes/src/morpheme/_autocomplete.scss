@@ -27,6 +27,7 @@
 
   // options
   --v-autocomplete-options-bg-color: #{$color-base-white};
+  --v-autocomplete-options-border-color: #{$color-base-gray-50};
 
   // empty
   --v-autocomplete-empty-color: #{$color-base-gray-700};
@@ -54,8 +55,12 @@
 
   // hint
   --v-autocomplete-hint-font-size: var(--v-input-hint-font-size, 14px);
-  --v-autocomplete-hint-color: #{$color-base-gray-400};
+  --v-autocomplete-hint-color: #{$color-base-gray-600};
   --v-autocomplete-hint-margin-top: #{$size-spacing-1};
+
+  // focus effect
+  --v-input-effect-border-color: #{$color-brand-primary-300};
+  --v-input-effect-shadow-color: #{$color-brand-primary-100};
 }
 
 .autocomplete {
@@ -77,20 +82,25 @@
   &-field {
     background-color: var(--v-autocomplete-field-bg-color);
     border: 1px solid var(--v-autocomplete-field-border-color);
+    border-radius: #{$border-radius-lg};
+    width: 100%;
+    position: relative;
+    text-align: left;
+    cursor: default;
+    font-size: #{$size-font-sm};
+    overflow: hidden;
+    transition-property: color, background-color, border-color,
+      text-decoration-color, fill, stroke, opacity, box-shadow, transform,
+      filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
 
-    @apply relative
-    w-full
-    text-left
-    border
-    rounded-lg
-    cursor-default
-    focus:outline-none
-    focus-within:ring focus-within:ring-opacity-50
-    sm:text-sm
-    overflow-hidden
-    transition
-    duration-300
-    focus-within:ring-primary-500 focus-within:border-primary-500;
+    &:focus-within {
+      outline: none;
+      border: 1px solid var(--v-input-effect-border-color);
+      box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05),
+        0px 0px 0px 4px var(--v-input-effect-shadow-color);
+    }
 
     &:hover {
       --v-autocomplete-border-color: var(
@@ -99,14 +109,24 @@
     }
 
     &--error {
-      @apply border-error-500 focus-within:ring-error-500
-        focus-within:border-error-500;
+      --v-input-effect-border-color: #{$color-base-error-300};
+      --v-input-effect-shadow-color: #{$color-base-error-100};
+      border-color: #{$color-base-error-300};
     }
   }
 
   &-input {
     color: var(--v-autocomplete-input-color);
     background-color: var(--v-autocomplete-input-bg-color);
+    font-size: var(--v-autocomplete-input-font-size);
+    font-weight: var(--v-autocomplete-input-font-weight);
+    line-height: var(--v-autocomplete-input-line-height);
+    width: 100%;
+    border: none;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 0.75rem;
+    padding-right: 5rem;
 
     &--selected {
       --v-autocomplete-input-color: var(--v-autocomplete-input-selected-color);
@@ -116,18 +136,16 @@
       cursor: not-allowed;
       --v-autocomplete-input-color: var(--v-autocomplete-input-disabled-color);
     }
-
-    @apply w-full
-      border-none
-      focus:ring-0
-      py-3
-      pl-3
-      pr-20
-      leading-5;
   }
 
   &-clearable {
-    @apply absolute inset-y-0 right-0 flex items-center pr-4;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-right: #{$size-spacing-3};
 
     &-button {
       color: var(--v-autocomplete-clearable-button-color);
@@ -142,32 +160,48 @@
         );
       }
 
-      @apply mr-1 rounded-full p-1 transition duration-300;
+      margin-right: #{$size-spacing-1};
+      border-radius: #{$border-radius-full};
+      padding: 0.25rem/* 4px */;
+      transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 300ms;
     }
   }
 
+  &-item-selected-icon,
   &-icon {
     color: var(--v-autocomplete-icon-color);
-
-    @apply w-6 h-6 fill-current;
+    width: #{$size-spacing-5} !important;
+    height: #{$size-spacing-5} !important;
+    fill: currentColor;
+    margin-top: -0.125rem;
   }
 
   &-options {
     background-color: var(--v-autocomplete-options-bg-color);
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    margin-top: 0.25rem;
+    overflow: auto;
+    text-align: left;
+    font-size: #{$size-font-sm};
+    border-radius: #{$border-radius-lg};
+    box-shadow: #{$effect-shadow-md};
+    max-height: 15rem;
+    transition-property: color, background-color, border-color,
+      text-decoration-color, fill, stroke, opacity, box-shadow, transform,
+      filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+    // border: 1px solid var(--v-autocomplete-options-border-color);
 
-    @apply absolute
-      z-10
-      w-full
-      py-1
-      mt-1
-      overflow-auto
-      text-base
-      rounded-md
-      shadow-lg
-      max-h-60
-      ring-1 ring-black ring-opacity-5
-      focus:outline-none
-      sm:text-sm;
+    &:focus {
+      outline: none;
+    }
   }
 
   &-empty {

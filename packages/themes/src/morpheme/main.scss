@@ -4,6 +4,7 @@
 @import 'badge';
 @import 'dropdown';
 @import 'forms';
+@import 'autocomplete';
 
 // CSS
 @import '@morpheme/editor/dist/style.css';
@@ -14,7 +15,6 @@
 // @import '@morpheme/stepper/dist/style.css';
 // SCSS
 @import '@morpheme/app-bar/src/VAppBar.scss';
-@import '@morpheme/autocomplete/src/VAutocomplete.scss';
 @import '@morpheme/avatar/src/Avatar.scss';
 @import '@morpheme/breadcrumbs/src/VBreadcrumbs.scss';
 @import '@morpheme/bottom-sheet/src/BottomSheet.scss';

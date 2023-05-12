@@ -1,0 +1,52 @@
+.dark {
+  .autocomplete {
+    // field
+    --v-autocomplete-field-bg-color: theme('colors.neutral.800');
+    --v-autocomplete-field-border-color: theme('borderColor.neutral.700');
+
+    // field hover
+    --v-autocomplete-field-hover-border-color: theme('borderColor.neutral.800');
+
+    // input
+    --v-autocomplete-input-color: theme('colors.neutral.600');
+
+    // input selected
+    --v-autocomplete-input-selected-color: theme('colors.neutral.200');
+
+    // clearable button
+    --v-autocomplete-clearable-button-color: theme('colors.neutral.400');
+
+    // clearable button hover
+    --v-autocomplete-clearable-button-hover-color: theme('colors.neutral.500');
+    --v-autocomplete-clearable-button-hover-bg-color: theme(
+      'colors.neutral.500'
+    );
+
+    // icon
+    --v-autocomplete-icon-color: theme('colors.neutral.400');
+
+    // options
+    --v-autocomplete-options-bg-color: theme('colors.neutral.800');
+
+    // empty
+    --v-autocomplete-empty-color: theme('colors.neutral.700');
+
+    // item
+    --v-autocomplete-item-color: theme('colors.neutral.200');
+
+    // item selected
+    --v-autocomplete-item-selected-color: theme('colors.primary.500');
+
+    // item selected item
+    --v-autocomplete-item-selected-icon-color: theme('colors.primary.500');
+
+    // item inactive
+    --v-autocomplete-item-inactive-color: theme('colors.neutral.200');
+
+    // item active
+    --v-autocomplete-item-active-bg-color: theme('colors.neutral.700');
+
+    // hint
+    --v-autocomplete-hint-color: theme('colors.neutral.500');
+  }
+}
