@@ -95,13 +95,16 @@
   &-footer {
     display: flex;
     justify-content: space-between;
-    margin-top: 0.5rem;
   }
 
   &-action {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: #{$size-spacing-2};
+  }
+
+  &-counter {
+    font-size: #{$size-font-sm};
   }
 }
 
@@ -249,6 +252,7 @@
     backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
+  font-size: $size-font-sm;
 }
 
 /* shadow */
