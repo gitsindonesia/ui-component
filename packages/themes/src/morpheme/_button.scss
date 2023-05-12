@@ -1,5 +1,7 @@
+@import '@morpheme/design-tokens/scss/_variables.scss';
+
 :root {
-  --btn-border-radius: 12px;
+  --btn-border-radius: #{$border-radius-lg};
   --btn-group-border-radius: var(--btn-border-radius);
   --btn-border-width: 1px;
   --btn-padding-x: 14px;
