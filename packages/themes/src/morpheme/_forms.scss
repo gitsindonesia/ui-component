@@ -2,7 +2,7 @@
 
 :root {
   /* input control */
-  --v-input-height: auto;
+  --v-input-height: 44px;
   --v-input-border-color: #{$color-base-gray-300};
   --v-input-placeholder-color: #{$color-base-gray-500};
   --v-input-border-radius: #{$border-radius-lg};
@@ -26,7 +26,7 @@
 
   /* icon */
   --v-input-icon-width: #{$size-spacing-5};
-  --v-input-icon-height: #{size-spacing-5};
+  --v-input-icon-height: #{$size-spacing-5};
   --v-input-icon-color: #{$color-base-gray-500};
 
   // disabled
