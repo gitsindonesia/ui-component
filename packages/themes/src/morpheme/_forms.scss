@@ -48,7 +48,7 @@
 
 .v-input {
   &--rounded {
-    --v-input-border-radius: theme('borderRadius.full');
+    --v-input-border-radius: #{$border-radius-full};
   }
 
   &--disabled {
@@ -106,6 +106,10 @@
   &-counter {
     font-size: #{$size-font-sm};
   }
+}
+
+.v-input--select .v-input-control {
+  height: var(--v-input-height);
 }
 
 .v-input.v-input--select .v-input-control,
@@ -177,7 +181,7 @@
     box-shadow: none;
   }
 
-  &:not(textarea):not(select) {
+  &:not(textarea) {
     height: var(--v-input-height);
   }
 
@@ -276,33 +280,35 @@
 
 /* sizes */
 .v-input.v-input--sm {
-  --v-input-height: 2rem;
-  --v-input-padding-x: theme('padding.2');
-  --v-input-padding-y: theme('padding.1');
-  --v-input-font-size: theme('fontSize.sm');
-  --v-input-label-font-size: theme('fontSize.xs');
-}
-.v-input.v-input--sm .v-input-icon {
-  --v-input-icon-width: theme('width.4');
-  --v-input-icon-height: theme('height.4');
-}
+  --v-input-height: #{$size-spacing-8};
+  --v-input-padding-x: #{$size-spacing-1};
+  --v-input-padding-y: #{$size-spacing-1};
+  --v-input-font-size: #{$size-font-xs};
+  --v-input-label-font-size: #{$size-font-xs};
+  
+  .v-input-icon {
+    --v-input-icon-width: #{$size-spacing-4};
+    --v-input-icon-height: #{$size-spacing-4};
+  }
 
-.v-input.v-input--sm .v-input-prepend:not(:empty) {
-  padding-left: 0.5rem /* 8px */;
-  padding-right: 0.5rem /* 8px */;
+  .v-input-prepend:not(:empty) {
+    padding-left: #{$size-spacing-2};
+    padding-right: #{$size-spacing-2};
+  }
 }
 
 // lg
 .v-input.v-input--lg {
   --v-input-height: 50px;
-  --v-input-padding-x: theme('padding.5');
-  --v-input-padding-y: theme('padding.3');
-  --v-input-font-size: theme('fontSize.lg');
-  --v-input-label-font-size: theme('fontSize.base');
-}
-.v-input.v-input--lg .v-input-icon {
-  --v-input-icon-width: theme('width.7');
-  --v-input-icon-height: theme('height.7');
+  --v-input-padding-x: #{$size-spacing-3};
+  --v-input-padding-y: #{$size-spacing-3};
+  --v-input-font-size: #{$size-font-lg};
+  --v-input-label-font-size: #{$size-font-lg};
+
+  .v-input-icon {
+    --v-input-icon-width: #{$size-spacing-5};
+    --v-input-icon-height: #{$size-spacing-5};
+  }
 }
 
 
