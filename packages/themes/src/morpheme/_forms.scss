@@ -225,15 +225,21 @@
   --v-input-effect-shadow-color: #{$color-base-success-100};
 }
 
+.v-input-dark {
+  --v-input-effect-border-color: #{$color-base-gray-true-300};
+  --v-input-effect-shadow-color: #{$color-base-gray-true-100};
+}
+
 .v-input--error,
 .v-input-error {
   --v-input-effect-border-color: #{$color-base-error-300};
   --v-input-effect-shadow-color: #{$color-base-error-100};
 }
-.v-input-dark {
-  --v-input-effect-border-color: #{$color-base-gray-true-300};
-  --v-input-effect-shadow-color: #{$color-base-gray-true-100};
+
+.v-input--error {
+  --v-input-border-color: #{$color-base-error-300};
 }
+
 
 .v-input-error {
   color: $color-base-error-500;
