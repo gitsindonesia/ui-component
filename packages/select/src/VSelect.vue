@@ -159,7 +159,7 @@ const props = defineProps({
   },
   iconSize: {
     type: String,
-    default: 'sm',
+    default: 'xs',
   },
   validationMode: {
     type: String as PropType<ValidationMode>,
