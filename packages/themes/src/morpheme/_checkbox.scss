@@ -6,16 +6,18 @@
   --v-checkbox-border-style: solid;
   --v-checkbox-border-color: #{$color-base-gray-300};
   --v-checkbox-border-radius: #{$border-radius-md};
+  --v-checkbox-bg-image: url('data:image/svg+xml,<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 3L4.5 8.5L2 6" stroke="%230984DD" stroke-width="1.6666" stroke-linecap="round" stroke-linejoin="round"/></svg>') !important;
+
+  // checked
+  --v-checkbox-checked-bg-color: #{$color-brand-primary-50};
+  --v-checkbox-checked-border-color: #{$color-brand-primary-600};
 
   // disabled
   --v-checkbox-disabled-bg-color: #{$color-base-gray-100};
   --v-checkbox-disabled-border-color: #{$color-base-gray-200};
 
   /* label */
-  --v-checkbox-label-font-size: var(
-    --input-label-font-size,
-    #{$size-font-sm}
-  );
+  --v-checkbox-label-font-size: var(--input-label-font-size, #{$size-font-sm});
   --v-checkbox-label-font-weight: #{$font-weight-medium};
   --v-checkbox-label-display: var(--v-input-label-display, block);
   --v-checkbox-label-margin-top: 1px;
@@ -28,17 +30,41 @@
 }
 
 .v-checkbox {
-  @apply flex items-center gap-2;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 
   &-input {
+    appearance: none;
     border-radius: var(--v-checkbox-border-radius);
-    background-color: var(--v-checkbox-bg-color);
+    background-color: var(--v-checkbox-bg-color) !important;
     border: var(--v-checkbox-border-width) var(--v-checkbox-border-style)
-      var(--v-checkbox-border-color);
+      var(--v-checkbox-border-color) !important;
+    transition-property: color, background-color, border-color,
+      text-decoration-color, fill, stroke, opacity, box-shadow, transform,
+      filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
 
-    @apply transition duration-300 disabled:cursor-not-allowed;
+    &:focus {
+      border: 1px solid var(--v-input-effect-border-color);
+      box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05),
+        0px 0px 0px 4px var(--v-input-effect-shadow-color);
+    }
+
+    &:checked {
+      background-image: var(--v-checkbox-bg-image);
+      background-size: 70% 70% !important;
+      background-position: center !important;
+      background-repeat: no-repeat !important;
+
+      --v-checkbox-color: var(--v-checkbox-checked-color);
+      --v-checkbox-border-color: var(--v-checkbox-checked-border-color);
+      --v-checkbox-bg-color: var(--v-checkbox-checked-bg-color);
+    }
 
     &:disabled {
+      cursor: not-allowed;
       --v-checkbox-bg-color: var(--v-checkbox-disabled-bg-color);
       --v-checkbox-border-color: var(--v-checkbox-disabled-border-color);
     }
@@ -50,8 +76,7 @@
     display: var(--v-checkbox-label-display);
     margin-top: var(--v-checkbox-label-margin-top);
     color: var(--v-checkbox-label-color);
-
-    @apply select-none;
+    user-select: none;
   }
 
   &-hint {
@@ -60,35 +85,51 @@
     margin-top: var(--v-checkbox-hint-margin-top);
   }
 
-  &-error {
-    @apply text-sm text-error-500;
+  &-primary {
+    --v-input-effect-border-color: #{$color-brand-primary-300};
+    --v-input-effect-shadow-color: #{$color-brand-primary-100};
+    --v-checkbox-checked-bg-color: #{$color-brand-primary-50};
+    --v-checkbox-checked-border-color: #{$color-brand-primary-600};
   }
 
-  &-primary &-input {
-    @apply text-primary-500 focus:border-primary-500 focus:ring-primary-500;
+  &-secondary {
+    --v-input-effect-border-color: #{$color-base-gray-300};
+    --v-input-effect-shadow-color: #{$color-base-gray-100};
+    --v-checkbox-checked-bg-color: #{$color-base-gray-50};
+    --v-checkbox-checked-border-color: #{$color-base-gray-600};
+    --v-checkbox-bg-image: url('data:image/svg+xml,<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 3L4.5 8.5L2 6" stroke="%23475467" stroke-width="1.6666" stroke-linecap="round" stroke-linejoin="round"/></svg>') !important;
   }
 
-  &-secondary &-input {
-    @apply text-secondary-500 focus:border-secondary-500 focus:ring-secondary-500;
+  &-info {
+    --v-input-effect-border-color: #{$color-base-blue-light-300};
+    --v-input-effect-shadow-color: #{$color-base-blue-light-100};
+    --v-checkbox-checked-bg-color: #{$color-base-blue-light-50};
+    --v-checkbox-checked-border-color: #{$color-base-blue-light-600};
+    --v-checkbox-bg-image: url('data:image/svg+xml,<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 3L4.5 8.5L2 6" stroke="%230086c9" stroke-width="1.6666" stroke-linecap="round" stroke-linejoin="round"/></svg>') !important;
   }
 
-  &-info &-input {
-    @apply text-info-500 focus:border-info-500 focus:ring-info-500;
+  &-success {
+    --v-input-effect-border-color: #{$color-base-success-300};
+    --v-input-effect-shadow-color: #{$color-base-success-100};
+    --v-checkbox-checked-bg-color: #{$color-base-success-50};
+    --v-checkbox-checked-border-color: #{$color-base-success-600};
+    --v-checkbox-bg-image: url('data:image/svg+xml,<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 3L4.5 8.5L2 6" stroke="%23039855" stroke-width="1.6666" stroke-linecap="round" stroke-linejoin="round"/></svg>') !important;
   }
 
-  &-success &-input {
-    @apply text-success-500 focus:border-success-500 focus:ring-success-500;
+  &-warning {
+    --v-input-effect-border-color: #{$color-base-warning-300};
+    --v-input-effect-shadow-color: #{$color-base-warning-100};
+    --v-checkbox-checked-bg-color: #{$color-base-warning-50};
+    --v-checkbox-checked-border-color: #{$color-base-warning-600};
+    --v-checkbox-bg-image: url('data:image/svg+xml,<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 3L4.5 8.5L2 6" stroke="%23dc6803" stroke-width="1.6666" stroke-linecap="round" stroke-linejoin="round"/></svg>') !important;
   }
 
-  &-warning &-input {
-    @apply text-warning-500 focus:border-warning-500 focus:ring-warning-500;
-  }
-
-  &-error &-input {
-    @apply text-error-500 focus:border-error-500 focus:ring-error-500;
-  }
-
-  &--error &-input {
-    @apply text-error-500 border-error-500 ring-error-500 focus:border-error-500 focus:ring-error-500;
+  &-error,
+  &--error {
+    --v-input-effect-border-color: #{$color-base-error-300};
+    --v-input-effect-shadow-color: #{$color-base-error-100};
+    --v-checkbox-checked-bg-color: #{$color-base-error-50};
+    --v-checkbox-checked-border-color: #{$color-base-error-600};
+    --v-checkbox-bg-image: url('data:image/svg+xml,<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 3L4.5 8.5L2 6" stroke="%23d92d20" stroke-width="1.6666" stroke-linecap="round" stroke-linejoin="round"/></svg>') !important;
   }
 }
