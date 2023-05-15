@@ -132,5 +132,3 @@ const {errorMessage, uncontrolledValue, inputId} = useFormValue(props, emit);
     </div>
   </div>
 </template>
-
-<style src="./VRadio.scss" lang="scss"></style>

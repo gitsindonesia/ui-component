@@ -1,0 +1,90 @@
+@import '@morpheme/design-tokens/scss/_variables.scss';
+
+:root {
+  --v-radio-bg-color: #{$color-base-white};
+  --v-radio-border-color: #{$color-base-gray-300};
+  --v-radio-border-style: solid;
+  --v-radio-border-width: 1px;
+  --v-radio-bg-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%230984DD' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
+
+  // checked
+  --v-radio-checked-bg-color: #{$color-brand-primary-50};
+  --v-radio-checked-border-color: #{$color-brand-primary-600};
+
+  // disabled
+  --v-radio-disabled-border-color: #{$color-base-gray-400};
+  --v-radio-disabled-bg-color: #{$color-base-gray-300};
+  --v-radio-disabled-bg-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%2398A2B3' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
+
+  // label
+  --v-radio-label-color: #{$color-base-gray-700};
+
+  // hint
+  --v-radio-hint-font-size: var(--v-input-hint-font-size, 14px);
+  --v-radio-hint-color: var(--v-input-hint-color);
+  --v-radio-hint-margin-top: var(--v-input-hint-margin-top);
+}
+
+.v-radio {
+  &-wrapper {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 0.5rem;
+    user-select: none;
+  }
+
+  &-label {
+    color: var(--v-radio-label-color);
+  }
+
+  &-hint {
+    font-size: var(--v-radio-hint-font-size);
+    color: var(--v-radio-hint-color);
+    margin-top: var(--v-radio-hint-margin-top);
+  }
+
+  &-input {
+    background-color: var(--v-radio-bg-color) !important;
+    border-width: var(--v-radio-border-width);
+    border-color: var(--v-radio-border-color) !important;
+    border-style: var(--v-radio-border-style);
+    transition-property: color, background-color, border-color,
+      text-decoration-color, fill, stroke, opacity, box-shadow, transform,
+      filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+
+    &:focus {
+      border: 1px solid var(--v-input-effect-border-color);
+      box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05),
+        0px 0px 0px 4px var(--v-input-effect-shadow-color);
+    }
+
+    &:checked {
+      --v-radio-bg-color: var(--v-radio-checked-bg-color);
+      --v-radio-border-color: var(--v-radio-checked-border-color);
+      background-image: var(--v-radio-bg-image) !important;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      --v-radio-bg-color: var(--v-radio-disabled-bg-color);
+      --v-radio-border-color: var(--v-radio-disabled-border-color);
+
+      &:checked {
+        background-image: var(--v-radio-disabled-bg-image) !important;
+      }
+    }
+  }
+
+  &-error {
+    font-size: #{$size-font-sm};
+    color: #{$color-base-error-500};
+
+    &-input {
+      --v-input-effect-border-color: #{$color-base-error-300};
+      --v-input-effect-shadow-color: #{$color-base-error-100};
+    }
+  }
+}

@@ -7,6 +7,7 @@
 @import 'autocomplete';
 @import 'select';
 @import 'checkbox';
+@import 'radio';
 
 // CSS
 @import '@morpheme/editor/dist/style.css';
@@ -22,7 +23,6 @@
 @import '@morpheme/bottom-sheet/src/BottomSheet.scss';
 @import '@morpheme/card/src/VCard.scss';
 @import '@morpheme/editor/src/VEditor.scss';
-@import '@morpheme/forms/src/radio/VRadio.scss';
 @import '@morpheme/icon/src/Icon.scss';
 @import '@morpheme/list/src/List.scss';
 @import '@morpheme/logo/src/VLogo.scss';

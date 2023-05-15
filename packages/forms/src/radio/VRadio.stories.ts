@@ -62,6 +62,7 @@ export const Disabled: Story = (args) => ({
   <VRadio v-model="value" value="1" label="Choose 1" id="1" />
   <VRadio v-model="value" value="0" label="Choose 0" id="0" />
   <VRadio v-model="value" value="2" label="Disabled" disabled />
+  <VRadio v-model="value" value="1" label="Disabled with Value" disabled />
   `,
 });
 
