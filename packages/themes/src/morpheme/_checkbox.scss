@@ -6,7 +6,7 @@
   --v-checkbox-border-style: solid;
   --v-checkbox-border-color: #{$color-base-gray-300};
   --v-checkbox-border-radius: #{$border-radius-md};
-  --v-checkbox-bg-image: url('data:image/svg+xml,<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 3L4.5 8.5L2 6" stroke="%230984DD" stroke-width="1.6666" stroke-linecap="round" stroke-linejoin="round"/></svg>') !important;
+  --v-checkbox-bg-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%230984DD' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e") !important;
 
   // checked
   --v-checkbox-checked-bg-color: #{$color-brand-primary-50};
@@ -54,7 +54,7 @@
 
     &:checked {
       background-image: var(--v-checkbox-bg-image);
-      background-size: 70% 70% !important;
+      background-size: 100% 100% !important;
       background-position: center !important;
       background-repeat: no-repeat !important;
 
@@ -97,7 +97,7 @@
     --v-input-effect-shadow-color: #{$color-base-gray-100};
     --v-checkbox-checked-bg-color: #{$color-base-gray-50};
     --v-checkbox-checked-border-color: #{$color-base-gray-600};
-    --v-checkbox-bg-image: url('data:image/svg+xml,<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 3L4.5 8.5L2 6" stroke="%23475467" stroke-width="1.6666" stroke-linecap="round" stroke-linejoin="round"/></svg>') !important;
+    --v-checkbox-bg-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23475467' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e") !important;
   }
 
   &-info {
@@ -105,7 +105,7 @@
     --v-input-effect-shadow-color: #{$color-base-blue-light-100};
     --v-checkbox-checked-bg-color: #{$color-base-blue-light-50};
     --v-checkbox-checked-border-color: #{$color-base-blue-light-600};
-    --v-checkbox-bg-image: url('data:image/svg+xml,<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 3L4.5 8.5L2 6" stroke="%230086c9" stroke-width="1.6666" stroke-linecap="round" stroke-linejoin="round"/></svg>') !important;
+    --v-checkbox-bg-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%230086c9' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e") !important;
   }
 
   &-success {
@@ -113,7 +113,7 @@
     --v-input-effect-shadow-color: #{$color-base-success-100};
     --v-checkbox-checked-bg-color: #{$color-base-success-50};
     --v-checkbox-checked-border-color: #{$color-base-success-600};
-    --v-checkbox-bg-image: url('data:image/svg+xml,<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 3L4.5 8.5L2 6" stroke="%23039855" stroke-width="1.6666" stroke-linecap="round" stroke-linejoin="round"/></svg>') !important;
+    --v-checkbox-bg-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23039855' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e") !important;
   }
 
   &-warning {
@@ -121,7 +121,7 @@
     --v-input-effect-shadow-color: #{$color-base-warning-100};
     --v-checkbox-checked-bg-color: #{$color-base-warning-50};
     --v-checkbox-checked-border-color: #{$color-base-warning-600};
-    --v-checkbox-bg-image: url('data:image/svg+xml,<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 3L4.5 8.5L2 6" stroke="%23dc6803" stroke-width="1.6666" stroke-linecap="round" stroke-linejoin="round"/></svg>') !important;
+    --v-checkbox-bg-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23dc6803' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e") !important;
   }
 
   &-error,
@@ -130,6 +130,6 @@
     --v-input-effect-shadow-color: #{$color-base-error-100};
     --v-checkbox-checked-bg-color: #{$color-base-error-50};
     --v-checkbox-checked-border-color: #{$color-base-error-600};
-    --v-checkbox-bg-image: url('data:image/svg+xml,<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 3L4.5 8.5L2 6" stroke="%23d92d20" stroke-width="1.6666" stroke-linecap="round" stroke-linejoin="round"/></svg>') !important;
+    --v-checkbox-bg-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23d92d20' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e") !important;
   }
 }
