@@ -5,8 +5,6 @@ import {useForm} from 'vee-validate';
 import {ref} from 'vue';
 import {object, string} from 'yup';
 import VBtn from '@morpheme/button';
-import '@morpheme/button/src/VBtn.scss';
-import './VSelect.dark.scss';
 
 const items = [...Array(10)].map((_, index) => ({
   value: index + 1,

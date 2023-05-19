@@ -3,9 +3,6 @@ import {themeColors} from '@morpheme/utils/colors';
 import {Args, Meta, Story} from '@storybook/vue3';
 import {useForm} from 'vee-validate';
 import {ref} from 'vue';
-import '@morpheme/pagination/src/VPagination.scss';
-import '@morpheme/pagination/src/VPagination.dark.scss';
-import './VDataTablePagination.dark.scss';
 
 export default {
   title: 'Components/DataTablePagination',

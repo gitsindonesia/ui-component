@@ -129,5 +129,3 @@ const percentage = computed(() => {
     </div>
   </div>
 </template>
-
-<style src="./VProgressBar.scss" lang="scss"></style>

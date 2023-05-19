@@ -1,6 +1,5 @@
 import {Meta, Story} from '@storybook/vue3';
 import VPagination from './VPagination.vue';
-import './VPagination.dark.scss';
 
 export default {
   title: 'Components/Pagination',

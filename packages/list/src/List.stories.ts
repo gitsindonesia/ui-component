@@ -10,9 +10,6 @@ import {ref} from 'vue';
 import {NavDrawer as VNavDrawer} from '@morpheme/nav-drawer';
 import VBtn from '@morpheme/button';
 import {Dropdown} from '@morpheme/dropdown';
-import '@morpheme/dropdown/src/Dropdown.scss';
-import '@morpheme/nav-drawer/src/NavDrawer.scss';
-import './List.dark.scss';
 
 export default {
   title: 'Components/List',

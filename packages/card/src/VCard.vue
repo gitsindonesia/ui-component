@@ -119,5 +119,3 @@ const classes = computed(() => {
     </div>
   </component>
 </template>
-
-<style src="./VCard.scss" lang="scss"></style>

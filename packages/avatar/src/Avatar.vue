@@ -107,5 +107,3 @@ const computedStyle = computed(() => {
     </slot>
   </div>
 </template>
-
-<style src="./Avatar.scss" lang="scss"></style>

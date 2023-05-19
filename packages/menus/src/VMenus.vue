@@ -96,5 +96,3 @@ const menuPlacement = computed(() => {
     </template>
   </component>
 </template>
-
-<style src="./VMenus.scss" lang="scss"></style>

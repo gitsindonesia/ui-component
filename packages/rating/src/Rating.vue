@@ -308,5 +308,3 @@ export default defineComponent({
     </p>
   </div>
 </template>
-
-<style src="./Rating.scss" lang="scss"></style>

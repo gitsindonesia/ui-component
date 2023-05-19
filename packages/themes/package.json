@@ -3,8 +3,7 @@
   "version": "1.0.0-alpha.57+95edc430",
   "description": "Morpheme Themes",
   "scripts": {
-    "build": "sass --load-path=./ ./src/morpheme/main.scss ./dist/morpheme/main.css",
-    "build:vite": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
+    "build": "sass --load-path=./node_modules/@morpheme/**/** ./src/morpheme/main.scss:./dist/morpheme/main.css ./src/morpheme/main.dark.scss:./dist/morpheme/main.dark.css",
     "prepublishOnly": "npm run build",
     "test": "vitest"
   },

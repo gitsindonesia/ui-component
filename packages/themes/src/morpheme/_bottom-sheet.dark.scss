@@ -1,0 +1,19 @@
+@import 'list.dark';
+
+.dark {
+  .v-bottom-sheet {
+    --v-bottom-sheet-bg-color: theme('colors.neutral.900');
+    --v-bottom-sheet-body-color: theme('colors.neutral.200');
+
+    // handle
+    --v-bottom-sheet-handle-bg-color: theme('colors.neutral.600');
+
+    &-close-icon {
+      @apply text-neutral-300 hover:text-neutral-100;
+    }
+
+    &-footer {
+      border-color: theme('colors.neutral.800');
+    }
+  }
+}

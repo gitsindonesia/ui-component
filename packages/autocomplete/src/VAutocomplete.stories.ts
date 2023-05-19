@@ -4,7 +4,7 @@ import {object} from 'yup';
 import VAutocomplete from './VAutocomplete.vue';
 import VBtn from '@morpheme/button';
 import {Story} from '@storybook/vue3';
-import './VAutocomplete.dark.scss';
+
 
 const items = [
   {value: 1, text: 'Wade Cooper'},

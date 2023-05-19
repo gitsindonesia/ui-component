@@ -1,0 +1,11 @@
+.dark {
+  .nav-drawer {
+    --nav-drawer-bg-color: theme('colors.neutral.800');
+    --nav-drawer-text-color: theme('colors.neutral.200');
+
+    /* variants */
+    &-default {
+      --nav-drawer-bg-color: theme('colors.neutral.800');
+    }
+  }
+}

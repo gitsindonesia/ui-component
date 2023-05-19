@@ -6,7 +6,6 @@ import {useForm} from 'vee-validate';
 import {object, string} from 'yup';
 import VBtn from '@morpheme/button';
 import {ref} from 'vue';
-import './VRadio.dark.scss';
 
 export default {
   title: 'Forms/Radio',

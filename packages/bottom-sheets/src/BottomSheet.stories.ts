@@ -7,9 +7,6 @@ import BottomSheetMenus from './BottomSheetMenus.vue';
 import BottomSheetBody from './BottomSheetBody.vue';
 import BottomSheetFooter from './BottomSheetFooter.vue';
 import BottomSheetHandle from './BottomSheetHandle.vue';
-import '@morpheme/button/src/VBtn.scss';
-import '@morpheme/button/src/VBtn.dark.scss';
-import './BottomSheet.dark.scss';
 
 const menus = ref([
   {

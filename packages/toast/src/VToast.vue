@@ -234,5 +234,3 @@ const transitionName = computed(() => {
     </transition>
   </teleport>
 </template>
-
-<style src="./VToast.scss" lang="scss"></style>

@@ -8,32 +8,27 @@
 @import 'checkbox.dark';
 @import 'radio.dark';
 @import 'radio-group.dark';
-
-// CSS
-@import '@morpheme/editor/dist/style.css';
-@import '@morpheme/menu/dist/style.css';
-@import '@morpheme/tooltip/dist/style.css';
-@import '@morpheme/theme/transition.css';
-// disabled for now.
-// @import '@morpheme/stepper/dist/style.css';
-// SCSS
-@import '@morpheme/app-bar/src/VAppBar.dark.scss';
-@import '@morpheme/avatar/src/Avatar.dark.scss';
-@import '@morpheme/breadcrumbs/src/VBreadcrumbs.dark.scss';
-@import '@morpheme/bottom-sheet/src/BottomSheet.dark.scss';
-@import '@morpheme/button/src/VBtn.dark.scss';
-@import '@morpheme/card/src/VCard.dark.scss';
-@import '@morpheme/forms/src/radio/VRadioGroup.dark.scss';
-@import '@morpheme/list/src/List.dark.scss';
-@import '@morpheme/menus/src/VMenus.dark.scss';
-@import '@morpheme/modal/src/VModal.dark.scss';
-@import '@morpheme/multi-select/src/VMultiSelect.dark.scss';
-@import '@morpheme/nav-drawer/src/NavDrawer.dark.scss';
-@import '@morpheme/pagination/src/VPagination.dark.scss';
-@import '@morpheme/progress-bar/src/VProgressBar.dark.scss';
-@import '@morpheme/shimmer/src/Shimmer.dark.scss';
-@import '@morpheme/switch/src/VSwitch.dark.scss';
-@import '@morpheme/table/src/VDataTable.dark.scss';
-@import '@morpheme/table/src/VDataTablePagination.dark.scss';
-@import '@morpheme/tabs/src/VTabs.dark.scss';
-@import '@morpheme/timeline/src/VTimeline.dark.scss';
+@import 'app-bar.dark';
+@import 'avatar.dark';
+// @import 'banner.dark'; missing
+@import 'bottom-sheet.dark';
+@import 'breadcrumbs.dark';
+@import 'card.dark';
+// @import 'editor.dark'; missing
+@import 'icon.dark';
+@import 'list.dark';
+// @import 'logo.dark'; missing
+@import 'menus.dark';
+@import 'modal.dark';
+@import 'multi-select.dark';
+@import 'nav-drawer.dark';
+@import 'pagination.dark';
+@import 'progress-bar.dark';
+@import 'shimmer.dark';
+@import 'switch.dark';
+@import 'data-table.dark';
+@import 'data-table-pagination.dark';
+@import 'tabs.dark';
+// @import 'toast.dark'; missing
+// @import 'text.dark'; missing
+@import 'timeline.dark';

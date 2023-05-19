@@ -40,5 +40,3 @@ const computedStyles = computed(() => {
     <slot />
   </component>
 </template>
-
-<style src="./VText.scss" lang="scss"></style>

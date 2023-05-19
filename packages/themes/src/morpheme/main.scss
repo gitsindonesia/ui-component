@@ -12,36 +12,39 @@
 @import 'checkbox';
 @import 'radio';
 @import 'radio-group';
+@import 'app-bar';
+@import 'avatar';
+@import 'banner';
+@import 'bottom-sheet';
+@import 'breadcrumbs';
+@import 'card';
+@import 'editor';
+@import 'icon';
+@import 'list';
+@import 'logo';
+@import 'menus';
+@import 'modal';
+@import 'multi-select';
+@import 'nav-drawer';
+@import 'pagination';
+@import 'progress-bar';
+@import 'shimmer';
+@import 'switch';
+@import 'data-table';
+@import 'data-table-pagination';
+@import 'tabs';
+@import 'toast';
+@import 'text';
+@import 'timeline';
+
+// other
+@import 'transition';
 
 // CSS
 @import '@morpheme/editor/dist/style.css';
 @import '@morpheme/menu/dist/style.css';
 @import '@morpheme/tooltip/dist/style.css';
 @import '@morpheme/theme/transition.css';
+
 // disabled for now.
 // @import '@morpheme/stepper/dist/style.css';
-// SCSS
-@import '@morpheme/app-bar/src/VAppBar.scss';
-@import '@morpheme/avatar/src/Avatar.scss';
-@import '@morpheme/breadcrumbs/src/VBreadcrumbs.scss';
-@import '@morpheme/bottom-sheet/src/BottomSheet.scss';
-@import '@morpheme/card/src/VCard.scss';
-@import '@morpheme/editor/src/VEditor.scss';
-@import '@morpheme/icon/src/Icon.scss';
-@import '@morpheme/list/src/List.scss';
-@import '@morpheme/logo/src/VLogo.scss';
-@import '@morpheme/menus/src/VMenus.scss';
-@import '@morpheme/modal/src/VModal.scss';
-@import '@morpheme/multi-select/src/VMultiSelect.scss';
-@import '@morpheme/nav-drawer/src/NavDrawer.scss';
-@import '@morpheme/pagination/src/VPagination.scss';
-@import '@morpheme/progress-bar/src/VProgressBar.scss';
-@import '@morpheme/shimmer/src/Shimmer.scss';
-@import '@morpheme/switch/src/VSwitch.scss';
-@import '@morpheme/table/src/VDataTable.scss';
-@import '@morpheme/table/src/VDataTablePagination.scss';
-@import '@morpheme/tabs/src/VTabs.scss';
-@import '@morpheme/toast/src/VToast.scss';
-@import '@morpheme/text/src/VText.scss';
-@import '@morpheme/timeline/src/VTimeline.scss';
-@import '@morpheme/banner/src/VBanner.scss';

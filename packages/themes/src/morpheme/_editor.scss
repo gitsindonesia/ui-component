@@ -1,0 +1,41 @@
+:root {
+  --v-editor-height: 300px;
+
+  /* label */
+  --v-editor-label-font-size: var(
+    --input-label-font-size,
+    theme('fontSize.sm')
+  );
+  --v-editor-label-font-weight: theme('fontWeight.normal');
+  --v-editor-label-display: var(--v-input-label-display, block);
+  --v-editor-label-margin-bottom: theme('margin.2');
+
+  // hint
+  --v-select-hint-font-size: var(--v-input-hint-font-size, 14px);
+  --v-select-hint-color: theme('colors.gray.500');
+  --v-select-hint-margin-top: theme('spacing.1');
+}
+
+:deep(.ck-editor__editable) {
+  min-height: var(--v-editor-height);
+}
+
+.v-editor {
+  &-label {
+    font-size: var(--v-checkbox-label-font-size);
+    font-weight: var(--v-checkbox-label-font-weight);
+    display: var(--v-checkbox-label-display);
+    margin-bottom: var(--v-checkbox-label-margin-bottom);
+    user-select: none;
+  }
+
+  &-error {
+    @apply text-error-500 mt-1 text-sm;
+  }
+
+  &-hint {
+    font-size: var(--v-editor-hint-font-size);
+    color: var(--v-editor-hint-color);
+    margin-top: var(--v-editor-hint-margin-top);
+  }
+}

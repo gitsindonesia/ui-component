@@ -12,7 +12,7 @@ export default defineConfig({
     target: 'esnext',
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'VAppShell',
+      name: 'VThemes',
       formats: ['es', 'cjs', 'iife', 'umd'],
     },
     rollupOptions: {

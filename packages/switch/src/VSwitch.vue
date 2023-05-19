@@ -117,5 +117,3 @@ watch(modelValue, (val) => {
     </div>
   </div>
 </template>
-
-<style src="./VSwitch.scss" lang="scss"></style>

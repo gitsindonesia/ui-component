@@ -1,6 +1,5 @@
 import type {Meta, StoryFn} from '@storybook/vue3';
 import Shimmer from './Shimmer.vue';
-import './Shimmer.dark.scss';
 
 export default {
   title: 'Components/Shimmer',

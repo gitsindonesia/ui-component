@@ -4,7 +4,6 @@ import vueRouter from 'storybook-vue3-router';
 import {ref} from 'vue';
 import VBtn from '@morpheme/button';
 import {VModalEvent} from './types';
-import './VModal.dark.scss';
 
 export default {
   title: 'Components/Modal',

@@ -3,7 +3,7 @@ import {Story} from '@storybook/vue3';
 import VBanner from './VBanner.vue';
 import VBannerText from './VBannerText.vue';
 import VText from '@morpheme/text';
-import './VBanner.scss';
+
 import {ref} from 'vue';
 
 export default {

@@ -4,7 +4,6 @@ import {mixed, object} from 'yup';
 import {VInput} from '..';
 import VBtn from '@morpheme/button';
 import VFileUpload from './VFileUpload.vue';
-import '@morpheme/forms/src/forms.dark.scss';
 
 export default {
   title: 'Forms/FileUpload',

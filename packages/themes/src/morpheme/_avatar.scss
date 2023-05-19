@@ -1,0 +1,185 @@
+:root {
+  --avatar-width: 28px;
+  --avatar-height: 28px;
+  --avatar-bg-color: theme('colors.gray.200');
+  --avatar-text-color: theme('colors.gray.800');
+  --avatar-border-color: theme('colors.gray.200');
+  --avatar-border-width: theme('borderWidth.DEFAULT');
+  --avatar-border-style: 'solid';
+  --avatar-border-radius: theme('borderRadius.full');
+  --avatar-font-weight: 600;
+  --avatar-font-size: theme('fontSize.base');
+  --avatar-text-transform: uppercase;
+  --avatar-group-spacing: -4px;
+}
+
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  &-indicator {
+    border-radius: 8px;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--online {
+      border: 1.5px solid white;
+      background-color: #12b76a;
+    }
+
+    &--verified {
+      color: #0788f5;
+    }
+  }
+
+  &-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    & > * {
+      margin: 0 var(--avatar-group-spacing);
+    }
+    &--xs > * {
+      --avatar-group-spacing: -8px;
+    }
+    &--sm > * {
+      --avatar-group-spacing: -6px;
+    }
+    &--md > * {
+      --avatar-group-spacing: -4px;
+    }
+    &--lg > * {
+      --avatar-group-spacing: -2px;
+    }
+    &--xl > * {
+      --avatar-group-spacing: 2px;
+    }
+    &--2xl > * {
+      --avatar-group-spacing: 4px;
+    }
+  }
+
+  /* shapes */
+  &-square,
+  &-square &-image {
+    --avatar-border-radius: theme('borderRadius.none');
+  }
+
+  &-circle,
+  &-circle &-image {
+    --avatar-border-radius: theme('borderRadius.full');
+  }
+
+  &-rounded,
+  &-rounded &-image {
+    --avatar-border-radius: theme('borderRadius.DEFAULT');
+  }
+
+  /* colors */
+  &-primary {
+    --avatar-bg-color: theme('colors.primary.500');
+    --avatar-text-color: theme('colors.white');
+  }
+  &-secondary {
+    --avatar-bg-color: theme('colors.secondary.500');
+    --avatar-text-color: theme('colors.white');
+  }
+  &-warning {
+    --avatar-bg-color: theme('colors.warning.500');
+    --avatar-text-color: theme('colors.white');
+  }
+  &-info {
+    --avatar-bg-color: theme('colors.info.500');
+    --avatar-text-color: theme('colors.white');
+  }
+  &-error {
+    --avatar-bg-color: theme('colors.error.500');
+    --avatar-text-color: theme('colors.white');
+  }
+  &-success {
+    --avatar-bg-color: theme('colors.success.500');
+    --avatar-text-color: theme('colors.white');
+  }
+  &-dark {
+    --avatar-bg-color: theme('colors.gray.800');
+    --avatar-text-color: theme('colors.white');
+  }
+
+  /* sizes */
+  &-xxs,
+  &-xxs &-image {
+    --avatar-width: 16px;
+    --avatar-height: 16px;
+    --avatar-font-size: 8px;
+  }
+  &-xs,
+  &-xs &-image {
+    --avatar-width: 20px;
+    --avatar-height: 20px;
+    --avatar-font-size: 10px;
+  }
+  &-sm,
+  &-sm &-image {
+    --avatar-width: 24px;
+    --avatar-height: 24px;
+    --avatar-font-size: 12px;
+  }
+  &-md,
+  &-md &-image {
+    --avatar-width: 28px;
+    --avatar-height: 28px;
+    --avatar-font-size: 14px;
+  }
+  &-lg,
+  &-lg &-image {
+    --avatar-width: 32px;
+    --avatar-height: 32px;
+    --avatar-font-size: 14px;
+  }
+  &-xl,
+  &-xl &-image {
+    --avatar-width: 40px;
+    --avatar-height: 40px;
+    --avatar-font-size: 16px;
+  }
+
+  /* image */
+  &-image {
+    object-fit: cover;
+    border-width: var(--avatar-border-width);
+    border-color: var(--avatar-border-color);
+    border-style: var(--avatar-border-style);
+    width: var(--avatar-width);
+    height: var(--avatar-height);
+    border-radius: var(--avatar-border-radius);
+    background-color: var(--avatar-bg-color);
+  }
+  // initial
+  &-initial {
+    --avatar-font-weight: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: var(--avatar-font-weight);
+    border-width: var(--avatar-border-width);
+    border-color: var(--avatar-border-color);
+    border-style: var(--avatar-border-style);
+    width: var(--avatar-width);
+    height: var(--avatar-height);
+    border-radius: var(--avatar-border-radius);
+    background-color: var(--avatar-bg-color);
+    color: var(--avatar-text-color);
+    font-size: var(--avatar-font-size);
+    text-transform: var(--avatar-text-transform);
+  }
+}

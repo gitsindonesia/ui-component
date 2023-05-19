@@ -4,7 +4,6 @@ import VMenusItem from './VMenusItem.vue';
 import vueRouter from 'storybook-vue3-router';
 import VAppBar from '@morpheme/app-bar';
 import VMenusCustom from './stories/VMenusCustom.vue';
-import './VMenus.dark.scss';
 
 const items = [
   {

@@ -27,5 +27,3 @@ const normalizeValue = (value: string | number) => {
     v-bind="$attrs"
   ></div>
 </template>
-
-<style src="./Shimmer.scss" lang="scss"></style>

@@ -6,7 +6,6 @@ import {Meta, Story} from '@storybook/vue3';
 import {useForm} from 'vee-validate';
 import {object, boolean, array} from 'yup';
 import VBtn from '@morpheme/button';
-import './VCheckbox.dark.scss';
 
 export default {
   title: 'Forms/Checkbox',

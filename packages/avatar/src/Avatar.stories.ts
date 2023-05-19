@@ -4,7 +4,7 @@ import {
   defaultColors as colors,
   defaultSizes as sizes,
 } from '@morpheme/theme/defaultTheme';
-import './Avatar.dark.scss';
+
 import AvatarGroup from './AvatarGroup.vue';
 import VIcon from '@morpheme/icon';
 

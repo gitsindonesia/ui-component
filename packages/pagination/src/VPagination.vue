@@ -251,5 +251,3 @@ watch(
     </template>
   </div>
 </template>
-
-<style src="./VPagination.scss" lang="scss"></style>

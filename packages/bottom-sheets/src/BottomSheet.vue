@@ -92,5 +92,3 @@ defineExpose({
     </transition>
   </teleport>
 </template>
-
-<style src="./BottomSheet.scss" lang="scss"></style>

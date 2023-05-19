@@ -1,0 +1,9 @@
+.dark {
+  .v-progress-bar {
+    --v-progress-bar-bg-color: theme('colors.neutral.500');
+    --v-progress-bar-label-color: theme('colors.neutral.200');
+    &-default {
+      --v-progress-bar-fill-color: theme('colors.neutral.700');
+    }
+  }
+}

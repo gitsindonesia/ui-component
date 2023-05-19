@@ -5,7 +5,6 @@ import Icon from '@morpheme/icon';
 import AlertVModelStory from './stories/AlertVModelStory.vue';
 import AlertTransitionStory from './stories/AlertTransitionStory.vue';
 import AlertCustomStory from './stories/AlertCustomStory.vue';
-import './VAlert.dark.scss';
 import {ref} from 'vue';
 import VBtn from '@morpheme/button';
 import VAlertGroup from './VAlertGroup.vue';

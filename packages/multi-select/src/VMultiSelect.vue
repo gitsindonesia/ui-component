@@ -615,5 +615,3 @@ const focusItem = () => {
     {{ errorMessage }}
   </div>
 </template>
-
-<style src="./VMultiSelect.scss" lang="scss"></style>

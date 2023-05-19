@@ -1,0 +1,61 @@
+:root {
+  --breadcrumbs-gap: theme('spacing.3');
+  --breadcrumbs-margin-bottom: theme('spacing.3');
+  --breadcrumbs-font-weight: theme('fontWeight.normal');
+  --breadcrumbs-font-size: theme('fontSize.base');
+
+  // item
+  --breadcrumbs-item-color: theme('colors.gray.800');
+
+  // item hover
+  --breadcrumbs-item-hover-color: theme('colors.primary.500');
+
+  // item active
+  --breadcrumbs-item-active-color: theme('colors.primary.500');
+
+  // item disabled
+  --breadcrumbs-item-disabled-color: theme('colors.gray.500');
+
+  // divider
+  --breadcrumbs-divider-font-size: theme('fontSize.xs');
+  --breadcrumbs-divider-font-weight: theme('fontWeight.medium');
+  --breadcrumbs-divider-color: theme('colors.gray.500');
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: var(--breadcrumbs-gap);
+  margin-bottom: var(--breadcrumbs-margin-bottom);
+
+  // elements
+  &-item {
+    color: var(--breadcrumbs-item-color);
+    font-weight: var(--breadcrumbs-font-weight);
+    font-size: var(--breadcrumbs-font-size);
+    
+    @apply transition duration-300;
+
+    &:hover:not(&--disabled) {
+      --breadcrumbs-item-color: var(--breadcrumbs-item-hover-color);
+    }
+
+    &--active {
+      --breadcrumbs-item-color: var(--breadcrumbs-item-active-color);
+    }
+
+    &--disabled {
+      --breadcrumbs-item-color: var(--breadcrumbs-item-disabled-color);
+    }
+  }
+
+  &-divider {
+    font-size: var(--breadcrumbs-divider-font-size);
+    font-weight: var(--breadcrumbs-divider-font-weight);
+    color: var(--breadcrumbs-divider-color);
+
+    &-icon {
+      color: var(--breadcrumbs-divider-color);
+    }
+  }
+}
