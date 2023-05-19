@@ -2,36 +2,36 @@
   .alert {
     // default variant
     &-default:not(.alert--outlined):not(.alert--bordered):not(.alert--solid) {
-      --alert-bg-color: theme('colors.neutral.800');
-      --alert-text-color: theme('colors.neutral.200');
-      --alert-border-color: theme('colors.neutral.800');
+      --alert-bg-color: var(--color-base-gray-neutral-800);
+      --alert-text-color: var(--color-base-gray-neutral-200);
+      --alert-border-color: var(--color-base-gray-neutral-800);
     }
 
     // solid variant
     &--solid {
       &.alert-default {
-        --alert-bg-color: theme('colors.neutral.800');
-        --alert-border-color: theme('colors.neutral.800');
-        --alert-text-color: theme('colors.neutral.200');
+        --alert-bg-color: var(--color-base-gray-neutral-800);
+        --alert-border-color: var(--color-base-gray-neutral-800);
+        --alert-text-color: var(--color-base-gray-neutral-200);
       }
     }
 
     // outlined variant
     &--outlined {
       &.alert-default {
-        --alert-text-color: theme('colors.neutral.200');
+        --alert-text-color: var(--color-base-gray-neutral-200);
       }
       &.alert-dark {
-        --alert-text-color: theme('colors.neutral.200');
-        --alert-border-color: theme('colors.neutral.700');
+        --alert-text-color: var(--color-base-gray-neutral-200);
+        --alert-border-color: var(--color-base-gray-neutral-700);
       }
     }
 
     // bordered variant
     &--bordered {
       &.alert-default {
-        --alert-text-color: theme('colors.neutral.800');
+        --alert-text-color: var(--color-base-gray-neutral-800);
       }
     }
   }
-}
+}2

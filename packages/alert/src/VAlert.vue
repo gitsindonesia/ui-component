@@ -39,6 +39,10 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  iconSize: {
+    type: String,
+    default: 'xs',
+  },
 });
 
 const {modelValue} = toRefs(props);
@@ -100,7 +104,11 @@ const mappedIcons: Record<string, string> = {
       <slot v-if="dismissable" name="x-button" :dismiss="dismiss">
         <button class="alert-dismissable" aria-label="Dismiss" @click="dismiss">
           <slot name="x-icon">
-            <Icon name="heroicons:x-mark" class="alert-x-icon" />
+            <Icon
+              :size="iconSize"
+              name="heroicons:x-mark"
+              class="alert-x-icon"
+            />
           </slot>
         </button>
       </slot>
