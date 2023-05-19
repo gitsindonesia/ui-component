@@ -1,32 +1,32 @@
-@import '@morpheme/design-tokens/scss/_variables.scss';
+
 
 .dark {
   .dropdown {
-    --dropdown-bg-color: #{$color-base-gray-true-900};
+    --dropdown-bg-color: var(--color-base-gray-true-900);
 
     // button icon
-    --dropdown-button-icon-color: #{$color-base-gray-true-500};
+    --dropdown-button-icon-color: var(--color-base-gray-true-500);
 
     // item
-    --dropdown-item-color: #{$color-base-gray-true-200};
-    --dropdown-item-icon-color: #{$color-base-gray-true-200};
+    --dropdown-item-color: var(--color-base-gray-true-200);
+    --dropdown-item-icon-color: var(--color-base-gray-true-200);
 
     // item active
     --dropdown-item-active-color: currentColor;
-    --dropdown-item-active-bg-color: #{$color-base-gray-true-800};
+    --dropdown-item-active-bg-color: var(--color-base-gray-true-800);
 
     // item icon
     --dropdown-item-icon-color: currentColor;
 
     // panel
-    --dropdown-panel-bg-color: #{$color-base-gray-true-900};
-    --dropdown-panel-border-color: #{$color-base-gray-true-700};
+    --dropdown-panel-bg-color: var(--color-base-gray-true-900);
+    --dropdown-panel-border-color: var(--color-base-gray-true-700);
 
     // divider
-    --dropdown-divider-border-color: #{$color-base-gray-true-800};
+    --dropdown-divider-border-color: var(--color-base-gray-true-800);
 
     // button activator
-    --dropdown-button-activator-border-color: #{$color-base-gray-true-700};
-    --dropdown-button-activator-color: #{$color-base-gray-true-300};
+    --dropdown-button-activator-border-color: var(--color-base-gray-true-700);
+    --dropdown-button-activator-color: var(--color-base-gray-true-300);
   }
 }

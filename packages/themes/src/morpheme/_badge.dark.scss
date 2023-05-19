@@ -1,18 +1,18 @@
-@import '@morpheme/design-tokens/scss/_variables.scss';
+
 
 .dark {
   .badge {
     &-default,
     &-secondary {
       &.badge--outlined {
-        --badge-border-color: #{$color-base-gray-400};
-        --badge-color: #{$color-base-gray-400};
+        --badge-border-color: var(--color-base-gray-400);
+        --badge-color: var(--color-base-gray-400);
       }
     }
     &-dark {
       &.badge--outlined {
-        --badge-border-color: #{$color-base-gray-true-400};
-        --badge-color: #{$color-base-gray-true-400};
+        --badge-border-color: var(--color-base-gray-true-400);
+        --badge-color: var(--color-base-gray-true-400);
       }
     }
   }

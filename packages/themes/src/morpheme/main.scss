@@ -1,4 +1,7 @@
-@import '@morpheme/design-tokens/scss/_variables.scss';
+// variables
+@import '@morpheme/design-tokens/css/variables.css';
+
+// components
 @import 'alert';
 @import 'button';
 @import 'badge';

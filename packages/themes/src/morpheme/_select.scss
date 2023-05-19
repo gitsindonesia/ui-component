@@ -1,4 +1,4 @@
-@import '@morpheme/design-tokens/scss/_variables.scss';
+
 
 :root {
   /* input control / button */
@@ -25,22 +25,22 @@
   --v-select-text-font-weight: var(--v-input-text-font-weight);
 
   /* icon */
-  --v-select-icon-width: #{$size-spacing-4};
-  --v-select-icon-height: #{$size-spacing-4};
+  --v-select-icon-width: var(--size-spacing-4);
+  --v-select-icon-height: var(--size-spacing-4);
   --v-select-icon-color: var(--v-input-icon-color);
 
   // options
-  --v-select-options-bg-color: #{$color-base-white};
+  --v-select-options-bg-color: var(--color-base-white);
 
   /* option item */
-  --v-select-option-padding-x: #{$size-spacing-4};
-  --v-select-option-padding-y: #{$size-spacing-2};
-  --v-select-option-bg-color: #{$color-base-white};
-  --v-select-option-text-color: #{$color-base-gray-700};
+  --v-select-option-padding-x: var(--size-spacing-4);
+  --v-select-option-padding-y: var(--size-spacing-2);
+  --v-select-option-bg-color: var(--color-base-white);
+  --v-select-option-text-color: var(--color-base-gray-700);
 
   /* option item on hover */
-  --v-select-option-hover-bg-color: #{$color-base-gray-100};
-  --v-select-option-hover-text-color: #{$color-base-gray-700};
+  --v-select-option-hover-bg-color: var(--color-base-gray-100);
+  --v-select-option-hover-text-color: var(--color-base-gray-700);
 
   // selected
   --v-select-selected-color: var(--v-input-label-color);
@@ -54,8 +54,8 @@
   --v-select-hint-margin-top: var(--v-input-hint-margin-top);
   
   // focus effect
-  --v-input-effect-border-color: #{$color-brand-primary-300};
-  --v-input-effect-shadow-color: #{$color-brand-primary-100};
+  --v-input-effect-border-color: var(--color-brand-primary-300);
+  --v-input-effect-shadow-color: var(--color-brand-primary-100);
 }
 
 .v-select {
@@ -209,46 +209,46 @@
   // sm
   &--sm {
     --v-select-height: 2rem;
-    --v-select-padding-x: #{$size-spacing-2};
-    --v-select-padding-y: #{$size-spacing-1};
-    --v-select-font-size: #{$size-font-xs};
-    --v-select-label-font-size: #{$size-font-xs};
+    --v-select-padding-x: var(--size-spacing-2);
+    --v-select-padding-y: var(--size-spacing-1);
+    --v-select-font-size: var(--size-font-xs);
+    --v-select-label-font-size: var(--size-font-xs);
   }
 
   &--sm &-button {
-    --v-select-font-size: #{$size-font-xs};
+    --v-select-font-size: var(--size-font-xs);
   }
 
   &--sm &-icon {
-    --v-select-icon-width: #{$size-spacing-4};
-    --v-select-icon-height: #{$size-spacing-4};
+    --v-select-icon-width: var(--size-spacing-4);
+    --v-select-icon-height: var(--size-spacing-4);
   }
 
   &--sm &-option {
-    --v-select-option-padding-x: #{$size-spacing-2};
-    --v-select-option-padding-y: #{$size-spacing-1};
+    --v-select-option-padding-x: var(--size-spacing-2);
+    --v-select-option-padding-y: var(--size-spacing-1);
   }
 
   // lg
   &--lg {
     --v-select-height: 50px;
-    --v-select-padding-x: #{$size-spacing-5};
-    --v-select-padding-y: #{$size-spacing-3};
-    --v-select-font-size: #{$size-font-lg};
-    --v-select-label-font-size: #{$size-font-lg};
+    --v-select-padding-x: var(--size-spacing-5);
+    --v-select-padding-y: var(--size-spacing-3);
+    --v-select-font-size: var(--size-font-lg);
+    --v-select-label-font-size: var(--size-font-lg);
   }
 
   &--lg &-button {
-    --v-select-font-size: #{$size-font-lg};
+    --v-select-font-size: var(--size-font-lg);
   }
 
   &--lg &-icon {
-    --v-select-icon-width: #{$size-spacing-6};
-    --v-select-icon-height: #{$size-spacing-6};
+    --v-select-icon-width: var(--size-spacing-6);
+    --v-select-icon-height: var(--size-spacing-6);
   }
 
   &--lg &-option {
-    --v-select-option-padding-x: #{$size-spacing-5};
-    --v-select-option-padding-y: #{$size-spacing-3};
+    --v-select-option-padding-x: var(--size-spacing-5);
+    --v-select-option-padding-y: var(--size-spacing-3);
   }
 }

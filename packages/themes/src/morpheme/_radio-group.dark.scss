@@ -1,17 +1,17 @@
-@import '@morpheme/design-tokens/scss/_variables.scss';
+
 
 .dark {
   .v-radio-group {
     --v-radio-group-label-color: var(--v-input-label-color);
 
-    --v-radio-disabled-border-color: #{$color-base-gray-true-500};
-    --v-radio-disabled-bg-color: #{$color-base-gray-true-500};
+    --v-radio-disabled-border-color: var(--color-base-gray-true-500);
+    --v-radio-disabled-bg-color: var(--color-base-gray-true-500);
 
     // items text
-    --v-radio-group-items-text-color: #{$color-base-gray-true-200};
-    --v-radio-group-items-disabed-text-color: #{$color-base-gray-true-500};
+    --v-radio-group-items-text-color: var(--color-base-gray-true-200);
+    --v-radio-group-items-disabed-text-color: var(--color-base-gray-true-500);
 
     // hint
-    --v-radio-group-hint-color: #{$color-base-gray-true-500};
+    --v-radio-group-hint-color: var(--color-base-gray-true-500);
   }
 }

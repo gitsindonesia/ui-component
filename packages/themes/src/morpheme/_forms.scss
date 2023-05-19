@@ -1,54 +1,54 @@
-@import '@morpheme/design-tokens/scss/_variables.scss';
+
 
 :root {
   /* input control */
   --v-input-height: 44px;
-  --v-input-border-color: #{$color-base-gray-300};
-  --v-input-placeholder-color: #{$color-base-gray-500};
-  --v-input-border-radius: #{$border-radius-lg};
-  --v-input-padding-x: #{$size-spacing-3};
-  --v-input-padding-y: #{$size-spacing-3};
-  --v-input-font-size: #{$size-font-sm};
+  --v-input-border-color: var(--color-base-gray-300);
+  --v-input-placeholder-color: var(--color-base-gray-500);
+  --v-input-border-radius: var(--border-radius-lg);
+  --v-input-padding-x: var(--size-spacing-3);
+  --v-input-padding-y: var(--size-spacing-3);
+  --v-input-font-size: var(--size-font-sm);
   --v-input-line-height: 20px;
-  --v-input-bg-color: #{$color-base-white};
-  --v-input-color: #{$color-base-gray-700};
+  --v-input-bg-color: var(--color-base-white);
+  --v-input-color: var(--color-base-gray-700);
 
   /* label */
-  --v-input-label-font-size: #{$size-font-sm};
-  --v-input-label-font-weight: #{$font-weight-semibold};
+  --v-input-label-font-size: var(--size-font-sm);
+  --v-input-label-font-weight: var(--font-weight-semibold);
   --v-input-label-display: block;
-  --v-input-label-margin-bottom: #{$size-spacing-1};
+  --v-input-label-margin-bottom: var(--size-spacing-1);
 
   /* text */
-  --v-input-text-color: #{$color-base-gray-700};
-  --v-input-text-font-size: #{$size-font-sm};
-  --v-input-text-font-weight: #{$font-weight-regular};
+  --v-input-text-color: var(--color-base-gray-700);
+  --v-input-text-font-size: var(--size-font-sm);
+  --v-input-text-font-weight: var(--font-weight-regular);
 
   /* icon */
-  --v-input-icon-width: #{$size-spacing-5};
-  --v-input-icon-height: #{$size-spacing-5};
-  --v-input-icon-color: #{$color-base-gray-500};
+  --v-input-icon-width: var(--size-spacing-5);
+  --v-input-icon-height: var(--size-spacing-5);
+  --v-input-icon-color: var(--color-base-gray-500);
 
   // disabled
-  --v-input-disabled-bg-color: #{$color-base-gray-50};
-  --v-input-disabled-color: #{$color-base-gray-500};
-  --v-input-disabled-border-color: #{$color-base-gray-300};
-  --v-input-disabled-placeholder-color: #{$color-base-gray-500};
-  --v-input-disabled-icon-color: #{$color-base-gray-500};
+  --v-input-disabled-bg-color: var(--color-base-gray-50);
+  --v-input-disabled-color: var(--color-base-gray-500);
+  --v-input-disabled-border-color: var(--color-base-gray-300);
+  --v-input-disabled-placeholder-color: var(--color-base-gray-500);
+  --v-input-disabled-icon-color: var(--color-base-gray-500);
 
   // hint
-  --v-input-hint-font-size: #{$size-font-sm};
-  --v-input-hint-color: #{$color-base-gray-600};
-  --v-input-hint-margin-top: #{$size-spacing-1};
+  --v-input-hint-font-size: var(--size-font-sm);
+  --v-input-hint-color: var(--color-base-gray-600);
+  --v-input-hint-margin-top: var(--size-spacing-1);
 
   // focus effect
-  --v-input-effect-border-color: #{$color-brand-primary-300};
-  --v-input-effect-shadow-color: #{$color-brand-primary-100};
+  --v-input-effect-border-color: var(--color-brand-primary-300);
+  --v-input-effect-shadow-color: var(--color-brand-primary-100);
 }
 
 .v-input {
   &--rounded {
-    --v-input-border-radius: #{$border-radius-full};
+    --v-input-border-radius: var(--border-radius-full);
   }
 
   &--disabled {
@@ -80,15 +80,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: $border-radius-full;
+    border-radius: var(--border-radius-full);
     margin-right: 0.5rem;
 
     &:hover {
-      background-color: $color-base-gray-100;
+      background-color: var(--color-base-gray-100);
     }
 
     &:active {
-      background-color: $color-base-gray-50;
+      background-color: var(--color-base-gray-50);
     }
   }
 
@@ -100,11 +100,11 @@
   &-action {
     display: flex;
     align-items: center;
-    gap: #{$size-spacing-2};
+    gap: var(--size-spacing-2);
   }
 
   &-counter {
-    font-size: #{$size-font-sm};
+    font-size: var(--size-font-sm);
   }
 }
 
@@ -211,57 +211,57 @@
 
 .v-input-default,
 .v-input-primary {
-  --v-input-effect-border-color: #{$color-brand-primary-300};
-  --v-input-effect-shadow-color: #{$color-brand-primary-100};
+  --v-input-effect-border-color: var(--color-brand-primary-300);
+  --v-input-effect-shadow-color: var(--color-brand-primary-100);
 }
 
 .v-input-secondary {
-  --v-input-effect-border-color: #{$color-base-gray-300};
-  --v-input-effect-shadow-color: #{$color-base-gray-100};
+  --v-input-effect-border-color: var(--color-base-gray-300);
+  --v-input-effect-shadow-color: var(--color-base-gray-100);
 }
 .v-input-info {
-  --v-input-effect-border-color: #{$color-base-blue-light-300};
-  --v-input-effect-shadow-color: #{$color-base-blue-light-100};
+  --v-input-effect-border-color: var(--color-base-blue-light-300);
+  --v-input-effect-shadow-color: var(--color-base-blue-light-100);
 }
 .v-input-warning {
-  --v-input-effect-border-color: #{$color-base-warning-300};
-  --v-input-effect-shadow-color: #{$color-base-warning-100};
+  --v-input-effect-border-color: var(--color-base-warning-300);
+  --v-input-effect-shadow-color: var(--color-base-warning-100);
 }
 .v-input-success {
-  --v-input-effect-border-color: #{$color-base-success-300};
-  --v-input-effect-shadow-color: #{$color-base-success-100};
+  --v-input-effect-border-color: var(--color-base-success-300);
+  --v-input-effect-shadow-color: var(--color-base-success-100);
 }
 
 .v-input-dark {
-  --v-input-effect-border-color: #{$color-base-gray-true-300};
-  --v-input-effect-shadow-color: #{$color-base-gray-true-100};
+  --v-input-effect-border-color: var(--color-base-gray-true-300);
+  --v-input-effect-shadow-color: var(--color-base-gray-true-100);
 }
 
 .v-input--error,
 .v-input-error {
-  --v-input-effect-border-color: #{$color-base-error-300};
-  --v-input-effect-shadow-color: #{$color-base-error-100};
+  --v-input-effect-border-color: var(--color-base-error-300);
+  --v-input-effect-shadow-color: var(--color-base-error-100);
 }
 
 .v-input--error {
-  --v-input-border-color: #{$color-base-error-300};
+  --v-input-border-color: var(--color-base-error-300);
 }
 
 
 .v-input-error {
-  color: $color-base-error-500;
+  color: var(--color-base-error-500);
   margin-top: 0.25rem;
   transition-property: color, background-color, border-color,
     text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
     backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
-  font-size: $size-font-sm;
+  font-size: var(--size-font-sm);
 }
 
 /* shadow */
 .v-input.v-input--shadow .v-input-wrapper {
-  box-shadow: $effect-shadow-md;
+  box-shadow: var(--effect-shadow-md);
 }
 
 /* text */
@@ -280,34 +280,34 @@
 
 /* sizes */
 .v-input.v-input--sm {
-  --v-input-height: #{$size-spacing-8};
-  --v-input-padding-x: #{$size-spacing-1};
-  --v-input-padding-y: #{$size-spacing-1};
-  --v-input-font-size: #{$size-font-xs};
-  --v-input-label-font-size: #{$size-font-xs};
+  --v-input-height: var(--size-spacing-8);
+  --v-input-padding-x: var(--size-spacing-1);
+  --v-input-padding-y: var(--size-spacing-1);
+  --v-input-font-size: var(--size-font-xs);
+  --v-input-label-font-size: var(--size-font-xs);
   
   .v-input-icon {
-    --v-input-icon-width: #{$size-spacing-4};
-    --v-input-icon-height: #{$size-spacing-4};
+    --v-input-icon-width: var(--size-spacing-4);
+    --v-input-icon-height: var(--size-spacing-4);
   }
 
   .v-input-prepend:not(:empty) {
-    padding-left: #{$size-spacing-2};
-    padding-right: #{$size-spacing-2};
+    padding-left: var(--size-spacing-2);
+    padding-right: var(--size-spacing-2);
   }
 }
 
 // lg
 .v-input.v-input--lg {
   --v-input-height: 50px;
-  --v-input-padding-x: #{$size-spacing-3};
-  --v-input-padding-y: #{$size-spacing-3};
-  --v-input-font-size: #{$size-font-lg};
-  --v-input-label-font-size: #{$size-font-lg};
+  --v-input-padding-x: var(--size-spacing-3);
+  --v-input-padding-y: var(--size-spacing-3);
+  --v-input-font-size: var(--size-font-lg);
+  --v-input-label-font-size: var(--size-font-lg);
 
   .v-input-icon {
-    --v-input-icon-width: #{$size-spacing-5};
-    --v-input-icon-height: #{$size-spacing-5};
+    --v-input-icon-width: var(--size-spacing-5);
+    --v-input-icon-height: var(--size-spacing-5);
   }
 }
 
@@ -315,13 +315,13 @@
 // md / default
 .v-input.v-input--md {
   --v-input-height: 44px;
-  --v-input-padding-x: #{$size-spacing-3};
-  --v-input-padding-y: #{$size-spacing-3};
-  --v-input-font-size: #{$size-font-sm};
-  --v-input-label-font-size: #{$size-font-sm};
+  --v-input-padding-x: var(--size-spacing-3);
+  --v-input-padding-y: var(--size-spacing-3);
+  --v-input-font-size: var(--size-font-sm);
+  --v-input-label-font-size: var(--size-font-sm);
 
   .v-input-icon {
-    --v-input-icon-width: #{$size-spacing-5};
-    --v-input-icon-height: #{$size-spacing-5};
+    --v-input-icon-width: var(--size-spacing-5);
+    --v-input-icon-height: var(--size-spacing-5);
   }
 }

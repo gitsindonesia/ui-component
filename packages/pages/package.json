@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/pages",
-  "version": "1.0.0-beta.8",
+  "version": "1.0.0-alpha.57+95edc430",
   "description": "Morpheme Pages Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -18,7 +18,7 @@
     "@iconify/vue": "^3.2.1",
     "@morpheme/alert": "^1.0.0-beta.8",
     "@morpheme/button": "^1.0.0-beta.8",
-    "@morpheme/forms": "^1.0.0-beta.8",
+    "@morpheme/forms": "^1.0.0-alpha.57+95edc430",
     "vue": "^3.2.31",
     "yup": "^0.32.11"
   },
@@ -47,5 +47,5 @@
     "./src/*": "./src/*",
     "./*": "./*"
   },
-  "gitHead": "92215d91d1e3a2b1b804e52b55dcfd0ed5274475"
+  "gitHead": "95edc430940e02006a6f7ccc5065333389c50ccd"
 }

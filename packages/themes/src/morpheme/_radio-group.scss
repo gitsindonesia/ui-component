@@ -1,4 +1,4 @@
-@import '@morpheme/design-tokens/scss/_variables.scss';
+
 
 :root {
   /* label */
@@ -9,8 +9,8 @@
   --v-radio-group-label-margin-bottom: var(--v-input-label-margin-bottom);
 
   // items text
-  --v-radio-group-items-text-color: #{$color-base-gray-700};
-  --v-radio-group-items-disabed-text-color: #{$color-base-gray-500};
+  --v-radio-group-items-text-color: var(--color-base-gray-700);
+  --v-radio-group-items-disabed-text-color: var(--color-base-gray-500);
 
   // hint
   --v-radio-group-hint-font-size: var(--v-input-hint-font-size, 14px);
@@ -91,7 +91,7 @@
 
     &-text {
       color: var(--v-radio-group-items-text-color);
-      font-size: #{$size-font-sm};
+      font-size: var(--size-font-sm);
     }
     
     &--disabled {

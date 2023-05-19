@@ -1,23 +1,23 @@
-@import '@morpheme/design-tokens/scss/_variables.scss';
+
 
 :root {
-  --v-radio-bg-color: #{$color-base-white};
-  --v-radio-border-color: #{$color-base-gray-300};
+  --v-radio-bg-color: var(--color-base-white);
+  --v-radio-border-color: var(--color-base-gray-300);
   --v-radio-border-style: solid;
   --v-radio-border-width: 1px;
   --v-radio-bg-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%230984DD' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
 
   // checked
-  --v-radio-checked-bg-color: #{$color-brand-primary-50};
-  --v-radio-checked-border-color: #{$color-brand-primary-600};
+  --v-radio-checked-bg-color: var(--color-brand-primary-50);
+  --v-radio-checked-border-color: var(--color-brand-primary-600);
 
   // disabled
-  --v-radio-disabled-border-color: #{$color-base-gray-400};
-  --v-radio-disabled-bg-color: #{$color-base-gray-300};
+  --v-radio-disabled-border-color: var(--color-base-gray-400);
+  --v-radio-disabled-bg-color: var(--color-base-gray-300);
   --v-radio-disabled-bg-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%2398A2B3' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
 
   // label
-  --v-radio-label-color: #{$color-base-gray-700};
+  --v-radio-label-color: var(--color-base-gray-700);
 
   // hint
   --v-radio-hint-font-size: var(--v-input-hint-font-size, 14px);
@@ -79,12 +79,12 @@
   }
 
   &-error {
-    font-size: #{$size-font-sm};
-    color: #{$color-base-error-500};
+    font-size: var(--size-font-sm);
+    color: var(--color-base-error-500);
 
     &-input {
-      --v-input-effect-border-color: #{$color-base-error-300};
-      --v-input-effect-shadow-color: #{$color-base-error-100};
+      --v-input-effect-border-color: var(--color-base-error-300);
+      --v-input-effect-shadow-color: var(--color-base-error-100);
     }
   }
 }
