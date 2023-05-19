@@ -35,8 +35,7 @@
       "require": "./dist/themes.js"
     },
     "./package.json": "./package.json",
-    "./morpheme": "./src/morpheme/main.scss",
-    "./morpheme/*": "./src/morpheme/*",
+    "./morpheme": "./dist/morpheme/main.css",
     "./src/*": "./src/*",
     "./*": "./*"
   },
