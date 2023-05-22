@@ -1,12 +1,12 @@
 .dark {
   .v-timeline {
     &-divider {
-      border-color: theme('colors.neutral.700') !important;
+      border-color: var(--color-base-gray-true-700) !important;
       z-index: auto;
     }
     &-item {
       &-dot {
-        border-color: theme('colors.neutral.900');
+        border-color: var(--color-base-gray-true-900);
       }
     }
   }
