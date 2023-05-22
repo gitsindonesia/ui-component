@@ -1,0 +1,94 @@
+
+
+.dark {
+  .btn {
+    // disabled
+    &:disabled,
+    &:disabled:hover {
+      cursor: not-allowed;
+      --btn-bg-color: var(--color-base-gray-true-600);
+      --btn-border-color: var(--color-base-gray-true-600);
+      --btn-text-color: var(--color-base-gray-true-500);
+
+      &.btn--text {
+        --btn-bg-color: transparent;
+        --btn-border-color: transparent;
+        --btn-text-color: var(--color-base-gray-true-400);
+      }
+
+      &.btn--outlined {
+        --btn-bg-color: transparent;
+        --btn-border-color: var(--color-base-gray-true-200);
+        --btn-text-color: var(--color-base-gray-true-400);
+      }
+    }
+
+    &-default,
+    &-secondary {
+      --btn-bg-color: var(--color-base-gray-true-800);
+      --btn-border-color: var(--color-base-gray-true-800);
+      --btn-text-color: var(--color-base-gray-true-200);
+
+      &:hover {
+        --btn-bg-color: var(--color-base-gray-true-900);
+      }
+
+      // outlined
+      &.btn--outlined {
+        --btn-bg-color: transparent;
+        --btn-border-color: var(--color-base-gray-true-700);
+        --btn-text-color: var(--color-base-gray-true-200);
+
+        &:hover {
+          --btn-bg-color: var(--color-base-gray-true-700);
+        }
+      }
+
+      // text
+      &.btn--text {
+        --btn-bg-color: transparent;
+        --btn-border-color: transparent;
+        --btn-text-color: var(--color-base-gray-true-200);
+
+        &:hover {
+          --btn-text-color: var(--color-base-gray-true-300);
+        }
+      }
+    }
+
+    &-dark {
+      --btn-bg-color: var(--color-base-gray-800);
+      --btn-border-color: var(--color-base-gray-800);
+      --btn-text-color: var(--color-base-white);
+
+      &:hover {
+        --btn-bg-color: var(--color-base-gray-900);
+        --btn-border-color: var(--color-base-gray-900);
+      }
+
+      // outlined
+      &.btn--outlined {
+        --btn-bg-color: transparent;
+        --btn-border-color: var(--color-base-gray-800);
+        --btn-text-color: var(--color-base-gray-800);
+
+        &:hover {
+          --btn-bg-color: var(--color-base-gray-800);
+          --btn-border-color: var(--color-base-gray-800);
+          --btn-text-color: var(--color-base-white);
+        }
+      }
+
+      // text
+      &.btn--text {
+        --btn-bg-color: transparent;
+        --btn-border-color: transparent;
+        --btn-text-color: var(--color-base-gray-800);
+
+        &:hover {
+          --btn-text-color: var(--color-base-gray-900);
+        }
+      }
+    }
+  }
+}

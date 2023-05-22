@@ -1,0 +1,26 @@
+.dark {
+  .v-list {
+    --v-list-bg-color: var(--color-base-transparent);
+
+    /* item */
+    --v-list-item-color: var(--color-base-gray-true-200);
+    --v-list-item-bg-color: var(--color-base-transparent);
+    --v-list-item-border-color: var(--color-base-transparent);
+
+    /* item hover */
+    --v-list-item-hover-bg-color: var(--color-base-gray-true-700);
+    --v-list-item-hover-color: var(--color-base-gray-true-200);
+
+    /* item header */
+    --v-list-item-header-color: var(--color-base-gray-true-500);
+
+    /* divider */
+    --v-list-item-divider-color: var(--color-base-gray-true-700);
+
+    // icon
+    --v-list-item-icon-color: var(--color-base-gray-true-300);
+
+    // append text
+    --v-list-item-append-text-color: var(--color-base-gray-true-500);
+  }
+}

@@ -1,0 +1,14 @@
+.dark {
+  .card {
+    &-default {
+      --card-bg-color: var(--color-base-gray-true-800);
+      --card-color: var(--color-base-gray-true-200);
+      --card-border-color: var(--color-base-gray-true-600);
+    }
+
+    &-dark {
+      --card-bg-color: var(--color-base-gray-800);
+      --card-color: var(--color-base-white);
+    }
+  }
+}

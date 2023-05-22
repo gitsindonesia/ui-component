@@ -1,0 +1,10 @@
+.dark {
+  .shimmer {
+    --shimmer-bg-image: linear-gradient(
+      to right,
+      var(--color-base-gray-true-600),
+      var(--color-base-gray-true-800),
+      var(--color-base-gray-true-600)
+    );
+  }
+}

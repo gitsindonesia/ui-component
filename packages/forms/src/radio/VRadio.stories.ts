@@ -6,9 +6,6 @@ import {useForm} from 'vee-validate';
 import {object, string} from 'yup';
 import VBtn from '@morpheme/button';
 import {ref} from 'vue';
-import '@morpheme/forms/src/forms.scss';
-import '@morpheme/forms/src/forms.dark.scss';
-import './VRadio.dark.scss';
 
 export default {
   title: 'Forms/Radio',
@@ -64,6 +61,7 @@ export const Disabled: Story = (args) => ({
   <VRadio v-model="value" value="1" label="Choose 1" id="1" />
   <VRadio v-model="value" value="0" label="Choose 0" id="0" />
   <VRadio v-model="value" value="2" label="Disabled" disabled />
+  <VRadio v-model="value" value="1" label="Disabled with Value" disabled />
   `,
 });
 

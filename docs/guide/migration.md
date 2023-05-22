@@ -188,9 +188,9 @@ Since `v0.10.5`, in order add SSR Support, `VEditor` must be imported from `@mor
 
 To upgrade, change `VEditor` import from `@morpheme/ui` to `@morpheme/editor`.
 
-```
-- import {VEditor} from '@morpheme/ui/editor';
-+ import {VEditor} from '@morpheme/editor';
+```ts
+import {VEditor} from '@morpheme/ui/editor'; // [!code --]
+import {VEditor} from '@morpheme/editor'; // [!code ++]
 ```
 
 **Optimizing bundle size**
@@ -213,7 +213,7 @@ To optimize bundle size of `VEditor` you can code-split the component using `def
 
 - As of an experimental SSR support, change `VEditor` import from `@morpheme/ui` to `@morpheme/ui/editor`.
 
-```
-- import {VEditor} from '@morpheme/ui';
-+ import {VEditor} from '@morpheme/ui/editor';
+```ts
+import {VEditor} from '@morpheme/ui'; // [!code --]
+import {VEditor} from '@morpheme/ui/editor'; // [!code ++]
 ```

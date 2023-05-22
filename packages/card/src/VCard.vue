@@ -107,7 +107,7 @@ const classes = computed(() => {
     <div v-if="!hideHeader" :class="[defaultHeaderClass, headerClass]">
       <slot name="header.prepend" />
       <slot name="header">
-        <div class="card-title">{{ title }}</div>
+        <div class="card-title" v-if="title">{{ title }}</div>
       </slot>
       <slot name="header.append" />
     </div>
@@ -119,5 +119,3 @@ const classes = computed(() => {
     </div>
   </component>
 </template>
-
-<style src="./VCard.scss" lang="scss"></style>

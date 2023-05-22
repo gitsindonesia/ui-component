@@ -15,17 +15,6 @@ import VDropdown, {
 } from '@morpheme/dropdown';
 import {VInput} from '@morpheme/forms';
 import {List as VList, ListItem as VListItem} from '@morpheme/list';
-import '@morpheme/nav-drawer/dist/style.css';
-import '@morpheme/app-bar/dist/style.css';
-import '@morpheme/list/dist/style.css';
-import '@morpheme/text/dist/style.css';
-import '@morpheme/card/dist/style.css';
-import '@morpheme/button/dist/style.css';
-import '@morpheme/logo/dist/style.css';
-import '@morpheme/avatar/dist/style.css';
-import '@morpheme/forms/dist/style.css';
-import '@morpheme/icon/dist/style.css';
-import '@morpheme/dropdown/dist/style.css';
 import {ref, watchEffect, defineComponent} from 'vue';
 
 export default {

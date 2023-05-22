@@ -638,5 +638,3 @@ const handleRowClick = (item: VDataTableItem, index: number) => {
     </template>
   </div>
 </template>
-
-<style lang="scss" src="./VDataTable.scss"></style>

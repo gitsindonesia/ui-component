@@ -4,9 +4,6 @@ import {object, number, string} from 'yup';
 import VRadioGroup from './VRadioGroup.vue';
 import VBtn from '@morpheme/button';
 import {ref} from 'vue';
-import '@morpheme/forms/src/forms.scss';
-import '@morpheme/forms/src/forms.dark.scss';
-import './VRadioGroup.dark.scss';
 
 const items = [...Array(5)].map((v, k) => ({
   text: `Item ${k + 1}`,

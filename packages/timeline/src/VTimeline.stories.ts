@@ -6,11 +6,6 @@ import VTimelineItemContent from './VTimelineItemContent.vue';
 import VText from '@morpheme/text';
 import VIcon from '@morpheme/icon';
 import VBtn from '@morpheme/button';
-import '@morpheme/text/dist/style.css';
-import '@morpheme/icon/dist/style.css';
-import '@morpheme/button/dist/style.css';
-import './VTimeline.scss';
-import './VTimeline.dark.scss';
 
 export default {
   title: 'Components/Timeline',

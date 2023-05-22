@@ -6,7 +6,6 @@ import {useForm} from 'vee-validate';
 import {object, string} from 'yup';
 import {ref} from 'vue';
 import VBtn from '@morpheme/button';
-import '../forms.dark.scss';
 
 const items = [...Array(5)].map((item, index) => ({
   value: index,

@@ -174,6 +174,7 @@ onBeforeUnmount(() => {
     :class="{
       'v-radio-group--error': error,
       'v-radio-group--inline': inline,
+      'v-radio-group--disabled': disabled,
     }"
   >
     <label
@@ -184,7 +185,13 @@ onBeforeUnmount(() => {
     >
       {{ label }}
     </label>
-    <div ref="groupRef" class="v-radio-group-items">
+    <div
+      ref="groupRef"
+      class="v-radio-group-items"
+      :class="{
+        'v-radio-group-items--disabled': disabled,
+      }"
+    >
       <label
         :class="[
           'v-radio-group-items-label',
@@ -226,5 +233,3 @@ onBeforeUnmount(() => {
     </div>
   </div>
 </template>
-
-<style src="./VRadioGroup.scss" lang="scss"></style>

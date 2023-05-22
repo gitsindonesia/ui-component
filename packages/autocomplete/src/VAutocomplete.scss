@@ -1,70 +1,77 @@
+@import '@morpheme/design-tokens/scss/_variables.scss';
+
 :root {
   // field
-  --v-autocomplete-field-bg-color: theme('colors.white');
-  --v-autocomplete-field-border-color: theme('borderColor.DEFAULT');
+  --v-autocomplete-field-bg-color: #{$color-base-white};
+  --v-autocomplete-field-border-color: #{$color-base-gray-300};
 
   // field hover
-  --v-autocomplete-field-hover-border-color: theme('borderColor.gray.400');
+  --v-autocomplete-field-hover-border-color: #{$color-base-gray-300};
 
   // input
-  --v-autocomplete-input-color: theme('colors.gray.600');
-  --v-autocomplete-input-bg-color: theme('colors.transparent');
+  --v-autocomplete-input-color: #{$color-base-gray-700};
+  --v-autocomplete-input-bg-color: transparent;
 
   // input selected
-  --v-autocomplete-input-selected-color: theme('colors.gray.800');
+  --v-autocomplete-input-selected-color: #{$color-base-gray-700};
 
   // clearable button
-  --v-autocomplete-clearable-button-color: theme('colors.gray.400');
+  --v-autocomplete-clearable-button-color: #{$color-base-gray-400};
 
   // clearable button hover
-  --v-autocomplete-clearable-button-hover-color: theme('colors.gray.500');
-  --v-autocomplete-clearable-button-hover-bg-color: theme('colors.gray.100');
+  --v-autocomplete-clearable-button-hover-color: #{$color-base-gray-500};
+  --v-autocomplete-clearable-button-hover-bg-color: #{$color-base-gray-100};
 
   // icon
-  --v-autocomplete-icon-color: theme('colors.gray.400');
+  --v-autocomplete-icon-color: #{$color-base-gray-400};
 
   // options
-  --v-autocomplete-options-bg-color: theme('colors.white');
+  --v-autocomplete-options-bg-color: #{$color-base-white};
 
   // empty
-  --v-autocomplete-empty-color: theme('colors.gray.700');
+  --v-autocomplete-empty-color: #{$color-base-gray-700};
 
   // item
-  --v-autocomplete-item-color: theme('colors.gray.800');
+  --v-autocomplete-item-color: #{$color-base-gray-700};
 
   // item selected
-  --v-autocomplete-item-selected-color: theme('colors.primary.500');
+  --v-autocomplete-item-selected-color: #{$color-brand-primary-500};
 
   // item selected item
-  --v-autocomplete-item-selected-icon-color: theme('colors.primary.500');
+  --v-autocomplete-item-selected-icon-color: #{$color-brand-primary-500};
 
   // item inactive
-  --v-autocomplete-item-inactive-color: theme('colors.gray.900');
+  --v-autocomplete-item-inactive-color: #{$color-base-gray-700};
 
   // item active
-  --v-autocomplete-item-active-bg-color: theme('colors.gray.100');
+  --v-autocomplete-item-active-bg-color: #{$color-base-gray-100};
 
   // error
-  --v-autocomplete-error-color: theme('colors.error.500');
+  --v-autocomplete-error-color: #{$color-base-error-300};
 
   // disabled
   --v-autocomplete-input-disabled-color: var(--v-input-disabled-bg-color);
 
   // hint
   --v-autocomplete-hint-font-size: var(--v-input-hint-font-size, 14px);
-  --v-autocomplete-hint-color: theme('colors.gray.500');
-  --v-autocomplete-hint-margin-top: theme('spacing.1');
+  --v-autocomplete-hint-color: #{$color-base-gray-400};
+  --v-autocomplete-hint-margin-top: #{$size-spacing-1};
 }
 
 .autocomplete {
   position: relative;
 
   &-label {
-    @apply mb-2 font-medium;
+    color: var(--v-input-label-color);
+    font-size: var(--v-input-label-font-size);
+    font-weight: var(--v-input-label-font-weight);
+    display: var(--v-input-label-display);
+    margin-bottom: var(--v-input-label-margin-bottom);
   }
 
   &-body {
-    @apply relative mt-1;
+    position: relative;
+    margin-top: #{$size-spacing-1};
   }
 
   &-field {
@@ -75,7 +82,7 @@
     w-full
     text-left
     border
-    rounded-md
+    rounded-lg
     cursor-default
     focus:outline-none
     focus-within:ring focus-within:ring-opacity-50

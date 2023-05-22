@@ -146,5 +146,3 @@ const emit =
     </div>
   </div>
 </template>
-
-<style src="../forms.scss" lang="scss"></style>

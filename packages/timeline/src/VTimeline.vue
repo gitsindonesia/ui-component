@@ -24,5 +24,3 @@ withDefaults(
     <slot />
   </ol>
 </template>
-
-<style src="./VTimeline.scss" lang="scss"></style>

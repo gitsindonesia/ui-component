@@ -3,7 +3,6 @@ import {themeColors} from '@morpheme/utils/colors';
 import {Meta, Story} from '@storybook/vue3';
 import {ref} from 'vue';
 import VBtn from '@morpheme/button';
-import './VProgressBar.dark.scss';
 
 export default {
   title: 'Components/ProgressBar',

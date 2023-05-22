@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import Icon from '@morpheme/icon';
 import Select from '@morpheme/select';
-import '@morpheme/icon/src/Icon.scss';
-import '@morpheme/select/src/VSelect.scss';
-import '@morpheme/forms/src/forms.scss';
 </script>
 
 <template>

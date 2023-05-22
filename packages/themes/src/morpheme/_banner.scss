@@ -1,0 +1,91 @@
+.v-banner {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &--fixed {
+    position: fixed;
+    z-index: 50;
+  }
+
+  &--sticky {
+    position: sticky;
+    z-index: 50;
+  }
+
+  &--absolute {
+    position: absolute;
+    z-index: 50;
+  }
+
+  &--top {
+    top: 0;
+  }
+
+  &--bottom {
+    bottom: 0;
+  }
+
+  // text
+  &-text {
+    text-align: center;
+    flex: 1 1 0%;
+  }
+
+  // colors
+  &-white {
+    background-color: white;
+  }
+
+  &-light {
+    background-color: var(--color-base-gray-100);
+  }
+
+  &-dark {
+    background-color: var(--color-base-gray-800);
+    color: var(--color-base-gray-true-200);
+  }
+
+  &-primary {
+    background-color: var(--color-brand-primary-500);
+    color: var(--color-base-white);
+  }
+
+  &-secondary {
+    background-color: var(--color-base-gray-500);
+    color: var(--color-base-white);
+  }
+
+  &-info {
+    background-color: var(--color-base-blue-light-500);
+    color: var(--color-base-white);
+  }
+
+  &-warning {
+    background-color: var(--color-base-warning-500);
+    color: var(--color-base-white);
+  }
+
+  &-success {
+    background-color: var(--color-base-success-500);
+    color: var(--color-base-white);
+  }
+
+  &-error {
+    background-color: var(--color-base-error-500);
+    color: var(--color-base-white);
+  }
+
+  // transition
+  &-transition-enter-active,
+  &-transition-leave-active {
+    transition: opacity 0.5s ease;
+  }
+
+  &-transition-enter-from,
+  &-transition-leave-to {
+    opacity: 0;
+  }
+}

@@ -1,6 +1,5 @@
 import {Story} from '@storybook/vue3';
 import Icon from './Icon.vue';
-import './Icon.dark.scss';
 
 export default {
   title: 'Components/Icon',

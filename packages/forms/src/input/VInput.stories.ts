@@ -11,7 +11,6 @@ import FieldArrayOfObject from './stories/FieldArrayOfObject.story.vue';
 import FieldArrayNestedComponent from './stories/FieldArrayNested.story.vue';
 import {ref} from 'vue';
 import FormsPlaygroundComponent from './stories/FormsPlayground.vue';
-import '../forms.dark.scss';
 
 const sizes = ['sm', 'md', 'lg'] as const;
 
@@ -33,21 +32,7 @@ export default {
     },
   },
   args: {
-    value: '',
-    modelValue: '',
     placeholder: 'Type something...',
-    type: 'text',
-    color: 'default',
-    name: '',
-    error: false,
-    errorMessages: [],
-    readonly: false,
-    disabled: false,
-    size: 'default',
-    shadow: false,
-    text: false,
-    label: '',
-    validationMode: 'aggressive',
   },
 } as Meta;
 

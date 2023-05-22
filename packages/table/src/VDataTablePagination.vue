@@ -147,5 +147,3 @@ const perPageItems = computed(() =>
     </div>
   </div>
 </template>
-
-<style lang="scss" src="./VDataTablePagination.scss"></style>

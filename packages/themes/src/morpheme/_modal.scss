@@ -1,0 +1,149 @@
+:root {
+  --v-modal-text-color: var(--color-base-gray-700);
+  --v-modal-bg-color: var(--color-base-white);
+  --v-modal-border-radius: 12px;
+  --v-modal-z-index: 30;
+  --v-modal-shadow: var(--effect-shadow-xl);
+  --v-modal-width: 25rem;
+  --v-modal-max-width: 100%;
+
+  /* content */
+  --v-modal-content-padding-x: var(--size-spacing-4);
+  --v-modal-content-padding-y: var(--size-spacing-0);
+  --v-modal-content-text-align: center;
+
+  /* panel */
+  --v-modal-panel-padding-x: var(--size-spacing-4);
+  --v-modal-panel-padding-y: var(--size-spacing-4);
+  --v-modal-margin-padding-x: var(--size-spacing-4);
+  --v-modal-margin-padding-y: var(--size-spacing-4);
+  --v-modal-content-text-align: center;
+
+  /* title */
+  --v-modal-title-font-weight: var(--font-weight-semibold);
+  --v-modal-title-font-size: var(--size-font-lg);
+  --v-modal-title-line-height: var(--size-font-xl);
+  --v-modal-title-letter-spacing: initial;
+  --v-modal-title-color: var(--color-base-gray-900);
+
+  /* body */
+  --v-modal-body-margin-top: var(--size-spacing-2);
+  --v-modal-body-text-align: left;
+  --v-modal-body-font-size: var(--size-font-sm);
+  --v-modal-body-line-height: var(--size-font-md);
+
+  /* footer */
+  --v-modal-footer-margin-top: var(--size-spacing-6);
+  --v-modal-footer-justify-content: flex-end;
+  --v-modal-footer-gap: var(--size-spacing-2);
+}
+
+.v-modal {
+  &-dialog {
+    z-index: var(--v-modal-z-index);
+    position: fixed;
+    inset: 0px;
+    overflow-y: auto;
+  }
+
+  &-content {
+    padding: var(--v-modal-content-padding-y) var(--v-modal-content-padding-x);
+    text-align: var(--v-modal-content-text-align);
+    min-height: 100vh;
+  }
+
+  &-overlay {
+    position: fixed;
+    inset: 0px;
+    background-color: rgb(0 0 0 / 0.5);
+  }
+
+  &-panel {
+    background: var(--v-modal-bg-color);
+    color: var(--v-modal-text-color);
+    border-radius: var(--v-modal-border-radius);
+    box-shadow: var(--v-modal-shadow);
+    max-width: var(--v-modal-max-width);
+    width: var(--v-modal-width);
+    padding: var(--v-modal-panel-padding-y) var(--v-modal-panel-padding-x);
+    margin: var(--v-modal-panel-margin-y) var(--v-modal-panel-margin-x);
+    text-align: var(--v-modal-panel-text-align);
+    overflow: hidden;
+    vertical-align: middle;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    display: inline-block;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+
+  &-spacer {
+    display: inline-block;
+    height: 100vh;
+    vertical-align: middle;
+  }
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--size-spacing-4);
+  }
+
+  &-title {
+    font-size: var(--v-modal-title-font-size);
+    font-weight: var(--v-modal-title-font-weight);
+    line-height: var(--v-modal-title-line-height);
+    letter-spacing: var(--v-modal-title-letter-spacing);
+    color: var(--v-modal-title-color);
+  }
+
+  &-body {
+    margin-top: var(--v-modal-body-margin-top);
+    text-align: var(--v-modal-body-text-align);
+    flex: 1 1 0%;
+    font-size: var(--v-modal-body-font-size);
+    line-height: var(--v-modal-body-line-height);
+  }
+
+  &-footer {
+    margin-top: var(--v-modal-footer-margin-top);
+    justify-content: var(--v-modal-footer-justify-content);
+    gap: var(--v-modal-footer-gap);
+    display: flex;
+  }
+
+  /* fullscreen */
+  &--fullscreen {
+    --v-modal-width: 100%;
+    --v-modal-max-width: 100%;
+  }
+
+  &--fullscreen &-panel {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    margin: 0px;
+    border-radius: 0px;
+  }
+
+  &--fullscreen &-content {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  /* centered */
+  &--centered &-panel {
+    text-align: center;
+    justify-content: center;
+  }
+
+  &--centered &-body {
+    text-align: center;
+  }
+
+  &--centered &-footer {
+    justify-content: center;
+  }
+}

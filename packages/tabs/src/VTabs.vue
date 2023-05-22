@@ -347,5 +347,3 @@ provide('activeTab', readonly(selected));
     </template>
   </div>
 </template>
-
-<style src="./VTabs.scss" lang="scss"></style>

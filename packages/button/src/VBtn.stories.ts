@@ -5,7 +5,6 @@ import VIcon from '@morpheme/icon';
 import {defaultColors} from '@morpheme/theme/defaultTheme';
 import VBtnGroup from './VBtnGroup.vue';
 import VBtnToolbar from './VBtnToolbar.vue';
-import './VBtn.dark.scss';
 
 const colors = defaultColors;
 const defaultSizes = ['sm', 'md', 'lg'];

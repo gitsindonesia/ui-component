@@ -1,0 +1,9 @@
+.dark {
+  .v-switch {
+    /* button */
+    --v-switch-button-bg-color: var(--color-base-gray-true-700);
+    --v-switch-button-border-color: var(--color-base-gray-true-700);
+    /* thumb */
+    --v-switch-thumb-bg-color: var(--color-base-gray-true-200);
+  }
+}

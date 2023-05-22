@@ -55,5 +55,3 @@ const imgAttrs = computed(() => {
     />
   </component>
 </template>
-
-<style src="./VLogo.scss" lang="scss"></style>

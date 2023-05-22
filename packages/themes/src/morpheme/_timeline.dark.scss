@@ -1,0 +1,13 @@
+.dark {
+  .v-timeline {
+    &-divider {
+      border-color: var(--color-base-gray-true-700) !important;
+      z-index: auto;
+    }
+    &-item {
+      &-dot {
+        border-color: var(--color-base-gray-true-900);
+      }
+    }
+  }
+}

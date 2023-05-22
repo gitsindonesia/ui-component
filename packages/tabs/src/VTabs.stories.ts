@@ -5,7 +5,6 @@ import VCard from '@morpheme/card';
 import {ref} from 'vue';
 import {Story} from '@storybook/vue3';
 import VTabsSlider from './VTabsSlider.vue';
-import './VTabs.dark.scss';
 
 function createItems(len = 20, additionalItem = {}) {
   return [...Array(20)].map((v, k) => ({

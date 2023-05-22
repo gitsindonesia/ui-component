@@ -91,5 +91,3 @@ const message = computed(() => props.errorMessages[0] || errorMessage.value);
     </div>
   </div>
 </template>
-
-<style src="./VEditor.scss" lang="scss"></style>

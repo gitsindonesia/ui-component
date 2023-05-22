@@ -1,0 +1,24 @@
+@import 'pagination.dark';
+
+.dark {
+  .v-data-table-pagination {
+    --v-data-table-pagination-bg-color: var(--color-base-gray-true-800);
+    --v-data-table-pagination-text-color: var(--color-base-gray-true-300);
+    --v-data-table-pagination-border-color: var(--color-base-gray-true-700);
+
+    .v-pagination {
+      --v-pagination-border-radius: var(--border-radius-lg);
+
+      /* item */
+      --v-pagination-item-border-radius: var(--border-radius-lg);
+      --v-pagination-item-bg-color: var(--color-base-transparent);
+      --v-pagination-item-border-color: var(--color-base-transparent);
+      --v-pagination-item-text-color: var(--colors-base-neutral-200);
+
+      /* item disabled */
+      --v-pagination-item-disabled-bg-color: var(--color-base-transparent);
+      --v-pagination-item-disabled-border-color: var(--color-base-transparent);
+      --v-pagination-item-disabled-text-color: var(--colors-base-gray-true-500);
+    }
+  }
+}

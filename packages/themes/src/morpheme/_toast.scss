@@ -1,0 +1,179 @@
+:root {
+  /* toast */
+  --v-toast-wrapper-padding-x: var(--size-spacing-0);
+  --v-toast-wrapper-padding-y: var(--size-spacing-3);
+  /* panel */
+  --v-toast-padding-x: var(--size-spacing-4);
+  --v-toast-padding-y: var(--size-spacing-3);
+  --v-toast-bg-color: #2f3031;
+  --v-toast-text-color: white;
+  --v-toast-font-size: var(--size-font-sm);
+  --v-toast-font-weight: var(--font-weight-regular);
+  --v-toast-width: 328px;
+  --v-toast-box-shadow: var(--effect-shadow-lg);
+  --v-toast-border-radius: var(--border-radius-lg);
+  --v-toast-text-align: left;
+  --v-toast-gap: var(--size-spacing-4);
+}
+
+.v-toast {
+  padding: var(--v-toast-wrapper-padding-y) var(--v-toast-wrapper-padding-x);
+  position: fixed;
+  z-index: 50;
+  left: 0px;
+  right: 0px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  display: flex;
+  align-items: center;
+
+  &-panel {
+    padding: var(--v-toast-padding-y) var(--v-toast-padding-x);
+    background: var(--v-toast-bg-color);
+    color: var(--v-toast-text-color);
+    font-size: var(--v-toast-font-size);
+    font-weight: var(--v-toast-font-weight);
+    box-shadow: var(--v-toast-box-shadow);
+    border-radius: var(--v-toast-border-radius);
+    text-align: var(--v-toast-text-align);
+    gap: var(--v-toast-gap);
+    width: 91.666667%;
+    left: 0px;
+    right: 0px;
+    display: flex;
+    align-items: center;
+
+    @media (min-width: 640px) {
+      width: var(--v-toast-width);
+    }
+  }
+
+  /* vars-- */
+  &-white {
+    --v-toast-bg-color: var(--color-base-white);
+    --v-toast-text-color: var(--color-base-gray-800);
+  }
+  &-primary {
+    --v-toast-bg-color: var(--color-brand-primary-500);
+    --v-toast-text-color: var(--color-base-white);
+  }
+  &-secondary {
+    --v-toast-bg-color: var(--color-base-gray-800);
+    --v-toast-text-color: var(--color-base-white);
+  }
+  &-info {
+    --v-toast-bg-color: var(--color-base-blue-light-500);
+    --v-toast-text-color: var(--color-base-white);
+  }
+  &-warning {
+    --v-toast-bg-color: var(--color-base-warning-500);
+    --v-toast-text-color: var(--color-base-white);
+  }
+  &-error {
+    --v-toast-bg-color: var(--color-base-error-500);
+    --v-toast-text-color: var(--color-base-white);
+  }
+  &-success {
+    --v-toast-bg-color: var(--color-base-success-500);
+    --v-toast-text-color: var(--color-base-white);
+  }
+
+  /* icon */
+  &-icon {
+    width: var(--size-spacing-5);
+    height: var(--size-spacing-5);
+  }
+
+  &-content {
+    flex: 1 1 0%;
+  }
+
+  &-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--size-spacing-1);
+  }
+
+  /* placement */
+  &--bottom,
+  &--bottom-start,
+  &--bottom-end {
+    bottom: var(--size-spacing-4);
+  }
+
+  &--bottom {
+    justify-content: center;
+  }
+
+  &--bottom-start {
+    justify-content: flex-start;
+    margin-left: var(--size-spacing-4);
+  }
+
+  &--bottom-end {
+    justify-content: flex-end;
+    margin-right: var(--size-spacing-4);
+  }
+
+  /* top */
+  &--top,
+  &--top-start,
+  &--top-end {
+    top: var(--size-spacing-4);
+  }
+
+  &--top {
+    justify-content: center;
+  }
+
+  &--top-start {
+    justify-content: flex-start;
+    margin-left: var(--size-spacing-4);
+  }
+
+  &--top-end {
+    justify-content: flex-end;
+    margin-right: var(--size-spacing-4);
+  }
+
+  /* center */
+  &--center {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* transition */
+.toast-transition-center-enter-active,
+.toast-transition-center-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.toast-transition-center-enter-from,
+.toast-transition-center-leave-to {
+  opacity: 0;
+}
+
+.toast-transition-bottom-enter-active,
+.toast-transition-bottom-leave-active {
+  transition: all 0.3s ease;
+}
+
+.toast-transition-bottom-enter-from,
+.toast-transition-bottom-leave-to {
+  transform: translateY(100%);
+}
+
+.toast-transition-top-enter-active,
+.toast-transition-top-leave-active {
+  transition: all 0.3s ease;
+}
+
+.toast-transition-top-enter-from,
+.toast-transition-top-leave-to {
+  transform: translateY(-100%);
+}

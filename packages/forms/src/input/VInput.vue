@@ -293,5 +293,3 @@ const {errorMessage, uncontrolledValue, validationListeners, inputId, clear} =
     </ErrorMessage>
   </div>
 </template>
-
-<style src="../forms.scss" lang="scss"></style>

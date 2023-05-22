@@ -6,7 +6,6 @@ import {Meta, Story} from '@storybook/vue3';
 import {useForm} from 'vee-validate';
 import {object, boolean, array} from 'yup';
 import VBtn from '@morpheme/button';
-import './VCheckbox.dark.scss';
 
 export default {
   title: 'Forms/Checkbox',
@@ -38,12 +37,41 @@ const Template: Story = (args) => ({
   `,
 });
 
+export const Variants: Story = (args) => ({
+  components: {VCheckbox},
+  setup() {
+    const value = ref(false);
+    return {args, value};
+  },
+  template: `
+    <VCheckbox :model-value="true" label="Primary" />
+    <VCheckbox :model-value="true" label="Secondary" color="secondary" />
+    <VCheckbox :model-value="true" label="Info" color="info" />
+    <VCheckbox :model-value="true" label="Warning" color="warning" />
+    <VCheckbox :model-value="true" label="Error" color="error" />
+    <VCheckbox :model-value="true" label="Success" color="success" />
+  `,
+});
+
 export const Checkbox = Template.bind({});
 Checkbox.args = {};
 Checkbox.parameters = {
   docs: {
     source: {
       code: `<v-checkbox label="Checkbox" />`,
+    },
+  },
+};
+
+export const Checked = Template.bind({});
+Checked.args = {
+  modelValue: true,
+  value: true,
+};
+Checked.parameters = {
+  docs: {
+    source: {
+      code: `<v-checkbox label="Checked" />`,
     },
   },
 };

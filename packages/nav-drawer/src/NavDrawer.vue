@@ -143,5 +143,3 @@ const styles = computed(() => {
     </aside>
   </transition>
 </template>
-
-<style src="./NavDrawer.scss" lang="scss"></style>

@@ -153,5 +153,3 @@ const {errorMessage, uncontrolledValue, inputId, handleChange} = useFormValue(
     </div>
   </div>
 </template>
-
-<style src="./VCheckbox.scss" lang="scss"></style>

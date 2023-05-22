@@ -4,9 +4,6 @@ import {useForm} from 'vee-validate';
 import {object, boolean} from 'yup';
 import VBtn from '@morpheme/button';
 import {ref} from 'vue';
-import '@morpheme/forms/src/forms.scss';
-import '@morpheme/forms/src/forms.dark.scss';
-import './VSwitch.dark.scss';
 
 export default {
   title: 'Forms/Switch',
@@ -131,7 +128,7 @@ export const CustomClass = Template.bind({});
 CustomClass.args = {
   color: '',
   label: 'Custom Switch',
-  switchClass: '!border-cyan-200',
+  switchClass: '!border !border-cyan-200',
   activeClass: '!bg-white',
   inactiveClass: '!bg-white',
   buttonClass: '!bg-cyan-500',

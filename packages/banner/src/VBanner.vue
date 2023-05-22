@@ -91,5 +91,3 @@ provide(VBannerSymbol, api);
     </div>
   </Transition>
 </template>
-
-<style src="./VBanner.scss" lang="scss"></style>

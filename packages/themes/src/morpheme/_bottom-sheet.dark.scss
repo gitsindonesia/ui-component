@@ -1,0 +1,23 @@
+@import 'list.dark';
+
+.dark {
+  .v-bottom-sheet {
+    --v-bottom-sheet-bg-color: var(--color-base-gray-true-900);
+    --v-bottom-sheet-body-color: var(--color-base-gray-true-200);
+
+    // handle
+    --v-bottom-sheet-handle-bg-color: var(--color-base-gray-true-600);
+
+    &-close-icon {
+      color: var(--color-base-gray-true-300);
+
+      &:hover {
+        color: var(--color-base-gray-true-100);
+      }
+    }
+
+    &-footer {
+      border-color: var(--color-base-gray-true-800);
+    }
+  }
+}

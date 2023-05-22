@@ -131,14 +131,14 @@ const clear = () => {
             @click="clear"
           >
             <Icon
-              name="ri:close-line"
+              name="heroicons:x-mark"
               class="autocomplete-icon"
               aria-hidden="true"
             />
           </button>
           <ComboboxButton :disabled="disabled">
             <Icon
-              name="ri:arrow-down-s-line"
+              name="heroicons:chevron-down"
               class="autocomplete-icon"
               aria-hidden="true"
             />
@@ -180,7 +180,7 @@ const clear = () => {
               </span>
               <span v-if="selected" class="autocomplete-item-selected">
                 <Icon
-                  name="ri:check-line"
+                  name="heroicons:check"
                   class="autocomplete-item-selected-icon"
                   aria-hidden="true"
                 />
@@ -200,5 +200,3 @@ const clear = () => {
     {{ errorMessage }}
   </div>
 </template>
-
-<style src="./VAutocomplete.scss" lang="scss"></style>

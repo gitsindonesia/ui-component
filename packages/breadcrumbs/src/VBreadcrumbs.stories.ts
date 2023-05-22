@@ -6,7 +6,6 @@ import type {VBreadcrumbItem} from './types';
 import {ref} from 'vue';
 import VBreadcrumbsDivider from './VBreadcrumbsDivider.vue';
 import VBreadcrumbsItem from './VBreadcrumbsItem.vue';
-import './VBreadcrumbs.dark.scss';
 
 const items = [
   {

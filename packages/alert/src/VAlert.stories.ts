@@ -5,11 +5,10 @@ import Icon from '@morpheme/icon';
 import AlertVModelStory from './stories/AlertVModelStory.vue';
 import AlertTransitionStory from './stories/AlertTransitionStory.vue';
 import AlertCustomStory from './stories/AlertCustomStory.vue';
-import './VAlert.dark.scss';
 import {ref} from 'vue';
 import VBtn from '@morpheme/button';
-import '@morpheme/button/dist/style.css';
 import VAlertGroup from './VAlertGroup.vue';
+import VAlertTitle from './VAlertTitle.vue';
 
 export default {
   title: 'Components/Alert',
@@ -193,6 +192,24 @@ export const DarkMode = () => ({
     </v-alert>
   </div>
 </div>
+  `,
+});
+
+export const WithTitle = () => ({
+  components: {VAlert, VAlertTitle, Icon},
+  setup() {
+    return {};
+  },
+  template: `
+    <v-alert
+      class="mb-2"
+      dismissable
+      color="info"
+      icon="info"
+    >
+      <VAlertTitle>Alert title</VAlertTitle>
+      Change a few things up and try submitting again.
+    </v-alert>
   `,
 });
 

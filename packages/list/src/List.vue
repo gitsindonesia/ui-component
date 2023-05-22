@@ -33,5 +33,3 @@ const props = withDefaults(defineProps<Props>(), {
     <slot v-bind="props" />
   </div>
 </template>
-
-<style src="./List.scss" lang="scss"></style>

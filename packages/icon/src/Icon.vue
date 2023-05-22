@@ -56,5 +56,3 @@ const ariaProps = {
   />
   <span v-else v-bind="ariaProps">{{ name }}</span>
 </template>
-
-<style src="./Icon.scss" lang="scss"></style>
