@@ -129,7 +129,10 @@
 
   &-clearable {
     &-button {
-      @apply w-auto cursor-pointer flex items-center;
+      width: auto;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
     }
 
     &-icon {
