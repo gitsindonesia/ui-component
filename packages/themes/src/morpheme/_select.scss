@@ -51,9 +51,7 @@
   --v-select-hint-color: var(--v-input-hint-color);
   --v-select-hint-margin-top: var(--v-input-hint-margin-top);
 
-  // focus effect
-  --v-input-effect-border-color: var(--color-brand-primary-300);
-  --v-input-effect-shadow-color: var(--color-brand-primary-100);
+  --v-select-option-check-selected-color: var(--color-brand-primary-700);
 }
 
 .v-select {
@@ -180,6 +178,10 @@
       flex-shrink: 0;
       width: 1.5rem /* 24px */;
       height: 1.5rem /* 24px */;
+
+      &--selected {
+        color: var(--v-select-option-check-selected-color);
+      }
 
       &-icon {
         width: 1.25rem /* 20px */;

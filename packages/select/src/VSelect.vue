@@ -354,7 +354,7 @@ const emitSelected = (val: any) => {
             </div>
             <ListboxOption
               v-for="(item, index) in filteredItems"
-              v-slot="{selected}"
+              v-slot="{selected, active}"
               :key="index"
               :value="returnObject ? item : item?.[itemValue]"
               as="template"
@@ -363,7 +363,7 @@ const emitSelected = (val: any) => {
                 class="group v-select-option"
                 :class="[
                   {
-                    'v-select-option--active': selected,
+                    'v-select-option--active': active,
                   },
                 ]"
               >
@@ -371,7 +371,8 @@ const emitSelected = (val: any) => {
                   v-if="!hideCheckIcon"
                   class="v-select-option-check"
                   :class="{
-                    'v-select-option-check--active': selected,
+                    'v-select-option-check--active': active,
+                    'v-select-option-check--selected': selected,
                   }"
                 >
                   <slot v-if="selected" name="icon">
