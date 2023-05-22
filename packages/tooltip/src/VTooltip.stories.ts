@@ -20,22 +20,6 @@ const placements = [
 export default {
   title: 'Components/Tooltip',
   component: VTooltip,
-  argTypes: {
-    placement: {
-      control: 'select',
-      options: placements,
-    },
-    color: {
-      control: 'color',
-    },
-  },
-  args: {
-    placement: 'top',
-    color: 'white',
-    bgColor: 'black',
-    maxWidth: '300px',
-    options: {},
-  },
 } as Meta;
 
 const Template: Story = (args) => ({
@@ -77,3 +61,28 @@ Tooltip.parameters = {
     },
   },
 };
+
+export const Colors: Story = (args) => ({
+  components: {VTooltip, VBtn},
+  setup() {
+    return {args};
+  },
+  template: `
+    <VTooltip v-bind='args'>
+      <template #activator>
+        <v-btn>
+          Default (black)
+        </v-btn>
+      </template>
+      <span>Hello :)</span>
+    </VTooltip>
+    <VTooltip v-bind='args' color="white">
+      <template #activator>
+        <v-btn>
+          White
+        </v-btn>
+      </template>
+      <span>Hello :)</span>
+    </VTooltip>
+  `,
+});

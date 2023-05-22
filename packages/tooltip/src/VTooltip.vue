@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import 'floating-vue/dist/style.css';
-import {Tooltip} from 'floating-vue';
+import FloatingVue, {Tooltip} from 'floating-vue';
+import {PropType} from 'vue';
 
-defineProps({
+const props = defineProps({
   placement: {
     type: String,
     default: 'top',
@@ -28,11 +29,24 @@ defineProps({
     type: String,
     default: '',
   },
+  color: {
+    type: String as PropType<'black' | 'white'>,
+    default: 'black',
+  },
 });
+
+FloatingVue.options.themes['tooltip-black'] = {
+  $extend: 'tooltip',
+  $resetCss: true,
+};
+FloatingVue.options.themes['tooltip-white'] = {
+  $extend: 'tooltip',
+  $resetCss: true,
+};
 </script>
 
 <template>
-  <Tooltip :placement="placement">
+  <Tooltip :placement="placement" :theme="`tooltip-${color}`">
     <slot name="activator" />
     <template #popper>
       <slot />
