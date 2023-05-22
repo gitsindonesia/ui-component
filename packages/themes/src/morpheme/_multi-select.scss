@@ -2,7 +2,7 @@
   --v-multi-select-border-color: var(--v-input-border-color);
   --v-multi-select-border-radius: var(--v-input-border-radius);
   --v-multi-select-bg-color: var(--v-input-bg-color);
-  --v-multi-select-text-color: var(--color-base-gray-800);
+  --v-multi-select-text-color: var(--color-base-gray-700);
   --v-multi-select-height: auto;
   --v-multi-select-min-height: var(--v-input-height);
   --v-multi-select-placeholder-color: var(--v-input-placeholder-color);
@@ -58,6 +58,12 @@
   position: relative;
   min-height: var(--v-multi-select-min-height);
 
+  &:focus-within {
+    border: 1px solid var(--v-input-effect-border-color);
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05),
+      0px 0px 0px 4px var(--v-input-effect-shadow-color);
+  }
+
   &-panel {
     display: flex;
     align-items: center;
@@ -97,11 +103,6 @@
     gap: 0.5rem; // Equivalent to gap-2
     align-items: center; // Equivalent to items-center
   
-    &:focus {
-      outline-width: 2px; // Equivalent to focus-visible:ring-2
-      outline-color: rgba(147, 197, 253, 0.75); // Equivalent to focus-visible:ring-opacity-75
-      outline-offset: 2px; // Equivalent to focus-visible:ring-offset-2
-    }
   }
 
   &-badges {
@@ -117,16 +118,16 @@
     background: var(--v-multi-select-dropdown-bg-color);
     top: 100%;
     position: absolute; // Equivalent to absolute
-    inset-inline-start: 0; // Equivalent to inset-x-0
-    inset-inline-end: 0; // Equivalent to inset-x-0
+    left: 0;
+    right: 0;
     width: 100%; // Equivalent to w-full
     padding-top: 0.25rem; // Equivalent to py-1
     padding-bottom: 0.25rem; // Equivalent to py-1
     margin-top: 0.75rem; // Equivalent to mt-3
     overflow: auto; // Equivalent to overflow-auto
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); // Equivalent to shadow-lg
+    box-shadow: var(--effect-shadow-lg);
     max-height: 15rem; // Equivalent to max-h-60
-    border: 1px solid #000; // Equivalent to ring-1 ring-black ring-opacity-5
+    border: 1px solid var(--color-base-gray-300);
     outline: none; // Equivalent to focus:outline-none
     font-size: 0.875rem; // Equivalent to sm:text-sm
     padding-inline-start: 0; // Equivalent to px-0
@@ -145,12 +146,16 @@
     border: none; // Equivalent to border-none
     background-color: transparent; // Equivalent to bg-transparent
     padding: 0.25rem; // Equivalent to p-1
-    outline: none; // Equivalent to focus:outline-none
-    ring-width: 0; // Equivalent to focus:ring-0
     border-width: 0; // Equivalent to focus:border-none
-    font-size: 0.875rem; // Equivalent to text-sm
-    flex: 1; // Equivalent to flex-1
+    font-size: var(--size-font-sm);
+    flex: 1 1 0%;
     
+    &:focus {
+      --tw-ring-color: transparent;
+      outline: none !important;
+      border: none !important;
+    }
+
     &:disabled {
       cursor: not-allowed;
     }
@@ -182,7 +187,7 @@
   }
 
   &-item--focused {
-    background-color: var(--color-brand-primary-700);
+    // background-color: var(--color-brand-primary-700);
   }
 
   &-dropdown-loading {
