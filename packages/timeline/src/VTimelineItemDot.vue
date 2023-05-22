@@ -9,7 +9,7 @@ const props = withDefaults(
   {},
 );
 
-const bgColor = getColor(props.color);
+const bgColor = getColor(props.color) as any;
 const textColor = getColor(props.textColor);
 </script>
 
