@@ -23,7 +23,7 @@
     "@ckeditor/ckeditor5-build-classic": "^35.3.2",
     "@ckeditor/ckeditor5-vue": "^4.0.1",
     "vee-validate": "^4.5.9",
-    "vue": "^3.2.31"
+    "vue": "^3.3.4"
   },
   "devDependencies": {
     "@headlessui/vue": "^1.6.0",

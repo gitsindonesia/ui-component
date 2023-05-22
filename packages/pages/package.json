@@ -19,7 +19,7 @@
     "@morpheme/alert": "^1.0.0-beta.8",
     "@morpheme/button": "^1.0.0-beta.8",
     "@morpheme/forms": "^1.0.0-alpha.57+95edc430",
-    "vue": "^3.2.31",
+    "vue": "^3.3.4",
     "yup": "^0.32.11"
   },
   "devDependencies": {

@@ -20,7 +20,7 @@
     "@morpheme/spinner": "^1.0.0-beta.8",
     "@morpheme/utils": "^1.0.0-beta.8",
     "vee-validate": "^4.5.9",
-    "vue": "^3.2.31"
+    "vue": "^3.3.4"
   },
   "devDependencies": {
     "@headlessui/vue": "^1.6.0",

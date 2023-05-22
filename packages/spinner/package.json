@@ -40,6 +40,6 @@
   },
   "gitHead": "92215d91d1e3a2b1b804e52b55dcfd0ed5274475",
   "dependencies": {
-    "vue": "^3.2.33"
+    "vue": "^3.3.4"
   }
 }

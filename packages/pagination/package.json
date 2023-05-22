@@ -16,7 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "pagino": "^1.4.1",
-    "vue": "^3.2.31"
+    "vue": "^3.3.4"
   },
   "devDependencies": {
     "@headlessui/vue": "^1.6.0",

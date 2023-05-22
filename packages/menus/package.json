@@ -20,7 +20,7 @@
     "@morpheme/icon": "^1.0.0-beta.8",
     "@morpheme/list": "^1.0.0-beta.8",
     "floating-vue": "^2.0.0-beta.20",
-    "vue": "^3.2.31"
+    "vue": "^3.3.4"
   },
   "devDependencies": {
     "@morpheme/app-bar": "^1.0.0-beta.8",

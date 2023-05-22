@@ -17,7 +17,7 @@
   "dependencies": {
     "@iconify/vue": "^3.2.1",
     "@morpheme/collapsible": "^1.0.0-beta.8",
-    "vue": "^3.2.31",
+    "vue": "^3.3.4",
     "vue-router": "^4.0.13"
   },
   "devDependencies": {
