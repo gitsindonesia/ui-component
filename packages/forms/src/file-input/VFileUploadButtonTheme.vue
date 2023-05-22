@@ -51,7 +51,7 @@ const emit =
         :class="[disabledClass, borderClass]"
         @click="emit('choose')"
       >
-        <slot name="filename" :value="filename">
+        <slot name="filename" :value="fileName">
           {{ fileName }}
         </slot>
       </div>

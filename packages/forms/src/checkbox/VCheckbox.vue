@@ -95,17 +95,14 @@ const isEagerValidation = computed(() => {
   return props.validationMode === 'eager';
 });
 
-const {errorMessage, uncontrolledValue, inputId, handleChange} = useFormValue(
-  props,
-  emit,
-  {
+const {errorMessage, uncontrolledValue, inputId, handleChange, handleBlur} =
+  useFormValue(props, emit, {
     type: 'checkbox',
     valueProp: props.value,
     checkedValue: props.checkedValue,
     uncheckedValue: props.uncheckedValue,
     validateOnValueUpdate: !isEagerValidation.value,
-  },
-);
+  });
 </script>
 
 <template>
