@@ -10,12 +10,17 @@
   --alert-font-size: var(--size-font-sm);
   --alert-line-height: 20px;
   --alert-icon-size: 20px;
+
+  // title
+  --alert-title-font-size: var(--size-font-sm);
+  --alert-title-font-weight: var(--font-weight-semibold);
+  --alert-title-line-height: 20px;
 }
 
 // Block
 .alert {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   width: 100%;
   gap: var(--alert-gap);
@@ -235,5 +240,13 @@
    animations can be calculated correctly. */
   &-group-transition-leave-active {
     position: absolute;
+  }
+
+  // title
+  &-title {
+    font-size: var(--alert-title-font-size, 14px);
+    line-height: var(--alert-title-line-height, 20px);
+    font-weight: var(--alert-title-font-weight, 600);
+    margin-bottom: var(--alert-title-margin-bottom, 4px);
   }
 }

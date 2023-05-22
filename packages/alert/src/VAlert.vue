@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import {computed, toRefs, ref, watch} from 'vue';
+import {computed, toRefs, ref, watch, provide} from 'vue';
 import Icon from '@morpheme/icon';
+import {AlertSymbol} from './api';
 
 const props = defineProps({
   modelValue: {
@@ -45,7 +46,7 @@ const props = defineProps({
   },
 });
 
-const {modelValue} = toRefs(props);
+const {modelValue, color} = toRefs(props);
 
 const emit =
   defineEmits<{
@@ -85,6 +86,14 @@ const mappedIcons: Record<string, string> = {
   warning: 'heroicons:exclamation-triangle',
   error: 'heroicons:x-circle',
 };
+
+const api = {
+  isOpen,
+  dismiss,
+  color,
+};
+
+provide(AlertSymbol, api);
 </script>
 
 <template>

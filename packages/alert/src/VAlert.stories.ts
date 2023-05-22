@@ -8,6 +8,7 @@ import AlertCustomStory from './stories/AlertCustomStory.vue';
 import {ref} from 'vue';
 import VBtn from '@morpheme/button';
 import VAlertGroup from './VAlertGroup.vue';
+import VAlertTitle from './VAlertTitle.vue';
 
 export default {
   title: 'Components/Alert',
@@ -191,6 +192,24 @@ export const DarkMode = () => ({
     </v-alert>
   </div>
 </div>
+  `,
+});
+
+export const WithTitle = () => ({
+  components: {VAlert, VAlertTitle, Icon},
+  setup() {
+    return {};
+  },
+  template: `
+    <v-alert
+      class="mb-2"
+      dismissable
+      color="info"
+      icon="info"
+    >
+      <VAlertTitle>Alert title</VAlertTitle>
+      Change a few things up and try submitting again.
+    </v-alert>
   `,
 });
 
