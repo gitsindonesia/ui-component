@@ -63,6 +63,10 @@ const components: AddComponentOptions[] = [
     filePath: '@morpheme/alert/src/VAlert.vue',
   },
   {
+    name: 'VAlertTitle',
+    filePath: '@morpheme/alert/src/VAlertTitle.vue',
+  },
+  {
     name: 'VAppBar',
     filePath: '@morpheme/app-bar/src/VAppBar.vue',
   },
