@@ -1,5 +1,3 @@
-
-
 :root {
   /* input control / button */
   --v-select-border-color: var(--v-input-border-color);
@@ -52,7 +50,7 @@
   --v-select-hint-font-size: var(--v-input-hint-font-size, 14px);
   --v-select-hint-color: var(--v-input-hint-color);
   --v-select-hint-margin-top: var(--v-input-hint-margin-top);
-  
+
   // focus effect
   --v-input-effect-border-color: var(--color-brand-primary-300);
   --v-input-effect-shadow-color: var(--color-brand-primary-100);
@@ -150,8 +148,6 @@
     width: var(--v-select-icon-width);
     height: var(--v-select-icon-height);
     color: var(--v-select-icon-color);
-
-    @apply text-gray-400;
   }
 
   &-option {
@@ -160,8 +156,12 @@
     font-weight: var(--v-select-font-weight);
     background: var(--v-select-option-bg-color);
     color: var(--v-select-option-text-color);
-
-    @apply cursor-default select-none relative flex gap-2 items-center;
+    cursor: default; // Equivalent to cursor-default
+    user-select: none; // Equivalent to select-none
+    position: relative; // Equivalent to relative
+    display: flex; // Equivalent to flex
+    gap: 0.5rem; // Equivalent to gap-2
+    align-items: center; // Equivalent to items-center
 
     &:hover,
     &--active {
@@ -170,24 +170,36 @@
     }
 
     &-text {
-      @apply block truncate;
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     &-check {
-      @apply w-6 h-6 shrink-0;
+      flex-shrink: 0;
+      width: 1.5rem /* 24px */;
+      height: 1.5rem /* 24px */;
 
       &-icon {
-        @apply w-5 h-5;
+        width: 1.25rem /* 20px */;
+        height: 1.25rem /* 20px */;
       }
     }
   }
 
   &-searchable {
-    @apply px-3 border-b py-2;
+    padding-left: 0.75rem /* 12px */;
+    padding-right: 0.75rem /* 12px */;
+    border-bottom-width: 1px;
+    padding-top: 0.5rem /* 8px */;
+    padding-bottom: 0.5rem /* 8px */;
   }
 
   &-error {
-    @apply text-error-500 mt-1 text-sm;
+    color: var(--color-base-error-500);
+    font-size: var(--v-select-error-font-size, var(--size-font-sm));
+    margin-top: var(--v-select-error-margin-top, var(--size-spacing-1));
   }
 
   &-label {
@@ -199,7 +211,7 @@
   }
 
   &-panel {
-    @apply relative;
+    position: relative;
   }
 
   &-hint {

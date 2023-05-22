@@ -32,7 +32,10 @@
     &-table,
     &-tbody,
     &--striped &-tbody {
-      @apply divide-neutral-700;
+      > :not([hidden]) ~ :not([hidden]) {
+        --tw-divide-opacity: 1;
+        border-color: rgb(64 64 64 / var(--tw-divide-opacity));
+      }
     }
 
     &--selectable &-td,
@@ -48,12 +51,17 @@
     }
 
     &--bordered &-tr {
-      @apply divide-neutral-700;
+      > :not([hidden]) ~ :not([hidden]) {
+        --tw-divide-opacity: 1;
+        border-color: rgb(64 64 64 / var(--tw-divide-opacity));
+      }
     }
 
     &-th--sticky,
     &-td--sticky {
-      @apply bg-neutral-800 drop-shadow-lg;
+      background-color: var(--color-base-gray-true-800);
+      --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+      filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
     }
   }
 }

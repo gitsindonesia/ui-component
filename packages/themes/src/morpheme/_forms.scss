@@ -161,7 +161,9 @@
 
 .v-input-prepend,
 .v-input-append {
-  @apply self-stretch flex items-center;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
 }
 
 .v-input-control {

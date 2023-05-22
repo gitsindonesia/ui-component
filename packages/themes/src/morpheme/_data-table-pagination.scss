@@ -10,15 +10,21 @@
   background-color: var(--v-data-table-pagination-bg-color);
   border-color: var(--v-data-table-pagination-border-color);
 
-  @apply w-full
-    px-6
-    py-3
-    border-t
-    flex flex-row
-    items-center
-    gap-4
-    justify-center
-    sm:justify-between;
+  width: 100%;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-top: 1px solid;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+
+  @media (min-width: 640px) {
+    justify-content: space-between;
+  }
 
   &-items-per-page {
     border-radius: var(--v-input-border-radius);
@@ -26,33 +32,59 @@
     background-color: var(--v-input-bg-color);
     font-size: var(--size-font-sm);
 
-    @apply w-20 order-1 focus:ring-1 focus:border-primary-500 focus:ring-primary-500;
+    width: 5rem; // Equivalent to w-20
+    order: 1; // Equivalent to order-1
+
+    &:focus {
+      outline-width: 1px; // Equivalent to focus:ring-1
+      outline-color: #065fd4; // Equivalent to focus:border-primary-500 and focus:ring-primary-500
+      outline-style: solid;
+    }
+
+    &:focus-visible {
+      outline-style: auto;
+    }
   }
 
   &-meta {
     color: var(--v-data-table-pagination-text-color);
 
-    @apply w-auto
-      hidden
-      sm:flex
-      gap-1
-      items-center
-      text-sm
-      order-2 flex-1;
+    width: auto; // Equivalent to w-auto
+    display: none; // Equivalent to hidden
+    @media (min-width: 640px) {
+      display: flex; // Equivalent to sm:flex
+    }
+    gap: 0.25rem; // Equivalent to gap-1
+    align-items: center; // Equivalent to items-center
+    font-size: 0.875rem; // Equivalent to text-sm
+    order: 2; // Equivalent to order-2
+    flex: 1 1 0%;
 
     &-showing-text,
     &-data-text {
-      @apply hidden sm:inline;
+      display: hidden;
+
+      @media (min-width: 640px) {
+        display: inline;
+      }
     }
 
     &-start-text,
     &-total-items-text,
     &-end-text {
-      @apply font-semibold;
+      font-weight: 600;
     }
   }
 
   &-pagination {
-    @apply w-auto flex justify-center sm:justify-end order-3 sm:order-4;
+    width: auto; // Equivalent to w-auto
+    display: flex; // Equivalent to flex
+    justify-content: center; // Equivalent to justify-center
+    order: 3; // Equivalent to order-3
+  
+    @media (min-width: 640px) {
+      justify-content: flex-end; // Equivalent to sm:justify-end
+      order: 4; // Equivalent to sm:order-4
+    }
   }
 }

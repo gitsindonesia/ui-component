@@ -72,13 +72,10 @@
 
   &-error {
     border: 1px solid var(--v-multi-select-error-border-color);
-
-    @apply focus-visible:ring-white focus-visible:ring-offset-error-300
-    focus-visible:border-error-500;
   }
 
   &-normal {
-    @apply border-gray-300 focus-visible:ring-white focus-visible:ring-offset-gray-300 focus-visible:border-primary-500;
+    border-color: var(--color-base-gray-300);
   }
 
   &-label {
@@ -90,39 +87,51 @@
   }
 
   &-input {
-    @apply bg-transparent
-      w-full
-      cursor-default
-      focus:outline-none
-      gap-y-1
-      flex flex-wrap gap-2
-      items-center
-      focus-visible:ring-2
-      focus-visible:ring-opacity-75
-      focus-visible:ring-offset-2;
+    background-color: transparent; // Equivalent to bg-transparent
+    width: 100%; // Equivalent to w-full
+    cursor: default; // Equivalent to cursor-default
+    outline: none; // Equivalent to focus:outline-none
+    gap: 0.25rem; // Equivalent to gap-y-1
+    display: flex; // Equivalent to flex
+    flex-wrap: wrap; // Equivalent to flex-wrap
+    gap: 0.5rem; // Equivalent to gap-2
+    align-items: center; // Equivalent to items-center
+  
+    &:focus {
+      outline-width: 2px; // Equivalent to focus-visible:ring-2
+      outline-color: rgba(147, 197, 253, 0.75); // Equivalent to focus-visible:ring-opacity-75
+      outline-offset: 2px; // Equivalent to focus-visible:ring-offset-2
+    }
   }
 
   &-badges {
-    @apply flex flex-1 items-center gap-2 flex-wrap;
+    display: flex;
+    flex: 1 1 0%;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
   }
 
   &-dropdown {
     border-radius: var(--v-multi-select-dropdown-border-radius);
     background: var(--v-multi-select-dropdown-bg-color);
     top: 100%;
-
-    @apply absolute inset-x-0
-      w-full
-      py-1
-      mt-3
-      overflow-auto
-      shadow-lg
-      max-h-60
-      ring-1 ring-black ring-opacity-5
-      focus:outline-none
-      sm:text-sm
-      px-0
-      z-10;
+    position: absolute; // Equivalent to absolute
+    inset-inline-start: 0; // Equivalent to inset-x-0
+    inset-inline-end: 0; // Equivalent to inset-x-0
+    width: 100%; // Equivalent to w-full
+    padding-top: 0.25rem; // Equivalent to py-1
+    padding-bottom: 0.25rem; // Equivalent to py-1
+    margin-top: 0.75rem; // Equivalent to mt-3
+    overflow: auto; // Equivalent to overflow-auto
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); // Equivalent to shadow-lg
+    max-height: 15rem; // Equivalent to max-h-60
+    border: 1px solid #000; // Equivalent to ring-1 ring-black ring-opacity-5
+    outline: none; // Equivalent to focus:outline-none
+    font-size: 0.875rem; // Equivalent to sm:text-sm
+    padding-inline-start: 0; // Equivalent to px-0
+    padding-inline-end: 0; // Equivalent to px-0
+    z-index: 10; // Equivalent to z-10
   }
 
   &-input-control::placeholder {
@@ -133,22 +142,23 @@
     color: var(--v-multi-select-text-color);
     min-width: 0;
     max-width: 100%;
-
+    border: none; // Equivalent to border-none
+    background-color: transparent; // Equivalent to bg-transparent
+    padding: 0.25rem; // Equivalent to p-1
+    outline: none; // Equivalent to focus:outline-none
+    ring-width: 0; // Equivalent to focus:ring-0
+    border-width: 0; // Equivalent to focus:border-none
+    font-size: 0.875rem; // Equivalent to text-sm
+    flex: 1; // Equivalent to flex-1
+    
     &:disabled {
       cursor: not-allowed;
     }
-
-    @apply border-none bg-transparent
-      p-1
-      focus:outline-none
-      focus:ring-0
-      focus:border-none
-      text-sm
-      flex-1;
   }
 
   &-action {
-    @apply flex items-center;
+    display: flex;
+    align-items: center;
   }
 
   &-item:hover {
@@ -163,35 +173,46 @@
     font-weight: var(--v-multi-select-item-font-weight);
     padding: var(--v-multi-select-item-padding-y)
       var(--v-multi-select-item-padding-x);
-
-    @apply cursor-default select-none relative flex gap-2 items-center;
+    cursor: default;
+    user-select: none;
+    position: relative;
+    display: flex;
+    gap: 0.5rem/* 8px */;
+    align-items: center;
   }
 
   &-item--focused {
-    @apply bg-primary-500;
+    background-color: var(--color-brand-primary-700);
   }
 
   &-dropdown-loading {
-    @apply pl-6 pr-4 py-2 text-gray-500;
+    padding-left: 1.5rem/* 24px */;
+    padding-right: 1rem/* 16px */;
+    padding-top: 0.5rem/* 8px */;
+    padding-bottom: 0.5rem/* 8px */;
+    color: var(--color-base-gray-500);
   }
 
   &-item-check {
     width: var(--v-multi-select-icon-size);
     height: var(--v-multi-select-icon-size);
-
-    @apply invisible flex items-center;
+    visibility: hidden;
+    display: flex;
+    align-items: center;
   }
 
   &-item--active &-item-check {
     color: var(--v-multi-select-check-icon-color);
     width: var(--v-multi-select-icon-size);
     height: var(--v-multi-select-icon-size);
-
-    @apply visible;
+    visibility: visible;
   }
 
   &-item-text {
-    @apply block truncate;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   &-icon {

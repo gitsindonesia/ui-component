@@ -208,24 +208,36 @@
 
   &-empty {
     color: var(--v-autocomplete-empty-color);
-
-    @apply cursor-default select-none relative py-2 px-4;
+    cursor: default;
+    user-select: none;
+    position: relative;
+    padding-top: 0.5rem/* 8px */;
+    padding-bottom: 0.5rem/* 8px */;
+    padding-left: 1rem/* 16px */;
+    padding-right: 1rem/* 16px */;
   }
 
   &-item {
     background-color: var(--v-autocomplete-item-bg-color);
-
-    @apply cursor-default select-none relative py-2 pl-10 pr-4;
+    cursor: default;
+    user-select: none;
+    position: relative;
+    padding-top: 0.5rem/* 8px */;
+    padding-bottom: 0.5rem/* 8px */;
+    padding-left: 2.5rem/* 40px */;
+    padding-right: 1rem/* 16px */;
 
     &-text {
       color: var(--v-autocomplete-item-color);
-
-      @apply block truncate font-normal;
+      display: block;
+      font-weight: 400;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
 
       &--selected {
         --v-autocomplete-item-color: var(--v-autocomplete-item-selected-color);
-
-        @apply font-medium;
+        font-weight: 500;
       }
     }
 
@@ -240,20 +252,28 @@
     }
 
     &-selected {
-      @apply absolute inset-y-0 left-0 flex items-center pl-3;
+      position: absolute;
+      top: 0px;
+      bottom: 0px;
+      left: 0px;
+      display: flex;
+      align-items: center;
+      padding-left: 0.75rem/* 12px */;
 
       &-icon {
         color: var(--v-autocomplete-item-selected-icon-color);
-
-        @apply w-5 h-5 fill-current;
+        width: 1.25rem/* 20px */;
+        height: 1.25rem/* 20px */;
+        fill: currentColor;
       }
     }
   }
 
   &-error {
     color: var(--v-autocomplete-error-color);
-
-    @apply text-sm mt-1;
+    font-size: 0.875rem/* 14px */;
+    line-height: 1.25rem/* 20px */;
+    margin-top: 0.25rem/* 4px */;
   }
 
   &-hint {
