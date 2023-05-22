@@ -1,15 +1,13 @@
 :root {
-  --v-progress-bar-bg-color: theme('colors.gray.200');
-  --v-progress-bar-fill-color: theme('colors.gray.400');
-  --v-progress-bar-height: theme('height.2');
-  --v-progress-bar-border-radius: theme('borderRadius.full');
-  --v-progress-bar-font-size: theme('fontSize.xs');
-  --v-progress-bar-label-color: theme('colors.white');
-  --v-progress-bar-transition-property: theme('transitionProperty.all');
-  --v-progress-bar-transition-duration: theme('transitionDuration.300');
-  --v-progress-bar-transition-timing-function: theme(
-    'transitionTimingFunction.in-out'
-  );
+  --v-progress-bar-bg-color: var(--color-base-gray-200);
+  --v-progress-bar-fill-color: var(--color-base-gray-400);
+  --v-progress-bar-height: var(--size-spacing-2);
+  --v-progress-bar-border-radius: var(--border-radius-full);
+  --v-progress-bar-font-size: var(--size-font-xs);
+  --v-progress-bar-label-color: var(--color-base-white);
+  --v-progress-bar-transition-property: all;
+  --v-progress-bar-transition-duration: 300ms;
+  --v-progress-bar-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   --v-progress-bar-indeterminate-animation-name: indeterminateAnimation;
   --v-progress-bar-indeterminate-animation-duration: 2s;
   --v-progress-bar-indeterminate-animation-timing-function: linear;
@@ -19,13 +17,14 @@
 .v-progress-bar {
   position: relative;
   font-size: var(--v-progress-bar-font-size);
+  color: var(--v-progress-bar-label-color);
 
   &-background {
     height: var(--v-progress-bar-height);
     background-color: var(--v-progress-bar-bg-color);
     border-radius: var(--v-progress-bar-border-radius);
-
-    @apply overflow-hidden flex;
+    overflow: hidden;
+    display: flex;    
   }
 
   &-fill {
@@ -36,38 +35,43 @@
     transition-timing-function: var(
       --v-progress-bar-transition-timing-function
     );
-
-    @apply flex flex-col items-center justify-center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   /* colors */
   &-primary {
-    --v-progress-bar-fill-color: theme('colors.primary.500');
+    --v-progress-bar-fill-color: var(--color-brand-primary-500);
   }
   &-secondary {
-    --v-progress-bar-fill-color: theme('colors.secondary.500');
+    --v-progress-bar-fill-color: var(--color-base-gray-500);
   }
   &-info {
-    --v-progress-bar-fill-color: theme('colors.info.500');
+    --v-progress-bar-fill-color: var(--color-base-blue-light-500);
   }
   &-warning {
-    --v-progress-bar-fill-color: theme('colors.warning.500');
+    --v-progress-bar-fill-color: var(--color-base-warning-500);
   }
   &-success {
-    --v-progress-bar-fill-color: theme('colors.success.500');
+    --v-progress-bar-fill-color: var(--color-base-success-500);
   }
   &-error {
-    --v-progress-bar-fill-color: theme('colors.error.500');
+    --v-progress-bar-fill-color: var(--color-base-error-500);
   }
   &-dark {
-    --v-progress-bar-fill-color: theme('colors.gray.800');
+    --v-progress-bar-fill-color: var(--color-base-gray-800);
   }
 
   /* label */
   &-label {
     color: var(--v-progress-bar-label-color);
-
-    @apply absolute inset-0 flex items-center justify-center;
+    position: absolute;
+    inset: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &-label:empty {
