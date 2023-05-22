@@ -128,7 +128,7 @@ export const CustomClass = Template.bind({});
 CustomClass.args = {
   color: '',
   label: 'Custom Switch',
-  switchClass: '!border-cyan-200',
+  switchClass: '!border !border-cyan-200',
   activeClass: '!bg-white',
   inactiveClass: '!bg-white',
   buttonClass: '!bg-cyan-500',
