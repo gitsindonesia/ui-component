@@ -40,42 +40,42 @@
   }
 
   &-light {
-    background-color: theme('colors.gray.100');
+    background-color: var(--color-base-gray-100);
   }
 
   &-dark {
-    background-color: theme('colors.neutral.800');
-    color: theme('colors.neutral.200');
+    background-color: var(--color-base-gray-800);
+    color: var(--color-base-gray-true-200);
   }
 
   &-primary {
-    background-color: theme('colors.primary.500');
-    color: theme('colors.white');
+    background-color: var(--color-brand-primary-500);
+    color: var(--color-base-white);
   }
 
   &-secondary {
-    background-color: theme('colors.secondary.500');
-    color: theme('colors.white');
+    background-color: var(--color-base-gray-500);
+    color: var(--color-base-white);
   }
 
   &-info {
-    background-color: theme('colors.info.500');
-    color: theme('colors.white');
+    background-color: var(--color-base-blue-light-500);
+    color: var(--color-base-white);
   }
 
   &-warning {
-    background-color: theme('colors.warning.500');
-    color: theme('colors.white');
+    background-color: var(--color-base-warning-500);
+    color: var(--color-base-white);
   }
 
   &-success {
-    background-color: theme('colors.success.500');
-    color: theme('colors.white');
+    background-color: var(--color-base-success-500);
+    color: var(--color-base-white);
   }
 
   &-error {
-    background-color: theme('colors.error.500');
-    color: theme('colors.white');
+    background-color: var(--color-base-error-500);
+    color: var(--color-base-white);
   }
 
   // transition
