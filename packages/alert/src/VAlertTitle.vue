@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import {useAlert} from './api';
 
-interface Props {
-  tag?: string;
-}
-
-withDefaults(defineProps<Props>(), {
-  tag: 'h3',
-});
+withDefaults(
+  defineProps<{
+    tag?: string;
+  }>(),
+  {
+    tag: 'h3',
+  },
+);
 
 const api = useAlert();
 </script>
