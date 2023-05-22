@@ -455,7 +455,7 @@ export interface ModuleOptions {
    */
   transpileDeps?: boolean;
   /**
-   * Determine whether to load floating vue styles.
+   * Determine whether to load floating vue styles. Only works when `theme` is `legacy`.
    *
    * @default true
    * @example
@@ -468,7 +468,7 @@ export interface ModuleOptions {
   loadFloatingVueStyles?: boolean;
   /**
    * Determine whether to load default styles.
-   * Only works when `css` and `scss` is `false`.
+   * Only works when `css` and `scss` is `false` and `theme` is `legacy`.
    *
    * @default true
    * @example
@@ -503,6 +503,18 @@ export interface ModuleOptions {
    * })
    */
   optimizeDeps?: boolean;
+  /**
+   * Name of the theme to use. Available options: `morpheme`, `legacy`.
+   *
+   * @default 'morpheme'
+   * @example
+   * // nuxt.config.ts
+   * export default defineConfig({
+   *  morpheme: {
+   *   theme: 'morpheme'
+   * })
+   */
+  theme: 'morpheme' | 'legacy';
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -519,6 +531,7 @@ export default defineNuxtModule<ModuleOptions>({
     loadDefaultStyles: true,
     darkMode: false,
     optimizeDeps: true,
+    theme: 'morpheme',
   },
   setup(options, nuxt) {
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url));
@@ -543,31 +556,52 @@ export default defineNuxtModule<ModuleOptions>({
       }
     }
 
-    // use css bundle
-    if (options.css) {
-      nuxt.options.css.push('@morpheme/ui/styles');
+    if (options.theme === 'legacy') {
+      // use css bundle
+      if (options.css) {
+        nuxt.options.css.push('@morpheme/ui/styles');
+      }
+
+      // use sass bundle
+      if (options.sass) {
+        nuxt.options.css.push('@morpheme/ui/styles.scss');
+      }
+
+      // load required styles when not using css bundle and not using sass bundle
+      if (!options.css && !options.sass && options.loadDefaultStyles) {
+        nuxt.options.css.push('@morpheme/menu/dist/style.css');
+        nuxt.options.css.push('@morpheme/tooltip/dist/style.css');
+        nuxt.options.css.push('@morpheme/theme/transition.css');
+      }
+
+      // load floating-vue styles
+      if (options.loadFloatingVueStyles) {
+        nuxt.options.css.push('floating-vue/dist/style.css');
+      }
+
+      // load dark mode styles
+      if (options.darkMode) {
+        nuxt.options.css.push('@morpheme/ui/styles.dark');
+      }
     }
 
-    // use sass bundle
-    if (options.sass) {
-      nuxt.options.css.push('@morpheme/ui/styles.scss');
-    }
+    if (options.theme === 'morpheme') {
+      // if using sass, load sass bundle
+      if (options.sass) {
+        nuxt.options.css.push('@morpheme/themes/src/morpheme/main.scss');
 
-    // load required styles when not using css bundle and not using sass bundle
-    if (!options.css && !options.sass && options.loadDefaultStyles) {
-      nuxt.options.css.push('@morpheme/menu/dist/style.css');
-      nuxt.options.css.push('@morpheme/tooltip/dist/style.css');
-      nuxt.options.css.push('@morpheme/theme/transition.css');
-    }
+        if (options.darkMode) {
+          nuxt.options.css.push('@morpheme/themes/src/morpheme/main.dark.scss');
+        }
+      }
 
-    // load floating-vue styles
-    if (options.loadFloatingVueStyles) {
-      nuxt.options.css.push('floating-vue/dist/style.css');
-    }
+      if (options.css || !options.sass) {
+        nuxt.options.css.push('@morpheme/themes/dist/morpheme/main.css');
 
-    // load dark mode styles
-    if (options.darkMode) {
-      nuxt.options.css.push('@morpheme/ui/styles.dark');
+        if (options.darkMode) {
+          nuxt.options.css.push('@morpheme/themes/dist/morpheme/main.dark.css');
+        }
+      }
     }
 
     // register components

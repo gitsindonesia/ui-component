@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import {defaultColors} from '@morpheme/theme/defaultTheme';
-import '@morpheme/themes/morpheme';
 
 useHead({
   title: 'Morpheme UI Playground',
@@ -13,13 +12,7 @@ const items = Array.from({length: 50}, (_, index) => ({
 
 const isOpen = ref(false);
 
-const buttonVariants = [
-  'default',
-  'outlined',
-  'text',
-  'disabled',
-  'loading',
-];
+const buttonVariants = ['default', 'outlined', 'text', 'disabled', 'loading'];
 
 const sheetOpen = ref(false);
 

@@ -20,4 +20,7 @@ module.exports = {
     'lg:px-6',
     'animate-spin',
   ],
+  morpheme: {
+    sass: true,
+  },
 };

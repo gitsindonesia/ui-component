@@ -23,17 +23,17 @@
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
   },
   "dependencies": {
-    "@morpheme/ui": "^1.0.0-alpha.57+95edc430",
-    "@nuxt/kit": "^3.3.1"
+    "@morpheme/ui": "^1.0.0-beta.8",
+    "@nuxt/kit": "^3.5.0"
   },
   "devDependencies": {
     "@morpheme/tailwind-config": "^1.0.0-beta.8",
     "@nuxt/module-builder": "^0.2.1",
-    "@nuxt/schema": "^3.3.1",
+    "@nuxt/schema": "^3.5.0",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@nuxtjs/tailwindcss": "^6.4.1",
     "eslint": "latest",
-    "nuxt": "^3.3.1"
+    "nuxt": "^3.5.0"
   },
   "gitHead": "95edc430940e02006a6f7ccc5065333389c50ccd"
 }

@@ -1,13 +1,17 @@
-import GitsUIModule from '..';
+import MorphemeUI from '..';
 
 export default defineNuxtConfig({
-  modules: [GitsUIModule, '@nuxtjs/tailwindcss'],
+  modules: [MorphemeUI, '@nuxtjs/tailwindcss'],
   morpheme: {
     darkMode: true,
   },
   vite: {
     optimizeDeps: {
-      include: ['@ckeditor/ckeditor5-build-classic', '@ckeditor/ckeditor5-vue'],
+      include: [
+        '@ckeditor/ckeditor5-build-classic',
+        '@ckeditor/ckeditor5-vue',
+        'consola',
+      ],
     },
   },
 });
