@@ -1,14 +1,14 @@
 :root {
   --avatar-width: 28px;
   --avatar-height: 28px;
-  --avatar-bg-color: theme('colors.gray.200');
-  --avatar-text-color: theme('colors.gray.800');
-  --avatar-border-color: theme('colors.gray.200');
-  --avatar-border-width: theme('borderWidth.DEFAULT');
-  --avatar-border-style: 'solid';
-  --avatar-border-radius: theme('borderRadius.full');
+  --avatar-bg-color: var(--color-base-gray-200);
+  --avatar-text-color: var(--color-base-gray-700);
+  --avatar-border-color: var(--color-base-gray-200);
+  --avatar-border-width: 0;
+  --avatar-border-style: solid;
+  --avatar-border-radius: var(--border-radius-full);
   --avatar-font-weight: 600;
-  --avatar-font-size: theme('fontSize.base');
+  --avatar-font-size: var(--size-font-sm);
   --avatar-text-transform: uppercase;
   --avatar-group-spacing: -4px;
 }
@@ -33,7 +33,7 @@
 
     &--online {
       border: 1.5px solid white;
-      background-color: #12b76a;
+      background-color: var(--color-base-success-500);
     }
 
     &--verified {
@@ -72,47 +72,47 @@
   /* shapes */
   &-square,
   &-square &-image {
-    --avatar-border-radius: theme('borderRadius.none');
+    --avatar-border-radius: none;
   }
 
   &-circle,
   &-circle &-image {
-    --avatar-border-radius: theme('borderRadius.full');
+    --avatar-border-radius: var(--border-radius-full);
   }
 
   &-rounded,
   &-rounded &-image {
-    --avatar-border-radius: theme('borderRadius.DEFAULT');
+    --avatar-border-radius: var(--border-radius-lg);
   }
 
   /* colors */
   &-primary {
-    --avatar-bg-color: theme('colors.primary.500');
-    --avatar-text-color: theme('colors.white');
+    --avatar-bg-color: var(--color-brand-primary-500);
+    --avatar-text-color: var(--color-base-white);
   }
   &-secondary {
-    --avatar-bg-color: theme('colors.secondary.500');
-    --avatar-text-color: theme('colors.white');
+    --avatar-bg-color: var(--color-base-gray-700);
+    --avatar-text-color: var(--color-base-white);
   }
   &-warning {
-    --avatar-bg-color: theme('colors.warning.500');
-    --avatar-text-color: theme('colors.white');
+    --avatar-bg-color: var(--color-base-warning-500);
+    --avatar-text-color: var(--color-base-white);
   }
   &-info {
-    --avatar-bg-color: theme('colors.info.500');
-    --avatar-text-color: theme('colors.white');
+    --avatar-bg-color: var(--color-base-blue-light-500);
+    --avatar-text-color: var(--color-base-white);
   }
   &-error {
-    --avatar-bg-color: theme('colors.error.500');
-    --avatar-text-color: theme('colors.white');
+    --avatar-bg-color: var(--color-base-error-500);
+    --avatar-text-color: var(--color-base-white);
   }
   &-success {
-    --avatar-bg-color: theme('colors.success.500');
-    --avatar-text-color: theme('colors.white');
+    --avatar-bg-color: var(--color-base-success-500);
+    --avatar-text-color: var(--color-base-white);
   }
   &-dark {
-    --avatar-bg-color: theme('colors.gray.800');
-    --avatar-text-color: theme('colors.white');
+    --avatar-bg-color: var(--color-base-gray-800);
+    --avatar-text-color: var(--color-base-white);
   }
 
   /* sizes */

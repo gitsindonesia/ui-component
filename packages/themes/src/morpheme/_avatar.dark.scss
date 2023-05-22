@@ -1,8 +1,8 @@
 .dark {
   .avatar {
     &-default {
-      --avatar-bg-color: theme('colors.neutral.700');
-      --avatar-text-color: theme('colors.neutral.200');
+      --avatar-bg-color: var(--color-base-gray-true-800);
+      --avatar-text-color: var(--color-base-gray-true-200);
     }
   }
 }
