@@ -8,7 +8,7 @@ const api = inject<BottomSheetApi>(BottomSheetInjectionKey);
 </script>
 
 <template>
-  <div class="v-bottom-sheet-header">
+  <div v-if="api" class="v-bottom-sheet-header">
     <h3 class="v-bottom-sheet-title">
       <slot />
     </h3>

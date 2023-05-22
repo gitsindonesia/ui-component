@@ -19,7 +19,7 @@ const api = inject<BottomSheetApi>(BottomSheetInjectionKey);
   <Teleport to="body">
     <transition :name="transition">
       <div
-        v-if="api.isOpen"
+        v-if="api?.isOpen"
         class="v-bottom-sheet-overlay"
         @click="api.close"
       ></div>

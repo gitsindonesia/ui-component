@@ -39,9 +39,9 @@ const onDragEnd = () => {
   dragPosition = undefined;
   draggableArea.value.style.cursor = document.body.style.cursor = '';
 
-  if (sheetHeight < 25) {
+  if (+sheetHeight < 25) {
     api?.close();
-  } else if (sheetHeight > 75) {
+  } else if (+sheetHeight > 75) {
     setSheetHeight(100);
   } else {
     setSheetHeight(sheetHeight);
