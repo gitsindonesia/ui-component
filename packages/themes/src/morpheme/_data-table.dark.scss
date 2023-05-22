@@ -3,29 +3,29 @@
 .dark {
   .v-table {
     /* thead */
-    --v-table-thead-bg-color: theme('colors.neutral.800');
+    --v-table-thead-bg-color: var(--color-base-gray-true-800);
 
     // tr
-    --v-table-tr-bg-color: theme('colors.neutral.800');
+    --v-table-tr-bg-color: var(--color-base-gray-true-800);
 
     /* th */
-    --v-table-th-color: theme('colors.neutral.200');
+    --v-table-th-color: var(--color-base-gray-true-200);
 
     /* th active */
-    --v-table-th-active-color: theme('colors.primary.500');
+    --v-table-th-active-color: var(--color-brand-primary-500);
 
     /* th active hover */
-    --v-table-th-active-hover-color: theme('colors.primary.600');
+    --v-table-th-active-hover-color: var(--color-brand-primary-600);
 
     /* td */
-    --v-table-td-color: theme('colors.neutral.200');
-    --v-table-td-bg-color: theme('colors.neutral.800');
+    --v-table-td-color: var(--color-base-gray-true-200);
+    --v-table-td-bg-color: var(--color-base-gray-true-800);
 
     /* striped */
-    --v-table-striped-bg-color: theme('colors.neutral.700');
+    --v-table-striped-bg-color: var(--color-base-gray-true-700);
 
     /* hover */
-    --v-table-hover-bg-color: theme('colors.neutral.700');
+    --v-table-hover-bg-color: var(--color-base-gray-true-700);
   }
 
   .v-table {
@@ -44,7 +44,7 @@
     /* loading */
     &--loading &-td,
     &--empty &-td {
-      --v-table-td-color: theme('colors.neutral.300');
+      --v-table-td-color: var(--color-base-gray-true-300);
     }
 
     &--bordered &-tr {

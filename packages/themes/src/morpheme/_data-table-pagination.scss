@@ -1,9 +1,9 @@
 @import 'pagination';
 
 :root {
-  --v-data-table-pagination-bg-color: theme('colors.white');
-  --v-data-table-pagination-border-color: theme('borderColor.DEFAULT');
-  --v-data-table-pagination-text-color: theme('colors.gray.700');
+  --v-data-table-pagination-bg-color: var(--color-base-white);
+  --v-data-table-pagination-border-color: var(--color-base-gray-200);
+  --v-data-table-pagination-text-color: var(--color-base-gray-700);
 }
 
 .v-data-table-pagination {
@@ -24,6 +24,7 @@
     border-radius: var(--v-input-border-radius);
     border: 1px solid var(--v-input-border-color);
     background-color: var(--v-input-bg-color);
+    font-size: var(--size-font-sm);
 
     @apply w-20 order-1 focus:ring-1 focus:border-primary-500 focus:ring-primary-500;
   }
