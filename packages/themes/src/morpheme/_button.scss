@@ -11,7 +11,7 @@
   --btn-icon-width: 20px;
   --btn-icon-height: 20px;
   --btn-line-height: 20px;
-  --btn-transition: all 0.2s ease-in-out;
+  --btn-transition: all 0.3s ease-in-out;
 
   // sm
   --btn-sm-height: 32px;
@@ -120,8 +120,9 @@
       --btn-text-color: var(--color-base-gray-800);
 
       &:hover {
-        --btn-bg-color: var(--color-base-gray-300);
-        --btn-border-color: var(--color-base-gray-300);
+        --btn-bg-color: var(--color-base-gray-600);
+        --btn-border-color: var(--color-base-gray-600);
+        --btn-text-color: var(--color-base-white);
       }
     }
 

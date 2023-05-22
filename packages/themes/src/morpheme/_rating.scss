@@ -1,0 +1,67 @@
+:root {
+  // hint
+  --v-star-rating-hint-font-size: var(--size-font-sm);
+  --v-star-rating-hint-color: var(--color-base-gray-500);
+  --v-star-rating-hint-margin-top: var(--size-spacing-1);
+}
+
+.v-star-rating {
+  display: inline-flex;
+  flex-direction: column;
+
+  &-stars {
+    -webkit-tap-highlight-color: transparent;
+    display: flex;
+    align-items: center;
+  }
+
+  &-hint {
+    font-size: var(--v-star-rating-hint-font-size);
+    color: var(--v-star-rating-hint-color);
+    margin-top: var(--v-star-rating-hint-margin-top);
+  }
+}
+
+/* Rating.vue */
+.v-star-rating-pointer {
+  cursor: pointer;
+}
+
+.v-star-rating-inline {
+  display: inline-flex;
+}
+
+.v-star-rating-rating-text {
+  margin-left: 7px;
+}
+
+.v-star-rating-rtl {
+  direction: rtl;
+}
+
+.v-star-rating-rtl .v-star-rating-rating-text {
+  margin-right: 10px;
+  direction: rtl;
+}
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* RatingStar.vue */
+.v-star-rating-star {
+  overflow: visible !important;
+}
+
+.v-star-rating-star-rotate {
+  transition: all 0.25s;
+}
+
+.v-star-rating-star-rotate:hover {
+  transition: transform 0.25s;
+  transform: rotate(-15deg) scale(1.3);
+}

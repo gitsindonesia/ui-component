@@ -78,6 +78,8 @@
 
     &:disabled {
       cursor: not-allowed;
+      --v-select-text-color: var(--v-input-disabled-text-color);
+      --v-select-bg-color: var(--v-input-disabled-bg-color);
     }
 
     &:focus {
