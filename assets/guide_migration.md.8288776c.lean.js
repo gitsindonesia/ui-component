@@ -1,1 +1,0 @@
-import{_ as s,o,c as a,V as e}from"./chunks/framework.8abd2c66.js";const m=JSON.parse('{"title":"Migration Guide","description":"","frontmatter":{},"headers":[],"relativePath":"guide/migration.md"}'),n={name:"guide/migration.md"},t=e("",43),l=[t];function p(c,r,d,i,D,y){return o(),a("div",null,l)}const C=s(n,[["render",p]]);export{m as __pageData,C as default};
