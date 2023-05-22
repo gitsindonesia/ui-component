@@ -151,7 +151,7 @@ const props = defineProps({
   },
   iconSize: {
     type: String,
-    default: 'sm',
+    default: 'xs',
   },
   readonly: {
     type: Boolean,
@@ -402,203 +402,192 @@ const focusItem = () => {
     }"
     v-bind="$attrs"
   >
-    <div>
-      <div class="v-multi-select-panel">
-        <div
-          class="v-multi-select-input"
-          :class="[
-            {
-              'v-multi-select-normal': error || !!errorMessage,
-            },
-            wrapperClass,
-          ]"
-          @click="onInputClick"
-        >
-          <div class="v-multi-select-badges">
-            <template v-if="uncontrolledValue.length">
-              <template v-for="(sItem, index) in badges" :key="sItem.value">
-                <slot
-                  name="selection"
-                  :index="index"
-                  :item="sItem"
-                  :value="sItem[itemText]"
-                  :onRemove="() => deselect(sItem)"
+    <div class="v-multi-select-panel">
+      <div
+        class="v-multi-select-input"
+        :class="[
+          {
+            'v-multi-select-normal': error || !!errorMessage,
+          },
+          wrapperClass,
+        ]"
+        @click="onInputClick"
+      >
+        <div class="v-multi-select-badges">
+          <template v-if="uncontrolledValue.length">
+            <template v-for="(sItem, index) in badges" :key="sItem.value">
+              <slot
+                name="selection"
+                :index="index"
+                :item="sItem"
+                :value="sItem[itemText]"
+                :onRemove="() => deselect(sItem)"
+              >
+                <v-badge
+                  :color="badgeColor"
+                  dismissable
+                  class="truncate"
+                  :class="badgeClass"
+                  @dismiss="deselect(sItem)"
+                  v-bind="badgeProps"
                 >
-                  <v-badge
-                    :color="badgeColor"
-                    dismissable
-                    class="truncate"
-                    :class="badgeClass"
-                    @dismiss="deselect(sItem)"
-                    v-bind="badgeProps"
-                  >
-                    {{ sItem[itemText] }}
-                  </v-badge>
-                </slot>
-              </template>
-            </template>
-
-            <template
-              v-if="maxBadge > 0 && uncontrolledValue.length > maxBadge"
-            >
-              <slot name="max-selection">
-                <v-badge small>
-                  {{ uncontrolledValue.length - maxBadge }} more</v-badge
-                >
+                  {{ sItem[itemText] }}
+                </v-badge>
               </slot>
             </template>
+          </template>
 
-            <input
-              :id="id"
-              type="text"
-              class="v-multi-select-input-control"
-              :class="inputClass"
-              autofill="false"
-              autocomplete="off"
-              :placeholder="placeholder"
-              :name="name"
-              v-bind="inputProps"
-              :readonly="readonly"
-              :disabled="disabled"
-              @input="handleSearch"
-              @focus="onInputClick"
-              @keydown.enter.prevent="onEnter"
-              @keydown.down.prevent="onDown"
-              @keydown.up.prevent="onUp"
-              @keydown.tab.prevent="onTab"
-              @keydown.esc.prevent="onEsc"
-            />
-          </div>
+          <template v-if="maxBadge > 0 && uncontrolledValue.length > maxBadge">
+            <slot name="max-selection">
+              <v-badge small>
+                {{ uncontrolledValue.length - maxBadge }} more</v-badge
+              >
+            </slot>
+          </template>
 
-          <div class="v-multi-select-action">
-            <v-tooltip v-if="uncontrolledValue.length > 1">
-              <template #activator="{on}">
-                <v-badge
-                  circle
-                  class="!p-1 !bg-transparent"
-                  @click="clearSelected"
-                  v-on="on"
-                >
-                  <Icon
-                    name="ri:close-line"
-                    :size="iconSize"
-                    class="v-multi-select-icon"
-                    aria-hidden="true"
-                  />
-                </v-badge>
-              </template>
-              <span>Clear</span>
-            </v-tooltip>
-
-            <Icon
-              name="heroicons:chevron-down"
-              :size="iconSize"
-              class="v-multi-select-icon"
-              aria-hidden="true"
-            />
-          </div>
+          <input
+            :id="id"
+            type="text"
+            class="v-multi-select-input-control"
+            :class="inputClass"
+            autofill="false"
+            autocomplete="off"
+            :placeholder="placeholder"
+            :name="name"
+            v-bind="inputProps"
+            :readonly="readonly"
+            :disabled="disabled"
+            @input="handleSearch"
+            @focus="onInputClick"
+            @keydown.enter.prevent="onEnter"
+            @keydown.down.prevent="onDown"
+            @keydown.up.prevent="onUp"
+            @keydown.tab.prevent="onTab"
+            @keydown.esc.prevent="onEsc"
+          />
         </div>
 
-        <transition :name="transition">
-          <div
-            v-if="isOpen"
-            ref="dropdown"
-            class="v-multi-select-dropdown"
-            :class="dropdownClass"
-          >
-            <div
-              v-if="loading"
-              class="v-multi-select-dropdown-loading"
-              :class="loadingClass"
-            >
-              Loading...
-            </div>
-            <template v-else-if="filteredItems.length">
-              <template v-if="selectAll">
-                <slot
-                  name="select-all"
-                  :onClick="toggleSelectAll"
-                  :isSelected="isAllSelected"
-                >
-                  <div class="v-multi-select-item" @click="toggleSelectAll">
-                    <div
-                      :class="[
-                        isAllSelected ? 'font-medium' : 'font-normal',
-                        'block truncate',
-                      ]"
-                    >
-                      {{ isAllSelected ? 'Deselect All' : 'Select All' }}
-                    </div>
-                    <div v-if="isAllSelected" class="v-multi-select-item-check">
-                      <Icon
-                        name="heroicons:check"
-                        class="w-5 h-5"
-                        aria-hidden="true"
-                      />
-                    </div>
-                  </div>
-                  <div class="border-b h-1"></div>
-                </slot>
-              </template>
-
-              <slot name="prepend.item" />
-
-              <template
-                v-for="(item, index) in filteredItems"
-                :key="item.value"
+        <div class="v-multi-select-action">
+          <v-tooltip v-if="uncontrolledValue.length > 1">
+            <template #activator="{on}">
+              <v-badge
+                circle
+                class="!p-1 !bg-transparent"
+                @click="clearSelected"
+                v-on="on"
               >
-                <div
-                  :ref="(el) => setRefItem(el, index)"
-                  @click="handleSelect(item)"
-                  @mouseover="focus = index"
-                  @mouseout="focus = -1"
-                  class="v-multi-select-item group"
-                  :class="[
-                    itemClass,
-                    {
-                      'v-multi-select-item--focused': focus === index,
-                      'v-multi-select-item--active': isSelected(item, index),
-                    },
-                  ]"
-                >
+                <Icon
+                  name="ri:close-line"
+                  :size="iconSize"
+                  class="v-multi-select-icon"
+                  aria-hidden="true"
+                />
+              </v-badge>
+            </template>
+            <span>Clear</span>
+          </v-tooltip>
+
+          <Icon
+            name="heroicons:chevron-down"
+            :size="iconSize"
+            class="v-multi-select-icon"
+            aria-hidden="true"
+          />
+        </div>
+      </div>
+
+      <transition :name="transition">
+        <div
+          v-if="isOpen"
+          ref="dropdown"
+          class="v-multi-select-dropdown"
+          :class="dropdownClass"
+        >
+          <div
+            v-if="loading"
+            class="v-multi-select-dropdown-loading"
+            :class="loadingClass"
+          >
+            Loading...
+          </div>
+          <template v-else-if="filteredItems.length">
+            <template v-if="selectAll">
+              <slot
+                name="select-all"
+                :onClick="toggleSelectAll"
+                :isSelected="isAllSelected"
+              >
+                <div class="v-multi-select-item" @click="toggleSelectAll">
                   <div
-                    class="v-multi-select-item-check"
-                    :class="checkWrapperClass"
+                    :class="[
+                      isAllSelected ? 'font-medium' : 'font-normal',
+                      'block truncate',
+                    ]"
                   >
+                    {{ isAllSelected ? 'Deselect All' : 'Select All' }}
+                  </div>
+                  <div v-if="isAllSelected" class="v-multi-select-item-check">
                     <Icon
                       name="heroicons:check"
-                      :size="iconSize"
-                      class="v-multi-select-check-icon"
-                      :class="checkIconClass"
+                      class="w-5 h-5"
                       aria-hidden="true"
                     />
                   </div>
-                  <div class="v-multi-select-item-text">
-                    <slot
-                      name="item.label"
-                      :index="index"
-                      :item="item"
-                      :value="item[itemText]"
-                      :isSelected="isSelected(item, index)"
-                    >
-                      {{ item[itemText] }}
-                    </slot>
-                  </div>
                 </div>
-              </template>
-
-              <slot name="append.item" />
+                <div class="border-b h-1"></div>
+              </slot>
             </template>
-            <div
-              v-else
-              class="pl-6 pr-4 py-2 text-gray-600"
-              :class="noDataClass"
-            >
-              No Data
-            </div>
+
+            <slot name="prepend.item" />
+
+            <template v-for="(item, index) in filteredItems" :key="item.value">
+              <div
+                :ref="(el) => setRefItem(el, index)"
+                @click="handleSelect(item)"
+                @mouseover="focus = index"
+                @mouseout="focus = -1"
+                class="v-multi-select-item group"
+                :class="[
+                  itemClass,
+                  {
+                    'v-multi-select-item--focused': focus === index,
+                    'v-multi-select-item--active': isSelected(item, index),
+                  },
+                ]"
+              >
+                <div
+                  class="v-multi-select-item-check"
+                  :class="checkWrapperClass"
+                >
+                  <Icon
+                    name="heroicons:check"
+                    :size="iconSize"
+                    class="v-multi-select-check-icon"
+                    :class="checkIconClass"
+                    aria-hidden="true"
+                  />
+                </div>
+                <div class="v-multi-select-item-text">
+                  <slot
+                    name="item.label"
+                    :index="index"
+                    :item="item"
+                    :value="item[itemText]"
+                    :isSelected="isSelected(item, index)"
+                  >
+                    {{ item[itemText] }}
+                  </slot>
+                </div>
+              </div>
+            </template>
+
+            <slot name="append.item" />
+          </template>
+          <div v-else class="pl-6 pr-4 py-2 text-gray-600" :class="noDataClass">
+            No Data
           </div>
-        </transition>
-      </div>
+        </div>
+      </transition>
     </div>
   </div>
   <p v-if="hint" class="v-multi-select-hint">

@@ -2,12 +2,13 @@
   --v-multi-select-border-color: var(--v-input-border-color);
   --v-multi-select-border-radius: var(--v-input-border-radius);
   --v-multi-select-bg-color: var(--v-input-bg-color);
-  --v-multi-select-text-color: theme('colors.gray.800');
+  --v-multi-select-text-color: var(--color-base-gray-800);
   --v-multi-select-height: auto;
+  --v-multi-select-min-height: var(--v-input-height);
   --v-multi-select-placeholder-color: var(--v-input-placeholder-color);
   --v-multi-select-border-radius: var(--v-input-border-radius);
   --v-multi-select-padding-x: var(--v-input-padding-x);
-  --v-multi-select-padding-y: var(--v-input-padding-y);
+  --v-multi-select-padding-y: var(--size-spacing-2);
   --v-multi-select-font-size: var(--v-input-font-size);
 
   /* label */
@@ -18,30 +19,31 @@
   --v-multi-select-label-color: var(--v-input-label-color);
 
   /* item */
-  --v-multi-select-item-font-size: theme('fontSize.base');
-  --v-multi-select-item-font-weight: theme('fontWeight.normal');
-  --v-multi-select-item-bg-color: theme('colors.white');
-  --v-multi-select-item-text-color: theme('colors.gray.800');
-  --v-multi-select-item-padding-x: theme('padding.3');
-  --v-multi-select-item-padding-y: theme('padding.2');
-  --v-multi-select-item-hover-bg-color: theme('colors.primary.500');
-  --v-multi-select-item-hover-text-color: theme('colors.white');
+  --v-multi-select-item-font-size: var(--size-font-sm);
+  --v-multi-select-item-font-weight: var(--font-weight-regular);
+  --v-multi-select-item-bg-color: var(--color-base-white);
+  --v-multi-select-item-text-color: var(--color-base-gray-800);
+  --v-multi-select-item-padding-x: var(--size-spacing-3);
+  --v-multi-select-item-padding-y: var(--size-spacing-2);
+  --v-multi-select-item-hover-bg-color: var(--color-base-gray-100);
+  --v-multi-select-item-hover-text-color: var(--color-base-gray-700);
 
   /* error */
-  --v-multi-select-error-border-color: theme('colors.error.500');
+  --v-multi-select-error-border-color: var(--color-base-error-500);
 
   /* icon */
-  --v-multi-select-icon-color: theme('colors.gray.500');
-  --v-multi-select-check-icon-color: theme('colors.primary.500');
+  --v-multi-select-icon-color: var(--color-base-gray-500);
+  --v-multi-select-icon-size: var(--size-spacing-5);
+  --v-multi-select-check-icon-color: var(--color-brand-primary-700);
 
   /* dropdown */
-  --v-multi-select-dropdown-bg-color: theme('colors.white');
-  --v-multi-select-dropdown-border-radius: theme('borderRadius.md');
+  --v-multi-select-dropdown-bg-color: var(--color-base-white);
+  --v-multi-select-dropdown-border-radius: var(--border-radius-lg);
 
   // hint
   --v-multi-select-hint-font-size: var(--v-input-hint-font-size, 14px);
-  --v-multi-select-hint-color: theme('colors.gray.500');
-  --v-multi-select-hint-margin-top: theme('spacing.1');
+  --v-multi-select-hint-color: var(--color-base-gray-500);
+  --v-multi-select-hint-margin-top: var(--size-spacing-1);
 }
 
 .v-multi-select {
@@ -53,9 +55,16 @@
   height: var(--v-multi-select-height);
   font-size: var(--v-multi-select-font-size);
   font-weight: var(--v-multi-select-font-weight);
-  padding: var(--v-multi-select-padding-y) var(--v-multi-select-padding-x);
+  position: relative;
+  min-height: var(--v-multi-select-min-height);
 
-  @apply relative;
+  &-panel {
+    display: flex;
+    align-items: center;
+    min-height: var(--v-multi-select-min-height);
+    height: auto;
+    padding: var(--v-multi-select-padding-y) var(--v-multi-select-padding-x);
+  }
 
   &--error {
     border-color: var(--v-multi-select-error-border-color);
@@ -100,6 +109,7 @@
   &-dropdown {
     border-radius: var(--v-multi-select-dropdown-border-radius);
     background: var(--v-multi-select-dropdown-bg-color);
+    top: 100%;
 
     @apply absolute inset-x-0
       w-full
@@ -158,7 +168,7 @@
   }
 
   &-item--focused {
-    @apply text-white bg-primary-500;
+    @apply bg-primary-500;
   }
 
   &-dropdown-loading {
@@ -166,12 +176,16 @@
   }
 
   &-item-check {
-    @apply invisible flex items-center text-white
-    group-hover:text-white group-focus:text-white;
+    width: var(--v-multi-select-icon-size);
+    height: var(--v-multi-select-icon-size);
+
+    @apply invisible flex items-center;
   }
 
   &-item--active &-item-check {
     color: var(--v-multi-select-check-icon-color);
+    width: var(--v-multi-select-icon-size);
+    height: var(--v-multi-select-icon-size);
 
     @apply visible;
   }
@@ -182,6 +196,8 @@
 
   &-icon {
     color: var(--v-multi-select-icon-color);
+    width: var(--v-multi-select-icon-size);
+    height: var(--v-multi-select-icon-size);
   }
 
   &-hint {
