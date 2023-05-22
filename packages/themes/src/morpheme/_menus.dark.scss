@@ -1,25 +1,25 @@
 .dark {
   .v-menus,
   .v-menus-items {
-    --v-menus-popper-border-color: theme('colors.neutral.700');
+    --v-menus-popper-border-color: var(--color-base-gray-true-700);
 
     /* button */
-    --v-menus-button-color: theme('colors.neutral.200');
-    --v-menus-button-icon-color: theme('colors.neutral.500');
+    --v-menus-button-color: var(--color-base-gray-true-200);
+    --v-menus-button-icon-color: var(--color-base-gray-true-500);
 
     /* menus */
-    --v-menus-bg-color: theme('colors.neutral.800');
-    --v-menus-border-color: theme('colors.neutral.700');
+    --v-menus-bg-color: var(--color-base-gray-true-800);
+    --v-menus-border-color: var(--color-base-gray-true-700);
 
     /* item */
-    --v-menus-item-bg-color: theme('colors.neutral.800');
-    --v-menus-item-text-color: theme('colors.neutral.200');
+    --v-menus-item-bg-color: var(--color-base-gray-true-800);
+    --v-menus-item-text-color: var(--color-base-gray-true-200);
 
     /* item hover */
-    --v-menus-item-hover-bg-color: theme('colors.neutral.700');
-    --v-menus-item-hover-text-color: theme('colors.neutral.200');
+    --v-menus-item-hover-bg-color: var(--color-base-gray-true-700);
+    --v-menus-item-hover-text-color: var(--color-base-gray-true-200);
 
     /* arrow */
-    --v-menus-arrow-border-color: theme('colors.neutral.700');
+    --v-menus-arrow-border-color: var(--color-base-gray-true-700);
   }
 }
