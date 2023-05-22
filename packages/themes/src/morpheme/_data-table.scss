@@ -52,19 +52,20 @@
   box-shadow: var(--effect-shadow-sm);
 
   &--flat {
-    @apply shadow-none;
+    box-shadow: none;
   }
 
   &--bordered {
-    @apply border shadow-none;
+    border-width: 1px;
+    box-shadow: none;
   }
 
   &--tile {
-    @apply rounded-none;
+    border-radius: 0;
   }
 
   &--rounded {
-    @apply rounded-lg;
+    border-radius: var(--border-radius-lg);
   }
 
   &-thead {
@@ -72,22 +73,34 @@
   }
 
   &-overflow {
-    @apply overflow-x-auto rounded-t-md;
+    overflow-x: auto;
+    border-top-left-radius: 0.375rem/* 6px */;
+    border-top-right-radius: 0.375rem/* 6px */;
   }
 
   &-table {
-    @apply w-full divide-y divide-gray-200;
+    width: 100%;
+
+    > :not([hidden]) ~ :not([hidden]) {
+      --tw-divide-y-reverse: 0;
+      border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+      border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
+      border-color: var(--color-base-gray-200);
+    }
   }
 
   &-sort-button {
     font-size: var(--v-table-th-font-size);
     font-weight: var(--v-table-th-font-weight);
-
-    @apply flex items-center
-    truncate
-    appearance-none
-    uppercase
-    tracking-wider gap-2;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-transform: uppercase;
+    appearance: none;
+    gap: 0.5rem;
+    letter-spacing: 0.05em;
   }
 
   &-sort-icon {
@@ -96,7 +109,11 @@
   }
 
   &-header-text {
-    @apply text-sm font-semibold uppercase tracking-wider;
+    font-size: var(--v-table-th-font-size);
+    font-weight: var(--v-table-th-font-weight);
+    white-space: var(--v-table-th-white-space);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 
   &-th {
@@ -127,11 +144,16 @@
   }
 
   &-pagination {
-    @apply rounded-b-md;
+    border-bottom-right-radius: var(--border-radius-lg);
+    border-bottom-left-radius: var(--border-radius-lg);
   }
 
-  &-tbody {
-    @apply divide-y;
+  &-tbody  {
+    > :not([hidden]) ~ :not([hidden]) {
+      --tw-divide-y-reverse: 0;
+      border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+      border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
+    }
   }
 
   &-tr {
@@ -185,7 +207,11 @@
 
   /* bordered */
   &--bordered &-tr {
-    @apply divide-x;
+    > :not([hidden]) ~ :not([hidden]) {
+      --tw-divide-x-reverse: 0;
+      border-right-width: calc(1px * var(--tw-divide-x-reverse));
+      border-left-width: calc(1px * calc(1 - var(--tw-divide-x-reverse)));
+    }
   }
 
   /* dense */
@@ -202,9 +228,11 @@
 
     @apply drop-shadow-lg;
   }
+
   &-th--sticky-right {
     right: 0;
   }
+
   &-th--sticky-left {
     left: 0;
   }
@@ -212,6 +240,7 @@
   &-td--sticky-right {
     right: 0;
   }
+
   &-td--sticky-left {
     left: 0;
   }
@@ -220,6 +249,7 @@
   &-th--left {
     --v-table-th-text-align: left;
   }
+
   &-th--left &-sort-button {
     justify-content: flex-start;
     width: 100%;
@@ -228,6 +258,7 @@
   &-th--right {
     --v-table-th-text-align: right;
   }
+
   &-th--right &-sort-button {
     justify-content: flex-end;
     width: 100%;
@@ -236,6 +267,7 @@
   &-th--center {
     --v-table-th-text-align: center;
   }
+
   &-th--center &-sort-button {
     justify-content: center;
     width: 100%;
