@@ -1,26 +1,30 @@
 :root {
   /* toast */
-  --v-toast-wrapper-padding-x: theme('padding.0');
-  --v-toast-wrapper-padding-y: theme('padding.3');
+  --v-toast-wrapper-padding-x: var(--size-spacing-0);
+  --v-toast-wrapper-padding-y: var(--size-spacing-3);
   /* panel */
-  --v-toast-padding-x: theme('padding.4');
-  --v-toast-padding-y: theme('padding.3');
+  --v-toast-padding-x: var(--size-spacing-4);
+  --v-toast-padding-y: var(--size-spacing-3);
   --v-toast-bg-color: #2f3031;
   --v-toast-text-color: white;
-  --v-toast-font-size: theme('fontSize.sm');
-  --v-toast-font-weight: theme('fontWeight.normal');
+  --v-toast-font-size: var(--size-font-sm);
+  --v-toast-font-weight: var(--font-weight-regular);
   --v-toast-width: 328px;
-  --v-toast-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2),
-    0px 2px 10px rgba(0, 0, 0, 0.1);
-  --v-toast-border-radius: theme('borderRadius.DEFAULT');
+  --v-toast-box-shadow: var(--effect-shadow-lg);
+  --v-toast-border-radius: var(--border-radius-lg);
   --v-toast-text-align: left;
-  --v-toast-gap: theme('gap.4');
+  --v-toast-gap: var(--size-spacing-4);
 }
 
 .v-toast {
   padding: var(--v-toast-wrapper-padding-y) var(--v-toast-wrapper-padding-x);
-
-  @apply fixed z-50 inset-x-0 transform flex items-center;
+  position: fixed;
+  z-index: 50;
+  left: 0px;
+  right: 0px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  display: flex;
+  align-items: center;
 
   &-panel {
     padding: var(--v-toast-padding-y) var(--v-toast-padding-x);
@@ -32,94 +36,114 @@
     border-radius: var(--v-toast-border-radius);
     text-align: var(--v-toast-text-align);
     gap: var(--v-toast-gap);
+    width: 91.666667%;
+    left: 0px;
+    right: 0px;
+    display: flex;
+    align-items: center;
 
-    @apply w-11/12 sm:w-[var(--v-toast-width)] inset-x-0 flex items-center;
+    @media (min-width: 640px) {
+      width: var(--v-toast-width);
+    }
   }
 
-  /* themes */
+  /* vars-- */
   &-white {
-    --v-toast-bg-color: theme('colors.white');
-    --v-toast-text-color: theme('colors.gray.800');
+    --v-toast-bg-color: var(--color-base-white);
+    --v-toast-text-color: var(--color-base-gray-800);
   }
   &-primary {
-    --v-toast-bg-color: theme('colors.primary.500');
-    --v-toast-text-color: theme('colors.white');
+    --v-toast-bg-color: var(--color-brand-primary-500);
+    --v-toast-text-color: var(--color-base-white);
   }
   &-secondary {
-    --v-toast-bg-color: theme('colors.secondary.500');
-    --v-toast-text-color: theme('colors.white');
+    --v-toast-bg-color: var(--color-base-gray-800);
+    --v-toast-text-color: var(--color-base-white);
   }
   &-info {
-    --v-toast-bg-color: theme('colors.info.500');
-    --v-toast-text-color: theme('colors.white');
+    --v-toast-bg-color: var(--color-base-blue-light-500);
+    --v-toast-text-color: var(--color-base-white);
   }
   &-warning {
-    --v-toast-bg-color: theme('colors.warning.500');
-    --v-toast-text-color: theme('colors.white');
+    --v-toast-bg-color: var(--color-base-warning-500);
+    --v-toast-text-color: var(--color-base-white);
   }
   &-error {
-    --v-toast-bg-color: theme('colors.error.500');
-    --v-toast-text-color: theme('colors.white');
+    --v-toast-bg-color: var(--color-base-error-500);
+    --v-toast-text-color: var(--color-base-white);
   }
   &-success {
-    --v-toast-bg-color: theme('colors.success.500');
-    --v-toast-text-color: theme('colors.white');
+    --v-toast-bg-color: var(--color-base-success-500);
+    --v-toast-text-color: var(--color-base-white);
   }
 
   /* icon */
   &-icon {
-    @apply w-5 h-5;
+    width: var(--size-spacing-5);
+    height: var(--size-spacing-5);
   }
 
   &-content {
-    @apply flex-1;
+    flex: 1 1 0%;
   }
 
   &-action {
-    @apply flex items-center gap-1 justify-center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--size-spacing-1);
   }
 
   /* placement */
   &--bottom,
   &--bottom-start,
   &--bottom-end {
-    @apply bottom-0;
+    bottom: var(--size-spacing-4);
   }
 
   &--bottom {
-    @apply justify-center;
+    justify-content: center;
   }
 
   &--bottom-start {
-    @apply justify-start ml-4;
+    justify-content: flex-start;
+    margin-left: var(--size-spacing-4);
   }
 
   &--bottom-end {
-    @apply justify-end mr-4;
+    justify-content: flex-end;
+    margin-right: var(--size-spacing-4);
   }
 
   /* top */
   &--top,
   &--top-start,
   &--top-end {
-    @apply top-0;
+    top: var(--size-spacing-4);
   }
 
   &--top {
-    @apply justify-center;
+    justify-content: center;
   }
 
   &--top-start {
-    @apply justify-start ml-4;
+    justify-content: flex-start;
+    margin-left: var(--size-spacing-4);
   }
 
   &--top-end {
-    @apply justify-end mr-4;
+    justify-content: flex-end;
+    margin-right: var(--size-spacing-4);
   }
 
   /* center */
   &--center {
-    @apply absolute transform -translate-y-1/2 top-1/2 -translate-x-1/2 left-1/2 flex justify-center;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
   }
 }
 
