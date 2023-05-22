@@ -1,14 +1,14 @@
 @import 'list.scss';
 
 :root  {
-  --v-bottom-sheet-bg-color: #fff;
-  --v-bottom-sheet-body-color: theme('colors.gray.800');
+  --v-bottom-sheet-bg-color: var(--color-base-wite)
+  --v-bottom-sheet-body-color: var(--color-base-gray-800);
 
   // handle
   --v-bottom-sheet-handle-width: 3rem;
   --v-bottom-sheet-handle-height: 8px;
-  --v-bottom-sheet-handle-bg-color: theme('colors.gray.300');
-  --v-bottom-sheet-handle-border-radius: theme('borderRadius.lg');
+  --v-bottom-sheet-handle-bg-color: var(--color-base-gray-300);
+  --v-bottom-sheet-handle-border-radius: var(--border-radius-lg);
 }
 
 .v-bottom-sheet {
