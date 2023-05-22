@@ -3,7 +3,7 @@ import 'floating-vue/dist/style.css';
 import FloatingVue, {Tooltip} from 'floating-vue';
 import {PropType} from 'vue';
 
-const props = defineProps({
+defineProps({
   placement: {
     type: String,
     default: 'top',
