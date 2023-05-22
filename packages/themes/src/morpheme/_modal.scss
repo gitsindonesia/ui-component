@@ -1,57 +1,61 @@
 :root {
-  --v-modal-text-color: theme('colors.gray.800');
-  --v-modal-bg-color: theme('colors.white');
-  --v-modal-border-radius: theme('borderRadius.md');
+  --v-modal-text-color: var(--color-base-gray-700);
+  --v-modal-bg-color: var(--color-base-white);
+  --v-modal-border-radius: 12px;
   --v-modal-z-index: 30;
-  --v-modal-shadow: theme('boxShadow.lg');
+  --v-modal-shadow: var(--effect-shadow-xl);
   --v-modal-width: 25rem;
   --v-modal-max-width: 100%;
 
   /* content */
-  --v-modal-content-padding-x: theme('padding.4');
-  --v-modal-content-padding-y: theme('padding.0');
+  --v-modal-content-padding-x: var(--size-spacing-4);
+  --v-modal-content-padding-y: var(--size-spacing-0);
   --v-modal-content-text-align: center;
 
   /* panel */
-  --v-modal-panel-padding-x: theme('padding.6');
-  --v-modal-panel-padding-y: theme('padding.6');
-  --v-modal-margin-padding-x: theme('margin.8');
-  --v-modal-margin-padding-y: theme('margin.8');
+  --v-modal-panel-padding-x: var(--size-spacing-4);
+  --v-modal-panel-padding-y: var(--size-spacing-4);
+  --v-modal-margin-padding-x: var(--size-spacing-4);
+  --v-modal-margin-padding-y: var(--size-spacing-4);
   --v-modal-content-text-align: center;
 
   /* title */
-  --v-modal-title-font-size: theme('fontSize.lg');
-  --v-modal-title-font-weight: theme('fontWeight.medium');
-  --v-modal-title-line-height: theme('lineHeight.6');
-  --v-modal-title-letter-spacing: theme('letterSpacing.tight');
-  --v-modal-title-color: theme('colors.gray.900');
+  --v-modal-title-font-weight: var(--font-weight-semibold);
+  --v-modal-title-font-size: var(--size-font-lg);
+  --v-modal-title-line-height: var(--size-font-xl);
+  --v-modal-title-letter-spacing: initial;
+  --v-modal-title-color: var(--color-base-gray-900);
 
   /* body */
-  --v-modal-body-margin-top: theme('margin.4');
+  --v-modal-body-margin-top: var(--size-spacing-2);
   --v-modal-body-text-align: left;
+  --v-modal-body-font-size: var(--size-font-sm);
+  --v-modal-body-line-height: var(--size-font-md);
 
   /* footer */
-  --v-modal-footer-margin-top: theme('margin.6');
+  --v-modal-footer-margin-top: var(--size-spacing-6);
   --v-modal-footer-justify-content: flex-end;
-  --v-modal-footer-gap: theme('gap.2');
+  --v-modal-footer-gap: var(--size-spacing-2);
 }
 
 .v-modal {
   &-dialog {
     z-index: var(--v-modal-z-index);
-
-    @apply fixed inset-0 overflow-y-auto;
+    position: fixed;
+    inset: 0px;
+    overflow-y: auto;
   }
 
   &-content {
     padding: var(--v-modal-content-padding-y) var(--v-modal-content-padding-x);
     text-align: var(--v-modal-content-text-align);
-
-    @apply min-h-screen;
+    min-height: 100vh;
   }
 
   &-overlay {
-    @apply fixed inset-0 bg-black/50;
+    position: fixed;
+    inset: 0px;
+    background-color: rgb(0 0 0 / 0.5);
   }
 
   &-panel {
@@ -70,16 +74,20 @@
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
     display: inline-block;
-
-    @apply transform;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
   &-spacer {
-    @apply inline-block h-screen align-middle;
+    display: inline-block;
+    height: 100vh;
+    vertical-align: middle;
   }
 
   &-header {
-    @apply flex justify-between gap-4 items-center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--size-spacing-4);
   }
 
   &-title {
@@ -93,8 +101,9 @@
   &-body {
     margin-top: var(--v-modal-body-margin-top);
     text-align: var(--v-modal-body-text-align);
-
-    @apply flex-1;
+    flex: 1 1 0%;
+    font-size: var(--v-modal-body-font-size);
+    line-height: var(--v-modal-body-line-height);
   }
 
   &-footer {
@@ -111,23 +120,30 @@
   }
 
   &--fullscreen &-panel {
-    @apply h-screen flex flex-col max-w-full m-0 rounded-none;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    margin: 0px;
+    border-radius: 0px;
   }
 
   &--fullscreen &-content {
-    @apply px-0;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
   /* centered */
   &--centered &-panel {
-    @apply text-center justify-center;
+    text-align: center;
+    justify-content: center;
   }
 
   &--centered &-body {
-    @apply text-center;
+    text-align: center;
   }
 
   &--centered &-footer {
-    @apply justify-center;
+    justify-content: center;
   }
 }
