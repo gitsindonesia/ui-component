@@ -1,12 +1,12 @@
 .dark {
   .breadcrumbs {
     // item
-    --breadcrumbs-item-color: theme('colors.neutral.200');
+    --breadcrumbs-item-color: var(--color-base-gray-true-200);
 
     // item disabled
-    --breadcrumbs-item-disabled-color: theme('colors.neutral.500');
+    --breadcrumbs-item-disabled-color: var(--color-base-gray-true-500);
 
     // divider
-    --breadcrumbs-divider-color: theme('colors.neutral.500');
+    --breadcrumbs-divider-color: var(--color-base-gray-true-500);
   }
 }

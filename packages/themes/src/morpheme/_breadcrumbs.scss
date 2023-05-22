@@ -1,25 +1,25 @@
 :root {
-  --breadcrumbs-gap: theme('spacing.3');
-  --breadcrumbs-margin-bottom: theme('spacing.3');
-  --breadcrumbs-font-weight: theme('fontWeight.normal');
-  --breadcrumbs-font-size: theme('fontSize.base');
+  --breadcrumbs-gap: var(--size-spacing-3);
+  --breadcrumbs-margin-bottom: var(--size-spacing-3);
+  --breadcrumbs-font-weight: var(--font-weight-normal);
+  --breadcrumbs-font-size: var(--size-font-sm);
 
   // item
-  --breadcrumbs-item-color: theme('colors.gray.800');
+  --breadcrumbs-item-color: var(--color-base-gray-800);
 
   // item hover
-  --breadcrumbs-item-hover-color: theme('colors.primary.500');
+  --breadcrumbs-item-hover-color: var(--color-brand-primary-500);
 
   // item active
-  --breadcrumbs-item-active-color: theme('colors.primary.500');
+  --breadcrumbs-item-active-color: var(--color-brand-primary-500);
 
   // item disabled
-  --breadcrumbs-item-disabled-color: theme('colors.gray.500');
+  --breadcrumbs-item-disabled-color: var(--color-base-gray-500);
 
   // divider
-  --breadcrumbs-divider-font-size: theme('fontSize.xs');
-  --breadcrumbs-divider-font-weight: theme('fontWeight.medium');
-  --breadcrumbs-divider-color: theme('colors.gray.500');
+  --breadcrumbs-divider-font-size: var(--size-font-xs);
+  --breadcrumbs-divider-font-weight: var(--font-weight-medium);
+  --breadcrumbs-divider-color: var(--color-base-gray-500);
 }
 
 .breadcrumbs {
