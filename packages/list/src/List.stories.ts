@@ -598,7 +598,7 @@ export const NavDrawerList: Story = (args) => ({
       v-model="isOpen"
       :mini="isMini"
       color="dark"
-      class="p-2"
+      class="p-2 dark"
     >
       <div class="text-center font-semibold">Morpheme</div>
       <List flush>

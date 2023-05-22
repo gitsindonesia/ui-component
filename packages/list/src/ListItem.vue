@@ -41,8 +41,8 @@ const props = withDefaults(defineProps<Props>(), {
   rounded: false,
   appendTextClass: '',
   tile: false,
-  prependIconSize: 'md',
-  appendIconSize: 'md',
+  prependIconSize: 'sm',
+  appendIconSize: 'sm',
 });
 
 const emit =
