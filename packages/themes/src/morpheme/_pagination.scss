@@ -1,43 +1,43 @@
 :root {
-  --v-pagination-shadow: theme('boxShadow.sm');
-  --v-pagination-border-radius: theme('borderRadius.none');
-  --v-pagination-gap: theme('gap.0');
+  --v-pagination-shadow: var(--effect-shadow-xs);
+  --v-pagination-border-radius: var(--border-radius-lg);
+  --v-pagination-gap: var(--size-spacing-0);
 
   /* item */
-  --v-pagination-item-padding-x: theme('padding.4');
-  --v-pagination-item-padding-y: theme('padding.2');
-  --v-pagination-item-bg-color: theme('colors.white');
-  --v-pagination-item-text-color: theme('colors.gray.700');
-  --v-pagination-item-border-color: theme('colors.gray.300');
-  --v-pagination-item-border-radius: theme('borderRadius.DEFAULT');
-  --v-pagination-item-border-width: theme('borderWidth.DEFAULT');
-  --v-pagination-item-font-size: theme('fontSize.sm');
-  --v-pagination-item-font-weight: theme('fontWeight.medium');
-  --v-pagination-item-height: 38px;
-  --v-pagination-item-gap: theme('padding.2');
+  --v-pagination-item-padding-x: var(--size-spacing-4);
+  --v-pagination-item-padding-y: var(--size-spacing-2);
+  --v-pagination-item-bg-color: var(--color-base-white);
+  --v-pagination-item-text-color: var(--color-base-gray-700);
+  --v-pagination-item-border-color: var(--color-base-gray-300);
+  --v-pagination-item-border-radius: var(--border-radius-lg);
+  --v-pagination-item-border-width: 1px;
+  --v-pagination-item-font-size: var(--size-font-sm);
+  --v-pagination-item-font-weight: var(--font-weight-semibold);
+  --v-pagination-item-height: 40px;
+  --v-pagination-item-gap: var(--size-spacing-2);
 
   /* item active */
-  --v-pagination-item-active-bg-color: theme('colors.primary.500');
-  --v-pagination-item-active-border-color: theme('colors.primary.500');
-  --v-pagination-item-active-text-color: theme('colors.white');
+  --v-pagination-item-active-bg-color: var(--color-brand-primary-500);
+  --v-pagination-item-active-border-color: var(--color-brand-primary-500);
+  --v-pagination-item-active-text-color: var(--color-base-white);
 
   /* item hover */
-  --v-pagination-item-hover-bg-color: theme('colors.gray.50');
+  --v-pagination-item-hover-bg-color: var(--color-base-gray-50);
 
   /* item disabled */
   --v-pagination-item-disabled-bg-color: var(--v-pagination-item-bg-color);
   --v-pagination-item-disabled-border-color: var(--v-pagination-item-border-color);
-  --v-pagination-item-disabled-text-color: theme('colors.gray.400');
+  --v-pagination-item-disabled-text-color: var(--color-base-gray-400);
 
   /* item action */
-  --v-pagination-item-action-padding-x: theme('padding.2');
-  --v-pagination-item-action-padding-y: theme('padding.2');
+  --v-pagination-item-action-padding-x: var(--size-spacing-2);
+  --v-pagination-item-action-padding-y: var(--size-spacing-2);
   /* action sm */
-  --v-pagination-sm-item-action-padding-x: theme('padding.2');
-  --v-pagination-sm-item-action-padding-y: theme('padding.2');
+  --v-pagination-sm-item-action-padding-x: var(--size-spacing-2);
+  --v-pagination-sm-item-action-padding-y: var(--size-spacing-2);
   /* action sm */
-  --v-pagination-lg-item-action-padding-x: theme('padding.4');
-  --v-pagination-lg-item-action-padding-y: theme('padding.4');
+  --v-pagination-lg-item-action-padding-x: var(--size-spacing-4);
+  --v-pagination-lg-item-action-padding-y: var(--size-spacing-4);
 }
 
 .sr-only {
@@ -55,8 +55,15 @@
 .v-pagination {
   box-shadow: var(--v-pagination-shadow);
   gap: var(--v-pagination-gap);
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--v-pagination-border-radius);
 
-  @apply inline-flex items-center -space-x-px;
+  > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(-1px * var(--tw-space-x-reverse));
+    margin-left: calc(-1px * calc(1 - var(--tw-space-x-reverse)));
+  }
 
   &--flat {
     --v-pagination-shadow: none;
@@ -72,16 +79,15 @@
     font-weight: var(--v-pagination-item-font-weight);
     height: var(--v-pagination-item-height);
     gap: var(--v-pagination-item-gap);
-    border-radius: var(--v-pagination-border-radius);
-
-    @apply relative inline-flex items-center;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
 
     &:disabled {
       background: var(--v-pagination-item-disabled-bg-color);
       color: var(--v-pagination-item-disabled-text-color);
       border-color: var(--v-pagination-item-disabled-border-color);
-
-      @apply cursor-not-allowed;
+      cursor: not-allowed;
     }
 
     &:first-child {
@@ -123,10 +129,10 @@
 
   /* sizes */
   &--sm {
-    --v-pagination-item-height: 30px;
-    --v-pagination-item-font-size: theme('fontSize.xs');
-    --v-pagination-item-padding-x: theme('spacing.3');
-    --v-pagination-item-padding-y: theme('spacing.1');
+    --v-pagination-item-height: 32px;
+    --v-pagination-item-font-size: var(--size-font-xs);
+    --v-pagination-item-padding-x: var(--size-spacing-3);
+    --v-pagination-item-padding-y: var(--size-spacing-1);
   }
 
   &--sm &-item--action {
@@ -136,9 +142,9 @@
 
   &--lg {
     --v-pagination-item-height: 46px;
-    --v-pagination-item-font-size: theme('fontSize.base');
-    --v-pagination-item-padding-x: theme('spacing.5');
-    --v-pagination-item-padding-y: theme('spacing.3');
+    --v-pagination-item-font-size: var(--size-font-md);
+    --v-pagination-item-padding-x: var(--size-spacing-5);
+    --v-pagination-item-padding-y: var(--size-spacing-3);
   }
 
   &--lg &-item--action {
