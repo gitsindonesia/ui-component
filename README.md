@@ -1,4 +1,4 @@
-# Morpheme UI (GITS UI)
+# Morpheme UI
 
 ![npm](https://img.shields.io/npm/v/@morpheme/ui)
 ![npm](https://img.shields.io/npm/dw/@morpheme/ui)
@@ -7,7 +7,7 @@
 
 > GITS UI is now Morpheme UI. Check out migration guide [here](https://gitsindonesia.github.io/ui-component/guide/migration.html).
 
-Morpheme UI (GITS UI) - A free and open-source Vue UI Library based on Morpheme Design System.
+Morpheme UI (previously known as GITS UI) - A free and open-source Vue UI Library based on Morpheme Design System.
 
 ## Features
 
