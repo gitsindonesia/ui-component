@@ -69,7 +69,7 @@
   }
 
   &-footer:empty {
-    @apply hidden;
+    display: none;
   }
 
   &-close-button {
