@@ -1,9 +1,9 @@
 .dark {
   .app-bar {
     &-default {
-      --app-bar-bg-color: var(--color-base-gray-neutral-800);
-      --app-bar-color: var(--color-base-gray-neutral-200);
-      --app-bar-border-color: var(--color-base-gray-neutral-700);
+      --app-bar-bg-color: var(--color-base-gray-true-800);
+      --app-bar-color: var(--color-base-gray-true-200);
+      --app-bar-border-color: var(--color-base-gray-true-700);
     }
   }
 }
