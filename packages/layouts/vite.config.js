@@ -18,7 +18,14 @@ export default defineConfig({
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
-      external: ['vue', 'vee-validate', '@morpheme/utils'],
+      external: [
+        'vue',
+        'vee-validate',
+        '@morpheme/utils',
+        '@headlessui/vue',
+        '@morpheme/icon',
+        '"@morpheme/utils',
+      ],
       output: {
         // Provide global variables to use in the UMD build
         // for externalized deps
