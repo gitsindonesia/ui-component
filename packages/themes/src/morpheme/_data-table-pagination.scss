@@ -8,14 +8,12 @@
 
 .v-data-table-pagination {
   background-color: var(--v-data-table-pagination-bg-color);
-  border-color: var(--v-data-table-pagination-border-color);
-
   width: 100%;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-  border-top: 1px solid;
+  border-top: 1px solid var(--v-data-table-pagination-border-color);
   display: flex;
   flex-direction: row;
   align-items: center;
