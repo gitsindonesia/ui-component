@@ -13,10 +13,10 @@ withDefaults(
 </script>
 
 <template>
-  <div class="flex flex-col v-app-shell h-screen">
+  <div class="v-app-shell">
     <slot name="header" />
     <main
-      class="flex-1 flex v-app-shell-main"
+      class="v-app-shell-main"
       :class="[
         mainClass,
         {
@@ -26,16 +26,16 @@ withDefaults(
     >
       <slot name="aside" />
       <div
-        class="flex-1 flex flex-col v-app-shell-content"
-        :class="[{'px-4 lg:px-6 py-4': paddedContent}, contentClass]"
+        class="v-app-shell-content"
+        :class="[{'v-app-shell-content--padded': paddedContent}, contentClass]"
       >
         <slot name="navigation" />
         <div
-          class="flex-1 v-app-shell-container"
+          class="v-app-shell-container"
           :class="[
             {
-              'container mx-auto': !fluid,
-              'px-4 py-4': paddedContainer,
+              'v-app-shell-container--fluid': fluid,
+              'v-app-shell-container--padded': paddedContainer,
             },
             containerClass,
           ]"

@@ -1,0 +1,72 @@
+.v-app-shell {
+  // flex flex-col h-screen
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  // &--fluid {
+    //
+  // }
+
+  &-main {
+    // flex-1 flex
+    flex: 1 1 0%;
+    display: flex;
+  }
+
+  &-content {
+    // flex-1 flex flex-col
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+
+    &--padded {
+      // px-4 lg:px-6 py-4
+      padding-left: 1rem /* 16px */;
+      padding-right: 1rem /* 16px */;
+      padding-top: 1rem /* 16px */;
+      padding-bottom: 1rem /* 16px */;
+
+      @media (min-width: 1024px) {
+        padding-left: 1.5rem /* 24px */;
+        padding-right: 1.5rem /* 24px */;
+      }
+    }
+  }
+
+  &-container {
+    // flex-1 container mx-auto
+    flex: 1 1 0%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    
+    @media (min-width: 640px) {
+      max-width: 640px;
+    }
+    @media (min-width: 768px) {
+      max-width: 768px;
+    }
+    @media (min-width: 1024px) {
+      max-width: 1024px;
+    }
+    @media (min-width: 1280px) {
+      max-width: 1280px;
+    }
+    @media (min-width: 1536px) {
+      max-width: 1536px;
+    }
+
+    &--padded {
+      // px-4 py-4
+      padding-left: 1rem /* 16px */;
+      padding-right: 1rem /* 16px */;
+      padding-top: 1rem /* 16px */;
+      padding-bottom: 1rem /* 16px */;
+    }
+
+    &--fluid {
+      max-width: none;
+    }
+  }
+}
