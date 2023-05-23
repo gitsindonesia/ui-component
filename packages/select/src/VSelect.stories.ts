@@ -49,6 +49,30 @@ Select.parameters = {
   },
 };
 
+export const Disabled = Template.bind({});
+Disabled.args = {
+  disabled: true,
+};
+Disabled.parameters = {
+  docs: {
+    source: {
+      code: '<v-select :items="items" disabled />',
+    },
+  },
+};
+
+export const Readonly = Template.bind({});
+Readonly.args = {
+  disabled: true,
+};
+Readonly.parameters = {
+  docs: {
+    source: {
+      code: '<v-select :items="items" readonly />',
+    },
+  },
+};
+
 export const Searchable = Template.bind({});
 Searchable.args = {
   searchable: true,
