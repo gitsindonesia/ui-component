@@ -44,7 +44,7 @@
   --v-select-selected-color: var(--v-input-label-color);
 
   // error
-  --v-select-error-border-color: var(--v-input-error-border-color);
+  --v-select-error-border-color: var(--color-base-error-300);
 
   // hint
   --v-select-hint-font-size: var(--v-input-hint-font-size, 14px);
@@ -96,6 +96,11 @@
       box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05),
         0px 0px 0px 4px var(--v-input-effect-shadow-color);
     }
+  }
+
+  &--error {
+    --v-input-effect-border-color: var(--color-base-error-300);
+    --v-input-effect-shadow-color: var(--color-base-error-100);
   }
 
   &--error &-button {
@@ -208,6 +213,7 @@
     padding-bottom: 0.5rem /* 8px */;
   }
 
+  // error text
   &-error {
     color: var(--color-base-error-500);
     font-size: var(--v-select-error-font-size, var(--size-font-sm));
