@@ -5,7 +5,6 @@ import VAutocomplete from './VAutocomplete.vue';
 import VBtn from '@morpheme/button';
 import {Story} from '@storybook/vue3';
 
-
 const items = [
   {value: 1, text: 'Wade Cooper'},
   {value: 2, text: 'Arlene Mccoy'},
@@ -38,6 +37,11 @@ const Template: Story = (args) => ({
 
 export const Default = Template.bind({});
 Default.args = {};
+
+export const Shadow = Template.bind({});
+Shadow.args = {
+  shadow: true,
+};
 
 export const Clearable = Template.bind({});
 Clearable.args = {

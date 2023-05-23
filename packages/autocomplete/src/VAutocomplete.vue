@@ -37,6 +37,7 @@ export type Props = {
   disabled?: boolean
   hideError?: boolean
   hint?: string
+  shadow?: boolean
 };
 
 const props = withDefaults(defineProps<Props>(), {
@@ -97,6 +98,7 @@ const clear = () => {
         'autocomplete--error': !!errorMessage,
         'autocomplete--selected': !!uncontrolledValue,
         'autocomplete--disabled': disabled,
+        'autocomplete--shadow': shadow,
       },
     ]"
     as="div"

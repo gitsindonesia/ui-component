@@ -51,7 +51,8 @@
   --v-autocomplete-error-color: var(--color-base-error-300);
 
   // disabled
-  --v-autocomplete-input-disabled-color: var(--v-input-disabled-bg-color);
+  --v-autocomplete-input-disabled-bg-color: var(--v-input-disabled-bg-color);
+  --v-autocomplete-input-disabled-border-color: var(--v-input-disabled-border-color);
 
   // hint
   --v-autocomplete-hint-font-size: var(--v-input-hint-font-size, 14px);
@@ -65,6 +66,21 @@
 
 .autocomplete {
   position: relative;
+  border-radius: var(--border-radius-lg);
+
+  $c: &;
+
+  &--disabled {
+    #{$c}-input {
+      cursor: not-allowed;
+      background-color: var(--v-autocomplete-input-disabled-bg-color);
+      border-color: var(--v-autocomplete-input-disabled-border-color);
+    }
+  }
+
+  &--shadow {
+    box-shadow: var(--effect-shadow-md);
+  }
 
   &-label {
     color: var(--v-input-label-color);
