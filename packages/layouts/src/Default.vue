@@ -97,7 +97,7 @@ window.addEventListener('resize', resizeHandler);
     >
       <div class="flex justify-between mb-4">
         <button
-          class="text-gray-200 ml-4 mt-3 text-gray-800 focus:outline-none"
+          class="ml-4 mt-3 text-gray-800 focus:outline-none"
           @click="toggleMenu"
         >
           <Icon name="ri:menu-line" class="w-6 h-6" />
@@ -105,7 +105,7 @@ window.addEventListener('resize', resizeHandler);
         <router-link
           v-if="logoutPath"
           :to="logoutPath"
-          class="text-gray-200 mr-4 mt-3 text-gray-800 focus:outline-none"
+          class="mr-4 mt-3 text-gray-800 focus:outline-none"
         >
           <Icon name="ri:logout-box-line" class="w-6 h-6" />
         </router-link>
