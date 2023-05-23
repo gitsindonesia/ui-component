@@ -11,6 +11,7 @@
   // input
   --v-autocomplete-input-color: var(--color-base-gray-700);
   --v-autocomplete-input-bg-color: transparent;
+  --v-autocomplete-input-height: var(--v-input-height);
 
   // input selected
   --v-autocomplete-input-selected-color: var(--color-base-gray-700);
@@ -143,6 +144,7 @@
     padding-bottom: 0.75rem;
     padding-left: 0.75rem;
     padding-right: 5rem;
+    height: var(--v-autocomplete-input-height);
 
     &--selected {
       --v-autocomplete-input-color: var(--v-autocomplete-input-selected-color);
