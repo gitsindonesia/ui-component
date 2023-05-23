@@ -318,14 +318,12 @@ const emitSelected = (val: any) => {
             </template>
             <span> {{ clearText }} </span>
           </v-tooltip>
-          <span class="w-auto">
-            <Icon
-              name="heroicons:chevron-down"
-              :size="iconSize"
-              class="v-select-icon"
-              aria-hidden="true"
-            />
-          </span>
+          <Icon
+            name="heroicons:chevron-down"
+            :size="iconSize"
+            class="v-select-icon"
+            aria-hidden="true"
+          />
         </ListboxButton>
 
         <transition :name="transition">
