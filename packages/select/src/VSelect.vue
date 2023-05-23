@@ -276,6 +276,7 @@ const emitSelected = (val: any) => {
       {
         'v-select--error': error || !!errorMessages[0] || !!errorMessage,
         'v-select--disabled': disabled,
+        'v-select--readonly': readonly,
         [shadowClass]: shadow,
       },
       wrapperClass,
