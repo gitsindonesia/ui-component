@@ -123,7 +123,7 @@ const props = defineProps({
   },
   shadowClass: {
     type: String,
-    default: 'shadow-sm',
+    default: 'v-select--shadow',
   },
   transition: {
     type: String,
@@ -276,6 +276,7 @@ const emitSelected = (val: any) => {
       {
         'v-select--error': error || !!errorMessages[0] || !!errorMessage,
         'v-select--disabled': disabled,
+        [shadowClass]: shadow,
       },
       wrapperClass,
     ]"
@@ -287,12 +288,7 @@ const emitSelected = (val: any) => {
       <div class="v-select-panel">
         <ListboxButton
           class="v-select-button"
-          :class="[
-            btnClass,
-            {
-              [shadowClass]: shadow,
-            },
-          ]"
+          :class="[btnClass]"
           :disabled="disabled"
         >
           <div

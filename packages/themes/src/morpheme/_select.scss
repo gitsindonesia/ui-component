@@ -55,6 +55,14 @@
 }
 
 .v-select {
+  $c: &;
+
+  &--shadow {
+    #{$c}-button {
+      box-shadow: var(--effect-shadow-md);
+    }
+  }
+
   &-button {
     border: 1px solid var(--v-select-border-color);
     border-radius: var(--v-select-border-radius);
