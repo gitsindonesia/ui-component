@@ -7,7 +7,7 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@headlessui/vue": "^1.6.0",
+    "@headlessui/vue": "^1.7.13",
     "@morpheme/alert": "^1.0.0-beta.8",
     "@morpheme/app-bar": "^1.0.0-beta.8",
     "@morpheme/app-shell": "^1.0.0-beta.8",
@@ -81,7 +81,7 @@
   "devDependencies": {
     "c8": "^7.11.3",
     "unplugin-vue-components": "^0.21.1",
-    "vite": "^3.0.0",
+    "vite": "^4.3.8",
     "vitest": "^0.12.4"
   },
   "license": "MIT",
