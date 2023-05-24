@@ -602,7 +602,12 @@ const focusItem = () => {
   </p>
   <ErrorMessage
     v-if="errorMessages.length && !hideError"
-    class="text-error-500 text-sm"
+    class="v-multi-select-error"
+    :name="name"
+  />
+  <ErrorMessage
+    v-else-if="!errorMessage && !hideError"
+    class="v-multi-select-error"
     :name="name"
   />
   <div v-else-if="errorMessage" :class="errorClass">

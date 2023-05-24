@@ -173,6 +173,18 @@ Clearable.parameters = {
   },
 };
 
+export const Error = Template.bind({});
+Error.args = {
+  error: true,
+};
+Error.parameters = {
+  docs: {
+    source: {
+      code: '<v-multi-select :items="items" error />',
+    },
+  },
+};
+
 export const Shadow = Template.bind({});
 Shadow.args = {
   shadow: true,
