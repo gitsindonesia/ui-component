@@ -21,6 +21,7 @@ export default defineConfig({
       external: [
         'vue',
         '@morpheme/button',
+        '@morpheme/forms',
         '@morpheme/icon',
         '@headlessui/vue',
         'vee-validate',
