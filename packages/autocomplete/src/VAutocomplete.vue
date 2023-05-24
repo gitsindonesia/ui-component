@@ -39,6 +39,7 @@ export type Props = {
   hint?: string
   shadow?: boolean
   readonly?: boolean
+  error?: boolean
 };
 
 const props = withDefaults(defineProps<Props>(), {
@@ -96,7 +97,7 @@ const clear = () => {
     :class="[
       wrapperClass,
       {
-        'autocomplete--error': !!errorMessage,
+        'autocomplete--error': !!errorMessage || error,
         'autocomplete--selected': !!uncontrolledValue,
         'autocomplete--disabled': disabled,
         'autocomplete--readonly': readonly,
@@ -112,7 +113,7 @@ const clear = () => {
       <div
         class="autocomplete-field"
         :class="{
-          'autocomplete-field--error': !!errorMessage,
+          'autocomplete-field--error': !!errorMessage || error,
         }"
       >
         <ComboboxInput

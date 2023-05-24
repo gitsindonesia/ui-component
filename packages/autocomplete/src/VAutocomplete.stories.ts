@@ -117,6 +117,11 @@ export const Validation: Story = (args) => ({
 `,
 });
 
+export const Error = Validation.bind({});
+Error.args = {
+  error: true,
+};
+
 export const HideError = Validation.bind({});
 HideError.args = {
   hideError: true,
