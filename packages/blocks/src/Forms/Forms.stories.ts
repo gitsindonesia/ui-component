@@ -1,6 +1,7 @@
 import {Meta, Story} from '@storybook/vue3';
 import DefaultForm from './DefaultForm.vue';
 import InlineForm from './InlineForm.vue';
+import DisabledForm from './DisabledForm.vue';
 
 export default {
   title: 'Blocks/Forms',
@@ -14,4 +15,9 @@ export const Default: Story = () => ({
 export const Inline: Story = () => ({
   components: {InlineForm},
   template: `<InlineForm />`,
+});
+
+export const Disabled: Story = () => ({
+  components: {DisabledForm},
+  template: `<DisabledForm />`,
 });

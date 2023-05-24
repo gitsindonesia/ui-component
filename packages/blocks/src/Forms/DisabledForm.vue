@@ -1,0 +1,64 @@
+<script setup lang="ts">
+import {VInput, VBtn, VFormSelect, VSelect, VAutocomplete} from '@morpheme/ui';
+
+const items = [
+  {
+    text: 'Item 1',
+    value: 1,
+  },
+  {
+    text: 'Item 2',
+    value: 2,
+  },
+  {
+    text: 'Item 3',
+    value: 3,
+  },
+];
+</script>
+
+<template>
+  <form>
+    <VInput
+      prepend-icon="ic:round-person"
+      label="Name"
+      placeholder="Enter your name"
+      hint="Enter your full name"
+      wrapper-class="mb-4"
+      disabled
+    />
+    <VInput
+      prepend-icon="ic:round-email"
+      label="Email"
+      placeholder="Enter your email"
+      hint="Enter your email address"
+      wrapper-class="mb-4"
+      disabled
+    />
+    <VFormSelect
+      wrapper-class="mb-4"
+      label="Basic Select"
+      placeholder="Choose..."
+      :items="items"
+      disabled
+    />
+    <VSelect
+      wrapper-class="mb-4"
+      label="Select"
+      placeholder="Choose..."
+      :items="items"
+      disabled
+    />
+    <VAutocomplete
+      wrapper-class="mb-4"
+      label="Autocomplete"
+      placeholder="Choose..."
+      :items="items"
+      disabled
+    />
+    <div class="mt-5">
+      <VBtn color="primary">Login</VBtn>
+      <VBtn class="ml-3">Cancel</VBtn>
+    </div>
+  </form>
+</template>
