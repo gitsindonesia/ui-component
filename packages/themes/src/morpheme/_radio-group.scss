@@ -1,5 +1,3 @@
-
-
 :root {
   /* label */
   --v-radio-group-label-color: var(--v-input-label-color);
@@ -93,7 +91,7 @@
       color: var(--v-radio-group-items-text-color);
       font-size: var(--size-font-sm);
     }
-    
+
     &--disabled {
       .v-radio-group-items-text {
         color: var(--v-radio-group-items-disabed-text-color);
@@ -109,8 +107,16 @@
     }
   }
 
-  // error
+  // error text
+  &-error {
+    color: var(--color-base-error-500);
+    margin-top: var(--size-spacing-1);
+    font-size: var(--size-font-sm);
+  }
+
+  // error state
   &--error {
+
     #{$c}-label {
       --v-radio-group-label-color: var(--v-input-error-color);
     }
