@@ -22,29 +22,270 @@ export type ConfirmEventPayload = {
 };
 
 export interface Props {
+  /**
+   * The v-model binding for the modal.
+   *
+   * @default false
+   * @type boolean
+   * @model
+   * @example
+   * ```html
+   * <v-modal v-model="isOpen" />
+   * ```
+   */
   modelValue?: boolean;
+  /**
+   * The title of the modal.
+   *
+   * @default ''
+   * @type string
+   * @example
+   * ```html
+   * <v-modal title="Modal Title" />
+   * ```
+   */
   title?: string;
+  /**
+   * Whether to show the confirm button.
+   *
+   * @default false
+   * @type boolean
+   * @example
+   * ```html
+   * <v-modal confirm />
+   * ```
+   */
   confirm?: boolean;
+  /**
+   * The color of the confirm button.
+   *
+   * @default 'primary'
+   * @type string
+   * @example
+   * ```html
+   * <v-modal confirm-color="danger" />
+   * ```
+   */
   confirmColor?: string;
+  /**
+   * The props to pass to the confirm button.
+   *
+   * @default {}
+   * @type object
+   * @example
+   * ```html
+   * <v-modal :confirm-props="{size: 'sm'}" />
+   * ```
+   */
   confirmProps?: {};
+  /**
+   * The text to display on the confirm button.
+   *
+   * @default 'Confirm'
+   * @type string
+   * @example
+   * ```html
+   * <v-modal confirm-text="Yes" />
+   * ```
+   */
   confirmText?: string;
+  /**
+   * The text to display on the close button.
+   *
+   * @default 'Close'
+   * @type string
+   * @example
+   * ```html
+   * <v-modal close-text="No" />
+   * ```
+   */
   closeText?: string;
+  /**
+   * The props to pass to the close button.
+   *
+   * @default {}
+   * @type object
+   * @example
+   * ```html
+   * <v-modal :close-props="{size: 'sm'}" />
+   * ```
+   */
   closeProps?: {};
+  /**
+   * The class to apply to the header.
+   *
+   * @default ''
+   * @type string
+   * @example
+   * ```html
+   * <v-modal header-class="bg-gray-100" />
+   * ```
+   */
   headerClass?: string;
+  /**
+   * The class to apply to the body.
+   *
+   * @default ''
+   * @type string
+   * @example
+   * ```html
+   * <v-modal title-class="bg-gray-100" />
+   * ```
+   */
   titleClass?: string;
+  /**
+   * The class to apply to the footer.
+   *
+   * @default ''
+   * @type string
+   * @example
+   * ```html
+   * <v-modal body-class="bg-gray-100" />
+   * ```
+   */
   bodyClass?: string;
+  /**
+   * The class to apply to the modal.
+   *
+   * @default ''
+   * @type string
+   * @example
+   * ```html
+   * <v-modal footer-class="bg-gray-100" />
+   * ```
+   */
   footerClass?: string;
+  /**
+   * The class to apply to the modal.
+   *
+   * @default ''
+   * @type string
+   * @example
+   * ```html
+   * <v-modal modal-class="bg-gray-100" />
+   * ```
+   */
   modalClass?: string;
+  /**
+   * Whether the modal is in loading state.
+   *
+   * @default false
+   * @type boolean
+   * @example
+   * ```html
+   * <v-modal loading />
+   * ```
+   */
   loading?: boolean;
+  /**
+   * Whether the modal is a boolean modal.
+   *
+   * @default false
+   * @type boolean
+   * @example
+   * ```html
+   * <v-modal hide-header />
+   * ```
+   */
   hideHeader?: boolean;
+  /**
+   * Whether the modal is a boolean modal.
+   *
+   * @default false
+   * @type boolean
+   * @example
+   * ```html
+   * <v-modal hide-footer />
+   * ```
+   */
   hideFooter?: boolean;
+  /**
+   * Whether the modal is a boolean modal.
+   *
+   * @default false
+   * @type boolean
+   * @example
+   * ```html
+   * <v-modal centered />
+   * ```
+   */
   centered?: boolean;
+  /**
+   * Whether the modal is a boolean modal.
+   *
+   * @default false
+   * @type boolean
+   * @example
+   * ```html
+   * <v-modal fullscreen />
+   * ```
+   */
   fullscreen?: boolean;
+  /**
+   * Whether the modal is a boolean modal.
+   *
+   * @default false
+   * @type boolean
+   * @example
+   * ```html
+   * <v-modal persistent />
+   * ```
+   */
   persistent?: boolean;
+  /**
+   * Whether the modal is a boolean modal.
+   *
+   * @default false
+   * @type boolean
+   * @example
+   * ```html
+   * <v-modal hide-x-button />
+   * ```
+   */
   hideXButton?: boolean;
+  /**
+   * The props to pass to the x button.
+   *
+   * @default {}
+   * @type object
+   * @example
+   * ```html
+   * <v-modal :x-button-props="{size: 'sm'}" />
+   * ```
+   */
   xButtonProps?: Record<string, any>;
+  /**
+   * The class to apply to the x icon.
+   *
+   * @default ''
+   * @type string
+   * @example
+   * ```html
+   * <v-modal x-icon-class="text-red-500" />
+   * ```
+   */
   xIconClass?: string;
+  /**
+   * The width of the modal.
+   *
+   * @default 'auto'
+   * @type string | number
+   * @example
+   * ```html
+   * <v-modal width="500px" />
+   * ```
+   */
   width?: string | number;
+  /**
+   * The max width of the modal.
+   *
+   * @default 'auto'
+   * @type string | number
+   * @example
+   * ```html
+   * <v-modal maxWidth="500px" />
+   * ```
+   */
   maxWidth?: string | number;
 }
 
