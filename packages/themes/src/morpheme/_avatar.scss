@@ -1,9 +1,9 @@
 :root {
   --avatar-width: 28px;
   --avatar-height: 28px;
-  --avatar-bg-color: var(--color-base-gray-200);
-  --avatar-text-color: var(--color-base-gray-700);
-  --avatar-border-color: var(--color-base-gray-200);
+  --avatar-bg-color: var(--color-gray-200);
+  --avatar-text-color: var(--color-gray-700);
+  --avatar-border-color: var(--color-gray-200);
   --avatar-border-width: 0;
   --avatar-border-style: solid;
   --avatar-border-radius: var(--border-radius-full);
@@ -33,7 +33,7 @@
 
     &--online {
       border: 1.5px solid white;
-      background-color: var(--color-base-success-500);
+      background-color: var(--color-success-500);
     }
 
     &--verified {
@@ -87,32 +87,32 @@
 
   /* colors */
   &-primary {
-    --avatar-bg-color: var(--color-brand-primary-500);
-    --avatar-text-color: var(--color-base-white);
+    --avatar-bg-color: var(--color-primary-500);
+    --avatar-text-color: var(--color-white);
   }
   &-secondary {
-    --avatar-bg-color: var(--color-base-gray-700);
-    --avatar-text-color: var(--color-base-white);
+    --avatar-bg-color: var(--color-secondary-700);
+    --avatar-text-color: var(--color-white);
   }
   &-warning {
-    --avatar-bg-color: var(--color-base-warning-500);
-    --avatar-text-color: var(--color-base-white);
+    --avatar-bg-color: var(--color-warning-500);
+    --avatar-text-color: var(--color-white);
   }
   &-info {
-    --avatar-bg-color: var(--color-base-blue-light-500);
-    --avatar-text-color: var(--color-base-white);
+    --avatar-bg-color: var(--color-info-500);
+    --avatar-text-color: var(--color-white);
   }
   &-error {
-    --avatar-bg-color: var(--color-base-error-500);
-    --avatar-text-color: var(--color-base-white);
+    --avatar-bg-color: var(--color-error-500);
+    --avatar-text-color: var(--color-white);
   }
   &-success {
-    --avatar-bg-color: var(--color-base-success-500);
-    --avatar-text-color: var(--color-base-white);
+    --avatar-bg-color: var(--color-success-500);
+    --avatar-text-color: var(--color-white);
   }
   &-dark {
-    --avatar-bg-color: var(--color-base-gray-800);
-    --avatar-text-color: var(--color-base-white);
+    --avatar-bg-color: var(--color-gray-800);
+    --avatar-text-color: var(--color-white);
   }
 
   /* sizes */

@@ -2746,10 +2746,10 @@
   resolved "https://registry.yarnpkg.com/@morpheme/design-tokens/-/design-tokens-0.1.0-alpha.3.tgz#739e9450f383ca14c14a21c54aa6e5c5556720d2"
   integrity sha512-4nrLUXn0hfrGsso2xR6+e0b1A+QVnl9qkgEF2+INddiJxAeHcnpo6KVAk1aCnvEz2qpNjmYxMSGN0jYafYgA3A==
 
-"@morpheme/design-tokens@^0.1.0-alpha.4":
-  version "0.1.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@morpheme/design-tokens/-/design-tokens-0.1.0-alpha.4.tgz#d5c566756d5dec39faf86bad8eebd04409ac1e5e"
-  integrity sha512-IwlDlZ3+QieBk48JoIFfWtuJTZxZUUe+65GummEdoTYGg/a2FwME5zMFI1ohfsOYmS5B/67lfW2lsn5FORlE3Q==
+"@morpheme/design-tokens@^0.1.0-alpha.5":
+  version "0.1.0-alpha.5"
+  resolved "https://registry.yarnpkg.com/@morpheme/design-tokens/-/design-tokens-0.1.0-alpha.5.tgz#024ed7315dd229c52dbde4a31fdb23777f2c4556"
+  integrity sha512-CcPxUfBzl1bXQlpKOWs1j2nqLZeJfp75oQSXaqn2DXRZaCw+iBYtNRko8UcuovOe6/ruIWueiQ/0sBSJHechlw==
 
 "@morpheme/forms@^1.0.0-beta.8":
   version "1.0.0-beta.8"

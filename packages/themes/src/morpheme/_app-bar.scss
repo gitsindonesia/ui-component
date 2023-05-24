@@ -2,12 +2,12 @@
   --app-bar-height: 54;
   --app-bar-padding-x: var(--size-spacing-4);
   --app-bar-padding-y: var(--size-spacing-3);
-  --app-bar-bg-color: var(--color-base-white);
-  --app-bar-color: var(--color-base-gray-700);
+  --app-bar-bg-color: var(--color-white);
+  --app-bar-color: var(--color-gray-700);
   --app-bar-transition: all 0.3s ease;
   --app-bar-border-style: solid;
   --app-bar-border-width: 0px;
-  --app-bar-border-color: var(--color-base-gray-300);
+  --app-bar-border-color: var(--color-gray-300);
   --app-bar-shadow: none;
   --app-bar-z-index: 10;
 }
@@ -85,33 +85,33 @@
 
   /* Colors */
   &-primary {
-    --app-bar-bg-color: var(--colors-brand-primary-500);
-    --app-bar-color: var(--colors-brand-white);
+    --app-bar-bg-color: var(--colors-primary-500);
+    --app-bar-color: var(--colors-white);
   }
 
   &-secondary {
-    --app-bar-bg-color: var(--colors-base-gray-700);
-    --app-bar-color: var(--colors-base-white);
+    --app-bar-bg-color: var(--color-secondary-700);
+    --app-bar-color: var(--color-white);
   }
 
   &-info {
-    --app-bar-bg-color: var(--colors-base-blue-light-500);
-    --app-bar-color: var(--colors-base-white);
+    --app-bar-bg-color: var(--color-info-500);
+    --app-bar-color: var(--color-white);
   }
 
   &-warning {
-    --app-bar-bg-color: var(--colors-base-warning-500);
-    --app-bar-color: var(--colors-base-white);
+    --app-bar-bg-color: var(--color-warning-500);
+    --app-bar-color: var(--color-white);
   }
 
   &-success {
-    --app-bar-bg-color: var(--colors-base-success-500);
-    --app-bar-color: var(--colors-base-white);
+    --app-bar-bg-color: var(--color-success-500);
+    --app-bar-color: var(--color-white);
   }
 
   &-error {
-    --app-bar-bg-color: var(--colors-base-error-500);
-    --app-bar-color: var(--colors-base-white);
+    --app-bar-bg-color: var(--color-error-500);
+    --app-bar-color: var(--color-white);
   }
 
   &-transparent {
@@ -119,8 +119,8 @@
   }
 
   &-dark {
-    --app-bar-bg-color: var(--colors-base-gray-800);
-    --app-bar-color: var(--colors-base-white);
+    --app-bar-bg-color: var(--color-gray-800);
+    --app-bar-color: var(--color-white);
   }
 
   /* sizes */

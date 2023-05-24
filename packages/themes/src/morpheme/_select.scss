@@ -28,30 +28,30 @@
   --v-select-icon-color: var(--v-input-icon-color);
 
   // options
-  --v-select-options-bg-color: var(--color-base-white);
+  --v-select-options-bg-color: var(--color-white);
 
   /* option item */
   --v-select-option-padding-x: var(--size-spacing-4);
   --v-select-option-padding-y: var(--size-spacing-2);
-  --v-select-option-bg-color: var(--color-base-white);
-  --v-select-option-text-color: var(--color-base-gray-700);
+  --v-select-option-bg-color: var(--color-white);
+  --v-select-option-text-color: var(--color-gray-700);
 
   /* option item on hover */
-  --v-select-option-hover-bg-color: var(--color-base-gray-100);
-  --v-select-option-hover-text-color: var(--color-base-gray-700);
+  --v-select-option-hover-bg-color: var(--color-gray-100);
+  --v-select-option-hover-text-color: var(--color-gray-700);
 
   // selected
   --v-select-selected-color: var(--v-input-label-color);
 
   // error
-  --v-select-error-border-color: var(--color-base-error-300);
+  --v-select-error-border-color: var(--color-error-300);
 
   // hint
   --v-select-hint-font-size: var(--v-input-hint-font-size, 14px);
   --v-select-hint-color: var(--v-input-hint-color);
   --v-select-hint-margin-top: var(--v-input-hint-margin-top);
 
-  --v-select-option-check-selected-color: var(--color-brand-primary-700);
+  --v-select-option-check-selected-color: var(--color-primary-700);
 }
 
 .v-select {
@@ -99,8 +99,8 @@
   }
 
   &--error {
-    --v-input-effect-border-color: var(--color-base-error-300);
-    --v-input-effect-shadow-color: var(--color-base-error-100);
+    --v-input-effect-border-color: var(--color-error-300);
+    --v-input-effect-shadow-color: var(--color-error-100);
   }
 
   &--error &-button {
@@ -215,7 +215,7 @@
 
   // error text
   &-error {
-    color: var(--color-base-error-500);
+    color: var(--color-error-500);
     font-size: var(--v-select-error-font-size, var(--size-font-sm));
     margin-top: var(--v-select-error-margin-top, var(--size-spacing-1));
   }

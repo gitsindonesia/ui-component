@@ -3,15 +3,15 @@
 :root {
   /* input control */
   --v-input-height: 44px;
-  --v-input-border-color: var(--color-base-gray-300);
-  --v-input-placeholder-color: var(--color-base-gray-500);
+  --v-input-border-color: var(--color-gray-300);
+  --v-input-placeholder-color: var(--color-gray-500);
   --v-input-border-radius: var(--border-radius-lg);
   --v-input-padding-x: var(--size-spacing-3);
   --v-input-padding-y: var(--size-spacing-3);
   --v-input-font-size: var(--size-font-sm);
   --v-input-line-height: 20px;
-  --v-input-bg-color: var(--color-base-white);
-  --v-input-color: var(--color-base-gray-700);
+  --v-input-bg-color: var(--color-white);
+  --v-input-color: var(--color-gray-700);
 
   /* label */
   --v-input-label-font-size: var(--size-font-sm);
@@ -20,30 +20,30 @@
   --v-input-label-margin-bottom: var(--size-spacing-1);
 
   /* text */
-  --v-input-text-color: var(--color-base-gray-700);
+  --v-input-text-color: var(--color-gray-700);
   --v-input-text-font-size: var(--size-font-sm);
   --v-input-text-font-weight: var(--font-weight-regular);
 
   /* icon */
   --v-input-icon-width: var(--size-spacing-5);
   --v-input-icon-height: var(--size-spacing-5);
-  --v-input-icon-color: var(--color-base-gray-500);
+  --v-input-icon-color: var(--color-gray-500);
 
   // disabled
-  --v-input-disabled-bg-color: var(--color-base-gray-50);
-  --v-input-disabled-color: var(--color-base-gray-500);
-  --v-input-disabled-border-color: var(--color-base-gray-300);
-  --v-input-disabled-placeholder-color: var(--color-base-gray-500);
-  --v-input-disabled-icon-color: var(--color-base-gray-500);
+  --v-input-disabled-bg-color: var(--color-gray-50);
+  --v-input-disabled-color: var(--color-gray-500);
+  --v-input-disabled-border-color: var(--color-gray-300);
+  --v-input-disabled-placeholder-color: var(--color-gray-500);
+  --v-input-disabled-icon-color: var(--color-gray-500);
 
   // hint
   --v-input-hint-font-size: var(--size-font-sm);
-  --v-input-hint-color: var(--color-base-gray-600);
+  --v-input-hint-color: var(--color-gray-600);
   --v-input-hint-margin-top: var(--size-spacing-1);
 
   // focus effect
-  --v-input-effect-border-color: var(--color-brand-primary-300);
-  --v-input-effect-shadow-color: var(--color-brand-primary-100);
+  --v-input-effect-border-color: var(--color-primary-300);
+  --v-input-effect-shadow-color: var(--color-primary-100);
 
   // shadow
   --v-input-shadow: var(--effect-shadow-xs);
@@ -87,11 +87,11 @@
     margin-right: 0.5rem;
 
     &:hover {
-      background-color: var(--color-base-gray-100);
+      background-color: var(--color-gray-100);
     }
 
     &:active {
-      background-color: var(--color-base-gray-50);
+      background-color: var(--color-gray-50);
     }
   }
 
@@ -216,45 +216,45 @@
 
 .v-input-default,
 .v-input-primary {
-  --v-input-effect-border-color: var(--color-brand-primary-300);
-  --v-input-effect-shadow-color: var(--color-brand-primary-100);
+  --v-input-effect-border-color: var(--color-primary-300);
+  --v-input-effect-shadow-color: var(--color-primary-100);
 }
 
 .v-input-secondary {
-  --v-input-effect-border-color: var(--color-base-gray-300);
-  --v-input-effect-shadow-color: var(--color-base-gray-100);
+  --v-input-effect-border-color: var(--color-secondary-300);
+  --v-input-effect-shadow-color: var(--color-secondary-100);
 }
 .v-input-info {
-  --v-input-effect-border-color: var(--color-base-blue-light-300);
-  --v-input-effect-shadow-color: var(--color-base-blue-light-100);
+  --v-input-effect-border-color: var(--color-info-300);
+  --v-input-effect-shadow-color: var(--color-info-100);
 }
 .v-input-warning {
-  --v-input-effect-border-color: var(--color-base-warning-300);
-  --v-input-effect-shadow-color: var(--color-base-warning-100);
+  --v-input-effect-border-color: var(--color-warning-300);
+  --v-input-effect-shadow-color: var(--color-warning-100);
 }
 .v-input-success {
-  --v-input-effect-border-color: var(--color-base-success-300);
-  --v-input-effect-shadow-color: var(--color-base-success-100);
+  --v-input-effect-border-color: var(--color-success-300);
+  --v-input-effect-shadow-color: var(--color-success-100);
 }
 
 .v-input-dark {
-  --v-input-effect-border-color: var(--color-base-gray-true-300);
-  --v-input-effect-shadow-color: var(--color-base-gray-true-100);
+  --v-input-effect-border-color: var(--color-gray-true-300);
+  --v-input-effect-shadow-color: var(--color-gray-true-100);
 }
 
 .v-input--error,
 .v-input-error {
-  --v-input-effect-border-color: var(--color-base-error-300);
-  --v-input-effect-shadow-color: var(--color-base-error-100);
+  --v-input-effect-border-color: var(--color-error-300);
+  --v-input-effect-shadow-color: var(--color-error-100);
 }
 
 .v-input--error {
-  --v-input-border-color: var(--color-base-error-300);
+  --v-input-border-color: var(--color-error-300);
 }
 
 
 .v-input-error {
-  color: var(--color-base-error-500);
+  color: var(--color-error-500);
   margin-top: 0.25rem;
   transition-property: color, background-color, border-color,
     text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,

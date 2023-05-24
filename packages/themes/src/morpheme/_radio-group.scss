@@ -7,8 +7,8 @@
   --v-radio-group-label-margin-bottom: var(--v-input-label-margin-bottom);
 
   // items text
-  --v-radio-group-items-text-color: var(--color-base-gray-700);
-  --v-radio-group-items-disabed-text-color: var(--color-base-gray-500);
+  --v-radio-group-items-text-color: var(--color-gray-700);
+  --v-radio-group-items-disabed-text-color: var(--color-gray-500);
 
   // hint
   --v-radio-group-hint-font-size: var(--v-input-hint-font-size, 14px);
@@ -109,7 +109,7 @@
 
   // error text
   &-error {
-    color: var(--color-base-error-500);
+    color: var(--color-error-500);
     margin-top: var(--size-spacing-1);
     font-size: var(--size-font-sm);
   }

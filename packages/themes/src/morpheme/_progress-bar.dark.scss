@@ -1,9 +1,9 @@
 .dark {
   .v-progress-bar {
-    --v-progress-bar-bg-color: var(--color-base-gray-true-500);
-    --v-progress-bar-label-color: var(--color-base-gray-true-200);
+    --v-progress-bar-bg-color: var(--color-gray-true-500);
+    --v-progress-bar-label-color: var(--color-gray-true-200);
     &-default {
-      --v-progress-bar-fill-color: var(--color-base-gray-true-700);
+      --v-progress-bar-fill-color: var(--color-gray-true-700);
     }
   }
 }

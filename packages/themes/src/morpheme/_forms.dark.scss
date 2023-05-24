@@ -6,29 +6,29 @@
   .v-textarea,
   .v-data-table-pagination-items-per-page {
     /* input control */
-    --v-input-border-color: var(--color-base-gray-true-700);
-    --v-input-placeholder-color: var(--color-base-gray-true-500);
-    --v-input-bg-color: var(--color-base-gray-true-800);
-    --v-input-color: var(--color-base-gray-true-200);
+    --v-input-border-color: var(--color-gray-true-700);
+    --v-input-placeholder-color: var(--color-gray-true-500);
+    --v-input-bg-color: var(--color-gray-true-800);
+    --v-input-color: var(--color-gray-true-200);
 
     /* label */
-    --v-input-label-color: var(--color-base-gray-true-200);
+    --v-input-label-color: var(--color-gray-true-200);
 
     /* icon */
-    --v-input-icon-color: var(--color-base-gray-true-500);
+    --v-input-icon-color: var(--color-gray-true-500);
 
     // disabled
-    --v-input-disabled-bg-color: var(--color-base-gray-true-700);
-    --v-input-disabled-border-color: var(--color-base-gray-true-700);
-    --v-input-disabled-color: var(--color-base-gray-true-200);
-    --v-input-disabled-placeholder-color: var(--color-base-gray-true-600);
-    --v-input-disabled-icon-color: var(--color-base-gray-true-600);
+    --v-input-disabled-bg-color: var(--color-gray-true-700);
+    --v-input-disabled-border-color: var(--color-gray-true-700);
+    --v-input-disabled-color: var(--color-gray-true-200);
+    --v-input-disabled-placeholder-color: var(--color-gray-true-600);
+    --v-input-disabled-icon-color: var(--color-gray-true-600);
 
     // hint
-    --v-input-hint-color: var(--color-base-gray-true-500);
+    --v-input-hint-color: var(--color-gray-true-500);
 
     // focus effect
-    --v-input-effect-border-color: var(--color-brand-primary-500);
-    --v-input-effect-shadow-color: var(--color-base-transparent);
+    --v-input-effect-border-color: var(--color-primary-500);
+    --v-input-effect-shadow-color: var(--color-transparent);
   }
 }

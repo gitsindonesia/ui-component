@@ -40,42 +40,42 @@
   }
 
   &-light {
-    background-color: var(--color-base-gray-100);
+    background-color: var(--color-gray-100);
   }
 
   &-dark {
-    background-color: var(--color-base-gray-800);
-    color: var(--color-base-gray-true-200);
+    background-color: var(--color-gray-800);
+    color: var(--color-gray-true-200);
   }
 
   &-primary {
-    background-color: var(--color-brand-primary-500);
-    color: var(--color-base-white);
+    background-color: var(--color-primary-500);
+    color: var(--color-white);
   }
 
   &-secondary {
-    background-color: var(--color-base-gray-500);
-    color: var(--color-base-white);
+    background-color: var(--color-secondary-500);
+    color: var(--color-white);
   }
 
   &-info {
-    background-color: var(--color-base-blue-light-500);
-    color: var(--color-base-white);
+    background-color: var(--color-info-500);
+    color: var(--color-white);
   }
 
   &-warning {
-    background-color: var(--color-base-warning-500);
-    color: var(--color-base-white);
+    background-color: var(--color-warning-500);
+    color: var(--color-white);
   }
 
   &-success {
-    background-color: var(--color-base-success-500);
-    color: var(--color-base-white);
+    background-color: var(--color-success-500);
+    color: var(--color-white);
   }
 
   &-error {
-    background-color: var(--color-base-error-500);
-    color: var(--color-base-white);
+    background-color: var(--color-error-500);
+    color: var(--color-white);
   }
 
   // transition

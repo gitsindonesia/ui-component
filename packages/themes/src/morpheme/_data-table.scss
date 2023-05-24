@@ -6,27 +6,27 @@
   --v-table-padding-y: var(--size-spacing-3);
 
   /* thead */
-  --v-table-thead-bg-color: var(--color-base-gray-50);
+  --v-table-thead-bg-color: var(--color-gray-50);
 
   /* th */
-  --v-table-th-color: var(--color-base-gray-600);
+  --v-table-th-color: var(--color-gray-600);
   --v-table-th-font-size: var(--size-font-xs);
   --v-table-th-font-weight: var(--font-weight-bold);
   --v-table-th-white-space: nowrap;
   --v-table-th-text-align: left;
 
   /* th active */
-  --v-table-th-active-color: var(--color-brand-primary-500);
+  --v-table-th-active-color: var(--color-primary-500);
 
   /* th active hover */
-  --v-table-th-active-hover-color: var(--color-brand-primary-600);
+  --v-table-th-active-hover-color: var(--color-primary-600);
 
   // tr
   --v-table-tr-bg-color: transparent;
 
   /* td */
-  --v-table-td-color: var(--color-base-gray-900);
-  --v-table-td-bg-color: var(--color-base-white);
+  --v-table-td-color: var(--color-gray-900);
+  --v-table-td-bg-color: var(--color-white);
   --v-table-td-font-size: var(--size-font-sm);
   --v-table-td-font-weight: var(--font-weight-regular);
   --v-table-td-white-space: nowrap;
@@ -37,10 +37,10 @@
   --v-table-dense-padding-y: var(--size-spacing-2);
 
   /* striped */
-  --v-table-striped-bg-color: var(--color-base-gray-50);
+  --v-table-striped-bg-color: var(--color-gray-50);
 
   /* hover */
-  --v-table-hover-bg-color: var(--color-base-gray-100);
+  --v-table-hover-bg-color: var(--color-gray-100);
 }
 
 .v-table {
@@ -85,7 +85,7 @@
       --tw-divide-y-reverse: 0;
       border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
       border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
-      border-color: var(--color-base-gray-200);
+      border-color: var(--color-gray-200);
     }
   }
 
@@ -164,12 +164,12 @@
   &--striped &-tbody {
     > :not([hidden]) ~ :not([hidden]) {
       --tw-divide-opacity: 1;
-      border-color: var(--color-base-gray-200)
+      border-color: var(--color-gray-200)
     }
   }
 
   &--striped thead {
-    background-color: var(--color-base-white)
+    background-color: var(--color-white)
   }
 
   &--striped tbody &-tr:nth-child(odd) {
@@ -199,7 +199,7 @@
   /* loading */
   &--loading &-td,
   &--empty &-td {
-    --v-table-td-color: var(--color-base-gray-500);
+    --v-table-td-color: var(--color-gray-500);
     --v-table-td-font-size: var(--size-font-sm);
     text-align: center;
     white-space: nowrap;
@@ -224,7 +224,7 @@
   &-th--sticky,
   &-td--sticky {
     position: sticky;
-    background-color: var(--color-base-gray-50);
+    background-color: var(--color-gray-50);
     --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
     filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
   }

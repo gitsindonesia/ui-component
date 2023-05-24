@@ -2,7 +2,7 @@
   --v-multi-select-border-color: var(--v-input-border-color);
   --v-multi-select-border-radius: var(--v-input-border-radius);
   --v-multi-select-bg-color: var(--v-input-bg-color);
-  --v-multi-select-text-color: var(--color-base-gray-700);
+  --v-multi-select-text-color: var(--color-gray-700);
   --v-multi-select-height: auto;
   --v-multi-select-min-height: var(--v-input-height);
   --v-multi-select-placeholder-color: var(--v-input-placeholder-color);
@@ -21,28 +21,28 @@
   /* item */
   --v-multi-select-item-font-size: var(--size-font-sm);
   --v-multi-select-item-font-weight: var(--font-weight-regular);
-  --v-multi-select-item-bg-color: var(--color-base-white);
-  --v-multi-select-item-text-color: var(--color-base-gray-800);
+  --v-multi-select-item-bg-color: var(--color-white);
+  --v-multi-select-item-text-color: var(--color-gray-800);
   --v-multi-select-item-padding-x: var(--size-spacing-3);
   --v-multi-select-item-padding-y: var(--size-spacing-2);
-  --v-multi-select-item-hover-bg-color: var(--color-base-gray-100);
-  --v-multi-select-item-hover-text-color: var(--color-base-gray-700);
+  --v-multi-select-item-hover-bg-color: var(--color-gray-100);
+  --v-multi-select-item-hover-text-color: var(--color-gray-700);
 
   /* error */
-  --v-multi-select-error-border-color: var(--color-base-error-500);
+  --v-multi-select-error-border-color: var(--color-error-500);
 
   /* icon */
-  --v-multi-select-icon-color: var(--color-base-gray-500);
+  --v-multi-select-icon-color: var(--color-gray-500);
   --v-multi-select-icon-size: var(--size-spacing-5);
-  --v-multi-select-check-icon-color: var(--color-brand-primary-700);
+  --v-multi-select-check-icon-color: var(--color-primary-700);
 
   /* dropdown */
-  --v-multi-select-dropdown-bg-color: var(--color-base-white);
+  --v-multi-select-dropdown-bg-color: var(--color-white);
   --v-multi-select-dropdown-border-radius: var(--border-radius-lg);
 
   // hint
   --v-multi-select-hint-font-size: var(--v-input-hint-font-size, 14px);
-  --v-multi-select-hint-color: var(--color-base-gray-500);
+  --v-multi-select-hint-color: var(--color-gray-500);
   --v-multi-select-hint-margin-top: var(--size-spacing-1);
 }
 
@@ -65,8 +65,8 @@
   }
 
   &--error {
-    --v-input-effect-border-color: var(--color-base-error-300);
-    --v-input-effect-shadow-color: var(--color-base-error-100);
+    --v-input-effect-border-color: var(--color-error-300);
+    --v-input-effect-shadow-color: var(--color-error-100);
   }
 
   &:focus-within {
@@ -89,13 +89,13 @@
 
   // error text
   &-error {
-    color: var(--color-base-error-500);
+    color: var(--color-error-500);
     font-size: var(--v-multi-select-error-font-size, var(--size-font-sm));
     margin-top: var(--v-multi-select-error-margin-top, var(--size-spacing-1));
   }
 
   &-normal {
-    border-color: var(--color-base-gray-300);
+    border-color: var(--color-gray-300);
   }
 
   &-label {
@@ -141,7 +141,7 @@
     overflow: auto; // Equivalent to overflow-auto
     box-shadow: var(--effect-shadow-lg);
     max-height: 15rem; // Equivalent to max-h-60
-    border: 1px solid var(--color-base-gray-300);
+    border: 1px solid var(--color-gray-300);
     outline: none; // Equivalent to focus:outline-none
     font-size: 0.875rem; // Equivalent to sm:text-sm
     padding-inline-start: 0; // Equivalent to px-0
@@ -201,7 +201,7 @@
   }
 
   &-item--focused {
-    // background-color: var(--color-brand-primary-700);
+    // background-color: var(--color-primary-700);
   }
 
   &-dropdown-loading {
@@ -209,7 +209,7 @@
     padding-right: 1rem/* 16px */;
     padding-top: 0.5rem/* 8px */;
     padding-bottom: 0.5rem/* 8px */;
-    color: var(--color-base-gray-500);
+    color: var(--color-gray-500);
   }
 
   &-item-check {

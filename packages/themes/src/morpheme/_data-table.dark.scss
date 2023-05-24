@@ -3,29 +3,29 @@
 .dark {
   .v-table {
     /* thead */
-    --v-table-thead-bg-color: var(--color-base-gray-true-800);
+    --v-table-thead-bg-color: var(--color-gray-true-800);
 
     // tr
-    --v-table-tr-bg-color: var(--color-base-gray-true-800);
+    --v-table-tr-bg-color: var(--color-gray-true-800);
 
     /* th */
-    --v-table-th-color: var(--color-base-gray-true-200);
+    --v-table-th-color: var(--color-gray-true-200);
 
     /* th active */
-    --v-table-th-active-color: var(--color-brand-primary-500);
+    --v-table-th-active-color: var(--color-primary-500);
 
     /* th active hover */
-    --v-table-th-active-hover-color: var(--color-brand-primary-600);
+    --v-table-th-active-hover-color: var(--color-primary-600);
 
     /* td */
-    --v-table-td-color: var(--color-base-gray-true-200);
-    --v-table-td-bg-color: var(--color-base-gray-true-800);
+    --v-table-td-color: var(--color-gray-true-200);
+    --v-table-td-bg-color: var(--color-gray-true-800);
 
     /* striped */
-    --v-table-striped-bg-color: var(--color-base-gray-true-700);
+    --v-table-striped-bg-color: var(--color-gray-true-700);
 
     /* hover */
-    --v-table-hover-bg-color: var(--color-base-gray-true-700);
+    --v-table-hover-bg-color: var(--color-gray-true-700);
   }
 
   .v-table {
@@ -47,7 +47,7 @@
     /* loading */
     &--loading &-td,
     &--empty &-td {
-      --v-table-td-color: var(--color-base-gray-true-300);
+      --v-table-td-color: var(--color-gray-true-300);
     }
 
     &--bordered &-tr {
@@ -59,7 +59,7 @@
 
     &-th--sticky,
     &-td--sticky {
-      background-color: var(--color-base-gray-true-800);
+      background-color: var(--color-gray-true-800);
       --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
       filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
     }

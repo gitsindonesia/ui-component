@@ -1,13 +1,13 @@
 @import 'list.scss';
 
 :root  {
-  --v-bottom-sheet-bg-color: var(--color-base-wite)
-  --v-bottom-sheet-body-color: var(--color-base-gray-800);
+  --v-bottom-sheet-bg-color: var(--color-wite)
+  --v-bottom-sheet-body-color: var(--color-gray-800);
 
   // handle
   --v-bottom-sheet-handle-width: 3rem;
   --v-bottom-sheet-handle-height: 8px;
-  --v-bottom-sheet-handle-bg-color: var(--color-base-gray-300);
+  --v-bottom-sheet-handle-bg-color: var(--color-gray-300);
   --v-bottom-sheet-handle-border-radius: var(--border-radius-lg);
 }
 
@@ -87,7 +87,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem/* 8px */;
-    border-top: 1px solid var(--color-base-gray-200);
+    border-top: 1px solid var(--color-gray-200);
   }
 
   &-footer:empty {
@@ -104,7 +104,7 @@
   }
 
   &-close-icon {
-    color: var(--color-base-gray-600);
+    color: var(--color-gray-600);
     width: 1.5rem/* 24px */;
     height: 1.5rem/* 24px */;
   }

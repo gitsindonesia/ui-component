@@ -1,5 +1,5 @@
 :root {
-  --v-menus-popper-border-color: var(--color-base-gray-200);
+  --v-menus-popper-border-color: var(--color-gray-200);
   --v-menus-popper-border: 1px solid var(--v-menus-popper-border-color);
   /* menus */
   --v-menus-margin-y: var(--size-spacing-0);
@@ -7,7 +7,7 @@
   --v-menus-padding-y: var(--size-spacing-1);
   --v-menus-padding-x: var(--size-spacing-1);
   --v-menus-width: var(--size-spacing-56);
-  --v-menus-bg-color: var(--color-base-white);
+  --v-menus-bg-color: var(--color-white);
   --v-menus-border-width: 1px;
   --v-menus-border-style: solid;
   --v-menus-border-color: transparent;
@@ -16,16 +16,16 @@
   --v-menus-opacity: 1;
 
   /* button */
-  --v-menus-button-color: var(--color-base-gray-700);
-  --v-menus-button-icon-color: var(--color-base-gray-500);
+  --v-menus-button-color: var(--color-gray-700);
+  --v-menus-button-icon-color: var(--color-gray-500);
   --v-menus-button-icon-width: var(--size-spacing-4);
   --v-menus-button-icon-height: var(--size-spacing-4);
 
   /* item */
   --v-menus-item-padding-y: var(--size-spacing-2);
   --v-menus-item-padding-x: var(--size-spacing-3);
-  --v-menus-item-bg-color: var(--color-base-transparent);
-  --v-menus-item-text-color: var(--color-base-gray-800);
+  --v-menus-item-bg-color: var(--color-transparent);
+  --v-menus-item-text-color: var(--color-gray-800);
   --v-menus-item-font-size: var(--size-font-sm);
   --v-menus-item-font-weight: var(--font-weight-regular);
   --v-menus-item-transition: all 0.2s ease-in-out;
@@ -35,11 +35,11 @@
   --v-menus-item-border-radius: var(--border-radius-lg);
 
   /* item hover */
-  --v-menus-item-hover-bg-color: var(--color-base-gray-100);
-  --v-menus-item-hover-text-color: var(--color-base-gray-800);
+  --v-menus-item-hover-bg-color: var(--color-gray-100);
+  --v-menus-item-hover-text-color: var(--color-gray-800);
 
   /* arrow */
-  --v-menus-arrow-border-color: var(--color-base-white);
+  --v-menus-arrow-border-color: var(--color-white);
 }
 
 .v-popper--theme-menus .v-popper__inner {

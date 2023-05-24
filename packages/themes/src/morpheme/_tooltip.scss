@@ -1,6 +1,6 @@
 .v-popper--theme-tooltip-black {
   .v-popper__inner {
-    background: var(--color-base-gray-900);
+    background: var(--color-gray-900);
     color: white;
     padding: var(--size-spacing-2) var(--size-spacing-3);
     border-radius: var(--border-radius-lg);
@@ -8,21 +8,21 @@
   }
 
   .v-popper__arrow-outer {
-    border-color: var(--color-base-gray-900);
+    border-color: var(--color-gray-900);
   }
 }
 
 .v-popper--theme-tooltip-white {
   .v-popper__inner {
-    background: var(--color-base-white);
-    color: var(--color-base-gray-700);
+    background: var(--color-white);
+    color: var(--color-gray-700);
     padding: var(--size-spacing-2) var(--size-spacing-3);
     border-radius: var(--border-radius-lg);
     font-size: var(--size-font-sm);
-    border: 1px solid var(--color-base-gray-100);
+    border: 1px solid var(--color-gray-100);
   }
 
   .v-popper__arrow-outer {
-    border-color: var(--color-base-gray-50);
+    border-color: var(--color-gray-50);
   }
 }

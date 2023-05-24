@@ -1,6 +1,6 @@
 :root {
-  --v-modal-text-color: var(--color-base-gray-700);
-  --v-modal-bg-color: var(--color-base-white);
+  --v-modal-text-color: var(--color-gray-700);
+  --v-modal-bg-color: var(--color-white);
   --v-modal-border-radius: 12px;
   --v-modal-z-index: 30;
   --v-modal-shadow: var(--effect-shadow-xl);
@@ -24,7 +24,7 @@
   --v-modal-title-font-size: var(--size-font-lg);
   --v-modal-title-line-height: var(--size-font-xl);
   --v-modal-title-letter-spacing: initial;
-  --v-modal-title-color: var(--color-base-gray-900);
+  --v-modal-title-color: var(--color-gray-900);
 
   /* body */
   --v-modal-body-margin-top: var(--size-spacing-2);

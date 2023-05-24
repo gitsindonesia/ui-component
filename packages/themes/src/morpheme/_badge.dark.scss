@@ -1,18 +1,16 @@
-
-
 .dark {
   .badge {
     &-default,
     &-secondary {
       &.badge--outlined {
-        --badge-border-color: var(--color-base-gray-400);
-        --badge-color: var(--color-base-gray-400);
+        --badge-border-color: var(--color-secondary-400);
+        --badge-color: var(--color-secondary-400);
       }
     }
     &-dark {
       &.badge--outlined {
-        --badge-border-color: var(--color-base-gray-true-400);
-        --badge-color: var(--color-base-gray-true-400);
+        --badge-border-color: var(--color-gray-true-400);
+        --badge-color: var(--color-gray-true-400);
       }
     }
   }

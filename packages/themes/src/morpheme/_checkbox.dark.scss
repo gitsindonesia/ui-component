@@ -1,14 +1,14 @@
 .dark {
   .v-checkbox {
-    --v-checkbox-bg-color: var(--color-base-gray-true-700);
-    --v-checkbox-border-color: var(--color-base-gray-true-700);
-    --v-checkbox-label-color: var(--color-base-gray-true-200);
+    --v-checkbox-bg-color: var(--color-gray-true-700);
+    --v-checkbox-border-color: var(--color-gray-true-700);
+    --v-checkbox-label-color: var(--color-gray-true-200);
 
     // disabled
-    --v-checkbox-disabled-bg-color: var(--color-base-gray-true-400);
-    --v-checkbox-disabled-border-color: var(--color-base-gray-true-400);
+    --v-checkbox-disabled-bg-color: var(--color-gray-true-400);
+    --v-checkbox-disabled-border-color: var(--color-gray-true-400);
 
     // hint
-    --v-checkbox-hint-color: var(--color-base-gray-true-500);
+    --v-checkbox-hint-color: var(--color-gray-true-500);
   }
 }

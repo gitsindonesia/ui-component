@@ -1,23 +1,23 @@
 .dark {
   .v-pagination {
     /* item */
-    --v-pagination-item-bg-color: var(--color-base-gray-true-800);
-    --v-pagination-item-text-color: var(--color-base-gray-true-200);
-    --v-pagination-item-border-color: var(--color-base-gray-true-800);
+    --v-pagination-item-bg-color: var(--color-gray-true-800);
+    --v-pagination-item-text-color: var(--color-gray-true-200);
+    --v-pagination-item-border-color: var(--color-gray-true-800);
 
     /* item active */
-    --v-pagination-item-active-bg-color: var(--color-brand-primary-500);
-    --v-pagination-item-active-border-color: var(--color-brand-primary-500);
-    --v-pagination-item-active-text-color: var(--color-base-gray-true-200);
+    --v-pagination-item-active-bg-color: var(--color-primary-500);
+    --v-pagination-item-active-border-color: var(--color-primary-500);
+    --v-pagination-item-active-text-color: var(--color-gray-true-200);
 
     /* item hover */
-    --v-pagination-item-hover-bg-color: var(--color-base-gray-true-700);
-    --v-pagination-item-hover-text-color: var(--color-base-gray-true-200);
+    --v-pagination-item-hover-bg-color: var(--color-gray-true-700);
+    --v-pagination-item-hover-text-color: var(--color-gray-true-200);
 
     /* item disabled */
-    --v-pagination-item-disabled-bg-color: var(--color-base-gray-true-600);
-    --v-pagination-item-disabled-border-color: var(--color-base-gray-true-600);
-    --v-pagination-item-disabled-text-color: var(--color-base-gray-true-400);
+    --v-pagination-item-disabled-bg-color: var(--color-gray-true-600);
+    --v-pagination-item-disabled-border-color: var(--color-gray-true-600);
+    --v-pagination-item-disabled-text-color: var(--color-gray-true-400);
 
     &-item {
       &--ellipsis {

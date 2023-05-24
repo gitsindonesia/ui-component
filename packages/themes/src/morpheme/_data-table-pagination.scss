@@ -1,9 +1,9 @@
 @import 'pagination';
 
 :root {
-  --v-data-table-pagination-bg-color: var(--color-base-white);
-  --v-data-table-pagination-border-color: var(--color-base-gray-200);
-  --v-data-table-pagination-text-color: var(--color-base-gray-700);
+  --v-data-table-pagination-bg-color: var(--color-white);
+  --v-data-table-pagination-border-color: var(--color-gray-200);
+  --v-data-table-pagination-text-color: var(--color-gray-700);
 }
 
 .v-data-table-pagination {
