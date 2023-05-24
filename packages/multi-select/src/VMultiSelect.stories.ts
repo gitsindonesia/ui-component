@@ -173,6 +173,18 @@ Clearable.parameters = {
   },
 };
 
+export const Shadow = Template.bind({});
+Shadow.args = {
+  shadow: true,
+};
+Shadow.parameters = {
+  docs: {
+    source: {
+      code: '<v-multi-select :items="items" shadow />',
+    },
+  },
+};
+
 export const Hint = Template.bind({});
 Hint.args = {
   hint: 'This is a hint',

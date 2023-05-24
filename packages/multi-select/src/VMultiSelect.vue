@@ -173,6 +173,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  shadow: {
+    type: Boolean,
+    default: false,
+  },
   hint: {
     type: String,
     default: ''
@@ -399,6 +403,7 @@ const focusItem = () => {
     :class="{
       'v-multi-select--error':
         error || errorMessages.length > 0 || !!errorMessage,
+      'v-multi-select--shadow': shadow,
     }"
     v-bind="$attrs"
   >

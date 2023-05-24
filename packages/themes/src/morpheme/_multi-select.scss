@@ -47,6 +47,8 @@
 }
 
 .v-multi-select {
+  $c: &;
+
   background: var(--v-multi-select-bg-color);
   color: var(--v-multi-select-text-color);
   border-radius: var(--v-multi-select-border-radius);
@@ -57,6 +59,10 @@
   font-weight: var(--v-multi-select-font-weight);
   position: relative;
   min-height: var(--v-multi-select-min-height);
+
+  &--shadow {
+    box-shadow: var(--v-input-shadow);
+  }
 
   &:focus-within {
     border: 1px solid var(--v-input-effect-border-color);
