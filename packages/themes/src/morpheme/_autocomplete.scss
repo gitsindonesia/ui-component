@@ -1,5 +1,3 @@
-
-
 :root {
   // field
   --v-autocomplete-field-bg-color: var(--color-base-white);
@@ -80,7 +78,7 @@
   }
 
   &--shadow {
-    box-shadow: var(--effect-shadow-md);
+    box-shadow: var(--v-input-shadow);
   }
 
   &-label {

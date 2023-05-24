@@ -44,6 +44,9 @@
   // focus effect
   --v-input-effect-border-color: var(--color-brand-primary-300);
   --v-input-effect-shadow-color: var(--color-brand-primary-100);
+
+  // shadow
+  --v-input-shadow: var(--effect-shadow-xs);
 }
 
 .v-input {
@@ -263,7 +266,7 @@
 
 /* shadow */
 .v-input.v-input--shadow .v-input-wrapper {
-  box-shadow: var(--effect-shadow-md);
+  box-shadow: var(--v-input-shadow);
 }
 
 /* text */
