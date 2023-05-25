@@ -464,24 +464,36 @@ const panelStyles = computed(() => {
                     {{ title }}
                   </h3>
                 </slot>
-                <VBtn
-                  v-if="!hideXButton"
-                  icon
-                  text
-                  rounded
-                  fab
-                  size="sm"
-                  class="p-0"
-                  :disabled="isLoading"
-                  v-bind="xButtonProps"
-                  @click="closeModal"
+                <slot
+                  name="close"
+                  v-bind="{
+                    isLoading,
+                    props: xButtonProps,
+                    closeModal,
+                    hideXButton,
+                  }"
                 >
-                  <Icon
-                    name="ri:close-line"
-                    class="w-5 h-5"
-                    :class="xIconClass"
-                  />
-                </VBtn>
+                  <VBtn
+                    v-if="!hideXButton"
+                    icon
+                    text
+                    rounded
+                    fab
+                    size="sm"
+                    class="p-0"
+                    :disabled="isLoading"
+                    v-bind="xButtonProps"
+                    @click="closeModal"
+                  >
+                    <slot name="closeIcon" v-bind="{xIconClass}">
+                      <Icon
+                        name="ri:close-line"
+                        class="w-5 h-5"
+                        :class="xIconClass"
+                      />
+                    </slot>
+                  </VBtn>
+                </slot>
               </DialogTitle>
               <div class="v-modal-body" :class="bodyClass">
                 <slot />
