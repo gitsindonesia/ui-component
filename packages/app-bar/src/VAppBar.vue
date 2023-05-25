@@ -165,5 +165,3 @@ if (props.hideOnScroll) {
     </header>
   </transition>
 </template>
-
-<style lang="scss" src="./VAppBar.scss"></style>
