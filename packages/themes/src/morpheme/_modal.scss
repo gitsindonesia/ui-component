@@ -36,6 +36,9 @@
   --v-modal-footer-margin-top: var(--size-spacing-6);
   --v-modal-footer-justify-content: flex-end;
   --v-modal-footer-gap: var(--size-spacing-2);
+
+  // overlay
+  --v-modal-overlay-blur-size: 8px;
 }
 
 .v-modal {
@@ -56,6 +59,10 @@
     position: fixed;
     inset: 0px;
     background-color: rgb(0 0 0 / 0.5);
+
+    &--blur {
+      backdrop-filter: blur(var(--v-modal-overlay-blur-size));
+    }
   }
 
   &-panel {

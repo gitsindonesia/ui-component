@@ -287,6 +287,16 @@ export interface Props {
    * ```
    */
   maxWidth?: string | number;
+  /**
+   * Determine whether to blur the overlay.
+   *
+   * @default false
+   * @example
+   * ```html
+   * <v-modal overlay-blur />
+   * ```
+   * */
+  overlayBlur?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -415,7 +425,12 @@ const panelStyles = computed(() => {
             leave-from="opacity-100"
             leave-to="opacity-0"
           >
-            <div class="v-modal-overlay" />
+            <div
+              class="v-modal-overlay"
+              :class="{
+                'v-modal-overlay--blur': overlayBlur,
+              }"
+            />
           </TransitionChild>
 
           <span v-if="!fullscreen" class="v-modal-spacer" aria-hidden="true">
