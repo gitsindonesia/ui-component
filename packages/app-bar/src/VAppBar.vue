@@ -1,9 +1,3 @@
-<script lang="ts">
-export default {
-  inheritAttrs: false,
-};
-</script>
-
 <script setup lang="ts">
 import {
   toRefs,
@@ -17,6 +11,10 @@ import {
 import type {DefaultColors, DefaultShadows} from '@morpheme/theme/defaultTheme';
 
 export type AppBarColors = DefaultColors | 'transparent' | string;
+
+defineOptions({
+  inheritAttrs: false,
+});
 
 const props = defineProps({
   modelValue: {
