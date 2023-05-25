@@ -425,12 +425,14 @@ const panelStyles = computed(() => {
             leave-from="opacity-100"
             leave-to="opacity-0"
           >
-            <div
-              class="v-modal-overlay"
-              :class="{
-                'v-modal-overlay--blur': overlayBlur,
-              }"
-            />
+            <slot name="overlay">
+              <div
+                class="v-modal-overlay"
+                :class="{
+                  'v-modal-overlay--blur': overlayBlur,
+                }"
+              />
+            </slot>
           </TransitionChild>
 
           <span v-if="!fullscreen" class="v-modal-spacer" aria-hidden="true">
