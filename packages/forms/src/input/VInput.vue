@@ -1,9 +1,3 @@
-<script lang="ts">
-export default {
-  inheritAttrs: false,
-};
-</script>
-
 <script setup lang="ts">
 import {PropType} from 'vue';
 import Icon from '@morpheme/icon';
@@ -11,6 +5,10 @@ import {useFormValue, ValidationMode} from '../composables';
 import ErrorMessage from '../ErrorMessage.vue';
 
 type IconSize = InstanceType<typeof Icon>['$props']['size'];
+
+defineOptions({
+  inheritAttrs: false,
+});
 
 const props = defineProps({
   /**
