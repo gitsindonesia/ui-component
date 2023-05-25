@@ -1,15 +1,12 @@
 <script setup lang="ts">
-withDefaults(
-  defineProps<{
-    fluid?: boolean;
-    paddedContainer?: boolean;
-    mainClass?: string;
-    contentClass?: string;
-    containerClass?: string;
-    paddedContent?: boolean;
-  }>(),
-  {},
-);
+defineProps<{
+  fluid?: boolean;
+  paddedContainer?: boolean;
+  mainClass?: string;
+  contentClass?: string;
+  containerClass?: string;
+  paddedContent?: boolean;
+}>();
 </script>
 
 <template>
