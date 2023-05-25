@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import 'floating-vue/dist/style.css';
 import FloatingVue, {Tooltip} from 'floating-vue';
 import {PropType} from 'vue';
 
