@@ -1,9 +1,3 @@
-<script lang="ts">
-export default {
-  inheritAttrs: false,
-};
-</script>
-
 <script setup lang="ts">
 import {computed, ref, toRefs, watch} from 'vue';
 import {
@@ -15,6 +9,10 @@ import {
 } from '@headlessui/vue';
 import VBtn from '@morpheme/button';
 import Icon from '@morpheme/icon';
+
+defineOptions({
+  inheritAttrs: false,
+});
 
 export type ConfirmEventPayload = {
   open: () => void;
