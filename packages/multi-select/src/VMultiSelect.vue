@@ -18,7 +18,6 @@ import VTooltip from '@morpheme/tooltip';
 import {onClickOutside, useDebounceFn} from '@vueuse/core';
 import {ErrorMessage, FieldOptions} from 'vee-validate';
 import Icon from '@morpheme/icon';
-import '@morpheme/tooltip/dist/style.css';
 import {VMultiSelectItem} from './types';
 import {useFormValue, type ValidationMode} from '@morpheme/forms';
 
