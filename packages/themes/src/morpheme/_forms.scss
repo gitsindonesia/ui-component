@@ -193,6 +193,10 @@
   &::placeholder {
     color: var(--v-input-placeholder-color);
   }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
 }
 
 .v-input:has(.v-input-prepend:not(:empty))
