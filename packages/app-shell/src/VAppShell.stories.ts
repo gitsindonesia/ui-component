@@ -16,6 +16,7 @@ import VDropdown, {
 import {VInput} from '@morpheme/forms';
 import {List as VList, ListItem as VListItem} from '@morpheme/list';
 import {ref, watchEffect, defineComponent} from 'vue';
+import VTooltip from '@morpheme/tooltip';
 
 export default {
   title: 'Components/AppShell',
@@ -352,6 +353,7 @@ export const ThreeColumn: Story<{}> = (args) => ({
     VList,
     VListItem,
     VAvatar,
+    VTooltip,
   },
   template: `
 <VAppShell v-bind="args" fluid>
@@ -365,10 +367,25 @@ export const ThreeColumn: Story<{}> = (args) => ({
       bordered
       mini
     >
-      <div class="flex flex-col gap-2 mt-2">
-        <VAvatar color="primary" size="xl">D</VAvatar>
-        <VAvatar color="secondary" size="xl">A</VAvatar>
-        <VAvatar color="success" size="xl">T</VAvatar>
+      <div class="flex items-center flex-col gap-2 mt-2">
+        <VTooltip placement="right">
+          <template #activator>
+            <VAvatar color="primary" size="xl">D</VAvatar>
+          </template>
+          <span>Digits</span>
+        </VTooltip>
+        <VTooltip placement="right">
+          <template #activator>
+            <VAvatar color="secondary" size="xl">A</VAvatar>
+          </template>
+          <span>Acme</span>
+        </VTooltip>
+        <VTooltip placement="right">
+          <template #activator>
+            <VAvatar color="success" size="xl">T</VAvatar>
+          </template>
+          <span>Tech</span>
+        </VTooltip>
       </div>
     </VNavDrawer>
   </template>
