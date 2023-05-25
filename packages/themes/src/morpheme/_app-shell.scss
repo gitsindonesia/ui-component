@@ -41,13 +41,13 @@
     margin-right: auto;
     width: 100%;
     
-    @media (min-width: var(--screen-mobile)) {
+    @media (min-width: 360px) {
       max-width: var(--screen-mobile);
     }
-    @media (min-width: var(--screen-tablet)) {
+    @media (min-width: 834px) {
       max-width: var(--screen-tablet);
     }
-    @media (min-width: var(--screen-desktop)) {
+    @media (min-width: 1440px) {
       max-width: var(--screen-desktop);
     }
 
