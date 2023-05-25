@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {computed, ref, toRefs, watch, PropType} from 'vue';
+import {computed, ref, toRefs, watch, type PropType, onMounted} from 'vue';
 import VBtn from '@morpheme/button';
 import {
   Disclosure,
@@ -68,6 +68,10 @@ const logout = () => {
 };
 
 const userFirstName = computed(() => user.value?.name?.split(' ')?.[0]);
+
+onMounted(() => {
+  console.warn('v-navbar is deprecated. Switch to v-app-bar instead.');
+});
 </script>
 
 <template>

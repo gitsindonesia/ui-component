@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {PropType} from 'vue';
+import {PropType, onMounted} from 'vue';
 
 type ToggleClass = {
   open: string;
@@ -29,6 +29,10 @@ defineProps({
       close: 'pt-6',
     }),
   },
+});
+
+onMounted(() => {
+  console.warn('v-container is deprecated. Switch to v-main instead.');
 });
 </script>
 

@@ -7,7 +7,7 @@ export default defineComponent({
 </script>
 
 <script setup lang="ts">
-import { computed, PropType, ref, toRefs, watch } from 'vue';
+import { computed, onMounted, PropType, ref, toRefs, watch } from 'vue';
 import VMenu, { type Menu } from '@morpheme/menu';
 import VLogo from '@morpheme/logo';
 import { getBgColor } from '@morpheme/utils';
@@ -127,6 +127,10 @@ const mouseOverLeave = () => {
 const bgColor = computed(() =>
   getBgColor(color.value, dark.value ? 'bg-gray-900' : 'bg-white'),
 );
+
+onMounted(() => {
+  console.warn('v-nav-drawer is deprecated. Switch to new VNavDrawer component instead.');
+});
 </script>
 
 <template>
