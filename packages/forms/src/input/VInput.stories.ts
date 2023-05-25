@@ -167,6 +167,30 @@ Shadow.parameters = {
   },
 };
 
+export const Borderless = Template.bind({});
+Borderless.args = {
+  borderless: true,
+};
+Borderless.parameters = {
+  docs: {
+    source: {
+      code: '<v-input borderless />',
+    },
+  },
+};
+
+export const NoRingEffect = Template.bind({});
+NoRingEffect.args = {
+  noRing: true,
+};
+NoRingEffect.parameters = {
+  docs: {
+    source: {
+      code: '<v-input noRing />',
+    },
+  },
+};
+
 export const Rounded = Template.bind({});
 Rounded.args = {
   rounded: true,
