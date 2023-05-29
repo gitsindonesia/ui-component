@@ -92,7 +92,14 @@ const rating = ref(3);
 
 ## CSS Variables
 
-None.
+```scss
+:root {
+  // hint
+  --v-star-rating-hint-font-size: var(--size-font-sm);
+  --v-star-rating-hint-color: var(--color-gray-500);
+  --v-star-rating-hint-margin-top: var(--size-spacing-1);
+}
+```
 
 ## Standalone Installation
 
@@ -105,7 +112,6 @@ npm i @morpheme/rating
 ```vue
 <script setup lang="ts">
 import {Rating as VRating} from '@morpheme/rating';
-import '@morpheme/rating/dist/style.css';
 </script>
 
 <template>

@@ -334,7 +334,6 @@ pnpm add @morpheme/forms
 ```vue
 <script setup lang="ts">
 import {VTextarea} from '@morpheme/forms';
-import '@morpheme/forms/dist/style.css';
 </script>
 
 <template>

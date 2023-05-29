@@ -12,7 +12,7 @@ The `VAutocomplete` component is a customizable autocomplete input based on the 
 
 To use the `VAutocomplete` component, simply add it to your template:
 
-<LivePreview src="components-autocomplete--default">
+<LivePreview src="forms-autocomplete--default">
 
 ```vue
 <template>
@@ -31,7 +31,7 @@ The `VAutocomplete` component is registered globally when you install with `@mor
 
 To make the `VAutocomplete` component clearable, set the `clearable` prop:
 
-<LivePreview src="components-autocomplete--clearable">
+<LivePreview src="forms-autocomplete--clearable">
 
 ```vue
 <template>
@@ -45,7 +45,7 @@ To make the `VAutocomplete` component clearable, set the `clearable` prop:
 
 You can use the `VAutocomplete` component with form validation libraries like `vee-validate`. In this example, we'll use the `useForm` hook from `vee-validate` to handle form submission and validation:
 
-<LivePreview src="components-autocomplete--validation" >
+<LivePreview src="forms-autocomplete--validation" >
 
 ```vue
 <script setup lang="ts">
@@ -167,11 +167,78 @@ function onQueryChange(query: string) {
 
 ## Slots
 
-None
+| Name   | Description                                        |
+| ------ | -------------------------------------------------- |
+| `hint` | This slot is used to add content to the hint area. |
 
 ## CSS Variables
 
-None
+```scss
+:root {
+  // field
+  --v-autocomplete-field-bg-color: var(--color-white);
+  --v-autocomplete-field-border-color: var(--color-gray-300);
+
+  // field hover
+  --v-autocomplete-field-hover-border-color: var(--color-gray-300);
+
+  // input
+  --v-autocomplete-input-color: var(--color-gray-700);
+  --v-autocomplete-input-bg-color: transparent;
+  --v-autocomplete-input-height: var(--v-input-height);
+
+  // input selected
+  --v-autocomplete-input-selected-color: var(--color-gray-700);
+
+  // clearable button
+  --v-autocomplete-clearable-button-color: var(--color-gray-400);
+
+  // clearable button hover
+  --v-autocomplete-clearable-button-hover-color: var(--color-gray-500);
+  --v-autocomplete-clearable-button-hover-bg-color: var(--color-gray-100);
+
+  // icon
+  --v-autocomplete-icon-color: var(--color-gray-400);
+
+  // options
+  --v-autocomplete-options-bg-color: var(--color-white);
+  --v-autocomplete-options-border-color: var(--color-gray-50);
+
+  // empty
+  --v-autocomplete-empty-color: var(--color-gray-700);
+
+  // item
+  --v-autocomplete-item-color: var(--color-gray-700);
+
+  // item selected
+  --v-autocomplete-item-selected-color: var(--color-primary-500);
+
+  // item selected item
+  --v-autocomplete-item-selected-icon-color: var(--color-primary-500);
+
+  // item inactive
+  --v-autocomplete-item-inactive-color: var(--color-gray-700);
+
+  // item active
+  --v-autocomplete-item-active-bg-color: var(--color-gray-100);
+
+  // error
+  --v-autocomplete-error-color: var(--color-error-300);
+
+  // disabled
+  --v-autocomplete-input-disabled-bg-color: var(--v-input-disabled-bg-color);
+  --v-autocomplete-input-disabled-border-color: var(--v-input-disabled-border-color);
+
+  // hint
+  --v-autocomplete-hint-font-size: var(--v-input-hint-font-size, 14px);
+  --v-autocomplete-hint-color: var(--color-gray-600);
+  --v-autocomplete-hint-margin-top: var(--size-spacing-1);
+
+  // focus effect
+  --v-input-effect-border-color: var(--color-primary-300);
+  --v-input-effect-shadow-color: var(--color-primary-100);
+}
+```
 
 ## Standalone Installation
 
@@ -186,7 +253,6 @@ You can then use the `VAutocomplete` component in your Vue templates like this:
 ```vue
 <script setup lang="ts">
 import VAutocomplete from '@morpheme/autocomplete';
-import '@morpheme/autocomplete/dist/style.css';
 </script>
 
 <template>
@@ -196,4 +262,4 @@ import '@morpheme/autocomplete/dist/style.css';
 
 ## Storybook
 
-View Storybook documentation [here](https://gits-ui.web.app/?path=/story/components-autocomplete--default).
+View Storybook documentation [here](https://gits-ui.web.app/?path=/story/forms-autocomplete--default).

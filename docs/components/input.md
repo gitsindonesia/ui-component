@@ -813,30 +813,51 @@ Allows you to customize the append slot.
 ```scss
 :root {
   /* input control */
-  --v-input-height: 2.5rem;
-  --v-input-border-color: theme('colors.gray.300');
-  --v-input-placeholder-color: theme('colors.gray.500');
-  --v-input-border-radius: theme('borderRadius.md');
-  --v-input-padding-x: theme('padding.3');
-  --v-input-padding-y: theme('padding.2');
-  --v-input-font-size: theme('fontSize.base');
-  --v-input-bg-color: theme('colors.white');
+  --v-input-height: 44px;
+  --v-input-border-color: var(--color-gray-300);
+  --v-input-placeholder-color: var(--color-gray-500);
+  --v-input-border-radius: var(--border-radius-lg);
+  --v-input-padding-x: var(--size-spacing-3);
+  --v-input-padding-y: var(--size-spacing-3);
+  --v-input-font-size: var(--size-font-sm);
+  --v-input-line-height: 20px;
+  --v-input-bg-color: var(--color-white);
+  --v-input-color: var(--color-gray-700);
 
   /* label */
-  --v-input-label-font-size: theme('fontSize.sm');
-  --v-input-label-font-weight: theme('fontWeight.semibold');
+  --v-input-label-font-size: var(--size-font-sm);
+  --v-input-label-font-weight: var(--font-weight-semibold);
   --v-input-label-display: block;
-  --v-input-label-margin-bottom: theme('margin.1');
+  --v-input-label-margin-bottom: var(--size-spacing-1);
 
   /* text */
-  --v-input-text-color: theme('colors.gray.600');
-  --v-input-text-font-size: theme('fontSize.sm');
-  --v-input-text-font-weight: theme('fontWeight.normal');
+  --v-input-text-color: var(--color-gray-700);
+  --v-input-text-font-size: var(--size-font-sm);
+  --v-input-text-font-weight: var(--font-weight-regular);
 
   /* icon */
-  --v-input-icon-width: theme('width.5');
-  --v-input-icon-height: theme('height.5');
-  --v-input-icon-color: theme('colors.gray.500');
+  --v-input-icon-width: var(--size-spacing-5);
+  --v-input-icon-height: var(--size-spacing-5);
+  --v-input-icon-color: var(--color-gray-500);
+
+  // disabled
+  --v-input-disabled-bg-color: var(--color-gray-50);
+  --v-input-disabled-color: var(--color-gray-500);
+  --v-input-disabled-border-color: var(--color-gray-300);
+  --v-input-disabled-placeholder-color: var(--color-gray-500);
+  --v-input-disabled-icon-color: var(--color-gray-500);
+
+  // hint
+  --v-input-hint-font-size: var(--size-font-sm);
+  --v-input-hint-color: var(--color-gray-600);
+  --v-input-hint-margin-top: var(--size-spacing-1);
+
+  // focus effect
+  --v-input-effect-border-color: var(--color-primary-300);
+  --v-input-effect-shadow-color: var(--color-primary-100);
+
+  // shadow
+  --v-input-shadow: var(--effect-shadow-xs);
 }
 ```
 
@@ -851,9 +872,6 @@ npm i @morpheme/forms
 ```vue
 <script setup lang="ts">
 import {VInput} from '@morpheme/forms';
-import '@morpheme/forms/dist/style.css';
-// OR load SCSS styles
-// import '@morpheme/forms/src/forms.scss';
 </script>
 
 <template>

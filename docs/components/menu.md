@@ -223,7 +223,6 @@ npm i @morpheme/menu
 ```vue
 <script setup lang="ts">
 import VMenu from '@morpheme/menu';
-import '@morpheme/menu/dist/style.css';
 </script>
 
 <template>

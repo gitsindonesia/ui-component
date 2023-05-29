@@ -1,5 +1,3 @@
-
-
 :root {
   --dropdown-bg-color: var(--color-white);
   --dropdown-base-height: 44px;
@@ -148,7 +146,8 @@
     border-width: var(--dropdown-button-activator-border-width);
     border-style: var(--dropdown-button-activator-border-style);
     border-color: var(--dropdown-button-activator-border-color);
-    padding: var(--dropdown-button-activator-padding-y) var(--dropdown-button-activator-padding-x);
+    padding: var(--dropdown-button-activator-padding-y)
+      var(--dropdown-button-activator-padding-x);
     border-radius: var(--dropdown-button-activator-border-radius);
     color: var(--dropdown-button-activator-color);
     font-size: var(--dropdown-button-activator-font-size);

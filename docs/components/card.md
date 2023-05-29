@@ -278,19 +278,18 @@ The `footer` slot is used to add a footer to the `VCard`. It can contain any con
 
 ### CSS Variables
 
-he `VCard` component has several CSS variables that can be used to customize its appearance. These variables can be set in the `:root` element of your stylesheet to change the default values.
-
 ```scss
 :root {
-  --card-bg-color: theme('colors.white');
-  --card-color: theme('colors.gray.800');
+  --card-bg-color: var(--color-white);
+  --card-color: var(--color-gray-700);
   --card-border-style: solid;
-  --card-border-width: theme('borderWidth.DEFAULT');
-  --card-border-color: theme('borderColor.DEFAULT');
-  --card-border-radius: theme('borderRadius.DEFAULT');
-  --card-padding-x: theme('padding.4');
-  --card-padding-y: theme('padding.3');
-  --card-box-shadow: theme('boxShadow.DEFAULT');
+  --card-border-width: 1px;
+  --card-border-color: var(--color-gray-200);
+  --card-border-radius: var(--border-radius-lg);
+  --card-padding-x: var(--size-spacing-4);
+  --card-padding-y: var(--size-spacing-3);
+  --card-box-shadow: var(--effect-shadow-sm);
+  --card-font-size: var(--size-font-sm);
 }
 ```
 

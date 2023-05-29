@@ -165,19 +165,17 @@ Slot for custom label content to be displayed within the progress bar. Receives 
 
 ## CSS Variables
 
-```css
+```scss
 :root {
-  --v-progress-bar-bg-color: theme('colors.gray.200');
-  --v-progress-bar-fill-color: theme('colors.gray.400');
-  --v-progress-bar-height: theme('height.2');
-  --v-progress-bar-border-radius: theme('borderRadius.full');
-  --v-progress-bar-font-size: theme('fontSize.xs');
-  --v-progress-bar-label-color: theme('colors.white');
-  --v-progress-bar-transition-property: theme('transitionProperty.all');
-  --v-progress-bar-transition-duration: theme('transitionDuration.300');
-  --v-progress-bar-transition-timing-function: theme(
-    'transitionTimingFunction.in-out'
-  );
+  --v-progress-bar-bg-color: var(--color-gray-200);
+  --v-progress-bar-fill-color: var(--color-gray-400);
+  --v-progress-bar-height: var(--size-spacing-2);
+  --v-progress-bar-border-radius: var(--border-radius-full);
+  --v-progress-bar-font-size: var(--size-font-xs);
+  --v-progress-bar-label-color: var(--color-white);
+  --v-progress-bar-transition-property: all;
+  --v-progress-bar-transition-duration: 300ms;
+  --v-progress-bar-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   --v-progress-bar-indeterminate-animation-name: indeterminateAnimation;
   --v-progress-bar-indeterminate-animation-duration: 2s;
   --v-progress-bar-indeterminate-animation-timing-function: linear;
@@ -196,7 +194,6 @@ npm i @morpheme/progress-bar
 ```vue
 <script setup lang="ts">
 import VProgressBar from '@morpheme/progress-bar';
-import '@morpheme/progress-bar/dist/style.css';
 </script>
 
 <template>

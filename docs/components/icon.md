@@ -83,7 +83,6 @@ Then, you can use it in your Vue.js application like this:
 ```vue
 <script setup lang="ts">
 import VIcon from '@morpheme/icon';
-import '@morpheme/icon/dist/style.css';
 </script>
 
 <template>

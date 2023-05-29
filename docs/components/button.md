@@ -479,43 +479,34 @@ Use the `suffix` slot to place the content after the text.
 
 ```scss
 :root {
-  --btn-bg-color: theme('colors.gray.200');
-  --btn-text-color: theme('colors.gray.800');
-  --btn-border-color: theme('colors.gray.300');
-  --btn-border-radius: theme('borderRadius.DEFAULT');
-  --btn-border-width: theme('borderWidth.DEFAULT');
-  --btn-padding-x: theme('spacing.3');
-  --btn-padding-y: theme('spacing.2');
-  --btn-line-height: theme('lineHeight.tight');
-  --btn-font-size: theme('fontSize.sm');
-  --btn-font-weight: theme('fontWeight.semibold');
-  --btn-shadow: theme('boxShadow.none');
-  --btn-icon-width: theme('spacing.5');
-  --btn-icon-height: theme('spacing.5');
-  --btn-width: theme('width.auto');
-  --btn-height: theme('width.auto');
-  --btn-transition: all 0.2s ease-in-out;
+  --btn-border-radius: var(--border-radius-lg);
+  --btn-group-border-radius: var(--btn-border-radius);
+  --btn-border-width: 1px;
+  --btn-padding-x: 14px;
+  --btn-padding-y: 0;
+  --btn-font-size: var(--size-font-sm);
+  --btn-line-height: 20px;
+  --btn-font-weight: 600;
+  --btn-shadow: none;
+  --btn-icon-width: 20px;
+  --btn-icon-height: 20px;
+  --btn-line-height: 20px;
+  --btn-transition: all 0.3s ease-in-out;
 
   // sm
   --btn-sm-height: 32px;
-  --btn-sm-padding-x: theme('padding.3');
-  --btn-sm-padding-y: theme('padding.1');
-  --btn-sm-icon-width: theme('spacing.4');
-  --btn-sm-icon-height: theme('spacing.4');
 
   // md
   --btn-md-height: 44px;
-  --btn-md-padding-x: theme('padding.4');
-  --btn-md-padding-y: theme('padding.3');
-  --btn-md-icon-width: theme('spacing.5');
-  --btn-md-icon-height: theme('spacing.5');
 
   // lg
   --btn-lg-height: 52px;
-  --btn-lg-padding-x: theme('padding.6');
-  --btn-lg-padding-y: theme('padding.3');
-  --btn-lg-icon-width: theme('spacing.6');
-  --btn-lg-icon-height: theme('spacing.6');
+
+  // xl
+  --btn-xl-height: 60px;
+
+  // 2xl
+  --btn-2xl-height: 68px;
 }
 ```
 
@@ -542,9 +533,6 @@ npm i @morpheme/button
 ```vue
 <script setup lang="ts">
 import VBtn from '@morpheme/button';
-import '@morpheme/button/dist/style.css';
-// or import the SCSS styles
-// import '@morpheme/button/src/VBtn.scss';
 </script>
 
 <template>

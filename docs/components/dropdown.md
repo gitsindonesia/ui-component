@@ -280,41 +280,61 @@ Default:
 
 ```css
 :root {
-  --dropdown-bg-color: theme('colors.white');
+  --dropdown-bg-color: var(--color-white);
+  --dropdown-base-height: 44px;
 
-  // button
-  --dropdown-button-icon-color: theme('colors.gray.500');
-
-  // button activator
-  --dropdown-button-activator-gap: theme('spacing.2');
+  // button icon
+  --dropdown-button-icon-color: var(--color-gray-700);
 
   // item
-  --dropdown-item-color: theme('colors.gray.800');
-  --dropdown-item-icon-color: theme('colors.gray.600');
-  --dropdown-item-gap: theme('spacing.2');
-  --dropdown-item-border-radius: theme('borderRadius.md');
-  --dropdown-item-padding: theme('spacing.2');
+  --dropdown-item-color: var(--color-gray-700);
+  --dropdown-item-icon-color: var(--color-gray-700);
+  --dropdown-item-gap: var(--size-spacing-2);
+  --dropdown-item-border-radius: var(--border-radius-md);
+  --dropdown-item-padding-x: var(--size-spacing-3);
+  --dropdown-item-padding-y: var(--size-spacing-2);
+  --dropdown-item-font-size: var(--size-font-sm);
+  --dropdown-item-line-height: 20px;
+  --dropdown-item-font-weight: var(--font-weight-medium);
+  --dropdown-item-height: var(--dropdown-base-height);
 
   // item active
   --dropdown-item-active-color: currentColor;
-  --dropdown-item-active-bg-color: theme('colors.gray.200');
+  --dropdown-item-active-bg-color: var(--color-gray-50);
 
   // item icon
-  --dropdown-item-icon-width: theme('width.5');
-  --dropdown-item-icon-height: theme('height.5');
+  --dropdown-item-icon-width: var(--size-spacing-4);
+  --dropdown-item-icon-height: var(--size-spacing-4);
   --dropdown-item-icon-color: currentColor;
 
   // panel
-  --dropdown-panel-bg-color: theme('colors.white');
-  --dropdown-panel-border-radius: theme('borderRadius.md');
-  --dropdown-panel-box-shadow: theme('boxShadow.lg');
-  --dropdown-panel-z-index: theme('zIndex.10');
-  --dropdown-panel-padding: theme('spacing.1');
-  --dropdown-panel-width: theme('width.56');
-  --dropdown-panel-margin-top: theme('spacing.2');
+  --dropdown-panel-bg-color: var(--color-white);
+  --dropdown-panel-border-radius: var(--border-radius-lg);
+  --dropdown-panel-box-shadow: var(--effect-shadow-lg);
+  --dropdown-panel-z-index: 10;
+  --dropdown-panel-padding: var(--size-spacing-1);
+  --dropdown-panel-width: var(--size-spacing-56);
+  --dropdown-panel-margin-top: var(--size-spacing-2);
+  --dropdown-panel-border-width: 1px;
+  --dropdown-panel-border-style: solid;
+  --dropdown-panel-border-color: var(--color-gray-200);
 
   // divider
-  --dropdown-divider-border-color: theme('colors.gray.200');
+  --dropdown-divider-border-color: var(--color-gray-200);
+
+  // button activator
+  --dropdown-button-height: var(--dropdown-base-height);
+  --dropdown-button-activator-gap: var(--size-spacing-2);
+  --dropdown-button-activator-border-width: 1px;
+  --dropdown-button-activator-border-style: solid;
+  --dropdown-button-activator-border-color: var(--color-gray-300);
+  --dropdown-button-activator-padding-y: var(--size-spacing-3);
+  --dropdown-button-activator-padding-x: var(--size-spacing-4);
+  --dropdown-button-activator-border-radius: var(--border-radius-lg);
+  --dropdown-button-activator-color: var(--color-gray-700);
+  --dropdown-button-activator-font-size: var(--size-font-sm);
+  --dropdown-button-activator-font-weight: var(--font-weight-semibold);
+  --dropdown-button-activator-line-height: 20px;
 }
 ```
 
@@ -323,25 +343,35 @@ Dark Mode:
 ```scss
 .dark {
   .dropdown {
-    --dropdown-bg-color: theme('colors.neutral.800');
-    --dropdown-button-icon-color: theme('colors.neutral.400');
-    --dropdown-item-color: theme('colors.neutral.200');
-    --dropdown-item-icon-color: theme('colors.neutral.400');
+    --dropdown-bg-color: var(--color-gray-true-900);
+
+    // button icon
+    --dropdown-button-icon-color: var(--color-gray-true-500);
+
+    // item
+    --dropdown-item-color: var(--color-gray-true-200);
+    --dropdown-item-icon-color: var(--color-gray-true-200);
 
     // item active
-    --dropdown-item-active-color: theme('colors.neutral.200');
-    --dropdown-item-active-bg-color: theme('colors.neutral.700');
+    --dropdown-item-active-color: currentColor;
+    --dropdown-item-active-bg-color: var(--color-gray-true-800);
+
+    // item icon
+    --dropdown-item-icon-color: currentColor;
 
     // panel
-    --dropdown-panel-bg-color: theme('colors.neutral.800');
+    --dropdown-panel-bg-color: var(--color-gray-true-900);
+    --dropdown-panel-border-color: var(--color-gray-true-700);
 
     // divider
-    --dropdown-divider-border-color: theme('colors.neutral.700');
+    --dropdown-divider-border-color: var(--color-gray-true-800);
 
-    // item active
-    --dropdown-item-active-bg-color: theme('colors.neutral.700');
+    // button activator
+    --dropdown-button-activator-border-color: var(--color-gray-true-700);
+    --dropdown-button-activator-color: var(--color-gray-true-300);
   }
 }
+
 ```
 
 ## Tailwind Plugin

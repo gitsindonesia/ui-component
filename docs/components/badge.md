@@ -34,7 +34,7 @@ You can use the `color` prop to apply different color styles to the badge:
 
 The available color options are `default`, `primary`, `secondary`, `info`, `warning`, `success`, and `error`.
 
-<LivePreview src="components-badge--variants" height="70">
+<LivePreview src="components-badge--variants" height="100">
 
 ```vue
 <template>
@@ -59,7 +59,7 @@ The available color options are `default`, `primary`, `secondary`, `info`, `warn
 
 You can use the `outlined` prop to apply a bordered style to the badge:
 
-<LivePreview src="components-badge--outlined" height="70" >
+<LivePreview src="components-badge--outlined" height="100" >
 
 ```vue{2}
 <template>
@@ -78,7 +78,7 @@ You can use the `outlined` prop to apply a bordered style to the badge:
 
 You can use the `rounded` prop to apply a rounded style to the badge:
 
-<LivePreview src="components-badge--rounded" height="70" >
+<LivePreview src="components-badge--rounded" height="100" >
 
 ```vue
 <script setup lang="ts">
@@ -108,7 +108,7 @@ import {ref} from 'vue';
 
 You can use the `small` or `large` prop to change the size of the badge:
 
-<LivePreview src="components-badge--sizes" height="70" >
+<LivePreview src="components-badge--sizes" height="100" >
 
 ```vue
 <template>
@@ -129,7 +129,7 @@ You can use the `small` or `large` prop to change the size of the badge:
 
 You can use the `dismissable` prop to show an X button in the badge, which allows the user to dismiss the badge:
 
-<LivePreview src="components-badge--dismissable" height="70" >
+<LivePreview src="components-badge--dismissable" height="100" >
 
 ```vue
 <template>
@@ -182,18 +182,20 @@ Note that the `dismiss` event is only available when the `dismissable` prop is s
 ## CSS Variables
 
 ```css
-:root: {
-  --badge-bg-color: theme('colors.gray.100');
-  --badge-color: theme('colors.gray.800');
-  --badge-border-style: 'solid';
-  --badge-border-width: theme('borderWidth.DEFAULT');
-  --badge-border-color: theme('borderColor.transparent');
-  --badge-border-radius: theme('borderRadius.DEFAULT');
-  --badge-padding-x: theme('padding.2');
-  --badge-padding-y: theme('padding.1');
-  --badge-font-size: theme('fontSize.xs');
-  --badge-font-weight: theme('fontWeight.semibold');
-  --badge-icon-size: theme('width.4');
+:root {
+  --badge-bg-color: var(--color-gray-100);
+  --badge-color: var(--color-gray-1000);
+  --badge-border-style: solid;
+  --badge-border-width: 1px;
+  --badge-border-color: transparent;
+  --badge-border-radius: 16px;
+  --badge-padding-x: 10px;
+  --badge-padding-y: 2px;
+  --badge-font-size: var(--size-font-sm);
+  --badge-line-height: 20px;
+  --badge-font-weight: var(--font-weight-medium);
+  --badge-icon-size: 16px;
+  --badge-gap: 6px;
 }
 ```
 

@@ -460,7 +460,6 @@ yarn install @morpheme/forms
 ```vue
 <script setup lang="ts">
 import {VFormSelect} from '@morpheme/forms';
-import '@morpheme/forms/dist/style.css';
 </script>
 
 <template>

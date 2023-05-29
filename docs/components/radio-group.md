@@ -459,7 +459,25 @@ Customize radio label text
 
 ## CSS Variables
 
-None
+```scss
+:root {
+  /* label */
+  --v-radio-group-label-color: var(--v-input-label-color);
+  --v-radio-group-label-font-size: var(--v-input-label-font-size);
+  --v-radio-group-label-font-weight: var(--v-input-label-font-weight);
+  --v-radio-group-label-display: var(--v-input-label-display);
+  --v-radio-group-label-margin-bottom: var(--v-input-label-margin-bottom);
+
+  // items text
+  --v-radio-group-items-text-color: var(--color-gray-700);
+  --v-radio-group-items-disabed-text-color: var(--color-gray-500);
+
+  // hint
+  --v-radio-group-hint-font-size: var(--v-input-hint-font-size, 14px);
+  --v-radio-group-hint-color: var(--v-input-hint-color);
+  --v-radio-group-hint-margin-top: var(--v-input-hint-margin-top);
+}
+```
 
 ## Standalone Installation
 
@@ -472,7 +490,6 @@ npm i @morpheme/forms
 ```vue
 <script setup lang="ts">
 import {VRadioGroup} from '@morpheme/forms';
-import '@morpheme/forms/dist/style.css';
 </script>
 
 <template>

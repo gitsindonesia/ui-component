@@ -552,7 +552,6 @@ npm i @morpheme/tabs
 ```vue
 <script setup lang="ts">
 import VTabs from '@morpheme/tabs';
-import '@morpheme/tabs/dist/style.css';
 </script>
 
 <template>

@@ -153,6 +153,10 @@ To change the timeline layout to horizontal, add `horizontal` prop.
 - [`VTimelineItemDot`](#timeline-item-dot)
 - [`VTimelineItemContent`](#timeline-item-content)
 
+## CSS Variables
+
+None
+
 ## Storybook
 
 View Storybook documentation [here](https://gits-ui.web.app/?path=/story/components-timeline--default).

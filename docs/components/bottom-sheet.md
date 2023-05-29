@@ -359,9 +359,15 @@ A slot for placing the content such as `VBottomSheetHeader`, `VBottomSheetFooter
 ## CSS Variables
 
 ```scss
-:root {
-  --v-bottom-sheet-bg-color: #fff;
-  --v-bottom-sheet-body-color: theme('colors.gray.800');
+:root  {
+  --v-bottom-sheet-bg-color: var(--color-wite)
+  --v-bottom-sheet-body-color: var(--color-gray-800);
+
+  // handle
+  --v-bottom-sheet-handle-width: 3rem;
+  --v-bottom-sheet-handle-height: 8px;
+  --v-bottom-sheet-handle-bg-color: var(--color-gray-300);
+  --v-bottom-sheet-handle-border-radius: var(--border-radius-lg);
 }
 ```
 
@@ -370,19 +376,16 @@ A slot for placing the content such as `VBottomSheetHeader`, `VBottomSheetFooter
 You can also install the `BottomSheet` component individually via `@morpheme/bottom-sheet` package:
 
 ```bash
-npm i @morpheme/bottom-sheet
+npm i @morpheme/bottom-sheet @morpheme/themes
 ```
 
 ```vue
 <script setup lang="ts">
 import {BottomSheet, BottomSheetBody} from '@morpheme/bottom-sheet';
-import '@morpheme/bottom-sheet/dist/style.css'
-
-// or load SASS styles
-// import '@morpheme/bottom-sheet/src/BottomSheet.scss'
+import '@morpheme/themes/src/morpheme/_bottom-sheet.scss'
 
 // load dark mode styles if you want to support dark mode
-// import '@morpheme/bottom-sheet/src/BottomSheet.dark.scss'
+// import '@morpheme/themes/src/morpheme/_bottom-sheet.dark.scss'
 </script>
 
 <template>

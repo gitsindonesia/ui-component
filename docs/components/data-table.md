@@ -806,44 +806,48 @@ Example:
 ## CSS Variables
 
 ```css
+
 :root {
   /* spacing */
-  --v-table-padding-x: theme('spacing.6');
-  --v-table-padding-y: theme('spacing.3');
+  --v-table-padding-x: var(--size-spacing-6);
+  --v-table-padding-y: var(--size-spacing-3);
 
   /* thead */
-  --v-table-thead-bg-color: theme('colors.gray.50');
+  --v-table-thead-bg-color: var(--color-gray-50);
 
   /* th */
-  --v-table-th-color: theme('colors.gray.800');
-  --v-table-th-font-size: theme('fontSize.sm');
-  --v-table-th-font-weight: theme('fontWeight.semibold');
+  --v-table-th-color: var(--color-gray-600);
+  --v-table-th-font-size: var(--size-font-xs);
+  --v-table-th-font-weight: var(--font-weight-bold);
   --v-table-th-white-space: nowrap;
   --v-table-th-text-align: left;
 
   /* th active */
-  --v-table-th-active-color: theme('colors.primary.500');
+  --v-table-th-active-color: var(--color-primary-500);
 
   /* th active hover */
-  --v-table-th-active-hover-color: theme('colors.primary.600');
+  --v-table-th-active-hover-color: var(--color-primary-600);
+
+  // tr
+  --v-table-tr-bg-color: transparent;
 
   /* td */
-  --v-table-td-color: theme('colors.gray.800');
-  --v-table-td-bg-color: theme('colors.white');
-  --v-table-td-font-size: theme('fontSize.sm');
-  --v-table-td-font-weight: theme('fontWeight.normal');
+  --v-table-td-color: var(--color-gray-900);
+  --v-table-td-bg-color: var(--color-white);
+  --v-table-td-font-size: var(--size-font-sm);
+  --v-table-td-font-weight: var(--font-weight-regular);
   --v-table-td-white-space: nowrap;
   --v-table-td-text-align: left;
 
   /* dense */
-  --v-table-dense-padding-x: theme('spacing.4');
-  --v-table-dense-padding-y: theme('spacing.2');
+  --v-table-dense-padding-x: var(--size-spacing-4);
+  --v-table-dense-padding-y: var(--size-spacing-2);
 
   /* striped */
-  --v-table-striped-bg-color: theme('colors.gray.100');
+  --v-table-striped-bg-color: var(--color-gray-50);
 
   /* hover */
-  --v-table-hover-bg-color: theme('colors.gray.100');
+  --v-table-hover-bg-color: var(--color-gray-100);
 }
 ```
 
@@ -858,9 +862,6 @@ npm i @morpheme/table
 ```vue
 <script setup lang="ts">
 import VDataTable from '@morpheme/table';
-import '@morpheme/table/dist/style.css';
-// or load SCSS styles
-// import '@morpheme/table/src/VDataTable.scss';
 </script>
 
 <template>

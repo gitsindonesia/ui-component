@@ -299,11 +299,35 @@ None
 
 ```css
 :root {
-  --v-checkbox-bg-color: theme('colors.white');
+  --v-checkbox-bg-color: var(--color-white);
   --v-checkbox-border-width: 1px;
   --v-checkbox-border-style: solid;
-  --v-checkbox-border-color: theme('colors.gray.500');
-  --v-checkbox-border-radius: theme('borderRadius.DEFAULT');
+  --v-checkbox-border-color: var(--color-gray-300);
+  --v-checkbox-border-radius: var(--border-radius-md);
+  --v-checkbox-bg-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%230984DD' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e") !important;
+
+  // checked
+  --v-checkbox-checked-bg-color: var(--color-primary-50);
+  --v-checkbox-checked-border-color: var(--color-primary-600);
+
+  // disabled
+  --v-checkbox-disabled-bg-color: var(--color-gray-100);
+  --v-checkbox-disabled-border-color: var(--color-gray-200);
+
+  /* label */
+  --v-checkbox-label-font-size: var(
+    --input-label-font-size,
+    var(--size-font-sm)
+  );
+  --v-checkbox-label-font-weight: var(--font-weight-medium);
+  --v-checkbox-label-display: var(--v-input-label-display, block);
+  --v-checkbox-label-margin-top: 1px;
+  --v-checkbox-label-color: var(--color-gray-700);
+
+  // hint
+  --v-checkbox-hint-font-size: var(--v-input-hint-font-size, 14px);
+  --v-checkbox-hint-color: var(--v-input-hint-color, var(--color-gray-500));
+  --v-checkbox-hint-margin-top: var(--v-input-hint-margin-top, 4px);
 }
 ```
 
@@ -318,7 +342,6 @@ npm i @morpheme/forms
 ```vue
 <script setup lang="ts">
 import {VCheckbox} from '@morpheme/forms';
-import '@morpheme/forms/dist/style.css';
 
 import {ref} from 'vue';
 

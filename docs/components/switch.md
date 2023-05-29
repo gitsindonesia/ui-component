@@ -235,24 +235,37 @@ None
 
 ## CSS Variables
 
-```css
+```scss
 :root {
-  --v-switch-width: theme('width.full');
+  --v-switch-width: 100%;
   /* button */
-  --v-switch-button-bg-color: theme('colors.primary.500');
-  --v-switch-button-border-color: theme('colors.primary.500');
-  --v-switch-button-width: theme('width.11');
-  --v-switch-button-height: theme('height.6');
-  --v-switch-button-padding-y: theme('padding.0');
-  --v-switch-button-padding-x: theme('padding.0');
+  --v-switch-button-bg-color: var(--color-gray-200);
+  --v-switch-button-border-color: var(--color-transparent);
+  --v-switch-button-checked-bg-color: var(--color-primary-500);
+  --v-switch-button-checked-border-color: var(--color-primary-500);
+  --v-switch-button-width: 36px;
+  --v-switch-button-height: 20px;
+  --v-switch-button-padding-y: 0px;
+  --v-switch-button-padding-x: 0px;
+
   /* thumb */
-  --v-switch-thumb-bg-color: theme('colors.white');
-  --v-switch-thumb-width: theme('width.5');
-  --v-switch-thumb-height: theme('height.5');
-  --v-switch-thumb-border-radius: theme('borderRadius.full');
+  --v-switch-thumb-bg-color: var(--color-white);
+  --v-switch-thumb-width: 16px;
+  --v-switch-thumb-height: 16px;
+  --v-switch-thumb-border-radius: var(--border-radius-full);
+  --v-switch-thumb-translate-x: 2px;
+
+  --v-switch-thumb-active-translate-x: 18px;
+
   /* label */
-  --v-switch-label-font-size: theme('fontSize.base');
-  --v-switch-label-font-weight: theme('fontWeight.normal');
+  --v-switch-label-color: var(--v-input-label-color);
+  --v-switch-label-font-size: var(--v-input-label-font-size);
+  --v-switch-label-font-weight: var(--v-input-label-font-weight);
+
+  // hint
+  --v-switch-hint-font-size: var(--v-input-hint-font-size, 14px);
+  --v-switch-hint-color: var(--v-input-hint-color);
+  --v-switch-hint-margin-top: var(--v-input-hint-margin-top);
 }
 ```
 
@@ -267,8 +280,6 @@ npm i @morpheme/switch
 ```vue
 <script setup lang="ts">
 import VSwitch from '@morpheme/switch';
-import '@morpheme/switch/dist/style.css';
-
 import {ref} from 'vue';
 
 const checked = ref(false);

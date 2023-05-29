@@ -119,7 +119,6 @@ npm i @morpheme/logo
 ```vue
 <script setup lang="ts">
 import VLogo from '@morpheme/logo';
-import '@morpheme/logo/dist/style.css';
 </script>
 
 <template>

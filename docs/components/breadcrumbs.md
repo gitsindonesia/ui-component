@@ -196,26 +196,32 @@ The `divider` slot allows you to customize the content of the divider element. T
 
 ```scss
 :root {
-  --breadcrumbs-gap: theme('spacing.3');
-  --breadcrumbs-margin-bottom: theme('spacing.3');
-  --breadcrumbs-font-weight: theme('fontWeight.medium');
+  --breadcrumbs-gap: var(--size-spacing-2);
+  --breadcrumbs-margin-bottom: var(--size-spacing-3);
+  --breadcrumbs-font-weight: var(--font-weight-normal);
+  --breadcrumbs-font-size: var(--size-font-sm);
 
   // item
-  --breadcrumbs-item-color: theme('colors.gray.800');
+  --breadcrumbs-item-color: var(--color-gray-600);
+  --breadcrumbs-item-padding-y: var(--size-spacing-1);
+  --breadcrumbs-item-padding-x: var(--size-spacing-2);
+  --breadcrumbs-item-border-radius: var(--border-radius-lg);
 
   // item hover
-  --breadcrumbs-item-hover-color: theme('colors.primary.700');
+  --breadcrumbs-item-hover-color: var(--color-primary-500);
 
   // item active
-  --breadcrumbs-item-active-color: theme('colors.primary.500');
+  --breadcrumbs-item-active-color: var(--color-primary-500);
+  --breadcrumbs-item-active-bg-color: var(--color-primary-50);
 
   // item disabled
-  --breadcrumbs-item-disabled-color: theme('colors.gray.500');
+  --breadcrumbs-item-disabled-color: var(--color-primary-500);
+  --breadcrumbs-item-disabled-bg-color: var(--color-primary-50);
 
   // divider
-  --breadcrumbs-divider-font-size: theme('fontSize.sm');
-  --breadcrumbs-divider-font-weight: theme('fontWeight.medium');
-  --breadcrumbs-divider-color: theme('colors.gray.400');
+  --breadcrumbs-divider-font-size: var(--size-font-xs);
+  --breadcrumbs-divider-font-weight: var(--font-weight-medium);
+  --breadcrumbs-divider-color: var(--color-gray-500);
 }
 ```
 

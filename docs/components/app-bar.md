@@ -310,14 +310,16 @@ const toggle = () => {
 ```css
 :root {
   --app-bar-height: 54;
-  --app-bar-padding-x: theme('padding.4');
-  --app-bar-padding-y: theme('padding.3');
-  --app-bar-bg-color: theme('colors.white');
-  --app-bar-color: theme('colors.gray.800');
-  --app-bar-transition: 'all 0.3s ease';
-  --app-bar-border-style: 'solid';
-  --app-bar-border-width: theme('borderWidth.DEFAULT');
-  --app-bar-border-color: theme('borderColor.DEFAULT');
+  --app-bar-padding-x: var(--size-spacing-4);
+  --app-bar-padding-y: var(--size-spacing-3);
+  --app-bar-bg-color: var(--color-white);
+  --app-bar-color: var(--color-gray-700);
+  --app-bar-transition: all 0.3s ease;
+  --app-bar-border-style: solid;
+  --app-bar-border-width: 0px;
+  --app-bar-border-color: var(--color-gray-300);
+  --app-bar-shadow: none;
+  --app-bar-z-index: 10;
 }
 ```
 

@@ -6,12 +6,6 @@ outline: deep
 
 The `Avatar` component is a visual representation of a user or an entity. It can be displayed in various shapes (e.g. circle, square, rounded) and can be initialized with either an image or a name.
 
-## Installation
-
-To use the `Avatar` component, you will need to install the `@morpheme/avatar` package and import the styles from `@morpheme/avatar/dist/style.css`.
-
-Alternatively, you can also use the `VAvatar` component from the `@morpheme/ui` package, which is registered globally and does not require manual importing.
-
 ## Usage
 
 ### Basic Usage
@@ -203,15 +197,16 @@ None
 :root {
   --avatar-width: 28px;
   --avatar-height: 28px;
-  --avatar-bg-color: theme('colors.gray.200');
-  --avatar-text-color: theme('colors.gray.800');
-  --avatar-border-color: theme('colors.gray.200');
-  --avatar-border-width: theme('borderWidth.DEFAULT');
-  --avatar-border-style: 'solid';
-  --avatar-border-radius: theme('borderRadius.full');
+  --avatar-bg-color: var(--color-gray-200);
+  --avatar-text-color: var(--color-gray-700);
+  --avatar-border-color: var(--color-gray-200);
+  --avatar-border-width: 0;
+  --avatar-border-style: solid;
+  --avatar-border-radius: var(--border-radius-full);
   --avatar-font-weight: 600;
-  --avatar-font-size: theme('fontSize.base');
+  --avatar-font-size: var(--size-font-sm);
   --avatar-text-transform: uppercase;
+  --avatar-group-spacing: -4px;
 }
 ```
 
@@ -228,7 +223,6 @@ To use the `Avatar` component, you will need to import it and then add it to you
 ```vue
 <script setup lang="ts">
 import VAvatar from '@morpheme/avatar';
-import '@morpheme/avatar/dist/style.css';
 </script>
 
 <template>

@@ -376,43 +376,47 @@ None
 
 ```css
 :root {
-  --v-menus-popper-border: 1px solid #ddd;
+  --v-menus-popper-border-color: var(--color-gray-200);
+  --v-menus-popper-border: 1px solid var(--v-menus-popper-border-color);
   /* menus */
-  --v-menus-margin-y: theme('margin.0');
-  --v-menus-margin-x: theme('margin.0');
-  --v-menus-padding-y: theme('padding.1');
-  --v-menus-padding-x: theme('padding.1');
-  --v-menus-width: theme('width.56');
-  --v-menus-bg-color: theme('colors.white');
+  --v-menus-margin-y: var(--size-spacing-0);
+  --v-menus-margin-x: var(--size-spacing-0);
+  --v-menus-padding-y: var(--size-spacing-1);
+  --v-menus-padding-x: var(--size-spacing-1);
+  --v-menus-width: var(--size-spacing-56);
+  --v-menus-bg-color: var(--color-white);
   --v-menus-border-width: 1px;
   --v-menus-border-style: solid;
-  --v-menus-border-color: theme('colors.transparent');
-  --v-menus-box-shadow: theme('boxShadow.DEFAULT');
-  --v-menus-border-radius: theme('borderRadius.DEFAULT');
+  --v-menus-border-color: transparent;
+  --v-menus-box-shadow: var(--effect-shadow-sm);
+  --v-menus-border-radius: var(--border-radius-lg);
   --v-menus-opacity: 1;
 
   /* button */
-  --v-menus-button-icon-color: theme('colors.gray.500');
+  --v-menus-button-color: var(--color-gray-700);
+  --v-menus-button-icon-color: var(--color-gray-500);
+  --v-menus-button-icon-width: var(--size-spacing-4);
+  --v-menus-button-icon-height: var(--size-spacing-4);
 
   /* item */
-  --v-menus-item-padding-y: theme('spacing.2');
-  --v-menus-item-padding-x: theme('spacing.3');
-  --v-menus-item-bg-color: theme('colors.transparent');
-  --v-menus-item-text-color: theme('colors.gray.800');
-  --v-menus-item-font-size: theme('fontSize.base');
-  --v-menus-item-font-weight: theme('fontWeight.normal');
+  --v-menus-item-padding-y: var(--size-spacing-2);
+  --v-menus-item-padding-x: var(--size-spacing-3);
+  --v-menus-item-bg-color: var(--color-transparent);
+  --v-menus-item-text-color: var(--color-gray-800);
+  --v-menus-item-font-size: var(--size-font-sm);
+  --v-menus-item-font-weight: var(--font-weight-regular);
   --v-menus-item-transition: all 0.2s ease-in-out;
   --v-menus-item-text-align: left;
   --v-menus-item-justify-content: flex-start;
-  --v-menus-item-gap: theme('gap.4');
-  --v-menus-item-border-radius: theme('borderRadius.DEFAULT');
+  --v-menus-item-gap: var(--size-spacing-4);
+  --v-menus-item-border-radius: var(--border-radius-lg);
 
   /* item hover */
-  --v-menus-item-hover-bg-color: theme('colors.gray.100');
-  --v-menus-item-hover-text-color: theme('colors.gray.800');
+  --v-menus-item-hover-bg-color: var(--color-gray-100);
+  --v-menus-item-hover-text-color: var(--color-gray-800);
 
   /* arrow */
-  --v-menus-arrow-border-color: theme('colors.white');
+  --v-menus-arrow-border-color: var(--color-white);
 }
 ```
 
@@ -432,9 +436,6 @@ pnpm add @morpheme/menus
 ```vue
 <script setup lang="ts">
 import VMenus from '@morpheme/menus';
-import '@morpheme/menus/dist/style.css';
-// or use SCSS styles
-// import '@morpheme/menus/src/VMenus.scss';
 </script>
 
 <template>

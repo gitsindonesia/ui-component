@@ -462,43 +462,48 @@ The `footer` slot is used to place modal footer. Use this slot to customize moda
 
 ## CSS Variables
 
-```css
+```scss
 :root {
-  --v-modal-text-color: theme('colors.gray.800');
-  --v-modal-bg-color: theme('colors.white');
-  --v-modal-border-radius: theme('borderRadius.md');
+  --v-modal-text-color: var(--color-gray-700);
+  --v-modal-bg-color: var(--color-white);
+  --v-modal-border-radius: 12px;
   --v-modal-z-index: 30;
-  --v-modal-shadow: theme('boxShadow.lg');
+  --v-modal-shadow: var(--effect-shadow-xl);
   --v-modal-width: 25rem;
   --v-modal-max-width: 100%;
 
   /* content */
-  --v-modal-content-padding-x: theme('padding.4');
-  --v-modal-content-padding-y: theme('padding.0');
+  --v-modal-content-padding-x: var(--size-spacing-4);
+  --v-modal-content-padding-y: var(--size-spacing-4);
   --v-modal-content-text-align: center;
 
   /* panel */
-  --v-modal-panel-padding-x: theme('padding.6');
-  --v-modal-panel-padding-y: theme('padding.6');
-  --v-modal-margin-padding-x: theme('margin.8');
-  --v-modal-margin-padding-y: theme('margin.8');
+  --v-modal-panel-padding-x: var(--size-spacing-4);
+  --v-modal-panel-padding-y: var(--size-spacing-4);
+  --v-modal-margin-padding-x: var(--size-spacing-4);
+  --v-modal-margin-padding-y: var(--size-spacing-4);
   --v-modal-content-text-align: center;
 
   /* title */
-  --v-modal-title-font-size: theme('fontSize.lg');
-  --v-modal-title-font-weight: theme('fontWeight.medium');
-  --v-modal-title-line-height: theme('lineHeight.6');
-  --v-modal-title-letter-spacing: theme('letterSpacing.tight');
-  --v-modal-title-color: theme('colors.gray.900');
+  --v-modal-title-font-weight: var(--font-weight-semibold);
+  --v-modal-title-font-size: var(--size-font-lg);
+  --v-modal-title-line-height: var(--size-font-xl);
+  --v-modal-title-letter-spacing: initial;
+  --v-modal-title-color: var(--color-gray-900);
 
   /* body */
-  --v-modal-body-margin-top: theme('margin.4');
+  --v-modal-body-margin-top: var(--size-spacing-2);
   --v-modal-body-text-align: left;
+  --v-modal-body-font-size: var(--size-font-sm);
+  --v-modal-body-line-height: var(--size-font-md);
 
   /* footer */
-  --v-modal-footer-margin-top: theme('margin.6');
+  --v-modal-footer-margin-top: var(--size-spacing-6);
   --v-modal-footer-justify-content: flex-end;
-  --v-modal-footer-gap: theme('gap.2');
+  --v-modal-footer-gap: var(--size-spacing-2);
+
+  // overlay
+  --v-modal-overlay-blur-size: 8px;
 }
 ```
 
@@ -513,7 +518,6 @@ npm i @morpheme/modal
 ```vue
 <script setup lang="ts">
 import VModal from '@morpheme/modal';
-import '@morpheme/modal/dist/style.css';
 </script>
 
 <template>

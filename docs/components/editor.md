@@ -182,18 +182,23 @@ None
 
 ## CSS Variables
 
-```css
+```scss
 :root {
   --v-editor-height: 300px;
 
   /* label */
   --v-editor-label-font-size: var(
     --input-label-font-size,
-    theme('fontSize.sm')
+    var(--size-font-sm)
   );
-  --v-editor-label-font-weight: theme('fontWeight.normal');
+  --v-editor-label-font-weight: var(--font-weight-regular);
   --v-editor-label-display: var(--v-input-label-display, block);
-  --v-editor-label-margin-bottom: theme('margin.2');
+  --v-editor-label-margin-bottom: var(--size-spacing-2);
+
+  // hint
+  --v-select-hint-font-size: var(--v-input-hint-font-size, 14px);
+  --v-select-hint-color: var(--v-input-hint-color);
+  --v-select-hint-margin-top: var(--v-input-hint-margin-top);
 }
 ```
 

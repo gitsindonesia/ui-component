@@ -1,5 +1,3 @@
-
-
 :root {
   --v-checkbox-bg-color: var(--color-white);
   --v-checkbox-border-width: 1px;
@@ -17,7 +15,10 @@
   --v-checkbox-disabled-border-color: var(--color-gray-200);
 
   /* label */
-  --v-checkbox-label-font-size: var(--input-label-font-size, var(--size-font-sm));
+  --v-checkbox-label-font-size: var(
+    --input-label-font-size,
+    var(--size-font-sm)
+  );
   --v-checkbox-label-font-weight: var(--font-weight-medium);
   --v-checkbox-label-display: var(--v-input-label-display, block);
   --v-checkbox-label-margin-top: 1px;
@@ -126,9 +127,9 @@
 
   &-error {
     color: var(--color-error-500);
-    font-size: 0.875rem/* 14px */;
-    line-height: 1.25rem/* 20px */;
-    margin-top: 0.25rem/* 4px */;
+    font-size: 0.875rem /* 14px */;
+    line-height: 1.25rem /* 20px */;
+    margin-top: 0.25rem /* 4px */;
   }
 
   &--error {

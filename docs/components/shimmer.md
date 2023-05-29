@@ -106,7 +106,7 @@ None
 
 ## CSS Variable
 
-```css
+```scss
 :root {
   --shimmer-bg-image: linear-gradient(
     to right,
@@ -146,7 +146,6 @@ pnpm add @morpheme/shimmer
 ```vue
 <script setup lang="ts">
 import Shimmer from '@morpheme/shimmer';
-import '@morpheme/shimmer/dist/style.css';
 </script>
 
 <template>

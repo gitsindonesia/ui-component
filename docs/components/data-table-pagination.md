@@ -160,7 +160,13 @@ The `default` slot allows you to customize the default content of the `VDataTabl
 
 ## CSS Variables
 
-None
+```scss
+:root {
+  --v-data-table-pagination-bg-color: var(--color-white);
+  --v-data-table-pagination-border-color: var(--color-gray-200);
+  --v-data-table-pagination-text-color: var(--color-gray-700);
+}
+```
 
 ## Storybook
 

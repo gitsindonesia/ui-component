@@ -253,23 +253,23 @@ Here is an example of how to use the action slot:
 
 ## CSS Variables
 
-```css
+```scss
 :root {
   /* toast */
-  --v-toast-wrapper-padding-x: theme('padding.0');
-  --v-toast-wrapper-padding-y: theme('padding.3');
+  --v-toast-wrapper-padding-x: var(--size-spacing-0);
+  --v-toast-wrapper-padding-y: var(--size-spacing-3);
   /* panel */
-  --v-toast-padding-x: theme('padding.4');
-  --v-toast-padding-y: theme('padding.3');
+  --v-toast-padding-x: var(--size-spacing-4);
+  --v-toast-padding-y: var(--size-spacing-3);
   --v-toast-bg-color: #2f3031;
   --v-toast-text-color: white;
-  --v-toast-font-size: theme('fontSize.sm');
-  --v-toast-font-weight: theme('fontWeight.normal');
+  --v-toast-font-size: var(--size-font-sm);
+  --v-toast-font-weight: var(--font-weight-regular);
   --v-toast-width: 328px;
-  --v-toast-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2), 0px 2px 10px rgba(0, 0, 0, 0.1);
-  --v-toast-border-radius: theme('borderRadius.DEFAULT');
+  --v-toast-box-shadow: var(--effect-shadow-lg);
+  --v-toast-border-radius: var(--border-radius-lg);
   --v-toast-text-align: left;
-  --v-toast-gap: theme('gap.4');
+  --v-toast-gap: var(--size-spacing-4);
 }
 ```
 
@@ -284,7 +284,6 @@ npm i @morpheme/toast
 ```vue
 <script setup lang="ts">
 import VToast from '@morpheme/toast';
-import '@morpheme/toast/dist/style.css';
 </script>
 
 <template>

@@ -932,53 +932,63 @@ Here is example of using slot in `VListItem` component:
 
 ```scss
 :root {
-  --v-list-padding-y: theme('padding.1');
-  --v-list-padding-x: theme('padding.1');
-  --v-list-gap: theme('gap.0');
-  --v-list-bg-color: theme('colors.transparent');
+  --v-list-padding-y: var(--size-spacing-1);
+  --v-list-padding-x: var(--size-spacing-1);
+  --v-list-gap: 0;
+  --v-list-bg-color: var(--color-transparent);
 
   /* item */
-  --v-list-item-bg-color: theme('colors.transparent');
-  --v-list-item-color: inherit;
-  --v-list-item-padding-y: theme('padding.2');
-  --v-list-item-padding-x: theme('padding.3');
-  --v-list-item-border-radius: theme('borderRadius.DEFAULT');
-  --v-list-item-border-width: theme('borderWidth.DEFAULT');
-  --v-list-item-border-color: theme('colors.transparent');
+  --v-list-item-bg-color: var(--color-transparent);
+  --v-list-item-color: var(--color-gray-700);
+  --v-list-item-padding-y: var(--size-spacing-2);
+  --v-list-item-padding-x: var(--size-spacing-3);
+  --v-list-item-border-radius: var(--border-radius-md);
+  --v-list-item-border-width: 0;
+  --v-list-item-border-color: var(--color-transparent);
   --v-list-item-border-style: solid;
-  --v-list-item-gap: theme('gap.4');
-  --v-list-item-font-size: theme('fontSize.base');
-  --v-list-item-font-weight: theme('fontWeight.normal');
-  --v-list-item-line-height: theme('lineHeight.normal');
+  --v-list-item-gap: var(--size-spacing-3);
+  --v-list-item-font-size: var(--size-font-sm);
+  --v-list-item-font-weight: var(--font-weight-regular);
+  --v-list-item-line-height: 20px;
   --v-list-item-text-align: left;
+  --v-list-item-icon-width: var(--size-spacing-4);
+  --v-list-item-icon-height: var(--size-spacing-4);
 
   /* item hover */
-  --v-list-item-hover-bg-color: theme('colors.gray.100');
-  --v-list-item-hover-color: theme('colors.gray.700');
+  --v-list-item-hover-bg-color: var(--color-gray-100);
+  --v-list-item-hover-color: var(--color-gray-700);
 
   /* append & prepend */
-  --v-list-item-append-prepend-min-width: theme('width.5');
+  --v-list-item-append-prepend-min-width: var(--size-spacing-5);
 
   /* item header */
   --v-list-item-header-bg-color: var(--v-list-item-bg-color);
-  --v-list-item-header-color: theme('colors.gray.500');
-  --v-list-item-header-padding-y: theme('padding.1');
+  --v-list-item-header-color: var(--color-gray-500);
+  --v-list-item-header-padding-y: var(--size-spacing-1);
   --v-list-item-header-padding-x: var(--v-list-item-padding-x);
   --v-list-item-header-border-radius: var(--v-list-item-border-radius);
   --v-list-item-header-border-width: var(--v-list-item-border-width);
   --v-list-item-header-border-color: var(--v-list-item-border-color);
   --v-list-item-header-border-style: var(--v-list-item-border-style);
   --v-list-item-header-gap: var(--v-list-item-gap);
-  --v-list-item-header-font-size: theme('fontSize.sm');
-  --v-list-item-header-font-weight: var(--v-list-item-font-weight);
+  --v-list-item-header-font-size: var(--size-font-xs);
+  --v-list-item-header-font-weight: var(--font-weight-medium);
   --v-list-item-header-line-height: var(--v-list-item-line-height);
   --v-list-item-header-text-transform: uppercase;
   --v-list-item-header-text-align: var(--v-list-item-text-align);
 
   /* divider */
-  --v-list-item-divider-width: theme('borderWidth.DEFAULT');
-  --v-list-item-divider-color: theme('colors.gray.200');
+  --v-list-item-divider-width: 1px;
+  --v-list-item-divider-color: var(--color-gray-200);
   --v-list-item-divider-style: solid;
+
+  // icon
+  --v-list-item-icon-color: var(--v-list-item-color);
+
+  // append text
+  --v-list-item-append-text-color: var(--v-list-item-color);
+  --v-list-item-append-font-size: var(--v-list-item-font-size);
+  --v-list-item-append-font-weight: var(--v-list-item-font-weight);
 }
 ```
 
@@ -997,9 +1007,6 @@ Then, use it in the template like so:
 ```vue
 <script setup lang="ts">
 import {VList, VListItem} from '@morpheme/list';
-import '@morpheme/list/dist/style.css';
-// Or use the SCSS styles
-// import '@morpheme/list/src/List.scss';
 </script>
 
 <template>

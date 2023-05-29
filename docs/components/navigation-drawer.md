@@ -192,7 +192,6 @@ Use `sticky` prop to apply sticky position to the navigation drawer.
 ```vue
 <script setup lang="ts">
 import {NavDrawer} from '@morpheme/nav-drawer';
-import '@morpheme/nav-drawer/dist/style.css';
 </script>
 
 <template>
@@ -231,7 +230,6 @@ You can toggle show or hide the navigation drawer using `v-model` or `modelValue
 ```vue
 <script setup lang="ts">
 import {NavDrawer} from '@morpheme/nav-drawer';
-import '@morpheme/nav-drawer/dist/style.css';
 import {ref} from 'vue';
 import Button from '@morpheme/button';
 
@@ -296,7 +294,6 @@ To enable expand on hover effect, you need to apply two props: `expand-on-hover`
 ```vue {7,15-16}
 <script setup lang="ts">
 import {NavDrawer} from '@morpheme/nav-drawer';
-import '@morpheme/nav-drawer/dist/style.css';
 import {ref} from 'vue';
 import Button from '@morpheme/button';
 
@@ -503,9 +500,9 @@ The default slot is used to place any content inside navigation drawer.
 :root {
   --nav-drawer-width: 248px;
   --nav-drawer-transition: all 0.3s ease-out;
-  --nav-drawer-bg-color: #fff;
-  --nav-drawer-text-color: theme('colors.gray.800');
-  --nav-drawer-shadow: 'none';
+  --nav-drawer-bg-color: var(--color-white);
+  --nav-drawer-text-color: var(--color-gray-800);
+  --nav-drawer-shadow: none;
 }
 ```
 
@@ -520,7 +517,6 @@ Here is the example to create indigo colored navigation drawer.
 ```vue
 <script setup lang="ts">
 import {NavDrawer} from '@morpheme/nav-drawer';
-import '@morpheme/nav-drawer/dist/style.css';
 </script>
 
 <template>
@@ -550,7 +546,6 @@ npm i @morpheme/nav-drawer
 ```vue
 <script setup lang="ts">
 import {NavDrawer} from '@morpheme/nav-drawer';
-import '@morpheme/nav-drawer/dist/style.css';
 </script>
 
 <template>

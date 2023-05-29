@@ -223,44 +223,47 @@ Use this slot to customize the text or icon displayed in the "last" button.
 
 ## CSS Variables
 
-```css
+```scss
 :root {
-  --v-pagination-shadow: theme('boxShadow.sm');
+  --v-pagination-shadow: var(--effect-shadow-xs);
+  --v-pagination-border-radius: var(--border-radius-lg);
+  --v-pagination-gap: var(--size-spacing-0);
 
   /* item */
-  --v-pagination-item-padding-x: theme('padding.4');
-  --v-pagination-item-padding-y: theme('padding.2');
-  --v-pagination-item-bg-color: theme('colors.white');
-  --v-pagination-item-text-color: theme('colors.gray.700');
-  --v-pagination-item-border-color: theme('colors.gray.300');
-  --v-pagination-item-border-radius: theme('borderRadius.DEFAULT');
-  --v-pagination-item-border-width: theme('borderWidth.DEFAULT');
-  --v-pagination-item-font-size: theme('fontSize.sm');
-  --v-pagination-item-font-weight: theme('fontWeight.medium');
-  --v-pagination-item-height: 38px;
-  --v-pagination-item-gap: theme('padding.2');
+  --v-pagination-item-padding-x: var(--size-spacing-4);
+  --v-pagination-item-padding-y: var(--size-spacing-2);
+  --v-pagination-item-bg-color: var(--color-white);
+  --v-pagination-item-text-color: var(--color-gray-700);
+  --v-pagination-item-border-color: var(--color-gray-300);
+  --v-pagination-item-border-radius: var(--border-radius-lg);
+  --v-pagination-item-border-width: 1px;
+  --v-pagination-item-font-size: var(--size-font-sm);
+  --v-pagination-item-font-weight: var(--font-weight-semibold);
+  --v-pagination-item-height: 40px;
+  --v-pagination-item-gap: var(--size-spacing-2);
 
   /* item active */
-  --v-pagination-item-active-bg-color: theme('colors.primary.500');
-  --v-pagination-item-active-border-color: theme('colors.primary.500');
-  --v-pagination-item-active-text-color: theme('colors.white');
+  --v-pagination-item-active-bg-color: var(--color-primary-500);
+  --v-pagination-item-active-border-color: var(--color-primary-500);
+  --v-pagination-item-active-text-color: var(--color-white);
 
   /* item hover */
-  --v-pagination-item-hover-bg-color: theme('colors.gray.50');
+  --v-pagination-item-hover-bg-color: var(--color-gray-50);
 
   /* item disabled */
-  --v-pagination-item-disabled-bg-color: inherit;
-  --v-pagination-item-disabled-text-color: theme('colors.gray.400');
+  --v-pagination-item-disabled-bg-color: var(--v-pagination-item-bg-color);
+  --v-pagination-item-disabled-border-color: var(--v-pagination-item-border-color);
+  --v-pagination-item-disabled-text-color: var(--color-gray-400);
 
   /* item action */
-  --v-pagination-item-action-padding-x: theme('padding.2');
-  --v-pagination-item-action-padding-y: theme('padding.2');
+  --v-pagination-item-action-padding-x: var(--size-spacing-2);
+  --v-pagination-item-action-padding-y: var(--size-spacing-2);
   /* action sm */
-  --v-pagination-sm-item-action-padding-x: theme('padding.2');
-  --v-pagination-sm-item-action-padding-y: theme('padding.2');
+  --v-pagination-sm-item-action-padding-x: var(--size-spacing-2);
+  --v-pagination-sm-item-action-padding-y: var(--size-spacing-2);
   /* action sm */
-  --v-pagination-lg-item-action-padding-x: theme('padding.4');
-  --v-pagination-lg-item-action-padding-y: theme('padding.4');
+  --v-pagination-lg-item-action-padding-x: var(--size-spacing-4);
+  --v-pagination-lg-item-action-padding-y: var(--size-spacing-4);
 }
 ```
 
@@ -275,7 +278,6 @@ npm i @morpheme/pagination
 ```vue
 <script setup lang="ts">
 import VPagination from '@morpheme/pagination';
-import '@morpheme/pagination/dist/style.css';
 </script>
 
 <template>

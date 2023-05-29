@@ -546,9 +546,7 @@ npm i @morpheme/forms
 ```vue
 <script setup lang="ts">
 import {ref} from 'vue';
-
 import {VFileUpload} from '@morpheme/forms';
-import '@morpheme/forms/dist/style.css';
 
 const value = ref();
 </script>
