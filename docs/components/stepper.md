@@ -182,7 +182,7 @@ const items = [
 | [update:modelValue](#updateModelValue) | `(value: boolean)` | Fired when step value changed                                                                    |
 | click                                  | `({item, index})`  | Fired when step item is clicked. _Only available when [`clickable`](#clickable) prop is enabled_ |
 
-## Manual Installation
+## Standalone Installation
 
 You can also install the `Stepper` component individually via `@morpheme/stepper` package:
 

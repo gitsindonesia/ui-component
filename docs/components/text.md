@@ -213,7 +213,7 @@ Default vue slot.
 }
 ```
 
-## Manual Installation
+## Standalone Installation
 
 You can also install the `VText` component individually via `@morpheme/text` package:
 

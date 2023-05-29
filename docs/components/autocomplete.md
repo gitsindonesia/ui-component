@@ -173,7 +173,7 @@ None
 
 None
 
-## Manual Installation
+## Standalone Installation
 
 To install the `VAutocomplete` component individually, you can use the `@morpheme/autocomplete` package:
 

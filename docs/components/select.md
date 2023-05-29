@@ -603,7 +603,7 @@ Customize the display for each item in the list.
 --v-select-option-hover-text-color: theme('colors.white');
 ```
 
-## Manual Installation
+## Standalone Installation
 
 You can also install the `Select` component individually via `@morpheme/select` package:
 

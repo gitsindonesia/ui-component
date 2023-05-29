@@ -185,7 +185,7 @@ Slot for custom label content to be displayed within the progress bar. Receives 
 }
 ```
 
-## Manual Installation
+## Standalone Installation
 
 You can also install the `Progress Bar` component individually via `@morpheme/progress-bar` package:
 

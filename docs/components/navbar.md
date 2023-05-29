@@ -107,7 +107,7 @@ None
 
 None
 
-## Manual Installation
+## Standalone Installation
 
 You can also install the `Navbar` component individually via `@morpheme/navbar` package:
 

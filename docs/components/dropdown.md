@@ -356,7 +356,7 @@ module.exports = {
 };
 ```
 
-## Manual Installation
+## Standalone Installation
 
 You can also install the `VDropdown` component individually via `@morpheme/dropdown` package:
 

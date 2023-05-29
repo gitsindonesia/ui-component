@@ -158,7 +158,7 @@ None
 
 None
 
-## Manual Installation
+## Standalone Installation
 
 You can also install the `Radio` component individually via `@morpheme/forms` package:
 

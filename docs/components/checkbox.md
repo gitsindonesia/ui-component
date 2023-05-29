@@ -307,7 +307,7 @@ None
 }
 ```
 
-## Manual Installation
+## Standalone Installation
 
 You can also install the `Checkbox` component individually via `@morpheme/forms` package:
 

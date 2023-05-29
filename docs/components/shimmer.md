@@ -121,7 +121,7 @@ None
 }
 ```
 
-## Manual Installation
+## Standalone Installation
 
 You can also install the `Shimmer` component individually via `@morpheme/shimmer` package:
 

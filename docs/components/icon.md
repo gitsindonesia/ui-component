@@ -70,7 +70,7 @@ None
 
 None
 
-## Manual Installation
+## Standalone Installation
 
 If you want to install the Icon component individually, you can use the `@morpheme/icon` package:
 

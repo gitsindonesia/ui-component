@@ -344,7 +344,7 @@ import {ref} from 'vue';
 
 The `color` prop on the `VAppBar` component specifies the color for the AppBar. The corresponding CSS class, `.app-bar-indigo`, is then used to set the background color and text color using the `--app-bar-bg-color` and `--app-bar-color` CSS variables, respectively. The `theme` helper is used to retrieve the appropriate color values from the Tailwind theme.
 
-## Manual Installation
+## Standalone Installation
 
 You can install the `AppBar` component individually using the `@morpheme/app-bar` package.
 

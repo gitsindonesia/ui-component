@@ -75,7 +75,7 @@ None
 
 None
 
-## Manual Installation
+## Standalone Installation
 
 You can also install the `Tooltip` component individually via `@morpheme/tooltip` package:
 

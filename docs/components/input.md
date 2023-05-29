@@ -840,7 +840,7 @@ Allows you to customize the append slot.
 }
 ```
 
-## Manual Installation
+## Standalone Installation
 
 You can also install the `VInput` component individually via `@morpheme/forms` package:
 

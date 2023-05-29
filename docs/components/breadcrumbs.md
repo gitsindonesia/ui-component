@@ -246,7 +246,7 @@ Here is an example of how you can customize the font size and color of the bread
 </style>
 ```
 
-## Manual Installation
+## Standalone Installation
 
 You can also install the `Breadcrumbs` component individually via `@morpheme/breadcrumbs` package:
 

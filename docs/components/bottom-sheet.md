@@ -365,7 +365,7 @@ A slot for placing the content such as `VBottomSheetHeader`, `VBottomSheetFooter
 }
 ```
 
-## Manual Installation
+## Standalone Installation
 
 You can also install the `BottomSheet` component individually via `@morpheme/bottom-sheet` package:
 

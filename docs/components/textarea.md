@@ -309,7 +309,7 @@ This slot is used to customize the appearance of the character count when the `c
 
 None.
 
-## Manual Installation
+## Standalone Installation
 
 You can also install the `VTextarea` component individually via `@morpheme/forms` package:
 

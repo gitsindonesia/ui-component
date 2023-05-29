@@ -278,7 +278,7 @@ None
 
 None
 
-## Manual Installation
+## Standalone Installation
 
 You can also install the `QuillEditor` component individually via `@morpheme/quill-editor` package:
 

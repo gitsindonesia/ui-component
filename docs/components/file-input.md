@@ -535,7 +535,7 @@ Example:
 
 None
 
-## Manual Installation
+## Standalone Installation
 
 You can also install the `FileUpload` component individually via `@morpheme/forms` package:
 

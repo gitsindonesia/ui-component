@@ -847,7 +847,7 @@ Example:
 }
 ```
 
-## Manual Installation
+## Standalone Installation
 
 You can also install the `DataTable` component individually via `@morpheme/table` package:
 

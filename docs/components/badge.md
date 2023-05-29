@@ -220,7 +220,7 @@ This allows you to easily create custom color styles for the `VBadge` component,
 
 Note that you can also customize the other visual aspects of the `VBadge` component, such as the border style, padding, font size, and more, by defining the appropriate CSS variables in your custom class.
 
-## Manual Installation
+## Standalone Installation
 
 In addition to installing the `VBadge` component as part of the `@morpheme/ui` package, you can also install it individually using the `@morpheme/badge` package.
 

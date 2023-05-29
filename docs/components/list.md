@@ -984,7 +984,7 @@ Here is example of using slot in `VListItem` component:
 
 View full styles [here](https://github.com/gitsindonesia/ui-component/blob/main/packages/list/src/List.scss).
 
-## Manual Installation
+## Standalone Installation
 
 You can also install the `VList` component individually via `@morpheme/list` package:
 

@@ -313,7 +313,7 @@ To customize the `VCard`, you can define your own CSS class and set the desired 
 </style>
 ```
 
-## Manual Installation
+## Standalone Installation
 
 You can also install the `Card` component individually via `@morpheme/card` package:
 

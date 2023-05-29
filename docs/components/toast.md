@@ -273,7 +273,7 @@ Here is an example of how to use the action slot:
 }
 ```
 
-## Manual Installation
+## Standalone Installation
 
 You can also install the `Toast` component individually via `@morpheme/toast` package:
 

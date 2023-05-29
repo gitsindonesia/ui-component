@@ -150,7 +150,7 @@ None
 
 None
 
-## Manual Installation
+## Standalone Installation
 
 You can also install the `NavDrawer` component individually via `@morpheme/nav-drawer` package:
 

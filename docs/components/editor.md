@@ -197,7 +197,7 @@ None
 }
 ```
 
-## Manual Installation
+## Standalone Installation
 
 You can also install the `Editor` component individually via `@morpheme/editor` package:
 

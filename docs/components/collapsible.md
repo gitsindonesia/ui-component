@@ -210,7 +210,7 @@ Here's an example of how you can use the default slot:
 
 None
 
-## Manual Installation
+## Standalone Installation
 
 You can also install the `Collapsible` component individually via `@morpheme/collapsible` package:
 

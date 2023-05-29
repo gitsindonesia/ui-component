@@ -502,7 +502,7 @@ The `footer` slot is used to place modal footer. Use this slot to customize moda
 }
 ```
 
-## Manual Installation
+## Standalone Installation
 
 You can also install the `Modal` component individually via `@morpheme/modal` package:
 

@@ -264,7 +264,7 @@ Use this slot to customize the text or icon displayed in the "last" button.
 }
 ```
 
-## Manual Installation
+## Standalone Installation
 
 You can also install the `Pagination` component individually via `@morpheme/pagination` package:
 

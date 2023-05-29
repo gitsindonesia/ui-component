@@ -416,7 +416,7 @@ None
 }
 ```
 
-## Manual Installation
+## Standalone Installation
 
 You can also install the `Menus` component individually via `@morpheme/menus` package:
 

@@ -94,7 +94,7 @@ const rating = ref(3);
 
 None.
 
-## Manual Installation
+## Standalone Installation
 
 You can also install the `Rating` component individually via `@morpheme/rating` package:
 

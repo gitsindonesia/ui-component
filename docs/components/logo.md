@@ -108,7 +108,7 @@ None
 
 None
 
-## Manual Installation
+## Standalone Installation
 
 You can also install the `Logo` component individually via `@morpheme/logo` package:
 

@@ -82,7 +82,7 @@ You can customize the size of the spinner using the `xSmall`, `small`, `large`, 
 | [large](#size)  | `boolean`                                          | `false`   |
 | [xLarge](#size) | `boolean`                                          | `false`   |
 
-## Manual Installation
+## Standalone Installation
 
 You can also install the `Spinner` component individually via `@morpheme/spnner` package:
 

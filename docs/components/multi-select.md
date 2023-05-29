@@ -561,7 +561,7 @@ Slot Props
 }
 ```
 
-## Manual Installation
+## Standalone Installation
 
 You can also install the `Multi Select` component individually via `@morpheme/multi-select` package:
 

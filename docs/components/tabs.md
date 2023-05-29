@@ -541,7 +541,7 @@ Add an item to the end of the tab list
 }
 ```
 
-## Manual Installation
+## Standalone Installation
 
 You can also install the `Tabs` component individually via `@morpheme/tabs` package:
 

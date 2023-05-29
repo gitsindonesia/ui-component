@@ -449,7 +449,7 @@ None
 
 None
 
-## Manual Installation
+## Standalone Installation
 
 You can also install the `VFormSelect` component individually via `@morpheme/forms` package:
 

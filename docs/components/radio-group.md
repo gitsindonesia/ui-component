@@ -461,7 +461,7 @@ Customize radio label text
 
 None
 
-## Manual Installation
+## Standalone Installation
 
 You can also install the `VRadioGroup` component individually via `@morpheme/forms` package:
 

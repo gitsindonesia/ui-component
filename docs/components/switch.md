@@ -256,7 +256,7 @@ None
 }
 ```
 
-## Manual Installation
+## Standalone Installation
 
 You can also install the `Switch` component individually via `@morpheme/switch` package:
 

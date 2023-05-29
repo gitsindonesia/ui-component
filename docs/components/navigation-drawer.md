@@ -539,7 +539,7 @@ import '@morpheme/nav-drawer/dist/style.css';
 
 In the example above, first, we need to specify the custom color via `color` prop. For example, set to `indigo` and this will set class `nav-drawer-indigo` respectively so you can define your own style by utilizing the CSS Properties like above.
 
-## Manual Installation
+## Standalone Installation
 
 You can also install the `NavDrawer` component individually via `@morpheme/nav-drawer` package:
 

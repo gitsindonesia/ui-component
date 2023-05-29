@@ -531,7 +531,7 @@ module.exports = {
 };
 ```
 
-## Manual Installation
+## Standalone Installation
 
 You can also install the `Button` component individually via `@morpheme/button` package:
 

@@ -215,7 +215,7 @@ None
 }
 ```
 
-## Manual Installation
+## Standalone Installation
 
 To install the `Avatar` component individually, you can use the `@morpheme/avatar` package. Here's how to install it using NPM:
 
