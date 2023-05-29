@@ -2,7 +2,7 @@
 import {TabGroup} from '@headlessui/vue';
 import type {TabVariants} from './variants';
 import type {DefaultColors} from '@morpheme/theme/defaultTheme';
-import {computed} from 'vue';
+import {useVModel} from '@vueuse/core';
 
 const props = withDefaults(
   defineProps<{
@@ -23,14 +23,7 @@ const emit =
     (e: 'update:modelValue', value: number): void;
   }>();
 
-const modelValue = computed({
-  get() {
-    return props.modelValue;
-  },
-  set(value: number) {
-    emit('update:modelValue', value);
-  },
-});
+const modelValue = useVModel(props, 'modelValue', emit);
 
 function onTabChange(value: number) {
   modelValue.value = value;
