@@ -346,14 +346,15 @@ const isOpen = ref(true);
 
 <LivePreview src="components-alert--custom" />
 
-## Manual Installation
+## Standalone Installation
 
-You can also install the `Alert` component individually via `@morpheme/alert` package:
+You can also install the `VAlert` component individually via `@morpheme/alert` package:
 
 ```bash
-yarn install @morpheme/alert
+npm i @morpheme/alert
 ```
 
+Then, use it like so.
 ```vue
 <script setup lang="ts">
 import VAlert from '@morpheme/alert';
