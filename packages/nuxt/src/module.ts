@@ -324,6 +324,26 @@ const components: AddComponentOptions[] = [
     filePath: '@morpheme/tabs/src/VTabsSlider.vue',
   },
   {
+    name: 'VTabGroup',
+    filePath: '@morpheme/tabs/src/VTabGroup.vue',
+  },
+  {
+    name: 'VTabList',
+    filePath: '@morpheme/tabs/src/VTabList.vue',
+  },
+  {
+    name: 'VTabItem',
+    filePath: '@morpheme/tabs/src/VTabItem.vue',
+  },
+  {
+    name: 'VTabPanels',
+    filePath: '@morpheme/tabs/src/VTabPanels.vue',
+  },
+  {
+    name: 'VTabPanel',
+    filePath: '@morpheme/tabs/src/VTabPanel.vue',
+  },
+  {
     name: 'VToast',
     filePath: '@morpheme/toast/src/VToast.vue',
   },

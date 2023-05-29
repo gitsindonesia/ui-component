@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import {defaultColors} from '@morpheme/theme/defaultTheme';
+import {tabVariants} from '@morpheme/tabs'
 
 useHead({
   title: 'Morpheme UI Playground',
@@ -312,9 +313,22 @@ const timelineItems = [
         ]"
       />
 
-      <VTabs>
-        <VTabsSlider />
-      </VTabs>
+      <VTabGroup
+        v-for="variant in tabVariants"
+        :key="variant"
+        :variant="variant"
+      >
+        <VTabList>
+          <VTabItem>Tab 1</VTabItem>
+          <VTabItem>Tab 2</VTabItem>
+          <VTabItem>Tab 3</VTabItem>
+        </VTabList>
+        <VTabPanels>
+          <VTabPanel>Content 1</VTabPanel>
+          <VTabPanel>Content 2</VTabPanel>
+          <VTabPanel>Content 3</VTabPanel>
+        </VTabPanels>
+      </VTabGroup>
     </div>
 
     <hr class="dark:border-neutral-700" />
