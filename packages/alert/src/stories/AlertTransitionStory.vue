@@ -2,7 +2,6 @@
 import {ref} from 'vue';
 import Button from '@morpheme/button';
 import VAlert from '../VAlert.vue';
-import '@morpheme/button/src/VBtn.scss';
 
 const isOpen = ref(true);
 </script>

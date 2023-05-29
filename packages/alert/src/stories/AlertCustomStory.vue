@@ -9,14 +9,14 @@ const isOpen = ref(true);
   <VAlert v-model="isOpen" color="indigo"> Alert text </VAlert>
 </template>
 
-<style>
+<style scoped>
 .alert-indigo {
-  --alert-bg-color: theme('colors.indigo.600');
-  --alert-text-color: theme('colors.white');
-  --alert-border-radius: theme('borderRadius.lg');
-  --alert-border-color: theme('colors.indigo.600');
-  --alert-border-width: theme('borderWidth.2');
-  --alert-padding-x: theme('padding.6');
-  --alert-padding-y: theme('padding.4');
+  --alert-bg-color: var(--color-indigo-600);
+  --alert-text-color: var(--color-white);
+  --alert-border-radius: var(--border-radius-lg);
+  --alert-border-color: var(--color-indigo-600);
+  --alert-border-width: 2px;
+  --alert-padding-x: var(--size-spacing-6);
+  --alert-padding-y: var(--size-spacing-4);
 }
 </style>

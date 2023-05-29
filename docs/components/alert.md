@@ -295,15 +295,26 @@ A slot for customizing the icon in the dismiss button.
 
 ## CSS Variables
 
-| Variable                                          | Default Value                  |
-| ------------------------------------------------- | ------------------------------ |
-| [`--alert-bg-color`](#--alert-bg-color)           | `theme('colors.white')`        |
-| [`--alert-text-color`](#--alert-text-color)       | `theme('colors.gray.800')`     |
-| [`--alert-border-radius`](#--alert-border-radius) | `theme('borderRadius.md')`     |
-| [`--alert-border-color`](#--alert-border-color)   | `theme('colors.gray.500')`     |
-| [`--alert-border-width`](#--alert-border-width)   | `theme('borderWidth.DEFAULT')` |
-| [`--alert-padding-x`](#--alert-padding-x)         | `theme('padding.4')`           |
-| [`--alert-padding-y`](#--alert-padding-y)         | `theme('padding.3')`           |
+```scss
+:root {
+  --alert-bg-color: var(--color-white);
+  --alert-text-color: var(--color-gray-700);
+  --alert-border-color: var(--color-gray-300);
+  --alert-border-radius: var(--border-radius-lg);
+  --alert-border-width: 1px;
+  --alert-padding-x: var(--size-spacing-4);
+  --alert-padding-y: var(--size-spacing-3);
+  --alert-gap: 0.75rem;
+  --alert-font-size: var(--size-font-sm);
+  --alert-line-height: 20px;
+  --alert-icon-size: 20px;
+
+  // title
+  --alert-title-font-size: var(--size-font-sm);
+  --alert-title-font-weight: var(--font-weight-semibold);
+  --alert-title-line-height: 20px;
+}
+```
 
 ## Customization
 
@@ -322,13 +333,13 @@ const isOpen = ref(true);
 
 <style>
 .alert-indigo {
-  --alert-bg-color: theme('colors.indigo.600');
-  --alert-text-color: theme('colors.white');
-  --alert-border-radius: theme('borderRadius.lg');
-  --alert-border-color: theme('colors.indigo.600');
-  --alert-border-width: theme('borderWidth.2');
-  --alert-padding-x: theme('padding.6');
-  --alert-padding-y: theme('padding.4');
+  --alert-bg-color: var(--color-indigo-600);
+  --alert-text-color: var(--color-white);
+  --alert-border-radius: var(--border-radius-lg);
+  --alert-border-color: var(--color-indigo-600);
+  --alert-border-width: 2px;
+  --alert-padding-x: var(--size-spacing-6);
+  --alert-padding-y: var(--size-spacing-4);
 }
 </style>
 ```
