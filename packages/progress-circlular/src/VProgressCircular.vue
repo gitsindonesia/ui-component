@@ -118,7 +118,7 @@ const computedTextColor = computed(() => {
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .v-progress-circular {
   display: inline-block;
 
