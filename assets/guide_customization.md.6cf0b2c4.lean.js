@@ -1,1 +1,0 @@
-import{_ as s,o as n,c as a,V as l}from"./chunks/framework.8abd2c66.js";const A=JSON.parse('{"title":"Customization","description":"","frontmatter":{},"headers":[],"relativePath":"guide/customization.md"}'),o={name:"guide/customization.md"},p=l("",14),e=[p];function t(c,r,D,F,y,C){return n(),a("div",null,e)}const d=s(o,[["render",t]]);export{A as __pageData,d as default};
