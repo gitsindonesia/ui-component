@@ -397,11 +397,13 @@ export const ElevateOnScroll: Story<{}> = () => ({
 export const HideOnScroll: Story<{}> = () => ({
   components: {VAppBar},
   template: `
-  <div class="mt-5 h-screen bg-primary-500 text-white">
-    <VAppBar fixed hide-on-scroll transition="slide-down">
+  <div class="mt-5 h-screen bg-gray-50">
+    <VAppBar fixed hide-on-scroll transition="slide-down"
+      color="primary"
+    >
       AppBar Hide On Scroll
     </VAppBar>
-    <main class="container mx-auto p-6 space-y-2 mt-14">
+    <main class="container mx-auto p-6 space-y-2">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pellentesque diam, ac sollicitudin urna. Integer blandit quam quis arcu tempus, non consequat leo consectetur. Aliquam id consectetur nibh. Pellentesque tincidunt dolor eu malesuada sagittis. Nam eu porttitor libero. Pellentesque aliquam, metus ac sagittis tincidunt, quam eros vehicula lacus, sed rhoncus nulla mauris a eros. Suspendisse imperdiet blandit risus vitae hendrerit. Nunc eget nisl ut tellus efficitur hendrerit ac sed nisl. Nunc sed blandit nulla, at scelerisque justo. Duis mollis interdum orci. Cras pulvinar laoreet massa, at iaculis enim efficitur eu. Nam et lacus at turpis gravida aliquam nec nec arcu. Sed venenatis enim nec velit feugiat, vitae ullamcorper tellus lacinia.</p>
       <p>Sed ut ante id elit maximus accumsan. Sed at ligula vitae velit elementum scelerisque. Phasellus vel felis vel lacus sodales ullamcorper. Fusce pharetra lorem ac ultricies laoreet. Pellentesque congue nunc vitae nibh bibendum, id volutpat ligula pretium. Suspendisse semper ipsum sit amet interdum efficitur. Quisque elit nunc, porttitor ut eleifend at, fermentum sit amet elit. Etiam a ultricies felis, sed eleifend sapien. Donec id eros velit. Morbi blandit commodo vulputate. Praesent interdum sollicitudin rhoncus. Maecenas commodo ac ante eu egestas. In hac habitasse platea dictumst. Cras quis consequat justo.</p>
     </main>
