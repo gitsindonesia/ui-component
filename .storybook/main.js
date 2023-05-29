@@ -11,14 +11,14 @@ module.exports = {
   features: {
     storyStoreV7: true,
   },
-  viteFinal: (config) => {
-    return {
-      ...config,
-      build: {
-        ...config.build,
-        sourcemap: false,
-        // target: ['es2020'],
-      },
-    };
-  },
+  // viteFinal: (config) => {
+  //   return {
+  //     ...config,
+  //     build: {
+  //       ...config.build,
+  //       sourcemap: false,
+  //       // target: ['es2020'],
+  //     },
+  //   };
+  // },
 };

@@ -6,6 +6,11 @@ import VCard from '@morpheme/card';
 import {ref} from 'vue';
 import {Story} from '@storybook/vue3';
 import VTabsSlider from './VTabsSlider.vue';
+import VTabList from './VTabList.vue';
+import VTabPanels from './VTabPanels.vue';
+import VTabPanel from './VTabPanel.vue';
+import VTabGroup from './VTabGroup.vue';
+import VTabItem from './VTabItem.vue';
 
 function createItems(len = 20, additionalItem = {}) {
   return [...Array(20)].map((v, k) => ({
@@ -46,7 +51,6 @@ export default {
     },
   },
   args: {
-    modelValue: 0,
     items: createItems(),
   },
 };
@@ -572,5 +576,37 @@ export const DarkMode: Story = (args) => ({
   <div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
     <VTabs v-bind='args'/>
   </div>
+  `,
+});
+
+export const HeadlessUI: Story = (args) => ({
+  components: {
+    VTabGroup,
+    VTabsSlider,
+    VTabList,
+    VTabItem,
+    VTabPanels,
+    VTabPanel,
+  },
+  setup() {
+    const tab = ref(1);
+    delete args.items;
+    return {args, tab};
+  },
+  template: `
+    <VTabGroup v-model="tab" v-bind="args">
+      <VTabList>
+        <VTabItem>Tab 1</VTabItem>
+        <VTabItem>Tab 2</VTabItem>
+        <VTabItem>Tab 3</VTabItem>
+      </VTabList>
+      <VTabPanels>
+        <VTabPanel>Tab 1 content</VTabPanel>
+        <VTabPanel>Tab 2 content</VTabPanel>
+        <VTabPanel>Tab 3 content</VTabPanel>
+      </VTabPanels>
+    </VTabGroup>
+
+    <p class="font-mono text-sm">Selected: {{ tab }}</p>
   `,
 });

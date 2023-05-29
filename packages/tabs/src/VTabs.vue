@@ -16,6 +16,7 @@ import Icon from '@morpheme/icon';
 import VTab from './VTab.vue';
 import VTabsSlider from './VTabsSlider.vue';
 import {TabVariants} from './variants';
+import {VTabsApiSymbol} from './api';
 
 const props = defineProps({
   modelValue: {
@@ -260,6 +261,15 @@ const onTabRemoved = (index: number) => {
 };
 
 provide('activeTab', readonly(selected));
+
+provide(VTabsApiSymbol, {
+  selected,
+  onTabClicked,
+  onTabRemoved,
+  setTabRef,
+  next,
+  previous,
+});
 </script>
 
 <template>
