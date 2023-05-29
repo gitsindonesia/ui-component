@@ -589,7 +589,7 @@ export const HeadlessUI: Story = (args) => ({
     VTabPanel,
   },
   setup() {
-    const tab = ref(1);
+    const tab = ref(0);
     delete args.items;
     return {args, tab};
   },
