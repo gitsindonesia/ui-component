@@ -15,6 +15,7 @@ import VBtn from '@morpheme/button';
 import Icon from '@morpheme/icon';
 import VTab from './VTab.vue';
 import VTabsSlider from './VTabsSlider.vue';
+import {TabVariants} from './variants';
 
 const props = defineProps({
   modelValue: {
@@ -31,6 +32,7 @@ const props = defineProps({
   },
   color: {
     type: String as PropType<
+      | 'gray'
       | 'primary'
       | 'secondary'
       | 'info'
@@ -96,6 +98,10 @@ const props = defineProps({
   removeIconSize: {
     type: String,
     default: 'md',
+  },
+  variant: {
+    type: String as PropType<TabVariants>,
+    default: 'underline',
   },
 });
 
@@ -263,6 +269,7 @@ provide('activeTab', readonly(selected));
       defaultWrapperClass,
       wrapperClass,
       `v-tabs-${color}`,
+      `v-tabs--${variant}`,
       {
         'v-tabs--vertical': vertical,
         'v-tabs--center-active': centerActive,

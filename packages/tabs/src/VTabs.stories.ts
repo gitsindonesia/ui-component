@@ -1,3 +1,4 @@
+import {tabVariants} from './variants';
 import VTabs from './VTabs.vue';
 import VTab from './VTab.vue';
 import VBtn from '@morpheme/button';
@@ -17,14 +18,40 @@ export default {
   components: {VTabsSlider},
   title: 'Components/Tabs',
   component: VTabs,
-  argTypes: {},
+  argTypes: {
+    color: {
+      control: {
+        type: 'select',
+        options: [
+          'default',
+          'primary',
+          'secondary',
+          'info',
+          'warning',
+          'success',
+          'error',
+        ],
+      },
+    },
+    variant: {
+      control: {
+        type: 'select',
+        options: [
+          'underline',
+          'filled',
+          'underline-filled',
+          'segmented-control',
+        ],
+      },
+    },
+  },
   args: {
     modelValue: 0,
     items: createItems(),
   },
 };
 
-const Template: Story<{}> = (args) => ({
+const Template: Story<typeof VTabs> = (args) => ({
   components: {VTabs},
   setup() {
     const items = ref(args.items || []);
@@ -33,6 +60,20 @@ const Template: Story<{}> = (args) => ({
   },
   template: `
     <v-tabs v-bind="args" v-model:items="items" />`,
+});
+
+export const Variants: Story<{}> = (args) => ({
+  components: {VTabs},
+  setup() {
+    return {args, variants: tabVariants};
+  },
+  template: `
+    <v-tabs
+      v-for="variant in variants"
+      :key="variant"
+      :variant="variant"
+      v-bind="args"
+    />`,
 });
 
 export const Default = Template.bind({});
