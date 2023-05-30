@@ -25,7 +25,16 @@ import VPagination from '@morpheme/pagination';
 import VProgressBar from '@morpheme/progress-bar';
 import VSelect from '@morpheme/select';
 import VSwitch from '@morpheme/switch';
-import VTabs from '@morpheme/tabs';
+import {
+  VTabs,
+  VTab,
+  VTabsSlider,
+  VTabGroup,
+  VTabItem,
+  VTabList,
+  VTabPanels,
+  VTabPanel,
+} from '@morpheme/tabs';
 import VTooltip from '@morpheme/tooltip';
 import VNavbar from '@morpheme/navbar';
 import VNavDrawer from '@morpheme/nav-drawer';
@@ -107,6 +116,14 @@ const plugin: Plugin = {
     app.component('VSelect', VSelect);
     app.component('VSwitch', VSwitch);
     app.component('VTabs', VTabs);
+    app.component('VTab', VTab);
+    app.component('VTabsSlider', VTabsSlider);
+    app.component('VTabSlider', VTabsSlider); // alias
+    app.component('VTabGroup', VTabGroup);
+    app.component('VTabItem', VTabItem);
+    app.component('VTabList', VTabList);
+    app.component('VTabPanels', VTabPanels);
+    app.component('VTabPanel', VTabPanel);
     app.component('VTextarea', VTextarea);
     app.component('VTooltip', VTooltip);
     app.component('VFormGroup', VFormGroup);
