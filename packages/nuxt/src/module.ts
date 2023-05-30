@@ -6,6 +6,7 @@ import {
   addComponent,
   AddComponentOptions,
 } from '@nuxt/kit';
+import {addCustomTab} from '@nuxt/devtools-kit';
 
 const transpile = [
   '@headlessui/vue',
@@ -630,5 +631,20 @@ export default defineNuxtModule<ModuleOptions>({
         addComponent(component);
       });
     }
+
+    // nuxt devtools
+    addCustomTab({
+      // unique identifier
+      name: 'morpheme-ui',
+      // title to display in the tab
+      title: 'Morpheme UI',
+      // any icon from Iconify, or a URL to an image
+      icon: 'carbon:apps',
+      // iframe view
+      view: {
+        type: 'iframe',
+        src: 'https://gitsindonesia.github.io/ui-component/',
+      },
+    });
   },
 });
