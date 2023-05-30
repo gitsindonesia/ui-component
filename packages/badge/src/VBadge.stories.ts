@@ -220,6 +220,7 @@ export const DarkMode = () => ({
         v-for="color in colors"
         :color="color"
         :key="color"
+        dismissable
         v-bind:[variant]="true"
       >
         {{ color }}

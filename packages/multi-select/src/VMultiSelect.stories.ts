@@ -161,6 +161,18 @@ Default.parameters = {
   },
 };
 
+export const Disabled = Template.bind({});
+Disabled.args = {
+  disabled: true,
+};
+Disabled.parameters = {
+  docs: {
+    source: {
+      code: '<v-multi-select :items="items" disabled />',
+    },
+  },
+};
+
 export const Clearable = Template.bind({});
 Clearable.args = {
   clearable: true,

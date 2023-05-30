@@ -1,50 +1,63 @@
 .dark {
   .autocomplete {
     // field
-    --v-autocomplete-field-bg-color: var(--color-gray-true-800);
-    --v-autocomplete-field-border-color: var(--borderColo-base-gray-true-700);
-
+    --v-autocomplete-field-bg-color: var(--v-input-bg-color);
+    --v-autocomplete-field-border-color: var(--v-input-border-color);
+  
     // field hover
-    --v-autocomplete-field-hover-border-color: var(--borderColo-base-gray-true-800);
-
+    --v-autocomplete-field-hover-border-color: var(--color-gray-true-700);
+  
     // input
-    --v-autocomplete-input-color: var(--color-gray-true-600);
-
+    --v-autocomplete-input-color: var(--color-gray-true-200);
+    --v-autocomplete-input-bg-color: transparent;
+  
     // input selected
     --v-autocomplete-input-selected-color: var(--color-gray-true-200);
-
+  
     // clearable button
     --v-autocomplete-clearable-button-color: var(--color-gray-true-400);
-
+  
     // clearable button hover
-    --v-autocomplete-clearable-button-hover-color: var(--color-gray-true-500);
-    --v-autocomplete-clearable-button-hover-bg-color: var(--color-gray-true-50);
-
+    --v-autocomplete-clearable-button-hover-color: var(--color-gray-true-200);
+    --v-autocomplete-clearable-button-hover-bg-color: var(--color-gray-true-700);
+  
     // icon
     --v-autocomplete-icon-color: var(--color-gray-true-400);
-
+  
     // options
     --v-autocomplete-options-bg-color: var(--color-gray-true-800);
-
+    --v-autocomplete-options-border-color: var(--color-gray-true-700);
+  
     // empty
-    --v-autocomplete-empty-color: var(--color-gray-true-700);
-
+    --v-autocomplete-empty-color: var(--color-gray-true-200);
+  
     // item
     --v-autocomplete-item-color: var(--color-gray-true-200);
-
+  
     // item selected
     --v-autocomplete-item-selected-color: var(--color-primary-500);
-
+  
     // item selected item
     --v-autocomplete-item-selected-icon-color: var(--color-primary-500);
-
+  
     // item inactive
-    --v-autocomplete-item-inactive-color: var(--color-gray-true-200);
-
+    --v-autocomplete-item-inactive-color: var(--color-gray-true-400);
+  
     // item active
     --v-autocomplete-item-active-bg-color: var(--color-gray-true-700);
-
+  
+    // error
+    --v-autocomplete-error-color: var(--color-error-300);
+  
+    // disabled
+    --v-autocomplete-input-disabled-bg-color: var(--v-input-disabled-bg-color);
+    --v-autocomplete-input-disabled-border-color: var(--v-input-disabled-border-color);
+  
     // hint
-    --v-autocomplete-hint-color: var(--color-gray-true-500);
+    --v-autocomplete-hint-color: var(--color-gray-true-400);
+  
+    // focus effect
+    --v-input-effect-border-color: var(--color-primary-300);
+    --v-input-effect-shadow-color: var(--color-transparent);
   }
 }

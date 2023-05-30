@@ -83,11 +83,11 @@
     transition-duration: 300ms;
   }
 
-  &:not(.divide-y) &-item {
-    border-width: var(--v-list-item-border-width);
-    border-style: var(--v-list-item-border-style);
-    border-color: var(--v-list-item-border-color);
-  }
+  // &:not(.divide-y) &-item {
+  //   border-width: var(--v-list-item-border-width);
+  //   border-style: var(--v-list-item-border-style);
+  //   border-color: var(--v-list-item-border-color);
+  // }
 
   &-item--hover:hover,
   &--hover &-item:hover:not(&-item--hoverable) {

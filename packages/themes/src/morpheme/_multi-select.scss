@@ -60,6 +60,12 @@
   position: relative;
   min-height: var(--v-multi-select-min-height);
 
+  &--disabled {
+    --v-multi-select-text-color: var(--v-input-disabled-text-color);
+    --v-multi-select-bg-color: var(--v-input-disabled-bg-color);
+    --v-multi-select-border-color: var(--v-input-disabled-border-color);
+  }
+
   &--shadow {
     box-shadow: var(--v-input-shadow);
   }

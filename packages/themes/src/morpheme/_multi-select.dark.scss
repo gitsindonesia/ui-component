@@ -1,7 +1,6 @@
 .dark {
   .v-multi-select {
     --v-multi-select-border-color: var(--v-input-border-color);
-    --v-multi-select-border-radius: var(--v-input-border-radius);
     --v-multi-select-bg-color: var(--v-input-bg-color);
     --v-multi-select-placeholder-color: var(--v-input-placeholder-color);
     --v-multi-select-text-color: var(--color-gray-true-800);
@@ -9,7 +8,7 @@
     /* item */
     --v-multi-select-item-bg-color: var(--color-gray-true-800);
     --v-multi-select-item-text-color: var(--color-gray-true-200);
-    --v-multi-select-item-hover-bg-color: var(--color-primary-500);
+    --v-multi-select-item-hover-bg-color: var(--color-gray-true-700);
     --v-multi-select-item-hover-text-color: var(--color-gray-true-200);
 
     /* error */

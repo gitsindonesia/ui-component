@@ -403,6 +403,7 @@ const focusItem = () => {
       'v-multi-select--error':
         error || errorMessages.length > 0 || !!errorMessage,
       'v-multi-select--shadow': shadow,
+      'v-multi-select--disabled': disabled,
     }"
     v-bind="$attrs"
   >
