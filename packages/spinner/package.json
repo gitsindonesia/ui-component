@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/spinner",
-  "version": "1.0.0-beta.8",
+  "version": "1.0.0-beta.9",
   "description": "Morpheme Spinner Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -17,8 +17,8 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@morpheme/tailwind-config": "^1.0.0-beta.8",
-    "@morpheme/utils": "^1.0.0-beta.8",
+    "@morpheme/tailwind-config": "^1.0.0-beta.9",
+    "@morpheme/utils": "^1.0.0-beta.9",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
     "vite": "^4.3.8",
