@@ -2,8 +2,16 @@
 import {breakpointsTailwind, useBreakpoints} from '@vueuse/core';
 
 const breakpoints = useBreakpoints(breakpointsTailwind);
-const isMobile = breakpoints.smaller('sm'); // only smaller than lg
-const isAsideOpen = ref(true);
+const isMobile = breakpoints.smaller('lg'); // only smaller than lg
+const isAsideOpen = ref(false);
+
+watchEffect(() => {
+  isAsideOpen.value = !isMobile.value;
+});
+
+function onMenuClick() {
+  if (isMobile.value) isAsideOpen.value = false;
+}
 
 watchEffect(() => {
   isAsideOpen.value = !isMobile.value;
@@ -33,6 +41,25 @@ const menus = ref([
 
 <template>
   <VAppShell padded-content>
+    <template #header>
+      <VAppBar
+        color="dark-blue"
+        shadow
+        class="py-3 px-4 !flex lg:!hidden"
+        size="auto"
+        sticky
+      >
+        <VLogo @click="onMenuClick" />
+        <div class="flex-1" />
+        <VBtn
+          color="primary"
+          @click="isAsideOpen = !isAsideOpen"
+          prefix-icon="ic:round-menu"
+        >
+        </VBtn>
+      </VAppBar>
+    </template>
+
     <!-- aside -->
     <template #aside>
       <VNavDrawer
@@ -40,8 +67,9 @@ const menus = ref([
         :fixed="isMobile"
         :overlay="isMobile"
         :close-on-overlay-click="isMobile"
-        bordered
+        :bordered="!isMobile"
         :sticky="!isMobile"
+        :class="{'z-20': isMobile}"
       >
         <VLogo class="mx-auto my-3" />
         <VList>
