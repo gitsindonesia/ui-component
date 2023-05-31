@@ -52,13 +52,22 @@ const menus = ref([
                 <VListItem
                   v-for="child in menu.children"
                   :key="child.text"
+                  hide-prepend
+                  nuxt
+                  exact-active-class="!bg-primary-500 !text-white"
                   v-bind="child"
                 >
                   {{ child.text }}
                 </VListItem>
               </VList>
             </template>
-            <VListItem v-else v-bind="menu" :prepend-icon="menu.icon">
+            <VListItem
+              v-else
+              :prepend-icon="menu.icon"
+              nuxt
+              exact-active-class="!bg-primary-500 !text-white"
+              v-bind="menu"
+            >
               {{ menu.text }}
             </VListItem>
           </template>
