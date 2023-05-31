@@ -9,3 +9,15 @@ export const colors = [
 ];
 
 export const sizes = ['sm', 'md', 'lg'] as const;
+export const rounded = [
+  true,
+  'xs',
+  'sm',
+  'md',
+  'lg',
+  'xl',
+  '2xl',
+  '3xl',
+  'full',
+  'none',
+] as const;
