@@ -9,7 +9,7 @@
         <VBanner
           v-for="color in colors"
           :key="color"
-          :color="color"
+          :color="(color as any)"
           class="mb-2"
         >
           <VBannerText>
