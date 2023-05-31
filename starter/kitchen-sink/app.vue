@@ -22,9 +22,3 @@ useHead({
     <NuxtPage />
   </NuxtLayout>
 </template>
-
-<style>
-body {
-  background-color: var(--color-gray-50);
-}
-</style>

@@ -44,6 +44,12 @@ const menus = ref([
     ],
   },
 ]);
+
+const darkMode = ref(false);
+
+watch(darkMode, () => {
+  document.documentElement.classList.toggle('dark', darkMode.value);
+});
 </script>
 
 <template>
@@ -74,12 +80,14 @@ const menus = ref([
         :fixed="isMobile"
         :overlay="isMobile"
         :close-on-overlay-click="isMobile"
-        :bordered="!isMobile"
+        :shadow="!isMobile"
         :sticky="!isMobile"
         :class="{'z-20': isMobile}"
+        class="px-2"
       >
-        <VLogo class="mx-auto my-3" />
-        <VList>
+        <h3 class="font-semibold text-center py-4">Morpheme UI</h3>
+
+        <VList class="flex-1 overflow-y-auto">
           <template v-for="menu in menus">
             <template v-if="menu.children">
               <VListItemHeader class="-mb-2 mt-1">
@@ -108,6 +116,12 @@ const menus = ref([
             </VListItem>
           </template>
         </VList>
+
+        <VSwitch
+          switch-group-class="justify-center my-3"
+          v-model="darkMode"
+          label="Dark Mode"
+        />
       </VNavDrawer>
     </template>
 

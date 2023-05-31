@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@morpheme/nuxt', '@nuxtjs/tailwindcss'],
+  modules: ['@morpheme/nuxt', '@nuxtjs/tailwindcss', '@nuxtjs/color-mode'],
 
   typescript: {
     shim: false,
@@ -17,4 +17,8 @@ export default defineNuxtConfig({
   },
 
   css: ['~/assets/css/main.scss'],
+
+  colorMode: {
+    classSuffix: '',
+  },
 });

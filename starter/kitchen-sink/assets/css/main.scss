@@ -1,5 +1,25 @@
+body {
+  background-color: var(--color-gray-50);
+}
+
+
+// dark mode
+.dark {
+  body {
+    background-color: var(--color-gray-true-900);
+  }
+}
+
+// custom alert
 .alert-indigo {
   --alert-bg-color: var(--color-indigo-600)
   --alert-border-color: var(--color-indigo-600)
   --alert-text-color: var(--color-indigo-100)
+}
+
+// PATCHES
+.dark {
+  .nav-drawer--bordered {
+    border-color: var(--color-gray-true-700);
+  }
 }
