@@ -7,3 +7,5 @@ export const colors = [
   'success',
   'error',
 ];
+
+export const sizes = ['sm', 'md', 'lg'] as const;

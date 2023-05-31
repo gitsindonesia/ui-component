@@ -30,6 +30,10 @@ const menus = ref([
         to: '/components/alert',
       },
       {
+        text: 'AppBar',
+        to: '/components/app-bar',
+      },
+      {
         text: 'AppShell',
         to: '/components/app-shell',
       },
