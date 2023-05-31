@@ -184,7 +184,17 @@ watch(darkMode, () => {
         :sticky="!isMobile"
         :class="{'z-20': isMobile}"
       >
-        <h3 class="font-semibold text-center py-4 border-b">Morpheme UI</h3>
+        <h3
+          class="
+            font-semibold
+            text-center
+            py-4
+            border-b
+            dark:border-neutral-700
+          "
+        >
+          Morpheme UI
+        </h3>
 
         <div class="overflow-y-auto">
           <VList class="flex-1">
@@ -219,7 +229,9 @@ watch(darkMode, () => {
         </div>
 
         <VSwitch
-          switch-group-class="justify-center border-t py-3"
+          switch-group-class="justify-center border-t py-3
+          dark:border-neutral-700
+          "
           v-model="darkMode"
           label="Dark Mode"
         />
