@@ -120,7 +120,15 @@
         </template>
 
         <div class="flex flex-1">
-          <div class="w-72 border-r h-[100dvh] overflow-x-auto">
+          <div
+            class="
+              w-72
+              border-r
+              dark:border-neutral-600
+              h-[100dvh]
+              overflow-x-auto
+            "
+          >
             <VList hover small>
               <VListItem
                 prepend-icon-class="!text-gray-600"
