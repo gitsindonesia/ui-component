@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const title = 'Nuxt + Morpheme UI Minimal Starter';
+const title = 'Morpheme UI Kitchen Sink';
 
 useHead({
   title,
