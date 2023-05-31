@@ -1,7 +1,7 @@
 {
   "name": "@morpheme/nuxt-admin",
   "description": "Extensible admin template powered by Nuxt.js and Morpheme UI",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "keywords": [
     "admin",
     "dashboard",
