@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import {VAlertGroup} from '@morpheme/alert';
 
-const messages = ref([]);
+interface Message {
+  text: string;
+}
+
+const messages = ref<Message[]>([]);
 
 const add = () => {
   messages.value.push({
@@ -134,12 +138,12 @@ function removeAlert(index: number) {
       >
         <VAlertGroup>
           <VAlert
-            v-for="message in messages"
+            v-for="(message, index) in messages"
             :key="message.text"
             color="success"
             class="mb-2"
             dismissable
-            @dismissed="() => removeAlert"
+            @dismissed="removeAlert(index)"
           >
             {{ message.text }}
           </VAlert>
