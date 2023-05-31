@@ -37,7 +37,7 @@
 
         <p class="text-xl text-center">
           Get started by editing
-          <code class="px-2 py-1 rounded bg-gray-100">app.vue</code>
+          <code class="px-2 py-1 rounded bg-gray-100">pages/index.vue</code>
         </p>
         <div>
           <div class="grid grid-cols-2 gap-6">
@@ -48,7 +48,7 @@
             >
               <VCard>
                 <template #header>
-                  <h3>Documentation &rarr;</h3>
+                  <h3 class="font-semibold">Documentation &rarr;</h3>
                 </template>
                 <p>
                   Find in-depth information about Morpheme UI features and API.
@@ -63,7 +63,7 @@
             >
               <VCard>
                 <template #header>
-                  <h3>Nuxt &rarr;</h3>
+                  <h3 class="font-semibold">Nuxt &rarr;</h3>
                 </template>
                 <p>Learn about Nuxt.js</p>
               </VCard>
@@ -76,7 +76,7 @@
             >
               <VCard>
                 <template #header>
-                  <h3>Starter &rarr;</h3>
+                  <h3 class="font-semibold">Starter &rarr;</h3>
                 </template>
                 <p>
                   Discover and deploy boilerplate example Morpheme UI projects.
@@ -91,7 +91,7 @@
             >
               <VCard>
                 <template #header>
-                  <h3>Deploy &rarr;</h3>
+                  <h3 class="font-semibold">Deploy &rarr;</h3>
                 </template>
                 <p>
                   Instantly deploy your Nuxt site to a public URL with Vercel.
