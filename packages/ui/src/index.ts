@@ -1,6 +1,6 @@
 import type {Plugin} from 'vue';
 import VBtn from '@morpheme/button';
-import VAlert from '@morpheme/alert';
+import {VAlert, VAlertTitle, VAlertGroup} from '@morpheme/alert';
 import VSpinner from '@morpheme/spinner';
 import VAppBar from '@morpheme/app-bar';
 import VBadge from '@morpheme/badge';
@@ -79,7 +79,7 @@ import {
   StepperNumber,
 } from '@morpheme/stepper';
 import VText from '@morpheme/text';
-import VAppShell from '@morpheme/app-shell';
+import {VAppShell, VMain} from '@morpheme/app-shell';
 import VProgressCircular from '@morpheme/progress-circular';
 import {
   VTimeline,
@@ -93,6 +93,8 @@ import {VBanner, VBannerText} from '@morpheme/banner';
 const plugin: Plugin = {
   install: (app) => {
     app.component('VAlert', VAlert);
+    app.component('VAlertTitle', VAlertTitle);
+    app.component('VAlertGroup', VAlertGroup);
     app.component('VBtn', VBtn);
     app.component('VAppBar', VAppBar);
     app.component('VBadge', VBadge);
@@ -164,6 +166,7 @@ const plugin: Plugin = {
     app.component('VStepperNumber', StepperNumber);
     app.component('VText', VText);
     app.component('VAppShell', VAppShell);
+    app.component('VMain', VMain);
     app.component('VProgressCircular', VProgressCircular);
     app.component('VTimeline', VTimeline);
     app.component('VTimelineDivider', VTimelineDivider);
