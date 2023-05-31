@@ -21,7 +21,6 @@ const menus = ref([
   {
     text: 'Home',
     to: '/',
-    icon: 'ic:round-home',
   },
   {
     text: 'Components',
@@ -40,7 +39,7 @@ const menus = ref([
 </script>
 
 <template>
-  <VAppShell padded-content>
+  <VAppShell padded-content content-class="!py-6">
     <template #header>
       <VAppBar
         color="dark-blue"
@@ -75,7 +74,9 @@ const menus = ref([
         <VList>
           <template v-for="menu in menus">
             <template v-if="menu.children">
-              <VListItemHeader>{{ menu.text }}</VListItemHeader>
+              <VListItemHeader class="-mb-2 mt-1">
+                {{ menu.text }}
+              </VListItemHeader>
               <VList>
                 <VListItem
                   v-for="child in menu.children"
@@ -91,7 +92,6 @@ const menus = ref([
             </template>
             <VListItem
               v-else
-              :prepend-icon="menu.icon"
               nuxt
               exact-active-class="!bg-primary-500 !text-white"
               v-bind="menu"
