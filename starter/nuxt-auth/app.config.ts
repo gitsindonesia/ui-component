@@ -89,9 +89,10 @@ export default defineAppConfig({
           label: 'Password Confirmation',
           placeholder: 'Password Confirmation',
           type: 'password',
-          validation: string()
-            .required()
-            .oneOf([YupRef('password')], 'Password does not match'),
+          validation: () =>
+            string()
+              .required()
+              .oneOf([YupRef('password')], 'Password does not match'),
         },
         {
           name: 'agree_to_toc',

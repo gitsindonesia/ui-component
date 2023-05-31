@@ -22,13 +22,13 @@
     "prep": "nuxt prepare"
   },
   "dependencies": {
-    "@morpheme/nuxt": "1.0.0-beta.5",
+    "@morpheme/nuxt": "1.0.0-beta.9",
     "@sidebase/nuxt-auth": "^0.4.4",
     "next-auth": "^4.21.1"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.6.5",
-    "nuxt": "^3.4.1",
+    "nuxt": "^3.5.2",
     "sass": "^1.60.0"
   },
   "type": "module",
@@ -43,5 +43,13 @@
     "app.config.ts",
     "nuxt.config.ts",
     "tailwind.config.js"
-  ]
+  ],
+  "overrides": {
+    "consola": "3.0.1"
+  },
+  "pnpm": {
+    "overrides": {
+      "consola": "3.0.1"
+    }
+  }
 }

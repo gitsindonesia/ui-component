@@ -10,7 +10,11 @@ const success = ref(false);
 
 const schema = appConfig.auth.register.inputs.reduce((acc, input) => {
   if (input.validation) {
-    acc[input.name] = input.validation.label(input.label);
+    if (typeof input.validation === 'function') {
+      acc[input.name] = input.validation().label(input.label);
+    } else {
+      acc[input.name] = input.validation.label(input.label);
+    }
   }
   return acc;
 }, {} as Record<string, any>);
