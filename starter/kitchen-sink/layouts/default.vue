@@ -41,6 +41,106 @@ const menus = ref([
         text: 'Autocomplete',
         to: '/components/autocomplete',
       },
+      {text: 'Avatar', to: '/components/avatar'},
+      {text: 'Badge', to: '/components/badge'},
+      {text: 'Banner', to: '/components/banner'},
+      {text: 'BottomSheet', to: '/components/bottom-sheet'},
+      {text: 'Breadcrumbs', to: '/components/breadcrumbs'},
+      {text: 'Card', to: '/components/card'},
+      {text: 'Collapsible', to: '/components/collapsible'},
+      {text: 'DataTable', to: '/components/data-table'},
+      {
+        text: 'DataTablePagination',
+        to: '/components/data-table-pagination',
+      },
+      {
+        text: 'Dropdown',
+        to: '/components/dropdown',
+      },
+      {
+        text: 'Icon',
+        to: '/components/icon',
+      },
+      {
+        text: 'List',
+        to: '/components/list',
+      },
+      {
+        text: 'Logo',
+        to: '/components/logo',
+      },
+      {
+        text: 'Menu',
+        to: '/components/menu',
+      },
+      {
+        text: 'Menus',
+        to: '/components/menus',
+      },
+      {
+        text: 'Modal',
+        to: '/components/modal',
+      },
+      {
+        text: 'Navigation Drawer',
+        to: '/components/navigation-drawer',
+      },
+      {
+        text: 'Pagination',
+        to: '/components/pagination',
+      },
+      {
+        text: 'Progress Bar',
+        to: '/components/progress-bar',
+      },
+      {
+        text: 'Progress Circular',
+        to: '/components/progress-circular',
+      },
+      {
+        text: 'Rating',
+        to: '/components/rating',
+      },
+      {
+        text: 'Select',
+        to: '/components/select',
+      },
+      {
+        text: 'Shimmer',
+        to: '/components/shimmer',
+      },
+      {
+        text: 'Spinner',
+        to: '/components/spinner',
+      },
+      {
+        text: 'Stepper',
+        to: '/components/stepper',
+      },
+      {
+        text: 'Switch',
+        to: '/components/switch',
+      },
+      {
+        text: 'Tabs',
+        to: '/components/tabs',
+      },
+      {
+        text: 'Timeline',
+        to: '/components/timeline',
+      },
+      {
+        text: 'Toast',
+        to: '/components/toast',
+      },
+      {
+        text: 'Text',
+        to: '/components/text',
+      },
+      {
+        text: 'Tooltip',
+        to: '/components/tooltip',
+      },
     ],
   },
 ]);
@@ -83,42 +183,43 @@ watch(darkMode, () => {
         :shadow="!isMobile"
         :sticky="!isMobile"
         :class="{'z-20': isMobile}"
-        class="px-2"
       >
-        <h3 class="font-semibold text-center py-4">Morpheme UI</h3>
+        <h3 class="font-semibold text-center py-4 border-b">Morpheme UI</h3>
 
-        <VList class="flex-1 overflow-y-auto">
-          <template v-for="menu in menus">
-            <template v-if="menu.children">
-              <VListItemHeader class="-mb-2 mt-1">
+        <div class="overflow-y-auto">
+          <VList class="flex-1">
+            <template v-for="menu in menus">
+              <template v-if="menu.children">
+                <VListItemHeader class="-mb-2 mt-1">
+                  {{ menu.text }}
+                </VListItemHeader>
+                <VList>
+                  <VListItem
+                    v-for="child in menu.children"
+                    :key="child.text"
+                    hide-prepend
+                    nuxt
+                    exact-active-class="!bg-primary-500 !text-white"
+                    v-bind="child"
+                  >
+                    {{ child.text }}
+                  </VListItem>
+                </VList>
+              </template>
+              <VListItem
+                v-else
+                nuxt
+                exact-active-class="!bg-primary-500 !text-white"
+                v-bind="menu"
+              >
                 {{ menu.text }}
-              </VListItemHeader>
-              <VList>
-                <VListItem
-                  v-for="child in menu.children"
-                  :key="child.text"
-                  hide-prepend
-                  nuxt
-                  exact-active-class="!bg-primary-500 !text-white"
-                  v-bind="child"
-                >
-                  {{ child.text }}
-                </VListItem>
-              </VList>
+              </VListItem>
             </template>
-            <VListItem
-              v-else
-              nuxt
-              exact-active-class="!bg-primary-500 !text-white"
-              v-bind="menu"
-            >
-              {{ menu.text }}
-            </VListItem>
-          </template>
-        </VList>
+          </VList>
+        </div>
 
         <VSwitch
-          switch-group-class="justify-center my-3"
+          switch-group-class="justify-center border-t py-3"
           v-model="darkMode"
           label="Dark Mode"
         />
