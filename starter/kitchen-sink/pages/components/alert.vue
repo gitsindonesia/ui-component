@@ -107,18 +107,6 @@ function removeAlert(index: number) {
       </VAlert>
     </VCard>
 
-    <VCard title="Dark Mode" class="dark">
-      <VAlert
-        v-for="color in colors"
-        :key="color"
-        :color="color"
-        class="mb-2"
-        icon="ic:round-info"
-      >
-        You changes have been saved.
-      </VAlert>
-    </VCard>
-
     <VCard title="Alert Group">
       <div class="flex gap-2">
         <VBtn @click="add"> Add </VBtn>

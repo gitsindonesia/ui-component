@@ -49,11 +49,5 @@ const isOpen2 = ref(true);
         <VBtn @click="isOpen2 = !isOpen2">Toggle</VBtn>
       </main>
     </VCard>
-
-    <VCard title="Dark Mode" class="dark">
-      <VAppBar v-for="color in colors" :key="color" :color="color" class="mb-2">
-        <p class="font-semibold">Brand</p>
-      </VAppBar>
-    </VCard>
   </div>
 </template>
