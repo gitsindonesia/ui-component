@@ -37,6 +37,10 @@ const menus = ref([
         text: 'AppShell',
         to: '/components/app-shell',
       },
+      {
+        text: 'Autocomplete',
+        to: '/components/autocomplete',
+      },
     ],
   },
 ]);
