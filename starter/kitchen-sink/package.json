@@ -1,7 +1,7 @@
 {
-  "name": "@morpheme/nuxt-minimal",
-  "description": "Lightweight Nuxt.js template with Morpheme UI",
-  "version": "0.3.0",
+  "name": "@morpheme/kitchen-sink",
+  "description": "Morpheme UI Kitchen Sink App",
+  "version": "0.0.0",
   "keywords": [
     "admin",
     "dashboard",
@@ -25,7 +25,6 @@
     "@morpheme/nuxt": "1.0.0-beta.9"
   },
   "devDependencies": {
-    "@nuxt/content": "^2.6.0",
     "@nuxt/devtools": "^0.5.5",
     "@nuxtjs/tailwindcss": "^6.6.5",
     "nuxt": "^3.5.2",
