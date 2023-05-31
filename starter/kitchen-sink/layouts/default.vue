@@ -43,7 +43,7 @@ const menus = ref([
 </script>
 
 <template>
-  <VAppShell padded-content content-class="!py-6">
+  <VAppShell padded-content padded-container>
     <template #header>
       <VAppBar
         color="dark-blue"
