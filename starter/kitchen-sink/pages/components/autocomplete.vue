@@ -43,13 +43,5 @@ const selected = ref();
         :items="items"
       />
     </VCard>
-
-    <VCard title="Dark Mode" class="dark">
-      <VAutocomplete
-        label="Choose your favorite fruit"
-        clearable
-        :items="items"
-      />
-    </VCard>
   </div>
 </template>
