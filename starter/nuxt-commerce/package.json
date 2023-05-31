@@ -22,12 +22,13 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@morpheme/nuxt": "1.0.0-beta.5",
+    "@morpheme/nuxt": "1.0.0-beta.9",
     "@nuxt/image-edge": "1.0.0-27919678.2f5b64b"
   },
   "devDependencies": {
+    "@nuxt/devtools": "^0.5.5",
     "@nuxtjs/tailwindcss": "^6.6.5",
-    "nuxt": "^3.4.1",
+    "nuxt": "^3.5.2",
     "sass": "^1.60.0"
   },
   "type": "module",
