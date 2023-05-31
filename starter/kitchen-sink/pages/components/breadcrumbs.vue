@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import {VBreadcrumbsDivider} from '@morpheme/breadcrumbs';
+import VBreadcrumbItem from '@morpheme/breadcrumbs/src/VBreadcrumbsItem.vue';
+
 const items = [
   {
     title: 'Home',
