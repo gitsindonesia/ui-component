@@ -21,4 +21,13 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: '',
   },
+
+  vite: {
+    vue: {
+      script: {
+        propsDestructure: true,
+        defineModel: true,
+      },
+    },
+  },
 });
