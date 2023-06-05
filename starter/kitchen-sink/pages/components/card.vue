@@ -25,14 +25,30 @@
         <VCard title="Header">
           A quick brown fox leaps over the lazy dog.
 
-          <template #footer> Footer </template>
+          <template #footer>
+            <VBtn color="primary">Action</VBtn>
+            <VBtn>Action</VBtn>
+          </template>
+        </VCard>
+      </div>
+    </VCard>
+
+    <VCard title="Bordered">
+      <div>
+        <VCard title="Header" bordered>
+          A quick brown fox leaps over the lazy dog.
+
+          <template #footer>
+            <VBtn color="primary">Action</VBtn>
+            <VBtn>Action</VBtn>
+          </template>
         </VCard>
       </div>
     </VCard>
 
     <VCard title="Header Slot">
       <div>
-        <VCard>
+        <VCard bordered>
           A quick brown fox leaps over the lazy dog.
 
           <template #header>
@@ -41,7 +57,6 @@
               <VBtn size="sm">Close</VBtn>
             </div>
           </template>
-          <template #footer> Footer </template>
         </VCard>
       </div>
     </VCard>
@@ -50,9 +65,9 @@
       <div>
         <VCard
           title="Header"
-          body-class="bg-rose-100"
-          header-class="bg-amber-100"
-          footer-class="bg-cyan-100"
+          body-class="bg-rose-500 text-white"
+          header-class="bg-amber-500 text-white"
+          footer-class="bg-cyan-500 text-white"
         >
           A quick brown fox leaps over the lazy dog.
           <template #footer> Footer </template>
