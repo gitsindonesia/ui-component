@@ -38,8 +38,21 @@ const tab = ref(0);
     </VCard>
 
     <VCard title="Vertical">
-      <div>
+      <div class="flex flex-col lg:flex-row gap-4 items-start">
         <VTabs v-bind="props" :items="items" vertical />
+        <VTabs v-bind="props" :items="items" vertical variant="filled" />
+        <VTabs
+          v-bind="props"
+          :items="items"
+          vertical
+          variant="underline-filled"
+        />
+        <VTabs
+          v-bind="props"
+          :items="items"
+          vertical
+          variant="segmented-control"
+        />
       </div>
     </VCard>
 
