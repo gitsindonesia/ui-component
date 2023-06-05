@@ -4,6 +4,9 @@ dependencies:
   '@morpheme/nuxt':
     specifier: 1.0.0-beta.9
     version: 1.0.0-beta.9(nuxt@3.5.2)(vite@4.3.9)
+  '@morphemeicons/vue':
+    specifier: ^0.2.0
+    version: 0.2.0(vue@3.3.4)
 
 devDependencies:
   '@nuxt/devtools':
@@ -1476,6 +1479,14 @@ packages:
     resolution: {integrity: sha512-t5HJkghkbvkApswz9sOSffoIO/F/ZJnbIpqQALzMZ6wBKHOWjVstQgWaOdAImotGNtDyGc6H3zjqGz0Jbrrggg==}
     dependencies:
       '@morpheme/design-tokens': 0.1.0-alpha.5
+      vue: 3.3.4
+    dev: false
+
+  /@morphemeicons/vue@0.2.0(vue@3.3.4):
+    resolution: {integrity: sha512-4FBTs1nPR0Yxwfdj9M62YAAWvB10x0am1pNHp0SLxzi9XA0MsBOwQtORtqj6dPhWr9OYW0llxxyCosYuVvPh5Q==}
+    peerDependencies:
+      vue: '>= 3'
+    dependencies:
       vue: 3.3.4
     dev: false
 
