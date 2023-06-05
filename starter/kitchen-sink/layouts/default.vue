@@ -14,10 +14,6 @@ watchEffect(() => {
 function onMenuClick() {
   if (isMobile.value) isAsideOpen.value = false;
 }
-
-watchEffect(() => {
-  isAsideOpen.value = !isMobile.value;
-});
 </script>
 
 <template>
