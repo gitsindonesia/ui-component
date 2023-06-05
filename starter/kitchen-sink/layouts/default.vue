@@ -25,7 +25,7 @@ watch(darkMode, () => {
 </script>
 
 <template>
-  <VAppShell padded-content padded-container>
+  <VAppShell container-class="py-8">
     <template #header>
       <VAppBar
         color="dark-blue"
@@ -34,6 +34,19 @@ watch(darkMode, () => {
         size="auto"
         sticky
       >
+        <VLogo @click="onMenuClick" />
+        <div class="flex-1" />
+        <VBtn
+          color="primary"
+          @click="isAsideOpen = !isAsideOpen"
+          prefix-icon="ic:round-menu"
+        >
+        </VBtn>
+      </VAppBar>
+    </template>
+
+    <template #navigation>
+      <VAppBar color="dark-blue" shadow class="py-3 px-4" size="auto" sticky>
         <VLogo @click="onMenuClick" />
         <div class="flex-1" />
         <VBtn
@@ -73,7 +86,7 @@ watch(darkMode, () => {
         </div>
 
         <VSwitch
-          switch-group-class="justify-center border-t py-3
+          switch-group-class="justify-center border-t py-4
           dark:border-neutral-700
           "
           v-model="darkMode"

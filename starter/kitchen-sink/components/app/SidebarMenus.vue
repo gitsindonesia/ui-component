@@ -142,7 +142,9 @@ const menus = ref<MenuItem[]>([
 const route = useRoute();
 
 function isMenuActiveOnChildren(menu: MenuItem) {
-  return menu.children?.some((child) => route.path.startsWith(child.to));
+  return menu.children?.some((child) =>
+    route.path.startsWith(String(child.to)),
+  );
 }
 
 function onMenuClick(menu: MenuItem) {
