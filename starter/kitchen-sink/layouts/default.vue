@@ -93,7 +93,7 @@ function onMenuClick() {
         </h3>
 
         <div class="overflow-y-auto flex-1">
-          <AppSidebarMenus />
+          <AppSidebarMenus @menu-click="onMenuClick" />
         </div>
       </VNavDrawer>
     </template>
