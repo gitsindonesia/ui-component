@@ -137,6 +137,16 @@ const menus = ref<MenuItem[]>([
       },
     ],
   },
+  {
+    text: 'Forms',
+    icon: LayersTwo02Icon,
+    children: [
+      {
+        text: 'Button',
+        to: '/forms/buttons',
+      },
+    ],
+  },
 ]);
 
 const route = useRoute();

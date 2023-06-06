@@ -38,3 +38,13 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-gray-true-500); 
 }
+
+// PATCHES
+.dark {
+  .btn {
+    &-default {
+      --btn-border-color: var(--color-gray-true-700) !important;
+      --btn-bg-color: var(--color-gray-true-700) !important;
+    }
+  }
+}
