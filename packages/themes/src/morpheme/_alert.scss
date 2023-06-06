@@ -47,11 +47,13 @@
   &-icon {
     width: var(--alert-icon-size) !important;
     height: var(--alert-icon-size) !important;
+    color: currentColor !important;
   }
 
   &-x-icon {
     width: var(--alert-icon-size) !important;
     height: var(--alert-icon-size) !important;
+    color: currentColor !important;
   }
 
   // Colors

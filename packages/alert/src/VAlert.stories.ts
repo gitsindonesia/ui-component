@@ -186,6 +186,8 @@ export const DarkMode = () => ({
       :color="color"
       :key="color"
       class="mb-2"
+      icon="ri:information-fill"
+      dismissable
       v-bind:[variant]="true"
     >
       Change a few things up and try submitting again.
