@@ -2,6 +2,7 @@ import {Meta, Story} from '@storybook/vue3';
 import VCard from './VCard.vue';
 import VBtn from '@morpheme/button';
 import {defaultColors} from '@morpheme/theme/defaultTheme';
+import {defineComponent} from 'vue';
 
 export default {
   title: 'Components/Card',
@@ -198,5 +199,47 @@ export const DarkMode: Story<{}> = () => ({
     {{ color }}
   </VCard>
 </main>
+`,
+});
+
+const DummyLink = defineComponent({
+  template: `<a><slot /></a>`,
+});
+
+export const CustomComponent: Story<{}> = () => ({
+  components: {VCard, DummyLink},
+  setup() {
+    return {defaultColors};
+  },
+  template: `
+  <div class="space-y-4">
+    <VCard>
+      Default
+    </VCard>
+
+    <VCard to="/home">
+      <p>With <code>to</code> props</p>
+    </VCard>
+
+    <VCard to="/about" nuxt>
+      <p>With <code>to</code> props. As <code>NuxtLink</code>.</p>
+    </VCard>
+
+    <VCard href="https://www.google.com">
+      As anchor
+    </VCard>
+
+    <VCard href="https://www.google.com" target="_blank">
+      <p>As anchor with <code>target="_blank"</code></p>
+    </VCard>
+
+    <VCard href="https://www.google.com" target="_blank" rel="noopener">
+      <p>As anchor with <code>target="_blank"</code> and <code>rel</code></p>
+    </VCard>
+
+    <VCard as="DummyLink">
+      <p>As <code>DummyLink</code></p>
+    </VCard>
+  </div>
 `,
 });

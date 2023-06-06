@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {computed, PropType, toRefs} from 'vue';
+import {computed, PropType, resolveComponent, toRefs} from 'vue';
 
 export type CardShadow =
   | boolean
@@ -70,17 +70,45 @@ const props = defineProps({
   },
   to: {
     type: String,
-    default: '',
+    default: undefined,
   },
   color: {
     type: String,
     default: 'default',
   },
+  as: {
+    type: String,
+    default: 'div',
+  },
+  href: {
+    type: String,
+    default: undefined,
+  },
+  target: {
+    type: String,
+    default: undefined,
+  },
+  rel: {
+    type: String,
+    default: undefined,
+  },
+  nuxt: {
+    type: Boolean,
+    default: false,
+  },
 });
 
-const {to} = toRefs(props);
+const tag = computed(() => {
+  if (props.href) return 'a';
 
-const tag = computed(() => (to.value ? 'router-link' : 'div'));
+  if (props.to) {
+    return props.nuxt
+      ? resolveComponent('NuxtLink')
+      : resolveComponent('RouterLink');
+  }
+
+  return props.as;
+});
 
 const classes = computed(() => {
   const shadowClass = props.flat
@@ -99,10 +127,24 @@ const classes = computed(() => {
     },
   ];
 });
+
+const attrs = computed(() => {
+  const attrs: Record<string, any> = {};
+
+  if (props.href) {
+    attrs.href = props.href;
+    attrs.target = props.target;
+    attrs.rel = props.rel;
+  } else if (props.to) {
+    attrs.to = props.to;
+  }
+
+  return attrs;
+});
 </script>
 
 <template>
-  <component :is="tag" :to="to" :class="classes">
+  <component :is="tag" :class="classes" v-bind="{...$attrs, ...attrs}">
     <slot name="image" />
     <div v-if="!hideHeader" :class="[defaultHeaderClass, headerClass]">
       <slot name="header.prepend" />

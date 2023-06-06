@@ -74,5 +74,19 @@
         </VCard>
       </div>
     </VCard>
+
+    <VCard title="Custom Tag">
+      <div>
+        <VCard
+          title="As Anchor"
+          tag="a"
+          href="https://www.google.com"
+          rel="noopener"
+          target="_blank"
+        >
+          A quick brown fox leaps over the lazy dog.
+        </VCard>
+      </div>
+    </VCard>
   </div>
 </template>
