@@ -2,6 +2,8 @@
 
 .dark {
   .v-table {
+    --v-table-border-color: var(--color-gray-true-700);
+
     /* thead */
     --v-table-thead-bg-color: var(--color-gray-true-800);
 
@@ -29,15 +31,6 @@
   }
 
   .v-table {
-    &-table,
-    &-tbody,
-    &--striped &-tbody {
-      > :not([hidden]) ~ :not([hidden]) {
-        --tw-divide-opacity: 1;
-        border-color: rgb(64 64 64 / var(--tw-divide-opacity));
-      }
-    }
-
     &--selectable &-td,
     &--striped &-td,
     &--hover &-td {
@@ -48,13 +41,6 @@
     &--loading &-td,
     &--empty &-td {
       --v-table-td-color: var(--color-gray-true-300);
-    }
-
-    &--bordered &-tr {
-      > :not([hidden]) ~ :not([hidden]) {
-        --tw-divide-opacity: 1;
-        border-color: rgb(64 64 64 / var(--tw-divide-opacity));
-      }
     }
 
     &-th--sticky,

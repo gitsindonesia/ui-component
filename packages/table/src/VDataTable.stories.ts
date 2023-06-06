@@ -500,6 +500,9 @@ export const DarkMode: Story<{}> = (args) => ({
   template: `
 <main class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6 space-y-2">
   <VDataTable v-bind="args" />
+
+  <p class="mt-10 mb-3">Bordered Variant</p>
+  <VDataTable v-bind="args" bordered />
 </main>
 `,
 });

@@ -4,6 +4,7 @@
   /* spacing */
   --v-table-padding-x: var(--size-spacing-6);
   --v-table-padding-y: var(--size-spacing-3);
+  --v-table-border-color: var(--color-gray-200);
 
   /* thead */
   --v-table-thead-bg-color: var(--color-gray-50);
@@ -56,7 +57,7 @@
   }
 
   &--bordered {
-    border-width: 1px;
+    border: 1px solid var(--v-table-border-color);
     box-shadow: none;
   }
 
@@ -70,23 +71,17 @@
 
   &-thead {
     background-color: var(--v-table-thead-bg-color);
+    border-bottom: 1px solid var(--v-table-border-color);
   }
 
   &-overflow {
     overflow-x: auto;
-    border-top-left-radius: 0.375rem/* 6px */;
-    border-top-right-radius: 0.375rem/* 6px */;
+    border-top-left-radius: 0.375rem /* 6px */;
+    border-top-right-radius: 0.375rem /* 6px */;
   }
 
   &-table {
     width: 100%;
-
-    > :not([hidden]) ~ :not([hidden]) {
-      --tw-divide-y-reverse: 0;
-      border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
-      border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
-      border-color: var(--color-gray-200);
-    }
   }
 
   &-sort-button {
@@ -148,11 +143,12 @@
     border-bottom-left-radius: var(--border-radius-lg);
   }
 
-  &-tbody  {
+  &-tbody {
     > :not([hidden]) ~ :not([hidden]) {
       --tw-divide-y-reverse: 0;
       border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
       border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
+      border-color: var(--v-table-border-color);
     }
   }
 
@@ -164,12 +160,12 @@
   &--striped &-tbody {
     > :not([hidden]) ~ :not([hidden]) {
       --tw-divide-opacity: 1;
-      border-color: var(--color-gray-200)
+      border-color: var(--v-table-border-color);
     }
   }
 
   &--striped thead {
-    background-color: var(--color-white)
+    background-color: var(--color-white);
   }
 
   &--striped tbody &-tr:nth-child(odd) {
@@ -186,7 +182,9 @@
   &--selectable &-tr:hover,
   &--hover &-tr:hover {
     background-color: var(--v-table-hover-bg-color);
-    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-property: color, background-color, border-color,
+      text-decoration-color, fill, stroke, opacity, box-shadow, transform,
+      filter, backdrop-filter;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 200ms;
   }
@@ -211,6 +209,7 @@
       --tw-divide-x-reverse: 0;
       border-right-width: calc(1px * var(--tw-divide-x-reverse));
       border-left-width: calc(1px * calc(1 - var(--tw-divide-x-reverse)));
+      border-color: var(--v-table-border-color);
     }
   }
 
@@ -225,8 +224,11 @@
   &-td--sticky {
     position: sticky;
     background-color: var(--color-gray-50);
-    --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
-    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+    --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
+      drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+      var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
+      var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
   }
 
   &-th--sticky-right {
