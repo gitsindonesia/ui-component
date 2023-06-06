@@ -17,13 +17,6 @@ body {
   --alert-text-color: var(--color-indigo-100)
 }
 
-// PATCHES
-.dark {
-  .nav-drawer--bordered {
-    border-color: var(--color-gray-true-700);
-  }
-}
-
 // SCROLLBAR
 /* width */
 ::-webkit-scrollbar {

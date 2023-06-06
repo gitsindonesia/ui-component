@@ -35,11 +35,7 @@ function onMenuClick() {
     </template>
 
     <template #navigation>
-      <VAppBar
-        bordered
-        class="!h-[60px] border-l dark:border-neutral-700 px-4 !hidden lg:!flex"
-        sticky
-      >
+      <VAppBar bordered class="!h-[60px] px-4 !hidden lg:!flex" sticky>
         <div class="flex items-center w-full justify-between">
           <div class="flex gap-1">
             <VTooltip class="inline" placement="bottom">
@@ -74,7 +70,8 @@ function onMenuClick() {
         :fixed="isMobile"
         :overlay="isMobile"
         :close-on-overlay-click="isMobile"
-        :shadow="!isMobile"
+        :shadow="isMobile"
+        :bordered="!isMobile"
         :sticky="!isMobile"
         :class="{'z-20': isMobile}"
       >
