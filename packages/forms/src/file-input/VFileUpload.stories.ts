@@ -46,6 +46,18 @@ Default.parameters = {
   },
 };
 
+export const Multiple = Template.bind({});
+Multiple.args = {
+  multiple: true,
+};
+Multiple.parameters = {
+  docs: {
+    source: {
+      code: '<v-file-upload multiple />',
+    },
+  },
+};
+
 export const Hint = Template.bind({});
 Hint.args = {
   hint: 'This is a hint',
