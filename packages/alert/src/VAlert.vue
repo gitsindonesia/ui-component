@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {computed, toRefs, ref, watch, provide} from 'vue';
+import {computed, toRefs, ref, watch, provide, onMounted} from 'vue';
 import Icon from '@morpheme/icon';
 import {AlertSymbol} from './api';
 
@@ -16,7 +16,14 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  /**
+   * @deprecated Use `dismissible` instead
+   */
   dismissable: {
+    type: Boolean,
+    default: false,
+  },
+  dismissible: {
     type: Boolean,
     default: false,
   },
@@ -94,6 +101,14 @@ const api = {
 };
 
 provide(AlertSymbol, api);
+
+onMounted(() => {
+  if (props.dismissable) {
+    console.warn(
+      'The `dismissable` prop is deprecated. Use `dismissible` instead.',
+    );
+  }
+});
 </script>
 
 <template>
@@ -110,7 +125,11 @@ provide(AlertSymbol, api);
       <div class="alert-content">
         <slot />
       </div>
-      <slot v-if="dismissable" name="x-button" :dismiss="dismiss">
+      <slot
+        v-if="dismissable || dismissible"
+        name="x-button"
+        :dismiss="dismiss"
+      >
         <button class="alert-dismissable" aria-label="Dismiss" @click="dismiss">
           <slot name="x-icon">
             <Icon
