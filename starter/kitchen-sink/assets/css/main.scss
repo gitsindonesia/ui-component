@@ -1,3 +1,13 @@
+:root {
+  --scrollbar-track-bg-color: var(--color-gray-100);
+  --scrollbar-thumb-bg-color: var(--color-gray-true-300);
+  --scrollbar-thumb-hover-bg-color: var(--color-gray-true-500);
+
+  --dark-scrollbar-track-bg-color: var(--color-gray-true-500);
+  --dark-scrollbar-thumb-bg-color: var(--color-gray-true-600);
+  --dark-scrollbar-thumb-hover-bg-color: var(--color-gray-true-700);
+}
+
 body {
   background-color: var(--color-gray-50);
 }
@@ -25,22 +35,26 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: var(--color-gray-100); 
+  background: var(--scrollbar-track-bg-color); 
 }
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--color-gray-true-300);
+  background: var(--scrollbar-thumb-bg-color);
   border-radius: 8px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-gray-true-500); 
+  background: var(--scrollbar-thumb-hover-bg-color); 
 }
 
 // PATCHES
 .dark {
+  --scrollbar-track-bg-color: var(--dark-scrollbar-track-bg-color);
+  --scrollbar-thumb-bg-color: var(--dark-scrollbar-thumb-bg-color);
+  --scrollbar-thumb-hover-bg-color: var(--dark-scrollbar-thumb-hover-bg-color);
+
   .btn {
     &-default {
       --btn-border-color: var(--color-gray-true-700) !important;
