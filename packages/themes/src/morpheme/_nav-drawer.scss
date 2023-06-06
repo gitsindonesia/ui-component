@@ -4,6 +4,7 @@
   --nav-drawer-bg-color: var(--color-white);
   --nav-drawer-text-color: var(--color-gray-800);
   --nav-drawer-shadow: none;
+  --nav-drawer-border-color: var(--color-gray-200);
 }
 
 .nav-drawer {
@@ -63,14 +64,14 @@
   }
 
   &--bordered {
-    --nav-drawer-border: 1px solid var(--color-gray-200);
+    --nav-drawer-border: 1px solid var(--nav-drawer-border-color);
     border-top: none;
     border-bottom: none;
     border-left: none;
   }
 
   &--bordered.nav-drawer--right {
-    --nav-drawer-border: 1px solid var(--color-gray-200);
+    --nav-drawer-border: 1px solid var(--nav-drawer-border-color);
     border-top: none;
     border-bottom: none;
     border-right: none;

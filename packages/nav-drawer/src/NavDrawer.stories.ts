@@ -290,7 +290,11 @@ export const DarkMode: StoryFn<typeof NavDrawer> = (args) => ({
   template: `
   <div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
     <NavDrawer v-bind='args'>
-      <p>Test</p>
+      <p>Default</p>
+    </NavDrawer>
+
+    <NavDrawer v-bind='args' bordered class="mt-5">
+      <p>Bordered</p>
     </NavDrawer>
   </div>
   `,
