@@ -277,7 +277,7 @@
       padding-left: 0.75rem/* 12px */;
 
       &-icon {
-        color: var(--v-autocomplete-item-selected-icon-color);
+        color: var(--v-autocomplete-item-selected-icon-color) !important;
         width: 1.25rem/* 20px */;
         height: 1.25rem/* 20px */;
         fill: currentColor;
