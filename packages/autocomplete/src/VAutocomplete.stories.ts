@@ -287,6 +287,14 @@ export const DarkMode: Story = (args) => ({
     hint="This is a hint"
     clearable
   />
+
+  <VAutocomplete
+    v-bind="args"
+    v-model="selected"
+    label="Dark Mode"
+    hint="This is a hint"
+    error
+  />
 </main>
   `,
 });

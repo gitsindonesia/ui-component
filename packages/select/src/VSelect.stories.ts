@@ -509,6 +509,7 @@ export const DarkMode: Story = (args) => ({
   template: `
   <div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
     <VSelect v-bind='args' label="Choose" clearable hint="This is a hint" />
+    <VSelect v-bind='args' label="Choose" clearable hint="This is a hint" error />
   </div>
   `,
 });
