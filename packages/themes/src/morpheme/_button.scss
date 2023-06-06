@@ -103,8 +103,42 @@
     }
   }
 
-  &-default,
   &-secondary {
+    --btn-bg-color: var(--color-secondary-600);
+    --btn-border-color: var(--color-secondary-600);
+    --btn-text-color: var(--color-white);
+
+    &:hover {
+      --btn-bg-color: var(--color-secondary-700);
+      --btn-border-color: var(--color-secondary-700);
+    }
+
+    // outlined
+    &.btn--outlined {
+      --btn-bg-color: transparent;
+      --btn-border-color: var(--color-secondary-600);
+      --btn-text-color: var(--color-secondary-600);
+
+      &:hover {
+        --btn-bg-color: var(--color-secondary-600);
+        --btn-border-color: var(--color-secondary-600);
+        --btn-text-color: var(--color-white);
+      }
+    }
+
+    // text
+    &.btn--text {
+      --btn-bg-color: transparent;
+      --btn-border-color: transparent;
+      --btn-text-color: var(--color-secondary-600);
+
+      &:hover {
+        --btn-text-color: var(--color-secondary-700);
+      }
+    }
+  }
+
+  &-default {
     --btn-bg-color: var(--color-white);
     --btn-border-color: var(--color-gray-300);
     --btn-text-color: var(--color-gray-800);
