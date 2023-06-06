@@ -75,19 +75,22 @@ function onMenuClick() {
         :sticky="!isMobile"
         :class="{'z-20': isMobile}"
       >
-        <h3
+        <NuxtLink
+          to="/"
           class="
             font-semibold
             text-center
-            p-4
             border-b
             dark:border-neutral-700
             h-[60px]
             truncate
+            flex
+            items-center
+            justify-center
           "
         >
           Morpheme UI
-        </h3>
+        </NuxtLink>
 
         <div class="overflow-y-auto flex-1">
           <AppSidebarMenus @menu-click="onMenuClick" />
