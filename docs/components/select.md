@@ -12,7 +12,7 @@ The `VSelect` component is a form control for presenting a list of options to th
 
 To use the `VSelect` component, you will need to import the `ref` function from `vue` and the `VSelectItem` type from `@morpheme/select`. Then, create a ref of an array of `VSelectItem` objects and pass it to the `items` prop of the `VSelect` component in your template.
 
-<LivePreview src="components-select--select" >
+<LivePreview src="forms-select--select" >
 
 ```vue
 <script setup lang="ts">
@@ -50,7 +50,7 @@ The `VSelect` component is registered globally when you install with `@morpheme/
 
 To enable search functionality in the `VSelect` component, pass the `searchable` prop.
 
-<LivePreview src="components-select--searchable" >
+<LivePreview src="forms-select--searchable" >
 
 ```vue
 <script setup lang="ts">
@@ -84,7 +84,7 @@ const items = ref<VSelectItem[]>([
 
 To hide the check icon in the `VSelect` component, pass the `no-check-icon` prop.
 
-<LivePreview src="components-select--no-check-icon" >
+<LivePreview src="forms-select--no-check-icon" >
 
 ```vue
 <script setup lang="ts">
@@ -118,7 +118,7 @@ const items = ref<VSelectItem[]>([
 
 To display a label for the `VSelect` component, pass the `label` prop.
 
-<LivePreview src="components-select--label" >
+<LivePreview src="forms-select--label" >
 
 ```vue
 <script setup lang="ts">
@@ -152,7 +152,7 @@ const items = ref<VSelectItem[]>([
 
 To apply a shadow effect to the `VSelect` component, pass the `shadow` prop.
 
-<LivePreview src="components-select--shadow" >
+<LivePreview src="forms-select--shadow" >
 
 ```vue
 <script setup lang="ts">
@@ -186,7 +186,7 @@ const items = ref<VSelectItem[]>([
 
 To display the `VSelect` component in an error state, pass the `error` prop.
 
-<LivePreview src="components-select--error" >
+<LivePreview src="forms-select--error" >
 
 ```vue
 <script setup lang="ts">
@@ -220,7 +220,7 @@ const items = ref<VSelectItem[]>([
 
 To enable the ability to clear the selected value in the `VSelect` component, pass the `clearable` prop.
 
-<LivePreview src="components-select--clearable" >
+<LivePreview src="forms-select--clearable" >
 
 ```vue
 <script setup lang="ts">
@@ -254,7 +254,7 @@ const items = ref<VSelectItem[]>([
 
 To customize the transition effect of the `VSelect` component, pass the desired transition name to the `transition` prop.
 
-<LivePreview src="components-select--custom-transition">
+<LivePreview src="forms-select--custom-transition">
 
 ```vue
 <script setup lang="ts">
@@ -288,7 +288,7 @@ const items = ref<VSelectItem[]>([
 
 To return the selected item as an object rather than just the value, pass the `return-object` prop.
 
-<LivePreview src="components-select--return-object" >
+<LivePreview src="forms-select--return-object" >
 
 ```vue
 <script setup lang="ts">
@@ -322,7 +322,7 @@ const items = ref<VSelectItem[]>([
 
 The `VSelect` component supports three sizes: `sm`, `md`, and `lg`. To specify the size of the component, use the `size` prop.
 
-<LivePreview src="components-select--sizes" >
+<LivePreview src="forms-select--sizes" >
 
 ```vue
 <script setup lang="ts">
@@ -358,7 +358,7 @@ const items = ref<VSelectItem[]>([
 
 The `VSelect` component can be used with the `vee-validate` library to provide form validation. To use the `VSelect` component in a form with validation, import the `useForm` hook and pass it an object with a `validationSchema` property. Then, bind the `VSelect` component to the form values using the `v-model` directive.
 
-<LivePreview src="components-select--validation" >
+<LivePreview src="forms-select--validation" >
 
 ```vue
 <script setup lang="ts">
@@ -653,4 +653,4 @@ const items = ref([
 
 ## Storybook
 
-View Storybook documentation [here](https://gits-ui.web.app/?path=/story/components-select--default).
+View Storybook documentation [here](https://gits-ui.web.app/?path=/story/forms-select--default).
