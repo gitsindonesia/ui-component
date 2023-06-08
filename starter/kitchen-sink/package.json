@@ -22,6 +22,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@morpheme/design-tokens": "0.1.0-alpha.5",
     "@morpheme/nuxt": "1.0.0-alpha.79",
     "@morphemeicons/vue": "^0.2.0"
   },

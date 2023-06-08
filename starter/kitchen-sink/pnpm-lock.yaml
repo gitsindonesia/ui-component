@@ -12,6 +12,9 @@ overrides:
   '@morpheme/ui': 1.0.0-alpha.79
 
 dependencies:
+  '@morpheme/design-tokens':
+    specifier: 0.1.0-alpha.5
+    version: 0.1.0-alpha.5
   '@morpheme/nuxt':
     specifier: 1.0.0-alpha.79
     version: 1.0.0-alpha.79(nuxt@3.5.2)(vite@4.3.9)
