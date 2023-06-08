@@ -1,9 +1,3 @@
-<script lang="ts">
-export default {
-  inheritAttrs: false,
-};
-</script>
-
 <script setup lang="ts">
 import {useVModel} from '@vueuse/core';
 import {computed} from 'vue';
@@ -19,6 +13,8 @@ export interface Props {
   fixed?: boolean;
   right?: boolean;
   left?: boolean;
+  top?: boolean;
+  bottom?: boolean;
   transition?: string;
   overlay?: boolean;
   overlayTransition?: string;
@@ -37,6 +33,10 @@ const props = withDefaults(defineProps<Props>(), {
   closeOnOverlayClick: true,
   mini: false,
   height: 'screen',
+});
+
+defineOptions({
+  inheritAttrs: false,
 });
 
 const emit =
@@ -65,6 +65,8 @@ const classes = computed(() => {
       'nav-drawer--fixed': props.fixed,
       'nav-drawer--right': props.right,
       'nav-drawer--left': props.left,
+      'nav-drawer--bottom': props.bottom,
+      'nav-drawer--top': props.top,
       'nav-drawer--mini': props.mini,
       'nav-drawer--expand-on-hover': props.expandOnHover,
       'nav-drawer--expanded': isExpanded.value,
@@ -73,6 +75,10 @@ const classes = computed(() => {
 });
 
 const transitionName = computed(() => {
+  if (props.top) return 'nav-drawer-top-transition';
+
+  if (props.bottom) return 'nav-drawer-bottom-transition';
+
   return props.right ? 'nav-drawer-right-transition' : props.transition;
 });
 
@@ -107,6 +113,8 @@ const NAV_DRAWER_HEIGHT: Record<string, string | undefined> = {
 };
 
 const styles = computed(() => {
+  if (props.top || props.bottom) return {};
+
   const styles: Partial<HTMLDivElement['style']> = {};
 
   if (navDrawerHeights.includes(props.height as any)) {

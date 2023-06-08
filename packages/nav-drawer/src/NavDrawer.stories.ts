@@ -348,3 +348,59 @@ export const HeightVariants: StoryFn<typeof NavDrawer> = (args) => ({
     </NavDrawer>
   `,
 });
+
+export const Bottom: StoryFn<typeof NavDrawer> = (args) => ({
+  components: {NavDrawer, Button},
+  setup() {
+    const isOpen = ref(false);
+
+    return {args, isOpen};
+  },
+  template: `
+    <NavDrawer
+      v-model="isOpen"
+      color="primary"
+      shadow="lg"
+      bottom
+      fixed
+      overlay
+    >
+      <p class="font-semibold p-4">
+        Bottom Drawer
+      </p>
+    </NavDrawer>
+    <main>
+      <Button @click="isOpen = !isOpen">
+        {{ isOpen ? 'Close' : 'Open' }} Drawer
+      </Button>
+    </main>
+  `,
+});
+
+export const Top: StoryFn<typeof NavDrawer> = (args) => ({
+  components: {NavDrawer, Button},
+  setup() {
+    const isOpen = ref(false);
+
+    return {args, isOpen};
+  },
+  template: `
+    <NavDrawer
+      v-model="isOpen"
+      color="primary"
+      shadow="lg"
+      top
+      fixed
+      overlay
+    >
+      <p class="font-semibold p-4">
+        Top Drawer
+      </p>
+    </NavDrawer>
+    <main>
+      <Button @click="isOpen = !isOpen">
+        {{ isOpen ? 'Close' : 'Open' }} Drawer
+      </Button>
+    </main>
+  `,
+});
