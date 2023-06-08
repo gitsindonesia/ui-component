@@ -1,14 +1,14 @@
-const colors = require('@morpheme/theme');
 const defaultTheme = require('tailwindcss/defaultTheme');
+const theme = require('@morpheme/design-tokens/js/tailwind');
+const merge = require('lodash.merge');
 
 module.exports = {
   theme: {
-    extend: {
-      colors,
+    extend: merge(theme, {
       fontFamily: {
-        sans: ['Poppins', ...defaultTheme.fontFamily.sans],
+        sans: ['Inter', ...defaultTheme.fontFamily.sans],
       },
-    },
+    }),
   },
   plugins: [
     require('@tailwindcss/typography'),
