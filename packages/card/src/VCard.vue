@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {computed, PropType, resolveComponent, toRefs} from 'vue';
+import {computed, PropType, resolveComponent} from 'vue';
 
 export type CardShadow =
   | boolean
