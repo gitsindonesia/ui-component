@@ -5,6 +5,7 @@ import VIcon from '@morpheme/icon';
 import {defaultColors} from '@morpheme/theme/defaultTheme';
 import VBtnGroup from './VBtnGroup.vue';
 import VBtnToolbar from './VBtnToolbar.vue';
+import ButtonTest from './stories/ButtonTest.vue';
 
 const colors = defaultColors;
 const defaultSizes = ['sm', 'md', 'lg'];
@@ -457,5 +458,15 @@ export const DarkMode: Story<VBtnProps> = () => ({
       <VBtn prefix-icon="ri:format-clear"></VBtn>
     </VBtnToolbar>
 </div>
+  `,
+});
+
+export const Test: Story<VBtnProps> = (args) => ({
+  components: {ButtonTest},
+  setup() {
+    return {args, colors};
+  },
+  template: `
+  <ButtonTest />
   `,
 });
