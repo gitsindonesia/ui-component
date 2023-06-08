@@ -7,7 +7,7 @@ const schema = object({
   password: string().required().label('Password'),
 });
 
-const {handleSubmit, resetForm} = useForm({
+const {handleSubmit} = useForm({
   validationSchema: schema,
 });
 
@@ -20,8 +20,10 @@ const showPassword = ref(false);
 
 <template>
   <form @submit="onSubmit">
-    <h1 class="text-display-md font-semibold">Sign in</h1>
-    <p class="mt-2 text-gray-500 mb-6 text-sm">
+    <h1 class="text-display-md dark:text-gray-true-200 font-semibold">
+      Sign in
+    </h1>
+    <p class="mt-2 text-gray-500 mb-6 text-sm dark:text-gray-true-500">
       Please enter your email and password to proceed
     </p>
 
