@@ -1,45 +1,64 @@
 # Morpheme UI
 
-Free and open-source UI Component for Vue 3.
+A free and open-source Vue UI Library based on Morpheme Design System.
 
 ## Installation
 
-npm
+Install with your prefered package manager:
 
-```
+With NPM:
+
+```bash
 npm i @morpheme/ui
 ```
 
-yarn
+With Yarn:
 
-```
+```bash
 yarn add @morpheme/ui
 ```
 
-pnpm
+With PNPM:
 
-```
-pnpm i @morpheme/ui
+```bash
+pnpm add @morpheme/ui
 ```
 
-## Usage
+## Quick Setup
+
+Setup the Vue plugin to your `main.ts` or `main.js` file:
 
 ```ts
-// file: main.ts
+// file: main.ts or main.js
 
-import GitsUI from '@morpheme/ui';
-import '@morpheme/ui/styles';
-// or load SCSS styles
-// import '@morpheme/ui/styles.scss';
+// import the plugin
+import MorphemeUI from '@morpheme/ui';
+
+// import the styles
+// load CSS bundle
+import '@morpheme/themes/dist/morpheme/style.css'
+
+// uncomment this line to load SCSS bundle
+// import '@morpheme/themes/src/morpheme/main.scss'
 
 const app = createApp(App);
 
-app.use(GitsUI);
+app.use(MorphemeUI);
+```
+
+Then, you are ready to use the component:
+
+```vue
+<template>
+  <VCard title="Hello World">
+    <VBtn color="primary">Click me</VBtn>
+  </VCard>
+</template>
 ```
 
 ## Documentation
 
-View full documentation here https://gitsindonesia.github.io/ui-component/.
+View full documentation [here](https://gitsindonesia.github.io/ui-component/)
 
 ## License
 
