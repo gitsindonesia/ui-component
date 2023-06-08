@@ -29,5 +29,8 @@ export default defineNuxtConfig({
         defineModel: true,
       },
     },
+    optimizeDeps: {
+      include: ['quill-delta', 'quill'],
+    },
   },
 });
