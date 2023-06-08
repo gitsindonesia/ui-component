@@ -203,6 +203,10 @@ const menus = ref<MenuItem[]>([
         text: 'Login',
         to: '/pages/login',
       },
+      {
+        text: 'Register',
+        to: '/pages/register',
+      },
     ],
   },
 ]);
