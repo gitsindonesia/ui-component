@@ -243,6 +243,7 @@ export const Right: StoryFn<typeof NavDrawer> = (args) => ({
 
 export const Overlay = Right.bind({});
 Overlay.args = {
+  fixed: true,
   overlay: true,
 };
 

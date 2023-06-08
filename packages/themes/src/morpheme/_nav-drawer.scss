@@ -5,6 +5,7 @@
   --nav-drawer-text-color: var(--color-gray-800);
   --nav-drawer-shadow: none;
   --nav-drawer-border-color: var(--color-gray-200);
+  --nav-drawer-z-index: 20;
 }
 
 .nav-drawer {
@@ -85,6 +86,7 @@
   &--fixed {
     position: fixed;
     top: 0;
+    z-index: var(--nav-drawer-z-index);
   }
 
   &--right {
