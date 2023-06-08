@@ -1,13 +1,13 @@
 # Nuxt Morpheme UI
 
-Morpheme UI Component + Nuxt 3.
+Morpheme UI + Nuxt 3.
 
 ## Installation
 
 - Install Nuxt Morpheme UI
 
 ```bash
-yarn add @morpheme/ui-nuxt
+yarn add @morpheme/nuxt
 ```
 
 - Install `@nuxtjs/tailwindcss` and `sass`
@@ -23,8 +23,8 @@ import {defineNuxtConfig} from 'nuxt';
 
 export default defineNuxtConfig({
   modules: ['@morpheme/nuxt', '@nuxtjs/tailwindcss'],
-  gitsUi: {
-    //
+  morpheme: {
+    theme: 'morpheme',
   },
 });
 ```
@@ -32,7 +32,7 @@ export default defineNuxtConfig({
 Create your `tailwind.config.js` by running:
 
 ```bash
-npx tailwindcss init
+npx tailwindcss init -p
 ```
 
 Update your `tailwind.config.js`:

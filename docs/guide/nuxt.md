@@ -11,7 +11,7 @@ Currently, **Morpheme UI only support Nuxt 3**.
 1. Install Nuxt Morpheme UI by running the following command:
 
 ```bash
-yarn add @morpheme/ui-nuxt
+yarn add @morpheme/nuxt
 ```
 
 2. Install `@nuxtjs/tailwindcss`:
@@ -40,7 +40,7 @@ export default defineNuxtConfig({
 5. Create your tailwind config by running:
 
 ```bash
-npx tailwindcss init
+npx tailwindcss init -p
 ```
 
 6. Scan the `@morpheme/*` folders inside the `node_modules` by adding `'./node_modules/@morpheme/**/src/**/*.{vue,js,ts,jsx,tsx,css}'` to the `content` block in your Tailwind config. Also, add the default preset to the `presets` option.
@@ -187,6 +187,8 @@ export default defineNuxtConfig({
   modules: ['@morpheme/nuxt', '@nuxtjs/tailwindcss'],
   // https://gitsindonesia.github.io/ui-component/guide/nuxt.html#options
   morpheme: {
+    // use `morpheme` theme
+    theme: 'morpheme'
     // enable dark mode
     darkMode: true,
   },
