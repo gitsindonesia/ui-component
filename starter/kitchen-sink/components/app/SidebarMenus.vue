@@ -49,6 +49,7 @@ const menus = ref<MenuItem[]>([
       {text: 'BottomSheet', to: '/components/bottom-sheet'},
       {text: 'Breadcrumbs', to: '/components/breadcrumbs'},
       {text: 'Card', to: '/components/card'},
+      {text: 'Collapse', to: '/components/collapse'},
       {text: 'Collapsible', to: '/components/collapsible'},
       {text: 'DataTable', to: '/components/data-table'},
       {
