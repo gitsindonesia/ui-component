@@ -145,6 +145,50 @@ const menus = ref<MenuItem[]>([
         text: 'Button',
         to: '/forms/buttons',
       },
+      {
+        text: 'Checkbox',
+        to: '/forms/checkbox',
+      },
+      {
+        text: 'Editor',
+        to: '/forms/editor',
+      },
+      {
+        text: 'FileInput',
+        to: '/forms/file-input',
+      },
+      {
+        text: 'FormSelect',
+        to: '/forms/form-select',
+      },
+      {
+        text: 'InputRange',
+        to: '/forms/input-range',
+      },
+      {
+        text: 'Input',
+        to: '/forms/input',
+      },
+      {
+        text: 'MultiSelect',
+        to: '/forms/multi-select',
+      },
+      {
+        text: 'QuillEditor',
+        to: '/forms/quill-editor',
+      },
+      {
+        text: 'RadioGroup',
+        to: '/forms/radio-group',
+      },
+      {
+        text: 'Radio',
+        to: '/forms/radio',
+      },
+      {
+        text: 'Textarea',
+        to: '/forms/textarea',
+      },
     ],
   },
 ]);
