@@ -3,12 +3,42 @@
     &-default {
       --card-bg-color: var(--color-gray-true-800);
       --card-color: var(--color-gray-true-200);
-      --card-border-color: var(--color-gray-true-600);
+      --card-border-color: var(--color-gray-true-700);
     }
 
     &-dark {
       --card-bg-color: var(--color-gray-800);
-      --card-color: var(--color-white);
+      --card-border-color: var(--color-gray-700);
+    }
+
+    &-primary {
+      --card-bg-color: var(--color-primary-500);
+      --card-border-color: var(--color-primary-400);
+    }
+    
+    &-secondary {
+      --card-bg-color: var(--color-secondary-500);
+      --card-border-color: var(--color-secondary-400);
+    }
+
+    &-info {
+      --card-bg-color: var(--color-info-500);
+      --card-border-color: var(--color-info-400);
+    }
+
+    &-warning {
+      --card-bg-color: var(--color-warning-500);
+      --card-border-color: var(--color-warning-400);
+    }
+
+    &-error {
+      --card-bg-color: var(--color-error-500);
+      --card-border-color: var(--color-error-400);
+    }
+
+    &-success {
+      --card-bg-color: var(--color-success-500);
+      --card-border-color: var(--color-success-400);
     }
   }
 }

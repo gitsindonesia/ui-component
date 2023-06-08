@@ -198,6 +198,10 @@ export const DarkMode: Story<{}> = () => ({
   <VCard v-for="color in defaultColors" :key="color" :color="color">
     {{ color }}
   </VCard>
+
+  <VCard bordered title="Header" v-for="color in defaultColors" :key="color" :color="color">
+    {{ color }}
+  </VCard>
 </main>
 `,
 });
