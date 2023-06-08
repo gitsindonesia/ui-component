@@ -1,10 +1,32 @@
+:root {
+  --v-tooltip-padding-x: var(--size-spacing-2);
+  --v-tooltip-padding-y: var(--size-spacing-3);
+  --v-tooltip-border-radius: var(--border-radius-lg);
+  --v-tooltip-font-size: var(--size-font-sm);
+
+  // black theme
+  --v-tooltip-black-bg-color: var(--color-gray-900);
+  --v-tooltip-black-color: white;
+  --v-tooltip-black-arrow-border-color: var(--color-gray-900);
+
+  // white theme
+  --v-tooltip-white-bg-color: var(--color-white);
+  --v-tooltip-white-color: var(--color-gray-700);
+  --v-tooltip-white-border: 1px solid var(--color-gray-100);
+  --v-tooltip-white-arrow-border-color: var(--color-gray-50);
+}
+
+.v-popper {
+  display: inline-block;
+}
+
 .v-popper--theme-tooltip-black {
   .v-popper__inner {
-    background: var(--color-gray-900);
-    color: white;
-    padding: var(--size-spacing-2) var(--size-spacing-3);
-    border-radius: var(--border-radius-lg);
-    font-size: var(--size-font-sm);
+    background: var(--v-tooltip-black-bg-color);
+    color: var(--v-tooltip-black-color);
+    padding: var(--v-tooltip-padding-y) var(--v-tooltip-padding-x);
+    border-radius: var(--v-tooltip-border-radius);
+    font-size: var(--v-tooltip-font-size);
   }
 
   .v-popper__arrow-outer {
@@ -14,15 +36,15 @@
 
 .v-popper--theme-tooltip-white {
   .v-popper__inner {
-    background: var(--color-white);
-    color: var(--color-gray-700);
-    padding: var(--size-spacing-2) var(--size-spacing-3);
-    border-radius: var(--border-radius-lg);
-    font-size: var(--size-font-sm);
-    border: 1px solid var(--color-gray-100);
+    background: var(--v-tooltip-white-bg-color);
+    color: var(--v-tooltip-white-color);
+    padding: var(--v-tooltip-padding-y) var(--v-tooltip-padding-x);
+    border-radius: var(--v-tooltip-border-radius);
+    font-size: var(--v-tooltip-font-size);
+    border: var(--v-tooltip-white-border);
   }
 
   .v-popper__arrow-outer {
-    border-color: var(--color-gray-50);
+    border-color: var(--v-tooltip-white-arrow-border-color);
   }
 }

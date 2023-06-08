@@ -86,3 +86,30 @@ export const Colors: Story = (args) => ({
     </VTooltip>
   `,
 });
+
+export const DarkMode: Story = (args) => ({
+  components: {VTooltip, VBtn},
+  setup() {
+    return {args};
+  },
+  template: `
+    <div class="dark p-6 dark:bg-neutral-900">
+      <VTooltip v-bind='args'>
+        <template #activator>
+          <v-btn>
+            Default (black)
+          </v-btn>
+        </template>
+        <span>Hello :)</span>
+      </VTooltip>
+      <VTooltip v-bind='args' color="white" class="ml-2">
+        <template #activator>
+          <v-btn>
+            White
+          </v-btn>
+        </template>
+        <span>Hello :)</span>
+      </VTooltip>
+    </div>
+  `,
+});
