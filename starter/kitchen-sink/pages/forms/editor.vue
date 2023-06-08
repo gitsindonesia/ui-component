@@ -9,7 +9,7 @@ const value = ref('');
     <VCard title="Default">
       <div>
         <ClientOnly>
-          <VEditor v-model="value" />
+          <!-- <VEditor v-model="value" /> -->
         </ClientOnly>
       </div>
     </VCard>
@@ -17,7 +17,7 @@ const value = ref('');
     <VCard title="Label">
       <div>
         <ClientOnly>
-          <VEditor v-model="value" label="Label" />
+          <!-- <VEditor v-model="value" label="Label" /> -->
         </ClientOnly>
       </div>
     </VCard>
