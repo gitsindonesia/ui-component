@@ -1,5 +1,9 @@
 <script setup lang="ts">
-import {Home01Icon, LayersTwo02Icon} from '@morphemeicons/vue/untitled';
+import {
+  Flag01Icon,
+  Home01Icon,
+  LayersTwo02Icon,
+} from '@morphemeicons/vue/untitled';
 
 const emit =
   defineEmits<{
@@ -188,6 +192,16 @@ const menus = ref<MenuItem[]>([
       {
         text: 'Textarea',
         to: '/forms/textarea',
+      },
+    ],
+  },
+  {
+    text: 'Pages',
+    icon: Flag01Icon,
+    children: [
+      {
+        text: 'Login',
+        to: '/pages/login',
       },
     ],
   },
