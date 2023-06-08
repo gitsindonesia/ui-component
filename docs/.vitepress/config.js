@@ -8,7 +8,7 @@ export default defineConfig({
   base: '/ui-component/',
   themeConfig: {
     search: {
-      provider: 'local'
+      provider: 'local',
     },
     logo: 'https://gits.id/wp-content/uploads/2022/06/Logo-Main-1.png',
     nav: [
@@ -81,6 +81,7 @@ export default defineConfig({
           {text: 'BottomSheet', link: '/components/bottom-sheet'},
           {text: 'Breadcrumbs', link: '/components/breadcrumbs'},
           {text: 'Card', link: '/components/card'},
+          {text: 'Collapse', link: '/components/collapse'},
           {text: 'Collapsible', link: '/components/collapsible'},
           {text: 'DataTable', link: '/components/data-table'},
           {
