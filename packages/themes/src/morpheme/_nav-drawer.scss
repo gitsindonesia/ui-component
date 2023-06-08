@@ -6,6 +6,13 @@
   --nav-drawer-shadow: none;
   --nav-drawer-border-color: var(--color-gray-200);
   --nav-drawer-z-index: 20;
+
+  // mini
+  --nav-drawer-mini-width: 62px;
+
+  // expanded
+  --nav-drawer-inexpanded-width: var(--nav-drawer-mini-width);
+  --nav-drawer-expanded-width: 248px;
 }
 
 .nav-drawer {
@@ -17,6 +24,7 @@
   flex-shrink: 0;
   box-shadow: var(--nav-drawer-shadow);
   border: var(--nav-drawer-border);
+  width: var(--nav-drawer-width);
 
   /* variants */
   &-default {
@@ -40,7 +48,7 @@
 
   /* modifiers */
   &--mini {
-    --nav-drawer-width: 62px;
+    --nav-drawer-width: var(--nav-drawer-mini-width);
   }
 
   &--shadow {
@@ -197,9 +205,9 @@
 
   /* expand on hover */
   &--expand-on-hover:not(&--expanded) {
-    --nav-drawer-width: 62px;
+    --nav-drawer-width: var(--nav-drawer-inexpanded-width);
   }
   &--expand-on-hover.nav-drawer--expanded {
-    --nav-drawer-width: 248px;
+    --nav-drawer-width: var(--nav-drawer-expanded-width);
   }
 }
