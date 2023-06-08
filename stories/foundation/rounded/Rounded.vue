@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import defaultTheme from 'tailwindcss/defaultTheme';
+import tokens from '@morpheme/design-tokens/js/tailwind';
 import {remToPx} from '../utils';
 </script>
 
@@ -7,7 +7,7 @@ import {remToPx} from '../utils';
   <h1 class="text-3xl font-bold mb-5">Rounded</h1>
   <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
     <div
-      v-for="(rounded, name) in defaultTheme.borderRadius"
+      v-for="(rounded, name) in tokens.borderRadius"
       :key="name"
       :style="{borderRadius: rounded}"
       class="p-6 border-2 text-center bg-white"

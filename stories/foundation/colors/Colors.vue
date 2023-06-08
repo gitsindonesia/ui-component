@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import {primary, secondary} from '@morpheme/theme/defaultTheme';
-import colors from 'tailwindcss/colors';
+import tokens from '@morpheme/design-tokens/js/tailwind';
 
-colors.primary = primary;
-colors.secondary = secondary;
-colors.info = colors.sky;
-colors.warning = colors.yellow;
-colors.success = colors.emerald;
-colors.error = colors.rose;
+const colors = tokens.colors;
+
+// colors.primary = primary;
+// colors.secondary = secondary;
+// colors.info = colors.info;
+// colors.warning = colors.warning;
+// colors.success = colors.success;
+// colors.error = colors.error;
 
 const brandColors = [
   'bg-primary-500',
