@@ -1,0 +1,27 @@
+// indigo theme
+// this theme is example of how to override default theme
+// you can use this theme as a starting point for your own theme
+
+.indigo {
+  --color-primary-50: var(--color-indigo-50) !important;
+  --color-primary-100: var(--color-indigo-100) !important;
+  --color-primary-200: var(--color-indigo-200) !important;
+  --color-primary-300: var(--color-indigo-300) !important;
+  --color-primary-400: var(--color-indigo-400) !important;
+  --color-primary-500: var(--color-indigo-500) !important;
+  --color-primary-600: var(--color-indigo-600) !important;
+  --color-primary-700: var(--color-indigo-700) !important;
+  --color-primary-800: var(--color-indigo-800) !important;
+  --color-primary-900: var(--color-indigo-900) !important;
+
+  --color-secondary-50: var(--color-pink-50) !important;
+  --color-secondary-100: var(--color-pink-100) !important;
+  --color-secondary-200: var(--color-pink-200) !important;
+  --color-secondary-300: var(--color-pink-300) !important;
+  --color-secondary-400: var(--color-pink-400) !important;
+  --color-secondary-500: var(--color-pink-500) !important;
+  --color-secondary-600: var(--color-pink-600) !important;
+  --color-secondary-700: var(--color-pink-700) !important;
+  --color-secondary-800: var(--color-pink-800) !important;
+  --color-secondary-900: var(--color-pink-900) !important;
+}

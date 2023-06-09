@@ -1,6 +1,5 @@
 <script setup lang="ts">
 const modelValue = defineModel<boolean>("modelValue");
-const colorMode = useColorMode();
 
 const themes = ref([
   {
