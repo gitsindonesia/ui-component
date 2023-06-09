@@ -774,6 +774,14 @@ export const DarkMode: Story<VInputProps> = (args) => ({
         label="Label"
         placeholder="Placeholder"
         hint="This is a hint"
+        name="email"
+        wrapper-class="mb-4"
+      />
+      <v-input
+        label="Password"
+        placeholder="Placeholder"
+        hint="This is a hint"
+        name="password"
       />
     </div>
   `,
