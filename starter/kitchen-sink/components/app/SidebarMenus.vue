@@ -194,6 +194,10 @@ const menus = ref<MenuItem[]>([
         text: 'Textarea',
         to: '/forms/textarea',
       },
+      {
+        text: 'Validation',
+        to: '/forms/validation',
+      },
     ],
   },
   {
