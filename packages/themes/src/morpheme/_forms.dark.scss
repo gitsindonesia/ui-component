@@ -1,4 +1,8 @@
 .dark {
+  // autofill
+  --v-autofill-color: var(--color-gray-200);
+  --v-autofill-sahdow-color: var(--color-gray-800);
+
   .v-input,
   .v-multi-select,
   .v-select,
