@@ -1,8 +1,10 @@
 :root {
+  // light
   --scrollbar-track-bg-color: var(--color-gray-100);
   --scrollbar-thumb-bg-color: var(--color-gray-true-300);
   --scrollbar-thumb-hover-bg-color: var(--color-gray-true-500);
 
+  // dark
   --dark-scrollbar-track-bg-color: var(--color-gray-true-500);
   --dark-scrollbar-thumb-bg-color: var(--color-gray-true-600);
   --dark-scrollbar-thumb-hover-bg-color: var(--color-gray-true-700);
@@ -11,15 +13,6 @@
 body {
   background-color: var(--color-gray-50);
   color: var(--color-gray-true-700);
-}
-
-
-// dark mode
-.dark {
-  body {
-    background-color: var(--color-gray-true-900);
-    color: var(--color-gray-true-200);
-  }
 }
 
 // custom alert
@@ -51,42 +44,15 @@ body {
   background: var(--scrollbar-thumb-hover-bg-color); 
 }
 
-// webkit autofill styles
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-  -webkit-text-fill-color: var(--color-gray-700);
-  -webkit-box-shadow: 0 0 0px 1000px white inset;
-  transition: background-color 5000s ease-in-out 0s;
-  border: none !important;
-  border-radius: none !important;
-}
-
 // DARK MODE
 .dark {
   // scrollbar
   --scrollbar-track-bg-color: var(--dark-scrollbar-track-bg-color);
   --scrollbar-thumb-bg-color: var(--dark-scrollbar-thumb-bg-color);
   --scrollbar-thumb-hover-bg-color: var(--dark-scrollbar-thumb-hover-bg-color);
-
-// webkit autofill styles
-  input:-webkit-autofill,
-  input:-webkit-autofill:hover, 
-  input:-webkit-autofill:focus,
-  textarea:-webkit-autofill,
-  textarea:-webkit-autofill:hover,
-  textarea:-webkit-autofill:focus,
-  select:-webkit-autofill,
-  select:-webkit-autofill:hover,
-  select:-webkit-autofill:focus {
-    -webkit-text-fill-color: var(--color-gray-true-200);
-    -webkit-box-shadow: 0 0 0px 1000px var(--color-gray-true-800) inset;
-    transition: background-color 5000s ease-in-out 0s;
+  
+  body {
+    background-color: var(--color-gray-true-900);
+    color: var(--color-gray-true-200);
   }
 }
