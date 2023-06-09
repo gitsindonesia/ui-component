@@ -6,17 +6,24 @@ interface Message {
 }
 
 const messages = ref<Message[]>([]);
+const alertGroupEnd = ref()
 
 const add = () => {
   messages.value.push({
     text: 'This is a message',
   });
+
+  // Scroll to bottom
+  nextTick(() => {
+    alertGroupEnd.value.scrollIntoView({
+      behavior: 'smooth',
+      block: 'end',
+    })
+  })
 };
 
-const addPrepend = () => {
-  messages.value.unshift({
-    text: 'This is a message',
-  });
+const clear = () => {
+  messages.value = [];
 };
 
 const remove = () => {
@@ -110,18 +117,19 @@ function removeAlert(index: number) {
     <VCard title="Alert Group">
       <div class="flex gap-2">
         <VBtn @click="add"> Add </VBtn>
-        <VBtn @click="addPrepend"> Add Prepend </VBtn>
         <VBtn @click="remove"> Remove </VBtn>
+        <VBtn @click="clear"> Clear </VBtn>
       </div>
       <div
         class="
           fixed
+          z-20
           bottom-0
           right-0
           w-80
           p-6
-          min-h-screen
           overflow-y-auto overflow-x-hidden
+          max-h-96
         "
       >
         <VAlertGroup>
@@ -133,9 +141,12 @@ function removeAlert(index: number) {
             dismissable
             @dismissed="removeAlert(index)"
           >
+            <VAlertTitle>Title</VAlertTitle>
             {{ message.text }}
           </VAlert>
         </VAlertGroup>
+
+        <div ref="alertGroupEnd" class="alert-bottom-view"></div>
       </div>
     </VCard>
   </div>
