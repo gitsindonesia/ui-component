@@ -51,16 +51,42 @@ body {
   background: var(--scrollbar-thumb-hover-bg-color); 
 }
 
-// PATCHES
+// webkit autofill styles
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--color-gray-700);
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  transition: background-color 5000s ease-in-out 0s;
+  border: none !important;
+  border-radius: none !important;
+}
+
+// DARK MODE
 .dark {
+  // scrollbar
   --scrollbar-track-bg-color: var(--dark-scrollbar-track-bg-color);
   --scrollbar-thumb-bg-color: var(--dark-scrollbar-thumb-bg-color);
   --scrollbar-thumb-hover-bg-color: var(--dark-scrollbar-thumb-hover-bg-color);
 
-  .btn {
-    &-default {
-      --btn-border-color: var(--color-gray-true-700) !important;
-      --btn-bg-color: var(--color-gray-true-700) !important;
-    }
+// webkit autofill styles
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--color-gray-true-200);
+    -webkit-box-shadow: 0 0 0px 1000px var(--color-gray-true-800) inset;
+    transition: background-color 5000s ease-in-out 0s;
   }
 }
