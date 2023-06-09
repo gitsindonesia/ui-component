@@ -195,13 +195,13 @@ const clear = () => {
         </ComboboxOptions>
       </TransitionRoot>
     </div>
+    <p v-if="hint" class="autocomplete-hint">
+      <slot name="hint">
+        {{ hint }}
+      </slot>
+    </p>
+    <div v-if="errorMessage && !hideError" :class="errorClass">
+      {{ errorMessage }}
+    </div>
   </Combobox>
-  <p v-if="hint" class="autocomplete-hint">
-    <slot name="hint">
-      {{ hint }}
-    </slot>
-  </p>
-  <div v-if="errorMessage && !hideError" :class="errorClass">
-    {{ errorMessage }}
-  </div>
 </template>

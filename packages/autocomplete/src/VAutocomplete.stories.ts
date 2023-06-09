@@ -106,6 +106,7 @@ export const Validation: Story = (args) => ({
         label="Genre"
         placeholder="Choose your prefered genres"
         :items="genres"
+        hint="This is a hint"
         v-bind="args"
       />
       <div class="mt-4">
