@@ -23,7 +23,8 @@ function onMenuClick() {
       <VAppBar shadow class="py-3 px-4 !flex lg:!hidden" size="auto" sticky>
         <VLogo :white="colorMode.preference !== 'light'" @click="onMenuClick" />
         <div class="flex-1" />
-        <div class="flex items-center gap-4">
+        <div class="flex items-center gap-3">
+          <VBtn @click="settingsDrawer = !settingsDrawer" prefix-icon="ic:round-settings" text fab icon></VBtn>
           <ColorModeSwitcher />
           <VBtn
             color="primary"

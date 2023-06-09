@@ -23,7 +23,7 @@ const themes = ref([
 
 <template>
   <VNavDrawer v-model="modelValue" fixed overlay close-on-overlay-click shadow right>
-    <h3 class="px-4 py-4 text-lg font-semibold border-b dark:border-gray-true-700">
+    <h3 class="px-4 py-5 lg:py-4 text-lg font-semibold border-b dark:border-gray-true-700">
       Settings
     </h3>
 
