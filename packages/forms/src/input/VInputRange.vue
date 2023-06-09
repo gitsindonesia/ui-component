@@ -3,6 +3,7 @@ import {ref, watch, toRefs, onMounted, computed} from 'vue';
 import {useRange} from './useRange';
 import {useInputClasses} from '@morpheme/utils';
 import {useField} from 'vee-validate';
+import VInput from '../input/VInput.vue';
 
 const props = defineProps({
   modelValue: {
@@ -120,11 +121,17 @@ const handleBlur = () => {
       <div class="relative w-full">
         <div tabindex="1">
           <div class="flex justify-between mb-3">
-            <label class="text-gray-700 text-sm" for="min"
-              >{{ minValue }}
+            <label
+              class="text-gray-600 dark:text-gray-neutral-300 text-sm"
+              for="min"
+            >
+              {{ minValue }}
             </label>
-            <label class="text-gray-700 text-sm" for="max"
-              >{{ maxValue }}
+            <label
+              class="text-gray-600 dark:text-gray-neutral-300 text-sm"
+              for="max"
+            >
+              {{ maxValue }}
             </label>
           </div>
 
@@ -242,7 +249,7 @@ const handleBlur = () => {
           "
         >
           <div>
-            <input
+            <VInput
               v-model="minValue"
               @blur="handleBlur"
               type="text"
@@ -252,7 +259,7 @@ const handleBlur = () => {
             />
           </div>
           <div>
-            <input
+            <VInput
               v-model="maxValue"
               @blur="handleBlur"
               type="text"

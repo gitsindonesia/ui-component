@@ -190,3 +190,16 @@ export const HideError = Validation.bind({});
 HideError.args = {
   hideError: true,
 };
+
+export const DarkMode: Story = (args) => ({
+  components: {VInputRange},
+  setup() {
+    const val = ref('');
+    return {args, val};
+  },
+  template: `
+  <main class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6 space-y-2">
+    <VInputRange v-model="val" v-bind="args" show-input />
+  </main>
+  `,
+});
