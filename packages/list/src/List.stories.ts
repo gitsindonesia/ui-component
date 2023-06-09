@@ -96,23 +96,27 @@ export const Small: Story = (args) => ({
   template: `
     <p>Default</p>
     <List v-bind="args" hover>
-      <ListItem>Item 1</ListItem>
-      <ListItem>Item 2</ListItem>
-      <ListItemDivider />
-      <ListItem>Item 3</ListItem>
-      <ListItemDivider />
-      <ListItem>Item 4</ListItem>
-      <ListItem>Item 5</ListItem>
-    </List>
+      <ListItem prepend-icon="ri:home-line">Item 1</ListItem>
+      <ListItem prepend-icon="ri:home-line">Item 2</ListItem>
+      <ListItem prepend-icon="ri:home-line">Item 3</ListItem>
+      </List>
     <p>Small</p>
     <List v-bind="args" small hover>
-      <ListItem>Item 1</ListItem>
-      <ListItem>Item 2</ListItem>
-      <ListItemDivider />
-      <ListItem>Item 3</ListItem>
-      <ListItemDivider />
-      <ListItem>Item 4</ListItem>
-      <ListItem>Item 5</ListItem>
+      <ListItem prepend-icon="ri:home-line">Item 1</ListItem>
+      <ListItem prepend-icon="ri:home-line">Item 2</ListItem>
+      <ListItem prepend-icon="ri:home-line">Item 3</ListItem>
+    </List>
+    <p>Dense</p>
+    <List v-bind="args" dense hover>
+      <ListItem prepend-icon="ri:home-line">Item 1</ListItem>
+      <ListItem prepend-icon="ri:home-line">Item 2</ListItem>
+      <ListItem prepend-icon="ri:home-line">Item 3</ListItem>
+    </List>
+    <p>Large</p>
+    <List v-bind="args" large hover>
+      <ListItem prepend-icon="ri:home-line">Item 1</ListItem>
+      <ListItem prepend-icon="ri:home-line">Item 2</ListItem>
+      <ListItem prepend-icon="ri:home-line">Item 3</ListItem>
     </List>
   `,
 });

@@ -9,6 +9,7 @@ type Props = {
   flush?: boolean;
   dense?: boolean;
   small?: boolean;
+  large?: boolean;
 };
 
 const props = withDefaults(defineProps<Props>(), {
@@ -28,6 +29,7 @@ const props = withDefaults(defineProps<Props>(), {
       'v-list--flush': flush,
       'v-list--dense': dense,
       'v-list--small': small,
+      'v-list--large': large,
     }"
   >
     <slot v-bind="props" />

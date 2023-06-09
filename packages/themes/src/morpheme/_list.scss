@@ -200,10 +200,24 @@
   /* small */
   &--small &-item,
   &-item--small {
-    --v-list-item-padding-y: var(--size-spacing-1);
+    --v-list-item-padding-y: var(--size-spacing-2);
     --v-list-item-padding-x: var(--size-spacing-2);
     --v-list-item-gap: var(--size-spacing-2);
     --v-list-item-font-size: var(--size-font-sm);
     --v-list-item-line-height: var(--size-font-md);
+    --v-list-item-icon-width: var(--size-spacing-4);
+    --v-list-item-icon-height: var(--size-spacing-4);
+  }
+
+  /* large */
+  &--large &-item,
+  &-item--large {
+    --v-list-item-padding-y: var(--size-spacing-3);
+    --v-list-item-padding-x: var(--size-spacing-4);
+    --v-list-item-gap: var(--size-spacing-3);
+    --v-list-item-font-size: var(--size-font-md);
+    --v-list-item-line-height: var(--size-font-lg);
+    --v-list-item-icon-width: var(--size-spacing-5);
+    --v-list-item-icon-height: var(--size-spacing-5);
   }
 }
