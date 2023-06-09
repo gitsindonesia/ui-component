@@ -5,6 +5,7 @@ const breakpoints = useBreakpoints(breakpointsTailwind);
 const isMobile = breakpoints.smaller('lg'); // only smaller than lg
 const isAsideOpen = ref(false);
 const isMini = ref(false);
+const settingsDrawer = ref(false);
 const colorMode = useColorMode();
 
 watchEffect(() => {
@@ -56,6 +57,7 @@ function onMenuClick() {
             </VTooltip>
           </div>
           <div>
+            <VBtn @click="settingsDrawer = !settingsDrawer" prefix-icon="ic:round-settings" text fab icon></VBtn>
             <ColorModeSwitcher />
           </div>
         </div>
@@ -64,6 +66,8 @@ function onMenuClick() {
 
     <!-- aside -->
     <template #aside>
+      <AppSettingsDrawer v-model="settingsDrawer" />
+
       <VNavDrawer
         v-model="isAsideOpen"
         :mini="isMini"
