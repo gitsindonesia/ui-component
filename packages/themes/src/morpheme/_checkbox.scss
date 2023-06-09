@@ -23,11 +23,6 @@
   --v-checkbox-label-display: var(--v-input-label-display, block);
   --v-checkbox-label-margin-top: 1px;
   --v-checkbox-label-color: var(--color-gray-700);
-
-  // hint
-  --v-checkbox-hint-font-size: var(--v-input-hint-font-size, 14px);
-  --v-checkbox-hint-color: var(--v-input-hint-color, var(--color-gray-500));
-  --v-checkbox-hint-margin-top: var(--v-input-hint-margin-top, 4px);
 }
 
 .v-checkbox {
@@ -81,9 +76,9 @@
   }
 
   &-hint {
-    font-size: var(--v-checkbox-hint-font-size);
-    color: var(--v-checkbox-hint-color);
-    margin-top: var(--v-checkbox-hint-margin-top);
+    font-size: var(--v-input-hint-font-size);
+    color: var(--v-input-hint-color);
+    margin-top: var(--v-input-hint-margin-top);
   }
 
   &-primary {
