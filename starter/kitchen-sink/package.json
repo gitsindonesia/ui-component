@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@morpheme/design-tokens": "0.1.0-alpha.5",
-    "@morpheme/nuxt": "1.0.0-alpha.142",
+    "@morpheme/nuxt": "1.0.0-alpha.144",
     "@morphemeicons/vue": "^0.2.0"
   },
   "devDependencies": {
@@ -52,15 +52,15 @@
       "@morpheme/menus": "1.0.0-alpha.114",
       "@morpheme/nav-drawer": "1.0.0-alpha.114",
       "@morpheme/navbar": "1.0.0-alpha.114",
-      "@morpheme/themes": "1.0.0-alpha.142",
-      "@morpheme/ui": "1.0.0-alpha.142",
+      "@morpheme/themes": "1.0.0-alpha.144",
+      "@morpheme/ui": "1.0.0-alpha.144",
       "@morpheme/multi-select": "1.0.0-alpha.131",
       "@morpheme/select": "1.0.0-alpha.131",
       "@morpheme/forms": "1.0.0-alpha.131",
       "@morpheme/table": "1.0.0-alpha.131",
       "@morpheme/autocomplete": "1.0.0-alpha.131",
-      "@morpheme/alert": "1.0.0-alpha.142",
-      "@morpheme/pages": "1.0.0-alpha.142",
+      "@morpheme/alert": "1.0.0-alpha.144",
+      "@morpheme/pages": "1.0.0-alpha.144",
       "@morpheme/tooltip": "1.0.0-alpha.130"
     }
   }
