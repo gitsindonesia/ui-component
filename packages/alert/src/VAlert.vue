@@ -89,12 +89,11 @@ watch(isOpen, (val) => {
 const classes = computed(() => {
   return [
     `alert-${props.color}`,
-    `alert__bordered--${props.borderPosition}`,
+    `alert--bordered-${props.borderPosition}`,
     {
       'alert--outlined': props.outlined,
       'alert--solid': props.solid,
       'alert--bordered': props.border || props.bordered,
-      'alert__bordered': props.border || props.bordered,
       'alert--tile': props.tile
     },
   ];
