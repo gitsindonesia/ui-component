@@ -20,13 +20,6 @@ export default {
     },
   },
   args: {
-    modelValue: '',
-    label: 'Alert text',
-    dismissable: false,
-    solid: false,
-    outlined: false,
-    icon: '',
-    border: '',
   },
 } as Meta;
 
@@ -39,7 +32,14 @@ const Template: Story = (args) => ({
   },
   template: `
 <div class="space-y-2">
-  <my-component v-for="color in themeColors" :key="color" v-bind="args" :color="color">{{ args.label }}</my-component>
+  <my-component
+    v-for="color in themeColors"
+    :key="color"
+    v-bind="args"
+    :color="color"
+  >
+    You changes have been saved.
+  </my-component>
 </div>
 `,
 });
@@ -89,11 +89,46 @@ Outlined.parameters = {
 export const Bordered = Template.bind({});
 Bordered.args = {
   border: true,
+  dismissable: true,
+  icon: 'ic:round-info'
 };
 Bordered.parameters = {
   docs: {
     source: {
       code: `<v-alert border>Alert text</v-alert>`,
+    },
+  },
+};
+
+export const BorderPosition = (args: any) => ({
+  components: {VAlert, VAlertTitle, Icon},
+  setup() {
+    const positions = ['left', 'top', 'right', 'bottom']
+    return {args, positions};
+  },
+  template: `
+    <v-alert
+      v-for="position in positions"
+      :key="position"
+      :border-position="position"
+      class="mb-2"
+      bordered
+      v-bind="args"
+    >
+      <VAlertTitle>Alert: {{ position }}<VAlertTitle>
+      Change a few things up and try submitting again.
+    </v-alert>
+  `,
+});
+
+export const Tile = Template.bind({});
+Tile.args = {
+  tile: true,
+};
+Tile.parameters = {
+  docs: {
+    source: {
+      code: `<v-alert tile>Alert text</v-alert>`,
     },
   },
 };

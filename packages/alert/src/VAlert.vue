@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {computed, toRefs, ref, watch, provide, onMounted} from 'vue';
+import {computed, toRefs, ref, watch, provide, onMounted, PropType} from 'vue';
 import Icon from '@morpheme/icon';
 import {AlertSymbol} from './api';
 
@@ -35,6 +35,9 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  /**
+   * @deprecated Use `bordered` instead
+   */
   border: {
     type: [String, Boolean],
     default: false,
@@ -50,6 +53,18 @@ const props = defineProps({
   iconSize: {
     type: String,
     default: 'xs',
+  },
+  tile: {
+    type: Boolean,
+    default: false,
+  },
+  bordered: {
+    type: Boolean,
+    default: false,
+  },
+  borderPosition: {
+    type: String as PropType<'top' | 'bottom' | 'left' | 'right'>,
+    default: 'left',
   },
 });
 
@@ -74,10 +89,13 @@ watch(isOpen, (val) => {
 const classes = computed(() => {
   return [
     `alert-${props.color}`,
+    `alert__bordered--${props.borderPosition}`,
     {
       'alert--outlined': props.outlined,
       'alert--solid': props.solid,
-      'alert--bordered': props.border,
+      'alert--bordered': props.border || props.bordered,
+      'alert__bordered': props.border || props.bordered,
+      'alert--tile': props.tile
     },
   ];
 });
