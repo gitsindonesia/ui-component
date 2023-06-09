@@ -2,7 +2,7 @@
   --v-switch-width: 100%;
   /* button */
   --v-switch-button-bg-color: var(--color-gray-200);
-  --v-switch-button-border-color: var(--color-transparent);
+  --v-switch-button-border-color: var(--color-gray-200);
   --v-switch-button-checked-bg-color: var(--color-primary-500);
   --v-switch-button-checked-border-color: var(--color-primary-500);
   --v-switch-button-width: 36px;
@@ -15,9 +15,9 @@
   --v-switch-thumb-width: 16px;
   --v-switch-thumb-height: 16px;
   --v-switch-thumb-border-radius: var(--border-radius-full);
-  --v-switch-thumb-translate-x: 2px;
+  --v-switch-thumb-translate-x: 0px;
 
-  --v-switch-thumb-active-translate-x: 18px;
+  --v-switch-thumb-active-translate-x: 16px;
 
   /* label */
   --v-switch-label-color: var(--v-input-label-color);
