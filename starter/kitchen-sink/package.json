@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@morpheme/design-tokens": "0.1.0-alpha.5",
-    "@morpheme/nuxt": "1.0.0-alpha.114",
+    "@morpheme/nuxt": "1.0.0-alpha.130",
     "@morphemeicons/vue": "^0.2.0"
   },
   "devDependencies": {
@@ -45,15 +45,18 @@
   ],
   "pnpm": {
     "overrides": {
-      "@morpheme/app-shell": "1.0.0-alpha.114",
+      "@morpheme/app-shell": "1.0.0-alpha.130",
       "@morpheme/banner": "1.0.0-alpha.114",
       "@morpheme/bottom-sheet": "1.0.0-alpha.114",
       "@morpheme/list": "1.0.0-alpha.114",
       "@morpheme/menus": "1.0.0-alpha.114",
       "@morpheme/nav-drawer": "1.0.0-alpha.114",
       "@morpheme/navbar": "1.0.0-alpha.114",
-      "@morpheme/themes": "1.0.0-alpha.88",
-      "@morpheme/ui": "1.0.0-alpha.114"
+      "@morpheme/themes": "1.0.0-alpha.130",
+      "@morpheme/ui": "1.0.0-alpha.130",
+      "@morpheme/multi-select": "1.0.0-alpha.130",
+      "@morpheme/select": "1.0.0-alpha.130",
+      "@morpheme/tooltip": "1.0.0-alpha.130"
     }
   }
 }
