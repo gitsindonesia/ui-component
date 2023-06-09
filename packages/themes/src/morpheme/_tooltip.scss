@@ -1,8 +1,9 @@
 :root {
-  --v-tooltip-padding-x: var(--size-spacing-2);
-  --v-tooltip-padding-y: var(--size-spacing-3);
+  --v-tooltip-padding-x: var(--size-spacing-3);
+  --v-tooltip-padding-y: var(--size-spacing-2);
   --v-tooltip-border-radius: var(--border-radius-lg);
   --v-tooltip-font-size: var(--size-font-sm);
+  --v-tooltip-max-width: 320px;
 
   // black theme
   --v-tooltip-black-bg-color: var(--color-gray-900);
@@ -27,6 +28,7 @@
     padding: var(--v-tooltip-padding-y) var(--v-tooltip-padding-x);
     border-radius: var(--v-tooltip-border-radius);
     font-size: var(--v-tooltip-font-size);
+    max-width: var(--v-tooltip-max-width);
   }
 
   .v-popper__arrow-outer {
@@ -42,6 +44,7 @@
     border-radius: var(--v-tooltip-border-radius);
     font-size: var(--v-tooltip-font-size);
     border: var(--v-tooltip-white-border);
+    max-width: var(--v-tooltip-max-width);
   }
 
   .v-popper__arrow-outer {

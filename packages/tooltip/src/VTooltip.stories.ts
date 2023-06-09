@@ -87,6 +87,35 @@ export const Colors: Story = (args) => ({
   `,
 });
 
+export const LongText: Story = (args) => ({
+  components: {VTooltip, VBtn},
+  setup() {
+    return {args};
+  },
+  template: `
+    <VTooltip v-bind='args'>
+      <template #activator>
+        <v-btn>
+          Default (black)
+        </v-btn>
+      </template>
+      <span>
+        lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
+      </span>
+    </VTooltip>
+    <VTooltip v-bind='args' color="white">
+      <template #activator>
+        <v-btn>
+          White
+        </v-btn>
+      </template>
+      <span>
+      lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
+      </span>
+    </VTooltip>
+  `,
+});
+
 export const DarkMode: Story = (args) => ({
   components: {VTooltip, VBtn},
   setup() {

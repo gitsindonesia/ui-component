@@ -2,10 +2,27 @@
 import FloatingVue, {Tooltip} from 'floating-vue';
 import {PropType} from 'vue';
 
+export type VTooltipPlacement =
+  | 'auto'
+  | 'auto-start'
+  | 'auto-end'
+  | 'top'
+  | 'top-start'
+  | 'top-end'
+  | 'right'
+  | 'right-start'
+  | 'right-end'
+  | 'bottom'
+  | 'bottom-start'
+  | 'bottom-end'
+  | 'left'
+  | 'left-start'
+  | 'left-end';
+
 defineProps({
   placement: {
-    type: String,
-    default: 'top',
+    type: String as PropType<VTooltipPlacement>,
+    default: 'bottom',
   },
   /**
    * @deprecated no longer used
@@ -37,10 +54,12 @@ defineProps({
 FloatingVue.options.themes['tooltip-black'] = {
   $extend: 'tooltip',
   $resetCss: true,
+  disposeTimeout: 100000,
 };
 FloatingVue.options.themes['tooltip-white'] = {
   $extend: 'tooltip',
   $resetCss: true,
+  disposeTimeout: 100000,
 };
 </script>
 
