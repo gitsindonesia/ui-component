@@ -16,6 +16,14 @@
 
   // label
   --v-radio-label-color: var(--color-gray-700);
+  /* label */
+  --v-radio-label-font-size: var(
+    --input-label-font-size,
+    var(--size-font-sm)
+  );
+  --v-radio-label-font-weight: var(--font-weight-medium);
+  --v-radio-label-display: var(--v-input-label-display, block);
+  --v-radio-label-margin-top: 1px;
 
   // hint
   --v-radio-hint-font-size: var(--v-input-hint-font-size, 14px);
@@ -33,7 +41,12 @@
   }
 
   &-label {
+    font-size: var(--v-radio-label-font-size);
+    font-weight: var(--v-radio-label-font-weight);
+    display: var(--v-radio-label-display);
+    margin-top: var(--v-radio-label-margin-top);
     color: var(--v-radio-label-color);
+    user-select: none;
   }
 
   &-hint {
