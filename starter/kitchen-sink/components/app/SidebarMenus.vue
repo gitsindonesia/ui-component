@@ -240,7 +240,7 @@ function onMenuClick(menu: MenuItem) {
           <VListItem
             append-icon="ri:arrow-down-s-line"
             :append-icon-class="isOpen ? 'rotate-180' : ''"
-            exact-active-class="active !bg-primary-500 !text-white"
+            exact-active-class="active"
             :class="{
               active: isMenuActiveOnChildren(menu),
             }"
@@ -258,7 +258,7 @@ function onMenuClick(menu: MenuItem) {
             :key="child.text"
             :to="child.to"
             nuxt
-            exact-active-class="active !bg-primary-500 !text-white"
+            exact-active-class="active"
             @click="onMenuClick(child)"
           >
             <template #prepend>
@@ -272,7 +272,7 @@ function onMenuClick(menu: MenuItem) {
         v-else
         :to="menu.to"
         nuxt
-        exact-active-class="active !bg-primary-500 !text-white"
+        exact-active-class="active"
         @click="onMenuClick(menu)"
       >
         <template #prepend>
@@ -283,3 +283,16 @@ function onMenuClick(menu: MenuItem) {
     </template>
   </VList>
 </template>
+
+<style scoped lang="scss">
+.active {
+  background-color: var(--color-primary-600);
+  color: var(--color-white);
+  --v-list-item-icon-color: var(--color-white);
+
+  &:hover {
+    background-color: var(--color-primary-600) !important;
+    color: var(--color-white) !important;
+  }
+}
+</style>
