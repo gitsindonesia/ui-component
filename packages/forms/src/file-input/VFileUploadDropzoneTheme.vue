@@ -54,8 +54,8 @@ const dropzoneBorderClass = computed(() => {
   if (props.readonly) return 'border';
 
   return props.hasError
-    ? 'border-2 border-error-500 border-dashed'
-    : 'border-2 border-gray-300 hover:border-gray-400 border-dashed';
+    ? 'border-error-500'
+    : 'border-gray-300 hover:border-gray-400 dark:border-gray-true-700 dark:hover:border-gray-true-500';
 });
 
 let guid = () => crypto.randomUUID();
@@ -120,9 +120,10 @@ onUnmounted(() => {
       justify-center
       items-center
       p-4
-      rounded-md
+      rounded-lg
       transition
       duration-300
+      border-2 border-dashed
     "
     :class="[dropzoneId, dropzoneBorderClass]"
   >
@@ -141,6 +142,7 @@ onUnmounted(() => {
               h-40
               flex
               bg-contain bg-gray-100
+              dark:bg-gray-true-100
               mx-auto
               rounded-lg
               bg-no-repeat bg-center
@@ -151,8 +153,11 @@ onUnmounted(() => {
             }"
           ></div>
 
-          <slot name='filename' :value='fileName'>
-            <div v-if="fileName" class="text-gray-500 text-sm">
+          <slot name="filename" :value="fileName">
+            <div
+              v-if="fileName"
+              class="text-gray-500 dark:text-gray-true-500 text-sm"
+            >
               {{ fileName }}
             </div>
           </slot>
@@ -166,7 +171,6 @@ onUnmounted(() => {
             appearance-none
             relative
             cursor-pointer
-            bg-white
             rounded-md
             font-medium
             text-primary-600
@@ -188,7 +192,6 @@ onUnmounted(() => {
             appearance-none
             relative
             cursor-pointer
-            bg-white
             rounded-md
             font-medium
             text-error-600
@@ -222,14 +225,13 @@ onUnmounted(() => {
           />
         </svg>
       </slot>
-      <div class="flex text-sm text-gray-600">
+      <div class="flex text-sm text-gray-600 dark:text-gray-true-500">
         <button
           type="button"
           class="
             appearance-none
             relative
             cursor-pointer
-            bg-white
             rounded-md
             font-medium
             text-primary-600
@@ -245,7 +247,7 @@ onUnmounted(() => {
         </button>
         <p class="pl-1">{{ dragText }}</p>
       </div>
-      <p class="text-xs text-gray-500">{{ hint }}</p>
+      <p class="text-xs text-gray-500 dark:text-gray-true-500">{{ hint }}</p>
     </div>
   </div>
 </template>

@@ -41,12 +41,13 @@ const emit =
       <div
         class="
           px-4
-          py-2
+          py-2.5
           truncate
           text-center
           border
-          rounded
+          rounded-lg
           hover:border-gray-400
+          dark:border-gray-true-700
         "
         :class="[disabledClass, borderClass]"
         @click="emit('choose')"

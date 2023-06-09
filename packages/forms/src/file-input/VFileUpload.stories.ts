@@ -403,8 +403,12 @@ export const DarkMode: Story = (args) => ({
     return {args};
   },
   template: `
-  <div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
+  <div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6 space-y-4">
     <VFileUpload v-bind='args' />
+    <VFileUpload v-bind='args' label="Label" theme="button" />
+    <VFileUpload v-bind='args' label="Label" theme="image" rounded />
+    <VFileUpload v-bind='args' label="Label" theme="image" image rounded />
+    <VFileUpload v-bind='args' label="Label" theme="dropzone" image />
   </div>
   `,
 });

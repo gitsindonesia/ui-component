@@ -162,7 +162,7 @@ const props = defineProps({
   },
   labelClass: {
     type: String,
-    default: 'block mb-1',
+    default: '',
   },
   wrapperClass: {
     type: String,
@@ -354,7 +354,7 @@ const borderClass = computed(() => {
       },
     ]"
   >
-    <label v-if="label" :for="name" :class="labelClass">
+    <label v-if="label" :for="name" class="v-input-label" :class="labelClass">
       {{ label }}
     </label>
 

@@ -41,9 +41,11 @@ const backgroundImage = computed(() =>
         transition
         duration-300
         border
+        dark:hover:border-gray-true-500
+        dark:border-gray-true-700
         cursor-pointer
         flex flex-col
-        items-center items-center
+        items-center
         justify-center
         py-10
         bg-no-repeat bg-contain bg-center
@@ -63,9 +65,9 @@ const backgroundImage = computed(() =>
       <template v-else>
         <Icon
           name="heroicons:camera-solid"
-          class="w-10 h-10 text-gray-500 mb-1"
+          class="w-10 h-10 text-gray-500 dark:text-gray-true-500 mb-1"
         />
-        <div class="uppercase text-gray-500">
+        <div class="text-gray-500 text-sm dark:text-gray-true-500">
           {{ loading ? loadingText : browseText }}
         </div>
       </template>
