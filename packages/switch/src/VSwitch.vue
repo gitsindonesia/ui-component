@@ -61,6 +61,10 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  size: {
+    type: String as PropType<'sm' | 'md' | 'lg' | string>,
+    default: 'md',
+  },
 });
 
 const emit =
@@ -88,6 +92,7 @@ watch(modelValue, (val) => {
     class="v-switch"
     :class="[
       `v-switch-${color}`,
+      `v-switch--${size}`,
       {
         'v-switch--checked': switchValue,
       },

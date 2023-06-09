@@ -207,6 +207,21 @@ export const Validation: Story<{}> = () => ({
 `,
 });
 
+export const Sizes: Story = (args) => ({
+  components: {
+    VSwitch,
+  },
+  setup() {
+    const checked = ref(true);
+    return {args, checked};
+  },
+  template: `
+  <v-switch v-bind="args" v-model="checked" size="sm" />
+  <v-switch v-bind="args" v-model="checked" />
+  <v-switch v-bind="args" v-model="checked" size="lg" />
+  `,
+});
+
 export const DarkMode: Story = (args) => ({
   components: {VSwitch},
   setup() {

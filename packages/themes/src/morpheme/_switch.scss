@@ -146,4 +146,35 @@
     --v-switch-button-checked-bg-color: var(--color-error-500);
     --v-switch-button-checked-border-color: var(--color-error-500);
   }
+
+  // sizes
+  &--sm {
+    --v-switch-button-width: 30px;
+    --v-switch-button-height: 16px;
+    --v-switch-thumb-width: 12px;;
+    --v-switch-thumb-height: 12px;
+    --v-switch-thumb-border-radius: 12px;
+    --v-switch-thumb-translate-x: 0;
+    --v-switch-thumb-active-translate-x: 14px;
+  }
+
+  &--md {
+    --v-switch-button-width: 36px;
+    --v-switch-button-height: 20px;
+    --v-switch-thumb-width: 16px;;
+    --v-switch-thumb-height: 16px;
+    --v-switch-thumb-border-radius: 16px;
+    --v-switch-thumb-translate-x: 0;
+    --v-switch-thumb-active-translate-x: 16px;
+  }
+
+  &--lg {
+    --v-switch-button-width: 44px;
+    --v-switch-button-height: 24px;
+    --v-switch-thumb-width: 20px;;
+    --v-switch-thumb-height: 20px;
+    --v-switch-thumb-border-radius: 20px;
+    --v-switch-thumb-translate-x: 0;
+    --v-switch-thumb-active-translate-x: 20px;
+  }
 }
