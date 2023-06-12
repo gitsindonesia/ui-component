@@ -60,15 +60,15 @@ const showPassword = ref(false);
 
       <div class="flex gap-4 items-center my-6">
         <div
-          class="flex-1 border-b border-gray-200 dark:border-gray-true-800"
+          class="flex-1 border-b border-gray-200 dark:border-gray-true-700"
         ></div>
         <div class="text-gray-500 dark:text-gray-true-500 text-sm">OR</div>
         <div
-          class="flex-1 border-b border-gray-200 dark:border-gray-true-800"
+          class="flex-1 border-b border-gray-200 dark:border-gray-true-700"
         ></div>
       </div>
 
-      <div class="flex gap-2">
+      <div class="flex flex-col lg:flex-row gap-2">
         <VBtn prefix-icon="mdi:facebook" color="primary" block>
           Sign up with Facebook
         </VBtn>
