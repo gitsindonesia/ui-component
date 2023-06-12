@@ -46,6 +46,7 @@ const menus = ref<MenuItem[]>([
       {text: 'Avatar', to: '/components/avatar'},
       {text: 'Badge', to: '/components/badge'},
       {text: 'Banner', to: '/components/banner'},
+      {text: 'BottomNavigation', to: '/components/bottom-navigation'},
       {text: 'BottomSheet', to: '/components/bottom-sheet'},
       {text: 'Breadcrumbs', to: '/components/breadcrumbs'},
       {text: 'Card', to: '/components/card'},
