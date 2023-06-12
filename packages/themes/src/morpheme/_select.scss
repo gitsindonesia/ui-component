@@ -29,6 +29,7 @@
 
   // options
   --v-select-options-bg-color: var(--color-white);
+  --v-select-options-border-color: var(--color-gray-300);
 
   /* option item */
   --v-select-option-padding-x: var(--size-spacing-4);
@@ -135,6 +136,7 @@
     box-shadow: var(--effect-shadow-md);
     max-height: 15rem;
     z-index: 10;
+    border: 1px solid var(--v-select-options-border-color);
   }
 
   &-clearable {
