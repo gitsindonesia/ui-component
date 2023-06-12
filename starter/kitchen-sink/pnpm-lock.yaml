@@ -8,8 +8,8 @@ overrides:
   '@morpheme/menus': 1.0.0-alpha.114
   '@morpheme/nav-drawer': 1.0.0-alpha.114
   '@morpheme/navbar': 1.0.0-alpha.114
-  '@morpheme/themes': 1.0.0-alpha.144
-  '@morpheme/ui': 1.0.0-alpha.144
+  '@morpheme/themes': 1.0.0-alpha.158
+  '@morpheme/ui': 1.0.0-alpha.158
   '@morpheme/multi-select': 1.0.0-alpha.131
   '@morpheme/select': 1.0.0-alpha.131
   '@morpheme/forms': 1.0.0-alpha.131
@@ -24,8 +24,8 @@ dependencies:
     specifier: 0.1.0-alpha.5
     version: 0.1.0-alpha.5
   '@morpheme/nuxt':
-    specifier: 1.0.0-alpha.144
-    version: 1.0.0-alpha.144(nuxt@3.5.2)(vite@4.3.9)
+    specifier: 1.0.0-alpha.158
+    version: 1.0.0-alpha.158(nuxt@3.5.2)(vite@4.3.9)
   '@morphemeicons/vue':
     specifier: ^0.2.0
     version: 0.2.0(vue@3.3.4)
@@ -1241,10 +1241,10 @@ packages:
       - ts-node
     dev: false
 
-  /@morpheme/nuxt@1.0.0-alpha.144(nuxt@3.5.2)(vite@4.3.9):
-    resolution: {integrity: sha512-0Pnx533d1kIzMvmBDacB46Uc3tvIv7jIhQb4MttObKydoR0nagbzt8ELVgy79Mpd7stPe31Mk2KUW75Zyo4T0g==}
+  /@morpheme/nuxt@1.0.0-alpha.158(nuxt@3.5.2)(vite@4.3.9):
+    resolution: {integrity: sha512-qqTC8sjPp8ojQVgS9pSndPNpK6YWFCHzxDsBzZz7mdPJws8IwRhEkSlpr6nbRL2AYMqML42Sd4JbUUXay3ia9w==}
     dependencies:
-      '@morpheme/ui': 1.0.0-alpha.144
+      '@morpheme/ui': 1.0.0-alpha.158
       '@nuxt/devtools-kit': 0.5.5(nuxt@3.5.2)(vite@4.3.9)
       '@nuxt/kit': 3.5.2
     transitivePeerDependencies:
@@ -1406,8 +1406,8 @@ packages:
       - ts-node
     dev: false
 
-  /@morpheme/themes@1.0.0-alpha.144:
-    resolution: {integrity: sha512-l+v4xocA1o0onW7pIY2xv1+sXdNPU4ejZvIc7kOQJqM8UPllOwSTuenKyF4J2sbDjsuenawCpVeKJhLXk3PEgw==}
+  /@morpheme/themes@1.0.0-alpha.158:
+    resolution: {integrity: sha512-jJM6PzEWC+QPlSBkXtTQh5jxs+34UH+1BpTE09JzDEw5JwQDcjs6Cf32uaG9hOy2RpL1DosltRQGG/BfSJm5bg==}
     dependencies:
       '@morpheme/design-tokens': 0.1.0-alpha.5
       vue: 3.3.4
@@ -1438,8 +1438,8 @@ packages:
       vue: 3.3.4
     dev: false
 
-  /@morpheme/ui@1.0.0-alpha.144:
-    resolution: {integrity: sha512-7ViHpagtuE7zjXDpch3L+hSlCv7uqg529Gf8xUo9r0laecmPexApsbPBpV/08VN7OB1yRwTq+dtBeyvuBI70Ew==}
+  /@morpheme/ui@1.0.0-alpha.158:
+    resolution: {integrity: sha512-4Uu0FwoGPc3mKrZ2m+hs4vUCdwC7+MPo0hBc61kuO7oEA02TQGFnPd26kuQraUXN0nfncsL1XSHq27cAbCyslw==}
     dependencies:
       '@headlessui/vue': 1.7.13(vue@3.3.4)
       '@morpheme/alert': 1.0.0-alpha.144
@@ -1484,7 +1484,7 @@ packages:
       '@morpheme/tailwind-config': 1.0.0-beta.9
       '@morpheme/text': 1.0.0-beta.9
       '@morpheme/theme': 1.0.0-beta.9
-      '@morpheme/themes': 1.0.0-alpha.144
+      '@morpheme/themes': 1.0.0-alpha.158
       '@morpheme/timeline': 1.0.0-beta.9
       '@morpheme/toast': 1.0.0-beta.9
       '@morpheme/tooltip': 1.0.0-alpha.130
