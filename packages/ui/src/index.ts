@@ -90,6 +90,7 @@ import {
 } from '@morpheme/timeline';
 import {VBanner, VBannerText} from '@morpheme/banner';
 import {VDivider} from '@morpheme/divider';
+import {VBottomNavigation, VBottomNavigationItem} from '@morpheme/bottom-navigation';
 
 const plugin: Plugin = {
   install: (app) => {
@@ -177,6 +178,8 @@ const plugin: Plugin = {
     app.component('VBanner', VBanner);
     app.component('VBannerText', VBannerText);
     app.component('VDivider', VDivider);
+    app.component('VBottomNavigation', VBottomNavigation);
+    app.component('VBottomNavigationItem', VBottomNavigationItem);
   },
 };
 
@@ -241,7 +244,9 @@ export {
   VTimelineItemContent,
   VBanner,
   VBannerText,
-  VDivider
+  VDivider,
+  VBottomNavigation,
+  VBottomNavigationItem
 };
 
 export * from '@morpheme/utils';
