@@ -6,10 +6,10 @@ import {resolve} from 'path';
 export default defineConfig({
   plugins: [
     vue({
-      // script: {
-      //   propsDestructure: true,
-      //   defineModel: true
-      // }
+      script: {
+        propsDestructure: true,
+        defineModel: true
+      }
     }),
     // Icons({
     //   compiler: 'vue3',

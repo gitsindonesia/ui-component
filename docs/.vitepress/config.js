@@ -78,6 +78,7 @@ export default defineConfig({
           {text: 'Avatar', link: '/components/avatar'},
           {text: 'Badge', link: '/components/badge'},
           {text: 'Banner', link: '/components/banner'},
+          {text: 'BottomNavigation', link: '/components/bottom-navigation'},
           {text: 'BottomSheet', link: '/components/bottom-sheet'},
           {text: 'Breadcrumbs', link: '/components/breadcrumbs'},
           {text: 'Card', link: '/components/card'},

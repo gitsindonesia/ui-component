@@ -1,0 +1,13 @@
+.dark {
+  .v-bottom-navigation {
+    --v-bottom-navigation-item-color: var(--color-gray-true-200);
+    --v-bottom-navigation-item-hover-color: var(--v-bottom-navigation-item-active-color);
+    --v-bottom-navigation-bg-color: var(--color-gray-true-800);
+
+    &-dark {
+      --v-bottom-navigation-item-active-bg-color: var(--color-gray-true-700);
+      --v-bottom-navigation-item-active-color: var(--color-gray-true-200);
+      --v-bottom-navigation-item-hover-color: var(--color-gray-true-400);
+    }
+  }
+}

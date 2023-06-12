@@ -1,0 +1,1 @@
+export const VBottomNavigationInjectionKey = Symbol('VBottomNavigation')
