@@ -89,6 +89,7 @@ import {
   VTimelineItemContent,
 } from '@morpheme/timeline';
 import {VBanner, VBannerText} from '@morpheme/banner';
+import {VDivider} from '@morpheme/divider';
 
 const plugin: Plugin = {
   install: (app) => {
@@ -175,6 +176,7 @@ const plugin: Plugin = {
     app.component('VTimelineItemContent', VTimelineItemContent);
     app.component('VBanner', VBanner);
     app.component('VBannerText', VBannerText);
+    app.component('VDivider', VDivider);
   },
 };
 
@@ -239,6 +241,7 @@ export {
   VTimelineItemContent,
   VBanner,
   VBannerText,
+  VDivider
 };
 
 export * from '@morpheme/utils';
