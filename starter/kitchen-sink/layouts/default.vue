@@ -87,7 +87,8 @@ function onMenuClick() {
             text-center
             border-b
             dark:border-neutral-700
-            h-[60px]
+            h-[68px]
+            lg:h-[60px]
             truncate
             flex
             items-center
