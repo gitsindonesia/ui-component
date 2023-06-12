@@ -137,12 +137,12 @@ const emit =
           {{ hint }}
         </slot>
       </p>
-      <div v-if="!hideError" class="v-input-error" v-text="errorMessage" />
       <div v-if="counter" class="v-input-counter">
         <slot name="counter" :count="uncontrolledValue.length">
           {{ uncontrolledValue.length }}
         </slot>
       </div>
     </div>
+    <div v-if="!hideError" class="v-input-error" v-text="errorMessage" />
   </div>
 </template>

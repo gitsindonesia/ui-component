@@ -137,6 +137,7 @@ export const Validation: Story<{}> = (args) => ({
         name="message"
         label="Message"
         placeholder="Enter your message"
+        hint="This is a hint"
         v-bind="args"
       />
       <v-textarea
@@ -144,6 +145,7 @@ export const Validation: Story<{}> = (args) => ({
         name="bio"
         label="Bio"
         placeholder="Enter your bio"
+        hint="This is a hint"
         input-class="italic"
         v-bind="args"
       />
