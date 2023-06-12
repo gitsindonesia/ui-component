@@ -54,6 +54,7 @@ const transpile = [
   '@morpheme/design-tokens',
   '@morpheme/banner',
   '@morpheme/divider',
+  '@morpheme/bottom-navigation',
   'floating-vue',
 ];
 
@@ -428,6 +429,14 @@ const components: AddComponentOptions[] = [
   {
     name: 'VDivider',
     filePath: '@morpheme/divider/src/VDivider.vue',
+  },
+  {
+    name: 'VBottomNavigation',
+    filePath: '@morpheme/bottom-navigation/src/VBottomNavigation.vue',
+  },
+  {
+    name: 'VBottomNavigationItem',
+    filePath: '@morpheme/bottom-navigation/src/VBottomNavigationItem.vue',
   },
 ];
 
