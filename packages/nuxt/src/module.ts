@@ -53,6 +53,7 @@ const transpile = [
   '@morpheme/progress-circular',
   '@morpheme/design-tokens',
   '@morpheme/banner',
+  '@morpheme/divider',
   'floating-vue',
 ];
 
@@ -423,6 +424,10 @@ const components: AddComponentOptions[] = [
   {
     name: 'VBannerText',
     filePath: '@morpheme/banner/src/VBannerText.vue',
+  },
+  {
+    name: 'VDivider',
+    filePath: '@morpheme/divider/src/VDivider.vue',
   },
 ];
 
