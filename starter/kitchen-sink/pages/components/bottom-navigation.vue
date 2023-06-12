@@ -47,7 +47,7 @@ const isOpen = ref(true);
         <VBottomNavigation
           v-for="color in colors"
           :key="color"
-          :color="color"
+          :color="(color as any)"
           :fixed="false"
         >
           <VBottomNavigationItem icon="ri:home-line"> Home </VBottomNavigationItem>

@@ -58,6 +58,10 @@ const menus = ref<MenuItem[]>([
         to: '/components/data-table-pagination',
       },
       {
+        text: 'Divider',
+        to: '/components/divider',
+      },
+      {
         text: 'Dropdown',
         to: '/components/dropdown',
       },
