@@ -8,8 +8,14 @@
     /* item */
     --v-multi-select-item-bg-color: var(--color-gray-true-800);
     --v-multi-select-item-text-color: var(--color-gray-true-200);
+
+    // item hover
     --v-multi-select-item-hover-bg-color: var(--color-gray-true-700);
     --v-multi-select-item-hover-text-color: var(--color-gray-true-200);
+  
+    // item focused
+    --v-multi-select-item-focused-bg-color: var(--color-gray-true-700);
+    --v-multi-select-item-focused-text-color: var(--color-gray-true-200);
 
     /* error */
     --v-multi-select-error-border-color: var(--color-gray-error-500);
