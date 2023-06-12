@@ -89,6 +89,10 @@ export default defineConfig({
             link: '/components/data-table-pagination',
           },
           {
+            text: 'Divider',
+            link: '/components/divider',
+          },
+          {
             text: 'Dropdown',
             link: '/components/dropdown',
           },
