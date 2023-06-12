@@ -25,8 +25,14 @@
   --v-multi-select-item-text-color: var(--color-gray-800);
   --v-multi-select-item-padding-x: var(--size-spacing-3);
   --v-multi-select-item-padding-y: var(--size-spacing-2);
+
+  // item hover
   --v-multi-select-item-hover-bg-color: var(--color-gray-100);
   --v-multi-select-item-hover-text-color: var(--color-gray-700);
+
+  // item focused
+  --v-multi-select-item-focused-bg-color: var(--color-gray-100);
+  --v-multi-select-item-focused-text-color: var(--color-gray-700);
 
   /* error */
   --v-multi-select-error-border-color: var(--color-error-500);
@@ -136,7 +142,7 @@
   &-dropdown {
     border-radius: var(--v-multi-select-dropdown-border-radius);
     background: var(--v-multi-select-dropdown-bg-color);
-    top: 100%;
+    top: 85%;
     position: absolute; // Equivalent to absolute
     left: 0;
     right: 0;
@@ -145,7 +151,7 @@
     padding-bottom: 0.25rem; // Equivalent to py-1
     margin-top: 0.75rem; // Equivalent to mt-3
     overflow: auto; // Equivalent to overflow-auto
-    box-shadow: var(--effect-shadow-lg);
+    box-shadow: var(--effect-shadow-md);
     max-height: 15rem; // Equivalent to max-h-60
     border: 1px solid var(--color-gray-300);
     outline: none; // Equivalent to focus:outline-none
@@ -207,7 +213,10 @@
   }
 
   &-item--focused {
-    // background-color: var(--color-primary-700);
+    --v-multi-select-item-bg-color: var(--v-multi-select-item-focused-bg-color);
+    --v-multi-select-item-text-color: var(
+      --v-multi-select-item-focused-text-color
+    );
   }
 
   &-dropdown-loading {
