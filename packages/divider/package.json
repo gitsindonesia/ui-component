@@ -1,0 +1,48 @@
+{
+  "name": "@morpheme/divider",
+  "version": "1.0.0-beta.9",
+  "description": "Morpheme Divider Component",
+  "scripts": {
+    "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
+    "prepublishOnly": "npm run build",
+    "test": "vitest"
+  },
+  "keywords": [
+    "morpheme",
+    "ui-component",
+    "divider"
+  ],
+  "author": "Warsono <warsono16694@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@morpheme/tailwind-config": "^1.0.0-beta.9",
+    "@morpheme/utils": "^1.0.0-beta.9",
+    "@vue/test-utils": "^2.0.0-rc.17",
+    "c8": "^7.11.3",
+    "tailwindcss": "^3.3.1",
+    "vee-validate": "^4.5.9",
+    "vite": "^4.3.8",
+    "vitest": "^0.12.4"
+  },
+  "main": "dist/divider.umd.js",
+  "unpkg": "dist/divider.iife.js",
+  "jsdelivr": "dist/divider.iife.js",
+  "module": "./dist/divider.mjs",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/divider.mjs",
+      "require": "./dist/divider.js"
+    },
+    "./package.json": "./package.json",
+    "./src/*": "./src/*",
+    "./*": "./*"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "95edc430940e02006a6f7ccc5065333389c50ccd"
+}

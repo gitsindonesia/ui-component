@@ -1,0 +1,27 @@
+:root {
+  --v-divider-height: 1px;
+  --v-divider-bg-color: var(--color-gray-200);
+  --v-divider-inset-margin: 44px;
+}
+
+.v-divider {
+  height: var(--v-divider-height);
+  background-color: var(--v-divider-bg-color);
+  display: block;
+  flex: 1 1 100%;
+  transition: inherit;
+
+  &--inset {
+    margin-left: var(--v-divider-inset-margin);
+  }
+
+  &--vertical {
+    border: none;
+    width: var(--v-divider-height);
+    align-self: stretch;
+    display: inline-flex;
+    height: inherit;
+    max-height: 100%;
+    vertical-align: text-bottom;
+  }
+}
