@@ -26,7 +26,7 @@
 
   // options
   --v-autocomplete-options-bg-color: var(--color-white);
-  --v-autocomplete-options-border-color: var(--color-gray-50);
+  --v-autocomplete-options-border-color: var(--color-gray-300);
 
   // empty
   --v-autocomplete-empty-color: var(--color-gray-700);
@@ -221,7 +221,7 @@
       filter, backdrop-filter;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 300ms;
-    // border: 1px solid var(--v-autocomplete-options-border-color);
+    border: 1px solid var(--v-autocomplete-options-border-color);
 
     &:focus {
       outline: none;
