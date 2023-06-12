@@ -129,7 +129,6 @@
     flex-wrap: wrap; // Equivalent to flex-wrap
     gap: 0.5rem; // Equivalent to gap-2
     align-items: center; // Equivalent to items-center
-  
   }
 
   &-badges {
@@ -162,10 +161,6 @@
     z-index: 10; // Equivalent to z-10
   }
 
-  &-input-control::placeholder {
-    color: var(--v-select-placeholder-color);
-  }
-
   &-input-control {
     color: var(--v-multi-select-text-color);
     min-width: 0;
@@ -176,6 +171,10 @@
     border-width: 0; // Equivalent to focus:border-none
     font-size: var(--size-font-sm);
     flex: 1 1 0%;
+
+    &::placeholder {
+      color: var(--v-multi-select-placeholder-color);
+    }
     
     &:focus {
       --tw-ring-color: transparent;
