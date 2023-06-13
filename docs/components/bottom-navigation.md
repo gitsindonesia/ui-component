@@ -203,6 +203,60 @@ const isOpen = ref(true)
 </template>
 ```
 
+### With Button
+
+You can also add `VBtn` to the bottom navigation.
+
+<LivePreview src="components-bottomnavigation--with-button" >
+
+```vue
+<template>
+  <VBottomNavigation>
+    <VBottomNavigationItem icon="ri:home-line">
+      Home
+    </VBottomNavigationItem>
+    <VBottomNavigationItem icon="ri:history-line">
+      Recents
+    </VBottomNavigationItem>
+    <VBtn prefix-icon="ri:add-line" color="primary" fab icon size="lg" />
+    <VBottomNavigationItem icon="ri:map-pin-2-line">
+      Nearby
+    </VBottomNavigationItem>
+    <VBottomNavigationItem icon="ri:user-line">
+      Account
+    </VBottomNavigationItem>
+  </VBottomNavigation>
+</template>
+```
+
+### With FAB Button
+
+You can also add floating action button (FAB) to the bottom navigation.
+
+<LivePreview src="components-bottomnavigation--with-button" >
+
+```vue
+<template>
+  <VBottomNavigation>
+    <VBottomNavigationItem icon="ri:home-line">
+      Home
+    </VBottomNavigationItem>
+    <VBottomNavigationItem icon="ri:history-line">
+      Recents
+    </VBottomNavigationItem>
+    <VBtn prefix-icon="ri:add-line" color="primary" fab icon size="xl"
+      class="absolute -top-6"
+    />
+    <VBottomNavigationItem icon="ri:map-pin-2-line">
+      Nearby
+    </VBottomNavigationItem>
+    <VBottomNavigationItem icon="ri:user-line">
+      Account
+    </VBottomNavigationItem>
+  </VBottomNavigation>
+</template>
+```
+
 </LivePreview>
 
 ## Props

@@ -50,6 +50,25 @@ Grow.args = {
   grow: true
 }
 
+export const IconOnly: StoryFn = (args) => ({
+  setup() {
+    return {args};
+  },
+  components: {
+    VBottomNavigation,
+    VBottomNavigationItem,
+  },
+  template: `
+  <VBottomNavigation v-bind="args" grow>
+    <VBottomNavigationItem icon="ri:home-line" />
+    <VBottomNavigationItem icon="ri:history-line" />
+    <VBottomNavigationItem icon="ri:heart-line" />
+    <VBottomNavigationItem icon="ri:map-pin-2-line" />
+    <VBottomNavigationItem icon="ri:user-line" />
+  </VBottomNavigation>
+  `,
+});
+
 export const WithVueRouter: StoryFn = (args) => ({
   setup() {
     return {args};
@@ -180,6 +199,48 @@ export const ToggleNavigation: StoryFn = (args) => ({
     <VBottomNavigationItem icon="ri:user-line">
       Account
     </VBottomNavigationItem>
+  </VBottomNavigation>
+  `,
+});
+
+export const WithButton: StoryFn = (args) => ({
+  setup() {
+    return {args};
+  },
+  components: {
+    VBottomNavigation,
+    VBottomNavigationItem,
+    VBtn
+  },
+  template: `
+  <VBottomNavigation v-bind="args" grow>
+    <VBottomNavigationItem icon="ri:home-line" />
+    <VBottomNavigationItem icon="ri:history-line" />
+    <VBtn prefix-icon="ri:add-line" color="primary" fab icon size="lg" />
+    <VBottomNavigationItem icon="ri:map-pin-2-line" />
+    <VBottomNavigationItem icon="ri:user-line" />
+  </VBottomNavigation>
+  `,
+});
+
+export const WithFabButton: StoryFn = (args) => ({
+  setup() {
+    return {args};
+  },
+  components: {
+    VBottomNavigation,
+    VBottomNavigationItem,
+    VBtn
+  },
+  template: `
+  <VBottomNavigation v-bind="args" grow>
+    <VBottomNavigationItem icon="ri:home-line" />
+    <VBottomNavigationItem icon="ri:history-line" />
+    <VBtn prefix-icon="ri:add-line" color="primary" fab icon size="xl"
+      class="absolute -top-6"
+    />
+    <VBottomNavigationItem icon="ri:map-pin-2-line" />
+    <VBottomNavigationItem icon="ri:user-line" />
   </VBottomNavigation>
   `,
 });
