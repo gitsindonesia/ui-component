@@ -1,6 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
   layout: "mobile",
+  bottomNavigation: true,
 });
 </script>
 
@@ -24,12 +25,4 @@ definePageMeta({
       <p class="text-gray-600 text-sm">Description</p>
     </VCard>
   </div>
-
-  <VBottomNavigation grow>
-    <VBottomNavigationItem icon="ri:home-line"> Home </VBottomNavigationItem>
-    <VBottomNavigationItem icon="ri:history-line"> Recents </VBottomNavigationItem>
-    <VBottomNavigationItem icon="ri:heart-line"> Favorites </VBottomNavigationItem>
-    <VBottomNavigationItem icon="ri:map-pin-2-line"> Nearby </VBottomNavigationItem>
-    <VBottomNavigationItem icon="ri:user-line"> Account </VBottomNavigationItem>
-  </VBottomNavigation>
 </template>
