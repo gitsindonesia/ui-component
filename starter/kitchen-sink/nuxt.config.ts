@@ -33,4 +33,8 @@ export default defineNuxtConfig({
       include: ['quill-delta', 'quill'],
     },
   },
+
+  experimental: {
+    viewTransition: true
+  }
 });
