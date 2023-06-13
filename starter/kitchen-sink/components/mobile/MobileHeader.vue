@@ -13,6 +13,7 @@ import { Popover, PopoverButton, PopoverPanel } from "@headlessui/vue";
       <VLogo white />
       <div class="flex-1" />
       <div class="flex items-center gap-3">
+        <ColorModeSwitcher class="!text-white" />
         <Popover class="relative">
           <PopoverButton as="template">
             <VBtn fab text prefix-icon="ic:round-notifications" class="!text-white" />
@@ -33,7 +34,7 @@ import { Popover, PopoverButton, PopoverPanel } from "@headlessui/vue";
                 <VDivider class="my-1" />
                 <VListItem hide-prepend hide-append v-for="i in 6" :key="i">
                   <div class="flex gap-4 items-center">
-                    <VAvatar :size="40">A</VAvatar>
+                    <VAvatar color="primary" :size="40">A</VAvatar>
                     <div>
                       <h3 class="font-semibold">Title</h3>
                       <p class="text-sm text-gray-500 flex flex-wrap truncate">
