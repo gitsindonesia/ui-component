@@ -344,6 +344,7 @@ None
   --v-bottom-navigation-padding-y: var(--size-spacing-3);
   --v-bottom-navigation-bg-color: var(--color-white);
   --v-bottom-navigation-shadow: 4px 0px 20px rgba(0, 0, 0, 0.05);
+  --v-bottom-navigation-min-height: 77px;
 
   // content
   --v-bottom-navigation-content-gap: var(--size-spacing-2);
