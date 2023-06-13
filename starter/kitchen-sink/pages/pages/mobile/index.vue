@@ -22,7 +22,7 @@ definePageMeta({
         />
       </template>
       <h3 class="font-semibold text-lg">Title</h3>
-      <p class="text-gray-600 text-sm">Description</p>
+      <p class="text-gray-600 dark:text-gray-true-400 text-sm">Description</p>
     </VCard>
   </div>
 </template>

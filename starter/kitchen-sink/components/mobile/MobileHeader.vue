@@ -54,11 +54,11 @@ import { Popover, PopoverButton, PopoverPanel } from "@headlessui/vue";
     </div>
     <div class="absolute -bottom-8 inset-x-0 z-10">
       <div
-        class="rounded-lg px-4 py-3 flex items-center gap-4 bg-white mx-4 shadow-md bg-[url(/bg-header.svg)] bg-no-repeat bg-right-bottom bg-contain"
+        class="rounded-lg px-4 py-3 flex items-center gap-4 bg-white dark:bg-gray-true-700 mx-4 shadow-md bg-[url(/bg-header.svg)] bg-no-repeat bg-right-bottom bg-contain"
       >
         <VAvatar :size="48" class="font-semibold">MB</VAvatar>
         <div>
-          <p class="text-gray-700 text-xs">Selamat Pagi,</p>
+          <p class="text-gray-700 dark:text-gray-true-200 text-xs">Selamat Pagi,</p>
           <p class="font-semibold">Mas Benu Wisnu</p>
         </div>
       </div>

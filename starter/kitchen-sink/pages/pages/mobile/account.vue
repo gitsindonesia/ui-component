@@ -8,7 +8,7 @@ definePageMeta({
 <template>
   <MobileAppBar> Account </MobileAppBar>
 
-  <VList hover flush class="border rounded-xl">
+  <VList hover flush class="border dark:border-gray-true-800 rounded-xl">
     <VListItem tile append-icon="ri:arrow-right-s-line" append-icon-class="text-gray-500">
       <template #prepend>
         <img
@@ -24,7 +24,10 @@ definePageMeta({
       </div>
     </VListItem>
   </VList>
-  <VList flush class="border rounded-xl mt-6 divide divide-y">
+  <VList
+    flush
+    class="border dark:border-gray-true-800 rounded-xl mt-6 divide divide-y dark:divide-gray-true-800"
+  >
     <VListItem
       hover
       tile
