@@ -136,6 +136,45 @@ const tab = ref(0);
             <VTabPanel>Tab 3 content</VTabPanel>
           </VTabPanels>
         </VTabGroup>
+
+        <VTabGroup v-model="tab" variant="filled">
+          <VTabList>
+            <VTabItem>Tab 1</VTabItem>
+            <VTabItem>Tab 2</VTabItem>
+            <VTabItem>Tab 3</VTabItem>
+          </VTabList>
+          <VTabPanels>
+            <VTabPanel>Tab 1 content</VTabPanel>
+            <VTabPanel>Tab 2 content</VTabPanel>
+            <VTabPanel>Tab 3 content</VTabPanel>
+          </VTabPanels>
+        </VTabGroup>
+
+        <VTabGroup v-model="tab" variant="underline-filled">
+          <VTabList>
+            <VTabItem>Tab 1</VTabItem>
+            <VTabItem>Tab 2</VTabItem>
+            <VTabItem>Tab 3</VTabItem>
+          </VTabList>
+          <VTabPanels>
+            <VTabPanel>Tab 1 content</VTabPanel>
+            <VTabPanel>Tab 2 content</VTabPanel>
+            <VTabPanel>Tab 3 content</VTabPanel>
+          </VTabPanels>
+        </VTabGroup>
+
+        <VTabGroup v-model="tab" variant="segmented-control">
+          <VTabList>
+            <VTabItem>Tab 1</VTabItem>
+            <VTabItem>Tab 2</VTabItem>
+            <VTabItem>Tab 3</VTabItem>
+          </VTabList>
+          <VTabPanels>
+            <VTabPanel>Tab 1 content</VTabPanel>
+            <VTabPanel>Tab 2 content</VTabPanel>
+            <VTabPanel>Tab 3 content</VTabPanel>
+          </VTabPanels>
+        </VTabGroup>
       </div>
     </VCard>
   </div>
