@@ -217,6 +217,10 @@ const menus = ref<MenuItem[]>([
         text: 'Register',
         to: '/pages/register',
       },
+      {
+        text: 'Mobile App Example',
+        to: '/pages/mobile',
+      },
     ],
   },
 ]);
