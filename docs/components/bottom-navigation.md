@@ -98,6 +98,26 @@ Using the `grow` property forces the item to fill all available space.
 
 </LivePreview>
 
+### Icon Only
+
+Leave the default slot blank to create icon only navigation.
+
+<LivePreview src="components-bottomnavigation--icon-only" >
+
+```vue
+<template>
+  <VBottomNavigation grow>
+    <VBottomNavigationItem icon="ri:home-line" />
+    <VBottomNavigationItem icon="ri:history-line" />
+    <VBottomNavigationItem icon="ri:heart-line" />
+    <VBottomNavigationItem icon="ri:map-pin-2-line" />
+    <VBottomNavigationItem icon="ri:user-line" />
+  </VBottomNavigation>
+</template>
+```
+
+</LivePreview>
+
 ### With Vue Router
 
 Bottom navigation automatically set active state when using with Vue Router. Add the `to` prop to the `VBottomNavigationItem` component and you good to go.
@@ -203,6 +223,8 @@ const isOpen = ref(true)
 </template>
 ```
 
+</LivePreview>
+
 ### With Button
 
 You can also add `VBtn` to the bottom navigation.
@@ -229,11 +251,13 @@ You can also add `VBtn` to the bottom navigation.
 </template>
 ```
 
+</LivePreview>
+
 ### With FAB Button
 
 You can also add floating action button (FAB) to the bottom navigation.
 
-<LivePreview src="components-bottomnavigation--with-button" >
+<LivePreview src="components-bottomnavigation--with-fab-button" >
 
 ```vue
 <template>
