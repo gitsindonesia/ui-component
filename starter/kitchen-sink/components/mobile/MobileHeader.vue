@@ -26,7 +26,7 @@ import { Popover, PopoverButton, PopoverPanel } from "@headlessui/vue";
             leave-to-class="translate-y-1 opacity-0"
           >
             <PopoverPanel
-              class="absolute right-0 z-20 bg-white rounded-lg w-72 shadow-md"
+              class="absolute right-0 z-20 bg-white dark:bg-gray-true-800 dark:border dark:border-gray-true-700 rounded-lg w-72 shadow-md"
             >
               <VList>
                 <VListItemHeader>Notification</VListItemHeader>
@@ -44,7 +44,7 @@ import { Popover, PopoverButton, PopoverPanel } from "@headlessui/vue";
                 </VListItem>
                 <VDivider class="my-1" />
                 <VListItem hide-append hide-prepend>
-                  <VBtn block>View all notifications</VBtn>
+                  <VBtn noRing block>View all notifications</VBtn>
                 </VListItem>
               </VList>
             </PopoverPanel>
