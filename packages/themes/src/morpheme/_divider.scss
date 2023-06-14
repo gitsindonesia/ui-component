@@ -10,6 +10,7 @@
   display: block;
   flex: 1 1 100%;
   transition: inherit;
+  margin: var(--size-spacing-1) 0;
 
   &--inset {
     margin-left: var(--v-divider-inset-margin);
