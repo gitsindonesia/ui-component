@@ -82,7 +82,7 @@ You can use the `rounded` prop to apply a rounded style to the badge:
 
 ```vue
 <script setup lang="ts">
-import {ref} from 'vue';
+import { ref } from "vue";
 </script>
 
 <template>
@@ -139,6 +139,62 @@ You can use the `dismissable` prop to show an X button in the badge, which allow
 
 </LivePreview>
 
+### Dot Variant
+
+You can use the `dot` prop to make badge display as dot circle.
+
+<LivePreview src="components-badge--dot">
+
+```vue
+<template>
+  <h3 class="mb-2 font-semibold">Default</h3>
+  <VBtn prefix-icon="ri:notification-3-line">
+    <VBadge color="primary" dot />
+  </VBtn>
+  <VBtn prefix-icon="ri:notification-3-line" text>
+    <VBadge color="error" dot />
+  </VBtn>
+  <VBtn prefix-icon="ri:notification-3-line" icon fab>
+    <VBadge color="error" dot />
+  </VBtn>
+  <VBtn prefix-icon="ri:notification-3-line" icon fab text>
+    <VBadge color="error" dot />
+  </VBtn>
+  <h3 class="mb-2 font-semibold">Dot Size</h3>
+  <VBtn prefix-icon="ri:notification-3-line" text>
+    <VBadge color="primary" dot dot-size="sm" />
+  </VBtn>
+  <VBtn prefix-icon="ri:notification-3-line" text>
+    <VBadge color="primary" dot dot-size="md" />
+  </VBtn>
+  <VBtn prefix-icon="ri:notification-3-line" text>
+    <VBadge color="primary" dot dot-size="lg" />
+  </VBtn>
+  <h3 class="mb-2 font-semibold">With Offset</h3>
+  <VBtn prefix-icon="ri:notification-3-line" fab icon text>
+    <VBadge color="primary" dot dot-offset="1" />
+  </VBtn>
+  <VBtn prefix-icon="ri:notification-3-line" fab icon text>
+    <VBadge color="primary" dot dot-offset="2" />
+  </VBtn>
+  <VBtn prefix-icon="ri:notification-3-line" fab icon text>
+    <VBadge color="primary" dot dot-offset="3" />
+  </VBtn>
+  <VBtn prefix-icon="ri:notification-3-line" fab icon text>
+    <VBadge color="primary" dot dot-offset="4" />
+  </VBtn>
+  <h3 class="mb-2 font-semibold">Left Position</h3>
+  <VBtn prefix-icon="ri:notification-3-line" fab icon text>
+    <VBadge color="primary" dot dot-offset="1" dot-left />
+  </VBtn>
+  <VBtn prefix-icon="ri:notification-3-line" fab icon text>
+    <VBadge color="primary" dot dot-offset="1" />
+  </VBtn>
+</template>
+```
+
+</LivePreview>
+
 ## Props
 
 | Name                        | Type                                                           | Default         |
@@ -162,7 +218,7 @@ To listen for the `dismiss` event, you can use the @dismiss event binding in you
 
 ```vue
 <script setup lang="ts">
-const onDismiss = () => alert('Dismiss!');
+const onDismiss = () => alert("Dismiss!");
 </script>
 
 <template>
@@ -236,7 +292,7 @@ Then, you can import and use the `VBadge` component in your application like thi
 
 ```vue
 <script setup lang="ts">
-import VBadge from '@morpheme/badge';
+import VBadge from "@morpheme/badge";
 </script>
 
 <template>
