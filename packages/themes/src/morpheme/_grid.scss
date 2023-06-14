@@ -1,0 +1,53 @@
+@use "sass:math";
+
+// Variables
+$v-col-default-width: 100%; // Lebar default
+$v-col-offset-ratio: 8.3333333333%; // Rasio offset per kolom
+$v-col-max-cols: 12; // Jumlah maksimum kolom
+
+// Mixin untuk menghasilkan kelas lebar kolom
+@mixin v-col-width($cols) {
+  @if $cols == "auto" {
+    flex: 0 0 auto;
+    max-width: 100%;
+  } @else {
+    flex: 1 1 math.div($cols, $v-col-max-cols) * 100%;
+    max-width: math.div($cols, $v-col-max-cols) * 100%;
+  }
+}
+
+@mixin v-col-offset($offset) {
+  @if $offset > 0 {
+    margin-left: math.div($offset, $v-col-max-cols) * 100%;
+  }
+}
+
+@mixin v-col-order($order) {
+  @if $order > 0 {
+    order: $order;
+  }
+}
+
+.v-col {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+
+  @for $i from 1 through $v-col-max-cols {
+    &.v-col-#{$i} {
+      @include v-col-width($i);
+    }
+  }
+
+  @for $i from 1 through $v-col-max-cols {
+    &.v-offset-#{$i} {
+      @include v-col-offset($i);
+    }
+  }
+
+  @for $i from 1 through $v-col-max-cols {
+    &.v-order-#{$i} {
+      @include v-col-order($i);
+    }
+  }
+}
