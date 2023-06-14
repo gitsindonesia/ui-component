@@ -195,6 +195,34 @@ You can use the `dot` prop to make badge display as dot circle.
 
 </LivePreview>
 
+### In List
+
+You can use `VBadge` component inside `VList` component like so:
+
+<LivePreview src="components-badge--in-list">
+
+```vue
+<template>
+  <VList hover class="w-80">
+    <VListItem> Home </VListItem>
+    <VListItem>
+      Notifications
+      <template #append>
+        <VBadge>2</VBadge>
+      </template>
+    </VListItem>
+    <VListItem>
+      Messages
+      <template #append>
+        <VBadge>4</VBadge>
+      </template>
+    </VListItem>
+  </VList>
+</template>
+```
+
+</LivePreview>
+
 ## Props
 
 | Name                        | Type                                                           | Default         |

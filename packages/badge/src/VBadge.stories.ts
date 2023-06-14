@@ -1,9 +1,9 @@
 import { VBtn } from '@morpheme/button';
-import { Single } from './../../menu/src/VMenu.stories';
 import VBadge from './VBadge.vue';
 import type {VBadgeProps} from './types';
 import {Story, Meta} from '@storybook/vue3';
 import {defaultRounded, defaultColors} from '@morpheme/theme/defaultTheme';
+import {List as VList, ListItem as VListItem} from '@morpheme/list'
 
 const colors = [
   ...defaultColors,
@@ -257,6 +257,36 @@ export const Dot: Story<VBadgeProps> = (args) => ({
     <VBtn prefix-icon="ri:notification-3-line" fab icon text>
       <VBadge color="primary" dot dot-offset="1" />
     </VBtn>
+  `,
+});
+
+export const InList: Story<VBadgeProps> = (args) => ({
+  components: {
+    VBadge,
+    VList,
+    VListItem,
+  },
+  setup() {
+    return {args};
+  },
+  template: `
+    <VList hover class="w-80">
+      <VListItem>
+        Home
+      </VListItem>
+      <VListItem>
+        Notifications
+        <template #append>
+          <VBadge>2</VBadge>
+        </template>
+      </VListItem>
+      <VListItem>
+        Messages
+        <template #append>
+          <VBadge>4</VBadge>
+        </template>
+      </VListItem>
+    </VList>
   `,
 });
 
