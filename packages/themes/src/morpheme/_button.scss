@@ -45,6 +45,7 @@
   border-width: var(--btn-border-width);
   border-color: var(--btn-border-color);
   transition: var(--btn-transition);
+  position: relative;
 
   // disabled
   &:disabled,

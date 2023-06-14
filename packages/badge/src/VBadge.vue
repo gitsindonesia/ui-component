@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import {computed, PropType} from 'vue';
-import Icon from '@morpheme/icon';
-import {DefaultColors, DefaultRounded} from '@morpheme/theme/defaultTheme';
+import { computed, PropType } from "vue";
+import Icon from "@morpheme/icon";
+import { DefaultColors, DefaultRounded } from "@morpheme/theme/defaultTheme";
 
 export type BadgeColors = DefaultColors | string;
 
 const props = defineProps({
   color: {
     type: String as PropType<BadgeColors>,
-    default: 'default',
+    default: "default",
   },
   rounded: {
     type: [Boolean, String] as PropType<boolean | DefaultRounded>,
@@ -27,17 +27,17 @@ const props = defineProps({
    */
   bgColor: {
     type: String,
-    default: '',
+    default: "",
   },
   /**
    * @deprecated use `color` prop instead
    */
   textColor: {
     type: String,
-    default: 'text-white',
+    default: "text-white",
   },
   /**
-   * @deprecated use `rounded="none"` instead
+   * @deprecated use `rounded="full"` instead
    */
   circle: {
     type: Boolean,
@@ -51,42 +51,61 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  dot: {
+    type: Boolean,
+    default: false,
+  },
+  dotOffset: {
+    type: [String, Number],
+    default: 0,
+  },
+  dotSize: {
+    type: String as PropType<"sm" | "md" | "lg" | string>,
+    default: "md",
+  },
+  dotLeft: {
+    type: Boolean,
+    default: false,
+  },
   closeIcon: {
     type: String,
-    default: 'ri:close-line',
+    default: "ri:close-line",
   },
   iconSize: {
     type: [String, Number],
-    default: 'xs',
+    default: "xs",
   },
 });
 
-const emit =
-  defineEmits<{
-    (e: 'dismiss'): void;
-  }>();
+const emit = defineEmits<{
+  (e: "dismiss"): void;
+}>();
 
 const onDismiss = () => {
-  emit('dismiss');
+  emit("dismiss");
 };
 
 const classes = computed(() => {
   const roundedClass =
-    typeof props.rounded === 'string'
-      ? {[`badge--rounded-${props.rounded}`]: !!props.rounded}
+    typeof props.rounded === "string"
+      ? { [`badge--rounded-${props.rounded}`]: !!props.rounded }
       : props.rounded
       ? `badge--rounded`
-      : '';
+      : "";
 
   return [
-    'badge',
+    "badge",
     `badge-${props.color}`,
     roundedClass,
     {
-      'badge--sm': props.small,
-      'badge--lg': props.large,
-      'badge--outlined': props.outlined,
-      'badge--dismissable': props.dismissable,
+      "badge--sm": props.small,
+      "badge--lg": props.large,
+      "badge--outlined": props.outlined,
+      "badge--dismissable": props.dismissable,
+      "badge--dot": props.dot,
+      "badge--dot--left": props.dotLeft,
+      [`badge--dot--offset-${props.dotOffset}`]: !!props.dotOffset,
+      [`badge--dot--${props.dotSize}`]: !!props.dotSize,
     },
   ];
 });
@@ -94,7 +113,7 @@ const classes = computed(() => {
 
 <template>
   <span :class="classes">
-    <slot />
+    <slot v-if="!dot" />
     <slot name="dismissable" :dismiss="onDismiss">
       <button
         v-if="dismissable"
