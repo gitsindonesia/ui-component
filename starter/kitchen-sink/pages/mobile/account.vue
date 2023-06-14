@@ -9,7 +9,11 @@ definePageMeta({
   <MobileAppBar> Account </MobileAppBar>
 
   <VList hover flush class="border dark:border-gray-true-800 rounded-xl">
-    <VListItem tile append-icon="ri:arrow-right-s-line" append-icon-class="text-gray-500">
+    <VListItem
+      tile
+      append-icon="ri:arrow-right-s-line"
+      append-icon-class="text-gray-500 dark:text-gray-true-500"
+    >
       <template #prepend>
         <img
           src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
@@ -20,7 +24,9 @@ definePageMeta({
       </template>
       <div>
         <div class="font-semibold">John Doe</div>
-        <p class="text-sm text-gray-500 truncate">Apple ID, iCloud+, Media & Purchases</p>
+        <p class="text-sm text-gray-500 dark:text-gray-true-500 truncate">
+          Apple ID, iCloud+, Media & Purchases
+        </p>
       </div>
     </VListItem>
   </VList>
@@ -35,7 +41,7 @@ definePageMeta({
       prepend-icon-class="!text-white"
       prepend-class="p-1 bg-orange-500 text-white rounded"
       append-icon="ri:arrow-right-s-line"
-      append-icon-class="text-gray-500"
+      append-icon-class="text-gray-500 dark:text-gray-true-500"
     >
       Airplane Mode
     </VListItem>
@@ -46,7 +52,7 @@ definePageMeta({
       prepend-icon-class="!text-white"
       prepend-class="p-1 bg-blue-500 text-white rounded"
       append-icon="ri:arrow-right-s-line"
-      append-icon-class="text-gray-500"
+      append-icon-class="text-gray-500 dark:text-gray-true-500"
       append-text="Coffee Wifi"
       append-text-class="text-sm text-gray-800"
     >
@@ -59,7 +65,7 @@ definePageMeta({
       prepend-icon-class="!text-white"
       prepend-class="p-1 bg-blue-500 text-white rounded"
       append-icon="ri:arrow-right-s-line"
-      append-icon-class="text-gray-500"
+      append-icon-class="text-gray-500 dark:text-gray-true-500"
       append-text="On"
       append-text-class="text-sm text-gray-800"
     >
@@ -72,7 +78,7 @@ definePageMeta({
       prepend-icon-class="!text-white"
       prepend-class="p-1 bg-green-500 text-white rounded"
       append-icon="ri:arrow-right-s-line"
-      append-icon-class="text-gray-500"
+      append-icon-class="text-gray-500 dark:text-gray-true-500"
     >
       Cellular
     </VListItem>
@@ -83,7 +89,7 @@ definePageMeta({
       prepend-icon-class="!text-white"
       prepend-class="p-1 bg-green-500 text-white rounded"
       append-icon="ri:arrow-right-s-line"
-      append-icon-class="text-gray-500"
+      append-icon-class="text-gray-500 dark:text-gray-true-500"
     >
       Personal Hotspot
     </VListItem>
@@ -94,7 +100,7 @@ definePageMeta({
       prepend-icon-class="!text-white"
       prepend-class="p-1 bg-blue-500 text-white rounded"
       append-icon="ri:arrow-right-s-line"
-      append-icon-class="text-gray-500"
+      append-icon-class="text-gray-500 dark:text-gray-true-500"
     >
       VPN
     </VListItem>

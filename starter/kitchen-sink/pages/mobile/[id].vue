@@ -13,7 +13,7 @@ const id = route.params.id;
   <img
     src="/article-image.jpg"
     alt="article-image"
-    class="h-40 w-full object-cover rounded-lg"
+    class="h-96 w-full object-cover rounded-lg"
     :style="{
       viewTransitionName: `item-image-${id}`,
     }"
