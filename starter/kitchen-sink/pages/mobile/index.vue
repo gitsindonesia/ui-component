@@ -13,7 +13,7 @@ definePageMeta({
   </VText>
 
   <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-    <VCard v-for="i in 12" :key="i" :to="`/pages/mobile/${i}`">
+    <VCard v-for="i in 12" :key="i" :to="`/mobile/${i}`">
       <template #image>
         <img
           src="/article-image.jpg"

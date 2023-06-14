@@ -9,19 +9,19 @@ const isHome = computed(() => route.path === "/mobile");
     <slot />
 
     <VBottomNavigation v-if="route.meta.bottomNavigation" grow>
-      <VBottomNavigationItem to="/pages/mobile" icon="ri:home-line">
+      <VBottomNavigationItem to="/mobile" icon="ri:home-line">
         Home
       </VBottomNavigationItem>
-      <VBottomNavigationItem to="/pages/mobile/recents" icon="ri:history-line">
+      <VBottomNavigationItem to="/mobile/recents" icon="ri:history-line">
         Recents
       </VBottomNavigationItem>
-      <VBottomNavigationItem to="/pages/mobile/favorites" icon="ri:heart-line">
+      <VBottomNavigationItem to="/mobile/favorites" icon="ri:heart-line">
         Favorites
       </VBottomNavigationItem>
-      <VBottomNavigationItem to="/pages/mobile/nearby" icon="ri:map-pin-2-line">
+      <VBottomNavigationItem to="/mobile/nearby" icon="ri:map-pin-2-line">
         Nearby
       </VBottomNavigationItem>
-      <VBottomNavigationItem to="/pages/mobile/account" icon="ri:user-line">
+      <VBottomNavigationItem to="/mobile/account" icon="ri:user-line">
         Account
       </VBottomNavigationItem>
     </VBottomNavigation>
