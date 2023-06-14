@@ -103,9 +103,9 @@ const classes = computed(() => {
       "badge--outlined": props.outlined,
       "badge--dismissable": props.dismissable,
       "badge--dot": props.dot,
-      "badge--dot--left": props.dotLeft,
-      [`badge--dot--offset-${props.dotOffset}`]: !!props.dotOffset,
-      [`badge--dot--${props.dotSize}`]: !!props.dotSize,
+      "badge--dot--left": props.dot && props.dotLeft,
+      [`badge--dot--offset-${props.dotOffset}`]: props.dot && !!props.dotOffset,
+      [`badge--dot--${props.dotSize}`]: props.dot && !!props.dotSize,
     },
   ];
 });
