@@ -7,7 +7,6 @@ import {
   ComboboxOptions,
   ComboboxOption,
   ComboboxLabel,
-  TransitionRoot,
 } from '@headlessui/vue';
 import {Icon} from '@morpheme/icon';
 import {useFormValue, type ValidationMode} from '@morpheme/forms';
@@ -40,6 +39,7 @@ export type Props = {
   shadow?: boolean
   readonly?: boolean
   error?: boolean
+  transition?: string
 };
 
 const props = withDefaults(defineProps<Props>(), {
@@ -55,7 +55,8 @@ const props = withDefaults(defineProps<Props>(), {
   clearable: false,
   errorClass: 'autocomplete-error',
   wrapperClass: '',
-  validationMode: 'aggressive'
+  validationMode: 'aggressive',
+  transition: 'fade',
 });
 
 const emit =
@@ -135,11 +136,7 @@ const clear = () => {
             :disabled="disabled"
             @click="clear"
           >
-            <Icon
-              name="heroicons:x-mark"
-              class="autocomplete-icon"
-              aria-hidden="true"
-            />
+            <Icon name="heroicons:x-mark" class="autocomplete-icon" aria-hidden="true" />
           </button>
           <ComboboxButton :disabled="disabled">
             <Icon
@@ -150,12 +147,7 @@ const clear = () => {
           </ComboboxButton>
         </div>
       </div>
-      <TransitionRoot
-        leave="transition ease-in duration-100"
-        leave-from="opacity-100"
-        leave-to="opacity-0"
-        @after-leave="query = ''"
-      >
+      <transition :name="transition">
         <ComboboxOptions class="autocomplete-options">
           <div v-if="filteredItems.length === 0" class="autocomplete-empty">
             {{ noDataText }}
@@ -164,7 +156,7 @@ const clear = () => {
           <ComboboxOption
             v-for="(item, idx) in filteredItems"
             :key="idx"
-            v-slot="{selected, active}"
+            v-slot="{ selected, active }"
             as="template"
             :value="item"
           >
@@ -193,7 +185,7 @@ const clear = () => {
             </li>
           </ComboboxOption>
         </ComboboxOptions>
-      </TransitionRoot>
+      </transition>
     </div>
     <p v-if="hint" class="autocomplete-hint">
       <slot name="hint">
