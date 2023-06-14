@@ -55,6 +55,7 @@ const transpile = [
   '@morpheme/banner',
   '@morpheme/divider',
   '@morpheme/bottom-navigation',
+  '@morpheme/popover',
   'floating-vue',
 ];
 
@@ -441,6 +442,26 @@ const components: AddComponentOptions[] = [
   {
     name: 'VBottomNavigationItem',
     filePath: '@morpheme/bottom-navigation/src/VBottomNavigationItem.vue',
+  },
+  {
+    name: 'VPopover',
+    filePath: '@morpheme/popover/src/VPopover.vue',
+  },
+  {
+    name: 'VPopoverButton',
+    filePath: '@morpheme/popover/src/VPopoverButton.vue',
+  },
+  {
+    name: 'VPopoverGroup',
+    filePath: '@morpheme/popover/src/VPopoverGroup.vue',
+  },
+  {
+    name: 'VPopoverOverlay',
+    filePath: '@morpheme/popover/src/VPopoverOverlay.vue',
+  },
+  {
+    name: 'VPopoverPanel',
+    filePath: '@morpheme/popover/src/VPopoverPanel.vue',
   },
 ];
 
