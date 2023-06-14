@@ -8,7 +8,7 @@ const id = route.params.id;
 </script>
 
 <template>
-  <MobileAppBar>Detail Informasi</MobileAppBar>
+  <MobileAppBar with-back-button>Detail Informasi</MobileAppBar>
 
   <img
     src="/article-image.jpg"
