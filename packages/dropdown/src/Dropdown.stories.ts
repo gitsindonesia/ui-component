@@ -4,6 +4,7 @@ import DropdownItem from './DropdownItem.vue';
 import DropdownButton from './DropdownButton.vue';
 import type {DropdownItemProps} from './types';
 import Button from '@morpheme/button';
+import DropdownBtn from './DropdownBtn.vue';
 
 const genItems = (length = 5): DropdownItemProps[] =>
   Array.from({length}, (_, v) => ({
@@ -96,7 +97,7 @@ export const Slots: Story = (args, {argTypes}) => ({
 });
 
 export const CustomActivator: Story = (args, {argTypes}) => ({
-  components: {Dropdown, DropdownItem, DropdownButton},
+  components: {Dropdown, DropdownItem, DropdownButton, DropdownBtn},
   setup() {
     return {args, argTypes, Button};
   },
@@ -107,6 +108,20 @@ export const CustomActivator: Story = (args, {argTypes}) => ({
           <DropdownButton :as="Button" color="error" outlined>
             My Button
           </DropdownButton>
+        </template>
+
+        <DropdownItem text="Calendar" icon="mdi:calendar"/>
+        <DropdownItem text="Files" icon="mdi:document" />
+        <DropdownItem divider/>
+        <DropdownItem text="Timer" icon="mdi:clock"/>
+      </Dropdown>
+    </div>
+    <div class="flex justify-center mt-20">
+      <Dropdown v-bind="args" top top-class="bottom-12">
+        <template #activator>
+          <DropdownBtn color="success" outlined>
+            Custom Button
+          </DropdownBtn>
         </template>
 
         <DropdownItem text="Calendar" icon="mdi:calendar"/>
