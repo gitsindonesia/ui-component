@@ -91,6 +91,7 @@ import {
 import {VBanner, VBannerText} from '@morpheme/banner';
 import {VDivider} from '@morpheme/divider';
 import {VBottomNavigation, VBottomNavigationItem} from '@morpheme/bottom-navigation';
+import {VPopover, VPopoverButton, VPopoverGroup, VPopoverOverlay, VPopoverPanel} from '@morpheme/popover';
 
 const plugin: Plugin = {
   install: (app) => {
@@ -180,6 +181,11 @@ const plugin: Plugin = {
     app.component('VDivider', VDivider);
     app.component('VBottomNavigation', VBottomNavigation);
     app.component('VBottomNavigationItem', VBottomNavigationItem);
+    app.component('VPopover', VPopover);
+    app.component('VPopoverButton', VPopoverButton);
+    app.component('VPopoverGroup', VPopoverGroup);
+    app.component('VPopoverOverlay', VPopoverOverlay);
+    app.component('VPopoverPanel', VPopoverPanel);
   },
 };
 
@@ -246,7 +252,12 @@ export {
   VBannerText,
   VDivider,
   VBottomNavigation,
-  VBottomNavigationItem
+  VBottomNavigationItem,
+  VPopover,
+  VPopoverButton,
+  VPopoverGroup,
+  VPopoverOverlay,
+  VPopoverPanel,
 };
 
 export * from '@morpheme/utils';

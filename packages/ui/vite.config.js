@@ -65,9 +65,13 @@ export default defineConfig({
         '@morpheme/progress-circular',
         '@morpheme/timeline',
         '@morpheme/banner',
+        '@morpheme/divider',
+        '@morpheme/bottom-navigation',
+        '@morpheme/popover',
         '@headlessui/vue',
         '@vue/test-utils',
         'vue',
+        'floating-vue'
       ],
       output: {
         // Provide global variables to use in the UMD build
