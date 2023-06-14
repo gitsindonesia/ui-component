@@ -89,6 +89,10 @@ const menus = ref<MenuItem[]>([
         to: "/components/pagination",
       },
       {
+        text: "Popover",
+        to: "/components/popover",
+      },
+      {
         text: "Progress Bar",
         to: "/components/progress-bar",
       },
