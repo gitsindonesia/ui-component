@@ -1,0 +1,156 @@
+:root {
+  --v-popover-margin: var(--size-spacing-2);
+  --v-popover-bg-color: white;
+  --v-popover-border-color: var(--color-gray-300);
+}
+
+.v-popover {
+  position: relative;
+
+  &-group {
+    display: inline-flex;
+    gap: var(--size-spacing-2);
+  }
+
+  &__panel {
+    position: absolute;
+    width: var(--size-spacing-64);
+    background-color: var(--v-popover-bg-color);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--v-popover-border-color);
+    box-shadow: var(--effect-shadow-md);
+    z-index: 10;
+  }
+
+  &__overlay {
+    position: fixed;
+    inset: 0px;
+    background-color: rgb(0 0 0 / 0.5);
+
+    &--blur {
+      backdrop-filter: blur(8px);
+    }
+  }
+
+  // margin
+  &--bottom,
+  &--bottom-start,
+  &--bottom-end {
+    .v-popover__panel {
+      margin-top: var(--v-popover-margin);
+    }
+  }
+
+  &--top,
+  &--top-start,
+  &--top-end {
+    .v-popover__panel {
+      margin-bottom: var(--v-popover-margin);
+    }
+  }
+
+  &--left,
+  &--left-start,
+  &--left-end {
+    .v-popover__panel {
+      margin-right: var(--v-popover-margin);
+    }
+  }
+
+  &--right,
+  &--right-start,
+  &--right-end {
+    .v-popover__panel {
+      margin-left: var(--v-popover-margin);
+    }
+  }
+
+  // position
+  &--bottom {
+    .v-popover__panel {
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &--top {
+    .v-popover__panel {
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &--left {
+    .v-popover__panel {
+      top: 50%;
+      right: 100%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &--right {
+    .v-popover__panel {
+      top: 50%;
+      left: 100%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &--bottom-start {
+    .v-popover__panel {
+      top: 100%;
+      left: 0;
+    }
+  }
+
+  &--bottom-end {
+    .v-popover__panel {
+      top: 100%;
+      right: 0;
+    }
+  }
+
+  &--top-start {
+    .v-popover__panel {
+      bottom: 100%;
+      left: 0;
+    }
+  }
+
+  &--top-end {
+    .v-popover__panel {
+      bottom: 100%;
+      right: 0;
+    }
+  }
+
+  &--left-start {
+    .v-popover__panel {
+      top: 0;
+      right: 100%;
+    }
+  }
+
+  &--left-end {
+    .v-popover__panel {
+      bottom: 0;
+      right: 100%;
+    }
+  }
+
+  &--right-start {
+    .v-popover__panel {
+      top: 0;
+      left: 100%;
+    }
+  }
+
+  &--right-end {
+    .v-popover__panel {
+      bottom: 0;
+      left: 100%;
+    }
+  }
+}

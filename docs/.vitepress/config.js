@@ -130,6 +130,10 @@ export default defineConfig({
             link: '/components/pagination',
           },
           {
+            text: 'Popover',
+            link: '/components/popover',
+          },
+          {
             text: 'Progress Bar',
             link: '/components/progress-bar',
           },
