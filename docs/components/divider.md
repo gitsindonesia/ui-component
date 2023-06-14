@@ -92,7 +92,9 @@ None
 ```scss
 :root {
   --v-divider-height: 1px;
-  --v-divider-bg-color: var(--color-gray-200);
+  --v-divider-border-color: var(--color-gray-200);
+  --v-divider-border-width: var(--v-divider-height);
+  --v-divider-border-style: solid;
   --v-divider-inset-margin: 44px;
 }
 ```
