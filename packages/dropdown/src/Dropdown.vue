@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import {Menu, MenuButton, MenuItems} from '@headlessui/vue';
-import type {DropdownItemProps} from './types';
-import DropdownItem from './DropdownItem.vue';
-import {Icon} from '@morpheme/icon';
+import { Menu, MenuButton, MenuItems } from "@headlessui/vue";
+import type { DropdownItemProps } from "./types";
+import DropdownItem from "./DropdownItem.vue";
+import { Icon } from "@morpheme/icon";
 
 export interface Props {
   modelValue?: boolean;
@@ -29,24 +29,24 @@ export interface Props {
 withDefaults(defineProps<Props>(), {
   modelValue: false,
   btnProps: () => ({
-    variant: 'secondary',
+    variant: "secondary",
   }),
-  label: 'Options',
+  label: "Options",
   right: false,
   items: () => [],
   top: false,
-  topClass: '',
-  bottomClass: '',
-  panelClass: '',
-  buttonWrapperClass: '',
-  leftClass: '',
-  rightClass: '',
-  transition: 'fade-scale',
-  icon: 'ri:arrow-down-s-line',
-  iconSize: 'sm',
-  iconClass: '',
-  prefixIcon: '',
-  prefixIconSize: 'sm',
+  topClass: "",
+  bottomClass: "",
+  panelClass: "",
+  buttonWrapperClass: "",
+  leftClass: "",
+  rightClass: "",
+  transition: "dropdown",
+  icon: "ri:arrow-down-s-line",
+  iconSize: "sm",
+  iconClass: "",
+  prefixIcon: "",
+  prefixIconSize: "sm",
 });
 </script>
 
@@ -54,11 +54,7 @@ withDefaults(defineProps<Props>(), {
   <Menu as="div" class="dropdown">
     <div class="dropdown-button-wrapper" :class="buttonWrapperClass">
       <slot name="activator" :btn-props="btnProps" :label="label">
-        <MenuButton
-          as="button"
-          class="dropdown-button-activator"
-          v-bind="btnProps"
-        >
+        <MenuButton as="button" class="dropdown-button-activator" v-bind="btnProps">
           <Icon
             :name="prefixIcon"
             :size="prefixIconSize"
