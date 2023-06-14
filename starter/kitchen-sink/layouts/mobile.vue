@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const route = useRoute();
 
-const isHome = computed(() => route.path === "/pages/mobile");
+const isHome = computed(() => route.path === "/mobile");
 </script>
 
 <template>
