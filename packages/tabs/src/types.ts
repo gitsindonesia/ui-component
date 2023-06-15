@@ -1,6 +1,6 @@
-export type VTabItem = Record<string, any>;
+export type VTabItemProps = Record<string, any>;
 
 export interface VTabProps {
   modelValue: string | number;
-  items: VTabItem[];
+  items: VTabItemProps[];
 }
