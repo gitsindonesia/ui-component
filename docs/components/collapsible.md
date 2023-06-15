@@ -16,7 +16,7 @@ You can use the VCollapsible component in your template like so:
 
 ```vue
 <script setup lang="ts">
-import {isOpen} from 'vue';
+import { isOpen } from "vue";
 
 const isOpen = ref(false);
 </script>
@@ -24,7 +24,12 @@ const isOpen = ref(false);
 <template>
   <VBtn @click="isOpen = !isOpen"> Toggle </VBtn>
   <VCollapse :show="isOpen">
-    Anim eiusmod ea nostrud do incididunt consequat duis adipisicing reprehenderit nisi. Minim mollit eiusmod incididunt fugiat ipsum velit ut consequat est consectetur adipisicing. Nulla duis anim velit magna aute nisi elit nulla deserunt. Fugiat consequat ut magna eiusmod sit incididunt qui. Incididunt velit fugiat sunt sint amet magna est laborum excepteur. Aute aliqua nisi est nulla voluptate enim qui amet labore et consectetur. Est pariatur qui amet cupidatat magna est adipisicing quis ea ea.
+    Anim eiusmod ea nostrud do incididunt consequat duis adipisicing reprehenderit nisi.
+    Minim mollit eiusmod incididunt fugiat ipsum velit ut consequat est consectetur
+    adipisicing. Nulla duis anim velit magna aute nisi elit nulla deserunt. Fugiat
+    consequat ut magna eiusmod sit incididunt qui. Incididunt velit fugiat sunt sint amet
+    magna est laborum excepteur. Aute aliqua nisi est nulla voluptate enim qui amet labore
+    et consectetur. Est pariatur qui amet cupidatat magna est adipisicing quis ea ea.
   </VCollapse>
 </template>
 ```
@@ -59,10 +64,6 @@ To hide the icon that indicates whether the collapsible is open or closed, set t
 
 </LivePreview>
 
-
-
-</LivePreview>
-
 ## Props
 
 | Name                        | Type      | Default |
@@ -93,9 +94,9 @@ npm i @morpheme/collapsible
 
 ```vue
 <script setup lang="ts">
-import {VCollapse} from '@morpheme/collapsible';
+import { VCollapse } from "@morpheme/collapsible";
 
-const isOpen = ref(false)
+const isOpen = ref(false);
 </script>
 
 <template>
