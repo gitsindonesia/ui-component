@@ -3,6 +3,7 @@ export const tabVariants = [
   'filled',
   'underline-filled',
   'segmented-control',
+  'segmented-control-rounded',
 ];
 
 export type TabVariants = typeof tabVariants[number];

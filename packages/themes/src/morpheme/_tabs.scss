@@ -287,7 +287,8 @@
   }
 
   // segmented control
-  &--segmented-control {
+  &--segmented-control,
+  &--segmented-control-rounded {
     --v-tabs-slider-height: 40px;
     --v-tabs-padding-x: 0;
     --v-tabs-padding-y: 0;
@@ -366,6 +367,14 @@
     &.v-tabs-success {
       --v-tabs-slider-bg-color: var(--color-success-50);
       --v-tabs-item-active-text-color: var(--color-success-700);
+    }
+  }
+
+  &--segmented-control-rounded {
+    .v-tabs-items,
+    .v-tabs-item,
+    .v-tabs-slider {
+      border-radius: var(--border-radius-full);
     }
   }
 
