@@ -577,7 +577,6 @@ export const DarkMode: Story = (args) => ({
 export const HeadlessUI: Story = (args) => ({
   components: {
     VTabGroup,
-    VTabsSlider,
     VTabList,
     VTabItem,
     VTabPanels,
