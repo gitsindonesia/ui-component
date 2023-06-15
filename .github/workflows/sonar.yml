@@ -15,8 +15,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16.x'
-      - run: npm i -g lerna pnpm
-      - run: yarn install
+      - run: npm i -g lerna@6 pnpm
+      - run: lerna bootstrap
       - run: lerna run build
       - run: cd starter/nuxt-admin && pnpm install --no-frozen-lockfile
       - run: cd starter/nuxt-auth && pnpm install --no-frozen-lockfile

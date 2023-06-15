@@ -29,7 +29,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: npm i -g lerna
-      - run: yarn install
+      - run: npm i -g lerna@6
+      - run: lerna bootstrap
       - run: lerna run build
       - run: yarn coverage

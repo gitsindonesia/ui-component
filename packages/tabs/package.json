@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/tabs",
-  "version": "1.0.0-beta.9",
+  "version": "1.0.0-alpha.228+02a1a784",
   "description": "Morpheme Tabs Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -45,5 +45,5 @@
     "./src/*": "./src/*",
     "./*": "./*"
   },
-  "gitHead": "92215d91d1e3a2b1b804e52b55dcfd0ed5274475"
+  "gitHead": "02a1a784354fe06a05c5a2ca392aa295335766dd"
 }

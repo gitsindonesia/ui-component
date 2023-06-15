@@ -18,8 +18,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16.x'
-      - run: npm i -g lerna
-      - run: yarn install
+      - run: npm i -g lerna@6
+      - run: lerna bootstrap
       - run: lerna run build
       - run: yarn build-storybook
       - uses: FirebaseExtended/action-hosting-deploy@v0
