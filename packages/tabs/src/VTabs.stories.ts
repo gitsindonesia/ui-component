@@ -41,12 +41,7 @@ export default {
     variant: {
       control: {
         type: 'select',
-        options: [
-          'underline',
-          'filled',
-          'underline-filled',
-          'segmented-control',
-        ],
+        options: tabVariants,
       },
     },
   },
@@ -591,10 +586,16 @@ export const HeadlessUI: Story = (args) => ({
   setup() {
     const tab = ref(0);
     delete args.items;
-    return {args, tab};
+    return {args, tab, tabVariants};
   },
   template: `
-    <VTabGroup v-model="tab" v-bind="args">
+    <VTabGroup
+      v-model="tab"
+      v-bind="args"
+      v-for="variant in tabVariants"
+      :key="variant"
+      :variant="variant"
+    >
       <VTabList>
         <VTabItem>Tab 1</VTabItem>
         <VTabItem>Tab 2</VTabItem>
@@ -607,6 +608,24 @@ export const HeadlessUI: Story = (args) => ({
       </VTabPanels>
     </VTabGroup>
 
-    <p class="font-mono text-sm">Selected: {{ tab }}</p>
+    <VTabGroup
+      v-model="tab"
+      v-bind="args"
+      v-for="variant in tabVariants"
+      :key="variant"
+      :variant="variant"
+      vertical
+    >
+      <VTabList>
+        <VTabItem>Tab 1</VTabItem>
+        <VTabItem>Tab 2</VTabItem>
+        <VTabItem>Tab 3</VTabItem>
+      </VTabList>
+      <VTabPanels>
+        <VTabPanel>Tab 1 content</VTabPanel>
+        <VTabPanel>Tab 2 content</VTabPanel>
+        <VTabPanel>Tab 3 content</VTabPanel>
+      </VTabPanels>
+    </VTabGroup>
   `,
 });
