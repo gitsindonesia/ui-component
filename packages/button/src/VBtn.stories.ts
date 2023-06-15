@@ -83,6 +83,16 @@ Text.parameters = {
   },
 };
 
+export const Soft = Template.bind({});
+Soft.args = {color: 'primary', soft: true};
+Soft.parameters = {
+  docs: {
+    source: {
+      code: '<v-btn color="primary" soft>Button</v-btn>',
+    },
+  },
+};
+
 export const Rounded = Template.bind({});
 Rounded.args = {color: 'primary', rounded: true};
 Rounded.parameters = {
@@ -394,9 +404,35 @@ export const ButtonGroup: Story<VBtnProps> = () => ({
 
 export const DarkMode: Story<VBtnProps> = () => ({
   components: {VBtnGroup, VBtnToolbar, VBtn},
+  setup() {
+    return {
+      colors,
+      variants: ['default', 'outlined', 'text', 'soft'],
+    };
+  },
   template: `
   <div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
-    <h3 class="font-semibold">Default</h3>
+    <h3 class="font-semibold my-2">Colors</h3>
+    <div class="flex flex-row gap-2">
+      <VBtn v-for="color in colors" :key="color" :color="color">
+        {{ color }}
+      </VBtn>
+    </div>
+    <h3 class="font-semibold mt-4 mb-3">Variants</h3>
+    <div
+      v-for="variant in variants"
+      :key="variant"
+    >
+      <p>{{ variant }}</p>
+      <div class="flex flex-row gap-2 mt-2">
+        <VBtn v-for="color in colors" :key="color" :color="color"
+          v-bind:[variant]="variant"
+        >
+        {{ color }}
+        </VBtn>
+      </div>
+    </div>
+    <h3 class="font-semibold mt-4">Default</h3>
     <VBtnGroup class="w-full mt-2">
       <VBtn>Button</VBtn>
       <VBtn>Button</VBtn>

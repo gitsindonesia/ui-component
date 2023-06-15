@@ -13,6 +13,7 @@ export interface Props {
   href?: string;
   text?: boolean;
   outlined?: boolean;
+  soft?: boolean;
   rounded?: boolean;
   disabled?: boolean;
   noRing?: boolean;
@@ -100,6 +101,7 @@ const classes = computed(() => {
       'btn--block': props.block,
       'btn--loading': props.loading,
       'btn--text': props.text,
+      'btn--soft': props.soft,
       'btn--flush': props.flush,
       shadow: props.shadow,
     },

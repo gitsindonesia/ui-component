@@ -1,5 +1,3 @@
-
-
 .dark {
   .btn {
     // disabled
@@ -53,6 +51,17 @@
           --btn-text-color: var(--color-gray-true-300);
         }
       }
+
+      // soft
+      &.btn--soft {
+        --btn-bg-color: var(--color-gray-true-50);
+        --btn-border-color: var(--color-gray-true-50);
+        --btn-text-color: var(--color-gray-true-600);
+
+        &:hover {
+          --btn-text-color: var(--color-gray-true-700);
+        }
+      }
     }
 
     &-dark {
@@ -86,6 +95,17 @@
 
         &:hover {
           --btn-text-color: var(--color-gray-300);
+        }
+      }
+
+      // soft
+      &.btn--soft {
+        --btn-bg-color: var(--color-gray-true-50);
+        --btn-border-color: var(--color-gray-true-50);
+        --btn-text-color: var(--color-gray-true-600);
+
+        &:hover {
+          --btn-text-color: var(--color-gray-true-700);
         }
       }
     }
