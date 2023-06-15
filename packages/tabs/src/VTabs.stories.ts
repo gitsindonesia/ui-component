@@ -588,6 +588,7 @@ export const HeadlessUI: Story = (args) => ({
     return {args, tab, tabVariants};
   },
   template: `
+    <h3 class="font-semibold mb-2">Default</h3>
     <VTabGroup
       v-model="tab"
       v-bind="args"
@@ -607,6 +608,7 @@ export const HeadlessUI: Story = (args) => ({
       </VTabPanels>
     </VTabGroup>
 
+    <h3 class="font-semibold mb-2 mt-4">Vertical</h3>
     <VTabGroup
       v-model="tab"
       v-bind="args"
@@ -614,6 +616,26 @@ export const HeadlessUI: Story = (args) => ({
       :key="variant"
       :variant="variant"
       vertical
+    >
+      <VTabList>
+        <VTabItem>Tab 1</VTabItem>
+        <VTabItem>Tab 2</VTabItem>
+        <VTabItem>Tab 3</VTabItem>
+      </VTabList>
+      <VTabPanels>
+        <VTabPanel>Tab 1 content</VTabPanel>
+        <VTabPanel>Tab 2 content</VTabPanel>
+        <VTabPanel>Tab 3 content</VTabPanel>
+      </VTabPanels>
+    </VTabGroup>
+    <h3 class="font-semibold mb-2 mt-4">Grow</h3>
+    <VTabGroup
+      v-model="tab"
+      v-bind="args"
+      v-for="variant in tabVariants"
+      :key="variant"
+      :variant="variant"
+      grow
     >
       <VTabList>
         <VTabItem>Tab 1</VTabItem>

@@ -368,4 +368,16 @@
       --v-tabs-item-active-text-color: var(--color-success-700);
     }
   }
+
+  // grow
+  &--grow {
+    .v-tabs-items {
+      width: 100%;
+    }
+    .v-tabs-item {
+      flex-grow: 1;
+      justify-content: center;
+      text-align: center;
+    }
+  }
 }

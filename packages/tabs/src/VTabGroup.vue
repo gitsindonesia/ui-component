@@ -11,6 +11,7 @@ const props = withDefaults(
     vertical?: boolean;
     centerActive?: boolean;
     color?: DefaultColors;
+    grow?: boolean;
   }>(),
   {
     variant: 'underline',
@@ -39,6 +40,7 @@ function onTabChange(value: number) {
       {
         'v-tabs--vertical': vertical,
         'v-tabs--center-active': centerActive,
+        'v-tabs--grow': grow,
       },
     ]"
     as="div"
