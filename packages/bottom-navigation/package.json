@@ -16,7 +16,8 @@
   "license": "MIT",
   "dependencies": {
     "vue": "^3.3.4",
-    "@morpheme/theme": "^1.0.0-beta.9"
+    "@morpheme/theme": "^1.0.0-beta.9",
+    "@morpheme/icon": "^1.0.0-beta.9"
   },
   "devDependencies": {
     "@morpheme/tailwind-config": "^1.0.0-beta.9",

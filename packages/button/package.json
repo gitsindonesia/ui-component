@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@morpheme/tailwind-config": "^1.0.0-beta.9",
+    "@morpheme/card": "^1.0.0-beta.9",
     "@vitejs/plugin-vue": "^4.2.0",
     "@vue/test-utils": "^2.0.0-rc.17",
     "autoprefixer": "^10.4.2",

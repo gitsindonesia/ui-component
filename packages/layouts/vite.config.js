@@ -24,7 +24,8 @@ export default defineConfig({
         '@morpheme/utils',
         '@headlessui/vue',
         '@morpheme/icon',
-        '"@morpheme/utils',
+        '@morpheme/utils',
+        '@morpheme/design-tokens'
       ],
       output: {
         // Provide global variables to use in the UMD build

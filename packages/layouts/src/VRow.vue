@@ -21,7 +21,7 @@ const props = withDefaults(
   }
 );
 
-const gapValue = computed(() => tokens.spacing[props.gap]);
+const gapValue = computed(() => tokens.spacing[String(props.gap)]);
 </script>
 
 <template>
