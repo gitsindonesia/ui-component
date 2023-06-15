@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: '16.x'
       - run: npm i -g lerna
-      - run: lerna bootstrap
+      - run: yarn install
       - run: lerna run build
       - run: yarn build-storybook
       - uses: FirebaseExtended/action-hosting-deploy@v0
