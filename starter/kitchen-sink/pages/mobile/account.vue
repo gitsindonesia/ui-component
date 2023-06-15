@@ -11,6 +11,7 @@ definePageMeta({
   <VList hover flush class="border dark:border-gray-true-800 rounded-xl">
     <VListItem
       tile
+      large
       append-icon="ri:arrow-right-s-line"
       append-icon-class="text-gray-500 dark:text-gray-true-500"
     >
@@ -32,6 +33,7 @@ definePageMeta({
   </VList>
   <VList
     flush
+    large
     class="border dark:border-gray-true-800 rounded-xl mt-6 divide divide-y dark:divide-gray-true-800"
   >
     <VListItem
