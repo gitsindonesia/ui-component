@@ -98,6 +98,36 @@ Using the `grow` property forces the item to fill all available space.
 
 </LivePreview>
 
+### Hide Slider
+
+Using the `hideSlider` property with hide the default slider.
+
+<LivePreview src="components-bottomnavigation--hide-slider" >
+
+```vue
+<template>
+  <VBottomNavigation hide-slider>
+    <VBottomNavigationItem icon="ri:home-line">
+      Home
+    </VBottomNavigationItem>
+    <VBottomNavigationItem icon="ri:history-line">
+      Recents
+    </VBottomNavigationItem>
+    <VBottomNavigationItem icon="ri:heart-line">
+      Favorites
+    </VBottomNavigationItem>
+    <VBottomNavigationItem icon="ri:map-pin-2-line">
+      Nearby
+    </VBottomNavigationItem>
+    <VBottomNavigationItem icon="ri:user-line">
+      Account
+    </VBottomNavigationItem>
+  </VBottomNavigation>
+</template>
+```
+
+</LivePreview>
+
 ### Icon Only
 
 Leave the default slot blank to create icon only navigation.
