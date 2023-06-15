@@ -90,8 +90,17 @@ import {
 } from '@morpheme/timeline';
 import {VBanner, VBannerText} from '@morpheme/banner';
 import {VDivider} from '@morpheme/divider';
-import {VBottomNavigation, VBottomNavigationItem} from '@morpheme/bottom-navigation';
-import {VPopover, VPopoverButton, VPopoverGroup, VPopoverOverlay, VPopoverPanel} from '@morpheme/popover';
+import {
+  VBottomNavigation,
+  VBottomNavigationItem,
+} from '@morpheme/bottom-navigation';
+import {
+  VPopover,
+  VPopoverButton,
+  VPopoverGroup,
+  VPopoverOverlay,
+  VPopoverPanel,
+} from '@morpheme/popover';
 
 const plugin: Plugin = {
   install: (app) => {
