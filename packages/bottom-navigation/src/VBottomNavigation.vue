@@ -18,6 +18,7 @@ const props = withDefaults(
     fixed?: boolean;
     defaultActive?: number;
     transition?: string;
+    hideSlider?: boolean;
   }>(),
   {
     color: "primary",
@@ -87,6 +88,8 @@ function setSliderPosition(el: HTMLButtonElement) {
 watch(
   active,
   (val) => {
+    if (props.hideSlider) return;
+
     if (slider.value) {
       if (val instanceof HTMLButtonElement) {
         setSliderPosition(val);

@@ -50,6 +50,11 @@ Grow.args = {
   grow: true
 }
 
+export const HideSlider = Default.bind({})
+HideSlider.args = {
+  hideSlider: true
+}
+
 export const IconOnly: StoryFn = (args) => ({
   setup() {
     return {args};
