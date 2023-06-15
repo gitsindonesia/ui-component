@@ -13,7 +13,7 @@ import VTabGroup from './VTabGroup.vue';
 import VTabItem from './VTabItem.vue';
 
 function createItems(len = 20, additionalItem = {}) {
-  return [...Array(20)].map((v, k) => ({
+  return [...Array(len)].map((v, k) => ({
     text: `Tab Item ${k + 1}`,
     ...additionalItem,
   }));
@@ -81,6 +81,19 @@ Default.parameters = {
   docs: {
     source: {
       code: `<v-tabs :items="items" />`,
+    },
+  },
+};
+
+export const Grow = Variants.bind({});
+Grow.args = {
+  items: createItems(4),
+  grow: true,
+};
+Grow.parameters = {
+  docs: {
+    source: {
+      code: `<v-tabs :items="items" grow />`,
     },
   },
 };

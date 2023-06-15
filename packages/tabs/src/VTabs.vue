@@ -104,6 +104,10 @@ const props = defineProps({
     type: String as PropType<TabVariants>,
     default: 'underline',
   },
+  grow: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const {
@@ -282,6 +286,7 @@ provide(VTabsApiSymbol, {
       `v-tabs--${variant}`,
       {
         'v-tabs--vertical': vertical,
+        'v-tabs--grow': grow,
         'v-tabs--center-active': centerActive,
       },
     ]"
