@@ -46,6 +46,9 @@
   --v-tabs-slider-bg-color: var(--color-primary-700);
   --v-tabs-slider-border-color: var(--color-primary-700);
   --v-tabs-slider-border-radius: var(--border-radius-lg);
+
+  // variants
+  --v-tabs-segmented-control-bg-color: var(--color-gray-50);
 }
 
 .v-tabs {
@@ -322,7 +325,7 @@
 
     .v-tabs-items {
       padding: var(--size-spacing-2) var(--size-spacing-2);
-      background-color: var(--color-gray-50);
+      background-color: var(--v-tabs-segmented-control-bg-color);
       width: 100%;
       border-radius: var(--border-radius-lg);
     }
