@@ -91,6 +91,14 @@ const components: AddComponentOptions[] = [
     filePath: '@morpheme/badge/src/VBadge.vue',
   },
   {
+    name: 'VBadgeGroup',
+    filePath: '@morpheme/badge/src/VBadgeGroup.vue',
+  },
+  {
+    name: 'VBadgeContent',
+    filePath: '@morpheme/badge/src/VBadgeContent.vue',
+  },
+  {
     name: 'VBreadcrumbs',
     filePath: '@morpheme/breadcrumbs/src/VBreadcrumbs.vue',
   },

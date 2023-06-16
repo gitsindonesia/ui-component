@@ -2,6 +2,7 @@
 import { computed, PropType } from "vue";
 import Icon from "@morpheme/icon";
 import { DefaultColors, DefaultRounded } from "@morpheme/theme/defaultTheme";
+import { useBadge } from "./api";
 
 export type BadgeColors = DefaultColors | string;
 
@@ -85,7 +86,12 @@ const onDismiss = () => {
   emit("dismiss");
 };
 
+const api = useBadge();
+
 const classes = computed(() => {
+  const color = api?.color?.value || props.color;
+  const outlined = api?.outlined?.value || props.outlined;
+
   const roundedClass =
     typeof props.rounded === "string"
       ? { [`badge--rounded-${props.rounded}`]: !!props.rounded }
@@ -95,12 +101,13 @@ const classes = computed(() => {
 
   return [
     "badge",
-    `badge-${props.color}`,
+    `badge-${color}`,
     roundedClass,
     {
+      "badge--as-child": api?.color?.value,
       "badge--sm": props.small,
       "badge--lg": props.large,
-      "badge--outlined": props.outlined,
+      "badge--outlined": outlined,
       "badge--dismissable": props.dismissable,
       "badge--dot": props.dot,
       "badge--dot--left": props.dot && props.dotLeft,

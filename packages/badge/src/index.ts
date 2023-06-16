@@ -1,6 +1,6 @@
-import VBadge from './VBadge.vue';
-import './VBadge.dark.scss';
-
-export * from './types';
-export {VBadge};
-export default VBadge;
+export { default } from "./VBadge.vue";
+export { default as VBadge } from "./VBadge.vue";
+export { default as VBadgeGroup } from "./VBadgeGroup.vue";
+export { default as VBadgeContent } from "./VBadgeContent.vue";
+export * from "./api";
+export * from "./types";

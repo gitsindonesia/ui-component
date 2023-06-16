@@ -223,6 +223,68 @@ You can use `VBadge` component inside `VList` component like so:
 
 </LivePreview>
 
+### Group
+
+You can group the badge using the `VBadgeGroup` and `VBadgeContent` components.
+
+<LivePreview src="components-badge--group">
+
+```vue
+<script setup lang="ts">
+import {defaultColors} from '@morpheme/theme/defaultTheme';
+
+const colors = [
+  ...defaultColors,
+  'purple',
+  'indigo',
+  'blue',
+  'blue-light',
+  'pink',
+  'rose',
+  'orange',
+  'blue-gray',
+];
+</script>
+
+<template>
+  <p class="mb-4 font-semibold">Default</p>
+  <VBadgeGroup
+    v-for="color in colors"
+    :key="color"
+    v-bind="args"
+    :color="color"
+    class="mb-2"
+  >
+    <VBadge>New feature</VBadge>
+    <VBadgeContent> We've just released a new feature </VBadgeContent>
+    <VBtn fab text flush :color="color" size="sm" prefix-icon="heroicons:chevron-right" />
+  </VBadgeGroup>
+
+  <p class="my-4 font-semibold">Outlined</p>
+  <VBadgeGroup
+    v-for="color in colors"
+    :key="color"
+    v-bind="args"
+    :color="color"
+    outlined
+    class="mb-2"
+  >
+    <VBadge>New feature</VBadge>
+    <VBadgeContent> We've just released a new feature </VBadgeContent>
+    <VBtn
+      rounded
+      fab
+      text
+      :color="color"
+      size="sm"
+      prefix-icon="heroicons:chevron-right"
+    />
+  </VBadgeGroup>
+</template>
+```
+
+</LivePreview>
+
 ## Props
 
 | Name                        | Type                                                           | Default         |

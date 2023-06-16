@@ -12,6 +12,12 @@
   --badge-font-weight: var(--font-weight-medium);
   --badge-icon-size: 16px;
   --badge-gap: 6px;
+
+  // group
+  --badge-group-bg-color: var(--color-gray-50);
+  --badge-group-border-color: var(--color-gray-50);
+  --badge-group-color: var(--color-gray-700);
+  --badge-group-border-radius: var(--border-radius-full);
 }
 
 .badge {
@@ -88,6 +94,14 @@
     }
     &-full {
       --badge-border-radius: var(--border-radius-full);
+    }
+  }
+
+  &.badge--as-child {
+    --badge-bg-color: var(--color-white);
+
+    &.badge-dark {
+      --badge-color: var(--color-gray-700);
     }
   }
 
@@ -330,7 +344,7 @@
       width: var(--size-spacing-4);
       height: var(--size-spacing-4);
     }
-    
+
     // offset
     &--offset-0 {
       top: 0px;
@@ -356,5 +370,30 @@
       top: -10px;
       right: -10px;
     }
+  }
+
+  // group
+  &--group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--size-spacing-2);
+    padding: var(--size-spacing-2) var(--size-spacing-2);
+    border-radius: var(--badge-group-border-radius);
+
+    // button on group
+    // .btn {
+    //   background: transparent;
+    //   border-color: transparent;
+    //   color: var(--badge-group-color);
+    //   width: 20px !important;
+    //   height: 20px !important;
+    //   padding: 0 !important;
+    // }
+  }
+
+  &-content {
+    font-size: var(--size-font-sm);
+    flex: 1 1 auto;
   }
 }

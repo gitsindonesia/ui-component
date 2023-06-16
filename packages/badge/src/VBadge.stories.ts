@@ -4,6 +4,8 @@ import type {VBadgeProps} from './types';
 import {Story, Meta} from '@storybook/vue3';
 import {defaultRounded, defaultColors} from '@morpheme/theme/defaultTheme';
 import {List as VList, ListItem as VListItem} from '@morpheme/list'
+import VBadgeGroup from './VBadgeGroup.vue';
+import VBadgeContent from './VBadgeContent.vue';
 
 const colors = [
   ...defaultColors,
@@ -283,7 +285,7 @@ export const InList: Story<VBadgeProps> = (args) => ({
       <VListItem>
         Messages
         <template #append>
-          <VBadge>4</VBadge>
+          <VBadge color="primary">4</VBadge>
         </template>
       </VListItem>
     </VList>
@@ -315,5 +317,63 @@ export const DarkMode = () => ({
     </div>
   </div>
 </div>
+  `,
+});
+
+export const Group: Story<VBadgeProps> = (args) => ({
+  components: {
+    VBadge,
+    VBadgeGroup,
+    VBadgeContent,
+    VBtn
+  },
+  setup() {
+    return {args, colors};
+  },
+  template: `
+    <p class="mb-4 font-semibold">Default</p>
+    <VBadgeGroup
+      v-for="color in colors"
+      :key="color"
+      v-bind="args"
+      :color="color"
+      class="mb-2"
+    >
+      <VBadge>New feature</VBadge>
+      <VBadgeContent>
+        We've just released a new feature
+      </VBadgeContent>
+      <VBtn
+        fab
+        text
+        flush
+        :color="color"
+        size="sm"
+        prefix-icon="heroicons:chevron-right"
+      />
+    </VBadgeGroup>
+
+    <p class="my-4 font-semibold">Outlined</p>
+    <VBadgeGroup
+      v-for="color in colors"
+      :key="color"
+      v-bind="args"
+      :color="color"
+      outlined
+      class="mb-2"
+    >
+      <VBadge>New feature</VBadge>
+      <VBadgeContent>
+        We've just released a new feature
+      </VBadgeContent>
+      <VBtn
+        rounded
+        fab
+        text
+        :color="color"
+        size="sm"
+        prefix-icon="heroicons:chevron-right"
+      />
+    </VBadgeGroup>
   `,
 });
