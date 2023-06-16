@@ -5,10 +5,7 @@ describe('VAppShell', () => {
   test('renders properly with default props', () => {
     const wrapper = shallowMount(VAppShell);
     expect(wrapper.exists()).toBe(true);
-    expect(wrapper.classes('flex')).toBe(true);
-    expect(wrapper.classes('flex-col')).toBe(true);
     expect(wrapper.classes('v-app-shell')).toBe(true);
-    expect(wrapper.classes('h-screen')).toBe(true);
   });
 
   test('renders a fluid main element when the fluid prop is set', () => {
@@ -28,9 +25,7 @@ describe('VAppShell', () => {
         paddedContent: true,
       },
     });
-    expect(wrapper.find('.v-app-shell-content').classes('px-4')).toBe(true);
-    expect(wrapper.find('.v-app-shell-content').classes('lg:px-6')).toBe(true);
-    expect(wrapper.find('.v-app-shell-content').classes('py-4')).toBe(true);
+    expect(wrapper.find('.v-app-shell-content').classes('v-app-shell-content--padded')).toBe(true);
   });
 
   test('renders a padded container element when the paddedContainer prop is set', () => {
@@ -39,8 +34,7 @@ describe('VAppShell', () => {
         paddedContainer: true,
       },
     });
-    expect(wrapper.find('.v-app-shell-container').classes('px-4')).toBe(true);
-    expect(wrapper.find('.v-app-shell-container').classes('py-4')).toBe(true);
+    expect(wrapper.find('.v-app-shell-container').classes('v-app-shell-container--padded')).toBe(true);
   });
 
   test('renders additional classes on main element when mainClass prop is set', () => {
