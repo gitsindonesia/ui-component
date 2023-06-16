@@ -253,6 +253,18 @@ const components: AddComponentOptions[] = [
     filePath: '@morpheme/list/src/ListItemHeader.vue',
   },
   {
+    name: 'VListItemTitle',
+    filePath: '@morpheme/list/src/ListItemTitle.vue',
+  },
+  {
+    name: 'VListItemSubTitle',
+    filePath: '@morpheme/list/src/ListItemSubTitle.vue',
+  },
+  {
+    name: 'VListItemContent',
+    filePath: '@morpheme/list/src/ListItemContent.vue',
+  },
+  {
     name: 'VMenu',
     filePath: '@morpheme/menu/src/VMenu.vue',
   },

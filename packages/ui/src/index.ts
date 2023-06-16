@@ -52,6 +52,9 @@ import {
   ListItemDivider,
   ListCollapse,
   ListItemHeader,
+  LIstItemTitle,
+  LIstItemSubTitle,
+  LIstItemContent,
 } from "@morpheme/list";
 import { Icon } from "@morpheme/icon";
 import Avatar from "@morpheme/avatar";
@@ -150,6 +153,9 @@ const plugin: Plugin = {
     app.component("VListItemDivider", ListItemDivider);
     app.component("VListItemHeader", ListItemHeader);
     app.component("VListCollapse", ListCollapse);
+    app.component("VListItemTitle", ListItemTitle);
+    app.component("VListItemSubTitle", ListItemSubTitle);
+    app.component("VListItemContent", ListItemContent);
     app.component("VIcon", Icon);
     app.component("VAvatar", Avatar);
     app.component("VShimmer", Shimmer);

@@ -100,6 +100,23 @@
       background-color: var(--v-list-item-hover-bg-color);
       color: var(--v-list-item-hover-color);
     }
+
+    // sub components
+    &__title {
+      font-size: var(--size-font-sm);
+      font-weight: var(--font-weight-semibold);
+    }
+
+    &__subtitle {
+      font-size: var(--size-font-xs);
+      color: var(--color-gray-500);
+      margin-bottom: var(--size-spacing-1);
+    }
+
+    &__content {
+      font-size: var(--size-font-sm);
+      color: var(--color-gray-700);
+    }
   }
 
   // &:not(.divide-y) &-item {

@@ -1,4 +1,5 @@
 import { VSelect } from "@morpheme/select";
+import VAvatar from "@morpheme/avatar";
 import { Meta, Story } from "@storybook/vue3";
 import { Icon } from "@iconify/vue";
 import List from "./List.vue";
@@ -11,6 +12,9 @@ import { ref } from "vue";
 import { NavDrawer as VNavDrawer } from "@morpheme/nav-drawer";
 import VBtn from "@morpheme/button";
 import { Dropdown } from "@morpheme/dropdown";
+import ListItemTitle from "./ListItemTitle.vue";
+import ListItemSubTitle from "./ListItemSubTitle.vue";
+import ListItemContent from "./ListItemContent.vue";
 
 const menus = ref([
   {
@@ -279,28 +283,26 @@ export const TwoLine: Story = (args) => ({
     List,
     ListItem,
     ListItemDivider,
+    ListItemTitle,
+    ListItemContent,
+    VAvatar
   },
   setup() {
     return { args };
   },
   template: `
     <List v-bind="args">
-      <ListItem>
-        <div>Item 1</div>
-        <div class="text-sm text-gray-500">Sub Item 1</div>
-      </ListItem>
-      <ListItem>
-        <div>Item 2</div>
-        <div class="text-sm text-gray-500">Sub Item 2</div>
-      </ListItem>
-      <ListItemDivider />
-      <ListItem>
-        <div>Item 3</div>
-        <div class="text-sm text-gray-500">Sub Item 3</div>
-      </ListItem>
-      <ListItem>
-        <div>Item 4</div>
-        <div class="text-sm text-gray-500">Sub Item 4</div>
+      <ListItem v-for="i in 5" :key="i">
+        <template #prepend>
+          <VAvatar
+            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+            size="xl"
+          >
+            AM
+          </VAvatar>
+        </template>
+        <ListItemTitle>Item {{ i }}</ListItemTitle>
+        <ListItemContent>Sub Item {{ i }}</ListItemContent>
       </ListItem>
     </List>
   `,
@@ -310,33 +312,30 @@ export const ThreeLine: Story = (args) => ({
   components: {
     List,
     ListItem,
+    ListItemTitle,
+    ListItemSubTitle,
+    ListItemContent,
     ListItemDivider,
+    VAvatar
   },
   setup() {
     return { args };
   },
   template: `
     <List v-bind="args">
-      <ListItem>
-        <div>Item 1</div>
-        <div class="text-sm text-gray-500">Sub Item 1</div>
-        <p class="text-xs text-gray-700 mt-1">Lorem ipsum dolor sit amet</p>
-      </ListItem>
-      <ListItem>
-        <div>Item 2</div>
-        <div class="text-sm text-gray-500">Sub Item 2</div>
-        <p class="text-xs text-gray-700 mt-1">Lorem ipsum dolor sit amet</p>
-      </ListItem>
-      <ListItemDivider />
-      <ListItem>
-        <div>Item 3</div>
-        <div class="text-sm text-gray-500">Sub Item 3</div>
-        <p class="text-xs text-gray-700 mt-1">Lorem ipsum dolor sit amet</p>
-      </ListItem>
-      <ListItem>
-        <div>Item 4</div>
-        <div class="text-sm text-gray-500">Sub Item 4</div>
-        <p class="text-xs text-gray-700 mt-1">Lorem ipsum dolor sit amet</p>
+      <ListItem v-for="i in 5" :key="i" class="!items-start">
+        <template #prepend>
+          <VAvatar
+            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+            size="xl"
+          >
+            AM
+          </VAvatar>
+        </template>
+        <ListItemTitle>Item {{ i }}</ListItemTitle>
+        <ListItemSubTitle>Sub Item {{ i }}</ListItemSubTitle>
+        <ListItemContent class="mb-2">Text {{ i }}</ListItemContent>
+        <ListItemDivider />
       </ListItem>
     </List>
   `,
