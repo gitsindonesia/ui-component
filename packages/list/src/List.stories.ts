@@ -631,6 +631,8 @@ export const NavDrawerList: Story = (args) => ({
                 :append-icon-class="isOpen ? 'rotate-180' : ''"
                 hover
                 hover-class="hover:bg-gray-700"
+                :hide-text="isMini"
+                :hide-append="isMini"
                 @click="toggle"
               >
                 {{ menu.title }}
