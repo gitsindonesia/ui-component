@@ -16,10 +16,7 @@ type Props = {
   hideText?: boolean;
 };
 
-const props = withDefaults(defineProps<Props>(), {
-  hidePrepend: false,
-  hideAppend: false,
-});
+const props = defineProps<Props>();
 
 const apiProps = toRefs(props);
 
