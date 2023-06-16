@@ -1,3 +1,4 @@
+import { VCard } from '@morpheme/card';
 import {Meta, Story} from '@storybook/vue3';
 import VModal from './VModal.vue';
 import vueRouter from 'storybook-vue3-router';
@@ -352,13 +353,18 @@ export const Customization: Story = (args) => ({
 });
 
 export const DarkMode: Story = (args) => ({
-  components: {VModal},
+  components: {VModal, VCard},
   setup() {
+    document.documentElement.classList.add('dark', 'dark:bg-gray-true-900', 'dark:text-gray-true-200');
     return {args};
   },
   template: `
-  <div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
-    <VModal v-bind='args'/>
+  <div class="h-screen p-6">
+    <VModal v-bind='args'>
+      <VCard title="Card Title">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+      </VCard>
+    </VModal>
   </div>
   `,
 });
