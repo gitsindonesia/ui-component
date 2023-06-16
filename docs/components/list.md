@@ -170,22 +170,33 @@ To display a list with two lines per list item, you can nest elements inside the
   <VList>
     <VListItem>
       <!-- main line -->
-      <div>Item 1</div>
+      <VListItemTitle>Item 1</VListItemTitle>
       <!-- sub line -->
-      <div class="text-sm text-gray-500">Sub Item 1</div>
+      <VListItemTitle>Sub Item 1</VListItemTitle>
     </VListItem>
     <VListItem>
-      <div>Item 2</div>
-      <div class="text-sm text-gray-500">Sub Item 2</div>
-    </VListItem>
-    <VListItemDivider />
-    <VListItem>
-      <div>Item 3</div>
-      <div class="text-sm text-gray-500">Sub Item 3</div>
+      <!-- main line -->
+      <VListItemTitle>Item 2</VListItemTitle>
+      <!-- sub line -->
+      <VListItemTitle>Sub Item 2</VListItemTitle>
     </VListItem>
     <VListItem>
-      <div>Item 4</div>
-      <div class="text-sm text-gray-500">Sub Item 4</div>
+      <!-- main line -->
+      <VListItemTitle>Item 3</VListItemTitle>
+      <!-- sub line -->
+      <VListItemTitle>Sub Item 3</VListItemTitle>
+    </VListItem>
+    <VListItem>
+      <!-- main line -->
+      <VListItemTitle>Item 4</VListItemTitle>
+      <!-- sub line -->
+      <VListItemTitle>Sub Item 4</VListItemTitle>
+    </VListItem>
+    <VListItem>
+      <!-- main line -->
+      <VListItemTitle>Item 5</VListItemTitle>
+      <!-- sub line -->
+      <VListItemTitle>Sub Item 5</VListItemTitle>
     </VListItem>
   </VList>
 </template>
@@ -201,32 +212,22 @@ To display a list with three lines per list item, you can nest additional elemen
 
 ```vue
 <template>
-  <VList>
-    <VListItem>
-      <!-- main line -->
-      <div>Item 1</div>
-      <!-- sub line -->
-      <div class="text-sm text-gray-500">Sub Item 1</div>
-      <!-- additional line -->
-      <p class="text-xs text-gray-700 mt-1">Lorem ipsum dolor sit amet</p>
-    </VListItem>
-    <VListItem>
-      <div>Item 2</div>
-      <div class="text-sm text-gray-500">Sub Item 2</div>
-      <p class="text-xs text-gray-700 mt-1">Lorem ipsum dolor sit amet</p>
-    </VListItem>
-    <VListItemDivider />
-    <VListItem>
-      <div>Item 3</div>
-      <div class="text-sm text-gray-500">Sub Item 3</div>
-      <p class="text-xs text-gray-700 mt-1">Lorem ipsum dolor sit amet</p>
-    </VListItem>
-    <VListItem>
-      <div>Item 4</div>
-      <div class="text-sm text-gray-500">Sub Item 4</div>
-      <p class="text-xs text-gray-700 mt-1">Lorem ipsum dolor sit amet</p>
-    </VListItem>
-  </VList>
+  <List>
+    <ListItem v-for="i in 5" :key="i" class="!items-start">
+      <template #prepend>
+        <VAvatar
+          src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+          size="xl"
+        >
+          AM
+        </VAvatar>
+      </template>
+      <ListItemTitle>Item {{ i }}</ListItemTitle>
+      <ListItemSubTitle>Sub Item {{ i }}</ListItemSubTitle>
+      <ListItemContent class="mb-2">Text {{ i }}</ListItemContent>
+      <ListItemDivider />
+    </ListItem>
+  </List>
 </template>
 ```
 
