@@ -77,8 +77,8 @@ const hoverClasses = computed(() => {
 });
 
 const context = useList();
-function contextOrProps<T extends keyof Props>(key: T): Props[T] {
-  return context?.[key]?.value ?? props[key];
+function propOrContext<T extends keyof Props>(key: T): Props[T] {
+  return props[key] ?? context?.[key]?.value;
 }
 </script>
 
@@ -89,16 +89,16 @@ function contextOrProps<T extends keyof Props>(key: T): Props[T] {
     :class="[
       hoverClasses,
       {
-        'v-list-item--rounded': contextOrProps('rounded'),
-        'v-list-item--shaped': contextOrProps('shaped'),
-        'v-list-item--hoverable': contextOrProps('hover'),
-        'v-list-item--tile': contextOrProps('tile'),
-        [shapedClass]: contextOrProps('shaped'),
+        'v-list-item--rounded': propOrContext('rounded'),
+        'v-list-item--shaped': propOrContext('shaped'),
+        'v-list-item--hoverable': propOrContext('hover'),
+        'v-list-item--tile': propOrContext('tile'),
+        [shapedClass]: propOrContext('shaped'),
       },
     ]"
     v-bind="attributes"
   >
-    <slot v-if="!contextOrProps('hidePrepend')" name="prepend">
+    <slot v-if="!propOrContext('hidePrepend')" name="prepend">
       <div
         class="v-list-item-prepend"
         :class="prependClass"
@@ -117,13 +117,13 @@ function contextOrProps<T extends keyof Props>(key: T): Props[T] {
       </div>
     </slot>
     <div
-      v-if="!contextOrProps('hideText')"
+      v-if="!propOrContext('hideText')"
       class="v-list-item-content"
       :class="defaultClass"
     >
       <slot />
     </div>
-    <slot v-if="!contextOrProps('hideAppend')" name="append">
+    <slot v-if="!propOrContext('hideAppend')" name="append">
       <div class="v-list-item-append" :class="appendClass" @click="emit('click:append')">
         <slot name="append.text">
           <span
