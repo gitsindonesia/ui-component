@@ -52,9 +52,9 @@ import {
   ListItemDivider,
   ListCollapse,
   ListItemHeader,
-  LIstItemTitle,
-  LIstItemSubTitle,
-  LIstItemContent,
+  ListItemTitle,
+  ListItemSubTitle,
+  ListItemContent,
 } from "@morpheme/list";
 import { Icon } from "@morpheme/icon";
 import Avatar from "@morpheme/avatar";
