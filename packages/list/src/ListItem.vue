@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import Icon from '@morpheme/icon';
-import {computed, resolveComponent, useAttrs} from 'vue';
-import {RouteLocation} from 'vue-router';
+import Icon from "@morpheme/icon";
+import { computed, resolveComponent, useAttrs } from "vue";
+import { RouteLocation } from "vue-router";
+import { useList } from "./api";
 
 type Props = {
   to?: string | RouteLocation;
@@ -30,51 +31,55 @@ type Props = {
 };
 
 const props = withDefaults(defineProps<Props>(), {
-  defaultClass: '',
-  prependClass: '',
-  appendClass: '',
+  defaultClass: "",
+  prependClass: "",
+  appendClass: "",
   hidePrepend: false,
   hideAppend: false,
-  hoverClass: 'v-list-item--hover',
+  hoverClass: "v-list-item--hover",
   shaped: false,
-  shapedClass: 'v-list-item--shaped',
+  shapedClass: "v-list-item--shaped",
   rounded: false,
-  appendTextClass: '',
+  appendTextClass: "",
   tile: false,
-  prependIconSize: 'sm',
-  appendIconSize: 'sm',
+  prependIconSize: "sm",
+  appendIconSize: "sm",
 });
 
-const emit =
-  defineEmits<{
-    (e: 'click:prepend'): void;
-    (e: 'click:prependIcon'): void;
-    (e: 'click:append'): void;
-    (e: 'click:appendIcon'): void;
-    (e: 'click:appendText'): void;
-  }>();
+const emit = defineEmits<{
+  (e: "click:prepend"): void;
+  (e: "click:prependIcon"): void;
+  (e: "click:append"): void;
+  (e: "click:appendIcon"): void;
+  (e: "click:appendText"): void;
+}>();
 
 const is = computed(() => {
-  if (props.to) return resolveComponent('RouterLink');
+  if (props.to) return resolveComponent("RouterLink");
 
-  if (props.href) return 'a';
+  if (props.href) return "a";
 
-  return props.as || 'div';
+  return props.as || "div";
 });
 
 const attrs = useAttrs();
 
 const attributes = computed(() => {
-  if (props.to) return {to: props.to};
+  if (props.to) return { to: props.to };
 
-  if (props.href) return {href: props.href};
+  if (props.href) return { href: props.href };
 
   return attrs;
 });
 
 const hoverClasses = computed(() => {
-  return props.hover || props.to || props.href ? props.hoverClass : '';
+  return props.hover || props.to || props.href ? props.hoverClass : "";
 });
+
+const context = useList();
+function contextOrProps<T extends keyof Props>(key: T): Props[T] {
+  return context?.[key]?.value ?? props[key];
+}
 </script>
 
 <template>
@@ -84,16 +89,16 @@ const hoverClasses = computed(() => {
     :class="[
       hoverClasses,
       {
-        'v-list-item--rounded': rounded,
-        'v-list-item--shaped': shaped,
-        'v-list-item--hoverable': hover,
-        'v-list-item--tile': tile,
-        [shapedClass]: shaped,
+        'v-list-item--rounded': contextOrProps('rounded'),
+        'v-list-item--shaped': contextOrProps('shaped'),
+        'v-list-item--hoverable': contextOrProps('hover'),
+        'v-list-item--tile': contextOrProps('tile'),
+        [shapedClass]: contextOrProps('shaped'),
       },
     ]"
     v-bind="attributes"
   >
-    <slot v-if="!hidePrepend" name="prepend">
+    <slot v-if="!contextOrProps('hidePrepend')" name="prepend">
       <div
         class="v-list-item-prepend"
         :class="prependClass"
@@ -111,15 +116,15 @@ const hoverClasses = computed(() => {
         </slot>
       </div>
     </slot>
-    <div v-if="!hideText" class="v-list-item-content" :class="defaultClass">
+    <div
+      v-if="!contextOrProps('hideText')"
+      class="v-list-item-content"
+      :class="defaultClass"
+    >
       <slot />
     </div>
-    <slot v-if="!hideAppend" name="append">
-      <div
-        class="v-list-item-append"
-        :class="appendClass"
-        @click="emit('click:append')"
-      >
+    <slot v-if="!contextOrProps('hideAppend')" name="append">
+      <div class="v-list-item-append" :class="appendClass" @click="emit('click:append')">
         <slot name="append.text">
           <span
             v-if="appendText"

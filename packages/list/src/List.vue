@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { provide, toRefs } from "vue";
+import { VListContextApi, VListInjectionKey } from "./api";
+
 type Props = {
   hidePrepend?: boolean;
   hideAppend?: boolean;
@@ -10,12 +13,21 @@ type Props = {
   dense?: boolean;
   small?: boolean;
   large?: boolean;
+  hideText?: boolean;
 };
 
 const props = withDefaults(defineProps<Props>(), {
   hidePrepend: false,
   hideAppend: false,
 });
+
+const apiProps = toRefs(props);
+
+const api: VListContextApi = {
+  ...apiProps,
+};
+
+provide(VListInjectionKey, api);
 </script>
 
 <template>
@@ -30,6 +42,7 @@ const props = withDefaults(defineProps<Props>(), {
       'v-list--dense': dense,
       'v-list--small': small,
       'v-list--large': large,
+      'v-list--hide-text': hideText,
     }"
   >
     <slot v-bind="props" />

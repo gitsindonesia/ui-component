@@ -196,6 +196,11 @@ export const HidePrependAppend: Story = (args) => ({
       <ListItem v-bind="props">Item 3</ListItem>
       <ListItem v-bind="props">Item 4</ListItem>
     </List>
+    <p>With Context API</p>
+    <List v-bind="args" hide-prepend hide-append>
+      <ListItem>Item 3</ListItem>
+      <ListItem>Item 4</ListItem>
+    </List>
   `,
 });
 
@@ -211,10 +216,16 @@ export const HideText: Story = (args) => ({
     return {args, hideText};
   },
   template: `
-    <VBtn @click="hideText = !hideText">{{ hideText ? 'Show' : 'Hide' }} Text</VBtn>
-    <List class="mt-4">
-      <ListItem :hide-text="hideText" prepend-icon="ri:home-2-line" hide-append>Item 1</ListItem>
-      <ListItem :hide-text="hideText" prepend-icon="ri:user-line" hide-append>Item 2</ListItem>
+    <VBtn @click="hideText = !hideText">
+      {{ hideText ? 'Show' : 'Hide' }} Text
+    </VBtn>
+    <List
+      class="mt-4"
+      :hide-text="hideText"
+      hide-append
+    >
+      <ListItem prepend-icon="ri:home-2-line">Item 1</ListItem>
+      <ListItem prepend-icon="ri:user-line">Item 2</ListItem>
     </List>
   `,
 });
