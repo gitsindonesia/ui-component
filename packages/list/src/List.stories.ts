@@ -615,16 +615,18 @@ export const NavDrawerList: Story = (args) => ({
       color="dark"
       class="p-2 dark"
     >
-      <div class="text-center font-semibold">Morpheme</div>
-      <List flush>
+      <div class="text-center font-semibold truncate">Morpheme</div>
+      <List
+        flush
+        :hide-text="isMini"
+        :hide-append="isMini"
+      >
         <template v-for="menu in menus" :key="menu.text">
           <ListCollapse v-if="menu.items">
             <template #activator="{isOpen, toggle}">
               <ListItem
                 v-bind="menu"
                 :class="isMini ? 'justify-center' : ''"
-                :hide-text="isMini"
-                :hide-append="isMini"
                 append-icon="ri:arrow-down-s-line"
                 :append-icon-class="isOpen ? 'rotate-180' : ''"
                 hover
@@ -634,14 +636,14 @@ export const NavDrawerList: Story = (args) => ({
                 {{ menu.title }}
               </ListItem>
             </template>
-            <List>
+            <List flush>
               <ListItem
                 v-for="child in menu.items"
                 :key="child.text"
                 v-bind="child"
                 :class="isMini ? 'justify-center' : ''"
                 :hide-text="isMini"
-                :hide-append="isMini"
+                hide-append
                 hover
                 hover-class="hover:bg-gray-700"
               >
@@ -654,7 +656,7 @@ export const NavDrawerList: Story = (args) => ({
             v-bind="menu"
             :class="isMini ? 'justify-center' : ''"
             :hide-text="isMini"
-            :hide-append="isMini"
+            hide-append
             hover
             hover-class="hover:bg-gray-700"
           >
