@@ -103,6 +103,14 @@ const components: AddComponentOptions[] = [
     filePath: '@morpheme/breadcrumbs/src/VBreadcrumbs.vue',
   },
   {
+    name: 'VBreadcrumbsItem',
+    filePath: '@morpheme/breadcrumbs/src/VBreadcrumbsItem.vue',
+  },
+  {
+    name: 'VBreadcrumbsDivider',
+    filePath: '@morpheme/breadcrumbs/src/VBreadcrumbsDivider.vue',
+  },
+  {
     name: 'VBtn',
     filePath: '@morpheme/button/src/VBtn.vue',
   },

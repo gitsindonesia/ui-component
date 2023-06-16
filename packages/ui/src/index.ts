@@ -4,7 +4,7 @@ import { VAlert, VAlertTitle, VAlertGroup } from "@morpheme/alert";
 import VSpinner from "@morpheme/spinner";
 import VAppBar from "@morpheme/app-bar";
 import { VBadge, VBadgeGroup, VBadgeContent } from "@morpheme/badge";
-import VBreadcrumbs from "@morpheme/breadcrumbs";
+import {VBreadcrumbs, VBreadcrumbsItem, VBreadcrumbsDivider} from "@morpheme/breadcrumbs";
 import VCard from "@morpheme/card";
 import {
   VCheckbox,
@@ -99,6 +99,8 @@ const plugin: Plugin = {
     app.component("VAppBar", VAppBar);
     app.component("VBadge", VBadge);
     app.component("VBreadcrumbs", VBreadcrumbs);
+    app.component("VBreadcrumbsItem", VBreadcrumbsItem);
+    app.component("VBreadcrumbsDivider", VBreadcrumbsDivider);
     app.component("VCard", VCard);
     app.component("VCheckbox", VCheckbox);
     app.component("VDataTable", VDataTable);
@@ -194,6 +196,8 @@ export {
   VAppBar,
   VBadge,
   VBreadcrumbs,
+  VBreadcrumbsItem,
+  VBreadcrumbsDivider,
   VCard,
   VCheckbox,
   VDataTable,

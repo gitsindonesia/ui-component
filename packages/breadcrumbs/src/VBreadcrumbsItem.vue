@@ -1,23 +1,23 @@
 <script setup lang="ts">
-import {PropType, resolveComponent} from 'vue';
-import type {VBreadcrumbItem} from './types';
+import { PropType, resolveComponent } from "vue";
+import type { VBreadcrumbItemProps } from "./types";
 
 defineProps({
   tag: {
     type: String,
-    default: 'li',
+    default: "li",
   },
   title: {
     type: String,
-    default: '',
+    default: "",
   },
   to: {
-    type: String as PropType<VBreadcrumbItem['to']>,
-    default: '',
+    type: String as PropType<VBreadcrumbItemProps["to"]>,
+    default: "",
   },
   activeClass: {
     type: String,
-    default: 'breadcrumbs-item--active',
+    default: "breadcrumbs-item--active",
   },
   disabled: {
     type: Boolean,
@@ -29,7 +29,7 @@ defineProps({
   },
 });
 
-const RouterLink = resolveComponent('RouterLink');
+const RouterLink = resolveComponent("RouterLink");
 </script>
 
 <template>
