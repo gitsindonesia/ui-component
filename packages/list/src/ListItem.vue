@@ -28,6 +28,7 @@ type Props = {
   appendText?: string;
   appendTextClass?: string;
   tile?: boolean;
+  active?: boolean;
 };
 
 const props = withDefaults(defineProps<Props>(), {
@@ -93,6 +94,7 @@ function propOrContext<T extends keyof Props>(key: T): Props[T] {
         'v-list-item--shaped': propOrContext('shaped'),
         'v-list-item--hoverable': propOrContext('hover'),
         'v-list-item--tile': propOrContext('tile'),
+        'v-list-item--active': active,
         [shapedClass]: propOrContext('shaped'),
       },
     ]"

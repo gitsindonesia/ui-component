@@ -47,10 +47,7 @@ The Hover variant of the List component allows you to add custom shapes to the l
     <VListItem hover hover-class="hover:bg-primary-200 hover:text-primary-700">
       Custom Class
     </VListItem>
-    <VListItem
-      hover
-      hover-class="group-hover:bg-orange-200 group-hover:text-orange-700"
-    >
+    <VListItem hover hover-class="group-hover:bg-orange-200 group-hover:text-orange-700">
       Group Hover
     </VListItem>
   </VList>
@@ -140,17 +137,15 @@ The `VList` component allows you to hide the text of a `VListItem`. You can use 
 
 ```vue
 <script setup lang="ts">
-import {VList, VListItem} from '@morpheme/ui';
-import {ref} from 'vue';
-import VBtn from '@morpheme/button';
+import { VList, VListItem } from "@morpheme/ui";
+import { ref } from "vue";
+import VBtn from "@morpheme/button";
 
 const hideText = ref(true);
 </script>
 
 <template>
-  <VBtn @click="hideText = !hideText">
-    {{ hideText ? 'Show' : 'Hide' }} Text
-  </VBtn>
+  <VBtn @click="hideText = !hideText"> {{ hideText ? "Show" : "Hide" }} Text </VBtn>
   <VList class="mt-4">
     <VListItem :hide-text="hideText" prepend-icon="ri:home-2-line" hide-append>
       Item 1
@@ -346,7 +341,7 @@ You can use the `VListCollapse` component to add collapsible list.
   <VList>
     <VListItem prepend-icon="ri:home-2-line"> Home </VListItem>
     <VListCollapse>
-      <template #activator="{isOpen, toggle}">
+      <template #activator="{ isOpen, toggle }">
         <VListItem
           prepend-icon="ri:book-line"
           append-icon="ri:arrow-down-s-line"
@@ -362,7 +357,7 @@ You can use the `VListCollapse` component to add collapsible list.
       </VList>
     </VListCollapse>
     <VListCollapse>
-      <template #activator="{isOpen, toggle}">
+      <template #activator="{ isOpen, toggle }">
         <VListItem
           prepend-icon="ri:user-line"
           append-icon="ri:arrow-down-s-line"
@@ -391,26 +386,26 @@ You can place image to the list using `prepend` slot in the `VListItem` componen
 
 ```vue
 <script setup lang="ts">
-import {ref} from 'vue';
+import { ref } from "vue";
 
 const users = ref([
   {
-    name: 'Alexander Hipp',
-    email: 'alex@example.com',
+    name: "Alexander Hipp",
+    email: "alex@example.com",
     image:
-      'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80',
+      "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80",
   },
   {
-    name: 'Julian Wann',
-    email: 'julian@example.com',
+    name: "Julian Wann",
+    email: "julian@example.com",
     image:
-      'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
+      "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
   },
   {
-    name: 'Jane Doe',
-    email: 'jane@example.com',
+    name: "Jane Doe",
+    email: "jane@example.com",
     image:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
   },
 ]);
 </script>
@@ -454,51 +449,51 @@ This example shows how to use `VList` inside `VNavDrawer` component to create si
 
 ```vue
 <script setup lang="ts">
-import {VList, VListItem, VListCollapse, VNavDrawer} from '@morpheme/ui';
-import {ref} from 'vue';
+import { VList, VListItem, VListCollapse, VNavDrawer } from "@morpheme/ui";
+import { ref } from "vue";
 
 const isOpen = ref(false);
 const isMini = ref(false);
 const menus = ref([
   {
-    title: 'Home',
-    to: '/',
-    prependIcon: 'ri:home-2-line',
+    title: "Home",
+    to: "/",
+    prependIcon: "ri:home-2-line",
   },
   {
-    title: 'Blog',
-    to: '/',
-    prependIcon: 'ri:book-line',
+    title: "Blog",
+    to: "/",
+    prependIcon: "ri:book-line",
     items: [
       {
-        title: 'Posts',
-        to: '/',
+        title: "Posts",
+        to: "/",
       },
       {
-        title: 'Comments',
-        to: '/',
+        title: "Comments",
+        to: "/",
       },
     ],
   },
   {
-    title: 'Shop',
-    to: '/',
-    prependIcon: 'ri:user-line',
+    title: "Shop",
+    to: "/",
+    prependIcon: "ri:user-line",
     items: [
       {
-        title: 'Products',
-        to: '/',
+        title: "Products",
+        to: "/",
       },
       {
-        title: 'Categories',
-        to: '/',
+        title: "Categories",
+        to: "/",
       },
     ],
   },
   {
-    title: 'Long Text Management Example',
-    to: '/',
-    prependIcon: 'ri:cart-line',
+    title: "Long Text Management Example",
+    to: "/",
+    prependIcon: "ri:cart-line",
   },
 ]);
 </script>
@@ -507,14 +502,9 @@ const menus = ref([
   <div class="sm:ml-[300px] space-x-2">
     <v-btn @click="isOpen = !isOpen">Toggle Open</v-btn>
     <v-btn @click="isMini = !isMini">Toggle Mini</v-btn>
-    <pre class="mt-5">State: {{ {isOpen, isMini} }}</pre>
+    <pre class="mt-5">State: {{ { isOpen, isMini } }}</pre>
   </div>
-  <v-nav-drawer
-    v-model="isOpen"
-    v-model:mini="isMini"
-    hide-toggle
-    class="absolute"
-  >
+  <v-nav-drawer v-model="isOpen" v-model:mini="isMini" hide-toggle class="absolute">
     <template #logo.mini>
       <div class="text-center font-semibold">Morpheme</div>
     </template>
@@ -522,7 +512,7 @@ const menus = ref([
       <VList>
         <template v-for="menu in menus" :key="menu.text">
           <VListCollapse v-if="menu.items">
-            <template #activator="{isOpen, toggle}">
+            <template #activator="{ isOpen, toggle }">
               <VListItem
                 v-bind="menu"
                 :class="isMini ? 'justify-center' : ''"
@@ -591,9 +581,7 @@ This example shows how to create IOS Settings menu using `VList` component.
       </template>
       <div>
         <div class="font-semibold">John Doe</div>
-        <p class="text-sm text-gray-500 truncate">
-          Apple ID, iCloud+, Media & Purchases
-        </p>
+        <p class="text-sm text-gray-500 truncate">Apple ID, iCloud+, Media & Purchases</p>
       </div>
     </VListItem>
   </VList>
@@ -772,6 +760,120 @@ This example shows how to use `VList` component in the dropdown component.
 
 </LivePreview>
 
+### Active State
+
+We can set active state to the list by passing `active` prop to the `VListItem` component. We can also choose different styles of active item via `active-variant` and `active-border-position` props. The `active-variant` prop accept `"filled" | "bordered" | "filled-bordered"` values and the `active-border-position` prop accept `"top" | "right" | "bottom" | "left"` values.
+
+<LivePreview src="components-list--active-state" >
+
+```vue
+<script setup lang="ts">
+import { ref } from "vue";
+
+function toItems(options: string[]) {
+  return options.map((item) => ({
+    text: item,
+    value: item,
+  }));
+}
+
+const menus = ref([
+  {
+    title: "Home",
+    to: "/",
+    prependIcon: "ri:home-2-line",
+  },
+  {
+    title: "Blog",
+    to: "/",
+    prependIcon: "ri:book-line",
+    items: [
+      {
+        title: "Posts",
+        to: "/",
+      },
+      {
+        title: "Comments",
+        to: "/",
+      },
+    ],
+  },
+  {
+    title: "Shop",
+    to: "/",
+    prependIcon: "ri:user-line",
+    items: [
+      {
+        title: "Products",
+        to: "/",
+      },
+      {
+        title: "Categories",
+        to: "/",
+      },
+    ],
+  },
+  {
+    title: "Long Text Management Example",
+    to: "/",
+    prependIcon: "ri:chat-2-line",
+  },
+]);
+const selected = ref();
+const activeVariant = ref("bordered");
+const activeBorderPosition = ref("left");
+const activeVariants = toItems(["filled", "bordered", "filled-bordered"]);
+const borderPositions = toItems(["left", "right", "bottom", "top"]);
+</script>
+
+<template>
+  <div class="flex gap-4 mb-5 w-full items-center">
+    <VSelect wrapper-class="flex-grow" v-model="activeVariant" :items="activeVariants" />
+    <VSelect
+      wrapper-class="flex-grow"
+      v-model="activeBorderPosition"
+      :items="borderPositions"
+      :disabled="!['bordered', 'filled-bordered'].includes(activeVariant)"
+    />
+  </div>
+
+  <List
+    :active-variant="activeVariant"
+    :active-border-position="activeBorderPosition"
+    class="max-w-40"
+  >
+    <template v-for="(menu, index) in menus" :key="menu.title">
+      <div v-if="menu.items" class="mt-2">
+        <ListItemHeader prepend-icon="ri:search-line">
+          {{ menu.title }}
+        </ListItemHeader>
+        <ListItem
+          v-for="(child, childIndex) in menu.items"
+          :key="child.title"
+          v-bind="child"
+          hide-prepend
+          :active="selected === child"
+          @click="selected = child"
+        >
+          {{ child.title }}
+        </ListItem>
+      </div>
+      <ListItem
+        v-else
+        :active="selected === menu"
+        v-bind="menu"
+        hide-prepend
+        @click="selected = menu"
+      >
+        {{ menu.title }}
+      </ListItem>
+    </template>
+  </List>
+</template>
+```
+
+</LivePreview>
+
 ### Event
 
 This example demonstrates how to use events in the `VList` component. It shows examples of how to listen for clicks on the `prepend` and `append` icons, the prepend and append icon wrapper areas, and the append text. When one of these elements is clicked, a message is displayed using the `showMessage` function.
@@ -791,10 +893,7 @@ const showMessage = (message: string) => alert(`Clicked: ${message}`);
     >
       Click on the icon
     </VListItem>
-    <VListItem
-      append-icon="ri:user-line"
-      @click:appendIcon="showMessage('appendIcon')"
-    >
+    <VListItem append-icon="ri:user-line" @click:appendIcon="showMessage('appendIcon')">
       Click on the icon
     </VListItem>
     <VListItem
@@ -829,17 +928,20 @@ const showMessage = (message: string) => alert(`Clicked: ${message}`);
 
 ### `VList`
 
-| Property      | Type      | Description                                        |
-| ------------- | --------- | -------------------------------------------------- |
-| `hidePrepend` | `boolean` | Whether to hide the prepend element.               |
-| `hideAppend`  | `boolean` | Whether to hide the append element.                |
-| `shaped`      | `boolean` | Whether to apply shaped styling to the list item.  |
-| `rounded`     | `boolean` | Whether to apply rounded styling to the list item. |
-| `tile`        | `boolean` | Whether to apply tile styling to the list item.    |
-| `hover`       | `boolean` | Whether to apply hover styling to the list item.   |
-| `flush`       | `boolean` | Whether to remove the border between list items.   |
-| `dense`       | `boolean` | Whether to reduce the padding on the list item.    |
-| `small`       | `boolean` | Whether to apply small styling to the list item.   |
+| Property               | Type                                          | Description                                        |
+| ---------------------- | --------------------------------------------- | -------------------------------------------------- |
+| `hidePrepend`          | `boolean`                                     | Whether to hide the prepend element.               |
+| `hideAppend`           | `boolean`                                     | Whether to hide the append element.                |
+| `shaped`               | `boolean`                                     | Whether to apply shaped styling to the list item.  |
+| `rounded`              | `boolean`                                     | Whether to apply rounded styling to the list item. |
+| `tile`                 | `boolean`                                     | Whether to apply tile styling to the list item.    |
+| `hover`                | `boolean`                                     | Whether to apply hover styling to the list item.   |
+| `flush`                | `boolean`                                     | Whether to remove the border between list items.   |
+| `dense`                | `boolean`                                     | Whether to reduce the padding on the list item.    |
+| `small`                | `boolean`                                     | Whether to apply small styling to the list item.   |
+| `hideText`             | `boolean`                                     | Whether to apply hide text on the list item.       |
+| `activeVariant`        | `"filled" \| "bordered" \| "filled-bordered"` | The active state variant.                          |
+| `activeBorderPosition` | `"top" \| "right" \| "bottom" \| "left"`      | The border position.                               |
 
 ### `VListItem`
 
@@ -958,6 +1060,16 @@ Here is example of using slot in `VListItem` component:
   --v-list-item-hover-bg-color: var(--color-gray-100);
   --v-list-item-hover-color: var(--color-gray-700);
 
+  /* item active */
+  --v-list-item-active-bg-color: var(--color-primary-600);
+  --v-list-item-active-border-color: var(--color-primary-600);
+  --v-list-item-active-color: var(--color-white);
+
+  /* filled bordered */
+  --v-list-item-active-filled-bordered-bg-color: var(--color-primary-50);
+  --v-list-item-active-filled-bordered-border-color: var(--color-primary-500);
+  --v-list-item-active-filled-bordered-color: var(--color-primary-600);
+
   /* append & prepend */
   --v-list-item-append-prepend-min-width: var(--size-spacing-5);
 
@@ -983,7 +1095,7 @@ Here is example of using slot in `VListItem` component:
   --v-list-item-divider-style: solid;
 
   // icon
-  --v-list-item-icon-color: var(--v-list-item-color);
+  --v-list-item-icon-color: currentColor;
 
   // append text
   --v-list-item-append-text-color: var(--v-list-item-color);
@@ -1006,7 +1118,7 @@ Then, use it in the template like so:
 
 ```vue
 <script setup lang="ts">
-import {VList, VListItem} from '@morpheme/list';
+import { VList, VListItem } from "@morpheme/list";
 </script>
 
 <template>
