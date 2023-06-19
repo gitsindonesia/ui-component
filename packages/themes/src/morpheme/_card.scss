@@ -38,6 +38,10 @@
     padding: var(--card-padding-y) var(--card-padding-x);
   }
 
+  &-content {
+    padding: var(--card-padding-y) var(--card-padding-x);
+  }
+
   &-footer {
     display: flex;
     gap: var(--size-spacing-2);

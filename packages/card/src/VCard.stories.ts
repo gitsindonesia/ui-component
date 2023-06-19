@@ -3,6 +3,9 @@ import VCard from './VCard.vue';
 import VBtn from '@morpheme/button';
 import {defaultColors} from '@morpheme/theme/defaultTheme';
 import {defineComponent} from 'vue';
+import VCardHeader from './VCardHeader.vue';
+import VCardFooter from './VCardFooter.vue';
+import VCardBody from './VCardBody.vue';
 
 export default {
   title: 'Components/Card',
@@ -243,6 +246,39 @@ export const CustomComponent: Story<{}> = () => ({
 
     <VCard as="DummyLink">
       <p>As <code>DummyLink</code></p>
+    </VCard>
+  </div>
+`,
+});
+
+export const Bodyless: Story<{}> = () => ({
+  components: {VCard, VCardHeader, VCardFooter, VCardBody},
+  setup() {
+    return {defaultColors};
+  },
+  template: `
+  <div class="space-y-4">
+    <VCard>
+      Default
+    </VCard>
+    <VCard bodyless>
+      Bodyless
+    </VCard>
+    <VCard bodyless>
+      <VCardBody>
+        Bodyless with <code>VCardBody</code>
+      </VCardBody>
+    </VCard>
+    <VCard bodyless>
+      <VCardHeader>
+        <p>Bodyless with <code>VCardHeader</code></p>
+      </VCardHeader>
+      <VCardBody>
+        Bodyless with <code>VCardBody</code>
+      </VCardBody>
+      <VCardFooter>
+        <p>Bodyless with <code>VCardFooter</code></p>
+      </VCardFooter>
     </VCard>
   </div>
 `,

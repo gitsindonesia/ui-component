@@ -1,5 +1,6 @@
-import VCard from './VCard.vue';
 import './VCard.dark.scss';
-
-export {VCard};
-export default VCard;
+export {default} from './VCard.vue';
+export {default as VCard} from './VCard.vue';
+export {default as VCardHeader} from './VCardHeader.vue';
+export {default as VCardBody} from './VCardBody.vue';
+export {default as VCardFooter} from './VCardFooter.vue';

@@ -141,10 +141,6 @@ You can add a shadow to your `VCard` by using the `shadow` prop. It can take one
 <LivePreview src="components-card--shadow" height="520">
 
 ```vue
-<script setup lang="ts">
-import {ref} from 'vue';
-</script>
-
 <template>
   <VCard shadow> Hello World </VCard>
   <VCard shadow="sm"> Hello World </VCard>
@@ -154,6 +150,43 @@ import {ref} from 'vue';
   <VCard shadow="2xl"> Hello World </VCard>
   <VCard shadow="inner"> Hello World </VCard>
   <VCard shadow="none"> Hello World </VCard>
+</template>
+```
+
+</LivePreview>
+
+### Bodyless
+
+Bodyless card allows you to create declarative card with sub components like `VCardHeader`, `VCardBody` and `VCardFooter`.
+
+<LivePreview src="components-card--bodyless">
+
+```vue
+<template>
+  <div class="space-y-4">
+    <VCard>
+      Default
+    </VCard>
+    <VCard bodyless>
+      Bodyless
+    </VCard>
+    <VCard bodyless>
+      <VCardBody>
+        Bodyless with <code>VCardBody</code>
+      </VCardBody>
+    </VCard>
+    <VCard bodyless>
+      <VCardHeader>
+        <p>Bodyless with <code>VCardHeader</code></p>
+      </VCardHeader>
+      <VCardBody>
+        Bodyless with <code>VCardBody</code>
+      </VCardBody>
+      <VCardFooter>
+        <p>Bodyless with <code>VCardFooter</code></p>
+      </VCardFooter>
+    </VCard>
+  </div>
 </template>
 ```
 
@@ -322,7 +355,7 @@ yarn install @morpheme/card
 
 ```vue
 <script setup lang="ts">
-import VCard from '@morpheme/card';
+import VCard from "@morpheme/card";
 </script>
 
 <template>
