@@ -1,23 +1,23 @@
 <script setup lang="ts">
 const variants = [
-  'default',
-  'outlined',
-  'text',
-  'rounded',
-  'tile',
-  'flush',
-  'disabled',
-  'loading',
-  'block',
-  'shadow',
-  'noRing',
-  'icon',
-  'fab',
+  "default",
+  "outlined",
+  "text",
+  "rounded",
+  "tile",
+  "flush",
+  "disabled",
+  "loading",
+  "block",
+  "shadow",
+  "noRing",
+  "icon",
+  "fab",
 ];
 
-const buttonColors = [...colors, 'dark'];
+const buttonColors = [...colors, "dark"];
 
-const sizes = ['sm', 'md', 'lg'];
+const sizes = ["sm", "md", "lg", "xl", "2xl"];
 </script>
 
 <template>
@@ -43,27 +43,14 @@ const sizes = ['sm', 'md', 'lg'];
     <VCard title="Variants">
       <template v-for="variant in variants" :key="variant">
         <h3 class="mb-2 font-medium">{{ variant }}</h3>
-        <div
-          class="
-            flex
-            gap-2
-            flex-wrap
-            mb-3
-            border-b
-            dark:border-neutral-700
-            pb-4
-          "
-        >
+        <div class="flex gap-2 flex-wrap mb-3 border-b dark:border-neutral-700 pb-4">
           <VBtn
             v-for="color in buttonColors"
             :key="color"
             :color="color"
             v-bind:[variant]="true"
           >
-            <VIcon
-              v-if="['fab', 'icon'].includes(variant)"
-              name="ri:search-line"
-            />
+            <VIcon v-if="['fab', 'icon'].includes(variant)" name="ri:search-line" />
             <span v-else>{{ color }}</span>
           </VBtn>
         </div>

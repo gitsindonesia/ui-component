@@ -146,10 +146,6 @@ Use `tile` prop to apply tile style. This will remove border radius from button.
 
 ### Sizes
 
-- Prop: `size`
-- Values: `sm | md | lg`
-- Default Value: `md`
-
 Use `size` prop to change button size.
 
 <LivePreview src="forms-button--sizes" >
@@ -159,6 +155,8 @@ Use `size` prop to change button size.
   <VBtn size="sm"> Button </VBtn>
   <VBtn size="md"> Button </VBtn>
   <VBtn size="lg"> Button </VBtn>
+  <VBtn size="xl"> Button </VBtn>
+  <VBtn size="2xl"> Button </VBtn>
 </template>
 ```
 
@@ -413,7 +411,7 @@ You can group the button using `VBtnGroup` component. You can also wrap the grou
 | Name                          | Type                                                                                 | Default      |
 | ----------------------------- | ------------------------------------------------------------------------------------ | ------------ |
 | [`color`](#color)             | `'default' \| 'primary' \| 'secondary' \| 'info' \| 'warning' \| 'error' \| 'dark' ` | `'default'`  |
-| [`size`](#size)               | `'sm' \| 'md' \| 'lg'`                                                               | `'md'`       |
+| [`size`](#size)               | `'sm' \| 'md' \| 'lg' \| 'xl' \| '2xl'`                                              | `'md'`       |
 | [`to`](#to)                   | `string \| RouteLocationRaw`                                                         | `undefined`  |
 | [`href`](#href)               | `string`                                                                             | `undefined`  |
 | [`text`](#text)               | `boolean`                                                                            | `false`      |

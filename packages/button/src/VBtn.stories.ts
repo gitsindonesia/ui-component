@@ -186,7 +186,8 @@ NoRingEffect.parameters = {
 export const Sizes: Story<VBtnProps> = (args) => ({
   components: {Button: VBtn},
   setup() {
-    return {args, sizes: defaultSizes, defaultColors};
+    const sizes = ['sm', 'md', 'lg', 'xl', '2xl']
+    return {args, sizes, defaultColors};
   },
   template: `
 <div v-for="color in defaultColors" :key="color" class="mb-6">
