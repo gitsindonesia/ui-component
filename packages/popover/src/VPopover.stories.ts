@@ -1,3 +1,5 @@
+import { VLogo } from '@morpheme/logo';
+import { VAppBar } from '@morpheme/app-bar';
 import type { Story } from "@storybook/vue3";
 import VPopover from "./VPopover.vue";
 import VPopoverButton from "./VPopoverButton.vue";
@@ -93,6 +95,71 @@ export const Group: Story = (args) => ({
         </VPopoverPanel>
       </VPopover>
     </VPopoverGroup>
+  `,
+});
+
+export const NavigationMenus: Story = (args) => ({
+  components: {
+    VPopover,
+    VPopoverButton,
+    VPopoverPanel,
+    VPopoverOverlay,
+    VPopoverGroup,
+    VAppBar,
+    VLogo,
+    VList,
+    VListItem,
+  },
+  setup() {
+    return { args };
+  },
+  template: `
+    <VAppBar shadow>
+      <div class="container mx-auto flex items-center gap-4">
+        <VLogo />
+        <VPopoverGroup class="flex items-center !gap-4">
+          <VPopover>
+            <VPopoverButton text flush>
+              Home
+            </VPopoverButton>
+          </VPopover>
+          <VPopover v-slot="{open}">
+            <VPopoverButton text flush
+              suffix-icon="ri:arrow-down-s-line"
+              :class="{'text-primary-500': open}"
+            >
+            {{ open }}
+              Products
+            </VPopoverButton>
+            <VPopoverPanel>
+              <div class="my-2">
+                <VList hide-append flush>
+                  <VListItem v-for="i in 6" :key="i">
+                    <div class="font-semibold">Product {{ i }}</div>
+                    <p class="text-sm">Product description</p>
+                  </VListItem>
+                </VList>
+              </div>
+            </VPopoverPanel>
+          </VPopover>
+          <VPopover v-slot="{open}">
+            <VPopoverButton text flush
+              suffix-icon="ri:arrow-down-s-line"
+              :class="{'text-primary-500': open}"
+            >
+              Categories
+            </VPopoverButton>
+            <VPopoverPanel>
+              <div class="my-2">
+                <VList hide-append flush>
+                  <VListItem v-for="i in 6" :key="i">Category {{ i }}</VListItem>
+                </VList>
+              </div>
+            </VPopoverPanel>
+          </VPopover>
+        </VPopoverGroup>      
+      </div>
+    </VAppBar>
   `,
 });
 
