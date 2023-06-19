@@ -1,0 +1,13 @@
+<script setup lang="ts">
+//
+</script>
+
+<template>
+  <VNavDrawer mini bordered fixed class="flex flex-col items-center py-2 gap-2">
+    <VBtn prefix-icon="ri:menu-line" fab icon />
+    <VBtn prefix-icon="ri:mail-line" fab icon text class="mt-4" />
+    <VBtn prefix-icon="ri:message-line" fab icon text />
+    <VBtn prefix-icon="ri:user-line" fab icon text />
+    <VBtn prefix-icon="ri:video-line" fab icon text />
+  </VNavDrawer>
+</template>

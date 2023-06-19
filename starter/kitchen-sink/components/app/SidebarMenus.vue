@@ -1,5 +1,11 @@
 <script setup lang="ts">
-import { Flag01Icon, Home01Icon, LayersTwo02Icon } from "@morphemeicons/vue/untitled";
+import {
+  Flag01Icon,
+  Grid01Icon,
+  Home01Icon,
+  LayersTwo02Icon,
+  Menu05Icon,
+} from "@morphemeicons/vue/untitled";
 
 const emit = defineEmits<{
   menuClick: [menu: MenuItem];
@@ -216,9 +222,19 @@ const menus = ref<MenuItem[]>([
         text: "Register",
         to: "/pages/register",
       },
+    ],
+  },
+  {
+    text: "Application",
+    icon: Grid01Icon,
+    children: [
       {
-        text: "Mobile App Example",
+        text: "Mobile App",
         to: "/mobile",
+      },
+      {
+        text: "Inbox",
+        to: "/inbox",
       },
     ],
   },
@@ -250,7 +266,7 @@ function onMenuClick(menu: MenuItem) {
             @click="toggle"
           >
             <template #prepend>
-              <component :is="menu.icon" class="w-5 h-5" />
+              <component :is="menu.icon" class="w-5 h-5 text-current" />
             </template>
             {{ menu.text }}
           </VListItem>
@@ -265,7 +281,11 @@ function onMenuClick(menu: MenuItem) {
             @click="onMenuClick(child)"
           >
             <template #prepend>
-              <component :is="child.icon" v-if="child.icon" class="w-5 h-5" />
+              <component
+                :is="child.icon"
+                v-if="child.icon"
+                class="w-5 h-5 text-current"
+              />
             </template>
             {{ child.text }}
           </VListItem>
@@ -279,7 +299,7 @@ function onMenuClick(menu: MenuItem) {
         @click="onMenuClick(menu)"
       >
         <template #prepend>
-          <component :is="menu.icon" class="w-5 h-5" />
+          <component :is="menu.icon" class="w-5 h-5 text-current" />
         </template>
         {{ menu.text }}
       </VListItem>
