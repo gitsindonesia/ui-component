@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, PropType, resolveComponent } from "vue";
+import VCardImage from "./VCardImage.vue";
 
 export type CardShadow = boolean | "sm" | "md" | "lg" | "xl" | "2xl" | "inner" | "none";
 
@@ -96,6 +97,15 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  image: {
+    type: String,
+  },
+  imageAlt: {
+    type: String,
+  },
+  imageClass: {
+    type: String,
+  },
 });
 
 const tag = computed(() => {
@@ -144,7 +154,9 @@ const attrs = computed(() => {
 
 <template>
   <component :is="tag" :class="classes" v-bind="{ ...$attrs, ...attrs }">
-    <slot name="image" />
+    <slot name="image">
+      <VCardImage :src="image" :alt="imageAlt" :class="imageClass" />
+    </slot>
     <div v-if="!hideHeader" :class="[defaultHeaderClass, headerClass]">
       <slot name="header.prepend" />
       <slot name="header">

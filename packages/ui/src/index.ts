@@ -5,7 +5,7 @@ import VSpinner from "@morpheme/spinner";
 import VAppBar from "@morpheme/app-bar";
 import { VBadge, VBadgeGroup, VBadgeContent } from "@morpheme/badge";
 import {VBreadcrumbs, VBreadcrumbsItem, VBreadcrumbsDivider} from "@morpheme/breadcrumbs";
-import VCard from "@morpheme/card";
+import {VCard, VCardHeader, VCardBody, VCardFooter, VCardImage} from "@morpheme/card";
 import {
   VCheckbox,
   VFileUpload,
@@ -105,6 +105,10 @@ const plugin: Plugin = {
     app.component("VBreadcrumbsItem", VBreadcrumbsItem);
     app.component("VBreadcrumbsDivider", VBreadcrumbsDivider);
     app.component("VCard", VCard);
+    app.component("VCardHeader", VCardHeader);
+    app.component("VCardBody", VCardBody);
+    app.component("VCardFooter", VCardFooter);
+    app.component("VCardImage", VCardImage);
     app.component("VCheckbox", VCheckbox);
     app.component("VDataTable", VDataTable);
     app.component("VDataTablePagination", VDataTablePagination);

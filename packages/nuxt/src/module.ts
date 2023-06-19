@@ -127,6 +127,22 @@ const components: AddComponentOptions[] = [
     filePath: '@morpheme/card/src/VCard.vue',
   },
   {
+    name: 'VCardHeader',
+    filePath: '@morpheme/card/src/VCardHeader.vue',
+  },
+  {
+    name: 'VCardFooter',
+    filePath: '@morpheme/card/src/VCardFooter.vue',
+  },
+  {
+    name: 'VCardBody',
+    filePath: '@morpheme/card/src/VCardBody.vue',
+  },
+  {
+    name: 'VCardImage',
+    filePath: '@morpheme/card/src/VCardImage.vue',
+  },
+  {
     name: 'VCollapsible',
     filePath: '@morpheme/collapsible/src/VCollapsible.vue',
   },

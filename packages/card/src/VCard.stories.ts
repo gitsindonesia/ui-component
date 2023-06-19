@@ -88,6 +88,14 @@ BodyOnly.parameters = {
   },
 };
 
+export const Image = Template.bind({});
+Image.args = {
+  image: 'https://picsum.photos/200/300',
+  imageAlt: 'random image',
+  imageClass: 'h-40',
+  footer: ''
+};
+
 export const CustomSlots: Story = (args) => ({
   components: {VCard, VBtn},
   setup() {
