@@ -20,7 +20,7 @@ definePageMeta({
         <h1
           class="text-3xl font-semibold"
           :style="{
-            viewTransitionName: `email-sender-${$route.params.id}`,
+            viewTransitionName: `email-subject-${$route.params.id}`,
           }"
         >
           Message {{ $route.params.id }}
@@ -32,7 +32,7 @@ definePageMeta({
               viewTransitionName: `email-sender-${$route.params.id}`,
             }"
           >
-            John Doe
+            User {{ $route.params.id }}
           </h3>
           <p class="text-xs text-gray-500">11:28 AM (1 hour ago)</p>
           <VBtn prefix-icon="ri:reply-line" icon text fab size="sm" />

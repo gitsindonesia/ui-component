@@ -15,16 +15,17 @@ definePageMeta({
         <span
           class="font-semibold"
           :style="{
-            viewTransitionName: `email-sender-${$route.params.id}`,
+            viewTransitionName: `email-sender-${i}`,
           }"
           >User {{ i }}</span
         >
         <span
           class="flex-grow"
           :style="{
-            viewTransitionName: `email-subject-${$route.params.id}`,
+            viewTransitionName: `email-subject-${i}`,
           }"
-          >Email subject</span
+        >
+          Message {{ i }}</span
         >
         <span class="text-xs text-gray-true-500">2 min ago</span>
       </div>
