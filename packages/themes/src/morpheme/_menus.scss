@@ -48,6 +48,11 @@
 }
 
 .v-menus {
+  &--child {
+    width: 100%;
+    display: block;
+  }
+  
   &-items {
     padding: var(--v-menus-padding-y) var(--v-menus-padding-x);
     margin: var(--v-menus-margin-y) var(--v-menus-margin-x);

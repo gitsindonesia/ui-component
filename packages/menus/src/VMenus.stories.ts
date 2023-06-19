@@ -1,27 +1,28 @@
-import {Meta, Story} from '@storybook/vue3';
-import VMenus from './VMenus.vue';
-import VMenusItem from './VMenusItem.vue';
-import vueRouter from 'storybook-vue3-router';
-import VAppBar from '@morpheme/app-bar';
-import VMenusCustom from './stories/VMenusCustom.vue';
+import { Meta, Story } from "@storybook/vue3";
+import VMenus from "./VMenus.vue";
+import VMenusItem from "./VMenusItem.vue";
+import vueRouter from "storybook-vue3-router";
+import VAppBar from "@morpheme/app-bar";
+import VMenusCustom from "./stories/VMenusCustom.vue";
+import { ref } from "vue";
 
 const items = [
   {
-    text: 'Home',
-    to: '/',
+    text: "Home",
+    to: "/",
   },
   {
-    text: 'About',
-    to: '/faq',
+    text: "About",
+    to: "/faq",
   },
   {
-    text: 'FAQ',
-    to: '/faq',
+    text: "FAQ",
+    to: "/faq",
   },
 ];
 
 export default {
-  title: 'Components/Menus',
+  title: "Components/Menus",
   component: VMenus,
   argTypes: {},
   args: {
@@ -34,7 +35,7 @@ const Template: Story = (args) => ({
     VMenus,
   },
   setup() {
-    return {args};
+    return { args };
   },
   template: `
 <VMenus v-bind="args" />
@@ -54,7 +55,7 @@ Default.parameters = {
 };
 
 export const Right = Template.bind({});
-Right.args = {right: true};
+Right.args = { right: true };
 Right.parameters = {
   docs: {
     source: {
@@ -64,7 +65,7 @@ Right.parameters = {
 };
 
 export const Small = Template.bind({});
-Small.args = {small: true};
+Small.args = { small: true };
 Small.parameters = {
   docs: {
     source: {
@@ -74,7 +75,7 @@ Small.parameters = {
 };
 
 export const Hover = Template.bind({});
-Hover.args = {hover: true};
+Hover.args = { hover: true };
 Hover.parameters = {
   docs: {
     source: {
@@ -90,35 +91,35 @@ export const MenuIcons: Story = (args) => ({
   setup() {
     const items = [
       {
-        text: 'Home',
-        to: '/',
-        prependIcon: 'ri:home-line',
+        text: "Home",
+        to: "/",
+        prependIcon: "ri:home-line",
       },
       {
-        text: 'User',
-        to: '/',
-        prependIcon: 'ri:user-line',
+        text: "User",
+        to: "/",
+        prependIcon: "ri:user-line",
       },
       {
-        text: 'Search',
-        to: '/',
-        prependIcon: 'ri:search-line',
+        text: "Search",
+        to: "/",
+        prependIcon: "ri:search-line",
       },
       {
         divider: true,
       },
       {
-        text: 'New Post',
-        to: '/',
-        appendIcon: 'ri:add-line',
+        text: "New Post",
+        to: "/",
+        appendIcon: "ri:add-line",
       },
       {
-        text: 'New User',
-        to: '/',
-        appendIcon: 'ri:add-box-line',
+        text: "New User",
+        to: "/",
+        appendIcon: "ri:add-box-line",
       },
     ];
-    return {args, items};
+    return { args, items };
   },
   template: `
 <VMenus v-bind="args" :items="items" />
@@ -132,16 +133,16 @@ export const Href: Story = (args) => ({
   setup() {
     const items = [
       {
-        text: 'Google.com',
-        href: 'https://www.google.com',
+        text: "Google.com",
+        href: "https://www.google.com",
       },
       {
-        text: '(New Tab) Google.com',
-        href: 'https://www.google.com',
+        text: "(New Tab) Google.com",
+        href: "https://www.google.com",
         newTab: true,
       },
     ];
-    return {args, items};
+    return { args, items };
   },
   template: `
 <VMenus v-bind="args" :items="items" />
@@ -153,27 +154,27 @@ Template.decorators = [
   vueRouter([
     {
       component: {
-        template: '<div>Home</div>',
+        template: "<div>Home</div>",
       },
-      path: '/',
+      path: "/",
     },
     {
       component: {
-        template: '<div>About</div>',
+        template: "<div>About</div>",
       },
-      path: '/about',
+      path: "/about",
     },
     {
       component: {
-        template: '<div>FAQ</div>',
+        template: "<div>FAQ</div>",
       },
-      path: '/faq',
+      path: "/faq",
     },
   ]),
 ];
 
 export const CustomIcon = Template.bind({});
-CustomIcon.args = {'btn-icon': 'ri:arrow-down-line'};
+CustomIcon.args = { "btn-icon": "ri:arrow-down-line" };
 CustomIcon.parameters = {
   docs: {
     source: {
@@ -188,7 +189,7 @@ export const InAppBar: Story = (args) => ({
     VAppBar,
   },
   setup() {
-    return {args};
+    return { args };
   },
   template: `
 <div class="space-y-2">
@@ -227,7 +228,7 @@ export const Slots: Story = (args) => ({
     VMenusItem,
   },
   setup() {
-    return {args};
+    return { args };
   },
   template: `
 <VAppBar shadow>
@@ -248,17 +249,106 @@ export const CustomStyle: Story = (args) => ({
     VMenusCustom,
   },
   setup() {
-    return {args};
+    return { args };
   },
   template: `
   <VMenusCustom />
   `,
 });
 
-export const DarkMode: Story = (args) => ({
-  components: {VMenus},
+export const Nested: Story = (args) => ({
+  components: {
+    VAppBar,
+    VMenus,
+    VMenusItem,
+  },
   setup() {
-    return {args};
+    const items = ref([
+      {
+        text: "Item 1",
+      },
+      {
+        text: "Item 2",
+      },
+      {
+        text: "Item 3",
+      },
+      {
+        divider: true,
+      },
+      {
+        text: "Item 4",
+        children: [
+          {
+            text: "Item 1",
+          },
+          {
+            text: "Item 2",
+          },
+          {
+            text: "Item 3",
+          },
+          {
+            divider: true,
+          },
+          {
+            text: "Item 4",
+            children: [
+              {
+                text: "Item 1",
+              },
+              {
+                text: "Item 2",
+              },
+              {
+                text: "Item 3",
+              },
+            ],
+          },
+        ],
+      },
+    ]);
+    return { args, items };
+  },
+  template: `
+  <VMenus label="Nested" :items="items" class="mr-4" />
+
+  <VMenus label="Nested with slot">
+    <template #items>
+      <VMenusItem>Item 1</VMenusItem>
+      <VMenusItem>Item 2</VMenusItem>
+      <VMenusItem>Item 3</VMenusItem>
+      <VMenusItem divider />
+      <VMenus placement="right-start" class="w-full">
+        <VMenusItem append-icon="ri:arrow-right-s-line">
+          Item 4
+        </VMenusItem>
+        <template #items>
+          <VMenusItem>Item 1</VMenusItem>
+          <VMenusItem>Item 2</VMenusItem>
+          <VMenusItem>Item 3</VMenusItem>
+          <VMenusItem divider />
+          <VMenus placement="right-start" class="w-full">
+            <VMenusItem append-icon="ri:arrow-right-s-line">
+              Item 4
+            </VMenusItem>
+            <template #items>
+              <VMenusItem>Item 1</VMenusItem>
+              <VMenusItem>Item 2</VMenusItem>
+              <VMenusItem>Item 3</VMenusItem>
+            </template>
+          </VMenus>
+        </template>
+      </VMenus>
+    </template>
+  </VMenus>
+  `,
+});
+
+export const DarkMode: Story = (args) => ({
+  components: { VMenus },
+  setup() {
+    return { args };
   },
   template: `
   <div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
