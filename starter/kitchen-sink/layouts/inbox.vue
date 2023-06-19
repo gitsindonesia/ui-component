@@ -4,8 +4,7 @@ useHead({
     class: "bg-white dark:bg-gray-true-800",
   },
 });
-
-const menu = useState("inbox-menu", () => true);
+const inboxDrawer = useInboxDrawer();
 </script>
 
 <template>
@@ -14,9 +13,12 @@ const menu = useState("inbox-menu", () => true);
     <div class="flex-grow">
       <InboxNavbar />
       <div class="flex">
-        <InboxMenus v-model="menu" />
+        <InboxMenus />
         <div
           class="flex-grow bg-white h-[calc(100vh-100px)] overflow-y-auto rounded-xl my-4 border dark:bg-gray-true-800 dark:border-gray-true-700"
+          :class="{
+            'ml-4': !inboxDrawer,
+          }"
         >
           <slot />
         </div>

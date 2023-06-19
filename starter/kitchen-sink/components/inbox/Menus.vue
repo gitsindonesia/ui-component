@@ -1,12 +1,10 @@
 <script setup lang="ts">
-const modelValue = defineModel<boolean>({
-  default: true,
-});
+const inboxDrawer = useInboxDrawer();
 </script>
 
 <template>
   <VNavDrawer
-    v-model="modelValue"
+    v-model="inboxDrawer"
     class="px-4 !h-auto py-3 sticky top-16 self-start w-[250px]"
   >
     <VBtn prefix-icon="ri:edit-line" size="lg" color="primary" block> Compose </VBtn>
