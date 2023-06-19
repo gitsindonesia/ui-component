@@ -52,24 +52,60 @@
     }
   }
 
-  // modifiers
+  // bordered
   &--bordered {
-    border-style: var(--card-border-style);
-    border-width: var(--card-border-width);
+    border-width: 1px;
+    border-style: solid;
     border-color: var(--card-border-color);
+    --card-border-width: 4px;
 
-    .card-header {
-      border-bottom-style: var(--card-border-style);
-      border-bottom-width: var(--card-border-width);
-      border-bottom-color: var(--card-border-color);
-      padding-bottom: var(--card-padding-y);
+    &-top {
+      border-top-width: var(--card-border-width);
     }
 
-    .card-footer {
-      border-top-style: var(--card-border-style);
-      border-top-width: var(--card-border-width);
-      border-top-color: var(--card-border-color);
-      padding-top: var(--card-padding-y);
+    &-right {
+      border-right-width: var(--card-border-width);
+    }
+
+    &-bottom {
+      border-bottom-width: var(--card-border-width);
+    }
+
+    &-left {
+      border-left-width: var(--card-border-width);
+    }
+
+    // Colors
+    &.card-default {
+      --card-border-color: var(--color-gray-300);
+    }
+
+    &.card-primary {
+      --card-border-color: var(--color-primary-500);
+    }
+
+    &.card-secondary {
+      --card-border-color: var(--color-secondary-500);
+    }
+
+    &.card-info {
+      --card-border-color: var(--color-info-500);
+    }
+
+    &.card-warning {
+      --card-border-color: var(--color-warning-500);
+    }
+
+    &.card-success {
+      --card-border-color: var(--color-success-500);
+    }
+
+    &.card-error {
+      --card-border-color: var(--color-error-500);
+    }
+
+    &.card-dark {
+      --card-border-color: var(--color-gray-500);
     }
   }
 
@@ -107,37 +143,37 @@
   }
 
   /* Colors */
-  &-primary {
+  &-primary:not(&--bordered) {
     --card-bg-color: var(--color-primary-500);
     --card-color: var(--color-white);
   }
 
-  &-secondary {
+  &-secondary:not(&--bordered) {
     --card-bg-color: var(--color-secondary-500);
     --card-color: var(--color-white);
   }
 
-  &-info {
+  &-info:not(&--bordered) {
     --card-bg-color: var(--color-info-500);
     --card-color: var(--color-white);
   }
 
-  &-warning {
+  &-warning:not(&--bordered) {
     --card-bg-color: var(--color-warning-500);
     --card-color: var(--color-white);
   }
 
-  &-success {
+  &-success:not(&--bordered) {
     --card-bg-color: var(--color-success-500);
     --card-color: var(--color-white);
   }
 
-  &-error {
+  &-error:not(&--bordered) {
     --card-bg-color: var(--color-error-500);
     --card-color: var(--color-white);
   }
 
-  &-dark {
+  &-dark:not(&--bordered) {
     --card-bg-color: var(--color-gray-800);
     --card-color: var(--color-white);
   }

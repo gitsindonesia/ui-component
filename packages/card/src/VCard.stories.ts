@@ -2,7 +2,7 @@ import {Meta, Story} from '@storybook/vue3';
 import VCard from './VCard.vue';
 import VBtn from '@morpheme/button';
 import {defaultColors} from '@morpheme/theme/defaultTheme';
-import {defineComponent} from 'vue';
+import { defineComponent, ref } from 'vue';
 import VCardHeader from './VCardHeader.vue';
 import VCardFooter from './VCardFooter.vue';
 import VCardBody from './VCardBody.vue';
@@ -88,19 +88,6 @@ BodyOnly.parameters = {
   },
 };
 
-export const Bordered = Template.bind({});
-Bordered.args = {
-  bordered: true,
-  flat: true,
-};
-Bordered.parameters = {
-  docs: {
-    source: {
-      code: '<v-card title="Header" bordered flat>Body</v-card>',
-    },
-  },
-};
-
 export const CustomSlots: Story = (args) => ({
   components: {VCard, VBtn},
   setup() {
@@ -166,6 +153,39 @@ export const Colors: Story<{}> = (args) => ({
   hide-footer
   >
   Card: {{ color }}
+</v-card>
+`,
+});
+
+export const Bordered: Story<{}> = (args) => ({
+  components: {VCard, VBtn},
+  setup() {
+    const selectedColor = ref('primary')
+    const positions = ["top" , "left" , "bottom" , "right"]
+    return {args, colors: defaultColors, positions, selectedColor};
+  },
+  template: `
+  <div class="flex flex-wrap gap-2 mb-6">
+  <VBtn
+    v-for="(color, idx) in colors"
+    :key="idx"
+    :color="color"
+    size="sm"
+    @click="selectedColor = color"
+  >
+  {{ color }}
+  </VBtn>
+  </div>
+
+<v-card
+  v-for="(position, idx) in positions"
+  :key="idx"
+  bordered
+  :border-position="position"
+  class="mb-4"
+  :color="selectedColor"
+  >
+  Border on {{ position }}
 </v-card>
 `,
 });

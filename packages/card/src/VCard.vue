@@ -52,6 +52,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  borderPosition: {
+    type: String as PropType<"top" | "left" | "bottom" | "right">,
+    default: "top",
+  },
   flat: {
     type: Boolean,
     default: false,
@@ -118,6 +122,7 @@ const classes = computed(() => {
     shadowClass,
     {
       "card--bordered": props.bordered,
+      [`card--bordered-${props.borderPosition}`]: props.bordered,
     },
   ];
 });

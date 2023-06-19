@@ -110,20 +110,16 @@ You can apply different colors to your `VCard` using the `color` prop. It can ta
 
 ### Bordered
 
-- **prop**: `bordered`
-- **type**: `boolean`
-- **default**: `false`
-- **required**: `false`
+You can add a border style to your `VCard` by using the `bordered` prop and use `border-position` prop to change the border position.
 
-You can add a border to your `VCard` by using the `bordered` prop. It is a `boolean` prop that takes the value `true` to add a border and `false` to remove it. The default value is `false`.
-
-To use the `bordered` prop, set it to true like so:
-
-<LivePreview src="components-card--bordered" height="200" >
+<LivePreview src="components-card--bordered">
 
 ```vue{6}
 <template>
   <VCard bordered> Hello World </VCard>
+  <VCard bordered border-position="left"> Hello World </VCard>
+  <VCard bordered border-position="right"> Hello World </VCard>
+  <VCard bordered border-position="bottom"> Hello World </VCard>
 </template>
 ```
 
@@ -200,6 +196,7 @@ Bodyless card allows you to create declarative card with sub components like `VC
 | [shadow](#shadow)                               | `boolean`, `string`, [available shadows](/guide/theme#shadows) | `true`        |
 | [flat](#flat)                                   | `boolean`                                                      | `false`       |
 | [bordered](#bordered)                           | `boolean`                                                      | `false`       |
+| [border-position](#border-position)             | `'top' \| 'left' \| 'bottom' \| 'right'`                       | `top`         |
 | [title](#title)                                 | `string`                                                       | `false`       |
 | [flat](#flat)                                   | `boolean`                                                      | `false`       |
 | [hide-header](#hide-header)                     | `boolean`                                                      | `false`       |
