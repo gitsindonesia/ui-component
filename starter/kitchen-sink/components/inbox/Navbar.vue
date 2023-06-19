@@ -6,14 +6,14 @@
   <VAppBar size="auto" class="top-0 sticky py-2 px-4">
     <div class="flex gap-4 w-full justify-between items-center">
       <div class="w-[218px]">
-        <VLogo />
+        <VLogo :white="$colorMode.preference === 'dark'" />
       </div>
       <nav class="flex gap-2 flex-1">
         <VInput wrapper-class="flex-grow" placeholder="Search in mail" />
         <VBtn prefix-icon="ri:settings-3-line" icon text fab />
         <VBtn prefix-icon="ri:apps-2-line" icon text fab />
         <ColorModeSwitcher />
-        <VDropdown right panel-class="z-20">
+        <VDropdown right panel-class="!z-40">
           <template #activator>
             <VDropdownButton>
               <VAvatar color="secondary" size="xl">W</VAvatar>

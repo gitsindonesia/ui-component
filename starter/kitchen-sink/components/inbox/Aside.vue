@@ -3,7 +3,14 @@
 </script>
 
 <template>
-  <VNavDrawer mini bordered fixed class="flex flex-col items-center py-2 gap-2">
+  <VNavDrawer
+    :bordered="$colorMode.preference !== 'light'"
+    mini
+    class="flex flex-col items-center py-2 gap-2 sticky !-auto"
+    :class="{
+      '!bg-gray-blue-50': $colorMode.preference === 'light',
+    }"
+  >
     <VBtn prefix-icon="ri:menu-line" fab icon />
     <VBtn prefix-icon="ri:mail-line" fab icon text class="mt-4" />
     <VBtn prefix-icon="ri:message-line" fab icon text />
