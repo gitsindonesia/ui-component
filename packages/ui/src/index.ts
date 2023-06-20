@@ -92,6 +92,10 @@ import {
   VPopoverOverlay,
   VPopoverPanel,
 } from "@morpheme/popover";
+import {
+  VRow,
+  VCol
+} from "@morpheme/layouts";
 
 const plugin: Plugin = {
   install: (app) => {
@@ -197,6 +201,8 @@ const plugin: Plugin = {
     app.component("VPopoverPanel", VPopoverPanel);
     app.component("VBadgeGroup", VBadgeGroup);
     app.component("VBadgeContent", VBadgeContent);
+    app.component("VRow", VRow);
+    app.component("VCol", VCol);
   },
 };
 
@@ -273,6 +279,8 @@ export {
   VPopoverPanel,
   VBadgeGroup,
   VBadgeContent,
+  VRow,
+  VCol
 };
 
 export * from "@morpheme/utils";
