@@ -176,6 +176,42 @@ export const Colors: StoryFn = (args) => ({
   `,
 });
 
+export const Variants: StoryFn = (args) => ({
+  setup() {
+    const variants = ['filled', 'bordered', 'filled-bordered']
+    return {args, variants};
+  },
+  components: {
+    VBottomNavigation,
+    VBottomNavigationItem,
+  },
+  template: `
+  <VBottomNavigation v-bind="args"
+    v-for="variant in variants"
+    :variant="variant"
+    :key="variant"
+    :fixed="false"
+    class="mb-4"
+  >
+    <VBottomNavigationItem icon="ri:home-line">
+      Home
+    </VBottomNavigationItem>
+    <VBottomNavigationItem icon="ri:history-line">
+      Recents
+    </VBottomNavigationItem>
+    <VBottomNavigationItem icon="ri:heart-line">
+      Favorites
+    </VBottomNavigationItem>
+    <VBottomNavigationItem icon="ri:map-pin-2-line">
+      Nearby
+    </VBottomNavigationItem>
+    <VBottomNavigationItem icon="ri:user-line">
+      Account
+    </VBottomNavigationItem>
+  </VBottomNavigation>
+  `,
+});
+
 export const ToggleNavigation: StoryFn = (args) => ({
   setup() {
     const isOpen = ref(true)

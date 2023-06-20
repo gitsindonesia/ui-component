@@ -19,6 +19,7 @@ const props = withDefaults(
     defaultActive?: number;
     transition?: string;
     hideSlider?: boolean;
+    variant?: "filled" | "bordered" | "filled-bordered";
   }>(),
   {
     color: "primary",
@@ -78,9 +79,11 @@ function isActive(el: HTMLButtonElement) {
 
 function setSliderPosition(el: HTMLButtonElement) {
   if (slider.value) {
-    slider.value.style.left = `${el.offsetLeft}px`;
+    if (props.variant === "filled") {
+      slider.value.style.height = `${el.offsetHeight}px`;
+    }
     slider.value.style.width = `${el.offsetWidth}px`;
-    slider.value.style.height = `${el.offsetHeight}px`;
+    slider.value.style.left = `${el.offsetLeft}px`;
     slider.value.style.display = "block";
   }
 }
@@ -140,6 +143,7 @@ defineExpose(api);
       class="v-bottom-navigation"
       :class="[
         `v-bottom-navigation-${color}`,
+        `v-bottom-navigation--${variant}`,
         {
           'v-bottom-navigation--grow': grow,
           'v-bottom-navigation--fixed': fixed,
