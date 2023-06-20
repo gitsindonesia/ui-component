@@ -1,23 +1,54 @@
-import {mount} from '@vue/test-utils';
+import { mount } from '@vue/test-utils';
 import VCollapse from './VCollapse.vue';
 
 describe('VCollapse', () => {
-  it('should toggle the visibility of the content', async () => {
+  it('renders the component with default props', () => {
+    const wrapper = mount(VCollapse);
+
+    expect(wrapper.exists()).toBe(true);
+    expect(wrapper.props().duration).toBe(300);
+    expect(wrapper.props().transition).toBe('ease-in-out');
+    expect(wrapper.props().show).toBe(false);
+    expect(wrapper.props().navbar).toBe(false);
+    expect(wrapper.emitted().finish).toBeFalsy();
+  });
+
+  it('renders the component with custom props', () => {
     const wrapper = mount(VCollapse, {
-      slots: {
-        default: '<div class="content">Content</div>',
+      props: {
+        duration: 500,
+        transition: 'linear',
+        show: true,
+        navbar: true,
       },
     });
 
-    // Trigger toggle
-    wrapper.setProps({show: false});
+    expect(wrapper.exists()).toBe(true);
+    expect(wrapper.props().duration).toBe(500);
+    expect(wrapper.props().transition).toBe('linear');
+    expect(wrapper.props().show).toBe(true);
+    expect(wrapper.props().navbar).toBe(true);
+    expect(wrapper.emitted().finish).toBeFalsy();
+  });
+
+  it('collapses and expands the component when show prop changes', async () => {
+    const wrapper = mount(VCollapse);
+
+    expect(wrapper.vm.visible).toBe(false);
+    expect(wrapper.vm.collapsing).toBe(false);
+
+    wrapper.setProps({ show: true });
+
     await wrapper.vm.$nextTick();
 
-    // Content should be hidden
-    expect(wrapper.find('.content').isVisible()).toBe(false);
+    expect(wrapper.vm.visible).toBe(true);
+    expect(wrapper.vm.collapsing).toBeTruthy();
 
-    // Trigger toggle again
-    wrapper.setProps({show: true});
+    wrapper.setProps({ show: false });
+
     await wrapper.vm.$nextTick();
+
+    expect(wrapper.vm.visible).toBe(false);
+    expect(wrapper.vm.collapsing).toBeTruthy();
   });
 });

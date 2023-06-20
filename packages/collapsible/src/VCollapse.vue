@@ -1,5 +1,5 @@
 <template>
-  <div :class="{'navbar-collapse': navbar}">
+  <div :class="{ 'navbar-collapse': navbar }" data-testid="v-collapse">
     <slot :open="visible" />
   </div>
 </template>
@@ -12,16 +12,16 @@ const props = {
   },
   transition: {
     type: String,
-    default: 'ease-in-out',
+    default: "ease-in-out",
   },
   show: Boolean,
   navbar: Boolean,
 };
 
 export default {
-  name: 'VCollapse',
+  name: "VCollapse",
   props,
-  emits: ['finish'],
+  emits: ["finish"],
   data() {
     return {
       collapsing: false,
@@ -32,10 +32,7 @@ export default {
   },
   computed: {
     toggleTime() {
-      return (
-        (this.visible ? this.duration.show : this.duration.hide) ||
-        this.duration
-      );
+      return (this.visible ? this.duration.show : this.duration.hide) || this.duration;
     },
   },
   watch: {
@@ -51,7 +48,7 @@ export default {
     },
   },
   mounted() {
-    this.$el.style.display = this.visible ? '' : 'none';
+    this.$el.style.display = this.visible ? "" : "none";
   },
   beforeUnmount() {
     clearTimeout(this.heightWatcher);
@@ -78,10 +75,10 @@ export default {
       }
     },
     toggle(val) {
-      this.$el.style.display = '';
-      this.collapsing = this.$el.scrollHeight + 'px';
-      this.$el.style.height = val ? 0 : this.$el.scrollHeight + 'px';
-      this.$el.style.overflow = 'hidden';
+      this.$el.style.display = "";
+      this.collapsing = this.$el.scrollHeight + "px";
+      this.$el.style.height = val ? 0 : this.$el.scrollHeight + "px";
+      this.$el.style.overflow = "hidden";
       this.setTransition();
       const self = this;
       setTimeout(() => {
@@ -97,11 +94,11 @@ export default {
     },
     reset() {
       this.collapsing = false;
-      this.$el.style.display = this.visible ? '' : 'none';
-      this.$el.style.height = '';
-      this.$el.style.overflow = '';
-      this.$el.style.transition = '';
-      this.$emit('finish', this.visible);
+      this.$el.style.display = this.visible ? "" : "none";
+      this.$el.style.height = "";
+      this.$el.style.overflow = "";
+      this.$el.style.transition = "";
+      this.$emit("finish", this.visible);
     },
   },
 };
