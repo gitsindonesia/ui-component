@@ -150,12 +150,17 @@ const components: AddComponentOptions[] = [
     name: 'VCollapse',
     filePath: '@morpheme/collapsible/src/VCollapse.vue',
   },
-  /**
-   * @deprecated
-   */
   {
     name: 'VContainer',
     filePath: '@morpheme/container/src/VContainer.vue',
+  },
+  {
+    name: 'VRow',
+    filePath: '@morpheme/layouts/src/VRow.vue',
+  },
+  {
+    name: 'VCol',
+    filePath: '@morpheme/layouts/src/VCol.vue',
   },
   {
     name: 'VDropdown',
