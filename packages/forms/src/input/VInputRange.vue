@@ -1,14 +1,14 @@
-<script setup>
-import {ref, watch, toRefs, onMounted, computed} from 'vue';
-import {useRange} from './useRange';
-import {useInputClasses} from '@morpheme/utils';
-import {useField} from 'vee-validate';
-import VInput from '../input/VInput.vue';
+<script setup lang="ts">
+import { watch, toRefs, onMounted, computed } from "vue";
+import { useRange } from "./useRange";
+import { useInputClasses } from "@morpheme/utils";
+import { useField } from "vee-validate";
+import VInput from "../input/VInput.vue";
 
 const props = defineProps({
   modelValue: {
     type: Object,
-    default: () => ({min: 0, max: 0}),
+    default: () => ({ min: 0, max: 0 }),
   },
   min: {
     type: Number,
@@ -28,27 +28,27 @@ const props = defineProps({
   },
   name: {
     type: String,
-    default: '',
+    default: "",
   },
   rules: {
     type: String,
-    default: '',
+    default: "",
   },
   errorClass: {
     type: String,
-    default: 'text-error-600 text-sm mt-1',
+    default: "text-error-600 text-sm mt-1",
   },
   label: {
     type: String,
-    default: '',
+    default: "",
   },
   labelClass: {
     type: String,
-    default: 'block mb-1',
+    default: "block mb-1",
   },
   validationMode: {
     type: String,
-    default: 'aggressive',
+    default: "aggressive",
   },
   hideError: {
     type: Boolean,
@@ -56,19 +56,19 @@ const props = defineProps({
   },
   hint: {
     type: String,
-    default: '',
+    default: "",
   },
 });
 
-const {modelValue, showInput, name, rules, validationMode} = toRefs(props);
+const { modelValue, showInput, name, rules, validationMode } = toRefs(props);
 
-const emit = defineEmits(['update:modelValue']);
+const emit = defineEmits(["update:modelValue"]);
 
 const isEagerValidation = computed(() => {
-  return validationMode.value === 'eager';
+  return validationMode.value === "eager";
 });
 
-const {value, errorMessage, handleChange, validate} = useField(name, rules, {
+const { errorMessage, handleChange, validate } = useField(name, rules, {
   initialValue: modelValue,
   validateOnValueUpdate: !isEagerValidation.value,
 });
@@ -85,7 +85,6 @@ const {
   step,
   minTrigger,
   maxTrigger,
-  validation,
 } = useRange(props.min, props.max, props.step);
 
 watch([minValue, maxValue], (val) => {
@@ -99,7 +98,7 @@ watch([minValue, maxValue], (val) => {
   } else {
     handleChange(nuValue);
   }
-  emit('update:modelValue', nuValue);
+  emit("update:modelValue", nuValue);
 });
 
 onMounted(() => {
@@ -121,16 +120,10 @@ const handleBlur = () => {
       <div class="relative w-full">
         <div tabindex="1">
           <div class="flex justify-between mb-3">
-            <label
-              class="text-gray-600 dark:text-gray-neutral-300 text-sm"
-              for="min"
-            >
+            <label class="text-gray-600 dark:text-gray-neutral-300 text-sm" for="min">
               {{ minValue }}
             </label>
-            <label
-              class="text-gray-600 dark:text-gray-neutral-300 text-sm"
-              for="max"
-            >
+            <label class="text-gray-600 dark:text-gray-neutral-300 text-sm" for="max">
               {{ maxValue }}
             </label>
           </div>
@@ -142,16 +135,7 @@ const handleBlur = () => {
             :step="step"
             :min="min"
             :max="max"
-            class="
-              absolute
-              pointer-events-none
-              appearance-none
-              z-20
-              h-2
-              w-full
-              opacity-0
-              cursor-pointer
-            "
+            class="absolute pointer-events-none appearance-none z-20 h-2 w-full opacity-0 cursor-pointer"
             @input="minTrigger"
           />
 
@@ -162,76 +146,27 @@ const handleBlur = () => {
             :step="step"
             :min="min"
             :max="max"
-            class="
-              absolute
-              pointer-events-none
-              appearance-none
-              z-20
-              h-2
-              w-full
-              opacity-0
-              cursor-pointer
-            "
+            class="absolute pointer-events-none appearance-none z-20 h-2 w-full opacity-0 cursor-pointer"
             @input="maxTrigger"
           />
 
           <div class="relative z-10 h-2">
             <div
-              class="
-                absolute
-                z-10
-                left-0
-                right-0
-                bottom-0
-                top-0
-                rounded-md
-                bg-gray-400
-                h-1
-              "
+              class="absolute z-10 left-0 right-0 bottom-0 top-0 rounded-md bg-gray-400 h-1"
             ></div>
 
             <div
-              class="
-                absolute
-                z-20
-                top-0
-                bottom-0
-                rounded-md
-                bg-gradient-to-r
-                from-primary-400
-                to-primary-600
-                h-1
-              "
+              class="absolute z-20 top-0 bottom-0 rounded-md bg-gradient-to-r from-primary-400 to-primary-600 h-1"
               :style="'right:' + maxThumb + '%; left:' + minThumb + '%'"
             ></div>
 
             <div
-              class="
-                absolute
-                z-30
-                w-4
-                h-4
-                top-0
-                left-0
-                bg-primary-400
-                rounded-full
-                -mt-1.5
-              "
+              class="absolute z-30 w-4 h-4 top-0 left-0 bg-primary-400 rounded-full -mt-1.5"
               :style="'left: ' + minThumb + '%'"
             ></div>
 
             <div
-              class="
-                absolute
-                z-30
-                w-4
-                h-4
-                top-0
-                right-0
-                bg-primary-600
-                rounded-full
-                -mt-1.5
-              "
+              class="absolute z-30 w-4 h-4 top-0 right-0 bg-primary-600 rounded-full -mt-1.5"
               :style="'right: ' + maxThumb + '%'"
             ></div>
           </div>
@@ -239,14 +174,7 @@ const handleBlur = () => {
 
         <div
           v-if="showInput"
-          class="
-            flex
-            items-center
-            justify-between
-            pt-5
-            space-x-4
-            text-sm text-gray-700
-          "
+          class="flex items-center justify-between pt-5 space-x-4 text-sm text-gray-700"
         >
           <div>
             <VInput
@@ -283,7 +211,10 @@ const handleBlur = () => {
 </template>
 
 <style>
-input[type='range']::-webkit-slider-thumb {
-  @apply w-6 h-6 appearance-none pointer-events-auto;
+input[type="range"]::-webkit-slider-thumb {
+  width: 1.5rem /* 24px */;
+  height: 1.5rem /* 24px */;
+  appearance: none;
+  pointer-events: auto;
 }
 </style>

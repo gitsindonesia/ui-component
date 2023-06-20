@@ -1,10 +1,9 @@
-<script setup>
-import {toRefs} from 'vue';
-import VBtn from '@morpheme/button';
-import {VInput} from '@morpheme/forms';
-import {useForm} from 'vee-validate';
-import {string} from 'yup';
-import {Icon} from '@iconify/vue';
+<script setup lang="ts">
+import { toRefs } from "vue";
+import VBtn from "@morpheme/button";
+import { VInput } from "@morpheme/forms";
+import { useForm } from "vee-validate";
+import { string } from "yup";
 
 const props = defineProps({
   modelValue: {
@@ -13,7 +12,7 @@ const props = defineProps({
   },
   title: {
     type: String,
-    default: 'Forgot Password',
+    default: "Forgot Password",
   },
   subtitle: {
     type: String,
@@ -21,26 +20,26 @@ const props = defineProps({
   },
   emailText: {
     type: String,
-    default: 'Email',
+    default: "Email",
   },
   schema: {
     type: Object,
     default: () => ({
-      email: string().required().email().label('Email'),
+      email: string().required().email().label("Email"),
     }),
   },
 });
 
-const {title, subtitle} = toRefs(props);
+const { title, subtitle } = toRefs(props);
 
-const emit = defineEmits(['submit']);
+const emit = defineEmits(["submit"]);
 
-const {handleSubmit, errors} = useForm({
+const { handleSubmit } = useForm({
   validationSchema: props.schema,
 });
 
 const onSubmit = handleSubmit((values) => {
-  emit('submit', values);
+  emit("submit", values);
 });
 </script>
 

@@ -1,9 +1,9 @@
-<script setup>
-import {toRefs} from 'vue';
-import VBtn from '@morpheme/button';
-import {VInput} from '@morpheme/forms';
-import {string, object, ref as YupRef} from 'yup';
-import {useForm} from 'vee-validate';
+<script setup lang="ts">
+import { toRefs } from "vue";
+import VBtn from "@morpheme/button";
+import { VInput } from "@morpheme/forms";
+import { string, object, ref as YupRef } from "yup";
+import { useForm } from "vee-validate";
 
 const props = defineProps({
   modelValue: {
@@ -12,37 +12,37 @@ const props = defineProps({
   },
   title: {
     type: String,
-    default: 'Reset Password',
+    default: "Reset Password",
   },
   subtitle: {
     type: String,
-    default: 'Create a new and secure password for your account',
+    default: "Create a new and secure password for your account",
   },
   passwordMatchError: {
     type: String,
-    default: 'Tidak sesuai dengan kata sandi baru',
+    default: "Tidak sesuai dengan kata sandi baru",
   },
   passwordFormatError: {
     type: String,
-    default: 'Kata Sandi harus berisi 8 karakter dan minimal ada 1 angka',
+    default: "Kata Sandi harus berisi 8 karakter dan minimal ada 1 angka",
   },
   passwordConfirmationText: {
     type: String,
-    default: 'Konfirmasi Kata Sandi Baru',
+    default: "Konfirmasi Kata Sandi Baru",
   },
   passwordText: {
     type: String,
-    default: 'Kata Sandi Baru',
+    default: "Kata Sandi Baru",
   },
   submitText: {
     type: String,
-    default: 'Reset Password',
+    default: "Reset Password",
   },
 });
 
-const {title, subtitle} = toRefs(props);
+const { title, subtitle } = toRefs(props);
 
-const emit = defineEmits(['submit']);
+const emit = defineEmits(["submit"]);
 
 const passwordRegex = /[^\w\d]*((\d+.*[A-Za-z]+.*)|[A-Za-z]+.*(\d+.*))/i;
 
@@ -54,16 +54,16 @@ const schema = object({
     .label(props.passwordText),
   passwordConfirmation: string()
     .required()
-    .oneOf([YupRef('password'), null], props.passwordMatchError)
+    .oneOf([YupRef("password"), null], props.passwordMatchError)
     .label(props.passwordConfirmationText),
 });
 
-const {handleSubmit, errors} = useForm({
+const { handleSubmit } = useForm({
   validationSchema: schema,
 });
 
 const onSubmit = handleSubmit((values) => {
-  emit('submit', values);
+  emit("submit", values);
 });
 </script>
 
