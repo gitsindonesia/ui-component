@@ -129,6 +129,8 @@ const api = {
 };
 
 provide(VBottomNavigationInjectionKey, api);
+
+defineExpose(api);
 </script>
 
 <template>
