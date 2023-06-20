@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {PropType, onMounted} from 'vue';
+import { PropType } from "vue";
 
 type ToggleClass = {
   open: string;
@@ -7,6 +7,18 @@ type ToggleClass = {
 };
 
 defineProps({
+  padded: {
+    type: Boolean,
+    default: false,
+  },
+  centered: {
+    type: Boolean,
+    default: false,
+  },
+  fluid: {
+    type: Boolean,
+    default: false,
+  },
   mini: {
     type: Boolean,
     default: false,
@@ -15,36 +27,49 @@ defineProps({
     type: Boolean,
     default: false,
   },
+  /**
+   * @deprecated
+   * Use `mini` instead.
+   */
   miniClass: {
     type: Object as PropType<ToggleClass>,
     default: () => ({
-      open: 'sm:ml-[85px]',
-      close: 'sm:ml-[250px]',
+      open: "",
+      close: "",
     }),
   },
+  /**
+   * @deprecated
+   * Use `fixed` instead.
+   */
   fixedClass: {
     type: Object as PropType<ToggleClass>,
     default: () => ({
-      open: 'pt-24',
-      close: 'pt-6',
+      open: "",
+      close: "",
     }),
   },
-});
-
-onMounted(() => {
-  console.warn('v-container is deprecated. Switch to v-main instead.');
+  tag: {
+    type: String,
+    default: "div",
+  },
 });
 </script>
 
 <template>
-  <div
-    class="container mx-auto py-10 px-4 lg:px-0"
+  <component
+    :is="tag"
+    class="v-container"
     :class="[
-      'transition-all duration-300',
-      mini ? miniClass.open : miniClass.close,
-      fixed ? fixedClass.open : fixedClass.close,
+      {
+        'v-container--padded': padded,
+        'v-container--centered': centered,
+        'v-container--fluid': fluid,
+        'v-container--fixed': fixed,
+        'v-container--mini': mini,
+      },
     ]"
   >
     <slot />
-  </div>
+  </component>
 </template>

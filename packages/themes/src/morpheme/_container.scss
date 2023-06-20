@@ -3,8 +3,12 @@
   --v-main-padding-y: var(--size-spacing-4);
 }
 
+.v-container,
 .v-main {
   width: 100%;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
 
   @media (min-width: 360px) {
     max-width: 360px;
