@@ -1,29 +1,30 @@
 <script setup lang="ts">
-import type {VBreadcrumbItem} from './types';
-import {PropType} from 'vue';
-import VBreadcrumbsItem from './VBreadcrumbsItem.vue';
-import VBreadcrumbsDivider from './VBreadcrumbsDivider.vue';
+import { PropType } from "vue";
+import VBreadcrumbsItem from "./VBreadcrumbsItem.vue";
+import VBreadcrumbsDivider from "./VBreadcrumbsDivider.vue";
+
+type VBreadcrumbsItemProps = InstanceType<typeof VBreadcrumbsItem>["$props"];
 
 defineProps({
   items: {
-    type: Array as PropType<VBreadcrumbItem[]>,
-    default: () => [] as VBreadcrumbItem[],
+    type: Array as PropType<VBreadcrumbsItemProps[]>,
+    default: () => [] as VBreadcrumbsItemProps[],
   },
   divider: {
     type: String,
-    default: '/',
+    default: "/",
   },
   customClass: {
     type: String,
-    default: '',
+    default: "",
   },
   activeColor: {
     type: String,
-    default: 'breadcrumbs-item--active',
+    default: "breadcrumbs-item--active",
   },
   tag: {
     type: String,
-    default: 'li',
+    default: "li",
   },
 });
 </script>

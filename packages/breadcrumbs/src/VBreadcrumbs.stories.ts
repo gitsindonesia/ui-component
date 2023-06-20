@@ -2,7 +2,7 @@ import VBreadcrumbs from './VBreadcrumbs.vue';
 import {Meta, Story} from '@storybook/vue3';
 import Icon from '@morpheme/icon';
 import vueRouter from 'storybook-vue3-router';
-import type {VBreadcrumbItem} from './types';
+import type {VBreadcrumbItemProps} from './types';
 import {ref} from 'vue';
 import VBreadcrumbsDivider from './VBreadcrumbsDivider.vue';
 import VBreadcrumbsItem from './VBreadcrumbsItem.vue';
@@ -101,7 +101,7 @@ CustomDividerSlots.decorators = [vueRouter()];
 export const OptionalRouterLink: Story = (args) => ({
   components: {VBreadcrumbs, Icon},
   setup() {
-    const items = ref<VBreadcrumbItem[]>([
+    const items = ref<VBreadcrumbItemProps[]>([
       {
         title: 'Item 1',
       },
