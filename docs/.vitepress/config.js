@@ -99,6 +99,10 @@ export default defineConfig({
             link: '/components/dropdown',
           },
           {
+            text: 'Grid',
+            link: '/components/grid',
+          },
+          {
             text: 'Icon',
             link: '/components/icon',
           },
