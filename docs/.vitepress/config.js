@@ -84,6 +84,7 @@ export default defineConfig({
           {text: 'Card', link: '/components/card'},
           {text: 'Collapse', link: '/components/collapse'},
           {text: 'Collapsible', link: '/components/collapsible'},
+          {text: 'Container', link: '/components/container'},
           {text: 'DataTable', link: '/components/data-table'},
           {
             text: 'DataTablePagination',
