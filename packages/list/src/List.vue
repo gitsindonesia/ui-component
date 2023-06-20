@@ -16,6 +16,7 @@ type Props = {
   hideText?: boolean;
   activeVariant?: "filled" | "bordered" | "filled-bordered";
   activeBorderPosition?: "top" | "right" | "bottom" | "left";
+  mini?: boolean;
 };
 
 const props = withDefaults(defineProps<Props>(), {
@@ -51,6 +52,7 @@ const isBorderedVariant = computed(() => {
         'v-list--small': small,
         'v-list--large': large,
         'v-list--hide-text': hideText,
+        'v-list--mini': mini,
         [`v-list--active-${activeVariant}-${activeBorderPosition}`]: isBorderedVariant,
       },
     ]"

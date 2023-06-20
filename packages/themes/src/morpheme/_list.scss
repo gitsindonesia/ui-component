@@ -76,6 +76,20 @@
   flex-direction: column;
   overflow: hidden;
 
+  &--mini {
+    max-width: var(--nav-drawer-mini-width, 64px);
+
+    .v-list-item {
+      justify-content: center;
+      min-height: 44px;
+
+      &-append,
+      &-content {
+        display: none;
+      }
+    }
+  }
+
   &-item {
     padding: var(--v-list-item-padding-y) var(--v-list-item-padding-x);
     gap: var(--v-list-item-gap);

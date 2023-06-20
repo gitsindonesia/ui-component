@@ -169,6 +169,11 @@ export const Small: Story = (args) => ({
   `,
 });
 
+export const Mini = Small.bind({})
+Mini.args = {
+  mini: true,
+}
+
 export const Shaped: Story = (args) => ({
   components: {
     List,
