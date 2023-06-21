@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import {PropType} from 'vue';
-import Icon from '@morpheme/icon';
-import {useFormValue, ValidationMode} from '../composables';
-import ErrorMessage from '../ErrorMessage.vue';
+import { PropType, ref } from "vue";
+import Icon from "@morpheme/icon";
+import { useFormValue, ValidationMode } from "../composables";
+import ErrorMessage from "../ErrorMessage.vue";
 
-type IconSize = InstanceType<typeof Icon>['$props']['size'];
+type IconSize = InstanceType<typeof Icon>["$props"]["size"];
 
 defineOptions({
   inheritAttrs: false,
@@ -16,19 +16,19 @@ const props = defineProps({
    */
   value: {
     type: [String, Number],
-    default: '',
+    default: "",
   },
   modelValue: {
     type: [String, Number],
-    default: '',
+    default: "",
   },
   type: {
     type: String,
-    default: 'text',
+    default: "text",
   },
   name: {
     type: String,
-    default: '',
+    default: "",
   },
   error: {
     type: Boolean,
@@ -47,24 +47,24 @@ const props = defineProps({
     default: false,
   },
   size: {
-    type: String as PropType<'sm' | 'md' | 'lg'>,
-    default: 'md',
+    type: String as PropType<"sm" | "md" | "lg">,
+    default: "md",
   },
   placeholder: {
     type: String,
-    default: '',
+    default: "",
   },
   prependIcon: {
     type: String,
-    default: '',
+    default: "",
   },
   appendIcon: {
     type: String,
-    default: '',
+    default: "",
   },
   color: {
     type: String,
-    default: 'default',
+    default: "default",
   },
   text: {
     type: Boolean,
@@ -76,20 +76,20 @@ const props = defineProps({
   },
   validationMode: {
     type: String as PropType<ValidationMode>,
-    default: 'aggressive',
+    default: "aggressive",
   },
   classes: {
     type: Object,
     default: () => ({
-      wrapper: '',
-      input: '',
-      prepend: '',
-      append: '',
+      wrapper: "",
+      input: "",
+      prepend: "",
+      append: "",
     }),
   },
   label: {
     type: String,
-    default: '',
+    default: "",
   },
   rules: {
     type: [Object, String],
@@ -97,39 +97,39 @@ const props = defineProps({
   },
   id: {
     type: String,
-    default: '',
+    default: "",
   },
   inputClass: {
     type: String,
-    default: '',
+    default: "",
   },
   wrapperClass: {
     type: String,
-    default: '',
+    default: "",
   },
   prependClass: {
     type: String,
-    default: '',
+    default: "",
   },
   prependIconClass: {
     type: String,
-    default: '',
+    default: "",
   },
   prependIconSize: {
     type: String as PropType<IconSize>,
-    default: 'md',
+    default: "md",
   },
   appendClass: {
     type: String,
-    default: '',
+    default: "",
   },
   appendIconClass: {
     type: String,
-    default: '',
+    default: "",
   },
   appendIconSize: {
     type: String as PropType<IconSize>,
-    default: 'md',
+    default: "md",
   },
   clearable: {
     type: Boolean,
@@ -137,23 +137,23 @@ const props = defineProps({
   },
   clearableIcon: {
     type: String,
-    default: 'ri:close-line',
+    default: "ri:close-line",
   },
   clearableIconClass: {
     type: String,
-    default: '',
+    default: "",
   },
   clearableIconSize: {
     type: String as PropType<IconSize>,
-    default: 'md',
+    default: "md",
   },
   errorClass: {
     type: String,
-    default: '',
+    default: "",
   },
   labelClass: {
     type: String,
-    default: '',
+    default: "",
   },
   rounded: {
     type: Boolean,
@@ -165,7 +165,7 @@ const props = defineProps({
   },
   hint: {
     type: String,
-    default: '',
+    default: "",
   },
   borderless: {
     type: Boolean,
@@ -178,16 +178,31 @@ const props = defineProps({
 });
 
 const emit = defineEmits([
-  'update:modelValue',
-  'clickPrepend',
-  'clickPrependIcon',
-  'clickAppend',
-  'clickAppendIcon',
-  'clear',
+  "update:modelValue",
+  "clickPrepend",
+  "clickPrependIcon",
+  "clickAppend",
+  "clickAppendIcon",
+  "clear",
 ]);
 
-const {errorMessage, uncontrolledValue, validationListeners, inputId, clear} =
-  useFormValue(props, emit);
+const {
+  errorMessage,
+  uncontrolledValue,
+  validationListeners,
+  inputId,
+  clear,
+} = useFormValue(props, emit);
+
+const input = ref();
+
+function focus() {
+  input.value?.focus();
+}
+
+defineExpose({
+  focus,
+});
 </script>
 
 <template>
@@ -205,13 +220,8 @@ const {errorMessage, uncontrolledValue, validationListeners, inputId, clear} =
       wrapperClass,
     ]"
   >
-    <slot v-if="label" name="label" :v-slot="{for: inputId}">
-      <label
-        v-if="label"
-        :for="inputId"
-        class="v-input-label"
-        :class="labelClass"
-      >
+    <slot v-if="label" name="label" :v-slot="{ for: inputId }">
+      <label v-if="label" :for="inputId" class="v-input-label" :class="labelClass">
         {{ label }}
       </label>
     </slot>
@@ -220,11 +230,7 @@ const {errorMessage, uncontrolledValue, validationListeners, inputId, clear} =
     </div>
     <div v-else class="v-input-wrapper">
       <slot name="prepend.outer">
-        <div
-          class="v-input-prepend"
-          :class="prependClass"
-          @click="emit('clickPrepend')"
-        >
+        <div class="v-input-prepend" :class="prependClass" @click="emit('clickPrepend')">
           <slot name="prepend">
             <Icon
               v-if="prependIcon"
@@ -257,11 +263,7 @@ const {errorMessage, uncontrolledValue, validationListeners, inputId, clear} =
         v-bind="$attrs"
       />
       <slot name="append.outer">
-        <div
-          class="v-input-append"
-          :class="appendClass"
-          @click="emit('clickAppend')"
-        >
+        <div class="v-input-append" :class="appendClass" @click="emit('clickAppend')">
           <slot name="append">
             <Icon
               v-if="appendIcon"
