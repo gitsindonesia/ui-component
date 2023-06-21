@@ -6,7 +6,7 @@
     "build": "nuxi build"
   },
   "devDependencies": {
-    "@nuxt/devtools": "^0.5.5",
+    "@nuxt/devtools": "^0.6.2",
     "@nuxtjs/tailwindcss": "^6.1.3"
   }
 }
