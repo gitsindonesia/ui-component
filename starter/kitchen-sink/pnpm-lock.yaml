@@ -19,7 +19,7 @@ overrides:
   '@morpheme/dropdown': 1.0.0-alpha.222
   '@morpheme/editor': 1.0.0-alpha.222
   '@morpheme/forms': 1.0.0-alpha.222
-  '@morpheme/icon': 1.0.0-alpha.222
+  '@morpheme/icon': 1.0.0-alpha.286
   '@morpheme/list': 1.0.0-alpha.222
   '@morpheme/logo': 1.0.0-alpha.222
   '@morpheme/menu': 1.0.0-alpha.222
@@ -51,15 +51,15 @@ overrides:
   '@morpheme/toast': 1.0.0-alpha.222
   '@morpheme/tooltip': 1.0.0-alpha.222
   '@morpheme/utils': 1.0.0-alpha.222
-  '@morpheme/ui': 1.0.0-alpha.229
+  '@morpheme/ui': 1.0.0-alpha.283
 
 dependencies:
   '@morpheme/design-tokens':
     specifier: 0.1.0-alpha.5
     version: 0.1.0-alpha.5
   '@morpheme/nuxt':
-    specifier: 1.0.0-alpha.229
-    version: 1.0.0-alpha.229(nuxt@3.5.2)(vite@4.3.9)
+    specifier: 1.0.0-alpha.283
+    version: 1.0.0-alpha.283(nuxt@3.5.2)(vite@4.3.9)
   '@morphemeicons/vue':
     specifier: ^0.2.0
     version: 0.2.0(vue@3.3.4)
@@ -1029,7 +1029,7 @@ packages:
     resolution: {integrity: sha512-HQavx9FVFY2NiaXQhAg9wyWddvqWUiVPKK5K2rbilown51eYOdKAOu6cfoDgogR4JtV3gZ/zOyw/x7v4tRguyg==}
     dependencies:
       '@morpheme/button': 1.0.0-alpha.222
-      '@morpheme/icon': 1.0.0-alpha.222
+      '@morpheme/icon': 1.0.0-alpha.286
       '@morpheme/tailwind-config': 1.0.0-alpha.222
       '@morpheme/theme': 1.0.0-alpha.222
       '@morpheme/utils': 1.0.0-alpha.222
@@ -1059,7 +1059,7 @@ packages:
       '@headlessui/vue': 1.7.13(vue@3.3.4)
       '@morpheme/button': 1.0.0-alpha.222
       '@morpheme/forms': 1.0.0-alpha.222
-      '@morpheme/icon': 1.0.0-alpha.222
+      '@morpheme/icon': 1.0.0-alpha.286
       tailwindcss: 3.3.2
       vue: 3.3.4
       wait-for-expect: 3.0.2
@@ -1070,7 +1070,7 @@ packages:
   /@morpheme/avatar@1.0.0-alpha.222:
     resolution: {integrity: sha512-uXaY5Oio1yPRK1yNN3Qhk3Ho4uL+L627BDpqHukjf7KLWmME5lIqEcF+17wDIypQPZp3/I9j2jmpCRTnVCUOrA==}
     dependencies:
-      '@morpheme/icon': 1.0.0-alpha.222
+      '@morpheme/icon': 1.0.0-alpha.286
       '@morpheme/theme': 1.0.0-alpha.222
       vue: 3.3.4
     transitivePeerDependencies:
@@ -1080,7 +1080,7 @@ packages:
   /@morpheme/badge@1.0.0-alpha.222:
     resolution: {integrity: sha512-uiaxCvMrN0ZoDlkzfiJk06X9hXQ3vpxDp6b5O0cZ45G3r5OCjPGXLf+9N1nOrWZ7t78QAHW7Xf7AjEasnYwaoQ==}
     dependencies:
-      '@morpheme/icon': 1.0.0-alpha.222
+      '@morpheme/icon': 1.0.0-alpha.286
       vue: 3.3.4
     transitivePeerDependencies:
       - ts-node
@@ -1095,7 +1095,7 @@ packages:
   /@morpheme/bottom-navigation@1.0.0-alpha.222:
     resolution: {integrity: sha512-3yWGWw2xkNMGms+e1sEhuaOZZCsbvcrKZIqhmymAg3YxdKAU6YmXGo8gbTo0j6ZkAVE/pNh7a5kFnVeF1tNDIg==}
     dependencies:
-      '@morpheme/icon': 1.0.0-alpha.222
+      '@morpheme/icon': 1.0.0-alpha.286
       '@morpheme/theme': 1.0.0-alpha.222
       vue: 3.3.4
     transitivePeerDependencies:
@@ -1106,7 +1106,7 @@ packages:
     resolution: {integrity: sha512-+h+XukiYm7Kkn2NG79wW+B+chbfxFye+1apZz4vAeH2TcnxI/ovy8iPnHx4yhSwYHuvsNuXkFqJmra+mnDL7Wg==}
     dependencies:
       '@morpheme/button': 1.0.0-alpha.222
-      '@morpheme/icon': 1.0.0-alpha.222
+      '@morpheme/icon': 1.0.0-alpha.286
       '@morpheme/list': 1.0.0-alpha.222
       vue: 3.3.4
     transitivePeerDependencies:
@@ -1116,7 +1116,7 @@ packages:
   /@morpheme/breadcrumbs@1.0.0-alpha.222:
     resolution: {integrity: sha512-YVLmh4rxWhlqVTTlSbO7iAVymldjobuVZojNnR/xudypT3IgGls6JQ/OHVCS3xxF6mzJV5OuBv6AAG/cfEPVew==}
     dependencies:
-      '@morpheme/icon': 1.0.0-alpha.222
+      '@morpheme/icon': 1.0.0-alpha.286
       vue: 3.3.4
       vue-router: 4.2.2(vue@3.3.4)
     transitivePeerDependencies:
@@ -1126,7 +1126,7 @@ packages:
   /@morpheme/button@1.0.0-alpha.222:
     resolution: {integrity: sha512-bzwSXcf4S58Y2ZZzJ/rluXpFhLLUKRxx/kwbtd3r34Yo1ak3eZctmCRjVb63JtBpryqxhYQ2U0spvwNM2ymEhQ==}
     dependencies:
-      '@morpheme/icon': 1.0.0-alpha.222
+      '@morpheme/icon': 1.0.0-alpha.286
       '@morpheme/spinner': 1.0.0-alpha.222
       '@morpheme/theme': 1.0.0-alpha.222
       '@morpheme/utils': 1.0.0-alpha.222
@@ -1169,7 +1169,7 @@ packages:
     dependencies:
       '@headlessui/vue': 1.7.13(vue@3.3.4)
       '@morpheme/button': 1.0.0-alpha.222
-      '@morpheme/icon': 1.0.0-alpha.222
+      '@morpheme/icon': 1.0.0-alpha.286
       tailwindcss: 3.3.2
       vue: 3.3.4
     transitivePeerDependencies:
@@ -1189,7 +1189,7 @@ packages:
     resolution: {integrity: sha512-Uu+iuPdniQIQWzGel4Zgv1Ai+xd6nwSlXjbhsykhjjjQcEulxg+vsDSE+f4gsROCdQ4pzFDj5sCy/ISyCksSpQ==}
     dependencies:
       '@morpheme/button': 1.0.0-alpha.222
-      '@morpheme/icon': 1.0.0-alpha.222
+      '@morpheme/icon': 1.0.0-alpha.286
       '@morpheme/spinner': 1.0.0-alpha.222
       '@morpheme/utils': 1.0.0-alpha.222
       vee-validate: 4.9.5(vue@3.3.4)
@@ -1198,15 +1198,22 @@ packages:
       - ts-node
     dev: false
 
-  /@morpheme/icon@1.0.0-alpha.222:
-    resolution: {integrity: sha512-kHfx9TMPIEUeDVmLpekv3iT4YujatlwS0KqO88M73Sgas7Zn0YAqifYJnhnZUpB8Fix/8W+xjXa1OXwiR6h8dw==}
+  /@morpheme/icon@1.0.0-alpha.286:
+    resolution: {integrity: sha512-bx+tZflavKXCvOFZo1PtAmqRIQKsI8qzThv/xn1kwgmnxjj22YP5PTtVXkU9MvlgxEatkbkyttOsnlKX4q4nPw==}
     dependencies:
       '@heroicons/vue': 1.0.6(vue@3.3.4)
       '@iconify/vue': 3.2.1(vue@3.3.4)
       '@morpheme/theme': 1.0.0-alpha.222
+      '@morphemeicons/vue': 0.2.0(vue@3.3.4)
       vue: 3.3.4
     transitivePeerDependencies:
       - ts-node
+    dev: false
+
+  /@morpheme/layouts@1.0.0-beta.9:
+    resolution: {integrity: sha512-XG2L7E8tEwtruSHy1BetPLRylPVUDv9Xek08Tfj01Yljk1wAxvfikrUfJGZfBi7ijWGRYbtOo/08utPoxxIg8g==}
+    dependencies:
+      vue: 3.3.4
     dev: false
 
   /@morpheme/list@1.0.0-alpha.222:
@@ -1235,7 +1242,7 @@ packages:
   /@morpheme/menus@1.0.0-alpha.222:
     resolution: {integrity: sha512-0CEZQPsH/e89kGDUKAASLjsu1J0Gy4/ahYIHwejj+4HjUj/MCGeY0WYR2Otk8UYygYthlYvLMrYkieyt3BzfHg==}
     dependencies:
-      '@morpheme/icon': 1.0.0-alpha.222
+      '@morpheme/icon': 1.0.0-alpha.286
       '@morpheme/list': 1.0.0-alpha.222
       floating-vue: 2.0.0-beta.20(vue@3.3.4)
       vue: 3.3.4
@@ -1257,7 +1264,7 @@ packages:
     dependencies:
       '@morpheme/badge': 1.0.0-alpha.222
       '@morpheme/forms': 1.0.0-alpha.222
-      '@morpheme/icon': 1.0.0-alpha.222
+      '@morpheme/icon': 1.0.0-alpha.286
       '@morpheme/tooltip': 1.0.0-alpha.222
       '@vueuse/core': 7.7.1(vue@3.3.4)
       vee-validate: 4.9.5(vue@3.3.4)
@@ -1283,7 +1290,7 @@ packages:
     resolution: {integrity: sha512-OfRg5g9i0zHsngtDMueI9FEO4UnDbixvEJch0Gp+kzNe5gebYPnPzhUYf20AXtxtg6S1RWo4j0VQAWKdoGF/Gg==}
     dependencies:
       '@morpheme/button': 1.0.0-alpha.222
-      '@morpheme/icon': 1.0.0-alpha.222
+      '@morpheme/icon': 1.0.0-alpha.286
       '@morpheme/logo': 1.0.0-alpha.222
       '@morpheme/menus': 1.0.0-alpha.222
       vue: 3.3.4
@@ -1291,10 +1298,10 @@ packages:
       - ts-node
     dev: false
 
-  /@morpheme/nuxt@1.0.0-alpha.229(nuxt@3.5.2)(vite@4.3.9):
-    resolution: {integrity: sha512-BFJbE+gqtbNmQmDq+M3OHLQz06UF/G4uIAI52z0N5oRfN2GZYX7uty6SzaSZ9530AQzVbeDcyMkHTu1/03GXLQ==}
+  /@morpheme/nuxt@1.0.0-alpha.283(nuxt@3.5.2)(vite@4.3.9):
+    resolution: {integrity: sha512-7TuZPDqzDLrwOvl2rLSLWXEk26gY+L6KsyEP9pmG7q8qatuUk/nASiDbArxt4eWv1BH1OqHAp98Btg5oxn3L0g==}
     dependencies:
-      '@morpheme/ui': 1.0.0-alpha.229
+      '@morpheme/ui': 1.0.0-alpha.283
       '@nuxt/devtools-kit': 0.5.5(nuxt@3.5.2)(vite@4.3.9)
       '@nuxt/kit': 3.5.2
     transitivePeerDependencies:
@@ -1357,7 +1364,7 @@ packages:
     resolution: {integrity: sha512-fwHjSn5JpPQvPT5KdwfQ3OOW1SQNded2cFapSUAzER/m06C6s9jd9Jzs/v16Xk00M6JUjNFlTeLcYivhwcwQYQ==}
     dependencies:
       '@morpheme/forms': 1.0.0-alpha.222
-      '@morpheme/icon': 1.0.0-alpha.222
+      '@morpheme/icon': 1.0.0-alpha.286
       '@morpheme/theme': 1.0.0-alpha.222
       '@morpheme/tooltip': 1.0.0-alpha.222
       '@morpheme/utils': 1.0.0-alpha.222
@@ -1384,7 +1391,7 @@ packages:
       '@iconify/vue': 3.2.1(vue@3.3.4)
       '@morpheme/badge': 1.0.0-alpha.222
       '@morpheme/card': 1.0.0-alpha.222
-      '@morpheme/icon': 1.0.0-alpha.222
+      '@morpheme/icon': 1.0.0-alpha.286
       vue: 3.3.4
     transitivePeerDependencies:
       - ts-node
@@ -1410,7 +1417,7 @@ packages:
     resolution: {integrity: sha512-GXwxiD0eOx/Ef80qGYmVbvpx+U+2npfPUmhDYSbejI1hilZwbMJxO7axc+0CJJwMKKixmw//CnQqTgjMc+atDg==}
     dependencies:
       '@morpheme/forms': 1.0.0-alpha.222
-      '@morpheme/icon': 1.0.0-alpha.222
+      '@morpheme/icon': 1.0.0-alpha.286
       '@morpheme/pagination': 1.0.0-alpha.222
       '@morpheme/spinner': 1.0.0-alpha.222
       '@morpheme/utils': 1.0.0-alpha.222
@@ -1424,7 +1431,7 @@ packages:
     dependencies:
       '@morpheme/button': 1.0.0-alpha.222
       '@morpheme/card': 1.0.0-alpha.222
-      '@morpheme/icon': 1.0.0-alpha.222
+      '@morpheme/icon': 1.0.0-alpha.286
       '@morpheme/utils': 1.0.0-alpha.222
       vue: 3.3.4
     transitivePeerDependencies:
@@ -1484,7 +1491,7 @@ packages:
     resolution: {integrity: sha512-IIc/KclCtJ3M+N1+RzFsc5pv+1T0uuLm/khE6oZ/8OEyNiUjOispnGXh2yvwXyB1LUB2YBrf5HnioHlZFUAzJg==}
     dependencies:
       '@morpheme/button': 1.0.0-alpha.222
-      '@morpheme/icon': 1.0.0-alpha.222
+      '@morpheme/icon': 1.0.0-alpha.286
       vee-validate: 4.9.5(vue@3.3.4)
       vue: 3.3.4
     transitivePeerDependencies:
@@ -1499,8 +1506,8 @@ packages:
       vue: 3.3.4
     dev: false
 
-  /@morpheme/ui@1.0.0-alpha.229:
-    resolution: {integrity: sha512-AImcWTWi2KNXdqmEPTHJdXRQLrNd849Sybt7GWPTMsmnCmmnZJWcTjhHZBqWvSIEaPwwfp3x+K3V6pWDZerHEA==}
+  /@morpheme/ui@1.0.0-alpha.283:
+    resolution: {integrity: sha512-1k+VeEY6FULLZ9FYicTyZ0t1Z1csOT5zftENZeod/maJ4nCy2NPbXM96Gnx4bXqp8lwCHbSpQoDwWkRd5sdqBQ==}
     dependencies:
       '@headlessui/vue': 1.7.13(vue@3.3.4)
       '@morpheme/alert': 1.0.0-alpha.222
@@ -1521,7 +1528,8 @@ packages:
       '@morpheme/dropdown': 1.0.0-alpha.222
       '@morpheme/editor': 1.0.0-alpha.222
       '@morpheme/forms': 1.0.0-alpha.222
-      '@morpheme/icon': 1.0.0-alpha.222
+      '@morpheme/icon': 1.0.0-alpha.286
+      '@morpheme/layouts': 1.0.0-beta.9
       '@morpheme/list': 1.0.0-alpha.222
       '@morpheme/logo': 1.0.0-alpha.222
       '@morpheme/menu': 1.0.0-alpha.222
