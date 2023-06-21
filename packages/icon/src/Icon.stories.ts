@@ -78,3 +78,56 @@ export const DarkMode: Story = (args) => ({
   </div>
   `,
 });
+
+export const MorphemeIcons: Story = (args) => ({
+  components: {Icon},
+  setup() {
+    return {args};
+  },
+  template: `
+  <p class="font-medium mb-2">Default Collection</p>
+  <Icon v-bind='args' name="ri:home-line" />
+  <Icon v-bind='args' name="ic:round-local-activity" />
+  <Icon v-bind='args' name="ph:activity-bold" />
+
+  <p class="font-medium mb-2 mt-5">PascalCase</p>
+  <Icon v-bind='args' name="remix:HomeLine" />
+  <Icon v-bind='args' name="untitled:ActivityHeart" />
+  <Icon v-bind='args' name="iconsax:outline/Add" />
+  <Icon v-bind='args' name="iconsax:bulk/Add" />
+  <Icon v-bind='args' name="iconsax:broken/Add" />
+  <Icon v-bind='args' name="iconsax:linear/Add" />
+  <Icon v-bind='args' name="iconsax:solid/Add" />
+  <Icon v-bind='args' name="iconsax:twotone/Add" />
+  
+  <p class="font-medium mb-2 mt-5">PascalCase with suffix <code>Icon</code></p>
+  <Icon v-bind='args' name="remix:HomeLine" />
+  <Icon v-bind='args' name="untitled:ActivityHeart" />
+  <Icon v-bind='args' name="iconsax:outline/Add" />
+  <Icon v-bind='args' name="iconsax:bulk/Add" />
+  <Icon v-bind='args' name="iconsax:broken/Add" />
+  <Icon v-bind='args' name="iconsax:linear/Add" />
+  <Icon v-bind='args' name="iconsax:solid/Add" />
+  <Icon v-bind='args' name="iconsax:twotone/Add" />
+
+  <p class="font-medium mb-2 mt-5">HypenCase</p>
+  <Icon v-bind='args' name="remix:home-line" />
+  <Icon v-bind='args' name="untitled:activity-heart" />
+  <Icon v-bind='args' name="iconsax:outline/add" />
+  <Icon v-bind='args' name="iconsax:bulk/add" />
+  <Icon v-bind='args' name="iconsax:broken/add" />
+  <Icon v-bind='args' name="iconsax:linear/add" />
+  <Icon v-bind='args' name="iconsax:solid/add" />
+  <Icon v-bind='args' name="iconsax:twotone/add" />
+
+  <p class="font-medium mb-2 mt-5">HypenCase with suffix <code>icon</code></p>
+  <Icon v-bind='args' name="remix:home-line-icon" />
+  <Icon v-bind='args' name="untitled:activity-heart-icon" />
+  <Icon v-bind='args' name="iconsax:outline/add-icon" />
+  <Icon v-bind='args' name="iconsax:bulk/add-icon" />
+  <Icon v-bind='args' name="iconsax:broken/add-icon" />
+  <Icon v-bind='args' name="iconsax:linear/add-icon" />
+  <Icon v-bind='args' name="iconsax:solid/add-icon" />
+  <Icon v-bind='args' name="iconsax:twotone/add-icon" />
+  `,
+});

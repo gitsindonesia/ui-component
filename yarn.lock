@@ -2721,6 +2721,11 @@
   resolved "https://registry.yarnpkg.com/@morpheme/design-tokens/-/design-tokens-0.1.0-alpha.5.tgz#024ed7315dd229c52dbde4a31fdb23777f2c4556"
   integrity sha512-CcPxUfBzl1bXQlpKOWs1j2nqLZeJfp75oQSXaqn2DXRZaCw+iBYtNRko8UcuovOe6/ruIWueiQ/0sBSJHechlw==
 
+"@morphemeicons/vue@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@morphemeicons/vue/-/vue-0.2.0.tgz#ebce8215aff7a484a1de034b02db090dfe060a1a"
+  integrity sha512-4FBTs1nPR0Yxwfdj9M62YAAWvB10x0am1pNHp0SLxzi9XA0MsBOwQtORtqj6dPhWr9OYW0llxxyCosYuVvPh5Q==
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
