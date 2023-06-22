@@ -222,11 +222,11 @@ const displayValue = computed(() => {
         </ComboboxOptions>
       </Transition>
     </div>
-    <p v-if="hint" class="autocomplete-hint">
+    <div v-if="hint" class="autocomplete-hint">
       <slot name="hint">
         {{ hint }}
       </slot>
-    </p>
+    </div>
     <div v-if="error && !hideError" class="autocomplete-error">
       {{ errorMessage }}
     </div>
