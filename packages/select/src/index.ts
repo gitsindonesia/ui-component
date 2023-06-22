@@ -1,6 +1,5 @@
-import VSelect from './VSelect.vue';
 import './VSelect.dark.scss';
-
 export * from './types';
-export {VSelect};
-export default VSelect;
+export {default} from './VSelect.vue';
+export {default as VSelect} from './VSelect.vue';
+export {default as Select} from './Select.vue';
