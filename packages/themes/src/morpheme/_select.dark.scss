@@ -4,6 +4,7 @@
     --v-select-border-color: var(--v-input-border-color);
     --v-select-bg-color: var(--v-input-bg-color);
     --v-select-placeholder-color: var(--v-input-placeholder-color);
+    --v-select-label-color: var(--v-input-label-color);
 
     // options
     --v-select-options-bg-color: var(--color-gray-true-800);
@@ -22,5 +23,8 @@
 
     // hint
     --v-select-hint-color: var(--color-gray-true-500);
+
+    // selected
+    --v-select-selected-color: var(--color-gray-true-200);
   }
 }
