@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {computed, PropType, ref, toRefs, watch, watchEffect} from 'vue';
+import {computed, PropType, ref, toRefs, watch} from 'vue';
 import {
   Listbox,
   ListboxButton,
@@ -21,9 +21,11 @@ const props = defineProps({
    */
   value: {
     type: [Object, String, Number, Boolean],
+    default: '',
   },
   modelValue: {
     type: [Object, String, Number, Boolean],
+    default: '',
   },
   items: {
     type: Array as PropType<VSelectItem[]>,
@@ -168,11 +170,7 @@ const props = defineProps({
   hint: {
     type: String,
     default: ''
-  },
-  multiple: {
-    type: Boolean,
-    default: false,
-  },
+  }
 });
 
 const emit =
@@ -190,11 +188,9 @@ const {
   placeholder,
 } = toRefs(props);
 
-// const {errorMessage, uncontrolledValue, clear} = useFormValue(props, emit, props.fieldOptions, (val: any) => {
-//   emitSelected(val)
-// });
-const errorMessage = ref('');
-const uncontrolledValue = ref(props.multiple ? [] : null);
+const {errorMessage, uncontrolledValue, clear} = useFormValue(props, emit, props.fieldOptions, (val: any) => {
+  emitSelected(val)
+});
 
 const findItem = (val: Val) => {
   return items.value.find((item) => item[itemValue.value] === val);
@@ -267,10 +263,6 @@ const emitSelected = (val: any) => {
   emit('update:value', emittedVal);
   emit('change', emittedVal);
 };
-
-watchEffect(() => {
-  console.log(uncontrolledValue.value)
-});
 </script>
 
 <template>
@@ -288,7 +280,7 @@ watchEffect(() => {
       wrapperClass,
     ]"
   >
-    <Listbox v-model="uncontrolledValue" :multiple="multiple" :by="itemValue">
+    <Listbox v-model="uncontrolledValue">
       <ListboxLabel v-if="label" class="v-select-label" :class="labelClass">
         {{ label }}
       </ListboxLabel>

@@ -49,18 +49,6 @@ Select.parameters = {
   },
 };
 
-export const Multiple = Template.bind({});
-Multiple.args = {
-  multiple: true,
-};
-Multiple.parameters = {
-  docs: {
-    source: {
-      code: '<v-select :items="items" multiple />',
-    },
-  },
-};
-
 export const Disabled = Template.bind({});
 Disabled.args = {
   disabled: true,
