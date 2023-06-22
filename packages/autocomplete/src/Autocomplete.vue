@@ -1,4 +1,4 @@
-<script setup lang="ts" generic="T">
+<script setup lang="ts">
 import {
   Combobox,
   ComboboxButton,
@@ -11,9 +11,12 @@ import VIcon from '@morpheme/icon';
 import {computed, ref, watch} from 'vue';
 import VBadge from '@morpheme/badge';
 
+type T = Record<string, any>
+type ModelValue = T | T[] | undefined
+
 const props = withDefaults(
   defineProps<{
-    modelValue?: T;
+    modelValue?: ModelValue;
     items: T[];
     multiple?: boolean;
     itemText?: string;
@@ -45,7 +48,7 @@ const props = withDefaults(
 
 const emit =
   defineEmits<{
-    (e: 'update:modelValue', value: T): void;
+    (e: 'update:modelValue', value: ModelValue): void;
     (e: 'clear'): void;
   }>();
 
@@ -135,7 +138,7 @@ const displayValue = computed(() => {
                   idx,
                   itemText,
                   itemValue,
-                  remove: () => selected.splice(idx, 1),
+                  remove: () => selected?.splice(idx, 1),
                 }"
               >
                 <VBadge
