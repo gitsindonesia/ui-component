@@ -157,6 +157,10 @@ const menus = ref<MenuItem[]>([
     icon: LayersTwo02Icon,
     children: [
       {
+        text: "Autocomplete",
+        to: "/forms/autocomplete",
+      },
+      {
         text: "Button",
         to: "/forms/buttons",
       },
@@ -199,6 +203,10 @@ const menus = ref<MenuItem[]>([
       {
         text: "Radio",
         to: "/forms/radio",
+      },
+      {
+        text: "Select",
+        to: "/forms/select",
       },
       {
         text: "Textarea",

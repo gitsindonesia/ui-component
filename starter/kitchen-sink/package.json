@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@morpheme/design-tokens": "0.1.0-alpha.5",
-    "@morpheme/nuxt": "1.0.0-alpha.283",
+    "@morpheme/nuxt": "1.0.0-alpha.300",
     "@morphemeicons/vue": "^0.2.0"
   },
   "devDependencies": {
@@ -48,7 +48,7 @@
       "@morpheme/alert": "1.0.0-alpha.222",
       "@morpheme/app-bar": "1.0.0-alpha.222",
       "@morpheme/app-shell": "1.0.0-alpha.222",
-      "@morpheme/autocomplete": "1.0.0-alpha.222",
+      "@morpheme/autocomplete": "1.0.0-alpha.300",
       "@morpheme/avatar": "1.0.0-alpha.222",
       "@morpheme/badge": "1.0.0-alpha.222",
       "@morpheme/banner": "1.0.0-alpha.222",
@@ -78,7 +78,7 @@
       "@morpheme/progress-circular": "1.0.0-alpha.222",
       "@morpheme/quill-editor": "1.0.0-alpha.222",
       "@morpheme/rating": "1.0.0-alpha.222",
-      "@morpheme/select": "1.0.0-alpha.222",
+      "@morpheme/select": "1.0.0-alpha.300",
       "@morpheme/shimmer": "1.0.0-alpha.222",
       "@morpheme/spinner": "1.0.0-alpha.222",
       "@morpheme/stats": "1.0.0-alpha.222",
@@ -95,7 +95,7 @@
       "@morpheme/toast": "1.0.0-alpha.222",
       "@morpheme/tooltip": "1.0.0-alpha.222",
       "@morpheme/utils": "1.0.0-alpha.222",
-      "@morpheme/ui": "1.0.0-alpha.283"
+      "@morpheme/ui": "1.0.0-alpha.300"
     }
   }
 }
