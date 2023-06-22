@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup lang="ts" generic="T">
 import {
   Combobox,
   ComboboxButton,
@@ -11,11 +11,9 @@ import VIcon from '@morpheme/icon';
 import {computed, ref, watch} from 'vue';
 import VBadge from '@morpheme/badge';
 
-type T = Record<string, any>;
-
 const props = withDefaults(
   defineProps<{
-    modelValue?: T | [];
+    modelValue?: T;
     items: T[];
     multiple?: boolean;
     itemText?: string;
@@ -48,29 +46,28 @@ const props = withDefaults(
 const emit =
   defineEmits<{
     (e: 'update:modelValue', value: T): void;
-    (e: 'change', value: T): void;
-    (e: 'update:query', value: string): void;
     (e: 'clear'): void;
   }>();
 
 const selected = ref(props.modelValue);
-const query = ref('');
 
 watch(
   () => props.modelValue,
   (val) => {
     selected.value = val;
   },
+  {immediate: true, deep: true},
 );
 
-watch(selected, (val) => {
-  emit('update:modelValue', val!);
-  emit('change', val!);
-});
+watch(
+  selected,
+  (val) => {
+    emit('update:modelValue', val);
+  },
+  {deep: true},
+);
 
-watch(query, (val) => {
-  emit('update:query', val);
-});
+const query = ref('');
 
 const filteredItems = computed(() =>
   query.value === ''
@@ -96,10 +93,6 @@ const defaultDisplayValue = (item: any) => {
 const displayValue = computed(() => {
   return props.displayValue ?? defaultDisplayValue;
 });
-
-const removeSelectedItem = (idx: string) => {
-  selected.value?.splice(idx, 1);
-};
 </script>
 
 <template>
@@ -142,13 +135,13 @@ const removeSelectedItem = (idx: string) => {
                   idx,
                   itemText,
                   itemValue,
-                  remove: removeSelectedItem(idx),
+                  remove: () => selected.splice(idx, 1),
                 }"
               >
                 <VBadge
                   color="primary"
                   dismissable
-                  @dismiss="removeSelectedItem(idx)"
+                  @dismiss="selected.splice(idx, 1)"
                   v-bind="selectionItemProps"
                 >
                   {{ item[itemText] }}
@@ -191,7 +184,7 @@ const removeSelectedItem = (idx: string) => {
           </ComboboxButton>
         </div>
       </div>
-      <Transition :name="transition" @after-leave="query = ''">
+      <Transition :name="transition">
         <ComboboxOptions class="autocomplete-options">
           <div v-if="filteredItems.length === 0" class="autocomplete-empty">
             {{ emptyText }}

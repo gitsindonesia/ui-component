@@ -3,7 +3,7 @@ import Autocomplete from './Autocomplete.vue';
 import {ref} from 'vue';
 import {ListboxButton} from '@headlessui/vue';
 import {Field, useForm} from 'vee-validate';
-import {object} from 'yup';
+import {array, object} from 'yup';
 import {VBtn} from '@morpheme/button';
 
 const items = [...Array(10)].map((_, index) => ({
@@ -154,8 +154,8 @@ export const Validation: Story<{}> = (args) => ({
   components: {VBtn, Autocomplete, Field},
   setup() {
     const schema = object({
-      genre: object().required().nullable().label('Genre'),
       gender: object().required().nullable().label('Gender'),
+      genre: array().required().nullable().label('Genre'),
     });
 
     const {handleSubmit, resetForm, values, errors} = useForm({
@@ -186,23 +186,20 @@ export const Validation: Story<{}> = (args) => ({
         text: 'Rock',
         value: 'rock',
       },
+      {
+        text: 'Jazz',
+        value: 'jazz',
+      },
+      {
+        text: 'Hip Hop',
+        value: 'hiphop',
+      },
     ]);
 
     return {onSubmit, resetForm, values, genders, genres, args, errors};
   },
   template: `
     <form @submit="onSubmit" class="border-none">
-      <Field name="genre" v-slot="{field, meta, errors}">
-        <Autocomplete
-          class="mb-4"
-          label="Genre"
-          placeholder="Autocomplete your genre"
-          :items="genres"
-          :error="!meta.valid && meta.touched"
-          :errorMessage="errors[0]"
-          v-bind="field"
-        />
-      </Field>
       <Field name="gender" v-slot="{field, meta, errors}">
         <Autocomplete
           class="mb-4"
@@ -212,6 +209,18 @@ export const Validation: Story<{}> = (args) => ({
           :error="!meta.valid && meta.touched"
           :errorMessage="errors[0]"
           v-bind="field"
+        />
+      </Field>
+      <Field name="genre" v-slot="{field, meta, errors}">
+        <Autocomplete
+          class="mb-4"
+          label="Genre"
+          placeholder="Autocomplete your genre"
+          :items="genres"
+          :error="!meta.valid && meta.touched"
+          :errorMessage="errors[0]"
+          v-bind="field"
+          multiple
         />
       </Field>
       <div class="mt-4">
