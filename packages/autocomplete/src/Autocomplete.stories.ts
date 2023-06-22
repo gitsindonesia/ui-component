@@ -2,6 +2,9 @@ import {Story, Meta} from '@storybook/vue3';
 import Autocomplete from './Autocomplete.vue';
 import {ref} from 'vue';
 import {ListboxButton} from '@headlessui/vue';
+import {Field, useForm} from 'vee-validate';
+import {object} from 'yup';
+import {VBtn} from '@morpheme/button';
 
 const items = [...Array(10)].map((_, index) => ({
   value: index + 1,
@@ -144,5 +147,78 @@ export const DarkMode: Story<typeof Autocomplete> = (args) => ({
       <Autocomplete v-bind="args" label="Default" />
       <Autocomplete v-bind="args" label="Multiple" multiple />
     </div>
+  `,
+});
+
+export const Validation: Story<{}> = (args) => ({
+  components: {VBtn, Autocomplete, Field},
+  setup() {
+    const schema = object({
+      genre: object().required().nullable().label('Genre'),
+      gender: object().required().nullable().label('Gender'),
+    });
+
+    const {handleSubmit, resetForm, values, errors} = useForm({
+      validationSchema: schema,
+    });
+
+    const onSubmit = handleSubmit((values) => {
+      alert(JSON.stringify(values));
+    });
+
+    const genders = ref([
+      {
+        text: 'Male',
+        value: 'male',
+      },
+      {
+        text: 'Female',
+        value: 'female',
+      },
+    ]);
+
+    const genres = ref([
+      {
+        text: 'Pop',
+        value: 'pop',
+      },
+      {
+        text: 'Rock',
+        value: 'rock',
+      },
+    ]);
+
+    return {onSubmit, resetForm, values, genders, genres, args, errors};
+  },
+  template: `
+    <form @submit="onSubmit" class="border-none">
+      <Field name="genre" v-slot="{field, meta, errors}">
+        <Autocomplete
+          class="mb-4"
+          label="Genre"
+          placeholder="Autocomplete your genre"
+          :items="genres"
+          :error="!meta.valid && meta.touched"
+          :errorMessage="errors[0]"
+          v-bind="field"
+        />
+      </Field>
+      <Field name="gender" v-slot="{field, meta, errors}">
+        <Autocomplete
+          class="mb-4"
+          label="Gender"
+          placeholder="Autocomplete your gender"
+          :items="genders"
+          :error="!meta.valid && meta.touched"
+          :errorMessage="errors[0]"
+          v-bind="field"
+        />
+      </Field>
+      <div class="mt-4">
+        <v-btn type="submit">Submit</v-btn>
+        <v-btn type="reset" text @click="resetForm">Reset</v-btn>
+      </div>
+      <pre>{{ {values, errors} }}</pre>
+    </form>
   `,
 });
