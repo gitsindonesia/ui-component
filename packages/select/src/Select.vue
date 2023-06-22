@@ -23,6 +23,10 @@ const props = withDefaults(
     clearable?: boolean;
     clearText?: string;
     error?: boolean;
+    hint?: string;
+    errorMessage?: string;
+    hideError?: boolean;
+    shadow?: boolean;
   }>(),
   {
     itemText: 'text',
@@ -67,6 +71,7 @@ const clear = () => {
       'v-select--multiple': multiple,
       'v-select--clearable': clearable,
       'v-select--error': error,
+      'v-select--shadow': shadow,
     }"
   >
     <ListboxLabel v-if="label" class="v-select-label">{{ label }}</ListboxLabel>
@@ -159,5 +164,13 @@ const clear = () => {
         </ListboxOption>
       </ListboxOptions>
     </Transition>
+    <div v-if="hint" class="v-select-hint">
+      <slot name="hint">
+        {{ hint }}
+      </slot>
+    </div>
+    <div v-if="error && !hideError" class="v-select-error">
+      {{ errorMessage }}
+    </div>
   </Listbox>
 </template>

@@ -50,9 +50,20 @@ Label.args = {
   label: 'Label',
 };
 
+export const Hint = Template.bind({});
+Hint.args = {
+  hint: 'This is a hint',
+};
+
 export const Error = Template.bind({});
 Error.args = {
   error: true,
+  errorMessage: 'This is an error message.',
+};
+
+export const Shadow = Template.bind({});
+Shadow.args = {
+  shadow: true,
 };
 
 export const Disabled = Template.bind({});
