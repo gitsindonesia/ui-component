@@ -6,8 +6,9 @@ import {
   ListboxOption,
   ListboxLabel,
 } from '@headlessui/vue';
-import VIcon from '@morpheme/icon';
 import {ref, watch} from 'vue';
+import VIcon from '@morpheme/icon';
+import VTooltip from '@morpheme/tooltip';
 
 const props = withDefaults(
   defineProps<{
@@ -19,12 +20,16 @@ const props = withDefaults(
     placeholder?: string;
     label?: string;
     transition?: string;
+    clearable?: boolean;
+    clearText?: string;
+    error?: boolean;
   }>(),
   {
     itemText: 'text',
     itemValue: 'value',
     placeholder: 'Choose',
     transition: 'dropdown',
+    clearText: 'Clear',
   },
 );
 
@@ -46,6 +51,10 @@ watch(
 watch(selected, (val) => {
   emit('update:modelValue', val);
 });
+
+const clear = () => {
+  selected.value = props.multiple ? [] : undefined;
+};
 </script>
 
 <template>
@@ -54,6 +63,11 @@ watch(selected, (val) => {
     as="div"
     class="v-select v-select-primary"
     :multiple="multiple"
+    :class="{
+      'v-select--multiple': multiple,
+      'v-select--clearable': clearable,
+      'v-select--error': error,
+    }"
   >
     <ListboxLabel v-if="label" class="v-select-label">{{ label }}</ListboxLabel>
     <slot name="button">
@@ -80,6 +94,23 @@ watch(selected, (val) => {
             </span>
           </div>
         </slot>
+        <VTooltip v-if="selected && clearable">
+          <template #activator>
+            <button
+              type="button"
+              aria-label="Clear"
+              class="v-select-clearable-button"
+              @click="clear"
+            >
+              <VIcon
+                name="heroicons:x-mark"
+                class="v-select-clearable-icon"
+                aria-hidden="true"
+              />
+            </button>
+          </template>
+          <span> {{ clearText }} </span>
+        </VTooltip>
         <VIcon
           name="heroicons:chevron-down"
           class="v-select-icon"

@@ -50,6 +50,21 @@ Label.args = {
   label: 'Label',
 };
 
+export const Error = Template.bind({});
+Error.args = {
+  error: true,
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  disabled: true,
+};
+
+export const Clearable = Template.bind({});
+Clearable.args = {
+  clearable: true,
+};
+
 export const Slots: Story<typeof Select> = (args) => ({
   components: {
     Select,
