@@ -27,7 +27,7 @@ const props = withDefaults(
     emptyText?: string;
     searchBy?: string;
     displayValue?: (item: any) => string;
-    selectionItemProps: InstanceType<typeof VBadge>['$props'];
+    selectionItemProps?: InstanceType<typeof VBadge>['$props'];
     readonly?: boolean;
     shadow?: boolean;
     hint?: string;
@@ -46,23 +46,29 @@ const props = withDefaults(
 const emit =
   defineEmits<{
     (e: 'update:modelValue', value: T): void;
+    (e: 'change', value: T): void;
+    (e: 'update:query', value: string): void;
+    (e: 'clear'): void;
   }>();
 
 const selected = ref(props.modelValue);
+const query = ref('');
 
 watch(
   () => props.modelValue,
   (val) => {
     selected.value = val;
   },
-  {immediate: true},
 );
 
 watch(selected, (val) => {
   emit('update:modelValue', val);
+  emit('change', val);
 });
 
-const query = ref('');
+watch(query, (val) => {
+  emit('update:query', val);
+});
 
 const filteredItems = computed(() =>
   query.value === ''
@@ -78,6 +84,7 @@ const filteredItems = computed(() =>
 const clear = () => {
   query.value = '';
   selected.value = undefined;
+  emit('clear');
 };
 
 const defaultDisplayValue = (item: any) => {
@@ -178,7 +185,7 @@ const displayValue = computed(() => {
           </ComboboxButton>
         </div>
       </div>
-      <Transition :name="transition">
+      <Transition :name="transition" @after-leave="query = ''">
         <ComboboxOptions class="autocomplete-options">
           <div v-if="filteredItems.length === 0" class="autocomplete-empty">
             {{ emptyText }}
