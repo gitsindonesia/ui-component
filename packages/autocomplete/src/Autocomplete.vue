@@ -28,6 +28,11 @@ const props = withDefaults(
     searchBy?: string;
     displayValue?: (item: any) => string;
     selectionItemProps: InstanceType<typeof VBadge>['$props'];
+    readonly?: boolean;
+    shadow?: boolean;
+    hint?: string;
+    errorMessage?: string;
+    hideError?: boolean;
   }>(),
   {
     itemText: 'text',
@@ -90,6 +95,13 @@ const displayValue = computed(() => {
     as="div"
     class="autocomplete autocomplete-primary"
     :multiple="multiple"
+    :class="{
+      'autocomplete--error': error,
+      'autocomplete--selected': !!selected,
+      'autocomplete--disabled': disabled,
+      'autocomplete--readonly': readonly,
+      'autocomplete--shadow': shadow,
+    }"
   >
     <ComboboxLabel v-if="label" class="autocomplete-label">
       {{ label }}
@@ -209,6 +221,14 @@ const displayValue = computed(() => {
           </ComboboxOption>
         </ComboboxOptions>
       </Transition>
+    </div>
+    <p v-if="hint" class="autocomplete-hint">
+      <slot name="hint">
+        {{ hint }}
+      </slot>
+    </p>
+    <div v-if="error && !hideError" class="autocomplete-error">
+      {{ errorMessage }}
     </div>
   </Combobox>
 </template>
