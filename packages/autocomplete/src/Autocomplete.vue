@@ -1,4 +1,4 @@
-<script setup lang="ts" generic="T">
+<script setup lang="ts">
 import {
   Combobox,
   ComboboxButton,
@@ -10,6 +10,8 @@ import {
 import VIcon from '@morpheme/icon';
 import {computed, ref, watch} from 'vue';
 import VBadge from '@morpheme/badge';
+
+type T = Record<string, any>;
 
 const props = withDefaults(
   defineProps<{
@@ -62,8 +64,8 @@ watch(
 );
 
 watch(selected, (val) => {
-  emit('update:modelValue', val);
-  emit('change', val);
+  emit('update:modelValue', val!);
+  emit('change', val!);
 });
 
 watch(query, (val) => {
@@ -94,6 +96,10 @@ const defaultDisplayValue = (item: any) => {
 const displayValue = computed(() => {
   return props.displayValue ?? defaultDisplayValue;
 });
+
+const removeSelectedItem = (idx: string) => {
+  selected.value?.splice(idx, 1);
+};
 </script>
 
 <template>
@@ -136,13 +142,13 @@ const displayValue = computed(() => {
                   idx,
                   itemText,
                   itemValue,
-                  remove: () => selected.splice(idx, 1),
+                  remove: removeSelectedItem(idx),
                 }"
               >
                 <VBadge
                   color="primary"
                   dismissable
-                  @dismiss="selected.splice(idx, 1)"
+                  @dismiss="removeSelectedItem(idx)"
                   v-bind="selectionItemProps"
                 >
                   {{ item[itemText] }}
