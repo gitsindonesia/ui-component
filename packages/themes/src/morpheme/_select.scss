@@ -141,6 +141,16 @@
   }
 
   &-clearable {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom:0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
+
     &-button {
       width: auto;
       cursor: pointer;
@@ -286,5 +296,57 @@
   &--lg &-option {
     --v-select-option-padding-x: var(--size-spacing-5);
     --v-select-option-padding-y: var(--size-spacing-3);
+  }
+
+  &--searchable {
+    .v-select-button {
+      height: auto;
+      min-height: var(--v-select-height);
+      max-height: none;
+      flex-wrap: wrap;
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: 0;
+    }
+
+    .v-select-selected {
+      display: none;
+    }
+  }
+
+  &-selection {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--size-spacing-2);
+    padding: var(--size-spacing-2);
+  }
+
+  &-empty {
+    color: var(--v-select-empty-color);
+    cursor: default;
+    user-select: none;
+    position: relative;
+    padding-top: 0.5rem /* 8px */;
+    padding-bottom: 0.5rem /* 8px */;
+    padding-left: 1rem /* 16px */;
+    padding-right: 1rem /* 16px */;
+  }
+
+  &-input {
+    color: var(--v-input-color);
+    background-color: var(--v-input-bg-color);
+    font-size: var(--v-input-font-size);
+    font-weight: var(--v-input-font-weight);
+    line-height: var(--v-input-line-height);
+    width: auto;
+    flex-grow: 1;
+    border: none;
+    border-radius: var(--v-select-border-radius);
+    
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
   }
 }

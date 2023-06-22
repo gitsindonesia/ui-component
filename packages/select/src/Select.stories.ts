@@ -4,8 +4,9 @@ import Select from './Select.vue';
 import {ref} from 'vue';
 import {ListboxButton} from '@headlessui/vue';
 import {Field, useForm} from 'vee-validate';
-import {object, string} from 'yup';
+import {array, object} from 'yup';
 import {VBtn} from '@morpheme/button';
+import SelectInput from './SelectInput.vue';
 
 const items = [...Array(10)].map((_, index) => ({
   value: index + 1,
@@ -79,6 +80,18 @@ Clearable.args = {
   clearable: true,
 };
 
+export const Searchable = Template.bind({});
+Searchable.args = {
+  searchable: true,
+};
+
+export const SearchableMultiple = Template.bind({});
+SearchableMultiple.args = {
+  searchable: true,
+  multiple: true,
+  clearable: true
+};
+
 export const Slots: Story<typeof Select> = (args) => ({
   components: {
     Select,
@@ -122,11 +135,13 @@ export const DarkMode: Story<typeof Select> = (args) => ({
 });
 
 export const Validation: Story<{}> = (args) => ({
-  components: {VBtn, Select, Field},
+  components: {VBtn, Select, Field, SelectInput},
   setup() {
     const schema = object({
-      genre: object().required().nullable().label('Genre'),
+      genre: array().required().nullable().label('Genre'),
       gender: object().required().nullable().label('Gender'),
+      fruit1: object().required().nullable().label('Fruit 1'),
+      fruit2: array().required().nullable().label('Fruit 2'),
     });
 
     const {handleSubmit, resetForm, values, errors} = useForm({
@@ -148,6 +163,21 @@ export const Validation: Story<{}> = (args) => ({
       },
     ]);
 
+    const fruits = ref([
+      {
+        text: 'Apple',
+        value: 'apple',
+      },
+      {
+        text: 'Manggo',
+        value: 'manggo',
+      },
+      {
+        text: 'Orange',
+        value: 'orange'
+      }
+    ]);
+
     const genres = ref([
       {
         text: 'Pop',
@@ -159,35 +189,63 @@ export const Validation: Story<{}> = (args) => ({
       },
     ]);
 
-    return {onSubmit, resetForm, values, genders, genres, args, errors};
+    const handleReset = () => {
+      resetForm();
+    };
+
+    return {
+      onSubmit,
+      resetForm,
+      values,
+      genders,
+      genres,
+      args,
+      errors,
+      fruits,
+      handleReset,
+    };
   },
   template: `
     <form @submit="onSubmit" class="border-none">
-      <Field name="genre" v-slot="{field, meta, errors}">
-        <Select
-          class="mb-4"
-          label="Genre"
-          placeholder="Select your genre"
-          :items="genres"
-          :error="!meta.valid && meta.touched"
-          :errorMessage="errors[0]"
-          v-bind="field"
-        />
-      </Field>
-      <Field name="gender" v-slot="{field, meta, errors}">
-        <Select
-          class="mb-4"
-          label="Gender"
-          placeholder="Select your gender"
-          :items="genders"
-          :error="!meta.valid && meta.touched"
-          :errorMessage="errors[0]"
-          v-bind="field"
-        />
-      </Field>
+      <SelectInput
+        v-model="values.genre"
+        name="genre"      
+        label="Current genre"
+        placeholder="Select your genre"
+        :items="genres"
+        multiple
+        class="mb-4"
+      />
+      <SelectInput
+        v-model="values.gender"
+        name="gender"      
+        label="Gender"
+        placeholder="Select your gender"
+        :items="genders"
+        class="mb-4"
+      />
+      <SelectInput
+        v-model="values.fruit1"
+        name="fruit1"      
+        label="Fruit 1"
+        placeholder="Choose"
+        :items="fruits"
+        class="mb-4"
+        searchable
+      />
+      <SelectInput
+        v-model="values.fruit2"
+        name="fruit2"      
+        label="Fruit 2"
+        placeholder="Choose"
+        :items="fruits"
+        class="mb-4"
+        searchable
+        multiple
+      />
       <div class="mt-4">
         <v-btn type="submit">Submit</v-btn>
-        <v-btn type="button" text @click="resetForm">Reset</v-btn>
+        <v-btn type="reset" text @click="handleReset">Reset</v-btn>
       </div>
       <pre>{{ {values, errors} }}</pre>
     </form>

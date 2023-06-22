@@ -5,17 +5,26 @@ import {
   ListboxOptions,
   ListboxOption,
   ListboxLabel,
+  Combobox,
+  ComboboxInput,
+  ComboboxOptions,
+  ComboboxOption,
+  ComboboxButton,
+  ComboboxLabel
 } from '@headlessui/vue';
-import {ref, watch} from 'vue';
 import VIcon from '@morpheme/icon';
 import VTooltip from '@morpheme/tooltip';
+import {computed, ref} from 'vue';
+import VBadge from '@morpheme/badge';
 
 type T = Record<string, any>;
+type ModelValue = T | T[] | undefined
 
 const props = withDefaults(
   defineProps<{
-    modelValue?: T | T[];
-    items: T[];
+    modelValue?: ModelValue;
+    value?: T | T[];
+    items?: T[];
     multiple?: boolean;
     itemText?: string;
     itemValue?: string;
@@ -29,6 +38,12 @@ const props = withDefaults(
     errorMessage?: string;
     hideError?: boolean;
     shadow?: boolean;
+    searchable?: boolean;
+    disabled?: boolean;
+    emptyText?: string;
+    searchBy?: string;
+    selectionItemProps?: InstanceType<typeof VBadge>['$props'];
+    displayValue?: (item: any) => string;
   }>(),
   {
     itemText: 'text',
@@ -36,71 +51,141 @@ const props = withDefaults(
     placeholder: 'Choose',
     transition: 'dropdown',
     clearText: 'Clear',
+    emptyText: 'No results.',
+    items: () => []
   },
 );
 
 const emit =
   defineEmits<{
-    (e: 'update:modelValue', value: T | T[]): void;
+    (e: 'update:modelValue', value: ModelValue): void;
   }>();
 
-const selected = ref(props.modelValue);
+const clear = () => {
+  const newValue = props.multiple ? [] as T[] : undefined;
+  emit('update:modelValue', newValue);
+};
 
-watch(
-  () => props.modelValue,
-  (val) => {
-    selected.value = val;
-  },
+const selectedValue = computed(() => props.value || props.modelValue);
+
+const query = ref('');
+
+const filteredItems = computed(() =>
+  query.value === ''
+    ? props.items
+    : props.items.filter((item) =>
+        String(item[props.searchBy || props.itemText || props.itemValue])
+          .toLowerCase()
+          .replace(/\s+/g, '')
+          .includes(query.value.toLowerCase().replace(/\s+/g, '')),
+      ),
 );
 
-watch(selected, (val) => {
-  emit('update:modelValue', val!);
-});
-
-const clear = () => {
-  selected.value = props.multiple ? [] : undefined;
+const defaultDisplayValue = (item: any) => {
+  return item?.[props.itemText] || '';
 };
+
+const displayValue = computed(() => {
+  return props.displayValue ?? defaultDisplayValue;
+});
 </script>
 
 <template>
-  <Listbox
-    v-model="selected"
+  <component
+    :is="searchable ? Combobox : Listbox"
+    :model-value="modelValue"
+    @update:modelValue="emit('update:modelValue', $event)"
     as="div"
-    class="v-select v-select-primary"
+    class="v-select"
     :multiple="multiple"
     :class="{
       'v-select--multiple': multiple,
       'v-select--clearable': clearable,
       'v-select--error': error,
       'v-select--shadow': shadow,
+      'v-select--searchable': searchable,
+      'v-select--disabled': disabled,
     }"
   >
-    <ListboxLabel v-if="label" class="v-select-label">{{ label }}</ListboxLabel>
+    <component :is="searchable ? ComboboxLabel : ListboxLabel" v-if="label" class="v-select-label"> 
+      {{ label }}
+     </component>
     <slot name="button">
-      <ListboxButton class="v-select-button">
+      <component
+        :is="searchable ? ComboboxButton : ListboxButton"
+        class="v-select-button"
+      >
+        <slot
+          v-if="searchable"
+          name="selection"
+          v-bind="{
+            selectedValue,
+            multiple,
+            itemValue,
+            itemText,
+            selectionItemProps,
+          }"
+        >
+          <div
+            v-if="multiple && selectedValue && selectedValue.length > 0"
+            class="v-select-selection"
+          >
+            <template v-for="(item, idx) in selectedValue" :key="idx">
+              <slot
+                name="selection-item"
+                v-bind="{
+                  item,
+                  idx,
+                  itemText,
+                  itemValue,
+                  remove: () => selectedValue.splice(idx, 1),
+                }"
+              >
+                <VBadge
+                  color="primary"
+                  dismissable
+                  @dismiss="selectedValue.splice(idx, 1)"
+                  v-bind="selectionItemProps"
+                >
+                  {{ item[itemText] }}
+                </VBadge>
+              </slot>
+            </template>
+          </div>
+        </slot>
+
+        <ComboboxInput
+          v-if="searchable"
+          class="v-select-input"
+          :display-value="displayValue ?? defaultDisplayValue"
+          :placeholder="placeholder"
+          :disabled="disabled"
+          @change="query = $event.target.value"
+        />
         <slot
           name="selected"
-          v-bind="{multiple, selected, placeholder, itemText, itemValue}"
+          v-bind="{multiple, selectedValue, placeholder, itemText, itemValue}"
         >
           <div
             class="v-select-selected"
             :class="{
-              'v-select-selected--placeholder': !selected,
+              'v-select-selected--placeholder': !selectedValue,
             }"
           >
             <span v-if="multiple">
               {{
-                selected && selected?.length > 0
-                  ? `${selected?.length} selected`
+                selectedValue && selectedValue?.length > 0
+                  ? `${selectedValue?.length} selected`
                   : placeholder
               }}
             </span>
             <span v-else>
-              {{ selected ? (selected as T)[itemText] : placeholder }}
+              {{ selectedValue ? (selectedValue as T)[itemText] : placeholder }}
             </span>
           </div>
         </slot>
-        <VTooltip v-if="selected && clearable">
+        <div class="v-select-clearable">
+        <VTooltip v-if="selectedValue && selectedValue.length && clearable">
           <template #activator>
             <button
               type="button"
@@ -123,12 +208,20 @@ const clear = () => {
           size="sm"
           aria-hidden="true"
         />
-      </ListboxButton>
+      </div>
+      </component>
     </slot>
     <Transition :name="transition">
-      <ListboxOptions class="v-select-options">
-        <ListboxOption
-          v-for="(item, idx) in items"
+      <component
+        :is="searchable ? ComboboxOptions : ListboxOptions"
+        class="v-select-options"
+      >
+        <div v-if="filteredItems?.length < 1" class="v-select-empty">
+          {{ emptyText }}
+        </div>
+        <component
+          :is="searchable ? ComboboxOption : ListboxOption"
+          v-for="(item, idx) in filteredItems"
           :key="idx"
           :value="item"
           as="template"
@@ -162,8 +255,8 @@ const clear = () => {
               <div class="v-select-option-text">{{ item[itemText] }}</div>
             </div>
           </slot>
-        </ListboxOption>
-      </ListboxOptions>
+        </component>
+      </component>
     </Transition>
     <div v-if="hint" class="v-select-hint">
       <slot name="hint">
@@ -173,5 +266,5 @@ const clear = () => {
     <div v-if="error && !hideError" class="v-select-error">
       {{ errorMessage }}
     </div>
-  </Listbox>
+  </component>
 </template>
