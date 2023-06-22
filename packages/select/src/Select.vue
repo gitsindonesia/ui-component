@@ -1,4 +1,4 @@
-<script setup lang="ts" generic="T">
+<script setup lang="ts">
 import {
   Listbox,
   ListboxButton,
@@ -10,9 +10,11 @@ import {ref, watch} from 'vue';
 import VIcon from '@morpheme/icon';
 import VTooltip from '@morpheme/tooltip';
 
+type T = Record<string, any>;
+
 const props = withDefaults(
   defineProps<{
-    modelValue?: T;
+    modelValue?: T | T[];
     items: T[];
     multiple?: boolean;
     itemText?: string;
@@ -39,7 +41,7 @@ const props = withDefaults(
 
 const emit =
   defineEmits<{
-    (e: 'update:modelValue', value: T): void;
+    (e: 'update:modelValue', value: T | T[]): void;
   }>();
 
 const selected = ref(props.modelValue);
@@ -49,11 +51,10 @@ watch(
   (val) => {
     selected.value = val;
   },
-  {immediate: true},
 );
 
 watch(selected, (val) => {
-  emit('update:modelValue', val);
+  emit('update:modelValue', val!);
 });
 
 const clear = () => {
@@ -89,13 +90,13 @@ const clear = () => {
           >
             <span v-if="multiple">
               {{
-                selected && selected.length > 0
+                selected && selected?.length > 0
                   ? `${selected?.length} selected`
                   : placeholder
               }}
             </span>
             <span v-else>
-              {{ selected ? selected[itemText] : placeholder }}
+              {{ selected ? (selected as T)[itemText] : placeholder }}
             </span>
           </div>
         </slot>
