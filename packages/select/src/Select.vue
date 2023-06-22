@@ -138,7 +138,7 @@ const displayValue = computed(() => {
                   idx,
                   itemText,
                   itemValue,
-                  remove: () => selectedValue.splice(idx, 1),
+                  remove: () => selectedValue?.splice(idx, 1),
                 }"
               >
                 <VBadge
