@@ -15,7 +15,7 @@ type T = Record<string, any>;
 
 const props = withDefaults(
   defineProps<{
-    modelValue?: T;
+    modelValue?: T | [];
     items: T[];
     multiple?: boolean;
     itemText?: string;
