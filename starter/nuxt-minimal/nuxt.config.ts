@@ -4,4 +4,9 @@ export default defineNuxtConfig({
   typescript: {
     shim: false,
   },
+  morpheme: {
+    theme: 'morpheme',
+    sass: true,
+    darkMode: false,
+  },
 });

@@ -12,8 +12,9 @@ export default defineNuxtConfig({
       include: ['yup'],
     },
   },
-  gitsUi: {
-    // uncomment to enable dark mode
-    // darkMode: true,
+  morpheme: {
+    theme: 'morpheme',
+    sass: true,
+    darkMode: false,
   },
 });

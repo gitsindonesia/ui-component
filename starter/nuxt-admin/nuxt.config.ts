@@ -18,8 +18,9 @@ export default defineNuxtConfig({
     shim: false,
   },
   // https://gitsindonesia.github.io/ui-component/guide/nuxt.html#options
-  gitsUi: {
-    // enable dark mode
+  morpheme: {
+    theme: 'morpheme',
+    sass: true,
     darkMode: true,
   },
   // https://color-mode.nuxtjs.org
