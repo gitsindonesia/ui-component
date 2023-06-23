@@ -231,6 +231,10 @@
     color: var(--color-error-500);
     font-size: var(--v-select-error-font-size, var(--size-font-sm));
     margin-top: var(--v-select-error-margin-top, var(--size-spacing-1));
+
+    &:empty {
+      display: none;
+    }
   }
 
   &-label {
@@ -249,6 +253,10 @@
     font-size: var(--v-select-hint-font-size);
     color: var(--v-select-hint-color);
     margin-top: var(--v-select-hint-margin-top);
+
+    &:empty {
+      display: none;
+    }
   }
 
   /* sizes */
