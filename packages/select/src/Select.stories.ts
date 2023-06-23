@@ -92,18 +92,29 @@ SearchableMultiple.args = {
   clearable: true
 };
 
+export const Uncontrolled: Story<typeof Select> = (args) => ({
+  components: {
+    Select,
+  },
+  setup() {
+    return {args};
+  },
+  template: `
+    <Select v-bind="args" />
+  `,
+});
+
 export const Slots: Story<typeof Select> = (args) => ({
   components: {
     Select,
     ListboxButton,
   },
   setup() {
-    const value = ref();
-    return {args, value};
+    return {args};
   },
   template: `
     <p>Custom Button</p>
-    <Select v-bind="args" v-model="value">
+    <Select v-bind="args">
       <template #button>
         <ListboxButton class="relative w-full py-2 pl-3 pr-10 text-left bg-white border border-gray-300 rounded-md shadow-sm cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
           <span class="block truncate">Select an option</span>
@@ -113,6 +124,43 @@ export const Slots: Story<typeof Select> = (args) => ({
             </svg>
           </span>
         </ListboxButton>
+      </template>
+    </Select>
+    
+    <Select v-bind="args" class="mb-4" label="Custom Render Item" multiple>
+      <template v-slot:item="{active, selected, item}">
+        <div
+          class="px-4 py-3 flex gap-2"
+          :class="{
+            'bg-gray-100 dark:bg-gray-true-800': active,
+            'text-primary-500': selected,
+          }"
+        >
+          <div class="flex-grow">{{ item.text }}</div>
+          <span v-if="selected">✅</span>
+        </div>
+      </template>
+    </Select>
+
+    <Select v-bind="args" class="mb-4" label="Custom Selection" multiple>
+      <template v-slot:selection="{active, selected, item}">
+        <div
+          v-if="selected"
+          class="autocomplete-selection"
+        >
+          {{ selected.length }} Selected
+        </div>
+      </template>
+    </Select>
+
+    <Select v-bind="args" class="mb-4" label="Custom Selection Item" multiple>
+      <template v-slot:selection-item="{item, remove}">
+        <div
+          class="px-2 py-1 text-sm rounded-full bg-error-500 text-white"
+        >
+          {{ item.text }}
+          <button @click="remove">&times;</button>
+        </div>
       </template>
     </Select>
   `,

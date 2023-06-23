@@ -14,7 +14,7 @@ import {
 } from '@headlessui/vue';
 import VIcon from '@morpheme/icon';
 import VTooltip from '@morpheme/tooltip';
-import {computed, ref} from 'vue';
+import {computed, ref, watch} from 'vue';
 import VBadge from '@morpheme/badge';
 
 type T = Record<string, any>;
@@ -61,14 +61,35 @@ const emit =
     (e: 'update:modelValue', value: ModelValue): void;
   }>();
 
+const selectedValue = ref(props.value || props.modelValue)
+const query = ref('');
+
+watch(
+  () => props.modelValue,
+  (newValue) => {
+    if (newValue !== selectedValue.value) {
+      selectedValue.value = newValue;
+    }
+  },
+);
+
+watch(
+  () => props.value,
+  (newValue) => {
+    if (newValue !== selectedValue.value) {
+      selectedValue.value = newValue;
+    }
+  },
+);
+
+watch(selectedValue, val => {
+  emit('update:modelValue', val);
+})
+
 const clear = () => {
   const newValue = props.multiple ? [] as T[] : undefined;
-  emit('update:modelValue', newValue);
+  selectedValue.value = newValue
 };
-
-const selectedValue = computed(() => props.value || props.modelValue);
-
-const query = ref('');
 
 const filteredItems = computed(() =>
   query.value === ''
@@ -93,8 +114,7 @@ const displayValue = computed(() => {
 <template>
   <component
     :is="searchable ? Combobox : Listbox"
-    :model-value="modelValue"
-    @update:modelValue="emit('update:modelValue', $event)"
+    v-model="selectedValue"
     as="div"
     class="v-select"
     :multiple="multiple"
