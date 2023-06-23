@@ -74,11 +74,10 @@ const modelMultiple = ref();
       </div>
     </VCard>
 
-    <VCard title="Sizes">
+    <VCard title="Searchable">
       <div>
-        <VSelect :items="items" size="sm" />
-        <VSelect :items="items" size="md" />
-        <VSelect :items="items" size="lg" />
+        <VSelect :items="items" searchable label="Default" />
+        <VSelect :items="items" searchable multiple label="Multiple" />
       </div>
     </VCard>
   </div>
