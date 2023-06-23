@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Icon as Iconify } from '@iconify/vue/dist/offline';
 import { loadIcon } from '@iconify/vue';
-import { computed, ref, watch } from 'vue';
+import { computed, defineComponent, h, ref, shallowRef, watch } from 'vue';
 import { type DefaultSizes, defaultSizes } from '@morpheme/theme/defaultTheme';
 
 export type Props = {
@@ -14,82 +14,49 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 const isFetching = ref(false);
-const icon = ref();
+const icon = shallowRef();
 
 const isMorphemeIcons = computed(() => {
   return props.name.startsWith('untitled:') || props.name.startsWith('remix:') || props.name.startsWith('iconsax:') || props.name.startsWith('vuesax:')
 })
 
 function normalizeName(name: string) {
-  name = name.replace('untitled:', '')
+  name = String(name).replace('untitled:', '')
     .replace('remix:', '')
     .replace('iconsax:', '')
     .replace('vuesax:', '')
-    .replace('-icon', '')
 
-  return toPascalCase(name) + 'Icon'
+  return toKebabCase(name)
 }
 
-function toPascalCase(string: string) {
-  return `${string}`
-    .toLowerCase()
-    .replace(new RegExp(/[-_]+/, 'g'), ' ')
-    .replace(new RegExp(/[^\w\s]/, 'g'), '')
-    .replace(
-      new RegExp(/\s+(.)(\w*)/, 'g'),
-      ($1, $2, $3) => `${$2.toUpperCase() + $3}`
-    )
-    .replace(new RegExp(/\w/), s => s.toUpperCase());
+function toKebabCase(string: string) {
+  return string.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, '$1-$2').toLowerCase()
 }
 
 async function loadIconComponent() {
   isFetching.value = true;
-
-  if (props.name.startsWith('untitled:')) {
-    const icons = await import('@morphemeicons/vue/untitled/esm/index')
-    icon.value = (icons as any)[normalizeName(props.name)];
-  }
-  else if (props.name.startsWith('remix:')) {
-    const icons = await import('@morphemeicons/vue/remix/esm/index')
-    icon.value = (icons as any)[normalizeName(props.name)];
-  }
-  else if (props.name.startsWith('iconsax') || props.name.startsWith('vuesax')) {
-    const [, name] = props.name.split(':')
+  if (isMorphemeIcons.value) {
+    const [collection, name] = props.name.split(':')
     const [variant, iconName] = name.split('/')
-    switch (variant) {
-      case 'outline': {
-        const icons = await import('@morphemeicons/vue/iconsax/outline/esm/index')
-        icon.value = (icons as any)[normalizeName(iconName)];
-      }
-      break;
-      case 'bulk': {
-        const icons = await import('@morphemeicons/vue/iconsax/bulk/esm/index')
-        icon.value = (icons as any)[normalizeName(iconName)];
-      }
-      break;
-      case 'broken': {
-        const icons = await import('@morphemeicons/vue/iconsax/broken/esm/index')
-        icon.value = (icons as any)[normalizeName(iconName)];
-      }
-      break;
-      case 'linear': {
-        const icons = await import('@morphemeicons/vue/iconsax/linear/esm/index')
-        icon.value = (icons as any)[normalizeName(iconName)];
-      }
-      break;
-      case 'solid': {
-        const icons = await import('@morphemeicons/vue/iconsax/solid/esm/index')
-        icon.value = (icons as any)[normalizeName(iconName)];
-      }
-      break;
-      case 'twotone': {
-        const icons = await import('@morphemeicons/vue/iconsax/twotone/esm/index')
-        icon.value = (icons as any)[normalizeName(iconName)];
-      }
-      break;
-      default:
-        console.error(`Variant ${variant} is not supported`)
-      break;
+    const variantName = collection === 'iconsax' ? `/${variant}` : ''
+    const formattedName = normalizeName(iconName || name)
+    try {
+      const res = await fetch(`https://cdn.jsdelivr.net/npm/morphemeicons@0.2.0/${collection}${variantName}/${formattedName}.svg`)
+      const content = await res.text()
+      icon.value = defineComponent({
+        setup() {
+          return () => h('span', {
+            innerHTML: res.status === 200 ? content : props.name,
+            class: classes.value,
+            style: style.value,
+            ...ariaProps
+          })
+        }
+      })
+    } catch(e: any) {
+      console.warn(`Icon ${props.name} not found`)
+    } finally {
+      isFetching.value = false;
     }
   }
   else {

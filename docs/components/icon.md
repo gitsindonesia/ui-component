@@ -51,6 +51,36 @@ The `VIcon` component allows you to specify the size of the icon using the `size
 
 </LivePreview>
 
+### Morpheme Icons
+
+You can use the morpheme icon collections by using these prefixes: `untitled:`, `remix:` and `iconsax`.
+
+<LivePreview src="components-icon--morpheme-icons">
+
+```vue
+<template>
+  <p class="font-medium mb-2">Default Collection</p>
+  <VIcon name="ri:home-line" />
+  <VIcon name="ic:round-local-activity" />
+  <VIcon name="ph:activity-bold" />
+
+  <p class="font-medium mb-2 mt-5">HypenCase</p>
+  <VIcon name="remix:home-line" />
+  <VIcon name="untitled:activity-heart" />
+  <VIcon name="iconsax:outline/add" />
+  <VIcon name="iconsax:bulk/add" />
+  <VIcon name="iconsax:broken/add" />
+  <VIcon name="iconsax:linear/add" />
+  <VIcon name="iconsax:solid/add" />
+  <VIcon name="iconsax:twotone/add" />
+
+  <p class="font-medium mb-2 mt-5">Non exist</p>
+  <VIcon v-bind='args' name="remix:non-exist-icon" />
+</template>
+```
+
+</LivePreview>
+
 ## Props
 
 | Name            | Type                                                                | Default |
