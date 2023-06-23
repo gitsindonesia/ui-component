@@ -10,7 +10,7 @@ import {
   ComboboxOptions,
   ComboboxOption,
   ComboboxButton,
-  ComboboxLabel
+  ComboboxLabel,
 } from '@headlessui/vue';
 import VIcon from '@morpheme/icon';
 import VTooltip from '@morpheme/tooltip';
@@ -18,7 +18,7 @@ import {computed, ref, watch} from 'vue';
 import VBadge from '@morpheme/badge';
 
 type T = Record<string, any>;
-type ModelValue = T | T[] | undefined
+type ModelValue = T | T[] | undefined;
 
 const props = withDefaults(
   defineProps<{
@@ -52,7 +52,7 @@ const props = withDefaults(
     transition: 'dropdown',
     clearText: 'Clear',
     emptyText: 'No results.',
-    items: () => []
+    items: () => [],
   },
 );
 
@@ -61,7 +61,7 @@ const emit =
     (e: 'update:modelValue', value: ModelValue): void;
   }>();
 
-const selectedValue = ref(props.value || props.modelValue)
+const selectedValue = ref(props.value || props.modelValue);
 const query = ref('');
 
 watch(
@@ -82,13 +82,13 @@ watch(
   },
 );
 
-watch(selectedValue, val => {
+watch(selectedValue, (val) => {
   emit('update:modelValue', val);
-})
+});
 
 const clear = () => {
-  const newValue = props.multiple ? [] as T[] : undefined;
-  selectedValue.value = newValue
+  const newValue = props.multiple ? ([] as T[]) : undefined;
+  selectedValue.value = newValue;
 };
 
 const filteredItems = computed(() =>
@@ -127,9 +127,13 @@ const displayValue = computed(() => {
       'v-select--disabled': disabled,
     }"
   >
-    <component :is="searchable ? ComboboxLabel : ListboxLabel" v-if="label" class="v-select-label"> 
+    <component
+      :is="searchable ? ComboboxLabel : ListboxLabel"
+      v-if="label"
+      class="v-select-label"
+    >
       {{ label }}
-     </component>
+    </component>
     <slot name="button">
       <component
         :is="searchable ? ComboboxButton : ListboxButton"
@@ -181,6 +185,7 @@ const displayValue = computed(() => {
           :placeholder="placeholder"
           :disabled="disabled"
           @change="query = $event.target.value"
+          @keydown.enter="query = ''"
         />
         <slot
           name="selected"
@@ -205,33 +210,33 @@ const displayValue = computed(() => {
           </div>
         </slot>
         <div class="v-select-clearable">
-        <VTooltip v-if="selectedValue && selectedValue.length && clearable">
-          <template #activator>
-            <button
-              type="button"
-              aria-label="Clear"
-              class="v-select-clearable-button"
-              @click="clear"
-            >
-              <VIcon
-                name="heroicons:x-mark"
-                class="v-select-clearable-icon"
-                aria-hidden="true"
-              />
-            </button>
-          </template>
-          <span> {{ clearText }} </span>
-        </VTooltip>
-        <VIcon
-          name="heroicons:chevron-down"
-          class="v-select-icon"
-          size="sm"
-          aria-hidden="true"
-        />
-      </div>
+          <VTooltip v-if="selectedValue && selectedValue.length && clearable">
+            <template #activator>
+              <button
+                type="button"
+                aria-label="Clear"
+                class="v-select-clearable-button"
+                @click="clear"
+              >
+                <VIcon
+                  name="heroicons:x-mark"
+                  class="v-select-clearable-icon"
+                  aria-hidden="true"
+                />
+              </button>
+            </template>
+            <span> {{ clearText }} </span>
+          </VTooltip>
+          <VIcon
+            name="heroicons:chevron-down"
+            class="v-select-icon"
+            size="sm"
+            aria-hidden="true"
+          />
+        </div>
       </component>
     </slot>
-    <Transition :name="transition">
+    <Transition :name="transition" @after-leave="query = ''">
       <component
         :is="searchable ? ComboboxOptions : ListboxOptions"
         class="v-select-options"
