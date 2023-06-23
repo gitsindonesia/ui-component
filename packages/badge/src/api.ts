@@ -11,7 +11,6 @@ export const VBadgeInjectionKey = Symbol("VBadge");
 export function useBadge() {
   const context = inject(VBadgeInjectionKey) as VBadgeContextApi; 
   if (!context) {
-    console.error("VBadge injection was not found");
     return;
   }
 
