@@ -1,3 +1,4 @@
+import VIcon from '@morpheme/icon';
 import {Story, Meta} from '@storybook/vue3';
 import {themeColors} from '@morpheme/utils';
 import Select from './Select.vue';
@@ -108,6 +109,7 @@ export const Slots: Story<typeof Select> = (args) => ({
   components: {
     Select,
     ListboxButton,
+    VIcon
   },
   setup() {
     return {args};
@@ -116,12 +118,10 @@ export const Slots: Story<typeof Select> = (args) => ({
     <p>Custom Button</p>
     <Select v-bind="args">
       <template #button>
-        <ListboxButton class="relative w-full py-2 pl-3 pr-10 text-left bg-white border border-gray-300 rounded-md shadow-sm cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+        <ListboxButton class="relative w-full py-2 pl-3 pr-10 text-left bg-white border border-gray-300 rounded-full shadow-sm cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
           <span class="block truncate">Select an option</span>
           <span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-            <svg class="w-5 h-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7l3-3 3 3m0 6l-3 3-3-3"></path>
-            </svg>
+            <VIcon name="heroicons:chevron-up-down" class="w-4 h-4 text-gray-400" />
           </span>
         </ListboxButton>
       </template>
@@ -161,6 +161,25 @@ export const Slots: Story<typeof Select> = (args) => ({
           {{ item.text }}
           <button @click="remove">&times;</button>
         </div>
+      </template>
+    </Select>
+
+    <Select v-bind="args" class="mb-4" label="Custom Hint" multiple>
+      <template v-slot:hint>
+        <p class="italic">This is a <span class="text-primary-500 font-medium">hint</span></p>
+      </template>
+    </Select>
+
+    <Select
+      v-bind="args"
+      label="Custom Error"
+      error
+      error-message="This is an error message"
+    >
+      <template v-slot:error="{errorMessage}">
+        <p class="text-red-700 font-medium">
+          {{ errorMessage }}
+        </p>
       </template>
     </Select>
   `,

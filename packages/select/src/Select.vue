@@ -283,13 +283,15 @@ const displayValue = computed(() => {
         </component>
       </component>
     </Transition>
-    <div v-if="hint" class="v-select-hint">
-      <slot name="hint">
+    <div class="v-select-hint">
+      <slot name="hint" :hint="hint">
         {{ hint }}
       </slot>
     </div>
     <div v-if="error && !hideError" class="v-select-error">
-      {{ errorMessage }}
+      <slot name="error" v-bind="{error, errorMessage, hideError}">
+        {{ errorMessage }}
+      </slot>
     </div>
   </component>
 </template>
