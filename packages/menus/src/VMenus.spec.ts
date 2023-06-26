@@ -1,5 +1,6 @@
 import { mount } from "@vue/test-utils";
 import VMenus from "./VMenus.vue";
+import VMenusItem from "./VMenusItem.vue";
 
 describe("VMenus", () => {
   it("renders the menu button with the given label", () => {
@@ -55,4 +56,29 @@ describe("VMenus", () => {
   });
 
   // Add more test cases as needed
+});
+
+describe("VMenusItem", () => {
+  it("renders the menu button with the given label", () => {
+    const wrapper = mount(VMenusItem, {
+      slots: {
+        default: 'Menu Item'
+      }
+    });
+
+    expect(wrapper.text()).toContain('Menu Item');
+  });
+
+  it("renders as divider", () => {
+    const wrapper = mount(VMenusItem, {
+      props: {
+        divider: true
+      },
+      slots: {
+        default: 'Menu Item'
+      }
+    });
+
+    expect(wrapper.html()).toContain('v-list-item-divider');
+  });
 });
