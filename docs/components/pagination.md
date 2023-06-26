@@ -34,9 +34,45 @@ const itemsPerPage = ref(10);
 
 </LivePreview>
 
-::: info
-The `VPagination` component is registered globally when you install with `@morpheme/ui`. So you don't need to import it manually.
-:::
+### Variants
+
+The pagination component supports three variants by default in which `default`, `text` and `text-rounded`.
+
+<LivePreview src="components-pagination--variants" height="80">
+
+```vue
+<script setup lang="ts">
+import {ref} from 'vue';
+
+const page = ref(1);
+const totalItems = ref(100);
+const itemsPerPage = ref(10);
+</script>
+
+<template>
+  <VPagination
+    v-model="page"
+    :total-items="totalItems"
+    :items-per-page="itemsPerPage"
+  />
+  <!-- variant: text -->
+  <VPagination
+    v-model="page"
+    :total-items="totalItems"
+    :items-per-page="itemsPerPage"
+    variant="text"
+  />
+  <!-- variant: text-rounded -->
+  <VPagination
+    v-model="page"
+    :total-items="totalItems"
+    :items-per-page="itemsPerPage"
+    variant="text-rounded"
+  />
+</template>
+```
+
+</LivePreview>
 
 ### Sizes
 
