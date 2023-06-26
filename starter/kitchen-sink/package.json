@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@morpheme/design-tokens": "0.1.0-alpha.5",
-    "@morpheme/nuxt": "1.0.0-alpha.327",
+    "@morpheme/nuxt": "1.0.0-alpha.330",
     "@morphemeicons/vue": "^0.2.0"
   },
   "devDependencies": {
@@ -90,12 +90,12 @@
       "@morpheme/tailwind-config": "1.0.0-alpha.222",
       "@morpheme/text": "1.0.0-alpha.222",
       "@morpheme/theme": "1.0.0-alpha.222",
-      "@morpheme/themes": "1.0.0-alpha.327",
+      "@morpheme/themes": "1.0.0-alpha.330",
       "@morpheme/timeline": "1.0.0-alpha.222",
       "@morpheme/toast": "1.0.0-alpha.222",
       "@morpheme/tooltip": "1.0.0-alpha.222",
       "@morpheme/utils": "1.0.0-alpha.222",
-      "@morpheme/ui": "1.0.0-alpha.327"
+      "@morpheme/ui": "1.0.0-alpha.330"
     }
   }
 }
