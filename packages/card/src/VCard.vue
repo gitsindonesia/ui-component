@@ -1,45 +1,53 @@
 <script setup lang="ts">
-import { computed, PropType, resolveComponent } from "vue";
-import VCardImage from "./VCardImage.vue";
+import {computed, PropType, resolveComponent} from 'vue';
+import VCardImage from './VCardImage.vue';
 
-export type CardShadow = boolean | "sm" | "md" | "lg" | "xl" | "2xl" | "inner" | "none";
+export type CardShadow =
+  | boolean
+  | 'sm'
+  | 'md'
+  | 'lg'
+  | 'xl'
+  | '2xl'
+  | 'inner'
+  | 'none';
 
 const props = defineProps({
   title: {
     type: String,
-    default: "",
+    default: '',
   },
   defaultWrapperClass: {
     type: String,
-    default: "",
+    default: '',
   },
   defaultHeaderClass: {
     type: String,
-    default: "card-header",
+    default: 'card-header',
   },
   defaultFooterClass: {
     type: String,
-    default: "card-footer",
+    default: 'card-footer',
   },
   defaultBodyClass: {
     type: String,
-    default: "card-body",
+    default: 'card-body',
   },
   wrapperClass: {
     type: String,
-    default: "",
+    default: '',
   },
   headerClass: {
     type: String,
-    default: "",
+    default: '',
   },
   footerClass: {
     type: String,
-    default: "",
+    default: '',
   },
   bodyClass: {
     type: String,
-    default: "",
+    default: '',
   },
   hideHeader: {
     type: Boolean,
@@ -54,8 +62,8 @@ const props = defineProps({
     default: false,
   },
   borderPosition: {
-    type: String as PropType<"top" | "left" | "bottom" | "right">,
-    default: "top",
+    type: String as PropType<'top' | 'left' | 'bottom' | 'right'>,
+    default: 'top',
   },
   flat: {
     type: Boolean,
@@ -71,11 +79,11 @@ const props = defineProps({
   },
   color: {
     type: String,
-    default: "default",
+    default: 'default',
   },
   as: {
     type: String,
-    default: "div",
+    default: 'div',
   },
   href: {
     type: String,
@@ -109,10 +117,12 @@ const props = defineProps({
 });
 
 const tag = computed(() => {
-  if (props.href) return "a";
+  if (props.href) return 'a';
 
   if (props.to) {
-    return props.nuxt ? resolveComponent("NuxtLink") : resolveComponent("RouterLink");
+    return props.nuxt
+      ? resolveComponent('NuxtLink')
+      : resolveComponent('RouterLink');
   }
 
   return props.as;
@@ -120,10 +130,10 @@ const tag = computed(() => {
 
 const classes = computed(() => {
   const shadowClass = props.flat
-    ? "card--shadow-none"
-    : typeof props.shadow === "string"
+    ? 'card--shadow-none'
+    : typeof props.shadow === 'string'
     ? `card--shadow-${props.shadow}`
-    : "card--shadow";
+    : 'card--shadow';
 
   return [
     `card card-${props.color}`,
@@ -131,7 +141,7 @@ const classes = computed(() => {
     props.wrapperClass,
     shadowClass,
     {
-      "card--bordered": props.bordered,
+      'card--bordered': props.bordered,
       [`card--bordered-${props.borderPosition}`]: props.bordered,
     },
   ];
@@ -153,9 +163,14 @@ const attrs = computed(() => {
 </script>
 
 <template>
-  <component :is="tag" :class="classes" v-bind="{ ...$attrs, ...attrs }">
+  <component :is="tag" :class="classes" v-bind="{...$attrs, ...attrs}">
     <slot name="image">
-      <VCardImage :src="image" :alt="imageAlt" :class="imageClass" />
+      <VCardImage
+        v-if="image"
+        :src="image"
+        :alt="imageAlt"
+        :class="imageClass"
+      />
     </slot>
     <div v-if="!hideHeader" :class="[defaultHeaderClass, headerClass]">
       <slot name="header.prepend" />
