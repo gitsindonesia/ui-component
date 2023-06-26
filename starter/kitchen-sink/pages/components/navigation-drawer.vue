@@ -5,6 +5,8 @@ const isExpanded = ref(true);
 const drawerOverlay = ref(false);
 const drawerLeft = ref(false);
 const drawerRight = ref(false);
+const drawerTop = ref(false);
+const drawerBottom = ref(false);
 const drawerCustomTransition = ref(false);
 </script>
 
@@ -100,6 +102,18 @@ const drawerCustomTransition = ref(false);
 
     <VCard title="Placement">
       <div class="flex relative">
+        <VBtn class="" @click="drawerLeft = !drawerLeft">
+          Open Default (Left) Drawer
+        </VBtn>
+        <VBtn class="ml-2" @click="drawerRight = !drawerRight">
+          Open Right Drawer
+        </VBtn>
+        <VBtn class="ml-2" @click="drawerTop = !drawerTop">
+          Open Top Drawer
+        </VBtn>
+        <VBtn class="ml-2" @click="drawerBottom = !drawerBottom">
+          Open Bottom Drawer
+        </VBtn>
         <VNavDrawer
           v-model="drawerLeft"
           color="dark"
@@ -119,12 +133,26 @@ const drawerCustomTransition = ref(false);
         >
           <p class="font-semibold p-6 truncate">Left</p>
         </VNavDrawer>
-        <VBtn class="" @click="drawerLeft = !drawerLeft">
-          Open Default (Left) Drawer
-        </VBtn>
-        <VBtn class="ml-2" @click="drawerRight = !drawerRight">
-          Open Right Drawer
-        </VBtn>
+        <VNavDrawer
+          v-model="drawerTop"
+          color="dark"
+          overlay
+          fixed
+          class="!z-20 right-0"
+          top
+        >
+          <p class="font-semibold p-6 truncate">Top</p>
+        </VNavDrawer>
+        <VNavDrawer
+          v-model="drawerBottom"
+          color="dark"
+          overlay
+          fixed
+          class="!z-20 right-0"
+          bottom
+        >
+          <p class="font-semibold p-6 truncate">Bottom</p>
+        </VNavDrawer>
       </div>
     </VCard>
 
