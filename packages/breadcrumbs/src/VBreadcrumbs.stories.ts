@@ -1,3 +1,4 @@
+import { Dropdown, DropdownBtn, DropdownItem } from '@morpheme/dropdown';
 import VBreadcrumbs from './VBreadcrumbs.vue';
 import {Meta, Story} from '@storybook/vue3';
 import Icon from '@morpheme/icon';
@@ -187,6 +188,44 @@ const items = ref<VBreadcrumbItem[]>([
     },
   },
 };
+
+export const WithDropdown: Story = (args) => ({
+  components: {VBreadcrumbs, VBreadcrumbsItem, VBreadcrumbsDivider, Icon,
+    Dropdown,
+    DropdownBtn,
+    DropdownItem,
+  },
+  setup() {
+    return {args};
+  },
+  template: `
+<v-breadcrumbs>
+  <v-breadcrumbs-item to="/">
+    Home
+  </v-breadcrumbs-item>
+  <v-breadcrumbs-divider />
+  <v-breadcrumbs-item to="/account">
+    Account
+  </v-breadcrumbs-item>
+  <v-breadcrumbs-divider />
+  <Dropdown>
+    <template #activator>
+      <DropdownBtn text icon fab size="sm">...</DropdownBtn>
+    </template>
+    <DropdownItem to="/account/profile">
+      Profile
+    </DropdownItem>
+    <DropdownItem to="/account/settings">
+      Settings
+    </DropdownItem>
+  </Dropdown>
+  <v-breadcrumbs-divider />
+  <v-breadcrumbs-item to="/account/profile" disabled>
+    Profile
+  </v-breadcrumbs-item>
+</v-breadcrumbs>
+`,
+});
 
 export const DarkMode = () => ({
   components: {VBreadcrumbs},
