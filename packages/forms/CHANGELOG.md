@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.10](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2023-06-26)
+
+
+### Bug Fixes
+
+* **FileUpload:** fix dark mode ([182760e](https://github.com/gitsindonesia/ui-component/commit/182760eb6d822a51e03de761231603aea0d5f410))
+* **Textarea:** fix error text position ([a47255f](https://github.com/gitsindonesia/ui-component/commit/a47255f103ca20205ed673eee6a18f7ece60989e))
+
+
+### Features
+
+* **InputRange:** add dark mode support ([d78a4e8](https://github.com/gitsindonesia/ui-component/commit/d78a4e8077bd03ba14a96cc18e3fa415b4c75f60))
+* **VInput:** add new expose `focus` ([94d92ce](https://github.com/gitsindonesia/ui-component/commit/94d92cebcdf38a4b854ecb16b2fc5e2b444a3d39))
+
+
+
+
+
 # [1.0.0-beta.8](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2023-04-03)
 
 **Note:** Version bump only for package @morpheme/forms

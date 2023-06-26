@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.10](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2023-06-26)
+
+
+### Bug Fixes
+
+* **Tabs:** adjust tabs styles ([66de23e](https://github.com/gitsindonesia/ui-component/commit/66de23eb32579c667ed6a9e12dea4817e336eff4))
+* **Tabs:** rename type `VTabItem` to `VTabItemProps` ([eb47718](https://github.com/gitsindonesia/ui-component/commit/eb47718d0f18fb4985fa227644602327afcca748))
+
+
+### Features
+
+* **Tabs:** add new `grow` style ([5a2bbc6](https://github.com/gitsindonesia/ui-component/commit/5a2bbc603f4168dc9a8c45df1d7aa4c7baf6f062))
+* **Tabs:** add new `segemented-control-rounded` variant ([71cefbc](https://github.com/gitsindonesia/ui-component/commit/71cefbce48836324cb8e78ad470900c281723968))
+* **Tabs:** add underline effect on headless ui tabs ([2f4802f](https://github.com/gitsindonesia/ui-component/commit/2f4802f5a923043c21f82b0f569d4dfe1019ac32))
+
+
+
+
+
 # [1.0.0-beta.8](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2023-04-03)
 
 **Note:** Version bump only for package @morpheme/tabs

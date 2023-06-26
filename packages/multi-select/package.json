@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/multi-select",
-  "version": "1.0.0-beta.9",
+  "version": "1.0.0-beta.10",
   "description": "Vue Multi Select Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -16,18 +16,18 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@morpheme/badge": "^1.0.0-beta.9",
-    "@morpheme/forms": "^1.0.0-beta.9",
-    "@morpheme/icon": "^1.0.0-beta.9",
-    "@morpheme/tooltip": "^1.0.0-beta.9",
+    "@morpheme/badge": "^1.0.0-beta.10",
+    "@morpheme/forms": "^1.0.0-beta.10",
+    "@morpheme/icon": "^1.0.0-beta.10",
+    "@morpheme/tooltip": "^1.0.0-beta.10",
     "@vueuse/core": "^7.7.1",
     "vee-validate": "^4.6.1",
     "vue": "^3.3.4"
   },
   "devDependencies": {
     "@headlessui/vue": "^1.7.13",
-    "@morpheme/button": "^1.0.0-beta.9",
-    "@morpheme/tailwind-config": "^1.0.0-beta.9",
+    "@morpheme/button": "^1.0.0-beta.10",
+    "@morpheme/tailwind-config": "^1.0.0-beta.10",
     "@morpheme/utils": "^1.0.0-beta.9",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",

@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.10](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2023-06-26)
+
+
+### Bug Fixes
+
+* **Breadcrumbs:** fix export of item and divider components & rename type `VBreadcrumbsItem` to `VBreadcrumbsItemProps` ([9d37d98](https://github.com/gitsindonesia/ui-component/commit/9d37d98b4ab2136687b1ae0b9b7daf21f54fba5c))
+
+
+### Features
+
+* **Badge:** add new badge group components ([093c91d](https://github.com/gitsindonesia/ui-component/commit/093c91de6c6f3a108d2169cdba17a9d481a6fa96))
+* **Card:** add new card image props and `VCardImage` component ([7633344](https://github.com/gitsindonesia/ui-component/commit/7633344443b8d00ed263b7a23ff590284896f8fb))
+* **List:** add new components: `VListItemTitle`, `VListItemSubTitle` and `VListItemContent` ([db1862a](https://github.com/gitsindonesia/ui-component/commit/db1862a0a0a05a91fe2a5870dd67f6990376e66b))
+* **nuxt:** auto-import `VMain` component ([66a82eb](https://github.com/gitsindonesia/ui-component/commit/66a82eb2c4af575dcb36707a3860f69f8e85c93b))
+* **nuxt:** auto-import a new `VDivider` component ([90ac13d](https://github.com/gitsindonesia/ui-component/commit/90ac13d0ea7dc807466d529b03dafa21f36eb62d))
+* **nuxt:** auto-import bottom navigation components ([d65e284](https://github.com/gitsindonesia/ui-component/commit/d65e28443499f08b91b90334e8d9911154934dff))
+
+
+
+
+
 # [1.0.0-beta.8](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2023-04-03)
 
 

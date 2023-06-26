@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.10](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2023-06-26)
+
+
+### Features
+
+* **Container:** rework container component ([f1dfcf6](https://github.com/gitsindonesia/ui-component/commit/f1dfcf6692e9571a6b3ba9adf130c4caf6e4ee65))
+
+
+
+
+
 # [1.0.0-beta.8](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2023-04-03)
 
 **Note:** Version bump only for package @morpheme/container

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.10](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2023-06-26)
+
+
+### Bug Fixes
+
+* **Alert:** fix alert icon color ([38ed425](https://github.com/gitsindonesia/ui-component/commit/38ed425af3e19b64efa9aaea1ae7deef5097e06b))
+
+
+### Features
+
+* **Alert:** add new `bordered` style (previously called `border`) ([2663c38](https://github.com/gitsindonesia/ui-component/commit/2663c3897c93beefef539555e18c77844b11a88c))
+
+
+
+
+
 # [1.0.0-beta.8](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2023-04-03)
 
 **Note:** Version bump only for package @morpheme/alert

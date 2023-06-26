@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.10](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2023-06-26)
+
+
+### Bug Fixes
+
+* **Card:** fix dark mode color ([fc0160e](https://github.com/gitsindonesia/ui-component/commit/fc0160ee7fc69f3cc20bf808f0559a412b049c45))
+
+
+### Features
+
+* **Card!:** change card `bordered` styles ([138b2dc](https://github.com/gitsindonesia/ui-component/commit/138b2dc68dc51aef17de19bf7416c0e43f3cf682))
+* **Card:** add new card image props and `VCardImage` component ([7633344](https://github.com/gitsindonesia/ui-component/commit/7633344443b8d00ed263b7a23ff590284896f8fb))
+* **Card:** add new card variant: `bodyless` ([c6dfa57](https://github.com/gitsindonesia/ui-component/commit/c6dfa5709bf12bb88fe8c53a6a9eb34fa3cb63f0))
+* **Card:** allow to change root component as anchor or custom component ([50a63a8](https://github.com/gitsindonesia/ui-component/commit/50a63a8a0f323f66b0e0c3dcd964d03632f2bf32))
+
+
+
+
+
 # [1.0.0-beta.8](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2023-04-03)
 
 **Note:** Version bump only for package @morpheme/card

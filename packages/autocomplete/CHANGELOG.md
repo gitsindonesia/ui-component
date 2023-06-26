@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.10](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2023-06-26)
+
+
+### Bug Fixes
+
+* **Autocomplete:** fix `error` and `hint` elements placement ([4177efe](https://github.com/gitsindonesia/ui-component/commit/4177efe24779498e59bee98b32c6cbd3309475ac))
+* **Autocomplete:** revert legacy styles ([6cdd3f4](https://github.com/gitsindonesia/ui-component/commit/6cdd3f41e0ce3e57195a36278399965a75a9e587))
+
+
+### Features
+
+* **Autocomplete:** add new experimental `Autocomplete` component ([19b8271](https://github.com/gitsindonesia/ui-component/commit/19b8271439181acdb8c11614a78906e70c9a46c6))
+* **Autocomplete:** change default transition to `fade` ([370bde6](https://github.com/gitsindonesia/ui-component/commit/370bde60d64da170ed2754b6b4ee4361ce444f75))
+
+
+
+
+
 # [1.0.0-beta.8](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2023-04-03)
 
 **Note:** Version bump only for package @morpheme/autocomplete

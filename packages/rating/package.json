@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/rating",
-  "version": "1.0.0-beta.9",
+  "version": "1.0.0-beta.10",
   "description": "Vue Rating Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -20,7 +20,7 @@
     "vue": "^3.3.4"
   },
   "devDependencies": {
-    "@morpheme/tailwind-config": "^1.0.0-beta.9",
+    "@morpheme/tailwind-config": "^1.0.0-beta.10",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
     "tailwindcss": "^3.3.1",

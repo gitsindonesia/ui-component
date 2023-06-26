@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/toast",
-  "version": "1.0.0-beta.9",
+  "version": "1.0.0-beta.10",
   "description": "Toast component for Vue 3",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,14 +15,14 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@morpheme/button": "^1.0.0-beta.9",
-    "@morpheme/icon": "^1.0.0-beta.9",
+    "@morpheme/button": "^1.0.0-beta.10",
+    "@morpheme/icon": "^1.0.0-beta.10",
     "vee-validate": "^4.5.9",
     "vue": "^3.3.4"
   },
   "devDependencies": {
     "@headlessui/vue": "^1.7.13",
-    "@morpheme/tailwind-config": "^1.0.0-beta.9",
+    "@morpheme/tailwind-config": "^1.0.0-beta.10",
     "@morpheme/theme": "^1.0.0-beta.9",
     "@morpheme/utils": "^1.0.0-beta.9",
     "@vue/test-utils": "^2.0.0-rc.17",

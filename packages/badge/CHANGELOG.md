@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.10](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2023-06-26)
+
+
+### Features
+
+* **Badge:** add new badge group components ([093c91d](https://github.com/gitsindonesia/ui-component/commit/093c91de6c6f3a108d2169cdba17a9d481a6fa96))
+* **Badge:** add new badge variant: `dot` ([bf4b46f](https://github.com/gitsindonesia/ui-component/commit/bf4b46f42cd4c9f2f8eda0443f88aa61aa083189))
+
+
+
+
+
 # [1.0.0-beta.8](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2023-04-03)
 
 **Note:** Version bump only for package @morpheme/badge

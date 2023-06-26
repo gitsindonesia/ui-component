@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.10](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2023-06-26)
+
+
+### Bug Fixes
+
+* **NavDrawer:** apply `z-index` to `fixed` nav drawer ([53c0eb6](https://github.com/gitsindonesia/ui-component/commit/53c0eb6c9b6a3c722e8e7ee74bbdfe94b43685bc))
+* **NavDrawer:** fix dark mode colors ([f2a67d5](https://github.com/gitsindonesia/ui-component/commit/f2a67d58b1a2acc0c21a49df901871db6360d32b))
+* **NavDrawer:** fix nav drawer border color on dark mode ([bdd72ad](https://github.com/gitsindonesia/ui-component/commit/bdd72ad13384e93a3ad9fdafa5860119058f9c82))
+
+
+### Features
+
+* **NavDrawer:** added new two positions for nav drawer: `top` and `bottom` ([641b457](https://github.com/gitsindonesia/ui-component/commit/641b4571311378a6f93bbfe0edb310ec4cd0f68b))
+
+
+
+
+
 # [1.0.0-beta.8](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2023-04-03)
 
 **Note:** Version bump only for package @morpheme/nav-drawer

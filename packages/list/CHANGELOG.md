@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.10](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2023-06-26)
+
+
+### Features
+
+* **List:** add a new `large` size for `VList` ([3279e04](https://github.com/gitsindonesia/ui-component/commit/3279e047942464e3e1f484747eda4efc9293bec0))
+* **List:** add a new active state variant ([8855d70](https://github.com/gitsindonesia/ui-component/commit/8855d7017b5a83bcb3ec2bf3afe62dbb71254719))
+* **List:** add a new context API for `VList` component ([65775f2](https://github.com/gitsindonesia/ui-component/commit/65775f2cd09da687f35d92a3fecb89432d147edc))
+* **List:** add new components: `VListItemTitle`, `VListItemSubTitle` and `VListItemContent` ([db1862a](https://github.com/gitsindonesia/ui-component/commit/db1862a0a0a05a91fe2a5870dd67f6990376e66b))
+* **List:** add new variant `mini` ([2acc37b](https://github.com/gitsindonesia/ui-component/commit/2acc37b7898f9de5cf9b20e877ba914991b54af8))
+
+
+
+
+
 # [1.0.0-beta.8](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2023-04-03)
 
 **Note:** Version bump only for package @morpheme/list

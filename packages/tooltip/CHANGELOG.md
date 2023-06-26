@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.10](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2023-06-26)
+
+
+### Features
+
+* **Tooltip:** add CSS Vars for tooltip and dark mode ([082fff5](https://github.com/gitsindonesia/ui-component/commit/082fff58762d4bd74630c636f872032b69cda00f))
+* **Tooltip:** add max width, fix padding and change placement ([6bd4bc2](https://github.com/gitsindonesia/ui-component/commit/6bd4bc22a47926bb76c1be3123f0abce833e51cf))
+
+
+
+
+
 # [1.0.0-beta.8](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2023-04-03)
 
 **Note:** Version bump only for package @morpheme/tooltip

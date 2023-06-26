@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.10](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2023-06-26)
+
+
+### Features
+
+* **Dropdown:** add new `DropdownBtn` component ([39b156d](https://github.com/gitsindonesia/ui-component/commit/39b156dc1aee14c1c5f9a9970b0aa3fe1d1f7112))
+* **Dropdown:** change default dropdown transition to `dropdown` ([ca56b1a](https://github.com/gitsindonesia/ui-component/commit/ca56b1a69ea7317747836a529bd392e7471e3c87))
+
+
+
+
+
 # [1.0.0-beta.8](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2023-04-03)
 
 **Note:** Version bump only for package @morpheme/dropdown

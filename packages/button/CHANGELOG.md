@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.10](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2023-06-26)
+
+
+### Bug Fixes
+
+* **Button:** fix dark mode color ([34e6aa7](https://github.com/gitsindonesia/ui-component/commit/34e6aa71ff2a5214d32bfc545866ee0992b4ed0c))
+
+
+### Features
+
+* **Button:** add new `soft` variant ([3ec2ba5](https://github.com/gitsindonesia/ui-component/commit/3ec2ba5c66276f980f21b08d73afa16709c7eb3c))
+
+
+
+
+
 # [1.0.0-beta.8](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2023-04-03)
 
 **Note:** Version bump only for package @morpheme/button

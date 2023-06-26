@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/progress-bar",
-  "version": "1.0.0-beta.9",
+  "version": "1.0.0-beta.10",
   "description": "Morpheme Progress Bar Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@headlessui/vue": "^1.7.13",
-    "@morpheme/tailwind-config": "^1.0.0-beta.9",
+    "@morpheme/tailwind-config": "^1.0.0-beta.10",
     "@morpheme/utils": "^0.0.0",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",

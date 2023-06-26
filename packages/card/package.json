@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/card",
-  "version": "1.0.0-beta.9",
+  "version": "1.0.0-beta.10",
   "description": "Morpheme Card Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -18,8 +18,8 @@
     "vue": "^3.3.4"
   },
   "devDependencies": {
-    "@morpheme/button": "^1.0.0-beta.9",
-    "@morpheme/tailwind-config": "^1.0.0-beta.9",
+    "@morpheme/button": "^1.0.0-beta.10",
+    "@morpheme/tailwind-config": "^1.0.0-beta.10",
     "@morpheme/theme": "^1.0.0-beta.9",
     "@morpheme/utils": "^1.0.0-beta.9",
     "@vitejs/plugin-vue": "^4.2.0",
