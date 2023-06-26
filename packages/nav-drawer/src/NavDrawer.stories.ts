@@ -286,12 +286,17 @@ export const CustomColor: StoryFn<typeof NavDrawer> = (args) => ({
 export const DarkMode: StoryFn<typeof NavDrawer> = (args) => ({
   components: {NavDrawer},
   setup() {
-    return {args};
+    const colors = ['default', 'primary', 'secondary', 'dark'];
+    return {args, colors};
   },
   template: `
   <div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
-    <NavDrawer v-bind='args'>
-      <p>Default</p>
+    <NavDrawer v-bind='args'
+      v-for="color in colors"
+      :key="color"
+      :color="color"
+    >
+      <p>{{ color }}</p>
     </NavDrawer>
 
     <NavDrawer v-bind='args' bordered class="mt-5">
