@@ -164,17 +164,12 @@ const attrs = computed(() => {
 
 <template>
   <component :is="tag" :class="classes" v-bind="{...$attrs, ...attrs}">
-    <slot name="image">
-      <VCardImage
-        v-if="image"
-        :src="image"
-        :alt="imageAlt"
-        :class="imageClass"
-      />
+    <slot v-if="image" name="image" v-bind="{image, alt: imageAlt, imageClass}">
+      <VCardImage :src="image" :alt="imageAlt" :class="imageClass" />
     </slot>
     <div v-if="!hideHeader" :class="[defaultHeaderClass, headerClass]">
       <slot name="header.prepend" />
-      <slot name="header">
+      <slot name="header" v-bind="{title}">
         <div class="card-title" v-if="title">{{ title }}</div>
       </slot>
       <slot name="header.append" />
