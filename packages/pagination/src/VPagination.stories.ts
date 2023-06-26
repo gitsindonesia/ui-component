@@ -1,6 +1,8 @@
 import {Meta, Story} from '@storybook/vue3';
 import VPagination from './VPagination.vue';
 
+const variants = ['default', 'text', 'text-rounded']
+
 export default {
   title: 'Components/Pagination',
   component: VPagination,
@@ -124,16 +126,40 @@ export const Slots: Story = (args) => ({
   `,
 });
 
+export const Variants: Story = (args) => ({
+  components: {VPagination},
+  setup() {
+    return {args,
+      variants
+    };
+  },
+  template: `
+  <v-pagination
+    v-bind="args"
+    v-for="variant in variants"
+    :key="variant"
+    :variant="variant"
+    class="mb-4"
+   />
+  `,
+});
+
 export const DarkMode: Story = (args) => ({
   components: {
     VPagination,
   },
   setup() {
-    return {args};
+    return {args, variants};
   },
   template: `
 <div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
-  <v-pagination v-bind="args" />
+  <v-pagination
+  v-bind="args"
+    v-for="variant in variants"
+    :key="variant"
+    :variant="variant"
+    class="mb-4"
+  />
 </div>
   `,
 });

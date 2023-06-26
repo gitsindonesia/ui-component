@@ -28,5 +28,21 @@
         );
       }
     }
+
+    // variants
+    &--text-rounded,
+    &--text {
+      --v-pagination-item-bg-color: transparent;
+      --v-pagination-item-text-color: var(--color-gray-200);
+      --v-pagination-item-border-color: transparent;
+      --v-pagination-item-active-bg-color: var(--color-gray-true-600);
+      --v-pagination-item-active-text-color: initial;
+      --v-pagination-item-active-border-color: transparent;
+      --v-pagination-item-hover-bg-color: transparent;
+      --v-pagination-item-hover-text-color: initial;
+      --v-pagination-item-disabled-bg-color: transparent;
+      --v-pagination-item-disabled-text-color: var(--color-gray-true-500);
+      --v-pagination-item-disabled-border-color: transparent;
+    }
   }
 }

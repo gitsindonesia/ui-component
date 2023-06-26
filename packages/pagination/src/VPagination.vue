@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {computed, ref, toRefs, watch} from 'vue';
+import {type PropType, computed, ref, toRefs, watch} from 'vue';
 import Pagino from 'pagino';
 import VPaginationItem from './VPaginationItem.vue';
 import VIcon from '@morpheme/icon';
@@ -85,6 +85,10 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  variant: {
+    type: String as PropType<'default' | 'text' | 'text-rounded'>,
+    default: 'default'
+  }
 });
 
 const emit =
@@ -153,6 +157,7 @@ watch(
     aria-label="Pagination"
     class="v-pagination"
     :class="[
+      `v-pagination--${variant}`,
       `v-pagination--${size}`,
       {
         'v-pagination--flat': flat,

@@ -151,4 +151,31 @@
     padding: var(--v-pagination-lg-item-action-padding-y)
       var(--v-pagination-lg-item-action-padding-x);
   }
+
+  // variants
+  &--text-rounded,
+  &--text {
+    --v-pagination-item-bg-color: transparent;
+    --v-pagination-item-text-color: var(--color-gray-700);
+    --v-pagination-item-border-color: transparent;
+    --v-pagination-item-active-bg-color: var(--color-gray-100);
+    --v-pagination-item-active-text-color: initial;
+    --v-pagination-item-active-border-color: transparent;
+    --v-pagination-item-hover-bg-color: transparent;
+    --v-pagination-item-hover-text-color: initial;
+    --v-pagination-item-disabled-bg-color: transparent;
+    --v-pagination-item-disabled-text-color: var(--color-gray-400);
+    --v-pagination-item-disabled-border-color: transparent;
+    --v-pagination-shadow: none;
+    --v-pagination-item-border-radius: var(--border-radius-lg);
+    --v-pagination-border-radius: 0px;
+
+    .v-pagination-item {
+      border-radius: var(--v-pagination-item-border-radius);
+    }
+  }
+
+  &--text-rounded {
+    --v-pagination-item-border-radius: 20px;
+  }
 }
