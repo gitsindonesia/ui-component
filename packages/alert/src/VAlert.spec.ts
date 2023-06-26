@@ -1,6 +1,8 @@
 import {mount} from '@vue/test-utils';
 import VAlert from './VAlert.vue';
 import Icon from '@morpheme/icon';
+import VAlertTitle from './VAlertTitle.vue';
+import VAlertGroup from './VAlertGroup.vue';
 
 const ALERT_TEXT = 'Alert text';
 
@@ -28,7 +30,7 @@ describe('VAlert', () => {
     test('is render icon component', () => {
       const wrapper = mount(VAlert, {
         props: {
-          icon: 'test-icon',
+          icon: 'ri:alert-line',
         },
       });
 
@@ -129,6 +131,18 @@ describe('VAlert', () => {
         expect(wrapper.html()).toContain('alert--bordered');
       });
     });
+
+    describe('when bordered props is true', () => {
+      test('render bordered class', () => {
+        const wrapper = mount(VAlert, {
+          props: {
+            bordered: true,
+          },
+        });
+
+        expect(wrapper.html()).toContain('alert--bordered');
+      });
+    });
   });
 
   describe('when default slot replaced', () => {
@@ -150,3 +164,32 @@ describe('VAlert', () => {
     });
   });
 });
+
+
+describe('VAlertTitle', () => {
+  test('render properly with default props and slot', () => {
+    const wrapper = mount(VAlertTitle, {
+      slots: {
+        default: 'Title',
+      }
+    });
+
+    expect(wrapper).toBeDefined();
+    expect(wrapper.html()).toContain('alert-title');
+    expect(wrapper.html()).toContain('Title');
+  });
+})
+
+describe('VAlertGroup', () => {
+  test('render properly with default props and slot', () => {
+    const wrapper = mount(VAlertGroup, {
+      slots: {
+        default: 'Title',
+      }
+    });
+
+    expect(wrapper).toBeDefined();
+    expect(wrapper.html()).toContain('alert-group');
+    expect(wrapper.html()).toContain('Title');
+  });
+})
