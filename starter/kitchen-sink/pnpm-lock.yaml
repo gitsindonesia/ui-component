@@ -28,7 +28,7 @@ overrides:
   '@morpheme/multi-select': 1.0.0-alpha.309
   '@morpheme/nav-drawer': 1.0.0-alpha.222
   '@morpheme/navbar': 1.0.0-alpha.323
-  '@morpheme/pagination': 1.0.0-alpha.222
+  '@morpheme/pagination': 1.0.0-alpha.327
   '@morpheme/popover': 1.0.0-alpha.222
   '@morpheme/progress-bar': 1.0.0-alpha.222
   '@morpheme/progress-circular': 1.0.0-alpha.222
@@ -40,26 +40,26 @@ overrides:
   '@morpheme/stats': 1.0.0-alpha.309
   '@morpheme/stepper': 1.0.0-alpha.222
   '@morpheme/switch': 1.0.0-alpha.222
-  '@morpheme/table': 1.0.0-alpha.222
+  '@morpheme/table': 1.0.0-alpha.327
   '@morpheme/tabs': 1.0.0-alpha.229
   '@morpheme/tailwind-components': 1.0.0-alpha.222
   '@morpheme/tailwind-config': 1.0.0-alpha.222
   '@morpheme/text': 1.0.0-alpha.222
   '@morpheme/theme': 1.0.0-alpha.222
-  '@morpheme/themes': 1.0.0-alpha.325
+  '@morpheme/themes': 1.0.0-alpha.327
   '@morpheme/timeline': 1.0.0-alpha.222
   '@morpheme/toast': 1.0.0-alpha.222
   '@morpheme/tooltip': 1.0.0-alpha.222
   '@morpheme/utils': 1.0.0-alpha.222
-  '@morpheme/ui': 1.0.0-alpha.325
+  '@morpheme/ui': 1.0.0-alpha.327
 
 dependencies:
   '@morpheme/design-tokens':
     specifier: 0.1.0-alpha.5
     version: 0.1.0-alpha.5
   '@morpheme/nuxt':
-    specifier: 1.0.0-alpha.325
-    version: 1.0.0-alpha.325(nuxt@3.5.2)(vite@4.3.9)
+    specifier: 1.0.0-alpha.327
+    version: 1.0.0-alpha.327(nuxt@3.5.2)(vite@4.3.9)
   '@morphemeicons/vue':
     specifier: ^0.2.0
     version: 0.2.0(vue@3.3.4)
@@ -1298,10 +1298,10 @@ packages:
       - ts-node
     dev: false
 
-  /@morpheme/nuxt@1.0.0-alpha.325(nuxt@3.5.2)(vite@4.3.9):
-    resolution: {integrity: sha512-hLUEUNOxZsbSb0NeAI/Cg6ukChL5390Qg1iVYJSWmpdMTaM+ApYdqP4LWuvZxbbIqldmZ46z6xgtC8DOZlXazA==}
+  /@morpheme/nuxt@1.0.0-alpha.327(nuxt@3.5.2)(vite@4.3.9):
+    resolution: {integrity: sha512-GD1dGI0NXg5YF3xHfovYEBL+FEATpdcja3IWltB+KUh//a8wVnQDH5/rfJ0ZFyM/nkJdxmVry6mbzT52Ncxfrw==}
     dependencies:
-      '@morpheme/ui': 1.0.0-alpha.325
+      '@morpheme/ui': 1.0.0-alpha.327
       '@nuxt/devtools-kit': 0.5.5(nuxt@3.5.2)(vite@4.3.9)
       '@nuxt/kit': 3.5.2
     transitivePeerDependencies:
@@ -1313,8 +1313,8 @@ packages:
       - vite
     dev: false
 
-  /@morpheme/pagination@1.0.0-alpha.222:
-    resolution: {integrity: sha512-EjbI2PBqZW8MCmVSeZLfmyXird2Ok1d5VTSqzaVRGe3oGYuQ5qH1GQUoy7H6icKSlSJi1ipVpERSIVIKnK2Peg==}
+  /@morpheme/pagination@1.0.0-alpha.327:
+    resolution: {integrity: sha512-e3/ml4xHWJ8FUmk8cppTi4BkMjDu99ypqbprk2pZ9FuHvDAcz7G+oAtronDXk3Sd3BstIn53EugWFe/xLRtPOQ==}
     dependencies:
       pagino: 1.4.2
       vue: 3.3.4
@@ -1413,12 +1413,12 @@ packages:
       vue: 3.3.4
     dev: false
 
-  /@morpheme/table@1.0.0-alpha.222:
-    resolution: {integrity: sha512-GXwxiD0eOx/Ef80qGYmVbvpx+U+2npfPUmhDYSbejI1hilZwbMJxO7axc+0CJJwMKKixmw//CnQqTgjMc+atDg==}
+  /@morpheme/table@1.0.0-alpha.327:
+    resolution: {integrity: sha512-DEOIL5qOcDEqmN5kaZbjaA3ogAmBYpghR4zUCzFbntStaH9S3hd0vx463k7PjZABefS9kKQjrydtmDhkhjawSg==}
     dependencies:
       '@morpheme/forms': 1.0.0-alpha.222
       '@morpheme/icon': 1.0.0-alpha.286
-      '@morpheme/pagination': 1.0.0-alpha.222
+      '@morpheme/pagination': 1.0.0-alpha.327
       '@morpheme/spinner': 1.0.0-alpha.222
       '@morpheme/utils': 1.0.0-alpha.222
       vue: 3.3.4
@@ -1474,8 +1474,8 @@ packages:
       - ts-node
     dev: false
 
-  /@morpheme/themes@1.0.0-alpha.325:
-    resolution: {integrity: sha512-NPU8eCRhO+OzYDxQyWfokrZAhZKMdszF4XzkfAIM8+xeK18rxNzrhI9oNWdxirSiZdP2G5+uTCMT19I5d9PlJQ==}
+  /@morpheme/themes@1.0.0-alpha.327:
+    resolution: {integrity: sha512-5MtNsPMx+JpwqMmZzAnSvC0zZZGkZxxiRCugRuBbo6cz431+lhvClsZs97FnDdr0NiiuDclGD6XeUzCE4Un/tg==}
     dependencies:
       '@morpheme/design-tokens': 0.1.0-alpha.5
       vue: 3.3.4
@@ -1506,8 +1506,8 @@ packages:
       vue: 3.3.4
     dev: false
 
-  /@morpheme/ui@1.0.0-alpha.325:
-    resolution: {integrity: sha512-dBhVtXxEV6XJhkkhHoqA57I+lb6TabF7/wqYTZDHBQ8Km7Cgd5ToSqpyqOI/lBaImr2O0O8TogA0u3ZcuoYZZw==}
+  /@morpheme/ui@1.0.0-alpha.327:
+    resolution: {integrity: sha512-KGbbB8uUr/3JGs+DW5SiIMed4cLuMSJ7XVv/f7DEe83L23Kh1kNS/W9dKw/yilc1uC2JpS4XRRmeqSOPm+aaYw==}
     dependencies:
       '@headlessui/vue': 1.7.13(vue@3.3.4)
       '@morpheme/alert': 1.0.0-alpha.222
@@ -1538,7 +1538,7 @@ packages:
       '@morpheme/multi-select': 1.0.0-alpha.309
       '@morpheme/nav-drawer': 1.0.0-alpha.222
       '@morpheme/navbar': 1.0.0-alpha.323
-      '@morpheme/pagination': 1.0.0-alpha.222
+      '@morpheme/pagination': 1.0.0-alpha.327
       '@morpheme/popover': 1.0.0-alpha.222
       '@morpheme/progress-bar': 1.0.0-alpha.222
       '@morpheme/progress-circular': 1.0.0-alpha.222
@@ -1550,13 +1550,13 @@ packages:
       '@morpheme/stats': 1.0.0-alpha.309
       '@morpheme/stepper': 1.0.0-alpha.222
       '@morpheme/switch': 1.0.0-alpha.222
-      '@morpheme/table': 1.0.0-alpha.222
+      '@morpheme/table': 1.0.0-alpha.327
       '@morpheme/tabs': 1.0.0-alpha.229
       '@morpheme/tailwind-components': 1.0.0-alpha.222
       '@morpheme/tailwind-config': 1.0.0-alpha.222
       '@morpheme/text': 1.0.0-alpha.222
       '@morpheme/theme': 1.0.0-alpha.222
-      '@morpheme/themes': 1.0.0-alpha.325
+      '@morpheme/themes': 1.0.0-alpha.327
       '@morpheme/timeline': 1.0.0-alpha.222
       '@morpheme/toast': 1.0.0-alpha.222
       '@morpheme/tooltip': 1.0.0-alpha.222

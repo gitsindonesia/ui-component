@@ -2,6 +2,8 @@
 const page = ref(1);
 const totalItems = ref(100);
 const itemsPerPage = ref(10);
+
+const variants = ref(['default', 'text', 'text-rounded'])
 </script>
 
 <template>
@@ -14,6 +16,20 @@ const itemsPerPage = ref(10);
           v-model="page"
           :total-items="totalItems"
           :items-per-page="itemsPerPage"
+        />
+      </div>
+    </VCard>
+
+    <VCard title="Variants">
+      <div>
+        <VPagination
+          v-model="page"
+          v-for="variant in variants"
+          :total-items="totalItems"
+          :items-per-page="itemsPerPage"
+          :key="variant"
+          :variant="variant"
+          class="mb-3"
         />
       </div>
     </VCard>
