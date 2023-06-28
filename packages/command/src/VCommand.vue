@@ -108,7 +108,7 @@ onUnmounted(() => {
           />
         </div>
       </div>
-      <ComboboxOptions class="v-command-options">
+      <ComboboxOptions static class="v-command-options">
         <VList flush>
           <slot
             name="empty"
