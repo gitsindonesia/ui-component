@@ -11,7 +11,8 @@ import VIcon from '@morpheme/icon';
 import {List as VList, ListItem as VListItem} from '@morpheme/list';
 
 interface Props {
-  modelValue?: Record<string, any>;
+  modelValue?: boolean;
+  selected?: Record<string, any>;
   items?: Record<string, any>[];
   placeholder?: string;
   icon?: string;
@@ -22,6 +23,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
+  modelValue: false,
   items: () => [],
   placeholder: 'Search...',
   icon: 'ri:search-line',
@@ -31,11 +33,12 @@ const props = withDefaults(defineProps<Props>(), {
 
 const emit =
   defineEmits<{
-    (e: 'update:modelValue', value: Record<string, any> | undefined): void;
+    (e: 'update:modelValue', value: boolean): void;
+    (e: 'update:selected', value: Record<string, any> | undefined): void;
   }>();
 
-const isOpen = ref(false);
-const selected = ref(props.modelValue);
+const isOpen = ref(props.modelValue);
+const selectedValue = ref(props.selected);
 const query = ref('');
 
 const filteredItems = computed(() =>
@@ -52,12 +55,23 @@ const filteredItems = computed(() =>
 watch(
   () => props.modelValue,
   (val) => {
-    selected.value = val;
+    isOpen.value = val;
   },
 );
 
-watch(selected, (val) => {
+watch(isOpen, (val) => {
   emit('update:modelValue', val);
+});
+
+watch(
+  () => props.selected,
+  (val) => {
+    selectedValue.value = val;
+  },
+);
+
+watch(selectedValue, (val) => {
+  emit('update:selected', val);
   isOpen.value = false;
 });
 
@@ -79,7 +93,7 @@ onUnmounted(() => {
 
 <template>
   <VModal v-model="isOpen" hide-footer hide-header body-class="v-command-body">
-    <Combobox v-model="selected">
+    <Combobox v-model="selectedValue">
       <div class="v-input">
         <div class="v-input-wrapper">
           <div class="v-input-prepend">
