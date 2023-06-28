@@ -34,7 +34,8 @@ export const Default: StoryFn = (args) => ({
       v-model:selected="selected"
     />
     
-    Selected: {{selected}}
+    <div>Press CMD+K or Control+K to open the menu</div>
+    <pre>Selected: {{selected}}</pre>
   `,
 });
 
