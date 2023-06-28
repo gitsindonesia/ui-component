@@ -68,6 +68,7 @@ export default defineConfig({
         '@morpheme/divider',
         '@morpheme/bottom-navigation',
         '@morpheme/popover',
+        '@morpheme/command',
         '@headlessui/vue',
         '@vue/test-utils',
         'vue',
