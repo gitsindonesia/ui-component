@@ -512,6 +512,10 @@ const components: AddComponentOptions[] = [
     name: 'VPopoverPanel',
     filePath: '@morpheme/popover/src/VPopoverPanel.vue',
   },
+  {
+    name: 'VCommand',
+    filePath: '@morpheme/command/src/VCommand.vue',
+  },
 ];
 
 export interface ModuleOptions {
