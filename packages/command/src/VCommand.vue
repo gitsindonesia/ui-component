@@ -8,12 +8,26 @@ import {
   ComboboxOption,
 } from '@headlessui/vue';
 import VIcon from '@morpheme/icon';
-import {List as VList, ListItem as VListItem} from '@morpheme/list';
+import {
+  List as VList,
+  ListItem as VListItem,
+  ListItemDivider as VListItemDivider,
+  ListItemHeader as VListItemHeader,
+} from '@morpheme/list';
+
+interface CommandItem extends Record<string, any> {
+  value?: string;
+  icon?: string;
+  text?: string;
+  label?: string;
+  divider?: boolean;
+  items?: CommandItem[];
+}
 
 interface Props {
   modelValue?: boolean;
-  selected?: Record<string, any>;
-  items?: Record<string, any>[];
+  selected?: CommandItem;
+  items?: CommandItem[];
   placeholder?: string;
   icon?: string;
   iconSize?: string;
@@ -34,7 +48,7 @@ const props = withDefaults(defineProps<Props>(), {
 const emit =
   defineEmits<{
     (e: 'update:modelValue', value: boolean): void;
-    (e: 'update:selected', value: Record<string, any> | undefined): void;
+    (e: 'update:selected', value: CommandItem | undefined): void;
   }>();
 
 const isOpen = ref(props.modelValue);
@@ -119,23 +133,53 @@ onUnmounted(() => {
           </slot>
           <slot name="prepend" />
           <slot v-bind="{items: filteredItems}">
-            <ComboboxOption
-              v-for="item in filteredItems"
-              :key="item.id"
-              :value="item"
-              v-slot="{active, selected, disabled}"
-            >
-              <slot name="item" v-bind="{active, selected, item, disabled}">
-                <VListItem
-                  v-bind="item"
-                  :class="{
-                    'v-list-item--hover': active,
-                  }"
-                >
-                  {{ item.text }}
-                </VListItem>
-              </slot>
-            </ComboboxOption>
+            <template v-for="item in filteredItems" :key="item.id">
+              <VListItemDivider v-if="item.divider" />
+              <template v-else-if="item.label">
+                <VListItemHeader>{{ item.label }}</VListItemHeader>
+                <VList flush>
+                  <ComboboxOption
+                    v-for="child in item.items"
+                    :key="child.id"
+                    :value="child"
+                    v-slot="{active, selected, disabled}"
+                  >
+                    <slot
+                      name="item"
+                      v-bind="{active, selected, item: child, disabled}"
+                    >
+                      <VListItem
+                        :class="{
+                          'v-list-item--hover': active,
+                        }"
+                        :disabled="disabled"
+                        :prepend-icon="child.icon"
+                      >
+                        {{ child.text }}
+                      </VListItem>
+                    </slot>
+                  </ComboboxOption>
+                </VList>
+              </template>
+
+              <ComboboxOption
+                v-else
+                :value="item"
+                v-slot="{active, selected, disabled}"
+              >
+                <slot name="item" v-bind="{active, selected, item, disabled}">
+                  <VListItem
+                    :class="{
+                      'v-list-item--hover': active,
+                    }"
+                    :disabled="disabled"
+                    :prepend-icon="item.icon"
+                  >
+                    {{ item.text }}
+                  </VListItem>
+                </slot>
+              </ComboboxOption>
+            </template>
           </slot>
           <slot name="append" />
         </VList>

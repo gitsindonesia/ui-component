@@ -4,12 +4,34 @@ import VCommand from './VCommand.vue';
 import {ref} from 'vue';
 
 const items = [
-  { value: 1, text: 'Wade Cooper', prependIcon: 'ri:line-fill' },
-  { value: 2, text: 'Arlene Mccoy' },
-  { value: 3, text: 'Devon Webb' },
-  { value: 4, text: 'Tom Cook' },
-  { value: 5, text: 'Tanya Fox' },
-  { value: 6, text: 'Hellen Schmidt' },
+  {
+    label: 'Recents',
+    items: [
+      { value: 'add-project', text: 'Add new project' },
+      { value: 'open-project', text: 'Open project' },
+      { value: 'open-recent', text: 'Open recent' },
+    ],
+  },
+  {
+    label: 'Projects',
+    items: [
+      { value: 'add-project', text: 'Add new project' },
+      { value: 'open-project', text: 'Open project' },
+      { value: 'open-recent', text: 'Open recent' },
+    ],
+  },
+  {
+    label: 'Teams',
+    items: [
+      { value: 'add-team', text: 'Add new team' },
+      { value: 'open-team', text: 'Open team' },
+    ],
+  },
+  {
+    divider: true,
+  },
+  { value: 'format-document', text: 'Format Document' },
+  { value: 'format-selection', text: 'Format Selection' },
 ]
 
 export default {
