@@ -25,11 +25,11 @@ export default defineConfig({
     ],
     sidebar: [
       {
-        text: 'Introduction',
+        text: 'Getting Started',
         collapsed: false,
         items: [
           {text: 'Introduction', link: '/guide/introduction'},
-          {text: 'Getting Started', link: '/guide/getting-started'},
+          {text: 'Quick Start', link: '/guide/getting-started'},
           {text: 'Installation', link: '/guide/installation'},
           {text: 'Vue Usage', link: '/guide/vue'},
           {text: 'Nuxt Usage', link: '/guide/nuxt'},

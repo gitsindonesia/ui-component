@@ -1,4 +1,4 @@
-# Getting Started
+# Quick Start
 
 ::: tip INFO
 GITS UI is now **Morpheme UI**. Check out migration guide [here](/guide/migration).
