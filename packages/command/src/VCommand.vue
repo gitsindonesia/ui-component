@@ -63,7 +63,7 @@ function searchItem(item: CommandItem, searchText: string) {
 
 // TODO: improve filtering
 function filterItems(items: CommandItem[], searchText: string) {
-  const filteredItems = [];
+  const filteredItems: CommandItem[] = [];
 
   for (const item of items) {
     if (item.label) {
