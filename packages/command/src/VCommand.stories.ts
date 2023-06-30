@@ -1,9 +1,9 @@
 import { VBtn } from '@morpheme/button';
 import type {StoryFn, Meta} from '@storybook/vue3';
-import VCommand from './VCommand.vue';
+import VCommand, {type VCommandItem} from './VCommand.vue';
 import {ref} from 'vue';
 
-const items = [
+const items: VCommandItem = [
   {
     label: 'Recents',
     items: [

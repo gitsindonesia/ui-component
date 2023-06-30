@@ -15,19 +15,19 @@ import {
   ListItemHeader as VListItemHeader,
 } from '@morpheme/list';
 
-interface CommandItem extends Record<string, any> {
+export interface VCommandItem extends Record<string, any> {
   value?: string;
   icon?: string;
   text?: string;
   label?: string;
   divider?: boolean;
-  items?: CommandItem[];
+  items?: VCommandItem[];
 }
 
 interface Props {
   modelValue?: boolean;
-  selected?: CommandItem;
-  items?: CommandItem[];
+  selected?: VCommandItem;
+  items?: VCommandItem[];
   placeholder?: string;
   icon?: string;
   iconSize?: string;
@@ -50,20 +50,20 @@ const props = withDefaults(defineProps<Props>(), {
 const emit =
   defineEmits<{
     (e: 'update:modelValue', value: boolean): void;
-    (e: 'update:selected', value: CommandItem | undefined): void;
+    (e: 'update:selected', value: VCommandItem | undefined): void;
   }>();
 
 const isOpen = ref(props.modelValue);
 const selectedValue = ref(props.selected);
 const query = ref('');
 
-function searchItem(item: CommandItem, searchText: string) {
+function searchItem(item: VCommandItem, searchText: string) {
   return item[props.searchBy].toLowerCase().includes(searchText.toLowerCase());
 }
 
 // TODO: improve filtering
-function filterItems(items: CommandItem[], searchText: string) {
-  const filteredItems: CommandItem[] = [];
+function filterItems(items: VCommandItem[], searchText: string) {
+  const filteredItems: VCommandItem[] = [];
 
   for (const item of items) {
     if (item.label) {
