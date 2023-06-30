@@ -30,7 +30,7 @@
     "@nuxt/devtools": "^0.5.5",
     "@nuxtjs/color-mode": "^3.2.0",
     "@nuxtjs/tailwindcss": "^6.6.5",
-    "nuxt": "^3.5.2",
+    "nuxt": "^3.6.1",
     "sass": "^1.60.0"
   },
   "type": "module",
