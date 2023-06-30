@@ -28,6 +28,14 @@ const items = [
     ],
   },
   {
+    label: 'Settings',
+    items: [
+      { value: 'settings-account', text: 'Account' },
+      { value: 'settings-teams', text: 'Teams' },
+      { value: 'settings-theme', text: 'Theme' },
+    ],
+  },
+  {
     divider: true,
   },
   { value: 'format-document', text: 'Format Document' },

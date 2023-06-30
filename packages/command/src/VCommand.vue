@@ -57,15 +57,40 @@ const isOpen = ref(props.modelValue);
 const selectedValue = ref(props.selected);
 const query = ref('');
 
+function searchItem(item: CommandItem, searchText: string) {
+  return item[props.searchBy].toLowerCase().includes(searchText.toLowerCase())
+}
+
+// TODO: improve filtering
+function filterItems(items: CommandItem[], searchText: string) {
+  const filteredItems = [];
+
+  for (const item of items) {
+    if (item.label) {
+      const filteredSubItems = item.items?.filter(subItem => {
+        return searchItem(subItem, searchText)
+      });
+
+      if (filteredSubItems && filteredSubItems.length > 0) {
+        filteredItems.push({
+          label: item.label,
+          items: filteredSubItems
+        });
+      }
+    } else if (item.divider) {
+      continue;
+    } else if (searchItem(item, searchText)) {
+      filteredItems.push(item);
+    }
+  }
+
+  return filteredItems;
+}
+
 const filteredItems = computed(() =>
   query.value === ''
     ? props.items
-    : props.items.filter((item) =>
-        item[props.searchBy]
-          .toLowerCase()
-          .replace(/\s+/g, '')
-          .includes(query.value.toLowerCase().replace(/\s+/g, '')),
-      ),
+    : filterItems(props.items, query.value),
 );
 
 watch(
