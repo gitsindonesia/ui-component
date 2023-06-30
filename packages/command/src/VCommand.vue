@@ -186,7 +186,7 @@ onUnmounted(() => {
                     >
                       <VListItem
                         :class="{
-                          'v-list-item--hover': active,
+                          'v-list-item--hovered': active,
                         }"
                         :disabled="disabled"
                         :prepend-icon="child.icon"
@@ -208,7 +208,7 @@ onUnmounted(() => {
                 <slot name="item" v-bind="{active, selected, item, disabled}">
                   <VListItem
                     :class="{
-                      'v-list-item--hover': active,
+                      'v-list-item--hovered': active,
                     }"
                     :disabled="disabled"
                     :prepend-icon="item.icon"

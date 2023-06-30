@@ -110,7 +110,7 @@
     &--hover:hover:not(&--active),
     &--hover &:hover:not(&--hoverable):not(&--active),
     &--hover &:hover:not(&--active),
-    &--hover,
+    &--hovered,
     &:hover:not(&--active) {
       background-color: var(--v-list-item-hover-bg-color);
       color: var(--v-list-item-hover-color);
