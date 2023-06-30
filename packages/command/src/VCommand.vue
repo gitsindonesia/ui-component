@@ -34,8 +34,8 @@ interface Props {
   iconClass?: string;
   searchBy?: string;
   emptyText?: string;
-  listProps?: InstanceType<typeof VList>['$props']
-  listItemProps?: InstanceType<typeof VListItem>['$props']
+  listProps?: InstanceType<typeof VList>['$props'];
+  listItemProps?: InstanceType<typeof VListItem>['$props'];
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -58,7 +58,7 @@ const selectedValue = ref(props.selected);
 const query = ref('');
 
 function searchItem(item: CommandItem, searchText: string) {
-  return item[props.searchBy].toLowerCase().includes(searchText.toLowerCase())
+  return item[props.searchBy].toLowerCase().includes(searchText.toLowerCase());
 }
 
 // TODO: improve filtering
@@ -67,14 +67,14 @@ function filterItems(items: CommandItem[], searchText: string) {
 
   for (const item of items) {
     if (item.label) {
-      const filteredSubItems = item.items?.filter(subItem => {
-        return searchItem(subItem, searchText)
+      const filteredSubItems = item.items?.filter((subItem) => {
+        return searchItem(subItem, searchText);
       });
 
       if (filteredSubItems && filteredSubItems.length > 0) {
         filteredItems.push({
           label: item.label,
-          items: filteredSubItems
+          items: filteredSubItems,
         });
       }
     } else if (item.divider) {
@@ -88,9 +88,7 @@ function filterItems(items: CommandItem[], searchText: string) {
 }
 
 const filteredItems = computed(() =>
-  query.value === ''
-    ? props.items
-    : filterItems(props.items, query.value),
+  query.value === '' ? props.items : filterItems(props.items, query.value),
 );
 
 watch(
@@ -114,6 +112,7 @@ watch(
 watch(selectedValue, (val) => {
   emit('update:selected', val);
   isOpen.value = false;
+  query.value = '';
 });
 
 function onKeydown(event: KeyboardEvent) {
@@ -121,6 +120,10 @@ function onKeydown(event: KeyboardEvent) {
     event.preventDefault();
     isOpen.value = !isOpen.value;
   }
+}
+
+function onClose() {
+  query.value = '';
 }
 
 onMounted(() => {
@@ -133,7 +136,13 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <VModal v-model="isOpen" hide-footer hide-header body-class="v-command-body">
+  <VModal
+    v-model="isOpen"
+    hide-footer
+    hide-header
+    body-class="v-command-body"
+    @close="onClose"
+  >
     <Combobox v-model="selectedValue">
       <div class="v-input">
         <div class="v-input-wrapper">
