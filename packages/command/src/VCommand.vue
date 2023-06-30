@@ -34,6 +34,8 @@ interface Props {
   iconClass?: string;
   searchBy?: string;
   emptyText?: string;
+  listProps?: InstanceType<typeof VList>['$props']
+  listItemProps?: InstanceType<typeof VListItem>['$props']
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -106,6 +108,7 @@ onUnmounted(() => {
 </script>
 
 <template>
+  <pre>{{ {listProps, listItemProps} }}</pre>
   <VModal v-model="isOpen" hide-footer hide-header body-class="v-command-body">
     <Combobox v-model="selectedValue">
       <div class="v-input">
@@ -123,7 +126,7 @@ onUnmounted(() => {
         </div>
       </div>
       <ComboboxOptions static class="v-command-options">
-        <VList flush>
+        <VList flush v-bind="listProps">
           <slot
             name="empty"
             v-if="filteredItems.length === 0"
@@ -137,7 +140,7 @@ onUnmounted(() => {
               <VListItemDivider v-if="item.divider" />
               <template v-else-if="item.label">
                 <VListItemHeader>{{ item.label }}</VListItemHeader>
-                <VList flush>
+                <VList flush v-bind="listProps">
                   <ComboboxOption
                     v-for="child in item.items"
                     :key="child.id"
@@ -154,6 +157,7 @@ onUnmounted(() => {
                         }"
                         :disabled="disabled"
                         :prepend-icon="child.icon"
+                        v-bind="listItemProps"
                       >
                         {{ child.text }}
                       </VListItem>
@@ -174,6 +178,7 @@ onUnmounted(() => {
                     }"
                     :disabled="disabled"
                     :prepend-icon="item.icon"
+                    v-bind="listItemProps"
                   >
                     {{ item.text }}
                   </VListItem>

@@ -7,9 +7,9 @@ const items = [
   {
     label: 'Recents',
     items: [
-      { value: 'add-project', text: 'Add new project' },
-      { value: 'open-project', text: 'Open project' },
-      { value: 'open-recent', text: 'Open recent' },
+      { value: 'add-project', text: 'Add new project', icon: 'ri:add-box-line' },
+      { value: 'open-project', text: 'Open project', icon: 'ri:folder-open-line' },
+      { value: 'open-recent', text: 'Open recent', icon: 'ri:history-line' },
     ],
   },
   {
@@ -81,5 +81,28 @@ export const WithButtonTrigger: StoryFn = (args) => ({
     />
     
     <pre>Selected: {{selected}}</pre>
+  `,
+});
+
+export const ListProps: StoryFn = (args) => ({
+  setup() {
+    return {args};
+  },
+  components: {
+    VCommand,
+    VBtn
+  },
+  template: `
+    <div>Press CMD+K or Control+K to open the menu</div>
+
+    <VCommand
+      v-bind="args"
+      :list-props="{
+        small: true
+      }"
+      :list-item-props="{
+        hidePrepend: true
+      }"
+    />
   `,
 });
