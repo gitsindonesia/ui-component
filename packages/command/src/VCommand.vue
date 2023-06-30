@@ -108,7 +108,6 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <pre>{{ {listProps, listItemProps} }}</pre>
   <VModal v-model="isOpen" hide-footer hide-header body-class="v-command-body">
     <Combobox v-model="selectedValue">
       <div class="v-input">
@@ -157,6 +156,7 @@ onUnmounted(() => {
                         }"
                         :disabled="disabled"
                         :prepend-icon="child.icon"
+                        :hide-prepend="!child.icon"
                         v-bind="listItemProps"
                       >
                         {{ child.text }}
@@ -178,6 +178,7 @@ onUnmounted(() => {
                     }"
                     :disabled="disabled"
                     :prepend-icon="item.icon"
+                    :hide-prepend="!item.icon"
                     v-bind="listItemProps"
                   >
                     {{ item.text }}
