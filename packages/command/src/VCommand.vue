@@ -227,12 +227,3 @@ onUnmounted(() => {
     </Combobox>
   </VModal>
 </template>
-
-<style>
-.v-command-body {
-  margin-top: 0;
-}
-.v-command-options {
-  margin-top: 1rem;
-}
-</style>
