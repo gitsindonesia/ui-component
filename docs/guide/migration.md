@@ -1,5 +1,9 @@
 # Migration Guide
 
+## 1.0.0-beta.9
+
+Introducing the `morpheme` theme - a new addition based on the Morpheme Design System. Enhance your platform's aesthetics and usability. Visit our [themes](/guide/themes) page for more information.
+
 ## 1.0.0-beta.6
 
 **BREAKING CHANGE**: nuxt option renamed from `gitsUi` to `morpheme`

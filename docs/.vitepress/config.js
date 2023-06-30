@@ -50,6 +50,7 @@ export default defineConfig({
         collapsed: false,
         items: [
           {text: 'Customization', link: '/guide/customization'},
+          {text: 'Themes', link: '/guide/themes'},
           {text: 'Default Theme', link: '/guide/theme'},
           {text: 'Dark Mode', link: '/guide/dark-mode'},
         ],
