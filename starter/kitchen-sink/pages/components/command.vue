@@ -58,6 +58,7 @@ const selected = ref()
     <VCard title="With Button Trigger">
       <div>
         <VBtn @click="isOpen = true">Open Command</VBtn>
+        <VBtn class="ml-3" @click="selected = undefined">Clear Selected</VBtn>
 
         <pre class="mt-4">Selected: {{ selected }}</pre>
       </div>
@@ -66,6 +67,7 @@ const selected = ref()
     <VCommand
       v-model="isOpen"
       v-model:selected="selected"
+      :items="items"
     />
   </div>
 </template>

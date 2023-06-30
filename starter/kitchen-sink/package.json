@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@morpheme/design-tokens": "0.1.0-alpha.5",
-    "@morpheme/nuxt": "1.0.0-alpha.19+984d6453",
+    "@morpheme/nuxt": "@morpheme/nuxt@1.0.0-alpha.22+02ec5bda",
     "@morphemeicons/vue": "^0.2.0"
   },
   "devDependencies": {
@@ -95,8 +95,8 @@
       "@morpheme/toast": "1.0.0-alpha.222",
       "@morpheme/tooltip": "1.0.0-alpha.222",
       "@morpheme/utils": "1.0.0-alpha.222",
-      "@morpheme/command": "1.0.0-alpha.19+984d6453",
-      "@morpheme/ui": "1.0.0-alpha.19+984d6453"
+      "@morpheme/command": "@morpheme/nuxt@1.0.0-alpha.22+02ec5bda",
+      "@morpheme/ui": "@morpheme/nuxt@1.0.0-alpha.22+02ec5bda"
     }
   }
 }
