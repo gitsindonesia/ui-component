@@ -10,7 +10,7 @@ The `VCommand` component provides a searchable command menu with options for sel
 
 ### Basic Usage
 
-To use the `VCommand` component, you can use it in your template as follows:
+To use the `VCommand` component, you can include it in your template as shown in the example below:
 
 <LivePreview src="components-command--default">
 
@@ -28,9 +28,11 @@ const selected = ref();
 
 </LivePreview>
 
+In this example, the `VCommand` component is rendered in the template. The `v-model:selected` directive is used to bind the selected command item to the `selected` variable. The selected item can be accessed and displayed in the template using the `{{ selected }}` syntax.
+
 ### With Button Trigger
 
-To use the `VCommand` component, you can use it in your template as follows:
+To use the `VCommand` component with a button trigger, you can include the component in your template as shown in the example below:
 
 <LivePreview src="components-command--with-button-trigger">
 
@@ -50,6 +52,8 @@ const selected = ref();
 ```
 
 </LivePreview>
+
+In this example, a `VBtn` component is used as the trigger for opening the command menu. When the button is clicked, the `isOpen` variable is set to `true`, which opens the command menu. The `VCommand` component is then rendered, and the `v-model` directive is used to bind the `isOpen` variable to the `modelValue` prop of `VCommand`. This allows the component to control the open/close state of the menu. The `v-model:selected` directive is also used to bind the selected command item to the `selected` variable.
 
 ## Props
 
