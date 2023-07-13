@@ -39,6 +39,7 @@
 
   /* striped */
   --v-table-striped-bg-color: var(--color-gray-50);
+  --v-table-striped-even-bg-color: var(--color-white);
 
   /* hover */
   --v-table-hover-bg-color: var(--color-gray-100);
@@ -168,8 +169,11 @@
     background-color: var(--color-white);
   }
 
-  &--striped tbody &-tr:nth-child(odd) {
+  &--striped tbody &-tr:nth-child(odd):not(:hover) {
     background-color: var(--v-table-striped-bg-color);
+  }
+  &--striped tbody &-tr:nth-child(even):not(:hover) {
+    background-color: var(--v-table-striped-even-bg-color, var(--color-white));
   }
 
   &--selectable &-td,
