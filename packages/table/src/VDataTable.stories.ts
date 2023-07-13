@@ -126,6 +126,19 @@ Hover.parameters = {
   },
 };
 
+export const StripedHover = Template.bind({});
+StripedHover.args = {
+  hover: true,
+  striped: true
+};
+StripedHover.parameters = {
+  docs: {
+    source: {
+      code: `<v-data-table :headers="headers" :items="items" hover striped />`,
+    },
+  },
+};
+
 export const Dense = Template.bind({});
 Dense.args = {
   dense: true,
