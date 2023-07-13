@@ -80,6 +80,7 @@
     transition-duration: 300ms;
     position: relative;
     width: 100%;
+    max-width: 100%;
     text-align: left;
     cursor: default;
     display: flex;
@@ -352,6 +353,10 @@
     flex-grow: 1;
     border: none;
     border-radius: var(--v-select-border-radius);
+    max-width: calc(100% - 20px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     
     &:focus {
       outline: none;
