@@ -14,7 +14,7 @@
 
   &__panel {
     position: absolute;
-    width: var(--size-spacing-64);
+    min-width: var(--size-spacing-64);
     background-color: var(--v-popover-bg-color);
     border-radius: var(--border-radius-lg);
     border: 1px solid var(--v-popover-border-color);
