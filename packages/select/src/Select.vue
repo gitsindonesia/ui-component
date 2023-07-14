@@ -54,6 +54,7 @@ const props = withDefaults(
     searchBy?: string;
     selectionItemProps?: InstanceType<typeof VBadge>['$props'];
     displayValue?: (item: any) => string;
+    iconSize?: string;
   }>(),
   {
     itemText: 'text',
@@ -63,6 +64,7 @@ const props = withDefaults(
     clearText: 'Clear',
     emptyText: 'No results.',
     items: () => [],
+    iconSize: 'xs',
   },
 );
 
@@ -228,7 +230,7 @@ const shadowClass = computed(() => {
           </div>
         </slot>
         <div class="v-select-clearable">
-          <VTooltip v-if="selectedValue && selectedValue.length && clearable">
+          <VTooltip v-if="selectedValue && clearable">
             <template #activator>
               <button
                 type="button"
@@ -238,8 +240,8 @@ const shadowClass = computed(() => {
               >
                 <VIcon
                   name="heroicons:x-mark"
-                  class="v-select-clearable-icon"
-                  aria-hidden="true"
+                  class="v-select-icon"
+                  :size="iconSize"
                 />
               </button>
             </template>
@@ -248,8 +250,7 @@ const shadowClass = computed(() => {
           <VIcon
             name="heroicons:chevron-down"
             class="v-select-icon"
-            size="sm"
-            aria-hidden="true"
+            :size="iconSize"
           />
         </div>
       </component>
