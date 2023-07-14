@@ -4,7 +4,7 @@ import { VPopoverPlacement } from "./api";
 
 withDefaults(
   defineProps<{
-    placement: VPopoverPlacement;
+    placement?: VPopoverPlacement;
   }>(),
   {
     placement: "bottom-start",
