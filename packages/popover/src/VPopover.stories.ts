@@ -126,7 +126,10 @@ export const NavigationMenus: Story = (args) => ({
           <VPopover v-slot="{open}">
             <VPopoverButton text flush
               suffix-icon="ri:arrow-down-s-line"
-              :class="{'text-primary-500': open}"
+              :suffix-icon-class="[
+                'transform transition duration-300',
+                open ? 'rotate-180' : ''
+              ]"
             >
               Getting Started
             </VPopoverButton>
@@ -172,7 +175,10 @@ export const NavigationMenus: Story = (args) => ({
           <VPopover v-slot="{open}">
             <VPopoverButton text flush
               suffix-icon="ri:arrow-down-s-line"
-              :class="{'text-primary-500': open}"
+              :suffix-icon-class="[
+                'transform transition duration-300',
+                open ? 'rotate-180' : ''
+              ]"
             >
               Components
             </VPopoverButton>
