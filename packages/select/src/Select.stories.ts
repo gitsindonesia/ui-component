@@ -66,10 +66,28 @@ Error.args = {
   errorMessage: 'This is an error message.',
 };
 
-export const Shadow = Template.bind({});
-Shadow.args = {
-  shadow: true,
-};
+export const Shadow: Story<typeof Select> = (args) => ({
+  components: {
+    Select,
+  },
+  setup() {
+    const value = ref();
+    args.class = "mb-4";
+    return {args, value};
+  },
+  template: `
+    <Select v-bind="args" v-model="value" label="Default" hint="This is a hint" shadow />
+    <Select v-bind="args" v-model="value" label="Shadow xs" hint="This is a hint" shadow="xs" />
+    <Select v-bind="args" v-model="value" label="Shadow sm" hint="This is a hint" shadow="sm" />
+    <Select v-bind="args" v-model="value" label="Shadow md" hint="This is a hint" shadow="md" />
+    <Select v-bind="args" v-model="value" label="Shadow lg" hint="This is a hint" shadow="lg" />
+    <Select v-bind="args" v-model="value" label="Shadow xl" hint="This is a hint" shadow="xl" />
+    <Select v-bind="args" v-model="value" label="Shadow 2xl" hint="This is a hint" shadow="2xl" />
+    <Select v-bind="args" v-model="value" label="Shadow 3xl" hint="This is a hint" shadow="3xl" />
+    <Select v-bind="args" v-model="value" label="Shadow inner" hint="This is a hint" shadow="inner" />
+    <Select v-bind="args" v-model="value" label="Shadow none" hint="This is a hint" shadow="none" />
+  `,
+});
 
 export const Disabled = Template.bind({});
 Disabled.args = {

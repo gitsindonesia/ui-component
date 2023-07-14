@@ -65,6 +65,60 @@
     }
   }
 
+  &--shadow-xs {
+    #{$c}-button {
+      box-shadow: var(--effect-shadow-xs);
+    }
+  }
+
+  &--shadow-sm {
+    #{$c}-button {
+      box-shadow: var(--effect-shadow-sm);
+    }
+  }
+
+  &--shadow-md {
+    #{$c}-button {
+      box-shadow: var(--effect-shadow-md);
+    }
+  }
+
+  &--shadow-lg {
+    #{$c}-button {
+      box-shadow: var(--effect-shadow-lg);
+    }
+  }
+
+  &--shadow-xl {
+    #{$c}-button {
+      box-shadow: var(--effect-shadow-xl);
+    }
+  }
+
+  &--shadow-2xl {
+    #{$c}-button {
+      box-shadow: var(--effect-shadow-2xl);
+    }
+  }
+
+  &--shadow-3xl {
+    #{$c}-button {
+      box-shadow: var(--effect-shadow-3xl);
+    }
+  }
+
+  &--shadow-inner {
+    #{$c}-button {
+      box-shadow: var(--effect-shadow-inner);
+    }
+  }
+
+  &--shadow-none {
+    #{$c}-button {
+      box-shadow: var(--effect-shadow-none);
+    }
+  }
+
   &-button {
     border: 1px solid var(--v-select-border-color);
     border-radius: var(--v-select-border-radius);

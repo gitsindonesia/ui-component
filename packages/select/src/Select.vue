@@ -19,6 +19,16 @@ import VBadge from '@morpheme/badge';
 
 type T = Record<string, any>;
 type ModelValue = T | T[] | undefined;
+type Shadow = 
+  'xs' |
+  'sm' |
+  'md' |
+  'lg' |
+  'xl' |
+  '2xl' |
+  '3xl' |
+  'inner' |
+  'none'
 
 const props = withDefaults(
   defineProps<{
@@ -37,7 +47,7 @@ const props = withDefaults(
     hint?: string;
     errorMessage?: string;
     hideError?: boolean;
-    shadow?: boolean;
+    shadow?: boolean | Shadow | (string & {});
     searchable?: boolean;
     disabled?: boolean;
     emptyText?: string;
@@ -109,6 +119,12 @@ const defaultDisplayValue = (item: any) => {
 const displayValue = computed(() => {
   return props.displayValue ?? defaultDisplayValue;
 });
+
+const shadowClass = computed(() => {
+  if (props.shadow === true) return 'v-select--shadow'
+
+  return props.shadow ? `v-select--shadow-${props.shadow}` : '';
+})
 </script>
 
 <template>
@@ -118,14 +134,16 @@ const displayValue = computed(() => {
     as="div"
     class="v-select"
     :multiple="multiple"
-    :class="{
-      'v-select--multiple': multiple,
-      'v-select--clearable': clearable,
-      'v-select--error': error,
-      'v-select--shadow': shadow,
-      'v-select--searchable': searchable,
-      'v-select--disabled': disabled,
-    }"
+    :class="[
+      {
+        'v-select--multiple': multiple,
+        'v-select--clearable': clearable,
+        'v-select--error': error,
+        'v-select--searchable': searchable,
+        'v-select--disabled': disabled,
+      },
+      shadowClass,
+    ]"
   >
     <component
       :is="searchable ? ComboboxLabel : ListboxLabel"

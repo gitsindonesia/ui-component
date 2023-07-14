@@ -45,10 +45,12 @@ export type DefaultSizes = typeof defaultSizes[number];
 export const defaultShadows = [
   true,
   'sm',
+  'xs',
   'md',
   'lg',
   'xl',
   '2xl',
+  '3xl',
   'inner',
   'none',
 ];
