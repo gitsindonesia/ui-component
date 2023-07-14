@@ -128,17 +128,44 @@ export const NavigationMenus: Story = (args) => ({
               suffix-icon="ri:arrow-down-s-line"
               :class="{'text-primary-500': open}"
             >
-            {{ open }}
-              Products
+              Getting Started
             </VPopoverButton>
-            <VPopoverPanel>
-              <div class="my-2">
-                <VList hide-append flush>
-                  <VListItem v-for="i in 6" :key="i">
-                    <div class="font-semibold">Product {{ i }}</div>
-                    <p class="text-sm">Product description</p>
-                  </VListItem>
-                </VList>
+            <VPopoverPanel class="flex gap-4 p-2 lg:w-[500px]">
+              <div class="w-full lg:w-5/12">
+                <div class="hover:bg-gray-50 px-3 py-2 rounded-md">
+                  <h4 class="font-medium text-sm text-gray-900">
+                    Morpheme UI
+                  </h4>
+                  <p class="text-sm text-gray-600 mt-0.5">
+                    Morpheme UI is a free and open-source Vue UI Library based on Morpheme Design System
+                  </p>
+                </div>
+              </div>
+              <div class="w-full lg:w-7/12">
+                <div class="hover:bg-gray-50 px-3 py-2 rounded-md">
+                  <h4 class="font-medium text-sm text-gray-900">
+                    Introduction
+                  </h4>
+                  <p class="text-sm text-gray-600 mt-0.5">
+                    Learn more about Morpheme UI
+                  </p>
+                </div>
+                <div class="hover:bg-gray-50 px-3 py-2 rounded-md">
+                  <h4 class="font-medium text-sm text-gray-900">
+                    Installation
+                  </h4>
+                  <p class="text-sm text-gray-600 mt-0.5">
+                    Learn how to install Morpheme UI
+                  </p>
+                </div>
+                <div class="hover:bg-gray-50 px-3 py-2 rounded-md">
+                  <h4 class="font-medium text-sm text-gray-900">
+                    Typography
+                  </h4>
+                  <p class="text-sm text-gray-600 mt-0.5">
+                    Learn more about Morpheme UI typography
+                  </p>
+                </div>
               </div>
             </VPopoverPanel>
           </VPopover>
@@ -147,13 +174,60 @@ export const NavigationMenus: Story = (args) => ({
               suffix-icon="ri:arrow-down-s-line"
               :class="{'text-primary-500': open}"
             >
-              Categories
+              Components
             </VPopoverButton>
-            <VPopoverPanel>
-              <div class="my-2">
-                <VList hide-append flush>
-                  <VListItem v-for="i in 6" :key="i">Category {{ i }}</VListItem>
-                </VList>
+            <VPopoverPanel class="flex gap-4 p-2 lg:w-[500px]">
+              <div class="w-full lg:w-6/12">
+                <div class="hover:bg-gray-50 px-3 py-2 rounded-md">
+                  <h4 class="font-semibold text-sm text-gray-900">
+                    Alert
+                  </h4>
+                  <p class="text-sm text-gray-600 mt-0.5">
+                    Learn more about Morpheme UI
+                  </p>
+                </div>
+                <div class="hover:bg-gray-50 px-3 py-2 rounded-md">
+                  <h4 class="font-semibold text-sm text-gray-900">
+                    Card
+                  </h4>
+                  <p class="text-sm text-gray-600 mt-0.5">
+                    Learn more about Morpheme UI
+                  </p>
+                </div>
+                <div class="hover:bg-gray-50 px-3 py-2 rounded-md">
+                  <h4 class="font-semibold text-sm text-gray-900">
+                    Button
+                  </h4>
+                  <p class="text-sm text-gray-600 mt-0.5">
+                    Learn more about Morpheme UI
+                  </p>
+                </div>
+              </div>
+              <div class="w-full lg:w-6/12">
+                <div class="hover:bg-gray-50 px-3 py-2 rounded-md">
+                  <h4 class="font-semibold text-sm text-gray-900">
+                    Table
+                  </h4>
+                  <p class="text-sm text-gray-600 mt-0.5">
+                    Learn more about Morpheme UI
+                  </p>
+                </div>
+                <div class="hover:bg-gray-50 px-3 py-2 rounded-md">
+                  <h4 class="font-semibold text-sm text-gray-900">
+                    Forms
+                  </h4>
+                  <p class="text-sm text-gray-600 mt-0.5">
+                    Learn more about Morpheme UI
+                  </p>
+                </div>
+                <div class="hover:bg-gray-50 px-3 py-2 rounded-md">
+                  <h4 class="font-semibold text-sm text-gray-900">
+                    Tooltip
+                  </h4>
+                  <p class="text-sm text-gray-600 mt-0.5">
+                    Learn more about Morpheme UI
+                  </p>
+                </div>
               </div>
             </VPopoverPanel>
           </VPopover>
