@@ -13,7 +13,7 @@ type Props = {
 const props = withDefaults(defineProps<Props>(), {
   fontWeight: 'normal',
   color: '',
-  as: 'p',
+  as: 'div',
 })
 
 const isCustomColor = computed(() => {
