@@ -144,3 +144,39 @@ export const DarkMode: Story<{}> = (args) => ({
 </main>
 `,
 });
+
+const placements = [
+  'top',
+  'top-start',
+  'top-end',
+  'bottom',
+  'bottom-start',
+  'bottom-end',
+  'right',
+  'right-start',
+  'right-end',
+  'left',
+  'left-start',
+  'left-end',
+];
+
+export const FloatingUI: Story = (args, {argTypes}) => ({
+  components: {Dropdown},
+  setup() {
+    return {args, argTypes, placements};
+  },
+  template: `
+    <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-6">
+      <Dropdown
+        v-bind="args"
+        v-for="placement in placements"
+        :key="placement"
+        :placement="placement"
+        :label="placement"
+      />
+    </div>
+  `,
+});
+FloatingUI.parameters = {
+  layout: 'centered',
+};

@@ -1,8 +1,10 @@
 <script setup lang="ts">
-import { Menu, MenuButton, MenuItems } from "@headlessui/vue";
-import type { DropdownItemProps } from "./types";
-import DropdownItem from "./DropdownItem.vue";
-import { Icon } from "@morpheme/icon";
+import {Menu, MenuButton, MenuItems} from '@headlessui/vue';
+import type {DropdownItemProps} from './types';
+import DropdownItem from './DropdownItem.vue';
+import {Icon} from '@morpheme/icon';
+import {Float} from '@headlessui-float/vue';
+import type {Placement} from '@floating-ui/vue';
 
 export interface Props {
   modelValue?: boolean;
@@ -10,6 +12,9 @@ export interface Props {
   label?: string;
   right?: boolean;
   items?: DropdownItemProps[];
+  /**
+   * @deprecated use `placement="top-start"` instead
+   */
   top?: boolean;
   topClass?: string;
   bottomClass?: string;
@@ -24,56 +29,77 @@ export interface Props {
   prefixIcon?: string;
   prefixIconSize?: string;
   prefixIconClass?: string;
+  placement?: Placement;
+  offset?: number;
+  shift?: boolean | number;
+  flip?: boolean | number;
 }
 
 withDefaults(defineProps<Props>(), {
   modelValue: false,
   btnProps: () => ({
-    variant: "secondary",
+    variant: 'secondary',
   }),
-  label: "Options",
+  label: 'Options',
   right: false,
   items: () => [],
   top: false,
-  topClass: "",
-  bottomClass: "",
-  panelClass: "",
-  buttonWrapperClass: "",
-  leftClass: "",
-  rightClass: "",
-  transition: "dropdown",
-  icon: "ri:arrow-down-s-line",
-  iconSize: "sm",
-  iconClass: "",
-  prefixIcon: "",
-  prefixIconSize: "sm",
+  topClass: '',
+  bottomClass: '',
+  panelClass: '',
+  buttonWrapperClass: '',
+  leftClass: '',
+  rightClass: '',
+  transition: 'dropdown',
+  icon: 'ri:arrow-down-s-line',
+  iconSize: 'sm',
+  iconClass: '',
+  prefixIcon: '',
+  prefixIconSize: 'sm',
+  placement: 'bottom-start',
+  offset: 0,
+  shift: true,
+  flip: true,
 });
 </script>
 
 <template>
   <Menu as="div" class="dropdown">
-    <div class="dropdown-button-wrapper" :class="buttonWrapperClass">
-      <slot name="activator" :btn-props="btnProps" :label="label">
-        <MenuButton as="button" class="dropdown-button-activator" v-bind="btnProps">
-          <Icon
-            :name="prefixIcon"
-            :size="prefixIconSize"
-            :class="prefixIconClass"
-            class="dropdown-button-icon"
-            aria-hidden="true"
-          />
-          {{ label }}
-          <Icon
-            :name="icon"
-            :size="iconSize"
-            :class="iconClass"
-            class="dropdown-button-icon"
-            aria-hidden="true"
-          />
-        </MenuButton>
-      </slot>
-    </div>
-    <transition :name="transition">
+    <Float
+      as="div"
+      class="relative"
+      floating-as="template"
+      :placement="placement"
+      :transition="transition"
+      :offset="offset"
+      :shift="shift"
+      :flip="flip"
+    >
+      <div class="dropdown-button-wrapper" :class="buttonWrapperClass">
+        <slot name="activator" :btn-props="btnProps" :label="label">
+          <MenuButton
+            as="button"
+            class="dropdown-button-activator"
+            v-bind="btnProps"
+          >
+            <Icon
+              :name="prefixIcon"
+              :size="prefixIconSize"
+              :class="prefixIconClass"
+              class="dropdown-button-icon"
+              aria-hidden="true"
+            />
+            {{ label }}
+            <Icon
+              :name="icon"
+              :size="iconSize"
+              :class="iconClass"
+              class="dropdown-button-icon"
+              aria-hidden="true"
+            />
+          </MenuButton>
+        </slot>
+      </div>
       <MenuItems
         class="dropdown-panel"
         :class="[
@@ -90,6 +116,6 @@ withDefaults(defineProps<Props>(), {
           <DropdownItem v-for="item in items" :key="item.text" v-bind="item" />
         </slot>
       </MenuItems>
-    </transition>
+    </Float>
   </Menu>
 </template>
