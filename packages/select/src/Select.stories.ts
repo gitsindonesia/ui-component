@@ -123,6 +123,21 @@ export const Uncontrolled: Story<typeof Select> = (args) => ({
   `,
 });
 
+export const FloatingUI: Story<typeof Select> = (args) => ({
+  components: {
+    Select,
+  },
+  setup() {
+    return {args};
+  },
+  template: `
+    <div class="mt-[90vh]">
+      <Select v-bind="args" hint="This is a hint" class="mb-4" label="Select" />
+      <Select v-bind="args" hint="This is a hint" class="mb-4" label="Autocomplete" searchable />
+    </div>
+  `,
+});
+
 export const Slots: Story<typeof Select> = (args) => ({
   components: {
     Select,

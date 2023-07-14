@@ -32,6 +32,7 @@ export default defineConfig({
         '@morpheme/utils',
         '@morpheme/theme',
         'vee-validate',
+        '@headlessui-float/vue',
       ],
       output: {
         // Provide global variables to use in the UMD build
