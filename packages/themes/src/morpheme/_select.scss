@@ -52,7 +52,11 @@
   --v-select-hint-color: var(--v-input-hint-color);
   --v-select-hint-margin-top: var(--v-input-hint-margin-top);
 
+  // check selected
   --v-select-option-check-selected-color: var(--color-primary-700);
+
+  // empty
+  --v-select-empty-color: var(--color-gray-600);
 }
 
 .v-select {
@@ -395,6 +399,7 @@
     padding-bottom: 0.5rem /* 8px */;
     padding-left: 1rem /* 16px */;
     padding-right: 1rem /* 16px */;
+    font-size: var(--size-font-sm);
   }
 
   &-input {

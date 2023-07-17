@@ -111,6 +111,11 @@ SearchableMultiple.args = {
   clearable: true
 };
 
+export const Empty = Template.bind({});
+Empty.args = {
+  items: []
+};
+
 export const Uncontrolled: Story<typeof Select> = (args) => ({
   components: {
     Select,
