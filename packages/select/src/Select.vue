@@ -72,7 +72,7 @@ const props = withDefaults(
     items: () => [],
     iconSize: 'xs',
     placement: 'bottom',
-    offset: 14,
+    offset: 8,
     shift: true,
     flip: true,
   },
