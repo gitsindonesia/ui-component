@@ -21,15 +21,15 @@
     "docs:serve": "vitepress serve docs"
   },
   "dependencies": {
-    "@headlessui/vue": "^1.7.13",
-    "@vueuse/core": "^10.1.2",
+    "@headlessui/vue": "^1.7.14",
+    "@vueuse/core": "^10.2.1",
     "floating-vue": "^2.0.0-beta.20",
-    "pagino": "^1.4.1",
-    "vee-validate": "^4.9.5",
+    "pagino": "^1.4.2",
+    "vee-validate": "^4.10.8",
     "vue": "^3.3.4",
-    "vue-router": "^4.2.1",
+    "vue-router": "^4.2.4",
     "vuex": "^4.1.0",
-    "yup": "^1.1.1"
+    "yup": "^1.2.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
