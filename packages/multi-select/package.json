@@ -21,7 +21,7 @@
     "@morpheme/icon": "^1.0.0-beta.10",
     "@morpheme/tooltip": "^1.0.0-beta.10",
     "@vueuse/core": "^7.7.1",
-    "vee-validate": "^4.6.1",
+    "vee-validate": "^4.10.8",
     "vue": "^3.3.4"
   },
   "devDependencies": {
@@ -32,7 +32,7 @@
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
     "tailwindcss": "^3.3.1",
-    "vee-validate": "^4.5.9",
+    "vee-validate": "^4.10.8",
     "vite": "^4.3.8",
     "vitest": "^0.12.4"
   },

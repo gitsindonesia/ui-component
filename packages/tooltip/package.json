@@ -16,7 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "floating-vue": "^2.0.0-beta.20",
-    "vee-validate": "^4.5.9",
+    "vee-validate": "^4.10.8",
     "vue": "^3.3.4"
   },
   "devDependencies": {
