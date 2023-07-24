@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { PropType, computed, ref, watch } from "vue";
 import Icon from "@morpheme/icon";
-import { ValidationMode } from "../composables";
-import ErrorMessage from "../ErrorMessage.vue";
 
 type IconSize = InstanceType<typeof Icon>["$props"]["size"];
 
@@ -73,10 +71,6 @@ const props = defineProps({
   shadow: {
     type: Boolean,
     default: false,
-  },
-  validationMode: {
-    type: String as PropType<ValidationMode>,
-    default: "aggressive",
   },
   classes: {
     type: Object,
@@ -299,13 +293,13 @@ defineExpose({
         </button>
       </slot>
     </div>
-    <p v-if="hint" class="v-input-hint">
+    <div v-if="hint" class="v-input-hint">
       <slot name="hint">
         {{ hint }}
       </slot>
-    </p>
-    <ErrorMessage v-if="errorMessage && !hideError" :class="errorClass">
+    </div>
+    <div class="v-input-error" v-if="errorMessage && !hideError" :class="errorClass">
       {{ errorMessage }}
-    </ErrorMessage>
+    </div>
   </div>
 </template>
