@@ -557,6 +557,41 @@ export const Validation: Story<VInputProps> = (args) => ({
 `,
 });
 
+export const InputTypes: Story<VInputProps> = (args) => ({
+  components: {InputField, VBtn},
+  setup() {
+    const types = [
+      'text',
+      'password',
+      'email',
+      'number',
+      'url',
+      'tel',
+      'search',
+      'date',
+      'time',
+      'datetime-local',
+    ]
+    const {values} = useForm({});
+    return {args, types, values};
+  },
+  template: `
+    <form>
+      <InputField
+        v-for="type in types"
+        :key="type"
+        v-bind='args'
+        :type="type"
+        wrapper-class="mb-2"
+        :name="type"
+        :label="type"
+        :placeholder="type"
+      />
+      <pre>{{ values }}</pre>
+    </form>
+`,
+});
+
 // dark mode VInput story
 export const DarkMode: Story<VInputProps> = (args) => ({
   components: {VInput},
