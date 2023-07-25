@@ -1,16 +1,9 @@
 <script setup lang="ts">
-import {PropType} from 'vue';
-import { type ValidationMode, useFormValue } from '../composables';
+import {useVModel} from '@vueuse/core';
+import {computed, ref, watch} from 'vue';
 
 const props = defineProps({
   modelValue: {
-    type: String,
-    default: '',
-  },
-  /**
-   * @deprecated Use `modelValue` instead
-   */
-  value: {
     type: String,
     default: '',
   },
@@ -21,10 +14,6 @@ const props = defineProps({
   error: {
     type: Boolean,
     default: false,
-  },
-  errorMessages: {
-    type: Array,
-    default: () => [],
   },
   readonly: {
     type: Boolean,
@@ -42,13 +31,6 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-  /**
-   * @deprecated
-   */
-  size: {
-    type: String,
-    default: '',
-  },
   cols: {
     type: [String, Number],
     default: undefined,
@@ -58,10 +40,6 @@ const props = defineProps({
     default: undefined,
   },
   label: {
-    type: String,
-    default: '',
-  },
-  rules: {
     type: String,
     default: '',
   },
@@ -77,18 +55,22 @@ const props = defineProps({
     type: String,
     default: '',
   },
-  validationMode: {
-    type: String as PropType<ValidationMode>,
-    default: 'aggressive',
-  },
   hideError: {
     type: Boolean,
     default: false,
   },
   hint: {
     type: String,
-    default: ''
-  }
+    default: '',
+  },
+  errorMessage: {
+    type: String,
+    default: '',
+  },
+  id: {
+    type: String,
+    default: '',
+  },
 });
 
 const emit =
@@ -96,8 +78,17 @@ const emit =
     (e: 'update:modelValue', value: string): void;
   }>();
 
-  const {errorMessage, uncontrolledValue, validationListeners, inputId} =
-  useFormValue(props, emit);
+const inputId = computed(() => props.id || props.name);
+const uncontrolledValue = useVModel(props, 'modelValue', emit);
+const input = ref();
+
+function focus() {
+  input.value?.focus();
+}
+
+defineExpose({
+  focus,
+});
 </script>
 
 <template>
@@ -124,7 +115,6 @@ const emit =
       <textarea
         :id="inputId"
         v-model="uncontrolledValue"
-        v-on="validationListeners"
         :class="['v-input-control', inputClass]"
         :readonly="readonly"
         :disabled="disabled"
@@ -145,6 +135,10 @@ const emit =
         </slot>
       </div>
     </div>
-    <div v-if="!hideError" class="v-input-error" v-text="errorMessage" />
+    <div v-if="!hideError" class="v-input-error">
+      <slot name="error">
+        {{ errorMessage }}
+      </slot>
+    </div>
   </div>
 </template>
