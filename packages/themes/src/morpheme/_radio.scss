@@ -8,6 +8,11 @@
   // checked
   --v-radio-checked-bg-color: var(--color-primary-50);
   --v-radio-checked-border-color: var(--color-primary-600);
+  
+  // error
+  --v-radio-error-bg-color: var(--color-error-50);
+  --v-radio-error-border-color: var(--color-error-600);
+  --v-radio-error-bg-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23f04438' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
 
   // disabled
   --v-radio-disabled-border-color: var(--color-gray-400);
@@ -96,6 +101,18 @@
     &-input {
       --v-input-effect-border-color: var(--color-error-300);
       --v-input-effect-shadow-color: var(--color-error-100);
+    }
+  }
+
+  // error state
+  &--error {
+    .v-radio-input {
+      --v-radio-border-color: var(--v-radio-error-border-color) !important;
+      --v-radio-bg-color: var(--v-radio-error-bg-color) !important;
+          
+      &:checked {
+        background-image: var(--v-radio-error-bg-image) !important;
+      }
     }
   }
 }
