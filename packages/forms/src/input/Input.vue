@@ -1,40 +1,30 @@
 <script setup lang="ts">
-import { PropType, computed, ref, watch } from "vue";
-import Icon from "@morpheme/icon";
+import {PropType, computed, ref, watch} from 'vue';
+import Icon from '@morpheme/icon';
+import SelectOptions, {type Option} from './SelectOptions.vue';
 
-type IconSize = InstanceType<typeof Icon>["$props"]["size"];
+type IconSize = InstanceType<typeof Icon>['$props']['size'];
 
 defineOptions({
   inheritAttrs: false,
 });
 
 const props = defineProps({
-  /**
-   * @deprecated Use `modelValue` instead
-   */
-  value: {
-    type: [String, Number],
-    default: "",
-  },
   modelValue: {
     type: [String, Number],
-    default: "",
+    default: '',
   },
   type: {
     type: String,
-    default: "text",
+    default: 'text',
   },
   name: {
     type: String,
-    default: "",
+    default: '',
   },
   error: {
     type: Boolean,
     default: false,
-  },
-  errorMessages: {
-    type: Array,
-    default: () => [],
   },
   readonly: {
     type: Boolean,
@@ -45,85 +35,68 @@ const props = defineProps({
     default: false,
   },
   size: {
-    type: String as PropType<"sm" | "md" | "lg">,
-    default: "md",
+    type: String as PropType<'sm' | 'md' | 'lg'>,
+    default: 'md',
   },
   placeholder: {
     type: String,
-    default: "",
+    default: '',
   },
   prependIcon: {
     type: String,
-    default: "",
+    default: '',
   },
   appendIcon: {
     type: String,
-    default: "",
+    default: '',
   },
   color: {
     type: String,
-    default: "default",
-  },
-  text: {
-    type: Boolean,
-    default: false,
+    default: 'default',
   },
   shadow: {
     type: Boolean,
     default: false,
   },
-  classes: {
-    type: Object,
-    default: () => ({
-      wrapper: "",
-      input: "",
-      prepend: "",
-      append: "",
-    }),
-  },
   label: {
     type: String,
-    default: "",
-  },
-  rules: {
-    type: [Object, String],
-    default: null,
+    default: '',
   },
   id: {
     type: String,
-    default: "",
+    default: '',
   },
   inputClass: {
     type: String,
-    default: "",
+    default: '',
   },
   wrapperClass: {
     type: String,
-    default: "",
+    default: '',
   },
   prependClass: {
     type: String,
-    default: "",
+    default: '',
   },
   prependIconClass: {
     type: String,
-    default: "",
+    default: '',
   },
   prependIconSize: {
     type: String as PropType<IconSize>,
-    default: "md",
+    default: 'md',
   },
   appendClass: {
     type: String,
-    default: "",
+    default: '',
   },
   appendIconClass: {
     type: String,
-    default: "",
+    default: '',
   },
   appendIconSize: {
     type: String as PropType<IconSize>,
-    default: "md",
+    default: 'md',
   },
   clearable: {
     type: Boolean,
@@ -131,23 +104,23 @@ const props = defineProps({
   },
   clearableIcon: {
     type: String,
-    default: "ri:close-line",
+    default: 'ri:close-line',
   },
   clearableIconClass: {
     type: String,
-    default: "",
+    default: '',
   },
   clearableIconSize: {
     type: String as PropType<IconSize>,
-    default: "md",
+    default: 'md',
   },
   errorClass: {
     type: String,
-    default: "",
+    default: '',
   },
   labelClass: {
     type: String,
-    default: "",
+    default: '',
   },
   rounded: {
     type: Boolean,
@@ -159,7 +132,7 @@ const props = defineProps({
   },
   hint: {
     type: String,
-    default: "",
+    default: '',
   },
   borderless: {
     type: Boolean,
@@ -171,35 +144,44 @@ const props = defineProps({
   },
   errorMessage: {
     type: String,
-    default: "",
+    default: '',
+  },
+  as: {
+    type: String,
+    default: 'input',
+  },
+  options: {
+    type: Array as PropType<Option[]>,
+    default: () => [] as Option[],
   },
 });
 
-const emit = defineEmits<{
-  (e: 'update:modelValue', value: string | number): void;
-  (e: 'clickPrepend'): void;
-  (e: 'clickPrependIcon'): void;
-  (e: 'clickAppend'): void;
-  (e: 'clickAppendIcon'): void;
-  (e: 'clear'): void;
-}>();
+const emit =
+  defineEmits<{
+    (e: 'update:modelValue', value: string | number): void;
+    (e: 'clickPrepend'): void;
+    (e: 'clickPrependIcon'): void;
+    (e: 'clickAppend'): void;
+    (e: 'clickAppendIcon'): void;
+    (e: 'clear'): void;
+  }>();
 
-const inputId = computed(() => props.id || props.name)
-const uncontrolledValue = ref(props.modelValue || props.value || "")
+const inputId = computed(() => props.id || props.name);
+const uncontrolledValue = ref(props.modelValue);
 const input = ref();
 
 function clear() {
-  uncontrolledValue.value = "";
-  emit("clear");
+  uncontrolledValue.value = '';
+  emit('clear');
 }
 
 function focus() {
   input.value?.focus();
 }
 
-watch(uncontrolledValue, newValue => {
-  emit("update:modelValue", newValue);
-})
+watch(uncontrolledValue, (newValue) => {
+  emit('update:modelValue', newValue);
+});
 
 defineExpose({
   focus,
@@ -209,9 +191,9 @@ defineExpose({
 <template>
   <div
     :class="[
-      `v-input v-input-${color} v-input--${size}`,
+      `v-input v-input-${color} v-input-${as === 'input' ? type : as} v-input--${size}`,
       {
-        'v-input--error': error || errorMessages.length > 0 || !!errorMessage,
+        'v-input--error': error || !!errorMessage,
         'v-input--disabled': disabled,
         'v-input--shadow': shadow,
         'v-input--rounded': rounded,
@@ -221,17 +203,23 @@ defineExpose({
       wrapperClass,
     ]"
   >
-    <slot v-if="label" name="label" :v-slot="{ for: inputId }">
-      <label v-if="label" :for="inputId" class="v-input-label" :class="labelClass">
+    <slot v-if="label" name="label" :v-slot="{for: inputId}">
+      <label
+        v-if="label"
+        :for="inputId"
+        class="v-input-label"
+        :class="labelClass"
+      >
         {{ label }}
       </label>
     </slot>
-    <div v-if="text" v-bind="$attrs" class="v-input-text">
-      {{ uncontrolledValue }}
-    </div>
-    <div v-else class="v-input-wrapper">
+    <div class="v-input-wrapper">
       <slot name="prepend.outer">
-        <div class="v-input-prepend" :class="prependClass" @click="emit('clickPrepend')">
+        <div
+          class="v-input-prepend"
+          :class="prependClass"
+          @click="emit('clickPrepend')"
+        >
           <slot name="prepend">
             <Icon
               v-if="prependIcon"
@@ -244,7 +232,8 @@ defineExpose({
           </slot>
         </div>
       </slot>
-      <input
+      <component
+        :is="as"
         :id="id || name"
         v-model="uncontrolledValue"
         ref="input"
@@ -261,9 +250,17 @@ defineExpose({
         :disabled="disabled"
         :readonly="readonly"
         v-bind="$attrs"
-      />
+      >
+        <slot>
+          <SelectOptions v-if="options.length > 0" :options="options" />
+        </slot>
+      </component>
       <slot name="append.outer">
-        <div class="v-input-append" :class="appendClass" @click="emit('clickAppend')">
+        <div
+          class="v-input-append"
+          :class="appendClass"
+          @click="emit('clickAppend')"
+        >
           <slot name="append">
             <Icon
               v-if="appendIcon"
@@ -298,8 +295,14 @@ defineExpose({
         {{ hint }}
       </slot>
     </div>
-    <div class="v-input-error" v-if="errorMessage && !hideError" :class="errorClass">
-      {{ errorMessage }}
+    <div
+      class="v-input-error"
+      v-if="errorMessage && !hideError"
+      :class="errorClass"
+    >
+      <slot name="error">
+        {{ errorMessage }}
+      </slot>
     </div>
   </div>
 </template>

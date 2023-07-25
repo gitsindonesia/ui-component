@@ -568,9 +568,15 @@ export const InputTypes: Story<VInputProps> = (args) => ({
       'url',
       'tel',
       'search',
+      'color',
       'date',
+      'month',
+      'week',
       'time',
       'datetime-local',
+      'checkbox',
+      'range',
+      'file',
     ]
     const {values} = useForm({});
     return {args, types, values};
@@ -587,6 +593,68 @@ export const InputTypes: Story<VInputProps> = (args) => ({
         :label="type"
         :placeholder="type"
       />
+      <InputField
+        wrapper-class="mb-2"
+        type="radio"
+        id="radio1"
+        name="radio"
+        label="Radio 1"
+        placeholder="Radio 1"
+        value="one"
+      />
+      <InputField
+        wrapper-class="mb-2"
+        type="radio"
+        id="radio2"
+        name="radio"
+        label="Radio 2"
+        placeholder="Radio 2"
+        value="two"
+      />
+      <InputField
+        wrapper-class="mb-2"
+        name="textarea"
+        label="Textarea"
+        placeholder="Textarea"
+        as="textarea"
+        rows="3"
+      />
+      <InputField
+        wrapper-class="mb-2"
+        name="select"
+        label="Select"
+        placeholder="Select"
+        as="select"
+        :options="[
+          { label: 'Option 1', value: '1' },
+          { label: 'Option 2', value: '2' },
+          { label: 'Option 3', value: '3' },
+        ]"
+      />
+      <InputField
+        wrapper-class="mb-2"
+        name="select_group"
+        label="Select Group"
+        placeholder="Select Group"
+        as="select"
+        :options="[
+          { label: 'Group 1', options: ['Option 1', 'Option 2', 'Option 3'] },
+          { label: 'Group 2', options: ['Option 4', 'Option 5', 'Option 6'] },
+        ]"
+      />
+      <InputField
+        wrapper-class="mb-2"
+        name="select_custom"
+        label="Select Custom Slot"
+        placeholder="Select Custom Slot"
+        as="select"
+      >
+        <option>Choose</option>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+      </InputField>
+
       <pre>{{ values }}</pre>
     </form>
 `,

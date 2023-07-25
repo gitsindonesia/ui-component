@@ -73,12 +73,16 @@ select:-webkit-autofill:focus {
     --v-input-border-radius: var(--border-radius-full);
   }
 
-  &--disabled {
+  &--disabled:not(&-file):not(&-radio):not(&-checkbox):not(&-range) {
     --v-input-bg-color: var(--v-input-disabled-bg-color);
     --v-input-color: var(--v-input-disabled-color);
     --v-input-border-color: var(--v-input-disabled-border-color);
     --v-input-placeholder-color: var(--v-input-disabled-placeholder-color);
     --v-input-icon-color: var(--v-input-disabled-icon-color);
+  }
+
+  &--shadow:not(&-file):not(&-radio):not(&-checkbox):not(&-range) &-wrapper {
+    box-shadow: var(--v-input-shadow);
   }
 
   &--borderless {
@@ -196,7 +200,7 @@ select:-webkit-autofill:focus {
   align-items: center;
 }
 
-.v-input-control {
+.v-input-control:not([type="radio"]):not([type="checkbox"]) {
   flex: 1;
   border-radius: var(--v-input-border-radius);
   font-size: var(--v-input-font-size);
@@ -296,11 +300,6 @@ select:-webkit-autofill:focus {
   font-size: var(--size-font-sm);
 }
 
-/* shadow */
-.v-input.v-input--shadow .v-input-wrapper {
-  box-shadow: var(--v-input-shadow);
-}
-
 /* text */
 .v-input-text {
   color: var(--v-input-text-color);
@@ -359,5 +358,27 @@ select:-webkit-autofill:focus {
   .v-input-icon {
     --v-input-icon-width: var(--size-spacing-5);
     --v-input-icon-height: var(--size-spacing-5);
+  }
+}
+
+// other inputs
+.v-input-file,
+.v-input-radio,
+.v-input-checkbox,
+.v-input-range {
+  .v-input-wrapper {
+    border: none;
+  }
+  &:focus-within {
+    .v-input-wrapper {
+      border: none;
+      box-shadow: none;
+    }
+  }
+}
+
+.v-input-checkbox {
+  .v-input-control {
+    border-radius: var(--border-radius-md);
   }
 }
