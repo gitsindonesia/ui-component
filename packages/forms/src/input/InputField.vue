@@ -59,7 +59,7 @@ const {
     :error="meta.touched && !meta.valid"
     :error-message="errorMessage"
     @input="handleChange"
-    @blur="handleBlur"
+    @blur="handleBlur($event, true)"
   >
     <template v-for="(_, name) in $slots" v-slot:[name]="slotData">
       <slot :name="name" v-bind="slotData" />
