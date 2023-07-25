@@ -1,9 +1,10 @@
-import VSwitch from '../src/VSwitch.vue';
 import {Meta, Story} from '@storybook/vue3';
-import {useForm} from 'vee-validate';
+import {useForm, Field} from 'vee-validate';
 import {object, boolean} from 'yup';
 import VBtn from '@morpheme/button';
 import {ref} from 'vue';
+import VSwitch from './Switch.vue';
+import VSwitchField from './VSwitch.vue';
 
 export default {
   title: 'Forms/Switch',
@@ -21,7 +22,10 @@ const Template: Story = (args) => ({
     const checked = ref(true);
     return {args, checked};
   },
-  template: `<v-switch v-bind="args" v-model="checked" />`,
+  template: `
+  <v-switch v-bind="args" v-model="checked" />
+  <pre>Model value: {{ checked }}</pre>
+  `,
 });
 
 export const Default = Template.bind({});
@@ -124,6 +128,12 @@ Hint.args = {
   hint: 'This is a hint',
 };
 
+export const ErrorState = Template.bind({});
+ErrorState.args = {
+  error: true,
+  errorMessage: 'This is an error',
+};
+
 export const CustomClass = Template.bind({});
 CustomClass.args = {
   color: '',
@@ -150,38 +160,42 @@ CustomClass.parameters = {
   },
 };
 
-export const CustomStyle: Story<{}> = () => ({
-  components: {VSwitch, VBtn},
-  template: `
-    <VSwitch
-      label="Custom Style"
-      color="custom"
-      :style="{
-        '--v-switch-button-bg-color': 'transparent',
-        '--v-switch-button-border-color': 'purple',
-        '--v-switch-button-checked-bg-color': 'transparent',
-        '--v-switch-button-checked-border-color': 'purple',
-        '--v-switch-button-padding-x': '0.125rem',
-        '--v-switch-thumb-bg-color': 'purple',
-        '--v-switch-thumb-width': '1rem',
-        '--v-switch-thumb-height': '1rem',
-      }"
-    />
-`,
-});
+export const CustomStyle = Template.bind({});
+CustomStyle.args = {
+  label: 'Custom Style',
+  color: 'custom',
+  style: {
+    '--v-switch-button-bg-color': 'transparent',
+    '--v-switch-button-border-color': 'purple',
+    '--v-switch-button-checked-bg-color': 'transparent',
+    '--v-switch-button-checked-border-color': 'purple',
+    '--v-switch-button-padding-x': '0.125rem',
+    '--v-switch-thumb-bg-color': 'purple',
+    '--v-switch-thumb-width': '1rem',
+    '--v-switch-thumb-height': '1rem',
+  },
+};
 
 export const Validation: Story<{}> = () => ({
-  components: {VSwitch, VBtn},
+  components: {VSwitch: VSwitchField, Field, VBtn},
   setup() {
     const schema = object({
       agreement: boolean()
         .oneOf([true], 'You must agree to terms and condition')
         .required()
         .label('Agreement'),
+      notification: boolean()
+        .oneOf([true], 'You must enable notification')
+        .required()
+        .label('Notification'),
     });
 
     const {handleSubmit, resetForm, values, errors} = useForm({
       validationSchema: schema,
+      initialValues: {
+        agreement: false,
+        notification: true,
+      },
     });
 
     const onSubmit = handleSubmit((values) => {
@@ -192,6 +206,11 @@ export const Validation: Story<{}> = () => ({
   },
   template: `
     <form @submit="onSubmit" class="border-none">
+      <VSwitch
+        wrapper-class="mb-4"
+        name="notification"
+        label="Enable Notification"
+      />
       <VSwitch
         wrapper-class="mb-4"
         name="agreement"
@@ -225,11 +244,17 @@ export const Sizes: Story = (args) => ({
 export const DarkMode: Story = (args) => ({
   components: {VSwitch},
   setup() {
+    args.modelValue = true;
     return {args};
   },
   template: `
   <div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
     <VSwitch v-bind='args' />
+    <VSwitch v-bind='args' color="secondary" />
+    <VSwitch v-bind='args' color="success" />
+    <VSwitch v-bind='args' color="error" />
+    <VSwitch v-bind='args' color="warning" />
+    <VSwitch v-bind='args' color="info" />
   </div>
   `,
 });
