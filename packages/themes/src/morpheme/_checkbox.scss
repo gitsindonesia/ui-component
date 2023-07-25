@@ -23,6 +23,10 @@
   --v-checkbox-label-display: var(--v-input-label-display, block);
   --v-checkbox-label-margin-top: 1px;
   --v-checkbox-label-color: var(--color-gray-700);
+  
+  // indeterminate
+  --v-checkbox-indeterminate-bg-color: var(--color-primary-600);
+  --v-checkbox-indeterminate-border-color: var(--color-primary-600);
 }
 
 .v-checkbox {
@@ -63,6 +67,12 @@
       cursor: not-allowed;
       --v-checkbox-bg-color: var(--v-checkbox-disabled-bg-color);
       --v-checkbox-border-color: var(--v-checkbox-disabled-border-color);
+    }
+    
+    &:indeterminate {
+      --v-checkbox-color: var(--v-checkbox-indeterminate-color);
+      --v-checkbox-border-color: var(--v-checkbox-indeterminate-border-color);
+      --v-checkbox-bg-color: var(--v-checkbox-indeterminate-bg-color);
     }
   }
 
