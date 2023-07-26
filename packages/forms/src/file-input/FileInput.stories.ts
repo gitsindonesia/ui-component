@@ -61,6 +61,11 @@ LabelAndHint.args = {
   hint: 'Max 1MB. Only images are allowed.'
 };
 
+export const ButtonVariant = Default.bind({});
+ButtonVariant.args = {
+  variant: 'button',
+};
+
 export const VariantProps = Default.bind({});
 VariantProps.args = {
   label: 'File',
