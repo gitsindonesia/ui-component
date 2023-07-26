@@ -1,10 +1,9 @@
 import VRadio from './Radio.vue';
 import {Meta, Story} from '@storybook/vue3';
-import {useForm, Field, useField} from 'vee-validate';
+import {useForm, Field} from 'vee-validate';
 import {object, string} from 'yup';
 import VBtn from '@morpheme/button';
 import {ref} from 'vue';
-import RadioField from './RadioField.vue';
 
 export default {
   title: 'Experimental/Forms/Radio',
@@ -74,7 +73,7 @@ export const Error: Story = (args) => ({
 });
 
 export const Validation: Story<{}> = () => ({
-  components: {RadioField, VRadio, VBtn, Field},
+  components: {VRadio, VBtn, Field},
   setup() {
     const schema = object({
       choose: string().oneOf(['Yes', 'No']).required().label('Agreement'),
