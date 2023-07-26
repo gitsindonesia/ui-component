@@ -17,5 +17,5 @@ export {default as VErrorMessage} from './ErrorMessage.vue';
 export {default as FormField} from './FormField.vue';
 export * from './composables';
 export * from './form-select';
-export * from './file-input/types';
+export * from './file-input';
 export * from './input';
