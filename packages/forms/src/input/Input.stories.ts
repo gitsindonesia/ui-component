@@ -1,6 +1,5 @@
 import VInput from './Input.vue';
 import {Meta, Story} from '@storybook/vue3';
-import type {VInputProps} from './types';
 import Icon from '@morpheme/icon';
 import {themeColors} from '@morpheme/utils';
 import VBtn from '@morpheme/button';
@@ -29,7 +28,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<VInputProps> = (args) => ({
+const Template: Story<typeof VInput> = (args) => ({
   components: {VInput},
   setup() {
     return {args};
@@ -49,7 +48,7 @@ Default.parameters = {
   },
 };
 
-export const ModelValue: Story<VInputProps> = (args) => ({
+export const ModelValue: Story<typeof VInput> = (args) => ({
   components: {VInput},
   setup() {
     const value = ref('');
@@ -61,7 +60,7 @@ export const ModelValue: Story<VInputProps> = (args) => ({
 `,
 });
 
-export const Colors: Story<VInputProps> = (args) => ({
+export const Colors: Story<typeof VInput> = (args) => ({
   components: {VInput},
   setup() {
     return {args, themeColors};
@@ -237,7 +236,7 @@ Error.parameters = {
   },
 };
 
-export const Icons: Story<VInputProps> = (args) => ({
+export const Icons: Story<typeof VInput> = (args) => ({
   components: {VInput},
   setup() {
     const showAlert = (message: string) => {
@@ -283,7 +282,7 @@ Icons.parameters = {
   },
 };
 
-export const Slots: Story<VInputProps> = (args) => ({
+export const Slots: Story<typeof VInput> = (args) => ({
   components: {VInput, Icon, VBtn},
   setup() {
     return {args};
@@ -453,7 +452,7 @@ Slots.parameters = {
   },
 };
 
-export const Sizes: Story<VInputProps> = (args) => ({
+export const Sizes: Story<typeof VInput> = (args) => ({
   components: {VInput},
   setup() {
     return {args, sizes};
@@ -485,7 +484,7 @@ Sizes.parameters = {
     },
   },
 };
-export const Clearable: Story<VInputProps> = (args) => ({
+export const Clearable: Story<typeof VInput> = (args) => ({
   components: {VInput},
   setup() {
     const value = ref('');
@@ -517,7 +516,7 @@ Sizes.parameters = {
   },
 };
 
-export const Validation: Story<VInputProps> = (args) => ({
+export const Validation: Story<typeof VInput> = (args) => ({
   components: {InputField, VBtn},
   setup() {
     const schema = object({
@@ -557,7 +556,7 @@ export const Validation: Story<VInputProps> = (args) => ({
 `,
 });
 
-export const InputTypes: Story<VInputProps> = (args) => ({
+export const InputTypes: Story<typeof VInput> = (args) => ({
   components: {InputField, VBtn},
   setup() {
     const types = [
@@ -661,7 +660,7 @@ export const InputTypes: Story<VInputProps> = (args) => ({
 });
 
 // dark mode VInput story
-export const DarkMode: Story<VInputProps> = (args) => ({
+export const DarkMode: Story<typeof VInput> = (args) => ({
   components: {VInput},
   setup() {
     const modelValue = ref('');

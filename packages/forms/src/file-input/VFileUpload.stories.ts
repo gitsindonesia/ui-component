@@ -173,7 +173,7 @@ export const Validation: Story<{}> = () => ({
 `,
 });
 
-export const InitialError: Story<VInputProps> = (args) => ({
+export const InitialError: Story<typeof VFileUpload> = (args) => ({
   components: {VInput, VBtn, VFileUpload},
   setup() {
     const schema = object({

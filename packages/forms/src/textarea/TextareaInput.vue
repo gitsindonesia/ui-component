@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {useVModel} from '@vueuse/core';
-import {computed, ref, watch} from 'vue';
+import {computed, ref} from 'vue';
 
 const props = defineProps({
   modelValue: {

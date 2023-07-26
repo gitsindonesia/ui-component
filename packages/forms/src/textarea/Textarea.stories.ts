@@ -206,7 +206,7 @@ export const ValidationMode: Story<{}> = () => ({
   `,
 });
 
-export const TestInputState: Story<{}> = (args) => ({
+export const TestInputState: Story<typeof VTextarea> = (args) => ({
   components: {VBtn, VTextarea},
   setup() {
     const modelValue = ref('');

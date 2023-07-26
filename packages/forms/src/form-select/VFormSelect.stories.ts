@@ -32,6 +32,8 @@ export default {
     error: false,
     errorMessages: [],
     disabled: false,
+    useForm: false,
+    setupWithInitialValues: false,
   },
 } as Meta;
 
@@ -333,7 +335,7 @@ export const IntialValues: Story<{}> = (args) => ({
 `,
 });
 
-export const TestInputState: Story<{}> = (args) => ({
+export const TestInputState: Story<typeof VFormSelect> = (args) => ({
   components: {VBtn, VFormSelect},
   setup() {
     const modelValue = ref();

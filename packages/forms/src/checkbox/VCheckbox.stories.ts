@@ -22,6 +22,7 @@ export default {
   },
   args: {
     label: 'Label',
+    useForm: false,
   },
 } as Meta;
 
@@ -271,7 +272,7 @@ export const ValidationMode: Story<{}> = () => ({
   `,
 });
 
-export const TestInputState: Story<{}> = (args) => ({
+export const TestInputState: Story<typeof VCheckbox> = (args) => ({
   components: {VBtn, VCheckbox},
   setup() {
     const modelValue = ref('');

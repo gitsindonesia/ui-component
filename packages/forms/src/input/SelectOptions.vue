@@ -16,13 +16,13 @@ withDefaults(defineProps<Props>(), {
 
 <template>
   <template v-for="(option, index) in options" :key="index">
-    <optgroup v-if="option.options?.length > 0" :label="option.label">
+    <optgroup v-if="option.options?.length" :label="option.label">
       <option
-        v-for="(option, index) in option.options"
+        v-for="(subOption, index) in option.options"
         :key="index"
-        :value="option?.value || option"
+        :value="subOption?.value || subOption"
       >
-        {{ option?.label || option }}
+        {{ subOption?.label || subOption }}
       </option>
     </optgroup>
     <option v-else :key="index" :value="option?.value || option">
