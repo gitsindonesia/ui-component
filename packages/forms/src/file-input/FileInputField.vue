@@ -3,10 +3,6 @@ import {PropType, toRef} from 'vue';
 import {useField} from 'vee-validate';
 import FileInput from './FileInput.vue';
 
-defineOptions({
-  inheritAttrs: false,
-});
-
 const props = defineProps({
   value: {
     type: Array as PropType<any[]>,
@@ -14,18 +10,6 @@ const props = defineProps({
   name: {
     type: String,
     required: true,
-  },
-  label: {
-    type: String,
-    default: '',
-  },
-  hint: {
-    type: String,
-    default: '',
-  },
-  wrapperClass: {
-    type: String,
-    default: '',
   },
 });
 
@@ -47,28 +31,15 @@ const {
 </script>
 
 <template>
-  <div class="v-input" :class="wrapperClass">
-    <label v-if="label" class="v-input-label">
-      {{ label }}
-    </label>
-    <FileInput
-      :model-value="inputValue"
-      @update:model-value="handleChange"
-      v-bind="$attrs"
-    >
-      <template v-for="(_, slot) in $slots" :key="slot" #[slot]="slotProps">
-        <slot :key="slot" :name="slot" v-bind="slotProps" />
-      </template>
-    </FileInput>
-    <div v-if="hint" class="v-input-hint">
-      <slot name="hint">
-        {{ hint }}
-      </slot>
-    </div>
-    <div v-if="meta.touched && !meta.valid" class="v-input-error">
-      <slot name="error" v-bind="{meta, errorMessage}">
-        {{ errorMessage }}
-      </slot>
-    </div>
-  </div>
+  <FileInput
+    :model-value="inputValue"
+    :error="meta.touched && !meta.valid"
+    :error-message="errorMessage"
+    @update:model-value="handleChange"
+    v-bind="$attrs"
+  >
+    <template v-for="(_, slot) in $slots" :key="slot" #[slot]="slotProps">
+      <slot :key="slot" :name="slot" v-bind="slotProps" />
+    </template>
+  </FileInput>
 </template>

@@ -49,6 +49,26 @@ Accept.args = {
   accept: 'image/*'
 };
 
+export const Error = Default.bind({});
+Error.args = {
+  error: true,
+  errorMessage: 'This field is required'
+};
+
+export const LabelAndHint = Default.bind({});
+LabelAndHint.args = {
+  label: 'File',
+  hint: 'Max 1MB. Only images are allowed.'
+};
+
+export const VariantProps = Default.bind({});
+VariantProps.args = {
+  label: 'File',
+  variantProps: {
+    hint: 'Max 1MB. Only images are allowed.'
+  }
+};
+
 export const CustomSlot: Story<{}> = (args) => ({
   components: {
     FileInput,

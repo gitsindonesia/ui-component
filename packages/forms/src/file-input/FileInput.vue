@@ -14,6 +14,11 @@ interface Props {
   variant?: 'default' | 'button';
   variantProps?: Record<string, any>;
   hideItems?: boolean;
+  label?: string;
+  hint?: string;
+  wrapperClass?: string;
+  error?: boolean;
+  errorMessage?: string;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -69,19 +74,34 @@ defineExpose({
 </script>
 
 <template>
-  <slot v-bind="{files: normalizedFiles, open, reset}">
-    <component
-      :is="
-        variant === 'button'
-          ? FileInputButtonActivator
-          : FileInputDefaultActivator
-      "
-      v-bind="{files: normalizedFiles, open, reset, ...variantProps}"
-    />
-  </slot>
-  <slot v-if="!hideItems" name="items" v-bind="{files: normalizedFiles}">
-    <div class="mt-4 space-y-2">
-      <FileInputItems :files="normalizedFiles" @remove="removeItem" />
+  <div class="v-input" :class="wrapperClass">
+    <label v-if="label" class="v-input-label">
+      {{ label }}
+    </label>
+    <slot v-bind="{files: normalizedFiles, open, reset}">
+      <component
+        :is="
+          variant === 'button'
+            ? FileInputButtonActivator
+            : FileInputDefaultActivator
+        "
+        v-bind="{files: normalizedFiles, open, reset, ...variantProps}"
+      />
+    </slot>
+    <slot v-if="!hideItems" name="items" v-bind="{files: normalizedFiles}">
+      <div class="mt-2 space-y-2 empty:hidden">
+        <FileInputItems :files="normalizedFiles" @remove="removeItem" />
+      </div>
+    </slot>
+    <div v-if="hint" class="v-input-hint">
+      <slot name="hint">
+        {{ hint }}
+      </slot>
     </div>
-  </slot>
+    <div v-if="error" class="v-input-error">
+      <slot name="error">
+        {{ errorMessage }}
+      </slot>
+    </div>
+  </div>
 </template>
