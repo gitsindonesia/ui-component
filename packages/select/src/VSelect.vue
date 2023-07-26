@@ -328,7 +328,10 @@ const emitSelected = (val: any) => {
         <transition :name="transition">
           <ListboxOptions
             class="v-select-options"
-            :class="top ? 'bottom-10' : ''"
+            :class="{
+              'bottom-10': top,
+              'v-select-options--top': top,
+            }"
           >
             <div v-if="searchable" class="v-select-searchable">
               <v-input

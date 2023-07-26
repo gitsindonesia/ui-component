@@ -34,7 +34,9 @@ const Template: Story<typeof VSelect> = (args) => ({
     return {args, value};
   },
   template: `
-    <v-select v-bind="args" v-model="value" />
+    <v-select v-bind="args" v-model="value" :class="{
+      'mt-80': args.top,
+    }" />
     <pre class="mt-2">Model Value: {{ value }}</pre>
   `,
 });
@@ -45,6 +47,18 @@ Select.parameters = {
   docs: {
     source: {
       code: '<v-select :items="items" />',
+    },
+  },
+};
+
+export const Top = Template.bind({});
+Top.args = {
+  top: true,
+};
+Top.parameters = {
+  docs: {
+    source: {
+      code: '<v-select :items="items" top />',
     },
   },
 };

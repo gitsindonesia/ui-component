@@ -196,6 +196,12 @@
     max-height: 15rem;
     z-index: 10;
     border: 1px solid var(--v-select-options-border-color);
+    margin-top: var(--size-spacing-1);
+
+    &--top {
+      margin-top: 0;
+      margin-bottom: var(--size-spacing-2);
+    }
   }
 
   &-clearable {

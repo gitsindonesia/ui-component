@@ -155,6 +155,7 @@ const shadowClass = computed(() => {
         'v-select--disabled': disabled,
       },
       shadowClass,
+      `v-select--${placement}`
     ]"
   >
     <component
