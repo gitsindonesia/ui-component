@@ -31,6 +31,7 @@ export default defineConfig({
         '@morpheme/utils',
         '@morpheme/tailwind-config',
         '@morpheme/icon',
+        '@morpheme/progress-bar',
         '@iconify/vue',
       ],
       output: {
