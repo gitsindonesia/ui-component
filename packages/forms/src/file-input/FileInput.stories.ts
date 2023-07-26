@@ -151,6 +151,9 @@ export const FormValidation: Story<{}> = (args) => ({
           :model-value="field.value"
           @update:modelValue="handleChange"
         />
+        <div class="v-input-error">
+          {{ errorMessage }}
+        </div>
       </Field>
 
       <!--
