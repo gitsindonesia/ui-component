@@ -246,6 +246,10 @@ export default defineConfig({
             text: 'TextArea',
             link: '/components/textarea',
           },
+          {
+            text: 'Standalone Components',
+            link: '/components/standalone-form-components',
+          },
         ],
       },
       {
