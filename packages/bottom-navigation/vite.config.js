@@ -1,15 +1,17 @@
-import { defineConfig } from 'vite';
+import {defineConfig} from 'vite';
 import vue from '@vitejs/plugin-vue';
-import { resolve } from 'path';
+import {resolve} from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue({
-    script: {
-      propsDestructure: true,
-      defineModel: true
-    }
-  })],
+  plugins: [
+    vue({
+      script: {
+        propsDestructure: true,
+        defineModel: true,
+      },
+    }),
+  ],
   esbuild: {
     exclude: ['./src/**/**.stories.ts'],
   },
@@ -23,7 +25,13 @@ export default defineConfig({
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
-      external: ['vue', '@morpheme/utils', '@morpheme/theme', '@morpheme/icon', 'vue-router'],
+      external: [
+        'vue',
+        '@morpheme/utils',
+        '@morpheme/theme',
+        '@morpheme/icon',
+        'vue-router',
+      ],
       output: {
         // Provide global variables to use in the UMD build
         // for externalized deps

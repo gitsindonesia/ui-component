@@ -10,7 +10,7 @@ export default defineConfig({
     search: {
       provider: 'local',
     },
-    logo: 'https://gits.id/wp-content/uploads/2022/06/Logo-Main-1.png',
+    logo: '/morpheme-logo.png',
     nav: [
       {text: 'Guide', link: '/guide/getting-started'},
       {text: 'Storybook', link: 'https://gits-ui.web.app'},
@@ -245,6 +245,10 @@ export default defineConfig({
           {
             text: 'TextArea',
             link: '/components/textarea',
+          },
+          {
+            text: 'Standalone Components',
+            link: '/components/standalone-form-components',
           },
         ],
       },

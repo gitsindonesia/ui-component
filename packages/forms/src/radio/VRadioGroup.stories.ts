@@ -27,6 +27,7 @@ export default {
     name: '',
     label: 'Select',
     inline: false,
+    useForm: true,
   },
 } as Meta;
 
@@ -240,7 +241,7 @@ export const ValidationMode: Story<{}> = () => ({
   `,
 });
 
-export const TestInputState: Story<{}> = (args) => ({
+export const TestInputState: Story<typeof VRadioGroup> = (args) => ({
   components: {VBtn, VRadioGroup},
   setup() {
     const items = ['fire', 'earth', 'wind', 'water'];

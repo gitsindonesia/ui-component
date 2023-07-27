@@ -114,23 +114,25 @@ const getText = (option: string | Record<string, any>) => {
     >
       {{ label }}
     </label>
-    <select
-      :id="inputId"
-      v-model="uncontrolledValue"
-      @blur="handleBlur"
-      class="v-input-control"
-      :disabled="disabled"
-      v-bind="$attrs"
-    >
-      <option
-        v-for="(option, index) in items"
-        :key="index"
-        v-bind="option"
-        :value="getValue(option)"
+    <div class="v-input-wrapper">
+      <select
+        :id="inputId"
+        v-model="uncontrolledValue"
+        @blur="handleBlur"
+        class="v-input-control"
+        :disabled="disabled"
+        v-bind="$attrs"
       >
-        {{ getText(option) }}
-      </option>
-    </select>
+        <option
+          v-for="(option, index) in items"
+          :key="index"
+          v-bind="option"
+          :value="getValue(option)"
+        >
+          {{ getText(option) }}
+        </option>
+      </select>
+    </div>
     <p v-if="hint" class="v-input-hint">
       <slot name="hint">
         {{ hint }}

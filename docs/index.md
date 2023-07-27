@@ -14,7 +14,7 @@ hero:
       text: Get Started
       link: /guide/getting-started
     - theme: alt
-      text: View on Storybook
+      text: View Storybook
       link: https://gits-ui.web.app
 features:
   - icon: ⛰️

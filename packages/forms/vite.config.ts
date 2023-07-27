@@ -4,7 +4,12 @@ import {resolve} from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue({
+    script: {
+      defineModel: true,
+      propsDestructure: true
+    }
+  })],
   esbuild: {
     exclude: ['./src/**/**.stories.ts'],
   },
@@ -12,7 +17,7 @@ export default defineConfig({
     target: 'esnext',
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'GitsForm',
+      name: 'MorphemeForms',
       formats: ['es', 'cjs', 'iife', 'umd'],
     },
     rollupOptions: {
@@ -26,7 +31,9 @@ export default defineConfig({
         '@morpheme/utils',
         '@morpheme/tailwind-config',
         '@morpheme/icon',
+        '@morpheme/progress-bar',
         '@iconify/vue',
+        '@vueuse/core',        
       ],
       output: {
         // Provide global variables to use in the UMD build

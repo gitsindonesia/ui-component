@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Icon from "@morpheme/icon";
 import { computed, resolveComponent, useAttrs } from "vue";
-import { RouteLocation } from "vue-router";
+import { type RouteLocation } from "vue-router";
 import { useList } from "./api";
 
 type Props = {

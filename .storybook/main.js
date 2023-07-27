@@ -1,3 +1,6 @@
+// const { mergeConfig } = require('vite');
+// const vuePlugin = require('@vitejs/plugin-vue')
+
 module.exports = {
   stories: [
     '../packages/*/src/**/*.stories.@(js|jsx|ts|tsx|mdx)',
@@ -12,13 +15,15 @@ module.exports = {
     storyStoreV7: true,
   },
   // viteFinal: (config) => {
-  //   return {
-  //     ...config,
-  //     build: {
-  //       ...config.build,
-  //       sourcemap: false,
-  //       // target: ['es2020'],
-  //     },
-  //   };
+  //   return mergeConfig(config, {
+  //     plugins: [
+  //       vuePlugin({
+  //         script: {
+  //           defineModel: true,
+  //           propsDestructure: true,
+  //         },
+  //       }),
+  //     ]
+  //   });
   // },
 };

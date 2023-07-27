@@ -1,5 +1,4 @@
-import VSwitch from './VSwitch.vue';
-import './VSwitch.dark.scss';
-
-export {VSwitch};
-export default VSwitch;
+export {default} from './VSwitch.vue';
+export {default as VSwitch} from './VSwitch.vue';
+export {default as SwitchField} from './VSwitch.vue';
+export {default as Switch} from './VSwitch.vue';

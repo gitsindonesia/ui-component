@@ -5,7 +5,7 @@ import {Story, Meta} from '@storybook/vue3';
 import {defaultRounded, defaultColors} from '@morpheme/theme/defaultTheme';
 import {List as VList, ListItem as VListItem} from '@morpheme/list'
 import VBadgeGroup from './VBadgeGroup.vue';
-import VBadgeContent from './VBadgeContent.vue';
+import {VBadgeContent} from './badge-content';
 
 const colors = [
   ...defaultColors,

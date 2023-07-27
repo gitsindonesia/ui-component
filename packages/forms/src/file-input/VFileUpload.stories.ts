@@ -1,7 +1,7 @@
 import {Story} from '@storybook/vue3';
 import {useForm} from 'vee-validate';
 import {mixed, object} from 'yup';
-import {VInput} from '..';
+import VInput from '../input/VInput.vue';
 import VBtn from '@morpheme/button';
 import VFileUpload from './VFileUpload.vue';
 
@@ -173,7 +173,7 @@ export const Validation: Story<{}> = () => ({
 `,
 });
 
-export const InitialError: Story<VInputProps> = (args) => ({
+export const InitialError: Story<typeof VFileUpload> = (args) => ({
   components: {VInput, VBtn, VFileUpload},
   setup() {
     const schema = object({

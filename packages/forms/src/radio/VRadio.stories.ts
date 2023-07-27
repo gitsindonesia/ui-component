@@ -1,6 +1,4 @@
 import VRadio from './VRadio.vue';
-import {themeColors} from '@morpheme/utils/colors';
-import {sizes} from '@morpheme/utils/sizes';
 import {Meta, Story} from '@storybook/vue3';
 import {useForm} from 'vee-validate';
 import {object, string} from 'yup';
@@ -10,6 +8,9 @@ import {ref} from 'vue';
 export default {
   title: 'Forms/Radio',
   component: VRadio,
+  args: {
+    useForm: true,
+  }
 } as Meta;
 
 const Template: Story = (args) => ({
@@ -114,7 +115,7 @@ export const Validation: Story<{}> = () => ({
 `,
 });
 
-export const TestInputState: Story<{}> = (args) => ({
+export const TestInputState: Story<typeof VRadio> = (args) => ({
   components: {VBtn, VRadio},
   setup() {
     const modelValue = ref();

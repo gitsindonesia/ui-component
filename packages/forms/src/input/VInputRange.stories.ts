@@ -9,7 +9,10 @@ export default {
   title: 'Forms/InputRange',
   component: VInputRange,
   argTypes: {},
-  args: {},
+  args: {
+    min: 0,
+    max: 100,
+  },
 } as Meta;
 
 export const Default: Story = (args) => ({
@@ -68,7 +71,7 @@ export const Validation: Story<{}> = (args) => ({
         .test(
           'isBetween',
           ({label}) => `${label} must be between 25-75`, // a message can also be a function
-          (value, testContext) => {
+          (value: any, testContext) => {
             return value.min >= 25 && value.max <= 75;
           },
         )
@@ -118,7 +121,7 @@ export const ValidationMode: Story<{}> = () => ({
         .test(
           'isBetween',
           ({label}) => `${label} must be between 25-75`, // a message can also be a function
-          (value, testContext) => {
+          (value: any, testContext) => {
             return value.min >= 25 && value.max <= 75;
           },
         )
@@ -128,7 +131,7 @@ export const ValidationMode: Story<{}> = () => ({
         .test(
           'isBetween',
           ({label}) => `${label} must be between 25-75`, // a message can also be a function
-          (value, testContext) => {
+          (value: any, testContext) => {
             return value.min >= 25 && value.max <= 75;
           },
         )

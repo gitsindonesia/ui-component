@@ -120,17 +120,19 @@ const emit =
     >
       {{ label }}
     </label>
-    <textarea
-      :id="inputId"
-      v-model="uncontrolledValue"
-      v-on="validationListeners"
-      :class="['v-input-control', inputClass]"
-      :readonly="readonly"
-      :disabled="disabled"
-      :cols="cols"
-      :rows="rows"
-      v-bind="$attrs"
-    />
+    <div class="v-input-wrapper">
+      <textarea
+        :id="inputId"
+        v-model="uncontrolledValue"
+        v-on="validationListeners"
+        :class="['v-input-control', inputClass]"
+        :readonly="readonly"
+        :disabled="disabled"
+        :cols="cols"
+        :rows="rows"
+        v-bind="$attrs"
+      />
+    </div>
     <div class="v-input-footer">
       <p v-if="hint" class="v-input-hint">
         <slot name="hint">
