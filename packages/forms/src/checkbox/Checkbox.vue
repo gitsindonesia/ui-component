@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { useVModel } from '@vueuse/core';
+import {useVModel} from '@vueuse/core';
 import {computed, PropType} from 'vue';
 
-type CheckboxValue = string | number | any[] | boolean | undefined;
+export type CheckboxValue = string | number | any[] | boolean | undefined;
 
 const props = defineProps({
   modelValue: {
@@ -61,10 +61,14 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  error: {
+    type: Boolean,
+    default: false,
+  },
   errorMessage: {
     type: String,
     default: '',
-  }
+  },
 });
 
 const emit =
@@ -82,7 +86,10 @@ const uncontrolledValue = useVModel(props, 'modelValue', emit);
       class="v-checkbox"
       :class="[
         `v-checkbox-${color}`,
-        {'v-checkbox--disabled': disabled, 'v-checkbox--error': !!errorMessage},
+        {
+          'v-checkbox--disabled': disabled,
+          'v-checkbox--error': error || !!errorMessage,
+        },
       ]"
     >
       <input
@@ -110,7 +117,7 @@ const uncontrolledValue = useVModel(props, 'modelValue', emit);
       </slot>
     </p>
     <div
-      v-if="errorMessage && !hideError"
+      v-if="error && errorMessage && !hideError"
       class="v-checkbox-error"
       :class="errorClass"
     >

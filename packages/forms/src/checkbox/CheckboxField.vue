@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import {toRef} from 'vue';
+import {PropType, toRef} from 'vue';
 import {useField} from 'vee-validate';
-import Checkbox from './Checkbox.vue';
+import Checkbox, {type CheckboxValue } from './Checkbox.vue';
 
 const props = defineProps({
   value: {
-    type: Boolean,
+    type: [Boolean, String, Number] as PropType<CheckboxValue>,
     default: false,
   },
   name: {
