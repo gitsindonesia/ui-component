@@ -217,6 +217,10 @@ const menus = ref<MenuItem[]>([
         text: "Validation",
         to: "/forms/validation",
       },
+      {
+        text: "Standalone Components",
+        to: "/forms/standalone",
+      },
     ],
   },
   {
