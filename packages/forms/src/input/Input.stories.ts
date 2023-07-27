@@ -524,7 +524,7 @@ export const Validation: Story<typeof VInput> = (args) => ({
       email: string().required().email().label('Email'),
     });
 
-    const {handleSubmit, resetForm} = useForm({
+    const {handleSubmit, resetForm, values, errors} = useForm({
       validationSchema: schema,
     });
 
@@ -532,7 +532,7 @@ export const Validation: Story<typeof VInput> = (args) => ({
       alert(JSON.stringify(values));
     });
 
-    return {onSubmit, resetForm};
+    return {onSubmit, resetForm, values, errors};
   },
   template: `
     <form @submit="onSubmit" class="border-none">
@@ -552,6 +552,8 @@ export const Validation: Story<typeof VInput> = (args) => ({
         <v-btn type="submit">Submit</v-btn>
         <v-btn type="button" text @click="resetForm">Reset</v-btn>
       </div>
+      <div class="mt-4">Debug:</div>
+      <pre>{{ {values, errors} }}</pre>
     </form>
 `,
 });

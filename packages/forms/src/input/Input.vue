@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import {PropType, computed, ref, watch} from 'vue';
+import {PropType, computed, ref} from 'vue';
 import Icon from '@morpheme/icon';
 import SelectOptions, {type Option} from './SelectOptions.vue';
+import {useVModel} from '@vueuse/core';
 
 type IconSize = InstanceType<typeof Icon>['$props']['size'];
 
@@ -167,7 +168,7 @@ const emit =
   }>();
 
 const inputId = computed(() => props.id || props.name);
-const uncontrolledValue = ref(props.modelValue);
+const uncontrolledValue = useVModel(props, 'modelValue', emit);
 const input = ref();
 
 function clear() {
@@ -178,10 +179,6 @@ function clear() {
 function focus() {
   input.value?.focus();
 }
-
-watch(uncontrolledValue, (newValue) => {
-  emit('update:modelValue', newValue);
-});
 
 defineExpose({
   focus,
@@ -235,7 +232,8 @@ defineExpose({
       <component
         :is="as"
         :id="id || name"
-        v-model="uncontrolledValue"
+        :value="uncontrolledValue"
+        @input="emit('update:modelValue', $event.target.value)"
         ref="input"
         class="v-input-control"
         :class="[

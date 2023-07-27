@@ -58,7 +58,7 @@ const {
     :placeholder="placeholder"
     :error="meta.touched && !meta.valid"
     :error-message="errorMessage"
-    @input="handleChange"
+    @update:model-value="handleChange"
     @blur="handleBlur($event, true)"
   >
     <template v-for="(_, name) in $slots" v-slot:[name]="slotData">
