@@ -9,7 +9,7 @@ import {
   ref,
   resolveComponent,
 } from "vue";
-import { RouteLocation} from "vue-router";
+import { type RouteLocation} from "vue-router";
 
 const props = withDefaults(
   defineProps<{

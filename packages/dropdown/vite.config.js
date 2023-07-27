@@ -24,6 +24,8 @@ export default defineConfig({
         '@morpheme/icon',
         '@headlessui/vue',
         'vue-router',
+        '@floating-ui/vue',
+        '@headlessui-float/vue',
       ],
       output: {
         // Provide global variables to use in the UMD build
