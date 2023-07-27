@@ -66,6 +66,10 @@ function removeItem(idx: number) {
   normalizedFiles.value = newFiles;
 }
 
+function onDrop(files: File[] | null) {
+  normalizedFiles.value = files!;
+}
+
 defineExpose({
   open,
   reset,
@@ -85,7 +89,7 @@ defineExpose({
             ? FileInputButtonActivator
             : FileInputDefaultActivator
         "
-        v-bind="{files: normalizedFiles, open, reset, ...variantProps}"
+        v-bind="{files: normalizedFiles, open, reset, onDrop, ...variantProps}"
       />
     </slot>
     <slot v-if="!hideItems" name="items" v-bind="{files: normalizedFiles}">

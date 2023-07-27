@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import VIcon from '@morpheme/icon';
+import { useDropZone } from '@vueuse/core'
+import { ref, watch } from 'vue';
 
 interface Props {
   open: () => void;
@@ -17,6 +19,23 @@ withDefaults(defineProps<Props>(), {
   dragText: 'or drag and drop',
   icon: 'untitled:upload-cloud-02',
 });
+
+const emit = defineEmits<{
+  (e: 'drop', files: File[] | null): void
+  (e: 'overDropZone', state: boolean): void
+}>();
+
+const dropZoneRef = ref<HTMLDivElement>()
+
+function onDrop(files: File[] | null) {
+  emit('drop', files)
+}
+
+const { isOverDropZone } = useDropZone(dropZoneRef, onDrop)
+
+watch(isOverDropZone, val => {
+  emit('overDropZone', val)
+})
 </script>
 
 <template>
@@ -34,6 +53,7 @@ withDefaults(defineProps<Props>(), {
     :class="[
       disabled ? 'bg-gray-50 cursor-not-allowed' : 'hover:border-primary-600',
     ]"
+    ref="dropZoneRef"
   >
     <slot name="icon">
       <div
