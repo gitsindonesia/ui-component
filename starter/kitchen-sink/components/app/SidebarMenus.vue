@@ -4,7 +4,6 @@ import {
   Grid01Icon,
   Home01Icon,
   LayersTwo02Icon,
-  Menu05Icon,
 } from "@morphemeicons/vue/untitled";
 
 const emit = defineEmits<{
@@ -158,10 +157,6 @@ const menus = ref<MenuItem[]>([
     icon: LayersTwo02Icon,
     children: [
       {
-        text: "Autocomplete",
-        to: "/forms/autocomplete",
-      },
-      {
         text: "Button",
         to: "/forms/buttons",
       },
@@ -206,10 +201,6 @@ const menus = ref<MenuItem[]>([
         to: "/forms/radio",
       },
       {
-        text: "Select",
-        to: "/forms/select",
-      },
-      {
         text: "Textarea",
         to: "/forms/textarea",
       },
@@ -220,6 +211,20 @@ const menus = ref<MenuItem[]>([
       {
         text: "Standalone Components",
         to: "/forms/standalone",
+      },
+    ],
+  },
+  {
+    text: "Experimental",
+    icon: LayersTwo02Icon,
+    children: [
+      {
+        text: "Autocomplete",
+        to: "/forms/autocomplete",
+      },
+      {
+        text: "Select",
+        to: "/forms/select",
       },
     ],
   },
