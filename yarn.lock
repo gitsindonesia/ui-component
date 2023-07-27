@@ -5752,14 +5752,6 @@
     "@vueuse/shared" "10.2.1"
     vue-demi ">=0.14.5"
 
-"@vueuse/core@^7.7.1":
-  version "7.7.1"
-  resolved "https://registry.yarnpkg.com/@vueuse/core/-/core-7.7.1.tgz#fc284f4103de73c7fb79bc06579d8066790db511"
-  integrity sha512-PRRgbATMpoeUmkCEBtUeJgOwtew8s+4UsEd+Pm7MhkjL2ihCNrSqxNVtM6NFE4uP2sWnkGcZpCjPuNSxowJ1Ow==
-  dependencies:
-    "@vueuse/shared" "7.7.1"
-    vue-demi "*"
-
 "@vueuse/integrations@^10.1.2":
   version "10.1.2"
   resolved "https://registry.yarnpkg.com/@vueuse/integrations/-/integrations-10.1.2.tgz#e318ed2cec87711b2a110dceca2150d7fe1452d0"
@@ -5792,13 +5784,6 @@
   integrity sha512-QWHq2bSuGptkcxx4f4M/fBYC3Y8d3M2UYyLsyzoPgEoVzJURQ0oJeWXu79OiLlBb8gTKkqe4mO85T/sf39mmiw==
   dependencies:
     vue-demi ">=0.14.5"
-
-"@vueuse/shared@7.7.1":
-  version "7.7.1"
-  resolved "https://registry.yarnpkg.com/@vueuse/shared/-/shared-7.7.1.tgz#77e312de7275380efce86b0079bd7938791a076b"
-  integrity sha512-rN2qd22AUl7VdBxihagWyhUNHCyVk9IpvBTTfHoLH9G7rGE552X1f+zeCfehuno0zXif13jPw+icW/wn2a0rnQ==
-  dependencies:
-    vue-demi "*"
 
 "@webassemblyjs/ast@1.11.1":
   version "1.11.1"

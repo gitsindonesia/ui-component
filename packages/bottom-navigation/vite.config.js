@@ -31,6 +31,7 @@ export default defineConfig({
         '@morpheme/theme',
         '@morpheme/icon',
         'vue-router',
+        '@vueuse/core',
       ],
       output: {
         // Provide global variables to use in the UMD build

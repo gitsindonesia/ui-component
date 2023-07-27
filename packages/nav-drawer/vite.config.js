@@ -26,6 +26,7 @@ export default defineConfig({
         '@morpheme/navbar',
         '@morpheme/button',
         '@morpheme/icon',
+        '@vueuse/core',
       ],
       output: {
         // Provide global variables to use in the UMD build
