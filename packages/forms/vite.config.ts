@@ -33,6 +33,7 @@ export default defineConfig({
         '@morpheme/icon',
         '@morpheme/progress-bar',
         '@iconify/vue',
+        '@vueuse/core',        
       ],
       output: {
         // Provide global variables to use in the UMD build
