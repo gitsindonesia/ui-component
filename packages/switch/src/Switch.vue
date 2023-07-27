@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {watch, type PropType, ref} from 'vue';
+import {type PropType} from 'vue';
 import {Switch, SwitchGroup, SwitchLabel} from '@headlessui/vue';
 import type {Colors} from './colors';
 import { useVModel } from '@vueuse/core';

@@ -2,11 +2,11 @@
 import { useVModel } from '@vueuse/core';
 import {computed, PropType} from 'vue';
 
-type CheckboxValue = any[] | boolean | undefined;
+type CheckboxValue = string | number | any[] | boolean | undefined;
 
 const props = defineProps({
   modelValue: {
-    type: Boolean,
+    type: [Boolean, Array] as PropType<CheckboxValue>,
     default: false,
   },
   label: {
