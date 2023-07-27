@@ -89,7 +89,14 @@ defineExpose({
             ? FileInputButtonActivator
             : FileInputDefaultActivator
         "
-        v-bind="{files: normalizedFiles, open, reset, onDrop, ...variantProps}"
+        v-bind="{
+          files: normalizedFiles,
+          error,
+          open,
+          reset,
+          onDrop,
+          ...variantProps,
+        }"
       />
     </slot>
     <slot v-if="!hideItems" name="items" v-bind="{files: normalizedFiles}">

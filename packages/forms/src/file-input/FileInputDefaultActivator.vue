@@ -12,6 +12,7 @@ interface Props {
   dragText?: string;
   icon?: string;
   disabled?: boolean;
+  error?: boolean;
 }
 
 withDefaults(defineProps<Props>(), {
@@ -51,7 +52,8 @@ watch(isOverDropZone, val => {
       duration-200
     "
     :class="[
-      disabled ? 'bg-gray-50 cursor-not-allowed' : 'hover:border-primary-600',
+      disabled ? 'bg-gray-50 cursor-not-allowed' : '',
+      error ? 'border-red-500' : 'border-gray-200 hover:border-primary-600',
     ]"
     ref="dropZoneRef"
   >
