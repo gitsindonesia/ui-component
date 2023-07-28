@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@morpheme/design-tokens": "0.1.0-alpha.5",
-    "@morpheme/nuxt": "1.0.0-next.50",
+    "@morpheme/nuxt": "1.0.0-next.53",
     "@morphemeicons/vue": "^0.2.0"
   },
   "devDependencies": {
@@ -47,16 +47,16 @@
     "overrides": {
       "@morpheme/alert": "1.0.0-next.39",
       "@morpheme/app-bar": "1.0.0-next.39",
-      "@morpheme/app-shell": "1.0.0-next.40",
+      "@morpheme/app-shell": "1.0.0-next.53",
       "@morpheme/autocomplete": "1.0.0-next.40",
       "@morpheme/avatar": "1.0.0-next.39",
       "@morpheme/badge": "1.0.0-next.39",
-      "@morpheme/banner": "1.0.0-next.40",
+      "@morpheme/banner": "1.0.0-next.53",
       "@morpheme/bottom-navigation": "1.0.0-next.40",
       "@morpheme/bottom-sheet": "1.0.0-next.40",
       "@morpheme/breadcrumbs": "1.0.0-next.39",
-      "@morpheme/button": "1.0.0-next.39",
-      "@morpheme/card": "1.0.0-next.39",
+      "@morpheme/button": "1.0.0-next.53",
+      "@morpheme/card": "1.0.0-next.53",
       "@morpheme/collapsible": "1.0.0-next.39",
       "@morpheme/container": "1.0.0-next.39",
       "@morpheme/divider": "1.0.0-next.39",
@@ -81,11 +81,11 @@
       "@morpheme/select": "1.0.0-next.40",
       "@morpheme/shimmer": "1.0.0-next.39",
       "@morpheme/spinner": "1.0.0-next.39",
-      "@morpheme/stats": "1.0.0-next.39",
+      "@morpheme/stats": "1.0.0-next.53",
       "@morpheme/stepper": "1.0.0-next.39",
       "@morpheme/switch": "1.0.0-next.40",
       "@morpheme/table": "1.0.0-next.40",
-      "@morpheme/tabs": "1.0.0-next.40",
+      "@morpheme/tabs": "1.0.0-next.53",
       "@morpheme/tailwind-components": "1.0.0-beta.6",
       "@morpheme/tailwind-config": "1.0.0-next.39",
       "@morpheme/text": "1.0.0-next.39",
@@ -96,7 +96,7 @@
       "@morpheme/tooltip": "1.0.0-next.39",
       "@morpheme/utils": "1.0.0-next.39",
       "@morpheme/command": "1.0.0-next.50",
-      "@morpheme/ui": "1.0.0-next.50"
+      "@morpheme/ui": "1.0.0-next.53"
     }
   }
 }
