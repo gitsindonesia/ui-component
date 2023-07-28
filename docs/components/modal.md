@@ -317,6 +317,78 @@ We can also customize modal via CSS Properties.
 
 </LivePreview>
 
+### Declarative Modal
+
+Starting from version `v1.0.0-beta.11`, we have introduced a new declarative approach to use the modal component, providing you with enhanced flexibility. This approach involves breaking down the modal component into five separate components, each serving a specific purpose. To utilize this feature, you will need to manually import these components.
+
+#### Component List
+
+The modal components are as follows:
+
+- `Modal`
+-   `ModalHeader`
+-   `ModalTitle`
+-   `ModalBody`
+-   `ModalFooter`
+
+### Usage
+
+Unlike before, these components are not auto-imported. Therefore, you must import them individually based on your requirements.
+
+Here's a brief overview of each modal component and its purpose:
+
+- `Modal`: This is the main component that serves as the container for the entire modal dialog.
+- `ModalHeader`: Use this component to display the header section of the modal. Typically, it contains the title and close button.
+- `ModalTitle`: This component is used to display the title of the modal. It is usually placed inside the `ModalHeader`.
+- `ModalBody`: This component allows you to add content to the body of the modal. Any information or forms you wish to present should be placed within this component.
+- `ModalFooter`: The footer component is utilized to include any additional elements at the bottom of the modal, such as action buttons (e.g., Save, Cancel).
+
+#### Example
+
+<LivePreview src="components-modal--declarative" >
+
+```vue
+<script setup lang="ts">
+import {
+  VBtn,
+  Modal,
+  ModalHeader,
+  ModalTitle,
+  ModalFooter,
+  ModalBody,
+} from '@morpheme/ui';
+
+const isOpen = ref(false);
+</script>
+
+<template>
+  <VBtn @click="isOpen = true">Open Modal</VBtn>
+
+  <Modal v-model="isOpen" v-bind="params">
+    <ModalHeader>
+      <ModalTitle>Modal Title</ModalTitle>
+      <VBtn
+        @click="isOpen = false"
+        prefix-icon="ri:close-line"
+        size="sm"
+        text
+        icon
+        fab
+      />
+    </ModalHeader>
+    <ModalBody>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+    </ModalBody>
+    <ModalFooter>
+      <VBtn @click="isOpen = false">Close</VBtn>
+      <VBtn @click="isOpen = false" color="primary">Okay</VBtn>
+    </ModalFooter>
+  </Modal>
+</template>
+```
+
+</LivePreview>
+
 ## Props
 
 | Name                            | Type      | Default          |

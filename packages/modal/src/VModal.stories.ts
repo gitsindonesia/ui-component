@@ -1,11 +1,15 @@
-import { VCard } from '@morpheme/card';
+import {VCard} from '@morpheme/card';
 import {Meta, Story} from '@storybook/vue3';
 import VModal from './VModal.vue';
 import vueRouter from 'storybook-vue3-router';
-import {reactive, ref} from 'vue';
-import VBtn from '@morpheme/button';
+import {onUnmounted, ref} from 'vue';
+import {VBtn} from '@morpheme/button';
 import {VModalEvent} from './types';
 import Modal from './Modal.vue';
+import ModalHeader from './ModalHeader.vue';
+import ModalTitle from './ModalTitle.vue';
+import ModalBody from './ModalBody.vue';
+import ModalFooter from './ModalFooter.vue';
 
 export default {
   title: 'Components/Modal',
@@ -14,24 +18,18 @@ export default {
   args: {
     modelValue: true,
     title: 'Modal Header',
-    confirm: false,
-    confirmColor: 'primary',
-    confirmProps: {},
-    confirmText: 'Confirm',
-    closeText: 'Close',
-    closeProps: {},
-    headerClass: '',
-    bodyClass: '',
-    footerClass: '',
-    modalClass: '',
-    boolean: false,
-    hideHeader: false,
-    hideFooter: false,
     onConfirm: (e: VModalEvent) => {
       alert('Confirmed!');
       e.close();
     },
   },
+  subcomponents:{
+    Modal,
+    ModalHeader,
+    ModalTitle,
+    ModalBody,
+    ModalFooter,
+  }
 } as Meta;
 
 const Template: Story = (args) => ({
@@ -44,12 +42,12 @@ const Template: Story = (args) => ({
     return {args, isOpen};
   },
   template: `
-<v-modal v-bind="args" v-model="isOpen" v-bind="args">
+<v-modal v-bind="args" v-model="isOpen">
   <template #activator="{open}">
     <v-btn @click="open">Click Me</v-btn>
   </template>
   Hello World
-</v-modal>  
+</v-modal>
   `,
 });
 
@@ -356,7 +354,18 @@ export const Customization: Story = (args) => ({
 export const DarkMode: Story = (args) => ({
   components: {VModal, VCard},
   setup() {
-    document.documentElement.classList.add('dark', 'dark:bg-gray-true-900', 'dark:text-gray-true-200');
+    document.documentElement.classList.add(
+      'dark',
+      'dark:bg-gray-true-900',
+      'dark:text-gray-true-200',
+    );
+    onUnmounted(() => {
+      document.documentElement.classList.remove(
+        'dark',
+        'dark:bg-gray-true-900',
+        'dark:text-gray-true-200',
+      );
+    });
     return {args};
   },
   template: `
@@ -371,20 +380,40 @@ export const DarkMode: Story = (args) => ({
 });
 
 export const Declarative: Story = (args) => ({
-  components: {Modal, VBtn},
+  components: {
+    Modal,
+    VBtn,
+    ModalHeader,
+    ModalTitle,
+    ModalFooter,
+    ModalBody,
+  },
   setup() {
-    const isOpen = ref(false)
-    const params = reactive({
-      fullscreen: false,
-    })
-    return {args, isOpen, params};
+    const isOpen = ref(false);
+    return {args, isOpen};
   },
   template: `
   <VBtn @click="isOpen = true">Open Modal</VBtn>
 
   <Modal v-model="isOpen" v-bind="params">
-    <p>Hello</p>
-    <VBtn @click="params.fullscreen = !params.fullscreen">Fullscreen</VBtn>
+    <ModalHeader>
+      <ModalTitle>Modal Title</ModalTitle>
+      <VBtn
+        @click="isOpen = false"
+        prefix-icon="ri:close-line"
+        size="sm"
+        text
+        icon
+        fab
+      />
+    </ModalHeader>
+    <ModalBody>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+    </ModalBody>
+    <ModalFooter>
+      <VBtn @click="isOpen = false">Close</VBtn>
+      <VBtn @click="isOpen = false" color="primary">Okay</VBtn>
+    </ModalFooter>
   </Modal>
   `,
 });

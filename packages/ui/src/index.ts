@@ -314,7 +314,7 @@ export * from '@morpheme/dropdown/src/types';
 export * from '@morpheme/forms/src/input/types';
 export * from '@morpheme/navbar/src/types';
 export * from '@morpheme/tabs/src/types';
-export * from '@morpheme/modal/src/types';
+export * from '@morpheme/modal';
 export * from '@morpheme/dropdown/src/types';
 export * from '@morpheme/bottom-sheet/src/types';
 export * from './component-resolver';
