@@ -64,3 +64,40 @@ module.exports = {
   presets: [require('./src/preset')],
 };
 ```
+
+## Customize Component with Tailwind Arbitrary Values and CSS Properties
+
+You'll be delighted to discover that you can use Tailwind arbitrary values and CSS properties to customize the appearance of not only your modal component but also other components within your Vue applications. Tailwind CSS makes it a breeze to create stylish and unique designs for various components. Let's see how it's done:
+
+```vue
+<template>
+  <VModal
+    model-value
+    title="Modal Title"
+    class="
+      [--v-modal-bg-color:var(--color-primary-600)]
+      [--v-modal-title-color:var(--color-yellow-300)]
+      [--v-modal-text-color:var(--color-white)]
+      [--btn-text-color:var(--color-white)]
+    "
+  >
+    Hello Tailwind!
+  </VModal>
+
+  <VCard
+    class="
+      [--card-bg-color:var(--color-gray-200)]
+      [--card-color:var(--color-gray-800)]
+    "
+  >
+    <h2>Card Content</h2>
+    <p>Some text in the card.</p>
+  </VCard>
+</template>
+```
+
+In the code above, we have a Vue component that includes a `<VModal>` component and another component called `<VCard>`. Both components can be customized using Tailwind arbitrary values and CSS properties applied directly to their respective class attributes.
+
+Custom CSS properties are defined using double hyphens (e.g., `--v-modal-bg-color`, `--v-modal-title-color`, etc.). The values of these custom CSS properties are set to Tailwind CSS color variables (e.g., `--color-primary-600`, `--color-yellow-300`, etc.).
+
+With this setup, you have the flexibility to modify the appearance of various components within your Vue application, creating a consistent and harmonious design across all elements.

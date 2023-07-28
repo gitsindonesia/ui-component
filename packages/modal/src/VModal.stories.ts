@@ -351,6 +351,27 @@ export const Customization: Story = (args) => ({
   `,
 });
 
+export const Tailwind: Story = (args) => ({
+  components: {VModal, VCard},
+  setup() {
+    return {args};
+  },
+  template: `
+  <VModal
+    model-value
+    title="Modal Title"
+    class="
+      [--v-modal-bg-color:var(--color-primary-600)]
+      [--v-modal-title-color:var(--color-yellow-300)]
+      [--v-modal-text-color:var(--color-white)]
+      [--btn-text-color:var(--color-white)]
+    "
+  >
+    Hello Tailwind!
+  </VModal>
+  `,
+});
+
 export const DarkMode: Story = (args) => ({
   components: {VModal, VCard},
   setup() {
