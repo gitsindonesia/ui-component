@@ -128,18 +128,31 @@ const tag = computed(() => {
   return props.as;
 });
 
-const classes = computed(() => {
-  const shadowClass = props.flat
-    ? 'card--shadow-none'
-    : typeof props.shadow === 'string'
-    ? `card--shadow-${props.shadow}`
-    : 'card--shadow';
+// Constants for shadow class names
+const SHADOW_NONE = 'card--shadow-none';
+const SHADOW_DEFAULT = 'card--shadow';
+const SHADOW_PREFIX = 'card--shadow-';
 
+const shadowClass = computed(() => {
+  // Check if props.flat is truthy
+  if (props.flat) {
+    return SHADOW_NONE;
+  } else {
+    // Check if props.shadow is a string
+    if (typeof props.shadow === 'string') {
+      return `${SHADOW_PREFIX}${props.shadow}`;
+    }
+
+    return SHADOW_DEFAULT;
+  }
+});
+
+const classes = computed(() => {
   return [
     `card card-${props.color}`,
     props.defaultWrapperClass,
     props.wrapperClass,
-    shadowClass,
+    shadowClass.value,
     {
       'card--bordered': props.bordered,
       [`card--bordered-${props.borderPosition}`]: props.bordered,
