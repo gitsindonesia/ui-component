@@ -2,9 +2,10 @@ import { VCard } from '@morpheme/card';
 import {Meta, Story} from '@storybook/vue3';
 import VModal from './VModal.vue';
 import vueRouter from 'storybook-vue3-router';
-import {ref} from 'vue';
+import {reactive, ref} from 'vue';
 import VBtn from '@morpheme/button';
 import {VModalEvent} from './types';
+import Modal from './Modal.vue';
 
 export default {
   title: 'Components/Modal',
@@ -366,5 +367,24 @@ export const DarkMode: Story = (args) => ({
       </VCard>
     </VModal>
   </div>
+  `,
+});
+
+export const Declarative: Story = (args) => ({
+  components: {Modal, VBtn},
+  setup() {
+    const isOpen = ref(false)
+    const params = reactive({
+      fullscreen: false,
+    })
+    return {args, isOpen, params};
+  },
+  template: `
+  <VBtn @click="isOpen = true">Open Modal</VBtn>
+
+  <Modal v-model="isOpen" v-bind="params">
+    <p>Hello</p>
+    <VBtn @click="params.fullscreen = !params.fullscreen">Fullscreen</VBtn>
+  </Modal>
   `,
 });
