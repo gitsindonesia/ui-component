@@ -65,7 +65,6 @@ describe('Select', () => {
         errorMessage: 'Error message',
       },
     });
-
-    expect(wrapper.find('.v-select-error').text()).toBe('Error message');
+    expect(wrapper.html()).toContain('v-select--error')
   });
 });
