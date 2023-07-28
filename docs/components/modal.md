@@ -349,6 +349,7 @@ Here's a brief overview of each modal component and its purpose:
 
 ```vue
 <script setup lang="ts">
+import { ref } from 'vue';
 import {
   VBtn,
   Modal,
@@ -364,7 +365,7 @@ const isOpen = ref(false);
 <template>
   <VBtn @click="isOpen = true">Open Modal</VBtn>
 
-  <Modal v-model="isOpen" v-bind="params">
+  <Modal v-model="isOpen">
     <ModalHeader>
       <ModalTitle>Modal Title</ModalTitle>
       <VBtn
