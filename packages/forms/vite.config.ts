@@ -32,6 +32,7 @@ export default defineConfig({
         '@morpheme/tailwind-config',
         '@morpheme/icon',
         '@morpheme/progress-bar',
+        '@morpheme/switch',
         '@iconify/vue',
         '@vueuse/core',        
       ],
