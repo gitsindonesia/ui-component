@@ -416,12 +416,12 @@ const panelStyles = computed(() => {
         <div class="v-modal-content">
           <TransitionChild
             as="template"
-            enter="duration-300 ease-out"
-            enter-from="opacity-0"
-            enter-to="opacity-100"
-            leave="duration-200 ease-in"
-            leave-from="opacity-100"
-            leave-to="opacity-0"
+            enter="v-modal-overlay-transition-enter-active"
+            enter-from="v-modal-overlay-transition-enter-from"
+            enter-to="v-modal-overlay-transition-enter-to"
+            leave="v-modal-overlay-transition-leave-active"
+            leave-from="v-modal-overlay-transition-leave-from"
+            leave-to="v-modal-overlay-transition-leave-to"
           >
             <slot name="overlay">
               <div
@@ -439,12 +439,12 @@ const panelStyles = computed(() => {
 
           <TransitionChild
             as="template"
-            enter="duration-300 ease-out"
-            enter-from="opacity-0 scale-95"
-            enter-to="opacity-100 scale-100"
-            leave="duration-200 ease-in"
-            leave-from="opacity-100 scale-100"
-            leave-to="opacity-0 scale-95"
+            enter="v-modal-transition-enter-active"
+            enter-from="v-modal-transition-enter-from"
+            enter-to="v-modal-transition-enter-to"
+            leave="v-modal-transition-leave-active"
+            leave-from="v-modal-transition-leave-from"
+            leave-to="v-modal-transition-leave-to"
           >
             <DialogPanel
               class="v-modal-panel"
