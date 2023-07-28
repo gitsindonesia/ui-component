@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.11](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.10...v1.0.0-beta.11) (2023-07-28)
+
+
+### Bug Fixes
+
+* **Card:** fix logic to show image ([176c0dd](https://github.com/gitsindonesia/ui-component/commit/176c0ddff4d5ee21cd57f83a141ddfe22a36668d))
+
+
+
+
+
 # [1.0.0-beta.10](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2023-06-26)
 
 

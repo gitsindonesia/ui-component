@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.11](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.10...v1.0.0-beta.11) (2023-07-28)
+
+
+### Bug Fixes
+
+* **experimental Select:** fix clearable button logic and add new prop `iconSize` ([6bc3e6e](https://github.com/gitsindonesia/ui-component/commit/6bc3e6e044ffd00b76f0695f700d16304b5aaade))
+* **Popover:** change width to min-width ([7f773d3](https://github.com/gitsindonesia/ui-component/commit/7f773d3a988254b6d12b792177bb4fcb7f05a87e))
+* **themes:** add new CSS Var for striped color ([3266833](https://github.com/gitsindonesia/ui-component/commit/32668330ae71a7cb2e439aa6174790e0271a9123))
+* **themes:** fix styles of select input and select button ([bffc761](https://github.com/gitsindonesia/ui-component/commit/bffc7613a58c92c618b1c67c8accaef7d8b27301))
+
+
+### Features
+
+* **Command:** add new `VCommand` component (command palette/menu) ([88707ad](https://github.com/gitsindonesia/ui-component/commit/88707adcdde1ee7c085e7015f394f81aec22e690))
+* **Dropdown:** integrate `@headlessui-float/vue` to the Dropdown component ([d07d786](https://github.com/gitsindonesia/ui-component/commit/d07d786968e8e7294f5a4b02aa33a3a0a759ff5f))
+* **experimental Select:** add more shadow variants ([2c8235a](https://github.com/gitsindonesia/ui-component/commit/2c8235ac4701a84ac367e136b5ad324c2293ee1d))
+* **experimental Select:** fix empty styles ([20f5d84](https://github.com/gitsindonesia/ui-component/commit/20f5d8417684868970be937a56622a54436df198))
+* **experimental Select:** fix offset and margin top ([b27e52a](https://github.com/gitsindonesia/ui-component/commit/b27e52abe07f8f9a47a9cd5b2abb578bbc1c98da))
+* **Forms:** add new experimental standalone form components with decoupled `vee-validate` integration ([#176](https://github.com/gitsindonesia/ui-component/issues/176)) ([1a54522](https://github.com/gitsindonesia/ui-component/commit/1a5452220992e207e9d95602e1093e7b665e070f))
+* **Modal:** add new declarative modal components ([#177](https://github.com/gitsindonesia/ui-component/issues/177)) ([e150b42](https://github.com/gitsindonesia/ui-component/commit/e150b42ce2f41aca4b2e05f03d285573e47ad9c1))
+
+
+
+
+
 # [1.0.0-beta.10](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2023-06-26)
 
 

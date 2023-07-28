@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/themes",
-  "version": "1.0.0-beta.10",
+  "version": "1.0.0-beta.11",
   "description": "Morpheme Themes",
   "scripts": {
     "build": "sass --load-path=./node_modules/@morpheme/**/** ./src/morpheme/main.scss:./dist/morpheme/main.css ./src/morpheme/main.dark.scss:./dist/morpheme/main.dark.css",

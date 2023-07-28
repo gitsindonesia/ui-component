@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.11](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.10...v1.0.0-beta.11) (2023-07-28)
+
+
+### Bug Fixes
+
+* **experimental Select:** fix clearable button logic and add new prop `iconSize` ([6bc3e6e](https://github.com/gitsindonesia/ui-component/commit/6bc3e6e044ffd00b76f0695f700d16304b5aaade))
+
+
+### Features
+
+* **experimental Select:** add more shadow variants ([2c8235a](https://github.com/gitsindonesia/ui-component/commit/2c8235ac4701a84ac367e136b5ad324c2293ee1d))
+* **experimental Select:** fix empty styles ([20f5d84](https://github.com/gitsindonesia/ui-component/commit/20f5d8417684868970be937a56622a54436df198))
+* **experimental Select:** fix offset and margin top ([b27e52a](https://github.com/gitsindonesia/ui-component/commit/b27e52abe07f8f9a47a9cd5b2abb578bbc1c98da))
+* **experimental Select:** integrate `@headlessui-float/vue` to new Select component ([37c397a](https://github.com/gitsindonesia/ui-component/commit/37c397a4962c912e43622e589efb78d9d4a7a476))
+* **Forms:** add new experimental standalone form components with decoupled `vee-validate` integration ([#176](https://github.com/gitsindonesia/ui-component/issues/176)) ([1a54522](https://github.com/gitsindonesia/ui-component/commit/1a5452220992e207e9d95602e1093e7b665e070f))
+
+
+
+
+
 # [1.0.0-beta.10](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2023-06-26)
 
 

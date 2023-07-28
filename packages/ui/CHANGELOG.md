@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.11](https://github.com/morphemeindonesia/ui-component/compare/v1.0.0-beta.10...v1.0.0-beta.11) (2023-07-28)
+
+
+### Features
+
+* **Forms:** add new experimental standalone form components with decoupled `vee-validate` integration ([#176](https://github.com/morphemeindonesia/ui-component/issues/176)) ([1a54522](https://github.com/morphemeindonesia/ui-component/commit/1a5452220992e207e9d95602e1093e7b665e070f))
+* **Modal:** add new declarative modal components ([#177](https://github.com/morphemeindonesia/ui-component/issues/177)) ([e150b42](https://github.com/morphemeindonesia/ui-component/commit/e150b42ce2f41aca4b2e05f03d285573e47ad9c1))
+
+
+
+
+
 # [1.0.0-beta.10](https://github.com/morphemeindonesia/ui-component/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2023-06-26)
 
 
