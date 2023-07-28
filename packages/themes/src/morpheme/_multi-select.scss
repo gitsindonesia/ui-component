@@ -80,6 +80,7 @@
   &--error {
     --v-input-effect-border-color: var(--color-error-300);
     --v-input-effect-shadow-color: var(--color-error-100);
+    border-color: var(--v-multi-select-error-border-color);
   }
 
   &:focus-within {
@@ -94,10 +95,6 @@
     min-height: var(--v-multi-select-min-height);
     height: auto;
     padding: var(--v-multi-select-padding-y) var(--v-multi-select-padding-x);
-  }
-
-  &--error {
-    border-color: var(--v-multi-select-error-border-color);
   }
 
   // error text
