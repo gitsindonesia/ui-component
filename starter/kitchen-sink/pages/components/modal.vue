@@ -133,5 +133,11 @@ const onConfirm = (e: VModalEvent) => {
         </VModal>
       </div>
     </VCard>
+
+    <VCard title="Declarative">
+      <div>
+        <ModalDeclarative />
+      </div>
+    </VCard>
   </div>
 </template>

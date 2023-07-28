@@ -28,7 +28,7 @@ overrides:
   '@morpheme/logo': 1.0.0-next.39
   '@morpheme/menu': 1.0.0-next.39
   '@morpheme/menus': 1.0.0-next.40
-  '@morpheme/modal': 1.0.0-next.39
+  '@morpheme/modal': 1.0.0-next.50
   '@morpheme/multi-select': 1.0.0-next.40
   '@morpheme/nav-drawer': 1.0.0-next.40
   '@morpheme/navbar': 1.0.0-next.40
@@ -50,21 +50,21 @@ overrides:
   '@morpheme/tailwind-config': 1.0.0-next.39
   '@morpheme/text': 1.0.0-next.39
   '@morpheme/theme': 1.0.0-beta.9
-  '@morpheme/themes': 1.0.0-next.39
+  '@morpheme/themes': 1.0.0-next.50
   '@morpheme/timeline': 1.0.0-next.39
   '@morpheme/toast': 1.0.0-next.39
   '@morpheme/tooltip': 1.0.0-next.39
   '@morpheme/utils': 1.0.0-next.39
-  '@morpheme/command': 1.0.0-next.40
-  '@morpheme/ui': 1.0.0-next.40
+  '@morpheme/command': 1.0.0-next.50
+  '@morpheme/ui': 1.0.0-next.50
 
 dependencies:
   '@morpheme/design-tokens':
     specifier: 0.1.0-alpha.5
     version: 0.1.0-alpha.5
   '@morpheme/nuxt':
-    specifier: 1.0.0-next.40
-    version: 1.0.0-next.40(nuxt@3.6.1)(vite@4.3.9)
+    specifier: 1.0.0-next.50
+    version: 1.0.0-next.50(nuxt@3.6.1)(vite@4.3.9)
   '@morphemeicons/vue':
     specifier: ^0.2.0
     version: 0.2.0(vue@3.3.4)
@@ -1371,12 +1371,12 @@ packages:
       vue: 3.3.4
     dev: false
 
-  /@morpheme/command@1.0.0-next.40:
-    resolution: {integrity: sha512-EuoCQoHKEYPqe0koFCYuGNQgega1bNOfX7zO0iPszckDme8PxbkuHI8G7HoIKEm8ceEKE1ax5rP12JXen9RxtQ==}
+  /@morpheme/command@1.0.0-next.50:
+    resolution: {integrity: sha512-jyL65mBwJDub+uQqid8sZRdAgYy/DFKH06JitO0cG/m/Bq3znNn9ocf7TZxum0sful4iK0zW+0ktLAvsTXl45A==}
     dependencies:
       '@morpheme/icon': 1.0.0-next.39
       '@morpheme/list': 1.0.0-next.40
-      '@morpheme/modal': 1.0.0-next.39
+      '@morpheme/modal': 1.0.0-next.50
       vue: 3.3.4
     transitivePeerDependencies:
       - ts-node
@@ -1491,8 +1491,8 @@ packages:
       - ts-node
     dev: false
 
-  /@morpheme/modal@1.0.0-next.39:
-    resolution: {integrity: sha512-ze3APNuBqSQecH0JEEg2qbqClP6KP1ZPryN7jAN+FcDGyKkNrKM+5pz4/lOoruodcY3GfdKJHtYo3DLqgZD15g==}
+  /@morpheme/modal@1.0.0-next.50:
+    resolution: {integrity: sha512-+/tJqsxt3Z4uYcqneeUjOcv3lzfCfFZQjS1tJ0FxLFkgEIN8mONNT2sdMKw5xy/lwkZj7Xi+1qlFzZu3kuMsRA==}
     dependencies:
       '@morpheme/button': 1.0.0-next.39
       vue: 3.3.4
@@ -1543,10 +1543,10 @@ packages:
       - ts-node
     dev: false
 
-  /@morpheme/nuxt@1.0.0-next.40(nuxt@3.6.1)(vite@4.3.9):
-    resolution: {integrity: sha512-F296YhOotkV3wMEFlGXXQFKIxiY53o8bRb0JgRCcIrRb39ei8YqPG0CDh/rZUhJjVrYqIoTj/GYFBb/1aPoiJQ==}
+  /@morpheme/nuxt@1.0.0-next.50(nuxt@3.6.1)(vite@4.3.9):
+    resolution: {integrity: sha512-JxXXDbIpIaqAvBQkEQ55vF3ynKYnqLa2uJ7WE50uUCX7XjQMtuY8EhcB1Dyvc+hCZfxTeeeZF+8srMk90TGIbg==}
     dependencies:
-      '@morpheme/ui': 1.0.0-next.40(@nuxt/kit@3.6.1)
+      '@morpheme/ui': 1.0.0-next.50(@nuxt/kit@3.6.1)
       '@nuxt/devtools-kit': 0.5.5(nuxt@3.6.1)(vite@4.3.9)
       '@nuxt/kit': 3.6.1
     transitivePeerDependencies:
@@ -1731,8 +1731,8 @@ packages:
       - ts-node
     dev: false
 
-  /@morpheme/themes@1.0.0-next.39:
-    resolution: {integrity: sha512-I3KBEDfvTbYSewyT9jsBRX2A3d5Iy9aNYbiD4tNqO5NBefJY5WxzyNJwcCREqPhG8oj9EjSZP9w2XWqc3RJtIQ==}
+  /@morpheme/themes@1.0.0-next.50:
+    resolution: {integrity: sha512-7m1AID500IPv3fthYnTqxSsEDTe13BR0gd5Qi0/rXaMB2UAjNl5PpSEeKt7qsI7lVJ0cFTyVGJmfMGSNj7j5lA==}
     dependencies:
       '@morpheme/design-tokens': 0.1.0-alpha.5
       vue: 3.3.4
@@ -1765,8 +1765,8 @@ packages:
       - '@nuxt/kit'
     dev: false
 
-  /@morpheme/ui@1.0.0-next.40(@nuxt/kit@3.6.1):
-    resolution: {integrity: sha512-W5Mloo+kvTdzYmW5IQDrMGuUocJrbt3pFJKrkpr1fMltd6XV4t+t2KKtiEW6CjFvvLTMqkcegr0VoVXSl7zoRQ==}
+  /@morpheme/ui@1.0.0-next.50(@nuxt/kit@3.6.1):
+    resolution: {integrity: sha512-T9UQOncp2t/rvD3qyjPPhhbfzIltP3eFL14A42YWbkK8o2JQEWBr7RJv7e0L5sN2709553aX9828hbBWXmylTA==}
     dependencies:
       '@headlessui/vue': 1.7.14(vue@3.3.4)
       '@morpheme/alert': 1.0.0-next.39
@@ -1782,7 +1782,7 @@ packages:
       '@morpheme/button': 1.0.0-next.39
       '@morpheme/card': 1.0.0-next.39
       '@morpheme/collapsible': 1.0.0-next.39
-      '@morpheme/command': 1.0.0-next.40
+      '@morpheme/command': 1.0.0-next.50
       '@morpheme/container': 1.0.0-next.39
       '@morpheme/divider': 1.0.0-next.39
       '@morpheme/dropdown': 1.0.0-next.39
@@ -1794,7 +1794,7 @@ packages:
       '@morpheme/logo': 1.0.0-next.39
       '@morpheme/menu': 1.0.0-next.39
       '@morpheme/menus': 1.0.0-next.40(@nuxt/kit@3.6.1)
-      '@morpheme/modal': 1.0.0-next.39
+      '@morpheme/modal': 1.0.0-next.50
       '@morpheme/multi-select': 1.0.0-next.40(@nuxt/kit@3.6.1)
       '@morpheme/nav-drawer': 1.0.0-next.40
       '@morpheme/navbar': 1.0.0-next.40(@nuxt/kit@3.6.1)
@@ -1816,7 +1816,7 @@ packages:
       '@morpheme/tailwind-config': 1.0.0-next.39
       '@morpheme/text': 1.0.0-next.39
       '@morpheme/theme': 1.0.0-beta.9
-      '@morpheme/themes': 1.0.0-next.39
+      '@morpheme/themes': 1.0.0-next.50
       '@morpheme/timeline': 1.0.0-next.39
       '@morpheme/toast': 1.0.0-next.39
       '@morpheme/tooltip': 1.0.0-next.39(@nuxt/kit@3.6.1)
