@@ -14,7 +14,14 @@ interface Props {
   loading?: boolean;
   persistent?: boolean;
   overlayBlur?: boolean;
+  hideOverlay?: boolean;
+  width?: string;
+  maxWidth?: string;
 }
+
+defineOptions({
+  inheritAttrs: false,
+});
 
 const props = withDefaults(defineProps<Props>(), {
   modelValue: false,
@@ -73,12 +80,11 @@ function openModal() {
         },
       ]"
       @close="onModalClose"
-      v-bind="$attrs"
     >
       <div class="v-modal-dialog">
         <div class="v-modal-content">
           <TransitionChild
-            as="template"
+            as="div"
             enter="v-modal-overlay-transition-enter-active"
             enter-from="v-modal-overlay-transition-enter-from"
             enter-to="v-modal-overlay-transition-enter-to"
@@ -86,8 +92,9 @@ function openModal() {
             leave-from="v-modal-overlay-transition-leave-from"
             leave-to="v-modal-overlay-transition-leave-to"
           >
-            <slot name="overlay">
+            <slot name="overlay" v-bind="{hideOverlay, overlayBlur}">
               <div
+                v-if="!hideOverlay"
                 class="v-modal-overlay"
                 :class="{
                   'v-modal-overlay--blur': overlayBlur,
@@ -109,7 +116,11 @@ function openModal() {
             leave-from="v-modal-transition-leave-from"
             leave-to="v-modal-transition-leave-to"
           >
-            <DialogPanel class="v-modal-panel">
+            <DialogPanel
+              class="v-modal-panel"
+              :style="{width, maxWidth}"
+              v-bind="$attrs"
+            >
               <slot />
             </DialogPanel>
           </TransitionChild>

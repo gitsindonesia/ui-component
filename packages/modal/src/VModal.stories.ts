@@ -379,7 +379,7 @@ export const DarkMode: Story = (args) => ({
   `,
 });
 
-export const Declarative: Story = (args) => ({
+export const Declarative: Story<typeof Modal> = (args) => ({
   components: {
     Modal,
     VBtn,
@@ -395,7 +395,10 @@ export const Declarative: Story = (args) => ({
   template: `
   <VBtn @click="isOpen = true">Open Modal</VBtn>
 
-  <Modal v-model="isOpen" v-bind="params">
+  <Modal
+    v-bind="args"
+    v-model="isOpen"
+  >
     <ModalHeader>
       <ModalTitle>Modal Title</ModalTitle>
       <VBtn
