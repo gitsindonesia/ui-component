@@ -8,8 +8,8 @@ const menus = [
 
 export default defineAppConfig({
   admin: {
-    title: 'Nuxt Admin',
-    companyName: 'PT. Morpheme Indonesia',
+    title: 'Morpheme Admin',
+    companyName: 'PT. GITS Indonesia',
     menus,
     // enable dark mode
     darkMode: true,

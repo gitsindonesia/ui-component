@@ -22,7 +22,7 @@
     "prep": "nuxt prepare"
   },
   "dependencies": {
-    "@morpheme/nuxt": "1.0.0-beta.9",
+    "@morpheme/nuxt": "1.0.0-beta.11",
     "@sidebase/nuxt-auth": "^0.4.4",
     "next-auth": "^4.21.1"
   },
