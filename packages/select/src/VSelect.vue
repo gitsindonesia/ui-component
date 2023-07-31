@@ -268,9 +268,9 @@ defineSlots<{
   default?: (props: {}) => any;
   selected?: (props: {item: Val}) => any;
   item?: (props: {item: Val}) => any;
-  empty?: () => any;
-  hint?: () => any;
-  icon?: () => any;
+  empty?: (props: {}) => any;
+  hint?: (props: {}) => any;
+  icon?: (props: {}) => any;
 }>()
 </script>
 
