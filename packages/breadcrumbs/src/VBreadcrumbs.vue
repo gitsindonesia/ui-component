@@ -31,7 +31,7 @@ defineProps({
 defineSlots<{
   default?: (props: {}) => any;
   divider?: (props: {}) => any;
-  [key: `item.${number}`]: (props: VBreadcrumbsItemProps) => any;
+  [key: `item.${number}`]: (props: {}) => any;
 }>();
 </script>
 
