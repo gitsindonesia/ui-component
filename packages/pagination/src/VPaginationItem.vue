@@ -21,6 +21,10 @@ withDefaults(
     iconSize: 'sm',
   },
 );
+
+defineSlots<{
+  default?: (props: {}) => any;
+}>();
 </script>
 
 <template>
