@@ -61,6 +61,11 @@ FloatingVue.options.themes['tooltip-white'] = {
   $resetCss: true,
   disposeTimeout: 100000,
 };
+
+defineSlots<{
+  default?: (props: {}) => any;
+  activator?: (props: {}) => any;
+}>();
 </script>
 
 <template>
