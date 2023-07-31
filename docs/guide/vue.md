@@ -27,7 +27,7 @@ yarn install
 Install `@morpheme/ui` and `tailwindcss` package:
 
 ```bash
-yarn add @morpheme/ui tailwindcss postcss autoprefixer
+yarn add @morpheme/ui @morpheme/themes tailwindcss postcss autoprefixer
 ```
 
 ::: info
@@ -45,7 +45,7 @@ Next, generate the tailwind config files:
 npx tailwindcss init -p
 ```
 
-Next, register the Morpheme UI preset and add the component folders the `content` section in the `tailwind.config.cjs` file:
+Next, register the Morpheme UI preset and add the component folders the `content` section in the `tailwind.config.js` file:
 
 ```js{6,12}
 /** @type {import('tailwindcss').Config} */
@@ -71,7 +71,7 @@ Next, add the Tailwind directives to `src/assets/main.css`:
 @tailwind utilities;
 ```
 
-Next, open `src/main.ts`. Import and use the `GitsUi` plugin from `@morpheme/ui` and also load the styles from `@morpheme/ui/styles` for CSS bundle or use `@morpheme/ui/styles.scss` if you want to use the SCSS version instead.
+Next, open `src/main.ts`. Import and use the `MorphemeUI` plugin from `@morpheme/ui` and also load the styles from `@morpheme/ui/styles` for CSS bundle or use `@morpheme/ui/styles.scss` if you want to use the SCSS version instead.
 
 ```ts{7,10}
 // main.ts
@@ -80,18 +80,24 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 
-import GitsUi from "@morpheme/ui";
+import MorphemeUI from "@morpheme/ui";
 
 // load CSS bundle
-import '@morpheme/ui/styles';
+import '@morpheme/themes/dist/morpheme/main.css';
+
+// uncomment this line to enable dark mode
+// import '@morpheme/themes/dist/morpheme/main.dark.css';
 
 // or uncomment this line to load SCSS styles
-// import '@morpheme/ui/styles.scss';
+// import '@morpheme/themes/src/morpheme/main.scss';
+
+// uncomment this line to enable dark mode
+// import '@morpheme/themes/src/morpheme/main.dark.scss';
 
 const app = createApp(App);
 
 app.use(router);
-app.use(GitsUi);
+app.use(MorphemeUI); // <-- use the plugin
 
 app.mount("#app");
 ```
