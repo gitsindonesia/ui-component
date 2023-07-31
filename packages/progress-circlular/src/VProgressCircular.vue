@@ -83,6 +83,10 @@ const underlayStrokeColor = computed(() => {
 const computedTextColor = computed(() => {
   return getColor(props.textColor);
 });
+
+defineSlots<{
+  default?: (props: {value: number}) => any;
+}>();
 </script>
 
 <template>
