@@ -73,7 +73,7 @@ const items = ref([
 
 <template>
   <PageHeader title="Dashboard" subtitle="Welcome to Morpheme UI Gallery!" />
-  
+
   <div class="grid grid-cols-2 gap-4 sm:grid-cols-4">
     <VCard
       v-for="stat in stats"
@@ -88,5 +88,11 @@ const items = ref([
     </VCard>
   </div>
 
-  <VDataTable class="mt-8" :items="items" :headers="headers" />
+  <VDataTable class="mt-8" :items="items" :headers="headers">
+    <template #item.email="{item}">
+      <a :href="`mailto:${item.email}`">
+        {{ item.email }}
+      </a>
+    </template>
+  </VDataTable>
 </template>
