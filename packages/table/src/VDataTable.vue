@@ -392,14 +392,16 @@ const handleRowClick = (item: T, index: number) => {
 
 defineSlots<
   {
-    [K in keyof H as H[K] extends string
-      ? `header.${Extract<K, string>}`
-      : never]?: (props: {header: H; index: number}) => any;
+    [K in keyof T as K extends string ? `header.${K}` : never]?: (props: {
+      header: H;
+      index: number;
+    }) => any;
   } &
     {
-      [K in keyof H as H[K] extends string
-        ? `item.${Extract<K, string>}`
-        : never]?: (props: {item: T; index: number}) => any;
+      [K in keyof T as K extends string ? `item.${K}` : never]?: (props: {
+        item: T;
+        index: number;
+      }) => any;
     } & {
       default?: (props: {}) => any;
       'header.selectable'?: (props: {selectAll: boolean}) => any;
