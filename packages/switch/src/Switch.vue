@@ -77,6 +77,11 @@ const emit =
   }>();
 
 const switchValue = useVModel(props, 'modelValue', emit);
+
+defineSlots<{
+  hint?: (props: {}) => any;
+  error?: (props: {}) => any;
+}>()
 </script>
 
 <template>
