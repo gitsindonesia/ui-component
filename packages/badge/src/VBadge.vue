@@ -116,6 +116,11 @@ const classes = computed(() => {
     },
   ];
 });
+
+defineSlots<{
+  default?: (props: {}) => any;
+  dismissable?: (props: { dismiss: () => void }) => any;
+}>()
 </script>
 
 <template>
