@@ -68,6 +68,10 @@ onUnmounted(() => {
 
   window.removeEventListener('mouseup', onDragEnd);
 });
+
+defineSlots<{
+  default?: (props: {}) => any;
+}>();
 </script>
 
 <template>
