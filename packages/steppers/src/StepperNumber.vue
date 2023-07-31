@@ -4,11 +4,24 @@ defineProps<{
   isActive?: boolean;
   vertical?: boolean;
 }>();
+
+defineSlots<{
+  default?: (props: {}) => any;
+}>();
 </script>
 
 <template>
   <div
-    class="rounded-full flex flex-shrink-0 w-8 h-8 border-2 items-center justify-center mb-2"
+    class="
+      rounded-full
+      flex flex-shrink-0
+      w-8
+      h-8
+      border-2
+      items-center
+      justify-center
+      mb-2
+    "
     :class="[
       isActive
         ? 'bg-primary-500 border-primary-500 text-white'
