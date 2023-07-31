@@ -126,6 +126,13 @@ onMounted(() => {
     );
   }
 });
+
+defineSlots<{
+  default?: (props: {}) => any
+  icon?: (props: { icon: string }) => any
+  'x-button'?: (props: { dismiss: () => void }) => any
+  'x-icon'?: (props: {}) => any
+}>()
 </script>
 
 <template>
