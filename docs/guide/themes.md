@@ -15,12 +15,12 @@ Checkout the [Morpheme Kitchen Sink demo](https://morpheme-kitchen-sink.vercel.a
 
 ### Themes Files
 
-| Description      | Legacy                | Morpheme                                  |
-| ---------------- | --------------------- | ----------------------------------------- |
-| Main CSS (dist) Styles | `@morpheme/ui/dist/style.css` | `@morpheme/themes/dist/morpheme/main.css` |
+| Description                        | Legacy                        | Morpheme                                       |
+| ---------------------------------- | ----------------------------- | ---------------------------------------------- |
+| Main CSS (dist) Styles             | `@morpheme/ui/dist/style.css` | `@morpheme/themes/dist/morpheme/main.css`      |
 | Main CSS (dist) Styles (Dark Mode) | `@morpheme/ui/dist/style.css` | `@morpheme/themes/dist/morpheme/main.dark.css` |
-| Main SASS Styles | `@morpheme/ui/styles` | `@morpheme/themes/src/morpheme/main.scss` |
-| Main SASS Styles (Dark Mode) | `@morpheme/ui/styles.dark` | `@morpheme/themes/src/morpheme/main.dark.scss` |
+| Main SASS Styles                   | `@morpheme/ui/styles`         | `@morpheme/themes/src/morpheme/main.scss`      |
+| Main SASS Styles (Dark Mode)       | `@morpheme/ui/styles.dark`    | `@morpheme/themes/src/morpheme/main.dark.scss` |
 
 ## How to use the `morpheme` theme
 
@@ -31,7 +31,7 @@ Checkout the [Morpheme Kitchen Sink demo](https://morpheme-kitchen-sink.vercel.a
 import {createApp} from 'vue';
 import App from './App.vue';
 import router from './router';
-import GitsUi from '@morpheme/ui';
+import MorphemeUI from '@morpheme/ui';
 
 import '@morpheme/ui/styles'; // [!code --]
 
@@ -53,7 +53,7 @@ import '@morpheme/themes/dist/morpheme/main.dark.css'; // [!code ++]
 const app = createApp(App);
 
 app.use(router);
-app.use(GitsUi);
+app.use(MorphemeUI);
 
 app.mount('#app');
 ```
