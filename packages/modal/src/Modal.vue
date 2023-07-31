@@ -61,6 +61,12 @@ function openModal() {
   emit('update:modelValue', true);
   emit('open');
 }
+
+defineSlots<{
+  default?: (props: {}) => any;
+  activator?: (props: {open: () => void}) => any;
+  overlay?: (props: {hideOverlay?: boolean; overlayBlur?: boolean}) => any;
+}>();
 </script>
 
 <template>
