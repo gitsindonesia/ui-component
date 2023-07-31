@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { computed } from "vue";
-import Icon from "@morpheme/icon";
-import VMenusItem from "./VMenusItem.vue";
-import FloatingVue, { Menu, Dropdown } from "floating-vue";
+import {computed} from 'vue';
+import Icon from '@morpheme/icon';
+import VMenusItem from './VMenusItem.vue';
+import FloatingVue, {Menu, Dropdown} from 'floating-vue';
 
-export type VMenuItem = InstanceType<typeof VMenusItem>["$props"] & {
+export type VMenuItem = InstanceType<typeof VMenusItem>['$props'] & {
   children?: VMenuItem[];
 };
 
-export type Placement = InstanceType<typeof Menu>["$props"]["placement"];
+export type Placement = InstanceType<typeof Menu>['$props']['placement'];
 
 export interface Props {
   items?: VMenuItem[];
@@ -35,29 +35,38 @@ export interface Props {
 const props = withDefaults(defineProps<Props>(), {
   items: () => [],
   right: false,
-  rightIcon: "ri:arrow-down-s-line",
+  rightIcon: 'ri:arrow-down-s-line',
   small: false,
-  btnClass: "",
-  placement: "bottom-start",
-  label: "Menu",
+  btnClass: '',
+  placement: 'bottom-start',
+  label: 'Menu',
   hover: false,
-  btnIcon: "ri:arrow-down-s-line",
-  btnIconClass: "",
-  itemClass: "",
-  itemsClass: "",
+  btnIcon: 'ri:arrow-down-s-line',
+  btnIconClass: '',
+  itemClass: '',
+  itemsClass: '',
   itemsStyle: () => ({}),
-  theme: "menus",
-  iconSize: "sm",
+  theme: 'menus',
+  iconSize: 'sm',
 });
 
 FloatingVue.options.themes.menus = {
-  $extend: "dropdown",
+  $extend: 'dropdown',
   $resetCss: false,
 };
 
 const menuPlacement = computed(() => {
-  return props.right ? "bottom-end" : props.placement;
+  return props.right ? 'bottom-end' : props.placement;
 });
+
+defineSlots<{
+  default?: (props: {
+    shown: boolean;
+    show: () => void;
+    hide: () => void;
+  }) => any;
+  items?: (props: {}) => any;
+}>();
 </script>
 
 <template>
@@ -75,15 +84,19 @@ const menuPlacement = computed(() => {
     :triggers="hover ? ['hover'] : ['click']"
     :autoHide="true"
   >
-    <template #default="{ shown, show, hide }">
-      <slot v-bind="{ shown, show, hide }">
-        <button :class="['v-menus-button', btnClass]" :aria-label="label" type="button">
+    <template #default="{shown, show, hide}">
+      <slot v-bind="{shown, show, hide}">
+        <button
+          :class="['v-menus-button', btnClass]"
+          :aria-label="label"
+          type="button"
+        >
           {{ label }}
           <Icon
             :name="btnIcon"
             :size="iconSize"
             class="v-menus-button-icon"
-            :class="[btnIconClass, { 'v-menus-button-icon--active': shown }]"
+            :class="[btnIconClass, {'v-menus-button-icon--active': shown}]"
           />
         </button>
       </slot>
