@@ -263,6 +263,15 @@ const emitSelected = (val: any) => {
   emit('update:value', emittedVal);
   emit('change', emittedVal);
 };
+
+defineSlots<{
+  default?: (props: {}) => any;
+  selected?: (props: {item: Val}) => any;
+  item?: (props: {item: Val}) => any;
+  empty?: () => any;
+  hint?: () => any;
+  icon?: () => any;
+}>()
 </script>
 
 <template>
