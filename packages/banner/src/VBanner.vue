@@ -65,6 +65,12 @@ const api = {
 };
 
 provide(VBannerSymbol, api);
+
+defineSlots<{
+  default?: (props: {}) => any;
+  prefix?: (props: {close: () => void; isOpen: boolean}) => any;
+  actions?: (props: {close: () => void; isOpen: boolean}) => any;
+}>();
 </script>
 
 <template>

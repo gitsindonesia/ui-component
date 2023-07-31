@@ -34,6 +34,10 @@ const computedStyles = computed(() => {
 
   return {};
 });
+
+defineSlots<{
+  default?: (props: {}) => any;
+}>()
 </script>
 
 <template>

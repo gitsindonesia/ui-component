@@ -81,6 +81,25 @@ const context = useList();
 function propOrContext<T extends keyof Props>(key: T): Props[T] {
   return props[key] ?? context?.[key]?.value;
 }
+
+defineSlots<{
+  default?: (props: {}) => any;
+  "prepend.icon"?: (props: {
+    name?: string;
+    size?: string;
+    class?: string;
+  }) => any;
+  prepend?: (props: {}) => any;
+  "append.text"?: (props: {
+    value?: string;
+  }) => any;
+  "append.icon"?: (props: {
+    name?: string;
+    size?: string;
+    class?: string;
+  }) => any;
+  append?: (props: {}) => any;
+}>()
 </script>
 
 <template>
@@ -126,7 +145,11 @@ function propOrContext<T extends keyof Props>(key: T): Props[T] {
       <slot />
     </div>
     <slot v-if="!propOrContext('hideAppend')" name="append">
-      <div class="v-list-item-append" :class="appendClass" @click="emit('click:append')">
+      <div
+        class="v-list-item-append"
+        :class="appendClass"
+        @click="emit('click:append')"
+      >
         <slot name="append.text">
           <span
             v-if="appendText"

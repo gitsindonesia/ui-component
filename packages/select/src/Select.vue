@@ -137,6 +137,51 @@ const shadowClass = computed(() => {
 
   return props.shadow ? `v-select--shadow-${props.shadow}` : '';
 });
+
+defineSlots<{
+  default?: (props: {
+    selectedValue: ModelValue;
+    multiple: boolean;
+    itemValue: string;
+    itemText: string;
+    selectionItemProps: InstanceType<typeof VBadge>['$props'];
+  }) => any;
+  button?: (props: {}) => any;
+  'selection-item'?: (props: {
+    item: T;
+    idx: any;
+    itemText: string;
+    itemValue: string;
+    remove: () => void;
+  }) => any;
+  selected?: (props: {
+    selectedValue: ModelValue;
+    multiple?: boolean;
+    placeholder?: string;
+    itemText?: string;
+    itemValue?: string;
+  }) => any;
+  item?: (props: {
+    item: T;
+    active: boolean;
+    selected: boolean;
+    itemText?: string;
+    itemValue?: string;
+  }) => any;
+  hint?: (props: {hint?: string}) => any;
+  error?: (props: {
+    error: boolean;
+    errorMessage?: string;
+    hideError?: boolean;
+  }) => any;
+  selection?: (props: {
+    selectedValue: ModelValue;
+    multiple?: boolean;
+    itemValue?: string;
+    itemText?: string;
+    selectionItemProps?: InstanceType<typeof VBadge>['$props'];
+  }) => any;
+}>();
 </script>
 
 <template>
@@ -155,7 +200,7 @@ const shadowClass = computed(() => {
         'v-select--disabled': disabled,
       },
       shadowClass,
-      `v-select--${placement}`
+      `v-select--${placement}`,
     ]"
   >
     <component

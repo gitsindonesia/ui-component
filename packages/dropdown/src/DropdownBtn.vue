@@ -1,6 +1,10 @@
 <script setup lang="ts">
-import { MenuButton } from "@headlessui/vue";
-import { VBtn } from "@morpheme/button";
+import {MenuButton} from '@headlessui/vue';
+import {VBtn} from '@morpheme/button';
+
+defineSlots<{
+  default?: (props: {}) => any;
+}>();
 </script>
 
 <template>

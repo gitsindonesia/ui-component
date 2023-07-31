@@ -10,6 +10,10 @@ withDefaults(
     placement: 'bottom-start',
   },
 );
+
+defineSlots<{
+  default?: (props: {}) => any;
+}>();
 </script>
 
 <template>

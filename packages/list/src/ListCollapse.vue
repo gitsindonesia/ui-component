@@ -26,6 +26,21 @@ watch(isOpen, (val) => emit('update:modelValue', val));
 const close = () => (isOpen.value = false);
 const open = () => (isOpen.value = true);
 const toggle = () => (isOpen.value = !isOpen.value);
+
+defineSlots<{
+  default?: (props: {
+    isOpen: boolean;
+    close: () => void;
+    open: () => void;
+    toggle: () => void;
+  }) => any;
+  activator?: (props: {
+    isOpen: boolean;
+    close: () => void;
+    open: () => void;
+    toggle: () => void;
+  }) => any;
+}>();
 </script>
 
 <template>

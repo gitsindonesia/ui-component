@@ -1,9 +1,3 @@
-<script lang="ts">
-export default {
-  inheritAttrs: false,
-};
-</script>
-
 <script setup lang="ts">
 import {computed, PropType, ref, toRefs, watch} from 'vue';
 import Icon from '@morpheme/icon';
@@ -11,6 +5,10 @@ import {DefaultColors} from '@morpheme/theme/defaultTheme';
 import {ToastPlacement} from './types';
 
 export type ToastTypes = 'success' | 'error' | 'warning' | 'question';
+
+defineOptions({
+  inheritAttrs: false,
+});
 
 const props = defineProps({
   modelValue: {
@@ -202,6 +200,12 @@ const transitionName = computed(() => {
     ? 'toast-transition-top'
     : 'toast-transition-bottom';
 });
+
+defineSlots<{
+  default?: (props: {close: typeof close}) => any;
+  icon?: (props: {}) => any;
+  action?: (props: {close: typeof close}) => any;
+}>();
 </script>
 
 <template>

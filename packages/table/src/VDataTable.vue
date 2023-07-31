@@ -1,6 +1,10 @@
-<script setup lang="ts">
+<!-- eslint-disable vue/no-dupe-keys -->
+<script
+  setup
+  lang="ts"
+  generic="T extends VDataTableItem, H extends VDataTableHeader"
+>
 import {computed, watch, ref, toRefs} from 'vue';
-import type {PropType} from 'vue';
 import VDataTablePagination from './VDataTablePagination.vue';
 import type {SortDirection, VDataTableHeader, VDataTableItem} from './types';
 import VSpinner from '@morpheme/spinner';
@@ -12,173 +16,95 @@ type VDataTablePaginationProps = InstanceType<
   typeof VDataTablePagination
 >['$props'];
 
-const props = defineProps({
-  modelValue: {
-    type: Array as PropType<VDataTableItem[]>,
-    default: () => [],
+const props = withDefaults(
+  defineProps<{
+    modelValue?: T[];
+    /**
+     * @deprecated use `modelValue` instead
+     */
+    value?: T[];
+    headers: H[];
+    items: T[];
+    itemsPerPage?: number;
+    disableSorting?: boolean;
+    pagination?: VDataTablePaginationProps;
+    loading?: boolean;
+    search?: string;
+    searchBy?: string | string[];
+    loadingText?: string;
+    noDataText?: string;
+    footerColor?: string;
+    serverSide?: boolean;
+    sortBy?: string;
+    sortDirection?: SortDirection;
+    hover?: boolean;
+    striped?: boolean;
+    dense?: boolean;
+    hideFooter?: boolean;
+    totalItems?: number;
+    page?: number;
+    mustSort?: boolean;
+    noShadow?: boolean;
+    selectable?: boolean;
+    headerClass?: string;
+    bodyClass?: string;
+    footerClass?: string;
+    columnActiveClass?: string;
+    columnInactiveClass?: string;
+    hoverClass?: string;
+    stripedClass?: string;
+    tdClass?: string;
+    trClass?: string;
+    wrapperClass?: string;
+    flat?: boolean;
+    roundedClass?: string;
+    bordered?: boolean;
+    tile?: boolean;
+    multiSort?: boolean;
+  }>(),
+  {
+    modelValue: () => [] as T[],
+    value: () => [] as T[],
+    headers: () => [] as H[],
+    items: () => [] as T[],
+    itemsPerPage: 10,
+    disableSorting: false,
+    pagination: () => ({}),
+    loading: false,
+    search: '',
+    searchBy: '',
+    loadingText: 'Loading...',
+    noDataText: 'Data tidak ditemukan',
+    footerColor: '',
+    serverSide: false,
+    sortBy: '',
+    sortDirection: '',
+    hover: false,
+    striped: false,
+    dense: false,
+    hideFooter: false,
+    totalItems: 0,
+    page: 1,
+    mustSort: false,
+    noShadow: false,
+    selectable: false,
+    headerClass: '',
+    bodyClass: '',
+    footerClass: '',
+    columnActiveClass: '',
+    columnInactiveClass: '',
+    hoverClass: '',
+    stripedClass: '',
+    tdClass: '',
+    trClass: '',
+    wrapperClass: '',
+    flat: false,
+    roundedClass: '',
+    bordered: false,
+    tile: false,
+    multiSort: false,
   },
-  /**
-   * @deprecated use `modelValue` instead
-   */
-  value: {
-    type: Array,
-    default: () => [],
-  },
-  headers: {
-    type: Array as PropType<VDataTableHeader[]>,
-    default: () => [],
-  },
-  items: {
-    type: Array as PropType<VDataTableItem[]>,
-    default: () => [],
-  },
-  itemsPerPage: {
-    type: Number,
-    default: 10,
-  },
-  disableSorting: {
-    type: Boolean,
-    default: false,
-  },
-  pagination: {
-    type: Object as PropType<VDataTablePaginationProps>,
-    default() {
-      return {};
-    },
-  },
-  loading: {
-    type: Boolean,
-    default: false,
-  },
-  search: {
-    type: String,
-    default: '',
-  },
-  searchBy: {
-    type: [String, Array] as PropType<string | string[]>,
-    default: '',
-  },
-  loadingText: {
-    type: String,
-    default: 'Loading...',
-  },
-  noDataText: {
-    type: String,
-    default: 'Data tidak ditemukan',
-  },
-  footerColor: {
-    type: String,
-    default: '',
-  },
-  serverSide: {
-    type: Boolean,
-    default: false,
-  },
-  sortBy: {
-    type: String,
-    default: '',
-  },
-  sortDirection: {
-    type: String as PropType<SortDirection>,
-    default: '',
-  },
-  hover: {
-    type: Boolean,
-    default: false,
-  },
-  striped: {
-    type: Boolean,
-    default: false,
-  },
-  dense: {
-    type: Boolean,
-    default: false,
-  },
-  hideFooter: {
-    type: Boolean,
-    default: false,
-  },
-  totalItems: {
-    type: Number,
-    default: 0,
-  },
-  page: {
-    type: Number,
-    default: 1,
-  },
-  mustSort: {
-    type: Boolean,
-    default: false,
-  },
-  noShadow: {
-    type: Boolean,
-    default: false,
-  },
-  selectable: {
-    type: Boolean,
-    default: false,
-  },
-  headerClass: {
-    type: String,
-    default: '',
-  },
-  bodyClass: {
-    type: String,
-    default: '',
-  },
-  footerClass: {
-    type: String,
-    default: '',
-  },
-  columnActiveClass: {
-    type: String,
-    default: '',
-  },
-  columnInactiveClass: {
-    type: String,
-    default: '',
-  },
-  hoverClass: {
-    type: String,
-    default: '',
-  },
-  stripedClass: {
-    type: String,
-    default: '',
-  },
-  tdClass: {
-    type: String,
-    default: '',
-  },
-  trClass: {
-    type: String,
-    default: '',
-  },
-  wrapperClass: {
-    type: String,
-    default: '',
-  },
-  flat: {
-    type: Boolean,
-    default: false,
-  },
-  roundedClass: {
-    type: String,
-    default: '',
-  },
-  bordered: {
-    type: Boolean,
-    default: false,
-  },
-  tile: {
-    type: Boolean,
-    default: false,
-  },
-  multiSort: {
-    type: Boolean,
-    default: false,
-  },
-});
+);
 
 const emit =
   defineEmits<{
@@ -192,8 +118,8 @@ const emit =
     (e: 'page:change', value: number): void;
     (e: 'itemsPerPage:change', value: number): void;
     (e: 'pagination:change', value: Record<string, any>): void;
-    (e: 'update:modelValue', value: any): void;
-    (e: 'update:value', value: any): void;
+    (e: 'update:modelValue', value: T[]): void;
+    (e: 'update:value', value: T[]): void;
     (
       e: 'sort',
       payload: {
@@ -201,7 +127,7 @@ const emit =
         direction: SortDirection | SortDirection[];
       },
     ): void;
-    (e: 'row:click', item: VDataTableItem): void;
+    (e: 'row:click', item: T): void;
   }>();
 
 const {
@@ -247,7 +173,7 @@ const sortMap = ref<Map<string, SortDirection>>(new Map());
 const defaultSearchBy = computed(() => headers.value.map((item) => item.value));
 
 const paginatedItems = computed(() => {
-  let clonedItems = JSON.parse(JSON.stringify(items.value)) as VDataTableItem[];
+  let clonedItems = JSON.parse(JSON.stringify(items.value)) as T[];
 
   if (serverSide.value) return clonedItems;
 
@@ -305,11 +231,11 @@ const computedHeaders = computed(() =>
         ...header,
         sortable: header.hasOwnProperty('sortable') ? header.sortable : true,
         sorting: '',
-      } as VDataTableHeader),
+      } as H),
   ),
 );
 
-const getThClass = (header: VDataTableHeader) => {
+const getThClass = (header: H) => {
   const isActive = sortMap.value.get(header.value);
   return [
     {
@@ -324,7 +250,7 @@ const getThClass = (header: VDataTableHeader) => {
   ];
 };
 
-const getTdClass = (header: VDataTableHeader) => {
+const getTdClass = (header: H) => {
   return [
     {
       [`v-table-td--${header.align}`]: !!header.align,
@@ -335,7 +261,7 @@ const getTdClass = (header: VDataTableHeader) => {
   ];
 };
 
-const handleSort = (header: VDataTableHeader) => {
+const handleSort = (header: H) => {
   if (!header) return;
 
   let direction: SortDirection = '';
@@ -412,7 +338,7 @@ watch(itemsPerPage, (val) => {
   perPage.value = val;
 });
 
-const selected = ref<any>([]);
+const selected = ref<T[]>([]);
 
 const selectAll = computed<boolean>({
   get() {
@@ -444,7 +370,7 @@ watch(
 watch(
   modelValue,
   (val) => {
-    selected.value = val;
+    selected.value = val as any; // FIXME
   },
   {deep: true, immediate: true},
 );
@@ -453,16 +379,49 @@ const start = computed(() =>
   totalItems.value > 0 ? (page.value - 1) * itemsPerPage.value + 1 : 1,
 );
 
-const handleRowClick = (item: VDataTableItem, index: number) => {
+const handleRowClick = (item: T, index: number) => {
   if (selectable.value) {
-    if (selected.value.includes(item)) {
+    if (selected.value.includes(item as any)) {
       selected.value.splice(index, 1);
     } else {
-      selected.value.push(item);
+      selected.value.push(item as any);
     }
   }
   emit('row:click', item);
 };
+
+defineSlots<
+  {
+    [K in keyof T as K extends string ? `header.${K}` : never]?: (props: {
+      header: H;
+      index: number;
+    }) => any;
+  } &
+    {
+      [K in keyof T as K extends string ? `item.${K}` : never]?: (props: {
+        item: T;
+        index: number;
+      }) => any;
+    } & {
+      default?: (props: {}) => any;
+      'header.selectable'?: (props: {selectAll: boolean}) => any;
+      'header.index'?: (props: {index: number; item: T}) => any;
+      'item.selected'?: (props: {selected: any[]; item: T}) => any;
+      'item.index'?: (props: {index: number; item: T}) => any;
+      empty?: (props: {}) => any;
+      loading?: (props: {}) => any;
+      footer?: (props: {
+        pagination: VDataTablePaginationProps;
+        perPage: number;
+        serverSide: boolean;
+        items: T[];
+        totalItems: number;
+        footerColor: string;
+        footerClass: string;
+        page: number;
+      }) => any;
+    }
+>();
 </script>
 
 <template>
@@ -490,7 +449,7 @@ const handleRowClick = (item: VDataTableItem, index: number) => {
         <thead class="v-table-thead" :class="headerClass">
           <tr class="v-table-tr">
             <th
-              v-for="header in computedHeaders"
+              v-for="(header, hIndex) in computedHeaders"
               :key="header.value"
               scope="col"
               class="v-table-th group"
@@ -504,7 +463,12 @@ const handleRowClick = (item: VDataTableItem, index: number) => {
               >
                 <v-checkbox v-model="selectAll" />
               </slot>
-              <slot v-else :name="`header.${header.value}`">
+              <slot
+                v-else
+                :name="`header.${header.value}`"
+                :header="header"
+                :index="hIndex"
+              >
                 <button
                   v-if="!disableSorting && header.sortable"
                   role="button"
@@ -584,7 +548,7 @@ const handleRowClick = (item: VDataTableItem, index: number) => {
                 :item="item"
               >
                 <v-checkbox
-                  v-model="selected"
+                  v-model="selected as any"
                   wrapper-class="v-table-checkbox"
                   :value="(item as any)"
                 />

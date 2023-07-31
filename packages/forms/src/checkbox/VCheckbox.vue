@@ -103,6 +103,11 @@ const {errorMessage, uncontrolledValue, inputId, handleChange, handleBlur} =
     uncheckedValue: props.uncheckedValue,
     validateOnValueUpdate: !isEagerValidation.value,
   });
+
+defineSlots<{
+  default?: (props: {}) => any;
+  hint?: (props: {}) => any;
+}>();
 </script>
 
 <template>

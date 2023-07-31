@@ -5,10 +5,10 @@ export default {
 </script>
 
 <script setup lang="ts">
-import type { DefaultColors } from "@morpheme/theme/defaultTheme";
-import { useVModel } from "@vueuse/core";
-import { provide, ref, watch } from "vue";
-import { VBottomNavigationInjectionKey } from "./api";
+import type {DefaultColors} from '@morpheme/theme/defaultTheme';
+import {useVModel} from '@vueuse/core';
+import {provide, ref, watch} from 'vue';
+import {VBottomNavigationInjectionKey} from './api';
 
 const props = withDefaults(
   defineProps<{
@@ -19,22 +19,23 @@ const props = withDefaults(
     defaultActive?: number;
     transition?: string;
     hideSlider?: boolean;
-    variant?: "filled" | "bordered" | "filled-bordered";
+    variant?: 'filled' | 'bordered' | 'filled-bordered';
   }>(),
   {
-    color: "primary",
+    color: 'primary',
     modelValue: true,
     fixed: true,
     defaultActive: 0,
-    transition: "slide-up",
-  }
+    transition: 'slide-up',
+  },
 );
 
-const emit = defineEmits<{
-  (e: "update:modelValue", value: boolean): void;
-}>();
+const emit =
+  defineEmits<{
+    (e: 'update:modelValue', value: boolean): void;
+  }>();
 
-const modelValue = useVModel(props, "modelValue", emit);
+const modelValue = useVModel(props, 'modelValue', emit);
 
 function toggle() {
   modelValue.value = !modelValue.value;
@@ -79,12 +80,12 @@ function isActive(el: HTMLButtonElement) {
 
 function setSliderPosition(el: HTMLButtonElement) {
   if (slider.value) {
-    if (props.variant === "filled") {
+    if (props.variant === 'filled') {
       slider.value.style.height = `${el.offsetHeight}px`;
     }
     slider.value.style.width = `${el.offsetWidth}px`;
     slider.value.style.left = `${el.offsetLeft}px`;
-    slider.value.style.display = "block";
+    slider.value.style.display = 'block';
   }
 }
 
@@ -101,7 +102,7 @@ watch(
       }
     }
   },
-  { immediate: true }
+  {immediate: true},
 );
 
 function setInitalActive() {
@@ -113,7 +114,7 @@ watch(
   () => {
     setInitalActive();
   },
-  { immediate: true, deep: true }
+  {immediate: true, deep: true},
 );
 
 const api = {
@@ -134,6 +135,10 @@ const api = {
 provide(VBottomNavigationInjectionKey, api);
 
 defineExpose(api);
+
+defineSlots<{
+  default?: (props: {}) => any;
+}>();
 </script>
 
 <template>

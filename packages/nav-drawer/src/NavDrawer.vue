@@ -125,6 +125,10 @@ const styles = computed(() => {
 
   return styles;
 });
+
+defineSlots<{
+  default?: (props: {}) => any;
+}>();
 </script>
 
 <template>

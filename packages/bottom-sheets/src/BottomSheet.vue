@@ -67,6 +67,10 @@ defineExpose({
   setHeight,
   getHeight,
 });
+
+defineSlots<{
+  default?: (props: {close: () => void}) => any;
+}>();
 </script>
 
 <template>

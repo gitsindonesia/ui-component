@@ -274,6 +274,19 @@ provide(VTabsApiSymbol, {
   next,
   previous,
 });
+
+defineSlots<{
+  default?: (props: {
+    tabSlider: typeof tabSlider.value;
+    onClick: typeof onTabClicked;
+    registerRef: typeof setTabRef;
+  }) => any;
+  previous?: (props: {onClick: typeof previous}) => any;
+  next?: (props: {onClick: typeof next}) => any;
+  prepend?: (props: {}) => any;
+  append?: (props: {}) => any;
+  item?: (props: {}) => any;
+}>();
 </script>
 
 <template>

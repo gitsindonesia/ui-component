@@ -66,6 +66,11 @@ const attributes = computed(() => {
 
   return attrs
 })
+
+defineSlots<{
+  default?: (props: {}) => any;
+  icon?: (props: {}) => any;
+}>()
 </script>
 
 <template>

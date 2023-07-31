@@ -391,6 +391,26 @@ const panelStyles = computed(() => {
 
   return styles;
 });
+
+defineSlots<{
+  default?: (props: {}) => any;
+  activator?: (props: {open: () => void}) => any;
+  close?: (props: {
+    isLoading: boolean;
+    props: Record<string, any>;
+    closeModal: () => void;
+    hideXButton: boolean;
+  }) => any;
+  closeIcon?: (props: {xIconClass: string}) => any;
+  overlay?: (props: {}) => any;
+  footer?: (props: {
+    loading: boolean;
+    confirmProps: Record<string, any>;
+    onConfirm: () => void;
+    close: () => void;
+  }) => any;
+  header?: (props: {}) => any;
+}>();
 </script>
 
 <template>

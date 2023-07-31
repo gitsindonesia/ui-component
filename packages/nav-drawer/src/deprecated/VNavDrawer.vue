@@ -131,6 +131,15 @@ const bgColor = computed(() =>
 onMounted(() => {
   console.warn('v-nav-drawer is deprecated. Switch to new VNavDrawer component instead.');
 });
+
+defineSlots<{
+  default?: (props: {}) => any;
+  toggle?: (props: {}) => any;
+  'logo.mini'?: (props: {}) => any;
+  logo?: (props: {}) => any;
+  menus?: (props: {}) => any;
+  append?: (props: {}) => any;
+}>()
 </script>
 
 <template>

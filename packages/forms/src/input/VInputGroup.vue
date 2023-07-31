@@ -81,6 +81,13 @@ const isPassword = computed(() => type.value === 'password');
 const inputType = computed(() =>
   isPassword.value ? (showPassword.value ? 'text' : 'password') : type.value,
 );
+
+defineSlots<{
+  default?: (props: {}) => any;
+  prepend?: (props: {}) => any;
+  append?: (props: {}) => any;
+  hint?: (props: {}) => any;
+}>();
 </script>
 
 <template>

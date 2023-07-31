@@ -173,12 +173,30 @@ const attrs = computed(() => {
 
   return attrs;
 });
+
+defineSlots<{
+  default?: (props: {}) => any;
+  image?: (props: {
+    image: string | undefined;
+    alt: string | undefined;
+    imageClass: string | undefined;
+  }) => any;
+  header?: (props: {title: string}) => any;
+  footer?: (props: {}) => any;
+  'header.prepend'?: (props: {}) => any;
+  'header.append'?: (props: {}) => any;
+}>();
 </script>
 
 <template>
   <component :is="tag" :class="classes" v-bind="{...$attrs, ...attrs}">
     <slot name="image" v-bind="{image, alt: imageAlt, imageClass}">
-      <VCardImage v-if="image" :src="image" :alt="imageAlt" :class="imageClass" />
+      <VCardImage
+        v-if="image"
+        :src="image"
+        :alt="imageAlt"
+        :class="imageClass"
+      />
     </slot>
     <div v-if="!hideHeader" :class="[defaultHeaderClass, headerClass]">
       <slot name="header.prepend" />

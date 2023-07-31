@@ -75,6 +75,13 @@ defineExpose({
   reset,
   removeItem,
 });
+
+defineSlots<{
+  default?: (props: {}) => any;
+  hint?: (props: {}) => any;
+  items?: (props: {}) => any;
+  error?: (props: {}) => any;
+}>();
 </script>
 
 <template>

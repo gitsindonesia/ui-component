@@ -5,6 +5,10 @@ import {BottomSheetInjectionKey} from './api';
 import type {BottomSheetApi} from './types';
 
 const api = inject<BottomSheetApi>(BottomSheetInjectionKey);
+
+defineSlots<{
+  default?: (props: {}) => any;
+}>();
 </script>
 
 <template>

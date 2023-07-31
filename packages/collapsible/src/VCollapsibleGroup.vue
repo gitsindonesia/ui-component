@@ -52,6 +52,14 @@ const onChange = (isOpen: boolean, item: CollapsibleItem, idx: number) => {
     });
   }
 };
+
+defineSlots<{
+  default?: (props: {}) => any;
+  'group:header'?: (props: {}) => any;
+  'item:header'?: (props: {item: CollapsibleItem; index: number}) => any;
+  items?: (props: {row: CollapsibleItem; index: number}) => any;
+  [key: `item.${number}`]: (props: {item: CollapsibleItem}) => any;
+}>();
 </script>
 
 <template>

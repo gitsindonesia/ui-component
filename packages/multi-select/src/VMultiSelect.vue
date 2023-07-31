@@ -385,17 +385,46 @@ const focusItem = () => {
     dropdown.value?.scrollTo({top, behavior: 'smooth'});
   });
 };
+
+defineSlots<{
+  selection?: (props: {
+    index: number;
+    item: VMultiSelectItem;
+    value: string;
+    onRemove: () => void;
+  }) => any;
+  'select-all'?: (props: {
+    onClick: () => void;
+    isSelected: boolean;
+  }) => any;
+  'prepend.item'?: (props: {}) => any;
+  'append.item'?: (props: {}) => any;
+  'item.label'?: (props: {
+    index: number;
+    item: VMultiSelectItem;
+    value: string;
+    isSelected: boolean;
+  }) => any;
+  'max-selection'?: (props: {}) => any;
+  hint?: (props: {}) => any;
+}>()
 </script>
 
 <template>
-  <label v-if="label" :for="id || name" class="v-multi-select-label" :class="labelClass">
+  <label
+    v-if="label"
+    :for="id || name"
+    class="v-multi-select-label"
+    :class="labelClass"
+  >
     {{ label }}
   </label>
   <div
     ref="target"
     class="v-multi-select"
     :class="{
-      'v-multi-select--error': error || errorMessages.length > 0 || !!errorMessage,
+      'v-multi-select--error':
+        error || errorMessages.length > 0 || !!errorMessage,
       'v-multi-select--shadow': shadow,
       'v-multi-select--disabled': disabled,
     }"
@@ -438,7 +467,9 @@ const focusItem = () => {
 
           <template v-if="maxBadge > 0 && uncontrolledValue.length > maxBadge">
             <slot name="max-selection">
-              <v-badge small> {{ uncontrolledValue.length - maxBadge }} more</v-badge>
+              <v-badge small>
+                {{ uncontrolledValue.length - maxBadge }} more</v-badge
+              >
             </slot>
           </template>
 
@@ -466,7 +497,7 @@ const focusItem = () => {
 
         <div class="v-multi-select-action">
           <v-tooltip v-if="uncontrolledValue.length > 1">
-            <template #activator="{ on }">
+            <template #activator="{on}">
               <v-badge
                 circle
                 class="!p-1 !bg-transparent"
@@ -521,10 +552,14 @@ const focusItem = () => {
                       'block truncate',
                     ]"
                   >
-                    {{ isAllSelected ? "Deselect All" : "Select All" }}
+                    {{ isAllSelected ? 'Deselect All' : 'Select All' }}
                   </div>
                   <div v-if="isAllSelected" class="v-multi-select-item-check">
-                    <Icon name="heroicons:check" class="w-5 h-5" aria-hidden="true" />
+                    <Icon
+                      name="heroicons:check"
+                      class="w-5 h-5"
+                      aria-hidden="true"
+                    />
                   </div>
                 </div>
                 <div class="border-b h-1"></div>
@@ -548,7 +583,10 @@ const focusItem = () => {
                   },
                 ]"
               >
-                <div class="v-multi-select-item-check" :class="checkWrapperClass">
+                <div
+                  class="v-multi-select-item-check"
+                  :class="checkWrapperClass"
+                >
                   <Icon
                     name="heroicons:check"
                     :size="iconSize"

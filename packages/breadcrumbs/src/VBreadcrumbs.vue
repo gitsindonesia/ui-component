@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { PropType } from "vue";
-import VBreadcrumbsItem from "./VBreadcrumbsItem.vue";
-import VBreadcrumbsDivider from "./VBreadcrumbsDivider.vue";
+import {PropType} from 'vue';
+import VBreadcrumbsItem from './VBreadcrumbsItem.vue';
+import VBreadcrumbsDivider from './VBreadcrumbsDivider.vue';
 
-type VBreadcrumbsItemProps = InstanceType<typeof VBreadcrumbsItem>["$props"];
+type VBreadcrumbsItemProps = InstanceType<typeof VBreadcrumbsItem>['$props'];
 
 defineProps({
   items: {
@@ -12,21 +12,27 @@ defineProps({
   },
   divider: {
     type: String,
-    default: "/",
+    default: '/',
   },
   customClass: {
     type: String,
-    default: "",
+    default: '',
   },
   activeColor: {
     type: String,
-    default: "breadcrumbs-item--active",
+    default: 'breadcrumbs-item--active',
   },
   tag: {
     type: String,
-    default: "li",
+    default: 'li',
   },
 });
+
+defineSlots<{
+  default?: (props: {}) => any;
+  divider?: (props: {}) => any;
+  [key: `item.${number}`]: (props: {}) => any;
+}>();
 </script>
 
 <template>

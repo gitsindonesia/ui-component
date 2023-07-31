@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { PropType } from "vue";
+import {PropType} from 'vue';
 
 type ToggleClass = {
   open: string;
@@ -34,8 +34,8 @@ defineProps({
   miniClass: {
     type: Object as PropType<ToggleClass>,
     default: () => ({
-      open: "",
-      close: "",
+      open: '',
+      close: '',
     }),
   },
   /**
@@ -45,15 +45,19 @@ defineProps({
   fixedClass: {
     type: Object as PropType<ToggleClass>,
     default: () => ({
-      open: "",
-      close: "",
+      open: '',
+      close: '',
     }),
   },
   tag: {
     type: String,
-    default: "div",
+    default: 'div',
   },
 });
+
+defineSlots<{
+  default?: (props: {}) => any;
+}>();
 </script>
 
 <template>

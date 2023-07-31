@@ -31,6 +31,11 @@ const emit =
 const backgroundImage = computed(() =>
   props.image && !props.loading ? `url(${props.previewURL})` : 'none',
 );
+
+defineSlots<{
+  default?: (props: {}) => any;
+  filename?: (props: {value: string | undefined}) => any;
+}>();
 </script>
 
 <template>

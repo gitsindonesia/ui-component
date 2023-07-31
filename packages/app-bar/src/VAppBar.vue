@@ -140,6 +140,10 @@ if (props.hideOnScroll) {
     window.removeEventListener('scroll', handleScroll);
   });
 }
+
+defineSlots<{
+  default?: (props: {toggle: () => boolean}) => any
+}>()
 </script>
 
 <template>

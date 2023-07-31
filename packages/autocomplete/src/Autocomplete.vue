@@ -96,6 +96,32 @@ const defaultDisplayValue = (item: any) => {
 const displayValue = computed(() => {
   return props.displayValue ?? defaultDisplayValue;
 });
+
+defineSlots<{
+  default?: (props: {}) => any
+  hint?: (props: {}) => any
+  selection?: (props: {
+    selected: ModelValue;
+    multiple?: boolean;
+    itemValue?: string;
+    itemText?: string;
+    selectionItemProps?: InstanceType<typeof VBadge>['$props'];
+  }) => any
+  'selection-item'?: (props: {
+    item: any;
+    idx: any;
+    itemValue?: string;
+    itemText?: string;
+    remove: () => void;
+  }) => any
+  item?: (props: {
+    item: any;
+    active: boolean;
+    selected: boolean;
+    itemValue?: string;
+    itemText?: string;
+  }) => any
+}>()
 </script>
 
 <template>

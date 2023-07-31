@@ -84,6 +84,12 @@ const emit =
   }>();
 
 const {errorMessage, uncontrolledValue, inputId} = useFormValue(props, emit);
+
+defineSlots<{
+  default?: (props: {}) => any;
+  label?: (props: {}) => any;
+  hint?: (props: {}) => any;
+}>();
 </script>
 
 <template>

@@ -2,12 +2,11 @@ import Pagination from '@morpheme/pagination';
 
 type VPagination = InstanceType<typeof Pagination>['$props'];
 
-export interface VDataTableItem {
+export interface VDataTableItem extends Record<string, any> {
   selected?: boolean;
-  [key: string]: any;
 }
 
-export interface VDataTableHeader {
+export interface VDataTableHeader extends Record<string, any> {
   text: string;
   value: string;
   align?: 'left' | 'center' | 'right' | string;
@@ -16,8 +15,6 @@ export interface VDataTableHeader {
   tdClass?: string;
   freeze?: boolean;
   positionFreeze?: 'left' | 'right';
-
-  [key: string]: any;
 }
 
 export type SortDirection = 'asc' | 'desc' | '';

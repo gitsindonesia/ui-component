@@ -11,6 +11,10 @@ withDefaults(
 );
 
 const api = useAlert();
+
+defineSlots<{
+  default?: (props: {}) => any
+}>()
 </script>
 
 <template>

@@ -6,6 +6,10 @@ type Props = {
 withDefaults(defineProps<Props>(), {
   name: 'alert-group-transition',
 });
+
+defineSlots<{
+  default?: (props: {}) => any
+}>()
 </script>
 
 <template>

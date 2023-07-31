@@ -20,6 +20,10 @@ const api: VBadgeContextApi = {
 };
 
 provide(VBadgeInjectionKey, api);
+
+defineSlots<{
+  default?: (props: {}) => any;
+}>()
 </script>
 
 <template>

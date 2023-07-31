@@ -183,12 +183,26 @@ function focus() {
 defineExpose({
   focus,
 });
+
+defineSlots<{
+  default?: (props: {}) => any;
+  label?: (props: {for: string}) => any;
+  prepend?: (props: {}) => any;
+  'prepend.outer'?: (props: {}) => any;
+  append?: (props: {}) => any;
+  'append.outer'?: (props: {}) => any;
+  clearable?: (props: {}) => any;
+  hint?: (props: {}) => any;
+  error?: (props: {}) => any;
+}>()
 </script>
 
 <template>
   <div
     :class="[
-      `v-input v-input-${color} v-input-${as === 'input' ? type : as} v-input--${size}`,
+      `v-input v-input-${color} v-input-${
+        as === 'input' ? type : as
+      } v-input--${size}`,
       {
         'v-input--error': error || !!errorMessage,
         'v-input--disabled': disabled,
@@ -200,7 +214,7 @@ defineExpose({
       wrapperClass,
     ]"
   >
-    <slot v-if="label" name="label" :v-slot="{for: inputId}">
+    <slot v-if="label" name="label" v-bind="{for: inputId}">
       <label
         v-if="label"
         :for="inputId"

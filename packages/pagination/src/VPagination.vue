@@ -150,6 +150,15 @@ watch(
   },
   {immediate: true},
 );
+
+defineSlots<{
+  default?: (props: {}) => any;
+  btnPrev?: (props: {}) => any;
+  btnNext?: (props: {}) => any;
+  btnFirst?: (props: {}) => any;
+  btnLast?: (props: {}) => any;
+  ellipsis?: (props: {}) => any;
+}>()
 </script>
 
 <template>

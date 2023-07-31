@@ -24,6 +24,10 @@ const computedStyles = computed(() => {
   const color = getColor(props.color)
   return {color}
 })
+
+defineSlots<{
+  default?: (props: {}) => any;
+}>()
 </script>
 
 <template>
