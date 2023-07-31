@@ -61,6 +61,12 @@ withDefaults(defineProps<Props>(), {
   shift: true,
   flip: true,
 });
+
+defineSlots<{
+  default?: (props: {}) => any;
+  activator?: (props: {btnProps: Record<string, any>; label: string}) => any;
+  item?: (props: DropdownItemProps) => any;
+}>();
 </script>
 
 <template>
