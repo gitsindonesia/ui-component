@@ -94,6 +94,11 @@ const computedStyles = computed(() => {
 const percentage = computed(() => {
   return Math.floor((+value.value / +props.max) * 100);
 });
+
+defineSlots<{
+  default?: (props: {value: number}) => any;
+  label?: (props: {value: number}) => any;
+}>();
 </script>
 
 <template>
