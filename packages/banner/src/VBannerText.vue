@@ -7,6 +7,10 @@ withDefaults(
     tag: 'div',
   },
 );
+
+defineSlots<{
+  default?: (props: {}) => any;
+}>();
 </script>
 
 <template>
