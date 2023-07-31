@@ -16,23 +16,32 @@ module.exports = {
 
 To enable dark mode on a Vue application, load the dark mode styles in your `main.ts` file.
 
-```ts {10}
+```ts {13}
 import {createApp} from 'vue';
 import {createPinia} from 'pinia';
 import App from './App.vue';
 import router from './router';
-import GitsUi from '@morpheme/ui';
+import MorphemeUI from '@morpheme/ui';
 import './assets/index.css';
 import '@morpheme/ui/styles.scss';
 
-// load dark mode styles
-import '@morpheme/ui/styles.dark';
+// load CSS bundle
+import '@morpheme/themes/dist/morpheme/main.css';
+
+// uncomment this line to enable dark mode
+import '@morpheme/themes/dist/morpheme/main.dark.css'; // [!code ++]
+
+// or uncomment this line to load SCSS styles
+// import '@morpheme/themes/src/morpheme/main.scss';
+
+// uncomment this line to enable dark mode
+// import '@morpheme/themes/src/morpheme/main.dark.scss';
 
 const app = createApp(App);
 
 app.use(createPinia());
 app.use(router);
-app.use(GitsUi);
+app.use(MorphemeUI);
 
 app.mount('#app');
 ```
@@ -43,7 +52,7 @@ To enable dark mode on a Nuxt application, set the value of `darkMode` option to
 
 ```ts {4}
 export default defineNuxtConfig({
-  modules: ['@morpheme/ui-nuxt', '@nuxtjs/tailwindcss'],
+  modules: ['@morpheme/nuxt', '@nuxtjs/tailwindcss'],
   gitsUi: {
     darkMode: true,
   },
