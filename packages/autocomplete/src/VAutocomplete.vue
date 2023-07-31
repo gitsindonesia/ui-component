@@ -89,6 +89,11 @@ const clear = () => {
   query.value = '';
   clearField()
 };
+
+defineSlots<{
+  default?: (props: {}) => any
+  hint?: (props: {}) => any
+}>()
 </script>
 
 <template>
