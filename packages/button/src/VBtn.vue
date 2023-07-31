@@ -134,6 +134,12 @@ const attributes = computed(() => {
 
   return attrs;
 });
+
+defineSlots<{
+  default?: (props: {}) => any;
+  prefix?: (props: {}) => any;
+  suffix?: (props: {}) => any;
+}>();
 </script>
 
 <template>
