@@ -7,6 +7,16 @@ defineProps<{
   containerClass?: string;
   paddedContent?: boolean;
 }>();
+
+defineSlots<{
+  default?: (props: {}) => any
+  header?: (props: {}) => any
+  aside?: (props: {}) => any
+  navigation?: (props: {}) => any
+  'container.after'?: (props: {}) => any
+  'content.after'?: (props: {}) => any
+  footer?: (props: {}) => any
+}>()
 </script>
 
 <template>

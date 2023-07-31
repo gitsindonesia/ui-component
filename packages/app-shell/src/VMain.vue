@@ -4,6 +4,10 @@ defineProps<{
   centered?: boolean;
   fluid?: boolean;
 }>();
+
+defineSlots<{
+  default?: (props: {}) => any
+}>()
 </script>
 
 <template>
