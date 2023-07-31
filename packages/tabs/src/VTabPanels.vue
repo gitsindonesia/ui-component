@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import {TabPanels} from '@headlessui/vue';
+
+defineSlots<{
+  default?: (props: {}) => any;
+}>();
 </script>
 
 <template>

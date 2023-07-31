@@ -62,13 +62,17 @@ const isActive = computed(() => {
   const injected = inject('activeTab', {value: 0})?.value;
   return injected === index.value || active.value;
 });
+
+defineSlots<{
+  default?: (props: {}) => any;
+}>();
 </script>
 
 <template>
   <button
     type="button"
     role="tab"
-    :id='`tab-item-${index}`'
+    :id="`tab-item-${index}`"
     :ref="setRef"
     class="v-tabs-item"
     :class="[
@@ -79,9 +83,9 @@ const isActive = computed(() => {
       isActive ? activeClass : inactiveClass,
       vertical ? 'v-tabs-item--vertical' : '',
     ]"
-    @click='onClick(index, $event)'
+    @click="onClick(index, $event)"
     @mouseover="hovered = index"
-    @mouseout='hovered = -1'
+    @mouseout="hovered = -1"
   >
     <slot />
   </button>

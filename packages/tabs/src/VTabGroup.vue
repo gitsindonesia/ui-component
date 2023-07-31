@@ -29,6 +29,10 @@ const modelValue = useVModel(props, 'modelValue', emit);
 function onTabChange(value: number) {
   modelValue.value = value;
 }
+
+defineSlots<{
+  default?: (props: {}) => any;
+}>();
 </script>
 
 <template>
