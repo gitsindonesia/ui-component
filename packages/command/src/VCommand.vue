@@ -133,6 +133,15 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('keydown', onKeydown);
 });
+
+defineSlots<{
+  default?: (props: {}) => any;
+  icon?: (props: {}) => any;
+  item?: (props: {item: VCommandItem}) => any;
+  empty?: (props: {items: VCommandItem[]}) => any;
+  prepend?: (props: {}) => any;
+  append?: (props: {}) => any;
+}>();
 </script>
 
 <template>
