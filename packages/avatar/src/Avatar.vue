@@ -15,7 +15,7 @@ export type Props = {
   src?: string;
   name?: string;
   maxInitial?: number;
-  indicator?: 'online' | 'verified' | string;
+  indicator?: 'online' | 'verified' | (string & {});
   indicatorClass?: string;
   width?: string | number;
   height?: string | number;
@@ -62,6 +62,11 @@ const computedStyle = computed(() => {
 
   return {};
 });
+
+defineSlots<{
+  default?: (props: {}) => any;
+  indicator?: (props: {indicator: Props['indicator']}) => any;
+}>()
 </script>
 
 <template>
