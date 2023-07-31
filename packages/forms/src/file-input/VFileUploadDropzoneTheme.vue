@@ -111,6 +111,17 @@ onUnmounted(() => {
   document.removeEventListener('dragenter', onDragEnter, false);
   document.removeEventListener('dragleave', onDragLeave, false);
 });
+
+defineSlots<{
+  default?: (props: {}) => any;
+  'dropzone.preview'?: (props: {
+    value: any;
+    fileName: string;
+    hasFile: boolean;
+  }) => any;
+  'dropzone.image'?: (props: {}) => any;
+  filename?: (props: {value: string | undefined}) => any;
+}>();
 </script>
 
 <template>

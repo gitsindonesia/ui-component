@@ -22,6 +22,12 @@ const emit =
     (e: 'choose'): void;
     (e: 'remove'): void;
   }>();
+
+defineSlots<{
+  default?: (props: {}) => any;
+  prepend?: (props: {}) => any;
+  append?: (props: {}) => any;
+}>();
 </script>
 
 <template>

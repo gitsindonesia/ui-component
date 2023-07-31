@@ -33,6 +33,11 @@ const emit =
     (e: 'remove'): void;
     (e: 'choose'): void;
   }>();
+
+defineSlots<{
+  default?: (props: {}) => any;
+  filename?: (props: {value: string | undefined}) => any;
+}>();
 </script>
 
 <template>

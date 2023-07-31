@@ -59,8 +59,8 @@ const props = defineProps({
     default: false,
   },
   errorMessages: {
-    type: Array,
-    default: () => [],
+    type: Array as PropType<string[]>,
+    default: () => [] as string[],
   },
   placeholder: {
     type: String,
@@ -337,6 +337,17 @@ const borderClass = computed(() => {
     ? 'border-error-500'
     : 'border-gray-300 focus-within:border-primary-500 hover:border-gray-400';
 });
+
+defineSlots<{
+  default?: (props: {}) => any;
+  filename?: (props: {value?: string; fileURL?: string}) => any;
+  hint?: (props: {}) => any;
+  error?: (props: {
+    error: boolean;
+    errorMessages: string[];
+    fieldName: string;
+  }) => any;
+}>();
 </script>
 
 <template>
@@ -380,8 +391,8 @@ const borderClass = computed(() => {
       @choose="pickFile"
       @remove="removeFile"
     >
-      <template v-slot:filename>
-        <slot name="filename" />
+      <template v-slot:filename="slotData">
+        <slot name="filename" v-bind="slotData" />
       </template>
     </VFileUploadButtonTheme>
 

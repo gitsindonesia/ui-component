@@ -166,6 +166,13 @@ onMounted(() => {
 onBeforeUnmount(() => {
   document.removeEventListener('click', clickEvtListener);
 });
+
+defineSlots<{
+  default?: (props: {}) => any;
+  label?: (props: {}) => any;
+  hint?: (props: {}) => any;
+
+}>()
 </script>
 
 <template>

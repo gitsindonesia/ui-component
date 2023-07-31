@@ -89,6 +89,13 @@ function focus() {
 defineExpose({
   focus,
 });
+
+defineSlots<{
+  default?: (props: {}) => any;
+  hint?: (props: {}) => any;
+  error?: (props: {}) => any;
+  counter?: (props: {count: number}) => any;
+}>();
 </script>
 
 <template>

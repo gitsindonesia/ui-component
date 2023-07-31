@@ -93,6 +93,12 @@ watch(uncontrolledValue, (newValue) => {
 defineExpose({
   focus,
 });
+
+defineSlots<{
+  default?: (props: {}) => any;
+  hint?: (props: {}) => any;
+  error?: (props: {}) => any;
+}>()
 </script>
 
 <template>

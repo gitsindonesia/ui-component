@@ -78,6 +78,12 @@ const emit =
 
 const inputId = computed(() => props.id || props.name);
 const uncontrolledValue = useVModel(props, 'modelValue', emit);
+
+defineSlots<{
+  default?: (props: {}) => any;
+  hint?: (props: {}) => any;
+  error?: (props: {}) => any;
+}>();
 </script>
 
 <template>

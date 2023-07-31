@@ -93,6 +93,11 @@ const getValue = (option: string | Record<string, any>) => {
 const getText = (option: string | Record<string, any>) => {
   return typeof option === 'string' ? option : option[props.itemText];
 };
+
+defineSlots<{
+  default?: (props: {}) => any;
+  hint?: (props: {}) => any;
+}>()
 </script>
 
 <template>
