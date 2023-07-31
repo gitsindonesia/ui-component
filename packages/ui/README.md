@@ -36,7 +36,7 @@ import MorphemeUI from '@morpheme/ui';
 
 // import the styles
 // load CSS bundle
-import '@morpheme/themes/dist/morpheme/style.css'
+import '@morpheme/themes/dist/morpheme/main.css'
 
 // uncomment this line to load SCSS bundle
 // import '@morpheme/themes/src/morpheme/main.scss'
