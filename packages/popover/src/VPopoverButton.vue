@@ -1,6 +1,10 @@
 <script setup lang="ts">
-import { PopoverButton } from "@headlessui/vue";
-import { VBtn } from "@morpheme/button";
+import {PopoverButton} from '@headlessui/vue';
+import {VBtn} from '@morpheme/button';
+
+defineSlots<{
+  default?: (props: {open: boolean}) => any;
+}>();
 </script>
 
 <template>

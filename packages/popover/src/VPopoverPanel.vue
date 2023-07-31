@@ -1,5 +1,9 @@
 <script setup lang="ts">
-import { PopoverPanel } from "@headlessui/vue";
+import {PopoverPanel} from '@headlessui/vue';
+
+defineSlots<{
+  default?: (props: {}) => any;
+}>();
 </script>
 
 <template>

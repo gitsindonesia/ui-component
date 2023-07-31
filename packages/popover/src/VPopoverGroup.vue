@@ -1,5 +1,9 @@
 <script setup lang="ts">
-import { PopoverGroup } from "@headlessui/vue";
+import {PopoverGroup} from '@headlessui/vue';
+
+defineSlots<{
+  default?: (props: {}) => any;
+}>();
 </script>
 
 <template>
