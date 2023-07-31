@@ -69,6 +69,12 @@ watch(isOpen, (value) => {
   emit('update:modelValue', value);
   emit('change', value);
 });
+
+defineSlots<{
+  default?: (props: {}) => any;
+  header?: (props: {isOpen: boolean}) => any;
+  icon?: (props: {}) => any;
+}>();
 </script>
 
 <template>
