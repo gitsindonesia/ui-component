@@ -1,16 +1,16 @@
-import { tabVariants } from "./variants";
-import VTabs from "./VTabs.vue";
-import VTab from "./VTab.vue";
-import VBtn from "@morpheme/button";
-import VCard from "@morpheme/card";
-import { ref } from "vue";
-import { Story } from "@storybook/vue3";
-import VTabsSlider from "./VTabsSlider.vue";
-import VTabList from "./VTabList.vue";
-import VTabPanels from "./VTabPanels.vue";
-import VTabPanel from "./VTabPanel.vue";
-import VTabGroup from "./VTabGroup.vue";
-import VTabItem from "./VTabItem.vue";
+import {tabVariants} from './variants';
+import VTabs from './VTabs.vue';
+import VTab from './VTab.vue';
+import VBtn from '@morpheme/button';
+import VCard from '@morpheme/card';
+import {ref} from 'vue';
+import {Story} from '@storybook/vue3';
+import VTabsSlider from './VTabsSlider.vue';
+import VTabList from './VTabList.vue';
+import VTabPanels from './VTabPanels.vue';
+import VTabPanel from './VTabPanel.vue';
+import VTabGroup from './VTabGroup.vue';
+import VTabItem from './VTabItem.vue';
 
 function createItems(len = 20, additionalItem = {}) {
   return [...Array(len)].map((v, k) => ({
@@ -20,27 +20,27 @@ function createItems(len = 20, additionalItem = {}) {
 }
 
 export default {
-  components: { VTabsSlider },
-  title: "Components/Tabs",
+  components: {VTabsSlider},
+  title: 'Components/Tabs',
   component: VTabs,
   argTypes: {
     color: {
       control: {
-        type: "select",
+        type: 'select',
         options: [
-          "default",
-          "primary",
-          "secondary",
-          "info",
-          "warning",
-          "success",
-          "error",
+          'default',
+          'primary',
+          'secondary',
+          'info',
+          'warning',
+          'success',
+          'error',
         ],
       },
     },
     variant: {
       control: {
-        type: "select",
+        type: 'select',
         options: tabVariants,
       },
     },
@@ -51,20 +51,20 @@ export default {
 };
 
 const Template: Story<typeof VTabs> = (args) => ({
-  components: { VTabs },
+  components: {VTabs},
   setup() {
     const items = ref(args.items || []);
 
-    return { args, items };
+    return {args, items};
   },
   template: `
     <v-tabs v-bind="args" v-model:items="items" />`,
 });
 
 export const Variants: Story<{}> = (args) => ({
-  components: { VTabs },
+  components: {VTabs},
   setup() {
-    return { args, variants: tabVariants };
+    return {args, variants: tabVariants};
   },
   template: `
     <v-tabs
@@ -99,9 +99,9 @@ Grow.parameters = {
 };
 
 export const Colors: Story<{}> = (args) => ({
-  components: { VTabs },
+  components: {VTabs},
   setup() {
-    return { args };
+    return {args};
   },
   template: `
     <v-tabs v-bind="args" />
@@ -131,9 +131,9 @@ export const CustomActiveClass = Template.bind({});
 CustomActiveClass.args = {
   hideSlider: true,
   items: createItems(10, {
-    defaultClass: "!rounded-lg",
-    inactiveClass: "hover:!bg-success-50 hover:!text-success-600",
-    activeClass: "!bg-success-50 rounded-t !text-success-600 !font-bold",
+    defaultClass: '!rounded-lg',
+    inactiveClass: 'hover:!bg-success-50 hover:!text-success-600',
+    activeClass: '!bg-success-50 rounded-t !text-success-600 !font-bold',
   }),
 };
 CustomActiveClass.parameters = {
@@ -188,10 +188,10 @@ Vertical.parameters = {
 };
 
 export const TabsWithCard: Story<{}> = (args) => ({
-  components: { VTabs, VCard },
+  components: {VTabs, VCard},
   setup() {
     const tab = ref(0);
-    return { args, tab };
+    return {args, tab};
   },
   template: `
     <VCard body-class="!p-0" hide-header hide-footer>
@@ -213,10 +213,10 @@ TabsWithCard.parameters = {
 };
 
 export const CustomStyle: Story<{}> = (args) => ({
-  components: { VTabs },
+  components: {VTabs},
   setup() {
     const tab = ref(0);
-    return { args, tab };
+    return {args, tab};
   },
   template: `
     <VTabs
@@ -238,11 +238,13 @@ export const CustomStyle: Story<{}> = (args) => ({
 });
 
 export const Removeable: Story<{}> = (args) => ({
-  components: { VTabs, VTab, VTabsSlider },
+  components: {VTabs, VTab, VTabsSlider},
   setup() {
     const selectedTab = ref(2);
-    const items = ref(new Array(10).fill({}).map((e, idx) => ({ text: `Tab ${idx}` })));
-    return { args, selectedTab, items };
+    const items = ref(
+      new Array(10).fill({}).map((e, idx) => ({text: `Tab ${idx}`})),
+    );
+    return {args, selectedTab, items};
   },
   template: `
     <VTabs
@@ -269,34 +271,34 @@ Removeable.parameters = {
 };
 
 export const CustomTabContent: Story<{}> = (args) => ({
-  components: { VTabs, VBtn },
+  components: {VTabs, VBtn},
   setup() {
     const tab = ref(0);
     const simple = ref(false);
     const items = ref([
       {
-        text: "Fruits",
-        icon: "🥑",
+        text: 'Fruits',
+        icon: '🥑',
       },
       {
-        text: "Meat",
-        icon: "🥩",
+        text: 'Meat',
+        icon: '🥩',
       },
       {
-        text: "Veggies",
-        icon: "🥦",
+        text: 'Veggies',
+        icon: '🥦',
       },
       {
-        text: "Bread",
-        icon: "🍞",
+        text: 'Bread',
+        icon: '🍞',
       },
       {
-        text: "Fish",
-        icon: "🐟",
+        text: 'Fish',
+        icon: '🐟',
       },
     ]);
 
-    return { args, items, tab, simple };
+    return {args, items, tab, simple};
   },
   template: `
     <VBtn @click="simple = !simple;">
@@ -344,33 +346,33 @@ v-model="tab"
 };
 
 export const CustomTab: Story<{}> = (args) => ({
-  components: { VTabs, VTab },
+  components: {VTabs, VTab},
   setup() {
     const tab = ref(0);
     const items = ref([
       {
-        text: "Fruits",
-        icon: "🥑",
+        text: 'Fruits',
+        icon: '🥑',
       },
       {
-        text: "Meat",
-        icon: "🥩",
+        text: 'Meat',
+        icon: '🥩',
       },
       {
-        text: "Veggies",
-        icon: "🥦",
+        text: 'Veggies',
+        icon: '🥦',
       },
       {
-        text: "Bread",
-        icon: "🍞",
+        text: 'Bread',
+        icon: '🍞',
       },
       {
-        text: "Fish",
-        icon: "🐟",
+        text: 'Fish',
+        icon: '🐟',
       },
     ]);
 
-    return { args, items, tab };
+    return {args, items, tab};
   },
   template: `
     <VTabs
@@ -400,33 +402,33 @@ export const CustomTab: Story<{}> = (args) => ({
 });
 
 export const Prepend: Story<{}> = (args) => ({
-  components: { VTabs, VTab },
+  components: {VTabs, VTab},
   setup() {
     const tab = ref(0);
     const items = ref([
       {
-        text: "Fruits",
-        icon: "🥑",
+        text: 'Fruits',
+        icon: '🥑',
       },
       {
-        text: "Meat",
-        icon: "🥩",
+        text: 'Meat',
+        icon: '🥩',
       },
       {
-        text: "Veggies",
-        icon: "🥦",
+        text: 'Veggies',
+        icon: '🥦',
       },
       {
-        text: "Bread",
-        icon: "🍞",
+        text: 'Bread',
+        icon: '🍞',
       },
       {
-        text: "Fish",
-        icon: "🐟",
+        text: 'Fish',
+        icon: '🐟',
       },
     ]);
 
-    return { args, items, tab };
+    return {args, items, tab};
   },
   template: `
     <VTabs
@@ -444,33 +446,33 @@ export const Prepend: Story<{}> = (args) => ({
 });
 
 export const Append: Story<{}> = (args) => ({
-  components: { VTabs, VTab },
+  components: {VTabs, VTab},
   setup() {
     const tab = ref(0);
     const items = ref([
       {
-        text: "Fruits",
-        icon: "🥑",
+        text: 'Fruits',
+        icon: '🥑',
       },
       {
-        text: "Meat",
-        icon: "🥩",
+        text: 'Meat',
+        icon: '🥩',
       },
       {
-        text: "Veggies",
-        icon: "🥦",
+        text: 'Veggies',
+        icon: '🥦',
       },
       {
-        text: "Bread",
-        icon: "🍞",
+        text: 'Bread',
+        icon: '🍞',
       },
       {
-        text: "Fish",
-        icon: "🐟",
+        text: 'Fish',
+        icon: '🐟',
       },
     ]);
 
-    return { args, items, tab };
+    return {args, items, tab};
   },
   template: `
     <VTabs
@@ -488,33 +490,33 @@ export const Append: Story<{}> = (args) => ({
 });
 
 export const Previous: Story<{}> = (args) => ({
-  components: { VTabs, VBtn },
+  components: {VTabs, VBtn},
   setup() {
     const tab = ref(0);
     const items = ref([
       {
-        text: "Fruits",
-        icon: "🥑",
+        text: 'Fruits',
+        icon: '🥑',
       },
       {
-        text: "Meat",
-        icon: "🥩",
+        text: 'Meat',
+        icon: '🥩',
       },
       {
-        text: "Veggies",
-        icon: "🥦",
+        text: 'Veggies',
+        icon: '🥦',
       },
       {
-        text: "Bread",
-        icon: "🍞",
+        text: 'Bread',
+        icon: '🍞',
       },
       {
-        text: "Fish",
-        icon: "🐟",
+        text: 'Fish',
+        icon: '🐟',
       },
     ]);
 
-    return { args, items, tab };
+    return {args, items, tab};
   },
   template: `
     <VTabs
@@ -531,33 +533,33 @@ export const Previous: Story<{}> = (args) => ({
 });
 
 export const Next: Story<{}> = (args) => ({
-  components: { VTabs, VBtn },
+  components: {VTabs, VBtn},
   setup() {
     const tab = ref(0);
     const items = ref([
       {
-        text: "Fruits",
-        icon: "🥑",
+        text: 'Fruits',
+        icon: '🥑',
       },
       {
-        text: "Meat",
-        icon: "🥩",
+        text: 'Meat',
+        icon: '🥩',
       },
       {
-        text: "Veggies",
-        icon: "🥦",
+        text: 'Veggies',
+        icon: '🥦',
       },
       {
-        text: "Bread",
-        icon: "🍞",
+        text: 'Bread',
+        icon: '🍞',
       },
       {
-        text: "Fish",
-        icon: "🐟",
+        text: 'Fish',
+        icon: '🐟',
       },
     ]);
 
-    return { args, items, tab };
+    return {args, items, tab};
   },
   template: `
     <VTabs
@@ -574,9 +576,17 @@ export const Next: Story<{}> = (args) => ({
 });
 
 export const DarkMode: Story = (args) => ({
-  components: { VTabs, VTabGroup, VTabList, VTabItem, VTabPanels, VTabPanel , VCard},
+  components: {
+    VTabs,
+    VTabGroup,
+    VTabList,
+    VTabItem,
+    VTabPanels,
+    VTabPanel,
+    VCard,
+  },
   setup() {
-    return { args, tabVariants };
+    return {args, tabVariants};
   },
   template: `
   <div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
@@ -666,7 +676,7 @@ export const HeadlessUI: Story = (args) => ({
   setup() {
     const tab = ref(0);
     delete args.items;
-    return { args, tab, tabVariants };
+    return {args, tab, tabVariants};
   },
   template: `
     <h3 class="font-semibold mb-2">Default</h3>
@@ -722,6 +732,26 @@ export const HeadlessUI: Story = (args) => ({
         <VTabItem>Tab 1</VTabItem>
         <VTabItem>Tab 2</VTabItem>
         <VTabItem>Tab 3</VTabItem>
+      </VTabList>
+      <VTabPanels>
+        <VTabPanel>Tab 1 content</VTabPanel>
+        <VTabPanel>Tab 2 content</VTabPanel>
+        <VTabPanel>Tab 3 content</VTabPanel>
+      </VTabPanels>
+    </VTabGroup>
+    <h3 class="font-semibold mb-2 mt-4">
+      Custom Component for <code>VTabItem</code>
+    </h3>
+    <VTabGroup
+      v-model="tab"
+      v-bind="args"
+    >
+      <VTabList>
+        <VTabItem>Default</VTabItem>
+        <VTabItem to="/home">RouterLink</VTabItem>
+        <VTabItem to="/tab-one" nuxt>NuxtLink</VTabItem>
+        <VTabItem href="https://google.com">Anchor</VTabItem>
+        <VTabItem href="https://google.com" newTab>Anchor (New Tab)</VTabItem>
       </VTabList>
       <VTabPanels>
         <VTabPanel>Tab 1 content</VTabPanel>
