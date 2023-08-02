@@ -18,6 +18,7 @@ import {computed, ref, watch} from 'vue';
 import VBadge from '@morpheme/badge';
 import {Float} from '@headlessui-float/vue';
 import type {Placement} from '@floating-ui/vue';
+import VDivider from '@morpheme/divider';
 
 type T = Record<string, any>;
 type ModelValue = T | T[] | undefined;
@@ -61,6 +62,9 @@ const props = withDefaults(
     offset?: number;
     shift?: boolean | number;
     flip?: boolean | number;
+    searchPlacement?: 'inside' | 'outside';
+    searchPlaceholder?: string;
+    chips?: boolean;
   }>(),
   {
     itemText: 'text',
@@ -76,6 +80,8 @@ const props = withDefaults(
     shift: true,
     flip: true,
     hideError: false,
+    searchPlacement: 'inside',
+    searchPlaceholder: 'Search...',
   },
 );
 
@@ -126,6 +132,10 @@ const filteredItems = computed(() =>
 );
 
 const defaultDisplayValue = (item: any) => {
+  if (props.searchPlacement === 'outside') {
+    return query.value;
+  }
+
   return item?.[props.itemText] || '';
 };
 
@@ -202,6 +212,7 @@ defineSlots<{
       },
       shadowClass,
       `v-select--${placement}`,
+      `v-select--${searchPlacement}`,
     ]"
   >
     <component
@@ -239,7 +250,9 @@ defineSlots<{
             }"
           >
             <div
-              v-if="multiple && selectedValue && selectedValue.length > 0"
+              v-if="
+                multiple & chips && selectedValue && selectedValue.length > 0
+              "
               class="v-select-selection"
             >
               <template v-for="(item, idx) in selectedValue" :key="idx">
@@ -267,28 +280,42 @@ defineSlots<{
           </slot>
 
           <ComboboxInput
-            v-if="searchable"
+            v-if="searchable && searchPlacement === 'inside'"
             class="v-select-input"
             :display-value="displayValue ?? defaultDisplayValue"
-            :placeholder="placeholder"
+            :placeholder="searchPlaceholder || placeholder"
             :disabled="disabled"
             @change="query = $event.target.value"
             @keydown.enter="query = ''"
           />
+
           <slot
             name="selected"
-            v-bind="{multiple, selectedValue, placeholder, itemText, itemValue}"
+            v-bind="{
+              multiple,
+              selectedValue,
+              placeholder,
+              itemText,
+              itemValue,
+              searchable,
+              chips,
+            }"
           >
             <div
               class="v-select-selected"
-              :class="{
-                'v-select-selected--placeholder': !selectedValue,
-              }"
+              :class="[
+                `v-select-selected--${searchPlacement}`,
+                {
+                  'v-select-selected--placeholder': !selectedValue,
+                },
+              ]"
             >
               <span v-if="multiple">
                 {{
                   selectedValue && selectedValue?.length > 0
-                    ? `${selectedValue?.length} selected`
+                    ? chips
+                      ? ''
+                      : `${selectedValue?.length} selected`
                     : placeholder
                 }}
               </span>
@@ -328,46 +355,62 @@ defineSlots<{
           :is="searchable ? ComboboxOptions : ListboxOptions"
           class="v-select-options"
         >
+          <div
+            v-if="searchable && searchPlacement === 'outside'"
+            class="v-select-input-outside-wrapper"
+          >
+            <ComboboxInput
+              class="v-select-input"
+              :display-value="displayValue ?? defaultDisplayValue"
+              :placeholder="searchPlaceholder || placeholder"
+              :disabled="disabled"
+              @change="query = $event.target.value"
+              @keydown.enter="query = ''"
+            />
+            <VDivider />
+          </div>
           <div v-if="filteredItems?.length < 1" class="v-select-empty">
             {{ emptyText }}
           </div>
-          <component
-            :is="searchable ? ComboboxOption : ListboxOption"
-            v-for="(item, idx) in filteredItems"
-            :key="idx"
-            :value="item"
-            as="template"
-            v-slot="{active, selected}"
-          >
-            <slot
-              name="item"
-              v-bind="{item, active, selected, itemText, itemValue}"
+          <div class="v-select-scrollable">
+            <component
+              :is="searchable ? ComboboxOption : ListboxOption"
+              v-for="(item, idx) in filteredItems"
+              :key="idx"
+              :value="item"
+              as="template"
+              v-slot="{active, selected}"
             >
-              <div
-                class="v-select-option"
-                :class="{
-                  'v-select-option--active': active,
-                  'v-select-option--selected': selected,
-                }"
+              <slot
+                name="item"
+                v-bind="{item, active, selected, itemText, itemValue}"
               >
                 <div
-                  class="v-select-option-check"
+                  class="v-select-option"
                   :class="{
-                    'v-select-option-check--active': active,
-                    'v-select-option-check--selected': selected,
+                    'v-select-option--active': active,
+                    'v-select-option--selected': selected,
                   }"
                 >
-                  <VIcon
-                    v-if="selected"
-                    name="heroicons:check"
-                    class="v-select-option-check-icon"
-                    size="sm"
-                  />
+                  <div
+                    class="v-select-option-check"
+                    :class="{
+                      'v-select-option-check--active': active,
+                      'v-select-option-check--selected': selected,
+                    }"
+                  >
+                    <VIcon
+                      v-if="selected"
+                      name="heroicons:check"
+                      class="v-select-option-check-icon"
+                      size="sm"
+                    />
+                  </div>
+                  <div class="v-select-option-text">{{ item[itemText] }}</div>
                 </div>
-                <div class="v-select-option-text">{{ item[itemText] }}</div>
-              </div>
-            </slot>
-          </component>
+              </slot>
+            </component>
+          </div>
         </component>
       </Transition>
     </Float>

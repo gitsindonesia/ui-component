@@ -32,6 +32,7 @@ export default defineConfig({
         '@morpheme/utils',
         '@morpheme/theme',
         '@morpheme/badge',
+        '@morpheme/divider',
         'vee-validate',
         '@headlessui-float/vue',
         '@floating-ui/vue',

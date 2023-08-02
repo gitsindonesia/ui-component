@@ -208,7 +208,7 @@
     position: absolute;
     right: 0;
     top: 0;
-    bottom:0;
+    bottom: 0;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -384,7 +384,21 @@
 
     .v-select-selected {
       display: none;
+      &--outside {
+        padding-left: var(--size-spacing-3);
+        padding-right: var(--size-spacing-3);
+        display: block;
+      }
     }
+  }
+
+  &--outside &-options {
+    overflow: hidden;
+  }
+
+  &-scrollable {
+    overflow-y: auto;
+    max-height: 300px;
   }
 
   &-selection {
@@ -421,10 +435,18 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    
+
     &:focus {
       outline: none;
       box-shadow: none;
+    }
+
+    &-outside-wrapper {
+      width: 100%;
+
+      input {
+        width: 100%;
+      }
     }
   }
 }

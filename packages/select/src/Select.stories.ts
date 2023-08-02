@@ -111,6 +111,15 @@ SearchableMultiple.args = {
   clearable: true,
 };
 
+export const SearchableOutsidePlacement = Template.bind({});
+SearchableOutsidePlacement.args = {
+  searchable: true,
+  searchPlacement: 'outside',
+  placeholder: 'Choose',
+  label: 'Searchable Outside Placement',
+  chips: true,
+};
+
 export const Empty = Template.bind({});
 Empty.args = {
   items: [],
