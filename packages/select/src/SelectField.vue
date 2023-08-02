@@ -32,6 +32,8 @@ const {
   value: inputValue,
   errorMessage,
   meta,
+  handleBlur,
+  handleChange,
 } = useField(name, undefined, {
   initialValue: props.value,
 });
@@ -39,10 +41,16 @@ const {
 
 <template>
   <Select
-    :error="meta.touched && !meta.valid"
-    :error-message="errorMessage"
     :placeholder="placeholder"
     :label="label"
-    v-model="inputValue"
-  />
+    :error="meta.touched && !meta.valid"
+    :error-message="errorMessage"
+    :model-value="inputValue"
+    @update:model-value="handleChange"
+    @blur="handleBlur($event, true)"
+  >
+    <template v-for="(_, name) in $slots" v-slot:[name]="slotData">
+      <slot :name="name" v-bind="slotData" />
+    </template>
+  </Select>
 </template>

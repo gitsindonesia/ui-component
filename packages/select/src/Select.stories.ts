@@ -7,7 +7,7 @@ import {ListboxButton} from '@headlessui/vue';
 import {Field, useForm} from 'vee-validate';
 import {array, object} from 'yup';
 import {VBtn} from '@morpheme/button';
-import SelectInput from './SelectInput.vue';
+import SelectField from './SelectField.vue';
 
 const items = [...Array(10)].map((_, index) => ({
   value: index + 1,
@@ -72,7 +72,7 @@ export const Shadow: Story<typeof Select> = (args) => ({
   },
   setup() {
     const value = ref();
-    args.class = "mb-4";
+    args.class = 'mb-4';
     return {args, value};
   },
   template: `
@@ -108,12 +108,12 @@ export const SearchableMultiple = Template.bind({});
 SearchableMultiple.args = {
   searchable: true,
   multiple: true,
-  clearable: true
+  clearable: true,
 };
 
 export const Empty = Template.bind({});
 Empty.args = {
-  items: []
+  items: [],
 };
 
 export const Uncontrolled: Story<typeof Select> = (args) => ({
@@ -147,7 +147,7 @@ export const Slots: Story<typeof Select> = (args) => ({
   components: {
     Select,
     ListboxButton,
-    VIcon
+    VIcon,
   },
   setup() {
     return {args};
@@ -233,14 +233,40 @@ export const DarkMode: Story<typeof Select> = (args) => ({
   },
   template: `
     <div class="dark dark:bg-gray-true-900 p-6">
-      <Select v-bind="args" label="Default" />
-      <Select v-bind="args" label="Multiple" multiple />
+      <Select
+        v-bind="args"
+        class="mb-4"
+        label="Default"
+        hint="This is a hint"
+       />
+      <Select
+        v-bind="args"
+        class="mb-4"
+        label="Multiple"
+        multiple
+        hint="This is a hint"
+       />
+      <Select
+        v-bind="args"
+        class="mb-4"
+        label="Empty State"
+        :items="[]"
+        hint="This is a hint"
+       />
+      <Select
+        v-bind="args"
+        class="mb-4"
+        label="Error State"
+        hint="This is a hint"
+        error
+        error-message="This is an error message"
+       />
     </div>
   `,
 });
 
 export const Validation: Story<{}> = (args) => ({
-  components: {VBtn, Select, Field, SelectInput},
+  components: {VBtn, Select, Field, SelectField},
   setup() {
     const schema = object({
       genre: array().required().nullable().label('Genre'),
@@ -279,8 +305,8 @@ export const Validation: Story<{}> = (args) => ({
       },
       {
         text: 'Orange',
-        value: 'orange'
-      }
+        value: 'orange',
+      },
     ]);
 
     const genres = ref([
@@ -312,7 +338,7 @@ export const Validation: Story<{}> = (args) => ({
   },
   template: `
     <form @submit="onSubmit" class="border-none">
-      <SelectInput
+      <SelectField
         v-model="values.genre"
         name="genre"      
         label="Current genre"
@@ -321,7 +347,7 @@ export const Validation: Story<{}> = (args) => ({
         multiple
         class="mb-4"
       />
-      <SelectInput
+      <SelectField
         v-model="values.gender"
         name="gender"      
         label="Gender"
@@ -329,7 +355,7 @@ export const Validation: Story<{}> = (args) => ({
         :items="genders"
         class="mb-4"
       />
-      <SelectInput
+      <SelectField
         v-model="values.fruit1"
         name="fruit1"      
         label="Fruit 1"
@@ -338,7 +364,7 @@ export const Validation: Story<{}> = (args) => ({
         class="mb-4"
         searchable
       />
-      <SelectInput
+      <SelectField
         v-model="values.fruit2"
         name="fruit2"      
         label="Fruit 2"
