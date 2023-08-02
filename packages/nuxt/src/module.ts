@@ -518,6 +518,81 @@ const components: AddComponentOptions[] = [
   },
 ];
 
+const experimentalComponents: AddComponentOptions[] = [
+  {
+    name: 'Select',
+    filePath: '@morpheme/select/src/Select.vue',
+  },
+  {
+    name: 'Autocomplete',
+    filePath: '@morpheme/autocomplete/src/Autocomplete.vue',
+  },
+  {
+    name: 'Checkbox',
+    filePath: '@morpheme/forms/src/checkbox/Checkbox.vue',
+  },
+  {
+    name: 'CheckboxField',
+    filePath: '@morpheme/forms/src/checkbox/CheckboxField.vue',
+  },
+  {
+    name: 'FileInput',
+    filePath: '@morpheme/forms/src/file-input/FileInput.vue',
+  },
+  {
+    name: 'FileInputButtonActivator',
+    filePath: '@morpheme/forms/src/file-input/FileInputButtonActivator.vue',
+  },
+  {
+    name: 'FileInputDefaultActivator',
+    filePath: '@morpheme/forms/src/file-input/FileInputDefaultActivator.vue',
+  },
+  {
+    name: 'FileInputField',
+    filePath: '@morpheme/forms/src/file-input/FileInputField.vue',
+  },
+  {
+    name: 'FileInputItem',
+    filePath: '@morpheme/forms/src/file-input/FileInputItem.vue',
+  },
+  {
+    name: 'FileInputItems',
+    filePath: '@morpheme/forms/src/file-input/FileInputItems.vue',
+  },
+  {
+    name: 'SelectInput',
+    filePath: '@morpheme/forms/src/form-select/Select.vue',
+  },
+  {
+    name: 'SelectInputField',
+    filePath: '@morpheme/forms/src/form-select/SelectField.vue',
+  },
+  {
+    name: 'Input',
+    filePath: '@morpheme/forms/src/form-select/Input.vue',
+  },
+  {
+    name: 'InputField',
+    filePath: '@morpheme/forms/src/form-select/InputField.vue',
+  },
+  {
+    name: 'SelectOptions',
+    filePath: '@morpheme/forms/src/form-select/SelectOptions.vue',
+  },
+  {
+    name: 'Radio',
+    filePath: '@morpheme/forms/src/form-select/Radio.vue',
+  },
+  {
+    name: 'TextareaInput',
+    filePath: '@morpheme/forms/src/form-select/TextareaInput.vue',
+  },
+  {
+    name: 'TextareaInputField',
+    filePath: '@morpheme/forms/src/form-select/TextareaInputField.vue',
+  },
+];
+
 export interface ModuleOptions {
   /**
    * Determine whether to load the css bundle.
@@ -628,6 +703,18 @@ export interface ModuleOptions {
    * })
    */
   theme: 'morpheme' | 'legacy';
+  /**
+   * Determine whether to use experimental components.
+   *
+   * @default false
+   * @example
+   * // nuxt.config.ts
+   * export default defineConfig({
+   * morpheme: {
+   *  experimentalComponents: true
+   * })
+   */
+  experimentalComponents: boolean;
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -645,6 +732,7 @@ export default defineNuxtModule<ModuleOptions>({
     darkMode: false,
     optimizeDeps: true,
     theme: 'morpheme',
+    experimentalComponents: true,
   },
   setup(options, nuxt) {
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url));
@@ -720,6 +808,13 @@ export default defineNuxtModule<ModuleOptions>({
     // register components
     if (options.components) {
       components.forEach((component) => {
+        addComponent(component);
+      });
+    }
+
+    // register experimental components
+    if (options.experimentalComponents) {
+      experimentalComponents.forEach((component) => {
         addComponent(component);
       });
     }
