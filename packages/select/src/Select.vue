@@ -65,6 +65,9 @@ const props = withDefaults(
     searchPlacement?: 'inside' | 'outside';
     searchPlaceholder?: string;
     chips?: boolean;
+    icon?: string;
+    checkIcon?: string;
+    clearIcon?: string;
   }>(),
   {
     itemText: 'text',
@@ -82,6 +85,9 @@ const props = withDefaults(
     hideError: false,
     searchPlacement: 'inside',
     searchPlaceholder: 'Search...',
+    icon: 'heroicons:chevron-down',
+    checkIcon: 'heroicons:check',
+    clearIcon: 'heroicons:x-mark',
   },
 );
 
@@ -334,7 +340,7 @@ defineSlots<{
                   @click="clear"
                 >
                   <VIcon
-                    name="heroicons:x-mark"
+                    :name="clearIcon"
                     class="v-select-icon"
                     :size="iconSize"
                   />
@@ -342,11 +348,7 @@ defineSlots<{
               </template>
               <span> {{ clearText }} </span>
             </VTooltip>
-            <VIcon
-              name="heroicons:chevron-down"
-              class="v-select-icon"
-              :size="iconSize"
-            />
+            <VIcon :name="icon" class="v-select-icon" :size="iconSize" />
           </div>
         </component>
       </slot>
@@ -401,7 +403,7 @@ defineSlots<{
                   >
                     <VIcon
                       v-if="selected"
-                      name="heroicons:check"
+                      :name="checkIcon"
                       class="v-select-option-check-icon"
                       size="sm"
                     />

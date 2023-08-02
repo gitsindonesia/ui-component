@@ -125,6 +125,14 @@ Empty.args = {
   items: [],
 };
 
+export const CustomIcon = Template.bind({});
+CustomIcon.args = {
+  icon: 'heroicons:chevron-up-down',
+  checkIcon: 'heroicons:check-circle',
+  clearIcon: 'heroicons:x-circle',
+  clearable: true,
+};
+
 export const Uncontrolled: Story<typeof Select> = (args) => ({
   components: {
     Select,
