@@ -113,7 +113,7 @@ export interface ModuleOptions {
    */
   transpileDeps?: boolean;
   /**
-   * Determine whether to load floating vue styles.
+   * Determine whether to load floating vue styles. Only works when `theme` is `legacy`.
    *
    * @default true
    * @example
@@ -126,7 +126,7 @@ export interface ModuleOptions {
   loadFloatingVueStyles?: boolean;
   /**
    * Determine whether to load default styles.
-   * Only works when `css` and `scss` is `false`.
+   * Only works when `css` and `scss` is `false` and `theme` is `legacy`.
    *
    * @default true
    * @example
@@ -161,13 +161,37 @@ export interface ModuleOptions {
    * })
    */
   optimizeDeps?: boolean;
+  /**
+   * Name of the theme to use. Available options: `morpheme`, `legacy`.
+   *
+   * @default 'morpheme'
+   * @example
+   * // nuxt.config.ts
+   * export default defineConfig({
+   *  morpheme: {
+   *   theme: 'morpheme'
+   * })
+   */
+  theme: 'morpheme' | 'legacy';
+  /**
+   * Determine whether to use experimental components.
+   *
+   * @default false
+   * @example
+   * // nuxt.config.ts
+   * export default defineConfig({
+   * morpheme: {
+   *  experimentalComponents: true
+   * })
+   */
+  experimentalComponents: boolean;
 }
 ```
 
 Default Options:
 
 ```ts
-defaults: {
+{
   css: false,
   sass: false,
   components: true,
@@ -176,7 +200,9 @@ defaults: {
   loadDefaultStyles: true,
   darkMode: false,
   optimizeDeps: true,
-},
+  theme: 'morpheme',
+  experimentalComponents: true,
+}
 ```
 
 Config example:
