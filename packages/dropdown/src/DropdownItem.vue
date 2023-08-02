@@ -14,6 +14,7 @@ const props = withDefaults(
     newTab?: boolean;
     divider?: boolean;
     nuxt?: boolean;
+    disabled?: boolean;
   }>(),
   {
     iconClass: '',
@@ -30,14 +31,41 @@ const computedComponent = computed(() => {
 });
 
 const attributes = computed(() => {
+  let attrs: Record<string, any> = {};
+
+  if (props.disabled) {
+    attrs['aria-disabled'] = true;
+    attrs['disabled'] = true;
+  }
+
+  if (props.to) {
+    attrs['to'] = props.to;
+  }
+
+  if (props.href) {
+    attrs['href'] = props.href;
+  }
+
+  if (props.newTab) {
+    attrs['rel'] = 'noopener';
+    attrs['target'] = '_blank';
+  }
+
   return {
-    to: props.to ?? undefined,
-    href: props.href ?? undefined,
-    target: props.href && props.newTab ? '_blank' : undefined,
-    rel: props.href && props.newTab ? 'noopener' : undefined,
+    ...attrs,
     ...useAttrs(),
   };
 });
+
+// const attributes = computed(() => {
+//   return {
+//     to: props.to ?? undefined,
+//     href: props.href ?? undefined,
+//     target: props.href && props.newTab ? '_blank' : undefined,
+//     rel: props.href && props.newTab ? 'noopener' : undefined,
+//     ...useAttrs(),
+//   };
+// });
 
 defineSlots<{
   default?: (props: {}) => any;

@@ -58,8 +58,24 @@ export const RouterLink = Template.bind({});
 RouterLink.args = {
   items: [
     {
-      text: 'Link 1',
+      text: 'Home',
       to: '/home',
+    },
+    {
+      text: 'Profile',
+      to: '/profile',
+    },
+    {
+      text: 'Settings',
+      to: '/settings',
+    },
+    {
+      divider: true,
+    },
+    {
+      text: 'Go to Google',
+      href: 'https://google.com',
+      newTab: true,
     },
   ],
 };
