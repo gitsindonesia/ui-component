@@ -198,6 +198,7 @@ defineSlots<{
     itemText?: string;
     selectionItemProps?: InstanceType<typeof VBadge>['$props'];
   }) => any;
+  empty?: (props: {items: T[]; emptyText?: string}) => any;
 }>();
 </script>
 
@@ -371,9 +372,17 @@ defineSlots<{
             />
             <VDivider />
           </div>
-          <div v-if="filteredItems?.length < 1" class="v-select-empty">
-            {{ emptyText }}
-          </div>
+          <slot
+            name="empty"
+            v-bind="{
+              items: filteredItems,
+              emptyText,
+            }"
+          >
+            <div v-if="filteredItems?.length < 1" class="v-select-empty">
+              {{ emptyText }}
+            </div>
+          </slot>
           <div
             :class="{
               'v-select-scrollable':
