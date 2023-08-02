@@ -311,7 +311,7 @@ export * from '@morpheme/badge/src/types';
 export * from '@morpheme/breadcrumbs/src/types';
 export * from '@morpheme/table/src/types';
 export * from '@morpheme/dropdown/src/types';
-export * from '@morpheme/forms/src/input/types';
+export * from '@morpheme/forms';
 export * from '@morpheme/navbar/src/types';
 export * from '@morpheme/tabs/src/types';
 export * from '@morpheme/modal';
