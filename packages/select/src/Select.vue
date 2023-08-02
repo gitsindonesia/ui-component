@@ -75,6 +75,7 @@ const props = withDefaults(
     offset: 8,
     shift: true,
     flip: true,
+    hideError: false,
   },
 );
 
@@ -170,7 +171,7 @@ defineSlots<{
   }) => any;
   hint?: (props: {hint?: string}) => any;
   error?: (props: {
-    error: boolean;
+    error?: boolean;
     errorMessage?: string;
     hideError?: boolean;
   }) => any;
@@ -369,16 +370,16 @@ defineSlots<{
           </component>
         </component>
       </Transition>
-      <div class="v-select-hint">
-        <slot name="hint" :hint="hint">
-          {{ hint }}
-        </slot>
-      </div>
-      <div v-if="error && !hideError" class="v-select-error">
-        <slot name="error" v-bind="{error, errorMessage, hideError}">
-          {{ errorMessage }}
-        </slot>
-      </div>
     </Float>
+    <div class="v-select-hint">
+      <slot name="hint" :hint="hint">
+        {{ hint }}
+      </slot>
+    </div>
+    <slot name="error" v-bind="{error, errorMessage, hideError}">
+      <div class="v-select-error" v-if="error && !hideError">
+        {{ errorMessage }}
+      </div>
+    </slot>
   </component>
 </template>
