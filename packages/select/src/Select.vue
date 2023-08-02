@@ -374,7 +374,12 @@ defineSlots<{
           <div v-if="filteredItems?.length < 1" class="v-select-empty">
             {{ emptyText }}
           </div>
-          <div class="v-select-scrollable">
+          <div
+            :class="{
+              'v-select-scrollable':
+                searchable && searchPlacement === 'outside',
+            }"
+          >
             <component
               :is="searchable ? ComboboxOption : ListboxOption"
               v-for="(item, idx) in filteredItems"
