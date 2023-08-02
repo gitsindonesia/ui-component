@@ -251,7 +251,7 @@ defineSlots<{
           >
             <div
               v-if="
-                multiple & chips && selectedValue && selectedValue.length > 0
+                multiple && chips && selectedValue && selectedValue.length > 0
               "
               class="v-select-selection"
             >
@@ -313,7 +313,7 @@ defineSlots<{
               <span v-if="multiple">
                 {{
                   selectedValue && selectedValue?.length > 0
-                    ? chips
+                    ? chips && searchPlacement === 'outside'
                       ? ''
                       : `${selectedValue?.length} selected`
                     : placeholder
