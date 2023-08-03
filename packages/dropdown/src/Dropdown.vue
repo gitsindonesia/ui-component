@@ -66,7 +66,11 @@ withDefaults(defineProps<Props>(), {
 
 defineSlots<{
   default?: (props: {}) => any;
-  activator?: (props: {btnProps: Record<string, any>; label: string}) => any;
+  activator?: (props: {
+    open: boolean;
+    btnProps: Record<string, any>;
+    label: string;
+  }) => any;
   item?: (props: DropdownItemProps) => any;
   prepend?: (props: {}) => any;
   append?: (props: {}) => any;
@@ -74,7 +78,12 @@ defineSlots<{
 </script>
 
 <template>
-  <Menu as="div" class="dropdown" :class="{'dropdown--block': block}">
+  <Menu
+    as="div"
+    class="dropdown"
+    :class="{'dropdown--block': block}"
+    v-slot="{open}"
+  >
     <Float
       as="template"
       floating-as="template"
@@ -85,7 +94,12 @@ defineSlots<{
       :flip="flip"
     >
       <div class="dropdown-button-wrapper" :class="buttonWrapperClass">
-        <slot name="activator" :btn-props="btnProps" :label="label">
+        <slot
+          name="activator"
+          :btn-props="btnProps"
+          :label="label"
+          :open="open"
+        >
           <DropdownDefaultActivator
             v-bind="{
               btnProps,

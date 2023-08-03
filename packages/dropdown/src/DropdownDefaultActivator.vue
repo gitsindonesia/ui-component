@@ -4,7 +4,7 @@ import DropdownButton from './DropdownButton.vue';
 
 withDefaults(
   defineProps<{
-    as?: string;
+    as?: any;
     btnProps?: Record<string, any>;
     text?: string;
     icon?: string;
@@ -49,7 +49,7 @@ withDefaults(
         prefixIconClass,
       ]"
     />
-    <slot>{{ text }}</slot>
+    <slot :open="open">{{ text }}</slot>
     <VIcon
       v-if="icon"
       :name="icon"

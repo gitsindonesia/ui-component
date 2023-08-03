@@ -1,3 +1,4 @@
+import VIcon from '@morpheme/icon';
 import type {Story} from '@storybook/vue3';
 import Dropdown from './Dropdown.vue';
 import DropdownItem from './DropdownItem.vue';
@@ -5,6 +6,7 @@ import DropdownButton from './DropdownButton.vue';
 import Button from '@morpheme/button';
 import DropdownBtn from './DropdownBtn.vue';
 import DropdownHeader from './DropdownHeader.vue';
+import DropdownDefaultActivator from './DropdownDefaultActivator.vue';
 
 const items = [
   {
@@ -196,12 +198,19 @@ export const Slots: Story = (args, {argTypes}) => ({
 });
 
 export const CustomActivator: Story = (args, {argTypes}) => ({
-  components: {Dropdown, DropdownItem, DropdownButton, DropdownBtn},
+  components: {
+    Dropdown,
+    DropdownItem,
+    DropdownButton,
+    DropdownBtn,
+    DropdownDefaultActivator,
+    VIcon,
+  },
   setup() {
     return {args, argTypes, Button};
   },
   template: `
-    <div class="flex justify-center mt-20">
+    <div class="mt-4">
       <Dropdown v-bind="args" top top-class="bottom-12">
         <template #activator>
           <DropdownButton>
@@ -215,7 +224,7 @@ export const CustomActivator: Story = (args, {argTypes}) => ({
         <DropdownItem text="Timer" icon="mdi:clock"/>
       </Dropdown>
     </div>
-    <div class="flex justify-center mt-20">
+    <div class="mt-4">
       <Dropdown v-bind="args" top top-class="bottom-12">
         <template #activator>
           <DropdownButton :as="Button" color="error" outlined>
@@ -229,7 +238,7 @@ export const CustomActivator: Story = (args, {argTypes}) => ({
         <DropdownItem text="Timer" icon="mdi:clock"/>
       </Dropdown>
     </div>
-    <div class="flex justify-center mt-20">
+    <div class="mt-4">
       <Dropdown v-bind="args" top top-class="bottom-12">
         <template #activator>
           <DropdownBtn color="success" outlined>
@@ -241,6 +250,126 @@ export const CustomActivator: Story = (args, {argTypes}) => ({
         <DropdownItem text="Files" icon="mdi:document" />
         <DropdownItem divider/>
         <DropdownItem text="Timer" icon="mdi:clock"/>
+      </Dropdown>
+    </div>
+    
+    <div class="mt-4">
+      <Dropdown v-bind="args">
+        <template #activator="{open}">
+          <DropdownButton :as="'VBtn'" color="secondary" text flush>
+            <code>DropdownButton</code> as <code>VBtn</code>
+            <VIcon 
+              name="heroicons:chevron-down"
+              size="xs"
+              :class="[
+                'transform transition',
+                {
+                  'rotate-180': open,
+                }
+              ]" 
+            />
+          </DropdownButton>
+        </template>
+      </Dropdown>
+    </div>
+
+    <div class="mt-4">
+      <Dropdown v-bind="args">
+        <template #activator="{open}">
+          <DropdownButton :as="'VDropdownItem'">
+            <code>DropdownButton</code> as <code>VDropdownItem</code>
+            <VIcon 
+              name="heroicons:chevron-down"
+              size="xs"
+              :class="[
+                'transform transition',
+                {
+                  'rotate-180': open,
+                }
+              ]" 
+            />
+          </DropdownButton>
+        </template>
+      </Dropdown>
+    </div>
+
+    <div class="mt-4">
+      <Dropdown v-bind="args">
+        <template #activator="{open}">
+          <DropdownButton :as="'VDropdownHeader'">
+            <code>DropdownButton</code> as <code>VDropdownHeader</code>
+            <VIcon 
+              name="heroicons:chevron-down"
+              size="xs"
+              :class="[
+                'transform transition',
+                {
+                  'rotate-180': open,
+                }
+              ]" 
+            />
+          </DropdownButton>
+        </template>
+      </Dropdown>
+    </div>
+
+    <div class="mt-4">
+      <Dropdown v-bind="args">
+        <template #activator="{open}">
+          <DropdownButton :as="'btn'" color="secondary" text flush>
+            <code>DropdownButton</code> as <code>btn</code>
+            <VIcon 
+              name="heroicons:chevron-down"
+              size="xs"
+              :class="[
+                'transform transition',
+                {
+                  'rotate-180': open,
+                }
+              ]" 
+            />
+          </DropdownButton>
+        </template>
+      </Dropdown>
+    </div>
+
+    <div class="mt-4">
+      <Dropdown v-bind="args">
+        <template #activator="{open}">
+          <DropdownButton :as="'item'">
+            <code>DropdownButton</code> as <code>item</code>
+            <VIcon 
+              name="heroicons:chevron-down"
+              size="xs"
+              :class="[
+                'transform transition',
+                {
+                  'rotate-180': open,
+                }
+              ]" 
+            />
+          </DropdownButton>
+        </template>
+      </Dropdown>
+    </div>
+
+    <div class="mt-4">
+      <Dropdown v-bind="args">
+        <template #activator="{open}">
+          <DropdownButton :as="'header'">
+            <code>DropdownButton</code> as <code>header</code>
+            <VIcon 
+              name="heroicons:chevron-down"
+              size="xs"
+              :class="[
+                'transform transition',
+                {
+                  'rotate-180': open,
+                }
+              ]" 
+            />
+          </DropdownButton>
+        </template>
       </Dropdown>
     </div>
   `,
