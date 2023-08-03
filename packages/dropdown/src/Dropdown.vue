@@ -5,7 +5,7 @@ import DropdownItem from './DropdownItem.vue';
 import {Float} from '@headlessui-float/vue';
 import type {Placement} from '@floating-ui/vue';
 import DropdownHeader from './DropdownHeader.vue';
-import DropdownDefaultActivator from './DropdownDefaultActivator.vue';
+import DropdownActivator from './DropdownActivator.vue';
 
 export interface Props {
   modelValue?: boolean;
@@ -102,7 +102,7 @@ defineSlots<{
           :label="label"
           :open="open"
         >
-          <DropdownDefaultActivator
+          <DropdownActivator
             v-bind="{
               btnProps,
               text: label,

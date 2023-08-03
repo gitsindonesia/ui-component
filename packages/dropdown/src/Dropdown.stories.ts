@@ -6,7 +6,7 @@ import DropdownButton from './DropdownButton.vue';
 import Button from '@morpheme/button';
 import DropdownBtn from './DropdownBtn.vue';
 import DropdownHeader from './DropdownHeader.vue';
-import DropdownDefaultActivator from './DropdownDefaultActivator.vue';
+import DropdownActivator from './DropdownActivator.vue';
 
 const items = [
   {
@@ -203,7 +203,7 @@ export const CustomActivator: Story = (args, {argTypes}) => ({
     DropdownItem,
     DropdownButton,
     DropdownBtn,
-    DropdownDefaultActivator,
+    DropdownActivator,
     VIcon,
   },
   setup() {
