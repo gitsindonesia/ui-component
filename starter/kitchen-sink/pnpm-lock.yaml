@@ -7,34 +7,34 @@ settings:
 overrides:
   '@morpheme/alert': 1.0.0-next.5
   '@morpheme/app-bar': 1.0.0-next.5
-  '@morpheme/app-shell': 1.0.0-next.5
+  '@morpheme/app-shell': 1.0.0-next.37
   '@morpheme/autocomplete': 1.0.0-next.5
   '@morpheme/avatar': 1.0.0-next.5
   '@morpheme/badge': 1.0.0-next.5
-  '@morpheme/banner': 1.0.0-next.5
+  '@morpheme/banner': 1.0.0-next.37
   '@morpheme/bottom-navigation': 1.0.0-next.5
-  '@morpheme/bottom-sheet': 1.0.0-next.5
+  '@morpheme/bottom-sheet': 1.0.0-next.37
   '@morpheme/breadcrumbs': 1.0.0-next.5
   '@morpheme/button': 1.0.0-next.5
   '@morpheme/card': 1.0.0-next.5
   '@morpheme/collapsible': 1.0.0-next.5
   '@morpheme/container': 1.0.0-next.5
-  '@morpheme/command': 1.0.0-next.50
+  '@morpheme/command': 1.0.0-next.37
   '@morpheme/divider': 1.0.0-next.5
-  '@morpheme/dropdown': 1.0.0-next.5
+  '@morpheme/dropdown': 1.0.0-next.37
   '@morpheme/editor': 1.0.0-next.5
   '@morpheme/forms': 1.0.0-next.5
   '@morpheme/icon': 1.0.0-next.5
-  '@morpheme/list': 1.0.0-next.5
+  '@morpheme/list': 1.0.0-next.37
   '@morpheme/logo': 1.0.0-next.5
   '@morpheme/menu': 1.0.0-next.5
-  '@morpheme/menus': 1.0.0-next.5
+  '@morpheme/menus': 1.0.0-next.37
   '@morpheme/modal': 1.0.0-next.50
   '@morpheme/multi-select': 1.0.0-next.5
   '@morpheme/nav-drawer': 1.0.0-next.5
-  '@morpheme/navbar': 1.0.0-next.5
+  '@morpheme/navbar': 1.0.0-next.37
   '@morpheme/pagination': 1.0.0-next.5
-  '@morpheme/popover': 1.0.0-next.5
+  '@morpheme/popover': 1.0.0-next.37
   '@morpheme/progress-bar': 1.0.0-next.5
   '@morpheme/progress-circular': 1.0.0-next.5
   '@morpheme/quill-editor': 1.0.0-next.5
@@ -56,15 +56,15 @@ overrides:
   '@morpheme/toast': 1.0.0-next.5
   '@morpheme/tooltip': 1.0.0-next.5
   '@morpheme/utils': 1.0.0-next.5
-  '@morpheme/ui': 1.0.0-next.5
+  '@morpheme/ui': 1.0.0-next.37
 
 dependencies:
   '@morpheme/design-tokens':
     specifier: 0.1.0-alpha.5
     version: 0.1.0-alpha.5
   '@morpheme/nuxt':
-    specifier: 1.0.0-next.5
-    version: 1.0.0-next.5(nuxt@3.6.5)(vite@4.4.7)
+    specifier: 1.0.0-next.37
+    version: 1.0.0-next.37(nuxt@3.6.5)(vite@4.4.7)
   '@morphemeicons/vue':
     specifier: ^0.2.0
     version: 0.2.0(vue@3.3.4)
@@ -1266,8 +1266,8 @@ packages:
       - ts-node
     dev: false
 
-  /@morpheme/app-shell@1.0.0-next.5:
-    resolution: {integrity: sha512-aDR3nVz5Z+BhzGqG9MA8lYDS5WfvAD6OfitiDm9+aTXHUsMr2DLerR6FJ5ZSacP7+oxxb/5iF/zm5/REz9Bx6Q==}
+  /@morpheme/app-shell@1.0.0-next.37:
+    resolution: {integrity: sha512-6c+s4afds3thIVO12QUe0B4n35cSg0dzz8ObDIWFz2sWfw0u/m2kwpoiZzlsSUQTZOBtfkiSKJT4Mz/AKd9T9A==}
     dependencies:
       '@vueuse/core': 10.3.0(vue@3.3.4)
       vue: 3.3.4
@@ -1309,8 +1309,8 @@ packages:
       - ts-node
     dev: false
 
-  /@morpheme/banner@1.0.0-next.5:
-    resolution: {integrity: sha512-+ke/YYAtjc7D/INEht51Wx4R7/3h38snB7CiHCIuncdaFVHw20DvJFxNwE8qVSdy2t2WV1mdznucNry6d3+w0g==}
+  /@morpheme/banner@1.0.0-next.37:
+    resolution: {integrity: sha512-E/5vb7J4cIkllHtt4IjGJzL9Iq9sCMQAKRXr2XpAFcpHv5740QatSDIvEjByXIFJVY6MgWjwBzs5/4M13qCDXg==}
     dependencies:
       vue: 3.3.4
     dev: false
@@ -1327,12 +1327,12 @@ packages:
       - ts-node
     dev: false
 
-  /@morpheme/bottom-sheet@1.0.0-next.5:
-    resolution: {integrity: sha512-ByO2E6YNlezvVyCq6gNyFspf7JbPbMFw1rA6/g2vSLheZgUeydnivIcorfL70C8ABZ4NlPxzcMaXcigucU6tnw==}
+  /@morpheme/bottom-sheet@1.0.0-next.37:
+    resolution: {integrity: sha512-FJahUg//bPho5DGM3AOGeF2Umr9DvFsE8pxydGw3AzElUlfuepeJeyxIq+j9yPtOt1ir/42leDf1SFfdpzsFpQ==}
     dependencies:
       '@morpheme/button': 1.0.0-next.5
       '@morpheme/icon': 1.0.0-next.5
-      '@morpheme/list': 1.0.0-next.5
+      '@morpheme/list': 1.0.0-next.37
       vue: 3.3.4
     transitivePeerDependencies:
       - ts-node
@@ -1373,11 +1373,11 @@ packages:
       vue: 3.3.4
     dev: false
 
-  /@morpheme/command@1.0.0-next.50:
-    resolution: {integrity: sha512-jyL65mBwJDub+uQqid8sZRdAgYy/DFKH06JitO0cG/m/Bq3znNn9ocf7TZxum0sful4iK0zW+0ktLAvsTXl45A==}
+  /@morpheme/command@1.0.0-next.37:
+    resolution: {integrity: sha512-5BeiJ/eUGreDRXpBtoGXMGCr+kprVg36JEblMXyZdXt5owosyMTE3PmevwS6ZSXcL3dWFGhdi3QebLW3R4pnYA==}
     dependencies:
       '@morpheme/icon': 1.0.0-next.5
-      '@morpheme/list': 1.0.0-next.5
+      '@morpheme/list': 1.0.0-next.37
       '@morpheme/modal': 1.0.0-next.50
       vue: 3.3.4
     transitivePeerDependencies:
@@ -1400,8 +1400,8 @@ packages:
       vue: 3.3.4
     dev: false
 
-  /@morpheme/dropdown@1.0.0-next.5:
-    resolution: {integrity: sha512-glGHRPWzYpdBL1OstQYFXkz+zVBx3BqA2TMeiQAK0QxXKxyuLz319yJXcoQ37ArIBQwnIK9Py9COR/TbDfNOWw==}
+  /@morpheme/dropdown@1.0.0-next.37:
+    resolution: {integrity: sha512-tmNo9BfTJZZJ6Y2uOx4bTuh8KugN8BpIOnvc0djdp+e5R8GhUkgKoGOa0lXuH7AQmxBPOWbiKkK6YwkaekwVJw==}
     dependencies:
       '@floating-ui/vue': 1.0.2(vue@3.3.4)
       '@headlessui-float/vue': 0.11.2(vue@3.3.4)
@@ -1459,8 +1459,8 @@ packages:
       vue: 3.3.4
     dev: false
 
-  /@morpheme/list@1.0.0-next.5:
-    resolution: {integrity: sha512-ANouX4/I7VSoeBD0hSLwEz+RQkJpng9Q5/fQXcOA322v/Utv/r2LKyAqY6aBtf8vHk2gUr9J0V8zbRZSgB1g7w==}
+  /@morpheme/list@1.0.0-next.37:
+    resolution: {integrity: sha512-vAOROcBuE2lTfysGPPLCXT+1qPG/M2OYRH+NEaJza14S3zyNEVK40WLA71tE8NtGL5NPQBJX8K5urjHW6OK6QQ==}
     dependencies:
       '@morpheme/collapsible': 1.0.0-next.5
       vue: 3.3.4
@@ -1482,11 +1482,11 @@ packages:
       vue-router: 4.2.4(vue@3.3.4)
     dev: false
 
-  /@morpheme/menus@1.0.0-next.5(@nuxt/kit@3.6.5):
-    resolution: {integrity: sha512-t6zf7uSPlbzuseXaUMNSi2Uxw850e6weadGZfZwnvca1PBE+T/wSxZI7fo8F3008Qs1s+VgCpGpOIiBd7ZFY9w==}
+  /@morpheme/menus@1.0.0-next.37(@nuxt/kit@3.6.5):
+    resolution: {integrity: sha512-Vv3geCp/FWFy9QYMhh6TPPNShBovPHMKTiZsPU1eXMxeuRAX8nGvJT9zF28PXf97QD4AocC1+Kjmwy4MpACTgg==}
     dependencies:
       '@morpheme/icon': 1.0.0-next.5
-      '@morpheme/list': 1.0.0-next.5
+      '@morpheme/list': 1.0.0-next.37
       floating-vue: 2.0.0-beta.24(@nuxt/kit@3.6.5)(vue@3.3.4)
       vue: 3.3.4
     transitivePeerDependencies:
@@ -1533,23 +1533,23 @@ packages:
       - ts-node
     dev: false
 
-  /@morpheme/navbar@1.0.0-next.5(@nuxt/kit@3.6.5):
-    resolution: {integrity: sha512-BobIkG+NWRJO7HRL+fkUIGeM/ML4R0uSwyeL2PYnLMnWX73JE0Wh4/5ENnUEY+i4WOtUOU8YPlcnu8sVtU2Jgg==}
+  /@morpheme/navbar@1.0.0-next.37(@nuxt/kit@3.6.5):
+    resolution: {integrity: sha512-pjXzs9yM5jzoCkY5f+GH06q5Zn2NwMrVx/y0znkLY7Jf7IEY2KlfYzocrwRVKTToltuCeZGkFjszrJDg+SsscA==}
     dependencies:
       '@morpheme/button': 1.0.0-next.5
       '@morpheme/icon': 1.0.0-next.5
       '@morpheme/logo': 1.0.0-next.5
-      '@morpheme/menus': 1.0.0-next.5(@nuxt/kit@3.6.5)
+      '@morpheme/menus': 1.0.0-next.37(@nuxt/kit@3.6.5)
       vue: 3.3.4
     transitivePeerDependencies:
       - '@nuxt/kit'
       - ts-node
     dev: false
 
-  /@morpheme/nuxt@1.0.0-next.5(nuxt@3.6.5)(vite@4.4.7):
-    resolution: {integrity: sha512-cwBwuF7CqBgGdWWNP+K8E2F9B4t5aGvkq2sV/GnYWO+ACTPRBzYu9GsoZywXKZbgZSi2xKYEbz/k3wjB3/xY8w==}
+  /@morpheme/nuxt@1.0.0-next.37(nuxt@3.6.5)(vite@4.4.7):
+    resolution: {integrity: sha512-ZNlLj0k34PIkzGqsXE1EcFiNMimlbnLo83N5z9acpWd9aG/gYI5eluYsEs9yJN7gNumhAS1yrMGrATW0JAOS3g==}
     dependencies:
-      '@morpheme/ui': 1.0.0-next.5(@nuxt/kit@3.6.5)
+      '@morpheme/ui': 1.0.0-next.37(@nuxt/kit@3.6.5)
       '@nuxt/devtools-kit': 0.5.5(nuxt@3.6.5)(vite@4.4.7)
       '@nuxt/kit': 3.6.5
     transitivePeerDependencies:
@@ -1569,8 +1569,8 @@ packages:
       vue: 3.3.4
     dev: false
 
-  /@morpheme/popover@1.0.0-next.5:
-    resolution: {integrity: sha512-rYqU+Jwy6FjgfBPOzUgzI7ijoEFyfkvLSqzCpl1aUi080FC9bjb+7V1zyl+WZvBTvCZ24srnsMCEz6teoRnd+w==}
+  /@morpheme/popover@1.0.0-next.37:
+    resolution: {integrity: sha512-TGIsaVXGuUKYadeVKnBexKtGc0h7X45cXq2TQ1zmteGC4hmhw7oLtQTs7BIijXb1xteoH5n2ARlr149yUCpNWQ==}
     dependencies:
       '@headlessui/vue': 1.7.15(vue@3.3.4)
       tailwindcss: 3.3.3
@@ -1768,41 +1768,41 @@ packages:
       - '@nuxt/kit'
     dev: false
 
-  /@morpheme/ui@1.0.0-next.5(@nuxt/kit@3.6.5):
-    resolution: {integrity: sha512-FH/yrnirA9XRlHiyFWiWZeGDj4/OtvlLTSN++IFYnCSlZ3yzeExA0fwlB+9weieH5wOk0pb/QMa0bOm+7p5f0A==}
+  /@morpheme/ui@1.0.0-next.37(@nuxt/kit@3.6.5):
+    resolution: {integrity: sha512-wScFtdJo/3LNerzrvPDSanhxNg5z0yfONxsRof1wPXpyqnThPxgqkIeVaE/6GH/MMRm7JjqKUt2RahIiMWNblw==}
     dependencies:
       '@headlessui/vue': 1.7.15(vue@3.3.4)
       '@morpheme/alert': 1.0.0-next.5
       '@morpheme/app-bar': 1.0.0-next.5
-      '@morpheme/app-shell': 1.0.0-next.5
+      '@morpheme/app-shell': 1.0.0-next.37
       '@morpheme/autocomplete': 1.0.0-next.5
       '@morpheme/avatar': 1.0.0-next.5
       '@morpheme/badge': 1.0.0-next.5
-      '@morpheme/banner': 1.0.0-next.5
+      '@morpheme/banner': 1.0.0-next.37
       '@morpheme/bottom-navigation': 1.0.0-next.5
-      '@morpheme/bottom-sheet': 1.0.0-next.5
+      '@morpheme/bottom-sheet': 1.0.0-next.37
       '@morpheme/breadcrumbs': 1.0.0-next.5
       '@morpheme/button': 1.0.0-next.5
       '@morpheme/card': 1.0.0-next.5
       '@morpheme/collapsible': 1.0.0-next.5
-      '@morpheme/command': 1.0.0-next.50
+      '@morpheme/command': 1.0.0-next.37
       '@morpheme/container': 1.0.0-next.5
       '@morpheme/divider': 1.0.0-next.5
-      '@morpheme/dropdown': 1.0.0-next.5
+      '@morpheme/dropdown': 1.0.0-next.37
       '@morpheme/editor': 1.0.0-next.5
       '@morpheme/forms': 1.0.0-next.5
       '@morpheme/icon': 1.0.0-next.5
       '@morpheme/layouts': 1.0.0-next.39
-      '@morpheme/list': 1.0.0-next.5
+      '@morpheme/list': 1.0.0-next.37
       '@morpheme/logo': 1.0.0-next.5
       '@morpheme/menu': 1.0.0-next.5
-      '@morpheme/menus': 1.0.0-next.5(@nuxt/kit@3.6.5)
+      '@morpheme/menus': 1.0.0-next.37(@nuxt/kit@3.6.5)
       '@morpheme/modal': 1.0.0-next.50
       '@morpheme/multi-select': 1.0.0-next.5(@nuxt/kit@3.6.5)
       '@morpheme/nav-drawer': 1.0.0-next.5
-      '@morpheme/navbar': 1.0.0-next.5(@nuxt/kit@3.6.5)
+      '@morpheme/navbar': 1.0.0-next.37(@nuxt/kit@3.6.5)
       '@morpheme/pagination': 1.0.0-next.5
-      '@morpheme/popover': 1.0.0-next.5
+      '@morpheme/popover': 1.0.0-next.37
       '@morpheme/progress-bar': 1.0.0-next.5
       '@morpheme/progress-circular': 1.0.0-next.5
       '@morpheme/quill-editor': 1.0.0-next.5
