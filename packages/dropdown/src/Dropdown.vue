@@ -79,7 +79,7 @@ defineSlots<{
       class="relative"
       floating-as="template"
       :placement="placement"
-      :transition="transition"
+      :transition-name="transition"
       :offset="offset"
       :shift="shift"
       :flip="flip"
