@@ -148,6 +148,12 @@ export const Slots: Story = (args, {argTypes}) => ({
   template: `
     <div class="flex justify-center">
       <Dropdown v-bind="args">
+        <template #prepend>
+          <div class="dropdown-item"><code>prepend</code> slot</div>
+        </template>
+        <template #append>
+          <div class="dropdown-item"><code>append</code> slot</div>
+        </template>
         <DropdownItem text="Calendar" icon="mdi:calendar"/>
         <DropdownItem text="Files" icon="mdi:document" />
         <DropdownItem divider/>
