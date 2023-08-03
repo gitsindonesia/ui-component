@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import {Menu, MenuButton, MenuItems} from '@headlessui/vue';
+import {Menu, MenuItems} from '@headlessui/vue';
 import type {DropdownItemProps} from './types';
 import DropdownItem from './DropdownItem.vue';
-import {Icon} from '@morpheme/icon';
 import {Float} from '@headlessui-float/vue';
 import type {Placement} from '@floating-ui/vue';
 import DropdownHeader from './DropdownHeader.vue';
+import DropdownDefaultActivator from './DropdownDefaultActivator.vue';
 
 export interface Props {
   modelValue?: boolean;
@@ -86,27 +86,18 @@ defineSlots<{
     >
       <div class="dropdown-button-wrapper" :class="buttonWrapperClass">
         <slot name="activator" :btn-props="btnProps" :label="label">
-          <MenuButton
-            as="button"
-            class="dropdown-button-activator"
-            v-bind="btnProps"
-          >
-            <Icon
-              :name="prefixIcon"
-              :size="prefixIconSize"
-              :class="prefixIconClass"
-              class="dropdown-button-icon"
-              aria-hidden="true"
-            />
-            {{ label }}
-            <Icon
-              :name="icon"
-              :size="iconSize"
-              :class="iconClass"
-              class="dropdown-button-icon"
-              aria-hidden="true"
-            />
-          </MenuButton>
+          <DropdownDefaultActivator
+            v-bind="{
+              btnProps,
+              text: label,
+              icon,
+              iconSize,
+              iconClass,
+              prefixIcon,
+              prefixIconSize,
+              prefixIconClass,
+            }"
+          />
         </slot>
       </div>
       <MenuItems

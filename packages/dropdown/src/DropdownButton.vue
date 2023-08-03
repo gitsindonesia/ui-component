@@ -2,7 +2,7 @@
 import {MenuButton} from '@headlessui/vue';
 
 defineSlots<{
-  default?: (props: {}) => any;
+  default?: (props: {open?: boolean}) => any;
 }>();
 </script>
 

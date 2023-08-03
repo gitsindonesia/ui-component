@@ -141,6 +141,11 @@
       width: var(--dropdown-item-icon-width) !important;
       height: var(--dropdown-item-icon-height) !important;
       color: var(--dropdown-item-icon-color);
+      transition: transform 0.2s ease-in-out;
+
+      &--open {
+        transform: rotate(180deg);
+      }
     }
 
     &-content {
@@ -166,6 +171,11 @@
 
   &-button-icon {
     color: var(--dropdown-button-icon-color);
+    transition: transform 0.2s ease-in-out;
+
+    &--open {
+      transform: rotate(180deg);
+    }
   }
 
   &-button-activator {
