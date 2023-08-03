@@ -58,7 +58,7 @@ withDefaults(defineProps<Props>(), {
   prefixIcon: '',
   prefixIconSize: 'sm',
   placement: 'bottom-start',
-  offset: 0,
+  offset: 4,
   shift: true,
   flip: true,
 });
