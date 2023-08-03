@@ -475,3 +475,98 @@ export const MultiLevel: Story = (args, {argTypes}) => ({
     </Dropdown>
   `,
 });
+
+export const NavigationMenus: Story = (args, {argTypes}) => ({
+  components: {Dropdown, DropdownItem, DropdownButton, DropdownHeader},
+  setup() {
+    return {args, argTypes, DropdownItem};
+  },
+  template: `
+  <div class="bg-white shadow-md py-3 px-6 rounded-lg flex items-center gap-8">
+    <a class="font-semibold">
+      Acme Inc.
+    </a>
+    <a class="text-sm text-gray-800 font-semibold hover:text-gray-800">
+      Home
+    </a>
+    <Dropdown class="[--dropdown-item-height:36px]">
+      <template #activator="{open}">
+        <DropdownButton
+          as="btn"
+          suffix-icon="heroicons:chevron-down"
+          suffix-icon-size="xs"
+          :suffix-icon-class="[
+            'transform transition',
+            {
+              'rotate-180': open,
+            }
+          ]"
+          text
+          flush
+        >
+          Products
+        </DropdownButton>
+      </template>
+      <DropdownItem text="Calendar" />
+      <DropdownItem text="Files" />
+      <DropdownItem divider/>
+      <Dropdown block placement="right-start" :offset="-4">
+        <template #activator>
+          <DropdownButton
+            :as="DropdownItem"
+            suffix-icon="heroicons:chevron-right"
+            text="More"
+          />
+        </template>
+        <DropdownItem text="Sub 1" />
+        <DropdownItem text="Sub 2" />
+        <Dropdown block placement="right-start" :offset="-4">
+          <template #activator>
+            <DropdownButton
+              :as="DropdownItem"
+              suffix-icon="heroicons:chevron-right"
+              text="More"
+            />
+          </template>
+          <DropdownItem text="Sub 1" />
+          <DropdownItem text="Sub 2" />
+        </Dropdown>
+      </Dropdown>
+    </Dropdown>
+    <Dropdown class="[--dropdown-item-height:36px]">
+      <template #activator="{open}">
+        <DropdownButton
+          as="btn"
+          suffix-icon="heroicons:chevron-down"
+          suffix-icon-size="xs"
+          :suffix-icon-class="[
+            'transform transition',
+            {
+              'rotate-180': open,
+            }
+          ]"
+          text
+          flush
+        >
+          Settings
+        </DropdownButton>
+      </template>
+      <DropdownItem text="Calendar" />
+      <DropdownItem text="Files" />
+      <DropdownItem divider/>
+      <Dropdown block placement="right-start" :offset="-4">
+        <template #activator>
+          <DropdownButton
+            :as="DropdownItem"
+            suffix-icon="heroicons:chevron-right"
+            text="Theme"
+          />
+        </template>
+        <DropdownItem text="System" />
+        <DropdownItem text="Light" />
+        <DropdownItem text="Dark" />
+      </Dropdown>
+    </Dropdown>
+    </div>
+  `,
+});
