@@ -29,7 +29,12 @@ import {
   VTextarea,
 } from '@morpheme/forms';
 import {VDataTable, VDataTablePagination} from '@morpheme/table';
-import {Dropdown, DropdownItem, DropdownButton} from '@morpheme/dropdown';
+import {
+  Dropdown,
+  DropdownItem,
+  DropdownButton,
+  DropdownBtn,
+} from '@morpheme/dropdown';
 import VModal from '@morpheme/modal';
 import VPagination from '@morpheme/pagination';
 import VProgressBar from '@morpheme/progress-bar';
@@ -139,6 +144,7 @@ const plugin: Plugin = {
     app.component('VDropdown', Dropdown);
     app.component('VDropdownItem', DropdownItem);
     app.component('VDropdownButton', DropdownButton);
+    app.component('VDropdownBtn', DropdownBtn);
     app.component('VFormSelect', VFormSelect);
     app.component('VInput', VInput);
     app.component('VInputGroup', VInputGroup);
