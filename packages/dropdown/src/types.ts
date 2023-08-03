@@ -7,9 +7,15 @@ export type DropdownProps = {
 };
 
 export type DropdownItemProps = {
-  text: string;
+  text?: string;
   to?: string;
   href?: string;
-  icon?: string;
+  icon?: string | any;
+  iconSize?: string;
+  iconClass?: string;
   newTab?: boolean;
+  divider?: boolean;
+  nuxt?: boolean;
+  disabled?: boolean;
+  header?: boolean;
 };

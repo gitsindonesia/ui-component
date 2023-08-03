@@ -143,6 +143,14 @@
     }
   }
 
+  &-header {
+    padding: var(--size-spacing-2) var(--size-spacing-3);
+    font-size: var(--size-font-sm);
+    font-weight: var(--font-weight-semibold);
+    line-height: 20px;
+    color: var(--color-gray-700);
+  }
+
   &-button-icon {
     color: var(--dropdown-button-icon-color);
   }

@@ -2,9 +2,9 @@ import type {Story} from '@storybook/vue3';
 import Dropdown from './Dropdown.vue';
 import DropdownItem from './DropdownItem.vue';
 import DropdownButton from './DropdownButton.vue';
-import type {DropdownItemProps} from './types';
 import Button from '@morpheme/button';
 import DropdownBtn from './DropdownBtn.vue';
+import DropdownHeader from './DropdownHeader.vue';
 
 const items = [
   {
@@ -140,8 +140,39 @@ Href.args = {
   ],
 };
 
+export const Header = Template.bind({});
+Header.args = {
+  items: [
+    {
+      text: 'Account',
+      header: true,
+    },
+    {
+      text: 'Profile',
+      icon: 'ic:round-person',
+    },
+    {
+      text: 'Preferences',
+      icon: 'ic:round-settings',
+    },
+
+    {
+      text: 'Settings',
+      header: true,
+    },
+    {
+      text: 'Dark Mode',
+      icon: 'ic:round-dark-mode',
+    },
+    {
+      text: 'Logout',
+      icon: 'ic:round-logout',
+    },
+  ],
+};
+
 export const Slots: Story = (args, {argTypes}) => ({
-  components: {Dropdown, DropdownItem},
+  components: {Dropdown, DropdownItem, DropdownHeader},
   setup() {
     return {args, argTypes};
   },
@@ -154,6 +185,7 @@ export const Slots: Story = (args, {argTypes}) => ({
         <template #append>
           <div class="dropdown-item"><code>append</code> slot</div>
         </template>
+        <DropdownHeader>Action</DropdownHeader>
         <DropdownItem text="Calendar" icon="mdi:calendar"/>
         <DropdownItem text="Files" icon="mdi:document" />
         <DropdownItem divider/>

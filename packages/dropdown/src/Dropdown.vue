@@ -5,6 +5,7 @@ import DropdownItem from './DropdownItem.vue';
 import {Icon} from '@morpheme/icon';
 import {Float} from '@headlessui-float/vue';
 import type {Placement} from '@floating-ui/vue';
+import DropdownHeader from './DropdownHeader.vue';
 
 export interface Props {
   modelValue?: boolean;
@@ -122,7 +123,10 @@ defineSlots<{
       >
         <slot name="prepend" />
         <slot>
-          <DropdownItem v-for="item in items" :key="item.text" v-bind="item" />
+          <template v-for="item in items" :key="item.text">
+            <DropdownHeader v-if="item.header" :text="item.text" />
+            <DropdownItem v-else v-bind="item" />
+          </template>
         </slot>
         <slot name="append" />
       </MenuItems>

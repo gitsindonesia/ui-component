@@ -179,6 +179,10 @@ const components: AddComponentOptions[] = [
     filePath: '@morpheme/dropdown/src/DropdownBtn.vue',
   },
   {
+    name: 'VDropdownHeader',
+    filePath: '@morpheme/dropdown/src/DropdownHeader.vue',
+  },
+  {
     name: 'VEditor',
     filePath: '@morpheme/editor/src/VEditor.vue',
   },

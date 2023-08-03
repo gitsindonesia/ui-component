@@ -34,6 +34,7 @@ import {
   DropdownItem,
   DropdownButton,
   DropdownBtn,
+  DropdownHeader,
 } from '@morpheme/dropdown';
 import VModal from '@morpheme/modal';
 import VPagination from '@morpheme/pagination';
@@ -145,6 +146,7 @@ const plugin: Plugin = {
     app.component('VDropdownItem', DropdownItem);
     app.component('VDropdownButton', DropdownButton);
     app.component('VDropdownBtn', DropdownBtn);
+    app.component('VDropdownHeader', DropdownHeader);
     app.component('VFormSelect', VFormSelect);
     app.component('VInput', VInput);
     app.component('VInputGroup', VInputGroup);
