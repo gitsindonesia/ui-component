@@ -570,3 +570,16 @@ export const NavigationMenus: Story = (args, {argTypes}) => ({
     </div>
   `,
 });
+
+export const Sizes: Story = (args, {argTypes}) => ({
+  components: {Dropdown, DropdownItem, DropdownButton, DropdownHeader},
+  setup() {
+    return {args, argTypes, DropdownItem};
+  },
+  template: `
+    <Dropdown v-bind="args" size="xs" label="Size: xs" />
+    <Dropdown v-bind="args" size="sm" label="Size: sm" />
+    <Dropdown v-bind="args" label="Size: md (default)" />
+    <Dropdown v-bind="args" size="lg" label="Size: lg" />
+  `,
+});

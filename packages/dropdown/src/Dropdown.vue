@@ -35,6 +35,7 @@ export interface Props {
   shift?: boolean | number;
   flip?: boolean | number;
   block?: boolean;
+  size?: 'xs' | 'sm' | 'md' | 'lg';
 }
 
 withDefaults(defineProps<Props>(), {
@@ -62,6 +63,7 @@ withDefaults(defineProps<Props>(), {
   offset: 4,
   shift: true,
   flip: true,
+  size: 'md',
 });
 
 defineSlots<{
@@ -81,7 +83,7 @@ defineSlots<{
   <Menu
     as="div"
     class="dropdown"
-    :class="{'dropdown--block': block}"
+    :class="[`dropdown--${size}`, {'dropdown--block': block}]"
     v-slot="{open}"
   >
     <Float

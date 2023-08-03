@@ -195,4 +195,25 @@
     font-weight: var(--dropdown-button-activator-font-weight);
     line-height: var(--dropdown-button-activator-line-height);
   }
+
+  // sizes
+  &--xs {
+    --dropdown-item-height: 32px;
+    --dropdown-button-height: 32px;
+  }
+
+  &--sm {
+    --dropdown-item-height: 36px;
+    --dropdown-button-height: 36px;
+  }
+
+  &--md {
+    --dropdown-item-height: 44px;
+    --dropdown-button-height: 44px;
+  }
+
+  &--lg {
+    --dropdown-item-height: 48px;
+    --dropdown-button-height: 48px;
+  }
 }
