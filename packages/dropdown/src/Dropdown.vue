@@ -34,6 +34,7 @@ export interface Props {
   offset?: number;
   shift?: boolean | number;
   flip?: boolean | number;
+  block?: boolean;
 }
 
 withDefaults(defineProps<Props>(), {
@@ -73,10 +74,9 @@ defineSlots<{
 </script>
 
 <template>
-  <Menu as="div" class="dropdown">
+  <Menu as="div" class="dropdown" :class="{'dropdown--block': block}">
     <Float
-      as="div"
-      class="relative"
+      as="template"
       floating-as="template"
       :placement="placement"
       :transition-name="transition"

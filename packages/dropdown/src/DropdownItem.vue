@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {MenuItem} from '@headlessui/vue';
-import {computed, resolveComponent, useAttrs} from 'vue';
+import {computed, resolveComponent} from 'vue';
 import VIcon from '@morpheme/icon';
 
 const props = withDefaults(
@@ -15,6 +15,9 @@ const props = withDefaults(
     divider?: boolean;
     nuxt?: boolean;
     disabled?: boolean;
+    suffixIcon?: string;
+    suffixIconSize?: string;
+    suffixIconClass?: string;
   }>(),
   {
     iconClass: '',
@@ -51,15 +54,13 @@ const attributes = computed(() => {
     attrs['target'] = '_blank';
   }
 
-  return {
-    ...attrs,
-    ...useAttrs(),
-  };
+  return attrs;
 });
 
 defineSlots<{
   default?: (props: {}) => any;
   icon?: (props: {}) => any;
+  suffixIcon?: (props: {}) => any;
 }>();
 </script>
 
@@ -79,21 +80,31 @@ defineSlots<{
       v-bind="attributes"
     >
       <slot name="icon">
-        <VIcon
-          v-if="typeof icon === 'string'"
+        <component
+          v-if="icon"
+          :is="typeof icon === 'string' ? VIcon : icon"
           :name="icon"
           :size="iconSize"
-          :class="iconClass"
-          class="dropdown-item-icon"
-        />
-        <component
-          v-else
-          :is="icon"
-          :class="iconClass"
-          class="dropdown-item-icon"
+          :class="['dropdown-item-icon', iconClass]"
         />
       </slot>
-      <slot>{{ text }}</slot>
+      <slot>
+        <div class="dropdown-item-content">
+          {{ text }}
+        </div>
+      </slot>
+      <slot name="suffixIcon">
+        <component
+          v-if="suffixIcon"
+          :is="typeof suffixIcon === 'string' ? VIcon : suffixIcon"
+          :name="suffixIcon"
+          :size="suffixIconSize"
+          :class="[
+            'dropdown-item-icon dropdown-item-icon--suffix',
+            suffixIconClass,
+          ]"
+        />
+      </slot>
     </component>
   </MenuItem>
 </template>

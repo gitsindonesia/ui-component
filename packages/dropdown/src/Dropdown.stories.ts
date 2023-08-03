@@ -297,3 +297,52 @@ export const FloatingUI: Story = (args, {argTypes}) => ({
 FloatingUI.parameters = {
   layout: 'centered',
 };
+
+export const MultiLevel: Story = (args, {argTypes}) => ({
+  components: {Dropdown, DropdownItem, DropdownButton, DropdownHeader},
+  setup() {
+    return {args, argTypes, DropdownItem};
+  },
+  template: `
+    <Dropdown v-bind="args">
+      <DropdownHeader>Action</DropdownHeader>
+      <DropdownItem text="Calendar" icon="mdi:calendar"/>
+      <DropdownItem text="Files" icon="mdi:document" />
+      <DropdownItem divider/>
+      <Dropdown block placement="right-start" :offset="-4">
+        <template #activator>
+          <DropdownButton
+            :as="DropdownItem"
+            suffix-icon="heroicons:chevron-right"
+            text="Theme"
+          />
+        </template>
+        <DropdownItem text="System" />
+        <DropdownItem text="Light" />
+        <DropdownItem text="Dark" />
+      </Dropdown>
+      <Dropdown block placement="right-start" :offset="-4">
+        <template #activator>
+          <DropdownButton
+            :as="DropdownItem"
+            suffix-icon="heroicons:chevron-right"
+            text="More"
+          />
+        </template>
+        <DropdownItem text="Sub 1" />
+        <DropdownItem text="Sub 2" />
+        <Dropdown block placement="right-start" :offset="-4">
+          <template #activator>
+            <DropdownButton
+              :as="DropdownItem"
+              suffix-icon="heroicons:chevron-right"
+              text="More"
+            />
+          </template>
+          <DropdownItem text="Sub 1" />
+          <DropdownItem text="Sub 2" />
+        </Dropdown>
+      </Dropdown>
+    </Dropdown>
+  `,
+});
