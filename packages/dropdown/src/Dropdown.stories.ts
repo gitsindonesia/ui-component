@@ -163,11 +163,25 @@ export const CustomActivator: Story = (args, {argTypes}) => ({
     return {args, argTypes, Button};
   },
   template: `
-    <div class="flex justify-center mt-60">
+    <div class="flex justify-center mt-20">
+      <Dropdown v-bind="args" top top-class="bottom-12">
+        <template #activator>
+          <DropdownButton>
+            Default <code>VDropdownButton</code>
+          </DropdownButton>
+        </template>
+
+        <DropdownItem text="Calendar" icon="mdi:calendar"/>
+        <DropdownItem text="Files" icon="mdi:document" />
+        <DropdownItem divider/>
+        <DropdownItem text="Timer" icon="mdi:clock"/>
+      </Dropdown>
+    </div>
+    <div class="flex justify-center mt-20">
       <Dropdown v-bind="args" top top-class="bottom-12">
         <template #activator>
           <DropdownButton :as="Button" color="error" outlined>
-            My Button
+          <code>DropdownButton</code> as <code>VBtn</code>
           </DropdownButton>
         </template>
 
@@ -181,7 +195,7 @@ export const CustomActivator: Story = (args, {argTypes}) => ({
       <Dropdown v-bind="args" top top-class="bottom-12">
         <template #activator>
           <DropdownBtn color="success" outlined>
-            Custom Button
+            With <code>VDropdownBtn</code>
           </DropdownBtn>
         </template>
 
