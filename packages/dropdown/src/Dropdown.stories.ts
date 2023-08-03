@@ -6,13 +6,23 @@ import type {DropdownItemProps} from './types';
 import Button from '@morpheme/button';
 import DropdownBtn from './DropdownBtn.vue';
 
-const genItems = (length = 5): DropdownItemProps[] =>
-  Array.from({length}, (_, v) => ({
-    text: `Item ${v + 1}`,
-    icon: 'ri:home-line',
-  }));
-
-const items = [...genItems(2), {divider: true}, ...genItems(3)];
+const items = [
+  {
+    text: 'View',
+    icon: 'ic:round-visibility',
+  },
+  {
+    text: 'Edit',
+    icon: 'ic:round-edit',
+  },
+  {
+    divider: true,
+  },
+  {
+    text: 'Delete',
+    icon: 'ic:round-delete',
+  },
+];
 
 export default {
   title: 'Components/Dropdown',
@@ -52,6 +62,41 @@ export const PrefixIcon = Template.bind({});
 PrefixIcon.args = {
   prefixIcon: 'ic:round-person',
   label: 'Account',
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  items: [
+    {
+      text: 'Default',
+    },
+    {
+      text: 'Disabled',
+      disabled: true,
+    },
+    {
+      text: 'RouterLink',
+      to: '/home',
+      disabled: true,
+    },
+    {
+      text: 'NuxtLink',
+      to: '/nuxt',
+      nuxt: true,
+      disabled: true,
+    },
+    {
+      text: 'Go to Google',
+      href: 'https://google.com',
+      disabled: true,
+    },
+    {
+      text: 'Go to Google (New Tab)',
+      href: 'https://google.com',
+      disabled: true,
+      newTab: true,
+    },
+  ],
 };
 
 export const RouterLink = Template.bind({});
@@ -150,13 +195,17 @@ export const CustomActivator: Story = (args, {argTypes}) => ({
 });
 
 export const DarkMode: Story<{}> = (args) => ({
-  components: {Dropdown},
+  components: {Dropdown, DropdownItem},
   setup() {
     return {args};
   },
   template: `
 <main class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6 space-y-2">
-  <Dropdown v-bind="args"/>
+  <Dropdown v-bind="args">
+    <template #append>
+      <DropdownItem disabled>Disabled</DropdownItem>
+    </template>
+  </Dropdown>
 </main>
 `,
 });

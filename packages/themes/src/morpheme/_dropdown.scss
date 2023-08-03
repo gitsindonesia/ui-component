@@ -54,6 +54,9 @@
   --dropdown-button-activator-font-size: var(--size-font-sm);
   --dropdown-button-activator-font-weight: var(--font-weight-semibold);
   --dropdown-button-activator-line-height: 20px;
+
+  // disabled
+  --dropdown-item-disabled-color: var(--color-gray-400);
 }
 
 .dropdown {
@@ -121,7 +124,7 @@
     font-weight: var(--dropdown-item-font-weight);
     line-height: var(--dropdown-item-line-height);
 
-    &--active {
+    &--active:not(:disabled) {
       --dropdown-item-color: var(--dropdown-item-active-color);
       --dropdown-item-bg-color: var(--dropdown-item-active-bg-color);
     }
@@ -130,6 +133,13 @@
       width: var(--dropdown-item-icon-width) !important;
       height: var(--dropdown-item-icon-height) !important;
       color: var(--dropdown-item-icon-color);
+    }
+
+    &--disabled,
+    :disabled,
+    [aria-disabled='true'] {
+      cursor: not-allowed;
+      --dropdown-item-color: var(--dropdown-item-disabled-color);
     }
   }
 

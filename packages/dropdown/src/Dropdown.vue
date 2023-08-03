@@ -66,6 +66,8 @@ defineSlots<{
   default?: (props: {}) => any;
   activator?: (props: {btnProps: Record<string, any>; label: string}) => any;
   item?: (props: DropdownItemProps) => any;
+  prepend?: (props: {}) => any;
+  append?: (props: {}) => any;
 }>();
 </script>
 
@@ -118,9 +120,11 @@ defineSlots<{
           panelClass,
         ]"
       >
+        <slot name="prepend" />
         <slot>
           <DropdownItem v-for="item in items" :key="item.text" v-bind="item" />
         </slot>
+        <slot name="append" />
       </MenuItems>
     </Float>
   </Menu>

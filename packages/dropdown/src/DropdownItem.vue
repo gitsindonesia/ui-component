@@ -43,10 +43,10 @@ const attributes = computed(() => {
   }
 
   if (props.href) {
-    attrs['href'] = props.href;
+    attrs['href'] = props.disabled ? 'javascript:void(0)' : props.href;
   }
 
-  if (props.newTab) {
+  if (props.newTab && !props.disabled) {
     attrs['rel'] = 'noopener';
     attrs['target'] = '_blank';
   }
@@ -57,16 +57,6 @@ const attributes = computed(() => {
   };
 });
 
-// const attributes = computed(() => {
-//   return {
-//     to: props.to ?? undefined,
-//     href: props.href ?? undefined,
-//     target: props.href && props.newTab ? '_blank' : undefined,
-//     rel: props.href && props.newTab ? 'noopener' : undefined,
-//     ...useAttrs(),
-//   };
-// });
-
 defineSlots<{
   default?: (props: {}) => any;
   icon?: (props: {}) => any;
@@ -74,7 +64,7 @@ defineSlots<{
 </script>
 
 <template>
-  <MenuItem v-slot="{active}">
+  <MenuItem v-slot="{active}" :disabled="disabled">
     <div v-if="divider" class="dropdown-divider"></div>
     <component
       v-else
@@ -83,6 +73,7 @@ defineSlots<{
         'group dropdown-item',
         {
           'dropdown-item--active': active,
+          'dropdown-item--disabled': disabled,
         },
       ]"
       v-bind="attributes"
