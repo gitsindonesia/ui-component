@@ -64,10 +64,10 @@ const items = ref([
     </VCard>
 
     <VCard title="Sizes">
-      <VDropdown size="xs" label="Size: xs" />
-      <VDropdown size="sm" label="Size: sm" />
-      <VDropdown label="Size: md (default)" />
-      <VDropdown size="lg" label="Size: lg" />
+      <VDropdown :items="items" size="xs" label="Size: xs" />
+      <VDropdown :items="items" size="sm" label="Size: sm" />
+      <VDropdown :items="items" label="Size: md (default)" />
+      <VDropdown :items="items" size="lg" label="Size: lg" />
     </VCard>
 
     <VCard title="Multi Level">
