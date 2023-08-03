@@ -431,14 +431,16 @@
     flex-grow: 1;
     border: none;
     border-radius: var(--v-select-border-radius);
-    max-width: calc(100% - 20px);
+    max-width: calc(100% - 12px);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    height: auto !important;
 
     &:focus {
       outline: none;
       box-shadow: none;
+      border: none;
     }
 
     &-outside-wrapper {

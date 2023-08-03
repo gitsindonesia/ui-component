@@ -6,7 +6,6 @@ import {
   ListboxOption,
   ListboxLabel,
   Combobox,
-  ComboboxInput,
   ComboboxOptions,
   ComboboxOption,
   ComboboxButton,
@@ -18,7 +17,7 @@ import {computed, ref, watch} from 'vue';
 import VBadge from '@morpheme/badge';
 import {Float} from '@headlessui-float/vue';
 import type {Placement} from '@floating-ui/vue';
-import VDivider from '@morpheme/divider';
+import SelectSearchInput from './SelectSearchInput.vue';
 
 type T = Record<string, any>;
 type ModelValue = T | T[] | undefined;
@@ -68,6 +67,12 @@ const props = withDefaults(
     icon?: string;
     checkIcon?: string;
     clearIcon?: string;
+    searchPrefixIcon?: string;
+    searchPrefixIconSize?: string;
+    searchPrefixIconClass?: string;
+    searchSuffixIcon?: string;
+    searchSuffixIconSize?: string;
+    searchSuffixIconClass?: string;
   }>(),
   {
     itemText: 'text',
@@ -88,6 +93,8 @@ const props = withDefaults(
     icon: 'heroicons:chevron-down',
     checkIcon: 'heroicons:check',
     clearIcon: 'heroicons:x-mark',
+    searchPrefixIconSize: 'sm',
+    searchSuffixIconSize: 'sm',
   },
 );
 
@@ -286,12 +293,18 @@ defineSlots<{
             </div>
           </slot>
 
-          <ComboboxInput
+          <SelectSearchInput
             v-if="searchable && searchPlacement === 'inside'"
-            class="v-select-input"
-            :display-value="displayValue ?? defaultDisplayValue"
+            :placement="searchPlacement"
             :placeholder="searchPlaceholder || placeholder"
             :disabled="disabled"
+            :display-value="displayValue ?? defaultDisplayValue"
+            :prefix-icon="searchPrefixIcon"
+            :prefix-icon-size="searchPrefixIconSize"
+            :prefix-icon-class="searchPrefixIconClass"
+            :suffix-icon="searchSuffixIcon"
+            :suffix-icon-size="searchSuffixIconSize"
+            :suffix-icon-class="searchSuffixIconClass"
             @change="query = $event.target.value"
             @keydown.enter="query = ''"
           />
@@ -358,20 +371,22 @@ defineSlots<{
           :is="searchable ? ComboboxOptions : ListboxOptions"
           class="v-select-options"
         >
-          <div
+          <SelectSearchInput
             v-if="searchable && searchPlacement === 'outside'"
-            class="v-select-input-outside-wrapper"
-          >
-            <ComboboxInput
-              class="v-select-input"
-              :display-value="displayValue ?? defaultDisplayValue"
-              :placeholder="searchPlaceholder || placeholder"
-              :disabled="disabled"
-              @change="query = $event.target.value"
-              @keydown.enter="query = ''"
-            />
-            <VDivider />
-          </div>
+            :placement="searchPlacement"
+            :placeholder="searchPlaceholder || placeholder"
+            :disabled="disabled"
+            :display-value="displayValue ?? defaultDisplayValue"
+            :prefix-icon="searchPrefixIcon"
+            :prefix-icon-size="searchPrefixIconSize"
+            :prefix-icon-class="searchPrefixIconClass"
+            :suffix-icon="searchSuffixIcon"
+            :suffix-icon-size="searchSuffixIconSize"
+            :suffix-icon-class="searchSuffixIconClass"
+            @change="query = $event.target.value"
+            @keydown.enter="query = ''"
+          />
+
           <slot
             name="empty"
             v-bind="{

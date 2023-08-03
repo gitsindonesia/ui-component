@@ -22,6 +22,10 @@ export default {
       control: 'select',
       options: themeColors,
     },
+    searchPlacement: {
+      control: 'select',
+      options: ['inside', 'outside'],
+    },
   },
   args: {
     items,
@@ -118,6 +122,16 @@ SearchableOutsidePlacement.args = {
   placeholder: 'Choose',
   label: 'Searchable Outside Placement',
   chips: true,
+};
+
+export const SearchableInputIcons = Template.bind({});
+SearchableInputIcons.args = {
+  searchable: true,
+  placeholder: 'Choose',
+  label: 'Searchable With Icons',
+  chips: true,
+  searchPrefixIcon: 'ic:round-search',
+  searchSuffixIcon: 'heroicons:plus',
 };
 
 export const Empty = Template.bind({});
