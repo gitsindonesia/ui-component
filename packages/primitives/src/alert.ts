@@ -1,28 +1,10 @@
-import {defineComponent, h, provide, ref, useSlots, inject} from 'vue';
+import {defineComponent, h, provide, ref, inject} from 'vue';
 
 export const AlertContext = Symbol('AlertContext');
-export const AlertGroupContext = Symbol('AlertGroupContext');
 
 export function useAlert() {
   return inject(AlertContext);
 }
-
-export function useAlertGroup() {
-  return inject(AlertGroupContext);
-}
-
-export const AlertGroup = defineComponent({
-  name: 'AlertGroup',
-  setup() {
-    const slots = useSlots();
-    const isOpen = ref(false);
-    const context = {
-      isOpen,
-    };
-    provide(AlertGroupContext, context);
-    return () => slots.default?.();
-  },
-});
 
 export const Alert = defineComponent({
   name: 'Alert',
