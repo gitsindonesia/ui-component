@@ -1,9 +1,27 @@
-import {defineComponent, h, provide, ref, inject, watch} from 'vue';
+import {
+  defineComponent,
+  h,
+  provide,
+  ref,
+  inject,
+  watch,
+  Ref,
+  InjectionKey,
+} from 'vue';
 
-export const AlertContext = Symbol('AlertContext');
+export interface AlertContext {
+  isOpen: Ref<boolean>;
+  show: () => void;
+  hide: () => void;
+  toggle: () => void;
+}
+
+export const AlertInjectionKey = Symbol(
+  'AlertContext',
+) as InjectionKey<AlertContext>;
 
 export function useAlert() {
-  return inject(AlertContext);
+  return inject<AlertContext>(AlertInjectionKey) as AlertContext;
 }
 
 export const Alert = defineComponent({
@@ -51,14 +69,14 @@ export const Alert = defineComponent({
       isOpen.value = !isOpen.value;
     }
 
-    const context = {
+    const context: AlertContext = {
       isOpen,
       show,
       hide,
       toggle,
     };
 
-    provide(AlertContext, context);
+    provide(AlertInjectionKey, context);
 
     const defaultSlot = slots.default?.({
       isOpen,
