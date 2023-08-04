@@ -1,0 +1,41 @@
+{
+  "name": "@morpheme/primitives",
+  "version": "1.0.0-beta.11",
+  "description": "Unstyled Vue 3 UI Component Library",
+  "scripts": {
+    "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
+    "prepublishOnly": "npm run build",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "vue": "^3.3.4"
+  },
+  "main": "./dist/primitives.umd.js",
+  "unpkg": "./dist/primitives.iife.js",
+  "jsdelivr": "./dist/primitives.iife.js",
+  "module": "./dist/primitives.mjs",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/primitives.mjs",
+      "require": "./dist/primitives.js"
+    },
+    "./src/*": "./src/*",
+    "./*": "./*"
+  },
+  "gitHead": "02a1a784354fe06a05c5a2ca392aa295335766dd",
+  "devDependencies": {
+    "c8": "^7.11.3",
+    "vite": "^4.3.8",
+    "vitest": "^0.12.4"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morphemeindonesia/ui-component"
+  },
+  "bugs": {
+    "url": "https://github.com/morphemeindonesia/ui-component/issues/new/choose"
+  },
+  "homepage": "https://github.com/morphemeindonesia/ui-component"
+}
