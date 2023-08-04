@@ -1,4 +1,4 @@
-import {defineComponent, h, provide, ref, inject} from 'vue';
+import {defineComponent, h, provide, ref, inject, watch} from 'vue';
 
 export const AlertContext = Symbol('AlertContext');
 
@@ -13,9 +13,31 @@ export const Alert = defineComponent({
       type: String,
       default: 'div',
     },
+    modelValue: {
+      type: Boolean,
+      default: true,
+    },
   },
-  setup(props, {slots}) {
-    const isOpen = ref(true);
+  emits: {
+    'update:modelValue'(_payload: boolean) {
+      return true;
+    },
+  },
+  setup(props, {slots, emit}) {
+    const isOpen = ref(props.modelValue);
+
+    watch(
+      () => props.modelValue,
+      (newValue) => {
+        isOpen.value = newValue;
+      },
+    );
+
+    watch(isOpen, (newValue) => {
+      if (newValue !== props.modelValue) {
+        emit('update:modelValue', newValue);
+      }
+    });
 
     function show() {
       isOpen.value = true;

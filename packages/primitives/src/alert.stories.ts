@@ -1,5 +1,6 @@
 import type {Story} from '@storybook/vue3';
 import {AlertGroup, Alert} from './alert';
+import {ref} from 'vue';
 
 export default {
   title: 'Primitives/Alert',
@@ -72,6 +73,30 @@ export const CustomRender: Story = (args) => ({
 
       <button @click="hide">
         Close
+      </button>
+    </Alert>
+  `,
+});
+
+export const VModel: Story = (args) => ({
+  components: {Alert},
+  setup() {
+    const isOpen = ref(true);
+    return {args, isOpen};
+  },
+  template: `
+    <Alert
+      v-bind="args"
+      v-slot="{hide}"
+      v-model="isOpen"
+    >
+      This alert is rendered as a paragraph
+
+      <button @click="hide">
+        Close
+      </button>
+      <button @click="isOpen = false">
+        Close via model
       </button>
     </Alert>
   `,
