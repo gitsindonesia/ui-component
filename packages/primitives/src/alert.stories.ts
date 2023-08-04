@@ -1,5 +1,5 @@
 import type {Story} from '@storybook/vue3';
-import {AlertGroup, Alert} from './alert';
+import {Alert} from './alert';
 import {ref} from 'vue';
 
 export default {
