@@ -56,20 +56,26 @@ export const Alert = defineComponent({
 
     provide(AlertContext, context);
 
+    const defaultSlot = slots.default?.({
+      isOpen,
+      show,
+      hide,
+      toggle,
+    });
+
+    const defaultRender = h(
+      props.as,
+      {
+        role: 'alert',
+      },
+      defaultSlot,
+    );
+
     return () =>
       isOpen.value
-        ? h(
-            props.as,
-            {
-              role: 'alert',
-            },
-            slots.default?.({
-              isOpen,
-              show,
-              hide,
-              toggle,
-            }),
-          )
+        ? props.as === 'template'
+          ? defaultSlot
+          : defaultRender
         : null;
   },
 });

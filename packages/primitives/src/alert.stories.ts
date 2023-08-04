@@ -54,7 +54,21 @@ export const CustomRender: Story = (args) => ({
       v-slot="{hide}"
       as="p"
     >
-      This is the title
+      This alert is rendered as a paragraph
+
+      <button @click="hide">
+        Close
+      </button>
+    </Alert>
+
+    <Alert
+      v-bind="args"
+      v-slot="{hide}"
+      as="template"
+    >
+      <div role="alert">
+        This alert is rendered as a template
+      </div>
 
       <button @click="hide">
         Close
