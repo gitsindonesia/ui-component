@@ -4,11 +4,11 @@ outline: deep
 
 # Alert
 
-TODO: DESCRIPTION
+The `Alert` component is used to communicate an important and usually time-sensitive message to the user. The browser will send out an accessible alert event to assistive technology products which can then notify the user.
 
 ## Features
 
-TODO
+- ✅ Can be controlled or uncontrolled.
 
 ## Installation
 

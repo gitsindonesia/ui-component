@@ -1,6 +1,6 @@
 # Morpheme Primitives
 
-TODO
+Unstyled, accessible components for building high‑quality design systems and web apps in Vue.
 
 ## Installation
 
@@ -12,3 +12,4 @@ npm i @morpheme/primitives
 
 - [Alert](./alert.md)
 - [Accordion](./accordion.md)
+- [Collapsible](./collapsible.md)

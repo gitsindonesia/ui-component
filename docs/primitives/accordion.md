@@ -4,11 +4,11 @@ outline: deep
 
 # Accordion
 
-TODO: DESCRIPTION
+A vertically stacked set of interactive headings that each reveal an associated section of content.
 
 ## Features
 
-TODO
+- ✅ Can be controlled or uncontrolled.
 
 ## Installation
 
