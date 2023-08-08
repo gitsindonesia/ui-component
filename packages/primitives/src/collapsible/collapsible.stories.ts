@@ -10,6 +10,10 @@ import {ref} from 'vue';
 export default {
   title: 'Primitives/Collapsible',
   component: Collapsible,
+  subcomponents: {
+    CollapsibleButton,
+    CollapsibleContent,
+  },
 };
 
 export const Default: Story = (args) => ({

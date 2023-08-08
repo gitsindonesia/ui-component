@@ -5,6 +5,10 @@ import {ref} from 'vue';
 export default {
   title: 'Primitives/Switch',
   component: Switch,
+  subcomponents: {
+    SwitchThumb,
+    SwitchLabel,
+  },
 };
 
 export const Default: Story = (args) => ({
