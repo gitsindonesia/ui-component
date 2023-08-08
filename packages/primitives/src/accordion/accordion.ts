@@ -10,7 +10,10 @@ import {
   PropType,
   unref,
   computed,
+  withDirectives,
+  vShow,
 } from 'vue';
+import CollapseTransition from '../transition/CollapseTransition.vue';
 
 export interface AccordionContext {
   addItem: (item: AccordionItemData) => void;
@@ -244,27 +247,27 @@ export const AccordionContent = defineComponent({
   setup(_props, {slots}) {
     const {orientation} = useAccordion();
     const {open} = useAccordionItem();
-    const contentRef = ref<HTMLDivElement>();
 
     return () =>
       h(
-        'div',
+        CollapseTransition,
+        {},
         {
-          ref: contentRef,
-          'data-orientation': orientation,
-          'data-state': open.value ? 'open' : 'closed',
-          style: {
-            '--m-accordion-content-display': 'none',
-            '--m-accordion-content-width':
-              contentRef.value?.style?.width + 'px',
-            '--m-accordion-content-height':
-              contentRef.value?.style?.height + 'px' ?? 'auto',
-          },
-          hidden: !open.value,
+          default: () =>
+            withDirectives(
+              h(
+                'div',
+                {
+                  'data-orientation': orientation,
+                  'data-state': open.value ? 'open' : 'closed',
+                },
+                slots.default?.({
+                  open: unref(open),
+                }),
+              ),
+              [[vShow, open.value]],
+            ),
         },
-        slots.default?.({
-          open: unref(open),
-        }),
       );
   },
 });
