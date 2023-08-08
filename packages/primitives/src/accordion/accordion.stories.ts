@@ -12,6 +12,11 @@ import {ChevronDownIcon} from '@morphemeicons/vue/untitled';
 export default {
   title: 'Primitives/Accordion',
   component: Accordion,
+  subcomponents: {
+    AccordionItem,
+    AccordionButton,
+    AccordionContent,
+  },
 };
 
 export const Default: Story = (args) => ({
