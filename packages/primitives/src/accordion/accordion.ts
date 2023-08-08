@@ -82,7 +82,7 @@ export const Accordion = defineComponent({
     function addItem(item: AccordionItemData) {
       items.value.push({
         ...item,
-        open: false,
+        open: props.defaultValue === item.value,
       });
     }
 
