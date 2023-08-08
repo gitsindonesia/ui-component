@@ -1,6 +1,7 @@
 import type {Story} from '@storybook/vue3';
 import {Alert} from './alert';
 import {ref} from 'vue';
+import {XCloseIcon} from '@morphemeicons/vue/untitled';
 
 export default {
   title: 'Primitives/Alert',
@@ -8,7 +9,7 @@ export default {
 };
 
 export const Default: Story = (args) => ({
-  components: {Alert},
+  components: {Alert, XCloseIcon},
   setup() {
     return {args};
   },
@@ -16,28 +17,33 @@ export const Default: Story = (args) => ({
     <Alert
       v-bind="args"
       v-slot="{hide}"
+      class="bg-green-500 text-white text-sm p-4 rounded-lg flex justify-between items-center"
     >
       This is the title
 
       <button @click="hide">
-        Close
+        <XCloseIcon class="w-5 h-5" />
       </button>
     </Alert>
   `,
 });
 
 export const Transition: Story = (args) => ({
-  components: {Alert},
+  components: {Alert, XCloseIcon},
   setup() {
     return {args};
   },
   template: `
     <transition name="fade">
-      <Alert v-bind="args" v-slot="{hide}">
+      <Alert
+        v-bind="args"
+        v-slot="{hide}"
+        class="bg-green-500 text-white text-sm p-4 rounded-lg flex justify-between items-center"
+      >
         This is the title
 
         <button @click="hide">
-          Close
+          <XCloseIcon class="w-5 h-5" />
         </button>
       </Alert>
     </transition>
@@ -45,7 +51,7 @@ export const Transition: Story = (args) => ({
 });
 
 export const CustomRender: Story = (args) => ({
-  components: {Alert},
+  components: {Alert, XCloseIcon},
   setup() {
     return {args};
   },
@@ -54,11 +60,12 @@ export const CustomRender: Story = (args) => ({
       v-bind="args"
       v-slot="{hide}"
       as="p"
+      class="bg-amber-500 mb-4 text-white text-sm p-4 rounded-lg flex justify-between items-center"
     >
       This alert is rendered as a paragraph
 
       <button @click="hide">
-        Close
+        <XCloseIcon class="w-5 h-5" />
       </button>
     </Alert>
 
@@ -67,19 +74,22 @@ export const CustomRender: Story = (args) => ({
       v-slot="{hide}"
       as="template"
     >
-      <div role="alert">
+      <div
+        role="alert"
+        class="bg-rose-500 text-white text-sm p-4 rounded-lg flex justify-between items-center"
+      >
         This alert is rendered as a template
-      </div>
 
-      <button @click="hide">
-        Close
-      </button>
+        <button @click="hide">
+          <XCloseIcon class="w-5 h-5" />
+        </button>
+      </div>
     </Alert>
   `,
 });
 
 export const VModel: Story = (args) => ({
-  components: {Alert},
+  components: {Alert, XCloseIcon},
   setup() {
     const isOpen = ref(true);
     return {args, isOpen};
@@ -89,16 +99,19 @@ export const VModel: Story = (args) => ({
       v-bind="args"
       v-slot="{hide}"
       v-model="isOpen"
+      class="bg-fuchsia-500 mb-4 text-white text-sm p-4 rounded-lg flex justify-between items-center"
     >
       This alert is rendered as a paragraph
 
-      <button @click="hide">
-        Close
-      </button>
-      <button @click="isOpen = false">
-        Close via model
-      </button>
+      <div class="flex items-center gap-2">
+        <button @click="hide">
+          <XCloseIcon class="w-5 h-5" />
+        </button>
+      </div>
     </Alert>
+    <button @click="isOpen = !isOpen">
+      {{ isOpen ? 'Hide' : 'Show' }} Alert
+    </button>
   `,
 });
 
