@@ -26,7 +26,7 @@ export const Default: Story = (args) => ({
     <Collapsible>
       <CollapsibleButton
         v-slot="{open}"
-        class="flex py-2 justify-between w-full gap-4 items-center"
+        class="flex py-2 bg-white justify-between w-full gap-4 items-center"
       >
         <h3 class="text-sm">
           Title
@@ -39,7 +39,9 @@ export const Default: Story = (args) => ({
         />
       </CollapsibleButton>
 
-      <CollapsibleContent class="text-sm text-gray-800">
+      <CollapsibleContent
+        class="text-sm text-gray-800"
+      >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
         euismod eu lorem et ultricies. In porta lorem at dui semper
         porttitor. Nullam quis cursus dui. Cras tincidunt vehicula
@@ -82,5 +84,11 @@ export const VModel: Story = (args) => ({
         porttitor. Nullam quis cursus dui. Cras tincidunt vehicula
       </CollapsibleContent>
     </Collapsible>
+
+    <div class="mt-4">
+      <button @click="value = !value" class="rounded-lg bg-blue-600 text-white px-3 py-2 text-sm">
+        {{ value ? 'Close' : 'Open' }}
+      </button>
+    </div>
   `,
 });

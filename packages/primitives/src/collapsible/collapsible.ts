@@ -8,7 +8,10 @@ import {
   Ref,
   InjectionKey,
   unref,
+  withDirectives,
+  vShow,
 } from 'vue';
+import CollapseTransition from '../transition/CollapseTransition.vue';
 
 export interface CollapsibleContext {
   open: Ref<boolean>;
@@ -131,16 +134,25 @@ export const CollapsibleContent = defineComponent({
   setup(props, {slots}) {
     const {open} = useCollapsible();
 
-    const defaultSlot = slots.default?.({
-      open: unref(open),
-    });
-    const defaultRender = h(props.as, {}, defaultSlot);
-
     return () =>
-      open.value
-        ? props.as === 'template'
-          ? defaultSlot
-          : defaultRender
-        : null;
+      h(
+        CollapseTransition,
+        {},
+        {
+          default: () =>
+            withDirectives(
+              h(
+                props.as,
+                {
+                  'data-state': open.value ? 'open' : 'closed',
+                },
+                slots.default?.({
+                  open: unref(open),
+                }),
+              ),
+              [[vShow, open.value]],
+            ),
+        },
+      );
   },
 });
