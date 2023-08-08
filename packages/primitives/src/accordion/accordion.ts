@@ -157,7 +157,15 @@ export const AccordionItem = defineComponent({
   setup(props, {slots}) {
     const itemRef = ref();
 
-    const {addItem, removeItem, toggleItem, getItem} = useAccordion();
+    const {
+      addItem,
+      removeItem,
+      toggleItem,
+      getItem,
+      orientation,
+      dir,
+      disabled,
+    } = useAccordion();
     const item = computed(() => getItem(props.value));
     const open = computed(() => item.value?.open ?? false);
 
@@ -193,7 +201,13 @@ export const AccordionItem = defineComponent({
     return () =>
       h(
         'div',
-        {ref: itemRef},
+        {
+          ref: itemRef,
+          'data-state': open.value ? 'open' : 'closed',
+          'data-orientation': orientation,
+          'data-disabled': disabled,
+          'data-dir': dir,
+        },
         slots.default?.({
           open: unref(open),
           toggle,
@@ -205,6 +219,7 @@ export const AccordionItem = defineComponent({
 export const AccordionButton = defineComponent({
   name: 'AccordionButton',
   setup(_, {slots}) {
+    const {orientation} = useAccordion();
     const {toggle, open} = useAccordionItem();
 
     return () =>
@@ -212,6 +227,9 @@ export const AccordionButton = defineComponent({
         'button',
         {
           onClick: toggle,
+          'aria-expanded': open.value,
+          'data-state': open.value ? 'open' : 'closed',
+          'data-orientation': orientation,
         },
         slots.default?.({
           open: unref(open),
@@ -224,6 +242,7 @@ export const AccordionButton = defineComponent({
 export const AccordionContent = defineComponent({
   name: 'AccordionContent',
   setup(_props, {slots}) {
+    const {orientation} = useAccordion();
     const {open} = useAccordionItem();
     const contentRef = ref<HTMLDivElement>();
 
@@ -232,6 +251,7 @@ export const AccordionContent = defineComponent({
         'div',
         {
           ref: contentRef,
+          'data-orientation': orientation,
           'data-state': open.value ? 'open' : 'closed',
           style: {
             '--m-accordion-content-display': 'none',
