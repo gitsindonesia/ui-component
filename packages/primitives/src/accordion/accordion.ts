@@ -9,11 +9,24 @@ import {
   InjectionKey,
   PropType,
   unref,
+  computed,
 } from 'vue';
 
 export interface AccordionContext {
-  addItem: (item: any) => void;
-  removeItem: (item: any) => void;
+  addItem: (item: AccordionItemData) => void;
+  removeItem: (value: string | number) => void;
+  toggleItem: (value: string | number) => void;
+  getItem: (value: string | number) => AccordionItemData | undefined;
+  items: Ref<AccordionItemData[]>;
+  disabled: boolean;
+  dir: AccordionDirection;
+  orientation: AccordionOrientation;
+}
+
+export interface AccordionItemData {
+  value: string | number;
+  el: HTMLDivElement;
+  open: boolean;
 }
 
 export const AccordionInjectionKey = Symbol(
@@ -27,7 +40,7 @@ export function useAccordion() {
 export type AccordionType = 'single' | 'multiple';
 export type AccordionDirection = 'ltr' | 'rtl';
 export type AccordionOrientation = 'vertical' | 'horizontal';
-export type AccordionValue = string | number | Array<string | number>;
+export type AccordionValue = string | number;
 
 export const Accordion = defineComponent({
   name: 'AccordionRoot',
@@ -40,10 +53,7 @@ export const Accordion = defineComponent({
       type: [String, Number, Array] as PropType<AccordionValue>,
     },
     defaultValue: {
-      type: [String, Number, Array],
-    },
-    onChange: {
-      type: Function as PropType<(value: string | number) => void>,
+      type: [String, Number] as PropType<AccordionValue>,
     },
     collapsible: {
       type: Boolean,
@@ -63,22 +73,54 @@ export const Accordion = defineComponent({
     },
   },
   emits: {},
-  setup(props, {slots, emit}) {
-    const items = ref([]);
+  setup(props, {slots}) {
+    const items = ref<AccordionItemData[]>([] as AccordionItemData[]);
 
-    function addItem(item: any) {
-      items.value.push(item);
+    function addItem(item: AccordionItemData) {
+      items.value.push({
+        ...item,
+        open: false,
+      });
     }
 
-    function removeItem(item: any) {
-      const index = items.value.indexOf(item);
-      items.value.splice(index, 1);
+    function removeItem(value: AccordionValue) {
+      const index = items.value.findIndex((item) => item.value === value);
+      if (index > -1) {
+        items.value.splice(index, 1);
+      }
+    }
+
+    function toggleItem(value: AccordionValue) {
+      if (props.type === 'single') {
+        items.value.forEach((item) => {
+          if (item.value === value) {
+            item.open = !item.open;
+          } else {
+            item.open = false;
+          }
+        });
+      } else {
+        items.value.forEach((item) => {
+          if (item.value === value) {
+            item.open = !item.open;
+          }
+        });
+      }
+    }
+
+    function getItem(value: AccordionValue) {
+      return items.value.find((item) => item.value === value);
     }
 
     const context: AccordionContext = {
       items,
       addItem,
       removeItem,
+      toggleItem,
+      getItem,
+      disabled: props.disabled,
+      dir: props.dir,
+      orientation: props.orientation,
     };
 
     provide(AccordionInjectionKey, context);
@@ -91,6 +133,8 @@ interface AccordionItemContext {
   itemRef: Ref<HTMLDivElement>;
   open: Ref<boolean>;
   toggle: () => void;
+  value: AccordionValue;
+  item: Ref<AccordionItemData | undefined>;
 }
 
 const AccordionItemInjectionKey = Symbol(
@@ -110,23 +154,28 @@ export const AccordionItem = defineComponent({
     },
   },
   emits: {},
-  setup(props, {slots, emit}) {
+  setup(props, {slots}) {
     const itemRef = ref();
-    const open = ref(false);
 
-    const {addItem, removeItem} = useAccordion();
+    const {addItem, removeItem, toggleItem, getItem} = useAccordion();
+    const item = computed(() => getItem(props.value));
+    const open = computed(() => item.value?.open ?? false);
 
     function toggle() {
-      open.value = !open.value;
+      toggleItem(props.value);
     }
 
     watch(
       () => itemRef.value,
-      (value) => {
-        if (value) {
-          addItem(value);
+      (newRef) => {
+        if (newRef) {
+          addItem({
+            value: props.value,
+            el: newRef,
+            open: false,
+          });
         } else {
-          removeItem(value);
+          removeItem(props.value);
         }
       },
     );
@@ -135,6 +184,8 @@ export const AccordionItem = defineComponent({
       itemRef,
       open,
       toggle,
+      value: props.value,
+      item,
     };
 
     provide(AccordionItemInjectionKey, context);
@@ -153,9 +204,7 @@ export const AccordionItem = defineComponent({
 
 export const AccordionButton = defineComponent({
   name: 'AccordionButton',
-  props: {},
-  emits: {},
-  setup(props, {slots, emit}) {
+  setup(_, {slots}) {
     const {toggle, open} = useAccordionItem();
 
     return () =>
@@ -174,8 +223,6 @@ export const AccordionButton = defineComponent({
 
 export const AccordionContent = defineComponent({
   name: 'AccordionContent',
-  props: {},
-  emits: {},
   setup(_props, {slots}) {
     const {open} = useAccordionItem();
     const contentRef = ref<HTMLDivElement>();
