@@ -9,8 +9,6 @@ import {
   Ref,
   InjectionKey,
   unref,
-  withDirectives,
-  vShow,
 } from 'vue';
 
 export interface MenuContext {
@@ -18,6 +16,9 @@ export interface MenuContext {
   show: () => void;
   hide: () => void;
   toggle: () => void;
+  buttonRef?: Ref<HTMLElement>;
+  registerButton: (button: Ref<HTMLElement>) => void;
+  unregisterButton: () => void;
 }
 
 export const MenuInjectionKey = Symbol(
@@ -47,6 +48,7 @@ export const Menu = defineComponent({
   },
   setup(props, {slots, emit}) {
     const open = ref(props.modelValue);
+    const buttonRef = ref();
 
     watch(
       () => props.modelValue,
@@ -73,11 +75,22 @@ export const Menu = defineComponent({
       open.value = !open.value;
     }
 
+    function registerButton(button: Ref<HTMLElement>) {
+      buttonRef.value = button;
+    }
+
+    function unregisterButton() {
+      buttonRef.value = undefined;
+    }
+
     const context: MenuContext = {
       open,
       show,
       hide,
       toggle,
+      buttonRef,
+      registerButton,
+      unregisterButton,
     };
 
     provide(MenuInjectionKey, context);
@@ -104,7 +117,16 @@ export const MenuButton = defineComponent({
     },
   },
   setup(props, {slots}) {
-    const {toggle, open} = useMenu();
+    const {toggle, open, registerButton, unregisterButton} = useMenu();
+    const target = ref();
+
+    watch(target, (newValue) => {
+      if (newValue) {
+        registerButton(newValue);
+      } else {
+        unregisterButton();
+      }
+    });
 
     return () =>
       h(
@@ -112,6 +134,7 @@ export const MenuButton = defineComponent({
         {
           ...(props.as === 'button' ? {type: 'button'} : {role: 'button'}),
           onClick: toggle,
+          ref: target,
         },
         slots.default?.({
           open: unref(open),
@@ -130,10 +153,14 @@ export const MenuItems = defineComponent({
     },
   },
   setup(props, {slots}) {
-    const {toggle, open} = useMenu();
+    const {toggle, hide, open, buttonRef} = useMenu();
     const target = ref();
 
-    onClickOutside(target, toggle);
+    onClickOutside(target, (event) => {
+      if (event.target !== buttonRef?.value) {
+        hide();
+      }
+    });
 
     return () =>
       open.value
@@ -145,6 +172,7 @@ export const MenuItems = defineComponent({
             slots.default?.({
               open: unref(open),
               toggle,
+              hide,
             }),
           )
         : null;
