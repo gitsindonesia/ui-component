@@ -1,3 +1,4 @@
+import {onClickOutside} from '@vueuse/core';
 import {
   defineComponent,
   h,
@@ -130,12 +131,17 @@ export const MenuItems = defineComponent({
   },
   setup(props, {slots}) {
     const {toggle, open} = useMenu();
+    const target = ref();
+
+    onClickOutside(target, toggle);
 
     return () =>
       open.value
         ? h(
             props.as,
-            {},
+            {
+              ref: target,
+            },
             slots.default?.({
               open: unref(open),
               toggle,
