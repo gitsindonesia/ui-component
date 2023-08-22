@@ -45,7 +45,7 @@ export const Default: Story = (args) => ({
       <transition name="fade">
         <DialogPanel
           class="
-            fixed z-20 w-[500px] bg-white rounded-lg shadow-lg p-4
+            fixed z-20 w-[400px] bg-white rounded-lg shadow-lg p-4
           "
           :style="{
             top: '50%',
@@ -68,7 +68,6 @@ export const Default: Story = (args) => ({
               @click="isOpen = false">
               Delete
             </button>
-          </div>
           </div>
         </DialogPanel>
       </transition>
