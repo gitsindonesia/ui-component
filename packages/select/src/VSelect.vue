@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import {computed, PropType, ref, toRefs, watch} from 'vue';
 import {
-  Listbox,
-  ListboxButton,
-  ListboxOptions,
-  ListboxOption,
-  ListboxLabel,
+  Combobox,
+  ComboboxButton,
+  ComboboxOptions,
+  ComboboxOption,
+  ComboboxLabel,
 } from '@headlessui/vue';
 import VTooltip from '@morpheme/tooltip';
 import {FieldOptions} from 'vee-validate';
@@ -289,12 +289,12 @@ defineSlots<{
       wrapperClass,
     ]"
   >
-    <Listbox v-model="uncontrolledValue">
-      <ListboxLabel v-if="label" class="v-select-label" :class="labelClass">
+    <Combobox v-model="uncontrolledValue">
+      <ComboboxLabel v-if="label" class="v-select-label" :class="labelClass">
         {{ label }}
-      </ListboxLabel>
+      </ComboboxLabel>
       <div class="v-select-panel">
-        <ListboxButton
+        <ComboboxButton
           class="v-select-button"
           :class="[btnClass]"
           :disabled="disabled"
@@ -332,10 +332,10 @@ defineSlots<{
             class="v-select-icon"
             aria-hidden="true"
           />
-        </ListboxButton>
+        </ComboboxButton>
 
         <transition :name="transition">
-          <ListboxOptions
+          <ComboboxOptions
             class="v-select-options"
             :class="{
               'bottom-10': top,
@@ -350,6 +350,13 @@ defineSlots<{
                 clearable
                 v-bind="searchProps"
               />
+              <!--
+              <ComboboxInput
+                :placeholder="searchPlaceholder"
+                @change="search = $event.target.value"
+                v-bind="searchProps"
+              />
+              -->
             </div>
             <div
               v-if="searchable && !filteredItems.length"
@@ -357,7 +364,7 @@ defineSlots<{
             >
               <slot name="empty"> No results</slot>
             </div>
-            <ListboxOption
+            <ComboboxOption
               v-for="(item, index) in filteredItems"
               v-slot="{selected, active}"
               :key="index"
@@ -395,11 +402,11 @@ defineSlots<{
                   </slot>
                 </span>
               </li>
-            </ListboxOption>
-          </ListboxOptions>
+            </ComboboxOption>
+          </ComboboxOptions>
         </transition>
       </div>
-    </Listbox>
+    </Combobox>
     <p v-if="hint" class="v-select-hint">
       <slot name="hint">
         {{ hint }}
