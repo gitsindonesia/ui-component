@@ -206,6 +206,14 @@ defineSlots<{
     selectionItemProps?: InstanceType<typeof VBadge>['$props'];
   }) => any;
   empty?: (props: {items: T[]; emptyText?: string}) => any;
+  'item-text'?: (props: {
+    item: T;
+    itemText?: string;
+    itemValue?: string;
+    active: boolean;
+    selected: boolean;
+  }) => any;
+  'check-icon'?: (props: {selected: boolean; icon: string}) => any;
 }>();
 </script>
 
@@ -430,14 +438,26 @@ defineSlots<{
                       'v-select-option-check--selected': selected,
                     }"
                   >
-                    <VIcon
+                    <slot
                       v-if="selected"
-                      :name="checkIcon"
-                      class="v-select-option-check-icon"
-                      size="sm"
-                    />
+                      name="check-icon"
+                      v-bind="{selected, icon: checkIcon}"
+                    >
+                      <VIcon
+                        :name="checkIcon"
+                        class="v-select-option-check-icon"
+                        size="sm"
+                      />
+                    </slot>
                   </div>
-                  <div class="v-select-option-text">{{ item[itemText] }}</div>
+                  <div class="v-select-option-text">
+                    <slot
+                      name="item-text"
+                      v-bind="{item, itemText, itemValue, active, selected}"
+                    >
+                      {{ item[itemText] }}
+                    </slot>
+                  </div>
                 </div>
               </slot>
             </component>

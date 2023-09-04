@@ -251,6 +251,32 @@ export const Slots: Story<typeof Select> = (args) => ({
         </p>
       </template>
     </Select>
+
+    <Select
+      v-bind="args"
+      label="Custom Item Text"
+      class="mt-4"
+    >
+      <template v-slot:item-text="{item, itemText, selected, active}">
+        <p :class="[
+         'text-red-700 font-medium',
+          { 'text-primary-500': selected },
+          { 'text-warning-500': active },
+        ]">
+          {{ item[itemText] }}
+        </p>
+      </template>
+    </Select>
+
+    <Select
+      v-bind="args"
+      label="Custom Check Icon"
+      class="mt-4"
+    >
+      <template v-slot:check-icon>
+        ✅
+      </template>
+    </Select>
   `,
 });
 
