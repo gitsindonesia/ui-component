@@ -326,6 +326,26 @@ const components: AddComponentOptions[] = [
     filePath: '@morpheme/modal/src/VModal.vue',
   },
   {
+    name: 'VModalGroup',
+    filePath: '@morpheme/modal/src/Modal.vue',
+  },
+  {
+    name: 'VModalHeader',
+    filePath: '@morpheme/modal/src/ModalHeader.vue',
+  },
+  {
+    name: 'VModalBody',
+    filePath: '@morpheme/modal/src/ModalBody.vue',
+  },
+  {
+    name: 'VModalFooter',
+    filePath: '@morpheme/modal/src/ModalFooter.vue',
+  },
+  {
+    name: 'VModalTitle',
+    filePath: '@morpheme/modal/src/ModalTitle.vue',
+  },
+  {
     name: 'VMultiSelect',
     filePath: '@morpheme/multi-select/src/VMultiSelect.vue',
   },
