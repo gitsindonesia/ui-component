@@ -2,6 +2,8 @@
 export interface Option {
   label: string;
   value: string | number;
+  disabled?: boolean;
+  selected?: boolean;
   options?: Option[];
 }
 
@@ -21,11 +23,19 @@ withDefaults(defineProps<Props>(), {
         v-for="(subOption, index) in option.options"
         :key="index"
         :value="subOption?.value || subOption"
+        :disabled="subOption?.disabled"
+        :selected="subOption?.selected"
       >
         {{ subOption?.label || subOption }}
       </option>
     </optgroup>
-    <option v-else :key="index" :value="option?.value || option">
+    <option
+      v-else
+      :key="index"
+      :value="option?.value || option"
+      :disabled="option?.disabled"
+      :selected="option?.selected"
+    >
       {{ option?.label || option }}
     </option>
   </template>
