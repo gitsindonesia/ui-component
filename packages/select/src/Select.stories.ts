@@ -103,6 +103,11 @@ Clearable.args = {
   clearable: true,
 };
 
+export const SelectedIconPlacementRight = Template.bind({});
+SelectedIconPlacementRight.args = {
+  selectedIconPlacement: 'right',
+};
+
 export const WrapperClass = Template.bind({});
 WrapperClass.args = {
   wrapperClass: 'border-b-2 border-error-500 rounded-b-lg',

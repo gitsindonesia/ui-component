@@ -74,6 +74,7 @@ const props = withDefaults(
     searchSuffixIconSize?: string;
     searchSuffixIconClass?: string;
     wrapperClass?: string;
+    selectedIconPlacement?: 'left' | 'right';
   }>(),
   {
     itemText: 'text',
@@ -96,6 +97,7 @@ const props = withDefaults(
     clearIcon: 'heroicons:x-mark',
     searchPrefixIconSize: 'sm',
     searchSuffixIconSize: 'sm',
+    selectedIconPlacement: 'right',
   },
 );
 
@@ -431,6 +433,8 @@ defineSlots<{
                   :class="{
                     'v-select-option--active': active,
                     'v-select-option--selected': selected,
+                    'v-select-option--icon-left': selectedIconPlacement === 'left',
+                    'v-select-option--icon-right': selectedIconPlacement === 'right',
                   }"
                 >
                   <div

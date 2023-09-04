@@ -280,6 +280,10 @@
         height: 1.25rem /* 20px */;
       }
     }
+
+    &--icon-right {
+      flex-direction: row-reverse;
+    }
   }
 
   &-searchable {
