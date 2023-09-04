@@ -150,10 +150,11 @@ defineSlots<{
     hide-footer
     hide-header
     body-class="v-command-body"
+    modal-class="v-command-modal"
     @close="onClose"
   >
     <Combobox v-model="selectedValue">
-      <div class="v-input">
+      <div class="v-input v-input--borderless v-command-input">
         <div class="v-input-wrapper">
           <div class="v-input-prepend">
             <slot name="icon">
