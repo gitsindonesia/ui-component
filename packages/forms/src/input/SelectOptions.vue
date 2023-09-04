@@ -22,7 +22,7 @@ withDefaults(defineProps<Props>(), {
       <option
         v-for="(subOption, index) in option.options"
         :key="index"
-        :value="subOption?.value || subOption"
+        :value="subOption?.value"
         :disabled="subOption?.disabled"
         :selected="subOption?.selected"
       >
@@ -32,7 +32,7 @@ withDefaults(defineProps<Props>(), {
     <option
       v-else
       :key="index"
-      :value="option?.value || option"
+      :value="option?.value"
       :disabled="option?.disabled"
       :selected="option?.selected"
     >
