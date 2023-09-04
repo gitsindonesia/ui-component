@@ -73,6 +73,7 @@ const props = withDefaults(
     searchSuffixIcon?: string;
     searchSuffixIconSize?: string;
     searchSuffixIconClass?: string;
+    wrapperClass?: string;
   }>(),
   {
     itemText: 'text',
@@ -235,6 +236,7 @@ defineSlots<{
       shadowClass,
       `v-select--${placement}`,
       `v-select--${searchPlacement}`,
+      wrapperClass,
     ]"
   >
     <component

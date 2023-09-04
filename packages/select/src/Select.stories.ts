@@ -103,6 +103,11 @@ Clearable.args = {
   clearable: true,
 };
 
+export const WrapperClass = Template.bind({});
+WrapperClass.args = {
+  wrapperClass: 'border-b-2 border-error-500 rounded-b-lg',
+};
+
 export const Searchable = Template.bind({});
 Searchable.args = {
   searchable: true,
