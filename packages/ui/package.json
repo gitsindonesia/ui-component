@@ -92,10 +92,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/morphemeindonesia/ui-component"
+    "url": "git+https://github.com/gitsindonesia/ui-component"
   },
   "bugs": {
-    "url": "https://github.com/morphemeindonesia/ui-component/issues/new/choose"
+    "url": "https://github.com/gitsindonesia/ui-component/issues/new/choose"
   },
-  "homepage": "https://github.com/morphemeindonesia/ui-component"
+  "homepage": "https://github.com/gitsindonesia/ui-component"
 }
