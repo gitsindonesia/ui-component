@@ -1,126 +1,187 @@
-<script setup lang="ts">
+<script setup>
+import { useForm } from 'vee-validate';
+import * as yup from 'yup';
 import {
-  InputField,
-  TextareaInputField,
-  SelectField,
-  Radio,
+  Input,
   Checkbox,
-  CheckboxField,
-  FileInputField,
+  TextareaInput,
+  Select,
+  Radio,
+  FileInput
 } from '@morpheme/forms';
-import VSwitch from '@morpheme/switch';
 import {VBtn} from '@morpheme/button';
-import {useField, useForm} from 'vee-validate';
-import {array, boolean, object, string} from 'yup';
+import {ref} from 'vue';
+import {Select as SelectMenu} from '@morpheme/select';
 
-const {handleSubmit, values, errors, resetForm} = useForm({
-  validationSchema: object({
-    name: string().required(),
-    description: string().required(),
-    category: string().required(),
-    active: boolean().oneOf([true]).required(),
-    gender: string().required(),
-    'checkbox-single': boolean().oneOf([true]).required(),
-    hobbies: array().min(1).required(),
-    file: array().min(1).required(),
-    avatar: array().min(1).required(),
-  }),
+const schema = yup.object({
+  name: yup.string().required().label('Name'),
+  email: yup.string().email().required().label('E-mail'),
+  password: yup.string().min(6).required().label('Password'),
+  passwordConfirm: yup
+    .string()
+    .oneOf([yup.ref('password')], 'Passwords must match')
+    .required()
+    .label('Password confirmation'),
+  terms: yup
+    .boolean()
+    .required()
+    .oneOf([true], 'You must agree to terms and conditions'),
+    bio: yup.string().required().label('Bio'),
+    hobby: yup.string().required().label('Hobby'),
+    avatar: yup.array().min(1).required().label('Avatar'),
+    radio: yup.string().required().label('Fruit'),
+    checkboxMultiple: yup.array().min(1).required().label('Fruits'),
+    selectMenu: yup.object().required().label('Select Menu'),
+    selectMenu2: yup.array().min(1).required().label('Select Menu (Multiple)'),
+    selectMenu3: yup.array().min(1).required().label('Select Menu (Searchable)'),
 });
 
-const {value: gender} = useField<string>('gender', undefined, {
-  initialValue: '',
+const { defineComponentBinds, handleSubmit, resetForm, errors } = useForm({
+  validationSchema: schema,
+  initialValues: {
+    name: '',
+    email: '',
+    password: '',
+    passwordConfirm: '',
+    terms: false,
+    bio: '',
+    hobby: '',
+    avatar: [],
+    checkboxMultiple: [],
+    selectMenu: undefined,
+    selectMenu2: [],
+    selectMenu3: [],
+  }
 });
-const {value: hobbies} = useField<any[]>('hobbies', undefined, {
-  initialValue: [],
+
+const propsConfig = (state) => ({
+  props: {
+    error: !!state.errors.length,
+    'error-message': state.errors[0],
+  },
 });
+
+const name = defineComponentBinds('name', propsConfig);
+const email = defineComponentBinds('email', propsConfig);
+const password = defineComponentBinds('password', propsConfig);
+const passwordConfirm = defineComponentBinds('passwordConfirm', propsConfig);
+const terms = defineComponentBinds('terms', propsConfig);
+const bio = defineComponentBinds('bio', propsConfig);
+const hobby = defineComponentBinds('hobby', propsConfig);
+const avatar = defineComponentBinds('avatar', propsConfig);
+const radio = defineComponentBinds('radio', propsConfig);
+const checkboxMultiple = defineComponentBinds('checkboxMultiple', propsConfig);
+const selectMenu = defineComponentBinds('selectMenu', propsConfig);
+const selectMenu2 = defineComponentBinds('selectMenu2', propsConfig);
+const selectMenu3 = defineComponentBinds('selectMenu3', propsConfig);
+
+const hobbies = ref([
+  { label: 'Choose', value: '' },
+  { label: 'Reading', value: 'reading' },
+  { label: 'Coding', value: 'coding' },
+  { label: 'Gaming', value: 'gaming' },
+  { label: 'Disabled', value: 'gaming', disabled: true },
+])
+
+const fruits = ref([
+  { label: 'Apple', value: 'apple' },
+  { label: 'Banana', value: 'banana' },
+  { label: 'Orange', value: 'orange' },
+  { label: 'Mango', value: 'mango' },
+])
+
+const selectMenuOptions = ref([
+  { text: 'Apple', value: 'apple' },
+  { text: 'Banana', value: 'banana' },
+  { text: 'Orange', value: 'orange' },
+  { text: 'Mango', value: 'mango' },
+])
 
 const onSubmit = handleSubmit((values) => {
-  console.log(values);
+  console.log('Submitted with', values);
 });
 </script>
 
 <template>
-  <form @submit="onSubmit">
-    <InputField name="name" label="Name" wrapper-class="mb-4" />
-    <TextareaInputField
-      name="description"
-      label="Description"
-      wrapper-class="mb-4"
+  <form @submit="onSubmit" class="px-4 space-y-4">
+    <Input id="name" v-bind="name" label="Name" />
+    <Input id="email" v-bind="email" label="Email" type="email" />
+    <Input id="password" v-bind="password" label="Password" type="password" />
+    <Input
+      v-bind="passwordConfirm"
+      label="Password confirmation"
+      type="password"
+      id="password-confirm"
     />
-    <SelectField
-      name="category"
-      label="Category"
-      wrapper-class="mb-4"
-      :options="[
-        {
-          label: 'Category 1',
-          value: '1',
-        },
-        {
-          label: 'Category 2',
-          value: '2',
-        },
-      ]"
+    <TextareaInput v-bind="bio" label="Bio" />
+    <Select v-bind="hobby" label="Hobby" :options="hobbies" />
+    <FileInput v-bind="avatar" label="Avatar"  />
+
+    <div>
+      <div class="v-input-label">
+        Choose your favorite fruits:
+      </div>
+      <Radio
+        :id="`radio${i}`"
+        v-for="(fruit, i) in fruits"
+        :key="fruit.value"
+        :value="fruit.value"
+        v-bind="radio"
+        :label="fruit.label"
+        hide-error
+      />
+      <div v-if="errors.radio" class="v-input-error">
+        {{ errors.radio }}
+      </div>
+    </div>
+
+    <div>
+      <div class="v-input-label">
+        Choose your favorite fruits:
+      </div>
+      <p class="v-input-hint mb-2">
+        You can choose more than one
+      </p>
+      <Checkbox
+        :id="`checkbox${i}`"
+        v-for="(fruit, i) in fruits"
+        :key="fruit.value"
+        :value="fruit.value"
+        v-bind="checkboxMultiple"
+        :label="fruit.label"
+        hide-error
+      />
+      <div v-if="errors.checkboxMultiple" class="v-input-error">
+        {{ errors.checkboxMultiple }}
+      </div>
+    </div>
+
+    <Checkbox v-bind="terms" label="Do you agree?" color="primary" />
+    
+    <SelectMenu
+      v-bind="selectMenu"
+      :items="selectMenuOptions"
+      label="Select Menu"
     />
-    <VSwitch name="active" label="Active" wrapper-class="mb-4" />
+    <SelectMenu
+      v-bind="selectMenu2"
+      :items="selectMenuOptions"
+      label="Select Menu (Multiple)"
+      multiple
+      clearable
+    />
+    <SelectMenu
+      v-bind="selectMenu3"
+      :items="selectMenuOptions"
+      label="Select Menu (Searchable)"
+      searchable
+      multiple
+      clearable
+    />
 
-    <div class="mb-4">
-      <div class="v-input-label">Gender</div>
-      <Radio
-        v-model="gender"
-        id="radio1"
-        name="gender"
-        label="Male"
-        value="male"
-      />
-      <Radio
-        v-model="gender"
-        id="radio2"
-        name="gender"
-        label="Female"
-        value="female"
-      />
-      <div class="v-input-error">{{ errors.gender }}</div>
-    </div>
-
-    <div class="mb-4">
-      <CheckboxField
-        id="checkbox-single"
-        name="checkbox-single"
-        label="Checkbox 1"
-      />
-    </div>
-
-    <div class="mb-4">
-      <div class="v-input-label">Hobby</div>
-      <Checkbox
-        v-model="hobbies"
-        id="checkbox1"
-        name="hobbies"
-        label="Coding"
-        value="coding"
-        :error="!!errors['hobbies']"
-      />
-      <Checkbox
-        v-model="hobbies"
-        id="checkbox2"
-        name="hobbies"
-        label="Sport"
-        value="Sport"
-        :error="!!errors['hobbies']"
-      />
-      <div class="v-input-error">{{ errors['hobbies'] }}</div>
-    </div>
-
-    <FileInputField name="file" label="File" wrapper-class="mb-4" />
-    <FileInputField name="avatar" label="Avatar" variant="button" />
-
-    <div class="mt-4">
-      <VBtn type="submit" color="primary">Submit</VBtn>
-      <VBtn @click="resetForm" class="ml-2">Reset</VBtn>
-    </div>
-    <div class="mt-4">
-      <pre>{{ {values, errors} }}</pre>
+    <div>
+      <v-btn color="primary" type="submit"> Submit </v-btn>
+      <v-btn color="outline" class="ml-4" @click="resetForm()"> Reset </v-btn>
     </div>
   </form>
 </template>
