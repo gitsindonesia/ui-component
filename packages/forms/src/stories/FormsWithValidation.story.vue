@@ -11,6 +11,7 @@ import {
 } from '@morpheme/forms';
 import {VBtn} from '@morpheme/button';
 import {ref} from 'vue';
+import {Select as SelectMenu} from '@morpheme/select';
 
 const schema = yup.object({
   name: yup.string().required().label('Name'),
@@ -30,9 +31,12 @@ const schema = yup.object({
     avatar: yup.array().min(1).required().label('Avatar'),
     radio: yup.string().required().label('Fruit'),
     checkboxMultiple: yup.array().min(1).required().label('Fruits'),
+    selectMenu: yup.object().required().label('Select Menu'),
+    selectMenu2: yup.array().min(1).required().label('Select Menu (Multiple)'),
+    selectMenu3: yup.array().min(1).required().label('Select Menu (Searchable)'),
 });
 
-const { defineComponentBinds, handleSubmit, resetForm, errors } = useForm({
+const { defineComponentBinds, handleSubmit, resetForm, errors, values } = useForm({
   validationSchema: schema,
   initialValues: {
     name: '',
@@ -43,7 +47,10 @@ const { defineComponentBinds, handleSubmit, resetForm, errors } = useForm({
     bio: '',
     hobby: '',
     avatar: [],
-    checkboxMultiple: []
+    checkboxMultiple: [],
+    selectMenu: undefined,
+    selectMenu2: [],
+    selectMenu3: [],
   }
 });
 
@@ -64,6 +71,9 @@ const hobby = defineComponentBinds('hobby', propsConfig);
 const avatar = defineComponentBinds('avatar', propsConfig);
 const radio = defineComponentBinds('radio', propsConfig);
 const checkboxMultiple = defineComponentBinds('checkboxMultiple', propsConfig);
+const selectMenu = defineComponentBinds('selectMenu', propsConfig);
+const selectMenu2 = defineComponentBinds('selectMenu2', propsConfig);
+const selectMenu3 = defineComponentBinds('selectMenu3', propsConfig);
 
 const hobbies = ref([
   { label: 'Choose', value: '' },
@@ -78,6 +88,13 @@ const fruits = ref([
   { label: 'Banana', value: 'banana' },
   { label: 'Orange', value: 'orange' },
   { label: 'Mango', value: 'mango' },
+])
+
+const selectMenuOptions = ref([
+  { text: 'Apple', value: 'apple' },
+  { text: 'Banana', value: 'banana' },
+  { text: 'Orange', value: 'orange' },
+  { text: 'Mango', value: 'mango' },
 ])
 
 const onSubmit = handleSubmit((values) => {
@@ -140,6 +157,29 @@ const onSubmit = handleSubmit((values) => {
     </div>
 
     <Checkbox v-bind="terms" label="Do you agree?" color="primary" />
+    
+    <SelectMenu
+      v-bind="selectMenu"
+      :items="selectMenuOptions"
+      label="Select Menu"
+    />
+    <SelectMenu
+      v-bind="selectMenu2"
+      :items="selectMenuOptions"
+      label="Select Menu (Multiple)"
+      multiple
+      clearable
+    />
+    <SelectMenu
+      v-bind="selectMenu3"
+      :items="selectMenuOptions"
+      label="Select Menu (Searchable)"
+      searchable
+      multiple
+      clearable
+    />
+
+    <pre>{{ {values, errors} }}</pre>
 
     <div>
       <v-btn color="primary" type="submit"> Submit </v-btn>
