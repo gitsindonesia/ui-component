@@ -1,14 +1,17 @@
-import { mount } from '@vue/test-utils';
+import {mount} from '@vue/test-utils';
 import Select from './Select.vue';
 
-const items = [{ text: 'Option 1', value: 1 }, { text: 'Option 2', value: 2 }]
+const items = [
+  {text: 'Option 1', value: 1},
+  {text: 'Option 2', value: 2},
+];
 
 describe('Select', () => {
   it('renders the placeholder when no option is selected', () => {
     const wrapper = mount(Select, {
       props: {
         placeholder: 'Select',
-        items
+        items,
       },
     });
 
@@ -25,7 +28,7 @@ describe('Select', () => {
 
     expect(wrapper.find('.v-select-selected').text()).toBe('Option 1');
 
-    await wrapper.setProps({ modelValue: items[1] });
+    await wrapper.setProps({modelValue: items[1]});
 
     expect(wrapper.find('.v-select-selected').text()).toBe('Option 2');
   });
@@ -33,7 +36,7 @@ describe('Select', () => {
   it('emits the selected option value on change', async () => {
     const wrapper = mount(Select, {
       props: {
-        items
+        items,
       },
     });
 
@@ -52,7 +55,7 @@ describe('Select', () => {
     });
 
     await wrapper.find('.v-select-button').trigger('click');
-    await wrapper.find('.v-select-input').setValue('Option 1');
+    await wrapper.find('.v-select-input input').setValue('Option 1');
 
     expect(wrapper.findAll('.v-select-option')).toHaveLength(1);
     expect(wrapper.find('.v-select-option').text()).toBe('Option 1');
@@ -65,6 +68,6 @@ describe('Select', () => {
         errorMessage: 'Error message',
       },
     });
-    expect(wrapper.html()).toContain('v-select--error')
+    expect(wrapper.html()).toContain('v-select--error');
   });
 });
