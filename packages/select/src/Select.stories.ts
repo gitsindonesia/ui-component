@@ -4,10 +4,9 @@ import {themeColors} from '@morpheme/utils';
 import Select from './Select.vue';
 import {ref} from 'vue';
 import {ListboxButton} from '@headlessui/vue';
-import {Field, useForm} from 'vee-validate';
+import {useForm} from 'vee-validate';
 import {array, object} from 'yup';
 import {VBtn} from '@morpheme/button';
-import SelectField from './SelectField.vue';
 
 const items = [...Array(10)].map((_, index) => ({
   value: index + 1,
@@ -333,7 +332,7 @@ export const DarkMode: Story<typeof Select> = (args) => ({
 });
 
 export const Validation: Story<{}> = (args) => ({
-  components: {VBtn, Select, Field, SelectField},
+  components: {VBtn, Select},
   setup() {
     const schema = object({
       genre: array().required().nullable().label('Genre'),
@@ -342,9 +341,22 @@ export const Validation: Story<{}> = (args) => ({
       fruit2: array().required().nullable().label('Fruit 2'),
     });
 
-    const {handleSubmit, resetForm, values, errors} = useForm({
-      validationSchema: schema,
+    const {handleSubmit, resetForm, values, errors, defineComponentBinds} =
+      useForm({
+        validationSchema: schema,
+      });
+
+    const propsConfig = (state) => ({
+      props: {
+        error: !!state.errors.length,
+        'error-message': state.errors[0],
+      },
     });
+
+    const genre = defineComponentBinds('genre', propsConfig);
+    const gender = defineComponentBinds('gender', propsConfig);
+    const fruit1 = defineComponentBinds('fruit1', propsConfig);
+    const fruit2 = defineComponentBinds('fruit2', propsConfig);
 
     const onSubmit = handleSubmit((values) => {
       alert(JSON.stringify(values));
@@ -401,12 +413,16 @@ export const Validation: Story<{}> = (args) => ({
       errors,
       fruits,
       handleReset,
+      genre,
+      gender,
+      fruit1,
+      fruit2,
     };
   },
   template: `
     <form @submit="onSubmit" class="border-none">
-      <SelectField
-        v-model="values.genre"
+      <Select
+        v-bind="genre"
         name="genre"      
         label="Current genre"
         placeholder="Select your genre"
@@ -414,16 +430,16 @@ export const Validation: Story<{}> = (args) => ({
         multiple
         class="mb-4"
       />
-      <SelectField
-        v-model="values.gender"
+      <Select
+        v-bind="gender"
         name="gender"      
         label="Gender"
         placeholder="Select your gender"
         :items="genders"
         class="mb-4"
       />
-      <SelectField
-        v-model="values.fruit1"
+      <Select
+        v-bind="fruit1"
         name="fruit1"      
         label="Fruit 1"
         placeholder="Choose"
@@ -431,8 +447,8 @@ export const Validation: Story<{}> = (args) => ({
         class="mb-4"
         searchable
       />
-      <SelectField
-        v-model="values.fruit2"
+      <Select
+        v-bind="fruit2"
         name="fruit2"      
         label="Fruit 2"
         placeholder="Choose"
