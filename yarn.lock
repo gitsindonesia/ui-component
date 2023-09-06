@@ -16358,13 +16358,6 @@ storybook-vue3-router@^2.2.1:
   dependencies:
     vue-router "4.x"
 
-storybook-vue3-router@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/storybook-vue3-router/-/storybook-vue3-router-3.0.0.tgz#da740b63a057ba05a7226613ec599f3c85231ad8"
-  integrity sha512-zFjZwKH8omx48jztp1//kvW3jqGvVM6ZHlXqRx/j82C3ILm5lmsbytHL99ZgLkirydk8iH8iMYiFNhNZdEJnvg==
-  dependencies:
-    vue-router "^4.2.2"
-
 storybook@^7.4.0:
   version "7.4.0"
   resolved "https://registry.yarnpkg.com/storybook/-/storybook-7.4.0.tgz#f1b64222e3d474bc6e258eb7e48c675685829873"
@@ -18130,7 +18123,7 @@ vue-router@^4.2.1:
   dependencies:
     "@vue/devtools-api" "^6.5.0"
 
-vue-router@^4.2.2, vue-router@^4.2.4:
+vue-router@^4.2.4:
   version "4.2.4"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.2.4.tgz#382467a7e2923e6a85f015d081e1508052c191b9"
   integrity sha512-9PISkmaCO02OzPVOMq2w82ilty6+xJmQrarYZDkjZBfl4RvYAlt4PKnEX21oW4KTtWfa9OuO/b3qk1Od3AEdCQ==

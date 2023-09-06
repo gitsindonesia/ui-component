@@ -1,7 +1,6 @@
 import {VCard} from '@morpheme/card';
 import {Meta, Story} from '@storybook/vue3';
 import VModal from './VModal.vue';
-import vueRouter from 'storybook-vue3-router';
 import {onUnmounted, ref} from 'vue';
 import {VBtn} from '@morpheme/button';
 import {VModalEvent} from './types';
@@ -23,13 +22,13 @@ export default {
       e.close();
     },
   },
-  subcomponents:{
+  subcomponents: {
     Modal,
     ModalHeader,
     ModalTitle,
     ModalBody,
     ModalFooter,
-  }
+  },
 } as Meta;
 
 const Template: Story = (args) => ({
@@ -50,11 +49,6 @@ const Template: Story = (args) => ({
 </v-modal>
   `,
 });
-
-Template.decorators = [
-  /* this is the basic setup with no params passed to the decorator */
-  vueRouter(),
-];
 
 export const Default = Template.bind({});
 Default.args = {};
