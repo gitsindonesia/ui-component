@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-mutating-props -->
 <script setup lang="ts">
 import {
   Listbox,
@@ -13,11 +14,11 @@ import {
 } from '@headlessui/vue';
 import VIcon from '@morpheme/icon';
 import VTooltip from '@morpheme/tooltip';
-import {computed, ref, watch} from 'vue';
+import {computed, ref} from 'vue';
 import VBadge from '@morpheme/badge';
 import {Float} from '@headlessui-float/vue';
 import type {Placement} from '@floating-ui/vue';
-import SelectSearchInput from './SelectSearchInput.vue';
+import SelectSearchInput, { ExposedProps } from './SelectSearchInput.vue';
 
 type T = Record<string, any>;
 type ModelValue = T | T[] | undefined;
@@ -35,7 +36,6 @@ type Shadow =
 const props = withDefaults(
   defineProps<{
     modelValue?: ModelValue;
-    value?: T | T[];
     items?: T[];
     multiple?: boolean;
     itemText?: string;
@@ -75,6 +75,10 @@ const props = withDefaults(
     searchSuffixIconClass?: string;
     wrapperClass?: string;
     selectedIconPlacement?: 'left' | 'right';
+    by?: string;
+    name?: string;
+    loading?: boolean;
+    tooltip?: InstanceType<typeof VTooltip>['$props'];
   }>(),
   {
     itemText: 'text',
@@ -98,43 +102,57 @@ const props = withDefaults(
     searchPrefixIconSize: 'sm',
     searchSuffixIconSize: 'sm',
     selectedIconPlacement: 'left',
+    tooltip: () => ({
+      placement: 'top'
+    })
   },
 );
 
 const emit =
   defineEmits<{
     (e: 'update:modelValue', value: ModelValue): void;
+    (e: 'change', value: ModelValue): void;
   }>();
 
-const selectedValue = ref(props.value || props.modelValue);
 const query = ref('');
+const searchInputInside = ref<ExposedProps>()
+const searchInputOutside = ref<ExposedProps>()
 
-watch(
-  () => props.modelValue,
-  (newValue) => {
-    if (newValue !== selectedValue.value) {
-      selectedValue.value = newValue;
+const emitValue = (value: ModelValue) => {
+  emit('update:modelValue', value);
+  emit('change', value);
+}
+
+const onUpdate = (event: any) => {
+  if (query.value) {
+    query.value = ''
+    // explicitly set input text because `ComboboxInput` `displayValue` is not reactive
+    if (props.searchPlacement === 'inside') {
+      if (searchInputInside.value) {
+        searchInputInside.value.clear()
+      }
+    } else {
+      if (searchInputOutside.value) {
+        searchInputOutside.value.clear()
+      }
     }
-  },
-);
+  }
 
-watch(
-  () => props.value,
-  (newValue) => {
-    if (newValue !== selectedValue.value) {
-      selectedValue.value = newValue;
-    }
-  },
-);
-
-watch(selectedValue, (val) => {
-  emit('update:modelValue', val);
-});
+  emitValue(event)
+}
 
 const clear = () => {
   const newValue = props.multiple ? ([] as T[]) : undefined;
-  selectedValue.value = newValue;
+  emitValue(newValue);
 };
+
+const hasValue = computed(() => {
+  if (props.multiple) {
+    return props.modelValue && props.modelValue.length > 0;
+  }
+
+  return props.modelValue !== undefined && props.modelValue !== null;
+})
 
 const filteredItems = computed(() =>
   query.value === ''
@@ -167,26 +185,30 @@ const shadowClass = computed(() => {
 
 defineSlots<{
   default?: (props: {
-    selectedValue: ModelValue;
+    modelValue: ModelValue;
     multiple: boolean;
     itemValue: string;
     itemText: string;
     selectionItemProps: InstanceType<typeof VBadge>['$props'];
   }) => any;
-  button?: (props: {}) => any;
+  button?: (props: {
+    open: boolean;
+  }) => any;
   'selection-item'?: (props: {
     item: T;
     idx: any;
     itemText: string;
     itemValue: string;
     remove: () => void;
+    open: boolean;
   }) => any;
   selected?: (props: {
-    selectedValue: ModelValue;
+    modelValue: ModelValue;
     multiple?: boolean;
     placeholder?: string;
     itemText?: string;
     itemValue?: string;
+    open: boolean;
   }) => any;
   item?: (props: {
     item: T;
@@ -194,6 +216,7 @@ defineSlots<{
     selected: boolean;
     itemText?: string;
     itemValue?: string;
+    open: boolean;
   }) => any;
   hint?: (props: {hint?: string}) => any;
   error?: (props: {
@@ -202,19 +225,25 @@ defineSlots<{
     hideError?: boolean;
   }) => any;
   selection?: (props: {
-    selectedValue: ModelValue;
+    modelValue: ModelValue;
     multiple?: boolean;
     itemValue?: string;
     itemText?: string;
     selectionItemProps?: InstanceType<typeof VBadge>['$props'];
+    open: boolean;
   }) => any;
-  empty?: (props: {items: T[]; emptyText?: string}) => any;
+  empty?: (props: {
+    items: T[];
+    emptyText?: string
+    open: boolean;
+  }) => any;
   'item-text'?: (props: {
     item: T;
     itemText?: string;
     itemValue?: string;
     active: boolean;
     selected: boolean;
+    open: boolean;
   }) => any;
   'check-icon'?: (props: {selected: boolean; icon: string}) => any;
 }>();
@@ -223,10 +252,8 @@ defineSlots<{
 <template>
   <component
     :is="searchable ? Combobox : Listbox"
-    v-model="selectedValue"
-    as="div"
+    v-slot="{ open }"
     class="v-select"
-    :multiple="multiple"
     :class="[
       {
         'v-select--multiple': multiple,
@@ -240,6 +267,13 @@ defineSlots<{
       `v-select--${searchPlacement}`,
       wrapperClass,
     ]"
+    :by="by || itemText || itemValue"
+    :name="name"
+    :multiple="multiple"
+    :disabled="disabled || loading"
+    as="div"
+    :model-value="modelValue"
+    @update:model-value="onUpdate"
   >
     <component
       :is="searchable ? ComboboxLabel : ListboxLabel"
@@ -259,7 +293,7 @@ defineSlots<{
       :flip="flip"
       @hide="query = ''"
     >
-      <slot name="button">
+      <slot name="button" v-bind="{open}">
         <component
           :is="searchable ? ComboboxButton : ListboxButton"
           class="v-select-button"
@@ -268,20 +302,21 @@ defineSlots<{
             v-if="searchable"
             name="selection"
             v-bind="{
-              selectedValue,
+              modelValue,
               multiple,
               itemValue,
               itemText,
               selectionItemProps,
+              open,
             }"
           >
             <div
               v-if="
-                multiple && chips && selectedValue && selectedValue.length > 0
+                multiple && chips && modelValue && modelValue.length > 0
               "
               class="v-select-selection"
             >
-              <template v-for="(item, idx) in selectedValue" :key="idx">
+              <template v-for="(item, idx) in modelValue" :key="idx">
                 <slot
                   name="selection-item"
                   v-bind="{
@@ -289,13 +324,14 @@ defineSlots<{
                     idx,
                     itemText,
                     itemValue,
-                    remove: () => selectedValue?.splice(idx, 1),
+                    remove: () => modelValue?.splice(idx, 1),
+                    open
                   }"
                 >
                   <VBadge
                     color="primary"
                     dismissable
-                    @dismiss="selectedValue.splice(idx, 1)"
+                    @dismiss="modelValue.splice(idx, 1)"
                     v-bind="selectionItemProps"
                   >
                     {{ item[itemText] }}
@@ -317,6 +353,7 @@ defineSlots<{
             :suffix-icon="searchSuffixIcon"
             :suffix-icon-size="searchSuffixIconSize"
             :suffix-icon-class="searchSuffixIconClass"
+            ref="searchInputInside"
             @change="query = $event.target.value"
             @keydown.enter="query = ''"
           />
@@ -325,12 +362,13 @@ defineSlots<{
             name="selected"
             v-bind="{
               multiple,
-              selectedValue,
+              modelValue,
               placeholder,
               itemText,
               itemValue,
               searchable,
               chips,
+              open
             }"
           >
             <div
@@ -338,26 +376,26 @@ defineSlots<{
               :class="[
                 `v-select-selected--${searchPlacement}`,
                 {
-                  'v-select-selected--placeholder': !selectedValue,
+                  'v-select-selected--placeholder': !modelValue,
                 },
               ]"
             >
               <span v-if="multiple">
                 {{
-                  selectedValue && selectedValue?.length > 0
+                  modelValue && modelValue?.length > 0
                     ? chips && searchPlacement === 'outside'
                       ? ''
-                      : `${selectedValue?.length} selected`
+                      : `${modelValue?.length} selected`
                     : placeholder
                 }}
               </span>
               <span v-else>
-                {{ selectedValue ? (selectedValue as T)[itemText] : placeholder }}
+                {{ modelValue ? (modelValue as T)[itemText] : placeholder }}
               </span>
             </div>
           </slot>
           <div class="v-select-clearable">
-            <VTooltip v-if="selectedValue && clearable">
+            <VTooltip v-if="hasValue && clearable" v-bind="tooltip">
               <template #activator>
                 <button
                   type="button"
@@ -395,6 +433,7 @@ defineSlots<{
             :suffix-icon="searchSuffixIcon"
             :suffix-icon-size="searchSuffixIconSize"
             :suffix-icon-class="searchSuffixIconClass"
+            ref="searchInputOutside"
             @change="query = $event.target.value"
             @keydown.enter="query = ''"
           />
@@ -404,6 +443,7 @@ defineSlots<{
             v-bind="{
               items: filteredItems,
               emptyText,
+              open,
             }"
           >
             <div v-if="filteredItems?.length < 1" class="v-select-empty">
@@ -426,7 +466,7 @@ defineSlots<{
             >
               <slot
                 name="item"
-                v-bind="{item, active, selected, itemText, itemValue}"
+                v-bind="{item, active, selected, itemText, itemValue, open}"
               >
                 <div
                   class="v-select-option"
@@ -459,7 +499,7 @@ defineSlots<{
                   <div class="v-select-option-text">
                     <slot
                       name="item-text"
-                      v-bind="{item, itemText, itemValue, active, selected}"
+                      v-bind="{item, itemText, itemValue, active, selected, open}"
                     >
                       {{ item[itemText] }}
                     </slot>

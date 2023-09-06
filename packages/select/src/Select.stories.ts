@@ -339,6 +339,7 @@ export const Validation: Story<{}> = (args) => ({
       gender: object().required().nullable().label('Gender'),
       fruit1: object().required().nullable().label('Fruit 1'),
       fruit2: array().required().nullable().label('Fruit 2'),
+      fruit3: array().required().nullable().label('Fruit 2'),
     });
 
     const {handleSubmit, resetForm, values, errors, defineComponentBinds} =
@@ -357,6 +358,7 @@ export const Validation: Story<{}> = (args) => ({
     const gender = defineComponentBinds('gender', propsConfig);
     const fruit1 = defineComponentBinds('fruit1', propsConfig);
     const fruit2 = defineComponentBinds('fruit2', propsConfig);
+    const fruit3 = defineComponentBinds('fruit3', propsConfig);
 
     const onSubmit = handleSubmit((values) => {
       alert(JSON.stringify(values));
@@ -403,6 +405,14 @@ export const Validation: Story<{}> = (args) => ({
       resetForm();
     };
 
+    console.log({
+      genre,
+      gender,
+      fruit1,
+      fruit2,
+      fruit3,
+    });
+
     return {
       onSubmit,
       resetForm,
@@ -417,45 +427,62 @@ export const Validation: Story<{}> = (args) => ({
       gender,
       fruit1,
       fruit2,
+      fruit3,
     };
   },
   template: `
     <form @submit="onSubmit" class="border-none">
       <Select
+        clearable
         v-bind="genre"
         name="genre"      
         label="Current genre"
         placeholder="Select your genre"
         :items="genres"
         multiple
-        class="mb-4"
+        wrapper-class="mb-4"
       />
       <Select
+        clearable
         v-bind="gender"
         name="gender"      
         label="Gender"
         placeholder="Select your gender"
         :items="genders"
-        class="mb-4"
+        wrapper-class="mb-4"
       />
       <Select
+        clearable
         v-bind="fruit1"
         name="fruit1"      
         label="Fruit 1"
         placeholder="Choose"
         :items="fruits"
-        class="mb-4"
+        wrapper-class="mb-4"
         searchable
       />
       <Select
+        clearable
         v-bind="fruit2"
         name="fruit2"      
         label="Fruit 2"
         placeholder="Choose"
         :items="fruits"
-        class="mb-4"
+        wrapper-class="mb-4"
         searchable
         multiple
+      />
+      <Select
+        clearable
+        v-bind="fruit3"
+        name="fruit3"      
+        label="Fruit 3"
+        placeholder="Choose"
+        :items="fruits"
+        wrapper-class="mb-4"
+        searchable
+        multiple
+        chips
       />
       <div class="mt-4">
         <v-btn type="submit">Submit</v-btn>
