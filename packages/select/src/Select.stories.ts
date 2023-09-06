@@ -69,6 +69,11 @@ Error.args = {
   errorMessage: 'This is an error message.',
 };
 
+export const Loading = Template.bind({});
+Loading.args = {
+  loading: true,
+};
+
 export const Shadow: Story<typeof Select> = (args) => ({
   components: {
     Select,
@@ -115,6 +120,12 @@ WrapperClass.args = {
 export const Searchable = Template.bind({});
 Searchable.args = {
   searchable: true,
+};
+
+export const SearchableLoading = Template.bind({});
+SearchableLoading.args = {
+  searchable: true,
+  loading: true,
 };
 
 export const SearchableMultiple = Template.bind({});

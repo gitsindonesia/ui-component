@@ -2,7 +2,7 @@
 import {VDivider} from '@morpheme/divider';
 import {ComboboxInput} from '@headlessui/vue';
 import VIcon from '@morpheme/icon';
-import { ComponentPublicInstance, ref } from 'vue';
+import {ComponentPublicInstance, ref} from 'vue';
 
 interface Props {
   placement?: 'inside' | 'outside';
@@ -15,6 +15,7 @@ interface Props {
   suffixIcon?: string;
   suffixIconSize?: string;
   suffixIconClass?: string;
+  loading?: boolean;
 }
 
 withDefaults(defineProps<Props>(), {
@@ -27,18 +28,18 @@ defineOptions({
   inheritAttrs: false,
 });
 
-const searchInput = ref<ComponentPublicInstance<HTMLInputElement>>()
+const searchInput = ref<ComponentPublicInstance<HTMLInputElement>>();
 
 function clear() {
-  if (!searchInput.value) return
+  if (!searchInput.value) return;
 
-  searchInput.value.$el.value = ''
+  searchInput.value.$el.value = '';
 }
 
 function focus() {
-  if (!searchInput.value) return
+  if (!searchInput.value) return;
 
-  searchInput.value.$el.focus()
+  searchInput.value.$el.focus();
 }
 
 export interface ExposedProps {
@@ -58,7 +59,12 @@ defineExpose({
   <div
     :class="[
       'v-input v-input--borderless v-input--no-ring v-select-input',
-      {'v-select-input-outside-wrapper': placement === 'outside'},
+      {
+        'v-select-input-outside-wrapper': placement === 'outside',
+        'v-input--disabled': disabled,
+        'v-input--loading': loading,
+        'v-select-input--disabled': disabled,
+      },
     ]"
   >
     <div class="v-input-wrapper">
@@ -92,3 +98,5 @@ defineExpose({
   </div>
   <VDivider v-if="placement === 'outside'" />
 </template>
+
+

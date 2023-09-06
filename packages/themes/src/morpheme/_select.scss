@@ -123,6 +123,12 @@
     }
   }
 
+  &--loading {
+    .v-select__prepend-icon {
+      animation: spin 1s linear infinite;
+    }
+  }
+
   &-button {
     border: 1px solid var(--v-select-border-color);
     border-radius: var(--v-select-border-radius);
@@ -177,6 +183,9 @@
     overflow: hidden;
     text-overflow: ellipsis;
     margin-right: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: var(--size-spacing-2);
 
     &--placeholder {
       color: var(--v-select-placeholder-color);
@@ -453,6 +462,10 @@
       input {
         width: 100%;
       }
+    }
+
+    &--disabled {
+      border: none;
     }
   }
 }

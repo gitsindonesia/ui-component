@@ -87,10 +87,18 @@ select:-webkit-autofill:focus {
   }
 
   &--borderless {
-    --v-input-border-color: transparent;
+    --v-input-border-color: transparent !important;
     --v-input-effect-border-color: transparent;
     --v-input-effect-shadow-color: transparent;
     --v-input-wrapper-shadow-color: transparent;
+  }
+
+  &--loading {
+    .v-input-prepend {
+      .v-icon {
+        animation: spin 1s linear infinite;
+      }
+    }
   }
 
   &--no-ring {

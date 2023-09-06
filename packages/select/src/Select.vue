@@ -56,7 +56,6 @@ const props = withDefaults(
     searchBy?: string;
     selectionItemProps?: InstanceType<typeof VBadge>['$props'];
     displayValue?: (item: any) => string;
-    iconSize?: string;
     placement?: Placement;
     offset?: number;
     shift?: boolean | number;
@@ -65,8 +64,17 @@ const props = withDefaults(
     searchPlaceholder?: string;
     chips?: boolean;
     icon?: string;
+    iconSize?: string
+    iconClass?: string
+    dropdownIcon?: string;
+    dropdownIconSize?: string
+    dropdownIconClass?: string
     checkIcon?: string;
+    checkIconSize?: string
+    checkIconClass?: string
     clearIcon?: string;
+    clearIconSize?: string
+    clearIconClass?: string
     searchPrefixIcon?: string;
     searchPrefixIconSize?: string;
     searchPrefixIconClass?: string;
@@ -78,7 +86,10 @@ const props = withDefaults(
     by?: string;
     name?: string;
     loading?: boolean;
+    loadingIcon?: string;
+    loadingText?: string;
     tooltip?: InstanceType<typeof VTooltip>['$props'];
+    selectedText?: string;
   }>(),
   {
     itemText: 'text',
@@ -88,7 +99,6 @@ const props = withDefaults(
     clearText: 'Clear',
     emptyText: 'No results.',
     items: () => [],
-    iconSize: 'xs',
     placement: 'bottom',
     offset: 8,
     shift: true,
@@ -96,15 +106,23 @@ const props = withDefaults(
     hideError: false,
     searchPlacement: 'inside',
     searchPlaceholder: 'Search...',
-    icon: 'heroicons:chevron-down',
+    dropdownIcon: 'heroicons:chevron-down',
+    dropdownIconSize: 'sm',
+    icon: '',
+    iconSize: 'sm',
     checkIcon: 'heroicons:check',
+    checkIconSize: 'sm',
     clearIcon: 'heroicons:x-mark',
+    clearIconSize: 'sm',
     searchPrefixIconSize: 'sm',
     searchSuffixIconSize: 'sm',
     selectedIconPlacement: 'left',
     tooltip: () => ({
       placement: 'top'
-    })
+    }),
+    loadingIcon: 'ri:loader-5-fill',
+    loadingText: 'Loading...',
+    selectedText: 'selected'
   },
 );
 
@@ -261,6 +279,7 @@ defineSlots<{
         'v-select--error': error,
         'v-select--searchable': searchable,
         'v-select--disabled': disabled,
+        'v-select--loading': loading,
       },
       shadowClass,
       `v-select--${placement}`,
@@ -344,12 +363,13 @@ defineSlots<{
           <SelectSearchInput
             v-if="searchable && searchPlacement === 'inside'"
             :placement="searchPlacement"
-            :placeholder="searchPlaceholder || placeholder"
-            :disabled="disabled"
+            :placeholder="loading ? loadingText : searchPlaceholder || placeholder"
+            :disabled="disabled || loading"
+            :loading="loading"
             :display-value="displayValue ?? defaultDisplayValue"
-            :prefix-icon="searchPrefixIcon"
-            :prefix-icon-size="searchPrefixIconSize"
-            :prefix-icon-class="searchPrefixIconClass"
+            :prefix-icon="loading ? loadingIcon : icon || searchPrefixIcon"
+            :prefix-icon-size="iconSize || searchPrefixIconSize"
+            :prefix-icon-class="iconClass || searchPrefixIconClass"
             :suffix-icon="searchSuffixIcon"
             :suffix-icon-size="searchSuffixIconSize"
             :suffix-icon-class="searchSuffixIconClass"
@@ -380,17 +400,23 @@ defineSlots<{
                 },
               ]"
             >
+              <VIcon
+                v-if="icon || loading"
+                :name="loading ? loadingIcon : icon"
+                :size="iconSize"
+                :class="['v-select__prepend-icon', iconClass]"
+              />
               <span v-if="multiple">
                 {{
                   modelValue && modelValue?.length > 0
                     ? chips && searchPlacement === 'outside'
                       ? ''
-                      : `${modelValue?.length} selected`
+                      : `${modelValue?.length} ${selectedText}`
                     : placeholder
                 }}
               </span>
               <span v-else>
-                {{ modelValue ? (modelValue as T)[itemText] : placeholder }}
+                {{ modelValue ? (modelValue as T)[itemText] : loading ? loadingText : placeholder }}
               </span>
             </div>
           </slot>
@@ -424,12 +450,13 @@ defineSlots<{
           <SelectSearchInput
             v-if="searchable && searchPlacement === 'outside'"
             :placement="searchPlacement"
-            :placeholder="searchPlaceholder || placeholder"
-            :disabled="disabled"
+            :placeholder="loading ? loadingText : searchPlaceholder || placeholder"
+            :disabled="disabled || loading"
+            :loading="loading"
             :display-value="displayValue ?? defaultDisplayValue"
-            :prefix-icon="searchPrefixIcon"
-            :prefix-icon-size="searchPrefixIconSize"
-            :prefix-icon-class="searchPrefixIconClass"
+            :prefix-icon="loading ? loadingIcon : icon || searchPrefixIcon"
+            :prefix-icon-size="iconSize || searchPrefixIconSize"
+            :prefix-icon-class="iconClass || searchPrefixIconClass"
             :suffix-icon="searchSuffixIcon"
             :suffix-icon-size="searchSuffixIconSize"
             :suffix-icon-class="searchSuffixIconClass"
