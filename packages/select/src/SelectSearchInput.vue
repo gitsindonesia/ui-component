@@ -2,6 +2,7 @@
 import {VDivider} from '@morpheme/divider';
 import {ComboboxInput} from '@headlessui/vue';
 import VIcon from '@morpheme/icon';
+import { ComponentPublicInstance, ref } from 'vue';
 
 interface Props {
   placement?: 'inside' | 'outside';
@@ -24,6 +25,32 @@ withDefaults(defineProps<Props>(), {
 
 defineOptions({
   inheritAttrs: false,
+});
+
+const searchInput = ref<ComponentPublicInstance<HTMLInputElement>>()
+
+function clear() {
+  if (!searchInput.value) return
+
+  searchInput.value.$el.value = ''
+}
+
+function focus() {
+  if (!searchInput.value) return
+
+  searchInput.value.$el.focus()
+}
+
+export interface ExposedProps {
+  clear: typeof clear;
+  focus: typeof focus;
+  ref: typeof searchInput;
+}
+
+defineExpose({
+  clear,
+  focus,
+  ref: searchInput,
 });
 </script>
 
@@ -49,6 +76,7 @@ defineOptions({
         :display-value="displayValue"
         :placeholder="placeholder"
         :disabled="disabled"
+        ref="searchInput"
         v-bind="$attrs"
       />
 
