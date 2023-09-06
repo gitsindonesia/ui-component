@@ -1,6 +1,5 @@
 import {Meta, Story} from '@storybook/vue3';
 import VMenu from './VMenu.vue';
-import vueRouter from 'storybook-vue3-router';
 
 export default {
   title: 'Components/Menu',
@@ -62,24 +61,6 @@ Default.parameters = {
     },
   },
 };
-
-Default.decorators = [
-  /* this is the basic setup with no params passed to the decorator */
-  vueRouter([
-    {
-      path: '/',
-      component: {
-        template: 'Home',
-      },
-    },
-    {
-      path: '/about',
-      component: {
-        template: 'About',
-      },
-    },
-  ]),
-];
 
 export const Small = Template.bind({});
 Small.args = {small: true};
