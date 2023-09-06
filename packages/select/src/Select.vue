@@ -97,7 +97,7 @@ const props = withDefaults(
     clearIcon: 'heroicons:x-mark',
     searchPrefixIconSize: 'sm',
     searchSuffixIconSize: 'sm',
-    selectedIconPlacement: 'right',
+    selectedIconPlacement: 'left',
   },
 );
 
