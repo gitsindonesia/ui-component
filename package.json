@@ -25,7 +25,7 @@
     "@vueuse/core": "^10.2.1",
     "floating-vue": "^2.0.0-beta.20",
     "pagino": "^1.4.2",
-    "vee-validate": "^4.10.8",
+    "vee-validate": "^4.11.3",
     "vue": "^3.3.4",
     "vue-router": "^4.2.4",
     "vuex": "^4.1.0",
