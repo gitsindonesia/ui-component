@@ -167,6 +167,14 @@ CustomIcon.args = {
   clearable: true,
 };
 
+export const AllowCustomValues = Template.bind({});
+AllowCustomValues.args = {
+  allowCustomValues: true,
+  searchable: true,
+  clearable: true,
+  // multiple: true,
+};
+
 export const Uncontrolled: Story<typeof Select> = (args) => ({
   components: {
     Select,

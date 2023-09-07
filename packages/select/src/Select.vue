@@ -18,7 +18,7 @@ import {computed, ref} from 'vue';
 import VBadge from '@morpheme/badge';
 import {Float} from '@headlessui-float/vue';
 import type {Placement} from '@floating-ui/vue';
-import SelectSearchInput, { ExposedProps } from './SelectSearchInput.vue';
+import SelectSearchInput, {ExposedProps} from './SelectSearchInput.vue';
 
 type T = Record<string, any>;
 type ModelValue = T | T[] | undefined;
@@ -64,17 +64,17 @@ const props = withDefaults(
     searchPlaceholder?: string;
     chips?: boolean;
     icon?: string;
-    iconSize?: string
-    iconClass?: string
+    iconSize?: string;
+    iconClass?: string;
     dropdownIcon?: string;
-    dropdownIconSize?: string
-    dropdownIconClass?: string
+    dropdownIconSize?: string;
+    dropdownIconClass?: string;
     checkIcon?: string;
-    checkIconSize?: string
-    checkIconClass?: string
+    checkIconSize?: string;
+    checkIconClass?: string;
     clearIcon?: string;
-    clearIconSize?: string
-    clearIconClass?: string
+    clearIconSize?: string;
+    clearIconClass?: string;
     searchPrefixIcon?: string;
     searchPrefixIconSize?: string;
     searchPrefixIconClass?: string;
@@ -90,6 +90,7 @@ const props = withDefaults(
     loadingText?: string;
     tooltip?: InstanceType<typeof VTooltip>['$props'];
     selectedText?: string;
+    allowCustomValues?: boolean;
   }>(),
   {
     itemText: 'text',
@@ -118,46 +119,45 @@ const props = withDefaults(
     searchSuffixIconSize: 'sm',
     selectedIconPlacement: 'left',
     tooltip: () => ({
-      placement: 'top'
+      placement: 'top',
     }),
     loadingIcon: 'ri:loader-5-fill',
     loadingText: 'Loading...',
-    selectedText: 'selected'
+    selectedText: 'selected',
   },
 );
 
-const emit =
-  defineEmits<{
-    (e: 'update:modelValue', value: ModelValue): void;
-    (e: 'change', value: ModelValue): void;
-  }>();
+const emit = defineEmits<{
+  (e: 'update:modelValue', value: ModelValue): void;
+  (e: 'change', value: ModelValue): void;
+}>();
 
 const query = ref('');
-const searchInputInside = ref<ExposedProps>()
-const searchInputOutside = ref<ExposedProps>()
+const searchInputInside = ref<ExposedProps>();
+const searchInputOutside = ref<ExposedProps>();
 
 const emitValue = (value: ModelValue) => {
   emit('update:modelValue', value);
   emit('change', value);
-}
+};
 
 const onUpdate = (event: any) => {
   if (query.value) {
-    query.value = ''
+    query.value = '';
     // explicitly set input text because `ComboboxInput` `displayValue` is not reactive
     if (props.searchPlacement === 'inside') {
       if (searchInputInside.value) {
-        searchInputInside.value.clear()
+        searchInputInside.value.clear();
       }
     } else {
       if (searchInputOutside.value) {
-        searchInputOutside.value.clear()
+        searchInputOutside.value.clear();
       }
     }
   }
 
-  emitValue(event)
-}
+  emitValue(event);
+};
 
 const clear = () => {
   const newValue = props.multiple ? ([] as T[]) : undefined;
@@ -170,7 +170,7 @@ const hasValue = computed(() => {
   }
 
   return props.modelValue !== undefined && props.modelValue !== null;
-})
+});
 
 const filteredItems = computed(() =>
   query.value === ''
@@ -201,6 +201,13 @@ const shadowClass = computed(() => {
   return props.shadow ? `v-select--shadow-${props.shadow}` : '';
 });
 
+const newItem = computed(() => {
+  const uniqueId = crypto.randomUUID();
+  return query.value === ''
+    ? null
+    : {[props.itemValue]: uniqueId, [props.itemText]: query.value};
+});
+
 defineSlots<{
   default?: (props: {
     modelValue: ModelValue;
@@ -209,9 +216,7 @@ defineSlots<{
     itemText: string;
     selectionItemProps: InstanceType<typeof VBadge>['$props'];
   }) => any;
-  button?: (props: {
-    open: boolean;
-  }) => any;
+  button?: (props: {open: boolean}) => any;
   'selection-item'?: (props: {
     item: T;
     idx: any;
@@ -250,11 +255,7 @@ defineSlots<{
     selectionItemProps?: InstanceType<typeof VBadge>['$props'];
     open: boolean;
   }) => any;
-  empty?: (props: {
-    items: T[];
-    emptyText?: string
-    open: boolean;
-  }) => any;
+  empty?: (props: {items: T[]; emptyText?: string; open: boolean}) => any;
   'item-text'?: (props: {
     item: T;
     itemText?: string;
@@ -270,7 +271,7 @@ defineSlots<{
 <template>
   <component
     :is="searchable ? Combobox : Listbox"
-    v-slot="{ open }"
+    v-slot="{open}"
     class="v-select"
     :class="[
       {
@@ -330,9 +331,7 @@ defineSlots<{
             }"
           >
             <div
-              v-if="
-                multiple && chips && modelValue && modelValue.length > 0
-              "
+              v-if="multiple && chips && modelValue && modelValue.length > 0"
               class="v-select-selection"
             >
               <template v-for="(item, idx) in modelValue" :key="idx">
@@ -344,7 +343,7 @@ defineSlots<{
                     itemText,
                     itemValue,
                     remove: () => modelValue?.splice(idx, 1),
-                    open
+                    open,
                   }"
                 >
                   <VBadge
@@ -363,7 +362,9 @@ defineSlots<{
           <SelectSearchInput
             v-if="searchable && searchPlacement === 'inside'"
             :placement="searchPlacement"
-            :placeholder="loading ? loadingText : searchPlaceholder || placeholder"
+            :placeholder="
+              loading ? loadingText : searchPlaceholder || placeholder
+            "
             :disabled="disabled || loading"
             :loading="loading"
             :display-value="displayValue ?? defaultDisplayValue"
@@ -388,7 +389,7 @@ defineSlots<{
               itemValue,
               searchable,
               chips,
-              open
+              open,
             }"
           >
             <div
@@ -416,7 +417,13 @@ defineSlots<{
                 }}
               </span>
               <span v-else>
-                {{ modelValue ? (modelValue as T)[itemText] : loading ? loadingText : placeholder }}
+                {{
+                  modelValue
+                    ? (modelValue as T)[itemText]
+                    : loading
+                    ? loadingText
+                    : placeholder
+                }}
               </span>
             </div>
           </slot>
@@ -450,7 +457,9 @@ defineSlots<{
           <SelectSearchInput
             v-if="searchable && searchPlacement === 'outside'"
             :placement="searchPlacement"
-            :placeholder="loading ? loadingText : searchPlaceholder || placeholder"
+            :placeholder="
+              loading ? loadingText : searchPlaceholder || placeholder
+            "
             :disabled="disabled || loading"
             :loading="loading"
             :display-value="displayValue ?? defaultDisplayValue"
@@ -483,6 +492,47 @@ defineSlots<{
                 searchable && searchPlacement === 'outside',
             }"
           >
+            <ComboboxOption
+              v-if="allowCustomValues && searchable && newItem"
+              :value="newItem"
+              v-slot="{active, selected}"
+            >
+              <div
+                class="v-select-option"
+                :class="{
+                  'v-select-option--active': active,
+                  'v-select-option--selected': selected,
+                  'v-select-option--icon-left':
+                    selectedIconPlacement === 'left',
+                  'v-select-option--icon-right':
+                    selectedIconPlacement === 'right',
+                }"
+              >
+                <div
+                  class="v-select-option-check"
+                  :class="{
+                    'v-select-option-check--active': active,
+                    'v-select-option-check--selected': selected,
+                  }"
+                >
+                  <slot
+                    v-if="selected"
+                    name="check-icon"
+                    v-bind="{selected, icon: checkIcon}"
+                  >
+                    <VIcon
+                      :name="checkIcon"
+                      class="v-select-option-check-icon"
+                      size="sm"
+                    />
+                  </slot>
+                </div>
+                <div class="v-select-option-text">
+                  Create "{{ newItem[itemText] }}"
+                </div>
+              </div>
+            </ComboboxOption>
+
             <component
               :is="searchable ? ComboboxOption : ListboxOption"
               v-for="(item, idx) in filteredItems"
@@ -500,8 +550,10 @@ defineSlots<{
                   :class="{
                     'v-select-option--active': active,
                     'v-select-option--selected': selected,
-                    'v-select-option--icon-left': selectedIconPlacement === 'left',
-                    'v-select-option--icon-right': selectedIconPlacement === 'right',
+                    'v-select-option--icon-left':
+                      selectedIconPlacement === 'left',
+                    'v-select-option--icon-right':
+                      selectedIconPlacement === 'right',
                   }"
                 >
                   <div
@@ -526,7 +578,14 @@ defineSlots<{
                   <div class="v-select-option-text">
                     <slot
                       name="item-text"
-                      v-bind="{item, itemText, itemValue, active, selected, open}"
+                      v-bind="{
+                        item,
+                        itemText,
+                        itemValue,
+                        active,
+                        selected,
+                        open,
+                      }"
                     >
                       {{ item[itemText] }}
                     </slot>
