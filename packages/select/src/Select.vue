@@ -445,7 +445,11 @@ defineSlots<{
               </template>
               <span> {{ clearText }} </span>
             </VTooltip>
-            <VIcon :name="icon" class="v-select-icon" :size="iconSize" />
+            <VIcon
+              :name="dropdownIcon"
+              :size="dropdownIconSize"
+              :class="['v-select-icon', dropdownIconClass]"
+            />
           </div>
         </component>
       </slot>
