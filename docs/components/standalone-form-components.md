@@ -38,6 +38,8 @@ Here is a list of the available standalone form components:
 
 The standalone form components are designed to work seamlessly with `v-model`, allowing easy data binding. Below is an example of basic usage:
 
+<LivePreview src="experimental-forms-playground--example">
+
 ```vue
 <script setup lang="ts">
 import {reactive} from 'vue';
@@ -124,9 +126,13 @@ const form = reactive({
 </template>
 ```
 
+</LivePreview>
+
 ## Form validation with `vee-validate`
 
 Here is an example of form validation using `vee-validate`:
+
+<LivePreview src="experimental-forms-playground--with-validation">
 
 ```vue
 <script setup lang="ts">
@@ -233,6 +239,7 @@ const onSubmit = handleSubmit((values) => {
 });
 </script>
 
+
 <template>
   <form @submit="onSubmit" class="px-4 space-y-4">
     <Input id="name" v-bind="name" label="Name" />
@@ -320,8 +327,10 @@ const onSubmit = handleSubmit((values) => {
 </template>
 ```
 
+</LivePreview>
+
 ## Additional Examples
 
-For more examples and usage scenarios, please check out the Storybook under the `Experimental` group.
+For more examples and usage scenarios, please check out the [Storybook](https://gits-ui.web.app/?path=/story/experimental-forms-input--default) under the `Experimental` group.
 
 By leveraging the Standalone Form Components and choosing the appropriate validation library, you can enhance your form handling process and create a better user experience tailored to your project's needs.
