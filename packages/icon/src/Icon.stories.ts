@@ -90,7 +90,7 @@ export const MorphemeIcons: Story = (args) => ({
   <Icon v-bind='args' name="ic:round-local-activity" />
   <Icon v-bind='args' name="ph:activity-bold" />
 
-  <p class="font-medium mb-2 mt-5">HypenCase</p>
+  <p class="font-medium mb-2 mt-5">Morpheme Icons</p>
   <Icon v-bind='args' name="remix:home-line" />
   <Icon v-bind='args' name="untitled:activity-heart" />
   <Icon v-bind='args' name="iconsax:outline/add" />
@@ -102,5 +102,25 @@ export const MorphemeIcons: Story = (args) => ({
 
   <p class="font-medium mb-2 mt-5">Non exist</p>
   <Icon v-bind='args' name="remix:non-exist-icon" />
+  `,
+});
+
+export const MorphemeIconsNoCache: Story = (args) => ({
+  components: {Icon},
+  setup() {
+    return {args};
+  },
+  template: `
+  <p class="font-medium mb-2">
+    By default morpheme icons are cached and stored in local storage, but you can disable it by setting via <code>no-cache</code> prop.
+  </p>
+  <Icon v-bind='args' name="remix:home-line" no-cache />
+  <Icon v-bind='args' name="untitled:activity-heart" no-cache />
+  <Icon v-bind='args' name="iconsax:outline/add" no-cache />
+  <Icon v-bind='args' name="iconsax:bulk/add" no-cache />
+  <Icon v-bind='args' name="iconsax:broken/add" no-cache />
+  <Icon v-bind='args' name="iconsax:linear/add" no-cache />
+  <Icon v-bind='args' name="iconsax:solid/add" no-cache />
+  <Icon v-bind='args' name="iconsax:twotone/add" no-cache />
   `,
 });
