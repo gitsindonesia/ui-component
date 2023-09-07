@@ -55,7 +55,7 @@ const props = withDefaults(
     emptyText?: string;
     searchBy?: string;
     selectionItemProps?: InstanceType<typeof VBadge>['$props'];
-    displayValue?: (item: any) => string;
+    displayValue?: (item: T) => string;
     placement?: Placement;
     offset?: number;
     shift?: boolean | number;
@@ -265,6 +265,7 @@ defineSlots<{
     open: boolean;
   }) => any;
   'check-icon'?: (props: {selected: boolean; icon: string}) => any;
+  'new-item-text'?: (props: {item: T}) => any;
 }>();
 </script>
 
@@ -532,7 +533,9 @@ defineSlots<{
                   </slot>
                 </div>
                 <div class="v-select-option-text">
-                  Create "{{ newItem[itemText] }}"
+                  <slot name="new-item-text" v-bind="{item: newItem}">
+                    Create "{{ newItem[itemText] }}"
+                  </slot>
                 </div>
               </div>
             </ComboboxOption>
