@@ -1,5 +1,6 @@
 :root {
   --nav-drawer-width: 248px;
+  --nav-drawer-height: 100%;
   --nav-drawer-transition: all 0.3s ease-out;
   --nav-drawer-bg-color: var(--color-white);
   --nav-drawer-text-color: var(--color-gray-800);
@@ -30,6 +31,7 @@
   box-shadow: var(--nav-drawer-shadow);
   border: var(--nav-drawer-border);
   width: var(--nav-drawer-width);
+  height: var(--nav-drawer-height);
   position: relative;
 
   /* variants */
@@ -107,10 +109,20 @@
 
   &--right {
     right: 0;
+
+    .nav-drawer__resizer {
+      left: 0;
+      right: initial;
+    }
   }
 
   &--left {
     left: 0;
+
+    .nav-drawer__resizer {
+      left: initial;
+      right: 0;
+    }
   }
 
   &--bottom {
@@ -118,8 +130,20 @@
     left: 0;
     right: 0;
     bottom: 0;
-    height: var(--nav-drawer-width);
     width: 100%;
+    height: var(--nav-drawer-width);
+
+    .nav-drawer__resizer {
+      top: 0;
+      bottom: initial;
+      width: 100%;
+      height: var(--nav-drawer-resizer-width);
+
+      &:hover,
+      &:active {
+        cursor: row-resize;
+      }
+    }
   }
 
   &--top {
@@ -129,6 +153,18 @@
     right: 0;
     height: var(--nav-drawer-width);
     width: 100%;
+
+    .nav-drawer__resizer {
+      bottom: 0;
+      top: initial;
+      width: 100%;
+      height: var(--nav-drawer-resizer-width);
+
+      &:hover,
+      &:active {
+        cursor: row-resize;
+      }
+    }
   }
 
   /* nav-drawer-transition */
@@ -228,9 +264,9 @@
     width: var(--nav-drawer-resizer-width);
     background-color: var(--nav-drawer-resizer-bg-color);
     position: absolute;
-    right: 0;
     cursor: col-resize;
     transition: background-color 0.3s ease-out;
+    right: 0;
 
     &:hover,
     &:active {

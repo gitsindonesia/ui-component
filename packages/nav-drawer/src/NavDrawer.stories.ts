@@ -424,6 +424,7 @@ export const Resizeable: StoryFn<typeof NavDrawer> = (args) => ({
       color="primary"
       shadow="lg"
       resizeable
+      v-bind="args"
     >
       <p class="font-semibold p-4 truncate">
         Hover on the edge to resize
