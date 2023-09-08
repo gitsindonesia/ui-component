@@ -139,17 +139,28 @@ const styles = computed(() => {
 });
 
 const resizerEl = ref<HTMLElement>();
-const {x} = useDraggable(resizerEl);
+const {x, y} = useDraggable(resizerEl);
 
 watch(x, (newX) => {
-  if (newX <= props.minWidth) return;
+  const newWidth = props.right ? window.innerWidth - newX : newX;
 
-  if (newX >= props.maxWidth) return;
-
-  if (!drawer.value) return;
+  if (newWidth <= props.minWidth) return;
+  if (newWidth >= props.maxWidth) return;
+  if (!drawer.value || props.bottom || props.top) return;
 
   drawer.value.style.userSelect = 'none';
-  drawer.value.style.setProperty('--nav-drawer-width', `${newX}px`);
+  drawer.value.style.setProperty('--nav-drawer-width', `${newWidth}px`);
+});
+
+watch(y, (newY) => {
+  const newWidth = props.bottom ? window.innerHeight - newY : newY;
+
+  if (newWidth <= props.minWidth) return;
+  if (newWidth >= props.maxWidth) return;
+  if (!drawer.value || props.left || props.right) return;
+
+  drawer.value.style.userSelect = 'none';
+  drawer.value.style.setProperty('--nav-drawer-width', `${newWidth}px`);
 });
 
 function onResizerClicked(event: any) {
