@@ -5,6 +5,7 @@ import {ref} from 'vue';
 import Button from '@morpheme/button';
 import {colors} from './colors';
 import NavDrawerCustom from './stories/NavDrawerCustom.vue';
+import NavDrawerResizer from './NavDrawerResizer.vue';
 
 export default {
   title: 'Components/NavigationDrawer',
@@ -406,6 +407,30 @@ export const Top: StoryFn<typeof NavDrawer> = (args) => ({
       <Button @click="isOpen = !isOpen">
         {{ isOpen ? 'Close' : 'Open' }} Drawer
       </Button>
+    </main>
+  `,
+});
+
+export const Resizer: StoryFn<typeof NavDrawer> = (args) => ({
+  components: {NavDrawer, Button},
+  setup() {
+    const isOpen = ref(true);
+
+    return {args, isOpen};
+  },
+  template: `
+    <NavDrawer
+      v-model="isOpen"
+      color="primary"
+      shadow="lg"
+      expand-on-resizer-click
+    >
+      <p class="font-semibold p-4 truncate">
+        Hover on the edge to resize
+      </p>
+    </NavDrawer>
+    <main>
+      Main content
     </main>
   `,
 });

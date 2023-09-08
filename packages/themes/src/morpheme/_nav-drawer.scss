@@ -13,6 +13,11 @@
   // expanded
   --nav-drawer-inexpanded-width: var(--nav-drawer-mini-width);
   --nav-drawer-expanded-width: 248px;
+
+  // resizer
+  --nav-drawer-resizer-width: 6px;
+  --nav-drawer-resizer-bg-color: transparent;
+  --nav-drawer-resizer-hover-bg-color: var(--color-gray-400);
 }
 
 .nav-drawer {
@@ -25,6 +30,7 @@
   box-shadow: var(--nav-drawer-shadow);
   border: var(--nav-drawer-border);
   width: var(--nav-drawer-width);
+  position: relative;
 
   /* variants */
   &-default {
@@ -34,16 +40,19 @@
   &-primary {
     --nav-drawer-bg-color: var(--color-primary-500);
     --nav-drawer-text-color: var(--color-white);
+    --nav-drawer-resizer-hover-bg-color: var(--color-primary-400);
   }
 
   &-dark {
     --nav-drawer-bg-color: var(--color-gray-800);
     --nav-drawer-text-color: var(--color-white);
+    --nav-drawer-resizer-hover-bg-color: var(--color-gray-700);
   }
 
   &-secondary {
     --nav-drawer-bg-color: var(--color-secondary-500);
     --nav-drawer-text-color: var(--color-white);
+    --nav-drawer-resizer-hover-bg-color: var(--color-secondary-400);
   }
 
   /* modifiers */
@@ -188,7 +197,9 @@
     background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
     z-index: 10;
-    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-property: color, background-color, border-color,
+      text-decoration-color, fill, stroke, opacity, box-shadow, transform,
+      filter, backdrop-filter;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 300ms;
   }
@@ -209,5 +220,23 @@
   }
   &--expand-on-hover.nav-drawer--expanded {
     --nav-drawer-width: var(--nav-drawer-expanded-width);
+  }
+
+  &__resizer {
+    appearance: none;
+    height: 100%;
+    width: var(--nav-drawer-resizer-width);
+    background-color: var(--nav-drawer-resizer-bg-color);
+    position: absolute;
+    right: 0;
+    cursor: col-resize;
+    transition: background-color 0.3s ease-out;
+
+    &:hover,
+    &:active {
+      cursor: col-resize;
+      background-color: var(--nav-drawer-resizer-hover-bg-color);
+      box-shadow: var(--effect-shadow-lg);
+    }
   }
 }

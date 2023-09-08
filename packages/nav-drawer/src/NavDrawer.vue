@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import {useVModel} from '@vueuse/core';
-import {computed} from 'vue';
+import {computed, ref, watch} from 'vue';
 import {Colors} from './colors';
 import {navDrawerHeights, NavDrawerHeights} from './types';
+import {useDraggable} from '@vueuse/core';
 
 export interface Props {
   color?: Colors | string;
@@ -23,6 +24,12 @@ export interface Props {
   expandOnHover?: boolean;
   expanded?: boolean;
   height?: NavDrawerHeights | string;
+  resizer?: boolean;
+  maxWidth?: number;
+  minWidth?: number;
+  miniOnResizerClick?: boolean;
+  hideOnResizerClick?: boolean;
+  expandOnResizerClick?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -33,21 +40,26 @@ const props = withDefaults(defineProps<Props>(), {
   closeOnOverlayClick: true,
   mini: false,
   height: 'screen',
+  minWidth: 62,
+  maxWidth: 248,
 });
 
 defineOptions({
   inheritAttrs: false,
 });
 
-const emit =
-  defineEmits<{
-    (e: 'update:modelValue', value: string): void;
-    (e: 'update:expanded', value: boolean): void;
-    (e: 'clickOverlay'): void;
-  }>();
+const emit = defineEmits<{
+  (e: 'update:modelValue', value: string): void;
+  (e: 'update:expanded', value: boolean): void;
+  (e: 'update:mini', value: boolean): void;
+  (e: 'clickOverlay'): void;
+  (e: 'clickResizer', event: any): void;
+}>();
 
 const isOpen = useVModel(props, 'modelValue', emit);
 const isExpanded = useVModel(props, 'expanded', emit);
+const mini = useVModel(props, 'mini', emit);
+const drawer = ref<HTMLElement>();
 
 const classes = computed(() => {
   const shadowClass =
@@ -67,7 +79,7 @@ const classes = computed(() => {
       'nav-drawer--left': props.left,
       'nav-drawer--bottom': props.bottom,
       'nav-drawer--top': props.top,
-      'nav-drawer--mini': props.mini,
+      'nav-drawer--mini': mini.value,
       'nav-drawer--expand-on-hover': props.expandOnHover,
       'nav-drawer--expanded': isExpanded.value,
     },
@@ -126,8 +138,42 @@ const styles = computed(() => {
   return styles;
 });
 
+const resizerEl = ref<HTMLElement>();
+const {x} = useDraggable(resizerEl);
+
+watch(x, (newX) => {
+  if (newX <= props.minWidth) return;
+
+  if (newX >= props.maxWidth) return;
+
+  if (!drawer.value) return;
+
+  drawer.value.style.userSelect = 'none';
+  drawer.value.style.setProperty('--nav-drawer-width', `${newX}px`);
+});
+
+function onResizerClicked(event: any) {
+  if (props.miniOnResizerClick) {
+    mini.value = !mini.value;
+  }
+
+  if (props.expandOnResizerClick) {
+    isExpanded.value = !isExpanded.value;
+  }
+
+  if (props.hideOnResizerClick) {
+    isOpen.value = false;
+  }
+
+  emit('clickResizer', event);
+}
+
 defineSlots<{
   default?: (props: {}) => any;
+  resizer?: (props: {
+    resizer: boolean | undefined;
+    onClick: (event: any) => void;
+  }) => any;
 }>();
 </script>
 
@@ -148,9 +194,21 @@ defineSlots<{
       :class="classes"
       v-bind="$attrs"
       :style="styles"
+      ref="drawer"
       @mouseover="onMouseOver"
       @mouseout="onMouseOut"
     >
+      <slot name="resizer" v-bind="{resizer, onClick: onResizerClicked}">
+        <button
+          v-if="resizer"
+          aria-label="Resizer"
+          ref="resizer"
+          class="nav-drawer__resizer"
+          @click="onResizerClicked"
+        >
+          <div class="sr-only">Click and hold to resize</div>
+        </button>
+      </slot>
       <slot />
     </aside>
   </transition>
