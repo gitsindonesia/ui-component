@@ -411,7 +411,7 @@ export const Top: StoryFn<typeof NavDrawer> = (args) => ({
   `,
 });
 
-export const Resizer: StoryFn<typeof NavDrawer> = (args) => ({
+export const Resizeable: StoryFn<typeof NavDrawer> = (args) => ({
   components: {NavDrawer, Button},
   setup() {
     const isOpen = ref(true);
@@ -423,7 +423,7 @@ export const Resizer: StoryFn<typeof NavDrawer> = (args) => ({
       v-model="isOpen"
       color="primary"
       shadow="lg"
-      expand-on-resizer-click
+      resizeable
     >
       <p class="font-semibold p-4 truncate">
         Hover on the edge to resize
