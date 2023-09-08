@@ -423,26 +423,69 @@ const isOpen = ref(true);
 
 </LivePreview>
 
+### Resizeable
+
+- **props**: `resizeable`
+- **type**: `boolean`
+- **default**: `false`
+
+You can make nav drawer resizeable adding `resizeable` prop.
+
+<LivePreview src="components-navigationdrawer--resizeable">
+
+```vue {15}
+<script setup lang="ts">
+import {NavDrawer} from '@morpheme/nav-drawer';
+import {ref} from 'vue';
+
+const isOpen = ref(true);
+</script>
+
+<template>
+  <NavDrawer
+    v-model="isOpen"
+    color="primary"
+    shadow="lg"
+    resizeable
+  >
+    <p class="font-semibold p-4 truncate">
+      Hover on the edge to resize
+    </p>
+  </NavDrawer>
+  <main>
+    Main content
+  </main>
+</template>
+```
+
+</LivePreview>
+
 ## Props
 
-| Name                                          | Type                                                                                                                                     | Default                         |
-| --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
-| [`color`](#color)                             | `string \| default \| primary \| secondary \| dark`                                                                                      | `default`                       |
-| [`modelValue`](#modelValue)                   | `boolean`                                                                                                                                | `true`                          |
-| [`shadow`](#shadow)                           | `'sm' \| 'md' \| 'lg' \| 'xl' \| boolean`                                                                                                | `false`                         |
-| [`bordered`](#bordered)                       | `boolean`                                                                                                                                | `false`                         |
-| [`sticky`](#sticky)                           | `boolean`                                                                                                                                | `false`                         |
-| [`fixed`](#fixed)                             | `boolean`                                                                                                                                | `false`                         |
-| [`right`](#right)                             | `boolean`                                                                                                                                | `false`                         |
-| [`left`](#left)                               | `boolean`                                                                                                                                | `false`                         |
-| [`transition`](#transition)                   | `string`                                                                                                                                 | `nav-drawer-transition`         |
-| [`overlay`](#overlay)                         | `boolean`                                                                                                                                | `false`                         |
-| [`overlayTransition`](#overlayTransition)     | `string`                                                                                                                                 | `nav-drawer-overlay-transition` |
-| [`closeOnOverlayClick`](#closeOnOverlayClick) | `boolean`                                                                                                                                | `true`                          |
-| [`mini`](#mini)                               | `boolean`                                                                                                                                | `false`                         |
-| [`expandOnHover`](#expandOnHover)             | `boolean`                                                                                                                                | `false`                         |
-| [`expanded`](#expanded)                       | `boolean`                                                                                                                                | `false`                         |
-| [`height`](#height)                           | `screen \| fit \| auto \| max \| screen-dvh \| screen-svh \|screen-lvh \|  unset \| initial \| inherit \| min-content \| revert \| none` | `screen`                        |
+| Name                                            | Type                                                                                                                                     | Default                         |
+| ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
+| [`color`](#color)                               | `string \| default \| primary \| secondary \| dark`                                                                                      | `default`                       |
+| [`modelValue`](#modelValue)                     | `boolean`                                                                                                                                | `true`                          |
+| [`shadow`](#shadow)                             | `'sm' \| 'md' \| 'lg' \| 'xl' \| boolean`                                                                                                | `false`                         |
+| [`bordered`](#bordered)                         | `boolean`                                                                                                                                | `false`                         |
+| [`sticky`](#sticky)                             | `boolean`                                                                                                                                | `false`                         |
+| [`fixed`](#fixed)                               | `boolean`                                                                                                                                | `false`                         |
+| [`right`](#right)                               | `boolean`                                                                                                                                | `false`                         |
+| [`left`](#left)                                 | `boolean`                                                                                                                                | `false`                         |
+| [`transition`](#transition)                     | `string`                                                                                                                                 | `nav-drawer-transition`         |
+| [`overlay`](#overlay)                           | `boolean`                                                                                                                                | `false`                         |
+| [`overlayTransition`](#overlayTransition)       | `string`                                                                                                                                 | `nav-drawer-overlay-transition` |
+| [`closeOnOverlayClick`](#closeOnOverlayClick)   | `boolean`                                                                                                                                | `true`                          |
+| [`mini`](#mini)                                 | `boolean`                                                                                                                                | `false`                         |
+| [`expandOnHover`](#expandOnHover)               | `boolean`                                                                                                                                | `false`                         |
+| [`expanded`](#expanded)                         | `boolean`                                                                                                                                | `false`                         |
+| [`height`](#height)                             | `screen \| fit \| auto \| max \| screen-dvh \| screen-svh \|screen-lvh \|  unset \| initial \| inherit \| min-content \| revert \| none` | `screen`                        |
+| [`resizeable`](#resizeable)                     | `boolean`                                                                                                                                | `false`                         |
+| [`maxWidth`](#maxWidth)                         | `boolean`                                                                                                                                | `248`                           |
+| [`minWidth`](#minWidth)                         | `62`                                                                                                                                     | `false`                         |
+| [`miniOnResizerClick`](#miniOnResizerClick)     | `boolean`                                                                                                                                | `false`                         |
+| [`hideOnResizerClick`](#hideOnResizerClick)     | `boolean`                                                                                                                                | `false`                         |
+| [`expandOnResizerClick`](#expandOnResizerClick) | `boolean`                                                                                                                                | `false`                         |
 
 ## Events
 
