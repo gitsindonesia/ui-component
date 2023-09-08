@@ -429,7 +429,7 @@ const isOpen = ref(true);
 - **type**: `boolean`
 - **default**: `false`
 
-You can make nav drawer resizeable adding `resizeable` prop.
+You can make nav drawer resizeable by adding `resizeable` prop. You can also change nav drawer size to mini when resizer button clicked by adding `miniOnResizerClick` prop, hide nav drawer when resizer clicked via `hideOnResizerClick` prop or toggle expand the nav drawer via `expandOnResizerClick` prop.
 
 <LivePreview src="components-navigationdrawer--resizeable">
 
