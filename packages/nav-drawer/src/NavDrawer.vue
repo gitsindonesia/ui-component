@@ -24,7 +24,7 @@ export interface Props {
   expandOnHover?: boolean;
   expanded?: boolean;
   height?: NavDrawerHeights | string;
-  resizer?: boolean;
+  resizeable?: boolean;
   maxWidth?: number;
   minWidth?: number;
   miniOnResizerClick?: boolean;
@@ -171,7 +171,7 @@ function onResizerClicked(event: any) {
 defineSlots<{
   default?: (props: {}) => any;
   resizer?: (props: {
-    resizer: boolean | undefined;
+    resizeable: boolean | undefined;
     onClick: (event: any) => void;
   }) => any;
 }>();
@@ -198,11 +198,11 @@ defineSlots<{
       @mouseover="onMouseOver"
       @mouseout="onMouseOut"
     >
-      <slot name="resizer" v-bind="{resizer, onClick: onResizerClicked}">
+      <slot name="resizer" v-bind="{resizeable, onClick: onResizerClicked}">
         <button
-          v-if="resizer"
+          v-if="resizeable"
           aria-label="Resizer"
-          ref="resizer"
+          ref="resizerEl"
           class="nav-drawer__resizer"
           @click="onResizerClicked"
         >
