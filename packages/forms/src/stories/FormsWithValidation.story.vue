@@ -8,7 +8,7 @@ import {
   Select,
   Radio,
   FileInput
-} from '@morpheme/forms';
+} from '../index';
 import {VBtn} from '@morpheme/button';
 import {ref} from 'vue';
 import {Select as SelectMenu} from '@morpheme/select';
@@ -46,6 +46,7 @@ const { defineComponentBinds, handleSubmit, resetForm, errors, values } = useFor
     terms: false,
     bio: '',
     hobby: '',
+    radio: '',
     avatar: [],
     checkboxMultiple: [],
     selectMenu: undefined,
@@ -54,7 +55,7 @@ const { defineComponentBinds, handleSubmit, resetForm, errors, values } = useFor
   }
 });
 
-const propsConfig = (state) => ({
+const propsConfig = (state: any) => ({
   props: {
     error: !!state.errors.length,
     'error-message': state.errors[0],
