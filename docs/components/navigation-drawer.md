@@ -542,10 +542,25 @@ The default slot is used to place any content inside navigation drawer.
 ```scss
 :root {
   --nav-drawer-width: 248px;
+  --nav-drawer-height: 100%;
   --nav-drawer-transition: all 0.3s ease-out;
   --nav-drawer-bg-color: var(--color-white);
   --nav-drawer-text-color: var(--color-gray-800);
   --nav-drawer-shadow: none;
+  --nav-drawer-border-color: var(--color-gray-200);
+  --nav-drawer-z-index: 20;
+
+  // mini
+  --nav-drawer-mini-width: 62px;
+
+  // expanded
+  --nav-drawer-inexpanded-width: var(--nav-drawer-mini-width);
+  --nav-drawer-expanded-width: 248px;
+
+  // resizer
+  --nav-drawer-resizer-width: 6px;
+  --nav-drawer-resizer-bg-color: transparent;
+  --nav-drawer-resizer-hover-bg-color: var(--color-gray-400);
 }
 ```
 
