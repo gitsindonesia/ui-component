@@ -4,7 +4,7 @@ import {
   Grid01Icon,
   Home01Icon,
   LayersTwo02Icon,
-} from "@morphemeicons/vue/untitled";
+} from '@morphemeicons/vue/untitled';
 
 const emit = defineEmits<{
   menuClick: [menu: MenuItem];
@@ -19,240 +19,244 @@ export interface MenuItem {
 
 const menus = ref<MenuItem[]>([
   {
-    text: "Home",
-    to: "/",
+    text: 'Home',
+    to: '/',
     icon: Home01Icon,
   },
   {
-    text: "Components",
+    text: 'Components',
     icon: LayersTwo02Icon,
     children: [
       {
-        text: "Alert",
-        to: "/components/alert",
+        text: 'Alert',
+        to: '/components/alert',
       },
       {
-        text: "AppBar",
-        to: "/components/app-bar",
+        text: 'AppBar',
+        to: '/components/app-bar',
       },
       {
-        text: "AppShell",
-        to: "/components/app-shell",
+        text: 'AppShell',
+        to: '/components/app-shell',
       },
       {
-        text: "Autocomplete",
-        to: "/components/autocomplete",
+        text: 'Autocomplete',
+        to: '/components/autocomplete',
       },
-      { text: "Avatar", to: "/components/avatar" },
-      { text: "Badge", to: "/components/badge" },
-      { text: "Banner", to: "/components/banner" },
-      { text: "BottomNavigation", to: "/components/bottom-navigation" },
-      { text: "BottomSheet", to: "/components/bottom-sheet" },
-      { text: "Breadcrumbs", to: "/components/breadcrumbs" },
-      { text: "Card", to: "/components/card" },
-      { text: "Collapse", to: "/components/collapse" },
-      { text: "Collapsible", to: "/components/collapsible" },
-      { text: "Command", to: "/components/command" },
-      { text: "DataTable", to: "/components/data-table" },
+      {text: 'Avatar', to: '/components/avatar'},
+      {text: 'Badge', to: '/components/badge'},
+      {text: 'Banner', to: '/components/banner'},
+      {text: 'BottomNavigation', to: '/components/bottom-navigation'},
+      {text: 'BottomSheet', to: '/components/bottom-sheet'},
+      {text: 'Breadcrumbs', to: '/components/breadcrumbs'},
+      {text: 'Card', to: '/components/card'},
+      {text: 'Collapse', to: '/components/collapse'},
+      {text: 'Collapsible', to: '/components/collapsible'},
+      {text: 'Command', to: '/components/command'},
+      {text: 'DataTable', to: '/components/data-table'},
       {
-        text: "DataTablePagination",
-        to: "/components/data-table-pagination",
-      },
-      {
-        text: "Divider",
-        to: "/components/divider",
+        text: 'DataTablePagination',
+        to: '/components/data-table-pagination',
       },
       {
-        text: "Dropdown",
-        to: "/components/dropdown",
+        text: 'Divider',
+        to: '/components/divider',
       },
       {
-        text: "Icon",
-        to: "/components/icon",
+        text: 'Dropdown',
+        to: '/components/dropdown',
       },
       {
-        text: "List",
-        to: "/components/list",
+        text: 'Icon',
+        to: '/components/icon',
       },
       {
-        text: "Menu",
-        to: "/components/menu",
+        text: 'List',
+        to: '/components/list',
       },
       {
-        text: "Menus",
-        to: "/components/menus",
+        text: 'Menu',
+        to: '/components/menu',
       },
       {
-        text: "Modal",
-        to: "/components/modal",
+        text: 'Menus',
+        to: '/components/menus',
       },
       {
-        text: "Navigation Drawer",
-        to: "/components/navigation-drawer",
+        text: 'Modal',
+        to: '/components/modal',
       },
       {
-        text: "Pagination",
-        to: "/components/pagination",
+        text: 'Navigation Drawer',
+        to: '/components/navigation-drawer',
       },
       {
-        text: "Popover",
-        to: "/components/popover",
+        text: 'Pagination',
+        to: '/components/pagination',
       },
       {
-        text: "Progress Bar",
-        to: "/components/progress-bar",
+        text: 'Popover',
+        to: '/components/popover',
       },
       {
-        text: "Progress Circular",
-        to: "/components/progress-circular",
+        text: 'Progress Bar',
+        to: '/components/progress-bar',
       },
       {
-        text: "Rating",
-        to: "/components/rating",
+        text: 'Progress Circular',
+        to: '/components/progress-circular',
       },
       {
-        text: "Select",
-        to: "/components/select",
+        text: 'Rating',
+        to: '/components/rating',
       },
       {
-        text: "Shimmer",
-        to: "/components/shimmer",
+        text: 'Select',
+        to: '/components/select',
       },
       {
-        text: "Spinner",
-        to: "/components/spinner",
+        text: 'Shimmer',
+        to: '/components/shimmer',
       },
       {
-        text: "Stepper",
-        to: "/components/stepper",
+        text: 'Spinner',
+        to: '/components/spinner',
       },
       {
-        text: "Switch",
-        to: "/components/switch",
+        text: 'Stepper',
+        to: '/components/stepper',
       },
       {
-        text: "Tabs",
-        to: "/components/tabs",
+        text: 'Switch',
+        to: '/components/switch',
       },
       {
-        text: "Timeline",
-        to: "/components/timeline",
+        text: 'Tabs',
+        to: '/components/tabs',
       },
       {
-        text: "Toast",
-        to: "/components/toast",
+        text: 'Timeline',
+        to: '/components/timeline',
       },
       {
-        text: "Text",
-        to: "/components/text",
+        text: 'Toast',
+        to: '/components/toast',
       },
       {
-        text: "Tooltip",
-        to: "/components/tooltip",
+        text: 'Text',
+        to: '/components/text',
+      },
+      {
+        text: 'Tooltip',
+        to: '/components/tooltip',
       },
     ],
   },
   {
-    text: "Forms",
+    text: 'Forms',
     icon: LayersTwo02Icon,
     children: [
       {
-        text: "Button",
-        to: "/forms/buttons",
+        text: 'Button',
+        to: '/forms/buttons',
       },
       {
-        text: "Checkbox",
-        to: "/forms/checkbox",
+        text: 'Checkbox',
+        to: '/forms/checkbox',
       },
       {
-        text: "Editor",
-        to: "/forms/editor",
+        text: 'Editor',
+        to: '/forms/editor',
       },
       {
-        text: "FileInput",
-        to: "/forms/file-input",
+        text: 'FileInput',
+        to: '/forms/file-input',
       },
       {
-        text: "FormSelect",
-        to: "/forms/form-select",
+        text: 'FormSelect',
+        to: '/forms/form-select',
       },
       {
-        text: "InputRange",
-        to: "/forms/input-range",
+        text: 'InputRange',
+        to: '/forms/input-range',
       },
       {
-        text: "Input",
-        to: "/forms/input",
+        text: 'Input',
+        to: '/forms/input',
       },
       {
-        text: "MultiSelect",
-        to: "/forms/multi-select",
+        text: 'MultiSelect',
+        to: '/forms/multi-select',
       },
       {
-        text: "QuillEditor",
-        to: "/forms/quill-editor",
+        text: 'QuillEditor',
+        to: '/forms/quill-editor',
       },
       {
-        text: "RadioGroup",
-        to: "/forms/radio-group",
+        text: 'RadioGroup',
+        to: '/forms/radio-group',
       },
       {
-        text: "Radio",
-        to: "/forms/radio",
+        text: 'Radio',
+        to: '/forms/radio',
       },
       {
-        text: "Textarea",
-        to: "/forms/textarea",
+        text: 'Textarea',
+        to: '/forms/textarea',
       },
       {
-        text: "Validation",
-        to: "/forms/validation",
+        text: 'Validation',
+        to: '/forms/validation',
       },
       {
-        text: "Standalone Components",
-        to: "/forms/standalone",
+        text: 'Standalone Components',
+        to: '/forms/standalone',
       },
     ],
   },
   {
-    text: "Experimental",
+    text: 'Experimental',
     icon: LayersTwo02Icon,
     children: [
       {
-        text: "Autocomplete",
-        to: "/forms/autocomplete",
+        text: 'Autocomplete',
+        to: '/forms/autocomplete',
       },
       {
-        text: "Select",
-        to: "/forms/select",
+        text: 'Select',
+        to: '/forms/select',
       },
     ],
   },
   {
-    text: "Pages",
+    text: 'Pages',
     icon: Flag01Icon,
     children: [
       {
-        text: "Login",
-        to: "/pages/login",
+        text: 'Login',
+        to: '/pages/login',
       },
       {
-        text: "Register",
-        to: "/pages/register",
+        text: 'Register',
+        to: '/pages/register',
       },
     ],
   },
   {
-    text: "Application",
+    text: 'Application',
     icon: Grid01Icon,
     children: [
       {
-        text: "Mobile App",
-        to: "/mobile",
+        text: 'Mobile App',
+        to: '/mobile',
       },
       {
-        text: "Inbox",
-        to: "/inbox",
+        text: 'Inbox',
+        to: '/inbox',
+      },
+      {
+        text: 'Music',
+        to: '/music',
       },
     ],
   },
@@ -261,19 +265,24 @@ const menus = ref<MenuItem[]>([
 const route = useRoute();
 
 function isMenuActiveOnChildren(menu: MenuItem) {
-  return menu.children?.some((child) => route.path.startsWith(String(child.to)));
+  return menu.children?.some((child) =>
+    route.path.startsWith(String(child.to)),
+  );
 }
 
 function onMenuClick(menu: MenuItem) {
-  emit("menuClick", menu);
+  emit('menuClick', menu);
 }
 </script>
 
 <template>
   <VList hover class="sidebar-menus">
     <template v-for="menu in menus" :key="menu.text">
-      <VListCollapse v-if="menu.children" :model-value="isMenuActiveOnChildren(menu)">
-        <template #activator="{ isOpen, toggle }">
+      <VListCollapse
+        v-if="menu.children"
+        :model-value="isMenuActiveOnChildren(menu)"
+      >
+        <template #activator="{isOpen, toggle}">
           <VListItem
             append-icon="ri:arrow-down-s-line"
             :append-icon-class="isOpen ? 'rotate-180' : ''"
