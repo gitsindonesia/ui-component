@@ -19,7 +19,7 @@
 
   // item active
   --dropdown-item-active-color: currentColor;
-  --dropdown-item-active-bg-color: var(--color-gray-50);
+  --dropdown-item-active-bg-color: var(--color-gray-100);
 
   // item icon
   --dropdown-item-icon-width: var(--size-spacing-4);
@@ -36,7 +36,7 @@
   --dropdown-panel-margin-top: var(--size-spacing-0);
   --dropdown-panel-border-width: 1px;
   --dropdown-panel-border-style: solid;
-  --dropdown-panel-border-color: var(--color-gray-200);
+  --dropdown-panel-border-color: var(--color-gray-300);
 
   // divider
   --dropdown-divider-border-color: var(--color-gray-200);
@@ -73,10 +73,23 @@
   text-align: left;
 
   &-panel {
+    //   background-color: var(--dropdown-panel-bg-color);
+    //   position: absolute;
+    //   width: 100%;
+    //   padding-top: 0.5rem;
+    //   padding-bottom: 0.5rem;
+    //   text-align: left;
+    //   border-radius: var(--dropdown-panel-border-radius);
+    //   box-shadow: var(--effect-shadow-md);
+    //   max-height: 15rem;
+    //   z-index: 10;
+    //   border: var(--dropdown-panel-border-width)
+    //     var(--dropdown-panel-border-style) var(--dropdown-panel-border-color);
+    //   margin-top: var(--size-spacing-1);
+    width: var(--dropdown-panel-width);
     position: absolute;
     z-index: var(--dropdown-panel-z-index);
     padding: var(--dropdown-panel-padding);
-    width: var(--dropdown-panel-width);
     background-color: var(--dropdown-panel-bg-color);
     border-radius: var(--dropdown-panel-border-radius);
     box-shadow: var(--dropdown-panel-box-shadow);

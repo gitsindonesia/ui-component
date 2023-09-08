@@ -7,6 +7,8 @@ import Button from '@morpheme/button';
 import DropdownBtn from './DropdownBtn.vue';
 import DropdownHeader from './DropdownHeader.vue';
 import DropdownActivator from './DropdownActivator.vue';
+import DropdownGroup from './DropdownGroup.vue';
+import DropdownPanel from './DropdownPanel.vue';
 
 const items = [
   {
@@ -584,5 +586,26 @@ export const Sizes: Story = (args, {argTypes}) => ({
     <Dropdown v-bind="args" size="sm" label="Size: sm" />
     <Dropdown v-bind="args" label="Size: md (default)" />
     <Dropdown v-bind="args" size="lg" label="Size: lg" />
+  `,
+});
+
+export const Declarative: Story = (args, {argTypes}) => ({
+  components: {DropdownGroup, DropdownPanel, DropdownItem, DropdownButton},
+  setup() {
+    return {args, argTypes, DropdownItem};
+  },
+  template: `
+    <DropdownGroup>
+      <DropdownButton as="VBtn">
+        Dropdown
+      </DropdownButton>
+      <DropdownPanel>
+        <DropdownItem text="Calendar" icon="mdi:calendar"/>
+        <DropdownItem text="Files" icon="mdi:document" />
+        <DropdownItem text="Edit" disabled icon="ri:edit-line" />
+        <DropdownItem divider/>
+        <DropdownItem text="Timer" icon="mdi:clock"/>
+      </DropdownPanel>
+    </DropdownGroup>
   `,
 });

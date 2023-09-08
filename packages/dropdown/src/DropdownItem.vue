@@ -65,7 +65,7 @@ defineSlots<{
 </script>
 
 <template>
-  <MenuItem v-slot="{active}" :disabled="disabled">
+  <MenuItem v-slot="{active}" :disabled="disabled || divider">
     <div v-if="divider" class="dropdown-divider"></div>
     <component
       v-else
