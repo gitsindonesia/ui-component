@@ -1,7 +1,7 @@
 {
   "name": "@morpheme/nuxt",
   "description": "Nuxt module for Morpheme UI",
-  "version": "1.0.0-beta.11",
+  "version": "1.0.0-rc.0",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -23,12 +23,12 @@
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
   },
   "dependencies": {
-    "@morpheme/ui": "^1.0.0-beta.11",
+    "@morpheme/ui": "^1.0.0-rc.0",
     "@nuxt/devtools-kit": "^0.5.5",
     "@nuxt/kit": "^3.5.0"
   },
   "devDependencies": {
-    "@morpheme/tailwind-config": "^1.0.0-beta.11",
+    "@morpheme/tailwind-config": "^1.0.0-rc.0",
     "@nuxt/module-builder": "^0.2.1",
     "@nuxt/schema": "^3.5.0",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",

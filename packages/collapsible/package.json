@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/collapsible",
-  "version": "1.0.0-beta.11",
+  "version": "1.0.0-rc.0",
   "description": "Morpheme Collapsible Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,8 +15,8 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "@morpheme/icon": "^1.0.0-beta.11",
-    "@morpheme/utils": "^1.0.0-beta.11",
+    "@morpheme/icon": "^1.0.0-rc.0",
+    "@morpheme/utils": "^1.0.0-rc.0",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
     "vite": "^4.3.8",
