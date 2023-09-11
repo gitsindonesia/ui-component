@@ -1,7 +1,7 @@
 {
   "name": "@morpheme/nuxt-minimal",
   "description": "Lightweight Nuxt.js template with Morpheme UI",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "keywords": [
     "admin",
     "dashboard",
