@@ -8,11 +8,11 @@ Nuxt Kitchen Sink is a proof of concept (POC) that showcases the full range of c
 
 - [Online demo](https://morpheme-kitchen-sink.vercel.app/)
 - [Source code](https://github.com/gitsindonesia/ui-component/tree/main/starter/kitchen-sink)
-- Try it online on [Stackblitz](https://stackblitz.com/github/gitsindonesia/ui-component/tree/main/starter/kitchen-sink)
+- Try it online on [Stackblitz](https://stackblitz.com/fork/github/gitsindonesia/ui-component/tree/main/starter/kitchen-sink)
 
 To set up a new project with this starter, use the Morpheme CLI:
 
-```
+```bash
 npx create-morpheme-app@latest
 ```
 
@@ -24,11 +24,11 @@ Nuxt Minimal Starter is a lightweight foundation for Nuxt projects that incorpor
 
 - [Online demo](https://gits-ui-nuxt-minimal-starter.vercel.app/)
 - [Source code](https://github.com/gitsindonesia/ui-component/tree/main/starter/nuxt-minimal)
-- Try it online on [Stackblitz](https://stackblitz.com/github/gitsindonesia/ui-component/tree/main/starter/vue)
+- Try it online on [Stackblitz](https://stackblitz.com/fork/github/gitsindonesia/ui-component/tree/main/starter/vue)
 
 To set up a new project with this starter, use the Morpheme CLI:
 
-```
+```bash
 npx create-morpheme-app@latest
 ```
 
@@ -40,11 +40,11 @@ Nuxt Complete Starter is a comprehensive starter kit for Nuxt that includes ever
 
 - [Online demo](https://gits-nuxt-starter.vercel.app/)
 - [Source code](https://github.com/gitsindonesia/nuxt-starter)
-- Try it online on [Stackblitz](https://stackblitz.com/github/gitsindonesia/nuxt-starter)
+- Try it online on [Stackblitz](https://stackblitz.com/fork/github/gitsindonesia/nuxt-starter)
 
 To set up a new project with this starter, use the Morpheme CLI:
 
-```
+```bash
 npx create-morpheme-app@latest
 ```
 
@@ -56,11 +56,11 @@ Nuxt Admin is an extensible admin template powered by Nuxt.js and Morpheme UI. T
 
 - [Online demo](https://gits-nuxt-admin.vercel.app/admin)
 - [Source code](https://github.com/gitsindonesia/ui-component/tree/main/starter/nuxt-admin)
-- Try it online on [Stackblitz](https://stackblitz.com/github/gitsindonesia/ui-component/tree/main/starter/nuxt-admin)
+- Try it online on [Stackblitz](https://stackblitz.com/fork/github/gitsindonesia/ui-component/tree/main/starter/nuxt-admin)
 
 To set up a new project with this starter, use the Morpheme CLI:
 
-```
+```bash
 npx create-morpheme-app@latest
 ```
 
@@ -72,11 +72,11 @@ Nuxt Auth is a theme for Nuxt that provides authentication functionality using @
 
 - [Online demo](https://gits-nuxt-auth.vercel.app)
 - [Source code](https://github.com/gitsindonesia/ui-component/tree/main/starter/nuxt-auth)
-- Try it online on [Stackblitz](https://stackblitz.com/github/gitsindonesia/ui-component/tree/main/starter/nuxt-auth)
+- Try it online on [Stackblitz](https://stackblitz.com/fork/github/gitsindonesia/ui-component/tree/main/starter/nuxt-auth)
 
 To set up a new project with this starter, use the Morpheme CLI:
 
-```
+```bash
 npx create-morpheme-app@latest
 ```
 
@@ -88,11 +88,11 @@ Vue Starter is a minimal starter kit that provides a foundation for Vue projects
 
 - [Online demo](https://gits-vue-starter.vercel.app/)
 - [Source code](https://github.com/gitsindonesia/ui-component/tree/main/starter/vue)
-- Try it online on [Stackblitz](https://stackblitz.com/github/gitsindonesia/ui-component/tree/main/starter/vue)
+- Try it online on [Stackblitz](https://stackblitz.com/fork/github/gitsindonesia/ui-component/tree/main/starter/vue)
 
 To set up a new project with this starter, use the Morpheme CLI:
 
-```
+```bash
 npx create-morpheme-app@latest
 ```
 

@@ -10,13 +10,17 @@ There are several ways to get started with Morpheme UI:
 - Via Online Playground
 - Manual Setup
 
+## Try It Online
+
+You can try Morpheme UI directly in your browser on [Stackblitz](https://stackblitz.com/fork/github/gitsindonesia/ui-component/tree/main/starter/nuxt-minimal).
+
 ## Via Morpheme CLI
 
-The fastest way to get started with Morpheme UI is through our Morpheme CLI called `create-morpheme-app`. With this CLI, you create your project quickly with pre-made templates and even choose which module to add to your project.
+The fastest way to get started with Morpheme UI is through our [Morpheme CLI](/tools/cli) called `create-morpheme-app`. With this CLI, you create your project quickly with pre-made templates and even choose which module to add to your project.
 
 To get started with Morpheme CLI, run this command in the terminal:
 
-```
+```bash
 npx create-morpheme-app@latest
 ```
 
@@ -24,10 +28,6 @@ npx create-morpheme-app@latest
 
 Then, choose your prefered starter template or choose `Custom` to customize the module you want to add.
 
-## Online Playground
-
-You can also try the online playground on Stackblitz.
-
-### Starter Kits
+## Starters
 
 Check out these [starters](/guide/starter) to get you started quickly.
