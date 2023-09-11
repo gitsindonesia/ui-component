@@ -27,6 +27,7 @@
   ],
   "exclude": [
     "**/*.stories.ts",
+    "**/**.story.vue",
     "**/*.spec.ts",
     "**/*.test.ts"
   ]
