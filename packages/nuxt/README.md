@@ -25,6 +25,8 @@ export default defineNuxtConfig({
   modules: ['@morpheme/nuxt', '@nuxtjs/tailwindcss'],
   morpheme: {
     theme: 'morpheme',
+    sass: true,
+    darkMode: false,
   },
 });
 ```
