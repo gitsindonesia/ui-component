@@ -3,41 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [1.0.0-beta.11](https://github.com/morphemeindonesia/ui-component/compare/v1.0.0-beta.10...v1.0.0-beta.11) (2023-07-28)
+# [1.0.0-beta.11](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.10...v1.0.0-beta.11) (2023-07-28)
 
 
 ### Features
 
-* **Forms:** add new experimental standalone form components with decoupled `vee-validate` integration ([#176](https://github.com/morphemeindonesia/ui-component/issues/176)) ([1a54522](https://github.com/morphemeindonesia/ui-component/commit/1a5452220992e207e9d95602e1093e7b665e070f))
-* **Modal:** add new declarative modal components ([#177](https://github.com/morphemeindonesia/ui-component/issues/177)) ([e150b42](https://github.com/morphemeindonesia/ui-component/commit/e150b42ce2f41aca4b2e05f03d285573e47ad9c1))
+* **Forms:** add new experimental standalone form components with decoupled `vee-validate` integration ([#176](https://github.com/gitsindonesia/ui-component/issues/176)) ([1a54522](https://github.com/gitsindonesia/ui-component/commit/1a5452220992e207e9d95602e1093e7b665e070f))
+* **Modal:** add new declarative modal components ([#177](https://github.com/gitsindonesia/ui-component/issues/177)) ([e150b42](https://github.com/gitsindonesia/ui-component/commit/e150b42ce2f41aca4b2e05f03d285573e47ad9c1))
 
 
 
 
 
-# [1.0.0-beta.10](https://github.com/morphemeindonesia/ui-component/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2023-06-26)
+# [1.0.0-beta.10](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.9...v1.0.0-beta.10) (2023-06-26)
 
 
 ### Bug Fixes
 
-* **Breadcrumbs:** fix export of item and divider components & rename type `VBreadcrumbsItem` to `VBreadcrumbsItemProps` ([9d37d98](https://github.com/morphemeindonesia/ui-component/commit/9d37d98b4ab2136687b1ae0b9b7daf21f54fba5c))
-* **ui:** fix missing style ([e5241c7](https://github.com/morphemeindonesia/ui-component/commit/e5241c710177ce9d31e298a5c56b2e4c771da894))
-* **ui:** register new alert components ([26dd1c1](https://github.com/morphemeindonesia/ui-component/commit/26dd1c1d2a63aa22c6e3ce4e2efee9ba522ae6f8))
+* **Breadcrumbs:** fix export of item and divider components & rename type `VBreadcrumbsItem` to `VBreadcrumbsItemProps` ([9d37d98](https://github.com/gitsindonesia/ui-component/commit/9d37d98b4ab2136687b1ae0b9b7daf21f54fba5c))
+* **ui:** fix missing style ([e5241c7](https://github.com/gitsindonesia/ui-component/commit/e5241c710177ce9d31e298a5c56b2e4c771da894))
+* **ui:** register new alert components ([26dd1c1](https://github.com/gitsindonesia/ui-component/commit/26dd1c1d2a63aa22c6e3ce4e2efee9ba522ae6f8))
 
 
 ### Features
 
-* **Badge:** add new badge group components ([093c91d](https://github.com/morphemeindonesia/ui-component/commit/093c91de6c6f3a108d2169cdba17a9d481a6fa96))
-* **Card:** add new card image props and `VCardImage` component ([7633344](https://github.com/morphemeindonesia/ui-component/commit/7633344443b8d00ed263b7a23ff590284896f8fb))
-* **List:** add new components: `VListItemTitle`, `VListItemSubTitle` and `VListItemContent` ([db1862a](https://github.com/morphemeindonesia/ui-component/commit/db1862a0a0a05a91fe2a5870dd67f6990376e66b))
-* **ui:** register a new `VDivider` component ([595de50](https://github.com/morphemeindonesia/ui-component/commit/595de509cafe6cd6e0cf29ea0b99170febcdb2a3))
-* **ui:** register bottom navigation components ([e6e5c37](https://github.com/morphemeindonesia/ui-component/commit/e6e5c372f82ee79dbfceda7eb295a00055f9e340))
+* **Badge:** add new badge group components ([093c91d](https://github.com/gitsindonesia/ui-component/commit/093c91de6c6f3a108d2169cdba17a9d481a6fa96))
+* **Card:** add new card image props and `VCardImage` component ([7633344](https://github.com/gitsindonesia/ui-component/commit/7633344443b8d00ed263b7a23ff590284896f8fb))
+* **List:** add new components: `VListItemTitle`, `VListItemSubTitle` and `VListItemContent` ([db1862a](https://github.com/gitsindonesia/ui-component/commit/db1862a0a0a05a91fe2a5870dd67f6990376e66b))
+* **ui:** register a new `VDivider` component ([595de50](https://github.com/gitsindonesia/ui-component/commit/595de509cafe6cd6e0cf29ea0b99170febcdb2a3))
+* **ui:** register bottom navigation components ([e6e5c37](https://github.com/gitsindonesia/ui-component/commit/e6e5c372f82ee79dbfceda7eb295a00055f9e340))
 
 
 
 
 
-# [1.0.0-beta.8](https://github.com/morphemeindonesia/ui-component/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2023-04-03)
+# [1.0.0-beta.8](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2023-04-03)
 
 **Note:** Version bump only for package @morpheme/ui
 
@@ -45,25 +45,25 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [1.0.0-beta.7](https://github.com/morphemeindonesia/ui-component/compare/v1.0.0-beta.6...v1.0.0-beta.7) (2023-04-03)
+# [1.0.0-beta.7](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.6...v1.0.0-beta.7) (2023-04-03)
 
 
 ### Features
 
-* **VAppShell:** add new `VAppShell` component ([#165](https://github.com/morphemeindonesia/ui-component/issues/165)) ([a73e4d3](https://github.com/morphemeindonesia/ui-component/commit/a73e4d3a4c85983982fdbf63e8e3f5b6678e4174))
-* **VProgressCircular:** add new `VProgressCircular` component ([#167](https://github.com/morphemeindonesia/ui-component/issues/167)) ([be7031a](https://github.com/morphemeindonesia/ui-component/commit/be7031a1c5995ce77b8611cc709886056ffa36f3))
-* **VTimeline:** add a new `VTimeline` component ([#171](https://github.com/morphemeindonesia/ui-component/issues/171)) ([93e3105](https://github.com/morphemeindonesia/ui-component/commit/93e3105ce917c300e1afc7f3870a0b09cfd93145))
+* **VAppShell:** add new `VAppShell` component ([#165](https://github.com/gitsindonesia/ui-component/issues/165)) ([a73e4d3](https://github.com/gitsindonesia/ui-component/commit/a73e4d3a4c85983982fdbf63e8e3f5b6678e4174))
+* **VProgressCircular:** add new `VProgressCircular` component ([#167](https://github.com/gitsindonesia/ui-component/issues/167)) ([be7031a](https://github.com/gitsindonesia/ui-component/commit/be7031a1c5995ce77b8611cc709886056ffa36f3))
+* **VTimeline:** add a new `VTimeline` component ([#171](https://github.com/gitsindonesia/ui-component/issues/171)) ([93e3105](https://github.com/gitsindonesia/ui-component/commit/93e3105ce917c300e1afc7f3870a0b09cfd93145))
 
 
 
 
 
-# [1.0.0-beta.6](https://github.com/morphemeindonesia/ui-component/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2023-03-27)
+# [1.0.0-beta.6](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.5...v1.0.0-beta.6) (2023-03-27)
 
 
 ### Features
 
-* **VText:** add new `VText` component ([#160](https://github.com/morphemeindonesia/ui-component/issues/160)) ([56551ce](https://github.com/morphemeindonesia/ui-component/commit/56551ce2c29d2065169f6fa33fed4f7d8b9fb684))
+* **VText:** add new `VText` component ([#160](https://github.com/gitsindonesia/ui-component/issues/160)) ([56551ce](https://github.com/gitsindonesia/ui-component/commit/56551ce2c29d2065169f6fa33fed4f7d8b9fb684))
 
 
 
