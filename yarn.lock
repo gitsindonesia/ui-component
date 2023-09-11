@@ -2778,7 +2778,7 @@
   resolved "https://registry.yarnpkg.com/@mdx-js/util/-/util-1.6.22.tgz#219dfd89ae5b97a8801f015323ffa4b62f45718b"
   integrity sha512-H1rQc1ZOHANWBvPcW+JpGwr+juXSxM8Q8YCkm3GhZd8REu1fHR3z99CErO1p9pkcfcxZnMdIZdIsXkOHY0NilA==
 
-"@morpheme/design-tokens@^0.1.0-alpha.3", "@morpheme/design-tokens@^0.1.0-alpha.5":
+"@morpheme/design-tokens@^0.1.0-alpha.5":
   version "0.1.0-alpha.5"
   resolved "https://registry.yarnpkg.com/@morpheme/design-tokens/-/design-tokens-0.1.0-alpha.5.tgz#024ed7315dd229c52dbde4a31fdb23777f2c4556"
   integrity sha512-CcPxUfBzl1bXQlpKOWs1j2nqLZeJfp75oQSXaqn2DXRZaCw+iBYtNRko8UcuovOe6/ruIWueiQ/0sBSJHechlw==

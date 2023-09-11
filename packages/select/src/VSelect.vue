@@ -11,8 +11,9 @@ import VTooltip from '@morpheme/tooltip';
 import {FieldOptions} from 'vee-validate';
 import Icon from '@morpheme/icon';
 import {VSelectItem} from './types';
-import {useFormValue, VInput, type ValidationMode} from '@morpheme/forms';
+import {useFormValue, VInput} from '@morpheme/forms';
 
+type ValidationMode = 'eager' | 'aggressive';
 type Val = string | number | boolean | VSelectItem | Record<string, any>;
 
 const props = defineProps({
@@ -169,28 +170,27 @@ const props = defineProps({
   },
   hint: {
     type: String,
-    default: ''
-  }
+    default: '',
+  },
 });
 
-const emit =
-  defineEmits<{
-    (e: 'update:modelValue', value: Val): void;
-    (e: 'update:value', value: Val): void;
-    (e: 'change', value: Val): void;
-    (e: 'search', value: string): void;
-  }>();
+const emit = defineEmits<{
+  (e: 'update:modelValue', value: Val): void;
+  (e: 'update:value', value: Val): void;
+  (e: 'change', value: Val): void;
+  (e: 'search', value: string): void;
+}>();
 
-const {
-  items,
-  itemText,
-  itemValue,
-  placeholder,
-} = toRefs(props);
+const {items, itemText, itemValue, placeholder} = toRefs(props);
 
-const {errorMessage, uncontrolledValue, clear} = useFormValue(props, emit, props.fieldOptions, (val: any) => {
-  emitSelected(val)
-});
+const {errorMessage, uncontrolledValue, clear} = useFormValue(
+  props,
+  emit,
+  props.fieldOptions,
+  (val: any) => {
+    emitSelected(val);
+  },
+);
 
 const findItem = (val: Val) => {
   return items.value.find((item) => item[itemValue.value] === val);
@@ -271,7 +271,7 @@ defineSlots<{
   empty?: (props: {}) => any;
   hint?: (props: {}) => any;
   icon?: (props: {}) => any;
-}>()
+}>();
 </script>
 
 <template>
