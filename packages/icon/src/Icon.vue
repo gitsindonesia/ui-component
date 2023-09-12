@@ -3,6 +3,7 @@ import {Icon as Iconify} from '@iconify/vue/dist/offline';
 import {loadIcon} from '@iconify/vue';
 import {computed, defineComponent, h, ref, shallowRef, watch} from 'vue';
 import {type DefaultSizes, defaultSizes} from '@morpheme/theme/defaultTheme';
+import {getItem, setItem} from './storage';
 
 export type Props = {
   name: string;
@@ -63,7 +64,7 @@ async function loadIconComponent() {
     const variantName = collection === 'iconsax' ? `/${variant}` : '';
     const formattedName = normalizeName(iconName || name);
     const storageName = `morphemeicons-${collection}${variantName}-${formattedName}`;
-    const cachedIcon = localStorage.getItem(storageName);
+    const cachedIcon = getItem(storageName);
 
     if (cachedIcon && !props.noCache) {
       icon.value = createIconComponent(cachedIcon);
@@ -74,7 +75,7 @@ async function loadIconComponent() {
           `https://cdn.jsdelivr.net/npm/morphemeicons@0.2.0/${collection}${variantName}/${formattedName}.svg`,
         );
         const content = await res.text();
-        localStorage.setItem(storageName, content);
+        setItem(storageName, content);
         icon.value = createIconComponent(
           res.status === 200 ? content : props.name,
         );
