@@ -23,7 +23,9 @@
   },
   "dependencies": {
     "@morpheme/design-tokens": "^1.0.0",
-    "@morpheme/nuxt": "^1.0.0-rc.0"
+    "@morpheme/nuxt": "^1.0.0-rc.0",
+    "apexcharts": "^3.37.3",
+    "vue3-apexcharts": "^1.4.4"
   },
   "devDependencies": {
     "@nuxt/devtools": "^0.8.3",

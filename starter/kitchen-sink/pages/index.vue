@@ -1,98 +1,100 @@
 <script setup lang="ts">
-// import {VRow} from '@morpheme/layouts';
-
 const stats = ref([
   {
-    label: 'Total Users',
-    value: '1,600',
-    color: 'primary',
-  },
-  {
-    label: 'Total Orders',
-    value: '2,400',
-    color: 'success',
-  },
-  {
-    label: 'Total Sales',
-    value: '$ 1,025,000',
-    color: 'warning',
-  },
-  {
     label: 'Total Revenue',
-    value: '$ 1,025,000',
-    color: 'error',
+    icon: 'ph:currency-circle-dollar-bold',
+    value: '$45,231.89',
+    changes: '+20.1% from last month',
+  },
+  {
+    label: 'Subscriptions',
+    icon: 'ph:users-bold',
+    value: '+2350',
+    changes: '+180.1% from last month',
+  },
+  {
+    label: 'Sales',
+    icon: 'ph:credit-card',
+    value: '+12,234',
+    changes: '+19% from last month',
+  },
+  {
+    label: 'Active Now',
+    icon: 'ph:activity',
+    value: '+572',
+    changes: '+201 since last hour',
   },
 ]);
 
-const headers = ref([
+const tabs = ref([
   {
-    text: 'Name',
-    value: 'name',
+    label: 'Overview',
+    value: 'overview',
   },
   {
-    text: 'Email',
-    value: 'email',
+    label: 'Analytics',
+    value: 'analytics',
   },
   {
-    text: 'Phone',
-    value: 'phone',
+    label: 'Reports',
+    value: 'reports',
   },
   {
-    text: 'City',
-    value: 'city',
-  },
-  {
-    text: 'State',
-    value: 'state',
-  },
-  {
-    text: 'Country',
-    value: 'country',
-  },
-]);
-
-const items = ref([
-  {
-    name: 'John Doe',
-    email: 'johndoe@example.com',
-    phone: '+1 234 567 890',
-    city: 'New York',
-    state: 'New York',
-    country: 'USA',
-  },
-  {
-    name: 'Jane Doe',
-    email: 'janedoe@example.com',
-    phone: '+1 234 567 890',
-    city: 'New York',
-    state: 'New York',
-    country: 'USA',
+    label: 'Notifications',
+    value: 'notifications',
+    disabled: true,
   },
 ]);
 </script>
 
 <template>
-  <PageHeader title="Dashboard" subtitle="Welcome to Morpheme UI Gallery!" />
+  <PageHeader title="Dashboard">
+    <template #action>
+      <div
+        class="flex w-full flex-col lg:flex-row justify-end lg:items-center gap-2"
+      >
+        <VInput
+          wrapper-class="lg:w-64"
+          prepend-icon="ph:calendar"
+          model-value="Jan 03, 2023 - Feb 28, 2023"
+        />
+        <VBtn color="primary">Download</VBtn>
+      </div>
+    </template>
+  </PageHeader>
 
-  <div class="grid grid-cols-2 gap-4 sm:grid-cols-4">
-    <VCard
-      v-for="stat in stats"
-      :key="stat.label"
-      bordered
-      flat
-      :color="stat.color"
-      border-position="left"
-      :title="stat.label"
-    >
-      <span class="font-medium text-lg sm:text-2xl">{{ stat.value }}</span>
+  <VTabGroup color="info" class="!-mx-4 overflow-x-auto">
+    <VTabList>
+      <VTabItem
+        v-for="tab in tabs"
+        :key="tab.value"
+        :value="tab.value"
+        :disabled="tab.disabled"
+      >
+        {{ tab.label }}
+      </VTabItem>
+    </VTabList>
+  </VTabGroup>
+
+  <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 mt-6">
+    <VCard v-for="stat in stats" :key="stat.label" bodyless class="p-4">
+      <div class="flex justify-between items-center">
+        <h3 class="font-medium">
+          {{ stat.label }}
+        </h3>
+        <VIcon :name="stat.icon" size="sm" class="text-gray-700" />
+      </div>
+      <div class="mt-3">
+        <h2 class="text-2xl font-semibold">{{ stat.value }}</h2>
+        <p class="text-sm text-gray-500 dark:text-neutral-500">
+          {{ stat.changes }}
+        </p>
+      </div>
     </VCard>
   </div>
 
-  <VDataTable class="mt-8" :items="items" :headers="headers">
-    <template #item.email="{item}">
-      <a :href="`mailto:${item.email}`">
-        {{ item.email }}
-      </a>
-    </template>
-  </VDataTable>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-6">
+    <DashboardOverviewChart />
+    <DashboardRecentSales />
+  </div>
 </template>
