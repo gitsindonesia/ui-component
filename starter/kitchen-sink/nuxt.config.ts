@@ -32,7 +32,7 @@ export default defineNuxtConfig({
       },
     },
     optimizeDeps: {
-      include: ['quill-delta', 'quill'],
+      include: ['quill-delta', 'quill', 'floating-vue'],
     },
   },
 
