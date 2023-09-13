@@ -316,6 +316,10 @@
     --v-tabs-slider-max-width: 28rem;
     --v-tabs-slider-border-color: var(--color-transparent);
 
+    --v-tabs-item-padding-y: var(--size-spacing-2);
+    --v-tabs-item-active-padding-y: var(--size-spacing-2);
+    --v-tabs-item-hover-padding-y: var(--size-spacing-2);
+
     // active item
     --v-tabs-item-active-bg-color: var(--color-transparent);
 
@@ -333,6 +337,7 @@
 
       .v-tabs-items {
         width: auto;
+        border-radius: var(--border-radius-xl);
       }
     }
 
@@ -340,7 +345,7 @@
       padding: var(--size-spacing-2) var(--size-spacing-2);
       background-color: var(--v-tabs-segmented-control-bg-color);
       width: 100%;
-      border-radius: var(--border-radius-lg);
+      border-radius: var(--border-radius-xl);
     }
 
     .v-tabs-slider {
