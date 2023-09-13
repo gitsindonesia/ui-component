@@ -14,7 +14,7 @@
   --v-tabs-item-font-size: var(--size-font-sm);
   --v-tabs-item-font-weight: var(--size-font-regular);
   --v-tabs-item-bg-color: var(--color-transparent);
-  --v-tabs-item-text-color: var(--color-gray-500);
+  --v-tabs-item-text-color: var(--color-gray-600);
   --v-tabs-item-border-color: var(--color-transparent);
   --v-tabs-item-border-radius: var(--border-radius-lg);
 
@@ -24,7 +24,7 @@
   --v-tabs-item-active-font-size: var(--v-tabs-item-font-size);
   --v-tabs-item-active-font-weight: var(--font-weight-semibold);
   --v-tabs-item-active-bg-color: var(--v-tabs-item-bg-color);
-  --v-tabs-item-active-text-color: var(--color-primary-700);
+  --v-tabs-item-active-text-color: var(--color-primary-800);
   --v-tabs-item-active-border-color: var(--v-tabs-item-border-color);
   --v-tabs-item-active-border-radius: var(--v-tabs-item-border-radius);
 
@@ -34,9 +34,12 @@
   --v-tabs-item-hover-font-size: var(--v-tabs-item-font-size);
   --v-tabs-item-hover-font-weight: var(--v-tabs-item-font-weight);
   --v-tabs-item-hover-bg-color: var(--v-tabs-item-bg-color);
-  --v-tabs-item-hover-text-color: var(--v-tabs-item-text-color);
+  --v-tabs-item-hover-text-color: var(--color-gray-800);
   --v-tabs-item-hover-border-color: var(--v-tabs-item-border-color);
   --v-tabs-item-hover-border-radius: var(--v-tabs-item-border-radius);
+
+  /* item disabled */
+  --v-tabs-item-disabled-text-color: var(--color-gray-400);
 
   /* slider */
   --v-tabs-slider-display: block;
@@ -147,7 +150,9 @@
       outline-offset: 2px;
     }
 
-    &:hover:not(&--active) {
+    &:hover:not(&--active):not(&--disabled):not(:disabled):not(
+        &[aria-disabled='true']
+      ) {
       font-size: var(--v-tabs-item-hover-font-size);
       font-weight: var(--v-tabs-item-hover-font-weight);
       padding: var(--v-tabs-item-hover-padding-y)
@@ -157,6 +162,14 @@
       border-radius: var(--v-tabs-item-hover-border-radius);
       box-shadow: var(--v-tabs-item-hover-box-shadow);
       border: 1px solid var(--v-tabs-item-hover-border-color);
+    }
+
+    &:disabled,
+    &[aria-disabled='true'] {
+      cursor: not-allowed;
+      --v-tabs-item-bg-color: var(--v-tabs-item-disabled-bg-color);
+      --v-tabs-item-text-color: var(--v-tabs-item-disabled-text-color);
+      --v-tabs-item-border-color: var(--v-tabs-item-disabled-border-color);
     }
 
     &--active {

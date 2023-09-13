@@ -690,7 +690,7 @@ export const HeadlessUI: Story = (args) => ({
       <VTabList>
         <VTabItem>Tab 1</VTabItem>
         <VTabItem>Tab 2</VTabItem>
-        <VTabItem>Tab 3</VTabItem>
+        <VTabItem disabled>Tab 3</VTabItem>
       </VTabList>
       <VTabPanels>
         <VTabPanel>Tab 1 content</VTabPanel>
@@ -711,7 +711,7 @@ export const HeadlessUI: Story = (args) => ({
       <VTabList>
         <VTabItem>Tab 1</VTabItem>
         <VTabItem>Tab 2</VTabItem>
-        <VTabItem>Tab 3</VTabItem>
+        <VTabItem disabled>Tab 3</VTabItem>
       </VTabList>
       <VTabPanels>
         <VTabPanel>Tab 1 content</VTabPanel>
@@ -731,7 +731,7 @@ export const HeadlessUI: Story = (args) => ({
       <VTabList>
         <VTabItem>Tab 1</VTabItem>
         <VTabItem>Tab 2</VTabItem>
-        <VTabItem>Tab 3</VTabItem>
+        <VTabItem disabled>Tab 3</VTabItem>
       </VTabList>
       <VTabPanels>
         <VTabPanel>Tab 1 content</VTabPanel>
