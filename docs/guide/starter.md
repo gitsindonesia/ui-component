@@ -24,7 +24,7 @@ Nuxt Minimal Starter is a lightweight foundation for Nuxt projects that incorpor
 
 - [Online demo](https://gits-ui-nuxt-minimal-starter.vercel.app/)
 - [Source code](https://github.com/gitsindonesia/ui-component/tree/main/starter/nuxt-minimal)
-- Try it online on [Stackblitz](https://stackblitz.com/fork/github/gitsindonesia/ui-component/tree/main/starter/vue)
+- Try it online on [Stackblitz](https://stackblitz.com/fork/github/gitsindonesia/ui-component/tree/main/starter/nuxt-minimal)
 
 To set up a new project with this starter, use the Morpheme CLI:
 
