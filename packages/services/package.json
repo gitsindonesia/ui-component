@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/services",
-  "version": "1.0.0-rc.0",
+  "version": "1.0.0-rc.1",
   "description": "Morpheme Services",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly",
@@ -15,7 +15,7 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@morpheme/button": "^1.0.0-rc.0",
+    "@morpheme/button": "^1.0.0-rc.1",
     "axios": "^0.26.0",
     "vue": "^3.3.4"
   },

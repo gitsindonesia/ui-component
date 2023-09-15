@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/icon",
-  "version": "1.0.0-rc.0",
+  "version": "1.0.0-rc.1",
   "description": "Morpheme Icon Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
