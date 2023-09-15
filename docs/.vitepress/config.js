@@ -5,7 +5,8 @@ export default defineConfig({
   description:
     'A free and open-source Vue UI Library based on Morpheme Design System',
   ignoreDeadLinks: true,
-  base: '/ui-component/',
+  // base: '/ui-component/',
+  base: '/',
   themeConfig: {
     search: {
       provider: 'local',
