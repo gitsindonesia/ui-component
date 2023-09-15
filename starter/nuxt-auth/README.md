@@ -93,11 +93,11 @@ learn more about `Morpheme UI`.
 
 ## Dark Mode
 
-Basically, to enable dark mode, the only thing to do is change the value of `gitsUi.darkMode` to `true` in `nuxt.config.ts`:
+Basically, to enable dark mode, the only thing to do is change the value of `morpheme.darkMode` to `true` in `nuxt.config.ts`:
   
 ```ts
 export default defineNuxtConfig({
-  gitsUi: {
+  morpheme: {
     darkMode: true, // <--
   },
 });
