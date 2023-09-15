@@ -66,8 +66,8 @@ export default defineConfig({
         text: 'Templates',
         collapsed: false,
         items: [
-          { text: 'nuxt-auth', link: '/themes/nuxt-auth' },
-          { text: 'nuxt-admin', link: '/themes/nuxt-admin' },
+          { text: 'nuxt-auth', link: '/templates/nuxt-auth' },
+          { text: 'nuxt-admin', link: '/templates/nuxt-admin' },
         ],
       },
       {
