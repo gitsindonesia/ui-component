@@ -63,7 +63,7 @@ export default defineConfig({
         items: [{ text: 'CLI', link: '/tools/cli' }],
       },
       {
-        text: 'Themes',
+        text: 'Templates',
         collapsed: false,
         items: [
           { text: 'nuxt-auth', link: '/themes/nuxt-auth' },
