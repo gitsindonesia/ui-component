@@ -19,16 +19,6 @@ h6 {
   margin-bottom: 16px;
 }
 
-.playground-container {
-  display: flex;
-  margin: 0 auto;
-  max-width: calc(var(--vp-layout-max-width) - 64px);
-  height: var(--vp-nav-height);
-  pointer-events: none;
-}
-
-.playground-container iframe {
+iframe {
   border: 0;
-  height: calc(100vh - 100px);
-  flex: 1 1 0%;
 }
