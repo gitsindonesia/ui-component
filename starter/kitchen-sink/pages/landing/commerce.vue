@@ -180,7 +180,7 @@ definePageMeta({
             <NuxtLink to="/">
               <VLogo white />
             </NuxtLink>
-            <VBtn prefix-icon="ri:menu-line"></VBtn>
+            <VBtn prefix-icon="ri:menu-line" />
           </div>
         </header>
 
