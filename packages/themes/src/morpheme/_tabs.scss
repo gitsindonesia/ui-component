@@ -305,14 +305,13 @@
   // segmented control
   &--segmented-control,
   &--segmented-control-rounded {
-    --v-tabs-slider-height: 40px;
     --v-tabs-padding-x: 0;
     --v-tabs-padding-y: 0;
     --v-tabs-bg-color: transparent;
 
     // slider
+    --v-tabs-slider-height: 38px;
     --v-tabs-slider-display: block;
-    --v-tabs-slider-height: 45px;
     --v-tabs-slider-max-width: 28rem;
     --v-tabs-slider-border-color: var(--color-transparent);
 
