@@ -1,4 +1,4 @@
-@use "sass:math";
+@use 'sass:math';
 
 // Variables
 $v-col-default-width: 100%; // Lebar default
@@ -11,7 +11,8 @@ $breakpoints: (
   2xl: 1024px,
   3xl: 1440px,
 );
-$gapSizes: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16, 20, 24, 28, 40, 48, 56, 60;
+$gapSizes: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16, 20, 24, 28, 40, 48, 56,
+  60;
 $alignItems: (
   start: flex-start,
   end: flex-end,
@@ -57,13 +58,8 @@ $justifyContent: (
 }
 
 @mixin v-col-width($cols) {
-  @if $cols == "auto" {
-    flex: 0 0 auto;
-    max-width: 100%;
-  } @else {
-    flex: 1 1 math.div($cols, $v-col-max-cols) * 100%;
-    max-width: math.div($cols, $v-col-max-cols) * 100%;
-  }
+  flex: 1 1 math.div($cols, $v-col-max-cols) * 100%;
+  max-width: math.div($cols, $v-col-max-cols) * 100%;
 }
 
 @mixin v-col-offset($offset) {
@@ -89,19 +85,19 @@ $justifyContent: (
 
   @each $name, $value in $alignItems {
     &--align-#{$name} {
-      @include alignment-justification("align", "align-items", $value);
+      @include alignment-justification('align', 'align-items', $value);
     }
   }
 
   @each $name, $value in $alignContent {
     &--content-#{$name} {
-      @include alignment-justification("content", "align-content", $value);
+      @include alignment-justification('content', 'align-content', $value);
     }
   }
 
   @each $name, $value in $justifyContent {
     &--justify-#{$name} {
-      @include alignment-justification("justify", "justify-content", $value);
+      @include alignment-justification('justify', 'justify-content', $value);
     }
   }
 }
@@ -111,36 +107,57 @@ $justifyContent: (
   flex-grow: 1;
   max-width: 100%;
 
-  @for $i from 1 through $v-col-max-cols {
-    &.v-offset-#{$i} {
-      @include v-col-offset($i);
-    }
+  &-auto {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: none;
+  }
 
-    &.v-order-#{$i} {
-      @include v-col-order($i);
+  @for $i from 1 through $v-col-max-cols {
+    &-#{$i} {
+      @include v-col-width($i);
     }
   }
 
-  // loop breakpoints
   @each $name, $maxWidth in $breakpoints {
     @for $i from 1 through $v-col-max-cols {
-      &.v-col-#{$name}-#{$i} {
+      &-#{$name}-#{$i} {
         @media (min-width: $maxWidth) {
           @include v-col-width($i);
         }
       }
     }
+  }
+}
 
+.v-offset {
+  @for $i from 1 through $v-col-max-cols {
+    &-#{$i} {
+      @include v-col-offset($i);
+    }
+  }
+
+  @each $name, $maxWidth in $breakpoints {
     @for $i from 1 through $v-col-max-cols {
-      &.v-offset-#{$name}-#{$i} {
+      &-#{$name}-#{$i} {
         @media (min-width: $maxWidth) {
           @include v-col-offset($i);
         }
       }
     }
+  }
+}
 
+.v-order {
+  @for $i from 1 through $v-col-max-cols {
+    &-#{$i} {
+      @include v-col-order($i);
+    }
+  }
+
+  @each $name, $maxWidth in $breakpoints {
     @for $i from 1 through $v-col-max-cols {
-      &.v-order-#{$name}-#{$i} {
+      &-#{$name}-#{$i} {
         @media (min-width: $maxWidth) {
           @include v-col-order($i);
         }
@@ -150,14 +167,12 @@ $justifyContent: (
 }
 
 .v-gap {
-  // gapSizes
   @each $gap in $gapSizes {
     &-#{$gap} {
       @include v-gap($gap);
     }
   }
 
-  // breakpoints
   @each $name, $maxWidth in $breakpoints {
     @each $gap in $gapSizes {
       &-#{$name}-#{$gap} {
