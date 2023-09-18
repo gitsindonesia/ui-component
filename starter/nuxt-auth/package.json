@@ -1,7 +1,7 @@
 {
   "name": "@morpheme/nuxt-auth",
   "description": "A Nuxt theme to get authentication ready with @sidebase/nuxt-auth and Morpheme UI.",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "keywords": [
     "auth",
     "dashboard",
@@ -22,7 +22,7 @@
     "prep": "nuxt prepare"
   },
   "dependencies": {
-    "@morpheme/nuxt": "^1.0.0-rc.0",
+    "@morpheme/nuxt": "^1.0.0-rc.1",
     "@sidebase/nuxt-auth": "^0.4.4",
     "next-auth": "^4.21.1"
   },

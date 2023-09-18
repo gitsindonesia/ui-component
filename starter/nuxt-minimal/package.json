@@ -1,7 +1,7 @@
 {
   "name": "@morpheme/nuxt-minimal",
   "description": "Lightweight Nuxt.js template with Morpheme UI",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "keywords": [
     "admin",
     "dashboard",
@@ -22,7 +22,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@morpheme/nuxt": "^1.0.0-rc.0"
+    "@morpheme/nuxt": "^1.0.0-rc.1"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.8.0",

@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@morpheme/design-tokens": "^1.0.0",
-    "@morpheme/nuxt": "1.0.0-canary.8+35321e5a",
+    "@morpheme/nuxt": "^1.0.0-rc.1",
     "apexcharts": "^3.37.3",
     "vue3-apexcharts": "^1.4.4"
   },
@@ -43,12 +43,5 @@
     "app.config.ts",
     "nuxt.config.ts",
     "tailwind.config.js"
-  ],
-  "pnpm": {
-    "overrides": {
-      "@morpheme/tabs": "1.0.0-canary.8+35321e5a",
-      "@morpheme/themes": "1.0.0-canary.8+35321e5a",
-      "@morpheme/ui": "1.0.0-canary.8+35321e5a"
-    }
-  }
+  ]
 }
