@@ -184,7 +184,13 @@ export const Shaped: Story = (args) => ({
   },
   template: `
     <List v-bind="args" shaped hover>
-      <ListItem v-for="i in 5" :key="i">Item</ListItem>
+      <ListItem
+        v-for="i in 5"
+        :key="i"
+        :active="i === 1"
+      >
+        Item {{ i }}
+      </ListItem>
       <ListItem shaped shaped-class="rounded-l-full">
         Custom Shaped Class
       </ListItem>
@@ -203,10 +209,13 @@ export const Rounded: Story = (args) => ({
   },
   template: `
     <List v-bind="args" rounded hover>
-      <ListItem v-for="i in 5" :key="i">Item</ListItem>
-    </List>
-    <List v-bind="args" hover>
-      <ListItem rounded v-for="i in 5" :key="i">Item</ListItem>
+      <ListItem
+        v-for="i in 5"
+        :key="i"
+        :active="i === 1"
+      >
+        Item {{ i }}
+      </ListItem>
     </List>
   `,
 });
@@ -222,10 +231,13 @@ export const Tile: Story = (args) => ({
   },
   template: `
     <List v-bind="args" tile hover>
-      <ListItem v-for="i in 5" :key="i">Item</ListItem>
-    </List>
-    <List v-bind="args">
-      <ListItem hover tile v-for="i in 5" :key="i">Item</ListItem>
+      <ListItem
+        v-for="i in 5"
+        :key="i"
+        :active="i === 1"
+      >
+        Item {{ i }}
+      </ListItem>
     </List>
   `,
 });
@@ -240,6 +252,7 @@ export const HidePrependAppend: Story = (args) => ({
     return {args};
   },
   template: `
+    <p class="px-4 font-semibold">Default</p>
     <List v-bind="args">
       <ListItem hide-prepend>Item 1</ListItem>
       <ListItem hide-prepend hide-append>Item 2</ListItem>
@@ -248,7 +261,7 @@ export const HidePrependAppend: Story = (args) => ({
       <ListItem v-bind="props">Item 3</ListItem>
       <ListItem v-bind="props">Item 4</ListItem>
     </List>
-    <p>With Context API</p>
+    <p class="px-4 font-semibold mt-4">With Context API</p>
     <List v-bind="args" hide-prepend hide-append>
       <ListItem>Item 3</ListItem>
       <ListItem>Item 4</ListItem>
