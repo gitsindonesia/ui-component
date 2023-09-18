@@ -1,10 +1,10 @@
 import {VSelect} from '@morpheme/select';
-import {alignItems, justifyContent} from './grid';
+import {alignItems, flexWrap, justifyContent} from './grid';
 import {VCard} from '@morpheme/card';
 import {StoryFn} from '@storybook/vue3';
 import VRow from './VRow.vue';
 import VCol from './VCol.vue';
-import {reactive} from 'vue';
+import {reactive, ref} from 'vue';
 
 export default {
   title: 'Components/Grid',
@@ -31,7 +31,7 @@ export const Cols: StoryFn = (args) => ({
     return {args};
   },
   template: `
-  <VRow gap="0">
+  <VRow gap="4">
     <VCol cols="1" class="bg-red-300 text-center">
       1
     </VCol>
@@ -51,7 +51,7 @@ export const Offset: StoryFn = (args) => ({
     return {args};
   },
   template: `
-  <VRow gap="0">
+  <VRow gap="4">
     <VCol cols="3" class="bg-red-100 text-center">
       1
     </VCol>
@@ -71,7 +71,41 @@ export const Order: StoryFn = (args) => ({
     return {args};
   },
   template: `
-  <VRow gap="0">
+  <VRow gap="4">
+    <VCol cols="4" order="2" class="bg-red-100 text-center">
+      1
+    </VCol>
+    <VCol cols="4" order="3" class="bg-green-100 text-center">
+      2
+    </VCol>
+    <VCol cols="4" order="1" class="bg-blue-100 text-center">
+      3
+    </VCol>
+  </VRow>
+  `,
+});
+
+function toItems(obj: any) {
+  return Object.keys(obj).map((key) => ({
+    text: obj[key],
+    value: key,
+  }));
+}
+
+export const Wrap: StoryFn = (args) => ({
+  components: {VRow, VCol, VSelect},
+  setup() {
+    const wrap = ref('');
+    return {
+      args,
+      wrap,
+      wrapItems: toItems(flexWrap),
+    };
+  },
+  template: `
+  <VSelect wrapper-class="mb-4" v-model="wrap" label="Wrap" :items="wrapItems" />
+  
+  <VRow gap="4" :wrap="wrap">
     <VCol cols="4" order="2" class="bg-red-100 text-center">
       1
     </VCol>
@@ -93,12 +127,6 @@ export const Alignment: StoryFn = (args) => ({
       alignContent: 'center',
       justifyContent: 'center',
     });
-    function toItems(obj: any) {
-      return Object.keys(obj).map((key) => ({
-        text: obj[key],
-        value: key,
-      }));
-    }
 
     return {
       args,
@@ -161,6 +189,48 @@ export const Responsive: StoryFn = (args) => ({
       <div class="bg-gray-200 p-2 m-2">
         3
       </div>
+    </VCol>
+  </VRow>
+  `,
+});
+
+export const LayoutExample: StoryFn = (args) => ({
+  components: {VRow, VCol, VCard},
+  setup() {
+    const stats = [
+      {
+        title: 'Total Subscribers',
+        value: '71,897',
+        color: '',
+      },
+      {
+        title: 'Avg. Open Rate',
+        value: '58.16%',
+      },
+      {
+        title: 'Avg. Click Rate',
+        value: '24.57%',
+      },
+      {
+        title: 'Avg. Bounce Rate',
+        value: '4.24%',
+      },
+    ];
+    return {args, stats};
+  },
+  template: `
+  <VRow gap="4">
+    <VCol
+      cols="12"
+      sm="3"
+      v-for="stat in stats"
+      :key="stat.title"
+    >
+      <VCard :title="stat.title">
+        <div class="text-xl font-bold">
+          {{ stat.value }}
+        </div>
+      </VCard>
     </VCol>
   </VRow>
   `,

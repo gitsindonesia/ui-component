@@ -36,6 +36,11 @@ $justifyContent: (
   space-around: space-around,
   space-evenly: space-evenly,
 );
+$flexWrap: (
+  wrap: wrap,
+  'wrap-reverse': wrap-reverse,
+  nowrap: nowrap,
+);
 
 @mixin breakpoint($name) {
   $maxWidth: map-get($breakpoints, $name);
@@ -80,8 +85,13 @@ $justifyContent: (
 
 .v-row {
   display: flex;
-  flex-wrap: wrap;
   flex: 1 1 auto;
+
+  @each $name, $value in $flexWrap {
+    &--wrap-#{$name} {
+      @include alignment-justification('wrap', 'flex-wrap', $value);
+    }
+  }
 
   @each $name, $value in $alignItems {
     &--align-#{$name} {
@@ -121,6 +131,13 @@ $justifyContent: (
 
   @each $name, $maxWidth in $breakpoints {
     @for $i from 1 through $v-col-max-cols {
+      &-#{$name}-auto {
+        @media (min-width: $maxWidth) {
+          flex: 0 0 auto;
+          width: auto;
+          max-width: none;
+        }
+      }
       &-#{$name}-#{$i} {
         @media (min-width: $maxWidth) {
           @include v-col-width($i);
