@@ -108,11 +108,11 @@ const forYou = [
             :key="song.name"
             class="w-4/12 xl:w-[20%] shrink-0"
           >
-            <div class="overflow-hidden rounded-lg">
+            <div class="overflow-hidden w-full xl:h-96 rounded-lg">
               <img
                 :src="song.image"
                 :alt="song.name"
-                class="object-cover xl:h-64 hover:scale-125 transition-all"
+                class="object-cover w-full h-full hover:scale-125 transition-all"
               />
             </div>
             <h3 class="font-semibold pt-3 pb-1">{{ song.name }}</h3>

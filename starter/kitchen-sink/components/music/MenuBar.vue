@@ -185,7 +185,11 @@ const menus = [
 </script>
 
 <template>
-  <VAppBar bordered class="flex">
+  <VAppBar
+    size="auto"
+    bordered
+    class="flex flex-col lg:flex-row px-4 py-3 xl:py-2"
+  >
     <NuxtLink class="text-lg font-semibold" to="/music"> Music </NuxtLink>
 
     <nav class="flex-grow">
