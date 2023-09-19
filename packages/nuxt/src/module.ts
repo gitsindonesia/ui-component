@@ -116,6 +116,10 @@ const components: AddComponentOptions[] = [
     filePath: '@morpheme/button/src/VBtn.vue',
   },
   {
+    name: 'Button',
+    filePath: '@morpheme/button/src/VBtn.vue',
+  },
+  {
     name: 'BtnGroup',
     filePath: '@morpheme/button/src/VBtnGroup.vue',
   },
