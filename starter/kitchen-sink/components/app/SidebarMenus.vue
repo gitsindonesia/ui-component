@@ -240,6 +240,10 @@ const menus = ref<MenuItem[]>([
         text: 'Register',
         to: '/pages/register',
       },
+      {
+        text: 'E-Commerce Landing',
+        to: '/landing/commerce',
+      },
     ],
   },
   {
