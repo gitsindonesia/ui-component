@@ -77,7 +77,7 @@ const forYou = [
 <template>
   <div>
     <div
-      class="mb-8 flex flex-col xl:flex-row gap-4 justify-between lg:items-center"
+      class="mb-8 flex flex-col lg:flex-row gap-4 justify-between lg:items-center"
     >
       <VTabGroup
         class="!px-0"
@@ -108,7 +108,7 @@ const forYou = [
             :key="song.name"
             class="w-4/12 xl:w-[20%] shrink-0"
           >
-            <div class="overflow-hidden w-full xl:h-96 rounded-lg">
+            <div class="overflow-hidden w-full lg:h-96 rounded-lg">
               <img
                 :src="song.image"
                 :alt="song.name"
@@ -137,7 +137,7 @@ const forYou = [
           <div
             v-for="song in forYou"
             :key="song.name"
-            class="w-4/12 xl:w-2/12 shrink-0"
+            class="w-4/12 lg:w-2/12 shrink-0"
           >
             <div class="overflow-hidden rounded-lg">
               <img
