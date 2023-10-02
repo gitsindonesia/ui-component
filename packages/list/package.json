@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/list",
-  "version": "1.0.0-rc.1",
+  "version": "1.0.0-rc.2",
   "description": "Morpheme List Component",
   "scripts": {
     "build": "vite build && npm run build-types && npm run move-types",
