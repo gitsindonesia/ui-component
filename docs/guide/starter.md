@@ -22,7 +22,7 @@ Then, choose the `Nuxt Kitchen Sink` template.
 
 Nuxt Minimal Starter is a lightweight foundation for Nuxt projects that incorporates Tailwind CSS and Morpheme UI. This starter kit is perfect for quick prototyping, reproducing issues, or situations where you don't require additional plugins like Pinia or ESLint installed by default. If you need those plugins, you can easily install them yourself.
 
-- [Online demo](https://gits-ui-nuxt-minimal-starter.vercel.app/)
+- [Online demo](https://morpheme-nuxt-minimal-starter.vercel.app/)
 - [Source code](https://github.com/gitsindonesia/ui-component/tree/main/starter/nuxt-minimal)
 - Try it online on [Stackblitz](https://stackblitz.com/fork/github/gitsindonesia/ui-component/tree/main/starter/nuxt-minimal)
 
@@ -38,7 +38,7 @@ Then, choose the `Nuxt Minimal` template.
 
 Nuxt Complete Starter is a comprehensive starter kit for Nuxt that includes everything you need to build modern web applications with Nuxt, Tailwind CSS, and Morpheme UI.
 
-- [Online demo](https://gits-nuxt-starter.vercel.app/)
+- [Online demo](https://morpheme-nuxt-starter.vercel.app/)
 - [Source code](https://github.com/gitsindonesia/nuxt-starter)
 - Try it online on [Stackblitz](https://stackblitz.com/fork/github/gitsindonesia/nuxt-starter)
 
@@ -54,7 +54,7 @@ Then, choose the `Nuxt Starter` template.
 
 Nuxt Admin is an extensible admin template powered by Nuxt.js and Morpheme UI. This starter kit provides a robust foundation for building scalable and customizable admin interfaces.
 
-- [Online demo](https://gits-nuxt-admin.vercel.app/admin)
+- [Online demo](https://morpheme-nuxt-admin.vercel.app/admin)
 - [Source code](https://github.com/gitsindonesia/ui-component/tree/main/starter/nuxt-admin)
 - Try it online on [Stackblitz](https://stackblitz.com/fork/github/gitsindonesia/ui-component/tree/main/starter/nuxt-admin)
 
@@ -70,7 +70,7 @@ Then, choose the `Nuxt Admin` template.
 
 Nuxt Auth is a theme for Nuxt that provides authentication functionality using @sidebar/nuxt-auth in combination with Morpheme UI. Use this starter kit to quickly implement authentication features in your Nuxt applications.
 
-- [Online demo](https://gits-nuxt-auth.vercel.app)
+- [Online demo](https://morpheme-nuxt-auth.vercel.app)
 - [Source code](https://github.com/gitsindonesia/ui-component/tree/main/starter/nuxt-auth)
 - Try it online on [Stackblitz](https://stackblitz.com/fork/github/gitsindonesia/ui-component/tree/main/starter/nuxt-auth)
 
@@ -86,7 +86,7 @@ Then, choose the `Nuxt Auth` template.
 
 Vue Starter is a minimal starter kit that provides a foundation for Vue projects with Tailwind CSS and Morpheme UI. Use this starter kit to quickly set up your Vue applications.
 
-- [Online demo](https://gits-vue-starter.vercel.app/)
+- [Online demo](https://morpheme-vue-starter.vercel.app/)
 - [Source code](https://github.com/gitsindonesia/ui-component/tree/main/starter/vue)
 - Try it online on [Stackblitz](https://stackblitz.com/fork/github/gitsindonesia/ui-component/tree/main/starter/vue)
 
