@@ -4,7 +4,6 @@ import {
   PopoverButton,
   PopoverGroup,
   PopoverPanel,
-  PopoverOverlay,
 } from '@headlessui/vue';
 
 definePageMeta({
@@ -15,11 +14,11 @@ definePageMeta({
 <template>
   <div>
     <section
-      class="xl:h-[calc(100vh-60px)] xl:max-h-[768px] flex flex-col gap-8 w-full px-4 2xl:px-0 py-4 bg-gradient-to-tr from-blue-600 via-green-600 to-purple-600"
+      class="lg:h-[calc(100vh-60px)] lg:max-h-[768px] flex flex-col gap-8 w-full px-4 2xl:px-0 py-4 bg-gradient-to-tr from-blue-600 via-green-600 to-purple-600"
     >
       <div class="container mx-auto flex flex-col gap-8 justify-between h-full">
         <!-- header desktop -->
-        <header class="hidden xl:flex items-center gap-4">
+        <header class="hidden lg:flex items-center gap-4">
           <NuxtLink to="/">
             <VLogo white />
           </NuxtLink>
@@ -176,7 +175,7 @@ definePageMeta({
         </header>
 
         <!-- header mobile -->
-        <header class="xl:hidden">
+        <header class="lg:hidden">
           <div class="flex items-center gap-2 justify-between">
             <NuxtLink to="/">
               <VLogo white />
@@ -189,12 +188,12 @@ definePageMeta({
 
         <div class="flex-grow flex flex-col justify-center">
           <h1
-            class="text-3xl xl:text-display-lg font-semibold text-white max-w-xl xl:leading-[4rem] drop-shadow-xl]"
+            class="text-3xl lg:text-display-lg font-semibold text-white max-w-xl lg:leading-[4rem] drop-shadow-xl]"
           >
             Making Commerce Better for Everyone
           </h1>
           <div
-            class="text-lg xl:text-xl mt-2 xl:mt-5 text-green-100 max-w-2xl drop-shadow-xl"
+            class="text-lg lg:text-xl mt-2 lg:mt-5 text-green-100 max-w-2xl drop-shadow-xl"
           >
             ShopX is the best way to start your online business and sell online.
             It is a complete eCommerce solution that allows you to set up an
@@ -203,14 +202,14 @@ definePageMeta({
         </div>
 
         <div
-          class="flex flex-col xl:flex-row gap-4 xl:justify-between xl:items-center"
+          class="flex flex-col lg:flex-row gap-4 lg:justify-between lg:items-center"
         >
           <div
-            class="flex flex-col xl:flex-row xl:items-center gap-4 xl:w-5/12"
+            class="flex flex-col lg:flex-row lg:items-center gap-4 lg:w-5/12"
           >
             <VBtn size="lg" rounded>Start free trial</VBtn>
             <p
-              class="text-sm xl:max-w-[200px] text-white text-center xl:text-left"
+              class="text-sm lg:max-w-[200px] text-white text-center lg:text-left"
             >
               Start for free, then get your first 3 months for $1/mo.
             </p>
@@ -220,7 +219,8 @@ definePageMeta({
               size="lg"
               rounded
               outlined
-              class="!text-white !w-full xl!:w-auto"
+              color="white"
+              class="!w-full xl!:w-auto"
             >
               Watch the story
             </VBtn>
@@ -248,7 +248,7 @@ definePageMeta({
             </h2>
 
             <ul
-              class="grid grid-cols-1 lg:grid-cols-2 xl:place-items-center gap-4 xl:gap-8 mt-10"
+              class="grid grid-cols-1 lg:grid-cols-2 lg:place-items-center gap-4 lg:gap-8 mt-10"
             >
               <li v-for="i in 4" :key="i" class="flex gap-4">
                 <div class="py-1 flex">
@@ -269,9 +269,11 @@ definePageMeta({
       </div>
     </section>
 
-    <section class="py-20 xl:py-40">
+    <section class="py-20 lg:py-40">
       <div class="container mx-auto px-4 2xl:px-0">
-        <h2 class="mb-6 text-lg text-gray-700 font-semibold">
+        <h2
+          class="mb-6 text-lg dark:text-neutral-200 text-gray-700 font-semibold"
+        >
           EXPLORE THE WORLD'S LARGEST COMMERCE COMMUNITY
         </h2>
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
@@ -303,7 +305,7 @@ definePageMeta({
       </div>
     </section>
 
-    <section class="py-20 lg:py-40 bg-gray-100">
+    <section class="py-20 lg:py-40 bg-gray-100 dark:bg-neutral-900">
       <div class="container mx-auto px-4 2xl:px-0">
         <p class="text-green-700 font-semibold">BUILD AND ONLINE STORE</p>
         <h2
@@ -322,12 +324,14 @@ definePageMeta({
           <div
             v-for="i in 3"
             :key="i"
-            class="rounded-xl hover:bg-gray-200 px-5 py-4"
+            class="rounded-xl hover:bg-gray-200 dark:hover:bg-neutral-800 px-5 py-4"
           >
-            <h3 class="text-lg font-semibold text-gray-900">
+            <h3
+              class="text-lg font-semibold dark:text-neutral-200 text-gray-900"
+            >
               Start, run, and grow your business
             </h3>
-            <p class="text-gray-500 dark:text-neutral-400 mt-3">
+            <p class="text-gray-500 dark:text-neutral-500 mt-3">
               Use ShopX powerful features to start selling. Start your business
               journey with a beautiful website. Choose from hundreds of
               customizable themes, with new additions weekly.
@@ -347,20 +351,20 @@ definePageMeta({
           <div class="w-full lg:w-8/12">
             <p class="text-green-700 font-semibold">SALES CHANNELS</p>
             <h2
-              class="text-4xl leading-tight 2xl:text-display-2xl 2xl:leading-[80px] text-gray-900 font-semibold mt-4"
+              class="text-4xl leading-tight 2xl:text-display-2xl 2xl:leading-[80px] dark:text-neutral-200 text-gray-900 font-semibold mt-4"
             >
               Sell to every buyer, everywhere
             </h2>
           </div>
           <div class="w-full lg:w-4/12">
-            <p class="text-gray-600">
+            <p class="dark:text-neutral-500 text-gray-600">
               Sell online, in person, and around the world with the marketing
               tools, social integrations, and sales channels you need to get
               your products in front of customers.
             </p>
             <a
               href="#"
-              class="border-b-2 border-gray-700 hover:text-green-700 hover:border-green-700 transition duration-300 py-3 font-semibold mt-7 flex w-full gap-4 justify-between"
+              class="border-b-2 dark:border-neutral-700 border-gray-700 hover:text-green-700 hover:border-green-700 transition duration-300 py-3 font-semibold mt-7 flex w-full gap-4 justify-between"
             >
               Start selling
               <VIcon name="ri:arrow-right-s-line" />
@@ -384,23 +388,23 @@ definePageMeta({
       </div>
     </section>
 
-    <section class="py-20 lg:py-40 bg-gray-100">
+    <section class="py-20 lg:py-40 bg-gray-100 dark:bg-neutral-900">
       <div class="container mx-auto px-4 2xl:px-0">
         <div class="flex flex-col lg:flex-row justify-between gap-10">
           <div class="w-full lg:w-5/12">
             <p class="text-green-700 font-semibold">PIONT OF SALE</p>
             <h2
-              class="text-display-md leading-[40px] text-gray-900 font-semibold mt-4"
+              class="text-display-md leading-[40px] dark:text-neutral-200 text-gray-900 font-semibold mt-4"
             >
               Flexible point of sale to power your retail store
             </h2>
-            <p class="text-gray-500 text-lg mt-4">
+            <p class="dark:text-neutral-500 text-gray-500 text-lg mt-4">
               A POS system that allows customers to shop their way, from online
               to checkout line
             </p>
             <a
               href="#"
-              class="border-b-2 border-gray-700 hover:text-green-700 hover:border-green-700 transition duration-300 py-3 font-semibold mt-7 flex w-full gap-4 justify-between"
+              class="border-b-2 border-gray-700 dark:border-neutral-700 hover:text-green-700 hover:border-green-700 transition duration-300 py-3 font-semibold mt-7 flex w-full gap-4 justify-between"
             >
               Start selling
               <VIcon name="ri:arrow-right-s-line" />
@@ -419,16 +423,16 @@ definePageMeta({
       </div>
     </section>
 
-    <section class="py-20 lg:py-40 bg-white">
+    <section class="py-20 lg:py-40 bg-white dark:bg-neutral-800">
       <div class="container mx-auto px-4 2xl:px-0">
         <p class="text-green-700 font-semibold">BUILT-IN MARKETING TOOLS</p>
         <h2
-          class="text-4xl leading-tight 2xl:text-display-2xl text-gray-900 font-semibold mt-4 max-w-xl 2xl:leading-[80px]"
+          class="text-4xl leading-tight 2xl:text-display-2xl dark:text-neutral-200 text-gray-900 font-semibold mt-4 max-w-xl 2xl:leading-[80px]"
         >
           From first touch to full funnel
         </h2>
 
-        <div class="grid grid-cols-1 xl:grid-cols-2 gap-8 mt-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-6">
           <div class="grid grid-cols-1 gap-6 mt-8">
             <div
               v-for="i in 3"
@@ -445,14 +449,18 @@ definePageMeta({
                 </div>
               </div>
               <div class="flex flex-col gap-4">
-                <h3 class="text-xl lg:text-2xl font-semibold text-gray-900">
+                <h3
+                  class="text-xl lg:text-2xl font-semibold dark:text-neutral-200 text-gray-900"
+                >
                   Start, run, and grow your business
                 </h3>
-                <p class="text-gray-500 dark:text-neutral-400 mt-3 flex-grow">
+                <p class="text-gray-500 dark:text-neutral-500 mt-3 flex-grow">
                   Use ShopX powerful features to start selling. Start your
                   business journey with a beautiful website.
                 </p>
-                <div class="border-b-2 mt-4 border-gray-200" />
+                <div
+                  class="border-b-2 mt-4 dark:border-neutral-700 border-gray-200"
+                />
               </div>
             </div>
           </div>
@@ -487,9 +495,9 @@ definePageMeta({
       </div>
     </section>
 
-    <footer class="bg-white">
+    <footer class="bg-white dark:bg-neutral-900">
       <div
-        class="container mx-auto px-4 py-6 2xl:px-0 text-center text-sm text-gray-700"
+        class="container mx-auto px-4 py-6 2xl:px-0 text-center text-sm text-gray-700 dark:text-neutral-500"
       >
         Copyright 2023 &middot; All rights reserved.
       </div>

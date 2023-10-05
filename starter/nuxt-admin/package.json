@@ -22,7 +22,7 @@
     "prep": "nuxt prepare"
   },
   "dependencies": {
-    "@morpheme/nuxt": "^1.0.0-rc.1",
+    "@morpheme/nuxt": "^1.0.0-rc.2",
     "@morpheme/nuxt-auth": "^0.6.1",
     "@pinia/nuxt": "^0.4.7",
     "apexcharts": "^3.37.3",
