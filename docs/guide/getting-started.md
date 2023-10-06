@@ -20,9 +20,25 @@ The fastest way to get started with Morpheme UI is through our [Morpheme CLI](/t
 
 To get started with Morpheme CLI, run this command in the terminal:
 
-```bash
+::: code-group
+
+```bash [pnpm]
+pnpx create-morpheme-app@latest
+```
+
+```bash [npm]
 npx create-morpheme-app@latest
 ```
+
+```bash [yarn]
+yarn create morpheme-app@latest
+```
+
+```bash [bun]
+bunx create-morpheme-app@latest
+```
+
+:::
 
 ![](/create-morpheme-app.png)
 
