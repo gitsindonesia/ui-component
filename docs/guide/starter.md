@@ -97,3 +97,19 @@ npx create-morpheme-app@latest
 ```
 
 Then, choose the `Vue` template.
+
+## Astro Starter
+
+Astro Starter is a minimal starter kit for building websites with Astro and Morpheme.
+
+- [Online demo](https://morpheme-astro.vercel.app/)
+- [Source code](https://github.com/gitsindonesia/ui-component/tree/main/starter/morpheme-astro)
+- Try it online on [Stackblitz](https://stackblitz.com/fork/github/gitsindonesia/ui-component/tree/main/starter/morpheme-astro)
+
+To set up a new project with this starter, use the Morpheme CLI:
+
+```bash
+npx create-morpheme-app@latest
+```
+
+Then, choose the `Astro` template.
