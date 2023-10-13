@@ -74,7 +74,7 @@ const props = withDefaults(
     search: '',
     searchBy: '',
     loadingText: 'Loading...',
-    noDataText: 'Data tidak ditemukan',
+    noDataText: 'No results',
     footerColor: '',
     serverSide: false,
     sortBy: '',
