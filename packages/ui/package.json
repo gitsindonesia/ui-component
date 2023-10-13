@@ -61,6 +61,7 @@
     "@morpheme/tooltip": "^1.0.0-rc.1",
     "@morpheme/utils": "^1.0.0-rc.0",
     "@vue/test-utils": "^2.0.0-rc.17",
+    "floating-vue": "^2.0.0-beta.24",
     "sass": "^1.58.3",
     "vue": "^3.3.4"
   },
