@@ -123,7 +123,7 @@ import {
 } from '@morpheme/popover';
 import { VRow, VCol } from '@morpheme/layouts';
 import VCommand from '@morpheme/command';
-import { FloatingVuePlugin } from './floating-vue'
+import { FloatingVuePlugin } from '@morpheme/tooltip'
 
 const plugin: Plugin = {
   install: (app) => {
