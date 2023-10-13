@@ -1,6 +1,8 @@
 import '../packages/tailwind-config/tailwind.css';
 import '../packages/themes/src/morpheme/main.scss';
 import '../packages/themes/src/morpheme/main.dark.scss';
+import { setup } from "@storybook/vue3";
+import {FloatingVuePlugin} from '../packages/ui/src/floating-vue'
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -18,3 +20,8 @@ export const parameters = {
     },
   },
 };
+
+
+setup((app) => {
+  app.use(FloatingVuePlugin);
+});
