@@ -106,29 +106,28 @@ const props = withDefaults(
   },
 );
 
-const emit =
-  defineEmits<{
-    (e: 'update:search', value: string): void;
-    (e: 'update:sortBy', value: string | string[]): void;
-    (e: 'update:sortDirection', value: SortDirection | SortDirection[]): void;
-    (e: 'update:page', value: number): void;
-    (e: 'update:itemsPerPage', value: number): void;
-    (e: 'update:totalItems', value: number): void;
-    (e: 'update:pagination', value: Record<string, any>): void;
-    (e: 'page:change', value: number): void;
-    (e: 'itemsPerPage:change', value: number): void;
-    (e: 'pagination:change', value: Record<string, any>): void;
-    (e: 'update:modelValue', value: T[]): void;
-    (e: 'update:value', value: T[]): void;
-    (
-      e: 'sort',
-      payload: {
-        sortBy: string | string[];
-        direction: SortDirection | SortDirection[];
-      },
-    ): void;
-    (e: 'row:click', item: T): void;
-  }>();
+const emit = defineEmits<{
+  (e: 'update:search', value: string): void;
+  (e: 'update:sortBy', value: string | string[]): void;
+  (e: 'update:sortDirection', value: SortDirection | SortDirection[]): void;
+  (e: 'update:page', value: number): void;
+  (e: 'update:itemsPerPage', value: number): void;
+  (e: 'update:totalItems', value: number): void;
+  (e: 'update:pagination', value: Record<string, any>): void;
+  (e: 'page:change', value: number): void;
+  (e: 'itemsPerPage:change', value: number): void;
+  (e: 'pagination:change', value: Record<string, any>): void;
+  (e: 'update:modelValue', value: T[]): void;
+  (e: 'update:value', value: T[]): void;
+  (
+    e: 'sort',
+    payload: {
+      sortBy: string | string[];
+      direction: SortDirection | SortDirection[];
+    },
+  ): void;
+  (e: 'row:click', item: T): void;
+}>();
 
 const {
   disableSorting,
@@ -338,7 +337,7 @@ watch(itemsPerPage, (val) => {
   perPage.value = val;
 });
 
-const selected = ref<T[]>([]);
+const selected = ref<T[] | any>([]);
 
 const selectAll = computed<boolean>({
   get() {
@@ -396,31 +395,64 @@ defineSlots<
       header: H;
       index: number;
     }) => any;
-  } &
-    {
-      [K in keyof T as K extends string ? `item.${K}` : never]?: (props: {
-        item: T;
-        index: number;
-      }) => any;
-    } & {
-      default?: (props: {}) => any;
-      'header.selectable'?: (props: {selectAll: boolean}) => any;
-      'header.index'?: (props: {index: number; item: T}) => any;
-      'item.selected'?: (props: {selected: any[]; item: T}) => any;
-      'item.index'?: (props: {index: number; item: T}) => any;
-      empty?: (props: {}) => any;
-      loading?: (props: {}) => any;
-      footer?: (props: {
-        pagination: VDataTablePaginationProps;
-        perPage: number;
-        serverSide: boolean;
-        items: T[];
-        totalItems: number;
-        footerColor: string;
-        footerClass: string;
-        page: number;
-      }) => any;
-    }
+  } & {
+    [K in keyof T as K extends string ? `item.${K}` : never]?: (props: {
+      item: T;
+      index: number;
+    }) => any;
+  } & {
+    default?: (props: {}) => any;
+    'header.selectable'?: (props: {selectAll: boolean}) => any;
+    'header.index'?: (props: {index: number; item: T}) => any;
+    'item.selected'?: (props: {selected: any[]; item: T}) => any;
+    'item.index'?: (props: {index: number; item: T}) => any;
+    empty?: (props: {}) => any;
+    loading?: (props: {}) => any;
+    footer?: (props: {
+      pagination: VDataTablePaginationProps;
+      perPage: number;
+      serverSide: boolean;
+      items: T[];
+      totalItems: number;
+      footerColor: string;
+      footerClass: string;
+      page: number;
+    }) => any;
+    header: (props: {
+      headerClass: string;
+      headers: H[];
+      sortMap: Map<string, SortDirection>;
+      selectable: boolean;
+      disableSorting: boolean;
+      handleSort: (header: H) => void;
+    }) => any;
+    body: (props: {
+      bodyClass: string;
+      items: T[];
+      loading: boolean;
+      headers: H[];
+      noDataText: string;
+      striped: boolean;
+      hover: boolean;
+      trClass: string;
+      selected: T[];
+      get: (item: T, key: string) => any;
+      handleRowClick: (item: T, index: number) => void;
+      getTdClass: typeof getTdClass;
+    }) => any;
+    item: (props: {
+      item: T;
+      index: number;
+      headers: H[];
+      striped: boolean;
+      hover: boolean;
+      trClass: string;
+      selected: T[];
+      get: (item: T, key: string) => any;
+      handleRowClick: (item: T, index: number) => void;
+      getTdClass: typeof getTdClass;
+    }) => any;
+  }
 >();
 </script>
 
@@ -446,132 +478,188 @@ defineSlots<
   >
     <div class="v-table-overflow">
       <table class="v-table-table">
-        <thead class="v-table-thead" :class="headerClass">
-          <tr class="v-table-tr">
-            <th
-              v-for="(header, hIndex) in computedHeaders"
-              :key="header.value"
-              scope="col"
-              class="v-table-th group"
-              :class="[getThClass(header), header.class]"
-              :width="header.width"
-            >
-              <slot
-                v-if="selectable && header.value === 'selected'"
-                name="header.selectable"
-                :selectAll="selectAll"
+        <slot
+          name="header"
+          v-bind="{
+            headerClass,
+            headers: computedHeaders,
+            sortMap,
+            selectable,
+            disableSorting,
+            handleSort,
+          }"
+        >
+          <thead class="v-table-thead" :class="headerClass">
+            <tr class="v-table-tr">
+              <template
+                v-for="(header, hIndex) in computedHeaders"
+                :key="header.value"
               >
-                <v-checkbox v-model="selectAll" />
-              </slot>
-              <slot
-                v-else
-                :name="`header.${header.value}`"
-                :header="header"
-                :index="hIndex"
-              >
-                <button
-                  v-if="!disableSorting && header.sortable"
-                  role="button"
-                  aria-label="Sort"
-                  type="button"
-                  class="v-table-sort-button"
-                  :class="[
-                    header.align
-                      ? `justify-${header.align}`
-                      : 'justify-between',
-                  ]"
-                  @click="handleSort(header)"
+                <th
+                  scope="col"
+                  class="v-table-th group"
+                  :class="[getThClass(header), header.class]"
+                  :width="header.width"
                 >
-                  <span class="v-table-sort-header-text">
-                    {{ header.text }}
-                  </span>
-                  <Icon
-                    name="heroicons:chevron-down"
-                    v-if="sortMap.get(header.value) === 'desc'"
-                    class="v-table-sort-icon"
-                  />
-                  <Icon
-                    name="heroicons:chevron-up"
-                    v-if="sortMap.get(header.value) === 'asc'"
-                    class="v-table-sort-icon"
-                  />
-                </button>
-                <span v-else class="v-table-header-text">
-                  {{ header.text }}
-                </span>
+                  <slot
+                    v-if="selectable && header.value === 'selected'"
+                    name="header.selectable"
+                    :selectAll="selectAll"
+                  >
+                    <v-checkbox v-model="selectAll" />
+                  </slot>
+                  <slot
+                    v-else
+                    :name="`header.${header.value}`"
+                    :header="header"
+                    :index="hIndex"
+                  >
+                    <button
+                      v-if="!disableSorting && header.sortable"
+                      role="button"
+                      aria-label="Sort"
+                      type="button"
+                      class="v-table-sort-button"
+                      :class="[
+                        header.align
+                          ? `justify-${header.align}`
+                          : 'justify-between',
+                      ]"
+                      @click="handleSort(header)"
+                    >
+                      <span class="v-table-sort-header-text">
+                        {{ header.text }}
+                      </span>
+                      <Icon
+                        name="heroicons:chevron-down"
+                        v-if="sortMap.get(header.value) === 'desc'"
+                        class="v-table-sort-icon"
+                      />
+                      <Icon
+                        name="heroicons:chevron-up"
+                        v-if="sortMap.get(header.value) === 'asc'"
+                        class="v-table-sort-icon"
+                      />
+                    </button>
+                    <span v-else class="v-table-header-text">
+                      {{ header.text }}
+                    </span>
+                  </slot>
+                </th>
+              </template>
+            </tr>
+          </thead>
+        </slot>
+        <slot
+          name="body"
+          v-bind="{
+            bodyClass,
+            items: paginatedItems,
+            loading,
+            headers,
+            noDataText,
+            striped,
+            hover,
+            trClass,
+            selected,
+            get,
+            handleRowClick,
+            getTdClass,
+          }"
+        >
+          <tbody class="v-table-tbody" :class="bodyClass">
+            <template v-if="paginatedItems.length < 1 && !loading">
+              <slot name="empty">
+                <tr class="v-table-tr group">
+                  <td :colspan="headers.length" class="v-table-td">
+                    {{ noDataText }}
+                  </td>
+                </tr>
               </slot>
-            </th>
-          </tr>
-        </thead>
-        <tbody class="v-table-tbody" :class="bodyClass">
-          <template v-if="paginatedItems.length < 1 && !loading">
-            <slot name="empty">
-              <tr class="v-table-tr group">
-                <td :colspan="headers.length" class="v-table-td">
-                  {{ noDataText }}
-                </td>
-              </tr>
-            </slot>
-          </template>
-          <template v-if="loading">
-            <slot name="loading">
-              <tr class="v-table-tr group">
-                <td :colspan="headers.length" class="v-table-td">
-                  <v-spinner color="primary" class="mr-1 v-table-spinner" />
-                  {{ loadingText }}
-                </td>
-              </tr>
-            </slot>
-          </template>
-          <tr
-            v-else
-            v-for="(item, index) in paginatedItems"
-            :key="`item-${index}`"
-            class="group v-table-tr"
-            :class="{
-              [stripedClass]: striped,
-              [hoverClass]: hover,
-              [trClass]: Boolean(trClass),
-            }"
-            @click="handleRowClick(item, index)"
-          >
-            <td
-              v-for="header in headers"
-              :key="`header-${header.value}`"
-              class="v-table-td"
-              :class="[getTdClass(header), tdClass, header?.tdClass || '']"
+            </template>
+            <template v-if="loading">
+              <slot name="loading">
+                <tr class="v-table-tr group">
+                  <td :colspan="headers.length" class="v-table-td">
+                    <v-spinner color="primary" class="mr-1 v-table-spinner" />
+                    {{ loadingText }}
+                  </td>
+                </tr>
+              </slot>
+            </template>
+            <template
+              v-else
+              v-for="(item, index) in paginatedItems"
+              :key="`item-${index}`"
             >
               <slot
-                v-if="selectable && header.value === 'selected'"
-                name="item.selected"
-                :selected="selected"
-                :item="item"
+                name="item"
+                v-bind="{
+                  item,
+                  index,
+                  headers,
+                  striped,
+                  hover,
+                  trClass,
+                  selected,
+                  get,
+                  handleRowClick,
+                  getTdClass,
+                }"
               >
-                <v-checkbox
-                  v-model="selected as any"
-                  wrapper-class="v-table-checkbox"
-                  :value="(item as any)"
-                />
+                <tr
+                  class="group v-table-tr"
+                  :class="{
+                    [stripedClass]: striped,
+                    [hoverClass]: hover,
+                    [trClass]: Boolean(trClass),
+                  }"
+                  @click="handleRowClick(item, index)"
+                >
+                  <td
+                    v-for="header in headers"
+                    :key="`header-${header.value}`"
+                    class="v-table-td"
+                    :class="[
+                      getTdClass(header),
+                      tdClass,
+                      header?.tdClass || '',
+                    ]"
+                  >
+                    <slot
+                      v-if="selectable && header.value === 'selected'"
+                      name="item.selected"
+                      :selected="selected"
+                      :item="item"
+                    >
+                      <v-checkbox
+                        v-model="selected"
+                        wrapper-class="v-table-checkbox"
+                        :value="(item as any)"
+                      />
+                    </slot>
+                    <slot
+                      v-else-if="header.value === 'index'"
+                      name="item.index"
+                      :index="index"
+                      :item="item"
+                    >
+                      {{ start + index }}
+                    </slot>
+                    <slot
+                      v-else
+                      :name="`item.${header.value}`"
+                      :item="item"
+                      :index="index"
+                    >
+                      {{ get(item, header.value) }}
+                    </slot>
+                  </td>
+                </tr>
               </slot>
-              <slot
-                v-else-if="header.value === 'index'"
-                name="item.index"
-                :index="index"
-                :item="item"
-              >
-                {{ start + index }}
-              </slot>
-              <slot
-                v-else
-                :name="`item.${header.value}`"
-                :item="item"
-                :index="index"
-              >
-                {{ get(item, header.value) }}
-              </slot>
-            </td>
-          </tr>
-        </tbody>
+            </template>
+          </tbody>
+        </slot>
       </table>
     </div>
 

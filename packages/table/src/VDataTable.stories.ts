@@ -1,8 +1,8 @@
-import {VInput} from '@morpheme/forms';
-import {Meta, Story} from '@storybook/vue3';
-import {ref, watchEffect} from 'vue';
+import { VInput } from '@morpheme/forms';
+import { Meta, Story } from '@storybook/vue3';
+import { ref, watchEffect } from 'vue';
 import VDataTable from './VDataTable.vue';
-import type {VDataTableHeader} from './types';
+import type { VDataTableHeader } from './types';
 
 const states = ['active', 'inactive'];
 
@@ -87,7 +87,7 @@ const Template: Story = (args) => ({
     VDataTable,
   },
   setup() {
-    return {args};
+    return { args };
   },
   template: `<v-data-table v-bind="args" />`,
 });
@@ -292,7 +292,7 @@ export const Selectable: Story = (args) => ({
   },
   setup() {
     const selected = ref([]);
-    return {args, selected, selectableHeaders};
+    return { args, selected, selectableHeaders };
   },
   template: `
     <v-data-table
@@ -313,7 +313,7 @@ export const Search: Story = (args) => ({
   },
   setup() {
     const search = ref('');
-    return {args, search};
+    return { args, search };
   },
   template: `
     <VInput
@@ -494,7 +494,7 @@ export const StickyColumn: Story = (args) => ({
       },
     ]);
 
-    return {args, headers};
+    return { args, headers };
   },
   template: `
 <v-data-table v-bind="args" :headers="headers">
@@ -506,9 +506,9 @@ export const StickyColumn: Story = (args) => ({
 });
 
 export const DarkMode: Story<{}> = (args) => ({
-  components: {VDataTable},
+  components: { VDataTable },
   setup() {
-    return {args};
+    return { args };
   },
   template: `
 <main class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6 space-y-2">
@@ -517,5 +517,36 @@ export const DarkMode: Story<{}> = (args) => ({
   <p class="mt-10 mb-3">Bordered Variant</p>
   <VDataTable v-bind="args" bordered />
 </main>
+`,
+});
+
+export const Slots: Story<{}> = (args) => ({
+  components: { VDataTable },
+  setup() {
+    return { args };
+  },
+  template: `
+  <VDataTable
+    v-bind="args"
+  >
+    <template #item="{item, handleRowClick, headers, getTdClass, tdClass, get}">
+      <tr
+        @click="handleRowClick(item)"
+      >
+        <td
+          v-for="(header, index) in headers"
+          :key="index"
+          class="v-table-td"
+          :class="[
+            getTdClass(header),
+            tdClass,
+            header?.tdClass || '',
+          ]"
+        >
+          {{ get(item, header.value) }}
+        </td>
+      </tr>
+    </template>
+  </VDataTable>
 `,
 });
