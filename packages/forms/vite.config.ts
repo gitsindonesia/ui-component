@@ -4,14 +4,16 @@ import {resolve} from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue({
-    script: {
-      defineModel: true,
-      propsDestructure: true
-    }
-  })],
+  plugins: [
+    vue({
+      script: {
+        defineModel: true,
+        propsDestructure: true,
+      },
+    }),
+  ],
   esbuild: {
-    exclude: ['./src/**/**.stories.ts'],
+    exclude: ['./src/**/**.stories.ts', './src/**/**.story.vue'],
   },
   build: {
     target: 'esnext',
@@ -27,6 +29,7 @@ export default defineConfig({
         'vue',
         'vee-validate',
         '@morpheme/button',
+        '@morpheme/select',
         '@morpheme/spinner',
         '@morpheme/utils',
         '@morpheme/tailwind-config',
@@ -34,7 +37,7 @@ export default defineConfig({
         '@morpheme/progress-bar',
         '@morpheme/switch',
         '@iconify/vue',
-        '@vueuse/core',        
+        '@vueuse/core',
       ],
       output: {
         // Provide global variables to use in the UMD build

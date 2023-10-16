@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/command",
-  "version": "1.0.0-beta.11",
+  "version": "1.0.0-rc.2",
   "description": "Morpheme Command Menu Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -17,18 +17,18 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@morpheme/icon": "^1.0.0-beta.11",
-    "@morpheme/list": "^1.0.0-beta.11",
-    "@morpheme/modal": "^1.0.0-beta.11",
+    "@morpheme/icon": "^1.0.0-rc.1",
+    "@morpheme/list": "^1.0.0-rc.2",
+    "@morpheme/modal": "^1.0.0-rc.1",
     "vue": "^3.3.4"
   },
   "devDependencies": {
-    "@morpheme/tailwind-config": "^1.0.0-beta.11",
-    "@morpheme/utils": "^1.0.0-beta.11",
+    "@morpheme/tailwind-config": "^1.0.0-rc.0",
+    "@morpheme/utils": "^1.0.0-rc.0",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
     "tailwindcss": "^3.3.1",
-    "vee-validate": "^4.10.8",
+    "vee-validate": "^4.11.3",
     "vite": "^4.3.8",
     "vitest": "^0.12.4"
   },

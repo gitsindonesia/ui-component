@@ -23,3 +23,9 @@ export const justifyContent = {
   'space-around': 'space-around',
   'space-evenly': 'space-evenly',
 };
+
+export const flexWrap = {
+  nowrap: 'nowrap',
+  wrap: 'wrap',
+  'wrap-reverse': 'wrap-reverse',
+};

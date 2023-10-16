@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/utils",
-  "version": "1.0.0-beta.11",
+  "version": "1.0.0-rc.0",
   "description": "Morpheme Utilities",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly",
@@ -14,7 +14,7 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@morpheme/design-tokens": "^0.1.0-alpha.3",
+    "@morpheme/design-tokens": "^0.1.0-alpha.5",
     "vue": "^3.3.4"
   },
   "gitHead": "92215d91d1e3a2b1b804e52b55dcfd0ed5274475",

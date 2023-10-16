@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/select",
-  "version": "1.0.0-beta.11",
+  "version": "1.0.0-rc.1",
   "description": "Vue Select Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -19,22 +19,22 @@
   "dependencies": {
     "@floating-ui/vue": "^1.0.2",
     "@headlessui-float/vue": "^0.11.2",
-    "@morpheme/badge": "^1.0.0-beta.11",
-    "@morpheme/forms": "^1.0.0-beta.11",
-    "@morpheme/icon": "^1.0.0-beta.11",
-    "@morpheme/theme": "^1.0.0-beta.11",
-    "@morpheme/tooltip": "^1.0.0-beta.11",
-    "@morpheme/utils": "^1.0.0-beta.11",
-    "@morpheme/divider": "^1.0.0-beta.11",
+    "@morpheme/badge": "^1.0.0-rc.1",
+    "@morpheme/divider": "^1.0.0-rc.0",
+    "@morpheme/forms": "^1.0.0-rc.1",
+    "@morpheme/icon": "^1.0.0-rc.1",
+    "@morpheme/theme": "^1.0.0-rc.0",
+    "@morpheme/tooltip": "^1.0.0-rc.1",
+    "@morpheme/utils": "^1.0.0-rc.0",
     "vue": "^3.3.4"
   },
   "devDependencies": {
     "@headlessui/vue": "^1.7.13",
-    "@morpheme/tailwind-config": "^1.0.0-beta.11",
+    "@morpheme/tailwind-config": "^1.0.0-rc.0",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
     "tailwindcss": "^3.3.1",
-    "vee-validate": "^4.10.8",
+    "vee-validate": "^4.11.3",
     "vite": "^4.3.8",
     "vitest": "^0.12.4"
   },

@@ -3,7 +3,7 @@
 This section will help you build a basic Vue app with Morpheme UI from ground up. If you already have an existing project and would like to keep documentation inside the project, start from Step 2.
 
 ::: tip
-Checkout `create-morpheme-app` to setup your application quickly
+Checkout [Morpheme CLI](/tools/cli) to setup your application quickly.
 :::
 
 ::: info
