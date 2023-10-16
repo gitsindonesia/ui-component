@@ -1,18 +1,11 @@
-import {app} from '@storybook/vue3';
-import {createMemoryHistory, createRouter} from 'vue-router';
 import '../packages/tailwind-config/tailwind.css';
 import '../packages/themes/src/morpheme/main.scss';
 import '../packages/themes/src/morpheme/main.dark.scss';
-
-const router = createRouter({
-  history: createMemoryHistory(),
-  routes: [],
-});
-
-app.use(router);
+import { setup } from "@storybook/vue3";
+import {FloatingVuePlugin} from '../packages/tooltip/src/floating-vue'
 
 export const parameters = {
-  actions: {argTypesRegex: '^on[A-Z].*'},
+  actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
     matchers: {
       color: /(background|color)$/i,
@@ -27,3 +20,8 @@ export const parameters = {
     },
   },
 };
+
+
+setup((app) => {
+  app.use(FloatingVuePlugin);
+});

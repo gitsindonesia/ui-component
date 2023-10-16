@@ -83,10 +83,22 @@ You can use the morpheme icon collections by using these prefixes: `untitled:`, 
 
 ## Props
 
-| Name            | Type                                                                | Default |
-| --------------- | ------------------------------------------------------------------- | ------- |
-| [`name`](#name) | `string`                                                            | ` `     |
-| [`size`](#size) | `'xxs' \| 'xs' \| 'sm' \| 'md' \| 'lg' \| 'xl' \| string \| number` | `'md'`  |
+| Name                    | Type                                                                | Default |
+| ----------------------- | ------------------------------------------------------------------- | ------- |
+| [`name`](#name)         | `string`                                                            | ` `     |
+| [`size`](#size)         | `'xxs' \| 'xs' \| 'sm' \| 'md' \| 'lg' \| 'xl' \| string \| number` | `'md'`  |
+| [`no-cache`](#no-cache) | `boolean`                                                           | `false` |
+
+
+## Caching
+
+By default, [Morpheme Icons](#morpheme-icons) are cached and stored on local storage. You can disable it per usage via `no-cache` prop.
+
+```vue
+<template>
+  <VIcon name="iconsax:twotone/add" no-cache />
+</template>
+```
 
 ## Events
 

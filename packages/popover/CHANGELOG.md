@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-rc.2](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-rc.1...v1.0.0-rc.2) (2023-10-02)
+
+**Note:** Version bump only for package @morpheme/popover
+
+
+
+
+
+# [1.0.0-rc.1](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-rc.0...v1.0.0-rc.1) (2023-09-15)
+
+**Note:** Version bump only for package @morpheme/popover
+
+
+
+
+
 # [1.0.0-beta.11](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.10...v1.0.0-beta.11) (2023-07-28)
 
 

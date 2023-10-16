@@ -1,11 +1,12 @@
 import { defineConfig } from 'vitepress';
 
 export default defineConfig({
-  title: 'Morpheme UI',
+  title: 'Morpheme',
   description:
-    'A free and open-source Vue UI Library based on Morpheme Design System',
+    'Morpheme UI is a free and open-source Vue UI Library based on Morpheme Design System',
   ignoreDeadLinks: true,
-  base: '/ui-component/',
+  // base: '/ui-component/',
+  base: '/',
   themeConfig: {
     search: {
       provider: 'local',
@@ -62,11 +63,11 @@ export default defineConfig({
         items: [{ text: 'CLI', link: '/tools/cli' }],
       },
       {
-        text: 'Themes',
+        text: 'Templates',
         collapsed: false,
         items: [
-          { text: 'nuxt-auth', link: '/themes/nuxt-auth' },
-          { text: 'nuxt-admin', link: '/themes/nuxt-admin' },
+          { text: 'nuxt-auth', link: '/templates/nuxt-auth' },
+          { text: 'nuxt-admin', link: '/templates/nuxt-admin' },
         ],
       },
       {

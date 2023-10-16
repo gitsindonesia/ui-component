@@ -5,6 +5,7 @@ import {
   addPlugin,
   addComponent,
   AddComponentOptions,
+  logger,
 } from '@nuxt/kit';
 import {addCustomTab} from '@nuxt/devtools-kit';
 
@@ -63,469 +64,493 @@ const optimizeDeps = ['yup', '@morpheme/design-tokens'];
 
 const components: AddComponentOptions[] = [
   {
-    name: 'VAlert',
+    name: 'Alert',
     filePath: '@morpheme/alert/src/VAlert.vue',
   },
   {
-    name: 'VAlertTitle',
+    name: 'AlertTitle',
     filePath: '@morpheme/alert/src/VAlertTitle.vue',
   },
   {
-    name: 'VAppBar',
+    name: 'AppBar',
     filePath: '@morpheme/app-bar/src/VAppBar.vue',
   },
   {
-    name: 'VAutocomplete',
+    name: 'Autocomplete',
     filePath: '@morpheme/autocomplete/src/VAutocomplete.vue',
   },
   {
-    name: 'VAvatar',
+    name: 'Avatar',
     filePath: '@morpheme/avatar/src/Avatar.vue',
   },
   {
-    name: 'VAvatarGroup',
+    name: 'AvatarGroup',
     filePath: '@morpheme/avatar/src/AvatarGroup.vue',
   },
   {
-    name: 'VBadge',
+    name: 'Badge',
     filePath: '@morpheme/badge/src/VBadge.vue',
   },
   {
-    name: 'VBadgeGroup',
+    name: 'BadgeGroup',
     filePath: '@morpheme/badge/src/VBadgeGroup.vue',
   },
   {
-    name: 'VBadgeContent',
+    name: 'BadgeContent',
     filePath: '@morpheme/badge/src/VBadgeContent.vue',
   },
   {
-    name: 'VBreadcrumbs',
+    name: 'Breadcrumbs',
     filePath: '@morpheme/breadcrumbs/src/VBreadcrumbs.vue',
   },
   {
-    name: 'VBreadcrumbsItem',
+    name: 'BreadcrumbsItem',
     filePath: '@morpheme/breadcrumbs/src/VBreadcrumbsItem.vue',
   },
   {
-    name: 'VBreadcrumbsDivider',
+    name: 'BreadcrumbsDivider',
     filePath: '@morpheme/breadcrumbs/src/VBreadcrumbsDivider.vue',
   },
   {
-    name: 'VBtn',
+    name: 'Btn',
     filePath: '@morpheme/button/src/VBtn.vue',
   },
   {
-    name: 'VBtnGroup',
+    name: 'Button',
+    filePath: '@morpheme/button/src/VBtn.vue',
+  },
+  {
+    name: 'BtnGroup',
     filePath: '@morpheme/button/src/VBtnGroup.vue',
   },
   {
-    name: 'VBtnToolbar',
+    name: 'BtnToolbar',
     filePath: '@morpheme/button/src/VBtnToolbar.vue',
   },
   {
-    name: 'VCard',
+    name: 'Card',
     filePath: '@morpheme/card/src/VCard.vue',
   },
   {
-    name: 'VCardHeader',
+    name: 'CardHeader',
     filePath: '@morpheme/card/src/VCardHeader.vue',
   },
   {
-    name: 'VCardFooter',
+    name: 'CardFooter',
     filePath: '@morpheme/card/src/VCardFooter.vue',
   },
   {
-    name: 'VCardBody',
+    name: 'CardBody',
     filePath: '@morpheme/card/src/VCardBody.vue',
   },
   {
-    name: 'VCardImage',
+    name: 'CardImage',
     filePath: '@morpheme/card/src/VCardImage.vue',
   },
   {
-    name: 'VCollapsible',
+    name: 'Collapsible',
     filePath: '@morpheme/collapsible/src/VCollapsible.vue',
   },
   {
-    name: 'VCollapse',
+    name: 'Collapse',
     filePath: '@morpheme/collapsible/src/VCollapse.vue',
   },
   {
-    name: 'VContainer',
+    name: 'Container',
     filePath: '@morpheme/container/src/VContainer.vue',
   },
   {
-    name: 'VRow',
+    name: 'Row',
     filePath: '@morpheme/layouts/src/VRow.vue',
   },
   {
-    name: 'VCol',
+    name: 'Col',
     filePath: '@morpheme/layouts/src/VCol.vue',
   },
   {
-    name: 'VDropdown',
+    name: 'Dropdown',
     filePath: '@morpheme/dropdown/src/Dropdown.vue',
   },
   {
-    name: 'VDropdownButton',
+    name: 'DropdownButton',
     filePath: '@morpheme/dropdown/src/DropdownButton.vue',
   },
   {
-    name: 'VDropdownItem',
+    name: 'DropdownItem',
     filePath: '@morpheme/dropdown/src/DropdownItem.vue',
   },
   {
-    name: 'VDropdownBtn',
+    name: 'DropdownBtn',
     filePath: '@morpheme/dropdown/src/DropdownBtn.vue',
   },
   {
-    name: 'VDropdownHeader',
+    name: 'DropdownHeader',
     filePath: '@morpheme/dropdown/src/DropdownHeader.vue',
   },
   {
-    name: 'VDropdownActivator',
+    name: 'DropdownActivator',
     filePath: '@morpheme/dropdown/src/DropdownActivator.vue',
   },
   {
-    name: 'VEditor',
+    name: 'Editor',
     filePath: '@morpheme/editor/src/VEditor.vue',
   },
   {
-    name: 'VQuillEditor',
+    name: 'QuillEditor',
     filePath: '@morpheme/quill-editor/src/VQuillEditor.vue',
   },
   {
-    name: 'VInput',
+    name: 'Input',
     filePath: '@morpheme/forms/src/input/VInput.vue',
   },
   /**
    * @deprecated
    */
   {
-    name: 'VInputGroup',
+    name: 'InputGroup',
     filePath: '@morpheme/forms/src/input/VInputGroup.vue',
   },
   {
-    name: 'VInputRange',
+    name: 'InputRange',
     filePath: '@morpheme/forms/src/input/VInputRange.vue',
   },
   {
-    name: 'VCheckbox',
+    name: 'Checkbox',
     filePath: '@morpheme/forms/src/checkbox/VCheckbox.vue',
   },
   {
-    name: 'VFileUpload',
+    name: 'FileUpload',
     filePath: '@morpheme/forms/src/file-input/VFileUpload.vue',
   },
   {
-    name: 'VFileUploadActions',
+    name: 'FileUploadActions',
     filePath: '@morpheme/forms/src/file-input/VFileUploadActions.vue',
   },
   {
-    name: 'VFileUploadButtonTheme',
+    name: 'FileUploadButtonTheme',
     filePath: '@morpheme/forms/src/file-input/VFileUploadButtonTheme.vue',
   },
   {
-    name: 'VFileUploadDefaultTheme',
+    name: 'FileUploadDefaultTheme',
     filePath: '@morpheme/forms/src/file-input/VFileUploadDefaultTheme.vue',
   },
   {
-    name: 'VFileUploadDropzoneTheme',
+    name: 'FileUploadDropzoneTheme',
     filePath: '@morpheme/forms/src/file-input/VFileUploadDropzoneTheme.vue',
   },
   {
-    name: 'VFileUploadImageTheme',
+    name: 'FileUploadImageTheme',
     filePath: '@morpheme/forms/src/file-input/VFileUploadImageTheme.vue',
   },
   {
-    name: 'VFormGroup',
+    name: 'FormGroup',
     filePath: '@morpheme/forms/src/form-group/VFormGroup.vue',
   },
   {
-    name: 'VFormSelect',
+    name: 'FormSelect',
     filePath: '@morpheme/forms/src/form-select/VFormSelect.vue',
   },
   {
-    name: 'VRadio',
+    name: 'Radio',
     filePath: '@morpheme/forms/src/radio/VRadio.vue',
   },
   {
-    name: 'VRadioGroup',
+    name: 'RadioGroup',
     filePath: '@morpheme/forms/src/radio/VRadioGroup.vue',
   },
   {
-    name: 'VTextarea',
+    name: 'Textarea',
     filePath: '@morpheme/forms/src/textarea/Textarea.vue',
   },
   {
-    name: 'VIcon',
+    name: 'Icon',
     filePath: '@morpheme/icon/src/Icon.vue',
   },
   {
-    name: 'VLogo',
+    name: 'Logo',
     filePath: '@morpheme/logo/src/VLogo.vue',
   },
   {
-    name: 'VList',
+    name: 'List',
     filePath: '@morpheme/list/src/List.vue',
   },
   {
-    name: 'VListItem',
+    name: 'ListItem',
     filePath: '@morpheme/list/src/ListItem.vue',
   },
   {
-    name: 'VListCollapse',
+    name: 'ListCollapse',
     filePath: '@morpheme/list/src/ListCollapse.vue',
   },
   {
-    name: 'VListItemDivider',
+    name: 'ListItemDivider',
     filePath: '@morpheme/list/src/ListItemDivider.vue',
   },
   {
-    name: 'VListItemHeader',
+    name: 'ListItemHeader',
     filePath: '@morpheme/list/src/ListItemHeader.vue',
   },
   {
-    name: 'VListItemTitle',
+    name: 'ListItemTitle',
     filePath: '@morpheme/list/src/ListItemTitle.vue',
   },
   {
-    name: 'VListItemSubTitle',
+    name: 'ListItemSubTitle',
     filePath: '@morpheme/list/src/ListItemSubTitle.vue',
   },
   {
-    name: 'VListItemContent',
+    name: 'ListItemContent',
     filePath: '@morpheme/list/src/ListItemContent.vue',
   },
   {
-    name: 'VMenu',
+    name: 'Menu',
     filePath: '@morpheme/menu/src/VMenu.vue',
   },
   {
-    name: 'VMenuItem',
+    name: 'MenuItem',
     filePath: '@morpheme/menu/src/VMenuItem.vue',
   },
   {
-    name: 'VMenuIcon',
+    name: 'MenuIcon',
     filePath: '@morpheme/menu/src/VMenuIcon.vue',
   },
   {
-    name: 'VMenuTooltip',
+    name: 'MenuTooltip',
     filePath: '@morpheme/menu/src/VMenuTooltip.vue',
   },
   {
-    name: 'VMenus',
+    name: 'Menus',
     filePath: '@morpheme/menus/src/VMenus.vue',
   },
   {
-    name: 'VMenusItem',
+    name: 'MenusItem',
     filePath: '@morpheme/menus/src/VMenusItem.vue',
   },
   {
-    name: 'VModal',
+    name: 'Modal',
     filePath: '@morpheme/modal/src/VModal.vue',
   },
   {
-    name: 'VMultiSelect',
+    name: 'ModalGroup',
+    filePath: '@morpheme/modal/src/Modal.vue',
+  },
+  {
+    name: 'ModalHeader',
+    filePath: '@morpheme/modal/src/ModalHeader.vue',
+  },
+  {
+    name: 'ModalBody',
+    filePath: '@morpheme/modal/src/ModalBody.vue',
+  },
+  {
+    name: 'ModalFooter',
+    filePath: '@morpheme/modal/src/ModalFooter.vue',
+  },
+  {
+    name: 'ModalTitle',
+    filePath: '@morpheme/modal/src/ModalTitle.vue',
+  },
+  {
+    name: 'MultiSelect',
     filePath: '@morpheme/multi-select/src/VMultiSelect.vue',
   },
   {
-    name: 'VNavDrawer',
+    name: 'NavDrawer',
     filePath: '@morpheme/nav-drawer/src/NavDrawer.vue',
   },
   /**
    * @deprecated
    */
   {
-    name: 'VNavbar',
+    name: 'Navbar',
     filePath: '@morpheme/navbar/src/VNavbar.vue',
   },
   {
-    name: 'VPagination',
+    name: 'Pagination',
     filePath: '@morpheme/pagination/src/VPagination.vue',
   },
   {
-    name: 'VPaginationItem',
+    name: 'PaginationItem',
     filePath: '@morpheme/pagination/src/VPaginationItem.vue',
   },
   {
-    name: 'VProgressBar',
+    name: 'ProgressBar',
     filePath: '@morpheme/progress-bar/src/VProgressBar.vue',
   },
   {
-    name: 'VSelect',
+    name: 'Select',
     filePath: '@morpheme/select/src/VSelect.vue',
   },
   {
-    name: 'VShimmer',
+    name: 'Shimmer',
     filePath: '@morpheme/shimmer/src/Shimmer.vue',
   },
   {
-    name: 'VSpinner',
+    name: 'Spinner',
     filePath: '@morpheme/spinner/src/VSpinner.vue',
   },
   {
-    name: 'VSwitch',
+    name: 'Switch',
     filePath: '@morpheme/switch/src/VSwitch.vue',
   },
   {
-    name: 'VDataTable',
+    name: 'DataTable',
     filePath: '@morpheme/table/src/VDataTable.vue',
   },
   {
-    name: 'VDataTablePagination',
+    name: 'DataTablePagination',
     filePath: '@morpheme/table/src/VDataTablePagination.vue',
   },
   {
-    name: 'VTabs',
+    name: 'Tabs',
     filePath: '@morpheme/tabs/src/VTabs.vue',
   },
   {
-    name: 'VTab',
+    name: 'Tab',
     filePath: '@morpheme/tabs/src/VTab.vue',
   },
   {
-    name: 'VTabsSlider',
+    name: 'TabsSlider',
     filePath: '@morpheme/tabs/src/VTabsSlider.vue',
   },
   {
-    name: 'VTabGroup',
+    name: 'TabGroup',
     filePath: '@morpheme/tabs/src/VTabGroup.vue',
   },
   {
-    name: 'VTabList',
+    name: 'TabList',
     filePath: '@morpheme/tabs/src/VTabList.vue',
   },
   {
-    name: 'VTabItem',
+    name: 'TabItem',
     filePath: '@morpheme/tabs/src/VTabItem.vue',
   },
   {
-    name: 'VTabPanels',
+    name: 'TabPanels',
     filePath: '@morpheme/tabs/src/VTabPanels.vue',
   },
   {
-    name: 'VTabPanel',
+    name: 'TabPanel',
     filePath: '@morpheme/tabs/src/VTabPanel.vue',
   },
   {
-    name: 'VToast',
+    name: 'Toast',
     filePath: '@morpheme/toast/src/VToast.vue',
   },
   {
-    name: 'VTooltip',
+    name: 'Tooltip',
     filePath: '@morpheme/tooltip/src/VTooltip.vue',
   },
   {
-    name: 'VRating',
+    name: 'Rating',
     filePath: '@morpheme/rating/src/Rating.vue',
   },
   {
-    name: 'VBottomSheet',
+    name: 'BottomSheet',
     filePath: '@morpheme/bottom-sheet/src/BottomSheet.vue',
   },
   {
-    name: 'VBottomSheetBody',
+    name: 'BottomSheetBody',
     filePath: '@morpheme/bottom-sheet/src/BottomSheetBody.vue',
   },
   {
-    name: 'VBottomSheetFooter',
+    name: 'BottomSheetFooter',
     filePath: '@morpheme/bottom-sheet/src/BottomSheetFooter.vue',
   },
   {
-    name: 'VBottomSheetHeader',
+    name: 'BottomSheetHeader',
     filePath: '@morpheme/bottom-sheet/src/BottomSheetHeader.vue',
   },
   {
-    name: 'VBottomSheetMenus',
+    name: 'BottomSheetMenus',
     filePath: '@morpheme/bottom-sheet/src/BottomSheetMenus.vue',
   },
   {
-    name: 'VBottomSheetOverlay',
+    name: 'BottomSheetOverlay',
     filePath: '@morpheme/bottom-sheet/src/BottomSheetOverlay.vue',
   },
   {
-    name: 'VBottomSheetHandle',
+    name: 'BottomSheetHandle',
     filePath: '@morpheme/bottom-sheet/src/BottomSheetHandle.vue',
   },
   {
-    name: 'VText',
+    name: 'Text',
     filePath: '@morpheme/text/src/VText.vue',
   },
   {
-    name: 'VAppShell',
+    name: 'AppShell',
     filePath: '@morpheme/app-shell/src/VAppShell.vue',
   },
   {
-    name: 'VMain',
+    name: 'Main',
     filePath: '@morpheme/app-shell/src/VMain.vue',
   },
   {
-    name: 'VProgressCircular',
+    name: 'ProgressCircular',
     filePath: '@morpheme/progress-circular/src/VProgressCircular.vue',
   },
   {
-    name: 'VTimeline',
+    name: 'Timeline',
     filePath: '@morpheme/timeline/src/VTimeline.vue',
   },
   {
-    name: 'VTimelineDivider',
+    name: 'TimelineDivider',
     filePath: '@morpheme/timeline/src/VTimelineDivider.vue',
   },
   {
-    name: 'VTimelineItem',
+    name: 'TimelineItem',
     filePath: '@morpheme/timeline/src/VTimelineItem.vue',
   },
   {
-    name: 'VTimelineItemDot',
+    name: 'TimelineItemDot',
     filePath: '@morpheme/timeline/src/VTimelineItemDot.vue',
   },
   {
-    name: 'VTimelineItemContent',
+    name: 'TimelineItemContent',
     filePath: '@morpheme/timeline/src/VTimelineItemContent.vue',
   },
   {
-    name: 'VBanner',
+    name: 'Banner',
     filePath: '@morpheme/banner/src/VBanner.vue',
   },
   {
-    name: 'VBannerText',
+    name: 'BannerText',
     filePath: '@morpheme/banner/src/VBannerText.vue',
   },
   {
-    name: 'VDivider',
+    name: 'Divider',
     filePath: '@morpheme/divider/src/VDivider.vue',
   },
   {
-    name: 'VBottomNavigation',
+    name: 'BottomNavigation',
     filePath: '@morpheme/bottom-navigation/src/VBottomNavigation.vue',
   },
   {
-    name: 'VBottomNavigationItem',
+    name: 'BottomNavigationItem',
     filePath: '@morpheme/bottom-navigation/src/VBottomNavigationItem.vue',
   },
   {
-    name: 'VPopover',
+    name: 'Popover',
     filePath: '@morpheme/popover/src/VPopover.vue',
   },
   {
-    name: 'VPopoverButton',
+    name: 'PopoverButton',
     filePath: '@morpheme/popover/src/VPopoverButton.vue',
   },
   {
-    name: 'VPopoverGroup',
+    name: 'PopoverGroup',
     filePath: '@morpheme/popover/src/VPopoverGroup.vue',
   },
   {
-    name: 'VPopoverOverlay',
+    name: 'PopoverOverlay',
     filePath: '@morpheme/popover/src/VPopoverOverlay.vue',
   },
   {
-    name: 'VPopoverPanel',
+    name: 'PopoverPanel',
     filePath: '@morpheme/popover/src/VPopoverPanel.vue',
   },
   {
-    name: 'VCommand',
+    name: 'Command',
     filePath: '@morpheme/command/src/VCommand.vue',
   },
 ];
@@ -572,36 +597,36 @@ const experimentalComponents: AddComponentOptions[] = [
     filePath: '@morpheme/forms/src/file-input/FileInputItems.vue',
   },
   {
-    name: 'SelectInput',
+    name: 'FormSelect',
     filePath: '@morpheme/forms/src/form-select/Select.vue',
   },
   {
-    name: 'SelectInputField',
+    name: 'FormSelectInputField',
     filePath: '@morpheme/forms/src/form-select/SelectField.vue',
   },
   {
     name: 'Input',
-    filePath: '@morpheme/forms/src/form-select/Input.vue',
+    filePath: '@morpheme/forms/src/input/Input.vue',
   },
   {
     name: 'InputField',
-    filePath: '@morpheme/forms/src/form-select/InputField.vue',
+    filePath: '@morpheme/forms/src/input/InputField.vue',
   },
   {
     name: 'SelectOptions',
-    filePath: '@morpheme/forms/src/form-select/SelectOptions.vue',
+    filePath: '@morpheme/forms/src/input/SelectOptions.vue',
   },
   {
     name: 'Radio',
-    filePath: '@morpheme/forms/src/form-select/Radio.vue',
+    filePath: '@morpheme/forms/src/radio/Radio.vue',
   },
   {
-    name: 'TextareaInput',
-    filePath: '@morpheme/forms/src/form-select/TextareaInput.vue',
+    name: 'Textarea',
+    filePath: '@morpheme/forms/src/textarea/TextareaInput.vue',
   },
   {
-    name: 'TextareaInputField',
-    filePath: '@morpheme/forms/src/form-select/TextareaInputField.vue',
+    name: 'TextareaField',
+    filePath: '@morpheme/forms/src/textarea/TextareaInputField.vue',
   },
 ];
 
@@ -727,6 +752,18 @@ export interface ModuleOptions {
    * })
    */
   experimentalComponents: boolean;
+  /**
+   * Component prefix.
+   *
+   * @default 'V'
+   * @example
+   * // nuxt.config.ts
+   * export default defineConfig({
+   * morpheme: {
+   * prefix: 'M'
+   * })
+   */
+  prefix: string;
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -744,7 +781,8 @@ export default defineNuxtModule<ModuleOptions>({
     darkMode: false,
     optimizeDeps: true,
     theme: 'morpheme',
-    experimentalComponents: true,
+    experimentalComponents: false,
+    prefix: 'V',
   },
   setup(options, nuxt) {
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url));
@@ -820,14 +858,24 @@ export default defineNuxtModule<ModuleOptions>({
     // register components
     if (options.components) {
       components.forEach((component) => {
-        addComponent(component);
+        addComponent({
+          name: `${options.prefix}${component.name}`,
+          filePath: component.filePath,
+        });
       });
     }
 
     // register experimental components
     if (options.experimentalComponents) {
+      logger.warn(
+        'Experimental components are not production ready. Use at your own risk.',
+      );
+
       experimentalComponents.forEach((component) => {
-        addComponent(component);
+        addComponent({
+          name: `${options.prefix}${component.name}`,
+          filePath: component.filePath,
+        });
       });
     }
 

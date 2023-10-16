@@ -15,11 +15,11 @@ function createItems(length = 5, additionalAttrs = {}) {
   }));
 }
 
-const items = createItems()
+const items = createItems();
 
 const groupItems = createItems(5, {
   options: createItems(5),
-})
+});
 
 export default {
   title: 'Experimental/Forms/Select',
@@ -31,7 +31,18 @@ export default {
     },
   },
   args: {
-    options: items,
+    options: [
+      {
+        label: 'Choose',
+        value: '',
+      },
+      ...items,
+      {
+        label: 'Disabled item',
+        value: 'x',
+        disabled: true,
+      },
+    ],
   },
 } as Meta;
 
@@ -62,7 +73,7 @@ DefaultValue.args = {
 
 export const OptionGroup = Template.bind({});
 OptionGroup.args = {
-  options: groupItems
+  options: groupItems,
 };
 
 export const VModel: Story<typeof Select> = (args) => ({
@@ -70,7 +81,7 @@ export const VModel: Story<typeof Select> = (args) => ({
     Select,
   },
   setup() {
-    const value = ref('')
+    const value = ref('');
     return {args, value};
   },
   template: `

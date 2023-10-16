@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-rc.2](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-rc.1...v1.0.0-rc.2) (2023-10-02)
+
+
+### Features
+
+* **nuxt:** add alias `VButton` for `VBtn` ([30b3953](https://github.com/gitsindonesia/ui-component/commit/30b395331ca8d5382ae66c8a2c3d1dbd279ca301))
+
+
+
+
+
+# [1.0.0-rc.1](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-rc.0...v1.0.0-rc.1) (2023-09-15)
+
+**Note:** Version bump only for package @morpheme/nuxt
+
+
+
+
+
 # [1.0.0-beta.11](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.10...v1.0.0-beta.11) (2023-07-28)
 
 **Note:** Version bump only for package @morpheme/nuxt
