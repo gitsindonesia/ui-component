@@ -1,17 +1,15 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+//
+</script>
 
 <template>
-  <VAppBar size="auto" class="py-2 px-4">
+  <VAppBar size="auto" class="top-0 sticky py-2 px-4">
     <div class="flex gap-4 w-full justify-between items-center">
-      <div class="w-auto xl:w-[218px] flex items-center gap-2">
+      <div class="w-[218px]">
         <VLogo :white="$colorMode.preference === 'dark'" />
       </div>
-      <nav class="flex justify-end gap-0 lg:gap-2 flex-grow">
-        <VInput
-          wrapper-class="flex-grow hidden lg:inline-block"
-          placeholder="Search in mail"
-        />
-        <VBtn prefix-icon="ri:search-line" icon text fab class="lg:!hidden" />
+      <nav class="flex gap-2 flex-1">
+        <VInput wrapper-class="flex-grow" placeholder="Search in mail" />
         <VBtn
           v-tooltip="{
             content: 'Settings',

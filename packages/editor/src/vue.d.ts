@@ -4,6 +4,4 @@ declare module '*.vue' {
   export default component;
 }
 
-declare module '@morpheme/design-tokens/*';
-
 declare module '@ckeditor/ckeditor5-vue';

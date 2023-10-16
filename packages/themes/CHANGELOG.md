@@ -3,40 +3,6 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [1.0.0-rc.2](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-rc.1...v1.0.0-rc.2) (2023-10-02)
-
-
-### Bug Fixes
-
-* **Grid:** fix cols responsive and improved grid styles ([6e4e541](https://github.com/gitsindonesia/ui-component/commit/6e4e5412813db41b596a90e18c24110904a53e87))
-* **List:** fix hover effect ([587f22e](https://github.com/gitsindonesia/ui-component/commit/587f22e7b24a77a758b526d5ef7f415b10521dff))
-* **Tabs:** fix tabs slider height ([270f654](https://github.com/gitsindonesia/ui-component/commit/270f654c952ab5df2205607de10f7d828245d346))
-
-
-### Features
-
-* **Grid:** add new `wrap` prop ([995fb7a](https://github.com/gitsindonesia/ui-component/commit/995fb7acae5408d4cfa882e0090cd078b51942f7))
-
-
-
-
-
-# [1.0.0-rc.1](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-rc.0...v1.0.0-rc.1) (2023-09-15)
-
-
-### Bug Fixes
-
-* **Tabs:** adjust segmented control tabs spacing ([8690fd2](https://github.com/gitsindonesia/ui-component/commit/8690fd2d5dbdd3406603b2d6394efcf5551a646c))
-
-
-### Features
-
-* **Tabs:** add disabled item style ([35321e5](https://github.com/gitsindonesia/ui-component/commit/35321e5a8cfc617be61dd371c83de38402c979d3))
-
-
-
-
-
 # [1.0.0-beta.11](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.10...v1.0.0-beta.11) (2023-07-28)
 
 

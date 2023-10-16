@@ -134,11 +134,11 @@ defineSlots<{
         <SelectOptions :options="options" />
       </select>
     </div>
-    <div v-if="hint" class="v-input-hint">
+    <p v-if="hint" class="v-input-hint">
       <slot name="hint">
         {{ hint }}
       </slot>
-    </div>
+    </p>
     <div v-if="errorMessage" class="v-input-error" :class="errorClass">
       <slot name="error">
         {{ errorMessage }}

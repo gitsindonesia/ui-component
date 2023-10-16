@@ -18,25 +18,9 @@
 
 Try it out now:
 
-::: code-group
-
-```bash [pnpm]
-pnpx create-morpheme-app@latest
-```
-
-```bash [npm]
+```bash
 npx create-morpheme-app@latest
 ```
-
-```bash [yarn]
-yarn create morpheme-app@latest
-```
-
-```bash [bun]
-bunx create-morpheme-app@latest
-```
-
-:::
 
 ## Links
 

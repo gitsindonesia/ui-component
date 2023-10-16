@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/toast-store",
-  "version": "1.0.0-rc.1",
+  "version": "1.0.0-beta.11",
   "description": "Store module for @morpheme/toast.",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,14 +15,14 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@morpheme/toast": "^1.0.0-rc.1",
+    "@morpheme/toast": "^1.0.0-beta.11",
     "pinia": "^2.0.11",
     "vue": "^3.3.4",
     "vuex": "^4.0.2"
   },
   "devDependencies": {
-    "@morpheme/tailwind-config": "^1.0.0-rc.0",
-    "@morpheme/utils": "^1.0.0-rc.0",
+    "@morpheme/tailwind-config": "^1.0.0-beta.11",
+    "@morpheme/utils": "^1.0.0-beta.11",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
     "tailwindcss": "^3.3.1",

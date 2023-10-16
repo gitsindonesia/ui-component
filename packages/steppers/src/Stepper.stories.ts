@@ -1,5 +1,6 @@
 import {Args, Story} from '@storybook/vue3';
 import VStepper from './Stepper.vue';
+import vueRouter from 'storybook-vue3-router';
 import {defineComponent, ref, computed, toRefs, PropType} from 'vue';
 import {useRoute} from 'vue-router';
 
@@ -25,31 +26,29 @@ const Stepper = defineComponent({
   props: {
     id: {
       type: String,
-      required: true,
+      required: true
     },
     disableRouteActive: {
       type: Boolean,
-      required: true,
+      required: true
     },
     value: {
       type: Number,
-      required: true,
+      required: true
     },
     items: {
       type: Array as PropType<Record<any, string>[]>,
-      required: true,
-    },
+      required: true
+    }
   },
-  setup(props: any) {
+  setup(props:any) {
     const {items} = toRefs(props);
     const route = useRoute();
 
     const getCurrentIdx = computed(() => {
-      return items.value?.findIndex(
-        (e: Record<string, any>) => e?.path === route.path,
-      );
+      return items.value?.findIndex((e:Record<string, any>) => e?.path === route.path);
     });
-    const getNext = computed(() => {
+    const getNext = computed(() =>{
       const currIndex = getCurrentIdx.value;
       const targetIdx = currIndex + 1;
       return targetIdx < items.value?.length ? items.value?.at(targetIdx) : {};
@@ -79,7 +78,7 @@ const Stepper = defineComponent({
         </template>
       </div>
     </div>
-  `,
+  `
 });
 
 const defaultRoutes = [
@@ -88,8 +87,8 @@ const defaultRoutes = [
     name: 'stepper',
     props: true,
     component: Stepper,
-  },
-];
+  }
+]
 
 const Template: Story = (args, ctx) => ({
   components: {
@@ -100,15 +99,15 @@ const Template: Story = (args, ctx) => ({
     const disableRouteActive = ref(args.disableRouteActive);
 
     const onPrevClick = () => {
-      if (disableRouteActive.value) {
+      if(disableRouteActive.value){
         val.value -= 1;
       }
-    };
+    }
     const onNextClick = () => {
-      if (disableRouteActive.value) {
+      if(disableRouteActive.value){
         val.value += 1;
       }
-    };
+    }
 
     return {args, onPrevClick, onNextClick, val, disableRouteActive};
   },
@@ -134,6 +133,7 @@ const Template: Story = (args, ctx) => ({
   `,
 });
 
+
 export const Default = Template.bind({});
 Default.args = {};
 Default.parameters = {
@@ -143,15 +143,24 @@ Default.parameters = {
     },
   },
 };
+Default.decorators = [
+    (story, ctx) => {
+        const initialRoute = ctx.args?.items?.at(ctx.args.modelValue)?.path
+        return vueRouter(defaultRoutes, {
+            initialRoute
+        })(story, ctx)
+    },
+];
 
-export const Linear = (args: Args) => ({
+
+export const Linear = (args:Args) => ({
   components: {
     VStepper,
   },
   setup() {
     const val = ref(args?.modelValue || 0);
 
-    const linear = [true, false];
+    const linear = [true, false]
 
     const nuArgs = {
       args: linear.map((e) => {
@@ -159,20 +168,20 @@ export const Linear = (args: Args) => ({
           ...args,
           modelValue: val,
           disableRouteActive: true,
-          linear: e,
-        };
+          linear : e,
+        }
       }),
-      linear,
-    };
+      linear
+    }
 
     const onPrevClick = () => {
-      val.value -= 1;
-    };
+        val.value -= 1;
+    }
     const onNextClick = () => {
       val.value += 1;
-    };
+    }
 
-    return {args: nuArgs, linear, val, onPrevClick, onNextClick};
+    return {args:nuArgs, linear, val, onPrevClick, onNextClick};
   },
   template: `
     <div class="flex flex-col gap-4">
@@ -203,7 +212,7 @@ Linear.parameters = {
   },
 };
 
-export const Clickable = (args: Args) => ({
+export const Clickable = (args:Args) => ({
   components: {
     VStepper,
   },
@@ -222,32 +231,25 @@ export const Clickable = (args: Args) => ({
           disableRouteActive: disableRouteActive[idx],
           clickable: clickable[idx],
           linkable: linkable[idx],
-        };
+        }
       }),
-      clickable,
-    };
+      clickable
+    }
 
     const onPrevClick = () => {
-      val.value -= 1;
-    };
+        val.value -= 1;
+    }
     const onNextClick = () => {
       val.value += 1;
-    };
+    }
 
-    const onStepClick = (step: any) => {
+    const onStepClick = (step:any) => {
       alert('You clicked a step! ' + JSON.stringify(step));
 
       val.value = step.index;
-    };
+    }
 
-    return {
-      args: nuArgs,
-      clickable,
-      val,
-      onPrevClick,
-      onNextClick,
-      onStepClick,
-    };
+    return {args:nuArgs, clickable, val, onPrevClick, onNextClick, onStepClick};
   },
   template: `
     <div class="flex flex-col gap-4">
@@ -284,6 +286,7 @@ Clickable.parameters = {
   },
 };
 
+
 export const DisableRouteActive = Template.bind({});
 DisableRouteActive.args = {
   disableRouteActive: true,
@@ -307,6 +310,15 @@ Linkable.parameters = {
     },
   },
 };
+Linkable.decorators = [
+    (story, ctx) => {
+        const initialRoute = ctx.args?.items?.at(ctx.args.modelValue)?.path
+        return vueRouter(defaultRoutes, {
+            initialRoute
+        })(story, ctx)
+    },
+];
+
 
 export const Vertical = Template.bind({});
 Vertical.args = {
@@ -319,6 +331,7 @@ Vertical.parameters = {
     },
   },
 };
+
 
 export const VModel = Template.bind({});
 VModel.args = {
@@ -334,7 +347,7 @@ VModel.args = {
       subtitle: 'Subtitle 2',
       path: '/step/2',
     },
-  ],
+  ]
 };
 VModel.parameters = {
   docs: {
@@ -343,3 +356,11 @@ VModel.parameters = {
     },
   },
 };
+VModel.decorators = [
+  (story, ctx) => {
+    const initialRoute = ctx.args?.items?.at(ctx.args.modelValue)?.path
+    return vueRouter(defaultRoutes, {
+      initialRoute
+    })(story, ctx)
+  },
+];

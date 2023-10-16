@@ -1,7 +1,8 @@
-import {Dropdown, DropdownBtn, DropdownItem} from '@morpheme/dropdown';
+import { Dropdown, DropdownBtn, DropdownItem } from '@morpheme/dropdown';
 import VBreadcrumbs from './VBreadcrumbs.vue';
 import {Meta, Story} from '@storybook/vue3';
 import Icon from '@morpheme/icon';
+import vueRouter from 'storybook-vue3-router';
 import type {VBreadcrumbItemProps} from './types';
 import {ref} from 'vue';
 import VBreadcrumbsDivider from './VBreadcrumbsDivider.vue';
@@ -44,6 +45,8 @@ const Template: Story = (args) => ({
   },
   template: `<VBreadcrumbs v-bind='args'/>`,
 });
+
+Template.decorators = [vueRouter()];
 
 export const Default = Template.bind({});
 Default.args = {};
@@ -93,6 +96,8 @@ CustomDividerSlots.parameters = {
     },
   },
 };
+
+CustomDividerSlots.decorators = [vueRouter()];
 
 export const OptionalRouterLink: Story = (args) => ({
   components: {VBreadcrumbs, Icon},
@@ -185,11 +190,7 @@ const items = ref<VBreadcrumbItem[]>([
 };
 
 export const WithDropdown: Story = (args) => ({
-  components: {
-    VBreadcrumbs,
-    VBreadcrumbsItem,
-    VBreadcrumbsDivider,
-    Icon,
+  components: {VBreadcrumbs, VBreadcrumbsItem, VBreadcrumbsDivider, Icon,
     Dropdown,
     DropdownBtn,
     DropdownItem,

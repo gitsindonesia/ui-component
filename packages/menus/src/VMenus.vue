@@ -3,11 +3,12 @@ import {computed} from 'vue';
 import Icon from '@morpheme/icon';
 import VMenusItem from './VMenusItem.vue';
 import FloatingVue, {Menu, Dropdown} from 'floating-vue';
-import type {Placement} from '@floating-ui/vue';
 
 export type VMenuItem = InstanceType<typeof VMenusItem>['$props'] & {
   children?: VMenuItem[];
 };
+
+export type Placement = InstanceType<typeof Menu>['$props']['placement'];
 
 export interface Props {
   items?: VMenuItem[];

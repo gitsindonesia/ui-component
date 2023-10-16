@@ -1,9 +1,9 @@
-import type { Plugin } from 'vue';
+import type {Plugin} from 'vue';
 import VBtn from '@morpheme/button';
-import { VAlert, VAlertTitle, VAlertGroup } from '@morpheme/alert';
+import {VAlert, VAlertTitle, VAlertGroup} from '@morpheme/alert';
 import VSpinner from '@morpheme/spinner';
 import VAppBar from '@morpheme/app-bar';
-import { VBadge, VBadgeGroup, VBadgeContent } from '@morpheme/badge';
+import {VBadge, VBadgeGroup, VBadgeContent} from '@morpheme/badge';
 import {
   VBreadcrumbs,
   VBreadcrumbsItem,
@@ -28,7 +28,7 @@ import {
   VFormGroup,
   VTextarea,
 } from '@morpheme/forms';
-import { VDataTable, VDataTablePagination } from '@morpheme/table';
+import {VDataTable, VDataTablePagination} from '@morpheme/table';
 import {
   Dropdown,
   DropdownItem,
@@ -77,12 +77,12 @@ import {
   ListItemSubTitle,
   ListItemContent,
 } from '@morpheme/list';
-import { Icon } from '@morpheme/icon';
+import {Icon} from '@morpheme/icon';
 import Avatar from '@morpheme/avatar';
 import Shimmer from '@morpheme/shimmer';
 import VAutocomplete from '@morpheme/autocomplete';
 import './style.scss';
-import { Rating } from '@morpheme/rating';
+import {Rating} from '@morpheme/rating';
 import {
   BottomSheet,
   BottomSheetHeader,
@@ -99,7 +99,7 @@ import {
   StepperNumber,
 } from '@morpheme/stepper';
 import VText from '@morpheme/text';
-import { VAppShell, VMain } from '@morpheme/app-shell';
+import {VAppShell, VMain} from '@morpheme/app-shell';
 import VProgressCircular from '@morpheme/progress-circular';
 import {
   VTimeline,
@@ -108,8 +108,8 @@ import {
   VTimelineItemDot,
   VTimelineItemContent,
 } from '@morpheme/timeline';
-import { VBanner, VBannerText } from '@morpheme/banner';
-import { VDivider } from '@morpheme/divider';
+import {VBanner, VBannerText} from '@morpheme/banner';
+import {VDivider} from '@morpheme/divider';
 import {
   VBottomNavigation,
   VBottomNavigationItem,
@@ -121,16 +121,11 @@ import {
   VPopoverOverlay,
   VPopoverPanel,
 } from '@morpheme/popover';
-import { VRow, VCol } from '@morpheme/layouts';
+import {VRow, VCol} from '@morpheme/layouts';
 import VCommand from '@morpheme/command';
-import { FloatingVuePlugin } from '@morpheme/tooltip'
 
 const plugin: Plugin = {
   install: (app) => {
-    // register custom floating vue
-    app.use(FloatingVuePlugin)
-
-    // register components
     app.component('VAlert', VAlert);
     app.component('VAlertTitle', VAlertTitle);
     app.component('VAlertGroup', VAlertGroup);

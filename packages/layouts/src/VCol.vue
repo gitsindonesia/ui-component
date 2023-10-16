@@ -1,5 +1,5 @@
 <script setup lang="ts">
-type Cols = 'auto' | string | number;
+type Cols = "auto" | string | number;
 type Offset = string | number;
 type Order = string | number;
 
@@ -21,7 +21,9 @@ withDefaults(
     orderLg?: Order;
     orderXl?: Order;
   }>(),
-  {},
+  {
+    cols: "auto",
+  }
 );
 </script>
 
@@ -44,7 +46,8 @@ withDefaults(
         [`v-offset-lg-${orderLg}`]: !!orderLg,
         [`v-offset-xl-${orderXl}`]: !!orderXl,
       },
-      cols ? `v-col-${cols}` : 'v-col',
+      `v-col-${cols}`,
+      'v-col',
     ]"
   >
     <slot />

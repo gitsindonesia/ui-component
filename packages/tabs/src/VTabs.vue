@@ -15,7 +15,7 @@ import VBtn from '@morpheme/button';
 import Icon from '@morpheme/icon';
 import VTab from './VTab.vue';
 import VTabsSlider from './VTabsSlider.vue';
-import type {TabVariants} from './variants';
+import {TabVariants} from './variants';
 import {VTabsApiSymbol} from './api';
 
 const props = defineProps({

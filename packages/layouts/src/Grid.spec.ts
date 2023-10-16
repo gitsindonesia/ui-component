@@ -1,4 +1,6 @@
 import { mount } from '@vue/test-utils';
+import { createApp } from 'vue';
+import { vitest } from 'vitest';
 import VRow from './VRow.vue'
 import VCol from './VCol.vue'
 
@@ -26,7 +28,7 @@ test('VCol renders correctly with cols prop', () => {
     },
   });
 
-  expect(wrapper.find('.v-col-6').exists()).toBe(true);
+  expect(wrapper.find('.v-col').exists()).toBe(true);
   expect(wrapper.text()).toBe('This is a column');
   expect(wrapper.classes()).toContain('v-col-6');
 });

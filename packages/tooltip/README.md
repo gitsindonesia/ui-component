@@ -24,34 +24,16 @@ pnpm i @morpheme/tooltip
 
 ## Usage
 
-First, install the `FloatingVuePlugin`:
-
-```ts
-import {createApp} from 'vue'
-import {FloatingVuePlugin} from '@morpheme/tooltip'
-
-const app = createApp()
-// use the plugin
-app.use(FloatingVuePlugin)
-```
-
-Then, use it like so:
-
 ```vue
 <script setup lang="ts">
 // import styles
-import '@morpheme/themes/dist/morpheme/main.css';
+import '@morpheme/tooltip/dist/style.css';
 // import component
-import VTooltip from '@morpheme/tooltip';
+import Tooltip from '@morpheme/tooltip';
 </script>
 
 <template>
-  <VTooltip>
-    <template #activator>
-      <button>Hover me</button>
-    </template>
-  </VTooltip>
-  <span>I am a tooltip</span>
+  <Tooltip />
 </template>
 ```
 

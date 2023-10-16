@@ -4,9 +4,6 @@ export default defineNuxtConfig({
   modules: [MorphemeUI, '@nuxtjs/tailwindcss'],
   morpheme: {
     darkMode: true,
-    sass: true,
-    theme: 'morpheme',
-    experimentalComponents: true,
   },
   vite: {
     optimizeDeps: {

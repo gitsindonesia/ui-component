@@ -386,12 +386,18 @@ watchEffect(() => {
 | Name              | Description                                                                   |
 | ----------------- | ----------------------------------------------------------------------------- |
 | `default`         | This slot is used to add content to the main section of the app shell.        |
+|                   |
 | `header`          | This slot is used to add content to the header section of the app shell.      |
 | `aside`           | This slot is used to add content to the aside section of the app shell.       |
+|                   |
 | `navigation`      | This slot is used to add content to the navigation section of the app shell.  |
+|                   |
 | `container.after` | This slot is used to add content after the container section of the app shell |
+|                   |
 | `content.after`   | This slot is used to add content after the content section of the app shell.  |
+|                   |
 | `footer`          | This slot is used to add content to the footer section of the app shell.      |
+|                   |
 
 ## Storybook
 

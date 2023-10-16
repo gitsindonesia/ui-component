@@ -10,8 +10,6 @@ export default defineNuxtConfig({
     theme: 'morpheme',
     sass: true,
     darkMode: true,
-    optimizeDeps: false,
-    transpileDeps: false,
   },
 
   devtools: {
@@ -32,15 +30,11 @@ export default defineNuxtConfig({
       },
     },
     optimizeDeps: {
-      include: ['quill-delta', 'quill', 'floating-vue'],
+      include: ['quill-delta', 'quill'],
     },
   },
 
   experimental: {
-    viewTransition: true,
-  },
-
-  tailwindcss: {
-    viewer: false,
-  },
+    viewTransition: true
+  }
 });

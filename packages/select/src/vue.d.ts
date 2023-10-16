@@ -6,5 +6,3 @@ declare module '*.vue' {
 
 // @headlessui-float/vue
 declare module '@headlessui/vue';
-declare module '@morpheme/design-tokens/*';
-declare module '@morpheme/forms';

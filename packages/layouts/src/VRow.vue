@@ -21,13 +21,8 @@ withDefaults(
     alignXl?: string;
     alignContentXl?: string;
     justifyContentXl?: string;
-    wrap?: string;
-    wrapSm?: string;
-    wrapMd?: string;
-    wrapLg?: string;
-    wrapXl?: string;
   }>(),
-  {},
+  {}
 );
 </script>
 
@@ -56,11 +51,6 @@ withDefaults(
         [`v-row--align-xl-${alignXl}`]: !!alignXl,
         [`v-row--align-content-xl-${alignContentXl}`]: !!alignContentXl,
         [`v-row--justify-xl-${justifyContentXl}`]: !!justifyContentXl,
-        [`v-row--wrap-${wrap}`]: !!wrap,
-        [`v-row--wrap-sm-${wrapSm}`]: !!wrapSm,
-        [`v-row--wrap-md-${wrapMd}`]: !!wrapMd,
-        [`v-row--wrap-lg-${wrapLg}`]: !!wrapLg,
-        [`v-row--wrap-xl-${wrapXl}`]: !!wrapXl,
       },
     ]"
   >

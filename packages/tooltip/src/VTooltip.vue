@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import {Tooltip} from 'floating-vue';
-import type {PropType} from 'vue';
+import FloatingVue, {Tooltip} from 'floating-vue';
+import {PropType} from 'vue';
 
 export type VTooltipPlacement =
   | 'auto'
@@ -50,6 +50,17 @@ defineProps({
     default: 'black',
   },
 });
+
+FloatingVue.options.themes['tooltip-black'] = {
+  $extend: 'tooltip',
+  $resetCss: true,
+  disposeTimeout: 100000,
+};
+FloatingVue.options.themes['tooltip-white'] = {
+  $extend: 'tooltip',
+  $resetCss: true,
+  disposeTimeout: 100000,
+};
 
 defineSlots<{
   default?: (props: {}) => any;

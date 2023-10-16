@@ -123,12 +123,6 @@
     }
   }
 
-  &--loading {
-    .v-select__prepend-icon {
-      animation: spin 1s linear infinite;
-    }
-  }
-
   &-button {
     border: 1px solid var(--v-select-border-color);
     border-radius: var(--v-select-border-radius);
@@ -176,15 +170,13 @@
 
   &-selected {
     color: var(--v-select-selected-color);
+    display: block;
     flex-grow: 1;
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     margin-right: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap: var(--size-spacing-2);
 
     &--placeholder {
       color: var(--v-select-placeholder-color);
@@ -287,10 +279,6 @@
         width: 1.25rem /* 20px */;
         height: 1.25rem /* 20px */;
       }
-    }
-
-    &--icon-right {
-      flex-direction: row-reverse;
     }
   }
 
@@ -461,10 +449,6 @@
       input {
         width: 100%;
       }
-    }
-
-    &--disabled {
-      border: none;
     }
   }
 }

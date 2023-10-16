@@ -102,12 +102,19 @@
     border-radius: var(--v-list-item-border-radius);
     display: flex;
     align-items: center;
-    transition-property: color, background-color, border-color,
-      text-decoration-color, fill, stroke, opacity, box-shadow, transform,
-      filter, backdrop-filter;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 300ms;
     position: relative;
+
+    &--hover:hover:not(&--active),
+    &--hover &:hover:not(&--hoverable):not(&--active),
+    &--hover &:hover:not(&--active),
+    &--hovered,
+    &:hover:not(&--active) {
+      background-color: var(--v-list-item-hover-bg-color);
+      color: var(--v-list-item-hover-color);
+    }
 
     // sub components
     &__title {
@@ -146,7 +153,7 @@
     min-width: var(--v-list-item-append-prepend-min-width);
     display: flex;
     justify-content: center;
-    gap: 0.25rem /* 4px */;
+    gap: 0.25rem/* 4px */;
     align-items: center;
   }
 
@@ -158,27 +165,12 @@
 
   &-item-icon {
     color: var(--v-list-item-icon-color);
-    transition-property: color, background-color, border-color,
-      text-decoration-color, fill, stroke, opacity, box-shadow, transform,
-      filter, backdrop-filter;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 300ms;
     width: var(--v-list-item-icon-width);
     height: var(--v-list-item-icon-height);
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y))
-      rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
-      scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
-
-  // hoverable
-  &--hover,
-  &--hoverable {
-    .v-list-item:not(.v-list-item--active) {
-      &:hover {
-        background-color: var(--v-list-item-hover-bg-color);
-        color: var(--v-list-item-hover-color);
-      }
-    }
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
   /* flush */
@@ -227,8 +219,8 @@
     border-bottom-width: var(--v-list-item-divider-width);
     border-bottom-style: var(--v-list-item-divider-style);
     border-bottom-color: var(--v-list-item-divider-color);
-    margin-top: 0.25rem /* 4px */;
-    margin-bottom: 0.25rem /* 4px */;
+    margin-top: 0.25rem/* 4px */;
+    margin-bottom: 0.25rem/* 4px */;
   }
 
   &-item-divider--inset {
@@ -359,7 +351,7 @@
         }
       }
     }
-
+    
     // filled-bordered
     &-filled-bordered {
       .v-list-item {

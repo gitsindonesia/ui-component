@@ -1,65 +1,66 @@
-import {VSelect} from '@morpheme/select';
-import VAvatar from '@morpheme/avatar';
-import {Meta, Story} from '@storybook/vue3';
-import {Icon} from '@iconify/vue';
-import List from './List.vue';
-import ListItem from './ListItem.vue';
-import ListItemDivider from './ListItemDivider.vue';
-import ListItemHeader from './ListItemHeader.vue';
-import ListCollapse from './ListCollapse.vue';
-import {ref} from 'vue';
-import {NavDrawer as VNavDrawer} from '@morpheme/nav-drawer';
-import VBtn from '@morpheme/button';
-import {Dropdown} from '@morpheme/dropdown';
-import ListItemTitle from './ListItemTitle.vue';
-import ListItemSubTitle from './ListItemSubTitle.vue';
-import ListItemContent from './ListItemContent.vue';
+import { VSelect } from "@morpheme/select";
+import VAvatar from "@morpheme/avatar";
+import { Meta, Story } from "@storybook/vue3";
+import { Icon } from "@iconify/vue";
+import List from "./List.vue";
+import ListItem from "./ListItem.vue";
+import ListItemDivider from "./ListItemDivider.vue";
+import ListItemHeader from "./ListItemHeader.vue";
+import ListCollapse from "./ListCollapse.vue";
+import vueRouter from "storybook-vue3-router";
+import { ref } from "vue";
+import { NavDrawer as VNavDrawer } from "@morpheme/nav-drawer";
+import VBtn from "@morpheme/button";
+import { Dropdown } from "@morpheme/dropdown";
+import ListItemTitle from "./ListItemTitle.vue";
+import ListItemSubTitle from "./ListItemSubTitle.vue";
+import ListItemContent from "./ListItemContent.vue";
 
 const menus = ref([
   {
-    title: 'Home',
-    to: '/',
-    prependIcon: 'ri:home-2-line',
+    title: "Home",
+    to: "/",
+    prependIcon: "ri:home-2-line",
   },
   {
-    title: 'Blog',
-    to: '/',
-    prependIcon: 'ri:book-line',
+    title: "Blog",
+    to: "/",
+    prependIcon: "ri:book-line",
     items: [
       {
-        title: 'Posts',
-        to: '/',
+        title: "Posts",
+        to: "/",
       },
       {
-        title: 'Comments',
-        to: '/',
+        title: "Comments",
+        to: "/",
       },
     ],
   },
   {
-    title: 'Shop',
-    to: '/',
-    prependIcon: 'ri:user-line',
+    title: "Shop",
+    to: "/",
+    prependIcon: "ri:user-line",
     items: [
       {
-        title: 'Products',
-        to: '/',
+        title: "Products",
+        to: "/",
       },
       {
-        title: 'Categories',
-        to: '/',
+        title: "Categories",
+        to: "/",
       },
     ],
   },
   {
-    title: 'Long Text Management Example',
-    to: '/',
-    prependIcon: 'ri:chat-2-line',
+    title: "Long Text Management Example",
+    to: "/",
+    prependIcon: "ri:chat-2-line",
   },
 ]);
 
 export default {
-  title: 'Components/List',
+  title: "Components/List",
   component: List,
   argTypes: {},
   args: {},
@@ -72,7 +73,7 @@ export const BasicList: Story = (args) => ({
     ListItemDivider,
   },
   setup() {
-    return {args};
+    return { args };
   },
   template: `
     <List v-bind="args">
@@ -94,7 +95,7 @@ export const Hover: Story = (args) => ({
     ListItemDivider,
   },
   setup() {
-    return {args};
+    return { args };
   },
   template: `
     <List v-bind="args" hover>
@@ -116,7 +117,7 @@ export const Dense: Story = (args) => ({
     ListItemDivider,
   },
   setup() {
-    return {args};
+    return { args };
   },
   template: `
     <List v-bind="args" dense hover>
@@ -138,7 +139,7 @@ export const Small: Story = (args) => ({
     ListItemDivider,
   },
   setup() {
-    return {args};
+    return { args };
   },
   template: `
     <p>Default</p>
@@ -168,10 +169,10 @@ export const Small: Story = (args) => ({
   `,
 });
 
-export const Mini = Small.bind({});
+export const Mini = Small.bind({})
 Mini.args = {
   mini: true,
-};
+}
 
 export const Shaped: Story = (args) => ({
   components: {
@@ -180,17 +181,11 @@ export const Shaped: Story = (args) => ({
     ListItemDivider,
   },
   setup() {
-    return {args};
+    return { args };
   },
   template: `
     <List v-bind="args" shaped hover>
-      <ListItem
-        v-for="i in 5"
-        :key="i"
-        :active="i === 1"
-      >
-        Item {{ i }}
-      </ListItem>
+      <ListItem v-for="i in 5" :key="i">Item</ListItem>
       <ListItem shaped shaped-class="rounded-l-full">
         Custom Shaped Class
       </ListItem>
@@ -205,17 +200,14 @@ export const Rounded: Story = (args) => ({
     ListItemDivider,
   },
   setup() {
-    return {args};
+    return { args };
   },
   template: `
     <List v-bind="args" rounded hover>
-      <ListItem
-        v-for="i in 5"
-        :key="i"
-        :active="i === 1"
-      >
-        Item {{ i }}
-      </ListItem>
+      <ListItem v-for="i in 5" :key="i">Item</ListItem>
+    </List>
+    <List v-bind="args" hover>
+      <ListItem rounded v-for="i in 5" :key="i">Item</ListItem>
     </List>
   `,
 });
@@ -227,17 +219,14 @@ export const Tile: Story = (args) => ({
     ListItemDivider,
   },
   setup() {
-    return {args};
+    return { args };
   },
   template: `
     <List v-bind="args" tile hover>
-      <ListItem
-        v-for="i in 5"
-        :key="i"
-        :active="i === 1"
-      >
-        Item {{ i }}
-      </ListItem>
+      <ListItem v-for="i in 5" :key="i">Item</ListItem>
+    </List>
+    <List v-bind="args">
+      <ListItem hover tile v-for="i in 5" :key="i">Item</ListItem>
     </List>
   `,
 });
@@ -249,10 +238,9 @@ export const HidePrependAppend: Story = (args) => ({
     ListItemDivider,
   },
   setup() {
-    return {args};
+    return { args };
   },
   template: `
-    <p class="px-4 font-semibold">Default</p>
     <List v-bind="args">
       <ListItem hide-prepend>Item 1</ListItem>
       <ListItem hide-prepend hide-append>Item 2</ListItem>
@@ -261,7 +249,7 @@ export const HidePrependAppend: Story = (args) => ({
       <ListItem v-bind="props">Item 3</ListItem>
       <ListItem v-bind="props">Item 4</ListItem>
     </List>
-    <p class="px-4 font-semibold mt-4">With Context API</p>
+    <p>With Context API</p>
     <List v-bind="args" hide-prepend hide-append>
       <ListItem>Item 3</ListItem>
       <ListItem>Item 4</ListItem>
@@ -278,7 +266,7 @@ export const HideText: Story = (args) => ({
   },
   setup() {
     const hideText = ref(true);
-    return {args, hideText};
+    return { args, hideText };
   },
   template: `
     <VBtn @click="hideText = !hideText">
@@ -302,10 +290,10 @@ export const TwoLine: Story = (args) => ({
     ListItemDivider,
     ListItemTitle,
     ListItemContent,
-    VAvatar,
+    VAvatar
   },
   setup() {
-    return {args};
+    return { args };
   },
   template: `
     <List v-bind="args">
@@ -333,10 +321,10 @@ export const ThreeLine: Story = (args) => ({
     ListItemSubTitle,
     ListItemContent,
     ListItemDivider,
-    VAvatar,
+    VAvatar
   },
   setup() {
-    return {args};
+    return { args };
   },
   template: `
     <List v-bind="args">
@@ -365,7 +353,7 @@ export const Link: Story = (args) => ({
     ListItemDivider,
   },
   setup() {
-    return {args};
+    return { args };
   },
   template: `
     <List v-bind="args">
@@ -377,6 +365,8 @@ export const Link: Story = (args) => ({
   `,
 });
 
+Link.decorators = [vueRouter()];
+
 export const Slots: Story = (args) => ({
   components: {
     List,
@@ -384,7 +374,7 @@ export const Slots: Story = (args) => ({
     ListItemDivider,
   },
   setup() {
-    return {args};
+    return { args };
   },
   template: `
     <List v-bind="args">
@@ -414,7 +404,7 @@ export const Icons: Story = (args) => ({
     Icon,
   },
   setup() {
-    return {args};
+    return { args };
   },
   template: `
     <List v-bind="args">
@@ -451,7 +441,7 @@ export const Header: Story = (args) => ({
     ListItemHeader,
   },
   setup() {
-    return {args};
+    return { args };
   },
   template: `
     <List v-bind="args">
@@ -497,7 +487,7 @@ export const Collapse: Story = (args) => ({
     ListCollapse,
   },
   setup() {
-    return {args};
+    return { args };
   },
   template: `
     <List v-bind="args">
@@ -560,25 +550,25 @@ export const Image: Story = (args) => ({
   setup() {
     const users = ref([
       {
-        name: 'Alexander Hipp',
-        email: 'alex@example.com',
+        name: "Alexander Hipp",
+        email: "alex@example.com",
         image:
-          'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80',
+          "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80",
       },
       {
-        name: 'Julian Wann',
-        email: 'julian@example.com',
+        name: "Julian Wann",
+        email: "julian@example.com",
         image:
-          'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
+          "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
       },
       {
-        name: 'Jane Doe',
-        email: 'jane@example.com',
+        name: "Jane Doe",
+        email: "jane@example.com",
         image:
-          'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60',
+          "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
       },
     ]);
-    return {args, users};
+    return { args, users };
   },
   template: `
     <List v-bind="args">
@@ -621,7 +611,7 @@ export const NavDrawerList: Story = (args) => ({
   setup() {
     const isOpen = ref(true);
     const isMini = ref(false);
-    return {args, isOpen, isMini, menus};
+    return { args, isOpen, isMini, menus };
   },
   template: `
   <div class="flex gap-4">
@@ -699,7 +689,7 @@ export const IosSettings: Story = (args) => ({
     Icon,
   },
   setup() {
-    return {args};
+    return { args };
   },
   template: `
     <List
@@ -814,7 +804,7 @@ export const ListInDropdown: Story = (args) => ({
     Dropdown,
   },
   setup() {
-    return {args};
+    return { args };
   },
   template: `
   <Dropdown label="Dropdown" panel-class="p-0">
@@ -927,7 +917,7 @@ export const Event: Story = (args) => ({
   },
   setup() {
     const showMessage = (message: string) => alert(`Clicked: ${message}`);
-    return {args, showMessage};
+    return { args, showMessage };
   },
   template: `
     <List>
@@ -962,7 +952,7 @@ export const CustomStyle: Story = (args) => ({
     ListItemDivider,
   },
   setup() {
-    return {args};
+    return { args };
   },
   template: `
     <List
@@ -992,7 +982,7 @@ export const DividerInset: Story = (args) => ({
     ListItemDivider,
   },
   setup() {
-    return {args};
+    return { args };
   },
   template: `
     <List
@@ -1009,9 +999,9 @@ export const DividerInset: Story = (args) => ({
 });
 
 export const DarkMode: Story<{}> = (args) => ({
-  components: {Dropdown, List, ListItem, ListItemDivider},
+  components: { Dropdown, List, ListItem, ListItemDivider },
   setup() {
-    return {args};
+    return { args };
   },
   template: `
 <main class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6 space-y-2">
@@ -1048,10 +1038,10 @@ export const ActiveState: Story = (args) => ({
     }
 
     const selected = ref();
-    const activeVariant = ref('bordered');
-    const activeBorderPosition = ref('left');
-    const activeVariants = toItems(['filled', 'bordered', 'filled-bordered']);
-    const borderPositions = toItems(['left', 'right', 'bottom', 'top']);
+    const activeVariant = ref("bordered");
+    const activeBorderPosition = ref("left");
+    const activeVariants = toItems(["filled", "bordered", 'filled-bordered']);
+    const borderPositions = toItems(["left", "right", "bottom", "top"]);
     return {
       args,
       selected,

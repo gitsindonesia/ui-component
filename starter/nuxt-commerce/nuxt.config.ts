@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@morpheme/nuxt', '@nuxtjs/tailwindcss', '@nuxt/image'],
+  modules: ['@morpheme/nuxt', '@nuxtjs/tailwindcss', '@nuxt/image-edge'],
 
   typescript: {
     shim: false,
@@ -13,9 +13,9 @@ export default defineNuxtConfig({
   ],
 
   devtools: {
-    enabled: true,
+    enabled: true
   },
-
+  
   morpheme: {
     theme: 'morpheme',
     sass: true,
