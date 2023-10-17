@@ -886,7 +886,7 @@ export default defineNuxtModule<ModuleOptions>({
       // title to display in the tab
       title: 'Morpheme UI',
       // any icon from Iconify, or a URL to an image
-      icon: 'carbon:apps',
+      icon: 'https://ui.morpheme.design/morpheme-logo.png',
       // iframe view
       view: {
         type: 'iframe',
