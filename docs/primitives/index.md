@@ -15,3 +15,4 @@ npm i @morpheme/primitives
 - [Collapsible](./collapsible.md)
 - [Dialog](./dialog.md)
 - [Menu](./menu.md)
+- [Switch](./switch.md)
