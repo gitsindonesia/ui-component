@@ -13,3 +13,4 @@ npm i @morpheme/primitives
 - [Alert](./alert.md)
 - [Accordion](./accordion.md)
 - [Collapsible](./collapsible.md)
+- [Menu](./menu.md)
