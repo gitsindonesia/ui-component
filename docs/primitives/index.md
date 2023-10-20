@@ -1,5 +1,9 @@
 # Morpheme Primitives
 
+::: warning
+Experimental
+:::
+
 Unstyled, accessible components for building high‑quality design systems and web apps in Vue.
 
 ## Installation
