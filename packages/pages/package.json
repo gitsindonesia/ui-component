@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/pages",
-  "version": "1.0.0-beta.11",
+  "version": "1.0.0-rc.1",
   "description": "Morpheme Pages Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -16,20 +16,20 @@
   "license": "MIT",
   "dependencies": {
     "@iconify/vue": "^3.2.1",
-    "@morpheme/alert": "^1.0.0-beta.11",
-    "@morpheme/button": "^1.0.0-beta.11",
-    "@morpheme/forms": "^1.0.0-beta.11",
+    "@morpheme/alert": "^1.0.0-rc.1",
+    "@morpheme/button": "^1.0.0-rc.1",
+    "@morpheme/forms": "^1.0.0-rc.1",
     "vue": "^3.3.4",
     "yup": "^0.32.11"
   },
   "devDependencies": {
     "@headlessui/vue": "^1.7.13",
-    "@morpheme/tailwind-config": "^1.0.0-beta.11",
-    "@morpheme/utils": "^1.0.0-beta.11",
+    "@morpheme/tailwind-config": "^1.0.0-rc.0",
+    "@morpheme/utils": "^1.0.0-rc.0",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
     "tailwindcss": "^3.3.1",
-    "vee-validate": "^4.10.8",
+    "vee-validate": "^4.11.3",
     "vite": "^4.3.8",
     "vitest": "^0.12.4"
   },

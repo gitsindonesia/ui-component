@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-rc.1](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-rc.0...v1.0.0-rc.1) (2023-09-15)
+
+
+### Bug Fixes
+
+* **Icon:** fix issue storage on SSR mode ([3e890b9](https://github.com/gitsindonesia/ui-component/commit/3e890b97a3cdf19b6ef9cc76b5f445054208a72e))
+
+
+
+
+
 # [1.0.0-beta.11](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.10...v1.0.0-beta.11) (2023-07-28)
 
 **Note:** Version bump only for package @morpheme/icon

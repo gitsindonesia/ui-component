@@ -53,7 +53,7 @@ To enable dark mode on a Nuxt application, set the value of `darkMode` option to
 ```ts {4}
 export default defineNuxtConfig({
   modules: ['@morpheme/nuxt', '@nuxtjs/tailwindcss'],
-  gitsUi: {
+  morpheme: {
     darkMode: true,
   },
 });

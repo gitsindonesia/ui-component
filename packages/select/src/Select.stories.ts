@@ -4,10 +4,9 @@ import {themeColors} from '@morpheme/utils';
 import Select from './Select.vue';
 import {ref} from 'vue';
 import {ListboxButton} from '@headlessui/vue';
-import {Field, useForm} from 'vee-validate';
+import {useForm} from 'vee-validate';
 import {array, object} from 'yup';
 import {VBtn} from '@morpheme/button';
-import SelectField from './SelectField.vue';
 
 const items = [...Array(10)].map((_, index) => ({
   value: index + 1,
@@ -70,6 +69,11 @@ Error.args = {
   errorMessage: 'This is an error message.',
 };
 
+export const Loading = Template.bind({});
+Loading.args = {
+  loading: true,
+};
+
 export const Shadow: Story<typeof Select> = (args) => ({
   components: {
     Select,
@@ -103,9 +107,25 @@ Clearable.args = {
   clearable: true,
 };
 
+export const SelectedIconPlacementRight = Template.bind({});
+SelectedIconPlacementRight.args = {
+  selectedIconPlacement: 'right',
+};
+
+export const WrapperClass = Template.bind({});
+WrapperClass.args = {
+  wrapperClass: 'border-b-2 border-error-500 rounded-b-lg',
+};
+
 export const Searchable = Template.bind({});
 Searchable.args = {
   searchable: true,
+};
+
+export const SearchableLoading = Template.bind({});
+SearchableLoading.args = {
+  searchable: true,
+  loading: true,
 };
 
 export const SearchableMultiple = Template.bind({});
@@ -145,6 +165,14 @@ CustomIcon.args = {
   checkIcon: 'heroicons:check-circle',
   clearIcon: 'heroicons:x-circle',
   clearable: true,
+};
+
+export const AllowCustomValues = Template.bind({});
+AllowCustomValues.args = {
+  allowCustomValues: true,
+  searchable: true,
+  clearable: true,
+  // multiple: true,
 };
 
 export const Uncontrolled: Story<typeof Select> = (args) => ({
@@ -251,6 +279,32 @@ export const Slots: Story<typeof Select> = (args) => ({
         </p>
       </template>
     </Select>
+
+    <Select
+      v-bind="args"
+      label="Custom Item Text"
+      class="mt-4"
+    >
+      <template v-slot:item-text="{item, itemText, selected, active}">
+        <p :class="[
+         'text-red-700 font-medium',
+          { 'text-primary-500': selected },
+          { 'text-warning-500': active },
+        ]">
+          {{ item[itemText] }}
+        </p>
+      </template>
+    </Select>
+
+    <Select
+      v-bind="args"
+      label="Custom Check Icon"
+      class="mt-4"
+    >
+      <template v-slot:check-icon>
+        ✅
+      </template>
+    </Select>
   `,
 });
 
@@ -297,18 +351,33 @@ export const DarkMode: Story<typeof Select> = (args) => ({
 });
 
 export const Validation: Story<{}> = (args) => ({
-  components: {VBtn, Select, Field, SelectField},
+  components: {VBtn, Select},
   setup() {
     const schema = object({
       genre: array().required().nullable().label('Genre'),
       gender: object().required().nullable().label('Gender'),
       fruit1: object().required().nullable().label('Fruit 1'),
       fruit2: array().required().nullable().label('Fruit 2'),
+      fruit3: array().required().nullable().label('Fruit 2'),
     });
 
-    const {handleSubmit, resetForm, values, errors} = useForm({
-      validationSchema: schema,
+    const {handleSubmit, resetForm, values, errors, defineComponentBinds} =
+      useForm({
+        validationSchema: schema,
+      });
+
+    const propsConfig = (state) => ({
+      props: {
+        error: !!state.errors.length,
+        'error-message': state.errors[0],
+      },
     });
+
+    const genre = defineComponentBinds('genre', propsConfig);
+    const gender = defineComponentBinds('gender', propsConfig);
+    const fruit1 = defineComponentBinds('fruit1', propsConfig);
+    const fruit2 = defineComponentBinds('fruit2', propsConfig);
+    const fruit3 = defineComponentBinds('fruit3', propsConfig);
 
     const onSubmit = handleSubmit((values) => {
       alert(JSON.stringify(values));
@@ -355,6 +424,14 @@ export const Validation: Story<{}> = (args) => ({
       resetForm();
     };
 
+    console.log({
+      genre,
+      gender,
+      fruit1,
+      fruit2,
+      fruit3,
+    });
+
     return {
       onSubmit,
       resetForm,
@@ -365,45 +442,66 @@ export const Validation: Story<{}> = (args) => ({
       errors,
       fruits,
       handleReset,
+      genre,
+      gender,
+      fruit1,
+      fruit2,
+      fruit3,
     };
   },
   template: `
     <form @submit="onSubmit" class="border-none">
-      <SelectField
-        v-model="values.genre"
+      <Select
+        clearable
+        v-bind="genre"
         name="genre"      
         label="Current genre"
         placeholder="Select your genre"
         :items="genres"
         multiple
-        class="mb-4"
+        wrapper-class="mb-4"
       />
-      <SelectField
-        v-model="values.gender"
+      <Select
+        clearable
+        v-bind="gender"
         name="gender"      
         label="Gender"
         placeholder="Select your gender"
         :items="genders"
-        class="mb-4"
+        wrapper-class="mb-4"
       />
-      <SelectField
-        v-model="values.fruit1"
+      <Select
+        clearable
+        v-bind="fruit1"
         name="fruit1"      
         label="Fruit 1"
         placeholder="Choose"
         :items="fruits"
-        class="mb-4"
+        wrapper-class="mb-4"
         searchable
       />
-      <SelectField
-        v-model="values.fruit2"
+      <Select
+        clearable
+        v-bind="fruit2"
         name="fruit2"      
         label="Fruit 2"
         placeholder="Choose"
         :items="fruits"
-        class="mb-4"
+        wrapper-class="mb-4"
         searchable
         multiple
+      />
+      <Select
+        clearable
+        v-bind="fruit3"
+        name="fruit3"      
+        label="Fruit 3"
+        placeholder="Choose"
+        :items="fruits"
+        wrapper-class="mb-4"
+        searchable
+        multiple
+        chips
       />
       <div class="mt-4">
         <v-btn type="submit">Submit</v-btn>

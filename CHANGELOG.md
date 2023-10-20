@@ -3,6 +3,109 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-rc.2](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-rc.1...v1.0.0-rc.2) (2023-10-02)
+
+
+### Bug Fixes
+
+* **Grid:** fix cols responsive and improved grid styles ([6e4e541](https://github.com/gitsindonesia/ui-component/commit/6e4e5412813db41b596a90e18c24110904a53e87))
+* **List:** fix hover effect ([587f22e](https://github.com/gitsindonesia/ui-component/commit/587f22e7b24a77a758b526d5ef7f415b10521dff))
+* **Tabs:** fix tabs slider height ([270f654](https://github.com/gitsindonesia/ui-component/commit/270f654c952ab5df2205607de10f7d828245d346))
+
+
+### Features
+
+* **Grid:** add new `wrap` prop ([995fb7a](https://github.com/gitsindonesia/ui-component/commit/995fb7acae5408d4cfa882e0090cd078b51942f7))
+* **nuxt:** add alias `VButton` for `VBtn` ([30b3953](https://github.com/gitsindonesia/ui-component/commit/30b395331ca8d5382ae66c8a2c3d1dbd279ca301))
+
+
+
+
+
+# [1.0.0-rc.1](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-rc.0...v1.0.0-rc.1) (2023-09-15)
+
+
+### Bug Fixes
+
+* **Icon:** fix issue storage on SSR mode ([3e890b9](https://github.com/gitsindonesia/ui-component/commit/3e890b97a3cdf19b6ef9cc76b5f445054208a72e))
+* **Tabs:** adjust segmented control tabs spacing ([8690fd2](https://github.com/gitsindonesia/ui-component/commit/8690fd2d5dbdd3406603b2d6394efcf5551a646c))
+
+
+### Features
+
+* **Kitchen Sink:** add music app example ([3db6c33](https://github.com/gitsindonesia/ui-component/commit/3db6c337a7fc359da7e3109098acca6571baec63))
+* **Tabs:** add disabled item style ([35321e5](https://github.com/gitsindonesia/ui-component/commit/35321e5a8cfc617be61dd371c83de38402c979d3))
+
+
+
+
+
+
+## [1.0.0-rc.0](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.11...v1.0.0-rc.0) (2023-09-11)
+
+### &nbsp;&nbsp;&nbsp;🚀 Features
+
+- Typed slots and generic components &nbsp;-&nbsp; by @gravitano in https://github.com/gitsindonesia/ui-component/issues/178 [<samp>(4c595)</samp>](https://github.com/gitsindonesia/ui-component/commit/4c59596c)
+- Handle resize for all nav drawer placement/position &nbsp;-&nbsp; by @gravitano [<samp>(2d698)</samp>](https://github.com/gitsindonesia/ui-component/commit/2d6980f9)
+- **Dropdown**:
+  - Add support for item disabled state &nbsp;-&nbsp; by @gravitano [<samp>(62ad0)</samp>](https://github.com/gitsindonesia/ui-component/commit/62ad0433)
+  - Add dropdown header support &nbsp;-&nbsp; by @gravitano [<samp>(428e6)</samp>](https://github.com/gitsindonesia/ui-component/commit/428e65d5)
+  - Support multi level dropdown &nbsp;-&nbsp; by @gravitano [<samp>(83e7c)</samp>](https://github.com/gitsindonesia/ui-component/commit/83e7cc33)
+  - Extract default button activator to SFC & add icon transition when open/close &nbsp;-&nbsp; by @gravitano [<samp>(66e6f)</samp>](https://github.com/gitsindonesia/ui-component/commit/66e6fef2)
+  - Add support for dynamic component on `VDropdownButton` &nbsp;-&nbsp; by @gravitano [<samp>(01a10)</samp>](https://github.com/gitsindonesia/ui-component/commit/01a1068a)
+  - Add `size` variant &nbsp;-&nbsp; by @gravitano [<samp>(02788)</samp>](https://github.com/gitsindonesia/ui-component/commit/02788d6b)
+- **Experimental/Select**:
+  - Extract select search into SFC `SelectSearchInput` &nbsp;-&nbsp; by @gravitano [<samp>(cc06c)</samp>](https://github.com/gitsindonesia/ui-component/commit/cc06c989)
+  - Add two new slots: `item-text` and `check-icon` &nbsp;-&nbsp; by @gravitano [<samp>(58c3a)</samp>](https://github.com/gitsindonesia/ui-component/commit/58c3a367)
+  - Add new prop: `wrapperClass` &nbsp;-&nbsp; by @gravitano [<samp>(ea551)</samp>](https://github.com/gitsindonesia/ui-component/commit/ea551d30)
+  - Custom selected icon placement &nbsp;-&nbsp; by @gravitano [<samp>(cbf6c)</samp>](https://github.com/gitsindonesia/ui-component/commit/cbf6c475)
+  - Add new `loading` state &nbsp;-&nbsp; by @gravitano [<samp>(9c123)</samp>](https://github.com/gitsindonesia/ui-component/commit/9c123a52)
+  - Allow custom values via `allowCustomValues` prop &nbsp;-&nbsp; by @gravitano [<samp>(4eeaf)</samp>](https://github.com/gitsindonesia/ui-component/commit/4eeaf785)
+  - New slot: `new-item-text` &nbsp;-&nbsp; by @gravitano [<samp>(5db2e)</samp>](https://github.com/gitsindonesia/ui-component/commit/5db2e54b)
+- **Icon**:
+  - Cache morpheme icons in local storage &nbsp;-&nbsp; by @gravitano [<samp>(6a50f)</samp>](https://github.com/gitsindonesia/ui-component/commit/6a50f4fe)
+- **NavDrawer**:
+  - Navigation drawer resizeable &nbsp;-&nbsp; by @gravitano [<samp>(2b584)</samp>](https://github.com/gitsindonesia/ui-component/commit/2b584446)
+- **Tabs**:
+  - Allow to render tab item as `RouterLink`, `NuxtLink`, anchor or button (default) &nbsp;-&nbsp; by @gravitano [<samp>(80d78)</samp>](https://github.com/gitsindonesia/ui-component/commit/80d78d74)
+- **experimental/Select!**:
+  - Add new search placement variant: `inside` (default) and `outside` & add new `chips` props to toggle showing badges when multiple &nbsp;-&nbsp; by @gravitano [<samp>(f2d81)</samp>](https://github.com/gitsindonesia/ui-component/commit/f2d81ee0)
+  - Customizable icons &nbsp;-&nbsp; by @gravitano [<samp>(bf427)</samp>](https://github.com/gitsindonesia/ui-component/commit/bf4271e7)
+  - Add new `empty` slot &nbsp;-&nbsp; by @gravitano [<samp>(e0c28)</samp>](https://github.com/gitsindonesia/ui-component/commit/e0c28465)
+- **nuxt**:
+  - Auto-import experimental components &nbsp;-&nbsp; by @gravitano [<samp>(8efcc)</samp>](https://github.com/gitsindonesia/ui-component/commit/8efcc19c)
+  - Auto-import modal subcomponents &nbsp;-&nbsp; by @gravitano [<samp>(5b2e7)</samp>](https://github.com/gitsindonesia/ui-component/commit/5b2e7dfd)
+  - Customizable component prefix via `prefix` options &nbsp;-&nbsp; by @gravitano [<samp>(aa6f9)</samp>](https://github.com/gitsindonesia/ui-component/commit/aa6f9ccb)
+- **ui**:
+  - Export form components &nbsp;-&nbsp; by @gravitano [<samp>(813fd)</samp>](https://github.com/gitsindonesia/ui-component/commit/813fd650)
+  - Export dropdown content &nbsp;-&nbsp; by @gravitano [<samp>(77405)</samp>](https://github.com/gitsindonesia/ui-component/commit/77405d8a)
+  - Register component `VDropdownBtn` &nbsp;-&nbsp; by @gravitano [<samp>(f1f28)</samp>](https://github.com/gitsindonesia/ui-component/commit/f1f2817b)
+
+### &nbsp;&nbsp;&nbsp;🐞 Bug Fixes
+
+- **Button**:
+  - Change default button border color &nbsp;-&nbsp; by @gravitano [<samp>(07c67)</samp>](https://github.com/gitsindonesia/ui-component/commit/07c67908)
+- **Command**:
+  - Adjust default input style &nbsp;-&nbsp; by @gravitano [<samp>(15af2)</samp>](https://github.com/gitsindonesia/ui-component/commit/15af2fec)
+- **Divider**:
+  - Remove default margin &nbsp;-&nbsp; by @gravitano [<samp>(81d84)</samp>](https://github.com/gitsindonesia/ui-component/commit/81d849fd)
+- **Dropdown**:
+  - Better dynamic attributes for `VDropdownItem` &nbsp;-&nbsp; by @gravitano [<samp>(d1f1a)</samp>](https://github.com/gitsindonesia/ui-component/commit/d1f1a805)
+  - Fix default offset &nbsp;-&nbsp; by @gravitano [<samp>(3efb2)</samp>](https://github.com/gitsindonesia/ui-component/commit/3efb28f4)
+  - Fix transition not rendered &nbsp;-&nbsp; by @gravitano [<samp>(7f478)</samp>](https://github.com/gitsindonesia/ui-component/commit/7f478310)
+- **Experimental/Select**:
+  - Fix support validation and improve internal model value logic &nbsp;-&nbsp; by @gravitano in https://github.com/gitsindonesia/ui-component/issues/182 [<samp>(6c62a)</samp>](https://github.com/gitsindonesia/ui-component/commit/6c62a406)
+- **Select**:
+  - Change headless UI usage to `Combobox` component & fix issue can't space when `searchable` &nbsp;-&nbsp; by @gravitano in https://github.com/gitsindonesia/ui-component/issues/180 [<samp>(84fa5)</samp>](https://github.com/gitsindonesia/ui-component/commit/84fa5764)
+- **Standalone Forms**:
+  - Support `disabled` option on `Select` component &nbsp;-&nbsp; by @gravitano [<samp>(f382d)</samp>](https://github.com/gitsindonesia/ui-component/commit/f382d09f)
+  - Set option value as-is &nbsp;-&nbsp; by @gravitano [<samp>(fa375)</samp>](https://github.com/gitsindonesia/ui-component/commit/fa37543e)
+- **experimental/Select**:
+  - Fix hint and error not displayed &nbsp;-&nbsp; by @gravitano [<samp>(913fe)</samp>](https://github.com/gitsindonesia/ui-component/commit/913fecce)
+  - Fix dark mode empty state &nbsp;-&nbsp; by @gravitano [<samp>(5288a)</samp>](https://github.com/gitsindonesia/ui-component/commit/5288a9a1)
+- **experimental/Select!**:
+  - Rename `SelectInput` to `SelectField` &nbsp;-&nbsp; by @gravitano [<samp>(d6c86)</samp>](https://github.com/gitsindonesia/ui-component/commit/d6c86af5)
+
 # [1.0.0-beta.11](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.10...v1.0.0-beta.11) (2023-07-28)
 
 
@@ -138,8 +241,65 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **VInput:** add new expose `focus` ([94d92ce](https://github.com/gitsindonesia/ui-component/commit/94d92cebcdf38a4b854ecb16b2fc5e2b444a3d39))
 
 
+## [1.0.0-beta.9](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.8...v1.0.0-beta.9) (2023-05-30)
 
+### &nbsp;&nbsp;&nbsp;🚨 Breaking Changes
 
+- **themes**: Upgrade design tokens and adjust secondary and info colors &nbsp;-&nbsp; by @gravitano [<samp>(fa640)</samp>](https://github.com/gitsindonesia/ui-component/commit/fa6402af)
+
+### &nbsp;&nbsp;&nbsp;🚀 Features
+
+- **Alert**:
+  - Add a new `VAlertGroup` component &nbsp;-&nbsp; by @gravitano in https://github.com/gitsindonesia/ui-component/issues/172 [<samp>(674de)</samp>](https://github.com/gitsindonesia/ui-component/commit/674de9d2)
+- **AppShell**:
+  - Add new `VMain` component &nbsp;-&nbsp; by @gravitano [<samp>(bd088)</samp>](https://github.com/gitsindonesia/ui-component/commit/bd088046)
+- **Autocomplete**:
+  - Add `shadow` prop and fix disabled styles &nbsp;-&nbsp; by @gravitano [<samp>(4260d)</samp>](https://github.com/gitsindonesia/ui-component/commit/4260db54)
+- **Modal**:
+  - Add overlay blur effect &nbsp;-&nbsp; by @gravitano [<samp>(96ba2)</samp>](https://github.com/gitsindonesia/ui-component/commit/96ba2611)
+  - Add a new `overlay` slot &nbsp;-&nbsp; by @gravitano [<samp>(050fb)</samp>](https://github.com/gitsindonesia/ui-component/commit/050fb2ec)
+  - Add new slots: `close` and `closeIcon` &nbsp;-&nbsp; by @gravitano [<samp>(e2f3c)</samp>](https://github.com/gitsindonesia/ui-component/commit/e2f3c14b)
+- **MultiSelect**:
+  - Add `shadow` variant &nbsp;-&nbsp; by @gravitano [<samp>(2a446)</samp>](https://github.com/gitsindonesia/ui-component/commit/2a4461ba)
+- **Tabs**:
+  - Add new tabs variants: `underline` (default), `filled`, `underline-filled`, `segmented-control` &nbsp;-&nbsp; by @gravitano [<samp>(e00b1)</samp>](https://github.com/gitsindonesia/ui-component/commit/e00b1e4e)
+  - Add new Headless UI's version tabs &nbsp;-&nbsp; by @gravitano [<samp>(f24de)</samp>](https://github.com/gitsindonesia/ui-component/commit/f24de34d)
+- **VAppShell**:
+  - Convert Tailwind into SCSS &nbsp;-&nbsp; by @gravitano [<samp>(f0ee1)</samp>](https://github.com/gitsindonesia/ui-component/commit/f0ee13cd)
+- **VBanner**:
+  - Add a new `VBanner` component &nbsp;-&nbsp; by @gravitano in https://github.com/gitsindonesia/ui-component/issues/173 [<samp>(62e90)</samp>](https://github.com/gitsindonesia/ui-component/commit/62e90941)
+- **VInput**:
+  - Added new `borderless` and `noRing` styles &nbsp;-&nbsp; by @gravitano [<samp>(e25b6)</samp>](https://github.com/gitsindonesia/ui-component/commit/e25b6caa)
+- **nuxt**:
+  - Register new `VAlertTitle` component &nbsp;-&nbsp; by @gravitano [<samp>(f6dc3)</samp>](https://github.com/gitsindonesia/ui-component/commit/f6dc329d)
+  - Add new `theme` option for switching to new `morpheme` theme &nbsp;-&nbsp; by @gravitano [<samp>(e7e7a)</samp>](https://github.com/gitsindonesia/ui-component/commit/e7e7ac4d)
+  - Auto-imports new tabs component &nbsp;-&nbsp; by @gravitano [<samp>(ff103)</samp>](https://github.com/gitsindonesia/ui-component/commit/ff103dc8)
+  - Add Morpheme Docs to Nuxt DevTools &nbsp;-&nbsp; by @gravitano [<samp>(c33a1)</samp>](https://github.com/gitsindonesia/ui-component/commit/c33a1782)
+- **themes**:
+  - Add new theme `morpheme` based on Morpheme Design System &nbsp;-&nbsp; by @gravitano in https://github.com/gitsindonesia/ui-component/issues/175 [<samp>(732f4)</samp>](https://github.com/gitsindonesia/ui-component/commit/732f49d1)
+- **ui**:
+  - Register new tabs component &nbsp;-&nbsp; by @gravitano [<samp>(fcd9e)</samp>](https://github.com/gitsindonesia/ui-component/commit/fcd9e484)
+
+### &nbsp;&nbsp;&nbsp;🐞 Bug Fixes
+
+- **AppBar**:
+  - Change app bar default dark color &nbsp;-&nbsp; by @gravitano [<samp>(ffdbe)</samp>](https://github.com/gitsindonesia/ui-component/commit/ffdbeda5)
+- **Autocomplete**:
+  - Set input height &nbsp;-&nbsp; by @gravitano [<samp>(71900)</samp>](https://github.com/gitsindonesia/ui-component/commit/719000af)
+  - Decrease bundle size &nbsp;-&nbsp; by @gravitano [<samp>(c67d5)</samp>](https://github.com/gitsindonesia/ui-component/commit/c67d5a58)
+- **BottomSheet**:
+  - Handle possible null when accessing `api` &nbsp;-&nbsp; by @gravitano [<samp>(3c180)</samp>](https://github.com/gitsindonesia/ui-component/commit/3c180c57)
+- **Forms**:
+  - Fix types &nbsp;-&nbsp; by @gravitano [<samp>(1d5bc)</samp>](https://github.com/gitsindonesia/ui-component/commit/1d5bc056)
+- **Modal**:
+  - Change modal default bg color &nbsp;-&nbsp; by @gravitano [<samp>(4ee45)</samp>](https://github.com/gitsindonesia/ui-component/commit/4ee4514c)
+- **Select**:
+  - Fix shadow styles &nbsp;-&nbsp; by @gravitano [<samp>(3c066)</samp>](https://github.com/gitsindonesia/ui-component/commit/3c066e8d)
+  - Fix icon position &nbsp;-&nbsp; by @gravitano [<samp>(da5f2)</samp>](https://github.com/gitsindonesia/ui-component/commit/da5f20b5)
+- **Timeline**:
+  - Fix types &nbsp;-&nbsp; by @gravitano [<samp>(bbbb6)</samp>](https://github.com/gitsindonesia/ui-component/commit/bbbb69c2)
+- **VProgressCircular**:
+  - Change to `scoped` style &nbsp;-&nbsp; by @gravitano [<samp>(404b4)</samp>](https://github.com/gitsindonesia/ui-component/commit/404b4110)
 
 # [1.0.0-beta.8](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2023-04-03)
 

@@ -1,8 +1,15 @@
 .v-command {
+  &-modal {
+    padding: 0 !important;
+  }
   &-body {
     margin-top: 0;
   }
   &-options {
     margin-top: 1rem;
+    padding: 0 0.5rem;
+  }
+  &-input {
+    border-bottom: 1px solid var(--color-gray-200);
   }
 }

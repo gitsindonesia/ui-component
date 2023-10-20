@@ -1,6 +1,5 @@
-import { VBtn } from '@morpheme/button';
-import { defaultColors } from '@morpheme/theme/defaultTheme';
-import vueRouter from 'storybook-vue3-router';
+import {VBtn} from '@morpheme/button';
+import {defaultColors} from '@morpheme/theme/defaultTheme';
 import type {StoryFn, Meta} from '@storybook/vue3';
 import VBottomNavigation from './VBottomNavigation.vue';
 import VBottomNavigationItem from './VBottomNavigationItem.vue';
@@ -40,20 +39,20 @@ export const Default: StoryFn = (args) => ({
   `,
 });
 
-export const DefaultActive = Default.bind({})
+export const DefaultActive = Default.bind({});
 DefaultActive.args = {
-  defaultActive: 1
-}
+  defaultActive: 1,
+};
 
-export const Grow = Default.bind({})
+export const Grow = Default.bind({});
 Grow.args = {
-  grow: true
-}
+  grow: true,
+};
 
-export const HideSlider = Default.bind({})
+export const HideSlider = Default.bind({});
 HideSlider.args = {
-  hideSlider: true
-}
+  hideSlider: true,
+};
 
 export const IconOnly: StoryFn = (args) => ({
   setup() {
@@ -106,43 +105,10 @@ export const WithVueRouter: StoryFn = (args) => ({
   </VBottomNavigation>
   `,
 });
-WithVueRouter.decorators = [vueRouter([
-  {
-    path: '/',
-    component: {
-      template: 'Home'
-    }
-  },
-  {
-    path: '/recents',
-    component: {
-      template: 'Recents'
-    }
-  },
-  {
-    path: '/favorites',
-    component: {
-      template: 'Favorites'
-    }
-  },
-  {
-    path: '/nearby',
-    component: {
-      template: 'Nearby'
-    }
-  },
-  {
-    path: '/account',
-    component: {
-      template: 'Account'
-    }
-  }
-])];
-
 
 export const Colors: StoryFn = (args) => ({
   setup() {
-    const colors = defaultColors
+    const colors = defaultColors;
     return {args, colors};
   },
   components: {
@@ -178,7 +144,7 @@ export const Colors: StoryFn = (args) => ({
 
 export const Variants: StoryFn = (args) => ({
   setup() {
-    const variants = ['filled', 'bordered', 'filled-bordered']
+    const variants = ['filled', 'bordered', 'filled-bordered'];
     return {args, variants};
   },
   components: {
@@ -214,13 +180,13 @@ export const Variants: StoryFn = (args) => ({
 
 export const ToggleNavigation: StoryFn = (args) => ({
   setup() {
-    const isOpen = ref(true)
+    const isOpen = ref(true);
     return {args, isOpen};
   },
   components: {
     VBottomNavigation,
     VBottomNavigationItem,
-    VBtn
+    VBtn,
   },
   template: `
   <VBtn @click="isOpen = !isOpen">Toggle Navigation</VBtn>
@@ -251,7 +217,7 @@ export const WithButton: StoryFn = (args) => ({
   components: {
     VBottomNavigation,
     VBottomNavigationItem,
-    VBtn
+    VBtn,
   },
   template: `
   <VBottomNavigation v-bind="args" grow>
@@ -271,7 +237,7 @@ export const WithFabButton: StoryFn = (args) => ({
   components: {
     VBottomNavigation,
     VBottomNavigationItem,
-    VBtn
+    VBtn,
   },
   template: `
   <VBottomNavigation v-bind="args" grow>
