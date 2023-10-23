@@ -4,6 +4,7 @@ import { ref, watchEffect } from 'vue';
 import VDataTable from './VDataTable.vue';
 import type { VDataTableHeader } from './types';
 import HeaderSlotStory from './stories/HeaderSlotStory.vue'
+import HeaderItemSlotStory from './stories/HeaderItemSlotStory.vue'
 import BodySlotStory from './stories/BodySlotStory.vue'
 import { items, headers, selectableHeaders } from './stories/data'
 
@@ -491,6 +492,13 @@ export const HeaderSlot: StoryFn<typeof VDataTable> = () => ({
   components: { HeaderSlotStory },
   template: `
     <HeaderSlotStory />
+  `,
+});
+
+export const HeaderItemSlot: StoryFn<typeof VDataTable> = () => ({
+  components: { HeaderItemSlotStory },
+  template: `
+    <HeaderItemSlotStory />
   `,
 });
 

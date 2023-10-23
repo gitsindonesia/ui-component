@@ -682,6 +682,14 @@ Type:
 
 The `loading` slot allows you to customize the content shown when the table is loading data.
 
+Type:
+
+```ts
+loading?: (props: {}) => any;
+```
+
+Example:
+
 ```vue
 <template>
   <VDataTable>
@@ -694,7 +702,13 @@ The `loading` slot allows you to customize the content shown when the table is l
 
 The `header.selectable` slot allows you to customize the content of the selectable column in the table header. It receives a `selectAll` payload that indicates whether all rows are currently selected.
 
-- Payload: `{selectAll}`
+Type:
+
+```ts
+'header.selectable'?: (props: {selectAll: boolean}) => any;
+```
+
+Example:
 
 ```vue
 <template>
@@ -710,6 +724,14 @@ The `header.selectable` slot allows you to customize the content of the selectab
 
 The `empty` slot allows you to customize the content shown when the table has no data.
 
+Type:
+
+```ts
+empty?: (props: {}) => any;
+```
+
+Example:
+
 ```vue
 <template>
   <VDataTable>
@@ -722,7 +744,13 @@ The `empty` slot allows you to customize the content shown when the table has no
 
 The `item.selected` slot allows you to customize the content of the selected column for each row in the table. It receives a `selected` payload that indicates whether the current row is selected.
 
-- Payload: `{selected}`
+Type:
+
+```ts
+'item.selected'?: (props: {selected: any[]; item: T}) => any;
+```
+
+Example:
 
 ```vue
 <template>
@@ -738,7 +766,13 @@ The `item.selected` slot allows you to customize the content of the selected col
 
 The `item.index` slot allows you to customize the content of the index column for each row in the table. It receives an `index` payload that indicates the index of the current row.
 
-- Payload: `{item, index}`
+Type:
+
+```ts
+'item.index'?: (props: {index: number; item: T}) => any;
+```
+
+Example:
 
 ```vue
 <template>
@@ -754,7 +788,16 @@ The `item.index` slot allows you to customize the content of the index column fo
 
 The `item.{value}` slot allows you to customize the content of a particular column for each row in the table. The value in the slot name corresponds to the name of the column. It receives an `item` payload that contains the data for the current row and an `index` payload that indicates the index of the current row.
 
-- Payload: `{item, index}`
+Type:
+
+```ts
+[K in keyof T as K extends string ? `item.${K}` : never]?: (props: {
+  item: T;
+  index: number;
+}) => any;
+```
+
+Example:
 
 ```vue
 <template>
@@ -772,23 +815,54 @@ The `item.{value}` slot allows you to customize the content of a particular colu
 </template>
 ```
 
+### `header.{value}`
+
+The `header.{value}` slot allows you to customize the content of a table header (`th`).
+
+Type:
+
+```ts
+{
+  [K in keyof T as K extends string ? `header.${K}` : never]?: (props: {
+    header: H;
+    index: number;
+  }) => any;
+}
+```
+
+Example:
+
+```vue
+<script setup lang="ts">
+import {items, headers} from './data';
+</script>
+
+<template>
+  <VDataTable :headers="headers" :items="items">
+    <template #header.name="{header}">
+      <div class="uppercase">{{ header.text }}</div>
+    </template>
+  </VDataTable>
+</template>
+```
+
 ### `footer`
 
 The `footer` slot allows you to customize the content of the table footer. It receives a `pagination` payload that indicates whether pagination is enabled, a `perPage` payload that indicates the number of items per page, a `serverSide` payload that indicates whether the table is using server-side data, an `items` payload that contains the data for the current page, a `totalItems` payload that indicates the total number of items in the table, a `footerColor` payload that indicates the color of the footer, a `footerClass` payload that indicates the class of the footer, and a `page` payload that indicates the current page.
 
-- Payload:
+Type:
 
 ```ts
-{
-  pagination,
-  perPage,
-  serverSide,
-  items,
-  totalItems,
-  footerColor,
-  footerClass,
-  page;
-}
+footer?: (props: {
+  pagination: VDataTablePaginationProps;
+  perPage: number;
+  serverSide: boolean;
+  items: T[];
+  totalItems: number;
+  footerColor: string;
+  footerClass: string;
+  page: number;
+}) => any;
 ```
 
 Example:
