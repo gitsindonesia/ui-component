@@ -503,48 +503,46 @@ const search = ref('');
 
 | Name                                          | Type                                    | Default        |
 | --------------------------------------------- | --------------------------------------- | -------------- |
-| [`modelValue`](#modelValue)                   | `Array`                                 | `[]`           |
-| [`value`](#value)                             | `Array`                                 | `[]`           |
+| [`bodyClass`](#bodyClass)                     | `String`                                | `''`           |
+| [`bordered`](#bordered)                       | `Boolean`                               | `false`        |
+| [`columnActiveClass`](#columnActiveClass)     | `String`                                | `''`           |
+| [`columnInactiveClass`](#columnInactiveClass) | `String`                                | `''`           |
+| [`dense`](#dense)                             | `Boolean`                               | `false`        |
+| [`disableSorting`](#disableSorting)           | `Boolean`                               | `false`        |
+| [`flat`](#flat)                               | `Boolean`                               | `false`        |
+| [`footerClass`](#footerClass)                 | `String`                                | `''`           |
+| [`footerColor`](#footerColor)                 | `String`                                | `''`           |
+| [`headerClass`](#headerClass)                 | `String`                                | `''`           |
 | [`headers`](#headers)                         | `Array as PropType<VDataTableHeader[]>` | `[]`           |
+| [`hideFooter`](#hideFooter)                   | `Boolean`                               | `false`        |
+| [`hover`](#hover)                             | `Boolean`                               | `false`        |
+| [`hoverClass`](#hoverClass)                   | `String`                                | `''`           |
 | [`items`](#items)                             | `Array as PropType<VDataTableItem[]>`   | `[]`           |
 | [`itemsPerPage`](#itemsPerPage)               | `Number`                                | `10`           |
-| [`disableSorting`](#disableSorting)           | `Boolean`                               | `false`        |
-| [`pagination`](#pagination)                   | `Object`                                | `{}`           |
 | [`loading`](#loading)                         | `Boolean`                               | `false`        |
+| [`loadingText`](#loadingText)                 | `String`                                | `'Loading...'` |
+| [`modelValue`](#modelValue)                   | `Array`                                 | `[]`           |
+| [`multiSort`](#multiSort)                     | `Boolean`                               | `false`        |
+| [`mustSort`](#mustSort)                       | `Boolean`                               | `false`        |
+| [`noDataText`](#noDataText)                   | `String`                                | `'No results'` |
+| [`noShadow`](#noShadow)                       | `Boolean`                               | `false`        |
+| [`page`](#page)                               | `Number`                                | `1`            |
+| [`pagination`](#pagination)                   | `Object`                                | `{}`           |
+| [`rowClass`](#rowClass)                       | `(item: T, index: number) => string;`   | `undefined`    |
 | [`search`](#search)                           | `String`                                | `''`           |
 | [`searchBy`](#searchBy)                       | `[String, Array] as PropType<string>`   | `string[]`     |
-| [`loadingText`](#loadingText)                 | `String`                                | `'Loading...'` |
-| [`noDataText`](#noDataText)                   | `String`                                | `'No results'` |
-| [`footerColor`](#footerColor)                 | `String`                                | `''`           |
+| [`selectable`](#selectable)                   | `Boolean`                               | `false`        |
 | [`serverSide`](#serverSide)                   | `Boolean`                               | `false`        |
 | [`sortBy`](#sortBy)                           | `String`                                | `''`           |
 | [`sortDirection`](#sortDirection)             | `String as PropType<SortDirection>`     | `''`           |
-| [`hover`](#hover)                             | `Boolean`                               | `false`        |
 | [`striped`](#striped)                         | `Boolean`                               | `false`        |
-| [`dense`](#dense)                             | `Boolean`                               | `false`        |
-| [`hideFooter`](#hideFooter)                   | `Boolean`                               | `false`        |
-| [`totalItems`](#totalItems)                   | `Number`                                | `0`            |
-| [`page`](#page)                               | `Number`                                | `1`            |
-| [`mustSort`](#mustSort)                       | `Boolean`                               | `false`        |
-| [`multiSort`](#multiSort)                     | `Boolean`                               | `false`        |
-| [`noShadow`](#noShadow)                       | `Boolean`                               | `false`        |
-| [`selectable`](#selectable)                   | `Boolean`                               | `false`        |
-| [`headerClass`](#headerClass)                 | `String`                                | `''`           |
-| [`bodyClass`](#bodyClass)                     | `String`                                | `''`           |
-| [`footerClass`](#footerClass)                 | `String`                                | `''`           |
-| [`columnActiveClass`](#columnActiveClass)     | `String`                                | `''`           |
-| [`columnInactiveClass`](#columnInactiveClass) | `String`                                | `''`           |
-| [`hoverClass`](#hoverClass)                   | `String`                                | `''`           |
 | [`stripedClass`](#stripedClass)               | `String`                                | `''`           |
 | [`tdClass`](#tdClass)                         | `String`                                | `''`           |
-| [`trClass`](#trClass)                         | `String`                                | `''`           |
-| [`wrapperClass`](#wrapperClass)               | `String`                                | `''`           |
-| [`flat`](#flat)                               | `Boolean`                               | `false`        |
-| [`roundedClass`](#roundedClass)               | `String`                                | `''`           |
-| [`bordered`](#bordered)                       | `Boolean`                               | `false`        |
 | [`tile`](#tile)                               | `Boolean`                               | `false`        |
-| [`rowClass`](#rowClass)                       | `(item: T, index: number) => string;`   | `undefined`    |
-| [`itemClass`](#rowClass)                      | `(item: T, index: number) => string;`   | `undefined`    |
+| [`totalItems`](#totalItems)                   | `Number`                                | `0`            |
+| [`trClass`](#trClass)                         | `String`                                | `''`           |
+| [`value`](#value)                             | `Array`                                 | `[]`           |
+| [`wrapperClass`](#wrapperClass)               | `String`                                | `''`           |
 
 ## Events
 
