@@ -501,48 +501,48 @@ const search = ref('');
 
 ## Props
 
-| Name                                          | Type                                    | Default                  |
-| --------------------------------------------- | --------------------------------------- | ------------------------ |
-| [`modelValue`](#modelValue)                   | `Array`                                 | `[]`                     |
-| [`value`](#value)                             | `Array`                                 | `[]`                     |
-| [`headers`](#headers)                         | `Array as PropType<VDataTableHeader[]>` | `[]`                     |
-| [`items`](#items)                             | `Array as PropType<VDataTableItem[]>`   | `[]`                     |
-| [`itemsPerPage`](#itemsPerPage)               | `Number`                                | `10`                     |
-| [`disableSorting`](#disableSorting)           | `Boolean`                               | `false`                  |
-| [`pagination`](#pagination)                   | `Object`                                | `{}`                     |
-| [`loading`](#loading)                         | `Boolean`                               | `false`                  |
-| [`search`](#search)                           | `String`                                | `''`                     |
-| [`searchBy`](#searchBy)                       | `[String, Array] as PropType<string>`   | `string[]`               |
-| [`loadingText`](#loadingText)                 | `String`                                | `'Loading...'`           |
-| [`noDataText`](#noDataText)                   | `String`                                | `'Data tidak ditemukan'` |
-| [`footerColor`](#footerColor)                 | `String`                                | `''`                     |
-| [`serverSide`](#serverSide)                   | `Boolean`                               | `false`                  |
-| [`sortBy`](#sortBy)                           | `String`                                | `''`                     |
-| [`sortDirection`](#sortDirection)             | `String as PropType<SortDirection>`     | `''`                     |
-| [`hover`](#hover)                             | `Boolean`                               | `false`                  |
-| [`striped`](#striped)                         | `Boolean`                               | `false`                  |
-| [`dense`](#dense)                             | `Boolean`                               | `false`                  |
-| [`hideFooter`](#hideFooter)                   | `Boolean`                               | `false`                  |
-| [`totalItems`](#totalItems)                   | `Number`                                | `0`                      |
-| [`page`](#page)                               | `Number`                                | `1`                      |
-| [`mustSort`](#mustSort)                       | `Boolean`                               | `false`                  |
-| [`multiSort`](#multiSort)                     | `Boolean`                               | `false`                  |
-| [`noShadow`](#noShadow)                       | `Boolean`                               | `false`                  |
-| [`selectable`](#selectable)                   | `Boolean`                               | `false`                  |
-| [`headerClass`](#headerClass)                 | `String`                                | `''`                     |
-| [`bodyClass`](#bodyClass)                     | `String`                                | `''`                     |
-| [`footerClass`](#footerClass)                 | `String`                                | `''`                     |
-| [`columnActiveClass`](#columnActiveClass)     | `String`                                | `''`                     |
-| [`columnInactiveClass`](#columnInactiveClass) | `String`                                | `''`                     |
-| [`hoverClass`](#hoverClass)                   | `String`                                | `''`                     |
-| [`stripedClass`](#stripedClass)               | `String`                                | `''`                     |
-| [`tdClass`](#tdClass)                         | `String`                                | `''`                     |
-| [`trClass`](#trClass)                         | `String`                                | `''`                     |
-| [`wrapperClass`](#wrapperClass)               | `String`                                | `''`                     |
-| [`flat`](#flat)                               | `Boolean`                               | `false`                  |
-| [`roundedClass`](#roundedClass)               | `String`                                | `''`                     |
-| [`bordered`](#bordered)                       | `Boolean`                               | `false`                  |
-| [`tile`](#tile)                               | `Boolean`                               | `false`                  |
+| Name                                          | Type                                    | Default        |
+| --------------------------------------------- | --------------------------------------- | -------------- |
+| [`modelValue`](#modelValue)                   | `Array`                                 | `[]`           |
+| [`value`](#value)                             | `Array`                                 | `[]`           |
+| [`headers`](#headers)                         | `Array as PropType<VDataTableHeader[]>` | `[]`           |
+| [`items`](#items)                             | `Array as PropType<VDataTableItem[]>`   | `[]`           |
+| [`itemsPerPage`](#itemsPerPage)               | `Number`                                | `10`           |
+| [`disableSorting`](#disableSorting)           | `Boolean`                               | `false`        |
+| [`pagination`](#pagination)                   | `Object`                                | `{}`           |
+| [`loading`](#loading)                         | `Boolean`                               | `false`        |
+| [`search`](#search)                           | `String`                                | `''`           |
+| [`searchBy`](#searchBy)                       | `[String, Array] as PropType<string>`   | `string[]`     |
+| [`loadingText`](#loadingText)                 | `String`                                | `'Loading...'` |
+| [`noDataText`](#noDataText)                   | `String`                                | `'No results'` |
+| [`footerColor`](#footerColor)                 | `String`                                | `''`           |
+| [`serverSide`](#serverSide)                   | `Boolean`                               | `false`        |
+| [`sortBy`](#sortBy)                           | `String`                                | `''`           |
+| [`sortDirection`](#sortDirection)             | `String as PropType<SortDirection>`     | `''`           |
+| [`hover`](#hover)                             | `Boolean`                               | `false`        |
+| [`striped`](#striped)                         | `Boolean`                               | `false`        |
+| [`dense`](#dense)                             | `Boolean`                               | `false`        |
+| [`hideFooter`](#hideFooter)                   | `Boolean`                               | `false`        |
+| [`totalItems`](#totalItems)                   | `Number`                                | `0`            |
+| [`page`](#page)                               | `Number`                                | `1`            |
+| [`mustSort`](#mustSort)                       | `Boolean`                               | `false`        |
+| [`multiSort`](#multiSort)                     | `Boolean`                               | `false`        |
+| [`noShadow`](#noShadow)                       | `Boolean`                               | `false`        |
+| [`selectable`](#selectable)                   | `Boolean`                               | `false`        |
+| [`headerClass`](#headerClass)                 | `String`                                | `''`           |
+| [`bodyClass`](#bodyClass)                     | `String`                                | `''`           |
+| [`footerClass`](#footerClass)                 | `String`                                | `''`           |
+| [`columnActiveClass`](#columnActiveClass)     | `String`                                | `''`           |
+| [`columnInactiveClass`](#columnInactiveClass) | `String`                                | `''`           |
+| [`hoverClass`](#hoverClass)                   | `String`                                | `''`           |
+| [`stripedClass`](#stripedClass)               | `String`                                | `''`           |
+| [`tdClass`](#tdClass)                         | `String`                                | `''`           |
+| [`trClass`](#trClass)                         | `String`                                | `''`           |
+| [`wrapperClass`](#wrapperClass)               | `String`                                | `''`           |
+| [`flat`](#flat)                               | `Boolean`                               | `false`        |
+| [`roundedClass`](#roundedClass)               | `String`                                | `''`           |
+| [`bordered`](#bordered)                       | `Boolean`                               | `false`        |
+| [`tile`](#tile)                               | `Boolean`                               | `false`        |
 
 ## Events
 
@@ -803,14 +803,109 @@ Example:
 </template>
 ```
 
+### `header`
+
+The `header` slot alows you to customize the content of header (`th`) of table.
+
+Type:
+
+```ts
+header: (props: {
+  headerClass: string;
+  headers: H[];
+  sortMap: Map<string, SortDirection>;
+  selectable: boolean;
+  disableSorting: boolean;
+  handleSort: (header: H) => void;
+}) => any;
+```
+
+### `body`
+
+The `body` slot alows you to customize the content of table body (`tbody`) of table.
+
+Type:
+
+```ts
+body: (props: {
+  bodyClass: string;
+  items: T[];
+  loading: boolean;
+  headers: H[];
+  noDataText: string;
+  striped: boolean;
+  hover: boolean;
+  trClass: string;
+  selected: T[];
+  get: (item: T, key: string) => any;
+  handleRowClick: (item: T, index: number) => void;
+  getTdClass: typeof getTdClass;
+}) => any;
+```
+
+### `item`
+
+The `item` slot alows you to customize the content of table row (`tr`) of table.
+
+Type:
+
+```ts
+item: (props: {
+  item: T;
+  index: number;
+  headers: H[];
+  striped: boolean;
+  hover: boolean;
+  trClass: string;
+  selected: T[];
+  get: (item: T, key: string) => any;
+  handleRowClick: (item: T, index: number) => void;
+  getTdClass: typeof getTdClass;
+}) => any;
+```
+
+Example:
+
+```vue
+<template>
+  <VDataTable>
+    <template #item="{
+      item,
+      handleRowClick,
+      headers,
+      getTdClass,
+      tdClass,
+      get
+    }">
+      <tr
+        @click="handleRowClick(item)"
+      >
+        <td
+          v-for="(header, index) in headers"
+          :key="index"
+          class="v-table-td"
+          :class="[
+            getTdClass(header),
+            tdClass,
+            header?.tdClass || '',
+          ]"
+        >
+          {{ get(item, header.value) }}
+        </td>
+      </tr>
+    </template>
+  </VDataTable>
+</template>
+```
+
 ## CSS Variables
 
 ```css
-
 :root {
   /* spacing */
   --v-table-padding-x: var(--size-spacing-6);
   --v-table-padding-y: var(--size-spacing-3);
+  --v-table-border-color: var(--color-gray-200);
 
   /* thead */
   --v-table-thead-bg-color: var(--color-gray-50);
@@ -845,6 +940,7 @@ Example:
 
   /* striped */
   --v-table-striped-bg-color: var(--color-gray-50);
+  --v-table-striped-even-bg-color: var(--color-white);
 
   /* hover */
   --v-table-hover-bg-color: var(--color-gray-100);

@@ -1,35 +1,35 @@
+import { themeColors } from '@morpheme/utils/colors';
+import { Args, Meta, Story } from '@storybook/vue3';
+import { useForm } from 'vee-validate';
+import { ref } from 'vue';
 import VDataTablePagination from './VDataTablePagination.vue';
-import {themeColors} from '@morpheme/utils/colors';
-import {Args, Meta, Story} from '@storybook/vue3';
-import {useForm} from 'vee-validate';
-import {ref} from 'vue';
 
 export default {
   title: 'Components/DataTablePagination',
   component: VDataTablePagination,
   argTypes: {
     color: {
-      control: {type: 'select', options: themeColors},
+      control: { type: 'select', options: themeColors },
     },
     btnLast: {
-      control: {type: 'text'},
+      control: { type: 'text' },
       defaultValue: '',
-      table: {category: 'Slots'},
+      table: { category: 'Slots' },
     },
     btnFirst: {
-      control: {type: 'text'},
+      control: { type: 'text' },
       defaultValue: '',
-      table: {category: 'Slots'},
+      table: { category: 'Slots' },
     },
     btnNext: {
-      control: {type: 'text'},
+      control: { type: 'text' },
       defaultValue: '',
-      table: {category: 'Slots'},
+      table: { category: 'Slots' },
     },
     btnPrev: {
-      control: {type: 'text'},
+      control: { type: 'text' },
       defaultValue: '',
-      table: {category: 'Slots'},
+      table: { category: 'Slots' },
     },
   },
   args: {
@@ -43,7 +43,7 @@ const Template: Story = (args) => ({
     VDataTablePagination,
   },
   setup() {
-    const {btnLast, btnFirst, btnNext, btnPrev} = args;
+    const { btnLast, btnFirst, btnNext, btnPrev } = args;
 
     const argsWSlots: Args = {
       args: args,
@@ -62,7 +62,7 @@ const Template: Story = (args) => ({
       }
     }
 
-    return {args: argsWSlots};
+    return { args: argsWSlots };
   },
   template: `<v-data-table-pagination v-bind="args.args">
   <template v-for="(content, name) in args.$slots" v-slot:[name]>{{content}}</template>
@@ -123,9 +123,9 @@ export const RowsPerPageSlot: Story = (args) => ({
   setup() {
     const page = ref(1);
     const itemsPerPage = ref(10);
-    const {values} = useForm({});
+    const { values } = useForm({});
 
-    return {args, values, page, itemsPerPage};
+    return { args, values, page, itemsPerPage };
   },
   template: `
     <div>
@@ -169,7 +169,7 @@ export const MetaSlot: Story = (args) => ({
     VDataTablePagination,
   },
   setup() {
-    return {args};
+    return { args };
   },
   template: `
     <v-data-table-pagination v-bind="args">
@@ -198,7 +198,7 @@ export const CustomClass: Story = (args) => ({
     VDataTablePagination,
   },
   setup() {
-    return {args};
+    return { args };
   },
   template: `
     <v-data-table-pagination v-bind="args" class="THIS__SHOULD__NOT__BLEED" />
@@ -219,7 +219,7 @@ export const PassingPaginationProps: Story = (args) => ({
     VDataTablePagination,
   },
   setup() {
-    return {args};
+    return { args };
   },
   template: `
     <v-data-table-pagination v-bind="args" :pagination="{showFirst: false, showLast: false}" />
@@ -236,9 +236,9 @@ PassingPaginationProps.parameters = {
 };
 
 export const DarkMode: Story<{}> = (args) => ({
-  components: {VDataTablePagination},
+  components: { VDataTablePagination },
   setup() {
-    return {args};
+    return { args };
   },
   template: `
 <main class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6 space-y-2">
