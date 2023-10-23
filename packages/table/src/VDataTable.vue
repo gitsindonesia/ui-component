@@ -425,6 +425,8 @@ defineSlots<
       selectable: boolean;
       disableSorting: boolean;
       handleSort: (header: H) => void;
+      getThClass: typeof getThClass;
+      selectAll: boolean;
     }) => any;
     body: (props: {
       bodyClass: string;
@@ -439,6 +441,12 @@ defineSlots<
       get: (item: T, key: string) => any;
       handleRowClick: (item: T, index: number) => void;
       getTdClass: typeof getTdClass;
+      loadingText: string;
+      stripedClass: string;
+      hoverClass: string;
+      tdClass: string;
+      selectable: boolean;
+      start: number;
     }) => any;
     item: (props: {
       item: T;
@@ -487,6 +495,8 @@ defineSlots<
             selectable,
             disableSorting,
             handleSort,
+            getThClass,
+            selectAll,
           }"
         >
           <thead class="v-table-thead" :class="headerClass">
@@ -565,6 +575,12 @@ defineSlots<
             get,
             handleRowClick,
             getTdClass,
+            loadingText,
+            stripedClass,
+            hoverClass,
+            tdClass,
+            selectable,
+            start,
           }"
         >
           <tbody class="v-table-tbody" :class="bodyClass">

@@ -840,6 +840,12 @@ body: (props: {
   get: (item: T, key: string) => any;
   handleRowClick: (item: T, index: number) => void;
   getTdClass: typeof getTdClass;
+  loadingText: string;
+  stripedClass: string;
+  hoverClass: string;
+  tdClass: string;
+  selectable: boolean;
+  start: number;
 }) => any;
 ```
 
