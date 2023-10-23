@@ -465,9 +465,7 @@ export const RowColors: StoryFn<typeof VDataTable> = (args) => ({
   template: `
   <VDataTable
     v-bind="args"
-    :trClass="[
-      'v-table-tr--primary',
-    ]"
+    tr-class="v-table-tr--primary"
   />
 `,
 });
