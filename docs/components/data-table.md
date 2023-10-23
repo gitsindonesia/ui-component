@@ -781,13 +781,13 @@ The `footer` slot allows you to customize the content of the table footer. It re
 ```ts
 {
   pagination,
-    perPage,
-    serverSide,
-    items,
-    totalItems,
-    footerColor,
-    footerClass,
-    page;
+  perPage,
+  serverSide,
+  items,
+  totalItems,
+  footerColor,
+  footerClass,
+  page;
 }
 ```
 
