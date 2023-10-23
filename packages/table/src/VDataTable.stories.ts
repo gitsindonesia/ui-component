@@ -472,6 +472,36 @@ export const RowColors: StoryFn<typeof VDataTable> = (args) => ({
 `,
 });
 
+export const RowClass: StoryFn<typeof VDataTable> = (args) => ({
+  components: { VDataTable },
+  setup() {
+    return { args };
+  },
+  template: `
+  <VDataTable
+    v-bind="args"
+    :row-class="(item, index) => {
+      return index % 2 === 0 ? 'v-table-tr--primary' : 'v-table-tr--success'
+    }"
+  />
+`,
+});
+
+export const ItemClass: StoryFn<typeof VDataTable> = (args) => ({
+  components: { VDataTable },
+  setup() {
+    return { args };
+  },
+  template: `
+  <VDataTable
+    v-bind="args"
+    :item-class="(item, index) => {
+      return index % 2 === 0 ? 'v-table-tr--error' : 'v-table-tr--warning'
+    }"
+  />
+`,
+});
+
 export const ItemSlot: StoryFn<typeof VDataTable> = (args) => ({
   components: { VDataTable },
   setup() {

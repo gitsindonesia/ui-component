@@ -61,6 +61,8 @@ const props = withDefaults(
     bordered?: boolean;
     tile?: boolean;
     multiSort?: boolean;
+    rowClass?: (item: T, index: number) => string;
+    itemClass?: (item: T, index: number) => string;
   }>(),
   {
     modelValue: () => [] as T[],
@@ -625,11 +627,15 @@ defineSlots<
               >
                 <tr
                   class="group v-table-tr"
-                  :class="{
-                    [stripedClass]: striped,
-                    [hoverClass]: hover,
-                    [trClass]: Boolean(trClass),
-                  }"
+                  :class="[
+                    {
+                      [stripedClass]: striped,
+                      [hoverClass]: hover,
+                      [trClass]: Boolean(trClass),
+                    },
+                    index % 2 === 0 ? 'v-table-tr--even' : 'v-table-tr--odd',
+                    rowClass?.(item, index),
+                  ]"
                   @click="handleRowClick(item, index)"
                 >
                   <td
@@ -640,6 +646,7 @@ defineSlots<
                       getTdClass(header),
                       tdClass,
                       header?.tdClass || '',
+                      itemClass?.(item, index),
                     ]"
                   >
                     <slot
