@@ -155,6 +155,34 @@
 
   &-tr {
     background-color: var(--v-table-tr-bg-color);
+
+    &--primary {
+      --v-table-td-bg-color: var(--color-primary-50);
+    }
+
+    &--secondary {
+      --v-table-td-bg-color: var(--color-secondary-50);
+    }
+
+    &--success {
+      --v-table-td-bg-color: var(--color-success-50);
+    }
+
+    &--error {
+      --v-table-td-bg-color: var(--color-error-50);
+    }
+
+    &--warning {
+      --v-table-td-bg-color: var(--color-warning-50);
+    }
+
+    &--info {
+      --v-table-td-bg-color: var(--color-info-50);
+    }
+
+    &--dark {
+      --v-table-td-bg-color: var(--color-gray-50);
+    }
   }
 
   /* striped */
