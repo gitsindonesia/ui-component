@@ -543,6 +543,8 @@ const search = ref('');
 | [`roundedClass`](#roundedClass)               | `String`                                | `''`           |
 | [`bordered`](#bordered)                       | `Boolean`                               | `false`        |
 | [`tile`](#tile)                               | `Boolean`                               | `false`        |
+| [`rowClass`](#rowClass)                       | `(item: T, index: number) => string;`   | `undefined`    |
+| [`itemClass`](#rowClass)                      | `(item: T, index: number) => string;`   | `undefined`    |
 
 ## Events
 
