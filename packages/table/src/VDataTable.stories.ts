@@ -442,7 +442,7 @@ export const StickyColumn: StoryFn<typeof VDataTable> = (args) => ({
   `,
 });
 
-export const DarkMode: Story<{}> = (args) => ({
+export const DarkMode: StoryFn<typeof VDataTable> = (args) => ({
   components: { VDataTable },
   setup() {
     return { args };
@@ -457,7 +457,22 @@ export const DarkMode: Story<{}> = (args) => ({
 `,
 });
 
-export const ItemSlot: Story<{}> = (args) => ({
+export const RowColors: StoryFn<typeof VDataTable> = (args) => ({
+  components: { VDataTable },
+  setup() {
+    return { args };
+  },
+  template: `
+  <VDataTable
+    v-bind="args"
+    :trClass="[
+      'v-table-tr--primary',
+    ]"
+  />
+`,
+});
+
+export const ItemSlot: StoryFn<typeof VDataTable> = (args) => ({
   components: { VDataTable },
   setup() {
     return { args };
