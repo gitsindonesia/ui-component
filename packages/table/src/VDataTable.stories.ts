@@ -1,75 +1,11 @@
 import { VInput } from '@morpheme/forms';
-import { Meta, Story } from '@storybook/vue3';
+import { Meta, StoryFn } from '@storybook/vue3';
 import { ref, watchEffect } from 'vue';
 import VDataTable from './VDataTable.vue';
 import type { VDataTableHeader } from './types';
-
-const states = ['active', 'inactive'];
-
-const items = [...Array(30)].map((_, index) => {
-  const fName = ['Cory', 'Peppa', 'Gallagher', 'Caleb', 'Thomas'].at(
-    Math.floor(Math.random() * 5),
-  );
-  const lName = ['Smith', 'Woods', 'Stein', 'Bauer', 'Gordon'].at(
-    Math.floor(Math.random() * 5),
-  );
-  return {
-    index,
-    name: [fName, lName].join(' '),
-    email: `user-${index}@example.com`,
-    age: index + 1 * 10,
-    state: states[Math.floor(Math.random() * states.length)],
-    address: {
-      city: [
-        'Jakarta',
-        'Melbourne',
-        'London',
-        'Washington',
-        'Stockholm',
-        'Seoul',
-        'Moscoe',
-        'Cape Town',
-      ].at(index % 8),
-      street: '241 Lorem Street',
-    },
-  };
-});
-
-const headers = [
-  {
-    value: 'index',
-    text: 'ID',
-    class: '',
-    tdClass: '',
-    sortable: false,
-  },
-  {
-    value: 'name',
-    text: 'Name',
-    class: '',
-    tdClass: '',
-  },
-  {
-    value: 'email',
-    text: 'Email',
-    class: '',
-    tdClass: '',
-  },
-  {
-    value: 'address.city',
-    text: 'City',
-    class: '',
-    tdClass: '',
-  },
-];
-
-const selectableHeaders = [
-  {
-    text: 'Checkox',
-    value: 'selected',
-  },
-  ...headers.slice(1),
-];
+import HeaderSlotStory from './stories/HeaderSlotStory.vue'
+import BodySlotStory from './stories/BodySlotStory.vue'
+import { items, headers, selectableHeaders } from './stories/data'
 
 export default {
   title: 'Components/DataTable',
@@ -82,7 +18,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => ({
+const Template: StoryFn<typeof VDataTable> = (args) => ({
   components: {
     VDataTable,
   },
@@ -286,7 +222,7 @@ CustomClass.parameters = {
   },
 };
 
-export const Selectable: Story = (args) => ({
+export const Selectable: StoryFn<typeof VDataTable> = (args) => ({
   components: {
     VDataTable,
   },
@@ -306,7 +242,7 @@ export const Selectable: Story = (args) => ({
   `,
 });
 
-export const Search: Story = (args) => ({
+export const Search: StoryFn<typeof VDataTable> = (args) => ({
   components: {
     VDataTable,
     VInput,
@@ -346,7 +282,7 @@ function numberToStars(num: number) {
   return '★'.repeat(fullStars) + halfStar + '☆'.repeat(emptyStars);
 }
 
-export const ServerSide: Story = (args) => ({
+export const ServerSide: StoryFn<typeof VDataTable> = (args) => ({
   components: {
     VDataTable,
   },
@@ -449,7 +385,7 @@ export const ServerSide: Story = (args) => ({
   `,
 });
 
-export const StickyColumn: Story = (args) => ({
+export const StickyColumn: StoryFn<typeof VDataTable> = (args) => ({
   components: {
     VDataTable,
   },
@@ -520,7 +456,7 @@ export const DarkMode: Story<{}> = (args) => ({
 `,
 });
 
-export const Slots: Story<{}> = (args) => ({
+export const ItemSlot: Story<{}> = (args) => ({
   components: { VDataTable },
   setup() {
     return { args };
@@ -549,4 +485,18 @@ export const Slots: Story<{}> = (args) => ({
     </template>
   </VDataTable>
 `,
+});
+
+export const HeaderSlot: StoryFn<typeof VDataTable> = () => ({
+  components: { HeaderSlotStory },
+  template: `
+    <HeaderSlotStory />
+  `,
+});
+
+export const BodySlot: StoryFn<typeof VDataTable> = () => ({
+  components: { BodySlotStory },
+  template: `
+    <BodySlotStory />
+  `,
 });
