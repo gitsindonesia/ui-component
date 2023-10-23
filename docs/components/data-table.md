@@ -728,7 +728,7 @@ The `item.selected` slot allows you to customize the content of the selected col
 <template>
   <VDataTable>
     <template #item.selected="selected">
-      <v-swicth v-model="selected" />
+      <VSwitch v-model="selected" />
     </template>
   </VDataTable>
 </template>
