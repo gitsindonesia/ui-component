@@ -363,7 +363,7 @@ const selectAll = computed<boolean>({
 watch(
   selected,
   (val) => {
-    emit('update:modelValue', val);
+    emit('update:modelValue', (val as any)); // FIXME
   },
   {deep: true, immediate: true},
 );

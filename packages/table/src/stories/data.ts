@@ -1,3 +1,4 @@
+import { VDataTableHeader } from './../types';
 
 export const states = ['active', 'inactive'];
 
@@ -30,7 +31,7 @@ export const items = [...Array(30)].map((_, index) => {
   };
 });
 
-export const headers = [
+export const headers: VDataTableHeader[] = [
   {
     value: 'index',
     text: 'ID',

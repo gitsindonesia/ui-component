@@ -21,7 +21,8 @@ export default {
 
 const Template: StoryFn<typeof VDataTable> = (args) => ({
   components: {
-    VDataTable,
+    // FIXME: fix types
+    VDataTable: VDataTable as any,
   },
   setup() {
     return { args };
@@ -207,7 +208,7 @@ CustomClass.parameters = {
     source: {
       code: `
 <v-data-table
-  :headers="${JSON.stringify(CustomClass.args.headers).replaceAll('"', "'")}"
+  :headers="${JSON.stringify((CustomClass as any).args.headers).replaceAll('"', "'")}"
   :items="items"
   header-class="bg-blue-600"
   body-class="bg-gray-100"
@@ -225,7 +226,7 @@ CustomClass.parameters = {
 
 export const Selectable: StoryFn<typeof VDataTable> = (args) => ({
   components: {
-    VDataTable,
+    VDataTable: VDataTable as any,
   },
   setup() {
     const selected = ref([]);
@@ -245,7 +246,7 @@ export const Selectable: StoryFn<typeof VDataTable> = (args) => ({
 
 export const Search: StoryFn<typeof VDataTable> = (args) => ({
   components: {
-    VDataTable,
+    VDataTable: VDataTable as any,
     VInput,
   },
   setup() {
@@ -285,7 +286,7 @@ function numberToStars(num: number) {
 
 export const ServerSide: StoryFn<typeof VDataTable> = (args) => ({
   components: {
-    VDataTable,
+    VDataTable: VDataTable as any,
   },
   setup() {
     const headers = ref<VDataTableHeader[]>([
@@ -388,7 +389,7 @@ export const ServerSide: StoryFn<typeof VDataTable> = (args) => ({
 
 export const StickyColumn: StoryFn<typeof VDataTable> = (args) => ({
   components: {
-    VDataTable,
+    VDataTable: VDataTable as any,
   },
   setup() {
     const headers = ref<VDataTableHeader[]>([
@@ -443,7 +444,9 @@ export const StickyColumn: StoryFn<typeof VDataTable> = (args) => ({
 });
 
 export const DarkMode: StoryFn<typeof VDataTable> = (args) => ({
-  components: { VDataTable },
+  components: {
+    VDataTable: VDataTable as any
+  },
   setup() {
     return { args };
   },
@@ -458,7 +461,9 @@ export const DarkMode: StoryFn<typeof VDataTable> = (args) => ({
 });
 
 export const RowColors: StoryFn<typeof VDataTable> = (args) => ({
-  components: { VDataTable },
+  components: {
+    VDataTable: VDataTable as any
+  },
   setup() {
     return { args };
   },
@@ -471,7 +476,9 @@ export const RowColors: StoryFn<typeof VDataTable> = (args) => ({
 });
 
 export const RowClass: StoryFn<typeof VDataTable> = (args) => ({
-  components: { VDataTable },
+  components: {
+    VDataTable: VDataTable as any
+  },
   setup() {
     return { args };
   },
@@ -486,7 +493,9 @@ export const RowClass: StoryFn<typeof VDataTable> = (args) => ({
 });
 
 export const ItemClass: StoryFn<typeof VDataTable> = (args) => ({
-  components: { VDataTable },
+  components: {
+    VDataTable: VDataTable as any
+  },
   setup() {
     return { args };
   },
@@ -501,7 +510,9 @@ export const ItemClass: StoryFn<typeof VDataTable> = (args) => ({
 });
 
 export const ItemSlot: StoryFn<typeof VDataTable> = (args) => ({
-  components: { VDataTable },
+  components: {
+    VDataTable: VDataTable as any
+  },
   setup() {
     return { args };
   },
