@@ -8,7 +8,6 @@ import {
   InjectionKey,
   h,
   Teleport,
-  Transition,
 } from 'vue';
 
 export interface DialogContext {
@@ -38,7 +37,7 @@ export const Dialog = defineComponent({
       return true;
     },
   },
-  setup(props, {slots, emit}) {
+  setup(props, { slots, emit }) {
     const open = ref(props.modelValue);
 
     watch(
@@ -70,7 +69,7 @@ export const Dialog = defineComponent({
 
     provide(DialogInjectionKey, context);
 
-    return () => h(Teleport, {to: 'body'}, slots.default?.({open}));
+    return () => h((Teleport as any), { to: 'body' }, slots.default?.({ open }));
   },
 });
 
@@ -82,8 +81,8 @@ export const DialogTitle = defineComponent({
       default: 'h2',
     },
   },
-  setup(props, {slots}) {
-    const {open} = useDialog();
+  setup(props, { slots }) {
+    const { open } = useDialog();
     return () =>
       h(
         props.as,
@@ -105,8 +104,8 @@ export const DialogDescription = defineComponent({
       default: 'p',
     },
   },
-  setup(props, {slots}) {
-    const {open} = useDialog();
+  setup(props, { slots }) {
+    const { open } = useDialog();
     return () =>
       h(
         props.as,
@@ -128,20 +127,20 @@ export const DialogPanel = defineComponent({
       default: 'div',
     },
   },
-  setup(props, {slots}) {
-    const {open} = useDialog();
+  setup(props, { slots }) {
+    const { open } = useDialog();
     return () =>
       open.value
         ? h(
-            props.as,
-            {
-              'data-state': open.value ? 'open' : 'closed',
-              role: 'dialog',
-            },
-            slots.default?.({
-              open,
-            }),
-          )
+          props.as,
+          {
+            'data-state': open.value ? 'open' : 'closed',
+            role: 'dialog',
+          },
+          slots.default?.({
+            open,
+          }),
+        )
         : null;
   },
 });
@@ -154,19 +153,19 @@ export const DialogContent = defineComponent({
       default: 'div',
     },
   },
-  setup(props, {slots}) {
-    const {open} = useDialog();
+  setup(props, { slots }) {
+    const { open } = useDialog();
     return () =>
       open.value
         ? h(
-            props.as,
-            {
-              'data-state': open.value ? 'open' : 'closed',
-            },
-            slots.default?.({
-              open,
-            }),
-          )
+          props.as,
+          {
+            'data-state': open.value ? 'open' : 'closed',
+          },
+          slots.default?.({
+            open,
+          }),
+        )
         : null;
   },
 });
@@ -179,19 +178,19 @@ export const DialogOverlay = defineComponent({
       default: 'div',
     },
   },
-  setup(props, {slots}) {
-    const {open} = useDialog();
+  setup(props, { slots }) {
+    const { open } = useDialog();
     return () =>
       open.value
         ? h(
-            props.as,
-            {
-              'data-state': open.value ? 'open' : 'closed',
-            },
-            slots.default?.({
-              open,
-            }),
-          )
+          props.as,
+          {
+            'data-state': open.value ? 'open' : 'closed',
+          },
+          slots.default?.({
+            open,
+          }),
+        )
         : null;
   },
 });
