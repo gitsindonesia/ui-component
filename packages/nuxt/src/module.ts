@@ -1,13 +1,13 @@
-import {resolve} from 'path';
-import {fileURLToPath} from 'url';
+import { resolve } from 'path';
+import { fileURLToPath } from 'url';
 import {
   defineNuxtModule,
   addPlugin,
   addComponent,
-  AddComponentOptions,
+  type AddComponentOptions,
   logger,
 } from '@nuxt/kit';
-import {addCustomTab} from '@nuxt/devtools-kit';
+import { addCustomTab } from '@nuxt/devtools-kit';
 
 const transpile = [
   '@headlessui/vue',
