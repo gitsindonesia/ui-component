@@ -30,17 +30,17 @@ Detailed documentation can be found [here](https://gitsindonesia.github.io/ui-co
 
 Checkout starter of Morpheme UI in the [starter](/starter/) directory.
 
+### [Nuxt 3 + Minimal Starter](/starter/nuxt-minimal/)
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/fork/github/gitsindonesia/ui-component/tree/main/starter/nuxt-minimal)
+
+### [Nuxt 3 + App Starter](https://github.com/gitsindonesia/nuxt-starter)
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/fork/github/gitsindonesia/nuxt-starter)
+
 ### [Vue 3](/starter/vue/)
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/gitsindonesia/ui-component/tree/main/starter/vue)
-
-### [Nuxt 3 + Minimal Starter](/starter/nuxt-minimal/)
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/gitsindonesia/ui-component/tree/main/starter/nuxt-minimal)
-
-### Nuxt 3 + Complete Starter
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/gitsindonesia/nuxt-starter)
 
 ## Development
 

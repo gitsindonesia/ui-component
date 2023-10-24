@@ -34,9 +34,9 @@ npx create-morpheme-app@latest
 
 Then, choose the `Nuxt Minimal` template.
 
-## Nuxt Complete Starter
+## Nuxt App Starter
 
-Nuxt Complete Starter is a comprehensive starter kit for Nuxt that includes everything you need to build modern web applications with Nuxt, Tailwind CSS, and Morpheme UI.
+Nuxt App Starter is a comprehensive starter kit for Nuxt that includes everything you need to build modern web applications with Nuxt, Tailwind CSS, and Morpheme UI.
 
 - [Online demo](https://morpheme-nuxt-starter.vercel.app/)
 - [Source code](https://github.com/gitsindonesia/nuxt-starter)
