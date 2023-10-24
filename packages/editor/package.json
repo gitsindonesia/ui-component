@@ -20,7 +20,7 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@ckeditor/ckeditor5-build-classic": "^35.3.2",
+    "@ckeditor/ckeditor5-build-classic": "^37.0.0",
     "@ckeditor/ckeditor5-vue": "^4.0.1",
     "vee-validate": "^4.11.3",
     "vue": "^3.3.4"
@@ -30,7 +30,7 @@
     "@morpheme/button": "^1.0.0-rc.1",
     "@morpheme/tailwind-config": "^1.0.0-rc.0",
     "@morpheme/utils": "^1.0.0-rc.0",
-    "@types/ckeditor__ckeditor5-build-classic": "^29.0.1",
+    "@types/ckeditor__ckeditor5-build-classic": "^37.0.0",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
     "tailwindcss": "^3.3.1",
