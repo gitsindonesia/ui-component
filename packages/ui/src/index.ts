@@ -146,7 +146,8 @@ const plugin: Plugin = {
     app.component('VCardFooter', VCardFooter);
     app.component('VCardImage', VCardImage);
     app.component('VCheckbox', VCheckbox);
-    app.component('VDataTable', VDataTable);
+    // FIXME: fix types
+    app.component('VDataTable', (VDataTable as any));
     app.component('VDataTablePagination', VDataTablePagination);
     app.component('VDropdown', Dropdown);
     app.component('VDropdownItem', DropdownItem);
