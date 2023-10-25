@@ -1,8 +1,8 @@
-# `FileInput`
+# FileInput
 
 ## Overview
 
-The `FileInput` component provides a flexible interface for file input functionalities in a Vue application. It allows for default and button-based activators, supports file drag-and-drop, displays lists of selected files, and exposes slots for customizing hint and error displays.
+The `FileInput` component is a flexible and customizable file input handler. It supports both single and multiple file selections and comes with two visual variants: default and button. Files can also be dragged and dropped onto the component to be added.
 
 ## Storybook
 
@@ -10,79 +10,69 @@ The `FileInput` component provides a flexible interface for file input functiona
 
 ## Props
 
-| Name         | Type                  | Default | Description                                          |
-| ------------ | --------------------- | ------- | ---------------------------------------------------- |
-| modelValue   | any[]                 | []      | The value bound to the component (list of files).    |
-| multiple     | boolean               | -       | If true, allows multiple file selection.             |
-| accept       | string                | -       | Specifies accepted file types (MIME types).          |
-| capture      | string                | -       | Specifies which camera to use for image capture.     |
-| reset        | boolean               | -       | If true, resets the file input after each selection. |
-| variant      | 'default' or 'button' | -       | Determines the type of activator.                    |
-| variantProps | Record<string, any>   | -       | Props passed to the variant component.               |
-| hideItems    | boolean               | -       | If true, hides the list of selected files.           |
-| label        | string                | -       | Label for the file input.                            |
-| hint         | string                | -       | Hint text displayed below the input.                 |
-| wrapperClass | string                | -       | Additional CSS class for the wrapper div.            |
-| error        | boolean               | -       | If true, indicates an error state for the input.     |
-| errorMessage | string                | -       | Error message displayed when in an error state.      |
+| Prop           | Type                  | Default   | Description                                                                                           |
+| -------------- | --------------------- | --------- | ----------------------------------------------------------------------------------------------------- |
+| `modelValue`   | any[]                 | []        | The current files bound to the input.                                                                 |
+| `multiple`     | boolean               | -         | Determines if multiple files can be selected.                                                         |
+| `accept`       | string                | -         | Specifies file types that the input should accept. E.g., '.jpg,.png'.                                 |
+| `capture`      | string                | -         | Specifies which camera to use for capture of image or video data, e.g., 'user' or 'environment'.      |
+| `reset`        | boolean               | -         | If true, will reset the input after files are selected.                                               |
+| `variant`      | 'default' \| 'button' | 'default' | Visual variant of the file input. Can be either 'default' or 'button'.                                |
+| `variantProps` | Record<string, any>   | -         | Props for the specific variant component (`FileInputDefaultActivator` or `FileInputButtonActivator`). |
+| `hideItems`    | boolean               | -         | If true, hides the list of currently selected files.                                                  |
+| `label`        | string                | -         | Label for the file input component.                                                                   |
+| `hint`         | string                | -         | Hint or helper text displayed below the file input.                                                   |
+| `wrapperClass` | string                | -         | Class to be applied to the component wrapper.                                                         |
+| `error`        | boolean               | -         | Indicates if the file input has an error.                                                             |
+| `errorMessage` | string                | -         | Error message displayed when there's a validation error related to the file input.                    |
 
 ## Events
 
-| Name                | Payload Type | Description                             |
-| ------------------- | ------------ | --------------------------------------- |
-| 'update:modelValue' | any[]        | Emitted when the selected files change. |
-
-## Slots
-
-- **default**: Default slot for customizing the file input activator.
-
-  - Properties:
-    - `files`: The normalized list of selected files.
-    - `open`: Method to open the file dialog.
-    - `reset`: Method to reset the file input.
-
-- **items**: Slot for customizing the list of selected files.
-
-  - Properties:
-    - `files`: The normalized list of selected files.
-
-- **hint**: Slot for customizing the hint text.
-
-  - Properties: None (Uses the `hint` prop directly).
-
-- **error**: Slot for customizing the error display.
-  - Properties: None (Uses the `errorMessage` prop directly).
+| Event               | Payload Type | Description                                |
+| ------------------- | ------------ | ------------------------------------------ |
+| `update:modelValue` | any          | Emits the current files of the file input. |
 
 ## Methods
 
-- **open**: Opens the file dialog for file selection.
-- **reset**: Resets the file input.
-- **removeItem(idx: number)**: Removes a file from the selected list based on its index.
+| Method       | Parameters  | Description                                               |
+| ------------ | ----------- | --------------------------------------------------------- |
+| `open`       | -           | Opens the file dialog.                                    |
+| `reset`      | -           | Resets the file input, clearing all selected files.       |
+| `removeItem` | idx: number | Removes a file from the selected list based on its index. |
+
+## Slots
+
+| Slot      | Props                                              | Description                                                                                                          |
+| --------- | -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `default` | `{files: File[], open: Function, reset: Function}` | Default slot, allows you to customize the main input area. Defaults to a component based on the `variant` prop.      |
+| `hint`    | {}                                                 | Custom hint content. If not provided, the `hint` prop will be used.                                                  |
+| `items`   | `{files: File[]}`                                  | Custom display for the list of selected files. If not provided, the default display (`FileInputItems`) will be used. |
+| `error`   | {}                                                 | Custom error content. If not provided, the `errorMessage` prop will be used.                                         |
 
 ## Usage
 
-You can use the `FileInput` component in your Vue templates:
+To use the `FileInput` component:
+
+1. Import the component.
+2. Bind the necessary props.
+3. Optionally, use the slots for custom content.
 
 ```vue
 <script setup lang="ts">
-import {FileInput} from '@morpheme/forms';
 import {ref} from 'vue';
+import {FileInput} from '@morpheme/forms';
 
-const selectedFiles = ref();
+const files = ref([]);
 </script>
 
 <template>
   <FileInput
-    label="Upload files"
-    multiple
-    variant="button"
-    v-model="selectedFiles"
+    v-model="files"
+    label="Upload Documents"
+    hint="Accepted formats: .pdf, .docx"
+    accept=".pdf,.docx"
   />
 </template>
 ```
 
-## Notes
-
-- Ensure that the associated components (`FileInputDefaultActivator`, `FileInputButtonActivator`, and `FileInputItems`) are properly imported and available.
-- The `useFileDialog` utility from `@vueuse/core` provides the core file dialog functionalities.
-- Selected files are normalized into an array, allowing for easier management and display.
+This will render a file input component with a label "Upload Documents" and a hint message. Users can then select `.pdf` or `.docx` files, and the selected files will be bound to the `files` ref.
