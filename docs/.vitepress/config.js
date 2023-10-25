@@ -289,6 +289,20 @@ export default defineConfig({
         ],
       },
       {
+        text: 'Experimental',
+        collapsed: false,
+        items: [
+          {
+            text: 'Select',
+            link: '/experimental/select',
+          },
+          {
+            text: 'Autocomplete',
+            link: '/experimental/autocomplete',
+          },
+        ],
+      },
+      {
         text: 'Deprecated',
         collapsed: true,
         items: [
