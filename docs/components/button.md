@@ -80,6 +80,26 @@ Use `text` prop to apply text style.
 
 </LivePreview>
 
+### Soft
+
+Use `soft` prop to apply soft style.
+
+<LivePreview src="forms-button--soft" >
+
+```vue
+<template>
+  <VBtn soft> default </VBtn>
+  <VBtn color="primary" soft> primary </VBtn>
+  <VBtn color="secondary" soft> secondary </VBtn>
+  <VBtn color="info" soft> info </VBtn>
+  <VBtn color="warning" soft> warning </VBtn>
+  <VBtn color="error" soft> error </VBtn>
+  <VBtn color="dark" soft> dark </VBtn>
+</template>
+```
+
+</LivePreview>
+
 ### Flush
 
 - **Prop**: `flush`
