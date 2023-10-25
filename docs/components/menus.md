@@ -304,6 +304,133 @@ import VAppBar from '@morpheme/app-bar';
 
 </LivePreview>
 
+### Nested
+
+Here's an example on how to create nested menus.
+
+<LivePreview src="components-menus--nested">
+
+```vue
+<script setup lang="ts">
+import {ref} from 'vue';
+
+const items = ref([
+  {
+    text: 'Item 1',
+  },
+  {
+    text: 'Item 2',
+  },
+  {
+    text: 'Item 3',
+  },
+  {
+    divider: true,
+  },
+  {
+    text: 'Item 4',
+    children: [
+      {
+        text: 'Item 1',
+      },
+      {
+        text: 'Item 2',
+      },
+      {
+        text: 'Item 3',
+      },
+      {
+        divider: true,
+      },
+      {
+        text: 'Item 4',
+        children: [
+          {
+            text: 'Item 1',
+          },
+          {
+            text: 'Item 2',
+          },
+          {
+            text: 'Item 3',
+          },
+        ],
+      },
+    ],
+  },
+]);
+</script>
+
+<template>
+  <div>
+    <VMenus label="Nested" :items="items" class="mr-4" />
+
+    <VMenus label="Nested with slot">
+      <template #items>
+        <VMenusItem>Item 1</VMenusItem>
+        <VMenusItem>Item 2</VMenusItem>
+        <VMenusItem>Item 3</VMenusItem>
+        <VMenusItem divider />
+        <VMenus placement="right-start" class="w-full">
+          <VMenusItem append-icon="ri:arrow-right-s-line"> Item 4 </VMenusItem>
+          <template #items>
+            <VMenusItem>Item 1</VMenusItem>
+            <VMenusItem>Item 2</VMenusItem>
+            <VMenusItem>Item 3</VMenusItem>
+            <VMenusItem divider />
+            <VMenus placement="right-start" class="w-full">
+              <VMenusItem append-icon="ri:arrow-right-s-line">
+                Item 4
+              </VMenusItem>
+              <template #items>
+                <VMenusItem>Item 1</VMenusItem>
+                <VMenusItem>Item 2</VMenusItem>
+                <VMenusItem>Item 3</VMenusItem>
+              </template>
+            </VMenus>
+          </template>
+        </VMenus>
+      </template>
+    </VMenus>
+  </div>
+</template>
+```
+
+</LivePreview>
+
+### Dark Mode
+
+Here's a preview of menus in Dark Mode.
+
+<LivePreview src="components-menus--dark-mode">
+
+```vue
+<script setup lang="ts">
+const items = [
+  {
+    text: 'Item',
+    to: '/',
+  },
+  {
+    text: 'Item 2',
+    to: '/',
+  },
+  {
+    text: 'Item 3',
+    to: '/',
+  },
+];
+</script>
+
+<template>
+  <div class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6">
+    <VMenus />
+  </div>
+</template>
+```
+
+</LivePreview>
+
 ## Props
 
 | Name                        | Type                                                                                                | Default                  |
