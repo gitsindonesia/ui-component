@@ -63,7 +63,7 @@ const selected = ref(users[0]);
       </div>
     </template>
     <template #selected="{modelValue: item}">
-      <div class="flex gap-2">
+      <div v-if="item" class="flex gap-2">
         <VIcon v-if="item.icon" :name="item.icon" />
         <img
           v-if="item.avatar"

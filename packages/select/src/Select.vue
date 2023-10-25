@@ -1,5 +1,5 @@
 <!-- eslint-disable vue/no-mutating-props -->
-<script setup lang="ts">
+<script setup lang="ts" generic="T extends Record<string, any> = any">
 import {
   Listbox,
   ListboxButton,
@@ -20,8 +20,6 @@ import {Float} from '@headlessui-float/vue';
 import type {Placement} from '@floating-ui/vue';
 import SelectSearchInput, {ExposedProps} from './SelectSearchInput.vue';
 
-type T = Record<string, any>;
-type ModelValue = T | T[] | undefined;
 type Shadow =
   | 'xs'
   | 'sm'
@@ -33,99 +31,100 @@ type Shadow =
   | 'inner'
   | 'none';
 
-const props = withDefaults(
-  defineProps<{
-    modelValue?: ModelValue;
-    items?: T[];
-    multiple?: boolean;
-    itemText?: string;
-    itemValue?: string;
-    placeholder?: string;
-    label?: string;
-    transition?: string;
-    clearable?: boolean;
-    clearText?: string;
-    error?: boolean;
-    hint?: string;
-    errorMessage?: string;
-    hideError?: boolean;
-    shadow?: boolean | Shadow | (string & {});
-    searchable?: boolean;
-    disabled?: boolean;
-    emptyText?: string;
-    searchBy?: string;
-    selectionItemProps?: InstanceType<typeof VBadge>['$props'];
-    displayValue?: (item: T) => string;
-    placement?: Placement;
-    offset?: number;
-    shift?: boolean | number;
-    flip?: boolean | number;
-    searchPlacement?: 'inside' | 'outside';
-    searchPlaceholder?: string;
-    chips?: boolean;
-    icon?: string;
-    iconSize?: string;
-    iconClass?: string;
-    dropdownIcon?: string;
-    dropdownIconSize?: string;
-    dropdownIconClass?: string;
-    checkIcon?: string;
-    checkIconSize?: string;
-    checkIconClass?: string;
-    clearIcon?: string;
-    clearIconSize?: string;
-    clearIconClass?: string;
-    searchPrefixIcon?: string;
-    searchPrefixIconSize?: string;
-    searchPrefixIconClass?: string;
-    searchSuffixIcon?: string;
-    searchSuffixIconSize?: string;
-    searchSuffixIconClass?: string;
-    wrapperClass?: string;
-    selectedIconPlacement?: 'left' | 'right';
-    by?: string;
-    name?: string;
-    loading?: boolean;
-    loadingIcon?: string;
-    loadingText?: string;
-    tooltip?: InstanceType<typeof VTooltip>['$props'];
-    selectedText?: string;
-    allowCustomValues?: boolean;
-  }>(),
-  {
-    itemText: 'text',
-    itemValue: 'value',
-    placeholder: 'Choose',
-    transition: 'dropdown',
-    clearText: 'Clear',
-    emptyText: 'No results.',
-    items: () => [],
-    placement: 'bottom',
-    offset: 8,
-    shift: true,
-    flip: true,
-    hideError: false,
-    searchPlacement: 'inside',
-    searchPlaceholder: 'Search...',
-    dropdownIcon: 'heroicons:chevron-down',
-    dropdownIconSize: 'sm',
-    icon: '',
-    iconSize: 'sm',
-    checkIcon: 'heroicons:check',
-    checkIconSize: 'sm',
-    clearIcon: 'heroicons:x-mark',
-    clearIconSize: 'sm',
-    searchPrefixIconSize: 'sm',
-    searchSuffixIconSize: 'sm',
-    selectedIconPlacement: 'left',
-    tooltip: () => ({
-      placement: 'top',
-    }),
-    loadingIcon: 'ri:loader-5-fill',
-    loadingText: 'Loading...',
-    selectedText: 'selected',
-  },
-);
+interface Props {
+  items?: T[];
+  multiple?: boolean;
+  itemText?: string;
+  itemValue?: string;
+  placeholder?: string;
+  label?: string;
+  transition?: string;
+  clearable?: boolean;
+  clearText?: string;
+  error?: boolean;
+  hint?: string;
+  errorMessage?: string;
+  hideError?: boolean;
+  shadow?: boolean | Shadow | (string & {});
+  searchable?: boolean;
+  disabled?: boolean;
+  emptyText?: string;
+  searchBy?: string;
+  selectionItemProps?: InstanceType<typeof VBadge>['$props'];
+  displayValue?: (item: T) => string;
+  placement?: Placement;
+  offset?: number;
+  shift?: boolean | number;
+  flip?: boolean | number;
+  searchPlacement?: 'inside' | 'outside';
+  searchPlaceholder?: string;
+  chips?: boolean;
+  icon?: string;
+  iconSize?: string;
+  iconClass?: string;
+  dropdownIcon?: string;
+  dropdownIconSize?: string;
+  dropdownIconClass?: string;
+  checkIcon?: string;
+  checkIconSize?: string;
+  checkIconClass?: string;
+  clearIcon?: string;
+  clearIconSize?: string;
+  clearIconClass?: string;
+  searchPrefixIcon?: string;
+  searchPrefixIconSize?: string;
+  searchPrefixIconClass?: string;
+  searchSuffixIcon?: string;
+  searchSuffixIconSize?: string;
+  searchSuffixIconClass?: string;
+  wrapperClass?: string;
+  selectedIconPlacement?: 'left' | 'right';
+  by?: string;
+  name?: string;
+  loading?: boolean;
+  loadingIcon?: string;
+  loadingText?: string;
+  tooltip?: InstanceType<typeof VTooltip>['$props'];
+  selectedText?: string;
+  allowCustomValues?: boolean;
+  modelValue?: Props['multiple'] extends true ? T[] : T | undefined;
+}
+
+type ModelValue = Props['multiple'] extends true ? T[] : T | undefined;
+
+const props = withDefaults(defineProps<Props>(), {
+  itemText: 'text',
+  itemValue: 'value',
+  placeholder: 'Choose',
+  transition: 'dropdown',
+  clearText: 'Clear',
+  emptyText: 'No results.',
+  items: () => [],
+  placement: 'bottom',
+  offset: 8,
+  shift: true,
+  flip: true,
+  hideError: false,
+  searchPlacement: 'inside',
+  searchPlaceholder: 'Search...',
+  dropdownIcon: 'heroicons:chevron-down',
+  dropdownIconSize: 'sm',
+  icon: '',
+  iconSize: 'sm',
+  checkIcon: 'heroicons:check',
+  checkIconSize: 'sm',
+  clearIcon: 'heroicons:x-mark',
+  clearIconSize: 'sm',
+  searchPrefixIconSize: 'sm',
+  searchSuffixIconSize: 'sm',
+  selectedIconPlacement: 'left',
+  tooltip: () => ({
+    placement: 'top',
+  }),
+  loadingIcon: 'ri:loader-5-fill',
+  loadingText: 'Loading...',
+  selectedText: 'selected',
+});
 
 const emit = defineEmits<{
   (e: 'update:modelValue', value: ModelValue): void;
@@ -227,6 +226,7 @@ defineSlots<{
   }) => any;
   selected?: (props: {
     modelValue: ModelValue;
+    item: ModelValue;
     multiple?: boolean;
     placeholder?: string;
     itemText?: string;
@@ -384,6 +384,7 @@ defineSlots<{
             name="selected"
             v-bind="{
               multiple,
+              item: modelValue,
               modelValue,
               placeholder,
               itemText,
