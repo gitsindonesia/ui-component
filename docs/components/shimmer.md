@@ -125,23 +125,22 @@ None
 
 You can also install the `Shimmer` component individually via `@morpheme/shimmer` package:
 
-yarn:
 
-```bash
+::: code-group
+
+```bash [yarn]
 yarn add @morpheme/shimmer
 ```
 
-npm:
-
-```bash
+```bash [pnpm]
 npm i @morpheme/shimmer
 ```
 
-pnpm :
-
-```bash
+```bash [pnpm]
 pnpm add @morpheme/shimmer
 ```
+
+:::
 
 ```vue
 <script setup lang="ts">
