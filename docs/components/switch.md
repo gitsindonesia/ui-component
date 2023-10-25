@@ -12,7 +12,7 @@ The `VSwitch` component allows you to add a toggle switch to your Vue app.
 
 To use the component, you first need to install it with `@morpheme/ui`. Once installed, the `VSwitch` component will be registered globally, so you don't need to import it manually.
 
-<LivePreview src="components-switch--default" >
+<LivePreview src="forms-switch--default" >
 
 ```vue
 <script setup lang="ts">
@@ -36,7 +36,7 @@ The `VSwitch` component is registered globally when you install with `@morpheme/
 
 You can specify the color of the `VSwitch` using the color prop. The available colors are `primary`, `secondary`, `success`, `warning`, `error`, and custom.
 
-<LivePreview src="components-switch--warning" >
+<LivePreview src="forms-switch--warning" >
 
 ```vue
 <script setup lang="ts">
@@ -56,7 +56,7 @@ const checked = ref(false);
 
 If you don't want to display a label, you can leave out the `label` prop.
 
-<LivePreview src="components-switch--no-label" >
+<LivePreview src="forms-switch--no-label" >
 
 ```vue
 <script setup lang="ts">
@@ -76,7 +76,7 @@ const checked = ref(false);
 
 You can apply custom classes to the `VSwitch` and its individual parts using the `switch-class`, `active-class`, `inactive-class`, and `button-class` props.
 
-<LivePreview src="components-switch--custom-class" >
+<LivePreview src="forms-switch--custom-class" >
 
 ```vue
 <script setup lang="ts">
@@ -103,7 +103,7 @@ const checked = ref(false);
 
 You can also style the component using CSS variables.
 
-<LivePreview src="components-switch--custom-style" >
+<LivePreview src="forms-switch--custom-style" >
 
 ```vue
 <script setup lang="ts">
@@ -136,7 +136,7 @@ const checked = ref(false);
 
 You can use the `VSwitch` component with form validation libraries like `vee-validate`.
 
-<LivePreview src="components-switch--validation" >
+<LivePreview src="forms-switch--validation" >
 
 ```vue
 <script setup lang="ts">
@@ -277,6 +277,8 @@ You can also install the `Switch` component individually via `@morpheme/switch` 
 npm i @morpheme/switch
 ```
 
+Then, use it like so:
+
 ```vue
 <script setup lang="ts">
 import VSwitch from '@morpheme/switch';
@@ -292,4 +294,4 @@ const checked = ref(false);
 
 ## Storybook
 
-View Storybook documentation [here](https://gits-ui.web.app/?path=/story/components-switch--default).
+View Storybook documentation [here](https://gits-ui.web.app/?path=/story/forms-switch--default).
