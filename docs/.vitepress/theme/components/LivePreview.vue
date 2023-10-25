@@ -7,7 +7,9 @@ const props = withDefaults(
     src: string;
     width?: string | number;
     height?: string | number;
-    withCode?: boolean;
+    hideCode?: boolean;
+    hideNav?: boolean;
+    hideStorybookLink?: boolean;
   }>(),
   {
     height: 400,
@@ -18,19 +20,31 @@ const source = computed(() => {
   return `https://gits-ui.web.app/iframe.html?args=&id=${props.src}&viewMode=story`;
 });
 
+const storyLink = computed(() => {
+  return `https://gits-ui.web.app/?path=/story/${props.src}`;
+});
+
 const tabs = ref(['preview', 'code']);
 const selectedTab = ref('preview');
 </script>
 
 <template>
   <div class="tabs">
-    <div class="tabs-nav">
+    <div
+      class="tabs-nav"
+      :style="{
+        display: hideNav ? 'none' : 'flex',
+      }"
+    >
       <button
         v-for="tab in tabs"
         :key="tab"
         class="tabs-nav-item"
         :class="{
           'tabs-nav-item--active': selectedTab === tab,
+        }"
+        :style="{
+          display: hideCode && tab === 'code' ? 'none' : 'block',
         }"
         @click="selectedTab = tab"
       >
@@ -51,6 +65,16 @@ const selectedTab = ref('preview');
         <slot></slot>
       </div>
     </div>
+  </div>
+  <div style="margin-top: 1rem">
+    <a
+      v-if="!hideStorybookLink"
+      :href="storyLink"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Open in Storybook
+    </a>
   </div>
 </template>
 

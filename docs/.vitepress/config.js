@@ -1,4 +1,4 @@
-import { defineConfig } from 'vitepress';
+import {defineConfig} from 'vitepress';
 
 export default defineConfig({
   title: 'Morpheme',
@@ -13,9 +13,9 @@ export default defineConfig({
     },
     logo: '/morpheme-logo.png',
     nav: [
-      { text: 'Guide', link: '/guide/getting-started' },
-      { text: 'Primitives', link: '/primitives/' },
-      { text: 'Storybook', link: 'https://gits-ui.web.app' },
+      {text: 'Guide', link: '/guide/getting-started'},
+      {text: 'Primitives', link: '/primitives/'},
+      {text: 'Storybook', link: 'https://gits-ui.web.app'},
       // {
       //   text: 'Ecosystem',
       //   items: [
@@ -30,66 +30,66 @@ export default defineConfig({
         text: 'Getting Started',
         collapsed: false,
         items: [
-          { text: 'Introduction', link: '/guide/introduction' },
-          { text: 'Quick Start', link: '/guide/getting-started' },
-          { text: 'Installation', link: '/guide/installation' },
-          { text: 'Vue Usage', link: '/guide/vue' },
-          { text: 'Nuxt Usage', link: '/guide/nuxt' },
-          { text: 'Starter', link: '/guide/starter' },
+          {text: 'Introduction', link: '/guide/introduction'},
+          {text: 'Quick Start', link: '/guide/getting-started'},
+          {text: 'Installation', link: '/guide/installation'},
+          {text: 'Vue Usage', link: '/guide/vue'},
+          {text: 'Nuxt Usage', link: '/guide/nuxt'},
+          {text: 'Starter', link: '/guide/starter'},
         ],
       },
       {
         text: 'Releases',
         collapsed: false,
         items: [
-          { text: 'Migration', link: '/guide/migration' },
-          { text: 'Changelog', link: '/guide/changelog' },
-          { text: 'Roadmap', link: '/roadmap' },
+          {text: 'Migration', link: '/guide/migration'},
+          {text: 'Changelog', link: '/guide/changelog'},
+          {text: 'Roadmap', link: '/roadmap'},
         ],
       },
       {
         text: 'Customization',
         collapsed: false,
         items: [
-          { text: 'Themes', link: '/guide/themes' },
-          { text: 'Default Theme', link: '/guide/theme' },
-          { text: 'Dark Mode', link: '/guide/dark-mode' },
-          { text: 'Customization', link: '/guide/customization' },
+          {text: 'Themes', link: '/guide/themes'},
+          {text: 'Default Theme', link: '/guide/theme'},
+          {text: 'Dark Mode', link: '/guide/dark-mode'},
+          {text: 'Customization', link: '/guide/customization'},
         ],
       },
       {
         text: 'Tools',
         collapsed: false,
-        items: [{ text: 'CLI', link: '/tools/cli' }],
+        items: [{text: 'CLI', link: '/tools/cli'}],
       },
       {
         text: 'Templates',
         collapsed: false,
         items: [
-          { text: 'nuxt-auth', link: '/templates/nuxt-auth' },
-          { text: 'nuxt-admin', link: '/templates/nuxt-admin' },
+          {text: 'nuxt-auth', link: '/templates/nuxt-auth'},
+          {text: 'nuxt-admin', link: '/templates/nuxt-admin'},
         ],
       },
       {
         text: 'Components',
         collapsed: false,
         items: [
-          { text: 'Alert', link: '/components/alert' },
-          { text: 'AppBar', link: '/components/app-bar' },
-          { text: 'AppShell', link: '/components/app-shell' },
-          { text: 'Autocomplete', link: '/components/autocomplete' },
-          { text: 'Avatar', link: '/components/avatar' },
-          { text: 'Badge', link: '/components/badge' },
-          { text: 'Banner', link: '/components/banner' },
-          { text: 'BottomNavigation', link: '/components/bottom-navigation' },
-          { text: 'BottomSheet', link: '/components/bottom-sheet' },
-          { text: 'Breadcrumbs', link: '/components/breadcrumbs' },
-          { text: 'Card', link: '/components/card' },
-          { text: 'Collapse', link: '/components/collapse' },
-          { text: 'Collapsible', link: '/components/collapsible' },
-          { text: 'Command', link: '/components/command' },
-          { text: 'Container', link: '/components/container' },
-          { text: 'DataTable', link: '/components/data-table' },
+          {text: 'Alert', link: '/components/alert'},
+          {text: 'AppBar', link: '/components/app-bar'},
+          {text: 'AppShell', link: '/components/app-shell'},
+          {text: 'Autocomplete', link: '/components/autocomplete'},
+          {text: 'Avatar', link: '/components/avatar'},
+          {text: 'Badge', link: '/components/badge'},
+          {text: 'Banner', link: '/components/banner'},
+          {text: 'BottomNavigation', link: '/components/bottom-navigation'},
+          {text: 'BottomSheet', link: '/components/bottom-sheet'},
+          {text: 'Breadcrumbs', link: '/components/breadcrumbs'},
+          {text: 'Card', link: '/components/card'},
+          {text: 'Collapse', link: '/components/collapse'},
+          {text: 'Collapsible', link: '/components/collapsible'},
+          {text: 'Command', link: '/components/command'},
+          {text: 'Container', link: '/components/container'},
+          {text: 'DataTable', link: '/components/data-table'},
           {
             text: 'DataTablePagination',
             link: '/components/data-table-pagination',
@@ -248,9 +248,43 @@ export default defineConfig({
             text: 'TextArea',
             link: '/components/textarea',
           },
+        ],
+      },
+      {
+        text: 'Standalone Forms',
+        collapsed: false,
+        items: [
           {
-            text: 'Standalone Components',
+            text: 'Introduction',
             link: '/components/standalone-form-components',
+          },
+          {
+            text: 'Checkbox',
+            link: '/forms/checkbox',
+          },
+          {
+            text: 'FileInput',
+            link: '/forms/file-input',
+          },
+          {
+            text: 'Input',
+            link: '/forms/input',
+          },
+          {
+            text: 'Radio',
+            link: '/forms/radio',
+          },
+          {
+            text: 'Select',
+            link: '/forms/select',
+          },
+          {
+            text: 'Switch',
+            link: '/forms/switch',
+          },
+          {
+            text: 'Textarea',
+            link: '/forms/textarea',
           },
         ],
       },
@@ -270,7 +304,7 @@ export default defineConfig({
       },
     ],
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/gitsindonesia/ui-component' },
+      {icon: 'github', link: 'https://github.com/gitsindonesia/ui-component'},
     ],
   },
 });
