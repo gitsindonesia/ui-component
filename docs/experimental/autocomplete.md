@@ -1,5 +1,9 @@
 # Autocomplete
 
+::: warning
+Experimental
+:::
+
 ## Introduction
 
 The Autocomplete component is a flexible and customizable dropdown select component built using Vue 3 and the Headless UI library. It supports both single and multiple selections, provides slot customization, and offers various props for enhanced functionality.
