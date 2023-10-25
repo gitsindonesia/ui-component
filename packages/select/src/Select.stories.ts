@@ -1,12 +1,13 @@
 import VIcon from '@morpheme/icon';
-import {Story, Meta} from '@storybook/vue3';
-import {themeColors} from '@morpheme/utils';
+import { Story, Meta, StoryFn } from '@storybook/vue3';
+import { themeColors } from '@morpheme/utils';
 import Select from './Select.vue';
-import {ref} from 'vue';
-import {ListboxButton} from '@headlessui/vue';
-import {useForm} from 'vee-validate';
-import {array, object} from 'yup';
-import {VBtn} from '@morpheme/button';
+import { ref } from 'vue';
+import { ListboxButton } from '@headlessui/vue';
+import { useForm } from 'vee-validate';
+import { array, object } from 'yup';
+import { VBtn } from '@morpheme/button';
+import SelectObjectsStory from './stories/SelectObjects.story.vue'
 
 const items = [...Array(10)].map((_, index) => ({
   value: index + 1,
@@ -37,7 +38,7 @@ const Template: Story<typeof Select> = (args) => ({
   },
   setup() {
     const value = ref();
-    return {args, value};
+    return { args, value };
   },
   template: `
     <Select v-bind="args" v-model="value" />
@@ -81,7 +82,7 @@ export const Shadow: Story<typeof Select> = (args) => ({
   setup() {
     const value = ref();
     args.class = 'mb-4';
-    return {args, value};
+    return { args, value };
   },
   template: `
     <Select v-bind="args" v-model="value" label="Default" hint="This is a hint" shadow />
@@ -180,7 +181,7 @@ export const Uncontrolled: Story<typeof Select> = (args) => ({
     Select,
   },
   setup() {
-    return {args};
+    return { args };
   },
   template: `
     <Select v-bind="args" />
@@ -192,7 +193,7 @@ export const FloatingUI: Story<typeof Select> = (args) => ({
     Select,
   },
   setup() {
-    return {args};
+    return { args };
   },
   template: `
     <div class="mt-[90vh]">
@@ -202,14 +203,28 @@ export const FloatingUI: Story<typeof Select> = (args) => ({
   `,
 });
 
+export const Objects: StoryFn<typeof Select> = (args) => ({
+  components: {
+    SelectObjectsStory,
+  },
+  setup() {
+    return { args };
+  },
+  template: `
+    <SelectObjectsStory />
+  `,
+});
+
 export const Slots: Story<typeof Select> = (args) => ({
   components: {
     Select,
     ListboxButton,
     VIcon,
+    SelectObjectsStory
   },
   setup() {
-    return {args};
+
+    return { args, };
   },
   template: `
     <p>Custom Button</p>
@@ -224,20 +239,7 @@ export const Slots: Story<typeof Select> = (args) => ({
       </template>
     </Select>
     
-    <Select v-bind="args" class="mb-4" label="Custom Render Item" multiple>
-      <template v-slot:item="{active, selected, item}">
-        <div
-          class="px-4 py-3 flex gap-2"
-          :class="{
-            'bg-gray-100 dark:bg-gray-true-800': active,
-            'text-primary-500': selected,
-          }"
-        >
-          <div class="flex-grow">{{ item.text }}</div>
-          <span v-if="selected">✅</span>
-        </div>
-      </template>
-    </Select>
+    <SelectObjectsStory />
 
     <Select v-bind="args" class="mb-4" label="Custom Selection" multiple>
       <template v-slot:selection="{active, selected, item}">
@@ -314,7 +316,7 @@ export const DarkMode: Story<typeof Select> = (args) => ({
   },
   setup() {
     const value = ref();
-    return {args, value};
+    return { args, value };
   },
   template: `
     <div class="dark dark:bg-gray-true-900 p-6">
@@ -351,7 +353,7 @@ export const DarkMode: Story<typeof Select> = (args) => ({
 });
 
 export const Validation: Story<{}> = (args) => ({
-  components: {VBtn, Select},
+  components: { VBtn, Select },
   setup() {
     const schema = object({
       genre: array().required().nullable().label('Genre'),
@@ -361,7 +363,7 @@ export const Validation: Story<{}> = (args) => ({
       fruit3: array().required().nullable().label('Fruit 2'),
     });
 
-    const {handleSubmit, resetForm, values, errors, defineComponentBinds} =
+    const { handleSubmit, resetForm, values, errors, defineComponentBinds } =
       useForm({
         validationSchema: schema,
       });
