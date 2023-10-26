@@ -11,6 +11,9 @@ dependencies:
   '@morpheme/ui':
     specifier: 1.0.0-rc.2
     version: 1.0.0-rc.2
+  '@stackblitz/sdk':
+    specifier: ^1.9.0
+    version: 1.9.0
   vue-gtag:
     specifier: ^2.0.1
     version: 2.0.1(vue@3.3.7)
@@ -1451,6 +1454,10 @@ packages:
 
   /@one-ini/wasm@0.1.1:
     resolution: {integrity: sha512-XuySG1E38YScSJoMlqovLru4KTUNSjgVTIjyh7qMX6aNN5HY5Ct5LhRJdxO79JtTzKfzV/bnWpz+zquYrISsvw==}
+    dev: false
+
+  /@stackblitz/sdk@1.9.0:
+    resolution: {integrity: sha512-3m6C7f8pnR5KXys/Hqx2x6ylnpqOak6HtnZI6T5keEO0yT+E4Spkw37VEbdwuC+2oxmjdgq6YZEgiKX7hM1GmQ==}
     dev: false
 
   /@tailwindcss/aspect-ratio@0.4.2(tailwindcss@3.3.5):
