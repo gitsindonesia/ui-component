@@ -456,6 +456,12 @@ export const DarkMode: StoryFn<typeof VDataTable> = (args) => ({
 
   <p class="mt-10 mb-3">Bordered Variant</p>
   <VDataTable v-bind="args" bordered />
+
+  <p class="mt-10 mb-3">Hover Variant</p>
+  <VDataTable v-bind="args" hover />
+
+  <p class="mt-10 mb-3">Hover+Striped Variant</p>
+  <VDataTable v-bind="args" hover striped />
 </main>
 `,
 });

@@ -25,9 +25,10 @@
 
     /* striped */
     --v-table-striped-bg-color: var(--color-gray-true-700);
+    --v-table-striped-even-bg-color: var(--color-gray-true-800);
 
     /* hover */
-    --v-table-hover-bg-color: var(--color-gray-true-700);
+    --v-table-hover-bg-color: var(--color-gray-true-600);
   }
 
   .v-table {
@@ -46,8 +47,11 @@
     &-th--sticky,
     &-td--sticky {
       background-color: var(--color-gray-true-800);
-      --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
-      filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+      --tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
+        drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+      filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+        var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert)
+        var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
     }
 
     // pagination
