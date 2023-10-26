@@ -9,8 +9,11 @@
     "preview": "vitepress preview .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "morpheme-docs",
+    "morpheme"
+  ],
+  "author": "PT GITS Indonesia",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.4.16",
