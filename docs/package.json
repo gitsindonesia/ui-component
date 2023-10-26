@@ -21,6 +21,7 @@
   "private": true,
   "type": "module",
   "dependencies": {
+    "@morpheme/themes": "1.0.0-rc.2",
     "@morpheme/ui": "1.0.0-rc.2",
     "vue-gtag": "^2.0.1"
   }

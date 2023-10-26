@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@morpheme/themes':
+    specifier: 1.0.0-rc.2
+    version: 1.0.0-rc.2
   '@morpheme/ui':
     specifier: 1.0.0-rc.2
     version: 1.0.0-rc.2
@@ -1314,7 +1317,9 @@ packages:
     resolution: {integrity: sha512-zgZoxWJoEqNDqsN4PjDJnU1OBEc/dc7CmQHsZIg0EHMdGjFbalFEvQRChUUVhOsDP55uZPWqX2eLwAMlmV9rxg==}
     dependencies:
       '@morpheme/design-tokens': 0.1.0-alpha.5
-      vue: 3.3.4
+      vue: 3.3.7
+    transitivePeerDependencies:
+      - typescript
     dev: false
 
   /@morpheme/timeline@1.0.0-rc.1:
@@ -1408,6 +1413,7 @@ packages:
       - '@vue/composition-api'
       - '@vue/server-renderer'
       - ts-node
+      - typescript
     dev: false
 
   /@morpheme/utils@1.0.0-rc.0:
