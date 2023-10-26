@@ -30,3 +30,5 @@ features:
     title: Themes
     details: Support theming and ships dark mode out-of-the-box
 ---
+
+<MorphemeShowcase />
