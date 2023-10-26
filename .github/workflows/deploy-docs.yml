@@ -40,16 +40,18 @@ jobs:
           cache: yarn # or pnpm / yarn
       - name: Setup Pages
         uses: actions/configure-pages@v3
-      - name: Install dependencies
-        run: yarn install # or pnpm install / yarn install / bun install
+      # - name: Install dependencies
+      #   run: yarn install # or pnpm install / yarn install / bun install
       - name: Build with VitePress
         run: |
-          yarn docs:build
-          touch docs/.vitepress/dist/.nojekyll
+          cd docs
+          pnpm install
+          pnpm build
+          touch .vitepress/dist/.nojekyll
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: docs/.vitepress/dist
+          path: .vitepress/dist
 
   # Deployment job
   deploy:
