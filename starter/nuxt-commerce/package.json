@@ -22,7 +22,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@morpheme/nuxt": "^1.0.0-rc.2",
+    "@morpheme/nuxt": "^1.0.0-rc.3",
     "@nuxt/image": "1.0.0-rc.1"
   },
   "devDependencies": {

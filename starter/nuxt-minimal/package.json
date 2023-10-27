@@ -22,7 +22,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@morpheme/nuxt": "^1.0.0-rc.2"
+    "@morpheme/nuxt": "^1.0.0-rc.3"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.8.0",

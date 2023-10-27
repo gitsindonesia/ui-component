@@ -10,8 +10,6 @@
     "nuxt.js",
     "vue",
     "vue.js",
-    "morpheme",
-    "morpheme",
     "morpheme"
   ],
   "scripts": {
@@ -22,7 +20,7 @@
     "prep": "nuxt prepare"
   },
   "dependencies": {
-    "@morpheme/nuxt": "^1.0.0-rc.2",
+    "@morpheme/nuxt": "^1.0.0-rc.3",
     "@sidebase/nuxt-auth": "^0.4.4",
     "next-auth": "^4.21.1"
   },
