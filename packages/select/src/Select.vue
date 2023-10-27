@@ -1,5 +1,5 @@
 <!-- eslint-disable vue/no-mutating-props -->
-<script setup lang="ts" generic="T extends Record<string, any> = any">
+<script setup lang="ts">
 import {
   Listbox,
   ListboxButton,
@@ -20,6 +20,13 @@ import {Float} from '@headlessui-float/vue';
 import type {Placement} from '@floating-ui/vue';
 import SelectSearchInput, {ExposedProps} from './SelectSearchInput.vue';
 
+export interface SelectOption extends Record<string, any> {
+  [key: string]: any;
+}
+
+type T = SelectOption;
+
+type ModelValue = T | T[] | undefined;
 type Shadow =
   | 'xs'
   | 'sm'
@@ -87,10 +94,8 @@ interface Props {
   tooltip?: InstanceType<typeof VTooltip>['$props'];
   selectedText?: string;
   allowCustomValues?: boolean;
-  modelValue?: Props['multiple'] extends true ? T[] : T | undefined;
+  modelValue?: ModelValue;
 }
-
-type ModelValue = Props['multiple'] extends true ? T[] : T | undefined;
 
 const props = withDefaults(defineProps<Props>(), {
   itemText: 'text',
@@ -339,7 +344,7 @@ defineSlots<{
                 <slot
                   name="selection-item"
                   v-bind="{
-                    item,
+                    item: item as T,
                     idx,
                     itemText,
                     itemValue,
@@ -353,7 +358,7 @@ defineSlots<{
                     @dismiss="modelValue.splice(idx, 1)"
                     v-bind="selectionItemProps"
                   >
-                    {{ item[itemText] }}
+                    {{ (item as T)[itemText] }}
                   </VBadge>
                 </slot>
               </template>
