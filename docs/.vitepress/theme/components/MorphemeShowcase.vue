@@ -177,17 +177,19 @@ const selectValue = ref();
 
     <div class="flex flex-col lg:flex-row gap-6 lg:items-start mt-4">
       <div class="w-full lg:w-4/12">
-        <VList hover class="border dark:border-neutral-500 rounded-lg">
+        <VList hover class="border dark:border-gray-true-700 rounded-lg">
           <VListItem v-for="item in items" :key="item.id">
             <template #prepend>
               <VAvatar :src="item.avatar" :name="item.name" />
             </template>
             <VListItemTitle>{{ item.name }}</VListItemTitle>
-            <VListItemContent>{{ item.title }}</VListItemContent>
+            <VListItemContent class="dark:!text-gray-true-500">{{
+              item.title
+            }}</VListItemContent>
           </VListItem>
         </VList>
 
-        <VCard class="mt-4 border dark:border-neutral-500">
+        <VCard class="mt-4 border dark:border-gray-true-700">
           <div class="flex gap-4 items-center">
             <VShimmer rounded width="60px" height="60px" />
             <div class="flex flex-col gap-2 flex-1">
