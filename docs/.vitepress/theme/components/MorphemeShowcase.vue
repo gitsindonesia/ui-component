@@ -255,7 +255,4 @@ const selectValue = ref();
 .showcase h3 {
   margin-bottom: 0;
 }
-
-.section-header {
-}
 </style>

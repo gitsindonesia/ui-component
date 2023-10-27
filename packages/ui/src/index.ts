@@ -78,7 +78,7 @@ import {
   ListItemContent,
 } from '@morpheme/list';
 import { Icon } from '@morpheme/icon';
-import Avatar from '@morpheme/avatar';
+import Avatar, { AvatarGroup } from '@morpheme/avatar';
 import Shimmer from '@morpheme/shimmer';
 import VAutocomplete from '@morpheme/autocomplete';
 import './style.scss';
@@ -202,6 +202,7 @@ const plugin: Plugin = {
     app.component('VListItemContent', ListItemContent);
     app.component('VIcon', Icon);
     app.component('VAvatar', Avatar);
+    app.component('VAvatarGroup', AvatarGroup);
     app.component('VShimmer', Shimmer);
     app.component('VAutocomplete', VAutocomplete);
     app.component('VRating', Rating);
