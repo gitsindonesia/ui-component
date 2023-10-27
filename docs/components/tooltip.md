@@ -8,6 +8,10 @@ The `VTooltip` component displays a small pop-up box with additional information
 
 ## Usage
 
+::: info
+The `VTooltip` component is registered globally when you install with `@morpheme/ui`. So you don't need to import it manually.
+:::
+
 ### Basic Usage
 
 To use the tooltip component, you can use it in your template as follows:
@@ -17,8 +21,8 @@ To use the tooltip component, you can use it in your template as follows:
 ```vue
 <template>
   <VTooltip placement="top">
-    <template #activator="{on}">
-      <VBtn v-on="on"> Hove me </VBtn>
+    <template #activator>
+      <VBtn> Hove me </VBtn>
     </template>
     <span>Hello :)</span>
   </VTooltip>
@@ -29,15 +33,28 @@ To use the tooltip component, you can use it in your template as follows:
 
 The `activator` slot contains the element that will trigger the tooltip when hovered over or clicked. In this example, it is a `VBtn` component. The `VTooltip` component will display the `span` element as the tooltip.
 
-::: info
-The `VTooltip` component is registered globally when you install with `@morpheme/ui`. So you don't need to import it manually.
-:::
+### Directive Usage
+
+You can also use directive to create tooltip using `v-tooltip` directive.
+
+```vue
+<template>
+  <VBtn
+    v-tooltip="{
+      content: 'Hello :)',
+      theme: 'tooltip-black', // available: tooltip-black, tooltip-white
+    }"
+  >
+    Hove me
+  </VBtn>
+</template>
+```
 
 ## Props
 
-| Name                                  | Type     | Default |
-| ------------------------------------- | -------- | ------- |
-| [`placement`](#placement)             | `string` | `'top'` |
+| Name                                   | Type     | Default |
+| -------------------------------------- | -------- | ------- |
+| [`placement`](#placement)              | `string` | `'top'` |
 | [`options`](#options) ❌               | `object` | `{}`    |
 | [`activatorClass`](#activatorClass) ❌ | `string` | `''`    |
 | [`tooltipClass`](#tooltipClass) ❌     | `string` | `''`    |
