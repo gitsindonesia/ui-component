@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/utils",
-  "version": "1.0.0-rc.3",
+  "version": "1.0.0-rc.4",
   "description": "Morpheme Utilities",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly",

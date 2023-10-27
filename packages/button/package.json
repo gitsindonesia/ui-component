@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/button",
-  "version": "1.0.0-rc.3",
+  "version": "1.0.0-rc.4",
   "description": "Morpheme Button Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -16,16 +16,16 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@morpheme/icon": "^1.0.0-rc.3",
-    "@morpheme/spinner": "^1.0.0-rc.3",
-    "@morpheme/theme": "^1.0.0-rc.3",
-    "@morpheme/utils": "^1.0.0-rc.3",
+    "@morpheme/icon": "^1.0.0-rc.4",
+    "@morpheme/spinner": "^1.0.0-rc.4",
+    "@morpheme/theme": "^1.0.0-rc.4",
+    "@morpheme/utils": "^1.0.0-rc.4",
     "vue": "^3.3.4",
     "vue-router": "^4.1.5"
   },
   "devDependencies": {
-    "@morpheme/card": "^1.0.0-rc.3",
-    "@morpheme/tailwind-config": "^1.0.0-rc.3",
+    "@morpheme/card": "^1.0.0-rc.4",
+    "@morpheme/tailwind-config": "^1.0.0-rc.4",
     "@vitejs/plugin-vue": "^4.2.0",
     "@vue/test-utils": "^2.0.0-rc.17",
     "autoprefixer": "^10.4.2",
