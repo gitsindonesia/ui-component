@@ -52,7 +52,7 @@ import {
   VTabPanels,
   VTabPanel,
 } from '@morpheme/tabs';
-import VTooltip from '@morpheme/tooltip';
+import VTooltip, { FloatingVuePlugin } from '@morpheme/tooltip';
 import VNavbar from '@morpheme/navbar';
 import VNavDrawer from '@morpheme/nav-drawer';
 import VMenu from '@morpheme/menu';
@@ -123,7 +123,6 @@ import {
 } from '@morpheme/popover';
 import { VRow, VCol } from '@morpheme/layouts';
 import VCommand from '@morpheme/command';
-import { FloatingVuePlugin } from '@morpheme/tooltip'
 
 const plugin: Plugin = {
   install: (app) => {
