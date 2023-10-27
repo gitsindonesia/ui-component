@@ -1,7 +1,7 @@
 # Morpheme UI
 
 ![npm](https://img.shields.io/npm/v/@morpheme/ui)
-![npm](https://img.shields.io/npm/dw/@morpheme/ui)
+![npm](https://img.shields.io/npm/dm/@morpheme/ui)
 [![Coverage](https://sonar.gits.id/api/project_badges/measure?project=gits-ui&metric=coverage&token=4eb076c49cd76f7e9ec5834aae3c1eee57160330)](https://sonar.gits.id/dashboard?id=gits-ui)
 [![Quality Gate Status](https://sonar.gits.id/api/project_badges/measure?project=gits-ui&metric=alert_status&token=4eb076c49cd76f7e9ec5834aae3c1eee57160330)](https://sonar.gits.id/dashboard?id=gits-ui)
 
@@ -69,13 +69,15 @@ To set up Morpheme UI for development:
 To run the documentation locally:
 
 ```
-yarn docs:dev
+cd docs
+yarn dev
 ```
 
 To build the documentation for production:
 
 ```
-yarn docs:build
+cd docs
+yarn build
 ```
 
 ## License
