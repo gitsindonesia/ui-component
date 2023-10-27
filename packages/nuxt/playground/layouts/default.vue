@@ -111,6 +111,10 @@ const components = [
     name: 'Banner',
     href: '#banner',
   },
+  {
+    name: 'Tooltip',
+    href: '#tooltip',
+  },
 ];
 </script>
 

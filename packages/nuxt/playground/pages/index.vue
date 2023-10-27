@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {defaultColors} from '@morpheme/theme/defaultTheme';
-import {tabVariants} from '@morpheme/tabs'
+import {tabVariants} from '@morpheme/tabs';
 
 useHead({
   title: 'Morpheme UI Playground',
@@ -503,6 +503,43 @@ const timelineItems = [
           />
         </template>
       </VBanner>
+    </div>
+
+    <hr class="dark:border-neutral-700" />
+    <h3 id="tooltip" class="text-xl font-semibold">Tooltip</h3>
+    <div class="grid grid-cols-1 lg:grid-cols-4">
+      <div>
+        <p class="font-semibold mb-2 text-sm">Default</p>
+        <VBtn
+          v-tooltip="{
+            content: 'Hello :)',
+          }"
+        >
+          Hover Me
+        </VBtn>
+      </div>
+      <div>
+        <p class="font-semibold mb-2 text-sm">Black theme</p>
+        <VBtn
+          v-tooltip="{
+            content: 'Hello :)',
+            themes: 'tooltip-black',
+          }"
+        >
+          Hover Me
+        </VBtn>
+      </div>
+      <div>
+        <p class="font-semibold mb-2 text-sm">White theme</p>
+        <VBtn
+          v-tooltip="{
+            content: 'Hello :)',
+            themes: 'tooltip-white',
+          }"
+        >
+          Hover Me
+        </VBtn>
+      </div>
     </div>
   </div>
 </template>
