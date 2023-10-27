@@ -3,6 +3,55 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-rc.3](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-rc.2...v1.0.0-rc.3) (2023-10-27)
+
+
+### Bug Fixes
+
+* change default `noDataText` value ([13c9abb](https://github.com/gitsindonesia/ui-component/commit/13c9abb767a3b4446cfa404e6da14ae7e374de96))
+* **DataTable:** fix hover+striped dark mode ([4501e0b](https://github.com/gitsindonesia/ui-component/commit/4501e0b5ff6f0ddeb5c1295b378fbd3926ad8311))
+* **nuxt:** change DevTools icon ([eb1cdf3](https://github.com/gitsindonesia/ui-component/commit/eb1cdf35f36c58cddcabf2473fd82d9a0ca50402))
+* **Tabs:** fix import type ([c33a674](https://github.com/gitsindonesia/ui-component/commit/c33a6747f36eb7d505a4c7bde8ea92b879637836))
+* **Themes:** fix duplicate `display` ([97679cc](https://github.com/gitsindonesia/ui-component/commit/97679ccb123da46ac569a8bdde34f0ce0dbcbd02))
+* **ui:** register `VAvatarGroup` ([3399090](https://github.com/gitsindonesia/ui-component/commit/3399090ad1d8f6437139f55b8707c23997bd2ead))
+
+
+### Features
+
+* add custom floating-vue tooltip plugin ([1dc3c77](https://github.com/gitsindonesia/ui-component/commit/1dc3c77af3b160e40f76330d51ba64ec7ed158a1))
+* add new props: `rowClass` and `itemClass` ([46376e9](https://github.com/gitsindonesia/ui-component/commit/46376e92800a34dcac1a1ea05f561e860cc50a8e))
+* add new slots: `header`, `body` and `item` ([71acca3](https://github.com/gitsindonesia/ui-component/commit/71acca3a580af90c229713d237115b115a3bf08a))
+* add row color variants ([6a8072c](https://github.com/gitsindonesia/ui-component/commit/6a8072c2a44cb1477ba70d4453b34f832591dc8c))
+* **Editor:** upgrade CKEditor ([99123a3](https://github.com/gitsindonesia/ui-component/commit/99123a35970a702d1ded2fa9598851bd5352f72a))
+* **experimental/primitives/accordion:** add accordion animation ([481f4de](https://github.com/gitsindonesia/ui-component/commit/481f4ded2897c974ce335c1ee9434e00aac22f8b))
+* **experimental/primitives/accordion:** apply aria and data attributes ([29b3838](https://github.com/gitsindonesia/ui-component/commit/29b3838592ae7ba3cbe41f67a8ff8f38cc0e17ad))
+* **experimental/primitives/accordion:** implement default open ([f930812](https://github.com/gitsindonesia/ui-component/commit/f930812ab48911b825f8bae19f7a97a56f21e5f6))
+* **experimental/primitives/alert:** add support for renderless component ([fb5c2ab](https://github.com/gitsindonesia/ui-component/commit/fb5c2ab750e9fe7791ae3717e3c8a9e5d6d4c01b))
+* **experimental/primitives/collapsible:** add collapse transition ([25bfc1e](https://github.com/gitsindonesia/ui-component/commit/25bfc1ede4d0d7c3d4111660cc65d9e212311c4f))
+* **experimental/primitives/menu:** hide dropdown when clicking outside ([9131f1e](https://github.com/gitsindonesia/ui-component/commit/9131f1ebe48dfeb0e97b21efa10f01a6f77d810c))
+* **experimental/primitives/switch:** add hidden input, switch thumb & remove switch group ([3f27736](https://github.com/gitsindonesia/ui-component/commit/3f27736634502fe41434b3a8b9a40a3a049700d8))
+* **experimental/primitives:** accordion primitives ([6d22d4b](https://github.com/gitsindonesia/ui-component/commit/6d22d4b40ee1cc7ca7f8cb65679fab296b739389))
+* **experimental/primitives:** add alert primitive component ([03855b8](https://github.com/gitsindonesia/ui-component/commit/03855b8572dac485c4eb09b53ad5274acd71c7ef))
+* **experimental/primitives:** collapsible component ([fc63592](https://github.com/gitsindonesia/ui-component/commit/fc63592f1213e00f0d5c8a35e867181486594c12))
+* **experimental/primitives:** dialog primitives ([d3fe469](https://github.com/gitsindonesia/ui-component/commit/d3fe46903efbf4e45a3753f3b150623ae4ef7063))
+* **experimental/primitives:** improve accordion logic ([9625886](https://github.com/gitsindonesia/ui-component/commit/9625886b58f2a6fc7f2043be5dc91987e2eed9d2))
+* **experimental/primitives:** menu (dropdown) primitives ([7e93678](https://github.com/gitsindonesia/ui-component/commit/7e93678052c0172c1d444328496adfce1515a937))
+* **experimental/primitives:** switch primitives ([f6f3182](https://github.com/gitsindonesia/ui-component/commit/f6f31820c5a1f681ad79326f217fa8e980908e85))
+* **Nuxt:** upgrade to Nuxt 3.8 ([296c6e7](https://github.com/gitsindonesia/ui-component/commit/296c6e7e487e609cd7467ad2082baeeb6bc07a57))
+* **Select:** alias `Select` as `SelectMenu` ([e2c5dd0](https://github.com/gitsindonesia/ui-component/commit/e2c5dd0d96eddc85e3dc62a892656c0207ec6086))
+* **SelectMenu:** implement generic type and dynamic `ModelValue` types ([43aebe4](https://github.com/gitsindonesia/ui-component/commit/43aebe4d55940bd9f1c45ac4050b24537eb88ccf))
+* **starter:** add new Astro starter ([208f55c](https://github.com/gitsindonesia/ui-component/commit/208f55c926c75bb241413e0d4b74169bb30040a2))
+* **ui:** add custom Floating Vue plugin for tooltip ([870994d](https://github.com/gitsindonesia/ui-component/commit/870994d253da8de0e169c93fd4142dccac8712cc))
+
+
+### Reverts
+
+* Revert "Revert "Merge branches 'main' and 'main' of github.com:gitsindonesia/ui-component" ([1927a7c](https://github.com/gitsindonesia/ui-component/commit/1927a7cf7703c2d36cc17ebbe7a04cf5a67cf556))
+
+
+
+
+
 # [1.0.0-rc.2](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-rc.1...v1.0.0-rc.2) (2023-10-02)
 
 

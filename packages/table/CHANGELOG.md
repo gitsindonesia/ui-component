@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-rc.3](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-rc.2...v1.0.0-rc.3) (2023-10-27)
+
+
+### Bug Fixes
+
+* change default `noDataText` value ([13c9abb](https://github.com/gitsindonesia/ui-component/commit/13c9abb767a3b4446cfa404e6da14ae7e374de96))
+* **DataTable:** fix hover+striped dark mode ([4501e0b](https://github.com/gitsindonesia/ui-component/commit/4501e0b5ff6f0ddeb5c1295b378fbd3926ad8311))
+
+
+### Features
+
+* add new props: `rowClass` and `itemClass` ([46376e9](https://github.com/gitsindonesia/ui-component/commit/46376e92800a34dcac1a1ea05f561e860cc50a8e))
+* add new slots: `header`, `body` and `item` ([71acca3](https://github.com/gitsindonesia/ui-component/commit/71acca3a580af90c229713d237115b115a3bf08a))
+* add row color variants ([6a8072c](https://github.com/gitsindonesia/ui-component/commit/6a8072c2a44cb1477ba70d4453b34f832591dc8c))
+
+
+### Reverts
+
+* Revert "Revert "Merge branches 'main' and 'main' of github.com:gitsindonesia/ui-component" ([1927a7c](https://github.com/gitsindonesia/ui-component/commit/1927a7cf7703c2d36cc17ebbe7a04cf5a67cf556))
+
+
+
+
+
 # [1.0.0-rc.1](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-rc.0...v1.0.0-rc.1) (2023-09-15)
 
 **Note:** Version bump only for package @morpheme/table

@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/tailwind-config",
-  "version": "1.0.0-rc.0",
+  "version": "1.0.0-rc.3",
   "description": "Morpheme Tailwind Config",
   "main": "config.js",
   "scripts": {},
@@ -12,9 +12,9 @@
   "license": "MIT",
   "dependencies": {
     "@morpheme/design-tokens": "^0.1.0-alpha.5",
-    "@morpheme/tailwind-components": "^1.0.0-rc.0",
-    "@morpheme/theme": "^1.0.0-rc.0",
-    "@morpheme/utils": "^1.0.0-rc.0",
+    "@morpheme/tailwind-components": "^1.0.0-rc.3",
+    "@morpheme/theme": "^1.0.0-rc.3",
+    "@morpheme/utils": "^1.0.0-rc.3",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.9",

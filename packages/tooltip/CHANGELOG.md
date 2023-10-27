@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-rc.3](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-rc.2...v1.0.0-rc.3) (2023-10-27)
+
+
+### Features
+
+* add custom floating-vue tooltip plugin ([1dc3c77](https://github.com/gitsindonesia/ui-component/commit/1dc3c77af3b160e40f76330d51ba64ec7ed158a1))
+* **ui:** add custom Floating Vue plugin for tooltip ([870994d](https://github.com/gitsindonesia/ui-component/commit/870994d253da8de0e169c93fd4142dccac8712cc))
+
+
+### Reverts
+
+* Revert "Revert "Merge branches 'main' and 'main' of github.com:gitsindonesia/ui-component" ([1927a7c](https://github.com/gitsindonesia/ui-component/commit/1927a7cf7703c2d36cc17ebbe7a04cf5a67cf556))
+
+
+
+
+
 # [1.0.0-rc.1](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-rc.0...v1.0.0-rc.1) (2023-09-15)
 
 **Note:** Version bump only for package @morpheme/tooltip

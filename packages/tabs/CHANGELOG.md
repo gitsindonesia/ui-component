@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-rc.3](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-rc.2...v1.0.0-rc.3) (2023-10-27)
+
+
+### Bug Fixes
+
+* **Tabs:** fix import type ([c33a674](https://github.com/gitsindonesia/ui-component/commit/c33a6747f36eb7d505a4c7bde8ea92b879637836))
+
+
+### Reverts
+
+* Revert "Revert "Merge branches 'main' and 'main' of github.com:gitsindonesia/ui-component" ([1927a7c](https://github.com/gitsindonesia/ui-component/commit/1927a7cf7703c2d36cc17ebbe7a04cf5a67cf556))
+
+
+
+
+
 # [1.0.0-rc.1](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-rc.0...v1.0.0-rc.1) (2023-09-15)
 
 
