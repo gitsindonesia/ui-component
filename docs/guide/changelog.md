@@ -1,5 +1,3 @@
-<script setup>
-import Changelog from '../../CHANGELOG.md'
-</script>
+# Changelog
 
-<Changelog />
+Please refer to [CHANGELOG.md](https://github.com/gitsindonesia/ui-component/blob/main/CHANGELOG.md) for details.
