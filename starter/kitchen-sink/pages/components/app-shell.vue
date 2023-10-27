@@ -90,24 +90,27 @@
         <template #aside>
           <VNavDrawer bordered mini class="!h-full">
             <div class="flex flex-col gap-2 justify-center mt-2">
-              <VTooltip placement="right">
-                <template #activator>
-                  <VAvatar size="xl" name="John Doe"></VAvatar>
-                </template>
-                <span>John Doe</span>
-              </VTooltip>
-              <VTooltip placement="right">
-                <template #activator>
-                  <VAvatar size="xl" name="Axel Krip"></VAvatar>
-                </template>
-                <span>Axel Krip</span>
-              </VTooltip>
-              <VTooltip placement="right">
-                <template #activator>
-                  <VAvatar size="xl" name="Warsono"></VAvatar>
-                </template>
-                <span>Warsono</span>
-              </VTooltip>
+              <VAvatar
+                size="xl"
+                name="John Doe"
+                v-tooltip="{
+                  content: 'John Doe',
+                }"
+              />
+              <VAvatar
+                size="xl"
+                name="Axel Krip"
+                v-tooltip="{
+                  content: 'Axel Krip',
+                }"
+              />
+              <VAvatar
+                size="xl"
+                name="Warsono"
+                v-tooltip="{
+                  content: 'Warsono',
+                }"
+              />
             </div>
           </VNavDrawer>
         </template>
@@ -121,13 +124,7 @@
 
         <div class="flex flex-1">
           <div
-            class="
-              w-72
-              border-r
-              dark:border-neutral-600
-              h-[100dvh]
-              overflow-x-auto
-            "
+            class="w-72 border-r dark:border-neutral-600 h-[100dvh] overflow-x-auto"
           >
             <VList hover small>
               <VListItem

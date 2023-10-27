@@ -12,8 +12,8 @@ dependencies:
     specifier: ^3.0.1
     version: 3.0.1(@babel/core@7.23.2)(astro@3.2.4)(vite@4.4.11)(vue@3.3.4)
   '@morpheme/themes':
-    specifier: 1.0.0-rc.2
-    version: 1.0.0-rc.2
+    specifier: 1.0.0-rc.3
+    version: 1.0.0-rc.3
   '@morpheme/ui':
     specifier: 1.0.0-rc.2
     version: 1.0.0-rc.2
@@ -1712,8 +1712,8 @@ packages:
       - ts-node
     dev: false
 
-  /@morpheme/themes@1.0.0-rc.2:
-    resolution: {integrity: sha512-zgZoxWJoEqNDqsN4PjDJnU1OBEc/dc7CmQHsZIg0EHMdGjFbalFEvQRChUUVhOsDP55uZPWqX2eLwAMlmV9rxg==}
+  /@morpheme/themes@1.0.0-rc.3:
+    resolution: {integrity: sha512-ArY+gU1fHuJ81B6fL1bLpbtMYqIMyrhr/LHJHAF149ga3yt+w9xmp35LiKoV93b7qAS9mt0m92In8JMWwQUkZw==}
     dependencies:
       '@morpheme/design-tokens': 0.1.0-alpha.5
       vue: 3.3.4
@@ -1797,7 +1797,7 @@ packages:
       '@morpheme/tailwind-config': 1.0.0-rc.0
       '@morpheme/text': 1.0.0-rc.0
       '@morpheme/theme': 1.0.0-rc.0
-      '@morpheme/themes': 1.0.0-rc.2
+      '@morpheme/themes': 1.0.0-rc.3
       '@morpheme/timeline': 1.0.0-rc.1
       '@morpheme/toast': 1.0.0-rc.1
       '@morpheme/tooltip': 1.0.0-rc.1

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { breakpointsTailwind, useBreakpoints } from "@vueuse/core";
+import {breakpointsTailwind, useBreakpoints} from '@vueuse/core';
 
 const breakpoints = useBreakpoints(breakpointsTailwind);
-const isMobile = breakpoints.smaller("lg"); // only smaller than lg
+const isMobile = breakpoints.smaller('lg'); // only smaller than lg
 const isAsideOpen = ref(false);
 const isMini = ref(false);
 const settingsDrawer = ref(false);
@@ -46,20 +46,18 @@ function onMenuClick() {
       <VAppBar bordered class="!h-[60px] px-4 !hidden lg:!flex" sticky>
         <div class="flex items-center w-full justify-between">
           <div class="flex gap-1">
-            <VTooltip class="inline" placement="bottom">
-              <template #activator>
-                <VBtn
-                  @click="isAsideOpen = !isAsideOpen"
-                  :prefix-icon="
-                    isAsideOpen ? 'ri:arrow-left-s-line' : 'ri:arrow-right-s-line'
-                  "
-                  size="sm"
-                  fab
-                  icon
-                />
-              </template>
-              <span>Toggle Sidebar</span>
-            </VTooltip>
+            <VBtn
+              @click="isAsideOpen = !isAsideOpen"
+              :prefix-icon="
+                isAsideOpen ? 'ri:arrow-left-s-line' : 'ri:arrow-right-s-line'
+              "
+              size="sm"
+              fab
+              icon
+              v-tooltip="{
+                content: 'Toggle Sidebar',
+              }"
+            />
           </div>
           <div>
             <VBtn
@@ -88,7 +86,7 @@ function onMenuClick() {
         :shadow="isMobile"
         :bordered="!isMobile"
         :sticky="!isMobile"
-        :class="{ 'z-20': isMobile }"
+        :class="{'z-20': isMobile}"
       >
         <NuxtLink
           to="/"
