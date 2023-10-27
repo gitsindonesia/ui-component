@@ -58,7 +58,15 @@ const tabs = ref([
           prepend-icon="ph:calendar"
           model-value="Jan 03, 2023 - Feb 28, 2023"
         />
-        <VBtn color="primary">Download</VBtn>
+        <VBtn
+          v-tooltip="{
+            content: 'Download',
+            theme: 'tooltip-white',
+          }"
+          color="primary"
+        >
+          Download
+        </VBtn>
       </div>
     </template>
   </PageHeader>

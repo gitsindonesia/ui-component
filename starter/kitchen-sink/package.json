@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@morpheme/design-tokens": "^1.0.0",
-    "@morpheme/nuxt": "^1.0.0-rc.3",
+    "@morpheme/nuxt": "1.0.0-edge.2",
     "apexcharts": "^3.37.3",
     "vue3-apexcharts": "^1.4.4"
   },

@@ -9,8 +9,8 @@ dependencies:
     specifier: ^1.0.0
     version: 1.0.0
   '@morpheme/nuxt':
-    specifier: ^1.0.0-rc.3
-    version: 1.0.0-rc.3(nuxt@3.7.1)(vite@4.4.9)
+    specifier: 1.0.0-edge.2
+    version: 1.0.0-edge.2(nuxt@3.7.1)(vite@4.4.9)
   apexcharts:
     specifier: ^3.37.3
     version: 3.37.3
@@ -1892,8 +1892,8 @@ packages:
       - ts-node
     dev: false
 
-  /@morpheme/nuxt@1.0.0-rc.3(nuxt@3.7.1)(vite@4.4.9):
-    resolution: {integrity: sha512-x0v3lWkR3XPo+5deVl0Mhrc1TGN2bn1IwANGHth9nszWwCWn/4QKAqvmCPa5A62BjBFyIk/BgXx2X0OLLX3mmQ==}
+  /@morpheme/nuxt@1.0.0-edge.2(nuxt@3.7.1)(vite@4.4.9):
+    resolution: {integrity: sha512-hgxJnm2QXv11vWpcGQWeuAVrjTpuvT7ItjyJTWj5uK8iX3s3IYQdPPFzNPJBs2MndemmPjNW/m0d2eAoPdFK0A==}
     dependencies:
       '@morpheme/ui': 1.0.0-rc.3(@nuxt/kit@3.8.0)
       '@nuxt/devtools-kit': 0.5.5(nuxt@3.7.1)(vite@4.4.9)
@@ -2311,7 +2311,7 @@ packages:
       vite: '*'
     dependencies:
       '@nuxt/kit': 3.8.0
-      '@nuxt/schema': 3.7.1
+      '@nuxt/schema': 3.8.0
       execa: 7.2.0
       nuxt: 3.7.1(sass@1.64.1)
       vite: 4.4.9(sass@1.64.1)
