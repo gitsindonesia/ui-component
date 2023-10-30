@@ -150,262 +150,262 @@
   dependencies:
     regenerator-runtime "^0.14.0"
 
-"@ckeditor/ckeditor5-adapter-ckfinder@^35.4.0":
-  version "35.4.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-adapter-ckfinder/-/ckeditor5-adapter-ckfinder-35.4.0.tgz#c1d9cbbb6be682f23e594d9002a7441492ad805e"
-  integrity sha512-0o0nkggKYwjx60Ge7GGuJp2jJGwGW9LlAOZEVPTMRG8b/uSzMNLHyCChKeakRO4z7tiopJM6o9Y8sfbDM/nKpA==
+"@ckeditor/ckeditor5-adapter-ckfinder@^37.1.0":
+  version "37.1.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-adapter-ckfinder/-/ckeditor5-adapter-ckfinder-37.1.0.tgz#215f1023fa6afde7ed8978c3db3fb08073b50022"
+  integrity sha512-SKjcsKqVw1EpZ3P0HaLDmPwf0Kv9qaqwUsp9Lv0InpPWlvubTCH4YwJ/bC7uh0NApQdygJ10S1CKn7/bSDrT4A==
   dependencies:
-    ckeditor5 "^35.4.0"
+    ckeditor5 "^37.1.0"
 
-"@ckeditor/ckeditor5-autoformat@^35.4.0":
-  version "35.4.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-autoformat/-/ckeditor5-autoformat-35.4.0.tgz#1048a6ac4c096d7807c0410c5549bc17ceb3fdef"
-  integrity sha512-4vAOaoiziR2XN8KmismiBiknCeOYKtskW8yQnSrFWUX3Fkok3KrHaRFr48AbIN4pHI2xTMKPLeMLeRtZd8tTVw==
+"@ckeditor/ckeditor5-autoformat@^37.1.0":
+  version "37.1.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-autoformat/-/ckeditor5-autoformat-37.1.0.tgz#a4bfc9435388bb071a6bff019c8cfa961664234c"
+  integrity sha512-wZSuqsD6oz06fbE2zCn8PUDyax5YUDWFnB/26piLBu0HteRYFXJtIq6s2vA+zBbFfR3FL7362t+DP9VEHGigtw==
   dependencies:
-    ckeditor5 "^35.4.0"
+    ckeditor5 "^37.1.0"
 
-"@ckeditor/ckeditor5-basic-styles@^35.4.0":
-  version "35.4.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-basic-styles/-/ckeditor5-basic-styles-35.4.0.tgz#3b5270997511fc5d64051ee9f793e356ee1786a9"
-  integrity sha512-6JkoplYMwIHN1E/w3DoY0i95B41sbGwsNAtlvx6qaBvNKkLu4rRCtiBUJDnx8qZxxQXHih5ZOw8bUQHl4mt8hw==
+"@ckeditor/ckeditor5-basic-styles@^37.1.0":
+  version "37.1.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-basic-styles/-/ckeditor5-basic-styles-37.1.0.tgz#d79a8dcf1b21b02bd29f17c6624fce5f627f671e"
+  integrity sha512-AwCiVsq5Wh0tBOPLOV0NADnZRNw210h1/xTzsO2U8TGBcbVJ4ukU07OMSvkOhi7jrA4wLZI7R+XmhZR0vsUGkA==
   dependencies:
-    ckeditor5 "^35.4.0"
+    ckeditor5 "^37.1.0"
 
-"@ckeditor/ckeditor5-block-quote@^35.4.0":
-  version "35.4.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-block-quote/-/ckeditor5-block-quote-35.4.0.tgz#fa6cce133200243ddc61317cdeea9dd34ac63d7b"
-  integrity sha512-AXoJhSVwl/RSelmxqxMcLq0VUXubjEvMc32xvF6CyUkc/vlSkZec6noznXyVo0P5TXOxsFbzwFAdBOSFTFjD+A==
+"@ckeditor/ckeditor5-block-quote@^37.1.0":
+  version "37.1.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-block-quote/-/ckeditor5-block-quote-37.1.0.tgz#5410892be4919edb1fa4dc26bdb4ea44ca38a3cd"
+  integrity sha512-975XXg4YzJ857UF7dPujGxIkyvVfU6m4/QTCKU5j2SbrTqPKCQ59PLOOgyy1qC76D/uyqV1+V+beGairUrmA1A==
   dependencies:
-    ckeditor5 "^35.4.0"
+    ckeditor5 "^37.1.0"
 
-"@ckeditor/ckeditor5-build-classic@^35.3.2":
-  version "35.4.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-build-classic/-/ckeditor5-build-classic-35.4.0.tgz#14067ba78042d8ca463851bdfe0a4cecf94a957a"
-  integrity sha512-DDvhtoOggo2B7/M+XPReIkFOvkXzzjTP3d4dzakODIFhZ5Y633U0NlIwTeMP/KVvTfzmesW9FJzER0fbVosQgA==
+"@ckeditor/ckeditor5-build-classic@^37.0.0":
+  version "37.1.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-build-classic/-/ckeditor5-build-classic-37.1.0.tgz#4e1733b6a73bef2c46f025f5d0a99cab07cf10b1"
+  integrity sha512-5ew4/yWlkUnGvTsoKVKX5Fy6iA/Cj6FZX6jovGY7fBerBG7kixsmrTQ0pIcoUnFUPUEiGjWsqSytUsvXaPKlaA==
   dependencies:
-    "@ckeditor/ckeditor5-adapter-ckfinder" "^35.4.0"
-    "@ckeditor/ckeditor5-autoformat" "^35.4.0"
-    "@ckeditor/ckeditor5-basic-styles" "^35.4.0"
-    "@ckeditor/ckeditor5-block-quote" "^35.4.0"
-    "@ckeditor/ckeditor5-ckbox" "^35.4.0"
-    "@ckeditor/ckeditor5-ckfinder" "^35.4.0"
-    "@ckeditor/ckeditor5-cloud-services" "^35.4.0"
-    "@ckeditor/ckeditor5-easy-image" "^35.4.0"
-    "@ckeditor/ckeditor5-editor-classic" "^35.4.0"
-    "@ckeditor/ckeditor5-essentials" "^35.4.0"
-    "@ckeditor/ckeditor5-heading" "^35.4.0"
-    "@ckeditor/ckeditor5-image" "^35.4.0"
-    "@ckeditor/ckeditor5-indent" "^35.4.0"
-    "@ckeditor/ckeditor5-link" "^35.4.0"
-    "@ckeditor/ckeditor5-list" "^35.4.0"
-    "@ckeditor/ckeditor5-media-embed" "^35.4.0"
-    "@ckeditor/ckeditor5-paragraph" "^35.4.0"
-    "@ckeditor/ckeditor5-paste-from-office" "^35.4.0"
-    "@ckeditor/ckeditor5-table" "^35.4.0"
-    "@ckeditor/ckeditor5-typing" "^35.4.0"
+    "@ckeditor/ckeditor5-adapter-ckfinder" "^37.1.0"
+    "@ckeditor/ckeditor5-autoformat" "^37.1.0"
+    "@ckeditor/ckeditor5-basic-styles" "^37.1.0"
+    "@ckeditor/ckeditor5-block-quote" "^37.1.0"
+    "@ckeditor/ckeditor5-ckbox" "^37.1.0"
+    "@ckeditor/ckeditor5-ckfinder" "^37.1.0"
+    "@ckeditor/ckeditor5-cloud-services" "^37.1.0"
+    "@ckeditor/ckeditor5-easy-image" "^37.1.0"
+    "@ckeditor/ckeditor5-editor-classic" "^37.1.0"
+    "@ckeditor/ckeditor5-essentials" "^37.1.0"
+    "@ckeditor/ckeditor5-heading" "^37.1.0"
+    "@ckeditor/ckeditor5-image" "^37.1.0"
+    "@ckeditor/ckeditor5-indent" "^37.1.0"
+    "@ckeditor/ckeditor5-link" "^37.1.0"
+    "@ckeditor/ckeditor5-list" "^37.1.0"
+    "@ckeditor/ckeditor5-media-embed" "^37.1.0"
+    "@ckeditor/ckeditor5-paragraph" "^37.1.0"
+    "@ckeditor/ckeditor5-paste-from-office" "^37.1.0"
+    "@ckeditor/ckeditor5-table" "^37.1.0"
+    "@ckeditor/ckeditor5-typing" "^37.1.0"
 
-"@ckeditor/ckeditor5-ckbox@^35.4.0":
-  version "35.4.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-ckbox/-/ckeditor5-ckbox-35.4.0.tgz#46bd9fbd19d4abdd48525736a43d078e7de552be"
-  integrity sha512-kpEleQLsu3/nyvc46zkWBp3EvvxinnQfmwvi52h+FLbbI0TE0dxadRppQHZjHXd4yw29N6B1ePeMAVFRX1iYjQ==
+"@ckeditor/ckeditor5-ckbox@^37.1.0":
+  version "37.1.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-ckbox/-/ckeditor5-ckbox-37.1.0.tgz#f4940fdbe90f113e5542dba677e30f1600238e2a"
+  integrity sha512-XcbQPFkGevxKLilM28szORH/PZyR39cLwogZgothLXX4aPiiBGox8ldN6uI7cTaDkGjxzvaBF1AvHhcAPGs5pA==
   dependencies:
-    ckeditor5 "^35.4.0"
+    ckeditor5 "^37.1.0"
 
-"@ckeditor/ckeditor5-ckfinder@^35.4.0":
-  version "35.4.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-ckfinder/-/ckeditor5-ckfinder-35.4.0.tgz#aa7f243c47f384fb2bb792f5a9399debc2232752"
-  integrity sha512-PeA3PA1c1JGn9f+rZlnWHSuXUU4DjWU4oUp5tMWAtS8OV1srJ2DbU/+Z/WZHO4jmDMfQX9XmN5B/sdLvTQ7ZjQ==
+"@ckeditor/ckeditor5-ckfinder@^37.1.0":
+  version "37.1.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-ckfinder/-/ckeditor5-ckfinder-37.1.0.tgz#14e70aa67b077c651e4f60bdbd9ebab18921b3e8"
+  integrity sha512-zgNldaJC9g3o0zy2plmIffO1SyPsBDVdVq65Y6zoT4YXqandpEwjdR/kGFwHBYr6hdMz4MsaPDXRXxYIAwU0LA==
   dependencies:
-    ckeditor5 "^35.4.0"
+    ckeditor5 "^37.1.0"
 
-"@ckeditor/ckeditor5-clipboard@^35.4.0":
-  version "35.4.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-clipboard/-/ckeditor5-clipboard-35.4.0.tgz#8529fd45d06a7edea0f73cd0b5b3052f2272335c"
-  integrity sha512-B6rIQxvOrHvO9TZRC8JA0wKk+IfN880UJkYIg1qlhf9HFNVjdVbtHaiCsPD+TzGmQN3XHXfNjgjabGRIn0iZmw==
+"@ckeditor/ckeditor5-clipboard@^37.1.0":
+  version "37.1.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-clipboard/-/ckeditor5-clipboard-37.1.0.tgz#93be9d304f680786bc7c2042ca6160758f7b8828"
+  integrity sha512-0L1driXKRl1IUZ9amo+DVBGJuNjuVQ4nmuurIDqR1U8pRFt34wBzaIHivUbsKeZYe74RC4m4tE2DcUrltXwLAQ==
   dependencies:
-    "@ckeditor/ckeditor5-core" "^35.4.0"
-    "@ckeditor/ckeditor5-engine" "^35.4.0"
-    "@ckeditor/ckeditor5-utils" "^35.4.0"
-    "@ckeditor/ckeditor5-widget" "^35.4.0"
-    lodash-es "^4.17.11"
-
-"@ckeditor/ckeditor5-cloud-services@^35.4.0":
-  version "35.4.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-cloud-services/-/ckeditor5-cloud-services-35.4.0.tgz#924e267414e7f9c5012fa9fe4d1de8b518851d96"
-  integrity sha512-iavLfEKx0GVPMIyPnnOlD9TCVVLIrwp1dCQAfO3A7WUySiLBcC7ShJ+6Bm00CVQQE6VtrYOevrKN/RcRzImzHw==
-  dependencies:
-    ckeditor5 "^35.4.0"
-
-"@ckeditor/ckeditor5-core@^35.4.0":
-  version "35.4.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-core/-/ckeditor5-core-35.4.0.tgz#39390445c8363a80d4ce0e45d93efa13b8523f6e"
-  integrity sha512-Rf0H7C4inCj/YC8aii0cT7TC/IuBIQ+tXmu9qd8/1BJ/rz1MCHXtBPApjTbFp33OE3aOFB5+NUaKt05k/dL3OA==
-  dependencies:
-    "@ckeditor/ckeditor5-engine" "^35.4.0"
-    "@ckeditor/ckeditor5-ui" "^35.4.0"
-    "@ckeditor/ckeditor5-utils" "^35.4.0"
+    "@ckeditor/ckeditor5-core" "^37.1.0"
+    "@ckeditor/ckeditor5-engine" "^37.1.0"
+    "@ckeditor/ckeditor5-utils" "^37.1.0"
+    "@ckeditor/ckeditor5-widget" "^37.1.0"
     lodash-es "^4.17.15"
 
-"@ckeditor/ckeditor5-easy-image@^35.4.0":
-  version "35.4.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-easy-image/-/ckeditor5-easy-image-35.4.0.tgz#b69e84c97c1cb83796bde914c0ff374ee967eac4"
-  integrity sha512-DRCQ/zh2Ul0f7RrSBG3WYKnZbrU2jj1RazX4qZM1b1WlM81y7+i+Rnp209JIT9TnlrTdYJy2EUY17YHughuyzA==
+"@ckeditor/ckeditor5-cloud-services@^37.1.0":
+  version "37.1.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-cloud-services/-/ckeditor5-cloud-services-37.1.0.tgz#d4be1e4804ab777fc9cd546dde5b543356bfc82a"
+  integrity sha512-C5a+DKu1afASJVC0fl62WMjwaMIEulG/B2uyXySY6hXdHVC3aZkX0Z1Csn7QA2E0nk3KMkoGxCLWXJnsJk2gtg==
   dependencies:
-    ckeditor5 "^35.4.0"
+    ckeditor5 "^37.1.0"
 
-"@ckeditor/ckeditor5-editor-classic@^35.4.0":
-  version "35.4.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-editor-classic/-/ckeditor5-editor-classic-35.4.0.tgz#6fa7e05fc7282ba9f7f31060d0b71e3cc73784a9"
-  integrity sha512-EqAqFD/5oPtDMU2AoH3eJaDplcS8MxfkiRQ5hzeC1JeIPT94w5FCHnB4SAkjLPDnlyZnBWOOYdZSuln2TRIbEw==
+"@ckeditor/ckeditor5-core@^37.1.0":
+  version "37.1.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-core/-/ckeditor5-core-37.1.0.tgz#c7ecd10cd2f5e11a43a1dab624621c2aea6aed4f"
+  integrity sha512-edewiWlMCK5BPN9Can0A9skob9dNDMrv09khiKaUYK5PEobZZQSyUBck52vXpt255u2rnlmhF5phTqsQo5EiOw==
   dependencies:
-    ckeditor5 "^35.4.0"
+    "@ckeditor/ckeditor5-engine" "^37.1.0"
+    "@ckeditor/ckeditor5-utils" "^37.1.0"
     lodash-es "^4.17.15"
 
-"@ckeditor/ckeditor5-engine@^35.4.0":
-  version "35.4.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-engine/-/ckeditor5-engine-35.4.0.tgz#cb0ed9f0c5a9ef00b24ffbd8d2100fff1e0e90cb"
-  integrity sha512-67QKtUGJeLM072h9qURvzczYGU3ecuxR9LLmM4dffnV+PBNQ9e8RDCY7PuuEP0pplmAUI6/XqoZJIbk6h7ZV3Q==
+"@ckeditor/ckeditor5-easy-image@^37.1.0":
+  version "37.1.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-easy-image/-/ckeditor5-easy-image-37.1.0.tgz#e72af6e9190e04f8db67bfc685c74811dcbdc7b3"
+  integrity sha512-1pu7IF0gpfIUVPci06kQaf76jvJkavFmbkK6MpxjccFsCVa2HONgyPfbMHvBLb2J5TBm/IeN+yHF/qmKiIMTKg==
   dependencies:
-    "@ckeditor/ckeditor5-utils" "^35.4.0"
+    ckeditor5 "^37.1.0"
+
+"@ckeditor/ckeditor5-editor-classic@^37.1.0":
+  version "37.1.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-editor-classic/-/ckeditor5-editor-classic-37.1.0.tgz#37882a92b842c857041367aab6631fe64c8041cb"
+  integrity sha512-3XipfINHckd8NITQT9ePdk0+3vytZ567x5qDGCeTgVAKqiFYNaEmuQKir1+D8uQddbrDNolv91XcILN8XHzDWQ==
+  dependencies:
+    ckeditor5 "^37.1.0"
     lodash-es "^4.17.15"
 
-"@ckeditor/ckeditor5-enter@^35.4.0":
-  version "35.4.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-enter/-/ckeditor5-enter-35.4.0.tgz#c0f967dc3f48faeb07d839ac0426227e118ade56"
-  integrity sha512-y95RnA/Gw72e220PJKVwNbwPzX4SRs82/rXu1jVyJXty7CcEZqqfyRtW6odICAXr5eKI5XKgzFgpFYULL3D9Nw==
+"@ckeditor/ckeditor5-engine@^37.1.0":
+  version "37.1.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-engine/-/ckeditor5-engine-37.1.0.tgz#628cb27102d70974c5d8a0a20dda893f2c76facf"
+  integrity sha512-D/xWNOgqk3G1qtv8P2UCmpHcIONjJE0NRJeJuJ8jppIgOYpbVG/7KSuzJYV7G1M9oGSBAeNb7U+lz7y/eg38Hw==
   dependencies:
-    "@ckeditor/ckeditor5-core" "^35.4.0"
-    "@ckeditor/ckeditor5-engine" "^35.4.0"
-
-"@ckeditor/ckeditor5-essentials@^35.4.0":
-  version "35.4.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-essentials/-/ckeditor5-essentials-35.4.0.tgz#4d56655886206b912e2178cb9440ce933ca96100"
-  integrity sha512-tTtTb4NYSQi99LPDzAVUnFhW6iTqSuaylkg0XnDvO2lVR3tAA27gOOjGqc8Ri9NMGGeZkFTvXpnVkXkFnDP2nQ==
-  dependencies:
-    ckeditor5 "^35.4.0"
-
-"@ckeditor/ckeditor5-heading@^35.4.0":
-  version "35.4.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-heading/-/ckeditor5-heading-35.4.0.tgz#86f6b8a01e0388e61dd687e56e631029f75f1a3d"
-  integrity sha512-cZwKzAg0USxaDZstQXKMkzrE+fOEr+6YFtXpHGrKgsaisI9xkuOWD40dZvLovTmENLGPopDkdfGewj8jscB9Kg==
-  dependencies:
-    ckeditor5 "^35.4.0"
-
-"@ckeditor/ckeditor5-image@^35.4.0":
-  version "35.4.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-image/-/ckeditor5-image-35.4.0.tgz#16d6d7bf0a47bbd0de54666cabf366e53d071dcf"
-  integrity sha512-SQ+IiIB6SLhdhVy3gRKxxfBXpLikInvaP3ILOvPQlaC0Bt5ciJ3t/180zCBlbCvvRwIQNo4bYbZc5cI8UBIAaA==
-  dependencies:
-    "@ckeditor/ckeditor5-ui" "^35.4.0"
-    ckeditor5 "^35.4.0"
+    "@ckeditor/ckeditor5-utils" "^37.1.0"
     lodash-es "^4.17.15"
 
-"@ckeditor/ckeditor5-indent@^35.4.0":
-  version "35.4.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-indent/-/ckeditor5-indent-35.4.0.tgz#045c88cd16a7a7a4888128d1c41bbea1352a3861"
-  integrity sha512-FNp5S6t/RlY4eARR4E/jzxqjAbsGMa+30ZKS9maTOCx0TDmvmjD0jvZc9+1fe/KzSBk9wtmHYOil1J+W66rKvw==
+"@ckeditor/ckeditor5-enter@^37.1.0":
+  version "37.1.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-enter/-/ckeditor5-enter-37.1.0.tgz#4362f2560a3aa34800e9a3ff235772f4e6e5ac8f"
+  integrity sha512-m8e+yInNi4Hi5YWN0+Jj5ZFZjFvUi6VKPGsCSRyAmOiB3J9AO1/P4pYhhAXXpD7RzJQ0hmNiwZgRDZWeq/ZZNA==
   dependencies:
-    ckeditor5 "^35.4.0"
+    "@ckeditor/ckeditor5-core" "^37.1.0"
+    "@ckeditor/ckeditor5-engine" "^37.1.0"
+    "@ckeditor/ckeditor5-utils" "^37.1.0"
 
-"@ckeditor/ckeditor5-link@^35.4.0":
-  version "35.4.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-link/-/ckeditor5-link-35.4.0.tgz#9b703d1d4ce39c214c0818efb0041735ba0426eb"
-  integrity sha512-aqHFwlnGyjW/fp/fklD1VupYLsfbvSwsh9RFGIdgJL4TuWnlhxR5JXCOAKyZtvCWpdyuKyqzEB8EV0NQAa+OMg==
+"@ckeditor/ckeditor5-essentials@^37.1.0":
+  version "37.1.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-essentials/-/ckeditor5-essentials-37.1.0.tgz#5e6df16fe374649bad59be6319d6bd47d2d49fbe"
+  integrity sha512-LJl/3XHQpVvoFq22Z2JtNCog+0Z646MwEIZ70YyGyltA1fxXRpC0PrUg6NYND4AbDTHvWLUVTbQhhXzfSHw2KQ==
   dependencies:
-    "@ckeditor/ckeditor5-ui" "^35.4.0"
-    ckeditor5 "^35.4.0"
+    ckeditor5 "^37.1.0"
+
+"@ckeditor/ckeditor5-heading@^37.1.0":
+  version "37.1.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-heading/-/ckeditor5-heading-37.1.0.tgz#025c2a59129379d41abffa37c764eeba83467f1b"
+  integrity sha512-fr2gOkiitJJKtJvunbitKEVwQoh26oBO7mbp/1BNSydtsOoP+B9Tl5S15WiPRAnc5pjIAT8MOJO5PQY/GDXs5Q==
+  dependencies:
+    ckeditor5 "^37.1.0"
+
+"@ckeditor/ckeditor5-image@^37.1.0":
+  version "37.1.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-image/-/ckeditor5-image-37.1.0.tgz#95871c07c64a14997c902faea133ed60c80b41b0"
+  integrity sha512-wIKGfasamPE7MWnIoNIpmWgxlZOz8bxw8ZaLucRdJGaU1+orzQabYcqZM+y+3puAowXs2MIGcA7kSmyJPvL0Jw==
+  dependencies:
+    "@ckeditor/ckeditor5-ui" "^37.1.0"
+    ckeditor5 "^37.1.0"
     lodash-es "^4.17.15"
 
-"@ckeditor/ckeditor5-list@^35.4.0":
-  version "35.4.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-list/-/ckeditor5-list-35.4.0.tgz#bf75bd23b2e571628be69526a72927928c3b811f"
-  integrity sha512-fPENWzEicpoXZsDmGR6EiR/j3Z4Q3KYAsBMsmWf8YwUlbM/hERt+V3yIB+LKdGQKbFrL6CWOA1JBB4tmmwd50A==
+"@ckeditor/ckeditor5-indent@^37.1.0":
+  version "37.1.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-indent/-/ckeditor5-indent-37.1.0.tgz#d6af173297b1fd07935145f1521d16ec0307db82"
+  integrity sha512-RBuyGV0um9l8dKwnugF0mfiL9H+AsaErhudcgfBhPFCoRQ3+vyQF3Mg14+iKdP2hybJQ6OaT+6a1P8OPzrq85Q==
   dependencies:
-    "@ckeditor/ckeditor5-ui" "^35.4.0"
-    ckeditor5 "^35.4.0"
+    ckeditor5 "^37.1.0"
 
-"@ckeditor/ckeditor5-media-embed@^35.4.0":
-  version "35.4.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-media-embed/-/ckeditor5-media-embed-35.4.0.tgz#884f9ea715297b9b268fa16c1e803f66f8f15ec7"
-  integrity sha512-So+BYkI82pdIGP2VQ+b+gstEOnHLHA9yBX94pTJM9eW1O+ZTPMR1t2wJFFmEbCjQUYDVC8SdGUGaOb1gaeVXiw==
+"@ckeditor/ckeditor5-link@^37.1.0":
+  version "37.1.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-link/-/ckeditor5-link-37.1.0.tgz#eafc600dabc685245cff930c8b317e7ca3338f86"
+  integrity sha512-ImVcYYfz5oR/zqHGYdvgSvfHU/7ia/psAqjL+T/5OaqMRunALdUzdtuAsMkWGEH/oF8vKRsdGeWwsyrEvTF4XA==
   dependencies:
-    "@ckeditor/ckeditor5-ui" "^35.4.0"
-    ckeditor5 "^35.4.0"
-
-"@ckeditor/ckeditor5-paragraph@^35.4.0":
-  version "35.4.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-paragraph/-/ckeditor5-paragraph-35.4.0.tgz#db6babd19eb37c66771b7355d0cd0880cb9b599c"
-  integrity sha512-8nhkEEFv1WClhH6q/HW8P596d+dlatSVc46kQ2+jGlYirL8P66tV/nK+OiE8z1d897oVr4QPGsqk2qGkRFUChw==
-  dependencies:
-    "@ckeditor/ckeditor5-core" "^35.4.0"
-    "@ckeditor/ckeditor5-ui" "^35.4.0"
-    "@ckeditor/ckeditor5-utils" "^35.4.0"
-
-"@ckeditor/ckeditor5-paste-from-office@^35.4.0":
-  version "35.4.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-paste-from-office/-/ckeditor5-paste-from-office-35.4.0.tgz#fa93117b2ba66c74af6041479a3b0949d310eca2"
-  integrity sha512-Uav1z9t52+qcu1axykcZ/NeH7JnURuZF9l0o+Pq/sNg3zjzVqB92V5cvFXg9hXeod8LzxlNLHy1BR8ZWTHeKHQ==
-  dependencies:
-    ckeditor5 "^35.4.0"
-
-"@ckeditor/ckeditor5-select-all@^35.4.0":
-  version "35.4.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-select-all/-/ckeditor5-select-all-35.4.0.tgz#b7c20e9f686e59497e84825c4786dd874e22d4e2"
-  integrity sha512-c+pIIY77SP6ux4/cyD7cCrllQAqtFVSnzNYdy7ygNPqljCGngCnpSV9xfCO/blFo6/zx2vsmzVGdRq3ArzGoMg==
-  dependencies:
-    "@ckeditor/ckeditor5-core" "^35.4.0"
-    "@ckeditor/ckeditor5-ui" "^35.4.0"
-    "@ckeditor/ckeditor5-utils" "^35.4.0"
-
-"@ckeditor/ckeditor5-table@^35.4.0":
-  version "35.4.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-table/-/ckeditor5-table-35.4.0.tgz#0a93fedfd7640a7271faefcc95406e5f2fa966d2"
-  integrity sha512-u2g3CIqXO7ByrfFVqlHagPssta8hd/zSE37CjFuylc5KYVmMxcuh3TiFirKaladH92/3gjfnf+GWEC5X14mA8w==
-  dependencies:
-    ckeditor5 "^35.4.0"
+    "@ckeditor/ckeditor5-ui" "^37.1.0"
+    ckeditor5 "^37.1.0"
     lodash-es "^4.17.15"
 
-"@ckeditor/ckeditor5-typing@^35.4.0":
-  version "35.4.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-typing/-/ckeditor5-typing-35.4.0.tgz#b786032a541cfd102562eb07c21c62e0b6d502c6"
-  integrity sha512-Ad/PHWbVWcnAj9oevkkfLqf6CmvCFOti466uhvfOCKRNVf2+/xuGwleOGr8W6Lir/x/qav7ojFjKPKDxqbPXhA==
+"@ckeditor/ckeditor5-list@^37.1.0":
+  version "37.1.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-list/-/ckeditor5-list-37.1.0.tgz#3cadf72d410c8c3dee8386f3c21ef73781d88c28"
+  integrity sha512-hV1fNhpMkivlVuwRx0TVSEzPgciQa14uV/lbnhCmjT33WDrh8hAcYFK+kJx+9dB1OzNtyTlsMA/DxUJPdNr9TA==
   dependencies:
-    "@ckeditor/ckeditor5-core" "^35.4.0"
-    "@ckeditor/ckeditor5-engine" "^35.4.0"
-    "@ckeditor/ckeditor5-utils" "^35.4.0"
+    "@ckeditor/ckeditor5-ui" "^37.1.0"
+    ckeditor5 "^37.1.0"
+
+"@ckeditor/ckeditor5-media-embed@^37.1.0":
+  version "37.1.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-media-embed/-/ckeditor5-media-embed-37.1.0.tgz#aaa801a28b1c14a3d45f2067383548e9cb96f18a"
+  integrity sha512-FFErNy2M+32rFeI6z16J38T7VVsqk5TDWkLRVqZF/5/VOBZ/TGcAjamEYkWnuzSHakuwDUbCwT+H3JVSKNnZJA==
+  dependencies:
+    "@ckeditor/ckeditor5-ui" "^37.1.0"
+    ckeditor5 "^37.1.0"
+
+"@ckeditor/ckeditor5-paragraph@^37.1.0":
+  version "37.1.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-paragraph/-/ckeditor5-paragraph-37.1.0.tgz#5607ee190a71face08df3a9e57a4e2dca4cf0576"
+  integrity sha512-64G9VU8xVYzJrOjngtw2Zg58mXTkf4fiBhR4lUT9yZNLpVJ/8DXtphGtuXEPrlfL4DVrthHUeNfEdQXA2DGGZQ==
+  dependencies:
+    "@ckeditor/ckeditor5-core" "^37.1.0"
+    "@ckeditor/ckeditor5-ui" "^37.1.0"
+    "@ckeditor/ckeditor5-utils" "^37.1.0"
+
+"@ckeditor/ckeditor5-paste-from-office@^37.1.0":
+  version "37.1.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-paste-from-office/-/ckeditor5-paste-from-office-37.1.0.tgz#7ae69cf060efa0b3b095847e4f3d6bf4e8fb1eb1"
+  integrity sha512-4l+Wt6HCG1yraQhCfRegReWoviLkEzqPb/6QxoFiqOZkzUCmCCTgGTwL709fOg3sE5hxYd4tfPb9ARQuOkfmgQ==
+  dependencies:
+    ckeditor5 "^37.1.0"
+
+"@ckeditor/ckeditor5-select-all@^37.1.0":
+  version "37.1.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-select-all/-/ckeditor5-select-all-37.1.0.tgz#1edb6579ef77c72c50ec442dff0e2dd4b089aaa0"
+  integrity sha512-E5f+TQuOsrhxj/8b8/5Lhym7hF8upeL61hHJpViBhf047F2qLcRBs8SXSm9PO0xS0nzg+RxigmkiYWI5inm74g==
+  dependencies:
+    "@ckeditor/ckeditor5-core" "^37.1.0"
+    "@ckeditor/ckeditor5-ui" "^37.1.0"
+    "@ckeditor/ckeditor5-utils" "^37.1.0"
+
+"@ckeditor/ckeditor5-table@^37.1.0":
+  version "37.1.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-table/-/ckeditor5-table-37.1.0.tgz#517769650f250cdc8ff3d66f597d9d93b0415bf7"
+  integrity sha512-XXAGEZtpRz9Y0ZZtrDZCYy8jFLOVNnfgQIoSH+SJjSGyaR/DjlmLPXpSiO3R8Y8s7dRncBqK8Z0JEST7UwfdGg==
+  dependencies:
+    ckeditor5 "^37.1.0"
     lodash-es "^4.17.15"
 
-"@ckeditor/ckeditor5-ui@^35.4.0":
-  version "35.4.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-ui/-/ckeditor5-ui-35.4.0.tgz#76e59032aee6652c6bd717f30fc330a064b3451e"
-  integrity sha512-0SmYE+k1cYQPqyw2rQsPDV/RpudneBh1bNfiaTOz+rqViJIMe+TxiuK6Fz+znNZ05s0exr+ZHWvMttGqlVoQNw==
+"@ckeditor/ckeditor5-typing@^37.1.0":
+  version "37.1.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-typing/-/ckeditor5-typing-37.1.0.tgz#080ad759e4f3869cd86cb797879c7bba3de9c4ad"
+  integrity sha512-dloH29SGgDu3torPKC6TDkaYvD1ic80m8WCk9xXaOUXzIYf73m+F5TQ/QcfONxb0++Sj1Pq1IQuIpqBOn82aXA==
   dependencies:
-    "@ckeditor/ckeditor5-core" "^35.4.0"
-    "@ckeditor/ckeditor5-utils" "^35.4.0"
+    "@ckeditor/ckeditor5-core" "^37.1.0"
+    "@ckeditor/ckeditor5-engine" "^37.1.0"
+    "@ckeditor/ckeditor5-utils" "^37.1.0"
     lodash-es "^4.17.15"
 
-"@ckeditor/ckeditor5-undo@^35.4.0":
-  version "35.4.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-undo/-/ckeditor5-undo-35.4.0.tgz#f79b19be69b8b9ab57592cfe4ec4645b3728b773"
-  integrity sha512-0RhsK0f/pX/7KB/JXYTLiDOswmUTQ9EKIIuewAwr7LTsBf4Q309FZSFdbeTmc0wIyX33212Xh5xsi3LyG1VJRg==
+"@ckeditor/ckeditor5-ui@^37.1.0":
+  version "37.1.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-ui/-/ckeditor5-ui-37.1.0.tgz#284b09ea2d3265117004ef493b2ac6852e317c8f"
+  integrity sha512-7qpA8yS2cSDJsTh+uaxFuvfprxmw0Kd1UWDqrLNv23jUHt+25cT+46/7VLP3hPdS/bwkXWxIXV6nAlrw3gTIjQ==
   dependencies:
-    "@ckeditor/ckeditor5-core" "^35.4.0"
-    "@ckeditor/ckeditor5-engine" "^35.4.0"
-    "@ckeditor/ckeditor5-ui" "^35.4.0"
+    "@ckeditor/ckeditor5-core" "^37.1.0"
+    "@ckeditor/ckeditor5-utils" "^37.1.0"
+    lodash-es "^4.17.15"
 
-"@ckeditor/ckeditor5-upload@^35.4.0":
-  version "35.4.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-upload/-/ckeditor5-upload-35.4.0.tgz#57944a4e824cdee37bb53d795dbe98055e11d748"
-  integrity sha512-+eJAluAc4mAFmx5FNuSGjkCYmbm0V9NpSleubAXEx2e+KNiLarPAnsolwRaAcYXcloNp4C9/l0D+lPEx7VRYtg==
+"@ckeditor/ckeditor5-undo@^37.1.0":
+  version "37.1.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-undo/-/ckeditor5-undo-37.1.0.tgz#7d7489934194f5560da1ffa5df597905afaf45e0"
+  integrity sha512-BJMmi4mXCIZj0lO4AVL8+Fzoj6+fXx3yZxUl0i68wf+ogf36pclyiHlunIV9EKRv8OW/eY3WezRI0O2mVcKzJA==
   dependencies:
-    "@ckeditor/ckeditor5-core" "^35.4.0"
-    "@ckeditor/ckeditor5-ui" "^35.4.0"
-    "@ckeditor/ckeditor5-utils" "^35.4.0"
+    "@ckeditor/ckeditor5-core" "^37.1.0"
+    "@ckeditor/ckeditor5-engine" "^37.1.0"
+    "@ckeditor/ckeditor5-ui" "^37.1.0"
 
-"@ckeditor/ckeditor5-utils@^35.4.0":
-  version "35.4.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-utils/-/ckeditor5-utils-35.4.0.tgz#c5c296a2c1883684e674b1a710fcc41b745e156b"
-  integrity sha512-sFjbb+1VYdLbELDLWVYk86WzVN7Lo3sXHbVhdr8+kc0Ufxdr3mTFHDAkiymFt2fs1FOB5gZyWJlJU+EeJnhKUw==
+"@ckeditor/ckeditor5-upload@^37.1.0":
+  version "37.1.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-upload/-/ckeditor5-upload-37.1.0.tgz#a6e425f0d0f8a2725996709def706f6eefe1fd4b"
+  integrity sha512-P0srTN1+gz8V4cOk+coY2HY7Gm8MkQAHPFEYCms1G1Kk7G32z4cyGWp9UqCPI0nX5GGM0qYd/Kd78BN/cNyJJw==
+  dependencies:
+    "@ckeditor/ckeditor5-core" "^37.1.0"
+    "@ckeditor/ckeditor5-ui" "^37.1.0"
+    "@ckeditor/ckeditor5-utils" "^37.1.0"
+
+"@ckeditor/ckeditor5-utils@^37.1.0":
+  version "37.1.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-utils/-/ckeditor5-utils-37.1.0.tgz#0d5dda23fa4fc065782ec8529d3c9dc7674b6895"
+  integrity sha512-r4rSbzMy0WFSuP0IRd+yYUMjzb279eiICksOEiHViiqoKQ8RqcGDlh+zOaACkgw6xvLxj96C5MwG2wsZsGJqcA==
   dependencies:
     lodash-es "^4.17.15"
 
@@ -414,17 +414,24 @@
   resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-vue/-/ckeditor5-vue-4.0.1.tgz#1c619162bcef3922c0b02c05a0908ee48f449a23"
   integrity sha512-QjlQYY0DVqpk+Oj3aDxtcgknet6xquGwjdGLVxgJh6hP+IOpcHldk0BQgMNPiF4T5Ojj37N55IEkaHdQcCLQlA==
 
-"@ckeditor/ckeditor5-widget@^35.4.0":
-  version "35.4.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-widget/-/ckeditor5-widget-35.4.0.tgz#a80ed4c4f57a1198b47c4e93090f8ebe62f70ecb"
-  integrity sha512-SNYOXXWu7XV1BZET+ar0Cea25836vzNtUqXlDPwBx/jrmK86b8GMbFR99P2bUG0NvtIsH5cSk7XCmnxb4ZQ6wA==
+"@ckeditor/ckeditor5-watchdog@^37.1.0":
+  version "37.1.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-watchdog/-/ckeditor5-watchdog-37.1.0.tgz#fb4090876359d3c3ecaab154dd3896f184e9b4a8"
+  integrity sha512-0d4WU2BO5n0tNzJl9iamnrFK+XEaK7gVEMIXcduznbupfFGVYFdrOXfDTdW0Yr59kpKEG8JbaWOF3aILjBRRWA==
   dependencies:
-    "@ckeditor/ckeditor5-core" "^35.4.0"
-    "@ckeditor/ckeditor5-engine" "^35.4.0"
-    "@ckeditor/ckeditor5-enter" "^35.4.0"
-    "@ckeditor/ckeditor5-typing" "^35.4.0"
-    "@ckeditor/ckeditor5-ui" "^35.4.0"
-    "@ckeditor/ckeditor5-utils" "^35.4.0"
+    lodash-es "^4.17.15"
+
+"@ckeditor/ckeditor5-widget@^37.1.0":
+  version "37.1.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-widget/-/ckeditor5-widget-37.1.0.tgz#47eada9af92ea9f4748f9462ded3562c67b8a53a"
+  integrity sha512-7tWZLQrokqU28SK/gFoLgGhNshesiCC2nD+MtYie3PyXZ0nVhFDzCQxq94A02G1IpHdDW4WFKSmp2ix2z9lMNQ==
+  dependencies:
+    "@ckeditor/ckeditor5-core" "^37.1.0"
+    "@ckeditor/ckeditor5-engine" "^37.1.0"
+    "@ckeditor/ckeditor5-enter" "^37.1.0"
+    "@ckeditor/ckeditor5-typing" "^37.1.0"
+    "@ckeditor/ckeditor5-ui" "^37.1.0"
+    "@ckeditor/ckeditor5-utils" "^37.1.0"
     lodash-es "^4.17.15"
 
 "@docsearch/css@3.5.2", "@docsearch/css@^3.5.2":
@@ -659,140 +666,140 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@morpheme/alert@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@morpheme/alert/-/alert-1.0.0-rc.1.tgz#373b1ad876f70178b578abd09d5e836ac226d0ae"
-  integrity sha512-PNwkPq1xxB0z3OtogQeUHRLSryBWgDYjiSTIkpqNbvTgt6u4v0e2TsgzCg/3yxH4ghV5uU0vgzPxWrXywgSPcg==
+"@morpheme/alert@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/alert/-/alert-1.0.0-rc.4.tgz#78077623f8d9a46386e227a6827b2804efee964d"
+  integrity sha512-40UdinMUgnZk6AeB0hp4Xs4vgv7eZIz8bqnU7Y0kj3SK/eWnq68bMSiic8QjrbZLLCaJPrjV2loXuy5TdOYDDw==
   dependencies:
-    "@morpheme/button" "^1.0.0-rc.1"
-    "@morpheme/icon" "^1.0.0-rc.1"
-    "@morpheme/tailwind-config" "^1.0.0-rc.0"
-    "@morpheme/theme" "^1.0.0-rc.0"
-    "@morpheme/utils" "^1.0.0-rc.0"
+    "@morpheme/button" "^1.0.0-rc.4"
+    "@morpheme/icon" "^1.0.0-rc.4"
+    "@morpheme/tailwind-config" "^1.0.0-rc.4"
+    "@morpheme/theme" "^1.0.0-rc.4"
+    "@morpheme/utils" "^1.0.0-rc.4"
     vue "^3.3.4"
 
-"@morpheme/app-bar@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@morpheme/app-bar/-/app-bar-1.0.0-rc.1.tgz#65a9efe9ecb11dfa9631032242dd664085ad52e3"
-  integrity sha512-C3q5cIwqmjlXhj80qFpr7/gJZAtK4nk+4aNd5vjZaQpPBIGm+Cd5C7Ncpr1hgZmHmwHDeLKkgXjdvkDngZtwdQ==
+"@morpheme/app-bar@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/app-bar/-/app-bar-1.0.0-rc.4.tgz#022a3319f4582daf13e55daf957754322ef1cd26"
+  integrity sha512-vypujTLuJz22wiOOl6i5MZYz+TApmSaMv0bqi85YOqZlOddnFuLbXhqrdb0vU5VHkcrBw4A9oY4xEAbqqoEqsA==
   dependencies:
-    "@morpheme/theme" "^1.0.0-rc.0"
+    "@morpheme/theme" "^1.0.0-rc.4"
     vue "^3.3.4"
 
-"@morpheme/app-shell@^1.0.0-rc.2":
-  version "1.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/@morpheme/app-shell/-/app-shell-1.0.0-rc.2.tgz#21986bf138a7a1bc12360a609bd29d9750d7f5e9"
-  integrity sha512-XTUHpOeNgS18woPCZeUqD+3JzK4QW5aoCpBdCmSaCxBzvq/ishihuHULw3YEephTNxfjGOYPUDfsDXPLFAlvaA==
+"@morpheme/app-shell@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/app-shell/-/app-shell-1.0.0-rc.4.tgz#151e6036583628c5166fada09066d79db208610f"
+  integrity sha512-kPS7ugZVwR0gF6n/AJKqpu7oeZwxwQereYHxQB/FOKZJaKj7S7s+t1kgOHUaiJnGcpjUg06HggotOnR/H9QoUQ==
   dependencies:
     "@vueuse/core" "^10.2.1"
     vue "^3.3.4"
 
-"@morpheme/autocomplete@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@morpheme/autocomplete/-/autocomplete-1.0.0-rc.1.tgz#9d72e727cfde302a45c230393ca90696ad5dfc8c"
-  integrity sha512-t4VyTtZgz8aWZ1K1z03Q1PQSiaQwKOk/40IIJQQi1vgikP9LZpQaRs91iQLq7CQbqytwmFUyO016ZKWSBNkRGg==
+"@morpheme/autocomplete@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/autocomplete/-/autocomplete-1.0.0-rc.4.tgz#5227fb1b1d7c366a357de568bafd61ea5691f916"
+  integrity sha512-056kOqsIn0qUxPG190CupHlCyAPQ5/ZJXFBpY/z6aWI/EG8eDsU6CQwIcefww8wUSS1GrcAtHEFtCL3bjAtqhw==
   dependencies:
     "@headlessui/vue" "^1.7.13"
-    "@morpheme/button" "^1.0.0-rc.1"
-    "@morpheme/forms" "^1.0.0-rc.1"
-    "@morpheme/icon" "^1.0.0-rc.1"
+    "@morpheme/button" "^1.0.0-rc.4"
+    "@morpheme/forms" "^1.0.0-rc.4"
+    "@morpheme/icon" "^1.0.0-rc.4"
     tailwindcss "^3.3.1"
     vue "^3.3.4"
     wait-for-expect "^3.0.2"
 
-"@morpheme/avatar@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@morpheme/avatar/-/avatar-1.0.0-rc.1.tgz#befa8d3b4123a6f13b151196a22081ca66f5f64d"
-  integrity sha512-artpTtGT4fUmR0qwACDmimiHM/jBcxpeZ6JTTgQXoYY4Rv8QE4v9HGUaPJBKbFEK6oABTF9jNYOkrE19qMo36A==
+"@morpheme/avatar@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/avatar/-/avatar-1.0.0-rc.4.tgz#032134f21133a7ec32088f5ca169714f1d60c46d"
+  integrity sha512-jIdXNEX6eu5O/POBGz9MpYOyHsDP6234YnD7KxVOlZlF6XVZkrbUb7CQekIULML12qEEu3+bHlbgUrF1tYMXhQ==
   dependencies:
-    "@morpheme/icon" "^1.0.0-rc.1"
-    "@morpheme/theme" "^1.0.0-rc.0"
+    "@morpheme/icon" "^1.0.0-rc.4"
+    "@morpheme/theme" "^1.0.0-rc.4"
     vue "^3.3.4"
 
-"@morpheme/badge@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@morpheme/badge/-/badge-1.0.0-rc.1.tgz#4d2f244360eca6dc16b2bff51d9cd1ffde5ddea2"
-  integrity sha512-XxFKAgobl79zRhy/N4ekTnSxBY6hzGOVduc9gZt92syHb6XJ+HZuaYznvx16iCZ8FsAmSkeJawM9rm7Xzcbh6Q==
+"@morpheme/badge@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/badge/-/badge-1.0.0-rc.4.tgz#9d27a52336b7e33fcaf3044e691cc3f99f1df1f8"
+  integrity sha512-NbgsQC1i0U4eyxsbKd90ok6spbHl+V3HkGF+UhaVgH1tfbo2yndTVuT9HdulGYLoraD+KYnjdRNWTF+cDmO+4w==
   dependencies:
-    "@morpheme/icon" "^1.0.0-rc.1"
+    "@morpheme/icon" "^1.0.0-rc.4"
     vue "^3.3.4"
 
-"@morpheme/banner@^1.0.0-rc.2":
-  version "1.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/@morpheme/banner/-/banner-1.0.0-rc.2.tgz#c59b2c64635ef79a1757c093cfa619fa6be5250a"
-  integrity sha512-yRLvedCoziZIlZhn2u6/faRP/rKnxWOVJDlHTvgQZlTgbaStuzmRrNJVw6bcW3kRTkmLoSYjwB8WclCrMKcqsQ==
+"@morpheme/banner@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/banner/-/banner-1.0.0-rc.4.tgz#17ec305a4ee3361be5633af7b785daa1dfa00d52"
+  integrity sha512-bHvarYChhLcsUfn5eeIkO8Xwq7Nre32ZFr2Umfdg2g4NHL0Q8osa/PTOtD3brYlMPH4aayl7iaWJz5bpSg/68w==
   dependencies:
     vue "^3.3.4"
 
-"@morpheme/bottom-navigation@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@morpheme/bottom-navigation/-/bottom-navigation-1.0.0-rc.1.tgz#7e13a407d37046da7ece68da01e62dab26c0f824"
-  integrity sha512-NNftd36rfgf3xG3d+1M2sAwlZyG6hyTu251OKtGM85vyEALcSGX7JkI3519J3WeOO2SKwkKiHi1Dsx7dwjY/zw==
+"@morpheme/bottom-navigation@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/bottom-navigation/-/bottom-navigation-1.0.0-rc.4.tgz#7fb6385b3982e2e3850ecae8fd2c56ed4042ec8b"
+  integrity sha512-DzL73vZbe8w+MRQ/eP5luiE7m9lk2981o/W4gBg8EUYo3oiPsiBYPr7xqT5n1sW1uS/XGQTHDSyFLhGiWztnBg==
   dependencies:
-    "@morpheme/icon" "^1.0.0-rc.1"
-    "@morpheme/theme" "^1.0.0-rc.0"
+    "@morpheme/icon" "^1.0.0-rc.4"
+    "@morpheme/theme" "^1.0.0-rc.4"
     "@vueuse/core" "^10.2.1"
     vue "^3.3.4"
 
-"@morpheme/bottom-sheet@^1.0.0-rc.2":
-  version "1.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/@morpheme/bottom-sheet/-/bottom-sheet-1.0.0-rc.2.tgz#8e8d9767558e67147082f3c791b381f4403ca93d"
-  integrity sha512-HTk6i9wkP0N9jdKqiN1hVMb3NJ5+bZW6YEHssUQx938hZn1zBYMMDxjAClTC6A8+uJhiCRdq37TsYk/uudLUMw==
+"@morpheme/bottom-sheet@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/bottom-sheet/-/bottom-sheet-1.0.0-rc.4.tgz#c05e127fdb2cf1573fdfe1568de30145863f4051"
+  integrity sha512-41nsUuUD/qMV9jCYxYdk27NNQ/m9+O74SQxEWEUgiujmtEHK8fnI3CLeF8aeh4zgVhjmHys0BFam8sNWd/kKyg==
   dependencies:
-    "@morpheme/button" "^1.0.0-rc.1"
-    "@morpheme/icon" "^1.0.0-rc.1"
-    "@morpheme/list" "^1.0.0-rc.2"
+    "@morpheme/button" "^1.0.0-rc.4"
+    "@morpheme/icon" "^1.0.0-rc.4"
+    "@morpheme/list" "^1.0.0-rc.4"
     vue "^3.3.4"
 
-"@morpheme/breadcrumbs@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@morpheme/breadcrumbs/-/breadcrumbs-1.0.0-rc.1.tgz#4082c0322a3bed6c582502cd44fd2c9ef77f7e3a"
-  integrity sha512-/ibigZBamUB4nVdd7VHgZV4W7Pxhr0AsQIKju39bBdHCHPIjeOfHA+FYtTAB3qRZuKaQOmyV37zSAP9Sb+NLZw==
+"@morpheme/breadcrumbs@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/breadcrumbs/-/breadcrumbs-1.0.0-rc.4.tgz#7af97e00191f8f4504eb74db4472f6eb638f849d"
+  integrity sha512-dv9+lHDvd3T4BhK1isdfhpA6bsyPlJZA6QqDqDVtW0jLC71eP/beK4+uwoyLyP6TUl/JfsFb+uroP4yPrU59Rg==
   dependencies:
-    "@morpheme/icon" "^1.0.0-rc.1"
-    vue "^3.3.4"
-    vue-router "^4.1.5"
-
-"@morpheme/button@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@morpheme/button/-/button-1.0.0-rc.1.tgz#0c61416767c74ca743113d7c9168776629be5d53"
-  integrity sha512-0/uKxuddA0y3ZlYlzp+c9+BKlqXODjO3r0ANFQp4a7WDqWvGJmf+Deu45EkeLAx4BM+C9g2ctENbFMhjqv24Hg==
-  dependencies:
-    "@morpheme/icon" "^1.0.0-rc.1"
-    "@morpheme/spinner" "^1.0.0-rc.0"
-    "@morpheme/theme" "^1.0.0-rc.0"
-    "@morpheme/utils" "^1.0.0-rc.0"
+    "@morpheme/icon" "^1.0.0-rc.4"
     vue "^3.3.4"
     vue-router "^4.1.5"
 
-"@morpheme/card@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@morpheme/card/-/card-1.0.0-rc.1.tgz#ceb943cf8db1f1aa3d2ba1ad008ba092242d3cec"
-  integrity sha512-03lO3WFfX6XB7X+eI44P8hquwx5YKUOwwbgWdmVGlPxpWV/fCc+PEyluqgXs4y3rVivpWfQFDTHCx7z1dm1G3w==
+"@morpheme/button@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/button/-/button-1.0.0-rc.4.tgz#bb93ce48e2717c7f6d588794f7c3d23c94ed1c22"
+  integrity sha512-uOlkTja10litpQquWSpFv1m6XwF0vxjGlJIPtgucggxNVU+NHaCDUYBfwcR/BgpjoJQdc+fq80HG0ThRyavGeA==
+  dependencies:
+    "@morpheme/icon" "^1.0.0-rc.4"
+    "@morpheme/spinner" "^1.0.0-rc.4"
+    "@morpheme/theme" "^1.0.0-rc.4"
+    "@morpheme/utils" "^1.0.0-rc.4"
+    vue "^3.3.4"
+    vue-router "^4.1.5"
+
+"@morpheme/card@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/card/-/card-1.0.0-rc.4.tgz#5050703dc980b8cdf4b2029ea643b75604b87052"
+  integrity sha512-Acz4NNjL5K27i/32+Co+KCax/S6X5jZkpR/J46fSFnJ+pJikvEdzH+TLSgBZtufo3IQ1G0Bn5LqDR0fJJkJ6nw==
   dependencies:
     vue "^3.3.4"
 
-"@morpheme/collapsible@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@morpheme/collapsible/-/collapsible-1.0.0-rc.1.tgz#2827272294a271f1ca99c6adfd54ba010162e8a1"
-  integrity sha512-a1DPCD9uyJwLzHaWf2Q/la68pgEzoDKfNwwYLqjSxzEGcztLWWsNhtcLti+dQylpO9dJALP8jFoisskMouQxgw==
+"@morpheme/collapsible@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/collapsible/-/collapsible-1.0.0-rc.4.tgz#cdd647e801262ac7ea1bc4767eed92cf29b6412b"
+  integrity sha512-x4Ze3LmnSW7JPS5THgMDxjR2XvQFU+a3TT+Q5kcwgds6wBVNFQ3/VY/7eOnYds7tQfqJI6lgMBJeYr+06Mfczw==
   dependencies:
     vue "^3.3.4"
 
-"@morpheme/command@^1.0.0-rc.2":
-  version "1.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/@morpheme/command/-/command-1.0.0-rc.2.tgz#71c851662d68d082400b7bac3704fc82a0a7d82f"
-  integrity sha512-i/45vn3P3e5+bm++26+O686gt+Fed4s5BEJ+ObSJjz0ydHS8cdULgRuwRo9ckeg7NprkhznZykfoqGm3SL9RmA==
+"@morpheme/command@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/command/-/command-1.0.0-rc.4.tgz#a1053ea7ed17664f8a7f7be2e4f743c58e20107f"
+  integrity sha512-WfskdYBZ++wUQ/OdomngrrKJC6CImd3SpIURYYnLDNEWBiTRyeyvXHQektiazZpVFTCKKVVI1pIg0IvzpWpAxw==
   dependencies:
-    "@morpheme/icon" "^1.0.0-rc.1"
-    "@morpheme/list" "^1.0.0-rc.2"
-    "@morpheme/modal" "^1.0.0-rc.1"
+    "@morpheme/icon" "^1.0.0-rc.4"
+    "@morpheme/list" "^1.0.0-rc.4"
+    "@morpheme/modal" "^1.0.0-rc.4"
     vue "^3.3.4"
 
-"@morpheme/container@^1.0.0-rc.0":
-  version "1.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@morpheme/container/-/container-1.0.0-rc.0.tgz#0bc9faf8f2d0705be678c4ec40b1c78d576364f9"
-  integrity sha512-XzrO1s8R/DQ+c1SVDZbX/v604iwqUxsockcnIuykFZUMT1CaCOByw24hDMlaEzGtR8KmTjeEDYVGVrQ0T5cY3g==
+"@morpheme/container@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/container/-/container-1.0.0-rc.4.tgz#dcd4b61fa5464d342ca9118e33fe6ac227fe118e"
+  integrity sha512-XYEvBvb2vMkdOcomiHdrORP40YWOEINsddkMII+MiNO9nHp+nej+ANme8QSVcBqP0uZHgYAdwikS7GYMrgwsjA==
   dependencies:
     vue "^3.3.4"
 
@@ -801,187 +808,187 @@
   resolved "https://registry.yarnpkg.com/@morpheme/design-tokens/-/design-tokens-0.1.0-alpha.5.tgz#024ed7315dd229c52dbde4a31fdb23777f2c4556"
   integrity sha512-CcPxUfBzl1bXQlpKOWs1j2nqLZeJfp75oQSXaqn2DXRZaCw+iBYtNRko8UcuovOe6/ruIWueiQ/0sBSJHechlw==
 
-"@morpheme/divider@^1.0.0-rc.0":
-  version "1.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@morpheme/divider/-/divider-1.0.0-rc.0.tgz#5a907a19ef824370b06a247d25cefb069784dfa3"
-  integrity sha512-DuxKMKwuK2ewPurTECTBM84ig3zmcybpDLs3cHVm1xHwq69RwhIibClr6thTAau8fPpDYZqX1G246HCgiansqw==
+"@morpheme/divider@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/divider/-/divider-1.0.0-rc.4.tgz#1d66e42d1e92abbf96fb09ec2d3306d4e773e275"
+  integrity sha512-TH6kpRL2RyJbF3afiVvMYoC9Q6mGWolDBxfkLbmaADc2QFMSvyFB8i1Cyt9bvgaJJAXMUfJXjAbJ6R5rbYpVIg==
   dependencies:
     vue "^3.3.4"
 
-"@morpheme/dropdown@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@morpheme/dropdown/-/dropdown-1.0.0-rc.1.tgz#b97ef5623169ef85c7f9951227ea6bda3c9d65ef"
-  integrity sha512-TFnMAix3rMkaRlI695TxEqkcLc1uXuCZ5GlCBDiAIVIWL3fevkDWdZDCzGU5KPiDKW3VUnkPIwkZXHcWkVV3Rw==
+"@morpheme/dropdown@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/dropdown/-/dropdown-1.0.0-rc.4.tgz#55e8612fd1b70f8ec52c76e675490b4214aabdb2"
+  integrity sha512-HUFuIetcBubCnVUwA1Gz6VJWGfBhWOX17T/gEO/uZSgSmNinAtuW+6HXb2ZGKRgG9DZpjaZQ0OmOg9x0ac0MWA==
   dependencies:
     "@floating-ui/vue" "^1.0.2"
     "@headlessui-float/vue" "^0.11.2"
     "@headlessui/vue" "^1.7.13"
-    "@morpheme/button" "^1.0.0-rc.1"
-    "@morpheme/icon" "^1.0.0-rc.1"
+    "@morpheme/button" "^1.0.0-rc.4"
+    "@morpheme/icon" "^1.0.0-rc.4"
     tailwindcss "^3.3.1"
     vue "^3.3.4"
 
-"@morpheme/editor@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@morpheme/editor/-/editor-1.0.0-rc.1.tgz#0e5d9c89e6ba4af340c1ccdaebb2d3f7edf8d504"
-  integrity sha512-cs21cXgmkA/53JQDK+eMqjp5UCj8NcBnHxHMyI+rI/DirvP9UaTYugQoPwPzvtrXHBVm5DCluyNpdShVzEHmrg==
+"@morpheme/editor@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/editor/-/editor-1.0.0-rc.4.tgz#4afbab8b4d16735fde2d805bb0d6f7dc72a841ec"
+  integrity sha512-EzuN/+dUFhbHPgpKTrcQFQTDD85HPnup9mkgtpdqorC7HnpFDPi15iEW7su3HjzvrzzDdcqgiEsYTWRVYvN5+Q==
   dependencies:
-    "@ckeditor/ckeditor5-build-classic" "^35.3.2"
+    "@ckeditor/ckeditor5-build-classic" "^37.0.0"
     "@ckeditor/ckeditor5-vue" "^4.0.1"
     vee-validate "^4.11.3"
     vue "^3.3.4"
 
-"@morpheme/forms@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@morpheme/forms/-/forms-1.0.0-rc.1.tgz#097862df3fb4950b4b5293e7dbf9674f7e59aa70"
-  integrity sha512-ZTtTaT07cRd70hZfuDqAxOVV7RBuySo/0qjuXL7VJ+clMP81p+eILtyJSNytPwqXCojtiPMMMKx/Z36iPtaq4g==
+"@morpheme/forms@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/forms/-/forms-1.0.0-rc.4.tgz#61f78efd594dc6c86acf570212f5242c0a42464f"
+  integrity sha512-gl6gB0uG5LGaIpm5eZH8VpXohqAmjHXasjgGOKxNItUnusSf/47U00H+Ke7uvzgwg24qLYa6abMNY3ethFylYA==
   dependencies:
-    "@morpheme/button" "^1.0.0-rc.1"
-    "@morpheme/icon" "^1.0.0-rc.1"
-    "@morpheme/progress-bar" "^1.0.0-rc.0"
-    "@morpheme/select" "^1.0.0-rc.1"
-    "@morpheme/spinner" "^1.0.0-rc.0"
-    "@morpheme/utils" "^1.0.0-rc.0"
+    "@morpheme/button" "^1.0.0-rc.4"
+    "@morpheme/icon" "^1.0.0-rc.4"
+    "@morpheme/progress-bar" "^1.0.0-rc.4"
+    "@morpheme/select" "^1.0.0-rc.4"
+    "@morpheme/spinner" "^1.0.0-rc.4"
+    "@morpheme/utils" "^1.0.0-rc.4"
     "@vueuse/core" "^10.2.1"
     vee-validate "^4.11.3"
     vue "^3.3.4"
 
-"@morpheme/icon@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@morpheme/icon/-/icon-1.0.0-rc.1.tgz#4477d2bfdd68bf9bfe1e58e07be46ef78ea27dfd"
-  integrity sha512-67BnfZrjkOvjWd41duATD7eJOVsvW4QbYra55KEwsJTf4QYtqQPKcHIyTQXUdYjIVnxRbsjeoX7Zhng7vInRwQ==
+"@morpheme/icon@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/icon/-/icon-1.0.0-rc.4.tgz#014cb3be5a892012a1dc31e692ba216628eee783"
+  integrity sha512-r8F/SdDXplj0X+hwJ/mavBrDpL16Ni9E+jTb4MKTHat/bqtN+aekbf7xljWM1dFxJu+yyQ356BkUr3hUvEB3Uw==
   dependencies:
     "@heroicons/vue" "^1.0.6"
     "@iconify/vue" "^3.2.1"
-    "@morpheme/theme" "^1.0.0-rc.0"
+    "@morpheme/theme" "^1.0.0-rc.4"
     "@morphemeicons/vue" "^0.2.0"
     vue "^3.3.4"
 
-"@morpheme/layouts@^1.0.0-rc.2":
-  version "1.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/@morpheme/layouts/-/layouts-1.0.0-rc.2.tgz#13e2d166d987ddf26fab161d6bc17919305de171"
-  integrity sha512-j1JBFdICNsF8Wa1ksek9rwWHwGraQgiGEAFr5rJAJAMjpUPdJc271vy58mRh6ZsAGlWD9mlyfJfWHGEqwFnPDg==
+"@morpheme/layouts@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/layouts/-/layouts-1.0.0-rc.4.tgz#76869d27fadda4e7a2a025ed282e5106c8282e62"
+  integrity sha512-HAgajQMfSFQULHc8B4lAf1uVr3O+xlXfrVHBuBs0Z0FUMoMbxAhGVnHD/bfurLy4Pe1Ykd1ABdghVoj2TV2C0Q==
   dependencies:
     "@morpheme/design-tokens" "^0.1.0-alpha.5"
     vue "^3.3.4"
 
-"@morpheme/list@^1.0.0-rc.2":
-  version "1.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/@morpheme/list/-/list-1.0.0-rc.2.tgz#617e16b54768f8d76173c31e95ec9703caba9e98"
-  integrity sha512-QECwFc8Lic6Y4CmsDkIVTYhZrjhmdQvFIY7+aYLNHQjwaPmfRgihTRqJECYWqjNsRQJtBQxAKoGLt0QWCYGX1Q==
+"@morpheme/list@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/list/-/list-1.0.0-rc.4.tgz#7df565c78bee97c741a79f6337724f08a7b2d404"
+  integrity sha512-HCXaZ2cnpXKzEVW9At9dR8fYPcQD0wxTtC7EFU2IXvnJvUdvvIIUlVefs1aVowRYcSXvrpJ1vthN6OoGahDcnw==
   dependencies:
-    "@morpheme/collapsible" "^1.0.0-rc.1"
+    "@morpheme/collapsible" "^1.0.0-rc.4"
     vue "^3.3.4"
     vue-router "^4.0.16"
 
-"@morpheme/logo@^1.0.0-rc.0":
-  version "1.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@morpheme/logo/-/logo-1.0.0-rc.0.tgz#54307be3a9f37bbca914704f6ea404658c6c01bf"
-  integrity sha512-fXnuxlZHejpCdiHYYiHcN1VzZoMcRFHbWlsVabVC1WsF3hmOBxZzrjc34w69Ru+ZyJhxwAVjJsVo3dOZ4C+GbA==
+"@morpheme/logo@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/logo/-/logo-1.0.0-rc.4.tgz#860d8481898aa6f0f94dc468e44594f47ca0fecd"
+  integrity sha512-bMPCL+QZvDRDc8khlTqy5AQ3rRs1ngCOFTV1i22CwfAnTevZoh/RRQMQT3XNtE9EcxiTvR4DbjFQKh3PffyrRQ==
   dependencies:
     vue "^3.3.4"
 
-"@morpheme/menu@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@morpheme/menu/-/menu-1.0.0-rc.1.tgz#3b60aa67fe0566a36f0754dbc22c7484428ab5e9"
-  integrity sha512-eCJ1hHX3E9ptLQBZmJxuo5VFqyDxleF96DoLdHwaML74NIE4N+6tQN2cOYJYCDXj58WN6DZI05pvUWIuIoEt5A==
+"@morpheme/menu@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/menu/-/menu-1.0.0-rc.4.tgz#b244f5adfde383119b4ededb0b4d1aa5b3d05937"
+  integrity sha512-0dlKnzNURx0BebloQJYjtNC+5jLxaUVaL7IYPlK+K+9Rd1fk80c/Bj3Sn6Yl+k7opodkiym/8hN9raPicbCIqw==
   dependencies:
     "@iconify/vue" "^3.2.1"
-    "@morpheme/collapsible" "^1.0.0-rc.1"
+    "@morpheme/collapsible" "^1.0.0-rc.4"
     vue "^3.3.4"
     vue-router "^4.0.13"
 
-"@morpheme/menus@^1.0.0-rc.2":
-  version "1.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/@morpheme/menus/-/menus-1.0.0-rc.2.tgz#a316bb318e7077c82b8649f5c8090f3ad9d374b2"
-  integrity sha512-QeiYwk37YnqWqe2z14SI6o7YzoVSXHXQEIVR5NiR+yQ154BK2L27Nos3Oq+dv763WDqTeI4SozJoP+n+KF5mKA==
+"@morpheme/menus@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/menus/-/menus-1.0.0-rc.4.tgz#6369c00a64790dd87ca8c5ab5c87437c30a93a5e"
+  integrity sha512-twGQEPG5fA7JDdE0wo21Zh/MB/bwFHCfaCRAKmYFfZkQ9aJ2V0lskWB2yA3k+DKR0E0pt3I200Bx0J4AYMw0Pw==
   dependencies:
-    "@morpheme/icon" "^1.0.0-rc.1"
-    "@morpheme/list" "^1.0.0-rc.2"
+    "@morpheme/icon" "^1.0.0-rc.4"
+    "@morpheme/list" "^1.0.0-rc.4"
     floating-vue "^2.0.0-beta.20"
     vue "^3.3.4"
 
-"@morpheme/modal@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@morpheme/modal/-/modal-1.0.0-rc.1.tgz#bada6dd0fe4ac3a337e5a97f17c5ce627827c2bb"
-  integrity sha512-2PdzDP6g8boxy3kSZzGFYb3Gaw1dXkcoaeAQWMQB6bs2vhJTDEuV1wiawSGPuxsa+NkAuBVycji8ppNMJ0UwwA==
+"@morpheme/modal@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/modal/-/modal-1.0.0-rc.4.tgz#236fbaec988269c7154953c18a1bab494b40b7a9"
+  integrity sha512-XIX0gda6+Egn9Co40lueDBk+c6ZnYbAggLUDgXgdkqcwxxiKd04SK3THdHe+TCSo51Fyxp1yGffbBCKs+IJVPA==
   dependencies:
-    "@morpheme/button" "^1.0.0-rc.1"
+    "@morpheme/button" "^1.0.0-rc.4"
     vue "^3.3.4"
 
-"@morpheme/multi-select@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@morpheme/multi-select/-/multi-select-1.0.0-rc.1.tgz#22626a7d75288037a83efa33e054d60b7ebe7465"
-  integrity sha512-oYmXK6SjHBzwrdMkv3QXQGaTvfA4ZOfE5J5+DktpXBH0ck7l9sGpENeT9TIzcp/f7ujD7Sfqz6/8P7YYdi6Psg==
+"@morpheme/multi-select@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/multi-select/-/multi-select-1.0.0-rc.4.tgz#03bbd04db9a0baaa5a142fa65c014dcb3067b087"
+  integrity sha512-zdW7Q0k2Piob4NH8bUtz5Wig/zdSfWJHbBjXEB2NwsaIG17pBSGNlWPg1+R7vmfx8b6Cj5wTv4tO2Mwk+Gt+7g==
   dependencies:
-    "@morpheme/badge" "^1.0.0-rc.1"
-    "@morpheme/forms" "^1.0.0-rc.1"
-    "@morpheme/icon" "^1.0.0-rc.1"
-    "@morpheme/tooltip" "^1.0.0-rc.1"
+    "@morpheme/badge" "^1.0.0-rc.4"
+    "@morpheme/forms" "^1.0.0-rc.4"
+    "@morpheme/icon" "^1.0.0-rc.4"
+    "@morpheme/tooltip" "^1.0.0-rc.4"
     "@vueuse/core" "^10.2.1"
     vee-validate "^4.11.3"
     vue "^3.3.4"
 
-"@morpheme/nav-drawer@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@morpheme/nav-drawer/-/nav-drawer-1.0.0-rc.1.tgz#c7b92af08f9af5be2bb6c151002b1f9060ca94b5"
-  integrity sha512-vLev2Ag7BgIlg0DExETJs8Y11ItrFf6AAVPpa4kzFPkh/zaNi6of7sMaWs5Zz46cRhcYA6TVRQW/lgW8KIewig==
+"@morpheme/nav-drawer@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/nav-drawer/-/nav-drawer-1.0.0-rc.4.tgz#43e5b0ef4f4bdf131db4a549bc4df90316bae670"
+  integrity sha512-EdsIhDKCguSLABMhO4LHH+L1HpgT2HT8PI+I+w7HnYTDnd7OiGOQ7VZcKea0xoNBrxqMmGGPHxQPdvnC/wX8PQ==
   dependencies:
-    "@morpheme/button" "^1.0.0-rc.1"
-    "@morpheme/logo" "^1.0.0-rc.0"
-    "@morpheme/menu" "^1.0.0-rc.1"
-    "@morpheme/utils" "^1.0.0-rc.0"
+    "@morpheme/button" "^1.0.0-rc.4"
+    "@morpheme/logo" "^1.0.0-rc.4"
+    "@morpheme/menu" "^1.0.0-rc.4"
+    "@morpheme/utils" "^1.0.0-rc.4"
     "@vueuse/core" "^10.2.1"
     vue "^3.3.4"
 
-"@morpheme/navbar@^1.0.0-rc.2":
-  version "1.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/@morpheme/navbar/-/navbar-1.0.0-rc.2.tgz#24a1c870e5b7bcf2e33b6afde29369657e7ca2e6"
-  integrity sha512-mRRS4veAzXX+R/w7huUYxHQcqdERN63/wNCjU2MZbuG26zx9Dze+RDCxWT2IlGv/uMMdIzqqwFT5W/zDoNKM0g==
+"@morpheme/navbar@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/navbar/-/navbar-1.0.0-rc.4.tgz#8c6605f3a2861c15e53504247caeee079b802d5f"
+  integrity sha512-TCbFIEtue1oozqS6EUFbO7QzzVD6Jh1/DPBIehzgZZ7iblGQ791tY+PjV5ETzFSLVPu6ZzdFP5TFyO2R1M0ywA==
   dependencies:
-    "@morpheme/button" "^1.0.0-rc.1"
-    "@morpheme/icon" "^1.0.0-rc.1"
-    "@morpheme/logo" "^1.0.0-rc.0"
-    "@morpheme/menus" "^1.0.0-rc.2"
+    "@morpheme/button" "^1.0.0-rc.4"
+    "@morpheme/icon" "^1.0.0-rc.4"
+    "@morpheme/logo" "^1.0.0-rc.4"
+    "@morpheme/menus" "^1.0.0-rc.4"
     vue "^3.3.4"
 
-"@morpheme/pagination@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@morpheme/pagination/-/pagination-1.0.0-rc.1.tgz#50b4957c65f26af5ddb0851bad0d47b964255bff"
-  integrity sha512-HfkSAYVfh/EQFWnRyfA4zXwoz1N3unET7IHzhcVQOqfLgK2/uo4PVkevFLVlY2DabWwxP+RQD0gHfQB276nSmQ==
+"@morpheme/pagination@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/pagination/-/pagination-1.0.0-rc.4.tgz#3b193fe96f293764e1e91836ac77adcdc3f1f3c3"
+  integrity sha512-3nYg2QPq1PS3RRLn/dXPiDAErQTaAlYBETac6GwsPkzGLx9ZaaqIZvSkp7hVr2hplvpMZaCJ+ljOfBGb9hTtnw==
   dependencies:
     pagino "^1.4.1"
     vue "^3.3.4"
 
-"@morpheme/popover@^1.0.0-rc.2":
-  version "1.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/@morpheme/popover/-/popover-1.0.0-rc.2.tgz#4dfbb4b56b056f2ec03ce6c35d2fbbd586926a28"
-  integrity sha512-HqdD/h3t3QoLPsgYRJ5oQy1YQJSIL/08HmZHmsZk7N4TWfaPSNESemouW+FfEkEnv2VTw9xcgU8Q1xCzWhECcQ==
+"@morpheme/popover@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/popover/-/popover-1.0.0-rc.4.tgz#2b4f2e651d9345986da08e87c9c5afd9c20b0618"
+  integrity sha512-r3sKQGh2yjNNBiNRmaZZvx7syllWiKmn53AwoiLfMRf9fwRfnW1Ot3fQ75JPWy7LOPkWgxj8PSGJdu2kOS3cCQ==
   dependencies:
     "@headlessui/vue" "^1.7.13"
     tailwindcss "^3.3.1"
     vue "^3.3.4"
 
-"@morpheme/progress-bar@^1.0.0-rc.0":
-  version "1.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@morpheme/progress-bar/-/progress-bar-1.0.0-rc.0.tgz#b60e8168fcf44fcef90298d0e905c00ab2937aa0"
-  integrity sha512-aCSbOg89dp8Lqq6w+WdZUDXSKzFfxo9SA0bkgFPFIMmyfW5wrrUi8u7WRPktgxhKzpbv90/qrJQkpnmXM62ghQ==
+"@morpheme/progress-bar@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/progress-bar/-/progress-bar-1.0.0-rc.4.tgz#e531c2eb5b7337d202230bfa600c674887036b4a"
+  integrity sha512-wiydZ8WApfMVx3IFc6B/H3J4bwo+YPCC/KFnj+/XuAWuZ4yj5I8bDnK2X2Vl5YmS6L74Mj7FLz2p1UBPkisbFg==
   dependencies:
-    "@morpheme/utils" "^1.0.0-rc.0"
+    "@morpheme/utils" "^1.0.0-rc.4"
     vue "^3.3.4"
 
-"@morpheme/progress-circular@^1.0.0-rc.0":
-  version "1.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@morpheme/progress-circular/-/progress-circular-1.0.0-rc.0.tgz#f7af3d6a1b4a7b14a84bc31495199590a84a841d"
-  integrity sha512-ShbbftW99ccuJNpnPnhVZJQvWZ0TTYHnwVlQin0Z2dE5w63cIhnXvPp1I3NtZCqvN4R1lOAIpp1IWBwUmmI3sA==
+"@morpheme/progress-circular@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/progress-circular/-/progress-circular-1.0.0-rc.4.tgz#80d79965471772faf929c961671cf7372fe45d84"
+  integrity sha512-CRvHx/DADNZfQPwEEPbD8zghh9xNz+sq2UD78q3uyULBzATP5vPMjctqZvKEioTNgaJTQbnwSpCtqCwcqmcWHw==
   dependencies:
-    "@morpheme/utils" "^1.0.0-rc.0"
+    "@morpheme/utils" "^1.0.0-rc.4"
     vue "^3.3.4"
 
-"@morpheme/quill-editor@^1.0.0-rc.0":
-  version "1.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@morpheme/quill-editor/-/quill-editor-1.0.0-rc.0.tgz#70a8e8d3b1cd67514e57c70f67a30aa048da4548"
-  integrity sha512-wFmhi6W+2KryFTAKysMaXTxaudqwLjZhEiQD2W/gdkDLodtUSSJOiRnrfi9BzJiS2WrdUZ2MKuH8+9LizZz/fg==
+"@morpheme/quill-editor@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/quill-editor/-/quill-editor-1.0.0-rc.4.tgz#5aad7628523cafee75f68618feb0464dc7d3ae66"
+  integrity sha512-LmqLC65S0Z/R2o/ekYTZLaAEbN9Go97ZicnJXayVb/iju8cVH6fS+J8q7oSb7WzkZ0OEp+4d6KjzP923iESfIQ==
   dependencies:
     "@vueup/vue-quill" "^1.0.0-beta.8"
     quill "^1.3.7"
@@ -989,231 +996,231 @@
     vue "^3.3.4"
     yup "^0.32.11"
 
-"@morpheme/rating@^1.0.0-rc.0":
-  version "1.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@morpheme/rating/-/rating-1.0.0-rc.0.tgz#8fc34e7e8d7379649ef0d1eb641d9c5e2d1defba"
-  integrity sha512-40oNy2V658DEP5JBdAk/ZH8zYiwb8s42x8yilF3kZsk4kF68Hqi6pxYrZKrielJ3R0lHR9D8SYI6NNuaNb4M7w==
+"@morpheme/rating@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/rating/-/rating-1.0.0-rc.4.tgz#1b11b48241f7f253f13addcc25b61c745aa89018"
+  integrity sha512-znim/PAA8qXhuemDxHQZ+SpmAxDtvX66q2eM1mE2T5+5KCfIZi2tzmoA6pdtezXIqxNdgr7gz8clBXPp09D3RQ==
   dependencies:
     vue "^3.3.4"
 
-"@morpheme/select@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@morpheme/select/-/select-1.0.0-rc.1.tgz#fafd91e5cd5b9c3d6f7b48aac578c216e975d09e"
-  integrity sha512-YP6TSSGucIRJQDvZCu98dPdFapI67LKEOTE8mXgyLVez738Sh+lBBX/AdcjLE/f0JzRrMFYzeXQUR9JKmuFHDQ==
+"@morpheme/select@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/select/-/select-1.0.0-rc.4.tgz#3c5db2713eec5319294334a0631d637a1c5c4128"
+  integrity sha512-hUxPj8xS0VICq145Gwd1T8sgGsrVoCMM1MlwOzTW6qyLraNI+JMETpjyP6GsI0u2NljlfIc4p/CQ10c4PHIHrw==
   dependencies:
     "@floating-ui/vue" "^1.0.2"
     "@headlessui-float/vue" "^0.11.2"
-    "@morpheme/badge" "^1.0.0-rc.1"
-    "@morpheme/divider" "^1.0.0-rc.0"
-    "@morpheme/forms" "^1.0.0-rc.1"
-    "@morpheme/icon" "^1.0.0-rc.1"
-    "@morpheme/theme" "^1.0.0-rc.0"
-    "@morpheme/tooltip" "^1.0.0-rc.1"
-    "@morpheme/utils" "^1.0.0-rc.0"
+    "@morpheme/badge" "^1.0.0-rc.4"
+    "@morpheme/divider" "^1.0.0-rc.4"
+    "@morpheme/forms" "^1.0.0-rc.4"
+    "@morpheme/icon" "^1.0.0-rc.4"
+    "@morpheme/theme" "^1.0.0-rc.4"
+    "@morpheme/tooltip" "^1.0.0-rc.4"
+    "@morpheme/utils" "^1.0.0-rc.4"
     vue "^3.3.4"
 
-"@morpheme/shimmer@^1.0.0-rc.0":
-  version "1.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@morpheme/shimmer/-/shimmer-1.0.0-rc.0.tgz#c2fee1ad152acb4279986cede4621b34eda8fe9c"
-  integrity sha512-DRFfvILAMbIcLBsELMS5A5qI/v2+23TEmMXD5kMVmMqw8k4BsZY/AKiy0sa3P+bOBRpx536gF6nsLiB+Ufz1KQ==
+"@morpheme/shimmer@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/shimmer/-/shimmer-1.0.0-rc.4.tgz#0741061a6a7032922dbb995b739c2bdf900b25c4"
+  integrity sha512-mPKEZdcacgevJZmCjmUAYIkLdyH4keBVgXgjrv1zcZdx7B9d2yEEBAVXq4GjvCDC9YY+hWKo62yt1KAo/pP35Q==
   dependencies:
     vue "^3.3.4"
 
-"@morpheme/spinner@^1.0.0-rc.0":
-  version "1.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@morpheme/spinner/-/spinner-1.0.0-rc.0.tgz#b17f720b3371a2dc31f82ca86e442897d245e761"
-  integrity sha512-StxdWzl7rW4a2NYdjsAdpxo3McY2FxcUX6C/eMOA3JPI64yGZPe8ElANontKA1LSbeelknS54hkoZmwCvDCCKg==
+"@morpheme/spinner@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/spinner/-/spinner-1.0.0-rc.4.tgz#fbf976b958ed0256cfd060c14c75908d36903f82"
+  integrity sha512-epQNhRAztFSz2aoGcsCRAvlOAH1+2LBAgNyAByaT+B0tYkRbfI/KBEwo2k3ynb5ODyPLzNOLrOWEjg0EhPeBYg==
   dependencies:
     vue "^3.3.4"
 
-"@morpheme/stats@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@morpheme/stats/-/stats-1.0.0-rc.1.tgz#adf6a1f21765e68f3986be4ed9a2f6b2ff60422c"
-  integrity sha512-RicZhGv1FDLu6rm7o7mLQ7u6NjNEYzalFmv7ht3GGsN4AvYkEVqllgEkmPyMddPR+qZ0xlrhS43gHVzSsfID0Q==
+"@morpheme/stats@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/stats/-/stats-1.0.0-rc.4.tgz#b5269095ec07b91078d8845391fa955e1b133225"
+  integrity sha512-k+HITr0f7Hl/vooPjHZApV1TC+1vVeat2Gy9wscyLbnIG2liGyvcsRtu8WGX017CO6Xkjnp5djrxPW5ern8m4A==
   dependencies:
     "@iconify/vue" "^3.2.1"
-    "@morpheme/badge" "^1.0.0-rc.1"
-    "@morpheme/card" "^1.0.0-rc.1"
-    "@morpheme/icon" "^1.0.0-rc.1"
+    "@morpheme/badge" "^1.0.0-rc.4"
+    "@morpheme/card" "^1.0.0-rc.4"
+    "@morpheme/icon" "^1.0.0-rc.4"
     vue "^3.3.4"
 
-"@morpheme/stepper@^1.0.0-rc.0":
-  version "1.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@morpheme/stepper/-/stepper-1.0.0-rc.0.tgz#e6062fbe5b975a74a74ff2f0f69f3b12d18ba721"
-  integrity sha512-KLpWSuJhtTxnZ8RgxlLkx3NT4RxKL8v2fiKPHKVbRTTqlNNbHwG0ByjBmyQsbrX6lzw3Tmeuicyj1mWWPr8jEw==
+"@morpheme/stepper@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/stepper/-/stepper-1.0.0-rc.4.tgz#65060aefdc64b15234c4e70ff3f0f5fd1ec2a964"
+  integrity sha512-zkEjhDx68P4ivL+/7+c0WnXeucGB9t1WEEuRSNseX/2NeCDfMYzfOZb601Yn/B3mCLLI/xGsoH6873symhaRCw==
   dependencies:
     tailwindcss "^3.3.1"
     vue "^3.3.4"
 
-"@morpheme/switch@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@morpheme/switch/-/switch-1.0.0-rc.1.tgz#797ca53312c939a444fd11855977bec898d376ec"
-  integrity sha512-c1lPboQUc7vrga6YbvBmOKmoa880RbbXd8MlZ0P5cw4ys5ywhGyIIIxQTubMeD7rPSLiSH0zO1mEJdAtnCRY7w==
+"@morpheme/switch@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/switch/-/switch-1.0.0-rc.4.tgz#a69dc5caf70f5ef7a6aa370c3b756752819adc99"
+  integrity sha512-MnBwulsKH5jxPoZG1wnofyHSpJYfftwjoO98CHKGhi2Tko5iFoEl/RgQcppdRSBLacBSmc0wII28zhq+5FfN8A==
   dependencies:
     "@vueuse/core" "^10.2.1"
     vee-validate "^4.11.3"
     vue "^3.3.4"
 
-"@morpheme/table@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@morpheme/table/-/table-1.0.0-rc.1.tgz#d3f594dd42550d783d063cd49e07f97b2db15629"
-  integrity sha512-gdNHgduIYmFgf4g3DURyU7oegO+yuORQ35w85uW/H+0Z4xYbSQrzYWKDhJy8hNCBx33RiDyk1q8zlEMEEg4Tbg==
+"@morpheme/table@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/table/-/table-1.0.0-rc.4.tgz#5bd3f24fa1be0ba2ad38d1299779fdcb3fd8ec61"
+  integrity sha512-bR27bJQiyM5371+mv7h0lKqeG+JcF3VpL7CQuzvb0B5b+jbcxPucYnVhaP5JpLz7kieRnFbAMcs3MKJlLWTwEA==
   dependencies:
-    "@morpheme/forms" "^1.0.0-rc.1"
-    "@morpheme/icon" "^1.0.0-rc.1"
-    "@morpheme/pagination" "^1.0.0-rc.1"
-    "@morpheme/spinner" "^1.0.0-rc.0"
-    "@morpheme/utils" "^1.0.0-rc.0"
+    "@morpheme/forms" "^1.0.0-rc.4"
+    "@morpheme/icon" "^1.0.0-rc.4"
+    "@morpheme/pagination" "^1.0.0-rc.4"
+    "@morpheme/spinner" "^1.0.0-rc.4"
+    "@morpheme/utils" "^1.0.0-rc.4"
     vue "^3.3.4"
 
-"@morpheme/tabs@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@morpheme/tabs/-/tabs-1.0.0-rc.1.tgz#5d630f09c4d4ac8e9636c850b3fe6933b1b6d424"
-  integrity sha512-WDTPdoEkwrFq9ur14/VH1JlIHFk7au72rJEkEmElcckPCm82QKmWPDStZiQ//xp1GTyE5Ks8YJPbVsBQih+x1A==
+"@morpheme/tabs@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/tabs/-/tabs-1.0.0-rc.4.tgz#c9c6db9c0023dc283e1f4bfbd9ce6dad5376b6f5"
+  integrity sha512-KbvmsfA2Nb3z6tVJAQ6V5uz/oaQvyJA27nvXqZqVi9v+Dn3p0fZD7Q4pNcP6RchOHWhe5wRf9V7nPAYWI2kLvA==
   dependencies:
-    "@morpheme/button" "^1.0.0-rc.1"
-    "@morpheme/card" "^1.0.0-rc.1"
-    "@morpheme/icon" "^1.0.0-rc.1"
-    "@morpheme/utils" "^1.0.0-rc.0"
+    "@morpheme/button" "^1.0.0-rc.4"
+    "@morpheme/card" "^1.0.0-rc.4"
+    "@morpheme/icon" "^1.0.0-rc.4"
+    "@morpheme/utils" "^1.0.0-rc.4"
     "@vueuse/core" "^10.2.1"
     vue "^3.3.4"
 
-"@morpheme/tailwind-components@^1.0.0-rc.0":
-  version "1.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@morpheme/tailwind-components/-/tailwind-components-1.0.0-rc.0.tgz#a5a5f7ffd33ba5812acdd4637c2bf8bc30ccdc3e"
-  integrity sha512-iGNmQvIN/GnmrEKgaWuRJhs5KJY1apCmA+Dyqp5eNbzBHgSy390G5pSbDlgIRBhtTYBThUU6RaYsqg1STigSBQ==
+"@morpheme/tailwind-components@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/tailwind-components/-/tailwind-components-1.0.0-rc.4.tgz#0756ff04095df5498c542f0c53f43ca667eecc50"
+  integrity sha512-TPmDq8mM3vDLIdnB7nynU5IBFs35voI626Y2zQ8M8NIRlyeDV/j/C4etxhcLaGazdeSRN7LtCpPoYSfzVdmqYQ==
 
-"@morpheme/tailwind-config@^1.0.0-rc.0":
-  version "1.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@morpheme/tailwind-config/-/tailwind-config-1.0.0-rc.0.tgz#cd6280da2fd884f2275291df40310f6c1676e0dc"
-  integrity sha512-k3+ffpHPeFo11tOaTrIlTPJ9HDH+z/rLjXaw9JeY96obJ7s4NJVKhz/NVbto3ENES+AwqA8MemwAMqWmCrrHLA==
+"@morpheme/tailwind-config@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/tailwind-config/-/tailwind-config-1.0.0-rc.4.tgz#6a7d2c94bf7d85bba7a16756b4343175e2788f07"
+  integrity sha512-eoRCI1ug0iSARdNYwGfYpg66BL4/dLwMNGc5HgWhfhFOGZxd9YFrH1rQVUVDGvjTuFrUF27+6WJfXVyO+jIvyg==
   dependencies:
     "@morpheme/design-tokens" "^0.1.0-alpha.5"
-    "@morpheme/tailwind-components" "^1.0.0-rc.0"
-    "@morpheme/theme" "^1.0.0-rc.0"
-    "@morpheme/utils" "^1.0.0-rc.0"
+    "@morpheme/tailwind-components" "^1.0.0-rc.4"
+    "@morpheme/theme" "^1.0.0-rc.4"
+    "@morpheme/utils" "^1.0.0-rc.4"
     "@tailwindcss/aspect-ratio" "^0.4.2"
     "@tailwindcss/forms" "^0.5.3"
     "@tailwindcss/typography" "^0.5.9"
     tailwindcss "^3.3.1"
     vue "^3.3.4"
 
-"@morpheme/text@^1.0.0-rc.0":
-  version "1.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@morpheme/text/-/text-1.0.0-rc.0.tgz#c26ec265cb1c0e54a135c6042ae5ebb37d2a1d7e"
-  integrity sha512-H16YESUXW70KtHOAYmi2o/3guongaShuvT2jGUa2OXiJ3bM0JscRCD/YBF/btppNffWL+pnwTzD5Og02jHXfZA==
+"@morpheme/text@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/text/-/text-1.0.0-rc.4.tgz#5a20c74c4b87fef269a563339872c4a0856b9e41"
+  integrity sha512-O0/Zq+KBrG8r+Q2W2HXI/Q307iCuJ2FJ3stLGvkCgL59GmLy6NFRrbyJQl0gQ+k0fWt550McjIMDQcFqqb8zhw==
   dependencies:
-    "@morpheme/utils" "^1.0.0-rc.0"
+    "@morpheme/utils" "^1.0.0-rc.4"
     vue "^3.3.4"
 
-"@morpheme/theme@^1.0.0-rc.0":
-  version "1.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@morpheme/theme/-/theme-1.0.0-rc.0.tgz#b49915a0f369e4478b4803f9aef861f00f5e82d1"
-  integrity sha512-nNTrHfJMK/z6mUPLhPfImuRyNlxfL9Mhu+QeITK7s9fWYIBzExkENPUIcC62hPsJUS6tocfiBbMBp8iCKMzwbQ==
+"@morpheme/theme@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/theme/-/theme-1.0.0-rc.4.tgz#1804f1ad271213d7d7b1f5e88a89c090861b6c8c"
+  integrity sha512-x5GLwfYL0qckdD9/MHkMmr1gcL3Vw6z6YNz+zjwXZJ69EiHatAqFxdAQ0waWXptJfQ1kj5lTyT0cXV7SqNwZaw==
   dependencies:
     tailwindcss "^3.3.1"
     vue "^3.3.4"
 
-"@morpheme/themes@1.0.0-rc.2", "@morpheme/themes@^1.0.0-rc.2":
-  version "1.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/@morpheme/themes/-/themes-1.0.0-rc.2.tgz#55833ee9eed447f7c5a3296f8d71460ca1e91c1c"
-  integrity sha512-zgZoxWJoEqNDqsN4PjDJnU1OBEc/dc7CmQHsZIg0EHMdGjFbalFEvQRChUUVhOsDP55uZPWqX2eLwAMlmV9rxg==
+"@morpheme/themes@1.0.0-rc.4", "@morpheme/themes@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/themes/-/themes-1.0.0-rc.4.tgz#8ea7d85db6f842a959d6b1afd1d31a0f0db6e293"
+  integrity sha512-1D5TjNgbvluHRWmadesDEIymI0ZRz+MGBOIXUrTME2ibu16+7gQ67i2WoTfA31kxyKOx7sn5sfNaZj5N84quTA==
   dependencies:
     "@morpheme/design-tokens" "^0.1.0-alpha.5"
     vue "^3.3.4"
 
-"@morpheme/timeline@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@morpheme/timeline/-/timeline-1.0.0-rc.1.tgz#7ddd5bb7bab67c0dd288850073ba79d7a43caf02"
-  integrity sha512-gC2gLS2ULFrsodEKJlWxSluyDHzscttKkYJTXzP04vM93rBbU0VQVrDn51LnHz5lyYmKtbzHlQIUH59iv9flVA==
+"@morpheme/timeline@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/timeline/-/timeline-1.0.0-rc.4.tgz#61ce3ec780c4e9f1d003e9a4ea52bf0a8ac1c81a"
+  integrity sha512-zzsLXo/2eI/1NOTDqbikQkSci5tnjDtb2Z5PA25697aSwT7SQ7J6yUJ5hbBOHPfPA7cZqEpMByFFmqGX81RDIg==
   dependencies:
     vue "^3.3.4"
 
-"@morpheme/toast@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@morpheme/toast/-/toast-1.0.0-rc.1.tgz#878ac6929431850774cf35bf64be7a02bd68e560"
-  integrity sha512-4j493lXL6ZkDEkuxwiAiS2a8Tk0FTleUV5og9Q/oX2wz0+rDBZII5OZYjMZ82vRP/UJgfzojicgT2nTj/aMO6w==
+"@morpheme/toast@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/toast/-/toast-1.0.0-rc.4.tgz#e187b55fcaaee2e65ec9d7ab997d0a9c38efd527"
+  integrity sha512-gofMSfcYyKtRa/WO4iLi906qd2o/OXx6T1PqoN6scB+adq/ful80tmPKTL0ujFewMGE7ishzD8W8S7ES4ZCjWA==
   dependencies:
-    "@morpheme/button" "^1.0.0-rc.1"
-    "@morpheme/icon" "^1.0.0-rc.1"
+    "@morpheme/button" "^1.0.0-rc.4"
+    "@morpheme/icon" "^1.0.0-rc.4"
     vee-validate "^4.11.3"
     vue "^3.3.4"
 
-"@morpheme/tooltip@^1.0.0-rc.1":
-  version "1.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@morpheme/tooltip/-/tooltip-1.0.0-rc.1.tgz#1a4659b7f919c32b46616fa1463431432da5174e"
-  integrity sha512-B31Riv6Vxcb3o0CC+r9fxcwooVAkI4s08c9FxU3i6f2ukIHhkplDqEfBqs0g5q5Ly4FbxBnF27MLeEYFEuU7Wg==
+"@morpheme/tooltip@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/tooltip/-/tooltip-1.0.0-rc.4.tgz#c03a633ec8ed3bb29f0f2352b7aac44b92632e21"
+  integrity sha512-/NqMxHD2Xn76Z4fJ6pTPcTw32DIDiACrX+TrF91GYfjuEPyt54f9vMEuG7u36tbSx+t2jevOuF9z39peXcIp5g==
   dependencies:
     floating-vue "^2.0.0-beta.20"
     vee-validate "^4.11.3"
     vue "^3.3.4"
 
-"@morpheme/ui@1.0.0-rc.2":
-  version "1.0.0-rc.2"
-  resolved "https://registry.yarnpkg.com/@morpheme/ui/-/ui-1.0.0-rc.2.tgz#e29bd91f84437bfd37e040dd561a1cdc10474a56"
-  integrity sha512-ExNYXHM5vw+d3hXhfnK8Hli/vPIkUM8NWS+P2bU1jaaC5pb3sSgwZMBnATZAyJhKRQ4FF3TB1Lap8cOQne3z8g==
+"@morpheme/ui@1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/ui/-/ui-1.0.0-rc.4.tgz#8464342a9f935e2ace8e37e46098ca6d172a99c3"
+  integrity sha512-BRP+EIJ1gFKN9LhKmmPz9qIiO++yerIOEeH3NNF3zY8Zlxrevg04FDP2Ftbm/yX92mB1AmQ04YY/Gp1eVzBqTQ==
   dependencies:
     "@headlessui/vue" "^1.7.13"
-    "@morpheme/alert" "^1.0.0-rc.1"
-    "@morpheme/app-bar" "^1.0.0-rc.1"
-    "@morpheme/app-shell" "^1.0.0-rc.2"
-    "@morpheme/autocomplete" "^1.0.0-rc.1"
-    "@morpheme/avatar" "^1.0.0-rc.1"
-    "@morpheme/badge" "^1.0.0-rc.1"
-    "@morpheme/banner" "^1.0.0-rc.2"
-    "@morpheme/bottom-navigation" "^1.0.0-rc.1"
-    "@morpheme/bottom-sheet" "^1.0.0-rc.2"
-    "@morpheme/breadcrumbs" "^1.0.0-rc.1"
-    "@morpheme/button" "^1.0.0-rc.1"
-    "@morpheme/card" "^1.0.0-rc.1"
-    "@morpheme/collapsible" "^1.0.0-rc.1"
-    "@morpheme/command" "^1.0.0-rc.2"
-    "@morpheme/container" "^1.0.0-rc.0"
-    "@morpheme/divider" "^1.0.0-rc.0"
-    "@morpheme/dropdown" "^1.0.0-rc.1"
-    "@morpheme/editor" "^1.0.0-rc.1"
-    "@morpheme/forms" "^1.0.0-rc.1"
-    "@morpheme/icon" "^1.0.0-rc.1"
-    "@morpheme/layouts" "^1.0.0-rc.2"
-    "@morpheme/list" "^1.0.0-rc.2"
-    "@morpheme/logo" "^1.0.0-rc.0"
-    "@morpheme/menu" "^1.0.0-rc.1"
-    "@morpheme/menus" "^1.0.0-rc.2"
-    "@morpheme/modal" "^1.0.0-rc.1"
-    "@morpheme/multi-select" "^1.0.0-rc.1"
-    "@morpheme/nav-drawer" "^1.0.0-rc.1"
-    "@morpheme/navbar" "^1.0.0-rc.2"
-    "@morpheme/pagination" "^1.0.0-rc.1"
-    "@morpheme/popover" "^1.0.0-rc.2"
-    "@morpheme/progress-bar" "^1.0.0-rc.0"
-    "@morpheme/progress-circular" "^1.0.0-rc.0"
-    "@morpheme/quill-editor" "^1.0.0-rc.0"
-    "@morpheme/rating" "^1.0.0-rc.0"
-    "@morpheme/select" "^1.0.0-rc.1"
-    "@morpheme/shimmer" "^1.0.0-rc.0"
-    "@morpheme/spinner" "^1.0.0-rc.0"
-    "@morpheme/stats" "^1.0.0-rc.1"
-    "@morpheme/stepper" "^1.0.0-rc.0"
-    "@morpheme/switch" "^1.0.0-rc.1"
-    "@morpheme/table" "^1.0.0-rc.1"
-    "@morpheme/tabs" "^1.0.0-rc.1"
-    "@morpheme/tailwind-components" "^1.0.0-rc.0"
-    "@morpheme/tailwind-config" "^1.0.0-rc.0"
-    "@morpheme/text" "^1.0.0-rc.0"
-    "@morpheme/theme" "^1.0.0-rc.0"
-    "@morpheme/themes" "^1.0.0-rc.2"
-    "@morpheme/timeline" "^1.0.0-rc.1"
-    "@morpheme/toast" "^1.0.0-rc.1"
-    "@morpheme/tooltip" "^1.0.0-rc.1"
-    "@morpheme/utils" "^1.0.0-rc.0"
+    "@morpheme/alert" "^1.0.0-rc.4"
+    "@morpheme/app-bar" "^1.0.0-rc.4"
+    "@morpheme/app-shell" "^1.0.0-rc.4"
+    "@morpheme/autocomplete" "^1.0.0-rc.4"
+    "@morpheme/avatar" "^1.0.0-rc.4"
+    "@morpheme/badge" "^1.0.0-rc.4"
+    "@morpheme/banner" "^1.0.0-rc.4"
+    "@morpheme/bottom-navigation" "^1.0.0-rc.4"
+    "@morpheme/bottom-sheet" "^1.0.0-rc.4"
+    "@morpheme/breadcrumbs" "^1.0.0-rc.4"
+    "@morpheme/button" "^1.0.0-rc.4"
+    "@morpheme/card" "^1.0.0-rc.4"
+    "@morpheme/collapsible" "^1.0.0-rc.4"
+    "@morpheme/command" "^1.0.0-rc.4"
+    "@morpheme/container" "^1.0.0-rc.4"
+    "@morpheme/divider" "^1.0.0-rc.4"
+    "@morpheme/dropdown" "^1.0.0-rc.4"
+    "@morpheme/editor" "^1.0.0-rc.4"
+    "@morpheme/forms" "^1.0.0-rc.4"
+    "@morpheme/icon" "^1.0.0-rc.4"
+    "@morpheme/layouts" "^1.0.0-rc.4"
+    "@morpheme/list" "^1.0.0-rc.4"
+    "@morpheme/logo" "^1.0.0-rc.4"
+    "@morpheme/menu" "^1.0.0-rc.4"
+    "@morpheme/menus" "^1.0.0-rc.4"
+    "@morpheme/modal" "^1.0.0-rc.4"
+    "@morpheme/multi-select" "^1.0.0-rc.4"
+    "@morpheme/nav-drawer" "^1.0.0-rc.4"
+    "@morpheme/navbar" "^1.0.0-rc.4"
+    "@morpheme/pagination" "^1.0.0-rc.4"
+    "@morpheme/popover" "^1.0.0-rc.4"
+    "@morpheme/progress-bar" "^1.0.0-rc.4"
+    "@morpheme/progress-circular" "^1.0.0-rc.4"
+    "@morpheme/quill-editor" "^1.0.0-rc.4"
+    "@morpheme/rating" "^1.0.0-rc.4"
+    "@morpheme/select" "^1.0.0-rc.4"
+    "@morpheme/shimmer" "^1.0.0-rc.4"
+    "@morpheme/spinner" "^1.0.0-rc.4"
+    "@morpheme/stats" "^1.0.0-rc.4"
+    "@morpheme/stepper" "^1.0.0-rc.4"
+    "@morpheme/switch" "^1.0.0-rc.4"
+    "@morpheme/table" "^1.0.0-rc.4"
+    "@morpheme/tabs" "^1.0.0-rc.4"
+    "@morpheme/tailwind-components" "^1.0.0-rc.4"
+    "@morpheme/tailwind-config" "^1.0.0-rc.4"
+    "@morpheme/text" "^1.0.0-rc.4"
+    "@morpheme/theme" "^1.0.0-rc.4"
+    "@morpheme/themes" "^1.0.0-rc.4"
+    "@morpheme/timeline" "^1.0.0-rc.4"
+    "@morpheme/toast" "^1.0.0-rc.4"
+    "@morpheme/tooltip" "^1.0.0-rc.4"
+    "@morpheme/utils" "^1.0.0-rc.4"
     "@vue/test-utils" "^2.0.0-rc.17"
     sass "^1.58.3"
     vue "^3.3.4"
 
-"@morpheme/utils@^1.0.0-rc.0":
-  version "1.0.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@morpheme/utils/-/utils-1.0.0-rc.0.tgz#4279cbc277d058f7cb5324dd095b12db3f4470d5"
-  integrity sha512-mJ7P894vj85t1oe0SYvJe601BPibDk5X3F0qTFv6LTQENFpQyDQnbnp9vgtxhi0qSK+2uPeP48b71Rv6RLFfQg==
+"@morpheme/utils@^1.0.0-rc.4":
+  version "1.0.0-rc.4"
+  resolved "https://registry.yarnpkg.com/@morpheme/utils/-/utils-1.0.0-rc.4.tgz#4209480046454d30e21c46cbfff838b46f11f44e"
+  integrity sha512-s0C1T7dPx5+xNn3VJBgv4QQIBT9vEvxefggEG68dswa5HK26eQa3UITqdHc/PECFhj75T9mMgpOud4mWWnC3nQ==
   dependencies:
     "@morpheme/design-tokens" "^0.1.0-alpha.5"
     vue "^3.3.4"
@@ -1587,23 +1594,24 @@ caniuse-lite@^1.0.30001538, caniuse-lite@^1.0.30001541:
   optionalDependencies:
     fsevents "~2.3.2"
 
-ckeditor5@^35.4.0:
-  version "35.4.0"
-  resolved "https://registry.yarnpkg.com/ckeditor5/-/ckeditor5-35.4.0.tgz#0ce67af211551b96856b780e3729481cadbb34df"
-  integrity sha512-vBEQVkFCbjYmEPVkyWsOqU44DOovUio6xBuCwroe4TuJLplqeRasCjFwB0DPknXQU8U0iM3Lh/QSKRyN92pw3Q==
+ckeditor5@^37.1.0:
+  version "37.1.0"
+  resolved "https://registry.yarnpkg.com/ckeditor5/-/ckeditor5-37.1.0.tgz#8cbdd8fb2d5ea08fe49699df3668b96c439bc539"
+  integrity sha512-sT/w0+pZ/p8ANrNaFI+LtUYRSUECFC1lvhQqGczGWEYD+pdYQTQxYVDy8QEYE5V9E5I7uvt4Dbcq9w6TjlLC/w==
   dependencies:
-    "@ckeditor/ckeditor5-clipboard" "^35.4.0"
-    "@ckeditor/ckeditor5-core" "^35.4.0"
-    "@ckeditor/ckeditor5-engine" "^35.4.0"
-    "@ckeditor/ckeditor5-enter" "^35.4.0"
-    "@ckeditor/ckeditor5-paragraph" "^35.4.0"
-    "@ckeditor/ckeditor5-select-all" "^35.4.0"
-    "@ckeditor/ckeditor5-typing" "^35.4.0"
-    "@ckeditor/ckeditor5-ui" "^35.4.0"
-    "@ckeditor/ckeditor5-undo" "^35.4.0"
-    "@ckeditor/ckeditor5-upload" "^35.4.0"
-    "@ckeditor/ckeditor5-utils" "^35.4.0"
-    "@ckeditor/ckeditor5-widget" "^35.4.0"
+    "@ckeditor/ckeditor5-clipboard" "^37.1.0"
+    "@ckeditor/ckeditor5-core" "^37.1.0"
+    "@ckeditor/ckeditor5-engine" "^37.1.0"
+    "@ckeditor/ckeditor5-enter" "^37.1.0"
+    "@ckeditor/ckeditor5-paragraph" "^37.1.0"
+    "@ckeditor/ckeditor5-select-all" "^37.1.0"
+    "@ckeditor/ckeditor5-typing" "^37.1.0"
+    "@ckeditor/ckeditor5-ui" "^37.1.0"
+    "@ckeditor/ckeditor5-undo" "^37.1.0"
+    "@ckeditor/ckeditor5-upload" "^37.1.0"
+    "@ckeditor/ckeditor5-utils" "^37.1.0"
+    "@ckeditor/ckeditor5-watchdog" "^37.1.0"
+    "@ckeditor/ckeditor5-widget" "^37.1.0"
 
 clone@^2.1.1:
   version "2.1.2"
@@ -2013,7 +2021,7 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.2.4.tgz#eca284f75d2965079309dc0ad9255abb2ebc1632"
   integrity sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==
 
-lodash-es@^4.17.11, lodash-es@^4.17.15, lodash-es@^4.17.21:
+lodash-es@^4.17.15, lodash-es@^4.17.21:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.21.tgz#43e626c46e6591b7750beb2b50117390c609e3ee"
   integrity sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==

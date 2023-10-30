@@ -24,8 +24,8 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "@morpheme/themes": "1.0.0-rc.2",
-    "@morpheme/ui": "1.0.0-rc.2",
+    "@morpheme/themes": "1.0.0-rc.4",
+    "@morpheme/ui": "1.0.0-rc.4",
     "@stackblitz/sdk": "^1.9.0",
     "vue-gtag": "^2.0.1"
   }
