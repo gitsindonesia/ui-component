@@ -16,7 +16,7 @@ const props = defineProps({
   },
   name: {
     type: String,
-    default: '',
+    default: undefined,
   },
   error: {
     type: Boolean,
