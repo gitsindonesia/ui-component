@@ -25,11 +25,11 @@ const props = defineProps({
   },
   name: {
     type: String,
-    default: '',
+    default: undefined,
   },
   id: {
     type: String,
-    default: '',
+    default: undefined,
   },
   labelClass: {
     type: String,
