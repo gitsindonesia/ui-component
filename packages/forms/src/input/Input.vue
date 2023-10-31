@@ -21,7 +21,7 @@ const props = defineProps({
   },
   name: {
     type: String,
-    default: '',
+    default: undefined
   },
   error: {
     type: Boolean,
@@ -65,7 +65,7 @@ const props = defineProps({
   },
   id: {
     type: String,
-    default: '',
+    default: undefined,
   },
   inputClass: {
     type: String,
