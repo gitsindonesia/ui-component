@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/toast-store",
-  "version": "1.0.0-rc.4",
+  "version": "1.0.0-rc.5",
   "description": "Store module for @morpheme/toast.",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,7 +15,7 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@morpheme/toast": "^1.0.0-rc.4",
+    "@morpheme/toast": "^1.0.0-rc.5",
     "pinia": "^2.0.11",
     "vue": "^3.3.4",
     "vuex": "^4.0.2"

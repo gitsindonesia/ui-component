@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/toast",
-  "version": "1.0.0-rc.4",
+  "version": "1.0.0-rc.5",
   "description": "Toast component for Vue 3",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,7 +15,7 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@morpheme/button": "^1.0.0-rc.4",
+    "@morpheme/button": "^1.0.0-rc.5",
     "@morpheme/icon": "^1.0.0-rc.4",
     "vee-validate": "^4.11.3",
     "vue": "^3.3.4"

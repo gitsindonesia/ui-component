@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/button",
-  "version": "1.0.0-rc.4",
+  "version": "1.0.0-rc.5",
   "description": "Morpheme Button Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -24,7 +24,7 @@
     "vue-router": "^4.1.5"
   },
   "devDependencies": {
-    "@morpheme/card": "^1.0.0-rc.4",
+    "@morpheme/card": "^1.0.0-rc.5",
     "@morpheme/tailwind-config": "^1.0.0-rc.4",
     "@vitejs/plugin-vue": "^4.2.0",
     "@vue/test-utils": "^2.0.0-rc.17",

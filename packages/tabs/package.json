@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/tabs",
-  "version": "1.0.0-rc.4",
+  "version": "1.0.0-rc.5",
   "description": "Morpheme Tabs Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,8 +15,8 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@morpheme/button": "^1.0.0-rc.4",
-    "@morpheme/card": "^1.0.0-rc.4",
+    "@morpheme/button": "^1.0.0-rc.5",
+    "@morpheme/card": "^1.0.0-rc.5",
     "@morpheme/icon": "^1.0.0-rc.4",
     "@morpheme/utils": "^1.0.0-rc.4",
     "@vueuse/core": "^10.2.1",

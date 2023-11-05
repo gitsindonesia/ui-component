@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/avatar",
-  "version": "1.0.0-rc.4",
+  "version": "1.0.0-rc.5",
   "description": "Morpheme Avatar",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
