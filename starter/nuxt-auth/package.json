@@ -20,7 +20,7 @@
     "prep": "nuxt prepare"
   },
   "dependencies": {
-    "@morpheme/nuxt": "^1.0.0-rc.4",
+    "@morpheme/nuxt": "^1.0.0-rc.5",
     "@sidebase/nuxt-auth": "^0.4.4",
     "next-auth": "^4.21.1"
   },
