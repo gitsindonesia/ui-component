@@ -21,7 +21,7 @@ const props = defineProps({
   },
   name: {
     type: String,
-    default: undefined
+    default: undefined,
   },
   error: {
     type: Boolean,
@@ -157,15 +157,14 @@ const props = defineProps({
   },
 });
 
-const emit =
-  defineEmits<{
-    (e: 'update:modelValue', value: string | number): void;
-    (e: 'clickPrepend'): void;
-    (e: 'clickPrependIcon'): void;
-    (e: 'clickAppend'): void;
-    (e: 'clickAppendIcon'): void;
-    (e: 'clear'): void;
-  }>();
+const emit = defineEmits<{
+  (e: 'update:modelValue', value: string | number): void;
+  (e: 'clickPrepend'): void;
+  (e: 'clickPrependIcon'): void;
+  (e: 'clickAppend'): void;
+  (e: 'clickAppendIcon'): void;
+  (e: 'clear'): void;
+}>();
 
 const inputId = computed(() => props.id || props.name);
 const uncontrolledValue = useVModel(props, 'modelValue', emit);
@@ -186,7 +185,7 @@ defineExpose({
 
 defineSlots<{
   default?: (props: {}) => any;
-  label?: (props: {for: string}) => any;
+  label?: (props: {for?: string}) => any;
   prepend?: (props: {}) => any;
   'prepend.outer'?: (props: {}) => any;
   append?: (props: {}) => any;
@@ -194,7 +193,7 @@ defineSlots<{
   clearable?: (props: {}) => any;
   hint?: (props: {}) => any;
   error?: (props: {}) => any;
-}>()
+}>();
 </script>
 
 <template>
