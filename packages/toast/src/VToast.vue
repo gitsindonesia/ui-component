@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import {computed, PropType, ref, toRefs, watch} from 'vue';
+import {computed, type PropType, ref, toRefs, watch} from 'vue';
 import Icon from '@morpheme/icon';
-import {DefaultColors} from '@morpheme/theme/defaultTheme';
-import {ToastPlacement} from './types';
+import type {DefaultColors} from '@morpheme/theme/defaultTheme';
+import type {ToastPlacement} from './types';
 
 export type ToastTypes = 'success' | 'error' | 'warning' | 'question';
 
@@ -165,10 +165,9 @@ const props = defineProps({
   },
 });
 
-const emit =
-  defineEmits<{
-    (e: 'update:modelValue', value: boolean): void;
-  }>();
+const emit = defineEmits<{
+  (e: 'update:modelValue', value: boolean): void;
+}>();
 
 const {modelValue} = toRefs(props);
 
