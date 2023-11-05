@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {toRefs, computed, resolveComponent} from 'vue';
-import {Sizes} from './types';
+import type {Sizes} from './types';
 
 export type Props = {
   to?: string;
