@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {useVModel} from '@vueuse/core';
-import {computed, PropType} from 'vue';
+import {computed, type PropType} from 'vue';
 
 export type CheckboxValue = string | number | any[] | boolean | undefined;
 
@@ -71,10 +71,9 @@ const props = defineProps({
   },
 });
 
-const emit =
-  defineEmits<{
-    (e: 'update:modelValue', value: CheckboxValue): void;
-  }>();
+const emit = defineEmits<{
+  (e: 'update:modelValue', value: CheckboxValue): void;
+}>();
 
 const inputId = computed(() => props.id || props.name);
 const uncontrolledValue = useVModel(props, 'modelValue', emit);

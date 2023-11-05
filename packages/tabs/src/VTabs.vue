@@ -4,7 +4,7 @@ import {
   onBeforeUnmount,
   onBeforeUpdate,
   onMounted,
-  PropType,
+  type PropType,
   provide,
   ref,
   toRefs,

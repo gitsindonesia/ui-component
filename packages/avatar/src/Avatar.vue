@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import {computed} from 'vue';
 import {
-  DefaultColors,
+  type DefaultColors,
   defaultSizes,
-  DefaultSizes,
+  type DefaultSizes,
 } from '@morpheme/theme/defaultTheme';
 import VIcon from '@morpheme/icon';
 
@@ -66,7 +66,7 @@ const computedStyle = computed(() => {
 defineSlots<{
   default?: (props: {}) => any;
   indicator?: (props: {indicator: Props['indicator']}) => any;
-}>()
+}>();
 </script>
 
 <template>

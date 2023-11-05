@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import {PropType} from 'vue';
+import type {PropType} from 'vue';
 import type {VFormSelectItem} from './types';
-import { type ValidationMode, useFormValue } from '../composables';
+import {type ValidationMode, useFormValue} from '../composables';
 
 const props = defineProps({
   modelValue: {
@@ -73,18 +73,18 @@ const props = defineProps({
   },
   hint: {
     type: String,
-    default: ''
-  }
+    default: '',
+  },
 });
 
-const emit =
-  defineEmits<{
-    (e: 'update:modelValue', value: string): void;
-  }>();
+const emit = defineEmits<{
+  (e: 'update:modelValue', value: string): void;
+}>();
 
-
-const {errorMessage, uncontrolledValue, handleBlur, inputId} =
-  useFormValue(props, emit);
+const {errorMessage, uncontrolledValue, handleBlur, inputId} = useFormValue(
+  props,
+  emit,
+);
 
 const getValue = (option: string | Record<string, any>) => {
   return typeof option === 'string' ? option : option[props.itemValue];
@@ -97,7 +97,7 @@ const getText = (option: string | Record<string, any>) => {
 defineSlots<{
   default?: (props: {}) => any;
   hint?: (props: {}) => any;
-}>()
+}>();
 </script>
 
 <template>

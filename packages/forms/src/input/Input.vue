@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {PropType, computed, ref} from 'vue';
+import {type PropType, computed, ref} from 'vue';
 import Icon from '@morpheme/icon';
 import SelectOptions, {type Option} from './SelectOptions.vue';
 import {useVModel} from '@vueuse/core';

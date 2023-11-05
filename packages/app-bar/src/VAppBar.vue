@@ -3,7 +3,7 @@ import {
   toRefs,
   ref,
   watch,
-  PropType,
+  type PropType,
   onMounted,
   onBeforeUnmount,
   computed,
@@ -63,10 +63,9 @@ const props = defineProps({
   },
 });
 
-const emit =
-  defineEmits<{
-    (e: 'update:modelValue', value: boolean): void;
-  }>();
+const emit = defineEmits<{
+  (e: 'update:modelValue', value: boolean): void;
+}>();
 
 const {modelValue} = toRefs(props);
 
@@ -142,8 +141,8 @@ if (props.hideOnScroll) {
 }
 
 defineSlots<{
-  default?: (props: {toggle: () => boolean}) => any
-}>()
+  default?: (props: {toggle: () => boolean}) => any;
+}>();
 </script>
 
 <template>

@@ -1,5 +1,13 @@
 <script setup lang="ts">
-import {computed, toRefs, ref, watch, provide, onMounted, PropType} from 'vue';
+import {
+  computed,
+  toRefs,
+  ref,
+  watch,
+  provide,
+  onMounted,
+  type PropType,
+} from 'vue';
 import Icon from '@morpheme/icon';
 import {AlertSymbol} from './api';
 
@@ -70,11 +78,10 @@ const props = defineProps({
 
 const {modelValue, color} = toRefs(props);
 
-const emit =
-  defineEmits<{
-    (event: 'update:modelValue', value: boolean): void;
-    (event: 'dismissed'): void;
-  }>();
+const emit = defineEmits<{
+  (event: 'update:modelValue', value: boolean): void;
+  (event: 'dismissed'): void;
+}>();
 
 const isOpen = ref(modelValue.value);
 
@@ -94,7 +101,7 @@ const classes = computed(() => {
       'alert--outlined': props.outlined,
       'alert--solid': props.solid,
       'alert--bordered': props.border || props.bordered,
-      'alert--tile': props.tile
+      'alert--tile': props.tile,
     },
   ];
 });
@@ -128,11 +135,11 @@ onMounted(() => {
 });
 
 defineSlots<{
-  default?: (props: {}) => any
-  icon?: (props: { icon: string }) => any
-  'x-button'?: (props: { dismiss: () => void }) => any
-  'x-icon'?: (props: {}) => any
-}>()
+  default?: (props: {}) => any;
+  icon?: (props: {icon: string}) => any;
+  'x-button'?: (props: {dismiss: () => void}) => any;
+  'x-icon'?: (props: {}) => any;
+}>();
 </script>
 
 <template>

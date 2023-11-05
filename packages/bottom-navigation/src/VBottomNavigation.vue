@@ -30,10 +30,9 @@ const props = withDefaults(
   },
 );
 
-const emit =
-  defineEmits<{
-    (e: 'update:modelValue', value: boolean): void;
-  }>();
+const emit = defineEmits<{
+  (e: 'update:modelValue', value: boolean): void;
+}>();
 
 const modelValue = useVModel(props, 'modelValue', emit);
 

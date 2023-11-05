@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import {PropType, ref} from 'vue';
+import {type PropType, ref} from 'vue';
 import Icon from '@morpheme/icon';
-import {useFormValue, ValidationMode} from '../composables';
+import {useFormValue, type ValidationMode} from '../composables';
 import ErrorMessage from '../ErrorMessage.vue';
 
 type IconSize = InstanceType<typeof Icon>['$props']['size'];

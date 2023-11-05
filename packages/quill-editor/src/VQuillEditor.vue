@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {Delta, QuillEditor} from '@vueup/vue-quill';
+import {type Delta, QuillEditor} from '@vueup/vue-quill';
 import '@vueup/vue-quill/dist/vue-quill.snow.css';
 import {useField} from 'vee-validate';
 import {toRefs, ref, watch, nextTick} from 'vue';

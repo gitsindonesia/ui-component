@@ -11,7 +11,7 @@ import {
   toRefs,
   onBeforeUpdate,
   nextTick,
-  PropType,
+  type PropType,
 } from 'vue';
 import VBadge from '@morpheme/badge';
 import VTooltip from '@morpheme/tooltip';
@@ -178,8 +178,8 @@ const props = defineProps({
   },
   hint: {
     type: String,
-    default: ''
-  }
+    default: '',
+  },
 });
 
 const emit = defineEmits([
@@ -187,7 +187,7 @@ const emit = defineEmits([
   'update:modelValue',
   'search',
   'selected',
-  'clear'
+  'clear',
 ]);
 
 const {
@@ -215,7 +215,11 @@ const focus = ref(-1);
 const refItems = ref<HTMLDivElement[]>([]);
 const dropdown = ref<HTMLDivElement | null>(null);
 
-const {errorMessage, uncontrolledValue} = useFormValue(props, emit, props.fieldOptions);
+const {errorMessage, uncontrolledValue} = useFormValue(
+  props,
+  emit,
+  props.fieldOptions,
+);
 
 const matchBy = (item: VMultiSelectItem, key: string) => {
   return String(item?.[key])
@@ -244,7 +248,9 @@ const searchItem = (item: VMultiSelectItem) => {
 // computed
 const filteredItems = computed(() => items.value.filter(searchItem));
 const badges = computed(() =>
-  maxBadge.value > 0 ? uncontrolledValue.value.slice(0, maxBadge.value) : uncontrolledValue.value,
+  maxBadge.value > 0
+    ? uncontrolledValue.value.slice(0, maxBadge.value)
+    : uncontrolledValue.value,
 );
 
 // methods
@@ -268,7 +274,8 @@ const handleSelect = (item: VMultiSelectItem) => {
 
 const findIndex = (item: VMultiSelectItem) => {
   return uncontrolledValue.value?.findIndex(
-    (sItem: VMultiSelectItem) => sItem[itemValue.value] === item?.[itemValue.value],
+    (sItem: VMultiSelectItem) =>
+      sItem[itemValue.value] === item?.[itemValue.value],
   );
 };
 
@@ -281,7 +288,7 @@ const isSelected = (item: VMultiSelectItem, index: number) => {
 const clearSelected = () => {
   uncontrolledValue.value = [];
   focus.value = -1;
-  emit('clear')
+  emit('clear');
 };
 
 const deselect = (item: VMultiSelectItem) => {
@@ -393,10 +400,7 @@ defineSlots<{
     value: string;
     onRemove: () => void;
   }) => any;
-  'select-all'?: (props: {
-    onClick: () => void;
-    isSelected: boolean;
-  }) => any;
+  'select-all'?: (props: {onClick: () => void; isSelected: boolean}) => any;
   'prepend.item'?: (props: {}) => any;
   'append.item'?: (props: {}) => any;
   'item.label'?: (props: {
@@ -407,7 +411,7 @@ defineSlots<{
   }) => any;
   'max-selection'?: (props: {}) => any;
   hint?: (props: {}) => any;
-}>()
+}>();
 </script>
 
 <template>

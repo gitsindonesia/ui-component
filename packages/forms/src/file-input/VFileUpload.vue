@@ -5,7 +5,7 @@ export default {
 </script>
 
 <script setup lang="ts">
-import {ref, toRefs, computed, watch, PropType} from 'vue';
+import {ref, toRefs, computed, watch, type PropType} from 'vue';
 import {ErrorMessage, useField} from 'vee-validate';
 import VFileUploadActions from './VFileUploadActions.vue';
 import VFileUploadDefaultTheme from './VFileUploadDefaultTheme.vue';

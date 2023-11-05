@@ -22,10 +22,9 @@ const props = withDefaults(defineProps<Props>(), {
   overlay: true,
 });
 
-const emit =
-  defineEmits<{
-    (e: 'update:modelValue', value: boolean): void;
-  }>();
+const emit = defineEmits<{
+  (e: 'update:modelValue', value: boolean): void;
+}>();
 
 const {modelValue} = toRefs(props);
 const isOpen = ref(modelValue.value);

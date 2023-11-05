@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {PropType, computed, ref, watch} from 'vue';
+import {type PropType, computed, ref, watch} from 'vue';
 import SelectOptions, {type Option} from '../input/SelectOptions.vue';
 
 const props = defineProps({
@@ -53,15 +53,15 @@ const props = defineProps({
   },
   hint: {
     type: String,
-    default: ''
+    default: '',
   },
   errorMessage: {
     type: String,
-    default: ''
+    default: '',
   },
   id: {
     type: String,
-    default: undefined
+    default: undefined,
   },
   readonly: {
     type: Boolean,
@@ -70,13 +70,12 @@ const props = defineProps({
   shadow: {
     type: Boolean,
     default: false,
-  }
+  },
 });
 
-const emit =
-  defineEmits<{
-    (e: 'update:modelValue', value: string): void;
-  }>();
+const emit = defineEmits<{
+  (e: 'update:modelValue', value: string): void;
+}>();
 
 const inputId = computed(() => props.id || props.name);
 const uncontrolledValue = ref(props.modelValue);
@@ -98,7 +97,7 @@ defineSlots<{
   default?: (props: {}) => any;
   hint?: (props: {}) => any;
   error?: (props: {}) => any;
-}>()
+}>();
 </script>
 
 <template>

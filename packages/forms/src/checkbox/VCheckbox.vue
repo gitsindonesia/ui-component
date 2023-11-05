@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {computed, PropType} from 'vue';
+import {computed, type PropType} from 'vue';
 import {useFormValue, ValidationMode} from '../composables';
 
 type CheckboxValue = any[] | boolean | undefined;
@@ -86,10 +86,9 @@ const props = defineProps({
   },
 });
 
-const emit =
-  defineEmits<{
-    (e: 'update:modelValue', value: CheckboxValue): void;
-  }>();
+const emit = defineEmits<{
+  (e: 'update:modelValue', value: CheckboxValue): void;
+}>();
 
 const isEagerValidation = computed(() => {
   return props.validationMode === 'eager';

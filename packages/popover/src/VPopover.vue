@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {Popover} from '@headlessui/vue';
-import {VPopoverPlacement} from './api';
+import type {VPopoverPlacement} from './api';
 
 withDefaults(
   defineProps<{

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {computed, PropType, resolveComponent} from 'vue';
+import {computed, type PropType, resolveComponent} from 'vue';
 import VCardImage from './VCardImage.vue';
 
 export type CardShadow =

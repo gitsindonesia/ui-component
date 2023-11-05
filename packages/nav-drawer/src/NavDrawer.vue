@@ -2,7 +2,7 @@
 import {useVModel, useDraggable} from '@vueuse/core';
 import {computed, ref, watch} from 'vue';
 import {Colors} from './colors';
-import {navDrawerHeights, NavDrawerHeights} from './types';
+import {navDrawerHeights, type NavDrawerHeights} from './types';
 
 export interface Props {
   color?: Colors | string;

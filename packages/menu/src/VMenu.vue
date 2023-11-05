@@ -5,7 +5,7 @@ export default {
 </script>
 
 <script setup lang="ts">
-import {computed, PropType, toRefs} from 'vue';
+import {computed, type PropType, toRefs} from 'vue';
 import VMenuTooltip from './VMenuTooltip.vue';
 import VMenuItem from './VMenuItem.vue';
 import VCollapsible from '@morpheme/collapsible';
@@ -159,20 +159,7 @@ const activatorClass = computed(() => {
       v-else
       :to="menu.to"
       exact
-      class="
-        group
-        menu-item
-        transition
-        duration-300
-        w-full
-        px-2
-        py-3
-        rounded
-        flex
-        gap-x-4
-        items-center
-        relative
-      "
+      class="group menu-item transition duration-300 w-full px-2 py-3 rounded flex gap-x-4 items-center relative"
       :class="[
         small ? 'text-sm' : '',
         dark ? 'hover:bg-gray-800' : 'hover:bg-gray-100',

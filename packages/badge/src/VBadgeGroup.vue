@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { DefaultColors } from "@morpheme/theme/defaultTheme";
-import { provide, toRefs } from "vue";
-import { VBadgeContextApi, VBadgeInjectionKey } from "./api";
+import type {DefaultColors} from '@morpheme/theme/defaultTheme';
+import {provide, toRefs} from 'vue';
+import {type VBadgeContextApi, VBadgeInjectionKey} from './api';
 
 interface Props {
   color?: DefaultColors;
@@ -9,10 +9,10 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  color: "default",
+  color: 'default',
 });
 
-const { color, outlined } = toRefs(props);
+const {color, outlined} = toRefs(props);
 
 const api: VBadgeContextApi = {
   color,
@@ -23,7 +23,7 @@ provide(VBadgeInjectionKey, api);
 
 defineSlots<{
   default?: (props: {}) => any;
-}>()
+}>();
 </script>
 
 <template>

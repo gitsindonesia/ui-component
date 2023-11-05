@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {PropType} from 'vue';
+import type {PropType} from 'vue';
 import Icon from '@morpheme/icon';
 
 type IconSize = InstanceType<typeof Icon>['$props']['size'];
@@ -139,14 +139,13 @@ defineProps({
   },
 });
 
-const emit =
-  defineEmits<{
-    (e: 'clickPrepend'): void;
-    (e: 'clickPrependIcon'): void;
-    (e: 'clickAppend'): void;
-    (e: 'clickAppendIcon'): void;
-    (e: 'clear'): void;
-  }>();
+const emit = defineEmits<{
+  (e: 'clickPrepend'): void;
+  (e: 'clickPrependIcon'): void;
+  (e: 'clickAppend'): void;
+  (e: 'clickAppendIcon'): void;
+  (e: 'clear'): void;
+}>();
 
 function clear() {
   emit('clear');

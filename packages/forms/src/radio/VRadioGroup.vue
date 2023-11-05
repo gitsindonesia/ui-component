@@ -1,11 +1,6 @@
 <script setup lang="ts">
-import {
-  PropType,
-  ref,
-  onMounted,
-  onBeforeUnmount,
-} from 'vue';
-import { type ValidationMode, useFormValue } from '../composables';
+import {type PropType, ref, onMounted, onBeforeUnmount} from 'vue';
+import {type ValidationMode, useFormValue} from '../composables';
 
 type Value = string | number | object | boolean | Record<string, any>;
 
@@ -98,8 +93,8 @@ const props = defineProps({
   },
   hint: {
     type: String,
-    default: ''
-  }
+    default: '',
+  },
 });
 
 const emit = defineEmits([
@@ -171,8 +166,7 @@ defineSlots<{
   default?: (props: {}) => any;
   label?: (props: {}) => any;
   hint?: (props: {}) => any;
-
-}>()
+}>();
 </script>
 
 <template>

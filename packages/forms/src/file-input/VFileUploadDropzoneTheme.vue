@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {computed, onMounted, onUnmounted} from 'vue';
-import {FileValue} from './types';
+import type {FileValue} from './types';
 
 type Props = {
   modelValue?: FileValue;
@@ -42,13 +42,12 @@ const props = withDefaults(defineProps<Props>(), {
   loading: false,
 });
 
-const emit =
-  defineEmits<{
-    (e: 'choose'): void;
-    (e: 'remove'): void;
-    (e: 'update:modelValue', value: any): void;
-    (e: 'dropped', file: any): void;
-  }>();
+const emit = defineEmits<{
+  (e: 'choose'): void;
+  (e: 'remove'): void;
+  (e: 'update:modelValue', value: any): void;
+  (e: 'dropped', file: any): void;
+}>();
 
 const dropzoneBorderClass = computed(() => {
   if (props.readonly) return 'border';
@@ -126,16 +125,7 @@ defineSlots<{
 
 <template>
   <div
-    class="
-      flex
-      justify-center
-      items-center
-      p-4
-      rounded-lg
-      transition
-      duration-300
-      border-2 border-dashed
-    "
+    class="flex justify-center items-center p-4 rounded-lg transition duration-300 border-2 border-dashed"
     :class="[dropzoneId, dropzoneBorderClass]"
   >
     <div v-if="hasFile" class="text-center flex flex-col gap-4">
@@ -148,16 +138,7 @@ defineSlots<{
         <div class="flex flex-col gap-4">
           <div
             v-if="image || preview"
-            class="
-              w-60
-              h-40
-              flex
-              bg-contain bg-gray-100
-              dark:bg-gray-true-100
-              mx-auto
-              rounded-lg
-              bg-no-repeat bg-center
-            "
+            class="w-60 h-40 flex bg-contain bg-gray-100 dark:bg-gray-true-100 mx-auto rounded-lg bg-no-repeat bg-center"
             :class="previewClass"
             :style="{
               backgroundImage: !loading ? `url(${previewURL})` : 'none',
@@ -178,19 +159,7 @@ defineSlots<{
       <div v-if="!readonly && !disabled" class="space-x-3">
         <button
           type="button"
-          class="
-            appearance-none
-            relative
-            cursor-pointer
-            rounded-md
-            font-medium
-            text-primary-600
-            hover:text-primary-500
-            focus-within:outline-none
-            focus-within:ring-2
-            focus-within:ring-offset-2
-            focus-within:ring-primary-500
-          "
+          class="appearance-none relative cursor-pointer rounded-md font-medium text-primary-600 hover:text-primary-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-primary-500"
           @click="emit('choose')"
         >
           <span>{{ changeText }} </span>
@@ -199,19 +168,7 @@ defineSlots<{
         <button
           type="button"
           v-if="!hideRemove"
-          class="
-            appearance-none
-            relative
-            cursor-pointer
-            rounded-md
-            font-medium
-            text-error-600
-            hover:text-error-500
-            focus-within:outline-none
-            focus-within:ring-2
-            focus-within:ring-offset-2
-            focus-within:ring-error-500
-          "
+          class="appearance-none relative cursor-pointer rounded-md font-medium text-error-600 hover:text-error-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-error-500"
           @click="emit('remove')"
         >
           <span>{{ removeText }} </span>
@@ -239,19 +196,7 @@ defineSlots<{
       <div class="flex text-sm text-gray-600 dark:text-gray-true-500">
         <button
           type="button"
-          class="
-            appearance-none
-            relative
-            cursor-pointer
-            rounded-md
-            font-medium
-            text-primary-600
-            hover:text-primary-500
-            focus-within:outline-none
-            focus-within:ring-2
-            focus-within:ring-offset-2
-            focus-within:ring-primary-500
-          "
+          class="appearance-none relative cursor-pointer rounded-md font-medium text-primary-600 hover:text-primary-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-primary-500"
           @click="emit('choose')"
         >
           <span>{{ uploadText }} </span>

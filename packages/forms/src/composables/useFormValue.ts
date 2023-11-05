@@ -1,4 +1,4 @@
-import {FieldOptions, useField} from 'vee-validate';
+import {type FieldOptions, useField} from 'vee-validate';
 import {computed, ref, toRefs, watch} from 'vue';
 
 export type ValidationMode = 'eager' | 'aggressive';

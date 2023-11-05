@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import VIcon from "@morpheme/icon";
-import { VBottomNavigationInjectionKey } from "./api";
+import VIcon from '@morpheme/icon';
+import {VBottomNavigationInjectionKey} from './api';
 import {
   computed,
   inject,
@@ -8,8 +8,8 @@ import {
   onUnmounted,
   ref,
   resolveComponent,
-} from "vue";
-import { type RouteLocation} from "vue-router";
+} from 'vue';
+import {type RouteLocation} from 'vue-router';
 
 const props = withDefaults(
   defineProps<{
@@ -20,13 +20,13 @@ const props = withDefaults(
     href?: string;
     nuxt?: boolean;
     as?: string | any;
-    exactActiveClass?: string
+    exactActiveClass?: string;
   }>(),
   {
-    iconSize: "sm",
-    as: "button",
-    exactActiveClass: 'v-bottom-navigation__item--active'
-  }
+    iconSize: 'sm',
+    as: 'button',
+    exactActiveClass: 'v-bottom-navigation__item--active',
+  },
 );
 
 const api = inject(VBottomNavigationInjectionKey) as any;
@@ -46,31 +46,33 @@ function onClick() {
 
 const tag = computed(() => {
   if (props.to) {
-    return props.nuxt ? resolveComponent("NuxtLink") : resolveComponent("RouterLink");
+    return props.nuxt
+      ? resolveComponent('NuxtLink')
+      : resolveComponent('RouterLink');
   }
 
-  return props.href ? "a" : props.as;
+  return props.href ? 'a' : props.as;
 });
 
 const attributes = computed(() => {
-  const attrs: Record<string, any> = {}
+  const attrs: Record<string, any> = {};
 
   if (props.to) {
-    attrs.to = props.to
-    attrs.exactActiveClass = props.exactActiveClass
+    attrs.to = props.to;
+    attrs.exactActiveClass = props.exactActiveClass;
   }
 
   if (props.href) {
-    attrs.href = props.href
+    attrs.href = props.href;
   }
 
-  return attrs
-})
+  return attrs;
+});
 
 defineSlots<{
   default?: (props: {}) => any;
   icon?: (props: {}) => any;
-}>()
+}>();
 </script>
 
 <template>
