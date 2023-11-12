@@ -9,8 +9,8 @@ dependencies:
     specifier: ^1.0.0
     version: 1.0.0
   '@morpheme/nuxt':
-    specifier: ^1.0.0-rc.5
-    version: 1.0.0-rc.5(nuxt@3.7.1)(vite@4.4.9)
+    specifier: ^1.0.0-rc.6
+    version: 1.0.0-rc.6(nuxt@3.7.1)(vite@4.4.9)
   apexcharts:
     specifier: ^3.37.3
     version: 3.37.3
@@ -1605,8 +1605,8 @@ packages:
       - ts-node
     dev: false
 
-  /@morpheme/app-shell@1.0.0-rc.5:
-    resolution: {integrity: sha512-LkgLaq8UeqQ0K/MXigljfXd8fnNokA34u5TO42FXvSXXRFqWOO9K6UPZHA2nAVoqh88CGNZPl11KHJSBjabK9Q==}
+  /@morpheme/app-shell@1.0.0-rc.6:
+    resolution: {integrity: sha512-loayQsKi5h6v9kkn4hEsnVPLFQOqW1X1zf7+Kp5yFDBYwAvHJhmxoQ1WYFsA92uvRk4UzpRkrr5AxDz3Cc6xmw==}
     dependencies:
       '@vueuse/core': 10.3.0(vue@3.3.4)
       vue: 3.3.4
@@ -1619,7 +1619,7 @@ packages:
     dependencies:
       '@headlessui/vue': 1.7.15(vue@3.3.4)
       '@morpheme/button': 1.0.0-rc.5
-      '@morpheme/forms': 1.0.0-rc.5(@nuxt/kit@3.8.0)
+      '@morpheme/forms': 1.0.0-rc.6(@nuxt/kit@3.8.0)
       '@morpheme/icon': 1.0.0-rc.4
       tailwindcss: 3.3.3
       vue: 3.3.4
@@ -1649,8 +1649,8 @@ packages:
       - ts-node
     dev: false
 
-  /@morpheme/banner@1.0.0-rc.5:
-    resolution: {integrity: sha512-hduPaBPhmfaFkiJbEFMIUVFNZvHjjLBJuqsCfUZJpFDd8sTuMdQzR3kvan2cmxAuCICazVkfqr63UcUCgGpOyg==}
+  /@morpheme/banner@1.0.0-rc.6:
+    resolution: {integrity: sha512-sAoFmUM1mIRz6Ma0WeZcJW56kpDZHrv895zpOMdF62g18H4KQtoSq9ZuPY1TI0AK5Oapfz8lQthxHGjnNf8UqA==}
     dependencies:
       vue: 3.3.4
     dev: false
@@ -1667,12 +1667,12 @@ packages:
       - ts-node
     dev: false
 
-  /@morpheme/bottom-sheet@1.0.0-rc.5:
-    resolution: {integrity: sha512-ZtylWYJrRqrObTir3z+MwOmeyIhA0+AjxgkfOVwkthUO/LY5IvxL/UdAZA2Hj0CMUIF7mW0I2sEGYr+McLGp8g==}
+  /@morpheme/bottom-sheet@1.0.0-rc.6:
+    resolution: {integrity: sha512-ywPB0TR++/1kGrerR9e9Fvg3wiHhAFPXsTvuzrHepemljAMXH4s1Kz3gaBMBnvnmzb43ZY5/RxZh3KUyCjH3dQ==}
     dependencies:
       '@morpheme/button': 1.0.0-rc.5
       '@morpheme/icon': 1.0.0-rc.4
-      '@morpheme/list': 1.0.0-rc.5
+      '@morpheme/list': 1.0.0-rc.6
       vue: 3.3.4
     transitivePeerDependencies:
       - ts-node
@@ -1713,11 +1713,11 @@ packages:
       vue: 3.3.4
     dev: false
 
-  /@morpheme/command@1.0.0-rc.5:
-    resolution: {integrity: sha512-xc73S7JOXxCiw4WW5Cw6r3oEl0I3O5P02KpImNrRJ8qki7EDjUShS7QtLMDKeXskjFEE0IT/P9w3tW5JbotS8w==}
+  /@morpheme/command@1.0.0-rc.6:
+    resolution: {integrity: sha512-MUwFKkDzNo7+ju9BSqFinYUeKj9lcCo0A90ihdjYLDd3PrCoDk33/hnEQutwBYpmqpwnwQvw4lq+3VG9q5E4/Q==}
     dependencies:
       '@morpheme/icon': 1.0.0-rc.4
-      '@morpheme/list': 1.0.0-rc.5
+      '@morpheme/list': 1.0.0-rc.6
       '@morpheme/modal': 1.0.0-rc.4
       vue: 3.3.4
     transitivePeerDependencies:
@@ -1768,13 +1768,13 @@ packages:
       vue: 3.3.4
     dev: false
 
-  /@morpheme/forms@1.0.0-rc.5(@nuxt/kit@3.8.0):
-    resolution: {integrity: sha512-S+qJr+Aw58iW6DTnmP7S045QOW02NbBYG7DiDbOYytFqOkF3TFv1Jz9ITkxpJL9FrB3/zsETv7rfkIf8BUAFCg==}
+  /@morpheme/forms@1.0.0-rc.6(@nuxt/kit@3.8.0):
+    resolution: {integrity: sha512-VcKUE7crvqbXOPLByYulDmvH1NBBtF/3pEouls0zMgn8SRuhFjEhE2aIdhfhyxra5fniwn66elRLIO9bndUxnA==}
     dependencies:
       '@morpheme/button': 1.0.0-rc.5
       '@morpheme/icon': 1.0.0-rc.4
       '@morpheme/progress-bar': 1.0.0-rc.4
-      '@morpheme/select': 1.0.0-rc.5(@nuxt/kit@3.8.0)
+      '@morpheme/select': 1.0.0-rc.6(@nuxt/kit@3.8.0)
       '@morpheme/spinner': 1.0.0-rc.4
       '@morpheme/utils': 1.0.0-rc.4
       '@vueuse/core': 10.3.0(vue@3.3.4)
@@ -1798,15 +1798,15 @@ packages:
       - ts-node
     dev: false
 
-  /@morpheme/layouts@1.0.0-rc.4:
-    resolution: {integrity: sha512-HAgajQMfSFQULHc8B4lAf1uVr3O+xlXfrVHBuBs0Z0FUMoMbxAhGVnHD/bfurLy4Pe1Ykd1ABdghVoj2TV2C0Q==}
+  /@morpheme/layouts@1.0.0-rc.6:
+    resolution: {integrity: sha512-CT1PIyKvUw1r8MtyBVzf37Xe2uNj4s2fSJe/CXtFfdm7W/y7nWob2Xir0oL+09gz4nbgeOQFrvH9t8fuSssT7Q==}
     dependencies:
       '@morpheme/design-tokens': 0.1.0-alpha.5
       vue: 3.3.4
     dev: false
 
-  /@morpheme/list@1.0.0-rc.5:
-    resolution: {integrity: sha512-opQ2VlIo/6PJ2djFPe+IrRezcz1yjydbNBv88pMTv7ZFJ903Lhmnm1FLUpgr15gdbcUxeQ32GIrjO2lPnNhRhw==}
+  /@morpheme/list@1.0.0-rc.6:
+    resolution: {integrity: sha512-J1gqlvhlc1ykICLl21WrHsHg+DkN7GgIL2q60IaSgv8kMHCKony0NQMtymu47N97OWheu/+oDuju7qFv09N/iw==}
     dependencies:
       '@morpheme/collapsible': 1.0.0-rc.4
       vue: 3.3.4
@@ -1819,8 +1819,8 @@ packages:
       vue: 3.3.4
     dev: false
 
-  /@morpheme/menu@1.0.0-rc.5:
-    resolution: {integrity: sha512-6h3zpROKY0WJhYNwGogXcprRdAs6eH2fETOY4U1Zm0KD22UIIvSXg3YJNqybWb0yQxiAwIhV+LkP5tlSfx96tg==}
+  /@morpheme/menu@1.0.0-rc.6:
+    resolution: {integrity: sha512-uUfIqPqI/2O6p8Oj8fstjtyail5ivZ8a/8LDiLlYD9hD94QYeBwhg/iCujvc2e2ZaPh+3UJAFfRvglS+Y3IwSg==}
     dependencies:
       '@iconify/vue': 3.2.1(vue@3.3.4)
       '@morpheme/collapsible': 1.0.0-rc.4
@@ -1828,11 +1828,11 @@ packages:
       vue-router: 4.2.4(vue@3.3.4)
     dev: false
 
-  /@morpheme/menus@1.0.0-rc.5(@nuxt/kit@3.8.0):
-    resolution: {integrity: sha512-ys9a09DzFqZWKxcaerETbCA02HWc4k1a9SEyjxHSbz8Fa7pzQNYEXYcFeKmTLvm3sef1cgrhl+5XmvSjngHMmw==}
+  /@morpheme/menus@1.0.0-rc.6(@nuxt/kit@3.8.0):
+    resolution: {integrity: sha512-GhabiSrF2IGD6Wp4IDgU3DFiBt4FM94VA4JXrR2hzqtM9r53YemzWXocAuMiwbkM6Qx7+NEIoChU3D4SMyyfYw==}
     dependencies:
       '@morpheme/icon': 1.0.0-rc.4
-      '@morpheme/list': 1.0.0-rc.5
+      '@morpheme/list': 1.0.0-rc.6
       floating-vue: 2.0.0-beta.24(@nuxt/kit@3.8.0)(vue@3.3.4)
       vue: 3.3.4
     transitivePeerDependencies:
@@ -1853,7 +1853,7 @@ packages:
     resolution: {integrity: sha512-5vn6U11yh8mSacueGecunDMA5C4riX1xoT5rqFZmr1gY6QXpRnaSNOBfFXxx11j6c91ifbx5BM/o5Sm47H1LYA==}
     dependencies:
       '@morpheme/badge': 1.0.0-rc.5
-      '@morpheme/forms': 1.0.0-rc.5(@nuxt/kit@3.8.0)
+      '@morpheme/forms': 1.0.0-rc.6(@nuxt/kit@3.8.0)
       '@morpheme/icon': 1.0.0-rc.4
       '@morpheme/tooltip': 1.0.0-rc.4(@nuxt/kit@3.8.0)
       '@vueuse/core': 10.3.0(vue@3.3.4)
@@ -1865,12 +1865,12 @@ packages:
       - ts-node
     dev: false
 
-  /@morpheme/nav-drawer@1.0.0-rc.5:
-    resolution: {integrity: sha512-R15vl5yn2ncwf3FEjQT/bJGOOB1If+a94y2vXC4wDt4r5QjkQbZK6UhFfzWkhJcUpGqJ5xi4gT21FN9QTxMB7w==}
+  /@morpheme/nav-drawer@1.0.0-rc.6:
+    resolution: {integrity: sha512-7oWsCt+vpaICG5dxTetsfzQGyykBBCfWg8Q6tHeUDiMZqALWErh0RpS8lKXiwoyFoBKkln9EvWlVGt33ycwj8A==}
     dependencies:
       '@morpheme/button': 1.0.0-rc.5
       '@morpheme/logo': 1.0.0-rc.5
-      '@morpheme/menu': 1.0.0-rc.5
+      '@morpheme/menu': 1.0.0-rc.6
       '@morpheme/utils': 1.0.0-rc.4
       '@vueuse/core': 10.3.0(vue@3.3.4)
       vue: 3.3.4
@@ -1879,23 +1879,23 @@ packages:
       - ts-node
     dev: false
 
-  /@morpheme/navbar@1.0.0-rc.5(@nuxt/kit@3.8.0):
-    resolution: {integrity: sha512-1wShC625hxi43Q5PolWzM8ikPacxrVvdHRTh3DRj8DoRhVhiFytResCIFb5JBW8/6XWPSltwA0uA28OYEDmz/A==}
+  /@morpheme/navbar@1.0.0-rc.6(@nuxt/kit@3.8.0):
+    resolution: {integrity: sha512-MviejYl1EYz/J0CZG6fb9FWJXCuzPLi6/rXWYbsBb5JHeOA5aGiApzBG7C9xVNu+3gmlfLhQB77KykWw4vyc4A==}
     dependencies:
       '@morpheme/button': 1.0.0-rc.5
       '@morpheme/icon': 1.0.0-rc.4
       '@morpheme/logo': 1.0.0-rc.5
-      '@morpheme/menus': 1.0.0-rc.5(@nuxt/kit@3.8.0)
+      '@morpheme/menus': 1.0.0-rc.6(@nuxt/kit@3.8.0)
       vue: 3.3.4
     transitivePeerDependencies:
       - '@nuxt/kit'
       - ts-node
     dev: false
 
-  /@morpheme/nuxt@1.0.0-rc.5(nuxt@3.7.1)(vite@4.4.9):
-    resolution: {integrity: sha512-mla/jBPUkt2xQF22H9uiTTDguwE78LAuo6/y5+XEqeQ1+MiciZYbilafY8JzQZ6jgkazrKZPZJ92xO2K2bhmWQ==}
+  /@morpheme/nuxt@1.0.0-rc.6(nuxt@3.7.1)(vite@4.4.9):
+    resolution: {integrity: sha512-xRrdr/3zdeLvDr023mT/QR15rLQxQ6oLRXoor+BLtbrELdLGH8rZYHweEc9crJxagbQFxJLmNKFhaM5UKpHAhw==}
     dependencies:
-      '@morpheme/ui': 1.0.0-rc.5(@nuxt/kit@3.8.0)
+      '@morpheme/ui': 1.0.0-rc.6(@nuxt/kit@3.8.0)
       '@nuxt/devtools-kit': 0.5.5(nuxt@3.7.1)(vite@4.4.9)
       '@nuxt/kit': 3.8.0
     transitivePeerDependencies:
@@ -1915,8 +1915,8 @@ packages:
       vue: 3.3.4
     dev: false
 
-  /@morpheme/popover@1.0.0-rc.5:
-    resolution: {integrity: sha512-BQKOGWL3WOc9g4SKYX8822IyJ9MPOeQGUnHKFyJIomGfhJUqCJ5Jk7d2YtXvMgBTEIM9KNjoMfhiD1NUzOThNg==}
+  /@morpheme/popover@1.0.0-rc.6:
+    resolution: {integrity: sha512-9o0mNgxhLigvyEtK5u0X0LGnS9tSSvnQSwCfEDa5DYzqT7rVnwQNxZXRr5xOp/B16/afQKNIZdwtvt6E77qqBw==}
     dependencies:
       '@headlessui/vue': 1.7.15(vue@3.3.4)
       tailwindcss: 3.3.3
@@ -1955,14 +1955,14 @@ packages:
       vue: 3.3.4
     dev: false
 
-  /@morpheme/select@1.0.0-rc.5(@nuxt/kit@3.8.0):
-    resolution: {integrity: sha512-XpQ8W3CYVJSZH1vywORD4psagRSgFXhZRhNTdvlAPP2a4CyxeL9Bnd/CS7UXs+U6g08c+ikilCJIgD49eA06tA==}
+  /@morpheme/select@1.0.0-rc.6(@nuxt/kit@3.8.0):
+    resolution: {integrity: sha512-c/MZPD04GPYKe2aPRatzmhR0js4/GZ7B1edjrvnBlFOMCs9DZExN3huQYAxTaUwdg5NvyzPZQcBVzi1k67hmPg==}
     dependencies:
       '@floating-ui/vue': 1.0.2(vue@3.3.4)
       '@headlessui-float/vue': 0.11.2(vue@3.3.4)
       '@morpheme/badge': 1.0.0-rc.5
       '@morpheme/divider': 1.0.0-rc.4
-      '@morpheme/forms': 1.0.0-rc.5(@nuxt/kit@3.8.0)
+      '@morpheme/forms': 1.0.0-rc.6(@nuxt/kit@3.8.0)
       '@morpheme/icon': 1.0.0-rc.4
       '@morpheme/theme': 1.0.0-rc.4
       '@morpheme/tooltip': 1.0.0-rc.4(@nuxt/kit@3.8.0)
@@ -2017,10 +2017,10 @@ packages:
       - '@vue/composition-api'
     dev: false
 
-  /@morpheme/table@1.0.0-rc.5:
-    resolution: {integrity: sha512-CprgszLmdBrUIeKqsDPY3smaJeWY9SSbSgZBr9jEwQk3VOY7XfOQuBPdULLK9lOZm3CJtX4olXy4wMxiSGKq7g==}
+  /@morpheme/table@1.0.0-rc.6:
+    resolution: {integrity: sha512-EVAY+yPM0Y3yiYX+AB6D+JqEvaK1SRRQ1kWvOTxWzR6U4Y79oYcXIvWC2qUnVcV0J9bprbu4P6oTO4A5Fh7Ufg==}
     dependencies:
-      '@morpheme/forms': 1.0.0-rc.5(@nuxt/kit@3.8.0)
+      '@morpheme/forms': 1.0.0-rc.6(@nuxt/kit@3.8.0)
       '@morpheme/icon': 1.0.0-rc.4
       '@morpheme/pagination': 1.0.0-rc.4
       '@morpheme/spinner': 1.0.0-rc.4
@@ -2115,52 +2115,52 @@ packages:
       - '@nuxt/kit'
     dev: false
 
-  /@morpheme/ui@1.0.0-rc.5(@nuxt/kit@3.8.0):
-    resolution: {integrity: sha512-wfAkHr8zZzNmpHCCkyZ5D1WjvD2OunJSYtlaNlfIOLoveStCRHZrEW1KX4qiNjhVFra24bkdP87CWMTFb5DzDA==}
+  /@morpheme/ui@1.0.0-rc.6(@nuxt/kit@3.8.0):
+    resolution: {integrity: sha512-pkZS6V/LIjZ/z+meW+KcvfM2TIxqcaoRofXq4dC6HJbojuXPPmhS5457sc0J9sxorSIipVJanGumoCZfMknNcw==}
     dependencies:
       '@headlessui/vue': 1.7.15(vue@3.3.4)
       '@morpheme/alert': 1.0.0-rc.5
       '@morpheme/app-bar': 1.0.0-rc.5
-      '@morpheme/app-shell': 1.0.0-rc.5
+      '@morpheme/app-shell': 1.0.0-rc.6
       '@morpheme/autocomplete': 1.0.0-rc.5(@nuxt/kit@3.8.0)
       '@morpheme/avatar': 1.0.0-rc.5
       '@morpheme/badge': 1.0.0-rc.5
-      '@morpheme/banner': 1.0.0-rc.5
+      '@morpheme/banner': 1.0.0-rc.6
       '@morpheme/bottom-navigation': 1.0.0-rc.5
-      '@morpheme/bottom-sheet': 1.0.0-rc.5
+      '@morpheme/bottom-sheet': 1.0.0-rc.6
       '@morpheme/breadcrumbs': 1.0.0-rc.5
       '@morpheme/button': 1.0.0-rc.5
       '@morpheme/card': 1.0.0-rc.5
       '@morpheme/collapsible': 1.0.0-rc.4
-      '@morpheme/command': 1.0.0-rc.5
+      '@morpheme/command': 1.0.0-rc.6
       '@morpheme/container': 1.0.0-rc.5
       '@morpheme/divider': 1.0.0-rc.4
       '@morpheme/dropdown': 1.0.0-rc.4
       '@morpheme/editor': 1.0.0-rc.4
-      '@morpheme/forms': 1.0.0-rc.5(@nuxt/kit@3.8.0)
+      '@morpheme/forms': 1.0.0-rc.6(@nuxt/kit@3.8.0)
       '@morpheme/icon': 1.0.0-rc.4
-      '@morpheme/layouts': 1.0.0-rc.4
-      '@morpheme/list': 1.0.0-rc.5
+      '@morpheme/layouts': 1.0.0-rc.6
+      '@morpheme/list': 1.0.0-rc.6
       '@morpheme/logo': 1.0.0-rc.5
-      '@morpheme/menu': 1.0.0-rc.5
-      '@morpheme/menus': 1.0.0-rc.5(@nuxt/kit@3.8.0)
+      '@morpheme/menu': 1.0.0-rc.6
+      '@morpheme/menus': 1.0.0-rc.6(@nuxt/kit@3.8.0)
       '@morpheme/modal': 1.0.0-rc.4
       '@morpheme/multi-select': 1.0.0-rc.5(@nuxt/kit@3.8.0)
-      '@morpheme/nav-drawer': 1.0.0-rc.5
-      '@morpheme/navbar': 1.0.0-rc.5(@nuxt/kit@3.8.0)
+      '@morpheme/nav-drawer': 1.0.0-rc.6
+      '@morpheme/navbar': 1.0.0-rc.6(@nuxt/kit@3.8.0)
       '@morpheme/pagination': 1.0.0-rc.4
-      '@morpheme/popover': 1.0.0-rc.5
+      '@morpheme/popover': 1.0.0-rc.6
       '@morpheme/progress-bar': 1.0.0-rc.4
       '@morpheme/progress-circular': 1.0.0-rc.4
       '@morpheme/quill-editor': 1.0.0-rc.5
       '@morpheme/rating': 1.0.0-rc.4
-      '@morpheme/select': 1.0.0-rc.5(@nuxt/kit@3.8.0)
+      '@morpheme/select': 1.0.0-rc.6(@nuxt/kit@3.8.0)
       '@morpheme/shimmer': 1.0.0-rc.4
       '@morpheme/spinner': 1.0.0-rc.4
       '@morpheme/stats': 1.0.0-rc.5
       '@morpheme/stepper': 1.0.0-rc.4
       '@morpheme/switch': 1.0.0-rc.4
-      '@morpheme/table': 1.0.0-rc.5
+      '@morpheme/table': 1.0.0-rc.6
       '@morpheme/tabs': 1.0.0-rc.5
       '@morpheme/tailwind-components': 1.0.0-rc.4
       '@morpheme/tailwind-config': 1.0.0-rc.4
