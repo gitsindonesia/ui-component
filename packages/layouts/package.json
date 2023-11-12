@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/layouts",
-  "version": "1.0.0-rc.4",
+  "version": "1.0.0-rc.6",
   "description": "Morpheme layout Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",

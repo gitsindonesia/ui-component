@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/app-shell",
-  "version": "1.0.0-rc.5",
+  "version": "1.0.0-rc.6",
   "description": "Morpheme Application Shell Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -26,11 +26,11 @@
     "@morpheme/button": "^1.0.0-rc.5",
     "@morpheme/card": "^1.0.0-rc.5",
     "@morpheme/dropdown": "^1.0.0-rc.4",
-    "@morpheme/forms": "^1.0.0-rc.5",
+    "@morpheme/forms": "^1.0.0-rc.6",
     "@morpheme/icon": "^1.0.0-rc.4",
-    "@morpheme/list": "^1.0.0-rc.5",
+    "@morpheme/list": "^1.0.0-rc.6",
     "@morpheme/logo": "^1.0.0-rc.5",
-    "@morpheme/nav-drawer": "^1.0.0-rc.5",
+    "@morpheme/nav-drawer": "^1.0.0-rc.6",
     "@morpheme/tailwind-config": "^1.0.0-rc.4",
     "@morpheme/text": "^1.0.0-rc.4",
     "@morpheme/tooltip": "^1.0.0-rc.4",

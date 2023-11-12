@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/nav-drawer",
-  "version": "1.0.0-rc.5",
+  "version": "1.0.0-rc.6",
   "description": "Vue Navigation Drawer Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -17,7 +17,7 @@
   "dependencies": {
     "@morpheme/button": "^1.0.0-rc.5",
     "@morpheme/logo": "^1.0.0-rc.5",
-    "@morpheme/menu": "^1.0.0-rc.5",
+    "@morpheme/menu": "^1.0.0-rc.6",
     "@morpheme/utils": "^1.0.0-rc.4",
     "@vueuse/core": "^10.2.1",
     "vue": "^3.3.4"
