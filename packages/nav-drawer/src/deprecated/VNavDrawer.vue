@@ -7,12 +7,12 @@ export default defineComponent({
 </script>
 
 <script setup lang="ts">
-import { computed, onMounted, PropType, ref, toRefs, watch } from 'vue';
-import VMenu, { type Menu } from '@morpheme/menu';
+import {computed, onMounted, type PropType, ref, toRefs, watch} from 'vue';
+import VMenu, {type Menu} from '@morpheme/menu';
 import VLogo from '@morpheme/logo';
-import { getBgColor } from '@morpheme/utils';
-import VBtn from '@morpheme/button'
-import Icon from '@morpheme/icon'
+import {getBgColor} from '@morpheme/utils';
+import VBtn from '@morpheme/button';
+import Icon from '@morpheme/icon';
 
 const props = defineProps({
   modelValue: {
@@ -34,7 +34,7 @@ const props = defineProps({
   logoProps: {
     type: Object,
     default: () => ({
-      imgClass: 'h-10'
+      imgClass: 'h-10',
     }),
   },
   dark: {
@@ -75,15 +75,15 @@ const props = defineProps({
   },
   drawerClass: {
     type: String,
-    default: ''
+    default: '',
   },
   transition: {
     type: String,
-    default: 'v-nav-drawer-transition'
-  }
+    default: 'v-nav-drawer-transition',
+  },
 });
 
-const { modelValue, mini, isExpandHover, color, dark} = toRefs(props);
+const {modelValue, mini, isExpandHover, color, dark} = toRefs(props);
 
 const emit = defineEmits([
   'update:modelValue',
@@ -92,24 +92,32 @@ const emit = defineEmits([
   'update:expandHover',
 ]);
 
-const isOpen = ref(modelValue.value)
+const isOpen = ref(modelValue.value);
 
-watch(modelValue, val => {
-  isOpen.value = val
-}, { immediate: true })
+watch(
+  modelValue,
+  (val) => {
+    isOpen.value = val;
+  },
+  {immediate: true},
+);
 
-const isMini = ref(mini.value)
+const isMini = ref(mini.value);
 
-watch(mini, val => {
-  isMini.value = val
-}, { immediate: true })
+watch(
+  mini,
+  (val) => {
+    isMini.value = val;
+  },
+  {immediate: true},
+);
 
-watch(isMini, val => {
+watch(isMini, (val) => {
   emit('update:mini', val);
-})
+});
 
 const toggleMenu = () => {
-  isMini.value = !isMini.value
+  isMini.value = !isMini.value;
   emit('toggle:click');
 };
 
@@ -129,7 +137,9 @@ const bgColor = computed(() =>
 );
 
 onMounted(() => {
-  console.warn('v-nav-drawer is deprecated. Switch to new VNavDrawer component instead.');
+  console.warn(
+    'v-nav-drawer is deprecated. Switch to new VNavDrawer component instead.',
+  );
 });
 
 defineSlots<{
@@ -139,7 +149,7 @@ defineSlots<{
   logo?: (props: {}) => any;
   menus?: (props: {}) => any;
   append?: (props: {}) => any;
-}>()
+}>();
 </script>
 
 <template>

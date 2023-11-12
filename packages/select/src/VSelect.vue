@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {computed, PropType, ref, toRefs, watch} from 'vue';
+import {computed, type PropType, ref, toRefs, watch} from 'vue';
 import {
   Combobox,
   ComboboxButton,

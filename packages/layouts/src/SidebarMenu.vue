@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {PropType, toRefs} from 'vue';
+import {type PropType, toRefs} from 'vue';
 
 const props = defineProps({
   isCollapsed: {
@@ -20,17 +20,7 @@ const {isCollapsed, menus} = toRefs(props);
     <template v-if="menu.children && menu.children.length > 0">
       <div
         :key="idx"
-        class="
-          w-full
-          block
-          px-2
-          py-2
-          mt-3
-          uppercase
-          font-medium
-          rounded
-          text-xs text-gray-300
-        "
+        class="w-full block px-2 py-2 mt-3 uppercase font-medium rounded text-xs text-gray-300"
         :class="{hidden: isCollapsed}"
       >
         {{ menu.title }}
@@ -39,17 +29,7 @@ const {isCollapsed, menus} = toRefs(props);
       <template v-for="child in menu.children" :key="child.title">
         <div
           v-if="child.children && child.children.length > 0"
-          class="
-            w-full
-            block
-            px-2
-            py-2
-            uppercase
-            font-medium
-            mt-3
-            rounded
-            text-xs text-gray-300
-          "
+          class="w-full block px-2 py-2 uppercase font-medium mt-3 rounded text-xs text-gray-300"
           :class="{hidden: isCollapsed}"
         >
           {{ child.title }}
@@ -57,19 +37,7 @@ const {isCollapsed, menus} = toRefs(props);
         <router-link
           v-else
           :to="child.to"
-          class="
-            text-gray-300
-            flex
-            hover:bg-blue-500
-            hover:text-gray-50
-            w-full
-            px-2
-            py-2
-            rounded
-            text-sm
-            transition
-            duration-500
-          "
+          class="text-gray-300 flex hover:bg-blue-500 hover:text-gray-50 w-full px-2 py-2 rounded text-sm transition duration-500"
           :class="{'justify-center items-center rounded-lg': isCollapsed}"
         >
           <component
@@ -85,19 +53,7 @@ const {isCollapsed, menus} = toRefs(props);
     <router-link
       v-else
       :to="menu.to"
-      class="
-        text-gray-300
-        flex
-        hover:bg-blue-500
-        hover:text-gray-50
-        w-full
-        px-2
-        py-2
-        rounded
-        text-sm
-        transition
-        duration-500
-      "
+      class="text-gray-300 flex hover:bg-blue-500 hover:text-gray-50 w-full px-2 py-2 rounded text-sm transition duration-500"
       :class="{'justify-center items-center rounded-lg': isCollapsed}"
     >
       <component :is="menu.icon" v-if="menu.icon" class="w-5 h-5"></component>
