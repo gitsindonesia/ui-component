@@ -3,7 +3,7 @@ import {ref} from 'vue';
 import {object} from 'yup';
 import VAutocomplete from './VAutocomplete.vue';
 import VBtn from '@morpheme/button';
-import {Story} from '@storybook/vue3';
+import type {Story} from '@storybook/vue3';
 
 const items = [
   {value: 1, text: 'Wade Cooper'},

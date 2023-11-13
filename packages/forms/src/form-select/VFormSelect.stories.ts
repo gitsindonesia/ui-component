@@ -1,4 +1,4 @@
-import {Story, Meta} from '@storybook/vue3';
+import type {Story, Meta} from '@storybook/vue3';
 import {sizes} from '@morpheme/utils/sizes';
 import type {VFormSelectItem as VFormSelectProps} from './types';
 import VFormSelect from './VFormSelect.vue';

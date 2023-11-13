@@ -1,6 +1,6 @@
 import VProgressBar from './VProgressBar.vue';
 import {themeColors} from '@morpheme/utils/colors';
-import {Meta, Story} from '@storybook/vue3';
+import type {Meta, Story} from '@storybook/vue3';
 import {ref} from 'vue';
 import VBtn from '@morpheme/button';
 

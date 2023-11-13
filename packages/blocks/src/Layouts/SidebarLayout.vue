@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import {List, ListItem, ListItemHeader} from '@morpheme/list';
-import {Dropdown, DropdownItemProps} from '@morpheme/dropdown';
+import type { DropdownItemProps} from '@morpheme/dropdown';
+import {Dropdown} from '@morpheme/dropdown';
 import Icon from '@morpheme/icon';
 import {ref, watch} from 'vue';
 import VBtn from '@morpheme/button';

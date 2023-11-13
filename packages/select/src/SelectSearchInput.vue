@@ -2,7 +2,8 @@
 import {VDivider} from '@morpheme/divider';
 import {ComboboxInput} from '@headlessui/vue';
 import VIcon from '@morpheme/icon';
-import {ComponentPublicInstance, ref} from 'vue';
+import type {ComponentPublicInstance} from 'vue';
+import { ref} from 'vue';
 
 interface Props {
   placement?: 'inside' | 'outside';

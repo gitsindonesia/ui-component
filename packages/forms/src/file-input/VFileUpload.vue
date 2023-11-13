@@ -12,7 +12,7 @@ import VFileUploadDefaultTheme from './VFileUploadDefaultTheme.vue';
 import VFileUploadButtonTheme from './VFileUploadButtonTheme.vue';
 import VFileUploadImageTheme from './VFileUploadImageTheme.vue';
 import VFileUploadDropzoneTheme from './VFileUploadDropzoneTheme.vue';
-import {FileValue} from './types';
+import type {FileValue} from './types';
 
 const props = defineProps({
   /**

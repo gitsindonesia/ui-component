@@ -2,7 +2,7 @@ import VCheckbox from './VCheckbox.vue';
 import {ref} from 'vue';
 import {themeColors} from '@morpheme/utils/colors';
 import {sizes} from '@morpheme/utils/sizes';
-import {Meta, Story} from '@storybook/vue3';
+import type {Meta, Story} from '@storybook/vue3';
 import {useForm} from 'vee-validate';
 import {object, boolean, array} from 'yup';
 import VBtn from '@morpheme/button';

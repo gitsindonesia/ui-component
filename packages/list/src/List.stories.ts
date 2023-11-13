@@ -1,6 +1,6 @@
 import {VSelect} from '@morpheme/select';
 import VAvatar from '@morpheme/avatar';
-import {Meta, Story} from '@storybook/vue3';
+import type {Meta, Story} from '@storybook/vue3';
 import {Icon} from '@iconify/vue';
 import List from './List.vue';
 import ListItem from './ListItem.vue';

@@ -1,4 +1,4 @@
-import {Story} from '@storybook/vue3';
+import type {Story} from '@storybook/vue3';
 import VEditor from './VEditor.vue';
 import VBtn from '@morpheme/button';
 import {object, string} from 'yup';

@@ -1,5 +1,5 @@
 import VText from './VText.vue';
-import {Meta, StoryFn} from '@storybook/vue3';
+import type {Meta, StoryFn} from '@storybook/vue3';
 import {textVariants, fontWeightVariants} from './variants';
 import {colorVariants} from '@morpheme/utils';
 

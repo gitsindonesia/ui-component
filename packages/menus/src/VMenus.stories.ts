@@ -1,4 +1,4 @@
-import {Meta, Story} from '@storybook/vue3';
+import type {Meta, Story} from '@storybook/vue3';
 import VMenus from './VMenus.vue';
 import VMenusItem from './VMenusItem.vue';
 import VAppBar from '@morpheme/app-bar';

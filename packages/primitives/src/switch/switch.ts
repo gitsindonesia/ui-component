@@ -1,11 +1,12 @@
+import type {
+  Ref,
+  InjectionKey} from 'vue';
 import {
   defineComponent,
   provide,
   ref,
   inject,
   watch,
-  Ref,
-  InjectionKey,
   h,
 } from 'vue';
 

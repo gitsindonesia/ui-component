@@ -1,5 +1,5 @@
 import VAppBar from './VAppBar.vue';
-import {Story, Meta} from '@storybook/vue3';
+import type {Story, Meta} from '@storybook/vue3';
 import {defaultColors, defaultShadows} from '@morpheme/theme/defaultTheme';
 import {ref} from 'vue';
 import Icon from '@morpheme/icon';

@@ -1,5 +1,5 @@
 import {useStore} from 'vuex';
-import {VToastProps} from '@morpheme/toast';
+import type {VToastProps} from '@morpheme/toast';
 
 export const useToast = () => {
   const store = useStore();

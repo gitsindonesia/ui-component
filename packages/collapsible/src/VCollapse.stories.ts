@@ -1,4 +1,4 @@
-import {Story} from '@storybook/vue3';
+import type {Story} from '@storybook/vue3';
 import {ref} from 'vue';
 import VCollapse from './VCollapse.vue';
 import VBtn from '@morpheme/button';

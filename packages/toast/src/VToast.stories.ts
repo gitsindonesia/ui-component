@@ -2,7 +2,7 @@ import {placements} from './types';
 import VToast from './VToast.vue';
 import VBtn, {VBtnGroup} from '@morpheme/button';
 import {themeColors} from '@morpheme/utils/colors';
-import {Story} from '@storybook/vue3';
+import type {Story} from '@storybook/vue3';
 import {ref} from 'vue';
 import {defaultColors} from '@morpheme/theme/defaultTheme';
 

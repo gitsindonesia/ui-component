@@ -1,12 +1,13 @@
+import type {
+  Ref,
+  InjectionKey} from 'vue';
 import {
   defineComponent,
   h,
   provide,
   ref,
   inject,
-  watch,
-  Ref,
-  InjectionKey,
+  watch
 } from 'vue';
 
 export interface AlertContext {

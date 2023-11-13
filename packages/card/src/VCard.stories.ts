@@ -1,4 +1,4 @@
-import {Meta, Story} from '@storybook/vue3';
+import type {Meta, Story} from '@storybook/vue3';
 import VCard from './VCard.vue';
 import VBtn from '@morpheme/button';
 import {defaultColors} from '@morpheme/theme/defaultTheme';

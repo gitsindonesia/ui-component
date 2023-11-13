@@ -1,3 +1,7 @@
+import type {
+  Ref,
+  InjectionKey,
+  PropType} from 'vue';
 import {
   defineComponent,
   h,
@@ -5,9 +9,6 @@ import {
   ref,
   inject,
   watch,
-  Ref,
-  InjectionKey,
-  PropType,
   unref,
   computed,
   withDirectives,

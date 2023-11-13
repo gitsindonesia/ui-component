@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import VMenuTooltip from './VMenuTooltip.vue';
 import {computed, type PropType, resolveComponent} from 'vue';
-import {Menu} from './types';
+import type {Menu} from './types';
 import {Icon} from '@iconify/vue';
 
 const props = defineProps({

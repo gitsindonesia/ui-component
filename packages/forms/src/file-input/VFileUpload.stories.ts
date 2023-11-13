@@ -1,4 +1,4 @@
-import {Story} from '@storybook/vue3';
+import type {Story} from '@storybook/vue3';
 import {useForm} from 'vee-validate';
 import {mixed, object} from 'yup';
 import VInput from '../input/VInput.vue';

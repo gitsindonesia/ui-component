@@ -1,4 +1,4 @@
-import {Meta, Story} from '@storybook/vue3';
+import type {Meta, Story} from '@storybook/vue3';
 import FeatureSnippet from './Feature.vue';
 
 export default {

@@ -1,4 +1,4 @@
-import {Module} from 'vuex';
+import type {Module} from 'vuex';
 import type {VToastProps} from '@morpheme/toast';
 
 export interface ToastState {

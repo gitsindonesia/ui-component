@@ -1,6 +1,6 @@
 import { ref } from 'vue';
 import FormField from './FormField.vue';
-import { Meta, StoryFn } from '@storybook/vue3';
+import type { Meta, StoryFn } from '@storybook/vue3';
 
 export default {
   title: 'Experimental/Forms/Field',

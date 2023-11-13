@@ -1,6 +1,6 @@
 import VStats from '../src/VStats.vue';
 import {themeColors} from '@morpheme/utils/colors';
-import {Meta, Story} from '@storybook/vue3';
+import type {Meta, Story} from '@storybook/vue3';
 
 export default {
   title: 'Components/Stats',

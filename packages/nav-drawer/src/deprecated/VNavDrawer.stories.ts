@@ -1,4 +1,4 @@
-import {Meta, Story} from '@storybook/vue3';
+import type {Meta, Story} from '@storybook/vue3';
 import {ref} from 'vue';
 import VNavDrawer from './VNavDrawer.vue';
 import VBtn from '@morpheme/button';

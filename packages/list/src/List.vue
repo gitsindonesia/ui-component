@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, provide, toRefs } from "vue";
-import { VListContextApi, VListInjectionKey } from "./api";
+import type { VListContextApi} from "./api";
+import { VListInjectionKey } from "./api";
 
 type Props = {
   hidePrepend?: boolean;

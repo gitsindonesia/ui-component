@@ -1,4 +1,4 @@
-import {Story, Meta} from '@storybook/vue3';
+import type {Story, Meta} from '@storybook/vue3';
 import {themeColors} from '@morpheme/utils';
 import VSelect from './VSelect.vue';
 import {useForm} from 'vee-validate';

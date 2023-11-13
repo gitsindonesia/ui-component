@@ -1,5 +1,5 @@
 import {VBtn} from '@morpheme/button';
-import {Story} from '@storybook/vue3';
+import type {Story} from '@storybook/vue3';
 import VBanner from './VBanner.vue';
 import VBannerText from './VBannerText.vue';
 import VText from '@morpheme/text';

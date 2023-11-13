@@ -1,4 +1,4 @@
-import {Meta, Story} from '@storybook/vue3';
+import type {Meta, Story} from '@storybook/vue3';
 import Forms from './Forms.story.vue';
 import FormsWithValidation from './FormsWithValidation.story.vue';
 

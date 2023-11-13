@@ -1,6 +1,7 @@
-import {Args, Story} from '@storybook/vue3';
+import type {Args, Story} from '@storybook/vue3';
 import VStepper from './Stepper.vue';
-import {defineComponent, ref, computed, toRefs, PropType} from 'vue';
+import type { PropType} from 'vue';
+import {defineComponent, ref, computed, toRefs} from 'vue';
 import {useRoute} from 'vue-router';
 
 export default {

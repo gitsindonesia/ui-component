@@ -1,4 +1,4 @@
-import {RouteRecord} from 'vue-router';
+import type {RouteRecord} from 'vue-router';
 
 export type Menu = {
   text: string;

@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/valid-v-slot -->
 <script setup lang="ts">
-import {VDataTableHeader} from 'src/types';
+import type {VDataTableHeader} from 'src/types';
 import VDataTable from '../VDataTable.vue';
 
 const headers: VDataTableHeader[] = [

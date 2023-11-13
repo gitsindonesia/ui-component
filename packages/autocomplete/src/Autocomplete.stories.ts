@@ -1,4 +1,4 @@
-import {Story, Meta} from '@storybook/vue3';
+import type {Story, Meta} from '@storybook/vue3';
 import Autocomplete from './Autocomplete.vue';
 import {ref} from 'vue';
 import {ListboxButton} from '@headlessui/vue';

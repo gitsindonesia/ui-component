@@ -1,4 +1,5 @@
-import { Ref, inject } from 'vue';
+import type { Ref} from 'vue';
+import { inject } from 'vue';
 
 export interface VListContextApi {
   hidePrepend?: Ref<boolean>;

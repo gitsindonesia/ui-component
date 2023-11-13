@@ -1,4 +1,4 @@
-import {Meta, Story} from '@storybook/vue3';
+import type {Meta, Story} from '@storybook/vue3';
 import DefaultForm from './DefaultForm.vue';
 import InlineForm from './InlineForm.vue';
 import DisabledForm from './DisabledForm.vue';

@@ -1,4 +1,4 @@
-import {Meta, Story} from '@storybook/vue3';
+import type {Meta, Story} from '@storybook/vue3';
 import LoginSnippet from './Login.vue';
 import ForgotPasswordSnippet from './ForgotPassword.vue';
 

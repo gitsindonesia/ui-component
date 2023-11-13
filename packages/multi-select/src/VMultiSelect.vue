@@ -16,9 +16,10 @@ import {
 import VBadge from '@morpheme/badge';
 import VTooltip from '@morpheme/tooltip';
 import {onClickOutside, useDebounceFn} from '@vueuse/core';
-import {ErrorMessage, FieldOptions} from 'vee-validate';
+import type { FieldOptions} from 'vee-validate';
+import {ErrorMessage} from 'vee-validate';
 import Icon from '@morpheme/icon';
-import {VMultiSelectItem} from './types';
+import type {VMultiSelectItem} from './types';
 import {useFormValue, type ValidationMode} from '@morpheme/forms';
 
 type SearchByFunction = (item: VMultiSelectItem, search: string) => boolean;

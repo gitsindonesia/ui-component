@@ -8,9 +8,9 @@ import {
   ComboboxLabel,
 } from '@headlessui/vue';
 import VTooltip from '@morpheme/tooltip';
-import {FieldOptions} from 'vee-validate';
+import type {FieldOptions} from 'vee-validate';
 import Icon from '@morpheme/icon';
-import {VSelectItem} from './types';
+import type {VSelectItem} from './types';
 import {useFormValue, VInput} from '@morpheme/forms';
 
 type ValidationMode = 'eager' | 'aggressive';

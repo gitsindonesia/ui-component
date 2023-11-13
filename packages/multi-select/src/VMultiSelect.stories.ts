@@ -3,8 +3,8 @@ import VBtn from '@morpheme/button';
 import {useForm} from 'vee-validate';
 import {object, array} from 'yup';
 import {computed, ref, onMounted} from 'vue';
-import {VMultiSelectItem} from './types';
-import {Story} from '@storybook/vue3';
+import type {VMultiSelectItem} from './types';
+import type {Story} from '@storybook/vue3';
 
 const items = [...Array(200)].map((_, index) => ({
   value: index + 1,

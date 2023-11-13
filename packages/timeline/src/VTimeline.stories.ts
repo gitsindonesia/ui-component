@@ -1,4 +1,4 @@
-import {Meta, Story} from '@storybook/vue3';
+import type {Meta, Story} from '@storybook/vue3';
 import VTimeline from './VTimeline.vue';
 import VTimelineItem from './VTimelineItem.vue';
 import VTimelineItemDot from './VTimelineItemDot.vue';

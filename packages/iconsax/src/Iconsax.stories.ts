@@ -1,4 +1,4 @@
-import {Story} from '@storybook/vue3';
+import type {Story} from '@storybook/vue3';
 import Iconsax from './Iconsax.vue';
 
 export default {

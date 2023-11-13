@@ -18,7 +18,8 @@ import {computed, ref} from 'vue';
 import VBadge from '@morpheme/badge';
 import {Float} from '@headlessui-float/vue';
 import type {Placement} from '@floating-ui/vue';
-import SelectSearchInput, {ExposedProps} from './SelectSearchInput.vue';
+import type {ExposedProps} from './SelectSearchInput.vue';
+import SelectSearchInput from './SelectSearchInput.vue';
 
 export interface SelectOption extends Record<string, any> {
   [key: string]: any;

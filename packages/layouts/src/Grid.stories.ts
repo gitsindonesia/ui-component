@@ -1,7 +1,7 @@
 import {VSelect} from '@morpheme/select';
 import {alignItems, flexWrap, justifyContent} from './grid';
 import {VCard} from '@morpheme/card';
-import {StoryFn} from '@storybook/vue3';
+import type {StoryFn} from '@storybook/vue3';
 import VRow from './VRow.vue';
 import VCol from './VCol.vue';
 import {reactive, ref} from 'vue';

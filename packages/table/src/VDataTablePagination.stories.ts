@@ -1,5 +1,5 @@
 import { themeColors } from '@morpheme/utils/colors';
-import { Args, Meta, Story } from '@storybook/vue3';
+import type { Args, Meta, Story } from '@storybook/vue3';
 import { useForm } from 'vee-validate';
 import { ref } from 'vue';
 import VDataTablePagination from './VDataTablePagination.vue';

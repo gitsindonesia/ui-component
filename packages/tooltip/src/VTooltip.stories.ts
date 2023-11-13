@@ -1,6 +1,6 @@
 import VTooltip from './VTooltip.vue';
 import VBtn from '@morpheme/button';
-import { Meta, Story } from '@storybook/vue3';
+import type { Meta, Story } from '@storybook/vue3';
 
 const placements = [
   'top',

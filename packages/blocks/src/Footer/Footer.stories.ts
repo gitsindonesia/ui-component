@@ -1,4 +1,4 @@
-import {Meta, Story} from '@storybook/vue3';
+import type {Meta, Story} from '@storybook/vue3';
 import FooterLight from './Light.vue';
 import FooterDark from './Dark.vue';
 import FooterAutoDarkMode from './AutoDarkMode.vue';

@@ -1,4 +1,4 @@
-import {Meta, Story} from '@storybook/vue3';
+import type {Meta, Story} from '@storybook/vue3';
 import VLogo from './VLogo.vue';
 import {sizes} from './types';
 

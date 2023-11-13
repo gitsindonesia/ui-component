@@ -1,4 +1,4 @@
-import {Story, Meta} from '@storybook/vue3';
+import type {Story, Meta} from '@storybook/vue3';
 import {sizes} from '@morpheme/utils/sizes';
 import {useForm} from 'vee-validate';
 import {object, string} from 'yup';

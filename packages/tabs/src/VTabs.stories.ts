@@ -4,7 +4,7 @@ import VTab from './VTab.vue';
 import VBtn from '@morpheme/button';
 import VCard from '@morpheme/card';
 import {ref} from 'vue';
-import {Story} from '@storybook/vue3';
+import type {Story} from '@storybook/vue3';
 import VTabsSlider from './VTabsSlider.vue';
 import VTabList from './VTabList.vue';
 import VTabPanels from './VTabPanels.vue';

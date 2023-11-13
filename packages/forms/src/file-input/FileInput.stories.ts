@@ -1,4 +1,4 @@
-import {Story, Meta} from '@storybook/vue3';
+import type {Story, Meta} from '@storybook/vue3';
 import VBtn from '@morpheme/button'
 import { Field, useForm } from 'vee-validate';
 import { ref } from 'vue';

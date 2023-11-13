@@ -1,4 +1,4 @@
-import {Meta, Story} from '@storybook/vue3';
+import type {Meta, Story} from '@storybook/vue3';
 import VBtn from './VBtn.vue';
 import type {Props as VBtnProps} from './VBtn.vue';
 import VIcon from '@morpheme/icon';

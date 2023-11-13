@@ -1,5 +1,5 @@
 import {useBreakpoints, breakpointsTailwind} from '@vueuse/core';
-import {Story} from '@storybook/vue3';
+import type {Story} from '@storybook/vue3';
 import VAppShell from './VAppShell.vue';
 import {NavDrawer as VNavDrawer} from '@morpheme/nav-drawer';
 import VAppBar from '@morpheme/app-bar';

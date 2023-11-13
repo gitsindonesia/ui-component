@@ -1,4 +1,4 @@
-import {Meta, Story} from '@storybook/vue3';
+import type {Meta, Story} from '@storybook/vue3';
 import {useForm} from 'vee-validate';
 import {object, number, string} from 'yup';
 import VRadioGroup from './VRadioGroup.vue';

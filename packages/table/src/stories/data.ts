@@ -1,4 +1,4 @@
-import { VDataTableHeader } from './../types';
+import type { VDataTableHeader } from './../types';
 
 export const states = ['active', 'inactive'];
 

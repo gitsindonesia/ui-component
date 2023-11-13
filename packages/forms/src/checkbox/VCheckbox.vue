@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import {computed, type PropType} from 'vue';
-import {useFormValue, ValidationMode} from '../composables';
+import type { ValidationMode} from '../composables';
+import {useFormValue} from '../composables';
 
 type CheckboxValue = any[] | boolean | undefined;
 

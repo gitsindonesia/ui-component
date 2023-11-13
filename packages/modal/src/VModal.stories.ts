@@ -1,9 +1,9 @@
 import {VCard} from '@morpheme/card';
-import {Meta, Story} from '@storybook/vue3';
+import type {Meta, Story} from '@storybook/vue3';
 import VModal from './VModal.vue';
 import {onUnmounted, ref} from 'vue';
 import {VBtn} from '@morpheme/button';
-import {VModalEvent} from './types';
+import type {VModalEvent} from './types';
 import Modal from './Modal.vue';
 import ModalHeader from './ModalHeader.vue';
 import ModalTitle from './ModalTitle.vue';

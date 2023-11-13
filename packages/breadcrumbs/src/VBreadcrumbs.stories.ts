@@ -1,6 +1,6 @@
 import {Dropdown, DropdownBtn, DropdownItem} from '@morpheme/dropdown';
 import VBreadcrumbs from './VBreadcrumbs.vue';
-import {Meta, Story} from '@storybook/vue3';
+import type {Meta, Story} from '@storybook/vue3';
 import Icon from '@morpheme/icon';
 import type {VBreadcrumbItemProps} from './types';
 import {ref} from 'vue';

@@ -1,3 +1,6 @@
+import type {
+  Ref,
+  InjectionKey} from 'vue';
 import {
   defineComponent,
   h,
@@ -5,8 +8,6 @@ import {
   ref,
   inject,
   watch,
-  Ref,
-  InjectionKey,
   unref,
   withDirectives,
   vShow,

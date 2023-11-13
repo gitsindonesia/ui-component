@@ -1,4 +1,4 @@
-import {Meta, Story} from '@storybook/vue3';
+import type {Meta, Story} from '@storybook/vue3';
 import VPagination from './VPagination.vue';
 
 const variants = ['default', 'text', 'text-rounded']

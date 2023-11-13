@@ -1,5 +1,6 @@
-import { DefaultColors } from '@morpheme/theme/defaultTheme';
-import { Ref, inject } from 'vue';
+import type { DefaultColors } from '@morpheme/theme/defaultTheme';
+import type { Ref} from 'vue';
+import { inject } from 'vue';
 
 export interface VBadgeContextApi {
   color?: Ref<DefaultColors>;

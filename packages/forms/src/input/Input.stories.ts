@@ -1,5 +1,5 @@
 import VInput from './Input.vue';
-import {Meta, Story} from '@storybook/vue3';
+import type {Meta, Story} from '@storybook/vue3';
 import Icon from '@morpheme/icon';
 import {themeColors} from '@morpheme/utils';
 import VBtn from '@morpheme/button';

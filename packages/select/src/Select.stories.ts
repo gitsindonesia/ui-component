@@ -1,5 +1,5 @@
 import VIcon from '@morpheme/icon';
-import { Story, Meta, StoryFn } from '@storybook/vue3';
+import type { Story, Meta, StoryFn } from '@storybook/vue3';
 import { themeColors } from '@morpheme/utils';
 import Select from './Select.vue';
 import { ref } from 'vue';

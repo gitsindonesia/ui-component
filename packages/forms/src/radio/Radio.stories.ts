@@ -1,5 +1,5 @@
 import VRadio from './Radio.vue';
-import {Meta, Story} from '@storybook/vue3';
+import type {Meta, Story} from '@storybook/vue3';
 import {useForm, Field} from 'vee-validate';
 import {object, string} from 'yup';
 import VBtn from '@morpheme/button';

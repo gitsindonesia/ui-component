@@ -1,7 +1,7 @@
 import { VBtn } from '@morpheme/button';
 import VBadge from './VBadge.vue';
 import type {VBadgeProps} from './types';
-import {Story, Meta} from '@storybook/vue3';
+import type {Story, Meta} from '@storybook/vue3';
 import {defaultRounded, defaultColors} from '@morpheme/theme/defaultTheme';
 import {List as VList, ListItem as VListItem} from '@morpheme/list'
 import VBadgeGroup from './VBadgeGroup.vue';

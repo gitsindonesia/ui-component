@@ -1,5 +1,5 @@
 import { VInput } from '@morpheme/forms';
-import { Meta, StoryFn } from '@storybook/vue3';
+import type { Meta, StoryFn } from '@storybook/vue3';
 import { ref, watchEffect } from 'vue';
 import VDataTable from './VDataTable.vue';
 import type { VDataTableHeader } from './types';

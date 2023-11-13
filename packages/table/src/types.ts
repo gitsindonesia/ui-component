@@ -1,4 +1,4 @@
-import Pagination from '@morpheme/pagination';
+import type Pagination from '@morpheme/pagination';
 
 type VPagination = InstanceType<typeof Pagination>['$props'];
 

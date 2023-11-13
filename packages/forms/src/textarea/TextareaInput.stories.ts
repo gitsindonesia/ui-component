@@ -1,4 +1,4 @@
-import {Meta, Story} from '@storybook/vue3';
+import type {Meta, Story} from '@storybook/vue3';
 import {sizes} from '@morpheme/utils';
 import VTextarea from './TextareaInput.vue';
 import VBtn from '@morpheme/button';

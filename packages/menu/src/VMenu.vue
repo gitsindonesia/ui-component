@@ -11,7 +11,7 @@ import VMenuItem from './VMenuItem.vue';
 import VCollapsible from '@morpheme/collapsible';
 import {useRoute} from 'vue-router';
 import VMenuIcon from './VMenuIcon.vue';
-import {Menu} from './types';
+import type {Menu} from './types';
 
 const props = defineProps({
   menu: {

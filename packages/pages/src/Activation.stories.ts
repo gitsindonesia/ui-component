@@ -1,4 +1,4 @@
-import {Story} from '@storybook/vue3';
+import type {Story} from '@storybook/vue3';
 import Activation from './Activation.vue';
 import Auth from './Auth.vue';
 

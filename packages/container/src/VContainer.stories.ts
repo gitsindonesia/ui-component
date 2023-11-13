@@ -1,6 +1,6 @@
 import { VBtn, VAppShell, VAppBar, VLogo, VList, VListItem } from '@morpheme/ui';
 import {NavDrawer as VNavDrawer} from '@morpheme/nav-drawer'
-import {Meta, Story} from '@storybook/vue3';
+import type {Meta, Story} from '@storybook/vue3';
 import VContainer from './VContainer.vue';
 import { ref } from 'vue';
 
