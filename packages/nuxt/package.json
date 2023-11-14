@@ -1,7 +1,7 @@
 {
   "name": "@morpheme/nuxt",
   "description": "Nuxt module for Morpheme UI",
-  "version": "1.0.0-rc.6",
+  "version": "1.0.0-rc.7",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -23,7 +23,7 @@
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
   },
   "dependencies": {
-    "@morpheme/ui": "^1.0.0-rc.6",
+    "@morpheme/ui": "^1.0.0-rc.7",
     "@nuxt/devtools-kit": "^0.5.5",
     "@nuxt/kit": "^3.8.0"
   },

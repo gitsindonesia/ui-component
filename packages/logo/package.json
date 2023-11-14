@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/logo",
-  "version": "1.0.0-rc.5",
+  "version": "1.0.0-rc.7",
   "description": "Morpheme Logo Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",

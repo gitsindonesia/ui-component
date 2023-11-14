@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/command",
-  "version": "1.0.0-rc.6",
+  "version": "1.0.0-rc.7",
   "description": "Morpheme Command Menu Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -17,9 +17,9 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@morpheme/icon": "^1.0.0-rc.4",
-    "@morpheme/list": "^1.0.0-rc.6",
-    "@morpheme/modal": "^1.0.0-rc.4",
+    "@morpheme/icon": "^1.0.0-rc.7",
+    "@morpheme/list": "^1.0.0-rc.7",
+    "@morpheme/modal": "^1.0.0-rc.7",
     "vue": "^3.3.4"
   },
   "devDependencies": {

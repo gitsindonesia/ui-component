@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/avatar",
-  "version": "1.0.0-rc.5",
+  "version": "1.0.0-rc.7",
   "description": "Morpheme Avatar",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,7 +15,7 @@
   "author": "Warsono <warsono@morpheme.id>",
   "license": "MIT",
   "dependencies": {
-    "@morpheme/icon": "^1.0.0-rc.4",
+    "@morpheme/icon": "^1.0.0-rc.7",
     "@morpheme/theme": "^1.0.0-rc.4",
     "vue": "^3.3.4"
   },

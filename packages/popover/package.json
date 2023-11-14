@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/popover",
-  "version": "1.0.0-rc.6",
+  "version": "1.0.0-rc.7",
   "description": "Morpheme Popover Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -20,9 +20,9 @@
     "vue": "^3.3.4"
   },
   "devDependencies": {
-    "@morpheme/button": "^1.0.0-rc.5",
-    "@morpheme/icon": "^1.0.0-rc.4",
-    "@morpheme/list": "^1.0.0-rc.6",
+    "@morpheme/button": "^1.0.0-rc.7",
+    "@morpheme/icon": "^1.0.0-rc.7",
+    "@morpheme/list": "^1.0.0-rc.7",
     "@morpheme/tailwind-config": "^1.0.0-rc.4",
     "@morpheme/utils": "^1.0.0-rc.4",
     "@vue/test-utils": "^2.0.0-rc.17",

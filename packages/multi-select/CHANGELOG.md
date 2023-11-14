@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-rc.7](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-rc.6...v1.0.0-rc.7) (2023-11-14)
+
+
+### Bug Fixes
+
+* **#190:** fix import types ([aa9d73a](https://github.com/gitsindonesia/ui-component/commit/aa9d73aebe747cdcaa97b23c725181bddb2a8105))
+
+
+
+
+
 # [1.0.0-rc.5](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-rc.4...v1.0.0-rc.5) (2023-11-05)
 
 **Note:** Version bump only for package @morpheme/multi-select

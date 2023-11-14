@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/alert",
-  "version": "1.0.0-rc.5",
+  "version": "1.0.0-rc.7",
   "description": "Morpheme Alert - a flexible Vue alert component that can be used to display various types of messages to the user.",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -17,8 +17,8 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@morpheme/button": "^1.0.0-rc.5",
-    "@morpheme/icon": "^1.0.0-rc.4",
+    "@morpheme/button": "^1.0.0-rc.7",
+    "@morpheme/icon": "^1.0.0-rc.7",
     "@morpheme/tailwind-config": "^1.0.0-rc.4",
     "@morpheme/theme": "^1.0.0-rc.4",
     "@morpheme/utils": "^1.0.0-rc.4",
