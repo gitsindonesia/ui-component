@@ -28,6 +28,7 @@ export const items = [...Array(30)].map((_, index) => {
       ].at(index % 8),
       street: '241 Lorem Street',
     },
+    disabled: index % 2 === 0,
   };
 });
 

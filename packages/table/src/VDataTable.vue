@@ -352,7 +352,9 @@ const selectAll = computed<boolean>({
 
     if (value) {
       items.value.forEach(function (item) {
-        selectedItems.push(item);
+        if (!item.disabled) {
+          selectedItems.push(item);
+        }
       });
     }
 
@@ -385,7 +387,9 @@ const handleRowClick = (item: T, index: number) => {
     if (selected.value.includes(item as any)) {
       selected.value.splice(index, 1);
     } else {
-      selected.value.push(item as any);
+      if (!item.disabled) {
+        selected.value.push(item as any);
+      }
     }
   }
   emit('row:click', item);
@@ -659,6 +663,7 @@ defineSlots<
                         v-model="selected"
                         wrapper-class="v-table-checkbox"
                         :value="(item as any)"
+                        :disabled="item.disabled"
                       />
                     </slot>
                     <slot
