@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-rc.8](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-rc.7...v1.0.0-rc.8) (2023-12-18)
+
+
+### Features
+
+* **table:** add disabled option checkbox for table with selectable ([7c72d16](https://github.com/gitsindonesia/ui-component/commit/7c72d1651bc32d34de030dda81e3e3381e586149))
+
+
+
+
+
 # [1.0.0-rc.7](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-rc.6...v1.0.0-rc.7) (2023-11-14)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/table",
-  "version": "1.0.0-rc.7",
+  "version": "1.0.0-rc.8",
   "description": "Morpheme DataTable Table Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
