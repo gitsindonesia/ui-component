@@ -245,6 +245,7 @@ defineSlots<{
       <component
         :is="as"
         :id="id || name"
+        :name="name"
         :value="uncontrolledValue"
         @input="emit('update:modelValue', $event.target.value)"
         ref="input"
