@@ -124,6 +124,7 @@ defineSlots<{
     <div class="v-input-wrapper">
       <select
         :id="inputId"
+        :name="name"
         v-model="uncontrolledValue"
         class="v-input-control"
         :disabled="disabled"
