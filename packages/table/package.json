@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/table",
-  "version": "1.0.0-rc.8",
+  "version": "1.0.0-rc.9",
   "description": "Morpheme DataTable Table Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -16,7 +16,7 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@morpheme/forms": "^1.0.0-rc.7",
+    "@morpheme/forms": "^1.0.0-rc.9",
     "@morpheme/icon": "^1.0.0-rc.7",
     "@morpheme/pagination": "^1.0.0-rc.7",
     "@morpheme/spinner": "^1.0.0-rc.4",
