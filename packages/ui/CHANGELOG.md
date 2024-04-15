@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-rc.10](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-rc.9...v1.0.0-rc.10) (2024-04-15)
+
+**Note:** Version bump only for package @morpheme/ui
+
+
+
+
+
+
 # [1.0.0-rc.8](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-rc.7...v1.0.0-rc.8) (2023-12-18)
 
 **Note:** Version bump only for package @morpheme/ui

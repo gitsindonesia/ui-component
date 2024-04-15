@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-rc.10](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-rc.9...v1.0.0-rc.10) (2024-04-15)
+
+
+### Bug Fixes
+
+* **nuxt:** fix floating-vue issue on nuxt 3.11 ([e6168a3](https://github.com/gitsindonesia/ui-component/commit/e6168a3d720de95b9413a43cd92ea25dac149425))
+* **Stepper:** fix stepper divider not draw line ([f32be03](https://github.com/gitsindonesia/ui-component/commit/f32be039871ebf91458e7830ac56ca5f1275d4d2)), closes [#194](https://github.com/gitsindonesia/ui-component/issues/194)
+
+
+
+
+
+
 # [1.0.0-rc.8](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-rc.7...v1.0.0-rc.8) (2023-12-18)
 
 

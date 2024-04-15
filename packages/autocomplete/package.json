@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/autocomplete",
-  "version": "1.0.0-rc.9",
+  "version": "1.0.0-rc.10",
   "description": "Morpheme Autocomplete",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -17,7 +17,7 @@
   "dependencies": {
     "@headlessui/vue": "^1.7.13",
     "@morpheme/button": "^1.0.0-rc.7",
-    "@morpheme/forms": "^1.0.0-rc.9",
+    "@morpheme/forms": "^1.0.0-rc.10",
     "@morpheme/icon": "^1.0.0-rc.7",
     "tailwindcss": "^3.3.1",
     "vue": "^3.3.4",
