@@ -1,7 +1,7 @@
 {
   "name": "@morpheme/nuxt-commerce",
   "description": "E-Commerce template built with Nuxt.js and Morpheme UI",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "keywords": [
     "admin",
     "dashboard",
