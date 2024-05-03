@@ -20,13 +20,13 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@morpheme/nuxt": "^1.0.0-rc.6",
-    "@nuxt/image": "1.0.0-rc.1"
+    "@morpheme/nuxt": "^1.0.0-rc.10",
+    "@nuxt/image": "^1.0.0"
   },
   "devDependencies": {
     "@nuxt/devtools": "^0.8.3",
     "@nuxtjs/tailwindcss": "^6.8.0",
-    "nuxt": "^3.7.1",
+    "nuxt": "^3.11.2",
     "sass": "^1.66.1"
   },
   "type": "module",
