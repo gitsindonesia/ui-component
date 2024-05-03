@@ -1,7 +1,7 @@
 {
   "name": "@morpheme/nuxt-auth",
   "description": "A Nuxt theme to get authentication ready with @sidebase/nuxt-auth and Morpheme UI.",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "keywords": [
     "auth",
     "dashboard",
