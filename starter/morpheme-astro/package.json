@@ -13,7 +13,7 @@
     "@astrojs/tailwind": "^5.0.2",
     "@astrojs/vue": "^3.0.1",
     "@morpheme/themes": "^1.0.0-rc.4",
-    "@morpheme/ui": "^1.0.0-rc.6",
+    "@morpheme/ui": "^1.0.0-rc.10",
     "astro": "^3.2.4",
     "tailwindcss": "^3.0.24",
     "vue": "^3.2.30"
