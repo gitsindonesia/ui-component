@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-rc.11](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-rc.10...v1.0.0-rc.11) (2024-05-16)
+
+
+### Bug Fixes
+
+* **nuxt:** allow to load morpheme styles manually ([006f4ec](https://github.com/gitsindonesia/ui-component/commit/006f4ec5c74714a484b8f6ec273a00b012e80995))
+
+
+
+
+
 # [1.0.0-rc.10](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-rc.9...v1.0.0-rc.10) (2024-04-15)
 
 
