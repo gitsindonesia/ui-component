@@ -1,5 +1,5 @@
-import { resolve } from 'path';
-import { fileURLToPath } from 'url';
+import {resolve} from 'path';
+import {fileURLToPath} from 'url';
 import {
   defineNuxtModule,
   addPlugin,
@@ -7,7 +7,7 @@ import {
   type AddComponentOptions,
   logger,
 } from '@nuxt/kit';
-import { addCustomTab } from '@nuxt/devtools-kit';
+import {addCustomTab} from '@nuxt/devtools-kit';
 
 const transpile = [
   '@headlessui/vue',
@@ -846,7 +846,7 @@ export default defineNuxtModule<ModuleOptions>({
         }
       }
 
-      if (options.css || !options.sass) {
+      if (options.css) {
         nuxt.options.css.push('@morpheme/themes/dist/morpheme/main.css');
 
         if (options.darkMode) {
