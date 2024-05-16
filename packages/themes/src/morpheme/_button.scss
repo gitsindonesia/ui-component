@@ -27,6 +27,21 @@
 
   // 2xl
   --btn-2xl-height: 68px;
+
+  // disabled
+  --btn-disabled-bg-color: var(--color-gray-200);
+  --btn-disabled-border-color: var(--color-gray-200);
+  --btn-disabled-text-color: var(--color-gray-400);
+
+  // disabled text variant
+  --btn-text-disabled-bg-color: transparent;
+  --btn-text-disabled-border-color: transparent;
+  --btn-text-disabled-text-color: var(--color-gray-400);
+
+  // disabled outlined variant
+  --btn-outlined-disabled-bg-color: transparent;
+  --btn-outlined-disabled-border-color: var(--color-gray-200);
+  --btn-outlined-disabled-text-color: var(--color-gray-400);
 }
 
 .btn {
@@ -51,20 +66,20 @@
   &:disabled,
   &:disabled:hover {
     cursor: not-allowed;
-    --btn-bg-color: var(--color-gray-200);
-    --btn-border-color: var(--color-gray-200);
-    --btn-text-color: var(--color-gray-400);
+    --btn-bg-color: var(--btn-disabled-bg-color);
+    --btn-border-color: var(--btn-disabled-border-color);
+    --btn-text-color: var(--btn-disabled-text-color);
 
     &.btn--text {
-      --btn-bg-color: transparent;
-      --btn-border-color: transparent;
-      --btn-text-color: var(--color-gray-400);
+      --btn-bg-color: var(--btn-text-disabled-bg-color);
+      --btn-border-color: var(--btn-text-disabled-border-color);
+      --btn-text-color: var(--btn-text-disabled-text-color);
     }
 
     &.btn--outlined {
-      --btn-bg-color: transparent;
-      --btn-border-color: var(--color-gray-200);
-      --btn-text-color: var(--color-gray-400);
+      --btn-bg-color: var(--btn-outlined-disabled-bg-color);
+      --btn-border-color: var(--btn-outlined-disabled-border-color);
+      --btn-text-color: var(--btn-outlined-disabled-text-color);
     }
   }
 
