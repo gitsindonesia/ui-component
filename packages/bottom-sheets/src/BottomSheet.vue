@@ -1,9 +1,3 @@
-<script lang="ts">
-export default {
-  inheritAttrs: false,
-};
-</script>
-
 <script lang="ts" setup>
 import {ref, provide, toRefs, watch} from 'vue';
 import {BottomSheetInjectionKey} from './api';
@@ -14,27 +8,38 @@ export interface Props {
   transition?: string;
   maxWidth?: number | string;
   overlay?: boolean;
+  hideOnOverlayClick?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
   modelValue: false,
   transition: 'v-bottom-sheet-transition',
   overlay: true,
+  hideOnOverlayClick: true,
 });
 
 const emit = defineEmits<{
   (e: 'update:modelValue', value: boolean): void;
 }>();
 
+defineOptions({
+  inheritAttrs: false,
+});
+
 const {modelValue} = toRefs(props);
 const isOpen = ref(modelValue.value);
 const bottomSheetRef = ref<HTMLDivElement>();
+const hideOnOverlayClick = ref(props.hideOnOverlayClick);
 
 watch(modelValue, (val) => (isOpen.value = val));
 watch(isOpen, (val) => emit('update:modelValue', val));
 
 const open = () => (isOpen.value = true);
-const close = () => (isOpen.value = false);
+const close = () => {
+  if (props.hideOnOverlayClick) {
+    isOpen.value = false;
+  }
+};
 
 const setHeight = (height: string | number) => {
   if (!bottomSheetRef.value) return;
@@ -56,6 +61,7 @@ const api: BottomSheetApi = {
   setHeight,
   getHeight,
   el: bottomSheetRef,
+  hideOnOverlayClick,
 };
 
 provide(BottomSheetInjectionKey, api);

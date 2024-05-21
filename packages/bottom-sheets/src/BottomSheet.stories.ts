@@ -212,6 +212,13 @@ HideOverlay.args = {
   },
 };
 
+export const DisableHideOnOverlayClick = Menus.bind({});
+DisableHideOnOverlayClick.args = {
+  sheet: {
+    hideOnOverlayClick: false,
+  },
+};
+
 export const MultipleInstance: Story = (args, {argTypes}) => ({
   components: {BottomSheet, BottomSheetHeader, BottomSheetBody, Button},
   setup() {
