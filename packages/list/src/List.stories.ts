@@ -1,6 +1,6 @@
 import {VSelect} from '@morpheme/select';
 import VAvatar from '@morpheme/avatar';
-import type {Meta, Story} from '@storybook/vue3';
+import type {Meta, StoryFn} from '@storybook/vue3';
 import {Icon} from '@iconify/vue';
 import List from './List.vue';
 import ListItem from './ListItem.vue';
@@ -65,7 +65,7 @@ export default {
   args: {},
 } as Meta;
 
-export const BasicList: Story = (args) => ({
+export const BasicList: StoryFn = (args) => ({
   components: {
     List,
     ListItem,
@@ -87,7 +87,7 @@ export const BasicList: Story = (args) => ({
   `,
 });
 
-export const Hover: Story = (args) => ({
+export const Hover: StoryFn = (args) => ({
   components: {
     List,
     ListItem,
@@ -109,7 +109,7 @@ export const Hover: Story = (args) => ({
   `,
 });
 
-export const Dense: Story = (args) => ({
+export const Dense: StoryFn = (args) => ({
   components: {
     List,
     ListItem,
@@ -131,7 +131,7 @@ export const Dense: Story = (args) => ({
   `,
 });
 
-export const Small: Story = (args) => ({
+export const Small: StoryFn = (args) => ({
   components: {
     List,
     ListItem,
@@ -173,7 +173,7 @@ Mini.args = {
   mini: true,
 };
 
-export const Shaped: Story = (args) => ({
+export const Shaped: StoryFn = (args) => ({
   components: {
     List,
     ListItem,
@@ -198,7 +198,7 @@ export const Shaped: Story = (args) => ({
   `,
 });
 
-export const Rounded: Story = (args) => ({
+export const Rounded: StoryFn = (args) => ({
   components: {
     List,
     ListItem,
@@ -220,7 +220,7 @@ export const Rounded: Story = (args) => ({
   `,
 });
 
-export const Tile: Story = (args) => ({
+export const Tile: StoryFn = (args) => ({
   components: {
     List,
     ListItem,
@@ -242,7 +242,7 @@ export const Tile: Story = (args) => ({
   `,
 });
 
-export const HidePrependAppend: Story = (args) => ({
+export const HidePrependAppend: StoryFn = (args) => ({
   components: {
     List,
     ListItem,
@@ -269,7 +269,7 @@ export const HidePrependAppend: Story = (args) => ({
   `,
 });
 
-export const HideText: Story = (args) => ({
+export const HideText: StoryFn = (args) => ({
   components: {
     List,
     ListItem,
@@ -295,7 +295,7 @@ export const HideText: Story = (args) => ({
   `,
 });
 
-export const TwoLine: Story = (args) => ({
+export const TwoLine: StoryFn = (args) => ({
   components: {
     List,
     ListItem,
@@ -325,7 +325,7 @@ export const TwoLine: Story = (args) => ({
   `,
 });
 
-export const ThreeLine: Story = (args) => ({
+export const ThreeLine: StoryFn = (args) => ({
   components: {
     List,
     ListItem,
@@ -358,7 +358,7 @@ export const ThreeLine: Story = (args) => ({
   `,
 });
 
-export const Link: Story = (args) => ({
+export const Link: StoryFn = (args) => ({
   components: {
     List,
     ListItem,
@@ -377,7 +377,7 @@ export const Link: Story = (args) => ({
   `,
 });
 
-export const Slots: Story = (args) => ({
+export const Slots: StoryFn = (args) => ({
   components: {
     List,
     ListItem,
@@ -406,7 +406,7 @@ export const Slots: Story = (args) => ({
   `,
 });
 
-export const Icons: Story = (args) => ({
+export const Icons: StoryFn = (args) => ({
   components: {
     List,
     ListItem,
@@ -442,7 +442,7 @@ export const Icons: Story = (args) => ({
   `,
 });
 
-export const Header: Story = (args) => ({
+export const Header: StoryFn = (args) => ({
   components: {
     List,
     ListItem,
@@ -487,7 +487,7 @@ export const Header: Story = (args) => ({
   `,
 });
 
-export const Collapse: Story = (args) => ({
+export const Collapse: StoryFn = (args) => ({
   components: {
     Icon,
     List,
@@ -550,7 +550,7 @@ export const Collapse: Story = (args) => ({
   `,
 });
 
-export const Image: Story = (args) => ({
+export const Image: StoryFn = (args) => ({
   components: {
     List,
     ListItem,
@@ -609,7 +609,7 @@ export const Image: Story = (args) => ({
   `,
 });
 
-export const NavDrawerList: Story = (args) => ({
+export const NavDrawerList: StoryFn = (args) => ({
   components: {
     List,
     ListItem,
@@ -691,7 +691,7 @@ export const NavDrawerList: Story = (args) => ({
   `,
 });
 
-export const IosSettings: Story = (args) => ({
+export const IosSettings: StoryFn = (args) => ({
   components: {
     List,
     ListItem,
@@ -806,7 +806,7 @@ export const IosSettings: Story = (args) => ({
   `,
 });
 
-export const ListInDropdown: Story = (args) => ({
+export const ListInDropdown: StoryFn = (args) => ({
   components: {
     List,
     ListItem,
@@ -919,7 +919,7 @@ export const ListInDropdown: Story = (args) => ({
   `,
 });
 
-export const Event: Story = (args) => ({
+export const Event: StoryFn = (args) => ({
   components: {
     List,
     ListItem,
@@ -955,7 +955,7 @@ export const Event: Story = (args) => ({
   `,
 });
 
-export const CustomStyle: Story = (args) => ({
+export const CustomStyle: StoryFn = (args) => ({
   components: {
     List,
     ListItem,
@@ -985,7 +985,7 @@ export const CustomStyle: Story = (args) => ({
   `,
 });
 
-export const DividerInset: Story = (args) => ({
+export const DividerInset: StoryFn = (args) => ({
   components: {
     List,
     ListItem,
@@ -1008,7 +1008,7 @@ export const DividerInset: Story = (args) => ({
   `,
 });
 
-export const DarkMode: Story<{}> = (args) => ({
+export const DarkMode: StoryFn<{}> = (args) => ({
   components: {Dropdown, List, ListItem, ListItemDivider},
   setup() {
     return {args};
@@ -1029,7 +1029,7 @@ export const DarkMode: Story<{}> = (args) => ({
 `,
 });
 
-export const ActiveState: Story = (args) => ({
+export const ActiveState: StoryFn = (args) => ({
   components: {
     List,
     ListItem,

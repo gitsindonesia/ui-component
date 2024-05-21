@@ -1,4 +1,4 @@
-import type {Story} from '@storybook/vue3';
+import type {StoryFn} from '@storybook/vue3';
 import {useForm} from 'vee-validate';
 import {mixed, object} from 'yup';
 import VInput from '../input/VInput.vue';
@@ -26,7 +26,7 @@ export default {
   },
 };
 
-const Template: Story<{}> = (args) => ({
+const Template: StoryFn<{}> = (args) => ({
   components: {
     VFileUpload,
   },
@@ -119,7 +119,7 @@ Dropzone.parameters = {
   },
 };
 
-export const Validation: Story<{}> = () => ({
+export const Validation: StoryFn<{}> = () => ({
   components: {VInput, VBtn, VFileUpload},
   setup() {
     const schema = object({
@@ -173,7 +173,7 @@ export const Validation: Story<{}> = () => ({
 `,
 });
 
-export const InitialError: Story<typeof VFileUpload> = (args) => ({
+export const InitialError: StoryFn<typeof VFileUpload> = (args) => ({
   components: {VInput, VBtn, VFileUpload},
   setup() {
     const schema = object({
@@ -233,7 +233,7 @@ export const InitialError: Story<typeof VFileUpload> = (args) => ({
 `,
 });
 
-export const InitialValues: Story<{}> = () => ({
+export const InitialValues: StoryFn<{}> = () => ({
   components: {VInput, VBtn, VFileUpload},
   setup() {
     const schema = object({
@@ -294,7 +294,7 @@ export const InitialValues: Story<{}> = () => ({
 `,
 });
 
-export const SlotFilename: Story<{}> = () => ({
+export const SlotFilename: StoryFn<{}> = () => ({
   components: {VInput, VBtn, VFileUpload},
   setup() {
     const schema = object({
@@ -397,7 +397,7 @@ export const SlotFilename: Story<{}> = () => ({
 `,
 });
 
-export const DarkMode: Story = (args) => ({
+export const DarkMode: StoryFn = (args) => ({
   components: {VFileUpload},
   setup() {
     return {args};

@@ -1,4 +1,4 @@
-import type {Story} from '@storybook/vue3';
+import type {StoryFn} from '@storybook/vue3';
 import Icon from './Icon.vue';
 
 export default {
@@ -10,7 +10,7 @@ export default {
   },
 };
 
-export const Default: Story<{}> = (args) => ({
+export const Default: StoryFn<{}> = (args) => ({
   setup() {
     return {args};
   },
@@ -25,7 +25,7 @@ Default.parameters = {
   },
 };
 
-export const Sizes: Story<{}> = (args) => ({
+export const Sizes: StoryFn<{}> = (args) => ({
   components: {Icon},
   template: `
 <Icon name="ri:search-line" size="xxs" />
@@ -67,7 +67,7 @@ CustomClass.parameters = {
   },
 };
 
-export const DarkMode: Story = (args) => ({
+export const DarkMode: StoryFn = (args) => ({
   components: {Icon},
   setup() {
     return {args};
@@ -79,7 +79,7 @@ export const DarkMode: Story = (args) => ({
   `,
 });
 
-export const MorphemeIcons: Story = (args) => ({
+export const MorphemeIcons: StoryFn = (args) => ({
   components: {Icon},
   setup() {
     return {args};
@@ -105,7 +105,7 @@ export const MorphemeIcons: Story = (args) => ({
   `,
 });
 
-export const MorphemeIconsNoCache: Story = (args) => ({
+export const MorphemeIconsNoCache: StoryFn = (args) => ({
   components: {Icon},
   setup() {
     return {args};

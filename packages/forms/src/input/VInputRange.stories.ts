@@ -1,4 +1,4 @@
-import type {Meta, Story} from '@storybook/vue3';
+import type {Meta, StoryFn} from '@storybook/vue3';
 import {useForm} from 'vee-validate';
 import {ref} from 'vue';
 import {object} from 'yup';
@@ -15,7 +15,7 @@ export default {
   },
 } as Meta;
 
-export const Default: Story = (args) => ({
+export const Default: StoryFn = (args) => ({
   components: {VInputRange},
   setup() {
     const val = ref('');
@@ -44,7 +44,7 @@ Hint.parameters = {
   },
 };
 
-export const WithInput: Story = (args) => ({
+export const WithInput: StoryFn = (args) => ({
   components: {VInputRange},
   setup() {
     return {args};
@@ -62,7 +62,7 @@ WithInput.parameters = {
   },
 };
 
-export const Validation: Story<{}> = (args) => ({
+export const Validation: StoryFn<{}> = (args) => ({
   components: {VInputRange, VBtn},
   setup() {
     const schema = object({
@@ -112,7 +112,7 @@ export const Validation: Story<{}> = (args) => ({
 `,
 });
 
-export const ValidationMode: Story<{}> = () => ({
+export const ValidationMode: StoryFn<{}> = () => ({
   components: {VInputRange, VBtn},
   setup() {
     const schema = object({
@@ -194,7 +194,7 @@ HideError.args = {
   hideError: true,
 };
 
-export const DarkMode: Story = (args) => ({
+export const DarkMode: StoryFn = (args) => ({
   components: {VInputRange},
   setup() {
     const val = ref('');

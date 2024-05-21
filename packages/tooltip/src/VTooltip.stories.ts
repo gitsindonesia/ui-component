@@ -1,6 +1,6 @@
 import VTooltip from './VTooltip.vue';
 import VBtn from '@morpheme/button';
-import type { Meta, Story } from '@storybook/vue3';
+import type {Meta, StoryFn} from '@storybook/vue3';
 
 const placements = [
   'top',
@@ -22,10 +22,10 @@ export default {
   component: VTooltip,
 } as Meta;
 
-const Template: Story = (args) => ({
-  components: { VTooltip, VBtn },
+const Template: StoryFn = (args) => ({
+  components: {VTooltip, VBtn},
   setup() {
-    return { args, placements };
+    return {args, placements};
   },
   template: `
 <div class="grid grid-cols-6 items-center justify-center gap-4 h-screen">
@@ -43,7 +43,7 @@ const Template: Story = (args) => ({
   `,
 });
 
-export const Tooltip: Story = Template.bind({});
+export const Tooltip: StoryFn = Template.bind({});
 Tooltip.args = {};
 Tooltip.parameters = {
   docs: {
@@ -62,10 +62,10 @@ Tooltip.parameters = {
   },
 };
 
-export const Colors: Story = (args) => ({
-  components: { VTooltip, VBtn },
+export const Colors: StoryFn = (args) => ({
+  components: {VTooltip, VBtn},
   setup() {
-    return { args };
+    return {args};
   },
   template: `
     <VTooltip v-bind='args'>
@@ -87,10 +87,10 @@ export const Colors: Story = (args) => ({
   `,
 });
 
-export const LongText: Story = (args) => ({
-  components: { VTooltip, VBtn },
+export const LongText: StoryFn = (args) => ({
+  components: {VTooltip, VBtn},
   setup() {
-    return { args };
+    return {args};
   },
   template: `
     <VTooltip v-bind='args'>
@@ -116,10 +116,10 @@ export const LongText: Story = (args) => ({
   `,
 });
 
-export const DarkMode: Story = (args) => ({
-  components: { VTooltip, VBtn },
+export const DarkMode: StoryFn = (args) => ({
+  components: {VTooltip, VBtn},
   setup() {
-    return { args };
+    return {args};
   },
   template: `
     <div class="dark p-6 dark:bg-neutral-900">

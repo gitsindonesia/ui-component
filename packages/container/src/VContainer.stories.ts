@@ -1,8 +1,8 @@
-import { VBtn, VAppShell, VAppBar, VLogo, VList, VListItem } from '@morpheme/ui';
-import {NavDrawer as VNavDrawer} from '@morpheme/nav-drawer'
-import type {Meta, Story} from '@storybook/vue3';
+import {VBtn, VAppShell, VAppBar, VLogo, VList, VListItem} from '@morpheme/ui';
+import {NavDrawer as VNavDrawer} from '@morpheme/nav-drawer';
+import type {Meta, StoryFn} from '@storybook/vue3';
 import VContainer from './VContainer.vue';
-import { ref } from 'vue';
+import {ref} from 'vue';
 
 export default {
   title: 'Components/Container',
@@ -14,7 +14,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => ({
+const Template: StoryFn = (args) => ({
   components: {
     VContainer,
   },
@@ -84,7 +84,7 @@ Centered.parameters = {
   },
 };
 
-export const Example: Story = (args) => ({
+export const Example: StoryFn = (args) => ({
   components: {
     VContainer,
     VAppBar,
@@ -93,11 +93,11 @@ export const Example: Story = (args) => ({
     VList,
     VListItem,
     VAppShell,
-    VBtn
+    VBtn,
   },
   setup() {
-    const isDrawerOpen = ref(true)
-    const isMini = ref(false)
+    const isDrawerOpen = ref(true);
+    const isMini = ref(false);
     return {args, isMini, isDrawerOpen};
   },
   template: `

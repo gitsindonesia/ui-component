@@ -1,8 +1,8 @@
 import VCheckbox from './Checkbox.vue';
-import { ref, computed } from 'vue';
+import {ref, computed} from 'vue';
 import {themeColors} from '@morpheme/utils/colors';
 import {sizes} from '@morpheme/utils/sizes';
-import type {Meta, Story} from '@storybook/vue3';
+import type {Meta, StoryFn} from '@storybook/vue3';
 import {useForm} from 'vee-validate';
 import {object, boolean} from 'yup';
 import VBtn from '@morpheme/button';
@@ -27,7 +27,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => ({
+const Template: StoryFn = (args) => ({
   components: {VCheckbox},
   setup() {
     const value = ref(false);
@@ -39,7 +39,7 @@ const Template: Story = (args) => ({
   `,
 });
 
-export const Variants: Story = (args) => ({
+export const Variants: StoryFn = (args) => ({
   components: {VCheckbox},
   setup() {
     const value = ref(false);
@@ -55,7 +55,7 @@ export const Variants: Story = (args) => ({
   `,
 });
 
-export const VModel: Story = (args) => ({
+export const VModel: StoryFn = (args) => ({
   components: {VCheckbox},
   setup() {
     const single = ref(false);
@@ -66,8 +66,8 @@ export const VModel: Story = (args) => ({
       },
       set(value) {
         multiple.value = value ? ['orange', 'apple', 'banana'] : [];
-      }
-    })
+      },
+    });
     return {args, single, multiple, checkAll};
   },
   template: `
@@ -141,7 +141,7 @@ Disabled.parameters = {
   },
 };
 
-export const Validation: Story<{}> = (args) => ({
+export const Validation: StoryFn<{}> = (args) => ({
   components: {CheckboxField, VBtn},
   setup() {
     const schema = object({
@@ -183,7 +183,7 @@ HideError.args = {
   hideError: true,
 };
 
-export const DarkMode: Story = (args) => ({
+export const DarkMode: StoryFn = (args) => ({
   components: {VCheckbox},
   setup() {
     return {args};

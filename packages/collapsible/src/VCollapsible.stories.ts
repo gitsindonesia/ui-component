@@ -1,4 +1,4 @@
-import type {Story} from '@storybook/vue3';
+import type {StoryFn} from '@storybook/vue3';
 import {ref} from 'vue';
 import VCollapsible from './VCollapsible.vue';
 import VCollapsibleGroup from './VCollapsibleGroup.vue';
@@ -19,7 +19,7 @@ export default {
   },
 };
 
-const Template: Story<{}> = (args) => ({
+const Template: StoryFn<{}> = (args) => ({
   components: {VCollapsible},
   setup() {
     const isOpen = ref(false);
@@ -91,7 +91,7 @@ CustomClasses.parameters = {
   },
 };
 
-export const Accordion: Story = (args) => ({
+export const Accordion: StoryFn = (args) => ({
   components: {VCollapsibleGroup, VCollapsible},
   setup() {
     const items = Array.from({length: 5}, (v, k) => ({
@@ -118,7 +118,7 @@ Accordion.parameters = {
   },
 };
 
-export const DarkMode: Story<{}> = (args) => ({
+export const DarkMode: StoryFn<{}> = (args) => ({
   components: {VCollapsible},
   setup() {
     const isOpen = ref(false);

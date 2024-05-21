@@ -1,6 +1,6 @@
 import VStats from '../src/VStats.vue';
 import {themeColors} from '@morpheme/utils/colors';
-import type {Meta, Story} from '@storybook/vue3';
+import type {Meta, StoryFn} from '@storybook/vue3';
 
 export default {
   title: 'Components/Stats',
@@ -20,7 +20,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => ({
+const Template: StoryFn = (args) => ({
   components: {
     VStats,
   },

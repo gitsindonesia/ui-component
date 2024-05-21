@@ -1,4 +1,4 @@
-import type {Story} from '@storybook/vue3';
+import type {StoryFn} from '@storybook/vue3';
 import {Switch, SwitchThumb, SwitchLabel} from './switch';
 import {ref} from 'vue';
 
@@ -11,7 +11,7 @@ export default {
   },
 };
 
-export const Default: Story = (args) => ({
+export const Default: StoryFn = (args) => ({
   components: {Switch, SwitchThumb},
   setup() {
     const enabled = ref(false);
@@ -40,7 +40,7 @@ export const Default: Story = (args) => ({
   `,
 });
 
-export const DefaultValue: Story = (args) => ({
+export const DefaultValue: StoryFn = (args) => ({
   components: {Switch, SwitchThumb},
   setup() {
     const enabled = ref(true);
@@ -69,7 +69,7 @@ export const DefaultValue: Story = (args) => ({
   `,
 });
 
-export const Label: Story = (args) => ({
+export const Label: StoryFn = (args) => ({
   components: {Switch, SwitchLabel, SwitchThumb},
   setup() {
     const enabled = ref(false);
@@ -102,7 +102,7 @@ export const Label: Story = (args) => ({
   `,
 });
 
-export const Form: Story = (args) => ({
+export const Form: StoryFn = (args) => ({
   components: {Switch, SwitchLabel, SwitchThumb},
   setup() {
     const enabled = ref(false);

@@ -1,4 +1,4 @@
-import type {Meta, Story} from '@storybook/vue3';
+import type {Meta, StoryFn} from '@storybook/vue3';
 import Forms from './Forms.story.vue';
 import FormsWithValidation from './FormsWithValidation.story.vue';
 
@@ -7,7 +7,7 @@ export default {
   component: Forms,
 } as Meta;
 
-export const Example: Story = (args) => ({
+export const Example: StoryFn = (args) => ({
   components: {Forms},
   setup() {
     return {args};
@@ -15,7 +15,7 @@ export const Example: Story = (args) => ({
   template: `<Forms v-bind='args'/>`,
 });
 
-export const WithValidation: Story = (args) => ({
+export const WithValidation: StoryFn = (args) => ({
   components: {FormsWithValidation},
   setup() {
     return {args};

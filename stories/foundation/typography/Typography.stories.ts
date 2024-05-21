@@ -1,11 +1,11 @@
-import {Meta, Story} from '@storybook/vue3';
+import type {Meta, StoryFn} from '@storybook/vue3';
 import TypographyComponent from './Typography.vue';
 
 export default {
   title: 'Foundation/Typography',
 } as Meta;
 
-export const Typography: Story = () => ({
+export const Typography: StoryFn = () => ({
   components: {TypographyComponent},
   template: `<TypographyComponent />`,
 });

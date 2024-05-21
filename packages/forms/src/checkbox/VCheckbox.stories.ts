@@ -2,7 +2,7 @@ import VCheckbox from './VCheckbox.vue';
 import {ref} from 'vue';
 import {themeColors} from '@morpheme/utils/colors';
 import {sizes} from '@morpheme/utils/sizes';
-import type {Meta, Story} from '@storybook/vue3';
+import type {Meta, StoryFn} from '@storybook/vue3';
 import {useForm} from 'vee-validate';
 import {object, boolean, array} from 'yup';
 import VBtn from '@morpheme/button';
@@ -26,7 +26,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => ({
+const Template: StoryFn = (args) => ({
   components: {VCheckbox},
   setup() {
     const value = ref(false);
@@ -38,7 +38,7 @@ const Template: Story = (args) => ({
   `,
 });
 
-export const Variants: Story = (args) => ({
+export const Variants: StoryFn = (args) => ({
   components: {VCheckbox},
   setup() {
     const value = ref(false);
@@ -101,7 +101,7 @@ Disabled.parameters = {
   },
 };
 
-export const Multiple: Story<{}> = () => ({
+export const Multiple: StoryFn<{}> = () => ({
   components: {VCheckbox: VCheckbox, VBtn},
   setup() {
     const schema = object({
@@ -168,7 +168,7 @@ export const Multiple: Story<{}> = () => ({
 `,
 });
 
-export const Validation: Story<{}> = (args) => ({
+export const Validation: StoryFn<{}> = (args) => ({
   components: {VCheckbox: VCheckbox, VBtn},
   setup() {
     const schema = object({
@@ -214,7 +214,7 @@ HideError.args = {
   hideError: true,
 };
 
-export const ValidationMode: Story<{}> = () => ({
+export const ValidationMode: StoryFn<{}> = () => ({
   components: {VCheckbox: VCheckbox, VBtn},
   setup() {
     const schema = object({
@@ -272,7 +272,7 @@ export const ValidationMode: Story<{}> = () => ({
   `,
 });
 
-export const TestInputState: Story<typeof VCheckbox> = (args) => ({
+export const TestInputState: StoryFn<typeof VCheckbox> = (args) => ({
   components: {VBtn, VCheckbox},
   setup() {
     const modelValue = ref('');
@@ -360,7 +360,7 @@ TestInputState.args = {
   useForm: false,
 };
 
-export const DarkMode: Story = (args) => ({
+export const DarkMode: StoryFn = (args) => ({
   components: {VCheckbox},
   setup() {
     return {args};

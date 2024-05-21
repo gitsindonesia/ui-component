@@ -1,5 +1,5 @@
 import VQuillEditor from './VQuillEditor.vue';
-import type {Meta, Story} from '@storybook/vue3';
+import type {Meta, StoryFn} from '@storybook/vue3';
 import {useForm} from 'vee-validate';
 import {object, string} from 'yup';
 import VBtn from '@morpheme/button';
@@ -13,7 +13,7 @@ export default {
   },
 } as Meta<typeof VQuillEditor>;
 
-const Template: Story<typeof VQuillEditor> = (args) => ({
+const Template: StoryFn<typeof VQuillEditor> = (args) => ({
   components: {VQuillEditor},
   setup() {
     const value = ref('');
@@ -38,7 +38,7 @@ Hint.args = {
   hint: 'This is a hint',
 };
 
-export const Validation: Story = (args) => ({
+export const Validation: StoryFn = (args) => ({
   components: {VBtn, VQuillEditor},
   setup() {
     const schema = object({
@@ -72,7 +72,7 @@ export const Validation: Story = (args) => ({
 `,
 });
 
-export const InitialValues: Story = () => ({
+export const InitialValues: StoryFn = () => ({
   components: {VBtn, VQuillEditor},
   setup() {
     const schema = object({
@@ -108,7 +108,7 @@ export const InitialValues: Story = () => ({
 `,
 });
 
-export const InitialErrors: Story = () => ({
+export const InitialErrors: StoryFn = () => ({
   components: {VBtn, VQuillEditor},
   setup() {
     const schema = object({
@@ -144,7 +144,7 @@ export const InitialErrors: Story = () => ({
 `,
 });
 
-export const Toolbar: Story = () => ({
+export const Toolbar: StoryFn = () => ({
   components: {VBtn, VQuillEditor},
   setup() {
     const schema = object({

@@ -1,7 +1,7 @@
-import type {Meta, Story} from '@storybook/vue3';
+import type {Meta, StoryFn} from '@storybook/vue3';
 import VPagination from './VPagination.vue';
 
-const variants = ['default', 'text', 'text-rounded']
+const variants = ['default', 'text', 'text-rounded'];
 
 export default {
   title: 'Components/Pagination',
@@ -45,7 +45,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => ({
+const Template: StoryFn = (args) => ({
   components: {VPagination},
   setup() {
     return {args};
@@ -83,7 +83,7 @@ Flat.parameters = {
   },
 };
 
-export const Sizes: Story = (args) => ({
+export const Sizes: StoryFn = (args) => ({
   components: {VPagination},
   setup() {
     return {args};
@@ -95,7 +95,7 @@ export const Sizes: Story = (args) => ({
   `,
 });
 
-export const CustomStyle: Story = (args) => ({
+export const CustomStyle: StoryFn = (args) => ({
   components: {VPagination},
   setup() {
     return {args};
@@ -108,7 +108,7 @@ export const CustomStyle: Story = (args) => ({
   `,
 });
 
-export const Slots: Story = (args) => ({
+export const Slots: StoryFn = (args) => ({
   components: {VPagination},
   setup() {
     return {args};
@@ -126,12 +126,10 @@ export const Slots: Story = (args) => ({
   `,
 });
 
-export const Variants: Story = (args) => ({
+export const Variants: StoryFn = (args) => ({
   components: {VPagination},
   setup() {
-    return {args,
-      variants
-    };
+    return {args, variants};
   },
   template: `
   <v-pagination
@@ -144,7 +142,7 @@ export const Variants: Story = (args) => ({
   `,
 });
 
-export const DarkMode: Story = (args) => ({
+export const DarkMode: StoryFn = (args) => ({
   components: {
     VPagination,
   },

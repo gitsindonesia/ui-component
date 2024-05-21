@@ -1,4 +1,4 @@
-import type {Story} from '@storybook/vue3';
+import type {StoryFn} from '@storybook/vue3';
 import {Menu, MenuButton, MenuItems, MenuItem} from './menu';
 import {ChevronDownIcon} from '@morphemeicons/vue/untitled';
 
@@ -12,7 +12,7 @@ export default {
   },
 };
 
-export const Default: Story = (args) => ({
+export const Default: StoryFn = (args) => ({
   components: {
     Menu,
     MenuButton,
@@ -57,7 +57,7 @@ export const Default: Story = (args) => ({
   `,
 });
 
-export const MultiLevel: Story = (args) => ({
+export const MultiLevel: StoryFn = (args) => ({
   components: {
     Menu,
     MenuButton,

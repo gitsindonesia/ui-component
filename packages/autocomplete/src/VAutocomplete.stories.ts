@@ -3,7 +3,7 @@ import {ref} from 'vue';
 import {object} from 'yup';
 import VAutocomplete from './VAutocomplete.vue';
 import VBtn from '@morpheme/button';
-import type {Story} from '@storybook/vue3';
+import type {StoryFn} from '@storybook/vue3';
 
 const items = [
   {value: 1, text: 'Wade Cooper'},
@@ -23,7 +23,7 @@ export default {
   },
 };
 
-const Template: Story = (args) => ({
+const Template: StoryFn = (args) => ({
   components: {VAutocomplete},
   setup() {
     const selected = ref();
@@ -63,7 +63,7 @@ Hint.args = {
   hint: 'This is a hint',
 };
 
-export const Validation: Story = (args) => ({
+export const Validation: StoryFn = (args) => ({
   components: {VBtn, VAutocomplete},
   setup() {
     const schema = object({
@@ -128,7 +128,7 @@ HideError.args = {
   hideError: true,
 };
 
-export const TestInputState: Story<{}> = (args) => ({
+export const TestInputState: StoryFn<{}> = (args) => ({
   components: {VBtn, VAutocomplete},
   setup() {
     const modelValue = ref();
@@ -155,7 +155,7 @@ export const TestInputState: Story<{}> = (args) => ({
     const resetVVForm = () => {
       if (!args.useForm) {
         alert(
-          'Story is not set up with Vee Validate Form. set `useForm` control to true to try this action.',
+          'StoryFn is not set up with Vee Validate Form. set `useForm` control to true to try this action.',
         );
       }
 
@@ -273,7 +273,7 @@ TestInputState.args = {
   clearable: true,
 };
 
-export const DarkMode: Story = (args) => ({
+export const DarkMode: StoryFn = (args) => ({
   components: {VAutocomplete},
   setup() {
     const selected = ref();

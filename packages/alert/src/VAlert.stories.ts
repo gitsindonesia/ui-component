@@ -1,6 +1,6 @@
 import VAlert from './VAlert.vue';
 import {themeColors} from '@morpheme/utils/colors';
-import type {Meta, Story, StoryFn} from '@storybook/vue3';
+import type {Meta, StoryFn} from '@storybook/vue3';
 import Icon from '@morpheme/icon';
 import AlertVModelStory from './stories/AlertVModelStory.vue';
 import AlertTransitionStory from './stories/AlertTransitionStory.vue';
@@ -19,11 +19,10 @@ export default {
       options: themeColors,
     },
   },
-  args: {
-  },
+  args: {},
 } as Meta;
 
-const Template: Story = (args) => ({
+const Template: StoryFn = (args) => ({
   components: {
     'my-component': VAlert,
   },
@@ -90,7 +89,7 @@ export const Bordered = Template.bind({});
 Bordered.args = {
   border: true,
   dismissable: true,
-  icon: 'ic:round-info'
+  icon: 'ic:round-info',
 };
 Bordered.parameters = {
   docs: {
@@ -103,7 +102,7 @@ Bordered.parameters = {
 export const BorderPosition = (args: any) => ({
   components: {VAlert, VAlertTitle, Icon},
   setup() {
-    const positions = ['left', 'top', 'right', 'bottom']
+    const positions = ['left', 'top', 'right', 'bottom'];
     return {args, positions};
   },
   template: `

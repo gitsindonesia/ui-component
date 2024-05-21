@@ -1,4 +1,4 @@
-import type {Meta, Story} from '@storybook/vue3';
+import type {Meta, StoryFn} from '@storybook/vue3';
 import VBtn from './VBtn.vue';
 import type {Props as VBtnProps} from './VBtn.vue';
 import VIcon from '@morpheme/icon';
@@ -32,7 +32,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<VBtnProps> = (args) => ({
+const Template: StoryFn<VBtnProps> = (args) => ({
   components: {VBtn},
   setup() {
     return {args, colors};
@@ -183,10 +183,10 @@ NoRingEffect.parameters = {
   },
 };
 
-export const Sizes: Story<VBtnProps> = (args) => ({
+export const Sizes: StoryFn<VBtnProps> = (args) => ({
   components: {Button: VBtn},
   setup() {
-    const sizes = ['sm', 'md', 'lg', 'xl', '2xl']
+    const sizes = ['sm', 'md', 'lg', 'xl', '2xl'];
     return {args, sizes, defaultColors};
   },
   template: `
@@ -215,7 +215,7 @@ Sizes.parameters = {
   },
 };
 
-export const Icons: Story<VBtnProps> = (args) => ({
+export const Icons: StoryFn<VBtnProps> = (args) => ({
   components: {VBtn},
   template: `
 <div class="flex gap-2">
@@ -249,7 +249,7 @@ Icons.parameters = {
   },
 };
 
-export const Fab: Story<VBtnProps> = (args) => ({
+export const Fab: StoryFn<VBtnProps> = (args) => ({
   components: {VBtn},
   template: `
 <div class="flex gap-2 items-end">
@@ -273,7 +273,7 @@ Fab.parameters = {
   },
 };
 
-export const Plugin: Story<VBtnProps> = () => ({
+export const Plugin: StoryFn<VBtnProps> = () => ({
   components: {VIcon},
   setup() {
     return {
@@ -325,7 +325,7 @@ export const Plugin: Story<VBtnProps> = () => ({
   `,
 });
 
-export const DynamicProps: Story<VBtnProps> = () => ({
+export const DynamicProps: StoryFn<VBtnProps> = () => ({
   components: {VIcon, VBtn},
   template: `
 <VBtn>Default</VBtn>
@@ -336,7 +336,7 @@ export const DynamicProps: Story<VBtnProps> = () => ({
   `,
 });
 
-export const ButtonGroup: Story<VBtnProps> = () => ({
+export const ButtonGroup: StoryFn<VBtnProps> = () => ({
   components: {VBtnGroup, VBtnToolbar, VBtn},
   template: `
     <h3 class="font-semibold">Default</h3>
@@ -403,7 +403,7 @@ export const ButtonGroup: Story<VBtnProps> = () => ({
   `,
 });
 
-export const DarkMode: Story<VBtnProps> = () => ({
+export const DarkMode: StoryFn<VBtnProps> = () => ({
   components: {VBtnGroup, VBtnToolbar, VBtn},
   setup() {
     return {
@@ -498,7 +498,7 @@ export const DarkMode: Story<VBtnProps> = () => ({
   `,
 });
 
-export const Test: Story<VBtnProps> = (args) => ({
+export const Test: StoryFn<VBtnProps> = (args) => ({
   components: {ButtonTest},
   setup() {
     return {args, colors};

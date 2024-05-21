@@ -4,7 +4,7 @@ import VTab from './VTab.vue';
 import VBtn from '@morpheme/button';
 import VCard from '@morpheme/card';
 import {ref} from 'vue';
-import type {Story} from '@storybook/vue3';
+import type {StoryFn} from '@storybook/vue3';
 import VTabsSlider from './VTabsSlider.vue';
 import VTabList from './VTabList.vue';
 import VTabPanels from './VTabPanels.vue';
@@ -50,7 +50,7 @@ export default {
   },
 };
 
-const Template: Story<typeof VTabs> = (args) => ({
+const Template: StoryFn<typeof VTabs> = (args) => ({
   components: {VTabs},
   setup() {
     const items = ref(args.items || []);
@@ -61,7 +61,7 @@ const Template: Story<typeof VTabs> = (args) => ({
     <v-tabs v-bind="args" v-model:items="items" />`,
 });
 
-export const Variants: Story<{}> = (args) => ({
+export const Variants: StoryFn<{}> = (args) => ({
   components: {VTabs},
   setup() {
     return {args, variants: tabVariants};
@@ -98,7 +98,7 @@ Grow.parameters = {
   },
 };
 
-export const Colors: Story<{}> = (args) => ({
+export const Colors: StoryFn<{}> = (args) => ({
   components: {VTabs},
   setup() {
     return {args};
@@ -187,7 +187,7 @@ Vertical.parameters = {
   },
 };
 
-export const TabsWithCard: Story<{}> = (args) => ({
+export const TabsWithCard: StoryFn<{}> = (args) => ({
   components: {VTabs, VCard},
   setup() {
     const tab = ref(0);
@@ -212,7 +212,7 @@ TabsWithCard.parameters = {
   },
 };
 
-export const CustomStyle: Story<{}> = (args) => ({
+export const CustomStyle: StoryFn<{}> = (args) => ({
   components: {VTabs},
   setup() {
     const tab = ref(0);
@@ -237,7 +237,7 @@ export const CustomStyle: Story<{}> = (args) => ({
   `,
 });
 
-export const Removeable: Story<{}> = (args) => ({
+export const Removeable: StoryFn<{}> = (args) => ({
   components: {VTabs, VTab, VTabsSlider},
   setup() {
     const selectedTab = ref(2);
@@ -270,7 +270,7 @@ Removeable.parameters = {
   },
 };
 
-export const CustomTabContent: Story<{}> = (args) => ({
+export const CustomTabContent: StoryFn<{}> = (args) => ({
   components: {VTabs, VBtn},
   setup() {
     const tab = ref(0);
@@ -345,7 +345,7 @@ v-model="tab"
   },
 };
 
-export const CustomTab: Story<{}> = (args) => ({
+export const CustomTab: StoryFn<{}> = (args) => ({
   components: {VTabs, VTab},
   setup() {
     const tab = ref(0);
@@ -401,7 +401,7 @@ export const CustomTab: Story<{}> = (args) => ({
   `,
 });
 
-export const Prepend: Story<{}> = (args) => ({
+export const Prepend: StoryFn<{}> = (args) => ({
   components: {VTabs, VTab},
   setup() {
     const tab = ref(0);
@@ -445,7 +445,7 @@ export const Prepend: Story<{}> = (args) => ({
   `,
 });
 
-export const Append: Story<{}> = (args) => ({
+export const Append: StoryFn<{}> = (args) => ({
   components: {VTabs, VTab},
   setup() {
     const tab = ref(0);
@@ -489,7 +489,7 @@ export const Append: Story<{}> = (args) => ({
   `,
 });
 
-export const Previous: Story<{}> = (args) => ({
+export const Previous: StoryFn<{}> = (args) => ({
   components: {VTabs, VBtn},
   setup() {
     const tab = ref(0);
@@ -532,7 +532,7 @@ export const Previous: Story<{}> = (args) => ({
   `,
 });
 
-export const Next: Story<{}> = (args) => ({
+export const Next: StoryFn<{}> = (args) => ({
   components: {VTabs, VBtn},
   setup() {
     const tab = ref(0);
@@ -575,7 +575,7 @@ export const Next: Story<{}> = (args) => ({
   `,
 });
 
-export const DarkMode: Story = (args) => ({
+export const DarkMode: StoryFn = (args) => ({
   components: {
     VTabs,
     VTabGroup,
@@ -665,7 +665,7 @@ export const DarkMode: Story = (args) => ({
   `,
 });
 
-export const HeadlessUI: Story = (args) => ({
+export const HeadlessUI: StoryFn = (args) => ({
   components: {
     VTabGroup,
     VTabList,

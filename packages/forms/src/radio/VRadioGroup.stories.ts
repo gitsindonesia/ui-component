@@ -1,4 +1,4 @@
-import type {Meta, Story} from '@storybook/vue3';
+import type {Meta, StoryFn} from '@storybook/vue3';
 import {useForm} from 'vee-validate';
 import {object, number, string} from 'yup';
 import VRadioGroup from './VRadioGroup.vue';
@@ -31,7 +31,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => ({
+const Template: StoryFn = (args) => ({
   components: {VRadioGroup},
   setup() {
     return {args};
@@ -125,7 +125,7 @@ Customization.parameters = {
   },
 };
 
-export const Validation: Story<{}> = () => ({
+export const Validation: StoryFn<{}> = () => ({
   components: {VRadioGroup, VBtn},
   setup() {
     const schema = object({
@@ -164,7 +164,7 @@ export const Validation: Story<{}> = () => ({
 `,
 });
 
-export const ValidationMode: Story<{}> = () => ({
+export const ValidationMode: StoryFn<{}> = () => ({
   components: {VRadioGroup, VBtn},
   setup() {
     const items = ['liquid', 'gas', 'solid'];
@@ -241,7 +241,7 @@ export const ValidationMode: Story<{}> = () => ({
   `,
 });
 
-export const TestInputState: Story<typeof VRadioGroup> = (args) => ({
+export const TestInputState: StoryFn<typeof VRadioGroup> = (args) => ({
   components: {VBtn, VRadioGroup},
   setup() {
     const items = ['fire', 'earth', 'wind', 'water'];
@@ -347,7 +347,7 @@ TestInputState.args = {
   useForm: false,
 };
 
-export const DarkMode: Story = (args) => ({
+export const DarkMode: StoryFn = (args) => ({
   components: {VRadioGroup},
   setup() {
     return {args};

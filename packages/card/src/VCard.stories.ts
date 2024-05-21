@@ -1,8 +1,8 @@
-import type {Meta, Story} from '@storybook/vue3';
+import type {Meta, StoryFn} from '@storybook/vue3';
 import VCard from './VCard.vue';
 import VBtn from '@morpheme/button';
 import {defaultColors} from '@morpheme/theme/defaultTheme';
-import { defineComponent, ref } from 'vue';
+import {defineComponent, ref} from 'vue';
 import VCardHeader from './VCardHeader.vue';
 import VCardFooter from './VCardFooter.vue';
 import VCardBody from './VCardBody.vue';
@@ -24,7 +24,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => ({
+const Template: StoryFn = (args) => ({
   components: {VCard},
   setup() {
     return {args};
@@ -93,10 +93,10 @@ Image.args = {
   image: 'https://picsum.photos/200/300',
   imageAlt: 'random image',
   imageClass: 'h-40',
-  footer: ''
+  footer: '',
 };
 
-export const CustomSlots: Story = (args) => ({
+export const CustomSlots: StoryFn = (args) => ({
   components: {VCard, VBtn},
   setup() {
     return {args};
@@ -146,7 +146,7 @@ Flat.parameters = {
   },
 };
 
-export const Colors: Story<{}> = (args) => ({
+export const Colors: StoryFn<{}> = (args) => ({
   components: {VCard},
   setup() {
     return {args, colors: defaultColors};
@@ -165,11 +165,11 @@ export const Colors: Story<{}> = (args) => ({
 `,
 });
 
-export const Bordered: Story<{}> = (args) => ({
+export const Bordered: StoryFn<{}> = (args) => ({
   components: {VCard, VBtn},
   setup() {
-    const selectedColor = ref('primary')
-    const positions = ["top" , "left" , "bottom" , "right"]
+    const selectedColor = ref('primary');
+    const positions = ['top', 'left', 'bottom', 'right'];
     return {args, colors: defaultColors, positions, selectedColor};
   },
   template: `
@@ -198,7 +198,7 @@ export const Bordered: Story<{}> = (args) => ({
 `,
 });
 
-export const Shadow: Story<{}> = (args) => ({
+export const Shadow: StoryFn<{}> = (args) => ({
   components: {VCard},
   setup() {
     const shadows = [true, 'sm', 'md', 'lg', 'xl', '2xl', 'inner', 'none'];
@@ -219,7 +219,7 @@ export const Shadow: Story<{}> = (args) => ({
 `,
 });
 
-export const DarkMode: Story<{}> = () => ({
+export const DarkMode: StoryFn<{}> = () => ({
   components: {VCard},
   setup() {
     return {defaultColors};
@@ -241,7 +241,7 @@ const DummyLink = defineComponent({
   template: `<a><slot /></a>`,
 });
 
-export const CustomComponent: Story<{}> = () => ({
+export const CustomComponent: StoryFn<{}> = () => ({
   components: {VCard, DummyLink},
   setup() {
     return {defaultColors};
@@ -279,7 +279,7 @@ export const CustomComponent: Story<{}> = () => ({
 `,
 });
 
-export const Bodyless: Story<{}> = () => ({
+export const Bodyless: StoryFn<{}> = () => ({
   components: {VCard, VCardHeader, VCardFooter, VCardBody},
   setup() {
     return {defaultColors};

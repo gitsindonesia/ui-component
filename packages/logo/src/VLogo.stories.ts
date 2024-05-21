@@ -1,4 +1,4 @@
-import type {Meta, Story} from '@storybook/vue3';
+import type {Meta, StoryFn} from '@storybook/vue3';
 import VLogo from './VLogo.vue';
 import {sizes} from './types';
 
@@ -11,7 +11,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => ({
+const Template: StoryFn = (args) => ({
   components: {
     VLogo,
   },
@@ -57,7 +57,7 @@ CustomClass.parameters = {
   },
 };
 
-export const Sizes: Story = (args) => ({
+export const Sizes: StoryFn = (args) => ({
   components: {
     VLogo,
   },

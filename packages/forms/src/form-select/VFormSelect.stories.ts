@@ -1,4 +1,4 @@
-import type {Story, Meta} from '@storybook/vue3';
+import type {StoryFn, Meta} from '@storybook/vue3';
 import {sizes} from '@morpheme/utils/sizes';
 import type {VFormSelectItem as VFormSelectProps} from './types';
 import VFormSelect from './VFormSelect.vue';
@@ -37,7 +37,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<VFormSelectProps> = (args) => ({
+const Template: StoryFn<VFormSelectProps> = (args) => ({
   components: {
     VFormSelect,
   },
@@ -107,7 +107,7 @@ Hint.parameters = {
   },
 };
 
-export const Validation: Story<{}> = (args) => ({
+export const Validation: StoryFn<{}> = (args) => ({
   components: {VBtn, VFormSelect},
   setup() {
     const schema = object({
@@ -182,7 +182,7 @@ export const Validation: Story<{}> = (args) => ({
 `,
 });
 
-export const ValidationMode: Story<{}> = () => ({
+export const ValidationMode: StoryFn<{}> = () => ({
   components: {VFormSelect, VBtn},
   setup() {
     const schema = object({
@@ -281,7 +281,7 @@ export const ValidationMode: Story<{}> = () => ({
   `,
 });
 
-export const IntialValues: Story<{}> = (args) => ({
+export const IntialValues: StoryFn<{}> = (args) => ({
   components: {VBtn, VFormSelect},
   setup() {
     const schema = object({
@@ -335,7 +335,7 @@ export const IntialValues: Story<{}> = (args) => ({
 `,
 });
 
-export const TestInputState: Story<typeof VFormSelect> = (args) => ({
+export const TestInputState: StoryFn<typeof VFormSelect> = (args) => ({
   components: {VBtn, VFormSelect},
   setup() {
     const modelValue = ref();
@@ -448,7 +448,7 @@ TestInputState.args = {
   useForm: false,
 };
 
-export const DarkMode: Story = (args) => ({
+export const DarkMode: StoryFn = (args) => ({
   components: {VFormSelect},
   setup() {
     return {args};

@@ -1,4 +1,4 @@
-import type {Story} from '@storybook/vue3';
+import type {StoryFn} from '@storybook/vue3';
 import {
   Accordion,
   AccordionItem,
@@ -19,7 +19,7 @@ export default {
   },
 };
 
-export const Default: Story = (args) => ({
+export const Default: StoryFn = (args) => ({
   components: {
     Accordion,
     AccordionItem,
@@ -116,7 +116,7 @@ DefaultValue.args = {
   defaultValue: 'item-2',
 };
 
-export const Transition: Story = (args) => ({
+export const Transition: StoryFn = (args) => ({
   components: {
     Accordion,
     AccordionItem,

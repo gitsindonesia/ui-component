@@ -1,6 +1,6 @@
 import {Dropdown, DropdownBtn, DropdownItem} from '@morpheme/dropdown';
 import VBreadcrumbs from './VBreadcrumbs.vue';
-import type {Meta, Story} from '@storybook/vue3';
+import type {Meta, StoryFn} from '@storybook/vue3';
 import Icon from '@morpheme/icon';
 import type {VBreadcrumbItemProps} from './types';
 import {ref} from 'vue';
@@ -37,7 +37,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => ({
+const Template: StoryFn = (args) => ({
   components: {VBreadcrumbs},
   setup() {
     return {args};
@@ -67,7 +67,7 @@ CustomDivider.parameters = {
   },
 };
 
-export const CustomDividerSlots: Story = (args) => ({
+export const CustomDividerSlots: StoryFn = (args) => ({
   components: {VBreadcrumbs, Icon},
   setup() {
     return {args};
@@ -94,7 +94,7 @@ CustomDividerSlots.parameters = {
   },
 };
 
-export const OptionalRouterLink: Story = (args) => ({
+export const OptionalRouterLink: StoryFn = (args) => ({
   components: {VBreadcrumbs, Icon},
   setup() {
     const items = ref<VBreadcrumbItemProps[]>([
@@ -137,7 +137,7 @@ const items = ref<VBreadcrumbItem[]>([
   },
 };
 
-export const Bare: Story = (args) => ({
+export const Bare: StoryFn = (args) => ({
   components: {VBreadcrumbs, VBreadcrumbsItem, VBreadcrumbsDivider, Icon},
   setup() {
     return {args};
@@ -184,7 +184,7 @@ const items = ref<VBreadcrumbItem[]>([
   },
 };
 
-export const WithDropdown: Story = (args) => ({
+export const WithDropdown: StoryFn = (args) => ({
   components: {
     VBreadcrumbs,
     VBreadcrumbsItem,

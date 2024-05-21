@@ -1,4 +1,4 @@
-import type {Story, Meta} from '@storybook/vue3';
+import type {StoryFn, Meta} from '@storybook/vue3';
 import {themeColors} from '@morpheme/utils';
 import VSelect from './VSelect.vue';
 import {useForm} from 'vee-validate';
@@ -25,7 +25,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<typeof VSelect> = (args) => ({
+const Template: StoryFn<typeof VSelect> = (args) => ({
   components: {
     VSelect,
   },
@@ -209,7 +209,7 @@ ReturnObject.parameters = {
   },
 };
 
-export const Sizes: Story<typeof VSelect> = (args) => ({
+export const Sizes: StoryFn<typeof VSelect> = (args) => ({
   components: {
     VSelect,
   },
@@ -223,7 +223,7 @@ export const Sizes: Story<typeof VSelect> = (args) => ({
   `,
 });
 
-export const Validation: Story<{}> = (args) => ({
+export const Validation: StoryFn<{}> = (args) => ({
   components: {VBtn, VSelect},
   setup() {
     const schema = object({
@@ -295,7 +295,7 @@ HideError.args = {
   hideError: true,
 };
 
-export const TestInputState: Story<{}> = (args) => ({
+export const TestInputState: StoryFn<{}> = (args) => ({
   components: {VBtn, VSelect},
   setup() {
     const schema = object({
@@ -362,7 +362,7 @@ export const TestInputState: Story<{}> = (args) => ({
     const resetVVForm = () => {
       if (!args.useForm) {
         alert(
-          'Story is not set up with Vee Validate Form. set `useForm` control to true to try this action.',
+          'StoryFn is not set up with Vee Validate Form. set `useForm` control to true to try this action.',
         );
       }
 
@@ -515,7 +515,7 @@ TestInputState.args = {
   clearable: false,
 };
 
-export const DarkMode: Story = (args) => ({
+export const DarkMode: StoryFn = (args) => ({
   components: {VSelect},
   setup() {
     return {args};

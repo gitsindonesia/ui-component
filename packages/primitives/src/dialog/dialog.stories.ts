@@ -1,4 +1,4 @@
-import type {Story} from '@storybook/vue3';
+import type {StoryFn} from '@storybook/vue3';
 import {
   Dialog,
   DialogPanel,
@@ -14,7 +14,7 @@ export default {
   subcomponents: {},
 };
 
-export const Default: Story = (args) => ({
+export const Default: StoryFn = (args) => ({
   components: {
     Dialog,
     DialogPanel,

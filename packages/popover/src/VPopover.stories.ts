@@ -1,24 +1,24 @@
-import { VLogo } from '@morpheme/logo';
-import { VAppBar } from '@morpheme/app-bar';
-import type { Story } from "@storybook/vue3";
-import VPopover from "./VPopover.vue";
-import VPopoverButton from "./VPopoverButton.vue";
-import VPopoverPanel from "./VPopoverPanel.vue";
-import VPopoverOverlay from "./VPopoverOverlay.vue";
-import VPopoverGroup from "./VPopoverGroup.vue";
-import { popoverPlacements } from "./api";
-import {List as VList, ListItem as VListItem} from '@morpheme/list'
-import { VDivider } from '@morpheme/divider';
+import {VLogo} from '@morpheme/logo';
+import {VAppBar} from '@morpheme/app-bar';
+import type {StoryFn} from '@storybook/vue3';
+import VPopover from './VPopover.vue';
+import VPopoverButton from './VPopoverButton.vue';
+import VPopoverPanel from './VPopoverPanel.vue';
+import VPopoverOverlay from './VPopoverOverlay.vue';
+import VPopoverGroup from './VPopoverGroup.vue';
+import {popoverPlacements} from './api';
+import {List as VList, ListItem as VListItem} from '@morpheme/list';
+import {VDivider} from '@morpheme/divider';
 
 export default {
-  title: "Components/Popover",
+  title: 'Components/Popover',
   component: VPopover,
 };
 
-export const Default: Story = (args) => ({
-  components: { VPopover, VPopoverButton, VPopoverPanel },
+export const Default: StoryFn = (args) => ({
+  components: {VPopover, VPopoverButton, VPopoverPanel},
   setup() {
-    return { args };
+    return {args};
   },
   template: `
     <VPopover v-bind="args">
@@ -30,10 +30,10 @@ export const Default: Story = (args) => ({
   `,
 });
 
-export const Placement: Story = (args) => ({
-  components: { VPopover, VPopoverButton, VPopoverPanel },
+export const Placement: StoryFn = (args) => ({
+  components: {VPopover, VPopoverButton, VPopoverPanel},
   setup() {
-    return { args, popoverPlacements };
+    return {args, popoverPlacements};
   },
   template: `
     <div class="grid grid-cols-4 gap-4 place-items-center h-screen">
@@ -53,10 +53,10 @@ export const Placement: Story = (args) => ({
   `,
 });
 
-export const Overlay: Story = (args) => ({
-  components: { VPopover, VPopoverButton, VPopoverPanel, VPopoverOverlay },
+export const Overlay: StoryFn = (args) => ({
+  components: {VPopover, VPopoverButton, VPopoverPanel, VPopoverOverlay},
   setup() {
-    return { args };
+    return {args};
   },
   template: `
     <VPopover v-bind="args">
@@ -69,7 +69,7 @@ export const Overlay: Story = (args) => ({
   `,
 });
 
-export const Group: Story = (args) => ({
+export const Group: StoryFn = (args) => ({
   components: {
     VPopover,
     VPopoverButton,
@@ -78,7 +78,7 @@ export const Group: Story = (args) => ({
     VPopoverGroup,
   },
   setup() {
-    return { args };
+    return {args};
   },
   template: `
     <VPopoverGroup>
@@ -98,7 +98,7 @@ export const Group: Story = (args) => ({
   `,
 });
 
-export const NavigationMenus: Story = (args) => ({
+export const NavigationMenus: StoryFn = (args) => ({
   components: {
     VPopover,
     VPopoverButton,
@@ -111,7 +111,7 @@ export const NavigationMenus: Story = (args) => ({
     VListItem,
   },
   setup() {
-    return { args };
+    return {args};
   },
   template: `
     <VAppBar shadow>
@@ -243,14 +243,17 @@ export const NavigationMenus: Story = (args) => ({
   `,
 });
 
-export const WithList: Story = (args) => ({
-  components: { VPopover, VPopoverButton, VPopoverPanel,
+export const WithList: StoryFn = (args) => ({
+  components: {
+    VPopover,
+    VPopoverButton,
+    VPopoverPanel,
     VList,
     VListItem,
     VDivider,
   },
   setup() {
-    return { args };
+    return {args};
   },
   template: `
     <VPopover v-bind="args">
@@ -267,14 +270,17 @@ export const WithList: Story = (args) => ({
   `,
 });
 
-export const DarkMode: Story = (args) => ({
-  components: { VPopover, VPopoverButton, VPopoverPanel,
+export const DarkMode: StoryFn = (args) => ({
+  components: {
+    VPopover,
+    VPopoverButton,
+    VPopoverPanel,
     VList,
     VListItem,
     VDivider,
   },
   setup() {
-    return { args };
+    return {args};
   },
   template: `
     <main class="dark dark:bg-neutral-900 dark:text-neutral-200 p-6 space-y-2">

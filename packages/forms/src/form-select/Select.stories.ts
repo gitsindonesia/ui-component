@@ -1,4 +1,4 @@
-import type {Story, Meta} from '@storybook/vue3';
+import type {StoryFn, Meta} from '@storybook/vue3';
 import {sizes} from '@morpheme/utils/sizes';
 import {useForm} from 'vee-validate';
 import {object, string} from 'yup';
@@ -46,7 +46,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<typeof Select> = (args) => ({
+const Template: StoryFn<typeof Select> = (args) => ({
   components: {
     Select,
   },
@@ -76,7 +76,7 @@ OptionGroup.args = {
   options: groupItems,
 };
 
-export const VModel: Story<typeof Select> = (args) => ({
+export const VModel: StoryFn<typeof Select> = (args) => ({
   components: {
     Select,
   },
@@ -145,7 +145,7 @@ Hint.parameters = {
   },
 };
 
-export const Validation: Story<{}> = (args) => ({
+export const Validation: StoryFn<{}> = (args) => ({
   components: {VBtn, SelectField},
   setup() {
     const schema = object({
@@ -220,7 +220,7 @@ export const Validation: Story<{}> = (args) => ({
 `,
 });
 
-export const DarkMode: Story = (args) => ({
+export const DarkMode: StoryFn = (args) => ({
   components: {Select},
   setup() {
     return {args};

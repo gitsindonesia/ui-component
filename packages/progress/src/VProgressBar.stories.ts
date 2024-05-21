@@ -1,6 +1,6 @@
 import VProgressBar from './VProgressBar.vue';
 import {themeColors} from '@morpheme/utils/colors';
-import type {Meta, Story} from '@storybook/vue3';
+import type {Meta, StoryFn} from '@storybook/vue3';
 import {ref} from 'vue';
 import VBtn from '@morpheme/button';
 
@@ -18,7 +18,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => ({
+const Template: StoryFn = (args) => ({
   components: {VProgressBar},
   setup() {
     return {args, themeColors};
@@ -47,7 +47,7 @@ Variants.parameters = {
   },
 };
 
-export const Slots: Story = (args) => ({
+export const Slots: StoryFn = (args) => ({
   components: {VProgressBar},
   setup() {
     return {args};
@@ -64,7 +64,7 @@ export const Slots: Story = (args) => ({
   `,
 });
 
-export const VModel: Story = (args) => ({
+export const VModel: StoryFn = (args) => ({
   components: {VProgressBar, VBtn},
   setup() {
     const value = ref(10);
@@ -82,7 +82,7 @@ export const VModel: Story = (args) => ({
   `,
 });
 
-export const Indeterminate: Story = (args) => ({
+export const Indeterminate: StoryFn = (args) => ({
   components: {VProgressBar},
   setup() {
     return {args};
@@ -92,7 +92,7 @@ export const Indeterminate: Story = (args) => ({
   `,
 });
 
-export const DarkMode: Story = (args) => ({
+export const DarkMode: StoryFn = (args) => ({
   components: {VProgressBar},
   setup() {
     return {args, themeColors};

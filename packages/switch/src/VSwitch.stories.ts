@@ -1,4 +1,4 @@
-import type {Meta, Story} from '@storybook/vue3';
+import type {Meta, StoryFn} from '@storybook/vue3';
 import {useForm, Field} from 'vee-validate';
 import {object, boolean} from 'yup';
 import VBtn from '@morpheme/button';
@@ -14,7 +14,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => ({
+const Template: StoryFn = (args) => ({
   components: {
     VSwitch,
   },
@@ -176,7 +176,7 @@ CustomStyle.args = {
   },
 };
 
-export const Validation: Story<{}> = () => ({
+export const Validation: StoryFn<{}> = () => ({
   components: {VSwitch: VSwitchField, Field, VBtn},
   setup() {
     const schema = object({
@@ -226,7 +226,7 @@ export const Validation: Story<{}> = () => ({
 `,
 });
 
-export const Sizes: Story = (args) => ({
+export const Sizes: StoryFn = (args) => ({
   components: {
     VSwitch,
   },
@@ -241,7 +241,7 @@ export const Sizes: Story = (args) => ({
   `,
 });
 
-export const DarkMode: Story = (args) => ({
+export const DarkMode: StoryFn = (args) => ({
   components: {VSwitch},
   setup() {
     args.modelValue = true;

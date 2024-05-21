@@ -1,11 +1,11 @@
-import {Meta, Story} from '@storybook/vue3';
+import type {Meta, StoryFn} from '@storybook/vue3';
 import ElevationComponent from './Elevation.vue';
 
 export default {
   title: 'Foundation/Elevation',
 } as Meta;
 
-export const Elevation: Story = () => ({
+export const Elevation: StoryFn = () => ({
   components: {ElevationComponent},
   template: `<ElevationComponent />`,
 });

@@ -1,6 +1,6 @@
-import type {Args, Story} from '@storybook/vue3';
+import type {Args, StoryFn} from '@storybook/vue3';
 import VStepper from './Stepper.vue';
-import type { PropType} from 'vue';
+import type {PropType} from 'vue';
 import {defineComponent, ref, computed, toRefs} from 'vue';
 import {useRoute} from 'vue-router';
 
@@ -92,7 +92,7 @@ const defaultRoutes = [
   },
 ];
 
-const Template: Story = (args, ctx) => ({
+const Template: StoryFn = (args, ctx) => ({
   components: {
     VStepper,
   },

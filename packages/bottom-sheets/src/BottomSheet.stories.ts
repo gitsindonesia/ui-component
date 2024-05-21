@@ -1,4 +1,4 @@
-import type {Story} from '@storybook/vue3';
+import type {StoryFn} from '@storybook/vue3';
 import BottomSheet from './BottomSheet.vue';
 import {onMounted, ref} from 'vue';
 import Button from '@morpheme/button';
@@ -52,7 +52,7 @@ export default {
   args: {},
 };
 
-export const Default: Story = (args, {argTypes}) => ({
+export const Default: StoryFn = (args, {argTypes}) => ({
   components: {BottomSheet, BottomSheetBody, Button},
   setup() {
     const isOpen = ref(false);
@@ -68,7 +68,7 @@ export const Default: Story = (args, {argTypes}) => ({
   `,
 });
 
-export const WithHeader: Story = (args, {argTypes}) => ({
+export const WithHeader: StoryFn = (args, {argTypes}) => ({
   components: {BottomSheet, BottomSheetHeader, BottomSheetBody, Button},
   setup() {
     const isOpen = ref(false);
@@ -87,7 +87,7 @@ export const WithHeader: Story = (args, {argTypes}) => ({
   `,
 });
 
-export const WithHandle: Story = (args, {argTypes}) => ({
+export const WithHandle: StoryFn = (args, {argTypes}) => ({
   components: {
     BottomSheet,
     BottomSheetHandle,
@@ -113,7 +113,7 @@ export const WithHandle: Story = (args, {argTypes}) => ({
   `,
 });
 
-export const WithActions: Story = (args, {argTypes}) => ({
+export const WithActions: StoryFn = (args, {argTypes}) => ({
   components: {
     BottomSheet,
     BottomSheetHeader,
@@ -141,7 +141,7 @@ export const WithActions: Story = (args, {argTypes}) => ({
   `,
 });
 
-export const Menus: Story = (args, {argTypes}) => ({
+export const Menus: StoryFn = (args, {argTypes}) => ({
   components: {BottomSheet, BottomSheetMenus, Button},
   setup() {
     const isOpen = ref(false);
@@ -226,7 +226,7 @@ DisableHideOnOverlayClick.args = {
   },
 };
 
-export const MultipleInstance: Story = (args, {argTypes}) => ({
+export const MultipleInstance: StoryFn = (args, {argTypes}) => ({
   components: {BottomSheet, BottomSheetHeader, BottomSheetBody, Button},
   setup() {
     const sheet1 = ref(false);
@@ -257,7 +257,7 @@ export const MultipleInstance: Story = (args, {argTypes}) => ({
   `,
 });
 
-export const NestedSheet: Story = (args, {argTypes}) => ({
+export const NestedSheet: StoryFn = (args, {argTypes}) => ({
   components: {
     BottomSheet,
     BottomSheetHeader,
@@ -296,7 +296,7 @@ export const NestedSheet: Story = (args, {argTypes}) => ({
   `,
 });
 
-export const DarkMode: Story = (args, {argTypes}) => ({
+export const DarkMode: StoryFn = (args, {argTypes}) => ({
   components: {
     BottomSheet,
     BottomSheetHandle,

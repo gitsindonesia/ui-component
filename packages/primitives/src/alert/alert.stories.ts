@@ -1,4 +1,4 @@
-import type {Story} from '@storybook/vue3';
+import type {StoryFn} from '@storybook/vue3';
 import {Alert} from './alert';
 import {ref} from 'vue';
 import {XCloseIcon} from '@morphemeicons/vue/untitled';
@@ -8,7 +8,7 @@ export default {
   component: Alert,
 };
 
-export const Default: Story = (args) => ({
+export const Default: StoryFn = (args) => ({
   components: {Alert, XCloseIcon},
   setup() {
     return {args};
@@ -28,7 +28,7 @@ export const Default: Story = (args) => ({
   `,
 });
 
-export const Transition: Story = (args) => ({
+export const Transition: StoryFn = (args) => ({
   components: {Alert, XCloseIcon},
   setup() {
     return {args};
@@ -50,7 +50,7 @@ export const Transition: Story = (args) => ({
   `,
 });
 
-export const CustomRender: Story = (args) => ({
+export const CustomRender: StoryFn = (args) => ({
   components: {Alert, XCloseIcon},
   setup() {
     return {args};
@@ -88,7 +88,7 @@ export const CustomRender: Story = (args) => ({
   `,
 });
 
-export const VModel: Story = (args) => ({
+export const VModel: StoryFn = (args) => ({
   components: {Alert, XCloseIcon},
   setup() {
     const isOpen = ref(true);
@@ -115,7 +115,7 @@ export const VModel: Story = (args) => ({
   `,
 });
 
-export const Styled: Story = (args) => ({
+export const Styled: StoryFn = (args) => ({
   components: {Alert},
   setup() {
     return {args};

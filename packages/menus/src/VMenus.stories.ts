@@ -1,4 +1,4 @@
-import type {Meta, Story} from '@storybook/vue3';
+import type {Meta, StoryFn} from '@storybook/vue3';
 import VMenus from './VMenus.vue';
 import VMenusItem from './VMenusItem.vue';
 import VAppBar from '@morpheme/app-bar';
@@ -29,7 +29,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => ({
+const Template: StoryFn = (args) => ({
   components: {
     VMenus,
   },
@@ -81,7 +81,7 @@ Hover.parameters = {
   },
 };
 
-export const MenuIcons: Story = (args) => ({
+export const MenuIcons: StoryFn = (args) => ({
   components: {
     VMenus,
   },
@@ -123,7 +123,7 @@ export const MenuIcons: Story = (args) => ({
   `,
 });
 
-export const Href: Story = (args) => ({
+export const Href: StoryFn = (args) => ({
   components: {
     VMenus,
   },
@@ -157,7 +157,7 @@ CustomIcon.parameters = {
   },
 };
 
-export const InAppBar: Story = (args) => ({
+export const InAppBar: StoryFn = (args) => ({
   components: {
     VMenus,
     VAppBar,
@@ -195,7 +195,7 @@ export const InAppBar: Story = (args) => ({
   `,
 });
 
-export const Slots: Story = (args) => ({
+export const Slots: StoryFn = (args) => ({
   components: {
     VAppBar,
     VMenus,
@@ -218,7 +218,7 @@ export const Slots: Story = (args) => ({
   `,
 });
 
-export const CustomStyle: Story = (args) => ({
+export const CustomStyle: StoryFn = (args) => ({
   components: {
     VMenusCustom,
   },
@@ -230,7 +230,7 @@ export const CustomStyle: Story = (args) => ({
   `,
 });
 
-export const Nested: Story = (args) => ({
+export const Nested: StoryFn = (args) => ({
   components: {
     VAppBar,
     VMenus,
@@ -319,7 +319,7 @@ export const Nested: Story = (args) => ({
   `,
 });
 
-export const DarkMode: Story = (args) => ({
+export const DarkMode: StoryFn = (args) => ({
   components: {VMenus},
   setup() {
     return {args};

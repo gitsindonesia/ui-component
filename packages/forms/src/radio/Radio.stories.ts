@@ -1,5 +1,5 @@
 import VRadio from './Radio.vue';
-import type {Meta, Story} from '@storybook/vue3';
+import type {Meta, StoryFn} from '@storybook/vue3';
 import {useForm, Field} from 'vee-validate';
 import {object, string} from 'yup';
 import VBtn from '@morpheme/button';
@@ -10,7 +10,7 @@ export default {
   component: VRadio,
 } as Meta;
 
-export const Default: Story = (args) => ({
+export const Default: StoryFn = (args) => ({
   components: {VRadio},
   setup() {
     const value = ref('1');
@@ -25,7 +25,7 @@ export const Default: Story = (args) => ({
   `,
 });
 
-export const Hint: Story = (args) => ({
+export const Hint: StoryFn = (args) => ({
   components: {VRadio},
   setup() {
     const value = ref('1');
@@ -42,7 +42,7 @@ export const Hint: Story = (args) => ({
   `,
 });
 
-export const Disabled: Story = (args) => ({
+export const Disabled: StoryFn = (args) => ({
   components: {VRadio},
   setup() {
     const value = ref('1');
@@ -56,7 +56,7 @@ export const Disabled: Story = (args) => ({
   `,
 });
 
-export const Error: Story = (args) => ({
+export const Error: StoryFn = (args) => ({
   components: {VRadio},
   setup() {
     const value = ref('1');
@@ -72,7 +72,7 @@ export const Error: Story = (args) => ({
   `,
 });
 
-export const Validation: Story<{}> = () => ({
+export const Validation: StoryFn<{}> = () => ({
   components: {VRadio, VBtn, Field},
   setup() {
     const schema = object({
@@ -117,7 +117,7 @@ export const Validation: Story<{}> = () => ({
 });
 
 // VRadio dark mode
-export const DarkMode: Story<{}> = () => ({
+export const DarkMode: StoryFn<{}> = () => ({
   components: {VRadio},
   setup() {
     const value = ref('1');

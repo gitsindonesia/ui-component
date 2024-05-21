@@ -1,4 +1,4 @@
-import type {Meta, Story} from '@storybook/vue3';
+import type {Meta, StoryFn} from '@storybook/vue3';
 import {ref} from 'vue';
 import VNavDrawer from './VNavDrawer.vue';
 import VBtn from '@morpheme/button';
@@ -113,7 +113,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => ({
+const Template: StoryFn = (args) => ({
   components: {VNavDrawer, VBtn},
   setup() {
     const isOpen = ref(false);

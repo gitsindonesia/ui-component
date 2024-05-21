@@ -1,11 +1,11 @@
-import type {Meta, Story} from '@storybook/vue3';
+import type {Meta, StoryFn} from '@storybook/vue3';
 import {sizes} from '@morpheme/utils';
 import VTextarea from './TextareaInput.vue';
 import VBtn from '@morpheme/button';
 import {object, string} from 'yup';
 import {useForm} from 'vee-validate';
 import {ref} from 'vue';
-import TextareaInputField from './TextareaInputField.vue'
+import TextareaInputField from './TextareaInputField.vue';
 
 export default {
   title: 'Experimental/Forms/Textarea',
@@ -22,7 +22,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story = (args) => ({
+const Template: StoryFn = (args) => ({
   components: {VTextarea},
   setup() {
     return {args};
@@ -40,10 +40,10 @@ Default.parameters = {
   },
 };
 
-export const VModel: Story = (args) => ({
+export const VModel: StoryFn = (args) => ({
   components: {VTextarea},
   setup() {
-    const value = ref('')
+    const value = ref('');
     return {args, value};
   },
   template: `
@@ -127,7 +127,7 @@ Counter.parameters = {
   },
 };
 
-export const Validation: Story<{}> = (args) => ({
+export const Validation: StoryFn<{}> = (args) => ({
   components: {TextareaInputField, VBtn},
   setup() {
     const schema = object({
@@ -171,7 +171,7 @@ export const Validation: Story<{}> = (args) => ({
 `,
 });
 
-export const DarkMode: Story = (args) => ({
+export const DarkMode: StoryFn = (args) => ({
   components: {VTextarea},
   setup() {
     return {args};

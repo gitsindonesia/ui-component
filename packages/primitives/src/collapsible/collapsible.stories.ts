@@ -1,4 +1,4 @@
-import type {Story} from '@storybook/vue3';
+import type {StoryFn} from '@storybook/vue3';
 import {
   Collapsible,
   CollapsibleButton,
@@ -16,7 +16,7 @@ export default {
   },
 };
 
-export const Default: Story = (args) => ({
+export const Default: StoryFn = (args) => ({
   components: {
     Collapsible,
     CollapsibleButton,
@@ -54,7 +54,7 @@ export const Default: Story = (args) => ({
   `,
 });
 
-export const VModel: Story = (args) => ({
+export const VModel: StoryFn = (args) => ({
   components: {
     Collapsible,
     CollapsibleButton,

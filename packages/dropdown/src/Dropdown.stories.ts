@@ -1,5 +1,5 @@
 import VIcon from '@morpheme/icon';
-import type {Story} from '@storybook/vue3';
+import type {StoryFn} from '@storybook/vue3';
 import Dropdown from './Dropdown.vue';
 import DropdownItem from './DropdownItem.vue';
 import DropdownButton from './DropdownButton.vue';
@@ -35,7 +35,7 @@ export default {
   },
 };
 
-const Template: Story = (args, {argTypes}) => ({
+const Template: StoryFn = (args, {argTypes}) => ({
   components: {Dropdown},
   setup() {
     return {args, argTypes};
@@ -173,7 +173,7 @@ Header.args = {
   ],
 };
 
-export const Slots: Story = (args, {argTypes}) => ({
+export const Slots: StoryFn = (args, {argTypes}) => ({
   components: {Dropdown, DropdownItem, DropdownHeader},
   setup() {
     return {args, argTypes};
@@ -197,7 +197,7 @@ export const Slots: Story = (args, {argTypes}) => ({
   `,
 });
 
-export const CustomActivator: Story = (args, {argTypes}) => ({
+export const CustomActivator: StoryFn = (args, {argTypes}) => ({
   components: {
     Dropdown,
     DropdownItem,
@@ -375,7 +375,7 @@ export const CustomActivator: Story = (args, {argTypes}) => ({
   `,
 });
 
-export const DarkMode: Story<{}> = (args) => ({
+export const DarkMode: StoryFn<{}> = (args) => ({
   components: {Dropdown, DropdownItem, DropdownHeader},
   setup() {
     return {args};
@@ -409,7 +409,7 @@ const placements = [
   'left-end',
 ];
 
-export const FloatingUI: Story = (args, {argTypes}) => ({
+export const FloatingUI: StoryFn = (args, {argTypes}) => ({
   components: {Dropdown},
   setup() {
     return {args, argTypes, placements};
@@ -430,7 +430,7 @@ FloatingUI.parameters = {
   layout: 'centered',
 };
 
-export const MultiLevel: Story = (args, {argTypes}) => ({
+export const MultiLevel: StoryFn = (args, {argTypes}) => ({
   components: {Dropdown, DropdownItem, DropdownButton, DropdownHeader},
   setup() {
     return {args, argTypes, DropdownItem};
@@ -479,7 +479,7 @@ export const MultiLevel: Story = (args, {argTypes}) => ({
   `,
 });
 
-export const NavigationMenus: Story = (args, {argTypes}) => ({
+export const NavigationMenus: StoryFn = (args, {argTypes}) => ({
   components: {Dropdown, DropdownItem, DropdownButton, DropdownHeader},
   setup() {
     return {args, argTypes, DropdownItem};
@@ -574,7 +574,7 @@ export const NavigationMenus: Story = (args, {argTypes}) => ({
   `,
 });
 
-export const Sizes: Story = (args, {argTypes}) => ({
+export const Sizes: StoryFn = (args, {argTypes}) => ({
   components: {Dropdown, DropdownItem, DropdownButton, DropdownHeader},
   setup() {
     return {args, argTypes, DropdownItem};

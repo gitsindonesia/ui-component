@@ -1,4 +1,4 @@
-import type {Meta, Story} from '@storybook/vue3';
+import type {Meta, StoryFn} from '@storybook/vue3';
 import FeatureSnippet from './Feature.vue';
 
 export default {
@@ -7,7 +7,7 @@ export default {
   args: {},
 } as Meta;
 
-export const FeatureSections: Story = () => ({
+export const FeatureSections: StoryFn = () => ({
   components: {FeatureSnippet},
   template: `<FeatureSnippet />`,
 });
