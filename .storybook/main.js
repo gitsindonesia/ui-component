@@ -11,7 +11,8 @@ module.exports = {
   addons: [
     getAbsolutePath("@storybook/addon-links"),
     getAbsolutePath("@storybook/addon-essentials"),
-    getAbsolutePath("@storybook/addon-mdx-gfm")
+    getAbsolutePath("@storybook/addon-mdx-gfm"),
+    "@chromatic-com/storybook"
   ],
 
   framework: {
@@ -32,12 +33,9 @@ module.exports = {
   //   });
   // },
   features: {
-    storyStoreV7: true,
   },
 
-  docs: {
-    autodocs: true
-  }
+  docs: {}
 };
 
 function getAbsolutePath(value) {
