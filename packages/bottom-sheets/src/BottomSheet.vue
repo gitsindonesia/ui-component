@@ -9,6 +9,7 @@ export interface Props {
   maxWidth?: number | string;
   overlay?: boolean;
   hideOnOverlayClick?: boolean;
+  persistent?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -16,6 +17,7 @@ const props = withDefaults(defineProps<Props>(), {
   transition: 'v-bottom-sheet-transition',
   overlay: true,
   hideOnOverlayClick: true,
+  persistent: false,
 });
 
 const emit = defineEmits<{
@@ -36,6 +38,10 @@ watch(isOpen, (val) => emit('update:modelValue', val));
 
 const open = () => (isOpen.value = true);
 const close = () => {
+  if (props.persistent) {
+    return;
+  }
+
   if (props.hideOnOverlayClick) {
     isOpen.value = false;
   }

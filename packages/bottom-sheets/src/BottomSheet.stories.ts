@@ -212,6 +212,13 @@ HideOverlay.args = {
   },
 };
 
+export const Persistent = Menus.bind({});
+Persistent.args = {
+  sheet: {
+    persistent: true,
+  },
+};
+
 export const DisableHideOnOverlayClick = Menus.bind({});
 DisableHideOnOverlayClick.args = {
   sheet: {
