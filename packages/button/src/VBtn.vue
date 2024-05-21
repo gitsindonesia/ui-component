@@ -103,7 +103,7 @@ const classes = computed(() => {
       'btn--text': props.text,
       'btn--soft': props.soft,
       'btn--flush': props.flush,
-      shadow: props.shadow,
+      'btn--shadow': props.shadow,
     },
   ];
 });

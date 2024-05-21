@@ -7,7 +7,7 @@
   --btn-font-size: var(--size-font-sm);
   --btn-line-height: 20px;
   --btn-font-weight: 600;
-  --btn-shadow: none;
+  --btn-shadow: var(--effect-shadow-xs);
   --btn-icon-width: 20px;
   --btn-icon-height: 20px;
   --btn-line-height: 20px;
@@ -472,6 +472,11 @@
   &--flush {
     padding: 0;
     --btn-height: auto;
+  }
+
+  // shadow
+  &--shadow {
+    box-shadow: var(--btn-shadow);
   }
 
   // sizes
