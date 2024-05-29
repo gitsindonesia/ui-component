@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/forms",
-  "version": "1.0.0-rc.10",
+  "version": "1.0.0-rc.12",
   "description": "Morpheme Form Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,10 +15,10 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@morpheme/button": "^1.0.0-rc.7",
-    "@morpheme/icon": "^1.0.0-rc.7",
-    "@morpheme/progress-bar": "^1.0.0-rc.7",
-    "@morpheme/select": "^1.0.0-rc.10",
+    "@morpheme/button": "^1.0.0-rc.12",
+    "@morpheme/icon": "^1.0.0-rc.12",
+    "@morpheme/progress-bar": "^1.0.0-rc.12",
+    "@morpheme/select": "^1.0.0-rc.12",
     "@morpheme/spinner": "^1.0.0-rc.4",
     "@morpheme/utils": "^1.0.0-rc.4",
     "@vueuse/core": "^10.2.1",
@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@headlessui/vue": "^1.7.13",
-    "@morpheme/switch": "^1.0.0-rc.7",
+    "@morpheme/switch": "^1.0.0-rc.12",
     "@morpheme/tailwind-config": "^1.0.0-rc.4",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",

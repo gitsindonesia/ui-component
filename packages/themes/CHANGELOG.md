@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-rc.12](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-rc.11...v1.0.0-rc.12) (2024-05-29)
+
+
+### Features
+
+* **button:** allow to customize button disabled colors ([e4021a9](https://github.com/gitsindonesia/ui-component/commit/e4021a9222a1a82b877a8aef25860e3b8552e11a))
+* **Button:** customizable button shadow ([d6f0be5](https://github.com/gitsindonesia/ui-component/commit/d6f0be572f5dc90b2cc16bcbeece66b88ab69bbd))
+
+
+
+
+
 # [1.0.0-rc.4](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-rc.3...v1.0.0-rc.4) (2023-10-27)
 
 **Note:** Version bump only for package @morpheme/themes

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-rc.12](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-rc.11...v1.0.0-rc.12) (2024-05-29)
+
+
+### Features
+
+* **Button:** customizable button shadow ([d6f0be5](https://github.com/gitsindonesia/ui-component/commit/d6f0be572f5dc90b2cc16bcbeece66b88ab69bbd))
+
+
+
+
+
+
 # [1.0.0-rc.7](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-rc.6...v1.0.0-rc.7) (2023-11-14)
 
 

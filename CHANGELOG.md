@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-rc.12](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-rc.11...v1.0.0-rc.12) (2024-05-29)
+
+
+### Bug Fixes
+
+* **BottomSheet:** improve bottom sheet handle ([8c8fa84](https://github.com/gitsindonesia/ui-component/commit/8c8fa84a60a6ef762998a41b611c785ab70eea11))
+
+
+### Features
+
+* **BottomSheet:** add `persistent` option to BottomSheet component ([6d4b8c1](https://github.com/gitsindonesia/ui-component/commit/6d4b8c133b79d04dfa5f5142271ffba1354456aa))
+* **BottomSheet:** allow disable hiding on overlay click ([434c7bc](https://github.com/gitsindonesia/ui-component/commit/434c7bc0ac85c545a50fbc0074211d3b0692b505))
+* **button:** allow to customize button disabled colors ([e4021a9](https://github.com/gitsindonesia/ui-component/commit/e4021a9222a1a82b877a8aef25860e3b8552e11a))
+* **Button:** customizable button shadow ([d6f0be5](https://github.com/gitsindonesia/ui-component/commit/d6f0be572f5dc90b2cc16bcbeece66b88ab69bbd))
+* upgrade storybook to version 8 ([5f3c00f](https://github.com/gitsindonesia/ui-component/commit/5f3c00f7822c33e73a3fa747943ccde9b6405057))
+
+
+
+
+
+
 # [1.0.0-rc.11](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-rc.10...v1.0.0-rc.11) (2024-05-16)
 
 

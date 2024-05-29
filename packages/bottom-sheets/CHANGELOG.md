@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-rc.12](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-rc.11...v1.0.0-rc.12) (2024-05-29)
+
+
+### Bug Fixes
+
+* **BottomSheet:** improve bottom sheet handle ([8c8fa84](https://github.com/gitsindonesia/ui-component/commit/8c8fa84a60a6ef762998a41b611c785ab70eea11))
+
+
+### Features
+
+* **BottomSheet:** add `persistent` option to BottomSheet component ([6d4b8c1](https://github.com/gitsindonesia/ui-component/commit/6d4b8c133b79d04dfa5f5142271ffba1354456aa))
+* **BottomSheet:** allow disable hiding on overlay click ([434c7bc](https://github.com/gitsindonesia/ui-component/commit/434c7bc0ac85c545a50fbc0074211d3b0692b505))
+
+
+
+
+
+
 # [1.0.0-rc.7](https://github.com/gitsindonesia/ui-component/compare/v1.0.0-rc.6...v1.0.0-rc.7) (2023-11-14)
 
 

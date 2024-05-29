@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/navbar",
-  "version": "1.0.0-rc.7",
+  "version": "1.0.0-rc.12",
   "description": "Morpheme Navbar Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,10 +15,10 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@morpheme/button": "^1.0.0-rc.7",
-    "@morpheme/icon": "^1.0.0-rc.7",
-    "@morpheme/logo": "^1.0.0-rc.7",
-    "@morpheme/menus": "^1.0.0-rc.7",
+    "@morpheme/button": "^1.0.0-rc.12",
+    "@morpheme/icon": "^1.0.0-rc.12",
+    "@morpheme/logo": "^1.0.0-rc.12",
+    "@morpheme/menus": "^1.0.0-rc.12",
     "vue": "^3.3.4"
   },
   "devDependencies": {

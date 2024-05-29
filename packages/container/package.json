@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/container",
-  "version": "1.0.0-rc.7",
+  "version": "1.0.0-rc.12",
   "description": "Morpheme Container Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
