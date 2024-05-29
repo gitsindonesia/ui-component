@@ -4,62 +4,68 @@ import {BottomSheetInjectionKey} from './api';
 import type {BottomSheetApi} from './types';
 
 const api = inject<BottomSheetApi>(BottomSheetInjectionKey);
-const draggableArea = ref();
+const draggableArea = ref<HTMLElement | null>(null);
+const sheetHeight = ref<number>(0);
 
-let sheetHeight: number | string;
-
-const setSheetHeight = (value: number | string) => {
-  sheetHeight = Math.max(0, Math.min(100, +value));
-  api?.setHeight(`${sheetHeight}vh`);
+const setSheetHeight = (value: number) => {
+  sheetHeight.value = Math.max(0, Math.min(100, value));
+  api?.setHeight(`${sheetHeight.value}vh`);
 };
 
-const touchPosition = (event: any) =>
-  event.touches ? event.touches[0] : event;
+const touchPosition = (event: TouchEvent | MouseEvent) =>
+  'touches' in event ? event.touches[0] : (event as MouseEvent);
 
 let dragPosition: number | undefined;
 
-const onDragStart = (event: Event) => {
+const onDragStart = (event: TouchEvent | MouseEvent) => {
   dragPosition = touchPosition(event).pageY;
-  draggableArea.value.style.cursor = document.body.style.cursor = 'grabbing';
-  api?.el?.value?.classList?.add('v-bottom-sheet--dragging');
+  if (draggableArea.value) {
+    draggableArea.value.style.cursor = 'grabbing';
+  }
+  document.body.style.cursor = 'grabbing';
+  api?.el?.value?.classList.add('v-bottom-sheet--dragging');
 };
 
-const onDragMove = (event: Event) => {
+const onDragMove = (event: TouchEvent | MouseEvent) => {
   if (dragPosition === undefined) return;
 
   const y = touchPosition(event).pageY;
   const deltaY = dragPosition - y;
   const deltaHeight = (deltaY / window.innerHeight) * 100;
 
-  setSheetHeight(+sheetHeight + deltaHeight);
+  setSheetHeight(sheetHeight.value + deltaHeight);
   dragPosition = y;
 };
 
 const onDragEnd = () => {
   dragPosition = undefined;
-  draggableArea.value.style.cursor = document.body.style.cursor = '';
+  if (draggableArea.value) {
+    draggableArea.value.style.cursor = '';
+  }
+  document.body.style.cursor = '';
 
-  if (+sheetHeight < 25) {
+  if (sheetHeight.value < 25) {
     api?.close();
-  } else if (+sheetHeight > 75) {
+  } else if (sheetHeight.value > 75) {
     setSheetHeight(100);
   } else {
-    setSheetHeight(sheetHeight);
+    setSheetHeight(sheetHeight.value);
   }
 
-  api?.el?.value?.classList?.remove('v-bottom-sheet--dragging');
+  api?.el?.value?.classList.remove('v-bottom-sheet--dragging');
 };
 
 onMounted(() => {
-  sheetHeight = api?.getHeight() as number;
+  sheetHeight.value = api?.getHeight() as number;
 
-  draggableArea.value.addEventListener('mousedown', onDragStart);
-  draggableArea.value.addEventListener('touchstart', onDragStart);
+  draggableArea.value?.addEventListener('mousedown', onDragStart);
+  draggableArea.value?.addEventListener('touchstart', onDragStart);
 
   window.addEventListener('mousemove', onDragMove);
   window.addEventListener('touchmove', onDragMove);
 
   window.addEventListener('mouseup', onDragEnd);
+  window.addEventListener('touchend', onDragEnd);
 });
 
 onUnmounted(() => {
@@ -67,6 +73,7 @@ onUnmounted(() => {
   window.removeEventListener('touchmove', onDragMove);
 
   window.removeEventListener('mouseup', onDragEnd);
+  window.removeEventListener('touchend', onDragEnd);
 });
 
 defineSlots<{
