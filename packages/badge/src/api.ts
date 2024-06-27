@@ -10,7 +10,13 @@ export interface VBadgeContextApi {
 export const VBadgeInjectionKey = Symbol("VBadge");
 
 export function useBadge() {
-  const context = inject(VBadgeInjectionKey) as VBadgeContextApi; 
+  const defaultValue = {
+    color: undefined,
+    outlined: undefined,
+  }
+
+  const context = inject(VBadgeInjectionKey, defaultValue) as VBadgeContextApi; 
+  
   if (!context) {
     return;
   }
