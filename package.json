@@ -21,15 +21,15 @@
     "docs:serve": "vitepress serve docs"
   },
   "dependencies": {
-    "@headlessui/vue": "^1.7.14",
-    "@vueuse/core": "^10.2.1",
+    "@headlessui/vue": "^1.7.22",
+    "@vueuse/core": "^10.11.0",
     "floating-vue": "^2.0.0-beta.20",
     "pagino": "^1.4.2",
-    "vee-validate": "^4.11.3",
-    "vue": "^3.3.4",
-    "vue-router": "^4.2.4",
+    "vee-validate": "^4.13.1",
+    "vue": "^3.4.31",
+    "vue-router": "^4.4.0",
     "vuex": "^4.1.0",
-    "yup": "^1.2.0"
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1",
@@ -43,16 +43,15 @@
     "@storybook/addon-essentials": "^8.1.1",
     "@storybook/addon-links": "^8.1.1",
     "@storybook/addon-mdx-gfm": "^8.1.1",
-    "@storybook/addons": "^7.6.17",
     "@storybook/vue3": "^8.1.1",
     "@storybook/vue3-vite": "^8.1.1",
     "@tailwindcss/aspect-ratio": "^0.4.0",
-    "@tailwindcss/forms": "^0.5.0",
-    "@tailwindcss/line-clamp": "^0.3.1",
-    "@tailwindcss/typography": "^0.5.2",
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/line-clamp": "^0.4.4",
+    "@tailwindcss/typography": "^0.5.13",
     "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.6",
-    "@vitejs/plugin-vue": "^4.2.3",
+    "@vitejs/plugin-vue": "^5.0.5",
     "@vitest/coverage-c8": "^0.31.1",
     "@vitest/ui": "^0.31.1",
     "@vue/compiler-sfc": "^3.3.4",
@@ -82,7 +81,8 @@
     "vitest": "^0.31.1",
     "vitest-sonar-reporter": "^0.3.4",
     "vue-gtag": "^2.0.1",
-    "vue-tsc": "^1.6.5"
+    "vue-tsc": "^2.0.24",
+    "@morphemeicons/vue": "^0.2.0"
   },
   "main": "index.ts",
   "module": "index.ts",
