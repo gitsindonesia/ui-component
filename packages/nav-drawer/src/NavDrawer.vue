@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import {useVModel, useDraggable} from '@vueuse/core';
+import type { HTMLAttributes} from 'vue';
 import {computed, ref, watch} from 'vue';
 import type {Colors} from './colors';
 import {navDrawerHeights, type NavDrawerHeights} from './types';
@@ -126,7 +127,7 @@ const NAV_DRAWER_HEIGHT: Record<string, string | undefined> = {
 const styles = computed(() => {
   if (props.top || props.bottom) return {};
 
-  const styles: Partial<HTMLDivElement['style']> = {};
+  const styles: HTMLAttributes['style'] = {};
 
   if (navDrawerHeights.includes(props.height as any)) {
     styles.height = NAV_DRAWER_HEIGHT[props.height];
