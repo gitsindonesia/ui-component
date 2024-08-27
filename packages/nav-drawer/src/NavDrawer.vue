@@ -215,6 +215,7 @@ defineSlots<{
           aria-label="Resizer"
           ref="resizerEl"
           class="nav-drawer__resizer"
+          type="button"
           @click="onResizerClicked"
         >
           <div class="sr-only">Click and hold to resize</div>
