@@ -1,7 +1,8 @@
-import {onClickOutside} from '@vueuse/core';
+import { onClickOutside } from '@vueuse/core';
 import type {
   Ref,
-  InjectionKey} from 'vue';
+  InjectionKey
+} from 'vue';
 import {
   defineComponent,
   h,
@@ -47,7 +48,7 @@ export const Menu = defineComponent({
       return true;
     },
   },
-  setup(props, {slots, emit}) {
+  setup(props, { slots, emit }) {
     const open = ref(props.modelValue);
     const buttonRef = ref();
 
@@ -117,8 +118,8 @@ export const MenuButton = defineComponent({
       default: 'button',
     },
   },
-  setup(props, {slots}) {
-    const {toggle, open, registerButton, unregisterButton} = useMenu();
+  setup(props, { slots }) {
+    const { toggle, open, registerButton, unregisterButton } = useMenu();
     const target = ref();
 
     watch(target, (newValue) => {
@@ -133,7 +134,7 @@ export const MenuButton = defineComponent({
       h(
         props.as,
         {
-          ...(props.as === 'button' ? {type: 'button'} : {role: 'button'}),
+          ...(props.as === 'button' ? { type: 'button' } : { role: 'button' }),
           onClick: toggle,
           ref: target,
         },
@@ -153,11 +154,12 @@ export const MenuItems = defineComponent({
       default: 'ul',
     },
   },
-  setup(props, {slots}) {
-    const {toggle, hide, open, buttonRef} = useMenu();
+  setup(props, { slots }) {
+    const { toggle, hide, open, buttonRef } = useMenu();
     const target = ref();
 
-    onClickOutside(target, (event) => {
+    // FIXME: This is a workaround for the issue with the `onClickOutside` function
+    onClickOutside(target as any, (event) => {
       if (event.target !== buttonRef?.value) {
         hide();
       }
@@ -166,16 +168,16 @@ export const MenuItems = defineComponent({
     return () =>
       open.value
         ? h(
-            props.as,
-            {
-              ref: target,
-            },
-            slots.default?.({
-              open: unref(open),
-              toggle,
-              hide,
-            }),
-          )
+          props.as,
+          {
+            ref: target,
+          },
+          slots.default?.({
+            open: unref(open),
+            toggle,
+            hide,
+          }),
+        )
         : null;
   },
 });
@@ -188,8 +190,8 @@ export const MenuItem = defineComponent({
       default: 'li',
     },
   },
-  setup(props, {slots}) {
-    const {toggle, open, hide} = useMenu();
+  setup(props, { slots }) {
+    const { toggle, open, hide } = useMenu();
 
     return () =>
       h(
