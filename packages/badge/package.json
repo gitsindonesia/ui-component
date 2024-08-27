@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/badge",
-  "version": "1.0.0-rc.12",
+  "version": "1.0.0-rc.13",
   "description": "Morpheme Badge",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",

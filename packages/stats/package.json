@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/stats",
-  "version": "1.0.0-rc.12",
+  "version": "1.0.0-rc.13",
   "description": "Morpheme Stats Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -17,7 +17,7 @@
   "license": "MIT",
   "dependencies": {
     "@iconify/vue": "^3.2.1",
-    "@morpheme/badge": "^1.0.0-rc.12",
+    "@morpheme/badge": "^1.0.0-rc.13",
     "@morpheme/card": "^1.0.0-rc.12",
     "@morpheme/icon": "^1.0.0-rc.12",
     "vue": "^3.3.4"

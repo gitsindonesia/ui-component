@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/list",
-  "version": "1.0.0-rc.12",
+  "version": "1.0.0-rc.13",
   "description": "Morpheme List Component",
   "scripts": {
     "build": "vite build && npm run build-types && npm run move-types",
@@ -29,7 +29,7 @@
     "@morpheme/button": "^1.0.0-rc.12",
     "@morpheme/dropdown": "^1.0.0-rc.12",
     "@morpheme/icon": "^1.0.0-rc.12",
-    "@morpheme/nav-drawer": "^1.0.0-rc.12",
+    "@morpheme/nav-drawer": "^1.0.0-rc.13",
     "@morpheme/tailwind-config": "^1.0.0-rc.4",
     "autoprefixer": "^10.4.2",
     "c8": "^7.11.3",

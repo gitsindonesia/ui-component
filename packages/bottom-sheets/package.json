@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/bottom-sheet",
-  "version": "1.0.0-rc.12",
+  "version": "1.0.0-rc.13",
   "description": "Morpheme Bottom Sheet Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -17,7 +17,7 @@
   "dependencies": {
     "@morpheme/button": "^1.0.0-rc.12",
     "@morpheme/icon": "^1.0.0-rc.12",
-    "@morpheme/list": "^1.0.0-rc.12",
+    "@morpheme/list": "^1.0.0-rc.13",
     "vue": "^3.3.4"
   },
   "devDependencies": {

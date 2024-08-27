@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/multi-select",
-  "version": "1.0.0-rc.12",
+  "version": "1.0.0-rc.13",
   "description": "Vue Multi Select Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -16,8 +16,8 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@morpheme/badge": "^1.0.0-rc.12",
-    "@morpheme/forms": "^1.0.0-rc.12",
+    "@morpheme/badge": "^1.0.0-rc.13",
+    "@morpheme/forms": "^1.0.0-rc.13",
     "@morpheme/icon": "^1.0.0-rc.12",
     "@morpheme/tooltip": "^1.0.0-rc.12",
     "@vueuse/core": "^10.2.1",
