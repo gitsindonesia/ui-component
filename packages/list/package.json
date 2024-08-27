@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/list",
-  "version": "1.0.0-rc.13",
+  "version": "1.0.0",
   "description": "Morpheme List Component",
   "scripts": {
     "build": "vite build && npm run build-types && npm run move-types",
@@ -20,17 +20,17 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@morpheme/collapsible": "^1.0.0-rc.12",
+    "@morpheme/collapsible": "^1.0.0",
     "vue": "^3.3.4",
     "vue-router": "^4.0.16"
   },
   "devDependencies": {
     "@iconify/vue": "^3.2.1",
-    "@morpheme/button": "^1.0.0-rc.12",
-    "@morpheme/dropdown": "^1.0.0-rc.12",
-    "@morpheme/icon": "^1.0.0-rc.12",
-    "@morpheme/nav-drawer": "^1.0.0-rc.13",
-    "@morpheme/tailwind-config": "^1.0.0-rc.4",
+    "@morpheme/button": "^1.0.0",
+    "@morpheme/dropdown": "^1.0.0",
+    "@morpheme/icon": "^1.0.0",
+    "@morpheme/nav-drawer": "^1.0.0",
+    "@morpheme/tailwind-config": "^1.0.0",
     "autoprefixer": "^10.4.2",
     "c8": "^7.11.3",
     "postcss": "^8.4.8",

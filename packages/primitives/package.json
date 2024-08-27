@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/primitives",
-  "version": "1.0.0-rc.13",
+  "version": "1.0.0",
   "description": "Unstyled Vue 3 UI Component Library",
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
