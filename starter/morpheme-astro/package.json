@@ -10,16 +10,16 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/tailwind": "^5.0.2",
-    "@astrojs/vue": "^3.0.1",
-    "@morpheme/themes": "^1.0.0-rc.4",
-    "@morpheme/ui": "^1.0.0-rc.10",
-    "astro": "^3.2.4",
-    "tailwindcss": "^3.0.24",
-    "vue": "^3.2.30"
+    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/vue": "^4.5.0",
+    "@morpheme/themes": "^1.0.0",
+    "@morpheme/ui": "^1.0.1",
+    "astro": "^4.14.6",
+    "tailwindcss": "^3.4.10",
+    "vue": "^3.4.38"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.16",
-    "sass": "^1.69.3"
+    "autoprefixer": "^10.4.20",
+    "sass": "^1.77.8"
   }
 }

@@ -3,7 +3,12 @@ import {VCard, VBtn} from '@morpheme/ui'
 ---
 
 <div class="container mx-auto py-6 h-[calc(100vh-100px)] flex items-center">
-  <VCard bordered color="primary" class="lg:max-w-lg mx-auto">
+  <VCard
+    client:only="vue"
+    bordered
+    color="primary"
+    class="lg:max-w-lg mx-auto"
+   >
     <h1 class="text-display-xs text-center text-gray-800 font-semibold">
       Get started
     </h1>

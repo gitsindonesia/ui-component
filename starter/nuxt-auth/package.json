@@ -20,13 +20,13 @@
     "prep": "nuxt prepare"
   },
   "dependencies": {
-    "@morpheme/nuxt": "^1.0.0-rc.10",
+    "@morpheme/nuxt": "^1.0.1",
     "@sidebase/nuxt-auth": "0.4.4",
     "next-auth": "4.21.1"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.8.0",
-    "nuxt": "^3.11.2",
+    "nuxt": "^3.13.0",
     "sass": "^1.66.1"
   },
   "type": "module",

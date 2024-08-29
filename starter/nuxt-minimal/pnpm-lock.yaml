@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@morpheme/nuxt':
-        specifier: 1.0.1-alpha.1+0486ec6e
-        version: 1.0.1-alpha.1(magicast@0.3.5)(rollup@4.21.1)
+        specifier: ^1.0.1
+        version: 1.0.1(magicast@0.3.5)(rollup@4.21.1)
     devDependencies:
       '@nuxtjs/tailwindcss':
         specifier: ^6.8.0
@@ -798,15 +798,23 @@ packages:
     peerDependencies:
       vue: ^3.2.0
 
-  '@heroicons/vue@1.0.6':
-    resolution: {integrity: sha512-ng2YcCQrdoQWEFpw+ipFl2rZo8mZ56v0T5+MyfQQvNqfKChwgP6DMloZLW+rl17GEcHkE3H82UTAMKBKZr4+WA==}
+  '@heroicons/vue@2.1.5':
+    resolution: {integrity: sha512-IpqR72sFqFs55kyKfFS7tN+Ww6odFNeH/7UxycIOrlVYfj4WUGAdzQtLBnJspucSeqWFQsKM0g0YrgU655BEfA==}
     peerDependencies:
       vue: '>= 3'
+
+  '@iconify/types@2.0.0':
+    resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
 
   '@iconify/vue@3.2.1':
     resolution: {integrity: sha512-c4R6ZgFo1JrJ8aPMMgOPgfU7lBswihMGR+yWe/P4ZukC3kTkeT4+lkt9Pc/itVFMkwva/S/7u9YofmYv57fnNQ==}
     peerDependencies:
       vue: 3.x
+
+  '@iconify/vue@4.1.2':
+    resolution: {integrity: sha512-CQnYqLiQD5LOAaXhBrmj1mdL2/NCJvwcC4jtW2Z8ukhThiFkLDkutarTOV2trfc9EXqUqRs0KqXOL9pZ/IyysA==}
+    peerDependencies:
+      vue: '>=3'
 
   '@ioredis/commands@1.2.0':
     resolution: {integrity: sha512-Sx1pU8EM64o2BrqNpEO1CNLtKQwyhuXuqyfH7oGKCk+1a33d2r5saW8zNwm3j6BTExtjrv2BxTgzzkMwts6vGg==}
@@ -850,47 +858,47 @@ packages:
     resolution: {integrity: sha512-Yhlar6v9WQgUp/He7BdgzOz8lqMQ8sU+jkCq7Wx8Myc5YFJLbEe7lgui/V7G1qB1DJykHSGwreceSaD60Y0PUQ==}
     hasBin: true
 
-  '@morpheme/alert@1.0.0':
-    resolution: {integrity: sha512-h8aVbhEPZHV7ikur2AK5GVea8BlFCJ4SsdASaVBBLZix9oxOFTnWc1fB11ZCD/Umn1dDyoa06492W8QpDc2L/g==}
+  '@morpheme/alert@1.0.1':
+    resolution: {integrity: sha512-8v0kX5mvoqNKbgSK2lU3omEbyV0H8w/4r+TvysuqzPzKGcexqbOb6dJuBSmc0rX8+kd6gyrvTWmLfPoRkXI8FQ==}
 
-  '@morpheme/app-bar@1.0.0':
-    resolution: {integrity: sha512-xB8eC+jmaR+28bIBAKJkxXWP2NQwo5noVPgPA8He7uKwlfu9+qO8VDrMvWhtmvi6j2+PmJksY1Xo/ueZRMJrDw==}
+  '@morpheme/app-bar@1.0.1':
+    resolution: {integrity: sha512-fBBQduWUsjtguQB7zoAaLPl5I4oe2rWpZzm74OXphvZGn9mSUYNLyzSU7UKeYql1b3Cd1kOAZmtdBkepJ6fm5g==}
 
-  '@morpheme/app-shell@1.0.0':
-    resolution: {integrity: sha512-323nPuyWhmhKZs66D5izarse6KoFf7HuYfotAWwSpdpD/JP0LxxYHZJZ3gWhQYcTqDWjv4V4hQ0k//c7rz32kA==}
+  '@morpheme/app-shell@1.0.1':
+    resolution: {integrity: sha512-X9Aup/HQ7ONNSSjlYk3M7NfRTEmaSLI7wsdE53kD9Y5NV1A1r7bvXp9izf1ufk9CXgVW1O55xgX/5y9XRMDl2g==}
 
-  '@morpheme/autocomplete@1.0.0':
-    resolution: {integrity: sha512-H4AtyqrISvIZ3/CAgPH0aM0PrUPI3kpASn8nqe+irwxYo6kw9T6zcDpTDZ1lZ4+A916HBSOXyJua8mNJDxfgTA==}
+  '@morpheme/autocomplete@1.0.1':
+    resolution: {integrity: sha512-G9fbO/qdZj2iu99HFkde/7Cbsx+FQZfksZ4Q47m3abX9TqmR22v8WhOz627JFpSGzYXf+2zovomdbw1yxmRUJg==}
 
-  '@morpheme/avatar@1.0.0':
-    resolution: {integrity: sha512-s6TnvnW3Ddk2PdNiN2IeH1+mk0qDazw/GLt6tFeGPmUB/cvrHW2SDjDV+7RRmjjrRSTgYGqxiPAzs+7Uh4kdpg==}
+  '@morpheme/avatar@1.0.1':
+    resolution: {integrity: sha512-2ZzuXzcJV2K4OIQTX9PcowMl86aCWC8kPZY0aLeFOaDs2l9syrFkPz2l06vmTtgDC7jqSc/cObgBf+RQcnXPJA==}
 
-  '@morpheme/badge@1.0.0':
-    resolution: {integrity: sha512-gnJcSKEhXKuysz1grcgdNOFS19mpXP6fVUd+irg2dw461DmWVyNHL14l/w6klkymJo0Gfo0yr1BHhyjPgyxA1Q==}
+  '@morpheme/badge@1.0.1':
+    resolution: {integrity: sha512-GbyYpxJNlcE/pFpA1ns3XqqjwyEi394FLlH4wB6DAcry6SsMS51KUh8WUYnaWe6M9t8SoxTC8P9H41XkukRzqA==}
 
-  '@morpheme/banner@1.0.0':
-    resolution: {integrity: sha512-MOQhM0HnzYKfSQMHtxxjEqR5g4UyiOcIU/Mw+YXcd12wLz9Oy9kfQsq0VItrUZhLGtrqqxA9Vn2gxzrY3m2tFQ==}
+  '@morpheme/banner@1.0.1':
+    resolution: {integrity: sha512-t6YM7aWY8w0XtcaaSxtsgMam1XRwiJG258f80jc5N3DYGNEgWxg7lPV9ahC0GIr5vsAmmLSVdmi6gAgvFJe3Fg==}
 
-  '@morpheme/bottom-navigation@1.0.0':
-    resolution: {integrity: sha512-OVvrcV5mbbHs3ABhHFDIleECmD9VJl+7f0HATivY5wZyfOTPSgbbE8Huvgb1y1teWOhDtAMRFaro7pxNj8UKEg==}
+  '@morpheme/bottom-navigation@1.0.1':
+    resolution: {integrity: sha512-+91NdvZwqFcG+MDW/7NB3w0uyQM60NO5Lraf/AFcyFH2zGBgUTzEbcF+cV2EXkDxK28YWZy+bqgkQwL/QVpJqw==}
 
-  '@morpheme/bottom-sheet@1.0.0':
-    resolution: {integrity: sha512-smhCxnhQb/Z0EbaExX8/Ln9Q9sZOEes9nWDy9GGGYuA6+8CLnqp+13Gy+SlrT2qjQzDnnMjfzsuBXj4uu9FH3w==}
+  '@morpheme/bottom-sheet@1.0.1':
+    resolution: {integrity: sha512-WyabvWtTqqW9A4dmTtA01xW0b9UOihSA/yHFUxPQbj4t7IzfA/ih3PVce7Hiq1iU5u68FNM1JfiCusLAc+11+g==}
 
-  '@morpheme/breadcrumbs@1.0.0':
-    resolution: {integrity: sha512-26Z722pT6xRBpnY/hM9UULb/t5lXC23ohCB4ECwT1hZ0v7WSwsiLwE3UcM7OCL4AcnJrcoDZm0+tcZaUSg5cDw==}
+  '@morpheme/breadcrumbs@1.0.1':
+    resolution: {integrity: sha512-rWet0zTqkxvFqm91Ul79J4QTr1l1QVUH7UoVPrsE5kY6A/BJBplXDTR02HBe9nGKASlfGMivkogirUlCbl/Q3g==}
 
-  '@morpheme/button@1.0.0':
-    resolution: {integrity: sha512-0MjV1Wj2cdoft0KvAgoUy2WZvTWzN6y5BoSig9m3/f+OK/IRGw5ckqEvji7ueIT7MyuAgL3NRDOC+TismHYhWQ==}
+  '@morpheme/button@1.0.1':
+    resolution: {integrity: sha512-EwuAVjSzllDy/DDOCtVoMi5qGC255x2d1KJM5YVdmV201gthJ3v0x8aTQ7T65LkuG7tgz1or9W/8PAyRiMXvyA==}
 
-  '@morpheme/card@1.0.0':
-    resolution: {integrity: sha512-W28ds8Tuto71NAEui6k6f9YABiNLREZpWhiIJVH4n6pGXGda0uufYJ4Tz+r04edTUcxvJUrLcLZOmyahmvaftg==}
+  '@morpheme/card@1.0.1':
+    resolution: {integrity: sha512-GBVgxNcd2RUK5lxLW2jR+Mh+z/Vw5Uf2T+u+yp8UzmxOm1uX8bxUCqNFKg3AXIp6lgOdB/+6I9P1ozgdlH8/Ag==}
 
-  '@morpheme/collapsible@1.0.0':
-    resolution: {integrity: sha512-ddwKavhxUkyA0LdNoZYmj5gsTJ2KF/fbfuV2NaY5tbKLl/F8DVaCKDFtzfRz3E2PpkmBa8bjmpevfPAHrP6ZuQ==}
+  '@morpheme/collapsible@1.0.1':
+    resolution: {integrity: sha512-6fkI5eNoi4ueLWPbdSPmG9iCbaDW0Cf0fjGsUmGkFjs6G8b/k71Q+C1J/jx3PAqD5armnOxYX2cejmsoN3WxVA==}
 
-  '@morpheme/command@1.0.0':
-    resolution: {integrity: sha512-Tkp0BhC84pTuB/J3mRBOtlNuCZQOXwTmHrrJU4XBtCEb0VKGDaxL7AOOFmDTD4DniALi/NK7f7qfhLsKALKkbA==}
+  '@morpheme/command@1.0.1':
+    resolution: {integrity: sha512-zFC+RijopYkRQCqKTCIIrdBAEsnmxMNG6IBiJoDeHmpoZBbwYaAXP/O95j8XXu0zSYJ35E4WQYYdncjlGQ4tmw==}
 
   '@morpheme/container@1.0.0':
     resolution: {integrity: sha512-ZhRtBWBhcX4dF326uwfMRw0YEhC1dsM53DEq1LooHD7WffexxM1IM+//4Npog5Tfmol5yO9vOSQ2m5Cde1i/5Q==}
@@ -901,53 +909,53 @@ packages:
   '@morpheme/divider@1.0.0':
     resolution: {integrity: sha512-vjz10CGx9bhgI7Yb7nnJt8tPicnCQnmCCEniM5UAvBtlkD23N9tIbH0m+z7XVuEJzcoWvJMZlidypTBSP3HJPA==}
 
-  '@morpheme/dropdown@1.0.0':
-    resolution: {integrity: sha512-vnDBnj1pz6m6Ty4HFcyOXoBqwR0O/vG4Aw5YKme0ohLGxHFLOLk0n0Cpkv7tS0XLVOxRyaOE0eWSnUVWrSgNdg==}
+  '@morpheme/dropdown@1.0.1':
+    resolution: {integrity: sha512-w8FX88YTIFSWqjpRGeyOoqsvd+xExjg7wtXiX9oE7NgZEJ31IH4hpcNNpH4mtDkc80I7Q6VCo7Ve3AFbs2d2gA==}
 
-  '@morpheme/editor@1.0.0':
-    resolution: {integrity: sha512-OBZVNkEvRqC8K0FIknkdgqButaPyxNjHkbPJTEdUq8nofC34XgiAe7i9rXUdiZIbtxmwqdArKA6QvMLJmyVoxw==}
+  '@morpheme/editor@1.0.1':
+    resolution: {integrity: sha512-8btcxK+HQ6qwnIV+gY065WxgV9qz4Xn00vIpAF0zHbBQ1ooZIa5yksNRs/kGuwPpajxO06hez67xTOnPHDDRYg==}
 
-  '@morpheme/forms@1.0.0':
-    resolution: {integrity: sha512-Jm24CbioDCVoWeCLCgrV9EJBwsKlLKbsiZpOf4hA7LeYYLoL62FxJSec/6P2At/lYo2Ux66mp4JWb14CuOxDzQ==}
+  '@morpheme/forms@1.0.1':
+    resolution: {integrity: sha512-Bk96slUlQQ6+qS0gfryFf+pIw2qNF1mPt7SPJvJjE2+HbRJ4DxIF98owQbiSJ62q/HVzA4zpagMoGwDgCgsetQ==}
 
-  '@morpheme/icon@1.0.0':
-    resolution: {integrity: sha512-14dXC/bon8ult97l0bOfcQBAMPwL5YQSkkMBdYlcsudUfwUqd0MQBCifEOjAna5a7LS4/CKVnb1VGZ46bO8lIQ==}
+  '@morpheme/icon@1.0.1':
+    resolution: {integrity: sha512-69rWiwVfDXKLK8Ez2as/84FkDQC9De+XxImbrMQvCjax50/Wvsi0Qbm2WfsEQH/qll9L4k322epNl5G2RcGeZA==}
 
-  '@morpheme/layouts@1.0.0':
-    resolution: {integrity: sha512-aAMagiGt+/azRWJ5zdrcnuzCtVtF6/G7Vw6us6AiVJDcaXivVksWHPRfKy0zWKhYBXu5jQbvUh7hTbXlh1LBIw==}
+  '@morpheme/layouts@1.0.1':
+    resolution: {integrity: sha512-YvKNHDiaSPPED30vTUZt/7uCIC4/NK5pVRKWYLoSCE/dU81aQCFglOqgH1+ZRl1MpX98gqjP5k2iPBDTcZBLKg==}
 
-  '@morpheme/list@1.0.0':
-    resolution: {integrity: sha512-lXvujs0ctjwGAVz6z5rK6j8OYpiyZi18v9QF6C/BNeIoLVKZrOxfv4qOrUf/q9MxkyuJGcx9NCgJsXFSViLktg==}
+  '@morpheme/list@1.0.1':
+    resolution: {integrity: sha512-+hu1mnP3R+CWspmLEouWwMLqRb9SQF4BPIxIFMH8+WXZaylz2ROaKQL1+qWEwtkzOjb7BMGUaheg5jG9TZvcag==}
 
   '@morpheme/logo@1.0.0':
     resolution: {integrity: sha512-b30YY6mqoXpM7ujbvIBrBZsM1+iuQOKJNEBNz0FhGwA0gO9s4bl2j4hGg5xaWPYbpKu8QzeyYb3stJe/L+KjFA==}
 
-  '@morpheme/menu@1.0.0':
-    resolution: {integrity: sha512-D7Xt4HuG0Oon8QaXYhaSaw4VI2LLS784XwFIzT39wKp09Gg4QNxvAECL3CPy5elUOjZwCr+JHeUvtu/vgy9ISQ==}
+  '@morpheme/menu@1.0.1':
+    resolution: {integrity: sha512-6llnRk//YSihBTIWae0R6or1kdfuIGHPCep/lWdz5YjlFE2zR7ELGvWFjMv7TUiloIvFLjYujQG4bx885HoJZw==}
 
-  '@morpheme/menus@1.0.0':
-    resolution: {integrity: sha512-rIhvfQGBE8U7oZxWBFLumN2T9DjwCJxxZ1tV0IVM5SbjgOe+xp2lxhXa6jMsrbz/OsEqyHp4rsSdxdTlVLib6w==}
+  '@morpheme/menus@1.0.1':
+    resolution: {integrity: sha512-jOKNFzff8nlGPiGPL4R8ORAl5eP+oe1X5/MRbTsxqWp7LdnA886UhpfBZ4Tl5YnBR3GuzsS4Nr8PPCtNDQsIBA==}
 
-  '@morpheme/modal@1.0.0':
-    resolution: {integrity: sha512-k3CEh/4z5Opm2MfrpM+t52zzdbHHRVb51oy8oLqJumLouoT1LRekyb34W1nDsPAWppvUwjre7NcAQD9c9amEXA==}
+  '@morpheme/modal@1.0.1':
+    resolution: {integrity: sha512-DcZJ1FNYoXwLlzZGIJSYa3wIU4+i4WTfR5GrDU1EBI2r/+E/AT6YXbxcjtlZR3lpgZp9KB135vphnqiHDpa16Q==}
 
-  '@morpheme/multi-select@1.0.0':
-    resolution: {integrity: sha512-2w+qvVYGAnRfzuMMqzsnJl+bQJrv7xmVxLwZF6hzLzZJNf0inQfIC1vIeRKXc3KX6KNt23bRA2vAMqv7HilvLg==}
+  '@morpheme/multi-select@1.0.1':
+    resolution: {integrity: sha512-xGs+Zq7gDdLNRlLBwrVWb1xs+g66O0JeyVjmUAJp/mdWJtm+OGKguAXpEMNBAjiEx9WWOhv2pUSYerTKJb1Uzw==}
 
-  '@morpheme/nav-drawer@1.0.0':
-    resolution: {integrity: sha512-whpQA17O5z7Rx2eeZImGdc00AX4xaVplus81WjCrkBe+TWZu9pVE+RzKf4zSXdrB17Yqh0/5iig7Tv7mNh7Kfw==}
+  '@morpheme/nav-drawer@1.0.1':
+    resolution: {integrity: sha512-h62prisdDjDPfA550I8iqPvTlWJbTw4cB0QXfZdjAcMvzpUkBAqTTTicWJiGk7JzBFJonRM4HeguSAKJgDMDfA==}
 
-  '@morpheme/navbar@1.0.0':
-    resolution: {integrity: sha512-pHfPjplNqIHfcVCi21dvKhXfwtgKIPXjTCSZIE43LZrd4g2OAx85Jy+1ahvq38KbZgEbgTa+EQXVpFDg0GOK3w==}
+  '@morpheme/navbar@1.0.1':
+    resolution: {integrity: sha512-uwUB7KbtWbbG4TlzjfhpU8A3e3gQI/d67IcNWDCa73ANXTl2gSrjv2B2ROuM2Zq3q85E8EKluf6r0dSBQ8C/HQ==}
 
-  '@morpheme/nuxt@1.0.1-alpha.1':
-    resolution: {integrity: sha512-7R6TQbLuYkhAzDRwfaKHxPT+HN6l0PpqbzYf+COWWwFgz/hXP8PtGjkCzChZdRZkvv8Y6and92U8skLG/cZvOw==}
+  '@morpheme/nuxt@1.0.1':
+    resolution: {integrity: sha512-ojOZJVcdOqqLDVPDelJEj6ro/shOcgREJGEehjEFAkdmXU2r9oZrhbuyuqT2K+7owLVKrn7BtvPkEOtD2cjtfQ==}
 
-  '@morpheme/pagination@1.0.0':
-    resolution: {integrity: sha512-z7Zxf4UQgFJXwFT04SjfSsr9HAD/mSze1Z3HMV7TyiAFVDOO/b6ciW+cu3t5Aksq2T6EeCjNZisQZSusR+6+lg==}
+  '@morpheme/pagination@1.0.1':
+    resolution: {integrity: sha512-8mL+Na6QRTz2MkOfW8BdenAiCdr7FI5j5vU1zoEYvpE34Hcg41WiYmW55ZpBmZDE/YCSgmPO8p5RcQUwnQI6HQ==}
 
-  '@morpheme/popover@1.0.0':
-    resolution: {integrity: sha512-ysmefH4eB5N5cnp27OLDHhdsg8igP9OHvHfuRPqmQK8J3D4a4sG6BzOXYXeXsJy6m0KCAMckoO5GCckKle75qg==}
+  '@morpheme/popover@1.0.1':
+    resolution: {integrity: sha512-6Gj2tGFjjVB6mdFmkkcMnyNxnAH3WMfMkf+ZOkPhO9n6rdo8qTNvhWkNSh7TOgahPk4foy0ChTp4Opm3ZB/SsQ==}
 
   '@morpheme/progress-bar@1.0.0':
     resolution: {integrity: sha512-QUooXk9umbXhVfQKeqsdUhJF9ZHQEN/R2UQ6EQQZXvq9uXUaa4VVNEEI7CdPL5IjOQUk1BgFpbMmJ0RMBNp4GQ==}
@@ -961,8 +969,8 @@ packages:
   '@morpheme/rating@1.0.0':
     resolution: {integrity: sha512-CKYiEiYkEEOvUw2W+xeLP0QcY23qYNBtn5sDW9rILyPYFiU+MOEdoIzBBml88c9YHFs+Rf5UqrgWK9yCm2CoYA==}
 
-  '@morpheme/select@1.0.0':
-    resolution: {integrity: sha512-Dex2Gpas7kGjkagSiZYDv5JhyoZx/sxO6f2+vecAy2H+0b3VIr247ajiPq3rgNbD634yj6xdYL1DKL63MQ9OEQ==}
+  '@morpheme/select@1.0.1':
+    resolution: {integrity: sha512-/PIeXywthHst7H4W1Zc6AFGAPt0tg2rk8+wGY3IG2fG9MsQLUGV4zikhgmq0PNpCf3Cn7I59/2AgDZutIUrrKg==}
 
   '@morpheme/shimmer@1.0.0':
     resolution: {integrity: sha512-UOCKCZk/MAUaFObMgoqrXN+i0RRIZfHtBQhH1X3mmH0vyaFSsoxpE5gxDLMBKPIMQ+PBp74xXsVQl/Ouu4W1hw==}
@@ -970,20 +978,20 @@ packages:
   '@morpheme/spinner@1.0.0':
     resolution: {integrity: sha512-TkyIyEhYif92go3wn/04Kga7U4N5Jp3dgR2Vc3uqrd6loGar1KG+vkPl8wiyPq0Sf6CD6u5gj/TcewbyO2OX9w==}
 
-  '@morpheme/stats@1.0.0':
-    resolution: {integrity: sha512-A5CaGkwuXiqr1w2lIC3erpA7mVDLUjjbWP3He1EL+Ho3mTrZB+k0BHgRlvsaZF0vYGqd9bDqhMCfb1PPNtyEaA==}
+  '@morpheme/stats@1.0.1':
+    resolution: {integrity: sha512-eDce0yOoo8JnghvqXBZIRNHxkUe9UWZjZWf+7KBl+W3+UOh49Z4LKswsFd19lMjoUOJzyvGGXNThMEQgPD4WoQ==}
 
   '@morpheme/stepper@1.0.0':
     resolution: {integrity: sha512-qeS5c8+dYytUNIg7hIGXcOuIJ/8dAItRkYoua1Js3yhplaFcHL4Y8XaY//9oNKL1Q6juMpdR9rNbCWHQsqh9eQ==}
 
-  '@morpheme/switch@1.0.0':
-    resolution: {integrity: sha512-XJhIlo+cuTW37HFspJU/RKhDTRQAhnS5lk26CVK+5lPgep9mW9SfC6wBuIMJN7woOls4wjzvvcY4QAxADQ7r5w==}
+  '@morpheme/switch@1.0.1':
+    resolution: {integrity: sha512-Rd5lU8X3E9Oo4wgy0iOZh8cICoyCMiBRmRrtxPfG2u1O+BN4xjwGvmvzThicLO6se9HIvHxdO6oFlIF7lJIY0Q==}
 
-  '@morpheme/table@1.0.0':
-    resolution: {integrity: sha512-E7akG/H0v1xGtGgxOWmm1njNkH/SyccJXQ9mgZ3Xj8h8aG9/Z/K2KiioeHUvACtL60B7fEPWxwJsdoa9yv3gaA==}
+  '@morpheme/table@1.0.1':
+    resolution: {integrity: sha512-V3szrPWd5mfHpDrHl9u9fDca+/98Xd3GGzdnl6cMqTLpmzwvP3YKoYulaQ+kWNkQdWpPSQHfGa53aP2naY+RZQ==}
 
-  '@morpheme/tabs@1.0.0':
-    resolution: {integrity: sha512-PphJv+1whXQYl/t/LQCj6n6ZSMnhQ5D3Jh9nn1nber/5x6dMPWObR5A7qyDMwfduK6PkFieXc8XkgjJD7XDP6g==}
+  '@morpheme/tabs@1.0.1':
+    resolution: {integrity: sha512-3WEbSaDaUndXaxgynEONo57WHyXbOQx0apYYOwccgO5EN4f/JC6rvldCJ58ihrYWmKZtbxmxAzpcEZAnVF36xA==}
 
   '@morpheme/tailwind-components@1.0.0':
     resolution: {integrity: sha512-0jxdNPV1ASK7Hb/3A8AQHd68uTdJtAS0eDN1FCO7WUKsuJ6PAvlJzXbofCchC6NKWOdKVcuDxSco+s+0yE3CPw==}
@@ -1000,17 +1008,17 @@ packages:
   '@morpheme/themes@1.0.0':
     resolution: {integrity: sha512-q+z29Db14rbIl726z1y0d2ZvKRCiDKP80tVNjK68SXAipGFhLtOlasbZlS5qG52IPlhAXheV/kWGbxmvpTTYXw==}
 
-  '@morpheme/timeline@1.0.0':
-    resolution: {integrity: sha512-Yh+pq0WrheB6nq6CzyBSp3P3W/qqfWjZQ2rfI1j3Yiz2Jfgc98V0lO265P5I68OjxLGjuoUROH+gGLO8jdZ7Uw==}
+  '@morpheme/timeline@1.0.1':
+    resolution: {integrity: sha512-/xtkaf6ON5NoLB5xUc8DNqJoF/sQR1OxPTpNjmKpOhc4faCzoxyUBLZB5awRIhJ/wOrUo7N9KLNooHCivd4+qw==}
 
-  '@morpheme/toast@1.0.0':
-    resolution: {integrity: sha512-cA/SdRr7/TfO43fN/hUxz2l+ahI8seP+BU0SWQRpAiD4dD75JG/8FAAeOLNeCWVhlj9aV9a2xbUxnMzHUYTQMA==}
+  '@morpheme/toast@1.0.1':
+    resolution: {integrity: sha512-RCOfMg4zD1ATj2B8V1LYOoV2Obz9Ek5iPTqCdDYkl552rDg2Qr+Akovzr5+o+rwtQVsA6w6I8asodKm/Ry/wwQ==}
 
-  '@morpheme/tooltip@1.0.0':
-    resolution: {integrity: sha512-pu5XhsH8qu805JWMntihZFjA9mCXOA6EWk+dYU6zC3WDU3EZ72L3pARImOw9gE90bMcAhhwj/f4IL8SdYR61mg==}
+  '@morpheme/tooltip@1.0.1':
+    resolution: {integrity: sha512-bPx6NEAExwsRO/tE7Fhfy01zdMPPRMcVJgAgvzm62Gz4aZvJrWF2Gb8Y6TeDKDz/jsoW9+FIQBJJQDRevtbhEA==}
 
-  '@morpheme/ui@1.0.0':
-    resolution: {integrity: sha512-TVyrLXFLNNieqasig5ya6afcs+4iohIUAWUrRVUOFXFnmgWtSFxuR79m3QUgUN//fC7sfLoyGAQgMthgVZuj9Q==}
+  '@morpheme/ui@1.0.1':
+    resolution: {integrity: sha512-gRKRZ62H4FBIFhqObD7TAKu5QK9shLYy2LigeW4Rt2KUAjlh9WURgsVgMxz1TNuonal2X8Sw19G98v0ePyJ4vA==}
 
   '@morpheme/utils@1.0.0':
     resolution: {integrity: sha512-eF9BiXSTLZrYL30806U7Axg4ERoSfxOMt5JI5Jq5WK1ToO3VZQwzCex8Updb8o+F+kbB8rxIPTl9APnr0LlwHA==}
@@ -4812,12 +4820,19 @@ snapshots:
       '@tanstack/vue-virtual': 3.10.5(vue@3.4.38)
       vue: 3.4.38
 
-  '@heroicons/vue@1.0.6(vue@3.4.38)':
+  '@heroicons/vue@2.1.5(vue@3.4.38)':
     dependencies:
       vue: 3.4.38
 
+  '@iconify/types@2.0.0': {}
+
   '@iconify/vue@3.2.1(vue@3.4.38)':
     dependencies:
+      vue: 3.4.38
+
+  '@iconify/vue@4.1.2(vue@3.4.38)':
+    dependencies:
+      '@iconify/types': 2.0.0
       vue: 3.4.38
 
   '@ioredis/commands@1.2.0': {}
@@ -4886,10 +4901,10 @@ snapshots:
       - encoding
       - supports-color
 
-  '@morpheme/alert@1.0.0':
+  '@morpheme/alert@1.0.1':
     dependencies:
-      '@morpheme/button': 1.0.0
-      '@morpheme/icon': 1.0.0
+      '@morpheme/button': 1.0.1
+      '@morpheme/icon': 1.0.1
       '@morpheme/tailwind-config': 1.0.0
       '@morpheme/theme': 1.0.0
       '@morpheme/utils': 1.0.0
@@ -4898,7 +4913,7 @@ snapshots:
       - ts-node
       - typescript
 
-  '@morpheme/app-bar@1.0.0':
+  '@morpheme/app-bar@1.0.1':
     dependencies:
       '@morpheme/theme': 1.0.0
       vue: 3.4.38
@@ -4906,7 +4921,7 @@ snapshots:
       - ts-node
       - typescript
 
-  '@morpheme/app-shell@1.0.0':
+  '@morpheme/app-shell@1.0.1':
     dependencies:
       '@vueuse/core': 10.11.1(vue@3.4.38)
       vue: 3.4.38
@@ -4914,12 +4929,12 @@ snapshots:
       - '@vue/composition-api'
       - typescript
 
-  '@morpheme/autocomplete@1.0.0(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))':
+  '@morpheme/autocomplete@1.0.1(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))':
     dependencies:
       '@headlessui/vue': 1.7.22(vue@3.4.38)
-      '@morpheme/button': 1.0.0
-      '@morpheme/forms': 1.0.0(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))
-      '@morpheme/icon': 1.0.0
+      '@morpheme/button': 1.0.1
+      '@morpheme/forms': 1.0.1(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))
+      '@morpheme/icon': 1.0.1
       tailwindcss: 3.4.10
       vue: 3.4.38
       wait-for-expect: 3.0.2
@@ -4929,32 +4944,32 @@ snapshots:
       - ts-node
       - typescript
 
-  '@morpheme/avatar@1.0.0':
+  '@morpheme/avatar@1.0.1':
     dependencies:
-      '@morpheme/icon': 1.0.0
+      '@morpheme/icon': 1.0.1
       '@morpheme/theme': 1.0.0
       vue: 3.4.38
     transitivePeerDependencies:
       - ts-node
       - typescript
 
-  '@morpheme/badge@1.0.0':
+  '@morpheme/badge@1.0.1':
     dependencies:
-      '@morpheme/icon': 1.0.0
+      '@morpheme/icon': 1.0.1
       vue: 3.4.38
     transitivePeerDependencies:
       - ts-node
       - typescript
 
-  '@morpheme/banner@1.0.0':
+  '@morpheme/banner@1.0.1':
     dependencies:
       vue: 3.4.38
     transitivePeerDependencies:
       - typescript
 
-  '@morpheme/bottom-navigation@1.0.0':
+  '@morpheme/bottom-navigation@1.0.1':
     dependencies:
-      '@morpheme/icon': 1.0.0
+      '@morpheme/icon': 1.0.1
       '@morpheme/theme': 1.0.0
       '@vueuse/core': 10.11.1(vue@3.4.38)
       vue: 3.4.38
@@ -4963,28 +4978,28 @@ snapshots:
       - ts-node
       - typescript
 
-  '@morpheme/bottom-sheet@1.0.0':
+  '@morpheme/bottom-sheet@1.0.1':
     dependencies:
-      '@morpheme/button': 1.0.0
-      '@morpheme/icon': 1.0.0
-      '@morpheme/list': 1.0.0
+      '@morpheme/button': 1.0.1
+      '@morpheme/icon': 1.0.1
+      '@morpheme/list': 1.0.1
       vue: 3.4.38
     transitivePeerDependencies:
       - ts-node
       - typescript
 
-  '@morpheme/breadcrumbs@1.0.0':
+  '@morpheme/breadcrumbs@1.0.1':
     dependencies:
-      '@morpheme/icon': 1.0.0
+      '@morpheme/icon': 1.0.1
       vue: 3.4.38
       vue-router: 4.4.3(vue@3.4.38)
     transitivePeerDependencies:
       - ts-node
       - typescript
 
-  '@morpheme/button@1.0.0':
+  '@morpheme/button@1.0.1':
     dependencies:
-      '@morpheme/icon': 1.0.0
+      '@morpheme/icon': 1.0.1
       '@morpheme/spinner': 1.0.0
       '@morpheme/theme': 1.0.0
       '@morpheme/utils': 1.0.0
@@ -4994,23 +5009,23 @@ snapshots:
       - ts-node
       - typescript
 
-  '@morpheme/card@1.0.0':
+  '@morpheme/card@1.0.1':
     dependencies:
       vue: 3.4.38
     transitivePeerDependencies:
       - typescript
 
-  '@morpheme/collapsible@1.0.0':
+  '@morpheme/collapsible@1.0.1':
     dependencies:
       vue: 3.4.38
     transitivePeerDependencies:
       - typescript
 
-  '@morpheme/command@1.0.0':
+  '@morpheme/command@1.0.1':
     dependencies:
-      '@morpheme/icon': 1.0.0
-      '@morpheme/list': 1.0.0
-      '@morpheme/modal': 1.0.0
+      '@morpheme/icon': 1.0.1
+      '@morpheme/list': 1.0.1
+      '@morpheme/modal': 1.0.1
       vue: 3.4.38
     transitivePeerDependencies:
       - ts-node
@@ -5030,13 +5045,13 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@morpheme/dropdown@1.0.0':
+  '@morpheme/dropdown@1.0.1':
     dependencies:
       '@floating-ui/vue': 1.1.4(vue@3.4.38)
       '@headlessui-float/vue': 0.11.4(vue@3.4.38)
       '@headlessui/vue': 1.7.22(vue@3.4.38)
-      '@morpheme/button': 1.0.0
-      '@morpheme/icon': 1.0.0
+      '@morpheme/button': 1.0.1
+      '@morpheme/icon': 1.0.1
       tailwindcss: 3.4.10
       vue: 3.4.38
     transitivePeerDependencies:
@@ -5044,7 +5059,7 @@ snapshots:
       - ts-node
       - typescript
 
-  '@morpheme/editor@1.0.0':
+  '@morpheme/editor@1.0.1':
     dependencies:
       '@ckeditor/ckeditor5-build-classic': 37.1.0
       '@ckeditor/ckeditor5-vue': 4.0.1
@@ -5053,12 +5068,12 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@morpheme/forms@1.0.0(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))':
+  '@morpheme/forms@1.0.1(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))':
     dependencies:
-      '@morpheme/button': 1.0.0
-      '@morpheme/icon': 1.0.0
+      '@morpheme/button': 1.0.1
+      '@morpheme/icon': 1.0.1
       '@morpheme/progress-bar': 1.0.0
-      '@morpheme/select': 1.0.0(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))
+      '@morpheme/select': 1.0.1(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))
       '@morpheme/spinner': 1.0.0
       '@morpheme/utils': 1.0.0
       '@vueuse/core': 10.11.1(vue@3.4.38)
@@ -5070,10 +5085,10 @@ snapshots:
       - ts-node
       - typescript
 
-  '@morpheme/icon@1.0.0':
+  '@morpheme/icon@1.0.1':
     dependencies:
-      '@heroicons/vue': 1.0.6(vue@3.4.38)
-      '@iconify/vue': 3.2.1(vue@3.4.38)
+      '@heroicons/vue': 2.1.5(vue@3.4.38)
+      '@iconify/vue': 4.1.2(vue@3.4.38)
       '@morpheme/theme': 1.0.0
       '@morphemeicons/vue': 0.2.0(vue@3.4.38)
       vue: 3.4.38
@@ -5081,16 +5096,16 @@ snapshots:
       - ts-node
       - typescript
 
-  '@morpheme/layouts@1.0.0':
+  '@morpheme/layouts@1.0.1':
     dependencies:
       '@morpheme/design-tokens': 0.1.0-alpha.5
       vue: 3.4.38
     transitivePeerDependencies:
       - typescript
 
-  '@morpheme/list@1.0.0':
+  '@morpheme/list@1.0.1':
     dependencies:
-      '@morpheme/collapsible': 1.0.0
+      '@morpheme/collapsible': 1.0.1
       vue: 3.4.38
       vue-router: 4.4.3(vue@3.4.38)
     transitivePeerDependencies:
@@ -5102,19 +5117,19 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@morpheme/menu@1.0.0':
+  '@morpheme/menu@1.0.1':
     dependencies:
       '@iconify/vue': 3.2.1(vue@3.4.38)
-      '@morpheme/collapsible': 1.0.0
+      '@morpheme/collapsible': 1.0.1
       vue: 3.4.38
       vue-router: 4.4.3(vue@3.4.38)
     transitivePeerDependencies:
       - typescript
 
-  '@morpheme/menus@1.0.0(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))':
+  '@morpheme/menus@1.0.1(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))':
     dependencies:
-      '@morpheme/icon': 1.0.0
-      '@morpheme/list': 1.0.0
+      '@morpheme/icon': 1.0.1
+      '@morpheme/list': 1.0.1
       floating-vue: 2.0.0(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))(vue@3.4.38)
       vue: 3.4.38
     transitivePeerDependencies:
@@ -5122,20 +5137,20 @@ snapshots:
       - ts-node
       - typescript
 
-  '@morpheme/modal@1.0.0':
+  '@morpheme/modal@1.0.1':
     dependencies:
-      '@morpheme/button': 1.0.0
+      '@morpheme/button': 1.0.1
       vue: 3.4.38
     transitivePeerDependencies:
       - ts-node
       - typescript
 
-  '@morpheme/multi-select@1.0.0(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))':
+  '@morpheme/multi-select@1.0.1(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))':
     dependencies:
-      '@morpheme/badge': 1.0.0
-      '@morpheme/forms': 1.0.0(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))
-      '@morpheme/icon': 1.0.0
-      '@morpheme/tooltip': 1.0.0(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))
+      '@morpheme/badge': 1.0.1
+      '@morpheme/forms': 1.0.1(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))
+      '@morpheme/icon': 1.0.1
+      '@morpheme/tooltip': 1.0.1(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))
       '@vueuse/core': 10.11.1(vue@3.4.38)
       vee-validate: 4.13.2(vue@3.4.38)
       vue: 3.4.38
@@ -5145,11 +5160,11 @@ snapshots:
       - ts-node
       - typescript
 
-  '@morpheme/nav-drawer@1.0.0':
+  '@morpheme/nav-drawer@1.0.1':
     dependencies:
-      '@morpheme/button': 1.0.0
+      '@morpheme/button': 1.0.1
       '@morpheme/logo': 1.0.0
-      '@morpheme/menu': 1.0.0
+      '@morpheme/menu': 1.0.1
       '@morpheme/utils': 1.0.0
       '@vueuse/core': 10.11.1(vue@3.4.38)
       vue: 3.4.38
@@ -5158,21 +5173,21 @@ snapshots:
       - ts-node
       - typescript
 
-  '@morpheme/navbar@1.0.0(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))':
+  '@morpheme/navbar@1.0.1(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))':
     dependencies:
-      '@morpheme/button': 1.0.0
-      '@morpheme/icon': 1.0.0
+      '@morpheme/button': 1.0.1
+      '@morpheme/icon': 1.0.1
       '@morpheme/logo': 1.0.0
-      '@morpheme/menus': 1.0.0(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))
+      '@morpheme/menus': 1.0.1(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))
       vue: 3.4.38
     transitivePeerDependencies:
       - '@nuxt/kit'
       - ts-node
       - typescript
 
-  '@morpheme/nuxt@1.0.1-alpha.1(magicast@0.3.5)(rollup@4.21.1)':
+  '@morpheme/nuxt@1.0.1(magicast@0.3.5)(rollup@4.21.1)':
     dependencies:
-      '@morpheme/ui': 1.0.0(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))
+      '@morpheme/ui': 1.0.1(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))
       '@nuxt/kit': 3.13.0(magicast@0.3.5)(rollup@4.21.1)
     transitivePeerDependencies:
       - '@vue/composition-api'
@@ -5182,14 +5197,14 @@ snapshots:
       - ts-node
       - typescript
 
-  '@morpheme/pagination@1.0.0':
+  '@morpheme/pagination@1.0.1':
     dependencies:
       pagino: 1.4.2
       vue: 3.4.38
     transitivePeerDependencies:
       - typescript
 
-  '@morpheme/popover@1.0.0':
+  '@morpheme/popover@1.0.1':
     dependencies:
       '@headlessui/vue': 1.7.22(vue@3.4.38)
       tailwindcss: 3.4.10
@@ -5228,16 +5243,16 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@morpheme/select@1.0.0(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))':
+  '@morpheme/select@1.0.1(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))':
     dependencies:
       '@floating-ui/vue': 1.1.4(vue@3.4.38)
       '@headlessui-float/vue': 0.11.4(vue@3.4.38)
-      '@morpheme/badge': 1.0.0
+      '@morpheme/badge': 1.0.1
       '@morpheme/divider': 1.0.0
-      '@morpheme/forms': 1.0.0(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))
-      '@morpheme/icon': 1.0.0
+      '@morpheme/forms': 1.0.1(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))
+      '@morpheme/icon': 1.0.1
       '@morpheme/theme': 1.0.0
-      '@morpheme/tooltip': 1.0.0(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))
+      '@morpheme/tooltip': 1.0.1(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))
       '@morpheme/utils': 1.0.0
       vue: 3.4.38
     transitivePeerDependencies:
@@ -5258,12 +5273,12 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@morpheme/stats@1.0.0':
+  '@morpheme/stats@1.0.1':
     dependencies:
       '@iconify/vue': 3.2.1(vue@3.4.38)
-      '@morpheme/badge': 1.0.0
-      '@morpheme/card': 1.0.0
-      '@morpheme/icon': 1.0.0
+      '@morpheme/badge': 1.0.1
+      '@morpheme/card': 1.0.1
+      '@morpheme/icon': 1.0.1
       vue: 3.4.38
     transitivePeerDependencies:
       - ts-node
@@ -5277,7 +5292,7 @@ snapshots:
       - ts-node
       - typescript
 
-  '@morpheme/switch@1.0.0':
+  '@morpheme/switch@1.0.1':
     dependencies:
       '@vueuse/core': 10.11.1(vue@3.4.38)
       vee-validate: 4.13.2(vue@3.4.38)
@@ -5286,11 +5301,11 @@ snapshots:
       - '@vue/composition-api'
       - typescript
 
-  '@morpheme/table@1.0.0':
+  '@morpheme/table@1.0.1':
     dependencies:
-      '@morpheme/forms': 1.0.0(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))
-      '@morpheme/icon': 1.0.0
-      '@morpheme/pagination': 1.0.0
+      '@morpheme/forms': 1.0.1(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))
+      '@morpheme/icon': 1.0.1
+      '@morpheme/pagination': 1.0.1
       '@morpheme/spinner': 1.0.0
       '@morpheme/utils': 1.0.0
       vue: 3.4.38
@@ -5299,11 +5314,11 @@ snapshots:
       - ts-node
       - typescript
 
-  '@morpheme/tabs@1.0.0':
+  '@morpheme/tabs@1.0.1':
     dependencies:
-      '@morpheme/button': 1.0.0
-      '@morpheme/card': 1.0.0
-      '@morpheme/icon': 1.0.0
+      '@morpheme/button': 1.0.1
+      '@morpheme/card': 1.0.1
+      '@morpheme/icon': 1.0.1
       '@morpheme/utils': 1.0.0
       '@vueuse/core': 10.11.1(vue@3.4.38)
       vue: 3.4.38
@@ -5351,23 +5366,23 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@morpheme/timeline@1.0.0':
+  '@morpheme/timeline@1.0.1':
     dependencies:
       vue: 3.4.38
     transitivePeerDependencies:
       - typescript
 
-  '@morpheme/toast@1.0.0':
+  '@morpheme/toast@1.0.1':
     dependencies:
-      '@morpheme/button': 1.0.0
-      '@morpheme/icon': 1.0.0
+      '@morpheme/button': 1.0.1
+      '@morpheme/icon': 1.0.1
       vee-validate: 4.13.2(vue@3.4.38)
       vue: 3.4.38
     transitivePeerDependencies:
       - ts-node
       - typescript
 
-  '@morpheme/tooltip@1.0.0(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))':
+  '@morpheme/tooltip@1.0.1(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))':
     dependencies:
       floating-vue: 2.0.0(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))(vue@3.4.38)
       vee-validate: 4.13.2(vue@3.4.38)
@@ -5376,60 +5391,60 @@ snapshots:
       - '@nuxt/kit'
       - typescript
 
-  '@morpheme/ui@1.0.0(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))':
+  '@morpheme/ui@1.0.1(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))':
     dependencies:
       '@headlessui/vue': 1.7.22(vue@3.4.38)
-      '@morpheme/alert': 1.0.0
-      '@morpheme/app-bar': 1.0.0
-      '@morpheme/app-shell': 1.0.0
-      '@morpheme/autocomplete': 1.0.0(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))
-      '@morpheme/avatar': 1.0.0
-      '@morpheme/badge': 1.0.0
-      '@morpheme/banner': 1.0.0
-      '@morpheme/bottom-navigation': 1.0.0
-      '@morpheme/bottom-sheet': 1.0.0
-      '@morpheme/breadcrumbs': 1.0.0
-      '@morpheme/button': 1.0.0
-      '@morpheme/card': 1.0.0
-      '@morpheme/collapsible': 1.0.0
-      '@morpheme/command': 1.0.0
+      '@morpheme/alert': 1.0.1
+      '@morpheme/app-bar': 1.0.1
+      '@morpheme/app-shell': 1.0.1
+      '@morpheme/autocomplete': 1.0.1(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))
+      '@morpheme/avatar': 1.0.1
+      '@morpheme/badge': 1.0.1
+      '@morpheme/banner': 1.0.1
+      '@morpheme/bottom-navigation': 1.0.1
+      '@morpheme/bottom-sheet': 1.0.1
+      '@morpheme/breadcrumbs': 1.0.1
+      '@morpheme/button': 1.0.1
+      '@morpheme/card': 1.0.1
+      '@morpheme/collapsible': 1.0.1
+      '@morpheme/command': 1.0.1
       '@morpheme/container': 1.0.0
       '@morpheme/divider': 1.0.0
-      '@morpheme/dropdown': 1.0.0
-      '@morpheme/editor': 1.0.0
-      '@morpheme/forms': 1.0.0(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))
-      '@morpheme/icon': 1.0.0
-      '@morpheme/layouts': 1.0.0
-      '@morpheme/list': 1.0.0
+      '@morpheme/dropdown': 1.0.1
+      '@morpheme/editor': 1.0.1
+      '@morpheme/forms': 1.0.1(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))
+      '@morpheme/icon': 1.0.1
+      '@morpheme/layouts': 1.0.1
+      '@morpheme/list': 1.0.1
       '@morpheme/logo': 1.0.0
-      '@morpheme/menu': 1.0.0
-      '@morpheme/menus': 1.0.0(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))
-      '@morpheme/modal': 1.0.0
-      '@morpheme/multi-select': 1.0.0(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))
-      '@morpheme/nav-drawer': 1.0.0
-      '@morpheme/navbar': 1.0.0(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))
-      '@morpheme/pagination': 1.0.0
-      '@morpheme/popover': 1.0.0
+      '@morpheme/menu': 1.0.1
+      '@morpheme/menus': 1.0.1(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))
+      '@morpheme/modal': 1.0.1
+      '@morpheme/multi-select': 1.0.1(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))
+      '@morpheme/nav-drawer': 1.0.1
+      '@morpheme/navbar': 1.0.1(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))
+      '@morpheme/pagination': 1.0.1
+      '@morpheme/popover': 1.0.1
       '@morpheme/progress-bar': 1.0.0
       '@morpheme/progress-circular': 1.0.0
       '@morpheme/quill-editor': 1.0.0
       '@morpheme/rating': 1.0.0
-      '@morpheme/select': 1.0.0(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))
+      '@morpheme/select': 1.0.1(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))
       '@morpheme/shimmer': 1.0.0
       '@morpheme/spinner': 1.0.0
-      '@morpheme/stats': 1.0.0
+      '@morpheme/stats': 1.0.1
       '@morpheme/stepper': 1.0.0
-      '@morpheme/switch': 1.0.0
-      '@morpheme/table': 1.0.0
-      '@morpheme/tabs': 1.0.0
+      '@morpheme/switch': 1.0.1
+      '@morpheme/table': 1.0.1
+      '@morpheme/tabs': 1.0.1
       '@morpheme/tailwind-components': 1.0.0
       '@morpheme/tailwind-config': 1.0.0
       '@morpheme/text': 1.0.0
       '@morpheme/theme': 1.0.0
       '@morpheme/themes': 1.0.0
-      '@morpheme/timeline': 1.0.0
-      '@morpheme/toast': 1.0.0
-      '@morpheme/tooltip': 1.0.0(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))
+      '@morpheme/timeline': 1.0.1
+      '@morpheme/toast': 1.0.1
+      '@morpheme/tooltip': 1.0.1(@nuxt/kit@3.13.0(magicast@0.3.5)(rollup@4.21.1))
       '@morpheme/utils': 1.0.0
       '@vue/test-utils': 2.4.6
       sass: 1.77.8

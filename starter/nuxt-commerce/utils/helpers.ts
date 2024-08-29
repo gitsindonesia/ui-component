@@ -1,4 +1,4 @@
-import { Product } from "~~/types/product";
+import type { Product } from "~/types/product";
 
 export const $api = <T = unknown>(...options: Parameters<typeof $fetch>) => {
   const config = useAppConfig();

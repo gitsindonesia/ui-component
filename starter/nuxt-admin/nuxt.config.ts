@@ -14,24 +14,31 @@ export default defineNuxtConfig({
     ],
     '@nuxtjs/color-mode',
   ],
+
   typescript: {
     shim: false,
   },
+
   // https://gitsindonesia.github.io/ui-component/guide/nuxt.html#options
   morpheme: {
     theme: 'morpheme',
     sass: true,
     darkMode: true,
   },
+
   // https://color-mode.nuxtjs.org
   colorMode: {
     classSuffix: '',
   },
+
   extends: ['@morpheme/nuxt-auth'],
+
   vite: {
     optimizeDeps: {
       include: ['yup'],
     },
   },
+
   css: ['~/assets/css/main.css'],
+  compatibilityDate: '2024-08-29',
 });
