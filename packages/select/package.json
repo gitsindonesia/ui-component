@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/select",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Vue Select Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -19,12 +19,12 @@
   "dependencies": {
     "@floating-ui/vue": "^1.0.2",
     "@headlessui-float/vue": "^0.11.2",
-    "@morpheme/badge": "^1.0.0",
+    "@morpheme/badge": "^1.0.1",
     "@morpheme/divider": "^1.0.0",
-    "@morpheme/forms": "^1.0.0",
-    "@morpheme/icon": "^1.0.0",
+    "@morpheme/forms": "^1.0.1",
+    "@morpheme/icon": "^1.0.1",
     "@morpheme/theme": "^1.0.0",
-    "@morpheme/tooltip": "^1.0.0",
+    "@morpheme/tooltip": "^1.0.1",
     "@morpheme/utils": "^1.0.0",
     "vue": "^3.3.4"
   },

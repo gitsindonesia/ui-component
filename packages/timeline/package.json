@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/timeline",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Morpheme Timeline Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -19,9 +19,9 @@
   },
   "devDependencies": {
     "@headlessui/vue": "^1.7.13",
-    "@morpheme/avatar": "^1.0.0",
-    "@morpheme/button": "^1.0.0",
-    "@morpheme/icon": "^1.0.0",
+    "@morpheme/avatar": "^1.0.1",
+    "@morpheme/button": "^1.0.1",
+    "@morpheme/icon": "^1.0.1",
     "@morpheme/tailwind-config": "^1.0.0",
     "@morpheme/text": "^1.0.0",
     "@morpheme/utils": "^1.0.0",

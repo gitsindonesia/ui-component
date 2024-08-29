@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/menu",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Morpheme Menu Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -16,7 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "@iconify/vue": "^3.2.1",
-    "@morpheme/collapsible": "^1.0.0",
+    "@morpheme/collapsible": "^1.0.1",
     "vue": "^3.3.4",
     "vue-router": "^4.0.13"
   },

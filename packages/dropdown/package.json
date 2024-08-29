@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/dropdown",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Morpheme Dropdown Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -18,8 +18,8 @@
     "@floating-ui/vue": "^1.0.2",
     "@headlessui-float/vue": "^0.11.2",
     "@headlessui/vue": "^1.7.13",
-    "@morpheme/button": "^1.0.0",
-    "@morpheme/icon": "^1.0.0",
+    "@morpheme/button": "^1.0.1",
+    "@morpheme/icon": "^1.0.1",
     "tailwindcss": "^3.3.1",
     "vue": "^3.3.4"
   },

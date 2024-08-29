@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/badge",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Morpheme Badge",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -15,7 +15,7 @@
   "author": "Warsono <warsono16694@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@morpheme/icon": "^1.0.0",
+    "@morpheme/icon": "^1.0.1",
     "vue": "^3.3.4"
   },
   "devDependencies": {
