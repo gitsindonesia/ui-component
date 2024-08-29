@@ -2,12 +2,14 @@ import MorphemeUI from '..';
 
 export default defineNuxtConfig({
   modules: [MorphemeUI, '@nuxtjs/tailwindcss'],
+
   morpheme: {
     darkMode: true,
     sass: true,
     theme: 'morpheme',
     experimentalComponents: true,
   },
+
   vite: {
     optimizeDeps: {
       include: [
@@ -21,4 +23,6 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true,
   },
+
+  compatibilityDate: '2024-08-29',
 });
