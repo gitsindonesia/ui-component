@@ -2265,7 +2265,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@floating-ui/dom@npm:^1.0.0, @floating-ui/dom@npm:^1.2.1":
+"@floating-ui/dom@npm:^1.0.0, @floating-ui/dom@npm:^1.2.1, @floating-ui/dom@npm:^1.6.7":
   version: 1.6.10
   resolution: "@floating-ui/dom@npm:1.6.10"
   dependencies:
@@ -2307,7 +2307,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@floating-ui/vue@npm:^1.0.2":
+"@floating-ui/vue@npm:^1.0.2, @floating-ui/vue@npm:^1.1.0":
   version: 1.1.4
   resolution: "@floating-ui/vue@npm:1.1.4"
   dependencies:
@@ -2389,6 +2389,24 @@ __metadata:
   peerDependencies:
     vue: ">=3"
   checksum: 10c0/53ef92a1f02230fe3a4c1d178fff29f14c3392707e74ccf8611cdc1c9f0193d5c26c4cd95ea05e358baf4842f585fad1b809601319e0e2ce5200586f94ba8f70
+  languageName: node
+  linkType: hard
+
+"@internationalized/date@npm:^3.5.4":
+  version: 3.5.5
+  resolution: "@internationalized/date@npm:3.5.5"
+  dependencies:
+    "@swc/helpers": "npm:^0.5.0"
+  checksum: 10c0/fc17291c8923eaf413e4cb1c74570a8f78269d8b6a5ad74de6f4f45b4e9a84f4243a9c3f224526c36b024f77e4a2fae34df6b34b022ae1b068384e04ad32560e
+  languageName: node
+  linkType: hard
+
+"@internationalized/number@npm:^3.5.3":
+  version: 3.5.3
+  resolution: "@internationalized/number@npm:3.5.3"
+  dependencies:
+    "@swc/helpers": "npm:^0.5.0"
+  checksum: 10c0/dd1bb4e89c6468b97e8357e1ba0a60234bd2c8226f3241c4c7499e5b1791ba0574127ea6de0fd6c4158e2ceef564bba6531a8f5589e58b820df669e312500f99
   languageName: node
   linkType: hard
 
@@ -2574,7 +2592,7 @@ __metadata:
   resolution: "@morpheme/nuxt@workspace:."
   dependencies:
     "@morpheme/tailwind-config": "npm:^1.0.0"
-    "@morpheme/ui": "npm:1.0.2-alpha.6+8389bc92"
+    "@morpheme/ui": "npm:1.0.2-alpha.10"
     "@nuxt/kit": "npm:^3.13.0"
     "@nuxt/module-builder": "npm:^0.8.3"
     "@nuxt/schema": "npm:^3.13.0"
@@ -2586,16 +2604,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@morpheme/stats@npm:^1.0.2-alpha.6+8389bc92":
-  version: 1.0.2-alpha.6
-  resolution: "@morpheme/stats@npm:1.0.2-alpha.6"
+"@morpheme/stats@npm:^1.0.2-alpha.10+acf6842c":
+  version: 1.0.2-alpha.10
+  resolution: "@morpheme/stats@npm:1.0.2-alpha.10"
   dependencies:
     "@iconify/vue": "npm:^3.2.1"
     "@morpheme/badge": "npm:^1.0.1"
     "@morpheme/card": "npm:^1.0.1"
     "@morpheme/icon": "npm:^1.0.1"
     vue: "npm:^3.4.38"
-  checksum: 10c0/86c02de7915841707c77db4c2691c51703c293a24ec04cdb6419a0c7a514e8dcfbd5292d69b47fefa4c57a126b3750a2d56094bc2ea46d6153bd9136ab67f672
+  checksum: 10c0/602e0c15cf07619f0dbeb339f0b5083846e61be4dad2c605eaaafb66f53d4723e2dc28abe4ed4dfcf8c76d7848a2a050f1ef5a781a204fcfde5a625db339645b
   languageName: node
   linkType: hard
 
@@ -2606,10 +2624,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@morpheme/tailwind-components@npm:^1.0.2-alpha.6+8389bc92":
-  version: 1.0.2-alpha.6
-  resolution: "@morpheme/tailwind-components@npm:1.0.2-alpha.6"
-  checksum: 10c0/33e35490a667a1c3068a3c87f0faa768d573f0eab127080ea9cc52cfb4e358799462b7edb4deb287aedb70fb96a643875983f5bfb99cc5d948d4f2c398359a18
+"@morpheme/tailwind-components@npm:^1.0.2-alpha.10+acf6842c":
+  version: 1.0.2-alpha.10
+  resolution: "@morpheme/tailwind-components@npm:1.0.2-alpha.10"
+  checksum: 10c0/655f0d07836893ec91cbf9992b16058ea16c0c2cc5cc8b063024f48ab9e71c89f3be2de874aefe836857537a57490ea6c46aaec3ad273c63b1902b4b507fdebb
   languageName: node
   linkType: hard
 
@@ -2630,20 +2648,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@morpheme/tailwind-config@npm:^1.0.2-alpha.6+8389bc92":
-  version: 1.0.2-alpha.6
-  resolution: "@morpheme/tailwind-config@npm:1.0.2-alpha.6"
+"@morpheme/tailwind-config@npm:^1.0.2-alpha.10+acf6842c":
+  version: 1.0.2-alpha.10
+  resolution: "@morpheme/tailwind-config@npm:1.0.2-alpha.10"
   dependencies:
     "@morpheme/design-tokens": "npm:^0.1.0-alpha.5"
-    "@morpheme/tailwind-components": "npm:^1.0.2-alpha.6+8389bc92"
-    "@morpheme/theme": "npm:^1.0.2-alpha.6+8389bc92"
-    "@morpheme/utils": "npm:^1.0.2-alpha.6+8389bc92"
+    "@morpheme/tailwind-components": "npm:^1.0.2-alpha.10+acf6842c"
+    "@morpheme/theme": "npm:^1.0.2-alpha.10+acf6842c"
+    "@morpheme/utils": "npm:^1.0.2-alpha.10+acf6842c"
     "@tailwindcss/aspect-ratio": "npm:^0.4.2"
     "@tailwindcss/forms": "npm:^0.5.3"
     "@tailwindcss/typography": "npm:^0.5.9"
     tailwindcss: "npm:^3.3.1"
     vue: "npm:^3.4.38"
-  checksum: 10c0/3d506599586c7e02f2a7db1b4955023e2563b56fc9ddde49b2ad1611698345544c158713bf43b13b34caa6bb55da57d233b6df115a76fdc3d07ddddeb9b96634
+  checksum: 10c0/1c90a3e8170413de935ccfda77449296ae5d1c7fbb281bb1b1177bc54efd6ca1329da048c92772e256ff067ae43a5997f08286702e46b115accde0b19f0851f1
   languageName: node
   linkType: hard
 
@@ -2657,30 +2675,31 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@morpheme/theme@npm:^1.0.2-alpha.6+8389bc92":
-  version: 1.0.2-alpha.6
-  resolution: "@morpheme/theme@npm:1.0.2-alpha.6"
+"@morpheme/theme@npm:^1.0.2-alpha.10+acf6842c":
+  version: 1.0.2-alpha.10
+  resolution: "@morpheme/theme@npm:1.0.2-alpha.10"
   dependencies:
     tailwindcss: "npm:^3.3.1"
     vue: "npm:^3.4.38"
-  checksum: 10c0/272ff67452dd1587f57899c9dd148e8c91d8e1f64b0218baea7cfec9c172e0d8ffcc8fa6cc4a4afb9a97fd7f80bcf0574861819fb45f81c5b7d530a2a39ee148
+  checksum: 10c0/727267dc848c63a90912769f021b2dda252b61d3ba58eef8160b6087a30197c69125541d060d954d5473ede985fc1a6a871e709c21d9a47b476ca2aaf03750ff
   languageName: node
   linkType: hard
 
-"@morpheme/themes@npm:^1.0.2-alpha.6+8389bc92":
-  version: 1.0.2-alpha.6
-  resolution: "@morpheme/themes@npm:1.0.2-alpha.6"
+"@morpheme/themes@npm:^1.0.2-alpha.10+acf6842c":
+  version: 1.0.2-alpha.10
+  resolution: "@morpheme/themes@npm:1.0.2-alpha.10"
   dependencies:
     "@morpheme/design-tokens": "npm:^0.1.0-alpha.5"
+    "@morpheme/theme": "npm:^1.0.2-alpha.10+acf6842c"
     sass: "npm:^1.77.8"
     vue: "npm:^3.4.38"
-  checksum: 10c0/1fa7c2adc800d42765a1de34759ecad992b061d0e17ea7f7fcb8a102c1d7cabd939c0c97aa3344073de4fb2abe1f54380b09cbab3787509d19a6dd8bc18681e5
+  checksum: 10c0/2f908fa36592c9a9073b4aff8e352dfe215e3174597b804946b7d47377b8b8598b5174037c7004bf721349e9fc7edd246745ea7e5277cc62f926d1a3e4e18fd7
   languageName: node
   linkType: hard
 
-"@morpheme/ui@npm:1.0.2-alpha.6+8389bc92":
-  version: 1.0.2-alpha.6
-  resolution: "@morpheme/ui@npm:1.0.2-alpha.6"
+"@morpheme/ui@npm:1.0.2-alpha.10":
+  version: 1.0.2-alpha.10
+  resolution: "@morpheme/ui@npm:1.0.2-alpha.10"
   dependencies:
     "@ckeditor/ckeditor5-build-classic": "npm:^37.0.0"
     "@ckeditor/ckeditor5-vue": "npm:^4.0.1"
@@ -2691,23 +2710,24 @@ __metadata:
     "@iconify/vue": "npm:^4.1.2"
     "@morpheme/design-tokens": "npm:^0.1.0-alpha.5"
     "@morpheme/layouts": "npm:^1.0.1"
-    "@morpheme/stats": "npm:^1.0.2-alpha.6+8389bc92"
-    "@morpheme/tailwind-components": "npm:^1.0.2-alpha.6+8389bc92"
-    "@morpheme/tailwind-config": "npm:^1.0.2-alpha.6+8389bc92"
-    "@morpheme/theme": "npm:^1.0.2-alpha.6+8389bc92"
-    "@morpheme/themes": "npm:^1.0.2-alpha.6+8389bc92"
-    "@morpheme/utils": "npm:^1.0.2-alpha.6+8389bc92"
+    "@morpheme/stats": "npm:^1.0.2-alpha.10+acf6842c"
+    "@morpheme/tailwind-components": "npm:^1.0.2-alpha.10+acf6842c"
+    "@morpheme/tailwind-config": "npm:^1.0.2-alpha.10+acf6842c"
+    "@morpheme/theme": "npm:^1.0.2-alpha.10+acf6842c"
+    "@morpheme/themes": "npm:^1.0.2-alpha.10+acf6842c"
+    "@morpheme/utils": "npm:^1.0.2-alpha.10+acf6842c"
     "@vue/test-utils": "npm:^2.0.0-rc.17"
     "@vueup/vue-quill": "npm:^1.0.0-beta.8"
     "@vueuse/core": "npm:^10.2.1"
-    floating-vue: "npm:^2.0.0-beta.20"
+    floating-vue: "npm:^5.2.2"
     pagino: "npm:^1.4.1"
     quill: "npm:^1.3.7"
+    radix-vue: "npm:^1.9.5"
     sass: "npm:^1.77.8"
     vee-validate: "npm:^4.11.3"
     vue: "npm:^3.4.38"
     vue-router: "npm:^4.1.5"
-  checksum: 10c0/ecc16f99f95d033ddebe4ab74ce9ae11f9447f681cf82abc59f5fbc9991847f9a722baef4318091c010fa5d223074cd3bd8b0543740fff5e21ff4ade02bc60df
+  checksum: 10c0/f6459f248751bf2e388a06c50b6b58ce88719d6014b58aaeec44713004b7248db63275ed11a45b4e314955084fee34f9ae13d01c1a2285e67aa6d7972eb28f9b
   languageName: node
   linkType: hard
 
@@ -2721,13 +2741,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@morpheme/utils@npm:^1.0.2-alpha.6+8389bc92":
-  version: 1.0.2-alpha.6
-  resolution: "@morpheme/utils@npm:1.0.2-alpha.6"
+"@morpheme/utils@npm:^1.0.2-alpha.10+acf6842c":
+  version: 1.0.2-alpha.10
+  resolution: "@morpheme/utils@npm:1.0.2-alpha.10"
   dependencies:
     "@morpheme/design-tokens": "npm:^0.1.0-alpha.5"
     vue: "npm:^3.3.4"
-  checksum: 10c0/e4fa49cfa5eb1ab47ee43629205be1dfb76b8cd1a56b2673f69e928d64daf2e6b0931203a5426bf9eba219f92e83611bf117886f316126d08c987d1ff9b70f00
+  checksum: 10c0/b541b0ab75d78ea6fc33a509d445a2429a918b2a6c281c14abb82e330bff870a7f429e66916d78069e8ff1e6de0e1e4acedab5ed1ea2e4c9203eac8f691774a7
   languageName: node
   linkType: hard
 
@@ -3530,6 +3550,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@swc/helpers@npm:^0.5.0":
+  version: 0.5.12
+  resolution: "@swc/helpers@npm:0.5.12"
+  dependencies:
+    tslib: "npm:^2.4.0"
+  checksum: 10c0/44693c0f34d772d63f3a6fb461964ec583055549a96df9790afec125b2ba06929a63cf9a165a9aaf22317779f460f8caafa94458b70d5cb2bc057b6ba9b5d02c
+  languageName: node
+  linkType: hard
+
 "@tailwindcss/aspect-ratio@npm:^0.4.2":
   version: 0.4.2
   resolution: "@tailwindcss/aspect-ratio@npm:0.4.2"
@@ -3571,7 +3600,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/vue-virtual@npm:^3.0.0-beta.60":
+"@tanstack/vue-virtual@npm:^3.0.0-beta.60, @tanstack/vue-virtual@npm:^3.8.1":
   version: 3.10.6
   resolution: "@tanstack/vue-virtual@npm:3.10.6"
   dependencies:
@@ -4134,7 +4163,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vueuse/core@npm:^10.2.1":
+"@vueuse/core@npm:^10.11.0, @vueuse/core@npm:^10.2.1":
   version: 10.11.1
   resolution: "@vueuse/core@npm:10.11.1"
   dependencies:
@@ -4153,7 +4182,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vueuse/shared@npm:10.11.1":
+"@vueuse/shared@npm:10.11.1, @vueuse/shared@npm:^10.11.0":
   version: 10.11.1
   resolution: "@vueuse/shared@npm:10.11.1"
   dependencies:
@@ -4392,6 +4421,15 @@ __metadata:
   version: 2.0.1
   resolution: "argparse@npm:2.0.1"
   checksum: 10c0/c5640c2d89045371c7cedd6a70212a04e360fd34d6edeae32f6952c63949e3525ea77dbec0289d8213a99bbaeab5abfa860b5c12cf88a2e6cf8106e90dd27a7e
+  languageName: node
+  linkType: hard
+
+"aria-hidden@npm:^1.2.4":
+  version: 1.2.4
+  resolution: "aria-hidden@npm:1.2.4"
+  dependencies:
+    tslib: "npm:^2.0.0"
+  checksum: 10c0/8abcab2e1432efc4db415e97cb3959649ddf52c8fc815d7384f43f3d3abf56f1c12852575d00df9a8927f421d7e0712652dd5f8db244ea57634344e29ecfc74a
   languageName: node
   linkType: hard
 
@@ -7021,9 +7059,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"floating-vue@npm:^2.0.0-beta.20":
-  version: 2.0.0
-  resolution: "floating-vue@npm:2.0.0"
+"floating-vue@npm:^5.2.2":
+  version: 5.2.2
+  resolution: "floating-vue@npm:5.2.2"
   dependencies:
     "@floating-ui/dom": "npm:~1.1.1"
     vue-resize: "npm:^2.0.0-alpha.1"
@@ -7033,7 +7071,7 @@ __metadata:
   peerDependenciesMeta:
     "@nuxt/kit":
       optional: true
-  checksum: 10c0/0f5155c81b5d251a6ffdee4676c49bc1f1b4f1dbe31a571269a21d8dd82b3c4882b23a9d065834ebadb21c8d0c202da38915cceeeec579d003f8bb8911026609
+  checksum: 10c0/f765c4ef62c4bdbc6b38167c472d2badabdd3ace4484819532b099f1a027bcba6dba1916414cca14f6c375e33f399bd42111db3cbf69a3803f44bc3dd88e6761
   languageName: node
   linkType: hard
 
@@ -10553,6 +10591,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"radix-vue@npm:^1.9.5":
+  version: 1.9.5
+  resolution: "radix-vue@npm:1.9.5"
+  dependencies:
+    "@floating-ui/dom": "npm:^1.6.7"
+    "@floating-ui/vue": "npm:^1.1.0"
+    "@internationalized/date": "npm:^3.5.4"
+    "@internationalized/number": "npm:^3.5.3"
+    "@tanstack/vue-virtual": "npm:^3.8.1"
+    "@vueuse/core": "npm:^10.11.0"
+    "@vueuse/shared": "npm:^10.11.0"
+    aria-hidden: "npm:^1.2.4"
+    defu: "npm:^6.1.4"
+    fast-deep-equal: "npm:^3.1.3"
+    nanoid: "npm:^5.0.7"
+  peerDependencies:
+    vue: ">= 3.2.0"
+  checksum: 10c0/1aacbf483f938ccfcb9e19dd376571abffa9d15592d1c6bd2b19b927aa7056d72a6821d7625697ba73dea8ea3d872b39d458f6cbc3a1de390391e0d4b9d29c4d
+  languageName: node
+  linkType: hard
+
 "radix3@npm:^1.1.2":
   version: 1.1.2
   resolution: "radix3@npm:1.1.2"
@@ -11886,6 +11945,13 @@ __metadata:
     minimist: "npm:^1.2.6"
     strip-bom: "npm:^3.0.0"
   checksum: 10c0/5b4f301a2b7a3766a986baf8fc0e177eb80bdba6e396792ff92dc23b5bca8bb279fc96517dcaaef63a3b49bebc6c4c833653ec58155780bc906bdbcf7dda0ef5
+  languageName: node
+  linkType: hard
+
+"tslib@npm:^2.0.0, tslib@npm:^2.4.0":
+  version: 2.7.0
+  resolution: "tslib@npm:2.7.0"
+  checksum: 10c0/469e1d5bf1af585742128827000711efa61010b699cb040ab1800bcd3ccdd37f63ec30642c9e07c4439c1db6e46345582614275daca3e0f4abae29b0083f04a6
   languageName: node
   linkType: hard
 
