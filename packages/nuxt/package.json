@@ -1,7 +1,7 @@
 {
   "name": "@morpheme/nuxt",
   "description": "Nuxt module for Morpheme UI",
-  "version": "1.0.1",
+  "version": "1.1.0-alpha.0",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -27,7 +27,7 @@
     "@nuxt/kit": "^3.13.0"
   },
   "devDependencies": {
-    "@morpheme/tailwind-config": "^1.0.0",
+    "@morpheme/tailwind-config": "^1.1.0-alpha.0",
     "@nuxt/module-builder": "^0.8.3",
     "@nuxt/schema": "^3.13.0",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
