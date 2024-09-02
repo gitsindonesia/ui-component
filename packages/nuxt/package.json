@@ -23,7 +23,7 @@
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
   },
   "dependencies": {
-    "@morpheme/ui": "1.0.2-alpha.2",
+    "@morpheme/ui": "1.0.2-alpha.6+8389bc92",
     "@nuxt/kit": "^3.13.0"
   },
   "devDependencies": {

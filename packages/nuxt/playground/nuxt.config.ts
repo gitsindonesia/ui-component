@@ -1,17 +1,16 @@
 import MorphemeUI from '..';
 
 export default defineNuxtConfig({
-  ssr: false,
+  ssr: true,
 
   modules: [
     MorphemeUI,
     '@nuxtjs/tailwindcss',
-    'floating-vue/nuxt',
   ],
 
   morpheme: {
     darkMode: true,
-    sass: false,
+    sass: true,
     theme: 'morpheme',
     experimentalComponents: true,
   },

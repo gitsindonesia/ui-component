@@ -2574,7 +2574,7 @@ __metadata:
   resolution: "@morpheme/nuxt@workspace:."
   dependencies:
     "@morpheme/tailwind-config": "npm:^1.0.0"
-    "@morpheme/ui": "npm:1.0.2-alpha.2"
+    "@morpheme/ui": "npm:1.0.2-alpha.6+8389bc92"
     "@nuxt/kit": "npm:^3.13.0"
     "@nuxt/module-builder": "npm:^0.8.3"
     "@nuxt/schema": "npm:^3.13.0"
@@ -2586,16 +2586,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@morpheme/stats@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@morpheme/stats@npm:1.0.1"
+"@morpheme/stats@npm:^1.0.2-alpha.6+8389bc92":
+  version: 1.0.2-alpha.6
+  resolution: "@morpheme/stats@npm:1.0.2-alpha.6"
   dependencies:
     "@iconify/vue": "npm:^3.2.1"
     "@morpheme/badge": "npm:^1.0.1"
     "@morpheme/card": "npm:^1.0.1"
     "@morpheme/icon": "npm:^1.0.1"
-    vue: "npm:^3.3.4"
-  checksum: 10c0/9ff2335a2a8d1332ad5d4fa80850547e53abc2eae0d631963bb273b397027984328ae4928dce7ce45ead29d5898b9a890e105278be1d95ce02e261b5258dfb39
+    vue: "npm:^3.4.38"
+  checksum: 10c0/86c02de7915841707c77db4c2691c51703c293a24ec04cdb6419a0c7a514e8dcfbd5292d69b47fefa4c57a126b3750a2d56094bc2ea46d6153bd9136ab67f672
   languageName: node
   linkType: hard
 
@@ -2603,6 +2603,13 @@ __metadata:
   version: 1.0.0
   resolution: "@morpheme/tailwind-components@npm:1.0.0"
   checksum: 10c0/e85f6f151ea19d20f1e5b73c198b52a5c219c937f3fd3acc272b2dc7082a1a41d5c073f83b2faac899728b20da768084a71734591a67e9afc893bf58eaa30ace
+  languageName: node
+  linkType: hard
+
+"@morpheme/tailwind-components@npm:^1.0.2-alpha.6+8389bc92":
+  version: 1.0.2-alpha.6
+  resolution: "@morpheme/tailwind-components@npm:1.0.2-alpha.6"
+  checksum: 10c0/33e35490a667a1c3068a3c87f0faa768d573f0eab127080ea9cc52cfb4e358799462b7edb4deb287aedb70fb96a643875983f5bfb99cc5d948d4f2c398359a18
   languageName: node
   linkType: hard
 
@@ -2623,6 +2630,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@morpheme/tailwind-config@npm:^1.0.2-alpha.6+8389bc92":
+  version: 1.0.2-alpha.6
+  resolution: "@morpheme/tailwind-config@npm:1.0.2-alpha.6"
+  dependencies:
+    "@morpheme/design-tokens": "npm:^0.1.0-alpha.5"
+    "@morpheme/tailwind-components": "npm:^1.0.2-alpha.6+8389bc92"
+    "@morpheme/theme": "npm:^1.0.2-alpha.6+8389bc92"
+    "@morpheme/utils": "npm:^1.0.2-alpha.6+8389bc92"
+    "@tailwindcss/aspect-ratio": "npm:^0.4.2"
+    "@tailwindcss/forms": "npm:^0.5.3"
+    "@tailwindcss/typography": "npm:^0.5.9"
+    tailwindcss: "npm:^3.3.1"
+    vue: "npm:^3.4.38"
+  checksum: 10c0/3d506599586c7e02f2a7db1b4955023e2563b56fc9ddde49b2ad1611698345544c158713bf43b13b34caa6bb55da57d233b6df115a76fdc3d07ddddeb9b96634
+  languageName: node
+  linkType: hard
+
 "@morpheme/theme@npm:^1.0.0":
   version: 1.0.0
   resolution: "@morpheme/theme@npm:1.0.0"
@@ -2633,19 +2657,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@morpheme/themes@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "@morpheme/themes@npm:1.0.0"
+"@morpheme/theme@npm:^1.0.2-alpha.6+8389bc92":
+  version: 1.0.2-alpha.6
+  resolution: "@morpheme/theme@npm:1.0.2-alpha.6"
   dependencies:
-    "@morpheme/design-tokens": "npm:^0.1.0-alpha.5"
-    vue: "npm:^3.3.4"
-  checksum: 10c0/35139a6588fdede429f4ed81e8a481cbecf88917a5c6856d3a893f794a4f20965162e04a389a0d7118538c0c87839aba649254e6f50d1d7b1c4fbfbb22d3685d
+    tailwindcss: "npm:^3.3.1"
+    vue: "npm:^3.4.38"
+  checksum: 10c0/272ff67452dd1587f57899c9dd148e8c91d8e1f64b0218baea7cfec9c172e0d8ffcc8fa6cc4a4afb9a97fd7f80bcf0574861819fb45f81c5b7d530a2a39ee148
   languageName: node
   linkType: hard
 
-"@morpheme/ui@npm:1.0.2-alpha.2":
-  version: 1.0.2-alpha.2
-  resolution: "@morpheme/ui@npm:1.0.2-alpha.2"
+"@morpheme/themes@npm:^1.0.2-alpha.6+8389bc92":
+  version: 1.0.2-alpha.6
+  resolution: "@morpheme/themes@npm:1.0.2-alpha.6"
+  dependencies:
+    "@morpheme/design-tokens": "npm:^0.1.0-alpha.5"
+    sass: "npm:^1.77.8"
+    vue: "npm:^3.4.38"
+  checksum: 10c0/1fa7c2adc800d42765a1de34759ecad992b061d0e17ea7f7fcb8a102c1d7cabd939c0c97aa3344073de4fb2abe1f54380b09cbab3787509d19a6dd8bc18681e5
+  languageName: node
+  linkType: hard
+
+"@morpheme/ui@npm:1.0.2-alpha.6+8389bc92":
+  version: 1.0.2-alpha.6
+  resolution: "@morpheme/ui@npm:1.0.2-alpha.6"
   dependencies:
     "@ckeditor/ckeditor5-build-classic": "npm:^37.0.0"
     "@ckeditor/ckeditor5-vue": "npm:^4.0.1"
@@ -2656,12 +2691,12 @@ __metadata:
     "@iconify/vue": "npm:^4.1.2"
     "@morpheme/design-tokens": "npm:^0.1.0-alpha.5"
     "@morpheme/layouts": "npm:^1.0.1"
-    "@morpheme/stats": "npm:^1.0.1"
-    "@morpheme/tailwind-components": "npm:^1.0.0"
-    "@morpheme/tailwind-config": "npm:^1.0.0"
-    "@morpheme/theme": "npm:^1.0.0"
-    "@morpheme/themes": "npm:^1.0.0"
-    "@morpheme/utils": "npm:^1.0.0"
+    "@morpheme/stats": "npm:^1.0.2-alpha.6+8389bc92"
+    "@morpheme/tailwind-components": "npm:^1.0.2-alpha.6+8389bc92"
+    "@morpheme/tailwind-config": "npm:^1.0.2-alpha.6+8389bc92"
+    "@morpheme/theme": "npm:^1.0.2-alpha.6+8389bc92"
+    "@morpheme/themes": "npm:^1.0.2-alpha.6+8389bc92"
+    "@morpheme/utils": "npm:^1.0.2-alpha.6+8389bc92"
     "@vue/test-utils": "npm:^2.0.0-rc.17"
     "@vueup/vue-quill": "npm:^1.0.0-beta.8"
     "@vueuse/core": "npm:^10.2.1"
@@ -2672,7 +2707,7 @@ __metadata:
     vee-validate: "npm:^4.11.3"
     vue: "npm:^3.4.38"
     vue-router: "npm:^4.1.5"
-  checksum: 10c0/2bad8000280b9eb52a140dd56658a6a37400251f95da8efcd1ad1a0041f48739cb7446461b1f2dffe9373365f34233de447e1a905f2b787a7494a0c81903676f
+  checksum: 10c0/ecc16f99f95d033ddebe4ab74ce9ae11f9447f681cf82abc59f5fbc9991847f9a722baef4318091c010fa5d223074cd3bd8b0543740fff5e21ff4ade02bc60df
   languageName: node
   linkType: hard
 
@@ -2683,6 +2718,16 @@ __metadata:
     "@morpheme/design-tokens": "npm:^0.1.0-alpha.5"
     vue: "npm:^3.3.4"
   checksum: 10c0/ae8fae935a09dc38b723d7bc94527fe670cfa7f7d3ebe4a36680a294ebb1fc0917ce6eebe87be2adf2209e21baff9aa5dbd7fbc1df6fba7740374893b090cce6
+  languageName: node
+  linkType: hard
+
+"@morpheme/utils@npm:^1.0.2-alpha.6+8389bc92":
+  version: 1.0.2-alpha.6
+  resolution: "@morpheme/utils@npm:1.0.2-alpha.6"
+  dependencies:
+    "@morpheme/design-tokens": "npm:^0.1.0-alpha.5"
+    vue: "npm:^3.3.4"
+  checksum: 10c0/e4fa49cfa5eb1ab47ee43629205be1dfb76b8cd1a56b2673f69e928d64daf2e6b0931203a5426bf9eba219f92e83611bf117886f316126d08c987d1ff9b70f00
   languageName: node
   linkType: hard
 
