@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import {VInput, VBtn, VFormSelect, VSelect, VAutocomplete} from '@morpheme/ui';
-
 const items = [
   {
     text: 'Item 1',

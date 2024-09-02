@@ -1,21 +1,21 @@
 import type { Plugin } from 'vue';
-import VBtn from '@morpheme/button';
-import { VAlert, VAlertTitle, VAlertGroup } from '@morpheme/alert';
-import VSpinner from '@morpheme/spinner';
-import VAppBar from '@morpheme/app-bar';
-import { VBadge, VBadgeGroup, VBadgeContent } from '@morpheme/badge';
+import VBtn from './button/src';
+import { VAlert, VAlertTitle, VAlertGroup } from './alert/src';
+import VSpinner from './spinner/src';
+import VAppBar from './app-bar/src';
+import { VBadge, VBadgeGroup, VBadgeContent } from './badge/src';
 import {
   VBreadcrumbs,
   VBreadcrumbsItem,
   VBreadcrumbsDivider,
-} from '@morpheme/breadcrumbs';
+} from './breadcrumbs/src';
 import {
   VCard,
   VCardHeader,
   VCardBody,
   VCardFooter,
   VCardImage,
-} from '@morpheme/card';
+} from './card/src';
 import {
   VCheckbox,
   VFileUpload,
@@ -27,8 +27,8 @@ import {
   VRadioGroup,
   VFormGroup,
   VTextarea,
-} from '@morpheme/forms';
-import { VDataTable, VDataTablePagination } from '@morpheme/table';
+} from './forms/src';
+import { VDataTable, VDataTablePagination } from './table/src';
 import {
   Dropdown,
   DropdownItem,
@@ -36,12 +36,12 @@ import {
   DropdownBtn,
   DropdownHeader,
   DropdownActivator,
-} from '@morpheme/dropdown';
-import VModal from '@morpheme/modal';
-import VPagination from '@morpheme/pagination';
-import VProgressBar from '@morpheme/progress-bar';
-import VSelect from '@morpheme/select';
-import VSwitch from '@morpheme/switch';
+} from './dropdown/src';
+import VModal from './modal/src';
+import VPagination from './pagination/src';
+import VProgressBar from './progress/src';
+import VSelect from './select/src';
+import VSwitch from './switch/src';
 import {
   VTabs,
   VTab,
@@ -51,22 +51,22 @@ import {
   VTabList,
   VTabPanels,
   VTabPanel,
-} from '@morpheme/tabs';
-import VTooltip, { FloatingVuePlugin } from '@morpheme/tooltip';
-import VNavbar from '@morpheme/navbar';
-import VNavDrawer from '@morpheme/nav-drawer';
-import VMenu from '@morpheme/menu';
-import VMenus from '@morpheme/menus';
-import VContainer from '@morpheme/container';
-import VLogo from '@morpheme/logo';
-import VToast from '@morpheme/toast';
+} from './tabs/src';
+import VTooltip, { FloatingVuePlugin } from './tooltip/src';
+import VNavbar from './navbar/src';
+import VNavDrawer from './nav-drawer/src';
+import VMenu from './menu/src';
+import VMenus from './menus/src';
+import VContainer from './container/src';
+import VLogo from './logo/src';
+import VToast from './toast/src';
 import VStats from '@morpheme/stats';
 import {
   VCollapsible,
   VCollapse,
   VCollapsibleGroup,
-} from '@morpheme/collapsible';
-import VMultiSelect from '@morpheme/multi-select';
+} from './collapsible/src';
+import VMultiSelect from './multi-select/src';
 import {
   List,
   ListItem,
@@ -76,13 +76,13 @@ import {
   ListItemTitle,
   ListItemSubTitle,
   ListItemContent,
-} from '@morpheme/list';
-import { Icon } from '@morpheme/icon';
-import Avatar, { AvatarGroup } from '@morpheme/avatar';
-import Shimmer from '@morpheme/shimmer';
-import VAutocomplete from '@morpheme/autocomplete';
+} from './list/src';
+import { Icon } from './icon/src';
+import Avatar, { AvatarGroup } from './avatar/src';
+import Shimmer from './shimmer/src';
+import VAutocomplete from './autocomplete/src';
 import './style.scss';
-import { Rating } from '@morpheme/rating';
+import { Rating } from './rating/src';
 import {
   BottomSheet,
   BottomSheetHeader,
@@ -91,38 +91,38 @@ import {
   BottomSheetMenus,
   BottomSheetOverlay,
   BottomSheetHandle,
-} from '@morpheme/bottom-sheet';
+} from './bottom-sheets/src';
 import {
   Stepper,
   StepperItem,
   StepperDivider,
   StepperNumber,
-} from '@morpheme/stepper';
-import VText from '@morpheme/text';
-import { VAppShell, VMain } from '@morpheme/app-shell';
-import VProgressCircular from '@morpheme/progress-circular';
+} from './steppers/src';
+import VText from './text/src';
+import { VAppShell, VMain } from './app-shell/src';
+import VProgressCircular from './progress-circlular/src';
 import {
   VTimeline,
   VTimelineItem,
   VTimelineDivider,
   VTimelineItemDot,
   VTimelineItemContent,
-} from '@morpheme/timeline';
-import { VBanner, VBannerText } from '@morpheme/banner';
-import { VDivider } from '@morpheme/divider';
+} from './timeline/src';
+import { VBanner, VBannerText } from './banner/src';
+import { VDivider } from './divider/src';
 import {
   VBottomNavigation,
   VBottomNavigationItem,
-} from '@morpheme/bottom-navigation';
+} from './bottom-navigation/src';
 import {
   VPopover,
   VPopoverButton,
   VPopoverGroup,
   VPopoverOverlay,
   VPopoverPanel,
-} from '@morpheme/popover';
-import { VRow, VCol } from '@morpheme/layouts';
-import VCommand from '@morpheme/command';
+} from './popover/src';
+import { VRow, VCol } from './layouts/src';
+import VCommand from './command/src';
 
 const plugin: Plugin = {
   install: (app) => {
@@ -321,19 +321,19 @@ export {
 };
 
 export * from '@morpheme/utils';
-export * from '@morpheme/toast';
-export * from '@morpheme/app-bar/src/types';
-export * from '@morpheme/badge/src/types';
-export * from '@morpheme/breadcrumbs/src/types';
-export * from '@morpheme/table/src/types';
-export * from '@morpheme/dropdown';
-export * from '@morpheme/forms';
-export * from '@morpheme/navbar/src/types';
-export * from '@morpheme/tabs/src/types';
-export * from '@morpheme/modal';
-export * from '@morpheme/bottom-sheet/src/types';
+export * from './toast/src';
+export * from './app-bar/src/types';
+export * from './badge/src/types';
+export * from './breadcrumbs/src/types';
+export * from './table/src/types';
+export * from './dropdown/src';
+export * from './forms/src';
+export * from './navbar/src/types';
+export * from './tabs/src/types';
+export * from './modal/src/types';
+export * from './bottom-sheets/src/types';
 export * from './component-resolver';
 export * from './colors';
 export * from './plugin';
-export * from '@morpheme/timeline';
+export * from './timeline/src';
 export default plugin;

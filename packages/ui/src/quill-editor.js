@@ -1,1 +1,1 @@
-export * from '@morpheme/quill-editor';
+export * from './quill-editor';

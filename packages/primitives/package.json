@@ -8,7 +8,7 @@
     "test": "vitest"
   },
   "dependencies": {
-    "vue": "^3.3.4"
+    "vue": "^3.4.38"
   },
   "main": "./dist/primitives.umd.js",
   "unpkg": "./dist/primitives.iife.js",
@@ -26,7 +26,7 @@
   "gitHead": "02a1a784354fe06a05c5a2ca392aa295335766dd",
   "devDependencies": {
     "c8": "^7.11.3",
-    "vite": "^4.3.8",
+    "vite": "^5.4.2",
     "vitest": "^0.12.4"
   },
   "license": "MIT",

@@ -1,0 +1,25 @@
+@import '../../pagination/src/VPagination.dark.scss';
+
+.dark {
+  .v-data-table-pagination {
+    --v-data-table-pagination-bg-color: theme('colors.neutral.800');
+    --v-data-table-pagination-text-color: theme('colors.neutral.300');
+    --v-data-table-pagination-border-color: theme('colors.neutral.700');
+
+    .v-pagination {
+      --v-pagination-border-radius: theme('borderRadius.lg');
+      --v-pagination-gap: theme('gap.1');
+
+      /* item */
+      --v-pagination-item-border-radius: theme('borderRadius.lg');
+      --v-pagination-item-bg-color: theme('colors.transparent');
+      --v-pagination-item-border-color: theme('colors.transparent');
+      --v-pagination-item-text-color: theme('colors.neutral.200');
+
+      /* item disabled */
+      --v-pagination-item-disabled-bg-color: theme('colors.transparent');
+      --v-pagination-item-disabled-border-color: theme('colors.transparent');
+      --v-pagination-item-disabled-text-color: theme('colors.neutral.500');
+    }
+  }
+}

@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import {useForm} from 'vee-validate';
 import {ref} from 'vue';
-import VBtn from '@morpheme/button';
-import VLogo from '@morpheme/logo';
-import {VInput, VCheckbox} from '@morpheme/forms';
-import VCard from '@morpheme/card';
 
 const showPassword = ref(false);
 const showAlert = ref(false);

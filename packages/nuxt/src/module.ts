@@ -1,5 +1,5 @@
-import {resolve} from 'path';
-import {fileURLToPath} from 'url';
+import { resolve } from 'path';
+import { fileURLToPath } from 'url';
 import {
   defineNuxtModule,
   addPlugin,
@@ -7,7 +7,7 @@ import {
   type AddComponentOptions,
   logger,
 } from '@nuxt/kit';
-import {addCustomTab} from '@nuxt/devtools-kit';
+import { addCustomTab } from '@nuxt/devtools-kit';
 
 const transpile = [
   '@headlessui/vue',
@@ -820,9 +820,9 @@ export default defineNuxtModule<ModuleOptions>({
 
       // load required styles when not using css bundle and not using sass bundle
       if (!options.css && !options.sass && options.loadDefaultStyles) {
-        nuxt.options.css.push('@morpheme/menu/dist/style.css');
-        nuxt.options.css.push('@morpheme/tooltip/dist/style.css');
-        nuxt.options.css.push('@morpheme/theme/transition.css');
+        // nuxt.options.css.push('@morpheme/menu/dist/style.css');
+        // nuxt.options.css.push('@morpheme/tooltip/dist/style.css');
+        // nuxt.options.css.push('@morpheme/theme/transition.css');
       }
 
       // load floating-vue styles

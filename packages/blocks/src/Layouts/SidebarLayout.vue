@@ -1,16 +1,4 @@
 <script setup lang="ts">
-import {List, ListItem, ListItemHeader} from '@morpheme/list';
-import type { DropdownItemProps} from '@morpheme/dropdown';
-import {Dropdown} from '@morpheme/dropdown';
-import Icon from '@morpheme/icon';
-import {ref, watch} from 'vue';
-import VBtn from '@morpheme/button';
-import {VInput} from '@morpheme/forms';
-import '@morpheme/list/src/List.scss';
-import '@morpheme/button/src/VBtn.scss';
-import '@morpheme/dropdown/src/Dropdown.scss';
-import '@morpheme/theme/transition.css';
-
 const accountMenus = ref<DropdownItemProps[]>([
   {
     text: 'Profile',
