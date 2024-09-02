@@ -58,10 +58,32 @@ defineSlots<{
 </script>
 
 <template>
-  <Tooltip :placement="placement" :theme="`tooltip-${color}`">
+  <!-- <Tooltip :placement="placement" :theme="`tooltip-${color}`">
     <slot name="activator" />
     <template #popper>
       <slot />
     </template>
-  </Tooltip>
+  </Tooltip> -->
+  <TooltipProvider>
+    <TooltipRoot>
+      <TooltipTrigger
+        class="IconButton"
+      >
+      <slot name="activator" />
+      </TooltipTrigger>
+      <TooltipPortal>
+        <TooltipContent
+          as-child
+          class="TooltipContent"
+          :side-offset="5"
+        >
+          Add to library
+          <TooltipArrow
+            class="TooltipArrow"
+            :width="8"
+          />
+        </TooltipContent>
+      </TooltipPortal>
+    </TooltipRoot>
+  </TooltipProvider>
 </template>

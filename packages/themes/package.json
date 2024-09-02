@@ -16,6 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "@morpheme/design-tokens": "^0.1.0-alpha.5",
+    "@morpheme/theme": "^1.0.0",
     "vue": "^3.4.38",
     "sass": "^1.77.8"
   },
