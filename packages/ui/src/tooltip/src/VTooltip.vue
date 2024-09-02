@@ -1,6 +1,13 @@
 <script setup lang="ts">
-import {Tooltip} from 'floating-vue';
-import type {PropType} from 'vue';
+import type { PropType } from 'vue';
+import {
+  type TooltipRootProps,
+  type TooltipTriggerProps,
+  type TooltipPortalProps,
+  type TooltipContentProps,
+  type TooltipArrowProps,
+  TooltipArrow, TooltipContent, TooltipPortal, TooltipProvider, TooltipRoot, TooltipTrigger
+} from 'radix-vue'
 
 export type VTooltipPlacement =
   | 'auto'
@@ -20,6 +27,9 @@ export type VTooltipPlacement =
   | 'left-end';
 
 defineProps({
+  /**
+   * @deprecated use `align` and/or `side` instead
+   */
   placement: {
     type: String as PropType<VTooltipPlacement>,
     default: 'bottom',
@@ -49,6 +59,54 @@ defineProps({
     type: String as PropType<'black' | 'white'>,
     default: 'black',
   },
+  arrowWidth: {
+    type: Number,
+    default: 8,
+  },
+  contentSideOffset: {
+    type: Number,
+    default: 8,
+  },
+  hideContentWrapper: {
+    type: Boolean,
+    default: false,
+  },
+  delayDuration: {
+    type: Number,
+    default: 200,
+  },
+  hideArrow: {
+    type: Boolean,
+    default: false,
+  },
+  align: {
+    type: String as PropType<'start' | 'center' | 'end'>,
+    default: 'center',
+  },
+  side: {
+    type: String as PropType<'top' | 'right' | 'bottom' | 'left'>,
+    default: 'top',
+  },
+  rootProps: {
+    type: Object as PropType<Partial<TooltipRootProps>>,
+    default: () => ({}),
+  },
+  triggerProps: {
+    type: Object as PropType<Partial<TooltipTriggerProps>>,
+    default: () => ({}),
+  },
+  portalProps: {
+    type: Object as PropType<Partial<TooltipPortalProps>>,
+    default: () => ({}),
+  },
+  contentProps: {
+    type: Object as PropType<Partial<TooltipContentProps>>,
+    default: () => ({}),
+  },
+  arrowProps: {
+    type: Object as PropType<Partial<TooltipArrowProps>>,
+    default: () => ({}),
+  },
 });
 
 defineSlots<{
@@ -58,30 +116,38 @@ defineSlots<{
 </script>
 
 <template>
-  <!-- <Tooltip :placement="placement" :theme="`tooltip-${color}`">
-    <slot name="activator" />
-    <template #popper>
-      <slot />
-    </template>
-  </Tooltip> -->
   <TooltipProvider>
-    <TooltipRoot>
-      <TooltipTrigger
-        class="IconButton"
+    <TooltipRoot
+      class="v-tooltip"
+      :class="[
+        `v-tooltip--${color}`,
+        `v-tooltip--${placement}`,
+        tooltipClass,
+      ]" 
+      :delay-duration="delayDuration" 
+      v-bind="rootProps"
+    >
+      <TooltipTrigger 
+        class="v-tooltip-trigger" 
+        as-child
+        v-bind="triggerProps"
       >
-      <slot name="activator" />
+        <slot name="activator" v-bind="{ activatorClass }" />
       </TooltipTrigger>
-      <TooltipPortal>
-        <TooltipContent
+      <TooltipPortal v-bind="portalProps">
+        <TooltipContent 
           as-child
-          class="TooltipContent"
-          :side-offset="5"
+          class="v-tooltip-content"
+          :side-offset="contentSideOffset"
+          :align="align"
+          :side="side"
+          v-bind="contentProps"
         >
-          Add to library
-          <TooltipArrow
-            class="TooltipArrow"
-            :width="8"
-          />
+          <div v-if="!hideContentWrapper">
+            <slot />
+          </div>
+          <slot v-else />
+          <TooltipArrow v-if="!hideArrow" class="v-tooltip-arrow" :width="arrowWidth" v-bind="arrowProps" />
         </TooltipContent>
       </TooltipPortal>
     </TooltipRoot>

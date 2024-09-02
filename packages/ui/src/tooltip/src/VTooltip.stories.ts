@@ -3,19 +3,12 @@ import VBtn from '../../button/src';
 import type { Meta, StoryFn } from '@storybook/vue3';
 
 const placements = [
-  'top',
-  'top-start',
-  'top-end',
-  'bottom',
-  'bottom-start',
-  'bottom-end',
-  'right',
-  'right-start',
-  'right-end',
-  'left',
-  'left-start',
-  'left-end',
+  'start',
+  'center',
+  'end'
 ];
+
+const sides = ['top', 'right', 'bottom', 'left'];
 
 export default {
   title: 'Components/Tooltip',
@@ -28,9 +21,9 @@ const Template: StoryFn = (args) => ({
     return { args, placements };
   },
   template: `
-<div class="grid grid-cols-6 items-center justify-center gap-4 h-screen">
+<div class="grid grid-cols-3 items-center justify-center gap-4 h-screen">
   <div class="w-full flex justify-center" v-for="place in placements" :key="place">
-    <VTooltip v-bind='args' :placement="place">
+    <VTooltip v-bind='args' :align="place">
       <template #activator>
         <v-btn>
           {{ place }}
@@ -61,6 +54,27 @@ Tooltip.parameters = {
     },
   },
 };
+
+export const Sides: StoryFn = (args) => ({
+  components: { VTooltip, VBtn },
+  setup() {
+    return { args, sides };
+  },
+  template: `
+<div class="grid grid-cols-4 items-center justify-center gap-4 h-screen">
+  <div class="w-full flex justify-center" v-for="side in sides" :key="side">
+    <VTooltip v-bind='args' :side="side">
+      <template #activator>
+        <v-btn>
+          {{ side }}
+        </v-btn>
+      </template>
+      <span>Hello :)</span>
+    </VTooltip>
+  </div>
+</div>
+  `,
+});
 
 export const Colors: StoryFn = (args) => ({
   components: { VTooltip, VBtn },

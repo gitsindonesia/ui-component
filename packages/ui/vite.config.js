@@ -8,7 +8,9 @@ export default defineConfig({
   esbuild: {
     exclude: [
       './src/**/**.stories.ts',
-      './src/**/**.stories.tsx'
+      './src/**/**.stories.tsx',
+      './src/foundation',
+      './src/stories',
     ],
   },
   build: {

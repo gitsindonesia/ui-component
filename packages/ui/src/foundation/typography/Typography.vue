@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import tokens from '@morpheme/design-tokens/js/tailwind';
-import {remToPx} from '../utils';
 </script>
 
 <template>

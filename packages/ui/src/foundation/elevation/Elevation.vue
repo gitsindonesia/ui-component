@@ -8,7 +8,7 @@ import tokens from '@morpheme/design-tokens/js/tailwind';
     <template v-for="(shadow, name) in tokens.boxShadow" :key="name">
       <div :style="{boxShadow: shadow}" class="rounded-xl p-6 border bg-white">
         <div class="mb-2 font-semibold">
-          {{ name === 'DEFAULT' ? 'shadow' : `shadow-${name}` }}
+          {{ (name as any) === 'DEFAULT' ? 'shadow' : `shadow-${name}` }}
         </div>
         <code class="text-mono text-xs">{{ shadow }}</code>
       </div>

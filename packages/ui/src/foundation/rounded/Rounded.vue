@@ -13,7 +13,7 @@ import {remToPx} from '../utils';
       class="p-6 border-2 text-center bg-white"
     >
       <div class="font-semibold mb-3">
-        {{ name === 'DEFAULT' ? 'rounded' : `rounded-${name}` }}
+        {{ (name as any) === 'DEFAULT' ? 'rounded' : `rounded-${name}` }}
       </div>
       <code>{{ rounded }} ({{ remToPx(rounded) }})</code>
     </div>
