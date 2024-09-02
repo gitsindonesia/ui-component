@@ -25,7 +25,8 @@
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
     "vite": "^5.4.2",
-    "vitest": "^0.12.4"
+    "vitest": "^0.12.4",
+    "vue-tsc": "^2.1.4"
   },
   "main": "dist/iconsax.umd.js",
   "unpkg": "dist/iconsax.iife.js",

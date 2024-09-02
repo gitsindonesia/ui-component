@@ -100,7 +100,7 @@ import {
 } from './steppers/src';
 import VText from './text/src';
 import { VAppShell, VMain } from './app-shell/src';
-import VProgressCircular from './progress-circlular/src';
+import VProgressCircular from './progress-circular/src';
 import {
   VTimeline,
   VTimelineItem,
