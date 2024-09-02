@@ -9,9 +9,9 @@ import {
   Radio,
   FileInput
 } from '../index';
-import {VBtn} from '../../button/src';
+import {VBtn} from '../../../button/src';
 import {ref} from 'vue';
-import {Select as SelectMenu} from '../../select/src';
+import {Select as SelectMenu} from '../../../select/src';
 
 const schema = yup.object({
   name: yup.string().required().label('Name'),

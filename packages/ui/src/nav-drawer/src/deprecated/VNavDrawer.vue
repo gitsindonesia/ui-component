@@ -8,11 +8,11 @@ export default defineComponent({
 
 <script setup lang="ts">
 import {computed, onMounted, type PropType, ref, toRefs, watch} from 'vue';
-import VMenu, {type Menu} from '../../menu/src';
-import VLogo from '../../logo/src';
+import VMenu, {type Menu} from '../../../menu/src';
+import VLogo from '../../../logo/src';
 import {getBgColor} from '@morpheme/utils';
-import VBtn from '../../button/src';
-import Icon from '../../icon/src';
+import VBtn from '../../../button/src';
+import Icon from '../../../icon/src';
 
 const props = defineProps({
   modelValue: {

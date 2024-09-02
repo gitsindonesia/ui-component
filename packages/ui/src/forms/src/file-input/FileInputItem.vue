@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {VBtn} from '../../,,/button/src';
+import {VBtn} from '../../../button/src';
 import VProgressBar from '../../../progress/src';
 import VIcon from '../../../icon/src';
 

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {ref} from 'vue';
 import Select from '../Select.vue';
-import VIcon from '../../icon/src';
+import VIcon from '../../../icon/src';
 
 const users = [
   {

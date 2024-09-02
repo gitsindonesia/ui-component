@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import VAppBar from '../../app-bar/src';
+import VAppBar from '../../../app-bar/src';
 import VMenus from '../VMenus.vue';
 import VMenusItem from '../VMenusItem.vue';
 </script>

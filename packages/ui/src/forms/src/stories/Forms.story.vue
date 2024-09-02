@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import {reactive} from 'vue';
 import {Input, TextareaInput, Select, Radio, Checkbox, FileInput} from '..';
-import {Switch} from '../../switch/src';
-import {VBtn} from '../../button/src';
+import {Switch} from '../../../switch/src';
+import {VBtn} from '../../../button/src';
 
 const form = reactive({
   name: '',

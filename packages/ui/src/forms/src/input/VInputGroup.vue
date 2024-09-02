@@ -3,7 +3,7 @@
 import {ref, toRefs, computed, watch} from 'vue';
 import VInput from './VInput.vue';
 import {ErrorMessage} from 'vee-validate';
-import Icon from '../../icon/src';
+import Icon from '../../../icon/src';
 
 const props = defineProps({
   modelValue: {

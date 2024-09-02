@@ -502,12 +502,11 @@ defineSlots<{
 
         <div class="v-multi-select-action">
           <v-tooltip v-if="uncontrolledValue.length > 1">
-            <template #activator="{on}">
+            <template #activator>
               <v-badge
                 circle
                 class="!p-1 !bg-transparent"
                 @click="clearSelected"
-                v-on="on"
               >
                 <Icon
                   name="ri:close-line"

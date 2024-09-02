@@ -1,4 +1,4 @@
-import type Pagination from '@morpheme/pagination';
+import Pagination from '../../pagination/src/VPagination.vue';
 
 type VPagination = InstanceType<typeof Pagination>['$props'];
 

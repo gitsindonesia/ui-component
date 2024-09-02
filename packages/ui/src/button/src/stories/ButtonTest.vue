@@ -3,8 +3,8 @@ import {ref} from 'vue';
 import VBtn from '../VBtn.vue';
 import VBtnGroup from '../VBtnGroup.vue';
 import VBtnToolbar from '../VBtnToolbar.vue';
-import VIcon from '../../icon/src';
-import VCard from '../../card/src';
+import VIcon from '../../../icon/src';
+import VCard from '../../../card/src';
 
 const colors = [
   'default',

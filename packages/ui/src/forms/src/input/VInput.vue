@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {type PropType, ref} from 'vue';
-import Icon from '../../icon/src';
+import Icon from '../../../icon/src';
 import {useFormValue, type ValidationMode} from '../composables';
 import ErrorMessage from '../ErrorMessage.vue';
 

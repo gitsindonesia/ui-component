@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import VDataTable from '../VDataTable.vue';
-import {Checkbox} from '../../forms/src';
-import Icon from '../../icon/src';
+import {Checkbox} from '../../../forms/src';
+import Icon from '../../../icon/src';
 import {items, headers} from './data';
 </script>
 

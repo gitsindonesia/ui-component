@@ -27,6 +27,8 @@
   "exclude": [
     "**/*.stories.ts",
     "**/*.stories.tsx",
+    "**/*.story.vue",
+    "**/vite.config.*",
     "**/*.spec.ts",
     "**/*.test.ts"
   ]

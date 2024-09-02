@@ -9,8 +9,8 @@ const props = withDefaults(
   {},
 );
 
-const bgColor = getColor(props.color) as any;
-const textColor = getColor(props.textColor);
+const bgColor = getColor(props.color) as any
+const textColor = getColor(props.textColor) as any;
 </script>
 
 <template>
