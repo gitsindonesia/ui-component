@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {defaultColors} from '@morpheme/theme/defaultTheme';
-import {tabVariants} from '@morpheme/tabs';
+import {tabVariants} from '@morpheme/ui/src/tabs/src/variants';
 
 useHead({
   title: 'Morpheme UI Playground',

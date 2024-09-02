@@ -23,7 +23,7 @@
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
   },
   "dependencies": {
-    "@morpheme/ui": "^1.0.1",
+    "@morpheme/ui": "1.0.2-alpha.2",
     "@nuxt/kit": "^3.13.0"
   },
   "devDependencies": {
@@ -36,5 +36,6 @@
     "eslint": "^9.9.1",
     "nuxt": "^3.13.0"
   },
-  "gitHead": "02a1a784354fe06a05c5a2ca392aa295335766dd"
+  "gitHead": "02a1a784354fe06a05c5a2ca392aa295335766dd",
+  "packageManager": "yarn@4.4.1"
 }

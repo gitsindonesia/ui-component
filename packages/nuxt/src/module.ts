@@ -13,620 +13,583 @@ const transpile = [
   '@headlessui/vue',
   '@heroicons/vue',
   '@morpheme/ui',
-  '@morpheme/alert',
-  '@morpheme/app-bar',
-  '@morpheme/badge',
-  '@morpheme/breadcrumbs',
-  '@morpheme/button',
-  '@morpheme/bottom-sheet',
-  '@morpheme/card',
-  '@morpheme/collapsible',
-  '@morpheme/container',
-  '@morpheme/dropdown',
-  '@morpheme/editor',
-  '@morpheme/forms',
-  '@morpheme/icon',
-  '@morpheme/layouts',
-  '@morpheme/list',
-  '@morpheme/logo',
-  '@morpheme/menu',
-  '@morpheme/menus',
-  '@morpheme/modal',
-  '@morpheme/multi-select',
-  '@morpheme/nav-drawer',
-  '@morpheme/navbar',
-  '@morpheme/pages',
-  '@morpheme/pagination',
-  '@morpheme/progress-bar',
-  '@morpheme/select',
-  '@morpheme/services',
-  '@morpheme/spinner',
-  '@morpheme/stats',
-  '@morpheme/switch',
-  '@morpheme/table',
-  '@morpheme/tabs',
-  '@morpheme/theme',
-  '@morpheme/toast',
-  '@morpheme/tooltip',
   '@morpheme/utils',
-  '@morpheme/text',
-  '@morpheme/app-shell',
-  '@morpheme/progress-circular',
   '@morpheme/design-tokens',
-  '@morpheme/banner',
-  '@morpheme/divider',
-  '@morpheme/bottom-navigation',
-  '@morpheme/popover',
   'floating-vue',
 ];
 
-const optimizeDeps = ['yup', '@morpheme/design-tokens'];
+const optimizeDeps = [
+  'yup',
+  '@morpheme/design-tokens',
+  '@vueup/vue-quill',
+  'quill'
+];
 
 const components: AddComponentOptions[] = [
   {
     name: 'Alert',
-    filePath: '@morpheme/alert/src/VAlert.vue',
+    filePath: '@morpheme/ui/src/alert/src/VAlert.vue',
   },
   {
     name: 'AlertTitle',
-    filePath: '@morpheme/alert/src/VAlertTitle.vue',
+    filePath: '@morpheme/ui/src/alert/src/VAlertTitle.vue',
   },
   {
     name: 'AppBar',
-    filePath: '@morpheme/app-bar/src/VAppBar.vue',
+    filePath: '@morpheme/ui/src/app-bar/src/VAppBar.vue',
   },
   {
     name: 'Autocomplete',
-    filePath: '@morpheme/autocomplete/src/VAutocomplete.vue',
+    filePath: '@morpheme/ui/src/autocomplete/src/VAutocomplete.vue',
   },
   {
     name: 'Avatar',
-    filePath: '@morpheme/avatar/src/Avatar.vue',
+    filePath: '@morpheme/ui/src/avatar/src/Avatar.vue',
   },
   {
     name: 'AvatarGroup',
-    filePath: '@morpheme/avatar/src/AvatarGroup.vue',
+    filePath: '@morpheme/ui/src/avatar/src/AvatarGroup.vue',
   },
   {
     name: 'Badge',
-    filePath: '@morpheme/badge/src/VBadge.vue',
+    filePath: '@morpheme/ui/src/badge/src/VBadge.vue',
   },
   {
     name: 'BadgeGroup',
-    filePath: '@morpheme/badge/src/VBadgeGroup.vue',
+    filePath: '@morpheme/ui/src/badge/src/VBadgeGroup.vue',
   },
   {
     name: 'BadgeContent',
-    filePath: '@morpheme/badge/src/VBadgeContent.vue',
+    filePath: '@morpheme/ui/src/badge/src/VBadgeContent.vue',
   },
   {
     name: 'Breadcrumbs',
-    filePath: '@morpheme/breadcrumbs/src/VBreadcrumbs.vue',
+    filePath: '@morpheme/ui/src/breadcrumbs/src/VBreadcrumbs.vue',
   },
   {
     name: 'BreadcrumbsItem',
-    filePath: '@morpheme/breadcrumbs/src/VBreadcrumbsItem.vue',
+    filePath: '@morpheme/ui/src/breadcrumbs/src/VBreadcrumbsItem.vue',
   },
   {
     name: 'BreadcrumbsDivider',
-    filePath: '@morpheme/breadcrumbs/src/VBreadcrumbsDivider.vue',
+    filePath: '@morpheme/ui/src/breadcrumbs/src/VBreadcrumbsDivider.vue',
   },
   {
     name: 'Btn',
-    filePath: '@morpheme/button/src/VBtn.vue',
+    filePath: '@morpheme/ui/src/button/src/VBtn.vue',
   },
   {
     name: 'Button',
-    filePath: '@morpheme/button/src/VBtn.vue',
+    filePath: '@morpheme/ui/src/button/src/VBtn.vue',
   },
   {
     name: 'BtnGroup',
-    filePath: '@morpheme/button/src/VBtnGroup.vue',
+    filePath: '@morpheme/ui/src/button/src/VBtnGroup.vue',
   },
   {
     name: 'BtnToolbar',
-    filePath: '@morpheme/button/src/VBtnToolbar.vue',
+    filePath: '@morpheme/ui/src/button/src/VBtnToolbar.vue',
   },
   {
     name: 'Card',
-    filePath: '@morpheme/card/src/VCard.vue',
+    filePath: '@morpheme/ui/src/card/src/VCard.vue',
   },
   {
     name: 'CardHeader',
-    filePath: '@morpheme/card/src/VCardHeader.vue',
+    filePath: '@morpheme/ui/src/card/src/VCardHeader.vue',
   },
   {
     name: 'CardFooter',
-    filePath: '@morpheme/card/src/VCardFooter.vue',
+    filePath: '@morpheme/ui/src/card/src/VCardFooter.vue',
   },
   {
     name: 'CardBody',
-    filePath: '@morpheme/card/src/VCardBody.vue',
+    filePath: '@morpheme/ui/src/card/src/VCardBody.vue',
   },
   {
     name: 'CardImage',
-    filePath: '@morpheme/card/src/VCardImage.vue',
+    filePath: '@morpheme/ui/src/card/src/VCardImage.vue',
   },
   {
     name: 'Collapsible',
-    filePath: '@morpheme/collapsible/src/VCollapsible.vue',
+    filePath: '@morpheme/ui/src/collapsible/src/VCollapsible.vue',
   },
   {
     name: 'Collapse',
-    filePath: '@morpheme/collapsible/src/VCollapse.vue',
+    filePath: '@morpheme/ui/src/collapsible/src/VCollapse.vue',
   },
   {
     name: 'Container',
-    filePath: '@morpheme/container/src/VContainer.vue',
+    filePath: '@morpheme/ui/src/container/src/VContainer.vue',
   },
   {
     name: 'Row',
-    filePath: '@morpheme/layouts/src/VRow.vue',
+    filePath: '@morpheme/ui/src/layouts/src/VRow.vue',
   },
   {
     name: 'Col',
-    filePath: '@morpheme/layouts/src/VCol.vue',
+    filePath: '@morpheme/ui/src/layouts/src/VCol.vue',
   },
   {
     name: 'Dropdown',
-    filePath: '@morpheme/dropdown/src/Dropdown.vue',
+    filePath: '@morpheme/ui/src/dropdown/src/Dropdown.vue',
   },
   {
     name: 'DropdownButton',
-    filePath: '@morpheme/dropdown/src/DropdownButton.vue',
+    filePath: '@morpheme/ui/src/dropdown/src/DropdownButton.vue',
   },
   {
     name: 'DropdownItem',
-    filePath: '@morpheme/dropdown/src/DropdownItem.vue',
+    filePath: '@morpheme/ui/src/dropdown/src/DropdownItem.vue',
   },
   {
     name: 'DropdownBtn',
-    filePath: '@morpheme/dropdown/src/DropdownBtn.vue',
+    filePath: '@morpheme/ui/src/dropdown/src/DropdownBtn.vue',
   },
   {
     name: 'DropdownHeader',
-    filePath: '@morpheme/dropdown/src/DropdownHeader.vue',
+    filePath: '@morpheme/ui/src/dropdown/src/DropdownHeader.vue',
   },
   {
     name: 'DropdownActivator',
-    filePath: '@morpheme/dropdown/src/DropdownActivator.vue',
+    filePath: '@morpheme/ui/src/dropdown/src/DropdownActivator.vue',
   },
   {
     name: 'Editor',
-    filePath: '@morpheme/editor/src/VEditor.vue',
+    filePath: '@morpheme/ui/src/editor/src/VEditor.vue',
   },
   {
     name: 'QuillEditor',
-    filePath: '@morpheme/quill-editor/src/VQuillEditor.vue',
+    filePath: '@morpheme/ui/src/quill-editor/src/VQuillEditor.vue',
   },
   {
     name: 'Input',
-    filePath: '@morpheme/forms/src/input/VInput.vue',
+    filePath: '@morpheme/ui/src/forms/src/input/VInput.vue',
   },
   /**
    * @deprecated
    */
   {
     name: 'InputGroup',
-    filePath: '@morpheme/forms/src/input/VInputGroup.vue',
+    filePath: '@morpheme/ui/src/forms/src/input/VInputGroup.vue',
   },
   {
     name: 'InputRange',
-    filePath: '@morpheme/forms/src/input/VInputRange.vue',
+    filePath: '@morpheme/ui/src/forms/src/input/VInputRange.vue',
   },
   {
     name: 'Checkbox',
-    filePath: '@morpheme/forms/src/checkbox/VCheckbox.vue',
+    filePath: '@morpheme/ui/src/forms/src/checkbox/VCheckbox.vue',
   },
   {
     name: 'FileUpload',
-    filePath: '@morpheme/forms/src/file-input/VFileUpload.vue',
+    filePath: '@morpheme/ui/src/forms/src/file-input/VFileUpload.vue',
   },
   {
     name: 'FileUploadActions',
-    filePath: '@morpheme/forms/src/file-input/VFileUploadActions.vue',
+    filePath: '@morpheme/ui/src/forms/src/file-input/VFileUploadActions.vue',
   },
   {
     name: 'FileUploadButtonTheme',
-    filePath: '@morpheme/forms/src/file-input/VFileUploadButtonTheme.vue',
+    filePath: '@morpheme/ui/src/forms/src/file-input/VFileUploadButtonTheme.vue',
   },
   {
     name: 'FileUploadDefaultTheme',
-    filePath: '@morpheme/forms/src/file-input/VFileUploadDefaultTheme.vue',
+    filePath: '@morpheme/ui/src/forms/src/file-input/VFileUploadDefaultTheme.vue',
   },
   {
     name: 'FileUploadDropzoneTheme',
-    filePath: '@morpheme/forms/src/file-input/VFileUploadDropzoneTheme.vue',
+    filePath: '@morpheme/ui/src/forms/src/file-input/VFileUploadDropzoneTheme.vue',
   },
   {
     name: 'FileUploadImageTheme',
-    filePath: '@morpheme/forms/src/file-input/VFileUploadImageTheme.vue',
+    filePath: '@morpheme/ui/src/forms/src/file-input/VFileUploadImageTheme.vue',
   },
   {
     name: 'FormGroup',
-    filePath: '@morpheme/forms/src/form-group/VFormGroup.vue',
+    filePath: '@morpheme/ui/src/forms/src/form-group/VFormGroup.vue',
   },
   {
     name: 'FormSelect',
-    filePath: '@morpheme/forms/src/form-select/VFormSelect.vue',
+    filePath: '@morpheme/ui/src/forms/src/form-select/VFormSelect.vue',
   },
   {
     name: 'Radio',
-    filePath: '@morpheme/forms/src/radio/VRadio.vue',
+    filePath: '@morpheme/ui/src/forms/src/radio/VRadio.vue',
   },
   {
     name: 'RadioGroup',
-    filePath: '@morpheme/forms/src/radio/VRadioGroup.vue',
+    filePath: '@morpheme/ui/src/forms/src/radio/VRadioGroup.vue',
   },
   {
     name: 'Textarea',
-    filePath: '@morpheme/forms/src/textarea/Textarea.vue',
+    filePath: '@morpheme/ui/src/forms/src/textarea/Textarea.vue',
   },
   {
     name: 'Icon',
-    filePath: '@morpheme/icon/src/Icon.vue',
+    filePath: '@morpheme/ui/src/icon/src/Icon.vue',
   },
   {
     name: 'Logo',
-    filePath: '@morpheme/logo/src/VLogo.vue',
+    filePath: '@morpheme/ui/src/logo/src/VLogo.vue',
   },
   {
     name: 'List',
-    filePath: '@morpheme/list/src/List.vue',
+    filePath: '@morpheme/ui/src/list/src/List.vue',
   },
   {
     name: 'ListItem',
-    filePath: '@morpheme/list/src/ListItem.vue',
+    filePath: '@morpheme/ui/src/list/src/ListItem.vue',
   },
   {
     name: 'ListCollapse',
-    filePath: '@morpheme/list/src/ListCollapse.vue',
+    filePath: '@morpheme/ui/src/list/src/ListCollapse.vue',
   },
   {
     name: 'ListItemDivider',
-    filePath: '@morpheme/list/src/ListItemDivider.vue',
+    filePath: '@morpheme/ui/src/list/src/ListItemDivider.vue',
   },
   {
     name: 'ListItemHeader',
-    filePath: '@morpheme/list/src/ListItemHeader.vue',
+    filePath: '@morpheme/ui/src/list/src/ListItemHeader.vue',
   },
   {
     name: 'ListItemTitle',
-    filePath: '@morpheme/list/src/ListItemTitle.vue',
+    filePath: '@morpheme/ui/src/list/src/ListItemTitle.vue',
   },
   {
     name: 'ListItemSubTitle',
-    filePath: '@morpheme/list/src/ListItemSubTitle.vue',
+    filePath: '@morpheme/ui/src/list/src/ListItemSubTitle.vue',
   },
   {
     name: 'ListItemContent',
-    filePath: '@morpheme/list/src/ListItemContent.vue',
+    filePath: '@morpheme/ui/src/list/src/ListItemContent.vue',
   },
   {
     name: 'Menu',
-    filePath: '@morpheme/menu/src/VMenu.vue',
+    filePath: '@morpheme/ui/src/menu/src/VMenu.vue',
   },
   {
     name: 'MenuItem',
-    filePath: '@morpheme/menu/src/VMenuItem.vue',
+    filePath: '@morpheme/ui/src/menu/src/VMenuItem.vue',
   },
   {
     name: 'MenuIcon',
-    filePath: '@morpheme/menu/src/VMenuIcon.vue',
+    filePath: '@morpheme/ui/src/menu/src/VMenuIcon.vue',
   },
   {
     name: 'MenuTooltip',
-    filePath: '@morpheme/menu/src/VMenuTooltip.vue',
+    filePath: '@morpheme/ui/src/menu/src/VMenuTooltip.vue',
   },
   {
     name: 'Menus',
-    filePath: '@morpheme/menus/src/VMenus.vue',
+    filePath: '@morpheme/ui/src/menus/src/VMenus.vue',
   },
   {
     name: 'MenusItem',
-    filePath: '@morpheme/menus/src/VMenusItem.vue',
+    filePath: '@morpheme/ui/src/menus/src/VMenusItem.vue',
   },
   {
     name: 'Modal',
-    filePath: '@morpheme/modal/src/VModal.vue',
+    filePath: '@morpheme/ui/src/modal/src/VModal.vue',
   },
   {
     name: 'ModalGroup',
-    filePath: '@morpheme/modal/src/Modal.vue',
+    filePath: '@morpheme/ui/src/modal/src/Modal.vue',
   },
   {
     name: 'ModalHeader',
-    filePath: '@morpheme/modal/src/ModalHeader.vue',
+    filePath: '@morpheme/ui/src/modal/src/ModalHeader.vue',
   },
   {
     name: 'ModalBody',
-    filePath: '@morpheme/modal/src/ModalBody.vue',
+    filePath: '@morpheme/ui/src/modal/src/ModalBody.vue',
   },
   {
     name: 'ModalFooter',
-    filePath: '@morpheme/modal/src/ModalFooter.vue',
+    filePath: '@morpheme/ui/src/modal/src/ModalFooter.vue',
   },
   {
     name: 'ModalTitle',
-    filePath: '@morpheme/modal/src/ModalTitle.vue',
+    filePath: '@morpheme/ui/src/modal/src/ModalTitle.vue',
   },
   {
     name: 'MultiSelect',
-    filePath: '@morpheme/multi-select/src/VMultiSelect.vue',
+    filePath: '@morpheme/ui/src/multi-select/src/VMultiSelect.vue',
   },
   {
     name: 'NavDrawer',
-    filePath: '@morpheme/nav-drawer/src/NavDrawer.vue',
+    filePath: '@morpheme/ui/src/nav-drawer/src/NavDrawer.vue',
   },
   /**
    * @deprecated
    */
   {
     name: 'Navbar',
-    filePath: '@morpheme/navbar/src/VNavbar.vue',
+    filePath: '@morpheme/ui/src/navbar/src/VNavbar.vue',
   },
   {
     name: 'Pagination',
-    filePath: '@morpheme/pagination/src/VPagination.vue',
+    filePath: '@morpheme/ui/src/pagination/src/VPagination.vue',
   },
   {
     name: 'PaginationItem',
-    filePath: '@morpheme/pagination/src/VPaginationItem.vue',
+    filePath: '@morpheme/ui/src/pagination/src/VPaginationItem.vue',
   },
   {
     name: 'ProgressBar',
-    filePath: '@morpheme/progress-bar/src/VProgressBar.vue',
+    filePath: '@morpheme/ui/src/progress/src/VProgressBar.vue',
   },
   {
     name: 'Select',
-    filePath: '@morpheme/select/src/VSelect.vue',
+    filePath: '@morpheme/ui/src/select/src/VSelect.vue',
   },
   {
     name: 'Shimmer',
-    filePath: '@morpheme/shimmer/src/Shimmer.vue',
+    filePath: '@morpheme/ui/src/shimmer/src/Shimmer.vue',
   },
   {
     name: 'Spinner',
-    filePath: '@morpheme/spinner/src/VSpinner.vue',
+    filePath: '@morpheme/ui/src/spinner/src/VSpinner.vue',
   },
   {
     name: 'Switch',
-    filePath: '@morpheme/switch/src/VSwitch.vue',
+    filePath: '@morpheme/ui/src/switch/src/VSwitch.vue',
   },
   {
     name: 'DataTable',
-    filePath: '@morpheme/table/src/VDataTable.vue',
+    filePath: '@morpheme/ui/src/table/src/VDataTable.vue',
   },
   {
     name: 'DataTablePagination',
-    filePath: '@morpheme/table/src/VDataTablePagination.vue',
+    filePath: '@morpheme/ui/src/table/src/VDataTablePagination.vue',
   },
   {
     name: 'Tabs',
-    filePath: '@morpheme/tabs/src/VTabs.vue',
+    filePath: '@morpheme/ui/src/tabs/src/VTabs.vue',
   },
   {
     name: 'Tab',
-    filePath: '@morpheme/tabs/src/VTab.vue',
+    filePath: '@morpheme/ui/src/tabs/src/VTab.vue',
   },
   {
     name: 'TabsSlider',
-    filePath: '@morpheme/tabs/src/VTabsSlider.vue',
+    filePath: '@morpheme/ui/src/tabs/src/VTabsSlider.vue',
   },
   {
     name: 'TabGroup',
-    filePath: '@morpheme/tabs/src/VTabGroup.vue',
+    filePath: '@morpheme/ui/src/tabs/src/VTabGroup.vue',
   },
   {
     name: 'TabList',
-    filePath: '@morpheme/tabs/src/VTabList.vue',
+    filePath: '@morpheme/ui/src/tabs/src/VTabList.vue',
   },
   {
     name: 'TabItem',
-    filePath: '@morpheme/tabs/src/VTabItem.vue',
+    filePath: '@morpheme/ui/src/tabs/src/VTabItem.vue',
   },
   {
     name: 'TabPanels',
-    filePath: '@morpheme/tabs/src/VTabPanels.vue',
+    filePath: '@morpheme/ui/src/tabs/src/VTabPanels.vue',
   },
   {
     name: 'TabPanel',
-    filePath: '@morpheme/tabs/src/VTabPanel.vue',
+    filePath: '@morpheme/ui/src/tabs/src/VTabPanel.vue',
   },
   {
     name: 'Toast',
-    filePath: '@morpheme/toast/src/VToast.vue',
+    filePath: '@morpheme/ui/src/toast/src/VToast.vue',
   },
   {
     name: 'Tooltip',
-    filePath: '@morpheme/tooltip/src/VTooltip.vue',
+    filePath: '@morpheme/ui/src/tooltip/src/VTooltip.vue',
   },
   {
     name: 'Rating',
-    filePath: '@morpheme/rating/src/Rating.vue',
+    filePath: '@morpheme/ui/src/rating/src/Rating.vue',
   },
   {
     name: 'BottomSheet',
-    filePath: '@morpheme/bottom-sheet/src/BottomSheet.vue',
+    filePath: '@morpheme/ui/src/bottom-sheets/src/BottomSheet.vue',
   },
   {
     name: 'BottomSheetBody',
-    filePath: '@morpheme/bottom-sheet/src/BottomSheetBody.vue',
+    filePath: '@morpheme/ui/src/bottom-sheets/src/BottomSheetBody.vue',
   },
   {
     name: 'BottomSheetFooter',
-    filePath: '@morpheme/bottom-sheet/src/BottomSheetFooter.vue',
+    filePath: '@morpheme/ui/src/bottom-sheets/src/BottomSheetFooter.vue',
   },
   {
     name: 'BottomSheetHeader',
-    filePath: '@morpheme/bottom-sheet/src/BottomSheetHeader.vue',
+    filePath: '@morpheme/ui/src/bottom-sheets/src/BottomSheetHeader.vue',
   },
   {
     name: 'BottomSheetMenus',
-    filePath: '@morpheme/bottom-sheet/src/BottomSheetMenus.vue',
+    filePath: '@morpheme/ui/src/bottom-sheets/src/BottomSheetMenus.vue',
   },
   {
     name: 'BottomSheetOverlay',
-    filePath: '@morpheme/bottom-sheet/src/BottomSheetOverlay.vue',
+    filePath: '@morpheme/ui/src/bottom-sheets/src/BottomSheetOverlay.vue',
   },
   {
     name: 'BottomSheetHandle',
-    filePath: '@morpheme/bottom-sheet/src/BottomSheetHandle.vue',
+    filePath: '@morpheme/ui/src/bottom-sheets/src/BottomSheetHandle.vue',
   },
   {
     name: 'Text',
-    filePath: '@morpheme/text/src/VText.vue',
+    filePath: '@morpheme/ui/src/text/src/VText.vue',
   },
   {
     name: 'AppShell',
-    filePath: '@morpheme/app-shell/src/VAppShell.vue',
+    filePath: '@morpheme/ui/src/app-shell/src/VAppShell.vue',
   },
   {
     name: 'Main',
-    filePath: '@morpheme/app-shell/src/VMain.vue',
+    filePath: '@morpheme/ui/src/app-shell/src/VMain.vue',
   },
   {
     name: 'ProgressCircular',
-    filePath: '@morpheme/progress-circular/src/VProgressCircular.vue',
+    filePath: '@morpheme/ui/src/progress-circular/src/VProgressCircular.vue',
   },
   {
     name: 'Timeline',
-    filePath: '@morpheme/timeline/src/VTimeline.vue',
+    filePath: '@morpheme/ui/src/timeline/src/VTimeline.vue',
   },
   {
     name: 'TimelineDivider',
-    filePath: '@morpheme/timeline/src/VTimelineDivider.vue',
+    filePath: '@morpheme/ui/src/timeline/src/VTimelineDivider.vue',
   },
   {
     name: 'TimelineItem',
-    filePath: '@morpheme/timeline/src/VTimelineItem.vue',
+    filePath: '@morpheme/ui/src/timeline/src/VTimelineItem.vue',
   },
   {
     name: 'TimelineItemDot',
-    filePath: '@morpheme/timeline/src/VTimelineItemDot.vue',
+    filePath: '@morpheme/ui/src/timeline/src/VTimelineItemDot.vue',
   },
   {
     name: 'TimelineItemContent',
-    filePath: '@morpheme/timeline/src/VTimelineItemContent.vue',
+    filePath: '@morpheme/ui/src/timeline/src/VTimelineItemContent.vue',
   },
   {
     name: 'Banner',
-    filePath: '@morpheme/banner/src/VBanner.vue',
+    filePath: '@morpheme/ui/src/banner/src/VBanner.vue',
   },
   {
     name: 'BannerText',
-    filePath: '@morpheme/banner/src/VBannerText.vue',
+    filePath: '@morpheme/ui/src/banner/src/VBannerText.vue',
   },
   {
     name: 'Divider',
-    filePath: '@morpheme/divider/src/VDivider.vue',
+    filePath: '@morpheme/ui/src/divider/src/VDivider.vue',
   },
   {
     name: 'BottomNavigation',
-    filePath: '@morpheme/bottom-navigation/src/VBottomNavigation.vue',
+    filePath: '@morpheme/ui/src/bottom-navigation/src/VBottomNavigation.vue',
   },
   {
     name: 'BottomNavigationItem',
-    filePath: '@morpheme/bottom-navigation/src/VBottomNavigationItem.vue',
+    filePath: '@morpheme/ui/src/bottom-navigation/src/VBottomNavigationItem.vue',
   },
   {
     name: 'Popover',
-    filePath: '@morpheme/popover/src/VPopover.vue',
+    filePath: '@morpheme/ui/src/popover/src/VPopover.vue',
   },
   {
     name: 'PopoverButton',
-    filePath: '@morpheme/popover/src/VPopoverButton.vue',
+    filePath: '@morpheme/ui/src/popover/src/VPopoverButton.vue',
   },
   {
     name: 'PopoverGroup',
-    filePath: '@morpheme/popover/src/VPopoverGroup.vue',
+    filePath: '@morpheme/ui/src/popover/src/VPopoverGroup.vue',
   },
   {
     name: 'PopoverOverlay',
-    filePath: '@morpheme/popover/src/VPopoverOverlay.vue',
+    filePath: '@morpheme/ui/src/popover/src/VPopoverOverlay.vue',
   },
   {
     name: 'PopoverPanel',
-    filePath: '@morpheme/popover/src/VPopoverPanel.vue',
+    filePath: '@morpheme/ui/src/popover/src/VPopoverPanel.vue',
   },
   {
     name: 'Command',
-    filePath: '@morpheme/command/src/VCommand.vue',
+    filePath: '@morpheme/ui/src/command/src/VCommand.vue',
   },
 ];
 
 const experimentalComponents: AddComponentOptions[] = [
   {
     name: 'Select',
-    filePath: '@morpheme/select/src/Select.vue',
+    filePath: '@morpheme/ui/src/select/src/Select.vue',
   },
   {
     name: 'Autocomplete',
-    filePath: '@morpheme/autocomplete/src/Autocomplete.vue',
+    filePath: '@morpheme/ui/src/autocomplete/src/Autocomplete.vue',
   },
   {
     name: 'Checkbox',
-    filePath: '@morpheme/forms/src/checkbox/Checkbox.vue',
+    filePath: '@morpheme/ui/src/forms/src/checkbox/Checkbox.vue',
   },
   {
     name: 'CheckboxField',
-    filePath: '@morpheme/forms/src/checkbox/CheckboxField.vue',
+    filePath: '@morpheme/ui/src/forms/src/checkbox/CheckboxField.vue',
   },
   {
     name: 'FileInput',
-    filePath: '@morpheme/forms/src/file-input/FileInput.vue',
+    filePath: '@morpheme/ui/src/forms/src/file-input/FileInput.vue',
   },
   {
     name: 'FileInputButtonActivator',
-    filePath: '@morpheme/forms/src/file-input/FileInputButtonActivator.vue',
+    filePath: '@morpheme/ui/src/forms/src/file-input/FileInputButtonActivator.vue',
   },
   {
     name: 'FileInputDefaultActivator',
-    filePath: '@morpheme/forms/src/file-input/FileInputDefaultActivator.vue',
+    filePath: '@morpheme/ui/src/forms/src/file-input/FileInputDefaultActivator.vue',
   },
   {
     name: 'FileInputField',
-    filePath: '@morpheme/forms/src/file-input/FileInputField.vue',
+    filePath: '@morpheme/ui/src/forms/src/file-input/FileInputField.vue',
   },
   {
     name: 'FileInputItem',
-    filePath: '@morpheme/forms/src/file-input/FileInputItem.vue',
+    filePath: '@morpheme/ui/src/forms/src/file-input/FileInputItem.vue',
   },
   {
     name: 'FileInputItems',
-    filePath: '@morpheme/forms/src/file-input/FileInputItems.vue',
+    filePath: '@morpheme/ui/src/forms/src/file-input/FileInputItems.vue',
   },
   {
     name: 'FormSelect',
-    filePath: '@morpheme/forms/src/form-select/Select.vue',
+    filePath: '@morpheme/ui/src/forms/src/form-select/Select.vue',
   },
   {
     name: 'FormSelectInputField',
-    filePath: '@morpheme/forms/src/form-select/SelectField.vue',
+    filePath: '@morpheme/ui/src/forms/src/form-select/SelectField.vue',
   },
   {
     name: 'Input',
-    filePath: '@morpheme/forms/src/input/Input.vue',
+    filePath: '@morpheme/ui/src/forms/src/input/Input.vue',
   },
   {
     name: 'InputField',
-    filePath: '@morpheme/forms/src/input/InputField.vue',
+    filePath: '@morpheme/ui/src/forms/src/input/InputField.vue',
   },
   {
     name: 'SelectOptions',
-    filePath: '@morpheme/forms/src/input/SelectOptions.vue',
+    filePath: '@morpheme/ui/src/forms/src/input/SelectOptions.vue',
   },
   {
     name: 'Radio',
-    filePath: '@morpheme/forms/src/radio/Radio.vue',
+    filePath: '@morpheme/ui/src/forms/src/radio/Radio.vue',
   },
   {
     name: 'Textarea',
-    filePath: '@morpheme/forms/src/textarea/TextareaInput.vue',
+    filePath: '@morpheme/ui/src/forms/src/textarea/TextareaInput.vue',
   },
   {
     name: 'TextareaField',
-    filePath: '@morpheme/forms/src/textarea/TextareaInputField.vue',
+    filePath: '@morpheme/ui/src/forms/src/textarea/TextareaInputField.vue',
   },
 ];
 
