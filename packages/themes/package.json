@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/themes",
-  "version": "1.1.0-alpha.0",
+  "version": "1.1.0-alpha.2",
   "description": "Morpheme Themes",
   "scripts": {
     "build": "sass --load-path=./node_modules/@morpheme/**/** ./src/morpheme/main.scss:./dist/morpheme/main.css ./src/morpheme/main.dark.scss:./dist/morpheme/main.dark.css",
@@ -16,7 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "@morpheme/design-tokens": "^0.1.0-alpha.5",
-    "@morpheme/theme": "^1.1.0-alpha.0",
+    "@morpheme/theme": "^1.1.0-alpha.2",
     "sass": "^1.77.8",
     "vue": "^3.4.38"
   },

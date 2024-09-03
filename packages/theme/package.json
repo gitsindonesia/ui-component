@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/theme",
-  "version": "1.1.0-alpha.0",
+  "version": "1.1.0-alpha.2",
   "description": "Morpheme Default Tailwind Colors",
   "main": "colors.js",
   "scripts": {},
