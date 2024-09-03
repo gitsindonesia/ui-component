@@ -758,20 +758,20 @@ export default defineNuxtModule<ModuleOptions>({
     addPlugin(resolve(runtimeDir, 'plugin'));
 
     // install floating-vue
-    // installModule('floating-vue/nuxt')
+    installModule('floating-vue/nuxt')
 
-    // FloatingVue.options.themes = {
-    //   'tooltip-black': {
-    //     $extend: 'tooltip',
-    //     $resetCss: true,
-    //     disposeTimeout: 100000,
-    //   },
-    //   'tooltip-white': {
-    //     $extend: 'tooltip',
-    //     $resetCss: true,
-    //     disposeTimeout: 100000,
-    //   },
-    // }
+    FloatingVue.options.themes = {
+      'tooltip-black': {
+        $extend: 'tooltip',
+        $resetCss: true,
+        disposeTimeout: 100000,
+      },
+      'tooltip-white': {
+        $extend: 'tooltip',
+        $resetCss: true,
+        disposeTimeout: 100000,
+      },
+    }
 
     // transpile deps
     if (options.transpileDeps) {
