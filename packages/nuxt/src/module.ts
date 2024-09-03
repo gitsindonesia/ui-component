@@ -6,8 +6,10 @@ import {
   addComponent,
   type AddComponentOptions,
   logger,
+  installModule,
 } from '@nuxt/kit';
 import { addCustomTab } from '@nuxt/devtools-kit';
+import FloatingVue from 'floating-vue';
 
 const transpile = [
   '@headlessui/vue',
@@ -16,6 +18,9 @@ const transpile = [
   '@morpheme/utils',
   '@morpheme/design-tokens',
   'floating-vue',
+  '@floating-ui/dom',
+  '@floating-ui/core',
+  '@floating-ui/utils'
 ];
 
 const optimizeDeps = [
@@ -751,6 +756,22 @@ export default defineNuxtModule<ModuleOptions>({
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url));
     nuxt.options.build.transpile.push(runtimeDir);
     addPlugin(resolve(runtimeDir, 'plugin'));
+
+    // install floating-vue
+    // installModule('floating-vue/nuxt')
+
+    // FloatingVue.options.themes = {
+    //   'tooltip-black': {
+    //     $extend: 'tooltip',
+    //     $resetCss: true,
+    //     disposeTimeout: 100000,
+    //   },
+    //   'tooltip-white': {
+    //     $extend: 'tooltip',
+    //     $resetCss: true,
+    //     disposeTimeout: 100000,
+    //   },
+    // }
 
     // transpile deps
     if (options.transpileDeps) {
