@@ -12,15 +12,23 @@
     "noUnusedLocals": true,
     "rootDir": ".",
     "skipLibCheck": true,
-    "types": ["vite/client", "vitest/globals"],
+    "types": [
+      "vite/client",
+      "vitest/globals"
+    ],
     "emitDeclarationOnly": true,
     "allowSyntheticDefaultImports": true,
     "jsx": "preserve"
   },
-  "include": ["src", "../../types"],
+  "include": [
+    "src",
+    "../../types"
+  ],
   "exclude": [
     "**/*.stories.ts",
     "**/*.stories.tsx",
+    "**/*.story.vue",
+    "**/vite.config.*",
     "**/*.spec.ts",
     "**/*.test.ts"
   ]

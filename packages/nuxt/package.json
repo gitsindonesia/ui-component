@@ -1,7 +1,7 @@
 {
   "name": "@morpheme/nuxt",
   "description": "Nuxt module for Morpheme UI",
-  "version": "1.0.1",
+  "version": "1.1.0-alpha.7",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -36,5 +36,6 @@
     "eslint": "^9.9.1",
     "nuxt": "^3.13.0"
   },
-  "gitHead": "02a1a784354fe06a05c5a2ca392aa295335766dd"
+  "gitHead": "02a1a784354fe06a05c5a2ca392aa295335766dd",
+  "packageManager": "yarn@4.4.1"
 }

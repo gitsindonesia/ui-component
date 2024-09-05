@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import {useForm} from 'vee-validate';
 import {ref} from 'vue';
-import VBtn from '@morpheme/button';
-import VLogo from '@morpheme/logo';
-import {VInput} from '@morpheme/forms';
-import Card from '@morpheme/card';
 
 const sent = ref(false);
 const showAlert = ref(false);

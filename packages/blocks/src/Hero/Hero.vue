@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import VBtn from '@morpheme/button';
 </script>
 
 <template>

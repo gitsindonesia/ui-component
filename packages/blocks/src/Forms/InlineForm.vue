@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import {VInput, VBtn} from '@morpheme/ui';
 </script>
 
 <template>

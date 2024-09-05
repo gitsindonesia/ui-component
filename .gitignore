@@ -16,3 +16,4 @@ __snapshots__
 docs/.vitepress/cache
 .vercel
 html
+.yarn

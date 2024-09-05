@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import VBtn from '@morpheme/button';
-import {VInput} from '@morpheme/forms';
-import {Icon} from '@morpheme/icon';
 import {object, string} from 'yup';
 import {useForm} from 'vee-validate';
 

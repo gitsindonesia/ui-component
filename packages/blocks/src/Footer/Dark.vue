@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import Logo from '@morpheme/logo';
-import Icon from '@morpheme/icon';
 </script>
 
 <template>

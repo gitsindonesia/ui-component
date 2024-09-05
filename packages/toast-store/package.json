@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/toast-store",
-  "version": "1.0.1",
+  "version": "1.1.0-alpha.2",
   "description": "Store module for @morpheme/toast.",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
@@ -17,17 +17,18 @@
   "dependencies": {
     "@morpheme/toast": "^1.0.1",
     "pinia": "^2.0.11",
-    "vue": "^3.3.4",
+    "vue": "^3.4.38",
     "vuex": "^4.0.2"
   },
   "devDependencies": {
-    "@morpheme/tailwind-config": "^1.0.0",
-    "@morpheme/utils": "^1.0.0",
+    "@morpheme/tailwind-config": "^1.1.0-alpha.2",
+    "@morpheme/utils": "^1.1.0-alpha.2",
     "@vue/test-utils": "^2.0.0-rc.17",
     "c8": "^7.11.3",
     "tailwindcss": "^3.3.1",
-    "vite": "^4.3.8",
-    "vitest": "^0.12.4"
+    "vite": "^5.4.2",
+    "vitest": "^0.12.4",
+    "vue-tsc": "^2.1.4"
   },
   "main": "dist/toast-store.umd.js",
   "unpkg": "dist/toast-store.iife.js",

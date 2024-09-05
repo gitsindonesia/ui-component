@@ -1,1 +1,1 @@
-export * from '@morpheme/editor';
+export * from './editor';

@@ -1,6 +1,6 @@
-import { FloatingVuePlugin } from '@morpheme/tooltip';
 import { defineNuxtPlugin } from '#app'
+// import { FloatingVuePlugin } from '../floating-vue'
 
 export default defineNuxtPlugin((nuxtApp) => {
-  nuxtApp.vueApp.use(FloatingVuePlugin)
+  // nuxtApp.vueApp.use(FloatingVuePlugin)
 })

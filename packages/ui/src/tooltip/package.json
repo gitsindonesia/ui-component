@@ -1,0 +1,47 @@
+{
+  "name": "@morpheme/tooltip",
+  "version": "1.0.1",
+  "description": "Morpheme Tooltip Component",
+  "scripts": {
+    "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
+    "prepublishOnly": "npm run build",
+    "test": "vitest"
+  },
+  "keywords": [
+    "tooltip",
+    "morpheme",
+    "ui-component"
+  ],
+  "author": "Warsono <warsono16694@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "radix-vue": "^1.9.5",
+    "vue": "^3.4.38"
+  },
+  "devDependencies": {
+    "@headlessui/vue": "^1.7.13",
+    "@morpheme/button": "^1.0.1",
+    "@morpheme/tailwind-config": "^1.0.0",
+    "@morpheme/utils": "^1.0.0",
+    "@vue/test-utils": "^2.0.0-rc.17",
+    "c8": "^7.11.3",
+    "tailwindcss": "^3.3.1",
+    "vite": "^4.3.8",
+    "vitest": "^0.12.4"
+  },
+  "main": "dist/tooltip.umd.js",
+  "unpkg": "dist/tooltip.iife.js",
+  "jsdelivr": "dist/tooltip.iife.js",
+  "module": "./dist/tooltip.mjs",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/tooltip.mjs",
+      "require": "./dist/tooltip.js"
+    },
+    "./package.json": "./package.json",
+    "./src/*": "./src/*",
+    "./*": "./*"
+  },
+  "gitHead": "92215d91d1e3a2b1b804e52b55dcfd0ed5274475"
+}
