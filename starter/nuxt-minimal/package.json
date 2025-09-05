@@ -23,8 +23,8 @@
     "@morpheme/nuxt": "workspace:*"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.8.0",
-    "nuxt": "^3.13.0",
+    "@nuxtjs/tailwindcss": "^6.14.0",
+    "nuxt": "^4.1.0",
     "sass": "^1.66.1"
   },
   "type": "module",
