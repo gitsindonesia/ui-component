@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import {Tooltip} from 'floating-vue';
 import type {PropType} from 'vue';
+import { defineAsyncComponent } from 'vue';
 
 export type VTooltipPlacement =
   | 'auto'
@@ -55,6 +55,19 @@ defineSlots<{
   default?: (props: {}) => any;
   activator?: (props: {}) => any;
 }>();
+
+// Import floating-vue only on client side
+const Tooltip = defineAsyncComponent(async () => {
+  if (typeof window === 'undefined') {
+    // Return a dummy component for SSR
+    return {
+      name: 'TooltipSSR',
+      template: '<div><slot name="activator" /><slot /></div>'
+    };
+  }
+  const { Tooltip } = await import('floating-vue');
+  return Tooltip;
+});
 </script>
 
 <template>
