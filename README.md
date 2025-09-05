@@ -46,22 +46,22 @@ Checkout starter of Morpheme UI in the [starter](/starter/) directory.
 
 To set up Morpheme UI for development:
 
-- Install [lerna](https://lerna.js.org/) and [yarn](https://yarnpkg.com/) globally:
+- Install [pnpm](https://pnpm.io/) globally:
   ```bash
-  npm i -g lerna yarn
+  npm i -g pnpm
   ```
-- Bootstap all packages:
+- Install all dependencies:
   ```
-  lerna bootstrap
+  pnpm install
   ```
 - Build all packages:
   ```
-  lerna run build
+  pnpm run build
   ```
 - Run storybook:
 
   ```bash
-  yarn dev
+  pnpm dev
   ```
 
 ## Running Documentation
@@ -70,14 +70,14 @@ To run the documentation locally:
 
 ```
 cd docs
-yarn dev
+pnpm dev
 ```
 
 To build the documentation for production:
 
 ```
 cd docs
-yarn build
+pnpm build
 ```
 
 ## License

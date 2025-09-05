@@ -1,12 +1,12 @@
 # Morpheme UI
 
-A Vue 3 component library with Tailwind CSS styling, built as a Lerna monorepo. Provides headless components with dark mode support and theming capabilities, plus a first-party Nuxt 3 module.
+A Vue 3 component library with Tailwind CSS styling, built as a pnpm workspace monorepo. Provides headless components with dark mode support and theming capabilities, plus a first-party Nuxt 3 module.
 
 ## Standards
 
 MUST FOLLOW THESE RULES, NO EXCEPTIONS
 
-- Stack: Vue 3, TypeScript, Tailwind CSS, Lerna monorepo, Vitest, Storybook
+- Stack: Vue 3, TypeScript, Tailwind CSS, pnpm workspace, Vitest, Storybook
 - Patterns: ALWAYS use Composition API + `<script setup>`, TypeScript interfaces for props
 - Component structure: Each package is independent with own build/test config
 - Naming: Components use `V` prefix (`VBtn`, `VInput`), packages use `@morpheme/` scope
@@ -16,7 +16,7 @@ MUST FOLLOW THESE RULES, NO EXCEPTIONS
 
 ## Project Structure
 
-Lerna monorepo with independent packages in `packages/` directory:
+pnpm workspace monorepo with independent packages in `packages/` directory:
 
 ```
 packages/
@@ -42,19 +42,22 @@ packages/
 docs/                      # VitePress documentation
 starter/                   # Example projects (nuxt-minimal, vue, etc.)
 stories/                   # Global Storybook stories
+pnpm-workspace.yaml        # pnpm workspace configuration
 ```
 
 ## Project Commands
 
 Critical development commands:
 
-- `lerna bootstrap`: Install dependencies for all packages
-- `lerna run build`: Build all packages
-- `yarn dev`: Run Storybook + docs + Nuxt playground concurrently
-- `yarn storybook`: Run Storybook development server only
-- `yarn test`: Run Vitest across all packages
-- `cd packages/[name] && npm run build`: Build specific package
-- `cd packages/[name] && npm test`: Test specific package
+- `pnpm install`: Install dependencies for all packages
+- `pnpm -r build` or `pnpm run build`: Build all packages
+- `pnpm run build:packages`: Build only packages (not docs/starter)
+- `pnpm dev`: Run Storybook + docs + Nuxt playground concurrently
+- `pnpm storybook`: Run Storybook development server only
+- `pnpm -r test` or `pnpm test`: Run Vitest across all packages
+- `pnpm --filter [package-name] build`: Build specific package
+- `pnpm --filter [package-name] test`: Test specific package
+- `pnpm --filter "./packages/*" [command]`: Run command on all packages
 
 ## Development Workflow
 

@@ -4,7 +4,7 @@
   "description": "Morpheme Alert - a flexible Vue alert component that can be used to display various types of messages to the user.",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "pnpm run build",
     "test": "vitest"
   },
   "keywords": [

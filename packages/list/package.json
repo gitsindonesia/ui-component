@@ -3,8 +3,8 @@
   "version": "1.0.1",
   "description": "Morpheme List Component",
   "scripts": {
-    "build": "vite build && npm run build-types && npm run move-types",
-    "prepublishOnly": "npm run build",
+    "build": "vite build && pnpm run build-types && pnpm run move-types",
+    "prepublishOnly": "pnpm run build",
     "test": "vitest",
     "build-types": "vue-tsc --emitDeclarationOnly",
     "move-types": "mv dist/src dist/types"
