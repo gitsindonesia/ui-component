@@ -4,7 +4,15 @@ import { dirname, join } from "path";
 
 module.exports = {
   stories: [
-    '../packages/*/src/**/*.stories.@(js|jsx|ts|tsx)',
+    // Only include stories from the consolidated UI package and packages that have stories
+    '../packages/ui/src/**/*.stories.@(js|jsx|ts|tsx)',
+    '../packages/primitives/src/**/*.stories.@(js|jsx|ts|tsx)',
+    '../packages/layouts/src/**/*.stories.@(js|jsx|ts|tsx)',
+    '../packages/blocks/src/**/*.stories.@(js|jsx|ts|tsx)',
+    '../packages/pages/src/**/*.stories.@(js|jsx|ts|tsx)',
+    '../packages/iconsax/src/**/*.stories.@(js|jsx|ts|tsx)',
+    '../packages/quill-editor/src/**/*.stories.@(js|jsx|ts|tsx)',
+    '../packages/multi-select/src/**/*.stories.@(js|jsx|ts|tsx)',
     '../stories/**/*.stories.@(js|jsx|ts|tsx)',
   ],
 
