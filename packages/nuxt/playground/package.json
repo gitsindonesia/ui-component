@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "morpheme-nuxt-playground",
+  "name": "@morpheme/playground",
   "scripts": {
     "dev": "nuxi dev",
     "build": "nuxi build"

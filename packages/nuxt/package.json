@@ -1,5 +1,5 @@
 {
-  "name": "@morpheme/playground",
+  "name": "@morpheme/nuxt",
   "description": "Nuxt module for Morpheme UI",
   "version": "1.0.1",
   "license": "MIT",
@@ -17,17 +17,17 @@
   ],
   "scripts": {
     "prepack": "nuxt-module-build",
-    "dev": "nuxi dev playground",
-    "dev:build": "nuxi build playground",
-    "dev:preview": "nuxi preview playground",
-    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground"
+    "play": "nuxi dev playground",
+    "play:build": "nuxi build playground",
+    "play:preview": "nuxi preview playground",
+    "play:prepare": "nuxt-module-build --stub && nuxi prepare playground"
   },
   "dependencies": {
-    "@morpheme/ui": "^1.0.1",
+    "@morpheme/ui": "workspace:*",
     "@nuxt/kit": "^3.13.0"
   },
   "devDependencies": {
-    "@morpheme/tailwind-config": "^1.0.0",
+    "@morpheme/tailwind-config": "workspace:*",
     "@nuxt/module-builder": "^0.8.3",
     "@nuxt/schema": "^3.13.0",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",

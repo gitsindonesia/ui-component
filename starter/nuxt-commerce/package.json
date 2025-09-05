@@ -20,7 +20,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@morpheme/nuxt": "^1.0.1",
+    "@morpheme/nuxt": "workspace:*",
     "@nuxt/image": "^1.0.0"
   },
   "devDependencies": {

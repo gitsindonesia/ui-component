@@ -12,8 +12,8 @@
   "dependencies": {
     "@astrojs/tailwind": "^5.1.0",
     "@astrojs/vue": "^4.5.0",
-    "@morpheme/themes": "^1.0.0",
-    "@morpheme/ui": "^1.0.1",
+    "@morpheme/themes": "workspace:*",
+    "@morpheme/ui": "workspace:*",
     "astro": "^4.14.6",
     "tailwindcss": "^3.4.10",
     "vue": "^3.4.38"

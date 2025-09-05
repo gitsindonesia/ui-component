@@ -5,7 +5,8 @@ export default defineNuxtConfig({
 
   morpheme: {
     darkMode: true,
-    sass: true,
+    sass: false,
+    css: true,
     theme: 'morpheme',
     experimentalComponents: true,
   },

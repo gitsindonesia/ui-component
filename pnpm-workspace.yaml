@@ -19,6 +19,9 @@ packages:
   - 'packages/editor'
   - 'packages/quill-editor'
   - 'packages/logo'
+
+  # Playground
+  - 'packages/nuxt/playground'
   
   # Documentation and examples
   - 'docs'
