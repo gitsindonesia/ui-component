@@ -8,7 +8,7 @@ import {
   Menu,
   MenuItem,
 } from '@headlessui/vue';
-import VMenus from '@morpheme/menus';
+import VMenus from '@morpheme/ui/src/components/menus/VMenus.vue';
 import VLogo from '@morpheme/logo';
 import type {VNavbarMenuItem} from './types';
 import Icon from '@morpheme/icon';

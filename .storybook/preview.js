@@ -3,7 +3,7 @@ import '../packages/tailwind-config/tailwind.css';
 import '../packages/themes/src/morpheme/main.scss';
 import '../packages/themes/src/morpheme/main.dark.scss';
 import { setup } from '@storybook/vue3'
-import { FloatingVuePlugin } from '../packages/ui/src/components/tooltip/floating-vue'
+// import { FloatingVuePlugin } from '../packages/ui/src/components/tooltip/floating-vue'
 
 const router = createRouter({
   history: createMemoryHistory(),
@@ -12,7 +12,7 @@ const router = createRouter({
 
 setup((app) => {
   app.use(router)
-  app.use(FloatingVuePlugin);
+  // app.use(FloatingVuePlugin);
 });
 
 export const parameters = {

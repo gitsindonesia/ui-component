@@ -827,6 +827,9 @@ export default defineNuxtModule<ModuleOptions>({
       if (options.css) {
         nuxt.options.css.push('@morpheme/themes/dist/morpheme/main.css');
 
+        // Add floating-vue styles for tooltips
+        nuxt.options.css.push('floating-vue/dist/style.css');
+
         if (options.darkMode) {
           nuxt.options.css.push('@morpheme/themes/dist/morpheme/main.dark.css');
         }
