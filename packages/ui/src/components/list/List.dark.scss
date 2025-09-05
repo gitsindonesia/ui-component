@@ -1,0 +1,26 @@
+.dark {
+  .v-list {
+    --v-list-bg-color: theme('colors.transparent');
+
+    /* item */
+    --v-list-item-color: theme('colors.neutral.200');
+    --v-list-item-bg-color: theme('colors.transparent');
+    --v-list-item-border-color: theme('colors.transparent');
+
+    /* item hover */
+    --v-list-item-hover-bg-color: theme('colors.neutral.700');
+    --v-list-item-hover-color: theme('colors.neutral.200');
+
+    /* item header */
+    --v-list-item-header-color: theme('colors.neutral.500');
+
+    /* divider */
+    --v-list-item-divider-color: theme('colors.neutral.700');
+
+    // icon
+    --v-list-item-icon-color: theme('colors.neutral.300');
+
+    // append text
+    --v-list-item-append-text-color: theme('colors.neutral.500');
+  }
+}

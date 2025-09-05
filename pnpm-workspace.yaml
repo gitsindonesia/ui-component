@@ -1,5 +1,33 @@
 packages:
-  - 'packages/*'
+  # Core packages
+  - 'packages/ui'
+  - 'packages/nuxt'
+  - 'packages/theme'
+  - 'packages/themes'
+  - 'packages/tailwind-config'
+  - 'packages/tailwind-components'
+  - 'packages/utils'
+  - 'packages/primitives'
+  - 'packages/services'
+  - 'packages/layouts'
+  - 'packages/pages'
+  - 'packages/blocks'
+  - 'packages/iconsax'
+  - 'packages/toast-store'
+  
+  # Specialized packages that remain separate
+  - 'packages/editor'
+  - 'packages/quill-editor'
+  - 'packages/multi-select'
+  - 'packages/autocomplete'
+  - 'packages/command'
+  - 'packages/app-shell'
+  - 'packages/banner'
+  - 'packages/bottom-navigation'
+  - 'packages/bottom-sheets'
+  - 'packages/logo'
+  
+  # Documentation and examples
   - 'docs'
   - 'starter/*'
   - 'examples/*'

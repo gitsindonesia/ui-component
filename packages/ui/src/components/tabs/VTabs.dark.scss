@@ -1,0 +1,12 @@
+.dark {
+  .v-tabs {
+    /* item */
+    --v-tabs-item-text-color: theme('colors.neutral.400');
+
+    /* item active */
+    --v-tabs-item-active-text-color: theme('colors.neutral.200');
+
+    /* item hover */
+    --v-tabs-item-hover-text-color: theme('colors.neutral.200');
+  }
+}

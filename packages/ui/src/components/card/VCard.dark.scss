@@ -1,0 +1,14 @@
+.dark {
+  .card {
+    &-default {
+      --card-bg-color: theme('colors.neutral.800');
+      --card-color: theme('colors.neutral.200');
+      --card-border-color: theme('borderColor.neutral.600');
+    }
+
+    &-dark {
+      --card-bg-color: theme('colors.gray.800');
+      --card-color: theme('colors.white');
+    }
+  }
+}

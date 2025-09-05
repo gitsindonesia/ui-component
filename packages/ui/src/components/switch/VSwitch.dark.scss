@@ -1,0 +1,9 @@
+.dark {
+  .v-switch {
+    /* button */
+    --v-switch-button-bg-color: theme('colors.neutral.700');
+    --v-switch-button-border-color: theme('colors.neutral.700');
+    /* thumb */
+    --v-switch-thumb-bg-color: theme('colors.neutral.200');
+  }
+}

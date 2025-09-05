@@ -1,0 +1,7 @@
+.dark {
+  .v-modal {
+    --v-modal-text-color: theme('colors.neutral.200');
+    --v-modal-bg-color: theme('colors.neutral.800');
+    --v-modal-title-color: theme('colors.neutral.200');
+  }
+}
