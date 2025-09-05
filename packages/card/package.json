@@ -1,7 +1,7 @@
 {
   "name": "@morpheme/card",
   "version": "1.0.1",
-  "description": "Morpheme Card Component",
+  "description": "⚠️ DEPRECATED: Use @morpheme/ui instead. Morpheme Card Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "pnpm run build",
@@ -46,5 +46,6 @@
     "./src/*": "./src/*",
     "./*": "./*"
   },
-  "gitHead": "92215d91d1e3a2b1b804e52b55dcfd0ed5274475"
+  "gitHead": "92215d91d1e3a2b1b804e52b55dcfd0ed5274475",
+  "deprecated": "⚠️ DEPRECATED: Use @morpheme/ui instead. This package has been consolidated into @morpheme/ui."
 }

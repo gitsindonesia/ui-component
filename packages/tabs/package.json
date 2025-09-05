@@ -1,7 +1,7 @@
 {
   "name": "@morpheme/tabs",
   "version": "1.0.1",
-  "description": "Morpheme Tabs Component",
+  "description": "⚠️ DEPRECATED: Use @morpheme/ui instead. Morpheme Tabs Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "pnpm run build",
@@ -46,5 +46,6 @@
     "./src/*": "./src/*",
     "./*": "./*"
   },
-  "gitHead": "02a1a784354fe06a05c5a2ca392aa295335766dd"
+  "gitHead": "02a1a784354fe06a05c5a2ca392aa295335766dd",
+  "deprecated": "⚠️ DEPRECATED: Use @morpheme/ui instead. This package has been consolidated into @morpheme/ui."
 }

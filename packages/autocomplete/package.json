@@ -1,7 +1,7 @@
 {
   "name": "@morpheme/autocomplete",
   "version": "1.0.1",
-  "description": "Morpheme Autocomplete",
+  "description": "⚠️ DEPRECATED: Use @morpheme/ui instead. Morpheme Autocomplete",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "pnpm run build",
@@ -45,5 +45,6 @@
     "./src/*": "./src/*",
     "./*": "./*"
   },
-  "gitHead": "95edc430940e02006a6f7ccc5065333389c50ccd"
+  "gitHead": "95edc430940e02006a6f7ccc5065333389c50ccd",
+  "deprecated": "⚠️ DEPRECATED: Use @morpheme/ui instead. This package has been consolidated into @morpheme/ui."
 }

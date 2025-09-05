@@ -1,7 +1,7 @@
 {
   "name": "@morpheme/text",
   "version": "1.0.0",
-  "description": "Morpheme Text Component",
+  "description": "⚠️ DEPRECATED: Use @morpheme/ui instead. Morpheme Text Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "pnpm run build",
@@ -42,5 +42,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "deprecated": "⚠️ DEPRECATED: Use @morpheme/ui instead. This package has been consolidated into @morpheme/ui."
 }

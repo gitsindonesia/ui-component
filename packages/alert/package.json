@@ -1,7 +1,8 @@
 {
   "name": "@morpheme/alert",
   "version": "1.0.1",
-  "description": "Morpheme Alert - a flexible Vue alert component that can be used to display various types of messages to the user.",
+  "description": "⚠️ DEPRECATED: Use @morpheme/ui instead. This package has been consolidated into @morpheme/ui.",
+  "deprecated": "⚠️ DEPRECATED: Use @morpheme/ui instead. This package has been consolidated into @morpheme/ui.",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "pnpm run build",

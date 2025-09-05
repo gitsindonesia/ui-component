@@ -1,7 +1,7 @@
 {
   "name": "@morpheme/bottom-navigation",
   "version": "1.0.1",
-  "description": "Morpheme Bottom Navigation Component",
+  "description": "⚠️ DEPRECATED: Use @morpheme/ui instead. Morpheme Bottom Navigation Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "pnpm run build",
@@ -47,5 +47,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "95edc430940e02006a6f7ccc5065333389c50ccd"
+  "gitHead": "95edc430940e02006a6f7ccc5065333389c50ccd",
+  "deprecated": "⚠️ DEPRECATED: Use @morpheme/ui instead. This package has been consolidated into @morpheme/ui."
 }

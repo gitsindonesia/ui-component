@@ -1,7 +1,7 @@
 {
   "name": "@morpheme/container",
   "version": "1.0.0",
-  "description": "Morpheme Container Component",
+  "description": "⚠️ DEPRECATED: Use @morpheme/ui instead. Morpheme Container Component",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "pnpm run build",
@@ -39,5 +39,6 @@
   "gitHead": "92215d91d1e3a2b1b804e52b55dcfd0ed5274475",
   "dependencies": {
     "vue": "^3.3.4"
-  }
+  },
+  "deprecated": "⚠️ DEPRECATED: Use @morpheme/ui instead. This package has been consolidated into @morpheme/ui."
 }
