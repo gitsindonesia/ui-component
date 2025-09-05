@@ -109,13 +109,13 @@
   },
   "pnpm": {
     "overrides": {
-      "consola": "3.0.1"
+      "consola": "^3.2.3"
     }
   },
   "overrides": {
-    "consola": "3.0.1"
+    "consola": "^3.2.3"
   },
   "resolutions": {
-    "consola": "^3.0.0"
+    "consola": "^3.2.3"
   }
 }

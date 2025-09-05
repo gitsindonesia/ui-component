@@ -35,15 +35,10 @@ const transpile = [
   '@morpheme/iconsax',
   '@morpheme/toast-store',
   '@morpheme/blocks',
-  'floating-vue',
-];
   '@morpheme/text',
-  '@morpheme/app-shell',
   '@morpheme/progress-circular',
   '@morpheme/design-tokens',
-  '@morpheme/banner',
   '@morpheme/divider',
-  '@morpheme/bottom-navigation',
   '@morpheme/popover',
   'floating-vue',
 ];
