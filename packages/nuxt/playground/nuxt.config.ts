@@ -17,6 +17,8 @@ export default defineNuxtConfig({
         '@ckeditor/ckeditor5-build-classic',
         '@ckeditor/ckeditor5-vue',
         'consola',
+        'quill',
+        'quill-delta'
       ],
     },
   },

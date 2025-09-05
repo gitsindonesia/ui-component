@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import {computed} from 'vue';
+import {computed, defineAsyncComponent} from 'vue';
 import Icon from '@morpheme/icon';
 import VMenusItem from './VMenusItem.vue';
-import FloatingVue, {Menu, Dropdown} from 'floating-vue';
 import type {Placement} from '@floating-ui/vue';
 
 export type VMenuItem = InstanceType<typeof VMenusItem>['$props'] & {
@@ -49,10 +48,38 @@ const props = withDefaults(defineProps<Props>(), {
   iconSize: 'sm',
 });
 
-FloatingVue.options.themes.menus = {
-  $extend: 'dropdown',
-  $resetCss: false,
-};
+// Import floating-vue components only on client side
+const Menu = defineAsyncComponent(async () => {
+  if (typeof window === 'undefined') {
+    return {
+      name: 'MenuSSR',
+      template: '<div><slot /><slot name="popper" /></div>'
+    };
+  }
+  const { Menu } = await import('floating-vue');
+  return Menu;
+});
+
+const Dropdown = defineAsyncComponent(async () => {
+  if (typeof window === 'undefined') {
+    return {
+      name: 'DropdownSSR',
+      template: '<div><slot /><slot name="popper" /></div>'
+    };
+  }
+  const { Dropdown } = await import('floating-vue');
+  return Dropdown;
+});
+
+// Configure floating-vue theme only on client side
+if (typeof window !== 'undefined') {
+  import('floating-vue').then(({ default: FloatingVue }) => {
+    FloatingVue.options.themes.menus = {
+      $extend: 'dropdown',
+      $resetCss: false,
+    };
+  });
+}
 
 const menuPlacement = computed(() => {
   return props.right ? 'bottom-end' : props.placement;
