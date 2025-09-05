@@ -60,7 +60,7 @@ const components: AddComponentOptions[] = [
   },
   {
     name: 'Autocomplete',
-    filePath: '@morpheme/autocomplete/src/VAutocomplete.vue',
+    filePath: '@morpheme/ui/src/components/autocomplete/VAutocomplete.vue',
   },
   {
     name: 'Avatar',
@@ -335,7 +335,7 @@ const components: AddComponentOptions[] = [
   },
   {
     name: 'MultiSelect',
-    filePath: '@morpheme/multi-select/src/VMultiSelect.vue',
+    filePath: '@morpheme/ui/src/components/multi-select/VMultiSelect.vue',
   },
   {
     name: 'NavDrawer',
@@ -430,31 +430,31 @@ const components: AddComponentOptions[] = [
   },
   {
     name: 'BottomSheet',
-    filePath: '@morpheme/bottom-sheet/src/BottomSheet.vue',
+    filePath: '@morpheme/ui/src/components/bottom-sheets/BottomSheet.vue',
   },
   {
     name: 'BottomSheetBody',
-    filePath: '@morpheme/bottom-sheet/src/BottomSheetBody.vue',
+    filePath: '@morpheme/ui/src/components/bottom-sheets/BottomSheetBody.vue',
   },
   {
     name: 'BottomSheetFooter',
-    filePath: '@morpheme/bottom-sheet/src/BottomSheetFooter.vue',
+    filePath: '@morpheme/ui/src/components/bottom-sheets/BottomSheetFooter.vue',
   },
   {
     name: 'BottomSheetHeader',
-    filePath: '@morpheme/bottom-sheet/src/BottomSheetHeader.vue',
+    filePath: '@morpheme/ui/src/components/bottom-sheets/BottomSheetHeader.vue',
   },
   {
     name: 'BottomSheetMenus',
-    filePath: '@morpheme/bottom-sheet/src/BottomSheetMenus.vue',
+    filePath: '@morpheme/ui/src/components/bottom-sheets/BottomSheetMenus.vue',
   },
   {
     name: 'BottomSheetOverlay',
-    filePath: '@morpheme/bottom-sheet/src/BottomSheetOverlay.vue',
+    filePath: '@morpheme/ui/src/components/bottom-sheets/BottomSheetOverlay.vue',
   },
   {
     name: 'BottomSheetHandle',
-    filePath: '@morpheme/bottom-sheet/src/BottomSheetHandle.vue',
+    filePath: '@morpheme/ui/src/components/bottom-sheets/BottomSheetHandle.vue',
   },
   {
     name: 'Text',
@@ -462,11 +462,11 @@ const components: AddComponentOptions[] = [
   },
   {
     name: 'AppShell',
-    filePath: '@morpheme/app-shell/src/VAppShell.vue',
+    filePath: '@morpheme/ui/src/components/app-shell/VAppShell.vue',
   },
   {
     name: 'Main',
-    filePath: '@morpheme/app-shell/src/VMain.vue',
+    filePath: '@morpheme/ui/src/components/app-shell/VMain.vue',
   },
   {
     name: 'ProgressCircular',
@@ -494,11 +494,11 @@ const components: AddComponentOptions[] = [
   },
   {
     name: 'Banner',
-    filePath: '@morpheme/banner/src/VBanner.vue',
+    filePath: '@morpheme/ui/src/components/banner/VBanner.vue',
   },
   {
     name: 'BannerText',
-    filePath: '@morpheme/banner/src/VBannerText.vue',
+    filePath: '@morpheme/ui/src/components/banner/VBannerText.vue',
   },
   {
     name: 'Divider',
@@ -506,11 +506,11 @@ const components: AddComponentOptions[] = [
   },
   {
     name: 'BottomNavigation',
-    filePath: '@morpheme/bottom-navigation/src/VBottomNavigation.vue',
+    filePath: '@morpheme/ui/src/components/bottom-navigation/VBottomNavigation.vue',
   },
   {
     name: 'BottomNavigationItem',
-    filePath: '@morpheme/bottom-navigation/src/VBottomNavigationItem.vue',
+    filePath: '@morpheme/ui/src/components/bottom-navigation/VBottomNavigationItem.vue',
   },
   {
     name: 'Popover',
@@ -534,7 +534,7 @@ const components: AddComponentOptions[] = [
   },
   {
     name: 'Command',
-    filePath: '@morpheme/command/src/VCommand.vue',
+    filePath: '@morpheme/ui/src/components/command/VCommand.vue',
   },
 ];
 

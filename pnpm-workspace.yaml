@@ -18,13 +18,6 @@ packages:
   # Specialized packages that remain separate
   - 'packages/editor'
   - 'packages/quill-editor'
-  - 'packages/multi-select'
-  - 'packages/autocomplete'
-  - 'packages/command'
-  - 'packages/app-shell'
-  - 'packages/banner'
-  - 'packages/bottom-navigation'
-  - 'packages/bottom-sheets'
   - 'packages/logo'
   
   # Documentation and examples
