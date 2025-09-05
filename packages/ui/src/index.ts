@@ -1,34 +1,3 @@
-// Import all dark SCSS files that exist
-import './components/alert/VAlert.dark.scss';
-import './components/app-bar/VAppBar.dark.scss';
-import './components/autocomplete/VAutocomplete.dark.scss';
-import './components/avatar/Avatar.dark.scss';
-import './components/badge/VBadge.dark.scss';
-import './components/bottom-sheets/BottomSheet.dark.scss';
-import './components/breadcrumbs/VBreadcrumbs.dark.scss';
-import './components/button/VBtn.dark.scss';
-import './components/card/VCard.dark.scss';
-import './components/dropdown/Dropdown.dark.scss';
-import './components/forms/forms.dark.scss';
-import './components/forms/checkbox/VCheckbox.dark.scss';
-import './components/forms/radio/VRadio.dark.scss';
-import './components/forms/radio/VRadioGroup.dark.scss';
-import './components/icon/Icon.dark.scss';
-import './components/list/List.dark.scss';
-import './components/menus/VMenus.dark.scss';
-import './components/modal/VModal.dark.scss';
-import './components/multi-select/VMultiSelect.dark.scss';
-import './components/nav-drawer/NavDrawer.dark.scss';
-import './components/pagination/VPagination.dark.scss';
-import './components/progress/VProgressBar.dark.scss';
-import './components/select/VSelect.dark.scss';
-import './components/shimmer/Shimmer.dark.scss';
-import './components/switch/VSwitch.dark.scss';
-import './components/table/VDataTable.dark.scss';
-import './components/table/VDataTablePagination.dark.scss';
-import './components/tabs/VTabs.dark.scss';
-import './components/timeline/VTimeline.dark.scss';
-
 // Re-export all components from their directories
 export * from './components/alert';
 export * from './components/app-bar';
