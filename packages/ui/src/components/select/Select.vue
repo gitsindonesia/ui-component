@@ -13,7 +13,7 @@ import {
   ComboboxLabel,
 } from '@headlessui/vue';
 import VIcon from '@morpheme/icon';
-import VTooltip from '@morpheme/tooltip';
+import VTooltip from '../tooltip/VTooltip.vue';
 import {computed, ref} from 'vue';
 import VBadge from '@morpheme/badge';
 import {Float} from '@headlessui-float/vue';

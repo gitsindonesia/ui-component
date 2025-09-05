@@ -24,13 +24,6 @@ const transpile = [
   '@morpheme/primitives',
   '@morpheme/editor',
   '@morpheme/quill-editor',
-  '@morpheme/multi-select',
-  '@morpheme/autocomplete',
-  '@morpheme/command',
-  '@morpheme/app-shell',
-  '@morpheme/banner',
-  '@morpheme/bottom-navigation',
-  '@morpheme/bottom-sheet',
   '@morpheme/logo',
   '@morpheme/iconsax',
   '@morpheme/toast-store',
@@ -545,7 +538,7 @@ const experimentalComponents: AddComponentOptions[] = [
   },
   {
     name: 'Autocomplete',
-    filePath: '@morpheme/autocomplete/src/Autocomplete.vue',
+    filePath: '@morpheme/ui/src/components/autocomplete/VAutocomplete.vue',
   },
   {
     name: 'Checkbox',
@@ -770,7 +763,10 @@ export default defineNuxtModule<ModuleOptions>({
   setup(options, nuxt) {
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url));
     nuxt.options.build.transpile.push(runtimeDir);
-    addPlugin(resolve(runtimeDir, 'plugin'));
+    addPlugin({
+      src: resolve(runtimeDir, 'plugin'),
+      mode: 'client'
+    });
 
     // transpile deps
     if (options.transpileDeps) {
@@ -804,7 +800,6 @@ export default defineNuxtModule<ModuleOptions>({
       // load required styles when not using css bundle and not using sass bundle
       if (!options.css && !options.sass && options.loadDefaultStyles) {
         nuxt.options.css.push('@morpheme/menu/dist/style.css');
-        nuxt.options.css.push('@morpheme/tooltip/dist/style.css');
         nuxt.options.css.push('@morpheme/theme/transition.css');
       }
 

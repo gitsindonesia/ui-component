@@ -1,4 +1,4 @@
-import VStats from '../src/VStats.vue';
+import VStats from './VStats.vue';
 import {themeColors} from '@morpheme/utils/colors';
 import type {Meta, StoryFn} from '@storybook/vue3';
 

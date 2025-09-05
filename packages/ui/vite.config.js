@@ -58,7 +58,6 @@ export default defineConfig({
         '@morpheme/textarea',
         '@morpheme/theme',
         '@morpheme/toast',
-        '@morpheme/tooltip',
         '@morpheme/utils',
         '@morpheme/text',
         '@morpheme/app-shell',

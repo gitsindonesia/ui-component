@@ -7,7 +7,7 @@ import {
   ComboboxOption,
   ComboboxLabel,
 } from '@headlessui/vue';
-import VTooltip from '@morpheme/tooltip';
+import VTooltip from '../tooltip/VTooltip.vue';
 import type {FieldOptions} from 'vee-validate';
 import Icon from '@morpheme/icon';
 import type {VSelectItem} from './types';
