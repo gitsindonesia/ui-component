@@ -2,7 +2,7 @@ import { defineNuxtPlugin } from '#app'
 
 export default defineNuxtPlugin(async (nuxtApp) => {
   // Add a dummy directive for SSR to prevent errors
-  if (import.meta.client) {
+  if (typeof window === 'undefined') {
     // SSR: Add dummy directive to prevent getSSRProps errors
     nuxtApp.vueApp.directive('tooltip', {
       getSSRProps: () => ({}),
