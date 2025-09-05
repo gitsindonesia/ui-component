@@ -765,7 +765,7 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.build.transpile.push(runtimeDir);
     addPlugin({
       src: resolve(runtimeDir, 'plugin'),
-      mode: 'client'
+      mode: 'all'
     });
 
     // transpile deps

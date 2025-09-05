@@ -1,10 +1,17 @@
 import { defineNuxtPlugin } from '#app'
 
 export default defineNuxtPlugin(async (nuxtApp) => {
-  console.lo('loading nuxt plugin', nuxtApp)
-
-  // Only run on client side to avoid SSR issues with floating-vue
-  if (typeof window !== 'undefined') {
+  // Add a dummy directive for SSR to prevent errors
+  if (typeof window === 'undefined') {
+    // SSR: Add dummy directive to prevent getSSRProps errors
+    nuxtApp.vueApp.directive('tooltip', {
+      getSSRProps: () => ({}),
+      mounted: () => {},
+      updated: () => {},
+      unmounted: () => {}
+    });
+  } else {
+    // Client: Load floating-vue with real directive
     try {
       const { default: FloatingVue } = await import('floating-vue');
 

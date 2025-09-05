@@ -113,17 +113,31 @@ const timelineItems = [
 
     <hr class="dark:border-neutral-700" />
     <h3 id="button" class="text-xl font-semibold">Button</h3>
-    <div class="space-x-2" v-for="variant in buttonVariants" :key="variant">
-      <v-btn
-        v-for="color in defaultColors"
-        :color="color"
-        :key="color"
-        v-tooltip="'Click Me'"
-        v-bind:[variant]="true"
-      >
-        {{ color }}
-      </v-btn>
-    </div>
+    <ClientOnly>
+      <div class="space-x-2" v-for="variant in buttonVariants" :key="variant">
+        <v-btn
+          v-for="color in defaultColors"
+          :color="color"
+          :key="color"
+          v-tooltip="'Click Me'"
+          v-bind:[variant]="true"
+        >
+          {{ color }}
+        </v-btn>
+      </div>
+      <template #fallback>
+        <div class="space-x-2" v-for="variant in buttonVariants" :key="variant">
+          <v-btn
+            v-for="color in defaultColors"
+            :color="color"
+            :key="color"
+            v-bind:[variant]="true"
+          >
+            {{ color }}
+          </v-btn>
+        </div>
+      </template>
+    </ClientOnly>
 
     <hr class="dark:border-neutral-700" />
     <h3 id="forms" class="text-xl font-semibold">Forms</h3>
@@ -163,7 +177,12 @@ const timelineItems = [
         <VSelect :items="items" label="Select" />
         <VMultiSelect :items="items" label="Multi Select" />
         <VBtnToolbar>
-          <v-btn color="primary" v-tooltip="'Submit'">Submit</v-btn>
+          <ClientOnly>
+            <v-btn color="primary" v-tooltip="'Submit'">Submit</v-btn>
+            <template #fallback>
+              <v-btn color="primary">Submit</v-btn>
+            </template>
+          </ClientOnly>
           <v-btn type="reset">Cancel</v-btn>
         </VBtnToolbar>
       </form>
@@ -210,7 +229,12 @@ const timelineItems = [
         <VSelect :items="items" disabled label="Select" />
         <VMultiSelect :items="items" disabled label="Multi Select" />
         <VBtnToolbar>
-          <v-btn color="primary" v-tooltip="'Submit'">Submit</v-btn>
+          <ClientOnly>
+            <v-btn color="primary" v-tooltip="'Submit'">Submit</v-btn>
+            <template #fallback>
+              <v-btn color="primary">Submit</v-btn>
+            </template>
+          </ClientOnly>
           <v-btn type="reset">Cancel</v-btn>
         </VBtnToolbar>
       </form>
@@ -434,7 +458,7 @@ const timelineItems = [
     <h3 id="quill-editor" class="text-xl font-semibold">Quill Editor</h3>
     <div>
       <ClientOnly>
-        <VQuillEditor v-model="quillContent" />
+        <VQuillEditor name="quill" v-model="quillContent" />
       </ClientOnly>
     </div>
 
@@ -507,40 +531,58 @@ const timelineItems = [
 
     <hr class="dark:border-neutral-700" />
     <h3 id="tooltip" class="text-xl font-semibold">Tooltip</h3>
-    <div class="grid grid-cols-1 lg:grid-cols-4">
-      <div>
-        <p class="font-semibold mb-2 text-sm">Default</p>
-        <VBtn
-          v-tooltip="{
-            content: 'Hello :)',
-          }"
-        >
-          Hover Me
-        </VBtn>
+    <ClientOnly>
+      <div class="grid grid-cols-1 lg:grid-cols-4">
+        <div>
+          <p class="font-semibold mb-2 text-sm">Default</p>
+          <VBtn
+            v-tooltip="{
+              content: 'Hello :)',
+            }"
+          >
+            Hover Me
+          </VBtn>
+        </div>
+        <div>
+          <p class="font-semibold mb-2 text-sm">Black theme</p>
+          <VBtn
+            v-tooltip="{
+              content: 'Hello :)',
+              themes: 'tooltip-black',
+            }"
+          >
+            Hover Me
+          </VBtn>
+        </div>
+        <div>
+          <p class="font-semibold mb-2 text-sm">White theme</p>
+          <VBtn
+            v-tooltip="{
+              content: 'Hello :)',
+              themes: 'tooltip-white',
+            }"
+          >
+            Hover Me
+          </VBtn>
+        </div>
       </div>
-      <div>
-        <p class="font-semibold mb-2 text-sm">Black theme</p>
-        <VBtn
-          v-tooltip="{
-            content: 'Hello :)',
-            themes: 'tooltip-black',
-          }"
-        >
-          Hover Me
-        </VBtn>
-      </div>
-      <div>
-        <p class="font-semibold mb-2 text-sm">White theme</p>
-        <VBtn
-          v-tooltip="{
-            content: 'Hello :)',
-            themes: 'tooltip-white',
-          }"
-        >
-          Hover Me
-        </VBtn>
-      </div>
-    </div>
+      <template #fallback>
+        <div class="grid grid-cols-1 lg:grid-cols-4">
+          <div>
+            <p class="font-semibold mb-2 text-sm">Default</p>
+            <VBtn>Hover Me</VBtn>
+          </div>
+          <div>
+            <p class="font-semibold mb-2 text-sm">Black theme</p>
+            <VBtn>Hover Me</VBtn>
+          </div>
+          <div>
+            <p class="font-semibold mb-2 text-sm">White theme</p>
+            <VBtn>Hover Me</VBtn>
+          </div>
+        </div>
+      </template>
+    </ClientOnly>
   </div>
 </template>
 
