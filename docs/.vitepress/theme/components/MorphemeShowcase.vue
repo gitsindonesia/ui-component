@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import {AvatarGroup} from '@morpheme/avatar';
-import {Checkbox} from '@morpheme/forms';
-import {Select as SelectMenu} from '@morpheme/select';
+import {AvatarGroup, Checkbox, Select as SelectMenu} from '@morpheme/ui';
 import {ref} from 'vue';
 
 const switchValue = ref(false);

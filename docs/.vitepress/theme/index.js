@@ -8,6 +8,7 @@ import StackblitzEmbed from './components/StackblitzEmbed.vue';
 import Morpheme from '@morpheme/ui'
 import '@morpheme/themes/dist/morpheme/main.css'
 import '@morpheme/themes/dist/morpheme/main.dark.css'
+import '@morpheme/ui/dist/style.css'
 import MorphemeShowcase from './components/MorphemeShowcase.vue';
 
 export default {

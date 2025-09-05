@@ -9,6 +9,8 @@
     "build-storybook": "storybook build",
     "build": "pnpm -r build",
     "build:packages": "pnpm --filter \"./packages/*\" build",
+    "build:ui": "pnpm --filter @morpheme/ui build",
+    "build:nuxt": "pnpm --filter @morpheme/nuxt prepack",
     "storybook": "storybook dev -p 6006",
     "sb": "pnpm run storybook",
     "dev": "run-p storybook docs:dev dev:playground",

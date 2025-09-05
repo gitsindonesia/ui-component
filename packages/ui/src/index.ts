@@ -46,3 +46,6 @@ export * from './components/tooltip';
 // Export legacy items
 export * from './colors';
 export * from './component-resolver';
+
+// Plugin
+export { plugin as default } from './plugin';
