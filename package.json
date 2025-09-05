@@ -12,6 +12,7 @@
     "storybook": "storybook dev -p 6006",
     "sb": "pnpm run storybook",
     "dev": "run-p storybook docs:dev dev:playground",
+    "nuxt:prepack": "pnpm --filter @morpheme/nuxt prepack",
     "nuxt:play:dev": "pnpm --filter @morpheme/nuxt play",
     "nuxt:play:build": "pnpm --filter @morpheme/nuxt play:build",
     "nuxt:play:preview": "pnpm --filter @morpheme/nuxt play:preview",
