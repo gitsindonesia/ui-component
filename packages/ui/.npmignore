@@ -13,7 +13,7 @@ src/**/stories/
 src/**/Changelog.stories.mdx
 src/**/Readme.stories.mdx
 
-# Exclude specific story files we can see in the pack
+# Exclude specific story files
 src/components/alert/stories/
 src/components/button/stories/
 src/components/forms/stories/
@@ -43,9 +43,16 @@ src/index.ts.backup
 src/editor.js
 src/quill-editor.js
 
-# Keep essential files:
-# - dist/ (built files with types)
+# Exclude tarball files
+*.tgz
+*.tar.gz
+
+# Include dist folder explicitly (built files and types)
+!dist/
+
+# Keep:
+# - dist/ (built files with types) - IMPORTANT!
 # - package.json, README.md, LICENSE
 # - Core src exports (index.ts, plugin.ts, etc)
 # - Component Vue files and styles
-# - No test/story files
+# - NO test/story files
