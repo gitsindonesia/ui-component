@@ -1,7 +1,7 @@
 {
   "name": "@morpheme/nuxt",
   "description": "Nuxt module for Morpheme UI",
-  "version": "1.0.1",
+  "version": "2.0.0-alpha.1",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -35,6 +35,10 @@
     "@types/ckeditor__ckeditor5-build-classic": "^37.0.0",
     "eslint": "^9.9.1",
     "nuxt": "^4.1.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "alpha"
   },
   "gitHead": "02a1a784354fe06a05c5a2ca392aa295335766dd"
 }

@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/tailwind-components",
-  "version": "1.0.0",
+  "version": "2.0.0-alpha.1",
   "description": "Morpheme UI Tailwind Plugin",
   "scripts": {},
   "keywords": [
@@ -22,5 +22,9 @@
     },
     "./package.json": "./package.json",
     "./*": "./src/*.js"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "alpha"
   }
 }

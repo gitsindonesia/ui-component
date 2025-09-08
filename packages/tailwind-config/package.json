@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/tailwind-config",
-  "version": "1.0.0",
+  "version": "2.0.0-alpha.1",
   "description": "Morpheme Tailwind Config",
   "main": "config.js",
   "scripts": {},
@@ -12,14 +12,18 @@
   "license": "MIT",
   "dependencies": {
     "@morpheme/design-tokens": "^0.1.0-alpha.5",
-    "@morpheme/tailwind-components": "^1.0.0",
-    "@morpheme/theme": "^1.0.0",
-    "@morpheme/utils": "^1.0.0",
+    "@morpheme/tailwind-components": "^2.0.0-alpha.1",
+    "@morpheme/theme": "^2.0.0-alpha.1",
+    "@morpheme/utils": "^2.0.0-alpha.1",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.9",
     "tailwindcss": "^3.3.1",
     "vue": "^3.3.4"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "alpha"
   },
   "gitHead": "92215d91d1e3a2b1b804e52b55dcfd0ed5274475",
   "devDependencies": {

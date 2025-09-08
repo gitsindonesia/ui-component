@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/ui",
-  "version": "1.0.1",
+  "version": "2.0.0-alpha.1",
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly && mv dist/src dist/types",
     "prepublishOnly": "pnpm run build",
@@ -10,11 +10,11 @@
   },
   "dependencies": {
     "@headlessui/vue": "^1.7.22",
-    "@morpheme/theme": "^1.0.0",
-    "@morpheme/utils": "^1.0.0",
-    "@morpheme/tailwind-config": "^1.0.0",
-    "@morpheme/tailwind-components": "^1.0.0",
-    "@morpheme/themes": "^1.0.0",
+    "@morpheme/theme": "^2.0.0-alpha.1",
+    "@morpheme/utils": "^2.0.0-alpha.1",
+    "@morpheme/tailwind-config": "^2.0.0-alpha.1",
+    "@morpheme/tailwind-components": "^2.0.0-alpha.1",
+    "@morpheme/themes": "^2.0.0-alpha.1",
     "@vueuse/core": "^10.11.0",
     "floating-vue": "^2.0.0-beta.20",
     "pagino": "^1.4.2",
@@ -52,6 +52,10 @@
     "unplugin-vue-components": "^0.21.1",
     "vite": "^5.4.0",
     "vitest": "^2.0.5"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "alpha"
   },
   "license": "MIT",
   "repository": {

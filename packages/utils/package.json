@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/utils",
-  "version": "1.0.0",
+  "version": "2.0.0-alpha.1",
   "description": "Morpheme Utilities",
   "scripts": {
     "build": "vite build && vue-tsc --emitDeclarationOnly",
@@ -34,5 +34,9 @@
     },
     "./package.json": "./package.json",
     "./*": "./*"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "alpha"
   }
 }

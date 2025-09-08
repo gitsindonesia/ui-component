@@ -266,10 +266,10 @@ importers:
         version: 1.0.1(ts-node@10.9.2)(typescript@5.5.4)
       '@morpheme/tailwind-config':
         specifier: ^1.0.0
-        version: link:../tailwind-config
+        version: 1.0.0(ts-node@10.9.2)(typescript@5.5.4)
       '@morpheme/utils':
         specifier: ^1.0.0
-        version: link:../utils
+        version: 1.0.0(typescript@5.5.4)
       '@types/ckeditor__ckeditor5-build-classic':
         specifier: ^37.0.0
         version: 37.0.4
@@ -297,7 +297,7 @@ importers:
     devDependencies:
       '@morpheme/tailwind-config':
         specifier: ^1.0.0
-        version: link:../tailwind-config
+        version: 1.0.0(ts-node@10.9.2)(typescript@5.5.4)
       '@vue/test-utils':
         specifier: ^2.0.0-rc.17
         version: 2.4.6
@@ -328,10 +328,10 @@ importers:
         version: 1.0.1(ts-node@10.9.2)(typescript@5.5.4)
       '@morpheme/tailwind-config':
         specifier: ^1.0.0
-        version: link:../tailwind-config
+        version: 1.0.0(ts-node@10.9.2)(typescript@5.5.4)
       '@morpheme/utils':
         specifier: ^1.0.0
-        version: link:../utils
+        version: 1.0.0(typescript@5.5.4)
       '@vue/test-utils':
         specifier: ^2.0.0-rc.17
         version: 2.4.6
@@ -359,10 +359,10 @@ importers:
     devDependencies:
       '@morpheme/tailwind-config':
         specifier: ^1.0.0
-        version: link:../tailwind-config
+        version: 1.0.0(ts-node@10.9.2)(typescript@5.5.4)
       '@morpheme/utils':
         specifier: ^1.0.0
-        version: link:../utils
+        version: 1.0.0(typescript@5.5.4)
       '@vue/test-utils':
         specifier: ^2.0.0-rc.17
         version: 2.4.6
@@ -448,10 +448,10 @@ importers:
         version: 1.7.23(vue@3.5.21)
       '@morpheme/tailwind-config':
         specifier: ^1.0.0
-        version: link:../tailwind-config
+        version: 1.0.0(ts-node@10.9.2)(typescript@5.5.4)
       '@morpheme/utils':
         specifier: ^1.0.0
-        version: link:../utils
+        version: 1.0.0(typescript@5.5.4)
       '@vue/test-utils':
         specifier: ^2.0.0-rc.17
         version: 2.4.6
@@ -507,7 +507,7 @@ importers:
     devDependencies:
       '@morpheme/tailwind-config':
         specifier: ^1.0.0
-        version: link:../tailwind-config
+        version: 1.0.0(ts-node@10.9.2)(typescript@5.5.4)
       '@types/quill':
         specifier: ^2.0.9
         version: 2.0.14
@@ -541,10 +541,10 @@ importers:
     devDependencies:
       '@morpheme/tailwind-config':
         specifier: ^1.0.0
-        version: link:../tailwind-config
+        version: 1.0.0(ts-node@10.9.2)(typescript@5.5.4)
       '@morpheme/utils':
         specifier: ^1.0.0
-        version: link:../utils
+        version: 1.0.0(typescript@5.5.4)
       '@vue/test-utils':
         specifier: ^2.0.0-rc.17
         version: 2.4.6
@@ -570,13 +570,13 @@ importers:
         specifier: ^0.1.0-alpha.5
         version: 0.1.0-alpha.5
       '@morpheme/tailwind-components':
-        specifier: ^1.0.0
+        specifier: ^2.0.0-alpha.1
         version: link:../tailwind-components
       '@morpheme/theme':
-        specifier: ^1.0.0
+        specifier: ^2.0.0-alpha.1
         version: link:../theme
       '@morpheme/utils':
-        specifier: ^1.0.0
+        specifier: ^2.0.0-alpha.1
         version: link:../utils
       '@tailwindcss/aspect-ratio':
         specifier: ^0.4.2
@@ -662,10 +662,10 @@ importers:
     devDependencies:
       '@morpheme/tailwind-config':
         specifier: ^1.0.0
-        version: link:../tailwind-config
+        version: 1.0.0(ts-node@10.9.2)(typescript@5.5.4)
       '@morpheme/utils':
         specifier: ^1.0.0
-        version: link:../utils
+        version: 1.0.0(typescript@5.5.4)
       '@vue/test-utils':
         specifier: ^2.0.0-rc.17
         version: 2.4.6
@@ -688,19 +688,19 @@ importers:
         specifier: ^1.7.22
         version: 1.7.23(vue@3.5.21)
       '@morpheme/tailwind-components':
-        specifier: ^1.0.0
+        specifier: ^2.0.0-alpha.1
         version: link:../tailwind-components
       '@morpheme/tailwind-config':
-        specifier: ^1.0.0
+        specifier: ^2.0.0-alpha.1
         version: link:../tailwind-config
       '@morpheme/theme':
-        specifier: ^1.0.0
+        specifier: ^2.0.0-alpha.1
         version: link:../theme
       '@morpheme/themes':
-        specifier: ^1.0.0
+        specifier: ^2.0.0-alpha.1
         version: link:../themes
       '@morpheme/utils':
-        specifier: ^1.0.0
+        specifier: ^2.0.0-alpha.1
         version: link:../utils
       '@vue/test-utils':
         specifier: ^2.4.6
@@ -730,18 +730,27 @@ importers:
         specifier: ^1.4.0
         version: 1.7.0
     devDependencies:
+      '@vitest/coverage-v8':
+        specifier: ^2.0.5
+        version: 2.1.9(vitest@2.1.9)
+      '@vitest/ui':
+        specifier: ^2.0.5
+        version: 2.1.9(vitest@2.1.9)
       c8:
         specifier: ^7.11.3
         version: 7.14.0
+      happy-dom:
+        specifier: ^15.0.0
+        version: 15.11.7
       unplugin-vue-components:
         specifier: ^0.21.1
-        version: 0.21.2(esbuild@0.25.9)(vite@4.5.14)(vue@3.5.21)
+        version: 0.21.2(esbuild@0.25.9)(vite@5.4.19)(vue@3.5.21)
       vite:
-        specifier: ^4.3.8
-        version: 4.5.14(@types/node@20.5.1)(sass@1.92.0)
+        specifier: ^5.4.0
+        version: 5.4.19(@types/node@20.5.1)(sass@1.92.0)
       vitest:
-        specifier: ^0.12.4
-        version: 0.12.10(@vitest/ui@0.31.4)(c8@7.14.0)(happy-dom@9.20.3)(jsdom@21.1.2)(sass@1.92.0)
+        specifier: ^2.0.5
+        version: 2.1.9(@types/node@20.5.1)(@vitest/ui@2.1.9)(happy-dom@15.11.7)(jsdom@21.1.2)(sass@1.92.0)
 
   packages/utils:
     dependencies:
@@ -3636,7 +3645,7 @@ packages:
       - typescript
     dev: false
 
-  /@morpheme/autocomplete@1.0.1(ts-node@10.9.2)(typescript@5.5.4):
+  /@morpheme/autocomplete@1.0.1(@nuxt/kit@3.19.0)(ts-node@10.9.2)(typescript@5.5.4):
     resolution: {integrity: sha512-G9fbO/qdZj2iu99HFkde/7Cbsx+FQZfksZ4Q47m3abX9TqmR22v8WhOz627JFpSGzYXf+2zovomdbw1yxmRUJg==}
     dependencies:
       '@headlessui/vue': 1.7.23(vue@3.5.21)
@@ -3647,6 +3656,7 @@ packages:
       vue: 3.5.21(typescript@5.5.4)
       wait-for-expect: 3.0.2
     transitivePeerDependencies:
+      - '@nuxt/kit'
       - '@vue/composition-api'
       - ts-node
       - typescript
@@ -4577,7 +4587,6 @@ packages:
 
   /@morpheme/tailwind-components@1.0.0:
     resolution: {integrity: sha512-0jxdNPV1ASK7Hb/3A8AQHd68uTdJtAS0eDN1FCO7WUKsuJ6PAvlJzXbofCchC6NKWOdKVcuDxSco+s+0yE3CPw==}
-    dev: false
 
   /@morpheme/tailwind-components@1.0.0-beta.5:
     resolution: {integrity: sha512-Tf9U4qGgrXX5huZC06RYUU1s5mxm+BVlXM9p6/Hbpm7vXD+1siXw1kTIWZTDXDg1rZnWCt30Bpmxmzi/ZcBBGw==}
@@ -4598,7 +4607,6 @@ packages:
     transitivePeerDependencies:
       - ts-node
       - typescript
-    dev: false
 
   /@morpheme/tailwind-config@1.0.0-beta.5(ts-node@10.9.2)(typescript@5.5.4):
     resolution: {integrity: sha512-2edVp8q1ApGYeAW3VJ3SbEOxpKBl+6u62Nh6f/Ocbs62T4TxDRk3oU/qiLhNYuRwIg8helk/l+kctmxlvYBNrQ==}
@@ -4770,7 +4778,7 @@ packages:
       '@morpheme/alert': 1.0.1(ts-node@10.9.2)(typescript@5.5.4)
       '@morpheme/app-bar': 1.0.1(ts-node@10.9.2)(typescript@5.5.4)
       '@morpheme/app-shell': 1.0.1(typescript@5.5.4)
-      '@morpheme/autocomplete': 1.0.1(ts-node@10.9.2)(typescript@5.5.4)
+      '@morpheme/autocomplete': 1.0.1(@nuxt/kit@3.19.0)(ts-node@10.9.2)(typescript@5.5.4)
       '@morpheme/avatar': 1.0.1(ts-node@10.9.2)(typescript@5.5.4)
       '@morpheme/badge': 1.0.1(ts-node@10.9.2)(typescript@5.5.4)
       '@morpheme/banner': 1.0.1(typescript@5.5.4)
@@ -7828,6 +7836,32 @@ packages:
       vitest: 0.31.4(@vitest/ui@0.31.4)(happy-dom@9.20.3)(jsdom@21.1.2)(sass@1.92.0)
     dev: true
 
+  /@vitest/coverage-v8@2.1.9(vitest@2.1.9):
+    resolution: {integrity: sha512-Z2cOr0ksM00MpEfyVE8KXIYPEcBFxdbLSs56L8PO0QQMxt/6bDj45uQfxoc96v05KW3clk7vvgP0qfDit9DmfQ==}
+    peerDependencies:
+      '@vitest/browser': 2.1.9
+      vitest: 2.1.9
+    peerDependenciesMeta:
+      '@vitest/browser':
+        optional: true
+    dependencies:
+      '@ampproject/remapping': 2.3.0
+      '@bcoe/v8-coverage': 0.2.3
+      debug: 4.4.1
+      istanbul-lib-coverage: 3.2.2
+      istanbul-lib-report: 3.0.1
+      istanbul-lib-source-maps: 5.0.6
+      istanbul-reports: 3.2.0
+      magic-string: 0.30.18
+      magicast: 0.3.5
+      std-env: 3.9.0
+      test-exclude: 7.0.1
+      tinyrainbow: 1.2.0
+      vitest: 2.1.9(@types/node@20.5.1)(@vitest/ui@2.1.9)(happy-dom@15.11.7)(jsdom@21.1.2)(sass@1.92.0)
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /@vitest/expect@0.31.4:
     resolution: {integrity: sha512-tibyx8o7GUyGHZGyPgzwiaPaLDQ9MMuCOrc03BYT0nryUuhLbL7NV2r/q98iv5STlwMgaKuFJkgBW/8iPKwlSg==}
     dependencies:
@@ -7859,7 +7893,7 @@ packages:
       '@vitest/spy': 2.1.9
       estree-walker: 3.0.3
       magic-string: 0.30.18
-      vite: 5.4.19(@types/node@22.18.1)(sass@1.92.0)
+      vite: 5.4.19(@types/node@20.5.1)(sass@1.92.0)
     dev: true
 
   /@vitest/pretty-format@2.1.9:
@@ -7925,6 +7959,21 @@ packages:
       picocolors: 1.1.1
       sirv: 2.0.4
       vitest: 0.31.4(@vitest/ui@0.31.4)(happy-dom@9.20.3)(jsdom@21.1.2)(sass@1.92.0)
+    dev: true
+
+  /@vitest/ui@2.1.9(vitest@2.1.9):
+    resolution: {integrity: sha512-izzd2zmnk8Nl5ECYkW27328RbQ1nKvkm6Bb5DAaz1Gk59EbLkiCMa6OLT0NoaAYTjOFS6N+SMYW1nh4/9ljPiw==}
+    peerDependencies:
+      vitest: 2.1.9
+    dependencies:
+      '@vitest/utils': 2.1.9
+      fflate: 0.8.2
+      flatted: 3.3.3
+      pathe: 1.1.2
+      sirv: 3.0.2
+      tinyglobby: 0.2.14
+      tinyrainbow: 1.2.0
+      vitest: 2.1.9(@types/node@20.5.1)(@vitest/ui@2.1.9)(happy-dom@15.11.7)(jsdom@21.1.2)(sass@1.92.0)
     dev: true
 
   /@vitest/utils@0.31.4:
@@ -11728,6 +11777,10 @@ packages:
     resolution: {integrity: sha512-5u2V/CDW15QM1XbbgS+0DfPxVB+jUKhWEKuuFuHncbk3tEEqzmoXL+2KyOFuKGqOnmdIy0/davWF1CkuwtibCw==}
     dev: true
 
+  /fflate@0.8.2:
+    resolution: {integrity: sha512-cPJU47OaAoCbg0pBvzsgpTPhmhqI5eJjh/JIu8tPj5q+T7iLvW/JAYUqmE7KOB4R1ZyEhzBaIQpQpardBF5z8A==}
+    dev: true
+
   /figures@3.2.0:
     resolution: {integrity: sha512-yaduQFRKLXYOGgEn6AZau90j3ggSOyiqXU0F9JZfeXYhNa+Jk4X+s45A2zg5jns87GAFa34BBm2kXw4XpNcbdg==}
     engines: {node: '>=8'}
@@ -12268,6 +12321,15 @@ packages:
       wordwrap: 1.0.0
     optionalDependencies:
       uglify-js: 3.19.3
+    dev: true
+
+  /happy-dom@15.11.7:
+    resolution: {integrity: sha512-KyrFvnl+J9US63TEzwoiJOQzZBJY7KgBushJA8X61DMbNsH+2ONkDuLDnCnwUiPTF42tLoEmrPyoqbenVA5zrg==}
+    engines: {node: '>=18.0.0'}
+    dependencies:
+      entities: 4.5.0
+      webidl-conversions: 7.0.0
+      whatwg-mimetype: 3.0.0
     dev: true
 
   /happy-dom@9.20.3:
@@ -13133,6 +13195,17 @@ packages:
       istanbul-lib-coverage: 3.2.2
       make-dir: 4.0.0
       supports-color: 7.2.0
+    dev: true
+
+  /istanbul-lib-source-maps@5.0.6:
+    resolution: {integrity: sha512-yg2d+Em4KizZC5niWhQaIomgf5WlL4vOOjZ5xGCmF8SnPE/mDWWXgvRExdcpCgh9lLRRa1/fSYp2ymmbJ1pI+A==}
+    engines: {node: '>=10'}
+    dependencies:
+      '@jridgewell/trace-mapping': 0.3.30
+      debug: 4.4.1
+      istanbul-lib-coverage: 3.2.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /istanbul-reports@3.2.0:
@@ -18183,6 +18256,15 @@ packages:
       minimatch: 3.1.2
     dev: true
 
+  /test-exclude@7.0.1:
+    resolution: {integrity: sha512-pFYqmTw68LXVjeWJMST4+borgQP2AyMNbg1BpZh9LbyhUeNkeaPF9gzfPGUAnSMV3qPYdWUwDIjjCLiSDOl7vg==}
+    engines: {node: '>=18'}
+    dependencies:
+      '@istanbuljs/schema': 0.1.3
+      glob: 10.4.5
+      minimatch: 9.0.5
+    dev: true
+
   /text-decoder@1.2.3:
     resolution: {integrity: sha512-3/o9z3X0X0fTupwsYvR03pJ/DjWuqqrfwBgTQzdWDiQSm9KitAyz/9WqsT2JQW7KV2m+bC2ol/zqpW37NHxLaA==}
     dependencies:
@@ -18826,7 +18908,7 @@ packages:
       pathe: 2.0.3
       picomatch: 4.0.3
 
-  /unplugin-vue-components@0.21.2(esbuild@0.25.9)(vite@4.5.14)(vue@3.5.21):
+  /unplugin-vue-components@0.21.2(esbuild@0.25.9)(vite@5.4.19)(vue@3.5.21):
     resolution: {integrity: sha512-HBU+EuesDj/HRs7EtYH7gBACljVhqLylltrCLModRmCToIIrrNvMh54aylUt4AD4qiwylgOx4Vgb9sBlrIcRDw==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -18845,7 +18927,7 @@ packages:
       magic-string: 0.26.7
       minimatch: 5.1.6
       resolve: 1.22.10
-      unplugin: 0.7.2(esbuild@0.25.9)(vite@4.5.14)
+      unplugin: 0.7.2(esbuild@0.25.9)(vite@5.4.19)
       vue: 3.5.21(typescript@5.5.4)
     transitivePeerDependencies:
       - esbuild
@@ -18919,7 +19001,7 @@ packages:
       - vue
     dev: true
 
-  /unplugin@0.7.2(esbuild@0.25.9)(vite@4.5.14):
+  /unplugin@0.7.2(esbuild@0.25.9)(vite@5.4.19):
     resolution: {integrity: sha512-m7thX4jP8l5sETpLdUASoDOGOcHaOVtgNyrYlToyQUvILUtEzEnngRBrHnAX3IKqooJVmXpoa/CwQ/QqzvGaHQ==}
     peerDependencies:
       esbuild: '>=0.13'
@@ -18939,7 +19021,7 @@ packages:
       acorn: 8.15.0
       chokidar: 3.6.0
       esbuild: 0.25.9
-      vite: 4.5.14(@types/node@20.5.1)(sass@1.92.0)
+      vite: 5.4.19(@types/node@20.5.1)(sass@1.92.0)
       webpack-sources: 3.3.3
       webpack-virtual-modules: 0.4.6
     dev: true
@@ -19238,6 +19320,28 @@ packages:
       - less
       - lightningcss
       - sass
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+    dev: true
+
+  /vite-node@2.1.9(@types/node@20.5.1)(sass@1.92.0):
+    resolution: {integrity: sha512-AM9aQ/IPrW/6ENLQg3AGY4K1N2TGZdR5e4gu/MmmR2xR3Ll1+dib+nook92g4TV3PXVyeyxdWwtaCAiUL0hMxA==}
+    engines: {node: ^18.0.0 || >=20.0.0}
+    hasBin: true
+    dependencies:
+      cac: 6.7.14
+      debug: 4.4.1
+      es-module-lexer: 1.7.0
+      pathe: 1.1.2
+      vite: 5.4.19(@types/node@20.5.1)(sass@1.92.0)
+    transitivePeerDependencies:
+      - '@types/node'
+      - less
+      - lightningcss
+      - sass
+      - sass-embedded
       - stylus
       - sugarss
       - supports-color
@@ -19901,6 +20005,67 @@ packages:
       - less
       - lightningcss
       - sass
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+    dev: true
+
+  /vitest@2.1.9(@types/node@20.5.1)(@vitest/ui@2.1.9)(happy-dom@15.11.7)(jsdom@21.1.2)(sass@1.92.0):
+    resolution: {integrity: sha512-MSmPM9REYqDGBI8439mA4mWhV5sKmDlBKWIYbA3lRb2PTHACE0mgKwA8yQ2xq9vxDTuk4iPrECBAEW2aoFXY0Q==}
+    engines: {node: ^18.0.0 || >=20.0.0}
+    hasBin: true
+    peerDependencies:
+      '@edge-runtime/vm': '*'
+      '@types/node': ^18.0.0 || >=20.0.0
+      '@vitest/browser': 2.1.9
+      '@vitest/ui': 2.1.9
+      happy-dom: '*'
+      jsdom: '*'
+    peerDependenciesMeta:
+      '@edge-runtime/vm':
+        optional: true
+      '@types/node':
+        optional: true
+      '@vitest/browser':
+        optional: true
+      '@vitest/ui':
+        optional: true
+      happy-dom:
+        optional: true
+      jsdom:
+        optional: true
+    dependencies:
+      '@types/node': 20.5.1
+      '@vitest/expect': 2.1.9
+      '@vitest/mocker': 2.1.9(vite@5.4.19)
+      '@vitest/pretty-format': 2.1.9
+      '@vitest/runner': 2.1.9
+      '@vitest/snapshot': 2.1.9
+      '@vitest/spy': 2.1.9
+      '@vitest/ui': 2.1.9(vitest@2.1.9)
+      '@vitest/utils': 2.1.9
+      chai: 5.3.3
+      debug: 4.4.1
+      expect-type: 1.2.2
+      happy-dom: 15.11.7
+      jsdom: 21.1.2
+      magic-string: 0.30.18
+      pathe: 1.1.2
+      std-env: 3.9.0
+      tinybench: 2.9.0
+      tinyexec: 0.3.2
+      tinypool: 1.1.1
+      tinyrainbow: 1.2.0
+      vite: 5.4.19(@types/node@20.5.1)(sass@1.92.0)
+      vite-node: 2.1.9(@types/node@20.5.1)(sass@1.92.0)
+      why-is-node-running: 2.3.0
+    transitivePeerDependencies:
+      - less
+      - lightningcss
+      - msw
+      - sass
+      - sass-embedded
       - stylus
       - sugarss
       - supports-color

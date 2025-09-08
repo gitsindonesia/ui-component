@@ -1,6 +1,6 @@
 {
   "name": "@morpheme/theme",
-  "version": "1.0.0",
+  "version": "2.0.0-alpha.1",
   "description": "Morpheme Default Tailwind Colors",
   "main": "colors.js",
   "scripts": {},
@@ -13,6 +13,10 @@
   "dependencies": {
     "tailwindcss": "^3.3.1",
     "vue": "^3.3.4"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "alpha"
   },
   "gitHead": "92215d91d1e3a2b1b804e52b55dcfd0ed5274475",
   "devDependencies": {
