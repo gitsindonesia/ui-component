@@ -1,0 +1,51 @@
+# Development and test files
+coverage/
+**/*.test.ts
+**/*.spec.ts
+**/*.stories.ts
+**/*.stories.js
+**/*.stories.mdx
+src/stories/
+src/**/*.stories.ts
+src/**/*.spec.ts
+src/**/*.test.ts
+src/**/stories/
+src/**/Changelog.stories.mdx
+src/**/Readme.stories.mdx
+
+# Exclude specific story files we can see in the pack
+src/components/alert/stories/
+src/components/button/stories/
+src/components/forms/stories/
+src/components/forms/input/stories/
+src/components/menus/stories/
+src/components/nav-drawer/stories/
+src/components/select/stories/
+src/components/table/stories/
+src/components/table/examples/
+
+# Development configuration files
+vite.config.js
+vitest.config.ts
+tailwind.config.js
+postcss.config.js
+tsconfig.json
+
+# Node modules and logs
+node_modules/
+*.log
+.DS_Store
+
+# Backup files
+src/index.ts.backup
+
+# Editor files
+src/editor.js
+src/quill-editor.js
+
+# Keep essential files:
+# - dist/ (built files with types)
+# - package.json, README.md, LICENSE
+# - Core src exports (index.ts, plugin.ts, etc)
+# - Component Vue files and styles
+# - No test/story files

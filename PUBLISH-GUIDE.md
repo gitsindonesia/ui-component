@@ -55,6 +55,11 @@ Execute these commands one by one to publish the alpha packages:
 cd /home/warsono/Code/Labs/ui-component
 npm publish packages/ui/ --tag alpha --access public
 
+# NOTE: Package size was optimized from 328MB to 122.4kB by:
+# - Removing coverage/ folder (2.6GB)
+# - Adding .npmignore to exclude test/story files
+# - Final package size: 122.4kB (acceptable for npm registry)
+
 # 2. Nuxt Module
 npm publish packages/nuxt/ --tag alpha --access public
 
