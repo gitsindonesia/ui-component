@@ -3,7 +3,9 @@
   "version": "2.0.0-alpha.1",
   "description": "Morpheme Themes",
   "scripts": {
-    "build": "sass --load-path=./node_modules/@morpheme/**/** ./src/morpheme/main.scss:./dist/morpheme/main.css ./src/morpheme/main.dark.scss:./dist/morpheme/main.dark.css",
+    "build": "pnpm run build:scss && pnpm run build:tailwind",
+    "build:scss": "sass --load-path=./node_modules/@morpheme/**/** ./src/morpheme/main.scss:./dist/morpheme/main.css ./src/morpheme/main.dark.scss:./dist/morpheme/main.dark.css",
+    "build:tailwind": "node ./scripts/build-tailwind.js",
     "prepublishOnly": "pnpm run build",
     "test": "vitest"
   },
@@ -16,7 +18,11 @@
   "license": "MIT",
   "dependencies": {
     "@morpheme/design-tokens": "^0.1.0-alpha.5",
-    "vue": "^3.3.4"
+    "vue": "^3.3.4",
+    "tailwindcss": "^3.3.1",
+    "@tailwindcss/forms": "^0.5.3",
+    "@tailwindcss/typography": "^0.5.9",
+    "@tailwindcss/aspect-ratio": "^0.4.2"
   },
   "devDependencies": {
     "@vue/test-utils": "^2.0.0-rc.17",
@@ -36,6 +42,9 @@
     },
     "./package.json": "./package.json",
     "./morpheme": "./dist/morpheme/main.css",
+    "./morpheme-v2": "./dist/morpheme-v2/main.css",
+    "./morpheme-v2/config": "./src/morpheme-v2/tailwind.config.js",
+    "./morpheme-v2/theme": "./src/morpheme-v2/theme.js",
     "./src/*": "./src/*",
     "./*": "./*"
   },

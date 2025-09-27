@@ -1,0 +1,543 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Morpheme V2 Theme - Full Tailwind CSS */
+
+/* Base styles */
+@layer base {
+    :root {
+        /* Design tokens as CSS custom properties for easy customization */
+        --morpheme-primary: theme('colors.primary.500');
+        --morpheme-secondary: theme('colors.secondary.500');
+        --morpheme-success: theme('colors.success.500');
+        --morpheme-warning: theme('colors.warning.500');
+        --morpheme-error: theme('colors.error.500');
+        --morpheme-info: theme('colors.info.500');
+
+        /* Spacing tokens */
+        --morpheme-spacing-xs: theme('spacing.1');
+        --morpheme-spacing-sm: theme('spacing.2');
+        --morpheme-spacing-md: theme('spacing.4');
+        --morpheme-spacing-lg: theme('spacing.6');
+        --morpheme-spacing-xl: theme('spacing.8');
+
+        /* Border radius tokens */
+        --morpheme-radius-sm: theme('borderRadius.sm');
+        --morpheme-radius-md: theme('borderRadius.md');
+        --morpheme-radius-lg: theme('borderRadius.lg');
+        --morpheme-radius-xl: theme('borderRadius.xl');
+
+        /* Shadow tokens */
+        --morpheme-shadow-sm: theme('boxShadow.sm');
+        --morpheme-shadow-md: theme('boxShadow.md');
+        --morpheme-shadow-lg: theme('boxShadow.lg');
+        --morpheme-shadow-xl: theme('boxShadow.xl');
+
+        /* Typography tokens */
+        --morpheme-font-sans: theme('fontFamily.sans');
+        --morpheme-font-mono: theme('fontFamily.mono');
+
+        /* Transition tokens */
+        --morpheme-transition: theme('transitionProperty.all');
+        --morpheme-duration: theme('transitionDuration.300');
+        --morpheme-ease: theme('transitionTimingFunction.ease-in-out');
+    }
+
+    .dark {
+        --morpheme-primary: theme('colors.primary.400');
+        --morpheme-secondary: theme('colors.secondary.400');
+        --morpheme-success: theme('colors.success.400');
+        --morpheme-warning: theme('colors.warning.400');
+        --morpheme-error: theme('colors.error.400');
+        --morpheme-info: theme('colors.info.400');
+    }
+}
+
+/* Component styles using Tailwind utilities */
+@layer components {
+
+    /* Button component styles */
+    .btn {
+        @apply inline-flex items-center justify-center font-semibold rounded-lg border transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+    }
+
+    .btn-sm {
+        @apply px-3 py-1.5 text-sm h-8;
+    }
+
+    .btn-md {
+        @apply px-4 py-2 text-sm h-11;
+    }
+
+    .btn-lg {
+        @apply px-6 py-3 text-base h-13;
+    }
+
+    .btn-xl {
+        @apply px-8 py-4 text-lg h-15;
+    }
+
+    .btn-2xl {
+        @apply px-10 py-5 text-xl h-17;
+    }
+
+    /* Button variants */
+    .btn-primary {
+        @apply bg-primary-500 text-white border-primary-500 hover:bg-primary-600 hover:border-primary-600 focus:ring-primary-500;
+    }
+
+    .btn-secondary {
+        @apply bg-secondary-500 text-white border-secondary-500 hover:bg-secondary-600 hover:border-secondary-600 focus:ring-secondary-500;
+    }
+
+    .btn-outlined {
+        @apply bg-transparent border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white focus:ring-primary-500;
+    }
+
+    .btn-text {
+        @apply bg-transparent border-transparent text-primary-500 hover:bg-primary-50 hover:text-primary-600 focus:ring-primary-500;
+    }
+
+    .btn-default {
+        @apply bg-gray-100 text-gray-900 border-gray-300 hover:bg-gray-200 hover:border-gray-400 focus:ring-gray-500;
+    }
+
+    .btn-success {
+        @apply bg-success-500 text-white border-success-500 hover:bg-success-600 hover:border-success-600 focus:ring-success-500;
+    }
+
+    .btn-warning {
+        @apply bg-warning-500 text-white border-warning-500 hover:bg-warning-600 hover:border-warning-600 focus:ring-warning-500;
+    }
+
+    .btn-error {
+        @apply bg-error-500 text-white border-error-500 hover:bg-error-600 hover:border-error-600 focus:ring-error-500;
+    }
+
+    /* Dark mode button variants */
+    .dark .btn-default {
+        @apply bg-gray-800 text-gray-200 border-gray-700 hover:bg-gray-900 hover:border-gray-600;
+    }
+
+    .dark .btn-outlined {
+        @apply border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white;
+    }
+
+    .dark .btn-text {
+        @apply text-gray-300 hover:bg-gray-800 hover:text-white;
+    }
+
+    /* Alert component styles */
+    .alert {
+        @apply flex items-start p-4 rounded-lg border;
+    }
+
+    .alert-success {
+        @apply bg-success-50 text-success-800 border-success-200;
+    }
+
+    .alert-warning {
+        @apply bg-warning-50 text-warning-800 border-warning-200;
+    }
+
+    .alert-error {
+        @apply bg-error-50 text-error-800 border-error-200;
+    }
+
+    .alert-info {
+        @apply bg-info-50 text-info-800 border-info-200;
+    }
+
+    .dark .alert-success {
+        @apply bg-success-900/20 text-success-300 border-success-800;
+    }
+
+    .dark .alert-warning {
+        @apply bg-warning-900/20 text-warning-300 border-warning-800;
+    }
+
+    .dark .alert-error {
+        @apply bg-error-900/20 text-error-300 border-error-800;
+    }
+
+    .dark .alert-info {
+        @apply bg-info-900/20 text-info-300 border-info-800;
+    }
+
+    /* Card component styles */
+    .card {
+        @apply bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden;
+    }
+
+    .card-header {
+        @apply px-6 py-4 border-b border-gray-200;
+    }
+
+    .card-body {
+        @apply px-6 py-4;
+    }
+
+    .card-footer {
+        @apply px-6 py-4 border-t border-gray-200 bg-gray-50;
+    }
+
+    .dark .card {
+        @apply bg-gray-900 border-gray-800;
+    }
+
+    .dark .card-header {
+        @apply border-gray-700;
+    }
+
+    .dark .card-footer {
+        @apply border-gray-700 bg-gray-800;
+    }
+
+    /* Form component styles */
+    .form-input {
+        @apply block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 disabled:bg-gray-100 disabled:cursor-not-allowed;
+    }
+
+    .form-label {
+        @apply block text-sm font-medium text-gray-700 mb-1;
+    }
+
+    .form-error {
+        @apply text-sm text-error-600 mt-1;
+    }
+
+    .dark .form-input {
+        @apply bg-gray-800 border-gray-600 text-white placeholder-gray-400 focus:border-primary-500;
+    }
+
+    .dark .form-label {
+        @apply text-gray-300;
+    }
+
+    .dark .form-error {
+        @apply text-error-400;
+    }
+
+    /* Modal component styles */
+    .modal-overlay {
+        @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50;
+    }
+
+    .modal-content {
+        @apply bg-white rounded-lg shadow-xl max-w-md w-full max-h-[90vh] overflow-y-auto;
+    }
+
+    .modal-header {
+        @apply flex items-center justify-between p-6 border-b border-gray-200;
+    }
+
+    .modal-body {
+        @apply p-6;
+    }
+
+    .modal-footer {
+        @apply flex items-center justify-end space-x-3 p-6 border-t border-gray-200;
+    }
+
+    .dark .modal-content {
+        @apply bg-gray-900 border-gray-800;
+    }
+
+    .dark .modal-header {
+        @apply border-gray-700;
+    }
+
+    .dark .modal-footer {
+        @apply border-gray-700;
+    }
+
+    /* Badge component styles */
+    .badge {
+        @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+    }
+
+    .badge-primary {
+        @apply bg-primary-100 text-primary-800;
+    }
+
+    .badge-secondary {
+        @apply bg-secondary-100 text-secondary-800;
+    }
+
+    .badge-success {
+        @apply bg-success-100 text-success-800;
+    }
+
+    .badge-warning {
+        @apply bg-warning-100 text-warning-800;
+    }
+
+    .badge-error {
+        @apply bg-error-100 text-error-800;
+    }
+
+    .badge-info {
+        @apply bg-info-100 text-info-800;
+    }
+
+    .dark .badge-primary {
+        @apply bg-primary-900/20 text-primary-300;
+    }
+
+    .dark .badge-secondary {
+        @apply bg-secondary-900/20 text-secondary-300;
+    }
+
+    .dark .badge-success {
+        @apply bg-success-900/20 text-success-300;
+    }
+
+    .dark .badge-warning {
+        @apply bg-warning-900/20 text-warning-300;
+    }
+
+    .dark .badge-error {
+        @apply bg-error-900/20 text-error-300;
+    }
+
+    .dark .badge-info {
+        @apply bg-info-900/20 text-info-300;
+    }
+
+    /* Avatar component styles */
+    .avatar {
+        @apply inline-flex items-center justify-center rounded-full bg-gray-500 text-white font-medium;
+    }
+
+    .avatar-sm {
+        @apply w-8 h-8 text-xs;
+    }
+
+    .avatar-md {
+        @apply w-10 h-10 text-sm;
+    }
+
+    .avatar-lg {
+        @apply w-12 h-12 text-base;
+    }
+
+    .avatar-xl {
+        @apply w-16 h-16 text-lg;
+    }
+
+    /* Progress bar styles */
+    .progress {
+        @apply w-full bg-gray-200 rounded-full overflow-hidden;
+    }
+
+    .progress-bar {
+        @apply h-full bg-primary-500 transition-all duration-300 ease-in-out;
+    }
+
+    .dark .progress {
+        @apply bg-gray-700;
+    }
+
+    /* Tooltip styles */
+    .tooltip {
+        @apply absolute z-50 px-2 py-1 text-xs text-white bg-gray-900 rounded shadow-lg;
+    }
+
+    .tooltip-arrow {
+        @apply absolute w-0 h-0 border-4 border-transparent;
+    }
+
+    /* Dropdown styles */
+    .dropdown {
+        @apply relative inline-block;
+    }
+
+    .dropdown-menu {
+        @apply absolute right-0 z-50 mt-2 w-56 bg-white rounded-md shadow-lg border border-gray-200 py-1;
+    }
+
+    .dropdown-item {
+        @apply block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900;
+    }
+
+    .dark .dropdown-menu {
+        @apply bg-gray-900 border-gray-700;
+    }
+
+    .dark .dropdown-item {
+        @apply text-gray-300 hover:bg-gray-800 hover:text-white;
+    }
+
+    /* Tabs styles */
+    .tabs {
+        @apply border-b border-gray-200;
+    }
+
+    .tab-list {
+        @apply flex space-x-8;
+    }
+
+    .tab {
+        @apply py-2 px-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300;
+    }
+
+    .tab-active {
+        @apply border-primary-500 text-primary-600;
+    }
+
+    .tab-panel {
+        @apply py-4;
+    }
+
+    .dark .tabs {
+        @apply border-gray-700;
+    }
+
+    .dark .tab {
+        @apply text-gray-400 hover:text-gray-300 hover:border-gray-600;
+    }
+
+    .dark .tab-active {
+        @apply text-primary-400;
+    }
+
+    /* Toast styles */
+    .toast {
+        @apply fixed top-4 right-4 z-50 max-w-sm w-full bg-white rounded-lg shadow-lg border border-gray-200 p-4;
+    }
+
+    .toast-success {
+        @apply border-l-4 border-success-500;
+    }
+
+    .toast-warning {
+        @apply border-l-4 border-warning-500;
+    }
+
+    .toast-error {
+        @apply border-l-4 border-error-500;
+    }
+
+    .toast-info {
+        @apply border-l-4 border-info-500;
+    }
+
+    .dark .toast {
+        @apply bg-gray-900 border-gray-700;
+    }
+
+    /* Shimmer loading styles */
+    .shimmer {
+        @apply animate-pulse bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 bg-[length:200%_100%];
+    }
+
+    .dark .shimmer {
+        @apply from-gray-700 via-gray-600 to-gray-700;
+    }
+
+    /* Data table styles */
+    .data-table {
+        @apply w-full border-collapse;
+    }
+
+    .data-table th {
+        @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-200 bg-gray-50;
+    }
+
+    .data-table td {
+        @apply px-6 py-4 whitespace-nowrap text-sm text-gray-900 border-b border-gray-200;
+    }
+
+    .data-table tbody tr:hover {
+        @apply bg-gray-50;
+    }
+
+    .dark .data-table th {
+        @apply text-gray-400 border-gray-700 bg-gray-800;
+    }
+
+    .dark .data-table td {
+        @apply text-gray-300 border-gray-700;
+    }
+
+    .dark .data-table tbody tr:hover {
+        @apply bg-gray-800;
+    }
+
+    /* Pagination styles */
+    .pagination {
+        @apply flex items-center justify-between px-4 py-3 bg-white border-t border-gray-200;
+    }
+
+    .pagination-info {
+        @apply text-sm text-gray-700;
+    }
+
+    .pagination-nav {
+        @apply flex items-center space-x-2;
+    }
+
+    .pagination-btn {
+        @apply px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50 hover:text-gray-700 disabled:opacity-50 disabled:cursor-not-allowed;
+    }
+
+    .pagination-btn-active {
+        @apply bg-primary-500 text-white border-primary-500 hover:bg-primary-600;
+    }
+
+    .dark .pagination {
+        @apply bg-gray-900 border-gray-700;
+    }
+
+    .dark .pagination-info {
+        @apply text-gray-300;
+    }
+
+    .dark .pagination-btn {
+        @apply bg-gray-800 text-gray-300 border-gray-600 hover:bg-gray-700 hover:text-white;
+    }
+
+    .dark .pagination-btn-active {
+        @apply bg-primary-600 text-white border-primary-600;
+    }
+}
+
+/* Utility classes */
+@layer utilities {
+    .morpheme-shadow-sm {
+        box-shadow: var(--morpheme-shadow-sm);
+    }
+
+    .morpheme-shadow-md {
+        box-shadow: var(--morpheme-shadow-md);
+    }
+
+    .morpheme-shadow-lg {
+        box-shadow: var(--morpheme-shadow-lg);
+    }
+
+    .morpheme-shadow-xl {
+        box-shadow: var(--morpheme-shadow-xl);
+    }
+
+    .morpheme-transition {
+        transition: var(--morpheme-transition) var(--morpheme-duration) var(--morpheme-ease);
+    }
+
+    .morpheme-radius-sm {
+        border-radius: var(--morpheme-radius-sm);
+    }
+
+    .morpheme-radius-md {
+        border-radius: var(--morpheme-radius-md);
+    }
+
+    .morpheme-radius-lg {
+        border-radius: var(--morpheme-radius-lg);
+    }
+
+    .morpheme-radius-xl {
+        border-radius: var(--morpheme-radius-xl);
+    }
+}
