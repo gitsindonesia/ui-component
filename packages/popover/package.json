@@ -17,7 +17,7 @@
   "dependencies": {
     "@headlessui/vue": "^1.7.13",
     "tailwindcss": "^3.3.1",
-    "vue": "^3.3.4"
+    "vue": "^3.5.28"
   },
   "devDependencies": {
     "@morpheme/button": "^1.0.1",
@@ -25,7 +25,7 @@
     "@morpheme/list": "^1.0.1",
     "@morpheme/tailwind-config": "^1.0.0",
     "@morpheme/utils": "^1.0.0",
-    "@vue/test-utils": "^2.0.0-rc.17",
+    "@vue/test-utils": "^2.4.6",
     "c8": "^7.11.3",
     "vite": "^4.3.8",
     "vitest": "^0.12.4"

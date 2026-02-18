@@ -17,7 +17,7 @@
   "license": "MIT",
   "dependencies": {
     "@vueuse/core": "^10.2.1",
-    "vue": "^3.3.4"
+    "vue": "^3.5.28"
   },
   "devDependencies": {
     "@headlessui/vue": "^1.7.13",
@@ -35,7 +35,7 @@
     "@morpheme/text": "^1.0.0",
     "@morpheme/tooltip": "^1.0.1",
     "@morpheme/utils": "^1.0.0",
-    "@vue/test-utils": "^2.0.0-rc.17",
+    "@vue/test-utils": "^2.4.6",
     "c8": "^7.11.3",
     "tailwindcss": "^3.3.1",
     "vee-validate": "^4.11.3",

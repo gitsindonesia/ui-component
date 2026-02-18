@@ -17,14 +17,14 @@
   "dependencies": {
     "@iconify/vue": "^3.2.1",
     "@morpheme/collapsible": "^1.0.1",
-    "vue": "^3.3.4",
-    "vue-router": "^4.0.13"
+    "vue": "^3.5.28",
+    "vue-router": "^4.6.4"
   },
   "devDependencies": {
     "@headlessui/vue": "^1.7.13",
     "@morpheme/tailwind-config": "^1.0.0",
     "@morpheme/utils": "^1.0.0",
-    "@vue/test-utils": "^2.0.0-rc.17",
+    "@vue/test-utils": "^2.4.6",
     "c8": "^7.11.3",
     "tailwindcss": "^3.3.1",
     "vee-validate": "^4.11.3",

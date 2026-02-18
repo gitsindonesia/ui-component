@@ -16,11 +16,11 @@
   "license": "MIT",
   "dependencies": {
     "@morpheme/utils": "^1.0.0",
-    "vue": "^3.3.4"
+    "vue": "^3.5.28"
   },
   "devDependencies": {
     "@morpheme/tailwind-config": "^1.0.0",
-    "@vue/test-utils": "^2.0.0-rc.17",
+    "@vue/test-utils": "^2.4.6",
     "c8": "^7.11.3",
     "tailwindcss": "^3.3.1",
     "vite": "^4.3.8",
