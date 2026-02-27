@@ -1,5 +1,5 @@
 # Stage 0, "build-stage", based on Node.js
-FROM node:16.15.0 as build-stage
+FROM node:20-alpine as build-stage
 
 # Create app directory
 WORKDIR /usr/src/app

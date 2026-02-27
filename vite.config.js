@@ -55,7 +55,7 @@ export default defineConfig({
     // exclude: [...configDefaults.exclude, 'dist', 'examples', 'docs', 'starter'],
     // setupFiles: "./test/unit/setup-test.ts",
     coverage: {
-      provider: 'c8',
+      provider: 'v8',
       reporter: ['text', 'html', 'lcov', 'json'],
     },
     reporters: ['html', 'verbose', 'json', 'vitest-sonar-reporter'],

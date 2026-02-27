@@ -14,8 +14,6 @@ describe('Icon', () => {
 
     await wrapper.vm.$nextTick();
 
-    console.log('DEBUG', wrapper.html());
-
     expect(wrapper.find('span').attributes('class')).toContain('v-icon--sm');
     expect(wrapper.find('span').attributes('aria-hidden')).toBe('true');
   });

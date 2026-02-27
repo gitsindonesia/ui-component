@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import {computed, toRefs, ref, watch} from 'vue';
 
+let idCounter = 0;
+
 const props = defineProps({
   modelValue: {
     type: [Number, String],
@@ -56,6 +58,8 @@ const emit =
   defineEmits<{
     (e: 'update:modelValue', value: string | number): void;
   }>();
+
+const progressId = `progress-label-${++idCounter}`;
 
 const {modelValue} = toRefs(props);
 
@@ -115,10 +119,10 @@ defineSlots<{
     :aria-valuemin="min"
     :aria-valuemax="max"
     :aria-valuenow="percentage"
-    aria-labelledby="progress-label"
+    :aria-labelledby="progressId"
     :style="computedStyles"
   >
-    <div class="v-progress-bar-label" :class="labelClass" id="progress-label">
+    <div class="v-progress-bar-label" :class="labelClass" :id="progressId">
       <slot name="label" :value="percentage">
         {{ label }}
       </slot>

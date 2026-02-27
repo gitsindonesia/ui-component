@@ -36,11 +36,20 @@ const onSubmit = handleSubmit(async (values) => {
     return;
   }
 
-  const nextUrl: any = route.query?.next || route.query?.callbackUrl;
-  const callbackUrl = nextUrl || appConfig.auth?.redirect?.home || '/';
+  const nextUrl = route.query?.next || route.query?.callbackUrl;
+  const callbackUrl = String(nextUrl || appConfig.auth?.redirect?.home || '/');
 
   if (callbackUrl.startsWith('http')) {
-    location.href = callbackUrl;
+    try {
+      const target = new URL(callbackUrl);
+      if (target.origin !== window.location.origin) {
+        router.push('/');
+        return;
+      }
+      location.href = callbackUrl;
+    } catch {
+      router.push('/');
+    }
     return;
   }
 

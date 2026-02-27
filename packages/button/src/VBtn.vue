@@ -111,7 +111,6 @@ const classes = computed(() => {
 const attributes = computed(() => {
   let attrs: Record<string, any> = {
     type: props.type,
-    'aria-label': 'Button',
   };
 
   if (props.disabled) {

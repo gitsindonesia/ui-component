@@ -2,6 +2,7 @@
 import {Icon as Iconify} from '@iconify/vue/dist/offline';
 import {loadIcon} from '@iconify/vue';
 import {computed, defineComponent, h, ref, shallowRef, watch} from 'vue';
+import DOMPurify from 'dompurify';
 import {type DefaultSizes, defaultSizes} from '@morpheme/theme/defaultTheme';
 import {getItem, setItem} from './storage';
 
@@ -43,11 +44,12 @@ function toKebabCase(string: string) {
 }
 
 function createIconComponent(content: string) {
+  const sanitized = DOMPurify.sanitize(content, {USE_PROFILES: {svg: true}});
   return defineComponent({
     setup() {
       return () =>
         h('span', {
-          innerHTML: content,
+          innerHTML: sanitized,
           class: classes.value,
           style: style.value,
           ...ariaProps,

@@ -6,12 +6,16 @@ export default {
 
 <script setup lang="ts">
 import {computed, type PropType, toRefs} from 'vue';
+import DOMPurify from 'dompurify';
 import VMenuTooltip from './VMenuTooltip.vue';
 import VMenuItem from './VMenuItem.vue';
 import VCollapsible from '@morpheme/collapsible';
 import {useRoute} from 'vue-router';
 import VMenuIcon from './VMenuIcon.vue';
 import type {Menu} from './types';
+
+const sanitizeSvg = (html: string) =>
+  DOMPurify.sanitize(html, {USE_PROFILES: {svg: true}});
 
 const props = defineProps({
   menu: {
@@ -122,7 +126,7 @@ const activatorClass = computed(() => {
               alt="img icon"
               class="w-5 h-5"
             />
-            <span v-else-if="menu.svg" v-html="menu.svg" />
+            <span v-else-if="menu.svg" v-html="sanitizeSvg(menu.svg)" />
             <template v-else-if="menu.icon">
               <VMenuIcon :icon="menu.icon" :menu="menu" />
             </template>

@@ -349,8 +349,6 @@ watch(modelValue, (val) => (isOpen.value = val));
 
 watch(isOpen, (val) => emit('update:modelValue', val));
 
-watch(isLoading, (val) => (isLoading.value = val));
-
 function onModalClose() {
   if (props.persistent || isLoading.value) {
     return null;
