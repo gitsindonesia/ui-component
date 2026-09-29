@@ -49,14 +49,14 @@
 
     width: auto; // Equivalent to w-auto
     display: none; // Equivalent to hidden
-    @media (min-width: 640px) {
-      display: flex; // Equivalent to sm:flex
-    }
     gap: 0.25rem; // Equivalent to gap-1
     align-items: center; // Equivalent to items-center
     font-size: 0.875rem; // Equivalent to text-sm
     order: 2; // Equivalent to order-2
     flex: 1 1 0%;
+    @media (min-width: 640px) {
+      display: flex; // Equivalent to sm:flex
+    }
 
     &-showing-text,
     &-data-text {
